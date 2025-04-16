@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SparkAppId Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparkAppId() const;
@@ -97,7 +95,6 @@ namespace TencentCloud
 
                     /**
                      * Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparkAppId;
                     bool m_sparkAppIdHasBeenSet;

@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私有域ID, zone-xxxxxx
-                     * @return ZoneId 私有域ID, zone-xxxxxx
+                     * 获取私有域ID, zone-12345ds6
+                     * @return ZoneId 私有域ID, zone-12345ds6
                      * 
                      */
                     std::string GetZoneId() const;
@@ -90,7 +90,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私有域ID, zone-xxxxxx
+                     * 私有域ID, zone-12345ds6
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;

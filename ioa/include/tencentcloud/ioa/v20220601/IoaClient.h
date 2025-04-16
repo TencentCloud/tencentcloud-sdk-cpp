@@ -23,10 +23,14 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskRequest.h>
+#include <tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupRequest.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeLocalAccountsRequest.h>
@@ -47,12 +51,18 @@ namespace TencentCloud
                 IoaClient(const Credential &credential, const std::string &region);
                 IoaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateDLPFileDetectionTaskResponse> CreateDLPFileDetectionTaskOutcome;
+                typedef std::future<CreateDLPFileDetectionTaskOutcome> CreateDLPFileDetectionTaskOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::CreateDLPFileDetectionTaskRequest&, CreateDLPFileDetectionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDLPFileDetectionTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeviceVirtualGroupResponse> CreateDeviceVirtualGroupOutcome;
                 typedef std::future<CreateDeviceVirtualGroupOutcome> CreateDeviceVirtualGroupOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::CreateDeviceVirtualGroupRequest&, CreateDeviceVirtualGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceVirtualGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountGroupsResponse> DescribeAccountGroupsOutcome;
                 typedef std::future<DescribeAccountGroupsOutcome> DescribeAccountGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeAccountGroupsRequest&, DescribeAccountGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDLPFileDetectResultResponse> DescribeDLPFileDetectResultOutcome;
+                typedef std::future<DescribeDLPFileDetectResultOutcome> DescribeDLPFileDetectResultOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeDLPFileDetectResultRequest&, DescribeDLPFileDetectResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDLPFileDetectResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDevicesResponse> DescribeDevicesOutcome;
                 typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDevicesRequest&, DescribeDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
@@ -64,6 +74,15 @@ namespace TencentCloud
                 typedef std::function<void(const IoaClient*, const Model::DescribeRootAccountGroupRequest&, DescribeRootAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRootAccountGroupAsyncHandler;
 
 
+
+                /**
+                 *提交送检任务
+                 * @param req CreateDLPFileDetectionTaskRequest
+                 * @return CreateDLPFileDetectionTaskOutcome
+                 */
+                CreateDLPFileDetectionTaskOutcome CreateDLPFileDetectionTask(const Model::CreateDLPFileDetectionTaskRequest &request);
+                void CreateDLPFileDetectionTaskAsync(const Model::CreateDLPFileDetectionTaskRequest& request, const CreateDLPFileDetectionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDLPFileDetectionTaskOutcomeCallable CreateDLPFileDetectionTaskCallable(const Model::CreateDLPFileDetectionTaskRequest& request);
 
                 /**
                  *创建终端自定义分组，私有化调用path为：/capi/Assets/Device/CreateDeviceVirtualGroup
@@ -82,6 +101,15 @@ namespace TencentCloud
                 DescribeAccountGroupsOutcome DescribeAccountGroups(const Model::DescribeAccountGroupsRequest &request);
                 void DescribeAccountGroupsAsync(const Model::DescribeAccountGroupsRequest& request, const DescribeAccountGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountGroupsOutcomeCallable DescribeAccountGroupsCallable(const Model::DescribeAccountGroupsRequest& request);
+
+                /**
+                 *webservice查询文件检测结果
+                 * @param req DescribeDLPFileDetectResultRequest
+                 * @return DescribeDLPFileDetectResultOutcome
+                 */
+                DescribeDLPFileDetectResultOutcome DescribeDLPFileDetectResult(const Model::DescribeDLPFileDetectResultRequest &request);
+                void DescribeDLPFileDetectResultAsync(const Model::DescribeDLPFileDetectResultRequest& request, const DescribeDLPFileDetectResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDLPFileDetectResultOutcomeCallable DescribeDLPFileDetectResultCallable(const Model::DescribeDLPFileDetectResultRequest& request);
 
                 /**
                  *查询满足条件的终端数据详情，私有化调用path为：/capi/Assets/Device/DescribeDevices

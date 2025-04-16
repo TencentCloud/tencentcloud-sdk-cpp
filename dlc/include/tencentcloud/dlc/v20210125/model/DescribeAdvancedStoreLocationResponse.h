@@ -87,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取托管存储状态，HasLakeFs等于true时，该值才有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LakeFsStatus 托管存储状态，HasLakeFs等于true时，该值才有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLakeFsStatus() const;
@@ -100,6 +98,22 @@ namespace TencentCloud
                      * 
                      */
                     bool LakeFsStatusHasBeenSet() const;
+
+                    /**
+                     * 获取托管存储桶类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BucketType 托管存储桶类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBucketType() const;
+
+                    /**
+                     * 判断参数 BucketType 是否已赋值
+                     * @return BucketType 是否已赋值
+                     * 
+                     */
+                    bool BucketTypeHasBeenSet() const;
 
                 private:
 
@@ -123,10 +137,16 @@ namespace TencentCloud
 
                     /**
                      * 托管存储状态，HasLakeFs等于true时，该值才有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lakeFsStatus;
                     bool m_lakeFsStatusHasBeenSet;
+
+                    /**
+                     * 托管存储桶类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bucketType;
+                    bool m_bucketTypeHasBeenSet;
 
                 };
             }

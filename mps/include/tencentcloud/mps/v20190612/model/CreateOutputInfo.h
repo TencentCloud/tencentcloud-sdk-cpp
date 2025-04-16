@@ -287,15 +287,15 @@ namespace TencentCloud
                     bool ZonesHasBeenSet() const;
 
                     /**
-                     * 获取输出类型：Internet/TencentCSS/StreamLive
-                     * @return OutputType 输出类型：Internet/TencentCSS/StreamLive
+                     * 获取输出类型：Internet/TencentCSS
+                     * @return OutputType 输出类型：Internet/TencentCSS
                      * 
                      */
                     std::string GetOutputType() const;
 
                     /**
-                     * 设置输出类型：Internet/TencentCSS/StreamLive
-                     * @param _outputType 输出类型：Internet/TencentCSS/StreamLive
+                     * 设置输出类型：Internet/TencentCSS
+                     * @param _outputType 输出类型：Internet/TencentCSS
                      * 
                      */
                     void SetOutputType(const std::string& _outputType);
@@ -419,7 +419,7 @@ namespace TencentCloud
                     bool m_zonesHasBeenSet;
 
                     /**
-                     * 输出类型：Internet/TencentCSS/StreamLive
+                     * 输出类型：Internet/TencentCSS
                      */
                     std::string m_outputType;
                     bool m_outputTypeHasBeenSet;

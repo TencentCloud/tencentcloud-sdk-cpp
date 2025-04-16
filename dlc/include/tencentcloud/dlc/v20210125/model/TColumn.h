@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 字段类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置字段类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 字段类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 字段描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置字段描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _comment 字段描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Default 字段默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefault() const;
 
                     /**
                      * 设置字段默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _default 字段默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefault(const std::string& _default);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段是否是非空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotNull 字段是否是非空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetNotNull() const;
 
                     /**
                      * 设置字段是否是非空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notNull 字段是否是非空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNotNull(const bool& _notNull);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表示整个 numeric 的长度,取值1-38
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Precision 表示整个 numeric 的长度,取值1-38
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPrecision() const;
 
                     /**
                      * 设置表示整个 numeric 的长度,取值1-38
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _precision 表示整个 numeric 的长度,取值1-38
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrecision(const int64_t& _precision);
@@ -199,10 +175,8 @@ namespace TencentCloud
                     /**
                      * 获取表示小数部分的长度
 Scale小于Precision
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scale 表示小数部分的长度
 Scale小于Precision
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScale() const;
@@ -210,10 +184,8 @@ Scale小于Precision
                     /**
                      * 设置表示小数部分的长度
 Scale小于Precision
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scale 表示小数部分的长度
 Scale小于Precision
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScale(const int64_t& _scale);
@@ -227,18 +199,14 @@ Scale小于Precision
 
                     /**
                      * 获取字段位置，小的在前
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Position 字段位置，小的在前
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPosition() const;
 
                     /**
                      * 设置字段位置，小的在前
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _position 字段位置，小的在前
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPosition(const int64_t& _position);
@@ -252,18 +220,14 @@ Scale小于Precision
 
                     /**
                      * 获取是否为分区字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPartition 是否为分区字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsPartition() const;
 
                     /**
                      * 设置是否为分区字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isPartition 是否为分区字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsPartition(const bool& _isPartition);
@@ -279,42 +243,36 @@ Scale小于Precision
 
                     /**
                      * 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 字段类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 字段描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
                      * 字段默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_default;
                     bool m_defaultHasBeenSet;
 
                     /**
                      * 字段是否是非空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_notNull;
                     bool m_notNullHasBeenSet;
 
                     /**
                      * 表示整个 numeric 的长度,取值1-38
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_precision;
                     bool m_precisionHasBeenSet;
@@ -322,21 +280,18 @@ Scale小于Precision
                     /**
                      * 表示小数部分的长度
 Scale小于Precision
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scale;
                     bool m_scaleHasBeenSet;
 
                     /**
                      * 字段位置，小的在前
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_position;
                     bool m_positionHasBeenSet;
 
                     /**
                      * 是否为分区字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isPartition;
                     bool m_isPartitionHasBeenSet;

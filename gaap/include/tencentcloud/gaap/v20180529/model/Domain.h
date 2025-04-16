@@ -175,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认入口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultValue 默认入口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
                      * 设置默认入口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultValue 默认入口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
@@ -267,18 +263,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
                      * 设置标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
@@ -292,18 +284,14 @@ namespace TencentCloud
 
                     /**
                      * 获取封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BanStatus 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBanStatus() const;
 
                     /**
                      * 设置封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _banStatus 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBanStatus(const std::string& _banStatus);
@@ -355,7 +343,6 @@ namespace TencentCloud
 
                     /**
                      * 默认入口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultValue;
                     bool m_defaultValueHasBeenSet;
@@ -381,14 +368,12 @@ namespace TencentCloud
 
                     /**
                      * 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
                      * 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_banStatus;
                     bool m_banStatusHasBeenSet;

@@ -194,6 +194,48 @@ namespace TencentCloud
                      */
                     bool BucketHasBeenSet() const;
 
+                    /**
+                     * 获取存算分离集群数
+                     * @return SSCCount 存算分离集群数
+                     * 
+                     */
+                    int64_t GetSSCCount() const;
+
+                    /**
+                     * 设置存算分离集群数
+                     * @param _sSCCount 存算分离集群数
+                     * 
+                     */
+                    void SetSSCCount(const int64_t& _sSCCount);
+
+                    /**
+                     * 判断参数 SSCCount 是否已赋值
+                     * @return SSCCount 是否已赋值
+                     * 
+                     */
+                    bool SSCCountHasBeenSet() const;
+
+                    /**
+                     * 获取是否开通存算分离
+                     * @return EnableSSC 是否开通存算分离
+                     * 
+                     */
+                    bool GetEnableSSC() const;
+
+                    /**
+                     * 设置是否开通存算分离
+                     * @param _enableSSC 是否开通存算分离
+                     * 
+                     */
+                    void SetEnableSSC(const bool& _enableSSC);
+
+                    /**
+                     * 判断参数 EnableSSC 是否已赋值
+                     * @return EnableSSC 是否已赋值
+                     * 
+                     */
+                    bool EnableSSCHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +279,18 @@ namespace TencentCloud
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
+
+                    /**
+                     * 存算分离集群数
+                     */
+                    int64_t m_sSCCount;
+                    bool m_sSCCountHasBeenSet;
+
+                    /**
+                     * 是否开通存算分离
+                     */
+                    bool m_enableSSC;
+                    bool m_enableSSCHasBeenSet;
 
                 };
             }

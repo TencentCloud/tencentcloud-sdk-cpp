@@ -1158,6 +1158,49 @@ IotexplorerClient::CreateTRTCSignaturesWithRoomIdOutcomeCallable IotexplorerClie
     return task->get_future();
 }
 
+IotexplorerClient::CreateTWeSeeRecognitionTaskOutcome IotexplorerClient::CreateTWeSeeRecognitionTask(const CreateTWeSeeRecognitionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTWeSeeRecognitionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTWeSeeRecognitionTaskResponse rsp = CreateTWeSeeRecognitionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTWeSeeRecognitionTaskOutcome(rsp);
+        else
+            return CreateTWeSeeRecognitionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTWeSeeRecognitionTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTWeSeeRecognitionTaskAsync(const CreateTWeSeeRecognitionTaskRequest& request, const CreateTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTWeSeeRecognitionTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateTWeSeeRecognitionTaskOutcomeCallable IotexplorerClient::CreateTWeSeeRecognitionTaskCallable(const CreateTWeSeeRecognitionTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTWeSeeRecognitionTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTWeSeeRecognitionTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateTopicPolicyOutcome IotexplorerClient::CreateTopicPolicy(const CreateTopicPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTopicPolicy");
@@ -5193,6 +5236,49 @@ IotexplorerClient::InvokeExternalSourceAIServiceTaskOutcomeCallable IotexplorerC
         [this, request]()
         {
             return this->InvokeExternalSourceAIServiceTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::InvokeTWeSeeRecognitionTaskOutcome IotexplorerClient::InvokeTWeSeeRecognitionTask(const InvokeTWeSeeRecognitionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "InvokeTWeSeeRecognitionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InvokeTWeSeeRecognitionTaskResponse rsp = InvokeTWeSeeRecognitionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InvokeTWeSeeRecognitionTaskOutcome(rsp);
+        else
+            return InvokeTWeSeeRecognitionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return InvokeTWeSeeRecognitionTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::InvokeTWeSeeRecognitionTaskAsync(const InvokeTWeSeeRecognitionTaskRequest& request, const InvokeTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InvokeTWeSeeRecognitionTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::InvokeTWeSeeRecognitionTaskOutcomeCallable IotexplorerClient::InvokeTWeSeeRecognitionTaskCallable(const InvokeTWeSeeRecognitionTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InvokeTWeSeeRecognitionTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->InvokeTWeSeeRecognitionTask(request);
         }
     );
 

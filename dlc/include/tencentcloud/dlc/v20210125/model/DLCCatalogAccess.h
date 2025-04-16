@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPCID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VPCID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPCID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VPCID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Product 产品类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置产品类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _product 产品类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * VPCID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 产品类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
                      * 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

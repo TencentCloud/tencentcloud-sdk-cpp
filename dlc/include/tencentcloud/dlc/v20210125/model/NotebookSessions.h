@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理用户，默认为root
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyUser 代理用户，默认为root
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyUser() const;
 
                     /**
                      * 设置代理用户，默认为root
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyUser 代理用户，默认为root
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyUser(const std::string& _proxyUser);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SparkAppId Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparkAppId() const;
 
                     /**
                      * 设置Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sparkAppId Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSparkAppId(const std::string& _sparkAppId);
@@ -224,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最新的运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastRunningTime 最新的运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastRunningTime() const;
 
                     /**
                      * 设置最新的运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastRunningTime 最新的运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastRunningTime(const std::string& _lastRunningTime);
@@ -270,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SparkUiUrl spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparkUiUrl() const;
 
                     /**
                      * 设置spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sparkUiUrl spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSparkUiUrl(const std::string& _sparkUiUrl);
@@ -295,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取session类型，group：资源组session independent：独立资源session，不依赖资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionType session类型，group：资源组session independent：独立资源session，不依赖资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionType() const;
 
                     /**
                      * 设置session类型，group：资源组session independent：独立资源session，不依赖资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionType session类型，group：资源组session independent：独立资源session，不依赖资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionType(const std::string& _sessionType);
@@ -320,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataEngineId 引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataEngineId() const;
 
                     /**
                      * 设置引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataEngineId 引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataEngineId(const std::string& _dataEngineId);
@@ -345,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceGroupId 资源组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
                      * 设置资源组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceGroupId 资源组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
@@ -370,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceGroupName 资源组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceGroupName() const;
 
                     /**
                      * 设置资源组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceGroupName 资源组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceGroupName(const std::string& _resourceGroupName);
@@ -409,7 +377,6 @@ namespace TencentCloud
 
                     /**
                      * 代理用户，默认为root
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyUser;
                     bool m_proxyUserHasBeenSet;
@@ -422,7 +389,6 @@ namespace TencentCloud
 
                     /**
                      * Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparkAppId;
                     bool m_sparkAppIdHasBeenSet;
@@ -447,7 +413,6 @@ namespace TencentCloud
 
                     /**
                      * 最新的运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastRunningTime;
                     bool m_lastRunningTimeHasBeenSet;
@@ -460,35 +425,30 @@ namespace TencentCloud
 
                     /**
                      * spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparkUiUrl;
                     bool m_sparkUiUrlHasBeenSet;
 
                     /**
                      * session类型，group：资源组session independent：独立资源session，不依赖资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionType;
                     bool m_sessionTypeHasBeenSet;
 
                     /**
                      * 引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataEngineId;
                     bool m_dataEngineIdHasBeenSet;
 
                     /**
                      * 资源组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
 
                     /**
                      * 资源组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupName;
                     bool m_resourceGroupNameHasBeenSet;

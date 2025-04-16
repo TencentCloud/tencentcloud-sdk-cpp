@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数类型，可以为 enum，string，section; 其中enum表示枚举，类似： utf8,latin1,gbk; string表示返回的参数值是字符串; section表示返回的参数值是一个取值范围，类似：[4-8]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 参数类型，可以为 enum，string，section; 其中enum表示枚举，类似： utf8,latin1,gbk; string表示返回的参数值是字符串; section表示返回的参数值是一个取值范围，类似：[4-8]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置参数类型，可以为 enum，string，section; 其中enum表示枚举，类似： utf8,latin1,gbk; string表示返回的参数值是字符串; section表示返回的参数值是一个取值范围，类似：[4-8]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 参数类型，可以为 enum，string，section; 其中enum表示枚举，类似： utf8,latin1,gbk; string表示返回的参数值是字符串; section表示返回的参数值是一个取值范围，类似：[4-8]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取type 取section的时候，返回的参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Range type 取section的时候，返回的参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Range GetRange() const;
 
                     /**
                      * 设置type 取section的时候，返回的参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _range type 取section的时候，返回的参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRange(const Range& _range);
@@ -151,14 +143,12 @@ namespace TencentCloud
 
                     /**
                      * 参数类型，可以为 enum，string，section; 其中enum表示枚举，类似： utf8,latin1,gbk; string表示返回的参数值是字符串; section表示返回的参数值是一个取值范围，类似：[4-8]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * type 取section的时候，返回的参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Range m_range;
                     bool m_rangeHasBeenSet;

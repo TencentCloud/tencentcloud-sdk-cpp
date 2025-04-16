@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool PlatformTypeHasBeenSet() const;
 
                     /**
-                     * 获取镜像类型，如 APP_OS、PURE_OS、PRIVATE。
-                     * @return BlueprintType 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
+                     * 获取镜像类型，如 APP_OS（应用镜像）, PURE_OS（系统镜像）, DOCKER（容器）, PRIVATE（私有镜像）, SHARED（共享镜像）, GAME_PORTAL（游戏专区镜像）。
+                     * @return BlueprintType 镜像类型，如 APP_OS（应用镜像）, PURE_OS（系统镜像）, DOCKER（容器）, PRIVATE（私有镜像）, SHARED（共享镜像）, GAME_PORTAL（游戏专区镜像）。
                      * 
                      */
                     std::string GetBlueprintType() const;
 
                     /**
-                     * 设置镜像类型，如 APP_OS、PURE_OS、PRIVATE。
-                     * @param _blueprintType 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
+                     * 设置镜像类型，如 APP_OS（应用镜像）, PURE_OS（系统镜像）, DOCKER（容器）, PRIVATE（私有镜像）, SHARED（共享镜像）, GAME_PORTAL（游戏专区镜像）。
+                     * @param _blueprintType 镜像类型，如 APP_OS（应用镜像）, PURE_OS（系统镜像）, DOCKER（容器）, PRIVATE（私有镜像）, SHARED（共享镜像）, GAME_PORTAL（游戏专区镜像）。
                      * 
                      */
                     void SetBlueprintType(const std::string& _blueprintType);
@@ -261,15 +261,15 @@ namespace TencentCloud
                     bool RequiredSystemDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取镜像状态。
-                     * @return BlueprintState 镜像状态。
+                     * 获取镜像状态，镜镜像状态，NORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。
+                     * @return BlueprintState 镜像状态，镜镜像状态，NORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。
                      * 
                      */
                     std::string GetBlueprintState() const;
 
                     /**
-                     * 设置镜像状态。
-                     * @param _blueprintState 镜像状态。
+                     * 设置镜像状态，镜镜像状态，NORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。
+                     * @param _blueprintState 镜像状态，镜镜像状态，NORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。
                      * 
                      */
                     void SetBlueprintState(const std::string& _blueprintState);
@@ -549,7 +549,7 @@ namespace TencentCloud
                     bool m_platformTypeHasBeenSet;
 
                     /**
-                     * 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
+                     * 镜像类型，如 APP_OS（应用镜像）, PURE_OS（系统镜像）, DOCKER（容器）, PRIVATE（私有镜像）, SHARED（共享镜像）, GAME_PORTAL（游戏专区镜像）。
                      */
                     std::string m_blueprintType;
                     bool m_blueprintTypeHasBeenSet;
@@ -567,7 +567,7 @@ namespace TencentCloud
                     bool m_requiredSystemDiskSizeHasBeenSet;
 
                     /**
-                     * 镜像状态。
+                     * 镜像状态，镜镜像状态，NORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。
                      */
                     std::string m_blueprintState;
                     bool m_blueprintStateHasBeenSet;

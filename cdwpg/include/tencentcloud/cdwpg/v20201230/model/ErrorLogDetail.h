@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName 用户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _database 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报错时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorTime 报错时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorTime() const;
 
                     /**
                      * 设置报错时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorTime 报错时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorTime(const std::string& _errorTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报错信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 报错信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置报错信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorMessage 报错信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 用户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
                      * 报错时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorTime;
                     bool m_errorTimeHasBeenSet;
 
                     /**
                      * 报错信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;

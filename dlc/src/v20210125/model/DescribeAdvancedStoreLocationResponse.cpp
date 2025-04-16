@@ -27,7 +27,8 @@ DescribeAdvancedStoreLocationResponse::DescribeAdvancedStoreLocationResponse() :
     m_enableHasBeenSet(false),
     m_storeLocationHasBeenSet(false),
     m_hasLakeFsHasBeenSet(false),
-    m_lakeFsStatusHasBeenSet(false)
+    m_lakeFsStatusHasBeenSet(false),
+    m_bucketTypeHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DescribeAdvancedStoreLocationResponse::Deserialize(const str
         m_lakeFsStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BucketType") && !rsp["BucketType"].IsNull())
+    {
+        if (!rsp["BucketType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BucketType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bucketType = string(rsp["BucketType"].GetString());
+        m_bucketTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string DescribeAdvancedStoreLocationResponse::ToJsonString() const
         string key = "LakeFsStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lakeFsStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bucketTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bucketType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ string DescribeAdvancedStoreLocationResponse::GetLakeFsStatus() const
 bool DescribeAdvancedStoreLocationResponse::LakeFsStatusHasBeenSet() const
 {
     return m_lakeFsStatusHasBeenSet;
+}
+
+string DescribeAdvancedStoreLocationResponse::GetBucketType() const
+{
+    return m_bucketType;
+}
+
+bool DescribeAdvancedStoreLocationResponse::BucketTypeHasBeenSet() const
+{
+    return m_bucketTypeHasBeenSet;
 }
 
 

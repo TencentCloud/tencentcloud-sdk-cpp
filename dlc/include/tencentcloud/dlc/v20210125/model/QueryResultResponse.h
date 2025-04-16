@@ -88,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextToken 分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNextToken() const;
@@ -124,7 +122,6 @@ namespace TencentCloud
 
                     /**
                      * 分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;

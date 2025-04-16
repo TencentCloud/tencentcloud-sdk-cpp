@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/kms/v20190118/model/ExclusiveHSM.h>
 
 
 namespace TencentCloud
@@ -197,6 +198,20 @@ namespace TencentCloud
                      */
                     bool CmkLimitHasBeenSet() const;
 
+                    /**
+                     * 获取返回独享集群组
+                     * @return ExclusiveHSMList 返回独享集群组
+                     * 
+                     */
+                    std::vector<ExclusiveHSM> GetExclusiveHSMList() const;
+
+                    /**
+                     * 判断参数 ExclusiveHSMList 是否已赋值
+                     * @return ExclusiveHSMList 是否已赋值
+                     * 
+                     */
+                    bool ExclusiveHSMListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +279,12 @@ namespace TencentCloud
                      */
                     uint64_t m_cmkLimit;
                     bool m_cmkLimitHasBeenSet;
+
+                    /**
+                     * 返回独享集群组
+                     */
+                    std::vector<ExclusiveHSM> m_exclusiveHSMList;
+                    bool m_exclusiveHSMListHasBeenSet;
 
                 };
             }

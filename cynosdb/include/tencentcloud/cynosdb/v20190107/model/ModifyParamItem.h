@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool OldValueHasBeenSet() const;
 
+                    /**
+                     * 获取libra组件类型
+                     * @return Component libra组件类型
+                     * 
+                     */
+                    std::string GetComponent() const;
+
+                    /**
+                     * 设置libra组件类型
+                     * @param _component libra组件类型
+                     * 
+                     */
+                    void SetComponent(const std::string& _component);
+
+                    /**
+                     * 判断参数 Component 是否已赋值
+                     * @return Component 是否已赋值
+                     * 
+                     */
+                    bool ComponentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_oldValue;
                     bool m_oldValueHasBeenSet;
+
+                    /**
+                     * libra组件类型
+                     */
+                    std::string m_component;
+                    bool m_componentHasBeenSet;
 
                 };
             }

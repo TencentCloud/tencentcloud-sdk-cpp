@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecName 机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecName() const;
 
                     /**
                      * 设置机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specName 机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecName(const std::string& _specName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataDisk 磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiskSpecPlus GetDataDisk() const;
 
                     /**
                      * 设置磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataDisk 磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataDisk(const DiskSpecPlus& _dataDisk);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvmCount 机器个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCvmCount() const;
 
                     /**
                      * 设置机器个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cvmCount 机器个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCvmCount(const int64_t& _cvmCount);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 机型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
 
                     /**
                      * 磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiskSpecPlus m_dataDisk;
                     bool m_dataDiskHasBeenSet;
 
                     /**
                      * 机器个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cvmCount;
                     bool m_cvmCountHasBeenSet;

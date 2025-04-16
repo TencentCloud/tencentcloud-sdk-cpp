@@ -75,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务异常原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 任务异常原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
@@ -91,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取临时SecretId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretId 临时SecretId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretId() const;
@@ -107,9 +103,7 @@ namespace TencentCloud
 
                     /**
                      * 获取临时SecretKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretKey 临时SecretKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretKey() const;
@@ -123,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取临时Token
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Token 临时Token
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetToken() const;
@@ -154,28 +146,24 @@ namespace TencentCloud
 
                     /**
                      * 任务异常原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
                      * 临时SecretId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretId;
                     bool m_secretIdHasBeenSet;
 
                     /**
                      * 临时SecretKey
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;
 
                     /**
                      * 临时Token
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;

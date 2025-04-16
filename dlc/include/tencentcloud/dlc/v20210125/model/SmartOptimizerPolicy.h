@@ -53,18 +53,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否继承
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Inherit 是否继承
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInherit() const;
 
                     /**
                      * 设置是否继承
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inherit 是否继承
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInherit(const std::string& _inherit);
@@ -205,7 +201,6 @@ namespace TencentCloud
 
                     /**
                      * 是否继承
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inherit;
                     bool m_inheritHasBeenSet;

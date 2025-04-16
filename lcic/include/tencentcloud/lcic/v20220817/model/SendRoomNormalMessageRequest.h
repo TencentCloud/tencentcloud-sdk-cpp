@@ -169,6 +169,31 @@ namespace TencentCloud
                      */
                     bool NickNameHasBeenSet() const;
 
+                    /**
+                     * 获取消息的优先级，默认优先级 Normal。
+可以指定3种优先级，从高到低依次为 High、Normal 和 Low，区分大小写。
+                     * @return Priority 消息的优先级，默认优先级 Normal。
+可以指定3种优先级，从高到低依次为 High、Normal 和 Low，区分大小写。
+                     * 
+                     */
+                    std::string GetPriority() const;
+
+                    /**
+                     * 设置消息的优先级，默认优先级 Normal。
+可以指定3种优先级，从高到低依次为 High、Normal 和 Low，区分大小写。
+                     * @param _priority 消息的优先级，默认优先级 Normal。
+可以指定3种优先级，从高到低依次为 High、Normal 和 Low，区分大小写。
+                     * 
+                     */
+                    void SetPriority(const std::string& _priority);
+
+                    /**
+                     * 判断参数 Priority 是否已赋值
+                     * @return Priority 是否已赋值
+                     * 
+                     */
+                    bool PriorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +231,13 @@ namespace TencentCloud
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
+
+                    /**
+                     * 消息的优先级，默认优先级 Normal。
+可以指定3种优先级，从高到低依次为 High、Normal 和 Low，区分大小写。
+                     */
+                    std::string m_priority;
+                    bool m_priorityHasBeenSet;
 
                 };
             }

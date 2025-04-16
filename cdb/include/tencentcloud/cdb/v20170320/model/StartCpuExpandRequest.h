@@ -65,19 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取扩容类型。可选值：auto：代表进行自动扩容
-manual：代表进行手动扩容
-                     * @return Type 扩容类型。可选值：auto：代表进行自动扩容
-manual：代表进行手动扩容
+                     * 获取扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期
+                     * @return Type 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置扩容类型。可选值：auto：代表进行自动扩容
-manual：代表进行手动扩容
-                     * @param _type 扩容类型。可选值：auto：代表进行自动扩容
-manual：代表进行手动扩容
+                     * 设置扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期
+                     * @param _type 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -90,15 +86,19 @@ manual：代表进行手动扩容
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取手动扩容时，扩容的CPU核心数。Type 为 manual 时必传。
-                     * @return ExpandCpu 手动扩容时，扩容的CPU核心数。Type 为 manual 时必传。
+                     * 获取手动扩容时，扩容的 CPU 核心数。
+说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
+                     * @return ExpandCpu 手动扩容时，扩容的 CPU 核心数。
+说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
                      * 
                      */
                     int64_t GetExpandCpu() const;
 
                     /**
-                     * 设置手动扩容时，扩容的CPU核心数。Type 为 manual 时必传。
-                     * @param _expandCpu 手动扩容时，扩容的CPU核心数。Type 为 manual 时必传。
+                     * 设置手动扩容时，扩容的 CPU 核心数。
+说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
+                     * @param _expandCpu 手动扩容时，扩容的 CPU 核心数。
+说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
                      * 
                      */
                     void SetExpandCpu(const int64_t& _expandCpu);
@@ -140,14 +140,14 @@ manual：代表进行手动扩容
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 扩容类型。可选值：auto：代表进行自动扩容
-manual：代表进行手动扩容
+                     * 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 手动扩容时，扩容的CPU核心数。Type 为 manual 时必传。
+                     * 手动扩容时，扩容的 CPU 核心数。
+说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
                      */
                     int64_t m_expandCpu;
                     bool m_expandCpuHasBeenSet;

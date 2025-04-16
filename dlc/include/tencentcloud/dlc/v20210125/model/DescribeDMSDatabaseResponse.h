@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaName schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaName() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取存储地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 存储地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocation() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Asset 数据对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Asset GetAsset() const;
@@ -112,28 +104,24 @@ namespace TencentCloud
 
                     /**
                      * 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
                      * 存储地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
 
                     /**
                      * 数据对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Asset m_asset;
                     bool m_assetHasBeenSet;

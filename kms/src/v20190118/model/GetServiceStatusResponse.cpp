@@ -34,7 +34,8 @@ GetServiceStatusResponse::GetServiceStatusResponse() :
     m_exclusiveHSMEnabledHasBeenSet(false),
     m_subscriptionInfoHasBeenSet(false),
     m_cmkUserCountHasBeenSet(false),
-    m_cmkLimitHasBeenSet(false)
+    m_cmkLimitHasBeenSet(false),
+    m_exclusiveHSMListHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,26 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_cmkLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExclusiveHSMList") && !rsp["ExclusiveHSMList"].IsNull())
+    {
+        if (!rsp["ExclusiveHSMList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExclusiveHSMList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExclusiveHSMList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ExclusiveHSM item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_exclusiveHSMList.push_back(item);
+        }
+        m_exclusiveHSMListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +299,21 @@ string GetServiceStatusResponse::ToJsonString() const
         string key = "CmkLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cmkLimit, allocator);
+    }
+
+    if (m_exclusiveHSMListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExclusiveHSMList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_exclusiveHSMList.begin(); itr != m_exclusiveHSMList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -400,6 +436,16 @@ uint64_t GetServiceStatusResponse::GetCmkLimit() const
 bool GetServiceStatusResponse::CmkLimitHasBeenSet() const
 {
     return m_cmkLimitHasBeenSet;
+}
+
+vector<ExclusiveHSM> GetServiceStatusResponse::GetExclusiveHSMList() const
+{
+    return m_exclusiveHSMList;
+}
+
+bool GetServiceStatusResponse::ExclusiveHSMListHasBeenSet() const
+{
+    return m_exclusiveHSMListHasBeenSet;
 }
 
 

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取id信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id id信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置id信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id id信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户主UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户主UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户主UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户主UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开通时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 开通时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置开通时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 开通时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * id信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 用户主UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 开通时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

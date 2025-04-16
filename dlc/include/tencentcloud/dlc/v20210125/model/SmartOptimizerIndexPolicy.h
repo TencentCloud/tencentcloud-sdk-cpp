@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开启索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexEnable 开启索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexEnable() const;
 
                     /**
                      * 设置开启索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indexEnable 开启索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndexEnable(const std::string& _indexEnable);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 开启索引
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexEnable;
                     bool m_indexEnableHasBeenSet;

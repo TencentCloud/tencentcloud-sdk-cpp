@@ -23,7 +23,8 @@ using namespace std;
 ModifyParamItem::ModifyParamItem() :
     m_paramNameHasBeenSet(false),
     m_currentValueHasBeenSet(false),
-    m_oldValueHasBeenSet(false)
+    m_oldValueHasBeenSet(false),
+    m_componentHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ModifyParamItem::Deserialize(const rapidjson::Value &value)
         m_oldValueHasBeenSet = true;
     }
 
+    if (value.HasMember("Component") && !value["Component"].IsNull())
+    {
+        if (!value["Component"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyParamItem.Component` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_component = string(value["Component"].GetString());
+        m_componentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ModifyParamItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "OldValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_oldValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_componentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Component";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_component.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ModifyParamItem::SetOldValue(const string& _oldValue)
 bool ModifyParamItem::OldValueHasBeenSet() const
 {
     return m_oldValueHasBeenSet;
+}
+
+string ModifyParamItem::GetComponent() const
+{
+    return m_component;
+}
+
+void ModifyParamItem::SetComponent(const string& _component)
+{
+    m_component = _component;
+    m_componentHasBeenSet = true;
+}
+
+bool ModifyParamItem::ComponentHasBeenSet() const
+{
+    return m_componentHasBeenSet;
 }
 

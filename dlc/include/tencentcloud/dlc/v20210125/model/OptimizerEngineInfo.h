@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HouseName 引擎资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHouseName() const;
 
                     /**
                      * 设置引擎资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _houseName 引擎资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHouseName(const std::string& _houseName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HouseId 引擎资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHouseId() const;
 
                     /**
                      * 设置引擎资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _houseId 引擎资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHouseId(const std::string& _houseId);
@@ -125,14 +117,12 @@ namespace TencentCloud
 
                     /**
                      * 引擎资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_houseName;
                     bool m_houseNameHasBeenSet;
 
                     /**
                      * 引擎资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_houseId;
                     bool m_houseIdHasBeenSet;

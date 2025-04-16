@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamName 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paramName 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParamName(const std::string& _paramName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultValue 默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
                      * 设置默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultValue 默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否需要重启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NeedRestart 是否需要重启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetNeedRestart() const;
 
                     /**
                      * 设置是否需要重启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _needRestart 是否需要重启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNeedRestart(const bool& _needRestart);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前运行值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunningValue 当前运行值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRunningValue() const;
 
                     /**
                      * 设置当前运行值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runningValue 当前运行值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunningValue(const std::string& _runningValue);
@@ -247,28 +231,24 @@ namespace TencentCloud
 
                     /**
                      * 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paramName;
                     bool m_paramNameHasBeenSet;
 
                     /**
                      * 默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultValue;
                     bool m_defaultValueHasBeenSet;
 
                     /**
                      * 是否需要重启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_needRestart;
                     bool m_needRestartHasBeenSet;
 
                     /**
                      * 当前运行值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runningValue;
                     bool m_runningValueHasBeenSet;

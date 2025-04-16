@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DriverSize 指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDriverSize() const;
 
                     /**
                      * 设置指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _driverSize 指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDriverSize(const std::string& _driverSize);
@@ -262,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorSize 指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutorSize() const;
 
                     /**
                      * 设置指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executorSize 指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutorSize(const std::string& _executorSize);
@@ -287,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定的Executor数量，默认为1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorNumbers 指定的Executor数量，默认为1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetExecutorNumbers() const;
 
                     /**
                      * 设置指定的Executor数量，默认为1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executorNumbers 指定的Executor数量，默认为1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutorNumbers(const uint64_t& _executorNumbers);
@@ -312,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理用户，默认为root
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyUser 代理用户，默认为root
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyUser() const;
 
                     /**
                      * 设置代理用户，默认为root
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyUser 代理用户，默认为root
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyUser(const std::string& _proxyUser);
@@ -337,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定的Session超时时间，单位秒，默认3600秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeoutInSecond 指定的Session超时时间，单位秒，默认3600秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeoutInSecond() const;
 
                     /**
                      * 设置指定的Session超时时间，单位秒，默认3600秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeoutInSecond 指定的Session超时时间，单位秒，默认3600秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeoutInSecond(const int64_t& _timeoutInSecond);
@@ -362,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SparkAppId Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparkAppId() const;
 
                     /**
                      * 设置Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sparkAppId Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSparkAppId(const std::string& _sparkAppId);
@@ -475,18 +451,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SparkUiUrl Spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparkUiUrl() const;
 
                     /**
                      * 设置Spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sparkUiUrl Spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSparkUiUrl(const std::string& _sparkUiUrl);
@@ -500,18 +472,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于ExecutorNumbers
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorMaxNumbers 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于ExecutorNumbers
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetExecutorMaxNumbers() const;
 
                     /**
                      * 设置指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于ExecutorNumbers
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executorMaxNumbers 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于ExecutorNumbers
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutorMaxNumbers(const uint64_t& _executorMaxNumbers);
@@ -525,18 +493,14 @@ namespace TencentCloud
 
                     /**
                      * 获取session类型，group：资源组下session independent：独立资源session， 不依赖资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionType session类型，group：资源组下session independent：独立资源session， 不依赖资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionType() const;
 
                     /**
                      * 设置session类型，group：资源组下session independent：独立资源session， 不依赖资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionType session类型，group：资源组下session independent：独立资源session， 不依赖资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionType(const std::string& _sessionType);
@@ -550,18 +514,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataEngineId 引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataEngineId() const;
 
                     /**
                      * 设置引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataEngineId 引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataEngineId(const std::string& _dataEngineId);
@@ -575,18 +535,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceGroupId 资源组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
                      * 设置资源组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceGroupId 资源组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
@@ -600,18 +556,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceGroupName 资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceGroupName() const;
 
                     /**
                      * 设置资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceGroupName 资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceGroupName(const std::string& _resourceGroupName);
@@ -625,18 +577,14 @@ namespace TencentCloud
 
                     /**
                      * 获取session，pod大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodSize session，pod大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPodSize() const;
 
                     /**
                      * 设置session，pod大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podSize session，pod大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodSize(const int64_t& _podSize);
@@ -650,18 +598,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodNumbers pod数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPodNumbers() const;
 
                     /**
                      * 设置pod数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podNumbers pod数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodNumbers(const int64_t& _podNumbers);
@@ -730,42 +674,36 @@ namespace TencentCloud
 
                     /**
                      * 指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_driverSize;
                     bool m_driverSizeHasBeenSet;
 
                     /**
                      * 指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executorSize;
                     bool m_executorSizeHasBeenSet;
 
                     /**
                      * 指定的Executor数量，默认为1
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_executorNumbers;
                     bool m_executorNumbersHasBeenSet;
 
                     /**
                      * 代理用户，默认为root
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyUser;
                     bool m_proxyUserHasBeenSet;
 
                     /**
                      * 指定的Session超时时间，单位秒，默认3600秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeoutInSecond;
                     bool m_timeoutInSecondHasBeenSet;
 
                     /**
                      * Spark任务返回的AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparkAppId;
                     bool m_sparkAppIdHasBeenSet;
@@ -797,56 +735,48 @@ namespace TencentCloud
 
                     /**
                      * Spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparkUiUrl;
                     bool m_sparkUiUrlHasBeenSet;
 
                     /**
                      * 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于ExecutorNumbers
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_executorMaxNumbers;
                     bool m_executorMaxNumbersHasBeenSet;
 
                     /**
                      * session类型，group：资源组下session independent：独立资源session， 不依赖资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionType;
                     bool m_sessionTypeHasBeenSet;
 
                     /**
                      * 引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataEngineId;
                     bool m_dataEngineIdHasBeenSet;
 
                     /**
                      * 资源组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
 
                     /**
                      * 资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupName;
                     bool m_resourceGroupNameHasBeenSet;
 
                     /**
                      * session，pod大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_podSize;
                     bool m_podSizeHasBeenSet;
 
                     /**
                      * pod数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_podNumbers;
                     bool m_podNumbersHasBeenSet;

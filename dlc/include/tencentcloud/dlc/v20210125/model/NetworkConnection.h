@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络配置id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 网络配置id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置网络配置id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 网络配置id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络配置唯一标志符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociateId 网络配置唯一标志符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssociateId() const;
 
                     /**
                      * 设置网络配置唯一标志符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _associateId 网络配置唯一标志符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssociateId(const std::string& _associateId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计算引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HouseId 计算引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHouseId() const;
 
                     /**
                      * 设置计算引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _houseId 计算引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHouseId(const std::string& _houseId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源id(已废弃)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionId 数据源id(已废弃)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatasourceConnectionId() const;
 
                     /**
                      * 设置数据源id(已废弃)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _datasourceConnectionId 数据源id(已废弃)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatasourceConnectionId(const std::string& _datasourceConnectionId);
@@ -173,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -248,18 +228,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计算引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HouseName 计算引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHouseName() const;
 
                     /**
                      * 设置计算引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _houseName 计算引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHouseName(const std::string& _houseName);
@@ -273,18 +249,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionName 网络配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
                      * 设置网络配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _datasourceConnectionName 网络配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
@@ -500,28 +472,24 @@ namespace TencentCloud
 
                     /**
                      * 网络配置id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 网络配置唯一标志符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_associateId;
                     bool m_associateIdHasBeenSet;
 
                     /**
                      * 计算引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_houseId;
                     bool m_houseIdHasBeenSet;
 
                     /**
                      * 数据源id(已废弃)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_datasourceConnectionId;
                     bool m_datasourceConnectionIdHasBeenSet;
@@ -535,7 +503,6 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -556,14 +523,12 @@ namespace TencentCloud
 
                     /**
                      * 计算引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_houseName;
                     bool m_houseNameHasBeenSet;
 
                     /**
                      * 网络配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_datasourceConnectionName;
                     bool m_datasourceConnectionNameHasBeenSet;

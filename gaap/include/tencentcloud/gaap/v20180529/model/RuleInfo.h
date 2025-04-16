@@ -289,18 +289,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardHost 通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetForwardHost() const;
 
                     /**
                      * 设置通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forwardHost 通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetForwardHost(const std::string& _forwardHost);
@@ -315,9 +311,7 @@ namespace TencentCloud
                     /**
                      * 获取服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerNameIndicationSwitch 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -326,9 +320,7 @@ namespace TencentCloud
                     /**
                      * 设置服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverNameIndicationSwitch 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -344,9 +336,7 @@ namespace TencentCloud
                     /**
                      * 获取服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerNameIndication 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -355,9 +345,7 @@ namespace TencentCloud
                     /**
                      * 设置服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverNameIndication 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -467,7 +455,6 @@ namespace TencentCloud
 
                     /**
                      * 通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_forwardHost;
                     bool m_forwardHostHasBeenSet;
@@ -475,14 +462,12 @@ namespace TencentCloud
                     /**
                      * 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverNameIndicationSwitch;
                     bool m_serverNameIndicationSwitchHasBeenSet;
 
                     /**
                      * 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverNameIndication;

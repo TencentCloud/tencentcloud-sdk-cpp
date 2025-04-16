@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群状态，例如：Serving
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceState 集群状态，例如：Serving
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceState() const;
 
                     /**
                      * 设置集群状态，例如：Serving
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceState 集群状态，例如：Serving
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceState(const std::string& _instanceState);
@@ -300,7 +296,6 @@ namespace TencentCloud
 
                     /**
                      * 集群状态，例如：Serving
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceState;
                     bool m_instanceStateHasBeenSet;

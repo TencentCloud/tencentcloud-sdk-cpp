@@ -29,7 +29,9 @@ ModifyInstanceData::ModifyInstanceData() :
     m_oldStorageLimitHasBeenSet(false),
     m_oldDeviceTypeHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
-    m_upgradeTypeHasBeenSet(false)
+    m_upgradeTypeHasBeenSet(false),
+    m_libraNodeCountHasBeenSet(false),
+    m_oldLibraNodeCountHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome ModifyInstanceData::Deserialize(const rapidjson::Value &valu
         m_upgradeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("LibraNodeCount") && !value["LibraNodeCount"].IsNull())
+    {
+        if (!value["LibraNodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyInstanceData.LibraNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_libraNodeCount = value["LibraNodeCount"].GetInt64();
+        m_libraNodeCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("OldLibraNodeCount") && !value["OldLibraNodeCount"].IsNull())
+    {
+        if (!value["OldLibraNodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyInstanceData.OldLibraNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldLibraNodeCount = value["OldLibraNodeCount"].GetInt64();
+        m_oldLibraNodeCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void ModifyInstanceData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "UpgradeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_upgradeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_libraNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LibraNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_libraNodeCount, allocator);
+    }
+
+    if (m_oldLibraNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldLibraNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_oldLibraNodeCount, allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void ModifyInstanceData::SetUpgradeType(const string& _upgradeType)
 bool ModifyInstanceData::UpgradeTypeHasBeenSet() const
 {
     return m_upgradeTypeHasBeenSet;
+}
+
+int64_t ModifyInstanceData::GetLibraNodeCount() const
+{
+    return m_libraNodeCount;
+}
+
+void ModifyInstanceData::SetLibraNodeCount(const int64_t& _libraNodeCount)
+{
+    m_libraNodeCount = _libraNodeCount;
+    m_libraNodeCountHasBeenSet = true;
+}
+
+bool ModifyInstanceData::LibraNodeCountHasBeenSet() const
+{
+    return m_libraNodeCountHasBeenSet;
+}
+
+int64_t ModifyInstanceData::GetOldLibraNodeCount() const
+{
+    return m_oldLibraNodeCount;
+}
+
+void ModifyInstanceData::SetOldLibraNodeCount(const int64_t& _oldLibraNodeCount)
+{
+    m_oldLibraNodeCount = _oldLibraNodeCount;
+    m_oldLibraNodeCountHasBeenSet = true;
+}
+
+bool ModifyInstanceData::OldLibraNodeCountHasBeenSet() const
+{
+    return m_oldLibraNodeCountHasBeenSet;
 }
 

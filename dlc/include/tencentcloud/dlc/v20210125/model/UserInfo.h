@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户描述信息，方便区分不同用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDescription 用户描述信息，方便区分不同用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserDescription() const;
 
                     /**
                      * 设置用户描述信息，方便区分不同用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userDescription 用户描述信息，方便区分不同用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserDescription(const std::string& _userDescription);
@@ -188,18 +184,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsOwner 是否是主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsOwner() const;
 
                     /**
                      * 设置是否是主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isOwner 是否是主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsOwner(const bool& _isOwner);
@@ -213,18 +205,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户类型。ADMIN：管理员 COMMON：普通用户。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserType 用户类型。ADMIN：管理员 COMMON：普通用户。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
                      * 设置用户类型。ADMIN：管理员 COMMON：普通用户。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userType 用户类型。ADMIN：管理员 COMMON：普通用户。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserType(const std::string& _userType);
@@ -238,18 +226,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAlias 用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userAlias 用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
@@ -261,6 +245,27 @@ namespace TencentCloud
                      */
                     bool UserAliasHasBeenSet() const;
 
+                    /**
+                     * 获取账号类型
+                     * @return AccountType 账号类型
+                     * 
+                     */
+                    std::string GetAccountType() const;
+
+                    /**
+                     * 设置账号类型
+                     * @param _accountType 账号类型
+                     * 
+                     */
+                    void SetAccountType(const std::string& _accountType);
+
+                    /**
+                     * 判断参数 AccountType 是否已赋值
+                     * @return AccountType 是否已赋值
+                     * 
+                     */
+                    bool AccountTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,7 +276,6 @@ namespace TencentCloud
 
                     /**
                      * 用户描述信息，方便区分不同用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userDescription;
                     bool m_userDescriptionHasBeenSet;
@@ -304,24 +308,27 @@ namespace TencentCloud
 
                     /**
                      * 是否是主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isOwner;
                     bool m_isOwnerHasBeenSet;
 
                     /**
                      * 用户类型。ADMIN：管理员 COMMON：普通用户。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
 
                     /**
                      * 用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userAlias;
                     bool m_userAliasHasBeenSet;
+
+                    /**
+                     * 账号类型
+                     */
+                    std::string m_accountType;
+                    bool m_accountTypeHasBeenSet;
 
                 };
             }

@@ -53,7 +53,8 @@ CreateRoomRequest::CreateRoomRequest() :
     m_recordSceneHasBeenSet(false),
     m_recordLangHasBeenSet(false),
     m_recordStreamHasBeenSet(false),
-    m_whiteBoardSnapshotModeHasBeenSet(false)
+    m_whiteBoardSnapshotModeHasBeenSet(false),
+    m_subtitlesTranscriptionHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,14 @@ string CreateRoomRequest::ToJsonString() const
         string key = "WhiteBoardSnapshotMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_whiteBoardSnapshotMode, allocator);
+    }
+
+    if (m_subtitlesTranscriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitlesTranscription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subtitlesTranscription, allocator);
     }
 
 
@@ -819,6 +828,22 @@ void CreateRoomRequest::SetWhiteBoardSnapshotMode(const uint64_t& _whiteBoardSna
 bool CreateRoomRequest::WhiteBoardSnapshotModeHasBeenSet() const
 {
     return m_whiteBoardSnapshotModeHasBeenSet;
+}
+
+uint64_t CreateRoomRequest::GetSubtitlesTranscription() const
+{
+    return m_subtitlesTranscription;
+}
+
+void CreateRoomRequest::SetSubtitlesTranscription(const uint64_t& _subtitlesTranscription)
+{
+    m_subtitlesTranscription = _subtitlesTranscription;
+    m_subtitlesTranscriptionHasBeenSet = true;
+}
+
+bool CreateRoomRequest::SubtitlesTranscriptionHasBeenSet() const
+{
+    return m_subtitlesTranscriptionHasBeenSet;
 }
 
 

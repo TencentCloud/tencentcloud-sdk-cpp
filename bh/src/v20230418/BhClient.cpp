@@ -3093,6 +3093,49 @@ BhClient::SearchSessionCommandOutcomeCallable BhClient::SearchSessionCommandCall
     return task->get_future();
 }
 
+BhClient::SearchSubtaskResultByIdOutcome BhClient::SearchSubtaskResultById(const SearchSubtaskResultByIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchSubtaskResultById");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchSubtaskResultByIdResponse rsp = SearchSubtaskResultByIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchSubtaskResultByIdOutcome(rsp);
+        else
+            return SearchSubtaskResultByIdOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchSubtaskResultByIdOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::SearchSubtaskResultByIdAsync(const SearchSubtaskResultByIdRequest& request, const SearchSubtaskResultByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchSubtaskResultById(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::SearchSubtaskResultByIdOutcomeCallable BhClient::SearchSubtaskResultByIdCallable(const SearchSubtaskResultByIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchSubtaskResultByIdOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchSubtaskResultById(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::SearchTaskResultOutcome BhClient::SearchTaskResult(const SearchTaskResultRequest &request)
 {
     auto outcome = MakeRequest(request, "SearchTaskResult");

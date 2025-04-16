@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库描述信息，长度 0~256。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 数据库描述信息，长度 0~256。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置数据库描述信息，长度 0~256。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _comment 数据库描述信息，长度 0~256。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -171,18 +167,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cos存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location cos存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置cos存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location cos存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const std::string& _location);
@@ -196,18 +188,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建库用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAlias 建库用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置建库用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userAlias 建库用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
@@ -221,18 +209,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建库用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserSubUin 建库用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserSubUin() const;
 
                     /**
                      * 设置建库用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userSubUin 建库用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserSubUin(const std::string& _userSubUin);
@@ -271,18 +255,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库ID（无效字段）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseId 数据库ID（无效字段）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabaseId() const;
 
                     /**
                      * 设置数据库ID（无效字段）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databaseId 数据库ID（无效字段）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabaseId(const std::string& _databaseId);
@@ -304,7 +284,6 @@ namespace TencentCloud
 
                     /**
                      * 数据库描述信息，长度 0~256。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
@@ -332,21 +311,18 @@ namespace TencentCloud
 
                     /**
                      * cos存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
 
                     /**
                      * 建库用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userAlias;
                     bool m_userAliasHasBeenSet;
 
                     /**
                      * 建库用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userSubUin;
                     bool m_userSubUinHasBeenSet;
@@ -360,7 +336,6 @@ namespace TencentCloud
 
                     /**
                      * 数据库ID（无效字段）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseId;
                     bool m_databaseIdHasBeenSet;

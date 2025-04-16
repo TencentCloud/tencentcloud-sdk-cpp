@@ -131,10 +131,12 @@ namespace TencentCloud
 1 标清
 2 高清
 3 全高清
+注意：连麦人数（MaxMicNumber）>6时，仅可使用标清
                      * @return Resolution 头像区域，摄像头视频画面的分辨率。可以有如下取值：
 1 标清
 2 高清
 3 全高清
+注意：连麦人数（MaxMicNumber）>6时，仅可使用标清
                      * 
                      */
                     uint64_t GetResolution() const;
@@ -144,10 +146,12 @@ namespace TencentCloud
 1 标清
 2 高清
 3 全高清
+注意：连麦人数（MaxMicNumber）>6时，仅可使用标清
                      * @param _resolution 头像区域，摄像头视频画面的分辨率。可以有如下取值：
 1 标清
 2 高清
 3 全高清
+注意：连麦人数（MaxMicNumber）>6时，仅可使用标清
                      * 
                      */
                     void SetResolution(const uint64_t& _resolution);
@@ -749,6 +753,27 @@ namespace TencentCloud
                      */
                     bool WhiteBoardSnapshotModeHasBeenSet() const;
 
+                    /**
+                     * 获取字幕转写功能开关：0关闭，1开启，默认关闭
+                     * @return SubtitlesTranscription 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 
+                     */
+                    uint64_t GetSubtitlesTranscription() const;
+
+                    /**
+                     * 设置字幕转写功能开关：0关闭，1开启，默认关闭
+                     * @param _subtitlesTranscription 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 
+                     */
+                    void SetSubtitlesTranscription(const uint64_t& _subtitlesTranscription);
+
+                    /**
+                     * 判断参数 SubtitlesTranscription 是否已赋值
+                     * @return SubtitlesTranscription 是否已赋值
+                     * 
+                     */
+                    bool SubtitlesTranscriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -780,6 +805,7 @@ namespace TencentCloud
 1 标清
 2 高清
 3 全高清
+注意：连麦人数（MaxMicNumber）>6时，仅可使用标清
                      */
                     uint64_t m_resolution;
                     bool m_resolutionHasBeenSet;
@@ -950,6 +976,12 @@ namespace TencentCloud
                      */
                     uint64_t m_whiteBoardSnapshotMode;
                     bool m_whiteBoardSnapshotModeHasBeenSet;
+
+                    /**
+                     * 字幕转写功能开关：0关闭，1开启，默认关闭
+                     */
+                    uint64_t m_subtitlesTranscription;
+                    bool m_subtitlesTranscriptionHasBeenSet;
 
                 };
             }

@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端口范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestPortRange 目标端口范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDestPortRange() const;
 
                     /**
                      * 设置目标端口范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destPortRange 目标端口范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestPortRange(const std::string& _destPortRange);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取要匹配的协议类型（TCP/UDP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 要匹配的协议类型（TCP/UDP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置要匹配的协议类型（TCP/UDP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 要匹配的协议类型（TCP/UDP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全策略ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyId 安全策略ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置安全策略ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyId 安全策略ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyId(const std::string& _policyId);
@@ -227,7 +215,6 @@ namespace TencentCloud
 
                     /**
                      * 目标端口范围
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_destPortRange;
                     bool m_destPortRangeHasBeenSet;
@@ -240,14 +227,12 @@ namespace TencentCloud
 
                     /**
                      * 要匹配的协议类型（TCP/UDP）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
                      * 安全策略ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;

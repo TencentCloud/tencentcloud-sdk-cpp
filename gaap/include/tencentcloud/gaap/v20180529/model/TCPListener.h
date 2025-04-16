@@ -341,18 +341,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器绑定的源站信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealServerSet 监听器绑定的源站信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BindRealServer> GetRealServerSet() const;
 
                     /**
                      * 设置监听器绑定的源站信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realServerSet 监听器绑定的源站信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealServerSet(const std::vector<BindRealServer>& _realServerSet);
@@ -387,18 +383,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器获取客户端 IP 的方式，0表示TOA, 1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIPMethod 监听器获取客户端 IP 的方式，0表示TOA, 1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetClientIPMethod() const;
 
                     /**
                      * 设置监听器获取客户端 IP 的方式，0表示TOA, 1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientIPMethod 监听器获取客户端 IP 的方式，0表示TOA, 1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientIPMethod(const uint64_t& _clientIPMethod);
@@ -412,18 +404,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthyThreshold 健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHealthyThreshold() const;
 
                     /**
                      * 设置健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthyThreshold 健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthyThreshold(const uint64_t& _healthyThreshold);
@@ -437,18 +425,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnhealthyThreshold 不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUnhealthyThreshold() const;
 
                     /**
                      * 设置不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unhealthyThreshold 不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnhealthyThreshold(const uint64_t& _unhealthyThreshold);
@@ -462,18 +446,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailoverSwitch 源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFailoverSwitch() const;
 
                     /**
                      * 设置源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failoverSwitch 源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailoverSwitch(const uint64_t& _failoverSwitch);
@@ -487,18 +467,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionPersist 是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSessionPersist() const;
 
                     /**
                      * 设置是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionPersist 是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionPersist(const uint64_t& _sessionPersist);
@@ -512,18 +488,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyId 监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyId 监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyId(const std::string& _proxyId);
@@ -646,7 +618,6 @@ namespace TencentCloud
 
                     /**
                      * 监听器绑定的源站信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BindRealServer> m_realServerSet;
                     bool m_realServerSetHasBeenSet;
@@ -659,42 +630,36 @@ namespace TencentCloud
 
                     /**
                      * 监听器获取客户端 IP 的方式，0表示TOA, 1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_clientIPMethod;
                     bool m_clientIPMethodHasBeenSet;
 
                     /**
                      * 健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_healthyThreshold;
                     bool m_healthyThresholdHasBeenSet;
 
                     /**
                      * 不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_unhealthyThreshold;
                     bool m_unhealthyThresholdHasBeenSet;
 
                     /**
                      * 源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_failoverSwitch;
                     bool m_failoverSwitchHasBeenSet;
 
                     /**
                      * 是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sessionPersist;
                     bool m_sessionPersistHasBeenSet;
 
                     /**
                      * 监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;

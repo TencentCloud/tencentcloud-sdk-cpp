@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户引擎自定义配置项列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataEngineConfigInstanceInfos 用户引擎自定义配置项列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DataEngineConfigInstanceInfo> GetDataEngineConfigInstanceInfos() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 用户引擎自定义配置项列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DataEngineConfigInstanceInfo> m_dataEngineConfigInstanceInfos;
                     bool m_dataEngineConfigInstanceInfosHasBeenSet;

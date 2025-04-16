@@ -61,6 +61,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/DeleteUserGroupMembersResponse.h
   include/tencentcloud/bh/v20230418/model/CmdTemplate.h
   include/tencentcloud/bh/v20230418/model/SearchCommandResult.h
+  include/tencentcloud/bh/v20230418/model/SearchSubtaskResultByIdResponse.h
   include/tencentcloud/bh/v20230418/model/ModifyOAuthSettingRequest.h
   include/tencentcloud/bh/v20230418/model/CreateUserGroupRequest.h
   include/tencentcloud/bh/v20230418/model/SearchFileTypeFilter.h
@@ -81,6 +82,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/DescribeUserGroupsRequest.h
   include/tencentcloud/bh/v20230418/model/CreateAclRequest.h
   include/tencentcloud/bh/v20230418/model/DescribeLoginEventResponse.h
+  include/tencentcloud/bh/v20230418/model/SearchSubtaskResultByIdRequest.h
   include/tencentcloud/bh/v20230418/model/CreateDeviceGroupRequest.h
   include/tencentcloud/bh/v20230418/model/RunChangePwdTaskDetail.h
   include/tencentcloud/bh/v20230418/model/RunOperationTaskResponse.h
@@ -239,6 +241,7 @@ set(bh_src
   src/v20230418/model/DeleteUserGroupMembersResponse.cpp
   src/v20230418/model/CmdTemplate.cpp
   src/v20230418/model/SearchCommandResult.cpp
+  src/v20230418/model/SearchSubtaskResultByIdResponse.cpp
   src/v20230418/model/ModifyOAuthSettingRequest.cpp
   src/v20230418/model/CreateUserGroupRequest.cpp
   src/v20230418/model/SearchFileTypeFilter.cpp
@@ -259,6 +262,7 @@ set(bh_src
   src/v20230418/model/DescribeUserGroupsRequest.cpp
   src/v20230418/model/CreateAclRequest.cpp
   src/v20230418/model/DescribeLoginEventResponse.cpp
+  src/v20230418/model/SearchSubtaskResultByIdRequest.cpp
   src/v20230418/model/CreateDeviceGroupRequest.cpp
   src/v20230418/model/RunChangePwdTaskDetail.cpp
   src/v20230418/model/RunOperationTaskResponse.cpp

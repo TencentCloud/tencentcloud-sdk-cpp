@@ -73,10 +73,12 @@ namespace TencentCloud
 
 - SUCCESS：成功
 - FAILED：失败
+- RUNNING：运行中
                      * @return ApplyState 防火墙模板应用状态。
 
 - SUCCESS：成功
 - FAILED：失败
+- RUNNING：运行中
                      * 
                      */
                     std::string GetApplyState() const;
@@ -86,10 +88,12 @@ namespace TencentCloud
 
 - SUCCESS：成功
 - FAILED：失败
+- RUNNING：运行中
                      * @param _applyState 防火墙模板应用状态。
 
 - SUCCESS：成功
 - FAILED：失败
+- RUNNING：运行中
                      * 
                      */
                     void SetApplyState(const std::string& _applyState);
@@ -135,6 +139,7 @@ namespace TencentCloud
 
 - SUCCESS：成功
 - FAILED：失败
+- RUNNING：运行中
                      */
                     std::string m_applyState;
                     bool m_applyStateHasBeenSet;

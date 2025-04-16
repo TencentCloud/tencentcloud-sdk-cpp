@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取App唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SparkAppId App唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparkAppId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * App唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparkAppId;
                     bool m_sparkAppIdHasBeenSet;

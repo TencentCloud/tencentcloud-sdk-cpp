@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志步骤：BEG/CS/DS/DSS/DSF/FINF/RTO/CANCEL/CT/DT/DTS/DTF/FINT/EXCE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Step 日志步骤：BEG/CS/DS/DSS/DSF/FINF/RTO/CANCEL/CT/DT/DTS/DTF/FINT/EXCE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStep() const;
 
                     /**
                      * 设置日志步骤：BEG/CS/DS/DSS/DSF/FINF/RTO/CANCEL/CT/DT/DTS/DTF/FINT/EXCE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _step 日志步骤：BEG/CS/DS/DSS/DSF/FINF/RTO/CANCEL/CT/DT/DTS/DTF/FINT/EXCE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStep(const std::string& _step);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _time 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 日志提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置日志提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 日志提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -151,21 +139,18 @@ namespace TencentCloud
 
                     /**
                      * 日志步骤：BEG/CS/DS/DSS/DSF/FINF/RTO/CANCEL/CT/DT/DTS/DTF/FINT/EXCE
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_step;
                     bool m_stepHasBeenSet;
 
                     /**
                      * 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
                      * 日志提示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

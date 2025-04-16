@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
                      * 设置策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MASK_SHOW_FIRST_4; MASK_SHOW_LAST_4;MASK_HASH; MASK_DATE_SHOW_YEAR; MASK_NULL; MASK_DEFAULT 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyType MASK_SHOW_FIRST_4; MASK_SHOW_LAST_4;MASK_HASH; MASK_DATE_SHOW_YEAR; MASK_NULL; MASK_DEFAULT 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyType() const;
 
                     /**
                      * 设置MASK_SHOW_FIRST_4; MASK_SHOW_LAST_4;MASK_HASH; MASK_DATE_SHOW_YEAR; MASK_NULL; MASK_DEFAULT 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyType MASK_SHOW_FIRST_4; MASK_SHOW_LAST_4;MASK_HASH; MASK_DATE_SHOW_YEAR; MASK_NULL; MASK_DEFAULT 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyType(const std::string& _strategyType);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyDesc 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyDesc() const;
 
                     /**
                      * 设置策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyDesc 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyDesc(const std::string& _strategyDesc);
@@ -149,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户子账号uin列表，按;拼接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Users 用户子账号uin列表，按;拼接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUsers() const;
 
                     /**
                      * 设置用户子账号uin列表，按;拼接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _users 用户子账号uin列表，按;拼接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsers(const std::string& _users);
@@ -174,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyId 策略Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyId() const;
 
                     /**
                      * 设置策略Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyId 策略Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyId(const std::string& _strategyId);
@@ -201,21 +181,18 @@ namespace TencentCloud
 
                     /**
                      * 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
 
                     /**
                      * MASK_SHOW_FIRST_4; MASK_SHOW_LAST_4;MASK_HASH; MASK_DATE_SHOW_YEAR; MASK_NULL; MASK_DEFAULT 等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyType;
                     bool m_strategyTypeHasBeenSet;
 
                     /**
                      * 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyDesc;
                     bool m_strategyDescHasBeenSet;
@@ -229,14 +206,12 @@ namespace TencentCloud
 
                     /**
                      * 用户子账号uin列表，按;拼接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_users;
                     bool m_usersHasBeenSet;
 
                     /**
                      * 策略Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyId;
                     bool m_strategyIdHasBeenSet;

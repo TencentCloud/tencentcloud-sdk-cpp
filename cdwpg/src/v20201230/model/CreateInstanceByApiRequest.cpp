@@ -31,7 +31,8 @@ CreateInstanceByApiRequest::CreateInstanceByApiRequest() :
     m_adminPasswordHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_productVersionHasBeenSet(false)
+    m_productVersionHasBeenSet(false),
+    m_tagItemsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,21 @@ string CreateInstanceByApiRequest::ToJsonString() const
         string key = "ProductVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_productVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagItems";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagItems.begin(); itr != m_tagItems.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -273,6 +289,22 @@ void CreateInstanceByApiRequest::SetProductVersion(const string& _productVersion
 bool CreateInstanceByApiRequest::ProductVersionHasBeenSet() const
 {
     return m_productVersionHasBeenSet;
+}
+
+vector<Tag> CreateInstanceByApiRequest::GetTagItems() const
+{
+    return m_tagItems;
+}
+
+void CreateInstanceByApiRequest::SetTagItems(const vector<Tag>& _tagItems)
+{
+    m_tagItems = _tagItems;
+    m_tagItemsHasBeenSet = true;
+}
+
+bool CreateInstanceByApiRequest::TagItemsHasBeenSet() const
+{
+    return m_tagItemsHasBeenSet;
 }
 
 

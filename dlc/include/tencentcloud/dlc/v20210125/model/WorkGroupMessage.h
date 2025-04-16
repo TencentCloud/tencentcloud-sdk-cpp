@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkGroupDescription 工作组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkGroupDescription() const;
 
                     /**
                      * 设置工作组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workGroupDescription 工作组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkGroupDescription(const std::string& _workGroupDescription);
@@ -171,7 +167,6 @@ namespace TencentCloud
 
                     /**
                      * 工作组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workGroupDescription;
                     bool m_workGroupDescriptionHasBeenSet;

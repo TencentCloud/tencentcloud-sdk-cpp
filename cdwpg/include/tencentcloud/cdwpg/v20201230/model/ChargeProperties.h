@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1-需要自动续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 1-需要自动续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
                      * 设置1-需要自动续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 1-需要自动续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单时间范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSpan 订单时间范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
                      * 设置订单时间范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeSpan 订单时间范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间单位，一般为h和m
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 时间单位，一般为h和m
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置时间单位，一般为h和m
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeUnit 时间单位，一般为h和m
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费类型0-按量计费，1-包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 计费类型0-按量计费，1-包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
                      * 设置计费类型0-按量计费，1-包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 计费类型0-按量计费，1-包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PREPAID、POSTPAID_BY_HOUR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeType PREPAID、POSTPAID_BY_HOUR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChargeType() const;
 
                     /**
                      * 设置PREPAID、POSTPAID_BY_HOUR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeType PREPAID、POSTPAID_BY_HOUR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 1-需要自动续期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 订单时间范围
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
                      * 时间单位，一般为h和m
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
                      * 计费类型0-按量计费，1-包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * PREPAID、POSTPAID_BY_HOUR
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;

@@ -155,9 +155,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群备份任务开启状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupStatus 集群备份任务开启状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBackupStatus() const;
@@ -221,7 +219,6 @@ namespace TencentCloud
 
                     /**
                      * 集群备份任务开启状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backupStatus;
                     bool m_backupStatusHasBeenSet;

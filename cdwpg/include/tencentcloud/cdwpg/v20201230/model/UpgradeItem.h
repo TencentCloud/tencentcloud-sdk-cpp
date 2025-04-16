@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskName 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原有内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceVersion 原有内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceVersion() const;
 
                     /**
                      * 设置原有内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceVersion 原有内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceVersion(const std::string& _sourceVersion);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetVersion 目标内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetVersion() const;
 
                     /**
                      * 设置目标内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetVersion 目标内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetVersion(const std::string& _targetVersion);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -173,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务完成状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务完成状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置任务完成状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 任务完成状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -225,28 +205,24 @@ namespace TencentCloud
 
                     /**
                      * 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
                      * 原有内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceVersion;
                     bool m_sourceVersionHasBeenSet;
 
                     /**
                      * 目标内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetVersion;
                     bool m_targetVersionHasBeenSet;
 
                     /**
                      * 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -260,7 +236,6 @@ namespace TencentCloud
 
                     /**
                      * 任务完成状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

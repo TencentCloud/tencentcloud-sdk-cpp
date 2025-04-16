@@ -30,7 +30,8 @@ CreateSLInstanceRequest::CreateSLInstanceRequest() :
     m_nodeTypeHasBeenSet(false),
     m_zoneSettingsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_prePaySettingHasBeenSet(false)
+    m_prePaySettingHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,14 @@ string CreateSLInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_prePaySetting.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -254,6 +263,22 @@ void CreateSLInstanceRequest::SetPrePaySetting(const PrePaySetting& _prePaySetti
 bool CreateSLInstanceRequest::PrePaySettingHasBeenSet() const
 {
     return m_prePaySettingHasBeenSet;
+}
+
+string CreateSLInstanceRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateSLInstanceRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

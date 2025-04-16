@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处理文本用的正则表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Regex 处理文本用的正则表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置处理文本用的正则表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regex 处理文本用的正则表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegex(const std::string& _regex);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 处理文本用的正则表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regex;
                     bool m_regexHasBeenSet;

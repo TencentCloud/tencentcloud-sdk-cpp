@@ -24,7 +24,8 @@ SessionResourceTemplate::SessionResourceTemplate() :
     m_driverSizeHasBeenSet(false),
     m_executorSizeHasBeenSet(false),
     m_executorNumsHasBeenSet(false),
-    m_executorMaxNumbersHasBeenSet(false)
+    m_executorMaxNumbersHasBeenSet(false),
+    m_runningTimeParametersHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome SessionResourceTemplate::Deserialize(const rapidjson::Value 
         m_executorMaxNumbersHasBeenSet = true;
     }
 
+    if (value.HasMember("RunningTimeParameters") && !value["RunningTimeParameters"].IsNull())
+    {
+        if (!value["RunningTimeParameters"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionResourceTemplate.RunningTimeParameters` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RunningTimeParameters"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DataEngineConfigPair item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_runningTimeParameters.push_back(item);
+        }
+        m_runningTimeParametersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +131,21 @@ void SessionResourceTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ExecutorMaxNumbers";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_executorMaxNumbers, allocator);
+    }
+
+    if (m_runningTimeParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningTimeParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_runningTimeParameters.begin(); itr != m_runningTimeParameters.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +213,21 @@ void SessionResourceTemplate::SetExecutorMaxNumbers(const uint64_t& _executorMax
 bool SessionResourceTemplate::ExecutorMaxNumbersHasBeenSet() const
 {
     return m_executorMaxNumbersHasBeenSet;
+}
+
+vector<DataEngineConfigPair> SessionResourceTemplate::GetRunningTimeParameters() const
+{
+    return m_runningTimeParameters;
+}
+
+void SessionResourceTemplate::SetRunningTimeParameters(const vector<DataEngineConfigPair>& _runningTimeParameters)
+{
+    m_runningTimeParameters = _runningTimeParameters;
+    m_runningTimeParametersHasBeenSet = true;
+}
+
+bool SessionResourceTemplate::RunningTimeParametersHasBeenSet() const
+{
+    return m_runningTimeParametersHasBeenSet;
 }
 

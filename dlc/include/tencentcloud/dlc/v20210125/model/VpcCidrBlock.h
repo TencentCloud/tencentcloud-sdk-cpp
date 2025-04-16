@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CidrId 子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCidrId() const;
 
                     /**
                      * 设置子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cidrId 子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCidrId(const std::string& _cidrId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CidrAddr 子网网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCidrAddr() const;
 
                     /**
                      * 设置子网网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cidrAddr 子网网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCidrAddr(const std::string& _cidrAddr);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cidrId;
                     bool m_cidrIdHasBeenSet;
 
                     /**
                      * 子网网段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cidrAddr;
                     bool m_cidrAddrHasBeenSet;

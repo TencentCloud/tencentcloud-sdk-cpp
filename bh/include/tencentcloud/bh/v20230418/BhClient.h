@@ -165,6 +165,8 @@
 #include <tencentcloud/bh/v20230418/model/SearchSessionResponse.h>
 #include <tencentcloud/bh/v20230418/model/SearchSessionCommandRequest.h>
 #include <tencentcloud/bh/v20230418/model/SearchSessionCommandResponse.h>
+#include <tencentcloud/bh/v20230418/model/SearchSubtaskResultByIdRequest.h>
+#include <tencentcloud/bh/v20230418/model/SearchSubtaskResultByIdResponse.h>
 #include <tencentcloud/bh/v20230418/model/SearchTaskResultRequest.h>
 #include <tencentcloud/bh/v20230418/model/SearchTaskResultResponse.h>
 
@@ -394,6 +396,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchSessionCommandResponse> SearchSessionCommandOutcome;
                 typedef std::future<SearchSessionCommandOutcome> SearchSessionCommandOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::SearchSessionCommandRequest&, SearchSessionCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchSessionCommandAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchSubtaskResultByIdResponse> SearchSubtaskResultByIdOutcome;
+                typedef std::future<SearchSubtaskResultByIdOutcome> SearchSubtaskResultByIdOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::SearchSubtaskResultByIdRequest&, SearchSubtaskResultByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchSubtaskResultByIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchTaskResultResponse> SearchTaskResultOutcome;
                 typedef std::future<SearchTaskResultOutcome> SearchTaskResultOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::SearchTaskResultRequest&, SearchTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchTaskResultAsyncHandler;
@@ -1038,6 +1043,15 @@ namespace TencentCloud
                 SearchSessionCommandOutcome SearchSessionCommand(const Model::SearchSessionCommandRequest &request);
                 void SearchSessionCommandAsync(const Model::SearchSessionCommandRequest& request, const SearchSessionCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchSessionCommandOutcomeCallable SearchSessionCommandCallable(const Model::SearchSessionCommandRequest& request);
+
+                /**
+                 *查询运维子任务执行结果
+                 * @param req SearchSubtaskResultByIdRequest
+                 * @return SearchSubtaskResultByIdOutcome
+                 */
+                SearchSubtaskResultByIdOutcome SearchSubtaskResultById(const Model::SearchSubtaskResultByIdRequest &request);
+                void SearchSubtaskResultByIdAsync(const Model::SearchSubtaskResultByIdRequest& request, const SearchSubtaskResultByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchSubtaskResultByIdOutcomeCallable SearchSubtaskResultByIdCallable(const Model::SearchSubtaskResultByIdRequest& request);
 
                 /**
                  *搜索运维任务执行结果

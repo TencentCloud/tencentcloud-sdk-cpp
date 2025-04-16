@@ -120,18 +120,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库cos路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 数据库cos路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置数据库cos路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location 数据库cos路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const std::string& _location);
@@ -167,7 +163,6 @@ namespace TencentCloud
 
                     /**
                      * 数据库cos路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;

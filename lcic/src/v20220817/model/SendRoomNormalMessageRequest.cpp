@@ -28,7 +28,8 @@ SendRoomNormalMessageRequest::SendRoomNormalMessageRequest() :
     m_fromAccountHasBeenSet(false),
     m_msgBodyHasBeenSet(false),
     m_cloudCustomDataHasBeenSet(false),
-    m_nickNameHasBeenSet(false)
+    m_nickNameHasBeenSet(false),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string SendRoomNormalMessageRequest::ToJsonString() const
         string key = "NickName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nickName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_priorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Priority";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_priority.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +205,22 @@ void SendRoomNormalMessageRequest::SetNickName(const string& _nickName)
 bool SendRoomNormalMessageRequest::NickNameHasBeenSet() const
 {
     return m_nickNameHasBeenSet;
+}
+
+string SendRoomNormalMessageRequest::GetPriority() const
+{
+    return m_priority;
+}
+
+void SendRoomNormalMessageRequest::SetPriority(const string& _priority)
+{
+    m_priority = _priority;
+    m_priorityHasBeenSet = true;
+}
+
+bool SendRoomNormalMessageRequest::PriorityHasBeenSet() const
+{
+    return m_priorityHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/DataEngineConfigPair.h>
 
 
 namespace TencentCloud
@@ -48,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DriverSize driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDriverSize() const;
 
                     /**
                      * 设置driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _driverSize driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDriverSize(const std::string& _driverSize);
@@ -73,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorSize executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutorSize() const;
 
                     /**
                      * 设置executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executorSize executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutorSize(const std::string& _executorSize);
@@ -98,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定executor数量，最小值为1，最大值小于集群规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorNums 指定executor数量，最小值为1，最大值小于集群规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetExecutorNums() const;
 
                     /**
                      * 设置指定executor数量，最小值为1，最大值小于集群规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executorNums 指定executor数量，最小值为1，最大值小于集群规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutorNums(const uint64_t& _executorNums);
@@ -123,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorMaxNumbers 指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetExecutorMaxNumbers() const;
 
                     /**
                      * 设置指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executorMaxNumbers 指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutorMaxNumbers(const uint64_t& _executorMaxNumbers);
@@ -146,35 +131,58 @@ namespace TencentCloud
                      */
                     bool ExecutorMaxNumbersHasBeenSet() const;
 
+                    /**
+                     * 获取运行时参数
+                     * @return RunningTimeParameters 运行时参数
+                     * 
+                     */
+                    std::vector<DataEngineConfigPair> GetRunningTimeParameters() const;
+
+                    /**
+                     * 设置运行时参数
+                     * @param _runningTimeParameters 运行时参数
+                     * 
+                     */
+                    void SetRunningTimeParameters(const std::vector<DataEngineConfigPair>& _runningTimeParameters);
+
+                    /**
+                     * 判断参数 RunningTimeParameters 是否已赋值
+                     * @return RunningTimeParameters 是否已赋值
+                     * 
+                     */
+                    bool RunningTimeParametersHasBeenSet() const;
+
                 private:
 
                     /**
                      * driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_driverSize;
                     bool m_driverSizeHasBeenSet;
 
                     /**
                      * executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executorSize;
                     bool m_executorSizeHasBeenSet;
 
                     /**
                      * 指定executor数量，最小值为1，最大值小于集群规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_executorNums;
                     bool m_executorNumsHasBeenSet;
 
                     /**
                      * 指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_executorMaxNumbers;
                     bool m_executorMaxNumbersHasBeenSet;
+
+                    /**
+                     * 运行时参数
+                     */
+                    std::vector<DataEngineConfigPair> m_runningTimeParameters;
+                    bool m_runningTimeParametersHasBeenSet;
 
                 };
             }

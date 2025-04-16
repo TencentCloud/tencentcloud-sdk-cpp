@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取账号数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Accounts 账号数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccountInfo> GetAccounts() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 账号数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccountInfo> m_accounts;
                     bool m_accountsHasBeenSet;

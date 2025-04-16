@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkGroupId 工作组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWorkGroupId() const;
 
                     /**
                      * 设置工作组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workGroupId 工作组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkGroupId(const int64_t& _workGroupId);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkGroupName 工作组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkGroupName() const;
 
                     /**
                      * 设置工作组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workGroupName 工作组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkGroupName(const std::string& _workGroupName);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包含的信息类型。User：用户信息；DataAuth：数据权限；EngineAuth:引擎权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 包含的信息类型。User：用户信息；DataAuth：数据权限；EngineAuth:引擎权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置包含的信息类型。User：用户信息；DataAuth：数据权限；EngineAuth:引擎权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 包含的信息类型。User：用户信息；DataAuth：数据权限；EngineAuth:引擎权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作组上绑定的用户集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserInfo 工作组上绑定的用户集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Users GetUserInfo() const;
 
                     /**
                      * 设置工作组上绑定的用户集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userInfo 工作组上绑定的用户集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserInfo(const Users& _userInfo);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataPolicyInfo 数据权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Policys GetDataPolicyInfo() const;
 
                     /**
                      * 设置数据权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataPolicyInfo 数据权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataPolicyInfo(const Policys& _dataPolicyInfo);
@@ -176,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnginePolicyInfo 引擎权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Policys GetEnginePolicyInfo() const;
 
                     /**
                      * 设置引擎权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enginePolicyInfo 引擎权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnginePolicyInfo(const Policys& _enginePolicyInfo);
@@ -201,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作组描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkGroupDescription 工作组描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkGroupDescription() const;
 
                     /**
                      * 设置工作组描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workGroupDescription 工作组描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkGroupDescription(const std::string& _workGroupDescription);
@@ -226,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取行过滤信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowFilterInfo 行过滤信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Policys GetRowFilterInfo() const;
 
                     /**
                      * 设置行过滤信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rowFilterInfo 行过滤信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRowFilterInfo(const Policys& _rowFilterInfo);
@@ -278,56 +246,48 @@ namespace TencentCloud
 
                     /**
                      * 工作组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_workGroupId;
                     bool m_workGroupIdHasBeenSet;
 
                     /**
                      * 工作组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workGroupName;
                     bool m_workGroupNameHasBeenSet;
 
                     /**
                      * 包含的信息类型。User：用户信息；DataAuth：数据权限；EngineAuth:引擎权限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 工作组上绑定的用户集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Users m_userInfo;
                     bool m_userInfoHasBeenSet;
 
                     /**
                      * 数据权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Policys m_dataPolicyInfo;
                     bool m_dataPolicyInfoHasBeenSet;
 
                     /**
                      * 引擎权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Policys m_enginePolicyInfo;
                     bool m_enginePolicyInfoHasBeenSet;
 
                     /**
                      * 工作组描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workGroupDescription;
                     bool m_workGroupDescriptionHasBeenSet;
 
                     /**
                      * 行过滤信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Policys m_rowFilterInfo;
                     bool m_rowFilterInfoHasBeenSet;

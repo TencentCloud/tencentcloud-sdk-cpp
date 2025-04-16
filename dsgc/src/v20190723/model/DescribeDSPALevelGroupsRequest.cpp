@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeDSPALevelGroupsRequest::DescribeDSPALevelGroupsRequest() :
     m_dspaIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string DescribeDSPALevelGroupsRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void DescribeDSPALevelGroupsRequest::SetName(const string& _name)
 bool DescribeDSPALevelGroupsRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+int64_t DescribeDSPALevelGroupsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeDSPALevelGroupsRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeDSPALevelGroupsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeDSPALevelGroupsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeDSPALevelGroupsRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeDSPALevelGroupsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

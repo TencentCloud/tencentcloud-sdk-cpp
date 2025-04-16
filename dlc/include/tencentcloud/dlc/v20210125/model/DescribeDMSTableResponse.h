@@ -49,9 +49,7 @@ namespace TencentCloud
 
                     /**
                      * 获取基础对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Asset 基础对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Asset GetAsset() const;
@@ -65,9 +63,7 @@ namespace TencentCloud
 
                     /**
                      * 获取视图文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewOriginalText 视图文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetViewOriginalText() const;
@@ -81,9 +77,7 @@ namespace TencentCloud
 
                     /**
                      * 获取视图文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewExpandedText 视图文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetViewExpandedText() const;
@@ -97,9 +91,7 @@ namespace TencentCloud
 
                     /**
                      * 获取hive维护版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Retention hive维护版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetention() const;
@@ -113,9 +105,7 @@ namespace TencentCloud
 
                     /**
                      * 获取存储对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sds 存储对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DMSSds GetSds() const;
@@ -161,9 +151,7 @@ namespace TencentCloud
 
                     /**
                      * 获取表类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 表类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
@@ -177,9 +165,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbName() const;
@@ -193,9 +179,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Schame名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaName Schame名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaName() const;
@@ -209,9 +193,7 @@ namespace TencentCloud
 
                     /**
                      * 获取存储大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageSize 存储大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStorageSize() const;
@@ -225,9 +207,7 @@ namespace TencentCloud
 
                     /**
                      * 获取记录数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordCount 记录数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecordCount() const;
@@ -241,9 +221,7 @@ namespace TencentCloud
 
                     /**
                      * 获取生命周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LifeTime 生命周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLifeTime() const;
@@ -257,9 +235,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最后访问时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastAccessTime 最后访问时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastAccessTime() const;
@@ -273,9 +249,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataUpdateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataUpdateTime() const;
@@ -289,9 +263,7 @@ namespace TencentCloud
 
                     /**
                      * 获取结构更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StructUpdateTime 结构更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStructUpdateTime() const;
@@ -321,9 +293,7 @@ namespace TencentCloud
 
                     /**
                      * 获取表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
@@ -339,35 +309,30 @@ namespace TencentCloud
 
                     /**
                      * 基础对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Asset m_asset;
                     bool m_assetHasBeenSet;
 
                     /**
                      * 视图文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_viewOriginalText;
                     bool m_viewOriginalTextHasBeenSet;
 
                     /**
                      * 视图文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_viewExpandedText;
                     bool m_viewExpandedTextHasBeenSet;
 
                     /**
                      * hive维护版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retention;
                     bool m_retentionHasBeenSet;
 
                     /**
                      * 存储对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DMSSds m_sds;
                     bool m_sdsHasBeenSet;
@@ -388,63 +353,54 @@ namespace TencentCloud
 
                     /**
                      * 表类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
                      * Schame名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
                      * 存储大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storageSize;
                     bool m_storageSizeHasBeenSet;
 
                     /**
                      * 记录数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recordCount;
                     bool m_recordCountHasBeenSet;
 
                     /**
                      * 生命周期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lifeTime;
                     bool m_lifeTimeHasBeenSet;
 
                     /**
                      * 最后访问时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastAccessTime;
                     bool m_lastAccessTimeHasBeenSet;
 
                     /**
                      * 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataUpdateTime;
                     bool m_dataUpdateTimeHasBeenSet;
 
                     /**
                      * 结构更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_structUpdateTime;
                     bool m_structUpdateTimeHasBeenSet;
@@ -458,7 +414,6 @@ namespace TencentCloud
 
                     /**
                      * 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

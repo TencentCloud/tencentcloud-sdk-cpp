@@ -175,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取角色名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleName 角色名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 设置角色名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roleName 角色名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoleName(const std::string& _roleName);
@@ -200,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Creator 创建者UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置创建者UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creator 创建者UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -225,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cos授权路径列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosPermissionList cos授权路径列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CosPermission> GetCosPermissionList() const;
 
                     /**
                      * 设置cos授权路径列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cosPermissionList cos授权路径列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCosPermissionList(const std::vector<CosPermission>& _cosPermissionList);
@@ -250,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cam策略json
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PermissionJson cam策略json
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPermissionJson() const;
 
                     /**
                      * 设置cam策略json
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _permissionJson cam策略json
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPermissionJson(const std::string& _permissionJson);
@@ -313,28 +297,24 @@ namespace TencentCloud
 
                     /**
                      * 角色名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
 
                     /**
                      * 创建者UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
                      * cos授权路径列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CosPermission> m_cosPermissionList;
                     bool m_cosPermissionListHasBeenSet;
 
                     /**
                      * cam策略json
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_permissionJson;
                     bool m_permissionJsonHasBeenSet;

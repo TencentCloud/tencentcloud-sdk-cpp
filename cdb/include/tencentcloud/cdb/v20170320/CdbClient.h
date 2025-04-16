@@ -2382,7 +2382,7 @@ namespace TencentCloud
                 StartBatchRollbackOutcomeCallable StartBatchRollbackCallable(const Model::StartBatchRollbackRequest& request);
 
                 /**
-                 *通过该API，可以开启CPU弹性扩容，包括一次性的手动扩容以及自动弹性扩容。
+                 *通过该 API，可以开启 CPU 弹性扩容，包括一次性的手动扩容以及自动弹性扩容。
                  * @param req StartCpuExpandRequest
                  * @return StartCpuExpandOutcome
                  */

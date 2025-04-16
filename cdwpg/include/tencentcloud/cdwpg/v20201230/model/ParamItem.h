@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点类型, cn/dn
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeType 节点类型, cn/dn
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置节点类型, cn/dn
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeType 节点类型, cn/dn
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 节点名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeName 节点名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 参数个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置参数个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 参数个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 参数信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ParamDetail> GetDetails() const;
 
                     /**
                      * 设置参数信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _details 参数信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetails(const std::vector<ParamDetail>& _details);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 节点类型, cn/dn
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
                      * 节点名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
                      * 参数个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 参数信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ParamDetail> m_details;
                     bool m_detailsHasBeenSet;

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回用户设置的结果存储位置路径，如果未设置则返回空字符串：""
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoreLocation 返回用户设置的结果存储位置路径，如果未设置则返回空字符串：""
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStoreLocation() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 返回用户设置的结果存储位置路径，如果未设置则返回空字符串：""
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_storeLocation;
                     bool m_storeLocationHasBeenSet;

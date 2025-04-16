@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取spark镜像描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description spark镜像描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置spark镜像描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description spark镜像描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -198,7 +194,6 @@ namespace TencentCloud
 
                     /**
                      * spark镜像描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

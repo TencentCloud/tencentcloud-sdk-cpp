@@ -96,18 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 通道组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置通道组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 通道组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -233,18 +229,14 @@ CHANGING表示部分部署中。
 
                     /**
                      * 获取通道组版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 通道组版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置通道组版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 通道组版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -258,18 +250,14 @@ CHANGING表示部分部署中。
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -283,18 +271,14 @@ CHANGING表示部分部署中。
 
                     /**
                      * 获取通道组是否包含微软通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyType 通道组是否包含微软通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProxyType() const;
 
                     /**
                      * 设置通道组是否包含微软通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyType 通道组是否包含微软通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyType(const uint64_t& _proxyType);
@@ -310,11 +294,9 @@ CHANGING表示部分部署中。
                      * 获取支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Http3Supported 支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHttp3Supported() const;
@@ -323,11 +305,9 @@ CHANGING表示部分部署中。
                      * 设置支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _http3Supported 支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHttp3Supported(const int64_t& _http3Supported);
@@ -352,7 +332,6 @@ CHANGING表示部分部署中。
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeatureBitmap 特性位图，每个bit位代表一种特性，其中：
 0，表示不支持该特性；
 1，表示支持该特性。
@@ -364,7 +343,6 @@ CHANGING表示部分部署中。
 第5个bit，支持精品BGP接入；
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -383,7 +361,6 @@ CHANGING表示部分部署中。
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _featureBitmap 特性位图，每个bit位代表一种特性，其中：
 0，表示不支持该特性；
 1，表示支持该特性。
@@ -395,7 +372,6 @@ CHANGING表示部分部署中。
 第5个bit，支持精品BGP接入；
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -425,7 +401,6 @@ CHANGING表示部分部署中。
 
                     /**
                      * 通道组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
@@ -463,21 +438,18 @@ CHANGING表示部分部署中。
 
                     /**
                      * 通道组版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 通道组是否包含微软通道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_proxyType;
                     bool m_proxyTypeHasBeenSet;
@@ -486,7 +458,6 @@ CHANGING表示部分部署中。
                      * 支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_http3Supported;
                     bool m_http3SupportedHasBeenSet;
@@ -503,7 +474,6 @@ CHANGING表示部分部署中。
 第5个bit，支持精品BGP接入；
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_featureBitmap;

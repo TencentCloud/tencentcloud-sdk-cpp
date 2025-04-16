@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取每页返回的记录数
+                     * @return Limit 每页返回的记录数
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置每页返回的记录数
+                     * @param _limit 每页返回的记录数
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取从第几条记录开始返回
+                     * @return Offset 从第几条记录开始返回
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置从第几条记录开始返回
+                     * @param _offset 从第几条记录开始返回
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 每页返回的记录数
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 从第几条记录开始返回
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

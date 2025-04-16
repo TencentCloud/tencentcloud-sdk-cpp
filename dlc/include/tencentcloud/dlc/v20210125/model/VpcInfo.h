@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId vpc Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc子网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcCidrBlock vpc子网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcCidrBlock() const;
 
                     /**
                      * 设置vpc子网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcCidrBlock vpc子网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcCidrBlock(const std::string& _vpcCidrBlock);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置规则Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 规则Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessGroupId 权限组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessGroupId() const;
 
                     /**
                      * 设置权限组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessGroupId 权限组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessGroupId(const std::string& _accessGroupId);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * vpc Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * vpc子网
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcCidrBlock;
                     bool m_vpcCidrBlockHasBeenSet;
 
                     /**
                      * 规则Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 权限组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessGroupId;
                     bool m_accessGroupIdHasBeenSet;

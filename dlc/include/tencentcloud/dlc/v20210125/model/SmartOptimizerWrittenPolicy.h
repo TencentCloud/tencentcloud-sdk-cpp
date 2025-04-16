@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取none/enable/disable/default
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WrittenEnable none/enable/disable/default
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWrittenEnable() const;
 
                     /**
                      * 设置none/enable/disable/default
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _writtenEnable none/enable/disable/default
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWrittenEnable(const std::string& _writtenEnable);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * none/enable/disable/default
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_writtenEnable;
                     bool m_writtenEnableHasBeenSet;

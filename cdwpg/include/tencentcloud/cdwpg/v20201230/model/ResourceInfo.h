@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecName 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecName() const;
 
                     /**
                      * 设置资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specName 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecName(const std::string& _specName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSpec 磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CBSSpecInfo GetDiskSpec() const;
 
                     /**
                      * 设置磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskSpec 磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskSpec(const CBSSpecInfo& _diskSpec);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点类型，cn 或dn
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 节点类型，cn 或dn
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置节点类型，cn 或dn
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 节点类型，cn 或dn
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
 
                     /**
                      * 资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CBSSpecInfo m_diskSpec;
                     bool m_diskSpecHasBeenSet;
 
                     /**
                      * 节点类型，cn 或dn
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

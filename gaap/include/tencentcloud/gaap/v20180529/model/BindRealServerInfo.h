@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
                      * 设置标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
@@ -184,7 +180,6 @@ namespace TencentCloud
 
                     /**
                      * 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;

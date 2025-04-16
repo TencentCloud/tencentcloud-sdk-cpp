@@ -75,6 +75,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTRTCSignaturesWithRoomIdRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTRTCSignaturesWithRoomIdResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeRecognitionTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeRecognitionTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleRequest.h>
@@ -263,6 +265,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/InvokeCloudStorageAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeTWeSeeRecognitionTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeTWeSeeRecognitionTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresRequest.h>
@@ -437,6 +441,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTRTCSignaturesWithRoomIdResponse> CreateTRTCSignaturesWithRoomIdOutcome;
                 typedef std::future<CreateTRTCSignaturesWithRoomIdOutcome> CreateTRTCSignaturesWithRoomIdOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTRTCSignaturesWithRoomIdRequest&, CreateTRTCSignaturesWithRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTRTCSignaturesWithRoomIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTWeSeeRecognitionTaskResponse> CreateTWeSeeRecognitionTaskOutcome;
+                typedef std::future<CreateTWeSeeRecognitionTaskOutcome> CreateTWeSeeRecognitionTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeSeeRecognitionTaskRequest&, CreateTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeSeeRecognitionTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTopicPolicyResponse> CreateTopicPolicyOutcome;
                 typedef std::future<CreateTopicPolicyOutcome> CreateTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTopicPolicyRequest&, CreateTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicPolicyAsyncHandler;
@@ -719,6 +726,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InvokeExternalSourceAIServiceTaskResponse> InvokeExternalSourceAIServiceTaskOutcome;
                 typedef std::future<InvokeExternalSourceAIServiceTaskOutcome> InvokeExternalSourceAIServiceTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::InvokeExternalSourceAIServiceTaskRequest&, InvokeExternalSourceAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeExternalSourceAIServiceTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::InvokeTWeSeeRecognitionTaskResponse> InvokeTWeSeeRecognitionTaskOutcome;
+                typedef std::future<InvokeTWeSeeRecognitionTaskOutcome> InvokeTWeSeeRecognitionTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::InvokeTWeSeeRecognitionTaskRequest&, InvokeTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeTWeSeeRecognitionTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListEventHistoryResponse> ListEventHistoryOutcome;
                 typedef std::future<ListEventHistoryOutcome> ListEventHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListEventHistoryRequest&, ListEventHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEventHistoryAsyncHandler;
@@ -1078,6 +1088,15 @@ namespace TencentCloud
                 CreateTRTCSignaturesWithRoomIdOutcome CreateTRTCSignaturesWithRoomId(const Model::CreateTRTCSignaturesWithRoomIdRequest &request);
                 void CreateTRTCSignaturesWithRoomIdAsync(const Model::CreateTRTCSignaturesWithRoomIdRequest& request, const CreateTRTCSignaturesWithRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTRTCSignaturesWithRoomIdOutcomeCallable CreateTRTCSignaturesWithRoomIdCallable(const Model::CreateTRTCSignaturesWithRoomIdRequest& request);
+
+                /**
+                 *创建 TWeSee 语义理解任务
+                 * @param req CreateTWeSeeRecognitionTaskRequest
+                 * @return CreateTWeSeeRecognitionTaskOutcome
+                 */
+                CreateTWeSeeRecognitionTaskOutcome CreateTWeSeeRecognitionTask(const Model::CreateTWeSeeRecognitionTaskRequest &request);
+                void CreateTWeSeeRecognitionTaskAsync(const Model::CreateTWeSeeRecognitionTaskRequest& request, const CreateTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTWeSeeRecognitionTaskOutcomeCallable CreateTWeSeeRecognitionTaskCallable(const Model::CreateTWeSeeRecognitionTaskRequest& request);
 
                 /**
                  *本接口（CreateTopicPolicy）用于创建一个Topic
@@ -1924,6 +1943,15 @@ namespace TencentCloud
                 InvokeExternalSourceAIServiceTaskOutcome InvokeExternalSourceAIServiceTask(const Model::InvokeExternalSourceAIServiceTaskRequest &request);
                 void InvokeExternalSourceAIServiceTaskAsync(const Model::InvokeExternalSourceAIServiceTaskRequest& request, const InvokeExternalSourceAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InvokeExternalSourceAIServiceTaskOutcomeCallable InvokeExternalSourceAIServiceTaskCallable(const Model::InvokeExternalSourceAIServiceTaskRequest& request);
+
+                /**
+                 *同步执行 TWeSee 语义理解任务
+                 * @param req InvokeTWeSeeRecognitionTaskRequest
+                 * @return InvokeTWeSeeRecognitionTaskOutcome
+                 */
+                InvokeTWeSeeRecognitionTaskOutcome InvokeTWeSeeRecognitionTask(const Model::InvokeTWeSeeRecognitionTaskRequest &request);
+                void InvokeTWeSeeRecognitionTaskAsync(const Model::InvokeTWeSeeRecognitionTaskRequest& request, const InvokeTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeTWeSeeRecognitionTaskOutcomeCallable InvokeTWeSeeRecognitionTaskCallable(const Model::InvokeTWeSeeRecognitionTaskRequest& request);
 
                 /**
                  *获取设备的历史事件

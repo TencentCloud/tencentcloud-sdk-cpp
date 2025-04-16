@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 操作提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置操作提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 操作提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作类型：COPY、LOG、UI、RESULT、List、TAB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operate 操作类型：COPY、LOG、UI、RESULT、List、TAB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperate() const;
 
                     /**
                      * 设置操作类型：COPY、LOG、UI、RESULT、List、TAB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operate 操作类型：COPY、LOG、UI、RESULT、List、TAB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperate(const std::string& _operate);
@@ -126,14 +118,12 @@ namespace TencentCloud
 
                     /**
                      * 操作提示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 操作类型：COPY、LOG、UI、RESULT、List、TAB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operate;
                     bool m_operateHasBeenSet;

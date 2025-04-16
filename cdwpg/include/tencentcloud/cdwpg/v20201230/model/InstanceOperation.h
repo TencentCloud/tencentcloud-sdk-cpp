@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作名称描述，例如“创建”，“修改集群名称”等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action 操作名称描述，例如“创建”，“修改集群名称”等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置操作名称描述，例如“创建”，“修改集群名称”等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _action 操作名称描述，例如“创建”，“修改集群名称”等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 操作开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置操作开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 操作开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -277,28 +261,24 @@ namespace TencentCloud
 
                     /**
                      * 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 操作名称描述，例如“创建”，“修改集群名称”等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 操作开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;

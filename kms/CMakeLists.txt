@@ -73,6 +73,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/DeleteWhiteBoxKeyRequest.h
   include/tencentcloud/kms/v20190118/model/AlgorithmInfo.h
   include/tencentcloud/kms/v20190118/model/GetRegionsResponse.h
+  include/tencentcloud/kms/v20190118/model/ExclusiveHSM.h
   include/tencentcloud/kms/v20190118/model/GenerateDataKeyResponse.h
   include/tencentcloud/kms/v20190118/model/CreateWhiteBoxKeyRequest.h
   include/tencentcloud/kms/v20190118/model/OverwriteWhiteBoxDeviceFingerprintsResponse.h
@@ -190,6 +191,7 @@ set(kms_src
   src/v20190118/model/DeleteWhiteBoxKeyRequest.cpp
   src/v20190118/model/AlgorithmInfo.cpp
   src/v20190118/model/GetRegionsResponse.cpp
+  src/v20190118/model/ExclusiveHSM.cpp
   src/v20190118/model/GenerateDataKeyResponse.cpp
   src/v20190118/model/CreateWhiteBoxKeyRequest.cpp
   src/v20190118/model/OverwriteWhiteBoxDeviceFingerprintsResponse.cpp

@@ -332,18 +332,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAlias 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userAlias 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
@@ -382,18 +378,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连通性状态：0（未测试，默认）、1（正常）、2（失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectivityState 连通性状态：0（未测试，默认）、1（正常）、2（失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConnectivityState() const;
 
                     /**
                      * 设置连通性状态：0（未测试，默认）、1（正常）、2（失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectivityState 连通性状态：0（未测试，默认）、1（正常）、2（失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectivityState(const uint64_t& _connectivityState);
@@ -407,18 +399,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连通性测试提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectivityTips 连通性测试提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConnectivityTips() const;
 
                     /**
                      * 设置连通性测试提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectivityTips 连通性测试提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectivityTips(const std::string& _connectivityTips);
@@ -514,7 +502,6 @@ namespace TencentCloud
 
                     /**
                      * 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userAlias;
                     bool m_userAliasHasBeenSet;
@@ -528,14 +515,12 @@ namespace TencentCloud
 
                     /**
                      * 连通性状态：0（未测试，默认）、1（正常）、2（失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_connectivityState;
                     bool m_connectivityStateHasBeenSet;
 
                     /**
                      * 连通性测试提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_connectivityTips;
                     bool m_connectivityTipsHasBeenSet;

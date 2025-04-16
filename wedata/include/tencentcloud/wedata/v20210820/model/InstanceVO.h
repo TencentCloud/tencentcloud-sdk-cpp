@@ -359,18 +359,18 @@ namespace TencentCloud
                     bool TaskCycleTypeHasBeenSet() const;
 
                     /**
-                     * 获取标准数据时间
+                     * 获取实例数据时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurRunDate 标准数据时间
+                     * @return CurRunDate 实例数据时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurRunDate() const;
 
                     /**
-                     * 设置标准数据时间
+                     * 设置实例数据时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _curRunDate 标准数据时间
+                     * @param _curRunDate 实例数据时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -803,7 +803,7 @@ namespace TencentCloud
                     bool m_taskCycleTypeHasBeenSet;
 
                     /**
-                     * 标准数据时间
+                     * 实例数据时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_curRunDate;

@@ -235,6 +235,48 @@ namespace TencentCloud
                      */
                     bool UpgradeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取libra节点数量
+                     * @return LibraNodeCount libra节点数量
+                     * 
+                     */
+                    int64_t GetLibraNodeCount() const;
+
+                    /**
+                     * 设置libra节点数量
+                     * @param _libraNodeCount libra节点数量
+                     * 
+                     */
+                    void SetLibraNodeCount(const int64_t& _libraNodeCount);
+
+                    /**
+                     * 判断参数 LibraNodeCount 是否已赋值
+                     * @return LibraNodeCount 是否已赋值
+                     * 
+                     */
+                    bool LibraNodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取原libra节点数量
+                     * @return OldLibraNodeCount 原libra节点数量
+                     * 
+                     */
+                    int64_t GetOldLibraNodeCount() const;
+
+                    /**
+                     * 设置原libra节点数量
+                     * @param _oldLibraNodeCount 原libra节点数量
+                     * 
+                     */
+                    void SetOldLibraNodeCount(const int64_t& _oldLibraNodeCount);
+
+                    /**
+                     * 判断参数 OldLibraNodeCount 是否已赋值
+                     * @return OldLibraNodeCount 是否已赋值
+                     * 
+                     */
+                    bool OldLibraNodeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +332,18 @@ namespace TencentCloud
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;
+
+                    /**
+                     * libra节点数量
+                     */
+                    int64_t m_libraNodeCount;
+                    bool m_libraNodeCountHasBeenSet;
+
+                    /**
+                     * 原libra节点数量
+                     */
+                    int64_t m_oldLibraNodeCount;
+                    bool m_oldLibraNodeCountHasBeenSet;
 
                 };
             }

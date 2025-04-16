@@ -35,7 +35,9 @@ AnalysisTaskResults::AnalysisTaskResults() :
     m_outputBytesSumHasBeenSet(false),
     m_shuffleReadBytesSumHasBeenSet(false),
     m_shuffleReadRecordsSumHasBeenSet(false),
-    m_analysisStatusHasBeenSet(false)
+    m_analysisStatusHasBeenSet(false),
+    m_outputFilesNumHasBeenSet(false),
+    m_outputSmallFilesNumHasBeenSet(false)
 {
 }
 
@@ -194,6 +196,26 @@ CoreInternalOutcome AnalysisTaskResults::Deserialize(const rapidjson::Value &val
         m_analysisStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputFilesNum") && !value["OutputFilesNum"].IsNull())
+    {
+        if (!value["OutputFilesNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AnalysisTaskResults.OutputFilesNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputFilesNum = value["OutputFilesNum"].GetInt64();
+        m_outputFilesNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputSmallFilesNum") && !value["OutputSmallFilesNum"].IsNull())
+    {
+        if (!value["OutputSmallFilesNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AnalysisTaskResults.OutputSmallFilesNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputSmallFilesNum = value["OutputSmallFilesNum"].GetInt64();
+        m_outputSmallFilesNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +341,22 @@ void AnalysisTaskResults::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "AnalysisStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_analysisStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputFilesNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputFilesNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_outputFilesNum, allocator);
+    }
+
+    if (m_outputSmallFilesNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputSmallFilesNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_outputSmallFilesNum, allocator);
     }
 
 }
@@ -562,5 +600,37 @@ void AnalysisTaskResults::SetAnalysisStatus(const string& _analysisStatus)
 bool AnalysisTaskResults::AnalysisStatusHasBeenSet() const
 {
     return m_analysisStatusHasBeenSet;
+}
+
+int64_t AnalysisTaskResults::GetOutputFilesNum() const
+{
+    return m_outputFilesNum;
+}
+
+void AnalysisTaskResults::SetOutputFilesNum(const int64_t& _outputFilesNum)
+{
+    m_outputFilesNum = _outputFilesNum;
+    m_outputFilesNumHasBeenSet = true;
+}
+
+bool AnalysisTaskResults::OutputFilesNumHasBeenSet() const
+{
+    return m_outputFilesNumHasBeenSet;
+}
+
+int64_t AnalysisTaskResults::GetOutputSmallFilesNum() const
+{
+    return m_outputSmallFilesNum;
+}
+
+void AnalysisTaskResults::SetOutputSmallFilesNum(const int64_t& _outputSmallFilesNum)
+{
+    m_outputSmallFilesNum = _outputSmallFilesNum;
+    m_outputSmallFilesNumHasBeenSet = true;
+}
+
+bool AnalysisTaskResults::OutputSmallFilesNumHasBeenSet() const
+{
+    return m_outputSmallFilesNumHasBeenSet;
 }
 

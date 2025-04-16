@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优先事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 优先事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置优先事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priority 优先事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Catalog Catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCatalog() const;
 
                     /**
                      * 设置Catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _catalog Catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCatalog(const std::string& _catalog);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DataBase名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataBase DataBase名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataBase() const;
 
                     /**
                      * 设置DataBase名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataBase DataBase名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataBase(const std::string& _dataBase);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Table名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table Table名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置Table名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _table Table名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 优先事项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
                      * Catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_catalog;
                     bool m_catalogHasBeenSet;
 
                     /**
                      * DataBase名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataBase;
                     bool m_dataBaseHasBeenSet;
 
                     /**
                      * Table名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;

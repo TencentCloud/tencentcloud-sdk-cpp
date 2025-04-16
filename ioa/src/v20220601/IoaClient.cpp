@@ -40,6 +40,49 @@ IoaClient::IoaClient(const Credential &credential, const string &region, const C
 }
 
 
+IoaClient::CreateDLPFileDetectionTaskOutcome IoaClient::CreateDLPFileDetectionTask(const CreateDLPFileDetectionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDLPFileDetectionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDLPFileDetectionTaskResponse rsp = CreateDLPFileDetectionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDLPFileDetectionTaskOutcome(rsp);
+        else
+            return CreateDLPFileDetectionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDLPFileDetectionTaskOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::CreateDLPFileDetectionTaskAsync(const CreateDLPFileDetectionTaskRequest& request, const CreateDLPFileDetectionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDLPFileDetectionTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::CreateDLPFileDetectionTaskOutcomeCallable IoaClient::CreateDLPFileDetectionTaskCallable(const CreateDLPFileDetectionTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDLPFileDetectionTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDLPFileDetectionTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::CreateDeviceVirtualGroupOutcome IoaClient::CreateDeviceVirtualGroup(const CreateDeviceVirtualGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDeviceVirtualGroup");
@@ -119,6 +162,49 @@ IoaClient::DescribeAccountGroupsOutcomeCallable IoaClient::DescribeAccountGroups
         [this, request]()
         {
             return this->DescribeAccountGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::DescribeDLPFileDetectResultOutcome IoaClient::DescribeDLPFileDetectResult(const DescribeDLPFileDetectResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDLPFileDetectResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDLPFileDetectResultResponse rsp = DescribeDLPFileDetectResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDLPFileDetectResultOutcome(rsp);
+        else
+            return DescribeDLPFileDetectResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDLPFileDetectResultOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDLPFileDetectResultAsync(const DescribeDLPFileDetectResultRequest& request, const DescribeDLPFileDetectResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDLPFileDetectResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeDLPFileDetectResultOutcomeCallable IoaClient::DescribeDLPFileDetectResultCallable(const DescribeDLPFileDetectResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDLPFileDetectResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDLPFileDetectResult(request);
         }
     );
 

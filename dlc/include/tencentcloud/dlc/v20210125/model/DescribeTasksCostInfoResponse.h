@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取下一页的标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SearchAfter 下一页的标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSearchAfter() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的数据，字符串类型的二维数组，首行为列中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 返回的数据，字符串类型的二维数组，首行为列中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetData() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 下一页的标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_searchAfter;
                     bool m_searchAfterHasBeenSet;
 
                     /**
                      * 返回的数据，字符串类型的二维数组，首行为列中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;

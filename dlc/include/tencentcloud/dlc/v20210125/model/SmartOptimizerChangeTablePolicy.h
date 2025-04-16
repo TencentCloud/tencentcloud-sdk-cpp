@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取change表的数据保存时间，单位为天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataRetentionTime change表的数据保存时间，单位为天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataRetentionTime() const;
 
                     /**
                      * 设置change表的数据保存时间，单位为天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataRetentionTime change表的数据保存时间，单位为天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataRetentionTime(const int64_t& _dataRetentionTime);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * change表的数据保存时间，单位为天
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataRetentionTime;
                     bool m_dataRetentionTimeHasBeenSet;

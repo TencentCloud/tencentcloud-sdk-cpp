@@ -1201,6 +1201,49 @@ EmrClient::DescribeInsightListOutcomeCallable EmrClient::DescribeInsightListCall
     return task->get_future();
 }
 
+EmrClient::DescribeInspectionTaskResultOutcome EmrClient::DescribeInspectionTaskResult(const DescribeInspectionTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInspectionTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInspectionTaskResultResponse rsp = DescribeInspectionTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInspectionTaskResultOutcome(rsp);
+        else
+            return DescribeInspectionTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInspectionTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeInspectionTaskResultAsync(const DescribeInspectionTaskResultRequest& request, const DescribeInspectionTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInspectionTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeInspectionTaskResultOutcomeCallable EmrClient::DescribeInspectionTaskResultCallable(const DescribeInspectionTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInspectionTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInspectionTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeInstanceRenewNodesOutcome EmrClient::DescribeInstanceRenewNodes(const DescribeInstanceRenewNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceRenewNodes");

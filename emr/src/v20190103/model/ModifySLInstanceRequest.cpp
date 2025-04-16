@@ -25,7 +25,8 @@ using namespace std;
 ModifySLInstanceRequest::ModifySLInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_nodeNumHasBeenSet(false)
+    m_nodeNumHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifySLInstanceRequest::ToJsonString() const
         string key = "NodeNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_nodeNum, allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifySLInstanceRequest::SetNodeNum(const int64_t& _nodeNum)
 bool ModifySLInstanceRequest::NodeNumHasBeenSet() const
 {
     return m_nodeNumHasBeenSet;
+}
+
+string ModifySLInstanceRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void ModifySLInstanceRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool ModifySLInstanceRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

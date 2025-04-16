@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户类型。ADMIN：管理员 COMMON：普通用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserType 用户类型。ADMIN：管理员 COMMON：普通用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserType() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 用户类型。ADMIN：管理员 COMMON：普通用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;

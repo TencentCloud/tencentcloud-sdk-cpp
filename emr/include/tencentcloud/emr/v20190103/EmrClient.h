@@ -77,6 +77,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeImpalaQueriesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInsightListRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInsightListResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeInspectionTaskResultRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeInspectionTaskResultResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h>
@@ -276,6 +278,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInsightListResponse> DescribeInsightListOutcome;
                 typedef std::future<DescribeInsightListOutcome> DescribeInsightListOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeInsightListRequest&, DescribeInsightListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInsightListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInspectionTaskResultResponse> DescribeInspectionTaskResultOutcome;
+                typedef std::future<DescribeInspectionTaskResultOutcome> DescribeInspectionTaskResultOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeInspectionTaskResultRequest&, DescribeInspectionTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInspectionTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceRenewNodesResponse> DescribeInstanceRenewNodesOutcome;
                 typedef std::future<DescribeInstanceRenewNodesOutcome> DescribeInstanceRenewNodesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeInstanceRenewNodesRequest&, DescribeInstanceRenewNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceRenewNodesAsyncHandler;
@@ -680,6 +685,15 @@ namespace TencentCloud
                 DescribeInsightListOutcome DescribeInsightList(const Model::DescribeInsightListRequest &request);
                 void DescribeInsightListAsync(const Model::DescribeInsightListRequest& request, const DescribeInsightListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInsightListOutcomeCallable DescribeInsightListCallable(const Model::DescribeInsightListRequest& request);
+
+                /**
+                 *获取巡检任务结果列表
+                 * @param req DescribeInspectionTaskResultRequest
+                 * @return DescribeInspectionTaskResultOutcome
+                 */
+                DescribeInspectionTaskResultOutcome DescribeInspectionTaskResult(const Model::DescribeInspectionTaskResultRequest &request);
+                void DescribeInspectionTaskResultAsync(const Model::DescribeInspectionTaskResultRequest& request, const DescribeInspectionTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInspectionTaskResultOutcomeCallable DescribeInspectionTaskResultCallable(const Model::DescribeInspectionTaskResultRequest& request);
 
                 /**
                  *查询待续费节点信息

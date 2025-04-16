@@ -88,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextToken 分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNextToken() const;
@@ -104,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取存储结果地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputPath 存储结果地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputPath() const;
@@ -120,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎计算耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseTime 引擎计算耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUseTime() const;
@@ -136,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取结果条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AffectRows 结果条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAffectRows() const;
@@ -152,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据扫描量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataAmount 数据扫描量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataAmount() const;
@@ -168,9 +158,7 @@ namespace TencentCloud
 
                     /**
                      * 获取spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UiUrl spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUiUrl() const;
@@ -204,42 +192,36 @@ namespace TencentCloud
 
                     /**
                      * 分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;
 
                     /**
                      * 存储结果地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputPath;
                     bool m_outputPathHasBeenSet;
 
                     /**
                      * 引擎计算耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_useTime;
                     bool m_useTimeHasBeenSet;
 
                     /**
                      * 结果条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_affectRows;
                     bool m_affectRowsHasBeenSet;
 
                     /**
                      * 数据扫描量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataAmount;
                     bool m_dataAmountHasBeenSet;
 
                     /**
                      * spark ui地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uiUrl;
                     bool m_uiUrlHasBeenSet;

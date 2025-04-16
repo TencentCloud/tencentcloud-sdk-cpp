@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行操作系统转换的实例 ID
-                     * @return InstanceIds 执行操作系统转换的实例 ID
+                     * 获取执行操作系统转换的实例 ID。
+可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
+仅支持操作系统为 CentOS 7、CentOS 8 的实例执行转换。
+                     * @return InstanceIds 执行操作系统转换的实例 ID。
+可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
+仅支持操作系统为 CentOS 7、CentOS 8 的实例执行转换。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置执行操作系统转换的实例 ID
-                     * @param _instanceIds 执行操作系统转换的实例 ID
+                     * 设置执行操作系统转换的实例 ID。
+可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
+仅支持操作系统为 CentOS 7、CentOS 8 的实例执行转换。
+                     * @param _instanceIds 执行操作系统转换的实例 ID。
+可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
+仅支持操作系统为 CentOS 7、CentOS 8 的实例执行转换。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -64,15 +72,19 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否最小规模转换
-                     * @return MinimalConversion 是否最小规模转换
+                     * 获取是否最小规模转换。
+默认值：false
+                     * @return MinimalConversion 是否最小规模转换。
+默认值：false
                      * 
                      */
                     bool GetMinimalConversion() const;
 
                     /**
-                     * 设置是否最小规模转换
-                     * @param _minimalConversion 是否最小规模转换
+                     * 设置是否最小规模转换。
+默认值：false
+                     * @param _minimalConversion 是否最小规模转换。
+默认值：false
                      * 
                      */
                     void SetMinimalConversion(const bool& _minimalConversion);
@@ -85,15 +97,19 @@ namespace TencentCloud
                     bool MinimalConversionHasBeenSet() const;
 
                     /**
-                     * 获取是否只预检
-                     * @return DryRun 是否只预检
+                     * 获取是否只预检。
+默认值：false
+                     * @return DryRun 是否只预检。
+默认值：false
                      * 
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置是否只预检
-                     * @param _dryRun 是否只预检
+                     * 设置是否只预检。
+默认值：false
+                     * @param _dryRun 是否只预检。
+默认值：false
                      * 
                      */
                     void SetDryRun(const bool& _dryRun);
@@ -107,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取转换的目标操作系统类型。仅支持 TencentOS。
+默认值：TencentOS
                      * @return TargetOSType 转换的目标操作系统类型。仅支持 TencentOS。
+默认值：TencentOS
                      * 
                      */
                     std::string GetTargetOSType() const;
 
                     /**
                      * 设置转换的目标操作系统类型。仅支持 TencentOS。
+默认值：TencentOS
                      * @param _targetOSType 转换的目标操作系统类型。仅支持 TencentOS。
+默认值：TencentOS
                      * 
                      */
                     void SetTargetOSType(const std::string& _targetOSType);
@@ -129,25 +149,30 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行操作系统转换的实例 ID
+                     * 执行操作系统转换的实例 ID。
+可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
+仅支持操作系统为 CentOS 7、CentOS 8 的实例执行转换。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 是否最小规模转换
+                     * 是否最小规模转换。
+默认值：false
                      */
                     bool m_minimalConversion;
                     bool m_minimalConversionHasBeenSet;
 
                     /**
-                     * 是否只预检
+                     * 是否只预检。
+默认值：false
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
 
                     /**
                      * 转换的目标操作系统类型。仅支持 TencentOS。
+默认值：TencentOS
                      */
                     std::string m_targetOSType;
                     bool m_targetOSTypeHasBeenSet;

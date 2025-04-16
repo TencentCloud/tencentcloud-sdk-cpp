@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 用户Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的信息类型，Group：返回的当前用户的工作组信息；DataAuth：返回的当前用户的数据权限信息；EngineAuth：返回的当前用户的引擎权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 返回的信息类型，Group：返回的当前用户的工作组信息；DataAuth：返回的当前用户的数据权限信息；EngineAuth：返回的当前用户的引擎权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置返回的信息类型，Group：返回的当前用户的工作组信息；DataAuth：返回的当前用户的数据权限信息；EngineAuth：返回的当前用户的引擎权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 返回的信息类型，Group：返回的当前用户的工作组信息；DataAuth：返回的当前用户的数据权限信息；EngineAuth：返回的当前用户的引擎权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户类型：ADMIN：管理员 COMMON：一般用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserType 用户类型：ADMIN：管理员 COMMON：一般用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
                      * 设置用户类型：ADMIN：管理员 COMMON：一般用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userType 用户类型：ADMIN：管理员 COMMON：一般用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserType(const std::string& _userType);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDescription 用户描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserDescription() const;
 
                     /**
                      * 设置用户描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userDescription 用户描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserDescription(const std::string& _userDescription);
@@ -225,18 +209,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAlias 用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userAlias 用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
@@ -275,18 +255,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountType 账号类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountType() const;
 
                     /**
                      * 设置账号类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountType 账号类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountType(const std::string& _accountType);
@@ -298,32 +274,53 @@ namespace TencentCloud
                      */
                     bool AccountTypeHasBeenSet() const;
 
+                    /**
+                     * 获取数据源权限集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CatalogPolicyInfo 数据源权限集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    Policys GetCatalogPolicyInfo() const;
+
+                    /**
+                     * 设置数据源权限集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _catalogPolicyInfo 数据源权限集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCatalogPolicyInfo(const Policys& _catalogPolicyInfo);
+
+                    /**
+                     * 判断参数 CatalogPolicyInfo 是否已赋值
+                     * @return CatalogPolicyInfo 是否已赋值
+                     * 
+                     */
+                    bool CatalogPolicyInfoHasBeenSet() const;
+
                 private:
 
                     /**
                      * 用户Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 返回的信息类型，Group：返回的当前用户的工作组信息；DataAuth：返回的当前用户的数据权限信息；EngineAuth：返回的当前用户的引擎权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 用户类型：ADMIN：管理员 COMMON：一般用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
 
                     /**
                      * 用户描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userDescription;
                     bool m_userDescriptionHasBeenSet;
@@ -351,7 +348,6 @@ namespace TencentCloud
 
                     /**
                      * 用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userAlias;
                     bool m_userAliasHasBeenSet;
@@ -365,10 +361,16 @@ namespace TencentCloud
 
                     /**
                      * 账号类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;
+
+                    /**
+                     * 数据源权限集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Policys m_catalogPolicyInfo;
+                    bool m_catalogPolicyInfoHasBeenSet;
 
                 };
             }
