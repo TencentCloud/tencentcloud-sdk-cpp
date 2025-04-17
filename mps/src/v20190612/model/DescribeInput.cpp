@@ -38,7 +38,8 @@ DescribeInput::DescribeInput() :
     m_resilientStreamHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_zonesHasBeenSet(false),
-    m_rISTSettingsHasBeenSet(false)
+    m_rISTSettingsHasBeenSet(false),
+    m_streamUrlsHasBeenSet(false)
 {
 }
 
@@ -302,6 +303,26 @@ CoreInternalOutcome DescribeInput::Deserialize(const rapidjson::Value &value)
         m_rISTSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("StreamUrls") && !value["StreamUrls"].IsNull())
+    {
+        if (!value["StreamUrls"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeInput.StreamUrls` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StreamUrls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StreamUrlDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_streamUrls.push_back(item);
+        }
+        m_streamUrlsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -481,6 +502,21 @@ void DescribeInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rISTSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_streamUrlsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamUrls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_streamUrls.begin(); itr != m_streamUrls.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -772,5 +808,21 @@ void DescribeInput::SetRISTSettings(const DescribeInputRISTSettings& _rISTSettin
 bool DescribeInput::RISTSettingsHasBeenSet() const
 {
     return m_rISTSettingsHasBeenSet;
+}
+
+vector<StreamUrlDetail> DescribeInput::GetStreamUrls() const
+{
+    return m_streamUrls;
+}
+
+void DescribeInput::SetStreamUrls(const vector<StreamUrlDetail>& _streamUrls)
+{
+    m_streamUrls = _streamUrls;
+    m_streamUrlsHasBeenSet = true;
+}
+
+bool DescribeInput::StreamUrlsHasBeenSet() const
+{
+    return m_streamUrlsHasBeenSet;
 }
 

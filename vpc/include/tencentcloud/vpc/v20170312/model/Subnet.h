@@ -364,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcId CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcId CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -389,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是CDC所属子网。0:否 1:是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCdcSubnet 是否是CDC所属子网。0:否 1:是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsCdcSubnet() const;
 
                     /**
                      * 设置是否是CDC所属子网。0:否 1:是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCdcSubnet 是否是CDC所属子网。0:否 1:是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCdcSubnet(const int64_t& _isCdcSubnet);
@@ -506,14 +498,12 @@ namespace TencentCloud
 
                     /**
                      * CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
                      * 是否是CDC所属子网。0:否 1:是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isCdcSubnet;
                     bool m_isCdcSubnetHasBeenSet;

@@ -41,7 +41,8 @@ ServerBaseConfig::ServerBaseConfig() :
     m_logSetIdHasBeenSet(false),
     m_logTopicIdHasBeenSet(false),
     m_logParseTypeHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_internalAccessHasBeenSet(false)
 {
 }
 
@@ -273,6 +274,16 @@ CoreInternalOutcome ServerBaseConfig::Deserialize(const rapidjson::Value &value)
         m_tagHasBeenSet = true;
     }
 
+    if (value.HasMember("InternalAccess") && !value["InternalAccess"].IsNull())
+    {
+        if (!value["InternalAccess"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.InternalAccess` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalAccess = string(value["InternalAccess"].GetString());
+        m_internalAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +469,14 @@ void ServerBaseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internalAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internalAccess.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -797,5 +816,21 @@ void ServerBaseConfig::SetTag(const string& _tag)
 bool ServerBaseConfig::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+string ServerBaseConfig::GetInternalAccess() const
+{
+    return m_internalAccess;
+}
+
+void ServerBaseConfig::SetInternalAccess(const string& _internalAccess)
+{
+    m_internalAccess = _internalAccess;
+    m_internalAccessHasBeenSet = true;
+}
+
+bool ServerBaseConfig::InternalAccessHasBeenSet() const
+{
+    return m_internalAccessHasBeenSet;
 }
 

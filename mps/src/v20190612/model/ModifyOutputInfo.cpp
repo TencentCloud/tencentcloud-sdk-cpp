@@ -25,6 +25,7 @@ ModifyOutputInfo::ModifyOutputInfo() :
     m_outputNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_outputKindHasBeenSet(false),
     m_sRTSettingsHasBeenSet(false),
     m_rTPSettingsHasBeenSet(false),
     m_rTMPSettingsHasBeenSet(false),
@@ -81,6 +82,16 @@ CoreInternalOutcome ModifyOutputInfo::Deserialize(const rapidjson::Value &value)
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputKind") && !value["OutputKind"].IsNull())
+    {
+        if (!value["OutputKind"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyOutputInfo.OutputKind` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputKind = string(value["OutputKind"].GetString());
+        m_outputKindHasBeenSet = true;
     }
 
     if (value.HasMember("SRTSettings") && !value["SRTSettings"].IsNull())
@@ -266,6 +277,14 @@ void ModifyOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_outputKindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputKind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputKind.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_sRTSettingsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -431,6 +450,22 @@ void ModifyOutputInfo::SetProtocol(const string& _protocol)
 bool ModifyOutputInfo::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+string ModifyOutputInfo::GetOutputKind() const
+{
+    return m_outputKind;
+}
+
+void ModifyOutputInfo::SetOutputKind(const string& _outputKind)
+{
+    m_outputKind = _outputKind;
+    m_outputKindHasBeenSet = true;
+}
+
+bool ModifyOutputInfo::OutputKindHasBeenSet() const
+{
+    return m_outputKindHasBeenSet;
 }
 
 CreateOutputSRTSettings ModifyOutputInfo::GetSRTSettings() const

@@ -136,9 +136,7 @@ namespace TencentCloud
 
                     /**
                      * 获取精品BGP的带宽费用价格，单位: 元/Mbps/天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cn2BandwidthPrice 精品BGP的带宽费用价格，单位: 元/Mbps/天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCn2BandwidthPrice() const;
@@ -152,9 +150,7 @@ namespace TencentCloud
 
                     /**
                      * 获取精品BGP的折后带宽费用价格，单位: 元/Mbps/天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cn2BandwidthPriceWithDiscount 精品BGP的折后带宽费用价格，单位: 元/Mbps/天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCn2BandwidthPriceWithDiscount() const;
@@ -209,14 +205,12 @@ namespace TencentCloud
 
                     /**
                      * 精品BGP的带宽费用价格，单位: 元/Mbps/天
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cn2BandwidthPrice;
                     bool m_cn2BandwidthPriceHasBeenSet;
 
                     /**
                      * 精品BGP的折后带宽费用价格，单位: 元/Mbps/天
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cn2BandwidthPriceWithDiscount;
                     bool m_cn2BandwidthPriceWithDiscountHasBeenSet;

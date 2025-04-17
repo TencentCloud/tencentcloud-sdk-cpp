@@ -391,6 +391,27 @@ namespace TencentCloud
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取扩展包名数量上限
+                     * @return NameLimit 扩展包名数量上限
+                     * 
+                     */
+                    uint64_t GetNameLimit() const;
+
+                    /**
+                     * 设置扩展包名数量上限
+                     * @param _nameLimit 扩展包名数量上限
+                     * 
+                     */
+                    void SetNameLimit(const uint64_t& _nameLimit);
+
+                    /**
+                     * 判断参数 NameLimit 是否已赋值
+                     * @return NameLimit 是否已赋值
+                     * 
+                     */
+                    bool NameLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -489,6 +510,12 @@ namespace TencentCloud
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * 扩展包名数量上限
+                     */
+                    uint64_t m_nameLimit;
+                    bool m_nameLimitHasBeenSet;
 
                 };
             }

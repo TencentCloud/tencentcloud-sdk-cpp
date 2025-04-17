@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账户属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Perms 账户属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPerms() const;
 
                     /**
                      * 设置账户属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _perms 账户属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPerms(const std::vector<std::string>& _perms);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 账户属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_perms;
                     bool m_permsHasBeenSet;

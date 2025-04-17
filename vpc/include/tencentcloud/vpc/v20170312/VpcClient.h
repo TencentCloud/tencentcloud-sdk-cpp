@@ -383,6 +383,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeHighPriorityRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIPv6AddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIPv6AddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeInstanceJumboRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeInstanceJumboResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6AddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6AddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6TranslatorQuotaRequest.h>
@@ -1387,6 +1389,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIPv6AddressesResponse> DescribeIPv6AddressesOutcome;
                 typedef std::future<DescribeIPv6AddressesOutcome> DescribeIPv6AddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeIPv6AddressesRequest&, DescribeIPv6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPv6AddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceJumboResponse> DescribeInstanceJumboOutcome;
+                typedef std::future<DescribeInstanceJumboOutcome> DescribeInstanceJumboOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeInstanceJumboRequest&, DescribeInstanceJumboOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceJumboAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIp6AddressesResponse> DescribeIp6AddressesOutcome;
                 typedef std::future<DescribeIp6AddressesOutcome> DescribeIp6AddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeIp6AddressesRequest&, DescribeIp6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIp6AddressesAsyncHandler;
@@ -3249,7 +3254,8 @@ namespace TencentCloud
 * 弹性网卡上绑定了云服务器时，不能被删除。
 * 删除指定弹性网卡，弹性网卡必须先和子机解绑才能删除。删除之后弹性网卡上所有内网IP都将被退还。
 
-本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。
+本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询[DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 
+接口。
                  * @param req DeleteNetworkInterfaceRequest
                  * @return DeleteNetworkInterfaceOutcome
                  */
@@ -3788,7 +3794,8 @@ namespace TencentCloud
                 DescribeDirectConnectGatewaysOutcomeCallable DescribeDirectConnectGatewaysCallable(const Model::DescribeDirectConnectGatewaysRequest& request);
 
                 /**
-                 *本接口（DescribeFlowLog）用于查询流日志实例信息。
+                 *本接口（DescribeFlowLog）用于查询VPC流日志实例信息。
+该接口只支持VPC流日志（即将下线）。云联网以及VPC流日志，通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
                  * @param req DescribeFlowLogRequest
                  * @return DescribeFlowLogOutcome
                  */
@@ -3863,6 +3870,18 @@ namespace TencentCloud
                 DescribeIPv6AddressesOutcome DescribeIPv6Addresses(const Model::DescribeIPv6AddressesRequest &request);
                 void DescribeIPv6AddressesAsync(const Model::DescribeIPv6AddressesRequest& request, const DescribeIPv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIPv6AddressesOutcomeCallable DescribeIPv6AddressesCallable(const Model::DescribeIPv6AddressesRequest& request);
+
+                /**
+                 *本接口用于检查云服务器是否支持巨帧。
+使用限制：
+1. 需要CAM策略授权该接口的操作权限，并且授权对应实例的读取权限(该接口会访问CVM实例，所以会校验是否有实例的CAM权限)。例如：CAM action放通vpc:DescribeInstanceJumbo；resourc放通qcs::cvm:ap-guangzhou:uin/2126195383:instance/*。
+2. 实例迁移前后，可能会出现该接口返回的巨帧状态前后不一致（需要检查迁移前后实例所在的宿主机是否都支持巨帧，一种可能的原因为实例迁移到了不支持巨帧的宿主机）。
+                 * @param req DescribeInstanceJumboRequest
+                 * @return DescribeInstanceJumboOutcome
+                 */
+                DescribeInstanceJumboOutcome DescribeInstanceJumbo(const Model::DescribeInstanceJumboRequest &request);
+                void DescribeInstanceJumboAsync(const Model::DescribeInstanceJumboRequest& request, const DescribeInstanceJumboAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceJumboOutcomeCallable DescribeInstanceJumboCallable(const Model::DescribeInstanceJumboRequest& request);
 
                 /**
                  *本接口（DescribeIp6Addresses）用于查询一个或多个传统弹性公网 IPv6 实例的详细信息。
@@ -4949,7 +4968,7 @@ LimitTypes取值范围：
 * 该接口用于将一个内网IP从一个弹性网卡上迁移到另外一个弹性网卡，主IP地址不支持迁移。
 * 迁移前后的弹性网卡必须在同一个子网内。  
 
-本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。
+本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询[DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口。
                  * @param req MigratePrivateIpAddressRequest
                  * @return MigratePrivateIpAddressOutcome
                  */

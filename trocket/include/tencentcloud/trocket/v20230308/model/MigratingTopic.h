@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MigrationStatus 迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMigrationStatus() const;
 
                     /**
                      * 设置迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _migrationStatus 迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMigrationStatus(const std::string& _migrationStatus);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否完成健康检查	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthCheckPassed 是否完成健康检查	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHealthCheckPassed() const;
 
                     /**
                      * 设置是否完成健康检查	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthCheckPassed 是否完成健康检查	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthCheckPassed(const bool& _healthCheckPassed);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上次健康检查返回的错误信息，仅在HealthCheckPassed为false时有效。 NotChecked 未执行检查， Unknown 未知错误, TopicNotImported 主题未导入, TopicNotExistsInSourceCluster 主题在源集群中不存在, TopicNotExistsInTargetCluster 主题在目标集群中不存在, ConsumerConnectedOnTarget 目标集群上存在消费者连接, SourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入, TargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入, SourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, TargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, ConsumerGroupCountNotMatch 订阅组数量不一致, SourceTopicHasUnconsumedMessages 源集群主题存在未消费消息,
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthCheckError 上次健康检查返回的错误信息，仅在HealthCheckPassed为false时有效。 NotChecked 未执行检查， Unknown 未知错误, TopicNotImported 主题未导入, TopicNotExistsInSourceCluster 主题在源集群中不存在, TopicNotExistsInTargetCluster 主题在目标集群中不存在, ConsumerConnectedOnTarget 目标集群上存在消费者连接, SourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入, TargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入, SourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, TargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, ConsumerGroupCountNotMatch 订阅组数量不一致, SourceTopicHasUnconsumedMessages 源集群主题存在未消费消息,
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHealthCheckError() const;
 
                     /**
                      * 设置上次健康检查返回的错误信息，仅在HealthCheckPassed为false时有效。 NotChecked 未执行检查， Unknown 未知错误, TopicNotImported 主题未导入, TopicNotExistsInSourceCluster 主题在源集群中不存在, TopicNotExistsInTargetCluster 主题在目标集群中不存在, ConsumerConnectedOnTarget 目标集群上存在消费者连接, SourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入, TargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入, SourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, TargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, ConsumerGroupCountNotMatch 订阅组数量不一致, SourceTopicHasUnconsumedMessages 源集群主题存在未消费消息,
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthCheckError 上次健康检查返回的错误信息，仅在HealthCheckPassed为false时有效。 NotChecked 未执行检查， Unknown 未知错误, TopicNotImported 主题未导入, TopicNotExistsInSourceCluster 主题在源集群中不存在, TopicNotExistsInTargetCluster 主题在目标集群中不存在, ConsumerConnectedOnTarget 目标集群上存在消费者连接, SourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入, TargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入, SourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, TargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, ConsumerGroupCountNotMatch 订阅组数量不一致, SourceTopicHasUnconsumedMessages 源集群主题存在未消费消息,
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthCheckError(const std::string& _healthCheckError);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间，仅4.x集群有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间，仅4.x集群有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间，仅4.x集群有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 命名空间，仅4.x集群有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -171,42 +151,160 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamespaceV4 4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNamespaceV4() const;
+
+                    /**
+                     * 设置4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _namespaceV4 4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNamespaceV4(const std::string& _namespaceV4);
+
+                    /**
+                     * 判断参数 NamespaceV4 是否已赋值
+                     * @return NamespaceV4 是否已赋值
+                     * 
+                     */
+                    bool NamespaceV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicNameV4 4.x的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTopicNameV4() const;
+
+                    /**
+                     * 设置4.x的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topicNameV4 4.x的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopicNameV4(const std::string& _topicNameV4);
+
+                    /**
+                     * 判断参数 TopicNameV4 是否已赋值
+                     * @return TopicNameV4 是否已赋值
+                     * 
+                     */
+                    bool TopicNameV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FullNamespaceV4 4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFullNamespaceV4() const;
+
+                    /**
+                     * 设置4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fullNamespaceV4 4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFullNamespaceV4(const std::string& _fullNamespaceV4);
+
+                    /**
+                     * 判断参数 FullNamespaceV4 是否已赋值
+                     * @return FullNamespaceV4 是否已赋值
+                     * 
+                     */
+                    bool FullNamespaceV4HasBeenSet() const;
+
+                    /**
+                     * 获取上次健康检查返回的错误列表
+                     * @return HealthCheckErrorList 上次健康检查返回的错误列表
+                     * 
+                     */
+                    std::vector<std::string> GetHealthCheckErrorList() const;
+
+                    /**
+                     * 设置上次健康检查返回的错误列表
+                     * @param _healthCheckErrorList 上次健康检查返回的错误列表
+                     * 
+                     */
+                    void SetHealthCheckErrorList(const std::vector<std::string>& _healthCheckErrorList);
+
+                    /**
+                     * 判断参数 HealthCheckErrorList 是否已赋值
+                     * @return HealthCheckErrorList 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckErrorListHasBeenSet() const;
+
                 private:
 
                     /**
                      * 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
                      * 迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_migrationStatus;
                     bool m_migrationStatusHasBeenSet;
 
                     /**
                      * 是否完成健康检查	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_healthCheckPassed;
                     bool m_healthCheckPassedHasBeenSet;
 
                     /**
                      * 上次健康检查返回的错误信息，仅在HealthCheckPassed为false时有效。 NotChecked 未执行检查， Unknown 未知错误, TopicNotImported 主题未导入, TopicNotExistsInSourceCluster 主题在源集群中不存在, TopicNotExistsInTargetCluster 主题在目标集群中不存在, ConsumerConnectedOnTarget 目标集群上存在消费者连接, SourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入, TargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入, SourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, TargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, ConsumerGroupCountNotMatch 订阅组数量不一致, SourceTopicHasUnconsumedMessages 源集群主题存在未消费消息,
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_healthCheckError;
                     bool m_healthCheckErrorHasBeenSet;
 
                     /**
                      * 命名空间，仅4.x集群有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespaceV4;
+                    bool m_namespaceV4HasBeenSet;
+
+                    /**
+                     * 4.x的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topicNameV4;
+                    bool m_topicNameV4HasBeenSet;
+
+                    /**
+                     * 4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fullNamespaceV4;
+                    bool m_fullNamespaceV4HasBeenSet;
+
+                    /**
+                     * 上次健康检查返回的错误列表
+                     */
+                    std::vector<std::string> m_healthCheckErrorList;
+                    bool m_healthCheckErrorListHasBeenSet;
 
                 };
             }

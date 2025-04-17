@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAndroidAppRequest::CreateAndroidAppRequest() :
     m_nameHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_appModeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateAndroidAppRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateAndroidAppRequest::SetUserId(const string& _userId)
 bool CreateAndroidAppRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string CreateAndroidAppRequest::GetAppMode() const
+{
+    return m_appMode;
+}
+
+void CreateAndroidAppRequest::SetAppMode(const string& _appMode)
+{
+    m_appMode = _appMode;
+    m_appModeHasBeenSet = true;
+}
+
+bool CreateAndroidAppRequest::AppModeHasBeenSet() const
+{
+    return m_appModeHasBeenSet;
 }
 
 

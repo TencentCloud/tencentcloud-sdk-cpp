@@ -33,7 +33,8 @@ Vpc::Vpc() :
     m_enableDhcpHasBeenSet(false),
     m_ipv6CidrBlockHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_assistantCidrSetHasBeenSet(false)
+    m_assistantCidrSetHasBeenSet(false),
+    m_ipv6CidrBlockSetHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,26 @@ CoreInternalOutcome Vpc::Deserialize(const rapidjson::Value &value)
         m_assistantCidrSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6CidrBlockSet") && !value["Ipv6CidrBlockSet"].IsNull())
+    {
+        if (!value["Ipv6CidrBlockSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Vpc.Ipv6CidrBlockSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Ipv6CidrBlockSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ISPIPv6CidrBlock item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ipv6CidrBlockSet.push_back(item);
+        }
+        m_ipv6CidrBlockSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +340,21 @@ void Vpc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
 
         int i=0;
         for (auto itr = m_assistantCidrSet.begin(); itr != m_assistantCidrSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ipv6CidrBlockSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6CidrBlockSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ipv6CidrBlockSet.begin(); itr != m_ipv6CidrBlockSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -534,5 +570,21 @@ void Vpc::SetAssistantCidrSet(const vector<AssistantCidr>& _assistantCidrSet)
 bool Vpc::AssistantCidrSetHasBeenSet() const
 {
     return m_assistantCidrSetHasBeenSet;
+}
+
+vector<ISPIPv6CidrBlock> Vpc::GetIpv6CidrBlockSet() const
+{
+    return m_ipv6CidrBlockSet;
+}
+
+void Vpc::SetIpv6CidrBlockSet(const vector<ISPIPv6CidrBlock>& _ipv6CidrBlockSet)
+{
+    m_ipv6CidrBlockSet = _ipv6CidrBlockSet;
+    m_ipv6CidrBlockSetHasBeenSet = true;
+}
+
+bool Vpc::Ipv6CidrBlockSetHasBeenSet() const
+{
+    return m_ipv6CidrBlockSetHasBeenSet;
 }
 

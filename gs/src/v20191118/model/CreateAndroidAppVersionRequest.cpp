@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAndroidAppVersionRequest::CreateAndroidAppVersionRequest() :
     m_androidAppIdHasBeenSet(false),
-    m_downloadUrlHasBeenSet(false)
+    m_downloadUrlHasBeenSet(false),
+    m_commandHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateAndroidAppVersionRequest::ToJsonString() const
         string key = "DownloadUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Command";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateAndroidAppVersionRequest::SetDownloadUrl(const string& _downloadUrl)
 bool CreateAndroidAppVersionRequest::DownloadUrlHasBeenSet() const
 {
     return m_downloadUrlHasBeenSet;
+}
+
+string CreateAndroidAppVersionRequest::GetCommand() const
+{
+    return m_command;
+}
+
+void CreateAndroidAppVersionRequest::SetCommand(const string& _command)
+{
+    m_command = _command;
+    m_commandHasBeenSet = true;
+}
+
+bool CreateAndroidAppVersionRequest::CommandHasBeenSet() const
+{
+    return m_commandHasBeenSet;
 }
 
 

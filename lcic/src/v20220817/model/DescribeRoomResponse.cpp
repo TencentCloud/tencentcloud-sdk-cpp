@@ -56,7 +56,8 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_recordLangHasBeenSet(false),
     m_recordStreamHasBeenSet(false),
     m_recordLayoutHasBeenSet(false),
-    m_whiteBoardSnapshotModeHasBeenSet(false)
+    m_whiteBoardSnapshotModeHasBeenSet(false),
+    m_subtitlesTranscriptionHasBeenSet(false)
 {
 }
 
@@ -427,6 +428,16 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_whiteBoardSnapshotModeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SubtitlesTranscription") && !rsp["SubtitlesTranscription"].IsNull())
+    {
+        if (!rsp["SubtitlesTranscription"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitlesTranscription` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitlesTranscription = rsp["SubtitlesTranscription"].GetUint64();
+        m_subtitlesTranscriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -704,6 +715,14 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "WhiteBoardSnapshotMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_whiteBoardSnapshotMode, allocator);
+    }
+
+    if (m_subtitlesTranscriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitlesTranscription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subtitlesTranscription, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1046,6 +1065,16 @@ uint64_t DescribeRoomResponse::GetWhiteBoardSnapshotMode() const
 bool DescribeRoomResponse::WhiteBoardSnapshotModeHasBeenSet() const
 {
     return m_whiteBoardSnapshotModeHasBeenSet;
+}
+
+uint64_t DescribeRoomResponse::GetSubtitlesTranscription() const
+{
+    return m_subtitlesTranscription;
+}
+
+bool DescribeRoomResponse::SubtitlesTranscriptionHasBeenSet() const
+{
+    return m_subtitlesTranscriptionHasBeenSet;
 }
 
 

@@ -45,7 +45,8 @@ CreateTrainingTaskRequest::CreateTrainingTaskRequest() :
     m_remarkHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
-    m_encodedStartCmdInfoHasBeenSet(false)
+    m_encodedStartCmdInfoHasBeenSet(false),
+    m_codeReposHasBeenSet(false)
 {
 }
 
@@ -265,6 +266,21 @@ string CreateTrainingTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_encodedStartCmdInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_codeReposHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeRepos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_codeRepos.begin(); itr != m_codeRepos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -641,6 +657,22 @@ void CreateTrainingTaskRequest::SetEncodedStartCmdInfo(const EncodedStartCmdInfo
 bool CreateTrainingTaskRequest::EncodedStartCmdInfoHasBeenSet() const
 {
     return m_encodedStartCmdInfoHasBeenSet;
+}
+
+vector<CodeRepoConfig> CreateTrainingTaskRequest::GetCodeRepos() const
+{
+    return m_codeRepos;
+}
+
+void CreateTrainingTaskRequest::SetCodeRepos(const vector<CodeRepoConfig>& _codeRepos)
+{
+    m_codeRepos = _codeRepos;
+    m_codeReposHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::CodeReposHasBeenSet() const
+{
+    return m_codeReposHasBeenSet;
 }
 
 

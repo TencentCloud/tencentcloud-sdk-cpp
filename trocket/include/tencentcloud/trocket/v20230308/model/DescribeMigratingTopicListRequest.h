@@ -44,48 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询起始位置
-                     * @return Offset 查询起始位置
-                     * 
-                     */
-                    int64_t GetOffset() const;
-
-                    /**
-                     * 设置查询起始位置
-                     * @param _offset 查询起始位置
-                     * 
-                     */
-                    void SetOffset(const int64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     * 
-                     */
-                    bool OffsetHasBeenSet() const;
-
-                    /**
-                     * 获取查询结果限制数量
-                     * @return Limit 查询结果限制数量
-                     * 
-                     */
-                    int64_t GetLimit() const;
-
-                    /**
-                     * 设置查询结果限制数量
-                     * @param _limit 查询结果限制数量
-                     * 
-                     */
-                    void SetLimit(const int64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     * 
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
                      * 获取任务ID
                      * @return TaskId 任务ID
                      * 
@@ -127,19 +85,49 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取查询起始位置
+                     * @return Offset 查询起始位置
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置查询起始位置
+                     * @param _offset 查询起始位置
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取查询结果限制数量
+                     * @return Limit 查询结果限制数量
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置查询结果限制数量
+                     * @param _limit 查询结果限制数量
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 查询起始位置
-                     */
-                    int64_t m_offset;
-                    bool m_offsetHasBeenSet;
-
-                    /**
-                     * 查询结果限制数量
-                     */
-                    int64_t m_limit;
-                    bool m_limitHasBeenSet;
 
                     /**
                      * 任务ID
@@ -152,6 +140,18 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 查询起始位置
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 查询结果限制数量
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

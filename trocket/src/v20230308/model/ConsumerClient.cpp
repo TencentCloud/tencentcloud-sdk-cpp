@@ -25,7 +25,8 @@ ConsumerClient::ConsumerClient() :
     m_clientAddrHasBeenSet(false),
     m_languageHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_consumerLagHasBeenSet(false)
+    m_consumerLagHasBeenSet(false),
+    m_channelProtocolHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ConsumerClient::Deserialize(const rapidjson::Value &value)
         m_consumerLagHasBeenSet = true;
     }
 
+    if (value.HasMember("ChannelProtocol") && !value["ChannelProtocol"].IsNull())
+    {
+        if (!value["ChannelProtocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumerClient.ChannelProtocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelProtocol = string(value["ChannelProtocol"].GetString());
+        m_channelProtocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ConsumerClient::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ConsumerLag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consumerLag, allocator);
+    }
+
+    if (m_channelProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelProtocol.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ConsumerClient::SetConsumerLag(const int64_t& _consumerLag)
 bool ConsumerClient::ConsumerLagHasBeenSet() const
 {
     return m_consumerLagHasBeenSet;
+}
+
+string ConsumerClient::GetChannelProtocol() const
+{
+    return m_channelProtocol;
+}
+
+void ConsumerClient::SetChannelProtocol(const string& _channelProtocol)
+{
+    m_channelProtocol = _channelProtocol;
+    m_channelProtocolHasBeenSet = true;
+}
+
+bool ConsumerClient::ChannelProtocolHasBeenSet() const
+{
+    return m_channelProtocolHasBeenSet;
 }
 

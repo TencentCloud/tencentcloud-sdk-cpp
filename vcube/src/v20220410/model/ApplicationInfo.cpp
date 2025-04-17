@@ -35,7 +35,8 @@ ApplicationInfo::ApplicationInfo() :
     m_macBundleIdHasBeenSet(false),
     m_winProcessNameHasBeenSet(false),
     m_domainListHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_nameLimitHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,16 @@ CoreInternalOutcome ApplicationInfo::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("NameLimit") && !value["NameLimit"].IsNull())
+    {
+        if (!value["NameLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationInfo.NameLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nameLimit = value["NameLimit"].GetUint64();
+        m_nameLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -361,6 +372,14 @@ void ApplicationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nameLimit, allocator);
     }
 
 }
@@ -604,5 +623,21 @@ void ApplicationInfo::SetAppId(const string& _appId)
 bool ApplicationInfo::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+uint64_t ApplicationInfo::GetNameLimit() const
+{
+    return m_nameLimit;
+}
+
+void ApplicationInfo::SetNameLimit(const uint64_t& _nameLimit)
+{
+    m_nameLimit = _nameLimit;
+    m_nameLimitHasBeenSet = true;
+}
+
+bool ApplicationInfo::NameLimitHasBeenSet() const
+{
+    return m_nameLimitHasBeenSet;
 }
 

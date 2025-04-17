@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vdb::V20230616::Model;
 using namespace std;
 
-CreateInstanceResponse::CreateInstanceResponse()
+CreateInstanceResponse::CreateInstanceResponse() :
+    m_instanceIdsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome CreateInstanceResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("InstanceIds") && !rsp["InstanceIds"].IsNull())
+    {
+        if (!rsp["InstanceIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_instanceIds.push_back((*itr).GetString());
+        }
+        m_instanceIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +84,19 @@ string CreateInstanceResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string CreateInstanceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> CreateInstanceResponse::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+bool CreateInstanceResponse::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
 
 

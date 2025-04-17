@@ -488,6 +488,27 @@ namespace TencentCloud
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取内网访问开关 close | open
+                     * @return InternalAccess 内网访问开关 close | open
+                     * 
+                     */
+                    std::string GetInternalAccess() const;
+
+                    /**
+                     * 设置内网访问开关 close | open
+                     * @param _internalAccess 内网访问开关 close | open
+                     * 
+                     */
+                    void SetInternalAccess(const std::string& _internalAccess);
+
+                    /**
+                     * 判断参数 InternalAccess 是否已赋值
+                     * @return InternalAccess 是否已赋值
+                     * 
+                     */
+                    bool InternalAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -615,6 +636,12 @@ namespace TencentCloud
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * 内网访问开关 close | open
+                     */
+                    std::string m_internalAccess;
+                    bool m_internalAccessHasBeenSet;
 
                 };
             }

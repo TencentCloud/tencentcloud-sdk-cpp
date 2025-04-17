@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateUin 操作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperateUin() const;
 
                     /**
                      * 设置操作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operateUin 操作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperateUin(const std::string& _operateUin);
@@ -229,7 +221,6 @@ namespace TencentCloud
 
                     /**
                      * 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -242,7 +233,6 @@ namespace TencentCloud
 
                     /**
                      * 操作者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operateUin;
                     bool m_operateUinHasBeenSet;

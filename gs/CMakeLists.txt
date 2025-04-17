@@ -28,6 +28,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/SyncExecuteCommandOnAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/UninstallAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/StopAndroidInstancesAppResponse.h
+  include/tencentcloud/gs/v20191118/model/ModifyAndroidAppVersionResponse.h
   include/tencentcloud/gs/v20191118/model/DeleteAndroidAppResponse.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstanceLabelsResponse.h
   include/tencentcloud/gs/v20191118/model/AndroidApp.h
@@ -54,7 +55,9 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/CopyAndroidInstanceRequest.h
   include/tencentcloud/gs/v20191118/model/SyncExecuteCommandOnAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/RestoreAndroidInstanceFromStorageResponse.h
+  include/tencentcloud/gs/v20191118/model/ModifyAndroidAppVersionRequest.h
   include/tencentcloud/gs/v20191118/model/StartAndroidInstancesAppRequest.h
+  include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionResponse.h
   include/tencentcloud/gs/v20191118/model/DeleteAndroidAppVersionResponse.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesUserIdRequest.h
   include/tencentcloud/gs/v20191118/model/StopPublishStreamResponse.h
@@ -92,11 +95,12 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/DeleteAndroidAppVersionRequest.h
   include/tencentcloud/gs/v20191118/model/StartAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/SwitchGameArchiveRequest.h
+  include/tencentcloud/gs/v20191118/model/StopAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/StartPublishStreamToCSSRequest.h
   include/tencentcloud/gs/v20191118/model/Filter.h
   include/tencentcloud/gs/v20191118/model/ResetAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/RestartAndroidInstancesAppRequest.h
-  include/tencentcloud/gs/v20191118/model/StopAndroidInstancesRequest.h
+  include/tencentcloud/gs/v20191118/model/DeleteAndroidAppRequest.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidAppsRequest.h
   include/tencentcloud/gs/v20191118/model/StopGameRequest.h
   include/tencentcloud/gs/v20191118/model/RebootAndroidInstancesResponse.h
@@ -128,7 +132,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/RebootAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/CreateSessionResponse.h
   include/tencentcloud/gs/v20191118/model/AndroidInstanceAppInfo.h
-  include/tencentcloud/gs/v20191118/model/DeleteAndroidAppRequest.h
+  include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionRequest.h
   include/tencentcloud/gs/v20191118/model/LabelRequirement.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidAppVersionResponse.h
   include/tencentcloud/gs/v20191118/model/BackUpAndroidInstanceToStorageResponse.h
@@ -149,6 +153,7 @@ set(gs_src
   src/v20191118/model/SyncExecuteCommandOnAndroidInstancesRequest.cpp
   src/v20191118/model/UninstallAndroidInstancesAppResponse.cpp
   src/v20191118/model/StopAndroidInstancesAppResponse.cpp
+  src/v20191118/model/ModifyAndroidAppVersionResponse.cpp
   src/v20191118/model/DeleteAndroidAppResponse.cpp
   src/v20191118/model/DescribeAndroidInstanceLabelsResponse.cpp
   src/v20191118/model/AndroidApp.cpp
@@ -175,7 +180,9 @@ set(gs_src
   src/v20191118/model/CopyAndroidInstanceRequest.cpp
   src/v20191118/model/SyncExecuteCommandOnAndroidInstancesResponse.cpp
   src/v20191118/model/RestoreAndroidInstanceFromStorageResponse.cpp
+  src/v20191118/model/ModifyAndroidAppVersionRequest.cpp
   src/v20191118/model/StartAndroidInstancesAppRequest.cpp
+  src/v20191118/model/ModifyAndroidInstancesResolutionResponse.cpp
   src/v20191118/model/DeleteAndroidAppVersionResponse.cpp
   src/v20191118/model/ModifyAndroidInstancesUserIdRequest.cpp
   src/v20191118/model/StopPublishStreamResponse.cpp
@@ -213,11 +220,12 @@ set(gs_src
   src/v20191118/model/DeleteAndroidAppVersionRequest.cpp
   src/v20191118/model/StartAndroidInstancesAppResponse.cpp
   src/v20191118/model/SwitchGameArchiveRequest.cpp
+  src/v20191118/model/StopAndroidInstancesRequest.cpp
   src/v20191118/model/StartPublishStreamToCSSRequest.cpp
   src/v20191118/model/Filter.cpp
   src/v20191118/model/ResetAndroidInstancesResponse.cpp
   src/v20191118/model/RestartAndroidInstancesAppRequest.cpp
-  src/v20191118/model/StopAndroidInstancesRequest.cpp
+  src/v20191118/model/DeleteAndroidAppRequest.cpp
   src/v20191118/model/DescribeAndroidAppsRequest.cpp
   src/v20191118/model/StopGameRequest.cpp
   src/v20191118/model/RebootAndroidInstancesResponse.cpp
@@ -249,7 +257,7 @@ set(gs_src
   src/v20191118/model/RebootAndroidInstancesRequest.cpp
   src/v20191118/model/CreateSessionResponse.cpp
   src/v20191118/model/AndroidInstanceAppInfo.cpp
-  src/v20191118/model/DeleteAndroidAppRequest.cpp
+  src/v20191118/model/ModifyAndroidInstancesResolutionRequest.cpp
   src/v20191118/model/LabelRequirement.cpp
   src/v20191118/model/CreateAndroidAppVersionResponse.cpp
   src/v20191118/model/BackUpAndroidInstanceToStorageResponse.cpp

@@ -207,6 +207,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleRequest.h>
@@ -261,6 +263,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeAISearchServiceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeAISearchServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InvokeCloudStorageAIServiceTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InvokeCloudStorageAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskRequest.h>
@@ -299,6 +303,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifySpacePropertyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeConfigRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeConfigResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleRequest.h>
@@ -639,6 +645,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStudioProductResponse> DescribeStudioProductOutcome;
                 typedef std::future<DescribeStudioProductOutcome> DescribeStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeStudioProductRequest&, DescribeStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTWeSeeConfigResponse> DescribeTWeSeeConfigOutcome;
+                typedef std::future<DescribeTWeSeeConfigOutcome> DescribeTWeSeeConfigOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeeConfigRequest&, DescribeTWeSeeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeeConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicPolicyResponse> DescribeTopicPolicyOutcome;
                 typedef std::future<DescribeTopicPolicyOutcome> DescribeTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTopicPolicyRequest&, DescribeTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicPolicyAsyncHandler;
@@ -720,6 +729,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InheritCloudStorageUserResponse> InheritCloudStorageUserOutcome;
                 typedef std::future<InheritCloudStorageUserOutcome> InheritCloudStorageUserOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::InheritCloudStorageUserRequest&, InheritCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InheritCloudStorageUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::InvokeAISearchServiceResponse> InvokeAISearchServiceOutcome;
+                typedef std::future<InvokeAISearchServiceOutcome> InvokeAISearchServiceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::InvokeAISearchServiceRequest&, InvokeAISearchServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeAISearchServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::InvokeCloudStorageAIServiceTaskResponse> InvokeCloudStorageAIServiceTaskOutcome;
                 typedef std::future<InvokeCloudStorageAIServiceTaskOutcome> InvokeCloudStorageAIServiceTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::InvokeCloudStorageAIServiceTaskRequest&, InvokeCloudStorageAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeCloudStorageAIServiceTaskAsyncHandler;
@@ -777,6 +789,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyStudioProductResponse> ModifyStudioProductOutcome;
                 typedef std::future<ModifyStudioProductOutcome> ModifyStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyStudioProductRequest&, ModifyStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTWeSeeConfigResponse> ModifyTWeSeeConfigOutcome;
+                typedef std::future<ModifyTWeSeeConfigOutcome> ModifyTWeSeeConfigOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeSeeConfigRequest&, ModifyTWeSeeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeSeeConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTopicPolicyResponse> ModifyTopicPolicyOutcome;
                 typedef std::future<ModifyTopicPolicyOutcome> ModifyTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTopicPolicyRequest&, ModifyTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicPolicyAsyncHandler;
@@ -1684,6 +1699,15 @@ namespace TencentCloud
                 DescribeStudioProductOutcomeCallable DescribeStudioProductCallable(const Model::DescribeStudioProductRequest& request);
 
                 /**
+                 *拉取 TWeSee 配置
+                 * @param req DescribeTWeSeeConfigRequest
+                 * @return DescribeTWeSeeConfigOutcome
+                 */
+                DescribeTWeSeeConfigOutcome DescribeTWeSeeConfig(const Model::DescribeTWeSeeConfigRequest &request);
+                void DescribeTWeSeeConfigAsync(const Model::DescribeTWeSeeConfigRequest& request, const DescribeTWeSeeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTWeSeeConfigOutcomeCallable DescribeTWeSeeConfigCallable(const Model::DescribeTWeSeeConfigRequest& request);
+
+                /**
                  *本接口（DescribeTopicPolicy）用于查看Topic详细信息
                  * @param req DescribeTopicPolicyRequest
                  * @return DescribeTopicPolicyOutcome
@@ -1927,6 +1951,15 @@ namespace TencentCloud
                 InheritCloudStorageUserOutcomeCallable InheritCloudStorageUserCallable(const Model::InheritCloudStorageUserRequest& request);
 
                 /**
+                 *视频语义搜索
+                 * @param req InvokeAISearchServiceRequest
+                 * @return InvokeAISearchServiceOutcome
+                 */
+                InvokeAISearchServiceOutcome InvokeAISearchService(const Model::InvokeAISearchServiceRequest &request);
+                void InvokeAISearchServiceAsync(const Model::InvokeAISearchServiceRequest& request, const InvokeAISearchServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeAISearchServiceOutcomeCallable InvokeAISearchServiceCallable(const Model::InvokeAISearchServiceRequest& request);
+
+                /**
                  *同步执行设备云存 AI 分析任务
                  * @param req InvokeCloudStorageAIServiceTaskRequest
                  * @return InvokeCloudStorageAIServiceTaskOutcome
@@ -2096,6 +2129,15 @@ namespace TencentCloud
                 ModifyStudioProductOutcome ModifyStudioProduct(const Model::ModifyStudioProductRequest &request);
                 void ModifyStudioProductAsync(const Model::ModifyStudioProductRequest& request, const ModifyStudioProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyStudioProductOutcomeCallable ModifyStudioProductCallable(const Model::ModifyStudioProductRequest& request);
+
+                /**
+                 *修改 TWeSee 配置
+                 * @param req ModifyTWeSeeConfigRequest
+                 * @return ModifyTWeSeeConfigOutcome
+                 */
+                ModifyTWeSeeConfigOutcome ModifyTWeSeeConfig(const Model::ModifyTWeSeeConfigRequest &request);
+                void ModifyTWeSeeConfigAsync(const Model::ModifyTWeSeeConfigRequest& request, const ModifyTWeSeeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTWeSeeConfigOutcomeCallable ModifyTWeSeeConfigCallable(const Model::ModifyTWeSeeConfigRequest& request);
 
                 /**
                  *本接口（UpdateTopicPolicy）用于更新Topic信息

@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceLoginKeyPairAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeInstanceJumboResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Lighthouse::V20200324::Model;
+using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-DescribeInstanceLoginKeyPairAttributeResponse::DescribeInstanceLoginKeyPairAttributeResponse() :
-    m_permitLoginHasBeenSet(false)
+DescribeInstanceJumboResponse::DescribeInstanceJumboResponse() :
+    m_instanceJumboSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeInstanceLoginKeyPairAttributeResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeInstanceJumboResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,49 @@ CoreInternalOutcome DescribeInstanceLoginKeyPairAttributeResponse::Deserialize(c
     }
 
 
-    if (rsp.HasMember("PermitLogin") && !rsp["PermitLogin"].IsNull())
+    if (rsp.HasMember("InstanceJumboSet") && !rsp["InstanceJumboSet"].IsNull())
     {
-        if (!rsp["PermitLogin"].IsString())
+        if (!rsp["InstanceJumboSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceJumboSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceJumboSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `PermitLogin` IsString=false incorrectly").SetRequestId(requestId));
+            InstanceJumbo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceJumboSet.push_back(item);
         }
-        m_permitLogin = string(rsp["PermitLogin"].GetString());
-        m_permitLoginHasBeenSet = true;
+        m_instanceJumboSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeInstanceLoginKeyPairAttributeResponse::ToJsonString() const
+string DescribeInstanceJumboResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_permitLoginHasBeenSet)
+    if (m_instanceJumboSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PermitLogin";
+        string key = "InstanceJumboSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_permitLogin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceJumboSet.begin(); itr != m_instanceJumboSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +119,14 @@ string DescribeInstanceLoginKeyPairAttributeResponse::ToJsonString() const
 }
 
 
-string DescribeInstanceLoginKeyPairAttributeResponse::GetPermitLogin() const
+vector<InstanceJumbo> DescribeInstanceJumboResponse::GetInstanceJumboSet() const
 {
-    return m_permitLogin;
+    return m_instanceJumboSet;
 }
 
-bool DescribeInstanceLoginKeyPairAttributeResponse::PermitLoginHasBeenSet() const
+bool DescribeInstanceJumboResponse::InstanceJumboSetHasBeenSet() const
 {
-    return m_permitLoginHasBeenSet;
+    return m_instanceJumboSetHasBeenSet;
 }
 
 

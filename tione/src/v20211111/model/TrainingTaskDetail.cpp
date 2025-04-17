@@ -60,7 +60,8 @@ TrainingTaskDetail::TrainingTaskDetail() :
     m_resourceGroupNameHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_codeReposHasBeenSet(false)
 {
 }
 
@@ -534,6 +535,26 @@ CoreInternalOutcome TrainingTaskDetail::Deserialize(const rapidjson::Value &valu
         m_callbackUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("CodeRepos") && !value["CodeRepos"].IsNull())
+    {
+        if (!value["CodeRepos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.CodeRepos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CodeRepos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CodeRepoConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_codeRepos.push_back(item);
+        }
+        m_codeReposHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -885,6 +906,21 @@ void TrainingTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codeReposHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeRepos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_codeRepos.begin(); itr != m_codeRepos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1528,5 +1564,21 @@ void TrainingTaskDetail::SetCallbackUrl(const string& _callbackUrl)
 bool TrainingTaskDetail::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+vector<CodeRepoConfig> TrainingTaskDetail::GetCodeRepos() const
+{
+    return m_codeRepos;
+}
+
+void TrainingTaskDetail::SetCodeRepos(const vector<CodeRepoConfig>& _codeRepos)
+{
+    m_codeRepos = _codeRepos;
+    m_codeReposHasBeenSet = true;
+}
+
+bool TrainingTaskDetail::CodeReposHasBeenSet() const
+{
+    return m_codeReposHasBeenSet;
 }
 

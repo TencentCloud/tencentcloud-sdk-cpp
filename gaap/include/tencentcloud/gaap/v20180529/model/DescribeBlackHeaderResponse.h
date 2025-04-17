@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取禁用的自定义header列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlackHeaders 禁用的自定义header列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBlackHeaders() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 禁用的自定义header列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_blackHeaders;
                     bool m_blackHeadersHasBeenSet;

@@ -1244,6 +1244,49 @@ GsClient::ModifyAndroidAppOutcomeCallable GsClient::ModifyAndroidAppCallable(con
     return task->get_future();
 }
 
+GsClient::ModifyAndroidAppVersionOutcome GsClient::ModifyAndroidAppVersion(const ModifyAndroidAppVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAndroidAppVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAndroidAppVersionResponse rsp = ModifyAndroidAppVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAndroidAppVersionOutcome(rsp);
+        else
+            return ModifyAndroidAppVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAndroidAppVersionOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ModifyAndroidAppVersionAsync(const ModifyAndroidAppVersionRequest& request, const ModifyAndroidAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAndroidAppVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ModifyAndroidAppVersionOutcomeCallable GsClient::ModifyAndroidAppVersionCallable(const ModifyAndroidAppVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAndroidAppVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAndroidAppVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::ModifyAndroidInstanceInformationOutcome GsClient::ModifyAndroidInstanceInformation(const ModifyAndroidInstanceInformationRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAndroidInstanceInformation");
@@ -1366,6 +1409,49 @@ GsClient::ModifyAndroidInstancesLabelsOutcomeCallable GsClient::ModifyAndroidIns
         [this, request]()
         {
             return this->ModifyAndroidInstancesLabels(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::ModifyAndroidInstancesResolutionOutcome GsClient::ModifyAndroidInstancesResolution(const ModifyAndroidInstancesResolutionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAndroidInstancesResolution");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAndroidInstancesResolutionResponse rsp = ModifyAndroidInstancesResolutionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAndroidInstancesResolutionOutcome(rsp);
+        else
+            return ModifyAndroidInstancesResolutionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAndroidInstancesResolutionOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ModifyAndroidInstancesResolutionAsync(const ModifyAndroidInstancesResolutionRequest& request, const ModifyAndroidInstancesResolutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAndroidInstancesResolution(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ModifyAndroidInstancesResolutionOutcomeCallable GsClient::ModifyAndroidInstancesResolutionCallable(const ModifyAndroidInstancesResolutionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesResolutionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAndroidInstancesResolution(request);
         }
     );
 

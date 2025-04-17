@@ -23,10 +23,10 @@ using namespace TencentCloud::Trocket::V20230308::Model;
 using namespace std;
 
 DescribeSourceClusterGroupListRequest::DescribeSourceClusterGroupListRequest() :
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -36,22 +36,6 @@ string DescribeSourceClusterGroupListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
 
     if (m_taskIdHasBeenSet)
     {
@@ -76,6 +60,22 @@ string DescribeSourceClusterGroupListRequest::ToJsonString() const
         }
     }
 
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -83,38 +83,6 @@ string DescribeSourceClusterGroupListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t DescribeSourceClusterGroupListRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeSourceClusterGroupListRequest::SetOffset(const int64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeSourceClusterGroupListRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
-int64_t DescribeSourceClusterGroupListRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void DescribeSourceClusterGroupListRequest::SetLimit(const int64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool DescribeSourceClusterGroupListRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
 
 string DescribeSourceClusterGroupListRequest::GetTaskId() const
 {
@@ -146,6 +114,38 @@ void DescribeSourceClusterGroupListRequest::SetFilters(const vector<Filter>& _fi
 bool DescribeSourceClusterGroupListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+int64_t DescribeSourceClusterGroupListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeSourceClusterGroupListRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeSourceClusterGroupListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeSourceClusterGroupListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeSourceClusterGroupListRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeSourceClusterGroupListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

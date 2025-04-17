@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -179,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取英文简介
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShortDesc 英文简介
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetShortDesc() const;
 
                     /**
                      * 设置英文简介
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shortDesc 英文简介
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShortDesc(const std::string& _shortDesc);
@@ -204,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterName 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameterName() const;
 
                     /**
                      * 设置参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parameterName 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParameterName(const std::string& _parameterName);
@@ -261,21 +249,18 @@ namespace TencentCloud
 
                     /**
                      * 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
                      * 英文简介
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_shortDesc;
                     bool m_shortDescHasBeenSet;
 
                     /**
                      * 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameterName;
                     bool m_parameterNameHasBeenSet;

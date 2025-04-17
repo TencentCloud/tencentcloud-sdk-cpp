@@ -767,7 +767,7 @@ namespace TencentCloud
                 /**
                  *查询Topic迁移状态列表
 
-查询过滤器，支持TopicName、MigrationStatus查询
+查询过滤器，支持TopicName、MigrationStatus、Namespace查询
                  * @param req DescribeMigratingTopicListRequest
                  * @return DescribeMigratingTopicListOutcome
                  */
@@ -812,6 +812,7 @@ namespace TencentCloud
 GroupName，消费组名称模糊搜索
 Imported，是否已导入
 ImportStatus，导入状态
+Namespace，命名空间
                  * @param req DescribeSourceClusterGroupListRequest
                  * @return DescribeSourceClusterGroupListOutcome
                  */

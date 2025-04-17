@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流日志Id。
-                     * @return FlowLogIds 流日志Id。
+                     * 获取流日志Id。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
+                     * @return FlowLogIds 流日志Id。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
                      * 
                      */
                     std::vector<std::string> GetFlowLogIds() const;
 
                     /**
-                     * 设置流日志Id。
-                     * @param _flowLogIds 流日志Id。
+                     * 设置流日志Id。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
+                     * @param _flowLogIds 流日志Id。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
                      * 
                      */
                     void SetFlowLogIds(const std::vector<std::string>& _flowLogIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流日志Id。
+                     * 流日志Id。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
                      */
                     std::vector<std::string> m_flowLogIds;
                     bool m_flowLogIdsHasBeenSet;

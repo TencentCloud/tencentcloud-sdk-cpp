@@ -257,6 +257,64 @@ namespace TencentCloud
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<li> RUNNING 运行中</li>
+<li> STOPPED 已关机</li>
+<li> EXPIRED 待回收</li>
+                     * @return InstanceState <li> RUNNING 运行中</li>
+<li> STOPPED 已关机</li>
+<li> EXPIRED 待回收</li>
+                     * 
+                     */
+                    std::string GetInstanceState() const;
+
+                    /**
+                     * 设置<li> RUNNING 运行中</li>
+<li> STOPPED 已关机</li>
+<li> EXPIRED 待回收</li>
+                     * @param _instanceState <li> RUNNING 运行中</li>
+<li> STOPPED 已关机</li>
+<li> EXPIRED 待回收</li>
+                     * 
+                     */
+                    void SetInstanceState(const std::string& _instanceState);
+
+                    /**
+                     * 判断参数 InstanceState 是否已赋值
+                     * @return InstanceState 是否已赋值
+                     * 
+                     */
+                    bool InstanceStateHasBeenSet() const;
+
+                    /**
+                     * 获取<li>ONLINE 已离线 </li>
+<li>OFFLINE 防护中</li>
+<li>UNINSTALLED 未安装客户端</li>
+                     * @return AgentState <li>ONLINE 已离线 </li>
+<li>OFFLINE 防护中</li>
+<li>UNINSTALLED 未安装客户端</li>
+                     * 
+                     */
+                    std::string GetAgentState() const;
+
+                    /**
+                     * 设置<li>ONLINE 已离线 </li>
+<li>OFFLINE 防护中</li>
+<li>UNINSTALLED 未安装客户端</li>
+                     * @param _agentState <li>ONLINE 已离线 </li>
+<li>OFFLINE 防护中</li>
+<li>UNINSTALLED 未安装客户端</li>
+                     * 
+                     */
+                    void SetAgentState(const std::string& _agentState);
+
+                    /**
+                     * 判断参数 AgentState 是否已赋值
+                     * @return AgentState 是否已赋值
+                     * 
+                     */
+                    bool AgentStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +376,22 @@ namespace TencentCloud
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * <li> RUNNING 运行中</li>
+<li> STOPPED 已关机</li>
+<li> EXPIRED 待回收</li>
+                     */
+                    std::string m_instanceState;
+                    bool m_instanceStateHasBeenSet;
+
+                    /**
+                     * <li>ONLINE 已离线 </li>
+<li>OFFLINE 防护中</li>
+<li>UNINSTALLED 未安装客户端</li>
+                     */
+                    std::string m_agentState;
+                    bool m_agentStateHasBeenSet;
 
                 };
             }

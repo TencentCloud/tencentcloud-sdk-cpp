@@ -15,11 +15,48 @@
 #
 
 set(es_public_header
-  include/tencentcloud/es/v20180416/EsClient.h
   include/tencentcloud/es/v20250101/EsClient.h
+  include/tencentcloud/es/v20180416/EsClient.h
   )
 
 set(es_public_header_model
+  include/tencentcloud/es/v20250101/model/ChatCompletionsRequest.h
+  include/tencentcloud/es/v20250101/model/DocumentChunkUsage.h
+  include/tencentcloud/es/v20250101/model/ChunkDocumentAsyncRequest.h
+  include/tencentcloud/es/v20250101/model/ChunkDocumentRequest.h
+  include/tencentcloud/es/v20250101/model/WebContent.h
+  include/tencentcloud/es/v20250101/model/GetDocumentChunkResultRequest.h
+  include/tencentcloud/es/v20250101/model/RerankResult.h
+  include/tencentcloud/es/v20250101/model/GetDocumentParseResultRequest.h
+  include/tencentcloud/es/v20250101/model/Usage.h
+  include/tencentcloud/es/v20250101/model/ParseDocumentResponse.h
+  include/tencentcloud/es/v20250101/model/Document.h
+  include/tencentcloud/es/v20250101/model/GetTextEmbeddingRequest.h
+  include/tencentcloud/es/v20250101/model/ParseDocumentAsyncResponse.h
+  include/tencentcloud/es/v20250101/model/ChunkDocumentResponse.h
+  include/tencentcloud/es/v20250101/model/GetDocumentParseResultResponse.h
+  include/tencentcloud/es/v20250101/model/TokenUsage.h
+  include/tencentcloud/es/v20250101/model/Choice.h
+  include/tencentcloud/es/v20250101/model/RunRerankRequest.h
+  include/tencentcloud/es/v20250101/model/EmbeddingData.h
+  include/tencentcloud/es/v20250101/model/ChunkConfig.h
+  include/tencentcloud/es/v20250101/model/WebSearchRequest.h
+  include/tencentcloud/es/v20250101/model/WebPage.h
+  include/tencentcloud/es/v20250101/model/OutputMessage.h
+  include/tencentcloud/es/v20250101/model/ParseDocument.h
+  include/tencentcloud/es/v20250101/model/GetDocumentChunkResultResponse.h
+  include/tencentcloud/es/v20250101/model/ChunkDocumentAsyncResponse.h
+  include/tencentcloud/es/v20250101/model/WebSearchResponse.h
+  include/tencentcloud/es/v20250101/model/OnlineSearchOptions.h
+  include/tencentcloud/es/v20250101/model/ParseDocumentRequest.h
+  include/tencentcloud/es/v20250101/model/Chunk.h
+  include/tencentcloud/es/v20250101/model/ChunkConfigAsync.h
+  include/tencentcloud/es/v20250101/model/GetTextEmbeddingResponse.h
+  include/tencentcloud/es/v20250101/model/RunRerankResponse.h
+  include/tencentcloud/es/v20250101/model/ParseDocumentAsyncRequest.h
+  include/tencentcloud/es/v20250101/model/ChunkDocument.h
+  include/tencentcloud/es/v20250101/model/Message.h
+  include/tencentcloud/es/v20250101/model/ChatCompletionsResponse.h
   include/tencentcloud/es/v20180416/model/TaskDetail.h
   include/tencentcloud/es/v20180416/model/ServerlessSpaceUser.h
   include/tencentcloud/es/v20180416/model/RestartLogstashInstanceRequest.h
@@ -216,45 +253,48 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateClusterSnapshotResponse.h
   include/tencentcloud/es/v20180416/model/RestartLogstashInstanceResponse.h
   include/tencentcloud/es/v20180416/model/OptionalWebServiceInfo.h
-  include/tencentcloud/es/v20250101/model/ChatCompletionsRequest.h
-  include/tencentcloud/es/v20250101/model/DocumentChunkUsage.h
-  include/tencentcloud/es/v20250101/model/ChunkDocumentAsyncRequest.h
-  include/tencentcloud/es/v20250101/model/ChunkDocumentRequest.h
-  include/tencentcloud/es/v20250101/model/WebContent.h
-  include/tencentcloud/es/v20250101/model/GetDocumentChunkResultRequest.h
-  include/tencentcloud/es/v20250101/model/RerankResult.h
-  include/tencentcloud/es/v20250101/model/GetDocumentParseResultRequest.h
-  include/tencentcloud/es/v20250101/model/Usage.h
-  include/tencentcloud/es/v20250101/model/ParseDocumentResponse.h
-  include/tencentcloud/es/v20250101/model/Document.h
-  include/tencentcloud/es/v20250101/model/GetTextEmbeddingRequest.h
-  include/tencentcloud/es/v20250101/model/ParseDocumentAsyncResponse.h
-  include/tencentcloud/es/v20250101/model/ChunkDocumentResponse.h
-  include/tencentcloud/es/v20250101/model/GetDocumentParseResultResponse.h
-  include/tencentcloud/es/v20250101/model/TokenUsage.h
-  include/tencentcloud/es/v20250101/model/Choice.h
-  include/tencentcloud/es/v20250101/model/RunRerankRequest.h
-  include/tencentcloud/es/v20250101/model/EmbeddingData.h
-  include/tencentcloud/es/v20250101/model/ChunkConfig.h
-  include/tencentcloud/es/v20250101/model/OutputMessage.h
-  include/tencentcloud/es/v20250101/model/ParseDocument.h
-  include/tencentcloud/es/v20250101/model/GetDocumentChunkResultResponse.h
-  include/tencentcloud/es/v20250101/model/ChunkDocumentAsyncResponse.h
-  include/tencentcloud/es/v20250101/model/OnlineSearchOptions.h
-  include/tencentcloud/es/v20250101/model/ParseDocumentRequest.h
-  include/tencentcloud/es/v20250101/model/Chunk.h
-  include/tencentcloud/es/v20250101/model/ChunkConfigAsync.h
-  include/tencentcloud/es/v20250101/model/GetTextEmbeddingResponse.h
-  include/tencentcloud/es/v20250101/model/RunRerankResponse.h
-  include/tencentcloud/es/v20250101/model/ParseDocumentAsyncRequest.h
-  include/tencentcloud/es/v20250101/model/ChunkDocument.h
-  include/tencentcloud/es/v20250101/model/Message.h
-  include/tencentcloud/es/v20250101/model/ChatCompletionsResponse.h
   )
 
 set(es_src
-  src/v20180416/EsClient.cpp
   src/v20250101/EsClient.cpp
+  src/v20180416/EsClient.cpp
+  src/v20250101/model/ChatCompletionsRequest.cpp
+  src/v20250101/model/DocumentChunkUsage.cpp
+  src/v20250101/model/ChunkDocumentAsyncRequest.cpp
+  src/v20250101/model/ChunkDocumentRequest.cpp
+  src/v20250101/model/WebContent.cpp
+  src/v20250101/model/GetDocumentChunkResultRequest.cpp
+  src/v20250101/model/RerankResult.cpp
+  src/v20250101/model/GetDocumentParseResultRequest.cpp
+  src/v20250101/model/Usage.cpp
+  src/v20250101/model/ParseDocumentResponse.cpp
+  src/v20250101/model/Document.cpp
+  src/v20250101/model/GetTextEmbeddingRequest.cpp
+  src/v20250101/model/ParseDocumentAsyncResponse.cpp
+  src/v20250101/model/ChunkDocumentResponse.cpp
+  src/v20250101/model/GetDocumentParseResultResponse.cpp
+  src/v20250101/model/TokenUsage.cpp
+  src/v20250101/model/Choice.cpp
+  src/v20250101/model/RunRerankRequest.cpp
+  src/v20250101/model/EmbeddingData.cpp
+  src/v20250101/model/ChunkConfig.cpp
+  src/v20250101/model/WebSearchRequest.cpp
+  src/v20250101/model/WebPage.cpp
+  src/v20250101/model/OutputMessage.cpp
+  src/v20250101/model/ParseDocument.cpp
+  src/v20250101/model/GetDocumentChunkResultResponse.cpp
+  src/v20250101/model/ChunkDocumentAsyncResponse.cpp
+  src/v20250101/model/WebSearchResponse.cpp
+  src/v20250101/model/OnlineSearchOptions.cpp
+  src/v20250101/model/ParseDocumentRequest.cpp
+  src/v20250101/model/Chunk.cpp
+  src/v20250101/model/ChunkConfigAsync.cpp
+  src/v20250101/model/GetTextEmbeddingResponse.cpp
+  src/v20250101/model/RunRerankResponse.cpp
+  src/v20250101/model/ParseDocumentAsyncRequest.cpp
+  src/v20250101/model/ChunkDocument.cpp
+  src/v20250101/model/Message.cpp
+  src/v20250101/model/ChatCompletionsResponse.cpp
   src/v20180416/model/TaskDetail.cpp
   src/v20180416/model/ServerlessSpaceUser.cpp
   src/v20180416/model/RestartLogstashInstanceRequest.cpp
@@ -451,40 +491,6 @@ set(es_src
   src/v20180416/model/CreateClusterSnapshotResponse.cpp
   src/v20180416/model/RestartLogstashInstanceResponse.cpp
   src/v20180416/model/OptionalWebServiceInfo.cpp
-  src/v20250101/model/ChatCompletionsRequest.cpp
-  src/v20250101/model/DocumentChunkUsage.cpp
-  src/v20250101/model/ChunkDocumentAsyncRequest.cpp
-  src/v20250101/model/ChunkDocumentRequest.cpp
-  src/v20250101/model/WebContent.cpp
-  src/v20250101/model/GetDocumentChunkResultRequest.cpp
-  src/v20250101/model/RerankResult.cpp
-  src/v20250101/model/GetDocumentParseResultRequest.cpp
-  src/v20250101/model/Usage.cpp
-  src/v20250101/model/ParseDocumentResponse.cpp
-  src/v20250101/model/Document.cpp
-  src/v20250101/model/GetTextEmbeddingRequest.cpp
-  src/v20250101/model/ParseDocumentAsyncResponse.cpp
-  src/v20250101/model/ChunkDocumentResponse.cpp
-  src/v20250101/model/GetDocumentParseResultResponse.cpp
-  src/v20250101/model/TokenUsage.cpp
-  src/v20250101/model/Choice.cpp
-  src/v20250101/model/RunRerankRequest.cpp
-  src/v20250101/model/EmbeddingData.cpp
-  src/v20250101/model/ChunkConfig.cpp
-  src/v20250101/model/OutputMessage.cpp
-  src/v20250101/model/ParseDocument.cpp
-  src/v20250101/model/GetDocumentChunkResultResponse.cpp
-  src/v20250101/model/ChunkDocumentAsyncResponse.cpp
-  src/v20250101/model/OnlineSearchOptions.cpp
-  src/v20250101/model/ParseDocumentRequest.cpp
-  src/v20250101/model/Chunk.cpp
-  src/v20250101/model/ChunkConfigAsync.cpp
-  src/v20250101/model/GetTextEmbeddingResponse.cpp
-  src/v20250101/model/RunRerankResponse.cpp
-  src/v20250101/model/ParseDocumentAsyncRequest.cpp
-  src/v20250101/model/ChunkDocument.cpp
-  src/v20250101/model/Message.cpp
-  src/v20250101/model/ChatCompletionsResponse.cpp
   )
 
 set(es_include
@@ -513,9 +519,9 @@ target_link_libraries(es
   core)
 
 #install(FILES ${es_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/es/v20250101)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/es/v20180416)
 #install(FILES ${es_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/es/v20250101/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/es/v20180416/model)
 install(DIRECTORY ${es_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

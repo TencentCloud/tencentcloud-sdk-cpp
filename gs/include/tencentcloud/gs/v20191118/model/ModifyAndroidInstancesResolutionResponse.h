@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LIGHTHOUSE_V20200324_MODEL_MODIFYINSTANCESLOGINKEYPAIRATTRIBUTERESPONSE_H_
-#define TENCENTCLOUD_LIGHTHOUSE_V20200324_MODEL_MODIFYINSTANCESLOGINKEYPAIRATTRIBUTERESPONSE_H_
+#ifndef TENCENTCLOUD_GS_V20191118_MODEL_MODIFYANDROIDINSTANCESRESOLUTIONRESPONSE_H_
+#define TENCENTCLOUD_GS_V20191118_MODEL_MODIFYANDROIDINSTANCESRESOLUTIONRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Lighthouse
+    namespace Gs
     {
-        namespace V20200324
+        namespace V20191118
         {
             namespace Model
             {
                 /**
-                * ModifyInstancesLoginKeyPairAttribute返回参数结构体
+                * ModifyAndroidInstancesResolution返回参数结构体
                 */
-                class ModifyInstancesLoginKeyPairAttributeResponse : public AbstractModel
+                class ModifyAndroidInstancesResolutionResponse : public AbstractModel
                 {
                 public:
-                    ModifyInstancesLoginKeyPairAttributeResponse();
-                    ~ModifyInstancesLoginKeyPairAttributeResponse() = default;
+                    ModifyAndroidInstancesResolutionResponse();
+                    ~ModifyAndroidInstancesResolutionResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_LIGHTHOUSE_V20200324_MODEL_MODIFYINSTANCESLOGINKEYPAIRATTRIBUTERESPONSE_H_
+#endif // !TENCENTCLOUD_GS_V20191118_MODEL_MODIFYANDROIDINSTANCESRESOLUTIONRESPONSE_H_

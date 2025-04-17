@@ -155,6 +155,27 @@ namespace TencentCloud
                      */
                     bool ConsumerLagHasBeenSet() const;
 
+                    /**
+                     * 获取消费者客户端类型（grpc；remoting；http）
+                     * @return ChannelProtocol 消费者客户端类型（grpc；remoting；http）
+                     * 
+                     */
+                    std::string GetChannelProtocol() const;
+
+                    /**
+                     * 设置消费者客户端类型（grpc；remoting；http）
+                     * @param _channelProtocol 消费者客户端类型（grpc；remoting；http）
+                     * 
+                     */
+                    void SetChannelProtocol(const std::string& _channelProtocol);
+
+                    /**
+                     * 判断参数 ChannelProtocol 是否已赋值
+                     * @return ChannelProtocol 是否已赋值
+                     * 
+                     */
+                    bool ChannelProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +208,12 @@ namespace TencentCloud
                      */
                     int64_t m_consumerLag;
                     bool m_consumerLagHasBeenSet;
+
+                    /**
+                     * 消费者客户端类型（grpc；remoting；http）
+                     */
+                    std::string m_channelProtocol;
+                    bool m_channelProtocolHasBeenSet;
 
                 };
             }

@@ -26,7 +26,9 @@ ModifyAndroidInstanceResolutionRequest::ModifyAndroidInstanceResolutionRequest()
     m_androidInstanceIdHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
-    m_dPIHasBeenSet(false)
+    m_dPIHasBeenSet(false),
+    m_fPSHasBeenSet(false),
+    m_resolutionTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string ModifyAndroidInstanceResolutionRequest::ToJsonString() const
         string key = "DPI";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dPI, allocator);
+    }
+
+    if (m_fPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FPS";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fPS, allocator);
+    }
+
+    if (m_resolutionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResolutionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resolutionType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +157,38 @@ void ModifyAndroidInstanceResolutionRequest::SetDPI(const uint64_t& _dPI)
 bool ModifyAndroidInstanceResolutionRequest::DPIHasBeenSet() const
 {
     return m_dPIHasBeenSet;
+}
+
+uint64_t ModifyAndroidInstanceResolutionRequest::GetFPS() const
+{
+    return m_fPS;
+}
+
+void ModifyAndroidInstanceResolutionRequest::SetFPS(const uint64_t& _fPS)
+{
+    m_fPS = _fPS;
+    m_fPSHasBeenSet = true;
+}
+
+bool ModifyAndroidInstanceResolutionRequest::FPSHasBeenSet() const
+{
+    return m_fPSHasBeenSet;
+}
+
+string ModifyAndroidInstanceResolutionRequest::GetResolutionType() const
+{
+    return m_resolutionType;
+}
+
+void ModifyAndroidInstanceResolutionRequest::SetResolutionType(const string& _resolutionType)
+{
+    m_resolutionType = _resolutionType;
+    m_resolutionTypeHasBeenSet = true;
+}
+
+bool ModifyAndroidInstanceResolutionRequest::ResolutionTypeHasBeenSet() const
+{
+    return m_resolutionTypeHasBeenSet;
 }
 
 

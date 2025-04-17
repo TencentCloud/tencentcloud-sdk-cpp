@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 地域Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 地域Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionDesc 地域详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionDesc() const;
 
                     /**
                      * 设置地域详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionDesc 地域详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionDesc(const std::string& _regionDesc);
@@ -224,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地区id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 地区id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置地区id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId 地区id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -249,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地区详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneDesc 地区详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneDesc() const;
 
                     /**
                      * 设置地区详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneDesc 地区详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneDesc(const std::string& _zoneDesc);
@@ -358,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessInfo 访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessInfo() const;
 
                     /**
                      * 设置访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessInfo 访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessInfo(const std::string& _accessInfo);
@@ -457,14 +437,12 @@ namespace TencentCloud
 
                     /**
                      * 地域Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
                      * 地域详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionDesc;
                     bool m_regionDescHasBeenSet;
@@ -477,14 +455,12 @@ namespace TencentCloud
 
                     /**
                      * 地区id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
                      * 地区详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneDesc;
                     bool m_zoneDescHasBeenSet;
@@ -515,7 +491,6 @@ namespace TencentCloud
 
                     /**
                      * 访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessInfo;
                     bool m_accessInfoHasBeenSet;

@@ -99,7 +99,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DeleteNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/Filter.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsRequest.h
-  include/tencentcloud/tione/v20211111/model/SpecUnit.h
+  include/tencentcloud/tione/v20211111/model/CreateDatasetRequest.h
   include/tencentcloud/tione/v20211111/model/CreateDatasetResponse.h
   include/tencentcloud/tione/v20211111/model/Service.h
   include/tencentcloud/tione/v20211111/model/CrossTenantENIInfo.h
@@ -160,6 +160,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceGroupResponse.h
   include/tencentcloud/tione/v20211111/model/GpuDetail.h
   include/tencentcloud/tione/v20211111/model/CronScaleJob.h
+  include/tencentcloud/tione/v20211111/model/SpecUnit.h
   include/tencentcloud/tione/v20211111/model/InferTemplateGroup.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/DatasetInfo.h
@@ -203,7 +204,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/PodInfo.h
   include/tencentcloud/tione/v20211111/model/ModelInfo.h
-  include/tencentcloud/tione/v20211111/model/CreateDatasetRequest.h
+  include/tencentcloud/tione/v20211111/model/CodeRepoConfig.h
   include/tencentcloud/tione/v20211111/model/CreateModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/ServiceGroup.h
   include/tencentcloud/tione/v20211111/model/ServiceLimit.h
@@ -342,7 +343,7 @@ set(tione_src
   src/v20211111/model/DeleteNotebookRequest.cpp
   src/v20211111/model/Filter.cpp
   src/v20211111/model/DescribeTrainingModelVersionsRequest.cpp
-  src/v20211111/model/SpecUnit.cpp
+  src/v20211111/model/CreateDatasetRequest.cpp
   src/v20211111/model/CreateDatasetResponse.cpp
   src/v20211111/model/Service.cpp
   src/v20211111/model/CrossTenantENIInfo.cpp
@@ -403,6 +404,7 @@ set(tione_src
   src/v20211111/model/DeleteModelServiceGroupResponse.cpp
   src/v20211111/model/GpuDetail.cpp
   src/v20211111/model/CronScaleJob.cpp
+  src/v20211111/model/SpecUnit.cpp
   src/v20211111/model/InferTemplateGroup.cpp
   src/v20211111/model/DescribeModelServiceResponse.cpp
   src/v20211111/model/DatasetInfo.cpp
@@ -446,7 +448,7 @@ set(tione_src
   src/v20211111/model/ModifyModelServiceResponse.cpp
   src/v20211111/model/PodInfo.cpp
   src/v20211111/model/ModelInfo.cpp
-  src/v20211111/model/CreateDatasetRequest.cpp
+  src/v20211111/model/CodeRepoConfig.cpp
   src/v20211111/model/CreateModelServiceResponse.cpp
   src/v20211111/model/ServiceGroup.cpp
   src/v20211111/model/ServiceLimit.cpp

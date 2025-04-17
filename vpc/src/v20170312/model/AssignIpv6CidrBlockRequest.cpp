@@ -23,7 +23,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 AssignIpv6CidrBlockRequest::AssignIpv6CidrBlockRequest() :
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_addressTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string AssignIpv6CidrBlockRequest::ToJsonString() const
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_addressType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void AssignIpv6CidrBlockRequest::SetVpcId(const string& _vpcId)
 bool AssignIpv6CidrBlockRequest::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+string AssignIpv6CidrBlockRequest::GetAddressType() const
+{
+    return m_addressType;
+}
+
+void AssignIpv6CidrBlockRequest::SetAddressType(const string& _addressType)
+{
+    m_addressType = _addressType;
+    m_addressTypeHasBeenSet = true;
+}
+
+bool AssignIpv6CidrBlockRequest::AddressTypeHasBeenSet() const
+{
+    return m_addressTypeHasBeenSet;
 }
 
 

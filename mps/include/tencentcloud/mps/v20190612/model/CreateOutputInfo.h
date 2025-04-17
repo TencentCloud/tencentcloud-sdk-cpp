@@ -136,6 +136,48 @@ namespace TencentCloud
                     bool OutputRegionHasBeenSet() const;
 
                     /**
+                     * 获取输出类型：Internet/TencentCSS
+                     * @return OutputType 输出类型：Internet/TencentCSS
+                     * 
+                     */
+                    std::string GetOutputType() const;
+
+                    /**
+                     * 设置输出类型：Internet/TencentCSS
+                     * @param _outputType 输出类型：Internet/TencentCSS
+                     * 
+                     */
+                    void SetOutputType(const std::string& _outputType);
+
+                    /**
+                     * 判断参数 OutputType 是否已赋值
+                     * @return OutputType 是否已赋值
+                     * 
+                     */
+                    bool OutputTypeHasBeenSet() const;
+
+                    /**
+                     * 获取输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出
+                     * @return OutputKind 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出
+                     * 
+                     */
+                    std::string GetOutputKind() const;
+
+                    /**
+                     * 设置输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出
+                     * @param _outputKind 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出
+                     * 
+                     */
+                    void SetOutputKind(const std::string& _outputKind);
+
+                    /**
+                     * 判断参数 OutputKind 是否已赋值
+                     * @return OutputKind 是否已赋值
+                     * 
+                     */
+                    bool OutputKindHasBeenSet() const;
+
+                    /**
                      * 获取输出的SRT的配置。
                      * @return SRTSettings 输出的SRT的配置。
                      * 
@@ -287,27 +329,6 @@ namespace TencentCloud
                     bool ZonesHasBeenSet() const;
 
                     /**
-                     * 获取输出类型：Internet/TencentCSS
-                     * @return OutputType 输出类型：Internet/TencentCSS
-                     * 
-                     */
-                    std::string GetOutputType() const;
-
-                    /**
-                     * 设置输出类型：Internet/TencentCSS
-                     * @param _outputType 输出类型：Internet/TencentCSS
-                     * 
-                     */
-                    void SetOutputType(const std::string& _outputType);
-
-                    /**
-                     * 判断参数 OutputType 是否已赋值
-                     * @return OutputType 是否已赋值
-                     * 
-                     */
-                    bool OutputTypeHasBeenSet() const;
-
-                    /**
                      * 获取输出的RIST的配置。
                      * @return RISTSettings 输出的RIST的配置。
                      * 
@@ -376,6 +397,18 @@ namespace TencentCloud
                     bool m_outputRegionHasBeenSet;
 
                     /**
+                     * 输出类型：Internet/TencentCSS
+                     */
+                    std::string m_outputType;
+                    bool m_outputTypeHasBeenSet;
+
+                    /**
+                     * 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出
+                     */
+                    std::string m_outputKind;
+                    bool m_outputKindHasBeenSet;
+
+                    /**
                      * 输出的SRT的配置。
                      */
                     CreateOutputSRTSettings m_sRTSettings;
@@ -417,12 +450,6 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
-
-                    /**
-                     * 输出类型：Internet/TencentCSS
-                     */
-                    std::string m_outputType;
-                    bool m_outputTypeHasBeenSet;
 
                     /**
                      * 输出的RIST的配置。

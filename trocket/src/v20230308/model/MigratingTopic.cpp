@@ -25,7 +25,11 @@ MigratingTopic::MigratingTopic() :
     m_migrationStatusHasBeenSet(false),
     m_healthCheckPassedHasBeenSet(false),
     m_healthCheckErrorHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_namespaceV4HasBeenSet(false),
+    m_topicNameV4HasBeenSet(false),
+    m_fullNamespaceV4HasBeenSet(false),
+    m_healthCheckErrorListHasBeenSet(false)
 {
 }
 
@@ -84,6 +88,49 @@ CoreInternalOutcome MigratingTopic::Deserialize(const rapidjson::Value &value)
         m_namespaceHasBeenSet = true;
     }
 
+    if (value.HasMember("NamespaceV4") && !value["NamespaceV4"].IsNull())
+    {
+        if (!value["NamespaceV4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MigratingTopic.NamespaceV4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceV4 = string(value["NamespaceV4"].GetString());
+        m_namespaceV4HasBeenSet = true;
+    }
+
+    if (value.HasMember("TopicNameV4") && !value["TopicNameV4"].IsNull())
+    {
+        if (!value["TopicNameV4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MigratingTopic.TopicNameV4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicNameV4 = string(value["TopicNameV4"].GetString());
+        m_topicNameV4HasBeenSet = true;
+    }
+
+    if (value.HasMember("FullNamespaceV4") && !value["FullNamespaceV4"].IsNull())
+    {
+        if (!value["FullNamespaceV4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MigratingTopic.FullNamespaceV4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullNamespaceV4 = string(value["FullNamespaceV4"].GetString());
+        m_fullNamespaceV4HasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheckErrorList") && !value["HealthCheckErrorList"].IsNull())
+    {
+        if (!value["HealthCheckErrorList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MigratingTopic.HealthCheckErrorList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HealthCheckErrorList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_healthCheckErrorList.push_back((*itr).GetString());
+        }
+        m_healthCheckErrorListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +176,43 @@ void MigratingTopic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceV4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceV4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespaceV4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicNameV4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicNameV4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicNameV4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fullNamespaceV4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullNamespaceV4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullNamespaceV4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckErrorListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckErrorList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_healthCheckErrorList.begin(); itr != m_healthCheckErrorList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -212,5 +296,69 @@ void MigratingTopic::SetNamespace(const string& _namespace)
 bool MigratingTopic::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+string MigratingTopic::GetNamespaceV4() const
+{
+    return m_namespaceV4;
+}
+
+void MigratingTopic::SetNamespaceV4(const string& _namespaceV4)
+{
+    m_namespaceV4 = _namespaceV4;
+    m_namespaceV4HasBeenSet = true;
+}
+
+bool MigratingTopic::NamespaceV4HasBeenSet() const
+{
+    return m_namespaceV4HasBeenSet;
+}
+
+string MigratingTopic::GetTopicNameV4() const
+{
+    return m_topicNameV4;
+}
+
+void MigratingTopic::SetTopicNameV4(const string& _topicNameV4)
+{
+    m_topicNameV4 = _topicNameV4;
+    m_topicNameV4HasBeenSet = true;
+}
+
+bool MigratingTopic::TopicNameV4HasBeenSet() const
+{
+    return m_topicNameV4HasBeenSet;
+}
+
+string MigratingTopic::GetFullNamespaceV4() const
+{
+    return m_fullNamespaceV4;
+}
+
+void MigratingTopic::SetFullNamespaceV4(const string& _fullNamespaceV4)
+{
+    m_fullNamespaceV4 = _fullNamespaceV4;
+    m_fullNamespaceV4HasBeenSet = true;
+}
+
+bool MigratingTopic::FullNamespaceV4HasBeenSet() const
+{
+    return m_fullNamespaceV4HasBeenSet;
+}
+
+vector<string> MigratingTopic::GetHealthCheckErrorList() const
+{
+    return m_healthCheckErrorList;
+}
+
+void MigratingTopic::SetHealthCheckErrorList(const vector<string>& _healthCheckErrorList)
+{
+    m_healthCheckErrorList = _healthCheckErrorList;
+    m_healthCheckErrorListHasBeenSet = true;
+}
+
+bool MigratingTopic::HealthCheckErrorListHasBeenSet() const
+{
+    return m_healthCheckErrorListHasBeenSet;
 }
 

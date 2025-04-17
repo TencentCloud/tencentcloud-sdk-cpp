@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取源集群消费组堆积
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceConsumeLag 源集群消费组堆积
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSourceConsumeLag() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取目标集群消费组堆积
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetConsumeLag 目标集群消费组堆积
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTargetConsumeLag() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取源集群连接客户端列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceConsumerClients 源集群连接客户端列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConsumerClient> GetSourceConsumerClients() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取目标集群连接客户端列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetConsumerClients 目标集群连接客户端列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConsumerClient> GetTargetConsumerClients() const;
@@ -112,28 +104,24 @@ namespace TencentCloud
 
                     /**
                      * 源集群消费组堆积
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sourceConsumeLag;
                     bool m_sourceConsumeLagHasBeenSet;
 
                     /**
                      * 目标集群消费组堆积
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_targetConsumeLag;
                     bool m_targetConsumeLagHasBeenSet;
 
                     /**
                      * 源集群连接客户端列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConsumerClient> m_sourceConsumerClients;
                     bool m_sourceConsumerClientsHasBeenSet;
 
                     /**
                      * 目标集群连接客户端列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConsumerClient> m_targetConsumerClients;
                     bool m_targetConsumerClientsHasBeenSet;

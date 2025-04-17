@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取type 取enum的时候，返回参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enum type 取enum的时候，返回参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEnum() const;
 
                     /**
                      * 设置type 取enum的时候，返回参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enum type 取enum的时候，返回参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnum(const std::vector<std::string>& _enum);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取type 取string的时候，返回的参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return String type 取string的时候，返回的参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetString() const;
 
                     /**
                      * 设置type 取string的时候，返回的参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _string type 取string的时候，返回的参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetString(const std::string& _string);
@@ -155,14 +147,12 @@ namespace TencentCloud
 
                     /**
                      * type 取enum的时候，返回参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_enum;
                     bool m_enumHasBeenSet;
 
                     /**
                      * type 取string的时候，返回的参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_string;
                     bool m_stringHasBeenSet;

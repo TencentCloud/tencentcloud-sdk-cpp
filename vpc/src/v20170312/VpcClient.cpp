@@ -7780,6 +7780,49 @@ VpcClient::DescribeIPv6AddressesOutcomeCallable VpcClient::DescribeIPv6Addresses
     return task->get_future();
 }
 
+VpcClient::DescribeInstanceJumboOutcome VpcClient::DescribeInstanceJumbo(const DescribeInstanceJumboRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceJumbo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceJumboResponse rsp = DescribeInstanceJumboResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceJumboOutcome(rsp);
+        else
+            return DescribeInstanceJumboOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceJumboOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeInstanceJumboAsync(const DescribeInstanceJumboRequest& request, const DescribeInstanceJumboAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceJumbo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeInstanceJumboOutcomeCallable VpcClient::DescribeInstanceJumboCallable(const DescribeInstanceJumboRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceJumboOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceJumbo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeIp6AddressesOutcome VpcClient::DescribeIp6Addresses(const DescribeIp6AddressesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIp6Addresses");

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取定制错误响应配置集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorPageSet 定制错误响应配置集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DomainErrorPageInfo> GetErrorPageSet() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 定制错误响应配置集
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DomainErrorPageInfo> m_errorPageSet;
                     bool m_errorPageSetHasBeenSet;

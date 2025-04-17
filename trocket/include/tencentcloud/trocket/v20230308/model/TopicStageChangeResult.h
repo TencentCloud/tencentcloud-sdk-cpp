@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Success 是否成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSuccess() const;
 
                     /**
                      * 设置是否成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _success 是否成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuccess(const bool& _success);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间，仅4.x有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间，仅4.x有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间，仅4.x有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 命名空间，仅4.x有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
                      * 是否成功
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_success;
                     bool m_successHasBeenSet;
 
                     /**
                      * 命名空间，仅4.x有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;

@@ -33,6 +33,7 @@
 #include <tencentcloud/mps/v20190612/model/DescribeInputHLSPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/ResilientStreamConf.h>
 #include <tencentcloud/mps/v20190612/model/DescribeInputRISTSettings.h>
+#include <tencentcloud/mps/v20190612/model/StreamUrlDetail.h>
 
 
 namespace TencentCloud
@@ -473,6 +474,27 @@ namespace TencentCloud
                      */
                     bool RISTSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址
+                     * @return StreamUrls 输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址
+                     * 
+                     */
+                    std::vector<StreamUrlDetail> GetStreamUrls() const;
+
+                    /**
+                     * 设置输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址
+                     * @param _streamUrls 输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址
+                     * 
+                     */
+                    void SetStreamUrls(const std::vector<StreamUrlDetail>& _streamUrls);
+
+                    /**
+                     * 判断参数 StreamUrls 是否已赋值
+                     * @return StreamUrls 是否已赋值
+                     * 
+                     */
+                    bool StreamUrlsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -592,6 +614,12 @@ namespace TencentCloud
                      */
                     DescribeInputRISTSettings m_rISTSettings;
                     bool m_rISTSettingsHasBeenSet;
+
+                    /**
+                     * 输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址
+                     */
+                    std::vector<StreamUrlDetail> m_streamUrls;
+                    bool m_streamUrlsHasBeenSet;
 
                 };
             }

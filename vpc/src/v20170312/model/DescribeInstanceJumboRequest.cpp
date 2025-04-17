@@ -14,32 +14,37 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceLoginKeyPairAttributeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeInstanceJumboRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Lighthouse::V20200324::Model;
+using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-DescribeInstanceLoginKeyPairAttributeRequest::DescribeInstanceLoginKeyPairAttributeRequest() :
-    m_instanceIdHasBeenSet(false)
+DescribeInstanceJumboRequest::DescribeInstanceJumboRequest() :
+    m_instanceIdsHasBeenSet(false)
 {
 }
 
-string DescribeInstanceLoginKeyPairAttributeRequest::ToJsonString() const
+string DescribeInstanceJumboRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_instanceIdHasBeenSet)
+    if (m_instanceIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
+        string key = "InstanceIds";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -50,20 +55,20 @@ string DescribeInstanceLoginKeyPairAttributeRequest::ToJsonString() const
 }
 
 
-string DescribeInstanceLoginKeyPairAttributeRequest::GetInstanceId() const
+vector<string> DescribeInstanceJumboRequest::GetInstanceIds() const
 {
-    return m_instanceId;
+    return m_instanceIds;
 }
 
-void DescribeInstanceLoginKeyPairAttributeRequest::SetInstanceId(const string& _instanceId)
+void DescribeInstanceJumboRequest::SetInstanceIds(const vector<string>& _instanceIds)
 {
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
 }
 
-bool DescribeInstanceLoginKeyPairAttributeRequest::InstanceIdHasBeenSet() const
+bool DescribeInstanceJumboRequest::InstanceIdsHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
+    return m_instanceIdsHasBeenSet;
 }
 
 

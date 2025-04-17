@@ -29,6 +29,7 @@
 #include <tencentcloud/tione/v20211111/model/DataConfig.h>
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
 #include <tencentcloud/tione/v20211111/model/EncodedStartCmdInfo.h>
+#include <tencentcloud/tione/v20211111/model/CodeRepoConfig.h>
 
 
 namespace TencentCloud
@@ -537,6 +538,27 @@ POSTPAID_BY_HOUR 按量计费
                      */
                     bool EncodedStartCmdInfoHasBeenSet() const;
 
+                    /**
+                     * 获取代码仓库配置
+                     * @return CodeRepos 代码仓库配置
+                     * 
+                     */
+                    std::vector<CodeRepoConfig> GetCodeRepos() const;
+
+                    /**
+                     * 设置代码仓库配置
+                     * @param _codeRepos 代码仓库配置
+                     * 
+                     */
+                    void SetCodeRepos(const std::vector<CodeRepoConfig>& _codeRepos);
+
+                    /**
+                     * 判断参数 CodeRepos 是否已赋值
+                     * @return CodeRepos 是否已赋值
+                     * 
+                     */
+                    bool CodeReposHasBeenSet() const;
+
                 private:
 
                     /**
@@ -677,6 +699,12 @@ POSTPAID_BY_HOUR 按量计费
                      */
                     EncodedStartCmdInfo m_encodedStartCmdInfo;
                     bool m_encodedStartCmdInfoHasBeenSet;
+
+                    /**
+                     * 代码仓库配置
+                     */
+                    std::vector<CodeRepoConfig> m_codeRepos;
+                    bool m_codeReposHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流日志唯一ID。
-                     * @return FlowLogId 流日志唯一ID。
+                     * 获取流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
+                     * @return FlowLogId 流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
                      * 
                      */
                     std::string GetFlowLogId() const;
 
                     /**
-                     * 设置流日志唯一ID。
-                     * @param _flowLogId 流日志唯一ID。
+                     * 设置流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
+                     * @param _flowLogId 流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
                      * 
                      */
                     void SetFlowLogId(const std::string& _flowLogId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FlowLogIdHasBeenSet() const;
 
                     /**
-                     * 获取私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
-                     * @return VpcId 私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * 获取私用网络唯一ID。修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * @return VpcId 私用网络唯一ID。修改云联网流日志属性时可不填，其他流日志类型必填。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
-                     * @param _vpcId 私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * 设置私用网络唯一ID。修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * @param _vpcId 私用网络唯一ID。修改云联网流日志属性时可不填，其他流日志类型必填。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志实例名字。
-                     * @return FlowLogName 流日志实例名字。
+                     * 获取流日志实例名字。长度为不超过60字节。
+                     * @return FlowLogName 流日志实例名字。长度为不超过60字节。
                      * 
                      */
                     std::string GetFlowLogName() const;
 
                     /**
-                     * 设置流日志实例名字。
-                     * @param _flowLogName 流日志实例名字。
+                     * 设置流日志实例名字。长度为不超过60字节。
+                     * @param _flowLogName 流日志实例名字。长度为不超过60字节。
                      * 
                      */
                     void SetFlowLogName(const std::string& _flowLogName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志实例描述。
-                     * @return FlowLogDescription 流日志实例描述。
+                     * 获取流日志实例描述。长度为不超过512字节。
+                     * @return FlowLogDescription 流日志实例描述。长度为不超过512字节。
                      * 
                      */
                     std::string GetFlowLogDescription() const;
 
                     /**
-                     * 设置流日志实例描述。
-                     * @param _flowLogDescription 流日志实例描述。
+                     * 设置流日志实例描述。长度为不超过512字节。
+                     * @param _flowLogDescription 流日志实例描述。长度为不超过512字节。
                      * 
                      */
                     void SetFlowLogDescription(const std::string& _flowLogDescription);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流日志唯一ID。
+                     * 流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
                      */
                     std::string m_flowLogId;
                     bool m_flowLogIdHasBeenSet;
 
                     /**
-                     * 私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * 私用网络唯一ID。修改云联网流日志属性时可不填，其他流日志类型必填。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 流日志实例名字。
+                     * 流日志实例名字。长度为不超过60字节。
                      */
                     std::string m_flowLogName;
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志实例描述。
+                     * 流日志实例描述。长度为不超过512字节。
                      */
                     std::string m_flowLogDescription;
                     bool m_flowLogDescriptionHasBeenSet;

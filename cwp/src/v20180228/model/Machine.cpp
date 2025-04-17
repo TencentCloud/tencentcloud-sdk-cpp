@@ -24,6 +24,8 @@ Machine::Machine() :
     m_machineNameHasBeenSet(false),
     m_machineOsHasBeenSet(false),
     m_machineStatusHasBeenSet(false),
+    m_agentStatusHasBeenSet(false),
+    m_instanceStatusHasBeenSet(false),
     m_uuidHasBeenSet(false),
     m_quuidHasBeenSet(false),
     m_vulNumHasBeenSet(false),
@@ -88,6 +90,26 @@ CoreInternalOutcome Machine::Deserialize(const rapidjson::Value &value)
         }
         m_machineStatus = string(value["MachineStatus"].GetString());
         m_machineStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AgentStatus") && !value["AgentStatus"].IsNull())
+    {
+        if (!value["AgentStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.AgentStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentStatus = string(value["AgentStatus"].GetString());
+        m_agentStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceStatus") && !value["InstanceStatus"].IsNull())
+    {
+        if (!value["InstanceStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceStatus = string(value["InstanceStatus"].GetString());
+        m_instanceStatusHasBeenSet = true;
     }
 
     if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
@@ -435,6 +457,22 @@ void Machine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, rapidjson::Value(m_machineStatus.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_agentStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_uuidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -724,6 +762,38 @@ void Machine::SetMachineStatus(const string& _machineStatus)
 bool Machine::MachineStatusHasBeenSet() const
 {
     return m_machineStatusHasBeenSet;
+}
+
+string Machine::GetAgentStatus() const
+{
+    return m_agentStatus;
+}
+
+void Machine::SetAgentStatus(const string& _agentStatus)
+{
+    m_agentStatus = _agentStatus;
+    m_agentStatusHasBeenSet = true;
+}
+
+bool Machine::AgentStatusHasBeenSet() const
+{
+    return m_agentStatusHasBeenSet;
+}
+
+string Machine::GetInstanceStatus() const
+{
+    return m_instanceStatus;
+}
+
+void Machine::SetInstanceStatus(const string& _instanceStatus)
+{
+    m_instanceStatus = _instanceStatus;
+    m_instanceStatusHasBeenSet = true;
+}
+
+bool Machine::InstanceStatusHasBeenSet() const
+{
+    return m_instanceStatusHasBeenSet;
 }
 
 string Machine::GetUuid() const

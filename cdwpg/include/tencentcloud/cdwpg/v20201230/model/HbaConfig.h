@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否遮盖
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mask 是否遮盖
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMask() const;
 
                     /**
                      * 设置是否遮盖
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mask 是否遮盖
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMask(const std::string& _mask);
@@ -210,7 +206,6 @@ namespace TencentCloud
 
                     /**
                      * 是否遮盖
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mask;
                     bool m_maskHasBeenSet;

@@ -23,10 +23,10 @@ using namespace TencentCloud::Trocket::V20230308::Model;
 using namespace std;
 
 DescribeMigratingTopicListRequest::DescribeMigratingTopicListRequest() :
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -36,22 +36,6 @@ string DescribeMigratingTopicListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
 
     if (m_taskIdHasBeenSet)
     {
@@ -76,6 +60,22 @@ string DescribeMigratingTopicListRequest::ToJsonString() const
         }
     }
 
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -83,38 +83,6 @@ string DescribeMigratingTopicListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t DescribeMigratingTopicListRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeMigratingTopicListRequest::SetOffset(const int64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeMigratingTopicListRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
-int64_t DescribeMigratingTopicListRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void DescribeMigratingTopicListRequest::SetLimit(const int64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool DescribeMigratingTopicListRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
 
 string DescribeMigratingTopicListRequest::GetTaskId() const
 {
@@ -146,6 +114,38 @@ void DescribeMigratingTopicListRequest::SetFilters(const vector<Filter>& _filter
 bool DescribeMigratingTopicListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+int64_t DescribeMigratingTopicListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeMigratingTopicListRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeMigratingTopicListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeMigratingTopicListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeMigratingTopicListRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeMigratingTopicListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

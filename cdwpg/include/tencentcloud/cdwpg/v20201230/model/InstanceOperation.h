@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 操作结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置操作结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 操作结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作上下文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Context 操作上下文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 设置操作上下文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _context 操作上下文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContext(const std::string& _context);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 操作更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置操作更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 操作更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -228,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 操作UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置操作UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 操作UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -285,28 +269,24 @@ namespace TencentCloud
 
                     /**
                      * 操作结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 操作上下文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
 
                     /**
                      * 操作更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 操作UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;

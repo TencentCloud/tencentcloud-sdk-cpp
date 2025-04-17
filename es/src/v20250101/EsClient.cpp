@@ -427,3 +427,46 @@ EsClient::RunRerankOutcomeCallable EsClient::RunRerankCallable(const RunRerankRe
     return task->get_future();
 }
 
+EsClient::WebSearchOutcome EsClient::WebSearch(const WebSearchRequest &request)
+{
+    auto outcome = MakeRequest(request, "WebSearch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        WebSearchResponse rsp = WebSearchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return WebSearchOutcome(rsp);
+        else
+            return WebSearchOutcome(o.GetError());
+    }
+    else
+    {
+        return WebSearchOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::WebSearchAsync(const WebSearchRequest& request, const WebSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->WebSearch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::WebSearchOutcomeCallable EsClient::WebSearchCallable(const WebSearchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<WebSearchOutcome()>>(
+        [this, request]()
+        {
+            return this->WebSearch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

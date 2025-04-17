@@ -210,15 +210,15 @@ namespace TencentCloud
                     bool PublicIpAddressHasBeenSet() const;
 
                     /**
-                     * 获取`IPv6`地址的类型: `GUA`(全球单播地址), `OTHER`(非GUA/ULA地址), `ULA`(唯一本地地址)
-                     * @return AddressType `IPv6`地址的类型: `GUA`(全球单播地址), `OTHER`(非GUA/ULA地址), `ULA`(唯一本地地址)
+                     * 获取`IPv6`地址的类型: `GUA`(全球单播地址), `ULA`(唯一本地地址)
+                     * @return AddressType `IPv6`地址的类型: `GUA`(全球单播地址), `ULA`(唯一本地地址)
                      * 
                      */
                     std::string GetAddressType() const;
 
                     /**
-                     * 设置`IPv6`地址的类型: `GUA`(全球单播地址), `OTHER`(非GUA/ULA地址), `ULA`(唯一本地地址)
-                     * @param _addressType `IPv6`地址的类型: `GUA`(全球单播地址), `OTHER`(非GUA/ULA地址), `ULA`(唯一本地地址)
+                     * 设置`IPv6`地址的类型: `GUA`(全球单播地址), `ULA`(唯一本地地址)
+                     * @param _addressType `IPv6`地址的类型: `GUA`(全球单播地址), `ULA`(唯一本地地址)
                      * 
                      */
                     void SetAddressType(const std::string& _addressType);
@@ -279,7 +279,7 @@ namespace TencentCloud
                     bool m_publicIpAddressHasBeenSet;
 
                     /**
-                     * `IPv6`地址的类型: `GUA`(全球单播地址), `OTHER`(非GUA/ULA地址), `ULA`(唯一本地地址)
+                     * `IPv6`地址的类型: `GUA`(全球单播地址), `ULA`(唯一本地地址)
                      */
                     std::string m_addressType;
                     bool m_addressTypeHasBeenSet;

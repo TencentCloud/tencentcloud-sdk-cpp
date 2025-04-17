@@ -33,6 +33,7 @@
 #include <tencentcloud/mps/v20190612/model/DescribeOutputHLSPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeOutputRISTSettings.h>
 #include <tencentcloud/mps/v20190612/model/PidSelector.h>
+#include <tencentcloud/mps/v20190612/model/StreamUrlDetail.h>
 
 
 namespace TencentCloud
@@ -117,6 +118,27 @@ namespace TencentCloud
                      * 
                      */
                     bool OutputTypeHasBeenSet() const;
+
+                    /**
+                     * 获取输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     * @return OutputKind 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     * 
+                     */
+                    std::string GetOutputKind() const;
+
+                    /**
+                     * 设置输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     * @param _outputKind 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     * 
+                     */
+                    void SetOutputKind(const std::string& _outputKind);
+
+                    /**
+                     * 判断参数 OutputKind 是否已赋值
+                     * @return OutputKind 是否已赋值
+                     * 
+                     */
+                    bool OutputKindHasBeenSet() const;
 
                     /**
                      * 获取输出描述。
@@ -502,6 +524,27 @@ namespace TencentCloud
                      */
                     bool PidSelectorHasBeenSet() const;
 
+                    /**
+                     * 获取输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     * @return StreamUrls 输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     * 
+                     */
+                    std::vector<StreamUrlDetail> GetStreamUrls() const;
+
+                    /**
+                     * 设置输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     * @param _streamUrls 输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     * 
+                     */
+                    void SetStreamUrls(const std::vector<StreamUrlDetail>& _streamUrls);
+
+                    /**
+                     * 判断参数 StreamUrls 是否已赋值
+                     * @return StreamUrls 是否已赋值
+                     * 
+                     */
+                    bool StreamUrlsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -521,6 +564,12 @@ namespace TencentCloud
                      */
                     std::string m_outputType;
                     bool m_outputTypeHasBeenSet;
+
+                    /**
+                     * 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     */
+                    std::string m_outputKind;
+                    bool m_outputKindHasBeenSet;
 
                     /**
                      * 输出描述。
@@ -629,6 +678,12 @@ namespace TencentCloud
                      */
                     PidSelector m_pidSelector;
                     bool m_pidSelectorHasBeenSet;
+
+                    /**
+                     * 输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     */
+                    std::vector<StreamUrlDetail> m_streamUrls;
+                    bool m_streamUrlsHasBeenSet;
 
                 };
             }

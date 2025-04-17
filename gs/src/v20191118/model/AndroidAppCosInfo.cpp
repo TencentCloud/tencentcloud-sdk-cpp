@@ -21,7 +21,8 @@ using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
 AndroidAppCosInfo::AndroidAppCosInfo() :
-    m_androidAppIdHasBeenSet(false)
+    m_androidAppIdHasBeenSet(false),
+    m_fileNameHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome AndroidAppCosInfo::Deserialize(const rapidjson::Value &value
         m_androidAppIdHasBeenSet = true;
     }
 
+    if (value.HasMember("FileName") && !value["FileName"].IsNull())
+    {
+        if (!value["FileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidAppCosInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileName = string(value["FileName"].GetString());
+        m_fileNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void AndroidAppCosInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "AndroidAppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_androidAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void AndroidAppCosInfo::SetAndroidAppId(const string& _androidAppId)
 bool AndroidAppCosInfo::AndroidAppIdHasBeenSet() const
 {
     return m_androidAppIdHasBeenSet;
+}
+
+string AndroidAppCosInfo::GetFileName() const
+{
+    return m_fileName;
+}
+
+void AndroidAppCosInfo::SetFileName(const string& _fileName)
+{
+    m_fileName = _fileName;
+    m_fileNameHasBeenSet = true;
+}
+
+bool AndroidAppCosInfo::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
 }
 

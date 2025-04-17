@@ -25,7 +25,8 @@ using namespace std;
 ExportFileTamperEventsRequest::ExportFileTamperEventsRequest() :
     m_filtersHasBeenSet(false),
     m_filedsHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
+    m_fieldsHasBeenSet(false),
+    m_whereHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,19 @@ string ExportFileTamperEventsRequest::ToJsonString() const
         string key = "Fields";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fields.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_whereHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Where";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_where.begin(); itr != m_where.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -126,6 +140,22 @@ void ExportFileTamperEventsRequest::SetFields(const string& _fields)
 bool ExportFileTamperEventsRequest::FieldsHasBeenSet() const
 {
     return m_fieldsHasBeenSet;
+}
+
+vector<string> ExportFileTamperEventsRequest::GetWhere() const
+{
+    return m_where;
+}
+
+void ExportFileTamperEventsRequest::SetWhere(const vector<string>& _where)
+{
+    m_where = _where;
+    m_whereHasBeenSet = true;
+}
+
+bool ExportFileTamperEventsRequest::WhereHasBeenSet() const
+{
+    return m_whereHasBeenSet;
 }
 
 

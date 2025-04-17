@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡名称，最大长度不能超过60个字节。
-                     * @return NetworkInterfaceName 弹性网卡名称，最大长度不能超过60个字节。
+                     * 获取弹性网卡名称，最大长度不能超过60个字符。
+                     * @return NetworkInterfaceName 弹性网卡名称，最大长度不能超过60个字符。
                      * 
                      */
                     std::string GetNetworkInterfaceName() const;
 
                     /**
-                     * 设置弹性网卡名称，最大长度不能超过60个字节。
-                     * @param _networkInterfaceName 弹性网卡名称，最大长度不能超过60个字节。
+                     * 设置弹性网卡名称，最大长度不能超过60个字符。
+                     * @param _networkInterfaceName 弹性网卡名称，最大长度不能超过60个字符。
                      * 
                      */
                     void SetNetworkInterfaceName(const std::string& _networkInterfaceName);
@@ -330,7 +330,7 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 弹性网卡名称，最大长度不能超过60个字节。
+                     * 弹性网卡名称，最大长度不能超过60个字符。
                      */
                     std::string m_networkInterfaceName;
                     bool m_networkInterfaceNameHasBeenSet;

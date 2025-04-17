@@ -14,32 +14,36 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LIGHTHOUSE_V20200324_MODEL_DESCRIBEINSTANCELOGINKEYPAIRATTRIBUTEREQUEST_H_
-#define TENCENTCLOUD_LIGHTHOUSE_V20200324_MODEL_DESCRIBEINSTANCELOGINKEYPAIRATTRIBUTEREQUEST_H_
+#ifndef TENCENTCLOUD_VPC_V20170312_MODEL_INSTANCEJUMBO_H_
+#define TENCENTCLOUD_VPC_V20170312_MODEL_INSTANCEJUMBO_H_
 
 #include <string>
 #include <vector>
 #include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 
 
 namespace TencentCloud
 {
-    namespace Lighthouse
+    namespace Vpc
     {
-        namespace V20200324
+        namespace V20170312
         {
             namespace Model
             {
                 /**
-                * DescribeInstanceLoginKeyPairAttribute请求参数结构体
+                * 云服务器巨帧状态
                 */
-                class DescribeInstanceLoginKeyPairAttributeRequest : public AbstractModel
+                class InstanceJumbo : public AbstractModel
                 {
                 public:
-                    DescribeInstanceLoginKeyPairAttributeRequest();
-                    ~DescribeInstanceLoginKeyPairAttributeRequest() = default;
-                    std::string ToJsonString() const;
+                    InstanceJumbo();
+                    ~InstanceJumbo() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
@@ -63,6 +67,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例是否支持巨帧。
+                     * @return JumboState 实例是否支持巨帧。
+                     * 
+                     */
+                    bool GetJumboState() const;
+
+                    /**
+                     * 设置实例是否支持巨帧。
+                     * @param _jumboState 实例是否支持巨帧。
+                     * 
+                     */
+                    void SetJumboState(const bool& _jumboState);
+
+                    /**
+                     * 判断参数 JumboState 是否已赋值
+                     * @return JumboState 是否已赋值
+                     * 
+                     */
+                    bool JumboStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,10 +96,16 @@ namespace TencentCloud
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
+                    /**
+                     * 实例是否支持巨帧。
+                     */
+                    bool m_jumboState;
+                    bool m_jumboStateHasBeenSet;
+
                 };
             }
         }
     }
 }
 
-#endif // !TENCENTCLOUD_LIGHTHOUSE_V20200324_MODEL_DESCRIBEINSTANCELOGINKEYPAIRATTRIBUTEREQUEST_H_
+#endif // !TENCENTCLOUD_VPC_V20170312_MODEL_INSTANCEJUMBO_H_

@@ -634,6 +634,27 @@ namespace TencentCloud
                      */
                     bool CmdLineQuoteHasBeenSet() const;
 
+                    /**
+                     * 获取风险等级
+                     * @return RiskLevel 风险等级
+                     * 
+                     */
+                    uint64_t GetRiskLevel() const;
+
+                    /**
+                     * 设置风险等级
+                     * @param _riskLevel 风险等级
+                     * 
+                     */
+                    void SetRiskLevel(const uint64_t& _riskLevel);
+
+                    /**
+                     * 判断参数 RiskLevel 是否已赋值
+                     * @return RiskLevel 是否已赋值
+                     * 
+                     */
+                    bool RiskLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -803,6 +824,12 @@ namespace TencentCloud
                      */
                     std::string m_cmdLineQuote;
                     bool m_cmdLineQuoteHasBeenSet;
+
+                    /**
+                     * 风险等级
+                     */
+                    uint64_t m_riskLevel;
+                    bool m_riskLevelHasBeenSet;
 
                 };
             }

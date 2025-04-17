@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool EntrypointClassHasBeenSet() const;
 
                     /**
-                     * 获取主类入参
-                     * @return ProgramArgs 主类入参
+                     * 获取主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
+                     * @return ProgramArgs 主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
                      * 
                      */
                     std::string GetProgramArgs() const;
 
                     /**
-                     * 设置主类入参
-                     * @param _programArgs 主类入参
+                     * 设置主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
+                     * @param _programArgs 主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
                      * 
                      */
                     void SetProgramArgs(const std::string& _programArgs);
@@ -756,7 +756,7 @@ namespace TencentCloud
                     bool m_entrypointClassHasBeenSet;
 
                     /**
-                     * 主类入参
+                     * 主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
                      */
                     std::string m_programArgs;
                     bool m_programArgsHasBeenSet;

@@ -93,31 +93,15 @@ namespace TencentCloud
                     bool MachineOsHasBeenSet() const;
 
                     /**
-                     * 获取主机状态。
-<li>OFFLINE: 离线  </li>
-<li>ONLINE: 在线</li>
-<li>SHUTDOWN: 已关机</li>
-<li>UNINSTALLED: 未防护</li>
-                     * @return MachineStatus 主机状态。
-<li>OFFLINE: 离线  </li>
-<li>ONLINE: 在线</li>
-<li>SHUTDOWN: 已关机</li>
-<li>UNINSTALLED: 未防护</li>
+                     * 获取主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>	
+                     * @return MachineStatus 主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>	
                      * 
                      */
                     std::string GetMachineStatus() const;
 
                     /**
-                     * 设置主机状态。
-<li>OFFLINE: 离线  </li>
-<li>ONLINE: 在线</li>
-<li>SHUTDOWN: 已关机</li>
-<li>UNINSTALLED: 未防护</li>
-                     * @param _machineStatus 主机状态。
-<li>OFFLINE: 离线  </li>
-<li>ONLINE: 在线</li>
-<li>SHUTDOWN: 已关机</li>
-<li>UNINSTALLED: 未防护</li>
+                     * 设置主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>	
+                     * @param _machineStatus 主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>	
                      * 
                      */
                     void SetMachineStatus(const std::string& _machineStatus);
@@ -128,6 +112,48 @@ namespace TencentCloud
                      * 
                      */
                     bool MachineStatusHasBeenSet() const;
+
+                    /**
+                     * 获取ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装
+                     * @return AgentStatus ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装
+                     * 
+                     */
+                    std::string GetAgentStatus() const;
+
+                    /**
+                     * 设置ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装
+                     * @param _agentStatus ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装
+                     * 
+                     */
+                    void SetAgentStatus(const std::string& _agentStatus);
+
+                    /**
+                     * 判断参数 AgentStatus 是否已赋值
+                     * @return AgentStatus 是否已赋值
+                     * 
+                     */
+                    bool AgentStatusHasBeenSet() const;
+
+                    /**
+                     * 获取RUNNING 运行中; STOPED 已关机; EXPIRED 待回收	
+                     * @return InstanceStatus RUNNING 运行中; STOPED 已关机; EXPIRED 待回收	
+                     * 
+                     */
+                    std::string GetInstanceStatus() const;
+
+                    /**
+                     * 设置RUNNING 运行中; STOPED 已关机; EXPIRED 待回收	
+                     * @param _instanceStatus RUNNING 运行中; STOPED 已关机; EXPIRED 待回收	
+                     * 
+                     */
+                    void SetInstanceStatus(const std::string& _instanceStatus);
+
+                    /**
+                     * 判断参数 InstanceStatus 是否已赋值
+                     * @return InstanceStatus 是否已赋值
+                     * 
+                     */
+                    bool InstanceStatusHasBeenSet() const;
 
                     /**
                      * 获取主机安全Uuid，若客户端长时间不在线将返回空字符。
@@ -760,14 +786,22 @@ namespace TencentCloud
                     bool m_machineOsHasBeenSet;
 
                     /**
-                     * 主机状态。
-<li>OFFLINE: 离线  </li>
-<li>ONLINE: 在线</li>
-<li>SHUTDOWN: 已关机</li>
-<li>UNINSTALLED: 未防护</li>
+                     * 主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>	
                      */
                     std::string m_machineStatus;
                     bool m_machineStatusHasBeenSet;
+
+                    /**
+                     * ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装
+                     */
+                    std::string m_agentStatus;
+                    bool m_agentStatusHasBeenSet;
+
+                    /**
+                     * RUNNING 运行中; STOPED 已关机; EXPIRED 待回收	
+                     */
+                    std::string m_instanceStatus;
+                    bool m_instanceStatusHasBeenSet;
 
                     /**
                      * 主机安全Uuid，若客户端长时间不在线将返回空字符。

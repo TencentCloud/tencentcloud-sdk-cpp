@@ -57,6 +57,20 @@ namespace TencentCloud
                      */
                     bool Ipv6CidrBlockHasBeenSet() const;
 
+                    /**
+                     * 获取申请IPv6 Cidr 的类型，`GUA`,  `ULA`
+                     * @return AddressType 申请IPv6 Cidr 的类型，`GUA`,  `ULA`
+                     * 
+                     */
+                    std::string GetAddressType() const;
+
+                    /**
+                     * 判断参数 AddressType 是否已赋值
+                     * @return AddressType 是否已赋值
+                     * 
+                     */
+                    bool AddressTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +78,12 @@ namespace TencentCloud
                      */
                     std::string m_ipv6CidrBlock;
                     bool m_ipv6CidrBlockHasBeenSet;
+
+                    /**
+                     * 申请IPv6 Cidr 的类型，`GUA`,  `ULA`
+                     */
+                    std::string m_addressType;
+                    bool m_addressTypeHasBeenSet;
 
                 };
             }

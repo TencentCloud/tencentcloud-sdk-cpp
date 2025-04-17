@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群列表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancesList 集群列表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceSimpleInfoNew> GetInstancesList() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -100,14 +96,12 @@ namespace TencentCloud
 
                     /**
                      * 集群列表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceSimpleInfoNew> m_instancesList;
                     bool m_instancesListHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;

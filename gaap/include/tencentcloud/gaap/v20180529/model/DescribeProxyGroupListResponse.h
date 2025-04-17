@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取通道组列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyGroupList 通道组列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProxyGroupInfo> GetProxyGroupList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 通道组列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyGroupInfo> m_proxyGroupList;
                     bool m_proxyGroupListHasBeenSet;

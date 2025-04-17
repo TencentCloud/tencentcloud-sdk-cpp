@@ -23,7 +23,8 @@ using namespace std;
 AndroidAppVersionInfo::AndroidAppVersionInfo() :
     m_androidAppVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_commandHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome AndroidAppVersionInfo::Deserialize(const rapidjson::Value &v
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Command") && !value["Command"].IsNull())
+    {
+        if (!value["Command"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidAppVersionInfo.Command` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_command = string(value["Command"].GetString());
+        m_commandHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void AndroidAppVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Command";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void AndroidAppVersionInfo::SetCreateTime(const string& _createTime)
 bool AndroidAppVersionInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string AndroidAppVersionInfo::GetCommand() const
+{
+    return m_command;
+}
+
+void AndroidAppVersionInfo::SetCommand(const string& _command)
+{
+    m_command = _command;
+    m_commandHasBeenSet = true;
+}
+
+bool AndroidAppVersionInfo::CommandHasBeenSet() const
+{
+    return m_commandHasBeenSet;
 }
 

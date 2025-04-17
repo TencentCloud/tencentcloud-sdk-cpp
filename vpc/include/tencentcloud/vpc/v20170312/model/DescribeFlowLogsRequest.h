@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私用网络ID或者统一ID，建议使用统一ID。
-                     * @return VpcId 私用网络ID或者统一ID，建议使用统一ID。
+                     * 获取私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @return VpcId 私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私用网络ID或者统一ID，建议使用统一ID。
-                     * @param _vpcId 私用网络ID或者统一ID，建议使用统一ID。
+                     * 设置私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @param _vpcId 私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志唯一ID。
-                     * @return FlowLogId 流日志唯一ID。
+                     * 获取流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建。
+                     * @return FlowLogId 流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建。
                      * 
                      */
                     std::string GetFlowLogId() const;
 
                     /**
-                     * 设置流日志唯一ID。
-                     * @param _flowLogId 流日志唯一ID。
+                     * 设置流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建。
+                     * @param _flowLogId 流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建。
                      * 
                      */
                     void SetFlowLogId(const std::string& _flowLogId);
@@ -107,15 +107,19 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
-                     * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
+                     * 获取流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+
+                     * @return ResourceType 流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
-                     * @param _resourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
+                     * 设置流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+
+                     * @param _resourceType 流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -149,15 +153,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志采集类型，ACCEPT|REJECT|ALL。
-                     * @return TrafficType 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * 获取流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
+                     * @return TrafficType 流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
                      * 
                      */
                     std::string GetTrafficType() const;
 
                     /**
-                     * 设置流日志采集类型，ACCEPT|REJECT|ALL。
-                     * @param _trafficType 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * 设置流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
+                     * @param _trafficType 流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
                      * 
                      */
                     void SetTrafficType(const std::string& _trafficType);
@@ -191,15 +195,15 @@ namespace TencentCloud
                     bool CloudLogIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志存储ID状态。
-                     * @return CloudLogState 流日志存储ID状态。
+                     * 获取流日志存储ID状态。SUCCESS（成功），DELETED（删除）
+                     * @return CloudLogState 流日志存储ID状态。SUCCESS（成功），DELETED（删除）
                      * 
                      */
                     std::string GetCloudLogState() const;
 
                     /**
-                     * 设置流日志存储ID状态。
-                     * @param _cloudLogState 流日志存储ID状态。
+                     * 设置流日志存储ID状态。SUCCESS（成功），DELETED（删除）
+                     * @param _cloudLogState 流日志存储ID状态。SUCCESS（成功），DELETED（删除）
                      * 
                      */
                     void SetCloudLogState(const std::string& _cloudLogState);
@@ -212,15 +216,15 @@ namespace TencentCloud
                     bool CloudLogStateHasBeenSet() const;
 
                     /**
-                     * 获取按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。
-                     * @return OrderField 按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。
+                     * 获取按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
+                     * @return OrderField 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
                      * 
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。
-                     * @param _orderField 按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。
+                     * 设置按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
+                     * @param _orderField 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
                      * 
                      */
                     void SetOrderField(const std::string& _orderField);
@@ -275,15 +279,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页行数，默认为10。
-                     * @return Limit 每页行数，默认为10。
+                     * 获取每页行数，默认为10。范围1-100。
+                     * @return Limit 每页行数，默认为10。范围1-100。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页行数，默认为10。
-                     * @param _limit 每页行数，默认为10。
+                     * 设置每页行数，默认为10。范围1-100。
+                     * @param _limit 每页行数，默认为10。范围1-100。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -348,13 +352,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私用网络ID或者统一ID，建议使用统一ID。
+                     * 私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 流日志唯一ID。
+                     * 流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建。
                      */
                     std::string m_flowLogId;
                     bool m_flowLogIdHasBeenSet;
@@ -366,7 +370,8 @@ namespace TencentCloud
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
+                     * 流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
@@ -378,7 +383,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * 流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
                      */
                     std::string m_trafficType;
                     bool m_trafficTypeHasBeenSet;
@@ -390,13 +395,13 @@ namespace TencentCloud
                     bool m_cloudLogIdHasBeenSet;
 
                     /**
-                     * 流日志存储ID状态。
+                     * 流日志存储ID状态。SUCCESS（成功），DELETED（删除）
                      */
                     std::string m_cloudLogState;
                     bool m_cloudLogStateHasBeenSet;
 
                     /**
-                     * 按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。
+                     * 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
@@ -414,7 +419,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页行数，默认为10。
+                     * 每页行数，默认为10。范围1-100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

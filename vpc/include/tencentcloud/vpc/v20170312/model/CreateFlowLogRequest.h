@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流日志实例名字。
-                     * @return FlowLogName 流日志实例名字。
+                     * 获取流日志实例名字。长度为不超过60个字节。
+                     * @return FlowLogName 流日志实例名字。长度为不超过60个字节。
                      * 
                      */
                     std::string GetFlowLogName() const;
 
                     /**
-                     * 设置流日志实例名字。
-                     * @param _flowLogName 流日志实例名字。
+                     * 设置流日志实例名字。长度为不超过60个字节。
+                     * @param _flowLogName 流日志实例名字。长度为不超过60个字节。
                      * 
                      */
                     void SetFlowLogName(const std::string& _flowLogName);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
-                     * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
+                     * 获取流日志所属资源类型，VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC， SUBNET，CCN，DCG时，请通过工单加入白名单。
+                     * @return ResourceType 流日志所属资源类型，VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC， SUBNET，CCN，DCG时，请通过工单加入白名单。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
-                     * @param _resourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
+                     * 设置流日志所属资源类型，VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC， SUBNET，CCN，DCG时，请通过工单加入白名单。
+                     * @param _resourceType 流日志所属资源类型，VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC， SUBNET，CCN，DCG时，请通过工单加入白名单。
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志采集类型，ACCEPT|REJECT|ALL。
-                     * @return TrafficType 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * 获取流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
+                     * @return TrafficType 流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
                      * 
                      */
                     std::string GetTrafficType() const;
 
                     /**
-                     * 设置流日志采集类型，ACCEPT|REJECT|ALL。
-                     * @param _trafficType 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * 设置流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
+                     * @param _trafficType 流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
                      * 
                      */
                     void SetTrafficType(const std::string& _trafficType);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool TrafficTypeHasBeenSet() const;
 
                     /**
-                     * 获取私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。
-                     * @return VpcId 私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。
+                     * 获取私用网络唯一ID。当ResourceType为CCN时不填，其他类型必填。
+                     * @return VpcId 私用网络唯一ID。当ResourceType为CCN时不填，其他类型必填。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。
-                     * @param _vpcId 私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。
+                     * 设置私用网络唯一ID。当ResourceType为CCN时不填，其他类型必填。
+                     * @param _vpcId 私用网络唯一ID。当ResourceType为CCN时不填，其他类型必填。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -171,15 +171,23 @@ namespace TencentCloud
                     bool FlowLogDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取流日志存储ID。
-                     * @return CloudLogId 流日志存储ID。
+                     * 获取流日志存储ID（cls的日志主题ID，
+可通过[DescribeTopics](https://cloud.tencent.com/document/api/1179/46086)接口获取。
+）。当StorageType为cls时，CloudLogId为必选。
+                     * @return CloudLogId 流日志存储ID（cls的日志主题ID，
+可通过[DescribeTopics](https://cloud.tencent.com/document/api/1179/46086)接口获取。
+）。当StorageType为cls时，CloudLogId为必选。
                      * 
                      */
                     std::string GetCloudLogId() const;
 
                     /**
-                     * 设置流日志存储ID。
-                     * @param _cloudLogId 流日志存储ID。
+                     * 设置流日志存储ID（cls的日志主题ID，
+可通过[DescribeTopics](https://cloud.tencent.com/document/api/1179/46086)接口获取。
+）。当StorageType为cls时，CloudLogId为必选。
+                     * @param _cloudLogId 流日志存储ID（cls的日志主题ID，
+可通过[DescribeTopics](https://cloud.tencent.com/document/api/1179/46086)接口获取。
+）。当StorageType为cls时，CloudLogId为必选。
                      * 
                      */
                     void SetCloudLogId(const std::string& _cloudLogId);
@@ -213,15 +221,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取消费端类型：cls、ckafka。默认值cls。
-                     * @return StorageType 消费端类型：cls、ckafka。默认值cls。
+                     * 获取消费端类型：cls、ckafka。默认值cls。当选择kafka时，请通过工单加入白名单。
+                     * @return StorageType 消费端类型：cls、ckafka。默认值cls。当选择kafka时，请通过工单加入白名单。
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置消费端类型：cls、ckafka。默认值cls。
-                     * @param _storageType 消费端类型：cls、ckafka。默认值cls。
+                     * 设置消费端类型：cls、ckafka。默认值cls。当选择kafka时，请通过工单加入白名单。
+                     * @param _storageType 消费端类型：cls、ckafka。默认值cls。当选择kafka时，请通过工单加入白名单。
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -278,13 +286,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流日志实例名字。
+                     * 流日志实例名字。长度为不超过60个字节。
                      */
                     std::string m_flowLogName;
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
+                     * 流日志所属资源类型，VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC， SUBNET，CCN，DCG时，请通过工单加入白名单。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
@@ -296,13 +304,13 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * 流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
                      */
                     std::string m_trafficType;
                     bool m_trafficTypeHasBeenSet;
 
                     /**
-                     * 私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。
+                     * 私用网络唯一ID。当ResourceType为CCN时不填，其他类型必填。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -314,7 +322,9 @@ namespace TencentCloud
                     bool m_flowLogDescriptionHasBeenSet;
 
                     /**
-                     * 流日志存储ID。
+                     * 流日志存储ID（cls的日志主题ID，
+可通过[DescribeTopics](https://cloud.tencent.com/document/api/1179/46086)接口获取。
+）。当StorageType为cls时，CloudLogId为必选。
                      */
                     std::string m_cloudLogId;
                     bool m_cloudLogIdHasBeenSet;
@@ -326,7 +336,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 消费端类型：cls、ckafka。默认值cls。
+                     * 消费端类型：cls、ckafka。默认值cls。当选择kafka时，请通过工单加入白名单。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;

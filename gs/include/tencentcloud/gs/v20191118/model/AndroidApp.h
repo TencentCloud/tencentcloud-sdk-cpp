@@ -173,6 +173,27 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）
+                     * @return AppMode 应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）
+                     * 
+                     */
+                    std::string GetAppMode() const;
+
+                    /**
+                     * 设置应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）
+                     * @param _appMode 应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）
+                     * 
+                     */
+                    void SetAppMode(const std::string& _appMode);
+
+                    /**
+                     * 判断参数 AppMode 是否已赋值
+                     * @return AppMode 是否已赋值
+                     * 
+                     */
+                    bool AppModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +231,12 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）
+                     */
+                    std::string m_appMode;
+                    bool m_appModeHasBeenSet;
 
                 };
             }

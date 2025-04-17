@@ -31,6 +31,7 @@
 #include <tencentcloud/tione/v20211111/model/DataConfig.h>
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
 #include <tencentcloud/tione/v20211111/model/ImageInfo.h>
+#include <tencentcloud/tione/v20211111/model/CodeRepoConfig.h>
 
 
 namespace TencentCloud
@@ -993,6 +994,27 @@ namespace TencentCloud
                      */
                     bool CallbackUrlHasBeenSet() const;
 
+                    /**
+                     * 获取任务关联的代码仓库配置
+                     * @return CodeRepos 任务关联的代码仓库配置
+                     * 
+                     */
+                    std::vector<CodeRepoConfig> GetCodeRepos() const;
+
+                    /**
+                     * 设置任务关联的代码仓库配置
+                     * @param _codeRepos 任务关联的代码仓库配置
+                     * 
+                     */
+                    void SetCodeRepos(const std::vector<CodeRepoConfig>& _codeRepos);
+
+                    /**
+                     * 判断参数 CodeRepos 是否已赋值
+                     * @return CodeRepos 是否已赋值
+                     * 
+                     */
+                    bool CodeReposHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1259,6 +1281,12 @@ namespace TencentCloud
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 任务关联的代码仓库配置
+                     */
+                    std::vector<CodeRepoConfig> m_codeRepos;
+                    bool m_codeReposHasBeenSet;
 
                 };
             }

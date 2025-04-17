@@ -25,6 +25,8 @@ CreateOutputInfo::CreateOutputInfo() :
     m_descriptionHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_outputRegionHasBeenSet(false),
+    m_outputTypeHasBeenSet(false),
+    m_outputKindHasBeenSet(false),
     m_sRTSettingsHasBeenSet(false),
     m_rTMPSettingsHasBeenSet(false),
     m_rTPSettingsHasBeenSet(false),
@@ -32,7 +34,6 @@ CreateOutputInfo::CreateOutputInfo() :
     m_maxConcurrentHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_zonesHasBeenSet(false),
-    m_outputTypeHasBeenSet(false),
     m_rISTSettingsHasBeenSet(false),
     m_pidSelectorHasBeenSet(false)
 {
@@ -81,6 +82,26 @@ CoreInternalOutcome CreateOutputInfo::Deserialize(const rapidjson::Value &value)
         }
         m_outputRegion = string(value["OutputRegion"].GetString());
         m_outputRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputType") && !value["OutputType"].IsNull())
+    {
+        if (!value["OutputType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateOutputInfo.OutputType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputType = string(value["OutputType"].GetString());
+        m_outputTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputKind") && !value["OutputKind"].IsNull())
+    {
+        if (!value["OutputKind"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateOutputInfo.OutputKind` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputKind = string(value["OutputKind"].GetString());
+        m_outputKindHasBeenSet = true;
     }
 
     if (value.HasMember("SRTSettings") && !value["SRTSettings"].IsNull())
@@ -183,16 +204,6 @@ CoreInternalOutcome CreateOutputInfo::Deserialize(const rapidjson::Value &value)
         m_zonesHasBeenSet = true;
     }
 
-    if (value.HasMember("OutputType") && !value["OutputType"].IsNull())
-    {
-        if (!value["OutputType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CreateOutputInfo.OutputType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_outputType = string(value["OutputType"].GetString());
-        m_outputTypeHasBeenSet = true;
-    }
-
     if (value.HasMember("RISTSettings") && !value["RISTSettings"].IsNull())
     {
         if (!value["RISTSettings"].IsObject())
@@ -264,6 +275,22 @@ void CreateOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "OutputRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_outputRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputKindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputKind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputKind.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sRTSettingsHasBeenSet)
@@ -338,14 +365,6 @@ void CreateOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_outputTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OutputType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_outputType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rISTSettingsHasBeenSet)
@@ -431,6 +450,38 @@ void CreateOutputInfo::SetOutputRegion(const string& _outputRegion)
 bool CreateOutputInfo::OutputRegionHasBeenSet() const
 {
     return m_outputRegionHasBeenSet;
+}
+
+string CreateOutputInfo::GetOutputType() const
+{
+    return m_outputType;
+}
+
+void CreateOutputInfo::SetOutputType(const string& _outputType)
+{
+    m_outputType = _outputType;
+    m_outputTypeHasBeenSet = true;
+}
+
+bool CreateOutputInfo::OutputTypeHasBeenSet() const
+{
+    return m_outputTypeHasBeenSet;
+}
+
+string CreateOutputInfo::GetOutputKind() const
+{
+    return m_outputKind;
+}
+
+void CreateOutputInfo::SetOutputKind(const string& _outputKind)
+{
+    m_outputKind = _outputKind;
+    m_outputKindHasBeenSet = true;
+}
+
+bool CreateOutputInfo::OutputKindHasBeenSet() const
+{
+    return m_outputKindHasBeenSet;
 }
 
 CreateOutputSRTSettings CreateOutputInfo::GetSRTSettings() const
@@ -543,22 +594,6 @@ void CreateOutputInfo::SetZones(const vector<string>& _zones)
 bool CreateOutputInfo::ZonesHasBeenSet() const
 {
     return m_zonesHasBeenSet;
-}
-
-string CreateOutputInfo::GetOutputType() const
-{
-    return m_outputType;
-}
-
-void CreateOutputInfo::SetOutputType(const string& _outputType)
-{
-    m_outputType = _outputType;
-    m_outputTypeHasBeenSet = true;
-}
-
-bool CreateOutputInfo::OutputTypeHasBeenSet() const
-{
-    return m_outputTypeHasBeenSet;
 }
 
 CreateOutputRistSettings CreateOutputInfo::GetRISTSettings() const

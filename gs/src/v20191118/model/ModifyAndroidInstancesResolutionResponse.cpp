@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesLoginKeyPairAttributeResponse.h>
+#include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Lighthouse::V20200324::Model;
+using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
-ModifyInstancesLoginKeyPairAttributeResponse::ModifyInstancesLoginKeyPairAttributeResponse()
+ModifyAndroidInstancesResolutionResponse::ModifyAndroidInstancesResolutionResponse()
 {
 }
 
-CoreInternalOutcome ModifyInstancesLoginKeyPairAttributeResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyAndroidInstancesResolutionResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome ModifyInstancesLoginKeyPairAttributeResponse::Deserialize(co
     return CoreInternalOutcome(true);
 }
 
-string ModifyInstancesLoginKeyPairAttributeResponse::ToJsonString() const
+string ModifyAndroidInstancesResolutionResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
