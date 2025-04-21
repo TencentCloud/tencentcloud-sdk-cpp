@@ -28,7 +28,8 @@ ServerBaseInfo::ServerBaseInfo() :
     m_updateTimeHasBeenSet(false),
     m_accessTypesHasBeenSet(false),
     m_customDomainNamesHasBeenSet(false),
-    m_serverTypeHasBeenSet(false)
+    m_serverTypeHasBeenSet(false),
+    m_trafficTypeHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome ServerBaseInfo::Deserialize(const rapidjson::Value &value)
         m_serverTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TrafficType") && !value["TrafficType"].IsNull())
+    {
+        if (!value["TrafficType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseInfo.TrafficType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trafficType = string(value["TrafficType"].GetString());
+        m_trafficTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ void ServerBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ServerType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serverType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trafficTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trafficType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -333,5 +352,21 @@ void ServerBaseInfo::SetServerType(const string& _serverType)
 bool ServerBaseInfo::ServerTypeHasBeenSet() const
 {
     return m_serverTypeHasBeenSet;
+}
+
+string ServerBaseInfo::GetTrafficType() const
+{
+    return m_trafficType;
+}
+
+void ServerBaseInfo::SetTrafficType(const string& _trafficType)
+{
+    m_trafficType = _trafficType;
+    m_trafficTypeHasBeenSet = true;
+}
+
+bool ServerBaseInfo::TrafficTypeHasBeenSet() const
+{
+    return m_trafficTypeHasBeenSet;
 }
 

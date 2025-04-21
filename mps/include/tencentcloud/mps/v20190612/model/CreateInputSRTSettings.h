@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StreamIdHasBeenSet() const;
 
                     /**
-                     * 获取延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @return Latency 延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 获取延迟，默认120，单位ms，范围为[0, 3000]。
+                     * @return Latency 延迟，默认120，单位ms，范围为[0, 3000]。
                      * 
                      */
                     int64_t GetLatency() const;
 
                     /**
-                     * 设置延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @param _latency 延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 设置延迟，默认120，单位ms，范围为[0, 3000]。
+                     * @param _latency 延迟，默认120，单位ms，范围为[0, 3000]。
                      * 
                      */
                     void SetLatency(const int64_t& _latency);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool RecvLatencyHasBeenSet() const;
 
                     /**
-                     * 获取对端延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @return PeerLatency 对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 获取对端延迟，默认120，单位ms，范围为[0, 3000]。
+                     * @return PeerLatency 对端延迟，默认120，单位ms，范围为[0, 3000]。
                      * 
                      */
                     int64_t GetPeerLatency() const;
 
                     /**
-                     * 设置对端延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @param _peerLatency 对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 设置对端延迟，默认120，单位ms，范围为[0, 3000]。
+                     * @param _peerLatency 对端延迟，默认120，单位ms，范围为[0, 3000]。
                      * 
                      */
                     void SetPeerLatency(const int64_t& _peerLatency);
@@ -251,7 +251,7 @@ namespace TencentCloud
                     bool m_streamIdHasBeenSet;
 
                     /**
-                     * 延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 延迟，默认120，单位ms，范围为[0, 3000]。
                      */
                     int64_t m_latency;
                     bool m_latencyHasBeenSet;
@@ -263,7 +263,7 @@ namespace TencentCloud
                     bool m_recvLatencyHasBeenSet;
 
                     /**
-                     * 对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 对端延迟，默认120，单位ms，范围为[0, 3000]。
                      */
                     int64_t m_peerLatency;
                     bool m_peerLatencyHasBeenSet;

@@ -179,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取批任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchId 批任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchId 批任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchId(const std::string& _batchId);
@@ -285,7 +281,6 @@ namespace TencentCloud
 
                     /**
                      * 批任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;

@@ -70,7 +70,8 @@ Rule::Rule() :
     m_schemaNameHasBeenSet(false),
     m_targetSchemaNameHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_projectNameHasBeenSet(false)
+    m_projectNameHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -610,6 +611,16 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
         m_projectNameHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1024,6 +1035,14 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "ProjectName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1827,5 +1846,21 @@ void Rule::SetProjectName(const string& _projectName)
 bool Rule::ProjectNameHasBeenSet() const
 {
     return m_projectNameHasBeenSet;
+}
+
+string Rule::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void Rule::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool Rule::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

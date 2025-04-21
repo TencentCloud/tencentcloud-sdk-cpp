@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool KeyNameHasBeenSet() const;
 
                     /**
-                     * 获取密钥对所属的项目`ID`。
-                     * @return ProjectId 密钥对所属的项目`ID`。
+                     * 获取密钥对所属的项目 `ID`，ProjectId 为 0 时表示默认项目。
+                     * @return ProjectId 密钥对所属的项目 `ID`，ProjectId 为 0 时表示默认项目。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置密钥对所属的项目`ID`。
-                     * @param _projectId 密钥对所属的项目`ID`。
+                     * 设置密钥对所属的项目 `ID`，ProjectId 为 0 时表示默认项目。
+                     * @param _projectId 密钥对所属的项目 `ID`，ProjectId 为 0 时表示默认项目。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -251,7 +251,7 @@ namespace TencentCloud
                     bool m_keyNameHasBeenSet;
 
                     /**
-                     * 密钥对所属的项目`ID`。
+                     * 密钥对所属的项目 `ID`，ProjectId 为 0 时表示默认项目。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;

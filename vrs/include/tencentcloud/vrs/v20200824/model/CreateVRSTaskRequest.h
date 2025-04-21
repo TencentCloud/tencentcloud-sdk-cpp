@@ -317,6 +317,31 @@ namespace TencentCloud
                      */
                     bool VPRAudioIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭
+语音增强仅适用于一句话复刻场景
+                     * @return EnableVoiceEnhance 是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭
+语音增强仅适用于一句话复刻场景
+                     * 
+                     */
+                    uint64_t GetEnableVoiceEnhance() const;
+
+                    /**
+                     * 设置是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭
+语音增强仅适用于一句话复刻场景
+                     * @param _enableVoiceEnhance 是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭
+语音增强仅适用于一句话复刻场景
+                     * 
+                     */
+                    void SetEnableVoiceEnhance(const uint64_t& _enableVoiceEnhance);
+
+                    /**
+                     * 判断参数 EnableVoiceEnhance 是否已赋值
+                     * @return EnableVoiceEnhance 是否已赋值
+                     * 
+                     */
+                    bool EnableVoiceEnhanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +420,13 @@ namespace TencentCloud
                      */
                     std::string m_vPRAudioId;
                     bool m_vPRAudioIdHasBeenSet;
+
+                    /**
+                     * 是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭
+语音增强仅适用于一句话复刻场景
+                     */
+                    uint64_t m_enableVoiceEnhance;
+                    bool m_enableVoiceEnhanceHasBeenSet;
 
                 };
             }

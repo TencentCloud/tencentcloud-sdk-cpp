@@ -100,6 +100,20 @@ namespace TencentCloud
                      */
                     bool InstanceTypeLstHasBeenSet() const;
 
+                    /**
+                     * 获取串行模式开关个数
+                     * @return SerilCount 串行模式开关个数
+                     * 
+                     */
+                    int64_t GetSerilCount() const;
+
+                    /**
+                     * 判断参数 SerilCount 是否已赋值
+                     * @return SerilCount 是否已赋值
+                     * 
+                     */
+                    bool SerilCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +139,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceTypeLst;
                     bool m_instanceTypeLstHasBeenSet;
+
+                    /**
+                     * 串行模式开关个数
+                     */
+                    int64_t m_serilCount;
+                    bool m_serilCountHasBeenSet;
 
                 };
             }

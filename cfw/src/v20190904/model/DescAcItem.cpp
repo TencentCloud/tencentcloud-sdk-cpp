@@ -53,7 +53,9 @@ DescAcItem::DescAcItem() :
     m_paramTemplateIdHasBeenSet(false),
     m_sourceNameHasBeenSet(false),
     m_targetNameHasBeenSet(false),
-    m_lastHitTimeHasBeenSet(false)
+    m_lastHitTimeHasBeenSet(false),
+    m_countryKeyHasBeenSet(false),
+    m_cityKeyHasBeenSet(false)
 {
 }
 
@@ -402,6 +404,26 @@ CoreInternalOutcome DescAcItem::Deserialize(const rapidjson::Value &value)
         m_lastHitTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CountryKey") && !value["CountryKey"].IsNull())
+    {
+        if (!value["CountryKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.CountryKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_countryKey = string(value["CountryKey"].GetString());
+        m_countryKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("CityKey") && !value["CityKey"].IsNull())
+    {
+        if (!value["CityKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.CityKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cityKey = string(value["CityKey"].GetString());
+        m_cityKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -678,6 +700,22 @@ void DescAcItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "LastHitTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastHitTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_countryKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CountryKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_countryKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cityKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CityKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cityKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1209,5 +1247,37 @@ void DescAcItem::SetLastHitTime(const string& _lastHitTime)
 bool DescAcItem::LastHitTimeHasBeenSet() const
 {
     return m_lastHitTimeHasBeenSet;
+}
+
+string DescAcItem::GetCountryKey() const
+{
+    return m_countryKey;
+}
+
+void DescAcItem::SetCountryKey(const string& _countryKey)
+{
+    m_countryKey = _countryKey;
+    m_countryKeyHasBeenSet = true;
+}
+
+bool DescAcItem::CountryKeyHasBeenSet() const
+{
+    return m_countryKeyHasBeenSet;
+}
+
+string DescAcItem::GetCityKey() const
+{
+    return m_cityKey;
+}
+
+void DescAcItem::SetCityKey(const string& _cityKey)
+{
+    m_cityKey = _cityKey;
+    m_cityKeyHasBeenSet = true;
+}
+
+bool DescAcItem::CityKeyHasBeenSet() const
+{
+    return m_cityKeyHasBeenSet;
 }
 

@@ -3437,6 +3437,49 @@ CynosdbClient::DescribeRollbackTimeRangeOutcomeCallable CynosdbClient::DescribeR
     return task->get_future();
 }
 
+CynosdbClient::DescribeSSLStatusOutcome CynosdbClient::DescribeSSLStatus(const DescribeSSLStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSSLStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSSLStatusResponse rsp = DescribeSSLStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSSLStatusOutcome(rsp);
+        else
+            return DescribeSSLStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSSLStatusOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeSSLStatusAsync(const DescribeSSLStatusRequest& request, const DescribeSSLStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSSLStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeSSLStatusOutcomeCallable CynosdbClient::DescribeSSLStatusCallable(const DescribeSSLStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSSLStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSSLStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeServerlessInstanceSpecsOutcome CynosdbClient::DescribeServerlessInstanceSpecs(const DescribeServerlessInstanceSpecsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServerlessInstanceSpecs");
@@ -3516,6 +3559,49 @@ CynosdbClient::DescribeServerlessStrategyOutcomeCallable CynosdbClient::Describe
         [this, request]()
         {
             return this->DescribeServerlessStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeSlaveZonesOutcome CynosdbClient::DescribeSlaveZones(const DescribeSlaveZonesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSlaveZones");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSlaveZonesResponse rsp = DescribeSlaveZonesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSlaveZonesOutcome(rsp);
+        else
+            return DescribeSlaveZonesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSlaveZonesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeSlaveZonesAsync(const DescribeSlaveZonesRequest& request, const DescribeSlaveZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSlaveZones(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeSlaveZonesOutcomeCallable CynosdbClient::DescribeSlaveZonesCallable(const DescribeSlaveZonesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSlaveZonesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSlaveZones(request);
         }
     );
 
@@ -5623,6 +5709,49 @@ CynosdbClient::OpenReadOnlyInstanceExclusiveAccessOutcomeCallable CynosdbClient:
         [this, request]()
         {
             return this->OpenReadOnlyInstanceExclusiveAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::OpenSSLOutcome CynosdbClient::OpenSSL(const OpenSSLRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenSSL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenSSLResponse rsp = OpenSSLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenSSLOutcome(rsp);
+        else
+            return OpenSSLOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenSSLOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::OpenSSLAsync(const OpenSSLRequest& request, const OpenSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenSSL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::OpenSSLOutcomeCallable CynosdbClient::OpenSSLCallable(const OpenSSLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenSSLOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenSSL(request);
         }
     );
 

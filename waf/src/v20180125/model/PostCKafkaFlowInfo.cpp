@@ -28,7 +28,9 @@ PostCKafkaFlowInfo::PostCKafkaFlowInfo() :
     m_cKafkaIDHasBeenSet(false),
     m_brokersHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_topicHasBeenSet(false)
+    m_topicHasBeenSet(false),
+    m_compressionHasBeenSet(false),
+    m_contentHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome PostCKafkaFlowInfo::Deserialize(const rapidjson::Value &valu
         m_topicHasBeenSet = true;
     }
 
+    if (value.HasMember("Compression") && !value["Compression"].IsNull())
+    {
+        if (!value["Compression"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostCKafkaFlowInfo.Compression` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_compression = string(value["Compression"].GetString());
+        m_compressionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Content") && !value["Content"].IsNull())
+    {
+        if (!value["Content"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostCKafkaFlowInfo.Content` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_content = string(value["Content"].GetString());
+        m_contentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void PostCKafkaFlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Topic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compression";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_compression.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Content";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void PostCKafkaFlowInfo::SetTopic(const string& _topic)
 bool PostCKafkaFlowInfo::TopicHasBeenSet() const
 {
     return m_topicHasBeenSet;
+}
+
+string PostCKafkaFlowInfo::GetCompression() const
+{
+    return m_compression;
+}
+
+void PostCKafkaFlowInfo::SetCompression(const string& _compression)
+{
+    m_compression = _compression;
+    m_compressionHasBeenSet = true;
+}
+
+bool PostCKafkaFlowInfo::CompressionHasBeenSet() const
+{
+    return m_compressionHasBeenSet;
+}
+
+string PostCKafkaFlowInfo::GetContent() const
+{
+    return m_content;
+}
+
+void PostCKafkaFlowInfo::SetContent(const string& _content)
+{
+    m_content = _content;
+    m_contentHasBeenSet = true;
+}
+
+bool PostCKafkaFlowInfo::ContentHasBeenSet() const
+{
+    return m_contentHasBeenSet;
 }
 

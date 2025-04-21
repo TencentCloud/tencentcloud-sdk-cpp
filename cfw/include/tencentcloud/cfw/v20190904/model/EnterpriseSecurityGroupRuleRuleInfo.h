@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cfw/v20190904/model/EnterpriseSecurityGroupRuleBetaInfo.h>
+#include <tencentcloud/cfw/v20190904/model/SgDnsParseCount.h>
 
 
 namespace TencentCloud
@@ -829,6 +830,27 @@ ANY:表示所有
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取域名解析的IP统计
+                     * @return DnsParseCount 域名解析的IP统计
+                     * 
+                     */
+                    SgDnsParseCount GetDnsParseCount() const;
+
+                    /**
+                     * 设置域名解析的IP统计
+                     * @param _dnsParseCount 域名解析的IP统计
+                     * 
+                     */
+                    void SetDnsParseCount(const SgDnsParseCount& _dnsParseCount);
+
+                    /**
+                     * 判断参数 DnsParseCount 是否已赋值
+                     * @return DnsParseCount 是否已赋值
+                     * 
+                     */
+                    bool DnsParseCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1048,6 +1070,12 @@ ANY:表示所有
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 域名解析的IP统计
+                     */
+                    SgDnsParseCount m_dnsParseCount;
+                    bool m_dnsParseCountHasBeenSet;
 
                 };
             }

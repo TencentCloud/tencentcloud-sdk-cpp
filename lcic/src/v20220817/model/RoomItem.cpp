@@ -45,7 +45,8 @@ RoomItem::RoomItem() :
     m_recordBackgroundHasBeenSet(false),
     m_recordSceneHasBeenSet(false),
     m_recordLangHasBeenSet(false),
-    m_whiteBoardSnapshotModeHasBeenSet(false)
+    m_whiteBoardSnapshotModeHasBeenSet(false),
+    m_subtitlesTranscriptionHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome RoomItem::Deserialize(const rapidjson::Value &value)
         m_whiteBoardSnapshotModeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitlesTranscription") && !value["SubtitlesTranscription"].IsNull())
+    {
+        if (!value["SubtitlesTranscription"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomItem.SubtitlesTranscription` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitlesTranscription = value["SubtitlesTranscription"].GetUint64();
+        m_subtitlesTranscriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +520,14 @@ void RoomItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "WhiteBoardSnapshotMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_whiteBoardSnapshotMode, allocator);
+    }
+
+    if (m_subtitlesTranscriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitlesTranscription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subtitlesTranscription, allocator);
     }
 
 }
@@ -912,5 +931,21 @@ void RoomItem::SetWhiteBoardSnapshotMode(const uint64_t& _whiteBoardSnapshotMode
 bool RoomItem::WhiteBoardSnapshotModeHasBeenSet() const
 {
     return m_whiteBoardSnapshotModeHasBeenSet;
+}
+
+uint64_t RoomItem::GetSubtitlesTranscription() const
+{
+    return m_subtitlesTranscription;
+}
+
+void RoomItem::SetSubtitlesTranscription(const uint64_t& _subtitlesTranscription)
+{
+    m_subtitlesTranscription = _subtitlesTranscription;
+    m_subtitlesTranscriptionHasBeenSet = true;
+}
+
+bool RoomItem::SubtitlesTranscriptionHasBeenSet() const
+{
+    return m_subtitlesTranscriptionHasBeenSet;
 }
 

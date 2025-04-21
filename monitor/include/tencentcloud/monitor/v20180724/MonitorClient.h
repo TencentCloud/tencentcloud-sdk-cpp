@@ -183,6 +183,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyGroupListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyGroupListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePolicyObjectCountRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePolicyObjectCountResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeProductEventListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeProductEventListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeProductListRequest.h>
@@ -601,6 +603,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePolicyGroupListResponse> DescribePolicyGroupListOutcome;
                 typedef std::future<DescribePolicyGroupListOutcome> DescribePolicyGroupListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePolicyGroupListRequest&, DescribePolicyGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePolicyObjectCountResponse> DescribePolicyObjectCountOutcome;
+                typedef std::future<DescribePolicyObjectCountOutcome> DescribePolicyObjectCountOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePolicyObjectCountRequest&, DescribePolicyObjectCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyObjectCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProductEventListResponse> DescribeProductEventListOutcome;
                 typedef std::future<DescribeProductEventListOutcome> DescribeProductEventListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeProductEventListRequest&, DescribeProductEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductEventListAsyncHandler;
@@ -1580,6 +1585,15 @@ namespace TencentCloud
                 DescribePolicyGroupListOutcome DescribePolicyGroupList(const Model::DescribePolicyGroupListRequest &request);
                 void DescribePolicyGroupListAsync(const Model::DescribePolicyGroupListRequest& request, const DescribePolicyGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePolicyGroupListOutcomeCallable DescribePolicyGroupListCallable(const Model::DescribePolicyGroupListRequest& request);
+
+                /**
+                 *查询策略组在每个地域下面绑定的对象数统计
+                 * @param req DescribePolicyObjectCountRequest
+                 * @return DescribePolicyObjectCountOutcome
+                 */
+                DescribePolicyObjectCountOutcome DescribePolicyObjectCount(const Model::DescribePolicyObjectCountRequest &request);
+                void DescribePolicyObjectCountAsync(const Model::DescribePolicyObjectCountRequest& request, const DescribePolicyObjectCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePolicyObjectCountOutcomeCallable DescribePolicyObjectCountCallable(const Model::DescribePolicyObjectCountRequest& request);
 
                 /**
                  *分页获取产品事件的列表

@@ -181,10 +181,14 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcesByDealNameResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeSSLStatusRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeSSLStatusResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessInstanceSpecsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessInstanceSpecsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessStrategyRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessStrategyResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeSlaveZonesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeSlaveZonesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeSupportProxyVersionRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeSupportProxyVersionResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeTasksRequest.h>
@@ -283,6 +287,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/OpenClusterTransparentEncryptResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenReadOnlyInstanceExclusiveAccessRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenReadOnlyInstanceExclusiveAccessResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/OpenSSLRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/OpenSSLResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenWanRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenWanResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/PauseServerlessRequest.h>
@@ -584,12 +590,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRollbackTimeRangeResponse> DescribeRollbackTimeRangeOutcome;
                 typedef std::future<DescribeRollbackTimeRangeOutcome> DescribeRollbackTimeRangeOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeRollbackTimeRangeRequest&, DescribeRollbackTimeRangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackTimeRangeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSSLStatusResponse> DescribeSSLStatusOutcome;
+                typedef std::future<DescribeSSLStatusOutcome> DescribeSSLStatusOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeSSLStatusRequest&, DescribeSSLStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSSLStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServerlessInstanceSpecsResponse> DescribeServerlessInstanceSpecsOutcome;
                 typedef std::future<DescribeServerlessInstanceSpecsOutcome> DescribeServerlessInstanceSpecsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeServerlessInstanceSpecsRequest&, DescribeServerlessInstanceSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessInstanceSpecsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServerlessStrategyResponse> DescribeServerlessStrategyOutcome;
                 typedef std::future<DescribeServerlessStrategyOutcome> DescribeServerlessStrategyOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeServerlessStrategyRequest&, DescribeServerlessStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSlaveZonesResponse> DescribeSlaveZonesOutcome;
+                typedef std::future<DescribeSlaveZonesOutcome> DescribeSlaveZonesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeSlaveZonesRequest&, DescribeSlaveZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlaveZonesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSupportProxyVersionResponse> DescribeSupportProxyVersionOutcome;
                 typedef std::future<DescribeSupportProxyVersionOutcome> DescribeSupportProxyVersionOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeSupportProxyVersionRequest&, DescribeSupportProxyVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSupportProxyVersionAsyncHandler;
@@ -737,6 +749,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenReadOnlyInstanceExclusiveAccessResponse> OpenReadOnlyInstanceExclusiveAccessOutcome;
                 typedef std::future<OpenReadOnlyInstanceExclusiveAccessOutcome> OpenReadOnlyInstanceExclusiveAccessOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::OpenReadOnlyInstanceExclusiveAccessRequest&, OpenReadOnlyInstanceExclusiveAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenReadOnlyInstanceExclusiveAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenSSLResponse> OpenSSLOutcome;
+                typedef std::future<OpenSSLOutcome> OpenSSLOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::OpenSSLRequest&, OpenSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenSSLAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenWanResponse> OpenWanOutcome;
                 typedef std::future<OpenWanOutcome> OpenWanOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::OpenWanRequest&, OpenWanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenWanAsyncHandler;
@@ -1527,6 +1542,15 @@ namespace TencentCloud
                 DescribeRollbackTimeRangeOutcomeCallable DescribeRollbackTimeRangeCallable(const Model::DescribeRollbackTimeRangeRequest& request);
 
                 /**
+                 *查询实例SSL状态
+                 * @param req DescribeSSLStatusRequest
+                 * @return DescribeSSLStatusOutcome
+                 */
+                DescribeSSLStatusOutcome DescribeSSLStatus(const Model::DescribeSSLStatusRequest &request);
+                void DescribeSSLStatusAsync(const Model::DescribeSSLStatusRequest& request, const DescribeSSLStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSSLStatusOutcomeCallable DescribeSSLStatusCallable(const Model::DescribeSSLStatusRequest& request);
+
+                /**
                  *查询Serverless实例可选规格
                  * @param req DescribeServerlessInstanceSpecsRequest
                  * @return DescribeServerlessInstanceSpecsOutcome
@@ -1543,6 +1567,15 @@ namespace TencentCloud
                 DescribeServerlessStrategyOutcome DescribeServerlessStrategy(const Model::DescribeServerlessStrategyRequest &request);
                 void DescribeServerlessStrategyAsync(const Model::DescribeServerlessStrategyRequest& request, const DescribeServerlessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServerlessStrategyOutcomeCallable DescribeServerlessStrategyCallable(const Model::DescribeServerlessStrategyRequest& request);
+
+                /**
+                 *查询从可用区
+                 * @param req DescribeSlaveZonesRequest
+                 * @return DescribeSlaveZonesOutcome
+                 */
+                DescribeSlaveZonesOutcome DescribeSlaveZones(const Model::DescribeSlaveZonesRequest &request);
+                void DescribeSlaveZonesAsync(const Model::DescribeSlaveZonesRequest& request, const DescribeSlaveZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSlaveZonesOutcomeCallable DescribeSlaveZonesCallable(const Model::DescribeSlaveZonesRequest& request);
 
                 /**
                  *本接口（DescribeSupportProxyVersion）用于查询支持的数据库代理版本。
@@ -1984,6 +2017,15 @@ namespace TencentCloud
                 OpenReadOnlyInstanceExclusiveAccessOutcome OpenReadOnlyInstanceExclusiveAccess(const Model::OpenReadOnlyInstanceExclusiveAccessRequest &request);
                 void OpenReadOnlyInstanceExclusiveAccessAsync(const Model::OpenReadOnlyInstanceExclusiveAccessRequest& request, const OpenReadOnlyInstanceExclusiveAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenReadOnlyInstanceExclusiveAccessOutcomeCallable OpenReadOnlyInstanceExclusiveAccessCallable(const Model::OpenReadOnlyInstanceExclusiveAccessRequest& request);
+
+                /**
+                 *开启SSL加密
+                 * @param req OpenSSLRequest
+                 * @return OpenSSLOutcome
+                 */
+                OpenSSLOutcome OpenSSL(const Model::OpenSSLRequest &request);
+                void OpenSSLAsync(const Model::OpenSSLRequest& request, const OpenSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenSSLOutcomeCallable OpenSSLCallable(const Model::OpenSSLRequest& request);
 
                 /**
                  *本接口（OpenWan）用于开通外网。

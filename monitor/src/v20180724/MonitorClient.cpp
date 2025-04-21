@@ -3480,6 +3480,49 @@ MonitorClient::DescribePolicyGroupListOutcomeCallable MonitorClient::DescribePol
     return task->get_future();
 }
 
+MonitorClient::DescribePolicyObjectCountOutcome MonitorClient::DescribePolicyObjectCount(const DescribePolicyObjectCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePolicyObjectCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePolicyObjectCountResponse rsp = DescribePolicyObjectCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePolicyObjectCountOutcome(rsp);
+        else
+            return DescribePolicyObjectCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePolicyObjectCountOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePolicyObjectCountAsync(const DescribePolicyObjectCountRequest& request, const DescribePolicyObjectCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePolicyObjectCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePolicyObjectCountOutcomeCallable MonitorClient::DescribePolicyObjectCountCallable(const DescribePolicyObjectCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePolicyObjectCountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePolicyObjectCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeProductEventListOutcome MonitorClient::DescribeProductEventList(const DescribeProductEventListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProductEventList");

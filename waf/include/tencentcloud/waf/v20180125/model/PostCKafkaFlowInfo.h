@@ -214,6 +214,48 @@ namespace TencentCloud
                      */
                     bool TopicHasBeenSet() const;
 
+                    /**
+                     * 获取压缩算法，支持gzip 和 lz4
+                     * @return Compression 压缩算法，支持gzip 和 lz4
+                     * 
+                     */
+                    std::string GetCompression() const;
+
+                    /**
+                     * 设置压缩算法，支持gzip 和 lz4
+                     * @param _compression 压缩算法，支持gzip 和 lz4
+                     * 
+                     */
+                    void SetCompression(const std::string& _compression);
+
+                    /**
+                     * 判断参数 Compression 是否已赋值
+                     * @return Compression 是否已赋值
+                     * 
+                     */
+                    bool CompressionHasBeenSet() const;
+
+                    /**
+                     * 获取描述信息
+                     * @return Content 描述信息
+                     * 
+                     */
+                    std::string GetContent() const;
+
+                    /**
+                     * 设置描述信息
+                     * @param _content 描述信息
+                     * 
+                     */
+                    void SetContent(const std::string& _content);
+
+                    /**
+                     * 判断参数 Content 是否已赋值
+                     * @return Content 是否已赋值
+                     * 
+                     */
+                    bool ContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +305,18 @@ namespace TencentCloud
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
+
+                    /**
+                     * 压缩算法，支持gzip 和 lz4
+                     */
+                    std::string m_compression;
+                    bool m_compressionHasBeenSet;
+
+                    /**
+                     * 描述信息
+                     */
+                    std::string m_content;
+                    bool m_contentHasBeenSet;
 
                 };
             }

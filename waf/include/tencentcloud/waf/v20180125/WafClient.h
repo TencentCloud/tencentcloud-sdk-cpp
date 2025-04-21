@@ -65,6 +65,8 @@
 #include <tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteBotSceneUCBRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteBotSceneUCBRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteCCRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteCCRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteCustomRuleRequest.h>
@@ -115,6 +117,12 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBatchIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBatchIpAccessControlResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBotSceneListRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBotSceneListResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBotSceneOverviewRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBotSceneOverviewResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBotSceneUCBRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBotSceneUCBRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCCAutoStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCCAutoStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCCRuleRequest.h>
@@ -253,6 +261,10 @@
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBotSceneStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBotSceneStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBotSceneUCBRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBotSceneUCBRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleRequest.h>
@@ -414,6 +426,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAttackWhiteRuleResponse> DeleteAttackWhiteRuleOutcome;
                 typedef std::future<DeleteAttackWhiteRuleOutcome> DeleteAttackWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteAttackWhiteRuleRequest&, DeleteAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAttackWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBotSceneUCBRuleResponse> DeleteBotSceneUCBRuleOutcome;
+                typedef std::future<DeleteBotSceneUCBRuleOutcome> DeleteBotSceneUCBRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteBotSceneUCBRuleRequest&, DeleteBotSceneUCBRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBotSceneUCBRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCCRuleResponse> DeleteCCRuleOutcome;
                 typedef std::future<DeleteCCRuleOutcome> DeleteCCRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteCCRuleRequest&, DeleteCCRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCCRuleAsyncHandler;
@@ -489,6 +504,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBatchIpAccessControlResponse> DescribeBatchIpAccessControlOutcome;
                 typedef std::future<DescribeBatchIpAccessControlOutcome> DescribeBatchIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeBatchIpAccessControlRequest&, DescribeBatchIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchIpAccessControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBotSceneListResponse> DescribeBotSceneListOutcome;
+                typedef std::future<DescribeBotSceneListOutcome> DescribeBotSceneListOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeBotSceneListRequest&, DescribeBotSceneListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBotSceneListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBotSceneOverviewResponse> DescribeBotSceneOverviewOutcome;
+                typedef std::future<DescribeBotSceneOverviewOutcome> DescribeBotSceneOverviewOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeBotSceneOverviewRequest&, DescribeBotSceneOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBotSceneOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBotSceneUCBRuleResponse> DescribeBotSceneUCBRuleOutcome;
+                typedef std::future<DescribeBotSceneUCBRuleOutcome> DescribeBotSceneUCBRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeBotSceneUCBRuleRequest&, DescribeBotSceneUCBRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBotSceneUCBRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCCAutoStatusResponse> DescribeCCAutoStatusOutcome;
                 typedef std::future<DescribeCCAutoStatusOutcome> DescribeCCAutoStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeCCAutoStatusRequest&, DescribeCCAutoStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCAutoStatusAsyncHandler;
@@ -696,6 +720,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAttackWhiteRuleResponse> ModifyAttackWhiteRuleOutcome;
                 typedef std::future<ModifyAttackWhiteRuleOutcome> ModifyAttackWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAttackWhiteRuleRequest&, ModifyAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAttackWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBotSceneStatusResponse> ModifyBotSceneStatusOutcome;
+                typedef std::future<ModifyBotSceneStatusOutcome> ModifyBotSceneStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyBotSceneStatusRequest&, ModifyBotSceneStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBotSceneStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBotSceneUCBRuleResponse> ModifyBotSceneUCBRuleOutcome;
+                typedef std::future<ModifyBotSceneUCBRuleOutcome> ModifyBotSceneUCBRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyBotSceneUCBRuleRequest&, ModifyBotSceneUCBRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBotSceneUCBRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBotStatusResponse> ModifyBotStatusOutcome;
                 typedef std::future<ModifyBotStatusOutcome> ModifyBotStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyBotStatusRequest&, ModifyBotStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBotStatusAsyncHandler;
@@ -1015,6 +1045,15 @@ namespace TencentCloud
                 DeleteAttackWhiteRuleOutcomeCallable DeleteAttackWhiteRuleCallable(const Model::DeleteAttackWhiteRuleRequest& request);
 
                 /**
+                 *场景化后删除Bot的UCB自定义规则
+                 * @param req DeleteBotSceneUCBRuleRequest
+                 * @return DeleteBotSceneUCBRuleOutcome
+                 */
+                DeleteBotSceneUCBRuleOutcome DeleteBotSceneUCBRule(const Model::DeleteBotSceneUCBRuleRequest &request);
+                void DeleteBotSceneUCBRuleAsync(const Model::DeleteBotSceneUCBRuleRequest& request, const DeleteBotSceneUCBRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBotSceneUCBRuleOutcomeCallable DeleteBotSceneUCBRuleCallable(const Model::DeleteBotSceneUCBRuleRequest& request);
+
+                /**
                  *Waf  CC V2 Delete接口
                  * @param req DeleteCCRuleRequest
                  * @return DeleteCCRuleOutcome
@@ -1238,6 +1277,33 @@ namespace TencentCloud
                 DescribeBatchIpAccessControlOutcome DescribeBatchIpAccessControl(const Model::DescribeBatchIpAccessControlRequest &request);
                 void DescribeBatchIpAccessControlAsync(const Model::DescribeBatchIpAccessControlRequest& request, const DescribeBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBatchIpAccessControlOutcomeCallable DescribeBatchIpAccessControlCallable(const Model::DescribeBatchIpAccessControlRequest& request);
+
+                /**
+                 *获取BOT场景列表与概览
+                 * @param req DescribeBotSceneListRequest
+                 * @return DescribeBotSceneListOutcome
+                 */
+                DescribeBotSceneListOutcome DescribeBotSceneList(const Model::DescribeBotSceneListRequest &request);
+                void DescribeBotSceneListAsync(const Model::DescribeBotSceneListRequest& request, const DescribeBotSceneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBotSceneListOutcomeCallable DescribeBotSceneListCallable(const Model::DescribeBotSceneListRequest& request);
+
+                /**
+                 *获取Bot场景全局概览
+                 * @param req DescribeBotSceneOverviewRequest
+                 * @return DescribeBotSceneOverviewOutcome
+                 */
+                DescribeBotSceneOverviewOutcome DescribeBotSceneOverview(const Model::DescribeBotSceneOverviewRequest &request);
+                void DescribeBotSceneOverviewAsync(const Model::DescribeBotSceneOverviewRequest& request, const DescribeBotSceneOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBotSceneOverviewOutcomeCallable DescribeBotSceneOverviewCallable(const Model::DescribeBotSceneOverviewRequest& request);
+
+                /**
+                 *场景化后Bot获取UCB自定义规则策略
+                 * @param req DescribeBotSceneUCBRuleRequest
+                 * @return DescribeBotSceneUCBRuleOutcome
+                 */
+                DescribeBotSceneUCBRuleOutcome DescribeBotSceneUCBRule(const Model::DescribeBotSceneUCBRuleRequest &request);
+                void DescribeBotSceneUCBRuleAsync(const Model::DescribeBotSceneUCBRuleRequest& request, const DescribeBotSceneUCBRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBotSceneUCBRuleOutcomeCallable DescribeBotSceneUCBRuleCallable(const Model::DescribeBotSceneUCBRuleRequest& request);
 
                 /**
                  *获取SAAS型接入的紧急CC防护状态
@@ -1861,6 +1927,24 @@ namespace TencentCloud
                 ModifyAttackWhiteRuleOutcome ModifyAttackWhiteRule(const Model::ModifyAttackWhiteRuleRequest &request);
                 void ModifyAttackWhiteRuleAsync(const Model::ModifyAttackWhiteRuleRequest& request, const ModifyAttackWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAttackWhiteRuleOutcomeCallable ModifyAttackWhiteRuleCallable(const Model::ModifyAttackWhiteRuleRequest& request);
+
+                /**
+                 *bot子场景开关
+                 * @param req ModifyBotSceneStatusRequest
+                 * @return ModifyBotSceneStatusOutcome
+                 */
+                ModifyBotSceneStatusOutcome ModifyBotSceneStatus(const Model::ModifyBotSceneStatusRequest &request);
+                void ModifyBotSceneStatusAsync(const Model::ModifyBotSceneStatusRequest& request, const ModifyBotSceneStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBotSceneStatusOutcomeCallable ModifyBotSceneStatusCallable(const Model::ModifyBotSceneStatusRequest& request);
+
+                /**
+                 *【接口复用】场景化后更新Bot的UCB自定义规则，两个调用位置：1.BOT全局白名单 2.BOT场景配置
+                 * @param req ModifyBotSceneUCBRuleRequest
+                 * @return ModifyBotSceneUCBRuleOutcome
+                 */
+                ModifyBotSceneUCBRuleOutcome ModifyBotSceneUCBRule(const Model::ModifyBotSceneUCBRuleRequest &request);
+                void ModifyBotSceneUCBRuleAsync(const Model::ModifyBotSceneUCBRuleRequest& request, const ModifyBotSceneUCBRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBotSceneUCBRuleOutcomeCallable ModifyBotSceneUCBRuleCallable(const Model::ModifyBotSceneUCBRuleRequest& request);
 
                 /**
                  *Bot_V2 bot总开关更新

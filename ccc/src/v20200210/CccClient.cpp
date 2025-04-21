@@ -900,6 +900,49 @@ CccClient::CreateUserSigOutcomeCallable CccClient::CreateUserSigCallable(const C
     return task->get_future();
 }
 
+CccClient::DeleteCCCSkillGroupOutcome CccClient::DeleteCCCSkillGroup(const DeleteCCCSkillGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCCCSkillGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCCCSkillGroupResponse rsp = DeleteCCCSkillGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCCCSkillGroupOutcome(rsp);
+        else
+            return DeleteCCCSkillGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCCCSkillGroupOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DeleteCCCSkillGroupAsync(const DeleteCCCSkillGroupRequest& request, const DeleteCCCSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCCCSkillGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DeleteCCCSkillGroupOutcomeCallable CccClient::DeleteCCCSkillGroupCallable(const DeleteCCCSkillGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCCCSkillGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCCCSkillGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DeleteExtensionOutcome CccClient::DeleteExtension(const DeleteExtensionRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteExtension");

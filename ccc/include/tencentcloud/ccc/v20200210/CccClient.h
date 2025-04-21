@@ -63,6 +63,8 @@
 #include <tencentcloud/ccc/v20200210/model/CreateStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateUserSigRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateUserSigResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DeleteCCCSkillGroupRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DeleteCCCSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteExtensionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeletePredictiveDialingCampaignRequest.h>
@@ -239,6 +241,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserSigResponse> CreateUserSigOutcome;
                 typedef std::future<CreateUserSigOutcome> CreateUserSigOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateUserSigRequest&, CreateUserSigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserSigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCCCSkillGroupResponse> DeleteCCCSkillGroupOutcome;
+                typedef std::future<DeleteCCCSkillGroupOutcome> DeleteCCCSkillGroupOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DeleteCCCSkillGroupRequest&, DeleteCCCSkillGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCCCSkillGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteExtensionResponse> DeleteExtensionOutcome;
                 typedef std::future<DeleteExtensionOutcome> DeleteExtensionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DeleteExtensionRequest&, DeleteExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExtensionAsyncHandler;
@@ -582,6 +587,15 @@ namespace TencentCloud
                 CreateUserSigOutcome CreateUserSig(const Model::CreateUserSigRequest &request);
                 void CreateUserSigAsync(const Model::CreateUserSigRequest& request, const CreateUserSigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserSigOutcomeCallable CreateUserSigCallable(const Model::CreateUserSigRequest& request);
+
+                /**
+                 *删除技能组
+                 * @param req DeleteCCCSkillGroupRequest
+                 * @return DeleteCCCSkillGroupOutcome
+                 */
+                DeleteCCCSkillGroupOutcome DeleteCCCSkillGroup(const Model::DeleteCCCSkillGroupRequest &request);
+                void DeleteCCCSkillGroupAsync(const Model::DeleteCCCSkillGroupRequest& request, const DeleteCCCSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCCCSkillGroupOutcomeCallable DeleteCCCSkillGroupCallable(const Model::DeleteCCCSkillGroupRequest& request);
 
                 /**
                  *删除话机账号

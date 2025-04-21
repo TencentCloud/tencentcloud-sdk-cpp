@@ -80,10 +80,12 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListResponse.h
   include/tencentcloud/monitor/v20180724/model/Targets.h
   include/tencentcloud/monitor/v20180724/model/GetTopNMonitorDataResponse.h
+  include/tencentcloud/monitor/v20180724/model/RegionPolicyObjectCount.h
   include/tencentcloud/monitor/v20180724/model/AlarmGroupByItem.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusIntegrationMetricsResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceUsageRequest.h
   include/tencentcloud/monitor/v20180724/model/DeleteSSOAccountRequest.h
+  include/tencentcloud/monitor/v20180724/model/DescribePolicyObjectCountRequest.h
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusRecordRuleYamlRequest.h
   include/tencentcloud/monitor/v20180724/model/Instance.h
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmNoticesResponse.h
@@ -91,6 +93,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DeletePrometheusAlertGroupsRequest.h
   include/tencentcloud/monitor/v20180724/model/GrafanaInstanceInfo.h
   include/tencentcloud/monitor/v20180724/model/DeletePrometheusConfigResponse.h
+  include/tencentcloud/monitor/v20180724/model/DescribePolicyObjectCountResponse.h
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusRecordRuleYamlResponse.h
   include/tencentcloud/monitor/v20180724/model/MetricObjectMeaning.h
   include/tencentcloud/monitor/v20180724/model/AlarmEvent.h
@@ -556,10 +559,12 @@ set(monitor_src
   src/v20180724/model/DescribeProductEventListResponse.cpp
   src/v20180724/model/Targets.cpp
   src/v20180724/model/GetTopNMonitorDataResponse.cpp
+  src/v20180724/model/RegionPolicyObjectCount.cpp
   src/v20180724/model/AlarmGroupByItem.cpp
   src/v20180724/model/DescribePrometheusIntegrationMetricsResponse.cpp
   src/v20180724/model/DescribePrometheusInstanceUsageRequest.cpp
   src/v20180724/model/DeleteSSOAccountRequest.cpp
+  src/v20180724/model/DescribePolicyObjectCountRequest.cpp
   src/v20180724/model/CreatePrometheusRecordRuleYamlRequest.cpp
   src/v20180724/model/Instance.cpp
   src/v20180724/model/DescribeAlarmNoticesResponse.cpp
@@ -567,6 +572,7 @@ set(monitor_src
   src/v20180724/model/DeletePrometheusAlertGroupsRequest.cpp
   src/v20180724/model/GrafanaInstanceInfo.cpp
   src/v20180724/model/DeletePrometheusConfigResponse.cpp
+  src/v20180724/model/DescribePolicyObjectCountResponse.cpp
   src/v20180724/model/CreatePrometheusRecordRuleYamlResponse.cpp
   src/v20180724/model/MetricObjectMeaning.cpp
   src/v20180724/model/AlarmEvent.cpp

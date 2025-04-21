@@ -50,7 +50,8 @@ EnterpriseSecurityGroupRuleRuleInfo::EnterpriseSecurityGroupRuleRuleInfo() :
     m_parameterNameHasBeenSet(false),
     m_protocolPortNameHasBeenSet(false),
     m_betaListHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_dnsParseCountHasBeenSet(false)
 {
 }
 
@@ -369,6 +370,23 @@ CoreInternalOutcome EnterpriseSecurityGroupRuleRuleInfo::Deserialize(const rapid
         m_idHasBeenSet = true;
     }
 
+    if (value.HasMember("DnsParseCount") && !value["DnsParseCount"].IsNull())
+    {
+        if (!value["DnsParseCount"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnterpriseSecurityGroupRuleRuleInfo.DnsParseCount` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dnsParseCount.Deserialize(value["DnsParseCount"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dnsParseCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -621,6 +639,15 @@ void EnterpriseSecurityGroupRuleRuleInfo::ToJsonObject(rapidjson::Value &value, 
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_dnsParseCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsParseCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dnsParseCount.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1104,5 +1131,21 @@ void EnterpriseSecurityGroupRuleRuleInfo::SetId(const int64_t& _id)
 bool EnterpriseSecurityGroupRuleRuleInfo::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+SgDnsParseCount EnterpriseSecurityGroupRuleRuleInfo::GetDnsParseCount() const
+{
+    return m_dnsParseCount;
+}
+
+void EnterpriseSecurityGroupRuleRuleInfo::SetDnsParseCount(const SgDnsParseCount& _dnsParseCount)
+{
+    m_dnsParseCount = _dnsParseCount;
+    m_dnsParseCountHasBeenSet = true;
+}
+
+bool EnterpriseSecurityGroupRuleRuleInfo::DnsParseCountHasBeenSet() const
+{
+    return m_dnsParseCountHasBeenSet;
 }
 

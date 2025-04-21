@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取下载文件路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 下载文件路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
@@ -133,7 +131,6 @@ namespace TencentCloud
 
                     /**
                      * 下载文件路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;

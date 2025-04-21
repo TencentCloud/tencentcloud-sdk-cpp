@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventTime 事件时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventTime() const;
 
                     /**
                      * 设置事件时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventTime 事件时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventTime(const std::string& _eventTime);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取恢复时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecoverTime 恢复时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecoverTime() const;
 
                     /**
                      * 设置恢复时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recoverTime 恢复时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecoverTime(const std::string& _recoverTime);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CfwInsName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCfwInsName() const;
 
                     /**
                      * 设置实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cfwInsName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCfwInsName(const std::string& _cfwInsName);
@@ -212,10 +196,8 @@ namespace TencentCloud
                     /**
                      * 获取Normal: 正常模式
 OnlyRoute: 透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrafficMode Normal: 正常模式
 OnlyRoute: 透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrafficMode() const;
@@ -223,10 +205,8 @@ OnlyRoute: 透明模式
                     /**
                      * 设置Normal: 正常模式
 OnlyRoute: 透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trafficMode Normal: 正常模式
 OnlyRoute: 透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrafficMode(const std::string& _trafficMode);
@@ -254,7 +234,6 @@ OnlyRoute: 透明模式
 
                     /**
                      * 实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
@@ -267,21 +246,18 @@ OnlyRoute: 透明模式
 
                     /**
                      * 事件时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventTime;
                     bool m_eventTimeHasBeenSet;
 
                     /**
                      * 恢复时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recoverTime;
                     bool m_recoverTimeHasBeenSet;
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cfwInsName;
                     bool m_cfwInsNameHasBeenSet;
@@ -289,7 +265,6 @@ OnlyRoute: 透明模式
                     /**
                      * Normal: 正常模式
 OnlyRoute: 透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trafficMode;
                     bool m_trafficModeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _title 标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -175,14 +167,12 @@ namespace TencentCloud
 
                     /**
                      * 标题
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
                      * url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

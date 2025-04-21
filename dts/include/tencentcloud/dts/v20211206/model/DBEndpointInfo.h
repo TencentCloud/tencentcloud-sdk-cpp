@@ -112,15 +112,23 @@ namespace TencentCloud
                     bool DatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点类型，为空或者simple表示普通节点、cluster表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；对于redis实例，为空或simple(单节点)、cluster(集群)、cluster-cache(cache集群)、cluster-proxy(代理集群)
-                     * @return NodeType 节点类型，为空或者simple表示普通节点、cluster表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；对于redis实例，为空或simple(单节点)、cluster(集群)、cluster-cache(cache集群)、cluster-proxy(代理集群)
+                     * 获取节点类型，simple表示普通节点、cluster表示集群节点；
+对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；
+对于redis实例，simple(单节点)、cluster-cache(直连集群)、cluster-proxy(代理集群)；
+                     * @return NodeType 节点类型，simple表示普通节点、cluster表示集群节点；
+对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；
+对于redis实例，simple(单节点)、cluster-cache(直连集群)、cluster-proxy(代理集群)；
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置节点类型，为空或者simple表示普通节点、cluster表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；对于redis实例，为空或simple(单节点)、cluster(集群)、cluster-cache(cache集群)、cluster-proxy(代理集群)
-                     * @param _nodeType 节点类型，为空或者simple表示普通节点、cluster表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；对于redis实例，为空或simple(单节点)、cluster(集群)、cluster-cache(cache集群)、cluster-proxy(代理集群)
+                     * 设置节点类型，simple表示普通节点、cluster表示集群节点；
+对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；
+对于redis实例，simple(单节点)、cluster-cache(直连集群)、cluster-proxy(代理集群)；
+                     * @param _nodeType 节点类型，simple表示普通节点、cluster表示集群节点；
+对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；
+对于redis实例，simple(单节点)、cluster-cache(直连集群)、cluster-proxy(代理集群)；
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -133,15 +141,15 @@ namespace TencentCloud
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据库信息
-                     * @return Info 数据库信息
+                     * 获取实例具体的连接信息，如ip、port、接入方式等
+                     * @return Info 实例具体的连接信息，如ip、port、接入方式等
                      * 
                      */
                     std::vector<DBInfo> GetInfo() const;
 
                     /**
-                     * 设置数据库信息
-                     * @param _info 数据库信息
+                     * 设置实例具体的连接信息，如ip、port、接入方式等
+                     * @param _info 实例具体的连接信息，如ip、port、接入方式等
                      * 
                      */
                     void SetInfo(const std::vector<DBInfo>& _info);
@@ -221,15 +229,15 @@ namespace TencentCloud
                     bool DatabaseNetEnvHasBeenSet() const;
 
                     /**
-                     * 获取tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
-                     * @return ConnectType tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+                     * 获取tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。对于mongodb链路，srv表示SRV连接串，为空或不传表示普通连接串，srv仅限于FetchMethod为change_stream的拉取模式
+                     * @return ConnectType tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。对于mongodb链路，srv表示SRV连接串，为空或不传表示普通连接串，srv仅限于FetchMethod为change_stream的拉取模式
                      * 
                      */
                     std::string GetConnectType() const;
 
                     /**
-                     * 设置tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
-                     * @param _connectType tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+                     * 设置tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。对于mongodb链路，srv表示SRV连接串，为空或不传表示普通连接串，srv仅限于FetchMethod为change_stream的拉取模式
+                     * @param _connectType tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。对于mongodb链路，srv表示SRV连接串，为空或不传表示普通连接串，srv仅限于FetchMethod为change_stream的拉取模式
                      * 
                      */
                     void SetConnectType(const std::string& _connectType);
@@ -262,13 +270,15 @@ namespace TencentCloud
                     bool m_databaseTypeHasBeenSet;
 
                     /**
-                     * 节点类型，为空或者simple表示普通节点、cluster表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；对于redis实例，为空或simple(单节点)、cluster(集群)、cluster-cache(cache集群)、cluster-proxy(代理集群)
+                     * 节点类型，simple表示普通节点、cluster表示集群节点；
+对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)；
+对于redis实例，simple(单节点)、cluster-cache(直连集群)、cluster-proxy(代理集群)；
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 数据库信息
+                     * 实例具体的连接信息，如ip、port、接入方式等
                      */
                     std::vector<DBInfo> m_info;
                     bool m_infoHasBeenSet;
@@ -293,7 +303,7 @@ namespace TencentCloud
                     bool m_databaseNetEnvHasBeenSet;
 
                     /**
-                     * tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+                     * tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。对于mongodb链路，srv表示SRV连接串，为空或不传表示普通连接串，srv仅限于FetchMethod为change_stream的拉取模式
                      */
                     std::string m_connectType;
                     bool m_connectTypeHasBeenSet;

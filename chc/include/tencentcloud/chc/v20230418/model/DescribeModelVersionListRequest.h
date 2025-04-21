@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool CampusIdHasBeenSet() const;
 
+                    /**
+                     * 获取型号关键字，可以实现模糊匹配搜索功能
+                     * @return ModelName 型号关键字，可以实现模糊匹配搜索功能
+                     * 
+                     */
+                    std::string GetModelName() const;
+
+                    /**
+                     * 设置型号关键字，可以实现模糊匹配搜索功能
+                     * @param _modelName 型号关键字，可以实现模糊匹配搜索功能
+                     * 
+                     */
+                    void SetModelName(const std::string& _modelName);
+
+                    /**
+                     * 判断参数 ModelName 是否已赋值
+                     * @return ModelName 是否已赋值
+                     * 
+                     */
+                    bool ModelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     uint64_t m_campusId;
                     bool m_campusIdHasBeenSet;
+
+                    /**
+                     * 型号关键字，可以实现模糊匹配搜索功能
+                     */
+                    std::string m_modelName;
+                    bool m_modelNameHasBeenSet;
 
                 };
             }

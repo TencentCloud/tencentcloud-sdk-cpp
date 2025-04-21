@@ -471,18 +471,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计算资源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataEngineName 计算资源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataEngineName() const;
 
                     /**
                      * 设置计算资源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataEngineName 计算资源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataEngineName(const std::string& _dataEngineName);
@@ -1092,7 +1088,6 @@ namespace TencentCloud
 
                     /**
                      * 计算资源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataEngineName;
                     bool m_dataEngineNameHasBeenSet;

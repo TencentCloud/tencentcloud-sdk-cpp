@@ -101,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取托管存储桶类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketType 托管存储桶类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucketType() const;
@@ -143,7 +141,6 @@ namespace TencentCloud
 
                     /**
                      * 托管存储桶类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucketType;
                     bool m_bucketTypeHasBeenSet;

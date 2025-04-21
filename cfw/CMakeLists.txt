@@ -97,6 +97,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/VpcFwCvmInsInfo.h
   include/tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateAlertCenterRuleRequest.h
+  include/tencentcloud/cfw/v20190904/model/SgDnsParseCount.h
   include/tencentcloud/cfw/v20190904/model/ModifyNatFwReSelectResponse.h
   include/tencentcloud/cfw/v20190904/model/CreateAlertCenterOmitRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeVpcAcRuleRequest.h
@@ -392,6 +393,7 @@ set(cfw_src
   src/v20190904/model/VpcFwCvmInsInfo.cpp
   src/v20190904/model/DescribeEnterpriseSecurityGroupRuleRequest.cpp
   src/v20190904/model/CreateAlertCenterRuleRequest.cpp
+  src/v20190904/model/SgDnsParseCount.cpp
   src/v20190904/model/ModifyNatFwReSelectResponse.cpp
   src/v20190904/model/CreateAlertCenterOmitRequest.cpp
   src/v20190904/model/DescribeVpcAcRuleRequest.cpp

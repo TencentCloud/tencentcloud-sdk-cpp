@@ -509,6 +509,27 @@ namespace TencentCloud
                      */
                     bool InternalAccessHasBeenSet() const;
 
+                    /**
+                     * 获取内网域名
+                     * @return InternalDomain 内网域名
+                     * 
+                     */
+                    std::string GetInternalDomain() const;
+
+                    /**
+                     * 设置内网域名
+                     * @param _internalDomain 内网域名
+                     * 
+                     */
+                    void SetInternalDomain(const std::string& _internalDomain);
+
+                    /**
+                     * 判断参数 InternalDomain 是否已赋值
+                     * @return InternalDomain 是否已赋值
+                     * 
+                     */
+                    bool InternalDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -642,6 +663,12 @@ namespace TencentCloud
                      */
                     std::string m_internalAccess;
                     bool m_internalAccessHasBeenSet;
+
+                    /**
+                     * 内网域名
+                     */
+                    std::string m_internalDomain;
+                    bool m_internalDomainHasBeenSet;
 
                 };
             }

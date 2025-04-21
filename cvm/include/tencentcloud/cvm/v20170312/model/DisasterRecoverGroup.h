@@ -186,15 +186,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取分散置放群组创建时间。
-                     * @return CreateTime 分散置放群组创建时间。
+                     * 获取分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * @return CreateTime 分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置分散置放群组创建时间。
-                     * @param _createTime 分散置放群组创建时间。
+                     * 设置分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * @param _createTime 分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -290,7 +290,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 分散置放群组创建时间。
+                     * 分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

@@ -587,6 +587,27 @@ namespace TencentCloud
                      */
                     bool WhiteBoardSnapshotModeHasBeenSet() const;
 
+                    /**
+                     * 获取字幕转写功能开关：0关闭，1开启，默认关闭
+                     * @return SubtitlesTranscription 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 
+                     */
+                    uint64_t GetSubtitlesTranscription() const;
+
+                    /**
+                     * 设置字幕转写功能开关：0关闭，1开启，默认关闭
+                     * @param _subtitlesTranscription 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 
+                     */
+                    void SetSubtitlesTranscription(const uint64_t& _subtitlesTranscription);
+
+                    /**
+                     * 判断参数 SubtitlesTranscription 是否已赋值
+                     * @return SubtitlesTranscription 是否已赋值
+                     * 
+                     */
+                    bool SubtitlesTranscriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -742,6 +763,12 @@ namespace TencentCloud
                      */
                     uint64_t m_whiteBoardSnapshotMode;
                     bool m_whiteBoardSnapshotModeHasBeenSet;
+
+                    /**
+                     * 字幕转写功能开关：0关闭，1开启，默认关闭
+                     */
+                    uint64_t m_subtitlesTranscription;
+                    bool m_subtitlesTranscriptionHasBeenSet;
 
                 };
             }

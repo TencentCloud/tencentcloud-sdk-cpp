@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool BlackSitesHasBeenSet() const;
 
                     /**
-                     * 获取秒级时间冲，搜索网页的开始时间，默认不限制开始时间。
-                     * @return StartTime 秒级时间冲，搜索网页的开始时间，默认不限制开始时间。
+                     * 获取秒级时间戳，搜索网页的开始时间，默认不限制开始时间。
+                     * @return StartTime 秒级时间戳，搜索网页的开始时间，默认不限制开始时间。
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置秒级时间冲，搜索网页的开始时间，默认不限制开始时间。
-                     * @param _startTime 秒级时间冲，搜索网页的开始时间，默认不限制开始时间。
+                     * 设置秒级时间戳，搜索网页的开始时间，默认不限制开始时间。
+                     * @param _startTime 秒级时间戳，搜索网页的开始时间，默认不限制开始时间。
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -270,7 +270,7 @@ namespace TencentCloud
                     bool m_blackSitesHasBeenSet;
 
                     /**
-                     * 秒级时间冲，搜索网页的开始时间，默认不限制开始时间。
+                     * 秒级时间戳，搜索网页的开始时间，默认不限制开始时间。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;

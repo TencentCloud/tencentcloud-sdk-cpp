@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool ServerTypeHasBeenSet() const;
 
+                    /**
+                     * 获取流量类型，目前只有 FLOW
+                     * @return TrafficType 流量类型，目前只有 FLOW
+                     * 
+                     */
+                    std::string GetTrafficType() const;
+
+                    /**
+                     * 设置流量类型，目前只有 FLOW
+                     * @param _trafficType 流量类型，目前只有 FLOW
+                     * 
+                     */
+                    void SetTrafficType(const std::string& _trafficType);
+
+                    /**
+                     * 判断参数 TrafficType 是否已赋值
+                     * @return TrafficType 是否已赋值
+                     * 
+                     */
+                    bool TrafficTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     std::string m_serverType;
                     bool m_serverTypeHasBeenSet;
+
+                    /**
+                     * 流量类型，目前只有 FLOW
+                     */
+                    std::string m_trafficType;
+                    bool m_trafficTypeHasBeenSet;
 
                 };
             }

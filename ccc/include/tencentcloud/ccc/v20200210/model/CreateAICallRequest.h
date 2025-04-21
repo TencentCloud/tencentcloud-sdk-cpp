@@ -1220,21 +1220,21 @@ HoaiMy
                     /**
                      * 获取提示词变量
                      * @return PromptVariables 提示词变量
-                     * 
+                     * @deprecated
                      */
                     std::vector<Variable> GetPromptVariables() const;
 
                     /**
                      * 设置提示词变量
                      * @param _promptVariables 提示词变量
-                     * 
+                     * @deprecated
                      */
                     void SetPromptVariables(const std::vector<Variable>& _promptVariables);
 
                     /**
                      * 判断参数 PromptVariables 是否已赋值
                      * @return PromptVariables 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PromptVariablesHasBeenSet() const;
 
@@ -1302,12 +1302,12 @@ HoaiMy
                     bool TemperatureHasBeenSet() const;
 
                     /**
-                     * 获取通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  
+                     * 获取通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
 
 1. dify-inputs-xxx 为dify的inputs变量
 2.  dify-inputs-user 为dify的user值
 3.  dify-inputs-conversation_id 为dify的conversation_id值
-                     * @return Variables 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  
+                     * @return Variables 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
 
 1. dify-inputs-xxx 为dify的inputs变量
 2.  dify-inputs-user 为dify的user值
@@ -1317,12 +1317,12 @@ HoaiMy
                     std::vector<Variable> GetVariables() const;
 
                     /**
-                     * 设置通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  
+                     * 设置通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
 
 1. dify-inputs-xxx 为dify的inputs变量
 2.  dify-inputs-user 为dify的user值
 3.  dify-inputs-conversation_id 为dify的conversation_id值
-                     * @param _variables 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  
+                     * @param _variables 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
 
 1. dify-inputs-xxx 为dify的inputs变量
 2.  dify-inputs-user 为dify的user值
@@ -1676,7 +1676,7 @@ HoaiMy
                     bool m_temperatureHasBeenSet;
 
                     /**
-                     * 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  
+                     * 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
 
 1. dify-inputs-xxx 为dify的inputs变量
 2.  dify-inputs-user 为dify的user值

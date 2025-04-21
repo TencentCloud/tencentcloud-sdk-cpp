@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
-                     * @return DiskSize 数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
+                     * 获取数据盘大小，单位：GiB。最小调整步长为10GiB，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
+                     * @return DiskSize 数据盘大小，单位：GiB。最小调整步长为10GiB，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
-                     * @param _diskSize 数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
+                     * 设置数据盘大小，单位：GiB。最小调整步长为10GiB，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
+                     * @param _diskSize 数据盘大小，单位：GiB。最小调整步长为10GiB，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -206,15 +206,19 @@ namespace TencentCloud
                     bool KmsKeyIdHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘性能，单位：MB/s
-                     * @return ThroughputPerformance 云硬盘性能，单位：MB/s
+                     * 获取云硬盘性能，单位：MiB/s。使用此参数可给云硬盘购买额外的性能。
+当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
+                     * @return ThroughputPerformance 云硬盘性能，单位：MiB/s。使用此参数可给云硬盘购买额外的性能。
+当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
                      * 
                      */
                     int64_t GetThroughputPerformance() const;
 
                     /**
-                     * 设置云硬盘性能，单位：MB/s
-                     * @param _throughputPerformance 云硬盘性能，单位：MB/s
+                     * 设置云硬盘性能，单位：MiB/s。使用此参数可给云硬盘购买额外的性能。
+当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
+                     * @param _throughputPerformance 云硬盘性能，单位：MiB/s。使用此参数可给云硬盘购买额外的性能。
+当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
                      * 
                      */
                     void SetThroughputPerformance(const int64_t& _throughputPerformance);
@@ -278,22 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘名称，长度不超过128 个字符。
-
-该参数正在邀测中，暂未开放使用。
                      * @return DiskName 磁盘名称，长度不超过128 个字符。
-
-该参数正在邀测中，暂未开放使用。
                      * 
                      */
                     std::string GetDiskName() const;
 
                     /**
                      * 设置磁盘名称，长度不超过128 个字符。
-
-该参数正在邀测中，暂未开放使用。
                      * @param _diskName 磁盘名称，长度不超过128 个字符。
-
-该参数正在邀测中，暂未开放使用。
                      * 
                      */
                     void SetDiskName(const std::string& _diskName);
@@ -308,7 +304,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
+                     * 数据盘大小，单位：GiB。最小调整步长为10GiB，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
@@ -353,7 +349,8 @@ namespace TencentCloud
                     bool m_kmsKeyIdHasBeenSet;
 
                     /**
-                     * 云硬盘性能，单位：MB/s
+                     * 云硬盘性能，单位：MiB/s。使用此参数可给云硬盘购买额外的性能。
+当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
                      */
                     int64_t m_throughputPerformance;
                     bool m_throughputPerformanceHasBeenSet;
@@ -374,8 +371,6 @@ namespace TencentCloud
 
                     /**
                      * 磁盘名称，长度不超过128 个字符。
-
-该参数正在邀测中，暂未开放使用。
                      */
                     std::string m_diskName;
                     bool m_diskNameHasBeenSet;

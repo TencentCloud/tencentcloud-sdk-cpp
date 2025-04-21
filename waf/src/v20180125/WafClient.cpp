@@ -943,6 +943,49 @@ WafClient::DeleteAttackWhiteRuleOutcomeCallable WafClient::DeleteAttackWhiteRule
     return task->get_future();
 }
 
+WafClient::DeleteBotSceneUCBRuleOutcome WafClient::DeleteBotSceneUCBRule(const DeleteBotSceneUCBRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBotSceneUCBRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBotSceneUCBRuleResponse rsp = DeleteBotSceneUCBRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBotSceneUCBRuleOutcome(rsp);
+        else
+            return DeleteBotSceneUCBRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBotSceneUCBRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteBotSceneUCBRuleAsync(const DeleteBotSceneUCBRuleRequest& request, const DeleteBotSceneUCBRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBotSceneUCBRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteBotSceneUCBRuleOutcomeCallable WafClient::DeleteBotSceneUCBRuleCallable(const DeleteBotSceneUCBRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBotSceneUCBRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBotSceneUCBRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DeleteCCRuleOutcome WafClient::DeleteCCRule(const DeleteCCRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCCRule");
@@ -2011,6 +2054,135 @@ WafClient::DescribeBatchIpAccessControlOutcomeCallable WafClient::DescribeBatchI
         [this, request]()
         {
             return this->DescribeBatchIpAccessControl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeBotSceneListOutcome WafClient::DescribeBotSceneList(const DescribeBotSceneListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBotSceneList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBotSceneListResponse rsp = DescribeBotSceneListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBotSceneListOutcome(rsp);
+        else
+            return DescribeBotSceneListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBotSceneListOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeBotSceneListAsync(const DescribeBotSceneListRequest& request, const DescribeBotSceneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBotSceneList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeBotSceneListOutcomeCallable WafClient::DescribeBotSceneListCallable(const DescribeBotSceneListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBotSceneListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBotSceneList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeBotSceneOverviewOutcome WafClient::DescribeBotSceneOverview(const DescribeBotSceneOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBotSceneOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBotSceneOverviewResponse rsp = DescribeBotSceneOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBotSceneOverviewOutcome(rsp);
+        else
+            return DescribeBotSceneOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBotSceneOverviewOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeBotSceneOverviewAsync(const DescribeBotSceneOverviewRequest& request, const DescribeBotSceneOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBotSceneOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeBotSceneOverviewOutcomeCallable WafClient::DescribeBotSceneOverviewCallable(const DescribeBotSceneOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBotSceneOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBotSceneOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeBotSceneUCBRuleOutcome WafClient::DescribeBotSceneUCBRule(const DescribeBotSceneUCBRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBotSceneUCBRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBotSceneUCBRuleResponse rsp = DescribeBotSceneUCBRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBotSceneUCBRuleOutcome(rsp);
+        else
+            return DescribeBotSceneUCBRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBotSceneUCBRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeBotSceneUCBRuleAsync(const DescribeBotSceneUCBRuleRequest& request, const DescribeBotSceneUCBRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBotSceneUCBRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeBotSceneUCBRuleOutcomeCallable WafClient::DescribeBotSceneUCBRuleCallable(const DescribeBotSceneUCBRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBotSceneUCBRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBotSceneUCBRule(request);
         }
     );
 
@@ -4978,6 +5150,92 @@ WafClient::ModifyAttackWhiteRuleOutcomeCallable WafClient::ModifyAttackWhiteRule
         [this, request]()
         {
             return this->ModifyAttackWhiteRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyBotSceneStatusOutcome WafClient::ModifyBotSceneStatus(const ModifyBotSceneStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBotSceneStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBotSceneStatusResponse rsp = ModifyBotSceneStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBotSceneStatusOutcome(rsp);
+        else
+            return ModifyBotSceneStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBotSceneStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBotSceneStatusAsync(const ModifyBotSceneStatusRequest& request, const ModifyBotSceneStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBotSceneStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyBotSceneStatusOutcomeCallable WafClient::ModifyBotSceneStatusCallable(const ModifyBotSceneStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBotSceneStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBotSceneStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyBotSceneUCBRuleOutcome WafClient::ModifyBotSceneUCBRule(const ModifyBotSceneUCBRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBotSceneUCBRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBotSceneUCBRuleResponse rsp = ModifyBotSceneUCBRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBotSceneUCBRuleOutcome(rsp);
+        else
+            return ModifyBotSceneUCBRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBotSceneUCBRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBotSceneUCBRuleAsync(const ModifyBotSceneUCBRuleRequest& request, const ModifyBotSceneUCBRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBotSceneUCBRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyBotSceneUCBRuleOutcomeCallable WafClient::ModifyBotSceneUCBRuleCallable(const ModifyBotSceneUCBRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBotSceneUCBRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBotSceneUCBRule(request);
         }
     );
 

@@ -208,15 +208,15 @@ drop：拒绝
                     bool RuleActionHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取规则描述 用于规则使用或者场景的描述，最多支持50个字符
+                     * @return Description 规则描述 用于规则使用或者场景的描述，最多支持50个字符
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置规则描述 用于规则使用或者场景的描述，最多支持50个字符
+                     * @param _description 规则描述 用于规则使用或者场景的描述，最多支持50个字符
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -434,7 +434,7 @@ drop：拒绝
                     bool m_ruleActionHasBeenSet;
 
                     /**
-                     * 描述
+                     * 规则描述 用于规则使用或者场景的描述，最多支持50个字符
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

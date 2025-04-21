@@ -744,6 +744,48 @@ namespace TencentCloud
                      */
                     bool LastHitTimeHasBeenSet() const;
 
+                    /**
+                     * 获取地区简称
+                     * @return CountryKey 地区简称
+                     * 
+                     */
+                    std::string GetCountryKey() const;
+
+                    /**
+                     * 设置地区简称
+                     * @param _countryKey 地区简称
+                     * 
+                     */
+                    void SetCountryKey(const std::string& _countryKey);
+
+                    /**
+                     * 判断参数 CountryKey 是否已赋值
+                     * @return CountryKey 是否已赋值
+                     * 
+                     */
+                    bool CountryKeyHasBeenSet() const;
+
+                    /**
+                     * 获取省份、城市简称
+                     * @return CityKey 省份、城市简称
+                     * 
+                     */
+                    std::string GetCityKey() const;
+
+                    /**
+                     * 设置省份、城市简称
+                     * @param _cityKey 省份、城市简称
+                     * 
+                     */
+                    void SetCityKey(const std::string& _cityKey);
+
+                    /**
+                     * 判断参数 CityKey 是否已赋值
+                     * @return CityKey 是否已赋值
+                     * 
+                     */
+                    bool CityKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -944,6 +986,18 @@ namespace TencentCloud
                      */
                     std::string m_lastHitTime;
                     bool m_lastHitTimeHasBeenSet;
+
+                    /**
+                     * 地区简称
+                     */
+                    std::string m_countryKey;
+                    bool m_countryKeyHasBeenSet;
+
+                    /**
+                     * 省份、城市简称
+                     */
+                    std::string m_cityKey;
+                    bool m_cityKeyHasBeenSet;
 
                 };
             }

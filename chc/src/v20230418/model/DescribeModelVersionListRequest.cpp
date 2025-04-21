@@ -26,7 +26,8 @@ DescribeModelVersionListRequest::DescribeModelVersionListRequest() :
     m_deviceTypeHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_checkedHasBeenSet(false),
-    m_campusIdHasBeenSet(false)
+    m_campusIdHasBeenSet(false),
+    m_modelNameHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string DescribeModelVersionListRequest::ToJsonString() const
         string key = "CampusId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_campusId, allocator);
+    }
+
+    if (m_modelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void DescribeModelVersionListRequest::SetCampusId(const uint64_t& _campusId)
 bool DescribeModelVersionListRequest::CampusIdHasBeenSet() const
 {
     return m_campusIdHasBeenSet;
+}
+
+string DescribeModelVersionListRequest::GetModelName() const
+{
+    return m_modelName;
+}
+
+void DescribeModelVersionListRequest::SetModelName(const string& _modelName)
+{
+    m_modelName = _modelName;
+    m_modelNameHasBeenSet = true;
+}
+
+bool DescribeModelVersionListRequest::ModelNameHasBeenSet() const
+{
+    return m_modelNameHasBeenSet;
 }
 
 

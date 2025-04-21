@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取系统盘大小，单位：GB。默认值为 50
-                     * @return DiskSize 系统盘大小，单位：GB。默认值为 50
+                     * 获取系统盘大小，单位：GiB。默认值为 50
+                     * @return DiskSize 系统盘大小，单位：GiB。默认值为 50
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置系统盘大小，单位：GB。默认值为 50
-                     * @param _diskSize 系统盘大小，单位：GB。默认值为 50
+                     * 设置系统盘大小，单位：GiB。默认值为 50
+                     * @param _diskSize 系统盘大小，单位：GiB。默认值为 50
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -172,22 +172,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘名称，长度不超过128 个字符。
-
-该参数正在邀测中，暂未开放使用。
                      * @return DiskName 磁盘名称，长度不超过128 个字符。
-
-该参数正在邀测中，暂未开放使用。
                      * 
                      */
                     std::string GetDiskName() const;
 
                     /**
                      * 设置磁盘名称，长度不超过128 个字符。
-
-该参数正在邀测中，暂未开放使用。
                      * @param _diskName 磁盘名称，长度不超过128 个字符。
-
-该参数正在邀测中，暂未开放使用。
                      * 
                      */
                     void SetDiskName(const std::string& _diskName);
@@ -224,7 +216,7 @@ namespace TencentCloud
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 系统盘大小，单位：GB。默认值为 50
+                     * 系统盘大小，单位：GiB。默认值为 50
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
@@ -237,8 +229,6 @@ namespace TencentCloud
 
                     /**
                      * 磁盘名称，长度不超过128 个字符。
-
-该参数正在邀测中，暂未开放使用。
                      */
                     std::string m_diskName;
                     bool m_diskNameHasBeenSet;

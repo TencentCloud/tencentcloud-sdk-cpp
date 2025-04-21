@@ -42,7 +42,8 @@ ServerBaseConfig::ServerBaseConfig() :
     m_logTopicIdHasBeenSet(false),
     m_logParseTypeHasBeenSet(false),
     m_tagHasBeenSet(false),
-    m_internalAccessHasBeenSet(false)
+    m_internalAccessHasBeenSet(false),
+    m_internalDomainHasBeenSet(false)
 {
 }
 
@@ -284,6 +285,16 @@ CoreInternalOutcome ServerBaseConfig::Deserialize(const rapidjson::Value &value)
         m_internalAccessHasBeenSet = true;
     }
 
+    if (value.HasMember("InternalDomain") && !value["InternalDomain"].IsNull())
+    {
+        if (!value["InternalDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.InternalDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalDomain = string(value["InternalDomain"].GetString());
+        m_internalDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -477,6 +488,14 @@ void ServerBaseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "InternalAccess";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_internalAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internalDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internalDomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -832,5 +851,21 @@ void ServerBaseConfig::SetInternalAccess(const string& _internalAccess)
 bool ServerBaseConfig::InternalAccessHasBeenSet() const
 {
     return m_internalAccessHasBeenSet;
+}
+
+string ServerBaseConfig::GetInternalDomain() const
+{
+    return m_internalDomain;
+}
+
+void ServerBaseConfig::SetInternalDomain(const string& _internalDomain)
+{
+    m_internalDomain = _internalDomain;
+    m_internalDomainHasBeenSet = true;
+}
+
+bool ServerBaseConfig::InternalDomainHasBeenSet() const
+{
+    return m_internalDomainHasBeenSet;
 }
 

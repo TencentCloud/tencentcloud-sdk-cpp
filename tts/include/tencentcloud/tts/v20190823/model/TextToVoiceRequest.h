@@ -198,6 +198,27 @@ namespace TencentCloud
                     bool VoiceTypeHasBeenSet() const;
 
                     /**
+                     * 获取一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。【已废弃】
+                     * @return FastVoiceType 一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。【已废弃】
+                     * 
+                     */
+                    std::string GetFastVoiceType() const;
+
+                    /**
+                     * 设置一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。【已废弃】
+                     * @param _fastVoiceType 一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。【已废弃】
+                     * 
+                     */
+                    void SetFastVoiceType(const std::string& _fastVoiceType);
+
+                    /**
+                     * 判断参数 FastVoiceType 是否已赋值
+                     * @return FastVoiceType 是否已赋值
+                     * 
+                     */
+                    bool FastVoiceTypeHasBeenSet() const;
+
+                    /**
                      * 获取主语言类型：<li>1-中文（默认）</li><li>2-英文</li><li>3-日文</li>
                      * @return PrimaryLanguage 主语言类型：<li>1-中文（默认）</li><li>2-英文</li><li>3-日文</li>
                      * 
@@ -360,27 +381,6 @@ namespace TencentCloud
                      */
                     bool EmotionIntensityHasBeenSet() const;
 
-                    /**
-                     * 获取一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。【已废弃】
-                     * @return FastVoiceType 一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。【已废弃】
-                     * 
-                     */
-                    std::string GetFastVoiceType() const;
-
-                    /**
-                     * 设置一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。【已废弃】
-                     * @param _fastVoiceType 一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。【已废弃】
-                     * 
-                     */
-                    void SetFastVoiceType(const std::string& _fastVoiceType);
-
-                    /**
-                     * 判断参数 FastVoiceType 是否已赋值
-                     * @return FastVoiceType 是否已赋值
-                     * 
-                     */
-                    bool FastVoiceTypeHasBeenSet() const;
-
                 private:
 
                     /**
@@ -428,6 +428,12 @@ namespace TencentCloud
                     bool m_voiceTypeHasBeenSet;
 
                     /**
+                     * 一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。【已废弃】
+                     */
+                    std::string m_fastVoiceType;
+                    bool m_fastVoiceTypeHasBeenSet;
+
+                    /**
                      * 主语言类型：<li>1-中文（默认）</li><li>2-英文</li><li>3-日文</li>
                      */
                     int64_t m_primaryLanguage;
@@ -472,12 +478,6 @@ namespace TencentCloud
                      */
                     int64_t m_emotionIntensity;
                     bool m_emotionIntensityHasBeenSet;
-
-                    /**
-                     * 一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。【已废弃】
-                     */
-                    std::string m_fastVoiceType;
-                    bool m_fastVoiceTypeHasBeenSet;
 
                 };
             }

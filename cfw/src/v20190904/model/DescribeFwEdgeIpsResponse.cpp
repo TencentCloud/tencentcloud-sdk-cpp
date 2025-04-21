@@ -27,7 +27,8 @@ DescribeFwEdgeIpsResponse::DescribeFwEdgeIpsResponse() :
     m_dataHasBeenSet(false),
     m_totalHasBeenSet(false),
     m_regionLstHasBeenSet(false),
-    m_instanceTypeLstHasBeenSet(false)
+    m_instanceTypeLstHasBeenSet(false),
+    m_serilCountHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,16 @@ CoreInternalOutcome DescribeFwEdgeIpsResponse::Deserialize(const string &payload
         m_instanceTypeLstHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SerilCount") && !rsp["SerilCount"].IsNull())
+    {
+        if (!rsp["SerilCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SerilCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serilCount = rsp["SerilCount"].GetInt64();
+        m_serilCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +191,14 @@ string DescribeFwEdgeIpsResponse::ToJsonString() const
         }
     }
 
+    if (m_serilCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SerilCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serilCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -230,6 +249,16 @@ vector<string> DescribeFwEdgeIpsResponse::GetInstanceTypeLst() const
 bool DescribeFwEdgeIpsResponse::InstanceTypeLstHasBeenSet() const
 {
     return m_instanceTypeLstHasBeenSet;
+}
+
+int64_t DescribeFwEdgeIpsResponse::GetSerilCount() const
+{
+    return m_serilCount;
+}
+
+bool DescribeFwEdgeIpsResponse::SerilCountHasBeenSet() const
+{
+    return m_serilCountHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ CreateFlowEvidenceReportRequest::CreateFlowEvidenceReportRequest() :
     m_operatorHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_reportTypeHasBeenSet(false)
+    m_reportTypeHasBeenSet(false),
+    m_hybridEvidenceFlowFileHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,14 @@ string CreateFlowEvidenceReportRequest::ToJsonString() const
         string key = "ReportType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_reportType, allocator);
+    }
+
+    if (m_hybridEvidenceFlowFileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HybridEvidenceFlowFile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hybridEvidenceFlowFile, allocator);
     }
 
 
@@ -141,6 +150,22 @@ void CreateFlowEvidenceReportRequest::SetReportType(const int64_t& _reportType)
 bool CreateFlowEvidenceReportRequest::ReportTypeHasBeenSet() const
 {
     return m_reportTypeHasBeenSet;
+}
+
+bool CreateFlowEvidenceReportRequest::GetHybridEvidenceFlowFile() const
+{
+    return m_hybridEvidenceFlowFile;
+}
+
+void CreateFlowEvidenceReportRequest::SetHybridEvidenceFlowFile(const bool& _hybridEvidenceFlowFile)
+{
+    m_hybridEvidenceFlowFile = _hybridEvidenceFlowFile;
+    m_hybridEvidenceFlowFileHasBeenSet = true;
+}
+
+bool CreateFlowEvidenceReportRequest::HybridEvidenceFlowFileHasBeenSet() const
+{
+    return m_hybridEvidenceFlowFileHasBeenSet;
 }
 
 
