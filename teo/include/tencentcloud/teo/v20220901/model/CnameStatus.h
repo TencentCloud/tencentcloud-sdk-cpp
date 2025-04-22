@@ -93,27 +93,23 @@ namespace TencentCloud
                     bool CnameHasBeenSet() const;
 
                     /**
-                     * 获取Cname状态信息，取值有：
+                     * 获取CNAME 状态信息，取值有：
 <li>active：生效；</li>
-<li>moved：不生效。</li>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status Cname状态信息，取值有：
+<li>moved：不生效；</li>
+                     * @return Status CNAME 状态信息，取值有：
 <li>active：生效；</li>
-<li>moved：不生效。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>moved：不生效；</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Cname状态信息，取值有：
+                     * 设置CNAME 状态信息，取值有：
 <li>active：生效；</li>
-<li>moved：不生效。</li>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status Cname状态信息，取值有：
+<li>moved：不生效；</li>
+                     * @param _status CNAME 状态信息，取值有：
 <li>active：生效；</li>
-<li>moved：不生效。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>moved：不生效；</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -141,10 +137,9 @@ namespace TencentCloud
                     bool m_cnameHasBeenSet;
 
                     /**
-                     * Cname状态信息，取值有：
+                     * CNAME 状态信息，取值有：
 <li>active：生效；</li>
-<li>moved：不生效。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>moved：不生效；</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

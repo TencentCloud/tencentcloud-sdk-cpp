@@ -51,7 +51,8 @@ ListDocItem::ListDocItem() :
     m_expireEndHasBeenSet(false),
     m_isAllowRetryHasBeenSet(false),
     m_processingHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_cateBizIdHasBeenSet(false)
 {
 }
 
@@ -383,6 +384,16 @@ CoreInternalOutcome ListDocItem::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CateBizId") && !value["CateBizId"].IsNull())
+    {
+        if (!value["CateBizId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.CateBizId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cateBizId = string(value["CateBizId"].GetString());
+        m_cateBizIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -648,6 +659,14 @@ void ListDocItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cateBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CateBizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1147,5 +1166,21 @@ void ListDocItem::SetCreateTime(const string& _createTime)
 bool ListDocItem::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string ListDocItem::GetCateBizId() const
+{
+    return m_cateBizId;
+}
+
+void ListDocItem::SetCateBizId(const string& _cateBizId)
+{
+    m_cateBizId = _cateBizId;
+    m_cateBizIdHasBeenSet = true;
+}
+
+bool ListDocItem::CateBizIdHasBeenSet() const
+{
+    return m_cateBizIdHasBeenSet;
 }
 

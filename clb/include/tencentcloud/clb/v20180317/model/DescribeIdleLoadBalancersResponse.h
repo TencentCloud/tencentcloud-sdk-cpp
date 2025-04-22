@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取闲置实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdleLoadBalancers 闲置实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IdleLoadBalancer> GetIdleLoadBalancers() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 闲置实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IdleLoadBalancer> m_idleLoadBalancers;
                     bool m_idleLoadBalancersHasBeenSet;

@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigName 配置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigName() const;
 
                     /**
                      * 设置配置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configName 配置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigName(const std::string& _configName);
@@ -192,7 +188,6 @@ namespace TencentCloud
 
                     /**
                      * 配置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configName;
                     bool m_configNameHasBeenSet;

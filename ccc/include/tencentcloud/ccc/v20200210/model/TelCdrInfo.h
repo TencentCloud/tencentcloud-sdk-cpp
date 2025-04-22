@@ -134,6 +134,27 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
+                     * 获取通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫
+                     * @return CallType 通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫
+                     * 
+                     */
+                    int64_t GetCallType() const;
+
+                    /**
+                     * 设置通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫
+                     * @param _callType 通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫
+                     * 
+                     */
+                    void SetCallType(const int64_t& _callType);
+
+                    /**
+                     * 判断参数 CallType 是否已赋值
+                     * @return CallType 是否已赋值
+                     * 
+                     */
+                    bool CallTypeHasBeenSet() const;
+
+                    /**
                      * 获取通话时长
                      * @return Duration 通话时长
                      * 
@@ -222,15 +243,15 @@ namespace TencentCloud
 
 **场景	         EndStatus	EndStatusString	状态说明**
 
-电话呼入&呼出	1	        ok	                        正常结束
+电话呼入&呼出	1	        ok	                        正常通话
 
-电话呼入&呼出	0	        error	                系统错误
+电话呼入&呼出	0	        error	                异常结束
 
 电话呼入	             102	        ivrGiveUp	        IVR 期间用户放弃
 
-电话呼入	             103	        waitingGiveUp	       会话排队期间用户放弃
+电话呼入	             103	        waitingGiveUp	       排队时用户放弃
 
-电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
+电话呼入	             104	        ringingGiveUp	       振铃时用户放弃
 
 电话呼入	             105	        noSeatOnline	       无座席在线
 
@@ -238,37 +259,37 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      blackList 呼入黑名单 
+电话呼入	            100	      blackList 黑名单 
 
 电话呼出               2	              unconnected	未接通
 
 电话呼出             108	        restrictedCallee	被叫因高风险受限
 
-电话呼出             109	        tooManyRequest	    超频
+电话呼出             109	        tooManyRequest	    外呼超频限制
 
-电话呼出             110	        restrictedArea	    外呼盲区
+电话呼出             110	        restrictedArea	    外呼区域限制
 
 电话呼出             111	        restrictedTime	外呼时间限制
                          
 电话呼出             201            unknown	未知状态
 
-电话呼出             202            notAnswer	未接听
+电话呼出             202            notAnswer	 被叫未接听
 
-电话呼出            203	    userReject	拒接挂断
+电话呼出            203	    userReject	被叫拒接挂断
 
-电话呼出	          204	    powerOff	关机
+电话呼出	          204	    powerOff	被叫关机
 
-电话呼出           205            numberNotExist	空号
+电话呼出           205            numberNotExist	被叫空号
 
-电话呼出	         206	           busy	通话中
+电话呼出	         206	           busy	被叫忙
 
-电话呼出   	        207	           outOfCredit	欠费
+电话呼出   	        207	           outOfCredit	被叫欠费
 
 电话呼出	         208	           operatorError	运营商线路异常
 
 电话呼出         	209	           callerCancel	主叫取消
 
-电话呼出	        210	           notInService	不在服务区
+电话呼出	        210	           notInService	被叫不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
 电话呼出        212     carrierBlocked      运营商拦截
@@ -276,15 +297,15 @@ namespace TencentCloud
 
 **场景	         EndStatus	EndStatusString	状态说明**
 
-电话呼入&呼出	1	        ok	                        正常结束
+电话呼入&呼出	1	        ok	                        正常通话
 
-电话呼入&呼出	0	        error	                系统错误
+电话呼入&呼出	0	        error	                异常结束
 
 电话呼入	             102	        ivrGiveUp	        IVR 期间用户放弃
 
-电话呼入	             103	        waitingGiveUp	       会话排队期间用户放弃
+电话呼入	             103	        waitingGiveUp	       排队时用户放弃
 
-电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
+电话呼入	             104	        ringingGiveUp	       振铃时用户放弃
 
 电话呼入	             105	        noSeatOnline	       无座席在线
 
@@ -292,37 +313,37 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      blackList 呼入黑名单 
+电话呼入	            100	      blackList 黑名单 
 
 电话呼出               2	              unconnected	未接通
 
 电话呼出             108	        restrictedCallee	被叫因高风险受限
 
-电话呼出             109	        tooManyRequest	    超频
+电话呼出             109	        tooManyRequest	    外呼超频限制
 
-电话呼出             110	        restrictedArea	    外呼盲区
+电话呼出             110	        restrictedArea	    外呼区域限制
 
 电话呼出             111	        restrictedTime	外呼时间限制
                          
 电话呼出             201            unknown	未知状态
 
-电话呼出             202            notAnswer	未接听
+电话呼出             202            notAnswer	 被叫未接听
 
-电话呼出            203	    userReject	拒接挂断
+电话呼出            203	    userReject	被叫拒接挂断
 
-电话呼出	          204	    powerOff	关机
+电话呼出	          204	    powerOff	被叫关机
 
-电话呼出           205            numberNotExist	空号
+电话呼出           205            numberNotExist	被叫空号
 
-电话呼出	         206	           busy	通话中
+电话呼出	         206	           busy	被叫忙
 
-电话呼出   	        207	           outOfCredit	欠费
+电话呼出   	        207	           outOfCredit	被叫欠费
 
 电话呼出	         208	           operatorError	运营商线路异常
 
 电话呼出         	209	           callerCancel	主叫取消
 
-电话呼出	        210	           notInService	不在服务区
+电话呼出	        210	           notInService	被叫不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
 电话呼出        212     carrierBlocked      运营商拦截
@@ -335,15 +356,15 @@ namespace TencentCloud
 
 **场景	         EndStatus	EndStatusString	状态说明**
 
-电话呼入&呼出	1	        ok	                        正常结束
+电话呼入&呼出	1	        ok	                        正常通话
 
-电话呼入&呼出	0	        error	                系统错误
+电话呼入&呼出	0	        error	                异常结束
 
 电话呼入	             102	        ivrGiveUp	        IVR 期间用户放弃
 
-电话呼入	             103	        waitingGiveUp	       会话排队期间用户放弃
+电话呼入	             103	        waitingGiveUp	       排队时用户放弃
 
-电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
+电话呼入	             104	        ringingGiveUp	       振铃时用户放弃
 
 电话呼入	             105	        noSeatOnline	       无座席在线
 
@@ -351,37 +372,37 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      blackList 呼入黑名单 
+电话呼入	            100	      blackList 黑名单 
 
 电话呼出               2	              unconnected	未接通
 
 电话呼出             108	        restrictedCallee	被叫因高风险受限
 
-电话呼出             109	        tooManyRequest	    超频
+电话呼出             109	        tooManyRequest	    外呼超频限制
 
-电话呼出             110	        restrictedArea	    外呼盲区
+电话呼出             110	        restrictedArea	    外呼区域限制
 
 电话呼出             111	        restrictedTime	外呼时间限制
                          
 电话呼出             201            unknown	未知状态
 
-电话呼出             202            notAnswer	未接听
+电话呼出             202            notAnswer	 被叫未接听
 
-电话呼出            203	    userReject	拒接挂断
+电话呼出            203	    userReject	被叫拒接挂断
 
-电话呼出	          204	    powerOff	关机
+电话呼出	          204	    powerOff	被叫关机
 
-电话呼出           205            numberNotExist	空号
+电话呼出           205            numberNotExist	被叫空号
 
-电话呼出	         206	           busy	通话中
+电话呼出	         206	           busy	被叫忙
 
-电话呼出   	        207	           outOfCredit	欠费
+电话呼出   	        207	           outOfCredit	被叫欠费
 
 电话呼出	         208	           operatorError	运营商线路异常
 
 电话呼出         	209	           callerCancel	主叫取消
 
-电话呼出	        210	           notInService	不在服务区
+电话呼出	        210	           notInService	被叫不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
 电话呼出        212     carrierBlocked      运营商拦截
@@ -389,15 +410,15 @@ namespace TencentCloud
 
 **场景	         EndStatus	EndStatusString	状态说明**
 
-电话呼入&呼出	1	        ok	                        正常结束
+电话呼入&呼出	1	        ok	                        正常通话
 
-电话呼入&呼出	0	        error	                系统错误
+电话呼入&呼出	0	        error	                异常结束
 
 电话呼入	             102	        ivrGiveUp	        IVR 期间用户放弃
 
-电话呼入	             103	        waitingGiveUp	       会话排队期间用户放弃
+电话呼入	             103	        waitingGiveUp	       排队时用户放弃
 
-电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
+电话呼入	             104	        ringingGiveUp	       振铃时用户放弃
 
 电话呼入	             105	        noSeatOnline	       无座席在线
 
@@ -405,37 +426,37 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      blackList 呼入黑名单 
+电话呼入	            100	      blackList 黑名单 
 
 电话呼出               2	              unconnected	未接通
 
 电话呼出             108	        restrictedCallee	被叫因高风险受限
 
-电话呼出             109	        tooManyRequest	    超频
+电话呼出             109	        tooManyRequest	    外呼超频限制
 
-电话呼出             110	        restrictedArea	    外呼盲区
+电话呼出             110	        restrictedArea	    外呼区域限制
 
 电话呼出             111	        restrictedTime	外呼时间限制
                          
 电话呼出             201            unknown	未知状态
 
-电话呼出             202            notAnswer	未接听
+电话呼出             202            notAnswer	 被叫未接听
 
-电话呼出            203	    userReject	拒接挂断
+电话呼出            203	    userReject	被叫拒接挂断
 
-电话呼出	          204	    powerOff	关机
+电话呼出	          204	    powerOff	被叫关机
 
-电话呼出           205            numberNotExist	空号
+电话呼出           205            numberNotExist	被叫空号
 
-电话呼出	         206	           busy	通话中
+电话呼出	         206	           busy	被叫忙
 
-电话呼出   	        207	           outOfCredit	欠费
+电话呼出   	        207	           outOfCredit	被叫欠费
 
 电话呼出	         208	           operatorError	运营商线路异常
 
 电话呼出         	209	           callerCancel	主叫取消
 
-电话呼出	        210	           notInService	不在服务区
+电话呼出	        210	           notInService	被叫不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
 电话呼出        212     carrierBlocked      运营商拦截
@@ -665,15 +686,15 @@ namespace TencentCloud
 
 **场景	         EndStatus	EndStatusString	状态说明**
 
-电话呼入&呼出	1	        ok	                        正常结束
+电话呼入&呼出	1	        ok	                        正常通话
 
-电话呼入&呼出	0	        error	                系统错误
+电话呼入&呼出	0	        error	                异常结束
 
 电话呼入	             102	        ivrGiveUp	        IVR 期间用户放弃
 
-电话呼入	             103	        waitingGiveUp	       会话排队期间用户放弃
+电话呼入	             103	        waitingGiveUp	       排队时用户放弃
 
-电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
+电话呼入	             104	        ringingGiveUp	       振铃时用户放弃
 
 电话呼入	             105	        noSeatOnline	       无座席在线
 
@@ -681,37 +702,37 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      blackList 呼入黑名单 
+电话呼入	            100	      blackList 黑名单 
 
 电话呼出               2	              unconnected	未接通
 
 电话呼出             108	        restrictedCallee	被叫因高风险受限
 
-电话呼出             109	        tooManyRequest	    超频
+电话呼出             109	        tooManyRequest	    外呼超频限制
 
-电话呼出             110	        restrictedArea	    外呼盲区
+电话呼出             110	        restrictedArea	    外呼区域限制
 
 电话呼出             111	        restrictedTime	外呼时间限制
                          
 电话呼出             201            unknown	未知状态
 
-电话呼出             202            notAnswer	未接听
+电话呼出             202            notAnswer	 被叫未接听
 
-电话呼出            203	    userReject	拒接挂断
+电话呼出            203	    userReject	被叫拒接挂断
 
-电话呼出	          204	    powerOff	关机
+电话呼出	          204	    powerOff	被叫关机
 
-电话呼出           205            numberNotExist	空号
+电话呼出           205            numberNotExist	被叫空号
 
-电话呼出	         206	           busy	通话中
+电话呼出	         206	           busy	被叫忙
 
-电话呼出   	        207	           outOfCredit	欠费
+电话呼出   	        207	           outOfCredit	被叫欠费
 
 电话呼出	         208	           operatorError	运营商线路异常
 
 电话呼出         	209	           callerCancel	主叫取消
 
-电话呼出	        210	           notInService	不在服务区
+电话呼出	        210	           notInService	被叫不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
 电话呼出        212     carrierBlocked      运营商拦截
@@ -719,15 +740,15 @@ namespace TencentCloud
 
 **场景	         EndStatus	EndStatusString	状态说明**
 
-电话呼入&呼出	1	        ok	                        正常结束
+电话呼入&呼出	1	        ok	                        正常通话
 
-电话呼入&呼出	0	        error	                系统错误
+电话呼入&呼出	0	        error	                异常结束
 
 电话呼入	             102	        ivrGiveUp	        IVR 期间用户放弃
 
-电话呼入	             103	        waitingGiveUp	       会话排队期间用户放弃
+电话呼入	             103	        waitingGiveUp	       排队时用户放弃
 
-电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
+电话呼入	             104	        ringingGiveUp	       振铃时用户放弃
 
 电话呼入	             105	        noSeatOnline	       无座席在线
 
@@ -735,37 +756,37 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      blackList 呼入黑名单 
+电话呼入	            100	      blackList 黑名单 
 
 电话呼出               2	              unconnected	未接通
 
 电话呼出             108	        restrictedCallee	被叫因高风险受限
 
-电话呼出             109	        tooManyRequest	    超频
+电话呼出             109	        tooManyRequest	    外呼超频限制
 
-电话呼出             110	        restrictedArea	    外呼盲区
+电话呼出             110	        restrictedArea	    外呼区域限制
 
 电话呼出             111	        restrictedTime	外呼时间限制
                          
 电话呼出             201            unknown	未知状态
 
-电话呼出             202            notAnswer	未接听
+电话呼出             202            notAnswer	 被叫未接听
 
-电话呼出            203	    userReject	拒接挂断
+电话呼出            203	    userReject	被叫拒接挂断
 
-电话呼出	          204	    powerOff	关机
+电话呼出	          204	    powerOff	被叫关机
 
-电话呼出           205            numberNotExist	空号
+电话呼出           205            numberNotExist	被叫空号
 
-电话呼出	         206	           busy	通话中
+电话呼出	         206	           busy	被叫忙
 
-电话呼出   	        207	           outOfCredit	欠费
+电话呼出   	        207	           outOfCredit	被叫欠费
 
 电话呼出	         208	           operatorError	运营商线路异常
 
 电话呼出         	209	           callerCancel	主叫取消
 
-电话呼出	        210	           notInService	不在服务区
+电话呼出	        210	           notInService	被叫不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
 电话呼出        212     carrierBlocked      运营商拦截
@@ -778,15 +799,15 @@ namespace TencentCloud
 
 **场景	         EndStatus	EndStatusString	状态说明**
 
-电话呼入&呼出	1	        ok	                        正常结束
+电话呼入&呼出	1	        ok	                        正常通话
 
-电话呼入&呼出	0	        error	                系统错误
+电话呼入&呼出	0	        error	                异常结束
 
 电话呼入	             102	        ivrGiveUp	        IVR 期间用户放弃
 
-电话呼入	             103	        waitingGiveUp	       会话排队期间用户放弃
+电话呼入	             103	        waitingGiveUp	       排队时用户放弃
 
-电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
+电话呼入	             104	        ringingGiveUp	       振铃时用户放弃
 
 电话呼入	             105	        noSeatOnline	       无座席在线
 
@@ -794,37 +815,37 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      blackList 呼入黑名单 
+电话呼入	            100	      blackList 黑名单 
 
 电话呼出               2	              unconnected	未接通
 
 电话呼出             108	        restrictedCallee	被叫因高风险受限
 
-电话呼出             109	        tooManyRequest	    超频
+电话呼出             109	        tooManyRequest	    外呼超频限制
 
-电话呼出             110	        restrictedArea	    外呼盲区
+电话呼出             110	        restrictedArea	    外呼区域限制
 
 电话呼出             111	        restrictedTime	外呼时间限制
                          
 电话呼出             201            unknown	未知状态
 
-电话呼出             202            notAnswer	未接听
+电话呼出             202            notAnswer	 被叫未接听
 
-电话呼出            203	    userReject	拒接挂断
+电话呼出            203	    userReject	被叫拒接挂断
 
-电话呼出	          204	    powerOff	关机
+电话呼出	          204	    powerOff	被叫关机
 
-电话呼出           205            numberNotExist	空号
+电话呼出           205            numberNotExist	被叫空号
 
-电话呼出	         206	           busy	通话中
+电话呼出	         206	           busy	被叫忙
 
-电话呼出   	        207	           outOfCredit	欠费
+电话呼出   	        207	           outOfCredit	被叫欠费
 
 电话呼出	         208	           operatorError	运营商线路异常
 
 电话呼出         	209	           callerCancel	主叫取消
 
-电话呼出	        210	           notInService	不在服务区
+电话呼出	        210	           notInService	被叫不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
 电话呼出        212     carrierBlocked      运营商拦截
@@ -832,15 +853,15 @@ namespace TencentCloud
 
 **场景	         EndStatus	EndStatusString	状态说明**
 
-电话呼入&呼出	1	        ok	                        正常结束
+电话呼入&呼出	1	        ok	                        正常通话
 
-电话呼入&呼出	0	        error	                系统错误
+电话呼入&呼出	0	        error	                异常结束
 
 电话呼入	             102	        ivrGiveUp	        IVR 期间用户放弃
 
-电话呼入	             103	        waitingGiveUp	       会话排队期间用户放弃
+电话呼入	             103	        waitingGiveUp	       排队时用户放弃
 
-电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
+电话呼入	             104	        ringingGiveUp	       振铃时用户放弃
 
 电话呼入	             105	        noSeatOnline	       无座席在线
 
@@ -848,37 +869,37 @@ namespace TencentCloud
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      blackList 呼入黑名单 
+电话呼入	            100	      blackList 黑名单 
 
 电话呼出               2	              unconnected	未接通
 
 电话呼出             108	        restrictedCallee	被叫因高风险受限
 
-电话呼出             109	        tooManyRequest	    超频
+电话呼出             109	        tooManyRequest	    外呼超频限制
 
-电话呼出             110	        restrictedArea	    外呼盲区
+电话呼出             110	        restrictedArea	    外呼区域限制
 
 电话呼出             111	        restrictedTime	外呼时间限制
                          
 电话呼出             201            unknown	未知状态
 
-电话呼出             202            notAnswer	未接听
+电话呼出             202            notAnswer	 被叫未接听
 
-电话呼出            203	    userReject	拒接挂断
+电话呼出            203	    userReject	被叫拒接挂断
 
-电话呼出	          204	    powerOff	关机
+电话呼出	          204	    powerOff	被叫关机
 
-电话呼出           205            numberNotExist	空号
+电话呼出           205            numberNotExist	被叫空号
 
-电话呼出	         206	           busy	通话中
+电话呼出	         206	           busy	被叫忙
 
-电话呼出   	        207	           outOfCredit	欠费
+电话呼出   	        207	           outOfCredit	被叫欠费
 
 电话呼出	         208	           operatorError	运营商线路异常
 
 电话呼出         	209	           callerCancel	主叫取消
 
-电话呼出	        210	           notInService	不在服务区
+电话呼出	        210	           notInService	被叫不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
 电话呼出        212     carrierBlocked      运营商拦截
@@ -1301,6 +1322,12 @@ NotExists
                     bool m_directionHasBeenSet;
 
                     /**
+                     * 通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫
+                     */
+                    int64_t m_callType;
+                    bool m_callTypeHasBeenSet;
+
+                    /**
                      * 通话时长
                      */
                     int64_t m_duration;
@@ -1329,15 +1356,15 @@ NotExists
 
 **场景	         EndStatus	EndStatusString	状态说明**
 
-电话呼入&呼出	1	        ok	                        正常结束
+电话呼入&呼出	1	        ok	                        正常通话
 
-电话呼入&呼出	0	        error	                系统错误
+电话呼入&呼出	0	        error	                异常结束
 
 电话呼入	             102	        ivrGiveUp	        IVR 期间用户放弃
 
-电话呼入	             103	        waitingGiveUp	       会话排队期间用户放弃
+电话呼入	             103	        waitingGiveUp	       排队时用户放弃
 
-电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
+电话呼入	             104	        ringingGiveUp	       振铃时用户放弃
 
 电话呼入	             105	        noSeatOnline	       无座席在线
 
@@ -1345,37 +1372,37 @@ NotExists
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      blackList 呼入黑名单 
+电话呼入	            100	      blackList 黑名单 
 
 电话呼出               2	              unconnected	未接通
 
 电话呼出             108	        restrictedCallee	被叫因高风险受限
 
-电话呼出             109	        tooManyRequest	    超频
+电话呼出             109	        tooManyRequest	    外呼超频限制
 
-电话呼出             110	        restrictedArea	    外呼盲区
+电话呼出             110	        restrictedArea	    外呼区域限制
 
 电话呼出             111	        restrictedTime	外呼时间限制
                          
 电话呼出             201            unknown	未知状态
 
-电话呼出             202            notAnswer	未接听
+电话呼出             202            notAnswer	 被叫未接听
 
-电话呼出            203	    userReject	拒接挂断
+电话呼出            203	    userReject	被叫拒接挂断
 
-电话呼出	          204	    powerOff	关机
+电话呼出	          204	    powerOff	被叫关机
 
-电话呼出           205            numberNotExist	空号
+电话呼出           205            numberNotExist	被叫空号
 
-电话呼出	         206	           busy	通话中
+电话呼出	         206	           busy	被叫忙
 
-电话呼出   	        207	           outOfCredit	欠费
+电话呼出   	        207	           outOfCredit	被叫欠费
 
 电话呼出	         208	           operatorError	运营商线路异常
 
 电话呼出         	209	           callerCancel	主叫取消
 
-电话呼出	        210	           notInService	不在服务区
+电话呼出	        210	           notInService	被叫不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
 电话呼出        212     carrierBlocked      运营商拦截
@@ -1448,15 +1475,15 @@ NotExists
 
 **场景	         EndStatus	EndStatusString	状态说明**
 
-电话呼入&呼出	1	        ok	                        正常结束
+电话呼入&呼出	1	        ok	                        正常通话
 
-电话呼入&呼出	0	        error	                系统错误
+电话呼入&呼出	0	        error	                异常结束
 
 电话呼入	             102	        ivrGiveUp	        IVR 期间用户放弃
 
-电话呼入	             103	        waitingGiveUp	       会话排队期间用户放弃
+电话呼入	             103	        waitingGiveUp	       排队时用户放弃
 
-电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
+电话呼入	             104	        ringingGiveUp	       振铃时用户放弃
 
 电话呼入	             105	        noSeatOnline	       无座席在线
 
@@ -1464,37 +1491,37 @@ NotExists
 
 电话呼入	            107	       ivrEnd	               IVR 后直接结束
 
-电话呼入	            100	      blackList 呼入黑名单 
+电话呼入	            100	      blackList 黑名单 
 
 电话呼出               2	              unconnected	未接通
 
 电话呼出             108	        restrictedCallee	被叫因高风险受限
 
-电话呼出             109	        tooManyRequest	    超频
+电话呼出             109	        tooManyRequest	    外呼超频限制
 
-电话呼出             110	        restrictedArea	    外呼盲区
+电话呼出             110	        restrictedArea	    外呼区域限制
 
 电话呼出             111	        restrictedTime	外呼时间限制
                          
 电话呼出             201            unknown	未知状态
 
-电话呼出             202            notAnswer	未接听
+电话呼出             202            notAnswer	 被叫未接听
 
-电话呼出            203	    userReject	拒接挂断
+电话呼出            203	    userReject	被叫拒接挂断
 
-电话呼出	          204	    powerOff	关机
+电话呼出	          204	    powerOff	被叫关机
 
-电话呼出           205            numberNotExist	空号
+电话呼出           205            numberNotExist	被叫空号
 
-电话呼出	         206	           busy	通话中
+电话呼出	         206	           busy	被叫忙
 
-电话呼出   	        207	           outOfCredit	欠费
+电话呼出   	        207	           outOfCredit	被叫欠费
 
 电话呼出	         208	           operatorError	运营商线路异常
 
 电话呼出         	209	           callerCancel	主叫取消
 
-电话呼出	        210	           notInService	不在服务区
+电话呼出	        210	           notInService	被叫不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
 电话呼出        212     carrierBlocked      运营商拦截

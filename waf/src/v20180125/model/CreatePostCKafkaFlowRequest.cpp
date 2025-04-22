@@ -30,7 +30,11 @@ CreatePostCKafkaFlowRequest::CreatePostCKafkaFlowRequest() :
     m_vipTypeHasBeenSet(false),
     m_logTypeHasBeenSet(false),
     m_topicHasBeenSet(false),
-    m_kafkaVersionHasBeenSet(false)
+    m_kafkaVersionHasBeenSet(false),
+    m_sASLEnableHasBeenSet(false),
+    m_sASLUserHasBeenSet(false),
+    m_sASLPasswordHasBeenSet(false),
+    m_writeConfigHasBeenSet(false)
 {
 }
 
@@ -103,6 +107,39 @@ string CreatePostCKafkaFlowRequest::ToJsonString() const
         string key = "KafkaVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_kafkaVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sASLEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SASLEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sASLEnable, allocator);
+    }
+
+    if (m_sASLUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SASLUser";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sASLUser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sASLPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SASLPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sASLPassword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_writeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WriteConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_writeConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -239,6 +276,70 @@ void CreatePostCKafkaFlowRequest::SetKafkaVersion(const string& _kafkaVersion)
 bool CreatePostCKafkaFlowRequest::KafkaVersionHasBeenSet() const
 {
     return m_kafkaVersionHasBeenSet;
+}
+
+int64_t CreatePostCKafkaFlowRequest::GetSASLEnable() const
+{
+    return m_sASLEnable;
+}
+
+void CreatePostCKafkaFlowRequest::SetSASLEnable(const int64_t& _sASLEnable)
+{
+    m_sASLEnable = _sASLEnable;
+    m_sASLEnableHasBeenSet = true;
+}
+
+bool CreatePostCKafkaFlowRequest::SASLEnableHasBeenSet() const
+{
+    return m_sASLEnableHasBeenSet;
+}
+
+string CreatePostCKafkaFlowRequest::GetSASLUser() const
+{
+    return m_sASLUser;
+}
+
+void CreatePostCKafkaFlowRequest::SetSASLUser(const string& _sASLUser)
+{
+    m_sASLUser = _sASLUser;
+    m_sASLUserHasBeenSet = true;
+}
+
+bool CreatePostCKafkaFlowRequest::SASLUserHasBeenSet() const
+{
+    return m_sASLUserHasBeenSet;
+}
+
+string CreatePostCKafkaFlowRequest::GetSASLPassword() const
+{
+    return m_sASLPassword;
+}
+
+void CreatePostCKafkaFlowRequest::SetSASLPassword(const string& _sASLPassword)
+{
+    m_sASLPassword = _sASLPassword;
+    m_sASLPasswordHasBeenSet = true;
+}
+
+bool CreatePostCKafkaFlowRequest::SASLPasswordHasBeenSet() const
+{
+    return m_sASLPasswordHasBeenSet;
+}
+
+FieldWriteConfig CreatePostCKafkaFlowRequest::GetWriteConfig() const
+{
+    return m_writeConfig;
+}
+
+void CreatePostCKafkaFlowRequest::SetWriteConfig(const FieldWriteConfig& _writeConfig)
+{
+    m_writeConfig = _writeConfig;
+    m_writeConfigHasBeenSet = true;
+}
+
+bool CreatePostCKafkaFlowRequest::WriteConfigHasBeenSet() const
+{
+    return m_writeConfigHasBeenSet;
 }
 
 

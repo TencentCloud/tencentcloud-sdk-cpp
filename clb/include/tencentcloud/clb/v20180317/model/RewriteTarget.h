@@ -98,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重定向状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RewriteCode 重定向状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRewriteCode() const;
 
                     /**
                      * 设置重定向状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rewriteCode 重定向状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRewriteCode(const int64_t& _rewriteCode);
@@ -123,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重定向是否携带匹配的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TakeUrl 重定向是否携带匹配的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetTakeUrl() const;
 
                     /**
                      * 设置重定向是否携带匹配的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _takeUrl 重定向是否携带匹配的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTakeUrl(const bool& _takeUrl);
@@ -148,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重定向类型，Manual: 手动重定向，Auto:  自动重定向
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RewriteType 重定向类型，Manual: 手动重定向，Auto:  自动重定向
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRewriteType() const;
 
                     /**
                      * 设置重定向类型，Manual: 手动重定向，Auto:  自动重定向
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rewriteType 重定向类型，Manual: 手动重定向，Auto:  自动重定向
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRewriteType(const std::string& _rewriteType);
@@ -189,21 +177,18 @@ namespace TencentCloud
 
                     /**
                      * 重定向状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rewriteCode;
                     bool m_rewriteCodeHasBeenSet;
 
                     /**
                      * 重定向是否携带匹配的url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_takeUrl;
                     bool m_takeUrlHasBeenSet;
 
                     /**
                      * 重定向类型，Manual: 手动重定向，Auto:  自动重定向
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rewriteType;
                     bool m_rewriteTypeHasBeenSet;

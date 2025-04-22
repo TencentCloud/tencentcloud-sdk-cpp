@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主源站列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Origins 主源站列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOrigins() const;
 
                     /**
                      * 设置主源站列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _origins 主源站列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrigins(const std::vector<std::string>& _origins);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备源站列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupOrigins 备源站列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBackupOrigins() const;
 
                     /**
                      * 设置备源站列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupOrigins 备源站列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupOrigins(const std::vector<std::string>& _backupOrigins);
@@ -101,12 +93,10 @@ namespace TencentCloud
 <li>http：强制 http 回源；</li>
 <li>follow：协议跟随回源；</li>
 <li>https：强制 https 回源。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginPullProtocol 回源协议配置，取值有：
 <li>http：强制 http 回源；</li>
 <li>follow：协议跟随回源；</li>
 <li>https：强制 https 回源。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginPullProtocol() const;
@@ -116,12 +106,10 @@ namespace TencentCloud
 <li>http：强制 http 回源；</li>
 <li>follow：协议跟随回源；</li>
 <li>https：强制 https 回源。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originPullProtocol 回源协议配置，取值有：
 <li>http：强制 http 回源；</li>
 <li>follow：协议跟随回源；</li>
 <li>https：强制 https 回源。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginPullProtocol(const std::string& _originPullProtocol);
@@ -137,11 +125,9 @@ namespace TencentCloud
                      * 获取源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosPrivateAccess 源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosPrivateAccess() const;
@@ -150,11 +136,9 @@ namespace TencentCloud
                      * 设置源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cosPrivateAccess 源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCosPrivateAccess(const std::string& _cosPrivateAccess);
@@ -170,14 +154,12 @@ namespace TencentCloud
 
                     /**
                      * 主源站列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_origins;
                     bool m_originsHasBeenSet;
 
                     /**
                      * 备源站列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_backupOrigins;
                     bool m_backupOriginsHasBeenSet;
@@ -187,7 +169,6 @@ namespace TencentCloud
 <li>http：强制 http 回源；</li>
 <li>follow：协议跟随回源；</li>
 <li>https：强制 https 回源。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originPullProtocol;
                     bool m_originPullProtocolHasBeenSet;
@@ -196,7 +177,6 @@ namespace TencentCloud
                      * 源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosPrivateAccess;
                     bool m_cosPrivateAccessHasBeenSet;

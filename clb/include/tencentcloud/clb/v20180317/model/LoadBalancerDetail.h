@@ -977,18 +977,14 @@ Public：公网属性，Private：内网属性；对于内网属性的负载均�
 
                     /**
                      * 获取负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerDomain 负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoadBalancerDomain() const;
 
                     /**
                      * 设置负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancerDomain 负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalancerDomain(const std::string& _loadBalancerDomain);
@@ -1002,18 +998,14 @@ Public：公网属性，Private：内网属性；对于内网属性的负载均�
 
                     /**
                      * 获取网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Egress 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEgress() const;
 
                     /**
                      * 设置网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _egress 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEgress(const std::string& _egress);
@@ -1367,14 +1359,12 @@ Public：公网属性，Private：内网属性；对于内网属性的负载均�
 
                     /**
                      * 负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loadBalancerDomain;
                     bool m_loadBalancerDomainHasBeenSet;
 
                     /**
                      * 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;

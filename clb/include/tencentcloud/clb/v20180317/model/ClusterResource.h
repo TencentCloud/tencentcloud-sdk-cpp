@@ -116,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源是否闲置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Idle 资源是否闲置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdle() const;
 
                     /**
                      * 设置资源是否闲置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _idle 资源是否闲置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdle(const std::string& _idle);
@@ -162,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Isp 集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsp() const;
 
                     /**
                      * 设置集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isp 集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsp(const std::string& _isp);
@@ -233,7 +225,6 @@ namespace TencentCloud
 
                     /**
                      * 资源是否闲置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idle;
                     bool m_idleHasBeenSet;
@@ -246,7 +237,6 @@ namespace TencentCloud
 
                     /**
                      * 集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isp;
                     bool m_ispHasBeenSet;

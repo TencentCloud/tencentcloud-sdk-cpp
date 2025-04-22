@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取解绑失败错误原因信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 解绑失败错误原因信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
@@ -83,7 +81,6 @@ namespace TencentCloud
 
                     /**
                      * 解绑失败错误原因信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

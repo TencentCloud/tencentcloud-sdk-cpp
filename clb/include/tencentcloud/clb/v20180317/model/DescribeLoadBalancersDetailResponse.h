@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerDetailSet 负载均衡详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LoadBalancerDetail> GetLoadBalancerDetailSet() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 负载均衡详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LoadBalancerDetail> m_loadBalancerDetailSet;
                     bool m_loadBalancerDetailSetHasBeenSet;

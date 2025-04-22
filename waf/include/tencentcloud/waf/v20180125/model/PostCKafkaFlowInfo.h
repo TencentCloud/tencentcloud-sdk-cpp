@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/FieldWriteConfig.h>
 
 
 namespace TencentCloud
@@ -236,6 +237,69 @@ namespace TencentCloud
                     bool CompressionHasBeenSet() const;
 
                     /**
+                     * 获取是否支持SASL,0-关闭，1-开启
+                     * @return SASLEnable 是否支持SASL,0-关闭，1-开启
+                     * 
+                     */
+                    int64_t GetSASLEnable() const;
+
+                    /**
+                     * 设置是否支持SASL,0-关闭，1-开启
+                     * @param _sASLEnable 是否支持SASL,0-关闭，1-开启
+                     * 
+                     */
+                    void SetSASLEnable(const int64_t& _sASLEnable);
+
+                    /**
+                     * 判断参数 SASLEnable 是否已赋值
+                     * @return SASLEnable 是否已赋值
+                     * 
+                     */
+                    bool SASLEnableHasBeenSet() const;
+
+                    /**
+                     * 获取SASL用户名
+                     * @return SASLUser SASL用户名
+                     * 
+                     */
+                    std::string GetSASLUser() const;
+
+                    /**
+                     * 设置SASL用户名
+                     * @param _sASLUser SASL用户名
+                     * 
+                     */
+                    void SetSASLUser(const std::string& _sASLUser);
+
+                    /**
+                     * 判断参数 SASLUser 是否已赋值
+                     * @return SASLUser 是否已赋值
+                     * 
+                     */
+                    bool SASLUserHasBeenSet() const;
+
+                    /**
+                     * 获取SALS密码
+                     * @return SASLPassword SALS密码
+                     * 
+                     */
+                    std::string GetSASLPassword() const;
+
+                    /**
+                     * 设置SALS密码
+                     * @param _sASLPassword SALS密码
+                     * 
+                     */
+                    void SetSASLPassword(const std::string& _sASLPassword);
+
+                    /**
+                     * 判断参数 SASLPassword 是否已赋值
+                     * @return SASLPassword 是否已赋值
+                     * 
+                     */
+                    bool SASLPasswordHasBeenSet() const;
+
+                    /**
                      * 获取描述信息
                      * @return Content 描述信息
                      * 
@@ -255,6 +319,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ContentHasBeenSet() const;
+
+                    /**
+                     * 获取1-外网TGW，2-支撑环境，默认为支撑环境
+                     * @return VipType 1-外网TGW，2-支撑环境，默认为支撑环境
+                     * 
+                     */
+                    int64_t GetVipType() const;
+
+                    /**
+                     * 设置1-外网TGW，2-支撑环境，默认为支撑环境
+                     * @param _vipType 1-外网TGW，2-支撑环境，默认为支撑环境
+                     * 
+                     */
+                    void SetVipType(const int64_t& _vipType);
+
+                    /**
+                     * 判断参数 VipType 是否已赋值
+                     * @return VipType 是否已赋值
+                     * 
+                     */
+                    bool VipTypeHasBeenSet() const;
+
+                    /**
+                     * 获取配置状态
+                     * @return WriteConfig 配置状态
+                     * 
+                     */
+                    FieldWriteConfig GetWriteConfig() const;
+
+                    /**
+                     * 设置配置状态
+                     * @param _writeConfig 配置状态
+                     * 
+                     */
+                    void SetWriteConfig(const FieldWriteConfig& _writeConfig);
+
+                    /**
+                     * 判断参数 WriteConfig 是否已赋值
+                     * @return WriteConfig 是否已赋值
+                     * 
+                     */
+                    bool WriteConfigHasBeenSet() const;
 
                 private:
 
@@ -313,10 +419,40 @@ namespace TencentCloud
                     bool m_compressionHasBeenSet;
 
                     /**
+                     * 是否支持SASL,0-关闭，1-开启
+                     */
+                    int64_t m_sASLEnable;
+                    bool m_sASLEnableHasBeenSet;
+
+                    /**
+                     * SASL用户名
+                     */
+                    std::string m_sASLUser;
+                    bool m_sASLUserHasBeenSet;
+
+                    /**
+                     * SALS密码
+                     */
+                    std::string m_sASLPassword;
+                    bool m_sASLPasswordHasBeenSet;
+
+                    /**
                      * 描述信息
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 1-外网TGW，2-支撑环境，默认为支撑环境
+                     */
+                    int64_t m_vipType;
+                    bool m_vipTypeHasBeenSet;
+
+                    /**
+                     * 配置状态
+                     */
+                    FieldWriteConfig m_writeConfig;
+                    bool m_writeConfigHasBeenSet;
 
                 };
             }

@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡实例ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerIds 负载均衡实例ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
                      * 设置负载均衡实例ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancerIds 负载均衡实例ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 负载均衡实例ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;

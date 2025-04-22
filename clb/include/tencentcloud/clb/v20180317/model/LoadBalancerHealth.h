@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerName 负载均衡实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancerName 负载均衡实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Listeners 监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ListenerHealth> GetListeners() const;
 
                     /**
                      * 设置监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listeners 监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListeners(const std::vector<ListenerHealth>& _listeners);
@@ -128,14 +120,12 @@ namespace TencentCloud
 
                     /**
                      * 负载均衡实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loadBalancerName;
                     bool m_loadBalancerNameHasBeenSet;
 
                     /**
                      * 监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ListenerHealth> m_listeners;
                     bool m_listenersHasBeenSet;

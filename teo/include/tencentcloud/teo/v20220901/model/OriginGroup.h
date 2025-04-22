@@ -205,18 +205,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回源Host Header。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostHeader 回源Host Header。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostHeader() const;
 
                     /**
                      * 设置回源Host Header。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostHeader 回源Host Header。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostHeader(const std::string& _hostHeader);
@@ -276,7 +272,6 @@ namespace TencentCloud
 
                     /**
                      * 回源Host Header。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostHeader;
                     bool m_hostHeaderHasBeenSet;

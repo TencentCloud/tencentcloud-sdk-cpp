@@ -31,6 +31,8 @@
 #include <tencentcloud/cat/v20180409/model/DescribeDetailedSingleProbeDataResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeInstantTasksRequest.h>
 #include <tencentcloud/cat/v20180409/model/DescribeInstantTasksResponse.h>
+#include <tencentcloud/cat/v20180409/model/DescribeNodeGroupsRequest.h>
+#include <tencentcloud/cat/v20180409/model/DescribeNodeGroupsResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeNodesRequest.h>
 #include <tencentcloud/cat/v20180409/model/DescribeNodesResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeProbeMetricDataRequest.h>
@@ -73,6 +75,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstantTasksResponse> DescribeInstantTasksOutcome;
                 typedef std::future<DescribeInstantTasksOutcome> DescribeInstantTasksOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DescribeInstantTasksRequest&, DescribeInstantTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstantTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNodeGroupsResponse> DescribeNodeGroupsOutcome;
+                typedef std::future<DescribeNodeGroupsOutcome> DescribeNodeGroupsOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::DescribeNodeGroupsRequest&, DescribeNodeGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNodesResponse> DescribeNodesOutcome;
                 typedef std::future<DescribeNodesOutcome> DescribeNodesOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DescribeNodesRequest&, DescribeNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodesAsyncHandler;
@@ -135,6 +140,15 @@ namespace TencentCloud
                 DescribeInstantTasksOutcome DescribeInstantTasks(const Model::DescribeInstantTasksRequest &request);
                 void DescribeInstantTasksAsync(const Model::DescribeInstantTasksRequest& request, const DescribeInstantTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstantTasksOutcomeCallable DescribeInstantTasksCallable(const Model::DescribeInstantTasksRequest& request);
+
+                /**
+                 *获取拨测点组（可用性拨测点组、高级拨测点组、我的拨测点组）
+                 * @param req DescribeNodeGroupsRequest
+                 * @return DescribeNodeGroupsOutcome
+                 */
+                DescribeNodeGroupsOutcome DescribeNodeGroups(const Model::DescribeNodeGroupsRequest &request);
+                void DescribeNodeGroupsAsync(const Model::DescribeNodeGroupsRequest& request, const DescribeNodeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNodeGroupsOutcomeCallable DescribeNodeGroupsCallable(const Model::DescribeNodeGroupsRequest& request);
 
                 /**
                  *获取拨测节点

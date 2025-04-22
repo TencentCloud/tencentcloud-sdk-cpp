@@ -77,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大限制，取值在1MB和500MB之间。单位字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxSize 最大限制，取值在1MB和500MB之间。单位字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
                      * 设置最大限制，取值在1MB和500MB之间。单位字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxSize 最大限制，取值在1MB和500MB之间。单位字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
@@ -112,7 +108,6 @@ namespace TencentCloud
 
                     /**
                      * 最大限制，取值在1MB和500MB之间。单位字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;

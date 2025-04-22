@@ -30,6 +30,7 @@
 #include <tencentcloud/lke/v20231130/model/FileInfo.h>
 #include <tencentcloud/lke/v20231130/model/QuoteInfo.h>
 #include <tencentcloud/lke/v20231130/model/AgentThought.h>
+#include <tencentcloud/lke/v20231130/model/ExtraInfo.h>
 
 
 namespace TencentCloud
@@ -652,6 +653,31 @@ namespace TencentCloud
                      */
                     bool AgentThoughtHasBeenSet() const;
 
+                    /**
+                     * 获取扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtraInfo 扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExtraInfo GetExtraInfo() const;
+
+                    /**
+                     * 设置扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extraInfo 扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtraInfo(const ExtraInfo& _extraInfo);
+
+                    /**
+                     * 判断参数 ExtraInfo 是否已赋值
+                     * @return ExtraInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtraInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -821,6 +847,13 @@ namespace TencentCloud
                      */
                     AgentThought m_agentThought;
                     bool m_agentThoughtHasBeenSet;
+
+                    /**
+                     * 扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtraInfo m_extraInfo;
+                    bool m_extraInfoHasBeenSet;
 
                 };
             }

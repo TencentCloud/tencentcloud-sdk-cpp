@@ -51,11 +51,9 @@ namespace TencentCloud
                      * 获取是否开启全路径缓存，取值有：
 <li>on：开启全路径缓存（即关闭参数忽略）；</li>
 <li>off：关闭全路径缓存（即开启参数忽略）。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FullUrlCache 是否开启全路径缓存，取值有：
 <li>on：开启全路径缓存（即关闭参数忽略）；</li>
 <li>off：关闭全路径缓存（即开启参数忽略）。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFullUrlCache() const;
@@ -64,11 +62,9 @@ namespace TencentCloud
                      * 设置是否开启全路径缓存，取值有：
 <li>on：开启全路径缓存（即关闭参数忽略）；</li>
 <li>off：关闭全路径缓存（即开启参数忽略）。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fullUrlCache 是否开启全路径缓存，取值有：
 <li>on：开启全路径缓存（即关闭参数忽略）；</li>
 <li>off：关闭全路径缓存（即开启参数忽略）。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFullUrlCache(const std::string& _fullUrlCache);
@@ -84,11 +80,9 @@ namespace TencentCloud
                      * 获取是否忽略大小写缓存，取值有：
 <li>on：忽略；</li>
 <li>off：不忽略。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IgnoreCase 是否忽略大小写缓存，取值有：
 <li>on：忽略；</li>
 <li>off：不忽略。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIgnoreCase() const;
@@ -97,11 +91,9 @@ namespace TencentCloud
                      * 设置是否忽略大小写缓存，取值有：
 <li>on：忽略；</li>
 <li>off：不忽略。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ignoreCase 是否忽略大小写缓存，取值有：
 <li>on：忽略；</li>
 <li>off：不忽略。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIgnoreCase(const std::string& _ignoreCase);
@@ -144,7 +136,6 @@ namespace TencentCloud
                      * 是否开启全路径缓存，取值有：
 <li>on：开启全路径缓存（即关闭参数忽略）；</li>
 <li>off：关闭全路径缓存（即开启参数忽略）。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fullUrlCache;
                     bool m_fullUrlCacheHasBeenSet;
@@ -153,7 +144,6 @@ namespace TencentCloud
                      * 是否忽略大小写缓存，取值有：
 <li>on：忽略；</li>
 <li>off：不忽略。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ignoreCase;
                     bool m_ignoreCaseHasBeenSet;

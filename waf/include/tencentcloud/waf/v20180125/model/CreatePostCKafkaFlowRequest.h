@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/FieldWriteConfig.h>
 
 
 namespace TencentCloud
@@ -210,6 +211,90 @@ namespace TencentCloud
                      */
                     bool KafkaVersionHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启SASL校验，默认不开启，0-关闭，1-开启
+                     * @return SASLEnable 是否开启SASL校验，默认不开启，0-关闭，1-开启
+                     * 
+                     */
+                    int64_t GetSASLEnable() const;
+
+                    /**
+                     * 设置是否开启SASL校验，默认不开启，0-关闭，1-开启
+                     * @param _sASLEnable 是否开启SASL校验，默认不开启，0-关闭，1-开启
+                     * 
+                     */
+                    void SetSASLEnable(const int64_t& _sASLEnable);
+
+                    /**
+                     * 判断参数 SASLEnable 是否已赋值
+                     * @return SASLEnable 是否已赋值
+                     * 
+                     */
+                    bool SASLEnableHasBeenSet() const;
+
+                    /**
+                     * 获取SASL用户名
+                     * @return SASLUser SASL用户名
+                     * 
+                     */
+                    std::string GetSASLUser() const;
+
+                    /**
+                     * 设置SASL用户名
+                     * @param _sASLUser SASL用户名
+                     * 
+                     */
+                    void SetSASLUser(const std::string& _sASLUser);
+
+                    /**
+                     * 判断参数 SASLUser 是否已赋值
+                     * @return SASLUser 是否已赋值
+                     * 
+                     */
+                    bool SASLUserHasBeenSet() const;
+
+                    /**
+                     * 获取SASL密码
+                     * @return SASLPassword SASL密码
+                     * 
+                     */
+                    std::string GetSASLPassword() const;
+
+                    /**
+                     * 设置SASL密码
+                     * @param _sASLPassword SASL密码
+                     * 
+                     */
+                    void SetSASLPassword(const std::string& _sASLPassword);
+
+                    /**
+                     * 判断参数 SASLPassword 是否已赋值
+                     * @return SASLPassword 是否已赋值
+                     * 
+                     */
+                    bool SASLPasswordHasBeenSet() const;
+
+                    /**
+                     * 获取开启访问日志某些字段是否投递
+                     * @return WriteConfig 开启访问日志某些字段是否投递
+                     * 
+                     */
+                    FieldWriteConfig GetWriteConfig() const;
+
+                    /**
+                     * 设置开启访问日志某些字段是否投递
+                     * @param _writeConfig 开启访问日志某些字段是否投递
+                     * 
+                     */
+                    void SetWriteConfig(const FieldWriteConfig& _writeConfig);
+
+                    /**
+                     * 判断参数 WriteConfig 是否已赋值
+                     * @return WriteConfig 是否已赋值
+                     * 
+                     */
+                    bool WriteConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +344,30 @@ namespace TencentCloud
                      */
                     std::string m_kafkaVersion;
                     bool m_kafkaVersionHasBeenSet;
+
+                    /**
+                     * 是否开启SASL校验，默认不开启，0-关闭，1-开启
+                     */
+                    int64_t m_sASLEnable;
+                    bool m_sASLEnableHasBeenSet;
+
+                    /**
+                     * SASL用户名
+                     */
+                    std::string m_sASLUser;
+                    bool m_sASLUserHasBeenSet;
+
+                    /**
+                     * SASL密码
+                     */
+                    std::string m_sASLPassword;
+                    bool m_sASLPasswordHasBeenSet;
+
+                    /**
+                     * 开启访问日志某些字段是否投递
+                     */
+                    FieldWriteConfig m_writeConfig;
+                    bool m_writeConfigHasBeenSet;
 
                 };
             }

@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取开启或关闭鉴权。
 True: 开启;
 False: 关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OAuthEnable 开启或关闭鉴权。
 True: 开启;
 False: 关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetOAuthEnable() const;
@@ -63,11 +61,9 @@ False: 关闭
                      * 设置开启或关闭鉴权。
 True: 开启;
 False: 关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oAuthEnable 开启或关闭鉴权。
 True: 开启;
 False: 关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOAuthEnable(const bool& _oAuthEnable);
@@ -82,10 +78,8 @@ False: 关闭
                     /**
                      * 获取IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
 REJECT: 拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OAuthFailureStatus IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
 REJECT: 拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOAuthFailureStatus() const;
@@ -93,10 +87,8 @@ REJECT: 拒绝
                     /**
                      * 设置IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
 REJECT: 拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oAuthFailureStatus IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
 REJECT: 拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOAuthFailureStatus(const std::string& _oAuthFailureStatus);
@@ -114,7 +106,6 @@ REJECT: 拒绝
                      * 开启或关闭鉴权。
 True: 开启;
 False: 关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_oAuthEnable;
                     bool m_oAuthEnableHasBeenSet;
@@ -122,7 +113,6 @@ False: 关闭
                     /**
                      * IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
 REJECT: 拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oAuthFailureStatus;
                     bool m_oAuthFailureStatusHasBeenSet;

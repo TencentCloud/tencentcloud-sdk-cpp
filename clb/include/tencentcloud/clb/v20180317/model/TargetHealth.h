@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标组唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetGroupId 目标组唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
                      * 设置目标组唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetGroupId 目标组唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
@@ -196,6 +192,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TargetGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取Target的权重。
+                     * @return Weight Target的权重。
+                     * 
+                     */
+                    uint64_t GetWeight() const;
+
+                    /**
+                     * 设置Target的权重。
+                     * @param _weight Target的权重。
+                     * 
+                     */
+                    void SetWeight(const uint64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     * 
+                     */
+                    bool WeightHasBeenSet() const;
 
                 private:
 
@@ -237,10 +254,15 @@ namespace TencentCloud
 
                     /**
                      * 目标组唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;
+
+                    /**
+                     * Target的权重。
+                     */
+                    uint64_t m_weight;
+                    bool m_weightHasBeenSet;
 
                 };
             }

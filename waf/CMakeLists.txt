@@ -121,6 +121,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeAccessIndexResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleRequest.h
   include/tencentcloud/waf/v20180125/model/BatchOperateUserSignatureRulesRequest.h
+  include/tencentcloud/waf/v20180125/model/FieldWriteConfig.h
   include/tencentcloud/waf/v20180125/model/ModifyWafThreatenIntelligenceResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeUserDomainInfoResponse.h
   include/tencentcloud/waf/v20180125/model/TLSVersion.h
@@ -575,6 +576,7 @@ set(waf_src
   src/v20180125/model/DescribeAccessIndexResponse.cpp
   src/v20180125/model/ModifyUserSignatureRuleRequest.cpp
   src/v20180125/model/BatchOperateUserSignatureRulesRequest.cpp
+  src/v20180125/model/FieldWriteConfig.cpp
   src/v20180125/model/ModifyWafThreatenIntelligenceResponse.cpp
   src/v20180125/model/DescribeUserDomainInfoResponse.cpp
   src/v20180125/model/TLSVersion.cpp

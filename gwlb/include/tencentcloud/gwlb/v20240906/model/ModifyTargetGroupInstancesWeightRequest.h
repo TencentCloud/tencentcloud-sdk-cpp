@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组ID。可通过DescribeTargetGroupList接口获取。
-                     * @return TargetGroupId 目标组ID。可通过DescribeTargetGroupList接口获取。
+                     * 获取目标组ID。可通过[DescribeTargetGroupList](https://cloud.tencent.com/document/api/1782/111692)接口获取。
+                     * @return TargetGroupId 目标组ID。可通过[DescribeTargetGroupList](https://cloud.tencent.com/document/api/1782/111692)接口获取。
                      * 
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
-                     * 设置目标组ID。可通过DescribeTargetGroupList接口获取。
-                     * @param _targetGroupId 目标组ID。可通过DescribeTargetGroupList接口获取。
+                     * 设置目标组ID。可通过[DescribeTargetGroupList](https://cloud.tencent.com/document/api/1782/111692)接口获取。
+                     * @param _targetGroupId 目标组ID。可通过[DescribeTargetGroupList](https://cloud.tencent.com/document/api/1782/111692)接口获取。
                      * 
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标组ID。可通过DescribeTargetGroupList接口获取。
+                     * 目标组ID。可通过[DescribeTargetGroupList](https://cloud.tencent.com/document/api/1782/111692)接口获取。
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;

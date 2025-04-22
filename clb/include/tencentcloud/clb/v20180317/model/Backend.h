@@ -157,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIpAddresses 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPrivateIpAddresses() const;
 
                     /**
                      * 设置后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privateIpAddresses 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
@@ -207,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegisteredTime 后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegisteredTime() const;
 
                     /**
                      * 设置后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _registeredTime 后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegisteredTime(const std::string& _registeredTime);
@@ -257,18 +249,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -315,7 +303,6 @@ namespace TencentCloud
 
                     /**
                      * 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_privateIpAddresses;
                     bool m_privateIpAddressesHasBeenSet;
@@ -329,7 +316,6 @@ namespace TencentCloud
 
                     /**
                      * 后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registeredTime;
                     bool m_registeredTimeHasBeenSet;
@@ -343,7 +329,6 @@ namespace TencentCloud
 
                     /**
                      * 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

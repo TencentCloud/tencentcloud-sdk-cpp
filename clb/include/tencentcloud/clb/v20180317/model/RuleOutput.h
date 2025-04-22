@@ -74,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转发规则的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 转发规则的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置转发规则的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 转发规则的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转发规则的路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 转发规则的路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置转发规则的路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 转发规则的路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -145,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康检查信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthCheck 健康检查信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HealthCheck GetHealthCheck() const;
 
                     /**
                      * 设置健康检查信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthCheck 健康检查信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthCheck(const HealthCheck& _healthCheck);
@@ -241,18 +229,14 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * 获取转发规则的重定向目标信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RewriteTarget 转发规则的重定向目标信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RewriteTarget GetRewriteTarget() const;
 
                     /**
                      * 设置转发规则的重定向目标信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rewriteTarget 转发规则的重定向目标信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRewriteTarget(const RewriteTarget& _rewriteTarget);
@@ -438,18 +422,14 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * 获取WAF实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WafDomainId WAF实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWafDomainId() const;
 
                     /**
                      * 设置WAF实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wafDomainId WAF实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWafDomainId(const std::string& _wafDomainId);
@@ -463,18 +443,14 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * 获取TRPC被调服务器路由，ForwardType为TRPC时有效。目前暂未对外开放。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时有效。目前暂未对外开放。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrpcCallee() const;
 
                     /**
                      * 设置TRPC被调服务器路由，ForwardType为TRPC时有效。目前暂未对外开放。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trpcCallee TRPC被调服务器路由，ForwardType为TRPC时有效。目前暂未对外开放。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrpcCallee(const std::string& _trpcCallee);
@@ -488,18 +464,14 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * 获取TRPC调用服务接口，ForwardType为TRPC时有效。目前暂未对外开放。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时有效。目前暂未对外开放。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrpcFunc() const;
 
                     /**
                      * 设置TRPC调用服务接口，ForwardType为TRPC时有效。目前暂未对外开放。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trpcFunc TRPC调用服务接口，ForwardType为TRPC时有效。目前暂未对外开放。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrpcFunc(const std::string& _trpcFunc);
@@ -513,18 +485,14 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * 获取QUIC状态。QUIC_ACTIVE表示开启，QUIC_INACTIVE表示未开启。注意，只有HTTPS域名才能开启QUIC。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuicStatus QUIC状态。QUIC_ACTIVE表示开启，QUIC_INACTIVE表示未开启。注意，只有HTTPS域名才能开启QUIC。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuicStatus() const;
 
                     /**
                      * 设置QUIC状态。QUIC_ACTIVE表示开启，QUIC_INACTIVE表示未开启。注意，只有HTTPS域名才能开启QUIC。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quicStatus QUIC状态。QUIC_ACTIVE表示开启，QUIC_INACTIVE表示未开启。注意，只有HTTPS域名才能开启QUIC。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuicStatus(const std::string& _quicStatus);
@@ -538,18 +506,14 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * 获取转发规则的域名列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domains 转发规则的域名列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置转发规则的域名列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domains 转发规则的域名列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -588,18 +552,14 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * 获取OAuth配置状态信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OAuth OAuth配置状态信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OAuth GetOAuth() const;
 
                     /**
                      * 设置OAuth配置状态信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oAuth OAuth配置状态信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOAuth(const OAuth& _oAuth);
@@ -621,14 +581,12 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * 转发规则的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 转发规则的路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
@@ -641,7 +599,6 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * 健康检查信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HealthCheck m_healthCheck;
                     bool m_healthCheckHasBeenSet;
@@ -668,7 +625,6 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * 转发规则的重定向目标信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RewriteTarget m_rewriteTarget;
                     bool m_rewriteTargetHasBeenSet;
@@ -724,35 +680,30 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * WAF实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wafDomainId;
                     bool m_wafDomainIdHasBeenSet;
 
                     /**
                      * TRPC被调服务器路由，ForwardType为TRPC时有效。目前暂未对外开放。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trpcCallee;
                     bool m_trpcCalleeHasBeenSet;
 
                     /**
                      * TRPC调用服务接口，ForwardType为TRPC时有效。目前暂未对外开放。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trpcFunc;
                     bool m_trpcFuncHasBeenSet;
 
                     /**
                      * QUIC状态。QUIC_ACTIVE表示开启，QUIC_INACTIVE表示未开启。注意，只有HTTPS域名才能开启QUIC。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quicStatus;
                     bool m_quicStatusHasBeenSet;
 
                     /**
                      * 转发规则的域名列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
@@ -766,7 +717,6 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
 
                     /**
                      * OAuth配置状态信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OAuth m_oAuth;
                     bool m_oAuthHasBeenSet;

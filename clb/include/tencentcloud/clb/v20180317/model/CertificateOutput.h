@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端证书的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertCaId 客户端证书的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertCaId() const;
 
                     /**
                      * 设置客户端证书的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certCaId 客户端证书的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertCaId(const std::string& _certCaId);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多本服务器证书场景扩展的服务器证书ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtCertIds 多本服务器证书场景扩展的服务器证书ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetExtCertIds() const;
 
                     /**
                      * 设置多本服务器证书场景扩展的服务器证书ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extCertIds 多本服务器证书场景扩展的服务器证书ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtCertIds(const std::vector<std::string>& _extCertIds);
@@ -181,14 +173,12 @@ namespace TencentCloud
 
                     /**
                      * 客户端证书的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certCaId;
                     bool m_certCaIdHasBeenSet;
 
                     /**
                      * 多本服务器证书场景扩展的服务器证书ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_extCertIds;
                     bool m_extCertIdsHasBeenSet;

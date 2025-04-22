@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云函数相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Function 云函数相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FunctionInfo GetFunction() const;
 
                     /**
                      * 设置云函数相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _function 云函数相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFunction(const FunctionInfo& _function);
@@ -97,7 +93,6 @@ namespace TencentCloud
 
                     /**
                      * 云函数相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FunctionInfo m_function;
                     bool m_functionHasBeenSet;

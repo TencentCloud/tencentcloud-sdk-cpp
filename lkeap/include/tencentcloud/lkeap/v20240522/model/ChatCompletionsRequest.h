@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TemperatureHasBeenSet() const;
 
                     /**
-                     * 获取最大生成的token数量
-                     * @return MaxTokens 最大生成的token数量
+                     * 获取最大生成的token数量，默认为4096，最大可设置为16384
+                     * @return MaxTokens 最大生成的token数量，默认为4096，最大可设置为16384
                      * 
                      */
                     int64_t GetMaxTokens() const;
 
                     /**
-                     * 设置最大生成的token数量
-                     * @param _maxTokens 最大生成的token数量
+                     * 设置最大生成的token数量，默认为4096，最大可设置为16384
+                     * @param _maxTokens 最大生成的token数量，默认为4096，最大可设置为16384
                      * 
                      */
                     void SetMaxTokens(const int64_t& _maxTokens);
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_temperatureHasBeenSet;
 
                     /**
-                     * 最大生成的token数量
+                     * 最大生成的token数量，默认为4096，最大可设置为16384
                      */
                     int64_t m_maxTokens;
                     bool m_maxTokensHasBeenSet;

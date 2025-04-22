@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康检查的响应超时时间，可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeOut 健康检查的响应超时时间，可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeOut() const;
 
                     /**
                      * 设置健康检查的响应超时时间，可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeOut 健康检查的响应超时时间，可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeOut(const int64_t& _timeOut);
@@ -96,10 +92,8 @@ namespace TencentCloud
                     /**
                      * 获取健康检查探测间隔时间，默认值：5，IPv4 CLB实例的取值范围为：2-300，IPv6 CLB 实例的取值范围为：5-300。单位：秒。
 说明：部分老旧 IPv4 CLB实例的取值范围为：5-300。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntervalTime 健康检查探测间隔时间，默认值：5，IPv4 CLB实例的取值范围为：2-300，IPv6 CLB 实例的取值范围为：5-300。单位：秒。
 说明：部分老旧 IPv4 CLB实例的取值范围为：5-300。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIntervalTime() const;
@@ -107,10 +101,8 @@ namespace TencentCloud
                     /**
                      * 设置健康检查探测间隔时间，默认值：5，IPv4 CLB实例的取值范围为：2-300，IPv6 CLB 实例的取值范围为：5-300。单位：秒。
 说明：部分老旧 IPv4 CLB实例的取值范围为：5-300。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _intervalTime 健康检查探测间隔时间，默认值：5，IPv4 CLB实例的取值范围为：2-300，IPv6 CLB 实例的取值范围为：5-300。单位：秒。
 说明：部分老旧 IPv4 CLB实例的取值范围为：5-300。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntervalTime(const int64_t& _intervalTime);
@@ -124,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthNum 健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHealthNum() const;
 
                     /**
                      * 设置健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthNum 健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthNum(const int64_t& _healthNum);
@@ -149,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnHealthNum 不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUnHealthNum() const;
 
                     /**
                      * 设置不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unHealthNum 不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnHealthNum(const int64_t& _unHealthNum);
@@ -378,18 +362,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康检查使用的协议。取值 TCP | HTTP | HTTPS | GRPC | PING | CUSTOM，UDP监听器支持PING/CUSTOM，TCP监听器支持TCP/HTTP/CUSTOM，TCP_SSL/QUIC监听器支持TCP/HTTP，HTTP规则支持HTTP/GRPC，HTTPS规则支持HTTP/HTTPS/GRPC。HTTP监听器默认值为HTTP;TCP、TCP_SSL、QUIC监听器默认值为TCP;UDP监听器默认为PING;HTTPS监听器的CheckType默认值与后端转发协议一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckType 健康检查使用的协议。取值 TCP | HTTP | HTTPS | GRPC | PING | CUSTOM，UDP监听器支持PING/CUSTOM，TCP监听器支持TCP/HTTP/CUSTOM，TCP_SSL/QUIC监听器支持TCP/HTTP，HTTP规则支持HTTP/GRPC，HTTPS规则支持HTTP/HTTPS/GRPC。HTTP监听器默认值为HTTP;TCP、TCP_SSL、QUIC监听器默认值为TCP;UDP监听器默认为PING;HTTPS监听器的CheckType默认值与后端转发协议一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckType() const;
 
                     /**
                      * 设置健康检查使用的协议。取值 TCP | HTTP | HTTPS | GRPC | PING | CUSTOM，UDP监听器支持PING/CUSTOM，TCP监听器支持TCP/HTTP/CUSTOM，TCP_SSL/QUIC监听器支持TCP/HTTP，HTTP规则支持HTTP/GRPC，HTTPS规则支持HTTP/HTTPS/GRPC。HTTP监听器默认值为HTTP;TCP、TCP_SSL、QUIC监听器默认值为TCP;UDP监听器默认为PING;HTTPS监听器的CheckType默认值与后端转发协议一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkType 健康检查使用的协议。取值 TCP | HTTP | HTTPS | GRPC | PING | CUSTOM，UDP监听器支持PING/CUSTOM，TCP监听器支持TCP/HTTP/CUSTOM，TCP_SSL/QUIC监听器支持TCP/HTTP，HTTP规则支持HTTP/GRPC，HTTPS规则支持HTTP/HTTPS/GRPC。HTTP监听器默认值为HTTP;TCP、TCP_SSL、QUIC监听器默认值为TCP;UDP监听器默认为PING;HTTPS监听器的CheckType默认值与后端转发协议一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckType(const std::string& _checkType);
@@ -428,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceIpType 健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSourceIpType() const;
 
                     /**
                      * 设置健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceIpType 健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceIpType(const int64_t& _sourceIpType);
@@ -486,7 +462,6 @@ namespace TencentCloud
 
                     /**
                      * 健康检查的响应超时时间，可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeOut;
                     bool m_timeOutHasBeenSet;
@@ -494,21 +469,18 @@ namespace TencentCloud
                     /**
                      * 健康检查探测间隔时间，默认值：5，IPv4 CLB实例的取值范围为：2-300，IPv6 CLB 实例的取值范围为：5-300。单位：秒。
 说明：部分老旧 IPv4 CLB实例的取值范围为：5-300。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_intervalTime;
                     bool m_intervalTimeHasBeenSet;
 
                     /**
                      * 健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_healthNum;
                     bool m_healthNumHasBeenSet;
 
                     /**
                      * 不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_unHealthNum;
                     bool m_unHealthNumHasBeenSet;
@@ -572,7 +544,6 @@ namespace TencentCloud
 
                     /**
                      * 健康检查使用的协议。取值 TCP | HTTP | HTTPS | GRPC | PING | CUSTOM，UDP监听器支持PING/CUSTOM，TCP监听器支持TCP/HTTP/CUSTOM，TCP_SSL/QUIC监听器支持TCP/HTTP，HTTP规则支持HTTP/GRPC，HTTPS规则支持HTTP/HTTPS/GRPC。HTTP监听器默认值为HTTP;TCP、TCP_SSL、QUIC监听器默认值为TCP;UDP监听器默认为PING;HTTPS监听器的CheckType默认值与后端转发协议一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkType;
                     bool m_checkTypeHasBeenSet;
@@ -586,7 +557,6 @@ namespace TencentCloud
 
                     /**
                      * 健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sourceIpType;
                     bool m_sourceIpTypeHasBeenSet;

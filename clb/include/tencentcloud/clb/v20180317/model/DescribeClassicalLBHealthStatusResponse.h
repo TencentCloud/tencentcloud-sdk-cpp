@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取后端健康状态列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthList 后端健康状态列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClassicalHealth> GetHealthList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 后端健康状态列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClassicalHealth> m_healthList;
                     bool m_healthListHasBeenSet;

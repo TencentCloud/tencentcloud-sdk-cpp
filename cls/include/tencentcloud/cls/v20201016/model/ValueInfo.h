@@ -142,6 +142,27 @@ long及double类型字段需为空；
                      */
                     bool ContainZHHasBeenSet() const;
 
+                    /**
+                     * 获取字段别名
+                     * @return Alias 字段别名
+                     * 
+                     */
+                    std::string GetAlias() const;
+
+                    /**
+                     * 设置字段别名
+                     * @param _alias 字段别名
+                     * 
+                     */
+                    void SetAlias(const std::string& _alias);
+
+                    /**
+                     * 判断参数 Alias 是否已赋值
+                     * @return Alias 是否已赋值
+                     * 
+                     */
+                    bool AliasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +191,12 @@ long及double类型字段需为空；
                      */
                     bool m_containZH;
                     bool m_containZHHasBeenSet;
+
+                    /**
+                     * 字段别名
+                     */
+                    std::string m_alias;
+                    bool m_aliasHasBeenSet;
 
                 };
             }

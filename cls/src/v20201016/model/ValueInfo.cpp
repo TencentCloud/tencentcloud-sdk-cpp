@@ -24,7 +24,8 @@ ValueInfo::ValueInfo() :
     m_typeHasBeenSet(false),
     m_tokenizerHasBeenSet(false),
     m_sqlFlagHasBeenSet(false),
-    m_containZHHasBeenSet(false)
+    m_containZHHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ValueInfo::Deserialize(const rapidjson::Value &value)
         m_containZHHasBeenSet = true;
     }
 
+    if (value.HasMember("Alias") && !value["Alias"].IsNull())
+    {
+        if (!value["Alias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValueInfo.Alias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alias = string(value["Alias"].GetString());
+        m_aliasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ValueInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ContainZH";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_containZH, allocator);
+    }
+
+    if (m_aliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ValueInfo::SetContainZH(const bool& _containZH)
 bool ValueInfo::ContainZHHasBeenSet() const
 {
     return m_containZHHasBeenSet;
+}
+
+string ValueInfo::GetAlias() const
+{
+    return m_alias;
+}
+
+void ValueInfo::SetAlias(const string& _alias)
+{
+    m_alias = _alias;
+    m_aliasHasBeenSet = true;
+}
+
+bool ValueInfo::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
 }
 

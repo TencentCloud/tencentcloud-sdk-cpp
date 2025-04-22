@@ -234,18 +234,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetGroupType 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetGroupType() const;
 
                     /**
                      * 设置目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetGroupType 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetGroupType(const std::string& _targetGroupType);
@@ -259,18 +255,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标组已关联的规则数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociatedRuleCount 目标组已关联的规则数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAssociatedRuleCount() const;
 
                     /**
                      * 设置目标组已关联的规则数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _associatedRuleCount 目标组已关联的规则数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssociatedRuleCount(const int64_t& _associatedRuleCount);
@@ -284,18 +276,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标组内的实例数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegisteredInstancesCount 目标组内的实例数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegisteredInstancesCount() const;
 
                     /**
                      * 设置目标组内的实例数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _registeredInstancesCount 目标组内的实例数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegisteredInstancesCount(const int64_t& _registeredInstancesCount);
@@ -330,18 +318,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weight 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -430,21 +414,18 @@ namespace TencentCloud
 
                     /**
                      * 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetGroupType;
                     bool m_targetGroupTypeHasBeenSet;
 
                     /**
                      * 目标组已关联的规则数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_associatedRuleCount;
                     bool m_associatedRuleCountHasBeenSet;
 
                     /**
                      * 目标组内的实例数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_registeredInstancesCount;
                     bool m_registeredInstancesCountHasBeenSet;
@@ -457,7 +438,6 @@ namespace TencentCloud
 
                     /**
                      * 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

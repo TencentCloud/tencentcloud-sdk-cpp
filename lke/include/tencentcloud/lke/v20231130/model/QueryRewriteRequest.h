@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool QuestionHasBeenSet() const;
 
                     /**
-                     * 获取需要改写的多轮历史会话
-                     * @return Messages 需要改写的多轮历史会话
+                     * 获取需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。
+                     * @return Messages 需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。
                      * 
                      */
                     std::vector<Message> GetMessages() const;
 
                     /**
-                     * 设置需要改写的多轮历史会话
-                     * @param _messages 需要改写的多轮历史会话
+                     * 设置需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。
+                     * @param _messages 需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。
                      * 
                      */
                     void SetMessages(const std::vector<Message>& _messages);
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_questionHasBeenSet;
 
                     /**
-                     * 需要改写的多轮历史会话
+                     * 需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。
                      */
                     std::vector<Message> m_messages;
                     bool m_messagesHasBeenSet;

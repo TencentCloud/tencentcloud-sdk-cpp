@@ -30,7 +30,12 @@ PostCKafkaFlowInfo::PostCKafkaFlowInfo() :
     m_versionHasBeenSet(false),
     m_topicHasBeenSet(false),
     m_compressionHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_sASLEnableHasBeenSet(false),
+    m_sASLUserHasBeenSet(false),
+    m_sASLPasswordHasBeenSet(false),
+    m_contentHasBeenSet(false),
+    m_vipTypeHasBeenSet(false),
+    m_writeConfigHasBeenSet(false)
 {
 }
 
@@ -129,6 +134,36 @@ CoreInternalOutcome PostCKafkaFlowInfo::Deserialize(const rapidjson::Value &valu
         m_compressionHasBeenSet = true;
     }
 
+    if (value.HasMember("SASLEnable") && !value["SASLEnable"].IsNull())
+    {
+        if (!value["SASLEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostCKafkaFlowInfo.SASLEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sASLEnable = value["SASLEnable"].GetInt64();
+        m_sASLEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("SASLUser") && !value["SASLUser"].IsNull())
+    {
+        if (!value["SASLUser"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostCKafkaFlowInfo.SASLUser` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sASLUser = string(value["SASLUser"].GetString());
+        m_sASLUserHasBeenSet = true;
+    }
+
+    if (value.HasMember("SASLPassword") && !value["SASLPassword"].IsNull())
+    {
+        if (!value["SASLPassword"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostCKafkaFlowInfo.SASLPassword` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sASLPassword = string(value["SASLPassword"].GetString());
+        m_sASLPasswordHasBeenSet = true;
+    }
+
     if (value.HasMember("Content") && !value["Content"].IsNull())
     {
         if (!value["Content"].IsString())
@@ -137,6 +172,33 @@ CoreInternalOutcome PostCKafkaFlowInfo::Deserialize(const rapidjson::Value &valu
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
+    }
+
+    if (value.HasMember("VipType") && !value["VipType"].IsNull())
+    {
+        if (!value["VipType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostCKafkaFlowInfo.VipType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vipType = value["VipType"].GetInt64();
+        m_vipTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("WriteConfig") && !value["WriteConfig"].IsNull())
+    {
+        if (!value["WriteConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostCKafkaFlowInfo.WriteConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_writeConfig.Deserialize(value["WriteConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_writeConfigHasBeenSet = true;
     }
 
 
@@ -218,12 +280,53 @@ void PostCKafkaFlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_compression.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_sASLEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SASLEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sASLEnable, allocator);
+    }
+
+    if (m_sASLUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SASLUser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sASLUser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sASLPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SASLPassword";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sASLPassword.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_contentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vipTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VipType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vipType, allocator);
+    }
+
+    if (m_writeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WriteConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_writeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -373,6 +476,54 @@ bool PostCKafkaFlowInfo::CompressionHasBeenSet() const
     return m_compressionHasBeenSet;
 }
 
+int64_t PostCKafkaFlowInfo::GetSASLEnable() const
+{
+    return m_sASLEnable;
+}
+
+void PostCKafkaFlowInfo::SetSASLEnable(const int64_t& _sASLEnable)
+{
+    m_sASLEnable = _sASLEnable;
+    m_sASLEnableHasBeenSet = true;
+}
+
+bool PostCKafkaFlowInfo::SASLEnableHasBeenSet() const
+{
+    return m_sASLEnableHasBeenSet;
+}
+
+string PostCKafkaFlowInfo::GetSASLUser() const
+{
+    return m_sASLUser;
+}
+
+void PostCKafkaFlowInfo::SetSASLUser(const string& _sASLUser)
+{
+    m_sASLUser = _sASLUser;
+    m_sASLUserHasBeenSet = true;
+}
+
+bool PostCKafkaFlowInfo::SASLUserHasBeenSet() const
+{
+    return m_sASLUserHasBeenSet;
+}
+
+string PostCKafkaFlowInfo::GetSASLPassword() const
+{
+    return m_sASLPassword;
+}
+
+void PostCKafkaFlowInfo::SetSASLPassword(const string& _sASLPassword)
+{
+    m_sASLPassword = _sASLPassword;
+    m_sASLPasswordHasBeenSet = true;
+}
+
+bool PostCKafkaFlowInfo::SASLPasswordHasBeenSet() const
+{
+    return m_sASLPasswordHasBeenSet;
+}
+
 string PostCKafkaFlowInfo::GetContent() const
 {
     return m_content;
@@ -387,5 +538,37 @@ void PostCKafkaFlowInfo::SetContent(const string& _content)
 bool PostCKafkaFlowInfo::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+int64_t PostCKafkaFlowInfo::GetVipType() const
+{
+    return m_vipType;
+}
+
+void PostCKafkaFlowInfo::SetVipType(const int64_t& _vipType)
+{
+    m_vipType = _vipType;
+    m_vipTypeHasBeenSet = true;
+}
+
+bool PostCKafkaFlowInfo::VipTypeHasBeenSet() const
+{
+    return m_vipTypeHasBeenSet;
+}
+
+FieldWriteConfig PostCKafkaFlowInfo::GetWriteConfig() const
+{
+    return m_writeConfig;
+}
+
+void PostCKafkaFlowInfo::SetWriteConfig(const FieldWriteConfig& _writeConfig)
+{
+    m_writeConfig = _writeConfig;
+    m_writeConfigHasBeenSet = true;
+}
+
+bool PostCKafkaFlowInfo::WriteConfigHasBeenSet() const
+{
+    return m_writeConfigHasBeenSet;
 }
 

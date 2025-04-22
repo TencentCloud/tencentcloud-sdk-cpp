@@ -79,11 +79,9 @@ namespace TencentCloud
                      * 获取支持的压缩算法列表，取值有：
 <li>brotli：brotli算法；</li>
 <li>gzip：gzip算法。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Algorithms 支持的压缩算法列表，取值有：
 <li>brotli：brotli算法；</li>
 <li>gzip：gzip算法。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAlgorithms() const;
@@ -92,11 +90,9 @@ namespace TencentCloud
                      * 设置支持的压缩算法列表，取值有：
 <li>brotli：brotli算法；</li>
 <li>gzip：gzip算法。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _algorithms 支持的压缩算法列表，取值有：
 <li>brotli：brotli算法；</li>
 <li>gzip：gzip算法。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlgorithms(const std::vector<std::string>& _algorithms);
@@ -122,7 +118,6 @@ namespace TencentCloud
                      * 支持的压缩算法列表，取值有：
 <li>brotli：brotli算法；</li>
 <li>gzip：gzip算法。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_algorithms;
                     bool m_algorithmsHasBeenSet;

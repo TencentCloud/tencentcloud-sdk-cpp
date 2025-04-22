@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取与证书关联的负载均衡实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancers 与证书关联的负载均衡实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LoadBalancer> GetLoadBalancers() const;
 
                     /**
                      * 设置与证书关联的负载均衡实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancers 与证书关联的负载均衡实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalancers(const std::vector<LoadBalancer>& _loadBalancers);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 与证书关联的负载均衡实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LoadBalancer> m_loadBalancers;
                     bool m_loadBalancersHasBeenSet;

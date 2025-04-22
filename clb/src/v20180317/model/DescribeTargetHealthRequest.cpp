@@ -23,7 +23,9 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 DescribeTargetHealthRequest::DescribeTargetHealthRequest() :
-    m_loadBalancerIdsHasBeenSet(false)
+    m_loadBalancerIdsHasBeenSet(false),
+    m_listenerIdsHasBeenSet(false),
+    m_locationIdsHasBeenSet(false)
 {
 }
 
@@ -42,6 +44,32 @@ string DescribeTargetHealthRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_loadBalancerIds.begin(); itr != m_loadBalancerIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_listenerIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ListenerIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_listenerIds.begin(); itr != m_listenerIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_locationIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocationIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_locationIds.begin(); itr != m_locationIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -69,6 +97,38 @@ void DescribeTargetHealthRequest::SetLoadBalancerIds(const vector<string>& _load
 bool DescribeTargetHealthRequest::LoadBalancerIdsHasBeenSet() const
 {
     return m_loadBalancerIdsHasBeenSet;
+}
+
+vector<string> DescribeTargetHealthRequest::GetListenerIds() const
+{
+    return m_listenerIds;
+}
+
+void DescribeTargetHealthRequest::SetListenerIds(const vector<string>& _listenerIds)
+{
+    m_listenerIds = _listenerIds;
+    m_listenerIdsHasBeenSet = true;
+}
+
+bool DescribeTargetHealthRequest::ListenerIdsHasBeenSet() const
+{
+    return m_listenerIdsHasBeenSet;
+}
+
+vector<string> DescribeTargetHealthRequest::GetLocationIds() const
+{
+    return m_locationIds;
+}
+
+void DescribeTargetHealthRequest::SetLocationIds(const vector<string>& _locationIds)
+{
+    m_locationIds = _locationIds;
+    m_locationIdsHasBeenSet = true;
+}
+
+bool DescribeTargetHealthRequest::LocationIdsHasBeenSet() const
+{
+    return m_locationIdsHasBeenSet;
 }
 
 

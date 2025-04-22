@@ -52,11 +52,9 @@ namespace TencentCloud
                      * 获取http2 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Http2 http2 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHttp2() const;
@@ -65,11 +63,9 @@ namespace TencentCloud
                      * 设置http2 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _http2 http2 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHttp2(const std::string& _http2);
@@ -85,11 +81,9 @@ namespace TencentCloud
                      * 获取OCSP 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcspStapling OCSP 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcspStapling() const;
@@ -98,11 +92,9 @@ namespace TencentCloud
                      * 设置OCSP 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ocspStapling OCSP 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOcspStapling(const std::string& _ocspStapling);
@@ -120,13 +112,11 @@ namespace TencentCloud
 <li>TLSV1.1：TLSv1.1版本；</li>
 <li>TLSV1.2：TLSv1.2版本；</li>
 <li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TlsVersion Tls 版本设置，取值有：
 <li>TLSv1：TLSv1版本；</li>
 <li>TLSV1.1：TLSv1.1版本；</li>
 <li>TLSV1.2：TLSv1.2版本；</li>
 <li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTlsVersion() const;
@@ -137,13 +127,11 @@ namespace TencentCloud
 <li>TLSV1.1：TLSv1.1版本；</li>
 <li>TLSV1.2：TLSv1.2版本；</li>
 <li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tlsVersion Tls 版本设置，取值有：
 <li>TLSv1：TLSv1版本；</li>
 <li>TLSV1.1：TLSv1.1版本；</li>
 <li>TLSV1.2：TLSv1.2版本；</li>
 <li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTlsVersion(const std::vector<std::string>& _tlsVersion);
@@ -209,11 +197,9 @@ namespace TencentCloud
                      * 获取申请类型，取值有：
 <li>apply：托管EdgeOne；</li>
 <li>none：不托管EdgeOne。</li>不填，默认取值为none。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyType 申请类型，取值有：
 <li>apply：托管EdgeOne；</li>
 <li>none：不托管EdgeOne。</li>不填，默认取值为none。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplyType() const;
@@ -222,11 +208,9 @@ namespace TencentCloud
                      * 设置申请类型，取值有：
 <li>apply：托管EdgeOne；</li>
 <li>none：不托管EdgeOne。</li>不填，默认取值为none。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applyType 申请类型，取值有：
 <li>apply：托管EdgeOne；</li>
 <li>none：不托管EdgeOne。</li>不填，默认取值为none。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplyType(const std::string& _applyType);
@@ -243,12 +227,10 @@ namespace TencentCloud
 <li>loose-v2023：提供高兼容性，安全性一般，支持 TLS 1.0-1.3 密码套件；</li>
 <li>general-v2023：提供较高兼容性，安全性中等，支持 TLS 1.2-1.3 密码套件；</li>
 <li>strict-v2023：提供高安全性能，禁用所有含不安全隐患的加密套件，支持 TLS 1.2-1.3 密码套件。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CipherSuite 密码套件，取值有：
 <li>loose-v2023：提供高兼容性，安全性一般，支持 TLS 1.0-1.3 密码套件；</li>
 <li>general-v2023：提供较高兼容性，安全性中等，支持 TLS 1.2-1.3 密码套件；</li>
 <li>strict-v2023：提供高安全性能，禁用所有含不安全隐患的加密套件，支持 TLS 1.2-1.3 密码套件。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCipherSuite() const;
@@ -258,12 +240,10 @@ namespace TencentCloud
 <li>loose-v2023：提供高兼容性，安全性一般，支持 TLS 1.0-1.3 密码套件；</li>
 <li>general-v2023：提供较高兼容性，安全性中等，支持 TLS 1.2-1.3 密码套件；</li>
 <li>strict-v2023：提供高安全性能，禁用所有含不安全隐患的加密套件，支持 TLS 1.2-1.3 密码套件。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cipherSuite 密码套件，取值有：
 <li>loose-v2023：提供高兼容性，安全性一般，支持 TLS 1.0-1.3 密码套件；</li>
 <li>general-v2023：提供较高兼容性，安全性中等，支持 TLS 1.2-1.3 密码套件；</li>
 <li>strict-v2023：提供高安全性能，禁用所有含不安全隐患的加密套件，支持 TLS 1.2-1.3 密码套件。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCipherSuite(const std::string& _cipherSuite);
@@ -281,7 +261,6 @@ namespace TencentCloud
                      * http2 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_http2;
                     bool m_http2HasBeenSet;
@@ -290,7 +269,6 @@ namespace TencentCloud
                      * OCSP 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocspStapling;
                     bool m_ocspStaplingHasBeenSet;
@@ -301,7 +279,6 @@ namespace TencentCloud
 <li>TLSV1.1：TLSv1.1版本；</li>
 <li>TLSV1.2：TLSv1.2版本；</li>
 <li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tlsVersion;
                     bool m_tlsVersionHasBeenSet;
@@ -324,7 +301,6 @@ namespace TencentCloud
                      * 申请类型，取值有：
 <li>apply：托管EdgeOne；</li>
 <li>none：不托管EdgeOne。</li>不填，默认取值为none。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applyType;
                     bool m_applyTypeHasBeenSet;
@@ -334,7 +310,6 @@ namespace TencentCloud
 <li>loose-v2023：提供高兼容性，安全性一般，支持 TLS 1.0-1.3 密码套件；</li>
 <li>general-v2023：提供较高兼容性，安全性中等，支持 TLS 1.2-1.3 密码套件；</li>
 <li>strict-v2023：提供高安全性能，禁用所有含不安全隐患的加密套件，支持 TLS 1.2-1.3 密码套件。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cipherSuite;
                     bool m_cipherSuiteHasBeenSet;

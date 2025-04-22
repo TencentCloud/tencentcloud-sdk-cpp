@@ -25,6 +25,7 @@ TelCdrInfo::TelCdrInfo() :
     m_calleeHasBeenSet(false),
     m_timeHasBeenSet(false),
     m_directionHasBeenSet(false),
+    m_callTypeHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_recordURLHasBeenSet(false),
     m_recordIdHasBeenSet(false),
@@ -104,6 +105,16 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         }
         m_direction = value["Direction"].GetInt64();
         m_directionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CallType") && !value["CallType"].IsNull())
+    {
+        if (!value["CallType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.CallType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_callType = value["CallType"].GetInt64();
+        m_callTypeHasBeenSet = true;
     }
 
     if (value.HasMember("Duration") && !value["Duration"].IsNull())
@@ -521,6 +532,14 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_direction, allocator);
     }
 
+    if (m_callTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_callType, allocator);
+    }
+
     if (m_durationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -887,6 +906,22 @@ void TelCdrInfo::SetDirection(const int64_t& _direction)
 bool TelCdrInfo::DirectionHasBeenSet() const
 {
     return m_directionHasBeenSet;
+}
+
+int64_t TelCdrInfo::GetCallType() const
+{
+    return m_callType;
+}
+
+void TelCdrInfo::SetCallType(const int64_t& _callType)
+{
+    m_callType = _callType;
+    m_callTypeHasBeenSet = true;
+}
+
+bool TelCdrInfo::CallTypeHasBeenSet() const
+{
+    return m_callTypeHasBeenSet;
 }
 
 int64_t TelCdrInfo::GetDuration() const

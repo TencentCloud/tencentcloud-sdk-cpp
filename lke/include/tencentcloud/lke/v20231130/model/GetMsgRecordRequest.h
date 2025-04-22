@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool SceneHasBeenSet() const;
 
+                    /**
+                     * 获取传该值，代表拉取该记录id的前后总共count条消息记录
+                     * @return MidRecordId 传该值，代表拉取该记录id的前后总共count条消息记录
+                     * 
+                     */
+                    std::string GetMidRecordId() const;
+
+                    /**
+                     * 设置传该值，代表拉取该记录id的前后总共count条消息记录
+                     * @param _midRecordId 传该值，代表拉取该记录id的前后总共count条消息记录
+                     * 
+                     */
+                    void SetMidRecordId(const std::string& _midRecordId);
+
+                    /**
+                     * 判断参数 MidRecordId 是否已赋值
+                     * @return MidRecordId 是否已赋值
+                     * 
+                     */
+                    bool MidRecordIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     uint64_t m_scene;
                     bool m_sceneHasBeenSet;
+
+                    /**
+                     * 传该值，代表拉取该记录id的前后总共count条消息记录
+                     */
+                    std::string m_midRecordId;
+                    bool m_midRecordIdHasBeenSet;
 
                 };
             }

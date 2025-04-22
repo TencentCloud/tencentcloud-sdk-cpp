@@ -145,18 +145,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发布记录 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordId 发布记录 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordId() const;
 
                     /**
                      * 设置发布记录 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordId 发布记录 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordId(const std::string& _recordId);
@@ -220,7 +216,6 @@ namespace TencentCloud
 
                     /**
                      * 发布记录 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;

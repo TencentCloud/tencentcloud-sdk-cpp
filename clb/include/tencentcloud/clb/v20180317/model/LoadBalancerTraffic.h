@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CLB域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain CLB域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置CLB域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain CLB域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -210,7 +206,6 @@ namespace TencentCloud
 
                     /**
                      * CLB域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

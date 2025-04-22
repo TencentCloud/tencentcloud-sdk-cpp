@@ -28,6 +28,7 @@
 #include <tencentcloud/lke/v20231130/model/KnowledgeSummary.h>
 #include <tencentcloud/lke/v20231130/model/TaskFlowSummary.h>
 #include <tencentcloud/lke/v20231130/model/WorkFlowSummary.h>
+#include <tencentcloud/lke/v20231130/model/AgentDebugInfo.h>
 
 
 namespace TencentCloud
@@ -200,6 +201,31 @@ namespace TencentCloud
                      */
                     bool WorkFlowHasBeenSet() const;
 
+                    /**
+                     * 获取Agent调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Agent Agent调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AgentDebugInfo GetAgent() const;
+
+                    /**
+                     * 设置Agent调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agent Agent调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgent(const AgentDebugInfo& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     * 
+                     */
+                    bool AgentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -243,6 +269,13 @@ namespace TencentCloud
                      */
                     WorkFlowSummary m_workFlow;
                     bool m_workFlowHasBeenSet;
+
+                    /**
+                     * Agent调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AgentDebugInfo m_agent;
+                    bool m_agentHasBeenSet;
 
                 };
             }

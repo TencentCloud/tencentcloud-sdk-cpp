@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡实例列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancers 负载均衡实例列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LoadBalancerHealth> GetLoadBalancers() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 负载均衡实例列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LoadBalancerHealth> m_loadBalancers;
                     bool m_loadBalancersHasBeenSet;

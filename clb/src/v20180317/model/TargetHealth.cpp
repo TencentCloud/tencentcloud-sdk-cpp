@@ -27,7 +27,8 @@ TargetHealth::TargetHealth() :
     m_targetIdHasBeenSet(false),
     m_healthStatusDetailHasBeenSet(false),
     m_healthStatusDetialHasBeenSet(false),
-    m_targetGroupIdHasBeenSet(false)
+    m_targetGroupIdHasBeenSet(false),
+    m_weightHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome TargetHealth::Deserialize(const rapidjson::Value &value)
         m_targetGroupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetHealth.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetUint64();
+        m_weightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void TargetHealth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TargetGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_targetGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void TargetHealth::SetTargetGroupId(const string& _targetGroupId)
 bool TargetHealth::TargetGroupIdHasBeenSet() const
 {
     return m_targetGroupIdHasBeenSet;
+}
+
+uint64_t TargetHealth::GetWeight() const
+{
+    return m_weight;
+}
+
+void TargetHealth::SetWeight(const uint64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool TargetHealth::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
 }
 

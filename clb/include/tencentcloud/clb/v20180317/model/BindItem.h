@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置绑定的监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerId 配置绑定的监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置配置绑定的监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listenerId 配置绑定的监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 配置绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置配置绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 配置绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置绑定的规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocationId 配置绑定的规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置配置绑定的规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _locationId 配置绑定的规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocationId(const std::string& _locationId);
@@ -152,21 +140,18 @@ namespace TencentCloud
 
                     /**
                      * 配置绑定的监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
                      * 配置绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 配置绑定的规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;

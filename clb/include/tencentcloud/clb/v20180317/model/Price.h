@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述了实例价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancePrice 描述了实例价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ItemPrice GetInstancePrice() const;
 
                     /**
                      * 设置描述了实例价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instancePrice 描述了实例价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstancePrice(const ItemPrice& _instancePrice);
@@ -126,7 +122,6 @@ namespace TencentCloud
 
                     /**
                      * 描述了实例价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ItemPrice m_instancePrice;
                     bool m_instancePriceHasBeenSet;

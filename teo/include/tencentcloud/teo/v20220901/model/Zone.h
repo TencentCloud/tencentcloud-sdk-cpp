@@ -490,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取站点别名。数字、英文、-和_组合，限制20个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAliasZoneName() const;
 
                     /**
                      * 设置站点别名。数字、英文、-和_组合，限制20个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAliasZoneName(const std::string& _aliasZoneName);
@@ -714,7 +710,6 @@ namespace TencentCloud
 
                     /**
                      * 站点别名。数字、英文、-和_组合，限制20个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aliasZoneName;
                     bool m_aliasZoneNameHasBeenSet;

@@ -44,7 +44,8 @@ MsgRecord::MsgRecord() :
     m_taskFlowHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
     m_quoteInfosHasBeenSet(false),
-    m_agentThoughtHasBeenSet(false)
+    m_agentThoughtHasBeenSet(false),
+    m_extraInfoHasBeenSet(false)
 {
 }
 
@@ -353,6 +354,23 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_agentThoughtHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtraInfo") && !value["ExtraInfo"].IsNull())
+    {
+        if (!value["ExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.ExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extraInfo.Deserialize(value["ExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -589,6 +607,15 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agentThought.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_extraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -976,5 +1003,21 @@ void MsgRecord::SetAgentThought(const AgentThought& _agentThought)
 bool MsgRecord::AgentThoughtHasBeenSet() const
 {
     return m_agentThoughtHasBeenSet;
+}
+
+ExtraInfo MsgRecord::GetExtraInfo() const
+{
+    return m_extraInfo;
+}
+
+void MsgRecord::SetExtraInfo(const ExtraInfo& _extraInfo)
+{
+    m_extraInfo = _extraInfo;
+    m_extraInfoHasBeenSet = true;
+}
+
+bool MsgRecord::ExtraInfoHasBeenSet() const
+{
+    return m_extraInfoHasBeenSet;
 }
 

@@ -27,6 +27,8 @@
 #include <tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupRequest.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupResponse.h>
+#include <tencentcloud/ioa/v20220601/model/CreatePrivilegeCodeRequest.h>
+#include <tencentcloud/ioa/v20220601/model/CreatePrivilegeCodeResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultRequest.h>
@@ -37,6 +39,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeLocalAccountsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeRootAccountGroupRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeRootAccountGroupResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceResponse.h>
 
 
 namespace TencentCloud
@@ -57,6 +61,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDeviceVirtualGroupResponse> CreateDeviceVirtualGroupOutcome;
                 typedef std::future<CreateDeviceVirtualGroupOutcome> CreateDeviceVirtualGroupOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::CreateDeviceVirtualGroupRequest&, CreateDeviceVirtualGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceVirtualGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePrivilegeCodeResponse> CreatePrivilegeCodeOutcome;
+                typedef std::future<CreatePrivilegeCodeOutcome> CreatePrivilegeCodeOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::CreatePrivilegeCodeRequest&, CreatePrivilegeCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivilegeCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountGroupsResponse> DescribeAccountGroupsOutcome;
                 typedef std::future<DescribeAccountGroupsOutcome> DescribeAccountGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeAccountGroupsRequest&, DescribeAccountGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountGroupsAsyncHandler;
@@ -72,6 +79,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRootAccountGroupResponse> DescribeRootAccountGroupOutcome;
                 typedef std::future<DescribeRootAccountGroupOutcome> DescribeRootAccountGroupOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeRootAccountGroupRequest&, DescribeRootAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRootAccountGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSoftCensusListByDeviceResponse> DescribeSoftCensusListByDeviceOutcome;
+                typedef std::future<DescribeSoftCensusListByDeviceOutcome> DescribeSoftCensusListByDeviceOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeSoftCensusListByDeviceRequest&, DescribeSoftCensusListByDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSoftCensusListByDeviceAsyncHandler;
 
 
 
@@ -92,6 +102,15 @@ namespace TencentCloud
                 CreateDeviceVirtualGroupOutcome CreateDeviceVirtualGroup(const Model::CreateDeviceVirtualGroupRequest &request);
                 void CreateDeviceVirtualGroupAsync(const Model::CreateDeviceVirtualGroupRequest& request, const CreateDeviceVirtualGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDeviceVirtualGroupOutcomeCallable CreateDeviceVirtualGroupCallable(const Model::CreateDeviceVirtualGroupRequest& request);
+
+                /**
+                 *生成特权码，私有化调用path为：capi/Assets/Device/CreatePrivilegeCode，生成的特权码、卸载码，仅对该设备当天有效
+                 * @param req CreatePrivilegeCodeRequest
+                 * @return CreatePrivilegeCodeOutcome
+                 */
+                CreatePrivilegeCodeOutcome CreatePrivilegeCode(const Model::CreatePrivilegeCodeRequest &request);
+                void CreatePrivilegeCodeAsync(const Model::CreatePrivilegeCodeRequest& request, const CreatePrivilegeCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrivilegeCodeOutcomeCallable CreatePrivilegeCodeCallable(const Model::CreatePrivilegeCodeRequest& request);
 
                 /**
                  *以分页的方式查询账号分组列表，私有化调用path为：/capi/Assets/DescribeAccountGroups
@@ -137,6 +156,15 @@ namespace TencentCloud
                 DescribeRootAccountGroupOutcome DescribeRootAccountGroup(const Model::DescribeRootAccountGroupRequest &request);
                 void DescribeRootAccountGroupAsync(const Model::DescribeRootAccountGroupRequest& request, const DescribeRootAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRootAccountGroupOutcomeCallable DescribeRootAccountGroupCallable(const Model::DescribeRootAccountGroupRequest& request);
+
+                /**
+                 *查看终端树下的软件列表,私有化调用path为：capi/Software/DescribeSoftCensusListByDevice
+                 * @param req DescribeSoftCensusListByDeviceRequest
+                 * @return DescribeSoftCensusListByDeviceOutcome
+                 */
+                DescribeSoftCensusListByDeviceOutcome DescribeSoftCensusListByDevice(const Model::DescribeSoftCensusListByDeviceRequest &request);
+                void DescribeSoftCensusListByDeviceAsync(const Model::DescribeSoftCensusListByDeviceRequest& request, const DescribeSoftCensusListByDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSoftCensusListByDeviceOutcomeCallable DescribeSoftCensusListByDeviceCallable(const Model::DescribeSoftCensusListByDeviceRequest& request);
 
             };
         }

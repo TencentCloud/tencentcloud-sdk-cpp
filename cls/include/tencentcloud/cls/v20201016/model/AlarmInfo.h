@@ -28,6 +28,7 @@
 #include <tencentcloud/cls/v20201016/model/MonitorTime.h>
 #include <tencentcloud/cls/v20201016/model/CallBackInfo.h>
 #include <tencentcloud/cls/v20201016/model/AnalysisDimensional.h>
+#include <tencentcloud/cls/v20201016/model/Tag.h>
 #include <tencentcloud/cls/v20201016/model/AlarmClassification.h>
 #include <tencentcloud/cls/v20201016/model/MultiCondition.h>
 
@@ -393,6 +394,27 @@ namespace TencentCloud
                     bool GroupTriggerConditionHasBeenSet() const;
 
                     /**
+                     * 获取告警策略绑定的标签信息。
+                     * @return Tags 告警策略绑定的标签信息。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置告警策略绑定的标签信息。
+                     * @param _tags 告警策略绑定的标签信息。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
                      * 获取监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
                      * @return MonitorObjectType 监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
                      * 
@@ -578,6 +600,12 @@ Condition互斥。
                      */
                     std::vector<std::string> m_groupTriggerCondition;
                     bool m_groupTriggerConditionHasBeenSet;
+
+                    /**
+                     * 告警策略绑定的标签信息。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                     /**
                      * 监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 

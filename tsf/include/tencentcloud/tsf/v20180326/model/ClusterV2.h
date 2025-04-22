@@ -964,6 +964,27 @@ namespace TencentCloud
                      */
                     bool EnableLogCollectionHasBeenSet() const;
 
+                    /**
+                     * 获取集群状态的原因
+                     * @return Reason 集群状态的原因
+                     * 
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 设置集群状态的原因
+                     * @param _reason 集群状态的原因
+                     * 
+                     */
+                    void SetReason(const std::string& _reason);
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     * 
+                     */
+                    bool ReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1222,6 +1243,12 @@ namespace TencentCloud
                      */
                     bool m_enableLogCollection;
                     bool m_enableLogCollectionHasBeenSet;
+
+                    /**
+                     * 集群状态的原因
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

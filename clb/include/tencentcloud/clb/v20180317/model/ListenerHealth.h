@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerName 监听器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetListenerName() const;
 
                     /**
                      * 设置监听器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listenerName 监听器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListenerName(const std::string& _listenerName);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器的转发规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rules 监听器的转发规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RuleHealth> GetRules() const;
 
                     /**
                      * 设置监听器的转发规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rules 监听器的转发规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRules(const std::vector<RuleHealth>& _rules);
@@ -170,7 +162,6 @@ namespace TencentCloud
 
                     /**
                      * 监听器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
@@ -189,7 +180,6 @@ namespace TencentCloud
 
                     /**
                      * 监听器的转发规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RuleHealth> m_rules;
                     bool m_rulesHasBeenSet;

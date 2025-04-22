@@ -77,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MaxAge 数值。单位为秒，最大值为1天。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxAge MaxAge 数值。单位为秒，最大值为1天。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxAge() const;
 
                     /**
                      * 设置MaxAge 数值。单位为秒，最大值为1天。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxAge MaxAge 数值。单位为秒，最大值为1天。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxAge(const int64_t& _maxAge);
@@ -104,11 +100,9 @@ namespace TencentCloud
                      * 获取是否包含子域名，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncludeSubDomains 是否包含子域名，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncludeSubDomains() const;
@@ -117,11 +111,9 @@ namespace TencentCloud
                      * 设置是否包含子域名，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _includeSubDomains 是否包含子域名，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncludeSubDomains(const std::string& _includeSubDomains);
@@ -137,11 +129,9 @@ namespace TencentCloud
                      * 获取是否开启预加载，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Preload 是否开启预加载，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPreload() const;
@@ -150,11 +140,9 @@ namespace TencentCloud
                      * 设置是否开启预加载，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _preload 是否开启预加载，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreload(const std::string& _preload);
@@ -178,7 +166,6 @@ namespace TencentCloud
 
                     /**
                      * MaxAge 数值。单位为秒，最大值为1天。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxAge;
                     bool m_maxAgeHasBeenSet;
@@ -187,7 +174,6 @@ namespace TencentCloud
                      * 是否包含子域名，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_includeSubDomains;
                     bool m_includeSubDomainsHasBeenSet;
@@ -196,7 +182,6 @@ namespace TencentCloud
                      * 是否开启预加载，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_preload;
                     bool m_preloadHasBeenSet;

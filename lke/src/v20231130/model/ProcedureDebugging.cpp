@@ -26,7 +26,8 @@ ProcedureDebugging::ProcedureDebugging() :
     m_historiesHasBeenSet(false),
     m_knowledgeHasBeenSet(false),
     m_taskFlowHasBeenSet(false),
-    m_workFlowHasBeenSet(false)
+    m_workFlowHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,23 @@ CoreInternalOutcome ProcedureDebugging::Deserialize(const rapidjson::Value &valu
         m_workFlowHasBeenSet = true;
     }
 
+    if (value.HasMember("Agent") && !value["Agent"].IsNull())
+    {
+        if (!value["Agent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcedureDebugging.Agent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agent.Deserialize(value["Agent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -198,6 +216,15 @@ void ProcedureDebugging::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_workFlow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -297,5 +324,21 @@ void ProcedureDebugging::SetWorkFlow(const WorkFlowSummary& _workFlow)
 bool ProcedureDebugging::WorkFlowHasBeenSet() const
 {
     return m_workFlowHasBeenSet;
+}
+
+AgentDebugInfo ProcedureDebugging::GetAgent() const
+{
+    return m_agent;
+}
+
+void ProcedureDebugging::SetAgent(const AgentDebugInfo& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool ProcedureDebugging::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 

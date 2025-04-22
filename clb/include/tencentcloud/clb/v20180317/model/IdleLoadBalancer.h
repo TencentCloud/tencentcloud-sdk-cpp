@@ -199,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 负载均衡域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置负载均衡域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 负载均衡域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -269,7 +265,6 @@ namespace TencentCloud
 
                     /**
                      * 负载均衡域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

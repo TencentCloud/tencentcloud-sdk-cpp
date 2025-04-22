@@ -57,7 +57,8 @@ ClusterV2::ClusterV2() :
     m_kuberneteApiServerHasBeenSet(false),
     m_kuberneteNativeTypeHasBeenSet(false),
     m_kuberneteNativeSecretHasBeenSet(false),
-    m_enableLogCollectionHasBeenSet(false)
+    m_enableLogCollectionHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -443,6 +444,16 @@ CoreInternalOutcome ClusterV2::Deserialize(const rapidjson::Value &value)
         m_enableLogCollectionHasBeenSet = true;
     }
 
+    if (value.HasMember("Reason") && !value["Reason"].IsNull())
+    {
+        if (!value["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterV2.Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(value["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -745,6 +756,14 @@ void ClusterV2::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "EnableLogCollection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableLogCollection, allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1340,5 +1359,21 @@ void ClusterV2::SetEnableLogCollection(const bool& _enableLogCollection)
 bool ClusterV2::EnableLogCollectionHasBeenSet() const
 {
     return m_enableLogCollectionHasBeenSet;
+}
+
+string ClusterV2::GetReason() const
+{
+    return m_reason;
+}
+
+void ClusterV2::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool ClusterV2::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 

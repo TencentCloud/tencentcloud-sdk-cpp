@@ -121,6 +121,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateDirectConnectGatewayCcnRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateFlowLogRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateFlowLogResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateGlobalRoutesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateGlobalRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateHaVipRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateHaVipResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateHighPriorityRouteTableRequest.h>
@@ -227,6 +229,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteDirectConnectGatewayCcnRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteFlowLogRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteFlowLogResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteGlobalRoutesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteGlobalRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteHaVipRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteHaVipResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteHighPriorityRouteTablesRequest.h>
@@ -375,6 +379,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeGatewayFlowMonitorDetailResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeGatewayFlowQosRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeGatewayFlowQosResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeGlobalRoutesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeGlobalRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeHaVipsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeHaVipsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeHighPriorityRouteTablesRequest.h>
@@ -651,6 +657,10 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyFlowLogAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyGatewayFlowQosRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyGatewayFlowQosResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyGlobalRouteECMPAlgorithmRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyGlobalRouteECMPAlgorithmResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyGlobalRoutesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyGlobalRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyHaVipAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyHaVipAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyHighPriorityRouteAttributeRequest.h>
@@ -996,6 +1006,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowLogResponse> CreateFlowLogOutcome;
                 typedef std::future<CreateFlowLogOutcome> CreateFlowLogOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateFlowLogRequest&, CreateFlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGlobalRoutesResponse> CreateGlobalRoutesOutcome;
+                typedef std::future<CreateGlobalRoutesOutcome> CreateGlobalRoutesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateGlobalRoutesRequest&, CreateGlobalRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalRoutesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHaVipResponse> CreateHaVipOutcome;
                 typedef std::future<CreateHaVipOutcome> CreateHaVipOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateHaVipRequest&, CreateHaVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHaVipAsyncHandler;
@@ -1155,6 +1168,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteFlowLogResponse> DeleteFlowLogOutcome;
                 typedef std::future<DeleteFlowLogOutcome> DeleteFlowLogOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteFlowLogRequest&, DeleteFlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFlowLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGlobalRoutesResponse> DeleteGlobalRoutesOutcome;
+                typedef std::future<DeleteGlobalRoutesOutcome> DeleteGlobalRoutesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteGlobalRoutesRequest&, DeleteGlobalRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlobalRoutesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteHaVipResponse> DeleteHaVipOutcome;
                 typedef std::future<DeleteHaVipOutcome> DeleteHaVipOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteHaVipRequest&, DeleteHaVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHaVipAsyncHandler;
@@ -1377,6 +1393,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGatewayFlowQosResponse> DescribeGatewayFlowQosOutcome;
                 typedef std::future<DescribeGatewayFlowQosOutcome> DescribeGatewayFlowQosOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeGatewayFlowQosRequest&, DescribeGatewayFlowQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayFlowQosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGlobalRoutesResponse> DescribeGlobalRoutesOutcome;
+                typedef std::future<DescribeGlobalRoutesOutcome> DescribeGlobalRoutesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeGlobalRoutesRequest&, DescribeGlobalRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalRoutesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHaVipsResponse> DescribeHaVipsOutcome;
                 typedef std::future<DescribeHaVipsOutcome> DescribeHaVipsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeHaVipsRequest&, DescribeHaVipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHaVipsAsyncHandler;
@@ -1791,6 +1810,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGatewayFlowQosResponse> ModifyGatewayFlowQosOutcome;
                 typedef std::future<ModifyGatewayFlowQosOutcome> ModifyGatewayFlowQosOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyGatewayFlowQosRequest&, ModifyGatewayFlowQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGatewayFlowQosAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGlobalRouteECMPAlgorithmResponse> ModifyGlobalRouteECMPAlgorithmOutcome;
+                typedef std::future<ModifyGlobalRouteECMPAlgorithmOutcome> ModifyGlobalRouteECMPAlgorithmOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyGlobalRouteECMPAlgorithmRequest&, ModifyGlobalRouteECMPAlgorithmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalRouteECMPAlgorithmAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGlobalRoutesResponse> ModifyGlobalRoutesOutcome;
+                typedef std::future<ModifyGlobalRoutesOutcome> ModifyGlobalRoutesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyGlobalRoutesRequest&, ModifyGlobalRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalRoutesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyHaVipAttributeResponse> ModifyHaVipAttributeOutcome;
                 typedef std::future<ModifyHaVipAttributeOutcome> ModifyHaVipAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyHaVipAttributeRequest&, ModifyHaVipAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHaVipAttributeAsyncHandler;
@@ -2588,6 +2613,15 @@ namespace TencentCloud
                 CreateFlowLogOutcomeCallable CreateFlowLogCallable(const Model::CreateFlowLogRequest& request);
 
                 /**
+                 *本接口（CreateGlobalRoutes）用于创建全局路由。
+                 * @param req CreateGlobalRoutesRequest
+                 * @return CreateGlobalRoutesOutcome
+                 */
+                CreateGlobalRoutesOutcome CreateGlobalRoutes(const Model::CreateGlobalRoutesRequest &request);
+                void CreateGlobalRoutesAsync(const Model::CreateGlobalRoutesRequest& request, const CreateGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGlobalRoutesOutcomeCallable CreateGlobalRoutesCallable(const Model::CreateGlobalRoutesRequest& request);
+
+                /**
                  *本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）。
                  * @param req CreateHaVipRequest
                  * @return CreateHaVipOutcome
@@ -3135,6 +3169,15 @@ namespace TencentCloud
                 DeleteFlowLogOutcome DeleteFlowLog(const Model::DeleteFlowLogRequest &request);
                 void DeleteFlowLogAsync(const Model::DeleteFlowLogRequest& request, const DeleteFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFlowLogOutcomeCallable DeleteFlowLogCallable(const Model::DeleteFlowLogRequest& request);
+
+                /**
+                 *删除全局路由。
+                 * @param req DeleteGlobalRoutesRequest
+                 * @return DeleteGlobalRoutesOutcome
+                 */
+                DeleteGlobalRoutesOutcome DeleteGlobalRoutes(const Model::DeleteGlobalRoutesRequest &request);
+                void DeleteGlobalRoutesAsync(const Model::DeleteGlobalRoutesRequest& request, const DeleteGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGlobalRoutesOutcomeCallable DeleteGlobalRoutesCallable(const Model::DeleteGlobalRoutesRequest& request);
 
                 /**
                  *本接口（DeleteHaVip）用于删除高可用虚拟IP（HAVIP）。<br />
@@ -3831,6 +3874,15 @@ namespace TencentCloud
                 DescribeGatewayFlowQosOutcome DescribeGatewayFlowQos(const Model::DescribeGatewayFlowQosRequest &request);
                 void DescribeGatewayFlowQosAsync(const Model::DescribeGatewayFlowQosRequest& request, const DescribeGatewayFlowQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGatewayFlowQosOutcomeCallable DescribeGatewayFlowQosCallable(const Model::DescribeGatewayFlowQosRequest& request);
+
+                /**
+                 *查询全局路由列表。
+                 * @param req DescribeGlobalRoutesRequest
+                 * @return DescribeGlobalRoutesOutcome
+                 */
+                DescribeGlobalRoutesOutcome DescribeGlobalRoutes(const Model::DescribeGlobalRoutesRequest &request);
+                void DescribeGlobalRoutesAsync(const Model::DescribeGlobalRoutesRequest& request, const DescribeGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGlobalRoutesOutcomeCallable DescribeGlobalRoutesCallable(const Model::DescribeGlobalRoutesRequest& request);
 
                 /**
                  *本接口（DescribeHaVips）用于查询高可用虚拟IP（HAVIP）列表。
@@ -5161,6 +5213,24 @@ LimitTypes取值范围：
                 ModifyGatewayFlowQosOutcome ModifyGatewayFlowQos(const Model::ModifyGatewayFlowQosRequest &request);
                 void ModifyGatewayFlowQosAsync(const Model::ModifyGatewayFlowQosRequest& request, const ModifyGatewayFlowQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyGatewayFlowQosOutcomeCallable ModifyGatewayFlowQosCallable(const Model::ModifyGatewayFlowQosRequest& request);
+
+                /**
+                 *修改全局路由表ECMP算法 HASH 策略。
+                 * @param req ModifyGlobalRouteECMPAlgorithmRequest
+                 * @return ModifyGlobalRouteECMPAlgorithmOutcome
+                 */
+                ModifyGlobalRouteECMPAlgorithmOutcome ModifyGlobalRouteECMPAlgorithm(const Model::ModifyGlobalRouteECMPAlgorithmRequest &request);
+                void ModifyGlobalRouteECMPAlgorithmAsync(const Model::ModifyGlobalRouteECMPAlgorithmRequest& request, const ModifyGlobalRouteECMPAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGlobalRouteECMPAlgorithmOutcomeCallable ModifyGlobalRouteECMPAlgorithmCallable(const Model::ModifyGlobalRouteECMPAlgorithmRequest& request);
+
+                /**
+                 *修改全局路由。
+                 * @param req ModifyGlobalRoutesRequest
+                 * @return ModifyGlobalRoutesOutcome
+                 */
+                ModifyGlobalRoutesOutcome ModifyGlobalRoutes(const Model::ModifyGlobalRoutesRequest &request);
+                void ModifyGlobalRoutesAsync(const Model::ModifyGlobalRoutesRequest& request, const ModifyGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGlobalRoutesOutcomeCallable ModifyGlobalRoutesCallable(const Model::ModifyGlobalRoutesRequest& request);
 
                 /**
                  *本接口（ModifyHaVipAttribute）用于修改高可用虚拟IP（HAVIP）属性。

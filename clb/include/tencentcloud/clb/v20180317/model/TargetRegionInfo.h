@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Target所属网络，私有网络格式如86323，如果是基础网络，则为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NumericalVpcId Target所属网络，私有网络格式如86323，如果是基础网络，则为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNumericalVpcId() const;
 
                     /**
                      * 设置Target所属网络，私有网络格式如86323，如果是基础网络，则为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _numericalVpcId Target所属网络，私有网络格式如86323，如果是基础网络，则为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNumericalVpcId(const int64_t& _numericalVpcId);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * Target所属网络，私有网络格式如86323，如果是基础网络，则为0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_numericalVpcId;
                     bool m_numericalVpcIdHasBeenSet;

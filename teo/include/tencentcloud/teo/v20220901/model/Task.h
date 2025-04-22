@@ -113,11 +113,9 @@ namespace TencentCloud
                      * 获取节点缓存清除方法，取值有：
 <li>invalidate：标记过期，用户请求时触发回源校验，即发送带有 If-None-Match 和 If-Modified-Since 头部的 HTTP 条件请求。若源站响应 200，则节点会回源拉取新的资源并更新缓存；若源站响应 304，则节点不会更新缓存；</li>
 <li>delete：直接删除节点缓存，用户请求时触发回源拉取资源。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 节点缓存清除方法，取值有：
 <li>invalidate：标记过期，用户请求时触发回源校验，即发送带有 If-None-Match 和 If-Modified-Since 头部的 HTTP 条件请求。若源站响应 200，则节点会回源拉取新的资源并更新缓存；若源站响应 304，则节点不会更新缓存；</li>
 <li>delete：直接删除节点缓存，用户请求时触发回源拉取资源。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethod() const;
@@ -126,11 +124,9 @@ namespace TencentCloud
                      * 设置节点缓存清除方法，取值有：
 <li>invalidate：标记过期，用户请求时触发回源校验，即发送带有 If-None-Match 和 If-Modified-Since 头部的 HTTP 条件请求。若源站响应 200，则节点会回源拉取新的资源并更新缓存；若源站响应 304，则节点不会更新缓存；</li>
 <li>delete：直接删除节点缓存，用户请求时触发回源拉取资源。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 节点缓存清除方法，取值有：
 <li>invalidate：标记过期，用户请求时触发回源校验，即发送带有 If-None-Match 和 If-Modified-Since 头部的 HTTP 条件请求。若源站响应 200，则节点会回源拉取新的资源并更新缓存；若源站响应 304，则节点不会更新缓存；</li>
 <li>delete：直接删除节点缓存，用户请求时触发回源拉取资源。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -147,12 +143,14 @@ namespace TencentCloud
 <li>processing：处理中；</li>
 <li>success：成功；</li>
 <li> failed：失败；</li>
-<li>timeout：超时。</li>
+<li>timeout：超时；</li>
+<li>canceled：已取消。</li>
                      * @return Status 状态。取值有：
 <li>processing：处理中；</li>
 <li>success：成功；</li>
 <li> failed：失败；</li>
-<li>timeout：超时。</li>
+<li>timeout：超时；</li>
+<li>canceled：已取消。</li>
                      * 
                      */
                     std::string GetStatus() const;
@@ -162,12 +160,14 @@ namespace TencentCloud
 <li>processing：处理中；</li>
 <li>success：成功；</li>
 <li> failed：失败；</li>
-<li>timeout：超时。</li>
+<li>timeout：超时；</li>
+<li>canceled：已取消。</li>
                      * @param _status 状态。取值有：
 <li>processing：处理中；</li>
 <li>success：成功；</li>
 <li> failed：失败；</li>
-<li>timeout：超时。</li>
+<li>timeout：超时；</li>
+<li>canceled：已取消。</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -245,7 +245,6 @@ namespace TencentCloud
                      * 节点缓存清除方法，取值有：
 <li>invalidate：标记过期，用户请求时触发回源校验，即发送带有 If-None-Match 和 If-Modified-Since 头部的 HTTP 条件请求。若源站响应 200，则节点会回源拉取新的资源并更新缓存；若源站响应 304，则节点不会更新缓存；</li>
 <li>delete：直接删除节点缓存，用户请求时触发回源拉取资源。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
@@ -255,7 +254,8 @@ namespace TencentCloud
 <li>processing：处理中；</li>
 <li>success：成功；</li>
 <li> failed：失败；</li>
-<li>timeout：超时。</li>
+<li>timeout：超时；</li>
+<li>canceled：已取消。</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

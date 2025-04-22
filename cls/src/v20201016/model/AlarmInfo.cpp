@@ -37,6 +37,7 @@ AlarmInfo::AlarmInfo() :
     m_analysisHasBeenSet(false),
     m_groupTriggerStatusHasBeenSet(false),
     m_groupTriggerConditionHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_monitorObjectTypeHasBeenSet(false),
     m_alarmLevelHasBeenSet(false),
     m_classificationsHasBeenSet(false),
@@ -247,6 +248,26 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
             m_groupTriggerCondition.push_back((*itr).GetString());
         }
         m_groupTriggerConditionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
     }
 
     if (value.HasMember("MonitorObjectType") && !value["MonitorObjectType"].IsNull())
@@ -467,6 +488,21 @@ void AlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         for (auto itr = m_groupTriggerCondition.begin(); itr != m_groupTriggerCondition.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -773,6 +809,22 @@ void AlarmInfo::SetGroupTriggerCondition(const vector<string>& _groupTriggerCond
 bool AlarmInfo::GroupTriggerConditionHasBeenSet() const
 {
     return m_groupTriggerConditionHasBeenSet;
+}
+
+vector<Tag> AlarmInfo::GetTags() const
+{
+    return m_tags;
+}
+
+void AlarmInfo::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool AlarmInfo::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 uint64_t AlarmInfo::GetMonitorObjectType() const

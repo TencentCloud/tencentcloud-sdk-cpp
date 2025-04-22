@@ -126,6 +126,49 @@ IoaClient::CreateDeviceVirtualGroupOutcomeCallable IoaClient::CreateDeviceVirtua
     return task->get_future();
 }
 
+IoaClient::CreatePrivilegeCodeOutcome IoaClient::CreatePrivilegeCode(const CreatePrivilegeCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrivilegeCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrivilegeCodeResponse rsp = CreatePrivilegeCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrivilegeCodeOutcome(rsp);
+        else
+            return CreatePrivilegeCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrivilegeCodeOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::CreatePrivilegeCodeAsync(const CreatePrivilegeCodeRequest& request, const CreatePrivilegeCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrivilegeCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::CreatePrivilegeCodeOutcomeCallable IoaClient::CreatePrivilegeCodeCallable(const CreatePrivilegeCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrivilegeCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrivilegeCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::DescribeAccountGroupsOutcome IoaClient::DescribeAccountGroups(const DescribeAccountGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAccountGroups");
@@ -334,6 +377,49 @@ IoaClient::DescribeRootAccountGroupOutcomeCallable IoaClient::DescribeRootAccoun
         [this, request]()
         {
             return this->DescribeRootAccountGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::DescribeSoftCensusListByDeviceOutcome IoaClient::DescribeSoftCensusListByDevice(const DescribeSoftCensusListByDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSoftCensusListByDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSoftCensusListByDeviceResponse rsp = DescribeSoftCensusListByDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSoftCensusListByDeviceOutcome(rsp);
+        else
+            return DescribeSoftCensusListByDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSoftCensusListByDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeSoftCensusListByDeviceAsync(const DescribeSoftCensusListByDeviceRequest& request, const DescribeSoftCensusListByDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSoftCensusListByDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeSoftCensusListByDeviceOutcomeCallable IoaClient::DescribeSoftCensusListByDeviceCallable(const DescribeSoftCensusListByDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSoftCensusListByDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSoftCensusListByDevice(request);
         }
     );
 

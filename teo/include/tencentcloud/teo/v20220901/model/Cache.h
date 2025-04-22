@@ -78,10 +78,8 @@ namespace TencentCloud
                     /**
                      * 获取缓存过期时间设置。
 单位为秒，最大可设置为 365 天。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheTime 缓存过期时间设置。
 单位为秒，最大可设置为 365 天。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCacheTime() const;
@@ -89,10 +87,8 @@ namespace TencentCloud
                     /**
                      * 设置缓存过期时间设置。
 单位为秒，最大可设置为 365 天。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cacheTime 缓存过期时间设置。
 单位为秒，最大可设置为 365 天。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCacheTime(const int64_t& _cacheTime);
@@ -150,7 +146,6 @@ namespace TencentCloud
                     /**
                      * 缓存过期时间设置。
 单位为秒，最大可设置为 365 天。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cacheTime;
                     bool m_cacheTimeHasBeenSet;

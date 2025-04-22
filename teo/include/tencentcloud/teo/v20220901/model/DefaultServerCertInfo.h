@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务器证书 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId 服务器证书 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置服务器证书 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certId 服务器证书 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书备注名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 证书备注名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置证书备注名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alias 证书备注名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -101,12 +93,10 @@ namespace TencentCloud
 <li>default: 默认证书;</li>
 <li>upload:用户上传;</li>
 <li>managed:腾讯云托管。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 证书类型，取值有：
 <li>default: 默认证书;</li>
 <li>upload:用户上传;</li>
 <li>managed:腾讯云托管。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
@@ -116,12 +106,10 @@ namespace TencentCloud
 <li>default: 默认证书;</li>
 <li>upload:用户上传;</li>
 <li>managed:腾讯云托管。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 证书类型，取值有：
 <li>default: 默认证书;</li>
 <li>upload:用户上传;</li>
 <li>managed:腾讯云托管。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -135,18 +123,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 证书过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置证书过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 证书过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -160,18 +144,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书生效时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EffectiveTime 证书生效时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEffectiveTime() const;
 
                     /**
                      * 设置证书生效时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _effectiveTime 证书生效时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEffectiveTime(const std::string& _effectiveTime);
@@ -185,18 +165,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书公用名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CommonName 证书公用名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCommonName() const;
 
                     /**
                      * 设置证书公用名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _commonName 证书公用名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCommonName(const std::string& _commonName);
@@ -210,18 +186,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书SAN域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubjectAltName 证书SAN域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSubjectAltName() const;
 
                     /**
                      * 设置证书SAN域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subjectAltName 证书SAN域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubjectAltName(const std::vector<std::string>& _subjectAltName);
@@ -238,12 +210,10 @@ namespace TencentCloud
 <li>processing: 部署中；</li>
 <li>deployed: 已部署；</li>
 <li>failed: 部署失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 部署状态，取值有：
 <li>processing: 部署中；</li>
 <li>deployed: 已部署；</li>
 <li>failed: 部署失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -253,12 +223,10 @@ namespace TencentCloud
 <li>processing: 部署中；</li>
 <li>deployed: 已部署；</li>
 <li>failed: 部署失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 部署状态，取值有：
 <li>processing: 部署中；</li>
 <li>deployed: 已部署；</li>
 <li>failed: 部署失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -272,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Status为失败时,此字段返回失败原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message Status为失败时,此字段返回失败原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置Status为失败时,此字段返回失败原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message Status为失败时,此字段返回失败原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -297,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书算法。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignAlgo 证书算法。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSignAlgo() const;
 
                     /**
                      * 设置证书算法。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _signAlgo 证书算法。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSignAlgo(const std::string& _signAlgo);
@@ -324,14 +284,12 @@ namespace TencentCloud
 
                     /**
                      * 服务器证书 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
                      * 证书备注名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
@@ -341,35 +299,30 @@ namespace TencentCloud
 <li>default: 默认证书;</li>
 <li>upload:用户上传;</li>
 <li>managed:腾讯云托管。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 证书过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 证书生效时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_effectiveTime;
                     bool m_effectiveTimeHasBeenSet;
 
                     /**
                      * 证书公用名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_commonName;
                     bool m_commonNameHasBeenSet;
 
                     /**
                      * 证书SAN域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_subjectAltName;
                     bool m_subjectAltNameHasBeenSet;
@@ -379,21 +332,18 @@ namespace TencentCloud
 <li>processing: 部署中；</li>
 <li>deployed: 已部署；</li>
 <li>failed: 部署失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * Status为失败时,此字段返回失败原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 证书算法。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signAlgo;
                     bool m_signAlgoHasBeenSet;

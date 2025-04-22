@@ -2147,6 +2147,49 @@ VpcClient::CreateFlowLogOutcomeCallable VpcClient::CreateFlowLogCallable(const C
     return task->get_future();
 }
 
+VpcClient::CreateGlobalRoutesOutcome VpcClient::CreateGlobalRoutes(const CreateGlobalRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGlobalRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGlobalRoutesResponse rsp = CreateGlobalRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGlobalRoutesOutcome(rsp);
+        else
+            return CreateGlobalRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGlobalRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateGlobalRoutesAsync(const CreateGlobalRoutesRequest& request, const CreateGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGlobalRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateGlobalRoutesOutcomeCallable VpcClient::CreateGlobalRoutesCallable(const CreateGlobalRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGlobalRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGlobalRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateHaVipOutcome VpcClient::CreateHaVip(const CreateHaVipRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHaVip");
@@ -4419,6 +4462,49 @@ VpcClient::DeleteFlowLogOutcomeCallable VpcClient::DeleteFlowLogCallable(const D
         [this, request]()
         {
             return this->DeleteFlowLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteGlobalRoutesOutcome VpcClient::DeleteGlobalRoutes(const DeleteGlobalRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGlobalRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGlobalRoutesResponse rsp = DeleteGlobalRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGlobalRoutesOutcome(rsp);
+        else
+            return DeleteGlobalRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGlobalRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteGlobalRoutesAsync(const DeleteGlobalRoutesRequest& request, const DeleteGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGlobalRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteGlobalRoutesOutcomeCallable VpcClient::DeleteGlobalRoutesCallable(const DeleteGlobalRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGlobalRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGlobalRoutes(request);
         }
     );
 
@@ -7601,6 +7687,49 @@ VpcClient::DescribeGatewayFlowQosOutcomeCallable VpcClient::DescribeGatewayFlowQ
         [this, request]()
         {
             return this->DescribeGatewayFlowQos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeGlobalRoutesOutcome VpcClient::DescribeGlobalRoutes(const DescribeGlobalRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGlobalRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGlobalRoutesResponse rsp = DescribeGlobalRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGlobalRoutesOutcome(rsp);
+        else
+            return DescribeGlobalRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGlobalRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeGlobalRoutesAsync(const DescribeGlobalRoutesRequest& request, const DescribeGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGlobalRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeGlobalRoutesOutcomeCallable VpcClient::DescribeGlobalRoutesCallable(const DescribeGlobalRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGlobalRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGlobalRoutes(request);
         }
     );
 
@@ -13535,6 +13664,92 @@ VpcClient::ModifyGatewayFlowQosOutcomeCallable VpcClient::ModifyGatewayFlowQosCa
         [this, request]()
         {
             return this->ModifyGatewayFlowQos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyGlobalRouteECMPAlgorithmOutcome VpcClient::ModifyGlobalRouteECMPAlgorithm(const ModifyGlobalRouteECMPAlgorithmRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGlobalRouteECMPAlgorithm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGlobalRouteECMPAlgorithmResponse rsp = ModifyGlobalRouteECMPAlgorithmResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGlobalRouteECMPAlgorithmOutcome(rsp);
+        else
+            return ModifyGlobalRouteECMPAlgorithmOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGlobalRouteECMPAlgorithmOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyGlobalRouteECMPAlgorithmAsync(const ModifyGlobalRouteECMPAlgorithmRequest& request, const ModifyGlobalRouteECMPAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGlobalRouteECMPAlgorithm(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyGlobalRouteECMPAlgorithmOutcomeCallable VpcClient::ModifyGlobalRouteECMPAlgorithmCallable(const ModifyGlobalRouteECMPAlgorithmRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGlobalRouteECMPAlgorithmOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGlobalRouteECMPAlgorithm(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyGlobalRoutesOutcome VpcClient::ModifyGlobalRoutes(const ModifyGlobalRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGlobalRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGlobalRoutesResponse rsp = ModifyGlobalRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGlobalRoutesOutcome(rsp);
+        else
+            return ModifyGlobalRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGlobalRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyGlobalRoutesAsync(const ModifyGlobalRoutesRequest& request, const ModifyGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGlobalRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyGlobalRoutesOutcomeCallable VpcClient::ModifyGlobalRoutesCallable(const ModifyGlobalRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGlobalRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGlobalRoutes(request);
         }
     );
 
