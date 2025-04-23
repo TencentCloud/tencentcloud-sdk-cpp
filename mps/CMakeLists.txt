@@ -186,6 +186,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/TEHDConfig.h
   include/tencentcloud/mps/v20190612/model/CreateOutputRtmpSettingsDestinations.h
   include/tencentcloud/mps/v20190612/model/AudioDenoiseConfig.h
+  include/tencentcloud/mps/v20190612/model/MP4ConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/PornAsrReviewTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/LiveRecordTemplate.h
   include/tencentcloud/mps/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesRequest.h
@@ -894,6 +895,7 @@ set(mps_src
   src/v20190612/model/TEHDConfig.cpp
   src/v20190612/model/CreateOutputRtmpSettingsDestinations.cpp
   src/v20190612/model/AudioDenoiseConfig.cpp
+  src/v20190612/model/MP4ConfigureInfo.cpp
   src/v20190612/model/PornAsrReviewTemplateInfoForUpdate.cpp
   src/v20190612/model/LiveRecordTemplate.cpp
   src/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesRequest.cpp

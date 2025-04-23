@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cvm/v20170312/model/DataDisk.h>
+#include <tencentcloud/cvm/v20170312/model/SystemDisk.h>
 
 
 namespace TencentCloud
@@ -110,6 +111,52 @@ namespace TencentCloud
                      */
                     bool ForceStopHasBeenSet() const;
 
+                    /**
+                     * 获取待扩容的系统盘配置信息。只支持扩容云盘。
+<dx-alert infotype="explain" title="">您必须指定参数DataDisks与SystemDisk的其中一个，但不能同时指定。</dx-alert>
+                     * @return SystemDisk 待扩容的系统盘配置信息。只支持扩容云盘。
+<dx-alert infotype="explain" title="">您必须指定参数DataDisks与SystemDisk的其中一个，但不能同时指定。</dx-alert>
+                     * 
+                     */
+                    SystemDisk GetSystemDisk() const;
+
+                    /**
+                     * 设置待扩容的系统盘配置信息。只支持扩容云盘。
+<dx-alert infotype="explain" title="">您必须指定参数DataDisks与SystemDisk的其中一个，但不能同时指定。</dx-alert>
+                     * @param _systemDisk 待扩容的系统盘配置信息。只支持扩容云盘。
+<dx-alert infotype="explain" title="">您必须指定参数DataDisks与SystemDisk的其中一个，但不能同时指定。</dx-alert>
+                     * 
+                     */
+                    void SetSystemDisk(const SystemDisk& _systemDisk);
+
+                    /**
+                     * 判断参数 SystemDisk 是否已赋值
+                     * @return SystemDisk 是否已赋值
+                     * 
+                     */
+                    bool SystemDiskHasBeenSet() const;
+
+                    /**
+                     * 获取是否在线扩容
+                     * @return ResizeOnline 是否在线扩容
+                     * 
+                     */
+                    bool GetResizeOnline() const;
+
+                    /**
+                     * 设置是否在线扩容
+                     * @param _resizeOnline 是否在线扩容
+                     * 
+                     */
+                    void SetResizeOnline(const bool& _resizeOnline);
+
+                    /**
+                     * 判断参数 ResizeOnline 是否已赋值
+                     * @return ResizeOnline 是否已赋值
+                     * 
+                     */
+                    bool ResizeOnlineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -130,6 +177,19 @@ namespace TencentCloud
                      */
                     bool m_forceStop;
                     bool m_forceStopHasBeenSet;
+
+                    /**
+                     * 待扩容的系统盘配置信息。只支持扩容云盘。
+<dx-alert infotype="explain" title="">您必须指定参数DataDisks与SystemDisk的其中一个，但不能同时指定。</dx-alert>
+                     */
+                    SystemDisk m_systemDisk;
+                    bool m_systemDiskHasBeenSet;
+
+                    /**
+                     * 是否在线扩容
+                     */
+                    bool m_resizeOnline;
+                    bool m_resizeOnlineHasBeenSet;
 
                 };
             }

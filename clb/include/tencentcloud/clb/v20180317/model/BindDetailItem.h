@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerName 监听器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetListenerName() const;
 
                     /**
                      * 设置监听器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listenerName 监听器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListenerName(const std::string& _listenerName);
@@ -271,7 +267,6 @@ namespace TencentCloud
 
                     /**
                      * 监听器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;

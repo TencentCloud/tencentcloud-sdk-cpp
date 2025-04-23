@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务类型：如：EXTERNAL，VPC，CLUSTER
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 服务类型：如：EXTERNAL，VPC，CLUSTER
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置服务类型：如：EXTERNAL，VPC，CLUSTER
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 服务类型：如：EXTERNAL，VPC，CLUSTER
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName 服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群内访问vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterIp 集群内访问vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterIp() const;
 
                     /**
                      * 设置集群内访问vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterIp 集群内访问vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterIp(const std::string& _clusterIp);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群外方位vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalIp 集群外方位vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExternalIp() const;
 
                     /**
                      * 设置集群外方位vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _externalIp 集群外方位vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExternalIp(const std::string& _externalIp);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取LoadBalance Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalanceId LoadBalance Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoadBalanceId() const;
 
                     /**
                      * 设置LoadBalance Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalanceId LoadBalance Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalanceId(const std::string& _loadBalanceId);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取yaml 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Yaml yaml 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetYaml() const;
 
                     /**
                      * 设置yaml 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _yaml yaml 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetYaml(const std::string& _yaml);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取暴露端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ports 暴露端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetPorts() const;
 
                     /**
                      * 设置暴露端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ports 暴露端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPorts(const std::vector<int64_t>& _ports);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口映射数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PortMappingItemList 端口映射数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServicePortMappingItem> GetPortMappingItemList() const;
 
                     /**
                      * 设置端口映射数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _portMappingItemList 端口映射数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPortMappingItemList(const std::vector<ServicePortMappingItem>& _portMappingItemList);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取clb domain
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalDomain clb domain
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExternalDomain() const;
 
                     /**
                      * 设置clb domain
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _externalDomain clb domain
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExternalDomain(const std::string& _externalDomain);
@@ -326,77 +282,66 @@ namespace TencentCloud
 
                     /**
                      * 服务类型：如：EXTERNAL，VPC，CLUSTER
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
                      * 集群内访问vip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterIp;
                     bool m_clusterIpHasBeenSet;
 
                     /**
                      * 集群外方位vip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_externalIp;
                     bool m_externalIpHasBeenSet;
 
                     /**
                      * 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * LoadBalance Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loadBalanceId;
                     bool m_loadBalanceIdHasBeenSet;
 
                     /**
                      * yaml 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_yaml;
                     bool m_yamlHasBeenSet;
 
                     /**
                      * 暴露端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_ports;
                     bool m_portsHasBeenSet;
 
                     /**
                      * 端口映射数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServicePortMappingItem> m_portMappingItemList;
                     bool m_portMappingItemListHasBeenSet;
 
                     /**
                      * clb domain
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_externalDomain;
                     bool m_externalDomainHasBeenSet;

@@ -194,6 +194,27 @@ path 时填充绝对路径，如 /xxx/test.html
                      */
                     bool RulePathsHasBeenSet() const;
 
+                    /**
+                     * 获取备注信息, 最多支持50个字符
+                     * @return Remark 备注信息, 最多支持50个字符
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注信息, 最多支持50个字符
+                     * @param _remark 备注信息, 最多支持50个字符
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +256,12 @@ path 时填充绝对路径，如 /xxx/test.html
                      */
                     std::vector<std::string> m_rulePaths;
                     bool m_rulePathsHasBeenSet;
+
+                    /**
+                     * 备注信息, 最多支持50个字符
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                 };
             }

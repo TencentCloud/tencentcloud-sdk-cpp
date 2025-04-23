@@ -2319,6 +2319,49 @@ DlcClient::DescribeAdvancedStoreLocationOutcomeCallable DlcClient::DescribeAdvan
     return task->get_future();
 }
 
+DlcClient::DescribeClusterMonitorInfosOutcome DlcClient::DescribeClusterMonitorInfos(const DescribeClusterMonitorInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterMonitorInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterMonitorInfosResponse rsp = DescribeClusterMonitorInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterMonitorInfosOutcome(rsp);
+        else
+            return DescribeClusterMonitorInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterMonitorInfosOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeClusterMonitorInfosAsync(const DescribeClusterMonitorInfosRequest& request, const DescribeClusterMonitorInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterMonitorInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeClusterMonitorInfosOutcomeCallable DlcClient::DescribeClusterMonitorInfosCallable(const DescribeClusterMonitorInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterMonitorInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterMonitorInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeDLCCatalogAccessOutcome DlcClient::DescribeDLCCatalogAccess(const DescribeDLCCatalogAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDLCCatalogAccess");

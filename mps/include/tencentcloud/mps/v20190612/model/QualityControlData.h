@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool NoVideoHasBeenSet() const;
 
                     /**
-                     * 获取视频无参考质量打分，百分制。
+                     * 获取视频无参考质量评分，百分制。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityEvaluationScore 视频无参考质量打分，百分制。
+                     * @return QualityEvaluationScore 视频无参考质量评分，百分制。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetQualityEvaluationScore() const;
 
                     /**
-                     * 设置视频无参考质量打分，百分制。
+                     * 设置视频无参考质量评分，百分制。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qualityEvaluationScore 视频无参考质量打分，百分制。
+                     * @param _qualityEvaluationScore 视频无参考质量评分，百分制。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,6 +122,31 @@ namespace TencentCloud
                      * 
                      */
                     bool QualityEvaluationScoreHasBeenSet() const;
+
+                    /**
+                     * 获取视频无参考质量评分，MOS分数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QualityEvaluationMeanOpinionScore 视频无参考质量评分，MOS分数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetQualityEvaluationMeanOpinionScore() const;
+
+                    /**
+                     * 设置视频无参考质量评分，MOS分数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _qualityEvaluationMeanOpinionScore 视频无参考质量评分，MOS分数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQualityEvaluationMeanOpinionScore(const double& _qualityEvaluationMeanOpinionScore);
+
+                    /**
+                     * 判断参数 QualityEvaluationMeanOpinionScore 是否已赋值
+                     * @return QualityEvaluationMeanOpinionScore 是否已赋值
+                     * 
+                     */
+                    bool QualityEvaluationMeanOpinionScoreHasBeenSet() const;
 
                     /**
                      * 获取内容质检检出异常项。
@@ -190,11 +215,18 @@ namespace TencentCloud
                     bool m_noVideoHasBeenSet;
 
                     /**
-                     * 视频无参考质量打分，百分制。
+                     * 视频无参考质量评分，百分制。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_qualityEvaluationScore;
                     bool m_qualityEvaluationScoreHasBeenSet;
+
+                    /**
+                     * 视频无参考质量评分，MOS分数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_qualityEvaluationMeanOpinionScore;
+                    bool m_qualityEvaluationMeanOpinionScoreHasBeenSet;
 
                     /**
                      * 内容质检检出异常项。

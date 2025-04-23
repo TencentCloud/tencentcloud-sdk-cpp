@@ -25,6 +25,7 @@ using namespace std;
 ModifyLiveRecordTemplateRequest::ModifyLiveRecordTemplateRequest() :
     m_definitionHasBeenSet(false),
     m_hLSConfigureHasBeenSet(false),
+    m_mP4ConfigureHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false)
 {
@@ -52,6 +53,15 @@ string ModifyLiveRecordTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hLSConfigure.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_mP4ConfigureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MP4Configure";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mP4Configure.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -108,6 +118,22 @@ void ModifyLiveRecordTemplateRequest::SetHLSConfigure(const HLSConfigureInfo& _h
 bool ModifyLiveRecordTemplateRequest::HLSConfigureHasBeenSet() const
 {
     return m_hLSConfigureHasBeenSet;
+}
+
+MP4ConfigureInfo ModifyLiveRecordTemplateRequest::GetMP4Configure() const
+{
+    return m_mP4Configure;
+}
+
+void ModifyLiveRecordTemplateRequest::SetMP4Configure(const MP4ConfigureInfo& _mP4Configure)
+{
+    m_mP4Configure = _mP4Configure;
+    m_mP4ConfigureHasBeenSet = true;
+}
+
+bool ModifyLiveRecordTemplateRequest::MP4ConfigureHasBeenSet() const
+{
+    return m_mP4ConfigureHasBeenSet;
 }
 
 string ModifyLiveRecordTemplateRequest::GetName() const

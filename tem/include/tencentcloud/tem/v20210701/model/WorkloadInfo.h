@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 应用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置应用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationName 应用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionName 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionName(const std::string& _versionName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Ready实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadyReplicas Ready实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReadyReplicas() const;
 
                     /**
                      * 设置Ready实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readyReplicas Ready实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadyReplicas(const int64_t& _readyReplicas);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Replicas 实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReplicas() const;
 
                     /**
                      * 设置实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _replicas 实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReplicas(const int64_t& _replicas);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Updated实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedReplicas Updated实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdatedReplicas() const;
 
                     /**
                      * 设置Updated实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedReplicas Updated实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedReplicas(const int64_t& _updatedReplicas);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取UpdatedReady实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedReadyReplicas UpdatedReady实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdatedReadyReplicas() const;
 
                     /**
                      * 设置UpdatedReady实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedReadyReplicas UpdatedReady实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedReadyReplicas(const int64_t& _updatedReadyReplicas);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateRevision 更新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateRevision() const;
 
                     /**
                      * 设置更新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateRevision 更新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateRevision(const std::string& _updateRevision);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentRevision 当前版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentRevision() const;
 
                     /**
                      * 设置当前版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentRevision 当前版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentRevision(const std::string& _currentRevision);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 应用名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
                      * 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;
 
                     /**
                      * Ready实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_readyReplicas;
                     bool m_readyReplicasHasBeenSet;
 
                     /**
                      * 实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_replicas;
                     bool m_replicasHasBeenSet;
 
                     /**
                      * Updated实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updatedReplicas;
                     bool m_updatedReplicasHasBeenSet;
 
                     /**
                      * UpdatedReady实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updatedReadyReplicas;
                     bool m_updatedReadyReplicasHasBeenSet;
 
                     /**
                      * 更新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateRevision;
                     bool m_updateRevisionHasBeenSet;
 
                     /**
                      * 当前版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentRevision;
                     bool m_currentRevisionHasBeenSet;

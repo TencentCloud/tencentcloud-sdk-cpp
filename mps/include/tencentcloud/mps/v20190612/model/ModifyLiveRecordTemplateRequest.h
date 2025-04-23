@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/HLSConfigureInfo.h>
+#include <tencentcloud/mps/v20190612/model/MP4ConfigureInfo.h>
 
 
 namespace TencentCloud
@@ -65,15 +66,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取HLS 配置参数
-                     * @return HLSConfigure HLS 配置参数
+                     * 获取HLS配置参数，和MP4Configure需要二选一必填。
+                     * @return HLSConfigure HLS配置参数，和MP4Configure需要二选一必填。
                      * 
                      */
                     HLSConfigureInfo GetHLSConfigure() const;
 
                     /**
-                     * 设置HLS 配置参数
-                     * @param _hLSConfigure HLS 配置参数
+                     * 设置HLS配置参数，和MP4Configure需要二选一必填。
+                     * @param _hLSConfigure HLS配置参数，和MP4Configure需要二选一必填。
                      * 
                      */
                     void SetHLSConfigure(const HLSConfigureInfo& _hLSConfigure);
@@ -84,6 +85,27 @@ namespace TencentCloud
                      * 
                      */
                     bool HLSConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取MP4配置参数，和HLSConfigure需要二选一必填。
+                     * @return MP4Configure MP4配置参数，和HLSConfigure需要二选一必填。
+                     * 
+                     */
+                    MP4ConfigureInfo GetMP4Configure() const;
+
+                    /**
+                     * 设置MP4配置参数，和HLSConfigure需要二选一必填。
+                     * @param _mP4Configure MP4配置参数，和HLSConfigure需要二选一必填。
+                     * 
+                     */
+                    void SetMP4Configure(const MP4ConfigureInfo& _mP4Configure);
+
+                    /**
+                     * 判断参数 MP4Configure 是否已赋值
+                     * @return MP4Configure 是否已赋值
+                     * 
+                     */
+                    bool MP4ConfigureHasBeenSet() const;
 
                     /**
                      * 获取录制模板名称，长度限制：64 个字符。
@@ -136,10 +158,16 @@ namespace TencentCloud
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * HLS 配置参数
+                     * HLS配置参数，和MP4Configure需要二选一必填。
                      */
                     HLSConfigureInfo m_hLSConfigure;
                     bool m_hLSConfigureHasBeenSet;
+
+                    /**
+                     * MP4配置参数，和HLSConfigure需要二选一必填。
+                     */
+                    MP4ConfigureInfo m_mP4Configure;
+                    bool m_mP4ConfigureHasBeenSet;
 
                     /**
                      * 录制模板名称，长度限制：64 个字符。

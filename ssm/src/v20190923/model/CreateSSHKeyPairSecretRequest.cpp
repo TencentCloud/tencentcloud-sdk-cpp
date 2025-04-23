@@ -28,7 +28,8 @@ CreateSSHKeyPairSecretRequest::CreateSSHKeyPairSecretRequest() :
     m_descriptionHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_sSHKeyNameHasBeenSet(false)
+    m_sSHKeyNameHasBeenSet(false),
+    m_kmsHsmClusterIdHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string CreateSSHKeyPairSecretRequest::ToJsonString() const
         string key = "SSHKeyName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sSHKeyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kmsHsmClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsHsmClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kmsHsmClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +205,22 @@ void CreateSSHKeyPairSecretRequest::SetSSHKeyName(const string& _sSHKeyName)
 bool CreateSSHKeyPairSecretRequest::SSHKeyNameHasBeenSet() const
 {
     return m_sSHKeyNameHasBeenSet;
+}
+
+string CreateSSHKeyPairSecretRequest::GetKmsHsmClusterId() const
+{
+    return m_kmsHsmClusterId;
+}
+
+void CreateSSHKeyPairSecretRequest::SetKmsHsmClusterId(const string& _kmsHsmClusterId)
+{
+    m_kmsHsmClusterId = _kmsHsmClusterId;
+    m_kmsHsmClusterIdHasBeenSet = true;
+}
+
+bool CreateSSHKeyPairSecretRequest::KmsHsmClusterIdHasBeenSet() const
+{
+    return m_kmsHsmClusterIdHasBeenSet;
 }
 
 

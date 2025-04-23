@@ -34,6 +34,7 @@
 #include <tencentcloud/waf/v20180125/model/ApiPkg.h>
 #include <tencentcloud/waf/v20180125/model/MiniPkg.h>
 #include <tencentcloud/waf/v20180125/model/MiniExtendPkg.h>
+#include <tencentcloud/waf/v20180125/model/MajorEventsProPkg.h>
 
 
 namespace TencentCloud
@@ -999,6 +1000,27 @@ namespace TencentCloud
                      */
                     bool Last3MaxBandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取重保增强包
+                     * @return MajorEventsProPkg 重保增强包
+                     * 
+                     */
+                    MajorEventsProPkg GetMajorEventsProPkg() const;
+
+                    /**
+                     * 设置重保增强包
+                     * @param _majorEventsProPkg 重保增强包
+                     * 
+                     */
+                    void SetMajorEventsProPkg(const MajorEventsProPkg& _majorEventsProPkg);
+
+                    /**
+                     * 判断参数 MajorEventsProPkg 是否已赋值
+                     * @return MajorEventsProPkg 是否已赋值
+                     * 
+                     */
+                    bool MajorEventsProPkgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1268,6 +1290,12 @@ namespace TencentCloud
                      */
                     uint64_t m_last3MaxBandwidth;
                     bool m_last3MaxBandwidthHasBeenSet;
+
+                    /**
+                     * 重保增强包
+                     */
+                    MajorEventsProPkg m_majorEventsProPkg;
+                    bool m_majorEventsProPkgHasBeenSet;
 
                 };
             }

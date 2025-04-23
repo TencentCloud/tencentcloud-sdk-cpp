@@ -43,15 +43,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取热词库 id
-                     * @return HotwordsId 热词库 id
+                     * 获取热词库 id 
+如果热词库是文本热词：Name 和 Content 至少填一个 
+如果热词库是：Name、FileContent 和 FileName 至少填一个 
+
+                     * @return HotwordsId 热词库 id 
+如果热词库是文本热词：Name 和 Content 至少填一个 
+如果热词库是：Name、FileContent 和 FileName 至少填一个 
+
                      * 
                      */
                     std::string GetHotwordsId() const;
 
                     /**
-                     * 设置热词库 id
-                     * @param _hotwordsId 热词库 id
+                     * 设置热词库 id 
+如果热词库是文本热词：Name 和 Content 至少填一个 
+如果热词库是：Name、FileContent 和 FileName 至少填一个 
+
+                     * @param _hotwordsId 热词库 id 
+如果热词库是文本热词：Name 和 Content 至少填一个 
+如果热词库是：Name、FileContent 和 FileName 至少填一个 
+
                      * 
                      */
                     void SetHotwordsId(const std::string& _hotwordsId);
@@ -162,7 +174,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 热词库 id
+                     * 热词库 id 
+如果热词库是文本热词：Name 和 Content 至少填一个 
+如果热词库是：Name、FileContent 和 FileName 至少填一个 
+
                      */
                     std::string m_hotwordsId;
                     bool m_hotwordsIdHasBeenSet;

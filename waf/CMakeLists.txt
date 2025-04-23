@@ -38,6 +38,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyInstanceNameResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyRulesRequest.h
+  include/tencentcloud/waf/v20180125/model/MajorEventsProPkg.h
   include/tencentcloud/waf/v20180125/model/GenerateDealsAndPayNewRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyHostModeResponse.h
@@ -493,6 +494,7 @@ set(waf_src
   src/v20180125/model/ModifyUserSignatureRuleResponse.cpp
   src/v20180125/model/ModifyInstanceNameResponse.cpp
   src/v20180125/model/DescribeWafAutoDenyRulesRequest.cpp
+  src/v20180125/model/MajorEventsProPkg.cpp
   src/v20180125/model/GenerateDealsAndPayNewRequest.cpp
   src/v20180125/model/DeleteCustomWhiteRuleResponse.cpp
   src/v20180125/model/ModifyHostModeResponse.cpp

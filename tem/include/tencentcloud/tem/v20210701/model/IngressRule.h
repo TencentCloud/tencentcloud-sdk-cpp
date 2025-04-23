@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取host 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host host 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置host 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host host 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -124,7 +120,6 @@ namespace TencentCloud
 
                     /**
                      * host 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

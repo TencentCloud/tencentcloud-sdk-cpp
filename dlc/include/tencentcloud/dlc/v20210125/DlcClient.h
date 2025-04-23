@@ -129,6 +129,8 @@
 #include <tencentcloud/dlc/v20210125/model/DeleteWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeAdvancedStoreLocationRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeAdvancedStoreLocationResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeClusterMonitorInfosRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeClusterMonitorInfosResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDLCCatalogAccessRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDLCCatalogAccessResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDMSDatabaseRequest.h>
@@ -488,6 +490,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAdvancedStoreLocationResponse> DescribeAdvancedStoreLocationOutcome;
                 typedef std::future<DescribeAdvancedStoreLocationOutcome> DescribeAdvancedStoreLocationOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeAdvancedStoreLocationRequest&, DescribeAdvancedStoreLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdvancedStoreLocationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterMonitorInfosResponse> DescribeClusterMonitorInfosOutcome;
+                typedef std::future<DescribeClusterMonitorInfosOutcome> DescribeClusterMonitorInfosOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeClusterMonitorInfosRequest&, DescribeClusterMonitorInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterMonitorInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDLCCatalogAccessResponse> DescribeDLCCatalogAccessOutcome;
                 typedef std::future<DescribeDLCCatalogAccessOutcome> DescribeDLCCatalogAccessOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDLCCatalogAccessRequest&, DescribeDLCCatalogAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDLCCatalogAccessAsyncHandler;
@@ -1246,6 +1251,15 @@ namespace TencentCloud
                 DescribeAdvancedStoreLocationOutcome DescribeAdvancedStoreLocation(const Model::DescribeAdvancedStoreLocationRequest &request);
                 void DescribeAdvancedStoreLocationAsync(const Model::DescribeAdvancedStoreLocationRequest& request, const DescribeAdvancedStoreLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAdvancedStoreLocationOutcomeCallable DescribeAdvancedStoreLocationCallable(const Model::DescribeAdvancedStoreLocationRequest& request);
+
+                /**
+                 *查询任务监控指标信息
+                 * @param req DescribeClusterMonitorInfosRequest
+                 * @return DescribeClusterMonitorInfosOutcome
+                 */
+                DescribeClusterMonitorInfosOutcome DescribeClusterMonitorInfos(const Model::DescribeClusterMonitorInfosRequest &request);
+                void DescribeClusterMonitorInfosAsync(const Model::DescribeClusterMonitorInfosRequest& request, const DescribeClusterMonitorInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterMonitorInfosOutcomeCallable DescribeClusterMonitorInfosCallable(const Model::DescribeClusterMonitorInfosRequest& request);
 
                 /**
                  *查询DLC Catalog授权列表

@@ -1373,6 +1373,49 @@ DbbrainClient::DescribeDBDiagHistoryOutcomeCallable DbbrainClient::DescribeDBDia
     return task->get_future();
 }
 
+DbbrainClient::DescribeDBDiagReportContentOutcome DbbrainClient::DescribeDBDiagReportContent(const DescribeDBDiagReportContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBDiagReportContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBDiagReportContentResponse rsp = DescribeDBDiagReportContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBDiagReportContentOutcome(rsp);
+        else
+            return DescribeDBDiagReportContentOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBDiagReportContentOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBDiagReportContentAsync(const DescribeDBDiagReportContentRequest& request, const DescribeDBDiagReportContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBDiagReportContent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDBDiagReportContentOutcomeCallable DbbrainClient::DescribeDBDiagReportContentCallable(const DescribeDBDiagReportContentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBDiagReportContentOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBDiagReportContent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeDBDiagReportTasksOutcome DbbrainClient::DescribeDBDiagReportTasks(const DescribeDBDiagReportTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBDiagReportTasks");

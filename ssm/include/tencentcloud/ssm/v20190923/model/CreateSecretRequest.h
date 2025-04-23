@@ -232,6 +232,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。
+                     * @return KmsHsmClusterId KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。
+                     * 
+                     */
+                    std::string GetKmsHsmClusterId() const;
+
+                    /**
+                     * 设置KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。
+                     * @param _kmsHsmClusterId KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。
+                     * 
+                     */
+                    void SetKmsHsmClusterId(const std::string& _kmsHsmClusterId);
+
+                    /**
+                     * 判断参数 KmsHsmClusterId 是否已赋值
+                     * @return KmsHsmClusterId 是否已赋值
+                     * 
+                     */
+                    bool KmsHsmClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +308,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。
+                     */
+                    std::string m_kmsHsmClusterId;
+                    bool m_kmsHsmClusterIdHasBeenSet;
 
                 };
             }

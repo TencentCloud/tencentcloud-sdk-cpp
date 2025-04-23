@@ -83,6 +83,49 @@ CdcClient::CreateDedicatedClusterOutcomeCallable CdcClient::CreateDedicatedClust
     return task->get_future();
 }
 
+CdcClient::CreateDedicatedClusterImageCacheOutcome CdcClient::CreateDedicatedClusterImageCache(const CreateDedicatedClusterImageCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDedicatedClusterImageCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDedicatedClusterImageCacheResponse rsp = CreateDedicatedClusterImageCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDedicatedClusterImageCacheOutcome(rsp);
+        else
+            return CreateDedicatedClusterImageCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDedicatedClusterImageCacheOutcome(outcome.GetError());
+    }
+}
+
+void CdcClient::CreateDedicatedClusterImageCacheAsync(const CreateDedicatedClusterImageCacheRequest& request, const CreateDedicatedClusterImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDedicatedClusterImageCache(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdcClient::CreateDedicatedClusterImageCacheOutcomeCallable CdcClient::CreateDedicatedClusterImageCacheCallable(const CreateDedicatedClusterImageCacheRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDedicatedClusterImageCacheOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDedicatedClusterImageCache(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdcClient::CreateDedicatedClusterOrderOutcome CdcClient::CreateDedicatedClusterOrder(const CreateDedicatedClusterOrderRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDedicatedClusterOrder");
@@ -162,6 +205,49 @@ CdcClient::CreateSiteOutcomeCallable CdcClient::CreateSiteCallable(const CreateS
         [this, request]()
         {
             return this->CreateSite(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdcClient::DeleteDedicatedClusterImageCacheOutcome CdcClient::DeleteDedicatedClusterImageCache(const DeleteDedicatedClusterImageCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDedicatedClusterImageCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDedicatedClusterImageCacheResponse rsp = DeleteDedicatedClusterImageCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDedicatedClusterImageCacheOutcome(rsp);
+        else
+            return DeleteDedicatedClusterImageCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDedicatedClusterImageCacheOutcome(outcome.GetError());
+    }
+}
+
+void CdcClient::DeleteDedicatedClusterImageCacheAsync(const DeleteDedicatedClusterImageCacheRequest& request, const DeleteDedicatedClusterImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDedicatedClusterImageCache(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdcClient::DeleteDedicatedClusterImageCacheOutcomeCallable CdcClient::DeleteDedicatedClusterImageCacheCallable(const DeleteDedicatedClusterImageCacheRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDedicatedClusterImageCacheOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDedicatedClusterImageCache(request);
         }
     );
 

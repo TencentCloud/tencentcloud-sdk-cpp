@@ -31,7 +31,8 @@ CreateSecretRequest::CreateSecretRequest() :
     m_secretBinaryHasBeenSet(false),
     m_secretStringHasBeenSet(false),
     m_additionalConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kmsHsmClusterIdHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string CreateSecretRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_kmsHsmClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsHsmClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kmsHsmClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +280,22 @@ void CreateSecretRequest::SetTags(const vector<Tag>& _tags)
 bool CreateSecretRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateSecretRequest::GetKmsHsmClusterId() const
+{
+    return m_kmsHsmClusterId;
+}
+
+void CreateSecretRequest::SetKmsHsmClusterId(const string& _kmsHsmClusterId)
+{
+    m_kmsHsmClusterId = _kmsHsmClusterId;
+    m_kmsHsmClusterIdHasBeenSet = true;
+}
+
+bool CreateSecretRequest::KmsHsmClusterIdHasBeenSet() const
+{
+    return m_kmsHsmClusterIdHasBeenSet;
 }
 
 

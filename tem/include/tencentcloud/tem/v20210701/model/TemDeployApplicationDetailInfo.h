@@ -76,18 +76,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -101,18 +97,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -126,18 +118,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 当前状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置当前状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 当前状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -176,18 +164,14 @@ namespace TencentCloud
 
                     /**
                      * 获取其他分批详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherBatchDetail 其他分批详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeployServiceBatchDetail> GetOtherBatchDetail() const;
 
                     /**
                      * 设置其他分批详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _otherBatchDetail 其他分批详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOtherBatchDetail(const std::vector<DeployServiceBatchDetail>& _otherBatchDetail);
@@ -251,18 +235,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 错误原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置错误原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorMessage 错误原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -276,18 +256,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前批次状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentBatchStatus 当前批次状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentBatchStatus() const;
 
                     /**
                      * 设置当前批次状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentBatchStatus 当前批次状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentBatchStatus(const std::string& _currentBatchStatus);
@@ -301,18 +277,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新版本version
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewDeployVersion 新版本version
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewDeployVersion() const;
 
                     /**
                      * 设置新版本version
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newDeployVersion 新版本version
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewDeployVersion(const std::string& _newDeployVersion);
@@ -326,18 +298,14 @@ namespace TencentCloud
 
                     /**
                      * 获取旧版本version
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldDeployVersion 旧版本version
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldDeployVersion() const;
 
                     /**
                      * 设置旧版本version
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldDeployVersion 旧版本version
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldDeployVersion(const std::string& _oldDeployVersion);
@@ -351,18 +319,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewVersionPackageInfo 包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewVersionPackageInfo() const;
 
                     /**
                      * 设置包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newVersionPackageInfo 包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewVersionPackageInfo(const std::string& _newVersionPackageInfo);
@@ -410,21 +374,18 @@ namespace TencentCloud
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 当前状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -438,7 +399,6 @@ namespace TencentCloud
 
                     /**
                      * 其他分批详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeployServiceBatchDetail> m_otherBatchDetail;
                     bool m_otherBatchDetailHasBeenSet;
@@ -459,35 +419,30 @@ namespace TencentCloud
 
                     /**
                      * 错误原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
                      * 当前批次状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentBatchStatus;
                     bool m_currentBatchStatusHasBeenSet;
 
                     /**
                      * 新版本version
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newDeployVersion;
                     bool m_newDeployVersionHasBeenSet;
 
                     /**
                      * 旧版本version
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldDeployVersion;
                     bool m_oldDeployVersionHasBeenSet;
 
                     /**
                      * 包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newVersionPackageInfo;
                     bool m_newVersionPackageInfoHasBeenSet;

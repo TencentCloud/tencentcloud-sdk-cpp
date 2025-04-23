@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tds/v20220801/model/DescribeFinanceFraudUltimateRequest.h>
+#include <tencentcloud/tds/v20220801/model/DescribeFinanceFraudUltimateResponse.h>
 #include <tencentcloud/tds/v20220801/model/DescribeFraudBaseRequest.h>
 #include <tencentcloud/tds/v20220801/model/DescribeFraudBaseResponse.h>
 #include <tencentcloud/tds/v20220801/model/DescribeFraudPremiumRequest.h>
@@ -45,6 +47,9 @@ namespace TencentCloud
                 TdsClient(const Credential &credential, const std::string &region);
                 TdsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::DescribeFinanceFraudUltimateResponse> DescribeFinanceFraudUltimateOutcome;
+                typedef std::future<DescribeFinanceFraudUltimateOutcome> DescribeFinanceFraudUltimateOutcomeCallable;
+                typedef std::function<void(const TdsClient*, const Model::DescribeFinanceFraudUltimateRequest&, DescribeFinanceFraudUltimateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFinanceFraudUltimateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFraudBaseResponse> DescribeFraudBaseOutcome;
                 typedef std::future<DescribeFraudBaseOutcome> DescribeFraudBaseOutcomeCallable;
                 typedef std::function<void(const TdsClient*, const Model::DescribeFraudBaseRequest&, DescribeFraudBaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFraudBaseAsyncHandler;
@@ -59,6 +64,15 @@ namespace TencentCloud
                 typedef std::function<void(const TdsClient*, const Model::DescribeTrustedIDRequest&, DescribeTrustedIDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrustedIDAsyncHandler;
 
 
+
+                /**
+                 *查询设备标识及风险（金融旗舰版）
+                 * @param req DescribeFinanceFraudUltimateRequest
+                 * @return DescribeFinanceFraudUltimateOutcome
+                 */
+                DescribeFinanceFraudUltimateOutcome DescribeFinanceFraudUltimate(const Model::DescribeFinanceFraudUltimateRequest &request);
+                void DescribeFinanceFraudUltimateAsync(const Model::DescribeFinanceFraudUltimateRequest& request, const DescribeFinanceFraudUltimateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFinanceFraudUltimateOutcomeCallable DescribeFinanceFraudUltimateCallable(const Model::DescribeFinanceFraudUltimateRequest& request);
 
                 /**
                  *查询设备风险

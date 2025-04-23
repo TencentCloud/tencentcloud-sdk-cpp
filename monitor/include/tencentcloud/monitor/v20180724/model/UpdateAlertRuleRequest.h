@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Prometheus 高警规则 ID
-                     * @return RuleId Prometheus 高警规则 ID
+                     * 获取Prometheus 告警规则 ID
+                     * @return RuleId Prometheus 告警规则 ID
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置Prometheus 高警规则 ID
-                     * @param _ruleId Prometheus 高警规则 ID
+                     * 设置Prometheus 告警规则 ID
+                     * @param _ruleId Prometheus 告警规则 ID
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -207,15 +207,15 @@ namespace TencentCloud
                     bool ReceiversHasBeenSet() const;
 
                     /**
-                     * 获取报警规则标签列表
-                     * @return Labels 报警规则标签列表
+                     * 获取告警规则标签列表
+                     * @return Labels 告警规则标签列表
                      * 
                      */
                     std::vector<PrometheusRuleKV> GetLabels() const;
 
                     /**
-                     * 设置报警规则标签列表
-                     * @param _labels 报警规则标签列表
+                     * 设置告警规则标签列表
+                     * @param _labels 告警规则标签列表
                      * 
                      */
                     void SetLabels(const std::vector<PrometheusRuleKV>& _labels);
@@ -228,10 +228,10 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取报警规则注释列表。
+                     * 获取告警规则注释列表。
 
 告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
-                     * @return Annotations 报警规则注释列表。
+                     * @return Annotations 告警规则注释列表。
 
 告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
                      * 
@@ -239,10 +239,10 @@ namespace TencentCloud
                     std::vector<PrometheusRuleKV> GetAnnotations() const;
 
                     /**
-                     * 设置报警规则注释列表。
+                     * 设置告警规则注释列表。
 
 告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
-                     * @param _annotations 报警规则注释列表。
+                     * @param _annotations 告警规则注释列表。
 
 告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
                      * 
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool AnnotationsHasBeenSet() const;
 
                     /**
-                     * 获取报警策略模板分类(自定义，可不填)
-                     * @return Type 报警策略模板分类(自定义，可不填)
+                     * 获取告警策略模板分类(自定义，可不填)
+                     * @return Type 告警策略模板分类(自定义，可不填)
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置报警策略模板分类(自定义，可不填)
-                     * @param _type 报警策略模板分类(自定义，可不填)
+                     * 设置告警策略模板分类(自定义，可不填)
+                     * @param _type 告警策略模板分类(自定义，可不填)
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -280,7 +280,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Prometheus 高警规则 ID
+                     * Prometheus 告警规则 ID
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
@@ -326,13 +326,13 @@ namespace TencentCloud
                     bool m_receiversHasBeenSet;
 
                     /**
-                     * 报警规则标签列表
+                     * 告警规则标签列表
                      */
                     std::vector<PrometheusRuleKV> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 报警规则注释列表。
+                     * 告警规则注释列表。
 
 告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
                      */
@@ -340,7 +340,7 @@ namespace TencentCloud
                     bool m_annotationsHasBeenSet;
 
                     /**
-                     * 报警策略模板分类(自定义，可不填)
+                     * 告警策略模板分类(自定义，可不填)
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

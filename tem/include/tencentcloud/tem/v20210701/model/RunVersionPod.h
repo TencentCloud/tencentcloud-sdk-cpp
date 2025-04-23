@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -179,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployVersion 部署版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeployVersion() const;
 
                     /**
                      * 设置部署版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployVersion 部署版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployVersion(const std::string& _deployVersion);
@@ -204,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重启次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestartCount 重启次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRestartCount() const;
 
                     /**
                      * 设置重启次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _restartCount 重启次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRestartCount(const int64_t& _restartCount);
@@ -229,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod是否就绪
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ready pod是否就绪
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetReady() const;
 
                     /**
                      * 设置pod是否就绪
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ready pod是否就绪
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReady(const bool& _ready);
@@ -254,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerState 容器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerState() const;
 
                     /**
                      * 设置容器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerState 容器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerState(const std::string& _containerState);
@@ -279,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所在节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeInfo 实例所在节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NodeInfo GetNodeInfo() const;
 
                     /**
                      * 设置实例所在节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeInfo 实例所在节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeInfo(const NodeInfo& _nodeInfo);
@@ -304,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -354,18 +326,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不健康时的提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnhealthyWarningMsg 不健康时的提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnhealthyWarningMsg() const;
 
                     /**
                      * 设置不健康时的提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unhealthyWarningMsg 不健康时的提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnhealthyWarningMsg(const std::string& _unhealthyWarningMsg);
@@ -379,18 +347,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionId 版本ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置版本ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionId 版本ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionId(const std::string& _versionId);
@@ -404,18 +368,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -461,49 +421,42 @@ namespace TencentCloud
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 部署版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployVersion;
                     bool m_deployVersionHasBeenSet;
 
                     /**
                      * 重启次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_restartCount;
                     bool m_restartCountHasBeenSet;
 
                     /**
                      * pod是否就绪
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_ready;
                     bool m_readyHasBeenSet;
 
                     /**
                      * 容器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerState;
                     bool m_containerStateHasBeenSet;
 
                     /**
                      * 实例所在节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NodeInfo m_nodeInfo;
                     bool m_nodeInfoHasBeenSet;
 
                     /**
                      * 启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -517,21 +470,18 @@ namespace TencentCloud
 
                     /**
                      * 不健康时的提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unhealthyWarningMsg;
                     bool m_unhealthyWarningMsgHasBeenSet;
 
                     /**
                      * 版本ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
                      * 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;

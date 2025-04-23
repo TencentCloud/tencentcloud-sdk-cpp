@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodId pod Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodId() const;
 
                     /**
                      * 设置pod Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podId pod Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodId(const std::string& _podId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodStatus pod状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPodStatus() const;
 
                     /**
                      * 设置pod状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podStatus pod状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodStatus(const std::vector<std::string>& _podStatus);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodVersion pod版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodVersion() const;
 
                     /**
                      * 设置pod版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podVersion pod版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodVersion(const std::string& _podVersion);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime pod创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置pod创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime pod创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone pod所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置pod所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone pod所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取webshell地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Webshell webshell地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWebshell() const;
 
                     /**
                      * 设置webshell地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _webshell webshell地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWebshell(const std::string& _webshell);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * pod Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podId;
                     bool m_podIdHasBeenSet;
 
                     /**
                      * pod状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_podStatus;
                     bool m_podStatusHasBeenSet;
 
                     /**
                      * pod版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podVersion;
                     bool m_podVersionHasBeenSet;
 
                     /**
                      * pod创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * pod所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * webshell地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webshell;
                     bool m_webshellHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

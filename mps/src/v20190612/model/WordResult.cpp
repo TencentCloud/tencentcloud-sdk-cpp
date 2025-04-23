@@ -23,7 +23,8 @@ using namespace std;
 WordResult::WordResult() :
     m_wordHasBeenSet(false),
     m_startHasBeenSet(false),
-    m_endHasBeenSet(false)
+    m_endHasBeenSet(false),
+    m_transHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome WordResult::Deserialize(const rapidjson::Value &value)
         m_endHasBeenSet = true;
     }
 
+    if (value.HasMember("Trans") && !value["Trans"].IsNull())
+    {
+        if (!value["Trans"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WordResult.Trans` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trans = string(value["Trans"].GetString());
+        m_transHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void WordResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "End";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_end, allocator);
+    }
+
+    if (m_transHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Trans";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trans.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void WordResult::SetEnd(const double& _end)
 bool WordResult::EndHasBeenSet() const
 {
     return m_endHasBeenSet;
+}
+
+string WordResult::GetTrans() const
+{
+    return m_trans;
+}
+
+void WordResult::SetTrans(const string& _trans)
+{
+    m_trans = _trans;
+    m_transHasBeenSet = true;
+}
+
+bool WordResult::TransHasBeenSet() const
+{
+    return m_transHasBeenSet;
 }
 

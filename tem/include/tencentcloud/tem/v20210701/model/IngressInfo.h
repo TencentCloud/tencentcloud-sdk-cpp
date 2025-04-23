@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentId 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _environmentId 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
@@ -138,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取clb ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClbId clb ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClbId() const;
 
                     /**
                      * 设置clb ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clbId clb ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClbId(const std::string& _clbId);
@@ -209,18 +201,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 环境集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置环境集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 环境集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -234,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取clb ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip clb ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置clb ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip clb ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -259,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -307,11 +287,9 @@ namespace TencentCloud
                      * 获取重定向模式，可选值：
 - AUTO（自动重定向http到https）
 - NONE（不使用重定向）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RewriteType 重定向模式，可选值：
 - AUTO（自动重定向http到https）
 - NONE（不使用重定向）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRewriteType() const;
@@ -320,11 +298,9 @@ namespace TencentCloud
                      * 设置重定向模式，可选值：
 - AUTO（自动重定向http到https）
 - NONE（不使用重定向）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rewriteType 重定向模式，可选值：
 - AUTO（自动重定向http到https）
 - NONE（不使用重定向）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRewriteType(const std::string& _rewriteType);
@@ -338,18 +314,14 @@ namespace TencentCloud
 
                     /**
                      * 获取clb 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain clb 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置clb 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain clb 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -365,7 +337,6 @@ namespace TencentCloud
 
                     /**
                      * 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
@@ -390,7 +361,6 @@ namespace TencentCloud
 
                     /**
                      * clb ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clbId;
                     bool m_clbIdHasBeenSet;
@@ -410,21 +380,18 @@ namespace TencentCloud
 
                     /**
                      * 环境集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * clb ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -439,14 +406,12 @@ namespace TencentCloud
                      * 重定向模式，可选值：
 - AUTO（自动重定向http到https）
 - NONE（不使用重定向）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rewriteType;
                     bool m_rewriteTypeHasBeenSet;
 
                     /**
                      * clb 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

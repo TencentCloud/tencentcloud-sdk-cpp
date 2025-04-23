@@ -63,7 +63,8 @@ InstanceInfo::InstanceInfo() :
     m_billingItemHasBeenSet(false),
     m_freeDelayFlagHasBeenSet(false),
     m_last3MaxQPSHasBeenSet(false),
-    m_last3MaxBandwidthHasBeenSet(false)
+    m_last3MaxBandwidthHasBeenSet(false),
+    m_majorEventsProPkgHasBeenSet(false)
 {
 }
 
@@ -572,6 +573,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_last3MaxBandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("MajorEventsProPkg") && !value["MajorEventsProPkg"].IsNull())
+    {
+        if (!value["MajorEventsProPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MajorEventsProPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_majorEventsProPkg.Deserialize(value["MajorEventsProPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_majorEventsProPkgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -931,6 +949,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Last3MaxBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_last3MaxBandwidth, allocator);
+    }
+
+    if (m_majorEventsProPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MajorEventsProPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_majorEventsProPkg.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1622,5 +1649,21 @@ void InstanceInfo::SetLast3MaxBandwidth(const uint64_t& _last3MaxBandwidth)
 bool InstanceInfo::Last3MaxBandwidthHasBeenSet() const
 {
     return m_last3MaxBandwidthHasBeenSet;
+}
+
+MajorEventsProPkg InstanceInfo::GetMajorEventsProPkg() const
+{
+    return m_majorEventsProPkg;
+}
+
+void InstanceInfo::SetMajorEventsProPkg(const MajorEventsProPkg& _majorEventsProPkg)
+{
+    m_majorEventsProPkg = _majorEventsProPkg;
+    m_majorEventsProPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::MajorEventsProPkgHasBeenSet() const
+{
+    return m_majorEventsProPkgHasBeenSet;
 }
 

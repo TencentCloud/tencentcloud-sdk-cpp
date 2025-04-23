@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Config 配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfig() const;
 
                     /**
                      * 设置配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _config 配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfig(const std::string& _config);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加密配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Secret 加密配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecret() const;
 
                     /**
                      * 设置加密配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secret 加密配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecret(const std::string& _secret);
@@ -179,21 +167,18 @@ namespace TencentCloud
 
                     /**
                      * 类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
 
                     /**
                      * 加密配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secret;
                     bool m_secretHasBeenSet;

@@ -85,6 +85,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagHistoryRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagHistoryResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportContentRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportContentResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBPerfTimeSeriesRequest.h>
@@ -284,6 +286,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBDiagHistoryResponse> DescribeDBDiagHistoryOutcome;
                 typedef std::future<DescribeDBDiagHistoryOutcome> DescribeDBDiagHistoryOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagHistoryRequest&, DescribeDBDiagHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBDiagReportContentResponse> DescribeDBDiagReportContentOutcome;
+                typedef std::future<DescribeDBDiagReportContentOutcome> DescribeDBDiagReportContentOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagReportContentRequest&, DescribeDBDiagReportContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagReportContentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBDiagReportTasksResponse> DescribeDBDiagReportTasksOutcome;
                 typedef std::future<DescribeDBDiagReportTasksOutcome> DescribeDBDiagReportTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagReportTasksRequest&, DescribeDBDiagReportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagReportTasksAsyncHandler;
@@ -703,6 +708,15 @@ namespace TencentCloud
                 DescribeDBDiagHistoryOutcome DescribeDBDiagHistory(const Model::DescribeDBDiagHistoryRequest &request);
                 void DescribeDBDiagHistoryAsync(const Model::DescribeDBDiagHistoryRequest& request, const DescribeDBDiagHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBDiagHistoryOutcomeCallable DescribeDBDiagHistoryCallable(const Model::DescribeDBDiagHistoryRequest& request);
+
+                /**
+                 *健康报告内容。
+                 * @param req DescribeDBDiagReportContentRequest
+                 * @return DescribeDBDiagReportContentOutcome
+                 */
+                DescribeDBDiagReportContentOutcome DescribeDBDiagReportContent(const Model::DescribeDBDiagReportContentRequest &request);
+                void DescribeDBDiagReportContentAsync(const Model::DescribeDBDiagReportContentRequest& request, const DescribeDBDiagReportContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBDiagReportContentOutcomeCallable DescribeDBDiagReportContentCallable(const Model::DescribeDBDiagReportContentRequest& request);
 
                 /**
                  *查询健康报告生成任务列表。

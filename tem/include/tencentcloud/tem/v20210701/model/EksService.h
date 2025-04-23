@@ -113,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationName 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -138,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 版本名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionName 版本名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionName(const std::string& _versionName);
@@ -163,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterIp 内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetClusterIp() const;
 
                     /**
                      * 设置内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterIp 内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterIp(const std::vector<std::string>& _clusterIp);
@@ -188,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalIp 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExternalIp() const;
 
                     /**
                      * 设置外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _externalIp 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExternalIp(const std::string& _externalIp);
@@ -216,12 +200,10 @@ namespace TencentCloud
 - EXTERNAL（公网访问）
 - VPC（vpc内访问）
 - CLUSTER（集群内访问）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 访问类型，可选值：
 - EXTERNAL（公网访问）
 - VPC（vpc内访问）
 - CLUSTER（集群内访问）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
@@ -231,12 +213,10 @@ namespace TencentCloud
 - EXTERNAL（公网访问）
 - VPC（vpc内访问）
 - CLUSTER（集群内访问）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 访问类型，可选值：
 - EXTERNAL（公网访问）
 - VPC（vpc内访问）
 - CLUSTER（集群内访问）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -250,18 +230,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID，只在类型为vpc访问时才有值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID，只在类型为vpc访问时才有值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID，只在类型为vpc访问时才有值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网ID，只在类型为vpc访问时才有值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -275,18 +251,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡ID，只在外网访问和vpc内访问才有值，默认自动创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalanceId 负载均衡ID，只在外网访问和vpc内访问才有值，默认自动创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoadBalanceId() const;
 
                     /**
                      * 设置负载均衡ID，只在外网访问和vpc内访问才有值，默认自动创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalanceId 负载均衡ID，只在外网访问和vpc内访问才有值，默认自动创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalanceId(const std::string& _loadBalanceId);
@@ -300,18 +272,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PortMappings 端口映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PortMapping> GetPortMappings() const;
 
                     /**
                      * 设置端口映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _portMappings 端口映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPortMappings(const std::vector<PortMapping>& _portMappings);
@@ -325,18 +293,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每种类型访问配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServicePortMappingList 每种类型访问配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServicePortMapping> GetServicePortMappingList() const;
 
                     /**
                      * 设置每种类型访问配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _servicePortMappingList 每种类型访问配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServicePortMappingList(const std::vector<ServicePortMapping>& _servicePortMappingList);
@@ -350,18 +314,14 @@ namespace TencentCloud
 
                     /**
                      * 获取刷新复写所有类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlushAll 刷新复写所有类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetFlushAll() const;
 
                     /**
                      * 设置刷新复写所有类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flushAll 刷新复写所有类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlushAll(const bool& _flushAll);
@@ -400,18 +360,14 @@ namespace TencentCloud
 
                     /**
                      * 获取返回应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 返回应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置返回应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId 返回应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -425,18 +381,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所有服务IP是否已经ready
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllIpDone 所有服务IP是否已经ready
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAllIpDone() const;
 
                     /**
                      * 设置所有服务IP是否已经ready
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allIpDone 所有服务IP是否已经ready
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllIpDone(const bool& _allIpDone);
@@ -450,18 +402,14 @@ namespace TencentCloud
 
                     /**
                      * 获取clb 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalDomain clb 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExternalDomain() const;
 
                     /**
                      * 设置clb 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _externalDomain clb 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExternalDomain(const std::string& _externalDomain);
@@ -495,28 +443,24 @@ namespace TencentCloud
 
                     /**
                      * 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
                      * 版本名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;
 
                     /**
                      * 内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_clusterIp;
                     bool m_clusterIpHasBeenSet;
 
                     /**
                      * 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_externalIp;
                     bool m_externalIpHasBeenSet;
@@ -526,42 +470,36 @@ namespace TencentCloud
 - EXTERNAL（公网访问）
 - VPC（vpc内访问）
 - CLUSTER（集群内访问）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 子网ID，只在类型为vpc访问时才有值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 负载均衡ID，只在外网访问和vpc内访问才有值，默认自动创建
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loadBalanceId;
                     bool m_loadBalanceIdHasBeenSet;
 
                     /**
                      * 端口映射
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PortMapping> m_portMappings;
                     bool m_portMappingsHasBeenSet;
 
                     /**
                      * 每种类型访问配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServicePortMapping> m_servicePortMappingList;
                     bool m_servicePortMappingListHasBeenSet;
 
                     /**
                      * 刷新复写所有类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_flushAll;
                     bool m_flushAllHasBeenSet;
@@ -575,21 +513,18 @@ namespace TencentCloud
 
                     /**
                      * 返回应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
                      * 所有服务IP是否已经ready
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_allIpDone;
                     bool m_allIpDoneHasBeenSet;
 
                     /**
                      * clb 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_externalDomain;
                     bool m_externalDomainHasBeenSet;

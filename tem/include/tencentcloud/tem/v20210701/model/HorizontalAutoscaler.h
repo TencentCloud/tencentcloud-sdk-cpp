@@ -209,18 +209,14 @@ FS_SIZE_READ(磁盘读大小，MiB/s)
 
                     /**
                      * 获取阈值（小数，优先使用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DoubleThreshold 阈值（小数，优先使用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDoubleThreshold() const;
 
                     /**
                      * 设置阈值（小数，优先使用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _doubleThreshold 阈值（小数，优先使用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDoubleThreshold(const double& _doubleThreshold);
@@ -280,7 +276,6 @@ FS_SIZE_READ(磁盘读大小，MiB/s)
 
                     /**
                      * 阈值（小数，优先使用）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_doubleThreshold;
                     bool m_doubleThresholdHasBeenSet;

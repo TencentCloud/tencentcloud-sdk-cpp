@@ -24,6 +24,7 @@ QualityControlData::QualityControlData() :
     m_noAudioHasBeenSet(false),
     m_noVideoHasBeenSet(false),
     m_qualityEvaluationScoreHasBeenSet(false),
+    m_qualityEvaluationMeanOpinionScoreHasBeenSet(false),
     m_qualityControlResultSetHasBeenSet(false),
     m_containerDiagnoseResultSetHasBeenSet(false)
 {
@@ -62,6 +63,16 @@ CoreInternalOutcome QualityControlData::Deserialize(const rapidjson::Value &valu
         }
         m_qualityEvaluationScore = value["QualityEvaluationScore"].GetInt64();
         m_qualityEvaluationScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("QualityEvaluationMeanOpinionScore") && !value["QualityEvaluationMeanOpinionScore"].IsNull())
+    {
+        if (!value["QualityEvaluationMeanOpinionScore"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityControlData.QualityEvaluationMeanOpinionScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_qualityEvaluationMeanOpinionScore = value["QualityEvaluationMeanOpinionScore"].GetDouble();
+        m_qualityEvaluationMeanOpinionScoreHasBeenSet = true;
     }
 
     if (value.HasMember("QualityControlResultSet") && !value["QualityControlResultSet"].IsNull())
@@ -133,6 +144,14 @@ void QualityControlData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "QualityEvaluationScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qualityEvaluationScore, allocator);
+    }
+
+    if (m_qualityEvaluationMeanOpinionScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityEvaluationMeanOpinionScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qualityEvaluationMeanOpinionScore, allocator);
     }
 
     if (m_qualityControlResultSetHasBeenSet)
@@ -214,6 +233,22 @@ void QualityControlData::SetQualityEvaluationScore(const int64_t& _qualityEvalua
 bool QualityControlData::QualityEvaluationScoreHasBeenSet() const
 {
     return m_qualityEvaluationScoreHasBeenSet;
+}
+
+double QualityControlData::GetQualityEvaluationMeanOpinionScore() const
+{
+    return m_qualityEvaluationMeanOpinionScore;
+}
+
+void QualityControlData::SetQualityEvaluationMeanOpinionScore(const double& _qualityEvaluationMeanOpinionScore)
+{
+    m_qualityEvaluationMeanOpinionScore = _qualityEvaluationMeanOpinionScore;
+    m_qualityEvaluationMeanOpinionScoreHasBeenSet = true;
+}
+
+bool QualityControlData::QualityEvaluationMeanOpinionScoreHasBeenSet() const
+{
+    return m_qualityEvaluationMeanOpinionScoreHasBeenSet;
 }
 
 vector<QualityControlResult> QualityControlData::GetQualityControlResultSet() const

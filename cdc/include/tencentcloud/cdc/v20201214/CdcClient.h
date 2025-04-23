@@ -25,10 +25,14 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cdc/v20201214/model/CreateDedicatedClusterRequest.h>
 #include <tencentcloud/cdc/v20201214/model/CreateDedicatedClusterResponse.h>
+#include <tencentcloud/cdc/v20201214/model/CreateDedicatedClusterImageCacheRequest.h>
+#include <tencentcloud/cdc/v20201214/model/CreateDedicatedClusterImageCacheResponse.h>
 #include <tencentcloud/cdc/v20201214/model/CreateDedicatedClusterOrderRequest.h>
 #include <tencentcloud/cdc/v20201214/model/CreateDedicatedClusterOrderResponse.h>
 #include <tencentcloud/cdc/v20201214/model/CreateSiteRequest.h>
 #include <tencentcloud/cdc/v20201214/model/CreateSiteResponse.h>
+#include <tencentcloud/cdc/v20201214/model/DeleteDedicatedClusterImageCacheRequest.h>
+#include <tencentcloud/cdc/v20201214/model/DeleteDedicatedClusterImageCacheResponse.h>
 #include <tencentcloud/cdc/v20201214/model/DeleteDedicatedClustersRequest.h>
 #include <tencentcloud/cdc/v20201214/model/DeleteDedicatedClustersResponse.h>
 #include <tencentcloud/cdc/v20201214/model/DeleteSitesRequest.h>
@@ -82,12 +86,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDedicatedClusterResponse> CreateDedicatedClusterOutcome;
                 typedef std::future<CreateDedicatedClusterOutcome> CreateDedicatedClusterOutcomeCallable;
                 typedef std::function<void(const CdcClient*, const Model::CreateDedicatedClusterRequest&, CreateDedicatedClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDedicatedClusterImageCacheResponse> CreateDedicatedClusterImageCacheOutcome;
+                typedef std::future<CreateDedicatedClusterImageCacheOutcome> CreateDedicatedClusterImageCacheOutcomeCallable;
+                typedef std::function<void(const CdcClient*, const Model::CreateDedicatedClusterImageCacheRequest&, CreateDedicatedClusterImageCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedClusterImageCacheAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDedicatedClusterOrderResponse> CreateDedicatedClusterOrderOutcome;
                 typedef std::future<CreateDedicatedClusterOrderOutcome> CreateDedicatedClusterOrderOutcomeCallable;
                 typedef std::function<void(const CdcClient*, const Model::CreateDedicatedClusterOrderRequest&, CreateDedicatedClusterOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedClusterOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSiteResponse> CreateSiteOutcome;
                 typedef std::future<CreateSiteOutcome> CreateSiteOutcomeCallable;
                 typedef std::function<void(const CdcClient*, const Model::CreateSiteRequest&, CreateSiteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSiteAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDedicatedClusterImageCacheResponse> DeleteDedicatedClusterImageCacheOutcome;
+                typedef std::future<DeleteDedicatedClusterImageCacheOutcome> DeleteDedicatedClusterImageCacheOutcomeCallable;
+                typedef std::function<void(const CdcClient*, const Model::DeleteDedicatedClusterImageCacheRequest&, DeleteDedicatedClusterImageCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDedicatedClusterImageCacheAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDedicatedClustersResponse> DeleteDedicatedClustersOutcome;
                 typedef std::future<DeleteDedicatedClustersOutcome> DeleteDedicatedClustersOutcomeCallable;
                 typedef std::function<void(const CdcClient*, const Model::DeleteDedicatedClustersRequest&, DeleteDedicatedClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDedicatedClustersAsyncHandler;
@@ -155,6 +165,15 @@ namespace TencentCloud
                 CreateDedicatedClusterOutcomeCallable CreateDedicatedClusterCallable(const Model::CreateDedicatedClusterRequest& request);
 
                 /**
+                 *创建云上镜像缓存到本地专用集群中
+                 * @param req CreateDedicatedClusterImageCacheRequest
+                 * @return CreateDedicatedClusterImageCacheOutcome
+                 */
+                CreateDedicatedClusterImageCacheOutcome CreateDedicatedClusterImageCache(const Model::CreateDedicatedClusterImageCacheRequest &request);
+                void CreateDedicatedClusterImageCacheAsync(const Model::CreateDedicatedClusterImageCacheRequest& request, const CreateDedicatedClusterImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDedicatedClusterImageCacheOutcomeCallable CreateDedicatedClusterImageCacheCallable(const Model::CreateDedicatedClusterImageCacheRequest& request);
+
+                /**
                  *创建专用集群订单
                  * @param req CreateDedicatedClusterOrderRequest
                  * @return CreateDedicatedClusterOrderOutcome
@@ -171,6 +190,15 @@ namespace TencentCloud
                 CreateSiteOutcome CreateSite(const Model::CreateSiteRequest &request);
                 void CreateSiteAsync(const Model::CreateSiteRequest& request, const CreateSiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSiteOutcomeCallable CreateSiteCallable(const Model::CreateSiteRequest& request);
+
+                /**
+                 *删除本地专用集群的云上镜像缓存
+                 * @param req DeleteDedicatedClusterImageCacheRequest
+                 * @return DeleteDedicatedClusterImageCacheOutcome
+                 */
+                DeleteDedicatedClusterImageCacheOutcome DeleteDedicatedClusterImageCache(const Model::DeleteDedicatedClusterImageCacheRequest &request);
+                void DeleteDedicatedClusterImageCacheAsync(const Model::DeleteDedicatedClusterImageCacheRequest& request, const DeleteDedicatedClusterImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDedicatedClusterImageCacheOutcomeCallable DeleteDedicatedClusterImageCacheCallable(const Model::DeleteDedicatedClusterImageCacheRequest& request);
 
                 /**
                  *删除专用集群

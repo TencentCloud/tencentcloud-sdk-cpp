@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/HLSConfigureInfo.h>
+#include <tencentcloud/mps/v20190612/model/MP4ConfigureInfo.h>
 
 
 namespace TencentCloud
@@ -88,6 +89,27 @@ namespace TencentCloud
                      * 
                      */
                     bool HLSConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取MP4配置参数
+                     * @return MP4Configure MP4配置参数
+                     * 
+                     */
+                    MP4ConfigureInfo GetMP4Configure() const;
+
+                    /**
+                     * 设置MP4配置参数
+                     * @param _mP4Configure MP4配置参数
+                     * 
+                     */
+                    void SetMP4Configure(const MP4ConfigureInfo& _mP4Configure);
+
+                    /**
+                     * 判断参数 MP4Configure 是否已赋值
+                     * @return MP4Configure 是否已赋值
+                     * 
+                     */
+                    bool MP4ConfigureHasBeenSet() const;
 
                     /**
                      * 获取录制模板名称。
@@ -215,6 +237,12 @@ namespace TencentCloud
                      */
                     HLSConfigureInfo m_hLSConfigure;
                     bool m_hLSConfigureHasBeenSet;
+
+                    /**
+                     * MP4配置参数
+                     */
+                    MP4ConfigureInfo m_mP4Configure;
+                    bool m_mP4ConfigureHasBeenSet;
 
                     /**
                      * 录制模板名称。

@@ -23,6 +23,7 @@ using namespace std;
 LiveRecordTemplate::LiveRecordTemplate() :
     m_definitionHasBeenSet(false),
     m_hLSConfigureHasBeenSet(false),
+    m_mP4ConfigureHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_typeHasBeenSet(false),
@@ -61,6 +62,23 @@ CoreInternalOutcome LiveRecordTemplate::Deserialize(const rapidjson::Value &valu
         }
 
         m_hLSConfigureHasBeenSet = true;
+    }
+
+    if (value.HasMember("MP4Configure") && !value["MP4Configure"].IsNull())
+    {
+        if (!value["MP4Configure"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveRecordTemplate.MP4Configure` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mP4Configure.Deserialize(value["MP4Configure"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mP4ConfigureHasBeenSet = true;
     }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
@@ -137,6 +155,15 @@ void LiveRecordTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         m_hLSConfigure.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_mP4ConfigureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MP4Configure";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mP4Configure.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -210,6 +237,22 @@ void LiveRecordTemplate::SetHLSConfigure(const HLSConfigureInfo& _hLSConfigure)
 bool LiveRecordTemplate::HLSConfigureHasBeenSet() const
 {
     return m_hLSConfigureHasBeenSet;
+}
+
+MP4ConfigureInfo LiveRecordTemplate::GetMP4Configure() const
+{
+    return m_mP4Configure;
+}
+
+void LiveRecordTemplate::SetMP4Configure(const MP4ConfigureInfo& _mP4Configure)
+{
+    m_mP4Configure = _mP4Configure;
+    m_mP4ConfigureHasBeenSet = true;
+}
+
+bool LiveRecordTemplate::MP4ConfigureHasBeenSet() const
+{
+    return m_mP4ConfigureHasBeenSet;
 }
 
 string LiveRecordTemplate::GetName() const

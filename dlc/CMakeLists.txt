@@ -165,6 +165,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/WorkGroups.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementResponse.h
   include/tencentcloud/dlc/v20210125/model/ListTaskJobLogNameResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeClusterMonitorInfosResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultRequest.h
   include/tencentcloud/dlc/v20210125/model/OtherCHDFSBinding.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSTableRequest.h
@@ -248,6 +249,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/QueryResultRequest.h
   include/tencentcloud/dlc/v20210125/model/CheckDataEngineImageCanBeRollbackRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTaskRequest.h
+  include/tencentcloud/dlc/v20210125/model/DescribeClusterMonitorInfosRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTableRequest.h
   include/tencentcloud/dlc/v20210125/model/TaskMonitorInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSqlLogRequest.h
@@ -578,6 +580,7 @@ set(dlc_src
   src/v20210125/model/WorkGroups.cpp
   src/v20210125/model/CreateNotebookSessionStatementResponse.cpp
   src/v20210125/model/ListTaskJobLogNameResponse.cpp
+  src/v20210125/model/DescribeClusterMonitorInfosResponse.cpp
   src/v20210125/model/DescribeLakeFsTaskResultRequest.cpp
   src/v20210125/model/OtherCHDFSBinding.cpp
   src/v20210125/model/AlterDMSTableRequest.cpp
@@ -661,6 +664,7 @@ set(dlc_src
   src/v20210125/model/QueryResultRequest.cpp
   src/v20210125/model/CheckDataEngineImageCanBeRollbackRequest.cpp
   src/v20210125/model/CreateTaskRequest.cpp
+  src/v20210125/model/DescribeClusterMonitorInfosRequest.cpp
   src/v20210125/model/CreateTableRequest.cpp
   src/v20210125/model/TaskMonitorInfo.cpp
   src/v20210125/model/DescribeSparkSessionBatchSqlLogRequest.cpp

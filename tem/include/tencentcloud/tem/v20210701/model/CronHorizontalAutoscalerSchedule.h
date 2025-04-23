@@ -77,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标实例数（不大于50）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetReplicas 目标实例数（不大于50）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTargetReplicas() const;
 
                     /**
                      * 设置目标实例数（不大于50）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetReplicas 目标实例数（不大于50）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetReplicas(const int64_t& _targetReplicas);
@@ -112,7 +108,6 @@ namespace TencentCloud
 
                     /**
                      * 目标实例数（不大于50）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_targetReplicas;
                     bool m_targetReplicasHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取成功时为CosToken对象，失败为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 成功时为CosToken对象，失败为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CosToken GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 成功时为CosToken对象，失败为null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CosToken m_result;
                     bool m_resultHasBeenSet;
