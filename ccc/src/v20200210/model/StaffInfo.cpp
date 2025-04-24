@@ -28,6 +28,7 @@ StaffInfo::StaffInfo() :
     m_staffNumberHasBeenSet(false),
     m_roleIdHasBeenSet(false),
     m_roleIdListHasBeenSet(false),
+    m_roleListHasBeenSet(false),
     m_skillGroupListHasBeenSet(false),
     m_lastModifyTimestampHasBeenSet(false),
     m_extensionNumberHasBeenSet(false)
@@ -107,6 +108,19 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
         }
         m_roleIdList = value["RoleIdList"].GetUint64();
         m_roleIdListHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoleList") && !value["RoleList"].IsNull())
+    {
+        if (!value["RoleList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.RoleList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RoleList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_roleList.push_back((*itr).GetUint64());
+        }
+        m_roleListHasBeenSet = true;
     }
 
     if (value.HasMember("SkillGroupList") && !value["SkillGroupList"].IsNull())
@@ -210,6 +224,19 @@ void StaffInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RoleIdList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_roleIdList, allocator);
+    }
+
+    if (m_roleListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_roleList.begin(); itr != m_roleList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
     if (m_skillGroupListHasBeenSet)
@@ -356,6 +383,22 @@ void StaffInfo::SetRoleIdList(const uint64_t& _roleIdList)
 bool StaffInfo::RoleIdListHasBeenSet() const
 {
     return m_roleIdListHasBeenSet;
+}
+
+vector<uint64_t> StaffInfo::GetRoleList() const
+{
+    return m_roleList;
+}
+
+void StaffInfo::SetRoleList(const vector<uint64_t>& _roleList)
+{
+    m_roleList = _roleList;
+    m_roleListHasBeenSet = true;
+}
+
+bool StaffInfo::RoleListHasBeenSet() const
+{
+    return m_roleListHasBeenSet;
 }
 
 vector<SkillGroupItem> StaffInfo::GetSkillGroupList() const

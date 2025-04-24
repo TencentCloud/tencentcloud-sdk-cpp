@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/Service.h>
 #include <tencentcloud/tione/v20211111/model/Tag.h>
+#include <tencentcloud/tione/v20211111/model/AuthToken.h>
 
 
 namespace TencentCloud
@@ -584,6 +585,48 @@ UPDATING 更新中
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启鉴权
+                     * @return AuthorizationEnable 是否开启鉴权
+                     * 
+                     */
+                    bool GetAuthorizationEnable() const;
+
+                    /**
+                     * 设置是否开启鉴权
+                     * @param _authorizationEnable 是否开启鉴权
+                     * 
+                     */
+                    void SetAuthorizationEnable(const bool& _authorizationEnable);
+
+                    /**
+                     * 判断参数 AuthorizationEnable 是否已赋值
+                     * @return AuthorizationEnable 是否已赋值
+                     * 
+                     */
+                    bool AuthorizationEnableHasBeenSet() const;
+
+                    /**
+                     * 获取限流鉴权 token 列表
+                     * @return AuthTokens 限流鉴权 token 列表
+                     * 
+                     */
+                    std::vector<AuthToken> GetAuthTokens() const;
+
+                    /**
+                     * 设置限流鉴权 token 列表
+                     * @param _authTokens 限流鉴权 token 列表
+                     * 
+                     */
+                    void SetAuthTokens(const std::vector<AuthToken>& _authTokens);
+
+                    /**
+                     * 判断参数 AuthTokens 是否已赋值
+                     * @return AuthTokens 是否已赋值
+                     * 
+                     */
+                    bool AuthTokensHasBeenSet() const;
+
                 private:
 
                     /**
@@ -734,6 +777,18 @@ UPDATING 更新中
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * 是否开启鉴权
+                     */
+                    bool m_authorizationEnable;
+                    bool m_authorizationEnableHasBeenSet;
+
+                    /**
+                     * 限流鉴权 token 列表
+                     */
+                    std::vector<AuthToken> m_authTokens;
+                    bool m_authTokensHasBeenSet;
 
                 };
             }

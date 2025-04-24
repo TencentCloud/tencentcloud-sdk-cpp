@@ -95,11 +95,11 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/SSHConfig.h
   include/tencentcloud/tione/v20211111/model/Usage.h
-  include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsRequest.h
+  include/tencentcloud/tione/v20211111/model/AuthTokenBase.h
   include/tencentcloud/tione/v20211111/model/DeleteNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/Filter.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsRequest.h
-  include/tencentcloud/tione/v20211111/model/CreateDatasetRequest.h
+  include/tencentcloud/tione/v20211111/model/CodeRepoConfig.h
   include/tencentcloud/tione/v20211111/model/CreateDatasetResponse.h
   include/tencentcloud/tione/v20211111/model/Service.h
   include/tencentcloud/tione/v20211111/model/CrossTenantENIInfo.h
@@ -112,7 +112,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsResponse.h
   include/tencentcloud/tione/v20211111/model/SpecPrice.h
   include/tencentcloud/tione/v20211111/model/StartNotebookResponse.h
-  include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsRequest.h
+  include/tencentcloud/tione/v20211111/model/CFSTurbo.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionRequest.h
   include/tencentcloud/tione/v20211111/model/ResourceInstanceRunningJobInfo.h
   include/tencentcloud/tione/v20211111/model/ImageFIlter.h
@@ -135,6 +135,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/SchemaInfo.h
   include/tencentcloud/tione/v20211111/model/StartCmdInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupsResponse.h
+  include/tencentcloud/tione/v20211111/model/HTTPGetAction.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.h
   include/tencentcloud/tione/v20211111/model/InferGatewayCallInfo.h
   include/tencentcloud/tione/v20211111/model/CreateNotebookRequest.h
@@ -143,6 +144,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ResourceConfigInfo.h
   include/tencentcloud/tione/v20211111/model/Spec.h
   include/tencentcloud/tione/v20211111/model/GooseFS.h
+  include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsRequest.h
   include/tencentcloud/tione/v20211111/model/Option.h
   include/tencentcloud/tione/v20211111/model/DefaultInnerCallInfo.h
   include/tencentcloud/tione/v20211111/model/Choice.h
@@ -188,6 +190,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/Instance.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingTaskResponse.h
+  include/tencentcloud/tione/v20211111/model/AuthToken.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebooksResponse.h
   include/tencentcloud/tione/v20211111/model/DatasetGroup.h
   include/tencentcloud/tione/v20211111/model/StatefulSetCondition.h
@@ -203,13 +206,15 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceInstanceRunningJobsRequest.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/PodInfo.h
+  include/tencentcloud/tione/v20211111/model/ProbeAction.h
   include/tencentcloud/tione/v20211111/model/ModelInfo.h
-  include/tencentcloud/tione/v20211111/model/CodeRepoConfig.h
+  include/tencentcloud/tione/v20211111/model/CreateDatasetRequest.h
   include/tencentcloud/tione/v20211111/model/CreateModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/ServiceGroup.h
   include/tencentcloud/tione/v20211111/model/ServiceLimit.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookResponse.h
+  include/tencentcloud/tione/v20211111/model/AuthTokenLimit.h
   include/tencentcloud/tione/v20211111/model/CreateTrainingModelResponse.h
   include/tencentcloud/tione/v20211111/model/LogIdentity.h
   include/tencentcloud/tione/v20211111/model/StopModelAccelerateTaskResponse.h
@@ -233,7 +238,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/ChatCompletionResponse.h
   include/tencentcloud/tione/v20211111/model/GooseFSx.h
-  include/tencentcloud/tione/v20211111/model/CFSTurbo.h
+  include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsResponse.h
   include/tencentcloud/tione/v20211111/model/ModelInputInfo.h
   include/tencentcloud/tione/v20211111/model/DeleteDatasetRequest.h
@@ -241,6 +246,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ResourceConf.h
   include/tencentcloud/tione/v20211111/model/PushTrainingMetricsResponse.h
   include/tencentcloud/tione/v20211111/model/StopTrainingTaskResponse.h
+  include/tencentcloud/tione/v20211111/model/HealthProbe.h
   include/tencentcloud/tione/v20211111/model/HDFSConfig.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsResponse.h
   include/tencentcloud/tione/v20211111/model/ModelAccelerateTask.h
@@ -248,6 +254,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DeleteTrainingModelRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceHotUpdatedRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskResponse.h
+  include/tencentcloud/tione/v20211111/model/Probe.h
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/MetricData.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionRequest.h
@@ -339,11 +346,11 @@ set(tione_src
   src/v20211111/model/StartTrainingTaskRequest.cpp
   src/v20211111/model/SSHConfig.cpp
   src/v20211111/model/Usage.cpp
-  src/v20211111/model/DescribeBillingResourceGroupsRequest.cpp
+  src/v20211111/model/AuthTokenBase.cpp
   src/v20211111/model/DeleteNotebookRequest.cpp
   src/v20211111/model/Filter.cpp
   src/v20211111/model/DescribeTrainingModelVersionsRequest.cpp
-  src/v20211111/model/CreateDatasetRequest.cpp
+  src/v20211111/model/CodeRepoConfig.cpp
   src/v20211111/model/CreateDatasetResponse.cpp
   src/v20211111/model/Service.cpp
   src/v20211111/model/CrossTenantENIInfo.cpp
@@ -356,7 +363,7 @@ set(tione_src
   src/v20211111/model/DescribeBillingResourceGroupsResponse.cpp
   src/v20211111/model/SpecPrice.cpp
   src/v20211111/model/StartNotebookResponse.cpp
-  src/v20211111/model/DescribeTrainingTaskPodsRequest.cpp
+  src/v20211111/model/CFSTurbo.cpp
   src/v20211111/model/DescribeTrainingModelVersionRequest.cpp
   src/v20211111/model/ResourceInstanceRunningJobInfo.cpp
   src/v20211111/model/ImageFIlter.cpp
@@ -379,6 +386,7 @@ set(tione_src
   src/v20211111/model/SchemaInfo.cpp
   src/v20211111/model/StartCmdInfo.cpp
   src/v20211111/model/DescribeModelServiceGroupsResponse.cpp
+  src/v20211111/model/HTTPGetAction.cpp
   src/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.cpp
   src/v20211111/model/InferGatewayCallInfo.cpp
   src/v20211111/model/CreateNotebookRequest.cpp
@@ -387,6 +395,7 @@ set(tione_src
   src/v20211111/model/ResourceConfigInfo.cpp
   src/v20211111/model/Spec.cpp
   src/v20211111/model/GooseFS.cpp
+  src/v20211111/model/DescribeBillingResourceGroupsRequest.cpp
   src/v20211111/model/Option.cpp
   src/v20211111/model/DefaultInnerCallInfo.cpp
   src/v20211111/model/Choice.cpp
@@ -432,6 +441,7 @@ set(tione_src
   src/v20211111/model/Instance.cpp
   src/v20211111/model/DescribeBillingSpecsResponse.cpp
   src/v20211111/model/DeleteTrainingTaskResponse.cpp
+  src/v20211111/model/AuthToken.cpp
   src/v20211111/model/DescribeNotebooksResponse.cpp
   src/v20211111/model/DatasetGroup.cpp
   src/v20211111/model/StatefulSetCondition.cpp
@@ -447,13 +457,15 @@ set(tione_src
   src/v20211111/model/DescribeBillingResourceInstanceRunningJobsRequest.cpp
   src/v20211111/model/ModifyModelServiceResponse.cpp
   src/v20211111/model/PodInfo.cpp
+  src/v20211111/model/ProbeAction.cpp
   src/v20211111/model/ModelInfo.cpp
-  src/v20211111/model/CodeRepoConfig.cpp
+  src/v20211111/model/CreateDatasetRequest.cpp
   src/v20211111/model/CreateModelServiceResponse.cpp
   src/v20211111/model/ServiceGroup.cpp
   src/v20211111/model/ServiceLimit.cpp
   src/v20211111/model/DescribeModelServiceGroupResponse.cpp
   src/v20211111/model/DescribeNotebookResponse.cpp
+  src/v20211111/model/AuthTokenLimit.cpp
   src/v20211111/model/CreateTrainingModelResponse.cpp
   src/v20211111/model/LogIdentity.cpp
   src/v20211111/model/StopModelAccelerateTaskResponse.cpp
@@ -477,7 +489,7 @@ set(tione_src
   src/v20211111/model/DescribeTrainingTaskRequest.cpp
   src/v20211111/model/ChatCompletionResponse.cpp
   src/v20211111/model/GooseFSx.cpp
-  src/v20211111/model/CFSTurbo.cpp
+  src/v20211111/model/DescribeTrainingTaskPodsRequest.cpp
   src/v20211111/model/DescribeTrainingModelVersionsResponse.cpp
   src/v20211111/model/ModelInputInfo.cpp
   src/v20211111/model/DeleteDatasetRequest.cpp
@@ -485,6 +497,7 @@ set(tione_src
   src/v20211111/model/ResourceConf.cpp
   src/v20211111/model/PushTrainingMetricsResponse.cpp
   src/v20211111/model/StopTrainingTaskResponse.cpp
+  src/v20211111/model/HealthProbe.cpp
   src/v20211111/model/HDFSConfig.cpp
   src/v20211111/model/DescribeTrainingTaskPodsResponse.cpp
   src/v20211111/model/ModelAccelerateTask.cpp
@@ -492,6 +505,7 @@ set(tione_src
   src/v20211111/model/DeleteTrainingModelRequest.cpp
   src/v20211111/model/DescribeModelServiceHotUpdatedRequest.cpp
   src/v20211111/model/DescribeTrainingTaskResponse.cpp
+  src/v20211111/model/Probe.cpp
   src/v20211111/model/DeleteModelServiceResponse.cpp
   src/v20211111/model/MetricData.cpp
   src/v20211111/model/DeleteTrainingModelVersionRequest.cpp

@@ -22,6 +22,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstanceTasksStatusResponse.h
   include/tencentcloud/gs/v20191118/model/ExecuteCommandOnAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/StartPublishStreamToCSSResponse.h
+  include/tencentcloud/gs/v20191118/model/FetchAndroidInstancesLogsResponse.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidAppRequest.h
   include/tencentcloud/gs/v20191118/model/CreateSessionRequest.h
   include/tencentcloud/gs/v20191118/model/RestoreAndroidInstanceFromStorageRequest.h
@@ -30,7 +31,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/StopAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidAppVersionResponse.h
   include/tencentcloud/gs/v20191118/model/DeleteAndroidAppResponse.h
-  include/tencentcloud/gs/v20191118/model/DescribeAndroidInstanceLabelsResponse.h
+  include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesInformationRequest.h
   include/tencentcloud/gs/v20191118/model/AndroidApp.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidAppRequest.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidAppsResponse.h
@@ -73,6 +74,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/StopPublishStreamRequest.h
   include/tencentcloud/gs/v20191118/model/AndroidAppCosInfo.h
   include/tencentcloud/gs/v20191118/model/SyncExecuteCommandResult.h
+  include/tencentcloud/gs/v20191118/model/DescribeAndroidInstanceLabelsResponse.h
   include/tencentcloud/gs/v20191118/model/RestartAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstanceTasksStatusRequest.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstancesScreenshotResponse.h
@@ -90,6 +92,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/SyncAndroidInstanceImageRequest.h
+  include/tencentcloud/gs/v20191118/model/AndroidInstanceInformation.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstanceResolutionRequest.h
   include/tencentcloud/gs/v20191118/model/AndroidAppVersionInfo.h
   include/tencentcloud/gs/v20191118/model/DeleteAndroidAppVersionRequest.h
@@ -121,6 +124,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceLabelRequest.h
   include/tencentcloud/gs/v20191118/model/AndroidInstance.h
   include/tencentcloud/gs/v20191118/model/COSOptions.h
+  include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesInformationResponse.h
   include/tencentcloud/gs/v20191118/model/CreateCosCredentialResponse.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceLabelResponse.h
@@ -135,6 +139,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionRequest.h
   include/tencentcloud/gs/v20191118/model/LabelRequirement.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidAppVersionResponse.h
+  include/tencentcloud/gs/v20191118/model/FetchAndroidInstancesLogsRequest.h
   include/tencentcloud/gs/v20191118/model/BackUpAndroidInstanceToStorageResponse.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceSSHRequest.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidAppResponse.h
@@ -147,6 +152,7 @@ set(gs_src
   src/v20191118/model/DescribeAndroidInstanceTasksStatusResponse.cpp
   src/v20191118/model/ExecuteCommandOnAndroidInstancesResponse.cpp
   src/v20191118/model/StartPublishStreamToCSSResponse.cpp
+  src/v20191118/model/FetchAndroidInstancesLogsResponse.cpp
   src/v20191118/model/CreateAndroidAppRequest.cpp
   src/v20191118/model/CreateSessionRequest.cpp
   src/v20191118/model/RestoreAndroidInstanceFromStorageRequest.cpp
@@ -155,7 +161,7 @@ set(gs_src
   src/v20191118/model/StopAndroidInstancesAppResponse.cpp
   src/v20191118/model/ModifyAndroidAppVersionResponse.cpp
   src/v20191118/model/DeleteAndroidAppResponse.cpp
-  src/v20191118/model/DescribeAndroidInstanceLabelsResponse.cpp
+  src/v20191118/model/ModifyAndroidInstancesInformationRequest.cpp
   src/v20191118/model/AndroidApp.cpp
   src/v20191118/model/ModifyAndroidAppRequest.cpp
   src/v20191118/model/DescribeAndroidAppsResponse.cpp
@@ -198,6 +204,7 @@ set(gs_src
   src/v20191118/model/StopPublishStreamRequest.cpp
   src/v20191118/model/AndroidAppCosInfo.cpp
   src/v20191118/model/SyncExecuteCommandResult.cpp
+  src/v20191118/model/DescribeAndroidInstanceLabelsResponse.cpp
   src/v20191118/model/RestartAndroidInstancesAppResponse.cpp
   src/v20191118/model/DescribeAndroidInstanceTasksStatusRequest.cpp
   src/v20191118/model/CreateAndroidInstancesScreenshotResponse.cpp
@@ -215,6 +222,7 @@ set(gs_src
   src/v20191118/model/DescribeAndroidInstancesRequest.cpp
   src/v20191118/model/DescribeAndroidInstancesResponse.cpp
   src/v20191118/model/SyncAndroidInstanceImageRequest.cpp
+  src/v20191118/model/AndroidInstanceInformation.cpp
   src/v20191118/model/ModifyAndroidInstanceResolutionRequest.cpp
   src/v20191118/model/AndroidAppVersionInfo.cpp
   src/v20191118/model/DeleteAndroidAppVersionRequest.cpp
@@ -246,6 +254,7 @@ set(gs_src
   src/v20191118/model/CreateAndroidInstanceLabelRequest.cpp
   src/v20191118/model/AndroidInstance.cpp
   src/v20191118/model/COSOptions.cpp
+  src/v20191118/model/ModifyAndroidInstancesInformationResponse.cpp
   src/v20191118/model/CreateCosCredentialResponse.cpp
   src/v20191118/model/CreateAndroidInstancesRequest.cpp
   src/v20191118/model/CreateAndroidInstanceLabelResponse.cpp
@@ -260,6 +269,7 @@ set(gs_src
   src/v20191118/model/ModifyAndroidInstancesResolutionRequest.cpp
   src/v20191118/model/LabelRequirement.cpp
   src/v20191118/model/CreateAndroidAppVersionResponse.cpp
+  src/v20191118/model/FetchAndroidInstancesLogsRequest.cpp
   src/v20191118/model/BackUpAndroidInstanceToStorageResponse.cpp
   src/v20191118/model/CreateAndroidInstanceSSHRequest.cpp
   src/v20191118/model/CreateAndroidAppResponse.cpp

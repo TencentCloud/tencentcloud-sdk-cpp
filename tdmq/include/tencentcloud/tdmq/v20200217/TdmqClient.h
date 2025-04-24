@@ -889,7 +889,7 @@ namespace TencentCloud
                 CreateRabbitMQUserOutcomeCallable CreateRabbitMQUserCallable(const Model::CreateRabbitMQUserRequest& request);
 
                 /**
-                 *创建RabbitMQ专享版实例
+                 *创建 RabbitMQ 托管版实例
                  * @param req CreateRabbitMQVipInstanceRequest
                  * @return CreateRabbitMQVipInstanceOutcome
                  */
@@ -1087,7 +1087,7 @@ namespace TencentCloud
                 DeleteRabbitMQUserOutcomeCallable DeleteRabbitMQUserCallable(const Model::DeleteRabbitMQUserRequest& request);
 
                 /**
-                 *删除RabbitMQ专享版实例
+                 *删除 RabbitMQ 托管版实例
                  * @param req DeleteRabbitMQVipInstanceRequest
                  * @return DeleteRabbitMQVipInstanceOutcome
                  */
@@ -1422,7 +1422,7 @@ namespace TencentCloud
                 DescribeRabbitMQExchangesOutcomeCallable DescribeRabbitMQExchangesCallable(const Model::DescribeRabbitMQExchangesRequest& request);
 
                 /**
-                 *RabbitMQ专享版查询节点列表
+                 *查询 RabbitMQ 托管版节点列表
                  * @param req DescribeRabbitMQNodeListRequest
                  * @return DescribeRabbitMQNodeListOutcome
                  */

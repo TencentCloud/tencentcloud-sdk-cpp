@@ -180,23 +180,44 @@ namespace TencentCloud
                     /**
                      * 获取用户角色id列表
                      * @return RoleIdList 用户角色id列表
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetRoleIdList() const;
 
                     /**
                      * 设置用户角色id列表
                      * @param _roleIdList 用户角色id列表
-                     * 
+                     * @deprecated
                      */
                     void SetRoleIdList(const uint64_t& _roleIdList);
 
                     /**
                      * 判断参数 RoleIdList 是否已赋值
                      * @return RoleIdList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RoleIdListHasBeenSet() const;
+
+                    /**
+                     * 获取用户角色id列表
+                     * @return RoleList 用户角色id列表
+                     * 
+                     */
+                    std::vector<uint64_t> GetRoleList() const;
+
+                    /**
+                     * 设置用户角色id列表
+                     * @param _roleList 用户角色id列表
+                     * 
+                     */
+                    void SetRoleList(const std::vector<uint64_t>& _roleList);
+
+                    /**
+                     * 判断参数 RoleList 是否已赋值
+                     * @return RoleList 是否已赋值
+                     * 
+                     */
+                    bool RoleListHasBeenSet() const;
 
                     /**
                      * 获取所属技能组列表
@@ -305,6 +326,12 @@ namespace TencentCloud
                      */
                     uint64_t m_roleIdList;
                     bool m_roleIdListHasBeenSet;
+
+                    /**
+                     * 用户角色id列表
+                     */
+                    std::vector<uint64_t> m_roleList;
+                    bool m_roleListHasBeenSet;
 
                     /**
                      * 所属技能组列表

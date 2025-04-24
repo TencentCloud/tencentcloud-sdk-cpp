@@ -54,7 +54,9 @@ ServiceInfo::ServiceInfo() :
     m_serviceEIPHasBeenSet(false),
     m_servicePortHasBeenSet(false),
     m_terminationGracePeriodSecondsHasBeenSet(false),
-    m_preStopCommandHasBeenSet(false)
+    m_preStopCommandHasBeenSet(false),
+    m_grpcEnableHasBeenSet(false),
+    m_healthProbeHasBeenSet(false)
 {
 }
 
@@ -530,6 +532,33 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_preStopCommandHasBeenSet = true;
     }
 
+    if (value.HasMember("GrpcEnable") && !value["GrpcEnable"].IsNull())
+    {
+        if (!value["GrpcEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.GrpcEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_grpcEnable = value["GrpcEnable"].GetBool();
+        m_grpcEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthProbe") && !value["HealthProbe"].IsNull())
+    {
+        if (!value["HealthProbe"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.HealthProbe` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_healthProbe.Deserialize(value["HealthProbe"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_healthProbeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -851,6 +880,23 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_grpcEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GrpcEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_grpcEnable, allocator);
+    }
+
+    if (m_healthProbeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthProbe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthProbe.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1398,5 +1444,37 @@ void ServiceInfo::SetPreStopCommand(const vector<string>& _preStopCommand)
 bool ServiceInfo::PreStopCommandHasBeenSet() const
 {
     return m_preStopCommandHasBeenSet;
+}
+
+bool ServiceInfo::GetGrpcEnable() const
+{
+    return m_grpcEnable;
+}
+
+void ServiceInfo::SetGrpcEnable(const bool& _grpcEnable)
+{
+    m_grpcEnable = _grpcEnable;
+    m_grpcEnableHasBeenSet = true;
+}
+
+bool ServiceInfo::GrpcEnableHasBeenSet() const
+{
+    return m_grpcEnableHasBeenSet;
+}
+
+HealthProbe ServiceInfo::GetHealthProbe() const
+{
+    return m_healthProbe;
+}
+
+void ServiceInfo::SetHealthProbe(const HealthProbe& _healthProbe)
+{
+    m_healthProbe = _healthProbe;
+    m_healthProbeHasBeenSet = true;
+}
+
+bool ServiceInfo::HealthProbeHasBeenSet() const
+{
+    return m_healthProbeHasBeenSet;
 }
 

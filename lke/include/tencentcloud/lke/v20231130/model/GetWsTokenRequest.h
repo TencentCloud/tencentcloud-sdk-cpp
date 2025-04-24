@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入类型，当前请填写5
-                     * @return Type 接入类型，当前请填写5
+                     * 获取接入类型， 5-API 访客
+                     * @return Type 接入类型， 5-API 访客
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置接入类型，当前请填写5
-                     * @param _type 接入类型，当前请填写5
+                     * 设置接入类型， 5-API 访客
+                     * @param _type 接入类型， 5-API 访客
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取当Type=5时，必填；应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
-                     * @return BotAppKey 当Type=5时，必填；应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
+                     * 获取  应用AppKey </br>   获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
+                     * @return BotAppKey   应用AppKey </br>   获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
                      * 
                      */
                     std::string GetBotAppKey() const;
 
                     /**
-                     * 设置当Type=5时，必填；应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
-                     * @param _botAppKey 当Type=5时，必填；应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
+                     * 设置  应用AppKey </br>   获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
+                     * @param _botAppKey   应用AppKey </br>   获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
                      * 
                      */
                     void SetBotAppKey(const std::string& _botAppKey);
@@ -130,13 +130,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接入类型，当前请填写5
+                     * 接入类型， 5-API 访客
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 当Type=5时，必填；应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
+                     *   应用AppKey </br>   获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
                      */
                     std::string m_botAppKey;
                     bool m_botAppKeyHasBeenSet;

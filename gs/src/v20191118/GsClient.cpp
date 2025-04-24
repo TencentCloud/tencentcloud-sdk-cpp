@@ -1158,6 +1158,49 @@ GsClient::ExecuteCommandOnAndroidInstancesOutcomeCallable GsClient::ExecuteComma
     return task->get_future();
 }
 
+GsClient::FetchAndroidInstancesLogsOutcome GsClient::FetchAndroidInstancesLogs(const FetchAndroidInstancesLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "FetchAndroidInstancesLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FetchAndroidInstancesLogsResponse rsp = FetchAndroidInstancesLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FetchAndroidInstancesLogsOutcome(rsp);
+        else
+            return FetchAndroidInstancesLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return FetchAndroidInstancesLogsOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::FetchAndroidInstancesLogsAsync(const FetchAndroidInstancesLogsRequest& request, const FetchAndroidInstancesLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FetchAndroidInstancesLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::FetchAndroidInstancesLogsOutcomeCallable GsClient::FetchAndroidInstancesLogsCallable(const FetchAndroidInstancesLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FetchAndroidInstancesLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->FetchAndroidInstancesLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::InstallAndroidInstancesAppOutcome GsClient::InstallAndroidInstancesApp(const InstallAndroidInstancesAppRequest &request)
 {
     auto outcome = MakeRequest(request, "InstallAndroidInstancesApp");
@@ -1366,6 +1409,49 @@ GsClient::ModifyAndroidInstanceResolutionOutcomeCallable GsClient::ModifyAndroid
         [this, request]()
         {
             return this->ModifyAndroidInstanceResolution(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::ModifyAndroidInstancesInformationOutcome GsClient::ModifyAndroidInstancesInformation(const ModifyAndroidInstancesInformationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAndroidInstancesInformation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAndroidInstancesInformationResponse rsp = ModifyAndroidInstancesInformationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAndroidInstancesInformationOutcome(rsp);
+        else
+            return ModifyAndroidInstancesInformationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAndroidInstancesInformationOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ModifyAndroidInstancesInformationAsync(const ModifyAndroidInstancesInformationRequest& request, const ModifyAndroidInstancesInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAndroidInstancesInformation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ModifyAndroidInstancesInformationOutcomeCallable GsClient::ModifyAndroidInstancesInformationCallable(const ModifyAndroidInstancesInformationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesInformationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAndroidInstancesInformation(request);
         }
     );
 

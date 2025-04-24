@@ -405,6 +405,48 @@ namespace TencentCloud
                      */
                     bool ConfigFilePersistentHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启加密算法
+                     * @return Encrypted 是否开启加密算法
+                     * 
+                     */
+                    bool GetEncrypted() const;
+
+                    /**
+                     * 设置是否开启加密算法
+                     * @param _encrypted 是否开启加密算法
+                     * 
+                     */
+                    void SetEncrypted(const bool& _encrypted);
+
+                    /**
+                     * 判断参数 Encrypted 是否已赋值
+                     * @return Encrypted 是否已赋值
+                     * 
+                     */
+                    bool EncryptedHasBeenSet() const;
+
+                    /**
+                     * 获取加密算法
+                     * @return EncryptAlgo 加密算法
+                     * 
+                     */
+                    std::string GetEncryptAlgo() const;
+
+                    /**
+                     * 设置加密算法
+                     * @param _encryptAlgo 加密算法
+                     * 
+                     */
+                    void SetEncryptAlgo(const std::string& _encryptAlgo);
+
+                    /**
+                     * 判断参数 EncryptAlgo 是否已赋值
+                     * @return EncryptAlgo 是否已赋值
+                     * 
+                     */
+                    bool EncryptAlgoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,6 +550,18 @@ namespace TencentCloud
                      */
                     ConfigFilePersistent m_configFilePersistent;
                     bool m_configFilePersistentHasBeenSet;
+
+                    /**
+                     * 是否开启加密算法
+                     */
+                    bool m_encrypted;
+                    bool m_encryptedHasBeenSet;
+
+                    /**
+                     * 加密算法
+                     */
+                    std::string m_encryptAlgo;
+                    bool m_encryptAlgoHasBeenSet;
 
                 };
             }

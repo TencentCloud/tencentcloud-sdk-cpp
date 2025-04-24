@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/AuthToken.h>
 
 
 namespace TencentCloud
@@ -146,6 +147,69 @@ namespace TencentCloud
                      */
                     bool AuthTokenHasBeenSet() const;
 
+                    /**
+                     * 获取LLM token 列表
+                     * @return AuthTokens LLM token 列表
+                     * 
+                     */
+                    std::vector<AuthToken> GetAuthTokens() const;
+
+                    /**
+                     * 设置LLM token 列表
+                     * @param _authTokens LLM token 列表
+                     * 
+                     */
+                    void SetAuthTokens(const std::vector<AuthToken>& _authTokens);
+
+                    /**
+                     * 判断参数 AuthTokens 是否已赋值
+                     * @return AuthTokens 是否已赋值
+                     * 
+                     */
+                    bool AuthTokensHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启限流
+                     * @return EnableLimit 是否开启限流
+                     * 
+                     */
+                    bool GetEnableLimit() const;
+
+                    /**
+                     * 设置是否开启限流
+                     * @param _enableLimit 是否开启限流
+                     * 
+                     */
+                    void SetEnableLimit(const bool& _enableLimit);
+
+                    /**
+                     * 判断参数 EnableLimit 是否已赋值
+                     * @return EnableLimit 是否已赋值
+                     * 
+                     */
+                    bool EnableLimitHasBeenSet() const;
+
+                    /**
+                     * 获取访问grpc时需携带的虚拟Host
+                     * @return GrpcHost 访问grpc时需携带的虚拟Host
+                     * 
+                     */
+                    std::string GetGrpcHost() const;
+
+                    /**
+                     * 设置访问grpc时需携带的虚拟Host
+                     * @param _grpcHost 访问grpc时需携带的虚拟Host
+                     * 
+                     */
+                    void SetGrpcHost(const std::string& _grpcHost);
+
+                    /**
+                     * 判断参数 GrpcHost 是否已赋值
+                     * @return GrpcHost 是否已赋值
+                     * 
+                     */
+                    bool GrpcHostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +239,24 @@ namespace TencentCloud
                      */
                     std::string m_authToken;
                     bool m_authTokenHasBeenSet;
+
+                    /**
+                     * LLM token 列表
+                     */
+                    std::vector<AuthToken> m_authTokens;
+                    bool m_authTokensHasBeenSet;
+
+                    /**
+                     * 是否开启限流
+                     */
+                    bool m_enableLimit;
+                    bool m_enableLimitHasBeenSet;
+
+                    /**
+                     * 访问grpc时需携带的虚拟Host
+                     */
+                    std::string m_grpcHost;
+                    bool m_grpcHostHasBeenSet;
 
                 };
             }

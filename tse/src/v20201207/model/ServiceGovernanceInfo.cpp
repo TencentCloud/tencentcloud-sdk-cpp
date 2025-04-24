@@ -29,7 +29,8 @@ ServiceGovernanceInfo::ServiceGovernanceInfo() :
     m_mainPasswordHasBeenSet(false),
     m_pgwVpcInfosHasBeenSet(false),
     m_limiterVpcInfosHasBeenSet(false),
-    m_cLSTopicsHasBeenSet(false)
+    m_cLSTopicsHasBeenSet(false),
+    m_subPasswordHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,16 @@ CoreInternalOutcome ServiceGovernanceInfo::Deserialize(const rapidjson::Value &v
         m_cLSTopicsHasBeenSet = true;
     }
 
+    if (value.HasMember("SubPassword") && !value["SubPassword"].IsNull())
+    {
+        if (!value["SubPassword"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGovernanceInfo.SubPassword` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subPassword = string(value["SubPassword"].GetString());
+        m_subPasswordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +309,14 @@ void ServiceGovernanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_subPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubPassword";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subPassword.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -445,5 +464,21 @@ void ServiceGovernanceInfo::SetCLSTopics(const vector<PolarisCLSTopicInfo>& _cLS
 bool ServiceGovernanceInfo::CLSTopicsHasBeenSet() const
 {
     return m_cLSTopicsHasBeenSet;
+}
+
+string ServiceGovernanceInfo::GetSubPassword() const
+{
+    return m_subPassword;
+}
+
+void ServiceGovernanceInfo::SetSubPassword(const string& _subPassword)
+{
+    m_subPassword = _subPassword;
+    m_subPasswordHasBeenSet = true;
+}
+
+bool ServiceGovernanceInfo::SubPasswordHasBeenSet() const
+{
+    return m_subPasswordHasBeenSet;
 }
 

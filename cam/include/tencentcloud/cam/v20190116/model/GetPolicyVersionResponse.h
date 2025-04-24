@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略版本详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyVersion 策略版本详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PolicyVersionDetail GetPolicyVersion() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 策略版本详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PolicyVersionDetail m_policyVersion;
                     bool m_policyVersionHasBeenSet;

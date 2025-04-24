@@ -238,6 +238,27 @@ namespace TencentCloud
                      */
                     bool CLSTopicsHasBeenSet() const;
 
+                    /**
+                     * 获取子用户密码
+                     * @return SubPassword 子用户密码
+                     * 
+                     */
+                    std::string GetSubPassword() const;
+
+                    /**
+                     * 设置子用户密码
+                     * @param _subPassword 子用户密码
+                     * 
+                     */
+                    void SetSubPassword(const std::string& _subPassword);
+
+                    /**
+                     * 判断参数 SubPassword 是否已赋值
+                     * @return SubPassword 是否已赋值
+                     * 
+                     */
+                    bool SubPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -293,6 +314,12 @@ namespace TencentCloud
                      */
                     std::vector<PolarisCLSTopicInfo> m_cLSTopics;
                     bool m_cLSTopicsHasBeenSet;
+
+                    /**
+                     * 子用户密码
+                     */
+                    std::string m_subPassword;
+                    bool m_subPasswordHasBeenSet;
 
                 };
             }

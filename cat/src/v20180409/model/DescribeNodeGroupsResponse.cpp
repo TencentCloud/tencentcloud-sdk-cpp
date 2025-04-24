@@ -23,7 +23,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cat::V20180409::Model;
 using namespace std;
 
-DescribeNodeGroupsResponse::DescribeNodeGroupsResponse()
+DescribeNodeGroupsResponse::DescribeNodeGroupsResponse() :
+    m_nodeListHasBeenSet(false),
+    m_districtListHasBeenSet(false),
+    m_netServiceListHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,66 @@ CoreInternalOutcome DescribeNodeGroupsResponse::Deserialize(const string &payloa
     }
 
 
+    if (rsp.HasMember("NodeList") && !rsp["NodeList"].IsNull())
+    {
+        if (!rsp["NodeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["NodeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NodeTree item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_nodeList.push_back(item);
+        }
+        m_nodeListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DistrictList") && !rsp["DistrictList"].IsNull())
+    {
+        if (!rsp["DistrictList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DistrictList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DistrictList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DistinctOrNetServiceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_districtList.push_back(item);
+        }
+        m_districtListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NetServiceList") && !rsp["NetServiceList"].IsNull())
+    {
+        if (!rsp["NetServiceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NetServiceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["NetServiceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DistinctOrNetServiceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_netServiceList.push_back(item);
+        }
+        m_netServiceListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +133,51 @@ string DescribeNodeGroupsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_nodeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeList.begin(); itr != m_nodeList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_districtListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DistrictList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_districtList.begin(); itr != m_districtList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_netServiceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetServiceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_netServiceList.begin(); itr != m_netServiceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +190,35 @@ string DescribeNodeGroupsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<NodeTree> DescribeNodeGroupsResponse::GetNodeList() const
+{
+    return m_nodeList;
+}
+
+bool DescribeNodeGroupsResponse::NodeListHasBeenSet() const
+{
+    return m_nodeListHasBeenSet;
+}
+
+vector<DistinctOrNetServiceInfo> DescribeNodeGroupsResponse::GetDistrictList() const
+{
+    return m_districtList;
+}
+
+bool DescribeNodeGroupsResponse::DistrictListHasBeenSet() const
+{
+    return m_districtListHasBeenSet;
+}
+
+vector<DistinctOrNetServiceInfo> DescribeNodeGroupsResponse::GetNetServiceList() const
+{
+    return m_netServiceList;
+}
+
+bool DescribeNodeGroupsResponse::NetServiceListHasBeenSet() const
+{
+    return m_netServiceListHasBeenSet;
+}
 
 

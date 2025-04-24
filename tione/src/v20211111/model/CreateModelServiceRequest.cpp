@@ -59,7 +59,9 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_deployTypeHasBeenSet(false),
     m_instancePerReplicasHasBeenSet(false),
     m_terminationGracePeriodSecondsHasBeenSet(false),
-    m_preStopCommandHasBeenSet(false)
+    m_preStopCommandHasBeenSet(false),
+    m_grpcEnableHasBeenSet(false),
+    m_healthProbeHasBeenSet(false)
 {
 }
 
@@ -399,6 +401,23 @@ string CreateModelServiceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_grpcEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GrpcEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_grpcEnable, allocator);
+    }
+
+    if (m_healthProbeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthProbe";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthProbe.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -999,6 +1018,38 @@ void CreateModelServiceRequest::SetPreStopCommand(const vector<string>& _preStop
 bool CreateModelServiceRequest::PreStopCommandHasBeenSet() const
 {
     return m_preStopCommandHasBeenSet;
+}
+
+bool CreateModelServiceRequest::GetGrpcEnable() const
+{
+    return m_grpcEnable;
+}
+
+void CreateModelServiceRequest::SetGrpcEnable(const bool& _grpcEnable)
+{
+    m_grpcEnable = _grpcEnable;
+    m_grpcEnableHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::GrpcEnableHasBeenSet() const
+{
+    return m_grpcEnableHasBeenSet;
+}
+
+HealthProbe CreateModelServiceRequest::GetHealthProbe() const
+{
+    return m_healthProbe;
+}
+
+void CreateModelServiceRequest::SetHealthProbe(const HealthProbe& _healthProbe)
+{
+    m_healthProbe = _healthProbe;
+    m_healthProbeHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::HealthProbeHasBeenSet() const
+{
+    return m_healthProbeHasBeenSet;
 }
 
 

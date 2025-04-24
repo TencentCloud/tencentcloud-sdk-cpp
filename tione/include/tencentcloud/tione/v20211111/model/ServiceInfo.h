@@ -38,6 +38,7 @@
 #include <tencentcloud/tione/v20211111/model/VolumeMount.h>
 #include <tencentcloud/tione/v20211111/model/InferCodeInfo.h>
 #include <tencentcloud/tione/v20211111/model/ServiceEIP.h>
+#include <tencentcloud/tione/v20211111/model/HealthProbe.h>
 
 
 namespace TencentCloud
@@ -930,6 +931,48 @@ HYBRID_PAID:
                      */
                     bool PreStopCommandHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用grpc端口
+                     * @return GrpcEnable 是否启用grpc端口
+                     * 
+                     */
+                    bool GetGrpcEnable() const;
+
+                    /**
+                     * 设置是否启用grpc端口
+                     * @param _grpcEnable 是否启用grpc端口
+                     * 
+                     */
+                    void SetGrpcEnable(const bool& _grpcEnable);
+
+                    /**
+                     * 判断参数 GrpcEnable 是否已赋值
+                     * @return GrpcEnable 是否已赋值
+                     * 
+                     */
+                    bool GrpcEnableHasBeenSet() const;
+
+                    /**
+                     * 获取健康探针
+                     * @return HealthProbe 健康探针
+                     * 
+                     */
+                    HealthProbe GetHealthProbe() const;
+
+                    /**
+                     * 设置健康探针
+                     * @param _healthProbe 健康探针
+                     * 
+                     */
+                    void SetHealthProbe(const HealthProbe& _healthProbe);
+
+                    /**
+                     * 判断参数 HealthProbe 是否已赋值
+                     * @return HealthProbe 是否已赋值
+                     * 
+                     */
+                    bool HealthProbeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1174,6 +1217,18 @@ HYBRID_PAID:
                      */
                     std::vector<std::string> m_preStopCommand;
                     bool m_preStopCommandHasBeenSet;
+
+                    /**
+                     * 是否启用grpc端口
+                     */
+                    bool m_grpcEnable;
+                    bool m_grpcEnableHasBeenSet;
+
+                    /**
+                     * 健康探针
+                     */
+                    HealthProbe m_healthProbe;
+                    bool m_healthProbeHasBeenSet;
 
                 };
             }

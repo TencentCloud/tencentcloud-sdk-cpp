@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群列表数量
-                     * @return TotalCount 集群列表数量
+                     * 获取集群节点数量
+                     * @return TotalCount 集群节点数量
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取集群列表
+                     * 获取集群节点列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeList 集群列表
+                     * @return NodeList 集群节点列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,13 +77,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群列表数量
+                     * 集群节点数量
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 集群列表
+                     * 集群节点列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RabbitMQPrivateNode> m_nodeList;

@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取私有网络VpcId
-                     * @return VpcId 私有网络VpcId
+                     * 获取私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录[私有网络](https://console.cloud.tencent.com/vpc/vpc?rid=1)控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
+                     * @return VpcId 私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录[私有网络](https://console.cloud.tencent.com/vpc/vpc?rid=1)控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络VpcId
-                     * @param _vpcId 私有网络VpcId
+                     * 设置私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录[私有网络](https://console.cloud.tencent.com/vpc/vpc?rid=1)控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
+                     * @param _vpcId 私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录[私有网络](https://console.cloud.tencent.com/vpc/vpc?rid=1)控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络SubnetId
-                     * @return SubnetId 私有网络SubnetId
+                     * 获取私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录[子网控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
+                     * @return SubnetId 私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录[子网控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置私有网络SubnetId
-                     * @param _subnetId 私有网络SubnetId
+                     * 设置私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录[子网控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
+                     * @param _subnetId 私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录[子网控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -128,15 +128,51 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取节点规格,基础型rabbit-vip-basic-1,标准型rabbit-vip-basic-2,高阶1型rabbit-vip-basic-3,高阶2型rabbit-vip-basic-4。不传默认为基础型
-                     * @return NodeSpec 节点规格,基础型rabbit-vip-basic-1,标准型rabbit-vip-basic-2,高阶1型rabbit-vip-basic-3,高阶2型rabbit-vip-basic-4。不传默认为基础型
+                     * 获取集群的节点规格，需要输入对应的规格标识：
+2C8G：rabbit-vip-basic-2c8g
+4C16G：rabbit-vip-basic-4c16g
+8C32G：rabbit-vip-basic-8c32g
+16C32G：rabbit-vip-basic-4
+16C64G：rabbit-vip-basic-16c64g
+2C4G：rabbit-vip-basic-5
+4C8G：rabbit-vip-basic-1
+8C16G（已售罄）：rabbit-vip-basic-2
+不传默认为 4C8G：rabbit-vip-basic-1
+                     * @return NodeSpec 集群的节点规格，需要输入对应的规格标识：
+2C8G：rabbit-vip-basic-2c8g
+4C16G：rabbit-vip-basic-4c16g
+8C32G：rabbit-vip-basic-8c32g
+16C32G：rabbit-vip-basic-4
+16C64G：rabbit-vip-basic-16c64g
+2C4G：rabbit-vip-basic-5
+4C8G：rabbit-vip-basic-1
+8C16G（已售罄）：rabbit-vip-basic-2
+不传默认为 4C8G：rabbit-vip-basic-1
                      * 
                      */
                     std::string GetNodeSpec() const;
 
                     /**
-                     * 设置节点规格,基础型rabbit-vip-basic-1,标准型rabbit-vip-basic-2,高阶1型rabbit-vip-basic-3,高阶2型rabbit-vip-basic-4。不传默认为基础型
-                     * @param _nodeSpec 节点规格,基础型rabbit-vip-basic-1,标准型rabbit-vip-basic-2,高阶1型rabbit-vip-basic-3,高阶2型rabbit-vip-basic-4。不传默认为基础型
+                     * 设置集群的节点规格，需要输入对应的规格标识：
+2C8G：rabbit-vip-basic-2c8g
+4C16G：rabbit-vip-basic-4c16g
+8C32G：rabbit-vip-basic-8c32g
+16C32G：rabbit-vip-basic-4
+16C64G：rabbit-vip-basic-16c64g
+2C4G：rabbit-vip-basic-5
+4C8G：rabbit-vip-basic-1
+8C16G（已售罄）：rabbit-vip-basic-2
+不传默认为 4C8G：rabbit-vip-basic-1
+                     * @param _nodeSpec 集群的节点规格，需要输入对应的规格标识：
+2C8G：rabbit-vip-basic-2c8g
+4C16G：rabbit-vip-basic-4c16g
+8C32G：rabbit-vip-basic-8c32g
+16C32G：rabbit-vip-basic-4
+16C64G：rabbit-vip-basic-16c64g
+2C4G：rabbit-vip-basic-5
+4C8G：rabbit-vip-basic-1
+8C16G（已售罄）：rabbit-vip-basic-2
+不传默认为 4C8G：rabbit-vip-basic-1
                      * 
                      */
                     void SetNodeSpec(const std::string& _nodeSpec);
@@ -191,15 +227,15 @@ namespace TencentCloud
                     bool StorageSizeHasBeenSet() const;
 
                     /**
-                     * 获取镜像队列,不传默认为false
-                     * @return EnableCreateDefaultHaMirrorQueue 镜像队列,不传默认为false
+                     * 获取是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false
+                     * @return EnableCreateDefaultHaMirrorQueue 是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false
                      * 
                      */
                     bool GetEnableCreateDefaultHaMirrorQueue() const;
 
                     /**
-                     * 设置镜像队列,不传默认为false
-                     * @param _enableCreateDefaultHaMirrorQueue 镜像队列,不传默认为false
+                     * 设置是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false
+                     * @param _enableCreateDefaultHaMirrorQueue 是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false
                      * 
                      */
                     void SetEnableCreateDefaultHaMirrorQueue(const bool& _enableCreateDefaultHaMirrorQueue);
@@ -212,15 +248,15 @@ namespace TencentCloud
                     bool EnableCreateDefaultHaMirrorQueueHasBeenSet() const;
 
                     /**
-                     * 获取预付费使用。自动续费,不传默认为true
-                     * @return AutoRenewFlag 预付费使用。自动续费,不传默认为true
+                     * 获取仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true
+                     * @return AutoRenewFlag 仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true
                      * 
                      */
                     bool GetAutoRenewFlag() const;
 
                     /**
-                     * 设置预付费使用。自动续费,不传默认为true
-                     * @param _autoRenewFlag 预付费使用。自动续费,不传默认为true
+                     * 设置仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true
+                     * @param _autoRenewFlag 仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true
                      * 
                      */
                     void SetAutoRenewFlag(const bool& _autoRenewFlag);
@@ -338,15 +374,15 @@ namespace TencentCloud
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽大小，单位 M
-                     * @return Bandwidth 公网带宽大小，单位 M
+                     * 获取公网带宽大小，单位 Mbps
+                     * @return Bandwidth 公网带宽大小，单位 Mbps
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
-                     * 设置公网带宽大小，单位 M
-                     * @param _bandwidth 公网带宽大小，单位 M
+                     * 设置公网带宽大小，单位 Mbps
+                     * @param _bandwidth 公网带宽大小，单位 Mbps
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -388,13 +424,13 @@ namespace TencentCloud
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 私有网络VpcId
+                     * 私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录[私有网络](https://console.cloud.tencent.com/vpc/vpc?rid=1)控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络SubnetId
+                     * 私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录[子网控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -406,7 +442,16 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 节点规格,基础型rabbit-vip-basic-1,标准型rabbit-vip-basic-2,高阶1型rabbit-vip-basic-3,高阶2型rabbit-vip-basic-4。不传默认为基础型
+                     * 集群的节点规格，需要输入对应的规格标识：
+2C8G：rabbit-vip-basic-2c8g
+4C16G：rabbit-vip-basic-4c16g
+8C32G：rabbit-vip-basic-8c32g
+16C32G：rabbit-vip-basic-4
+16C64G：rabbit-vip-basic-16c64g
+2C4G：rabbit-vip-basic-5
+4C8G：rabbit-vip-basic-1
+8C16G（已售罄）：rabbit-vip-basic-2
+不传默认为 4C8G：rabbit-vip-basic-1
                      */
                     std::string m_nodeSpec;
                     bool m_nodeSpecHasBeenSet;
@@ -424,13 +469,13 @@ namespace TencentCloud
                     bool m_storageSizeHasBeenSet;
 
                     /**
-                     * 镜像队列,不传默认为false
+                     * 是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false
                      */
                     bool m_enableCreateDefaultHaMirrorQueue;
                     bool m_enableCreateDefaultHaMirrorQueueHasBeenSet;
 
                     /**
-                     * 预付费使用。自动续费,不传默认为true
+                     * 仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true
                      */
                     bool m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
@@ -466,7 +511,7 @@ namespace TencentCloud
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * 公网带宽大小，单位 M
+                     * 公网带宽大小，单位 Mbps
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;

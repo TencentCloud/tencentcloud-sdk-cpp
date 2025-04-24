@@ -75,6 +75,8 @@
 #include <tencentcloud/gs/v20191118/model/DestroyAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/ExecuteCommandOnAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/ExecuteCommandOnAndroidInstancesResponse.h>
+#include <tencentcloud/gs/v20191118/model/FetchAndroidInstancesLogsRequest.h>
+#include <tencentcloud/gs/v20191118/model/FetchAndroidInstancesLogsResponse.h>
 #include <tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppRequest.h>
 #include <tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidAppRequest.h>
@@ -85,6 +87,8 @@
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstanceInformationResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstanceResolutionRequest.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstanceResolutionResponse.h>
+#include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesInformationRequest.h>
+#include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesInformationResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesLabelsRequest.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesLabelsResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionRequest.h>
@@ -221,6 +225,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExecuteCommandOnAndroidInstancesResponse> ExecuteCommandOnAndroidInstancesOutcome;
                 typedef std::future<ExecuteCommandOnAndroidInstancesOutcome> ExecuteCommandOnAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ExecuteCommandOnAndroidInstancesRequest&, ExecuteCommandOnAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteCommandOnAndroidInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::FetchAndroidInstancesLogsResponse> FetchAndroidInstancesLogsOutcome;
+                typedef std::future<FetchAndroidInstancesLogsOutcome> FetchAndroidInstancesLogsOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::FetchAndroidInstancesLogsRequest&, FetchAndroidInstancesLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchAndroidInstancesLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::InstallAndroidInstancesAppResponse> InstallAndroidInstancesAppOutcome;
                 typedef std::future<InstallAndroidInstancesAppOutcome> InstallAndroidInstancesAppOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::InstallAndroidInstancesAppRequest&, InstallAndroidInstancesAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallAndroidInstancesAppAsyncHandler;
@@ -236,6 +243,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAndroidInstanceResolutionResponse> ModifyAndroidInstanceResolutionOutcome;
                 typedef std::future<ModifyAndroidInstanceResolutionOutcome> ModifyAndroidInstanceResolutionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstanceResolutionRequest&, ModifyAndroidInstanceResolutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstanceResolutionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAndroidInstancesInformationResponse> ModifyAndroidInstancesInformationOutcome;
+                typedef std::future<ModifyAndroidInstancesInformationOutcome> ModifyAndroidInstancesInformationOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstancesInformationRequest&, ModifyAndroidInstancesInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstancesInformationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAndroidInstancesLabelsResponse> ModifyAndroidInstancesLabelsOutcome;
                 typedef std::future<ModifyAndroidInstancesLabelsOutcome> ModifyAndroidInstancesLabelsOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstancesLabelsRequest&, ModifyAndroidInstancesLabelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstancesLabelsAsyncHandler;
@@ -544,6 +554,15 @@ namespace TencentCloud
                 ExecuteCommandOnAndroidInstancesOutcomeCallable ExecuteCommandOnAndroidInstancesCallable(const Model::ExecuteCommandOnAndroidInstancesRequest& request);
 
                 /**
+                 *批量获取安卓实例日志
+                 * @param req FetchAndroidInstancesLogsRequest
+                 * @return FetchAndroidInstancesLogsOutcome
+                 */
+                FetchAndroidInstancesLogsOutcome FetchAndroidInstancesLogs(const Model::FetchAndroidInstancesLogsRequest &request);
+                void FetchAndroidInstancesLogsAsync(const Model::FetchAndroidInstancesLogsRequest& request, const FetchAndroidInstancesLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FetchAndroidInstancesLogsOutcomeCallable FetchAndroidInstancesLogsCallable(const Model::FetchAndroidInstancesLogsRequest& request);
+
+                /**
                  *安装安卓实例应用
                  * @param req InstallAndroidInstancesAppRequest
                  * @return InstallAndroidInstancesAppOutcome
@@ -587,6 +606,15 @@ namespace TencentCloud
                 ModifyAndroidInstanceResolutionOutcome ModifyAndroidInstanceResolution(const Model::ModifyAndroidInstanceResolutionRequest &request);
                 void ModifyAndroidInstanceResolutionAsync(const Model::ModifyAndroidInstanceResolutionRequest& request, const ModifyAndroidInstanceResolutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAndroidInstanceResolutionOutcomeCallable ModifyAndroidInstanceResolutionCallable(const Model::ModifyAndroidInstanceResolutionRequest& request);
+
+                /**
+                 *批量修改安卓实例信息
+                 * @param req ModifyAndroidInstancesInformationRequest
+                 * @return ModifyAndroidInstancesInformationOutcome
+                 */
+                ModifyAndroidInstancesInformationOutcome ModifyAndroidInstancesInformation(const Model::ModifyAndroidInstancesInformationRequest &request);
+                void ModifyAndroidInstancesInformationAsync(const Model::ModifyAndroidInstancesInformationRequest& request, const ModifyAndroidInstancesInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAndroidInstancesInformationOutcomeCallable ModifyAndroidInstancesInformationCallable(const Model::ModifyAndroidInstancesInformationRequest& request);
 
                 /**
                  *修改安卓实例分辨率。需要注意的是该接口可能导致正在运行的应用出现闪退，所以建议在实例维护时期才进行调用。

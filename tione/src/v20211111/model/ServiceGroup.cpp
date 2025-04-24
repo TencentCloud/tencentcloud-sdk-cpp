@@ -40,7 +40,9 @@ ServiceGroup::ServiceGroup() :
     m_replicasCountHasBeenSet(false),
     m_availableReplicasCountHasBeenSet(false),
     m_subUinHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_authorizationEnableHasBeenSet(false),
+    m_authTokensHasBeenSet(false)
 {
 }
 
@@ -269,6 +271,36 @@ CoreInternalOutcome ServiceGroup::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AuthorizationEnable") && !value["AuthorizationEnable"].IsNull())
+    {
+        if (!value["AuthorizationEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.AuthorizationEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_authorizationEnable = value["AuthorizationEnable"].GetBool();
+        m_authorizationEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthTokens") && !value["AuthTokens"].IsNull())
+    {
+        if (!value["AuthTokens"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.AuthTokens` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AuthTokens"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AuthToken item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_authTokens.push_back(item);
+        }
+        m_authTokensHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -448,6 +480,29 @@ void ServiceGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_authorizationEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authorizationEnable, allocator);
+    }
+
+    if (m_authTokensHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthTokens";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_authTokens.begin(); itr != m_authTokens.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -771,5 +826,37 @@ void ServiceGroup::SetAppId(const int64_t& _appId)
 bool ServiceGroup::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+bool ServiceGroup::GetAuthorizationEnable() const
+{
+    return m_authorizationEnable;
+}
+
+void ServiceGroup::SetAuthorizationEnable(const bool& _authorizationEnable)
+{
+    m_authorizationEnable = _authorizationEnable;
+    m_authorizationEnableHasBeenSet = true;
+}
+
+bool ServiceGroup::AuthorizationEnableHasBeenSet() const
+{
+    return m_authorizationEnableHasBeenSet;
+}
+
+vector<AuthToken> ServiceGroup::GetAuthTokens() const
+{
+    return m_authTokens;
+}
+
+void ServiceGroup::SetAuthTokens(const vector<AuthToken>& _authTokens)
+{
+    m_authTokens = _authTokens;
+    m_authTokensHasBeenSet = true;
+}
+
+bool ServiceGroup::AuthTokensHasBeenSet() const
+{
+    return m_authTokensHasBeenSet;
 }
 

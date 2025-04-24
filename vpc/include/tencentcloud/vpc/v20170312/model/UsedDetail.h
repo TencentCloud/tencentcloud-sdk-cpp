@@ -174,15 +174,19 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP
-                     * @return ResourceType 资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP
+                     * 获取资源类型。可选值: EIP, BWP, LB
+
+                     * @return ResourceType 资源类型。可选值: EIP, BWP, LB
+
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP
-                     * @param _resourceType 资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP
+                     * 设置资源类型。可选值: EIP, BWP, LB
+
+                     * @param _resourceType 资源类型。可选值: EIP, BWP, LB
+
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -296,7 +300,8 @@ namespace TencentCloud
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP
+                     * 资源类型。可选值: EIP, BWP, LB
+
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

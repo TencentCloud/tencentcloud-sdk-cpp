@@ -171,6 +171,27 @@ namespace TencentCloud
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取grpc内网调用地址
+                     * @return InnerGrpcAddr grpc内网调用地址
+                     * 
+                     */
+                    std::vector<std::string> GetInnerGrpcAddr() const;
+
+                    /**
+                     * 设置grpc内网调用地址
+                     * @param _innerGrpcAddr grpc内网调用地址
+                     * 
+                     */
+                    void SetInnerGrpcAddr(const std::vector<std::string>& _innerGrpcAddr);
+
+                    /**
+                     * 判断参数 InnerGrpcAddr 是否已赋值
+                     * @return InnerGrpcAddr 是否已赋值
+                     * 
+                     */
+                    bool InnerGrpcAddrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +228,12 @@ namespace TencentCloud
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * grpc内网调用地址
+                     */
+                    std::vector<std::string> m_innerGrpcAddr;
+                    bool m_innerGrpcAddrHasBeenSet;
 
                 };
             }

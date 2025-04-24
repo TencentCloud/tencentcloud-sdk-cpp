@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单号Id
-                     * @return TranId 订单号Id
+                     * 获取订单号 ID
+                     * @return TranId 订单号 ID
                      * 
                      */
                     std::string GetTranId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TranIdHasBeenSet() const;
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取实例 ID
+                     * @return InstanceId 实例 ID
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单号Id
+                     * 订单号 ID
                      */
                     std::string m_tranId;
                     bool m_tranIdHasBeenSet;
 
                     /**
-                     * 实例Id
+                     * 实例 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
