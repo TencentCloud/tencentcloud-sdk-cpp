@@ -27,6 +27,7 @@ SmartStructuralProRequest::SmartStructuralProRequest() :
     m_imageBase64HasBeenSet(false),
     m_pdfPageNumberHasBeenSet(false),
     m_itemNamesHasBeenSet(false),
+    m_itemNamesShowModeHasBeenSet(false),
     m_returnFullTextHasBeenSet(false),
     m_configIdHasBeenSet(false),
     m_enableCoordHasBeenSet(false),
@@ -77,6 +78,14 @@ string SmartStructuralProRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_itemNamesShowModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ItemNamesShowMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_itemNamesShowMode, allocator);
     }
 
     if (m_returnFullTextHasBeenSet)
@@ -190,6 +199,22 @@ void SmartStructuralProRequest::SetItemNames(const vector<string>& _itemNames)
 bool SmartStructuralProRequest::ItemNamesHasBeenSet() const
 {
     return m_itemNamesHasBeenSet;
+}
+
+bool SmartStructuralProRequest::GetItemNamesShowMode() const
+{
+    return m_itemNamesShowMode;
+}
+
+void SmartStructuralProRequest::SetItemNamesShowMode(const bool& _itemNamesShowMode)
+{
+    m_itemNamesShowMode = _itemNamesShowMode;
+    m_itemNamesShowModeHasBeenSet = true;
+}
+
+bool SmartStructuralProRequest::ItemNamesShowModeHasBeenSet() const
+{
+    return m_itemNamesShowModeHasBeenSet;
 }
 
 bool SmartStructuralProRequest::GetReturnFullText() const

@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
-                     * @return PdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     * 获取需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前3页。
+                     * @return PdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前3页。
                      * 
                      */
                     uint64_t GetPdfPageNumber() const;
 
                     /**
-                     * 设置需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
-                     * @param _pdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     * 设置需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前3页。
+                     * @param _pdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前3页。
                      * 
                      */
                     void SetPdfPageNumber(const uint64_t& _pdfPageNumber);
@@ -126,6 +126,35 @@ namespace TencentCloud
                      * 
                      */
                     bool ItemNamesHasBeenSet() const;
+
+                    /**
+                     * 获取true：仅输出自定义字段
+flase：输出默认字段+自定义字段
+默认true
+                     * @return ItemNamesShowMode true：仅输出自定义字段
+flase：输出默认字段+自定义字段
+默认true
+                     * 
+                     */
+                    bool GetItemNamesShowMode() const;
+
+                    /**
+                     * 设置true：仅输出自定义字段
+flase：输出默认字段+自定义字段
+默认true
+                     * @param _itemNamesShowMode true：仅输出自定义字段
+flase：输出默认字段+自定义字段
+默认true
+                     * 
+                     */
+                    void SetItemNamesShowMode(const bool& _itemNamesShowMode);
+
+                    /**
+                     * 判断参数 ItemNamesShowMode 是否已赋值
+                     * @return ItemNamesShowMode 是否已赋值
+                     * 
+                     */
+                    bool ItemNamesShowModeHasBeenSet() const;
 
                     /**
                      * 获取是否开启全文字段识别
@@ -165,6 +194,7 @@ AirWayBill -- 航空运单识别模板
 DispatchWeightNote -- 磅单发货单识别模板
 ReceiptWeightNote -- 磅单收货单识别模板
 ArticalRecognize -- 手写作文模版
+Table -- 表格模版
                      * @return ConfigId 配置id支持：
 General -- 通用场景 
 InvoiceEng -- 国际invoice模版 
@@ -181,6 +211,7 @@ AirWayBill -- 航空运单识别模板
 DispatchWeightNote -- 磅单发货单识别模板
 ReceiptWeightNote -- 磅单收货单识别模板
 ArticalRecognize -- 手写作文模版
+Table -- 表格模版
                      * 
                      */
                     std::string GetConfigId() const;
@@ -202,6 +233,7 @@ AirWayBill -- 航空运单识别模板
 DispatchWeightNote -- 磅单发货单识别模板
 ReceiptWeightNote -- 磅单收货单识别模板
 ArticalRecognize -- 手写作文模版
+Table -- 表格模版
                      * @param _configId 配置id支持：
 General -- 通用场景 
 InvoiceEng -- 国际invoice模版 
@@ -218,6 +250,7 @@ AirWayBill -- 航空运单识别模板
 DispatchWeightNote -- 磅单发货单识别模板
 ReceiptWeightNote -- 磅单收货单识别模板
 ArticalRecognize -- 手写作文模版
+Table -- 表格模版
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -307,7 +340,7 @@ ArticalRecognize -- 手写作文模版
                     bool m_imageBase64HasBeenSet;
 
                     /**
-                     * 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     * 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前3页。
                      */
                     uint64_t m_pdfPageNumber;
                     bool m_pdfPageNumberHasBeenSet;
@@ -317,6 +350,14 @@ ArticalRecognize -- 手写作文模版
                      */
                     std::vector<std::string> m_itemNames;
                     bool m_itemNamesHasBeenSet;
+
+                    /**
+                     * true：仅输出自定义字段
+flase：输出默认字段+自定义字段
+默认true
+                     */
+                    bool m_itemNamesShowMode;
+                    bool m_itemNamesShowModeHasBeenSet;
 
                     /**
                      * 是否开启全文字段识别
@@ -341,6 +382,7 @@ AirWayBill -- 航空运单识别模板
 DispatchWeightNote -- 磅单发货单识别模板
 ReceiptWeightNote -- 磅单收货单识别模板
 ArticalRecognize -- 手写作文模版
+Table -- 表格模版
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
