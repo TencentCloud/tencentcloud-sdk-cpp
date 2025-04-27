@@ -492,7 +492,9 @@ CreateDiagnoseUrl 用于添加域名诊断任务URL。
                 CreateEdgePackTaskOutcomeCallable CreateEdgePackTaskCallable(const Model::CreateEdgePackTaskRequest& request);
 
                 /**
-                 *CreateScdnDomain 用于创建 SCDN 加速域名
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+CreateScdnDomain 用于创建 SCDN 加速域名
                  * @param req CreateScdnDomainRequest
                  * @return CreateScdnDomainOutcome
                  */
@@ -501,7 +503,9 @@ CreateDiagnoseUrl 用于添加域名诊断任务URL。
                 CreateScdnDomainOutcomeCallable CreateScdnDomainCallable(const Model::CreateScdnDomainRequest& request);
 
                 /**
-                 *CreateScdnFailedLogTask 用于重试创建失败的事件日志任务
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+CreateScdnFailedLogTask 用于重试创建失败的事件日志任务
                  * @param req CreateScdnFailedLogTaskRequest
                  * @return CreateScdnFailedLogTaskOutcome
                  */
@@ -510,7 +514,9 @@ CreateDiagnoseUrl 用于添加域名诊断任务URL。
                 CreateScdnFailedLogTaskOutcomeCallable CreateScdnFailedLogTaskCallable(const Model::CreateScdnFailedLogTaskRequest& request);
 
                 /**
-                 *CreateScdnLogTask 用于创建事件日志任务
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+CreateScdnLogTask 用于创建事件日志任务
                  * @param req CreateScdnLogTaskRequest
                  * @return CreateScdnLogTaskOutcome
                  */
@@ -549,7 +555,9 @@ CreateDiagnoseUrl 用于添加域名诊断任务URL。
                 DeleteClsLogTopicOutcomeCallable DeleteClsLogTopicCallable(const Model::DeleteClsLogTopicRequest& request);
 
                 /**
-                 *删除SCDN域名
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+删除SCDN域名
                  * @param req DeleteScdnDomainRequest
                  * @return DeleteScdnDomainOutcome
                  */
@@ -823,7 +831,9 @@ DescribeDiagnoseReport 用于获取指定报告id的内容。
                 DescribeReportDataOutcomeCallable DescribeReportDataCallable(const Model::DescribeReportDataRequest& request);
 
                 /**
-                 *获取BOT统计数据列表
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+获取BOT统计数据列表
                  * @param req DescribeScdnBotDataRequest
                  * @return DescribeScdnBotDataOutcome
                  */
@@ -832,7 +842,9 @@ DescribeDiagnoseReport 用于获取指定报告id的内容。
                 DescribeScdnBotDataOutcomeCallable DescribeScdnBotDataCallable(const Model::DescribeScdnBotDataRequest& request);
 
                 /**
-                 *查询BOT会话记录列表
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+查询BOT会话记录列表
                  * @param req DescribeScdnBotRecordsRequest
                  * @return DescribeScdnBotRecordsOutcome
                  */
@@ -841,7 +853,9 @@ DescribeDiagnoseReport 用于获取指定报告id的内容。
                 DescribeScdnBotRecordsOutcomeCallable DescribeScdnBotRecordsCallable(const Model::DescribeScdnBotRecordsRequest& request);
 
                 /**
-                 *DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置
                  * @param req DescribeScdnConfigRequest
                  * @return DescribeScdnConfigOutcome
                  */
@@ -850,7 +864,9 @@ DescribeDiagnoseReport 用于获取指定报告id的内容。
                 DescribeScdnConfigOutcomeCallable DescribeScdnConfigCallable(const Model::DescribeScdnConfigRequest& request);
 
                 /**
-                 *查询在SCDN IP安全策略
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+查询在SCDN IP安全策略
                  * @param req DescribeScdnIpStrategyRequest
                  * @return DescribeScdnIpStrategyOutcome
                  */
@@ -859,7 +875,9 @@ DescribeDiagnoseReport 用于获取指定报告id的内容。
                 DescribeScdnIpStrategyOutcomeCallable DescribeScdnIpStrategyCallable(const Model::DescribeScdnIpStrategyRequest& request);
 
                 /**
-                 *获取SCDN的Top数据
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+获取SCDN的Top数据
                  * @param req DescribeScdnTopDataRequest
                  * @return DescribeScdnTopDataOutcome
                  */
@@ -1000,7 +1018,9 @@ ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要�
                 ListDiagnoseReportOutcomeCallable ListDiagnoseReportCallable(const Model::ListDiagnoseReportRequest& request);
 
                 /**
-                 *ListScdnDomains 用于查询 SCDN 安全加速域名列表，及域名基本配置信息
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+ListScdnDomains 用于查询 SCDN 安全加速域名列表，及域名基本配置信息
                  * @param req ListScdnDomainsRequest
                  * @return ListScdnDomainsOutcome
                  */
@@ -1009,7 +1029,9 @@ ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要�
                 ListScdnDomainsOutcomeCallable ListScdnDomainsCallable(const Model::ListScdnDomainsRequest& request);
 
                 /**
-                 *ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息
                  * @param req ListScdnLogTasksRequest
                  * @return ListScdnLogTasksOutcome
                  */
@@ -1018,7 +1040,9 @@ ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要�
                 ListScdnLogTasksOutcomeCallable ListScdnLogTasksCallable(const Model::ListScdnLogTasksRequest& request);
 
                 /**
-                 *获取Bot攻击的Top数据列表
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+获取Bot攻击的Top数据列表
                  * @param req ListScdnTopBotDataRequest
                  * @return ListScdnTopBotDataOutcome
                  */
@@ -1168,7 +1192,9 @@ Value 字段，使用 json 进行序列化，其中固定 update 作为 key，�
                 StartCdnDomainOutcomeCallable StartCdnDomainCallable(const Model::StartCdnDomainRequest& request);
 
                 /**
-                 *StartScdnDomain 用于开启域名的安全防护配置
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+StartScdnDomain 用于开启域名的安全防护配置
                  * @param req StartScdnDomainRequest
                  * @return StartScdnDomainOutcome
                  */
@@ -1187,7 +1213,9 @@ Value 字段，使用 json 进行序列化，其中固定 update 作为 key，�
                 StopCdnDomainOutcomeCallable StopCdnDomainCallable(const Model::StopCdnDomainRequest& request);
 
                 /**
-                 *StopScdnDomain 用于关闭域名的安全防护配置
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+StopScdnDomain 用于关闭域名的安全防护配置
                  * @param req StopScdnDomainRequest
                  * @return StopScdnDomainOutcome
                  */
@@ -1225,7 +1253,9 @@ Value 字段，使用 json 进行序列化，其中固定 update 作为 key，�
                 UpdatePayTypeOutcomeCallable UpdatePayTypeCallable(const Model::UpdatePayTypeRequest& request);
 
                 /**
-                 *UpdateScdnDomain 用于修改 SCDN 加速域名安全相关配置
+                 *SCDN平台已经正式下线，接口开始预下线处理
+
+UpdateScdnDomain 用于修改 SCDN 加速域名安全相关配置
                  * @param req UpdateScdnDomainRequest
                  * @return UpdateScdnDomainOutcome
                  */

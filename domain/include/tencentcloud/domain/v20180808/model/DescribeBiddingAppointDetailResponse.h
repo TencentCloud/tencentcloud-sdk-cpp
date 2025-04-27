@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool DeleteTimeHasBeenSet() const;
 
                     /**
-                     * 获取当前价格
-                     * @return AppointPrice 当前价格
+                     * 获取当前价格 单位元
+                     * @return AppointPrice 当前价格 单位元
                      * 
                      */
                     uint64_t GetAppointPrice() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool AppointPriceHasBeenSet() const;
 
                     /**
-                     * 获取预约保证金
-                     * @return AppointBondPrice 预约保证金
+                     * 获取预约保证金 单位元
+                     * @return AppointBondPrice 预约保证金 单位元
                      * 
                      */
                     uint64_t GetAppointBondPrice() const;
@@ -244,13 +244,13 @@ yes：退回 no: 未退回
                     bool m_deleteTimeHasBeenSet;
 
                     /**
-                     * 当前价格
+                     * 当前价格 单位元
                      */
                     uint64_t m_appointPrice;
                     bool m_appointPriceHasBeenSet;
 
                     /**
-                     * 预约保证金
+                     * 预约保证金 单位元
                      */
                     uint64_t m_appointBondPrice;
                     bool m_appointBondPriceHasBeenSet;

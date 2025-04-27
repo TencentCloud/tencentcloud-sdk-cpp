@@ -388,7 +388,7 @@ namespace TencentCloud
                 CreateDomainBatchOutcomeCallable CreateDomainBatchCallable(const Model::CreateDomainBatchRequest& request);
 
                 /**
-                 *创建赎回订单。
+                 *创建赎回订单。需要域名状态为：RedemptionPending：赎回期
                  * @param req CreateDomainRedemptionRequest
                  * @return CreateDomainRedemptionOutcome
                  */
@@ -542,6 +542,7 @@ namespace TencentCloud
 
                 /**
                  *查询自定义DNS Host
+当前域名在任意状态下均可获取(根据域名当前状态，不一定能获取到具体数据)
                  * @param req DescribeCustomDnsHostSetRequest
                  * @return DescribeCustomDnsHostSetOutcome
                  */
@@ -758,6 +759,7 @@ namespace TencentCloud
 
                 /**
                  *本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。
+当前操作暂不受域名状态限制
                  * @param req SetDomainAutoRenewRequest
                  * @return SetDomainAutoRenewOutcome
                  */
@@ -766,7 +768,7 @@ namespace TencentCloud
                 SetDomainAutoRenewOutcomeCallable SetDomainAutoRenewCallable(const Model::SetDomainAutoRenewRequest& request);
 
                 /**
-                 *同步自定义DNS Host
+                 *同步自定义DNS Host，将域名已经设置的host配置数据从注册局同步下来
                  * @param req SyncCustomDnsHostRequest
                  * @return SyncCustomDnsHostOutcome
                  */

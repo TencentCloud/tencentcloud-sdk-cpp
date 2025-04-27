@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool SuccessfulTimeHasBeenSet() const;
 
                     /**
-                     * 获取得标价格
-                     * @return SuccessfulPrice 得标价格
+                     * 获取得标价格 单位元
+                     * @return SuccessfulPrice 得标价格 单位元
                      * 
                      */
                     double GetSuccessfulPrice() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool BiddingBondRefundHasBeenSet() const;
 
                     /**
-                     * 获取保证金
-                     * @return BiddingBondPrice 保证金
+                     * 获取保证金 单位元
+                     * @return BiddingBondPrice 保证金 单位元
                      * 
                      */
                     double GetBiddingBondPrice() const;
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_successfulTimeHasBeenSet;
 
                     /**
-                     * 得标价格
+                     * 得标价格 单位元
                      */
                     double m_successfulPrice;
                     bool m_successfulPriceHasBeenSet;
@@ -234,7 +234,7 @@ namespace TencentCloud
                     bool m_biddingBondRefundHasBeenSet;
 
                     /**
-                     * 保证金
+                     * 保证金 单位元
                      */
                     double m_biddingBondPrice;
                     bool m_biddingBondPriceHasBeenSet;

@@ -44,14 +44,30 @@ namespace TencentCloud
 
                     /**
                      * 获取注册码ID。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `RegisterCodeIds ` 和 `Filters ` 。
                      * @return RegisterCodeIds 注册码ID。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `RegisterCodeIds ` 和 `Filters ` 。
                      * 
                      */
                     std::vector<std::string> GetRegisterCodeIds() const;
 
                     /**
                      * 设置注册码ID。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `RegisterCodeIds ` 和 `Filters ` 。
                      * @param _registerCodeIds 注册码ID。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `RegisterCodeIds ` 和 `Filters ` 。
                      * 
                      */
                     void SetRegisterCodeIds(const std::vector<std::string>& _registerCodeIds);
@@ -109,6 +125,10 @@ namespace TencentCloud
 
                     /**
                      * 注册码ID。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `RegisterCodeIds ` 和 `Filters ` 。
                      */
                     std::vector<std::string> m_registerCodeIds;
                     bool m_registerCodeIdsHasBeenSet;

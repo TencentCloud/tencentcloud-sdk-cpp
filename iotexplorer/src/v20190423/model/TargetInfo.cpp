@@ -27,7 +27,9 @@ TargetInfo::TargetInfo() :
     m_startTimeMsHasBeenSet(false),
     m_endTimeMsHasBeenSet(false),
     m_eventIdHasBeenSet(false),
-    m_summaryHasBeenSet(false)
+    m_summaryHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
+    m_thumbnailHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome TargetInfo::Deserialize(const rapidjson::Value &value)
         m_summaryHasBeenSet = true;
     }
 
+    if (value.HasMember("ChannelId") && !value["ChannelId"].IsNull())
+    {
+        if (!value["ChannelId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetInfo.ChannelId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelId = value["ChannelId"].GetUint64();
+        m_channelIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Thumbnail") && !value["Thumbnail"].IsNull())
+    {
+        if (!value["Thumbnail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetInfo.Thumbnail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_thumbnail = string(value["Thumbnail"].GetString());
+        m_thumbnailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void TargetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Summary";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_summary.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_channelId, allocator);
+    }
+
+    if (m_thumbnailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Thumbnail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_thumbnail.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void TargetInfo::SetSummary(const string& _summary)
 bool TargetInfo::SummaryHasBeenSet() const
 {
     return m_summaryHasBeenSet;
+}
+
+uint64_t TargetInfo::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void TargetInfo::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool TargetInfo::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
+}
+
+string TargetInfo::GetThumbnail() const
+{
+    return m_thumbnail;
+}
+
+void TargetInfo::SetThumbnail(const string& _thumbnail)
+{
+    m_thumbnail = _thumbnail;
+    m_thumbnailHasBeenSet = true;
+}
+
+bool TargetInfo::ThumbnailHasBeenSet() const
+{
+    return m_thumbnailHasBeenSet;
 }
 

@@ -44,15 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取伸缩组ID。
-                     * @return AutoScalingGroupId 伸缩组ID。
+                     * 获取伸缩组ID。可以通过以下方式获取可用的伸缩组ID： 
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
+                     * @return AutoScalingGroupId 伸缩组ID。可以通过以下方式获取可用的伸缩组ID： 
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
-                     * 设置伸缩组ID。
-                     * @param _autoScalingGroupId 伸缩组ID。
+                     * 设置伸缩组ID。可以通过以下方式获取可用的伸缩组ID： 
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
+                     * @param _autoScalingGroupId 伸缩组ID。可以通过以下方式获取可用的伸缩组ID： 
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
@@ -86,15 +94,15 @@ namespace TencentCloud
                     bool RefreshSettingsHasBeenSet() const;
 
                     /**
-                     * 获取原始刷新活动 ID。
-                     * @return OriginRefreshActivityId 原始刷新活动 ID。
+                     * 获取原始刷新活动 ID。可以通过调用接口 [DescribeRefreshActivities](https://cloud.tencent.com/document/api/377/99175) ，取返回信息中的 OriginRefreshActivityId 获取原始刷新活动ID。
+                     * @return OriginRefreshActivityId 原始刷新活动 ID。可以通过调用接口 [DescribeRefreshActivities](https://cloud.tencent.com/document/api/377/99175) ，取返回信息中的 OriginRefreshActivityId 获取原始刷新活动ID。
                      * 
                      */
                     std::string GetOriginRefreshActivityId() const;
 
                     /**
-                     * 设置原始刷新活动 ID。
-                     * @param _originRefreshActivityId 原始刷新活动 ID。
+                     * 设置原始刷新活动 ID。可以通过调用接口 [DescribeRefreshActivities](https://cloud.tencent.com/document/api/377/99175) ，取返回信息中的 OriginRefreshActivityId 获取原始刷新活动ID。
+                     * @param _originRefreshActivityId 原始刷新活动 ID。可以通过调用接口 [DescribeRefreshActivities](https://cloud.tencent.com/document/api/377/99175) ，取返回信息中的 OriginRefreshActivityId 获取原始刷新活动ID。
                      * 
                      */
                     void SetOriginRefreshActivityId(const std::string& _originRefreshActivityId);
@@ -130,7 +138,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 伸缩组ID。
+                     * 伸缩组ID。可以通过以下方式获取可用的伸缩组ID： 
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      */
                     std::string m_autoScalingGroupId;
                     bool m_autoScalingGroupIdHasBeenSet;
@@ -142,7 +152,7 @@ namespace TencentCloud
                     bool m_refreshSettingsHasBeenSet;
 
                     /**
-                     * 原始刷新活动 ID。
+                     * 原始刷新活动 ID。可以通过调用接口 [DescribeRefreshActivities](https://cloud.tencent.com/document/api/377/99175) ，取返回信息中的 OriginRefreshActivityId 获取原始刷新活动ID。
                      */
                     std::string m_originRefreshActivityId;
                     bool m_originRefreshActivityIdHasBeenSet;

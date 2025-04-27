@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取业务ID
+可通过DescribeBiddingList接口获取
                      * @return BusinessId 业务ID
+可通过DescribeBiddingList接口获取
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 设置业务ID
+可通过DescribeBiddingList接口获取
                      * @param _businessId 业务ID
+可通过DescribeBiddingList接口获取
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -67,6 +71,7 @@ namespace TencentCloud
 
                     /**
                      * 业务ID
+可通过DescribeBiddingList接口获取
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;

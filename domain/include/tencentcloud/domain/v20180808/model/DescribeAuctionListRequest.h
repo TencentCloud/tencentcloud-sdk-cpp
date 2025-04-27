@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BusinessIdHasBeenSet() const;
 
                     /**
-                     * 获取条数，默认10条
-                     * @return Limit 条数，默认10条
+                     * 获取条数，默认10，最大100
+                     * @return Limit 条数，默认10，最大100
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置条数，默认10条
-                     * @param _limit 条数，默认10条
+                     * 设置条数，默认10，最大100
+                     * @param _limit 条数，默认10，最大100
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return OffSet 偏移量
+                     * 获取偏移量 默认0
+                     * @return OffSet 偏移量 默认0
                      * 
                      */
                     int64_t GetOffSet() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offSet 偏移量
+                     * 设置偏移量 默认0
+                     * @param _offSet 偏移量 默认0
                      * 
                      */
                     void SetOffSet(const int64_t& _offSet);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_businessIdHasBeenSet;
 
                     /**
-                     * 条数，默认10条
+                     * 条数，默认10，最大100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量 默认0
                      */
                     int64_t m_offSet;
                     bool m_offSetHasBeenSet;

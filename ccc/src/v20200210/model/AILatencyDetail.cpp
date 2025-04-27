@@ -25,6 +25,7 @@ AILatencyDetail::AILatencyDetail() :
     m_aSRLatencyHasBeenSet(false),
     m_tTSLatencyHasBeenSet(false),
     m_lLMLatencyHasBeenSet(false),
+    m_lLMFirstTokenLatencyHasBeenSet(false),
     m_eTELatencyHasBeenSet(false)
 {
 }
@@ -74,6 +75,16 @@ CoreInternalOutcome AILatencyDetail::Deserialize(const rapidjson::Value &value)
         m_lLMLatencyHasBeenSet = true;
     }
 
+    if (value.HasMember("LLMFirstTokenLatency") && !value["LLMFirstTokenLatency"].IsNull())
+    {
+        if (!value["LLMFirstTokenLatency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AILatencyDetail.LLMFirstTokenLatency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lLMFirstTokenLatency = value["LLMFirstTokenLatency"].GetInt64();
+        m_lLMFirstTokenLatencyHasBeenSet = true;
+    }
+
     if (value.HasMember("ETELatency") && !value["ETELatency"].IsNull())
     {
         if (!value["ETELatency"].IsInt64())
@@ -121,6 +132,14 @@ void AILatencyDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "LLMLatency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lLMLatency, allocator);
+    }
+
+    if (m_lLMFirstTokenLatencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LLMFirstTokenLatency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lLMFirstTokenLatency, allocator);
     }
 
     if (m_eTELatencyHasBeenSet)
@@ -196,6 +215,22 @@ void AILatencyDetail::SetLLMLatency(const int64_t& _lLMLatency)
 bool AILatencyDetail::LLMLatencyHasBeenSet() const
 {
     return m_lLMLatencyHasBeenSet;
+}
+
+int64_t AILatencyDetail::GetLLMFirstTokenLatency() const
+{
+    return m_lLMFirstTokenLatency;
+}
+
+void AILatencyDetail::SetLLMFirstTokenLatency(const int64_t& _lLMFirstTokenLatency)
+{
+    m_lLMFirstTokenLatency = _lLMFirstTokenLatency;
+    m_lLMFirstTokenLatencyHasBeenSet = true;
+}
+
+bool AILatencyDetail::LLMFirstTokenLatencyHasBeenSet() const
+{
+    return m_lLMFirstTokenLatencyHasBeenSet;
 }
 
 int64_t AILatencyDetail::GetETELatency() const

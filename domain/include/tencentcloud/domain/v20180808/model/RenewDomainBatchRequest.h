@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名续费的年限。
-                     * @return Period 域名续费的年限。
+                     * 获取域名续费的年限。取值范围[1,9]
+                     * @return Period 域名续费的年限。取值范围[1,9]
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置域名续费的年限。
-                     * @param _period 域名续费的年限。
+                     * 设置域名续费的年限。取值范围[1,9]
+                     * @param _period 域名续费的年限。取值范围[1,9]
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -65,14 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取批量续费的域名。
+一次提交不大于4000个
                      * @return Domains 批量续费的域名。
+一次提交不大于4000个
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置批量续费的域名。
+一次提交不大于4000个
                      * @param _domains 批量续费的域名。
+一次提交不大于4000个
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -225,13 +229,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名续费的年限。
+                     * 域名续费的年限。取值范围[1,9]
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
                      * 批量续费的域名。
+一次提交不大于4000个
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;

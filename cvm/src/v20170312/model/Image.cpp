@@ -39,7 +39,8 @@ Image::Image() :
     m_tagsHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
     m_imageFamilyHasBeenSet(false),
-    m_imageDeprecatedHasBeenSet(false)
+    m_imageDeprecatedHasBeenSet(false),
+    m_cdcCacheStatusHasBeenSet(false)
 {
 }
 
@@ -258,6 +259,16 @@ CoreInternalOutcome Image::Deserialize(const rapidjson::Value &value)
         m_imageDeprecatedHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcCacheStatus") && !value["CdcCacheStatus"].IsNull())
+    {
+        if (!value["CdcCacheStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Image.CdcCacheStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcCacheStatus = string(value["CdcCacheStatus"].GetString());
+        m_cdcCacheStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -429,6 +440,14 @@ void Image::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ImageDeprecated";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageDeprecated, allocator);
+    }
+
+    if (m_cdcCacheStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcCacheStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcCacheStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -736,5 +755,21 @@ void Image::SetImageDeprecated(const bool& _imageDeprecated)
 bool Image::ImageDeprecatedHasBeenSet() const
 {
     return m_imageDeprecatedHasBeenSet;
+}
+
+string Image::GetCdcCacheStatus() const
+{
+    return m_cdcCacheStatus;
+}
+
+void Image::SetCdcCacheStatus(const string& _cdcCacheStatus)
+{
+    m_cdcCacheStatus = _cdcCacheStatus;
+    m_cdcCacheStatusHasBeenSet = true;
+}
+
+bool Image::CdcCacheStatusHasBeenSet() const
+{
+    return m_cdcCacheStatusHasBeenSet;
 }
 

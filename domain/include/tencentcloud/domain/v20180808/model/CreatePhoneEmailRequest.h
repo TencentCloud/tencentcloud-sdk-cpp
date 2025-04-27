@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取验证码(通过SendPhoneEmailCode发送到手机或邮箱的验证码)
-                     * @return VerifyCode 验证码(通过SendPhoneEmailCode发送到手机或邮箱的验证码)
+                     * 获取验证码
+通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666
+                     * @return VerifyCode 验证码
+通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666
                      * 
                      */
                     std::string GetVerifyCode() const;
 
                     /**
-                     * 设置验证码(通过SendPhoneEmailCode发送到手机或邮箱的验证码)
-                     * @param _verifyCode 验证码(通过SendPhoneEmailCode发送到手机或邮箱的验证码)
+                     * 设置验证码
+通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666
+                     * @param _verifyCode 验证码
+通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666
                      * 
                      */
                     void SetVerifyCode(const std::string& _verifyCode);
@@ -120,7 +124,8 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 验证码(通过SendPhoneEmailCode发送到手机或邮箱的验证码)
+                     * 验证码
+通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666
                      */
                     std::string m_verifyCode;
                     bool m_verifyCodeHasBeenSet;

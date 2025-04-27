@@ -28,7 +28,10 @@ CreateVulScanTaskRequest::CreateVulScanTaskRequest() :
     m_registryImageScanTypeHasBeenSet(false),
     m_registryImageIDsHasBeenSet(false),
     m_localTaskIDHasBeenSet(false),
-    m_registryTaskIDHasBeenSet(false)
+    m_registryTaskIDHasBeenSet(false),
+    m_localImageContainerRunningHasBeenSet(false),
+    m_registryImageContainerRunningHasBeenSet(false),
+    m_isLatestHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,30 @@ string CreateVulScanTaskRequest::ToJsonString() const
         string key = "RegistryTaskID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_registryTaskID, allocator);
+    }
+
+    if (m_localImageContainerRunningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalImageContainerRunning";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_localImageContainerRunning, allocator);
+    }
+
+    if (m_registryImageContainerRunningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryImageContainerRunning";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_registryImageContainerRunning, allocator);
+    }
+
+    if (m_isLatestHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLatest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isLatest, allocator);
     }
 
 
@@ -199,6 +226,54 @@ void CreateVulScanTaskRequest::SetRegistryTaskID(const int64_t& _registryTaskID)
 bool CreateVulScanTaskRequest::RegistryTaskIDHasBeenSet() const
 {
     return m_registryTaskIDHasBeenSet;
+}
+
+bool CreateVulScanTaskRequest::GetLocalImageContainerRunning() const
+{
+    return m_localImageContainerRunning;
+}
+
+void CreateVulScanTaskRequest::SetLocalImageContainerRunning(const bool& _localImageContainerRunning)
+{
+    m_localImageContainerRunning = _localImageContainerRunning;
+    m_localImageContainerRunningHasBeenSet = true;
+}
+
+bool CreateVulScanTaskRequest::LocalImageContainerRunningHasBeenSet() const
+{
+    return m_localImageContainerRunningHasBeenSet;
+}
+
+bool CreateVulScanTaskRequest::GetRegistryImageContainerRunning() const
+{
+    return m_registryImageContainerRunning;
+}
+
+void CreateVulScanTaskRequest::SetRegistryImageContainerRunning(const bool& _registryImageContainerRunning)
+{
+    m_registryImageContainerRunning = _registryImageContainerRunning;
+    m_registryImageContainerRunningHasBeenSet = true;
+}
+
+bool CreateVulScanTaskRequest::RegistryImageContainerRunningHasBeenSet() const
+{
+    return m_registryImageContainerRunningHasBeenSet;
+}
+
+bool CreateVulScanTaskRequest::GetIsLatest() const
+{
+    return m_isLatest;
+}
+
+void CreateVulScanTaskRequest::SetIsLatest(const bool& _isLatest)
+{
+    m_isLatest = _isLatest;
+    m_isLatestHasBeenSet = true;
+}
+
+bool CreateVulScanTaskRequest::IsLatestHasBeenSet() const
+{
+    return m_isLatestHasBeenSet;
 }
 
 

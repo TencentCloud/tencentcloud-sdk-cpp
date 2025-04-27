@@ -115,7 +115,11 @@ namespace TencentCloud
 
                     /**
                      * 获取域名状态
+ bid：出价
+noAction：无法操作
                      * @return Status 域名状态
+ bid：出价
+noAction：无法操作
                      * 
                      */
                     std::string GetStatus() const;
@@ -128,8 +132,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取域名价格
-                     * @return CurrentPrice 域名价格
+                     * 获取域名价格 单位元
+                     * @return CurrentPrice 域名价格 单位元
                      * 
                      */
                     double GetCurrentPrice() const;
@@ -142,8 +146,8 @@ namespace TencentCloud
                     bool CurrentPriceHasBeenSet() const;
 
                     /**
-                     * 获取域名保证金
-                     * @return AppointBondPrice 域名保证金
+                     * 获取域名保证金 单位元
+                     * @return AppointBondPrice 域名保证金 单位元
                      * 
                      */
                     double GetAppointBondPrice() const;
@@ -231,18 +235,20 @@ namespace TencentCloud
 
                     /**
                      * 域名状态
+ bid：出价
+noAction：无法操作
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 域名价格
+                     * 域名价格 单位元
                      */
                     double m_currentPrice;
                     bool m_currentPriceHasBeenSet;
 
                     /**
-                     * 域名保证金
+                     * 域名保证金 单位元
                      */
                     double m_appointBondPrice;
                     bool m_appointBondPriceHasBeenSet;

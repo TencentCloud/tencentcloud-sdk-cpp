@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BiddingTimeHasBeenSet() const;
 
                     /**
-                     * 获取出价次数
-                     * @return BidCount 出价次数
+                     * 获取出价次数 单位元
+                     * @return BidCount 出价次数 单位元
                      * 
                      */
                     int64_t GetBidCount() const;
 
                     /**
-                     * 设置出价次数
-                     * @param _bidCount 出价次数
+                     * 设置出价次数 单位元
+                     * @param _bidCount 出价次数 单位元
                      * 
                      */
                     void SetBidCount(const int64_t& _bidCount);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool BidCountHasBeenSet() const;
 
                     /**
-                     * 获取当前价格
-                     * @return Price 当前价格
+                     * 获取当前价格 单位元
+                     * @return Price 当前价格 单位元
                      * 
                      */
                     double GetPrice() const;
 
                     /**
-                     * 设置当前价格
-                     * @param _price 当前价格
+                     * 设置当前价格 单位元
+                     * @param _price 当前价格 单位元
                      * 
                      */
                     void SetPrice(const double& _price);
@@ -131,15 +131,23 @@ namespace TencentCloud
                     bool PriceHasBeenSet() const;
 
                     /**
-                     * 获取用户操作 bid：出价 "noAction"：无法操作
-                     * @return Op 用户操作 bid：出价 "noAction"：无法操作
+                     * 获取用户操作 
+bid：出价 
+noAction：无法操作
+                     * @return Op 用户操作 
+bid：出价 
+noAction：无法操作
                      * 
                      */
                     std::string GetOp() const;
 
                     /**
-                     * 设置用户操作 bid：出价 "noAction"：无法操作
-                     * @param _op 用户操作 bid：出价 "noAction"：无法操作
+                     * 设置用户操作 
+bid：出价 
+noAction：无法操作
+                     * @param _op 用户操作 
+bid：出价 
+noAction：无法操作
                      * 
                      */
                     void SetOp(const std::string& _op);
@@ -187,19 +195,21 @@ namespace TencentCloud
                     bool m_biddingTimeHasBeenSet;
 
                     /**
-                     * 出价次数
+                     * 出价次数 单位元
                      */
                     int64_t m_bidCount;
                     bool m_bidCountHasBeenSet;
 
                     /**
-                     * 当前价格
+                     * 当前价格 单位元
                      */
                     double m_price;
                     bool m_priceHasBeenSet;
 
                     /**
-                     * 用户操作 bid：出价 "noAction"：无法操作
+                     * 用户操作 
+bid：出价 
+noAction：无法操作
                      */
                     std::string m_op;
                     bool m_opHasBeenSet;

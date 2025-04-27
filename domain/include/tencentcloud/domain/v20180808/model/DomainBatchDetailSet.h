@@ -68,15 +68,55 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新
-                     * @return Action 类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新
+                     * 获取类型  
+new：注册域名
+renew：续费域名
+batch_transfer_prohibition_on：开启禁止转移锁
+batch_transfer_prohibition_off：关闭禁止转移锁
+batch_update_prohibition_on：开启禁止更新锁
+batch_update_prohibition_off：关闭禁止更新锁
+batch_modify_owner：域名转移
+batch_modify_domain_info：域名信息修改
+batch_transfer_in：域名转入
+batch_cancel_transfer_out：域名取消转出
+                     * @return Action 类型  
+new：注册域名
+renew：续费域名
+batch_transfer_prohibition_on：开启禁止转移锁
+batch_transfer_prohibition_off：关闭禁止转移锁
+batch_update_prohibition_on：开启禁止更新锁
+batch_update_prohibition_off：关闭禁止更新锁
+batch_modify_owner：域名转移
+batch_modify_domain_info：域名信息修改
+batch_transfer_in：域名转入
+batch_cancel_transfer_out：域名取消转出
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新
-                     * @param _action 类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新
+                     * 设置类型  
+new：注册域名
+renew：续费域名
+batch_transfer_prohibition_on：开启禁止转移锁
+batch_transfer_prohibition_off：关闭禁止转移锁
+batch_update_prohibition_on：开启禁止更新锁
+batch_update_prohibition_off：关闭禁止更新锁
+batch_modify_owner：域名转移
+batch_modify_domain_info：域名信息修改
+batch_transfer_in：域名转入
+batch_cancel_transfer_out：域名取消转出
+                     * @param _action 类型  
+new：注册域名
+renew：续费域名
+batch_transfer_prohibition_on：开启禁止转移锁
+batch_transfer_prohibition_off：关闭禁止转移锁
+batch_update_prohibition_on：开启禁止更新锁
+batch_update_prohibition_off：关闭禁止更新锁
+batch_modify_owner：域名转移
+batch_modify_domain_info：域名信息修改
+batch_transfer_in：域名转入
+batch_cancel_transfer_out：域名取消转出
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -143,15 +183,15 @@ success  操作成功。
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取失败原因
-                     * @return Reason 失败原因
+                     * 获取失败原因，如果状态成功(Status:success),则该字段为空
+                     * @return Reason 失败原因，如果状态成功(Status:success),则该字段为空
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
-                     * 设置失败原因
-                     * @param _reason 失败原因
+                     * 设置失败原因，如果状态成功(Status:success),则该字段为空
+                     * @param _reason 失败原因，如果状态成功(Status:success),则该字段为空
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -235,7 +275,17 @@ success  操作成功。
                     bool m_idHasBeenSet;
 
                     /**
-                     * 类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新
+                     * 类型  
+new：注册域名
+renew：续费域名
+batch_transfer_prohibition_on：开启禁止转移锁
+batch_transfer_prohibition_off：关闭禁止转移锁
+batch_update_prohibition_on：开启禁止更新锁
+batch_update_prohibition_off：关闭禁止更新锁
+batch_modify_owner：域名转移
+batch_modify_domain_info：域名信息修改
+batch_transfer_in：域名转入
+batch_cancel_transfer_out：域名取消转出
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
@@ -256,7 +306,7 @@ success  操作成功。
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 失败原因
+                     * 失败原因，如果状态成功(Status:success),则该字段为空
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;

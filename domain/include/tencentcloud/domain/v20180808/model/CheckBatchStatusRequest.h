@@ -44,14 +44,50 @@ namespace TencentCloud
 
                     /**
                      * 获取操作日志 ID数组，最多 200 个
+可通过任意批量操作接口获取，例如：
+BatchModifyDomainInfo
+ModifyDomainDNSBatch
+ModifyDomainOwnerBatch
+UpdateProhibitionBatch
+TransferProhibitionBatch
+TransferInDomainBatch
+TransferInDomainBatchBuy
+CancelTransferOutInBatch
                      * @return LogIds 操作日志 ID数组，最多 200 个
+可通过任意批量操作接口获取，例如：
+BatchModifyDomainInfo
+ModifyDomainDNSBatch
+ModifyDomainOwnerBatch
+UpdateProhibitionBatch
+TransferProhibitionBatch
+TransferInDomainBatch
+TransferInDomainBatchBuy
+CancelTransferOutInBatch
                      * 
                      */
                     std::vector<uint64_t> GetLogIds() const;
 
                     /**
                      * 设置操作日志 ID数组，最多 200 个
+可通过任意批量操作接口获取，例如：
+BatchModifyDomainInfo
+ModifyDomainDNSBatch
+ModifyDomainOwnerBatch
+UpdateProhibitionBatch
+TransferProhibitionBatch
+TransferInDomainBatch
+TransferInDomainBatchBuy
+CancelTransferOutInBatch
                      * @param _logIds 操作日志 ID数组，最多 200 个
+可通过任意批量操作接口获取，例如：
+BatchModifyDomainInfo
+ModifyDomainDNSBatch
+ModifyDomainOwnerBatch
+UpdateProhibitionBatch
+TransferProhibitionBatch
+TransferInDomainBatch
+TransferInDomainBatchBuy
+CancelTransferOutInBatch
                      * 
                      */
                     void SetLogIds(const std::vector<uint64_t>& _logIds);
@@ -67,6 +103,15 @@ namespace TencentCloud
 
                     /**
                      * 操作日志 ID数组，最多 200 个
+可通过任意批量操作接口获取，例如：
+BatchModifyDomainInfo
+ModifyDomainDNSBatch
+ModifyDomainOwnerBatch
+UpdateProhibitionBatch
+TransferProhibitionBatch
+TransferInDomainBatch
+TransferInDomainBatchBuy
+CancelTransferOutInBatch
                      */
                     std::vector<uint64_t> m_logIds;
                     bool m_logIdsHasBeenSet;

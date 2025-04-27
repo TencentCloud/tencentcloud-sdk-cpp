@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取当前域名价格
-                     * @return CurrentPrice 当前域名价格
+                     * 获取当前域名价格 单位元
+                     * @return CurrentPrice 当前域名价格 单位元
                      * 
                      */
                     double GetCurrentPrice() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool CurrentPriceHasBeenSet() const;
 
                     /**
-                     * 获取用户上次出价
-                     * @return BidPrice 用户上次出价
+                     * 获取用户上次出价 单位元
+                     * @return BidPrice 用户上次出价 单位元
                      * 
                      */
                     double GetBidPrice() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool BidPriceHasBeenSet() const;
 
                     /**
-                     * 获取当前加价幅度
-                     * @return CurrentPriceScope 当前加价幅度
+                     * 获取当前加价幅度 单位元
+                     * @return CurrentPriceScope 当前加价幅度 单位元
                      * 
                      */
                     double GetCurrentPriceScope() const;
@@ -117,8 +117,8 @@ namespace TencentCloud
                     bool PriceScopeHasBeenSet() const;
 
                     /**
-                     * 获取用户当前已经支付了的保证金
-                     * @return DepositPrice 用户当前已经支付了的保证金
+                     * 获取用户当前已经支付了的保证金 单位元
+                     * @return DepositPrice 用户当前已经支付了的保证金 单位元
                      * 
                      */
                     double GetDepositPrice() const;
@@ -139,19 +139,19 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 当前域名价格
+                     * 当前域名价格 单位元
                      */
                     double m_currentPrice;
                     bool m_currentPriceHasBeenSet;
 
                     /**
-                     * 用户上次出价
+                     * 用户上次出价 单位元
                      */
                     double m_bidPrice;
                     bool m_bidPriceHasBeenSet;
 
                     /**
-                     * 当前加价幅度
+                     * 当前加价幅度 单位元
                      */
                     double m_currentPriceScope;
                     bool m_currentPriceScopeHasBeenSet;
@@ -164,7 +164,7 @@ namespace TencentCloud
                     bool m_priceScopeHasBeenSet;
 
                     /**
-                     * 用户当前已经支付了的保证金
+                     * 用户当前已经支付了的保证金 单位元
                      */
                     double m_depositPrice;
                     bool m_depositPriceHasBeenSet;

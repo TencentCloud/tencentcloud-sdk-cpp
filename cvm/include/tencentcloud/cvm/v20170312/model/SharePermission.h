@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像分享时间
-                     * @return CreatedTime 镜像分享时间
+                     * 获取镜像分享时间。
+按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @return CreatedTime 镜像分享时间。
+按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置镜像分享时间
-                     * @param _createdTime 镜像分享时间
+                     * 设置镜像分享时间。
+按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _createdTime 镜像分享时间。
+按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -91,7 +95,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 镜像分享时间
+                     * 镜像分享时间。
+按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

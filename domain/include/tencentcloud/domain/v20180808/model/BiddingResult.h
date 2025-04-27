@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取business_id
-                     * @return BusinessID business_id
+                     * 获取预约ID
+                     * @return BusinessID 预约ID
                      * 
                      */
                     std::string GetBusinessID() const;
 
                     /**
-                     * 设置business_id
-                     * @param _businessID business_id
+                     * 设置预约ID
+                     * @param _businessID 预约ID
                      * 
                      */
                     void SetBusinessID(const std::string& _businessID);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取当前价格
-                     * @return CurrentPrice 当前价格
+                     * 获取当前价格 单位元
+                     * @return CurrentPrice 当前价格 单位元
                      * 
                      */
                     uint64_t GetCurrentPrice() const;
 
                     /**
-                     * 设置当前价格
-                     * @param _currentPrice 当前价格
+                     * 设置当前价格 单位元
+                     * @param _currentPrice 当前价格 单位元
                      * 
                      */
                     void SetCurrentPrice(const uint64_t& _currentPrice);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CurrentNicknameHasBeenSet() const;
 
                     /**
-                     * 获取我的出价
-                     * @return BiddingPrice 我的出价
+                     * 获取我的出价 单位元
+                     * @return BiddingPrice 我的出价 单位元
                      * 
                      */
                     uint64_t GetBiddingPrice() const;
 
                     /**
-                     * 设置我的出价
-                     * @param _biddingPrice 我的出价
+                     * 设置我的出价 单位元
+                     * @param _biddingPrice 我的出价 单位元
                      * 
                      */
                     void SetBiddingPrice(const uint64_t& _biddingPrice);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool BiddingPriceHasBeenSet() const;
 
                     /**
-                     * 获取竞价保证金
-                     * @return BiddingBondPrice 竞价保证金
+                     * 获取竞价保证金 单位元
+                     * @return BiddingBondPrice 竞价保证金 单位元
                      * 
                      */
                     uint64_t GetBiddingBondPrice() const;
 
                     /**
-                     * 设置竞价保证金
-                     * @param _biddingBondPrice 竞价保证金
+                     * 设置竞价保证金 单位元
+                     * @param _biddingBondPrice 竞价保证金 单位元
                      * 
                      */
                     void SetBiddingBondPrice(const uint64_t& _biddingBondPrice);
@@ -259,7 +259,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * business_id
+                     * 预约ID
                      */
                     std::string m_businessID;
                     bool m_businessIDHasBeenSet;
@@ -271,7 +271,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 当前价格
+                     * 当前价格 单位元
                      */
                     uint64_t m_currentPrice;
                     bool m_currentPriceHasBeenSet;
@@ -283,13 +283,13 @@ namespace TencentCloud
                     bool m_currentNicknameHasBeenSet;
 
                     /**
-                     * 我的出价
+                     * 我的出价 单位元
                      */
                     uint64_t m_biddingPrice;
                     bool m_biddingPriceHasBeenSet;
 
                     /**
-                     * 竞价保证金
+                     * 竞价保证金 单位元
                      */
                     uint64_t m_biddingBondPrice;
                     bool m_biddingBondPriceHasBeenSet;

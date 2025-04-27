@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转换规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 转换规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置转换规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 转换规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源`IP`,当转换规则类型为三层时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalIp 源`IP`,当转换规则类型为三层时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginalIp() const;
 
                     /**
                      * 设置源`IP`,当转换规则类型为三层时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originalIp 源`IP`,当转换规则类型为三层时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginalIp(const std::string& _originalIp);
@@ -223,14 +215,12 @@ namespace TencentCloud
 
                     /**
                      * 转换规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 源`IP`,当转换规则类型为三层时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalIp;
                     bool m_originalIpHasBeenSet;

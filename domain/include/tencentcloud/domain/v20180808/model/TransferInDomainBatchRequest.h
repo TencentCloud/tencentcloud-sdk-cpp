@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取转入的域名名称数组。
+一次提交不大于4000个
                      * @return Domains 转入的域名名称数组。
+一次提交不大于4000个
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置转入的域名名称数组。
+一次提交不大于4000个
                      * @param _domains 转入的域名名称数组。
+一次提交不大于4000个
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -86,14 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 获取模板ID。
+可通过DescribeTemplates接口获取
                      * @return TemplateId 模板ID。
+可通过DescribeTemplates接口获取
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板ID。
+可通过DescribeTemplates接口获取
                      * @param _templateId 模板ID。
+可通过DescribeTemplates接口获取
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -293,6 +301,7 @@ false：关闭60天内禁止转移注册商锁定
 
                     /**
                      * 转入的域名名称数组。
+一次提交不大于4000个
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
@@ -305,6 +314,7 @@ false：关闭60天内禁止转移注册商锁定
 
                     /**
                      * 模板ID。
+可通过DescribeTemplates接口获取
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

@@ -46,9 +46,13 @@ namespace TencentCloud
                     /**
                      * 获取场景 ID 数组。
 
+每次请求的上限为 100。
+
 参数不支持同时指定 `SceneIds ` 和 `Filters ` 。
 
                      * @return SceneIds 场景 ID 数组。
+
+每次请求的上限为 100。
 
 参数不支持同时指定 `SceneIds ` 和 `Filters ` 。
 
@@ -59,9 +63,13 @@ namespace TencentCloud
                     /**
                      * 设置场景 ID 数组。
 
+每次请求的上限为 100。
+
 参数不支持同时指定 `SceneIds ` 和 `Filters ` 。
 
                      * @param _sceneIds 场景 ID 数组。
+
+每次请求的上限为 100。
 
 参数不支持同时指定 `SceneIds ` 和 `Filters ` 。
 
@@ -167,6 +175,8 @@ namespace TencentCloud
 
                     /**
                      * 场景 ID 数组。
+
+每次请求的上限为 100。
 
 参数不支持同时指定 `SceneIds ` 和 `Filters ` 。
 

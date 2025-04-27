@@ -97,15 +97,15 @@ DATA_DISK：数据盘。
                     bool DiskUsageHasBeenSet() const;
 
                     /**
-                     * 获取创建此快照的云硬盘大小，单位GB。
-                     * @return DiskSize 创建此快照的云硬盘大小，单位GB。
+                     * 获取创建此快照的云硬盘大小，单位 GiB。
+                     * @return DiskSize 创建此快照的云硬盘大小，单位 GiB。
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置创建此快照的云硬盘大小，单位GB。
-                     * @param _diskSize 创建此快照的云硬盘大小，单位GB。
+                     * 设置创建此快照的云硬盘大小，单位 GiB。
+                     * @param _diskSize 创建此快照的云硬盘大小，单位 GiB。
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -134,7 +134,7 @@ DATA_DISK：数据盘。
                     bool m_diskUsageHasBeenSet;
 
                     /**
-                     * 创建此快照的云硬盘大小，单位GB。
+                     * 创建此快照的云硬盘大小，单位 GiB。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;

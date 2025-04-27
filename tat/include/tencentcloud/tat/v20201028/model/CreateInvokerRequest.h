@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行器名称。
-                     * @return Name 执行器名称。
+                     * 获取执行器名称。长度不超过 120 字符。
+                     * @return Name 执行器名称。长度不超过 120 字符。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置执行器名称。
-                     * @param _name 执行器名称。
+                     * 设置执行器名称。长度不超过 120 字符。
+                     * @param _name 执行器名称。长度不超过 120 字符。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +65,31 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
-                     * @return Type 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * 获取执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
+                     * @return Type 执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
-                     * @param _type 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * 设置执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
+                     * @param _type 执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -152,15 +168,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取命令执行用户。
-                     * @return Username 命令执行用户。
+                     * 获取命令执行用户。长度不超过 256 字符。
+                     * @return Username 命令执行用户。长度不超过 256 字符。
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置命令执行用户。
-                     * @param _username 命令执行用户。
+                     * 设置命令执行用户。长度不超过 256 字符。
+                     * @param _username 命令执行用户。长度不超过 256 字符。
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -173,10 +189,10 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取命令自定义参数。
+                     * 获取命令自定义参数。字段类型为 JSON encode string。
 
 仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
-                     * @return Parameters 命令自定义参数。
+                     * @return Parameters 命令自定义参数。字段类型为 JSON encode string。
 
 仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
                      * 
@@ -184,10 +200,10 @@ namespace TencentCloud
                     std::string GetParameters() const;
 
                     /**
-                     * 设置命令自定义参数。
+                     * 设置命令自定义参数。字段类型为 JSON encode string。
 
 仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
-                     * @param _parameters 命令自定义参数。
+                     * @param _parameters 命令自定义参数。字段类型为 JSON encode string。
 
 仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
                      * 
@@ -202,15 +218,23 @@ namespace TencentCloud
                     bool ParametersHasBeenSet() const;
 
                     /**
-                     * 获取周期执行器设置。当创建周期执行器时，必须指定此参数。
-                     * @return ScheduleSettings 周期执行器设置。当创建周期执行器时，必须指定此参数。
+                     * 获取周期执行器设置。
+
+当执行器类型为 `SCHEDULE` 时，必须指定此参数。
+                     * @return ScheduleSettings 周期执行器设置。
+
+当执行器类型为 `SCHEDULE` 时，必须指定此参数。
                      * 
                      */
                     ScheduleSettings GetScheduleSettings() const;
 
                     /**
-                     * 设置周期执行器设置。当创建周期执行器时，必须指定此参数。
-                     * @param _scheduleSettings 周期执行器设置。当创建周期执行器时，必须指定此参数。
+                     * 设置周期执行器设置。
+
+当执行器类型为 `SCHEDULE` 时，必须指定此参数。
+                     * @param _scheduleSettings 周期执行器设置。
+
+当执行器类型为 `SCHEDULE` 时，必须指定此参数。
                      * 
                      */
                     void SetScheduleSettings(const ScheduleSettings& _scheduleSettings);
@@ -225,13 +249,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行器名称。
+                     * 执行器名称。长度不超过 120 字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * 执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -255,13 +283,13 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 命令执行用户。
+                     * 命令执行用户。长度不超过 256 字符。
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 命令自定义参数。
+                     * 命令自定义参数。字段类型为 JSON encode string。
 
 仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
                      */
@@ -269,7 +297,9 @@ namespace TencentCloud
                     bool m_parametersHasBeenSet;
 
                     /**
-                     * 周期执行器设置。当创建周期执行器时，必须指定此参数。
+                     * 周期执行器设置。
+
+当执行器类型为 `SCHEDULE` 时，必须指定此参数。
                      */
                     ScheduleSettings m_scheduleSettings;
                     bool m_scheduleSettingsHasBeenSet;

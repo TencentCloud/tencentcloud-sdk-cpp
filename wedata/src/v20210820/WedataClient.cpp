@@ -7565,6 +7565,49 @@ WedataClient::DescribeTemplateDimCountOutcomeCallable WedataClient::DescribeTemp
     return task->get_future();
 }
 
+WedataClient::DescribeTenantProjectsOutcome WedataClient::DescribeTenantProjects(const DescribeTenantProjectsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTenantProjects");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTenantProjectsResponse rsp = DescribeTenantProjectsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTenantProjectsOutcome(rsp);
+        else
+            return DescribeTenantProjectsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTenantProjectsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeTenantProjectsAsync(const DescribeTenantProjectsRequest& request, const DescribeTenantProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTenantProjects(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeTenantProjectsOutcomeCallable WedataClient::DescribeTenantProjectsCallable(const DescribeTenantProjectsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTenantProjectsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTenantProjects(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeThirdTaskRunLogOutcome WedataClient::DescribeThirdTaskRunLog(const DescribeThirdTaskRunLogRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeThirdTaskRunLog");

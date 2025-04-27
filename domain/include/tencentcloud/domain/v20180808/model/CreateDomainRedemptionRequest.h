@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名 ID
-                     * @return DomainId 域名 ID
+                     * 获取域名ID
+可通过DescribeDomainList接口获取
+                     * @return DomainId 域名ID
+可通过DescribeDomainList接口获取
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置域名 ID
-                     * @param _domainId 域名 ID
+                     * 设置域名ID
+可通过DescribeDomainList接口获取
+                     * @param _domainId 域名ID
+可通过DescribeDomainList接口获取
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -66,7 +70,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名 ID
+                     * 域名ID
+可通过DescribeDomainList接口获取
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;

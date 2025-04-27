@@ -373,6 +373,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskTableMetricOverviewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTenantProjectsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTenantProjectsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeThirdTaskRunLogRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeThirdTaskRunLogResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTopTableStatRequest.h>
@@ -1062,6 +1064,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTemplateDimCountResponse> DescribeTemplateDimCountOutcome;
                 typedef std::future<DescribeTemplateDimCountOutcome> DescribeTemplateDimCountOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTemplateDimCountRequest&, DescribeTemplateDimCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateDimCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTenantProjectsResponse> DescribeTenantProjectsOutcome;
+                typedef std::future<DescribeTenantProjectsOutcome> DescribeTenantProjectsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTenantProjectsRequest&, DescribeTenantProjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantProjectsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeThirdTaskRunLogResponse> DescribeThirdTaskRunLogOutcome;
                 typedef std::future<DescribeThirdTaskRunLogOutcome> DescribeThirdTaskRunLogOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeThirdTaskRunLogRequest&, DescribeThirdTaskRunLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThirdTaskRunLogAsyncHandler;
@@ -2873,6 +2878,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 DescribeTemplateDimCountOutcome DescribeTemplateDimCount(const Model::DescribeTemplateDimCountRequest &request);
                 void DescribeTemplateDimCountAsync(const Model::DescribeTemplateDimCountRequest& request, const DescribeTemplateDimCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTemplateDimCountOutcomeCallable DescribeTemplateDimCountCallable(const Model::DescribeTemplateDimCountRequest& request);
+
+                /**
+                 *租户全局范围的项目列表，与用户查看范围无关.
+                 * @param req DescribeTenantProjectsRequest
+                 * @return DescribeTenantProjectsOutcome
+                 */
+                DescribeTenantProjectsOutcome DescribeTenantProjects(const Model::DescribeTenantProjectsRequest &request);
+                void DescribeTenantProjectsAsync(const Model::DescribeTenantProjectsRequest& request, const DescribeTenantProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTenantProjectsOutcomeCallable DescribeTenantProjectsCallable(const Model::DescribeTenantProjectsRequest& request);
 
                 /**
                  *获取第三方运行日志

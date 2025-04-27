@@ -23,7 +23,8 @@ using namespace std;
 UpstreamURLRewriteParameters::UpstreamURLRewriteParameters() :
     m_typeHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_regexHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome UpstreamURLRewriteParameters::Deserialize(const rapidjson::V
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Regex") && !value["Regex"].IsNull())
+    {
+        if (!value["Regex"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpstreamURLRewriteParameters.Regex` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regex = string(value["Regex"].GetString());
+        m_regexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void UpstreamURLRewriteParameters::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Regex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regex.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void UpstreamURLRewriteParameters::SetValue(const string& _value)
 bool UpstreamURLRewriteParameters::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+string UpstreamURLRewriteParameters::GetRegex() const
+{
+    return m_regex;
+}
+
+void UpstreamURLRewriteParameters::SetRegex(const string& _regex)
+{
+    m_regex = _regex;
+    m_regexHasBeenSet = true;
+}
+
+bool UpstreamURLRewriteParameters::RegexHasBeenSet() const
+{
+    return m_regexHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ using namespace std;
 
 InvokeAISearchServiceResponse::InvokeAISearchServiceResponse() :
     m_summaryHasBeenSet(false),
-    m_targetsHasBeenSet(false)
+    m_targetsHasBeenSet(false),
+    m_videoURLHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome InvokeAISearchServiceResponse::Deserialize(const string &pay
         m_targetsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VideoURL") && !rsp["VideoURL"].IsNull())
+    {
+        if (!rsp["VideoURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoURL = string(rsp["VideoURL"].GetString());
+        m_videoURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string InvokeAISearchServiceResponse::ToJsonString() const
         }
     }
 
+    if (m_videoURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_videoURL.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ vector<TargetInfo> InvokeAISearchServiceResponse::GetTargets() const
 bool InvokeAISearchServiceResponse::TargetsHasBeenSet() const
 {
     return m_targetsHasBeenSet;
+}
+
+string InvokeAISearchServiceResponse::GetVideoURL() const
+{
+    return m_videoURL;
+}
+
+bool InvokeAISearchServiceResponse::VideoURLHasBeenSet() const
+{
+    return m_videoURLHasBeenSet;
 }
 
 

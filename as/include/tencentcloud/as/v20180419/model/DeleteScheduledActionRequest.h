@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待删除的定时任务ID。
-                     * @return ScheduledActionId 待删除的定时任务ID。
+                     * 获取待删除的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。
+                     * @return ScheduledActionId 待删除的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。
                      * 
                      */
                     std::string GetScheduledActionId() const;
 
                     /**
-                     * 设置待删除的定时任务ID。
-                     * @param _scheduledActionId 待删除的定时任务ID。
+                     * 设置待删除的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。
+                     * @param _scheduledActionId 待删除的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。
                      * 
                      */
                     void SetScheduledActionId(const std::string& _scheduledActionId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待删除的定时任务ID。
+                     * 待删除的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。
                      */
                     std::string m_scheduledActionId;
                     bool m_scheduledActionIdHasBeenSet;

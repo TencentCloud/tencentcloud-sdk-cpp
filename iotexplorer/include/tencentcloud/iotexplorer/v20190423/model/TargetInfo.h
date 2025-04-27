@@ -193,6 +193,48 @@ namespace TencentCloud
                      */
                     bool SummaryHasBeenSet() const;
 
+                    /**
+                     * 获取通道ID
+                     * @return ChannelId 通道ID
+                     * 
+                     */
+                    uint64_t GetChannelId() const;
+
+                    /**
+                     * 设置通道ID
+                     * @param _channelId 通道ID
+                     * 
+                     */
+                    void SetChannelId(const uint64_t& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     * 
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
+                    /**
+                     * 获取缩略图路径
+                     * @return Thumbnail 缩略图路径
+                     * 
+                     */
+                    std::string GetThumbnail() const;
+
+                    /**
+                     * 设置缩略图路径
+                     * @param _thumbnail 缩略图路径
+                     * 
+                     */
+                    void SetThumbnail(const std::string& _thumbnail);
+
+                    /**
+                     * 判断参数 Thumbnail 是否已赋值
+                     * @return Thumbnail 是否已赋值
+                     * 
+                     */
+                    bool ThumbnailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +278,18 @@ namespace TencentCloud
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
+
+                    /**
+                     * 通道ID
+                     */
+                    uint64_t m_channelId;
+                    bool m_channelIdHasBeenSet;
+
+                    /**
+                     * 缩略图路径
+                     */
+                    std::string m_thumbnail;
+                    bool m_thumbnailHasBeenSet;
 
                 };
             }

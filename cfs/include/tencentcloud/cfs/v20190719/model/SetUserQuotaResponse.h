@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取UID/GID信息
+                     * @return UserId UID/GID信息
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * UID/GID信息
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

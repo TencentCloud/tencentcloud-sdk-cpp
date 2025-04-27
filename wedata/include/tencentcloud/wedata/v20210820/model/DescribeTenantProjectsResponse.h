@@ -14,56 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_IOTVIDEOINDUSTRY_V20201201_MODEL_DELETEWARNINGRESPONSE_H_
-#define TENCENTCLOUD_IOTVIDEOINDUSTRY_V20201201_MODEL_DELETEWARNINGRESPONSE_H_
+#ifndef TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBETENANTPROJECTSRESPONSE_H_
+#define TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBETENANTPROJECTSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/ProjectPage.h>
 
 
 namespace TencentCloud
 {
-    namespace Iotvideoindustry
+    namespace Wedata
     {
-        namespace V20201201
+        namespace V20210820
         {
             namespace Model
             {
                 /**
-                * DeleteWarning返回参数结构体
+                * DescribeTenantProjects返回参数结构体
                 */
-                class DeleteWarningResponse : public AbstractModel
+                class DescribeTenantProjectsResponse : public AbstractModel
                 {
                 public:
-                    DeleteWarningResponse();
-                    ~DeleteWarningResponse() = default;
+                    DescribeTenantProjectsResponse();
+                    ~DescribeTenantProjectsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取操作个数
-                     * @return Cnt 操作个数
+                     * 获取项目列表
+                     * @return Data 项目列表
                      * 
                      */
-                    int64_t GetCnt() const;
+                    ProjectPage GetData() const;
 
                     /**
-                     * 判断参数 Cnt 是否已赋值
-                     * @return Cnt 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool CntHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 操作个数
+                     * 项目列表
                      */
-                    int64_t m_cnt;
-                    bool m_cntHasBeenSet;
+                    ProjectPage m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_IOTVIDEOINDUSTRY_V20201201_MODEL_DELETEWARNINGRESPONSE_H_
+#endif // !TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBETENANTPROJECTSRESPONSE_H_

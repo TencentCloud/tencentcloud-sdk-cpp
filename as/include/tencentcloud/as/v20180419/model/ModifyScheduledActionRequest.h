@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待修改的定时任务ID
-                     * @return ScheduledActionId 待修改的定时任务ID
+                     * 获取待修改的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。
+                     * @return ScheduledActionId 待修改的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。
                      * 
                      */
                     std::string GetScheduledActionId() const;
 
                     /**
-                     * 设置待修改的定时任务ID
-                     * @param _scheduledActionId 待修改的定时任务ID
+                     * 设置待修改的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。
+                     * @param _scheduledActionId 待修改的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。
                      * 
                      */
                     void SetScheduledActionId(const std::string& _scheduledActionId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。
-                     * @return Recurrence 定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。
+                     * 获取定时任务的重复方式。为标准 Cron 格式，[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。
+                     * @return Recurrence 定时任务的重复方式。为标准 Cron 格式，[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。
                      * 
                      */
                     std::string GetRecurrence() const;
 
                     /**
-                     * 设置定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。
-                     * @param _recurrence 定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。
+                     * 设置定时任务的重复方式。为标准 Cron 格式，[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。
+                     * @param _recurrence 定时任务的重复方式。为标准 Cron 格式，[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。
                      * 
                      */
                     void SetRecurrence(const std::string& _recurrence);
@@ -213,7 +213,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待修改的定时任务ID
+                     * 待修改的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。
                      */
                     std::string m_scheduledActionId;
                     bool m_scheduledActionIdHasBeenSet;
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。
+                     * 定时任务的重复方式。为标准 Cron 格式，[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。
                      */
                     std::string m_recurrence;
                     bool m_recurrenceHasBeenSet;

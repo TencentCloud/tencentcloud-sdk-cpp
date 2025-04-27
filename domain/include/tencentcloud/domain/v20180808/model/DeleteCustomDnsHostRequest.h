@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取域名实例ID
+可通过DescribeDomainList接口获取
                      * @return DomainId 域名实例ID
+可通过DescribeDomainList接口获取
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置域名实例ID
+可通过DescribeDomainList接口获取
                      * @param _domainId 域名实例ID
+可通过DescribeDomainList接口获取
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -65,14 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取DNS名称
+例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式
                      * @return DnsName DNS名称
+例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式
                      * 
                      */
                     std::string GetDnsName() const;
 
                     /**
                      * 设置DNS名称
+例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式
                      * @param _dnsName DNS名称
+例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式
                      * 
                      */
                     void SetDnsName(const std::string& _dnsName);
@@ -88,12 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 域名实例ID
+可通过DescribeDomainList接口获取
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
                      * DNS名称
+例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式
                      */
                     std::string m_dnsName;
                     bool m_dnsNameHasBeenSet;

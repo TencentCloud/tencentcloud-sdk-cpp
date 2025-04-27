@@ -719,15 +719,15 @@ namespace TencentCloud
                     bool NGNStrategyVerHasBeenSet() const;
 
                     /**
-                     * 获取最近登录账户的账号
-                     * @return IOAUserName 最近登录账户的账号
+                     * 获取最近登录账户的账号(账号系统用户账号)
+                     * @return IOAUserName 最近登录账户的账号(账号系统用户账号)
                      * 
                      */
                     std::string GetIOAUserName() const;
 
                     /**
-                     * 设置最近登录账户的账号
-                     * @param _iOAUserName 最近登录账户的账号
+                     * 设置最近登录账户的账号(账号系统用户账号)
+                     * @param _iOAUserName 最近登录账户的账号(账号系统用户账号)
                      * 
                      */
                     void SetIOAUserName(const std::string& _iOAUserName);
@@ -908,15 +908,15 @@ namespace TencentCloud
                     bool AccountGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取最近登录账户的姓名
-                     * @return AccountName 最近登录账户的姓名
+                     * 获取最近登录账户的姓名(账号系统用户姓名)
+                     * @return AccountName 最近登录账户的姓名(账号系统用户姓名)
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置最近登录账户的姓名
-                     * @param _accountName 最近登录账户的姓名
+                     * 设置最近登录账户的姓名(账号系统用户姓名)
+                     * @param _accountName 最近登录账户的姓名(账号系统用户姓名)
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -948,6 +948,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AccountGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取终端备注名
+                     * @return RemarkName 终端备注名
+                     * 
+                     */
+                    std::string GetRemarkName() const;
+
+                    /**
+                     * 设置终端备注名
+                     * @param _remarkName 终端备注名
+                     * 
+                     */
+                    void SetRemarkName(const std::string& _remarkName);
+
+                    /**
+                     * 判断参数 RemarkName 是否已赋值
+                     * @return RemarkName 是否已赋值
+                     * 
+                     */
+                    bool RemarkNameHasBeenSet() const;
 
                 private:
 
@@ -1144,7 +1165,7 @@ namespace TencentCloud
                     bool m_nGNStrategyVerHasBeenSet;
 
                     /**
-                     * 最近登录账户的账号
+                     * 最近登录账户的账号(账号系统用户账号)
                      */
                     std::string m_iOAUserName;
                     bool m_iOAUserNameHasBeenSet;
@@ -1198,7 +1219,7 @@ namespace TencentCloud
                     bool m_accountGroupNameHasBeenSet;
 
                     /**
-                     * 最近登录账户的姓名
+                     * 最近登录账户的姓名(账号系统用户姓名)
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
@@ -1208,6 +1229,12 @@ namespace TencentCloud
                      */
                     int64_t m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;
+
+                    /**
+                     * 终端备注名
+                     */
+                    std::string m_remarkName;
+                    bool m_remarkNameHasBeenSet;
 
                 };
             }

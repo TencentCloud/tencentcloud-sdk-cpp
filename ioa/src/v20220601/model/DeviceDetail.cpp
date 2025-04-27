@@ -63,7 +63,8 @@ DeviceDetail::DeviceDetail() :
     m_identityNewStrategyVerHasBeenSet(false),
     m_accountGroupNameHasBeenSet(false),
     m_accountNameHasBeenSet(false),
-    m_accountGroupIdHasBeenSet(false)
+    m_accountGroupIdHasBeenSet(false),
+    m_remarkNameHasBeenSet(false)
 {
 }
 
@@ -505,6 +506,16 @@ CoreInternalOutcome DeviceDetail::Deserialize(const rapidjson::Value &value)
         m_accountGroupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RemarkName") && !value["RemarkName"].IsNull())
+    {
+        if (!value["RemarkName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.RemarkName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remarkName = string(value["RemarkName"].GetString());
+        m_remarkNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -859,6 +870,14 @@ void DeviceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AccountGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accountGroupId, allocator);
+    }
+
+    if (m_remarkNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemarkName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remarkName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1550,5 +1569,21 @@ void DeviceDetail::SetAccountGroupId(const int64_t& _accountGroupId)
 bool DeviceDetail::AccountGroupIdHasBeenSet() const
 {
     return m_accountGroupIdHasBeenSet;
+}
+
+string DeviceDetail::GetRemarkName() const
+{
+    return m_remarkName;
+}
+
+void DeviceDetail::SetRemarkName(const string& _remarkName)
+{
+    m_remarkName = _remarkName;
+    m_remarkNameHasBeenSet = true;
+}
+
+bool DeviceDetail::RemarkNameHasBeenSet() const
+{
+    return m_remarkNameHasBeenSet;
 }
 

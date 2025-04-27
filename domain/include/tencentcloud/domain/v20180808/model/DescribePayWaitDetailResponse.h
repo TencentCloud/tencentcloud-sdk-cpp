@@ -59,7 +59,15 @@ namespace TencentCloud
 
                     /**
                      * 获取域名类型
+pay：等待支持
+sub：已经预订
+wait：等待出价
+finish：完成出价
                      * @return Status 域名类型
+pay：等待支持
+sub：已经预订
+wait：等待出价
+finish：完成出价
                      * 
                      */
                     std::string GetStatus() const;
@@ -100,8 +108,8 @@ namespace TencentCloud
                     bool RegTimeHasBeenSet() const;
 
                     /**
-                     * 获取域名成交价格
-                     * @return Price 域名成交价格
+                     * 获取域名成交价格 单位元
+                     * @return Price 域名成交价格 单位元
                      * 
                      */
                     double GetPrice() const;
@@ -114,8 +122,8 @@ namespace TencentCloud
                     bool PriceHasBeenSet() const;
 
                     /**
-                     * 获取待退还保证金
-                     * @return RetDeposit 待退还保证金
+                     * 获取待退还保证金 单位元
+                     * @return RetDeposit 待退还保证金 单位元
                      * 
                      */
                     double GetRetDeposit() const;
@@ -137,6 +145,10 @@ namespace TencentCloud
 
                     /**
                      * 域名类型
+pay：等待支持
+sub：已经预订
+wait：等待出价
+finish：完成出价
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -154,13 +166,13 @@ namespace TencentCloud
                     bool m_regTimeHasBeenSet;
 
                     /**
-                     * 域名成交价格
+                     * 域名成交价格 单位元
                      */
                     double m_price;
                     bool m_priceHasBeenSet;
 
                     /**
-                     * 待退还保证金
+                     * 待退还保证金 单位元
                      */
                     double m_retDeposit;
                     bool m_retDepositHasBeenSet;

@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool TargetsHasBeenSet() const;
 
+                    /**
+                     * 获取视频回放URL
+                     * @return VideoURL 视频回放URL
+                     * 
+                     */
+                    std::string GetVideoURL() const;
+
+                    /**
+                     * 判断参数 VideoURL 是否已赋值
+                     * @return VideoURL 是否已赋值
+                     * 
+                     */
+                    bool VideoURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     std::vector<TargetInfo> m_targets;
                     bool m_targetsHasBeenSet;
+
+                    /**
+                     * 视频回放URL
+                     */
+                    std::string m_videoURL;
+                    bool m_videoURLHasBeenSet;
 
                 };
             }

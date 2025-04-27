@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取business_id
-                     * @return BusinessID business_id
+                     * 获取预约ID
+                     * @return BusinessID 预约ID
                      * 
                      */
                     std::string GetBusinessID() const;
 
                     /**
-                     * 设置business_id
-                     * @param _businessID business_id
+                     * 设置预约ID
+                     * @param _businessID 预约ID
                      * 
                      */
                     void SetBusinessID(const std::string& _businessID);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取预定价格
-                     * @return AppointPrice 预定价格
+                     * 获取预定价格 单位元
+                     * @return AppointPrice 预定价格 单位元
                      * 
                      */
                     uint64_t GetAppointPrice() const;
 
                     /**
-                     * 设置预定价格
-                     * @param _appointPrice 预定价格
+                     * 设置预定价格 单位元
+                     * @param _appointPrice 预定价格 单位元
                      * 
                      */
                     void SetAppointPrice(const uint64_t& _appointPrice);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool AppointPriceHasBeenSet() const;
 
                     /**
-                     * 获取预约保证金
-                     * @return AppointBondPrice 预约保证金
+                     * 获取预约保证金 单位元
+                     * @return AppointBondPrice 预约保证金 单位元
                      * 
                      */
                     uint64_t GetAppointBondPrice() const;
 
                     /**
-                     * 设置预约保证金
-                     * @param _appointBondPrice 预约保证金
+                     * 设置预约保证金 单位元
+                     * @param _appointBondPrice 预约保证金 单位元
                      * 
                      */
                     void SetAppointBondPrice(const uint64_t& _appointBondPrice);
@@ -196,7 +196,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * business_id
+                     * 预约ID
                      */
                     std::string m_businessID;
                     bool m_businessIDHasBeenSet;
@@ -208,13 +208,13 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 预定价格
+                     * 预定价格 单位元
                      */
                     uint64_t m_appointPrice;
                     bool m_appointPriceHasBeenSet;
 
                     /**
-                     * 预约保证金
+                     * 预约保证金 单位元
                      */
                     uint64_t m_appointBondPrice;
                     bool m_appointBondPriceHasBeenSet;

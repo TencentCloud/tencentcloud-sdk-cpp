@@ -70,15 +70,35 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
-                     * @return AuditStatus 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
+                     * 获取认证状态:
+NotUpload: 未实名认证
+InAudit: 实名审核中
+Approved: 已实名认证
+Reject: 实名审核失败
+NotVerified: 实名信息待修改
+                     * @return AuditStatus 认证状态:
+NotUpload: 未实名认证
+InAudit: 实名审核中
+Approved: 已实名认证
+Reject: 实名审核失败
+NotVerified: 实名信息待修改
                      * 
                      */
                     std::string GetAuditStatus() const;
 
                     /**
-                     * 设置认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
-                     * @param _auditStatus 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
+                     * 设置认证状态:
+NotUpload: 未实名认证
+InAudit: 实名审核中
+Approved: 已实名认证
+Reject: 实名审核失败
+NotVerified: 实名信息待修改
+                     * @param _auditStatus 认证状态:
+NotUpload: 未实名认证
+InAudit: 实名审核中
+Approved: 已实名认证
+Reject: 实名审核失败
+NotVerified: 实名信息待修改
                      * 
                      */
                     void SetAuditStatus(const std::string& _auditStatus);
@@ -309,7 +329,12 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
+                     * 认证状态:
+NotUpload: 未实名认证
+InAudit: 实名审核中
+Approved: 已实名认证
+Reject: 实名审核失败
+NotVerified: 实名信息待修改
                      */
                     std::string m_auditStatus;
                     bool m_auditStatusHasBeenSet;

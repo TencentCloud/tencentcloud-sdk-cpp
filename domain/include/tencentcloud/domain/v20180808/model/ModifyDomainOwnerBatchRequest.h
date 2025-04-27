@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取要过户的域名。
+一次提交不大于4000个
                      * @return Domains 要过户的域名。
+一次提交不大于4000个
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置要过户的域名。
+一次提交不大于4000个
                      * @param _domains 要过户的域名。
+一次提交不大于4000个
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -64,15 +68,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取转入账户的uin。
-                     * @return NewOwnerUin 转入账户的uin。
+                     * 获取转入账户的主uin。
+                     * @return NewOwnerUin 转入账户的主uin。
                      * 
                      */
                     std::string GetNewOwnerUin() const;
 
                     /**
-                     * 设置转入账户的uin。
-                     * @param _newOwnerUin 转入账户的uin。
+                     * 设置转入账户的主uin。
+                     * @param _newOwnerUin 转入账户的主uin。
                      * 
                      */
                     void SetNewOwnerUin(const std::string& _newOwnerUin);
@@ -130,12 +134,13 @@ namespace TencentCloud
 
                     /**
                      * 要过户的域名。
+一次提交不大于4000个
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 转入账户的uin。
+                     * 转入账户的主uin。
                      */
                     std::string m_newOwnerUin;
                     bool m_newOwnerUinHasBeenSet;

@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool DeleteTimeHasBeenSet() const;
 
                     /**
-                     * 获取当前价格
-                     * @return CurrentPrice 当前价格
+                     * 获取当前价格 单位元
+                     * @return CurrentPrice 当前价格 单位元
                      * 
                      */
                     uint64_t GetCurrentPrice() const;
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool CurrentNicknameHasBeenSet() const;
 
                     /**
-                     * 获取竞价保证金
-                     * @return BiddingBondPrice 竞价保证金
+                     * 获取竞价保证金 单位元
+                     * @return BiddingBondPrice 竞价保证金 单位元
                      * 
                      */
                     uint64_t GetBiddingBondPrice() const;
@@ -226,8 +226,8 @@ namespace TencentCloud
                     bool BiddingBondRefundHasBeenSet() const;
 
                     /**
-                     * 获取我的出价
-                     * @return BiddingPrice 我的出价
+                     * 获取我的出价 单位元
+                     * @return BiddingPrice 我的出价 单位元
                      * 
                      */
                     uint64_t GetBiddingPrice() const;
@@ -284,7 +284,7 @@ namespace TencentCloud
                     bool m_deleteTimeHasBeenSet;
 
                     /**
-                     * 当前价格
+                     * 当前价格 单位元
                      */
                     uint64_t m_currentPrice;
                     bool m_currentPriceHasBeenSet;
@@ -296,7 +296,7 @@ namespace TencentCloud
                     bool m_currentNicknameHasBeenSet;
 
                     /**
-                     * 竞价保证金
+                     * 竞价保证金 单位元
                      */
                     uint64_t m_biddingBondPrice;
                     bool m_biddingBondPriceHasBeenSet;
@@ -320,7 +320,7 @@ namespace TencentCloud
                     bool m_biddingBondRefundHasBeenSet;
 
                     /**
-                     * 我的出价
+                     * 我的出价 单位元
                      */
                     uint64_t m_biddingPrice;
                     bool m_biddingPriceHasBeenSet;

@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取对应云存视频的起始时间
-                     * @return StartTime 对应云存视频的起始时间
+                     * 获取对应云存视频的起始时间（秒级 UNIX 时间戳）
+                     * @return StartTime 对应云存视频的起始时间（秒级 UNIX 时间戳）
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置对应云存视频的起始时间
-                     * @param _startTime 对应云存视频的起始时间
+                     * 设置对应云存视频的起始时间（秒级 UNIX 时间戳）
+                     * @param _startTime 对应云存视频的起始时间（秒级 UNIX 时间戳）
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -190,15 +190,36 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取对应云存视频的结束时间
-                     * @return EndTime 对应云存视频的结束时间
+                     * 获取对应云存视频的起始时间（毫秒级 UNIX 时间戳）
+                     * @return StartTimeMs 对应云存视频的起始时间（毫秒级 UNIX 时间戳）
+                     * 
+                     */
+                    int64_t GetStartTimeMs() const;
+
+                    /**
+                     * 设置对应云存视频的起始时间（毫秒级 UNIX 时间戳）
+                     * @param _startTimeMs 对应云存视频的起始时间（毫秒级 UNIX 时间戳）
+                     * 
+                     */
+                    void SetStartTimeMs(const int64_t& _startTimeMs);
+
+                    /**
+                     * 判断参数 StartTimeMs 是否已赋值
+                     * @return StartTimeMs 是否已赋值
+                     * 
+                     */
+                    bool StartTimeMsHasBeenSet() const;
+
+                    /**
+                     * 获取对应云存视频的结束时间（秒级 UNIX 时间戳）
+                     * @return EndTime 对应云存视频的结束时间（秒级 UNIX 时间戳）
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置对应云存视频的结束时间
-                     * @param _endTime 对应云存视频的结束时间
+                     * 设置对应云存视频的结束时间（秒级 UNIX 时间戳）
+                     * @param _endTime 对应云存视频的结束时间（秒级 UNIX 时间戳）
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -209,6 +230,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取对应云存视频的结束时间（毫秒级 UNIX 时间戳）
+                     * @return EndTimeMs 对应云存视频的结束时间（毫秒级 UNIX 时间戳）
+                     * 
+                     */
+                    int64_t GetEndTimeMs() const;
+
+                    /**
+                     * 设置对应云存视频的结束时间（毫秒级 UNIX 时间戳）
+                     * @param _endTimeMs 对应云存视频的结束时间（毫秒级 UNIX 时间戳）
+                     * 
+                     */
+                    void SetEndTimeMs(const int64_t& _endTimeMs);
+
+                    /**
+                     * 判断参数 EndTimeMs 是否已赋值
+                     * @return EndTimeMs 是否已赋值
+                     * 
+                     */
+                    bool EndTimeMsHasBeenSet() const;
 
                     /**
                      * 获取任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；4：执行中）
@@ -394,16 +436,28 @@ namespace TencentCloud
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 对应云存视频的起始时间
+                     * 对应云存视频的起始时间（秒级 UNIX 时间戳）
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 对应云存视频的结束时间
+                     * 对应云存视频的起始时间（毫秒级 UNIX 时间戳）
+                     */
+                    int64_t m_startTimeMs;
+                    bool m_startTimeMsHasBeenSet;
+
+                    /**
+                     * 对应云存视频的结束时间（秒级 UNIX 时间戳）
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 对应云存视频的结束时间（毫秒级 UNIX 时间戳）
+                     */
+                    int64_t m_endTimeMs;
+                    bool m_endTimeMsHasBeenSet;
 
                     /**
                      * 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；4：执行中）

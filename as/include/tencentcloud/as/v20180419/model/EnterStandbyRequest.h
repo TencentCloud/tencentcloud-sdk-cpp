@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取伸缩组 ID。
-                     * @return AutoScalingGroupId 伸缩组 ID。
+                     * 获取伸缩组 ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
+                     * @return AutoScalingGroupId 伸缩组 ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
-                     * 设置伸缩组 ID。
-                     * @param _autoScalingGroupId 伸缩组 ID。
+                     * 设置伸缩组 ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
+                     * @param _autoScalingGroupId 伸缩组 ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
@@ -64,15 +72,23 @@ namespace TencentCloud
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取运行中状态实例列表，不支持传入非运行中状态实例。
-                     * @return InstanceIds 运行中状态实例列表，不支持传入非运行中状态实例。
+                     * 获取运行中状态实例列表，不支持传入非运行中状态实例。可以通过以下方式获取可用的实例ID：
+<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>
+<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>
+                     * @return InstanceIds 运行中状态实例列表，不支持传入非运行中状态实例。可以通过以下方式获取可用的实例ID：
+<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>
+<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置运行中状态实例列表，不支持传入非运行中状态实例。
-                     * @param _instanceIds 运行中状态实例列表，不支持传入非运行中状态实例。
+                     * 设置运行中状态实例列表，不支持传入非运行中状态实例。可以通过以下方式获取可用的实例ID：
+<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>
+<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>
+                     * @param _instanceIds 运行中状态实例列表，不支持传入非运行中状态实例。可以通过以下方式获取可用的实例ID：
+<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>
+<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -87,13 +103,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 伸缩组 ID。
+                     * 伸缩组 ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      */
                     std::string m_autoScalingGroupId;
                     bool m_autoScalingGroupIdHasBeenSet;
 
                     /**
-                     * 运行中状态实例列表，不支持传入非运行中状态实例。
+                     * 运行中状态实例列表，不支持传入非运行中状态实例。可以通过以下方式获取可用的实例ID：
+<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>
+<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

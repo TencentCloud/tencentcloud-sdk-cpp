@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool InvokerIdHasBeenSet() const;
 
                     /**
-                     * 获取待修改的执行器名称。
-                     * @return Name 待修改的执行器名称。
+                     * 获取待修改的执行器名称。长度不超过 120 字符。
+                     * @return Name 待修改的执行器名称。长度不超过 120 字符。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置待修改的执行器名称。
-                     * @param _name 待修改的执行器名称。
+                     * 设置待修改的执行器名称。长度不超过 120 字符。
+                     * @param _name 待修改的执行器名称。长度不超过 120 字符。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -94,15 +94,31 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
-                     * @return Type 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * 获取待修改的执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
+                     * @return Type 待修改的执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
-                     * @param _type 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * 设置待修改的执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
+                     * @param _type 待修改的执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -144,15 +160,15 @@ namespace TencentCloud
                     bool CommandIdHasBeenSet() const;
 
                     /**
-                     * 获取待修改的用户名。
-                     * @return Username 待修改的用户名。
+                     * 获取待修改的用户名。长度不超过 256 字符。
+                     * @return Username 待修改的用户名。长度不超过 256 字符。
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置待修改的用户名。
-                     * @param _username 待修改的用户名。
+                     * 设置待修改的用户名。长度不超过 256 字符。
+                     * @param _username 待修改的用户名。长度不超过 256 字符。
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -165,10 +181,10 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取待修改的自定义参数。
+                     * 获取待修改的自定义参数。字段类型为 JSON encode string。
 
 仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
-                     * @return Parameters 待修改的自定义参数。
+                     * @return Parameters 待修改的自定义参数。字段类型为 JSON encode string。
 
 仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
                      * 
@@ -176,10 +192,10 @@ namespace TencentCloud
                     std::string GetParameters() const;
 
                     /**
-                     * 设置待修改的自定义参数。
+                     * 设置待修改的自定义参数。字段类型为 JSON encode string。
 
 仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
-                     * @param _parameters 待修改的自定义参数。
+                     * @param _parameters 待修改的自定义参数。字段类型为 JSON encode string。
 
 仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
                      * 
@@ -232,14 +248,22 @@ namespace TencentCloud
 
                     /**
                      * 获取待修改的周期执行器设置。
+
+要将执行器类型修改为 `SCHEDULE` 时，必须指定此参数。
                      * @return ScheduleSettings 待修改的周期执行器设置。
+
+要将执行器类型修改为 `SCHEDULE` 时，必须指定此参数。
                      * 
                      */
                     ScheduleSettings GetScheduleSettings() const;
 
                     /**
                      * 设置待修改的周期执行器设置。
+
+要将执行器类型修改为 `SCHEDULE` 时，必须指定此参数。
                      * @param _scheduleSettings 待修改的周期执行器设置。
+
+要将执行器类型修改为 `SCHEDULE` 时，必须指定此参数。
                      * 
                      */
                     void SetScheduleSettings(const ScheduleSettings& _scheduleSettings);
@@ -262,13 +286,17 @@ namespace TencentCloud
                     bool m_invokerIdHasBeenSet;
 
                     /**
-                     * 待修改的执行器名称。
+                     * 待修改的执行器名称。长度不超过 120 字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * 待修改的执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -282,13 +310,13 @@ namespace TencentCloud
                     bool m_commandIdHasBeenSet;
 
                     /**
-                     * 待修改的用户名。
+                     * 待修改的用户名。长度不超过 256 字符。
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 待修改的自定义参数。
+                     * 待修改的自定义参数。字段类型为 JSON encode string。
 
 仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
                      */
@@ -307,6 +335,8 @@ namespace TencentCloud
 
                     /**
                      * 待修改的周期执行器设置。
+
+要将执行器类型修改为 `SCHEDULE` 时，必须指定此参数。
                      */
                     ScheduleSettings m_scheduleSettings;
                     bool m_scheduleSettingsHasBeenSet;

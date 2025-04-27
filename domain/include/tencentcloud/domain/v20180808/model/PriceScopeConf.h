@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最高价格
-                     * @return MaxPrice 最高价格
+                     * 获取最高价格 单位元
+                     * @return MaxPrice 最高价格 单位元
                      * 
                      */
                     double GetMaxPrice() const;
 
                     /**
-                     * 设置最高价格
-                     * @param _maxPrice 最高价格
+                     * 设置最高价格 单位元
+                     * @param _maxPrice 最高价格 单位元
                      * 
                      */
                     void SetMaxPrice(const double& _maxPrice);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool MaxPriceHasBeenSet() const;
 
                     /**
-                     * 获取最低价格
-                     * @return MinPrice 最低价格
+                     * 获取最低价格 单位元
+                     * @return MinPrice 最低价格 单位元
                      * 
                      */
                     double GetMinPrice() const;
 
                     /**
-                     * 设置最低价格
-                     * @param _minPrice 最低价格
+                     * 设置最低价格 单位元
+                     * @param _minPrice 最低价格 单位元
                      * 
                      */
                     void SetMinPrice(const double& _minPrice);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MinPriceHasBeenSet() const;
 
                     /**
-                     * 获取价格幅度
-                     * @return Price 价格幅度
+                     * 获取价格幅度 单位元
+                     * @return Price 价格幅度 单位元
                      * 
                      */
                     double GetPrice() const;
 
                     /**
-                     * 设置价格幅度
-                     * @param _price 价格幅度
+                     * 设置价格幅度 单位元
+                     * @param _price 价格幅度 单位元
                      * 
                      */
                     void SetPrice(const double& _price);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PriceHasBeenSet() const;
 
                     /**
-                     * 获取保证金
-                     * @return DepositPrice 保证金
+                     * 获取保证金 单位元
+                     * @return DepositPrice 保证金 单位元
                      * 
                      */
                     double GetDepositPrice() const;
 
                     /**
-                     * 设置保证金
-                     * @param _depositPrice 保证金
+                     * 设置保证金 单位元
+                     * @param _depositPrice 保证金 单位元
                      * 
                      */
                     void SetDepositPrice(const double& _depositPrice);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 最高价格
+                     * 最高价格 单位元
                      */
                     double m_maxPrice;
                     bool m_maxPriceHasBeenSet;
 
                     /**
-                     * 最低价格
+                     * 最低价格 单位元
                      */
                     double m_minPrice;
                     bool m_minPriceHasBeenSet;
 
                     /**
-                     * 价格幅度
+                     * 价格幅度 单位元
                      */
                     double m_price;
                     bool m_priceHasBeenSet;
 
                     /**
-                     * 保证金
+                     * 保证金 单位元
                      */
                     double m_depositPrice;
                     bool m_depositPriceHasBeenSet;

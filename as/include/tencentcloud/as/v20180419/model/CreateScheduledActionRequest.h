@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取伸缩组ID
-                     * @return AutoScalingGroupId 伸缩组ID
+                     * 获取伸缩组ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
+                     * @return AutoScalingGroupId 伸缩组ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
-                     * 设置伸缩组ID
-                     * @param _autoScalingGroupId 伸缩组ID
+                     * 设置伸缩组ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
+                     * @param _autoScalingGroupId 伸缩组ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
@@ -190,15 +198,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取定时任务的重复方式。为标准 Cron 格式<br><br>此参数与`EndTime`需要同时指定。
-                     * @return Recurrence 定时任务的重复方式。为标准 Cron 格式<br><br>此参数与`EndTime`需要同时指定。
+                     * 获取定时任务的重复方式。为标准 Cron 格式。定时任务中的 [Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119) 为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。
+                     * @return Recurrence 定时任务的重复方式。为标准 Cron 格式。定时任务中的 [Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119) 为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。
                      * 
                      */
                     std::string GetRecurrence() const;
 
                     /**
-                     * 设置定时任务的重复方式。为标准 Cron 格式<br><br>此参数与`EndTime`需要同时指定。
-                     * @param _recurrence 定时任务的重复方式。为标准 Cron 格式<br><br>此参数与`EndTime`需要同时指定。
+                     * 设置定时任务的重复方式。为标准 Cron 格式。定时任务中的 [Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119) 为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。
+                     * @param _recurrence 定时任务的重复方式。为标准 Cron 格式。定时任务中的 [Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119) 为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。
                      * 
                      */
                     void SetRecurrence(const std::string& _recurrence);
@@ -213,7 +221,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 伸缩组ID
+                     * 伸缩组ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      */
                     std::string m_autoScalingGroupId;
                     bool m_autoScalingGroupIdHasBeenSet;
@@ -255,7 +265,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 定时任务的重复方式。为标准 Cron 格式<br><br>此参数与`EndTime`需要同时指定。
+                     * 定时任务的重复方式。为标准 Cron 格式。定时任务中的 [Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119) 为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。
                      */
                     std::string m_recurrence;
                     bool m_recurrenceHasBeenSet;

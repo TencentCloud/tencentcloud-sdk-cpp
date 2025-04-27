@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取价格，单位：分
-                     * @return Price 价格，单位：分
+                     * 获取价格
+                     * @return Price 价格
                      * 
                      */
                     double GetPrice() const;
@@ -57,13 +57,82 @@ namespace TencentCloud
                      */
                     bool PriceHasBeenSet() const;
 
+                    /**
+                     * 获取高精度价格
+                     * @return HighPrecisionPrice 高精度价格
+                     * 
+                     */
+                    double GetHighPrecisionPrice() const;
+
+                    /**
+                     * 判断参数 HighPrecisionPrice 是否已赋值
+                     * @return HighPrecisionPrice 是否已赋值
+                     * 
+                     */
+                    bool HighPrecisionPriceHasBeenSet() const;
+
+                    /**
+                     * 获取币种
+                     * @return Currency 币种
+                     * 
+                     */
+                    std::string GetCurrency() const;
+
+                    /**
+                     * 判断参数 Currency 是否已赋值
+                     * @return Currency 是否已赋值
+                     * 
+                     */
+                    bool CurrencyHasBeenSet() const;
+
+                    /**
+                     * 获取价格金额单位
+
+- pent: 分
+- microPent: 微分
+                     * @return AmountUnit 价格金额单位
+
+- pent: 分
+- microPent: 微分
+                     * 
+                     */
+                    std::string GetAmountUnit() const;
+
+                    /**
+                     * 判断参数 AmountUnit 是否已赋值
+                     * @return AmountUnit 是否已赋值
+                     * 
+                     */
+                    bool AmountUnitHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 价格，单位：分
+                     * 价格
                      */
                     double m_price;
                     bool m_priceHasBeenSet;
+
+                    /**
+                     * 高精度价格
+                     */
+                    double m_highPrecisionPrice;
+                    bool m_highPrecisionPriceHasBeenSet;
+
+                    /**
+                     * 币种
+                     */
+                    std::string m_currency;
+                    bool m_currencyHasBeenSet;
+
+                    /**
+                     * 价格金额单位
+
+- pent: 分
+- microPent: 微分
+                     */
+                    std::string m_amountUnit;
+                    bool m_amountUnitHasBeenSet;
 
                 };
             }

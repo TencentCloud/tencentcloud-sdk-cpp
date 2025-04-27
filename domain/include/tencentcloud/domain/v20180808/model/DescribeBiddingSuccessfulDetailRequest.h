@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取business_id
-                     * @return BusinessID business_id
+                     * 获取预约ID
+可通过DescribeBiddingSuccessfulList接口获取
+                     * @return BusinessID 预约ID
+可通过DescribeBiddingSuccessfulList接口获取
                      * 
                      */
                     std::string GetBusinessID() const;
 
                     /**
-                     * 设置business_id
-                     * @param _businessID business_id
+                     * 设置预约ID
+可通过DescribeBiddingSuccessfulList接口获取
+                     * @param _businessID 预约ID
+可通过DescribeBiddingSuccessfulList接口获取
                      * 
                      */
                     void SetBusinessID(const std::string& _businessID);
@@ -66,7 +70,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * business_id
+                     * 预约ID
+可通过DescribeBiddingSuccessfulList接口获取
                      */
                     std::string m_businessID;
                     bool m_businessIDHasBeenSet;

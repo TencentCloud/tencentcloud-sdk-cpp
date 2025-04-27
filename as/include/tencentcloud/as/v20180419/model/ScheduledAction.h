@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取定时任务的重复方式。
-                     * @return Recurrence 定时任务的重复方式。
+                     * 获取定时任务的重复方式。定时任务中的[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。
+                     * @return Recurrence 定时任务的重复方式。定时任务中的[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。
                      * 
                      */
                     std::string GetRecurrence() const;
 
                     /**
-                     * 设置定时任务的重复方式。
-                     * @param _recurrence 定时任务的重复方式。
+                     * 设置定时任务的重复方式。定时任务中的[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。
+                     * @param _recurrence 定时任务的重复方式。定时任务中的[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。
                      * 
                      */
                     void SetRecurrence(const std::string& _recurrence);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool MinSizeHasBeenSet() const;
 
                     /**
-                     * 获取定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @return CreatedTime 定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 获取定时任务的创建时间。取值为标准`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+                     * @return CreatedTime 定时任务的创建时间。取值为标准`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @param _createdTime 定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 设置定时任务的创建时间。取值为标准`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+                     * @param _createdTime 定时任务的创建时间。取值为标准`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -312,7 +312,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 定时任务的重复方式。
+                     * 定时任务的重复方式。定时任务中的[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。
                      */
                     std::string m_recurrence;
                     bool m_recurrenceHasBeenSet;
@@ -342,7 +342,7 @@ namespace TencentCloud
                     bool m_minSizeHasBeenSet;
 
                     /**
-                     * 定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 定时任务的创建时间。取值为标准`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool IsNeedPayHasBeenSet() const;
 
                     /**
-                     * 获取计费请求参数，以Json字符串的形式进行返回。
-                     * @return BillingParam 计费请求参数，以Json字符串的形式进行返回。
+                     * 获取计费请求参数，以类Json字符串的形式进行返回。用于计费下单
+                     * @return BillingParam 计费请求参数，以类Json字符串的形式进行返回。用于计费下单
                      * 
                      */
                     std::string GetBillingParam() const;
@@ -80,7 +80,7 @@ namespace TencentCloud
                     bool m_isNeedPayHasBeenSet;
 
                     /**
-                     * 计费请求参数，以Json字符串的形式进行返回。
+                     * 计费请求参数，以类Json字符串的形式进行返回。用于计费下单
                      */
                     std::string m_billingParam;
                     bool m_billingParamHasBeenSet;

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取预释放竞价列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreAuctionList 预释放竞价列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PreAuctionInfo> GetPreAuctionList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 预释放竞价列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PreAuctionInfo> m_preAuctionList;
                     bool m_preAuctionListHasBeenSet;

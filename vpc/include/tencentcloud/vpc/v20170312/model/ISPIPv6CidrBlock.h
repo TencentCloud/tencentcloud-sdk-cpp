@@ -47,6 +47,48 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取IPv6 CIdr Block
+                     * @return IPv6CidrBlock IPv6 CIdr Block
+                     * 
+                     */
+                    std::string GetIPv6CidrBlock() const;
+
+                    /**
+                     * 设置IPv6 CIdr Block
+                     * @param _iPv6CidrBlock IPv6 CIdr Block
+                     * 
+                     */
+                    void SetIPv6CidrBlock(const std::string& _iPv6CidrBlock);
+
+                    /**
+                     * 判断参数 IPv6CidrBlock 是否已赋值
+                     * @return IPv6CidrBlock 是否已赋值
+                     * 
+                     */
+                    bool IPv6CidrBlockHasBeenSet() const;
+
+                    /**
+                     * 获取网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调
+                     * @return ISPType 网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调
+                     * 
+                     */
+                    std::string GetISPType() const;
+
+                    /**
+                     * 设置网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调
+                     * @param _iSPType 网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调
+                     * 
+                     */
+                    void SetISPType(const std::string& _iSPType);
+
+                    /**
+                     * 判断参数 ISPType 是否已赋值
+                     * @return ISPType 是否已赋值
+                     * 
+                     */
+                    bool ISPTypeHasBeenSet() const;
+
+                    /**
                      * 获取IPv6 Cidr 的类型：`GUA`(全球单播地址), `ULA`(唯一本地地址)
                      * @return AddressType IPv6 Cidr 的类型：`GUA`(全球单播地址), `ULA`(唯一本地地址)
                      * 
@@ -68,6 +110,18 @@ namespace TencentCloud
                     bool AddressTypeHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * IPv6 CIdr Block
+                     */
+                    std::string m_iPv6CidrBlock;
+                    bool m_iPv6CidrBlockHasBeenSet;
+
+                    /**
+                     * 网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调
+                     */
+                    std::string m_iSPType;
+                    bool m_iSPTypeHasBeenSet;
 
                     /**
                      * IPv6 Cidr 的类型：`GUA`(全球单播地址), `ULA`(唯一本地地址)

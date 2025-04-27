@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AuctionTimeHasBeenSet() const;
 
                     /**
-                     * 获取竞拍价格
-                     * @return AuctionPrice 竞拍价格
+                     * 获取竞拍价格 单位元
+                     * @return AuctionPrice 竞拍价格 单位元
                      * 
                      */
                     double GetAuctionPrice() const;
 
                     /**
-                     * 设置竞拍价格
-                     * @param _auctionPrice 竞拍价格
+                     * 设置竞拍价格 单位元
+                     * @param _auctionPrice 竞拍价格 单位元
                      * 
                      */
                     void SetAuctionPrice(const double& _auctionPrice);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_auctionTimeHasBeenSet;
 
                     /**
-                     * 竞拍价格
+                     * 竞拍价格 单位元
                      */
                     double m_auctionPrice;
                     bool m_auctionPriceHasBeenSet;

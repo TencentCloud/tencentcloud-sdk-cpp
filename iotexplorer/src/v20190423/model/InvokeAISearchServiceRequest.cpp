@@ -26,7 +26,8 @@ InvokeAISearchServiceRequest::InvokeAISearchServiceRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_queryHasBeenSet(false),
-    m_summaryLangHasBeenSet(false)
+    m_summaryLangHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string InvokeAISearchServiceRequest::ToJsonString() const
         string key = "SummaryLang";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_summaryLang.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void InvokeAISearchServiceRequest::SetSummaryLang(const string& _summaryLang)
 bool InvokeAISearchServiceRequest::SummaryLangHasBeenSet() const
 {
     return m_summaryLangHasBeenSet;
+}
+
+uint64_t InvokeAISearchServiceRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void InvokeAISearchServiceRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
 

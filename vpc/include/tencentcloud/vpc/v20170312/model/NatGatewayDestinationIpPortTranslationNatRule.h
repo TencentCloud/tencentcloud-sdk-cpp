@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NAT网关的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatGatewayId NAT网关的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置NAT网关的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natGatewayId NAT网关的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
@@ -199,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络VPC的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络VPC的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络VPC的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 私有网络VPC的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -224,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NAT网关转发规则创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime NAT网关转发规则创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置NAT网关转发规则创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime NAT网关转发规则创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -287,21 +275,18 @@ namespace TencentCloud
 
                     /**
                      * NAT网关的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_natGatewayId;
                     bool m_natGatewayIdHasBeenSet;
 
                     /**
                      * 私有网络VPC的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * NAT网关转发规则创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

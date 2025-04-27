@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
-                     * @return ScheduledActionIds 按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
+                     * 获取按照一个或者多个定时任务ID查询。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
+                     * @return ScheduledActionIds 按照一个或者多个定时任务ID查询。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
                      * 
                      */
                     std::vector<std::string> GetScheduledActionIds() const;
 
                     /**
-                     * 设置按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
-                     * @param _scheduledActionIds 按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
+                     * 设置按照一个或者多个定时任务ID查询。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
+                     * @param _scheduledActionIds 按照一个或者多个定时任务ID查询。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
                      * 
                      */
                     void SetScheduledActionIds(const std::vector<std::string>& _scheduledActionIds);
@@ -65,11 +65,11 @@ namespace TencentCloud
                     bool ScheduledActionIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。
+                     * 获取过滤条件。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID，定时任务名称，伸缩组 ID。
 <li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>
 <li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>
 <li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>
-                     * @return Filters 过滤条件。
+                     * @return Filters 过滤条件。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID，定时任务名称，伸缩组 ID。
 <li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>
 <li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>
 <li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>
@@ -78,11 +78,11 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
+                     * 设置过滤条件。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID，定时任务名称，伸缩组 ID。
 <li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>
 <li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>
 <li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>
-                     * @param _filters 过滤条件。
+                     * @param _filters 过滤条件。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID，定时任务名称，伸缩组 ID。
 <li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>
 <li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>
 <li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>
@@ -142,13 +142,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
+                     * 按照一个或者多个定时任务ID查询。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
                      */
                     std::vector<std::string> m_scheduledActionIds;
                     bool m_scheduledActionIdsHasBeenSet;
 
                     /**
-                     * 过滤条件。
+                     * 过滤条件。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID，定时任务名称，伸缩组 ID。
 <li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>
 <li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>
 <li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>

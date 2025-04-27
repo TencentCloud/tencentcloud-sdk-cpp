@@ -48,30 +48,26 @@ namespace TencentCloud
 
                     /**
                      * 获取执行策略：
+
 - ONCE：单次执行
 - RECURRENCE：周期执行
-
-只有在 CreateInvoker 时才必填，ModifyInvoker 时为非必填
                      * @return Policy 执行策略：
+
 - ONCE：单次执行
 - RECURRENCE：周期执行
-
-只有在 CreateInvoker 时才必填，ModifyInvoker 时为非必填
                      * 
                      */
                     std::string GetPolicy() const;
 
                     /**
                      * 设置执行策略：
+
 - ONCE：单次执行
 - RECURRENCE：周期执行
-
-只有在 CreateInvoker 时才必填，ModifyInvoker 时为非必填
                      * @param _policy 执行策略：
+
 - ONCE：单次执行
 - RECURRENCE：周期执行
-
-只有在 CreateInvoker 时才必填，ModifyInvoker 时为非必填
                      * 
                      */
                     void SetPolicy(const std::string& _policy);
@@ -137,10 +133,9 @@ namespace TencentCloud
 
                     /**
                      * 执行策略：
+
 - ONCE：单次执行
 - RECURRENCE：周期执行
-
-只有在 CreateInvoker 时才必填，ModifyInvoker 时为非必填
                      */
                     std::string m_policy;
                     bool m_policyHasBeenSet;

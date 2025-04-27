@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfs::V20190719::Model;
 using namespace std;
 
-SetUserQuotaResponse::SetUserQuotaResponse()
+SetUserQuotaResponse::SetUserQuotaResponse() :
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome SetUserQuotaResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("UserId") && !rsp["UserId"].IsNull())
+    {
+        if (!rsp["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(rsp["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string SetUserQuotaResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string SetUserQuotaResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string SetUserQuotaResponse::GetUserId() const
+{
+    return m_userId;
+}
+
+bool SetUserQuotaResponse::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
+}
 
 
