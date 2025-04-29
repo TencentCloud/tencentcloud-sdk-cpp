@@ -731,6 +731,27 @@ KMSRegion相关介绍参考[开启透明数据加密](https://cloud.tencent.com/
                     bool KMSRegionHasBeenSet() const;
 
                     /**
+                     * 获取指定KMS服务的集群，KMSClusterId为空使用默认集群的KMS，若选择指定KMS集群，则需要传入KMSClusterId。 KMSClusterId相关介绍参考开启透明数据加密
+                     * @return KMSClusterId 指定KMS服务的集群，KMSClusterId为空使用默认集群的KMS，若选择指定KMS集群，则需要传入KMSClusterId。 KMSClusterId相关介绍参考开启透明数据加密
+                     * 
+                     */
+                    std::string GetKMSClusterId() const;
+
+                    /**
+                     * 设置指定KMS服务的集群，KMSClusterId为空使用默认集群的KMS，若选择指定KMS集群，则需要传入KMSClusterId。 KMSClusterId相关介绍参考开启透明数据加密
+                     * @param _kMSClusterId 指定KMS服务的集群，KMSClusterId为空使用默认集群的KMS，若选择指定KMS集群，则需要传入KMSClusterId。 KMSClusterId相关介绍参考开启透明数据加密
+                     * 
+                     */
+                    void SetKMSClusterId(const std::string& _kMSClusterId);
+
+                    /**
+                     * 判断参数 KMSClusterId 是否已赋值
+                     * @return KMSClusterId 是否已赋值
+                     * 
+                     */
+                    bool KMSClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取数据库引擎，支持：
 <li>postgresql：云数据库PostgreSQL</li>
 <li>mssql_compatible：MSSQL兼容-云数据库PostgreSQL</li>
@@ -1074,6 +1095,12 @@ KMSRegion相关介绍参考[开启透明数据加密](https://cloud.tencent.com/
                      */
                     std::string m_kMSRegion;
                     bool m_kMSRegionHasBeenSet;
+
+                    /**
+                     * 指定KMS服务的集群，KMSClusterId为空使用默认集群的KMS，若选择指定KMS集群，则需要传入KMSClusterId。 KMSClusterId相关介绍参考开启透明数据加密
+                     */
+                    std::string m_kMSClusterId;
+                    bool m_kMSClusterIdHasBeenSet;
 
                     /**
                      * 数据库引擎，支持：

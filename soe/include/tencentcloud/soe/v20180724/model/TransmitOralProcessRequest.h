@@ -180,15 +180,19 @@ namespace TencentCloud
                     bool UserVoiceDataHasBeenSet() const;
 
                     /**
-                     * 获取语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
-                     * @return SessionId 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
+                     * 获取语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。
+一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
+                     * @return SessionId 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。
+一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
-                     * @param _sessionId 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
+                     * 设置语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。
+一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
+                     * @param _sessionId 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。
+一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -304,7 +308,8 @@ namespace TencentCloud
                     bool m_userVoiceDataHasBeenSet;
 
                     /**
-                     * 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
+                     * 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。
+一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;

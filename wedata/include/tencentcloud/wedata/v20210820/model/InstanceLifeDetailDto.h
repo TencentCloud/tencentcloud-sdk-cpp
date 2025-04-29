@@ -138,7 +138,7 @@ namespace TencentCloud
 - FAILED 表示 终态-失败重试
 - EXPIRED 表示 终态-失败
 - SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支
-- HISTORY 表示 兼容历史实例
+- HISTORY 表示 兼容2024-03-30之前的历史实例，之后实例无需关注次枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetailState **实例生命周期阶段状态**
 
@@ -149,7 +149,7 @@ namespace TencentCloud
 - FAILED 表示 终态-失败重试
 - EXPIRED 表示 终态-失败
 - SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支
-- HISTORY 表示 兼容历史实例
+- HISTORY 表示 兼容2024-03-30之前的历史实例，之后实例无需关注次枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -165,7 +165,7 @@ namespace TencentCloud
 - FAILED 表示 终态-失败重试
 - EXPIRED 表示 终态-失败
 - SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支
-- HISTORY 表示 兼容历史实例
+- HISTORY 表示 兼容2024-03-30之前的历史实例，之后实例无需关注次枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detailState **实例生命周期阶段状态**
 
@@ -176,7 +176,7 @@ namespace TencentCloud
 - FAILED 表示 终态-失败重试
 - EXPIRED 表示 终态-失败
 - SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支
-- HISTORY 表示 兼容历史实例
+- HISTORY 表示 兼容2024-03-30之前的历史实例，之后实例无需关注次枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,7 +248,7 @@ namespace TencentCloud
 - FAILED 表示 终态-失败重试
 - EXPIRED 表示 终态-失败
 - SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支
-- HISTORY 表示 兼容历史实例
+- HISTORY 表示 兼容2024-03-30之前的历史实例，之后实例无需关注次枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_detailState;

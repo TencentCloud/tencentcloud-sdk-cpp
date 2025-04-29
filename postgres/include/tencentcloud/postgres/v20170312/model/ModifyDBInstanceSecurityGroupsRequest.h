@@ -45,10 +45,10 @@ namespace TencentCloud
                     /**
                      * 获取实例或只读组要绑定的安全组列表。
 安全组信息可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来查询。
-
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * @return SecurityGroupIdSet 实例或只读组要绑定的安全组列表。
 安全组信息可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来查询。
-
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIdSet() const;
@@ -56,10 +56,10 @@ namespace TencentCloud
                     /**
                      * 设置实例或只读组要绑定的安全组列表。
 安全组信息可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来查询。
-
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * @param _securityGroupIdSet 实例或只读组要绑定的安全组列表。
 安全组信息可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来查询。
-
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     void SetSecurityGroupIdSet(const std::vector<std::string>& _securityGroupIdSet);
@@ -118,7 +118,7 @@ namespace TencentCloud
                     /**
                      * 实例或只读组要绑定的安全组列表。
 安全组信息可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来查询。
-
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      */
                     std::vector<std::string> m_securityGroupIdSet;
                     bool m_securityGroupIdSetHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后付费单价，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPrice 后付费单价，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetUnitPrice() const;
 
                     /**
                      * 设置后付费单价，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unitPrice 后付费单价，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnitPrice(const double& _unitPrice);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeUnit 后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChargeUnit() const;
 
                     /**
                      * 设置后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeUnit 后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeUnit(const std::string& _chargeUnit);
@@ -148,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后付费的折扣单价，单位:元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPriceDiscount 后付费的折扣单价，单位:元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetUnitPriceDiscount() const;
 
                     /**
                      * 设置后付费的折扣单价，单位:元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unitPriceDiscount 后付费的折扣单价，单位:元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnitPriceDiscount(const double& _unitPriceDiscount);
@@ -173,18 +161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取折扣，如20.0代表2折。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Discount 折扣，如20.0代表2折。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDiscount() const;
 
                     /**
                      * 设置折扣，如20.0代表2折。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _discount 折扣，如20.0代表2折。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiscount(const double& _discount);
@@ -200,14 +184,12 @@ namespace TencentCloud
 
                     /**
                      * 后付费单价，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_unitPrice;
                     bool m_unitPriceHasBeenSet;
 
                     /**
                      * 后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chargeUnit;
                     bool m_chargeUnitHasBeenSet;
@@ -228,14 +210,12 @@ namespace TencentCloud
 
                     /**
                      * 后付费的折扣单价，单位:元。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_unitPriceDiscount;
                     bool m_unitPriceDiscountHasBeenSet;
 
                     /**
                      * 折扣，如20.0代表2折。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_discount;
                     bool m_discountHasBeenSet;

@@ -64,18 +64,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取**实例计划调度时间**
+                     * 获取**实例计划调度时间过滤条件**
 过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss
-                     * @return ScheduleTimeFrom **实例计划调度时间**
+                     * @return ScheduleTimeFrom **实例计划调度时间过滤条件**
 过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetScheduleTimeFrom() const;
 
                     /**
-                     * 设置**实例计划调度时间**
+                     * 设置**实例计划调度时间过滤条件**
 过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss
-                     * @param _scheduleTimeFrom **实例计划调度时间**
+                     * @param _scheduleTimeFrom **实例计划调度时间过滤条件**
 过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      * 
                      */
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool ScheduleTimeFromHasBeenSet() const;
 
                     /**
-                     * 获取**实例计划调度时间**
+                     * 获取**实例计划调度时间过滤条件**
 过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
-                     * @return ScheduleTimeTo **实例计划调度时间**
+                     * @return ScheduleTimeTo **实例计划调度时间过滤条件**
 过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetScheduleTimeTo() const;
 
                     /**
-                     * 设置**实例计划调度时间**
+                     * 设置**实例计划调度时间过滤条件**
 过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
-                     * @param _scheduleTimeTo **实例计划调度时间**
+                     * @param _scheduleTimeTo **实例计划调度时间过滤条件**
 过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      * 
                      */
@@ -166,16 +166,16 @@ namespace TencentCloud
                     /**
                      * 获取**查询结果排序字段**
 
-- SCHEDULE_DATE 表示 计划调度时间
-- START_TIME 表示 实例开始执行时间
-- END_TIME 表示 实例结束执行时间
-- COST_TIME 表示 实例执行时长
+- SCHEDULE_DATE 表示 根据计划调度时间排序
+- START_TIME 表示 根据实例开始执行时间排序
+- END_TIME 表示 根据实例结束执行时间排序
+- COST_TIME 表示 根据实例执行时长排序
                      * @return SortColumn **查询结果排序字段**
 
-- SCHEDULE_DATE 表示 计划调度时间
-- START_TIME 表示 实例开始执行时间
-- END_TIME 表示 实例结束执行时间
-- COST_TIME 表示 实例执行时长
+- SCHEDULE_DATE 表示 根据计划调度时间排序
+- START_TIME 表示 根据实例开始执行时间排序
+- END_TIME 表示 根据实例结束执行时间排序
+- COST_TIME 表示 根据实例执行时长排序
                      * 
                      */
                     std::string GetSortColumn() const;
@@ -183,16 +183,16 @@ namespace TencentCloud
                     /**
                      * 设置**查询结果排序字段**
 
-- SCHEDULE_DATE 表示 计划调度时间
-- START_TIME 表示 实例开始执行时间
-- END_TIME 表示 实例结束执行时间
-- COST_TIME 表示 实例执行时长
+- SCHEDULE_DATE 表示 根据计划调度时间排序
+- START_TIME 表示 根据实例开始执行时间排序
+- END_TIME 表示 根据实例结束执行时间排序
+- COST_TIME 表示 根据实例执行时长排序
                      * @param _sortColumn **查询结果排序字段**
 
-- SCHEDULE_DATE 表示 计划调度时间
-- START_TIME 表示 实例开始执行时间
-- END_TIME 表示 实例结束执行时间
-- COST_TIME 表示 实例执行时长
+- SCHEDULE_DATE 表示 根据计划调度时间排序
+- START_TIME 表示 根据实例开始执行时间排序
+- END_TIME 表示 根据实例结束执行时间排序
+- COST_TIME 表示 根据实例执行时长排序
                      * 
                      */
                     void SetSortColumn(const std::string& _sortColumn);
@@ -567,18 +567,18 @@ namespace TencentCloud
                     bool ExecutorGroupIdListHasBeenSet() const;
 
                     /**
-                     * 获取**开始时间**
+                     * 获取**实例执行开始时间过滤条件**
 过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss
-                     * @return StartTimeFrom **开始时间**
+                     * @return StartTimeFrom **实例执行开始时间过滤条件**
 过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetStartTimeFrom() const;
 
                     /**
-                     * 设置**开始时间**
+                     * 设置**实例执行开始时间过滤条件**
 过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss
-                     * @param _startTimeFrom **开始时间**
+                     * @param _startTimeFrom **实例执行开始时间过滤条件**
 过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      * 
                      */
@@ -592,18 +592,18 @@ namespace TencentCloud
                     bool StartTimeFromHasBeenSet() const;
 
                     /**
-                     * 获取**开始时间**
+                     * 获取**实例执行开始时间过滤条件**
 过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
-                     * @return StartTimeTo **开始时间**
+                     * @return StartTimeTo **实例执行开始时间过滤条件**
 过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetStartTimeTo() const;
 
                     /**
-                     * 设置**开始时间**
+                     * 设置**实例执行开始时间过滤条件**
 过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
-                     * @param _startTimeTo **开始时间**
+                     * @param _startTimeTo **实例执行开始时间过滤条件**
 过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      * 
                      */
@@ -650,14 +650,14 @@ timeZone, 默认UTC+8
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * **实例计划调度时间**
+                     * **实例计划调度时间过滤条件**
 过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_scheduleTimeFrom;
                     bool m_scheduleTimeFromHasBeenSet;
 
                     /**
-                     * **实例计划调度时间**
+                     * **实例计划调度时间过滤条件**
 过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_scheduleTimeTo;
@@ -680,10 +680,10 @@ timeZone, 默认UTC+8
                     /**
                      * **查询结果排序字段**
 
-- SCHEDULE_DATE 表示 计划调度时间
-- START_TIME 表示 实例开始执行时间
-- END_TIME 表示 实例结束执行时间
-- COST_TIME 表示 实例执行时长
+- SCHEDULE_DATE 表示 根据计划调度时间排序
+- START_TIME 表示 根据实例开始执行时间排序
+- END_TIME 表示 根据实例结束执行时间排序
+- COST_TIME 表示 根据实例执行时长排序
                      */
                     std::string m_sortColumn;
                     bool m_sortColumnHasBeenSet;
@@ -787,14 +787,14 @@ timeZone, 默认UTC+8
                     bool m_executorGroupIdListHasBeenSet;
 
                     /**
-                     * **开始时间**
+                     * **实例执行开始时间过滤条件**
 过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_startTimeFrom;
                     bool m_startTimeFromHasBeenSet;
 
                     /**
-                     * **开始时间**
+                     * **实例执行开始时间过滤条件**
 过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_startTimeTo;

@@ -492,6 +492,27 @@ namespace TencentCloud
                      */
                     bool NetworkIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否为新 ipv6 CLB
+                     * @return IPV6FullChain 是否为新 ipv6 CLB
+                     * 
+                     */
+                    bool GetIPV6FullChain() const;
+
+                    /**
+                     * 设置是否为新 ipv6 CLB
+                     * @param _iPV6FullChain 是否为新 ipv6 CLB
+                     * 
+                     */
+                    void SetIPV6FullChain(const bool& _iPV6FullChain);
+
+                    /**
+                     * 判断参数 IPV6FullChain 是否已赋值
+                     * @return IPV6FullChain 是否已赋值
+                     * 
+                     */
+                    bool IPV6FullChainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -620,6 +641,12 @@ namespace TencentCloud
                      */
                     std::string m_networkId;
                     bool m_networkIdHasBeenSet;
+
+                    /**
+                     * 是否为新 ipv6 CLB
+                     */
+                    bool m_iPV6FullChain;
+                    bool m_iPV6FullChainHasBeenSet;
 
                 };
             }

@@ -32,7 +32,8 @@ GetInstanceLogRequest::GetInstanceLogRequest() :
     m_executionJobIdHasBeenSet(false),
     m_logLevelHasBeenSet(false),
     m_startLineNumHasBeenSet(false),
-    m_endLineCountHasBeenSet(false)
+    m_endLineCountHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string GetInstanceLogRequest::ToJsonString() const
         string key = "EndLineCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endLineCount, allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void GetInstanceLogRequest::SetEndLineCount(const uint64_t& _endLineCount)
 bool GetInstanceLogRequest::EndLineCountHasBeenSet() const
 {
     return m_endLineCountHasBeenSet;
+}
+
+string GetInstanceLogRequest::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void GetInstanceLogRequest::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool GetInstanceLogRequest::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 
 

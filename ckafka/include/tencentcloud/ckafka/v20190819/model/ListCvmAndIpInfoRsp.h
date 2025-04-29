@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cvm和IP 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvmList cvm和IP 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CvmAndIpInfo> GetCvmList() const;
 
                     /**
                      * 设置cvm和IP 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cvmList cvm和IP 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCvmList(const std::vector<CvmAndIpInfo>& _cvmList);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 实例数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置实例数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 实例数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * cvm和IP 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CvmAndIpInfo> m_cvmList;
                     bool m_cvmListHasBeenSet;
 
                     /**
                      * 实例数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

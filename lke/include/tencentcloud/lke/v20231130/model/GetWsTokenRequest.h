@@ -87,14 +87,18 @@ namespace TencentCloud
 
                     /**
                      * 获取访客ID（外部输入，建议唯一，标识当前接入会话的用户）
+长度限制： string(64)
                      * @return VisitorBizId 访客ID（外部输入，建议唯一，标识当前接入会话的用户）
+长度限制： string(64)
                      * 
                      */
                     std::string GetVisitorBizId() const;
 
                     /**
                      * 设置访客ID（外部输入，建议唯一，标识当前接入会话的用户）
+长度限制： string(64)
                      * @param _visitorBizId 访客ID（外部输入，建议唯一，标识当前接入会话的用户）
+长度限制： string(64)
                      * 
                      */
                     void SetVisitorBizId(const std::string& _visitorBizId);
@@ -143,6 +147,7 @@ namespace TencentCloud
 
                     /**
                      * 访客ID（外部输入，建议唯一，标识当前接入会话的用户）
+长度限制： string(64)
                      */
                     std::string m_visitorBizId;
                     bool m_visitorBizIdHasBeenSet;

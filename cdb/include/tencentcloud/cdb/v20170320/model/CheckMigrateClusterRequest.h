@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群版节点拓扑配置。
-                     * @return ClusterTopology 集群版节点拓扑配置。
+                     * 获取云盘版节点拓扑配置。
+                     * @return ClusterTopology 云盘版节点拓扑配置。
                      * 
                      */
                     ClusterTopology GetClusterTopology() const;
 
                     /**
-                     * 设置集群版节点拓扑配置。
-                     * @param _clusterTopology 集群版节点拓扑配置。
+                     * 设置云盘版节点拓扑配置。
+                     * @param _clusterTopology 云盘版节点拓扑配置。
                      * 
                      */
                     void SetClusterTopology(const ClusterTopology& _clusterTopology);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ClusterTopologyHasBeenSet() const;
 
                     /**
-                     * 获取迁移实例类型。支持值包括： "CLOUD_NATIVE_CLUSTER" - 标准型集群版实例， "CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 加强型集群版实例。
-                     * @return DeviceType 迁移实例类型。支持值包括： "CLOUD_NATIVE_CLUSTER" - 标准型集群版实例， "CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 加强型集群版实例。
+                     * 获取迁移实例类型。支持值包括： "CLOUD_NATIVE_CLUSTER" - 标准型云盘版实例， "CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 加强型云盘版实例。
+                     * @return DeviceType 迁移实例类型。支持值包括： "CLOUD_NATIVE_CLUSTER" - 标准型云盘版实例， "CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 加强型云盘版实例。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置迁移实例类型。支持值包括： "CLOUD_NATIVE_CLUSTER" - 标准型集群版实例， "CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 加强型集群版实例。
-                     * @param _deviceType 迁移实例类型。支持值包括： "CLOUD_NATIVE_CLUSTER" - 标准型集群版实例， "CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 加强型集群版实例。
+                     * 设置迁移实例类型。支持值包括： "CLOUD_NATIVE_CLUSTER" - 标准型云盘版实例， "CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 加强型云盘版实例。
+                     * @param _deviceType 迁移实例类型。支持值包括： "CLOUD_NATIVE_CLUSTER" - 标准型云盘版实例， "CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 加强型云盘版实例。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -245,13 +245,13 @@ namespace TencentCloud
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 集群版节点拓扑配置。
+                     * 云盘版节点拓扑配置。
                      */
                     ClusterTopology m_clusterTopology;
                     bool m_clusterTopologyHasBeenSet;
 
                     /**
-                     * 迁移实例类型。支持值包括： "CLOUD_NATIVE_CLUSTER" - 标准型集群版实例， "CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 加强型集群版实例。
+                     * 迁移实例类型。支持值包括： "CLOUD_NATIVE_CLUSTER" - 标准型云盘版实例， "CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 加强型云盘版实例。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;

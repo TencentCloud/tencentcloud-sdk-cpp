@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool InstanceKeyHasBeenSet() const;
 
                     /**
-                     * 获取生命周期编号
-                     * @return LifeRoundNum 生命周期编号
+                     * 获取**实例生命周期编号，标识实例的某一次执行**
+
+例如：周期实例第一次运行的编号为0，用户后期又重跑了该实例，第二次执行的编号为1
+                     * @return LifeRoundNum **实例生命周期编号，标识实例的某一次执行**
+
+例如：周期实例第一次运行的编号为0，用户后期又重跑了该实例，第二次执行的编号为1
                      * 
                      */
                     uint64_t GetLifeRoundNum() const;
 
                     /**
-                     * 设置生命周期编号
-                     * @param _lifeRoundNum 生命周期编号
+                     * 设置**实例生命周期编号，标识实例的某一次执行**
+
+例如：周期实例第一次运行的编号为0，用户后期又重跑了该实例，第二次执行的编号为1
+                     * @param _lifeRoundNum **实例生命周期编号，标识实例的某一次执行**
+
+例如：周期实例第一次运行的编号为0，用户后期又重跑了该实例，第二次执行的编号为1
                      * 
                      */
                     void SetLifeRoundNum(const uint64_t& _lifeRoundNum);
@@ -308,6 +316,39 @@ timeZone, 默认UTC+8
                      */
                     bool EndLineCountHasBeenSet() const;
 
+                    /**
+                     * 获取**分页查询日志时使用，无具体业务含义**
+
+第一次查询时值为null 
+第二次及以后查询时使用上一次查询返回信息中的ExtInfo字段值即可
+                     * @return ExtInfo **分页查询日志时使用，无具体业务含义**
+
+第一次查询时值为null 
+第二次及以后查询时使用上一次查询返回信息中的ExtInfo字段值即可
+                     * 
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 设置**分页查询日志时使用，无具体业务含义**
+
+第一次查询时值为null 
+第二次及以后查询时使用上一次查询返回信息中的ExtInfo字段值即可
+                     * @param _extInfo **分页查询日志时使用，无具体业务含义**
+
+第一次查询时值为null 
+第二次及以后查询时使用上一次查询返回信息中的ExtInfo字段值即可
+                     * 
+                     */
+                    void SetExtInfo(const std::string& _extInfo);
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,7 +364,9 @@ timeZone, 默认UTC+8
                     bool m_instanceKeyHasBeenSet;
 
                     /**
-                     * 生命周期编号
+                     * **实例生命周期编号，标识实例的某一次执行**
+
+例如：周期实例第一次运行的编号为0，用户后期又重跑了该实例，第二次执行的编号为1
                      */
                     uint64_t m_lifeRoundNum;
                     bool m_lifeRoundNumHasBeenSet;
@@ -383,6 +426,15 @@ timeZone, 默认UTC+8
                      */
                     uint64_t m_endLineCount;
                     bool m_endLineCountHasBeenSet;
+
+                    /**
+                     * **分页查询日志时使用，无具体业务含义**
+
+第一次查询时值为null 
+第二次及以后查询时使用上一次查询返回信息中的ExtInfo字段值即可
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
 
                 };
             }

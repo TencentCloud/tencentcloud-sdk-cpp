@@ -118,15 +118,15 @@ CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
-                     * @return Command shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 获取shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * @return Command shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
-                     * @param _command shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 设置shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * @param _command shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -137,6 +137,27 @@ CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
                      * 
                      */
                     bool CommandHasBeenSet() const;
+
+                    /**
+                     * 获取shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * @return UninstallCommand shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 
+                     */
+                    std::string GetUninstallCommand() const;
+
+                    /**
+                     * 设置shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * @param _uninstallCommand shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 
+                     */
+                    void SetUninstallCommand(const std::string& _uninstallCommand);
+
+                    /**
+                     * 判断参数 UninstallCommand 是否已赋值
+                     * @return UninstallCommand 是否已赋值
+                     * 
+                     */
+                    bool UninstallCommandHasBeenSet() const;
 
                 private:
 
@@ -161,10 +182,16 @@ CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
+
+                    /**
+                     * shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     */
+                    std::string m_uninstallCommand;
+                    bool m_uninstallCommandHasBeenSet;
 
                 };
             }

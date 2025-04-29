@@ -41,7 +41,8 @@ CloudNativeAPIGatewayConfig::CloudNativeAPIGatewayConfig() :
     m_slaveZoneIdHasBeenSet(false),
     m_masterZoneNameHasBeenSet(false),
     m_slaveZoneNameHasBeenSet(false),
-    m_networkIdHasBeenSet(false)
+    m_networkIdHasBeenSet(false),
+    m_iPV6FullChainHasBeenSet(false)
 {
 }
 
@@ -267,6 +268,16 @@ CoreInternalOutcome CloudNativeAPIGatewayConfig::Deserialize(const rapidjson::Va
         m_networkIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IPV6FullChain") && !value["IPV6FullChain"].IsNull())
+    {
+        if (!value["IPV6FullChain"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayConfig.IPV6FullChain` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPV6FullChain = value["IPV6FullChain"].GetBool();
+        m_iPV6FullChainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -441,6 +452,14 @@ void CloudNativeAPIGatewayConfig::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "NetworkId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_networkId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPV6FullChainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPV6FullChain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iPV6FullChain, allocator);
     }
 
 }
@@ -780,5 +799,21 @@ void CloudNativeAPIGatewayConfig::SetNetworkId(const string& _networkId)
 bool CloudNativeAPIGatewayConfig::NetworkIdHasBeenSet() const
 {
     return m_networkIdHasBeenSet;
+}
+
+bool CloudNativeAPIGatewayConfig::GetIPV6FullChain() const
+{
+    return m_iPV6FullChain;
+}
+
+void CloudNativeAPIGatewayConfig::SetIPV6FullChain(const bool& _iPV6FullChain)
+{
+    m_iPV6FullChain = _iPV6FullChain;
+    m_iPV6FullChainHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayConfig::IPV6FullChainHasBeenSet() const
+{
+    return m_iPV6FullChainHasBeenSet;
 }
 

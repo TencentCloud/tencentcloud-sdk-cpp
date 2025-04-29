@@ -49,6 +49,7 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_needSupportTDEHasBeenSet(false),
     m_kMSKeyIdHasBeenSet(false),
     m_kMSRegionHasBeenSet(false),
+    m_kMSClusterIdHasBeenSet(false),
     m_dBEngineHasBeenSet(false),
     m_dBEngineConfigHasBeenSet(false),
     m_syncModeHasBeenSet(false),
@@ -293,6 +294,14 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "KMSRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_kMSRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kMSClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KMSClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kMSClusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dBEngineHasBeenSet)
@@ -749,6 +758,22 @@ void CreateInstancesRequest::SetKMSRegion(const string& _kMSRegion)
 bool CreateInstancesRequest::KMSRegionHasBeenSet() const
 {
     return m_kMSRegionHasBeenSet;
+}
+
+string CreateInstancesRequest::GetKMSClusterId() const
+{
+    return m_kMSClusterId;
+}
+
+void CreateInstancesRequest::SetKMSClusterId(const string& _kMSClusterId)
+{
+    m_kMSClusterId = _kMSClusterId;
+    m_kMSClusterIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::KMSClusterIdHasBeenSet() const
+{
+    return m_kMSClusterIdHasBeenSet;
 }
 
 string CreateInstancesRequest::GetDBEngine() const

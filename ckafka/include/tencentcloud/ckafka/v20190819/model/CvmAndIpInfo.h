@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CkafkaInstanceId ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCkafkaInstanceId() const;
 
                     /**
                      * 设置ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ckafkaInstanceId ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCkafkaInstanceId(const std::string& _ckafkaInstanceId);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -121,7 +113,6 @@ namespace TencentCloud
 
                     /**
                      * ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ckafkaInstanceId;
                     bool m_ckafkaInstanceIdHasBeenSet;
@@ -134,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;

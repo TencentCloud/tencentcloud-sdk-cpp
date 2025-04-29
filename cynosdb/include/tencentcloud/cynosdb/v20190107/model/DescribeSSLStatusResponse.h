@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取yes-开启，no-关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsOpenSSL yes-开启，no-关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsOpenSSL() const;
@@ -77,7 +75,6 @@ namespace TencentCloud
 
                     /**
                      * yes-开启，no-关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isOpenSSL;
                     bool m_isOpenSSLHasBeenSet;

@@ -960,7 +960,7 @@ namespace TencentCloud
                 BalanceRoGroupLoadOutcomeCallable BalanceRoGroupLoadCallable(const Model::BalanceRoGroupLoadRequest& request);
 
                 /**
-                 *本接口（CheckMigrateCluster）用于高可用实例一键迁移到集群版校验。
+                 *本接口（CheckMigrateCluster）用于高可用实例一键迁移到云盘版校验。
                  * @param req CheckMigrateClusterRequest
                  * @return CheckMigrateClusterOutcome
                  */
@@ -1504,7 +1504,7 @@ namespace TencentCloud
                 DescribeCloneListOutcomeCallable DescribeCloneListCallable(const Model::DescribeCloneListRequest& request);
 
                 /**
-                 *本接口（DescribeClusterInfo）用于查询集群版实例信息。
+                 *本接口（DescribeClusterInfo）用于查询云盘版实例信息。
                  * @param req DescribeClusterInfoRequest
                  * @return DescribeClusterInfoOutcome
                  */

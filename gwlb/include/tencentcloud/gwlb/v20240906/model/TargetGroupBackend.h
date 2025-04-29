@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务的外网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIpAddresses 后端服务的外网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
                      * 设置后端服务的外网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIpAddresses 后端服务的外网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIpAddresses 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPrivateIpAddresses() const;
 
                     /**
                      * 设置后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privateIpAddresses 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务的实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 后端服务的实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置后端服务的实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 后端服务的实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -228,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegisteredTime 后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegisteredTime() const;
 
                     /**
                      * 设置后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _registeredTime 后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegisteredTime(const std::string& _registeredTime);
@@ -335,28 +319,24 @@ namespace TencentCloud
 
                     /**
                      * 后端服务的外网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_publicIpAddresses;
                     bool m_publicIpAddressesHasBeenSet;
 
                     /**
                      * 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_privateIpAddresses;
                     bool m_privateIpAddressesHasBeenSet;
 
                     /**
                      * 后端服务的实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registeredTime;
                     bool m_registeredTimeHasBeenSet;

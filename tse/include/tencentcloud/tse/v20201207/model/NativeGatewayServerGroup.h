@@ -350,6 +350,48 @@ namespace TencentCloud
                      */
                     bool ElasticNumberHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持TOA
+                     * @return SupportTOA 是否支持TOA
+                     * 
+                     */
+                    bool GetSupportTOA() const;
+
+                    /**
+                     * 设置是否支持TOA
+                     * @param _supportTOA 是否支持TOA
+                     * 
+                     */
+                    void SetSupportTOA(const bool& _supportTOA);
+
+                    /**
+                     * 判断参数 SupportTOA 是否已赋值
+                     * @return SupportTOA 是否已赋值
+                     * 
+                     */
+                    bool SupportTOAHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持IPV6
+                     * @return SupportIPV6 是否支持IPV6
+                     * 
+                     */
+                    bool GetSupportIPV6() const;
+
+                    /**
+                     * 设置是否支持IPV6
+                     * @param _supportIPV6 是否支持IPV6
+                     * 
+                     */
+                    void SetSupportIPV6(const bool& _supportIPV6);
+
+                    /**
+                     * 判断参数 SupportIPV6 是否已赋值
+                     * @return SupportIPV6 是否已赋值
+                     * 
+                     */
+                    bool SupportIPV6HasBeenSet() const;
+
                 private:
 
                     /**
@@ -437,6 +479,18 @@ namespace TencentCloud
                      */
                     uint64_t m_elasticNumber;
                     bool m_elasticNumberHasBeenSet;
+
+                    /**
+                     * 是否支持TOA
+                     */
+                    bool m_supportTOA;
+                    bool m_supportTOAHasBeenSet;
+
+                    /**
+                     * 是否支持IPV6
+                     */
+                    bool m_supportIPV6;
+                    bool m_supportIPV6HasBeenSet;
 
                 };
             }

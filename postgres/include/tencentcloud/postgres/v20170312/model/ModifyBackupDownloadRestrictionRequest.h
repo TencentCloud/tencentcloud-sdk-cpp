@@ -86,14 +86,18 @@ namespace TencentCloud
 
                     /**
                      * 获取允许或拒绝下载备份文件的vpcId列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * @return VpcIdSet 允许或拒绝下载备份文件的vpcId列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     std::vector<std::string> GetVpcIdSet() const;
 
                     /**
                      * 设置允许或拒绝下载备份文件的vpcId列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * @param _vpcIdSet 允许或拒绝下载备份文件的vpcId列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     void SetVpcIdSet(const std::vector<std::string>& _vpcIdSet);
@@ -128,14 +132,18 @@ namespace TencentCloud
 
                     /**
                      * 获取允许或拒绝下载备份文件的ip列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * @return IpSet 允许或拒绝下载备份文件的ip列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     std::vector<std::string> GetIpSet() const;
 
                     /**
                      * 设置允许或拒绝下载备份文件的ip列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * @param _ipSet 允许或拒绝下载备份文件的ip列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     void SetIpSet(const std::vector<std::string>& _ipSet);
@@ -163,6 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 允许或拒绝下载备份文件的vpcId列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      */
                     std::vector<std::string> m_vpcIdSet;
                     bool m_vpcIdSetHasBeenSet;
@@ -175,6 +184,7 @@ namespace TencentCloud
 
                     /**
                      * 允许或拒绝下载备份文件的ip列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      */
                     std::vector<std::string> m_ipSet;
                     bool m_ipSetHasBeenSet;

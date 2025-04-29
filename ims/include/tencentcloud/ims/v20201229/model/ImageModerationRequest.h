@@ -45,15 +45,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
-                     * @return BizType 该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
+                     * 获取该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](#https://console.cloud.tencent.com/cms/clouds/manage)中配置。
+备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
+                     * @return BizType 该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](#https://console.cloud.tencent.com/cms/clouds/manage)中配置。
+备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
                      * 
                      */
                     std::string GetBizType() const;
 
                     /**
-                     * 设置该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
-                     * @param _bizType 该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
+                     * 设置该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](#https://console.cloud.tencent.com/cms/clouds/manage)中配置。
+备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
+                     * @param _bizType 该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](#https://console.cloud.tencent.com/cms/clouds/manage)中配置。
+备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
                      * 
                      */
                     void SetBizType(const std::string& _bizType);
@@ -213,15 +217,15 @@ namespace TencentCloud
                     bool DeviceHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示送审的数据类型，默认为通用图片，可以选择。
-                     * @return Type 该字段表示送审的数据类型，默认为通用图片，可以选择。
+                     * 获取该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。
+                     * @return Type 该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置该字段表示送审的数据类型，默认为通用图片，可以选择。
-                     * @param _type 该字段表示送审的数据类型，默认为通用图片，可以选择。
+                     * 设置该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。
+                     * @param _type 该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -236,7 +240,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
+                     * 该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](#https://console.cloud.tencent.com/cms/clouds/manage)中配置。
+备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
@@ -284,7 +289,7 @@ namespace TencentCloud
                     bool m_deviceHasBeenSet;
 
                     /**
-                     * 该字段表示送审的数据类型，默认为通用图片，可以选择。
+                     * 该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

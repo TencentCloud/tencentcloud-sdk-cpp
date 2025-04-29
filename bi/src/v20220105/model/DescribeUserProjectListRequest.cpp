@@ -28,7 +28,8 @@ DescribeUserProjectListRequest::DescribeUserProjectListRequest() :
     m_pageNoHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_isFilterPerAuthUserHasBeenSet(false),
-    m_isFilterCurrentUserHasBeenSet(false)
+    m_isFilterCurrentUserHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeUserProjectListRequest::ToJsonString() const
         string key = "IsFilterCurrentUser";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isFilterCurrentUser, allocator);
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeUserProjectListRequest::SetIsFilterCurrentUser(const bool& _isFilte
 bool DescribeUserProjectListRequest::IsFilterCurrentUserHasBeenSet() const
 {
     return m_isFilterCurrentUserHasBeenSet;
+}
+
+string DescribeUserProjectListRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void DescribeUserProjectListRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool DescribeUserProjectListRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
 }
 
 

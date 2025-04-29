@@ -65,6 +65,7 @@ namespace TencentCloud
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
 <li>VoiceTranslation: 语音翻译</li>
 <li>JITTranscoding: 即时转码</li>
+<li>VideoSnapshot: 视频截图</li>
                      * @return TaskType 任务类型。
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
@@ -81,6 +82,7 @@ namespace TencentCloud
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
 <li>VoiceTranslation: 语音翻译</li>
 <li>JITTranscoding: 即时转码</li>
+<li>VideoSnapshot: 视频截图</li>
                      * 
                      */
                     std::string GetTaskType() const;
@@ -102,6 +104,7 @@ namespace TencentCloud
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
 <li>VoiceTranslation: 语音翻译</li>
 <li>JITTranscoding: 即时转码</li>
+<li>VideoSnapshot: 视频截图</li>
                      * @param _taskType 任务类型。
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
@@ -118,6 +121,7 @@ namespace TencentCloud
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
 <li>VoiceTranslation: 语音翻译</li>
 <li>JITTranscoding: 即时转码</li>
+<li>VideoSnapshot: 视频截图</li>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -211,6 +215,10 @@ namespace TencentCloud
 <li>JITTranscoding.H264.2K: H.264编码方式2K即时转码</li>
 <li>JITTranscoding.Audio: 音频即时转码</li>
 <li>JITTranscoding.Copy: 转封装即时转码</li>
+视频截图规格：
+<li>SnapshotByTimeOffset: 时间点截图</li>
+<li>SampleSnapshot: 采样截图</li>
+<li>ImageSprite: 雪碧图</li>
                      * @return Details 不同规格任务统计数据详情。
 转码规格：
 <li>Remuxing: 转封装</li>
@@ -271,6 +279,10 @@ namespace TencentCloud
 <li>JITTranscoding.H264.2K: H.264编码方式2K即时转码</li>
 <li>JITTranscoding.Audio: 音频即时转码</li>
 <li>JITTranscoding.Copy: 转封装即时转码</li>
+视频截图规格：
+<li>SnapshotByTimeOffset: 时间点截图</li>
+<li>SampleSnapshot: 采样截图</li>
+<li>ImageSprite: 雪碧图</li>
                      * 
                      */
                     std::vector<SpecificationDataItem> GetDetails() const;
@@ -336,6 +348,10 @@ namespace TencentCloud
 <li>JITTranscoding.H264.2K: H.264编码方式2K即时转码</li>
 <li>JITTranscoding.Audio: 音频即时转码</li>
 <li>JITTranscoding.Copy: 转封装即时转码</li>
+视频截图规格：
+<li>SnapshotByTimeOffset: 时间点截图</li>
+<li>SampleSnapshot: 采样截图</li>
+<li>ImageSprite: 雪碧图</li>
                      * @param _details 不同规格任务统计数据详情。
 转码规格：
 <li>Remuxing: 转封装</li>
@@ -396,6 +412,10 @@ namespace TencentCloud
 <li>JITTranscoding.H264.2K: H.264编码方式2K即时转码</li>
 <li>JITTranscoding.Audio: 音频即时转码</li>
 <li>JITTranscoding.Copy: 转封装即时转码</li>
+视频截图规格：
+<li>SnapshotByTimeOffset: 时间点截图</li>
+<li>SampleSnapshot: 采样截图</li>
+<li>ImageSprite: 雪碧图</li>
                      * 
                      */
                     void SetDetails(const std::vector<SpecificationDataItem>& _details);
@@ -426,6 +446,7 @@ namespace TencentCloud
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
 <li>VoiceTranslation: 语音翻译</li>
 <li>JITTranscoding: 即时转码</li>
+<li>VideoSnapshot: 视频截图</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -497,6 +518,10 @@ namespace TencentCloud
 <li>JITTranscoding.H264.2K: H.264编码方式2K即时转码</li>
 <li>JITTranscoding.Audio: 音频即时转码</li>
 <li>JITTranscoding.Copy: 转封装即时转码</li>
+视频截图规格：
+<li>SnapshotByTimeOffset: 时间点截图</li>
+<li>SampleSnapshot: 采样截图</li>
+<li>ImageSprite: 雪碧图</li>
                      */
                     std::vector<SpecificationDataItem> m_details;
                     bool m_detailsHasBeenSet;

@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取密钥所在的KMS服务集群Id，为空表示密钥在默认的KMS集群中，不为空表示在指定的KMS服务集群中
+                     * @return KMSClusterId 密钥所在的KMS服务集群Id，为空表示密钥在默认的KMS集群中，不为空表示在指定的KMS服务集群中
+                     * 
+                     */
+                    std::string GetKMSClusterId() const;
+
+                    /**
+                     * 设置密钥所在的KMS服务集群Id，为空表示密钥在默认的KMS集群中，不为空表示在指定的KMS服务集群中
+                     * @param _kMSClusterId 密钥所在的KMS服务集群Id，为空表示密钥在默认的KMS集群中，不为空表示在指定的KMS服务集群中
+                     * 
+                     */
+                    void SetKMSClusterId(const std::string& _kMSClusterId);
+
+                    /**
+                     * 判断参数 KMSClusterId 是否已赋值
+                     * @return KMSClusterId 是否已赋值
+                     * 
+                     */
+                    bool KMSClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 密钥所在的KMS服务集群Id，为空表示密钥在默认的KMS集群中，不为空表示在指定的KMS服务集群中
+                     */
+                    std::string m_kMSClusterId;
+                    bool m_kMSClusterIdHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ AndroidAppVersionInfo::AndroidAppVersionInfo() :
     m_androidAppVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_commandHasBeenSet(false)
+    m_commandHasBeenSet(false),
+    m_uninstallCommandHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome AndroidAppVersionInfo::Deserialize(const rapidjson::Value &v
         m_commandHasBeenSet = true;
     }
 
+    if (value.HasMember("UninstallCommand") && !value["UninstallCommand"].IsNull())
+    {
+        if (!value["UninstallCommand"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidAppVersionInfo.UninstallCommand` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uninstallCommand = string(value["UninstallCommand"].GetString());
+        m_uninstallCommandHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void AndroidAppVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Command";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uninstallCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UninstallCommand";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uninstallCommand.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void AndroidAppVersionInfo::SetCommand(const string& _command)
 bool AndroidAppVersionInfo::CommandHasBeenSet() const
 {
     return m_commandHasBeenSet;
+}
+
+string AndroidAppVersionInfo::GetUninstallCommand() const
+{
+    return m_uninstallCommand;
+}
+
+void AndroidAppVersionInfo::SetUninstallCommand(const string& _uninstallCommand)
+{
+    m_uninstallCommand = _uninstallCommand;
+    m_uninstallCommandHasBeenSet = true;
+}
+
+bool AndroidAppVersionInfo::UninstallCommandHasBeenSet() const
+{
+    return m_uninstallCommandHasBeenSet;
 }
 

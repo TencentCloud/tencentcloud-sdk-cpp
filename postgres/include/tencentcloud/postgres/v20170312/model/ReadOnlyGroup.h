@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnlyGroupId 只读组标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
                      * 设置只读组标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readOnlyGroupId 只读组标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnlyGroupName 只读组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReadOnlyGroupName() const;
 
                     /**
                      * 设置只读组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readOnlyGroupName 只读组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadOnlyGroupName(const std::string& _readOnlyGroupName);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterDBInstanceId 主实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMasterDBInstanceId() const;
 
                     /**
                      * 设置主实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterDBInstanceId 主实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterDBInstanceId(const std::string& _masterDBInstanceId);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最小保留实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinDelayEliminateReserve 最小保留实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMinDelayEliminateReserve() const;
 
                     /**
                      * 设置最小保留实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minDelayEliminateReserve 最小保留实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinDelayEliminateReserve(const int64_t& _minDelayEliminateReserve);
@@ -281,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -459,35 +435,30 @@ namespace TencentCloud
 
                     /**
                      * 只读组标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_readOnlyGroupId;
                     bool m_readOnlyGroupIdHasBeenSet;
 
                     /**
                      * 只读组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_readOnlyGroupName;
                     bool m_readOnlyGroupNameHasBeenSet;
 
                     /**
                      * 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 主实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_masterDBInstanceId;
                     bool m_masterDBInstanceIdHasBeenSet;
 
                     /**
                      * 最小保留实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_minDelayEliminateReserve;
                     bool m_minDelayEliminateReserveHasBeenSet;
@@ -524,7 +495,6 @@ namespace TencentCloud
 
                     /**
                      * 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

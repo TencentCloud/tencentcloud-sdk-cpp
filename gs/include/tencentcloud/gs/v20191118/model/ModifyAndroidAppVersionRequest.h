@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AndroidAppVersionNameHasBeenSet() const;
 
                     /**
-                     * 获取shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
-                     * @return Command shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 获取应用 shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * @return Command 应用 shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
-                     * @param _command shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 设置应用 shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * @param _command 应用 shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -125,6 +125,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CommandHasBeenSet() const;
+
+                    /**
+                     * 获取应用 shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * @return UninstallCommand 应用 shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 
+                     */
+                    std::string GetUninstallCommand() const;
+
+                    /**
+                     * 设置应用 shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * @param _uninstallCommand 应用 shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 
+                     */
+                    void SetUninstallCommand(const std::string& _uninstallCommand);
+
+                    /**
+                     * 判断参数 UninstallCommand 是否已赋值
+                     * @return UninstallCommand 是否已赋值
+                     * 
+                     */
+                    bool UninstallCommandHasBeenSet() const;
 
                 private:
 
@@ -147,10 +168,16 @@ namespace TencentCloud
                     bool m_androidAppVersionNameHasBeenSet;
 
                     /**
-                     * shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 应用 shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
+
+                    /**
+                     * 应用 shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     */
+                    std::string m_uninstallCommand;
+                    bool m_uninstallCommandHasBeenSet;
 
                 };
             }

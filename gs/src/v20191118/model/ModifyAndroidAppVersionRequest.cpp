@@ -26,7 +26,8 @@ ModifyAndroidAppVersionRequest::ModifyAndroidAppVersionRequest() :
     m_androidAppIdHasBeenSet(false),
     m_androidAppVersionHasBeenSet(false),
     m_androidAppVersionNameHasBeenSet(false),
-    m_commandHasBeenSet(false)
+    m_commandHasBeenSet(false),
+    m_uninstallCommandHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyAndroidAppVersionRequest::ToJsonString() const
         string key = "Command";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uninstallCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UninstallCommand";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uninstallCommand.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyAndroidAppVersionRequest::SetCommand(const string& _command)
 bool ModifyAndroidAppVersionRequest::CommandHasBeenSet() const
 {
     return m_commandHasBeenSet;
+}
+
+string ModifyAndroidAppVersionRequest::GetUninstallCommand() const
+{
+    return m_uninstallCommand;
+}
+
+void ModifyAndroidAppVersionRequest::SetUninstallCommand(const string& _uninstallCommand)
+{
+    m_uninstallCommand = _uninstallCommand;
+    m_uninstallCommandHasBeenSet = true;
+}
+
+bool ModifyAndroidAppVersionRequest::UninstallCommandHasBeenSet() const
+{
+    return m_uninstallCommandHasBeenSet;
 }
 
 

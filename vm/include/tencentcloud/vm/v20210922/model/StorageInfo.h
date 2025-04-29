@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                *  数据存储信息
+                * 数据存储信息
                 */
                 class StorageInfo : public AbstractModel
                 {
