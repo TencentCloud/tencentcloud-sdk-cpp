@@ -427,6 +427,49 @@ IssClient::AddUserDeviceOutcomeCallable IssClient::AddUserDeviceCallable(const A
     return task->get_future();
 }
 
+IssClient::BatchDeleteVideoDownloadTaskOutcome IssClient::BatchDeleteVideoDownloadTask(const BatchDeleteVideoDownloadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDeleteVideoDownloadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDeleteVideoDownloadTaskResponse rsp = BatchDeleteVideoDownloadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDeleteVideoDownloadTaskOutcome(rsp);
+        else
+            return BatchDeleteVideoDownloadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDeleteVideoDownloadTaskOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::BatchDeleteVideoDownloadTaskAsync(const BatchDeleteVideoDownloadTaskRequest& request, const BatchDeleteVideoDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchDeleteVideoDownloadTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::BatchDeleteVideoDownloadTaskOutcomeCallable IssClient::BatchDeleteVideoDownloadTaskCallable(const BatchDeleteVideoDownloadTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchDeleteVideoDownloadTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchDeleteVideoDownloadTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IssClient::BatchOperateDeviceOutcome IssClient::BatchOperateDevice(const BatchOperateDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchOperateDevice");
@@ -764,6 +807,49 @@ IssClient::ControlRecordTimelineOutcomeCallable IssClient::ControlRecordTimeline
         [this, request]()
         {
             return this->ControlRecordTimeline(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IssClient::CreateVideoDownloadTaskOutcome IssClient::CreateVideoDownloadTask(const CreateVideoDownloadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVideoDownloadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVideoDownloadTaskResponse rsp = CreateVideoDownloadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVideoDownloadTaskOutcome(rsp);
+        else
+            return CreateVideoDownloadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVideoDownloadTaskOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::CreateVideoDownloadTaskAsync(const CreateVideoDownloadTaskRequest& request, const CreateVideoDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVideoDownloadTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::CreateVideoDownloadTaskOutcomeCallable IssClient::CreateVideoDownloadTaskCallable(const CreateVideoDownloadTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVideoDownloadTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVideoDownloadTask(request);
         }
     );
 
@@ -1158,6 +1244,49 @@ IssClient::DeleteRecordTemplateOutcomeCallable IssClient::DeleteRecordTemplateCa
     return task->get_future();
 }
 
+IssClient::DeleteTaskOutcome IssClient::DeleteTask(const DeleteTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTaskResponse rsp = DeleteTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTaskOutcome(rsp);
+        else
+            return DeleteTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTaskOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::DeleteTaskAsync(const DeleteTaskRequest& request, const DeleteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::DeleteTaskOutcomeCallable IssClient::DeleteTaskCallable(const DeleteTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IssClient::DeleteUserDeviceOutcome IssClient::DeleteUserDevice(const DeleteUserDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteUserDevice");
@@ -1538,6 +1667,49 @@ IssClient::DescribeDomainRegionOutcomeCallable IssClient::DescribeDomainRegionCa
         [this, request]()
         {
             return this->DescribeDomainRegion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IssClient::DescribeGBDeviceAddrOutcome IssClient::DescribeGBDeviceAddr(const DescribeGBDeviceAddrRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGBDeviceAddr");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGBDeviceAddrResponse rsp = DescribeGBDeviceAddrResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGBDeviceAddrOutcome(rsp);
+        else
+            return DescribeGBDeviceAddrOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGBDeviceAddrOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::DescribeGBDeviceAddrAsync(const DescribeGBDeviceAddrRequest& request, const DescribeGBDeviceAddrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGBDeviceAddr(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::DescribeGBDeviceAddrOutcomeCallable IssClient::DescribeGBDeviceAddrCallable(const DescribeGBDeviceAddrRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGBDeviceAddrOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGBDeviceAddr(request);
         }
     );
 
@@ -3043,6 +3215,49 @@ IssClient::ListTasksOutcomeCallable IssClient::ListTasksCallable(const ListTasks
         [this, request]()
         {
             return this->ListTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IssClient::ListVideoDownloadTaskOutcome IssClient::ListVideoDownloadTask(const ListVideoDownloadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListVideoDownloadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListVideoDownloadTaskResponse rsp = ListVideoDownloadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListVideoDownloadTaskOutcome(rsp);
+        else
+            return ListVideoDownloadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ListVideoDownloadTaskOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::ListVideoDownloadTaskAsync(const ListVideoDownloadTaskRequest& request, const ListVideoDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListVideoDownloadTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::ListVideoDownloadTaskOutcomeCallable IssClient::ListVideoDownloadTaskCallable(const ListVideoDownloadTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListVideoDownloadTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ListVideoDownloadTask(request);
         }
     );
 

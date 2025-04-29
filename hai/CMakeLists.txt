@@ -36,6 +36,7 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/DescribeScenesResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeApplicationsRequest.h
   include/tencentcloud/hai/v20230812/model/SceneInfo.h
+  include/tencentcloud/hai/v20230812/model/CreateApplicationRequest.h
   include/tencentcloud/hai/v20230812/model/RunInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/SystemDisk.h
@@ -50,6 +51,7 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/CreateMuskPromptResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsRequest.h
   include/tencentcloud/hai/v20230812/model/ApplicationInfo.h
+  include/tencentcloud/hai/v20230812/model/CreateApplicationResponse.h
   include/tencentcloud/hai/v20230812/model/ItemPriceDetail.h
   include/tencentcloud/hai/v20230812/model/CreateMuskPromptRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeRegionsRequest.h
@@ -80,6 +82,7 @@ set(hai_src
   src/v20230812/model/DescribeScenesResponse.cpp
   src/v20230812/model/DescribeApplicationsRequest.cpp
   src/v20230812/model/SceneInfo.cpp
+  src/v20230812/model/CreateApplicationRequest.cpp
   src/v20230812/model/RunInstancesRequest.cpp
   src/v20230812/model/DescribeInstancesResponse.cpp
   src/v20230812/model/SystemDisk.cpp
@@ -94,6 +97,7 @@ set(hai_src
   src/v20230812/model/CreateMuskPromptResponse.cpp
   src/v20230812/model/DescribeServiceLoginSettingsRequest.cpp
   src/v20230812/model/ApplicationInfo.cpp
+  src/v20230812/model/CreateApplicationResponse.cpp
   src/v20230812/model/ItemPriceDetail.cpp
   src/v20230812/model/CreateMuskPromptRequest.cpp
   src/v20230812/model/DescribeRegionsRequest.cpp

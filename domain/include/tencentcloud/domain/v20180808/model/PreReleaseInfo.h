@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取预订倒计时
-                     * @return ReservationTime 预订倒计时
+                     * 获取预订倒计时(YYYY-MM-DD hh:mm:ss)
+                     * @return ReservationTime 预订倒计时(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     std::string GetReservationTime() const;
 
                     /**
-                     * 设置预订倒计时
-                     * @param _reservationTime 预订倒计时
+                     * 设置预订倒计时(YYYY-MM-DD hh:mm:ss)
+                     * @param _reservationTime 预订倒计时(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     void SetReservationTime(const std::string& _reservationTime);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ReservationTimeHasBeenSet() const;
 
                     /**
-                     * 获取域名注册时间
-                     * @return RegTime 域名注册时间
+                     * 获取域名注册时间(YYYY-MM-DD hh:mm:ss)
+                     * @return RegTime 域名注册时间(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     std::string GetRegTime() const;
 
                     /**
-                     * 设置域名注册时间
-                     * @param _regTime 域名注册时间
+                     * 设置域名注册时间(YYYY-MM-DD hh:mm:ss)
+                     * @param _regTime 域名注册时间(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     void SetRegTime(const std::string& _regTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool RegTimeHasBeenSet() const;
 
                     /**
-                     * 获取域名删除时间
-                     * @return DelTime 域名删除时间
+                     * 获取域名删除时间(YYYY-MM-DD hh:mm:ss)
+                     * @return DelTime 域名删除时间(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     std::string GetDelTime() const;
 
                     /**
-                     * 设置域名删除时间
-                     * @param _delTime 域名删除时间
+                     * 设置域名删除时间(YYYY-MM-DD hh:mm:ss)
+                     * @param _delTime 域名删除时间(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     void SetDelTime(const std::string& _delTime);
@@ -174,14 +174,22 @@ namespace TencentCloud
 
                     /**
                      * 获取是否收藏
+true：收藏
+false：未收藏
                      * @return IsFollow 是否收藏
+true：收藏
+false：未收藏
                      * 
                      */
                     bool GetIsFollow() const;
 
                     /**
                      * 设置是否收藏
+true：收藏
+false：未收藏
                      * @param _isFollow 是否收藏
+true：收藏
+false：未收藏
                      * 
                      */
                     void SetIsFollow(const bool& _isFollow);
@@ -195,14 +203,22 @@ namespace TencentCloud
 
                     /**
                      * 获取是否已经预约
+true：预约
+false：未预约
                      * @return IsAppoint 是否已经预约
+true：预约
+false：未预约
                      * 
                      */
                     bool GetIsAppoint() const;
 
                     /**
                      * 设置是否已经预约
+true：预约
+false：未预约
                      * @param _isAppoint 是否已经预约
+true：预约
+false：未预约
                      * 
                      */
                     void SetIsAppoint(const bool& _isAppoint);
@@ -237,14 +253,22 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为原持有者
+true：是原持有人
+false：非原持有人
                      * @return IsDomainUser 是否为原持有者
+true：是原持有人
+false：非原持有人
                      * 
                      */
                     bool GetIsDomainUser() const;
 
                     /**
                      * 设置是否为原持有者
+true：是原持有人
+false：非原持有人
                      * @param _isDomainUser 是否为原持有者
+true：是原持有人
+false：非原持有人
                      * 
                      */
                     void SetIsDomainUser(const bool& _isDomainUser);
@@ -265,19 +289,19 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 预订倒计时
+                     * 预订倒计时(YYYY-MM-DD hh:mm:ss)
                      */
                     std::string m_reservationTime;
                     bool m_reservationTimeHasBeenSet;
 
                     /**
-                     * 域名注册时间
+                     * 域名注册时间(YYYY-MM-DD hh:mm:ss)
                      */
                     std::string m_regTime;
                     bool m_regTimeHasBeenSet;
 
                     /**
-                     * 域名删除时间
+                     * 域名删除时间(YYYY-MM-DD hh:mm:ss)
                      */
                     std::string m_delTime;
                     bool m_delTimeHasBeenSet;
@@ -296,12 +320,16 @@ namespace TencentCloud
 
                     /**
                      * 是否收藏
+true：收藏
+false：未收藏
                      */
                     bool m_isFollow;
                     bool m_isFollowHasBeenSet;
 
                     /**
                      * 是否已经预约
+true：预约
+false：未预约
                      */
                     bool m_isAppoint;
                     bool m_isAppointHasBeenSet;
@@ -314,6 +342,8 @@ namespace TencentCloud
 
                     /**
                      * 是否为原持有者
+true：是原持有人
+false：非原持有人
                      */
                     bool m_isDomainUser;
                     bool m_isDomainUserHasBeenSet;

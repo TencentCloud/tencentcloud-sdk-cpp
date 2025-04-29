@@ -99,6 +99,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsResponse.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsResponse.h>
 #include <tencentcloud/tione/v20211111/model/StartNotebookRequest.h>
@@ -239,6 +241,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyModelServiceResponse> ModifyModelServiceOutcome;
                 typedef std::future<ModifyModelServiceOutcome> ModifyModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyModelServiceRequest&, ModifyModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNotebookTagsResponse> ModifyNotebookTagsOutcome;
+                typedef std::future<ModifyNotebookTagsOutcome> ModifyNotebookTagsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyNotebookTagsRequest&, ModifyNotebookTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotebookTagsAsyncHandler;
                 typedef Outcome<Core::Error, Model::PushTrainingMetricsResponse> PushTrainingMetricsOutcome;
                 typedef std::future<PushTrainingMetricsOutcome> PushTrainingMetricsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::PushTrainingMetricsRequest&, PushTrainingMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushTrainingMetricsAsyncHandler;
@@ -603,6 +608,15 @@ namespace TencentCloud
                 ModifyModelServiceOutcome ModifyModelService(const Model::ModifyModelServiceRequest &request);
                 void ModifyModelServiceAsync(const Model::ModifyModelServiceRequest& request, const ModifyModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyModelServiceOutcomeCallable ModifyModelServiceCallable(const Model::ModifyModelServiceRequest& request);
+
+                /**
+                 *修改Notebook标签
+                 * @param req ModifyNotebookTagsRequest
+                 * @return ModifyNotebookTagsOutcome
+                 */
+                ModifyNotebookTagsOutcome ModifyNotebookTags(const Model::ModifyNotebookTagsRequest &request);
+                void ModifyNotebookTagsAsync(const Model::ModifyNotebookTagsRequest& request, const ModifyNotebookTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNotebookTagsOutcomeCallable ModifyNotebookTagsCallable(const Model::ModifyNotebookTagsRequest& request);
 
                 /**
                  *上报训练自定义指标

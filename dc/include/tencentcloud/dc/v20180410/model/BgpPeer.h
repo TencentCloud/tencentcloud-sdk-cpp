@@ -51,14 +51,14 @@ namespace TencentCloud
                      * @return CloudAsn 腾讯侧BGP ASN
                      * 
                      */
-                    std::string GetCloudAsn() const;
+                    int64_t GetCloudAsn() const;
 
                     /**
                      * 设置腾讯侧BGP ASN
                      * @param _cloudAsn 腾讯侧BGP ASN
                      * 
                      */
-                    void SetCloudAsn(const std::string& _cloudAsn);
+                    void SetCloudAsn(const int64_t& _cloudAsn);
 
                     /**
                      * 判断参数 CloudAsn 是否已赋值
@@ -114,7 +114,7 @@ namespace TencentCloud
                     /**
                      * 腾讯侧BGP ASN
                      */
-                    std::string m_cloudAsn;
+                    int64_t m_cloudAsn;
                     bool m_cloudAsnHasBeenSet;
 
                     /**

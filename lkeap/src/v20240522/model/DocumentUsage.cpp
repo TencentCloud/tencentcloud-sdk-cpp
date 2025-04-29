@@ -23,7 +23,9 @@ using namespace std;
 DocumentUsage::DocumentUsage() :
     m_pageNumberHasBeenSet(false),
     m_totalTokenHasBeenSet(false),
-    m_totalTokensHasBeenSet(false)
+    m_totalTokensHasBeenSet(false),
+    m_splitTokensHasBeenSet(false),
+    m_mllmTokensHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome DocumentUsage::Deserialize(const rapidjson::Value &value)
         m_totalTokensHasBeenSet = true;
     }
 
+    if (value.HasMember("SplitTokens") && !value["SplitTokens"].IsNull())
+    {
+        if (!value["SplitTokens"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentUsage.SplitTokens` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_splitTokens = value["SplitTokens"].GetInt64();
+        m_splitTokensHasBeenSet = true;
+    }
+
+    if (value.HasMember("MllmTokens") && !value["MllmTokens"].IsNull())
+    {
+        if (!value["MllmTokens"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentUsage.MllmTokens` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mllmTokens = value["MllmTokens"].GetInt64();
+        m_mllmTokensHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void DocumentUsage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TotalTokens";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalTokens, allocator);
+    }
+
+    if (m_splitTokensHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SplitTokens";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_splitTokens, allocator);
+    }
+
+    if (m_mllmTokensHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MllmTokens";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mllmTokens, allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void DocumentUsage::SetTotalTokens(const int64_t& _totalTokens)
 bool DocumentUsage::TotalTokensHasBeenSet() const
 {
     return m_totalTokensHasBeenSet;
+}
+
+int64_t DocumentUsage::GetSplitTokens() const
+{
+    return m_splitTokens;
+}
+
+void DocumentUsage::SetSplitTokens(const int64_t& _splitTokens)
+{
+    m_splitTokens = _splitTokens;
+    m_splitTokensHasBeenSet = true;
+}
+
+bool DocumentUsage::SplitTokensHasBeenSet() const
+{
+    return m_splitTokensHasBeenSet;
+}
+
+int64_t DocumentUsage::GetMllmTokens() const
+{
+    return m_mllmTokens;
+}
+
+void DocumentUsage::SetMllmTokens(const int64_t& _mllmTokens)
+{
+    m_mllmTokens = _mllmTokens;
+    m_mllmTokensHasBeenSet = true;
+}
+
+bool DocumentUsage::MllmTokensHasBeenSet() const
+{
+    return m_mllmTokensHasBeenSet;
 }
 

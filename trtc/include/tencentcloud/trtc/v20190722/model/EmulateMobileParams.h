@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取移动设备类型，
 0: 手机
 1: 平板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MobileDeviceType 移动设备类型，
 0: 手机
 1: 平板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMobileDeviceType() const;
@@ -63,11 +61,9 @@ namespace TencentCloud
                      * 设置移动设备类型，
 0: 手机
 1: 平板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mobileDeviceType 移动设备类型，
 0: 手机
 1: 平板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMobileDeviceType(const uint64_t& _mobileDeviceType);
@@ -83,11 +79,9 @@ namespace TencentCloud
                      * 获取屏幕方向，
 0: 竖屏，
 1: 横屏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScreenOrientation 屏幕方向，
 0: 竖屏，
 1: 横屏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScreenOrientation() const;
@@ -96,11 +90,9 @@ namespace TencentCloud
                      * 设置屏幕方向，
 0: 竖屏，
 1: 横屏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _screenOrientation 屏幕方向，
 0: 竖屏，
 1: 横屏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScreenOrientation(const uint64_t& _screenOrientation);
@@ -118,7 +110,6 @@ namespace TencentCloud
                      * 移动设备类型，
 0: 手机
 1: 平板
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mobileDeviceType;
                     bool m_mobileDeviceTypeHasBeenSet;
@@ -127,7 +118,6 @@ namespace TencentCloud
                      * 屏幕方向，
 0: 竖屏，
 1: 横屏
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_screenOrientation;
                     bool m_screenOrientationHasBeenSet;

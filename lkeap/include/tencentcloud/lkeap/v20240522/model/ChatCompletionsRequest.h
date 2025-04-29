@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool MaxTokensHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用联网搜索
+                     * @return EnableSearch 是否启用联网搜索
+                     * 
+                     */
+                    bool GetEnableSearch() const;
+
+                    /**
+                     * 设置是否启用联网搜索
+                     * @param _enableSearch 是否启用联网搜索
+                     * 
+                     */
+                    void SetEnableSearch(const bool& _enableSearch);
+
+                    /**
+                     * 判断参数 EnableSearch 是否已赋值
+                     * @return EnableSearch 是否已赋值
+                     * 
+                     */
+                    bool EnableSearchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -204,6 +225,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxTokens;
                     bool m_maxTokensHasBeenSet;
+
+                    /**
+                     * 是否启用联网搜索
+                     */
+                    bool m_enableSearch;
+                    bool m_enableSearchHasBeenSet;
 
                 };
             }

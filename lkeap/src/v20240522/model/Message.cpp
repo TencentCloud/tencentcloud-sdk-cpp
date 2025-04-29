@@ -23,7 +23,8 @@ using namespace std;
 Message::Message() :
     m_roleHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_reasoningContentHasBeenSet(false)
+    m_reasoningContentHasBeenSet(false),
+    m_searchResultsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,26 @@ CoreInternalOutcome Message::Deserialize(const rapidjson::Value &value)
         m_reasoningContentHasBeenSet = true;
     }
 
+    if (value.HasMember("SearchResults") && !value["SearchResults"].IsNull())
+    {
+        if (!value["SearchResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Message.SearchResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SearchResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SearchResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_searchResults.push_back(item);
+        }
+        m_searchResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +112,21 @@ void Message::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ReasoningContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reasoningContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_searchResults.begin(); itr != m_searchResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -142,5 +178,21 @@ void Message::SetReasoningContent(const string& _reasoningContent)
 bool Message::ReasoningContentHasBeenSet() const
 {
     return m_reasoningContentHasBeenSet;
+}
+
+vector<SearchResult> Message::GetSearchResults() const
+{
+    return m_searchResults;
+}
+
+void Message::SetSearchResults(const vector<SearchResult>& _searchResults)
+{
+    m_searchResults = _searchResults;
+    m_searchResultsHasBeenSet = true;
+}
+
+bool Message::SearchResultsHasBeenSet() const
+{
+    return m_searchResultsHasBeenSet;
 }
 

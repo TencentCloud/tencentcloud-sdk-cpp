@@ -212,6 +212,27 @@ namespace TencentCloud
                      */
                     bool DeviceHasBeenSet() const;
 
+                    /**
+                     * 获取该字段表示送审的数据类型，默认为通用图片，可以选择。
+                     * @return Type 该字段表示送审的数据类型，默认为通用图片，可以选择。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置该字段表示送审的数据类型，默认为通用图片，可以选择。
+                     * @param _type 该字段表示送审的数据类型，默认为通用图片，可以选择。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +282,12 @@ namespace TencentCloud
                      */
                     Device m_device;
                     bool m_deviceHasBeenSet;
+
+                    /**
+                     * 该字段表示送审的数据类型，默认为通用图片，可以选择。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

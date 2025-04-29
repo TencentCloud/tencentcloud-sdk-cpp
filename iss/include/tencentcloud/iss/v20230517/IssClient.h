@@ -41,6 +41,8 @@
 #include <tencentcloud/iss/v20230517/model/AddStreamAuthResponse.h>
 #include <tencentcloud/iss/v20230517/model/AddUserDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/AddUserDeviceResponse.h>
+#include <tencentcloud/iss/v20230517/model/BatchDeleteVideoDownloadTaskRequest.h>
+#include <tencentcloud/iss/v20230517/model/BatchDeleteVideoDownloadTaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/BatchOperateDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/BatchOperateDeviceResponse.h>
 #include <tencentcloud/iss/v20230517/model/CallISAPIRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/iss/v20230517/model/ControlRecordResponse.h>
 #include <tencentcloud/iss/v20230517/model/ControlRecordTimelineRequest.h>
 #include <tencentcloud/iss/v20230517/model/ControlRecordTimelineResponse.h>
+#include <tencentcloud/iss/v20230517/model/CreateVideoDownloadTaskRequest.h>
+#include <tencentcloud/iss/v20230517/model/CreateVideoDownloadTaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteAITaskRequest.h>
 #include <tencentcloud/iss/v20230517/model/DeleteAITaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteDomainRequest.h>
@@ -75,6 +79,8 @@
 #include <tencentcloud/iss/v20230517/model/DeleteRecordRetrieveTaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteRecordTemplateRequest.h>
 #include <tencentcloud/iss/v20230517/model/DeleteRecordTemplateResponse.h>
+#include <tencentcloud/iss/v20230517/model/DeleteTaskRequest.h>
+#include <tencentcloud/iss/v20230517/model/DeleteTaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteUserDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/DeleteUserDeviceResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeAITaskRequest.h>
@@ -93,6 +99,8 @@
 #include <tencentcloud/iss/v20230517/model/DescribeDomainResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeDomainRegionRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeDomainRegionResponse.h>
+#include <tencentcloud/iss/v20230517/model/DescribeGBDeviceAddrRequest.h>
+#include <tencentcloud/iss/v20230517/model/DescribeGBDeviceAddrResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeGatewayRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeGatewayResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeGatewayMonitorRequest.h>
@@ -163,6 +171,8 @@
 #include <tencentcloud/iss/v20230517/model/ListSubTasksResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListTasksRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListTasksResponse.h>
+#include <tencentcloud/iss/v20230517/model/ListVideoDownloadTaskRequest.h>
+#include <tencentcloud/iss/v20230517/model/ListVideoDownloadTaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/PlayRecordRequest.h>
 #include <tencentcloud/iss/v20230517/model/PlayRecordResponse.h>
 #include <tencentcloud/iss/v20230517/model/QueryForbidPlayChannelListRequest.h>
@@ -236,6 +246,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddUserDeviceResponse> AddUserDeviceOutcome;
                 typedef std::future<AddUserDeviceOutcome> AddUserDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::AddUserDeviceRequest&, AddUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUserDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchDeleteVideoDownloadTaskResponse> BatchDeleteVideoDownloadTaskOutcome;
+                typedef std::future<BatchDeleteVideoDownloadTaskOutcome> BatchDeleteVideoDownloadTaskOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::BatchDeleteVideoDownloadTaskRequest&, BatchDeleteVideoDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteVideoDownloadTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchOperateDeviceResponse> BatchOperateDeviceOutcome;
                 typedef std::future<BatchOperateDeviceOutcome> BatchOperateDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::BatchOperateDeviceRequest&, BatchOperateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchOperateDeviceAsyncHandler;
@@ -260,6 +273,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ControlRecordTimelineResponse> ControlRecordTimelineOutcome;
                 typedef std::future<ControlRecordTimelineOutcome> ControlRecordTimelineOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ControlRecordTimelineRequest&, ControlRecordTimelineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlRecordTimelineAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVideoDownloadTaskResponse> CreateVideoDownloadTaskOutcome;
+                typedef std::future<CreateVideoDownloadTaskOutcome> CreateVideoDownloadTaskOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::CreateVideoDownloadTaskRequest&, CreateVideoDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoDownloadTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAITaskResponse> DeleteAITaskOutcome;
                 typedef std::future<DeleteAITaskOutcome> DeleteAITaskOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DeleteAITaskRequest&, DeleteAITaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAITaskAsyncHandler;
@@ -287,6 +303,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRecordTemplateResponse> DeleteRecordTemplateOutcome;
                 typedef std::future<DeleteRecordTemplateOutcome> DeleteRecordTemplateOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DeleteRecordTemplateRequest&, DeleteRecordTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTaskResponse> DeleteTaskOutcome;
+                typedef std::future<DeleteTaskOutcome> DeleteTaskOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DeleteTaskRequest&, DeleteTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUserDeviceResponse> DeleteUserDeviceOutcome;
                 typedef std::future<DeleteUserDeviceOutcome> DeleteUserDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DeleteUserDeviceRequest&, DeleteUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserDeviceAsyncHandler;
@@ -314,6 +333,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainRegionResponse> DescribeDomainRegionOutcome;
                 typedef std::future<DescribeDomainRegionOutcome> DescribeDomainRegionOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeDomainRegionRequest&, DescribeDomainRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainRegionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGBDeviceAddrResponse> DescribeGBDeviceAddrOutcome;
+                typedef std::future<DescribeGBDeviceAddrOutcome> DescribeGBDeviceAddrOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DescribeGBDeviceAddrRequest&, DescribeGBDeviceAddrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGBDeviceAddrAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGatewayResponse> DescribeGatewayOutcome;
                 typedef std::future<DescribeGatewayOutcome> DescribeGatewayOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeGatewayRequest&, DescribeGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayAsyncHandler;
@@ -419,6 +441,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListTasksResponse> ListTasksOutcome;
                 typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListTasksRequest&, ListTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListVideoDownloadTaskResponse> ListVideoDownloadTaskOutcome;
+                typedef std::future<ListVideoDownloadTaskOutcome> ListVideoDownloadTaskOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ListVideoDownloadTaskRequest&, ListVideoDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVideoDownloadTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::PlayRecordResponse> PlayRecordOutcome;
                 typedef std::future<PlayRecordOutcome> PlayRecordOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::PlayRecordRequest&, PlayRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PlayRecordAsyncHandler;
@@ -555,6 +580,15 @@ namespace TencentCloud
                 AddUserDeviceOutcomeCallable AddUserDeviceCallable(const Model::AddUserDeviceRequest& request);
 
                 /**
+                 *用于批量删除本地录像下载失败的任务
+                 * @param req BatchDeleteVideoDownloadTaskRequest
+                 * @return BatchDeleteVideoDownloadTaskOutcome
+                 */
+                BatchDeleteVideoDownloadTaskOutcome BatchDeleteVideoDownloadTask(const Model::BatchDeleteVideoDownloadTaskRequest &request);
+                void BatchDeleteVideoDownloadTaskAsync(const Model::BatchDeleteVideoDownloadTaskRequest& request, const BatchDeleteVideoDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchDeleteVideoDownloadTaskOutcomeCallable BatchDeleteVideoDownloadTaskCallable(const Model::BatchDeleteVideoDownloadTaskRequest& request);
+
+                /**
                  *用于批量操作（启用，禁用，删除）设备
                  * @param req BatchOperateDeviceRequest
                  * @return BatchOperateDeviceOutcome
@@ -625,6 +659,15 @@ namespace TencentCloud
                 ControlRecordTimelineOutcome ControlRecordTimeline(const Model::ControlRecordTimelineRequest &request);
                 void ControlRecordTimelineAsync(const Model::ControlRecordTimelineRequest& request, const ControlRecordTimelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ControlRecordTimelineOutcomeCallable ControlRecordTimelineCallable(const Model::ControlRecordTimelineRequest& request);
+
+                /**
+                 *创建本地录像下载任务
+                 * @param req CreateVideoDownloadTaskRequest
+                 * @return CreateVideoDownloadTaskOutcome
+                 */
+                CreateVideoDownloadTaskOutcome CreateVideoDownloadTask(const Model::CreateVideoDownloadTaskRequest &request);
+                void CreateVideoDownloadTaskAsync(const Model::CreateVideoDownloadTaskRequest& request, const CreateVideoDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVideoDownloadTaskOutcomeCallable CreateVideoDownloadTaskCallable(const Model::CreateVideoDownloadTaskRequest& request);
 
                 /**
                  *删除AI任务
@@ -708,6 +751,15 @@ namespace TencentCloud
                 DeleteRecordTemplateOutcomeCallable DeleteRecordTemplateCallable(const Model::DeleteRecordTemplateRequest& request);
 
                 /**
+                 *用于删除执行完成的任务
+                 * @param req DeleteTaskRequest
+                 * @return DeleteTaskOutcome
+                 */
+                DeleteTaskOutcome DeleteTask(const Model::DeleteTaskRequest &request);
+                void DeleteTaskAsync(const Model::DeleteTaskRequest& request, const DeleteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTaskOutcomeCallable DeleteTaskCallable(const Model::DeleteTaskRequest& request);
+
+                /**
                  *用于删除已添加的设备。
                  * @param req DeleteUserDeviceRequest
                  * @return DeleteUserDeviceOutcome
@@ -787,6 +839,15 @@ namespace TencentCloud
                 DescribeDomainRegionOutcome DescribeDomainRegion(const Model::DescribeDomainRegionRequest &request);
                 void DescribeDomainRegionAsync(const Model::DescribeDomainRegionRequest& request, const DescribeDomainRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainRegionOutcomeCallable DescribeDomainRegionCallable(const Model::DescribeDomainRegionRequest& request);
+
+                /**
+                 *用于获取国标设备的公网地址
+                 * @param req DescribeGBDeviceAddrRequest
+                 * @return DescribeGBDeviceAddrOutcome
+                 */
+                DescribeGBDeviceAddrOutcome DescribeGBDeviceAddr(const Model::DescribeGBDeviceAddrRequest &request);
+                void DescribeGBDeviceAddrAsync(const Model::DescribeGBDeviceAddrRequest& request, const DescribeGBDeviceAddrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGBDeviceAddrOutcomeCallable DescribeGBDeviceAddrCallable(const Model::DescribeGBDeviceAddrRequest& request);
 
                 /**
                  *用于获取网关详情。
@@ -1103,6 +1164,15 @@ namespace TencentCloud
                 ListTasksOutcome ListTasks(const Model::ListTasksRequest &request);
                 void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTasksOutcomeCallable ListTasksCallable(const Model::ListTasksRequest& request);
+
+                /**
+                 *查询本店里录像下载任务列表
+                 * @param req ListVideoDownloadTaskRequest
+                 * @return ListVideoDownloadTaskOutcome
+                 */
+                ListVideoDownloadTaskOutcome ListVideoDownloadTask(const Model::ListVideoDownloadTaskRequest &request);
+                void ListVideoDownloadTaskAsync(const Model::ListVideoDownloadTaskRequest& request, const ListVideoDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListVideoDownloadTaskOutcomeCallable ListVideoDownloadTaskCallable(const Model::ListVideoDownloadTaskRequest& request);
 
                 /**
                  *用于获取设备本地录像 URL 地址。

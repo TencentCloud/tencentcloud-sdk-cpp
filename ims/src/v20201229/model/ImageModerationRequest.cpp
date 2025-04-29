@@ -30,7 +30,8 @@ ImageModerationRequest::ImageModerationRequest() :
     m_intervalHasBeenSet(false),
     m_maxFramesHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_deviceHasBeenSet(false)
+    m_deviceHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,14 @@ string ImageModerationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_device.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -241,6 +250,22 @@ void ImageModerationRequest::SetDevice(const Device& _device)
 bool ImageModerationRequest::DeviceHasBeenSet() const
 {
     return m_deviceHasBeenSet;
+}
+
+string ImageModerationRequest::GetType() const
+{
+    return m_type;
+}
+
+void ImageModerationRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool ImageModerationRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

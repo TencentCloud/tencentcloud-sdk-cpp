@@ -202,15 +202,15 @@ namespace TencentCloud
                     bool ChannelHasBeenSet() const;
 
                     /**
-                     * 获取要查询的Top条数，最大值为100，默认为10
-                     * @return Limit 要查询的Top条数，最大值为100，默认为10
+                     * 获取要查询的Top条数，建议最大值100，默认为10
+                     * @return Limit 要查询的Top条数，建议最大值100，默认为10
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置要查询的Top条数，最大值为100，默认为10
-                     * @param _limit 要查询的Top条数，最大值为100，默认为10
+                     * 设置要查询的Top条数，建议最大值100，默认为10
+                     * @param _limit 要查询的Top条数，建议最大值100，默认为10
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -291,7 +291,7 @@ namespace TencentCloud
                     bool m_channelHasBeenSet;
 
                     /**
-                     * 要查询的Top条数，最大值为100，默认为10
+                     * 要查询的Top条数，建议最大值100，默认为10
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

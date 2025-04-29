@@ -793,6 +793,27 @@ namespace TencentCloud
                      */
                     bool AccessPointNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否三层架构
+                     * @return IsThreeArch 是否三层架构
+                     * 
+                     */
+                    bool GetIsThreeArch() const;
+
+                    /**
+                     * 设置是否三层架构
+                     * @param _isThreeArch 是否三层架构
+                     * 
+                     */
+                    void SetIsThreeArch(const bool& _isThreeArch);
+
+                    /**
+                     * 判断参数 IsThreeArch 是否已赋值
+                     * @return IsThreeArch 是否已赋值
+                     * 
+                     */
+                    bool IsThreeArchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1006,6 +1027,12 @@ namespace TencentCloud
                      */
                     std::string m_accessPointName;
                     bool m_accessPointNameHasBeenSet;
+
+                    /**
+                     * 是否三层架构
+                     */
+                    bool m_isThreeArch;
+                    bool m_isThreeArchHasBeenSet;
 
                 };
             }

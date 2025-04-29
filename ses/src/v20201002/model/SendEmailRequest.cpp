@@ -35,7 +35,8 @@ SendEmailRequest::SendEmailRequest() :
     m_unsubscribeHasBeenSet(false),
     m_triggerTypeHasBeenSet(false),
     m_smtpMessageIdHasBeenSet(false),
-    m_smtpHeadersHasBeenSet(false)
+    m_smtpHeadersHasBeenSet(false),
+    m_headerFromHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,14 @@ string SendEmailRequest::ToJsonString() const
         string key = "SmtpHeaders";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_smtpHeaders.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_headerFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeaderFrom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_headerFrom.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -388,6 +397,22 @@ void SendEmailRequest::SetSmtpHeaders(const string& _smtpHeaders)
 bool SendEmailRequest::SmtpHeadersHasBeenSet() const
 {
     return m_smtpHeadersHasBeenSet;
+}
+
+string SendEmailRequest::GetHeaderFrom() const
+{
+    return m_headerFrom;
+}
+
+void SendEmailRequest::SetHeaderFrom(const string& _headerFrom)
+{
+    m_headerFrom = _headerFrom;
+    m_headerFromHasBeenSet = true;
+}
+
+bool SendEmailRequest::HeaderFromHasBeenSet() const
+{
+    return m_headerFromHasBeenSet;
 }
 
 

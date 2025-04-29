@@ -26,7 +26,8 @@ ScanTaskResult::ScanTaskResult() :
     m_statusHasBeenSet(false),
     m_resultHasBeenSet(false),
     m_resultDescriptionHasBeenSet(false),
-    m_suggestionHasBeenSet(false)
+    m_suggestionHasBeenSet(false),
+    m_progressHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ScanTaskResult::Deserialize(const rapidjson::Value &value)
         m_suggestionHasBeenSet = true;
     }
 
+    if (value.HasMember("Progress") && !value["Progress"].IsNull())
+    {
+        if (!value["Progress"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanTaskResult.Progress` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_progress = value["Progress"].GetDouble();
+        m_progressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ScanTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_progressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Progress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_progress, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ScanTaskResult::SetSuggestion(const string& _suggestion)
 bool ScanTaskResult::SuggestionHasBeenSet() const
 {
     return m_suggestionHasBeenSet;
+}
+
+double ScanTaskResult::GetProgress() const
+{
+    return m_progress;
+}
+
+void ScanTaskResult::SetProgress(const double& _progress)
+{
+    m_progress = _progress;
+    m_progressHasBeenSet = true;
+}
+
+bool ScanTaskResult::ProgressHasBeenSet() const
+{
+    return m_progressHasBeenSet;
 }
 

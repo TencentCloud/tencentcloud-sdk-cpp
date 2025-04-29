@@ -1674,6 +1674,49 @@ TioneClient::ModifyModelServiceOutcomeCallable TioneClient::ModifyModelServiceCa
     return task->get_future();
 }
 
+TioneClient::ModifyNotebookTagsOutcome TioneClient::ModifyNotebookTags(const ModifyNotebookTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNotebookTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNotebookTagsResponse rsp = ModifyNotebookTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNotebookTagsOutcome(rsp);
+        else
+            return ModifyNotebookTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNotebookTagsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyNotebookTagsAsync(const ModifyNotebookTagsRequest& request, const ModifyNotebookTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNotebookTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::ModifyNotebookTagsOutcomeCallable TioneClient::ModifyNotebookTagsCallable(const ModifyNotebookTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNotebookTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNotebookTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::PushTrainingMetricsOutcome TioneClient::PushTrainingMetrics(const PushTrainingMetricsRequest &request)
 {
     auto outcome = MakeRequest(request, "PushTrainingMetrics");

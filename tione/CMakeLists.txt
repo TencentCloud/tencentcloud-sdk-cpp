@@ -92,7 +92,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionResponse.h
   include/tencentcloud/tione/v20211111/model/ServiceEIP.h
   include/tencentcloud/tione/v20211111/model/NotebookSetItem.h
-  include/tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h
+  include/tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h
   include/tencentcloud/tione/v20211111/model/SSHConfig.h
   include/tencentcloud/tione/v20211111/model/Usage.h
   include/tencentcloud/tione/v20211111/model/AuthTokenBase.h
@@ -106,6 +106,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/HyperParameter.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTasksRequest.h
   include/tencentcloud/tione/v20211111/model/VolumeMount.h
+  include/tencentcloud/tione/v20211111/model/ModifyNotebookTagsResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupResponse.h
   include/tencentcloud/tione/v20211111/model/ServiceCallInfo.h
   include/tencentcloud/tione/v20211111/model/CosPathInfo.h
@@ -123,6 +124,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/InferTemplate.h
   include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateVersionsResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeBuildInImagesRequest.h
+  include/tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/ContainerStatus.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceRequest.h
   include/tencentcloud/tione/v20211111/model/ChatCompletionRequest.h
@@ -343,7 +345,7 @@ set(tione_src
   src/v20211111/model/DeleteTrainingModelVersionResponse.cpp
   src/v20211111/model/ServiceEIP.cpp
   src/v20211111/model/NotebookSetItem.cpp
-  src/v20211111/model/StartTrainingTaskRequest.cpp
+  src/v20211111/model/ModifyNotebookTagsRequest.cpp
   src/v20211111/model/SSHConfig.cpp
   src/v20211111/model/Usage.cpp
   src/v20211111/model/AuthTokenBase.cpp
@@ -357,6 +359,7 @@ set(tione_src
   src/v20211111/model/HyperParameter.cpp
   src/v20211111/model/DescribeTrainingTasksRequest.cpp
   src/v20211111/model/VolumeMount.cpp
+  src/v20211111/model/ModifyNotebookTagsResponse.cpp
   src/v20211111/model/DescribeBillingResourceGroupResponse.cpp
   src/v20211111/model/ServiceCallInfo.cpp
   src/v20211111/model/CosPathInfo.cpp
@@ -374,6 +377,7 @@ set(tione_src
   src/v20211111/model/InferTemplate.cpp
   src/v20211111/model/DescribeModelAccelerateVersionsResponse.cpp
   src/v20211111/model/DescribeBuildInImagesRequest.cpp
+  src/v20211111/model/StartTrainingTaskRequest.cpp
   src/v20211111/model/ContainerStatus.cpp
   src/v20211111/model/ModifyModelServiceRequest.cpp
   src/v20211111/model/ChatCompletionRequest.cpp

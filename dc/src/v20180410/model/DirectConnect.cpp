@@ -54,7 +54,8 @@ DirectConnect::DirectConnect() :
     m_otherVlanDirectConnectTunnelCountHasBeenSet(false),
     m_minBandwidthHasBeenSet(false),
     m_constructHasBeenSet(false),
-    m_accessPointNameHasBeenSet(false)
+    m_accessPointNameHasBeenSet(false),
+    m_isThreeArchHasBeenSet(false)
 {
 }
 
@@ -413,6 +414,16 @@ CoreInternalOutcome DirectConnect::Deserialize(const rapidjson::Value &value)
         m_accessPointNameHasBeenSet = true;
     }
 
+    if (value.HasMember("IsThreeArch") && !value["IsThreeArch"].IsNull())
+    {
+        if (!value["IsThreeArch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnect.IsThreeArch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isThreeArch = value["IsThreeArch"].GetBool();
+        m_isThreeArchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -697,6 +708,14 @@ void DirectConnect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "AccessPointName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accessPointName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isThreeArchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsThreeArch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isThreeArch, allocator);
     }
 
 }
@@ -1244,5 +1263,21 @@ void DirectConnect::SetAccessPointName(const string& _accessPointName)
 bool DirectConnect::AccessPointNameHasBeenSet() const
 {
     return m_accessPointNameHasBeenSet;
+}
+
+bool DirectConnect::GetIsThreeArch() const
+{
+    return m_isThreeArch;
+}
+
+void DirectConnect::SetIsThreeArch(const bool& _isThreeArch)
+{
+    m_isThreeArch = _isThreeArch;
+    m_isThreeArchHasBeenSet = true;
+}
+
+bool DirectConnect::IsThreeArchHasBeenSet() const
+{
+    return m_isThreeArchHasBeenSet;
 }
 

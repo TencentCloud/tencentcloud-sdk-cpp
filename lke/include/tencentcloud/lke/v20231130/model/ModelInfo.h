@@ -381,6 +381,48 @@ namespace TencentCloud
                      */
                     bool ModelCategoryHasBeenSet() const;
 
+                    /**
+                     * 获取是否默认模型
+                     * @return IsDefault 是否默认模型
+                     * 
+                     */
+                    bool GetIsDefault() const;
+
+                    /**
+                     * 设置是否默认模型
+                     * @param _isDefault 是否默认模型
+                     * 
+                     */
+                    void SetIsDefault(const bool& _isDefault);
+
+                    /**
+                     * 判断参数 IsDefault 是否已赋值
+                     * @return IsDefault 是否已赋值
+                     * 
+                     */
+                    bool IsDefaultHasBeenSet() const;
+
+                    /**
+                     * 获取角色提示词输入长度限制
+                     * @return RoleLenLimit 角色提示词输入长度限制
+                     * 
+                     */
+                    uint64_t GetRoleLenLimit() const;
+
+                    /**
+                     * 设置角色提示词输入长度限制
+                     * @param _roleLenLimit 角色提示词输入长度限制
+                     * 
+                     */
+                    void SetRoleLenLimit(const uint64_t& _roleLenLimit);
+
+                    /**
+                     * 判断参数 RoleLenLimit 是否已赋值
+                     * @return RoleLenLimit 是否已赋值
+                     * 
+                     */
+                    bool RoleLenLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -476,6 +518,18 @@ namespace TencentCloud
                      */
                     std::string m_modelCategory;
                     bool m_modelCategoryHasBeenSet;
+
+                    /**
+                     * 是否默认模型
+                     */
+                    bool m_isDefault;
+                    bool m_isDefaultHasBeenSet;
+
+                    /**
+                     * 角色提示词输入长度限制
+                     */
+                    uint64_t m_roleLenLimit;
+                    bool m_roleLenLimitHasBeenSet;
 
                 };
             }

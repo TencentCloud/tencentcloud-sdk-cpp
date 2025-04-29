@@ -34,7 +34,9 @@ ModelInfo::ModelInfo() :
     m_isFreeHasBeenSet(false),
     m_inputLenLimitHasBeenSet(false),
     m_supportWorkflowStatusHasBeenSet(false),
-    m_modelCategoryHasBeenSet(false)
+    m_modelCategoryHasBeenSet(false),
+    m_isDefaultHasBeenSet(false),
+    m_roleLenLimitHasBeenSet(false)
 {
 }
 
@@ -204,6 +206,26 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_modelCategoryHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDefault") && !value["IsDefault"].IsNull())
+    {
+        if (!value["IsDefault"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDefault = value["IsDefault"].GetBool();
+        m_isDefaultHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoleLenLimit") && !value["RoleLenLimit"].IsNull())
+    {
+        if (!value["RoleLenLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.RoleLenLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleLenLimit = value["RoleLenLimit"].GetUint64();
+        m_roleLenLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +346,22 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ModelCategory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modelCategory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDefaultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefault";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDefault, allocator);
+    }
+
+    if (m_roleLenLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleLenLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_roleLenLimit, allocator);
     }
 
 }
@@ -551,5 +589,37 @@ void ModelInfo::SetModelCategory(const string& _modelCategory)
 bool ModelInfo::ModelCategoryHasBeenSet() const
 {
     return m_modelCategoryHasBeenSet;
+}
+
+bool ModelInfo::GetIsDefault() const
+{
+    return m_isDefault;
+}
+
+void ModelInfo::SetIsDefault(const bool& _isDefault)
+{
+    m_isDefault = _isDefault;
+    m_isDefaultHasBeenSet = true;
+}
+
+bool ModelInfo::IsDefaultHasBeenSet() const
+{
+    return m_isDefaultHasBeenSet;
+}
+
+uint64_t ModelInfo::GetRoleLenLimit() const
+{
+    return m_roleLenLimit;
+}
+
+void ModelInfo::SetRoleLenLimit(const uint64_t& _roleLenLimit)
+{
+    m_roleLenLimit = _roleLenLimit;
+    m_roleLenLimitHasBeenSet = true;
+}
+
+bool ModelInfo::RoleLenLimitHasBeenSet() const
+{
+    return m_roleLenLimitHasBeenSet;
 }
 

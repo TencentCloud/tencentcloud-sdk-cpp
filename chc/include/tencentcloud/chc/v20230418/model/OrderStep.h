@@ -89,6 +89,27 @@ namespace TencentCloud
                     bool OwnerNameHasBeenSet() const;
 
                     /**
+                     * 获取处理人手机号
+                     * @return OwnerPhone 处理人手机号
+                     * 
+                     */
+                    std::string GetOwnerPhone() const;
+
+                    /**
+                     * 设置处理人手机号
+                     * @param _ownerPhone 处理人手机号
+                     * 
+                     */
+                    void SetOwnerPhone(const std::string& _ownerPhone);
+
+                    /**
+                     * 判断参数 OwnerPhone 是否已赋值
+                     * @return OwnerPhone 是否已赋值
+                     * 
+                     */
+                    bool OwnerPhoneHasBeenSet() const;
+
+                    /**
                      * 获取完成时间
                      * @return FinishTime 完成时间
                      * 
@@ -143,6 +164,12 @@ namespace TencentCloud
                      */
                     std::string m_ownerName;
                     bool m_ownerNameHasBeenSet;
+
+                    /**
+                     * 处理人手机号
+                     */
+                    std::string m_ownerPhone;
+                    bool m_ownerPhoneHasBeenSet;
 
                     /**
                      * 完成时间

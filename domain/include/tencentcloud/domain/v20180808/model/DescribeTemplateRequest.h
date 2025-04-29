@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板ID(模板列表接口可获取)
-                     * @return TemplateId 模板ID(模板列表接口可获取)
+                     * 获取模板ID
+通过DescribeTemplateList接口获取:https://cloud.tencent.com/document/api/242/48940
+                     * @return TemplateId 模板ID
+通过DescribeTemplateList接口获取:https://cloud.tencent.com/document/api/242/48940
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板ID(模板列表接口可获取)
-                     * @param _templateId 模板ID(模板列表接口可获取)
+                     * 设置模板ID
+通过DescribeTemplateList接口获取:https://cloud.tencent.com/document/api/242/48940
+                     * @param _templateId 模板ID
+通过DescribeTemplateList接口获取:https://cloud.tencent.com/document/api/242/48940
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -66,7 +70,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板ID(模板列表接口可获取)
+                     * 模板ID
+通过DescribeTemplateList接口获取:https://cloud.tencent.com/document/api/242/48940
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

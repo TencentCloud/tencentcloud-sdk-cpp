@@ -23,6 +23,7 @@ using namespace std;
 OrderStep::OrderStep() :
     m_stepNameHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
+    m_ownerPhoneHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
     m_stepStatusHasBeenSet(false)
 {
@@ -51,6 +52,16 @@ CoreInternalOutcome OrderStep::Deserialize(const rapidjson::Value &value)
         }
         m_ownerName = string(value["OwnerName"].GetString());
         m_ownerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerPhone") && !value["OwnerPhone"].IsNull())
+    {
+        if (!value["OwnerPhone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrderStep.OwnerPhone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerPhone = string(value["OwnerPhone"].GetString());
+        m_ownerPhoneHasBeenSet = true;
     }
 
     if (value.HasMember("FinishTime") && !value["FinishTime"].IsNull())
@@ -94,6 +105,14 @@ void OrderStep::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "OwnerName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ownerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerPhoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerPhone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerPhone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_finishTimeHasBeenSet)
@@ -145,6 +164,22 @@ void OrderStep::SetOwnerName(const string& _ownerName)
 bool OrderStep::OwnerNameHasBeenSet() const
 {
     return m_ownerNameHasBeenSet;
+}
+
+string OrderStep::GetOwnerPhone() const
+{
+    return m_ownerPhone;
+}
+
+void OrderStep::SetOwnerPhone(const string& _ownerPhone)
+{
+    m_ownerPhone = _ownerPhone;
+    m_ownerPhoneHasBeenSet = true;
+}
+
+bool OrderStep::OwnerPhoneHasBeenSet() const
+{
+    return m_ownerPhoneHasBeenSet;
 }
 
 string OrderStep::GetFinishTime() const

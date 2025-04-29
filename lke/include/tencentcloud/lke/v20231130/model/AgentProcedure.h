@@ -322,6 +322,56 @@ namespace TencentCloud
                      */
                     bool ReplyIndexHasBeenSet() const;
 
+                    /**
+                     * 获取主agent
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceAgentName 主agent
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSourceAgentName() const;
+
+                    /**
+                     * 设置主agent
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sourceAgentName 主agent
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSourceAgentName(const std::string& _sourceAgentName);
+
+                    /**
+                     * 判断参数 SourceAgentName 是否已赋值
+                     * @return SourceAgentName 是否已赋值
+                     * 
+                     */
+                    bool SourceAgentNameHasBeenSet() const;
+
+                    /**
+                     * 获取挂号agent
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetAgentName 挂号agent
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTargetAgentName() const;
+
+                    /**
+                     * 设置挂号agent
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _targetAgentName 挂号agent
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTargetAgentName(const std::string& _targetAgentName);
+
+                    /**
+                     * 判断参数 TargetAgentName 是否已赋值
+                     * @return TargetAgentName 是否已赋值
+                     * 
+                     */
+                    bool TargetAgentNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,6 +450,20 @@ namespace TencentCloud
                      */
                     uint64_t m_replyIndex;
                     bool m_replyIndexHasBeenSet;
+
+                    /**
+                     * 主agent
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sourceAgentName;
+                    bool m_sourceAgentNameHasBeenSet;
+
+                    /**
+                     * 挂号agent
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetAgentName;
+                    bool m_targetAgentNameHasBeenSet;
 
                 };
             }

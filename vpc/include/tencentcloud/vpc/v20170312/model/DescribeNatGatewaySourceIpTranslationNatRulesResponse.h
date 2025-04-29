@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取NAT网关SNAT规则对象数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceIpTranslationNatRuleSet NAT网关SNAT规则对象数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SourceIpTranslationNatRule> GetSourceIpTranslationNatRuleSet() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * NAT网关SNAT规则对象数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SourceIpTranslationNatRule> m_sourceIpTranslationNatRuleSet;
                     bool m_sourceIpTranslationNatRuleSetHasBeenSet;

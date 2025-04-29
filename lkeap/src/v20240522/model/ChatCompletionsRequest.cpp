@@ -27,7 +27,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_messagesHasBeenSet(false),
     m_streamHasBeenSet(false),
     m_temperatureHasBeenSet(false),
-    m_maxTokensHasBeenSet(false)
+    m_maxTokensHasBeenSet(false),
+    m_enableSearchHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "MaxTokens";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxTokens, allocator);
+    }
+
+    if (m_enableSearchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSearch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSearch, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void ChatCompletionsRequest::SetMaxTokens(const int64_t& _maxTokens)
 bool ChatCompletionsRequest::MaxTokensHasBeenSet() const
 {
     return m_maxTokensHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetEnableSearch() const
+{
+    return m_enableSearch;
+}
+
+void ChatCompletionsRequest::SetEnableSearch(const bool& _enableSearch)
+{
+    m_enableSearch = _enableSearch;
+    m_enableSearchHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::EnableSearchHasBeenSet() const
+{
+    return m_enableSearchHasBeenSet;
 }
 
 

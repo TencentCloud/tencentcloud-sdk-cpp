@@ -575,7 +575,9 @@ CreateScdnLogTask 用于创建事件日志任务
                 DescribeBillingDataOutcomeCallable DescribeBillingDataCallable(const Model::DescribeBillingDataRequest& request);
 
                 /**
-                 *CC统计数据查询
+                 *SCDN平台下线，接口开始预下线处理
+
+CC统计数据查询
                  * @param req DescribeCcDataRequest
                  * @return DescribeCcDataOutcome
                  */
@@ -643,7 +645,9 @@ CreateScdnLogTask 用于创建事件日志任务
                 DescribeCertDomainsOutcomeCallable DescribeCertDomainsCallable(const Model::DescribeCertDomainsRequest& request);
 
                 /**
-                 *DDoS统计数据查询
+                 *SCDN平台下线，接口开始预下线处理
+
+DDoS统计数据查询
                  * @param req DescribeDDoSDataRequest
                  * @return DescribeDDoSDataOutcome
                  */
@@ -699,7 +703,9 @@ DescribeDiagnoseReport 用于获取指定报告id的内容。
                 DescribeEdgePackTaskStatusOutcomeCallable DescribeEdgePackTaskStatusCallable(const Model::DescribeEdgePackTaskStatusRequest& request);
 
                 /**
-                 *DescribeEventLogData 用于查询事件日志统计曲线
+                 *SCDN平台下线，接口开始预下线处理
+
+DescribeEventLogData 用于查询事件日志统计曲线
                  * @param req DescribeEventLogDataRequest
                  * @return DescribeEventLogDataOutcome
                  */
@@ -914,7 +920,7 @@ DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置
 
                 /**
                  *DescribeUrlViolations 用于查询被 CDN 系统扫描到的域名违规 URL 列表及当前状态。
-对应内容分发网络控制台【图片鉴黄】页面。
+对应内容分发网络控制台【内容合规】页面。
                  * @param req DescribeUrlViolationsRequest
                  * @return DescribeUrlViolationsOutcome
                  */
@@ -923,7 +929,9 @@ DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置
                 DescribeUrlViolationsOutcomeCallable DescribeUrlViolationsCallable(const Model::DescribeUrlViolationsRequest& request);
 
                 /**
-                 *Waf统计数据查询
+                 *SCDN平台下线，接口开始预下线处理
+
+Waf统计数据查询
                  * @param req DescribeWafDataRequest
                  * @return DescribeWafDataOutcome
                  */
@@ -1051,7 +1059,9 @@ ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任�
                 ListScdnTopBotDataOutcomeCallable ListScdnTopBotDataCallable(const Model::ListScdnTopBotDataRequest& request);
 
                 /**
-                 *获取Bot攻击的Top信息
+                 *SCDN平台下线，接口开始预下线处理
+
+获取Bot攻击的Top信息
                  * @param req ListTopBotDataRequest
                  * @return ListTopBotDataOutcome
                  */
@@ -1060,7 +1070,9 @@ ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任�
                 ListTopBotDataOutcomeCallable ListTopBotDataCallable(const Model::ListTopBotDataRequest& request);
 
                 /**
-                 *获取CC攻击Top数据
+                 *SCDN平台下线，接口开始预下线处理
+
+获取CC攻击Top数据
                  * @param req ListTopCcDataRequest
                  * @return ListTopCcDataOutcome
                  */
@@ -1078,7 +1090,9 @@ ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任�
                 ListTopClsLogDataOutcomeCallable ListTopClsLogDataCallable(const Model::ListTopClsLogDataRequest& request);
 
                 /**
-                 *获取DDoS攻击Top数据
+                 *SCDN平台下线，接口开始预下线处理
+
+获取DDoS攻击Top数据
                  * @param req ListTopDDoSDataRequest
                  * @return ListTopDDoSDataOutcome
                  */
@@ -1104,7 +1118,9 @@ ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任�
                 ListTopDataOutcomeCallable ListTopDataCallable(const Model::ListTopDataRequest& request);
 
                 /**
-                 *获取Waf攻击Top数据
+                 *SCDN平台下线，接口开始预下线处理
+
+获取Waf攻击Top数据
                  * @param req ListTopWafDataRequest
                  * @return ListTopWafDataOutcome
                  */

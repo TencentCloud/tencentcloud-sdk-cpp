@@ -613,7 +613,9 @@ namespace TencentCloud
                 CloseDBExtranetAccessOutcomeCallable CloseDBExtranetAccessCallable(const Model::CloseDBExtranetAccessRequest& request);
 
                 /**
-                 *【接口下线中，请勿使用】本接口（CloseServerlessDBExtranetAccess）用于关闭serverlessDB实例公网地址
+                 *该产品形态需要下线，已完成客户实例全部下线、后端服务下线等
+
+【接口下线中，请勿使用】本接口（CloseServerlessDBExtranetAccess）用于关闭serverlessDB实例公网地址
                  * @param req CloseServerlessDBExtranetAccessRequest
                  * @return CloseServerlessDBExtranetAccessOutcome
                  */
@@ -723,7 +725,9 @@ namespace TencentCloud
                 CreateReadOnlyGroupNetworkAccessOutcomeCallable CreateReadOnlyGroupNetworkAccessCallable(const Model::CreateReadOnlyGroupNetworkAccessRequest& request);
 
                 /**
-                 *【接口下线中，请勿使用】本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。
+                 *该产品形态需要下线，已完成客户实例全部下线、后端服务下线等
+
+【接口下线中，请勿使用】本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。
                  * @param req CreateServerlessDBInstanceRequest
                  * @return CreateServerlessDBInstanceOutcome
                  */
@@ -804,7 +808,9 @@ namespace TencentCloud
                 DeleteReadOnlyGroupNetworkAccessOutcomeCallable DeleteReadOnlyGroupNetworkAccessCallable(const Model::DeleteReadOnlyGroupNetworkAccessRequest& request);
 
                 /**
-                 *【接口下线中，请勿使用】本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。
+                 *该产品形态需要下线，已完成客户实例全部下线、后端服务下线等
+
+【接口下线中，请勿使用】本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。
                  * @param req DeleteServerlessDBInstanceRequest
                  * @return DeleteServerlessDBInstanceOutcome
                  */
@@ -1139,7 +1145,9 @@ namespace TencentCloud
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
 
                 /**
-                 *【接口下线中，请勿使用】用于查询一个或多个serverlessDB实例的详细信息
+                 *该产品形态需要下线，已完成客户实例全部下线、后端服务下线等
+
+【接口下线中，请勿使用】用于查询一个或多个serverlessDB实例的详细信息
                  * @param req DescribeServerlessDBInstancesRequest
                  * @return DescribeServerlessDBInstancesOutcome
                  */
@@ -1457,7 +1465,9 @@ namespace TencentCloud
                 OpenDBExtranetAccessOutcomeCallable OpenDBExtranetAccessCallable(const Model::OpenDBExtranetAccessRequest& request);
 
                 /**
-                 *【接口下线中，请勿使用】本接口（OpenServerlessDBExtranetAccess）用于开通serverlessDB实例公网地址。
+                 *该产品形态需要下线，已完成客户实例全部下线、后端服务下线等
+
+【接口下线中，请勿使用】本接口（OpenServerlessDBExtranetAccess）用于开通serverlessDB实例公网地址。
                  * @param req OpenServerlessDBExtranetAccessRequest
                  * @return OpenServerlessDBExtranetAccessOutcome
                  */

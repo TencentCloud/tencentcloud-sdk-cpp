@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool SuggestionHasBeenSet() const;
 
+                    /**
+                     * 获取扫描进度
+                     * @return Progress 扫描进度
+                     * 
+                     */
+                    double GetProgress() const;
+
+                    /**
+                     * 设置扫描进度
+                     * @param _progress 扫描进度
+                     * 
+                     */
+                    void SetProgress(const double& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     * 
+                     */
+                    bool ProgressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
+
+                    /**
+                     * 扫描进度
+                     */
+                    double m_progress;
+                    bool m_progressHasBeenSet;
 
                 };
             }

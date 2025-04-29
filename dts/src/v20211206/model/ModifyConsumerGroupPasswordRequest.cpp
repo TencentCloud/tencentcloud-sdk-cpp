@@ -26,8 +26,7 @@ ModifyConsumerGroupPasswordRequest::ModifyConsumerGroupPasswordRequest() :
     m_subscribeIdHasBeenSet(false),
     m_accountNameHasBeenSet(false),
     m_consumerGroupNameHasBeenSet(false),
-    m_newPasswordHasBeenSet(false),
-    m_oldPasswordHasBeenSet(false)
+    m_newPasswordHasBeenSet(false)
 {
 }
 
@@ -68,14 +67,6 @@ string ModifyConsumerGroupPasswordRequest::ToJsonString() const
         string key = "NewPassword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_newPassword.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_oldPasswordHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OldPassword";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_oldPassword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -148,22 +139,6 @@ void ModifyConsumerGroupPasswordRequest::SetNewPassword(const string& _newPasswo
 bool ModifyConsumerGroupPasswordRequest::NewPasswordHasBeenSet() const
 {
     return m_newPasswordHasBeenSet;
-}
-
-string ModifyConsumerGroupPasswordRequest::GetOldPassword() const
-{
-    return m_oldPassword;
-}
-
-void ModifyConsumerGroupPasswordRequest::SetOldPassword(const string& _oldPassword)
-{
-    m_oldPassword = _oldPassword;
-    m_oldPasswordHasBeenSet = true;
-}
-
-bool ModifyConsumerGroupPasswordRequest::OldPasswordHasBeenSet() const
-{
-    return m_oldPasswordHasBeenSet;
 }
 
 

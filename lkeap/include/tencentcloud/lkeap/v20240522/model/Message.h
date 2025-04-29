@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lkeap/v20240522/model/SearchResult.h>
 
 
 namespace TencentCloud
@@ -113,6 +114,27 @@ ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
                      */
                     bool ReasoningContentHasBeenSet() const;
 
+                    /**
+                     * 获取搜索结果
+                     * @return SearchResults 搜索结果
+                     * 
+                     */
+                    std::vector<SearchResult> GetSearchResults() const;
+
+                    /**
+                     * 设置搜索结果
+                     * @param _searchResults 搜索结果
+                     * 
+                     */
+                    void SetSearchResults(const std::vector<SearchResult>& _searchResults);
+
+                    /**
+                     * 判断参数 SearchResults 是否已赋值
+                     * @return SearchResults 是否已赋值
+                     * 
+                     */
+                    bool SearchResultsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,6 +155,12 @@ ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
                      */
                     std::string m_reasoningContent;
                     bool m_reasoningContentHasBeenSet;
+
+                    /**
+                     * 搜索结果
+                     */
+                    std::vector<SearchResult> m_searchResults;
+                    bool m_searchResultsHasBeenSet;
 
                 };
             }

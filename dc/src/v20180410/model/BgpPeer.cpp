@@ -34,11 +34,11 @@ CoreInternalOutcome BgpPeer::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("CloudAsn") && !value["CloudAsn"].IsNull())
     {
-        if (!value["CloudAsn"].IsString())
+        if (!value["CloudAsn"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `BgpPeer.CloudAsn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BgpPeer.CloudAsn` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_cloudAsn = string(value["CloudAsn"].GetString());
+        m_cloudAsn = value["CloudAsn"].GetInt64();
         m_cloudAsnHasBeenSet = true;
     }
 
@@ -74,7 +74,7 @@ void BgpPeer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CloudAsn";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_cloudAsn.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_cloudAsn, allocator);
     }
 
     if (m_asnHasBeenSet)
@@ -96,12 +96,12 @@ void BgpPeer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
 }
 
 
-string BgpPeer::GetCloudAsn() const
+int64_t BgpPeer::GetCloudAsn() const
 {
     return m_cloudAsn;
 }
 
-void BgpPeer::SetCloudAsn(const string& _cloudAsn)
+void BgpPeer::SetCloudAsn(const int64_t& _cloudAsn)
 {
     m_cloudAsn = _cloudAsn;
     m_cloudAsnHasBeenSet = true;

@@ -32,7 +32,8 @@ BankCardOCRResponse::BankCardOCRResponse() :
     m_borderCutImageHasBeenSet(false),
     m_cardNoImageHasBeenSet(false),
     m_warningCodeHasBeenSet(false),
-    m_qualityValueHasBeenSet(false)
+    m_qualityValueHasBeenSet(false),
+    m_cardCategoryHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,16 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
         m_qualityValueHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CardCategory") && !rsp["CardCategory"].IsNull())
+    {
+        if (!rsp["CardCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CardCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardCategory = string(rsp["CardCategory"].GetString());
+        m_cardCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -248,6 +259,14 @@ string BankCardOCRResponse::ToJsonString() const
         string key = "QualityValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qualityValue, allocator);
+    }
+
+    if (m_cardCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cardCategory.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -350,6 +369,16 @@ int64_t BankCardOCRResponse::GetQualityValue() const
 bool BankCardOCRResponse::QualityValueHasBeenSet() const
 {
     return m_qualityValueHasBeenSet;
+}
+
+string BankCardOCRResponse::GetCardCategory() const
+{
+    return m_cardCategory;
+}
+
+bool BankCardOCRResponse::CardCategoryHasBeenSet() const
+{
+    return m_cardCategoryHasBeenSet;
 }
 
 

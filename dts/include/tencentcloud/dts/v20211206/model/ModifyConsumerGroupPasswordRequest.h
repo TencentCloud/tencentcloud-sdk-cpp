@@ -126,27 +126,6 @@ namespace TencentCloud
                      */
                     bool NewPasswordHasBeenSet() const;
 
-                    /**
-                     * 获取旧密码，非必选
-                     * @return OldPassword 旧密码，非必选
-                     * 
-                     */
-                    std::string GetOldPassword() const;
-
-                    /**
-                     * 设置旧密码，非必选
-                     * @param _oldPassword 旧密码，非必选
-                     * 
-                     */
-                    void SetOldPassword(const std::string& _oldPassword);
-
-                    /**
-                     * 判断参数 OldPassword 是否已赋值
-                     * @return OldPassword 是否已赋值
-                     * 
-                     */
-                    bool OldPasswordHasBeenSet() const;
-
                 private:
 
                     /**
@@ -172,12 +151,6 @@ namespace TencentCloud
                      */
                     std::string m_newPassword;
                     bool m_newPasswordHasBeenSet;
-
-                    /**
-                     * 旧密码，非必选
-                     */
-                    std::string m_oldPassword;
-                    bool m_oldPasswordHasBeenSet;
 
                 };
             }

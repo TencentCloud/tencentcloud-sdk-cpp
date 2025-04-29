@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入点所在的地域。使用DescribeRegions查询。
-您可以通过调用 DescribeRegions接口获取地域ID。
-                     * @return RegionId 接入点所在的地域。使用DescribeRegions查询。
-您可以通过调用 DescribeRegions接口获取地域ID。
+                     * 获取接入点所在的地域。你可以通过调用[DescribeRegions](https://cloud.tencent.com/document/product/1596/77930)接口获取地域ID。
+                     * @return RegionId 接入点所在的地域。你可以通过调用[DescribeRegions](https://cloud.tencent.com/document/product/1596/77930)接口获取地域ID。
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
-                     * 设置接入点所在的地域。使用DescribeRegions查询。
-您可以通过调用 DescribeRegions接口获取地域ID。
-                     * @param _regionId 接入点所在的地域。使用DescribeRegions查询。
-您可以通过调用 DescribeRegions接口获取地域ID。
+                     * 设置接入点所在的地域。你可以通过调用[DescribeRegions](https://cloud.tencent.com/document/product/1596/77930)接口获取地域ID。
+                     * @param _regionId 接入点所在的地域。你可以通过调用[DescribeRegions](https://cloud.tencent.com/document/product/1596/77930)接口获取地域ID。
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -134,8 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接入点所在的地域。使用DescribeRegions查询。
-您可以通过调用 DescribeRegions接口获取地域ID。
+                     * 接入点所在的地域。你可以通过调用[DescribeRegions](https://cloud.tencent.com/document/product/1596/77930)接口获取地域ID。
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;

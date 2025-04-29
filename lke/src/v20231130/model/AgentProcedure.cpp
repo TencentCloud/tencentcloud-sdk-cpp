@@ -31,7 +31,9 @@ AgentProcedure::AgentProcedure() :
     m_workflowNameHasBeenSet(false),
     m_elapsedHasBeenSet(false),
     m_nodeNameHasBeenSet(false),
-    m_replyIndexHasBeenSet(false)
+    m_replyIndexHasBeenSet(false),
+    m_sourceAgentNameHasBeenSet(false),
+    m_targetAgentNameHasBeenSet(false)
 {
 }
 
@@ -157,6 +159,26 @@ CoreInternalOutcome AgentProcedure::Deserialize(const rapidjson::Value &value)
         m_replyIndexHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceAgentName") && !value["SourceAgentName"].IsNull())
+    {
+        if (!value["SourceAgentName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProcedure.SourceAgentName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceAgentName = string(value["SourceAgentName"].GetString());
+        m_sourceAgentNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetAgentName") && !value["TargetAgentName"].IsNull())
+    {
+        if (!value["TargetAgentName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProcedure.TargetAgentName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetAgentName = string(value["TargetAgentName"].GetString());
+        m_targetAgentNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +273,22 @@ void AgentProcedure::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ReplyIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replyIndex, allocator);
+    }
+
+    if (m_sourceAgentNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceAgentName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceAgentName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetAgentNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetAgentName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetAgentName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +468,37 @@ void AgentProcedure::SetReplyIndex(const uint64_t& _replyIndex)
 bool AgentProcedure::ReplyIndexHasBeenSet() const
 {
     return m_replyIndexHasBeenSet;
+}
+
+string AgentProcedure::GetSourceAgentName() const
+{
+    return m_sourceAgentName;
+}
+
+void AgentProcedure::SetSourceAgentName(const string& _sourceAgentName)
+{
+    m_sourceAgentName = _sourceAgentName;
+    m_sourceAgentNameHasBeenSet = true;
+}
+
+bool AgentProcedure::SourceAgentNameHasBeenSet() const
+{
+    return m_sourceAgentNameHasBeenSet;
+}
+
+string AgentProcedure::GetTargetAgentName() const
+{
+    return m_targetAgentName;
+}
+
+void AgentProcedure::SetTargetAgentName(const string& _targetAgentName)
+{
+    m_targetAgentName = _targetAgentName;
+    m_targetAgentNameHasBeenSet = true;
+}
+
+bool AgentProcedure::TargetAgentNameHasBeenSet() const
+{
+    return m_targetAgentNameHasBeenSet;
 }
 

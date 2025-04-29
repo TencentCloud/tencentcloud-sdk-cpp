@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取数量
-                     * @return Count 数量
+                     * 获取数量,  数量需大于2
+                     * @return Count 数量,  数量需大于2
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置数量
-                     * @param _count 数量
+                     * 设置数量,  数量需大于2
+                     * @param _count 数量,  数量需大于2
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LastRecordIdHasBeenSet() const;
 
                     /**
-                     * 获取应用AppKey, 当Type=5[API访客]时, 该字段必填
-                     * @return BotAppKey 应用AppKey, 当Type=5[API访客]时, 该字段必填
+                     * 获取应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
+                     * @return BotAppKey 应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
                      * 
                      */
                     std::string GetBotAppKey() const;
 
                     /**
-                     * 设置应用AppKey, 当Type=5[API访客]时, 该字段必填
-                     * @param _botAppKey 应用AppKey, 当Type=5[API访客]时, 该字段必填
+                     * 设置应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
+                     * @param _botAppKey 应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
                      * 
                      */
                     void SetBotAppKey(const std::string& _botAppKey);
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 数量
+                     * 数量,  数量需大于2
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
@@ -216,7 +216,7 @@ namespace TencentCloud
                     bool m_lastRecordIdHasBeenSet;
 
                     /**
-                     * 应用AppKey, 当Type=5[API访客]时, 该字段必填
+                     * 应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
                      */
                     std::string m_botAppKey;
                     bool m_botAppKeyHasBeenSet;

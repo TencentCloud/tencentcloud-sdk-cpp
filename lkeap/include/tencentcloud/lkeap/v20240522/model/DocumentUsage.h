@@ -109,6 +109,48 @@ namespace TencentCloud
                      */
                     bool TotalTokensHasBeenSet() const;
 
+                    /**
+                     * 获取拆分消耗的token数
+                     * @return SplitTokens 拆分消耗的token数
+                     * 
+                     */
+                    int64_t GetSplitTokens() const;
+
+                    /**
+                     * 设置拆分消耗的token数
+                     * @param _splitTokens 拆分消耗的token数
+                     * 
+                     */
+                    void SetSplitTokens(const int64_t& _splitTokens);
+
+                    /**
+                     * 判断参数 SplitTokens 是否已赋值
+                     * @return SplitTokens 是否已赋值
+                     * 
+                     */
+                    bool SplitTokensHasBeenSet() const;
+
+                    /**
+                     * 获取mllm消耗的token数
+                     * @return MllmTokens mllm消耗的token数
+                     * 
+                     */
+                    int64_t GetMllmTokens() const;
+
+                    /**
+                     * 设置mllm消耗的token数
+                     * @param _mllmTokens mllm消耗的token数
+                     * 
+                     */
+                    void SetMllmTokens(const int64_t& _mllmTokens);
+
+                    /**
+                     * 判断参数 MllmTokens 是否已赋值
+                     * @return MllmTokens 是否已赋值
+                     * 
+                     */
+                    bool MllmTokensHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +170,18 @@ namespace TencentCloud
                      */
                     int64_t m_totalTokens;
                     bool m_totalTokensHasBeenSet;
+
+                    /**
+                     * 拆分消耗的token数
+                     */
+                    int64_t m_splitTokens;
+                    bool m_splitTokensHasBeenSet;
+
+                    /**
+                     * mllm消耗的token数
+                     */
+                    int64_t m_mllmTokens;
+                    bool m_mllmTokensHasBeenSet;
 
                 };
             }

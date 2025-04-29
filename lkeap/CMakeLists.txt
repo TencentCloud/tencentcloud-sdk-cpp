@@ -49,6 +49,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/ListDocsResponse.h
   include/tencentcloud/lkeap/v20240522/model/DocumentUsage.h
   include/tencentcloud/lkeap/v20240522/model/ListAttributeLabelsRequest.h
+  include/tencentcloud/lkeap/v20240522/model/SearchResult.h
   include/tencentcloud/lkeap/v20240522/model/DeleteAttributeLabelsRequest.h
   include/tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeRequest.h
   include/tencentcloud/lkeap/v20240522/model/Choice.h
@@ -129,6 +130,7 @@ set(lkeap_src
   src/v20240522/model/ListDocsResponse.cpp
   src/v20240522/model/DocumentUsage.cpp
   src/v20240522/model/ListAttributeLabelsRequest.cpp
+  src/v20240522/model/SearchResult.cpp
   src/v20240522/model/DeleteAttributeLabelsRequest.cpp
   src/v20240522/model/RetrieveKnowledgeRequest.cpp
   src/v20240522/model/Choice.cpp
