@@ -44,6 +44,7 @@ RunInstancesRequest::RunInstancesRequest() :
     m_tagSpecificationHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
     m_userDataHasBeenSet(false),
+    m_metadataHasBeenSet(false),
     m_dryRunHasBeenSet(false),
     m_cpuTopologyHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
@@ -261,6 +262,15 @@ string RunInstancesRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metadata.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_dryRunHasBeenSet)
@@ -676,6 +686,22 @@ void RunInstancesRequest::SetUserData(const string& _userData)
 bool RunInstancesRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+Metadata RunInstancesRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void RunInstancesRequest::SetMetadata(const Metadata& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool RunInstancesRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 
 bool RunInstancesRequest::GetDryRun() const

@@ -1254,6 +1254,27 @@ namespace TencentCloud
                      */
                     bool TkeClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取新挂磁盘时可支持配置的服务名称列表
+                     * @return ConfigurableServices 新挂磁盘时可支持配置的服务名称列表
+                     * 
+                     */
+                    std::vector<std::string> GetConfigurableServices() const;
+
+                    /**
+                     * 设置新挂磁盘时可支持配置的服务名称列表
+                     * @param _configurableServices 新挂磁盘时可支持配置的服务名称列表
+                     * 
+                     */
+                    void SetConfigurableServices(const std::vector<std::string>& _configurableServices);
+
+                    /**
+                     * 判断参数 ConfigurableServices 是否已赋值
+                     * @return ConfigurableServices 是否已赋值
+                     * 
+                     */
+                    bool ConfigurableServicesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1598,6 +1619,12 @@ namespace TencentCloud
                      */
                     std::string m_tkeClusterId;
                     bool m_tkeClusterIdHasBeenSet;
+
+                    /**
+                     * 新挂磁盘时可支持配置的服务名称列表
+                     */
+                    std::vector<std::string> m_configurableServices;
+                    bool m_configurableServicesHasBeenSet;
 
                 };
             }

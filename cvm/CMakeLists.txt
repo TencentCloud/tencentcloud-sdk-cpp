@@ -37,6 +37,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/AccountQuota.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeZonesRequest.h
+  include/tencentcloud/cvm/v20170312/model/Metadata.h
   include/tencentcloud/cvm/v20170312/model/ModifyKeyPairAttributeRequest.h
   include/tencentcloud/cvm/v20170312/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/cvm/v20170312/model/PostPaidQuota.h
@@ -275,6 +276,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeAccountQuotaResponse.h
   include/tencentcloud/cvm/v20170312/model/RunMonitorServiceEnabled.h
   include/tencentcloud/cvm/v20170312/model/ResetInstanceResponse.h
+  include/tencentcloud/cvm/v20170312/model/MetadataItem.h
   include/tencentcloud/cvm/v20170312/model/ProgramFpgaImageRequest.h
   include/tencentcloud/cvm/v20170312/model/DisasterRecoverGroup.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesDisasterRecoverGroupResponse.h
@@ -319,6 +321,7 @@ set(cvm_src
   src/v20170312/model/AccountQuota.cpp
   src/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthResponse.cpp
   src/v20170312/model/DescribeZonesRequest.cpp
+  src/v20170312/model/Metadata.cpp
   src/v20170312/model/ModifyKeyPairAttributeRequest.cpp
   src/v20170312/model/AssociateSecurityGroupsRequest.cpp
   src/v20170312/model/PostPaidQuota.cpp
@@ -557,6 +560,7 @@ set(cvm_src
   src/v20170312/model/DescribeAccountQuotaResponse.cpp
   src/v20170312/model/RunMonitorServiceEnabled.cpp
   src/v20170312/model/ResetInstanceResponse.cpp
+  src/v20170312/model/MetadataItem.cpp
   src/v20170312/model/ProgramFpgaImageRequest.cpp
   src/v20170312/model/DisasterRecoverGroup.cpp
   src/v20170312/model/ModifyInstancesDisasterRecoverGroupResponse.cpp

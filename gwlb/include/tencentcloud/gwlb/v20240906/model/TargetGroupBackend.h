@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性网卡唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EniId 弹性网卡唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEniId() const;
 
                     /**
                      * 设置弹性网卡唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eniId 弹性网卡唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEniId(const std::string& _eniId);
@@ -262,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务的可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 后端服务的可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置后端服务的可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId 后端服务的可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
@@ -343,14 +335,12 @@ namespace TencentCloud
 
                     /**
                      * 弹性网卡唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eniId;
                     bool m_eniIdHasBeenSet;
 
                     /**
                      * 后端服务的可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;

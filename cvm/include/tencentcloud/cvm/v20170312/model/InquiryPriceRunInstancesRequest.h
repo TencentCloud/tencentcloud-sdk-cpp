@@ -31,6 +31,7 @@
 #include <tencentcloud/cvm/v20170312/model/EnhancedService.h>
 #include <tencentcloud/cvm/v20170312/model/TagSpecification.h>
 #include <tencentcloud/cvm/v20170312/model/InstanceMarketOptionsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/Metadata.h>
 #include <tencentcloud/cvm/v20170312/model/CpuTopology.h>
 #include <tencentcloud/cvm/v20170312/model/LaunchTemplate.h>
 
@@ -445,6 +446,35 @@ namespace TencentCloud
                     bool InstanceMarketOptionsHasBeenSet() const;
 
                     /**
+                     * 获取自定义metadata，支持创建 CVM 时添加自定义元数据键值对。
+
+**注：内测中**。
+                     * @return Metadata 自定义metadata，支持创建 CVM 时添加自定义元数据键值对。
+
+**注：内测中**。
+                     * 
+                     */
+                    Metadata GetMetadata() const;
+
+                    /**
+                     * 设置自定义metadata，支持创建 CVM 时添加自定义元数据键值对。
+
+**注：内测中**。
+                     * @param _metadata 自定义metadata，支持创建 CVM 时添加自定义元数据键值对。
+
+**注：内测中**。
+                     * 
+                     */
+                    void SetMetadata(const Metadata& _metadata);
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     * 
+                     */
+                    bool MetadataHasBeenSet() const;
+
+                    /**
                      * 获取高性能计算集群ID。
                      * @return HpcClusterId 高性能计算集群ID。
                      * 
@@ -619,6 +649,14 @@ namespace TencentCloud
                      */
                     InstanceMarketOptionsRequest m_instanceMarketOptions;
                     bool m_instanceMarketOptionsHasBeenSet;
+
+                    /**
+                     * 自定义metadata，支持创建 CVM 时添加自定义元数据键值对。
+
+**注：内测中**。
+                     */
+                    Metadata m_metadata;
+                    bool m_metadataHasBeenSet;
 
                     /**
                      * 高性能计算集群ID。

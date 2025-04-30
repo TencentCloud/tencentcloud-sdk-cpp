@@ -76,7 +76,8 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_sharedClusterIdHasBeenSet(false),
     m_sharedClusterIdDescHasBeenSet(false),
     m_timingResourceHasBeenSet(false),
-    m_tkeClusterIdHasBeenSet(false)
+    m_tkeClusterIdHasBeenSet(false),
+    m_configurableServicesHasBeenSet(false)
 {
 }
 
@@ -679,6 +680,19 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_tkeClusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigurableServices") && !value["ConfigurableServices"].IsNull())
+    {
+        if (!value["ConfigurableServices"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.ConfigurableServices` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConfigurableServices"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_configurableServices.push_back((*itr).GetString());
+        }
+        m_configurableServicesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1148,6 +1162,19 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "TkeClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tkeClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configurableServicesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigurableServices";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_configurableServices.begin(); itr != m_configurableServices.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -2047,5 +2074,21 @@ void NodeHardwareInfo::SetTkeClusterId(const string& _tkeClusterId)
 bool NodeHardwareInfo::TkeClusterIdHasBeenSet() const
 {
     return m_tkeClusterIdHasBeenSet;
+}
+
+vector<string> NodeHardwareInfo::GetConfigurableServices() const
+{
+    return m_configurableServices;
+}
+
+void NodeHardwareInfo::SetConfigurableServices(const vector<string>& _configurableServices)
+{
+    m_configurableServices = _configurableServices;
+    m_configurableServicesHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::ConfigurableServicesHasBeenSet() const
+{
+    return m_configurableServicesHasBeenSet;
 }
 

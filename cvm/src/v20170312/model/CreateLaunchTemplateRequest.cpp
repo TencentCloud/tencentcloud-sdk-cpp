@@ -50,7 +50,9 @@ CreateLaunchTemplateRequest::CreateLaunchTemplateRequest() :
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
-    m_launchTemplateTagSpecificationHasBeenSet(false)
+    m_launchTemplateTagSpecificationHasBeenSet(false),
+    m_metadataHasBeenSet(false),
+    m_templateDataModifyActionHasBeenSet(false)
 {
 }
 
@@ -323,6 +325,23 @@ string CreateLaunchTemplateRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metadata.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_templateDataModifyActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateDataModifyAction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateDataModifyAction.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -779,6 +798,38 @@ void CreateLaunchTemplateRequest::SetLaunchTemplateTagSpecification(const vector
 bool CreateLaunchTemplateRequest::LaunchTemplateTagSpecificationHasBeenSet() const
 {
     return m_launchTemplateTagSpecificationHasBeenSet;
+}
+
+Metadata CreateLaunchTemplateRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void CreateLaunchTemplateRequest::SetMetadata(const Metadata& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
+}
+
+string CreateLaunchTemplateRequest::GetTemplateDataModifyAction() const
+{
+    return m_templateDataModifyAction;
+}
+
+void CreateLaunchTemplateRequest::SetTemplateDataModifyAction(const string& _templateDataModifyAction)
+{
+    m_templateDataModifyAction = _templateDataModifyAction;
+    m_templateDataModifyActionHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateRequest::TemplateDataModifyActionHasBeenSet() const
+{
+    return m_templateDataModifyActionHasBeenSet;
 }
 
 
