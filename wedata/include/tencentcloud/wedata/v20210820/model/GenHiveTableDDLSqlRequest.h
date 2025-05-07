@@ -592,6 +592,48 @@ namespace TencentCloud
                      */
                     bool WriteModeHasBeenSet() const;
 
+                    /**
+                     * 获取任务类型 201（实时）， 202（离线） 
+                     * @return TaskType 任务类型 201（实时）， 202（离线） 
+                     * 
+                     */
+                    int64_t GetTaskType() const;
+
+                    /**
+                     * 设置任务类型 201（实时）， 202（离线） 
+                     * @param _taskType 任务类型 201（实时）， 202（离线） 
+                     * 
+                     */
+                    void SetTaskType(const int64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取目标端table名称
+                     * @return SinkTableName 目标端table名称
+                     * 
+                     */
+                    std::string GetSinkTableName() const;
+
+                    /**
+                     * 设置目标端table名称
+                     * @param _sinkTableName 目标端table名称
+                     * 
+                     */
+                    void SetSinkTableName(const std::string& _sinkTableName);
+
+                    /**
+                     * 判断参数 SinkTableName 是否已赋值
+                     * @return SinkTableName 是否已赋值
+                     * 
+                     */
+                    bool SinkTableNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -749,6 +791,18 @@ namespace TencentCloud
                      */
                     std::string m_writeMode;
                     bool m_writeModeHasBeenSet;
+
+                    /**
+                     * 任务类型 201（实时）， 202（离线） 
+                     */
+                    int64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 目标端table名称
+                     */
+                    std::string m_sinkTableName;
+                    bool m_sinkTableNameHasBeenSet;
 
                 };
             }

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下载任务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadTaskId 下载任务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDownloadTaskId() const;
 
                     /**
                      * 设置下载任务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _downloadTaskId 下载任务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDownloadTaskId(const std::string& _downloadTaskId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelId 通道 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelId 通道 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelId(const std::string& _channelId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelName 通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelName 通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelName(const std::string& _channelName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelCode 通道编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelCode() const;
 
                     /**
                      * 设置通道编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelCode 通道编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelCode(const std::string& _channelCode);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceCode 设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceCode() const;
 
                     /**
                      * 设置设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceCode 设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceCode(const std::string& _deviceCode);
@@ -199,10 +175,8 @@ namespace TencentCloud
                     /**
                      * 获取任务状态（0：未执行；1：执行中；2 任务完成；
 3：任务失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务状态（0：未执行；1：执行中；2 任务完成；
 3：任务失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -210,10 +184,8 @@ namespace TencentCloud
                     /**
                      * 设置任务状态（0：未执行；1：执行中；2 任务完成；
 3：任务失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 任务状态（0：未执行；1：执行中；2 任务完成；
 3：任务失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -227,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下载录像时间段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoTimeSection 下载录像时间段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVideoTimeSection() const;
 
                     /**
                      * 设置下载录像时间段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _videoTimeSection 下载录像时间段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideoTimeSection(const std::string& _videoTimeSection);
@@ -252,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取倍速
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scale 倍速
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScale() const;
 
                     /**
                      * 设置倍速
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scale 倍速
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScale(const int64_t& _scale);
@@ -277,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下载时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadTime 下载时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDownloadTime() const;
 
                     /**
                      * 设置下载时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _downloadTime 下载时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDownloadTime(const int64_t& _downloadTime);
@@ -302,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录像大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoSize 录像大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVideoSize() const;
 
                     /**
                      * 设置录像大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _videoSize 录像大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideoSize(const int64_t& _videoSize);
@@ -327,18 +283,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 任务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置任务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 任务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -352,18 +304,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -377,18 +325,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileDownloadUrl 文件下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileDownloadUrl() const;
 
                     /**
                      * 设置文件下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileDownloadUrl 文件下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileDownloadUrl(const std::string& _fileDownloadUrl);
@@ -402,18 +346,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedReason 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailedReason() const;
 
                     /**
                      * 设置失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedReason 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedReason(const std::string& _failedReason);
@@ -427,18 +367,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生命周期规则，热存天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expire 生命周期规则，热存天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpire() const;
 
                     /**
                      * 设置生命周期规则，热存天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expire 生命周期规则，热存天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpire(const int64_t& _expire);
@@ -452,18 +388,14 @@ namespace TencentCloud
 
                     /**
                      * 获取mp4预览地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreviewUrl mp4预览地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
                      * 设置mp4预览地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _previewUrl mp4预览地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreviewUrl(const std::string& _previewUrl);
@@ -479,42 +411,36 @@ namespace TencentCloud
 
                     /**
                      * 下载任务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadTaskId;
                     bool m_downloadTaskIdHasBeenSet;
 
                     /**
                      * 通道 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
                      * 通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;
 
                     /**
                      * 通道编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelCode;
                     bool m_channelCodeHasBeenSet;
 
                     /**
                      * 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
                      * 设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceCode;
                     bool m_deviceCodeHasBeenSet;
@@ -522,77 +448,66 @@ namespace TencentCloud
                     /**
                      * 任务状态（0：未执行；1：执行中；2 任务完成；
 3：任务失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 下载录像时间段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_videoTimeSection;
                     bool m_videoTimeSectionHasBeenSet;
 
                     /**
                      * 倍速
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scale;
                     bool m_scaleHasBeenSet;
 
                     /**
                      * 下载时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_downloadTime;
                     bool m_downloadTimeHasBeenSet;
 
                     /**
                      * 录像大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_videoSize;
                     bool m_videoSizeHasBeenSet;
 
                     /**
                      * 任务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 文件下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileDownloadUrl;
                     bool m_fileDownloadUrlHasBeenSet;
 
                     /**
                      * 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failedReason;
                     bool m_failedReasonHasBeenSet;
 
                     /**
                      * 生命周期规则，热存天数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expire;
                     bool m_expireHasBeenSet;
 
                     /**
                      * mp4预览地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;

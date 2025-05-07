@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID。
-                     * @return LoadBalancerId 负载均衡实例 ID。
+                     * 获取负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取。
+                     * @return LoadBalancerId 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取。
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID。
-                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 设置负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取。
+                     * @param _loadBalancerId 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取。
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器 ID。
-                     * @return ListenerId 负载均衡监听器 ID。
+                     * 获取负载均衡监听器 ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取。
+                     * @return ListenerId 负载均衡监听器 ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取。
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置负载均衡监听器 ID。
-                     * @param _listenerId 负载均衡监听器 ID。
+                     * 设置负载均衡监听器 ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取。
+                     * @param _listenerId 负载均衡监听器 ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取。
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改的转发规则的 ID。
-                     * @return LocationId 要修改的转发规则的 ID。
+                     * 获取要修改的转发规则的 ID， 可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取。
+                     * @return LocationId 要修改的转发规则的 ID， 可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取。
                      * 
                      */
                     std::string GetLocationId() const;
 
                     /**
-                     * 设置要修改的转发规则的 ID。
-                     * @param _locationId 要修改的转发规则的 ID。
+                     * 设置要修改的转发规则的 ID， 可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取。
+                     * @param _locationId 要修改的转发规则的 ID， 可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取。
                      * 
                      */
                     void SetLocationId(const std::string& _locationId);
@@ -176,14 +176,18 @@ namespace TencentCloud
 
                     /**
                      * 获取会话保持时间。取值范围0或30-86400（单位：秒）。
+默认为0。
                      * @return SessionExpireTime 会话保持时间。取值范围0或30-86400（单位：秒）。
+默认为0。
                      * 
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
                      * 设置会话保持时间。取值范围0或30-86400（单位：秒）。
+默认为0。
                      * @param _sessionExpireTime 会话保持时间。取值范围0或30-86400（单位：秒）。
+默认为0。
                      * 
                      */
                     void SetSessionExpireTime(const int64_t& _sessionExpireTime);
@@ -282,19 +286,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID。
+                     * 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡监听器 ID。
+                     * 负载均衡监听器 ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 要修改的转发规则的 ID。
+                     * 要修改的转发规则的 ID， 可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取。
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;
@@ -320,6 +324,7 @@ namespace TencentCloud
 
                     /**
                      * 会话保持时间。取值范围0或30-86400（单位：秒）。
+默认为0。
                      */
                     int64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;

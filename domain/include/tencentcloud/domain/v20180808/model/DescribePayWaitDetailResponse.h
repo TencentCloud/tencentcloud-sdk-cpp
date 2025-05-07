@@ -80,8 +80,10 @@ finish：完成出价
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取支付结束时间
-                     * @return EndTime 支付结束时间
+                     * 获取支付结束时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return EndTime 支付结束时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetEndTime() const;
@@ -94,8 +96,10 @@ finish：完成出价
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取域名注册时间
-                     * @return RegTime 域名注册时间
+                     * 获取域名注册时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return RegTime 域名注册时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetRegTime() const;
@@ -154,13 +158,15 @@ finish：完成出价
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 支付结束时间
+                     * 支付结束时间 
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 域名注册时间
+                     * 域名注册时间 
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_regTime;
                     bool m_regTimeHasBeenSet;

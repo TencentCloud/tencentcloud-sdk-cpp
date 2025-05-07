@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态
-                     * @return Status 任务状态
+                     * 获取任务状态，-1：失败，0：运行中，1：成功。
+                     * @return Status 任务状态，-1：失败，0：运行中，1：成功。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取切片结果
-                     * @return DocumentChunkResultUrl 切片结果
+                     * 获取切片结果文件。
+                     * @return DocumentChunkResultUrl 切片结果文件。
                      * 
                      */
                     std::string GetDocumentChunkResultUrl() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool DocumentChunkResultUrlHasBeenSet() const;
 
                     /**
-                     * 获取用量
-                     * @return Usage 用量
+                     * 获取Token用量。
+                     * @return Usage Token用量。
                      * 
                      */
                     DocumentChunkUsage GetUsage() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务状态
+                     * 任务状态，-1：失败，0：运行中，1：成功。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 切片结果
+                     * 切片结果文件。
                      */
                     std::string m_documentChunkResultUrl;
                     bool m_documentChunkResultUrlHasBeenSet;
 
                     /**
-                     * 用量
+                     * Token用量。
                      */
                     DocumentChunkUsage m_usage;
                     bool m_usageHasBeenSet;

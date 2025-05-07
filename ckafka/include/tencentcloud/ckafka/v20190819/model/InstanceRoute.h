@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteId 路由Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRouteId() const;
 
                     /**
                      * 设置路由Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeId 路由Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteId(const int64_t& _routeId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 路由Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_routeId;
                     bool m_routeIdHasBeenSet;

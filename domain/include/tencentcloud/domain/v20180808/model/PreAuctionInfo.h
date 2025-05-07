@@ -69,14 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取竞价倒计时
+格式:YYYY-MM-DD HH:mm:ss
                      * @return BiddingTime 竞价倒计时
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetBiddingTime() const;
 
                     /**
                      * 设置竞价倒计时
+格式:YYYY-MM-DD HH:mm:ss
                      * @param _biddingTime 竞价倒计时
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetBiddingTime(const std::string& _biddingTime);
@@ -89,15 +93,15 @@ namespace TencentCloud
                     bool BiddingTimeHasBeenSet() const;
 
                     /**
-                     * 获取出价次数 单位元
-                     * @return BidCount 出价次数 单位元
+                     * 获取出价次数
+                     * @return BidCount 出价次数
                      * 
                      */
                     int64_t GetBidCount() const;
 
                     /**
-                     * 设置出价次数 单位元
-                     * @param _bidCount 出价次数 单位元
+                     * 设置出价次数
+                     * @param _bidCount 出价次数
                      * 
                      */
                     void SetBidCount(const int64_t& _bidCount);
@@ -190,12 +194,13 @@ noAction：无法操作
 
                     /**
                      * 竞价倒计时
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_biddingTime;
                     bool m_biddingTimeHasBeenSet;
 
                     /**
-                     * 出价次数 单位元
+                     * 出价次数
                      */
                     int64_t m_bidCount;
                     bool m_bidCountHasBeenSet;

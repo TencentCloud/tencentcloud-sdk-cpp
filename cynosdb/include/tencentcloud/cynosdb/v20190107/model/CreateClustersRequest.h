@@ -230,6 +230,27 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
+                     * 获取实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     * @return InstanceCount 实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     * 
+                     */
+                    int64_t GetInstanceCount() const;
+
+                    /**
+                     * 设置实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     * @param _instanceCount 实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     * 
+                     */
+                    void SetInstanceCount(const int64_t& _instanceCount);
+
+                    /**
+                     * 判断参数 InstanceCount 是否已赋值
+                     * @return InstanceCount 是否已赋值
+                     * 
+                     */
+                    bool InstanceCountHasBeenSet() const;
+
+                    /**
                      * 获取该参数无实际意义，已废弃。
 存储大小，单位GB。
                      * @return Storage 该参数无实际意义，已废弃。
@@ -504,27 +525,6 @@ timeRollback，时间点回档
                      * 
                      */
                     bool StorageLimitHasBeenSet() const;
-
-                    /**
-                     * 获取实例数量，数量范围为(0,16]
-                     * @return InstanceCount 实例数量，数量范围为(0,16]
-                     * 
-                     */
-                    int64_t GetInstanceCount() const;
-
-                    /**
-                     * 设置实例数量，数量范围为(0,16]
-                     * @param _instanceCount 实例数量，数量范围为(0,16]
-                     * 
-                     */
-                    void SetInstanceCount(const int64_t& _instanceCount);
-
-                    /**
-                     * 判断参数 InstanceCount 是否已赋值
-                     * @return InstanceCount 是否已赋值
-                     * 
-                     */
-                    bool InstanceCountHasBeenSet() const;
 
                     /**
                      * 获取包年包月购买时长
@@ -1049,6 +1049,12 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_memoryHasBeenSet;
 
                     /**
+                     * 实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     */
+                    int64_t m_instanceCount;
+                    bool m_instanceCountHasBeenSet;
+
+                    /**
                      * 该参数无实际意义，已废弃。
 存储大小，单位GB。
                      */
@@ -1125,12 +1131,6 @@ timeRollback，时间点回档
                      */
                     int64_t m_storageLimit;
                     bool m_storageLimitHasBeenSet;
-
-                    /**
-                     * 实例数量，数量范围为(0,16]
-                     */
-                    int64_t m_instanceCount;
-                    bool m_instanceCountHasBeenSet;
 
                     /**
                      * 包年包月购买时长

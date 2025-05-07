@@ -21,10 +21,10 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 CUDNN::CUDNN() :
-    m_versionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_docNameHasBeenSet(false),
-    m_devNameHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_devNameHasBeenSet(false),
+    m_docNameHasBeenSet(false)
 {
 }
 
@@ -32,16 +32,6 @@ CoreInternalOutcome CUDNN::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Version") && !value["Version"].IsNull())
-    {
-        if (!value["Version"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CUDNN.Version` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_version = string(value["Version"].GetString());
-        m_versionHasBeenSet = true;
-    }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
     {
@@ -53,14 +43,14 @@ CoreInternalOutcome CUDNN::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
-    if (value.HasMember("DocName") && !value["DocName"].IsNull())
+    if (value.HasMember("Version") && !value["Version"].IsNull())
     {
-        if (!value["DocName"].IsString())
+        if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `CUDNN.DocName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CUDNN.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_docName = string(value["DocName"].GetString());
-        m_docNameHasBeenSet = true;
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
     }
 
     if (value.HasMember("DevName") && !value["DevName"].IsNull())
@@ -73,20 +63,22 @@ CoreInternalOutcome CUDNN::Deserialize(const rapidjson::Value &value)
         m_devNameHasBeenSet = true;
     }
 
+    if (value.HasMember("DocName") && !value["DocName"].IsNull())
+    {
+        if (!value["DocName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CUDNN.DocName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_docName = string(value["DocName"].GetString());
+        m_docNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void CUDNN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_versionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Version";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_nameHasBeenSet)
     {
@@ -96,12 +88,12 @@ void CUDNN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_docNameHasBeenSet)
+    if (m_versionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DocName";
+        string key = "Version";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_docName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_devNameHasBeenSet)
@@ -112,24 +104,16 @@ void CUDNN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         value.AddMember(iKey, rapidjson::Value(m_devName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_docNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docName.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string CUDNN::GetVersion() const
-{
-    return m_version;
-}
-
-void CUDNN::SetVersion(const string& _version)
-{
-    m_version = _version;
-    m_versionHasBeenSet = true;
-}
-
-bool CUDNN::VersionHasBeenSet() const
-{
-    return m_versionHasBeenSet;
-}
 
 string CUDNN::GetName() const
 {
@@ -147,20 +131,20 @@ bool CUDNN::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-string CUDNN::GetDocName() const
+string CUDNN::GetVersion() const
 {
-    return m_docName;
+    return m_version;
 }
 
-void CUDNN::SetDocName(const string& _docName)
+void CUDNN::SetVersion(const string& _version)
 {
-    m_docName = _docName;
-    m_docNameHasBeenSet = true;
+    m_version = _version;
+    m_versionHasBeenSet = true;
 }
 
-bool CUDNN::DocNameHasBeenSet() const
+bool CUDNN::VersionHasBeenSet() const
 {
-    return m_docNameHasBeenSet;
+    return m_versionHasBeenSet;
 }
 
 string CUDNN::GetDevName() const
@@ -177,5 +161,21 @@ void CUDNN::SetDevName(const string& _devName)
 bool CUDNN::DevNameHasBeenSet() const
 {
     return m_devNameHasBeenSet;
+}
+
+string CUDNN::GetDocName() const
+{
+    return m_docName;
+}
+
+void CUDNN::SetDocName(const string& _docName)
+{
+    m_docName = _docName;
+    m_docNameHasBeenSet = true;
+}
+
+bool CUDNN::DocNameHasBeenSet() const
+{
+    return m_docNameHasBeenSet;
 }
 

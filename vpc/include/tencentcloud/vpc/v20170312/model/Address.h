@@ -476,18 +476,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性公网IP关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 弹性公网IP关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置弹性公网IP关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 弹性公网IP关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -651,18 +647,14 @@ namespace TencentCloud
 
                     /**
                      * 获取传统弹性公网IPv6所属vpc唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnVpcId 传统弹性公网IPv6所属vpc唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnVpcId() const;
 
                     /**
                      * 设置传统弹性公网IPv6所属vpc唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unVpcId 传统弹性公网IPv6所属vpc唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnVpcId(const std::string& _unVpcId);
@@ -676,18 +668,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CDC唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DedicatedClusterId CDC唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
                      * 设置CDC唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dedicatedClusterId CDC唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
@@ -823,7 +811,6 @@ namespace TencentCloud
 
                     /**
                      * 弹性公网IP关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
@@ -872,14 +859,12 @@ namespace TencentCloud
 
                     /**
                      * 传统弹性公网IPv6所属vpc唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unVpcId;
                     bool m_unVpcIdHasBeenSet;
 
                     /**
                      * CDC唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;

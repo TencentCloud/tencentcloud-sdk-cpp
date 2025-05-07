@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IPv6地址。Ip6Addresses和Ip6AddressIds必须且只能传一个
-                     * @return Ip6Addresses IPv6地址。Ip6Addresses和Ip6AddressIds必须且只能传一个
+                     * 获取IPv6地址。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6Addresses。Ip6Addresses和Ip6AddressIds必须且只能传一个。
+                     * @return Ip6Addresses IPv6地址。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6Addresses。Ip6Addresses和Ip6AddressIds必须且只能传一个。
                      * 
                      */
                     std::vector<std::string> GetIp6Addresses() const;
 
                     /**
-                     * 设置IPv6地址。Ip6Addresses和Ip6AddressIds必须且只能传一个
-                     * @param _ip6Addresses IPv6地址。Ip6Addresses和Ip6AddressIds必须且只能传一个
+                     * 设置IPv6地址。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6Addresses。Ip6Addresses和Ip6AddressIds必须且只能传一个。
+                     * @param _ip6Addresses IPv6地址。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6Addresses。Ip6Addresses和Ip6AddressIds必须且只能传一个。
                      * 
                      */
                     void SetIp6Addresses(const std::vector<std::string>& _ip6Addresses);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool Ip6AddressesHasBeenSet() const;
 
                     /**
-                     * 获取IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressIds必须且只能传一个。
-                     * @return Ip6AddressIds IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressIds必须且只能传一个。
+                     * 获取IPv6地址对应的唯一ID，形如eip-xxxxxxxx。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6AddressIds。Ip6Addresses和Ip6AddressIds必须且只能传一个。
+                     * @return Ip6AddressIds IPv6地址对应的唯一ID，形如eip-xxxxxxxx。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6AddressIds。Ip6Addresses和Ip6AddressIds必须且只能传一个。
                      * 
                      */
                     std::vector<std::string> GetIp6AddressIds() const;
 
                     /**
-                     * 设置IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressIds必须且只能传一个。
-                     * @param _ip6AddressIds IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressIds必须且只能传一个。
+                     * 设置IPv6地址对应的唯一ID，形如eip-xxxxxxxx。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6AddressIds。Ip6Addresses和Ip6AddressIds必须且只能传一个。
+                     * @param _ip6AddressIds IPv6地址对应的唯一ID，形如eip-xxxxxxxx。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6AddressIds。Ip6Addresses和Ip6AddressIds必须且只能传一个。
                      * 
                      */
                     void SetIp6AddressIds(const std::vector<std::string>& _ip6AddressIds);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * IPv6地址。Ip6Addresses和Ip6AddressIds必须且只能传一个
+                     * IPv6地址。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6Addresses。Ip6Addresses和Ip6AddressIds必须且只能传一个。
                      */
                     std::vector<std::string> m_ip6Addresses;
                     bool m_ip6AddressesHasBeenSet;
 
                     /**
-                     * IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressIds必须且只能传一个。
+                     * IPv6地址对应的唯一ID，形如eip-xxxxxxxx。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6AddressIds。Ip6Addresses和Ip6AddressIds必须且只能传一个。
                      */
                     std::vector<std::string> m_ip6AddressIds;
                     bool m_ip6AddressIdsHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性公网IP的唯一ID，形如eip-xxx
-                     * @return AddressId 弹性公网IP的唯一ID，形如eip-xxx
+                     * 获取弹性公网IP的唯一ID，形如eip-xxx，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @return AddressId 弹性公网IP的唯一ID，形如eip-xxx，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     std::string GetAddressId() const;
 
                     /**
-                     * 设置弹性公网IP的唯一ID，形如eip-xxx
-                     * @param _addressId 弹性公网IP的唯一ID，形如eip-xxx
+                     * 设置弹性公网IP的唯一ID，形如eip-xxx，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @param _addressId 弹性公网IP的唯一ID，形如eip-xxx，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     void SetAddressId(const std::string& _addressId);
@@ -65,15 +65,27 @@ namespace TencentCloud
                     bool AddressIdHasBeenSet() const;
 
                     /**
-                     * 获取弹性公网IP调整目标计费模式，支持 "BANDWIDTH_PREPAID_BY_MONTH"、"TRAFFIC_POSTPAID_BY_HOUR"、"BANDWIDTH_POSTPAID_BY_HOUR"
-                     * @return InternetChargeType 弹性公网IP调整目标计费模式，支持 "BANDWIDTH_PREPAID_BY_MONTH"、"TRAFFIC_POSTPAID_BY_HOUR"、"BANDWIDTH_POSTPAID_BY_HOUR"
+                     * 获取弹性公网IP调整目标计费模式，支持：
+BANDWIDTH_PREPAID_BY_MONTH：包月按带宽预付费
+TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费
+BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费
+                     * @return InternetChargeType 弹性公网IP调整目标计费模式，支持：
+BANDWIDTH_PREPAID_BY_MONTH：包月按带宽预付费
+TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费
+BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费
                      * 
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
-                     * 设置弹性公网IP调整目标计费模式，支持 "BANDWIDTH_PREPAID_BY_MONTH"、"TRAFFIC_POSTPAID_BY_HOUR"、"BANDWIDTH_POSTPAID_BY_HOUR"
-                     * @param _internetChargeType 弹性公网IP调整目标计费模式，支持 "BANDWIDTH_PREPAID_BY_MONTH"、"TRAFFIC_POSTPAID_BY_HOUR"、"BANDWIDTH_POSTPAID_BY_HOUR"
+                     * 设置弹性公网IP调整目标计费模式，支持：
+BANDWIDTH_PREPAID_BY_MONTH：包月按带宽预付费
+TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费
+BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费
+                     * @param _internetChargeType 弹性公网IP调整目标计费模式，支持：
+BANDWIDTH_PREPAID_BY_MONTH：包月按带宽预付费
+TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费
+BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费
                      * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
@@ -86,15 +98,15 @@ namespace TencentCloud
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取弹性公网IP调整目标带宽值
-                     * @return InternetMaxBandwidthOut 弹性公网IP调整目标带宽值
+                     * 获取弹性公网IP调整目标带宽值，可调整的带宽上限值参考产品文档[带宽上限](https://cloud.tencent.com/document/product/1199/48333)。
+                     * @return InternetMaxBandwidthOut 弹性公网IP调整目标带宽值，可调整的带宽上限值参考产品文档[带宽上限](https://cloud.tencent.com/document/product/1199/48333)。
                      * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置弹性公网IP调整目标带宽值
-                     * @param _internetMaxBandwidthOut 弹性公网IP调整目标带宽值
+                     * 设置弹性公网IP调整目标带宽值，可调整的带宽上限值参考产品文档[带宽上限](https://cloud.tencent.com/document/product/1199/48333)。
+                     * @param _internetMaxBandwidthOut 弹性公网IP调整目标带宽值，可调整的带宽上限值参考产品文档[带宽上限](https://cloud.tencent.com/document/product/1199/48333)。
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
@@ -107,15 +119,15 @@ namespace TencentCloud
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
-                     * 获取包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是"BANDWIDTH_PREPAID_BY_MONTH"时，必传该参数。
-                     * @return AddressChargePrepaid 包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是"BANDWIDTH_PREPAID_BY_MONTH"时，必传该参数。
+                     * 获取包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是 BANDWIDTH_PREPAID_BY_MONTH（包月按带宽预付费）时，必传该参数。
+                     * @return AddressChargePrepaid 包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是 BANDWIDTH_PREPAID_BY_MONTH（包月按带宽预付费）时，必传该参数。
                      * 
                      */
                     AddressChargePrepaid GetAddressChargePrepaid() const;
 
                     /**
-                     * 设置包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是"BANDWIDTH_PREPAID_BY_MONTH"时，必传该参数。
-                     * @param _addressChargePrepaid 包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是"BANDWIDTH_PREPAID_BY_MONTH"时，必传该参数。
+                     * 设置包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是 BANDWIDTH_PREPAID_BY_MONTH（包月按带宽预付费）时，必传该参数。
+                     * @param _addressChargePrepaid 包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是 BANDWIDTH_PREPAID_BY_MONTH（包月按带宽预付费）时，必传该参数。
                      * 
                      */
                     void SetAddressChargePrepaid(const AddressChargePrepaid& _addressChargePrepaid);
@@ -130,25 +142,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性公网IP的唯一ID，形如eip-xxx
+                     * 弹性公网IP的唯一ID，形如eip-xxx，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      */
                     std::string m_addressId;
                     bool m_addressIdHasBeenSet;
 
                     /**
-                     * 弹性公网IP调整目标计费模式，支持 "BANDWIDTH_PREPAID_BY_MONTH"、"TRAFFIC_POSTPAID_BY_HOUR"、"BANDWIDTH_POSTPAID_BY_HOUR"
+                     * 弹性公网IP调整目标计费模式，支持：
+BANDWIDTH_PREPAID_BY_MONTH：包月按带宽预付费
+TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费
+BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费
                      */
                     std::string m_internetChargeType;
                     bool m_internetChargeTypeHasBeenSet;
 
                     /**
-                     * 弹性公网IP调整目标带宽值
+                     * 弹性公网IP调整目标带宽值，可调整的带宽上限值参考产品文档[带宽上限](https://cloud.tencent.com/document/product/1199/48333)。
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
-                     * 包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是"BANDWIDTH_PREPAID_BY_MONTH"时，必传该参数。
+                     * 包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是 BANDWIDTH_PREPAID_BY_MONTH（包月按带宽预付费）时，必传该参数。
                      */
                     AddressChargePrepaid m_addressChargePrepaid;
                     bool m_addressChargePrepaidHasBeenSet;

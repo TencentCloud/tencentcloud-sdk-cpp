@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
-                     * @return SSLMode 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
+                     * 获取认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证。
+默认为 UNIDIRECTIONAL。
+                     * @return SSLMode 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证。
+默认为 UNIDIRECTIONAL。
                      * 
                      */
                     std::string GetSSLMode() const;
 
                     /**
-                     * 设置认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
-                     * @param _sSLMode 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
+                     * 设置认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证。
+默认为 UNIDIRECTIONAL。
+                     * @param _sSLMode 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证。
+默认为 UNIDIRECTIONAL。
                      * 
                      */
                     void SetSSLMode(const std::string& _sSLMode);
@@ -89,15 +93,15 @@ namespace TencentCloud
                     bool SSLVerifyClientHasBeenSet() const;
 
                     /**
-                     * 获取服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent，CertKey，CertName。
-                     * @return CertId 服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent，CertKey，CertName。
+                     * 获取服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。
+                     * @return CertId 服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent，CertKey，CertName。
-                     * @param _certId 服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent，CertKey，CertName。
+                     * 设置服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。
+                     * @param _certId 服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -238,7 +242,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
+                     * 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证。
+默认为 UNIDIRECTIONAL。
                      */
                     std::string m_sSLMode;
                     bool m_sSLModeHasBeenSet;
@@ -250,7 +255,7 @@ namespace TencentCloud
                     bool m_sSLVerifyClientHasBeenSet;
 
                     /**
-                     * 服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent，CertKey，CertName。
+                     * 服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;

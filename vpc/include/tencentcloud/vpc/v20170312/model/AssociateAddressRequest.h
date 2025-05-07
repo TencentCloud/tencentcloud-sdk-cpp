@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
-                     * @return AddressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 获取标识 EIP 的唯一 ID。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。EIP 唯一 ID 形如：`eip-11112222`。
+                     * @return AddressId 标识 EIP 的唯一 ID。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。EIP 唯一 ID 形如：`eip-11112222`。
                      * 
                      */
                     std::string GetAddressId() const;
 
                     /**
-                     * 设置标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
-                     * @param _addressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 设置标识 EIP 的唯一 ID。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。EIP 唯一 ID 形如：`eip-11112222`。
+                     * @param _addressId 标识 EIP 的唯一 ID。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。EIP 唯一 ID 形如：`eip-11112222`。
                      * 
                      */
                     void SetAddressId(const std::string& _addressId);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 标识 EIP 的唯一 ID。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。EIP 唯一 ID 形如：`eip-11112222`。
                      */
                     std::string m_addressId;
                     bool m_addressIdHasBeenSet;

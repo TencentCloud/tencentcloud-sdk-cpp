@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取支付结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return PayEndTime 支付结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetPayEndTime() const;
 
                     /**
                      * 设置支付结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @param _payEndTime 支付结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetPayEndTime(const std::string& _payEndTime);
@@ -71,6 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 支付结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_payEndTime;
                     bool m_payEndTimeHasBeenSet;

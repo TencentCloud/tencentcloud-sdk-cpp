@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例ID。
-                     * @return LoadBalancerId 负载均衡实例ID。
+                     * 获取负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口查询。
+                     * @return LoadBalancerId 负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口查询。
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例ID。
-                     * @param _loadBalancerId 负载均衡实例ID。
+                     * 设置负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口查询。
+                     * @param _loadBalancerId 负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口查询。
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器ID。
-                     * @return ListenerId 负载均衡监听器ID。
+                     * 获取负载均衡监听器ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
+                     * @return ListenerId 负载均衡监听器ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置负载均衡监听器ID。
-                     * @param _listenerId 负载均衡监听器ID。
+                     * 设置负载均衡监听器ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
+                     * @param _listenerId 负载均衡监听器ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
-                     * @return Domain 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
+                     * 获取域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个，可以通过[DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
+                     * @return Domain 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个，可以通过[DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
-                     * @param _domain 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
+                     * 设置域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个，可以通过[DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
+                     * @param _domain 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个，可以通过[DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -150,15 +150,19 @@ namespace TencentCloud
                     bool CertificateHasBeenSet() const;
 
                     /**
-                     * 获取是否开启Http2，注意，只有HTTPS域名才能开启Http2。
-                     * @return Http2 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
+                     * 获取是否开启HTTP2，注意，只有HTTPS域名才能开启HTTP2。
+True: 开启HTTP2，Fasle: 不开启HTTP2。
+                     * @return Http2 是否开启HTTP2，注意，只有HTTPS域名才能开启HTTP2。
+True: 开启HTTP2，Fasle: 不开启HTTP2。
                      * 
                      */
                     bool GetHttp2() const;
 
                     /**
-                     * 设置是否开启Http2，注意，只有HTTPS域名才能开启Http2。
-                     * @param _http2 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
+                     * 设置是否开启HTTP2，注意，只有HTTPS域名才能开启HTTP2。
+True: 开启HTTP2，Fasle: 不开启HTTP2。
+                     * @param _http2 是否开启HTTP2，注意，只有HTTPS域名才能开启HTTP2。
+True: 开启HTTP2，Fasle: 不开启HTTP2。
                      * 
                      */
                     void SetHttp2(const bool& _http2);
@@ -172,14 +176,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否设为默认域名，注意，一个监听器下只能设置一个默认域名。
+True: 设为默认域名，Fasle: 不设置为默认域名。
                      * @return DefaultServer 是否设为默认域名，注意，一个监听器下只能设置一个默认域名。
+True: 设为默认域名，Fasle: 不设置为默认域名。
                      * 
                      */
                     bool GetDefaultServer() const;
 
                     /**
                      * 设置是否设为默认域名，注意，一个监听器下只能设置一个默认域名。
+True: 设为默认域名，Fasle: 不设置为默认域名。
                      * @param _defaultServer 是否设为默认域名，注意，一个监听器下只能设置一个默认域名。
+True: 设为默认域名，Fasle: 不设置为默认域名。
                      * 
                      */
                     void SetDefaultServer(const bool& _defaultServer);
@@ -192,15 +200,19 @@ namespace TencentCloud
                     bool DefaultServerHasBeenSet() const;
 
                     /**
-                     * 获取是否开启Quic，注意，只有HTTPS域名才能开启Quic
-                     * @return Quic 是否开启Quic，注意，只有HTTPS域名才能开启Quic
+                     * 获取是否开启 QUIC，注意，只有 HTTPS 域名才能开启 QUIC。
+True: 开启 QUIC，False: 不开启QUIC。
+                     * @return Quic 是否开启 QUIC，注意，只有 HTTPS 域名才能开启 QUIC。
+True: 开启 QUIC，False: 不开启QUIC。
                      * 
                      */
                     bool GetQuic() const;
 
                     /**
-                     * 设置是否开启Quic，注意，只有HTTPS域名才能开启Quic
-                     * @param _quic 是否开启Quic，注意，只有HTTPS域名才能开启Quic
+                     * 设置是否开启 QUIC，注意，只有 HTTPS 域名才能开启 QUIC。
+True: 开启 QUIC，False: 不开启QUIC。
+                     * @param _quic 是否开启 QUIC，注意，只有 HTTPS 域名才能开启 QUIC。
+True: 开启 QUIC，False: 不开启QUIC。
                      * 
                      */
                     void SetQuic(const bool& _quic);
@@ -278,19 +290,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例ID。
+                     * 负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口查询。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡监听器ID。
+                     * 负载均衡监听器ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
+                     * 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个，可以通过[DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
@@ -308,19 +320,22 @@ namespace TencentCloud
                     bool m_certificateHasBeenSet;
 
                     /**
-                     * 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
+                     * 是否开启HTTP2，注意，只有HTTPS域名才能开启HTTP2。
+True: 开启HTTP2，Fasle: 不开启HTTP2。
                      */
                     bool m_http2;
                     bool m_http2HasBeenSet;
 
                     /**
                      * 是否设为默认域名，注意，一个监听器下只能设置一个默认域名。
+True: 设为默认域名，Fasle: 不设置为默认域名。
                      */
                     bool m_defaultServer;
                     bool m_defaultServerHasBeenSet;
 
                     /**
-                     * 是否开启Quic，注意，只有HTTPS域名才能开启Quic
+                     * 是否开启 QUIC，注意，只有 HTTPS 域名才能开启 QUIC。
+True: 开启 QUIC，False: 不开启QUIC。
                      */
                     bool m_quic;
                     bool m_quicHasBeenSet;

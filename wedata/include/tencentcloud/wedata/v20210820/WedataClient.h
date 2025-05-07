@@ -3288,7 +3288,7 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 ModifyWorkflowInfoOutcomeCallable ModifyWorkflowInfoCallable(const Model::ModifyWorkflowInfoRequest& request);
 
                 /**
-                 *更新工作流调度
+                 *更新工作流调度。本接口已废弃，请使用接口RenewWorkflowSchedulerInfoDs。
                  * @param req ModifyWorkflowScheduleRequest
                  * @return ModifyWorkflowScheduleOutcome
                  */
@@ -3445,7 +3445,7 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
 
                 /**
                  *<p style="color:red;">[注意：该版本只满足广州区部分白名单客户使用]</p>
-提交任务
+提交任务。本接口已废弃，请使用接口CreateTaskVersionDs。
                  * @param req SubmitTaskRequest
                  * @return SubmitTaskOutcome
                  */
@@ -3463,7 +3463,7 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 SubmitTaskTestRunOutcomeCallable SubmitTaskTestRunCallable(const Model::SubmitTaskTestRunRequest& request);
 
                 /**
-                 *提交工作流
+                 *提交工作流。本接口已废弃，请使用接口BatchCreateTaskVersionAsync。
                  * @param req SubmitWorkflowRequest
                  * @return SubmitWorkflowOutcome
                  */
@@ -3500,7 +3500,7 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
 
                 /**
                  *<p style="color:red;">[注意：该版本只满足广州区部分白名单客户使用]</p>
-触发事件
+触发事件。本接口已废弃，请使用接口TriggerDsEvent。
                  * @param req TriggerEventRequest
                  * @return TriggerEventOutcome
                  */

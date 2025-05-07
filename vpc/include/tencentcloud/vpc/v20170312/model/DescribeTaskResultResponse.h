@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取执行结果，包括"SUCCESS", "FAILED", "RUNNING"
-                     * @return Result 执行结果，包括"SUCCESS", "FAILED", "RUNNING"
+                     * 获取执行结果，包括"SUCCESS"：异步任务执行成功, "FAILED"：异步任务执行失败, "RUNNING"：异步任务执行中
+                     * @return Result 执行结果，包括"SUCCESS"：异步任务执行成功, "FAILED"：异步任务执行失败, "RUNNING"：异步任务执行中
                      * 
                      */
                     std::string GetResult() const;
@@ -80,7 +80,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 执行结果，包括"SUCCESS", "FAILED", "RUNNING"
+                     * 执行结果，包括"SUCCESS"：异步任务执行成功, "FAILED"：异步任务执行失败, "RUNNING"：异步任务执行中
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

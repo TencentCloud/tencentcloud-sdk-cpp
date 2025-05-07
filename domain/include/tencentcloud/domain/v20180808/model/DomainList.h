@@ -152,14 +152,18 @@ false 不是
 
                     /**
                      * 获取注册时间。
+格式:YYYY-MM-DD HH:mm:ss
                      * @return CreationDate 注册时间。
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetCreationDate() const;
 
                     /**
                      * 设置注册时间。
+格式:YYYY-MM-DD HH:mm:ss
                      * @param _creationDate 注册时间。
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetCreationDate(const std::string& _creationDate);
@@ -173,14 +177,18 @@ false 不是
 
                     /**
                      * 获取到期时间。
+格式:YYYY-MM-DD HH:mm:ss
                      * @return ExpirationDate 到期时间。
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetExpirationDate() const;
 
                     /**
                      * 设置到期时间。
+格式:YYYY-MM-DD HH:mm:ss
                      * @param _expirationDate 到期时间。
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetExpirationDate(const std::string& _expirationDate);
@@ -193,15 +201,35 @@ false 不是
                     bool ExpirationDateHasBeenSet() const;
 
                     /**
-                     * 获取域名后缀
-                     * @return Tld 域名后缀
+                     * 获取域名后缀，根据具体域名确定
+例如:
+123.com 后缀则为.com
+123.com.cn 后缀则为.com.cn
+123.中国 后缀则为.中国
+
+                     * @return Tld 域名后缀，根据具体域名确定
+例如:
+123.com 后缀则为.com
+123.com.cn 后缀则为.com.cn
+123.中国 后缀则为.中国
+
                      * 
                      */
                     std::string GetTld() const;
 
                     /**
-                     * 设置域名后缀
-                     * @param _tld 域名后缀
+                     * 设置域名后缀，根据具体域名确定
+例如:
+123.com 后缀则为.com
+123.com.cn 后缀则为.com.cn
+123.中国 后缀则为.中国
+
+                     * @param _tld 域名后缀，根据具体域名确定
+例如:
+123.com 后缀则为.com
+123.com.cn 后缀则为.com.cn
+123.中国 后缀则为.中国
+
                      * 
                      */
                     void SetTld(const std::string& _tld);
@@ -214,15 +242,31 @@ false 不是
                     bool TldHasBeenSet() const;
 
                     /**
-                     * 获取编码后的后缀（中文会进行编码）
-                     * @return CodeTld 编码后的后缀（中文会进行编码）
+                     * 获取编码后的后缀（中文会进行Punycode编码）根据具体域名确定
+例如:
+123.com 后缀则为.com
+123.com.cn 后缀则为.com.cn
+123.中国 后缀则为.xn--fiqs8s
+                     * @return CodeTld 编码后的后缀（中文会进行Punycode编码）根据具体域名确定
+例如:
+123.com 后缀则为.com
+123.com.cn 后缀则为.com.cn
+123.中国 后缀则为.xn--fiqs8s
                      * 
                      */
                     std::string GetCodeTld() const;
 
                     /**
-                     * 设置编码后的后缀（中文会进行编码）
-                     * @param _codeTld 编码后的后缀（中文会进行编码）
+                     * 设置编码后的后缀（中文会进行Punycode编码）根据具体域名确定
+例如:
+123.com 后缀则为.com
+123.com.cn 后缀则为.com.cn
+123.中国 后缀则为.xn--fiqs8s
+                     * @param _codeTld 编码后的后缀（中文会进行Punycode编码）根据具体域名确定
+例如:
+123.com 后缀则为.com
+123.com.cn 后缀则为.com.cn
+123.中国 后缀则为.xn--fiqs8s
                      * 
                      */
                     void SetCodeTld(const std::string& _codeTld);
@@ -336,24 +380,35 @@ false 不是
 
                     /**
                      * 注册时间。
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_creationDate;
                     bool m_creationDateHasBeenSet;
 
                     /**
                      * 到期时间。
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_expirationDate;
                     bool m_expirationDateHasBeenSet;
 
                     /**
-                     * 域名后缀
+                     * 域名后缀，根据具体域名确定
+例如:
+123.com 后缀则为.com
+123.com.cn 后缀则为.com.cn
+123.中国 后缀则为.中国
+
                      */
                     std::string m_tld;
                     bool m_tldHasBeenSet;
 
                     /**
-                     * 编码后的后缀（中文会进行编码）
+                     * 编码后的后缀（中文会进行Punycode编码）根据具体域名确定
+例如:
+123.com 后缀则为.com
+123.com.cn 后缀则为.com.cn
+123.中国 后缀则为.xn--fiqs8s
                      */
                     std::string m_codeTld;
                     bool m_codeTldHasBeenSet;

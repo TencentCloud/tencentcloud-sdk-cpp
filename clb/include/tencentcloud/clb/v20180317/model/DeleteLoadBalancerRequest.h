@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要删除的负载均衡实例 ID数组，数组大小最大支持20。
-                     * @return LoadBalancerIds 要删除的负载均衡实例 ID数组，数组大小最大支持20。
+                     * 获取要删除的负载均衡实例 ID 数组，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取数组大小最大支持20。
+                     * @return LoadBalancerIds 要删除的负载均衡实例 ID 数组，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取数组大小最大支持20。
                      * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
-                     * 设置要删除的负载均衡实例 ID数组，数组大小最大支持20。
-                     * @param _loadBalancerIds 要删除的负载均衡实例 ID数组，数组大小最大支持20。
+                     * 设置要删除的负载均衡实例 ID 数组，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取数组大小最大支持20。
+                     * @param _loadBalancerIds 要删除的负载均衡实例 ID 数组，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取数组大小最大支持20。
                      * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool LoadBalancerIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否强制删除clb。为true表示强制删除，为false表示不是强制删除，需要做拦截校验。
-                     * @return ForceDelete 是否强制删除clb。为true表示强制删除，为false表示不是强制删除，需要做拦截校验。
+                     * 获取是否强制删除clb。True表示强制删除，False表示不是强制删除，需要做拦截校验。
+默认为 False
+                     * @return ForceDelete 是否强制删除clb。True表示强制删除，False表示不是强制删除，需要做拦截校验。
+默认为 False
                      * 
                      */
                     bool GetForceDelete() const;
 
                     /**
-                     * 设置是否强制删除clb。为true表示强制删除，为false表示不是强制删除，需要做拦截校验。
-                     * @param _forceDelete 是否强制删除clb。为true表示强制删除，为false表示不是强制删除，需要做拦截校验。
+                     * 设置是否强制删除clb。True表示强制删除，False表示不是强制删除，需要做拦截校验。
+默认为 False
+                     * @param _forceDelete 是否强制删除clb。True表示强制删除，False表示不是强制删除，需要做拦截校验。
+默认为 False
                      * 
                      */
                     void SetForceDelete(const bool& _forceDelete);
@@ -87,13 +91,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要删除的负载均衡实例 ID数组，数组大小最大支持20。
+                     * 要删除的负载均衡实例 ID 数组，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取数组大小最大支持20。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;
 
                     /**
-                     * 是否强制删除clb。为true表示强制删除，为false表示不是强制删除，需要做拦截校验。
+                     * 是否强制删除clb。True表示强制删除，False表示不是强制删除，需要做拦截校验。
+默认为 False
                      */
                     bool m_forceDelete;
                     bool m_forceDeleteHasBeenSet;

@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool DocumentHasBeenSet() const;
 
                     /**
-                     * 获取模型名称
-                     * @return ModelName 模型名称
+                     * 获取模型名称，doc-llm。
+                     * @return ModelName 模型名称，doc-llm。
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _modelName 模型名称
+                     * 设置模型名称，doc-llm。
+                     * @param _modelName 模型名称，doc-llm。
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_documentHasBeenSet;
 
                     /**
-                     * 模型名称
+                     * 模型名称，doc-llm。
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;

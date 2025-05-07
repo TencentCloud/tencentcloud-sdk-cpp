@@ -33,7 +33,8 @@ SnapshotGroup::SnapshotGroup() :
     m_snapshotGroupNameHasBeenSet(false),
     m_imageCountHasBeenSet(false),
     m_isPermanentHasBeenSet(false),
-    m_deadlineTimeHasBeenSet(false)
+    m_deadlineTimeHasBeenSet(false),
+    m_autoSnapshotPolicyIdHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,16 @@ CoreInternalOutcome SnapshotGroup::Deserialize(const rapidjson::Value &value)
         m_deadlineTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoSnapshotPolicyId") && !value["AutoSnapshotPolicyId"].IsNull())
+    {
+        if (!value["AutoSnapshotPolicyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SnapshotGroup.AutoSnapshotPolicyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoSnapshotPolicyId = string(value["AutoSnapshotPolicyId"].GetString());
+        m_autoSnapshotPolicyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +317,14 @@ void SnapshotGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DeadlineTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deadlineTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoSnapshotPolicyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSnapshotPolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoSnapshotPolicyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -517,5 +536,21 @@ void SnapshotGroup::SetDeadlineTime(const string& _deadlineTime)
 bool SnapshotGroup::DeadlineTimeHasBeenSet() const
 {
     return m_deadlineTimeHasBeenSet;
+}
+
+string SnapshotGroup::GetAutoSnapshotPolicyId() const
+{
+    return m_autoSnapshotPolicyId;
+}
+
+void SnapshotGroup::SetAutoSnapshotPolicyId(const string& _autoSnapshotPolicyId)
+{
+    m_autoSnapshotPolicyId = _autoSnapshotPolicyId;
+    m_autoSnapshotPolicyIdHasBeenSet = true;
+}
+
+bool SnapshotGroup::AutoSnapshotPolicyIdHasBeenSet() const
+{
+    return m_autoSnapshotPolicyIdHasBeenSet;
 }
 

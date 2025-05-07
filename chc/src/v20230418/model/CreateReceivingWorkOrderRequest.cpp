@@ -33,7 +33,12 @@ CreateReceivingWorkOrderRequest::CreateReceivingWorkOrderRequest() :
     m_serverDeviceListHasBeenSet(false),
     m_netDeviceListHasBeenSet(false),
     m_wireDeviceListHasBeenSet(false),
-    m_otherDeviceListHasBeenSet(false)
+    m_otherDeviceListHasBeenSet(false),
+    m_withRackOnHasBeenSet(false),
+    m_deviceRackOnListHasBeenSet(false),
+    m_stuffOptionHasBeenSet(false),
+    m_selfOperationInfoHasBeenSet(false),
+    m_withPowerOnHasBeenSet(false)
 {
 }
 
@@ -159,6 +164,54 @@ string CreateReceivingWorkOrderRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_withRackOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WithRackOn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_withRackOn, allocator);
+    }
+
+    if (m_deviceRackOnListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceRackOnList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deviceRackOnList.begin(); itr != m_deviceRackOnList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_stuffOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StuffOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stuffOption.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_selfOperationInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfOperationInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_selfOperationInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_withPowerOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WithPowerOn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_withPowerOn, allocator);
     }
 
 
@@ -343,6 +396,86 @@ void CreateReceivingWorkOrderRequest::SetOtherDeviceList(const vector<OtherDevRe
 bool CreateReceivingWorkOrderRequest::OtherDeviceListHasBeenSet() const
 {
     return m_otherDeviceListHasBeenSet;
+}
+
+bool CreateReceivingWorkOrderRequest::GetWithRackOn() const
+{
+    return m_withRackOn;
+}
+
+void CreateReceivingWorkOrderRequest::SetWithRackOn(const bool& _withRackOn)
+{
+    m_withRackOn = _withRackOn;
+    m_withRackOnHasBeenSet = true;
+}
+
+bool CreateReceivingWorkOrderRequest::WithRackOnHasBeenSet() const
+{
+    return m_withRackOnHasBeenSet;
+}
+
+vector<DeviceRackOn> CreateReceivingWorkOrderRequest::GetDeviceRackOnList() const
+{
+    return m_deviceRackOnList;
+}
+
+void CreateReceivingWorkOrderRequest::SetDeviceRackOnList(const vector<DeviceRackOn>& _deviceRackOnList)
+{
+    m_deviceRackOnList = _deviceRackOnList;
+    m_deviceRackOnListHasBeenSet = true;
+}
+
+bool CreateReceivingWorkOrderRequest::DeviceRackOnListHasBeenSet() const
+{
+    return m_deviceRackOnListHasBeenSet;
+}
+
+string CreateReceivingWorkOrderRequest::GetStuffOption() const
+{
+    return m_stuffOption;
+}
+
+void CreateReceivingWorkOrderRequest::SetStuffOption(const string& _stuffOption)
+{
+    m_stuffOption = _stuffOption;
+    m_stuffOptionHasBeenSet = true;
+}
+
+bool CreateReceivingWorkOrderRequest::StuffOptionHasBeenSet() const
+{
+    return m_stuffOptionHasBeenSet;
+}
+
+SelfOperation CreateReceivingWorkOrderRequest::GetSelfOperationInfo() const
+{
+    return m_selfOperationInfo;
+}
+
+void CreateReceivingWorkOrderRequest::SetSelfOperationInfo(const SelfOperation& _selfOperationInfo)
+{
+    m_selfOperationInfo = _selfOperationInfo;
+    m_selfOperationInfoHasBeenSet = true;
+}
+
+bool CreateReceivingWorkOrderRequest::SelfOperationInfoHasBeenSet() const
+{
+    return m_selfOperationInfoHasBeenSet;
+}
+
+bool CreateReceivingWorkOrderRequest::GetWithPowerOn() const
+{
+    return m_withPowerOn;
+}
+
+void CreateReceivingWorkOrderRequest::SetWithPowerOn(const bool& _withPowerOn)
+{
+    m_withPowerOn = _withPowerOn;
+    m_withPowerOnHasBeenSet = true;
+}
+
+bool CreateReceivingWorkOrderRequest::WithPowerOnHasBeenSet() const
+{
+    return m_withPowerOnHasBeenSet;
 }
 
 

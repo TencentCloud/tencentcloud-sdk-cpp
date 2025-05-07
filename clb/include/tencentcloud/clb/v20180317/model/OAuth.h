@@ -50,9 +50,11 @@ namespace TencentCloud
                      * 获取开启或关闭鉴权。
 True: 开启;
 False: 关闭
+默认为关闭。
                      * @return OAuthEnable 开启或关闭鉴权。
 True: 开启;
 False: 关闭
+默认为关闭。
                      * 
                      */
                     bool GetOAuthEnable() const;
@@ -61,9 +63,11 @@ False: 关闭
                      * 设置开启或关闭鉴权。
 True: 开启;
 False: 关闭
+默认为关闭。
                      * @param _oAuthEnable 开启或关闭鉴权。
 True: 开启;
 False: 关闭
+默认为关闭。
                      * 
                      */
                     void SetOAuthEnable(const bool& _oAuthEnable);
@@ -76,19 +80,27 @@ False: 关闭
                     bool OAuthEnableHasBeenSet() const;
 
                     /**
-                     * 获取IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
+                     * 获取IAP全部故障后，拒绝请求还是放行。
+BYPASS: 通过
 REJECT: 拒绝
-                     * @return OAuthFailureStatus IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
+默认为 BYPASS
+                     * @return OAuthFailureStatus IAP全部故障后，拒绝请求还是放行。
+BYPASS: 通过
 REJECT: 拒绝
+默认为 BYPASS
                      * 
                      */
                     std::string GetOAuthFailureStatus() const;
 
                     /**
-                     * 设置IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
+                     * 设置IAP全部故障后，拒绝请求还是放行。
+BYPASS: 通过
 REJECT: 拒绝
-                     * @param _oAuthFailureStatus IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
+默认为 BYPASS
+                     * @param _oAuthFailureStatus IAP全部故障后，拒绝请求还是放行。
+BYPASS: 通过
 REJECT: 拒绝
+默认为 BYPASS
                      * 
                      */
                     void SetOAuthFailureStatus(const std::string& _oAuthFailureStatus);
@@ -106,13 +118,16 @@ REJECT: 拒绝
                      * 开启或关闭鉴权。
 True: 开启;
 False: 关闭
+默认为关闭。
                      */
                     bool m_oAuthEnable;
                     bool m_oAuthEnableHasBeenSet;
 
                     /**
-                     * IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
+                     * IAP全部故障后，拒绝请求还是放行。
+BYPASS: 通过
 REJECT: 拒绝
+默认为 BYPASS
                      */
                     std::string m_oAuthFailureStatus;
                     bool m_oAuthFailureStatusHasBeenSet;

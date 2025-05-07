@@ -26,6 +26,8 @@
 #include <tencentcloud/chc/v20230418/model/NetReceivingInfo.h>
 #include <tencentcloud/chc/v20230418/model/WireReceivingInfo.h>
 #include <tencentcloud/chc/v20230418/model/OtherDevReceivingInfo.h>
+#include <tencentcloud/chc/v20230418/model/DeviceRackOn.h>
+#include <tencentcloud/chc/v20230418/model/SelfOperation.h>
 
 
 namespace TencentCloud
@@ -195,15 +197,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取服务器收货列表
-                     * @return ServerDeviceList 服务器收货列表
+                     * 获取服务器收货列表。最大值：200
+                     * @return ServerDeviceList 服务器收货列表。最大值：200
                      * 
                      */
                     std::vector<ServerReceivingInfo> GetServerDeviceList() const;
 
                     /**
-                     * 设置服务器收货列表
-                     * @param _serverDeviceList 服务器收货列表
+                     * 设置服务器收货列表。最大值：200
+                     * @param _serverDeviceList 服务器收货列表。最大值：200
                      * 
                      */
                     void SetServerDeviceList(const std::vector<ServerReceivingInfo>& _serverDeviceList);
@@ -278,6 +280,111 @@ namespace TencentCloud
                      */
                     bool OtherDeviceListHasBeenSet() const;
 
+                    /**
+                     * 获取收货后自动上架。此参数为true时，后台会自动提设备上架单
+                     * @return WithRackOn 收货后自动上架。此参数为true时，后台会自动提设备上架单
+                     * 
+                     */
+                    bool GetWithRackOn() const;
+
+                    /**
+                     * 设置收货后自动上架。此参数为true时，后台会自动提设备上架单
+                     * @param _withRackOn 收货后自动上架。此参数为true时，后台会自动提设备上架单
+                     * 
+                     */
+                    void SetWithRackOn(const bool& _withRackOn);
+
+                    /**
+                     * 判断参数 WithRackOn 是否已赋值
+                     * @return WithRackOn 是否已赋值
+                     * 
+                     */
+                    bool WithRackOnHasBeenSet() const;
+
+                    /**
+                     * 获取设备上架信息。当WithRackOn为true此参数必传，且sn需要和收货的列表一致
+                     * @return DeviceRackOnList 设备上架信息。当WithRackOn为true此参数必传，且sn需要和收货的列表一致
+                     * 
+                     */
+                    std::vector<DeviceRackOn> GetDeviceRackOnList() const;
+
+                    /**
+                     * 设置设备上架信息。当WithRackOn为true此参数必传，且sn需要和收货的列表一致
+                     * @param _deviceRackOnList 设备上架信息。当WithRackOn为true此参数必传，且sn需要和收货的列表一致
+                     * 
+                     */
+                    void SetDeviceRackOnList(const std::vector<DeviceRackOn>& _deviceRackOnList);
+
+                    /**
+                     * 判断参数 DeviceRackOnList 是否已赋值
+                     * @return DeviceRackOnList 是否已赋值
+                     * 
+                     */
+                    bool DeviceRackOnListHasBeenSet() const;
+
+                    /**
+                     * 获取上架人员 1.自行解决 2.由腾讯IDC负责
+                     * @return StuffOption 上架人员 1.自行解决 2.由腾讯IDC负责
+                     * 
+                     */
+                    std::string GetStuffOption() const;
+
+                    /**
+                     * 设置上架人员 1.自行解决 2.由腾讯IDC负责
+                     * @param _stuffOption 上架人员 1.自行解决 2.由腾讯IDC负责
+                     * 
+                     */
+                    void SetStuffOption(const std::string& _stuffOption);
+
+                    /**
+                     * 判断参数 StuffOption 是否已赋值
+                     * @return StuffOption 是否已赋值
+                     * 
+                     */
+                    bool StuffOptionHasBeenSet() const;
+
+                    /**
+                     * 获取自行解决信息。当StuffOption为1时，此参数必填
+                     * @return SelfOperationInfo 自行解决信息。当StuffOption为1时，此参数必填
+                     * 
+                     */
+                    SelfOperation GetSelfOperationInfo() const;
+
+                    /**
+                     * 设置自行解决信息。当StuffOption为1时，此参数必填
+                     * @param _selfOperationInfo 自行解决信息。当StuffOption为1时，此参数必填
+                     * 
+                     */
+                    void SetSelfOperationInfo(const SelfOperation& _selfOperationInfo);
+
+                    /**
+                     * 判断参数 SelfOperationInfo 是否已赋值
+                     * @return SelfOperationInfo 是否已赋值
+                     * 
+                     */
+                    bool SelfOperationInfoHasBeenSet() const;
+
+                    /**
+                     * 获取上架后自动开电。此参数为true时，后台会自动提设备开电单
+                     * @return WithPowerOn 上架后自动开电。此参数为true时，后台会自动提设备开电单
+                     * 
+                     */
+                    bool GetWithPowerOn() const;
+
+                    /**
+                     * 设置上架后自动开电。此参数为true时，后台会自动提设备开电单
+                     * @param _withPowerOn 上架后自动开电。此参数为true时，后台会自动提设备开电单
+                     * 
+                     */
+                    void SetWithPowerOn(const bool& _withPowerOn);
+
+                    /**
+                     * 判断参数 WithPowerOn 是否已赋值
+                     * @return WithPowerOn 是否已赋值
+                     * 
+                     */
+                    bool WithPowerOnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,7 +430,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 服务器收货列表
+                     * 服务器收货列表。最大值：200
                      */
                     std::vector<ServerReceivingInfo> m_serverDeviceList;
                     bool m_serverDeviceListHasBeenSet;
@@ -345,6 +452,36 @@ namespace TencentCloud
                      */
                     std::vector<OtherDevReceivingInfo> m_otherDeviceList;
                     bool m_otherDeviceListHasBeenSet;
+
+                    /**
+                     * 收货后自动上架。此参数为true时，后台会自动提设备上架单
+                     */
+                    bool m_withRackOn;
+                    bool m_withRackOnHasBeenSet;
+
+                    /**
+                     * 设备上架信息。当WithRackOn为true此参数必传，且sn需要和收货的列表一致
+                     */
+                    std::vector<DeviceRackOn> m_deviceRackOnList;
+                    bool m_deviceRackOnListHasBeenSet;
+
+                    /**
+                     * 上架人员 1.自行解决 2.由腾讯IDC负责
+                     */
+                    std::string m_stuffOption;
+                    bool m_stuffOptionHasBeenSet;
+
+                    /**
+                     * 自行解决信息。当StuffOption为1时，此参数必填
+                     */
+                    SelfOperation m_selfOperationInfo;
+                    bool m_selfOperationInfoHasBeenSet;
+
+                    /**
+                     * 上架后自动开电。此参数为true时，后台会自动提设备开电单
+                     */
+                    bool m_withPowerOn;
+                    bool m_withPowerOnHasBeenSet;
 
                 };
             }

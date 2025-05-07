@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的安全组路由信息总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的安全组路由信息总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置符合条件的安全组路由信息总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 符合条件的安全组路由信息总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的安全组路由信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupRoutes 符合条件的安全组路由信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SecurityGroupRoute> GetSecurityGroupRoutes() const;
 
                     /**
                      * 设置符合条件的安全组路由信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroupRoutes 符合条件的安全组路由信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroupRoutes(const std::vector<SecurityGroupRoute>& _securityGroupRoutes);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 符合条件的安全组路由信息总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 符合条件的安全组路由信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityGroupRoute> m_securityGroupRoutes;
                     bool m_securityGroupRoutesHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件信息
-                     * @return Document 文件信息
+                     * 获取文件信息。
+                     * @return Document 文件信息。
                      * 
                      */
                     Document GetDocument() const;
 
                     /**
-                     * 设置文件信息
-                     * @param _document 文件信息
+                     * 设置文件信息。
+                     * @param _document 文件信息。
                      * 
                      */
                     void SetDocument(const Document& _document);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool DocumentHasBeenSet() const;
 
                     /**
-                     * 获取模型名称
-                     * @return ModelName 模型名称
+                     * 获取模型名称，可选模型列表：doc-llm。
+                     * @return ModelName 模型名称，可选模型列表：doc-llm。
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _modelName 模型名称
+                     * 设置模型名称，可选模型列表：doc-llm。
+                     * @param _modelName 模型名称，可选模型列表：doc-llm。
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件信息
+                     * 文件信息。
                      */
                     Document m_document;
                     bool m_documentHasBeenSet;
 
                     /**
-                     * 模型名称
+                     * 模型名称，可选模型列表：doc-llm。
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;

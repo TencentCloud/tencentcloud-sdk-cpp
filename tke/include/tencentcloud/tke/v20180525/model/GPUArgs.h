@@ -50,48 +50,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否启用MIG特性
-                     * @return MIGEnable 是否启用MIG特性
-                     * 
-                     */
-                    bool GetMIGEnable() const;
-
-                    /**
-                     * 设置是否启用MIG特性
-                     * @param _mIGEnable 是否启用MIG特性
-                     * 
-                     */
-                    void SetMIGEnable(const bool& _mIGEnable);
-
-                    /**
-                     * 判断参数 MIGEnable 是否已赋值
-                     * @return MIGEnable 是否已赋值
-                     * 
-                     */
-                    bool MIGEnableHasBeenSet() const;
-
-                    /**
-                     * 获取GPU驱动版本信息
-                     * @return Driver GPU驱动版本信息
-                     * 
-                     */
-                    DriverVersion GetDriver() const;
-
-                    /**
-                     * 设置GPU驱动版本信息
-                     * @param _driver GPU驱动版本信息
-                     * 
-                     */
-                    void SetDriver(const DriverVersion& _driver);
-
-                    /**
-                     * 判断参数 Driver 是否已赋值
-                     * @return Driver 是否已赋值
-                     * 
-                     */
-                    bool DriverHasBeenSet() const;
-
-                    /**
                      * 获取CUDA版本信息
                      * @return CUDA CUDA版本信息
                      * 
@@ -154,19 +112,49 @@ namespace TencentCloud
                      */
                     bool CustomDriverHasBeenSet() const;
 
+                    /**
+                     * 获取GPU驱动版本信息
+                     * @return Driver GPU驱动版本信息
+                     * 
+                     */
+                    DriverVersion GetDriver() const;
+
+                    /**
+                     * 设置GPU驱动版本信息
+                     * @param _driver GPU驱动版本信息
+                     * 
+                     */
+                    void SetDriver(const DriverVersion& _driver);
+
+                    /**
+                     * 判断参数 Driver 是否已赋值
+                     * @return Driver 是否已赋值
+                     * 
+                     */
+                    bool DriverHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用MIG特性
+                     * @return MIGEnable 是否启用MIG特性
+                     * 
+                     */
+                    bool GetMIGEnable() const;
+
+                    /**
+                     * 设置是否启用MIG特性
+                     * @param _mIGEnable 是否启用MIG特性
+                     * 
+                     */
+                    void SetMIGEnable(const bool& _mIGEnable);
+
+                    /**
+                     * 判断参数 MIGEnable 是否已赋值
+                     * @return MIGEnable 是否已赋值
+                     * 
+                     */
+                    bool MIGEnableHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 是否启用MIG特性
-                     */
-                    bool m_mIGEnable;
-                    bool m_mIGEnableHasBeenSet;
-
-                    /**
-                     * GPU驱动版本信息
-                     */
-                    DriverVersion m_driver;
-                    bool m_driverHasBeenSet;
 
                     /**
                      * CUDA版本信息
@@ -185,6 +173,18 @@ namespace TencentCloud
                      */
                     CustomDriver m_customDriver;
                     bool m_customDriverHasBeenSet;
+
+                    /**
+                     * GPU驱动版本信息
+                     */
+                    DriverVersion m_driver;
+                    bool m_driverHasBeenSet;
+
+                    /**
+                     * 是否启用MIG特性
+                     */
+                    bool m_mIGEnable;
+                    bool m_mIGEnableHasBeenSet;
 
                 };
             }

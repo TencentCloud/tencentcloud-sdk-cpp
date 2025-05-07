@@ -27,7 +27,8 @@ DescribeUserRolesRequest::DescribeUserRolesRequest() :
     m_offsetHasBeenSet(false),
     m_fuzzyHasBeenSet(false),
     m_sortByHasBeenSet(false),
-    m_sortingHasBeenSet(false)
+    m_sortingHasBeenSet(false),
+    m_isDefaultHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeUserRolesRequest::ToJsonString() const
         string key = "Sorting";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sorting.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDefaultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefault";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDefault, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeUserRolesRequest::SetSorting(const string& _sorting)
 bool DescribeUserRolesRequest::SortingHasBeenSet() const
 {
     return m_sortingHasBeenSet;
+}
+
+int64_t DescribeUserRolesRequest::GetIsDefault() const
+{
+    return m_isDefault;
+}
+
+void DescribeUserRolesRequest::SetIsDefault(const int64_t& _isDefault)
+{
+    m_isDefault = _isDefault;
+    m_isDefaultHasBeenSet = true;
+}
+
+bool DescribeUserRolesRequest::IsDefaultHasBeenSet() const
+{
+    return m_isDefaultHasBeenSet;
 }
 
 

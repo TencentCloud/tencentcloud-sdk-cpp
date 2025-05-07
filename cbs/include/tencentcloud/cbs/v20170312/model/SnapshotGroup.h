@@ -132,15 +132,31 @@ namespace TencentCloud
                     bool SnapshotIdSetHasBeenSet() const;
 
                     /**
-                     * 获取快照组状态。<br><li>NORMAL: 正常<br><li>CREATING:创建中<br><li>ROLLBACKING:回滚中
-                     * @return SnapshotGroupState 快照组状态。<br><li>NORMAL: 正常<br><li>CREATING:创建中<br><li>ROLLBACKING:回滚中
+                     * 获取<ul>
+    <li>NORMAL: 正常</li>
+    <li>CREATING: 创建中</li>
+    <li>ROLLBACKING: 回滚中</li>
+</ul>
+                     * @return SnapshotGroupState <ul>
+    <li>NORMAL: 正常</li>
+    <li>CREATING: 创建中</li>
+    <li>ROLLBACKING: 回滚中</li>
+</ul>
                      * 
                      */
                     std::string GetSnapshotGroupState() const;
 
                     /**
-                     * 设置快照组状态。<br><li>NORMAL: 正常<br><li>CREATING:创建中<br><li>ROLLBACKING:回滚中
-                     * @param _snapshotGroupState 快照组状态。<br><li>NORMAL: 正常<br><li>CREATING:创建中<br><li>ROLLBACKING:回滚中
+                     * 设置<ul>
+    <li>NORMAL: 正常</li>
+    <li>CREATING: 创建中</li>
+    <li>ROLLBACKING: 回滚中</li>
+</ul>
+                     * @param _snapshotGroupState <ul>
+    <li>NORMAL: 正常</li>
+    <li>CREATING: 创建中</li>
+    <li>ROLLBACKING: 回滚中</li>
+</ul>
                      * 
                      */
                     void SetSnapshotGroupState(const std::string& _snapshotGroupState);
@@ -324,6 +340,31 @@ namespace TencentCloud
                      */
                     bool DeadlineTimeHasBeenSet() const;
 
+                    /**
+                     * 获取来源自动快照策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoSnapshotPolicyId 来源自动快照策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAutoSnapshotPolicyId() const;
+
+                    /**
+                     * 设置来源自动快照策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoSnapshotPolicyId 来源自动快照策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
+
+                    /**
+                     * 判断参数 AutoSnapshotPolicyId 是否已赋值
+                     * @return AutoSnapshotPolicyId 是否已赋值
+                     * 
+                     */
+                    bool AutoSnapshotPolicyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -351,7 +392,11 @@ namespace TencentCloud
                     bool m_snapshotIdSetHasBeenSet;
 
                     /**
-                     * 快照组状态。<br><li>NORMAL: 正常<br><li>CREATING:创建中<br><li>ROLLBACKING:回滚中
+                     * <ul>
+    <li>NORMAL: 正常</li>
+    <li>CREATING: 创建中</li>
+    <li>ROLLBACKING: 回滚中</li>
+</ul>
                      */
                     std::string m_snapshotGroupState;
                     bool m_snapshotGroupStateHasBeenSet;
@@ -404,6 +449,13 @@ namespace TencentCloud
                      */
                     std::string m_deadlineTime;
                     bool m_deadlineTimeHasBeenSet;
+
+                    /**
+                     * 来源自动快照策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_autoSnapshotPolicyId;
+                    bool m_autoSnapshotPolicyIdHasBeenSet;
 
                 };
             }

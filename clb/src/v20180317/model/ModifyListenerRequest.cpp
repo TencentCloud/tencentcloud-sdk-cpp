@@ -39,7 +39,8 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_maxConnHasBeenSet(false),
     m_maxCpsHasBeenSet(false),
     m_idleConnectTimeoutHasBeenSet(false),
-    m_snatEnableHasBeenSet(false)
+    m_snatEnableHasBeenSet(false),
+    m_dataCompressModeHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,14 @@ string ModifyListenerRequest::ToJsonString() const
         string key = "SnatEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_snatEnable, allocator);
+    }
+
+    if (m_dataCompressModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataCompressMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataCompressMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -467,6 +476,22 @@ void ModifyListenerRequest::SetSnatEnable(const bool& _snatEnable)
 bool ModifyListenerRequest::SnatEnableHasBeenSet() const
 {
     return m_snatEnableHasBeenSet;
+}
+
+string ModifyListenerRequest::GetDataCompressMode() const
+{
+    return m_dataCompressMode;
+}
+
+void ModifyListenerRequest::SetDataCompressMode(const string& _dataCompressMode)
+{
+    m_dataCompressMode = _dataCompressMode;
+    m_dataCompressModeHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::DataCompressModeHasBeenSet() const
+{
+    return m_dataCompressModeHasBeenSet;
 }
 
 

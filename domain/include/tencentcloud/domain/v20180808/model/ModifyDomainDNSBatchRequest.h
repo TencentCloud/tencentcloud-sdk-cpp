@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取批量操作的域名。
+一次提交不超过4000个
                      * @return Domains 批量操作的域名。
+一次提交不超过4000个
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置批量操作的域名。
+一次提交不超过4000个
                      * @param _domains 批量操作的域名。
+一次提交不超过4000个
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -65,14 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取域名DNS 数组。
+不少于2个，一般建议2-6个
                      * @return Dns 域名DNS 数组。
+不少于2个，一般建议2-6个
                      * 
                      */
                     std::vector<std::string> GetDns() const;
 
                     /**
                      * 设置域名DNS 数组。
+不少于2个，一般建议2-6个
                      * @param _dns 域名DNS 数组。
+不少于2个，一般建议2-6个
                      * 
                      */
                     void SetDns(const std::vector<std::string>& _dns);
@@ -88,12 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 批量操作的域名。
+一次提交不超过4000个
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
                      * 域名DNS 数组。
+不少于2个，一般建议2-6个
                      */
                     std::vector<std::string> m_dns;
                     bool m_dnsHasBeenSet;

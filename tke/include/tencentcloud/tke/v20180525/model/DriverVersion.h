@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取GPU驱动或者CUDA的版本
-                     * @return Version GPU驱动或者CUDA的版本
-                     * 
-                     */
-                    std::string GetVersion() const;
-
-                    /**
-                     * 设置GPU驱动或者CUDA的版本
-                     * @param _version GPU驱动或者CUDA的版本
-                     * 
-                     */
-                    void SetVersion(const std::string& _version);
-
-                    /**
-                     * 判断参数 Version 是否已赋值
-                     * @return Version 是否已赋值
-                     * 
-                     */
-                    bool VersionHasBeenSet() const;
-
-                    /**
                      * 获取GPU驱动或者CUDA的名字
                      * @return Name GPU驱动或者CUDA的名字
                      * 
@@ -88,19 +67,40 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取GPU驱动或者CUDA的版本
+                     * @return Version GPU驱动或者CUDA的版本
+                     * 
+                     */
+                    std::string GetVersion() const;
 
                     /**
-                     * GPU驱动或者CUDA的版本
+                     * 设置GPU驱动或者CUDA的版本
+                     * @param _version GPU驱动或者CUDA的版本
+                     * 
                      */
-                    std::string m_version;
-                    bool m_versionHasBeenSet;
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     * 
+                     */
+                    bool VersionHasBeenSet() const;
+
+                private:
 
                     /**
                      * GPU驱动或者CUDA的名字
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * GPU驱动或者CUDA的版本
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
 
                 };
             }

@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件切片文件信息
-                     * @return Document 文件切片文件信息
+                     * 获取切片文件信息。
+                     * @return Document 切片文件信息。
                      * 
                      */
                     ChunkDocument GetDocument() const;
 
                     /**
-                     * 设置文件切片文件信息
-                     * @param _document 文件切片文件信息
+                     * 设置切片文件信息。
+                     * @param _document 切片文件信息。
                      * 
                      */
                     void SetDocument(const ChunkDocument& _document);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool DocumentHasBeenSet() const;
 
                     /**
-                     * 获取模型名称
-                     * @return ModelName 模型名称
+                     * 获取模型名称，可选模型列表：doc-chunk。
+                     * @return ModelName 模型名称，可选模型列表：doc-chunk。
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _modelName 模型名称
+                     * 设置模型名称，可选模型列表：doc-chunk。
+                     * @param _modelName 模型名称，可选模型列表：doc-chunk。
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取文件切片配置
-                     * @return Config 文件切片配置
+                     * 获取文件切片配置。
+                     * @return Config 文件切片配置。
                      * 
                      */
                     ChunkConfig GetConfig() const;
 
                     /**
-                     * 设置文件切片配置
-                     * @param _config 文件切片配置
+                     * 设置文件切片配置。
+                     * @param _config 文件切片配置。
                      * 
                      */
                     void SetConfig(const ChunkConfig& _config);
@@ -110,19 +110,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件切片文件信息
+                     * 切片文件信息。
                      */
                     ChunkDocument m_document;
                     bool m_documentHasBeenSet;
 
                     /**
-                     * 模型名称
+                     * 模型名称，可选模型列表：doc-chunk。
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 文件切片配置
+                     * 文件切片配置。
                      */
                     ChunkConfig m_config;
                     bool m_configHasBeenSet;

@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool FileTitleHasBeenSet() const;
 
                     /**
-                     * 获取	文件元信息，为jsonstring
-                     * @return FileMetaData 	文件元信息，为jsonstring
+                     * 获取文件元信息，为jsonstring
+                     * @return FileMetaData 文件元信息，为jsonstring
                      * 
                      */
                     std::string GetFileMetaData() const;
 
                     /**
-                     * 设置	文件元信息，为jsonstring
-                     * @param _fileMetaData 	文件元信息，为jsonstring
+                     * 设置文件元信息，为jsonstring
+                     * @param _fileMetaData 文件元信息，为jsonstring
                      * 
                      */
                     void SetFileMetaData(const std::string& _fileMetaData);
@@ -230,6 +230,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DocumentSetIdHasBeenSet() const;
+
+                    /**
+                     * 获取使用 regex 分割文档
+                     * @return Delimiter 使用 regex 分割文档
+                     * 
+                     */
+                    std::string GetDelimiter() const;
+
+                    /**
+                     * 设置使用 regex 分割文档
+                     * @param _delimiter 使用 regex 分割文档
+                     * 
+                     */
+                    void SetDelimiter(const std::string& _delimiter);
+
+                    /**
+                     * 判断参数 Delimiter 是否已赋值
+                     * @return Delimiter 是否已赋值
+                     * 
+                     */
+                    bool DelimiterHasBeenSet() const;
 
                 private:
 
@@ -276,7 +297,7 @@ namespace TencentCloud
                     bool m_fileTitleHasBeenSet;
 
                     /**
-                     * 	文件元信息，为jsonstring
+                     * 文件元信息，为jsonstring
                      */
                     std::string m_fileMetaData;
                     bool m_fileMetaDataHasBeenSet;
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     std::string m_documentSetId;
                     bool m_documentSetIdHasBeenSet;
+
+                    /**
+                     * 使用 regex 分割文档
+                     */
+                    std::string m_delimiter;
+                    bool m_delimiterHasBeenSet;
 
                 };
             }

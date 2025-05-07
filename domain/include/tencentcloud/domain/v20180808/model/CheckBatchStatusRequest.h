@@ -45,24 +45,20 @@ namespace TencentCloud
                     /**
                      * 获取操作日志 ID数组，最多 200 个
 可通过任意批量操作接口获取，例如：
-BatchModifyDomainInfo
-ModifyDomainDNSBatch
-ModifyDomainOwnerBatch
-UpdateProhibitionBatch
-TransferProhibitionBatch
-TransferInDomainBatch
-TransferInDomainBatchBuy
-CancelTransferOutInBatch
+[BatchModifyDomainInfo](https://cloud.tencent.com/document/product/242/49197)
+[ModifyDomainDNSBatch](https://cloud.tencent.com/document/product/242/49211)
+[ModifyDomainOwnerBatch](https://cloud.tencent.com/document/product/242/49196)
+[UpdateProhibitionBatch](https://cloud.tencent.com/document/api/242/49193)
+[TransferProhibitionBatch](https://cloud.tencent.com/document/api/242/49194)
+[TransferInDomainBatch](https://cloud.tencent.com/document/api/242/49195)
                      * @return LogIds 操作日志 ID数组，最多 200 个
 可通过任意批量操作接口获取，例如：
-BatchModifyDomainInfo
-ModifyDomainDNSBatch
-ModifyDomainOwnerBatch
-UpdateProhibitionBatch
-TransferProhibitionBatch
-TransferInDomainBatch
-TransferInDomainBatchBuy
-CancelTransferOutInBatch
+[BatchModifyDomainInfo](https://cloud.tencent.com/document/product/242/49197)
+[ModifyDomainDNSBatch](https://cloud.tencent.com/document/product/242/49211)
+[ModifyDomainOwnerBatch](https://cloud.tencent.com/document/product/242/49196)
+[UpdateProhibitionBatch](https://cloud.tencent.com/document/api/242/49193)
+[TransferProhibitionBatch](https://cloud.tencent.com/document/api/242/49194)
+[TransferInDomainBatch](https://cloud.tencent.com/document/api/242/49195)
                      * 
                      */
                     std::vector<uint64_t> GetLogIds() const;
@@ -70,24 +66,20 @@ CancelTransferOutInBatch
                     /**
                      * 设置操作日志 ID数组，最多 200 个
 可通过任意批量操作接口获取，例如：
-BatchModifyDomainInfo
-ModifyDomainDNSBatch
-ModifyDomainOwnerBatch
-UpdateProhibitionBatch
-TransferProhibitionBatch
-TransferInDomainBatch
-TransferInDomainBatchBuy
-CancelTransferOutInBatch
+[BatchModifyDomainInfo](https://cloud.tencent.com/document/product/242/49197)
+[ModifyDomainDNSBatch](https://cloud.tencent.com/document/product/242/49211)
+[ModifyDomainOwnerBatch](https://cloud.tencent.com/document/product/242/49196)
+[UpdateProhibitionBatch](https://cloud.tencent.com/document/api/242/49193)
+[TransferProhibitionBatch](https://cloud.tencent.com/document/api/242/49194)
+[TransferInDomainBatch](https://cloud.tencent.com/document/api/242/49195)
                      * @param _logIds 操作日志 ID数组，最多 200 个
 可通过任意批量操作接口获取，例如：
-BatchModifyDomainInfo
-ModifyDomainDNSBatch
-ModifyDomainOwnerBatch
-UpdateProhibitionBatch
-TransferProhibitionBatch
-TransferInDomainBatch
-TransferInDomainBatchBuy
-CancelTransferOutInBatch
+[BatchModifyDomainInfo](https://cloud.tencent.com/document/product/242/49197)
+[ModifyDomainDNSBatch](https://cloud.tencent.com/document/product/242/49211)
+[ModifyDomainOwnerBatch](https://cloud.tencent.com/document/product/242/49196)
+[UpdateProhibitionBatch](https://cloud.tencent.com/document/api/242/49193)
+[TransferProhibitionBatch](https://cloud.tencent.com/document/api/242/49194)
+[TransferInDomainBatch](https://cloud.tencent.com/document/api/242/49195)
                      * 
                      */
                     void SetLogIds(const std::vector<uint64_t>& _logIds);
@@ -104,14 +96,12 @@ CancelTransferOutInBatch
                     /**
                      * 操作日志 ID数组，最多 200 个
 可通过任意批量操作接口获取，例如：
-BatchModifyDomainInfo
-ModifyDomainDNSBatch
-ModifyDomainOwnerBatch
-UpdateProhibitionBatch
-TransferProhibitionBatch
-TransferInDomainBatch
-TransferInDomainBatchBuy
-CancelTransferOutInBatch
+[BatchModifyDomainInfo](https://cloud.tencent.com/document/product/242/49197)
+[ModifyDomainDNSBatch](https://cloud.tencent.com/document/product/242/49211)
+[ModifyDomainOwnerBatch](https://cloud.tencent.com/document/product/242/49196)
+[UpdateProhibitionBatch](https://cloud.tencent.com/document/api/242/49193)
+[TransferProhibitionBatch](https://cloud.tencent.com/document/api/242/49194)
+[TransferInDomainBatch](https://cloud.tencent.com/document/api/242/49195)
                      */
                     std::vector<uint64_t> m_logIds;
                     bool m_logIdsHasBeenSet;

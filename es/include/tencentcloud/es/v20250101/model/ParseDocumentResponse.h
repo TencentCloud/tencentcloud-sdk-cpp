@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取进度
-                     * @return Progress 进度
+                     * 获取进度：0-100。
+                     * @return Progress 进度：0-100。
                      * 
                      */
                     std::string GetProgress() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取 解析文件结果
-                     * @return DocumentParseResultUrl  解析文件结果
+                     * 获取 解析文件结果。
+                     * @return DocumentParseResultUrl  解析文件结果。
                      * 
                      */
                     std::string GetDocumentParseResultUrl() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool DocumentParseResultUrlHasBeenSet() const;
 
                     /**
-                     * 获取失败页码
-                     * @return FailedPages 失败页码
+                     * 获取失败页码。
+                     * @return FailedPages 失败页码。
                      * 
                      */
                     std::vector<int64_t> GetFailedPages() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 进度
+                     * 进度：0-100。
                      */
                     std::string m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     *  解析文件结果
+                     *  解析文件结果。
                      */
                     std::string m_documentParseResultUrl;
                     bool m_documentParseResultUrlHasBeenSet;
 
                     /**
-                     * 失败页码
+                     * 失败页码。
                      */
                     std::vector<int64_t> m_failedPages;
                     bool m_failedPagesHasBeenSet;

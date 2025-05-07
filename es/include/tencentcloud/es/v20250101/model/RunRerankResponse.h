@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输出结果集
-                     * @return Data 输出结果集
+                     * 获取输出结果集。
+                     * @return Data 输出结果集。
                      * 
                      */
                     std::vector<RerankResult> GetData() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取消耗token数量
-                     * @return Usage 消耗token数量
+                     * 获取消耗token数量。
+                     * @return Usage 消耗token数量。
                      * 
                      */
                     Usage GetUsage() const;
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输出结果集
+                     * 输出结果集。
                      */
                     std::vector<RerankResult> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 消耗token数量
+                     * 消耗token数量。
                      */
                     Usage m_usage;
                     bool m_usageHasBeenSet;

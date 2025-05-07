@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态
-                     * @return Status 任务状态
+                     * 获取任务状态，-1：失败，0：运行中，1：成功。
+                     * @return Status 任务状态，-1：失败，0：运行中，1：成功。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取结果文件
-                     * @return DocumentParseResultUrl 结果文件
+                     * 获取结果文件。
+                     * @return DocumentParseResultUrl 结果文件。
                      * 
                      */
                     std::string GetDocumentParseResultUrl() const;
@@ -72,9 +72,9 @@ namespace TencentCloud
                     bool DocumentParseResultUrlHasBeenSet() const;
 
                     /**
-                     * 获取失败的页码
+                     * 获取失败的页码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FailedPages 失败的页码
+                     * @return FailedPages 失败的页码。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -90,19 +90,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务状态
+                     * 任务状态，-1：失败，0：运行中，1：成功。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 结果文件
+                     * 结果文件。
                      */
                     std::string m_documentParseResultUrl;
                     bool m_documentParseResultUrlHasBeenSet;
 
                     /**
-                     * 失败的页码
+                     * 失败的页码。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_failedPages;

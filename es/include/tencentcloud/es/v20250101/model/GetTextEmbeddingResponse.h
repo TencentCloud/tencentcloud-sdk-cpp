@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取消耗token数量
-                     * @return Usage 消耗token数量
+                     * 获取向量化消耗的token数量。
+                     * @return Usage 向量化消耗的token数量。
                      * 
                      */
                     Usage GetUsage() const;
@@ -82,7 +82,7 @@ namespace TencentCloud
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 消耗token数量
+                     * 向量化消耗的token数量。
                      */
                     Usage m_usage;
                     bool m_usageHasBeenSet;

@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器协议
-                     * @return Protocol 监听器协议
+                     * 获取监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC
+                     * @return Protocol 监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置监听器协议
-                     * @param _protocol 监听器协议
+                     * 设置监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC
+                     * @param _protocol 监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取监听器端口
-                     * @return Port 监听器端口
+                     * 获取监听器端口，端口范围：1-65535
+                     * @return Port 监听器端口，端口范围：1-65535
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置监听器端口
-                     * @param _port 监听器端口
+                     * 设置监听器端口，端口范围：1-65535
+                     * @param _port 监听器端口，端口范围：1-65535
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -189,18 +189,18 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间
+                     * 获取会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SessionExpireTime 会话保持时间
+                     * @return SessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
-                     * 设置会话保持时间
+                     * 设置会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sessionExpireTime 会话保持时间
+                     * @param _sessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -302,15 +302,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取端口段结束端口
-                     * @return EndPort 端口段结束端口
+                     * 获取端口段结束端口，端口范围：2-65535
+                     * @return EndPort 端口段结束端口，端口范围：2-65535
                      * 
                      */
                     int64_t GetEndPort() const;
 
                     /**
-                     * 设置端口段结束端口
-                     * @param _endPort 端口段结束端口
+                     * 设置端口段结束端口，端口范围：2-65535
+                     * @param _endPort 端口段结束端口，端口范围：2-65535
                      * 
                      */
                     void SetEndPort(const int64_t& _endPort);
@@ -323,18 +323,18 @@ namespace TencentCloud
                     bool EndPortHasBeenSet() const;
 
                     /**
-                     * 获取后端服务器类型
+                     * 获取后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetType 后端服务器类型
+                     * @return TargetType 后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置后端服务器类型
+                     * 设置后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetType 后端服务器类型
+                     * @param _targetType 后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -624,13 +624,13 @@ namespace TencentCloud
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 监听器协议
+                     * 监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 监听器端口
+                     * 监听器端口，端口范围：1-65535
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
@@ -657,7 +657,7 @@ namespace TencentCloud
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 会话保持时间
+                     * 会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sessionExpireTime;
@@ -689,13 +689,13 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 端口段结束端口
+                     * 端口段结束端口，端口范围：2-65535
                      */
                     int64_t m_endPort;
                     bool m_endPortHasBeenSet;
 
                     /**
-                     * 后端服务器类型
+                     * 后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetType;

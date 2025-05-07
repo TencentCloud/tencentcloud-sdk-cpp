@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
+可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)
                      * @return Domain 域名
+可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
+可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)
                      * @param _domain 域名
+可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -67,6 +71,7 @@ namespace TencentCloud
 
                     /**
                      * 域名
+可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

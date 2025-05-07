@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型名称
-                     * @return ModelName 模型名称
+                     * 获取模型名称，可选模型列表：bge-base-zh-v1.5,conan-embedding-v1,bge-m3,KaLM-embedding-multilingual-mini-v1。
+                     * @return ModelName 模型名称，可选模型列表：bge-base-zh-v1.5,conan-embedding-v1,bge-m3,KaLM-embedding-multilingual-mini-v1。
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _modelName 模型名称
+                     * 设置模型名称，可选模型列表：bge-base-zh-v1.5,conan-embedding-v1,bge-m3,KaLM-embedding-multilingual-mini-v1。
+                     * @param _modelName 模型名称，可选模型列表：bge-base-zh-v1.5,conan-embedding-v1,bge-m3,KaLM-embedding-multilingual-mini-v1。
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取需进行向量化的文本集
-                     * @return Texts 需进行向量化的文本集
+                     * 获取需进行向量化的文本集。
+                     * @return Texts 需进行向量化的文本集。
                      * 
                      */
                     std::vector<std::string> GetTexts() const;
 
                     /**
-                     * 设置需进行向量化的文本集
-                     * @param _texts 需进行向量化的文本集
+                     * 设置需进行向量化的文本集。
+                     * @param _texts 需进行向量化的文本集。
                      * 
                      */
                     void SetTexts(const std::vector<std::string>& _texts);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型名称
+                     * 模型名称，可选模型列表：bge-base-zh-v1.5,conan-embedding-v1,bge-m3,KaLM-embedding-multilingual-mini-v1。
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 需进行向量化的文本集
+                     * 需进行向量化的文本集。
                      */
                     std::vector<std::string> m_texts;
                     bool m_textsHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceRoute 路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceRoute GetInstanceRoute() const;
 
                     /**
                      * 设置路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceRoute 路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceRoute(const InstanceRoute& _instanceRoute);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupIds 关联的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置关联的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroupIds 关联的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ckafka集群实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName ckafka集群实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置ckafka集群实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName ckafka集群实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 路由vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置路由vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 路由vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip 路由vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置路由vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip 路由vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -176,35 +156,30 @@ namespace TencentCloud
 
                     /**
                      * 路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceRoute m_instanceRoute;
                     bool m_instanceRouteHasBeenSet;
 
                     /**
                      * 关联的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
                      * ckafka集群实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 路由vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 路由vip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;

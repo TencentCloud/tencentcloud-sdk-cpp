@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件类型
-                     * @return FileType 文件类型
+                     * 获取文件类型，支持 MD，TXT 格式。
+                     * @return FileType 文件类型，支持 MD，TXT 格式。
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置文件类型
-                     * @param _fileType 文件类型
+                     * 设置文件类型，支持 MD，TXT 格式。
+                     * @param _fileType 文件类型，支持 MD，TXT 格式。
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取文件的 base64值
-                     * @return FileContent 文件的 base64值
+                     * 获取文本原文，使用字符串格式输入。
+                     * @return FileContent 文本原文，使用字符串格式输入。
                      * 
                      */
                     std::string GetFileContent() const;
 
                     /**
-                     * 设置文件的 base64值
-                     * @param _fileContent 文件的 base64值
+                     * 设置文本原文，使用字符串格式输入。
+                     * @param _fileContent 文本原文，使用字符串格式输入。
                      * 
                      */
                     void SetFileContent(const std::string& _fileContent);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件类型
+                     * 文件类型，支持 MD，TXT 格式。
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * 文件的 base64值
+                     * 文本原文，使用字符串格式输入。
                      */
                     std::string m_fileContent;
                     bool m_fileContentHasBeenSet;

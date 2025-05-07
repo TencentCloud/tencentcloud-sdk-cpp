@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例ID。
-                     * @return LoadBalancerId 负载均衡实例ID。
+                     * 获取负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口查询。
+                     * @return LoadBalancerId 负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口查询。
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例ID。
-                     * @param _loadBalancerId 负载均衡实例ID。
+                     * 设置负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口查询。
+                     * @param _loadBalancerId 负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口查询。
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器ID。
-                     * @return ListenerId 负载均衡监听器ID。
+                     * 获取负载均衡监听器ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
+                     * @return ListenerId 负载均衡监听器ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置负载均衡监听器ID。
-                     * @param _listenerId 负载均衡监听器ID。
+                     * 设置负载均衡监听器ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
+                     * @param _listenerId 负载均衡监听器ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取新的监听器名称。
-                     * @return ListenerName 新的监听器名称。
+                     * 获取新的监听器名称，最大长度255。
+                     * @return ListenerName 新的监听器名称，最大长度255。
                      * 
                      */
                     std::string GetListenerName() const;
 
                     /**
-                     * 设置新的监听器名称。
-                     * @param _listenerName 新的监听器名称。
+                     * 设置新的监听器名称，最大长度255。
+                     * @param _listenerName 新的监听器名称，最大长度255。
                      * 
                      */
                     void SetListenerName(const std::string& _listenerName);
@@ -172,10 +172,10 @@ namespace TencentCloud
                     bool CertificateHasBeenSet() const;
 
                     /**
-                     * 获取监听器转发的方式。可选值：WRR、LEAST_CONN
+                     * 获取监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）、IP_HASH（按 IP 地址哈希）
 分别表示按权重轮询、最小连接数， 默认为 WRR。
 使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。七层监听器的均衡方式应在转发规则中修改。
-                     * @return Scheduler 监听器转发的方式。可选值：WRR、LEAST_CONN
+                     * @return Scheduler 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）、IP_HASH（按 IP 地址哈希）
 分别表示按权重轮询、最小连接数， 默认为 WRR。
 使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。七层监听器的均衡方式应在转发规则中修改。
                      * 
@@ -183,10 +183,10 @@ namespace TencentCloud
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置监听器转发的方式。可选值：WRR、LEAST_CONN
+                     * 设置监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）、IP_HASH（按 IP 地址哈希）
 分别表示按权重轮询、最小连接数， 默认为 WRR。
 使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。七层监听器的均衡方式应在转发规则中修改。
-                     * @param _scheduler 监听器转发的方式。可选值：WRR、LEAST_CONN
+                     * @param _scheduler 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）、IP_HASH（按 IP 地址哈希）
 分别表示按权重轮询、最小连接数， 默认为 WRR。
 使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。七层监听器的均衡方式应在转发规则中修改。
                      * 
@@ -245,8 +245,10 @@ namespace TencentCloud
                     /**
                      * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
 默认值0表示不开启，1表示开启。
+若后端服务对连接数上限有限制，则建议谨慎开启。此功能目前处于内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/tsodp6qm21)。
                      * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
 默认值0表示不开启，1表示开启。
+若后端服务对连接数上限有限制，则建议谨慎开启。此功能目前处于内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/tsodp6qm21)。
                      * 
                      */
                     int64_t GetKeepaliveEnable() const;
@@ -254,8 +256,10 @@ namespace TencentCloud
                     /**
                      * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
 默认值0表示不开启，1表示开启。
+若后端服务对连接数上限有限制，则建议谨慎开启。此功能目前处于内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/tsodp6qm21)。
                      * @param _keepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
 默认值0表示不开启，1表示开启。
+若后端服务对连接数上限有限制，则建议谨慎开启。此功能目前处于内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/tsodp6qm21)。
                      * 
                      */
                     void SetKeepaliveEnable(const int64_t& _keepaliveEnable);
@@ -269,14 +273,18 @@ namespace TencentCloud
 
                     /**
                      * 获取解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                      * @return DeregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                      * 
                      */
                     bool GetDeregisterTargetRst() const;
 
                     /**
                      * 设置解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                      * @param _deregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                      * 
                      */
                     void SetDeregisterTargetRst(const bool& _deregisterTargetRst);
@@ -291,8 +299,10 @@ namespace TencentCloud
                     /**
                      * 获取会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
 使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。
+默认为 NORMAL。
                      * @return SessionType 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
 使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。
+默认为 NORMAL。
                      * 
                      */
                     std::string GetSessionType() const;
@@ -300,8 +310,10 @@ namespace TencentCloud
                     /**
                      * 设置会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
 使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。
+默认为 NORMAL。
                      * @param _sessionType 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
 使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。
+默认为 NORMAL。
                      * 
                      */
                     void SetSessionType(const std::string& _sessionType);
@@ -336,14 +348,18 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器粒度并发连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格并发连接上限，其中-1表示关闭监听器粒度并发连接数限速。基础网络实例不支持该参数。
+默认为 -1，表示不限速。
                      * @return MaxConn 监听器粒度并发连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格并发连接上限，其中-1表示关闭监听器粒度并发连接数限速。基础网络实例不支持该参数。
+默认为 -1，表示不限速。
                      * 
                      */
                     int64_t GetMaxConn() const;
 
                     /**
                      * 设置监听器粒度并发连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格并发连接上限，其中-1表示关闭监听器粒度并发连接数限速。基础网络实例不支持该参数。
+默认为 -1，表示不限速。
                      * @param _maxConn 监听器粒度并发连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格并发连接上限，其中-1表示关闭监听器粒度并发连接数限速。基础网络实例不支持该参数。
+默认为 -1，表示不限速。
                      * 
                      */
                     void SetMaxConn(const int64_t& _maxConn);
@@ -357,14 +373,18 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器粒度新建连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格新建连接上限，其中-1表示关闭监听器粒度新建连接数限速。基础网络实例不支持该参数。
+默认为 -1 表示不限速。
                      * @return MaxCps 监听器粒度新建连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格新建连接上限，其中-1表示关闭监听器粒度新建连接数限速。基础网络实例不支持该参数。
+默认为 -1 表示不限速。
                      * 
                      */
                     int64_t GetMaxCps() const;
 
                     /**
                      * 设置监听器粒度新建连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格新建连接上限，其中-1表示关闭监听器粒度新建连接数限速。基础网络实例不支持该参数。
+默认为 -1 表示不限速。
                      * @param _maxCps 监听器粒度新建连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格新建连接上限，其中-1表示关闭监听器粒度新建连接数限速。基础网络实例不支持该参数。
+默认为 -1 表示不限速。
                      * 
                      */
                     void SetMaxCps(const int64_t& _maxCps);
@@ -377,15 +397,15 @@ namespace TencentCloud
                     bool MaxCpsHasBeenSet() const;
 
                     /**
-                     * 获取空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~2000。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。
-                     * @return IdleConnectTimeout 空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~2000。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。
+                     * 获取空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~1980。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。
+                     * @return IdleConnectTimeout 空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~1980。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。
                      * 
                      */
                     int64_t GetIdleConnectTimeout() const;
 
                     /**
-                     * 设置空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~2000。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。
-                     * @param _idleConnectTimeout 空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~2000。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。
+                     * 设置空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~1980。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。
+                     * @param _idleConnectTimeout 空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~1980。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。
                      * 
                      */
                     void SetIdleConnectTimeout(const int64_t& _idleConnectTimeout);
@@ -398,15 +418,15 @@ namespace TencentCloud
                     bool IdleConnectTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SNAT。
-                     * @return SnatEnable 是否开启SNAT。
+                     * 获取是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
+                     * @return SnatEnable 是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
                      * 
                      */
                     bool GetSnatEnable() const;
 
                     /**
-                     * 设置是否开启SNAT。
-                     * @param _snatEnable 是否开启SNAT。
+                     * 设置是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
+                     * @param _snatEnable 是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
                      * 
                      */
                     void SetSnatEnable(const bool& _snatEnable);
@@ -418,22 +438,43 @@ namespace TencentCloud
                      */
                     bool SnatEnableHasBeenSet() const;
 
+                    /**
+                     * 获取数据压缩模式
+                     * @return DataCompressMode 数据压缩模式
+                     * 
+                     */
+                    std::string GetDataCompressMode() const;
+
+                    /**
+                     * 设置数据压缩模式
+                     * @param _dataCompressMode 数据压缩模式
+                     * 
+                     */
+                    void SetDataCompressMode(const std::string& _dataCompressMode);
+
+                    /**
+                     * 判断参数 DataCompressMode 是否已赋值
+                     * @return DataCompressMode 是否已赋值
+                     * 
+                     */
+                    bool DataCompressModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 负载均衡实例ID。
+                     * 负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口查询。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡监听器ID。
+                     * 负载均衡监听器ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口查询。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 新的监听器名称。
+                     * 新的监听器名称，最大长度255。
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
@@ -457,7 +498,7 @@ namespace TencentCloud
                     bool m_certificateHasBeenSet;
 
                     /**
-                     * 监听器转发的方式。可选值：WRR、LEAST_CONN
+                     * 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）、IP_HASH（按 IP 地址哈希）
 分别表示按权重轮询、最小连接数， 默认为 WRR。
 使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。七层监听器的均衡方式应在转发规则中修改。
                      */
@@ -479,12 +520,14 @@ namespace TencentCloud
                     /**
                      * 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
 默认值0表示不开启，1表示开启。
+若后端服务对连接数上限有限制，则建议谨慎开启。此功能目前处于内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/tsodp6qm21)。
                      */
                     int64_t m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;
 
                     /**
                      * 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                      */
                     bool m_deregisterTargetRst;
                     bool m_deregisterTargetRstHasBeenSet;
@@ -492,6 +535,7 @@ namespace TencentCloud
                     /**
                      * 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
 使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。
+默认为 NORMAL。
                      */
                     std::string m_sessionType;
                     bool m_sessionTypeHasBeenSet;
@@ -504,27 +548,35 @@ namespace TencentCloud
 
                     /**
                      * 监听器粒度并发连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格并发连接上限，其中-1表示关闭监听器粒度并发连接数限速。基础网络实例不支持该参数。
+默认为 -1，表示不限速。
                      */
                     int64_t m_maxConn;
                     bool m_maxConnHasBeenSet;
 
                     /**
                      * 监听器粒度新建连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格新建连接上限，其中-1表示关闭监听器粒度新建连接数限速。基础网络实例不支持该参数。
+默认为 -1 表示不限速。
                      */
                     int64_t m_maxCps;
                     bool m_maxCpsHasBeenSet;
 
                     /**
-                     * 空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~2000。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。
+                     * 空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~1980。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。
                      */
                     int64_t m_idleConnectTimeout;
                     bool m_idleConnectTimeoutHasBeenSet;
 
                     /**
-                     * 是否开启SNAT。
+                     * 是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
                      */
                     bool m_snatEnable;
                     bool m_snatEnableHasBeenSet;
+
+                    /**
+                     * 数据压缩模式
+                     */
+                    std::string m_dataCompressMode;
+                    bool m_dataCompressModeHasBeenSet;
 
                 };
             }

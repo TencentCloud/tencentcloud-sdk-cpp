@@ -257,6 +257,27 @@ namespace TencentCloud
                      */
                     bool PermissionJsonHasBeenSet() const;
 
+                    /**
+                     * 获取是否设置为常驻：1非常驻（默认）、2常驻（仅能设置一个常驻）
+                     * @return IsDefault 是否设置为常驻：1非常驻（默认）、2常驻（仅能设置一个常驻）
+                     * 
+                     */
+                    int64_t GetIsDefault() const;
+
+                    /**
+                     * 设置是否设置为常驻：1非常驻（默认）、2常驻（仅能设置一个常驻）
+                     * @param _isDefault 是否设置为常驻：1非常驻（默认）、2常驻（仅能设置一个常驻）
+                     * 
+                     */
+                    void SetIsDefault(const int64_t& _isDefault);
+
+                    /**
+                     * 判断参数 IsDefault 是否已赋值
+                     * @return IsDefault 是否已赋值
+                     * 
+                     */
+                    bool IsDefaultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +339,12 @@ namespace TencentCloud
                      */
                     std::string m_permissionJson;
                     bool m_permissionJsonHasBeenSet;
+
+                    /**
+                     * 是否设置为常驻：1非常驻（默认）、2常驻（仅能设置一个常驻）
+                     */
+                    int64_t m_isDefault;
+                    bool m_isDefaultHasBeenSet;
 
                 };
             }

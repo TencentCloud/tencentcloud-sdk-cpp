@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制
-                     * @return Messages 会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制
+                     * 获取会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。
+                     * @return Messages 会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。
                      * 
                      */
                     std::vector<Message> GetMessages() const;
 
                     /**
-                     * 设置会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制
-                     * @param _messages 会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制
+                     * 设置会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。
+                     * @param _messages 会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。
                      * 
                      */
                     void SetMessages(const std::vector<Message>& _messages);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool MessagesHasBeenSet() const;
 
                     /**
-                     * 获取模型名称
-                     * @return ModelName 模型名称
+                     * 获取模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。
+                     * @return ModelName 模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _modelName 模型名称
+                     * 设置模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。
+                     * @param _modelName 模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取是否以流式接口的形式返回数据，默认true
-                     * @return Stream 是否以流式接口的形式返回数据，默认true
+                     * 获取是否以流式接口的形式返回数据，默认true。
+                     * @return Stream 是否以流式接口的形式返回数据，默认true。
                      * 
                      */
                     bool GetStream() const;
 
                     /**
-                     * 设置是否以流式接口的形式返回数据，默认true
-                     * @param _stream 是否以流式接口的形式返回数据，默认true
+                     * 设置是否以流式接口的形式返回数据，默认true。
+                     * @param _stream 是否以流式接口的形式返回数据，默认true。
                      * 
                      */
                     void SetStream(const bool& _stream);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool StreamHasBeenSet() const;
 
                     /**
-                     * 获取取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 
-                     * @return TopP 取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 
+                     * 获取取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。
+                     * @return TopP 取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。
                      * 
                      */
                     double GetTopP() const;
 
                     /**
-                     * 设置取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 
-                     * @param _topP 取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 
+                     * 设置取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。
+                     * @param _topP 取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。
                      * 
                      */
                     void SetTopP(const double& _topP);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool TopPHasBeenSet() const;
 
                     /**
-                     * 获取取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 
-                     * @return Temperature 取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 
+                     * 获取取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。
+                     * @return Temperature 取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。
                      * 
                      */
                     double GetTemperature() const;
 
                     /**
-                     * 设置取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 
-                     * @param _temperature 取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 
+                     * 设置取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。
+                     * @param _temperature 取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。
                      * 
                      */
                     void SetTemperature(const double& _temperature);
@@ -194,31 +194,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制
+                     * 会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。
                      */
                     std::vector<Message> m_messages;
                     bool m_messagesHasBeenSet;
 
                     /**
-                     * 模型名称
+                     * 模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 是否以流式接口的形式返回数据，默认true
+                     * 是否以流式接口的形式返回数据，默认true。
                      */
                     bool m_stream;
                     bool m_streamHasBeenSet;
 
                     /**
-                     * 取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 
+                     * 取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。
                      */
                     double m_topP;
                     bool m_topPHasBeenSet;
 
                     /**
-                     * 取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 
+                     * 取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。
                      */
                     double m_temperature;
                     bool m_temperatureHasBeenSet;

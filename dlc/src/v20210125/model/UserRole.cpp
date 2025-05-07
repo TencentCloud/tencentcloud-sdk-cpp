@@ -30,7 +30,8 @@ UserRole::UserRole() :
     m_roleNameHasBeenSet(false),
     m_creatorHasBeenSet(false),
     m_cosPermissionListHasBeenSet(false),
-    m_permissionJsonHasBeenSet(false)
+    m_permissionJsonHasBeenSet(false),
+    m_isDefaultHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome UserRole::Deserialize(const rapidjson::Value &value)
         m_permissionJsonHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDefault") && !value["IsDefault"].IsNull())
+    {
+        if (!value["IsDefault"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserRole.IsDefault` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDefault = value["IsDefault"].GetInt64();
+        m_isDefaultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void UserRole::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "PermissionJson";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_permissionJson.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDefaultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefault";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDefault, allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void UserRole::SetPermissionJson(const string& _permissionJson)
 bool UserRole::PermissionJsonHasBeenSet() const
 {
     return m_permissionJsonHasBeenSet;
+}
+
+int64_t UserRole::GetIsDefault() const
+{
+    return m_isDefault;
+}
+
+void UserRole::SetIsDefault(const int64_t& _isDefault)
+{
+    m_isDefault = _isDefault;
+    m_isDefaultHasBeenSet = true;
+}
+
+bool UserRole::IsDefaultHasBeenSet() const
+{
+    return m_isDefaultHasBeenSet;
 }
 

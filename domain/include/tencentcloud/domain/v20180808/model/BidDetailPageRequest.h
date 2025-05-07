@@ -44,18 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取预约ID
-可通过DescribeBiddingList接口获取
+可通过[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)接口获取
                      * @return BusinessId 预约ID
-可通过DescribeBiddingList接口获取
+可通过[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)接口获取
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 设置预约ID
-可通过DescribeBiddingList接口获取
+可通过[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)接口获取
                      * @param _businessId 预约ID
-可通过DescribeBiddingList接口获取
+可通过[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)接口获取
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -71,7 +71,7 @@ namespace TencentCloud
 
                     /**
                      * 预约ID
-可通过DescribeBiddingList接口获取
+可通过[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)接口获取
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;

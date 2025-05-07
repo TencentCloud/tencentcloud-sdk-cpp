@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型名称
-                     * @return ModelName 模型名称
+                     * 获取模型名称，可选模型列表：bge-reranker-large，bge-reranker-v2-m3。
+                     * @return ModelName 模型名称，可选模型列表：bge-reranker-large，bge-reranker-v2-m3。
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _modelName 模型名称
+                     * 设置模型名称，可选模型列表：bge-reranker-large，bge-reranker-v2-m3。
+                     * @param _modelName 模型名称，可选模型列表：bge-reranker-large，bge-reranker-v2-m3。
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取查询文本
-                     * @return Query 查询文本
+                     * 获取查询文本。
+                     * @return Query 查询文本。
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询文本
-                     * @param _query 查询文本
+                     * 设置查询文本。
+                     * @param _query 查询文本。
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取待排序的候选doc列表
-                     * @return Documents 待排序的候选doc列表
+                     * 获取待排序的候选doc列表。
+                     * @return Documents 待排序的候选doc列表。
                      * 
                      */
                     std::vector<std::string> GetDocuments() const;
 
                     /**
-                     * 设置待排序的候选doc列表
-                     * @param _documents 待排序的候选doc列表
+                     * 设置待排序的候选doc列表。
+                     * @param _documents 待排序的候选doc列表。
                      * 
                      */
                     void SetDocuments(const std::vector<std::string>& _documents);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DocumentsHasBeenSet() const;
 
                     /**
-                     * 获取排序返回的top文档数量, 如果没有指定则返回全部候选doc，如果指定的top_n值大于输入的候选doc数量，返回全部doc
-                     * @return TopN 排序返回的top文档数量, 如果没有指定则返回全部候选doc，如果指定的top_n值大于输入的候选doc数量，返回全部doc
+                     * 获取排序返回的top文档数量, 如果没有指定则返回全部候选doc，如果指定的top_n值大于输入的候选doc数量，返回全部doc。
+                     * @return TopN 排序返回的top文档数量, 如果没有指定则返回全部候选doc，如果指定的top_n值大于输入的候选doc数量，返回全部doc。
                      * 
                      */
                     int64_t GetTopN() const;
 
                     /**
-                     * 设置排序返回的top文档数量, 如果没有指定则返回全部候选doc，如果指定的top_n值大于输入的候选doc数量，返回全部doc
-                     * @param _topN 排序返回的top文档数量, 如果没有指定则返回全部候选doc，如果指定的top_n值大于输入的候选doc数量，返回全部doc
+                     * 设置排序返回的top文档数量, 如果没有指定则返回全部候选doc，如果指定的top_n值大于输入的候选doc数量，返回全部doc。
+                     * @param _topN 排序返回的top文档数量, 如果没有指定则返回全部候选doc，如果指定的top_n值大于输入的候选doc数量，返回全部doc。
                      * 
                      */
                     void SetTopN(const int64_t& _topN);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TopNHasBeenSet() const;
 
                     /**
-                     * 获取返回的排序结果列表里面是否返回每一条document原文，默认值False
-                     * @return ReturnDocuments 返回的排序结果列表里面是否返回每一条document原文，默认值False
+                     * 获取返回的排序结果列表里面是否返回每一条document原文，默认值False。
+                     * @return ReturnDocuments 返回的排序结果列表里面是否返回每一条document原文，默认值False。
                      * 
                      */
                     bool GetReturnDocuments() const;
 
                     /**
-                     * 设置返回的排序结果列表里面是否返回每一条document原文，默认值False
-                     * @param _returnDocuments 返回的排序结果列表里面是否返回每一条document原文，默认值False
+                     * 设置返回的排序结果列表里面是否返回每一条document原文，默认值False。
+                     * @param _returnDocuments 返回的排序结果列表里面是否返回每一条document原文，默认值False。
                      * 
                      */
                     void SetReturnDocuments(const bool& _returnDocuments);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型名称
+                     * 模型名称，可选模型列表：bge-reranker-large，bge-reranker-v2-m3。
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 查询文本
+                     * 查询文本。
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 待排序的候选doc列表
+                     * 待排序的候选doc列表。
                      */
                     std::vector<std::string> m_documents;
                     bool m_documentsHasBeenSet;
 
                     /**
-                     * 排序返回的top文档数量, 如果没有指定则返回全部候选doc，如果指定的top_n值大于输入的候选doc数量，返回全部doc
+                     * 排序返回的top文档数量, 如果没有指定则返回全部候选doc，如果指定的top_n值大于输入的候选doc数量，返回全部doc。
                      */
                     int64_t m_topN;
                     bool m_topNHasBeenSet;
 
                     /**
-                     * 返回的排序结果列表里面是否返回每一条document原文，默认值False
+                     * 返回的排序结果列表里面是否返回每一条document原文，默认值False。
                      */
                     bool m_returnDocuments;
                     bool m_returnDocumentsHasBeenSet;

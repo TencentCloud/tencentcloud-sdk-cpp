@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TargetGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取权重
-                     * @return Weight 权重
+                     * 获取目标组权重
+                     * @return Weight 目标组权重
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置权重
-                     * @param _weight 权重
+                     * 设置目标组权重
+                     * @param _weight 目标组权重
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_targetGroupNameHasBeenSet;
 
                     /**
-                     * 权重
+                     * 目标组权重
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

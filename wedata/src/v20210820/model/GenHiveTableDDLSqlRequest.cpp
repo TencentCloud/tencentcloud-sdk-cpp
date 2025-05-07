@@ -48,7 +48,9 @@ GenHiveTableDDLSqlRequest::GenHiveTableDDLSqlRequest() :
     m_tableBaseInfoHasBeenSet(false),
     m_sinkSchemaNameHasBeenSet(false),
     m_envHasBeenSet(false),
-    m_writeModeHasBeenSet(false)
+    m_writeModeHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_sinkTableNameHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,22 @@ string GenHiveTableDDLSqlRequest::ToJsonString() const
         string key = "WriteMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_writeMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_sinkTableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SinkTableName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sinkTableName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -716,6 +734,38 @@ void GenHiveTableDDLSqlRequest::SetWriteMode(const string& _writeMode)
 bool GenHiveTableDDLSqlRequest::WriteModeHasBeenSet() const
 {
     return m_writeModeHasBeenSet;
+}
+
+int64_t GenHiveTableDDLSqlRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void GenHiveTableDDLSqlRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+string GenHiveTableDDLSqlRequest::GetSinkTableName() const
+{
+    return m_sinkTableName;
+}
+
+void GenHiveTableDDLSqlRequest::SetSinkTableName(const string& _sinkTableName)
+{
+    m_sinkTableName = _sinkTableName;
+    m_sinkTableNameHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::SinkTableNameHasBeenSet() const
+{
+    return m_sinkTableNameHasBeenSet;
 }
 
 

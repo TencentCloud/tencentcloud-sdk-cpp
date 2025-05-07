@@ -21,11 +21,11 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 GPUArgs::GPUArgs() :
-    m_mIGEnableHasBeenSet(false),
-    m_driverHasBeenSet(false),
     m_cUDAHasBeenSet(false),
     m_cUDNNHasBeenSet(false),
-    m_customDriverHasBeenSet(false)
+    m_customDriverHasBeenSet(false),
+    m_driverHasBeenSet(false),
+    m_mIGEnableHasBeenSet(false)
 {
 }
 
@@ -33,33 +33,6 @@ CoreInternalOutcome GPUArgs::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("MIGEnable") && !value["MIGEnable"].IsNull())
-    {
-        if (!value["MIGEnable"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `GPUArgs.MIGEnable` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_mIGEnable = value["MIGEnable"].GetBool();
-        m_mIGEnableHasBeenSet = true;
-    }
-
-    if (value.HasMember("Driver") && !value["Driver"].IsNull())
-    {
-        if (!value["Driver"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `GPUArgs.Driver` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_driver.Deserialize(value["Driver"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_driverHasBeenSet = true;
-    }
 
     if (value.HasMember("CUDA") && !value["CUDA"].IsNull())
     {
@@ -112,29 +85,39 @@ CoreInternalOutcome GPUArgs::Deserialize(const rapidjson::Value &value)
         m_customDriverHasBeenSet = true;
     }
 
+    if (value.HasMember("Driver") && !value["Driver"].IsNull())
+    {
+        if (!value["Driver"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `GPUArgs.Driver` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_driver.Deserialize(value["Driver"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_driverHasBeenSet = true;
+    }
+
+    if (value.HasMember("MIGEnable") && !value["MIGEnable"].IsNull())
+    {
+        if (!value["MIGEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GPUArgs.MIGEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mIGEnable = value["MIGEnable"].GetBool();
+        m_mIGEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void GPUArgs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_mIGEnableHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MIGEnable";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_mIGEnable, allocator);
-    }
-
-    if (m_driverHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Driver";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_driver.ToJsonObject(value[key.c_str()], allocator);
-    }
 
     if (m_cUDAHasBeenSet)
     {
@@ -163,40 +146,25 @@ void GPUArgs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         m_customDriver.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_driverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Driver";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_driver.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mIGEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MIGEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mIGEnable, allocator);
+    }
+
 }
 
-
-bool GPUArgs::GetMIGEnable() const
-{
-    return m_mIGEnable;
-}
-
-void GPUArgs::SetMIGEnable(const bool& _mIGEnable)
-{
-    m_mIGEnable = _mIGEnable;
-    m_mIGEnableHasBeenSet = true;
-}
-
-bool GPUArgs::MIGEnableHasBeenSet() const
-{
-    return m_mIGEnableHasBeenSet;
-}
-
-DriverVersion GPUArgs::GetDriver() const
-{
-    return m_driver;
-}
-
-void GPUArgs::SetDriver(const DriverVersion& _driver)
-{
-    m_driver = _driver;
-    m_driverHasBeenSet = true;
-}
-
-bool GPUArgs::DriverHasBeenSet() const
-{
-    return m_driverHasBeenSet;
-}
 
 DriverVersion GPUArgs::GetCUDA() const
 {
@@ -244,5 +212,37 @@ void GPUArgs::SetCustomDriver(const CustomDriver& _customDriver)
 bool GPUArgs::CustomDriverHasBeenSet() const
 {
     return m_customDriverHasBeenSet;
+}
+
+DriverVersion GPUArgs::GetDriver() const
+{
+    return m_driver;
+}
+
+void GPUArgs::SetDriver(const DriverVersion& _driver)
+{
+    m_driver = _driver;
+    m_driverHasBeenSet = true;
+}
+
+bool GPUArgs::DriverHasBeenSet() const
+{
+    return m_driverHasBeenSet;
+}
+
+bool GPUArgs::GetMIGEnable() const
+{
+    return m_mIGEnable;
+}
+
+void GPUArgs::SetMIGEnable(const bool& _mIGEnable)
+{
+    m_mIGEnable = _mIGEnable;
+    m_mIGEnableHasBeenSet = true;
+}
+
+bool GPUArgs::MIGEnableHasBeenSet() const
+{
+    return m_mIGEnableHasBeenSet;
 }
 

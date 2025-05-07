@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取域名实例ID
+可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)
                      * @return DomainId 域名实例ID
+可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置域名实例ID
+可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)
                      * @param _domainId 域名实例ID
+可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -64,15 +68,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取DNS名称
-                     * @return DnsName DNS名称
+                     * 获取Dns名称 例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式
+                     * @return DnsName Dns名称 例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式
                      * 
                      */
                     std::string GetDnsName() const;
 
                     /**
-                     * 设置DNS名称
-                     * @param _dnsName DNS名称
+                     * 设置Dns名称 例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式
+                     * @param _dnsName Dns名称 例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式
                      * 
                      */
                     void SetDnsName(const std::string& _dnsName);
@@ -85,15 +89,15 @@ namespace TencentCloud
                     bool DnsNameHasBeenSet() const;
 
                     /**
-                     * 获取IP地址列表
-                     * @return IpSet IP地址列表
+                     * 获取IP地址列表 可选择：正常IP地址范围
+                     * @return IpSet IP地址列表 可选择：正常IP地址范围
                      * 
                      */
                     std::vector<std::string> GetIpSet() const;
 
                     /**
-                     * 设置IP地址列表
-                     * @param _ipSet IP地址列表
+                     * 设置IP地址列表 可选择：正常IP地址范围
+                     * @param _ipSet IP地址列表 可选择：正常IP地址范围
                      * 
                      */
                     void SetIpSet(const std::vector<std::string>& _ipSet);
@@ -109,18 +113,19 @@ namespace TencentCloud
 
                     /**
                      * 域名实例ID
+可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * DNS名称
+                     * Dns名称 例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式
                      */
                     std::string m_dnsName;
                     bool m_dnsNameHasBeenSet;
 
                     /**
-                     * IP地址列表
+                     * IP地址列表 可选择：正常IP地址范围
                      */
                     std::vector<std::string> m_ipSet;
                     bool m_ipSetHasBeenSet;

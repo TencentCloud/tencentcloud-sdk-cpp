@@ -31,6 +31,7 @@ CreateClustersRequest::CreateClustersRequest() :
     m_projectIdHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
+    m_instanceCountHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_adminPasswordHasBeenSet(false),
@@ -43,7 +44,6 @@ CreateClustersRequest::CreateClustersRequest() :
     m_expectTimeHasBeenSet(false),
     m_expectTimeThreshHasBeenSet(false),
     m_storageLimitHasBeenSet(false),
-    m_instanceCountHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
@@ -136,6 +136,14 @@ string CreateClustersRequest::ToJsonString() const
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_memory, allocator);
+    }
+
+    if (m_instanceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceCount, allocator);
     }
 
     if (m_storageHasBeenSet)
@@ -232,14 +240,6 @@ string CreateClustersRequest::ToJsonString() const
         string key = "StorageLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_storageLimit, allocator);
-    }
-
-    if (m_instanceCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceCount";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_instanceCount, allocator);
     }
 
     if (m_timeSpanHasBeenSet)
@@ -569,6 +569,22 @@ bool CreateClustersRequest::MemoryHasBeenSet() const
     return m_memoryHasBeenSet;
 }
 
+int64_t CreateClustersRequest::GetInstanceCount() const
+{
+    return m_instanceCount;
+}
+
+void CreateClustersRequest::SetInstanceCount(const int64_t& _instanceCount)
+{
+    m_instanceCount = _instanceCount;
+    m_instanceCountHasBeenSet = true;
+}
+
+bool CreateClustersRequest::InstanceCountHasBeenSet() const
+{
+    return m_instanceCountHasBeenSet;
+}
+
 int64_t CreateClustersRequest::GetStorage() const
 {
     return m_storage;
@@ -759,22 +775,6 @@ void CreateClustersRequest::SetStorageLimit(const int64_t& _storageLimit)
 bool CreateClustersRequest::StorageLimitHasBeenSet() const
 {
     return m_storageLimitHasBeenSet;
-}
-
-int64_t CreateClustersRequest::GetInstanceCount() const
-{
-    return m_instanceCount;
-}
-
-void CreateClustersRequest::SetInstanceCount(const int64_t& _instanceCount)
-{
-    m_instanceCount = _instanceCount;
-    m_instanceCountHasBeenSet = true;
-}
-
-bool CreateClustersRequest::InstanceCountHasBeenSet() const
-{
-    return m_instanceCountHasBeenSet;
 }
 
 int64_t CreateClustersRequest::GetTimeSpan() const

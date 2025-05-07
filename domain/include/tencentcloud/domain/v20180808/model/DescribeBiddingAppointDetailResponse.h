@@ -73,7 +73,9 @@ namespace TencentCloud
 
                     /**
                      * 获取预约开始时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return AppointStartTime 预约开始时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetAppointStartTime() const;
@@ -87,7 +89,9 @@ namespace TencentCloud
 
                     /**
                      * 获取预约结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return AppointEndTime 预约结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetAppointEndTime() const;
@@ -101,7 +105,9 @@ namespace TencentCloud
 
                     /**
                      * 获取 注册时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return RegTime  注册时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetRegTime() const;
@@ -115,7 +121,9 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return ExpireTime 过期时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetExpireTime() const;
@@ -129,7 +137,9 @@ namespace TencentCloud
 
                     /**
                      * 获取删除时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return DeleteTime 删除时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetDeleteTime() const;
@@ -215,30 +225,35 @@ yes：退回 no: 未退回
 
                     /**
                      * 预约开始时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_appointStartTime;
                     bool m_appointStartTimeHasBeenSet;
 
                     /**
                      * 预约结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_appointEndTime;
                     bool m_appointEndTimeHasBeenSet;
 
                     /**
                      *  注册时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_regTime;
                     bool m_regTimeHasBeenSet;
 
                     /**
                      * 过期时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 删除时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_deleteTime;
                     bool m_deleteTimeHasBeenSet;

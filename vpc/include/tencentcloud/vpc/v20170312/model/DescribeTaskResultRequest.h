@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异步任务ID。TaskId和DealName必填一个参数
-                     * @return TaskId 异步任务ID。TaskId和DealName必填一个参数
+                     * 获取异步任务ID。从异步任务接口返回结果中查看。例如：[AllocateAddresses](https://cloud.tencent.com/document/product/215/16699)接口。TaskId和DealName必填一个参数。
+                     * @return TaskId 异步任务ID。从异步任务接口返回结果中查看。例如：[AllocateAddresses](https://cloud.tencent.com/document/product/215/16699)接口。TaskId和DealName必填一个参数。
                      * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置异步任务ID。TaskId和DealName必填一个参数
-                     * @param _taskId 异步任务ID。TaskId和DealName必填一个参数
+                     * 设置异步任务ID。从异步任务接口返回结果中查看。例如：[AllocateAddresses](https://cloud.tencent.com/document/product/215/16699)接口。TaskId和DealName必填一个参数。
+                     * @param _taskId 异步任务ID。从异步任务接口返回结果中查看。例如：[AllocateAddresses](https://cloud.tencent.com/document/product/215/16699)接口。TaskId和DealName必填一个参数。
                      * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取计费订单号。TaskId和DealName必填一个参数
-                     * @return DealName 计费订单号。TaskId和DealName必填一个参数
+                     * 获取计费订单号。在控制台中的[费用中心-订单管理](https://console.cloud.tencent.com/expense/deal)中查看订单号。TaskId和DealName必填一个参数。
+                     * @return DealName 计费订单号。在控制台中的[费用中心-订单管理](https://console.cloud.tencent.com/expense/deal)中查看订单号。TaskId和DealName必填一个参数。
                      * 
                      */
                     std::string GetDealName() const;
 
                     /**
-                     * 设置计费订单号。TaskId和DealName必填一个参数
-                     * @param _dealName 计费订单号。TaskId和DealName必填一个参数
+                     * 设置计费订单号。在控制台中的[费用中心-订单管理](https://console.cloud.tencent.com/expense/deal)中查看订单号。TaskId和DealName必填一个参数。
+                     * @param _dealName 计费订单号。在控制台中的[费用中心-订单管理](https://console.cloud.tencent.com/expense/deal)中查看订单号。TaskId和DealName必填一个参数。
                      * 
                      */
                     void SetDealName(const std::string& _dealName);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 异步任务ID。TaskId和DealName必填一个参数
+                     * 异步任务ID。从异步任务接口返回结果中查看。例如：[AllocateAddresses](https://cloud.tencent.com/document/product/215/16699)接口。TaskId和DealName必填一个参数。
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 计费订单号。TaskId和DealName必填一个参数
+                     * 计费订单号。在控制台中的[费用中心-订单管理](https://console.cloud.tencent.com/expense/deal)中查看订单号。TaskId和DealName必填一个参数。
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;

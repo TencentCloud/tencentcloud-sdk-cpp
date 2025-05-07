@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下载任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadTaskId 下载任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDownloadTaskId() const;
 
                     /**
                      * 设置下载任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _downloadTaskId 下载任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDownloadTaskId(const std::string& _downloadTaskId);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 下载任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadTaskId;
                     bool m_downloadTaskIdHasBeenSet;

@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取页码
+默认值1
                      * @return PageNumber 页码
+默认值1
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置页码
+默认值1
                      * @param _pageNumber 页码
+默认值1
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -65,14 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取每页数量
+默认：20 取值范围【1，200】
                      * @return PageSize 每页数量
+默认：20 取值范围【1，200】
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页数量
+默认：20 取值范围【1，200】
                      * @param _pageSize 每页数量
+默认：20 取值范围【1，200】
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -131,15 +139,35 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取排序字段：AppointEndTime 预约结束时间
-                     * @return SortField 排序字段：AppointEndTime 预约结束时间
+                     * 获取排序字段：
+默认<空>，不排序
+可选值：
+AppointEndTime 预约结束时间
+BiddingPrice 竞价保证金
+BiddingEndTime 竞价结束时间
+                     * @return SortField 排序字段：
+默认<空>，不排序
+可选值：
+AppointEndTime 预约结束时间
+BiddingPrice 竞价保证金
+BiddingEndTime 竞价结束时间
                      * 
                      */
                     std::string GetSortField() const;
 
                     /**
-                     * 设置排序字段：AppointEndTime 预约结束时间
-                     * @param _sortField 排序字段：AppointEndTime 预约结束时间
+                     * 设置排序字段：
+默认<空>，不排序
+可选值：
+AppointEndTime 预约结束时间
+BiddingPrice 竞价保证金
+BiddingEndTime 竞价结束时间
+                     * @param _sortField 排序字段：
+默认<空>，不排序
+可选值：
+AppointEndTime 预约结束时间
+BiddingPrice 竞价保证金
+BiddingEndTime 竞价结束时间
                      * 
                      */
                     void SetSortField(const std::string& _sortField);
@@ -176,12 +204,14 @@ namespace TencentCloud
 
                     /**
                      * 页码
+默认值1
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
                      * 每页数量
+默认：20 取值范围【1，200】
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
@@ -200,7 +230,12 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 排序字段：AppointEndTime 预约结束时间
+                     * 排序字段：
+默认<空>，不排序
+可选值：
+AppointEndTime 预约结束时间
+BiddingPrice 竞价保证金
+BiddingEndTime 竞价结束时间
                      */
                     std::string m_sortField;
                     bool m_sortFieldHasBeenSet;

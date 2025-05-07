@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
-                     * @return AddressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 获取标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @return AddressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     std::string GetAddressId() const;
 
                     /**
-                     * 设置标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
-                     * @param _addressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 设置标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @param _addressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     void SetAddressId(const std::string& _addressId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AddressIdHasBeenSet() const;
 
                     /**
-                     * 获取修改后的 EIP 名称。长度上限为128个字符。
-                     * @return AddressName 修改后的 EIP 名称。长度上限为128个字符。
+                     * 获取修改后的 EIP 名称。长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符"-"和下划线"\_"，不能包含空格。
+                     * @return AddressName 修改后的 EIP 名称。长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符"-"和下划线"\_"，不能包含空格。
                      * 
                      */
                     std::string GetAddressName() const;
 
                     /**
-                     * 设置修改后的 EIP 名称。长度上限为128个字符。
-                     * @param _addressName 修改后的 EIP 名称。长度上限为128个字符。
+                     * 设置修改后的 EIP 名称。长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符"-"和下划线"\_"，不能包含空格。
+                     * @param _addressName 修改后的 EIP 名称。长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符"-"和下划线"\_"，不能包含空格。
                      * 
                      */
                     void SetAddressName(const std::string& _addressName);
@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool AddressNameHasBeenSet() const;
 
                     /**
-                     * 获取设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
-                     * @return EipDirectConnection 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
+                     * 获取设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。
+注意：该参数仅对 EIP 直通功能可见的用户可以设定，EIP 必须为绑定状态，绑定的对象为 CVM 。
+                     * @return EipDirectConnection 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。
+注意：该参数仅对 EIP 直通功能可见的用户可以设定，EIP 必须为绑定状态，绑定的对象为 CVM 。
                      * 
                      */
                     std::string GetEipDirectConnection() const;
 
                     /**
-                     * 设置设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
-                     * @param _eipDirectConnection 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
+                     * 设置设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。
+注意：该参数仅对 EIP 直通功能可见的用户可以设定，EIP 必须为绑定状态，绑定的对象为 CVM 。
+                     * @param _eipDirectConnection 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。
+注意：该参数仅对 EIP 直通功能可见的用户可以设定，EIP 必须为绑定状态，绑定的对象为 CVM 。
                      * 
                      */
                     void SetEipDirectConnection(const std::string& _eipDirectConnection);
@@ -108,19 +112,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      */
                     std::string m_addressId;
                     bool m_addressIdHasBeenSet;
 
                     /**
-                     * 修改后的 EIP 名称。长度上限为128个字符。
+                     * 修改后的 EIP 名称。长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符"-"和下划线"\_"，不能包含空格。
                      */
                     std::string m_addressName;
                     bool m_addressNameHasBeenSet;
 
                     /**
-                     * 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
+                     * 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。
+注意：该参数仅对 EIP 直通功能可见的用户可以设定，EIP 必须为绑定状态，绑定的对象为 CVM 。
                      */
                     std::string m_eipDirectConnection;
                     bool m_eipDirectConnectionHasBeenSet;

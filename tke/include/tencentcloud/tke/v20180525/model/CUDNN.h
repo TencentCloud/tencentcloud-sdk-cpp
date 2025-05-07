@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cuDNN的版本
-                     * @return Version cuDNN的版本
-                     * 
-                     */
-                    std::string GetVersion() const;
-
-                    /**
-                     * 设置cuDNN的版本
-                     * @param _version cuDNN的版本
-                     * 
-                     */
-                    void SetVersion(const std::string& _version);
-
-                    /**
-                     * 判断参数 Version 是否已赋值
-                     * @return Version 是否已赋值
-                     * 
-                     */
-                    bool VersionHasBeenSet() const;
-
-                    /**
                      * 获取cuDNN的名字
                      * @return Name cuDNN的名字
                      * 
@@ -89,25 +68,25 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取cuDNN的Doc名字
-                     * @return DocName cuDNN的Doc名字
+                     * 获取cuDNN的版本
+                     * @return Version cuDNN的版本
                      * 
                      */
-                    std::string GetDocName() const;
+                    std::string GetVersion() const;
 
                     /**
-                     * 设置cuDNN的Doc名字
-                     * @param _docName cuDNN的Doc名字
+                     * 设置cuDNN的版本
+                     * @param _version cuDNN的版本
                      * 
                      */
-                    void SetDocName(const std::string& _docName);
+                    void SetVersion(const std::string& _version);
 
                     /**
-                     * 判断参数 DocName 是否已赋值
-                     * @return DocName 是否已赋值
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
                      * 
                      */
-                    bool DocNameHasBeenSet() const;
+                    bool VersionHasBeenSet() const;
 
                     /**
                      * 获取cuDNN的Dev名字
@@ -130,13 +109,28 @@ namespace TencentCloud
                      */
                     bool DevNameHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取cuDNN的Doc名字
+                     * @return DocName cuDNN的Doc名字
+                     * 
+                     */
+                    std::string GetDocName() const;
 
                     /**
-                     * cuDNN的版本
+                     * 设置cuDNN的Doc名字
+                     * @param _docName cuDNN的Doc名字
+                     * 
                      */
-                    std::string m_version;
-                    bool m_versionHasBeenSet;
+                    void SetDocName(const std::string& _docName);
+
+                    /**
+                     * 判断参数 DocName 是否已赋值
+                     * @return DocName 是否已赋值
+                     * 
+                     */
+                    bool DocNameHasBeenSet() const;
+
+                private:
 
                     /**
                      * cuDNN的名字
@@ -145,16 +139,22 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * cuDNN的Doc名字
+                     * cuDNN的版本
                      */
-                    std::string m_docName;
-                    bool m_docNameHasBeenSet;
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
 
                     /**
                      * cuDNN的Dev名字
                      */
                     std::string m_devName;
                     bool m_devNameHasBeenSet;
+
+                    /**
+                     * cuDNN的Doc名字
+                     */
+                    std::string m_docName;
+                    bool m_docNameHasBeenSet;
 
                 };
             }
