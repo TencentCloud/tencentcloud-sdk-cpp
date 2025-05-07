@@ -516,15 +516,15 @@ OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均�
                     bool AddressIPVersionHasBeenSet() const;
 
                     /**
-                     * 获取数值形式的私有网络 ID。
-                     * @return NumericalVpcId 数值形式的私有网络 ID。
+                     * 获取数值形式的私有网络 ID，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
+                     * @return NumericalVpcId 数值形式的私有网络 ID，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      * 
                      */
                     uint64_t GetNumericalVpcId() const;
 
                     /**
-                     * 设置数值形式的私有网络 ID。
-                     * @param _numericalVpcId 数值形式的私有网络 ID。
+                     * 设置数值形式的私有网络 ID，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
+                     * @param _numericalVpcId 数值形式的私有网络 ID，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      * 
                      */
                     void SetNumericalVpcId(const uint64_t& _numericalVpcId);
@@ -1597,7 +1597,7 @@ OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均�
                     bool m_addressIPVersionHasBeenSet;
 
                     /**
-                     * 数值形式的私有网络 ID。
+                     * 数值形式的私有网络 ID，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      */
                     uint64_t m_numericalVpcId;
                     bool m_numericalVpcIdHasBeenSet;

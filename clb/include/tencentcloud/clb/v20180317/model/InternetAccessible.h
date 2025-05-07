@@ -101,18 +101,46 @@ namespace TencentCloud
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
-                     * 获取带宽包的类型，如SINGLEISP（单线）、BGP（多线）。
+                     * 获取带宽包的类型，如 BGP（多线）。
+类型如下：
+SINGLEISP: 单线
+BGP: 多线
+HIGH_QUALITY_BGP: 精品BGP共享带宽包
+SINGLEISP_CMCC: 中国移动共享带宽包
+SINGLEISP_CTCC: 中国电信共享带宽包
+SINGLEISP_CUCC: 中国联通共享带宽包
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BandwidthpkgSubType 带宽包的类型，如SINGLEISP（单线）、BGP（多线）。
+                     * @return BandwidthpkgSubType 带宽包的类型，如 BGP（多线）。
+类型如下：
+SINGLEISP: 单线
+BGP: 多线
+HIGH_QUALITY_BGP: 精品BGP共享带宽包
+SINGLEISP_CMCC: 中国移动共享带宽包
+SINGLEISP_CTCC: 中国电信共享带宽包
+SINGLEISP_CUCC: 中国联通共享带宽包
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBandwidthpkgSubType() const;
 
                     /**
-                     * 设置带宽包的类型，如SINGLEISP（单线）、BGP（多线）。
+                     * 设置带宽包的类型，如 BGP（多线）。
+类型如下：
+SINGLEISP: 单线
+BGP: 多线
+HIGH_QUALITY_BGP: 精品BGP共享带宽包
+SINGLEISP_CMCC: 中国移动共享带宽包
+SINGLEISP_CTCC: 中国电信共享带宽包
+SINGLEISP_CUCC: 中国联通共享带宽包
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bandwidthpkgSubType 带宽包的类型，如SINGLEISP（单线）、BGP（多线）。
+                     * @param _bandwidthpkgSubType 带宽包的类型，如 BGP（多线）。
+类型如下：
+SINGLEISP: 单线
+BGP: 多线
+HIGH_QUALITY_BGP: 精品BGP共享带宽包
+SINGLEISP_CMCC: 中国移动共享带宽包
+SINGLEISP_CTCC: 中国电信共享带宽包
+SINGLEISP_CUCC: 中国联通共享带宽包
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,7 +171,14 @@ namespace TencentCloud
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
-                     * 带宽包的类型，如SINGLEISP（单线）、BGP（多线）。
+                     * 带宽包的类型，如 BGP（多线）。
+类型如下：
+SINGLEISP: 单线
+BGP: 多线
+HIGH_QUALITY_BGP: 精品BGP共享带宽包
+SINGLEISP_CMCC: 中国移动共享带宽包
+SINGLEISP_CTCC: 中国电信共享带宽包
+SINGLEISP_CUCC: 中国联通共享带宽包
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bandwidthpkgSubType;

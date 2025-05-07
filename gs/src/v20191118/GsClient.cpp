@@ -1588,6 +1588,49 @@ GsClient::ModifyAndroidInstancesUserIdOutcomeCallable GsClient::ModifyAndroidIns
     return task->get_future();
 }
 
+GsClient::RebootAndroidInstanceHostsOutcome GsClient::RebootAndroidInstanceHosts(const RebootAndroidInstanceHostsRequest &request)
+{
+    auto outcome = MakeRequest(request, "RebootAndroidInstanceHosts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RebootAndroidInstanceHostsResponse rsp = RebootAndroidInstanceHostsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RebootAndroidInstanceHostsOutcome(rsp);
+        else
+            return RebootAndroidInstanceHostsOutcome(o.GetError());
+    }
+    else
+    {
+        return RebootAndroidInstanceHostsOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::RebootAndroidInstanceHostsAsync(const RebootAndroidInstanceHostsRequest& request, const RebootAndroidInstanceHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RebootAndroidInstanceHosts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::RebootAndroidInstanceHostsOutcomeCallable GsClient::RebootAndroidInstanceHostsCallable(const RebootAndroidInstanceHostsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RebootAndroidInstanceHostsOutcome()>>(
+        [this, request]()
+        {
+            return this->RebootAndroidInstanceHosts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::RebootAndroidInstancesOutcome GsClient::RebootAndroidInstances(const RebootAndroidInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RebootAndroidInstances");

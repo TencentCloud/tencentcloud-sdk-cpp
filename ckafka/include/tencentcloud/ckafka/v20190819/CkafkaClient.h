@@ -139,6 +139,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeRegionResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeRouteRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeRouteResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeSecurityGroupRoutesRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeSecurityGroupRoutesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTaskStatusRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTaskStatusResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicRequest.h>
@@ -385,6 +387,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRouteResponse> DescribeRouteOutcome;
                 typedef std::future<DescribeRouteOutcome> DescribeRouteOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeRouteRequest&, DescribeRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityGroupRoutesResponse> DescribeSecurityGroupRoutesOutcome;
+                typedef std::future<DescribeSecurityGroupRoutesOutcome> DescribeSecurityGroupRoutesOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeSecurityGroupRoutesRequest&, DescribeSecurityGroupRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupRoutesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
                 typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
@@ -996,6 +1001,15 @@ namespace TencentCloud
                 DescribeRouteOutcome DescribeRoute(const Model::DescribeRouteRequest &request);
                 void DescribeRouteAsync(const Model::DescribeRouteRequest& request, const DescribeRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRouteOutcomeCallable DescribeRouteCallable(const Model::DescribeRouteRequest& request);
+
+                /**
+                 *获取安全组路由信息列表
+                 * @param req DescribeSecurityGroupRoutesRequest
+                 * @return DescribeSecurityGroupRoutesOutcome
+                 */
+                DescribeSecurityGroupRoutesOutcome DescribeSecurityGroupRoutes(const Model::DescribeSecurityGroupRoutesRequest &request);
+                void DescribeSecurityGroupRoutesAsync(const Model::DescribeSecurityGroupRoutesRequest& request, const DescribeSecurityGroupRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityGroupRoutesOutcomeCallable DescribeSecurityGroupRoutesCallable(const Model::DescribeSecurityGroupRoutesRequest& request);
 
                 /**
                  *查询任务状态

@@ -49,14 +49,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启健康检查：1（开启）、0（关闭）。
+默认为开启。
                      * @return HealthSwitch 是否开启健康检查：1（开启）、0（关闭）。
+默认为开启。
                      * 
                      */
                     int64_t GetHealthSwitch() const;
 
                     /**
                      * 设置是否开启健康检查：1（开启）、0（关闭）。
+默认为开启。
                      * @param _healthSwitch 是否开启健康检查：1（开启）、0（关闭）。
+默认为开启。
                      * 
                      */
                     void SetHealthSwitch(const int64_t& _healthSwitch);
@@ -456,6 +460,7 @@ namespace TencentCloud
 
                     /**
                      * 是否开启健康检查：1（开启）、0（关闭）。
+默认为开启。
                      */
                     int64_t m_healthSwitch;
                     bool m_healthSwitchHasBeenSet;

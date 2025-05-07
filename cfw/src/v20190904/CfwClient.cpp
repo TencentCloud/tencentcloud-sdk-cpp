@@ -4727,6 +4727,49 @@ CfwClient::RemoveVpcAcRuleOutcomeCallable CfwClient::RemoveVpcAcRuleCallable(con
     return task->get_future();
 }
 
+CfwClient::SearchLogOutcome CfwClient::SearchLog(const SearchLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchLogResponse rsp = SearchLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchLogOutcome(rsp);
+        else
+            return SearchLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchLogOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::SearchLogAsync(const SearchLogRequest& request, const SearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::SearchLogOutcomeCallable CfwClient::SearchLogCallable(const SearchLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::SetNatFwDnatRuleOutcome CfwClient::SetNatFwDnatRule(const SetNatFwDnatRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "SetNatFwDnatRule");

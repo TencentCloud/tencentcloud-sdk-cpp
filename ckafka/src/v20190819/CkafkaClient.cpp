@@ -2534,6 +2534,49 @@ CkafkaClient::DescribeRouteOutcomeCallable CkafkaClient::DescribeRouteCallable(c
     return task->get_future();
 }
 
+CkafkaClient::DescribeSecurityGroupRoutesOutcome CkafkaClient::DescribeSecurityGroupRoutes(const DescribeSecurityGroupRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityGroupRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityGroupRoutesResponse rsp = DescribeSecurityGroupRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityGroupRoutesOutcome(rsp);
+        else
+            return DescribeSecurityGroupRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityGroupRoutesOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeSecurityGroupRoutesAsync(const DescribeSecurityGroupRoutesRequest& request, const DescribeSecurityGroupRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityGroupRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeSecurityGroupRoutesOutcomeCallable CkafkaClient::DescribeSecurityGroupRoutesCallable(const DescribeSecurityGroupRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityGroupRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DescribeTaskStatusOutcome CkafkaClient::DescribeTaskStatus(const DescribeTaskStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskStatus");

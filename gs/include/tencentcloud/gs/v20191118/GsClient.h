@@ -95,6 +95,8 @@
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesUserIdRequest.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesUserIdResponse.h>
+#include <tencentcloud/gs/v20191118/model/RebootAndroidInstanceHostsRequest.h>
+#include <tencentcloud/gs/v20191118/model/RebootAndroidInstanceHostsResponse.h>
 #include <tencentcloud/gs/v20191118/model/RebootAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/RebootAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/ResetAndroidInstancesRequest.h>
@@ -255,6 +257,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAndroidInstancesUserIdResponse> ModifyAndroidInstancesUserIdOutcome;
                 typedef std::future<ModifyAndroidInstancesUserIdOutcome> ModifyAndroidInstancesUserIdOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstancesUserIdRequest&, ModifyAndroidInstancesUserIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstancesUserIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::RebootAndroidInstanceHostsResponse> RebootAndroidInstanceHostsOutcome;
+                typedef std::future<RebootAndroidInstanceHostsOutcome> RebootAndroidInstanceHostsOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::RebootAndroidInstanceHostsRequest&, RebootAndroidInstanceHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootAndroidInstanceHostsAsyncHandler;
                 typedef Outcome<Core::Error, Model::RebootAndroidInstancesResponse> RebootAndroidInstancesOutcome;
                 typedef std::future<RebootAndroidInstancesOutcome> RebootAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::RebootAndroidInstancesRequest&, RebootAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootAndroidInstancesAsyncHandler;
@@ -642,6 +647,18 @@ namespace TencentCloud
                 ModifyAndroidInstancesUserIdOutcome ModifyAndroidInstancesUserId(const Model::ModifyAndroidInstancesUserIdRequest &request);
                 void ModifyAndroidInstancesUserIdAsync(const Model::ModifyAndroidInstancesUserIdRequest& request, const ModifyAndroidInstancesUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAndroidInstancesUserIdOutcomeCallable ModifyAndroidInstancesUserIdCallable(const Model::ModifyAndroidInstancesUserIdRequest& request);
+
+                /**
+                 *重启安卓实例宿主机。请注意：
+
+- 当前每 15 分钟只能重启一次
+- 一个宿主机可能有多个云手机实例，重启宿主机会影响运行在上面的所有实例，请确保该宿主机上的所有云手机实例未投入业务使用
+                 * @param req RebootAndroidInstanceHostsRequest
+                 * @return RebootAndroidInstanceHostsOutcome
+                 */
+                RebootAndroidInstanceHostsOutcome RebootAndroidInstanceHosts(const Model::RebootAndroidInstanceHostsRequest &request);
+                void RebootAndroidInstanceHostsAsync(const Model::RebootAndroidInstanceHostsRequest& request, const RebootAndroidInstanceHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RebootAndroidInstanceHostsOutcomeCallable RebootAndroidInstanceHostsCallable(const Model::RebootAndroidInstanceHostsRequest& request);
 
                 /**
                  *重启安卓实例

@@ -27,6 +27,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/CreateSessionRequest.h
   include/tencentcloud/gs/v20191118/model/RestoreAndroidInstanceFromStorageRequest.h
   include/tencentcloud/gs/v20191118/model/SyncExecuteCommandOnAndroidInstancesRequest.h
+  include/tencentcloud/gs/v20191118/model/RebootAndroidInstanceHostsResponse.h
   include/tencentcloud/gs/v20191118/model/UninstallAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/StopAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidAppVersionResponse.h
@@ -123,6 +124,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/StopGameResponse.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceLabelRequest.h
   include/tencentcloud/gs/v20191118/model/AndroidInstance.h
+  include/tencentcloud/gs/v20191118/model/RebootAndroidInstanceHostsRequest.h
   include/tencentcloud/gs/v20191118/model/COSOptions.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesInformationResponse.h
   include/tencentcloud/gs/v20191118/model/CreateCosCredentialResponse.h
@@ -157,6 +159,7 @@ set(gs_src
   src/v20191118/model/CreateSessionRequest.cpp
   src/v20191118/model/RestoreAndroidInstanceFromStorageRequest.cpp
   src/v20191118/model/SyncExecuteCommandOnAndroidInstancesRequest.cpp
+  src/v20191118/model/RebootAndroidInstanceHostsResponse.cpp
   src/v20191118/model/UninstallAndroidInstancesAppResponse.cpp
   src/v20191118/model/StopAndroidInstancesAppResponse.cpp
   src/v20191118/model/ModifyAndroidAppVersionResponse.cpp
@@ -253,6 +256,7 @@ set(gs_src
   src/v20191118/model/StopGameResponse.cpp
   src/v20191118/model/CreateAndroidInstanceLabelRequest.cpp
   src/v20191118/model/AndroidInstance.cpp
+  src/v20191118/model/RebootAndroidInstanceHostsRequest.cpp
   src/v20191118/model/COSOptions.cpp
   src/v20191118/model/ModifyAndroidInstancesInformationResponse.cpp
   src/v20191118/model/CreateCosCredentialResponse.cpp
