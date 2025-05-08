@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查看更多日志的凭证
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextToken 查看更多日志的凭证
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNextToken() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Events 日志集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Event> GetEvents() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集合是否结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListOver 日志集合是否结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetListOver() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -112,28 +104,24 @@ namespace TencentCloud
 
                     /**
                      * 查看更多日志的凭证
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;
 
                     /**
                      * 日志集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Event> m_events;
                     bool m_eventsHasBeenSet;
 
                     /**
                      * 日志集合是否结束
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_listOver;
                     bool m_listOverHasBeenSet;
 
                     /**
                      * 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

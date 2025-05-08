@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EIP唯一标识ID列表，形如'eip-xxxx'
-                     * @return AddressIds EIP唯一标识ID列表，形如'eip-xxxx'
+                     * 获取EIP唯一标识ID列表，形如'eip-xxxx'，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @return AddressIds EIP唯一标识ID列表，形如'eip-xxxx'，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     std::vector<std::string> GetAddressIds() const;
 
                     /**
-                     * 设置EIP唯一标识ID列表，形如'eip-xxxx'
-                     * @param _addressIds EIP唯一标识ID列表，形如'eip-xxxx'
+                     * 设置EIP唯一标识ID列表，形如'eip-xxxx'，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @param _addressIds EIP唯一标识ID列表，形如'eip-xxxx'，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     void SetAddressIds(const std::vector<std::string>& _addressIds);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EIP唯一标识ID列表，形如'eip-xxxx'
+                     * EIP唯一标识ID列表，形如'eip-xxxx'，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      */
                     std::vector<std::string> m_addressIds;
                     bool m_addressIdsHasBeenSet;

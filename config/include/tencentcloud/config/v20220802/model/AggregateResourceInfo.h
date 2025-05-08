@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceRegion 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceRegion 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceStatus 资源状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceStatus() const;
 
                     /**
                      * 设置资源状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceStatus 资源状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceStatus(const std::string& _resourceStatus);
@@ -162,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否删除 1:已删除 0:未删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceDelete 是否删除 1:已删除 0:未删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetResourceDelete() const;
 
                     /**
                      * 设置是否删除 1:已删除 0:未删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceDelete 是否删除 1:已删除 0:未删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceDelete(const uint64_t& _resourceDelete);
@@ -187,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceCreateTime 资源创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceCreateTime() const;
 
                     /**
                      * 设置资源创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceCreateTime 资源创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceCreateTime(const std::string& _resourceCreateTime);
@@ -212,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -237,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceZone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceZone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceZone(const std::string& _resourceZone);
@@ -262,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合规状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComplianceResult 合规状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComplianceResult() const;
 
                     /**
                      * 设置合规状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _complianceResult 合规状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComplianceResult(const std::string& _complianceResult);
@@ -308,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceOwnerName 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceOwnerName() const;
 
                     /**
                      * 设置用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceOwnerName 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceOwnerName(const std::string& _resourceOwnerName);
@@ -353,49 +321,42 @@ namespace TencentCloud
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;
 
                     /**
                      * 资源状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceStatus;
                     bool m_resourceStatusHasBeenSet;
 
                     /**
                      * 是否删除 1:已删除 0:未删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_resourceDelete;
                     bool m_resourceDeleteHasBeenSet;
 
                     /**
                      * 资源创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceCreateTime;
                     bool m_resourceCreateTimeHasBeenSet;
 
                     /**
                      * 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceZone;
                     bool m_resourceZoneHasBeenSet;
 
                     /**
                      * 合规状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_complianceResult;
                     bool m_complianceResultHasBeenSet;
@@ -408,7 +369,6 @@ namespace TencentCloud
 
                     /**
                      * 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceOwnerName;
                     bool m_resourceOwnerNameHasBeenSet;

@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡实例ID数组，默认支持20个负载均衡实例ID。
+可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
                      * @return LoadBalancerIds 负载均衡实例ID数组，默认支持20个负载均衡实例ID。
+可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
                      * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
                      * 设置负载均衡实例ID数组，默认支持20个负载均衡实例ID。
+可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
                      * @param _loadBalancerIds 负载均衡实例ID数组，默认支持20个负载均衡实例ID。
+可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
                      * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
@@ -88,6 +92,7 @@ namespace TencentCloud
 
                     /**
                      * 负载均衡实例ID数组，默认支持20个负载均衡实例ID。
+可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;

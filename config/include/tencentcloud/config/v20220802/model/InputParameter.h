@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

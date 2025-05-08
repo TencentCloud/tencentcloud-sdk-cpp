@@ -47,15 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Ftp协议Alg功能是否开启
-                     * @return Ftp Ftp协议Alg功能是否开启
+                     * 获取Ftp协议Alg功能是否开启，可选值：
+<li>true：开启Ftp协议Alg功能</li>
+<li>false：不开启Ftp协议Alg功能</li>
+                     * @return Ftp Ftp协议Alg功能是否开启，可选值：
+<li>true：开启Ftp协议Alg功能</li>
+<li>false：不开启Ftp协议Alg功能</li>
                      * 
                      */
                     bool GetFtp() const;
 
                     /**
-                     * 设置Ftp协议Alg功能是否开启
-                     * @param _ftp Ftp协议Alg功能是否开启
+                     * 设置Ftp协议Alg功能是否开启，可选值：
+<li>true：开启Ftp协议Alg功能</li>
+<li>false：不开启Ftp协议Alg功能</li>
+                     * @param _ftp Ftp协议Alg功能是否开启，可选值：
+<li>true：开启Ftp协议Alg功能</li>
+<li>false：不开启Ftp协议Alg功能</li>
                      * 
                      */
                     void SetFtp(const bool& _ftp);
@@ -68,15 +76,23 @@ namespace TencentCloud
                     bool FtpHasBeenSet() const;
 
                     /**
-                     * 获取Sip协议Alg功能是否开启
-                     * @return Sip Sip协议Alg功能是否开启
+                     * 获取Sip协议Alg功能是否开启，可选值：
+<li>true：开启Sip协议Alg功能</li>
+<li>false：不开启Sip协议Alg功能</li>
+                     * @return Sip Sip协议Alg功能是否开启，可选值：
+<li>true：开启Sip协议Alg功能</li>
+<li>false：不开启Sip协议Alg功能</li>
                      * 
                      */
                     bool GetSip() const;
 
                     /**
-                     * 设置Sip协议Alg功能是否开启
-                     * @param _sip Sip协议Alg功能是否开启
+                     * 设置Sip协议Alg功能是否开启，可选值：
+<li>true：开启Sip协议Alg功能</li>
+<li>false：不开启Sip协议Alg功能</li>
+                     * @param _sip Sip协议Alg功能是否开启，可选值：
+<li>true：开启Sip协议Alg功能</li>
+<li>false：不开启Sip协议Alg功能</li>
                      * 
                      */
                     void SetSip(const bool& _sip);
@@ -91,13 +107,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Ftp协议Alg功能是否开启
+                     * Ftp协议Alg功能是否开启，可选值：
+<li>true：开启Ftp协议Alg功能</li>
+<li>false：不开启Ftp协议Alg功能</li>
                      */
                     bool m_ftp;
                     bool m_ftpHasBeenSet;
 
                     /**
-                     * Sip协议Alg功能是否开启
+                     * Sip协议Alg功能是否开启，可选值：
+<li>true：开启Sip协议Alg功能</li>
+<li>false：不开启Sip协议Alg功能</li>
                      */
                     bool m_sip;
                     bool m_sipHasBeenSet;

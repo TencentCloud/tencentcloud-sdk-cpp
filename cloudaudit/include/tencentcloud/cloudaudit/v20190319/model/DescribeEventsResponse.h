@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Events 日志集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Event> GetEvents() const;
@@ -90,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取此字段已经废弃。翻页请使用ListOver配合NextToken，在ListOver为false进行下一页数据读取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 此字段已经废弃。翻页请使用ListOver配合NextToken，在ListOver为false进行下一页数据读取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -120,14 +116,12 @@ namespace TencentCloud
 
                     /**
                      * 日志集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Event> m_events;
                     bool m_eventsHasBeenSet;
 
                     /**
                      * 此字段已经废弃。翻页请使用ListOver配合NextToken，在ListOver为false进行下一页数据读取。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

@@ -65,15 +65,19 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取待解绑的服务器信息。
-                     * @return TargetGroupInstances 待解绑的服务器信息。
+                     * 获取待解绑的服务器信息，支持批量解除绑定，单次批量解除数量最多为20个。
+
+                     * @return TargetGroupInstances 待解绑的服务器信息，支持批量解除绑定，单次批量解除数量最多为20个。
+
                      * 
                      */
                     std::vector<TargetGroupInstance> GetTargetGroupInstances() const;
 
                     /**
-                     * 设置待解绑的服务器信息。
-                     * @param _targetGroupInstances 待解绑的服务器信息。
+                     * 设置待解绑的服务器信息，支持批量解除绑定，单次批量解除数量最多为20个。
+
+                     * @param _targetGroupInstances 待解绑的服务器信息，支持批量解除绑定，单次批量解除数量最多为20个。
+
                      * 
                      */
                     void SetTargetGroupInstances(const std::vector<TargetGroupInstance>& _targetGroupInstances);
@@ -94,7 +98,8 @@ namespace TencentCloud
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
-                     * 待解绑的服务器信息。
+                     * 待解绑的服务器信息，支持批量解除绑定，单次批量解除数量最多为20个。
+
                      */
                     std::vector<TargetGroupInstance> m_targetGroupInstances;
                     bool m_targetGroupInstancesHasBeenSet;

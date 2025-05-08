@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool EndPointIdHasBeenSet() const;
 
                     /**
-                     * 获取VPCID。
-                     * @return VpcId VPCID。
+                     * 获取VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @return VpcId VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPCID。
-                     * @param _vpcId VPCID。
+                     * 设置VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @param _vpcId VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreateTime 创建时间。
+                     * 获取创建时间。格式：YYYY-MM-DD HH:MM:SS。
+                     * @return CreateTime 创建时间。格式：YYYY-MM-DD HH:MM:SS。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createTime 创建时间。
+                     * 设置创建时间。格式：YYYY-MM-DD HH:MM:SS。
+                     * @param _createTime 创建时间。格式：YYYY-MM-DD HH:MM:SS。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -301,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取终端节点服务名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 终端节点服务名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置终端节点服务名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName 终端节点服务名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -326,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CDC 集群唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcId CDC 集群唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置CDC 集群唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcId CDC 集群唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -351,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -383,7 +371,7 @@ namespace TencentCloud
                     bool m_endPointIdHasBeenSet;
 
                     /**
-                     * VPCID。
+                     * VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -437,7 +425,7 @@ namespace TencentCloud
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * 创建时间。格式：YYYY-MM-DD HH:MM:SS。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -450,21 +438,18 @@ namespace TencentCloud
 
                     /**
                      * 终端节点服务名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
                      * CDC 集群唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
                      * 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;

@@ -5845,6 +5845,49 @@ WafClient::ModifyHostStatusOutcomeCallable WafClient::ModifyHostStatusCallable(c
     return task->get_future();
 }
 
+WafClient::ModifyInstanceAttackLogPostOutcome WafClient::ModifyInstanceAttackLogPost(const ModifyInstanceAttackLogPostRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceAttackLogPost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceAttackLogPostResponse rsp = ModifyInstanceAttackLogPostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceAttackLogPostOutcome(rsp);
+        else
+            return ModifyInstanceAttackLogPostOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceAttackLogPostOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyInstanceAttackLogPostAsync(const ModifyInstanceAttackLogPostRequest& request, const ModifyInstanceAttackLogPostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceAttackLogPost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyInstanceAttackLogPostOutcomeCallable WafClient::ModifyInstanceAttackLogPostCallable(const ModifyInstanceAttackLogPostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceAttackLogPostOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceAttackLogPost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyInstanceElasticModeOutcome WafClient::ModifyInstanceElasticMode(const ModifyInstanceElasticModeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceElasticMode");

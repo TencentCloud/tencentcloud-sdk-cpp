@@ -57,7 +57,9 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_dashboardTopicIDHasBeenSet(false),
     m_isInstrumentationVulnerabilityScanHasBeenSet(false),
     m_isSqlInjectionAnalysisHasBeenSet(false),
-    m_stopReasonHasBeenSet(false)
+    m_stopReasonHasBeenSet(false),
+    m_isRemoteCommandExecutionAnalysisHasBeenSet(false),
+    m_isMemoryHijackingAnalysisHasBeenSet(false)
 {
 }
 
@@ -449,6 +451,26 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_stopReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("IsRemoteCommandExecutionAnalysis") && !value["IsRemoteCommandExecutionAnalysis"].IsNull())
+    {
+        if (!value["IsRemoteCommandExecutionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsRemoteCommandExecutionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isRemoteCommandExecutionAnalysis = value["IsRemoteCommandExecutionAnalysis"].GetInt64();
+        m_isRemoteCommandExecutionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsMemoryHijackingAnalysis") && !value["IsMemoryHijackingAnalysis"].IsNull())
+    {
+        if (!value["IsMemoryHijackingAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsMemoryHijackingAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMemoryHijackingAnalysis = value["IsMemoryHijackingAnalysis"].GetInt64();
+        m_isMemoryHijackingAnalysisHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -762,6 +784,22 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "StopReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stopReason, allocator);
+    }
+
+    if (m_isRemoteCommandExecutionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRemoteCommandExecutionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isRemoteCommandExecutionAnalysis, allocator);
+    }
+
+    if (m_isMemoryHijackingAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMemoryHijackingAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMemoryHijackingAnalysis, allocator);
     }
 
 }
@@ -1357,5 +1395,37 @@ void ApmInstanceDetail::SetStopReason(const int64_t& _stopReason)
 bool ApmInstanceDetail::StopReasonHasBeenSet() const
 {
     return m_stopReasonHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsRemoteCommandExecutionAnalysis() const
+{
+    return m_isRemoteCommandExecutionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsRemoteCommandExecutionAnalysis(const int64_t& _isRemoteCommandExecutionAnalysis)
+{
+    m_isRemoteCommandExecutionAnalysis = _isRemoteCommandExecutionAnalysis;
+    m_isRemoteCommandExecutionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsRemoteCommandExecutionAnalysisHasBeenSet() const
+{
+    return m_isRemoteCommandExecutionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsMemoryHijackingAnalysis() const
+{
+    return m_isMemoryHijackingAnalysis;
+}
+
+void ApmInstanceDetail::SetIsMemoryHijackingAnalysis(const int64_t& _isMemoryHijackingAnalysis)
+{
+    m_isMemoryHijackingAnalysis = _isMemoryHijackingAnalysis;
+    m_isMemoryHijackingAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsMemoryHijackingAnalysisHasBeenSet() const
+{
+    return m_isMemoryHijackingAnalysisHasBeenSet;
 }
 

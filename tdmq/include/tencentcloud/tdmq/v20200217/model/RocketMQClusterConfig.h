@@ -286,6 +286,48 @@ namespace TencentCloud
                      */
                     bool TopicDistributionHasBeenSet() const;
 
+                    /**
+                     * 获取最大角色数量
+                     * @return MaxRoleNum 最大角色数量
+                     * 
+                     */
+                    int64_t GetMaxRoleNum() const;
+
+                    /**
+                     * 设置最大角色数量
+                     * @param _maxRoleNum 最大角色数量
+                     * 
+                     */
+                    void SetMaxRoleNum(const int64_t& _maxRoleNum);
+
+                    /**
+                     * 判断参数 MaxRoleNum 是否已赋值
+                     * @return MaxRoleNum 是否已赋值
+                     * 
+                     */
+                    bool MaxRoleNumHasBeenSet() const;
+
+                    /**
+                     * 获取TPS限额
+                     * @return MaxTpsLimit TPS限额
+                     * 
+                     */
+                    int64_t GetMaxTpsLimit() const;
+
+                    /**
+                     * 设置TPS限额
+                     * @param _maxTpsLimit TPS限额
+                     * 
+                     */
+                    void SetMaxTpsLimit(const int64_t& _maxTpsLimit);
+
+                    /**
+                     * 判断参数 MaxTpsLimit 是否已赋值
+                     * @return MaxTpsLimit 是否已赋值
+                     * 
+                     */
+                    bool MaxTpsLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +397,18 @@ namespace TencentCloud
                      */
                     std::vector<RocketMQTopicDistribution> m_topicDistribution;
                     bool m_topicDistributionHasBeenSet;
+
+                    /**
+                     * 最大角色数量
+                     */
+                    int64_t m_maxRoleNum;
+                    bool m_maxRoleNumHasBeenSet;
+
+                    /**
+                     * TPS限额
+                     */
+                    int64_t m_maxTpsLimit;
+                    bool m_maxTpsLimitHasBeenSet;
 
                 };
             }

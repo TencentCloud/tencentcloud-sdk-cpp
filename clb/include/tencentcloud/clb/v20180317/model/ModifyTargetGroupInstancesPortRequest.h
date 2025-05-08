@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取待修改端口的服务器数组。
-                     * @return TargetGroupInstances 待修改端口的服务器数组。
+                     * 获取待修改端口的服务器数组，在这个接口 NewPort 和 Port 为必填项。
+                     * @return TargetGroupInstances 待修改端口的服务器数组，在这个接口 NewPort 和 Port 为必填项。
                      * 
                      */
                     std::vector<TargetGroupInstance> GetTargetGroupInstances() const;
 
                     /**
-                     * 设置待修改端口的服务器数组。
-                     * @param _targetGroupInstances 待修改端口的服务器数组。
+                     * 设置待修改端口的服务器数组，在这个接口 NewPort 和 Port 为必填项。
+                     * @param _targetGroupInstances 待修改端口的服务器数组，在这个接口 NewPort 和 Port 为必填项。
                      * 
                      */
                     void SetTargetGroupInstances(const std::vector<TargetGroupInstance>& _targetGroupInstances);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
-                     * 待修改端口的服务器数组。
+                     * 待修改端口的服务器数组，在这个接口 NewPort 和 Port 为必填项。
                      */
                     std::vector<TargetGroupInstance> m_targetGroupInstances;
                     bool m_targetGroupInstancesHasBeenSet;

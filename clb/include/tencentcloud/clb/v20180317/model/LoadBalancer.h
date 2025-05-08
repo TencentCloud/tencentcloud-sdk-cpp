@@ -323,15 +323,15 @@ OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均�
                     bool OpenBgpHasBeenSet() const;
 
                     /**
-                     * 获取在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。
-                     * @return Snat 在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。
+                     * 获取是否开启 SNAT，在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 SNAT 的。
+                     * @return Snat 是否开启 SNAT，在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 SNAT 的。
                      * 
                      */
                     bool GetSnat() const;
 
                     /**
-                     * 设置在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。
-                     * @param _snat 在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。
+                     * 设置是否开启 SNAT，在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 SNAT 的。
+                     * @param _snat 是否开启 SNAT，在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 SNAT 的。
                      * 
                      */
                     void SetSnat(const bool& _snat);
@@ -344,15 +344,15 @@ OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均�
                     bool SnatHasBeenSet() const;
 
                     /**
-                     * 获取0：表示未被隔离，1：表示被隔离。
-                     * @return Isolation 0：表示未被隔离，1：表示被隔离。
+                     * 获取是否被隔离，0：表示未被隔离，1：表示被隔离。
+                     * @return Isolation 是否被隔离，0：表示未被隔离，1：表示被隔离。
                      * 
                      */
                     uint64_t GetIsolation() const;
 
                     /**
-                     * 设置0：表示未被隔离，1：表示被隔离。
-                     * @param _isolation 0：表示未被隔离，1：表示被隔离。
+                     * 设置是否被隔离，0：表示未被隔离，1：表示被隔离。
+                     * @param _isolation 是否被隔离，0：表示未被隔离，1：表示被隔离。
                      * 
                      */
                     void SetIsolation(const uint64_t& _isolation);
@@ -1542,13 +1542,13 @@ OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均�
                     bool m_openBgpHasBeenSet;
 
                     /**
-                     * 在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。
+                     * 是否开启 SNAT，在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 SNAT 的。
                      */
                     bool m_snat;
                     bool m_snatHasBeenSet;
 
                     /**
-                     * 0：表示未被隔离，1：表示被隔离。
+                     * 是否被隔离，0：表示未被隔离，1：表示被隔离。
                      */
                     uint64_t m_isolation;
                     bool m_isolationHasBeenSet;

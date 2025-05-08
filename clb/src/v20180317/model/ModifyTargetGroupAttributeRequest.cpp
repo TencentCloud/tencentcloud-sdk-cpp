@@ -26,7 +26,9 @@ ModifyTargetGroupAttributeRequest::ModifyTargetGroupAttributeRequest() :
     m_targetGroupIdHasBeenSet(false),
     m_targetGroupNameHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_weightHasBeenSet(false)
+    m_weightHasBeenSet(false),
+    m_keepaliveEnableHasBeenSet(false),
+    m_sessionExpireTimeHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string ModifyTargetGroupAttributeRequest::ToJsonString() const
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_keepaliveEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepaliveEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_keepaliveEnable, allocator);
+    }
+
+    if (m_sessionExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sessionExpireTime, allocator);
     }
 
 
@@ -139,6 +157,38 @@ void ModifyTargetGroupAttributeRequest::SetWeight(const uint64_t& _weight)
 bool ModifyTargetGroupAttributeRequest::WeightHasBeenSet() const
 {
     return m_weightHasBeenSet;
+}
+
+bool ModifyTargetGroupAttributeRequest::GetKeepaliveEnable() const
+{
+    return m_keepaliveEnable;
+}
+
+void ModifyTargetGroupAttributeRequest::SetKeepaliveEnable(const bool& _keepaliveEnable)
+{
+    m_keepaliveEnable = _keepaliveEnable;
+    m_keepaliveEnableHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::KeepaliveEnableHasBeenSet() const
+{
+    return m_keepaliveEnableHasBeenSet;
+}
+
+uint64_t ModifyTargetGroupAttributeRequest::GetSessionExpireTime() const
+{
+    return m_sessionExpireTime;
+}
+
+void ModifyTargetGroupAttributeRequest::SetSessionExpireTime(const uint64_t& _sessionExpireTime)
+{
+    m_sessionExpireTime = _sessionExpireTime;
+    m_sessionExpireTimeHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::SessionExpireTimeHasBeenSet() const
+{
+    return m_sessionExpireTimeHasBeenSet;
 }
 
 

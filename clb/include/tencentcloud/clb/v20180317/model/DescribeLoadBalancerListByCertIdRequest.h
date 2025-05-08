@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务端证书的ID，或客户端证书的ID
-                     * @return CertIds 服务端证书的ID，或客户端证书的ID
+                     * 获取服务端证书的ID，或客户端证书的ID。可以通过 [DescribeCertificate](https://cloud.tencent.com/document/api/400/41674) 接口查询。
+数组最大长度为20。
+                     * @return CertIds 服务端证书的ID，或客户端证书的ID。可以通过 [DescribeCertificate](https://cloud.tencent.com/document/api/400/41674) 接口查询。
+数组最大长度为20。
                      * 
                      */
                     std::vector<std::string> GetCertIds() const;
 
                     /**
-                     * 设置服务端证书的ID，或客户端证书的ID
-                     * @param _certIds 服务端证书的ID，或客户端证书的ID
+                     * 设置服务端证书的ID，或客户端证书的ID。可以通过 [DescribeCertificate](https://cloud.tencent.com/document/api/400/41674) 接口查询。
+数组最大长度为20。
+                     * @param _certIds 服务端证书的ID，或客户端证书的ID。可以通过 [DescribeCertificate](https://cloud.tencent.com/document/api/400/41674) 接口查询。
+数组最大长度为20。
                      * 
                      */
                     void SetCertIds(const std::vector<std::string>& _certIds);
@@ -66,7 +70,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务端证书的ID，或客户端证书的ID
+                     * 服务端证书的ID，或客户端证书的ID。可以通过 [DescribeCertificate](https://cloud.tencent.com/document/api/400/41674) 接口查询。
+数组最大长度为20。
                      */
                     std::vector<std::string> m_certIds;
                     bool m_certIdsHasBeenSet;

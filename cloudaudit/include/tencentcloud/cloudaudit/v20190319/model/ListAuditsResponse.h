@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询跟踪集概要集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditSummarys 查询跟踪集概要集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AuditSummary> GetAuditSummarys() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 查询跟踪集概要集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AuditSummary> m_auditSummarys;
                     bool m_auditSummarysHasBeenSet;

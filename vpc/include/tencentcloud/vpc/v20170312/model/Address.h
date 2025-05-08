@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取绑定的弹性网卡ID
-                     * @return NetworkInterfaceId 绑定的弹性网卡ID
+                     * 获取绑定的弹性网卡ID，null表示没有绑定弹性网卡。
+                     * @return NetworkInterfaceId 绑定的弹性网卡ID，null表示没有绑定弹性网卡。
                      * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
-                     * 设置绑定的弹性网卡ID
-                     * @param _networkInterfaceId 绑定的弹性网卡ID
+                     * 设置绑定的弹性网卡ID，null表示没有绑定弹性网卡。
+                     * @param _networkInterfaceId 绑定的弹性网卡ID，null表示没有绑定弹性网卡。
                      * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定的资源内网ip
-                     * @return PrivateAddressIp 绑定的资源内网ip
+                     * 获取绑定的资源内网ip，null表示没有绑定资源内网ip。
+                     * @return PrivateAddressIp 绑定的资源内网ip，null表示没有绑定资源内网ip。
                      * 
                      */
                     std::string GetPrivateAddressIp() const;
 
                     /**
-                     * 设置绑定的资源内网ip
-                     * @param _privateAddressIp 绑定的资源内网ip
+                     * 设置绑定的资源内网ip，null表示没有绑定资源内网ip。
+                     * @param _privateAddressIp 绑定的资源内网ip，null表示没有绑定资源内网ip。
                      * 
                      */
                     void SetPrivateAddressIp(const std::string& _privateAddressIp);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool EipAlgTypeHasBeenSet() const;
 
                     /**
-                     * 获取弹性公网IP的运营商信息，当前可能返回值包括"CMCC","CTCC","CUCC","BGP"
-                     * @return InternetServiceProvider 弹性公网IP的运营商信息，当前可能返回值包括"CMCC","CTCC","CUCC","BGP"
+                     * 获取弹性公网IP的运营商信息，当前可能返回值包括"CMCC"(移动),"CTCC"(电信),"CUCC"(联通),"BGP"(常规BGP)。
+                     * @return InternetServiceProvider 弹性公网IP的运营商信息，当前可能返回值包括"CMCC"(移动),"CTCC"(电信),"CUCC"(联通),"BGP"(常规BGP)。
                      * 
                      */
                     std::string GetInternetServiceProvider() const;
 
                     /**
-                     * 设置弹性公网IP的运营商信息，当前可能返回值包括"CMCC","CTCC","CUCC","BGP"
-                     * @param _internetServiceProvider 弹性公网IP的运营商信息，当前可能返回值包括"CMCC","CTCC","CUCC","BGP"
+                     * 设置弹性公网IP的运营商信息，当前可能返回值包括"CMCC"(移动),"CTCC"(电信),"CUCC"(联通),"BGP"(常规BGP)。
+                     * @param _internetServiceProvider 弹性公网IP的运营商信息，当前可能返回值包括"CMCC"(移动),"CTCC"(电信),"CUCC"(联通),"BGP"(常规BGP)。
                      * 
                      */
                     void SetInternetServiceProvider(const std::string& _internetServiceProvider);
@@ -364,15 +364,23 @@ namespace TencentCloud
                     bool InternetServiceProviderHasBeenSet() const;
 
                     /**
-                     * 获取是否本地带宽EIP
-                     * @return LocalBgp 是否本地带宽EIP
+                     * 获取是否本地带宽EIP，可选值：
+<li>true：本地带宽EIP</li>
+<li>false：非本地带宽EIP</li>
+                     * @return LocalBgp 是否本地带宽EIP，可选值：
+<li>true：本地带宽EIP</li>
+<li>false：非本地带宽EIP</li>
                      * 
                      */
                     bool GetLocalBgp() const;
 
                     /**
-                     * 设置是否本地带宽EIP
-                     * @param _localBgp 是否本地带宽EIP
+                     * 设置是否本地带宽EIP，可选值：
+<li>true：本地带宽EIP</li>
+<li>false：非本地带宽EIP</li>
+                     * @param _localBgp 是否本地带宽EIP，可选值：
+<li>true：本地带宽EIP</li>
+<li>false：非本地带宽EIP</li>
                      * 
                      */
                     void SetLocalBgp(const bool& _localBgp);
@@ -496,18 +504,22 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取到期时间。
+                     * 获取预付费包月带宽IP到期时间。
+时间格式：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeadlineDate 到期时间。
+                     * @return DeadlineDate 预付费包月带宽IP到期时间。
+时间格式：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeadlineDate() const;
 
                     /**
-                     * 设置到期时间。
+                     * 设置预付费包月带宽IP到期时间。
+时间格式：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deadlineDate 到期时间。
+                     * @param _deadlineDate 预付费包月带宽IP到期时间。
+时间格式：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -521,18 +533,50 @@ namespace TencentCloud
                     bool DeadlineDateHasBeenSet() const;
 
                     /**
-                     * 获取EIP绑定的实例类型。
+                     * 获取EIP绑定的实例类型。可选值：
+<li>CVM：云服务器</li>
+<li>NAT：NAT 网关</li>
+<li>HAVIP：高可用虚拟IP</li>
+<li>ENI：弹性网卡</li>
+<li>CLB：内网CLB</li>
+<li>DHCPIP：弹性内网IP</li>
+
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceType EIP绑定的实例类型。
+                     * @return InstanceType EIP绑定的实例类型。可选值：
+<li>CVM：云服务器</li>
+<li>NAT：NAT 网关</li>
+<li>HAVIP：高可用虚拟IP</li>
+<li>ENI：弹性网卡</li>
+<li>CLB：内网CLB</li>
+<li>DHCPIP：弹性内网IP</li>
+
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置EIP绑定的实例类型。
+                     * 设置EIP绑定的实例类型。可选值：
+<li>CVM：云服务器</li>
+<li>NAT：NAT 网关</li>
+<li>HAVIP：高可用虚拟IP</li>
+<li>ENI：弹性网卡</li>
+<li>CLB：内网CLB</li>
+<li>DHCPIP：弹性内网IP</li>
+
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceType EIP绑定的实例类型。
+                     * @param _instanceType EIP绑定的实例类型。可选值：
+<li>CVM：云服务器</li>
+<li>NAT：NAT 网关</li>
+<li>HAVIP：高可用虚拟IP</li>
+<li>ENI：弹性网卡</li>
+<li>CLB：内网CLB</li>
+<li>DHCPIP：弹性内网IP</li>
+
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -726,13 +770,13 @@ namespace TencentCloud
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 绑定的弹性网卡ID
+                     * 绑定的弹性网卡ID，null表示没有绑定弹性网卡。
                      */
                     std::string m_networkInterfaceId;
                     bool m_networkInterfaceIdHasBeenSet;
 
                     /**
-                     * 绑定的资源内网ip
+                     * 绑定的资源内网ip，null表示没有绑定资源内网ip。
                      */
                     std::string m_privateAddressIp;
                     bool m_privateAddressIpHasBeenSet;
@@ -774,13 +818,15 @@ namespace TencentCloud
                     bool m_eipAlgTypeHasBeenSet;
 
                     /**
-                     * 弹性公网IP的运营商信息，当前可能返回值包括"CMCC","CTCC","CUCC","BGP"
+                     * 弹性公网IP的运营商信息，当前可能返回值包括"CMCC"(移动),"CTCC"(电信),"CUCC"(联通),"BGP"(常规BGP)。
                      */
                     std::string m_internetServiceProvider;
                     bool m_internetServiceProviderHasBeenSet;
 
                     /**
-                     * 是否本地带宽EIP
+                     * 是否本地带宽EIP，可选值：
+<li>true：本地带宽EIP</li>
+<li>false：非本地带宽EIP</li>
                      */
                     bool m_localBgp;
                     bool m_localBgpHasBeenSet;
@@ -816,14 +862,23 @@ namespace TencentCloud
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 到期时间。
+                     * 预付费包月带宽IP到期时间。
+时间格式：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deadlineDate;
                     bool m_deadlineDateHasBeenSet;
 
                     /**
-                     * EIP绑定的实例类型。
+                     * EIP绑定的实例类型。可选值：
+<li>CVM：云服务器</li>
+<li>NAT：NAT 网关</li>
+<li>HAVIP：高可用虚拟IP</li>
+<li>ENI：弹性网卡</li>
+<li>CLB：内网CLB</li>
+<li>DHCPIP：弹性内网IP</li>
+
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;

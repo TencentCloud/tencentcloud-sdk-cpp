@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取辅助CIDR拆分的子网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetSet 辅助CIDR拆分的子网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Subnet> GetSubnetSet() const;
 
                     /**
                      * 设置辅助CIDR拆分的子网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetSet 辅助CIDR拆分的子网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetSet(const std::vector<Subnet>& _subnetSet);
@@ -157,7 +153,6 @@ namespace TencentCloud
 
                     /**
                      * 辅助CIDR拆分的子网。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Subnet> m_subnetSet;
                     bool m_subnetSetHasBeenSet;

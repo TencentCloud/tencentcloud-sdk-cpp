@@ -648,6 +648,27 @@ namespace TencentCloud
                      */
                     bool ZoneIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否已冻结
+                     * @return IsFrozen 是否已冻结
+                     * 
+                     */
+                    bool GetIsFrozen() const;
+
+                    /**
+                     * 设置是否已冻结
+                     * @param _isFrozen 是否已冻结
+                     * 
+                     */
+                    void SetIsFrozen(const bool& _isFrozen);
+
+                    /**
+                     * 判断参数 IsFrozen 是否已赋值
+                     * @return IsFrozen 是否已赋值
+                     * 
+                     */
+                    bool IsFrozenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -818,6 +839,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
+
+                    /**
+                     * 是否已冻结
+                     */
+                    bool m_isFrozen;
+                    bool m_isFrozenHasBeenSet;
 
                 };
             }

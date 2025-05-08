@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发时间周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaximumExecutionFrequency 触发时间周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMaximumExecutionFrequency() const;
 
                     /**
                      * 设置触发时间周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maximumExecutionFrequency 触发时间周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaximumExecutionFrequency(const std::string& _maximumExecutionFrequency);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 触发时间周期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_maximumExecutionFrequency;
                     bool m_maximumExecutionFrequencyHasBeenSet;

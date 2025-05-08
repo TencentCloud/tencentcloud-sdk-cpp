@@ -26,8 +26,8 @@ ResetRocketMQConsumerOffSetRequest::ResetRocketMQConsumerOffSetRequest() :
     m_clusterIdHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_topicHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_topicHasBeenSet(false),
     m_resetTimestampHasBeenSet(false)
 {
 }
@@ -63,20 +63,20 @@ string ResetRocketMQConsumerOffSetRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_topicHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Topic";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_topicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Topic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resetTimestampHasBeenSet)
@@ -143,22 +143,6 @@ bool ResetRocketMQConsumerOffSetRequest::GroupIdHasBeenSet() const
     return m_groupIdHasBeenSet;
 }
 
-string ResetRocketMQConsumerOffSetRequest::GetTopic() const
-{
-    return m_topic;
-}
-
-void ResetRocketMQConsumerOffSetRequest::SetTopic(const string& _topic)
-{
-    m_topic = _topic;
-    m_topicHasBeenSet = true;
-}
-
-bool ResetRocketMQConsumerOffSetRequest::TopicHasBeenSet() const
-{
-    return m_topicHasBeenSet;
-}
-
 uint64_t ResetRocketMQConsumerOffSetRequest::GetType() const
 {
     return m_type;
@@ -173,6 +157,22 @@ void ResetRocketMQConsumerOffSetRequest::SetType(const uint64_t& _type)
 bool ResetRocketMQConsumerOffSetRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string ResetRocketMQConsumerOffSetRequest::GetTopic() const
+{
+    return m_topic;
+}
+
+void ResetRocketMQConsumerOffSetRequest::SetTopic(const string& _topic)
+{
+    m_topic = _topic;
+    m_topicHasBeenSet = true;
+}
+
+bool ResetRocketMQConsumerOffSetRequest::TopicHasBeenSet() const
+{
+    return m_topicHasBeenSet;
 }
 
 uint64_t ResetRocketMQConsumerOffSetRequest::GetResetTimestamp() const

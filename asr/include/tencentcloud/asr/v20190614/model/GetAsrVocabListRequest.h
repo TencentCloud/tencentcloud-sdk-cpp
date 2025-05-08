@@ -45,21 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
                      * @return TagInfos 标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetTagInfos() const;
 
                     /**
                      * 设置标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
                      * @param _tagInfos 标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
-                     * 
+                     * @deprecated
                      */
                     void SetTagInfos(const std::vector<std::string>& _tagInfos);
 
                     /**
                      * 判断参数 TagInfos 是否已赋值
                      * @return TagInfos 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TagInfosHasBeenSet() const;
 

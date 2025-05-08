@@ -41,6 +41,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/CloseProxyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseProxyEndPointRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseProxyEndPointResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CloseSSLRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CloseSSLResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseWanRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseWanResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CopyClusterPasswordComplexityRequest.h>
@@ -380,6 +382,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloseProxyEndPointResponse> CloseProxyEndPointOutcome;
                 typedef std::future<CloseProxyEndPointOutcome> CloseProxyEndPointOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CloseProxyEndPointRequest&, CloseProxyEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseProxyEndPointAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseSSLResponse> CloseSSLOutcome;
+                typedef std::future<CloseSSLOutcome> CloseSSLOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CloseSSLRequest&, CloseSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseSSLAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseWanResponse> CloseWanOutcome;
                 typedef std::future<CloseWanOutcome> CloseWanOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CloseWanRequest&, CloseWanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseWanAsyncHandler;
@@ -910,6 +915,15 @@ namespace TencentCloud
                 CloseProxyEndPointOutcome CloseProxyEndPoint(const Model::CloseProxyEndPointRequest &request);
                 void CloseProxyEndPointAsync(const Model::CloseProxyEndPointRequest& request, const CloseProxyEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseProxyEndPointOutcomeCallable CloseProxyEndPointCallable(const Model::CloseProxyEndPointRequest& request);
+
+                /**
+                 *关闭SSL加密
+                 * @param req CloseSSLRequest
+                 * @return CloseSSLOutcome
+                 */
+                CloseSSLOutcome CloseSSL(const Model::CloseSSLRequest &request);
+                void CloseSSLAsync(const Model::CloseSSLRequest& request, const CloseSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseSSLOutcomeCallable CloseSSLCallable(const Model::CloseSSLRequest& request);
 
                 /**
                  *本接口（CloseWan）用于关闭外网。

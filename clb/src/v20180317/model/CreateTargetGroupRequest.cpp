@@ -31,7 +31,9 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_protocolHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_weightHasBeenSet(false),
-    m_fullListenSwitchHasBeenSet(false)
+    m_fullListenSwitchHasBeenSet(false),
+    m_keepaliveEnableHasBeenSet(false),
+    m_sessionExpireTimeHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,22 @@ string CreateTargetGroupRequest::ToJsonString() const
         string key = "FullListenSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fullListenSwitch, allocator);
+    }
+
+    if (m_keepaliveEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepaliveEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_keepaliveEnable, allocator);
+    }
+
+    if (m_sessionExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sessionExpireTime, allocator);
     }
 
 
@@ -278,6 +296,38 @@ void CreateTargetGroupRequest::SetFullListenSwitch(const bool& _fullListenSwitch
 bool CreateTargetGroupRequest::FullListenSwitchHasBeenSet() const
 {
     return m_fullListenSwitchHasBeenSet;
+}
+
+bool CreateTargetGroupRequest::GetKeepaliveEnable() const
+{
+    return m_keepaliveEnable;
+}
+
+void CreateTargetGroupRequest::SetKeepaliveEnable(const bool& _keepaliveEnable)
+{
+    m_keepaliveEnable = _keepaliveEnable;
+    m_keepaliveEnableHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::KeepaliveEnableHasBeenSet() const
+{
+    return m_keepaliveEnableHasBeenSet;
+}
+
+uint64_t CreateTargetGroupRequest::GetSessionExpireTime() const
+{
+    return m_sessionExpireTime;
+}
+
+void CreateTargetGroupRequest::SetSessionExpireTime(const uint64_t& _sessionExpireTime)
+{
+    m_sessionExpireTime = _sessionExpireTime;
+    m_sessionExpireTimeHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::SessionExpireTimeHasBeenSet() const
+{
+    return m_sessionExpireTimeHasBeenSet;
 }
 
 

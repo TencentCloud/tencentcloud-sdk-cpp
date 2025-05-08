@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc的字符串id，只支持字符串id。
+可以通过 [DescribeVpcs](https://cloud.tencent.com/document/api/215/15778) 接口查询。
                      * @return VpcId vpc的字符串id，只支持字符串id。
+可以通过 [DescribeVpcs](https://cloud.tencent.com/document/api/215/15778) 接口查询。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc的字符串id，只支持字符串id。
+可以通过 [DescribeVpcs](https://cloud.tencent.com/document/api/215/15778) 接口查询。
                      * @param _vpcId vpc的字符串id，只支持字符串id。
+可以通过 [DescribeVpcs](https://cloud.tencent.com/document/api/215/15778) 接口查询。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -68,15 +72,19 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取需要查询后端的内网ip，可以是cvm和弹性网卡。
-                     * @return PrivateIp 需要查询后端的内网ip，可以是cvm和弹性网卡。
+                     * 获取需要查询后端的内网 IP，可以是 CVM 和弹性网卡。
+可以通过 [DescribeAddresses](https://cloud.tencent.com/document/product/215/16702) 接口查询。
+                     * @return PrivateIp 需要查询后端的内网 IP，可以是 CVM 和弹性网卡。
+可以通过 [DescribeAddresses](https://cloud.tencent.com/document/product/215/16702) 接口查询。
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
-                     * 设置需要查询后端的内网ip，可以是cvm和弹性网卡。
-                     * @param _privateIp 需要查询后端的内网ip，可以是cvm和弹性网卡。
+                     * 设置需要查询后端的内网 IP，可以是 CVM 和弹性网卡。
+可以通过 [DescribeAddresses](https://cloud.tencent.com/document/product/215/16702) 接口查询。
+                     * @param _privateIp 需要查询后端的内网 IP，可以是 CVM 和弹性网卡。
+可以通过 [DescribeAddresses](https://cloud.tencent.com/document/product/215/16702) 接口查询。
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * vpc的字符串id，只支持字符串id。
+可以通过 [DescribeVpcs](https://cloud.tencent.com/document/api/215/15778) 接口查询。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 需要查询后端的内网ip，可以是cvm和弹性网卡。
+                     * 需要查询后端的内网 IP，可以是 CVM 和弹性网卡。
+可以通过 [DescribeAddresses](https://cloud.tencent.com/document/product/215/16702) 接口查询。
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;

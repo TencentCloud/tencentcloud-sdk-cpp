@@ -708,6 +708,48 @@ namespace TencentCloud
                      */
                     bool TenantHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启异常消费者隔离
+                     * @return IsolateConsumerEnable 是否开启异常消费者隔离
+                     * 
+                     */
+                    bool GetIsolateConsumerEnable() const;
+
+                    /**
+                     * 设置是否开启异常消费者隔离
+                     * @param _isolateConsumerEnable 是否开启异常消费者隔离
+                     * 
+                     */
+                    void SetIsolateConsumerEnable(const bool& _isolateConsumerEnable);
+
+                    /**
+                     * 判断参数 IsolateConsumerEnable 是否已赋值
+                     * @return IsolateConsumerEnable 是否已赋值
+                     * 
+                     */
+                    bool IsolateConsumerEnableHasBeenSet() const;
+
+                    /**
+                     * 获取消费者 Ack 超时时间，单位：秒
+                     * @return AckTimeOut 消费者 Ack 超时时间，单位：秒
+                     * 
+                     */
+                    int64_t GetAckTimeOut() const;
+
+                    /**
+                     * 设置消费者 Ack 超时时间，单位：秒
+                     * @param _ackTimeOut 消费者 Ack 超时时间，单位：秒
+                     * 
+                     */
+                    void SetAckTimeOut(const int64_t& _ackTimeOut);
+
+                    /**
+                     * 判断参数 AckTimeOut 是否已赋值
+                     * @return AckTimeOut 是否已赋值
+                     * 
+                     */
+                    bool AckTimeOutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -893,6 +935,18 @@ namespace TencentCloud
                      */
                     std::string m_tenant;
                     bool m_tenantHasBeenSet;
+
+                    /**
+                     * 是否开启异常消费者隔离
+                     */
+                    bool m_isolateConsumerEnable;
+                    bool m_isolateConsumerEnableHasBeenSet;
+
+                    /**
+                     * 消费者 Ack 超时时间，单位：秒
+                     */
+                    int64_t m_ackTimeOut;
+                    bool m_ackTimeOutHasBeenSet;
 
                 };
             }

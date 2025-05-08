@@ -26,6 +26,7 @@ ResultList::ResultList() :
     m_figureHasBeenSet(false),
     m_tableHasBeenSet(false),
     m_answerHasBeenSet(false),
+    m_parseHasBeenSet(false),
     m_coordHasBeenSet(false)
 {
 }
@@ -135,6 +136,26 @@ CoreInternalOutcome ResultList::Deserialize(const rapidjson::Value &value)
         m_answerHasBeenSet = true;
     }
 
+    if (value.HasMember("Parse") && !value["Parse"].IsNull())
+    {
+        if (!value["Parse"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResultList.Parse` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Parse"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Element item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_parse.push_back(item);
+        }
+        m_parseHasBeenSet = true;
+    }
+
     if (value.HasMember("Coord") && !value["Coord"].IsNull())
     {
         if (!value["Coord"].IsArray())
@@ -237,6 +258,21 @@ void ResultList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         }
     }
 
+    if (m_parseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Parse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_parse.begin(); itr != m_parse.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_coordHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -333,6 +369,22 @@ void ResultList::SetAnswer(const vector<Element>& _answer)
 bool ResultList::AnswerHasBeenSet() const
 {
     return m_answerHasBeenSet;
+}
+
+vector<Element> ResultList::GetParse() const
+{
+    return m_parse;
+}
+
+void ResultList::SetParse(const vector<Element>& _parse)
+{
+    m_parse = _parse;
+    m_parseHasBeenSet = true;
+}
+
+bool ResultList::ParseHasBeenSet() const
+{
+    return m_parseHasBeenSet;
 }
 
 vector<Polygon> ResultList::GetCoord() const

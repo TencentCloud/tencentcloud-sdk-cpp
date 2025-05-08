@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceType() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 资源名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceName() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceRegion 资源地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceRegion() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceZone 资源可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceZone() const;
@@ -126,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Configuration 资源配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfiguration() const;
@@ -142,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceCreateTime 资源创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceCreateTime() const;
@@ -158,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 资源标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
@@ -174,9 +158,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 资源更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
@@ -192,63 +174,54 @@ namespace TencentCloud
 
                     /**
                      * 资源Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 资源名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
                      * 资源地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;
 
                     /**
                      * 资源可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceZone;
                     bool m_resourceZoneHasBeenSet;
 
                     /**
                      * 资源配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configuration;
                     bool m_configurationHasBeenSet;
 
                     /**
                      * 资源创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceCreateTime;
                     bool m_resourceCreateTimeHasBeenSet;
 
                     /**
                      * 资源标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 资源更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

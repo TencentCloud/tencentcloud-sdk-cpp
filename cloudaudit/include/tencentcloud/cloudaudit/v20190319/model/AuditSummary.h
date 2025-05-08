@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跟踪集状态，1：开启，0：关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditStatus 跟踪集状态，1：开启，0：关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAuditStatus() const;
 
                     /**
                      * 设置跟踪集状态，1：开启，0：关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auditStatus 跟踪集状态，1：开启，0：关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuditStatus(const int64_t& _auditStatus);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取COS存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosBucketName COS存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosBucketName() const;
 
                     /**
                      * 设置COS存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cosBucketName COS存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCosBucketName(const std::string& _cosBucketName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跟踪集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditName 跟踪集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuditName() const;
 
                     /**
                      * 设置跟踪集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auditName 跟踪集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuditName(const std::string& _auditName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogFilePrefix 日志前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogFilePrefix() const;
 
                     /**
                      * 设置日志前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logFilePrefix 日志前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogFilePrefix(const std::string& _logFilePrefix);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 跟踪集状态，1：开启，0：关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_auditStatus;
                     bool m_auditStatusHasBeenSet;
 
                     /**
                      * COS存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosBucketName;
                     bool m_cosBucketNameHasBeenSet;
 
                     /**
                      * 跟踪集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_auditName;
                     bool m_auditNameHasBeenSet;
 
                     /**
                      * 日志前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logFilePrefix;
                     bool m_logFilePrefixHasBeenSet;

@@ -197,6 +197,8 @@
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryTaskResultDetailResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryTaskTablesRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryTaskTablesResponse.h>
+#include <tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryTasksRequest.h>
+#include <tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryTasksResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAESDataAssetByComplianceIdRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAESDataAssetByComplianceIdResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAESDataAssetDetailRequest.h>
@@ -592,6 +594,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDSPADiscoveryTaskTablesResponse> DescribeDSPADiscoveryTaskTablesOutcome;
                 typedef std::future<DescribeDSPADiscoveryTaskTablesOutcome> DescribeDSPADiscoveryTaskTablesOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeDSPADiscoveryTaskTablesRequest&, DescribeDSPADiscoveryTaskTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDSPADiscoveryTaskTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDSPADiscoveryTasksResponse> DescribeDSPADiscoveryTasksOutcome;
+                typedef std::future<DescribeDSPADiscoveryTasksOutcome> DescribeDSPADiscoveryTasksOutcomeCallable;
+                typedef std::function<void(const DsgcClient*, const Model::DescribeDSPADiscoveryTasksRequest&, DescribeDSPADiscoveryTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDSPADiscoveryTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDSPAESDataAssetByComplianceIdResponse> DescribeDSPAESDataAssetByComplianceIdOutcome;
                 typedef std::future<DescribeDSPAESDataAssetByComplianceIdOutcome> DescribeDSPAESDataAssetByComplianceIdOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeDSPAESDataAssetByComplianceIdRequest&, DescribeDSPAESDataAssetByComplianceIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDSPAESDataAssetByComplianceIdAsyncHandler;
@@ -1572,6 +1577,15 @@ namespace TencentCloud
                 DescribeDSPADiscoveryTaskTablesOutcome DescribeDSPADiscoveryTaskTables(const Model::DescribeDSPADiscoveryTaskTablesRequest &request);
                 void DescribeDSPADiscoveryTaskTablesAsync(const Model::DescribeDSPADiscoveryTaskTablesRequest& request, const DescribeDSPADiscoveryTaskTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDSPADiscoveryTaskTablesOutcomeCallable DescribeDSPADiscoveryTaskTablesCallable(const Model::DescribeDSPADiscoveryTaskTablesRequest& request);
+
+                /**
+                 *获取分类分级任务列表
+                 * @param req DescribeDSPADiscoveryTasksRequest
+                 * @return DescribeDSPADiscoveryTasksOutcome
+                 */
+                DescribeDSPADiscoveryTasksOutcome DescribeDSPADiscoveryTasks(const Model::DescribeDSPADiscoveryTasksRequest &request);
+                void DescribeDSPADiscoveryTasksAsync(const Model::DescribeDSPADiscoveryTasksRequest& request, const DescribeDSPADiscoveryTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDSPADiscoveryTasksOutcomeCallable DescribeDSPADiscoveryTasksCallable(const Model::DescribeDSPADiscoveryTasksRequest& request);
 
                 /**
                  *根据合规组id，去查询ES的概览页统计数据

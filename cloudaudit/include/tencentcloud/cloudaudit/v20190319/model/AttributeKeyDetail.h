@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输入框类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelType 输入框类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabelType() const;
 
                     /**
                      * 设置输入框类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labelType 输入框类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabelType(const std::string& _labelType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取初始化展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Starter 初始化展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStarter() const;
 
                     /**
                      * 设置初始化展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _starter 初始化展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStarter(const std::string& _starter);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取展示排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Order 展示排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOrder() const;
 
                     /**
                      * 设置展示排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _order 展示排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrder(const int64_t& _order);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AttributeKey值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value AttributeKey值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置AttributeKey值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value AttributeKey值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取中文标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 中文标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置中文标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 中文标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 输入框类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_labelType;
                     bool m_labelTypeHasBeenSet;
 
                     /**
                      * 初始化展示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_starter;
                     bool m_starterHasBeenSet;
 
                     /**
                      * 展示排序
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_order;
                     bool m_orderHasBeenSet;
 
                     /**
                      * AttributeKey值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 中文标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;

@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。
-                     * @return Filters 过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。
+                     * 获取过滤条件数组，与TargetGroupIds互斥，支持 TargetGroupVpcId（私有网络 ID）和 TargetGroupName（目标组名称）以及 Tag（标签）。
+                     * @return Filters 过滤条件数组，与TargetGroupIds互斥，支持 TargetGroupVpcId（私有网络 ID）和 TargetGroupName（目标组名称）以及 Tag（标签）。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。
-                     * @param _filters 过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。
+                     * 设置过滤条件数组，与TargetGroupIds互斥，支持 TargetGroupVpcId（私有网络 ID）和 TargetGroupName（目标组名称）以及 Tag（标签）。
+                     * @param _filters 过滤条件数组，与TargetGroupIds互斥，支持 TargetGroupVpcId（私有网络 ID）和 TargetGroupName（目标组名称）以及 Tag（标签）。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。
+                     * 过滤条件数组，与TargetGroupIds互斥，支持 TargetGroupVpcId（私有网络 ID）和 TargetGroupName（目标组名称）以及 Tag（标签）。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

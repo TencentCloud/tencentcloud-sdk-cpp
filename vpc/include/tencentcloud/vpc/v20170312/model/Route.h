@@ -296,18 +296,14 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
 
                     /**
                      * 获取创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestinationIpv6CidrBlock 创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDestinationIpv6CidrBlock() const;
 
                     /**
                      * 设置创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destinationIpv6CidrBlock 创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestinationIpv6CidrBlock(const std::string& _destinationIpv6CidrBlock);
@@ -342,18 +338,14 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
 
                     /**
                      * 获取路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublishedToVbc 路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPublishedToVbc() const;
 
                     /**
                      * 设置路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publishedToVbc 路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublishedToVbc(const bool& _publishedToVbc);
@@ -388,18 +380,14 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
 
                     /**
                      * 获取CDC 集群唯一 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcId CDC 集群唯一 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置CDC 集群唯一 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcId CDC 集群唯一 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -483,7 +471,6 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
 
                     /**
                      * 创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_destinationIpv6CidrBlock;
                     bool m_destinationIpv6CidrBlockHasBeenSet;
@@ -496,7 +483,6 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
 
                     /**
                      * 路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_publishedToVbc;
                     bool m_publishedToVbcHasBeenSet;
@@ -509,7 +495,6 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
 
                     /**
                      * CDC 集群唯一 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;

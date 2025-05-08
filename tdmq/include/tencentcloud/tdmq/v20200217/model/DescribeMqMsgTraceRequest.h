@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool QueryDlqMsgHasBeenSet() const;
 
+                    /**
+                     * 获取生产时间
+                     * @return ProduceTime 生产时间
+                     * 
+                     */
+                    std::string GetProduceTime() const;
+
+                    /**
+                     * 设置生产时间
+                     * @param _produceTime 生产时间
+                     * 
+                     */
+                    void SetProduceTime(const std::string& _produceTime);
+
+                    /**
+                     * 判断参数 ProduceTime 是否已赋值
+                     * @return ProduceTime 是否已赋值
+                     * 
+                     */
+                    bool ProduceTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     bool m_queryDlqMsg;
                     bool m_queryDlqMsgHasBeenSet;
+
+                    /**
+                     * 生产时间
+                     */
+                    std::string m_produceTime;
+                    bool m_produceTimeHasBeenSet;
 
                 };
             }

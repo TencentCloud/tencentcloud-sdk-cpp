@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool CertContentHasBeenSet() const;
 
                     /**
-                     * 获取上传客户端 CA 证书的名称，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。
-                     * @return CertCaName 上传客户端 CA 证书的名称，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。
+                     * 获取上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
+                     * @return CertCaName 上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
                      * 
                      */
                     std::string GetCertCaName() const;
 
                     /**
-                     * 设置上传客户端 CA 证书的名称，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。
-                     * @param _certCaName 上传客户端 CA 证书的名称，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。
+                     * 设置上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
+                     * @param _certCaName 上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
                      * 
                      */
                     void SetCertCaName(const std::string& _certCaName);
@@ -219,15 +219,15 @@ namespace TencentCloud
                     bool CertCaNameHasBeenSet() const;
 
                     /**
-                     * 获取上传客户端证书的内容，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。
-                     * @return CertCaContent 上传客户端证书的内容，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。
+                     * 获取上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
+                     * @return CertCaContent 上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
                      * 
                      */
                     std::string GetCertCaContent() const;
 
                     /**
-                     * 设置上传客户端证书的内容，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。
-                     * @param _certCaContent 上传客户端证书的内容，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。
+                     * 设置上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
+                     * @param _certCaContent 上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
                      * 
                      */
                     void SetCertCaContent(const std::string& _certCaContent);
@@ -285,13 +285,13 @@ namespace TencentCloud
                     bool m_certContentHasBeenSet;
 
                     /**
-                     * 上传客户端 CA 证书的名称，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。
+                     * 上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
                      */
                     std::string m_certCaName;
                     bool m_certCaNameHasBeenSet;
 
                     /**
-                     * 上传客户端证书的内容，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。
+                     * 上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
                      */
                     std::string m_certCaContent;
                     bool m_certCaContentHasBeenSet;

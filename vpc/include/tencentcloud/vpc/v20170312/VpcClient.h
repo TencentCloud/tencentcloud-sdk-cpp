@@ -3563,7 +3563,7 @@ namespace TencentCloud
                 DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request);
 
                 /**
-                 *查询指定EIP的带宽上下限范围。
+                 *本接口（DescribeAddressBandwidthRange）用于查询指定EIP的带宽上下限范围。
                  * @param req DescribeAddressBandwidthRangeRequest
                  * @return DescribeAddressBandwidthRangeOutcome
                  */
@@ -4946,7 +4946,7 @@ LimitTypes取值范围：
                 InquiryPriceModifyAddressesBandwidthOutcomeCallable InquiryPriceModifyAddressesBandwidthCallable(const Model::InquiryPriceModifyAddressesBandwidthRequest& request);
 
                 /**
-                 *本接口（InquiryPriceRenewAddresses）用于续费预付费弹性公网IP询价。
+                 *本接口（InquiryPriceRenewAddresses）用于续费预付费弹性公网IP询价，只支持包月按带宽预付费的计费模式。
                  * @param req InquiryPriceRenewAddressesRequest
                  * @return InquiryPriceRenewAddressesOutcome
                  */
@@ -5080,7 +5080,7 @@ LimitTypes取值范围：
                 ModifyAddressesBandwidthOutcomeCallable ModifyAddressesBandwidthCallable(const Model::ModifyAddressesBandwidthRequest& request);
 
                 /**
-                 *调整EIP续费标识
+                 *本接口（ModifyAddressesRenewFlag）用于调整EIP续费标识。
                  * @param req ModifyAddressesRenewFlagRequest
                  * @return ModifyAddressesRenewFlagOutcome
                  */

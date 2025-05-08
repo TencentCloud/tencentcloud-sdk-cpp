@@ -59,6 +59,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceListResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateConsumerGroupRequest.h
+  include/tencentcloud/trocket/v20230308/model/ClientSubscriptionInfo.h
   include/tencentcloud/trocket/v20230308/model/ChangeMigratingTopicToNextStageResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTClientRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeSourceClusterGroupListRequest.h
@@ -231,6 +232,7 @@ set(trocket_src
   src/v20230308/model/DescribeInstanceListResponse.cpp
   src/v20230308/model/ModifyInstanceResponse.cpp
   src/v20230308/model/CreateConsumerGroupRequest.cpp
+  src/v20230308/model/ClientSubscriptionInfo.cpp
   src/v20230308/model/ChangeMigratingTopicToNextStageResponse.cpp
   src/v20230308/model/DescribeMQTTClientRequest.cpp
   src/v20230308/model/DescribeSourceClusterGroupListRequest.cpp

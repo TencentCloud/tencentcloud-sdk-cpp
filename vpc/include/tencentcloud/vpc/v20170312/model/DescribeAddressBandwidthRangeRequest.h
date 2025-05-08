@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EIP资源ID列表，单次查询上限20。
-                     * @return AddressIds EIP资源ID列表，单次查询上限20。
+                     * 获取EIP资源ID列表，单次查询上限20，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @return AddressIds EIP资源ID列表，单次查询上限20，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     std::vector<std::string> GetAddressIds() const;
 
                     /**
-                     * 设置EIP资源ID列表，单次查询上限20。
-                     * @param _addressIds EIP资源ID列表，单次查询上限20。
+                     * 设置EIP资源ID列表，单次查询上限20，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @param _addressIds EIP资源ID列表，单次查询上限20，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     void SetAddressIds(const std::vector<std::string>& _addressIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EIP资源ID列表，单次查询上限20。
+                     * EIP资源ID列表，单次查询上限20，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      */
                     std::vector<std::string> m_addressIds;
                     bool m_addressIdsHasBeenSet;

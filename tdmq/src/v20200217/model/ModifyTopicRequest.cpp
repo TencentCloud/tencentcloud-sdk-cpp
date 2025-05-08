@@ -29,7 +29,9 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_clusterIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_msgTTLHasBeenSet(false),
-    m_unackPolicyHasBeenSet(false)
+    m_unackPolicyHasBeenSet(false),
+    m_isolateConsumerEnableHasBeenSet(false),
+    m_ackTimeOutHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,22 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "UnackPolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_unackPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateConsumerEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateConsumerEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isolateConsumerEnable, allocator);
+    }
+
+    if (m_ackTimeOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AckTimeOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ackTimeOut, allocator);
     }
 
 
@@ -214,6 +232,38 @@ void ModifyTopicRequest::SetUnackPolicy(const string& _unackPolicy)
 bool ModifyTopicRequest::UnackPolicyHasBeenSet() const
 {
     return m_unackPolicyHasBeenSet;
+}
+
+bool ModifyTopicRequest::GetIsolateConsumerEnable() const
+{
+    return m_isolateConsumerEnable;
+}
+
+void ModifyTopicRequest::SetIsolateConsumerEnable(const bool& _isolateConsumerEnable)
+{
+    m_isolateConsumerEnable = _isolateConsumerEnable;
+    m_isolateConsumerEnableHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::IsolateConsumerEnableHasBeenSet() const
+{
+    return m_isolateConsumerEnableHasBeenSet;
+}
+
+int64_t ModifyTopicRequest::GetAckTimeOut() const
+{
+    return m_ackTimeOut;
+}
+
+void ModifyTopicRequest::SetAckTimeOut(const int64_t& _ackTimeOut)
+{
+    m_ackTimeOut = _ackTimeOut;
+    m_ackTimeOutHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::AckTimeOutHasBeenSet() const
+{
+    return m_ackTimeOutHasBeenSet;
 }
 
 

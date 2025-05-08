@@ -46,7 +46,9 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_isRelatedDashboardHasBeenSet(false),
     m_dashboardTopicIDHasBeenSet(false),
     m_isSqlInjectionAnalysisHasBeenSet(false),
-    m_isInstrumentationVulnerabilityScanHasBeenSet(false)
+    m_isInstrumentationVulnerabilityScanHasBeenSet(false),
+    m_isRemoteCommandExecutionAnalysisHasBeenSet(false),
+    m_isMemoryHijackingAnalysisHasBeenSet(false)
 {
 }
 
@@ -259,6 +261,22 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "IsInstrumentationVulnerabilityScan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isInstrumentationVulnerabilityScan, allocator);
+    }
+
+    if (m_isRemoteCommandExecutionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRemoteCommandExecutionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isRemoteCommandExecutionAnalysis, allocator);
+    }
+
+    if (m_isMemoryHijackingAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMemoryHijackingAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isMemoryHijackingAnalysis, allocator);
     }
 
 
@@ -651,6 +669,38 @@ void ModifyApmInstanceRequest::SetIsInstrumentationVulnerabilityScan(const int64
 bool ModifyApmInstanceRequest::IsInstrumentationVulnerabilityScanHasBeenSet() const
 {
     return m_isInstrumentationVulnerabilityScanHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsRemoteCommandExecutionAnalysis() const
+{
+    return m_isRemoteCommandExecutionAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsRemoteCommandExecutionAnalysis(const int64_t& _isRemoteCommandExecutionAnalysis)
+{
+    m_isRemoteCommandExecutionAnalysis = _isRemoteCommandExecutionAnalysis;
+    m_isRemoteCommandExecutionAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsRemoteCommandExecutionAnalysisHasBeenSet() const
+{
+    return m_isRemoteCommandExecutionAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsMemoryHijackingAnalysis() const
+{
+    return m_isMemoryHijackingAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsMemoryHijackingAnalysis(const int64_t& _isMemoryHijackingAnalysis)
+{
+    m_isMemoryHijackingAnalysis = _isMemoryHijackingAnalysis;
+    m_isMemoryHijackingAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsMemoryHijackingAnalysisHasBeenSet() const
+{
+    return m_isMemoryHijackingAnalysisHasBeenSet;
 }
 
 

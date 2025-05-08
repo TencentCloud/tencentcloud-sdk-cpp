@@ -293,6 +293,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyHostModeResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyHostStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyHostStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyInstanceAttackLogPostRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyInstanceAttackLogPostResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyInstanceElasticModeRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyInstanceElasticModeResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyInstanceNameRequest.h>
@@ -768,6 +770,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyHostStatusResponse> ModifyHostStatusOutcome;
                 typedef std::future<ModifyHostStatusOutcome> ModifyHostStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyHostStatusRequest&, ModifyHostStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHostStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceAttackLogPostResponse> ModifyInstanceAttackLogPostOutcome;
+                typedef std::future<ModifyInstanceAttackLogPostOutcome> ModifyInstanceAttackLogPostOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyInstanceAttackLogPostRequest&, ModifyInstanceAttackLogPostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAttackLogPostAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceElasticModeResponse> ModifyInstanceElasticModeOutcome;
                 typedef std::future<ModifyInstanceElasticModeOutcome> ModifyInstanceElasticModeOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyInstanceElasticModeRequest&, ModifyInstanceElasticModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceElasticModeAsyncHandler;
@@ -2072,6 +2077,15 @@ namespace TencentCloud
                 ModifyHostStatusOutcome ModifyHostStatus(const Model::ModifyHostStatusRequest &request);
                 void ModifyHostStatusAsync(const Model::ModifyHostStatusRequest& request, const ModifyHostStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyHostStatusOutcomeCallable ModifyHostStatusCallable(const Model::ModifyHostStatusRequest& request);
+
+                /**
+                 *修改实例攻击日志投递开关，企业版及以上版本可以开通，否则返回错误
+                 * @param req ModifyInstanceAttackLogPostRequest
+                 * @return ModifyInstanceAttackLogPostOutcome
+                 */
+                ModifyInstanceAttackLogPostOutcome ModifyInstanceAttackLogPost(const Model::ModifyInstanceAttackLogPostRequest &request);
+                void ModifyInstanceAttackLogPostAsync(const Model::ModifyInstanceAttackLogPostRequest& request, const ModifyInstanceAttackLogPostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceAttackLogPostOutcomeCallable ModifyInstanceAttackLogPostCallable(const Model::ModifyInstanceAttackLogPostRequest& request);
 
                 /**
                  *修改实例的QPS弹性计费开关

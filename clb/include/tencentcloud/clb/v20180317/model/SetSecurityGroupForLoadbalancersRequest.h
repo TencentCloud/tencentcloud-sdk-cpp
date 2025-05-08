@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组ID，如 sg-12345678
-                     * @return SecurityGroup 安全组ID，如 sg-12345678
+                     * 获取安全组ID，如 sg-12345678。可以通过 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808) 接口获取。
+                     * @return SecurityGroup 安全组ID，如 sg-12345678。可以通过 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808) 接口获取。
                      * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
-                     * 设置安全组ID，如 sg-12345678
-                     * @param _securityGroup 安全组ID，如 sg-12345678
+                     * 设置安全组ID，如 sg-12345678。可以通过 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808) 接口获取。
+                     * @param _securityGroup 安全组ID，如 sg-12345678。可以通过 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808) 接口获取。
                      * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
@@ -89,15 +89,19 @@ DEL 解绑安全组
                     bool OperationTypeHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例ID数组
-                     * @return LoadBalancerIds 负载均衡实例ID数组
+                     * 获取负载均衡实例ID数组，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+列表支持的最大长度为20。
+                     * @return LoadBalancerIds 负载均衡实例ID数组，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+列表支持的最大长度为20。
                      * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
-                     * 设置负载均衡实例ID数组
-                     * @param _loadBalancerIds 负载均衡实例ID数组
+                     * 设置负载均衡实例ID数组，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+列表支持的最大长度为20。
+                     * @param _loadBalancerIds 负载均衡实例ID数组，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+列表支持的最大长度为20。
                      * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
@@ -112,7 +116,7 @@ DEL 解绑安全组
                 private:
 
                     /**
-                     * 安全组ID，如 sg-12345678
+                     * 安全组ID，如 sg-12345678。可以通过 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808) 接口获取。
                      */
                     std::string m_securityGroup;
                     bool m_securityGroupHasBeenSet;
@@ -125,7 +129,8 @@ DEL 解绑安全组
                     bool m_operationTypeHasBeenSet;
 
                     /**
-                     * 负载均衡实例ID数组
+                     * 负载均衡实例ID数组，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+列表支持的最大长度为20。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;

@@ -44,15 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取绑定的关系数组。一次请求最多支持20个。
-                     * @return Associations 绑定的关系数组。一次请求最多支持20个。
+                     * 获取绑定的关系数组，目标组类型需要一致。
+一次请求最多支持20个。
+
+                     * @return Associations 绑定的关系数组，目标组类型需要一致。
+一次请求最多支持20个。
+
                      * 
                      */
                     std::vector<TargetGroupAssociation> GetAssociations() const;
 
                     /**
-                     * 设置绑定的关系数组。一次请求最多支持20个。
-                     * @param _associations 绑定的关系数组。一次请求最多支持20个。
+                     * 设置绑定的关系数组，目标组类型需要一致。
+一次请求最多支持20个。
+
+                     * @param _associations 绑定的关系数组，目标组类型需要一致。
+一次请求最多支持20个。
+
                      * 
                      */
                     void SetAssociations(const std::vector<TargetGroupAssociation>& _associations);
@@ -67,7 +75,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 绑定的关系数组。一次请求最多支持20个。
+                     * 绑定的关系数组，目标组类型需要一致。
+一次请求最多支持20个。
+
                      */
                     std::vector<TargetGroupAssociation> m_associations;
                     bool m_associationsHasBeenSet;

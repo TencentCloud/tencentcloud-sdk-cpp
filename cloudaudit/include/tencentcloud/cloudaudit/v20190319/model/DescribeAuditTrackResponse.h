@@ -145,9 +145,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrackForAllMembers 是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTrackForAllMembers() const;
@@ -161,9 +159,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据投递过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Filters 数据投递过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Filter GetFilters() const;
@@ -221,14 +217,12 @@ namespace TencentCloud
 
                     /**
                      * 是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_trackForAllMembers;
                     bool m_trackForAllMembersHasBeenSet;
 
                     /**
                      * 数据投递过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Filter m_filters;
                     bool m_filtersHasBeenSet;

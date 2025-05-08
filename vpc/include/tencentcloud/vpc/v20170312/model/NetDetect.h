@@ -315,18 +315,14 @@ NONEXTHOP：无下一跳；
 
                     /**
                      * 获取下一跳网关名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextHopName 下一跳网关名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNextHopName() const;
 
                     /**
                      * 设置下一跳网关名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nextHopName 下一跳网关名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNextHopName(const std::string& _nextHopName);
@@ -340,18 +336,14 @@ NONEXTHOP：无下一跳；
 
                     /**
                      * 获取网络探测描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetDetectDescription 网络探测描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetDetectDescription() const;
 
                     /**
                      * 设置网络探测描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netDetectDescription 网络探测描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetDetectDescription(const std::string& _netDetectDescription);
@@ -483,14 +475,12 @@ NONEXTHOP：无下一跳；
 
                     /**
                      * 下一跳网关名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextHopName;
                     bool m_nextHopNameHasBeenSet;
 
                     /**
                      * 网络探测描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_netDetectDescription;
                     bool m_netDetectDescriptionHasBeenSet;

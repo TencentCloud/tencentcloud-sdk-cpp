@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取续费资源实例ID。
-                     * @return AddressIds 续费资源实例ID。
+                     * 获取续费资源实例ID。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @return AddressIds 续费资源实例ID。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     std::vector<std::string> GetAddressIds() const;
 
                     /**
-                     * 设置续费资源实例ID。
-                     * @param _addressIds 续费资源实例ID。
+                     * 设置续费资源实例ID。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @param _addressIds 续费资源实例ID。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     void SetAddressIds(const std::vector<std::string>& _addressIds);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool AddressIdsHasBeenSet() const;
 
                     /**
-                     * 获取包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，其余场景不需传递。
-                     * @return AddressChargePrepaid 包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，其余场景不需传递。
+                     * 获取包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，不支持其他计费模式。
+                     * @return AddressChargePrepaid 包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，不支持其他计费模式。
                      * 
                      */
                     AddressChargePrepaid GetAddressChargePrepaid() const;
 
                     /**
-                     * 设置包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，其余场景不需传递。
-                     * @param _addressChargePrepaid 包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，其余场景不需传递。
+                     * 设置包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，不支持其他计费模式。
+                     * @param _addressChargePrepaid 包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，不支持其他计费模式。
                      * 
                      */
                     void SetAddressChargePrepaid(const AddressChargePrepaid& _addressChargePrepaid);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 续费资源实例ID。
+                     * 续费资源实例ID。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      */
                     std::vector<std::string> m_addressIds;
                     bool m_addressIdsHasBeenSet;
 
                     /**
-                     * 包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，其余场景不需传递。
+                     * 包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，不支持其他计费模式。
                      */
                     AddressChargePrepaid m_addressChargePrepaid;
                     bool m_addressChargePrepaidHasBeenSet;

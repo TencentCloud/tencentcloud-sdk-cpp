@@ -41,7 +41,8 @@ FusionInstanceItem::FusionInstanceItem() :
     m_maxMessageDelayHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_instanceItemExtraInfoHasBeenSet(false),
-    m_destroyTimeHasBeenSet(false)
+    m_destroyTimeHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false)
 {
 }
 
@@ -277,6 +278,19 @@ CoreInternalOutcome FusionInstanceItem::Deserialize(const rapidjson::Value &valu
         m_destroyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneIds") && !value["ZoneIds"].IsNull())
+    {
+        if (!value["ZoneIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FusionInstanceItem.ZoneIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ZoneIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zoneIds.push_back((*itr).GetInt64());
+        }
+        m_zoneIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +472,19 @@ void FusionInstanceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "DestroyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_destroyTime, allocator);
+    }
+
+    if (m_zoneIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -797,5 +824,21 @@ void FusionInstanceItem::SetDestroyTime(const int64_t& _destroyTime)
 bool FusionInstanceItem::DestroyTimeHasBeenSet() const
 {
     return m_destroyTimeHasBeenSet;
+}
+
+vector<int64_t> FusionInstanceItem::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+void FusionInstanceItem::SetZoneIds(const vector<int64_t>& _zoneIds)
+{
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
+}
+
+bool FusionInstanceItem::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
 }
 

@@ -30,7 +30,8 @@ DescribeMqMsgTraceRequest::DescribeMqMsgTraceRequest() :
     m_topicNameHasBeenSet(false),
     m_queueNameHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_queryDlqMsgHasBeenSet(false)
+    m_queryDlqMsgHasBeenSet(false),
+    m_produceTimeHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string DescribeMqMsgTraceRequest::ToJsonString() const
         string key = "QueryDlqMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_queryDlqMsg, allocator);
+    }
+
+    if (m_produceTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProduceTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_produceTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void DescribeMqMsgTraceRequest::SetQueryDlqMsg(const bool& _queryDlqMsg)
 bool DescribeMqMsgTraceRequest::QueryDlqMsgHasBeenSet() const
 {
     return m_queryDlqMsgHasBeenSet;
+}
+
+string DescribeMqMsgTraceRequest::GetProduceTime() const
+{
+    return m_produceTime;
+}
+
+void DescribeMqMsgTraceRequest::SetProduceTime(const string& _produceTime)
+{
+    m_produceTime = _produceTime;
+    m_produceTimeHasBeenSet = true;
+}
+
+bool DescribeMqMsgTraceRequest::ProduceTimeHasBeenSet() const
+{
+    return m_produceTimeHasBeenSet;
 }
 
 

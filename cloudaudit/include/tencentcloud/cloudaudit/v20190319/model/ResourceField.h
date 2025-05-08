@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跟踪事件所属产品（支持全部产品或单个产品，如：cam，全部：*）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 跟踪事件所属产品（支持全部产品或单个产品，如：cam，全部：*）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置跟踪事件所属产品（支持全部产品或单个产品，如：cam，全部：*）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceType 跟踪事件所属产品（支持全部产品或单个产品，如：cam，全部：*）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跟踪事件类型（读：Read；写：Write；全部：*）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionType 跟踪事件类型（读：Read；写：Write；全部：*）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 设置跟踪事件类型（读：Read；写：Write；全部：*）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionType 跟踪事件类型（读：Read；写：Write；全部：*）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[""]；指定ResourceType时，支持全部接口：[""]；支持部分接口：["cos", "cls"]，接口列表上限10个）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventNames 跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[""]；指定ResourceType时，支持全部接口：[""]；支持部分接口：["cos", "cls"]，接口列表上限10个）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEventNames() const;
 
                     /**
                      * 设置跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[""]；指定ResourceType时，支持全部接口：[""]；支持部分接口：["cos", "cls"]，接口列表上限10个）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventNames 跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[""]；指定ResourceType时，支持全部接口：[""]；支持部分接口：["cos", "cls"]，接口列表上限10个）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventNames(const std::vector<std::string>& _eventNames);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 跟踪事件所属产品（支持全部产品或单个产品，如：cam，全部：*）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 跟踪事件类型（读：Read；写：Write；全部：*）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
                      * 跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[""]；指定ResourceType时，支持全部接口：[""]；支持部分接口：["cos", "cls"]，接口列表上限10个）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_eventNames;
                     bool m_eventNamesHasBeenSet;

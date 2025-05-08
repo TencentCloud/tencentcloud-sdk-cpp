@@ -577,7 +577,6 @@ namespace TencentCloud
 2. InstanceId，集群ID查询
 3. InstanceType, 集群类型查询，支持多选
 4. Version，集群版本查询
-当使用TagFilters查询时，Filters参数失效。
                  * @param req DescribeFusionInstanceListRequest
                  * @return DescribeFusionInstanceListOutcome
                  */

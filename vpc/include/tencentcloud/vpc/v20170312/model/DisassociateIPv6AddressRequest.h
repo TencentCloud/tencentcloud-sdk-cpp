@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。
-                     * @return IPv6AddressId 弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。
+                     * 获取弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
+                     * @return IPv6AddressId 弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
                      * 
                      */
                     std::string GetIPv6AddressId() const;
 
                     /**
-                     * 设置弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。
-                     * @param _iPv6AddressId 弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。
+                     * 设置弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
+                     * @param _iPv6AddressId 弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
                      * 
                      */
                     void SetIPv6AddressId(const std::string& _iPv6AddressId);
@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool IPv6AddressIdHasBeenSet() const;
 
                     /**
-                     * 获取解绑时是否保持绑定弹性网卡。
-                     * @return KeepBindWithEni 解绑时是否保持绑定弹性网卡。
+                     * 获取解绑时是否保持绑定弹性网卡。可选值：true、false。
+默认值：false
+                     * @return KeepBindWithEni 解绑时是否保持绑定弹性网卡。可选值：true、false。
+默认值：false
                      * 
                      */
                     bool GetKeepBindWithEni() const;
 
                     /**
-                     * 设置解绑时是否保持绑定弹性网卡。
-                     * @param _keepBindWithEni 解绑时是否保持绑定弹性网卡。
+                     * 设置解绑时是否保持绑定弹性网卡。可选值：true、false。
+默认值：false
+                     * @param _keepBindWithEni 解绑时是否保持绑定弹性网卡。可选值：true、false。
+默认值：false
                      * 
                      */
                     void SetKeepBindWithEni(const bool& _keepBindWithEni);
@@ -87,13 +91,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。
+                     * 弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
                      */
                     std::string m_iPv6AddressId;
                     bool m_iPv6AddressIdHasBeenSet;
 
                     /**
-                     * 解绑时是否保持绑定弹性网卡。
+                     * 解绑时是否保持绑定弹性网卡。可选值：true、false。
+默认值：false
                      */
                     bool m_keepBindWithEni;
                     bool m_keepBindWithEniHasBeenSet;

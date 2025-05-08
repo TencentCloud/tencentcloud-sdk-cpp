@@ -103,6 +103,8 @@
 #include <tencentcloud/wedata/v20210820/model/CreateTaskAlarmRegularResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateTaskFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateTaskFolderResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateTaskNewRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateTaskNewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateTaskVersionDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateTaskVersionDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateWorkflowDsRequest.h>
@@ -457,6 +459,8 @@
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskLinksRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskLinksResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyTaskLinksDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyTaskLinksDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskNameRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskNameResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskScriptRequest.h>
@@ -467,12 +471,16 @@
 #include <tencentcloud/wedata/v20210820/model/ModifyWorkflowScheduleResponse.h>
 #include <tencentcloud/wedata/v20210820/model/MoveTasksToFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/MoveTasksToFolderResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RegisterDsEventRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RegisterDsEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterEventRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterEventListenerRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterEventListenerResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RemoveWorkflowDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RemoveWorkflowDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RenewWorkflowOwnerDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RenewWorkflowOwnerDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RenewWorkflowSchedulerInfoDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RenewWorkflowSchedulerInfoDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ResumeIntegrationTaskRequest.h>
@@ -519,6 +527,8 @@
 #include <tencentcloud/wedata/v20210820/model/UpdateDataModelRegistryInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateProjectUserRoleRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateProjectUserRoleResponse.h>
+#include <tencentcloud/wedata/v20210820/model/UpdateWorkflowInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/UpdateWorkflowInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UploadContentRequest.h>
@@ -659,6 +669,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTaskFolderResponse> CreateTaskFolderOutcome;
                 typedef std::future<CreateTaskFolderOutcome> CreateTaskFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateTaskFolderRequest&, CreateTaskFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskFolderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTaskNewResponse> CreateTaskNewOutcome;
+                typedef std::future<CreateTaskNewOutcome> CreateTaskNewOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateTaskNewRequest&, CreateTaskNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTaskVersionDsResponse> CreateTaskVersionDsOutcome;
                 typedef std::future<CreateTaskVersionDsOutcome> CreateTaskVersionDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateTaskVersionDsRequest&, CreateTaskVersionDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskVersionDsAsyncHandler;
@@ -1190,6 +1203,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTaskLinksResponse> ModifyTaskLinksOutcome;
                 typedef std::future<ModifyTaskLinksOutcome> ModifyTaskLinksOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ModifyTaskLinksRequest&, ModifyTaskLinksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskLinksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTaskLinksDsResponse> ModifyTaskLinksDsOutcome;
+                typedef std::future<ModifyTaskLinksDsOutcome> ModifyTaskLinksDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyTaskLinksDsRequest&, ModifyTaskLinksDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskLinksDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTaskNameResponse> ModifyTaskNameOutcome;
                 typedef std::future<ModifyTaskNameOutcome> ModifyTaskNameOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ModifyTaskNameRequest&, ModifyTaskNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskNameAsyncHandler;
@@ -1205,6 +1221,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::MoveTasksToFolderResponse> MoveTasksToFolderOutcome;
                 typedef std::future<MoveTasksToFolderOutcome> MoveTasksToFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::MoveTasksToFolderRequest&, MoveTasksToFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MoveTasksToFolderAsyncHandler;
+                typedef Outcome<Core::Error, Model::RegisterDsEventResponse> RegisterDsEventOutcome;
+                typedef std::future<RegisterDsEventOutcome> RegisterDsEventOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RegisterDsEventRequest&, RegisterDsEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterDsEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::RegisterEventResponse> RegisterEventOutcome;
                 typedef std::future<RegisterEventOutcome> RegisterEventOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RegisterEventRequest&, RegisterEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterEventAsyncHandler;
@@ -1214,6 +1233,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveWorkflowDsResponse> RemoveWorkflowDsOutcome;
                 typedef std::future<RemoveWorkflowDsOutcome> RemoveWorkflowDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RemoveWorkflowDsRequest&, RemoveWorkflowDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveWorkflowDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewWorkflowOwnerDsResponse> RenewWorkflowOwnerDsOutcome;
+                typedef std::future<RenewWorkflowOwnerDsOutcome> RenewWorkflowOwnerDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RenewWorkflowOwnerDsRequest&, RenewWorkflowOwnerDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewWorkflowOwnerDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewWorkflowSchedulerInfoDsResponse> RenewWorkflowSchedulerInfoDsOutcome;
                 typedef std::future<RenewWorkflowSchedulerInfoDsOutcome> RenewWorkflowSchedulerInfoDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RenewWorkflowSchedulerInfoDsRequest&, RenewWorkflowSchedulerInfoDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewWorkflowSchedulerInfoDsAsyncHandler;
@@ -1283,6 +1305,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateProjectUserRoleResponse> UpdateProjectUserRoleOutcome;
                 typedef std::future<UpdateProjectUserRoleOutcome> UpdateProjectUserRoleOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UpdateProjectUserRoleRequest&, UpdateProjectUserRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectUserRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateWorkflowInfoResponse> UpdateWorkflowInfoOutcome;
+                typedef std::future<UpdateWorkflowInfoOutcome> UpdateWorkflowInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::UpdateWorkflowInfoRequest&, UpdateWorkflowInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateWorkflowOwnerResponse> UpdateWorkflowOwnerOutcome;
                 typedef std::future<UpdateWorkflowOwnerOutcome> UpdateWorkflowOwnerOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UpdateWorkflowOwnerRequest&, UpdateWorkflowOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowOwnerAsyncHandler;
@@ -1629,7 +1654,7 @@ namespace TencentCloud
                 CreateRuleTemplateOutcomeCallable CreateRuleTemplateCallable(const Model::CreateRuleTemplateRequest& request);
 
                 /**
-                 *创建任务
+                 *创建任务。本接口已废弃，请使用接口CreateTaskNew。
                  * @param req CreateTaskRequest
                  * @return CreateTaskOutcome
                  */
@@ -1654,6 +1679,15 @@ namespace TencentCloud
                 CreateTaskFolderOutcome CreateTaskFolder(const Model::CreateTaskFolderRequest &request);
                 void CreateTaskFolderAsync(const Model::CreateTaskFolderRequest& request, const CreateTaskFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTaskFolderOutcomeCallable CreateTaskFolderCallable(const Model::CreateTaskFolderRequest& request);
+
+                /**
+                 *聚合创建任务
+                 * @param req CreateTaskNewRequest
+                 * @return CreateTaskNewOutcome
+                 */
+                CreateTaskNewOutcome CreateTaskNew(const Model::CreateTaskNewRequest &request);
+                void CreateTaskNewAsync(const Model::CreateTaskNewRequest& request, const CreateTaskNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTaskNewOutcomeCallable CreateTaskNewCallable(const Model::CreateTaskNewRequest& request);
 
                 /**
                  *提交任务版本
@@ -3251,13 +3285,22 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
 
                 /**
                  *<p style="color:red;">[注意：该版本只满足广州区部分白名单客户使用]</p>
-添加父任务依赖
+添加父任务依赖。本接口已废弃，请使用接口ModifyTaskLinksDs。
                  * @param req ModifyTaskLinksRequest
                  * @return ModifyTaskLinksOutcome
                  */
                 ModifyTaskLinksOutcome ModifyTaskLinks(const Model::ModifyTaskLinksRequest &request);
                 void ModifyTaskLinksAsync(const Model::ModifyTaskLinksRequest& request, const ModifyTaskLinksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTaskLinksOutcomeCallable ModifyTaskLinksCallable(const Model::ModifyTaskLinksRequest& request);
+
+                /**
+                 *添加父任务依赖
+                 * @param req ModifyTaskLinksDsRequest
+                 * @return ModifyTaskLinksDsOutcome
+                 */
+                ModifyTaskLinksDsOutcome ModifyTaskLinksDs(const Model::ModifyTaskLinksDsRequest &request);
+                void ModifyTaskLinksDsAsync(const Model::ModifyTaskLinksDsRequest& request, const ModifyTaskLinksDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTaskLinksDsOutcomeCallable ModifyTaskLinksDsCallable(const Model::ModifyTaskLinksDsRequest& request);
 
                 /**
                  *重命名任务（任务编辑）
@@ -3279,7 +3322,7 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 ModifyTaskScriptOutcomeCallable ModifyTaskScriptCallable(const Model::ModifyTaskScriptRequest& request);
 
                 /**
-                 *更新工作流信息
+                 *更新工作流信息。本接口已废弃，请使用接口UpdateWorkflowInfo。
                  * @param req ModifyWorkflowInfoRequest
                  * @return ModifyWorkflowInfoOutcome
                  */
@@ -3306,8 +3349,17 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 MoveTasksToFolderOutcomeCallable MoveTasksToFolderCallable(const Model::MoveTasksToFolderRequest& request);
 
                 /**
+                 *注册事件
+                 * @param req RegisterDsEventRequest
+                 * @return RegisterDsEventOutcome
+                 */
+                RegisterDsEventOutcome RegisterDsEvent(const Model::RegisterDsEventRequest &request);
+                void RegisterDsEventAsync(const Model::RegisterDsEventRequest& request, const RegisterDsEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RegisterDsEventOutcomeCallable RegisterDsEventCallable(const Model::RegisterDsEventRequest& request);
+
+                /**
                  *<p style="color:red;">[注意：该版本只满足广州区部分白名单客户使用]</p>
-注册事件
+注册事件。本接口已废弃，请使用接口RegisterDsEvent。
                  * @param req RegisterEventRequest
                  * @return RegisterEventOutcome
                  */
@@ -3333,6 +3385,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 RemoveWorkflowDsOutcome RemoveWorkflowDs(const Model::RemoveWorkflowDsRequest &request);
                 void RemoveWorkflowDsAsync(const Model::RemoveWorkflowDsRequest& request, const RemoveWorkflowDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveWorkflowDsOutcomeCallable RemoveWorkflowDsCallable(const Model::RemoveWorkflowDsRequest& request);
+
+                /**
+                 *批量更新工作流下任务责任人
+                 * @param req RenewWorkflowOwnerDsRequest
+                 * @return RenewWorkflowOwnerDsOutcome
+                 */
+                RenewWorkflowOwnerDsOutcome RenewWorkflowOwnerDs(const Model::RenewWorkflowOwnerDsRequest &request);
+                void RenewWorkflowOwnerDsAsync(const Model::RenewWorkflowOwnerDsRequest& request, const RenewWorkflowOwnerDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewWorkflowOwnerDsOutcomeCallable RenewWorkflowOwnerDsCallable(const Model::RenewWorkflowOwnerDsRequest& request);
 
                 /**
                  *更新工作流下任务调度信息
@@ -3545,7 +3606,17 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 UpdateProjectUserRoleOutcomeCallable UpdateProjectUserRoleCallable(const Model::UpdateProjectUserRoleRequest& request);
 
                 /**
-                 *修改工作流责任人
+                 *<p style="color:red;">[该接口为 ds 中开发]</p>
+更新工作流（包括工作流基本信息与工作流参数）
+                 * @param req UpdateWorkflowInfoRequest
+                 * @return UpdateWorkflowInfoOutcome
+                 */
+                UpdateWorkflowInfoOutcome UpdateWorkflowInfo(const Model::UpdateWorkflowInfoRequest &request);
+                void UpdateWorkflowInfoAsync(const Model::UpdateWorkflowInfoRequest& request, const UpdateWorkflowInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateWorkflowInfoOutcomeCallable UpdateWorkflowInfoCallable(const Model::UpdateWorkflowInfoRequest& request);
+
+                /**
+                 *修改工作流责任人。本接口已废弃，请使用接口RenewWorkflowOwnerDs。
                  * @param req UpdateWorkflowOwnerRequest
                  * @return UpdateWorkflowOwnerOutcome
                  */

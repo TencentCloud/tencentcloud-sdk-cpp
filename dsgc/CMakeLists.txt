@@ -143,6 +143,7 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/ListDSPAMetaResourcesRequest.h
   include/tencentcloud/dsgc/v20190723/model/ModifyDSPAAssessmentRiskTemplateResponse.h
   include/tencentcloud/dsgc/v20190723/model/RiskLevelTrendItem.h
+  include/tencentcloud/dsgc/v20190723/model/DspaDiscoveryTask.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPAESDiscoveryTaskResultDetailRequest.h
   include/tencentcloud/dsgc/v20190723/model/NOSQLInstance.h
   include/tencentcloud/dsgc/v20190723/model/DeleteDSPADiscoveryTaskResultRequest.h
@@ -154,6 +155,7 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryTaskDetailRequest.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPARDBDataAssetByComplianceIdResponse.h
   include/tencentcloud/dsgc/v20190723/model/CreateNewClassificationResponse.h
+  include/tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryTasksResponse.h
   include/tencentcloud/dsgc/v20190723/model/ListDSPAClustersResponse.h
   include/tencentcloud/dsgc/v20190723/model/CopyDSPATemplateRequest.h
   include/tencentcloud/dsgc/v20190723/model/VerifyDSPADiscoveryRuleRequest.h
@@ -283,6 +285,7 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/AssessmentRiskItem.h
   include/tencentcloud/dsgc/v20190723/model/ModifyNewClassificationResponse.h
   include/tencentcloud/dsgc/v20190723/model/BindDSPAResourceDatabasesRequest.h
+  include/tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryTasksRequest.h
   include/tencentcloud/dsgc/v20190723/model/DescribeMongoAssetSensitiveDistributionRequest.h
   include/tencentcloud/dsgc/v20190723/model/GetUserQuotaInfoRequest.h
   include/tencentcloud/dsgc/v20190723/model/ModifyLevelStateRequest.h
@@ -558,6 +561,7 @@ set(dsgc_src
   src/v20190723/model/ListDSPAMetaResourcesRequest.cpp
   src/v20190723/model/ModifyDSPAAssessmentRiskTemplateResponse.cpp
   src/v20190723/model/RiskLevelTrendItem.cpp
+  src/v20190723/model/DspaDiscoveryTask.cpp
   src/v20190723/model/DescribeDSPAESDiscoveryTaskResultDetailRequest.cpp
   src/v20190723/model/NOSQLInstance.cpp
   src/v20190723/model/DeleteDSPADiscoveryTaskResultRequest.cpp
@@ -569,6 +573,7 @@ set(dsgc_src
   src/v20190723/model/DescribeDSPADiscoveryTaskDetailRequest.cpp
   src/v20190723/model/DescribeDSPARDBDataAssetByComplianceIdResponse.cpp
   src/v20190723/model/CreateNewClassificationResponse.cpp
+  src/v20190723/model/DescribeDSPADiscoveryTasksResponse.cpp
   src/v20190723/model/ListDSPAClustersResponse.cpp
   src/v20190723/model/CopyDSPATemplateRequest.cpp
   src/v20190723/model/VerifyDSPADiscoveryRuleRequest.cpp
@@ -698,6 +703,7 @@ set(dsgc_src
   src/v20190723/model/AssessmentRiskItem.cpp
   src/v20190723/model/ModifyNewClassificationResponse.cpp
   src/v20190723/model/BindDSPAResourceDatabasesRequest.cpp
+  src/v20190723/model/DescribeDSPADiscoveryTasksRequest.cpp
   src/v20190723/model/DescribeMongoAssetSensitiveDistributionRequest.cpp
   src/v20190723/model/GetUserQuotaInfoRequest.cpp
   src/v20190723/model/ModifyLevelStateRequest.cpp

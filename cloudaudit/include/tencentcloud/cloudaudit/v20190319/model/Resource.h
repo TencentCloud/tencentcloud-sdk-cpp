@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceType 资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceName 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;

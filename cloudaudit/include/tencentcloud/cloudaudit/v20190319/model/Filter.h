@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源筛选条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceFields 资源筛选条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ResourceField> GetResourceFields() const;
 
                     /**
                      * 设置资源筛选条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceFields 资源筛选条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceFields(const std::vector<ResourceField>& _resourceFields);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 资源筛选条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ResourceField> m_resourceFields;
                     bool m_resourceFieldsHasBeenSet;

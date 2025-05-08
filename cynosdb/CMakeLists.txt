@@ -58,6 +58,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogDownloadUrlResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchClusterVpcRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CloseProxyRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/CloseSSLRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstance.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterPasswordComplexityResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditRuleWithInstanceIdsRequest.h
@@ -416,6 +417,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/UpgradeInstanceResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateAuditRuleTemplateResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageListRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/CloseSSLResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OpenClusterPasswordComplexityResponse.h
   include/tencentcloud/cynosdb/v20190107/model/OpenClusterReadOnlyInstanceGroupAccessRequest.h
@@ -492,6 +494,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeBinlogDownloadUrlResponse.cpp
   src/v20190107/model/SwitchClusterVpcRequest.cpp
   src/v20190107/model/CloseProxyRequest.cpp
+  src/v20190107/model/CloseSSLRequest.cpp
   src/v20190107/model/CynosdbInstance.cpp
   src/v20190107/model/DescribeClusterPasswordComplexityResponse.cpp
   src/v20190107/model/DescribeAuditRuleWithInstanceIdsRequest.cpp
@@ -850,6 +853,7 @@ set(cynosdb_src
   src/v20190107/model/UpgradeInstanceResponse.cpp
   src/v20190107/model/CreateAuditRuleTemplateResponse.cpp
   src/v20190107/model/DescribeResourcePackageListRequest.cpp
+  src/v20190107/model/CloseSSLResponse.cpp
   src/v20190107/model/RevokeAccountPrivilegesRequest.cpp
   src/v20190107/model/OpenClusterPasswordComplexityResponse.cpp
   src/v20190107/model/OpenClusterReadOnlyInstanceGroupAccessRequest.cpp

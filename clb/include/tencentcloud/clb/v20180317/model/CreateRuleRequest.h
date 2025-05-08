@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID。
-                     * @return LoadBalancerId 负载均衡实例 ID。
+                     * 获取负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取
+                     * @return LoadBalancerId 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID。
-                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 设置负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取
+                     * @param _loadBalancerId 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器 ID。
-                     * @return ListenerId 监听器 ID。
+                     * 获取监听器 ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取
+                     * @return ListenerId 监听器 ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器 ID。
-                     * @param _listenerId 监听器 ID。
+                     * 设置监听器 ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取
+                     * @param _listenerId 监听器 ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -109,13 +109,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID。
+                     * 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 监听器 ID。
+                     * 监听器 ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;

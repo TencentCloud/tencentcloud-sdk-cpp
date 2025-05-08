@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool SessionTimeHasBeenSet() const;
 
                     /**
-                     * 获取该命令所属会话的会话开始时间（废弃，使用SessionTime）
-                     * @return SessTime 该命令所属会话的会话开始时间（废弃，使用SessionTime）
+                     * 获取该命令所属会话的会话开始时间（使用SessionTime）
+                     * @return SessTime 该命令所属会话的会话开始时间（使用SessionTime）
                      * 
                      */
                     std::string GetSessTime() const;
 
                     /**
-                     * 设置该命令所属会话的会话开始时间（废弃，使用SessionTime）
-                     * @param _sessTime 该命令所属会话的会话开始时间（废弃，使用SessionTime）
+                     * 设置该命令所属会话的会话开始时间（使用SessionTime）
+                     * @param _sessTime 该命令所属会话的会话开始时间（使用SessionTime）
                      * 
                      */
                     void SetSessTime(const std::string& _sessTime);
@@ -595,7 +595,7 @@ namespace TencentCloud
                     bool m_sessionTimeHasBeenSet;
 
                     /**
-                     * 该命令所属会话的会话开始时间（废弃，使用SessionTime）
+                     * 该命令所属会话的会话开始时间（使用SessionTime）
                      */
                     std::string m_sessTime;
                     bool m_sessTimeHasBeenSet;

@@ -848,6 +848,48 @@ namespace TencentCloud
                      */
                     bool StopReasonHasBeenSet() const;
 
+                    /**
+                     * 获取是否开远程命令执行检测（0=关， 1=开）
+                     * @return IsRemoteCommandExecutionAnalysis 是否开远程命令执行检测（0=关， 1=开）
+                     * 
+                     */
+                    int64_t GetIsRemoteCommandExecutionAnalysis() const;
+
+                    /**
+                     * 设置是否开远程命令执行检测（0=关， 1=开）
+                     * @param _isRemoteCommandExecutionAnalysis 是否开远程命令执行检测（0=关， 1=开）
+                     * 
+                     */
+                    void SetIsRemoteCommandExecutionAnalysis(const int64_t& _isRemoteCommandExecutionAnalysis);
+
+                    /**
+                     * 判断参数 IsRemoteCommandExecutionAnalysis 是否已赋值
+                     * @return IsRemoteCommandExecutionAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsRemoteCommandExecutionAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开内存马执行检测（0=关， 1=开）
+                     * @return IsMemoryHijackingAnalysis 是否开内存马执行检测（0=关， 1=开）
+                     * 
+                     */
+                    int64_t GetIsMemoryHijackingAnalysis() const;
+
+                    /**
+                     * 设置是否开内存马执行检测（0=关， 1=开）
+                     * @param _isMemoryHijackingAnalysis 是否开内存马执行检测（0=关， 1=开）
+                     * 
+                     */
+                    void SetIsMemoryHijackingAnalysis(const int64_t& _isMemoryHijackingAnalysis);
+
+                    /**
+                     * 判断参数 IsMemoryHijackingAnalysis 是否已赋值
+                     * @return IsMemoryHijackingAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsMemoryHijackingAnalysisHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1077,6 +1119,18 @@ namespace TencentCloud
                      */
                     int64_t m_stopReason;
                     bool m_stopReasonHasBeenSet;
+
+                    /**
+                     * 是否开远程命令执行检测（0=关， 1=开）
+                     */
+                    int64_t m_isRemoteCommandExecutionAnalysis;
+                    bool m_isRemoteCommandExecutionAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开内存马执行检测（0=关， 1=开）
+                     */
+                    int64_t m_isMemoryHijackingAnalysis;
+                    bool m_isMemoryHijackingAnalysisHasBeenSet;
 
                 };
             }

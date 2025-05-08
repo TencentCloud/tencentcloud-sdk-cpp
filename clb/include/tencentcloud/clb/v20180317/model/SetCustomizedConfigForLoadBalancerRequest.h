@@ -44,13 +44,13 @@ namespace TencentCloud
 
                     /**
                      * 获取操作类型。
-- ADD：添加
+- ADD：创建
 - DELETE：删除
 - UPDATE：修改
 - BIND：绑定
 - UNBIND：解绑
                      * @return OperationType 操作类型。
-- ADD：添加
+- ADD：创建
 - DELETE：删除
 - UPDATE：修改
 - BIND：绑定
@@ -61,13 +61,13 @@ namespace TencentCloud
 
                     /**
                      * 设置操作类型。
-- ADD：添加
+- ADD：创建
 - DELETE：删除
 - UPDATE：修改
 - BIND：绑定
 - UNBIND：解绑
                      * @param _operationType 操作类型。
-- ADD：添加
+- ADD：创建
 - DELETE：删除
 - UPDATE：修改
 - BIND：绑定
@@ -105,15 +105,19 @@ namespace TencentCloud
                     bool UconfigIdHasBeenSet() const;
 
                     /**
-                     * 获取个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段
-                     * @return ConfigContent 个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段
+                     * 获取个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段。
+具体限制查看 [七层个性化配置](https://cloud.tencent.com/document/product/214/15171)
+                     * @return ConfigContent 个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段。
+具体限制查看 [七层个性化配置](https://cloud.tencent.com/document/product/214/15171)
                      * 
                      */
                     std::string GetConfigContent() const;
 
                     /**
-                     * 设置个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段
-                     * @param _configContent 个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段
+                     * 设置个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段。
+具体限制查看 [七层个性化配置](https://cloud.tencent.com/document/product/214/15171)
+                     * @param _configContent 个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段。
+具体限制查看 [七层个性化配置](https://cloud.tencent.com/document/product/214/15171)
                      * 
                      */
                     void SetConfigContent(const std::string& _configContent);
@@ -126,15 +130,15 @@ namespace TencentCloud
                     bool ConfigContentHasBeenSet() const;
 
                     /**
-                     * 获取个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段
-                     * @return ConfigName 个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段
+                     * 获取个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段。
+                     * @return ConfigName 个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段。
                      * 
                      */
                     std::string GetConfigName() const;
 
                     /**
-                     * 设置个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段
-                     * @param _configName 个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段
+                     * 设置个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段。
+                     * @param _configName 个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段。
                      * 
                      */
                     void SetConfigName(const std::string& _configName);
@@ -147,15 +151,19 @@ namespace TencentCloud
                     bool ConfigNameHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例ID。绑定解绑时，必传此字段
-                     * @return LoadBalancerIds 负载均衡实例ID。绑定解绑时，必传此字段
+                     * 获取负载均衡实例ID。绑定解绑时，必传此字段。
+可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+                     * @return LoadBalancerIds 负载均衡实例ID。绑定解绑时，必传此字段。
+可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
                      * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
-                     * 设置负载均衡实例ID。绑定解绑时，必传此字段
-                     * @param _loadBalancerIds 负载均衡实例ID。绑定解绑时，必传此字段
+                     * 设置负载均衡实例ID。绑定解绑时，必传此字段。
+可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+                     * @param _loadBalancerIds 负载均衡实例ID。绑定解绑时，必传此字段。
+可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
                      * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
@@ -171,7 +179,7 @@ namespace TencentCloud
 
                     /**
                      * 操作类型。
-- ADD：添加
+- ADD：创建
 - DELETE：删除
 - UPDATE：修改
 - BIND：绑定
@@ -187,19 +195,21 @@ namespace TencentCloud
                     bool m_uconfigIdHasBeenSet;
 
                     /**
-                     * 个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段
+                     * 个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段。
+具体限制查看 [七层个性化配置](https://cloud.tencent.com/document/product/214/15171)
                      */
                     std::string m_configContent;
                     bool m_configContentHasBeenSet;
 
                     /**
-                     * 个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段
+                     * 个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段。
                      */
                     std::string m_configName;
                     bool m_configNameHasBeenSet;
 
                     /**
-                     * 负载均衡实例ID。绑定解绑时，必传此字段
+                     * 负载均衡实例ID。绑定解绑时，必传此字段。
+可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;

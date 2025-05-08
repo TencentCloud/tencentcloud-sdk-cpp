@@ -3781,6 +3781,49 @@ DsgcClient::DescribeDSPADiscoveryTaskTablesOutcomeCallable DsgcClient::DescribeD
     return task->get_future();
 }
 
+DsgcClient::DescribeDSPADiscoveryTasksOutcome DsgcClient::DescribeDSPADiscoveryTasks(const DescribeDSPADiscoveryTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDSPADiscoveryTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDSPADiscoveryTasksResponse rsp = DescribeDSPADiscoveryTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDSPADiscoveryTasksOutcome(rsp);
+        else
+            return DescribeDSPADiscoveryTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDSPADiscoveryTasksOutcome(outcome.GetError());
+    }
+}
+
+void DsgcClient::DescribeDSPADiscoveryTasksAsync(const DescribeDSPADiscoveryTasksRequest& request, const DescribeDSPADiscoveryTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDSPADiscoveryTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DsgcClient::DescribeDSPADiscoveryTasksOutcomeCallable DsgcClient::DescribeDSPADiscoveryTasksCallable(const DescribeDSPADiscoveryTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDSPADiscoveryTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDSPADiscoveryTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DsgcClient::DescribeDSPAESDataAssetByComplianceIdOutcome DsgcClient::DescribeDSPAESDataAssetByComplianceId(const DescribeDSPAESDataAssetByComplianceIdRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDSPAESDataAssetByComplianceId");

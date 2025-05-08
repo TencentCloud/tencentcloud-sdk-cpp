@@ -85,23 +85,15 @@ namespace TencentCloud
                     bool CmdListHasBeenSet() const;
 
                     /**
-                     * 获取标识cmdlist字段前端是否为base64加密传值.
-0:表示非base64加密
-1:表示是base64加密
-                     * @return Encoding 标识cmdlist字段前端是否为base64加密传值.
-0:表示非base64加密
-1:表示是base64加密
+                     * 获取标识CmdList字段前端是否为base64加密传值.0:表示非base64加密1:表示是base64加密
+                     * @return Encoding 标识CmdList字段前端是否为base64加密传值.0:表示非base64加密1:表示是base64加密
                      * 
                      */
                     uint64_t GetEncoding() const;
 
                     /**
-                     * 设置标识cmdlist字段前端是否为base64加密传值.
-0:表示非base64加密
-1:表示是base64加密
-                     * @param _encoding 标识cmdlist字段前端是否为base64加密传值.
-0:表示非base64加密
-1:表示是base64加密
+                     * 设置标识CmdList字段前端是否为base64加密传值.0:表示非base64加密1:表示是base64加密
+                     * @param _encoding 标识CmdList字段前端是否为base64加密传值.0:表示非base64加密1:表示是base64加密
                      * 
                      */
                     void SetEncoding(const uint64_t& _encoding);
@@ -128,9 +120,7 @@ namespace TencentCloud
                     bool m_cmdListHasBeenSet;
 
                     /**
-                     * 标识cmdlist字段前端是否为base64加密传值.
-0:表示非base64加密
-1:表示是base64加密
+                     * 标识CmdList字段前端是否为base64加密传值.0:表示非base64加密1:表示是base64加密
                      */
                     uint64_t m_encoding;
                     bool m_encodingHasBeenSet;

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取左上角X坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return X 左上角X坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetX() const;
 
                     /**
                      * 设置左上角X坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _x 左上角X坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetX(const int64_t& _x);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取左上角Y坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Y 左上角Y坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetY() const;
 
                     /**
                      * 设置左上角Y坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _y 左上角Y坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetY(const int64_t& _y);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取方框宽度
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 方框宽度
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置方框宽度
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _width 方框宽度
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取方框高度
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 方框高度
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置方框高度
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _height 方框高度
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -134,24 +150,28 @@ namespace TencentCloud
 
                     /**
                      * 左上角X坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_x;
                     bool m_xHasBeenSet;
 
                     /**
                      * 左上角Y坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_y;
                     bool m_yHasBeenSet;
 
                     /**
                      * 方框宽度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 方框高度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

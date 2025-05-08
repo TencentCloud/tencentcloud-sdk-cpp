@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IPv6地址唯一ID。
-                     * @return IPv6AddressIds IPv6地址唯一ID。
+                     * 获取IPv6地址唯一ID。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
+                     * @return IPv6AddressIds IPv6地址唯一ID。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
                      * 
                      */
                     std::vector<std::string> GetIPv6AddressIds() const;
 
                     /**
-                     * 设置IPv6地址唯一ID。
-                     * @param _iPv6AddressIds IPv6地址唯一ID。
+                     * 设置IPv6地址唯一ID。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
+                     * @param _iPv6AddressIds IPv6地址唯一ID。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
                      * 
                      */
                     void SetIPv6AddressIds(const std::vector<std::string>& _iPv6AddressIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * IPv6地址唯一ID。
+                     * IPv6地址唯一ID。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
                      */
                     std::vector<std::string> m_iPv6AddressIds;
                     bool m_iPv6AddressIdsHasBeenSet;

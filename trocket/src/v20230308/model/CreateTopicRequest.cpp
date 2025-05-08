@@ -28,7 +28,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_topicTypeHasBeenSet(false),
     m_queueNumHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_msgTTLHasBeenSet(false)
+    m_msgTTLHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,21 @@ string CreateTopicRequest::ToJsonString() const
         string key = "MsgTTL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_msgTTL, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +205,22 @@ void CreateTopicRequest::SetMsgTTL(const int64_t& _msgTTL)
 bool CreateTopicRequest::MsgTTLHasBeenSet() const
 {
     return m_msgTTLHasBeenSet;
+}
+
+vector<Tag> CreateTopicRequest::GetTagList() const
+{
+    return m_tagList;
+}
+
+void CreateTopicRequest::SetTagList(const vector<Tag>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool CreateTopicRequest::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 
 

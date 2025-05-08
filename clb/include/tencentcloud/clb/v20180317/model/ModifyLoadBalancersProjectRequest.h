@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一个或多个待操作的负载均衡实例ID。
-                     * @return LoadBalancerIds 一个或多个待操作的负载均衡实例ID。
+                     * 获取一个或多个待操作的负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+列表支持最大长度为20。
+                     * @return LoadBalancerIds 一个或多个待操作的负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+列表支持最大长度为20。
                      * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
-                     * 设置一个或多个待操作的负载均衡实例ID。
-                     * @param _loadBalancerIds 一个或多个待操作的负载均衡实例ID。
+                     * 设置一个或多个待操作的负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+列表支持最大长度为20。
+                     * @param _loadBalancerIds 一个或多个待操作的负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+列表支持最大长度为20。
                      * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
@@ -87,7 +91,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一个或多个待操作的负载均衡实例ID。
+                     * 一个或多个待操作的负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。
+列表支持最大长度为20。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;

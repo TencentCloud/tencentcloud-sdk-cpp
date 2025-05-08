@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取服务器实例数组
-                     * @return TargetGroupInstances 服务器实例数组
+                     * 获取服务器实例数组，服务器和目标组的 VPC 需相同。
+                     * @return TargetGroupInstances 服务器实例数组，服务器和目标组的 VPC 需相同。
                      * 
                      */
                     std::vector<TargetGroupInstance> GetTargetGroupInstances() const;
 
                     /**
-                     * 设置服务器实例数组
-                     * @param _targetGroupInstances 服务器实例数组
+                     * 设置服务器实例数组，服务器和目标组的 VPC 需相同。
+                     * @param _targetGroupInstances 服务器实例数组，服务器和目标组的 VPC 需相同。
                      * 
                      */
                     void SetTargetGroupInstances(const std::vector<TargetGroupInstance>& _targetGroupInstances);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
-                     * 服务器实例数组
+                     * 服务器实例数组，服务器和目标组的 VPC 需相同。
                      */
                     std::vector<TargetGroupInstance> m_targetGroupInstances;
                     bool m_targetGroupInstancesHasBeenSet;

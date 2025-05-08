@@ -547,6 +547,48 @@ namespace TencentCloud
                      */
                     bool IsInstrumentationVulnerabilityScanHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启远程命令攻击检测
+                     * @return IsRemoteCommandExecutionAnalysis 是否开启远程命令攻击检测
+                     * 
+                     */
+                    int64_t GetIsRemoteCommandExecutionAnalysis() const;
+
+                    /**
+                     * 设置是否开启远程命令攻击检测
+                     * @param _isRemoteCommandExecutionAnalysis 是否开启远程命令攻击检测
+                     * 
+                     */
+                    void SetIsRemoteCommandExecutionAnalysis(const int64_t& _isRemoteCommandExecutionAnalysis);
+
+                    /**
+                     * 判断参数 IsRemoteCommandExecutionAnalysis 是否已赋值
+                     * @return IsRemoteCommandExecutionAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsRemoteCommandExecutionAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启内存马检测
+                     * @return IsMemoryHijackingAnalysis 是否开启内存马检测
+                     * 
+                     */
+                    int64_t GetIsMemoryHijackingAnalysis() const;
+
+                    /**
+                     * 设置是否开启内存马检测
+                     * @param _isMemoryHijackingAnalysis 是否开启内存马检测
+                     * 
+                     */
+                    void SetIsMemoryHijackingAnalysis(const int64_t& _isMemoryHijackingAnalysis);
+
+                    /**
+                     * 判断参数 IsMemoryHijackingAnalysis 是否已赋值
+                     * @return IsMemoryHijackingAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsMemoryHijackingAnalysisHasBeenSet() const;
+
                 private:
 
                     /**
@@ -692,6 +734,18 @@ namespace TencentCloud
                      */
                     int64_t m_isInstrumentationVulnerabilityScan;
                     bool m_isInstrumentationVulnerabilityScanHasBeenSet;
+
+                    /**
+                     * 是否开启远程命令攻击检测
+                     */
+                    int64_t m_isRemoteCommandExecutionAnalysis;
+                    bool m_isRemoteCommandExecutionAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启内存马检测
+                     */
+                    int64_t m_isMemoryHijackingAnalysis;
+                    bool m_isMemoryHijackingAnalysisHasBeenSet;
 
                 };
             }

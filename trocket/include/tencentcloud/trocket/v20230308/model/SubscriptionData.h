@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trocket/v20230308/model/ClientSubscriptionInfo.h>
 
 
 namespace TencentCloud
@@ -429,6 +430,31 @@ CLUSTERING 集群模式;
                      */
                     bool MessageModelHasBeenSet() const;
 
+                    /**
+                     * 获取订阅不一致的客户端列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientSubscriptionInfos 订阅不一致的客户端列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ClientSubscriptionInfo> GetClientSubscriptionInfos() const;
+
+                    /**
+                     * 设置订阅不一致的客户端列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clientSubscriptionInfos 订阅不一致的客户端列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClientSubscriptionInfos(const std::vector<ClientSubscriptionInfo>& _clientSubscriptionInfos);
+
+                    /**
+                     * 判断参数 ClientSubscriptionInfos 是否已赋值
+                     * @return ClientSubscriptionInfos 是否已赋值
+                     * 
+                     */
+                    bool ClientSubscriptionInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -537,6 +563,13 @@ CLUSTERING 集群模式;
                      */
                     std::string m_messageModel;
                     bool m_messageModelHasBeenSet;
+
+                    /**
+                     * 订阅不一致的客户端列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClientSubscriptionInfo> m_clientSubscriptionInfos;
+                    bool m_clientSubscriptionInfosHasBeenSet;
 
                 };
             }

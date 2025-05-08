@@ -593,6 +593,31 @@ PREPAID，包年包月
                      */
                     bool DestroyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取所属可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneIds 所属可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetZoneIds() const;
+
+                    /**
+                     * 设置所属可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zoneIds 所属可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZoneIds(const std::vector<int64_t>& _zoneIds);
+
+                    /**
+                     * 判断参数 ZoneIds 是否已赋值
+                     * @return ZoneIds 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -746,6 +771,13 @@ PREPAID，包年包月
                      */
                     int64_t m_destroyTime;
                     bool m_destroyTimeHasBeenSet;
+
+                    /**
+                     * 所属可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_zoneIds;
+                    bool m_zoneIdsHasBeenSet;
 
                 };
             }

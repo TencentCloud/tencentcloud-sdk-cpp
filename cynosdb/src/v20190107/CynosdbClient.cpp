@@ -427,6 +427,49 @@ CynosdbClient::CloseProxyEndPointOutcomeCallable CynosdbClient::CloseProxyEndPoi
     return task->get_future();
 }
 
+CynosdbClient::CloseSSLOutcome CynosdbClient::CloseSSL(const CloseSSLRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseSSL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseSSLResponse rsp = CloseSSLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseSSLOutcome(rsp);
+        else
+            return CloseSSLOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseSSLOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CloseSSLAsync(const CloseSSLRequest& request, const CloseSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseSSL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CloseSSLOutcomeCallable CynosdbClient::CloseSSLCallable(const CloseSSLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseSSLOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseSSL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::CloseWanOutcome CynosdbClient::CloseWan(const CloseWanRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseWan");

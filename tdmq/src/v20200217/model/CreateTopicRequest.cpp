@@ -31,7 +31,9 @@ CreateTopicRequest::CreateTopicRequest() :
     m_topicTypeHasBeenSet(false),
     m_pulsarTopicTypeHasBeenSet(false),
     m_msgTTLHasBeenSet(false),
-    m_unackPolicyHasBeenSet(false)
+    m_unackPolicyHasBeenSet(false),
+    m_isolateConsumerEnableHasBeenSet(false),
+    m_ackTimeOutHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,22 @@ string CreateTopicRequest::ToJsonString() const
         string key = "UnackPolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_unackPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateConsumerEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateConsumerEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isolateConsumerEnable, allocator);
+    }
+
+    if (m_ackTimeOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AckTimeOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ackTimeOut, allocator);
     }
 
 
@@ -264,6 +282,38 @@ void CreateTopicRequest::SetUnackPolicy(const string& _unackPolicy)
 bool CreateTopicRequest::UnackPolicyHasBeenSet() const
 {
     return m_unackPolicyHasBeenSet;
+}
+
+bool CreateTopicRequest::GetIsolateConsumerEnable() const
+{
+    return m_isolateConsumerEnable;
+}
+
+void CreateTopicRequest::SetIsolateConsumerEnable(const bool& _isolateConsumerEnable)
+{
+    m_isolateConsumerEnable = _isolateConsumerEnable;
+    m_isolateConsumerEnableHasBeenSet = true;
+}
+
+bool CreateTopicRequest::IsolateConsumerEnableHasBeenSet() const
+{
+    return m_isolateConsumerEnableHasBeenSet;
+}
+
+int64_t CreateTopicRequest::GetAckTimeOut() const
+{
+    return m_ackTimeOut;
+}
+
+void CreateTopicRequest::SetAckTimeOut(const int64_t& _ackTimeOut)
+{
+    m_ackTimeOut = _ackTimeOut;
+    m_ackTimeOutHasBeenSet = true;
+}
+
+bool CreateTopicRequest::AckTimeOutHasBeenSet() const
+{
+    return m_ackTimeOutHasBeenSet;
 }
 
 

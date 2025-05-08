@@ -93,6 +93,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/Rule.h
   include/tencentcloud/waf/v20180125/model/DescribePostCKafkaFlowsResponse.h
   include/tencentcloud/waf/v20180125/model/Strategy.h
+  include/tencentcloud/waf/v20180125/model/ModifyInstanceAttackLogPostResponse.h
   include/tencentcloud/waf/v20180125/model/UpsertCCRuleResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeHostRequest.h
   include/tencentcloud/waf/v20180125/model/AccessFullTextInfo.h
@@ -167,6 +168,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyBotStatusRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyHostFlowModeRequest.h
   include/tencentcloud/waf/v20180125/model/CreateHostRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifyInstanceAttackLogPostRequest.h
   include/tencentcloud/waf/v20180125/model/GetInstanceQpsLimitResponse.h
   include/tencentcloud/waf/v20180125/model/CreateDealsRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleResponse.h
@@ -549,6 +551,7 @@ set(waf_src
   src/v20180125/model/Rule.cpp
   src/v20180125/model/DescribePostCKafkaFlowsResponse.cpp
   src/v20180125/model/Strategy.cpp
+  src/v20180125/model/ModifyInstanceAttackLogPostResponse.cpp
   src/v20180125/model/UpsertCCRuleResponse.cpp
   src/v20180125/model/DescribeHostRequest.cpp
   src/v20180125/model/AccessFullTextInfo.cpp
@@ -623,6 +626,7 @@ set(waf_src
   src/v20180125/model/ModifyBotStatusRequest.cpp
   src/v20180125/model/ModifyHostFlowModeRequest.cpp
   src/v20180125/model/CreateHostRequest.cpp
+  src/v20180125/model/ModifyInstanceAttackLogPostRequest.cpp
   src/v20180125/model/GetInstanceQpsLimitResponse.cpp
   src/v20180125/model/CreateDealsRequest.cpp
   src/v20180125/model/ModifyCustomWhiteRuleResponse.cpp

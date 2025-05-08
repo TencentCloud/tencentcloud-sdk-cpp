@@ -174,6 +174,27 @@ namespace TencentCloud
                     bool AnswerHasBeenSet() const;
 
                     /**
+                     * 获取解析
+                     * @return Parse 解析
+                     * 
+                     */
+                    std::vector<Element> GetParse() const;
+
+                    /**
+                     * 设置解析
+                     * @param _parse 解析
+                     * 
+                     */
+                    void SetParse(const std::vector<Element>& _parse);
+
+                    /**
+                     * 判断参数 Parse 是否已赋值
+                     * @return Parse 是否已赋值
+                     * 
+                     */
+                    bool ParseHasBeenSet() const;
+
+                    /**
                      * 获取整题的坐标
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coord 整题的坐标
@@ -234,6 +255,12 @@ namespace TencentCloud
                      */
                     std::vector<Element> m_answer;
                     bool m_answerHasBeenSet;
+
+                    /**
+                     * 解析
+                     */
+                    std::vector<Element> m_parse;
+                    bool m_parseHasBeenSet;
 
                     /**
                      * 整题的坐标

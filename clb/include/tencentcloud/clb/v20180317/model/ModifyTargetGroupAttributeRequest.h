@@ -111,11 +111,13 @@ namespace TencentCloud
     <li>取值范围[0, 100]</li>
     <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li> 
 </ul>
+v1目标组类型不支持设置Weight参数。
                      * @return Weight 后端服务默认权重。
 <ul>
     <li>取值范围[0, 100]</li>
     <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li> 
 </ul>
+v1目标组类型不支持设置Weight参数。
                      * 
                      */
                     uint64_t GetWeight() const;
@@ -126,11 +128,13 @@ namespace TencentCloud
     <li>取值范围[0, 100]</li>
     <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li> 
 </ul>
+v1目标组类型不支持设置Weight参数。
                      * @param _weight 后端服务默认权重。
 <ul>
     <li>取值范围[0, 100]</li>
     <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li> 
 </ul>
+v1目标组类型不支持设置Weight参数。
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -141,6 +145,48 @@ namespace TencentCloud
                      * 
                      */
                     bool WeightHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。
+                     * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。
+                     * 
+                     */
+                    bool GetKeepaliveEnable() const;
+
+                    /**
+                     * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。
+                     * @param _keepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。
+                     * 
+                     */
+                    void SetKeepaliveEnable(const bool& _keepaliveEnable);
+
+                    /**
+                     * 判断参数 KeepaliveEnable 是否已赋值
+                     * @return KeepaliveEnable 是否已赋值
+                     * 
+                     */
+                    bool KeepaliveEnableHasBeenSet() const;
+
+                    /**
+                     * 获取会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
+                     * @return SessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
+                     * 
+                     */
+                    uint64_t GetSessionExpireTime() const;
+
+                    /**
+                     * 设置会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
+                     * @param _sessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
+                     * 
+                     */
+                    void SetSessionExpireTime(const uint64_t& _sessionExpireTime);
+
+                    /**
+                     * 判断参数 SessionExpireTime 是否已赋值
+                     * @return SessionExpireTime 是否已赋值
+                     * 
+                     */
+                    bool SessionExpireTimeHasBeenSet() const;
 
                 private:
 
@@ -168,9 +214,22 @@ namespace TencentCloud
     <li>取值范围[0, 100]</li>
     <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li> 
 </ul>
+v1目标组类型不支持设置Weight参数。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
+
+                    /**
+                     * 是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。
+                     */
+                    bool m_keepaliveEnable;
+                    bool m_keepaliveEnableHasBeenSet;
+
+                    /**
+                     * 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
+                     */
+                    uint64_t m_sessionExpireTime;
+                    bool m_sessionExpireTimeHasBeenSet;
 
                 };
             }
