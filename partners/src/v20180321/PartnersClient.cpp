@@ -470,6 +470,49 @@ PartnersClient::DescribeAgentDealsByCacheOutcomeCallable PartnersClient::Describ
     return task->get_future();
 }
 
+PartnersClient::DescribeAgentDealsPriceDetailByDealNameOutcome PartnersClient::DescribeAgentDealsPriceDetailByDealName(const DescribeAgentDealsPriceDetailByDealNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentDealsPriceDetailByDealName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentDealsPriceDetailByDealNameResponse rsp = DescribeAgentDealsPriceDetailByDealNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentDealsPriceDetailByDealNameOutcome(rsp);
+        else
+            return DescribeAgentDealsPriceDetailByDealNameOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentDealsPriceDetailByDealNameOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeAgentDealsPriceDetailByDealNameAsync(const DescribeAgentDealsPriceDetailByDealNameRequest& request, const DescribeAgentDealsPriceDetailByDealNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentDealsPriceDetailByDealName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeAgentDealsPriceDetailByDealNameOutcomeCallable PartnersClient::DescribeAgentDealsPriceDetailByDealNameCallable(const DescribeAgentDealsPriceDetailByDealNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentDealsPriceDetailByDealNameOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentDealsPriceDetailByDealName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeAgentPayDealsV2Outcome PartnersClient::DescribeAgentPayDealsV2(const DescribeAgentPayDealsV2Request &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgentPayDealsV2");

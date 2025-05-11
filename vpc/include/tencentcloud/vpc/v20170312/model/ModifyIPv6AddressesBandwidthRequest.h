@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性公网IPv6地址唯一ID
-                     * @return IPv6AddressIds 弹性公网IPv6地址唯一ID
+                     * 获取弹性公网IPv6地址唯一ID，可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
+                     * @return IPv6AddressIds 弹性公网IPv6地址唯一ID，可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
                      * 
                      */
                     std::vector<std::string> GetIPv6AddressIds() const;
 
                     /**
-                     * 设置弹性公网IPv6地址唯一ID
-                     * @param _iPv6AddressIds 弹性公网IPv6地址唯一ID
+                     * 设置弹性公网IPv6地址唯一ID，可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
+                     * @param _iPv6AddressIds 弹性公网IPv6地址唯一ID，可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
                      * 
                      */
                     void SetIPv6AddressIds(const std::vector<std::string>& _iPv6AddressIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool IPv6AddressIdsHasBeenSet() const;
 
                     /**
-                     * 获取弹性公网IPv6地址网络带宽
-                     * @return InternetMaxBandwidthOut 弹性公网IPv6地址网络带宽
+                     * 获取弹性公网IPv6地址网络带宽，可调整的带宽上限值参考产品文档中[IPv6 计费限制说明](https://cloud.tencent.com/document/product/1142/38369)。
+                     * @return InternetMaxBandwidthOut 弹性公网IPv6地址网络带宽，可调整的带宽上限值参考产品文档中[IPv6 计费限制说明](https://cloud.tencent.com/document/product/1142/38369)。
                      * 
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置弹性公网IPv6地址网络带宽
-                     * @param _internetMaxBandwidthOut 弹性公网IPv6地址网络带宽
+                     * 设置弹性公网IPv6地址网络带宽，可调整的带宽上限值参考产品文档中[IPv6 计费限制说明](https://cloud.tencent.com/document/product/1142/38369)。
+                     * @param _internetMaxBandwidthOut 弹性公网IPv6地址网络带宽，可调整的带宽上限值参考产品文档中[IPv6 计费限制说明](https://cloud.tencent.com/document/product/1142/38369)。
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性公网IPv6地址唯一ID
+                     * 弹性公网IPv6地址唯一ID，可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。
                      */
                     std::vector<std::string> m_iPv6AddressIds;
                     bool m_iPv6AddressIdsHasBeenSet;
 
                     /**
-                     * 弹性公网IPv6地址网络带宽
+                     * 弹性公网IPv6地址网络带宽，可调整的带宽上限值参考产品文档中[IPv6 计费限制说明](https://cloud.tencent.com/document/product/1142/38369)。
                      */
                     int64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取普通公网IP 的 IP 地址,示例：101.35.139.183
-                     * @return AddressIps 普通公网IP 的 IP 地址,示例：101.35.139.183
+                     * 获取普通公网IP 的 IP 地址，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressIps。
+                     * @return AddressIps 普通公网IP 的 IP 地址，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressIps。
                      * 
                      */
                     std::vector<std::string> GetAddressIps() const;
 
                     /**
-                     * 设置普通公网IP 的 IP 地址,示例：101.35.139.183
-                     * @param _addressIps 普通公网IP 的 IP 地址,示例：101.35.139.183
+                     * 设置普通公网IP 的 IP 地址，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressIps。
+                     * @param _addressIps 普通公网IP 的 IP 地址，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressIps。
                      * 
                      */
                     void SetAddressIps(const std::vector<std::string>& _addressIps);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 普通公网IP 的 IP 地址,示例：101.35.139.183
+                     * 普通公网IP 的 IP 地址，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressIps。
                      */
                     std::vector<std::string> m_addressIps;
                     bool m_addressIpsHasBeenSet;

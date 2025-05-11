@@ -37,6 +37,8 @@
 #include <tencentcloud/cat/v20180409/model/DescribeNodesResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeProbeMetricDataRequest.h>
 #include <tencentcloud/cat/v20180409/model/DescribeProbeMetricDataResponse.h>
+#include <tencentcloud/cat/v20180409/model/DescribeProbeMetricTagValuesRequest.h>
+#include <tencentcloud/cat/v20180409/model/DescribeProbeMetricTagValuesResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeProbeNodesRequest.h>
 #include <tencentcloud/cat/v20180409/model/DescribeProbeNodesResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeProbeTasksRequest.h>
@@ -84,6 +86,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProbeMetricDataResponse> DescribeProbeMetricDataOutcome;
                 typedef std::future<DescribeProbeMetricDataOutcome> DescribeProbeMetricDataOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DescribeProbeMetricDataRequest&, DescribeProbeMetricDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProbeMetricDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProbeMetricTagValuesResponse> DescribeProbeMetricTagValuesOutcome;
+                typedef std::future<DescribeProbeMetricTagValuesOutcome> DescribeProbeMetricTagValuesOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::DescribeProbeMetricTagValuesRequest&, DescribeProbeMetricTagValuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProbeMetricTagValuesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProbeNodesResponse> DescribeProbeNodesOutcome;
                 typedef std::future<DescribeProbeNodesOutcome> DescribeProbeNodesOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DescribeProbeNodesRequest&, DescribeProbeNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProbeNodesAsyncHandler;
@@ -168,6 +173,15 @@ namespace TencentCloud
                 DescribeProbeMetricDataOutcome DescribeProbeMetricData(const Model::DescribeProbeMetricDataRequest &request);
                 void DescribeProbeMetricDataAsync(const Model::DescribeProbeMetricDataRequest& request, const DescribeProbeMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProbeMetricDataOutcomeCallable DescribeProbeMetricDataCallable(const Model::DescribeProbeMetricDataRequest& request);
+
+                /**
+                 *查询同个任务类型下的维度标签值，包括查询用户任务信息，具体任务下的多个维度标签信息。（通过为DescribeProbeMetricData接口的Filters参数添加维度筛选条件，可实现多维数据分析）
+                 * @param req DescribeProbeMetricTagValuesRequest
+                 * @return DescribeProbeMetricTagValuesOutcome
+                 */
+                DescribeProbeMetricTagValuesOutcome DescribeProbeMetricTagValues(const Model::DescribeProbeMetricTagValuesRequest &request);
+                void DescribeProbeMetricTagValuesAsync(const Model::DescribeProbeMetricTagValuesRequest& request, const DescribeProbeMetricTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProbeMetricTagValuesOutcomeCallable DescribeProbeMetricTagValuesCallable(const Model::DescribeProbeMetricTagValuesRequest& request);
 
                 /**
                  *查询拨测节点

@@ -400,6 +400,35 @@ namespace TencentCloud
                      */
                     bool EnableAutoScaleUpHasBeenSet() const;
 
+                    /**
+                     * 获取v1.5：创建普通版的通用文件系统；
+v3.1：创建增强版的通用文件系统
+说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。
+                     * @return CfsVersion v1.5：创建普通版的通用文件系统；
+v3.1：创建增强版的通用文件系统
+说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。
+                     * 
+                     */
+                    std::string GetCfsVersion() const;
+
+                    /**
+                     * 设置v1.5：创建普通版的通用文件系统；
+v3.1：创建增强版的通用文件系统
+说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。
+                     * @param _cfsVersion v1.5：创建普通版的通用文件系统；
+v3.1：创建增强版的通用文件系统
+说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。
+                     * 
+                     */
+                    void SetCfsVersion(const std::string& _cfsVersion);
+
+                    /**
+                     * 判断参数 CfsVersion 是否已赋值
+                     * @return CfsVersion 是否已赋值
+                     * 
+                     */
+                    bool CfsVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -503,6 +532,14 @@ namespace TencentCloud
                      */
                     bool m_enableAutoScaleUp;
                     bool m_enableAutoScaleUpHasBeenSet;
+
+                    /**
+                     * v1.5：创建普通版的通用文件系统；
+v3.1：创建增强版的通用文件系统
+说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。
+                     */
+                    std::string m_cfsVersion;
+                    bool m_cfsVersionHasBeenSet;
 
                 };
             }

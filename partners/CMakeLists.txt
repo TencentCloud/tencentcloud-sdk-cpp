@@ -30,6 +30,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/DescribeAgentClientGradeResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentDealsByCacheResponse.h
   include/tencentcloud/partners/v20180321/model/ClientIncreaseInfoList.h
+  include/tencentcloud/partners/v20180321/model/SubProductPriceDetail.h
   include/tencentcloud/partners/v20180321/model/RebateInfoElem.h
   include/tencentcloud/partners/v20180321/model/DescribeClientSwitchTraTaskInfoResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentPayDealsV2Response.h
@@ -54,7 +55,9 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/DescribeSalesmansResponse.h
   include/tencentcloud/partners/v20180321/model/AgentAuditedClient.h
   include/tencentcloud/partners/v20180321/model/DescribeUnbindClientListRequest.h
+  include/tencentcloud/partners/v20180321/model/DescribeRebateInfosResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentDealsByCacheRequest.h
+  include/tencentcloud/partners/v20180321/model/DescribeAgentDealsPriceDetailByDealNameRequest.h
   include/tencentcloud/partners/v20180321/model/ModifyClientRemarkRequest.h
   include/tencentcloud/partners/v20180321/model/CreatePayRelationForClientRequest.h
   include/tencentcloud/partners/v20180321/model/AgentTransferMoneyResponse.h
@@ -62,6 +65,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsV2Response.h
   include/tencentcloud/partners/v20180321/model/AssignClientsToSalesResponse.h
   include/tencentcloud/partners/v20180321/model/AgentBillElem.h
+  include/tencentcloud/partners/v20180321/model/DealPriceDetail.h
   include/tencentcloud/partners/v20180321/model/AuditApplyClientResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeClientSwitchTraTaskInfoRequest.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentBillsRequest.h
@@ -70,7 +74,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/AgentSalesmanElem.h
   include/tencentcloud/partners/v20180321/model/DescribeClientBalanceNewRequest.h
   include/tencentcloud/partners/v20180321/model/DealGoodsPriceNewElem.h
-  include/tencentcloud/partners/v20180321/model/DescribeRebateInfosResponse.h
+  include/tencentcloud/partners/v20180321/model/DescribeAgentDealsPriceDetailByDealNameResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentClientGradeRequest.h
   include/tencentcloud/partners/v20180321/model/RebateInfoElemNew.h
   include/tencentcloud/partners/v20180321/model/AssignClientsToSalesRequest.h
@@ -90,6 +94,7 @@ set(partners_src
   src/v20180321/model/DescribeAgentClientGradeResponse.cpp
   src/v20180321/model/DescribeAgentDealsByCacheResponse.cpp
   src/v20180321/model/ClientIncreaseInfoList.cpp
+  src/v20180321/model/SubProductPriceDetail.cpp
   src/v20180321/model/RebateInfoElem.cpp
   src/v20180321/model/DescribeClientSwitchTraTaskInfoResponse.cpp
   src/v20180321/model/DescribeAgentPayDealsV2Response.cpp
@@ -114,7 +119,9 @@ set(partners_src
   src/v20180321/model/DescribeSalesmansResponse.cpp
   src/v20180321/model/AgentAuditedClient.cpp
   src/v20180321/model/DescribeUnbindClientListRequest.cpp
+  src/v20180321/model/DescribeRebateInfosResponse.cpp
   src/v20180321/model/DescribeAgentDealsByCacheRequest.cpp
+  src/v20180321/model/DescribeAgentDealsPriceDetailByDealNameRequest.cpp
   src/v20180321/model/ModifyClientRemarkRequest.cpp
   src/v20180321/model/CreatePayRelationForClientRequest.cpp
   src/v20180321/model/AgentTransferMoneyResponse.cpp
@@ -122,6 +129,7 @@ set(partners_src
   src/v20180321/model/DescribeAgentSelfPayDealsV2Response.cpp
   src/v20180321/model/AssignClientsToSalesResponse.cpp
   src/v20180321/model/AgentBillElem.cpp
+  src/v20180321/model/DealPriceDetail.cpp
   src/v20180321/model/AuditApplyClientResponse.cpp
   src/v20180321/model/DescribeClientSwitchTraTaskInfoRequest.cpp
   src/v20180321/model/DescribeAgentBillsRequest.cpp
@@ -130,7 +138,7 @@ set(partners_src
   src/v20180321/model/AgentSalesmanElem.cpp
   src/v20180321/model/DescribeClientBalanceNewRequest.cpp
   src/v20180321/model/DealGoodsPriceNewElem.cpp
-  src/v20180321/model/DescribeRebateInfosResponse.cpp
+  src/v20180321/model/DescribeAgentDealsPriceDetailByDealNameResponse.cpp
   src/v20180321/model/DescribeAgentClientGradeRequest.cpp
   src/v20180321/model/RebateInfoElemNew.cpp
   src/v20180321/model/AssignClientsToSalesRequest.cpp

@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool ToolCallsHasBeenSet() const;
 
+                    /**
+                     * 获取思维链内容。用于展示模型思考过程，仅 Hunyuan-T1 系列模型可用。注意：在进行多轮对话时，请不要将此字段拼接到 messages 中。请求 messages 的请求参数中包含 reasoning_content，接口将报错。
+                     * @return ReasoningContent 思维链内容。用于展示模型思考过程，仅 Hunyuan-T1 系列模型可用。注意：在进行多轮对话时，请不要将此字段拼接到 messages 中。请求 messages 的请求参数中包含 reasoning_content，接口将报错。
+                     * 
+                     */
+                    std::string GetReasoningContent() const;
+
+                    /**
+                     * 设置思维链内容。用于展示模型思考过程，仅 Hunyuan-T1 系列模型可用。注意：在进行多轮对话时，请不要将此字段拼接到 messages 中。请求 messages 的请求参数中包含 reasoning_content，接口将报错。
+                     * @param _reasoningContent 思维链内容。用于展示模型思考过程，仅 Hunyuan-T1 系列模型可用。注意：在进行多轮对话时，请不要将此字段拼接到 messages 中。请求 messages 的请求参数中包含 reasoning_content，接口将报错。
+                     * 
+                     */
+                    void SetReasoningContent(const std::string& _reasoningContent);
+
+                    /**
+                     * 判断参数 ReasoningContent 是否已赋值
+                     * @return ReasoningContent 是否已赋值
+                     * 
+                     */
+                    bool ReasoningContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -149,6 +170,12 @@ namespace TencentCloud
                      */
                     std::vector<ToolCall> m_toolCalls;
                     bool m_toolCallsHasBeenSet;
+
+                    /**
+                     * 思维链内容。用于展示模型思考过程，仅 Hunyuan-T1 系列模型可用。注意：在进行多轮对话时，请不要将此字段拼接到 messages 中。请求 messages 的请求参数中包含 reasoning_content，接口将报错。
+                     */
+                    std::string m_reasoningContent;
+                    bool m_reasoningContentHasBeenSet;
 
                 };
             }

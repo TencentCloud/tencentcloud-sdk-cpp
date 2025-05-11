@@ -43,6 +43,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeAgentClientsResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentDealsByCacheRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentDealsByCacheResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentDealsPriceDetailByDealNameRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentDealsPriceDetailByDealNameResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsV2Request.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsV2Response.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentRelateBigDealIdsRequest.h>
@@ -111,6 +113,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAgentDealsByCacheResponse> DescribeAgentDealsByCacheOutcome;
                 typedef std::future<DescribeAgentDealsByCacheOutcome> DescribeAgentDealsByCacheOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentDealsByCacheRequest&, DescribeAgentDealsByCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentDealsByCacheAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAgentDealsPriceDetailByDealNameResponse> DescribeAgentDealsPriceDetailByDealNameOutcome;
+                typedef std::future<DescribeAgentDealsPriceDetailByDealNameOutcome> DescribeAgentDealsPriceDetailByDealNameOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeAgentDealsPriceDetailByDealNameRequest&, DescribeAgentDealsPriceDetailByDealNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentDealsPriceDetailByDealNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAgentPayDealsV2Response> DescribeAgentPayDealsV2Outcome;
                 typedef std::future<DescribeAgentPayDealsV2Outcome> DescribeAgentPayDealsV2OutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentPayDealsV2Request&, DescribeAgentPayDealsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentPayDealsV2AsyncHandler;
@@ -242,6 +247,15 @@ namespace TencentCloud
                 DescribeAgentDealsByCacheOutcome DescribeAgentDealsByCache(const Model::DescribeAgentDealsByCacheRequest &request);
                 void DescribeAgentDealsByCacheAsync(const Model::DescribeAgentDealsByCacheRequest& request, const DescribeAgentDealsByCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAgentDealsByCacheOutcomeCallable DescribeAgentDealsByCacheCallable(const Model::DescribeAgentDealsByCacheRequest& request);
+
+                /**
+                 *供代理商使用名下有效普通代客的预付费子订单号查询订单费用详情
+                 * @param req DescribeAgentDealsPriceDetailByDealNameRequest
+                 * @return DescribeAgentDealsPriceDetailByDealNameOutcome
+                 */
+                DescribeAgentDealsPriceDetailByDealNameOutcome DescribeAgentDealsPriceDetailByDealName(const Model::DescribeAgentDealsPriceDetailByDealNameRequest &request);
+                void DescribeAgentDealsPriceDetailByDealNameAsync(const Model::DescribeAgentDealsPriceDetailByDealNameRequest& request, const DescribeAgentDealsPriceDetailByDealNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentDealsPriceDetailByDealNameOutcomeCallable DescribeAgentDealsPriceDetailByDealNameCallable(const Model::DescribeAgentDealsPriceDetailByDealNameRequest& request);
 
                 /**
                  *可以查询代理商代付的预付费订单

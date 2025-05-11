@@ -208,6 +208,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeAllByFolderNewRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeTenantProjectsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskRunHistoryResponse.h
+  include/tencentcloud/wedata/v20210820/model/LockIntegrationTaskRequest.h
   include/tencentcloud/wedata/v20210820/model/BatchStopWorkflowsByIdsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDutyScheduleListResponse.h
   include/tencentcloud/wedata/v20210820/model/CommitIntegrationTaskRequest.h
@@ -238,6 +239,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ModifyRuleRequest.h
   include/tencentcloud/wedata/v20210820/model/RunTasksByMultiWorkflowResponse.h
   include/tencentcloud/wedata/v20210820/model/DataSourceInfo.h
+  include/tencentcloud/wedata/v20210820/model/DescribeBaseBizCatalogsResponse.h
   include/tencentcloud/wedata/v20210820/model/FindAllFolderResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeDataServicePublishedApiListRequest.h
   include/tencentcloud/wedata/v20210820/model/ResourcePathTree.h
@@ -502,7 +504,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/SimpleTaskInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsRecordsTrendRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskInstanceNodeInfoRequest.h
-  include/tencentcloud/wedata/v20210820/model/DescribeWorkflowSchedulerInfoDsRequest.h
+  include/tencentcloud/wedata/v20210820/model/BizCatalogsInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeDependTaskListsResponse.h
   include/tencentcloud/wedata/v20210820/model/CreateHiveTableResponse.h
   include/tencentcloud/wedata/v20210820/model/RuleTemplatePage.h
@@ -562,7 +564,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/RegisterEventResponse.h
   include/tencentcloud/wedata/v20210820/model/CountOpsInstanceStateResponse.h
   include/tencentcloud/wedata/v20210820/model/SubscribeReceiver.h
-  include/tencentcloud/wedata/v20210820/model/EventCaseAuditLogVOCollection.h
+  include/tencentcloud/wedata/v20210820/model/DescribeWorkflowSchedulerInfoDsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeQualityScoreTrendRequest.h
   include/tencentcloud/wedata/v20210820/model/RobLockState.h
   include/tencentcloud/wedata/v20210820/model/SubmitTaskTestRunRequest.h
@@ -622,6 +624,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskMetricOverviewRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDatabaseMetasResponse.h
   include/tencentcloud/wedata/v20210820/model/OfflineTaskAddParam.h
+  include/tencentcloud/wedata/v20210820/model/DescribeBaseBizCatalogsRequest.h
   include/tencentcloud/wedata/v20210820/model/FreezeTasksByWorkflowIdsResponse.h
   include/tencentcloud/wedata/v20210820/model/SubmitWorkflowRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeResourceManagePathTreesResponse.h
@@ -714,7 +717,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/StrToStrMap.h
   include/tencentcloud/wedata/v20210820/model/WorkflowCanvasOpsDto.h
   include/tencentcloud/wedata/v20210820/model/DlcRemoveOrphanFilesInfo.h
-  include/tencentcloud/wedata/v20210820/model/LockIntegrationTaskRequest.h
+  include/tencentcloud/wedata/v20210820/model/EventCaseAuditLogVOCollection.h
   include/tencentcloud/wedata/v20210820/model/BatchStopIntegrationTasksRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesByPageRequest.h
   include/tencentcloud/wedata/v20210820/model/RegisterDsEventResponse.h
@@ -1011,6 +1014,7 @@ set(wedata_src
   src/v20210820/model/DescribeAllByFolderNewRequest.cpp
   src/v20210820/model/DescribeTenantProjectsRequest.cpp
   src/v20210820/model/DescribeTaskRunHistoryResponse.cpp
+  src/v20210820/model/LockIntegrationTaskRequest.cpp
   src/v20210820/model/BatchStopWorkflowsByIdsRequest.cpp
   src/v20210820/model/DescribeDutyScheduleListResponse.cpp
   src/v20210820/model/CommitIntegrationTaskRequest.cpp
@@ -1041,6 +1045,7 @@ set(wedata_src
   src/v20210820/model/ModifyRuleRequest.cpp
   src/v20210820/model/RunTasksByMultiWorkflowResponse.cpp
   src/v20210820/model/DataSourceInfo.cpp
+  src/v20210820/model/DescribeBaseBizCatalogsResponse.cpp
   src/v20210820/model/FindAllFolderResponse.cpp
   src/v20210820/model/DescribeDataServicePublishedApiListRequest.cpp
   src/v20210820/model/ResourcePathTree.cpp
@@ -1305,7 +1310,7 @@ set(wedata_src
   src/v20210820/model/SimpleTaskInfo.cpp
   src/v20210820/model/DescribeIntegrationStatisticsRecordsTrendRequest.cpp
   src/v20210820/model/DescribeRealTimeTaskInstanceNodeInfoRequest.cpp
-  src/v20210820/model/DescribeWorkflowSchedulerInfoDsRequest.cpp
+  src/v20210820/model/BizCatalogsInfo.cpp
   src/v20210820/model/DescribeDependTaskListsResponse.cpp
   src/v20210820/model/CreateHiveTableResponse.cpp
   src/v20210820/model/RuleTemplatePage.cpp
@@ -1365,7 +1370,7 @@ set(wedata_src
   src/v20210820/model/RegisterEventResponse.cpp
   src/v20210820/model/CountOpsInstanceStateResponse.cpp
   src/v20210820/model/SubscribeReceiver.cpp
-  src/v20210820/model/EventCaseAuditLogVOCollection.cpp
+  src/v20210820/model/DescribeWorkflowSchedulerInfoDsRequest.cpp
   src/v20210820/model/DescribeQualityScoreTrendRequest.cpp
   src/v20210820/model/RobLockState.cpp
   src/v20210820/model/SubmitTaskTestRunRequest.cpp
@@ -1425,6 +1430,7 @@ set(wedata_src
   src/v20210820/model/DescribeRealTimeTaskMetricOverviewRequest.cpp
   src/v20210820/model/DescribeDatabaseMetasResponse.cpp
   src/v20210820/model/OfflineTaskAddParam.cpp
+  src/v20210820/model/DescribeBaseBizCatalogsRequest.cpp
   src/v20210820/model/FreezeTasksByWorkflowIdsResponse.cpp
   src/v20210820/model/SubmitWorkflowRequest.cpp
   src/v20210820/model/DescribeResourceManagePathTreesResponse.cpp
@@ -1517,7 +1523,7 @@ set(wedata_src
   src/v20210820/model/StrToStrMap.cpp
   src/v20210820/model/WorkflowCanvasOpsDto.cpp
   src/v20210820/model/DlcRemoveOrphanFilesInfo.cpp
-  src/v20210820/model/LockIntegrationTaskRequest.cpp
+  src/v20210820/model/EventCaseAuditLogVOCollection.cpp
   src/v20210820/model/BatchStopIntegrationTasksRequest.cpp
   src/v20210820/model/DescribeRuleTemplatesByPageRequest.cpp
   src/v20210820/model/RegisterDsEventResponse.cpp

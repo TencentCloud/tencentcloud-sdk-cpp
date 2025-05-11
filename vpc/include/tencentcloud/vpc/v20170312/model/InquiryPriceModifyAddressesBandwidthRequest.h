@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EIP唯一ID
-                     * @return AddressIds EIP唯一ID
+                     * 获取EIP唯一ID，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @return AddressIds EIP唯一ID，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     std::vector<std::string> GetAddressIds() const;
 
                     /**
-                     * 设置EIP唯一ID
-                     * @param _addressIds EIP唯一ID
+                     * 设置EIP唯一ID，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
+                     * @param _addressIds EIP唯一ID，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      * 
                      */
                     void SetAddressIds(const std::vector<std::string>& _addressIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AddressIdsHasBeenSet() const;
 
                     /**
-                     * 获取新带宽值
-                     * @return InternetMaxBandwidthOut 新带宽值
+                     * 获取新带宽值，可调整的带宽上限值参考产品文档[带宽上限](https://cloud.tencent.com/document/product/1199/48333)。
+                     * @return InternetMaxBandwidthOut 新带宽值，可调整的带宽上限值参考产品文档[带宽上限](https://cloud.tencent.com/document/product/1199/48333)。
                      * 
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置新带宽值
-                     * @param _internetMaxBandwidthOut 新带宽值
+                     * 设置新带宽值，可调整的带宽上限值参考产品文档[带宽上限](https://cloud.tencent.com/document/product/1199/48333)。
+                     * @param _internetMaxBandwidthOut 新带宽值，可调整的带宽上限值参考产品文档[带宽上限](https://cloud.tencent.com/document/product/1199/48333)。
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EIP唯一ID
+                     * EIP唯一ID，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。
                      */
                     std::vector<std::string> m_addressIds;
                     bool m_addressIdsHasBeenSet;
 
                     /**
-                     * 新带宽值
+                     * 新带宽值，可调整的带宽上限值参考产品文档[带宽上限](https://cloud.tencent.com/document/product/1199/48333)。
                      */
                     int64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;

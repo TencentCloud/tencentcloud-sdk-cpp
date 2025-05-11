@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/hunyuan/v20230901/model/Delta.h>
+#include <tencentcloud/hunyuan/v20230901/model/ImageMessage.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Hunyuan::V20230901::Model;
 using namespace std;
 
-Delta::Delta() :
+ImageMessage::ImageMessage() :
     m_roleHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_toolCallsHasBeenSet(false),
-    m_reasoningContentHasBeenSet(false)
+    m_contentsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome Delta::Deserialize(const rapidjson::Value &value)
+CoreInternalOutcome ImageMessage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,7 +36,7 @@ CoreInternalOutcome Delta::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Role"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Delta.Role` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMessage.Role` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_role = string(value["Role"].GetString());
         m_roleHasBeenSet = true;
@@ -47,47 +46,37 @@ CoreInternalOutcome Delta::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Delta.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMessage.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
     }
 
-    if (value.HasMember("ToolCalls") && !value["ToolCalls"].IsNull())
+    if (value.HasMember("Contents") && !value["Contents"].IsNull())
     {
-        if (!value["ToolCalls"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Delta.ToolCalls` is not array type"));
+        if (!value["Contents"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageMessage.Contents` is not array type"));
 
-        const rapidjson::Value &tmpValue = value["ToolCalls"];
+        const rapidjson::Value &tmpValue = value["Contents"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ToolCall item;
+            Content item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_toolCalls.push_back(item);
+            m_contents.push_back(item);
         }
-        m_toolCallsHasBeenSet = true;
-    }
-
-    if (value.HasMember("ReasoningContent") && !value["ReasoningContent"].IsNull())
-    {
-        if (!value["ReasoningContent"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Delta.ReasoningContent` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_reasoningContent = string(value["ReasoningContent"].GetString());
-        m_reasoningContentHasBeenSet = true;
+        m_contentsHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-void Delta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+void ImageMessage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_roleHasBeenSet)
@@ -106,93 +95,69 @@ void Delta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_toolCallsHasBeenSet)
+    if (m_contentsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ToolCalls";
+        string key = "Contents";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_toolCalls.begin(); itr != m_toolCalls.end(); ++itr, ++i)
+        for (auto itr = m_contents.begin(); itr != m_contents.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
-    if (m_reasoningContentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReasoningContent";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_reasoningContent.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
 
-string Delta::GetRole() const
+string ImageMessage::GetRole() const
 {
     return m_role;
 }
 
-void Delta::SetRole(const string& _role)
+void ImageMessage::SetRole(const string& _role)
 {
     m_role = _role;
     m_roleHasBeenSet = true;
 }
 
-bool Delta::RoleHasBeenSet() const
+bool ImageMessage::RoleHasBeenSet() const
 {
     return m_roleHasBeenSet;
 }
 
-string Delta::GetContent() const
+string ImageMessage::GetContent() const
 {
     return m_content;
 }
 
-void Delta::SetContent(const string& _content)
+void ImageMessage::SetContent(const string& _content)
 {
     m_content = _content;
     m_contentHasBeenSet = true;
 }
 
-bool Delta::ContentHasBeenSet() const
+bool ImageMessage::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
 }
 
-vector<ToolCall> Delta::GetToolCalls() const
+vector<Content> ImageMessage::GetContents() const
 {
-    return m_toolCalls;
+    return m_contents;
 }
 
-void Delta::SetToolCalls(const vector<ToolCall>& _toolCalls)
+void ImageMessage::SetContents(const vector<Content>& _contents)
 {
-    m_toolCalls = _toolCalls;
-    m_toolCallsHasBeenSet = true;
+    m_contents = _contents;
+    m_contentsHasBeenSet = true;
 }
 
-bool Delta::ToolCallsHasBeenSet() const
+bool ImageMessage::ContentsHasBeenSet() const
 {
-    return m_toolCallsHasBeenSet;
-}
-
-string Delta::GetReasoningContent() const
-{
-    return m_reasoningContent;
-}
-
-void Delta::SetReasoningContent(const string& _reasoningContent)
-{
-    m_reasoningContent = _reasoningContent;
-    m_reasoningContentHasBeenSet = true;
-}
-
-bool Delta::ReasoningContentHasBeenSet() const
-{
-    return m_reasoningContentHasBeenSet;
+    return m_contentsHasBeenSet;
 }
 

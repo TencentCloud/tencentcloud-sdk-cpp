@@ -4937,7 +4937,7 @@ LimitTypes取值范围：
                 InquiryPriceCreateVpnGatewayOutcomeCallable InquiryPriceCreateVpnGatewayCallable(const Model::InquiryPriceCreateVpnGatewayRequest& request);
 
                 /**
-                 *EIP修改带宽询价
+                 *本接口（InquiryPriceModifyAddressesBandwidth）用于EIP修改带宽询价。
                  * @param req InquiryPriceModifyAddressesBandwidthRequest
                  * @return InquiryPriceModifyAddressesBandwidthOutcome
                  */

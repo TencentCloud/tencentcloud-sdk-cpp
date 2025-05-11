@@ -2964,6 +2964,49 @@ WedataClient::DescribeApproveTypeListOutcomeCallable WedataClient::DescribeAppro
     return task->get_future();
 }
 
+WedataClient::DescribeBaseBizCatalogsOutcome WedataClient::DescribeBaseBizCatalogs(const DescribeBaseBizCatalogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaseBizCatalogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaseBizCatalogsResponse rsp = DescribeBaseBizCatalogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaseBizCatalogsOutcome(rsp);
+        else
+            return DescribeBaseBizCatalogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaseBizCatalogsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeBaseBizCatalogsAsync(const DescribeBaseBizCatalogsRequest& request, const DescribeBaseBizCatalogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaseBizCatalogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeBaseBizCatalogsOutcomeCallable WedataClient::DescribeBaseBizCatalogsCallable(const DescribeBaseBizCatalogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaseBizCatalogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaseBizCatalogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeBatchOperateTaskOutcome WedataClient::DescribeBatchOperateTask(const DescribeBatchOperateTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBatchOperateTask");

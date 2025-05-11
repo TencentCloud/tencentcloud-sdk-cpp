@@ -159,6 +159,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeApproveListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeApproveTypeListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeApproveTypeListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeBaseBizCatalogsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeBaseBizCatalogsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBatchOperateTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBatchOperateTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnLineageRequest.h>
@@ -753,6 +755,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApproveTypeListResponse> DescribeApproveTypeListOutcome;
                 typedef std::future<DescribeApproveTypeListOutcome> DescribeApproveTypeListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeApproveTypeListRequest&, DescribeApproveTypeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApproveTypeListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaseBizCatalogsResponse> DescribeBaseBizCatalogsOutcome;
+                typedef std::future<DescribeBaseBizCatalogsOutcome> DescribeBaseBizCatalogsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeBaseBizCatalogsRequest&, DescribeBaseBizCatalogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaseBizCatalogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBatchOperateTaskResponse> DescribeBatchOperateTaskOutcome;
                 typedef std::future<DescribeBatchOperateTaskOutcome> DescribeBatchOperateTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeBatchOperateTaskRequest&, DescribeBatchOperateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOperateTaskAsyncHandler;
@@ -1931,6 +1936,15 @@ namespace TencentCloud
                 DescribeApproveTypeListOutcome DescribeApproveTypeList(const Model::DescribeApproveTypeListRequest &request);
                 void DescribeApproveTypeListAsync(const Model::DescribeApproveTypeListRequest& request, const DescribeApproveTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApproveTypeListOutcomeCallable DescribeApproveTypeListCallable(const Model::DescribeApproveTypeListRequest& request);
+
+                /**
+                 *数据地图-信息配置 数据类目列表
+                 * @param req DescribeBaseBizCatalogsRequest
+                 * @return DescribeBaseBizCatalogsOutcome
+                 */
+                DescribeBaseBizCatalogsOutcome DescribeBaseBizCatalogs(const Model::DescribeBaseBizCatalogsRequest &request);
+                void DescribeBaseBizCatalogsAsync(const Model::DescribeBaseBizCatalogsRequest& request, const DescribeBaseBizCatalogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaseBizCatalogsOutcomeCallable DescribeBaseBizCatalogsCallable(const Model::DescribeBaseBizCatalogsRequest& request);
 
                 /**
                  *批量操作页面获取任务列表

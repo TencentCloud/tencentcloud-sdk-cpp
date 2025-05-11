@@ -599,6 +599,49 @@ HunyuanClient::GroupChatCompletionsOutcomeCallable HunyuanClient::GroupChatCompl
     return task->get_future();
 }
 
+HunyuanClient::ImageQuestionOutcome HunyuanClient::ImageQuestion(const ImageQuestionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImageQuestion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImageQuestionResponse rsp = ImageQuestionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImageQuestionOutcome(rsp);
+        else
+            return ImageQuestionOutcome(o.GetError());
+    }
+    else
+    {
+        return ImageQuestionOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::ImageQuestionAsync(const ImageQuestionRequest& request, const ImageQuestionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImageQuestion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::ImageQuestionOutcomeCallable HunyuanClient::ImageQuestionCallable(const ImageQuestionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImageQuestionOutcome()>>(
+        [this, request]()
+        {
+            return this->ImageQuestion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HunyuanClient::QueryHunyuanImageChatJobOutcome HunyuanClient::QueryHunyuanImageChatJob(const QueryHunyuanImageChatJobRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryHunyuanImageChatJob");

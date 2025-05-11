@@ -130,7 +130,7 @@ namespace TencentCloud
 实例配置变更后 Oplog 的大小。
 - 单位：GB。
 - 默认 Oplog 占用容量为磁盘空间的10%。系统允许设置的 Oplog 容量范围为磁盘空间的[10%,90%]。
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetOplogSize() const;
 
@@ -145,14 +145,14 @@ namespace TencentCloud
 实例配置变更后 Oplog 的大小。
 - 单位：GB。
 - 默认 Oplog 占用容量为磁盘空间的10%。系统允许设置的 Oplog 容量范围为磁盘空间的[10%,90%]。
-                     * 
+                     * @deprecated
                      */
                     void SetOplogSize(const uint64_t& _oplogSize);
 
                     /**
                      * 判断参数 OplogSize 是否已赋值
                      * @return OplogSize 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OplogSizeHasBeenSet() const;
 

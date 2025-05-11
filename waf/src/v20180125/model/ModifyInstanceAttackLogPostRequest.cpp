@@ -22,7 +22,9 @@
 using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-ModifyInstanceAttackLogPostRequest::ModifyInstanceAttackLogPostRequest()
+ModifyInstanceAttackLogPostRequest::ModifyInstanceAttackLogPostRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_attackLogPostHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string ModifyInstanceAttackLogPostRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attackLogPostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttackLogPost";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_attackLogPost, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string ModifyInstanceAttackLogPostRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyInstanceAttackLogPostRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void ModifyInstanceAttackLogPostRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool ModifyInstanceAttackLogPostRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+int64_t ModifyInstanceAttackLogPostRequest::GetAttackLogPost() const
+{
+    return m_attackLogPost;
+}
+
+void ModifyInstanceAttackLogPostRequest::SetAttackLogPost(const int64_t& _attackLogPost)
+{
+    m_attackLogPost = _attackLogPost;
+    m_attackLogPostHasBeenSet = true;
+}
+
+bool ModifyInstanceAttackLogPostRequest::AttackLogPostHasBeenSet() const
+{
+    return m_attackLogPostHasBeenSet;
+}
 
 

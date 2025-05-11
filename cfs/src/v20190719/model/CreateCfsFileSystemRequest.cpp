@@ -39,7 +39,8 @@ CreateCfsFileSystemRequest::CreateCfsFileSystemRequest() :
     m_capacityHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_autoSnapshotPolicyIdHasBeenSet(false),
-    m_enableAutoScaleUpHasBeenSet(false)
+    m_enableAutoScaleUpHasBeenSet(false),
+    m_cfsVersionHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,14 @@ string CreateCfsFileSystemRequest::ToJsonString() const
         string key = "EnableAutoScaleUp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableAutoScaleUp, allocator);
+    }
+
+    if (m_cfsVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfsVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfsVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -471,6 +480,22 @@ void CreateCfsFileSystemRequest::SetEnableAutoScaleUp(const bool& _enableAutoSca
 bool CreateCfsFileSystemRequest::EnableAutoScaleUpHasBeenSet() const
 {
     return m_enableAutoScaleUpHasBeenSet;
+}
+
+string CreateCfsFileSystemRequest::GetCfsVersion() const
+{
+    return m_cfsVersion;
+}
+
+void CreateCfsFileSystemRequest::SetCfsVersion(const string& _cfsVersion)
+{
+    m_cfsVersion = _cfsVersion;
+    m_cfsVersionHasBeenSet = true;
+}
+
+bool CreateCfsFileSystemRequest::CfsVersionHasBeenSet() const
+{
+    return m_cfsVersionHasBeenSet;
 }
 
 
