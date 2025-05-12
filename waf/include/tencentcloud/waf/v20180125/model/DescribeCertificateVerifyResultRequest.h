@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
-                     * @return CertType 证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * 获取证书类型，此参数和GmCertType不可同时为0。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * @return CertType 证书类型，此参数和GmCertType不可同时为0。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
                      * 
                      */
                     int64_t GetCertType() const;
 
                     /**
-                     * 设置证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
-                     * @param _certType 证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * 设置证书类型，此参数和GmCertType不可同时为0。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * @param _certType 证书类型，此参数和GmCertType不可同时为0。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
                      * 
                      */
                     void SetCertType(const int64_t& _certType);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PrivateKeyHasBeenSet() const;
 
                     /**
-                     * 获取国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
-                     * @return GmCertType 国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+                     * 获取国密证书类型，此参数和CertType不可同时为0。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+                     * @return GmCertType 国密证书类型，此参数和CertType不可同时为0。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
                      * 
                      */
                     int64_t GetGmCertType() const;
 
                     /**
-                     * 设置国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
-                     * @param _gmCertType 国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+                     * 设置国密证书类型，此参数和CertType不可同时为0。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+                     * @param _gmCertType 国密证书类型，此参数和CertType不可同时为0。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
                      * 
                      */
                     void SetGmCertType(const int64_t& _gmCertType);
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * 证书类型，此参数和GmCertType不可同时为0。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
                      */
                     int64_t m_certType;
                     bool m_certTypeHasBeenSet;
@@ -306,7 +306,7 @@ namespace TencentCloud
                     bool m_privateKeyHasBeenSet;
 
                     /**
-                     * 国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+                     * 国密证书类型，此参数和CertType不可同时为0。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
                      */
                     int64_t m_gmCertType;
                     bool m_gmCertTypeHasBeenSet;

@@ -529,6 +529,48 @@ namespace TencentCloud
                      */
                     bool NumericalVpcIdHasBeenSet() const;
 
+                    /**
+                     * 获取修改时间
+                     * @return ModifyTime 修改时间
+                     * 
+                     */
+                    std::string GetModifyTime() const;
+
+                    /**
+                     * 设置修改时间
+                     * @param _modifyTime 修改时间
+                     * 
+                     */
+                    void SetModifyTime(const std::string& _modifyTime);
+
+                    /**
+                     * 判断参数 ModifyTime 是否已赋值
+                     * @return ModifyTime 是否已赋值
+                     * 
+                     */
+                    bool ModifyTimeHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+                     * @return AddTime 创建时间
+                     * 
+                     */
+                    std::string GetAddTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _addTime 创建时间
+                     * 
+                     */
+                    void SetAddTime(const std::string& _addTime);
+
+                    /**
+                     * 判断参数 AddTime 是否已赋值
+                     * @return AddTime 是否已赋值
+                     * 
+                     */
+                    bool AddTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -668,6 +710,18 @@ namespace TencentCloud
                      */
                     int64_t m_numericalVpcId;
                     bool m_numericalVpcIdHasBeenSet;
+
+                    /**
+                     * 修改时间
+                     */
+                    std::string m_modifyTime;
+                    bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_addTime;
+                    bool m_addTimeHasBeenSet;
 
                 };
             }

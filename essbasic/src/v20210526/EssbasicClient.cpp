@@ -1029,6 +1029,49 @@ EssbasicClient::ChannelCreatePrepareFlowOutcomeCallable EssbasicClient::ChannelC
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreatePrepareFlowGroupOutcome EssbasicClient::ChannelCreatePrepareFlowGroup(const ChannelCreatePrepareFlowGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreatePrepareFlowGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreatePrepareFlowGroupResponse rsp = ChannelCreatePrepareFlowGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreatePrepareFlowGroupOutcome(rsp);
+        else
+            return ChannelCreatePrepareFlowGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreatePrepareFlowGroupOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreatePrepareFlowGroupAsync(const ChannelCreatePrepareFlowGroupRequest& request, const ChannelCreatePrepareFlowGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreatePrepareFlowGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreatePrepareFlowGroupOutcomeCallable EssbasicClient::ChannelCreatePrepareFlowGroupCallable(const ChannelCreatePrepareFlowGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreatePrepareFlowGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreatePrepareFlowGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreatePreparedPersonalEsignOutcome EssbasicClient::ChannelCreatePreparedPersonalEsign(const ChannelCreatePreparedPersonalEsignRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreatePreparedPersonalEsign");

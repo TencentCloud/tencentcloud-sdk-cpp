@@ -382,6 +382,27 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取限频方式
+                     * @return LimitMethod 限频方式
+                     * 
+                     */
+                    std::string GetLimitMethod() const;
+
+                    /**
+                     * 设置限频方式
+                     * @param _limitMethod 限频方式
+                     * 
+                     */
+                    void SetLimitMethod(const std::string& _limitMethod);
+
+                    /**
+                     * 判断参数 LimitMethod 是否已赋值
+                     * @return LimitMethod 是否已赋值
+                     * 
+                     */
+                    bool LimitMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,6 +500,12 @@ namespace TencentCloud
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 限频方式
+                     */
+                    std::string m_limitMethod;
+                    bool m_limitMethodHasBeenSet;
 
                 };
             }

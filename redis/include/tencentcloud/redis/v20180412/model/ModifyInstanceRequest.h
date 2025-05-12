@@ -174,63 +174,63 @@ namespace TencentCloud
                     /**
                      * 获取目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。
                      * @return InstanceId 目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。
-                     * 
+                     * @deprecated
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。
                      * @param _instanceId 目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取已经废弃
                      * @return InstanceName 已经废弃
-                     * 
+                     * @deprecated
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置已经废弃
                      * @param _instanceName 已经废弃
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取已经废弃。
                      * @return AutoRenew 已经废弃。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetAutoRenew() const;
 
                     /**
                      * 设置已经废弃。
                      * @param _autoRenew 已经废弃。
-                     * 
+                     * @deprecated
                      */
                     void SetAutoRenew(const int64_t& _autoRenew);
 
                     /**
                      * 判断参数 AutoRenew 是否已赋值
                      * @return AutoRenew 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AutoRenewHasBeenSet() const;
 

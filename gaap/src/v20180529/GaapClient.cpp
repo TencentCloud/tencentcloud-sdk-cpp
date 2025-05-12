@@ -556,49 +556,6 @@ GaapClient::CreateDomainErrorPageInfoOutcomeCallable GaapClient::CreateDomainErr
     return task->get_future();
 }
 
-GaapClient::CreateFirstLinkSessionOutcome GaapClient::CreateFirstLinkSession(const CreateFirstLinkSessionRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateFirstLinkSession");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateFirstLinkSessionResponse rsp = CreateFirstLinkSessionResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateFirstLinkSessionOutcome(rsp);
-        else
-            return CreateFirstLinkSessionOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateFirstLinkSessionOutcome(outcome.GetError());
-    }
-}
-
-void GaapClient::CreateFirstLinkSessionAsync(const CreateFirstLinkSessionRequest& request, const CreateFirstLinkSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFirstLinkSession(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-GaapClient::CreateFirstLinkSessionOutcomeCallable GaapClient::CreateFirstLinkSessionCallable(const CreateFirstLinkSessionRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateFirstLinkSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFirstLinkSession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 GaapClient::CreateGlobalDomainOutcome GaapClient::CreateGlobalDomain(const CreateGlobalDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateGlobalDomain");
@@ -1237,49 +1194,6 @@ GaapClient::DeleteDomainErrorPageInfoOutcomeCallable GaapClient::DeleteDomainErr
         [this, request]()
         {
             return this->DeleteDomainErrorPageInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-GaapClient::DeleteFirstLinkSessionOutcome GaapClient::DeleteFirstLinkSession(const DeleteFirstLinkSessionRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteFirstLinkSession");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteFirstLinkSessionResponse rsp = DeleteFirstLinkSessionResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteFirstLinkSessionOutcome(rsp);
-        else
-            return DeleteFirstLinkSessionOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteFirstLinkSessionOutcome(outcome.GetError());
-    }
-}
-
-void GaapClient::DeleteFirstLinkSessionAsync(const DeleteFirstLinkSessionRequest& request, const DeleteFirstLinkSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteFirstLinkSession(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-GaapClient::DeleteFirstLinkSessionOutcomeCallable GaapClient::DeleteFirstLinkSessionCallable(const DeleteFirstLinkSessionRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteFirstLinkSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteFirstLinkSession(request);
         }
     );
 
@@ -2097,49 +2011,6 @@ GaapClient::DescribeDomainErrorPageInfoByIdsOutcomeCallable GaapClient::Describe
         [this, request]()
         {
             return this->DescribeDomainErrorPageInfoByIds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-GaapClient::DescribeFirstLinkSessionOutcome GaapClient::DescribeFirstLinkSession(const DescribeFirstLinkSessionRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeFirstLinkSession");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeFirstLinkSessionResponse rsp = DescribeFirstLinkSessionResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeFirstLinkSessionOutcome(rsp);
-        else
-            return DescribeFirstLinkSessionOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeFirstLinkSessionOutcome(outcome.GetError());
-    }
-}
-
-void GaapClient::DescribeFirstLinkSessionAsync(const DescribeFirstLinkSessionRequest& request, const DescribeFirstLinkSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirstLinkSession(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-GaapClient::DescribeFirstLinkSessionOutcomeCallable GaapClient::DescribeFirstLinkSessionCallable(const DescribeFirstLinkSessionRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeFirstLinkSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirstLinkSession(request);
         }
     );
 

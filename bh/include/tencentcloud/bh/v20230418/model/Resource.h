@@ -887,6 +887,174 @@ namespace TencentCloud
                      */
                     bool IntranetVpcCidrHasBeenSet() const;
 
+                    /**
+                     * 获取是否共享clb，true-共享clb，false-独享clb
+                     * @return ShareClb 是否共享clb，true-共享clb，false-独享clb
+                     * 
+                     */
+                    bool GetShareClb() const;
+
+                    /**
+                     * 设置是否共享clb，true-共享clb，false-独享clb
+                     * @param _shareClb 是否共享clb，true-共享clb，false-独享clb
+                     * 
+                     */
+                    void SetShareClb(const bool& _shareClb);
+
+                    /**
+                     * 判断参数 ShareClb 是否已赋值
+                     * @return ShareClb 是否已赋值
+                     * 
+                     */
+                    bool ShareClbHasBeenSet() const;
+
+                    /**
+                     * 获取共享clb id
+                     * @return OpenClbId 共享clb id
+                     * 
+                     */
+                    std::string GetOpenClbId() const;
+
+                    /**
+                     * 设置共享clb id
+                     * @param _openClbId 共享clb id
+                     * 
+                     */
+                    void SetOpenClbId(const std::string& _openClbId);
+
+                    /**
+                     * 判断参数 OpenClbId 是否已赋值
+                     * @return OpenClbId 是否已赋值
+                     * 
+                     */
+                    bool OpenClbIdHasBeenSet() const;
+
+                    /**
+                     * 获取运营商信息
+                     * @return LbVipIsp 运营商信息
+                     * 
+                     */
+                    std::string GetLbVipIsp() const;
+
+                    /**
+                     * 设置运营商信息
+                     * @param _lbVipIsp 运营商信息
+                     * 
+                     */
+                    void SetLbVipIsp(const std::string& _lbVipIsp);
+
+                    /**
+                     * 判断参数 LbVipIsp 是否已赋值
+                     * @return LbVipIsp 是否已赋值
+                     * 
+                     */
+                    bool LbVipIspHasBeenSet() const;
+
+                    /**
+                     * 获取linux资产命令行运维端口
+                     * @return TUICmdPort linux资产命令行运维端口
+                     * 
+                     */
+                    int64_t GetTUICmdPort() const;
+
+                    /**
+                     * 设置linux资产命令行运维端口
+                     * @param _tUICmdPort linux资产命令行运维端口
+                     * 
+                     */
+                    void SetTUICmdPort(const int64_t& _tUICmdPort);
+
+                    /**
+                     * 判断参数 TUICmdPort 是否已赋值
+                     * @return TUICmdPort 是否已赋值
+                     * 
+                     */
+                    bool TUICmdPortHasBeenSet() const;
+
+                    /**
+                     * 获取linux资产直连端口
+                     * @return TUIDirectPort linux资产直连端口
+                     * 
+                     */
+                    int64_t GetTUIDirectPort() const;
+
+                    /**
+                     * 设置linux资产直连端口
+                     * @param _tUIDirectPort linux资产直连端口
+                     * 
+                     */
+                    void SetTUIDirectPort(const int64_t& _tUIDirectPort);
+
+                    /**
+                     * 判断参数 TUIDirectPort 是否已赋值
+                     * @return TUIDirectPort 是否已赋值
+                     * 
+                     */
+                    bool TUIDirectPortHasBeenSet() const;
+
+                    /**
+                     * 获取1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中
+                     * @return WebAccess 1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中
+                     * 
+                     */
+                    uint64_t GetWebAccess() const;
+
+                    /**
+                     * 设置1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中
+                     * @param _webAccess 1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中
+                     * 
+                     */
+                    void SetWebAccess(const uint64_t& _webAccess);
+
+                    /**
+                     * 判断参数 WebAccess 是否已赋值
+                     * @return WebAccess 是否已赋值
+                     * 
+                     */
+                    bool WebAccessHasBeenSet() const;
+
+                    /**
+                     * 获取1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中
+                     * @return ClientAccess 1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中
+                     * 
+                     */
+                    uint64_t GetClientAccess() const;
+
+                    /**
+                     * 设置1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中
+                     * @param _clientAccess 1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中
+                     * 
+                     */
+                    void SetClientAccess(const uint64_t& _clientAccess);
+
+                    /**
+                     * 判断参数 ClientAccess 是否已赋值
+                     * @return ClientAccess 是否已赋值
+                     * 
+                     */
+                    bool ClientAccessHasBeenSet() const;
+
+                    /**
+                     * 获取1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中
+                     * @return ExternalAccess 1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中
+                     * 
+                     */
+                    uint64_t GetExternalAccess() const;
+
+                    /**
+                     * 设置1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中
+                     * @param _externalAccess 1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中
+                     * 
+                     */
+                    void SetExternalAccess(const uint64_t& _externalAccess);
+
+                    /**
+                     * 判断参数 ExternalAccess 是否已赋值
+                     * @return ExternalAccess 是否已赋值
+                     * 
+                     */
+                    bool ExternalAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1128,6 +1296,54 @@ namespace TencentCloud
                      */
                     std::string m_intranetVpcCidr;
                     bool m_intranetVpcCidrHasBeenSet;
+
+                    /**
+                     * 是否共享clb，true-共享clb，false-独享clb
+                     */
+                    bool m_shareClb;
+                    bool m_shareClbHasBeenSet;
+
+                    /**
+                     * 共享clb id
+                     */
+                    std::string m_openClbId;
+                    bool m_openClbIdHasBeenSet;
+
+                    /**
+                     * 运营商信息
+                     */
+                    std::string m_lbVipIsp;
+                    bool m_lbVipIspHasBeenSet;
+
+                    /**
+                     * linux资产命令行运维端口
+                     */
+                    int64_t m_tUICmdPort;
+                    bool m_tUICmdPortHasBeenSet;
+
+                    /**
+                     * linux资产直连端口
+                     */
+                    int64_t m_tUIDirectPort;
+                    bool m_tUIDirectPortHasBeenSet;
+
+                    /**
+                     * 1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中
+                     */
+                    uint64_t m_webAccess;
+                    bool m_webAccessHasBeenSet;
+
+                    /**
+                     * 1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中
+                     */
+                    uint64_t m_clientAccess;
+                    bool m_clientAccessHasBeenSet;
+
+                    /**
+                     * 1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中
+                     */
+                    uint64_t m_externalAccess;
+                    bool m_externalAccessHasBeenSet;
 
                 };
             }

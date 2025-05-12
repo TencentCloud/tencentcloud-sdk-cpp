@@ -29,7 +29,8 @@ DescribeBotSceneListRequest::DescribeBotSceneListRequest() :
     m_businessTypeHasBeenSet(false),
     m_sceneNameHasBeenSet(false),
     m_isDefaultHasBeenSet(false),
-    m_isValidHasBeenSet(false)
+    m_isValidHasBeenSet(false),
+    m_sceneIdHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string DescribeBotSceneListRequest::ToJsonString() const
         string key = "IsValid";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isValid, allocator);
+    }
+
+    if (m_sceneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sceneId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -219,6 +228,22 @@ void DescribeBotSceneListRequest::SetIsValid(const bool& _isValid)
 bool DescribeBotSceneListRequest::IsValidHasBeenSet() const
 {
     return m_isValidHasBeenSet;
+}
+
+string DescribeBotSceneListRequest::GetSceneId() const
+{
+    return m_sceneId;
+}
+
+void DescribeBotSceneListRequest::SetSceneId(const string& _sceneId)
+{
+    m_sceneId = _sceneId;
+    m_sceneIdHasBeenSet = true;
+}
+
+bool DescribeBotSceneListRequest::SceneIdHasBeenSet() const
+{
+    return m_sceneIdHasBeenSet;
 }
 
 

@@ -43,7 +43,9 @@ ServerBaseConfig::ServerBaseConfig() :
     m_logParseTypeHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_internalAccessHasBeenSet(false),
-    m_internalDomainHasBeenSet(false)
+    m_internalDomainHasBeenSet(false),
+    m_operationModeHasBeenSet(false),
+    m_timerScaleHasBeenSet(false)
 {
 }
 
@@ -295,6 +297,36 @@ CoreInternalOutcome ServerBaseConfig::Deserialize(const rapidjson::Value &value)
         m_internalDomainHasBeenSet = true;
     }
 
+    if (value.HasMember("OperationMode") && !value["OperationMode"].IsNull())
+    {
+        if (!value["OperationMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.OperationMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationMode = string(value["OperationMode"].GetString());
+        m_operationModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimerScale") && !value["TimerScale"].IsNull())
+    {
+        if (!value["TimerScale"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.TimerScale` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TimerScale"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TimerScale item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_timerScale.push_back(item);
+        }
+        m_timerScaleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -496,6 +528,29 @@ void ServerBaseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "InternalDomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_internalDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timerScaleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimerScale";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_timerScale.begin(); itr != m_timerScale.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -867,5 +922,37 @@ void ServerBaseConfig::SetInternalDomain(const string& _internalDomain)
 bool ServerBaseConfig::InternalDomainHasBeenSet() const
 {
     return m_internalDomainHasBeenSet;
+}
+
+string ServerBaseConfig::GetOperationMode() const
+{
+    return m_operationMode;
+}
+
+void ServerBaseConfig::SetOperationMode(const string& _operationMode)
+{
+    m_operationMode = _operationMode;
+    m_operationModeHasBeenSet = true;
+}
+
+bool ServerBaseConfig::OperationModeHasBeenSet() const
+{
+    return m_operationModeHasBeenSet;
+}
+
+vector<TimerScale> ServerBaseConfig::GetTimerScale() const
+{
+    return m_timerScale;
+}
+
+void ServerBaseConfig::SetTimerScale(const vector<TimerScale>& _timerScale)
+{
+    m_timerScale = _timerScale;
+    m_timerScaleHasBeenSet = true;
+}
+
+bool ServerBaseConfig::TimerScaleHasBeenSet() const
+{
+    return m_timerScaleHasBeenSet;
 }
 

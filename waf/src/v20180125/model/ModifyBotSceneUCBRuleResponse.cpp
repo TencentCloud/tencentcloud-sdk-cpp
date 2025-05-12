@@ -24,7 +24,8 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 ModifyBotSceneUCBRuleResponse::ModifyBotSceneUCBRuleResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_ruleIdListHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ CoreInternalOutcome ModifyBotSceneUCBRuleResponse::Deserialize(const string &pay
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RuleIdList") && !rsp["RuleIdList"].IsNull())
+    {
+        if (!rsp["RuleIdList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleIdList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RuleIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ruleIdList.push_back((*itr).GetString());
+        }
+        m_ruleIdListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +102,19 @@ string ModifyBotSceneUCBRuleResponse::ToJsonString() const
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ruleIdList.begin(); itr != m_ruleIdList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +137,16 @@ string ModifyBotSceneUCBRuleResponse::GetData() const
 bool ModifyBotSceneUCBRuleResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+vector<string> ModifyBotSceneUCBRuleResponse::GetRuleIdList() const
+{
+    return m_ruleIdList;
+}
+
+bool ModifyBotSceneUCBRuleResponse::RuleIdListHasBeenSet() const
+{
+    return m_ruleIdListHasBeenSet;
 }
 
 

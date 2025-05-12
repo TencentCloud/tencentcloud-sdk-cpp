@@ -27,6 +27,7 @@
 #include <tencentcloud/essbasic/v20210526/model/FormField.h>
 #include <tencentcloud/essbasic/v20210526/model/CcInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/Component.h>
+#include <tencentcloud/essbasic/v20210526/model/CommonFlowApprover.h>
 
 
 namespace TencentCloud
@@ -398,6 +399,48 @@ namespace TencentCloud
                      */
                     bool FlowDisplayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取签署文件资源Id列表，目前仅支持单个文件
+                     * @return FileIds 签署文件资源Id列表，目前仅支持单个文件
+                     * 
+                     */
+                    std::vector<std::string> GetFileIds() const;
+
+                    /**
+                     * 设置签署文件资源Id列表，目前仅支持单个文件
+                     * @param _fileIds 签署文件资源Id列表，目前仅支持单个文件
+                     * 
+                     */
+                    void SetFileIds(const std::vector<std::string>& _fileIds);
+
+                    /**
+                     * 判断参数 FileIds 是否已赋值
+                     * @return FileIds 是否已赋值
+                     * 
+                     */
+                    bool FileIdsHasBeenSet() const;
+
+                    /**
+                     * 获取合同签署人信息
+                     * @return Approvers 合同签署人信息
+                     * 
+                     */
+                    std::vector<CommonFlowApprover> GetApprovers() const;
+
+                    /**
+                     * 设置合同签署人信息
+                     * @param _approvers 合同签署人信息
+                     * 
+                     */
+                    void SetApprovers(const std::vector<CommonFlowApprover>& _approvers);
+
+                    /**
+                     * 判断参数 Approvers 是否已赋值
+                     * @return Approvers 是否已赋值
+                     * 
+                     */
+                    bool ApproversHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +539,18 @@ namespace TencentCloud
                      */
                     int64_t m_flowDisplayType;
                     bool m_flowDisplayTypeHasBeenSet;
+
+                    /**
+                     * 签署文件资源Id列表，目前仅支持单个文件
+                     */
+                    std::vector<std::string> m_fileIds;
+                    bool m_fileIdsHasBeenSet;
+
+                    /**
+                     * 合同签署人信息
+                     */
+                    std::vector<CommonFlowApprover> m_approvers;
+                    bool m_approversHasBeenSet;
 
                 };
             }

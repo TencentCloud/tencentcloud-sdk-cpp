@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bh/v20230418/model/DeviceAccount.h>
 
 
 namespace TencentCloud
@@ -57,6 +58,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取账号信息列表
+                     * @return DeviceAccountSet 账号信息列表
+                     * 
+                     */
+                    std::vector<DeviceAccount> GetDeviceAccountSet() const;
+
+                    /**
+                     * 判断参数 DeviceAccountSet 是否已赋值
+                     * @return DeviceAccountSet 是否已赋值
+                     * 
+                     */
+                    bool DeviceAccountSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +79,12 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 账号信息列表
+                     */
+                    std::vector<DeviceAccount> m_deviceAccountSet;
+                    bool m_deviceAccountSetHasBeenSet;
 
                 };
             }

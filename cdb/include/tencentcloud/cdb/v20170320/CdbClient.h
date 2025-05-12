@@ -153,8 +153,6 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeCloneListResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeClusterInfoRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeClusterInfoResponse.h>
-#include <tencentcloud/cdb/v20170320/model/DescribeCpuExpandStrategyRequest.h>
-#include <tencentcloud/cdb/v20170320/model/DescribeCpuExpandStrategyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBFeaturesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBFeaturesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsRequest.h>
@@ -578,9 +576,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterInfoResponse> DescribeClusterInfoOutcome;
                 typedef std::future<DescribeClusterInfoOutcome> DescribeClusterInfoOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeClusterInfoRequest&, DescribeClusterInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCpuExpandStrategyResponse> DescribeCpuExpandStrategyOutcome;
-                typedef std::future<DescribeCpuExpandStrategyOutcome> DescribeCpuExpandStrategyOutcomeCallable;
-                typedef std::function<void(const CdbClient*, const Model::DescribeCpuExpandStrategyRequest&, DescribeCpuExpandStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCpuExpandStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBFeaturesResponse> DescribeDBFeaturesOutcome;
                 typedef std::future<DescribeDBFeaturesOutcome> DescribeDBFeaturesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDBFeaturesRequest&, DescribeDBFeaturesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBFeaturesAsyncHandler;
@@ -1511,17 +1506,6 @@ namespace TencentCloud
                 DescribeClusterInfoOutcome DescribeClusterInfo(const Model::DescribeClusterInfoRequest &request);
                 void DescribeClusterInfoAsync(const Model::DescribeClusterInfoRequest& request, const DescribeClusterInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterInfoOutcomeCallable DescribeClusterInfoCallable(const Model::DescribeClusterInfoRequest& request);
-
-                /**
-                 *DescribeCpuExpandStrategy
-
-通过该 API 可以查询实例的 CPU 弹性扩容策略
-                 * @param req DescribeCpuExpandStrategyRequest
-                 * @return DescribeCpuExpandStrategyOutcome
-                 */
-                DescribeCpuExpandStrategyOutcome DescribeCpuExpandStrategy(const Model::DescribeCpuExpandStrategyRequest &request);
-                void DescribeCpuExpandStrategyAsync(const Model::DescribeCpuExpandStrategyRequest& request, const DescribeCpuExpandStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCpuExpandStrategyOutcomeCallable DescribeCpuExpandStrategyCallable(const Model::DescribeCpuExpandStrategyRequest& request);
 
                 /**
                  *本接口（DescribeDBFeatures）用于查询云数据库版本属性，包括是否支持数据库加密、数据库审计等功能。

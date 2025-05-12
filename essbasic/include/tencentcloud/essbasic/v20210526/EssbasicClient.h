@@ -69,6 +69,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowGroupRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowGroupResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreatePreparedPersonalEsignResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowRequest.h>
@@ -286,6 +288,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreatePrepareFlowResponse> ChannelCreatePrepareFlowOutcome;
                 typedef std::future<ChannelCreatePrepareFlowOutcome> ChannelCreatePrepareFlowOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreatePrepareFlowRequest&, ChannelCreatePrepareFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreatePrepareFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreatePrepareFlowGroupResponse> ChannelCreatePrepareFlowGroupOutcome;
+                typedef std::future<ChannelCreatePrepareFlowGroupOutcome> ChannelCreatePrepareFlowGroupOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreatePrepareFlowGroupRequest&, ChannelCreatePrepareFlowGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreatePrepareFlowGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreatePreparedPersonalEsignResponse> ChannelCreatePreparedPersonalEsignOutcome;
                 typedef std::future<ChannelCreatePreparedPersonalEsignOutcome> ChannelCreatePreparedPersonalEsignOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreatePreparedPersonalEsignRequest&, ChannelCreatePreparedPersonalEsignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreatePreparedPersonalEsignAsyncHandler;
@@ -1072,6 +1077,19 @@ namespace TencentCloud
                 ChannelCreatePrepareFlowOutcome ChannelCreatePrepareFlow(const Model::ChannelCreatePrepareFlowRequest &request);
                 void ChannelCreatePrepareFlowAsync(const Model::ChannelCreatePrepareFlowRequest& request, const ChannelCreatePrepareFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelCreatePrepareFlowOutcomeCallable ChannelCreatePrepareFlowCallable(const Model::ChannelCreatePrepareFlowRequest& request);
+
+                /**
+                 *接口（ChannelCreatePrepareFlowGroup）用于创建嵌入式合同组签署流程。
+
+- 该接口当前仅支持文件发起
+- 该接口能力和ChannelCreateFlowGroupByFiles，~~ChannelCreateFlowGroupByTemplates~~保持一致。
+- 返回的FlowGroupId 为临时id，只有在页面内成功发起后FlowGroupId才会有效。
+                 * @param req ChannelCreatePrepareFlowGroupRequest
+                 * @return ChannelCreatePrepareFlowGroupOutcome
+                 */
+                ChannelCreatePrepareFlowGroupOutcome ChannelCreatePrepareFlowGroup(const Model::ChannelCreatePrepareFlowGroupRequest &request);
+                void ChannelCreatePrepareFlowGroupAsync(const Model::ChannelCreatePrepareFlowGroupRequest& request, const ChannelCreatePrepareFlowGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreatePrepareFlowGroupOutcomeCallable ChannelCreatePrepareFlowGroupCallable(const Model::ChannelCreatePrepareFlowGroupRequest& request);
 
                 /**
                  *本接口（ChannelCreatePreparedPersonalEsign）用于创建导入个人印章（处方单场景专用，使用此接口请与客户经理确认）。

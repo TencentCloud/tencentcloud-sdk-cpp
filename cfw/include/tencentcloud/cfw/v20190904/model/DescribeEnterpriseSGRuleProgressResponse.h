@@ -57,6 +57,20 @@ namespace TencentCloud
                      */
                     bool ProgressHasBeenSet() const;
 
+                    /**
+                     * 获取是否用户中止 用户中止返回true
+                     * @return UserStopped 是否用户中止 用户中止返回true
+                     * 
+                     */
+                    bool GetUserStopped() const;
+
+                    /**
+                     * 判断参数 UserStopped 是否已赋值
+                     * @return UserStopped 是否已赋值
+                     * 
+                     */
+                    bool UserStoppedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +78,12 @@ namespace TencentCloud
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
+
+                    /**
+                     * 是否用户中止 用户中止返回true
+                     */
+                    bool m_userStopped;
+                    bool m_userStoppedHasBeenSet;
 
                 };
             }

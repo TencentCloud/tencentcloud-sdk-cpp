@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool IsValidHasBeenSet() const;
 
+                    /**
+                     * 获取要查询的场景id
+                     * @return SceneId 要查询的场景id
+                     * 
+                     */
+                    std::string GetSceneId() const;
+
+                    /**
+                     * 设置要查询的场景id
+                     * @param _sceneId 要查询的场景id
+                     * 
+                     */
+                    void SetSceneId(const std::string& _sceneId);
+
+                    /**
+                     * 判断参数 SceneId 是否已赋值
+                     * @return SceneId 是否已赋值
+                     * 
+                     */
+                    bool SceneIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     bool m_isValid;
                     bool m_isValidHasBeenSet;
+
+                    /**
+                     * 要查询的场景id
+                     */
+                    std::string m_sceneId;
+                    bool m_sceneIdHasBeenSet;
 
                 };
             }

@@ -32,7 +32,8 @@ DescribeBotSceneUCBRuleRequest::DescribeBotSceneUCBRuleRequest() :
     m_nameHasBeenSet(false),
     m_versionFlagHasBeenSet(false),
     m_timerTypeHasBeenSet(false),
-    m_validStatusHasBeenSet(false)
+    m_validStatusHasBeenSet(false),
+    m_ruleIdHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string DescribeBotSceneUCBRuleRequest::ToJsonString() const
         string key = "ValidStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_validStatus, allocator);
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void DescribeBotSceneUCBRuleRequest::SetValidStatus(const uint64_t& _validStatus
 bool DescribeBotSceneUCBRuleRequest::ValidStatusHasBeenSet() const
 {
     return m_validStatusHasBeenSet;
+}
+
+string DescribeBotSceneUCBRuleRequest::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void DescribeBotSceneUCBRuleRequest::SetRuleId(const string& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool DescribeBotSceneUCBRuleRequest::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
 }
 
 

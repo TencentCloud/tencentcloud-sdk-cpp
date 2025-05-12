@@ -115,6 +115,8 @@
 #include <tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreatePrepareFlowGroupRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreatePrepareFlowGroupResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateReleaseFlowRequest.h>
@@ -381,6 +383,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePrepareFlowResponse> CreatePrepareFlowOutcome;
                 typedef std::future<CreatePrepareFlowOutcome> CreatePrepareFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreatePrepareFlowRequest&, CreatePrepareFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrepareFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePrepareFlowGroupResponse> CreatePrepareFlowGroupOutcome;
+                typedef std::future<CreatePrepareFlowGroupOutcome> CreatePrepareFlowGroupOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreatePrepareFlowGroupRequest&, CreatePrepareFlowGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrepareFlowGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePreparedPersonalEsignResponse> CreatePreparedPersonalEsignOutcome;
                 typedef std::future<CreatePreparedPersonalEsignOutcome> CreatePreparedPersonalEsignOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreatePreparedPersonalEsignRequest&, CreatePreparedPersonalEsignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePreparedPersonalEsignAsyncHandler;
@@ -1570,6 +1575,19 @@ namespace TencentCloud
                 CreatePrepareFlowOutcome CreatePrepareFlow(const Model::CreatePrepareFlowRequest &request);
                 void CreatePrepareFlowAsync(const Model::CreatePrepareFlowRequest& request, const CreatePrepareFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePrepareFlowOutcomeCallable CreatePrepareFlowCallable(const Model::CreatePrepareFlowRequest& request);
+
+                /**
+                 *接口（CreatePrepareFlowGroup）用于创建嵌入式合同组签署流程。
+
+- 该接口当前仅支持文件发起
+- 该接口能力和CreateFlowGroupByFiles，~~CreateFlowGroupByTemplates~~保持一致。
+- 返回的FlowGroupId 为临时id，只有在页面内成功发起后FlowGroupId才会有效。
+                 * @param req CreatePrepareFlowGroupRequest
+                 * @return CreatePrepareFlowGroupOutcome
+                 */
+                CreatePrepareFlowGroupOutcome CreatePrepareFlowGroup(const Model::CreatePrepareFlowGroupRequest &request);
+                void CreatePrepareFlowGroupAsync(const Model::CreatePrepareFlowGroupRequest& request, const CreatePrepareFlowGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrepareFlowGroupOutcomeCallable CreatePrepareFlowGroupCallable(const Model::CreatePrepareFlowGroupRequest& request);
 
                 /**
                  *本接口（CreatePreparedPersonalEsign）用于创建导入个人印章（处方单场景专用，使用此接口请与客户经理确认）。

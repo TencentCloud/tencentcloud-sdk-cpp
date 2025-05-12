@@ -60,7 +60,15 @@ Resource::Resource() :
     m_intranetAccessHasBeenSet(false),
     m_intranetPrivateIpSetHasBeenSet(false),
     m_intranetVpcIdHasBeenSet(false),
-    m_intranetVpcCidrHasBeenSet(false)
+    m_intranetVpcCidrHasBeenSet(false),
+    m_shareClbHasBeenSet(false),
+    m_openClbIdHasBeenSet(false),
+    m_lbVipIspHasBeenSet(false),
+    m_tUICmdPortHasBeenSet(false),
+    m_tUIDirectPortHasBeenSet(false),
+    m_webAccessHasBeenSet(false),
+    m_clientAccessHasBeenSet(false),
+    m_externalAccessHasBeenSet(false)
 {
 }
 
@@ -491,6 +499,86 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_intranetVpcCidrHasBeenSet = true;
     }
 
+    if (value.HasMember("ShareClb") && !value["ShareClb"].IsNull())
+    {
+        if (!value["ShareClb"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.ShareClb` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_shareClb = value["ShareClb"].GetBool();
+        m_shareClbHasBeenSet = true;
+    }
+
+    if (value.HasMember("OpenClbId") && !value["OpenClbId"].IsNull())
+    {
+        if (!value["OpenClbId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.OpenClbId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_openClbId = string(value["OpenClbId"].GetString());
+        m_openClbIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LbVipIsp") && !value["LbVipIsp"].IsNull())
+    {
+        if (!value["LbVipIsp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.LbVipIsp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lbVipIsp = string(value["LbVipIsp"].GetString());
+        m_lbVipIspHasBeenSet = true;
+    }
+
+    if (value.HasMember("TUICmdPort") && !value["TUICmdPort"].IsNull())
+    {
+        if (!value["TUICmdPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.TUICmdPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tUICmdPort = value["TUICmdPort"].GetInt64();
+        m_tUICmdPortHasBeenSet = true;
+    }
+
+    if (value.HasMember("TUIDirectPort") && !value["TUIDirectPort"].IsNull())
+    {
+        if (!value["TUIDirectPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.TUIDirectPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tUIDirectPort = value["TUIDirectPort"].GetInt64();
+        m_tUIDirectPortHasBeenSet = true;
+    }
+
+    if (value.HasMember("WebAccess") && !value["WebAccess"].IsNull())
+    {
+        if (!value["WebAccess"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.WebAccess` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_webAccess = value["WebAccess"].GetUint64();
+        m_webAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClientAccess") && !value["ClientAccess"].IsNull())
+    {
+        if (!value["ClientAccess"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.ClientAccess` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientAccess = value["ClientAccess"].GetUint64();
+        m_clientAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExternalAccess") && !value["ExternalAccess"].IsNull())
+    {
+        if (!value["ExternalAccess"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.ExternalAccess` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalAccess = value["ExternalAccess"].GetUint64();
+        m_externalAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -843,6 +931,70 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IntranetVpcCidr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_intranetVpcCidr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shareClbHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareClb";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shareClb, allocator);
+    }
+
+    if (m_openClbIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenClbId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_openClbId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lbVipIspHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LbVipIsp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lbVipIsp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tUICmdPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TUICmdPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tUICmdPort, allocator);
+    }
+
+    if (m_tUIDirectPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TUIDirectPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tUIDirectPort, allocator);
+    }
+
+    if (m_webAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webAccess, allocator);
+    }
+
+    if (m_clientAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientAccess, allocator);
+    }
+
+    if (m_externalAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_externalAccess, allocator);
     }
 
 }
@@ -1486,5 +1638,133 @@ void Resource::SetIntranetVpcCidr(const string& _intranetVpcCidr)
 bool Resource::IntranetVpcCidrHasBeenSet() const
 {
     return m_intranetVpcCidrHasBeenSet;
+}
+
+bool Resource::GetShareClb() const
+{
+    return m_shareClb;
+}
+
+void Resource::SetShareClb(const bool& _shareClb)
+{
+    m_shareClb = _shareClb;
+    m_shareClbHasBeenSet = true;
+}
+
+bool Resource::ShareClbHasBeenSet() const
+{
+    return m_shareClbHasBeenSet;
+}
+
+string Resource::GetOpenClbId() const
+{
+    return m_openClbId;
+}
+
+void Resource::SetOpenClbId(const string& _openClbId)
+{
+    m_openClbId = _openClbId;
+    m_openClbIdHasBeenSet = true;
+}
+
+bool Resource::OpenClbIdHasBeenSet() const
+{
+    return m_openClbIdHasBeenSet;
+}
+
+string Resource::GetLbVipIsp() const
+{
+    return m_lbVipIsp;
+}
+
+void Resource::SetLbVipIsp(const string& _lbVipIsp)
+{
+    m_lbVipIsp = _lbVipIsp;
+    m_lbVipIspHasBeenSet = true;
+}
+
+bool Resource::LbVipIspHasBeenSet() const
+{
+    return m_lbVipIspHasBeenSet;
+}
+
+int64_t Resource::GetTUICmdPort() const
+{
+    return m_tUICmdPort;
+}
+
+void Resource::SetTUICmdPort(const int64_t& _tUICmdPort)
+{
+    m_tUICmdPort = _tUICmdPort;
+    m_tUICmdPortHasBeenSet = true;
+}
+
+bool Resource::TUICmdPortHasBeenSet() const
+{
+    return m_tUICmdPortHasBeenSet;
+}
+
+int64_t Resource::GetTUIDirectPort() const
+{
+    return m_tUIDirectPort;
+}
+
+void Resource::SetTUIDirectPort(const int64_t& _tUIDirectPort)
+{
+    m_tUIDirectPort = _tUIDirectPort;
+    m_tUIDirectPortHasBeenSet = true;
+}
+
+bool Resource::TUIDirectPortHasBeenSet() const
+{
+    return m_tUIDirectPortHasBeenSet;
+}
+
+uint64_t Resource::GetWebAccess() const
+{
+    return m_webAccess;
+}
+
+void Resource::SetWebAccess(const uint64_t& _webAccess)
+{
+    m_webAccess = _webAccess;
+    m_webAccessHasBeenSet = true;
+}
+
+bool Resource::WebAccessHasBeenSet() const
+{
+    return m_webAccessHasBeenSet;
+}
+
+uint64_t Resource::GetClientAccess() const
+{
+    return m_clientAccess;
+}
+
+void Resource::SetClientAccess(const uint64_t& _clientAccess)
+{
+    m_clientAccess = _clientAccess;
+    m_clientAccessHasBeenSet = true;
+}
+
+bool Resource::ClientAccessHasBeenSet() const
+{
+    return m_clientAccessHasBeenSet;
+}
+
+uint64_t Resource::GetExternalAccess() const
+{
+    return m_externalAccess;
+}
+
+void Resource::SetExternalAccess(const uint64_t& _externalAccess)
+{
+    m_externalAccess = _externalAccess;
+    m_externalAccessHasBeenSet = true;
+}
+
+bool Resource::ExternalAccessHasBeenSet() const
+{
+    return m_externalAccessHasBeenSet;
 }
 

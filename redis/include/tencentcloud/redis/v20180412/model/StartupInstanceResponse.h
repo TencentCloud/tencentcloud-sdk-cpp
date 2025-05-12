@@ -46,14 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取该字段已废弃，请通过查询实例接口获取到的状态来判断实例是否已解隔离
                      * @return TaskId 该字段已废弃，请通过查询实例接口获取到的状态来判断实例是否已解隔离
-                     * 
+                     * @deprecated
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TaskIdHasBeenSet() const;
 

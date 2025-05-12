@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/UCBEntryValue.h>
 #include <tencentcloud/waf/v20180125/model/Area.h>
+#include <tencentcloud/waf/v20180125/model/ParamCompareList.h>
 
 
 namespace TencentCloud
@@ -237,6 +238,27 @@ namespace TencentCloud
                      */
                     bool LangHasBeenSet() const;
 
+                    /**
+                     * 获取参数匹配
+                     * @return ParamCompareList 参数匹配
+                     * 
+                     */
+                    std::vector<ParamCompareList> GetParamCompareList() const;
+
+                    /**
+                     * 设置参数匹配
+                     * @param _paramCompareList 参数匹配
+                     * 
+                     */
+                    void SetParamCompareList(const std::vector<ParamCompareList>& _paramCompareList);
+
+                    /**
+                     * 判断参数 ParamCompareList 是否已赋值
+                     * @return ParamCompareList 是否已赋值
+                     * 
+                     */
+                    bool ParamCompareListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,6 +314,12 @@ namespace TencentCloud
                      */
                     std::string m_lang;
                     bool m_langHasBeenSet;
+
+                    /**
+                     * 参数匹配
+                     */
+                    std::vector<ParamCompareList> m_paramCompareList;
+                    bool m_paramCompareListHasBeenSet;
 
                 };
             }

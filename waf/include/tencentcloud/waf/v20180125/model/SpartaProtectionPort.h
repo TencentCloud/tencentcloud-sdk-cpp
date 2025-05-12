@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分配的服务器id
-                     * @return NginxServerId 分配的服务器id
+                     * 获取分配的服务器id。首次接入的域名和端口该参数填0，已接入的域名和端口分配的id可以通过DescribeDomainDetailsSaas或DescribeDomains接口获取。
+                     * @return NginxServerId 分配的服务器id。首次接入的域名和端口该参数填0，已接入的域名和端口分配的id可以通过DescribeDomainDetailsSaas或DescribeDomains接口获取。
                      * 
                      */
                     uint64_t GetNginxServerId() const;
 
                     /**
-                     * 设置分配的服务器id
-                     * @param _nginxServerId 分配的服务器id
+                     * 设置分配的服务器id。首次接入的域名和端口该参数填0，已接入的域名和端口分配的id可以通过DescribeDomainDetailsSaas或DescribeDomains接口获取。
+                     * @param _nginxServerId 分配的服务器id。首次接入的域名和端口该参数填0，已接入的域名和端口分配的id可以通过DescribeDomainDetailsSaas或DescribeDomains接口获取。
                      * 
                      */
                     void SetNginxServerId(const uint64_t& _nginxServerId);
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分配的服务器id
+                     * 分配的服务器id。首次接入的域名和端口该参数填0，已接入的域名和端口分配的id可以通过DescribeDomainDetailsSaas或DescribeDomains接口获取。
                      */
                     uint64_t m_nginxServerId;
                     bool m_nginxServerIdHasBeenSet;

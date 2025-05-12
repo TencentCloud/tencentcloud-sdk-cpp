@@ -61,14 +61,14 @@ namespace TencentCloud
                     /**
                      * 获取已废弃，该参数存在命名不规范问题，后续用参数InstanceSlowLogDetail取代。慢查询详情。
                      * @return InstanceSlowlogDetail 已废弃，该参数存在命名不规范问题，后续用参数InstanceSlowLogDetail取代。慢查询详情。
-                     * 
+                     * @deprecated
                      */
                     std::vector<InstanceSlowlogDetail> GetInstanceSlowlogDetail() const;
 
                     /**
                      * 判断参数 InstanceSlowlogDetail 是否已赋值
                      * @return InstanceSlowlogDetail 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceSlowlogDetailHasBeenSet() const;
 

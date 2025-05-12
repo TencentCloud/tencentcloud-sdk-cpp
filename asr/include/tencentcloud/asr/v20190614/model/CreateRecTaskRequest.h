@@ -1089,6 +1089,27 @@ namespace TencentCloud
                      */
                     bool KeyWordLibIdListHasBeenSet() const;
 
+                    /**
+                     * 获取替换词汇表id,  适用于热词和自学习场景也无法解决的极端case词组,  会对识别结果强制替换。具体可参考[配置控制台](https://console.cloud.tencent.com/asr/replaceword);强制替换功能可能会影响正常识别结果，请谨慎使用
+                     * @return ReplaceTextId 替换词汇表id,  适用于热词和自学习场景也无法解决的极端case词组,  会对识别结果强制替换。具体可参考[配置控制台](https://console.cloud.tencent.com/asr/replaceword);强制替换功能可能会影响正常识别结果，请谨慎使用
+                     * 
+                     */
+                    std::string GetReplaceTextId() const;
+
+                    /**
+                     * 设置替换词汇表id,  适用于热词和自学习场景也无法解决的极端case词组,  会对识别结果强制替换。具体可参考[配置控制台](https://console.cloud.tencent.com/asr/replaceword);强制替换功能可能会影响正常识别结果，请谨慎使用
+                     * @param _replaceTextId 替换词汇表id,  适用于热词和自学习场景也无法解决的极端case词组,  会对识别结果强制替换。具体可参考[配置控制台](https://console.cloud.tencent.com/asr/replaceword);强制替换功能可能会影响正常识别结果，请谨慎使用
+                     * 
+                     */
+                    void SetReplaceTextId(const std::string& _replaceTextId);
+
+                    /**
+                     * 判断参数 ReplaceTextId 是否已赋值
+                     * @return ReplaceTextId 是否已赋值
+                     * 
+                     */
+                    bool ReplaceTextIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1369,6 +1390,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_keyWordLibIdList;
                     bool m_keyWordLibIdListHasBeenSet;
+
+                    /**
+                     * 替换词汇表id,  适用于热词和自学习场景也无法解决的极端case词组,  会对识别结果强制替换。具体可参考[配置控制台](https://console.cloud.tencent.com/asr/replaceword);强制替换功能可能会影响正常识别结果，请谨慎使用
+                     */
+                    std::string m_replaceTextId;
+                    bool m_replaceTextIdHasBeenSet;
 
                 };
             }

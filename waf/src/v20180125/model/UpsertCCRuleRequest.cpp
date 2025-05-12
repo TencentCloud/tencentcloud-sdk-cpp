@@ -41,7 +41,8 @@ UpsertCCRuleRequest::UpsertCCRuleRequest() :
     m_sessionAppliedHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_lengthHasBeenSet(false)
+    m_lengthHasBeenSet(false),
+    m_limitMethodHasBeenSet(false)
 {
 }
 
@@ -207,6 +208,14 @@ string UpsertCCRuleRequest::ToJsonString() const
         string key = "Length";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_length, allocator);
+    }
+
+    if (m_limitMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimitMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_limitMethod.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -519,6 +528,22 @@ void UpsertCCRuleRequest::SetLength(const uint64_t& _length)
 bool UpsertCCRuleRequest::LengthHasBeenSet() const
 {
     return m_lengthHasBeenSet;
+}
+
+string UpsertCCRuleRequest::GetLimitMethod() const
+{
+    return m_limitMethod;
+}
+
+void UpsertCCRuleRequest::SetLimitMethod(const string& _limitMethod)
+{
+    m_limitMethod = _limitMethod;
+    m_limitMethodHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::LimitMethodHasBeenSet() const
+{
+    return m_limitMethodHasBeenSet;
 }
 
 

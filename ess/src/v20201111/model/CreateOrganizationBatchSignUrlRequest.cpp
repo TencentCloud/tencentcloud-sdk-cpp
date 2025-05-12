@@ -29,7 +29,8 @@ CreateOrganizationBatchSignUrlRequest::CreateOrganizationBatchSignUrlRequest() :
     m_userIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_recipientIdsHasBeenSet(false)
+    m_recipientIdsHasBeenSet(false),
+    m_flowGroupIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string CreateOrganizationBatchSignUrlRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_flowGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -226,6 +235,22 @@ void CreateOrganizationBatchSignUrlRequest::SetRecipientIds(const vector<string>
 bool CreateOrganizationBatchSignUrlRequest::RecipientIdsHasBeenSet() const
 {
     return m_recipientIdsHasBeenSet;
+}
+
+string CreateOrganizationBatchSignUrlRequest::GetFlowGroupId() const
+{
+    return m_flowGroupId;
+}
+
+void CreateOrganizationBatchSignUrlRequest::SetFlowGroupId(const string& _flowGroupId)
+{
+    m_flowGroupId = _flowGroupId;
+    m_flowGroupIdHasBeenSet = true;
+}
+
+bool CreateOrganizationBatchSignUrlRequest::FlowGroupIdHasBeenSet() const
+{
+    return m_flowGroupIdHasBeenSet;
 }
 
 

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取模板类型。取值: "PRIVATE"(个人模版)
-                     * @return TemplateType 模板类型。取值: "PRIVATE"(个人模版)
+                     * 获取模板类型。取值: "PRIVATE"(个人模板)
+                     * @return TemplateType 模板类型。取值: "PRIVATE"(个人模板)
                      * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
-                     * 设置模板类型。取值: "PRIVATE"(个人模版)
-                     * @param _templateType 模板类型。取值: "PRIVATE"(个人模版)
+                     * 设置模板类型。取值: "PRIVATE"(个人模板)
+                     * @param _templateType 模板类型。取值: "PRIVATE"(个人模板)
                      * 
                      */
                     void SetTemplateType(const std::string& _templateType);
@@ -166,7 +166,7 @@ namespace TencentCloud
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 模板类型。取值: "PRIVATE"(个人模版)
+                     * 模板类型。取值: "PRIVATE"(个人模板)
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;

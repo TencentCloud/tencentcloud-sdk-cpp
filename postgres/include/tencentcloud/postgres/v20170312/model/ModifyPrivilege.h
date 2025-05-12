@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取要修改的数据库对象及权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabasePrivilege 要修改的数据库对象及权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DatabasePrivilege GetDatabasePrivilege() const;
 
                     /**
                      * 设置要修改的数据库对象及权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databasePrivilege 要修改的数据库对象及权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabasePrivilege(const DatabasePrivilege& _databasePrivilege);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyType 修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyType() const;
 
                     /**
                      * 设置修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyType 修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyType(const std::string& _modifyType);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCascade 当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsCascade() const;
 
                     /**
                      * 设置当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCascade 当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCascade(const bool& _isCascade);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 要修改的数据库对象及权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DatabasePrivilege m_databasePrivilege;
                     bool m_databasePrivilegeHasBeenSet;
 
                     /**
                      * 修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyType;
                     bool m_modifyTypeHasBeenSet;
 
                     /**
                      * 当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isCascade;
                     bool m_isCascadeHasBeenSet;

@@ -252,6 +252,111 @@ namespace TencentCloud
                      */
                     bool CdcClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取开通堡垒机指定共享的clbId
+                     * @return ShareClbId 开通堡垒机指定共享的clbId
+                     * 
+                     */
+                    std::string GetShareClbId() const;
+
+                    /**
+                     * 设置开通堡垒机指定共享的clbId
+                     * @param _shareClbId 开通堡垒机指定共享的clbId
+                     * 
+                     */
+                    void SetShareClbId(const std::string& _shareClbId);
+
+                    /**
+                     * 判断参数 ShareClbId 是否已赋值
+                     * @return ShareClbId 是否已赋值
+                     * 
+                     */
+                    bool ShareClbIdHasBeenSet() const;
+
+                    /**
+                     * 获取0-关闭web访问堡垒机，1-开启web访问堡垒机
+                     * @return WebAccess 0-关闭web访问堡垒机，1-开启web访问堡垒机
+                     * 
+                     */
+                    uint64_t GetWebAccess() const;
+
+                    /**
+                     * 设置0-关闭web访问堡垒机，1-开启web访问堡垒机
+                     * @param _webAccess 0-关闭web访问堡垒机，1-开启web访问堡垒机
+                     * 
+                     */
+                    void SetWebAccess(const uint64_t& _webAccess);
+
+                    /**
+                     * 判断参数 WebAccess 是否已赋值
+                     * @return WebAccess 是否已赋值
+                     * 
+                     */
+                    bool WebAccessHasBeenSet() const;
+
+                    /**
+                     * 获取0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机
+                     * @return ClientAccess 0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机
+                     * 
+                     */
+                    uint64_t GetClientAccess() const;
+
+                    /**
+                     * 设置0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机
+                     * @param _clientAccess 0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机
+                     * 
+                     */
+                    void SetClientAccess(const uint64_t& _clientAccess);
+
+                    /**
+                     * 判断参数 ClientAccess 是否已赋值
+                     * @return ClientAccess 是否已赋值
+                     * 
+                     */
+                    bool ClientAccessHasBeenSet() const;
+
+                    /**
+                     * 获取0-关闭内网访问堡垒机，1-开启内网访问堡垒机
+                     * @return IntranetAccess 0-关闭内网访问堡垒机，1-开启内网访问堡垒机
+                     * 
+                     */
+                    uint64_t GetIntranetAccess() const;
+
+                    /**
+                     * 设置0-关闭内网访问堡垒机，1-开启内网访问堡垒机
+                     * @param _intranetAccess 0-关闭内网访问堡垒机，1-开启内网访问堡垒机
+                     * 
+                     */
+                    void SetIntranetAccess(const uint64_t& _intranetAccess);
+
+                    /**
+                     * 判断参数 IntranetAccess 是否已赋值
+                     * @return IntranetAccess 是否已赋值
+                     * 
+                     */
+                    bool IntranetAccessHasBeenSet() const;
+
+                    /**
+                     * 获取0-关闭公网访问堡垒机，1-开启公网访问堡垒机
+                     * @return ExternalAccess 0-关闭公网访问堡垒机，1-开启公网访问堡垒机
+                     * 
+                     */
+                    uint64_t GetExternalAccess() const;
+
+                    /**
+                     * 设置0-关闭公网访问堡垒机，1-开启公网访问堡垒机
+                     * @param _externalAccess 0-关闭公网访问堡垒机，1-开启公网访问堡垒机
+                     * 
+                     */
+                    void SetExternalAccess(const uint64_t& _externalAccess);
+
+                    /**
+                     * 判断参数 ExternalAccess 是否已赋值
+                     * @return ExternalAccess 是否已赋值
+                     * 
+                     */
+                    bool ExternalAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +418,36 @@ namespace TencentCloud
                      */
                     std::string m_cdcClusterId;
                     bool m_cdcClusterIdHasBeenSet;
+
+                    /**
+                     * 开通堡垒机指定共享的clbId
+                     */
+                    std::string m_shareClbId;
+                    bool m_shareClbIdHasBeenSet;
+
+                    /**
+                     * 0-关闭web访问堡垒机，1-开启web访问堡垒机
+                     */
+                    uint64_t m_webAccess;
+                    bool m_webAccessHasBeenSet;
+
+                    /**
+                     * 0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机
+                     */
+                    uint64_t m_clientAccess;
+                    bool m_clientAccessHasBeenSet;
+
+                    /**
+                     * 0-关闭内网访问堡垒机，1-开启内网访问堡垒机
+                     */
+                    uint64_t m_intranetAccess;
+                    bool m_intranetAccessHasBeenSet;
+
+                    /**
+                     * 0-关闭公网访问堡垒机，1-开启公网访问堡垒机
+                     */
+                    uint64_t m_externalAccess;
+                    bool m_externalAccessHasBeenSet;
 
                 };
             }

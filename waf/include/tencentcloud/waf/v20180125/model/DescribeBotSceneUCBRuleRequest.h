@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool ValidStatusHasBeenSet() const;
 
+                    /**
+                     * 获取规则id
+                     * @return RuleId 规则id
+                     * 
+                     */
+                    std::string GetRuleId() const;
+
+                    /**
+                     * 设置规则id
+                     * @param _ruleId 规则id
+                     * 
+                     */
+                    void SetRuleId(const std::string& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     uint64_t m_validStatus;
                     bool m_validStatusHasBeenSet;
+
+                    /**
+                     * 规则id
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                 };
             }

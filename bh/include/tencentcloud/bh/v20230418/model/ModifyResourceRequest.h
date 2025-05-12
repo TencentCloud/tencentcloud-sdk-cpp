@@ -64,23 +64,23 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取已废弃
-                     * @return Status 已废弃
-                     * 
+                     * 获取状态
+                     * @return Status 状态
+                     * @deprecated
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置已废弃
-                     * @param _status 已废弃
-                     * 
+                     * 设置状态
+                     * @param _status 状态
+                     * @deprecated
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StatusHasBeenSet() const;
 
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 已废弃
+                     * 状态
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

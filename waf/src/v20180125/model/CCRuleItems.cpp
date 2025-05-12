@@ -36,7 +36,8 @@ CCRuleItems::CCRuleItems() :
     m_ruleIdHasBeenSet(false),
     m_eventIdHasBeenSet(false),
     m_sessionAppliedHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_limitMethodHasBeenSet(false)
 {
 }
 
@@ -208,6 +209,16 @@ CoreInternalOutcome CCRuleItems::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("LimitMethod") && !value["LimitMethod"].IsNull())
+    {
+        if (!value["LimitMethod"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.LimitMethod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_limitMethod = string(value["LimitMethod"].GetString());
+        m_limitMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +357,14 @@ void CCRuleItems::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_limitMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimitMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_limitMethod.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -605,5 +624,21 @@ void CCRuleItems::SetCreateTime(const uint64_t& _createTime)
 bool CCRuleItems::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string CCRuleItems::GetLimitMethod() const
+{
+    return m_limitMethod;
+}
+
+void CCRuleItems::SetLimitMethod(const string& _limitMethod)
+{
+    m_limitMethod = _limitMethod;
+    m_limitMethodHasBeenSet = true;
+}
+
+bool CCRuleItems::LimitMethodHasBeenSet() const
+{
+    return m_limitMethodHasBeenSet;
 }
 

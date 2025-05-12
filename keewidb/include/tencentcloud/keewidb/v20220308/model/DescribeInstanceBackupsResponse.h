@@ -62,14 +62,14 @@ namespace TencentCloud
                     /**
                      * 获取废弃字段。
                      * @return BackupSet 废弃字段。
-                     * 
+                     * @deprecated
                      */
                     std::vector<BinlogInfo> GetBackupSet() const;
 
                     /**
                      * 判断参数 BackupSet 是否已赋值
                      * @return BackupSet 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BackupSetHasBeenSet() const;
 

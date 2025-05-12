@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取一页限制,moren
-                     * @return Limit 一页限制,moren
+                     * 获取一页限制，默认值 20
+                     * @return Limit 一页限制，默认值 20
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置一页限制,moren
-                     * @param _limit 一页限制,moren
+                     * 设置一页限制，默认值 20
+                     * @param _limit 一页限制，默认值 20
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -229,7 +229,7 @@ ascend/descend
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 一页限制,moren
+                     * 一页限制，默认值 20
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

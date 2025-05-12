@@ -24,7 +24,8 @@ using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
 DescribeDeviceAccountsResponse::DescribeDeviceAccountsResponse() :
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_deviceAccountSetHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome DescribeDeviceAccountsResponse::Deserialize(const string &pa
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeviceAccountSet") && !rsp["DeviceAccountSet"].IsNull())
+    {
+        if (!rsp["DeviceAccountSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DeviceAccountSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DeviceAccountSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeviceAccount item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_deviceAccountSet.push_back(item);
+        }
+        m_deviceAccountSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ string DescribeDeviceAccountsResponse::ToJsonString() const
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_deviceAccountSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceAccountSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deviceAccountSet.begin(); itr != m_deviceAccountSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +146,16 @@ uint64_t DescribeDeviceAccountsResponse::GetTotalCount() const
 bool DescribeDeviceAccountsResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<DeviceAccount> DescribeDeviceAccountsResponse::GetDeviceAccountSet() const
+{
+    return m_deviceAccountSet;
+}
+
+bool DescribeDeviceAccountsResponse::DeviceAccountSetHasBeenSet() const
+{
+    return m_deviceAccountSetHasBeenSet;
 }
 
 

@@ -24,7 +24,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 DescribeEnterpriseSGRuleProgressResponse::DescribeEnterpriseSGRuleProgressResponse() :
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_userStoppedHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome DescribeEnterpriseSGRuleProgressResponse::Deserialize(const 
         m_progressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UserStopped") && !rsp["UserStopped"].IsNull())
+    {
+        if (!rsp["UserStopped"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserStopped` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_userStopped = rsp["UserStopped"].GetBool();
+        m_userStoppedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string DescribeEnterpriseSGRuleProgressResponse::ToJsonString() const
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_userStoppedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserStopped";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userStopped, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ int64_t DescribeEnterpriseSGRuleProgressResponse::GetProgress() const
 bool DescribeEnterpriseSGRuleProgressResponse::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+bool DescribeEnterpriseSGRuleProgressResponse::GetUserStopped() const
+{
+    return m_userStopped;
+}
+
+bool DescribeEnterpriseSGRuleProgressResponse::UserStoppedHasBeenSet() const
+{
+    return m_userStoppedHasBeenSet;
 }
 
 

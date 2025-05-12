@@ -250,15 +250,15 @@ drop：拒绝
                     bool OrderIndexHasBeenSet() const;
 
                     /**
-                     * 获取协议；TCP/UDP/ICMP/ANY
-                     * @return Protocol 协议；TCP/UDP/ICMP/ANY
+                     * 获取协议；TCP/UDP/ICMP/ICMPv6/ANY
+                     * @return Protocol 协议；TCP/UDP/ICMP/ICMPv6/ANY
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议；TCP/UDP/ICMP/ANY
-                     * @param _protocol 协议；TCP/UDP/ICMP/ANY
+                     * 设置协议；TCP/UDP/ICMP/ICMPv6/ANY
+                     * @param _protocol 协议；TCP/UDP/ICMP/ICMPv6/ANY
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -446,7 +446,7 @@ drop：拒绝
                     bool m_orderIndexHasBeenSet;
 
                     /**
-                     * 协议；TCP/UDP/ICMP/ANY
+                     * 协议；TCP/UDP/ICMP/ICMPv6/ANY
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

@@ -57,6 +57,20 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取["1231"]
+                     * @return RuleIdList ["1231"]
+                     * 
+                     */
+                    std::vector<std::string> GetRuleIdList() const;
+
+                    /**
+                     * 判断参数 RuleIdList 是否已赋值
+                     * @return RuleIdList 是否已赋值
+                     * 
+                     */
+                    bool RuleIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +78,12 @@ namespace TencentCloud
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * ["1231"]
+                     */
+                    std::vector<std::string> m_ruleIdList;
+                    bool m_ruleIdListHasBeenSet;
 
                 };
             }

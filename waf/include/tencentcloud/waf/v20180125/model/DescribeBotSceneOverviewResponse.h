@@ -88,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前开启的、匹配范围为全局、优先级最高的场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentGlobalScene 当前开启的、匹配范围为全局、优先级最高的场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GlobalSceneInfo GetCurrentGlobalScene() const;
@@ -138,7 +136,6 @@ namespace TencentCloud
 
                     /**
                      * 当前开启的、匹配范围为全局、优先级最高的场景
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GlobalSceneInfo m_currentGlobalScene;
                     bool m_currentGlobalSceneHasBeenSet;

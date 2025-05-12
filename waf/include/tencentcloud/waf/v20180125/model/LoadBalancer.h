@@ -131,27 +131,6 @@ namespace TencentCloud
                     bool ListenerNameHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的IP
-                     * @return Vip 负载均衡实例的IP
-                     * 
-                     */
-                    std::string GetVip() const;
-
-                    /**
-                     * 设置负载均衡实例的IP
-                     * @param _vip 负载均衡实例的IP
-                     * 
-                     */
-                    void SetVip(const std::string& _vip);
-
-                    /**
-                     * 判断参数 Vip 是否已赋值
-                     * @return Vip 是否已赋值
-                     * 
-                     */
-                    bool VipHasBeenSet() const;
-
-                    /**
                      * 获取负载均衡实例的端口
                      * @return Vport 负载均衡实例的端口
                      * 
@@ -234,6 +213,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡实例的IP。域名化CLB VIP可填空。
+                     * @return Vip 负载均衡实例的IP。域名化CLB VIP可填空。
+                     * 
+                     */
+                    std::string GetVip() const;
+
+                    /**
+                     * 设置负载均衡实例的IP。域名化CLB VIP可填空。
+                     * @param _vip 负载均衡实例的IP。域名化CLB VIP可填空。
+                     * 
+                     */
+                    void SetVip(const std::string& _vip);
+
+                    /**
+                     * 判断参数 Vip 是否已赋值
+                     * @return Vip 是否已赋值
+                     * 
+                     */
+                    bool VipHasBeenSet() const;
 
                     /**
                      * 获取负载均衡的VPCID，公网为-1，内网按实际填写
@@ -325,12 +325,6 @@ namespace TencentCloud
                     bool m_listenerNameHasBeenSet;
 
                     /**
-                     * 负载均衡实例的IP
-                     */
-                    std::string m_vip;
-                    bool m_vipHasBeenSet;
-
-                    /**
                      * 负载均衡实例的端口
                      */
                     uint64_t m_vport;
@@ -353,6 +347,12 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 负载均衡实例的IP。域名化CLB VIP可填空。
+                     */
+                    std::string m_vip;
+                    bool m_vipHasBeenSet;
 
                     /**
                      * 负载均衡的VPCID，公网为-1，内网按实际填写

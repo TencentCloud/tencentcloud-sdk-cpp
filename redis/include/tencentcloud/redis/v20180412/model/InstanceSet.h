@@ -329,21 +329,21 @@ namespace TencentCloud
                     /**
                      * 获取该字段已废弃。请使用腾讯云可观测平台API 接口 [GetMonitorData](https://cloud.tencent.com/document/product/248/31014) 获取实例已使用的内存容量。
                      * @return SizeUsed 该字段已废弃。请使用腾讯云可观测平台API 接口 [GetMonitorData](https://cloud.tencent.com/document/product/248/31014) 获取实例已使用的内存容量。
-                     * 
+                     * @deprecated
                      */
                     double GetSizeUsed() const;
 
                     /**
                      * 设置该字段已废弃。请使用腾讯云可观测平台API 接口 [GetMonitorData](https://cloud.tencent.com/document/product/248/31014) 获取实例已使用的内存容量。
                      * @param _sizeUsed 该字段已废弃。请使用腾讯云可观测平台API 接口 [GetMonitorData](https://cloud.tencent.com/document/product/248/31014) 获取实例已使用的内存容量。
-                     * 
+                     * @deprecated
                      */
                     void SetSizeUsed(const double& _sizeUsed);
 
                     /**
                      * 判断参数 SizeUsed 是否已赋值
                      * @return SizeUsed 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SizeUsedHasBeenSet() const;
 

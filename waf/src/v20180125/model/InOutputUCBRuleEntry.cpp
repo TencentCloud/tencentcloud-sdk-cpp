@@ -29,7 +29,8 @@ InOutputUCBRuleEntry::InOutputUCBRuleEntry() :
     m_opValueHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_areasHasBeenSet(false),
-    m_langHasBeenSet(false)
+    m_langHasBeenSet(false),
+    m_paramCompareListHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,26 @@ CoreInternalOutcome InOutputUCBRuleEntry::Deserialize(const rapidjson::Value &va
         m_langHasBeenSet = true;
     }
 
+    if (value.HasMember("ParamCompareList") && !value["ParamCompareList"].IsNull())
+    {
+        if (!value["ParamCompareList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InOutputUCBRuleEntry.ParamCompareList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ParamCompareList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ParamCompareList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_paramCompareList.push_back(item);
+        }
+        m_paramCompareListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -238,6 +259,21 @@ void InOutputUCBRuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Lang";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lang.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramCompareListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamCompareList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_paramCompareList.begin(); itr != m_paramCompareList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -385,5 +421,21 @@ void InOutputUCBRuleEntry::SetLang(const string& _lang)
 bool InOutputUCBRuleEntry::LangHasBeenSet() const
 {
     return m_langHasBeenSet;
+}
+
+vector<ParamCompareList> InOutputUCBRuleEntry::GetParamCompareList() const
+{
+    return m_paramCompareList;
+}
+
+void InOutputUCBRuleEntry::SetParamCompareList(const vector<ParamCompareList>& _paramCompareList)
+{
+    m_paramCompareList = _paramCompareList;
+    m_paramCompareListHasBeenSet = true;
+}
+
+bool InOutputUCBRuleEntry::ParamCompareListHasBeenSet() const
+{
+    return m_paramCompareListHasBeenSet;
 }
 

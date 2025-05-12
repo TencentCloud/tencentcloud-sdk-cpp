@@ -1115,6 +1115,92 @@ WedataClient::CountOpsInstanceStateOutcomeCallable WedataClient::CountOpsInstanc
     return task->get_future();
 }
 
+WedataClient::CreateCodeTemplateOutcome WedataClient::CreateCodeTemplate(const CreateCodeTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCodeTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCodeTemplateResponse rsp = CreateCodeTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCodeTemplateOutcome(rsp);
+        else
+            return CreateCodeTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCodeTemplateOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateCodeTemplateAsync(const CreateCodeTemplateRequest& request, const CreateCodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCodeTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::CreateCodeTemplateOutcomeCallable WedataClient::CreateCodeTemplateCallable(const CreateCodeTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCodeTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCodeTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::CreateCodeTemplateVersionOutcome WedataClient::CreateCodeTemplateVersion(const CreateCodeTemplateVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCodeTemplateVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCodeTemplateVersionResponse rsp = CreateCodeTemplateVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCodeTemplateVersionOutcome(rsp);
+        else
+            return CreateCodeTemplateVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCodeTemplateVersionOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateCodeTemplateVersionAsync(const CreateCodeTemplateVersionRequest& request, const CreateCodeTemplateVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCodeTemplateVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::CreateCodeTemplateVersionOutcomeCallable WedataClient::CreateCodeTemplateVersionCallable(const CreateCodeTemplateVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCodeTemplateVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCodeTemplateVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::CreateCustomFunctionOutcome WedataClient::CreateCustomFunction(const CreateCustomFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustomFunction");
@@ -1925,6 +2011,49 @@ WedataClient::DagInstancesOutcomeCallable WedataClient::DagInstancesCallable(con
         [this, request]()
         {
             return this->DagInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DeleteCodeTemplateOutcome WedataClient::DeleteCodeTemplate(const DeleteCodeTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCodeTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCodeTemplateResponse rsp = DeleteCodeTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCodeTemplateOutcome(rsp);
+        else
+            return DeleteCodeTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCodeTemplateOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteCodeTemplateAsync(const DeleteCodeTemplateRequest& request, const DeleteCodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCodeTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DeleteCodeTemplateOutcomeCallable WedataClient::DeleteCodeTemplateCallable(const DeleteCodeTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCodeTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCodeTemplate(request);
         }
     );
 
@@ -4075,6 +4204,49 @@ WedataClient::DescribeFolderWorkflowListOutcomeCallable WedataClient::DescribeFo
         [this, request]()
         {
             return this->DescribeFolderWorkflowList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DescribeFormVersionParamOutcome WedataClient::DescribeFormVersionParam(const DescribeFormVersionParamRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFormVersionParam");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFormVersionParamResponse rsp = DescribeFormVersionParamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFormVersionParamOutcome(rsp);
+        else
+            return DescribeFormVersionParamOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFormVersionParamOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeFormVersionParamAsync(const DescribeFormVersionParamRequest& request, const DescribeFormVersionParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFormVersionParam(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeFormVersionParamOutcomeCallable WedataClient::DescribeFormVersionParamCallable(const DescribeFormVersionParamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFormVersionParamOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFormVersionParam(request);
         }
     );
 
@@ -7608,6 +7780,49 @@ WedataClient::DescribeTaskTableMetricOverviewOutcomeCallable WedataClient::Descr
     return task->get_future();
 }
 
+WedataClient::DescribeTasksForCodeTemplateOutcome WedataClient::DescribeTasksForCodeTemplate(const DescribeTasksForCodeTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTasksForCodeTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTasksForCodeTemplateResponse rsp = DescribeTasksForCodeTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTasksForCodeTemplateOutcome(rsp);
+        else
+            return DescribeTasksForCodeTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTasksForCodeTemplateOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeTasksForCodeTemplateAsync(const DescribeTasksForCodeTemplateRequest& request, const DescribeTasksForCodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTasksForCodeTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeTasksForCodeTemplateOutcomeCallable WedataClient::DescribeTasksForCodeTemplateCallable(const DescribeTasksForCodeTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTasksForCodeTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTasksForCodeTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeTemplateDimCountOutcome WedataClient::DescribeTemplateDimCount(const DescribeTemplateDimCountRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTemplateDimCount");
@@ -9973,6 +10188,49 @@ WedataClient::RenewWorkflowSchedulerInfoDsOutcomeCallable WedataClient::RenewWor
     return task->get_future();
 }
 
+WedataClient::ReportTaskLineageOutcome WedataClient::ReportTaskLineage(const ReportTaskLineageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportTaskLineage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportTaskLineageResponse rsp = ReportTaskLineageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportTaskLineageOutcome(rsp);
+        else
+            return ReportTaskLineageOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportTaskLineageOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ReportTaskLineageAsync(const ReportTaskLineageRequest& request, const ReportTaskLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportTaskLineage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::ReportTaskLineageOutcomeCallable WedataClient::ReportTaskLineageCallable(const ReportTaskLineageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportTaskLineageOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportTaskLineage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::ResumeIntegrationTaskOutcome WedataClient::ResumeIntegrationTask(const ResumeIntegrationTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "ResumeIntegrationTask");
@@ -10826,6 +11084,49 @@ WedataClient::UnlockIntegrationTaskOutcomeCallable WedataClient::UnlockIntegrati
         [this, request]()
         {
             return this->UnlockIntegrationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::UpdateCodeTemplateOutcome WedataClient::UpdateCodeTemplate(const UpdateCodeTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateCodeTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateCodeTemplateResponse rsp = UpdateCodeTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateCodeTemplateOutcome(rsp);
+        else
+            return UpdateCodeTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateCodeTemplateOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UpdateCodeTemplateAsync(const UpdateCodeTemplateRequest& request, const UpdateCodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateCodeTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::UpdateCodeTemplateOutcomeCallable WedataClient::UpdateCodeTemplateCallable(const UpdateCodeTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateCodeTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateCodeTemplate(request);
         }
     );
 

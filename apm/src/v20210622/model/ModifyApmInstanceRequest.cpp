@@ -48,7 +48,9 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_isSqlInjectionAnalysisHasBeenSet(false),
     m_isInstrumentationVulnerabilityScanHasBeenSet(false),
     m_isRemoteCommandExecutionAnalysisHasBeenSet(false),
-    m_isMemoryHijackingAnalysisHasBeenSet(false)
+    m_isMemoryHijackingAnalysisHasBeenSet(false),
+    m_logIndexTypeHasBeenSet(false),
+    m_logTraceIdKeyHasBeenSet(false)
 {
 }
 
@@ -277,6 +279,22 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "IsMemoryHijackingAnalysis";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isMemoryHijackingAnalysis, allocator);
+    }
+
+    if (m_logIndexTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogIndexType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_logIndexType, allocator);
+    }
+
+    if (m_logTraceIdKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogTraceIdKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logTraceIdKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -701,6 +719,38 @@ void ModifyApmInstanceRequest::SetIsMemoryHijackingAnalysis(const int64_t& _isMe
 bool ModifyApmInstanceRequest::IsMemoryHijackingAnalysisHasBeenSet() const
 {
     return m_isMemoryHijackingAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetLogIndexType() const
+{
+    return m_logIndexType;
+}
+
+void ModifyApmInstanceRequest::SetLogIndexType(const int64_t& _logIndexType)
+{
+    m_logIndexType = _logIndexType;
+    m_logIndexTypeHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::LogIndexTypeHasBeenSet() const
+{
+    return m_logIndexTypeHasBeenSet;
+}
+
+string ModifyApmInstanceRequest::GetLogTraceIdKey() const
+{
+    return m_logTraceIdKey;
+}
+
+void ModifyApmInstanceRequest::SetLogTraceIdKey(const string& _logTraceIdKey)
+{
+    m_logTraceIdKey = _logTraceIdKey;
+    m_logTraceIdKeyHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::LogTraceIdKeyHasBeenSet() const
+{
+    return m_logTraceIdKeyHasBeenSet;
 }
 
 

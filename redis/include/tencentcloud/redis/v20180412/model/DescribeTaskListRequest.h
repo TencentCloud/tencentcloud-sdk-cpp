@@ -495,21 +495,21 @@ namespace TencentCloud
                     /**
                      * 获取该字段已废弃，使用OperateUin代替，请忽略。
                      * @return OperatorUin 该字段已废弃，使用OperateUin代替，请忽略。
-                     * 
+                     * @deprecated
                      */
                     std::vector<int64_t> GetOperatorUin() const;
 
                     /**
                      * 设置该字段已废弃，使用OperateUin代替，请忽略。
                      * @param _operatorUin 该字段已废弃，使用OperateUin代替，请忽略。
-                     * 
+                     * @deprecated
                      */
                     void SetOperatorUin(const std::vector<int64_t>& _operatorUin);
 
                     /**
                      * 判断参数 OperatorUin 是否已赋值
                      * @return OperatorUin 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OperatorUinHasBeenSet() const;
 

@@ -25,7 +25,8 @@ using namespace std;
 DescribeEventConsumeTasksRequest::DescribeEventConsumeTasksRequest() :
     m_eventCaseIdHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeEventConsumeTasksRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeEventConsumeTasksRequest::SetPageSize(const uint64_t& _pageSize)
 bool DescribeEventConsumeTasksRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeEventConsumeTasksRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DescribeEventConsumeTasksRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DescribeEventConsumeTasksRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

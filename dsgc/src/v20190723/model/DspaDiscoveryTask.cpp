@@ -21,6 +21,7 @@ using namespace TencentCloud::Dsgc::V20190723::Model;
 using namespace std;
 
 DspaDiscoveryTask::DspaDiscoveryTask() :
+    m_taskIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_periodHasBeenSet(false),
@@ -38,6 +39,16 @@ CoreInternalOutcome DspaDiscoveryTask::Deserialize(const rapidjson::Value &value
 {
     string requestId = "";
 
+
+    if (value.HasMember("TaskId") && !value["TaskId"].IsNull())
+    {
+        if (!value["TaskId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryTask.TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = value["TaskId"].GetInt64();
+        m_taskIdHasBeenSet = true;
+    }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
     {
@@ -160,6 +171,14 @@ CoreInternalOutcome DspaDiscoveryTask::Deserialize(const rapidjson::Value &value
 void DspaDiscoveryTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskId, allocator);
+    }
+
     if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -244,6 +263,22 @@ void DspaDiscoveryTask::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
 
 }
 
+
+int64_t DspaDiscoveryTask::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void DspaDiscoveryTask::SetTaskId(const int64_t& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool DspaDiscoveryTask::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
 
 string DspaDiscoveryTask::GetName() const
 {

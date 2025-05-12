@@ -33,7 +33,9 @@ BaseFlowInfo::BaseFlowInfo() :
     m_ccInfosHasBeenSet(false),
     m_needCreateReviewHasBeenSet(false),
     m_componentsHasBeenSet(false),
-    m_flowDisplayTypeHasBeenSet(false)
+    m_flowDisplayTypeHasBeenSet(false),
+    m_fileIdsHasBeenSet(false),
+    m_approversHasBeenSet(false)
 {
 }
 
@@ -202,6 +204,39 @@ CoreInternalOutcome BaseFlowInfo::Deserialize(const rapidjson::Value &value)
         m_flowDisplayTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("FileIds") && !value["FileIds"].IsNull())
+    {
+        if (!value["FileIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BaseFlowInfo.FileIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FileIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_fileIds.push_back((*itr).GetString());
+        }
+        m_fileIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Approvers") && !value["Approvers"].IsNull())
+    {
+        if (!value["Approvers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BaseFlowInfo.Approvers` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Approvers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CommonFlowApprover item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_approvers.push_back(item);
+        }
+        m_approversHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -332,6 +367,34 @@ void BaseFlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "FlowDisplayType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowDisplayType, allocator);
+    }
+
+    if (m_fileIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_fileIds.begin(); itr != m_fileIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_approversHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Approvers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_approvers.begin(); itr != m_approvers.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -543,5 +606,37 @@ void BaseFlowInfo::SetFlowDisplayType(const int64_t& _flowDisplayType)
 bool BaseFlowInfo::FlowDisplayTypeHasBeenSet() const
 {
     return m_flowDisplayTypeHasBeenSet;
+}
+
+vector<string> BaseFlowInfo::GetFileIds() const
+{
+    return m_fileIds;
+}
+
+void BaseFlowInfo::SetFileIds(const vector<string>& _fileIds)
+{
+    m_fileIds = _fileIds;
+    m_fileIdsHasBeenSet = true;
+}
+
+bool BaseFlowInfo::FileIdsHasBeenSet() const
+{
+    return m_fileIdsHasBeenSet;
+}
+
+vector<CommonFlowApprover> BaseFlowInfo::GetApprovers() const
+{
+    return m_approvers;
+}
+
+void BaseFlowInfo::SetApprovers(const vector<CommonFlowApprover>& _approvers)
+{
+    m_approvers = _approvers;
+    m_approversHasBeenSet = true;
+}
+
+bool BaseFlowInfo::ApproversHasBeenSet() const
+{
+    return m_approversHasBeenSet;
 }
 

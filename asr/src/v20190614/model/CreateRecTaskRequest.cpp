@@ -45,7 +45,8 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_sentenceMaxLengthHasBeenSet(false),
     m_extraHasBeenSet(false),
     m_hotwordListHasBeenSet(false),
-    m_keyWordLibIdListHasBeenSet(false)
+    m_keyWordLibIdListHasBeenSet(false),
+    m_replaceTextIdHasBeenSet(false)
 {
 }
 
@@ -243,6 +244,14 @@ string CreateRecTaskRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_replaceTextIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplaceTextId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_replaceTextId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -619,6 +628,22 @@ void CreateRecTaskRequest::SetKeyWordLibIdList(const vector<string>& _keyWordLib
 bool CreateRecTaskRequest::KeyWordLibIdListHasBeenSet() const
 {
     return m_keyWordLibIdListHasBeenSet;
+}
+
+string CreateRecTaskRequest::GetReplaceTextId() const
+{
+    return m_replaceTextId;
+}
+
+void CreateRecTaskRequest::SetReplaceTextId(const string& _replaceTextId)
+{
+    m_replaceTextId = _replaceTextId;
+    m_replaceTextIdHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::ReplaceTextIdHasBeenSet() const
+{
+    return m_replaceTextIdHasBeenSet;
 }
 
 

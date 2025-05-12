@@ -47,8 +47,6 @@
 #include <tencentcloud/gaap/v20180529/model/CreateDomainResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateDomainErrorPageInfoRequest.h>
 #include <tencentcloud/gaap/v20180529/model/CreateDomainErrorPageInfoResponse.h>
-#include <tencentcloud/gaap/v20180529/model/CreateFirstLinkSessionRequest.h>
-#include <tencentcloud/gaap/v20180529/model/CreateFirstLinkSessionResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateGlobalDomainRequest.h>
 #include <tencentcloud/gaap/v20180529/model/CreateGlobalDomainResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateGlobalDomainDnsRequest.h>
@@ -79,8 +77,6 @@
 #include <tencentcloud/gaap/v20180529/model/DeleteDomainResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteDomainErrorPageInfoRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteDomainErrorPageInfoResponse.h>
-#include <tencentcloud/gaap/v20180529/model/DeleteFirstLinkSessionRequest.h>
-#include <tencentcloud/gaap/v20180529/model/DeleteFirstLinkSessionResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteGlobalDomainRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteGlobalDomainResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteGlobalDomainDnsRequest.h>
@@ -119,8 +115,6 @@
 #include <tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoByIdsRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoByIdsResponse.h>
-#include <tencentcloud/gaap/v20180529/model/DescribeFirstLinkSessionRequest.h>
-#include <tencentcloud/gaap/v20180529/model/DescribeFirstLinkSessionResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGlobalDomainDnsRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGlobalDomainDnsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGlobalDomainsRequest.h>
@@ -283,9 +277,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDomainErrorPageInfoResponse> CreateDomainErrorPageInfoOutcome;
                 typedef std::future<CreateDomainErrorPageInfoOutcome> CreateDomainErrorPageInfoOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::CreateDomainErrorPageInfoRequest&, CreateDomainErrorPageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainErrorPageInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateFirstLinkSessionResponse> CreateFirstLinkSessionOutcome;
-                typedef std::future<CreateFirstLinkSessionOutcome> CreateFirstLinkSessionOutcomeCallable;
-                typedef std::function<void(const GaapClient*, const Model::CreateFirstLinkSessionRequest&, CreateFirstLinkSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirstLinkSessionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGlobalDomainResponse> CreateGlobalDomainOutcome;
                 typedef std::future<CreateGlobalDomainOutcome> CreateGlobalDomainOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::CreateGlobalDomainRequest&, CreateGlobalDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalDomainAsyncHandler;
@@ -331,9 +322,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDomainErrorPageInfoResponse> DeleteDomainErrorPageInfoOutcome;
                 typedef std::future<DeleteDomainErrorPageInfoOutcome> DeleteDomainErrorPageInfoOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DeleteDomainErrorPageInfoRequest&, DeleteDomainErrorPageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainErrorPageInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteFirstLinkSessionResponse> DeleteFirstLinkSessionOutcome;
-                typedef std::future<DeleteFirstLinkSessionOutcome> DeleteFirstLinkSessionOutcomeCallable;
-                typedef std::function<void(const GaapClient*, const Model::DeleteFirstLinkSessionRequest&, DeleteFirstLinkSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirstLinkSessionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGlobalDomainResponse> DeleteGlobalDomainOutcome;
                 typedef std::future<DeleteGlobalDomainOutcome> DeleteGlobalDomainOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DeleteGlobalDomainRequest&, DeleteGlobalDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlobalDomainAsyncHandler;
@@ -391,9 +379,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainErrorPageInfoByIdsResponse> DescribeDomainErrorPageInfoByIdsOutcome;
                 typedef std::future<DescribeDomainErrorPageInfoByIdsOutcome> DescribeDomainErrorPageInfoByIdsOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeDomainErrorPageInfoByIdsRequest&, DescribeDomainErrorPageInfoByIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainErrorPageInfoByIdsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeFirstLinkSessionResponse> DescribeFirstLinkSessionOutcome;
-                typedef std::future<DescribeFirstLinkSessionOutcome> DescribeFirstLinkSessionOutcomeCallable;
-                typedef std::function<void(const GaapClient*, const Model::DescribeFirstLinkSessionRequest&, DescribeFirstLinkSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirstLinkSessionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGlobalDomainDnsResponse> DescribeGlobalDomainDnsOutcome;
                 typedef std::future<DescribeGlobalDomainDnsOutcome> DescribeGlobalDomainDnsOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeGlobalDomainDnsRequest&, DescribeGlobalDomainDnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalDomainDnsAsyncHandler;
@@ -676,17 +661,6 @@ namespace TencentCloud
                 CreateDomainErrorPageInfoOutcomeCallable CreateDomainErrorPageInfoCallable(const Model::CreateDomainErrorPageInfoRequest& request);
 
                 /**
-                 *产品功能已下线，对应的api接口下线
-
-本接口（CreateFirstLinkSession）用于创建接入段加速会话，创建有可能成功，也可能失败，需要通过返回码来进行判断。
-                 * @param req CreateFirstLinkSessionRequest
-                 * @return CreateFirstLinkSessionOutcome
-                 */
-                CreateFirstLinkSessionOutcome CreateFirstLinkSession(const Model::CreateFirstLinkSessionRequest &request);
-                void CreateFirstLinkSessionAsync(const Model::CreateFirstLinkSessionRequest& request, const CreateFirstLinkSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateFirstLinkSessionOutcomeCallable CreateFirstLinkSessionCallable(const Model::CreateFirstLinkSessionRequest& request);
-
-                /**
                  *用来创建统一域名
                  * @param req CreateGlobalDomainRequest
                  * @return CreateGlobalDomainOutcome
@@ -820,17 +794,6 @@ namespace TencentCloud
                 DeleteDomainErrorPageInfoOutcome DeleteDomainErrorPageInfo(const Model::DeleteDomainErrorPageInfoRequest &request);
                 void DeleteDomainErrorPageInfoAsync(const Model::DeleteDomainErrorPageInfoRequest& request, const DeleteDomainErrorPageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDomainErrorPageInfoOutcomeCallable DeleteDomainErrorPageInfoCallable(const Model::DeleteDomainErrorPageInfoRequest& request);
-
-                /**
-                 *产品功能已下线，下线对应的api接口
-
-本接口（DeleteFirstLinkSession）用于删除接入段加速会话，删除加速会话后会停止加速。
-                 * @param req DeleteFirstLinkSessionRequest
-                 * @return DeleteFirstLinkSessionOutcome
-                 */
-                DeleteFirstLinkSessionOutcome DeleteFirstLinkSession(const Model::DeleteFirstLinkSessionRequest &request);
-                void DeleteFirstLinkSessionAsync(const Model::DeleteFirstLinkSessionRequest& request, const DeleteFirstLinkSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteFirstLinkSessionOutcomeCallable DeleteFirstLinkSessionCallable(const Model::DeleteFirstLinkSessionRequest& request);
 
                 /**
                  *删除统一域名
@@ -1002,17 +965,6 @@ namespace TencentCloud
                 DescribeDomainErrorPageInfoByIdsOutcome DescribeDomainErrorPageInfoByIds(const Model::DescribeDomainErrorPageInfoByIdsRequest &request);
                 void DescribeDomainErrorPageInfoByIdsAsync(const Model::DescribeDomainErrorPageInfoByIdsRequest& request, const DescribeDomainErrorPageInfoByIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainErrorPageInfoByIdsOutcomeCallable DescribeDomainErrorPageInfoByIdsCallable(const Model::DescribeDomainErrorPageInfoByIdsRequest& request);
-
-                /**
-                 *产品功能已下线，下线对应的api接口
-
-本接口（DescribeFirstLinkSession）用于查询接入段加速会话状态，包括会话状态，生效时长，加速套餐等信息。
-                 * @param req DescribeFirstLinkSessionRequest
-                 * @return DescribeFirstLinkSessionOutcome
-                 */
-                DescribeFirstLinkSessionOutcome DescribeFirstLinkSession(const Model::DescribeFirstLinkSessionRequest &request);
-                void DescribeFirstLinkSessionAsync(const Model::DescribeFirstLinkSessionRequest& request, const DescribeFirstLinkSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeFirstLinkSessionOutcomeCallable DescribeFirstLinkSessionCallable(const Model::DescribeFirstLinkSessionRequest& request);
 
                 /**
                  *查询域名解析列表

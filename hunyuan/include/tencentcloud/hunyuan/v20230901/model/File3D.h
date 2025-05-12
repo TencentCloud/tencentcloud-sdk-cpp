@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取文件的Url
-                     * @return Url 文件的Url
+                     * 获取文件的Url（有效期24小时）
+                     * @return Url 文件的Url（有效期24小时）
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置文件的Url
-                     * @param _url 文件的Url
+                     * 设置文件的Url（有效期24小时）
+                     * @param _url 文件的Url（有效期24小时）
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 文件的Url
+                     * 文件的Url（有效期24小时）
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

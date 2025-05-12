@@ -32,7 +32,12 @@ DeployResourceRequest::DeployResourceRequest() :
     m_vpcNameHasBeenSet(false),
     m_vpcCidrBlockHasBeenSet(false),
     m_subnetNameHasBeenSet(false),
-    m_cdcClusterIdHasBeenSet(false)
+    m_cdcClusterIdHasBeenSet(false),
+    m_shareClbIdHasBeenSet(false),
+    m_webAccessHasBeenSet(false),
+    m_clientAccessHasBeenSet(false),
+    m_intranetAccessHasBeenSet(false),
+    m_externalAccessHasBeenSet(false)
 {
 }
 
@@ -121,6 +126,46 @@ string DeployResourceRequest::ToJsonString() const
         string key = "CdcClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cdcClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shareClbIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareClbId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_shareClbId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_webAccess, allocator);
+    }
+
+    if (m_clientAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clientAccess, allocator);
+    }
+
+    if (m_intranetAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_intranetAccess, allocator);
+    }
+
+    if (m_externalAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_externalAccess, allocator);
     }
 
 
@@ -289,6 +334,86 @@ void DeployResourceRequest::SetCdcClusterId(const string& _cdcClusterId)
 bool DeployResourceRequest::CdcClusterIdHasBeenSet() const
 {
     return m_cdcClusterIdHasBeenSet;
+}
+
+string DeployResourceRequest::GetShareClbId() const
+{
+    return m_shareClbId;
+}
+
+void DeployResourceRequest::SetShareClbId(const string& _shareClbId)
+{
+    m_shareClbId = _shareClbId;
+    m_shareClbIdHasBeenSet = true;
+}
+
+bool DeployResourceRequest::ShareClbIdHasBeenSet() const
+{
+    return m_shareClbIdHasBeenSet;
+}
+
+uint64_t DeployResourceRequest::GetWebAccess() const
+{
+    return m_webAccess;
+}
+
+void DeployResourceRequest::SetWebAccess(const uint64_t& _webAccess)
+{
+    m_webAccess = _webAccess;
+    m_webAccessHasBeenSet = true;
+}
+
+bool DeployResourceRequest::WebAccessHasBeenSet() const
+{
+    return m_webAccessHasBeenSet;
+}
+
+uint64_t DeployResourceRequest::GetClientAccess() const
+{
+    return m_clientAccess;
+}
+
+void DeployResourceRequest::SetClientAccess(const uint64_t& _clientAccess)
+{
+    m_clientAccess = _clientAccess;
+    m_clientAccessHasBeenSet = true;
+}
+
+bool DeployResourceRequest::ClientAccessHasBeenSet() const
+{
+    return m_clientAccessHasBeenSet;
+}
+
+uint64_t DeployResourceRequest::GetIntranetAccess() const
+{
+    return m_intranetAccess;
+}
+
+void DeployResourceRequest::SetIntranetAccess(const uint64_t& _intranetAccess)
+{
+    m_intranetAccess = _intranetAccess;
+    m_intranetAccessHasBeenSet = true;
+}
+
+bool DeployResourceRequest::IntranetAccessHasBeenSet() const
+{
+    return m_intranetAccessHasBeenSet;
+}
+
+uint64_t DeployResourceRequest::GetExternalAccess() const
+{
+    return m_externalAccess;
+}
+
+void DeployResourceRequest::SetExternalAccess(const uint64_t& _externalAccess)
+{
+    m_externalAccess = _externalAccess;
+    m_externalAccessHasBeenSet = true;
+}
+
+bool DeployResourceRequest::ExternalAccessHasBeenSet() const
+{
+    return m_externalAccessHasBeenSet;
 }
 
 

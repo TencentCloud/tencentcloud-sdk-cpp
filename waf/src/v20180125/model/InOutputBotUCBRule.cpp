@@ -43,7 +43,8 @@ InOutputBotUCBRule::InOutputBotUCBRule() :
     m_expireTimeHasBeenSet(false),
     m_validStatusHasBeenSet(false),
     m_blockPageIdHasBeenSet(false),
-    m_actionListHasBeenSet(false)
+    m_actionListHasBeenSet(false),
+    m_delayTimeHasBeenSet(false)
 {
 }
 
@@ -309,6 +310,16 @@ CoreInternalOutcome InOutputBotUCBRule::Deserialize(const rapidjson::Value &valu
         m_actionListHasBeenSet = true;
     }
 
+    if (value.HasMember("DelayTime") && !value["DelayTime"].IsNull())
+    {
+        if (!value["DelayTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InOutputBotUCBRule.DelayTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_delayTime = value["DelayTime"].GetInt64();
+        m_delayTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -513,6 +524,14 @@ void InOutputBotUCBRule::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_delayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_delayTime, allocator);
     }
 
 }
@@ -884,5 +903,21 @@ void InOutputBotUCBRule::SetActionList(const vector<UCBActionProportion>& _actio
 bool InOutputBotUCBRule::ActionListHasBeenSet() const
 {
     return m_actionListHasBeenSet;
+}
+
+int64_t InOutputBotUCBRule::GetDelayTime() const
+{
+    return m_delayTime;
+}
+
+void InOutputBotUCBRule::SetDelayTime(const int64_t& _delayTime)
+{
+    m_delayTime = _delayTime;
+    m_delayTimeHasBeenSet = true;
+}
+
+bool InOutputBotUCBRule::DelayTimeHasBeenSet() const
+{
+    return m_delayTimeHasBeenSet;
 }
 

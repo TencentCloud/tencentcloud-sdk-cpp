@@ -79,6 +79,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationRoleRequest.h
+  include/tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersResponse.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesResponse.h
@@ -181,6 +182,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/HasAuthOrganization.h
   include/tencentcloud/ess/v20201111/model/RecipientComponentInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h
+  include/tencentcloud/ess/v20201111/model/CreatePrepareFlowGroupResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationRoleResponse.h
   include/tencentcloud/ess/v20201111/model/DetectInfoVideoData.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowComponentsRequest.h
@@ -257,7 +259,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentRequest.h
   include/tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlResponse.h
-  include/tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoRequest.h
+  include/tencentcloud/ess/v20201111/model/CreatePrepareFlowGroupRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFileCounterSignResponse.h
   include/tencentcloud/ess/v20201111/model/VerifyDigitFileResult.h
   include/tencentcloud/ess/v20201111/model/StartFlowRequest.h
@@ -392,6 +394,7 @@ set(ess_src
   src/v20201111/model/CreateOrganizationAuthUrlRequest.cpp
   src/v20201111/model/CreateBatchQuickSignUrlResponse.cpp
   src/v20201111/model/CreateIntegrationRoleRequest.cpp
+  src/v20201111/model/ModifyApplicationCallbackInfoRequest.cpp
   src/v20201111/model/DeleteIntegrationRoleUsersResponse.cpp
   src/v20201111/model/CreateConvertTaskApiRequest.cpp
   src/v20201111/model/DeleteIntegrationEmployeesResponse.cpp
@@ -494,6 +497,7 @@ set(ess_src
   src/v20201111/model/HasAuthOrganization.cpp
   src/v20201111/model/RecipientComponentInfo.cpp
   src/v20201111/model/CreateFlowEvidenceReportResponse.cpp
+  src/v20201111/model/CreatePrepareFlowGroupResponse.cpp
   src/v20201111/model/CreateIntegrationRoleResponse.cpp
   src/v20201111/model/DetectInfoVideoData.cpp
   src/v20201111/model/DescribeFlowComponentsRequest.cpp
@@ -570,7 +574,7 @@ set(ess_src
   src/v20201111/model/CancelMultiFlowSignQRCodeRequest.cpp
   src/v20201111/model/DeleteIntegrationDepartmentRequest.cpp
   src/v20201111/model/CancelUserAutoSignEnableUrlResponse.cpp
-  src/v20201111/model/ModifyApplicationCallbackInfoRequest.cpp
+  src/v20201111/model/CreatePrepareFlowGroupRequest.cpp
   src/v20201111/model/CreateFileCounterSignResponse.cpp
   src/v20201111/model/VerifyDigitFileResult.cpp
   src/v20201111/model/StartFlowRequest.cpp

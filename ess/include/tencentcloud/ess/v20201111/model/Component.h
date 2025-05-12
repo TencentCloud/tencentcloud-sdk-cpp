@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool ComponentPageHasBeenSet() const;
 
                     /**
-                     * 获取**在绝对定位方式和关键字定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。
-                     * @return ComponentPosX **在绝对定位方式和关键字定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。
+                     * 获取**在绝对定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。
+                     * @return ComponentPosX **在绝对定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。
                      * 
                      */
                     double GetComponentPosX() const;
 
                     /**
-                     * 设置**在绝对定位方式和关键字定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。
-                     * @param _componentPosX **在绝对定位方式和关键字定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。
+                     * 设置**在绝对定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。
+                     * @param _componentPosX **在绝对定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。
                      * 
                      */
                     void SetComponentPosX(const double& _componentPosX);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool ComponentPosXHasBeenSet() const;
 
                     /**
-                     * 获取**在绝对定位方式和关键字定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。
-                     * @return ComponentPosY **在绝对定位方式和关键字定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。
+                     * 获取**在绝对定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。
+                     * @return ComponentPosY **在绝对定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。
                      * 
                      */
                     double GetComponentPosY() const;
 
                     /**
-                     * 设置**在绝对定位方式和关键字定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。
-                     * @param _componentPosY **在绝对定位方式和关键字定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。
+                     * 设置**在绝对定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。
+                     * @param _componentPosY **在绝对定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。
                      * 
                      */
                     void SetComponentPosY(const double& _componentPosY);
@@ -1561,13 +1561,13 @@ ChildrenComponent结构体定义:
                     bool m_componentPageHasBeenSet;
 
                     /**
-                     * **在绝对定位方式和关键字定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。
+                     * **在绝对定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。
                      */
                     double m_componentPosX;
                     bool m_componentPosXHasBeenSet;
 
                     /**
-                     * **在绝对定位方式和关键字定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。
+                     * **在绝对定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。
                      */
                     double m_componentPosY;
                     bool m_componentPosYHasBeenSet;

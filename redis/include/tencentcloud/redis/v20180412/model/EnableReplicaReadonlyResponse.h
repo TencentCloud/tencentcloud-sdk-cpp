@@ -46,14 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取错误：ERROR，正确OK（已废弃）
                      * @return Status 错误：ERROR，正确OK（已废弃）
-                     * 
+                     * @deprecated
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StatusHasBeenSet() const;
 

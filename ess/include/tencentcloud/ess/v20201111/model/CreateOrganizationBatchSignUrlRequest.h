@@ -259,6 +259,27 @@ UserId必须是传入合同（FlowId）中的签署人。
                      */
                     bool RecipientIdsHasBeenSet() const;
 
+                    /**
+                     * 获取合同组Id，传入此参数则可以不传FlowIds
+                     * @return FlowGroupId 合同组Id，传入此参数则可以不传FlowIds
+                     * 
+                     */
+                    std::string GetFlowGroupId() const;
+
+                    /**
+                     * 设置合同组Id，传入此参数则可以不传FlowIds
+                     * @param _flowGroupId 合同组Id，传入此参数则可以不传FlowIds
+                     * 
+                     */
+                    void SetFlowGroupId(const std::string& _flowGroupId);
+
+                    /**
+                     * 判断参数 FlowGroupId 是否已赋值
+                     * @return FlowGroupId 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +340,12 @@ UserId必须是传入合同（FlowId）中的签署人。
                      */
                     std::vector<std::string> m_recipientIds;
                     bool m_recipientIdsHasBeenSet;
+
+                    /**
+                     * 合同组Id，传入此参数则可以不传FlowIds
+                     */
+                    std::string m_flowGroupId;
+                    bool m_flowGroupIdHasBeenSet;
 
                 };
             }

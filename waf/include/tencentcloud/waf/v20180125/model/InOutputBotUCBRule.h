@@ -532,6 +532,27 @@ namespace TencentCloud
                      */
                     bool ActionListHasBeenSet() const;
 
+                    /**
+                     * 获取惩罚时间
+                     * @return DelayTime 惩罚时间
+                     * 
+                     */
+                    int64_t GetDelayTime() const;
+
+                    /**
+                     * 设置惩罚时间
+                     * @param _delayTime 惩罚时间
+                     * 
+                     */
+                    void SetDelayTime(const int64_t& _delayTime);
+
+                    /**
+                     * 判断参数 DelayTime 是否已赋值
+                     * @return DelayTime 是否已赋值
+                     * 
+                     */
+                    bool DelayTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -671,6 +692,12 @@ namespace TencentCloud
                      */
                     std::vector<UCBActionProportion> m_actionList;
                     bool m_actionListHasBeenSet;
+
+                    /**
+                     * 惩罚时间
+                     */
+                    int64_t m_delayTime;
+                    bool m_delayTimeHasBeenSet;
 
                 };
             }

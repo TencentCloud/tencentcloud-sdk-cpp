@@ -589,6 +589,48 @@ namespace TencentCloud
                      */
                     bool IsMemoryHijackingAnalysisHasBeenSet() const;
 
+                    /**
+                     * 获取0=全文索引，1=键值索引
+                     * @return LogIndexType 0=全文索引，1=键值索引
+                     * 
+                     */
+                    int64_t GetLogIndexType() const;
+
+                    /**
+                     * 设置0=全文索引，1=键值索引
+                     * @param _logIndexType 0=全文索引，1=键值索引
+                     * 
+                     */
+                    void SetLogIndexType(const int64_t& _logIndexType);
+
+                    /**
+                     * 判断参数 LogIndexType 是否已赋值
+                     * @return LogIndexType 是否已赋值
+                     * 
+                     */
+                    bool LogIndexTypeHasBeenSet() const;
+
+                    /**
+                     * 获取traceId的索引key
+                     * @return LogTraceIdKey traceId的索引key
+                     * 
+                     */
+                    std::string GetLogTraceIdKey() const;
+
+                    /**
+                     * 设置traceId的索引key
+                     * @param _logTraceIdKey traceId的索引key
+                     * 
+                     */
+                    void SetLogTraceIdKey(const std::string& _logTraceIdKey);
+
+                    /**
+                     * 判断参数 LogTraceIdKey 是否已赋值
+                     * @return LogTraceIdKey 是否已赋值
+                     * 
+                     */
+                    bool LogTraceIdKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -746,6 +788,18 @@ namespace TencentCloud
                      */
                     int64_t m_isMemoryHijackingAnalysis;
                     bool m_isMemoryHijackingAnalysisHasBeenSet;
+
+                    /**
+                     * 0=全文索引，1=键值索引
+                     */
+                    int64_t m_logIndexType;
+                    bool m_logIndexTypeHasBeenSet;
+
+                    /**
+                     * traceId的索引key
+                     */
+                    std::string m_logTraceIdKey;
+                    bool m_logTraceIdKeyHasBeenSet;
 
                 };
             }
