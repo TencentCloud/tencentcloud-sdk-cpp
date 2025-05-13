@@ -29,7 +29,8 @@ DescribeAttributeLabelRequest::DescribeAttributeLabelRequest() :
     m_loginUinHasBeenSet(false),
     m_loginSubAccountUinHasBeenSet(false),
     m_queryHasBeenSet(false),
-    m_lastLabelBizIdHasBeenSet(false)
+    m_lastLabelBizIdHasBeenSet(false),
+    m_queryScopeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeAttributeLabelRequest::ToJsonString() const
         string key = "LastLabelBizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_lastLabelBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queryScope.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeAttributeLabelRequest::SetLastLabelBizId(const string& _lastLabelBi
 bool DescribeAttributeLabelRequest::LastLabelBizIdHasBeenSet() const
 {
     return m_lastLabelBizIdHasBeenSet;
+}
+
+string DescribeAttributeLabelRequest::GetQueryScope() const
+{
+    return m_queryScope;
+}
+
+void DescribeAttributeLabelRequest::SetQueryScope(const string& _queryScope)
+{
+    m_queryScope = _queryScope;
+    m_queryScopeHasBeenSet = true;
+}
+
+bool DescribeAttributeLabelRequest::QueryScopeHasBeenSet() const
+{
+    return m_queryScopeHasBeenSet;
 }
 
 

@@ -27,7 +27,8 @@ AttrLabelDetail::AttrLabelDetail() :
     m_labelNamesHasBeenSet(false),
     m_isUpdatingHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_statusDescHasBeenSet(false)
+    m_statusDescHasBeenSet(false),
+    m_labelTotalCountHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome AttrLabelDetail::Deserialize(const rapidjson::Value &value)
         m_statusDescHasBeenSet = true;
     }
 
+    if (value.HasMember("LabelTotalCount") && !value["LabelTotalCount"].IsNull())
+    {
+        if (!value["LabelTotalCount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AttrLabelDetail.LabelTotalCount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_labelTotalCount = string(value["LabelTotalCount"].GetString());
+        m_labelTotalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void AttrLabelDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "StatusDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_statusDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LabelTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_labelTotalCount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void AttrLabelDetail::SetStatusDesc(const string& _statusDesc)
 bool AttrLabelDetail::StatusDescHasBeenSet() const
 {
     return m_statusDescHasBeenSet;
+}
+
+string AttrLabelDetail::GetLabelTotalCount() const
+{
+    return m_labelTotalCount;
+}
+
+void AttrLabelDetail::SetLabelTotalCount(const string& _labelTotalCount)
+{
+    m_labelTotalCount = _labelTotalCount;
+    m_labelTotalCountHasBeenSet = true;
+}
+
+bool AttrLabelDetail::LabelTotalCountHasBeenSet() const
+{
+    return m_labelTotalCountHasBeenSet;
 }
 

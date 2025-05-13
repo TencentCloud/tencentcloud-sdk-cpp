@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/HTTPGetAction.h>
+#include <tencentcloud/tione/v20211111/model/ExecAction.h>
+#include <tencentcloud/tione/v20211111/model/TCPSocketAction.h>
 
 
 namespace TencentCloud
@@ -68,6 +70,69 @@ namespace TencentCloud
                      */
                     bool HTTPGetHasBeenSet() const;
 
+                    /**
+                     * 获取执行命令检查 行为
+                     * @return Exec 执行命令检查 行为
+                     * 
+                     */
+                    ExecAction GetExec() const;
+
+                    /**
+                     * 设置执行命令检查 行为
+                     * @param _exec 执行命令检查 行为
+                     * 
+                     */
+                    void SetExec(const ExecAction& _exec);
+
+                    /**
+                     * 判断参数 Exec 是否已赋值
+                     * @return Exec 是否已赋值
+                     * 
+                     */
+                    bool ExecHasBeenSet() const;
+
+                    /**
+                     * 获取tcp socket 检查行为
+                     * @return TCPSocket tcp socket 检查行为
+                     * 
+                     */
+                    TCPSocketAction GetTCPSocket() const;
+
+                    /**
+                     * 设置tcp socket 检查行为
+                     * @param _tCPSocket tcp socket 检查行为
+                     * 
+                     */
+                    void SetTCPSocket(const TCPSocketAction& _tCPSocket);
+
+                    /**
+                     * 判断参数 TCPSocket 是否已赋值
+                     * @return TCPSocket 是否已赋值
+                     * 
+                     */
+                    bool TCPSocketHasBeenSet() const;
+
+                    /**
+                     * 获取探针类型，默认 HTTPGet，可选值：HTTPGet、Exec、TCPSocket
+                     * @return ActionType 探针类型，默认 HTTPGet，可选值：HTTPGet、Exec、TCPSocket
+                     * 
+                     */
+                    std::string GetActionType() const;
+
+                    /**
+                     * 设置探针类型，默认 HTTPGet，可选值：HTTPGet、Exec、TCPSocket
+                     * @param _actionType 探针类型，默认 HTTPGet，可选值：HTTPGet、Exec、TCPSocket
+                     * 
+                     */
+                    void SetActionType(const std::string& _actionType);
+
+                    /**
+                     * 判断参数 ActionType 是否已赋值
+                     * @return ActionType 是否已赋值
+                     * 
+                     */
+                    bool ActionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +140,24 @@ namespace TencentCloud
                      */
                     HTTPGetAction m_hTTPGet;
                     bool m_hTTPGetHasBeenSet;
+
+                    /**
+                     * 执行命令检查 行为
+                     */
+                    ExecAction m_exec;
+                    bool m_execHasBeenSet;
+
+                    /**
+                     * tcp socket 检查行为
+                     */
+                    TCPSocketAction m_tCPSocket;
+                    bool m_tCPSocketHasBeenSet;
+
+                    /**
+                     * 探针类型，默认 HTTPGet，可选值：HTTPGet、Exec、TCPSocket
+                     */
+                    std::string m_actionType;
+                    bool m_actionTypeHasBeenSet;
 
                 };
             }

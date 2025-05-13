@@ -42,7 +42,8 @@ ServiceGroup::ServiceGroup() :
     m_subUinHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_authorizationEnableHasBeenSet(false),
-    m_authTokensHasBeenSet(false)
+    m_authTokensHasBeenSet(false),
+    m_monitorSourceHasBeenSet(false)
 {
 }
 
@@ -301,6 +302,16 @@ CoreInternalOutcome ServiceGroup::Deserialize(const rapidjson::Value &value)
         m_authTokensHasBeenSet = true;
     }
 
+    if (value.HasMember("MonitorSource") && !value["MonitorSource"].IsNull())
+    {
+        if (!value["MonitorSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.MonitorSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorSource = string(value["MonitorSource"].GetString());
+        m_monitorSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -503,6 +514,14 @@ void ServiceGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_monitorSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_monitorSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -858,5 +877,21 @@ void ServiceGroup::SetAuthTokens(const vector<AuthToken>& _authTokens)
 bool ServiceGroup::AuthTokensHasBeenSet() const
 {
     return m_authTokensHasBeenSet;
+}
+
+string ServiceGroup::GetMonitorSource() const
+{
+    return m_monitorSource;
+}
+
+void ServiceGroup::SetMonitorSource(const string& _monitorSource)
+{
+    m_monitorSource = _monitorSource;
+    m_monitorSourceHasBeenSet = true;
+}
+
+bool ServiceGroup::MonitorSourceHasBeenSet() const
+{
+    return m_monitorSourceHasBeenSet;
 }
 

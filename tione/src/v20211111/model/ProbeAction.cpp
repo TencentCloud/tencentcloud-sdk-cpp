@@ -21,7 +21,10 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 ProbeAction::ProbeAction() :
-    m_hTTPGetHasBeenSet(false)
+    m_hTTPGetHasBeenSet(false),
+    m_execHasBeenSet(false),
+    m_tCPSocketHasBeenSet(false),
+    m_actionTypeHasBeenSet(false)
 {
 }
 
@@ -47,6 +50,50 @@ CoreInternalOutcome ProbeAction::Deserialize(const rapidjson::Value &value)
         m_hTTPGetHasBeenSet = true;
     }
 
+    if (value.HasMember("Exec") && !value["Exec"].IsNull())
+    {
+        if (!value["Exec"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProbeAction.Exec` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_exec.Deserialize(value["Exec"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_execHasBeenSet = true;
+    }
+
+    if (value.HasMember("TCPSocket") && !value["TCPSocket"].IsNull())
+    {
+        if (!value["TCPSocket"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProbeAction.TCPSocket` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tCPSocket.Deserialize(value["TCPSocket"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tCPSocketHasBeenSet = true;
+    }
+
+    if (value.HasMember("ActionType") && !value["ActionType"].IsNull())
+    {
+        if (!value["ActionType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProbeAction.ActionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_actionType = string(value["ActionType"].GetString());
+        m_actionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +108,32 @@ void ProbeAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hTTPGet.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_execHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Exec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_exec.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tCPSocketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TCPSocket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tCPSocket.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_actionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_actionType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -80,5 +153,53 @@ void ProbeAction::SetHTTPGet(const HTTPGetAction& _hTTPGet)
 bool ProbeAction::HTTPGetHasBeenSet() const
 {
     return m_hTTPGetHasBeenSet;
+}
+
+ExecAction ProbeAction::GetExec() const
+{
+    return m_exec;
+}
+
+void ProbeAction::SetExec(const ExecAction& _exec)
+{
+    m_exec = _exec;
+    m_execHasBeenSet = true;
+}
+
+bool ProbeAction::ExecHasBeenSet() const
+{
+    return m_execHasBeenSet;
+}
+
+TCPSocketAction ProbeAction::GetTCPSocket() const
+{
+    return m_tCPSocket;
+}
+
+void ProbeAction::SetTCPSocket(const TCPSocketAction& _tCPSocket)
+{
+    m_tCPSocket = _tCPSocket;
+    m_tCPSocketHasBeenSet = true;
+}
+
+bool ProbeAction::TCPSocketHasBeenSet() const
+{
+    return m_tCPSocketHasBeenSet;
+}
+
+string ProbeAction::GetActionType() const
+{
+    return m_actionType;
+}
+
+void ProbeAction::SetActionType(const string& _actionType)
+{
+    m_actionType = _actionType;
+    m_actionTypeHasBeenSet = true;
+}
+
+bool ProbeAction::ActionTypeHasBeenSet() const
+{
+    return m_actionTypeHasBeenSet;
 }
 

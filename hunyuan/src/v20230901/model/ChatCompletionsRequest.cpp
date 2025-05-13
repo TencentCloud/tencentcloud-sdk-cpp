@@ -42,7 +42,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_forceSearchEnhancementHasBeenSet(false),
     m_stopHasBeenSet(false),
     m_enableRecommendedQuestionsHasBeenSet(false),
-    m_enableDeepReadHasBeenSet(false)
+    m_enableDeepReadHasBeenSet(false),
+    m_webSearchOptionsHasBeenSet(false)
 {
 }
 
@@ -231,6 +232,15 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "EnableDeepRead";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDeepRead, allocator);
+    }
+
+    if (m_webSearchOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebSearchOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_webSearchOptions.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -559,6 +569,22 @@ void ChatCompletionsRequest::SetEnableDeepRead(const bool& _enableDeepRead)
 bool ChatCompletionsRequest::EnableDeepReadHasBeenSet() const
 {
     return m_enableDeepReadHasBeenSet;
+}
+
+WebSearchOptions ChatCompletionsRequest::GetWebSearchOptions() const
+{
+    return m_webSearchOptions;
+}
+
+void ChatCompletionsRequest::SetWebSearchOptions(const WebSearchOptions& _webSearchOptions)
+{
+    m_webSearchOptions = _webSearchOptions;
+    m_webSearchOptionsHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::WebSearchOptionsHasBeenSet() const
+{
+    return m_webSearchOptionsHasBeenSet;
 }
 
 

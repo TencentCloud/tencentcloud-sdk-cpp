@@ -87,10 +87,10 @@ namespace TencentCloud
                     /**
                      * 获取队列名称。不指定则为默认队列：
 SLURM默认队列为：compute。 
-SGE默认队列为：all.q。
+
                      * @return QueueName 队列名称。不指定则为默认队列：
 SLURM默认队列为：compute。 
-SGE默认队列为：all.q。
+
                      * 
                      */
                     std::string GetQueueName() const;
@@ -98,10 +98,10 @@ SGE默认队列为：all.q。
                     /**
                      * 设置队列名称。不指定则为默认队列：
 SLURM默认队列为：compute。 
-SGE默认队列为：all.q。
+
                      * @param _queueName 队列名称。不指定则为默认队列：
 SLURM默认队列为：compute。 
-SGE默认队列为：all.q。
+
                      * 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -172,7 +172,7 @@ SGE默认队列为：all.q。
                     /**
                      * 队列名称。不指定则为默认队列：
 SLURM默认队列为：compute。 
-SGE默认队列为：all.q。
+
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;

@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool QueryHasBeenSet() const;
 
+                    /**
+                     * 获取每个属性同步拉取的标签值数量
+                     * @return LabelSize 每个属性同步拉取的标签值数量
+                     * 
+                     */
+                    uint64_t GetLabelSize() const;
+
+                    /**
+                     * 设置每个属性同步拉取的标签值数量
+                     * @param _labelSize 每个属性同步拉取的标签值数量
+                     * 
+                     */
+                    void SetLabelSize(const uint64_t& _labelSize);
+
+                    /**
+                     * 判断参数 LabelSize 是否已赋值
+                     * @return LabelSize 是否已赋值
+                     * 
+                     */
+                    bool LabelSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
+
+                    /**
+                     * 每个属性同步拉取的标签值数量
+                     */
+                    uint64_t m_labelSize;
+                    bool m_labelSizeHasBeenSet;
 
                 };
             }

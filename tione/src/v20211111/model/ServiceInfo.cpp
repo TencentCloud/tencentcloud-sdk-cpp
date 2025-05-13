@@ -56,7 +56,8 @@ ServiceInfo::ServiceInfo() :
     m_terminationGracePeriodSecondsHasBeenSet(false),
     m_preStopCommandHasBeenSet(false),
     m_grpcEnableHasBeenSet(false),
-    m_healthProbeHasBeenSet(false)
+    m_healthProbeHasBeenSet(false),
+    m_rollingUpdateHasBeenSet(false)
 {
 }
 
@@ -559,6 +560,23 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_healthProbeHasBeenSet = true;
     }
 
+    if (value.HasMember("RollingUpdate") && !value["RollingUpdate"].IsNull())
+    {
+        if (!value["RollingUpdate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.RollingUpdate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rollingUpdate.Deserialize(value["RollingUpdate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rollingUpdateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -897,6 +915,15 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_healthProbe.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rollingUpdateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollingUpdate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rollingUpdate.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1476,5 +1503,21 @@ void ServiceInfo::SetHealthProbe(const HealthProbe& _healthProbe)
 bool ServiceInfo::HealthProbeHasBeenSet() const
 {
     return m_healthProbeHasBeenSet;
+}
+
+RollingUpdate ServiceInfo::GetRollingUpdate() const
+{
+    return m_rollingUpdate;
+}
+
+void ServiceInfo::SetRollingUpdate(const RollingUpdate& _rollingUpdate)
+{
+    m_rollingUpdate = _rollingUpdate;
+    m_rollingUpdateHasBeenSet = true;
+}
+
+bool ServiceInfo::RollingUpdateHasBeenSet() const
+{
+    return m_rollingUpdateHasBeenSet;
 }
 

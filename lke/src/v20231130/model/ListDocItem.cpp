@@ -52,7 +52,9 @@ ListDocItem::ListDocItem() :
     m_isAllowRetryHasBeenSet(false),
     m_processingHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_cateBizIdHasBeenSet(false)
+    m_cateBizIdHasBeenSet(false),
+    m_customerKnowledgeIdHasBeenSet(false),
+    m_attributeFlagsHasBeenSet(false)
 {
 }
 
@@ -394,6 +396,29 @@ CoreInternalOutcome ListDocItem::Deserialize(const rapidjson::Value &value)
         m_cateBizIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomerKnowledgeId") && !value["CustomerKnowledgeId"].IsNull())
+    {
+        if (!value["CustomerKnowledgeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.CustomerKnowledgeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customerKnowledgeId = string(value["CustomerKnowledgeId"].GetString());
+        m_customerKnowledgeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AttributeFlags") && !value["AttributeFlags"].IsNull())
+    {
+        if (!value["AttributeFlags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.AttributeFlags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AttributeFlags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_attributeFlags.push_back((*itr).GetUint64());
+        }
+        m_attributeFlagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -667,6 +692,27 @@ void ListDocItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CateBizId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customerKnowledgeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomerKnowledgeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customerKnowledgeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attributeFlagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttributeFlags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_attributeFlags.begin(); itr != m_attributeFlags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 }
@@ -1182,5 +1228,37 @@ void ListDocItem::SetCateBizId(const string& _cateBizId)
 bool ListDocItem::CateBizIdHasBeenSet() const
 {
     return m_cateBizIdHasBeenSet;
+}
+
+string ListDocItem::GetCustomerKnowledgeId() const
+{
+    return m_customerKnowledgeId;
+}
+
+void ListDocItem::SetCustomerKnowledgeId(const string& _customerKnowledgeId)
+{
+    m_customerKnowledgeId = _customerKnowledgeId;
+    m_customerKnowledgeIdHasBeenSet = true;
+}
+
+bool ListDocItem::CustomerKnowledgeIdHasBeenSet() const
+{
+    return m_customerKnowledgeIdHasBeenSet;
+}
+
+vector<uint64_t> ListDocItem::GetAttributeFlags() const
+{
+    return m_attributeFlags;
+}
+
+void ListDocItem::SetAttributeFlags(const vector<uint64_t>& _attributeFlags)
+{
+    m_attributeFlags = _attributeFlags;
+    m_attributeFlagsHasBeenSet = true;
+}
+
+bool ListDocItem::AttributeFlagsHasBeenSet() const
+{
+    return m_attributeFlagsHasBeenSet;
 }
 

@@ -24,7 +24,8 @@ RecognizeConfig::RecognizeConfig() :
     m_languageHasBeenSet(false),
     m_alternativeLanguageHasBeenSet(false),
     m_modelHasBeenSet(false),
-    m_translationLanguageHasBeenSet(false)
+    m_translationLanguageHasBeenSet(false),
+    m_hotWordListHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome RecognizeConfig::Deserialize(const rapidjson::Value &value)
         m_translationLanguageHasBeenSet = true;
     }
 
+    if (value.HasMember("HotWordList") && !value["HotWordList"].IsNull())
+    {
+        if (!value["HotWordList"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecognizeConfig.HotWordList` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hotWordList = string(value["HotWordList"].GetString());
+        m_hotWordListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void RecognizeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "TranslationLanguage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_translationLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hotWordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HotWordList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hotWordList.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void RecognizeConfig::SetTranslationLanguage(const string& _translationLanguage)
 bool RecognizeConfig::TranslationLanguageHasBeenSet() const
 {
     return m_translationLanguageHasBeenSet;
+}
+
+string RecognizeConfig::GetHotWordList() const
+{
+    return m_hotWordList;
+}
+
+void RecognizeConfig::SetHotWordList(const string& _hotWordList)
+{
+    m_hotWordList = _hotWordList;
+    m_hotWordListHasBeenSet = true;
+}
+
+bool RecognizeConfig::HotWordListHasBeenSet() const
+{
+    return m_hotWordListHasBeenSet;
 }
 

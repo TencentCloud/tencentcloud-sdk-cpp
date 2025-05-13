@@ -590,15 +590,15 @@ namespace TencentCloud
                     bool IsMemoryHijackingAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取0=全文索引，1=键值索引
-                     * @return LogIndexType 0=全文索引，1=键值索引
+                     * 获取CLS索引类型(0=全文索引，1=键值索引)
+                     * @return LogIndexType CLS索引类型(0=全文索引，1=键值索引)
                      * 
                      */
                     int64_t GetLogIndexType() const;
 
                     /**
-                     * 设置0=全文索引，1=键值索引
-                     * @param _logIndexType 0=全文索引，1=键值索引
+                     * 设置CLS索引类型(0=全文索引，1=键值索引)
+                     * @param _logIndexType CLS索引类型(0=全文索引，1=键值索引)
                      * 
                      */
                     void SetLogIndexType(const int64_t& _logIndexType);
@@ -611,15 +611,15 @@ namespace TencentCloud
                     bool LogIndexTypeHasBeenSet() const;
 
                     /**
-                     * 获取traceId的索引key
-                     * @return LogTraceIdKey traceId的索引key
+                     * 获取traceId的索引key: 当CLS索引类型为键值索引时生效
+                     * @return LogTraceIdKey traceId的索引key: 当CLS索引类型为键值索引时生效
                      * 
                      */
                     std::string GetLogTraceIdKey() const;
 
                     /**
-                     * 设置traceId的索引key
-                     * @param _logTraceIdKey traceId的索引key
+                     * 设置traceId的索引key: 当CLS索引类型为键值索引时生效
+                     * @param _logTraceIdKey traceId的索引key: 当CLS索引类型为键值索引时生效
                      * 
                      */
                     void SetLogTraceIdKey(const std::string& _logTraceIdKey);
@@ -790,13 +790,13 @@ namespace TencentCloud
                     bool m_isMemoryHijackingAnalysisHasBeenSet;
 
                     /**
-                     * 0=全文索引，1=键值索引
+                     * CLS索引类型(0=全文索引，1=键值索引)
                      */
                     int64_t m_logIndexType;
                     bool m_logIndexTypeHasBeenSet;
 
                     /**
-                     * traceId的索引key
+                     * traceId的索引key: 当CLS索引类型为键值索引时生效
                      */
                     std::string m_logTraceIdKey;
                     bool m_logTraceIdKeyHasBeenSet;

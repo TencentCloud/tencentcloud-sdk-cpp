@@ -21,7 +21,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 HTTPGetAction::HTTPGetAction() :
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome HTTPGetAction::Deserialize(const rapidjson::Value &value)
         m_pathHasBeenSet = true;
     }
 
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPGetAction.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = value["Port"].GetInt64();
+        m_portHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void HTTPGetAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_port, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void HTTPGetAction::SetPath(const string& _path)
 bool HTTPGetAction::PathHasBeenSet() const
 {
     return m_pathHasBeenSet;
+}
+
+int64_t HTTPGetAction::GetPort() const
+{
+    return m_port;
+}
+
+void HTTPGetAction::SetPort(const int64_t& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool HTTPGetAction::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
 }
 

@@ -135,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Cookie校验和会话行为分析。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlgDetectSession Cookie校验和会话行为分析。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AlgDetectSession GetAlgDetectSession() const;
 
                     /**
                      * 设置Cookie校验和会话行为分析。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _algDetectSession Cookie校验和会话行为分析。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlgDetectSession(const AlgDetectSession& _algDetectSession);
@@ -228,7 +224,6 @@ namespace TencentCloud
 
                     /**
                      * Cookie校验和会话行为分析。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AlgDetectSession m_algDetectSession;
                     bool m_algDetectSessionHasBeenSet;

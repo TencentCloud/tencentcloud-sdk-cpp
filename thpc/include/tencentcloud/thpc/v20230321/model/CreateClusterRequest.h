@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool ComputeNodeCountHasBeenSet() const;
 
                     /**
-                     * 获取调度器类型。默认取值：SLURM。<li>SGE：SGE调度器。</li><li>SLURM：SLURM调度器。</li>
-                     * @return SchedulerType 调度器类型。默认取值：SLURM。<li>SGE：SGE调度器。</li><li>SLURM：SLURM调度器。</li>
+                     * 获取调度器类型。默认取值：SLURM。<li>SLURM：SLURM调度器。</li>
+                     * @return SchedulerType 调度器类型。默认取值：SLURM。<li>SLURM：SLURM调度器。</li>
                      * 
                      */
                     std::string GetSchedulerType() const;
 
                     /**
-                     * 设置调度器类型。默认取值：SLURM。<li>SGE：SGE调度器。</li><li>SLURM：SLURM调度器。</li>
-                     * @param _schedulerType 调度器类型。默认取值：SLURM。<li>SGE：SGE调度器。</li><li>SLURM：SLURM调度器。</li>
+                     * 设置调度器类型。默认取值：SLURM。<li>SLURM：SLURM调度器。</li>
+                     * @param _schedulerType 调度器类型。默认取值：SLURM。<li>SLURM：SLURM调度器。</li>
                      * 
                      */
                     void SetSchedulerType(const std::string& _schedulerType);
@@ -181,11 +181,9 @@ namespace TencentCloud
                      * 获取创建调度器的版本号，可填写版本号为“latest” 和 各调度器支持的版本号；如果是"latest", 则代表创建的是平台当前支持的该类型调度器最新版本。如果不填写，默认创建的是“latest”版本调度器
 各调度器支持的集群版本：
 <li>SLURM：21.08.8、23.11.7</li>
-<li>SGE：     8.1.9</li>
                      * @return SchedulerVersion 创建调度器的版本号，可填写版本号为“latest” 和 各调度器支持的版本号；如果是"latest", 则代表创建的是平台当前支持的该类型调度器最新版本。如果不填写，默认创建的是“latest”版本调度器
 各调度器支持的集群版本：
 <li>SLURM：21.08.8、23.11.7</li>
-<li>SGE：     8.1.9</li>
                      * 
                      */
                     std::string GetSchedulerVersion() const;
@@ -194,11 +192,9 @@ namespace TencentCloud
                      * 设置创建调度器的版本号，可填写版本号为“latest” 和 各调度器支持的版本号；如果是"latest", 则代表创建的是平台当前支持的该类型调度器最新版本。如果不填写，默认创建的是“latest”版本调度器
 各调度器支持的集群版本：
 <li>SLURM：21.08.8、23.11.7</li>
-<li>SGE：     8.1.9</li>
                      * @param _schedulerVersion 创建调度器的版本号，可填写版本号为“latest” 和 各调度器支持的版本号；如果是"latest", 则代表创建的是平台当前支持的该类型调度器最新版本。如果不填写，默认创建的是“latest”版本调度器
 各调度器支持的集群版本：
 <li>SLURM：21.08.8、23.11.7</li>
-<li>SGE：     8.1.9</li>
                      * 
                      */
                     void SetSchedulerVersion(const std::string& _schedulerVersion);
@@ -578,7 +574,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_computeNodeCountHasBeenSet;
 
                     /**
-                     * 调度器类型。默认取值：SLURM。<li>SGE：SGE调度器。</li><li>SLURM：SLURM调度器。</li>
+                     * 调度器类型。默认取值：SLURM。<li>SLURM：SLURM调度器。</li>
                      */
                     std::string m_schedulerType;
                     bool m_schedulerTypeHasBeenSet;
@@ -587,7 +583,6 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      * 创建调度器的版本号，可填写版本号为“latest” 和 各调度器支持的版本号；如果是"latest", 则代表创建的是平台当前支持的该类型调度器最新版本。如果不填写，默认创建的是“latest”版本调度器
 各调度器支持的集群版本：
 <li>SLURM：21.08.8、23.11.7</li>
-<li>SGE：     8.1.9</li>
                      */
                     std::string m_schedulerVersion;
                     bool m_schedulerVersionHasBeenSet;
