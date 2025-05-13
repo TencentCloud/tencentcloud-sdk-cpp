@@ -11,7 +11,7 @@ rm -rf $FT_BUILD_DIR
 mkdir $FT_BUILD_DIR
 cd $FT_BUILD_DIR
 cmake -DBUILD_FUNCTION_TESTS=ON ..
-$MAKE core cvm cbs cvm_ft cbs_ft
+$MAKE core cvm cbs core_ft cvm_ft cbs_ft
 
 echo '------- run function test -----------'
 

@@ -25,7 +25,9 @@ HttpProfile::HttpProfile() :
     m_protocol(HttpProfile::Scheme::HTTPS),
     m_reqTimeout(TM_MINUTE_SECOND),
     m_connectTimeout(TM_MINUTE_SECOND),
-    m_keepAlive(false)
+    m_keepAlive(false),
+    m_caInfo(""),
+    m_caPath("")
 {
 }
 
@@ -81,4 +83,24 @@ void HttpProfile::SetKeepAlive(bool flag)
 bool HttpProfile::IsKeepAlive() const
 {
     return m_keepAlive;
+}
+
+void HttpProfile::SetCaInfo(std::string caInfo)
+{
+    m_caInfo = caInfo;
+}
+
+std::string HttpProfile::GetCaInfo() const
+{
+    return m_caInfo;
+}
+
+void HttpProfile::SetCaPath(std::string caPath)
+{
+    m_caPath = caPath;
+}
+
+std::string HttpProfile::GetCaPath() const
+{
+    return m_caPath;
 }

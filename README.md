@@ -234,10 +234,14 @@ int main()
     httpProfile.SetReqTimeout(30);  // 请求超时时间，单位为秒(默认60秒)
     httpProfile.SetConnectTimeout(30); // 响应超时时间，单位是秒(默认是60秒)
 
+    // 使用SSL默认CA证书的，无需调用SetCaInfo和SetCaPath
+    // httpProfile.SetCaInfo("/etc/pki/tls/certs/ca-bundle.crt"); // 如果指定了CA文件，设置的CaPath不会生效，请求会使用CaInfo设置的CA证书
+    // httpProfile.SetCaPath("/etc/pki/tls/"); // 未指定CaInfo的情况下，使用CaPath路径下的CA证书
+
     ClientProfile clientProfile = ClientProfile(httpProfile);
 
     DescribeInstancesRequest req = DescribeInstancesRequest();
-   
+
     Filter respFilter;
     respFilter.SetName("zone");
     respFilter.SetValues({ "ap-guangzhou-1", "ap-guangzhou-2" });
