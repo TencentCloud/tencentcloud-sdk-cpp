@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool ComputeNodeCountHasBeenSet() const;
 
                     /**
-                     * 获取调度器类型。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
-                     * @return SchedulerType 调度器类型。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
+                     * 获取调度器类型。<br><li>SLURM：SLURM调度器。</li>
+                     * @return SchedulerType 调度器类型。<br><li>SLURM：SLURM调度器。</li>
                      * 
                      */
                     std::string GetSchedulerType() const;
 
                     /**
-                     * 设置调度器类型。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
-                     * @param _schedulerType 调度器类型。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
+                     * 设置调度器类型。<br><li>SLURM：SLURM调度器。</li>
+                     * @param _schedulerType 调度器类型。<br><li>SLURM：SLURM调度器。</li>
                      * 
                      */
                     void SetSchedulerType(const std::string& _schedulerType);
@@ -485,7 +485,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_computeNodeCountHasBeenSet;
 
                     /**
-                     * 调度器类型。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
+                     * 调度器类型。<br><li>SLURM：SLURM调度器。</li>
                      */
                     std::string m_schedulerType;
                     bool m_schedulerTypeHasBeenSet;

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ComputeNodeInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取计算节点状态
-                     * @return ComputeNodeState 计算节点状态
+                     * 获取计算节点状态。取值范围：<br><li>PENDING：表示创建中</li><li>SUBMITTED：表示已提交创建</li><li>CREATING：表示创建中</li><li>CREATED：表示创建完成</li><li>CREATION_FAILED：表示创建失败。</li><li>RUNNING：表示运行中。</li><li>ABNORMAL：表示节点异常。</li><li>DELETING：表示删除中。</li>
+                     * @return ComputeNodeState 计算节点状态。取值范围：<br><li>PENDING：表示创建中</li><li>SUBMITTED：表示已提交创建</li><li>CREATING：表示创建中</li><li>CREATED：表示创建完成</li><li>CREATION_FAILED：表示创建失败。</li><li>RUNNING：表示运行中。</li><li>ABNORMAL：表示节点异常。</li><li>DELETING：表示删除中。</li>
                      * 
                      */
                     std::string GetComputeNodeState() const;
 
                     /**
-                     * 设置计算节点状态
-                     * @param _computeNodeState 计算节点状态
+                     * 设置计算节点状态。取值范围：<br><li>PENDING：表示创建中</li><li>SUBMITTED：表示已提交创建</li><li>CREATING：表示创建中</li><li>CREATED：表示创建完成</li><li>CREATION_FAILED：表示创建失败。</li><li>RUNNING：表示运行中。</li><li>ABNORMAL：表示节点异常。</li><li>DELETING：表示删除中。</li>
+                     * @param _computeNodeState 计算节点状态。取值范围：<br><li>PENDING：表示创建中</li><li>SUBMITTED：表示已提交创建</li><li>CREATING：表示创建中</li><li>CREATED：表示创建完成</li><li>CREATION_FAILED：表示创建失败。</li><li>RUNNING：表示运行中。</li><li>ABNORMAL：表示节点异常。</li><li>DELETING：表示删除中。</li>
                      * 
                      */
                     void SetComputeNodeState(const std::string& _computeNodeState);
@@ -317,7 +317,7 @@ USER_ATTACHED：用户添加到计算环境中的实例资源。
                     bool m_computeNodeInstanceIdHasBeenSet;
 
                     /**
-                     * 计算节点状态
+                     * 计算节点状态。取值范围：<br><li>PENDING：表示创建中</li><li>SUBMITTED：表示已提交创建</li><li>CREATING：表示创建中</li><li>CREATED：表示创建完成</li><li>CREATION_FAILED：表示创建失败。</li><li>RUNNING：表示运行中。</li><li>ABNORMAL：表示节点异常。</li><li>DELETING：表示删除中。</li>
                      */
                     std::string m_computeNodeState;
                     bool m_computeNodeStateHasBeenSet;

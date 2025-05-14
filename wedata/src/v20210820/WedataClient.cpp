@@ -7780,6 +7780,49 @@ WedataClient::DescribeTaskTableMetricOverviewOutcomeCallable WedataClient::Descr
     return task->get_future();
 }
 
+WedataClient::DescribeTaskTemplatesOutcome WedataClient::DescribeTaskTemplates(const DescribeTaskTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskTemplatesResponse rsp = DescribeTaskTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskTemplatesOutcome(rsp);
+        else
+            return DescribeTaskTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeTaskTemplatesAsync(const DescribeTaskTemplatesRequest& request, const DescribeTaskTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeTaskTemplatesOutcomeCallable WedataClient::DescribeTaskTemplatesCallable(const DescribeTaskTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeTasksForCodeTemplateOutcome WedataClient::DescribeTasksForCodeTemplate(const DescribeTasksForCodeTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTasksForCodeTemplate");
@@ -8332,6 +8375,49 @@ WedataClient::DiagnoseProOutcomeCallable WedataClient::DiagnoseProCallable(const
         [this, request]()
         {
             return this->DiagnosePro(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DownloadLogByLineOutcome WedataClient::DownloadLogByLine(const DownloadLogByLineRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadLogByLine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadLogByLineResponse rsp = DownloadLogByLineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadLogByLineOutcome(rsp);
+        else
+            return DownloadLogByLineOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadLogByLineOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DownloadLogByLineAsync(const DownloadLogByLineRequest& request, const DownloadLogByLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadLogByLine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DownloadLogByLineOutcomeCallable WedataClient::DownloadLogByLineCallable(const DownloadLogByLineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadLogByLineOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadLogByLine(request);
         }
     );
 

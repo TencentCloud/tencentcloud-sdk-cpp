@@ -1021,6 +1021,27 @@ namespace TencentCloud
                      */
                     bool MajorEventsProPkgHasBeenSet() const;
 
+                    /**
+                     * 获取1是基础2025版本；0不是
+                     * @return BasicFlag 1是基础2025版本；0不是
+                     * 
+                     */
+                    uint64_t GetBasicFlag() const;
+
+                    /**
+                     * 设置1是基础2025版本；0不是
+                     * @param _basicFlag 1是基础2025版本；0不是
+                     * 
+                     */
+                    void SetBasicFlag(const uint64_t& _basicFlag);
+
+                    /**
+                     * 判断参数 BasicFlag 是否已赋值
+                     * @return BasicFlag 是否已赋值
+                     * 
+                     */
+                    bool BasicFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1296,6 +1317,12 @@ namespace TencentCloud
                      */
                     MajorEventsProPkg m_majorEventsProPkg;
                     bool m_majorEventsProPkgHasBeenSet;
+
+                    /**
+                     * 1是基础2025版本；0不是
+                     */
+                    uint64_t m_basicFlag;
+                    bool m_basicFlagHasBeenSet;
 
                 };
             }

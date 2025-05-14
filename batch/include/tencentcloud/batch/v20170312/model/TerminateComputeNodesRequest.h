@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计算环境ID
-                     * @return EnvId 计算环境ID
+                     * 获取计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * @return EnvId 计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置计算环境ID
-                     * @param _envId 计算环境ID
+                     * 设置计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * @param _envId 计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取计算节点ID列表
-                     * @return ComputeNodeIds 计算节点ID列表
+                     * 获取计算节点ID列表，最大数量上限100，节点ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * @return ComputeNodeIds 计算节点ID列表，最大数量上限100，节点ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      * 
                      */
                     std::vector<std::string> GetComputeNodeIds() const;
 
                     /**
-                     * 设置计算节点ID列表
-                     * @param _computeNodeIds 计算节点ID列表
+                     * 设置计算节点ID列表，最大数量上限100，节点ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * @param _computeNodeIds 计算节点ID列表，最大数量上限100，节点ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      * 
                      */
                     void SetComputeNodeIds(const std::vector<std::string>& _computeNodeIds);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计算环境ID
+                     * 计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 计算节点ID列表
+                     * 计算节点ID列表，最大数量上限100，节点ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      */
                     std::vector<std::string> m_computeNodeIds;
                     bool m_computeNodeIdsHasBeenSet;

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡所在地域。
-                     * @return LoadBalancerRegion 负载均衡所在地域。
+                     * 获取负载均衡所在地域，可以通过 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询获取。
+                     * @return LoadBalancerRegion 负载均衡所在地域，可以通过 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询获取。
                      * 
                      */
                     std::string GetLoadBalancerRegion() const;
 
                     /**
-                     * 设置负载均衡所在地域。
-                     * @param _loadBalancerRegion 负载均衡所在地域。
+                     * 设置负载均衡所在地域，可以通过 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询获取。
+                     * @param _loadBalancerRegion 负载均衡所在地域，可以通过 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询获取。
                      * 
                      */
                     void SetLoadBalancerRegion(const std::string& _loadBalancerRegion);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 负载均衡所在地域。
+                     * 负载均衡所在地域，可以通过 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询获取。
                      */
                     std::string m_loadBalancerRegion;
                     bool m_loadBalancerRegionHasBeenSet;

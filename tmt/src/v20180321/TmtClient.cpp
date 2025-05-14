@@ -169,6 +169,49 @@ TmtClient::ImageTranslateOutcomeCallable TmtClient::ImageTranslateCallable(const
     return task->get_future();
 }
 
+TmtClient::ImageTranslateLLMOutcome TmtClient::ImageTranslateLLM(const ImageTranslateLLMRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImageTranslateLLM");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImageTranslateLLMResponse rsp = ImageTranslateLLMResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImageTranslateLLMOutcome(rsp);
+        else
+            return ImageTranslateLLMOutcome(o.GetError());
+    }
+    else
+    {
+        return ImageTranslateLLMOutcome(outcome.GetError());
+    }
+}
+
+void TmtClient::ImageTranslateLLMAsync(const ImageTranslateLLMRequest& request, const ImageTranslateLLMAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImageTranslateLLM(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TmtClient::ImageTranslateLLMOutcomeCallable TmtClient::ImageTranslateLLMCallable(const ImageTranslateLLMRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImageTranslateLLMOutcome()>>(
+        [this, request]()
+        {
+            return this->ImageTranslateLLM(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TmtClient::LanguageDetectOutcome TmtClient::LanguageDetect(const LanguageDetectRequest &request)
 {
     auto outcome = MakeRequest(request, "LanguageDetect");

@@ -128,6 +128,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/Tag.h
   include/tencentcloud/thpc/v20230321/model/GooseFSOption.h
   include/tencentcloud/thpc/v20230321/model/StorageOptionOverview.h
+  include/tencentcloud/thpc/v20230321/model/ModifyWorkspacesRenewFlagRequest.h
   include/tencentcloud/thpc/v20230321/model/AddNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/DescribeAutoScalingConfigurationResponse.h
   include/tencentcloud/thpc/v20230321/model/DescribeClustersRequest.h
@@ -137,6 +138,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/DescribeWorkspacesRequest.h
   include/tencentcloud/thpc/v20230321/model/AddQueueRequest.h
   include/tencentcloud/thpc/v20230321/model/QueueConfigOverview.h
+  include/tencentcloud/thpc/v20230321/model/ModifyWorkspacesRenewFlagResponse.h
   include/tencentcloud/thpc/v20230321/model/Placement.h
   include/tencentcloud/thpc/v20230321/model/DescribeNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/GooseFSOptionOverview.h
@@ -313,6 +315,7 @@ set(thpc_src
   src/v20230321/model/Tag.cpp
   src/v20230321/model/GooseFSOption.cpp
   src/v20230321/model/StorageOptionOverview.cpp
+  src/v20230321/model/ModifyWorkspacesRenewFlagRequest.cpp
   src/v20230321/model/AddNodesResponse.cpp
   src/v20230321/model/DescribeAutoScalingConfigurationResponse.cpp
   src/v20230321/model/DescribeClustersRequest.cpp
@@ -322,6 +325,7 @@ set(thpc_src
   src/v20230321/model/DescribeWorkspacesRequest.cpp
   src/v20230321/model/AddQueueRequest.cpp
   src/v20230321/model/QueueConfigOverview.cpp
+  src/v20230321/model/ModifyWorkspacesRenewFlagResponse.cpp
   src/v20230321/model/Placement.cpp
   src/v20230321/model/DescribeNodesResponse.cpp
   src/v20230321/model/GooseFSOptionOverview.cpp

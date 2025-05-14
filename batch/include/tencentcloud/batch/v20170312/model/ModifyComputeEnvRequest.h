@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计算环境ID
-                     * @return EnvId 计算环境ID
+                     * 获取计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * @return EnvId 计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置计算环境ID
-                     * @param _envId 计算环境ID
+                     * 设置计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * @param _envId 计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取计算节点期望个数
-                     * @return DesiredComputeNodeCount 计算节点期望个数
+                     * 获取计算节点期望个数，最大上限2000。
+                     * @return DesiredComputeNodeCount 计算节点期望个数，最大上限2000。
                      * 
                      */
                     int64_t GetDesiredComputeNodeCount() const;
 
                     /**
-                     * 设置计算节点期望个数
-                     * @param _desiredComputeNodeCount 计算节点期望个数
+                     * 设置计算节点期望个数，最大上限2000。
+                     * @param _desiredComputeNodeCount 计算节点期望个数，最大上限2000。
                      * 
                      */
                     void SetDesiredComputeNodeCount(const int64_t& _desiredComputeNodeCount);
@@ -151,13 +151,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计算环境ID
+                     * 计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 计算节点期望个数
+                     * 计算节点期望个数，最大上限2000。
                      */
                     int64_t m_desiredComputeNodeCount;
                     bool m_desiredComputeNodeCountHasBeenSet;

@@ -64,7 +64,8 @@ InstanceInfo::InstanceInfo() :
     m_freeDelayFlagHasBeenSet(false),
     m_last3MaxQPSHasBeenSet(false),
     m_last3MaxBandwidthHasBeenSet(false),
-    m_majorEventsProPkgHasBeenSet(false)
+    m_majorEventsProPkgHasBeenSet(false),
+    m_basicFlagHasBeenSet(false)
 {
 }
 
@@ -590,6 +591,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_majorEventsProPkgHasBeenSet = true;
     }
 
+    if (value.HasMember("BasicFlag") && !value["BasicFlag"].IsNull())
+    {
+        if (!value["BasicFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.BasicFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_basicFlag = value["BasicFlag"].GetUint64();
+        m_basicFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -958,6 +969,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_majorEventsProPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_basicFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BasicFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_basicFlag, allocator);
     }
 
 }
@@ -1665,5 +1684,21 @@ void InstanceInfo::SetMajorEventsProPkg(const MajorEventsProPkg& _majorEventsPro
 bool InstanceInfo::MajorEventsProPkgHasBeenSet() const
 {
     return m_majorEventsProPkgHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetBasicFlag() const
+{
+    return m_basicFlag;
+}
+
+void InstanceInfo::SetBasicFlag(const uint64_t& _basicFlag)
+{
+    m_basicFlag = _basicFlag;
+    m_basicFlagHasBeenSet = true;
+}
+
+bool InstanceInfo::BasicFlagHasBeenSet() const
+{
+    return m_basicFlagHasBeenSet;
 }
 

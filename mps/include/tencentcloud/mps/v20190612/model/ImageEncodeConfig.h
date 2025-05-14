@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片格式，取值范围：JPG、BMP、GIF、PNG、WebP，缺省为原图格式。
+                     * 获取图片格式，取值范围：JPEG、PNG、BMP、WebP，缺省为原图格式。不支持动画。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Format 图片格式，取值范围：JPG、BMP、GIF、PNG、WebP，缺省为原图格式。
+                     * @return Format 图片格式，取值范围：JPEG、PNG、BMP、WebP，缺省为原图格式。不支持动画。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置图片格式，取值范围：JPG、BMP、GIF、PNG、WebP，缺省为原图格式。
+                     * 设置图片格式，取值范围：JPEG、PNG、BMP、WebP，缺省为原图格式。不支持动画。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _format 图片格式，取值范围：JPG、BMP、GIF、PNG、WebP，缺省为原图格式。
+                     * @param _format 图片格式，取值范围：JPEG、PNG、BMP、WebP，缺省为原图格式。不支持动画。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片格式，取值范围：JPG、BMP、GIF、PNG、WebP，缺省为原图格式。
+                     * 图片格式，取值范围：JPEG、PNG、BMP、WebP，缺省为原图格式。不支持动画。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_format;

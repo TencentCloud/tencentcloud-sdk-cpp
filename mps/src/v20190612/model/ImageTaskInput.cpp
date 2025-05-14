@@ -22,7 +22,8 @@ using namespace std;
 
 ImageTaskInput::ImageTaskInput() :
     m_encodeConfigHasBeenSet(false),
-    m_enhanceConfigHasBeenSet(false)
+    m_enhanceConfigHasBeenSet(false),
+    m_eraseConfigHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,23 @@ CoreInternalOutcome ImageTaskInput::Deserialize(const rapidjson::Value &value)
         m_enhanceConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("EraseConfig") && !value["EraseConfig"].IsNull())
+    {
+        if (!value["EraseConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.EraseConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_eraseConfig.Deserialize(value["EraseConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_eraseConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ void ImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enhanceConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_eraseConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EraseConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eraseConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +150,21 @@ void ImageTaskInput::SetEnhanceConfig(const ImageEnhanceConfig& _enhanceConfig)
 bool ImageTaskInput::EnhanceConfigHasBeenSet() const
 {
     return m_enhanceConfigHasBeenSet;
+}
+
+ImageEraseConfig ImageTaskInput::GetEraseConfig() const
+{
+    return m_eraseConfig;
+}
+
+void ImageTaskInput::SetEraseConfig(const ImageEraseConfig& _eraseConfig)
+{
+    m_eraseConfig = _eraseConfig;
+    m_eraseConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::EraseConfigHasBeenSet() const
+{
+    return m_eraseConfigHasBeenSet;
 }
 

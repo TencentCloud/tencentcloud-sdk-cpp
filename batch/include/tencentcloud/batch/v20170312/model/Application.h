@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool DeliveryFormHasBeenSet() const;
 
                     /**
-                     * 获取任务执行命令。与Commands不能同时指定。
-                     * @return Command 任务执行命令。与Commands不能同时指定。
+                     * 获取松耦合任务执行命令。与Commands不能同时指定，一般使用Command字段提交任务。
+                     * @return Command 松耦合任务执行命令。与Commands不能同时指定，一般使用Command字段提交任务。
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置任务执行命令。与Commands不能同时指定。
-                     * @param _command 任务执行命令。与Commands不能同时指定。
+                     * 设置松耦合任务执行命令。与Commands不能同时指定，一般使用Command字段提交任务。
+                     * @param _command 松耦合任务执行命令。与Commands不能同时指定，一般使用Command字段提交任务。
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool DockerHasBeenSet() const;
 
                     /**
-                     * 获取任务执行命令信息。与Command不能同时指定。
-                     * @return Commands 任务执行命令信息。与Command不能同时指定。
+                     * 获取紧耦合任务执行命令信息。与Command不能同时指定。Command和Commands必须指定一个。
+                     * @return Commands 紧耦合任务执行命令信息。与Command不能同时指定。Command和Commands必须指定一个。
                      * 
                      */
                     std::vector<CommandLine> GetCommands() const;
 
                     /**
-                     * 设置任务执行命令信息。与Command不能同时指定。
-                     * @param _commands 任务执行命令信息。与Command不能同时指定。
+                     * 设置紧耦合任务执行命令信息。与Command不能同时指定。Command和Commands必须指定一个。
+                     * @param _commands 紧耦合任务执行命令信息。与Command不能同时指定。Command和Commands必须指定一个。
                      * 
                      */
                     void SetCommands(const std::vector<CommandLine>& _commands);
@@ -162,7 +162,7 @@ namespace TencentCloud
                     bool m_deliveryFormHasBeenSet;
 
                     /**
-                     * 任务执行命令。与Commands不能同时指定。
+                     * 松耦合任务执行命令。与Commands不能同时指定，一般使用Command字段提交任务。
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
@@ -180,7 +180,7 @@ namespace TencentCloud
                     bool m_dockerHasBeenSet;
 
                     /**
-                     * 任务执行命令信息。与Command不能同时指定。
+                     * 紧耦合任务执行命令信息。与Command不能同时指定。Command和Commands必须指定一个。
                      */
                     std::vector<CommandLine> m_commands;
                     bool m_commandsHasBeenSet;

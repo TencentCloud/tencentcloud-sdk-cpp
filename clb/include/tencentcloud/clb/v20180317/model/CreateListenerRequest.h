@@ -452,15 +452,19 @@ namespace TencentCloud
                     bool IdleConnectTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SNAT，True（开启）、False（关闭）
-                     * @return SnatEnable 是否开启SNAT，True（开启）、False（关闭）
+                     * 获取是否开启SNAT，True（开启）、False（关闭）。
+默认为关闭。
+                     * @return SnatEnable 是否开启SNAT，True（开启）、False（关闭）。
+默认为关闭。
                      * 
                      */
                     bool GetSnatEnable() const;
 
                     /**
-                     * 设置是否开启SNAT，True（开启）、False（关闭）
-                     * @param _snatEnable 是否开启SNAT，True（开启）、False（关闭）
+                     * 设置是否开启SNAT，True（开启）、False（关闭）。
+默认为关闭。
+                     * @param _snatEnable 是否开启SNAT，True（开启）、False（关闭）。
+默认为关闭。
                      * 
                      */
                     void SetSnatEnable(const bool& _snatEnable);
@@ -494,15 +498,19 @@ namespace TencentCloud
                     bool FullEndPortsHasBeenSet() const;
 
                     /**
-                     * 获取内网http监听器开启h2c开关，True（开启）、False（关闭）
-                     * @return H2cSwitch 内网http监听器开启h2c开关，True（开启）、False（关闭）
+                     * 获取内网http监听器开启h2c开关，True（开启）、False（关闭）。
+默认为关闭。
+                     * @return H2cSwitch 内网http监听器开启h2c开关，True（开启）、False（关闭）。
+默认为关闭。
                      * 
                      */
                     bool GetH2cSwitch() const;
 
                     /**
-                     * 设置内网http监听器开启h2c开关，True（开启）、False（关闭）
-                     * @param _h2cSwitch 内网http监听器开启h2c开关，True（开启）、False（关闭）
+                     * 设置内网http监听器开启h2c开关，True（开启）、False（关闭）。
+默认为关闭。
+                     * @param _h2cSwitch 内网http监听器开启h2c开关，True（开启）、False（关闭）。
+默认为关闭。
                      * 
                      */
                     void SetH2cSwitch(const bool& _h2cSwitch);
@@ -515,15 +523,19 @@ namespace TencentCloud
                     bool H2cSwitchHasBeenSet() const;
 
                     /**
-                     * 获取TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）
-                     * @return SslCloseSwitch TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）
+                     * 获取TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）.
+默认为关闭。
+                     * @return SslCloseSwitch TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）.
+默认为关闭。
                      * 
                      */
                     bool GetSslCloseSwitch() const;
 
                     /**
-                     * 设置TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）
-                     * @param _sslCloseSwitch TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）
+                     * 设置TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）.
+默认为关闭。
+                     * @param _sslCloseSwitch TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）.
+默认为关闭。
                      * 
                      */
                     void SetSslCloseSwitch(const bool& _sslCloseSwitch);
@@ -674,7 +686,8 @@ namespace TencentCloud
                     bool m_idleConnectTimeoutHasBeenSet;
 
                     /**
-                     * 是否开启SNAT，True（开启）、False（关闭）
+                     * 是否开启SNAT，True（开启）、False（关闭）。
+默认为关闭。
                      */
                     bool m_snatEnable;
                     bool m_snatEnableHasBeenSet;
@@ -686,13 +699,15 @@ namespace TencentCloud
                     bool m_fullEndPortsHasBeenSet;
 
                     /**
-                     * 内网http监听器开启h2c开关，True（开启）、False（关闭）
+                     * 内网http监听器开启h2c开关，True（开启）、False（关闭）。
+默认为关闭。
                      */
                     bool m_h2cSwitch;
                     bool m_h2cSwitchHasBeenSet;
 
                     /**
-                     * TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）
+                     * TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）.
+默认为关闭。
                      */
                     bool m_sslCloseSwitch;
                     bool m_sslCloseSwitchHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业ID
-                     * @return JobId 作业ID
+                     * 获取作业ID；详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。
+                     * @return JobId 作业ID；详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业ID
-                     * @param _jobId 作业ID
+                     * 设置作业ID；详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。
+                     * @param _jobId 作业ID；详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return TaskName 任务名称
+                     * 获取任务名称；详见[作业提交信息](https://cloud.tencent.com/document/product/599/15910)
+                     * @return TaskName 任务名称；详见[作业提交信息](https://cloud.tencent.com/document/product/599/15910)
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _taskName 任务名称
+                     * 设置任务名称；详见[作业提交信息](https://cloud.tencent.com/document/product/599/15910)
+                     * @param _taskName 任务名称；详见[作业提交信息](https://cloud.tencent.com/document/product/599/15910)
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -108,13 +108,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 作业ID
+                     * 作业ID；详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * 任务名称；详见[作业提交信息](https://cloud.tencent.com/document/product/599/15910)
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;

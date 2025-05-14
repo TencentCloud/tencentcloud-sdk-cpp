@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业标识
-                     * @return JobId 作业标识
+                     * 获取作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
+                     * @return JobId 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业标识
-                     * @param _jobId 作业标识
+                     * 设置作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
+                     * @param _jobId 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 作业标识
+                     * 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

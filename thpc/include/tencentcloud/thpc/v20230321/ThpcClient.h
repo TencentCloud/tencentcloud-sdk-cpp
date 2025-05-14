@@ -65,6 +65,8 @@
 #include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeRequest.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeResponse.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesRenewFlagRequest.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesRenewFlagResponse.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationRequest.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationResponse.h>
 #include <tencentcloud/thpc/v20230321/model/TerminateWorkspacesRequest.h>
@@ -146,6 +148,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWorkspacesAttributeResponse> ModifyWorkspacesAttributeOutcome;
                 typedef std::future<ModifyWorkspacesAttributeOutcome> ModifyWorkspacesAttributeOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::ModifyWorkspacesAttributeRequest&, ModifyWorkspacesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkspacesAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyWorkspacesRenewFlagResponse> ModifyWorkspacesRenewFlagOutcome;
+                typedef std::future<ModifyWorkspacesRenewFlagOutcome> ModifyWorkspacesRenewFlagOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::ModifyWorkspacesRenewFlagRequest&, ModifyWorkspacesRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkspacesRenewFlagAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetAutoScalingConfigurationResponse> SetAutoScalingConfigurationOutcome;
                 typedef std::future<SetAutoScalingConfigurationOutcome> SetAutoScalingConfigurationOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::SetAutoScalingConfigurationRequest&, SetAutoScalingConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoScalingConfigurationAsyncHandler;
@@ -350,6 +355,15 @@ namespace TencentCloud
                 ModifyWorkspacesAttributeOutcome ModifyWorkspacesAttribute(const Model::ModifyWorkspacesAttributeRequest &request);
                 void ModifyWorkspacesAttributeAsync(const Model::ModifyWorkspacesAttributeRequest& request, const ModifyWorkspacesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyWorkspacesAttributeOutcomeCallable ModifyWorkspacesAttributeCallable(const Model::ModifyWorkspacesAttributeRequest& request);
+
+                /**
+                 *本接口 (ModifyWorkspacesAttribute) 用于修改工作空间的属性（目前只支持修改工作空间的名称）。
+                 * @param req ModifyWorkspacesRenewFlagRequest
+                 * @return ModifyWorkspacesRenewFlagOutcome
+                 */
+                ModifyWorkspacesRenewFlagOutcome ModifyWorkspacesRenewFlag(const Model::ModifyWorkspacesRenewFlagRequest &request);
+                void ModifyWorkspacesRenewFlagAsync(const Model::ModifyWorkspacesRenewFlagRequest& request, const ModifyWorkspacesRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWorkspacesRenewFlagOutcomeCallable ModifyWorkspacesRenewFlagCallable(const Model::ModifyWorkspacesRenewFlagRequest& request);
 
                 /**
                  *本接口(SetAutoScalingConfiguration)用于为集群设置集群弹性伸缩配置信息。

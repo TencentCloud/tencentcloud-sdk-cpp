@@ -45,7 +45,11 @@ namespace TencentCloud
 
                     /**
                      * 获取是否需要额外支付
+true: 需要额外支付
+false: 不需要额外支付
                      * @return IsNeedPay 是否需要额外支付
+true: 需要额外支付
+false: 不需要额外支付
                      * 
                      */
                     bool GetIsNeedPay() const;
@@ -58,8 +62,10 @@ namespace TencentCloud
                     bool IsNeedPayHasBeenSet() const;
 
                     /**
-                     * 获取计费请求参数，以类Json字符串的形式进行返回。用于计费下单
-                     * @return BillingParam 计费请求参数，以类Json字符串的形式进行返回。用于计费下单
+                     * 获取计费请求参数，以类Json字符串的形式进行返回。json字符串前有一个">"特定标识符号，去掉标识符的字符串可用于计费下单
+
+                     * @return BillingParam 计费请求参数，以类Json字符串的形式进行返回。json字符串前有一个">"特定标识符号，去掉标识符的字符串可用于计费下单
+
                      * 
                      */
                     std::string GetBillingParam() const;
@@ -75,12 +81,15 @@ namespace TencentCloud
 
                     /**
                      * 是否需要额外支付
+true: 需要额外支付
+false: 不需要额外支付
                      */
                     bool m_isNeedPay;
                     bool m_isNeedPayHasBeenSet;
 
                     /**
-                     * 计费请求参数，以类Json字符串的形式进行返回。用于计费下单
+                     * 计费请求参数，以类Json字符串的形式进行返回。json字符串前有一个">"特定标识符号，去掉标识符的字符串可用于计费下单
+
                      */
                     std::string m_billingParam;
                     bool m_billingParamHasBeenSet;

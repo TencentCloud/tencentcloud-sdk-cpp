@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SuperResolutionConfig.h>
+#include <tencentcloud/mps/v20190612/model/ImageQualityEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/ColorEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/SharpEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/FaceEnhanceConfig.h>
@@ -74,6 +75,31 @@ namespace TencentCloud
                      * 
                      */
                     bool SuperResolutionHasBeenSet() const;
+
+                    /**
+                     * 获取综合增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageQualityEnhance 综合增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ImageQualityEnhanceConfig GetImageQualityEnhance() const;
+
+                    /**
+                     * 设置综合增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _imageQualityEnhance 综合增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetImageQualityEnhance(const ImageQualityEnhanceConfig& _imageQualityEnhance);
+
+                    /**
+                     * 判断参数 ImageQualityEnhance 是否已赋值
+                     * @return ImageQualityEnhance 是否已赋值
+                     * 
+                     */
+                    bool ImageQualityEnhanceHasBeenSet() const;
 
                     /**
                      * 获取色彩增强配置。
@@ -158,6 +184,13 @@ namespace TencentCloud
                      */
                     SuperResolutionConfig m_superResolution;
                     bool m_superResolutionHasBeenSet;
+
+                    /**
+                     * 综合增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageQualityEnhanceConfig m_imageQualityEnhance;
+                    bool m_imageQualityEnhanceHasBeenSet;
 
                     /**
                      * 色彩增强配置。

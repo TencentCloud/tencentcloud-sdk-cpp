@@ -383,6 +383,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskScriptResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskTableMetricOverviewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskTableMetricOverviewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskTemplatesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskTemplatesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTasksForCodeTemplateRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTasksForCodeTemplateResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountRequest.h>
@@ -409,6 +411,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowTaskCountResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DiagnoseProRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DiagnoseProResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DownloadLogByLineRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DownloadLogByLineResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DryRunDIOfflineTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DryRunDIOfflineTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/FindAllFolderRequest.h>
@@ -1105,6 +1109,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskTableMetricOverviewResponse> DescribeTaskTableMetricOverviewOutcome;
                 typedef std::future<DescribeTaskTableMetricOverviewOutcome> DescribeTaskTableMetricOverviewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskTableMetricOverviewRequest&, DescribeTaskTableMetricOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskTableMetricOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskTemplatesResponse> DescribeTaskTemplatesOutcome;
+                typedef std::future<DescribeTaskTemplatesOutcome> DescribeTaskTemplatesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTaskTemplatesRequest&, DescribeTaskTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTasksForCodeTemplateResponse> DescribeTasksForCodeTemplateOutcome;
                 typedef std::future<DescribeTasksForCodeTemplateOutcome> DescribeTasksForCodeTemplateOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTasksForCodeTemplateRequest&, DescribeTasksForCodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksForCodeTemplateAsyncHandler;
@@ -1144,6 +1151,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DiagnoseProResponse> DiagnoseProOutcome;
                 typedef std::future<DiagnoseProOutcome> DiagnoseProOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DiagnoseProRequest&, DiagnoseProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DiagnoseProAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadLogByLineResponse> DownloadLogByLineOutcome;
+                typedef std::future<DownloadLogByLineOutcome> DownloadLogByLineOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DownloadLogByLineRequest&, DownloadLogByLineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadLogByLineAsyncHandler;
                 typedef Outcome<Core::Error, Model::DryRunDIOfflineTaskResponse> DryRunDIOfflineTaskOutcome;
                 typedef std::future<DryRunDIOfflineTaskOutcome> DryRunDIOfflineTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DryRunDIOfflineTaskRequest&, DryRunDIOfflineTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DryRunDIOfflineTaskAsyncHandler;
@@ -2990,6 +3000,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 DescribeTaskTableMetricOverviewOutcomeCallable DescribeTaskTableMetricOverviewCallable(const Model::DescribeTaskTableMetricOverviewRequest& request);
 
                 /**
+                 *查询项目下所有任务列表,包括虚拟任务
+                 * @param req DescribeTaskTemplatesRequest
+                 * @return DescribeTaskTemplatesOutcome
+                 */
+                DescribeTaskTemplatesOutcome DescribeTaskTemplates(const Model::DescribeTaskTemplatesRequest &request);
+                void DescribeTaskTemplatesAsync(const Model::DescribeTaskTemplatesRequest& request, const DescribeTaskTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskTemplatesOutcomeCallable DescribeTaskTemplatesCallable(const Model::DescribeTaskTemplatesRequest& request);
+
+                /**
                  *分页查询引用模板的任务列表
                  * @param req DescribeTasksForCodeTemplateRequest
                  * @return DescribeTasksForCodeTemplateOutcome
@@ -3105,6 +3124,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 DiagnoseProOutcome DiagnosePro(const Model::DiagnoseProRequest &request);
                 void DiagnoseProAsync(const Model::DiagnoseProRequest& request, const DiagnoseProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DiagnoseProOutcomeCallable DiagnoseProCallable(const Model::DiagnoseProRequest& request);
+
+                /**
+                 *按行下载日志信息
+                 * @param req DownloadLogByLineRequest
+                 * @return DownloadLogByLineOutcome
+                 */
+                DownloadLogByLineOutcome DownloadLogByLine(const Model::DownloadLogByLineRequest &request);
+                void DownloadLogByLineAsync(const Model::DownloadLogByLineRequest& request, const DownloadLogByLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadLogByLineOutcomeCallable DownloadLogByLineCallable(const Model::DownloadLogByLineRequest& request);
 
                 /**
                  *调试运行集成任务

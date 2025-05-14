@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/ImageEncodeConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageEnhanceConfig.h>
+#include <tencentcloud/mps/v20190612/model/ImageEraseConfig.h>
 
 
 namespace TencentCloud
@@ -98,6 +99,31 @@ namespace TencentCloud
                      */
                     bool EnhanceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取图片擦除配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EraseConfig 图片擦除配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ImageEraseConfig GetEraseConfig() const;
+
+                    /**
+                     * 设置图片擦除配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _eraseConfig 图片擦除配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEraseConfig(const ImageEraseConfig& _eraseConfig);
+
+                    /**
+                     * 判断参数 EraseConfig 是否已赋值
+                     * @return EraseConfig 是否已赋值
+                     * 
+                     */
+                    bool EraseConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +139,13 @@ namespace TencentCloud
                      */
                     ImageEnhanceConfig m_enhanceConfig;
                     bool m_enhanceConfigHasBeenSet;
+
+                    /**
+                     * 图片擦除配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageEraseConfig m_eraseConfig;
+                    bool m_eraseConfigHasBeenSet;
 
                 };
             }
