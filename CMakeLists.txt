@@ -68,6 +68,7 @@ if(BUILD_FUNCTION_TESTS)
     enable_testing()
     add_subdirectory(test/function_test/cvm)
     add_subdirectory(test/function_test/cbs)
+    add_subdirectory(test/function_test/core)
 endif()
 
 add_subdirectory(core)

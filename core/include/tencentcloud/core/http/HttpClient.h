@@ -22,6 +22,7 @@
 #include <tencentcloud/core/Error.h>
 #include <tencentcloud/core/NetworkProxy.h>
 #include "HttpResponse.h"
+#include <string>
 
 namespace TencentCloud
 {
@@ -36,6 +37,9 @@ namespace TencentCloud
         void SetReqTimeout(int64_t timeoutOfMs);
         void SetConnectTimeout(int64_t timeoutOfMs);
 
+        void SetCaInfo(std::string caInfo);
+        void SetCaPath(std::string caPath);
+
         HttpResponseOutcome SendRequest(const HttpRequest &request);
 
         void SetProxy(const NetworkProxy &proxy);
@@ -48,6 +52,8 @@ namespace TencentCloud
         int64_t m_reqTimeout;
         int64_t m_connectTimeout;
         NetworkProxy m_proxy;
+        std::string m_caInfo;
+        std::string m_caPath;
 #ifdef ENABLE_COMPRESS_MODULE
         int GzipDecompress(const char *src, int srcLen, const char *dst, int* dstLen);
         bool TryDecompress(const char *src, int srcLen, std::string &decompressData);
