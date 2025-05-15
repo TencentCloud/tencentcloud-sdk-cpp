@@ -25,10 +25,10 @@ using namespace std;
 ModifyTargetWeightRequest::ModifyTargetWeightRequest() :
     m_loadBalancerIdHasBeenSet(false),
     m_listenerIdHasBeenSet(false),
+    m_targetsHasBeenSet(false),
     m_locationIdHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_targetsHasBeenSet(false),
     m_weightHasBeenSet(false)
 {
 }
@@ -56,6 +56,21 @@ string ModifyTargetWeightRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_listenerId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_targetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Targets";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_targets.begin(); itr != m_targets.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_locationIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -78,21 +93,6 @@ string ModifyTargetWeightRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_targetsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Targets";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_targets.begin(); itr != m_targets.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
     if (m_weightHasBeenSet)
@@ -143,6 +143,22 @@ bool ModifyTargetWeightRequest::ListenerIdHasBeenSet() const
     return m_listenerIdHasBeenSet;
 }
 
+vector<Target> ModifyTargetWeightRequest::GetTargets() const
+{
+    return m_targets;
+}
+
+void ModifyTargetWeightRequest::SetTargets(const vector<Target>& _targets)
+{
+    m_targets = _targets;
+    m_targetsHasBeenSet = true;
+}
+
+bool ModifyTargetWeightRequest::TargetsHasBeenSet() const
+{
+    return m_targetsHasBeenSet;
+}
+
 string ModifyTargetWeightRequest::GetLocationId() const
 {
     return m_locationId;
@@ -189,22 +205,6 @@ void ModifyTargetWeightRequest::SetUrl(const string& _url)
 bool ModifyTargetWeightRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
-}
-
-vector<Target> ModifyTargetWeightRequest::GetTargets() const
-{
-    return m_targets;
-}
-
-void ModifyTargetWeightRequest::SetTargets(const vector<Target>& _targets)
-{
-    m_targets = _targets;
-    m_targetsHasBeenSet = true;
-}
-
-bool ModifyTargetWeightRequest::TargetsHasBeenSet() const
-{
-    return m_targetsHasBeenSet;
 }
 
 int64_t ModifyTargetWeightRequest::GetWeight() const

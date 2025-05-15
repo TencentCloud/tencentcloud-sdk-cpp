@@ -274,8 +274,10 @@ namespace TencentCloud
                     /**
                      * 获取解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
 True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
+不传则表示不修改。
                      * @return DeregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
 True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
+不传则表示不修改。
                      * 
                      */
                     bool GetDeregisterTargetRst() const;
@@ -283,8 +285,10 @@ True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                     /**
                      * 设置解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
 True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
+不传则表示不修改。
                      * @param _deregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
 True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
+不传则表示不修改。
                      * 
                      */
                     void SetDeregisterTargetRst(const bool& _deregisterTargetRst);
@@ -419,14 +423,18 @@ True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
 
                     /**
                      * 获取是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
+不传则表示不修改。
                      * @return SnatEnable 是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
+不传则表示不修改。
                      * 
                      */
                     bool GetSnatEnable() const;
 
                     /**
                      * 设置是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
+不传则表示不修改。
                      * @param _snatEnable 是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
+不传则表示不修改。
                      * 
                      */
                     void SetSnatEnable(const bool& _snatEnable);
@@ -528,6 +536,7 @@ True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                     /**
                      * 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
 True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
+不传则表示不修改。
                      */
                     bool m_deregisterTargetRst;
                     bool m_deregisterTargetRstHasBeenSet;
@@ -568,6 +577,7 @@ True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
 
                     /**
                      * 是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
+不传则表示不修改。
                      */
                     bool m_snatEnable;
                     bool m_snatEnableHasBeenSet;

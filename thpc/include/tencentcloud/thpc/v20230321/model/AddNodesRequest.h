@@ -373,18 +373,18 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>
+                     * 获取队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li>
 
-                     * @return QueueName 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>
+                     * @return QueueName 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li>
 
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>
+                     * 设置队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li>
 
-                     * @param _queueName 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>
+                     * @param _queueName 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li>
 
                      * 
                      */
@@ -613,7 +613,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>
+                     * 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li>
 
                      */
                     std::string m_queueName;

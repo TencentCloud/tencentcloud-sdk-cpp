@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool TasksHasBeenSet() const;
 
                     /**
-                     * 获取作业名称
-                     * @return JobName 作业名称
+                     * 获取作业名称; 字符串长度限制60.
+                     * @return JobName 作业名称; 字符串长度限制60.
                      * 
                      */
                     std::string GetJobName() const;
 
                     /**
-                     * 设置作业名称
-                     * @param _jobName 作业名称
+                     * 设置作业名称; 字符串长度限制60.
+                     * @param _jobName 作业名称; 字符串长度限制60.
                      * 
                      */
                     void SetJobName(const std::string& _jobName);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool JobNameHasBeenSet() const;
 
                     /**
-                     * 获取作业描述
-                     * @return JobDescription 作业描述
+                     * 获取作业描述；字符串长度限制200.
+                     * @return JobDescription 作业描述；字符串长度限制200.
                      * 
                      */
                     std::string GetJobDescription() const;
 
                     /**
-                     * 设置作业描述
-                     * @param _jobDescription 作业描述
+                     * 设置作业描述；字符串长度限制200.
+                     * @param _jobDescription 作业描述；字符串长度限制200.
                      * 
                      */
                     void SetJobDescription(const std::string& _jobDescription);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool JobDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级
-                     * @return Priority 作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级
+                     * 获取作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级；范围0～100，数值越大，优先级越高。
+                     * @return Priority 作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级；范围0～100，数值越大，优先级越高。
                      * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
-                     * 设置作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级
-                     * @param _priority 作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级
+                     * 设置作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级；范围0～100，数值越大，优先级越高。
+                     * @param _priority 作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级；范围0～100，数值越大，优先级越高。
                      * 
                      */
                     void SetPriority(const uint64_t& _priority);
@@ -281,19 +281,19 @@ TDMQ_CMQ：表示向腾讯云TDMQ_CMQ发送消息。<br/>默认值为CMQ。<br/>
                     bool m_tasksHasBeenSet;
 
                     /**
-                     * 作业名称
+                     * 作业名称; 字符串长度限制60.
                      */
                     std::string m_jobName;
                     bool m_jobNameHasBeenSet;
 
                     /**
-                     * 作业描述
+                     * 作业描述；字符串长度限制200.
                      */
                     std::string m_jobDescription;
                     bool m_jobDescriptionHasBeenSet;
 
                     /**
-                     * 作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级
+                     * 作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级；范围0～100，数值越大，优先级越高。
                      */
                     uint64_t m_priority;
                     bool m_priorityHasBeenSet;

@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool AutoScalingGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取查询时排除取消类型活动。默认值为 false，表示不排除取消类型活动。
+                     * @return ExcludeCancelledActivity 查询时排除取消类型活动。默认值为 false，表示不排除取消类型活动。
+                     * 
+                     */
+                    bool GetExcludeCancelledActivity() const;
+
+                    /**
+                     * 设置查询时排除取消类型活动。默认值为 false，表示不排除取消类型活动。
+                     * @param _excludeCancelledActivity 查询时排除取消类型活动。默认值为 false，表示不排除取消类型活动。
+                     * 
+                     */
+                    void SetExcludeCancelledActivity(const bool& _excludeCancelledActivity);
+
+                    /**
+                     * 判断参数 ExcludeCancelledActivity 是否已赋值
+                     * @return ExcludeCancelledActivity 是否已赋值
+                     * 
+                     */
+                    bool ExcludeCancelledActivityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_autoScalingGroupIds;
                     bool m_autoScalingGroupIdsHasBeenSet;
+
+                    /**
+                     * 查询时排除取消类型活动。默认值为 false，表示不排除取消类型活动。
+                     */
+                    bool m_excludeCancelledActivity;
+                    bool m_excludeCancelledActivityHasBeenSet;
 
                 };
             }

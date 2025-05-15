@@ -23,7 +23,8 @@ using namespace TencentCloud::As::V20180419::Model;
 using namespace std;
 
 DescribeAutoScalingGroupLastActivitiesRequest::DescribeAutoScalingGroupLastActivitiesRequest() :
-    m_autoScalingGroupIdsHasBeenSet(false)
+    m_autoScalingGroupIdsHasBeenSet(false),
+    m_excludeCancelledActivityHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string DescribeAutoScalingGroupLastActivitiesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_excludeCancelledActivityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeCancelledActivity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_excludeCancelledActivity, allocator);
     }
 
 
@@ -69,6 +78,22 @@ void DescribeAutoScalingGroupLastActivitiesRequest::SetAutoScalingGroupIds(const
 bool DescribeAutoScalingGroupLastActivitiesRequest::AutoScalingGroupIdsHasBeenSet() const
 {
     return m_autoScalingGroupIdsHasBeenSet;
+}
+
+bool DescribeAutoScalingGroupLastActivitiesRequest::GetExcludeCancelledActivity() const
+{
+    return m_excludeCancelledActivity;
+}
+
+void DescribeAutoScalingGroupLastActivitiesRequest::SetExcludeCancelledActivity(const bool& _excludeCancelledActivity)
+{
+    m_excludeCancelledActivity = _excludeCancelledActivity;
+    m_excludeCancelledActivityHasBeenSet = true;
+}
+
+bool DescribeAutoScalingGroupLastActivitiesRequest::ExcludeCancelledActivityHasBeenSet() const
+{
+    return m_excludeCancelledActivityHasBeenSet;
 }
 
 

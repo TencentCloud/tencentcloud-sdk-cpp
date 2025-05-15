@@ -20,8 +20,10 @@ set(hunyuan_public_header
 
 set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/Character.h
+  include/tencentcloud/hunyuan/v20230901/model/Approximate.h
   include/tencentcloud/hunyuan/v20230901/model/TranslationChoice.h
   include/tencentcloud/hunyuan/v20230901/model/Usage.h
+  include/tencentcloud/hunyuan/v20230901/model/LogoParam.h
   include/tencentcloud/hunyuan/v20230901/model/RunThreadRequest.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobRequest.h
@@ -68,7 +70,7 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/Message.h
   include/tencentcloud/hunyuan/v20230901/model/TranslationMessage.h
   include/tencentcloud/hunyuan/v20230901/model/ChatCompletionsRequest.h
-  include/tencentcloud/hunyuan/v20230901/model/LogoParam.h
+  include/tencentcloud/hunyuan/v20230901/model/Knowledge.h
   include/tencentcloud/hunyuan/v20230901/model/FilesUploadsRequest.h
   include/tencentcloud/hunyuan/v20230901/model/GetEmbeddingRequest.h
   include/tencentcloud/hunyuan/v20230901/model/ImageUrl.h
@@ -83,10 +85,12 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/TextToImageLiteRequest.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/History.h
+  include/tencentcloud/hunyuan/v20230901/model/UserLocation.h
   include/tencentcloud/hunyuan/v20230901/model/FilesListRequest.h
   include/tencentcloud/hunyuan/v20230901/model/GetTokenCountRequest.h
   include/tencentcloud/hunyuan/v20230901/model/GroupChatConfig.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanTo3DJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/WebSearchOptions.h
   include/tencentcloud/hunyuan/v20230901/model/ActivateServiceRequest.h
   include/tencentcloud/hunyuan/v20230901/model/GetThreadRequest.h
   include/tencentcloud/hunyuan/v20230901/model/Content.h
@@ -112,8 +116,10 @@ set(hunyuan_public_header_model
 set(hunyuan_src
   src/v20230901/HunyuanClient.cpp
   src/v20230901/model/Character.cpp
+  src/v20230901/model/Approximate.cpp
   src/v20230901/model/TranslationChoice.cpp
   src/v20230901/model/Usage.cpp
+  src/v20230901/model/LogoParam.cpp
   src/v20230901/model/RunThreadRequest.cpp
   src/v20230901/model/SubmitHunyuanImageChatJobRequest.cpp
   src/v20230901/model/QueryHunyuanImageJobRequest.cpp
@@ -160,7 +166,7 @@ set(hunyuan_src
   src/v20230901/model/Message.cpp
   src/v20230901/model/TranslationMessage.cpp
   src/v20230901/model/ChatCompletionsRequest.cpp
-  src/v20230901/model/LogoParam.cpp
+  src/v20230901/model/Knowledge.cpp
   src/v20230901/model/FilesUploadsRequest.cpp
   src/v20230901/model/GetEmbeddingRequest.cpp
   src/v20230901/model/ImageUrl.cpp
@@ -175,10 +181,12 @@ set(hunyuan_src
   src/v20230901/model/TextToImageLiteRequest.cpp
   src/v20230901/model/QueryHunyuanImageJobResponse.cpp
   src/v20230901/model/History.cpp
+  src/v20230901/model/UserLocation.cpp
   src/v20230901/model/FilesListRequest.cpp
   src/v20230901/model/GetTokenCountRequest.cpp
   src/v20230901/model/GroupChatConfig.cpp
   src/v20230901/model/QueryHunyuanTo3DJobResponse.cpp
+  src/v20230901/model/WebSearchOptions.cpp
   src/v20230901/model/ActivateServiceRequest.cpp
   src/v20230901/model/GetThreadRequest.cpp
   src/v20230901/model/Content.cpp

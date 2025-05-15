@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业ID列表。
-                     * @return JobIds 作业ID列表。
+                     * 获取作业ID列表。最大重试作业数100；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。
+                     * @return JobIds 作业ID列表。最大重试作业数100；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。
                      * 
                      */
                     std::vector<std::string> GetJobIds() const;
 
                     /**
-                     * 设置作业ID列表。
-                     * @param _jobIds 作业ID列表。
+                     * 设置作业ID列表。最大重试作业数100；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。
+                     * @param _jobIds 作业ID列表。最大重试作业数100；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。
                      * 
                      */
                     void SetJobIds(const std::vector<std::string>& _jobIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 作业ID列表。
+                     * 作业ID列表。最大重试作业数100；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。
                      */
                     std::vector<std::string> m_jobIds;
                     bool m_jobIdsHasBeenSet;

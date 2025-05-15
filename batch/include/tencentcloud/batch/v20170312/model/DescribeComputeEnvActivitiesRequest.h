@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计算环境ID
-                     * @return EnvId 计算环境ID
+                     * 获取计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * @return EnvId 计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置计算环境ID
-                     * @param _envId 计算环境ID
+                     * 设置计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * @param _envId 计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，默认为0.
+                     * @return Offset 偏移量，默认为0.
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置偏移量，默认为0.
+                     * @param _offset 偏移量，默认为0.
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量
-                     * @return Limit 返回数量
+                     * 获取返回数量，默认值20，最大值100.
+                     * @return Limit 返回数量，默认值20，最大值100.
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量
-                     * @param _limit 返回数量
+                     * 设置返回数量，默认值20，最大值100.
+                     * @param _limit 返回数量，默认值20，最大值100.
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -134,19 +134,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计算环境ID
+                     * 计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，默认为0.
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量
+                     * 返回数量，默认值20，最大值100.
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

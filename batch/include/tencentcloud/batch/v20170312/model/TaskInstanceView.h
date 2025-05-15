@@ -69,15 +69,43 @@ namespace TencentCloud
                     bool TaskInstanceIndexHasBeenSet() const;
 
                     /**
-                     * 获取任务实例状态
-                     * @return TaskInstanceState 任务实例状态
+                     * 获取任务实例状态: 
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例。
+                     * @return TaskInstanceState 任务实例状态: 
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例。
                      * 
                      */
                     std::string GetTaskInstanceState() const;
 
                     /**
-                     * 设置任务实例状态
-                     * @param _taskInstanceState 任务实例状态
+                     * 设置任务实例状态: 
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例。
+                     * @param _taskInstanceState 任务实例状态: 
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例。
                      * 
                      */
                     void SetTaskInstanceState(const std::string& _taskInstanceState);
@@ -153,15 +181,15 @@ namespace TencentCloud
                     bool ComputeNodeInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @return CreateTime 创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _createTime 创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -174,15 +202,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取启动时间
-                     * @return LaunchTime 启动时间
+                     * 获取启动时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @return LaunchTime 启动时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     std::string GetLaunchTime() const;
 
                     /**
-                     * 设置启动时间
-                     * @param _launchTime 启动时间
+                     * 设置启动时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _launchTime 启动时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     void SetLaunchTime(const std::string& _launchTime);
@@ -195,15 +223,15 @@ namespace TencentCloud
                     bool LaunchTimeHasBeenSet() const;
 
                     /**
-                     * 获取开始运行时间
-                     * @return RunningTime 开始运行时间
+                     * 获取开始运行时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @return RunningTime 开始运行时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     std::string GetRunningTime() const;
 
                     /**
-                     * 设置开始运行时间
-                     * @param _runningTime 开始运行时间
+                     * 设置开始运行时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _runningTime 开始运行时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     void SetRunningTime(const std::string& _runningTime);
@@ -216,15 +244,15 @@ namespace TencentCloud
                     bool RunningTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @return EndTime 结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _endTime 结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -287,7 +315,14 @@ namespace TencentCloud
                     bool m_taskInstanceIndexHasBeenSet;
 
                     /**
-                     * 任务实例状态
+                     * 任务实例状态: 
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例。
                      */
                     std::string m_taskInstanceState;
                     bool m_taskInstanceStateHasBeenSet;
@@ -311,25 +346,25 @@ namespace TencentCloud
                     bool m_computeNodeInstanceIdHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 启动时间
+                     * 启动时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      */
                     std::string m_launchTime;
                     bool m_launchTimeHasBeenSet;
 
                     /**
-                     * 开始运行时间
+                     * 开始运行时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      */
                     std::string m_runningTime;
                     bool m_runningTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

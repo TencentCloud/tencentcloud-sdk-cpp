@@ -86,6 +86,27 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
+                     * 获取要修改权重的后端服务列表。
+                     * @return Targets 要修改权重的后端服务列表。
+                     * 
+                     */
+                    std::vector<Target> GetTargets() const;
+
+                    /**
+                     * 设置要修改权重的后端服务列表。
+                     * @param _targets 要修改权重的后端服务列表。
+                     * 
+                     */
+                    void SetTargets(const std::vector<Target>& _targets);
+
+                    /**
+                     * 判断参数 Targets 是否已赋值
+                     * @return Targets 是否已赋值
+                     * 
+                     */
+                    bool TargetsHasBeenSet() const;
+
+                    /**
                      * 获取转发规则的ID，当绑定机器到七层转发规则时，必须提供此参数或Domain+Url两者之一。
                      * @return LocationId 转发规则的ID，当绑定机器到七层转发规则时，必须提供此参数或Domain+Url两者之一。
                      * 
@@ -149,27 +170,6 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取要修改权重的后端服务列表。
-                     * @return Targets 要修改权重的后端服务列表。
-                     * 
-                     */
-                    std::vector<Target> GetTargets() const;
-
-                    /**
-                     * 设置要修改权重的后端服务列表。
-                     * @param _targets 要修改权重的后端服务列表。
-                     * 
-                     */
-                    void SetTargets(const std::vector<Target>& _targets);
-
-                    /**
-                     * 判断参数 Targets 是否已赋值
-                     * @return Targets 是否已赋值
-                     * 
-                     */
-                    bool TargetsHasBeenSet() const;
-
-                    /**
                      * 获取后端服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。
                      * @return Weight 后端服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。
                      * 
@@ -205,6 +205,12 @@ namespace TencentCloud
                     bool m_listenerIdHasBeenSet;
 
                     /**
+                     * 要修改权重的后端服务列表。
+                     */
+                    std::vector<Target> m_targets;
+                    bool m_targetsHasBeenSet;
+
+                    /**
                      * 转发规则的ID，当绑定机器到七层转发规则时，必须提供此参数或Domain+Url两者之一。
                      */
                     std::string m_locationId;
@@ -221,12 +227,6 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
-
-                    /**
-                     * 要修改权重的后端服务列表。
-                     */
-                    std::vector<Target> m_targets;
-                    bool m_targetsHasBeenSet;
 
                     /**
                      * 后端服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。

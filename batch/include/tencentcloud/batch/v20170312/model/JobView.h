@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业ID
-                     * @return JobId 作业ID
+                     * 获取作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
+                     * @return JobId 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业ID
-                     * @param _jobId 作业ID
+                     * 设置作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
+                     * @param _jobId 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -92,15 +92,47 @@ namespace TencentCloud
                     bool JobNameHasBeenSet() const;
 
                     /**
-                     * 获取作业状态
-                     * @return JobState 作业状态
+                     * 获取作业状态:
+- SUBMITTED：已提交；
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例。
+                     * @return JobState 作业状态:
+- SUBMITTED：已提交；
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例。
                      * 
                      */
                     std::string GetJobState() const;
 
                     /**
-                     * 设置作业状态
-                     * @param _jobState 作业状态
+                     * 设置作业状态:
+- SUBMITTED：已提交；
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例。
+                     * @param _jobState 作业状态:
+- SUBMITTED：已提交；
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例。
                      * 
                      */
                     void SetJobState(const std::string& _jobState);
@@ -155,15 +187,15 @@ namespace TencentCloud
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return CreateTime 创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _createTime 创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -176,15 +208,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return EndTime 结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _endTime 结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -241,7 +273,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 作业ID
+                     * 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
@@ -253,7 +285,15 @@ namespace TencentCloud
                     bool m_jobNameHasBeenSet;
 
                     /**
-                     * 作业状态
+                     * 作业状态:
+- SUBMITTED：已提交；
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例。
                      */
                     std::string m_jobState;
                     bool m_jobStateHasBeenSet;
@@ -271,13 +311,13 @@ namespace TencentCloud
                     bool m_placementHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

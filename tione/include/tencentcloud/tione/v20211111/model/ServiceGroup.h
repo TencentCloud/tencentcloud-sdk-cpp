@@ -627,6 +627,27 @@ UPDATING 更新中
                      */
                     bool AuthTokensHasBeenSet() const;
 
+                    /**
+                     * 获取用于监控的创建来源字段
+                     * @return MonitorSource 用于监控的创建来源字段
+                     * 
+                     */
+                    std::string GetMonitorSource() const;
+
+                    /**
+                     * 设置用于监控的创建来源字段
+                     * @param _monitorSource 用于监控的创建来源字段
+                     * 
+                     */
+                    void SetMonitorSource(const std::string& _monitorSource);
+
+                    /**
+                     * 判断参数 MonitorSource 是否已赋值
+                     * @return MonitorSource 是否已赋值
+                     * 
+                     */
+                    bool MonitorSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -789,6 +810,12 @@ UPDATING 更新中
                      */
                     std::vector<AuthToken> m_authTokens;
                     bool m_authTokensHasBeenSet;
+
+                    /**
+                     * 用于监控的创建来源字段
+                     */
+                    std::string m_monitorSource;
+                    bool m_monitorSourceHasBeenSet;
 
                 };
             }

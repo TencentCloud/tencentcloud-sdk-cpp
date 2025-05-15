@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计算环境ID列表，与Filters参数不能同时指定。
-                     * @return EnvIds 计算环境ID列表，与Filters参数不能同时指定。
+                     * 获取计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * @return EnvIds 计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      * 
                      */
                     std::vector<std::string> GetEnvIds() const;
 
                     /**
-                     * 设置计算环境ID列表，与Filters参数不能同时指定。
-                     * @param _envIds 计算环境ID列表，与Filters参数不能同时指定。
+                     * 设置计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * @param _envIds 计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      * 
                      */
                     void SetEnvIds(const std::vector<std::string>& _envIds);
@@ -65,47 +65,15 @@ namespace TencentCloud
                     bool EnvIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
-<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
-<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
-<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>
-<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>
-<li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
-<li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
-与EnvIds参数不能同时指定。
-                     * @return Filters 过滤条件
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
-<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
-<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
-<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>
-<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>
-<li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
-<li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
-与EnvIds参数不能同时指定。
+                     * 获取过滤条件<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤，可用区通过调用接口 [DescribeZones](https://cloud.tencent.com/document/api/213/15707)获取。</li><li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li><li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li><li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li><li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li><li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li><li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>与EnvIds参数不能同时指定。
+                     * @return Filters 过滤条件<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤，可用区通过调用接口 [DescribeZones](https://cloud.tencent.com/document/api/213/15707)获取。</li><li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li><li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li><li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li><li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li><li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li><li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>与EnvIds参数不能同时指定。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
-<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
-<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
-<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>
-<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>
-<li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
-<li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
-与EnvIds参数不能同时指定。
-                     * @param _filters 过滤条件
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
-<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
-<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
-<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>
-<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>
-<li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
-<li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
-与EnvIds参数不能同时指定。
+                     * 设置过滤条件<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤，可用区通过调用接口 [DescribeZones](https://cloud.tencent.com/document/api/213/15707)获取。</li><li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li><li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li><li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li><li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li><li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li><li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>与EnvIds参数不能同时指定。
+                     * @param _filters 过滤条件<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤，可用区通过调用接口 [DescribeZones](https://cloud.tencent.com/document/api/213/15707)获取。</li><li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li><li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li><li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li><li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li><li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li><li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>与EnvIds参数不能同时指定。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -139,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量
-                     * @return Limit 返回数量
+                     * 获取返回数量，默认值20，最大值100。
+                     * @return Limit 返回数量，默认值20，最大值100。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量
-                     * @param _limit 返回数量
+                     * 设置返回数量，默认值20，最大值100。
+                     * @param _limit 返回数量，默认值20，最大值100。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -162,21 +130,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计算环境ID列表，与Filters参数不能同时指定。
+                     * 计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      */
                     std::vector<std::string> m_envIds;
                     bool m_envIdsHasBeenSet;
 
                     /**
-                     * 过滤条件
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
-<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
-<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
-<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>
-<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>
-<li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
-<li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
-与EnvIds参数不能同时指定。
+                     * 过滤条件<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤，可用区通过调用接口 [DescribeZones](https://cloud.tencent.com/document/api/213/15707)获取。</li><li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li><li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li><li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li><li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li><li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li><li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>与EnvIds参数不能同时指定。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -188,7 +148,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量
+                     * 返回数量，默认值20，最大值100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

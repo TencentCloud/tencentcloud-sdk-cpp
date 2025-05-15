@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用于删除任务模板信息
-                     * @return TaskTemplateIds 用于删除任务模板信息
+                     * 获取用于删除任务模板信息，最大数量上限100，环境模版ID通过调用接口 [DescribeTaskTemplates](https://cloud.tencent.com/document/api/599/15902)获取。
+                     * @return TaskTemplateIds 用于删除任务模板信息，最大数量上限100，环境模版ID通过调用接口 [DescribeTaskTemplates](https://cloud.tencent.com/document/api/599/15902)获取。
                      * 
                      */
                     std::vector<std::string> GetTaskTemplateIds() const;
 
                     /**
-                     * 设置用于删除任务模板信息
-                     * @param _taskTemplateIds 用于删除任务模板信息
+                     * 设置用于删除任务模板信息，最大数量上限100，环境模版ID通过调用接口 [DescribeTaskTemplates](https://cloud.tencent.com/document/api/599/15902)获取。
+                     * @param _taskTemplateIds 用于删除任务模板信息，最大数量上限100，环境模版ID通过调用接口 [DescribeTaskTemplates](https://cloud.tencent.com/document/api/599/15902)获取。
                      * 
                      */
                     void SetTaskTemplateIds(const std::vector<std::string>& _taskTemplateIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用于删除任务模板信息
+                     * 用于删除任务模板信息，最大数量上限100，环境模版ID通过调用接口 [DescribeTaskTemplates](https://cloud.tencent.com/document/api/599/15902)获取。
                      */
                     std::vector<std::string> m_taskTemplateIds;
                     bool m_taskTemplateIdsHasBeenSet;

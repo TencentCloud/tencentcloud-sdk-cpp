@@ -33,7 +33,8 @@ UpdateCodeTemplateRequest::UpdateCodeTemplateRequest() :
     m_resourceGroupHasBeenSet(false),
     m_codeTemplateDescHasBeenSet(false),
     m_requestFromSourceHasBeenSet(false),
-    m_scriptChangeHasBeenSet(false)
+    m_scriptChangeHasBeenSet(false),
+    m_contentHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string UpdateCodeTemplateRequest::ToJsonString() const
         string key = "ScriptChange";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_scriptChange, allocator);
+    }
+
+    if (m_contentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Content";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -315,6 +324,22 @@ void UpdateCodeTemplateRequest::SetScriptChange(const bool& _scriptChange)
 bool UpdateCodeTemplateRequest::ScriptChangeHasBeenSet() const
 {
     return m_scriptChangeHasBeenSet;
+}
+
+string UpdateCodeTemplateRequest::GetContent() const
+{
+    return m_content;
+}
+
+void UpdateCodeTemplateRequest::SetContent(const string& _content)
+{
+    m_content = _content;
+    m_contentHasBeenSet = true;
+}
+
+bool UpdateCodeTemplateRequest::ContentHasBeenSet() const
+{
+    return m_contentHasBeenSet;
 }
 
 

@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取Dockefile的路径
-                     * @return DockerfilePath Dockefile的路径
+                     * 获取Dockerfile的路径
+                     * @return DockerfilePath Dockerfile的路径
                      * 
                      */
                     std::string GetDockerfilePath() const;
@@ -612,7 +612,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * Dockefile的路径
+                     * Dockerfile的路径
                      */
                     std::string m_dockerfilePath;
                     bool m_dockerfilePathHasBeenSet;

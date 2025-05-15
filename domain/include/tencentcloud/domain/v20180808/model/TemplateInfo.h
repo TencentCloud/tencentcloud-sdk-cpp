@@ -111,15 +111,19 @@ NotVerified: 实名信息待修改
                     bool AuditStatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedOn 创建时间
+                     * 获取创建时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return CreatedOn 创建时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdOn 创建时间
+                     * 设置创建时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @param _createdOn 创建时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
@@ -132,15 +136,19 @@ NotVerified: 实名信息待修改
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdatedOn 更新时间
+                     * 获取更新时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return UpdatedOn 更新时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetUpdatedOn() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updatedOn 更新时间
+                     * 设置更新时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @param _updatedOn 更新时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetUpdatedOn(const std::string& _updatedOn);
@@ -340,13 +348,15 @@ NotVerified: 实名信息待修改
                     bool m_auditStatusHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间 
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间 
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_updatedOn;
                     bool m_updatedOnHasBeenSet;

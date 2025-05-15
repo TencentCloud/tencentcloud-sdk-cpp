@@ -22,6 +22,7 @@ using namespace std;
 
 ImageEnhanceConfig::ImageEnhanceConfig() :
     m_superResolutionHasBeenSet(false),
+    m_imageQualityEnhanceHasBeenSet(false),
     m_colorEnhanceHasBeenSet(false),
     m_sharpEnhanceHasBeenSet(false),
     m_faceEnhanceHasBeenSet(false)
@@ -48,6 +49,23 @@ CoreInternalOutcome ImageEnhanceConfig::Deserialize(const rapidjson::Value &valu
         }
 
         m_superResolutionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageQualityEnhance") && !value["ImageQualityEnhance"].IsNull())
+    {
+        if (!value["ImageQualityEnhance"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageEnhanceConfig.ImageQualityEnhance` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageQualityEnhance.Deserialize(value["ImageQualityEnhance"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageQualityEnhanceHasBeenSet = true;
     }
 
     if (value.HasMember("ColorEnhance") && !value["ColorEnhance"].IsNull())
@@ -117,6 +135,15 @@ void ImageEnhanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         m_superResolution.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_imageQualityEnhanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageQualityEnhance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageQualityEnhance.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_colorEnhanceHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -161,6 +188,22 @@ void ImageEnhanceConfig::SetSuperResolution(const SuperResolutionConfig& _superR
 bool ImageEnhanceConfig::SuperResolutionHasBeenSet() const
 {
     return m_superResolutionHasBeenSet;
+}
+
+ImageQualityEnhanceConfig ImageEnhanceConfig::GetImageQualityEnhance() const
+{
+    return m_imageQualityEnhance;
+}
+
+void ImageEnhanceConfig::SetImageQualityEnhance(const ImageQualityEnhanceConfig& _imageQualityEnhance)
+{
+    m_imageQualityEnhance = _imageQualityEnhance;
+    m_imageQualityEnhanceHasBeenSet = true;
+}
+
+bool ImageEnhanceConfig::ImageQualityEnhanceHasBeenSet() const
+{
+    return m_imageQualityEnhanceHasBeenSet;
 }
 
 ColorEnhanceConfig ImageEnhanceConfig::GetColorEnhance() const

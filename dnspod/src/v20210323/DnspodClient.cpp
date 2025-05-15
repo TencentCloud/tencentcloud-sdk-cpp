@@ -1416,6 +1416,49 @@ DnspodClient::DescribeDomainAnalyticsOutcomeCallable DnspodClient::DescribeDomai
     return task->get_future();
 }
 
+DnspodClient::DescribeDomainAndRecordListOutcome DnspodClient::DescribeDomainAndRecordList(const DescribeDomainAndRecordListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainAndRecordList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainAndRecordListResponse rsp = DescribeDomainAndRecordListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainAndRecordListOutcome(rsp);
+        else
+            return DescribeDomainAndRecordListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainAndRecordListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeDomainAndRecordListAsync(const DescribeDomainAndRecordListRequest& request, const DescribeDomainAndRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainAndRecordList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeDomainAndRecordListOutcomeCallable DnspodClient::DescribeDomainAndRecordListCallable(const DescribeDomainAndRecordListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainAndRecordListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainAndRecordList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeDomainCustomLineListOutcome DnspodClient::DescribeDomainCustomLineList(const DescribeDomainCustomLineListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainCustomLineList");

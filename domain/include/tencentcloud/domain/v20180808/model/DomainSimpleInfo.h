@@ -270,7 +270,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * @return DomainStatus 域名状态。
 ok：正常
 serverHold：注册局暂停解析 
@@ -286,7 +286,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * 
                      */
                     std::vector<std::string> GetDomainStatus() const;
@@ -307,7 +307,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * @param _domainStatus 域名状态。
 ok：正常
 serverHold：注册局暂停解析 
@@ -323,7 +323,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * 
                      */
                     void SetDomainStatus(const std::vector<std::string>& _domainStatus);
@@ -689,7 +689,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      */
                     std::vector<std::string> m_domainStatus;
                     bool m_domainStatusHasBeenSet;

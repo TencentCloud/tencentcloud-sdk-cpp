@@ -196,21 +196,21 @@ namespace TencentCloud
                     /**
                      * 获取已废弃参数，未开放
                      * @return ProductCode 已废弃参数，未开放
-                     * 
+                     * @deprecated
                      */
                     std::string GetProductCode() const;
 
                     /**
                      * 设置已废弃参数，未开放
                      * @param _productCode 已废弃参数，未开放
-                     * 
+                     * @deprecated
                      */
                     void SetProductCode(const std::string& _productCode);
 
                     /**
                      * 判断参数 ProductCode 是否已赋值
                      * @return ProductCode 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ProductCodeHasBeenSet() const;
 

@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量修改的域名。
-                     * @return Domains 批量修改的域名。
+                     * 获取批量修改的域名数组
+个数最大不超过4000
+                     * @return Domains 批量修改的域名数组
+个数最大不超过4000
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置批量修改的域名。
-                     * @param _domains 批量修改的域名。
+                     * 设置批量修改的域名数组
+个数最大不超过4000
+                     * @param _domains 批量修改的域名数组
+个数最大不超过4000
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -64,19 +68,19 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取模板ID
-可从DescribeTemplates接口获取
-                     * @return TemplateId 模板ID
-可从DescribeTemplates接口获取
+                     * 获取模板ID 
+可从[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
+                     * @return TemplateId 模板ID 
+可从[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板ID
-可从DescribeTemplates接口获取
-                     * @param _templateId 模板ID
-可从DescribeTemplates接口获取
+                     * 设置模板ID 
+可从[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
+                     * @param _templateId 模板ID 
+可从[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -120,14 +124,15 @@ false：关闭60天内禁止转移注册商锁定
                 private:
 
                     /**
-                     * 批量修改的域名。
+                     * 批量修改的域名数组
+个数最大不超过4000
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 模板ID
-可从DescribeTemplates接口获取
+                     * 模板ID 
+可从[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

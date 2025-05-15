@@ -221,6 +221,27 @@ namespace TencentCloud
                      */
                     bool StatusDescHasBeenSet() const;
 
+                    /**
+                     * 获取标签值总数
+                     * @return LabelTotalCount 标签值总数
+                     * 
+                     */
+                    std::string GetLabelTotalCount() const;
+
+                    /**
+                     * 设置标签值总数
+                     * @param _labelTotalCount 标签值总数
+                     * 
+                     */
+                    void SetLabelTotalCount(const std::string& _labelTotalCount);
+
+                    /**
+                     * 判断参数 LabelTotalCount 是否已赋值
+                     * @return LabelTotalCount 是否已赋值
+                     * 
+                     */
+                    bool LabelTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +292,12 @@ namespace TencentCloud
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
+
+                    /**
+                     * 标签值总数
+                     */
+                    std::string m_labelTotalCount;
+                    bool m_labelTotalCountHasBeenSet;
 
                 };
             }

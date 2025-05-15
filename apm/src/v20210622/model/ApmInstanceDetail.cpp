@@ -59,7 +59,9 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_isSqlInjectionAnalysisHasBeenSet(false),
     m_stopReasonHasBeenSet(false),
     m_isRemoteCommandExecutionAnalysisHasBeenSet(false),
-    m_isMemoryHijackingAnalysisHasBeenSet(false)
+    m_isMemoryHijackingAnalysisHasBeenSet(false),
+    m_logIndexTypeHasBeenSet(false),
+    m_logTraceIdKeyHasBeenSet(false)
 {
 }
 
@@ -471,6 +473,26 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_isMemoryHijackingAnalysisHasBeenSet = true;
     }
 
+    if (value.HasMember("LogIndexType") && !value["LogIndexType"].IsNull())
+    {
+        if (!value["LogIndexType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.LogIndexType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_logIndexType = value["LogIndexType"].GetInt64();
+        m_logIndexTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogTraceIdKey") && !value["LogTraceIdKey"].IsNull())
+    {
+        if (!value["LogTraceIdKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.LogTraceIdKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logTraceIdKey = string(value["LogTraceIdKey"].GetString());
+        m_logTraceIdKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -800,6 +822,22 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IsMemoryHijackingAnalysis";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isMemoryHijackingAnalysis, allocator);
+    }
+
+    if (m_logIndexTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogIndexType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_logIndexType, allocator);
+    }
+
+    if (m_logTraceIdKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogTraceIdKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logTraceIdKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1427,5 +1465,37 @@ void ApmInstanceDetail::SetIsMemoryHijackingAnalysis(const int64_t& _isMemoryHij
 bool ApmInstanceDetail::IsMemoryHijackingAnalysisHasBeenSet() const
 {
     return m_isMemoryHijackingAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetLogIndexType() const
+{
+    return m_logIndexType;
+}
+
+void ApmInstanceDetail::SetLogIndexType(const int64_t& _logIndexType)
+{
+    m_logIndexType = _logIndexType;
+    m_logIndexTypeHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::LogIndexTypeHasBeenSet() const
+{
+    return m_logIndexTypeHasBeenSet;
+}
+
+string ApmInstanceDetail::GetLogTraceIdKey() const
+{
+    return m_logTraceIdKey;
+}
+
+void ApmInstanceDetail::SetLogTraceIdKey(const string& _logTraceIdKey)
+{
+    m_logTraceIdKey = _logTraceIdKey;
+    m_logTraceIdKeyHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::LogTraceIdKeyHasBeenSet() const
+{
+    return m_logTraceIdKeyHasBeenSet;
 }
 

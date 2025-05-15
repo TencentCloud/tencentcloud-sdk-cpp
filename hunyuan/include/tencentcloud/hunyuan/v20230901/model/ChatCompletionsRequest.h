@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/hunyuan/v20230901/model/Message.h>
 #include <tencentcloud/hunyuan/v20230901/model/Tool.h>
+#include <tencentcloud/hunyuan/v20230901/model/WebSearchOptions.h>
 
 
 namespace TencentCloud
@@ -692,6 +693,27 @@ namespace TencentCloud
                      */
                     bool EnableDeepReadHasBeenSet() const;
 
+                    /**
+                     * 获取知识注入相关的参数信息
+                     * @return WebSearchOptions 知识注入相关的参数信息
+                     * 
+                     */
+                    WebSearchOptions GetWebSearchOptions() const;
+
+                    /**
+                     * 设置知识注入相关的参数信息
+                     * @param _webSearchOptions 知识注入相关的参数信息
+                     * 
+                     */
+                    void SetWebSearchOptions(const WebSearchOptions& _webSearchOptions);
+
+                    /**
+                     * 判断参数 WebSearchOptions 是否已赋值
+                     * @return WebSearchOptions 是否已赋值
+                     * 
+                     */
+                    bool WebSearchOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -870,6 +892,12 @@ namespace TencentCloud
                      */
                     bool m_enableDeepRead;
                     bool m_enableDeepReadHasBeenSet;
+
+                    /**
+                     * 知识注入相关的参数信息
+                     */
+                    WebSearchOptions m_webSearchOptions;
+                    bool m_webSearchOptionsHasBeenSet;
 
                 };
             }

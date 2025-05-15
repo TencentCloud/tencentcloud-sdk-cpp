@@ -274,6 +274,27 @@ namespace TencentCloud
                      */
                     bool ScriptChangeHasBeenSet() const;
 
+                    /**
+                     * 获取转Base64的代码内容
+                     * @return Content 转Base64的代码内容
+                     * 
+                     */
+                    std::string GetContent() const;
+
+                    /**
+                     * 设置转Base64的代码内容
+                     * @param _content 转Base64的代码内容
+                     * 
+                     */
+                    void SetContent(const std::string& _content);
+
+                    /**
+                     * 判断参数 Content 是否已赋值
+                     * @return Content 是否已赋值
+                     * 
+                     */
+                    bool ContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +362,12 @@ namespace TencentCloud
                      */
                     bool m_scriptChange;
                     bool m_scriptChangeHasBeenSet;
+
+                    /**
+                     * 转Base64的代码内容
+                     */
+                    std::string m_content;
+                    bool m_contentHasBeenSet;
 
                 };
             }

@@ -87,6 +87,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAliasListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAnalyticsRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAnalyticsResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainAndRecordListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainAndRecordListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainCustomLineListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainCustomLineListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainFilterListRequest.h>
@@ -307,6 +309,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainAnalyticsResponse> DescribeDomainAnalyticsOutcome;
                 typedef std::future<DescribeDomainAnalyticsOutcome> DescribeDomainAnalyticsOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainAnalyticsRequest&, DescribeDomainAnalyticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAnalyticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainAndRecordListResponse> DescribeDomainAndRecordListOutcome;
+                typedef std::future<DescribeDomainAndRecordListOutcome> DescribeDomainAndRecordListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainAndRecordListRequest&, DescribeDomainAndRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAndRecordListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainCustomLineListResponse> DescribeDomainCustomLineListOutcome;
                 typedef std::future<DescribeDomainCustomLineListOutcome> DescribeDomainCustomLineListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainCustomLineListRequest&, DescribeDomainCustomLineListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainCustomLineListAsyncHandler;
@@ -767,6 +772,15 @@ namespace TencentCloud
                 DescribeDomainAnalyticsOutcome DescribeDomainAnalytics(const Model::DescribeDomainAnalyticsRequest &request);
                 void DescribeDomainAnalyticsAsync(const Model::DescribeDomainAnalyticsRequest& request, const DescribeDomainAnalyticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainAnalyticsOutcomeCallable DescribeDomainAnalyticsCallable(const Model::DescribeDomainAnalyticsRequest& request);
+
+                /**
+                 *批量操作中搜索域名
+                 * @param req DescribeDomainAndRecordListRequest
+                 * @return DescribeDomainAndRecordListOutcome
+                 */
+                DescribeDomainAndRecordListOutcome DescribeDomainAndRecordList(const Model::DescribeDomainAndRecordListRequest &request);
+                void DescribeDomainAndRecordListAsync(const Model::DescribeDomainAndRecordListRequest& request, const DescribeDomainAndRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainAndRecordListOutcomeCallable DescribeDomainAndRecordListCallable(const Model::DescribeDomainAndRecordListRequest& request);
 
                 /**
                  *获取域名的自定义线路列表

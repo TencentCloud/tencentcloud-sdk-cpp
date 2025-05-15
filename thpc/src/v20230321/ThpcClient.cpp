@@ -943,6 +943,49 @@ ThpcClient::ModifyWorkspacesAttributeOutcomeCallable ThpcClient::ModifyWorkspace
     return task->get_future();
 }
 
+ThpcClient::ModifyWorkspacesRenewFlagOutcome ThpcClient::ModifyWorkspacesRenewFlag(const ModifyWorkspacesRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWorkspacesRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWorkspacesRenewFlagResponse rsp = ModifyWorkspacesRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWorkspacesRenewFlagOutcome(rsp);
+        else
+            return ModifyWorkspacesRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWorkspacesRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::ModifyWorkspacesRenewFlagAsync(const ModifyWorkspacesRenewFlagRequest& request, const ModifyWorkspacesRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWorkspacesRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::ModifyWorkspacesRenewFlagOutcomeCallable ThpcClient::ModifyWorkspacesRenewFlagCallable(const ModifyWorkspacesRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWorkspacesRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWorkspacesRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::SetAutoScalingConfigurationOutcome ThpcClient::SetAutoScalingConfiguration(const SetAutoScalingConfigurationRequest &request)
 {
     auto outcome = MakeRequest(request, "SetAutoScalingConfiguration");

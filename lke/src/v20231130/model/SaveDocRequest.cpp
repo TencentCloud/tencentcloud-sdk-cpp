@@ -39,7 +39,9 @@ SaveDocRequest::SaveDocRequest() :
     m_expireEndHasBeenSet(false),
     m_isReferHasBeenSet(false),
     m_optHasBeenSet(false),
-    m_cateBizIdHasBeenSet(false)
+    m_cateBizIdHasBeenSet(false),
+    m_customerKnowledgeIdHasBeenSet(false),
+    m_attributeFlagsHasBeenSet(false)
 {
 }
 
@@ -191,6 +193,27 @@ string SaveDocRequest::ToJsonString() const
         string key = "CateBizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customerKnowledgeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomerKnowledgeId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customerKnowledgeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attributeFlagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttributeFlags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_attributeFlags.begin(); itr != m_attributeFlags.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -471,6 +494,38 @@ void SaveDocRequest::SetCateBizId(const string& _cateBizId)
 bool SaveDocRequest::CateBizIdHasBeenSet() const
 {
     return m_cateBizIdHasBeenSet;
+}
+
+string SaveDocRequest::GetCustomerKnowledgeId() const
+{
+    return m_customerKnowledgeId;
+}
+
+void SaveDocRequest::SetCustomerKnowledgeId(const string& _customerKnowledgeId)
+{
+    m_customerKnowledgeId = _customerKnowledgeId;
+    m_customerKnowledgeIdHasBeenSet = true;
+}
+
+bool SaveDocRequest::CustomerKnowledgeIdHasBeenSet() const
+{
+    return m_customerKnowledgeIdHasBeenSet;
+}
+
+vector<uint64_t> SaveDocRequest::GetAttributeFlags() const
+{
+    return m_attributeFlags;
+}
+
+void SaveDocRequest::SetAttributeFlags(const vector<uint64_t>& _attributeFlags)
+{
+    m_attributeFlags = _attributeFlags;
+    m_attributeFlagsHasBeenSet = true;
+}
+
+bool SaveDocRequest::AttributeFlagsHasBeenSet() const
+{
+    return m_attributeFlagsHasBeenSet;
 }
 
 

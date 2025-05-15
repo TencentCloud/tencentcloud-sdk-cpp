@@ -66,18 +66,18 @@ namespace TencentCloud
 
                     /**
                      * 获取待解绑的服务器信息，支持批量解除绑定，单次批量解除数量最多为20个。
-
+在这个接口 Port 参数为必填项。
                      * @return TargetGroupInstances 待解绑的服务器信息，支持批量解除绑定，单次批量解除数量最多为20个。
-
+在这个接口 Port 参数为必填项。
                      * 
                      */
                     std::vector<TargetGroupInstance> GetTargetGroupInstances() const;
 
                     /**
                      * 设置待解绑的服务器信息，支持批量解除绑定，单次批量解除数量最多为20个。
-
+在这个接口 Port 参数为必填项。
                      * @param _targetGroupInstances 待解绑的服务器信息，支持批量解除绑定，单次批量解除数量最多为20个。
-
+在这个接口 Port 参数为必填项。
                      * 
                      */
                     void SetTargetGroupInstances(const std::vector<TargetGroupInstance>& _targetGroupInstances);
@@ -99,7 +99,7 @@ namespace TencentCloud
 
                     /**
                      * 待解绑的服务器信息，支持批量解除绑定，单次批量解除数量最多为20个。
-
+在这个接口 Port 参数为必填项。
                      */
                     std::vector<TargetGroupInstance> m_targetGroupInstances;
                     bool m_targetGroupInstancesHasBeenSet;

@@ -507,23 +507,23 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取【废弃】不再需要指定，内核版本号与主实例保持一致
-                     * @return DBVersion 【废弃】不再需要指定，内核版本号与主实例保持一致
-                     * 
+                     * 获取不再需要指定，内核版本号与主实例保持一致
+                     * @return DBVersion 不再需要指定，内核版本号与主实例保持一致
+                     * @deprecated
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置【废弃】不再需要指定，内核版本号与主实例保持一致
-                     * @param _dBVersion 【废弃】不再需要指定，内核版本号与主实例保持一致
-                     * 
+                     * 设置不再需要指定，内核版本号与主实例保持一致
+                     * @param _dBVersion 不再需要指定，内核版本号与主实例保持一致
+                     * @deprecated
                      */
                     void SetDBVersion(const std::string& _dBVersion);
 
                     /**
                      * 判断参数 DBVersion 是否已赋值
                      * @return DBVersion 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DBVersionHasBeenSet() const;
 
@@ -681,7 +681,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 【废弃】不再需要指定，内核版本号与主实例保持一致
+                     * 不再需要指定，内核版本号与主实例保持一致
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;

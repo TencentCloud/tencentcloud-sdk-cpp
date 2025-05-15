@@ -36,7 +36,8 @@ ModelInfo::ModelInfo() :
     m_supportWorkflowStatusHasBeenSet(false),
     m_modelCategoryHasBeenSet(false),
     m_isDefaultHasBeenSet(false),
-    m_roleLenLimitHasBeenSet(false)
+    m_roleLenLimitHasBeenSet(false),
+    m_isExclusiveHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,16 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_roleLenLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("IsExclusive") && !value["IsExclusive"].IsNull())
+    {
+        if (!value["IsExclusive"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.IsExclusive` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isExclusive = value["IsExclusive"].GetBool();
+        m_isExclusiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -362,6 +373,14 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RoleLenLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_roleLenLimit, allocator);
+    }
+
+    if (m_isExclusiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExclusive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isExclusive, allocator);
     }
 
 }
@@ -621,5 +640,21 @@ void ModelInfo::SetRoleLenLimit(const uint64_t& _roleLenLimit)
 bool ModelInfo::RoleLenLimitHasBeenSet() const
 {
     return m_roleLenLimitHasBeenSet;
+}
+
+bool ModelInfo::GetIsExclusive() const
+{
+    return m_isExclusive;
+}
+
+void ModelInfo::SetIsExclusive(const bool& _isExclusive)
+{
+    m_isExclusive = _isExclusive;
+    m_isExclusiveHasBeenSet = true;
+}
+
+bool ModelInfo::IsExclusiveHasBeenSet() const
+{
+    return m_isExclusiveHasBeenSet;
 }
 

@@ -86,18 +86,18 @@ namespace TencentCloud
 
                     /**
                      * 获取验证码
-通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666
+通过调用[SendPhoneEmailCode](https://cloud.tencent.com/document/api/242/62666)接口发送到手机或邮箱的验证码
                      * @return VerifyCode 验证码
-通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666
+通过调用[SendPhoneEmailCode](https://cloud.tencent.com/document/api/242/62666)接口发送到手机或邮箱的验证码
                      * 
                      */
                     std::string GetVerifyCode() const;
 
                     /**
                      * 设置验证码
-通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666
+通过调用[SendPhoneEmailCode](https://cloud.tencent.com/document/api/242/62666)接口发送到手机或邮箱的验证码
                      * @param _verifyCode 验证码
-通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666
+通过调用[SendPhoneEmailCode](https://cloud.tencent.com/document/api/242/62666)接口发送到手机或邮箱的验证码
                      * 
                      */
                     void SetVerifyCode(const std::string& _verifyCode);
@@ -125,7 +125,7 @@ namespace TencentCloud
 
                     /**
                      * 验证码
-通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666
+通过调用[SendPhoneEmailCode](https://cloud.tencent.com/document/api/242/62666)接口发送到手机或邮箱的验证码
                      */
                     std::string m_verifyCode;
                     bool m_verifyCodeHasBeenSet;

@@ -423,6 +423,27 @@ namespace TencentCloud
                      */
                     bool RoleLenLimitHasBeenSet() const;
 
+                    /**
+                     * 获取是否专属并发模型
+                     * @return IsExclusive 是否专属并发模型
+                     * 
+                     */
+                    bool GetIsExclusive() const;
+
+                    /**
+                     * 设置是否专属并发模型
+                     * @param _isExclusive 是否专属并发模型
+                     * 
+                     */
+                    void SetIsExclusive(const bool& _isExclusive);
+
+                    /**
+                     * 判断参数 IsExclusive 是否已赋值
+                     * @return IsExclusive 是否已赋值
+                     * 
+                     */
+                    bool IsExclusiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -530,6 +551,12 @@ namespace TencentCloud
                      */
                     uint64_t m_roleLenLimit;
                     bool m_roleLenLimitHasBeenSet;
+
+                    /**
+                     * 是否专属并发模型
+                     */
+                    bool m_isExclusive;
+                    bool m_isExclusiveHasBeenSet;
 
                 };
             }

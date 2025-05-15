@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CauseHasBeenSet() const;
 
                     /**
-                     * 获取活动状态
-                     * @return ActivityState 活动状态
+                     * 获取活动状态。取值范围：<br><li>SUBMITTED：已提交</li><li>PROCESSING：处理中</li><li>SUCCEED：成功</li><li>FAILED：失败</li>
+                     * @return ActivityState 活动状态。取值范围：<br><li>SUBMITTED：已提交</li><li>PROCESSING：处理中</li><li>SUCCEED：成功</li><li>FAILED：失败</li>
                      * 
                      */
                     std::string GetActivityState() const;
 
                     /**
-                     * 设置活动状态
-                     * @param _activityState 活动状态
+                     * 设置活动状态。取值范围：<br><li>SUBMITTED：已提交</li><li>PROCESSING：处理中</li><li>SUCCEED：成功</li><li>FAILED：失败</li>
+                     * @param _activityState 活动状态。取值范围：<br><li>SUBMITTED：已提交</li><li>PROCESSING：处理中</li><li>SUCCEED：成功</li><li>FAILED：失败</li>
                      * 
                      */
                     void SetActivityState(const std::string& _activityState);
@@ -289,7 +289,7 @@ namespace TencentCloud
                     bool m_causeHasBeenSet;
 
                     /**
-                     * 活动状态
+                     * 活动状态。取值范围：<br><li>SUBMITTED：已提交</li><li>PROCESSING：处理中</li><li>SUCCEED：成功</li><li>FAILED：失败</li>
                      */
                     std::string m_activityState;
                     bool m_activityStateHasBeenSet;

@@ -69,18 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取每页数量
-默认：20 取值范围【1，200】
+默认：20 取值范围[1，200]
                      * @return PageSize 每页数量
-默认：20 取值范围【1，200】
+默认：20 取值范围[1，200]
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页数量
-默认：20 取值范围【1，200】
+默认：20 取值范围[1，200]
                      * @param _pageSize 每页数量
-默认：20 取值范围【1，200】
+默认：20 取值范围[1，200]
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -164,15 +164,27 @@ SuccessfulTime 预约结束时间
                     bool SortFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序规则：asc升序，desc降序
-                     * @return SortOrder 排序规则：asc升序，desc降序
+                     * 获取排序规则：
+asc：升序
+desc：降序
+默认：asc
+                     * @return SortOrder 排序规则：
+asc：升序
+desc：降序
+默认：asc
                      * 
                      */
                     std::string GetSortOrder() const;
 
                     /**
-                     * 设置排序规则：asc升序，desc降序
-                     * @param _sortOrder 排序规则：asc升序，desc降序
+                     * 设置排序规则：
+asc：升序
+desc：降序
+默认：asc
+                     * @param _sortOrder 排序规则：
+asc：升序
+desc：降序
+默认：asc
                      * 
                      */
                     void SetSortOrder(const std::string& _sortOrder);
@@ -195,7 +207,7 @@ SuccessfulTime 预约结束时间
 
                     /**
                      * 每页数量
-默认：20 取值范围【1，200】
+默认：20 取值范围[1，200]
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
@@ -221,7 +233,10 @@ SuccessfulTime 预约结束时间
                     bool m_sortFieldHasBeenSet;
 
                     /**
-                     * 排序规则：asc升序，desc降序
+                     * 排序规则：
+asc：升序
+desc：降序
+默认：asc
                      */
                     std::string m_sortOrder;
                     bool m_sortOrderHasBeenSet;
