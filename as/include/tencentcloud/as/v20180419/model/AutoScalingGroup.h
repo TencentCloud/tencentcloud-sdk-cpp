@@ -449,15 +449,23 @@ namespace TencentCloud
                     bool SubnetIdSetHasBeenSet() const;
 
                     /**
-                     * 获取销毁策略
-                     * @return TerminationPolicySet 销毁策略
+                     * 获取销毁策略。取值范围如下：
+<li>OLDEST_INSTANCE：优先销毁伸缩组中最旧的实例，默认取值。</li>
+<li>NEWEST_INSTANCE：优先销毁伸缩组中最新的实例。</li>
+                     * @return TerminationPolicySet 销毁策略。取值范围如下：
+<li>OLDEST_INSTANCE：优先销毁伸缩组中最旧的实例，默认取值。</li>
+<li>NEWEST_INSTANCE：优先销毁伸缩组中最新的实例。</li>
                      * 
                      */
                     std::vector<std::string> GetTerminationPolicySet() const;
 
                     /**
-                     * 设置销毁策略
-                     * @param _terminationPolicySet 销毁策略
+                     * 设置销毁策略。取值范围如下：
+<li>OLDEST_INSTANCE：优先销毁伸缩组中最旧的实例，默认取值。</li>
+<li>NEWEST_INSTANCE：优先销毁伸缩组中最新的实例。</li>
+                     * @param _terminationPolicySet 销毁策略。取值范围如下：
+<li>OLDEST_INSTANCE：优先销毁伸缩组中最旧的实例，默认取值。</li>
+<li>NEWEST_INSTANCE：优先销毁伸缩组中最新的实例。</li>
                      * 
                      */
                     void SetTerminationPolicySet(const std::vector<std::string>& _terminationPolicySet);
@@ -470,15 +478,15 @@ namespace TencentCloud
                     bool TerminationPolicySetHasBeenSet() const;
 
                     /**
-                     * 获取VPC标识
-                     * @return VpcId VPC标识
+                     * 获取私有网络ID。
+                     * @return VpcId 私有网络ID。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC标识
-                     * @param _vpcId VPC标识
+                     * 设置私有网络ID。
+                     * @param _vpcId 私有网络ID。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -512,15 +520,27 @@ namespace TencentCloud
                     bool ZoneSetHasBeenSet() const;
 
                     /**
-                     * 获取重试策略
-                     * @return RetryPolicy 重试策略
+                     * 获取重试策略，部分成功的伸缩活动判定为一次失败活动。取值范围如下：
+<li>IMMEDIATE_RETRY：默认取值，表示立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。</li>
+<li>INCREMENTAL_INTERVALS：间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大。前 10 次重试为快速重试，后续重试间隔逐步递增至 10 分钟、30 分钟、60 分钟、一天。</li>
+<li>NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。</li>
+                     * @return RetryPolicy 重试策略，部分成功的伸缩活动判定为一次失败活动。取值范围如下：
+<li>IMMEDIATE_RETRY：默认取值，表示立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。</li>
+<li>INCREMENTAL_INTERVALS：间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大。前 10 次重试为快速重试，后续重试间隔逐步递增至 10 分钟、30 分钟、60 分钟、一天。</li>
+<li>NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。</li>
                      * 
                      */
                     std::string GetRetryPolicy() const;
 
                     /**
-                     * 设置重试策略
-                     * @param _retryPolicy 重试策略
+                     * 设置重试策略，部分成功的伸缩活动判定为一次失败活动。取值范围如下：
+<li>IMMEDIATE_RETRY：默认取值，表示立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。</li>
+<li>INCREMENTAL_INTERVALS：间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大。前 10 次重试为快速重试，后续重试间隔逐步递增至 10 分钟、30 分钟、60 分钟、一天。</li>
+<li>NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。</li>
+                     * @param _retryPolicy 重试策略，部分成功的伸缩活动判定为一次失败活动。取值范围如下：
+<li>IMMEDIATE_RETRY：默认取值，表示立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。</li>
+<li>INCREMENTAL_INTERVALS：间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大。前 10 次重试为快速重试，后续重试间隔逐步递增至 10 分钟、30 分钟、60 分钟、一天。</li>
+<li>NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。</li>
                      * 
                      */
                     void SetRetryPolicy(const std::string& _retryPolicy);
@@ -596,15 +616,15 @@ namespace TencentCloud
                     bool ServiceSettingsHasBeenSet() const;
 
                     /**
-                     * 获取实例具有IPv6地址数量的配置
-                     * @return Ipv6AddressCount 实例具有IPv6地址数量的配置
+                     * 获取实例具有IPv6地址数量的配置，取值包括0、1。默认值为 0，表示实例不分配 IPv6 地址。需使用支持 IPv6 的私有网络，需在子网中开启 IPv6 CIDR，其他使用限制可参考 [IPv6使用限制](https://cloud.tencent.com/document/product/1142/38369)。
+                     * @return Ipv6AddressCount 实例具有IPv6地址数量的配置，取值包括0、1。默认值为 0，表示实例不分配 IPv6 地址。需使用支持 IPv6 的私有网络，需在子网中开启 IPv6 CIDR，其他使用限制可参考 [IPv6使用限制](https://cloud.tencent.com/document/product/1142/38369)。
                      * 
                      */
                     int64_t GetIpv6AddressCount() const;
 
                     /**
-                     * 设置实例具有IPv6地址数量的配置
-                     * @param _ipv6AddressCount 实例具有IPv6地址数量的配置
+                     * 设置实例具有IPv6地址数量的配置，取值包括0、1。默认值为 0，表示实例不分配 IPv6 地址。需使用支持 IPv6 的私有网络，需在子网中开启 IPv6 CIDR，其他使用限制可参考 [IPv6使用限制](https://cloud.tencent.com/document/product/1142/38369)。
+                     * @param _ipv6AddressCount 实例具有IPv6地址数量的配置，取值包括0、1。默认值为 0，表示实例不分配 IPv6 地址。需使用支持 IPv6 的私有网络，需在子网中开启 IPv6 CIDR，其他使用限制可参考 [IPv6使用限制](https://cloud.tencent.com/document/product/1142/38369)。
                      * 
                      */
                     void SetIpv6AddressCount(const int64_t& _ipv6AddressCount);
@@ -675,15 +695,19 @@ namespace TencentCloud
                     bool HealthCheckTypeHasBeenSet() const;
 
                     /**
-                     * 获取CLB健康检查宽限期
-                     * @return LoadBalancerHealthCheckGracePeriod CLB健康检查宽限期
+                     * 获取CLB健康检查宽限期.当扩容的实例进入IN_SERVICE后，在宽限期时间范围内将不会被标记为不健康CLB_UNHEALTHY。
+默认值：0。取值范围[0, 7200]，单位：秒。
+                     * @return LoadBalancerHealthCheckGracePeriod CLB健康检查宽限期.当扩容的实例进入IN_SERVICE后，在宽限期时间范围内将不会被标记为不健康CLB_UNHEALTHY。
+默认值：0。取值范围[0, 7200]，单位：秒。
                      * 
                      */
                     uint64_t GetLoadBalancerHealthCheckGracePeriod() const;
 
                     /**
-                     * 设置CLB健康检查宽限期
-                     * @param _loadBalancerHealthCheckGracePeriod CLB健康检查宽限期
+                     * 设置CLB健康检查宽限期.当扩容的实例进入IN_SERVICE后，在宽限期时间范围内将不会被标记为不健康CLB_UNHEALTHY。
+默认值：0。取值范围[0, 7200]，单位：秒。
+                     * @param _loadBalancerHealthCheckGracePeriod CLB健康检查宽限期.当扩容的实例进入IN_SERVICE后，在宽限期时间范围内将不会被标记为不健康CLB_UNHEALTHY。
+默认值：0。取值范围[0, 7200]，单位：秒。
                      * 
                      */
                     void SetLoadBalancerHealthCheckGracePeriod(const uint64_t& _loadBalancerHealthCheckGracePeriod);
@@ -914,13 +938,15 @@ namespace TencentCloud
                     bool m_subnetIdSetHasBeenSet;
 
                     /**
-                     * 销毁策略
+                     * 销毁策略。取值范围如下：
+<li>OLDEST_INSTANCE：优先销毁伸缩组中最旧的实例，默认取值。</li>
+<li>NEWEST_INSTANCE：优先销毁伸缩组中最新的实例。</li>
                      */
                     std::vector<std::string> m_terminationPolicySet;
                     bool m_terminationPolicySetHasBeenSet;
 
                     /**
-                     * VPC标识
+                     * 私有网络ID。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -932,7 +958,10 @@ namespace TencentCloud
                     bool m_zoneSetHasBeenSet;
 
                     /**
-                     * 重试策略
+                     * 重试策略，部分成功的伸缩活动判定为一次失败活动。取值范围如下：
+<li>IMMEDIATE_RETRY：默认取值，表示立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。</li>
+<li>INCREMENTAL_INTERVALS：间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大。前 10 次重试为快速重试，后续重试间隔逐步递增至 10 分钟、30 分钟、60 分钟、一天。</li>
+<li>NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。</li>
                      */
                     std::string m_retryPolicy;
                     bool m_retryPolicyHasBeenSet;
@@ -956,7 +985,7 @@ namespace TencentCloud
                     bool m_serviceSettingsHasBeenSet;
 
                     /**
-                     * 实例具有IPv6地址数量的配置
+                     * 实例具有IPv6地址数量的配置，取值包括0、1。默认值为 0，表示实例不分配 IPv6 地址。需使用支持 IPv6 的私有网络，需在子网中开启 IPv6 CIDR，其他使用限制可参考 [IPv6使用限制](https://cloud.tencent.com/document/product/1142/38369)。
                      */
                     int64_t m_ipv6AddressCount;
                     bool m_ipv6AddressCountHasBeenSet;
@@ -978,7 +1007,8 @@ namespace TencentCloud
                     bool m_healthCheckTypeHasBeenSet;
 
                     /**
-                     * CLB健康检查宽限期
+                     * CLB健康检查宽限期.当扩容的实例进入IN_SERVICE后，在宽限期时间范围内将不会被标记为不健康CLB_UNHEALTHY。
+默认值：0。取值范围[0, 7200]，单位：秒。
                      */
                     uint64_t m_loadBalancerHealthCheckGracePeriod;
                     bool m_loadBalancerHealthCheckGracePeriodHasBeenSet;

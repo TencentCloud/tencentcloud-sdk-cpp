@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取最大任务实例数, 最大值为10.
-                     * @return Limit 最大任务实例数, 最大值为10.
+                     * 获取最大任务实例数；默认值为5， 最大值为10。
+                     * @return Limit 最大任务实例数；默认值为5， 最大值为10。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置最大任务实例数, 最大值为10.
-                     * @param _limit 最大任务实例数, 最大值为10.
+                     * 设置最大任务实例数；默认值为5， 最大值为10。
+                     * @param _limit 最大任务实例数；默认值为5， 最大值为10。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 最大任务实例数, 最大值为10.
+                     * 最大任务实例数；默认值为5， 最大值为10。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

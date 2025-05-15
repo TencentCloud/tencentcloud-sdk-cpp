@@ -73,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模块下的需要例外的具体规则ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Include 模块下的需要例外的具体规则ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetInclude() const;
 
                     /**
                      * 设置模块下的需要例外的具体规则ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _include 模块下的需要例外的具体规则ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInclude(const std::vector<int64_t>& _include);
@@ -107,7 +103,6 @@ namespace TencentCloud
 
                     /**
                      * 模块下的需要例外的具体规则ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_include;
                     bool m_includeHasBeenSet;

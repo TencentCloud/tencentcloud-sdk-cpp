@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户UIN数组。
-                     * @return UserUin 用户UIN数组。
+                     * 获取用户UIN数组。登录 腾讯云账号中心控制台
+                     * @return UserUin 用户UIN数组。登录 腾讯云账号中心控制台
                      * 
                      */
                     std::vector<std::string> GetUserUin() const;
 
                     /**
-                     * 设置用户UIN数组。
-                     * @param _userUin 用户UIN数组。
+                     * 设置用户UIN数组。登录 腾讯云账号中心控制台
+                     * @param _userUin 用户UIN数组。登录 腾讯云账号中心控制台
                      * 
                      */
                     void SetUserUin(const std::vector<std::string>& _userUin);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool UserUinHasBeenSet() const;
 
                     /**
-                     * 获取终端节点服务ID。
-                     * @return EndPointServiceId 终端节点服务ID。
+                     * 获取终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+                     * @return EndPointServiceId 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
                      * 
                      */
                     std::string GetEndPointServiceId() const;
 
                     /**
-                     * 设置终端节点服务ID。
-                     * @param _endPointServiceId 终端节点服务ID。
+                     * 设置终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+                     * @param _endPointServiceId 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
                      * 
                      */
                     void SetEndPointServiceId(const std::string& _endPointServiceId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户UIN数组。
+                     * 用户UIN数组。登录 腾讯云账号中心控制台
                      */
                     std::vector<std::string> m_userUin;
                     bool m_userUinHasBeenSet;
 
                     /**
-                     * 终端节点服务ID。
+                     * 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
                      */
                     std::string m_endPointServiceId;
                     bool m_endPointServiceIdHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警策略ID。
-                     * @return AutoScalingPolicyId 告警策略ID。
+                     * 获取告警策略ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。
+                     * @return AutoScalingPolicyId 告警策略ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。
                      * 
                      */
                     std::string GetAutoScalingPolicyId() const;
 
                     /**
-                     * 设置告警策略ID。
-                     * @param _autoScalingPolicyId 告警策略ID。
+                     * 设置告警策略ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。
+                     * @param _autoScalingPolicyId 告警策略ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。
                      * 
                      */
                     void SetAutoScalingPolicyId(const std::string& _autoScalingPolicyId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool AutoScalingPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略名称。
-                     * @return ScalingPolicyName 告警策略名称。
+                     * 获取告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。
+                     * @return ScalingPolicyName 告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。
                      * 
                      */
                     std::string GetScalingPolicyName() const;
 
                     /**
-                     * 设置告警策略名称。
-                     * @param _scalingPolicyName 告警策略名称。
+                     * 设置告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。
+                     * @param _scalingPolicyName 告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。
                      * 
                      */
                     void SetScalingPolicyName(const std::string& _scalingPolicyName);
@@ -281,13 +281,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警策略ID。
+                     * 告警策略ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。
                      */
                     std::string m_autoScalingPolicyId;
                     bool m_autoScalingPolicyIdHasBeenSet;
 
                     /**
-                     * 告警策略名称。
+                     * 告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。
                      */
                     std::string m_scalingPolicyName;
                     bool m_scalingPolicyNameHasBeenSet;

@@ -173,6 +173,27 @@ namespace TencentCloud
                     bool AddressModuleHasBeenSet() const;
 
                     /**
+                     * 获取规则ID，嵌套安全组的规则ID
+                     * @return Id 规则ID，嵌套安全组的规则ID
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置规则ID，嵌套安全组的规则ID
+                     * @param _id 规则ID，嵌套安全组的规则ID
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
                      * 获取规则描述
                      * @return Desc 规则描述
                      * 
@@ -230,6 +251,12 @@ namespace TencentCloud
                      */
                     std::string m_addressModule;
                     bool m_addressModuleHasBeenSet;
+
+                    /**
+                     * 规则ID，嵌套安全组的规则ID
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                     /**
                      * 规则描述

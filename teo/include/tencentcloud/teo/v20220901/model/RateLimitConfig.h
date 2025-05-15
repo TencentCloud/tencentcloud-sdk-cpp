@@ -101,18 +101,14 @@ namespace TencentCloud
 
                     /**
                      * 获取速率限制模板功能。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RateLimitTemplate 速率限制模板功能。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RateLimitTemplate GetRateLimitTemplate() const;
 
                     /**
                      * 设置速率限制模板功能。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rateLimitTemplate 速率限制模板功能。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRateLimitTemplate(const RateLimitTemplate& _rateLimitTemplate);
@@ -126,18 +122,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能客户端过滤。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RateLimitIntelligence 智能客户端过滤。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RateLimitIntelligence GetRateLimitIntelligence() const;
 
                     /**
                      * 设置智能客户端过滤。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rateLimitIntelligence 智能客户端过滤。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRateLimitIntelligence(const RateLimitIntelligence& _rateLimitIntelligence);
@@ -151,18 +143,14 @@ namespace TencentCloud
 
                     /**
                      * 获取速率限制-托管定制规则。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RateLimitCustomizes 速率限制-托管定制规则。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RateLimitUserRule> GetRateLimitCustomizes() const;
 
                     /**
                      * 设置速率限制-托管定制规则。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rateLimitCustomizes 速率限制-托管定制规则。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRateLimitCustomizes(const std::vector<RateLimitUserRule>& _rateLimitCustomizes);
@@ -192,21 +180,18 @@ namespace TencentCloud
 
                     /**
                      * 速率限制模板功能。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitTemplate m_rateLimitTemplate;
                     bool m_rateLimitTemplateHasBeenSet;
 
                     /**
                      * 智能客户端过滤。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitIntelligence m_rateLimitIntelligence;
                     bool m_rateLimitIntelligenceHasBeenSet;
 
                     /**
                      * 速率限制-托管定制规则。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RateLimitUserRule> m_rateLimitCustomizes;
                     bool m_rateLimitCustomizesHasBeenSet;

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/bh/v20230418/model/Group.h>
 #include <tencentcloud/bh/v20230418/model/Department.h>
+#include <tencentcloud/bh/v20230418/model/IOAUserGroup.h>
 
 
 namespace TencentCloud
@@ -413,6 +414,48 @@ namespace TencentCloud
                      */
                     bool AclVersionHasBeenSet() const;
 
+                    /**
+                     * 获取用户来源，0-bh,1-ioa
+                     * @return UserFrom 用户来源，0-bh,1-ioa
+                     * 
+                     */
+                    uint64_t GetUserFrom() const;
+
+                    /**
+                     * 设置用户来源，0-bh,1-ioa
+                     * @param _userFrom 用户来源，0-bh,1-ioa
+                     * 
+                     */
+                    void SetUserFrom(const uint64_t& _userFrom);
+
+                    /**
+                     * 判断参数 UserFrom 是否已赋值
+                     * @return UserFrom 是否已赋值
+                     * 
+                     */
+                    bool UserFromHasBeenSet() const;
+
+                    /**
+                     * 获取ioa同步过来的用户相关信息
+                     * @return IOAUserGroup ioa同步过来的用户相关信息
+                     * 
+                     */
+                    IOAUserGroup GetIOAUserGroup() const;
+
+                    /**
+                     * 设置ioa同步过来的用户相关信息
+                     * @param _iOAUserGroup ioa同步过来的用户相关信息
+                     * 
+                     */
+                    void SetIOAUserGroup(const IOAUserGroup& _iOAUserGroup);
+
+                    /**
+                     * 判断参数 IOAUserGroup 是否已赋值
+                     * @return IOAUserGroup 是否已赋值
+                     * 
+                     */
+                    bool IOAUserGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -518,6 +561,18 @@ namespace TencentCloud
                      */
                     uint64_t m_aclVersion;
                     bool m_aclVersionHasBeenSet;
+
+                    /**
+                     * 用户来源，0-bh,1-ioa
+                     */
+                    uint64_t m_userFrom;
+                    bool m_userFromHasBeenSet;
+
+                    /**
+                     * ioa同步过来的用户相关信息
+                     */
+                    IOAUserGroup m_iOAUserGroup;
+                    bool m_iOAUserGroupHasBeenSet;
 
                 };
             }

@@ -185,6 +185,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeOriginProtectionResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOverviewL7DataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOverviewL7DataResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribePlansRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribePlansResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribePrefetchTasksRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribePrefetchTasksResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribePurgeTasksRequest.h>
@@ -564,6 +566,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOverviewL7DataResponse> DescribeOverviewL7DataOutcome;
                 typedef std::future<DescribeOverviewL7DataOutcome> DescribeOverviewL7DataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeOverviewL7DataRequest&, DescribeOverviewL7DataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewL7DataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlansResponse> DescribePlansOutcome;
+                typedef std::future<DescribePlansOutcome> DescribePlansOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribePlansRequest&, DescribePlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlansAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrefetchTasksResponse> DescribePrefetchTasksOutcome;
                 typedef std::future<DescribePrefetchTasksOutcome> DescribePrefetchTasksOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribePrefetchTasksRequest&, DescribePrefetchTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrefetchTasksAsyncHandler;
@@ -1490,6 +1495,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeOverviewL7DataOutcome DescribeOverviewL7Data(const Model::DescribeOverviewL7DataRequest &request);
                 void DescribeOverviewL7DataAsync(const Model::DescribeOverviewL7DataRequest& request, const DescribeOverviewL7DataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOverviewL7DataOutcomeCallable DescribeOverviewL7DataCallable(const Model::DescribeOverviewL7DataRequest& request);
+
+                /**
+                 *查询套餐信息列表，支持分页。
+                 * @param req DescribePlansRequest
+                 * @return DescribePlansOutcome
+                 */
+                DescribePlansOutcome DescribePlans(const Model::DescribePlansRequest &request);
+                void DescribePlansAsync(const Model::DescribePlansRequest& request, const DescribePlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlansOutcomeCallable DescribePlansCallable(const Model::DescribePlansRequest& request);
 
                 /**
                  *DescribePrefetchTasks 用于查询预热任务提交历史记录及执行进度，通过 CreatePrefetchTasks 接口提交的任务可通过此接口进行查询。

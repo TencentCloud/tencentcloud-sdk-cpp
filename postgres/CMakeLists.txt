@@ -44,7 +44,6 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/RestoreDBInstanceObjectsResponse.h
   include/tencentcloud/postgres/v20170312/model/SlowlogDetail.h
   include/tencentcloud/postgres/v20170312/model/SwitchDBInstancePrimaryRequest.h
-  include/tencentcloud/postgres/v20170312/model/OpenServerlessDBExtranetAccessRequest.h
   include/tencentcloud/postgres/v20170312/model/RenewInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DeleteServerlessDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DeleteLogBackupResponse.h
@@ -90,7 +89,6 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstanceParametersRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeOrdersResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeBackupDownloadURLResponse.h
-  include/tencentcloud/postgres/v20170312/model/OpenServerlessDBExtranetAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyMaintainTimeWindowResponse.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceCreateDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/Version.h
@@ -315,7 +313,6 @@ set(postgres_src
   src/v20170312/model/RestoreDBInstanceObjectsResponse.cpp
   src/v20170312/model/SlowlogDetail.cpp
   src/v20170312/model/SwitchDBInstancePrimaryRequest.cpp
-  src/v20170312/model/OpenServerlessDBExtranetAccessRequest.cpp
   src/v20170312/model/RenewInstanceResponse.cpp
   src/v20170312/model/DeleteServerlessDBInstanceResponse.cpp
   src/v20170312/model/DeleteLogBackupResponse.cpp
@@ -361,7 +358,6 @@ set(postgres_src
   src/v20170312/model/DescribeDBInstanceParametersRequest.cpp
   src/v20170312/model/DescribeOrdersResponse.cpp
   src/v20170312/model/DescribeBackupDownloadURLResponse.cpp
-  src/v20170312/model/OpenServerlessDBExtranetAccessResponse.cpp
   src/v20170312/model/ModifyMaintainTimeWindowResponse.cpp
   src/v20170312/model/InquiryPriceCreateDBInstancesResponse.cpp
   src/v20170312/model/Version.cpp

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"
-                     * @return ResourceType 标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"
+                     * 获取标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"。分别表示：伸缩组资源，启动配置资源。
+                     * @return ResourceType 标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"。分别表示：伸缩组资源，启动配置资源。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"
-                     * @param _resourceType 标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"
+                     * 设置标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"。分别表示：伸缩组资源，启动配置资源。
+                     * @param _resourceType 标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"。分别表示：伸缩组资源，启动配置资源。
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"
+                     * 标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"。分别表示：伸缩组资源，启动配置资源。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

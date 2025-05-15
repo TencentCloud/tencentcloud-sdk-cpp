@@ -68,7 +68,10 @@ Resource::Resource() :
     m_tUIDirectPortHasBeenSet(false),
     m_webAccessHasBeenSet(false),
     m_clientAccessHasBeenSet(false),
-    m_externalAccessHasBeenSet(false)
+    m_externalAccessHasBeenSet(false),
+    m_iOAResourceHasBeenSet(false),
+    m_packageIOAUserCountHasBeenSet(false),
+    m_packageIOABandwidthHasBeenSet(false)
 {
 }
 
@@ -579,6 +582,36 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_externalAccessHasBeenSet = true;
     }
 
+    if (value.HasMember("IOAResource") && !value["IOAResource"].IsNull())
+    {
+        if (!value["IOAResource"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.IOAResource` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_iOAResource = value["IOAResource"].GetUint64();
+        m_iOAResourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("PackageIOAUserCount") && !value["PackageIOAUserCount"].IsNull())
+    {
+        if (!value["PackageIOAUserCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.PackageIOAUserCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageIOAUserCount = value["PackageIOAUserCount"].GetUint64();
+        m_packageIOAUserCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("PackageIOABandwidth") && !value["PackageIOABandwidth"].IsNull())
+    {
+        if (!value["PackageIOABandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.PackageIOABandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageIOABandwidth = value["PackageIOABandwidth"].GetUint64();
+        m_packageIOABandwidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -995,6 +1028,30 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ExternalAccess";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_externalAccess, allocator);
+    }
+
+    if (m_iOAResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IOAResource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iOAResource, allocator);
+    }
+
+    if (m_packageIOAUserCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageIOAUserCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_packageIOAUserCount, allocator);
+    }
+
+    if (m_packageIOABandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageIOABandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_packageIOABandwidth, allocator);
     }
 
 }
@@ -1766,5 +1823,53 @@ void Resource::SetExternalAccess(const uint64_t& _externalAccess)
 bool Resource::ExternalAccessHasBeenSet() const
 {
     return m_externalAccessHasBeenSet;
+}
+
+uint64_t Resource::GetIOAResource() const
+{
+    return m_iOAResource;
+}
+
+void Resource::SetIOAResource(const uint64_t& _iOAResource)
+{
+    m_iOAResource = _iOAResource;
+    m_iOAResourceHasBeenSet = true;
+}
+
+bool Resource::IOAResourceHasBeenSet() const
+{
+    return m_iOAResourceHasBeenSet;
+}
+
+uint64_t Resource::GetPackageIOAUserCount() const
+{
+    return m_packageIOAUserCount;
+}
+
+void Resource::SetPackageIOAUserCount(const uint64_t& _packageIOAUserCount)
+{
+    m_packageIOAUserCount = _packageIOAUserCount;
+    m_packageIOAUserCountHasBeenSet = true;
+}
+
+bool Resource::PackageIOAUserCountHasBeenSet() const
+{
+    return m_packageIOAUserCountHasBeenSet;
+}
+
+uint64_t Resource::GetPackageIOABandwidth() const
+{
+    return m_packageIOABandwidth;
+}
+
+void Resource::SetPackageIOABandwidth(const uint64_t& _packageIOABandwidth)
+{
+    m_packageIOABandwidth = _packageIOABandwidth;
+    m_packageIOABandwidthHasBeenSet = true;
+}
+
+bool Resource::PackageIOABandwidthHasBeenSet() const
+{
+    return m_packageIOABandwidthHasBeenSet;
 }
 

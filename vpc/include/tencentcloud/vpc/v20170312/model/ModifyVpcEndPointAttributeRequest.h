@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取终端节点ID。
-                     * @return EndPointId 终端节点ID。
+                     * 获取终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
+                     * @return EndPointId 终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
                      * 
                      */
                     std::string GetEndPointId() const;
 
                     /**
-                     * 设置终端节点ID。
-                     * @param _endPointId 终端节点ID。
+                     * 设置终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
+                     * @param _endPointId 终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
                      * 
                      */
                     void SetEndPointId(const std::string& _endPointId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EndPointIdHasBeenSet() const;
 
                     /**
-                     * 获取终端节点名称。
-                     * @return EndPointName 终端节点名称。
+                     * 获取终端节点名称。长度限制为60个字符。
+                     * @return EndPointName 终端节点名称。长度限制为60个字符。
                      * 
                      */
                     std::string GetEndPointName() const;
 
                     /**
-                     * 设置终端节点名称。
-                     * @param _endPointName 终端节点名称。
+                     * 设置终端节点名称。长度限制为60个字符。
+                     * @param _endPointName 终端节点名称。长度限制为60个字符。
                      * 
                      */
                     void SetEndPointName(const std::string& _endPointName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndPointNameHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID列表。
-                     * @return SecurityGroupIds 安全组ID列表。
+                     * 获取安全组ID列表。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+                     * @return SecurityGroupIds 安全组ID列表。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组ID列表。
-                     * @param _securityGroupIds 安全组ID列表。
+                     * 设置安全组ID列表。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+                     * @param _securityGroupIds 安全组ID列表。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -129,19 +129,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 终端节点ID。
+                     * 终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
                      */
                     std::string m_endPointId;
                     bool m_endPointIdHasBeenSet;
 
                     /**
-                     * 终端节点名称。
+                     * 终端节点名称。长度限制为60个字符。
                      */
                     std::string m_endPointName;
                     bool m_endPointNameHasBeenSet;
 
                     /**
-                     * 安全组ID列表。
+                     * 安全组ID列表。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;

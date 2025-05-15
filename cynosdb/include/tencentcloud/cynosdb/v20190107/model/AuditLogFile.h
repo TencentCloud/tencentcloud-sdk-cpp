@@ -184,6 +184,27 @@ namespace TencentCloud
                      */
                     bool ErrMsgHasBeenSet() const;
 
+                    /**
+                     * 获取日志下载进度。
+                     * @return ProgressRate 日志下载进度。
+                     * 
+                     */
+                    int64_t GetProgressRate() const;
+
+                    /**
+                     * 设置日志下载进度。
+                     * @param _progressRate 日志下载进度。
+                     * 
+                     */
+                    void SetProgressRate(const int64_t& _progressRate);
+
+                    /**
+                     * 判断参数 ProgressRate 是否已赋值
+                     * @return ProgressRate 是否已赋值
+                     * 
+                     */
+                    bool ProgressRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +245,12 @@ namespace TencentCloud
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;
+
+                    /**
+                     * 日志下载进度。
+                     */
+                    int64_t m_progressRate;
+                    bool m_progressRateHasBeenSet;
 
                 };
             }

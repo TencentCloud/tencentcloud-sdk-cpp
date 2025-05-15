@@ -24,7 +24,8 @@ UserInfoForUserManager::UserInfoForUserManager() :
     m_userNameHasBeenSet(false),
     m_userGroupHasBeenSet(false),
     m_passWordHasBeenSet(false),
-    m_reMarkHasBeenSet(false)
+    m_reMarkHasBeenSet(false),
+    m_groupsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,19 @@ CoreInternalOutcome UserInfoForUserManager::Deserialize(const rapidjson::Value &
         m_reMarkHasBeenSet = true;
     }
 
+    if (value.HasMember("Groups") && !value["Groups"].IsNull())
+    {
+        if (!value["Groups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserInfoForUserManager.Groups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Groups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_groups.push_back((*itr).GetString());
+        }
+        m_groupsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +124,19 @@ void UserInfoForUserManager::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "ReMark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reMark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Groups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groups.begin(); itr != m_groups.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -177,5 +204,21 @@ void UserInfoForUserManager::SetReMark(const string& _reMark)
 bool UserInfoForUserManager::ReMarkHasBeenSet() const
 {
     return m_reMarkHasBeenSet;
+}
+
+vector<string> UserInfoForUserManager::GetGroups() const
+{
+    return m_groups;
+}
+
+void UserInfoForUserManager::SetGroups(const vector<string>& _groups)
+{
+    m_groups = _groups;
+    m_groupsHasBeenSet = true;
+}
+
+bool UserInfoForUserManager::GroupsHasBeenSet() const
+{
+    return m_groupsHasBeenSet;
 }
 

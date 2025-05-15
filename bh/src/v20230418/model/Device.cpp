@@ -40,7 +40,8 @@ Device::Device() :
     m_domainIdHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_enableSSLHasBeenSet(false),
-    m_sSLCertNameHasBeenSet(false)
+    m_sSLCertNameHasBeenSet(false),
+    m_iOAIdHasBeenSet(false)
 {
 }
 
@@ -276,6 +277,16 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_sSLCertNameHasBeenSet = true;
     }
 
+    if (value.HasMember("IOAId") && !value["IOAId"].IsNull())
+    {
+        if (!value["IOAId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.IOAId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_iOAId = value["IOAId"].GetInt64();
+        m_iOAIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -455,6 +466,14 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "SSLCertName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sSLCertName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iOAIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IOAId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iOAId, allocator);
     }
 
 }
@@ -778,5 +797,21 @@ void Device::SetSSLCertName(const string& _sSLCertName)
 bool Device::SSLCertNameHasBeenSet() const
 {
     return m_sSLCertNameHasBeenSet;
+}
+
+int64_t Device::GetIOAId() const
+{
+    return m_iOAId;
+}
+
+void Device::SetIOAId(const int64_t& _iOAId)
+{
+    m_iOAId = _iOAId;
+    m_iOAIdHasBeenSet = true;
+}
+
+bool Device::IOAIdHasBeenSet() const
+{
+    return m_iOAIdHasBeenSet;
 }
 

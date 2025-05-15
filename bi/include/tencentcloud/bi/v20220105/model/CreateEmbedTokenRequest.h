@@ -458,6 +458,27 @@ Operator 目前支持
                      */
                     bool TokenNumHasBeenSet() const;
 
+                    /**
+                     * 获取嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+                     * @return ConfigParam 嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+                     * 
+                     */
+                    std::string GetConfigParam() const;
+
+                    /**
+                     * 设置嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+                     * @param _configParam 嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+                     * 
+                     */
+                    void SetConfigParam(const std::string& _configParam);
+
+                    /**
+                     * 判断参数 ConfigParam 是否已赋值
+                     * @return ConfigParam 是否已赋值
+                     * 
+                     */
+                    bool ConfigParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -572,6 +593,12 @@ Operator 目前支持
                      */
                     int64_t m_tokenNum;
                     bool m_tokenNumHasBeenSet;
+
+                    /**
+                     * 嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+                     */
+                    std::string m_configParam;
+                    bool m_configParamHasBeenSet;
 
                 };
             }

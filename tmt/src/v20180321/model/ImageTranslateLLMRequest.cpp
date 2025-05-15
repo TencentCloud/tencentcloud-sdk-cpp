@@ -23,6 +23,8 @@ using namespace TencentCloud::Tmt::V20180321::Model;
 using namespace std;
 
 ImageTranslateLLMRequest::ImageTranslateLLMRequest() :
+    m_dataHasBeenSet(false),
+    m_targetHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
 }
@@ -33,6 +35,22 @@ string ImageTranslateLLMRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Target";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_target.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_urlHasBeenSet)
     {
@@ -49,6 +67,38 @@ string ImageTranslateLLMRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ImageTranslateLLMRequest::GetData() const
+{
+    return m_data;
+}
+
+void ImageTranslateLLMRequest::SetData(const string& _data)
+{
+    m_data = _data;
+    m_dataHasBeenSet = true;
+}
+
+bool ImageTranslateLLMRequest::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
+}
+
+string ImageTranslateLLMRequest::GetTarget() const
+{
+    return m_target;
+}
+
+void ImageTranslateLLMRequest::SetTarget(const string& _target)
+{
+    m_target = _target;
+    m_targetHasBeenSet = true;
+}
+
+bool ImageTranslateLLMRequest::TargetHasBeenSet() const
+{
+    return m_targetHasBeenSet;
+}
 
 string ImageTranslateLLMRequest::GetUrl() const
 {

@@ -22,7 +22,8 @@ using namespace std;
 
 UserManagerFilter::UserManagerFilter() :
     m_userNameHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
+    m_userTypeHasBeenSet(false),
+    m_groupsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome UserManagerFilter::Deserialize(const rapidjson::Value &value
         m_userTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Groups") && !value["Groups"].IsNull())
+    {
+        if (!value["Groups"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserManagerFilter.Groups` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groups = string(value["Groups"].GetString());
+        m_groupsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void UserManagerFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Groups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groups.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void UserManagerFilter::SetUserType(const string& _userType)
 bool UserManagerFilter::UserTypeHasBeenSet() const
 {
     return m_userTypeHasBeenSet;
+}
+
+string UserManagerFilter::GetGroups() const
+{
+    return m_groups;
+}
+
+void UserManagerFilter::SetGroups(const string& _groups)
+{
+    m_groups = _groups;
+    m_groupsHasBeenSet = true;
+}
+
+bool UserManagerFilter::GroupsHasBeenSet() const
+{
+    return m_groupsHasBeenSet;
 }
 

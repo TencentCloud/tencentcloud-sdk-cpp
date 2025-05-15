@@ -469,6 +469,27 @@ namespace TencentCloud
                      */
                     bool SSLCertNameHasBeenSet() const;
 
+                    /**
+                     * 获取IOA侧的资源ID
+                     * @return IOAId IOA侧的资源ID
+                     * 
+                     */
+                    int64_t GetIOAId() const;
+
+                    /**
+                     * 设置IOA侧的资源ID
+                     * @param _iOAId IOA侧的资源ID
+                     * 
+                     */
+                    void SetIOAId(const int64_t& _iOAId);
+
+                    /**
+                     * 判断参数 IOAId 是否已赋值
+                     * @return IOAId 是否已赋值
+                     * 
+                     */
+                    bool IOAIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,6 +611,12 @@ namespace TencentCloud
                      */
                     std::string m_sSLCertName;
                     bool m_sSLCertNameHasBeenSet;
+
+                    /**
+                     * IOA侧的资源ID
+                     */
+                    int64_t m_iOAId;
+                    bool m_iOAIdHasBeenSet;
 
                 };
             }

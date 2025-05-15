@@ -54,7 +54,6 @@ namespace TencentCloud
 <li>normal：适中；</li>
 <li>strict：严格；</li>
 <li>close：关闭，仅精准速率限制生效。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mode 模板等级名称，取值有：
 <li>sup_loose：超级宽松；</li>
 <li>loose：宽松；</li>
@@ -62,7 +61,6 @@ namespace TencentCloud
 <li>normal：适中；</li>
 <li>strict：严格；</li>
 <li>close：关闭，仅精准速率限制生效。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMode() const;
@@ -75,7 +73,6 @@ namespace TencentCloud
 <li>normal：适中；</li>
 <li>strict：严格；</li>
 <li>close：关闭，仅精准速率限制生效。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mode 模板等级名称，取值有：
 <li>sup_loose：超级宽松；</li>
 <li>loose：宽松；</li>
@@ -83,7 +80,6 @@ namespace TencentCloud
 <li>normal：适中；</li>
 <li>strict：严格；</li>
 <li>close：关闭，仅精准速率限制生效。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -120,11 +116,9 @@ namespace TencentCloud
                      * 获取模板处置方式，取值有：
 <li>alg：JavaScript挑战；</li>
 <li>monitor：观察。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action 模板处置方式，取值有：
 <li>alg：JavaScript挑战；</li>
 <li>monitor：观察。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAction() const;
@@ -133,11 +127,9 @@ namespace TencentCloud
                      * 设置模板处置方式，取值有：
 <li>alg：JavaScript挑战；</li>
 <li>monitor：观察。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _action 模板处置方式，取值有：
 <li>alg：JavaScript挑战；</li>
 <li>monitor：观察。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -151,18 +143,14 @@ namespace TencentCloud
 
                     /**
                      * 获取惩罚时间，取值范围0-2天，单位秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PunishTime 惩罚时间，取值范围0-2天，单位秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPunishTime() const;
 
                     /**
                      * 设置惩罚时间，取值范围0-2天，单位秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _punishTime 惩罚时间，取值范围0-2天，单位秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPunishTime(const int64_t& _punishTime);
@@ -226,7 +214,6 @@ namespace TencentCloud
 <li>normal：适中；</li>
 <li>strict：严格；</li>
 <li>close：关闭，仅精准速率限制生效。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
@@ -241,14 +228,12 @@ namespace TencentCloud
                      * 模板处置方式，取值有：
 <li>alg：JavaScript挑战；</li>
 <li>monitor：观察。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
                      * 惩罚时间，取值范围0-2天，单位秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_punishTime;
                     bool m_punishTimeHasBeenSet;

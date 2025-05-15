@@ -41,8 +41,6 @@
 #include <tencentcloud/tbaas/v20180416/model/GetClusterSummaryResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetInvokeTxRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetInvokeTxResponse.h>
-#include <tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListRequest.h>
-#include <tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetLatestTransactionListRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetLatestTransactionListResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserRequest.h>
@@ -114,9 +112,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetInvokeTxResponse> GetInvokeTxOutcome;
                 typedef std::future<GetInvokeTxOutcome> GetInvokeTxOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetInvokeTxRequest&, GetInvokeTxOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetInvokeTxAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetLatesdTransactionListResponse> GetLatesdTransactionListOutcome;
-                typedef std::future<GetLatesdTransactionListOutcome> GetLatesdTransactionListOutcomeCallable;
-                typedef std::function<void(const TbaasClient*, const Model::GetLatesdTransactionListRequest&, GetLatesdTransactionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLatesdTransactionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetLatestTransactionListResponse> GetLatestTransactionListOutcome;
                 typedef std::future<GetLatestTransactionListOutcome> GetLatestTransactionListOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetLatestTransactionListRequest&, GetLatestTransactionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLatestTransactionListAsyncHandler;
@@ -245,15 +240,6 @@ namespace TencentCloud
                 GetInvokeTxOutcome GetInvokeTx(const Model::GetInvokeTxRequest &request);
                 void GetInvokeTxAsync(const Model::GetInvokeTxRequest& request, const GetInvokeTxAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetInvokeTxOutcomeCallable GetInvokeTxCallable(const Model::GetInvokeTxRequest& request);
-
-                /**
-                 *获取最新交易列表（已废弃）
-                 * @param req GetLatesdTransactionListRequest
-                 * @return GetLatesdTransactionListOutcome
-                 */
-                GetLatesdTransactionListOutcome GetLatesdTransactionList(const Model::GetLatesdTransactionListRequest &request);
-                void GetLatesdTransactionListAsync(const Model::GetLatesdTransactionListRequest& request, const GetLatesdTransactionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetLatesdTransactionListOutcomeCallable GetLatesdTransactionListCallable(const Model::GetLatesdTransactionListRequest& request);
 
                 /**
                  *获取fabric最新交易列表

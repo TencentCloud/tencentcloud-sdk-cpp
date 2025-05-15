@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AutoScalingGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。可通过登录[控制台](https://console.cloud.tencent.com/cvm/index)或调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。
+                     * @return InstanceId 实例ID。可通过登录[控制台](https://console.cloud.tencent.com/cvm/index)或调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例ID。可通过登录[控制台](https://console.cloud.tencent.com/cvm/index)或调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。
+                     * @param _instanceId 实例ID。可通过登录[控制台](https://console.cloud.tencent.com/cvm/index)或调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取最小实例数，取值范围为0-2000。
-                     * @return MinSize 最小实例数，取值范围为0-2000。
+                     * 获取最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * @return MinSize 最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
                      * 
                      */
                     int64_t GetMinSize() const;
 
                     /**
-                     * 设置最小实例数，取值范围为0-2000。
-                     * @param _minSize 最小实例数，取值范围为0-2000。
+                     * 设置最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * @param _minSize 最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
                      * 
                      */
                     void SetMinSize(const int64_t& _minSize);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MinSizeHasBeenSet() const;
 
                     /**
-                     * 获取最大实例数，取值范围为0-2000。
-                     * @return MaxSize 最大实例数，取值范围为0-2000。
+                     * 获取最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * @return MaxSize 最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
                      * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
-                     * 设置最大实例数，取值范围为0-2000。
-                     * @param _maxSize 最大实例数，取值范围为0-2000。
+                     * 设置最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * @param _maxSize 最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
                      * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MaxSizeHasBeenSet() const;
 
                     /**
-                     * 获取期望实例数，大小介于最小实例数和最大实例数之间。
-                     * @return DesiredCapacity 期望实例数，大小介于最小实例数和最大实例数之间。
+                     * 获取期望实例数，大小介于最小实例数和最大实例数之间。不传入时默认值等于最小值。
+                     * @return DesiredCapacity 期望实例数，大小介于最小实例数和最大实例数之间。不传入时默认值等于最小值。
                      * 
                      */
                     int64_t GetDesiredCapacity() const;
 
                     /**
-                     * 设置期望实例数，大小介于最小实例数和最大实例数之间。
-                     * @param _desiredCapacity 期望实例数，大小介于最小实例数和最大实例数之间。
+                     * 设置期望实例数，大小介于最小实例数和最大实例数之间。不传入时默认值等于最小值。
+                     * @param _desiredCapacity 期望实例数，大小介于最小实例数和最大实例数之间。不传入时默认值等于最小值。
                      * 
                      */
                     void SetDesiredCapacity(const int64_t& _desiredCapacity);
@@ -177,25 +177,25 @@ namespace TencentCloud
                     bool m_autoScalingGroupNameHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 实例ID。可通过登录[控制台](https://console.cloud.tencent.com/cvm/index)或调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 最小实例数，取值范围为0-2000。
+                     * 最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
                      */
                     int64_t m_minSize;
                     bool m_minSizeHasBeenSet;
 
                     /**
-                     * 最大实例数，取值范围为0-2000。
+                     * 最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
                      */
                     int64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;
 
                     /**
-                     * 期望实例数，大小介于最小实例数和最大实例数之间。
+                     * 期望实例数，大小介于最小实例数和最大实例数之间。不传入时默认值等于最小值。
                      */
                     int64_t m_desiredCapacity;
                     bool m_desiredCapacityHasBeenSet;

@@ -196,14 +196,18 @@ namespace TencentCloud
 
                     /**
                      * 获取节点内网IP
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return LanIP 节点内网IP
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLanIP() const;
 
                     /**
                      * 设置节点内网IP
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lanIP 节点内网IP
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLanIP(const std::string& _lanIP);
@@ -303,6 +307,7 @@ namespace TencentCloud
 
                     /**
                      * 节点内网IP
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lanIP;
                     bool m_lanIPHasBeenSet;

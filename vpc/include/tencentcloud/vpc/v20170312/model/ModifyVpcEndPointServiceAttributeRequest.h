@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取终端节点服务ID。
-                     * @return EndPointServiceId 终端节点服务ID。
+                     * 获取终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+
+                     * @return EndPointServiceId 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+
                      * 
                      */
                     std::string GetEndPointServiceId() const;
 
                     /**
-                     * 设置终端节点服务ID。
-                     * @param _endPointServiceId 终端节点服务ID。
+                     * 设置终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+
+                     * @param _endPointServiceId 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+
                      * 
                      */
                     void SetEndPointServiceId(const std::string& _endPointServiceId);
@@ -64,15 +68,15 @@ namespace TencentCloud
                     bool EndPointServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取VPCID。
-                     * @return VpcId VPCID。
+                     * 获取VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @return VpcId VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPCID。
-                     * @param _vpcId VPCID。
+                     * 设置VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @param _vpcId VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -85,15 +89,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取终端节点服务名称。
-                     * @return EndPointServiceName 终端节点服务名称。
+                     * 获取终端节点服务名称。长度不超过60个字符。
+                     * @return EndPointServiceName 终端节点服务名称。长度不超过60个字符。
                      * 
                      */
                     std::string GetEndPointServiceName() const;
 
                     /**
-                     * 设置终端节点服务名称。
-                     * @param _endPointServiceName 终端节点服务名称。
+                     * 设置终端节点服务名称。长度不超过60个字符。
+                     * @param _endPointServiceName 终端节点服务名称。长度不超过60个字符。
                      * 
                      */
                     void SetEndPointServiceName(const std::string& _endPointServiceName);
@@ -127,15 +131,31 @@ namespace TencentCloud
                     bool AutoAcceptFlagHasBeenSet() const;
 
                     /**
-                     * 获取后端服务的ID，比如lb-xxx。
-                     * @return ServiceInstanceId 后端服务的ID，比如lb-xxx。
+                     * 获取后端服务的ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；
+MYSQL可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；
+CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；
+GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取
+
+                     * @return ServiceInstanceId 后端服务的ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；
+MYSQL可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；
+CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；
+GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取
+
                      * 
                      */
                     std::string GetServiceInstanceId() const;
 
                     /**
-                     * 设置后端服务的ID，比如lb-xxx。
-                     * @param _serviceInstanceId 后端服务的ID，比如lb-xxx。
+                     * 设置后端服务的ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；
+MYSQL可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；
+CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；
+GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取
+
+                     * @param _serviceInstanceId 后端服务的ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；
+MYSQL可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；
+CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；
+GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取
+
                      * 
                      */
                     void SetServiceInstanceId(const std::string& _serviceInstanceId);
@@ -171,19 +191,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 终端节点服务ID。
+                     * 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+
                      */
                     std::string m_endPointServiceId;
                     bool m_endPointServiceIdHasBeenSet;
 
                     /**
-                     * VPCID。
+                     * VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 终端节点服务名称。
+                     * 终端节点服务名称。长度不超过60个字符。
                      */
                     std::string m_endPointServiceName;
                     bool m_endPointServiceNameHasBeenSet;
@@ -195,7 +216,11 @@ namespace TencentCloud
                     bool m_autoAcceptFlagHasBeenSet;
 
                     /**
-                     * 后端服务的ID，比如lb-xxx。
+                     * 后端服务的ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；
+MYSQL可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；
+CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；
+GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取
+
                      */
                     std::string m_serviceInstanceId;
                     bool m_serviceInstanceIdHasBeenSet;

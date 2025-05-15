@@ -3179,6 +3179,49 @@ WedataClient::DescribeBatchOperateTaskOutcomeCallable WedataClient::DescribeBatc
     return task->get_future();
 }
 
+WedataClient::DescribeCodeTemplateDetailOutcome WedataClient::DescribeCodeTemplateDetail(const DescribeCodeTemplateDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCodeTemplateDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCodeTemplateDetailResponse rsp = DescribeCodeTemplateDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCodeTemplateDetailOutcome(rsp);
+        else
+            return DescribeCodeTemplateDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCodeTemplateDetailOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeCodeTemplateDetailAsync(const DescribeCodeTemplateDetailRequest& request, const DescribeCodeTemplateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCodeTemplateDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeCodeTemplateDetailOutcomeCallable WedataClient::DescribeCodeTemplateDetailCallable(const DescribeCodeTemplateDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCodeTemplateDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCodeTemplateDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeColumnLineageOutcome WedataClient::DescribeColumnLineage(const DescribeColumnLineageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeColumnLineage");
@@ -8640,6 +8683,49 @@ WedataClient::GenHiveTableDDLSqlOutcomeCallable WedataClient::GenHiveTableDDLSql
     return task->get_future();
 }
 
+WedataClient::GetBatchDetailErrorLogOutcome WedataClient::GetBatchDetailErrorLog(const GetBatchDetailErrorLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetBatchDetailErrorLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetBatchDetailErrorLogResponse rsp = GetBatchDetailErrorLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetBatchDetailErrorLogOutcome(rsp);
+        else
+            return GetBatchDetailErrorLogOutcome(o.GetError());
+    }
+    else
+    {
+        return GetBatchDetailErrorLogOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetBatchDetailErrorLogAsync(const GetBatchDetailErrorLogRequest& request, const GetBatchDetailErrorLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetBatchDetailErrorLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::GetBatchDetailErrorLogOutcomeCallable WedataClient::GetBatchDetailErrorLogCallable(const GetBatchDetailErrorLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetBatchDetailErrorLogOutcome()>>(
+        [this, request]()
+        {
+            return this->GetBatchDetailErrorLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::GetCosTokenOutcome WedataClient::GetCosToken(const GetCosTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "GetCosToken");
@@ -9063,6 +9149,49 @@ WedataClient::KillScheduleInstancesOutcomeCallable WedataClient::KillScheduleIns
         [this, request]()
         {
             return this->KillScheduleInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::ListBatchDetailOutcome WedataClient::ListBatchDetail(const ListBatchDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListBatchDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListBatchDetailResponse rsp = ListBatchDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListBatchDetailOutcome(rsp);
+        else
+            return ListBatchDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ListBatchDetailOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListBatchDetailAsync(const ListBatchDetailRequest& request, const ListBatchDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListBatchDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::ListBatchDetailOutcomeCallable WedataClient::ListBatchDetailCallable(const ListBatchDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListBatchDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ListBatchDetail(request);
         }
     );
 

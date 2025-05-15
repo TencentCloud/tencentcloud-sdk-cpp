@@ -85,10 +85,10 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取需要擦除的多个框选区域，注意：参数数组长度最大为2。
+                     * 获取需要擦除的多个框选区域，最多开启16个区域。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageAreaBoxes 需要擦除的多个框选区域，注意：参数数组长度最大为2。
+                     * @return ImageAreaBoxes 需要擦除的多个框选区域，最多开启16个区域。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -96,10 +96,10 @@ namespace TencentCloud
                     std::vector<ImageAreaBoxInfo> GetImageAreaBoxes() const;
 
                     /**
-                     * 设置需要擦除的多个框选区域，注意：参数数组长度最大为2。
+                     * 设置需要擦除的多个框选区域，最多开启16个区域。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _imageAreaBoxes 需要擦除的多个框选区域，注意：参数数组长度最大为2。
+                     * @param _imageAreaBoxes 需要擦除的多个框选区域，最多开启16个区域。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -126,7 +126,7 @@ namespace TencentCloud
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 需要擦除的多个框选区域，注意：参数数组长度最大为2。
+                     * 需要擦除的多个框选区域，最多开启16个区域。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */

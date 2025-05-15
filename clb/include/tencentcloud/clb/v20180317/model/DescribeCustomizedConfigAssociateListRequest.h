@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置ID
-                     * @return UconfigId 配置ID
+                     * 获取配置ID，可以通过 [DescribeCustomizedConfigList](https://cloud.tencent.com/document/product/214/60009) 接口获取。
+                     * @return UconfigId 配置ID，可以通过 [DescribeCustomizedConfigList](https://cloud.tencent.com/document/product/214/60009) 接口获取。
                      * 
                      */
                     std::string GetUconfigId() const;
 
                     /**
-                     * 设置配置ID
-                     * @param _uconfigId 配置ID
+                     * 设置配置ID，可以通过 [DescribeCustomizedConfigList](https://cloud.tencent.com/document/product/214/60009) 接口获取。
+                     * @param _uconfigId 配置ID，可以通过 [DescribeCustomizedConfigList](https://cloud.tencent.com/document/product/214/60009) 接口获取。
                      * 
                      */
                     void SetUconfigId(const std::string& _uconfigId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索域名
-                     * @return Domain 搜索域名
+                     * 获取搜索域名，可以通过 [DescribeLoadBalancersDetail](https://cloud.tencent.com/document/product/214/46916) 接口返回值的 `Domain` 字段查询。
+                     * @return Domain 搜索域名，可以通过 [DescribeLoadBalancersDetail](https://cloud.tencent.com/document/product/214/46916) 接口返回值的 `Domain` 字段查询。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置搜索域名
-                     * @param _domain 搜索域名
+                     * 设置搜索域名，可以通过 [DescribeLoadBalancersDetail](https://cloud.tencent.com/document/product/214/46916) 接口返回值的 `Domain` 字段查询。
+                     * @param _domain 搜索域名，可以通过 [DescribeLoadBalancersDetail](https://cloud.tencent.com/document/product/214/46916) 接口返回值的 `Domain` 字段查询。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置ID
+                     * 配置ID，可以通过 [DescribeCustomizedConfigList](https://cloud.tencent.com/document/product/214/60009) 接口获取。
                      */
                     std::string m_uconfigId;
                     bool m_uconfigIdHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索域名
+                     * 搜索域名，可以通过 [DescribeLoadBalancersDetail](https://cloud.tencent.com/document/product/214/46916) 接口返回值的 `Domain` 字段查询。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

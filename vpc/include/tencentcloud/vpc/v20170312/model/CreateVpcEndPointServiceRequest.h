@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC实例ID。
-                     * @return VpcId VPC实例ID。
+                     * 获取VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @return VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。
-                     * @param _vpcId VPC实例ID。
+                     * 设置VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @param _vpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -107,15 +107,19 @@ namespace TencentCloud
                     bool AutoAcceptFlagHasBeenSet() const;
 
                     /**
-                     * 获取后端服务ID，比如lb-xxx。
-                     * @return ServiceInstanceId 后端服务ID，比如lb-xxx。
+                     * 获取后端服务ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；CDB可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。
+
+                     * @return ServiceInstanceId 后端服务ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；CDB可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。
+
                      * 
                      */
                     std::string GetServiceInstanceId() const;
 
                     /**
-                     * 设置后端服务ID，比如lb-xxx。
-                     * @param _serviceInstanceId 后端服务ID，比如lb-xxx。
+                     * 设置后端服务ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；CDB可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。
+
+                     * @param _serviceInstanceId 后端服务ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；CDB可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。
+
                      * 
                      */
                     void SetServiceInstanceId(const std::string& _serviceInstanceId);
@@ -149,15 +153,15 @@ namespace TencentCloud
                     bool IsPassServiceHasBeenSet() const;
 
                     /**
-                     * 获取挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
-                     * @return ServiceType 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     * 获取挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。不填默认挂载为CLB。
+                     * @return ServiceType 挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。不填默认挂载为CLB。
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
-                     * @param _serviceType 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     * 设置挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。不填默认挂载为CLB。
+                     * @param _serviceType 挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。不填默认挂载为CLB。
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -214,7 +218,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPC实例ID。
+                     * VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -232,7 +236,8 @@ namespace TencentCloud
                     bool m_autoAcceptFlagHasBeenSet;
 
                     /**
-                     * 后端服务ID，比如lb-xxx。
+                     * 后端服务ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；CDB可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。
+
                      */
                     std::string m_serviceInstanceId;
                     bool m_serviceInstanceIdHasBeenSet;
@@ -244,7 +249,7 @@ namespace TencentCloud
                     bool m_isPassServiceHasBeenSet;
 
                     /**
-                     * 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     * 挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。不填默认挂载为CLB。
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;

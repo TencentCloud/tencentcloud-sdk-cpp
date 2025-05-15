@@ -143,15 +143,15 @@ namespace TencentCloud
                     bool HighLogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取审计规则。同RuleTemplateIds都不填是全审计。
-                     * @return AuditRuleFilters 审计规则。同RuleTemplateIds都不填是全审计。
+                     * 获取审计规则（该参数已废弃，不再生效）。
+                     * @return AuditRuleFilters 审计规则（该参数已废弃，不再生效）。
                      * 
                      */
                     std::vector<AuditRuleFilters> GetAuditRuleFilters() const;
 
                     /**
-                     * 设置审计规则。同RuleTemplateIds都不填是全审计。
-                     * @param _auditRuleFilters 审计规则。同RuleTemplateIds都不填是全审计。
+                     * 设置审计规则（该参数已废弃，不再生效）。
+                     * @param _auditRuleFilters 审计规则（该参数已废弃，不再生效）。
                      * 
                      */
                     void SetAuditRuleFilters(const std::vector<AuditRuleFilters>& _auditRuleFilters);
@@ -235,7 +235,7 @@ namespace TencentCloud
                     bool m_highLogExpireDayHasBeenSet;
 
                     /**
-                     * 审计规则。同RuleTemplateIds都不填是全审计。
+                     * 审计规则（该参数已废弃，不再生效）。
                      */
                     std::vector<AuditRuleFilters> m_auditRuleFilters;
                     bool m_auditRuleFiltersHasBeenSet;

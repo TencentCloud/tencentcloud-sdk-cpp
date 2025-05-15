@@ -106,18 +106,14 @@ namespace TencentCloud
 
                     /**
                      * 获取放行的规则ID。默认所有规则不配置放行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransManagedIds 放行的规则ID。默认所有规则不配置放行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetTransManagedIds() const;
 
                     /**
                      * 设置放行的规则ID。默认所有规则不配置放行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transManagedIds 放行的规则ID。默认所有规则不配置放行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransManagedIds(const std::vector<int64_t>& _transManagedIds);
@@ -131,18 +127,14 @@ namespace TencentCloud
 
                     /**
                      * 获取JS挑战的规则ID。默认所有规则不配置JS挑战。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlgManagedIds JS挑战的规则ID。默认所有规则不配置JS挑战。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetAlgManagedIds() const;
 
                     /**
                      * 设置JS挑战的规则ID。默认所有规则不配置JS挑战。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _algManagedIds JS挑战的规则ID。默认所有规则不配置JS挑战。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlgManagedIds(const std::vector<int64_t>& _algManagedIds);
@@ -156,18 +148,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数字验证码的规则ID。默认所有规则不配置数字验证码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CapManagedIds 数字验证码的规则ID。默认所有规则不配置数字验证码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetCapManagedIds() const;
 
                     /**
                      * 设置数字验证码的规则ID。默认所有规则不配置数字验证码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _capManagedIds 数字验证码的规则ID。默认所有规则不配置数字验证码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCapManagedIds(const std::vector<int64_t>& _capManagedIds);
@@ -181,18 +169,14 @@ namespace TencentCloud
 
                     /**
                      * 获取观察的规则ID。默认所有规则不配置观察。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonManagedIds 观察的规则ID。默认所有规则不配置观察。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetMonManagedIds() const;
 
                     /**
                      * 设置观察的规则ID。默认所有规则不配置观察。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monManagedIds 观察的规则ID。默认所有规则不配置观察。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonManagedIds(const std::vector<int64_t>& _monManagedIds);
@@ -206,18 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 获取拦截的规则ID。默认所有规则不配置拦截。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropManagedIds 拦截的规则ID。默认所有规则不配置拦截。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetDropManagedIds() const;
 
                     /**
                      * 设置拦截的规则ID。默认所有规则不配置拦截。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dropManagedIds 拦截的规则ID。默认所有规则不配置拦截。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDropManagedIds(const std::vector<int64_t>& _dropManagedIds);
@@ -249,35 +229,30 @@ namespace TencentCloud
 
                     /**
                      * 放行的规则ID。默认所有规则不配置放行。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_transManagedIds;
                     bool m_transManagedIdsHasBeenSet;
 
                     /**
                      * JS挑战的规则ID。默认所有规则不配置JS挑战。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_algManagedIds;
                     bool m_algManagedIdsHasBeenSet;
 
                     /**
                      * 数字验证码的规则ID。默认所有规则不配置数字验证码。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_capManagedIds;
                     bool m_capManagedIdsHasBeenSet;
 
                     /**
                      * 观察的规则ID。默认所有规则不配置观察。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_monManagedIds;
                     bool m_monManagedIdsHasBeenSet;
 
                     /**
                      * 拦截的规则ID。默认所有规则不配置拦截。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_dropManagedIds;
                     bool m_dropManagedIdsHasBeenSet;

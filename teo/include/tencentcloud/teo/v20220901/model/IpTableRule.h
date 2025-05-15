@@ -270,18 +270,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 规则名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 规则名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -390,7 +386,6 @@ namespace TencentCloud
 
                     /**
                      * 规则名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;

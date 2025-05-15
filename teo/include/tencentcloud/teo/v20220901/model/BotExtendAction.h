@@ -97,18 +97,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处置方式的触发概率，范围0-100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percent 处置方式的触发概率，范围0-100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPercent() const;
 
                     /**
                      * 设置处置方式的触发概率，范围0-100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _percent 处置方式的触发概率，范围0-100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPercent(const uint64_t& _percent);
@@ -137,7 +133,6 @@ namespace TencentCloud
 
                     /**
                      * 处置方式的触发概率，范围0-100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_percent;
                     bool m_percentHasBeenSet;

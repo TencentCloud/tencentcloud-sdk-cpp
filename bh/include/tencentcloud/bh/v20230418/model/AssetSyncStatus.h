@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool InProcessHasBeenSet() const;
 
+                    /**
+                     * 获取任务错误消息
+                     * @return ErrMsg 任务错误消息
+                     * 
+                     */
+                    std::string GetErrMsg() const;
+
+                    /**
+                     * 设置任务错误消息
+                     * @param _errMsg 任务错误消息
+                     * 
+                     */
+                    void SetErrMsg(const std::string& _errMsg);
+
+                    /**
+                     * 判断参数 ErrMsg 是否已赋值
+                     * @return ErrMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     bool m_inProcess;
                     bool m_inProcessHasBeenSet;
+
+                    /**
+                     * 任务错误消息
+                     */
+                    std::string m_errMsg;
+                    bool m_errMsgHasBeenSet;
 
                 };
             }

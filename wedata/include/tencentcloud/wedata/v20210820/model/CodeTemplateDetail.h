@@ -448,18 +448,18 @@ namespace TencentCloud
                     bool SubmitHasBeenSet() const;
 
                     /**
-                     * 获取任务脚本是否发生变化
+                     * 获取模版脚本是否发生变化
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScriptChange 任务脚本是否发生变化
+                     * @return ScriptChange 模版脚本是否发生变化
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetScriptChange() const;
 
                     /**
-                     * 设置任务脚本是否发生变化
+                     * 设置模版脚本是否发生变化
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scriptChange 任务脚本是否发生变化
+                     * @param _scriptChange 模版脚本是否发生变化
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -471,6 +471,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ScriptChangeHasBeenSet() const;
+
+                    /**
+                     * 获取代码模版脚本，base64编码返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Content 代码模版脚本，base64编码返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetContent() const;
+
+                    /**
+                     * 设置代码模版脚本，base64编码返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _content 代码模版脚本，base64编码返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContent(const std::string& _content);
+
+                    /**
+                     * 判断参数 Content 是否已赋值
+                     * @return Content 是否已赋值
+                     * 
+                     */
+                    bool ContentHasBeenSet() const;
 
                 private:
 
@@ -587,11 +612,18 @@ namespace TencentCloud
                     bool m_submitHasBeenSet;
 
                     /**
-                     * 任务脚本是否发生变化
+                     * 模版脚本是否发生变化
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_scriptChange;
                     bool m_scriptChangeHasBeenSet;
+
+                    /**
+                     * 代码模版脚本，base64编码返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_content;
+                    bool m_contentHasBeenSet;
 
                 };
             }

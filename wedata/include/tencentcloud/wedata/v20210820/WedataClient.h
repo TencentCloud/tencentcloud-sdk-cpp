@@ -169,6 +169,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeBaseBizCatalogsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBatchOperateTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBatchOperateTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeCodeTemplateDetailRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeCodeTemplateDetailResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnLineageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnLineageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnsMetaRequest.h>
@@ -423,6 +425,8 @@
 #include <tencentcloud/wedata/v20210820/model/FreezeTasksByWorkflowIdsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GenHiveTableDDLSqlRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GenHiveTableDDLSqlResponse.h>
+#include <tencentcloud/wedata/v20210820/model/GetBatchDetailErrorLogRequest.h>
+#include <tencentcloud/wedata/v20210820/model/GetBatchDetailErrorLogResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetCosTokenRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetCosTokenResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetFileInfoRequest.h>
@@ -443,6 +447,8 @@
 #include <tencentcloud/wedata/v20210820/model/KillOpsMakePlanInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/KillScheduleInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/KillScheduleInstancesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ListBatchDetailRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ListBatchDetailResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ListInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ListInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/LockIntegrationTaskRequest.h>
@@ -788,6 +794,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBatchOperateTaskResponse> DescribeBatchOperateTaskOutcome;
                 typedef std::future<DescribeBatchOperateTaskOutcome> DescribeBatchOperateTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeBatchOperateTaskRequest&, DescribeBatchOperateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOperateTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCodeTemplateDetailResponse> DescribeCodeTemplateDetailOutcome;
+                typedef std::future<DescribeCodeTemplateDetailOutcome> DescribeCodeTemplateDetailOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeCodeTemplateDetailRequest&, DescribeCodeTemplateDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCodeTemplateDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeColumnLineageResponse> DescribeColumnLineageOutcome;
                 typedef std::future<DescribeColumnLineageOutcome> DescribeColumnLineageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeColumnLineageRequest&, DescribeColumnLineageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeColumnLineageAsyncHandler;
@@ -1169,6 +1178,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GenHiveTableDDLSqlResponse> GenHiveTableDDLSqlOutcome;
                 typedef std::future<GenHiveTableDDLSqlOutcome> GenHiveTableDDLSqlOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GenHiveTableDDLSqlRequest&, GenHiveTableDDLSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenHiveTableDDLSqlAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetBatchDetailErrorLogResponse> GetBatchDetailErrorLogOutcome;
+                typedef std::future<GetBatchDetailErrorLogOutcome> GetBatchDetailErrorLogOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetBatchDetailErrorLogRequest&, GetBatchDetailErrorLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBatchDetailErrorLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetCosTokenResponse> GetCosTokenOutcome;
                 typedef std::future<GetCosTokenOutcome> GetCosTokenOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetCosTokenRequest&, GetCosTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCosTokenAsyncHandler;
@@ -1199,6 +1211,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::KillScheduleInstancesResponse> KillScheduleInstancesOutcome;
                 typedef std::future<KillScheduleInstancesOutcome> KillScheduleInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::KillScheduleInstancesRequest&, KillScheduleInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillScheduleInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListBatchDetailResponse> ListBatchDetailOutcome;
+                typedef std::future<ListBatchDetailOutcome> ListBatchDetailOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ListBatchDetailRequest&, ListBatchDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListBatchDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListInstancesResponse> ListInstancesOutcome;
                 typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ListInstancesRequest&, ListInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesAsyncHandler;
@@ -2026,6 +2041,15 @@ namespace TencentCloud
                 DescribeBatchOperateTaskOutcome DescribeBatchOperateTask(const Model::DescribeBatchOperateTaskRequest &request);
                 void DescribeBatchOperateTaskAsync(const Model::DescribeBatchOperateTaskRequest& request, const DescribeBatchOperateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBatchOperateTaskOutcomeCallable DescribeBatchOperateTaskCallable(const Model::DescribeBatchOperateTaskRequest& request);
+
+                /**
+                 *查询代码模版具体详情
+                 * @param req DescribeCodeTemplateDetailRequest
+                 * @return DescribeCodeTemplateDetailOutcome
+                 */
+                DescribeCodeTemplateDetailOutcome DescribeCodeTemplateDetail(const Model::DescribeCodeTemplateDetailRequest &request);
+                void DescribeCodeTemplateDetailAsync(const Model::DescribeCodeTemplateDetailRequest& request, const DescribeCodeTemplateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCodeTemplateDetailOutcomeCallable DescribeCodeTemplateDetailCallable(const Model::DescribeCodeTemplateDetailRequest& request);
 
                 /**
                  *列出字段血缘信息
@@ -3180,6 +3204,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 GenHiveTableDDLSqlOutcomeCallable GenHiveTableDDLSqlCallable(const Model::GenHiveTableDDLSqlRequest& request);
 
                 /**
+                 *获取批量操作错误日志
+                 * @param req GetBatchDetailErrorLogRequest
+                 * @return GetBatchDetailErrorLogOutcome
+                 */
+                GetBatchDetailErrorLogOutcome GetBatchDetailErrorLog(const Model::GetBatchDetailErrorLogRequest &request);
+                void GetBatchDetailErrorLogAsync(const Model::GetBatchDetailErrorLogRequest& request, const GetBatchDetailErrorLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetBatchDetailErrorLogOutcomeCallable GetBatchDetailErrorLogCallable(const Model::GetBatchDetailErrorLogRequest& request);
+
+                /**
                  *获取cos token
                  * @param req GetCosTokenRequest
                  * @return GetCosTokenOutcome
@@ -3268,6 +3301,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 KillScheduleInstancesOutcome KillScheduleInstances(const Model::KillScheduleInstancesRequest &request);
                 void KillScheduleInstancesAsync(const Model::KillScheduleInstancesRequest& request, const KillScheduleInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 KillScheduleInstancesOutcomeCallable KillScheduleInstancesCallable(const Model::KillScheduleInstancesRequest& request);
+
+                /**
+                 *获取批量操作详情列表
+                 * @param req ListBatchDetailRequest
+                 * @return ListBatchDetailOutcome
+                 */
+                ListBatchDetailOutcome ListBatchDetail(const Model::ListBatchDetailRequest &request);
+                void ListBatchDetailAsync(const Model::ListBatchDetailRequest& request, const ListBatchDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListBatchDetailOutcomeCallable ListBatchDetailCallable(const Model::ListBatchDetailRequest& request);
 
                 /**
                  *获取实例列表

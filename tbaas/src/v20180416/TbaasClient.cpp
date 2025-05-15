@@ -427,49 +427,6 @@ TbaasClient::GetInvokeTxOutcomeCallable TbaasClient::GetInvokeTxCallable(const G
     return task->get_future();
 }
 
-TbaasClient::GetLatesdTransactionListOutcome TbaasClient::GetLatesdTransactionList(const GetLatesdTransactionListRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetLatesdTransactionList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetLatesdTransactionListResponse rsp = GetLatesdTransactionListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetLatesdTransactionListOutcome(rsp);
-        else
-            return GetLatesdTransactionListOutcome(o.GetError());
-    }
-    else
-    {
-        return GetLatesdTransactionListOutcome(outcome.GetError());
-    }
-}
-
-void TbaasClient::GetLatesdTransactionListAsync(const GetLatesdTransactionListRequest& request, const GetLatesdTransactionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetLatesdTransactionList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TbaasClient::GetLatesdTransactionListOutcomeCallable TbaasClient::GetLatesdTransactionListCallable(const GetLatesdTransactionListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GetLatesdTransactionListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetLatesdTransactionList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TbaasClient::GetLatestTransactionListOutcome TbaasClient::GetLatestTransactionList(const GetLatestTransactionListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetLatestTransactionList");

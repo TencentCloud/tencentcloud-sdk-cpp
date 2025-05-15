@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool AuthorizedAppAssetIdSetHasBeenSet() const;
 
                     /**
-                     * 获取认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
-                     * @return AuthTypeSet 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
+                     * 获取认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 3-ioa 不传为全部
+                     * @return AuthTypeSet 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 3-ioa 不传为全部
                      * 
                      */
                     std::vector<uint64_t> GetAuthTypeSet() const;
 
                     /**
-                     * 设置认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
-                     * @param _authTypeSet 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
+                     * 设置认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 3-ioa 不传为全部
+                     * @param _authTypeSet 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 3-ioa 不传为全部
                      * 
                      */
                     void SetAuthTypeSet(const std::vector<uint64_t>& _authTypeSet);
@@ -302,6 +302,48 @@ namespace TencentCloud
                      * 
                      */
                     bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取是否获取cam用户, 0-否，1-是
+                     * @return IsCamUser 是否获取cam用户, 0-否，1-是
+                     * 
+                     */
+                    uint64_t GetIsCamUser() const;
+
+                    /**
+                     * 设置是否获取cam用户, 0-否，1-是
+                     * @param _isCamUser 是否获取cam用户, 0-否，1-是
+                     * 
+                     */
+                    void SetIsCamUser(const uint64_t& _isCamUser);
+
+                    /**
+                     * 判断参数 IsCamUser 是否已赋值
+                     * @return IsCamUser 是否已赋值
+                     * 
+                     */
+                    bool IsCamUserHasBeenSet() const;
+
+                    /**
+                     * 获取用户来源，0-bh，1-ioa,不传为全部
+                     * @return UserFromSet 用户来源，0-bh，1-ioa,不传为全部
+                     * 
+                     */
+                    std::vector<uint64_t> GetUserFromSet() const;
+
+                    /**
+                     * 设置用户来源，0-bh，1-ioa,不传为全部
+                     * @param _userFromSet 用户来源，0-bh，1-ioa,不传为全部
+                     * 
+                     */
+                    void SetUserFromSet(const std::vector<uint64_t>& _userFromSet);
+
+                    /**
+                     * 判断参数 UserFromSet 是否已赋值
+                     * @return UserFromSet 是否已赋值
+                     * 
+                     */
+                    bool UserFromSetHasBeenSet() const;
 
                 private:
 
@@ -361,7 +403,7 @@ namespace TencentCloud
                     bool m_authorizedAppAssetIdSetHasBeenSet;
 
                     /**
-                     * 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
+                     * 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 3-ioa 不传为全部
                      */
                     std::vector<uint64_t> m_authTypeSet;
                     bool m_authTypeSetHasBeenSet;
@@ -378,6 +420,18 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 是否获取cam用户, 0-否，1-是
+                     */
+                    uint64_t m_isCamUser;
+                    bool m_isCamUserHasBeenSet;
+
+                    /**
+                     * 用户来源，0-bh，1-ioa,不传为全部
+                     */
+                    std::vector<uint64_t> m_userFromSet;
+                    bool m_userFromSetHasBeenSet;
 
                 };
             }

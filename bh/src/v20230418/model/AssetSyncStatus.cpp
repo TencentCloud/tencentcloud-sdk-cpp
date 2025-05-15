@@ -23,7 +23,8 @@ using namespace std;
 AssetSyncStatus::AssetSyncStatus() :
     m_lastTimeHasBeenSet(false),
     m_lastStatusHasBeenSet(false),
-    m_inProcessHasBeenSet(false)
+    m_inProcessHasBeenSet(false),
+    m_errMsgHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome AssetSyncStatus::Deserialize(const rapidjson::Value &value)
         m_inProcessHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrMsg") && !value["ErrMsg"].IsNull())
+    {
+        if (!value["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSyncStatus.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(value["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void AssetSyncStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "InProcess";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inProcess, allocator);
+    }
+
+    if (m_errMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void AssetSyncStatus::SetInProcess(const bool& _inProcess)
 bool AssetSyncStatus::InProcessHasBeenSet() const
 {
     return m_inProcessHasBeenSet;
+}
+
+string AssetSyncStatus::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+void AssetSyncStatus::SetErrMsg(const string& _errMsg)
+{
+    m_errMsg = _errMsg;
+    m_errMsgHasBeenSet = true;
+}
+
+bool AssetSyncStatus::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
 }
 

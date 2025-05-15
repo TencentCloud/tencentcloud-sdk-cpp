@@ -692,6 +692,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAgentsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeVpcCniPodLimitsRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteImageCachesResponse.h
+  include/tencentcloud/tke/v20180525/model/EtcdOverrideConfig.h
   include/tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceRegionsResponse.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterRuntimeConfigResponse.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusRecordRuleYamlResponse.h
@@ -1403,6 +1404,7 @@ set(tke_src
   src/v20180525/model/DescribePrometheusAgentsResponse.cpp
   src/v20180525/model/DescribeVpcCniPodLimitsRequest.cpp
   src/v20180525/model/DeleteImageCachesResponse.cpp
+  src/v20180525/model/EtcdOverrideConfig.cpp
   src/v20180525/model/DescribeEKSContainerInstanceRegionsResponse.cpp
   src/v20180525/model/ModifyClusterRuntimeConfigResponse.cpp
   src/v20180525/model/ModifyPrometheusRecordRuleYamlResponse.cpp

@@ -43,7 +43,8 @@ RoInstanceInfo::RoInstanceInfo() :
     m_deviceTypeHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_deadlineTimeHasBeenSet(false),
-    m_payTypeHasBeenSet(false)
+    m_payTypeHasBeenSet(false),
+    m_replicationStatusHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,16 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_payTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplicationStatus") && !value["ReplicationStatus"].IsNull())
+    {
+        if (!value["ReplicationStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.ReplicationStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_replicationStatus = string(value["ReplicationStatus"].GetString());
+        m_replicationStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +482,14 @@ void RoInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "PayType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_payType, allocator);
+    }
+
+    if (m_replicationStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicationStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicationStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -842,5 +861,21 @@ void RoInstanceInfo::SetPayType(const int64_t& _payType)
 bool RoInstanceInfo::PayTypeHasBeenSet() const
 {
     return m_payTypeHasBeenSet;
+}
+
+string RoInstanceInfo::GetReplicationStatus() const
+{
+    return m_replicationStatus;
+}
+
+void RoInstanceInfo::SetReplicationStatus(const string& _replicationStatus)
+{
+    m_replicationStatus = _replicationStatus;
+    m_replicationStatusHasBeenSet = true;
+}
+
+bool RoInstanceInfo::ReplicationStatusHasBeenSet() const
+{
+    return m_replicationStatusHasBeenSet;
 }
 

@@ -228,15 +228,27 @@ namespace TencentCloud
                     bool LifeCycleStateHasBeenSet() const;
 
                     /**
-                     * 获取健康状态，取值包括HEALTHY和UNHEALTHY
-                     * @return HealthStatus 健康状态，取值包括HEALTHY和UNHEALTHY
+                     * 获取健康状态，取值范围如下：
+<li>HEALTHY：实例处于健康状态</li>
+<li>UNHEALTHY：实例 ping 不可达</li>
+<li>CLB_UNHEALTHY：CLB 监听的实例端口不健康</li>
+                     * @return HealthStatus 健康状态，取值范围如下：
+<li>HEALTHY：实例处于健康状态</li>
+<li>UNHEALTHY：实例 ping 不可达</li>
+<li>CLB_UNHEALTHY：CLB 监听的实例端口不健康</li>
                      * 
                      */
                     std::string GetHealthStatus() const;
 
                     /**
-                     * 设置健康状态，取值包括HEALTHY和UNHEALTHY
-                     * @param _healthStatus 健康状态，取值包括HEALTHY和UNHEALTHY
+                     * 设置健康状态，取值范围如下：
+<li>HEALTHY：实例处于健康状态</li>
+<li>UNHEALTHY：实例 ping 不可达</li>
+<li>CLB_UNHEALTHY：CLB 监听的实例端口不健康</li>
+                     * @param _healthStatus 健康状态，取值范围如下：
+<li>HEALTHY：实例处于健康状态</li>
+<li>UNHEALTHY：实例 ping 不可达</li>
+<li>CLB_UNHEALTHY：CLB 监听的实例端口不健康</li>
                      * 
                      */
                     void SetHealthStatus(const std::string& _healthStatus);
@@ -312,15 +324,15 @@ namespace TencentCloud
                     bool CreationTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例加入时间
-                     * @return AddTime 实例加入时间
+                     * 获取实例加入时间，按照ISO8601标准表示，并且使用UTC时间。
+                     * @return AddTime 实例加入时间，按照ISO8601标准表示，并且使用UTC时间。
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
-                     * 设置实例加入时间
-                     * @param _addTime 实例加入时间
+                     * 设置实例加入时间，按照ISO8601标准表示，并且使用UTC时间。
+                     * @param _addTime 实例加入时间，按照ISO8601标准表示，并且使用UTC时间。
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -505,7 +517,10 @@ namespace TencentCloud
                     bool m_lifeCycleStateHasBeenSet;
 
                     /**
-                     * 健康状态，取值包括HEALTHY和UNHEALTHY
+                     * 健康状态，取值范围如下：
+<li>HEALTHY：实例处于健康状态</li>
+<li>UNHEALTHY：实例 ping 不可达</li>
+<li>CLB_UNHEALTHY：CLB 监听的实例端口不健康</li>
                      */
                     std::string m_healthStatus;
                     bool m_healthStatusHasBeenSet;
@@ -529,7 +544,7 @@ namespace TencentCloud
                     bool m_creationTypeHasBeenSet;
 
                     /**
-                     * 实例加入时间
+                     * 实例加入时间，按照ISO8601标准表示，并且使用UTC时间。
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;

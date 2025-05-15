@@ -37,7 +37,9 @@ User::User() :
     m_lockStatusHasBeenSet(false),
     m_uKeyStatusHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_aclVersionHasBeenSet(false)
+    m_aclVersionHasBeenSet(false),
+    m_userFromHasBeenSet(false),
+    m_iOAUserGroupHasBeenSet(false)
 {
 }
 
@@ -233,6 +235,33 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_aclVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("UserFrom") && !value["UserFrom"].IsNull())
+    {
+        if (!value["UserFrom"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.UserFrom` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_userFrom = value["UserFrom"].GetUint64();
+        m_userFromHasBeenSet = true;
+    }
+
+    if (value.HasMember("IOAUserGroup") && !value["IOAUserGroup"].IsNull())
+    {
+        if (!value["IOAUserGroup"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.IOAUserGroup` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_iOAUserGroup.Deserialize(value["IOAUserGroup"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_iOAUserGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -382,6 +411,23 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "AclVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aclVersion, allocator);
+    }
+
+    if (m_userFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserFrom";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userFrom, allocator);
+    }
+
+    if (m_iOAUserGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IOAUserGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iOAUserGroup.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -657,5 +703,37 @@ void User::SetAclVersion(const uint64_t& _aclVersion)
 bool User::AclVersionHasBeenSet() const
 {
     return m_aclVersionHasBeenSet;
+}
+
+uint64_t User::GetUserFrom() const
+{
+    return m_userFrom;
+}
+
+void User::SetUserFrom(const uint64_t& _userFrom)
+{
+    m_userFrom = _userFrom;
+    m_userFromHasBeenSet = true;
+}
+
+bool User::UserFromHasBeenSet() const
+{
+    return m_userFromHasBeenSet;
+}
+
+IOAUserGroup User::GetIOAUserGroup() const
+{
+    return m_iOAUserGroup;
+}
+
+void User::SetIOAUserGroup(const IOAUserGroup& _iOAUserGroup)
+{
+    m_iOAUserGroup = _iOAUserGroup;
+    m_iOAUserGroupHasBeenSet = true;
+}
+
+bool User::IOAUserGroupHasBeenSet() const
+{
+    return m_iOAUserGroupHasBeenSet;
 }
 

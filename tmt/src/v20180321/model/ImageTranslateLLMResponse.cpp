@@ -24,6 +24,11 @@ using namespace TencentCloud::Tmt::V20180321::Model;
 using namespace std;
 
 ImageTranslateLLMResponse::ImageTranslateLLMResponse() :
+    m_dataHasBeenSet(false),
+    m_sourceHasBeenSet(false),
+    m_targetHasBeenSet(false),
+    m_sourceTextHasBeenSet(false),
+    m_targetTextHasBeenSet(false),
     m_angleHasBeenSet(false),
     m_transDetailsHasBeenSet(false)
 {
@@ -62,6 +67,56 @@ CoreInternalOutcome ImageTranslateLLMResponse::Deserialize(const string &payload
         return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
+
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_data = string(rsp["Data"].GetString());
+        m_dataHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Source") && !rsp["Source"].IsNull())
+    {
+        if (!rsp["Source"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Source` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_source = string(rsp["Source"].GetString());
+        m_sourceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Target") && !rsp["Target"].IsNull())
+    {
+        if (!rsp["Target"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Target` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_target = string(rsp["Target"].GetString());
+        m_targetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SourceText") && !rsp["SourceText"].IsNull())
+    {
+        if (!rsp["SourceText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceText = string(rsp["SourceText"].GetString());
+        m_sourceTextHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TargetText") && !rsp["TargetText"].IsNull())
+    {
+        if (!rsp["TargetText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetText = string(rsp["TargetText"].GetString());
+        m_targetTextHasBeenSet = true;
+    }
 
     if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
     {
@@ -103,6 +158,46 @@ string ImageTranslateLLMResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Target";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_target.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetText.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_angleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -137,6 +232,56 @@ string ImageTranslateLLMResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ImageTranslateLLMResponse::GetData() const
+{
+    return m_data;
+}
+
+bool ImageTranslateLLMResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
+}
+
+string ImageTranslateLLMResponse::GetSource() const
+{
+    return m_source;
+}
+
+bool ImageTranslateLLMResponse::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
+}
+
+string ImageTranslateLLMResponse::GetTarget() const
+{
+    return m_target;
+}
+
+bool ImageTranslateLLMResponse::TargetHasBeenSet() const
+{
+    return m_targetHasBeenSet;
+}
+
+string ImageTranslateLLMResponse::GetSourceText() const
+{
+    return m_sourceText;
+}
+
+bool ImageTranslateLLMResponse::SourceTextHasBeenSet() const
+{
+    return m_sourceTextHasBeenSet;
+}
+
+string ImageTranslateLLMResponse::GetTargetText() const
+{
+    return m_targetText;
+}
+
+bool ImageTranslateLLMResponse::TargetTextHasBeenSet() const
+{
+    return m_targetTextHasBeenSet;
+}
 
 double ImageTranslateLLMResponse::GetAngle() const
 {

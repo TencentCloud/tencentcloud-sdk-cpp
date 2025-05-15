@@ -3523,6 +3523,49 @@ TeoClient::DescribeOverviewL7DataOutcomeCallable TeoClient::DescribeOverviewL7Da
     return task->get_future();
 }
 
+TeoClient::DescribePlansOutcome TeoClient::DescribePlans(const DescribePlansRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlans");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlansResponse rsp = DescribePlansResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlansOutcome(rsp);
+        else
+            return DescribePlansOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlansOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribePlansAsync(const DescribePlansRequest& request, const DescribePlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePlans(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribePlansOutcomeCallable TeoClient::DescribePlansCallable(const DescribePlansRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePlansOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePlans(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribePrefetchTasksOutcome TeoClient::DescribePrefetchTasks(const DescribePrefetchTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrefetchTasks");

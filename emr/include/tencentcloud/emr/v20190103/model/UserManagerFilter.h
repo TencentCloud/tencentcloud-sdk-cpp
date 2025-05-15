@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool UserTypeHasBeenSet() const;
 
+                    /**
+                     * 获取组名
+                     * @return Groups 组名
+                     * 
+                     */
+                    std::string GetGroups() const;
+
+                    /**
+                     * 设置组名
+                     * @param _groups 组名
+                     * 
+                     */
+                    void SetGroups(const std::string& _groups);
+
+                    /**
+                     * 判断参数 Groups 是否已赋值
+                     * @return Groups 是否已赋值
+                     * 
+                     */
+                    bool GroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
+
+                    /**
+                     * 组名
+                     */
+                    std::string m_groups;
+                    bool m_groupsHasBeenSet;
 
                 };
             }

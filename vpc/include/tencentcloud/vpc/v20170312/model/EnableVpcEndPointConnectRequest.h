@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取终端节点服务ID。
-                     * @return EndPointServiceId 终端节点服务ID。
+                     * 获取终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+                     * @return EndPointServiceId 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
                      * 
                      */
                     std::string GetEndPointServiceId() const;
 
                     /**
-                     * 设置终端节点服务ID。
-                     * @param _endPointServiceId 终端节点服务ID。
+                     * 设置终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+                     * @param _endPointServiceId 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
                      * 
                      */
                     void SetEndPointServiceId(const std::string& _endPointServiceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EndPointServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取终端节点ID。
-                     * @return EndPointId 终端节点ID。
+                     * 获取终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
+                     * @return EndPointId 终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
                      * 
                      */
                     std::vector<std::string> GetEndPointId() const;
 
                     /**
-                     * 设置终端节点ID。
-                     * @param _endPointId 终端节点ID。
+                     * 设置终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
+                     * @param _endPointId 终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
                      * 
                      */
                     void SetEndPointId(const std::vector<std::string>& _endPointId);
@@ -133,13 +133,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 终端节点服务ID。
+                     * 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
                      */
                     std::string m_endPointServiceId;
                     bool m_endPointServiceIdHasBeenSet;
 
                     /**
-                     * 终端节点ID。
+                     * 终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
                      */
                     std::vector<std::string> m_endPointId;
                     bool m_endPointIdHasBeenSet;

@@ -4168,49 +4168,6 @@ PostgresClient::OpenDBExtranetAccessOutcomeCallable PostgresClient::OpenDBExtran
     return task->get_future();
 }
 
-PostgresClient::OpenServerlessDBExtranetAccessOutcome PostgresClient::OpenServerlessDBExtranetAccess(const OpenServerlessDBExtranetAccessRequest &request)
-{
-    auto outcome = MakeRequest(request, "OpenServerlessDBExtranetAccess");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        OpenServerlessDBExtranetAccessResponse rsp = OpenServerlessDBExtranetAccessResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return OpenServerlessDBExtranetAccessOutcome(rsp);
-        else
-            return OpenServerlessDBExtranetAccessOutcome(o.GetError());
-    }
-    else
-    {
-        return OpenServerlessDBExtranetAccessOutcome(outcome.GetError());
-    }
-}
-
-void PostgresClient::OpenServerlessDBExtranetAccessAsync(const OpenServerlessDBExtranetAccessRequest& request, const OpenServerlessDBExtranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenServerlessDBExtranetAccess(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-PostgresClient::OpenServerlessDBExtranetAccessOutcomeCallable PostgresClient::OpenServerlessDBExtranetAccessCallable(const OpenServerlessDBExtranetAccessRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<OpenServerlessDBExtranetAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenServerlessDBExtranetAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 PostgresClient::RebalanceReadOnlyGroupOutcome PostgresClient::RebalanceReadOnlyGroup(const RebalanceReadOnlyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "RebalanceReadOnlyGroup");

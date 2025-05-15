@@ -25,7 +25,6 @@ set(tbaas_public_header_model
   include/tencentcloud/tbaas/v20180416/model/GetBlockTransactionListForUserResponse.h
   include/tencentcloud/tbaas/v20180416/model/ApplyChainMakerBatchUserCertResponse.h
   include/tencentcloud/tbaas/v20180416/model/ApplyUserCertRequest.h
-  include/tencentcloud/tbaas/v20180416/model/SrvInvokeResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserResponse.h
   include/tencentcloud/tbaas/v20180416/model/SrvInvokeRequest.h
   include/tencentcloud/tbaas/v20180416/model/ApplyUserCertResponse.h
@@ -33,7 +32,6 @@ set(tbaas_public_header_model
   include/tencentcloud/tbaas/v20180416/model/InvokeFabricChaincodeResponse.h
   include/tencentcloud/tbaas/v20180416/model/SignCertCsr.h
   include/tencentcloud/tbaas/v20180416/model/DownloadUserCertResponse.h
-  include/tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListRequest.h
   include/tencentcloud/tbaas/v20180416/model/InvokeResponse.h
   include/tencentcloud/tbaas/v20180416/model/QueryFabricChaincodeResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserRequest.h
@@ -42,8 +40,8 @@ set(tbaas_public_header_model
   include/tencentcloud/tbaas/v20180416/model/TransactionItem.h
   include/tencentcloud/tbaas/v20180416/model/InvokeChainMakerDemoContractRequest.h
   include/tencentcloud/tbaas/v20180416/model/InvokeChainMakerContractResponse.h
-  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionRequest.h
-  include/tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListResponse.h
+  include/tencentcloud/tbaas/v20180416/model/SrvInvokeResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetLatestTransactionListResponse.h
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionResponse.h
   include/tencentcloud/tbaas/v20180416/model/DownloadUserCertRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetClusterSummaryResponse.h
@@ -69,7 +67,7 @@ set(tbaas_public_header_model
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerContractResponse.h
   include/tencentcloud/tbaas/v20180416/model/InvokeChainMakerContractRequest.h
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerContractRequest.h
-  include/tencentcloud/tbaas/v20180416/model/GetLatestTransactionListResponse.h
+  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionRequest.h
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerDemoBlockTransactionRequest.h
   include/tencentcloud/tbaas/v20180416/model/Transaction.h
   include/tencentcloud/tbaas/v20180416/model/QueryRequest.h
@@ -87,7 +85,6 @@ set(tbaas_src
   src/v20180416/model/GetBlockTransactionListForUserResponse.cpp
   src/v20180416/model/ApplyChainMakerBatchUserCertResponse.cpp
   src/v20180416/model/ApplyUserCertRequest.cpp
-  src/v20180416/model/SrvInvokeResponse.cpp
   src/v20180416/model/GetTransactionDetailForUserResponse.cpp
   src/v20180416/model/SrvInvokeRequest.cpp
   src/v20180416/model/ApplyUserCertResponse.cpp
@@ -95,7 +92,6 @@ set(tbaas_src
   src/v20180416/model/InvokeFabricChaincodeResponse.cpp
   src/v20180416/model/SignCertCsr.cpp
   src/v20180416/model/DownloadUserCertResponse.cpp
-  src/v20180416/model/GetLatesdTransactionListRequest.cpp
   src/v20180416/model/InvokeResponse.cpp
   src/v20180416/model/QueryFabricChaincodeResponse.cpp
   src/v20180416/model/GetTransactionDetailForUserRequest.cpp
@@ -104,8 +100,8 @@ set(tbaas_src
   src/v20180416/model/TransactionItem.cpp
   src/v20180416/model/InvokeChainMakerDemoContractRequest.cpp
   src/v20180416/model/InvokeChainMakerContractResponse.cpp
-  src/v20180416/model/QueryChainMakerTransactionRequest.cpp
-  src/v20180416/model/GetLatesdTransactionListResponse.cpp
+  src/v20180416/model/SrvInvokeResponse.cpp
+  src/v20180416/model/GetLatestTransactionListResponse.cpp
   src/v20180416/model/QueryChainMakerTransactionResponse.cpp
   src/v20180416/model/DownloadUserCertRequest.cpp
   src/v20180416/model/GetClusterSummaryResponse.cpp
@@ -131,7 +127,7 @@ set(tbaas_src
   src/v20180416/model/QueryChainMakerContractResponse.cpp
   src/v20180416/model/InvokeChainMakerContractRequest.cpp
   src/v20180416/model/QueryChainMakerContractRequest.cpp
-  src/v20180416/model/GetLatestTransactionListResponse.cpp
+  src/v20180416/model/QueryChainMakerTransactionRequest.cpp
   src/v20180416/model/QueryChainMakerDemoBlockTransactionRequest.cpp
   src/v20180416/model/Transaction.cpp
   src/v20180416/model/QueryRequest.cpp

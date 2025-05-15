@@ -28,6 +28,7 @@ CreateBatchSignUrlRequest::CreateBatchSignUrlRequest() :
     m_mobileHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_idCardTypeHasBeenSet(false),
+    m_signatureTypesHasBeenSet(false),
     m_idCardNumberHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
@@ -87,6 +88,19 @@ string CreateBatchSignUrlRequest::ToJsonString() const
         string key = "IdCardType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_idCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signatureTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignatureTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_signatureTypes.begin(); itr != m_signatureTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
     if (m_idCardNumberHasBeenSet)
@@ -253,6 +267,22 @@ void CreateBatchSignUrlRequest::SetIdCardType(const string& _idCardType)
 bool CreateBatchSignUrlRequest::IdCardTypeHasBeenSet() const
 {
     return m_idCardTypeHasBeenSet;
+}
+
+vector<int64_t> CreateBatchSignUrlRequest::GetSignatureTypes() const
+{
+    return m_signatureTypes;
+}
+
+void CreateBatchSignUrlRequest::SetSignatureTypes(const vector<int64_t>& _signatureTypes)
+{
+    m_signatureTypes = _signatureTypes;
+    m_signatureTypesHasBeenSet = true;
+}
+
+bool CreateBatchSignUrlRequest::SignatureTypesHasBeenSet() const
+{
+    return m_signatureTypesHasBeenSet;
 }
 
 string CreateBatchSignUrlRequest::GetIdCardNumber() const

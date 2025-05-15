@@ -34,7 +34,9 @@ DescribeUsersRequest::DescribeUsersRequest() :
     m_authorizedAppAssetIdSetHasBeenSet(false),
     m_authTypeSetHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_isCamUserHasBeenSet(false),
+    m_userFromSetHasBeenSet(false)
 {
 }
 
@@ -165,6 +167,27 @@ string DescribeUsersRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isCamUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCamUser";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isCamUser, allocator);
+    }
+
+    if (m_userFromSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserFromSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userFromSet.begin(); itr != m_userFromSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
@@ -366,6 +389,38 @@ void DescribeUsersRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeUsersRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+uint64_t DescribeUsersRequest::GetIsCamUser() const
+{
+    return m_isCamUser;
+}
+
+void DescribeUsersRequest::SetIsCamUser(const uint64_t& _isCamUser)
+{
+    m_isCamUser = _isCamUser;
+    m_isCamUserHasBeenSet = true;
+}
+
+bool DescribeUsersRequest::IsCamUserHasBeenSet() const
+{
+    return m_isCamUserHasBeenSet;
+}
+
+vector<uint64_t> DescribeUsersRequest::GetUserFromSet() const
+{
+    return m_userFromSet;
+}
+
+void DescribeUsersRequest::SetUserFromSet(const vector<uint64_t>& _userFromSet)
+{
+    m_userFromSet = _userFromSet;
+    m_userFromSetHasBeenSet = true;
+}
+
+bool DescribeUsersRequest::UserFromSetHasBeenSet() const
+{
+    return m_userFromSetHasBeenSet;
 }
 
 

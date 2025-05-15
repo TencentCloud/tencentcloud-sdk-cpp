@@ -1055,6 +1055,69 @@ namespace TencentCloud
                      */
                     bool ExternalAccessHasBeenSet() const;
 
+                    /**
+                     * 获取0默认值。0-免费版（试用版）ioa，1-付费版ioa
+                     * @return IOAResource 0默认值。0-免费版（试用版）ioa，1-付费版ioa
+                     * 
+                     */
+                    uint64_t GetIOAResource() const;
+
+                    /**
+                     * 设置0默认值。0-免费版（试用版）ioa，1-付费版ioa
+                     * @param _iOAResource 0默认值。0-免费版（试用版）ioa，1-付费版ioa
+                     * 
+                     */
+                    void SetIOAResource(const uint64_t& _iOAResource);
+
+                    /**
+                     * 判断参数 IOAResource 是否已赋值
+                     * @return IOAResource 是否已赋值
+                     * 
+                     */
+                    bool IOAResourceHasBeenSet() const;
+
+                    /**
+                     * 获取零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数
+                     * @return PackageIOAUserCount 零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数
+                     * 
+                     */
+                    uint64_t GetPackageIOAUserCount() const;
+
+                    /**
+                     * 设置零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数
+                     * @param _packageIOAUserCount 零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数
+                     * 
+                     */
+                    void SetPackageIOAUserCount(const uint64_t& _packageIOAUserCount);
+
+                    /**
+                     * 判断参数 PackageIOAUserCount 是否已赋值
+                     * @return PackageIOAUserCount 是否已赋值
+                     * 
+                     */
+                    bool PackageIOAUserCountHasBeenSet() const;
+
+                    /**
+                     * 获取 零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽
+                     * @return PackageIOABandwidth  零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽
+                     * 
+                     */
+                    uint64_t GetPackageIOABandwidth() const;
+
+                    /**
+                     * 设置 零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽
+                     * @param _packageIOABandwidth  零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽
+                     * 
+                     */
+                    void SetPackageIOABandwidth(const uint64_t& _packageIOABandwidth);
+
+                    /**
+                     * 判断参数 PackageIOABandwidth 是否已赋值
+                     * @return PackageIOABandwidth 是否已赋值
+                     * 
+                     */
+                    bool PackageIOABandwidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1344,6 +1407,24 @@ namespace TencentCloud
                      */
                     uint64_t m_externalAccess;
                     bool m_externalAccessHasBeenSet;
+
+                    /**
+                     * 0默认值。0-免费版（试用版）ioa，1-付费版ioa
+                     */
+                    uint64_t m_iOAResource;
+                    bool m_iOAResourceHasBeenSet;
+
+                    /**
+                     * 零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数
+                     */
+                    uint64_t m_packageIOAUserCount;
+                    bool m_packageIOAUserCountHasBeenSet;
+
+                    /**
+                     *  零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽
+                     */
+                    uint64_t m_packageIOABandwidth;
+                    bool m_packageIOABandwidthHasBeenSet;
 
                 };
             }

@@ -66,6 +66,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/CreateUserGroupRequest.h
   include/tencentcloud/bh/v20230418/model/SearchFileTypeFilter.h
   include/tencentcloud/bh/v20230418/model/BindDeviceAccountPrivateKeyResponse.h
+  include/tencentcloud/bh/v20230418/model/IOAUserGroup.h
   include/tencentcloud/bh/v20230418/model/SearchCommandBySidRequest.h
   include/tencentcloud/bh/v20230418/model/CreateDeviceGroupResponse.h
   include/tencentcloud/bh/v20230418/model/DescribeUserGroupMembersRequest.h
@@ -247,6 +248,7 @@ set(bh_src
   src/v20230418/model/CreateUserGroupRequest.cpp
   src/v20230418/model/SearchFileTypeFilter.cpp
   src/v20230418/model/BindDeviceAccountPrivateKeyResponse.cpp
+  src/v20230418/model/IOAUserGroup.cpp
   src/v20230418/model/SearchCommandBySidRequest.cpp
   src/v20230418/model/CreateDeviceGroupResponse.cpp
   src/v20230418/model/DescribeUserGroupMembersRequest.cpp

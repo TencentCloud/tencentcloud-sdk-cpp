@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/GetBatchDetailErrorLogResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tbaas::V20180416::Model;
+using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
-GetLatesdTransactionListResponse::GetLatesdTransactionListResponse() :
-    m_totalCountHasBeenSet(false),
-    m_transactionListHasBeenSet(false)
+GetBatchDetailErrorLogResponse::GetBatchDetailErrorLogResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome GetLatesdTransactionListResponse::Deserialize(const string &payload)
+CoreInternalOutcome GetBatchDetailErrorLogResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,32 @@ CoreInternalOutcome GetLatesdTransactionListResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["TotalCount"].IsUint64())
+        if (!rsp["Data"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TransactionList") && !rsp["TransactionList"].IsNull())
-    {
-        if (!rsp["TransactionList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TransactionList` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["TransactionList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            TransactionItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_transactionList.push_back(item);
-        }
-        m_transactionListHasBeenSet = true;
+        m_data = string(rsp["Data"].GetString());
+        m_dataHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string GetLatesdTransactionListResponse::ToJsonString() const
+string GetBatchDetailErrorLogResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
-    if (m_transactionListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TransactionList";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_transactionList.begin(); itr != m_transactionList.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +102,14 @@ string GetLatesdTransactionListResponse::ToJsonString() const
 }
 
 
-uint64_t GetLatesdTransactionListResponse::GetTotalCount() const
+string GetBatchDetailErrorLogResponse::GetData() const
 {
-    return m_totalCount;
+    return m_data;
 }
 
-bool GetLatesdTransactionListResponse::TotalCountHasBeenSet() const
+bool GetBatchDetailErrorLogResponse::DataHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
-}
-
-vector<TransactionItem> GetLatesdTransactionListResponse::GetTransactionList() const
-{
-    return m_transactionList;
-}
-
-bool GetLatesdTransactionListResponse::TransactionListHasBeenSet() const
-{
-    return m_transactionListHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

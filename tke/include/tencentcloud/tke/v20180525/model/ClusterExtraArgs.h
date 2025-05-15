@@ -47,6 +47,31 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取etcd自定义参数，只支持独立集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Etcd etcd自定义参数，只支持独立集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetEtcd() const;
+
+                    /**
+                     * 设置etcd自定义参数，只支持独立集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _etcd etcd自定义参数，只支持独立集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEtcd(const std::vector<std::string>& _etcd);
+
+                    /**
+                     * 判断参数 Etcd 是否已赋值
+                     * @return Etcd 是否已赋值
+                     * 
+                     */
+                    bool EtcdHasBeenSet() const;
+
+                    /**
                      * 获取kube-apiserver自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["max-requests-inflight=500","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeAPIServer kube-apiserver自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["max-requests-inflight=500","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
@@ -121,32 +146,14 @@ namespace TencentCloud
                      */
                     bool KubeSchedulerHasBeenSet() const;
 
-                    /**
-                     * 获取etcd自定义参数，只支持独立集群
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Etcd etcd自定义参数，只支持独立集群
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<std::string> GetEtcd() const;
-
-                    /**
-                     * 设置etcd自定义参数，只支持独立集群
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _etcd etcd自定义参数，只支持独立集群
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetEtcd(const std::vector<std::string>& _etcd);
-
-                    /**
-                     * 判断参数 Etcd 是否已赋值
-                     * @return Etcd 是否已赋值
-                     * 
-                     */
-                    bool EtcdHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * etcd自定义参数，只支持独立集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_etcd;
+                    bool m_etcdHasBeenSet;
 
                     /**
                      * kube-apiserver自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["max-requests-inflight=500","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
@@ -168,13 +175,6 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_kubeScheduler;
                     bool m_kubeSchedulerHasBeenSet;
-
-                    /**
-                     * etcd自定义参数，只支持独立集群
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<std::string> m_etcd;
-                    bool m_etcdHasBeenSet;
 
                 };
             }

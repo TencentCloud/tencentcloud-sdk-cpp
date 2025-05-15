@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取端口
-                     * @return Port 端口
+                     * 获取端口。取值范围为 [1,65535]。作为入参时，该参数必填。
+                     * @return Port 端口。取值范围为 [1,65535]。作为入参时，该参数必填。
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置端口
-                     * @param _port 端口
+                     * 设置端口。取值范围为 [1,65535]。作为入参时，该参数必填。
+                     * @param _port 端口。取值范围为 [1,65535]。作为入参时，该参数必填。
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取权重
-                     * @return Weight 权重
+                     * 获取权重。取值范围为 [0,100]。作为入参时，该参数必填。
+                     * @return Weight 权重。取值范围为 [0,100]。作为入参时，该参数必填。
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置权重
-                     * @param _weight 权重
+                     * 设置权重。取值范围为 [0,100]。作为入参时，该参数必填。
+                     * @param _weight 权重。取值范围为 [0,100]。作为入参时，该参数必填。
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 端口
+                     * 端口。取值范围为 [1,65535]。作为入参时，该参数必填。
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 权重
+                     * 权重。取值范围为 [0,100]。作为入参时，该参数必填。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

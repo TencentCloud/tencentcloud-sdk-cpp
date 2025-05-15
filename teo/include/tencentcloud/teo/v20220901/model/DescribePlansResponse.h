@@ -14,42 +14,42 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TBAAS_V20180416_MODEL_GETLATESDTRANSACTIONLISTRESPONSE_H_
-#define TENCENTCLOUD_TBAAS_V20180416_MODEL_GETLATESDTRANSACTIONLISTRESPONSE_H_
+#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEPLANSRESPONSE_H_
+#define TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEPLANSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tbaas/v20180416/model/TransactionItem.h>
+#include <tencentcloud/teo/v20220901/model/Plan.h>
 
 
 namespace TencentCloud
 {
-    namespace Tbaas
+    namespace Teo
     {
-        namespace V20180416
+        namespace V20220901
         {
             namespace Model
             {
                 /**
-                * GetLatesdTransactionList返回参数结构体
+                * DescribePlans返回参数结构体
                 */
-                class GetLatesdTransactionListResponse : public AbstractModel
+                class DescribePlansResponse : public AbstractModel
                 {
                 public:
-                    GetLatesdTransactionListResponse();
-                    ~GetLatesdTransactionListResponse() = default;
+                    DescribePlansResponse();
+                    ~DescribePlansResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取交易总数量
-                     * @return TotalCount 交易总数量
+                     * 获取符合条件的套餐个数。
+                     * @return TotalCount 符合条件的套餐个数。
                      * 
                      */
-                    uint64_t GetTotalCount() const;
+                    int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
@@ -59,32 +59,32 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取交易列表
-                     * @return TransactionList 交易列表
+                     * 获取套餐信息列表。
+                     * @return Plans 套餐信息列表。
                      * 
                      */
-                    std::vector<TransactionItem> GetTransactionList() const;
+                    std::vector<Plan> GetPlans() const;
 
                     /**
-                     * 判断参数 TransactionList 是否已赋值
-                     * @return TransactionList 是否已赋值
+                     * 判断参数 Plans 是否已赋值
+                     * @return Plans 是否已赋值
                      * 
                      */
-                    bool TransactionListHasBeenSet() const;
+                    bool PlansHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 交易总数量
+                     * 符合条件的套餐个数。
                      */
-                    uint64_t m_totalCount;
+                    int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 交易列表
+                     * 套餐信息列表。
                      */
-                    std::vector<TransactionItem> m_transactionList;
-                    bool m_transactionListHasBeenSet;
+                    std::vector<Plan> m_plans;
+                    bool m_plansHasBeenSet;
 
                 };
             }
@@ -92,4 +92,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TBAAS_V20180416_MODEL_GETLATESDTRANSACTIONLISTRESPONSE_H_
+#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEPLANSRESPONSE_H_
