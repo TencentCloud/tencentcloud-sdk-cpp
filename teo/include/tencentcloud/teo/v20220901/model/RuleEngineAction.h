@@ -58,6 +58,7 @@
 #include <tencentcloud/teo/v20220901/model/ModifyRequestHeaderParameters.h>
 #include <tencentcloud/teo/v20220901/model/ResponseSpeedLimitParameters.h>
 #include <tencentcloud/teo/v20220901/model/SetContentIdentifierParameters.h>
+#include <tencentcloud/teo/v20220901/model/VaryParameters.h>
 
 
 namespace TencentCloud
@@ -115,9 +116,9 @@ namespace TencentCloud
 <li>ErrorPage：自定义错误页面；</li>
 <li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>
 <li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>
-<li>ResponseSpeedLimit：单连接下载限速。</li>
-<li>SetContentIdentifierParameters：设置内容标识符。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>ResponseSpeedLimit：单连接下载限速；</li>
+<li>SetContentIdentifier：设置内容标识符；</li>
+<li>Vary：Vary 特性配置。该功能灰度中，如需使用，请联系腾讯云客服。</li>
                      * @return Name 操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。
 <li>Cache：节点缓存 TTL；</li>
 <li>CacheKey：自定义 Cache Key；</li>
@@ -152,9 +153,9 @@ namespace TencentCloud
 <li>ErrorPage：自定义错误页面；</li>
 <li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>
 <li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>
-<li>ResponseSpeedLimit：单连接下载限速。</li>
-<li>SetContentIdentifierParameters：设置内容标识符。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>ResponseSpeedLimit：单连接下载限速；</li>
+<li>SetContentIdentifier：设置内容标识符；</li>
+<li>Vary：Vary 特性配置。该功能灰度中，如需使用，请联系腾讯云客服。</li>
                      * 
                      */
                     std::string GetName() const;
@@ -194,9 +195,9 @@ namespace TencentCloud
 <li>ErrorPage：自定义错误页面；</li>
 <li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>
 <li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>
-<li>ResponseSpeedLimit：单连接下载限速。</li>
-<li>SetContentIdentifierParameters：设置内容标识符。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>ResponseSpeedLimit：单连接下载限速；</li>
+<li>SetContentIdentifier：设置内容标识符；</li>
+<li>Vary：Vary 特性配置。该功能灰度中，如需使用，请联系腾讯云客服。</li>
                      * @param _name 操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。
 <li>Cache：节点缓存 TTL；</li>
 <li>CacheKey：自定义 Cache Key；</li>
@@ -231,9 +232,9 @@ namespace TencentCloud
 <li>ErrorPage：自定义错误页面；</li>
 <li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>
 <li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>
-<li>ResponseSpeedLimit：单连接下载限速。</li>
-<li>SetContentIdentifierParameters：设置内容标识符。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>ResponseSpeedLimit：单连接下载限速；</li>
+<li>SetContentIdentifier：设置内容标识符；</li>
+<li>Vary：Vary 特性配置。该功能灰度中，如需使用，请联系腾讯云客服。</li>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -1071,10 +1072,10 @@ namespace TencentCloud
                     bool ResponseSpeedLimitParametersHasBeenSet() const;
 
                     /**
-                     * 获取内容标识配置参数，当 Name 取值为 HttpResponse 时，该参数必填。
+                     * 获取内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SetContentIdentifierParameters 内容标识配置参数，当 Name 取值为 HttpResponse 时，该参数必填。
+                     * @return SetContentIdentifierParameters 内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -1082,10 +1083,10 @@ namespace TencentCloud
                     SetContentIdentifierParameters GetSetContentIdentifierParameters() const;
 
                     /**
-                     * 设置内容标识配置参数，当 Name 取值为 HttpResponse 时，该参数必填。
+                     * 设置内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _setContentIdentifierParameters 内容标识配置参数，当 Name 取值为 HttpResponse 时，该参数必填。
+                     * @param _setContentIdentifierParameters 内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -1098,6 +1099,31 @@ namespace TencentCloud
                      * 
                      */
                     bool SetContentIdentifierParametersHasBeenSet() const;
+
+                    /**
+                     * 获取Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。
+该功能灰度中，如需使用，请联系腾讯云客服。
+                     * @return VaryParameters Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。
+该功能灰度中，如需使用，请联系腾讯云客服。
+                     * 
+                     */
+                    VaryParameters GetVaryParameters() const;
+
+                    /**
+                     * 设置Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。
+该功能灰度中，如需使用，请联系腾讯云客服。
+                     * @param _varyParameters Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。
+该功能灰度中，如需使用，请联系腾讯云客服。
+                     * 
+                     */
+                    void SetVaryParameters(const VaryParameters& _varyParameters);
+
+                    /**
+                     * 判断参数 VaryParameters 是否已赋值
+                     * @return VaryParameters 是否已赋值
+                     * 
+                     */
+                    bool VaryParametersHasBeenSet() const;
 
                 private:
 
@@ -1136,9 +1162,9 @@ namespace TencentCloud
 <li>ErrorPage：自定义错误页面；</li>
 <li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>
 <li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>
-<li>ResponseSpeedLimit：单连接下载限速。</li>
-<li>SetContentIdentifierParameters：设置内容标识符。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li>ResponseSpeedLimit：单连接下载限速；</li>
+<li>SetContentIdentifier：设置内容标识符；</li>
+<li>Vary：Vary 特性配置。该功能灰度中，如需使用，请联系腾讯云客服。</li>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -1375,12 +1401,19 @@ namespace TencentCloud
                     bool m_responseSpeedLimitParametersHasBeenSet;
 
                     /**
-                     * 内容标识配置参数，当 Name 取值为 HttpResponse 时，该参数必填。
+                     * 内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。
 
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SetContentIdentifierParameters m_setContentIdentifierParameters;
                     bool m_setContentIdentifierParametersHasBeenSet;
+
+                    /**
+                     * Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。
+该功能灰度中，如需使用，请联系腾讯云客服。
+                     */
+                    VaryParameters m_varyParameters;
+                    bool m_varyParametersHasBeenSet;
 
                 };
             }

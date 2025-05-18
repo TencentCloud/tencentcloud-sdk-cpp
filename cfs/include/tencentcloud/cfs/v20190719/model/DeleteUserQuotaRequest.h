@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统 ID
-                     * @return FileSystemId 文件系统 ID
+                     * 获取文件系统 ID，通过查询文件系统接口获取
+                     * @return FileSystemId 文件系统 ID，通过查询文件系统接口获取
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统 ID
-                     * @param _fileSystemId 文件系统 ID
+                     * 设置文件系统 ID，通过查询文件系统接口获取
+                     * @param _fileSystemId 文件系统 ID，通过查询文件系统接口获取
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取指定配额类型，包括Uid、Gid、Dir
-                     * @return UserType 指定配额类型，包括Uid、Gid、Dir
+                     * 获取指定配额类型，包括Uid（按用户ID限制）、Gid（按用户组ID限制）、Dir（按目录限制）
+                     * @return UserType 指定配额类型，包括Uid（按用户ID限制）、Gid（按用户组ID限制）、Dir（按目录限制）
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
-                     * 设置指定配额类型，包括Uid、Gid、Dir
-                     * @param _userType 指定配额类型，包括Uid、Gid、Dir
+                     * 设置指定配额类型，包括Uid（按用户ID限制）、Gid（按用户组ID限制）、Dir（按目录限制）
+                     * @param _userType 指定配额类型，包括Uid（按用户ID限制）、Gid（按用户组ID限制）、Dir（按目录限制）
                      * 
                      */
                     void SetUserType(const std::string& _userType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UserTypeHasBeenSet() const;
 
                     /**
-                     * 获取UID/GID信息
-                     * @return UserId UID/GID信息
+                     * 获取UID/GID信息，和DirectoryPath参数，两者必须填写一个
+                     * @return UserId UID/GID信息，和DirectoryPath参数，两者必须填写一个
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置UID/GID信息
-                     * @param _userId UID/GID信息
+                     * 设置UID/GID信息，和DirectoryPath参数，两者必须填写一个
+                     * @param _userId UID/GID信息，和DirectoryPath参数，两者必须填写一个
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取设置目录配额的目录的绝对路径
-                     * @return DirectoryPath 设置目录配额的目录的绝对路径
+                     * 获取设置目录配额的目录的绝对路径，和UserId参数，两者必须填写一个
+                     * @return DirectoryPath 设置目录配额的目录的绝对路径，和UserId参数，两者必须填写一个
                      * 
                      */
                     std::string GetDirectoryPath() const;
 
                     /**
-                     * 设置设置目录配额的目录的绝对路径
-                     * @param _directoryPath 设置目录配额的目录的绝对路径
+                     * 设置设置目录配额的目录的绝对路径，和UserId参数，两者必须填写一个
+                     * @param _directoryPath 设置目录配额的目录的绝对路径，和UserId参数，两者必须填写一个
                      * 
                      */
                     void SetDirectoryPath(const std::string& _directoryPath);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统 ID
+                     * 文件系统 ID，通过查询文件系统接口获取
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 指定配额类型，包括Uid、Gid、Dir
+                     * 指定配额类型，包括Uid（按用户ID限制）、Gid（按用户组ID限制）、Dir（按目录限制）
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
 
                     /**
-                     * UID/GID信息
+                     * UID/GID信息，和DirectoryPath参数，两者必须填写一个
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 设置目录配额的目录的绝对路径
+                     * 设置目录配额的目录的绝对路径，和UserId参数，两者必须填写一个
                      */
                     std::string m_directoryPath;
                     bool m_directoryPathHasBeenSet;

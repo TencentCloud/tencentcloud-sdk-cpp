@@ -474,15 +474,15 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统处理快照状态
-                     * @return SnapStatus 文件系统处理快照状态
+                     * 获取文件系统处理快照状态,snapping：快照中，normal：正常状态
+                     * @return SnapStatus 文件系统处理快照状态,snapping：快照中，normal：正常状态
                      * 
                      */
                     std::string GetSnapStatus() const;
 
                     /**
-                     * 设置文件系统处理快照状态
-                     * @param _snapStatus 文件系统处理快照状态
+                     * 设置文件系统处理快照状态,snapping：快照中，normal：正常状态
+                     * @param _snapStatus 文件系统处理快照状态,snapping：快照中，normal：正常状态
                      * 
                      */
                     void SetSnapStatus(const std::string& _snapStatus);
@@ -755,7 +755,7 @@ Available:可用
                     bool m_autoSnapshotPolicyIdHasBeenSet;
 
                     /**
-                     * 文件系统处理快照状态
+                     * 文件系统处理快照状态,snapping：快照中，normal：正常状态
                      */
                     std::string m_snapStatus;
                     bool m_snapStatusHasBeenSet;

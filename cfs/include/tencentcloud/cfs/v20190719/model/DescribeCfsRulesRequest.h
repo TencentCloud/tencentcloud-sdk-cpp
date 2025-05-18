@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取权限组 ID
-                     * @return PGroupId 权限组 ID
+                     * 获取权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * @return PGroupId 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
                      * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
-                     * 设置权限组 ID
-                     * @param _pGroupId 权限组 ID
+                     * 设置权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * @param _pGroupId 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
                      * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 权限组 ID
+                     * 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
                      */
                     std::string m_pGroupId;
                     bool m_pGroupIdHasBeenSet;

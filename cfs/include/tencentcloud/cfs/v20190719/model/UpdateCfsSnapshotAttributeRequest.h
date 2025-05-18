@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统快照ID
-                     * @return SnapshotId 文件系统快照ID
+                     * 获取文件系统快照ID,查询文件系统快照列表获取
+                     * @return SnapshotId 文件系统快照ID,查询文件系统快照列表获取
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置文件系统快照ID
-                     * @param _snapshotId 文件系统快照ID
+                     * 设置文件系统快照ID,查询文件系统快照列表获取
+                     * @param _snapshotId 文件系统快照ID,查询文件系统快照列表获取
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统快照名称
-                     * @return SnapshotName 文件系统快照名称
+                     * 获取文件系统快照名称，与AliveDays 必须填一个
+                     * @return SnapshotName 文件系统快照名称，与AliveDays 必须填一个
                      * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
-                     * 设置文件系统快照名称
-                     * @param _snapshotName 文件系统快照名称
+                     * 设置文件系统快照名称，与AliveDays 必须填一个
+                     * @param _snapshotName 文件系统快照名称，与AliveDays 必须填一个
                      * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
-                     * 获取文件系统快照保留天数
-                     * @return AliveDays 文件系统快照保留天数
+                     * 获取文件系统快照保留天数，与SnapshotName必须填一个，如果原来是永久保留时间，不允许修改成短期有效期
+                     * @return AliveDays 文件系统快照保留天数，与SnapshotName必须填一个，如果原来是永久保留时间，不允许修改成短期有效期
                      * 
                      */
                     uint64_t GetAliveDays() const;
 
                     /**
-                     * 设置文件系统快照保留天数
-                     * @param _aliveDays 文件系统快照保留天数
+                     * 设置文件系统快照保留天数，与SnapshotName必须填一个，如果原来是永久保留时间，不允许修改成短期有效期
+                     * @param _aliveDays 文件系统快照保留天数，与SnapshotName必须填一个，如果原来是永久保留时间，不允许修改成短期有效期
                      * 
                      */
                     void SetAliveDays(const uint64_t& _aliveDays);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统快照ID
+                     * 文件系统快照ID,查询文件系统快照列表获取
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 文件系统快照名称
+                     * 文件系统快照名称，与AliveDays 必须填一个
                      */
                     std::string m_snapshotName;
                     bool m_snapshotNameHasBeenSet;
 
                     /**
-                     * 文件系统快照保留天数
+                     * 文件系统快照保留天数，与SnapshotName必须填一个，如果原来是永久保留时间，不允许修改成短期有效期
                      */
                     uint64_t m_aliveDays;
                     bool m_aliveDaysHasBeenSet;

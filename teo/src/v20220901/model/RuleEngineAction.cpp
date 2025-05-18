@@ -55,7 +55,8 @@ RuleEngineAction::RuleEngineAction() :
     m_modifyResponseHeaderParametersHasBeenSet(false),
     m_modifyRequestHeaderParametersHasBeenSet(false),
     m_responseSpeedLimitParametersHasBeenSet(false),
-    m_setContentIdentifierParametersHasBeenSet(false)
+    m_setContentIdentifierParametersHasBeenSet(false),
+    m_varyParametersHasBeenSet(false)
 {
 }
 
@@ -652,6 +653,23 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         m_setContentIdentifierParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("VaryParameters") && !value["VaryParameters"].IsNull())
+    {
+        if (!value["VaryParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.VaryParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_varyParameters.Deserialize(value["VaryParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_varyParametersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -971,6 +989,15 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_setContentIdentifierParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_varyParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VaryParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_varyParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1534,5 +1561,21 @@ void RuleEngineAction::SetSetContentIdentifierParameters(const SetContentIdentif
 bool RuleEngineAction::SetContentIdentifierParametersHasBeenSet() const
 {
     return m_setContentIdentifierParametersHasBeenSet;
+}
+
+VaryParameters RuleEngineAction::GetVaryParameters() const
+{
+    return m_varyParameters;
+}
+
+void RuleEngineAction::SetVaryParameters(const VaryParameters& _varyParameters)
+{
+    m_varyParameters = _varyParameters;
+    m_varyParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::VaryParametersHasBeenSet() const
+{
+    return m_varyParametersHasBeenSet;
 }
 

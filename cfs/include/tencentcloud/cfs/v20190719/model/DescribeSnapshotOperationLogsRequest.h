@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统快照ID
-                     * @return SnapshotId 文件系统快照ID
+                     * 获取文件系统快照ID，通过快照创建接口获得
+                     * @return SnapshotId 文件系统快照ID，通过快照创建接口获得
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置文件系统快照ID
-                     * @param _snapshotId 文件系统快照ID
+                     * 设置文件系统快照ID，通过快照创建接口获得
+                     * @param _snapshotId 文件系统快照ID，通过快照创建接口获得
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统快照ID
+                     * 文件系统快照ID，通过快照创建接口获得
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;

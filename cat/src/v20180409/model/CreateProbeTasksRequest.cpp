@@ -35,7 +35,8 @@ CreateProbeTasksRequest::CreateProbeTasksRequest() :
     m_pluginSourceHasBeenSet(false),
     m_clientNumHasBeenSet(false),
     m_nodeIpTypeHasBeenSet(false),
-    m_subSyncFlagHasBeenSet(false)
+    m_subSyncFlagHasBeenSet(false),
+    m_rtxNameHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,14 @@ string CreateProbeTasksRequest::ToJsonString() const
         string key = "SubSyncFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subSyncFlag, allocator);
+    }
+
+    if (m_rtxNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RtxName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rtxName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -383,6 +392,22 @@ void CreateProbeTasksRequest::SetSubSyncFlag(const int64_t& _subSyncFlag)
 bool CreateProbeTasksRequest::SubSyncFlagHasBeenSet() const
 {
     return m_subSyncFlagHasBeenSet;
+}
+
+string CreateProbeTasksRequest::GetRtxName() const
+{
+    return m_rtxName;
+}
+
+void CreateProbeTasksRequest::SetRtxName(const string& _rtxName)
+{
+    m_rtxName = _rtxName;
+    m_rtxNameHasBeenSet = true;
+}
+
+bool CreateProbeTasksRequest::RtxNameHasBeenSet() const
+{
+    return m_rtxNameHasBeenSet;
 }
 
 

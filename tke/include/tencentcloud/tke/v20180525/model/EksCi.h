@@ -201,15 +201,15 @@ namespace TencentCloud
                     bool EipAddressHasBeenSet() const;
 
                     /**
-                     * 获取EKS Cotainer Instance Id
-                     * @return EksCiId EKS Cotainer Instance Id
+                     * 获取EKS Container Instance Id
+                     * @return EksCiId EKS Container Instance Id
                      * 
                      */
                     std::string GetEksCiId() const;
 
                     /**
-                     * 设置EKS Cotainer Instance Id
-                     * @param _eksCiId EKS Cotainer Instance Id
+                     * 设置EKS Container Instance Id
+                     * @param _eksCiId EKS Container Instance Id
                      * 
                      */
                     void SetEksCiId(const std::string& _eksCiId);
@@ -222,15 +222,15 @@ namespace TencentCloud
                     bool EksCiIdHasBeenSet() const;
 
                     /**
-                     * 获取EKS Cotainer Instance Name
-                     * @return EksCiName EKS Cotainer Instance Name
+                     * 获取EKS Container Instance Name
+                     * @return EksCiName EKS Container Instance Name
                      * 
                      */
                     std::string GetEksCiName() const;
 
                     /**
-                     * 设置EKS Cotainer Instance Name
-                     * @param _eksCiName EKS Cotainer Instance Name
+                     * 设置EKS Container Instance Name
+                     * @param _eksCiName EKS Container Instance Name
                      * 
                      */
                     void SetEksCiName(const std::string& _eksCiName);
@@ -610,13 +610,13 @@ Pending是创建中，Running是 运行中。
                     bool m_eipAddressHasBeenSet;
 
                     /**
-                     * EKS Cotainer Instance Id
+                     * EKS Container Instance Id
                      */
                     std::string m_eksCiId;
                     bool m_eksCiIdHasBeenSet;
 
                     /**
-                     * EKS Cotainer Instance Name
+                     * EKS Container Instance Name
                      */
                     std::string m_eksCiName;
                     bool m_eksCiNameHasBeenSet;

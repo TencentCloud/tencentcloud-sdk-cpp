@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书描述
-                     * @return CertDesc 证书描述
+                     * 获取证书描述，不超过64字符
+                     * @return CertDesc 证书描述，不超过64字符
                      * 
                      */
                     std::string GetCertDesc() const;
 
                     /**
-                     * 设置证书描述
-                     * @param _certDesc 证书描述
+                     * 设置证书描述，不超过64字符
+                     * @param _certDesc 证书描述，不超过64字符
                      * 
                      */
                     void SetCertDesc(const std::string& _certDesc);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书描述
+                     * 证书描述，不超过64字符
                      */
                     std::string m_certDesc;
                     bool m_certDescHasBeenSet;

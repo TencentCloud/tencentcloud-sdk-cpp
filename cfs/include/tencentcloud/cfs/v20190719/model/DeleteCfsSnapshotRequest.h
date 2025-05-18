@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统快照id
-                     * @return SnapshotId 文件系统快照id
+                     * 获取文件系统快照id，可通过查询快照列表接口获取
+                     * @return SnapshotId 文件系统快照id，可通过查询快照列表接口获取
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置文件系统快照id
-                     * @param _snapshotId 文件系统快照id
+                     * 设置文件系统快照id，可通过查询快照列表接口获取
+                     * @param _snapshotId 文件系统快照id，可通过查询快照列表接口获取
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
-                     * @return SnapshotIds 需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     * 获取需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     * @return SnapshotIds 需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项
                      * 
                      */
                     std::vector<std::string> GetSnapshotIds() const;
 
                     /**
-                     * 设置需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
-                     * @param _snapshotIds 需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     * 设置需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     * @param _snapshotIds 需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项
                      * 
                      */
                     void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统快照id
+                     * 文件系统快照id，可通过查询快照列表接口获取
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     * 需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项
                      */
                     std::vector<std::string> m_snapshotIds;
                     bool m_snapshotIdsHasBeenSet;

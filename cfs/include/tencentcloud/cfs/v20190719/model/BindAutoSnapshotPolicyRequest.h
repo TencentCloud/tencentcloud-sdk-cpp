@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取快照策略ID
-                     * @return AutoSnapshotPolicyId 快照策略ID
+                     * 获取快照策略ID，通过快照策略列表获取
+                     * @return AutoSnapshotPolicyId 快照策略ID，通过快照策略列表获取
                      * 
                      */
                     std::string GetAutoSnapshotPolicyId() const;
 
                     /**
-                     * 设置快照策略ID
-                     * @param _autoSnapshotPolicyId 快照策略ID
+                     * 设置快照策略ID，通过快照策略列表获取
+                     * @param _autoSnapshotPolicyId 快照策略ID，通过快照策略列表获取
                      * 
                      */
                     void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统列表
-                     * @return FileSystemIds 文件系统列表
+                     * 获取文件系统id列表，用“,”分隔，文件系统id通过查询文件系统列表获得
+                     * @return FileSystemIds 文件系统id列表，用“,”分隔，文件系统id通过查询文件系统列表获得
                      * 
                      */
                     std::string GetFileSystemIds() const;
 
                     /**
-                     * 设置文件系统列表
-                     * @param _fileSystemIds 文件系统列表
+                     * 设置文件系统id列表，用“,”分隔，文件系统id通过查询文件系统列表获得
+                     * @param _fileSystemIds 文件系统id列表，用“,”分隔，文件系统id通过查询文件系统列表获得
                      * 
                      */
                     void SetFileSystemIds(const std::string& _fileSystemIds);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 快照策略ID
+                     * 快照策略ID，通过快照策略列表获取
                      */
                     std::string m_autoSnapshotPolicyId;
                     bool m_autoSnapshotPolicyIdHasBeenSet;
 
                     /**
-                     * 文件系统列表
+                     * 文件系统id列表，用“,”分隔，文件系统id通过查询文件系统列表获得
                      */
                     std::string m_fileSystemIds;
                     bool m_fileSystemIdsHasBeenSet;

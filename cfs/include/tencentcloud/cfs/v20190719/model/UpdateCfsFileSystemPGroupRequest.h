@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取权限组 ID
-                     * @return PGroupId 权限组 ID
+                     * 获取权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * @return PGroupId 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
                      * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
-                     * 设置权限组 ID
-                     * @param _pGroupId 权限组 ID
+                     * 设置权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * @param _pGroupId 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
                      * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统 ID
-                     * @return FileSystemId 文件系统 ID
+                     * 获取文件系统 ID，通过查询文件系统接口获取
+                     * @return FileSystemId 文件系统 ID，通过查询文件系统接口获取
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统 ID
-                     * @param _fileSystemId 文件系统 ID
+                     * 设置文件系统 ID，通过查询文件系统接口获取
+                     * @param _fileSystemId 文件系统 ID，通过查询文件系统接口获取
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 权限组 ID
+                     * 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
                      */
                     std::string m_pGroupId;
                     bool m_pGroupIdHasBeenSet;
 
                     /**
-                     * 文件系统 ID
+                     * 文件系统 ID，通过查询文件系统接口获取
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;

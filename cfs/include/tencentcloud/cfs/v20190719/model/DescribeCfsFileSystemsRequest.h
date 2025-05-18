@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取Offset 分页码
-                     * @return Offset Offset 分页码
+                     * 获取Offset 分页码,默认0
+                     * @return Offset Offset 分页码,默认0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置Offset 分页码
-                     * @param _offset Offset 分页码
+                     * 设置Offset 分页码,默认0
+                     * @param _offset Offset 分页码,默认0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Limit 页面大小
-                     * @return Limit Limit 页面大小
+                     * 获取Limit 页面大小，默认10
+                     * @return Limit Limit 页面大小，默认10
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置Limit 页面大小
-                     * @param _limit Limit 页面大小
+                     * 设置Limit 页面大小，默认10
+                     * @param _limit Limit 页面大小，默认10
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -189,13 +189,13 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * Offset 分页码
+                     * Offset 分页码,默认0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Limit 页面大小
+                     * Limit 页面大小，默认10
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

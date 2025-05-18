@@ -454,6 +454,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DeleteRulesResponse.h
   include/tencentcloud/teo/v20220901/model/OriginGroup.h
   include/tencentcloud/teo/v20220901/model/ModifySecurityIPGroupRequest.h
+  include/tencentcloud/teo/v20220901/model/VaryParameters.h
   include/tencentcloud/teo/v20220901/model/L4Proxy.h
   include/tencentcloud/teo/v20220901/model/SkipCondition.h
   include/tencentcloud/teo/v20220901/model/CreateSharedCNAMERequest.h
@@ -1026,6 +1027,7 @@ set(teo_src
   src/v20220901/model/DeleteRulesResponse.cpp
   src/v20220901/model/OriginGroup.cpp
   src/v20220901/model/ModifySecurityIPGroupRequest.cpp
+  src/v20220901/model/VaryParameters.cpp
   src/v20220901/model/L4Proxy.cpp
   src/v20220901/model/SkipCondition.cpp
   src/v20220901/model/CreateSharedCNAMERequest.cpp

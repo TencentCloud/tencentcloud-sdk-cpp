@@ -131,15 +131,23 @@ namespace TencentCloud
                     bool FSIDHasBeenSet() const;
 
                     /**
-                     * 获取挂载点状态
-                     * @return LifeCycleState 挂载点状态
+                     * 获取挂载点状态，包括creating：创建中；available：运行中；
+deleting：删除中；
+create_failed： 创建失败
+                     * @return LifeCycleState 挂载点状态，包括creating：创建中；available：运行中；
+deleting：删除中；
+create_failed： 创建失败
                      * 
                      */
                     std::string GetLifeCycleState() const;
 
                     /**
-                     * 设置挂载点状态
-                     * @param _lifeCycleState 挂载点状态
+                     * 设置挂载点状态，包括creating：创建中；available：运行中；
+deleting：删除中；
+create_failed： 创建失败
+                     * @param _lifeCycleState 挂载点状态，包括creating：创建中；available：运行中；
+deleting：删除中；
+create_failed： 创建失败
                      * 
                      */
                     void SetLifeCycleState(const std::string& _lifeCycleState);
@@ -152,15 +160,15 @@ namespace TencentCloud
                     bool LifeCycleStateHasBeenSet() const;
 
                     /**
-                     * 获取网络类型
-                     * @return NetworkInterface 网络类型
+                     * 获取网络类型，包括VPC,CCN
+                     * @return NetworkInterface 网络类型，包括VPC,CCN
                      * 
                      */
                     std::string GetNetworkInterface() const;
 
                     /**
-                     * 设置网络类型
-                     * @param _networkInterface 网络类型
+                     * 设置网络类型，包括VPC,CCN
+                     * @param _networkInterface 网络类型，包括VPC,CCN
                      * 
                      */
                     void SetNetworkInterface(const std::string& _networkInterface);
@@ -325,13 +333,15 @@ namespace TencentCloud
                     bool m_fSIDHasBeenSet;
 
                     /**
-                     * 挂载点状态
+                     * 挂载点状态，包括creating：创建中；available：运行中；
+deleting：删除中；
+create_failed： 创建失败
                      */
                     std::string m_lifeCycleState;
                     bool m_lifeCycleStateHasBeenSet;
 
                     /**
-                     * 网络类型
+                     * 网络类型，包括VPC,CCN
                      */
                     std::string m_networkInterface;
                     bool m_networkInterfaceHasBeenSet;

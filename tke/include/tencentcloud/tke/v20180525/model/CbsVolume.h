@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * EKS Instnace CBS volume
+                * EKS Instance CBS volume
                 */
                 class CbsVolume : public AbstractModel
                 {

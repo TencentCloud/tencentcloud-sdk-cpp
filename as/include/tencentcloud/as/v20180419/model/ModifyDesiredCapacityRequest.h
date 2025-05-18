@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取期望实例数，取值范围 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
-                     * @return DesiredCapacity 期望实例数，取值范围 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * 获取期望实例数，取值范围 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
+                     * @return DesiredCapacity 期望实例数，取值范围 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
                      * 
                      */
                     uint64_t GetDesiredCapacity() const;
 
                     /**
-                     * 设置期望实例数，取值范围 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
-                     * @param _desiredCapacity 期望实例数，取值范围 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * 设置期望实例数，取值范围 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
+                     * @param _desiredCapacity 期望实例数，取值范围 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
                      * 
                      */
                     void SetDesiredCapacity(const uint64_t& _desiredCapacity);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DesiredCapacityHasBeenSet() const;
 
                     /**
-                     * 获取最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
-                     * @return MinSize 最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * 获取最小实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
+                     * @return MinSize 最小实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
                      * 
                      */
                     uint64_t GetMinSize() const;
 
                     /**
-                     * 设置最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
-                     * @param _minSize 最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * 设置最小实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
+                     * @param _minSize 最小实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
                      * 
                      */
                     void SetMinSize(const uint64_t& _minSize);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MinSizeHasBeenSet() const;
 
                     /**
-                     * 获取最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
-                     * @return MaxSize 最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * 获取最大实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
+                     * @return MaxSize 最大实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
                      * 
                      */
                     uint64_t GetMaxSize() const;
 
                     /**
-                     * 设置最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
-                     * @param _maxSize 最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * 设置最大实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
+                     * @param _maxSize 最大实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
                      * 
                      */
                     void SetMaxSize(const uint64_t& _maxSize);
@@ -135,19 +135,19 @@ namespace TencentCloud
                     bool m_autoScalingGroupIdHasBeenSet;
 
                     /**
-                     * 期望实例数，取值范围 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * 期望实例数，取值范围 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
                      */
                     uint64_t m_desiredCapacity;
                     bool m_desiredCapacityHasBeenSet;
 
                     /**
-                     * 最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * 最小实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
                      */
                     uint64_t m_minSize;
                     bool m_minSizeHasBeenSet;
 
                     /**
-                     * 最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * 最大实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。
                      */
                     uint64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;

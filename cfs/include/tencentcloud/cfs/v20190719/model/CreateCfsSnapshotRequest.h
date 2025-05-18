@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统id
-                     * @return FileSystemId 文件系统id
+                     * 获取文件系统 ID，通过查询文件系统接口获取
+                     * @return FileSystemId 文件系统 ID，通过查询文件系统接口获取
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统id
-                     * @param _fileSystemId 文件系统id
+                     * 设置文件系统 ID，通过查询文件系统接口获取
+                     * @param _fileSystemId 文件系统 ID，通过查询文件系统接口获取
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取快照名称
-                     * @return SnapshotName 快照名称
+                     * 获取快照名称，不超过64字符
+                     * @return SnapshotName 快照名称，不超过64字符
                      * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
-                     * 设置快照名称
-                     * @param _snapshotName 快照名称
+                     * 设置快照名称，不超过64字符
+                     * @param _snapshotName 快照名称，不超过64字符
                      * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
@@ -109,13 +109,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统id
+                     * 文件系统 ID，通过查询文件系统接口获取
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 快照名称
+                     * 快照名称，不超过64字符
                      */
                     std::string m_snapshotName;
                     bool m_snapshotNameHasBeenSet;
