@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/AgentProcedure.h>
+#include <tencentcloud/lke/v20231130/model/FileInfo.h>
 
 
 namespace TencentCloud
@@ -247,6 +248,31 @@ namespace TencentCloud
                      */
                     bool TraceIdHasBeenSet() const;
 
+                    /**
+                     * 获取文件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Files 文件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FileInfo> GetFiles() const;
+
+                    /**
+                     * 设置文件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _files 文件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFiles(const std::vector<FileInfo>& _files);
+
+                    /**
+                     * 判断参数 Files 是否已赋值
+                     * @return Files 是否已赋值
+                     * 
+                     */
+                    bool FilesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +330,13 @@ namespace TencentCloud
                      */
                     std::string m_traceId;
                     bool m_traceIdHasBeenSet;
+
+                    /**
+                     * 文件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FileInfo> m_files;
+                    bool m_filesHasBeenSet;
 
                 };
             }

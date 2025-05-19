@@ -153,6 +153,35 @@ namespace TencentCloud
                      */
                     bool SkipUploadFileHasBeenSet() const;
 
+                    /**
+                     * 获取是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+
+                     * @return ForbidEditWatermark 是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+
+                     * 
+                     */
+                    bool GetForbidEditWatermark() const;
+
+                    /**
+                     * 设置是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+
+                     * @param _forbidEditWatermark 是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+
+                     * 
+                     */
+                    void SetForbidEditWatermark(const bool& _forbidEditWatermark);
+
+                    /**
+                     * 判断参数 ForbidEditWatermark 是否已赋值
+                     * @return ForbidEditWatermark 是否已赋值
+                     * 
+                     */
+                    bool ForbidEditWatermarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +212,14 @@ namespace TencentCloud
                      */
                     bool m_skipUploadFile;
                     bool m_skipUploadFileHasBeenSet;
+
+                    /**
+                     * 是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+
+                     */
+                    bool m_forbidEditWatermark;
+                    bool m_forbidEditWatermarkHasBeenSet;
 
                 };
             }

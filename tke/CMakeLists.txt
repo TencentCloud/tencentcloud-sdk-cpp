@@ -279,7 +279,6 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/OpenConstraintInfo.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterInspectionResultsOverviewRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusAlertPolicyRequest.h
-  include/tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Request.h
   include/tencentcloud/tke/v20180525/model/DescribeOpenPolicyListRequest.h
   include/tencentcloud/tke/v20180525/model/PrometheusTemplateSyncTarget.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesRequest.h
@@ -682,7 +681,6 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeReservedInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePodsBySpecRequest.h
   include/tencentcloud/tke/v20180525/model/UpdateClusterKubeconfigResponse.h
-  include/tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Response.h
   include/tencentcloud/tke/v20180525/model/RuntimeConfig.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterAuthenticationOptionsRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointVipRequest.h
@@ -991,7 +989,6 @@ set(tke_src
   src/v20180525/model/OpenConstraintInfo.cpp
   src/v20180525/model/DescribeClusterInspectionResultsOverviewRequest.cpp
   src/v20180525/model/ModifyPrometheusAlertPolicyRequest.cpp
-  src/v20180525/model/ForwardApplicationRequestV3Request.cpp
   src/v20180525/model/DescribeOpenPolicyListRequest.cpp
   src/v20180525/model/PrometheusTemplateSyncTarget.cpp
   src/v20180525/model/DescribePrometheusTemplatesRequest.cpp
@@ -1394,7 +1391,6 @@ set(tke_src
   src/v20180525/model/DescribeReservedInstancesRequest.cpp
   src/v20180525/model/DescribePodsBySpecRequest.cpp
   src/v20180525/model/UpdateClusterKubeconfigResponse.cpp
-  src/v20180525/model/ForwardApplicationRequestV3Response.cpp
   src/v20180525/model/RuntimeConfig.cpp
   src/v20180525/model/ModifyClusterAuthenticationOptionsRequest.cpp
   src/v20180525/model/DeleteClusterEndpointVipRequest.cpp

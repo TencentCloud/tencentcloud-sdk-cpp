@@ -169,49 +169,6 @@ PostgresClient::CloseDBExtranetAccessOutcomeCallable PostgresClient::CloseDBExtr
     return task->get_future();
 }
 
-PostgresClient::CloseServerlessDBExtranetAccessOutcome PostgresClient::CloseServerlessDBExtranetAccess(const CloseServerlessDBExtranetAccessRequest &request)
-{
-    auto outcome = MakeRequest(request, "CloseServerlessDBExtranetAccess");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CloseServerlessDBExtranetAccessResponse rsp = CloseServerlessDBExtranetAccessResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CloseServerlessDBExtranetAccessOutcome(rsp);
-        else
-            return CloseServerlessDBExtranetAccessOutcome(o.GetError());
-    }
-    else
-    {
-        return CloseServerlessDBExtranetAccessOutcome(outcome.GetError());
-    }
-}
-
-void PostgresClient::CloseServerlessDBExtranetAccessAsync(const CloseServerlessDBExtranetAccessRequest& request, const CloseServerlessDBExtranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseServerlessDBExtranetAccess(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-PostgresClient::CloseServerlessDBExtranetAccessOutcomeCallable PostgresClient::CloseServerlessDBExtranetAccessCallable(const CloseServerlessDBExtranetAccessRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CloseServerlessDBExtranetAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseServerlessDBExtranetAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 PostgresClient::CreateAccountOutcome PostgresClient::CreateAccount(const CreateAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAccount");
@@ -1065,49 +1022,6 @@ PostgresClient::DeleteReadOnlyGroupNetworkAccessOutcomeCallable PostgresClient::
         [this, request]()
         {
             return this->DeleteReadOnlyGroupNetworkAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-PostgresClient::DeleteServerlessDBInstanceOutcome PostgresClient::DeleteServerlessDBInstance(const DeleteServerlessDBInstanceRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteServerlessDBInstance");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteServerlessDBInstanceResponse rsp = DeleteServerlessDBInstanceResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteServerlessDBInstanceOutcome(rsp);
-        else
-            return DeleteServerlessDBInstanceOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteServerlessDBInstanceOutcome(outcome.GetError());
-    }
-}
-
-void PostgresClient::DeleteServerlessDBInstanceAsync(const DeleteServerlessDBInstanceRequest& request, const DeleteServerlessDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteServerlessDBInstance(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-PostgresClient::DeleteServerlessDBInstanceOutcomeCallable PostgresClient::DeleteServerlessDBInstanceCallable(const DeleteServerlessDBInstanceRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteServerlessDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteServerlessDBInstance(request);
         }
     );
 

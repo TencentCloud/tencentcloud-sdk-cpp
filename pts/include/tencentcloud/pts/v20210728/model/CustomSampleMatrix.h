@@ -135,6 +135,27 @@ namespace TencentCloud
                      */
                     bool StreamsHasBeenSet() const;
 
+                    /**
+                     * 获取两个时间点的时间间隔，单位纳秒
+                     * @return Step 两个时间点的时间间隔，单位纳秒
+                     * 
+                     */
+                    int64_t GetStep() const;
+
+                    /**
+                     * 设置两个时间点的时间间隔，单位纳秒
+                     * @param _step 两个时间点的时间间隔，单位纳秒
+                     * 
+                     */
+                    void SetStep(const int64_t& _step);
+
+                    /**
+                     * 判断参数 Step 是否已赋值
+                     * @return Step 是否已赋值
+                     * 
+                     */
+                    bool StepHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +182,12 @@ namespace TencentCloud
                      */
                     std::vector<SampleStream> m_streams;
                     bool m_streamsHasBeenSet;
+
+                    /**
+                     * 两个时间点的时间间隔，单位纳秒
+                     */
+                    int64_t m_step;
+                    bool m_stepHasBeenSet;
 
                 };
             }

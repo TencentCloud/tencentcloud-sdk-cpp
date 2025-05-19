@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ap-guangzhou
-
-                     * @return Region ap-guangzhou
-
+                     * 获取地域
+                     * @return Region 地域
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置ap-guangzhou
-
-                     * @param _region ap-guangzhou
-
+                     * 设置地域
+                     * @param _region 地域
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -72,15 +68,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取华南地区(广州)
-                     * @return RegionName 华南地区(广州)
+                     * 获取地域名称
+                     * @return RegionName 地域名称
                      * 
                      */
                     std::string GetRegionName() const;
 
                     /**
-                     * 设置华南地区(广州)
-                     * @param _regionName 华南地区(广州)
+                     * 设置地域名称
+                     * @param _regionName 地域名称
                      * 
                      */
                     void SetRegionName(const std::string& _regionName);
@@ -123,18 +119,18 @@ AVAILABLE：可用
 
                     /**
                      * 获取学术加速是否支持：
-NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭
+NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。
                      * @return ScholarRocketSupportState 学术加速是否支持：
-NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭
+NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。
                      * 
                      */
                     std::string GetScholarRocketSupportState() const;
 
                     /**
                      * 设置学术加速是否支持：
-NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭
+NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。
                      * @param _scholarRocketSupportState 学术加速是否支持：
-NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭
+NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。
                      * 
                      */
                     void SetScholarRocketSupportState(const std::string& _scholarRocketSupportState);
@@ -149,14 +145,13 @@ NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_
                 private:
 
                     /**
-                     * ap-guangzhou
-
+                     * 地域
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 华南地区(广州)
+                     * 地域名称
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
@@ -171,7 +166,7 @@ AVAILABLE：可用
 
                     /**
                      * 学术加速是否支持：
-NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭
+NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。
                      */
                     std::string m_scholarRocketSupportState;
                     bool m_scholarRocketSupportStateHasBeenSet;

@@ -63,7 +63,8 @@ CynosdbCluster::CynosdbCluster() :
     m_isFreezeHasBeenSet(false),
     m_orderSourceHasBeenSet(false),
     m_abilityHasBeenSet(false),
-    m_resourcePackagesHasBeenSet(false)
+    m_resourcePackagesHasBeenSet(false),
+    m_gdnIdHasBeenSet(false)
 {
 }
 
@@ -552,6 +553,16 @@ CoreInternalOutcome CynosdbCluster::Deserialize(const rapidjson::Value &value)
         m_resourcePackagesHasBeenSet = true;
     }
 
+    if (value.HasMember("GdnId") && !value["GdnId"].IsNull())
+    {
+        if (!value["GdnId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbCluster.GdnId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gdnId = string(value["GdnId"].GetString());
+        m_gdnIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -935,6 +946,14 @@ void CynosdbCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_gdnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GdnId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gdnId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1626,5 +1645,21 @@ void CynosdbCluster::SetResourcePackages(const vector<ResourcePackage>& _resourc
 bool CynosdbCluster::ResourcePackagesHasBeenSet() const
 {
     return m_resourcePackagesHasBeenSet;
+}
+
+string CynosdbCluster::GetGdnId() const
+{
+    return m_gdnId;
+}
+
+void CynosdbCluster::SetGdnId(const string& _gdnId)
+{
+    m_gdnId = _gdnId;
+    m_gdnIdHasBeenSet = true;
+}
+
+bool CynosdbCluster::GdnIdHasBeenSet() const
+{
+    return m_gdnIdHasBeenSet;
 }
 

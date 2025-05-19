@@ -230,6 +230,20 @@ namespace TencentCloud
                      */
                     bool SentimentAnalysisHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于标识本次审核决策归因，比如text_nlp_tianji标识是由nlp tianji模型给出的审核决策，text_keyword_public标识命中了业务的关键词库
+                     * @return HitType 该字段用于标识本次审核决策归因，比如text_nlp_tianji标识是由nlp tianji模型给出的审核决策，text_keyword_public标识命中了业务的关键词库
+                     * 
+                     */
+                    std::string GetHitType() const;
+
+                    /**
+                     * 判断参数 HitType 是否已赋值
+                     * @return HitType 是否已赋值
+                     * 
+                     */
+                    bool HitTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +325,12 @@ namespace TencentCloud
                      */
                     SentimentAnalysis m_sentimentAnalysis;
                     bool m_sentimentAnalysisHasBeenSet;
+
+                    /**
+                     * 该字段用于标识本次审核决策归因，比如text_nlp_tianji标识是由nlp tianji模型给出的审核决策，text_keyword_public标识命中了业务的关键词库
+                     */
+                    std::string m_hitType;
+                    bool m_hitTypeHasBeenSet;
 
                 };
             }

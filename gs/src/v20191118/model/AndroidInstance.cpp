@@ -34,7 +34,9 @@ AndroidInstance::AndroidInstance() :
     m_androidInstanceLabelsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_privateIPHasBeenSet(false)
+    m_privateIPHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_hostServerSerialNumberHasBeenSet(false)
 {
 }
 
@@ -193,6 +195,26 @@ CoreInternalOutcome AndroidInstance::Deserialize(const rapidjson::Value &value)
         m_privateIPHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HostServerSerialNumber") && !value["HostServerSerialNumber"].IsNull())
+    {
+        if (!value["HostServerSerialNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstance.HostServerSerialNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostServerSerialNumber = string(value["HostServerSerialNumber"].GetString());
+        m_hostServerSerialNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +339,22 @@ void AndroidInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "PrivateIP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_privateIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostServerSerialNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostServerSerialNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostServerSerialNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +582,37 @@ void AndroidInstance::SetPrivateIP(const string& _privateIP)
 bool AndroidInstance::PrivateIPHasBeenSet() const
 {
     return m_privateIPHasBeenSet;
+}
+
+string AndroidInstance::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void AndroidInstance::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool AndroidInstance::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string AndroidInstance::GetHostServerSerialNumber() const
+{
+    return m_hostServerSerialNumber;
+}
+
+void AndroidInstance::SetHostServerSerialNumber(const string& _hostServerSerialNumber)
+{
+    m_hostServerSerialNumber = _hostServerSerialNumber;
+    m_hostServerSerialNumberHasBeenSet = true;
+}
+
+bool AndroidInstance::HostServerSerialNumberHasBeenSet() const
+{
+    return m_hostServerSerialNumberHasBeenSet;
 }
 

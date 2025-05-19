@@ -31,6 +31,7 @@
 #include <tencentcloud/lke/v20231130/model/QuoteInfo.h>
 #include <tencentcloud/lke/v20231130/model/AgentThought.h>
 #include <tencentcloud/lke/v20231130/model/ExtraInfo.h>
+#include <tencentcloud/lke/v20231130/model/WorkflowInfo.h>
 
 
 namespace TencentCloud
@@ -678,6 +679,31 @@ namespace TencentCloud
                      */
                     bool ExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取工作流信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkFlow 工作流信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    WorkflowInfo GetWorkFlow() const;
+
+                    /**
+                     * 设置工作流信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workFlow 工作流信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkFlow(const WorkflowInfo& _workFlow);
+
+                    /**
+                     * 判断参数 WorkFlow 是否已赋值
+                     * @return WorkFlow 是否已赋值
+                     * 
+                     */
+                    bool WorkFlowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -854,6 +880,13 @@ namespace TencentCloud
                      */
                     ExtraInfo m_extraInfo;
                     bool m_extraInfoHasBeenSet;
+
+                    /**
+                     * 工作流信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkflowInfo m_workFlow;
+                    bool m_workFlowHasBeenSet;
 
                 };
             }

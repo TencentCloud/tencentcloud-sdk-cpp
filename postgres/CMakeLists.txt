@@ -26,7 +26,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeAccountPrivilegesResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDatabasesRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBXlogsRequest.h
-  include/tencentcloud/postgres/v20170312/model/CreateReadOnlyGroupNetworkAccessRequest.h
+  include/tencentcloud/postgres/v20170312/model/DescribeMaintainTimeWindowRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeAccountsRequest.h
   include/tencentcloud/postgres/v20170312/model/DeleteReadOnlyGroupResponse.h
   include/tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessRequest.h
@@ -45,7 +45,6 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/SlowlogDetail.h
   include/tencentcloud/postgres/v20170312/model/SwitchDBInstancePrimaryRequest.h
   include/tencentcloud/postgres/v20170312/model/RenewInstanceResponse.h
-  include/tencentcloud/postgres/v20170312/model/DeleteServerlessDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DeleteLogBackupResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyReadOnlyGroupConfigRequest.h
   include/tencentcloud/postgres/v20170312/model/BackupSummary.h
@@ -75,7 +74,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/Tag.h
   include/tencentcloud/postgres/v20170312/model/DescribeBackupSummariesRequest.h
   include/tencentcloud/postgres/v20170312/model/CreateBackupPlanRequest.h
-  include/tencentcloud/postgres/v20170312/model/CloseServerlessDBExtranetAccessRequest.h
+  include/tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectResponse.h
   include/tencentcloud/postgres/v20170312/model/CreateBaseBackupResponse.h
   include/tencentcloud/postgres/v20170312/model/LockAccountResponse.h
   include/tencentcloud/postgres/v20170312/model/CloneDBInstanceResponse.h
@@ -127,11 +126,10 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceHAConfigRequest.h
   include/tencentcloud/postgres/v20170312/model/PgDeal.h
   include/tencentcloud/postgres/v20170312/model/DeleteReadOnlyGroupNetworkAccessResponse.h
-  include/tencentcloud/postgres/v20170312/model/DescribeMaintainTimeWindowRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeBackupSummariesResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBErrlogsRequest.h
   include/tencentcloud/postgres/v20170312/model/DBBackup.h
-  include/tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectResponse.h
+  include/tencentcloud/postgres/v20170312/model/ServerlessDBAccount.h
   include/tencentcloud/postgres/v20170312/model/DeleteBackupPlanRequest.h
   include/tencentcloud/postgres/v20170312/model/CloneDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/DeleteParameterTemplateRequest.h
@@ -151,7 +149,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeParamsEventResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceSecurityGroupsRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDedicatedClustersRequest.h
-  include/tencentcloud/postgres/v20170312/model/CloseServerlessDBExtranetAccessResponse.h
+  include/tencentcloud/postgres/v20170312/model/CreateReadOnlyGroupNetworkAccessRequest.h
   include/tencentcloud/postgres/v20170312/model/EventItem.h
   include/tencentcloud/postgres/v20170312/model/RestartDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstanceHAConfigRequest.h
@@ -168,7 +166,6 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/IsolateDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstanceSSLConfigResponse.h
-  include/tencentcloud/postgres/v20170312/model/ModifyParameterTemplateRequest.h
   include/tencentcloud/postgres/v20170312/model/DeleteAccountRequest.h
   include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceKernelVersionResponse.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceRenewDBInstanceResponse.h
@@ -193,7 +190,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/Filter.h
   include/tencentcloud/postgres/v20170312/model/DescribeReadOnlyGroupsRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeBaseBackupsResponse.h
-  include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceParametersResponse.h
+  include/tencentcloud/postgres/v20170312/model/ModifyParameterTemplateRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBVersionsResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceSSLConfigRequest.h
   include/tencentcloud/postgres/v20170312/model/DatabasePrivilege.h
@@ -223,7 +220,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/CreateReadOnlyGroupResponse.h
   include/tencentcloud/postgres/v20170312/model/DeleteDBInstanceNetworkAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyAccountPrivilegesRequest.h
-  include/tencentcloud/postgres/v20170312/model/DeleteServerlessDBInstanceRequest.h
+  include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceParametersResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyReadOnlyGroupConfigResponse.h
   include/tencentcloud/postgres/v20170312/model/AccountInfo.h
   include/tencentcloud/postgres/v20170312/model/ModifyAccountRemarkRequest.h
@@ -257,7 +254,6 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeSlowQueryAnalysisResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceParametersRequest.h
   include/tencentcloud/postgres/v20170312/model/DedicatedCluster.h
-  include/tencentcloud/postgres/v20170312/model/ServerlessDBAccount.h
   include/tencentcloud/postgres/v20170312/model/DurationAnalysis.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeAccountPrivilegesRequest.h
@@ -295,7 +291,7 @@ set(postgres_src
   src/v20170312/model/DescribeAccountPrivilegesResponse.cpp
   src/v20170312/model/DescribeDatabasesRequest.cpp
   src/v20170312/model/DescribeDBXlogsRequest.cpp
-  src/v20170312/model/CreateReadOnlyGroupNetworkAccessRequest.cpp
+  src/v20170312/model/DescribeMaintainTimeWindowRequest.cpp
   src/v20170312/model/DescribeAccountsRequest.cpp
   src/v20170312/model/DeleteReadOnlyGroupResponse.cpp
   src/v20170312/model/OpenDBExtranetAccessRequest.cpp
@@ -314,7 +310,6 @@ set(postgres_src
   src/v20170312/model/SlowlogDetail.cpp
   src/v20170312/model/SwitchDBInstancePrimaryRequest.cpp
   src/v20170312/model/RenewInstanceResponse.cpp
-  src/v20170312/model/DeleteServerlessDBInstanceResponse.cpp
   src/v20170312/model/DeleteLogBackupResponse.cpp
   src/v20170312/model/ModifyReadOnlyGroupConfigRequest.cpp
   src/v20170312/model/BackupSummary.cpp
@@ -344,7 +339,7 @@ set(postgres_src
   src/v20170312/model/Tag.cpp
   src/v20170312/model/DescribeBackupSummariesRequest.cpp
   src/v20170312/model/CreateBackupPlanRequest.cpp
-  src/v20170312/model/CloseServerlessDBExtranetAccessRequest.cpp
+  src/v20170312/model/ModifyDBInstancesProjectResponse.cpp
   src/v20170312/model/CreateBaseBackupResponse.cpp
   src/v20170312/model/LockAccountResponse.cpp
   src/v20170312/model/CloneDBInstanceResponse.cpp
@@ -396,11 +391,10 @@ set(postgres_src
   src/v20170312/model/ModifyDBInstanceHAConfigRequest.cpp
   src/v20170312/model/PgDeal.cpp
   src/v20170312/model/DeleteReadOnlyGroupNetworkAccessResponse.cpp
-  src/v20170312/model/DescribeMaintainTimeWindowRequest.cpp
   src/v20170312/model/DescribeBackupSummariesResponse.cpp
   src/v20170312/model/DescribeDBErrlogsRequest.cpp
   src/v20170312/model/DBBackup.cpp
-  src/v20170312/model/ModifyDBInstancesProjectResponse.cpp
+  src/v20170312/model/ServerlessDBAccount.cpp
   src/v20170312/model/DeleteBackupPlanRequest.cpp
   src/v20170312/model/CloneDBInstanceRequest.cpp
   src/v20170312/model/DeleteParameterTemplateRequest.cpp
@@ -420,7 +414,7 @@ set(postgres_src
   src/v20170312/model/DescribeParamsEventResponse.cpp
   src/v20170312/model/ModifyDBInstanceSecurityGroupsRequest.cpp
   src/v20170312/model/DescribeDedicatedClustersRequest.cpp
-  src/v20170312/model/CloseServerlessDBExtranetAccessResponse.cpp
+  src/v20170312/model/CreateReadOnlyGroupNetworkAccessRequest.cpp
   src/v20170312/model/EventItem.cpp
   src/v20170312/model/RestartDBInstanceRequest.cpp
   src/v20170312/model/DescribeDBInstanceHAConfigRequest.cpp
@@ -437,7 +431,6 @@ set(postgres_src
   src/v20170312/model/IsolateDBInstancesRequest.cpp
   src/v20170312/model/ModifyDBInstanceNameRequest.cpp
   src/v20170312/model/DescribeDBInstanceSSLConfigResponse.cpp
-  src/v20170312/model/ModifyParameterTemplateRequest.cpp
   src/v20170312/model/DeleteAccountRequest.cpp
   src/v20170312/model/UpgradeDBInstanceKernelVersionResponse.cpp
   src/v20170312/model/InquiryPriceRenewDBInstanceResponse.cpp
@@ -462,7 +455,7 @@ set(postgres_src
   src/v20170312/model/Filter.cpp
   src/v20170312/model/DescribeReadOnlyGroupsRequest.cpp
   src/v20170312/model/DescribeBaseBackupsResponse.cpp
-  src/v20170312/model/ModifyDBInstanceParametersResponse.cpp
+  src/v20170312/model/ModifyParameterTemplateRequest.cpp
   src/v20170312/model/DescribeDBVersionsResponse.cpp
   src/v20170312/model/ModifyDBInstanceSSLConfigRequest.cpp
   src/v20170312/model/DatabasePrivilege.cpp
@@ -492,7 +485,7 @@ set(postgres_src
   src/v20170312/model/CreateReadOnlyGroupResponse.cpp
   src/v20170312/model/DeleteDBInstanceNetworkAccessResponse.cpp
   src/v20170312/model/ModifyAccountPrivilegesRequest.cpp
-  src/v20170312/model/DeleteServerlessDBInstanceRequest.cpp
+  src/v20170312/model/ModifyDBInstanceParametersResponse.cpp
   src/v20170312/model/ModifyReadOnlyGroupConfigResponse.cpp
   src/v20170312/model/AccountInfo.cpp
   src/v20170312/model/ModifyAccountRemarkRequest.cpp
@@ -526,7 +519,6 @@ set(postgres_src
   src/v20170312/model/DescribeSlowQueryAnalysisResponse.cpp
   src/v20170312/model/ModifyDBInstanceParametersRequest.cpp
   src/v20170312/model/DedicatedCluster.cpp
-  src/v20170312/model/ServerlessDBAccount.cpp
   src/v20170312/model/DurationAnalysis.cpp
   src/v20170312/model/DescribeDBSlowlogsResponse.cpp
   src/v20170312/model/DescribeAccountPrivilegesRequest.cpp

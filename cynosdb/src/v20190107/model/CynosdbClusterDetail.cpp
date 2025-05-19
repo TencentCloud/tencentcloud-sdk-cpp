@@ -71,7 +71,9 @@ CynosdbClusterDetail::CynosdbClusterDetail() :
     m_renewFlagHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_slaveZoneAttrHasBeenSet(false),
-    m_cynosVersionTagHasBeenSet(false)
+    m_cynosVersionTagHasBeenSet(false),
+    m_gdnIdHasBeenSet(false),
+    m_gdnRoleHasBeenSet(false)
 {
 }
 
@@ -660,6 +662,26 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
         m_cynosVersionTagHasBeenSet = true;
     }
 
+    if (value.HasMember("GdnId") && !value["GdnId"].IsNull())
+    {
+        if (!value["GdnId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.GdnId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gdnId = string(value["GdnId"].GetString());
+        m_gdnIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GdnRole") && !value["GdnRole"].IsNull())
+    {
+        if (!value["GdnRole"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.GdnRole` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gdnRole = string(value["GdnRole"].GetString());
+        m_gdnRoleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1121,6 +1143,22 @@ void CynosdbClusterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "CynosVersionTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cynosVersionTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gdnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GdnId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gdnId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gdnRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GdnRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gdnRole.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1940,5 +1978,37 @@ void CynosdbClusterDetail::SetCynosVersionTag(const string& _cynosVersionTag)
 bool CynosdbClusterDetail::CynosVersionTagHasBeenSet() const
 {
     return m_cynosVersionTagHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetGdnId() const
+{
+    return m_gdnId;
+}
+
+void CynosdbClusterDetail::SetGdnId(const string& _gdnId)
+{
+    m_gdnId = _gdnId;
+    m_gdnIdHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::GdnIdHasBeenSet() const
+{
+    return m_gdnIdHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetGdnRole() const
+{
+    return m_gdnRole;
+}
+
+void CynosdbClusterDetail::SetGdnRole(const string& _gdnRole)
+{
+    m_gdnRole = _gdnRole;
+    m_gdnRoleHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::GdnRoleHasBeenSet() const
+{
+    return m_gdnRoleHasBeenSet;
 }
 

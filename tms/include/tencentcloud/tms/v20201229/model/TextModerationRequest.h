@@ -66,15 +66,19 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype
-                     * @return BizType 该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype
+                     * 获取该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](#https://console.cloud.tencent.com/cms/clouds/manage)中配置，控制台访问地址：。
+备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
+                     * @return BizType 该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](#https://console.cloud.tencent.com/cms/clouds/manage)中配置，控制台访问地址：。
+备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
                      * 
                      */
                     std::string GetBizType() const;
 
                     /**
-                     * 设置该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype
-                     * @param _bizType 该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype
+                     * 设置该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](#https://console.cloud.tencent.com/cms/clouds/manage)中配置，控制台访问地址：。
+备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
+                     * @param _bizType 该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](#https://console.cloud.tencent.com/cms/clouds/manage)中配置，控制台访问地址：。
+备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
                      * 
                      */
                     void SetBizType(const std::string& _bizType);
@@ -150,15 +154,15 @@ namespace TencentCloud
                     bool DeviceHasBeenSet() const;
 
                     /**
-                     * 获取Content的原始语种，比如en,zh
-                     * @return SourceLanguage Content的原始语种，比如en,zh
+                     * 获取表示Content的原始语种，枚举值（"en","zh",""）en表示英文，zh表示中文，空字符表示默认语种中文，非中文场景耗时会更高，具体由送审文本内容决定，非中文场景需要联系客服确认
+                     * @return SourceLanguage 表示Content的原始语种，枚举值（"en","zh",""）en表示英文，zh表示中文，空字符表示默认语种中文，非中文场景耗时会更高，具体由送审文本内容决定，非中文场景需要联系客服确认
                      * 
                      */
                     std::string GetSourceLanguage() const;
 
                     /**
-                     * 设置Content的原始语种，比如en,zh
-                     * @param _sourceLanguage Content的原始语种，比如en,zh
+                     * 设置表示Content的原始语种，枚举值（"en","zh",""）en表示英文，zh表示中文，空字符表示默认语种中文，非中文场景耗时会更高，具体由送审文本内容决定，非中文场景需要联系客服确认
+                     * @param _sourceLanguage 表示Content的原始语种，枚举值（"en","zh",""）en表示英文，zh表示中文，空字符表示默认语种中文，非中文场景耗时会更高，具体由送审文本内容决定，非中文场景需要联系客服确认
                      * 
                      */
                     void SetSourceLanguage(const std::string& _sourceLanguage);
@@ -170,6 +174,27 @@ namespace TencentCloud
                      */
                     bool SourceLanguageHasBeenSet() const;
 
+                    /**
+                     * 获取审核的业务类型，枚举值有{"","TEXT","TEXT_AIGC"},缺省值""和"TEXT"标识传统文本审核，"TEXT_AIGC"标识文本AIGC审核
+                     * @return Type 审核的业务类型，枚举值有{"","TEXT","TEXT_AIGC"},缺省值""和"TEXT"标识传统文本审核，"TEXT_AIGC"标识文本AIGC审核
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置审核的业务类型，枚举值有{"","TEXT","TEXT_AIGC"},缺省值""和"TEXT"标识传统文本审核，"TEXT_AIGC"标识文本AIGC审核
+                     * @param _type 审核的业务类型，枚举值有{"","TEXT","TEXT_AIGC"},缺省值""和"TEXT"标识传统文本审核，"TEXT_AIGC"标识文本AIGC审核
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,7 +204,8 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype
+                     * 该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](#https://console.cloud.tencent.com/cms/clouds/manage)中配置，控制台访问地址：。
+备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
@@ -203,10 +229,16 @@ namespace TencentCloud
                     bool m_deviceHasBeenSet;
 
                     /**
-                     * Content的原始语种，比如en,zh
+                     * 表示Content的原始语种，枚举值（"en","zh",""）en表示英文，zh表示中文，空字符表示默认语种中文，非中文场景耗时会更高，具体由送审文本内容决定，非中文场景需要联系客服确认
                      */
                     std::string m_sourceLanguage;
                     bool m_sourceLanguageHasBeenSet;
+
+                    /**
+                     * 审核的业务类型，枚举值有{"","TEXT","TEXT_AIGC"},缺省值""和"TEXT"标识传统文本审核，"TEXT_AIGC"标识文本AIGC审核
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

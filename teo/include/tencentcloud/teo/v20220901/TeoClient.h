@@ -804,6 +804,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
 
                 /**
                  *创建别称域名。
+该功能仅企业版套餐支持，并且该功能当前仍在内测中，如需使用，请[联系我们](https://cloud.tencent.com/online-service?from=connect-us)。
                  * @param req CreateAliasDomainRequest
                  * @return CreateAliasDomainOutcome
                  */
@@ -1037,6 +1038,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
 
                 /**
                  *删除别称域名。
+该功能仅企业版套餐支持，并且该功能当前仍在内测中，如需使用，请[联系我们](https://cloud.tencent.com/online-service?from=connect-us)。
                  * @param req DeleteAliasDomainRequest
                  * @return DeleteAliasDomainOutcome
                  */
@@ -1219,6 +1221,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
 
                 /**
                  *查询别称域名信息列表。
+该功能仅企业版套餐支持，并且该功能当前仍在内测中，如需使用，请[联系我们](https://cloud.tencent.com/online-service?from=connect-us)。
                  * @param req DescribeAliasDomainsRequest
                  * @return DescribeAliasDomainsOutcome
                  */
@@ -1763,6 +1766,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
 
                 /**
                  *修改别称域名。
+该功能仅企业版套餐支持，并且该功能当前仍在内测中，如需使用，请[联系我们](https://cloud.tencent.com/online-service?from=connect-us)。
                  * @param req ModifyAliasDomainRequest
                  * @return ModifyAliasDomainOutcome
                  */
@@ -1772,6 +1776,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
 
                 /**
                  *修改别称域名状态。
+该功能仅企业版套餐支持，并且该功能当前仍在内测中，如需使用，请[联系我们](https://cloud.tencent.com/online-service?from=connect-us)。
                  * @param req ModifyAliasDomainStatusRequest
                  * @return ModifyAliasDomainStatusOutcome
                  */

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统 ID
-                     * @return FileSystemId 文件系统 ID
+                     * 获取文件系统 ID,通过查询文件系统列表获取
+                     * @return FileSystemId 文件系统 ID,通过查询文件系统列表获取
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统 ID
-                     * @param _fileSystemId 文件系统 ID
+                     * 设置文件系统 ID,通过查询文件系统列表获取
+                     * @param _fileSystemId 文件系统 ID,通过查询文件系统列表获取
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统 ID
+                     * 文件系统 ID,通过查询文件系统列表获取
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;

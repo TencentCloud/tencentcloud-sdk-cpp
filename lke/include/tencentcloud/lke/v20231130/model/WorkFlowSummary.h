@@ -147,6 +147,81 @@ namespace TencentCloud
                      */
                     bool RunNodesHasBeenSet() const;
 
+                    /**
+                     * 获取选项卡
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OptionCards 选项卡
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetOptionCards() const;
+
+                    /**
+                     * 设置选项卡
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _optionCards 选项卡
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOptionCards(const std::vector<std::string>& _optionCards);
+
+                    /**
+                     * 判断参数 OptionCards 是否已赋值
+                     * @return OptionCards 是否已赋值
+                     * 
+                     */
+                    bool OptionCardsHasBeenSet() const;
+
+                    /**
+                     * 获取多气泡的输出结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Outputs 多气泡的输出结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetOutputs() const;
+
+                    /**
+                     * 设置多气泡的输出结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outputs 多气泡的输出结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOutputs(const std::vector<std::string>& _outputs);
+
+                    /**
+                     * 判断参数 Outputs 是否已赋值
+                     * @return Outputs 是否已赋值
+                     * 
+                     */
+                    bool OutputsHasBeenSet() const;
+
+                    /**
+                     * 获取工作流发布时间，unix时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkflowReleaseTime 工作流发布时间，unix时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWorkflowReleaseTime() const;
+
+                    /**
+                     * 设置工作流发布时间，unix时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workflowReleaseTime 工作流发布时间，unix时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkflowReleaseTime(const std::string& _workflowReleaseTime);
+
+                    /**
+                     * 判断参数 WorkflowReleaseTime 是否已赋值
+                     * @return WorkflowReleaseTime 是否已赋值
+                     * 
+                     */
+                    bool WorkflowReleaseTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,6 +251,27 @@ namespace TencentCloud
                      */
                     std::vector<WorkflowRunNodeInfo> m_runNodes;
                     bool m_runNodesHasBeenSet;
+
+                    /**
+                     * 选项卡
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_optionCards;
+                    bool m_optionCardsHasBeenSet;
+
+                    /**
+                     * 多气泡的输出结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_outputs;
+                    bool m_outputsHasBeenSet;
+
+                    /**
+                     * 工作流发布时间，unix时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_workflowReleaseTime;
+                    bool m_workflowReleaseTimeHasBeenSet;
 
                 };
             }

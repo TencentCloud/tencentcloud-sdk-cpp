@@ -290,15 +290,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取已废弃字段，客户端Token，保持接口幂等性,最大长度64个字符
-                     * @return ClientToken 已废弃字段，客户端Token，保持接口幂等性,最大长度64个字符
+                     * 获取该字段已不再使用
+                     * @return ClientToken 该字段已不再使用
                      * 
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置已废弃字段，客户端Token，保持接口幂等性,最大长度64个字符
-                     * @param _clientToken 已废弃字段，客户端Token，保持接口幂等性,最大长度64个字符
+                     * 设置该字段已不再使用
+                     * @param _clientToken 该字段已不再使用
                      * 
                      */
                     void SetClientToken(const std::string& _clientToken);
@@ -380,7 +380,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 已废弃字段，客户端Token，保持接口幂等性,最大长度64个字符
+                     * 该字段已不再使用
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;

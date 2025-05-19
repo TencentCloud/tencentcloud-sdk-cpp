@@ -25,7 +25,10 @@ AgentProcedureDebugging::AgentProcedureDebugging() :
     m_displayContentHasBeenSet(false),
     m_displayTypeHasBeenSet(false),
     m_quoteInfosHasBeenSet(false),
-    m_referencesHasBeenSet(false)
+    m_referencesHasBeenSet(false),
+    m_displayStatusHasBeenSet(false),
+    m_sandboxUrlHasBeenSet(false),
+    m_displayUrlHasBeenSet(false)
 {
 }
 
@@ -104,6 +107,36 @@ CoreInternalOutcome AgentProcedureDebugging::Deserialize(const rapidjson::Value 
         m_referencesHasBeenSet = true;
     }
 
+    if (value.HasMember("DisplayStatus") && !value["DisplayStatus"].IsNull())
+    {
+        if (!value["DisplayStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProcedureDebugging.DisplayStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_displayStatus = string(value["DisplayStatus"].GetString());
+        m_displayStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SandboxUrl") && !value["SandboxUrl"].IsNull())
+    {
+        if (!value["SandboxUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProcedureDebugging.SandboxUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sandboxUrl = string(value["SandboxUrl"].GetString());
+        m_sandboxUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("DisplayUrl") && !value["DisplayUrl"].IsNull())
+    {
+        if (!value["DisplayUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProcedureDebugging.DisplayUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_displayUrl = string(value["DisplayUrl"].GetString());
+        m_displayUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -163,6 +196,30 @@ void AgentProcedureDebugging::ToJsonObject(rapidjson::Value &value, rapidjson::D
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_displayStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sandboxUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SandboxUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sandboxUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_displayUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -246,5 +303,53 @@ void AgentProcedureDebugging::SetReferences(const vector<AgentReference>& _refer
 bool AgentProcedureDebugging::ReferencesHasBeenSet() const
 {
     return m_referencesHasBeenSet;
+}
+
+string AgentProcedureDebugging::GetDisplayStatus() const
+{
+    return m_displayStatus;
+}
+
+void AgentProcedureDebugging::SetDisplayStatus(const string& _displayStatus)
+{
+    m_displayStatus = _displayStatus;
+    m_displayStatusHasBeenSet = true;
+}
+
+bool AgentProcedureDebugging::DisplayStatusHasBeenSet() const
+{
+    return m_displayStatusHasBeenSet;
+}
+
+string AgentProcedureDebugging::GetSandboxUrl() const
+{
+    return m_sandboxUrl;
+}
+
+void AgentProcedureDebugging::SetSandboxUrl(const string& _sandboxUrl)
+{
+    m_sandboxUrl = _sandboxUrl;
+    m_sandboxUrlHasBeenSet = true;
+}
+
+bool AgentProcedureDebugging::SandboxUrlHasBeenSet() const
+{
+    return m_sandboxUrlHasBeenSet;
+}
+
+string AgentProcedureDebugging::GetDisplayUrl() const
+{
+    return m_displayUrl;
+}
+
+void AgentProcedureDebugging::SetDisplayUrl(const string& _displayUrl)
+{
+    m_displayUrl = _displayUrl;
+    m_displayUrlHasBeenSet = true;
+}
+
+bool AgentProcedureDebugging::DisplayUrlHasBeenSet() const
+{
+    return m_displayUrlHasBeenSet;
 }
 

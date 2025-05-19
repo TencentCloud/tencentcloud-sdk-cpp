@@ -34,7 +34,8 @@ KnowledgeQaConfig::KnowledgeQaConfig() :
     m_pluginsHasBeenSet(false),
     m_thoughtModelHasBeenSet(false),
     m_intentAchievementsHasBeenSet(false),
-    m_imageTextRetrievalHasBeenSet(false)
+    m_imageTextRetrievalHasBeenSet(false),
+    m_aiCallHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,23 @@ CoreInternalOutcome KnowledgeQaConfig::Deserialize(const rapidjson::Value &value
         m_imageTextRetrievalHasBeenSet = true;
     }
 
+    if (value.HasMember("AiCall") && !value["AiCall"].IsNull())
+    {
+        if (!value["AiCall"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.AiCall` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiCall.Deserialize(value["AiCall"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiCallHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -407,6 +425,15 @@ void KnowledgeQaConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ImageTextRetrieval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageTextRetrieval, allocator);
+    }
+
+    if (m_aiCallHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiCall";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiCall.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -634,5 +661,21 @@ void KnowledgeQaConfig::SetImageTextRetrieval(const bool& _imageTextRetrieval)
 bool KnowledgeQaConfig::ImageTextRetrievalHasBeenSet() const
 {
     return m_imageTextRetrievalHasBeenSet;
+}
+
+AICallConfig KnowledgeQaConfig::GetAiCall() const
+{
+    return m_aiCall;
+}
+
+void KnowledgeQaConfig::SetAiCall(const AICallConfig& _aiCall)
+{
+    m_aiCall = _aiCall;
+    m_aiCallHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::AiCallHasBeenSet() const
+{
+    return m_aiCallHasBeenSet;
 }
 

@@ -36,7 +36,8 @@ CreateFlowOption::CreateFlowOption() :
     m_hideComponentTypesHasBeenSet(false),
     m_showComponentTypesHasBeenSet(false),
     m_resultPageConfigHasBeenSet(false),
-    m_signComponentConfigHasBeenSet(false)
+    m_signComponentConfigHasBeenSet(false),
+    m_forbidEditWatermarkHasBeenSet(false)
 {
 }
 
@@ -228,6 +229,16 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         m_signComponentConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ForbidEditWatermark") && !value["ForbidEditWatermark"].IsNull())
+    {
+        if (!value["ForbidEditWatermark"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ForbidEditWatermark` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidEditWatermark = value["ForbidEditWatermark"].GetBool();
+        m_forbidEditWatermarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -379,6 +390,14 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_signComponentConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_forbidEditWatermarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidEditWatermark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidEditWatermark, allocator);
     }
 
 }
@@ -638,5 +657,21 @@ void CreateFlowOption::SetSignComponentConfig(const SignComponentConfig& _signCo
 bool CreateFlowOption::SignComponentConfigHasBeenSet() const
 {
     return m_signComponentConfigHasBeenSet;
+}
+
+bool CreateFlowOption::GetForbidEditWatermark() const
+{
+    return m_forbidEditWatermark;
+}
+
+void CreateFlowOption::SetForbidEditWatermark(const bool& _forbidEditWatermark)
+{
+    m_forbidEditWatermark = _forbidEditWatermark;
+    m_forbidEditWatermarkHasBeenSet = true;
+}
+
+bool CreateFlowOption::ForbidEditWatermarkHasBeenSet() const
+{
+    return m_forbidEditWatermarkHasBeenSet;
 }
 

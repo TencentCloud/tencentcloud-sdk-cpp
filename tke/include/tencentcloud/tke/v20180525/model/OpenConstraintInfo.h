@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略实例名称
-                     * @return Name 策略实例名称
-                     * 
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置策略实例名称
-                     * @param _name 策略实例名称
-                     * 
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     * 
-                     */
-                    bool NameHasBeenSet() const;
-
-                    /**
                      * 获取策略实例关联事件数
                      * @return EventNums 策略实例关联事件数
                      * 
@@ -87,6 +66,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EventNumsHasBeenSet() const;
+
+                    /**
+                     * 获取策略实例名称
+                     * @return Name 策略实例名称
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置策略实例名称
+                     * @param _name 策略实例名称
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
 
                     /**
                      * 获取实例yaml详情base64编码
@@ -112,16 +112,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略实例名称
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
-
-                    /**
                      * 策略实例关联事件数
                      */
                     uint64_t m_eventNums;
                     bool m_eventNumsHasBeenSet;
+
+                    /**
+                     * 策略实例名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                     /**
                      * 实例yaml详情base64编码

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志实例名字。长度为不超过60字节。
-                     * @return FlowLogName 流日志实例名字。长度为不超过60字节。
+                     * 获取流日志实例名称。长度为不超过60字符。
+                     * @return FlowLogName 流日志实例名称。长度为不超过60字符。
                      * 
                      */
                     std::string GetFlowLogName() const;
 
                     /**
-                     * 设置流日志实例名字。长度为不超过60字节。
-                     * @param _flowLogName 流日志实例名字。长度为不超过60字节。
+                     * 设置流日志实例名称。长度为不超过60字符。
+                     * @param _flowLogName 流日志实例名称。长度为不超过60字符。
                      * 
                      */
                     void SetFlowLogName(const std::string& _flowLogName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志实例描述。长度为不超过512字节。
-                     * @return FlowLogDescription 流日志实例描述。长度为不超过512字节。
+                     * 获取流日志实例描述。长度为不超过512个字符。
+                     * @return FlowLogDescription 流日志实例描述。长度为不超过512个字符。
                      * 
                      */
                     std::string GetFlowLogDescription() const;
 
                     /**
-                     * 设置流日志实例描述。长度为不超过512字节。
-                     * @param _flowLogDescription 流日志实例描述。长度为不超过512字节。
+                     * 设置流日志实例描述。长度为不超过512个字符。
+                     * @param _flowLogDescription 流日志实例描述。长度为不超过512个字符。
                      * 
                      */
                     void SetFlowLogDescription(const std::string& _flowLogDescription);
@@ -141,13 +141,13 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 流日志实例名字。长度为不超过60字节。
+                     * 流日志实例名称。长度为不超过60字符。
                      */
                     std::string m_flowLogName;
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志实例描述。长度为不超过512字节。
+                     * 流日志实例描述。长度为不超过512个字符。
                      */
                     std::string m_flowLogDescription;
                     bool m_flowLogDescriptionHasBeenSet;

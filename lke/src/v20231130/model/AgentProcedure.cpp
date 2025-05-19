@@ -33,7 +33,8 @@ AgentProcedure::AgentProcedure() :
     m_nodeNameHasBeenSet(false),
     m_replyIndexHasBeenSet(false),
     m_sourceAgentNameHasBeenSet(false),
-    m_targetAgentNameHasBeenSet(false)
+    m_targetAgentNameHasBeenSet(false),
+    m_agentIconHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,16 @@ CoreInternalOutcome AgentProcedure::Deserialize(const rapidjson::Value &value)
         m_targetAgentNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentIcon") && !value["AgentIcon"].IsNull())
+    {
+        if (!value["AgentIcon"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProcedure.AgentIcon` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentIcon = string(value["AgentIcon"].GetString());
+        m_agentIconHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +300,14 @@ void AgentProcedure::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TargetAgentName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_targetAgentName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentIconHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentIcon";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentIcon.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +519,21 @@ void AgentProcedure::SetTargetAgentName(const string& _targetAgentName)
 bool AgentProcedure::TargetAgentNameHasBeenSet() const
 {
     return m_targetAgentNameHasBeenSet;
+}
+
+string AgentProcedure::GetAgentIcon() const
+{
+    return m_agentIcon;
+}
+
+void AgentProcedure::SetAgentIcon(const string& _agentIcon)
+{
+    m_agentIcon = _agentIcon;
+    m_agentIconHasBeenSet = true;
+}
+
+bool AgentProcedure::AgentIconHasBeenSet() const
+{
+    return m_agentIconHasBeenSet;
 }
 

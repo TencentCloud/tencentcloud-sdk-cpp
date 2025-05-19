@@ -303,15 +303,15 @@ namespace TencentCloud
                     bool ShareReferenceHasBeenSet() const;
 
                     /**
-                     * 获取快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT
-                     * @return SnapshotType 快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT
+                     * 获取快照类型，目前该项取值可以为`PRIVATE_SNAPSHOT`（私有快照）或者`SHARED_SNAPSHOT`（共享快照）
+                     * @return SnapshotType 快照类型，目前该项取值可以为`PRIVATE_SNAPSHOT`（私有快照）或者`SHARED_SNAPSHOT`（共享快照）
                      * 
                      */
                     std::string GetSnapshotType() const;
 
                     /**
-                     * 设置快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT
-                     * @param _snapshotType 快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT
+                     * 设置快照类型，目前该项取值可以为`PRIVATE_SNAPSHOT`（私有快照）或者`SHARED_SNAPSHOT`（共享快照）
+                     * @param _snapshotType 快照类型，目前该项取值可以为`PRIVATE_SNAPSHOT`（私有快照）或者`SHARED_SNAPSHOT`（共享快照）
                      * 
                      */
                     void SetSnapshotType(const std::string& _snapshotType);
@@ -324,15 +324,15 @@ namespace TencentCloud
                     bool SnapshotTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建此快照的云硬盘大小，单位GB。
-                     * @return DiskSize 创建此快照的云硬盘大小，单位GB。
+                     * 获取创建此快照的云硬盘大小，单位GiB。
+                     * @return DiskSize 创建此快照的云硬盘大小，单位GiB。
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置创建此快照的云硬盘大小，单位GB。
-                     * @param _diskSize 创建此快照的云硬盘大小，单位GB。
+                     * 设置创建此快照的云硬盘大小，单位GiB。
+                     * @param _diskSize 创建此快照的云硬盘大小，单位GiB。
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -366,15 +366,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取快照正在跨地域复制的目的地域，默认取值为[]。
-                     * @return CopyingToRegions 快照正在跨地域复制的目的地域，默认取值为[]。
+                     * 获取快照正在跨地域复制的目的地域，若没有则返回`[]`。
+                     * @return CopyingToRegions 快照正在跨地域复制的目的地域，若没有则返回`[]`。
                      * 
                      */
                     std::vector<std::string> GetCopyingToRegions() const;
 
                     /**
-                     * 设置快照正在跨地域复制的目的地域，默认取值为[]。
-                     * @param _copyingToRegions 快照正在跨地域复制的目的地域，默认取值为[]。
+                     * 设置快照正在跨地域复制的目的地域，若没有则返回`[]`。
+                     * @param _copyingToRegions 快照正在跨地域复制的目的地域，若没有则返回`[]`。
                      * 
                      */
                     void SetCopyingToRegions(const std::vector<std::string>& _copyingToRegions);
@@ -642,13 +642,13 @@ namespace TencentCloud
                     bool m_shareReferenceHasBeenSet;
 
                     /**
-                     * 快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT
+                     * 快照类型，目前该项取值可以为`PRIVATE_SNAPSHOT`（私有快照）或者`SHARED_SNAPSHOT`（共享快照）
                      */
                     std::string m_snapshotType;
                     bool m_snapshotTypeHasBeenSet;
 
                     /**
-                     * 创建此快照的云硬盘大小，单位GB。
+                     * 创建此快照的云硬盘大小，单位GiB。
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
@@ -660,7 +660,7 @@ namespace TencentCloud
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 快照正在跨地域复制的目的地域，默认取值为[]。
+                     * 快照正在跨地域复制的目的地域，若没有则返回`[]`。
                      */
                     std::vector<std::string> m_copyingToRegions;
                     bool m_copyingToRegionsHasBeenSet;

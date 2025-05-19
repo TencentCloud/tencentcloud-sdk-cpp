@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return ApplicationId 应用ID
+                     * 获取应用ID通过调用接口[DescribeApplications](https://cloud.tencent.com/document/api/1721/101609)获取。
+                     * @return ApplicationId 应用ID通过调用接口[DescribeApplications](https://cloud.tencent.com/document/api/1721/101609)获取。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _applicationId 应用ID
+                     * 设置应用ID通过调用接口[DescribeApplications](https://cloud.tencent.com/document/api/1721/101609)获取。
+                     * @param _applicationId 应用ID通过调用接口[DescribeApplications](https://cloud.tencent.com/document/api/1721/101609)获取。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取算力套餐类型
-                     * @return BundleType 算力套餐类型
+                     * 获取算力套餐类型, 枚举：XL,XL_2X, 3XL, 3XL_2X, 4XL, 24GB_A.
+                     * @return BundleType 算力套餐类型, 枚举：XL,XL_2X, 3XL, 3XL_2X, 4XL, 24GB_A.
                      * 
                      */
                     std::string GetBundleType() const;
 
                     /**
-                     * 设置算力套餐类型
-                     * @param _bundleType 算力套餐类型
+                     * 设置算力套餐类型, 枚举：XL,XL_2X, 3XL, 3XL_2X, 4XL, 24GB_A.
+                     * @param _bundleType 算力套餐类型, 枚举：XL,XL_2X, 3XL, 3XL_2X, 4XL, 24GB_A.
                      * 
                      */
                     void SetBundleType(const std::string& _bundleType);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool SystemDiskHasBeenSet() const;
 
                     /**
-                     * 获取购买实例数量。
-                     * @return InstanceCount 购买实例数量。
+                     * 获取购买实例数量，单次请求实例数量上限为10。
+                     * @return InstanceCount 购买实例数量，单次请求实例数量上限为10。
                      * 
                      */
                     uint64_t GetInstanceCount() const;
 
                     /**
-                     * 设置购买实例数量。
-                     * @param _instanceCount 购买实例数量。
+                     * 设置购买实例数量，单次请求实例数量上限为10。
+                     * @param _instanceCount 购买实例数量，单次请求实例数量上限为10。
                      * 
                      */
                     void SetInstanceCount(const uint64_t& _instanceCount);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取实例显示名称
-                     * @return InstanceName 实例显示名称
+                     * 获取实例显示名称，名称长度限制为128个字符。
+                     * @return InstanceName 实例显示名称，名称长度限制为128个字符。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例显示名称
-                     * @param _instanceName 实例显示名称
+                     * 设置实例显示名称，名称长度限制为128个字符。
+                     * @param _instanceName 实例显示名称，名称长度限制为128个字符。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -236,13 +236,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID通过调用接口[DescribeApplications](https://cloud.tencent.com/document/api/1721/101609)获取。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * 算力套餐类型
+                     * 算力套餐类型, 枚举：XL,XL_2X, 3XL, 3XL_2X, 4XL, 24GB_A.
                      */
                     std::string m_bundleType;
                     bool m_bundleTypeHasBeenSet;
@@ -254,13 +254,13 @@ namespace TencentCloud
                     bool m_systemDiskHasBeenSet;
 
                     /**
-                     * 购买实例数量。
+                     * 购买实例数量，单次请求实例数量上限为10。
                      */
                     uint64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 实例显示名称
+                     * 实例显示名称，名称长度限制为128个字符。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

@@ -236,15 +236,15 @@ TERMINATED：表示已销毁
                     bool GPUPerformanceHasBeenSet() const;
 
                     /**
-                     * 获取显存
-                     * @return GPUMemory 显存
+                     * 获取显存，单位：GB
+                     * @return GPUMemory 显存，单位：GB
                      * 
                      */
                     std::string GetGPUMemory() const;
 
                     /**
-                     * 设置显存
-                     * @param _gPUMemory 显存
+                     * 设置显存，单位：GB
+                     * @param _gPUMemory 显存，单位：GB
                      * 
                      */
                     void SetGPUMemory(const std::string& _gPUMemory);
@@ -257,15 +257,15 @@ TERMINATED：表示已销毁
                     bool GPUMemoryHasBeenSet() const;
 
                     /**
-                     * 获取CPU核数
-                     * @return CPU CPU核数
+                     * 获取CPU核数，单位：核
+                     * @return CPU CPU核数，单位：核
                      * 
                      */
                     std::string GetCPU() const;
 
                     /**
-                     * 设置CPU核数
-                     * @param _cPU CPU核数
+                     * 设置CPU核数，单位：核
+                     * @param _cPU CPU核数，单位：核
                      * 
                      */
                     void SetCPU(const std::string& _cPU);
@@ -278,18 +278,18 @@ TERMINATED：表示已销毁
                     bool CPUHasBeenSet() const;
 
                     /**
-                     * 获取内存
+                     * 获取内存，单位：GB
 
-                     * @return Memory 内存
+                     * @return Memory 内存，单位：GB
 
                      * 
                      */
                     std::string GetMemory() const;
 
                     /**
-                     * 设置内存
+                     * 设置内存，单位：GB
 
-                     * @param _memory 内存
+                     * @param _memory 内存，单位：GB
 
                      * 
                      */
@@ -449,15 +449,15 @@ FAILED：表示操作失败
                     bool LatestOperationStateHasBeenSet() const;
 
                     /**
-                     * 获取实例创建时间
-                     * @return CreateTime 实例创建时间
+                     * 获取实例创建时间，时间格式："YYYY-MM-DD HH:MM:SS"
+                     * @return CreateTime 实例创建时间，时间格式："YYYY-MM-DD HH:MM:SS"
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置实例创建时间
-                     * @param _createTime 实例创建时间
+                     * 设置实例创建时间，时间格式："YYYY-MM-DD HH:MM:SS"
+                     * @param _createTime 实例创建时间，时间格式："YYYY-MM-DD HH:MM:SS"
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -470,15 +470,15 @@ FAILED：表示操作失败
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取公网出带宽上限，默认10Mbps
-                     * @return MaxOutBandwidth 公网出带宽上限，默认10Mbps
+                     * 获取公网出带宽上限，默认10Mbps，单位：Mbps
+                     * @return MaxOutBandwidth 公网出带宽上限，默认10Mbps，单位：Mbps
                      * 
                      */
                     std::string GetMaxOutBandwidth() const;
 
                     /**
-                     * 设置公网出带宽上限，默认10Mbps
-                     * @param _maxOutBandwidth 公网出带宽上限，默认10Mbps
+                     * 设置公网出带宽上限，默认10Mbps，单位：Mbps
+                     * @param _maxOutBandwidth 公网出带宽上限，默认10Mbps，单位：Mbps
                      * 
                      */
                     void SetMaxOutBandwidth(const std::string& _maxOutBandwidth);
@@ -491,15 +491,15 @@ FAILED：表示操作失败
                     bool MaxOutBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取每月免费流量，默认500G
-                     * @return MaxFreeTraffic 每月免费流量，默认500G
+                     * 获取每月免费流量，默认500G，单位：GB
+                     * @return MaxFreeTraffic 每月免费流量，默认500G，单位：GB
                      * 
                      */
                     std::string GetMaxFreeTraffic() const;
 
                     /**
-                     * 设置每月免费流量，默认500G
-                     * @param _maxFreeTraffic 每月免费流量，默认500G
+                     * 设置每月免费流量，默认500G，单位：GB
+                     * @param _maxFreeTraffic 每月免费流量，默认500G，单位：GB
                      * 
                      */
                     void SetMaxFreeTraffic(const std::string& _maxFreeTraffic);
@@ -554,15 +554,15 @@ FAILED：表示操作失败
                     bool LoginServicesHasBeenSet() const;
 
                     /**
-                     * 获取应用服务的操作系统类型
-                     * @return OSType 应用服务的操作系统类型
+                     * 获取应用服务的操作系统类型；参数：linux、windows
+                     * @return OSType 应用服务的操作系统类型；参数：linux、windows
                      * 
                      */
                     std::string GetOSType() const;
 
                     /**
-                     * 设置应用服务的操作系统类型
-                     * @param _oSType 应用服务的操作系统类型
+                     * 设置应用服务的操作系统类型；参数：linux、windows
+                     * @param _oSType 应用服务的操作系统类型；参数：linux、windows
                      * 
                      */
                     void SetOSType(const std::string& _oSType);
@@ -629,19 +629,19 @@ TERMINATED：表示已销毁
                     bool m_gPUPerformanceHasBeenSet;
 
                     /**
-                     * 显存
+                     * 显存，单位：GB
                      */
                     std::string m_gPUMemory;
                     bool m_gPUMemoryHasBeenSet;
 
                     /**
-                     * CPU核数
+                     * CPU核数，单位：核
                      */
                     std::string m_cPU;
                     bool m_cPUHasBeenSet;
 
                     /**
-                     * 内存
+                     * 内存，单位：GB
 
                      */
                     std::string m_memory;
@@ -689,19 +689,19 @@ FAILED：表示操作失败
                     bool m_latestOperationStateHasBeenSet;
 
                     /**
-                     * 实例创建时间
+                     * 实例创建时间，时间格式："YYYY-MM-DD HH:MM:SS"
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 公网出带宽上限，默认10Mbps
+                     * 公网出带宽上限，默认10Mbps，单位：Mbps
                      */
                     std::string m_maxOutBandwidth;
                     bool m_maxOutBandwidthHasBeenSet;
 
                     /**
-                     * 每月免费流量，默认500G
+                     * 每月免费流量，默认500G，单位：GB
                      */
                     std::string m_maxFreeTraffic;
                     bool m_maxFreeTrafficHasBeenSet;
@@ -719,7 +719,7 @@ FAILED：表示操作失败
                     bool m_loginServicesHasBeenSet;
 
                     /**
-                     * 应用服务的操作系统类型
+                     * 应用服务的操作系统类型；参数：linux、windows
                      */
                     std::string m_oSType;
                     bool m_oSTypeHasBeenSet;

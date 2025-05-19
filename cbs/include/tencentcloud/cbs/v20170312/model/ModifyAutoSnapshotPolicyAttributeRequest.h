@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。
-                     * @return IsActivated 是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。
+                     * 获取是否激活定期快照策略，`false`表示未激活，`true`表示激活；默认为`true`。
+                     * @return IsActivated 是否激活定期快照策略，`false`表示未激活，`true`表示激活；默认为`true`。
                      * 
                      */
                     bool GetIsActivated() const;
 
                     /**
-                     * 设置是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。
-                     * @param _isActivated 是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。
+                     * 设置是否激活定期快照策略，`false`表示未激活，`true`表示激活；默认为`true`。
+                     * @param _isActivated 是否激活定期快照策略，`false`表示未激活，`true`表示激活；默认为`true`。
                      * 
                      */
                     void SetIsActivated(const bool& _isActivated);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool IsActivatedHasBeenSet() const;
 
                     /**
-                     * 获取通过该定期快照策略创建的快照是否永久保留。FALSE表示非永久保留，TRUE表示永久保留，默认为FALSE。
-                     * @return IsPermanent 通过该定期快照策略创建的快照是否永久保留。FALSE表示非永久保留，TRUE表示永久保留，默认为FALSE。
+                     * 获取通过该定期快照策略创建的快照是否永久保留。`false`表示非永久保留，`true`表示永久保留，默认为`false`。
+                     * @return IsPermanent 通过该定期快照策略创建的快照是否永久保留。`false`表示非永久保留，`true`表示永久保留，默认为`false`。
                      * 
                      */
                     bool GetIsPermanent() const;
 
                     /**
-                     * 设置通过该定期快照策略创建的快照是否永久保留。FALSE表示非永久保留，TRUE表示永久保留，默认为FALSE。
-                     * @param _isPermanent 通过该定期快照策略创建的快照是否永久保留。FALSE表示非永久保留，TRUE表示永久保留，默认为FALSE。
+                     * 设置通过该定期快照策略创建的快照是否永久保留。`false`表示非永久保留，`true`表示永久保留，默认为`false`。
+                     * @param _isPermanent 通过该定期快照策略创建的快照是否永久保留。`false`表示非永久保留，`true`表示永久保留，默认为`false`。
                      * 
                      */
                     void SetIsPermanent(const bool& _isPermanent);
@@ -178,13 +178,13 @@ namespace TencentCloud
                     bool m_autoSnapshotPolicyIdHasBeenSet;
 
                     /**
-                     * 是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。
+                     * 是否激活定期快照策略，`false`表示未激活，`true`表示激活；默认为`true`。
                      */
                     bool m_isActivated;
                     bool m_isActivatedHasBeenSet;
 
                     /**
-                     * 通过该定期快照策略创建的快照是否永久保留。FALSE表示非永久保留，TRUE表示永久保留，默认为FALSE。
+                     * 通过该定期快照策略创建的快照是否永久保留。`false`表示非永久保留，`true`表示永久保留，默认为`false`。
                      */
                     bool m_isPermanent;
                     bool m_isPermanentHasBeenSet;

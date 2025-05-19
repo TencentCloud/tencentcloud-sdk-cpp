@@ -286,15 +286,15 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取此字段已废弃，请勿继续使用。
-                     * @return EnableAutoSign 此字段已废弃，请勿继续使用。
+                     * 获取该字段已不再使用
+                     * @return EnableAutoSign 该字段已不再使用
                      * 
                      */
                     bool GetEnableAutoSign() const;
 
                     /**
-                     * 设置此字段已废弃，请勿继续使用。
-                     * @param _enableAutoSign 此字段已废弃，请勿继续使用。
+                     * 设置该字段已不再使用
+                     * @param _enableAutoSign 该字段已不再使用
                      * 
                      */
                     void SetEnableAutoSign(const bool& _enableAutoSign);
@@ -418,7 +418,7 @@ namespace TencentCloud
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 此字段已废弃，请勿继续使用。
+                     * 该字段已不再使用
                      */
                     bool m_enableAutoSign;
                     bool m_enableAutoSignHasBeenSet;

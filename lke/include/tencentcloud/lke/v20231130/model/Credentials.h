@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool TmpSecretKeyHasBeenSet() const;
 
+                    /**
+                     * 获取临时证书appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppId 临时证书appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAppId() const;
+
+                    /**
+                     * 设置临时证书appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appId 临时证书appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppId(const uint64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     std::string m_tmpSecretKey;
                     bool m_tmpSecretKeyHasBeenSet;
+
+                    /**
+                     * 临时证书appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }

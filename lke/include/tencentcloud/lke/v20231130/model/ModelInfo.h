@@ -444,6 +444,27 @@ namespace TencentCloud
                      */
                     bool IsExclusiveHasBeenSet() const;
 
+                    /**
+                     * 获取模型支持智能通话效果
+                     * @return SupportAiCallStatus 模型支持智能通话效果
+                     * 
+                     */
+                    uint64_t GetSupportAiCallStatus() const;
+
+                    /**
+                     * 设置模型支持智能通话效果
+                     * @param _supportAiCallStatus 模型支持智能通话效果
+                     * 
+                     */
+                    void SetSupportAiCallStatus(const uint64_t& _supportAiCallStatus);
+
+                    /**
+                     * 判断参数 SupportAiCallStatus 是否已赋值
+                     * @return SupportAiCallStatus 是否已赋值
+                     * 
+                     */
+                    bool SupportAiCallStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -557,6 +578,12 @@ namespace TencentCloud
                      */
                     bool m_isExclusive;
                     bool m_isExclusiveHasBeenSet;
+
+                    /**
+                     * 模型支持智能通话效果
+                     */
+                    uint64_t m_supportAiCallStatus;
+                    bool m_supportAiCallStatusHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要删除的定期快照策略ID列表。
-                     * @return AutoSnapshotPolicyIds 要删除的定期快照策略ID列表。
+                     * 获取要删除的定期快照策略ID列表，通过[ DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/362/33556)接口查询。
+                     * @return AutoSnapshotPolicyIds 要删除的定期快照策略ID列表，通过[ DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/362/33556)接口查询。
                      * 
                      */
                     std::vector<std::string> GetAutoSnapshotPolicyIds() const;
 
                     /**
-                     * 设置要删除的定期快照策略ID列表。
-                     * @param _autoSnapshotPolicyIds 要删除的定期快照策略ID列表。
+                     * 设置要删除的定期快照策略ID列表，通过[ DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/362/33556)接口查询。
+                     * @param _autoSnapshotPolicyIds 要删除的定期快照策略ID列表，通过[ DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/362/33556)接口查询。
                      * 
                      */
                     void SetAutoSnapshotPolicyIds(const std::vector<std::string>& _autoSnapshotPolicyIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要删除的定期快照策略ID列表。
+                     * 要删除的定期快照策略ID列表，通过[ DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/362/33556)接口查询。
                      */
                     std::vector<std::string> m_autoSnapshotPolicyIds;
                     bool m_autoSnapshotPolicyIdsHasBeenSet;

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DiskChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
-                     * @return DiskType 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
+                     * 获取硬盘介质类型。取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>极速型SSD云硬盘（CLOUD_TSSD）仅支持随部分实例类型一同购买，暂不支持单独创建。
+                     * @return DiskType 硬盘介质类型。取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>极速型SSD云硬盘（CLOUD_TSSD）仅支持随部分实例类型一同购买，暂不支持单独创建。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
-                     * @param _diskType 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
+                     * 设置硬盘介质类型。取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>极速型SSD云硬盘（CLOUD_TSSD）仅支持随部分实例类型一同购买，暂不支持单独创建。
+                     * @param _diskType 硬盘介质类型。取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>极速型SSD云硬盘（CLOUD_TSSD）仅支持随部分实例类型一同购买，暂不支持单独创建。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool DiskCountHasBeenSet() const;
 
                     /**
-                     * 获取可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
-                     * @return ThroughputPerformance 可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
+                     * 获取使用此参数可给云硬盘购买额外的性能，单位MB/s。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。
+                     * @return ThroughputPerformance 使用此参数可给云硬盘购买额外的性能，单位MB/s。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。
                      * 
                      */
                     uint64_t GetThroughputPerformance() const;
 
                     /**
-                     * 设置可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
-                     * @param _throughputPerformance 可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
+                     * 设置使用此参数可给云硬盘购买额外的性能，单位MB/s。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。
+                     * @param _throughputPerformance 使用此参数可给云硬盘购买额外的性能，单位MB/s。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。
                      * 
                      */
                     void SetThroughputPerformance(const uint64_t& _throughputPerformance);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ThroughputPerformanceHasBeenSet() const;
 
                     /**
-                     * 获取可选参数。购买加密盘时自定义密钥， 当传入该参数时, Encrypt入参不为空
-                     * @return KmsKeyId 可选参数。购买加密盘时自定义密钥， 当传入该参数时, Encrypt入参不为空
+                     * 获取购买加密盘时自定义密钥，当传入该参数时，Encrypt参数不得为空。
+                     * @return KmsKeyId 购买加密盘时自定义密钥，当传入该参数时，Encrypt参数不得为空。
                      * 
                      */
                     std::string GetKmsKeyId() const;
 
                     /**
-                     * 设置可选参数。购买加密盘时自定义密钥， 当传入该参数时, Encrypt入参不为空
-                     * @param _kmsKeyId 可选参数。购买加密盘时自定义密钥， 当传入该参数时, Encrypt入参不为空
+                     * 设置购买加密盘时自定义密钥，当传入该参数时，Encrypt参数不得为空。
+                     * @param _kmsKeyId 购买加密盘时自定义密钥，当传入该参数时，Encrypt参数不得为空。
                      * 
                      */
                     void SetKmsKeyId(const std::string& _kmsKeyId);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
-                     * @return Shareable 可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
+                     * 获取传入True时，云盘将创建为共享型云盘，默认为False。因共享型云盘不支持加密，此参数与Encrypt参数不可同时传入。
+                     * @return Shareable 传入True时，云盘将创建为共享型云盘，默认为False。因共享型云盘不支持加密，此参数与Encrypt参数不可同时传入。
                      * 
                      */
                     bool GetShareable() const;
 
                     /**
-                     * 设置可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
-                     * @param _shareable 可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
+                     * 设置传入True时，云盘将创建为共享型云盘，默认为False。因共享型云盘不支持加密，此参数与Encrypt参数不可同时传入。
+                     * @param _shareable 传入True时，云盘将创建为共享型云盘，默认为False。因共享型云盘不支持加密，此参数与Encrypt参数不可同时传入。
                      * 
                      */
                     void SetShareable(const bool& _shareable);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取传入该参数用于创建加密云盘，取值固定为ENCRYPT。
-                     * @return Encrypt 传入该参数用于创建加密云盘，取值固定为ENCRYPT。
+                     * 获取传入该参数用于创建加密云盘，取值固定为ENCRYPT。因共享型云盘不支持加密，此参数与Shareable参数不可同时传入。
+                     * @return Encrypt 传入该参数用于创建加密云盘，取值固定为ENCRYPT。因共享型云盘不支持加密，此参数与Shareable参数不可同时传入。
                      * 
                      */
                     std::string GetEncrypt() const;
 
                     /**
-                     * 设置传入该参数用于创建加密云盘，取值固定为ENCRYPT。
-                     * @param _encrypt 传入该参数用于创建加密云盘，取值固定为ENCRYPT。
+                     * 设置传入该参数用于创建加密云盘，取值固定为ENCRYPT。因共享型云盘不支持加密，此参数与Shareable参数不可同时传入。
+                     * @param _encrypt 传入该参数用于创建加密云盘，取值固定为ENCRYPT。因共享型云盘不支持加密，此参数与Shareable参数不可同时传入。
                      * 
                      */
                     void SetEncrypt(const std::string& _encrypt);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool DiskChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
-                     * @return DeleteSnapshot 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
+                     * 获取销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](document/api/362/15647)接口返回的快照详情的IsPermanent字段来判断，True表示永久快照，False表示非永久快照。
+                     * @return DeleteSnapshot 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](document/api/362/15647)接口返回的快照详情的IsPermanent字段来判断，True表示永久快照，False表示非永久快照。
                      * 
                      */
                     int64_t GetDeleteSnapshot() const;
 
                     /**
-                     * 设置销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
-                     * @param _deleteSnapshot 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
+                     * 设置销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](document/api/362/15647)接口返回的快照详情的IsPermanent字段来判断，True表示永久快照，False表示非永久快照。
+                     * @param _deleteSnapshot 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](document/api/362/15647)接口返回的快照详情的IsPermanent字段来判断，True表示永久快照，False表示非永久快照。
                      * 
                      */
                     void SetDeleteSnapshot(const int64_t& _deleteSnapshot);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool DeleteSnapshotHasBeenSet() const;
 
                     /**
-                     * 获取创建云盘时指定自动挂载并初始化该数据盘。
-                     * @return AutoMountConfiguration 创建云盘时指定自动挂载并初始化该数据盘。
+                     * 获取创建云盘时指定自动挂载并初始化该数据盘。因加密盘不支持自动挂载及初始化，此参数与Encrypt参数不可同时传入。
+                     * @return AutoMountConfiguration 创建云盘时指定自动挂载并初始化该数据盘。因加密盘不支持自动挂载及初始化，此参数与Encrypt参数不可同时传入。
                      * 
                      */
                     AutoMountConfiguration GetAutoMountConfiguration() const;
 
                     /**
-                     * 设置创建云盘时指定自动挂载并初始化该数据盘。
-                     * @param _autoMountConfiguration 创建云盘时指定自动挂载并初始化该数据盘。
+                     * 设置创建云盘时指定自动挂载并初始化该数据盘。因加密盘不支持自动挂载及初始化，此参数与Encrypt参数不可同时传入。
+                     * @param _autoMountConfiguration 创建云盘时指定自动挂载并初始化该数据盘。因加密盘不支持自动挂载及初始化，此参数与Encrypt参数不可同时传入。
                      * 
                      */
                     void SetAutoMountConfiguration(const AutoMountConfiguration& _autoMountConfiguration);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool DiskBackupQuotaHasBeenSet() const;
 
                     /**
-                     * 获取创建云盘时是否开启性能突发
-                     * @return BurstPerformance 创建云盘时是否开启性能突发
+                     * 获取创建云盘时是否开启性能突发。
+                     * @return BurstPerformance 创建云盘时是否开启性能突发。
                      * 
                      */
                     bool GetBurstPerformance() const;
 
                     /**
-                     * 设置创建云盘时是否开启性能突发
-                     * @param _burstPerformance 创建云盘时是否开启性能突发
+                     * 设置创建云盘时是否开启性能突发。
+                     * @param _burstPerformance 创建云盘时是否开启性能突发。
                      * 
                      */
                     void SetBurstPerformance(const bool& _burstPerformance);
@@ -460,7 +460,7 @@ namespace TencentCloud
                     bool m_diskChargeTypeHasBeenSet;
 
                     /**
-                     * 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
+                     * 硬盘介质类型。取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>极速型SSD云硬盘（CLOUD_TSSD）仅支持随部分实例类型一同购买，暂不支持单独创建。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
@@ -490,13 +490,13 @@ namespace TencentCloud
                     bool m_diskCountHasBeenSet;
 
                     /**
-                     * 可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
+                     * 使用此参数可给云硬盘购买额外的性能，单位MB/s。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。
                      */
                     uint64_t m_throughputPerformance;
                     bool m_throughputPerformanceHasBeenSet;
 
                     /**
-                     * 可选参数。购买加密盘时自定义密钥， 当传入该参数时, Encrypt入参不为空
+                     * 购买加密盘时自定义密钥，当传入该参数时，Encrypt参数不得为空。
                      */
                     std::string m_kmsKeyId;
                     bool m_kmsKeyIdHasBeenSet;
@@ -508,7 +508,7 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
+                     * 传入True时，云盘将创建为共享型云盘，默认为False。因共享型云盘不支持加密，此参数与Encrypt参数不可同时传入。
                      */
                     bool m_shareable;
                     bool m_shareableHasBeenSet;
@@ -520,7 +520,7 @@ namespace TencentCloud
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 传入该参数用于创建加密云盘，取值固定为ENCRYPT。
+                     * 传入该参数用于创建加密云盘，取值固定为ENCRYPT。因共享型云盘不支持加密，此参数与Shareable参数不可同时传入。
                      */
                     std::string m_encrypt;
                     bool m_encryptHasBeenSet;
@@ -532,13 +532,13 @@ namespace TencentCloud
                     bool m_diskChargePrepaidHasBeenSet;
 
                     /**
-                     * 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
+                     * 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](document/api/362/15647)接口返回的快照详情的IsPermanent字段来判断，True表示永久快照，False表示非永久快照。
                      */
                     int64_t m_deleteSnapshot;
                     bool m_deleteSnapshotHasBeenSet;
 
                     /**
-                     * 创建云盘时指定自动挂载并初始化该数据盘。
+                     * 创建云盘时指定自动挂载并初始化该数据盘。因加密盘不支持自动挂载及初始化，此参数与Encrypt参数不可同时传入。
                      */
                     AutoMountConfiguration m_autoMountConfiguration;
                     bool m_autoMountConfigurationHasBeenSet;
@@ -550,7 +550,7 @@ namespace TencentCloud
                     bool m_diskBackupQuotaHasBeenSet;
 
                     /**
-                     * 创建云盘时是否开启性能突发
+                     * 创建云盘时是否开启性能突发。
                      */
                     bool m_burstPerformance;
                     bool m_burstPerformanceHasBeenSet;

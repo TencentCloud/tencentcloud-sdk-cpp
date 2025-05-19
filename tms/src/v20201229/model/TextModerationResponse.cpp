@@ -35,7 +35,8 @@ TextModerationResponse::TextModerationResponse() :
     m_dataIdHasBeenSet(false),
     m_subLabelHasBeenSet(false),
     m_contextTextHasBeenSet(false),
-    m_sentimentAnalysisHasBeenSet(false)
+    m_sentimentAnalysisHasBeenSet(false),
+    m_hitTypeHasBeenSet(false)
 {
 }
 
@@ -223,6 +224,16 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
         m_sentimentAnalysisHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HitType") && !rsp["HitType"].IsNull())
+    {
+        if (!rsp["HitType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HitType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitType = string(rsp["HitType"].GetString());
+        m_hitTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -347,6 +358,14 @@ string TextModerationResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sentimentAnalysis.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hitType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -479,6 +498,16 @@ SentimentAnalysis TextModerationResponse::GetSentimentAnalysis() const
 bool TextModerationResponse::SentimentAnalysisHasBeenSet() const
 {
     return m_sentimentAnalysisHasBeenSet;
+}
+
+string TextModerationResponse::GetHitType() const
+{
+    return m_hitType;
+}
+
+bool TextModerationResponse::HitTypeHasBeenSet() const
+{
+    return m_hitTypeHasBeenSet;
 }
 
 

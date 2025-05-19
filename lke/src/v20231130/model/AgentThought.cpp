@@ -28,7 +28,8 @@ AgentThought::AgentThought() :
     m_isWorkflowHasBeenSet(false),
     m_workflowNameHasBeenSet(false),
     m_proceduresHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
+    m_traceIdHasBeenSet(false),
+    m_filesHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,26 @@ CoreInternalOutcome AgentThought::Deserialize(const rapidjson::Value &value)
         m_traceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Files") && !value["Files"].IsNull())
+    {
+        if (!value["Files"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentThought.Files` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Files"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FileInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_files.push_back(item);
+        }
+        m_filesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +224,21 @@ void AgentThought::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TraceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_traceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Files";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_files.begin(); itr != m_files.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -334,5 +370,21 @@ void AgentThought::SetTraceId(const string& _traceId)
 bool AgentThought::TraceIdHasBeenSet() const
 {
     return m_traceIdHasBeenSet;
+}
+
+vector<FileInfo> AgentThought::GetFiles() const
+{
+    return m_files;
+}
+
+void AgentThought::SetFiles(const vector<FileInfo>& _files)
+{
+    m_files = _files;
+    m_filesHasBeenSet = true;
+}
+
+bool AgentThought::FilesHasBeenSet() const
+{
+    return m_filesHasBeenSet;
 }
 

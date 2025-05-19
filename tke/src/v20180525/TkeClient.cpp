@@ -7479,49 +7479,6 @@ TkeClient::EnableVpcCniNetworkTypeOutcomeCallable TkeClient::EnableVpcCniNetwork
     return task->get_future();
 }
 
-TkeClient::ForwardApplicationRequestV3Outcome TkeClient::ForwardApplicationRequestV3(const ForwardApplicationRequestV3Request &request)
-{
-    auto outcome = MakeRequest(request, "ForwardApplicationRequestV3");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ForwardApplicationRequestV3Response rsp = ForwardApplicationRequestV3Response();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ForwardApplicationRequestV3Outcome(rsp);
-        else
-            return ForwardApplicationRequestV3Outcome(o.GetError());
-    }
-    else
-    {
-        return ForwardApplicationRequestV3Outcome(outcome.GetError());
-    }
-}
-
-void TkeClient::ForwardApplicationRequestV3Async(const ForwardApplicationRequestV3Request& request, const ForwardApplicationRequestV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ForwardApplicationRequestV3(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TkeClient::ForwardApplicationRequestV3OutcomeCallable TkeClient::ForwardApplicationRequestV3Callable(const ForwardApplicationRequestV3Request &request)
-{
-    auto task = std::make_shared<std::packaged_task<ForwardApplicationRequestV3Outcome()>>(
-        [this, request]()
-        {
-            return this->ForwardApplicationRequestV3(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TkeClient::ForwardTKEEdgeApplicationRequestV3Outcome TkeClient::ForwardTKEEdgeApplicationRequestV3(const ForwardTKEEdgeApplicationRequestV3Request &request)
 {
     auto outcome = MakeRequest(request, "ForwardTKEEdgeApplicationRequestV3");

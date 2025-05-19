@@ -164,21 +164,21 @@ namespace TencentCloud
                     /**
                      * 获取已废弃。
                      * @return Filter 已废弃。
-                     * 
+                     * @deprecated
                      */
                     AuditLogFilter GetFilter() const;
 
                     /**
                      * 设置已废弃。
                      * @param _filter 已废弃。
-                     * 
+                     * @deprecated
                      */
                     void SetFilter(const AuditLogFilter& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool FilterHasBeenSet() const;
 

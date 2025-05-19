@@ -23,7 +23,8 @@ using namespace std;
 EmbedUrlOption::EmbedUrlOption() :
     m_showFlowDetailComponentHasBeenSet(false),
     m_showTemplateComponentHasBeenSet(false),
-    m_skipUploadFileHasBeenSet(false)
+    m_skipUploadFileHasBeenSet(false),
+    m_forbidEditWatermarkHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome EmbedUrlOption::Deserialize(const rapidjson::Value &value)
         m_skipUploadFileHasBeenSet = true;
     }
 
+    if (value.HasMember("ForbidEditWatermark") && !value["ForbidEditWatermark"].IsNull())
+    {
+        if (!value["ForbidEditWatermark"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedUrlOption.ForbidEditWatermark` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidEditWatermark = value["ForbidEditWatermark"].GetBool();
+        m_forbidEditWatermarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void EmbedUrlOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SkipUploadFile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_skipUploadFile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forbidEditWatermarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidEditWatermark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidEditWatermark, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void EmbedUrlOption::SetSkipUploadFile(const string& _skipUploadFile)
 bool EmbedUrlOption::SkipUploadFileHasBeenSet() const
 {
     return m_skipUploadFileHasBeenSet;
+}
+
+bool EmbedUrlOption::GetForbidEditWatermark() const
+{
+    return m_forbidEditWatermark;
+}
+
+void EmbedUrlOption::SetForbidEditWatermark(const bool& _forbidEditWatermark)
+{
+    m_forbidEditWatermark = _forbidEditWatermark;
+    m_forbidEditWatermarkHasBeenSet = true;
+}
+
+bool EmbedUrlOption::ForbidEditWatermarkHasBeenSet() const
+{
+    return m_forbidEditWatermarkHasBeenSet;
 }
 

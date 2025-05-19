@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool IsEnableHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启异步调用工作流
+                     * @return AsyncWorkflow 是否开启异步调用工作流
+                     * 
+                     */
+                    bool GetAsyncWorkflow() const;
+
+                    /**
+                     * 设置是否开启异步调用工作流
+                     * @param _asyncWorkflow 是否开启异步调用工作流
+                     * 
+                     */
+                    void SetAsyncWorkflow(const bool& _asyncWorkflow);
+
+                    /**
+                     * 判断参数 AsyncWorkflow 是否已赋值
+                     * @return AsyncWorkflow 是否已赋值
+                     * 
+                     */
+                    bool AsyncWorkflowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     bool m_isEnable;
                     bool m_isEnableHasBeenSet;
+
+                    /**
+                     * 是否开启异步调用工作流
+                     */
+                    bool m_asyncWorkflow;
+                    bool m_asyncWorkflowHasBeenSet;
 
                 };
             }

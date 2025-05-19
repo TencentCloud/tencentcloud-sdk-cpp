@@ -24,6 +24,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 #include <tencentcloud/cynosdb/v20190107/model/ParamItem.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceInitInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/ProxyConfig.h>
 
 
 namespace TencentCloud
@@ -994,6 +995,48 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     bool InstanceInitInfosHasBeenSet() const;
 
+                    /**
+                     * 获取全球数据库唯一标识
+                     * @return GdnId 全球数据库唯一标识
+                     * 
+                     */
+                    std::string GetGdnId() const;
+
+                    /**
+                     * 设置全球数据库唯一标识
+                     * @param _gdnId 全球数据库唯一标识
+                     * 
+                     */
+                    void SetGdnId(const std::string& _gdnId);
+
+                    /**
+                     * 判断参数 GdnId 是否已赋值
+                     * @return GdnId 是否已赋值
+                     * 
+                     */
+                    bool GdnIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据库代理配置
+                     * @return ProxyConfig 数据库代理配置
+                     * 
+                     */
+                    ProxyConfig GetProxyConfig() const;
+
+                    /**
+                     * 设置数据库代理配置
+                     * @param _proxyConfig 数据库代理配置
+                     * 
+                     */
+                    void SetProxyConfig(const ProxyConfig& _proxyConfig);
+
+                    /**
+                     * 判断参数 ProxyConfig 是否已赋值
+                     * @return ProxyConfig 是否已赋值
+                     * 
+                     */
+                    bool ProxyConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1263,6 +1306,18 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     std::vector<InstanceInitInfo> m_instanceInitInfos;
                     bool m_instanceInitInfosHasBeenSet;
+
+                    /**
+                     * 全球数据库唯一标识
+                     */
+                    std::string m_gdnId;
+                    bool m_gdnIdHasBeenSet;
+
+                    /**
+                     * 数据库代理配置
+                     */
+                    ProxyConfig m_proxyConfig;
+                    bool m_proxyConfigHasBeenSet;
 
                 };
             }

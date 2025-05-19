@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统id
-                     * @return FileSystemId 文件系统id
+                     * 获取文件系统id,通过查询文件系统列表获取该参数
+                     * @return FileSystemId 文件系统id,通过查询文件系统列表获取该参数
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统id
-                     * @param _fileSystemId 文件系统id
+                     * 设置文件系统id,通过查询文件系统列表获取该参数
+                     * @param _fileSystemId 文件系统id,通过查询文件系统列表获取该参数
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -106,19 +106,15 @@ namespace TencentCloud
                     bool TargetThresholdHasBeenSet() const;
 
                     /**
-                     * 获取规则状态0:关闭，1 开启
-
-                     * @return Status 规则状态0:关闭，1 开启
-
+                     * 获取规则状态0:关闭，1 开启；不传保留原状态
+                     * @return Status 规则状态0:关闭，1 开启；不传保留原状态
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置规则状态0:关闭，1 开启
-
-                     * @param _status 规则状态0:关闭，1 开启
-
+                     * 设置规则状态0:关闭，1 开启；不传保留原状态
+                     * @param _status 规则状态0:关闭，1 开启；不传保留原状态
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -133,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统id
+                     * 文件系统id,通过查询文件系统列表获取该参数
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
@@ -151,8 +147,7 @@ namespace TencentCloud
                     bool m_targetThresholdHasBeenSet;
 
                     /**
-                     * 规则状态0:关闭，1 开启
-
+                     * 规则状态0:关闭，1 开启；不传保留原状态
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

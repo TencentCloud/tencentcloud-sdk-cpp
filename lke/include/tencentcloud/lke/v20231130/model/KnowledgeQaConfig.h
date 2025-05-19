@@ -33,6 +33,7 @@
 #include <tencentcloud/lke/v20231130/model/KnowledgeQaSingleWorkflow.h>
 #include <tencentcloud/lke/v20231130/model/KnowledgeQaPlugin.h>
 #include <tencentcloud/lke/v20231130/model/IntentAchievement.h>
+#include <tencentcloud/lke/v20231130/model/AICallConfig.h>
 
 
 namespace TencentCloud
@@ -453,6 +454,31 @@ namespace TencentCloud
                      */
                     bool ImageTextRetrievalHasBeenSet() const;
 
+                    /**
+                     * 获取配置语音通话参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AiCall 配置语音通话参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AICallConfig GetAiCall() const;
+
+                    /**
+                     * 设置配置语音通话参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aiCall 配置语音通话参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAiCall(const AICallConfig& _aiCall);
+
+                    /**
+                     * 判断参数 AiCall 是否已赋值
+                     * @return AiCall 是否已赋值
+                     * 
+                     */
+                    bool AiCallHasBeenSet() const;
+
                 private:
 
                     /**
@@ -564,6 +590,13 @@ namespace TencentCloud
                      */
                     bool m_imageTextRetrieval;
                     bool m_imageTextRetrievalHasBeenSet;
+
+                    /**
+                     * 配置语音通话参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AICallConfig m_aiCall;
+                    bool m_aiCallHasBeenSet;
 
                 };
             }

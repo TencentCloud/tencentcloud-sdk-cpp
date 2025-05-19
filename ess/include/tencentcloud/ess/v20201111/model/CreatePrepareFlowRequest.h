@@ -348,15 +348,15 @@ namespace TencentCloud
                     bool IntelligentStatusHasBeenSet() const;
 
                     /**
-                     * 获取该字段已废弃，请使用InitiatorComponents
-                     * @return Components 该字段已废弃，请使用InitiatorComponents
+                     * 获取该字段已不再使用，请使用InitiatorComponents
+                     * @return Components 该字段已不再使用，请使用InitiatorComponents
                      * 
                      */
                     Component GetComponents() const;
 
                     /**
-                     * 设置该字段已废弃，请使用InitiatorComponents
-                     * @param _components 该字段已废弃，请使用InitiatorComponents
+                     * 设置该字段已不再使用，请使用InitiatorComponents
+                     * @param _components 该字段已不再使用，请使用InitiatorComponents
                      * 
                      */
                     void SetComponents(const Component& _components);
@@ -630,12 +630,12 @@ namespace TencentCloud
                     bool FlowDisplayTypeHasBeenSet() const;
 
                     /**
-                     * 获取<font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+                     * 获取<font color="red">此字段已不再使用，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
 签署控件的配置信息，用在嵌入式发起的页面配置，
 包括  
 
 - 签署控件 是否默认展示日期.
-                     * @return SignComponentConfig <font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+                     * @return SignComponentConfig <font color="red">此字段已不再使用，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
 签署控件的配置信息，用在嵌入式发起的页面配置，
 包括  
 
@@ -645,12 +645,12 @@ namespace TencentCloud
                     SignComponentConfig GetSignComponentConfig() const;
 
                     /**
-                     * 设置<font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+                     * 设置<font color="red">此字段已不再使用，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
 签署控件的配置信息，用在嵌入式发起的页面配置，
 包括  
 
 - 签署控件 是否默认展示日期.
-                     * @param _signComponentConfig <font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+                     * @param _signComponentConfig <font color="red">此字段已不再使用，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
 签署控件的配置信息，用在嵌入式发起的页面配置，
 包括  
 
@@ -751,7 +751,7 @@ namespace TencentCloud
                     bool m_intelligentStatusHasBeenSet;
 
                     /**
-                     * 该字段已废弃，请使用InitiatorComponents
+                     * 该字段已不再使用，请使用InitiatorComponents
                      */
                     Component m_components;
                     bool m_componentsHasBeenSet;
@@ -829,7 +829,7 @@ namespace TencentCloud
                     bool m_flowDisplayTypeHasBeenSet;
 
                     /**
-                     * <font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+                     * <font color="red">此字段已不再使用，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
 签署控件的配置信息，用在嵌入式发起的页面配置，
 包括  
 

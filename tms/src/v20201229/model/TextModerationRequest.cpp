@@ -28,7 +28,8 @@ TextModerationRequest::TextModerationRequest() :
     m_dataIdHasBeenSet(false),
     m_userHasBeenSet(false),
     m_deviceHasBeenSet(false),
-    m_sourceLanguageHasBeenSet(false)
+    m_sourceLanguageHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,14 @@ string TextModerationRequest::ToJsonString() const
         string key = "SourceLanguage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sourceLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -191,6 +200,22 @@ void TextModerationRequest::SetSourceLanguage(const string& _sourceLanguage)
 bool TextModerationRequest::SourceLanguageHasBeenSet() const
 {
     return m_sourceLanguageHasBeenSet;
+}
+
+string TextModerationRequest::GetType() const
+{
+    return m_type;
+}
+
+void TextModerationRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool TextModerationRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

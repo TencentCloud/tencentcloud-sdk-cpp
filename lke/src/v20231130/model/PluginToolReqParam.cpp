@@ -27,7 +27,9 @@ PluginToolReqParam::PluginToolReqParam() :
     m_isRequiredHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
     m_subParamsHasBeenSet(false),
-    m_globalHiddenHasBeenSet(false)
+    m_globalHiddenHasBeenSet(false),
+    m_oneOfHasBeenSet(false),
+    m_anyOfHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,46 @@ CoreInternalOutcome PluginToolReqParam::Deserialize(const rapidjson::Value &valu
         m_globalHiddenHasBeenSet = true;
     }
 
+    if (value.HasMember("OneOf") && !value["OneOf"].IsNull())
+    {
+        if (!value["OneOf"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PluginToolReqParam.OneOf` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OneOf"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PluginToolReqParam item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_oneOf.push_back(item);
+        }
+        m_oneOfHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnyOf") && !value["AnyOf"].IsNull())
+    {
+        if (!value["AnyOf"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PluginToolReqParam.AnyOf` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AnyOf"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PluginToolReqParam item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_anyOf.push_back(item);
+        }
+        m_anyOfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +226,36 @@ void PluginToolReqParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "GlobalHidden";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_globalHidden, allocator);
+    }
+
+    if (m_oneOfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OneOf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_oneOf.begin(); itr != m_oneOf.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_anyOfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnyOf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_anyOf.begin(); itr != m_anyOf.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -299,5 +371,37 @@ void PluginToolReqParam::SetGlobalHidden(const bool& _globalHidden)
 bool PluginToolReqParam::GlobalHiddenHasBeenSet() const
 {
     return m_globalHiddenHasBeenSet;
+}
+
+vector<PluginToolReqParam> PluginToolReqParam::GetOneOf() const
+{
+    return m_oneOf;
+}
+
+void PluginToolReqParam::SetOneOf(const vector<PluginToolReqParam>& _oneOf)
+{
+    m_oneOf = _oneOf;
+    m_oneOfHasBeenSet = true;
+}
+
+bool PluginToolReqParam::OneOfHasBeenSet() const
+{
+    return m_oneOfHasBeenSet;
+}
+
+vector<PluginToolReqParam> PluginToolReqParam::GetAnyOf() const
+{
+    return m_anyOf;
+}
+
+void PluginToolReqParam::SetAnyOf(const vector<PluginToolReqParam>& _anyOf)
+{
+    m_anyOf = _anyOf;
+    m_anyOfHasBeenSet = true;
+}
+
+bool PluginToolReqParam::AnyOfHasBeenSet() const
+{
+    return m_anyOfHasBeenSet;
 }
 

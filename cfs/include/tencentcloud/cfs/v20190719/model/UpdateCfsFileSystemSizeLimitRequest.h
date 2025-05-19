@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FsLimitHasBeenSet() const;
 
                     /**
-                     * 获取文件系统ID，目前仅支持标准型文件系统。
-                     * @return FileSystemId 文件系统ID，目前仅支持标准型文件系统。
+                     * 获取文件系统ID，目前仅支持标准型文件系统。该参数通过查询文件系统列表获取
+                     * @return FileSystemId 文件系统ID，目前仅支持标准型文件系统。该参数通过查询文件系统列表获取
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统ID，目前仅支持标准型文件系统。
-                     * @param _fileSystemId 文件系统ID，目前仅支持标准型文件系统。
+                     * 设置文件系统ID，目前仅支持标准型文件系统。该参数通过查询文件系统列表获取
+                     * @param _fileSystemId 文件系统ID，目前仅支持标准型文件系统。该参数通过查询文件系统列表获取
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_fsLimitHasBeenSet;
 
                     /**
-                     * 文件系统ID，目前仅支持标准型文件系统。
+                     * 文件系统ID，目前仅支持标准型文件系统。该参数通过查询文件系统列表获取
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取场景id列表
-                     * @return SceneIds 场景id列表
+                     * 获取场景id列表，单次能查询100个场景id
+                     * @return SceneIds 场景id列表，单次能查询100个场景id
                      * 
                      */
                     std::vector<std::string> GetSceneIds() const;
 
                     /**
-                     * 设置场景id列表
-                     * @param _sceneIds 场景id列表
+                     * 设置场景id列表，单次能查询100个场景id
+                     * @param _sceneIds 场景id列表，单次能查询100个场景id
                      * 
                      */
                     void SetSceneIds(const std::vector<std::string>& _sceneIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 场景id列表
+                     * 场景id列表，单次能查询100个场景id
                      */
                     std::vector<std::string> m_sceneIds;
                     bool m_sceneIdsHasBeenSet;

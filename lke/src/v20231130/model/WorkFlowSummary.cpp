@@ -24,7 +24,10 @@ WorkFlowSummary::WorkFlowSummary() :
     m_workflowIdHasBeenSet(false),
     m_workflowNameHasBeenSet(false),
     m_workflowRunIdHasBeenSet(false),
-    m_runNodesHasBeenSet(false)
+    m_runNodesHasBeenSet(false),
+    m_optionCardsHasBeenSet(false),
+    m_outputsHasBeenSet(false),
+    m_workflowReleaseTimeHasBeenSet(false)
 {
 }
 
@@ -83,6 +86,42 @@ CoreInternalOutcome WorkFlowSummary::Deserialize(const rapidjson::Value &value)
         m_runNodesHasBeenSet = true;
     }
 
+    if (value.HasMember("OptionCards") && !value["OptionCards"].IsNull())
+    {
+        if (!value["OptionCards"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WorkFlowSummary.OptionCards` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OptionCards"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_optionCards.push_back((*itr).GetString());
+        }
+        m_optionCardsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Outputs") && !value["Outputs"].IsNull())
+    {
+        if (!value["Outputs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WorkFlowSummary.Outputs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Outputs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_outputs.push_back((*itr).GetString());
+        }
+        m_outputsHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkflowReleaseTime") && !value["WorkflowReleaseTime"].IsNull())
+    {
+        if (!value["WorkflowReleaseTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkFlowSummary.WorkflowReleaseTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workflowReleaseTime = string(value["WorkflowReleaseTime"].GetString());
+        m_workflowReleaseTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +166,40 @@ void WorkFlowSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_optionCardsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OptionCards";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_optionCards.begin(); itr != m_optionCards.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_outputsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Outputs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_outputs.begin(); itr != m_outputs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_workflowReleaseTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowReleaseTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workflowReleaseTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -194,5 +267,53 @@ void WorkFlowSummary::SetRunNodes(const vector<WorkflowRunNodeInfo>& _runNodes)
 bool WorkFlowSummary::RunNodesHasBeenSet() const
 {
     return m_runNodesHasBeenSet;
+}
+
+vector<string> WorkFlowSummary::GetOptionCards() const
+{
+    return m_optionCards;
+}
+
+void WorkFlowSummary::SetOptionCards(const vector<string>& _optionCards)
+{
+    m_optionCards = _optionCards;
+    m_optionCardsHasBeenSet = true;
+}
+
+bool WorkFlowSummary::OptionCardsHasBeenSet() const
+{
+    return m_optionCardsHasBeenSet;
+}
+
+vector<string> WorkFlowSummary::GetOutputs() const
+{
+    return m_outputs;
+}
+
+void WorkFlowSummary::SetOutputs(const vector<string>& _outputs)
+{
+    m_outputs = _outputs;
+    m_outputsHasBeenSet = true;
+}
+
+bool WorkFlowSummary::OutputsHasBeenSet() const
+{
+    return m_outputsHasBeenSet;
+}
+
+string WorkFlowSummary::GetWorkflowReleaseTime() const
+{
+    return m_workflowReleaseTime;
+}
+
+void WorkFlowSummary::SetWorkflowReleaseTime(const string& _workflowReleaseTime)
+{
+    m_workflowReleaseTime = _workflowReleaseTime;
+    m_workflowReleaseTimeHasBeenSet = true;
+}
+
+bool WorkFlowSummary::WorkflowReleaseTimeHasBeenSet() const
+{
+    return m_workflowReleaseTimeHasBeenSet;
 }
 

@@ -1140,6 +1140,60 @@ pausing
                      */
                     bool CynosVersionTagHasBeenSet() const;
 
+                    /**
+                     * 获取全球数据库网络唯一标识
+                     * @return GdnId 全球数据库网络唯一标识
+                     * 
+                     */
+                    std::string GetGdnId() const;
+
+                    /**
+                     * 设置全球数据库网络唯一标识
+                     * @param _gdnId 全球数据库网络唯一标识
+                     * 
+                     */
+                    void SetGdnId(const std::string& _gdnId);
+
+                    /**
+                     * 判断参数 GdnId 是否已赋值
+                     * @return GdnId 是否已赋值
+                     * 
+                     */
+                    bool GdnIdHasBeenSet() const;
+
+                    /**
+                     * 获取集群在全球数据网络中的角色。
+主集群- primary
+从集群 - standby
+如为空，该字段无效
+                     * @return GdnRole 集群在全球数据网络中的角色。
+主集群- primary
+从集群 - standby
+如为空，该字段无效
+                     * 
+                     */
+                    std::string GetGdnRole() const;
+
+                    /**
+                     * 设置集群在全球数据网络中的角色。
+主集群- primary
+从集群 - standby
+如为空，该字段无效
+                     * @param _gdnRole 集群在全球数据网络中的角色。
+主集群- primary
+从集群 - standby
+如为空，该字段无效
+                     * 
+                     */
+                    void SetGdnRole(const std::string& _gdnRole);
+
+                    /**
+                     * 判断参数 GdnRole 是否已赋值
+                     * @return GdnRole 是否已赋值
+                     * 
+                     */
+                    bool GdnRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1451,6 +1505,21 @@ pausing
                      */
                     std::string m_cynosVersionTag;
                     bool m_cynosVersionTagHasBeenSet;
+
+                    /**
+                     * 全球数据库网络唯一标识
+                     */
+                    std::string m_gdnId;
+                    bool m_gdnIdHasBeenSet;
+
+                    /**
+                     * 集群在全球数据网络中的角色。
+主集群- primary
+从集群 - standby
+如为空，该字段无效
+                     */
+                    std::string m_gdnRole;
+                    bool m_gdnRoleHasBeenSet;
 
                 };
             }

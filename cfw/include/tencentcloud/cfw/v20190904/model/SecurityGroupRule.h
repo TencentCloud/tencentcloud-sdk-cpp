@@ -342,18 +342,18 @@ drop：拒绝
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取（入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+                     * 获取（入参时Enable无意义；由通用配置中新增规则启用状态控制）
 规则状态，true表示启用，false表示禁用
-                     * @return Enable （入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+                     * @return Enable （入参时Enable无意义；由通用配置中新增规则启用状态控制）
 规则状态，true表示启用，false表示禁用
                      * 
                      */
                     std::string GetEnable() const;
 
                     /**
-                     * 设置（入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+                     * 设置（入参时Enable无意义；由通用配置中新增规则启用状态控制）
 规则状态，true表示启用，false表示禁用
-                     * @param _enable （入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+                     * @param _enable （入参时Enable无意义；由通用配置中新增规则启用状态控制）
 规则状态，true表示启用，false表示禁用
                      * 
                      */
@@ -472,7 +472,7 @@ drop：拒绝
                     bool m_idHasBeenSet;
 
                     /**
-                     * （入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+                     * （入参时Enable无意义；由通用配置中新增规则启用状态控制）
 规则状态，true表示启用，false表示禁用
                      */
                     std::string m_enable;

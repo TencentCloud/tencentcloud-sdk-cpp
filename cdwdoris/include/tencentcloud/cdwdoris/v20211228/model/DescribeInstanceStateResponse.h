@@ -127,6 +127,34 @@ namespace TencentCloud
                      */
                     bool FlowMsgHasBeenSet() const;
 
+                    /**
+                     * 获取流程ProcessId
+                     * @return ProcessId 流程ProcessId
+                     * 
+                     */
+                    std::string GetProcessId() const;
+
+                    /**
+                     * 判断参数 ProcessId 是否已赋值
+                     * @return ProcessId 是否已赋值
+                     * 
+                     */
+                    bool ProcessIdHasBeenSet() const;
+
+                    /**
+                     * 获取Job名称
+                     * @return JobName Job名称
+                     * 
+                     */
+                    std::string GetJobName() const;
+
+                    /**
+                     * 判断参数 JobName 是否已赋值
+                     * @return JobName 是否已赋值
+                     * 
+                     */
+                    bool JobNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +192,18 @@ namespace TencentCloud
                      */
                     std::string m_flowMsg;
                     bool m_flowMsgHasBeenSet;
+
+                    /**
+                     * 流程ProcessId
+                     */
+                    std::string m_processId;
+                    bool m_processIdHasBeenSet;
+
+                    /**
+                     * Job名称
+                     */
+                    std::string m_jobName;
+                    bool m_jobNameHasBeenSet;
 
                 };
             }

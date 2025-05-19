@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取系统盘大小，单位：GB。默认值为 80
-                     * @return DiskSize 系统盘大小，单位：GB。默认值为 80
+                     * 获取系统盘大小，单位：GB。默认值为 80，取值范围：80-1000
+                     * @return DiskSize 系统盘大小，单位：GB。默认值为 80，取值范围：80-1000
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置系统盘大小，单位：GB。默认值为 80
-                     * @param _diskSize 系统盘大小，单位：GB。默认值为 80
+                     * 设置系统盘大小，单位：GB。默认值为 80，取值范围：80-1000
+                     * @param _diskSize 系统盘大小，单位：GB。默认值为 80，取值范围：80-1000
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -118,7 +118,7 @@ namespace TencentCloud
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 系统盘大小，单位：GB。默认值为 80
+                     * 系统盘大小，单位：GB。默认值为 80，取值范围：80-1000
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;

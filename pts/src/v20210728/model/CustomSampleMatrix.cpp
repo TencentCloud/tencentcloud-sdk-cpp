@@ -24,7 +24,8 @@ CustomSampleMatrix::CustomSampleMatrix() :
     m_metricHasBeenSet(false),
     m_aggregationHasBeenSet(false),
     m_unitHasBeenSet(false),
-    m_streamsHasBeenSet(false)
+    m_streamsHasBeenSet(false),
+    m_stepHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome CustomSampleMatrix::Deserialize(const rapidjson::Value &valu
         m_streamsHasBeenSet = true;
     }
 
+    if (value.HasMember("Step") && !value["Step"].IsNull())
+    {
+        if (!value["Step"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomSampleMatrix.Step` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_step = value["Step"].GetInt64();
+        m_stepHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,14 @@ void CustomSampleMatrix::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_stepHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Step";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_step, allocator);
     }
 
 }
@@ -194,5 +213,21 @@ void CustomSampleMatrix::SetStreams(const vector<SampleStream>& _streams)
 bool CustomSampleMatrix::StreamsHasBeenSet() const
 {
     return m_streamsHasBeenSet;
+}
+
+int64_t CustomSampleMatrix::GetStep() const
+{
+    return m_step;
+}
+
+void CustomSampleMatrix::SetStep(const int64_t& _step)
+{
+    m_step = _step;
+    m_stepHasBeenSet = true;
+}
+
+bool CustomSampleMatrix::StepHasBeenSet() const
+{
+    return m_stepHasBeenSet;
 }
 

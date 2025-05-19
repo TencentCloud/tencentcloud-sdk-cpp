@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool FlowLogIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志实例名字。
-                     * @return FlowLogName 流日志实例名字。
+                     * 获取流日志实例名称。长度不超过60个字符。
+                     * @return FlowLogName 流日志实例名称。长度不超过60个字符。
                      * 
                      */
                     std::string GetFlowLogName() const;
 
                     /**
-                     * 设置流日志实例名字。
-                     * @param _flowLogName 流日志实例名字。
+                     * 设置流日志实例名称。长度不超过60个字符。
+                     * @param _flowLogName 流日志实例名称。长度不超过60个字符。
                      * 
                      */
                     void SetFlowLogName(const std::string& _flowLogName);
@@ -107,18 +107,18 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+                     * 获取流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
 
-                     * @return ResourceType 流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+                     * @return ResourceType 流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
 
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+                     * 设置流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
 
-                     * @param _resourceType 流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+                     * @param _resourceType 流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
 
                      * 
                      */
@@ -364,13 +364,13 @@ namespace TencentCloud
                     bool m_flowLogIdHasBeenSet;
 
                     /**
-                     * 流日志实例名字。
+                     * 流日志实例名称。长度不超过60个字符。
                      */
                     std::string m_flowLogName;
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+                     * 流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
 
                      */
                     std::string m_resourceType;

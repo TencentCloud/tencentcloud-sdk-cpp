@@ -1382,7 +1382,7 @@ namespace TencentCloud
                 DescribeAuditRulesOutcomeCallable DescribeAuditRulesCallable(const Model::DescribeAuditRulesRequest& request);
 
                 /**
-                 *本接口(DescribeBackupConfig)用于查询数据库备份配置信息。
+                 *本接口（DescribeBackupConfig）用于查询数据库备份配置信息。
                  * @param req DescribeBackupConfigRequest
                  * @return DescribeBackupConfigOutcome
                  */

@@ -173,6 +173,81 @@ namespace TencentCloud
                      */
                     bool ReferencesHasBeenSet() const;
 
+                    /**
+                     * 获取展示正在执行的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisplayStatus 展示正在执行的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDisplayStatus() const;
+
+                    /**
+                     * 设置展示正在执行的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _displayStatus 展示正在执行的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDisplayStatus(const std::string& _displayStatus);
+
+                    /**
+                     * 判断参数 DisplayStatus 是否已赋值
+                     * @return DisplayStatus 是否已赋值
+                     * 
+                     */
+                    bool DisplayStatusHasBeenSet() const;
+
+                    /**
+                     * 获取云桌面的URL地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SandboxUrl 云桌面的URL地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSandboxUrl() const;
+
+                    /**
+                     * 设置云桌面的URL地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sandboxUrl 云桌面的URL地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSandboxUrl(const std::string& _sandboxUrl);
+
+                    /**
+                     * 判断参数 SandboxUrl 是否已赋值
+                     * @return SandboxUrl 是否已赋值
+                     * 
+                     */
+                    bool SandboxUrlHasBeenSet() const;
+
+                    /**
+                     * 获取云桌面里面通过浏览器打开的URL地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisplayUrl 云桌面里面通过浏览器打开的URL地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDisplayUrl() const;
+
+                    /**
+                     * 设置云桌面里面通过浏览器打开的URL地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _displayUrl 云桌面里面通过浏览器打开的URL地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDisplayUrl(const std::string& _displayUrl);
+
+                    /**
+                     * 判断参数 DisplayUrl 是否已赋值
+                     * @return DisplayUrl 是否已赋值
+                     * 
+                     */
+                    bool DisplayUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +284,27 @@ namespace TencentCloud
                      */
                     std::vector<AgentReference> m_references;
                     bool m_referencesHasBeenSet;
+
+                    /**
+                     * 展示正在执行的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_displayStatus;
+                    bool m_displayStatusHasBeenSet;
+
+                    /**
+                     * 云桌面的URL地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sandboxUrl;
+                    bool m_sandboxUrlHasBeenSet;
+
+                    /**
+                     * 云桌面里面通过浏览器打开的URL地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_displayUrl;
+                    bool m_displayUrlHasBeenSet;
 
                 };
             }

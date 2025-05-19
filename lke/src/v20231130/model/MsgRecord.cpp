@@ -45,7 +45,8 @@ MsgRecord::MsgRecord() :
     m_fileInfosHasBeenSet(false),
     m_quoteInfosHasBeenSet(false),
     m_agentThoughtHasBeenSet(false),
-    m_extraInfoHasBeenSet(false)
+    m_extraInfoHasBeenSet(false),
+    m_workFlowHasBeenSet(false)
 {
 }
 
@@ -371,6 +372,23 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_extraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkFlow") && !value["WorkFlow"].IsNull())
+    {
+        if (!value["WorkFlow"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.WorkFlow` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_workFlow.Deserialize(value["WorkFlow"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_workFlowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -616,6 +634,15 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_workFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkFlow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_workFlow.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1019,5 +1046,21 @@ void MsgRecord::SetExtraInfo(const ExtraInfo& _extraInfo)
 bool MsgRecord::ExtraInfoHasBeenSet() const
 {
     return m_extraInfoHasBeenSet;
+}
+
+WorkflowInfo MsgRecord::GetWorkFlow() const
+{
+    return m_workFlow;
+}
+
+void MsgRecord::SetWorkFlow(const WorkflowInfo& _workFlow)
+{
+    m_workFlow = _workFlow;
+    m_workFlowHasBeenSet = true;
+}
+
+bool MsgRecord::WorkFlowHasBeenSet() const
+{
+    return m_workFlowHasBeenSet;
 }
 

@@ -1289,6 +1289,27 @@ pause
                      */
                     bool NodeListHasBeenSet() const;
 
+                    /**
+                     * 获取全球数据库唯一标识
+                     * @return GdnId 全球数据库唯一标识
+                     * 
+                     */
+                    std::string GetGdnId() const;
+
+                    /**
+                     * 设置全球数据库唯一标识
+                     * @param _gdnId 全球数据库唯一标识
+                     * 
+                     */
+                    void SetGdnId(const std::string& _gdnId);
+
+                    /**
+                     * 判断参数 GdnId 是否已赋值
+                     * @return GdnId 是否已赋值
+                     * 
+                     */
+                    bool GdnIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1643,6 +1664,12 @@ pause
                      */
                     std::vector<std::string> m_nodeList;
                     bool m_nodeListHasBeenSet;
+
+                    /**
+                     * 全球数据库唯一标识
+                     */
+                    std::string m_gdnId;
+                    bool m_gdnIdHasBeenSet;
 
                 };
             }

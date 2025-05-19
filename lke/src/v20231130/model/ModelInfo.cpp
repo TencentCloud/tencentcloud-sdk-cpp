@@ -37,7 +37,8 @@ ModelInfo::ModelInfo() :
     m_modelCategoryHasBeenSet(false),
     m_isDefaultHasBeenSet(false),
     m_roleLenLimitHasBeenSet(false),
-    m_isExclusiveHasBeenSet(false)
+    m_isExclusiveHasBeenSet(false),
+    m_supportAiCallStatusHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,16 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_isExclusiveHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportAiCallStatus") && !value["SupportAiCallStatus"].IsNull())
+    {
+        if (!value["SupportAiCallStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.SupportAiCallStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportAiCallStatus = value["SupportAiCallStatus"].GetUint64();
+        m_supportAiCallStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -381,6 +392,14 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsExclusive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isExclusive, allocator);
+    }
+
+    if (m_supportAiCallStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportAiCallStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportAiCallStatus, allocator);
     }
 
 }
@@ -656,5 +675,21 @@ void ModelInfo::SetIsExclusive(const bool& _isExclusive)
 bool ModelInfo::IsExclusiveHasBeenSet() const
 {
     return m_isExclusiveHasBeenSet;
+}
+
+uint64_t ModelInfo::GetSupportAiCallStatus() const
+{
+    return m_supportAiCallStatus;
+}
+
+void ModelInfo::SetSupportAiCallStatus(const uint64_t& _supportAiCallStatus)
+{
+    m_supportAiCallStatus = _supportAiCallStatus;
+    m_supportAiCallStatusHasBeenSet = true;
+}
+
+bool ModelInfo::SupportAiCallStatusHasBeenSet() const
+{
+    return m_supportAiCallStatusHasBeenSet;
 }
 

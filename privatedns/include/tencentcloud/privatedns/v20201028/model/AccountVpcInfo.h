@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VpcId： vpc-xadsafsdasd
-                     * @return UniqVpcId VpcId： vpc-xadsafsdasd
+                     * 获取VpcId
+                     * @return UniqVpcId VpcId
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置VpcId： vpc-xadsafsdasd
-                     * @param _uniqVpcId VpcId： vpc-xadsafsdasd
+                     * 设置VpcId
+                     * @param _uniqVpcId VpcId
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取Vpc所属地区: ap-guangzhou, ap-shanghai
-                     * @return Region Vpc所属地区: ap-guangzhou, ap-shanghai
+                     * 获取Vpc所属地区
+                     * @return Region Vpc所属地区
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置Vpc所属地区: ap-guangzhou, ap-shanghai
-                     * @param _region Vpc所属地区: ap-guangzhou, ap-shanghai
+                     * 设置Vpc所属地区
+                     * @param _region Vpc所属地区
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取Vpc所属账号: 123456789
-                     * @return Uin Vpc所属账号: 123456789
+                     * 获取Vpc所属账号
+                     * @return Uin Vpc所属账号
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置Vpc所属账号: 123456789
-                     * @param _uin Vpc所属账号: 123456789
+                     * 设置Vpc所属账号
+                     * @param _uin Vpc所属账号
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取vpc资源名称：testname
-                     * @return VpcName vpc资源名称：testname
+                     * 获取vpc资源名称
+                     * @return VpcName vpc资源名称
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置vpc资源名称：testname
-                     * @param _vpcName vpc资源名称：testname
+                     * 设置vpc资源名称
+                     * @param _vpcName vpc资源名称
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VpcId： vpc-xadsafsdasd
+                     * VpcId
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
-                     * Vpc所属地区: ap-guangzhou, ap-shanghai
+                     * Vpc所属地区
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * Vpc所属账号: 123456789
+                     * Vpc所属账号
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * vpc资源名称：testname
+                     * vpc资源名称
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;

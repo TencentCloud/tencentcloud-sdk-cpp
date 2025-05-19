@@ -29,7 +29,8 @@ DescribeClusterFlowStatusDetailResponse::DescribeClusterFlowStatusDetailResponse
     m_flowNameHasBeenSet(false),
     m_flowTotalProgressHasBeenSet(false),
     m_flowTotalStatusHasBeenSet(false),
-    m_flowExtraDetailHasBeenSet(false)
+    m_flowExtraDetailHasBeenSet(false),
+    m_flowInfoHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,16 @@ CoreInternalOutcome DescribeClusterFlowStatusDetailResponse::Deserialize(const s
         m_flowExtraDetailHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowInfo") && !rsp["FlowInfo"].IsNull())
+    {
+        if (!rsp["FlowInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowInfo = string(rsp["FlowInfo"].GetString());
+        m_flowInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -236,6 +247,14 @@ string DescribeClusterFlowStatusDetailResponse::ToJsonString() const
         }
     }
 
+    if (m_flowInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowInfo.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -306,6 +325,16 @@ vector<FlowExtraDetail> DescribeClusterFlowStatusDetailResponse::GetFlowExtraDet
 bool DescribeClusterFlowStatusDetailResponse::FlowExtraDetailHasBeenSet() const
 {
     return m_flowExtraDetailHasBeenSet;
+}
+
+string DescribeClusterFlowStatusDetailResponse::GetFlowInfo() const
+{
+    return m_flowInfo;
+}
+
+bool DescribeClusterFlowStatusDetailResponse::FlowInfoHasBeenSet() const
+{
+    return m_flowInfoHasBeenSet;
 }
 
 

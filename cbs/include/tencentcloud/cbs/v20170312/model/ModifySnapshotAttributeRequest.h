@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
-                     * @return SnapshotId 快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * 获取快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询。
+                     * @return SnapshotId 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询。
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
-                     * @param _snapshotId 快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * 设置快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询。
+                     * @param _snapshotId 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询。
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询。
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;

@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DescHasBeenSet() const;
 
                     /**
-                     * 获取参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object
-                     * @return Type 参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object
+                     * 获取参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object, 99:null, 100:upspecified
+                     * @return Type 参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object, 99:null, 100:upspecified
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object
-                     * @param _type 参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object
+                     * 设置参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object, 99:null, 100:upspecified
+                     * @param _type 参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object, 99:null, 100:upspecified
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -194,6 +194,48 @@ namespace TencentCloud
                      */
                     bool GlobalHiddenHasBeenSet() const;
 
+                    /**
+                     * 获取OneOf类型参数
+                     * @return OneOf OneOf类型参数
+                     * 
+                     */
+                    std::vector<PluginToolReqParam> GetOneOf() const;
+
+                    /**
+                     * 设置OneOf类型参数
+                     * @param _oneOf OneOf类型参数
+                     * 
+                     */
+                    void SetOneOf(const std::vector<PluginToolReqParam>& _oneOf);
+
+                    /**
+                     * 判断参数 OneOf 是否已赋值
+                     * @return OneOf 是否已赋值
+                     * 
+                     */
+                    bool OneOfHasBeenSet() const;
+
+                    /**
+                     * 获取AnyOf类型参数
+                     * @return AnyOf AnyOf类型参数
+                     * 
+                     */
+                    std::vector<PluginToolReqParam> GetAnyOf() const;
+
+                    /**
+                     * 设置AnyOf类型参数
+                     * @param _anyOf AnyOf类型参数
+                     * 
+                     */
+                    void SetAnyOf(const std::vector<PluginToolReqParam>& _anyOf);
+
+                    /**
+                     * 判断参数 AnyOf 是否已赋值
+                     * @return AnyOf 是否已赋值
+                     * 
+                     */
+                    bool AnyOfHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,7 +251,7 @@ namespace TencentCloud
                     bool m_descHasBeenSet;
 
                     /**
-                     * 参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object
+                     * 参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object, 99:null, 100:upspecified
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
@@ -237,6 +279,18 @@ namespace TencentCloud
                      */
                     bool m_globalHidden;
                     bool m_globalHiddenHasBeenSet;
+
+                    /**
+                     * OneOf类型参数
+                     */
+                    std::vector<PluginToolReqParam> m_oneOf;
+                    bool m_oneOfHasBeenSet;
+
+                    /**
+                     * AnyOf类型参数
+                     */
+                    std::vector<PluginToolReqParam> m_anyOf;
+                    bool m_anyOfHasBeenSet;
 
                 };
             }

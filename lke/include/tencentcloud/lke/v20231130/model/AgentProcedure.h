@@ -372,6 +372,31 @@ namespace TencentCloud
                      */
                     bool TargetAgentNameHasBeenSet() const;
 
+                    /**
+                     * 获取Agent的图标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentIcon Agent的图标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAgentIcon() const;
+
+                    /**
+                     * 设置Agent的图标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agentIcon Agent的图标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgentIcon(const std::string& _agentIcon);
+
+                    /**
+                     * 判断参数 AgentIcon 是否已赋值
+                     * @return AgentIcon 是否已赋值
+                     * 
+                     */
+                    bool AgentIconHasBeenSet() const;
+
                 private:
 
                     /**
@@ -464,6 +489,13 @@ namespace TencentCloud
                      */
                     std::string m_targetAgentName;
                     bool m_targetAgentNameHasBeenSet;
+
+                    /**
+                     * Agent的图标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_agentIcon;
+                    bool m_agentIconHasBeenSet;
 
                 };
             }

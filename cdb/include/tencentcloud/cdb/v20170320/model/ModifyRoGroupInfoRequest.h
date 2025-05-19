@@ -131,21 +131,21 @@ namespace TencentCloud
                     /**
                      * 获取废弃参数，无意义。
                      * @return ReplicationDelayTime 废弃参数，无意义。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetReplicationDelayTime() const;
 
                     /**
                      * 设置废弃参数，无意义。
                      * @param _replicationDelayTime 废弃参数，无意义。
-                     * 
+                     * @deprecated
                      */
                     void SetReplicationDelayTime(const int64_t& _replicationDelayTime);
 
                     /**
                      * 判断参数 ReplicationDelayTime 是否已赋值
                      * @return ReplicationDelayTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ReplicationDelayTimeHasBeenSet() const;
 

@@ -139,15 +139,15 @@ namespace TencentCloud
                     bool ConfigEnvironmentHasBeenSet() const;
 
                     /**
-                     * 获取系统盘大小下限
-                     * @return MinSystemDiskSize 系统盘大小下限
+                     * 获取系统盘大小下限，单位GB
+                     * @return MinSystemDiskSize 系统盘大小下限，单位GB
                      * 
                      */
                     int64_t GetMinSystemDiskSize() const;
 
                     /**
-                     * 设置系统盘大小下限
-                     * @param _minSystemDiskSize 系统盘大小下限
+                     * 设置系统盘大小下限，单位GB
+                     * @param _minSystemDiskSize 系统盘大小下限，单位GB
                      * 
                      */
                     void SetMinSystemDiskSize(const int64_t& _minSystemDiskSize);
@@ -160,15 +160,15 @@ namespace TencentCloud
                     bool MinSystemDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION
-                     * @return ApplicationType 应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION
+                     * 获取应用类型，目前该项取值可以为PUBLIC_APPLICATION（公共应用）；PRIVATE_APPLICATION（自定义应用）；COMMUNITY_APPLICATION（社区应用）
+                     * @return ApplicationType 应用类型，目前该项取值可以为PUBLIC_APPLICATION（公共应用）；PRIVATE_APPLICATION（自定义应用）；COMMUNITY_APPLICATION（社区应用）
                      * 
                      */
                     std::string GetApplicationType() const;
 
                     /**
-                     * 设置应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION
-                     * @param _applicationType 应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION
+                     * 设置应用类型，目前该项取值可以为PUBLIC_APPLICATION（公共应用）；PRIVATE_APPLICATION（自定义应用）；COMMUNITY_APPLICATION（社区应用）
+                     * @param _applicationType 应用类型，目前该项取值可以为PUBLIC_APPLICATION（公共应用）；PRIVATE_APPLICATION（自定义应用）；COMMUNITY_APPLICATION（社区应用）
                      * 
                      */
                     void SetApplicationType(const std::string& _applicationType);
@@ -206,15 +206,15 @@ namespace TencentCloud
                     bool ApplicationStateHasBeenSet() const;
 
                     /**
-                     * 获取应用创建时间
-                     * @return CreateTime 应用创建时间
+                     * 获取应用创建时间，格式：%Y-%m-%d %H:%M:%S
+                     * @return CreateTime 应用创建时间，格式：%Y-%m-%d %H:%M:%S
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置应用创建时间
-                     * @param _createTime 应用创建时间
+                     * 设置应用创建时间，格式：%Y-%m-%d %H:%M:%S
+                     * @param _createTime 应用创建时间，格式：%Y-%m-%d %H:%M:%S
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -227,15 +227,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取应用大小
-                     * @return ApplicationSize 应用大小
+                     * 获取应用大小，单位GB
+                     * @return ApplicationSize 应用大小，单位GB
                      * 
                      */
                     int64_t GetApplicationSize() const;
 
                     /**
-                     * 设置应用大小
-                     * @param _applicationSize 应用大小
+                     * 设置应用大小，单位GB
+                     * @param _applicationSize 应用大小，单位GB
                      * 
                      */
                     void SetApplicationSize(const int64_t& _applicationSize);
@@ -276,13 +276,13 @@ namespace TencentCloud
                     bool m_configEnvironmentHasBeenSet;
 
                     /**
-                     * 系统盘大小下限
+                     * 系统盘大小下限，单位GB
                      */
                     int64_t m_minSystemDiskSize;
                     bool m_minSystemDiskSizeHasBeenSet;
 
                     /**
-                     * 应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION
+                     * 应用类型，目前该项取值可以为PUBLIC_APPLICATION（公共应用）；PRIVATE_APPLICATION（自定义应用）；COMMUNITY_APPLICATION（社区应用）
                      */
                     std::string m_applicationType;
                     bool m_applicationTypeHasBeenSet;
@@ -295,13 +295,13 @@ namespace TencentCloud
                     bool m_applicationStateHasBeenSet;
 
                     /**
-                     * 应用创建时间
+                     * 应用创建时间，格式：%Y-%m-%d %H:%M:%S
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 应用大小
+                     * 应用大小，单位GB
                      */
                     int64_t m_applicationSize;
                     bool m_applicationSizeHasBeenSet;

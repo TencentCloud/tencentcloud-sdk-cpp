@@ -235,23 +235,15 @@ namespace TencentCloud
                     bool CoverRectHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义ID数组，与上传文件一一对应
-
-注: `历史遗留问题，已经废弃，调用接口时不用赋值`
-                     * @return CustomIds 用户自定义ID数组，与上传文件一一对应
-
-注: `历史遗留问题，已经废弃，调用接口时不用赋值`
+                     * 获取该字段已不再使用
+                     * @return CustomIds 该字段已不再使用
                      * 
                      */
                     std::vector<std::string> GetCustomIds() const;
 
                     /**
-                     * 设置用户自定义ID数组，与上传文件一一对应
-
-注: `历史遗留问题，已经废弃，调用接口时不用赋值`
-                     * @param _customIds 用户自定义ID数组，与上传文件一一对应
-
-注: `历史遗留问题，已经废弃，调用接口时不用赋值`
+                     * 设置该字段已不再使用
+                     * @param _customIds 该字段已不再使用
                      * 
                      */
                     void SetCustomIds(const std::vector<std::string>& _customIds);
@@ -363,9 +355,7 @@ namespace TencentCloud
                     bool m_coverRectHasBeenSet;
 
                     /**
-                     * 用户自定义ID数组，与上传文件一一对应
-
-注: `历史遗留问题，已经废弃，调用接口时不用赋值`
+                     * 该字段已不再使用
                      */
                     std::vector<std::string> m_customIds;
                     bool m_customIdsHasBeenSet;

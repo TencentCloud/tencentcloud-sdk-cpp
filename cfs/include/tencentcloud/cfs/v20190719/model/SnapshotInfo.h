@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool AliveDayHasBeenSet() const;
 
                     /**
-                     * 获取快照进度百分比，1表示1%
-                     * @return Percent 快照进度百分比，1表示1%
+                     * 获取快照进度百分比，1表示1% 范围1-100
+                     * @return Percent 快照进度百分比，1表示1% 范围1-100
                      * 
                      */
                     uint64_t GetPercent() const;
 
                     /**
-                     * 设置快照进度百分比，1表示1%
-                     * @param _percent 快照进度百分比，1表示1%
+                     * 设置快照进度百分比，1表示1% 范围1-100
+                     * @param _percent 快照进度百分比，1表示1% 范围1-100
                      * 
                      */
                     void SetPercent(const uint64_t& _percent);
@@ -421,7 +421,7 @@ namespace TencentCloud
                     bool m_aliveDayHasBeenSet;
 
                     /**
-                     * 快照进度百分比，1表示1%
+                     * 快照进度百分比，1表示1% 范围1-100
                      */
                     uint64_t m_percent;
                     bool m_percentHasBeenSet;

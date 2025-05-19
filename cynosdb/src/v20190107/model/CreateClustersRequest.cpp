@@ -63,7 +63,9 @@ CreateClustersRequest::CreateClustersRequest() :
     m_dealModeHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
     m_slaveZoneHasBeenSet(false),
-    m_instanceInitInfosHasBeenSet(false)
+    m_instanceInitInfosHasBeenSet(false),
+    m_gdnIdHasBeenSet(false),
+    m_proxyConfigHasBeenSet(false)
 {
 }
 
@@ -431,6 +433,23 @@ string CreateClustersRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_gdnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GdnId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gdnId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_proxyConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1095,6 +1114,38 @@ void CreateClustersRequest::SetInstanceInitInfos(const vector<InstanceInitInfo>&
 bool CreateClustersRequest::InstanceInitInfosHasBeenSet() const
 {
     return m_instanceInitInfosHasBeenSet;
+}
+
+string CreateClustersRequest::GetGdnId() const
+{
+    return m_gdnId;
+}
+
+void CreateClustersRequest::SetGdnId(const string& _gdnId)
+{
+    m_gdnId = _gdnId;
+    m_gdnIdHasBeenSet = true;
+}
+
+bool CreateClustersRequest::GdnIdHasBeenSet() const
+{
+    return m_gdnIdHasBeenSet;
+}
+
+ProxyConfig CreateClustersRequest::GetProxyConfig() const
+{
+    return m_proxyConfig;
+}
+
+void CreateClustersRequest::SetProxyConfig(const ProxyConfig& _proxyConfig)
+{
+    m_proxyConfig = _proxyConfig;
+    m_proxyConfigHasBeenSet = true;
+}
+
+bool CreateClustersRequest::ProxyConfigHasBeenSet() const
+{
+    return m_proxyConfigHasBeenSet;
 }
 
 

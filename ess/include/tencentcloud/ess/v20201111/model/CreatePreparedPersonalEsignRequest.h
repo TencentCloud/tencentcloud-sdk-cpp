@@ -178,23 +178,15 @@ namespace TencentCloud
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取印章图片的base64
-注：已废弃
-请先通过UploadFiles接口上传文件，获取 FileId
-                     * @return SealImage 印章图片的base64
-注：已废弃
-请先通过UploadFiles接口上传文件，获取 FileId
+                     * 获取该字段已不再使用
+                     * @return SealImage 该字段已不再使用
                      * @deprecated
                      */
                     std::string GetSealImage() const;
 
                     /**
-                     * 设置印章图片的base64
-注：已废弃
-请先通过UploadFiles接口上传文件，获取 FileId
-                     * @param _sealImage 印章图片的base64
-注：已废弃
-请先通过UploadFiles接口上传文件，获取 FileId
+                     * 设置该字段已不再使用
+                     * @param _sealImage 该字段已不再使用
                      * @deprecated
                      */
                     void SetSealImage(const std::string& _sealImage);
@@ -249,15 +241,15 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取此字段已废弃，请勿继续使用。
-                     * @return EnableAutoSign 此字段已废弃，请勿继续使用。
+                     * 获取该字段已不再使用
+                     * @return EnableAutoSign 该字段已不再使用
                      * 
                      */
                     bool GetEnableAutoSign() const;
 
                     /**
-                     * 设置此字段已废弃，请勿继续使用。
-                     * @param _enableAutoSign 此字段已废弃，请勿继续使用。
+                     * 设置该字段已不再使用
+                     * @param _enableAutoSign 该字段已不再使用
                      * 
                      */
                     void SetEnableAutoSign(const bool& _enableAutoSign);
@@ -499,9 +491,7 @@ BLUE 蓝色。
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * 印章图片的base64
-注：已废弃
-请先通过UploadFiles接口上传文件，获取 FileId
+                     * 该字段已不再使用
                      */
                     std::string m_sealImage;
                     bool m_sealImageHasBeenSet;
@@ -519,7 +509,7 @@ BLUE 蓝色。
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 此字段已废弃，请勿继续使用。
+                     * 该字段已不再使用
                      */
                     bool m_enableAutoSign;
                     bool m_enableAutoSignHasBeenSet;

@@ -226,6 +226,27 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取自定义参数
+                     * @return CustomVariables 自定义参数
+                     * 
+                     */
+                    std::vector<std::string> GetCustomVariables() const;
+
+                    /**
+                     * 设置自定义参数
+                     * @param _customVariables 自定义参数
+                     * 
+                     */
+                    void SetCustomVariables(const std::vector<std::string>& _customVariables);
+
+                    /**
+                     * 判断参数 CustomVariables 是否已赋值
+                     * @return CustomVariables 是否已赋值
+                     * 
+                     */
+                    bool CustomVariablesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -276,6 +297,12 @@ namespace TencentCloud
                      */
                     AgentDebugInfo m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 自定义参数
+                     */
+                    std::vector<std::string> m_customVariables;
+                    bool m_customVariablesHasBeenSet;
 
                 };
             }

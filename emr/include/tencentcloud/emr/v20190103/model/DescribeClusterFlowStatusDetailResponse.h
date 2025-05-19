@@ -152,6 +152,20 @@ NeedExtraDetail为true时返回
                      */
                     bool FlowExtraDetailHasBeenSet() const;
 
+                    /**
+                     * 获取流程描述
+                     * @return FlowInfo 流程描述
+                     * 
+                     */
+                    std::string GetFlowInfo() const;
+
+                    /**
+                     * 判断参数 FlowInfo 是否已赋值
+                     * @return FlowInfo 是否已赋值
+                     * 
+                     */
+                    bool FlowInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -200,6 +214,12 @@ NeedExtraDetail为true时返回
                      */
                     std::vector<FlowExtraDetail> m_flowExtraDetail;
                     bool m_flowExtraDetailHasBeenSet;
+
+                    /**
+                     * 流程描述
+                     */
+                    std::string m_flowInfo;
+                    bool m_flowInfoHasBeenSet;
 
                 };
             }

@@ -1175,7 +1175,7 @@ namespace TencentCloud
                 DescribeSourceAssetOutcomeCallable DescribeSourceAssetCallable(const Model::DescribeSourceAssetRequest& request);
 
                 /**
-                 *防火墙开关列表，已废弃，请使用DescribeFwEdgeIps
+                 *防火墙开关列表，请换用DescribeFwEdgeIps
                  * @param req DescribeSwitchListsRequest
                  * @return DescribeSwitchListsOutcome
                  */

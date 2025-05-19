@@ -341,6 +341,48 @@ namespace TencentCloud
                      */
                     bool PrivateIPHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _createTime 创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取机箱 ID
+                     * @return HostServerSerialNumber 机箱 ID
+                     * 
+                     */
+                    std::string GetHostServerSerialNumber() const;
+
+                    /**
+                     * 设置机箱 ID
+                     * @param _hostServerSerialNumber 机箱 ID
+                     * 
+                     */
+                    void SetHostServerSerialNumber(const std::string& _hostServerSerialNumber);
+
+                    /**
+                     * 判断参数 HostServerSerialNumber 是否已赋值
+                     * @return HostServerSerialNumber 是否已赋值
+                     * 
+                     */
+                    bool HostServerSerialNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,6 +468,18 @@ namespace TencentCloud
                      */
                     std::string m_privateIP;
                     bool m_privateIPHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 机箱 ID
+                     */
+                    std::string m_hostServerSerialNumber;
+                    bool m_hostServerSerialNumberHasBeenSet;
 
                 };
             }

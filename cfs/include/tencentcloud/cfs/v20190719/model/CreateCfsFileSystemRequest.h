@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NetInterfaceHasBeenSet() const;
 
                     /**
-                     * 获取权限组 ID
-                     * @return PGroupId 权限组 ID
+                     * 获取权限组 ID,pgroupbasic 是默认权限组
+                     * @return PGroupId 权限组 ID,pgroupbasic 是默认权限组
                      * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
-                     * 设置权限组 ID
-                     * @param _pGroupId 权限组 ID
+                     * 设置权限组 ID,pgroupbasic 是默认权限组
+                     * @param _pGroupId 权限组 ID,pgroupbasic 是默认权限组
                      * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
-                     * @return Protocol 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
+                     * 获取文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS
+                     * @return Protocol 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
-                     * @param _protocol 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
+                     * 设置文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS
+                     * @param _protocol 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
-                     * @return VpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
+                     * 获取私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取
+                     * @return VpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
-                     * @param _vpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
+                     * 设置私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取
+                     * @param _vpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网 ID，若网络类型选择的是VPC，该字段为必填。
-                     * @return SubnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。
+                     * 获取子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取
+                     * @return SubnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网 ID，若网络类型选择的是VPC，该字段为必填。
-                     * @param _subnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。
+                     * 设置子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取
+                     * @param _subnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取云联网ID， 若网络类型选择的是CCN，该字段为必填
-                     * @return CcnId 云联网ID， 若网络类型选择的是CCN，该字段为必填
+                     * 获取云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取
+                     * @return CcnId 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网ID， 若网络类型选择的是CCN，该字段为必填
-                     * @param _ccnId 云联网ID， 若网络类型选择的是CCN，该字段为必填
+                     * 设置云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取
+                     * @param _ccnId 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -338,15 +338,15 @@ namespace TencentCloud
                     bool CapacityHasBeenSet() const;
 
                     /**
-                     * 获取文件系统快照ID
-                     * @return SnapshotId 文件系统快照ID
+                     * 获取文件系统快照ID，通过查询快照列表获取该参数
+                     * @return SnapshotId 文件系统快照ID，通过查询快照列表获取该参数
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置文件系统快照ID
-                     * @param _snapshotId 文件系统快照ID
+                     * 设置文件系统快照ID，通过查询快照列表获取该参数
+                     * @param _snapshotId 文件系统快照ID，通过查询快照列表获取该参数
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取定期快照策略ID
-                     * @return AutoSnapshotPolicyId 定期快照策略ID
+                     * 获取定期快照策略ID，通过查询快照策略信息获取
+                     * @return AutoSnapshotPolicyId 定期快照策略ID，通过查询快照策略信息获取
                      * 
                      */
                     std::string GetAutoSnapshotPolicyId() const;
 
                     /**
-                     * 设置定期快照策略ID
-                     * @param _autoSnapshotPolicyId 定期快照策略ID
+                     * 设置定期快照策略ID，通过查询快照策略信息获取
+                     * @param _autoSnapshotPolicyId 定期快照策略ID，通过查询快照策略信息获取
                      * 
                      */
                     void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
@@ -380,15 +380,15 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启默认扩容，仅Turbo类型文件存储支持
-                     * @return EnableAutoScaleUp 是否开启默认扩容，仅Turbo类型文件存储支持
+                     * 获取是否开启默认扩容，仅turbo类型文件存储支持
+                     * @return EnableAutoScaleUp 是否开启默认扩容，仅turbo类型文件存储支持
                      * 
                      */
                     bool GetEnableAutoScaleUp() const;
 
                     /**
-                     * 设置是否开启默认扩容，仅Turbo类型文件存储支持
-                     * @param _enableAutoScaleUp 是否开启默认扩容，仅Turbo类型文件存储支持
+                     * 设置是否开启默认扩容，仅turbo类型文件存储支持
+                     * @param _enableAutoScaleUp 是否开启默认扩容，仅turbo类型文件存储支持
                      * 
                      */
                     void SetEnableAutoScaleUp(const bool& _enableAutoScaleUp);
@@ -444,13 +444,13 @@ v3.1：创建增强版的通用文件系统
                     bool m_netInterfaceHasBeenSet;
 
                     /**
-                     * 权限组 ID
+                     * 权限组 ID,pgroupbasic 是默认权限组
                      */
                     std::string m_pGroupId;
                     bool m_pGroupIdHasBeenSet;
 
                     /**
-                     * 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
+                     * 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -462,13 +462,13 @@ v3.1：创建增强版的通用文件系统
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
+                     * 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网 ID，若网络类型选择的是VPC，该字段为必填。
+                     * 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -498,7 +498,7 @@ v3.1：创建增强版的通用文件系统
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 云联网ID， 若网络类型选择的是CCN，该字段为必填
+                     * 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
@@ -516,19 +516,19 @@ v3.1：创建增强版的通用文件系统
                     bool m_capacityHasBeenSet;
 
                     /**
-                     * 文件系统快照ID
+                     * 文件系统快照ID，通过查询快照列表获取该参数
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 定期快照策略ID
+                     * 定期快照策略ID，通过查询快照策略信息获取
                      */
                     std::string m_autoSnapshotPolicyId;
                     bool m_autoSnapshotPolicyIdHasBeenSet;
 
                     /**
-                     * 是否开启默认扩容，仅Turbo类型文件存储支持
+                     * 是否开启默认扩容，仅turbo类型文件存储支持
                      */
                     bool m_enableAutoScaleUp;
                     bool m_enableAutoScaleUpHasBeenSet;

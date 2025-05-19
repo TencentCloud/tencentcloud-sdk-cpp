@@ -25,7 +25,8 @@ KnowledgeQaSingleWorkflow::KnowledgeQaSingleWorkflow() :
     m_workflowNameHasBeenSet(false),
     m_workflowDescHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_isEnableHasBeenSet(false)
+    m_isEnableHasBeenSet(false),
+    m_asyncWorkflowHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome KnowledgeQaSingleWorkflow::Deserialize(const rapidjson::Valu
         m_isEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("AsyncWorkflow") && !value["AsyncWorkflow"].IsNull())
+    {
+        if (!value["AsyncWorkflow"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaSingleWorkflow.AsyncWorkflow` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_asyncWorkflow = value["AsyncWorkflow"].GetBool();
+        m_asyncWorkflowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void KnowledgeQaSingleWorkflow::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "IsEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isEnable, allocator);
+    }
+
+    if (m_asyncWorkflowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncWorkflow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_asyncWorkflow, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void KnowledgeQaSingleWorkflow::SetIsEnable(const bool& _isEnable)
 bool KnowledgeQaSingleWorkflow::IsEnableHasBeenSet() const
 {
     return m_isEnableHasBeenSet;
+}
+
+bool KnowledgeQaSingleWorkflow::GetAsyncWorkflow() const
+{
+    return m_asyncWorkflow;
+}
+
+void KnowledgeQaSingleWorkflow::SetAsyncWorkflow(const bool& _asyncWorkflow)
+{
+    m_asyncWorkflow = _asyncWorkflow;
+    m_asyncWorkflowHasBeenSet = true;
+}
+
+bool KnowledgeQaSingleWorkflow::AsyncWorkflowHasBeenSet() const
+{
+    return m_asyncWorkflowHasBeenSet;
 }
 
