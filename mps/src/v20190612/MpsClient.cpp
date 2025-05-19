@@ -83,6 +83,49 @@ MpsClient::BatchDeleteStreamLinkFlowOutcomeCallable MpsClient::BatchDeleteStream
     return task->get_future();
 }
 
+MpsClient::BatchProcessMediaOutcome MpsClient::BatchProcessMedia(const BatchProcessMediaRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchProcessMedia");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchProcessMediaResponse rsp = BatchProcessMediaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchProcessMediaOutcome(rsp);
+        else
+            return BatchProcessMediaOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchProcessMediaOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::BatchProcessMediaAsync(const BatchProcessMediaRequest& request, const BatchProcessMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchProcessMedia(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::BatchProcessMediaOutcomeCallable MpsClient::BatchProcessMediaCallable(const BatchProcessMediaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchProcessMediaOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchProcessMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::BatchStartStreamLinkFlowOutcome MpsClient::BatchStartStreamLinkFlow(const BatchStartStreamLinkFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchStartStreamLinkFlow");
@@ -2448,6 +2491,49 @@ MpsClient::DescribeAsrHotwordsListOutcomeCallable MpsClient::DescribeAsrHotwords
     return task->get_future();
 }
 
+MpsClient::DescribeBatchTaskDetailOutcome MpsClient::DescribeBatchTaskDetail(const DescribeBatchTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchTaskDetailResponse rsp = DescribeBatchTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchTaskDetailOutcome(rsp);
+        else
+            return DescribeBatchTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeBatchTaskDetailAsync(const DescribeBatchTaskDetailRequest& request, const DescribeBatchTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchTaskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeBatchTaskDetailOutcomeCallable MpsClient::DescribeBatchTaskDetailCallable(const DescribeBatchTaskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchTaskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchTaskDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DescribeContentReviewTemplatesOutcome MpsClient::DescribeContentReviewTemplates(const DescribeContentReviewTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContentReviewTemplates");
@@ -2570,6 +2656,49 @@ MpsClient::DescribeImageSpriteTemplatesOutcomeCallable MpsClient::DescribeImageS
         [this, request]()
         {
             return this->DescribeImageSpriteTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeImageTaskDetailOutcome MpsClient::DescribeImageTaskDetail(const DescribeImageTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageTaskDetailResponse rsp = DescribeImageTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageTaskDetailOutcome(rsp);
+        else
+            return DescribeImageTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeImageTaskDetailAsync(const DescribeImageTaskDetailRequest& request, const DescribeImageTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageTaskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeImageTaskDetailOutcomeCallable MpsClient::DescribeImageTaskDetailCallable(const DescribeImageTaskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageTaskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageTaskDetail(request);
         }
     );
 

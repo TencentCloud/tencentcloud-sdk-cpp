@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/mps/v20190612/model/BatchDeleteStreamLinkFlowRequest.h>
 #include <tencentcloud/mps/v20190612/model/BatchDeleteStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/BatchProcessMediaRequest.h>
+#include <tencentcloud/mps/v20190612/model/BatchProcessMediaResponse.h>
 #include <tencentcloud/mps/v20190612/model/BatchStartStreamLinkFlowRequest.h>
 #include <tencentcloud/mps/v20190612/model/BatchStartStreamLinkFlowResponse.h>
 #include <tencentcloud/mps/v20190612/model/BatchStopStreamLinkFlowRequest.h>
@@ -135,12 +137,16 @@
 #include <tencentcloud/mps/v20190612/model/DescribeAsrHotwordsResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAsrHotwordsListRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAsrHotwordsListResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeBatchTaskDetailRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeBatchTaskDetailResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeGroupAttachFlowsByIdRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeGroupAttachFlowsByIdResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeImageTaskDetailRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeImageTaskDetailResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeLiveRecordTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeLiveRecordTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeMediaMetaDataRequest.h>
@@ -296,6 +302,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchDeleteStreamLinkFlowResponse> BatchDeleteStreamLinkFlowOutcome;
                 typedef std::future<BatchDeleteStreamLinkFlowOutcome> BatchDeleteStreamLinkFlowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::BatchDeleteStreamLinkFlowRequest&, BatchDeleteStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchProcessMediaResponse> BatchProcessMediaOutcome;
+                typedef std::future<BatchProcessMediaOutcome> BatchProcessMediaOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::BatchProcessMediaRequest&, BatchProcessMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchProcessMediaAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchStartStreamLinkFlowResponse> BatchStartStreamLinkFlowOutcome;
                 typedef std::future<BatchStartStreamLinkFlowOutcome> BatchStartStreamLinkFlowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::BatchStartStreamLinkFlowRequest&, BatchStartStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchStartStreamLinkFlowAsyncHandler;
@@ -461,6 +470,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAsrHotwordsListResponse> DescribeAsrHotwordsListOutcome;
                 typedef std::future<DescribeAsrHotwordsListOutcome> DescribeAsrHotwordsListOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeAsrHotwordsListRequest&, DescribeAsrHotwordsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsrHotwordsListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBatchTaskDetailResponse> DescribeBatchTaskDetailOutcome;
+                typedef std::future<DescribeBatchTaskDetailOutcome> DescribeBatchTaskDetailOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeBatchTaskDetailRequest&, DescribeBatchTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchTaskDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeContentReviewTemplatesResponse> DescribeContentReviewTemplatesOutcome;
                 typedef std::future<DescribeContentReviewTemplatesOutcome> DescribeContentReviewTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeContentReviewTemplatesRequest&, DescribeContentReviewTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentReviewTemplatesAsyncHandler;
@@ -470,6 +482,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImageSpriteTemplatesResponse> DescribeImageSpriteTemplatesOutcome;
                 typedef std::future<DescribeImageSpriteTemplatesOutcome> DescribeImageSpriteTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeImageSpriteTemplatesRequest&, DescribeImageSpriteTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSpriteTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageTaskDetailResponse> DescribeImageTaskDetailOutcome;
+                typedef std::future<DescribeImageTaskDetailOutcome> DescribeImageTaskDetailOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeImageTaskDetailRequest&, DescribeImageTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageTaskDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLiveRecordTemplatesResponse> DescribeLiveRecordTemplatesOutcome;
                 typedef std::future<DescribeLiveRecordTemplatesOutcome> DescribeLiveRecordTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeLiveRecordTemplatesRequest&, DescribeLiveRecordTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordTemplatesAsyncHandler;
@@ -688,6 +703,16 @@ namespace TencentCloud
                 BatchDeleteStreamLinkFlowOutcome BatchDeleteStreamLinkFlow(const Model::BatchDeleteStreamLinkFlowRequest &request);
                 void BatchDeleteStreamLinkFlowAsync(const Model::BatchDeleteStreamLinkFlowRequest& request, const BatchDeleteStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchDeleteStreamLinkFlowOutcomeCallable BatchDeleteStreamLinkFlowCallable(const Model::BatchDeleteStreamLinkFlowRequest& request);
+
+                /**
+                 *对 URL视频链接批量发起处理任务，功能包括：
+智能字幕（语音全文、语音热词、语音翻译）
+                 * @param req BatchProcessMediaRequest
+                 * @return BatchProcessMediaOutcome
+                 */
+                BatchProcessMediaOutcome BatchProcessMedia(const Model::BatchProcessMediaRequest &request);
+                void BatchProcessMediaAsync(const Model::BatchProcessMediaRequest& request, const BatchProcessMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchProcessMediaOutcomeCallable BatchProcessMediaCallable(const Model::BatchProcessMediaRequest& request);
 
                 /**
                  *批量启动媒体传输流。
@@ -1210,6 +1235,15 @@ namespace TencentCloud
                 DescribeAsrHotwordsListOutcomeCallable DescribeAsrHotwordsListCallable(const Model::DescribeAsrHotwordsListRequest& request);
 
                 /**
+                 *通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询7天之内提交的任务）。
+                 * @param req DescribeBatchTaskDetailRequest
+                 * @return DescribeBatchTaskDetailOutcome
+                 */
+                DescribeBatchTaskDetailOutcome DescribeBatchTaskDetail(const Model::DescribeBatchTaskDetailRequest &request);
+                void DescribeBatchTaskDetailAsync(const Model::DescribeBatchTaskDetailRequest& request, const DescribeBatchTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchTaskDetailOutcomeCallable DescribeBatchTaskDetailCallable(const Model::DescribeBatchTaskDetailRequest& request);
+
+                /**
                  *根据智能审核模板唯一标识，获取智能审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及系统预置智能审核模板。
                  * @param req DescribeContentReviewTemplatesRequest
                  * @return DescribeContentReviewTemplatesOutcome
@@ -1235,6 +1269,15 @@ namespace TencentCloud
                 DescribeImageSpriteTemplatesOutcome DescribeImageSpriteTemplates(const Model::DescribeImageSpriteTemplatesRequest &request);
                 void DescribeImageSpriteTemplatesAsync(const Model::DescribeImageSpriteTemplatesRequest& request, const DescribeImageSpriteTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImageSpriteTemplatesOutcomeCallable DescribeImageSpriteTemplatesCallable(const Model::DescribeImageSpriteTemplatesRequest& request);
+
+                /**
+                 *通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询7天之内提交的任务）。
+                 * @param req DescribeImageTaskDetailRequest
+                 * @return DescribeImageTaskDetailOutcome
+                 */
+                DescribeImageTaskDetailOutcome DescribeImageTaskDetail(const Model::DescribeImageTaskDetailRequest &request);
+                void DescribeImageTaskDetailAsync(const Model::DescribeImageTaskDetailRequest& request, const DescribeImageTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageTaskDetailOutcomeCallable DescribeImageTaskDetailCallable(const Model::DescribeImageTaskDetailRequest& request);
 
                 /**
                  *获取直播录制模板
