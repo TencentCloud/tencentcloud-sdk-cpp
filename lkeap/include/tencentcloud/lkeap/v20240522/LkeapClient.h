@@ -71,12 +71,12 @@
 #include <tencentcloud/lkeap/v20240522/model/ReconstructDocumentSSEResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeRequest.h>
 #include <tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeResponse.h>
+#include <tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeRealtimeRequest.h>
+#include <tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeRealtimeResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/RunRerankRequest.h>
 #include <tencentcloud/lkeap/v20240522/model/RunRerankResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/UploadDocRequest.h>
 #include <tencentcloud/lkeap/v20240522/model/UploadDocResponse.h>
-#include <tencentcloud/lkeap/v20240522/model/UploadDocRealtimeRequest.h>
-#include <tencentcloud/lkeap/v20240522/model/UploadDocRealtimeResponse.h>
 
 
 namespace TencentCloud
@@ -163,15 +163,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RetrieveKnowledgeResponse> RetrieveKnowledgeOutcome;
                 typedef std::future<RetrieveKnowledgeOutcome> RetrieveKnowledgeOutcomeCallable;
                 typedef std::function<void(const LkeapClient*, const Model::RetrieveKnowledgeRequest&, RetrieveKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetrieveKnowledgeAsyncHandler;
+                typedef Outcome<Core::Error, Model::RetrieveKnowledgeRealtimeResponse> RetrieveKnowledgeRealtimeOutcome;
+                typedef std::future<RetrieveKnowledgeRealtimeOutcome> RetrieveKnowledgeRealtimeOutcomeCallable;
+                typedef std::function<void(const LkeapClient*, const Model::RetrieveKnowledgeRealtimeRequest&, RetrieveKnowledgeRealtimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetrieveKnowledgeRealtimeAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunRerankResponse> RunRerankOutcome;
                 typedef std::future<RunRerankOutcome> RunRerankOutcomeCallable;
                 typedef std::function<void(const LkeapClient*, const Model::RunRerankRequest&, RunRerankOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunRerankAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadDocResponse> UploadDocOutcome;
                 typedef std::future<UploadDocOutcome> UploadDocOutcomeCallable;
                 typedef std::function<void(const LkeapClient*, const Model::UploadDocRequest&, UploadDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadDocAsyncHandler;
-                typedef Outcome<Core::Error, Model::UploadDocRealtimeResponse> UploadDocRealtimeOutcome;
-                typedef std::future<UploadDocRealtimeOutcome> UploadDocRealtimeOutcomeCallable;
-                typedef std::function<void(const LkeapClient*, const Model::UploadDocRealtimeRequest&, UploadDocRealtimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadDocRealtimeAsyncHandler;
 
 
 
@@ -508,6 +508,15 @@ except TencentCloudSDKException as err:
                 RetrieveKnowledgeOutcomeCallable RetrieveKnowledgeCallable(const Model::RetrieveKnowledgeRequest& request);
 
                 /**
+                 *用于实时检索在UploadDocRealtime接口上传的实时文档内容。 使用场景：适用于在会话中对文档进行问答的场景
+                 * @param req RetrieveKnowledgeRealtimeRequest
+                 * @return RetrieveKnowledgeRealtimeOutcome
+                 */
+                RetrieveKnowledgeRealtimeOutcome RetrieveKnowledgeRealtime(const Model::RetrieveKnowledgeRealtimeRequest &request);
+                void RetrieveKnowledgeRealtimeAsync(const Model::RetrieveKnowledgeRealtimeRequest& request, const RetrieveKnowledgeRealtimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RetrieveKnowledgeRealtimeOutcomeCallable RetrieveKnowledgeRealtimeCallable(const Model::RetrieveKnowledgeRealtimeRequest& request);
+
+                /**
                  *基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按分数由高到低对切片进行排序，并输出对应的打分结果。
                  * @param req RunRerankRequest
                  * @return RunRerankOutcome
@@ -525,16 +534,6 @@ except TencentCloudSDKException as err:
                 UploadDocOutcome UploadDoc(const Model::UploadDocRequest &request);
                 void UploadDocAsync(const Model::UploadDocRequest& request, const UploadDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadDocOutcomeCallable UploadDocCallable(const Model::UploadDocRequest& request);
-
-                /**
-                 *用于上传实时文档内容。
-实时文档在上传后可以立即通过SearchRealtime进行实时检索，适用于在会话中对文档进行问答的场景。
-                 * @param req UploadDocRealtimeRequest
-                 * @return UploadDocRealtimeOutcome
-                 */
-                UploadDocRealtimeOutcome UploadDocRealtime(const Model::UploadDocRealtimeRequest &request);
-                void UploadDocRealtimeAsync(const Model::UploadDocRealtimeRequest& request, const UploadDocRealtimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UploadDocRealtimeOutcomeCallable UploadDocRealtimeCallable(const Model::UploadDocRealtimeRequest& request);
 
             };
         }

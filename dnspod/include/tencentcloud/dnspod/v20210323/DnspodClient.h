@@ -738,7 +738,7 @@ namespace TencentCloud
                 DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const Model::DeleteSnapshotRequest& request);
 
                 /**
-                 *获取任务详情
+                 *获取批量操作任务执行详情
                  * @param req DescribeBatchTaskRequest
                  * @return DescribeBatchTaskOutcome
                  */

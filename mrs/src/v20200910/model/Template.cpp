@@ -49,7 +49,8 @@ Template::Template() :
     m_maternityHasBeenSet(false),
     m_eyeHasBeenSet(false),
     m_birthCertHasBeenSet(false),
-    m_timelineHasBeenSet(false)
+    m_timelineHasBeenSet(false),
+    m_endoscopyV2HasBeenSet(false)
 {
 }
 
@@ -523,6 +524,23 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
         m_timelineHasBeenSet = true;
     }
 
+    if (value.HasMember("EndoscopyV2") && !value["EndoscopyV2"].IsNull())
+    {
+        if (!value["EndoscopyV2"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.EndoscopyV2` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_endoscopyV2.Deserialize(value["EndoscopyV2"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_endoscopyV2HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -785,6 +803,15 @@ void Template::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_timeline.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_endoscopyV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndoscopyV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_endoscopyV2.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1252,5 +1279,21 @@ void Template::SetTimeline(const TimelineInformation& _timeline)
 bool Template::TimelineHasBeenSet() const
 {
     return m_timelineHasBeenSet;
+}
+
+Check Template::GetEndoscopyV2() const
+{
+    return m_endoscopyV2;
+}
+
+void Template::SetEndoscopyV2(const Check& _endoscopyV2)
+{
+    m_endoscopyV2 = _endoscopyV2;
+    m_endoscopyV2HasBeenSet = true;
+}
+
+bool Template::EndoscopyV2HasBeenSet() const
+{
+    return m_endoscopyV2HasBeenSet;
 }
 

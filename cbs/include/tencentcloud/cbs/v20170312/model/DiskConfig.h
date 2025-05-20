@@ -136,15 +136,39 @@ namespace TencentCloud
                     bool InstanceFamilyHasBeenSet() const;
 
                     /**
-                     * 获取云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_SSD：SSD表示SSD云硬盘。</li>
-                     * @return DiskType 云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_SSD：SSD表示SSD云硬盘。</li>
+                     * 获取云盘介质类型。取值范围：<br>
+CLOUD_BASIC：表示普通云硬盘<br>
+CLOUD_PREMIUM：表示高性能云硬盘<br>
+CLOUD_BSSD：表示通用型SSD云硬盘<br>
+CLOUD_SSD：表示SSD云硬盘<br>
+CLOUD_HSSD：表示增强型SSD云硬盘<br>
+CLOUD_TSSD：表示极速型SSD云硬盘。
+                     * @return DiskType 云盘介质类型。取值范围：<br>
+CLOUD_BASIC：表示普通云硬盘<br>
+CLOUD_PREMIUM：表示高性能云硬盘<br>
+CLOUD_BSSD：表示通用型SSD云硬盘<br>
+CLOUD_SSD：表示SSD云硬盘<br>
+CLOUD_HSSD：表示增强型SSD云硬盘<br>
+CLOUD_TSSD：表示极速型SSD云硬盘。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_SSD：SSD表示SSD云硬盘。</li>
-                     * @param _diskType 云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_SSD：SSD表示SSD云硬盘。</li>
+                     * 设置云盘介质类型。取值范围：<br>
+CLOUD_BASIC：表示普通云硬盘<br>
+CLOUD_PREMIUM：表示高性能云硬盘<br>
+CLOUD_BSSD：表示通用型SSD云硬盘<br>
+CLOUD_SSD：表示SSD云硬盘<br>
+CLOUD_HSSD：表示增强型SSD云硬盘<br>
+CLOUD_TSSD：表示极速型SSD云硬盘。
+                     * @param _diskType 云盘介质类型。取值范围：<br>
+CLOUD_BASIC：表示普通云硬盘<br>
+CLOUD_PREMIUM：表示高性能云硬盘<br>
+CLOUD_BSSD：表示通用型SSD云硬盘<br>
+CLOUD_SSD：表示SSD云硬盘<br>
+CLOUD_HSSD：表示增强型SSD云硬盘<br>
+CLOUD_TSSD：表示极速型SSD云硬盘。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -157,15 +181,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取云盘大小变化的最小步长，单位GB。
-                     * @return StepSize 云盘大小变化的最小步长，单位GB。
+                     * 获取云盘大小变化的最小步长，单位GiB。
+                     * @return StepSize 云盘大小变化的最小步长，单位GiB。
                      * 
                      */
                     uint64_t GetStepSize() const;
 
                     /**
-                     * 设置云盘大小变化的最小步长，单位GB。
-                     * @param _stepSize 云盘大小变化的最小步长，单位GB。
+                     * 设置云盘大小变化的最小步长，单位GiB。
+                     * @param _stepSize 云盘大小变化的最小步长，单位GiB。
                      * 
                      */
                     void SetStepSize(const uint64_t& _stepSize);
@@ -249,15 +273,15 @@ namespace TencentCloud
                     bool DiskUsageHasBeenSet() const;
 
                     /**
-                     * 获取最小可配置云盘大小，单位GB。
-                     * @return MinDiskSize 最小可配置云盘大小，单位GB。
+                     * 获取最小可配置云盘大小，单位GiB。
+                     * @return MinDiskSize 最小可配置云盘大小，单位GiB。
                      * 
                      */
                     uint64_t GetMinDiskSize() const;
 
                     /**
-                     * 设置最小可配置云盘大小，单位GB。
-                     * @param _minDiskSize 最小可配置云盘大小，单位GB。
+                     * 设置最小可配置云盘大小，单位GiB。
+                     * @param _minDiskSize 最小可配置云盘大小，单位GiB。
                      * 
                      */
                     void SetMinDiskSize(const uint64_t& _minDiskSize);
@@ -270,15 +294,15 @@ namespace TencentCloud
                     bool MinDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取最大可配置云盘大小，单位GB。
-                     * @return MaxDiskSize 最大可配置云盘大小，单位GB。
+                     * 获取最大可配置云盘大小，单位GiB。
+                     * @return MaxDiskSize 最大可配置云盘大小，单位GiB。
                      * 
                      */
                     uint64_t GetMaxDiskSize() const;
 
                     /**
-                     * 设置最大可配置云盘大小，单位GB。
-                     * @param _maxDiskSize 最大可配置云盘大小，单位GB。
+                     * 设置最大可配置云盘大小，单位GiB。
+                     * @param _maxDiskSize 最大可配置云盘大小，单位GiB。
                      * 
                      */
                     void SetMaxDiskSize(const uint64_t& _maxDiskSize);
@@ -339,13 +363,19 @@ namespace TencentCloud
                     bool m_instanceFamilyHasBeenSet;
 
                     /**
-                     * 云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_SSD：SSD表示SSD云硬盘。</li>
+                     * 云盘介质类型。取值范围：<br>
+CLOUD_BASIC：表示普通云硬盘<br>
+CLOUD_PREMIUM：表示高性能云硬盘<br>
+CLOUD_BSSD：表示通用型SSD云硬盘<br>
+CLOUD_SSD：表示SSD云硬盘<br>
+CLOUD_HSSD：表示增强型SSD云硬盘<br>
+CLOUD_TSSD：表示极速型SSD云硬盘。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 云盘大小变化的最小步长，单位GB。
+                     * 云盘大小变化的最小步长，单位GiB。
                      */
                     uint64_t m_stepSize;
                     bool m_stepSizeHasBeenSet;
@@ -371,13 +401,13 @@ namespace TencentCloud
                     bool m_diskUsageHasBeenSet;
 
                     /**
-                     * 最小可配置云盘大小，单位GB。
+                     * 最小可配置云盘大小，单位GiB。
                      */
                     uint64_t m_minDiskSize;
                     bool m_minDiskSizeHasBeenSet;
 
                     /**
-                     * 最大可配置云盘大小，单位GB。
+                     * 最大可配置云盘大小，单位GiB。
                      */
                     uint64_t m_maxDiskSize;
                     bool m_maxDiskSizeHasBeenSet;

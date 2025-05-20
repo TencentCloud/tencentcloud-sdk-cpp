@@ -403,6 +403,48 @@ namespace TencentCloud
                      */
                     bool LimitMethodHasBeenSet() const;
 
+                    /**
+                     * 获取cel表达式
+                     * @return CelRule cel表达式
+                     * 
+                     */
+                    std::string GetCelRule() const;
+
+                    /**
+                     * 设置cel表达式
+                     * @param _celRule cel表达式
+                     * 
+                     */
+                    void SetCelRule(const std::string& _celRule);
+
+                    /**
+                     * 判断参数 CelRule 是否已赋值
+                     * @return CelRule 是否已赋值
+                     * 
+                     */
+                    bool CelRuleHasBeenSet() const;
+
+                    /**
+                     * 获取逻辑操作符
+                     * @return LogicalOp 逻辑操作符
+                     * 
+                     */
+                    std::string GetLogicalOp() const;
+
+                    /**
+                     * 设置逻辑操作符
+                     * @param _logicalOp 逻辑操作符
+                     * 
+                     */
+                    void SetLogicalOp(const std::string& _logicalOp);
+
+                    /**
+                     * 判断参数 LogicalOp 是否已赋值
+                     * @return LogicalOp 是否已赋值
+                     * 
+                     */
+                    bool LogicalOpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -506,6 +548,18 @@ namespace TencentCloud
                      */
                     std::string m_limitMethod;
                     bool m_limitMethodHasBeenSet;
+
+                    /**
+                     * cel表达式
+                     */
+                    std::string m_celRule;
+                    bool m_celRuleHasBeenSet;
+
+                    /**
+                     * 逻辑操作符
+                     */
+                    std::string m_logicalOp;
+                    bool m_logicalOpHasBeenSet;
 
                 };
             }

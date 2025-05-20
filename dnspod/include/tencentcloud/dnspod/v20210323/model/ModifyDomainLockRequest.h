@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名要锁定的天数，最多可锁定的天数可以通过获取域名权限接口获取。
-                     * @return LockDays 域名要锁定的天数，最多可锁定的天数可以通过获取域名权限接口获取。
+                     * 获取域名要锁定的天数，最多可锁定的天数可以通过DescribeDomainPurview接口获取。
+                     * @return LockDays 域名要锁定的天数，最多可锁定的天数可以通过DescribeDomainPurview接口获取。
                      * 
                      */
                     uint64_t GetLockDays() const;
 
                     /**
-                     * 设置域名要锁定的天数，最多可锁定的天数可以通过获取域名权限接口获取。
-                     * @param _lockDays 域名要锁定的天数，最多可锁定的天数可以通过获取域名权限接口获取。
+                     * 设置域名要锁定的天数，最多可锁定的天数可以通过DescribeDomainPurview接口获取。
+                     * @param _lockDays 域名要锁定的天数，最多可锁定的天数可以通过DescribeDomainPurview接口获取。
                      * 
                      */
                     void SetLockDays(const uint64_t& _lockDays);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名要锁定的天数，最多可锁定的天数可以通过获取域名权限接口获取。
+                     * 域名要锁定的天数，最多可锁定的天数可以通过DescribeDomainPurview接口获取。
                      */
                     uint64_t m_lockDays;
                     bool m_lockDaysHasBeenSet;

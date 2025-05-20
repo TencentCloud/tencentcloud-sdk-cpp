@@ -194,6 +194,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ScheduleRecognitionTaskResult.h
   include/tencentcloud/mps/v20190612/model/ModifyStreamLinkEventResponse.h
   include/tencentcloud/mps/v20190612/model/WithdrawsWatermarkRequest.h
+  include/tencentcloud/mps/v20190612/model/ImageProcessTaskOutput.h
   include/tencentcloud/mps/v20190612/model/ComposeTargetInfo.h
   include/tencentcloud/mps/v20190612/model/DescribeInputRTMPPullSettings.h
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskInput.h
@@ -478,6 +479,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/CoverConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/DisableWorkflowResponse.h
+  include/tencentcloud/mps/v20190612/model/ImageProcessTaskResult.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskClassificationResult.h
   include/tencentcloud/mps/v20190612/model/DescribeQualityControlTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/PoliticalImgReviewTemplateInfoForUpdate.h
@@ -662,6 +664,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/PornConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskObjectSeqmentItem.h
   include/tencentcloud/mps/v20190612/model/ModifyInput.h
+  include/tencentcloud/mps/v20190612/model/ImageDenoiseConfig.h
   include/tencentcloud/mps/v20190612/model/VideoDenoiseConfig.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskObjectResult.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowRealtimeStatusRequest.h
@@ -915,6 +918,7 @@ set(mps_src
   src/v20190612/model/ScheduleRecognitionTaskResult.cpp
   src/v20190612/model/ModifyStreamLinkEventResponse.cpp
   src/v20190612/model/WithdrawsWatermarkRequest.cpp
+  src/v20190612/model/ImageProcessTaskOutput.cpp
   src/v20190612/model/ComposeTargetInfo.cpp
   src/v20190612/model/DescribeInputRTMPPullSettings.cpp
   src/v20190612/model/MediaProcessTaskInput.cpp
@@ -1199,6 +1203,7 @@ set(mps_src
   src/v20190612/model/DescribeSampleSnapshotTemplatesRequest.cpp
   src/v20190612/model/CoverConfigureInfoForUpdate.cpp
   src/v20190612/model/DisableWorkflowResponse.cpp
+  src/v20190612/model/ImageProcessTaskResult.cpp
   src/v20190612/model/AiAnalysisTaskClassificationResult.cpp
   src/v20190612/model/DescribeQualityControlTemplatesResponse.cpp
   src/v20190612/model/PoliticalImgReviewTemplateInfoForUpdate.cpp
@@ -1383,6 +1388,7 @@ set(mps_src
   src/v20190612/model/PornConfigureInfo.cpp
   src/v20190612/model/AiRecognitionTaskObjectSeqmentItem.cpp
   src/v20190612/model/ModifyInput.cpp
+  src/v20190612/model/ImageDenoiseConfig.cpp
   src/v20190612/model/VideoDenoiseConfig.cpp
   src/v20190612/model/AiRecognitionTaskObjectResult.cpp
   src/v20190612/model/DescribeStreamLinkFlowRealtimeStatusRequest.cpp

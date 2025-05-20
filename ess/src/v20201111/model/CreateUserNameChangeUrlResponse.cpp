@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/postgres/v20170312/model/InitDBInstancesResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateUserNameChangeUrlResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Postgres::V20170312::Model;
+using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
-InitDBInstancesResponse::InitDBInstancesResponse() :
-    m_dBInstanceIdSetHasBeenSet(false)
+CreateUserNameChangeUrlResponse::CreateUserNameChangeUrlResponse() :
+    m_userVerifyUrlHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_miniAppIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome InitDBInstancesResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateUserNameChangeUrlResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +64,68 @@ CoreInternalOutcome InitDBInstancesResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("DBInstanceIdSet") && !rsp["DBInstanceIdSet"].IsNull())
+    if (rsp.HasMember("UserVerifyUrl") && !rsp["UserVerifyUrl"].IsNull())
     {
-        if (!rsp["DBInstanceIdSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `DBInstanceIdSet` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["DBInstanceIdSet"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["UserVerifyUrl"].IsString())
         {
-            m_dBInstanceIdSet.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `UserVerifyUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_dBInstanceIdSetHasBeenSet = true;
+        m_userVerifyUrl = string(rsp["UserVerifyUrl"].GetString());
+        m_userVerifyUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpireTime") && !rsp["ExpireTime"].IsNull())
+    {
+        if (!rsp["ExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = rsp["ExpireTime"].GetInt64();
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MiniAppId") && !rsp["MiniAppId"].IsNull())
+    {
+        if (!rsp["MiniAppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MiniAppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_miniAppId = string(rsp["MiniAppId"].GetString());
+        m_miniAppIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string InitDBInstancesResponse::ToJsonString() const
+string CreateUserNameChangeUrlResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dBInstanceIdSetHasBeenSet)
+    if (m_userVerifyUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DBInstanceIdSet";
+        string key = "UserVerifyUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userVerifyUrl.c_str(), allocator).Move(), allocator);
+    }
 
-        for (auto itr = m_dBInstanceIdSet.begin(); itr != m_dBInstanceIdSet.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_miniAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MiniAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_miniAppId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +140,34 @@ string InitDBInstancesResponse::ToJsonString() const
 }
 
 
-vector<string> InitDBInstancesResponse::GetDBInstanceIdSet() const
+string CreateUserNameChangeUrlResponse::GetUserVerifyUrl() const
 {
-    return m_dBInstanceIdSet;
+    return m_userVerifyUrl;
 }
 
-bool InitDBInstancesResponse::DBInstanceIdSetHasBeenSet() const
+bool CreateUserNameChangeUrlResponse::UserVerifyUrlHasBeenSet() const
 {
-    return m_dBInstanceIdSetHasBeenSet;
+    return m_userVerifyUrlHasBeenSet;
+}
+
+int64_t CreateUserNameChangeUrlResponse::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+bool CreateUserNameChangeUrlResponse::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string CreateUserNameChangeUrlResponse::GetMiniAppId() const
+{
+    return m_miniAppId;
+}
+
+bool CreateUserNameChangeUrlResponse::MiniAppIdHasBeenSet() const
+{
+    return m_miniAppIdHasBeenSet;
 }
 
 

@@ -259,6 +259,27 @@ namespace TencentCloud
                     bool PrivateParametersHasBeenSet() const;
 
                     /**
+                     * 获取当前配置的回源 HOST 头。
+                     * @return HostHeader 当前配置的回源 HOST 头。
+                     * 
+                     */
+                    std::string GetHostHeader() const;
+
+                    /**
+                     * 设置当前配置的回源 HOST 头。
+                     * @param _hostHeader 当前配置的回源 HOST 头。
+                     * 
+                     */
+                    void SetHostHeader(const std::string& _hostHeader);
+
+                    /**
+                     * 判断参数 HostHeader 是否已赋值
+                     * @return HostHeader 是否已赋值
+                     * 
+                     */
+                    bool HostHeaderHasBeenSet() const;
+
+                    /**
                      * 获取MO 子应用 ID
                      * @return VodeoSubAppId MO 子应用 ID
                      * @deprecated
@@ -426,6 +447,12 @@ namespace TencentCloud
                      */
                     std::vector<PrivateParameter> m_privateParameters;
                     bool m_privateParametersHasBeenSet;
+
+                    /**
+                     * 当前配置的回源 HOST 头。
+                     */
+                    std::string m_hostHeader;
+                    bool m_hostHeaderHasBeenSet;
 
                     /**
                      * MO 子应用 ID

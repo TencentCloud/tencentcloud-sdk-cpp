@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取高性能计算集群ID数组。
-                     * @return HpcClusterIds 高性能计算集群ID数组。
+                     * 获取一个或多个待操作的高性能计算集群ID。集群ID信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。每次请求高性能计算集群信息的批量上限为100，默认配合Limit传参数，不能超过Limit值，Limit默认20。
+                     * @return HpcClusterIds 一个或多个待操作的高性能计算集群ID。集群ID信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。每次请求高性能计算集群信息的批量上限为100，默认配合Limit传参数，不能超过Limit值，Limit默认20。
                      * 
                      */
                     std::vector<std::string> GetHpcClusterIds() const;
 
                     /**
-                     * 设置高性能计算集群ID数组。
-                     * @param _hpcClusterIds 高性能计算集群ID数组。
+                     * 设置一个或多个待操作的高性能计算集群ID。集群ID信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。每次请求高性能计算集群信息的批量上限为100，默认配合Limit传参数，不能超过Limit值，Limit默认20。
+                     * @param _hpcClusterIds 一个或多个待操作的高性能计算集群ID。集群ID信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。每次请求高性能计算集群信息的批量上限为100，默认配合Limit传参数，不能超过Limit值，Limit默认20。
                      * 
                      */
                     void SetHpcClusterIds(const std::vector<std::string>& _hpcClusterIds);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool HpcClusterIdsHasBeenSet() const;
 
                     /**
-                     * 获取高性能计算集群名称。
-                     * @return Name 高性能计算集群名称。
+                     * 获取高性能计算集群名称，长度限制[1-60]。
+                     * @return Name 高性能计算集群名称，长度限制[1-60]。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置高性能计算集群名称。
-                     * @param _name 高性能计算集群名称。
+                     * 设置高性能计算集群名称，长度限制[1-60]。
+                     * @param _name 高性能计算集群名称，长度限制[1-60]。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取可用区。
-                     * @return Zone 可用区。
+                     * 获取可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。
+                     * @return Zone 可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区。
-                     * @param _zone 可用区。
+                     * 设置可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。
+                     * @param _zone 可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取本次请求量, 默认值20。
-                     * @return Limit 本次请求量, 默认值20。
+                     * 获取本次请求量, 默认值20，范围限制为[1-100]。
+                     * @return Limit 本次请求量, 默认值20，范围限制为[1-100]。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置本次请求量, 默认值20。
-                     * @param _limit 本次请求量, 默认值20。
+                     * 设置本次请求量, 默认值20，范围限制为[1-100]。
+                     * @param _limit 本次请求量, 默认值20，范围限制为[1-100]。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取高性能计算集群类型。
-                     * @return HpcClusterType 高性能计算集群类型。
+                     * 获取高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。
+                     * @return HpcClusterType 高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。
                      * 
                      */
                     std::string GetHpcClusterType() const;
 
                     /**
-                     * 设置高性能计算集群类型。
-                     * @param _hpcClusterType 高性能计算集群类型。
+                     * 设置高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。
+                     * @param _hpcClusterType 高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。
                      * 
                      */
                     void SetHpcClusterType(const std::string& _hpcClusterType);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool HpcClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取高性能计算集群对应的业务场景标识，当前只支持CDC。	
-                     * @return HpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC。	
+                     * 获取高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。	
+                     * @return HpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。	
                      * 
                      */
                     std::string GetHpcClusterBusinessId() const;
 
                     /**
-                     * 设置高性能计算集群对应的业务场景标识，当前只支持CDC。	
-                     * @param _hpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC。	
+                     * 设置高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。	
+                     * @param _hpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。	
                      * 
                      */
                     void SetHpcClusterBusinessId(const std::string& _hpcClusterBusinessId);
@@ -235,19 +235,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 高性能计算集群ID数组。
+                     * 一个或多个待操作的高性能计算集群ID。集群ID信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。每次请求高性能计算集群信息的批量上限为100，默认配合Limit传参数，不能超过Limit值，Limit默认20。
                      */
                     std::vector<std::string> m_hpcClusterIds;
                     bool m_hpcClusterIdsHasBeenSet;
 
                     /**
-                     * 高性能计算集群名称。
+                     * 高性能计算集群名称，长度限制[1-60]。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 可用区。
+                     * 可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -259,19 +259,19 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 本次请求量, 默认值20。
+                     * 本次请求量, 默认值20，范围限制为[1-100]。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 高性能计算集群类型。
+                     * 高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。
                      */
                     std::string m_hpcClusterType;
                     bool m_hpcClusterTypeHasBeenSet;
 
                     /**
-                     * 高性能计算集群对应的业务场景标识，当前只支持CDC。	
+                     * 高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。	
                      */
                     std::string m_hpcClusterBusinessId;
                     bool m_hpcClusterBusinessIdHasBeenSet;

@@ -133,6 +133,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserMobileChangeUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserMobileChangeUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateUserNameChangeUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateUserNameChangeUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserVerifyUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserVerifyUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateWebThemeConfigRequest.h>
@@ -410,6 +412,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserMobileChangeUrlResponse> CreateUserMobileChangeUrlOutcome;
                 typedef std::future<CreateUserMobileChangeUrlOutcome> CreateUserMobileChangeUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateUserMobileChangeUrlRequest&, CreateUserMobileChangeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserMobileChangeUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserNameChangeUrlResponse> CreateUserNameChangeUrlOutcome;
+                typedef std::future<CreateUserNameChangeUrlOutcome> CreateUserNameChangeUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateUserNameChangeUrlRequest&, CreateUserNameChangeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserNameChangeUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserVerifyUrlResponse> CreateUserVerifyUrlOutcome;
                 typedef std::future<CreateUserVerifyUrlOutcome> CreateUserVerifyUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateUserVerifyUrlRequest&, CreateUserVerifyUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserVerifyUrlAsyncHandler;
@@ -1707,6 +1712,17 @@ namespace TencentCloud
                 CreateUserMobileChangeUrlOutcome CreateUserMobileChangeUrl(const Model::CreateUserMobileChangeUrlRequest &request);
                 void CreateUserMobileChangeUrlAsync(const Model::CreateUserMobileChangeUrlRequest& request, const CreateUserMobileChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserMobileChangeUrlOutcomeCallable CreateUserMobileChangeUrlCallable(const Model::CreateUserMobileChangeUrlRequest& request);
+
+                /**
+                 *生成个人用户实名更名链接，个人用户点击此链接进入更名流程（若用户未完成实名认证，则直接进入实名页面实名后再进行更名）。此链接为通用链接，任何点击生成链接的用户将会被引导至小程序个人更名页面完成更名。
+
+注： 调用此接口需要购买<font color="red"><b>单独的实名套餐包</b></font>。使用前请联系对接的客户经理沟通。
+                 * @param req CreateUserNameChangeUrlRequest
+                 * @return CreateUserNameChangeUrlOutcome
+                 */
+                CreateUserNameChangeUrlOutcome CreateUserNameChangeUrl(const Model::CreateUserNameChangeUrlRequest &request);
+                void CreateUserNameChangeUrlAsync(const Model::CreateUserNameChangeUrlRequest& request, const CreateUserNameChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserNameChangeUrlOutcomeCallable CreateUserNameChangeUrlCallable(const Model::CreateUserNameChangeUrlRequest& request);
 
                 /**
                  *生成个人用户实名认证链接，个人用户点击此链接进入实名流程（若用户已完成实名认证，则直接进入成功页面）。

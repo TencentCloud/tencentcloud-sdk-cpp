@@ -22,7 +22,8 @@ using namespace std;
 
 ZoneDetail::ZoneDetail() :
     m_zoneHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_hiddenHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ZoneDetail::Deserialize(const rapidjson::Value &value)
         m_subnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Hidden") && !value["Hidden"].IsNull())
+    {
+        if (!value["Hidden"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneDetail.Hidden` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hidden = value["Hidden"].GetBool();
+        m_hiddenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ZoneDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hiddenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Hidden";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hidden, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ZoneDetail::SetSubnetId(const string& _subnetId)
 bool ZoneDetail::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+bool ZoneDetail::GetHidden() const
+{
+    return m_hidden;
+}
+
+void ZoneDetail::SetHidden(const bool& _hidden)
+{
+    m_hidden = _hidden;
+    m_hiddenHasBeenSet = true;
+}
+
+bool ZoneDetail::HiddenHasBeenSet() const
+{
+    return m_hiddenHasBeenSet;
 }
 

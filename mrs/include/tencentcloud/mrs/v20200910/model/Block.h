@@ -595,6 +595,27 @@ namespace TencentCloud
                      */
                     bool PhysicalExaminationHasBeenSet() const;
 
+                    /**
+                     * 获取内窥镜报告V2
+                     * @return EndoscopyV2 内窥镜报告V2
+                     * 
+                     */
+                    std::vector<Check> GetEndoscopyV2() const;
+
+                    /**
+                     * 设置内窥镜报告V2
+                     * @param _endoscopyV2 内窥镜报告V2
+                     * 
+                     */
+                    void SetEndoscopyV2(const std::vector<Check>& _endoscopyV2);
+
+                    /**
+                     * 判断参数 EndoscopyV2 是否已赋值
+                     * @return EndoscopyV2 是否已赋值
+                     * 
+                     */
+                    bool EndoscopyV2HasBeenSet() const;
+
                 private:
 
                     /**
@@ -746,6 +767,12 @@ namespace TencentCloud
                      */
                     PhysicalExaminationV1 m_physicalExamination;
                     bool m_physicalExaminationHasBeenSet;
+
+                    /**
+                     * 内窥镜报告V2
+                     */
+                    std::vector<Check> m_endoscopyV2;
+                    bool m_endoscopyV2HasBeenSet;
 
                 };
             }

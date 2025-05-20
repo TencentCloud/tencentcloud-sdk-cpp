@@ -128,23 +128,23 @@ namespace TencentCloud
                     bool AuditAllHasBeenSet() const;
 
                     /**
-                     * 获取审计规则。
-                     * @return AuditRuleFilters 审计规则。
-                     * 
+                     * 获取废弃。
+                     * @return AuditRuleFilters 废弃。
+                     * @deprecated
                      */
                     std::vector<AuditRuleFilters> GetAuditRuleFilters() const;
 
                     /**
-                     * 设置审计规则。
-                     * @param _auditRuleFilters 审计规则。
-                     * 
+                     * 设置废弃。
+                     * @param _auditRuleFilters 废弃。
+                     * @deprecated
                      */
                     void SetAuditRuleFilters(const std::vector<AuditRuleFilters>& _auditRuleFilters);
 
                     /**
                      * 判断参数 AuditRuleFilters 是否已赋值
                      * @return AuditRuleFilters 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AuditRuleFiltersHasBeenSet() const;
 
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_auditAllHasBeenSet;
 
                     /**
-                     * 审计规则。
+                     * 废弃。
                      */
                     std::vector<AuditRuleFilters> m_auditRuleFilters;
                     bool m_auditRuleFiltersHasBeenSet;

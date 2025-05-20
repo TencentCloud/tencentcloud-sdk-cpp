@@ -26,6 +26,7 @@ using namespace std;
 DescribeImageTaskDetailResponse::DescribeImageTaskDetailResponse() :
     m_taskTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_imageProcessTaskResultSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_finishTimeHasBeenSet(false)
 {
@@ -85,6 +86,26 @@ CoreInternalOutcome DescribeImageTaskDetailResponse::Deserialize(const string &p
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageProcessTaskResultSet") && !rsp["ImageProcessTaskResultSet"].IsNull())
+    {
+        if (!rsp["ImageProcessTaskResultSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageProcessTaskResultSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ImageProcessTaskResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ImageProcessTaskResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_imageProcessTaskResultSet.push_back(item);
+        }
+        m_imageProcessTaskResultSetHasBeenSet = true;
+    }
+
     if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
     {
         if (!rsp["CreateTime"].IsString())
@@ -129,6 +150,21 @@ string DescribeImageTaskDetailResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageProcessTaskResultSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageProcessTaskResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_imageProcessTaskResultSet.begin(); itr != m_imageProcessTaskResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_createTimeHasBeenSet)
@@ -177,6 +213,16 @@ string DescribeImageTaskDetailResponse::GetStatus() const
 bool DescribeImageTaskDetailResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<ImageProcessTaskResult> DescribeImageTaskDetailResponse::GetImageProcessTaskResultSet() const
+{
+    return m_imageProcessTaskResultSet;
+}
+
+bool DescribeImageTaskDetailResponse::ImageProcessTaskResultSetHasBeenSet() const
+{
+    return m_imageProcessTaskResultSetHasBeenSet;
 }
 
 string DescribeImageTaskDetailResponse::GetCreateTime() const

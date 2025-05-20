@@ -27,7 +27,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/DocItem.h
   include/tencentcloud/lkeap/v20240522/model/GetEmbeddingRequest.h
   include/tencentcloud/lkeap/v20240522/model/ImportQAsResponse.h
-  include/tencentcloud/lkeap/v20240522/model/UploadDocRealtimeRequest.h
+  include/tencentcloud/lkeap/v20240522/model/UploadDocResponse.h
   include/tencentcloud/lkeap/v20240522/model/DescribeDocResponse.h
   include/tencentcloud/lkeap/v20240522/model/AttributeLabelReferItem.h
   include/tencentcloud/lkeap/v20240522/model/DeleteQAsRequest.h
@@ -56,6 +56,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/CreateReconstructDocumentFlowConfig.h
   include/tencentcloud/lkeap/v20240522/model/RunRerankRequest.h
   include/tencentcloud/lkeap/v20240522/model/ChatUsage.h
+  include/tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeRealtimeResponse.h
   include/tencentcloud/lkeap/v20240522/model/GetSplitDocumentResultRequest.h
   include/tencentcloud/lkeap/v20240522/model/Delta.h
   include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentSSERequest.h
@@ -72,7 +73,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/GetSplitDocumentResultResponse.h
   include/tencentcloud/lkeap/v20240522/model/ModifyQAResponse.h
   include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentFailedPage.h
-  include/tencentcloud/lkeap/v20240522/model/UploadDocRealtimeResponse.h
+  include/tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeRealtimeRequest.h
   include/tencentcloud/lkeap/v20240522/model/SplitDocumentFailedPage.h
   include/tencentcloud/lkeap/v20240522/model/ModifyAttributeLabelResponse.h
   include/tencentcloud/lkeap/v20240522/model/QueryRewriteResponse.h
@@ -89,7 +90,6 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/CreateQARequest.h
   include/tencentcloud/lkeap/v20240522/model/GetCharacterUsageRequest.h
   include/tencentcloud/lkeap/v20240522/model/GetCharacterUsageResponse.h
-  include/tencentcloud/lkeap/v20240522/model/UploadDocResponse.h
   include/tencentcloud/lkeap/v20240522/model/AttributeItem.h
   include/tencentcloud/lkeap/v20240522/model/EmbeddingObject.h
   include/tencentcloud/lkeap/v20240522/model/Message.h
@@ -108,7 +108,7 @@ set(lkeap_src
   src/v20240522/model/DocItem.cpp
   src/v20240522/model/GetEmbeddingRequest.cpp
   src/v20240522/model/ImportQAsResponse.cpp
-  src/v20240522/model/UploadDocRealtimeRequest.cpp
+  src/v20240522/model/UploadDocResponse.cpp
   src/v20240522/model/DescribeDocResponse.cpp
   src/v20240522/model/AttributeLabelReferItem.cpp
   src/v20240522/model/DeleteQAsRequest.cpp
@@ -137,6 +137,7 @@ set(lkeap_src
   src/v20240522/model/CreateReconstructDocumentFlowConfig.cpp
   src/v20240522/model/RunRerankRequest.cpp
   src/v20240522/model/ChatUsage.cpp
+  src/v20240522/model/RetrieveKnowledgeRealtimeResponse.cpp
   src/v20240522/model/GetSplitDocumentResultRequest.cpp
   src/v20240522/model/Delta.cpp
   src/v20240522/model/ReconstructDocumentSSERequest.cpp
@@ -153,7 +154,7 @@ set(lkeap_src
   src/v20240522/model/GetSplitDocumentResultResponse.cpp
   src/v20240522/model/ModifyQAResponse.cpp
   src/v20240522/model/ReconstructDocumentFailedPage.cpp
-  src/v20240522/model/UploadDocRealtimeResponse.cpp
+  src/v20240522/model/RetrieveKnowledgeRealtimeRequest.cpp
   src/v20240522/model/SplitDocumentFailedPage.cpp
   src/v20240522/model/ModifyAttributeLabelResponse.cpp
   src/v20240522/model/QueryRewriteResponse.cpp
@@ -170,7 +171,6 @@ set(lkeap_src
   src/v20240522/model/CreateQARequest.cpp
   src/v20240522/model/GetCharacterUsageRequest.cpp
   src/v20240522/model/GetCharacterUsageResponse.cpp
-  src/v20240522/model/UploadDocResponse.cpp
   src/v20240522/model/AttributeItem.cpp
   src/v20240522/model/EmbeddingObject.cpp
   src/v20240522/model/Message.cpp

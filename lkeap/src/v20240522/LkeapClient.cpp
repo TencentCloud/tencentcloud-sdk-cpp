@@ -1072,6 +1072,49 @@ LkeapClient::RetrieveKnowledgeOutcomeCallable LkeapClient::RetrieveKnowledgeCall
     return task->get_future();
 }
 
+LkeapClient::RetrieveKnowledgeRealtimeOutcome LkeapClient::RetrieveKnowledgeRealtime(const RetrieveKnowledgeRealtimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "RetrieveKnowledgeRealtime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RetrieveKnowledgeRealtimeResponse rsp = RetrieveKnowledgeRealtimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RetrieveKnowledgeRealtimeOutcome(rsp);
+        else
+            return RetrieveKnowledgeRealtimeOutcome(o.GetError());
+    }
+    else
+    {
+        return RetrieveKnowledgeRealtimeOutcome(outcome.GetError());
+    }
+}
+
+void LkeapClient::RetrieveKnowledgeRealtimeAsync(const RetrieveKnowledgeRealtimeRequest& request, const RetrieveKnowledgeRealtimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RetrieveKnowledgeRealtime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeapClient::RetrieveKnowledgeRealtimeOutcomeCallable LkeapClient::RetrieveKnowledgeRealtimeCallable(const RetrieveKnowledgeRealtimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RetrieveKnowledgeRealtimeOutcome()>>(
+        [this, request]()
+        {
+            return this->RetrieveKnowledgeRealtime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeapClient::RunRerankOutcome LkeapClient::RunRerank(const RunRerankRequest &request)
 {
     auto outcome = MakeRequest(request, "RunRerank");
@@ -1151,49 +1194,6 @@ LkeapClient::UploadDocOutcomeCallable LkeapClient::UploadDocCallable(const Uploa
         [this, request]()
         {
             return this->UploadDoc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LkeapClient::UploadDocRealtimeOutcome LkeapClient::UploadDocRealtime(const UploadDocRealtimeRequest &request)
-{
-    auto outcome = MakeRequest(request, "UploadDocRealtime");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        UploadDocRealtimeResponse rsp = UploadDocRealtimeResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return UploadDocRealtimeOutcome(rsp);
-        else
-            return UploadDocRealtimeOutcome(o.GetError());
-    }
-    else
-    {
-        return UploadDocRealtimeOutcome(outcome.GetError());
-    }
-}
-
-void LkeapClient::UploadDocRealtimeAsync(const UploadDocRealtimeRequest& request, const UploadDocRealtimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadDocRealtime(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeapClient::UploadDocRealtimeOutcomeCallable LkeapClient::UploadDocRealtimeCallable(const UploadDocRealtimeRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<UploadDocRealtimeOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadDocRealtime(request);
         }
     );
 

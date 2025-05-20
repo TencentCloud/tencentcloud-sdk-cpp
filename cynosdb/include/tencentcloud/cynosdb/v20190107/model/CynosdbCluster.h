@@ -529,6 +529,27 @@ deleted:已删除
                     bool CynosVersionHasBeenSet() const;
 
                     /**
+                     * 获取cynos版本标签
+                     * @return CynosVersionTag cynos版本标签
+                     * 
+                     */
+                    std::string GetCynosVersionTag() const;
+
+                    /**
+                     * 设置cynos版本标签
+                     * @param _cynosVersionTag cynos版本标签
+                     * 
+                     */
+                    void SetCynosVersionTag(const std::string& _cynosVersionTag);
+
+                    /**
+                     * 判断参数 CynosVersionTag 是否已赋值
+                     * @return CynosVersionTag 是否已赋值
+                     * 
+                     */
+                    bool CynosVersionTagHasBeenSet() const;
+
+                    /**
                      * 获取存储容量
                      * @return StorageLimit 存储容量
                      * 
@@ -1019,6 +1040,27 @@ pause
                      */
                     bool GdnIdHasBeenSet() const;
 
+                    /**
+                     * 获取集群角色。主集群- primary，从集群 - standby，如果 GdnId为空，该字段无效。
+                     * @return GdnRole 集群角色。主集群- primary，从集群 - standby，如果 GdnId为空，该字段无效。
+                     * 
+                     */
+                    std::string GetGdnRole() const;
+
+                    /**
+                     * 设置集群角色。主集群- primary，从集群 - standby，如果 GdnId为空，该字段无效。
+                     * @param _gdnRole 集群角色。主集群- primary，从集群 - standby，如果 GdnId为空，该字段无效。
+                     * 
+                     */
+                    void SetGdnRole(const std::string& _gdnRole);
+
+                    /**
+                     * 判断参数 GdnRole 是否已赋值
+                     * @return GdnRole 是否已赋值
+                     * 
+                     */
+                    bool GdnRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1155,6 +1197,12 @@ deleted:已删除
                      */
                     std::string m_cynosVersion;
                     bool m_cynosVersionHasBeenSet;
+
+                    /**
+                     * cynos版本标签
+                     */
+                    std::string m_cynosVersionTag;
+                    bool m_cynosVersionTagHasBeenSet;
 
                     /**
                      * 存储容量
@@ -1295,6 +1343,12 @@ pause
                      */
                     std::string m_gdnId;
                     bool m_gdnIdHasBeenSet;
+
+                    /**
+                     * 集群角色。主集群- primary，从集群 - standby，如果 GdnId为空，该字段无效。
+                     */
+                    std::string m_gdnRole;
+                    bool m_gdnRoleHasBeenSet;
 
                 };
             }

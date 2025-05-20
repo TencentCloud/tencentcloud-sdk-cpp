@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lkeap/v20240522/model/UploadDocRealtimeResponse.h>
+#include <tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeRealtimeResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,11 +23,13 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lkeap::V20240522::Model;
 using namespace std;
 
-UploadDocRealtimeResponse::UploadDocRealtimeResponse()
+RetrieveKnowledgeRealtimeResponse::RetrieveKnowledgeRealtimeResponse() :
+    m_recordsHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome UploadDocRealtimeResponse::Deserialize(const string &payload)
+CoreInternalOutcome RetrieveKnowledgeRealtimeResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +63,68 @@ CoreInternalOutcome UploadDocRealtimeResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("Records") && !rsp["Records"].IsNull())
+    {
+        if (!rsp["Records"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Records` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Records"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RetrievalRecord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_records.push_back(item);
+        }
+        m_recordsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string UploadDocRealtimeResponse::ToJsonString() const
+string RetrieveKnowledgeRealtimeResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_recordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Records";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_records.begin(); itr != m_records.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string UploadDocRealtimeResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<RetrievalRecord> RetrieveKnowledgeRealtimeResponse::GetRecords() const
+{
+    return m_records;
+}
+
+bool RetrieveKnowledgeRealtimeResponse::RecordsHasBeenSet() const
+{
+    return m_recordsHasBeenSet;
+}
+
+uint64_t RetrieveKnowledgeRealtimeResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool RetrieveKnowledgeRealtimeResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 

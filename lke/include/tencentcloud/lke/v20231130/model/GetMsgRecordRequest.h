@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取数量,  数量需大于2
-                     * @return Count 数量,  数量需大于2
+                     * 获取数量,  数量需大于2, 最大1000
+                     * @return Count 数量,  数量需大于2, 最大1000
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置数量,  数量需大于2
-                     * @param _count 数量,  数量需大于2
+                     * 设置数量,  数量需大于2, 最大1000
+                     * @param _count 数量,  数量需大于2, 最大1000
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -104,27 +104,6 @@ namespace TencentCloud
                      * 
                      */
                     bool SessionIdHasBeenSet() const;
-
-                    /**
-                     * 获取最后一条记录ID
-                     * @return LastRecordId 最后一条记录ID
-                     * 
-                     */
-                    std::string GetLastRecordId() const;
-
-                    /**
-                     * 设置最后一条记录ID
-                     * @param _lastRecordId 最后一条记录ID
-                     * 
-                     */
-                    void SetLastRecordId(const std::string& _lastRecordId);
-
-                    /**
-                     * 判断参数 LastRecordId 是否已赋值
-                     * @return LastRecordId 是否已赋值
-                     * 
-                     */
-                    bool LastRecordIdHasBeenSet() const;
 
                     /**
                      * 获取应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
@@ -169,15 +148,60 @@ namespace TencentCloud
                     bool SceneHasBeenSet() const;
 
                     /**
+                     * 获取最后一条记录ID， 消息从后往前获取
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * @return LastRecordId 最后一条记录ID， 消息从后往前获取
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * 
+                     */
+                    std::string GetLastRecordId() const;
+
+                    /**
+                     * 设置最后一条记录ID， 消息从后往前获取
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * @param _lastRecordId 最后一条记录ID， 消息从后往前获取
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * 
+                     */
+                    void SetLastRecordId(const std::string& _lastRecordId);
+
+                    /**
+                     * 判断参数 LastRecordId 是否已赋值
+                     * @return LastRecordId 是否已赋值
+                     * 
+                     */
+                    bool LastRecordIdHasBeenSet() const;
+
+                    /**
                      * 获取传该值，代表拉取该记录id的前后总共count条消息记录
+
+MidRecordId与LastRecordId只能选择一个
+
                      * @return MidRecordId 传该值，代表拉取该记录id的前后总共count条消息记录
+
+MidRecordId与LastRecordId只能选择一个
+
                      * 
                      */
                     std::string GetMidRecordId() const;
 
                     /**
                      * 设置传该值，代表拉取该记录id的前后总共count条消息记录
+
+MidRecordId与LastRecordId只能选择一个
+
                      * @param _midRecordId 传该值，代表拉取该记录id的前后总共count条消息记录
+
+MidRecordId与LastRecordId只能选择一个
+
                      * 
                      */
                     void SetMidRecordId(const std::string& _midRecordId);
@@ -198,7 +222,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 数量,  数量需大于2
+                     * 数量,  数量需大于2, 最大1000
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
@@ -208,12 +232,6 @@ namespace TencentCloud
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
-
-                    /**
-                     * 最后一条记录ID
-                     */
-                    std::string m_lastRecordId;
-                    bool m_lastRecordIdHasBeenSet;
 
                     /**
                      * 应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
@@ -228,7 +246,19 @@ namespace TencentCloud
                     bool m_sceneHasBeenSet;
 
                     /**
+                     * 最后一条记录ID， 消息从后往前获取
+
+MidRecordId与LastRecordId只能选择一个
+
+                     */
+                    std::string m_lastRecordId;
+                    bool m_lastRecordIdHasBeenSet;
+
+                    /**
                      * 传该值，代表拉取该记录id的前后总共count条消息记录
+
+MidRecordId与LastRecordId只能选择一个
+
                      */
                     std::string m_midRecordId;
                     bool m_midRecordIdHasBeenSet;

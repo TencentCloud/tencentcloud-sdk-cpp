@@ -533,18 +533,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationMode 运行模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperationMode() const;
 
                     /**
                      * 设置运行模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operationMode 运行模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperationMode(const std::string& _operationMode);
@@ -558,18 +554,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时扩缩容配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimerScale 定时扩缩容配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TimerScale> GetTimerScale() const;
 
                     /**
                      * 设置定时扩缩容配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timerScale 定时扩缩容配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimerScale(const std::vector<TimerScale>& _timerScale);
@@ -723,14 +715,12 @@ namespace TencentCloud
 
                     /**
                      * 运行模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operationMode;
                     bool m_operationModeHasBeenSet;
 
                     /**
                      * 定时扩缩容配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TimerScale> m_timerScale;
                     bool m_timerScaleHasBeenSet;

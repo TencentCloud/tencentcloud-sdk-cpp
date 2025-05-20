@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/ImageProcessTaskResult.h>
 
 
 namespace TencentCloud
@@ -86,6 +87,22 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取图片处理任务的执行状态与结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageProcessTaskResultSet 图片处理任务的执行状态与结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ImageProcessTaskResult> GetImageProcessTaskResultSet() const;
+
+                    /**
+                     * 判断参数 ImageProcessTaskResultSet 是否已赋值
+                     * @return ImageProcessTaskResultSet 是否已赋值
+                     * 
+                     */
+                    bool ImageProcessTaskResultSetHasBeenSet() const;
+
+                    /**
                      * 获取任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
@@ -137,6 +154,13 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 图片处理任务的执行状态与结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ImageProcessTaskResult> m_imageProcessTaskResultSet;
+                    bool m_imageProcessTaskResultSetHasBeenSet;
 
                     /**
                      * 任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。

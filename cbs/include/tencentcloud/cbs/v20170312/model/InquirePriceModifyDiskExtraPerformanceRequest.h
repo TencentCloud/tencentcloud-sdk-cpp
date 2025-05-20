@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取额外购买的云硬盘性能值，单位MB/s。
-                     * @return ThroughputPerformance 额外购买的云硬盘性能值，单位MB/s。
+                     * 获取额外购买的云硬盘性能值，单位MiB/s。仅大小超过460GiB的增强型SSD（CLOUD_HSSD）和极速型SSD（CLOUD_TSSD）云硬盘才支持购买额外性能。
+                     * @return ThroughputPerformance 额外购买的云硬盘性能值，单位MiB/s。仅大小超过460GiB的增强型SSD（CLOUD_HSSD）和极速型SSD（CLOUD_TSSD）云硬盘才支持购买额外性能。
                      * 
                      */
                     uint64_t GetThroughputPerformance() const;
 
                     /**
-                     * 设置额外购买的云硬盘性能值，单位MB/s。
-                     * @param _throughputPerformance 额外购买的云硬盘性能值，单位MB/s。
+                     * 设置额外购买的云硬盘性能值，单位MiB/s。仅大小超过460GiB的增强型SSD（CLOUD_HSSD）和极速型SSD（CLOUD_TSSD）云硬盘才支持购买额外性能。
+                     * @param _throughputPerformance 额外购买的云硬盘性能值，单位MiB/s。仅大小超过460GiB的增强型SSD（CLOUD_HSSD）和极速型SSD（CLOUD_TSSD）云硬盘才支持购买额外性能。
                      * 
                      */
                     void SetThroughputPerformance(const uint64_t& _throughputPerformance);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 额外购买的云硬盘性能值，单位MB/s。
+                     * 额外购买的云硬盘性能值，单位MiB/s。仅大小超过460GiB的增强型SSD（CLOUD_HSSD）和极速型SSD（CLOUD_TSSD）云硬盘才支持购买额外性能。
                      */
                     uint64_t m_throughputPerformance;
                     bool m_throughputPerformanceHasBeenSet;

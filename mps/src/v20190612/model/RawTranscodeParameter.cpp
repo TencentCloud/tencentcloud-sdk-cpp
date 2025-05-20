@@ -26,7 +26,9 @@ RawTranscodeParameter::RawTranscodeParameter() :
     m_removeAudioHasBeenSet(false),
     m_videoTemplateHasBeenSet(false),
     m_audioTemplateHasBeenSet(false),
-    m_tEHDConfigHasBeenSet(false)
+    m_tEHDConfigHasBeenSet(false),
+    m_stdExtInfoHasBeenSet(false),
+    m_enhanceConfigHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,33 @@ CoreInternalOutcome RawTranscodeParameter::Deserialize(const rapidjson::Value &v
         m_tEHDConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("StdExtInfo") && !value["StdExtInfo"].IsNull())
+    {
+        if (!value["StdExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawTranscodeParameter.StdExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stdExtInfo = string(value["StdExtInfo"].GetString());
+        m_stdExtInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnhanceConfig") && !value["EnhanceConfig"].IsNull())
+    {
+        if (!value["EnhanceConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawTranscodeParameter.EnhanceConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_enhanceConfig.Deserialize(value["EnhanceConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_enhanceConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +201,23 @@ void RawTranscodeParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tEHDConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_stdExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enhanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnhanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enhanceConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -271,5 +317,37 @@ void RawTranscodeParameter::SetTEHDConfig(const TEHDConfig& _tEHDConfig)
 bool RawTranscodeParameter::TEHDConfigHasBeenSet() const
 {
     return m_tEHDConfigHasBeenSet;
+}
+
+string RawTranscodeParameter::GetStdExtInfo() const
+{
+    return m_stdExtInfo;
+}
+
+void RawTranscodeParameter::SetStdExtInfo(const string& _stdExtInfo)
+{
+    m_stdExtInfo = _stdExtInfo;
+    m_stdExtInfoHasBeenSet = true;
+}
+
+bool RawTranscodeParameter::StdExtInfoHasBeenSet() const
+{
+    return m_stdExtInfoHasBeenSet;
+}
+
+EnhanceConfig RawTranscodeParameter::GetEnhanceConfig() const
+{
+    return m_enhanceConfig;
+}
+
+void RawTranscodeParameter::SetEnhanceConfig(const EnhanceConfig& _enhanceConfig)
+{
+    m_enhanceConfig = _enhanceConfig;
+    m_enhanceConfigHasBeenSet = true;
+}
+
+bool RawTranscodeParameter::EnhanceConfigHasBeenSet() const
+{
+    return m_enhanceConfigHasBeenSet;
 }
 

@@ -145,21 +145,21 @@ namespace TencentCloud
                     /**
                      * 获取审计规则（该参数已废弃，不再生效）。
                      * @return AuditRuleFilters 审计规则（该参数已废弃，不再生效）。
-                     * 
+                     * @deprecated
                      */
                     std::vector<AuditRuleFilters> GetAuditRuleFilters() const;
 
                     /**
                      * 设置审计规则（该参数已废弃，不再生效）。
                      * @param _auditRuleFilters 审计规则（该参数已废弃，不再生效）。
-                     * 
+                     * @deprecated
                      */
                     void SetAuditRuleFilters(const std::vector<AuditRuleFilters>& _auditRuleFilters);
 
                     /**
                      * 判断参数 AuditRuleFilters 是否已赋值
                      * @return AuditRuleFilters 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AuditRuleFiltersHasBeenSet() const;
 

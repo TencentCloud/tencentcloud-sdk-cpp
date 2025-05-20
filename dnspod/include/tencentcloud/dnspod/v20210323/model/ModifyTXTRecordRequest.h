@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
-                     * @return RecordId 记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * 获取记录 ID 。
+                     * @return RecordId 记录 ID 。
                      * 
                      */
                     uint64_t GetRecordId() const;
 
                     /**
-                     * 设置记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
-                     * @param _recordId 记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * 设置记录 ID 。
+                     * @param _recordId 记录 ID 。
                      * 
                      */
                     void SetRecordId(const uint64_t& _recordId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -273,13 +273,13 @@ namespace TencentCloud
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * 记录 ID 。
                      */
                     uint64_t m_recordId;
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;

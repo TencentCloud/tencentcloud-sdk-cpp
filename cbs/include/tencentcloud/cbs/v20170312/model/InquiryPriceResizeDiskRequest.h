@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
-                     * @return DiskSize 云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * 获取云硬盘扩容后的大小，单位为GiB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * @return DiskSize 云硬盘扩容后的大小，单位为GiB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
-                     * @param _diskSize 云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * 设置云硬盘扩容后的大小，单位为GiB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * @param _diskSize 云硬盘扩容后的大小，单位为GiB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取云盘所属项目ID。 如传入则仅用于鉴权。
-                     * @return ProjectId 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * 获取云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
+                     * @return ProjectId 云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置云盘所属项目ID。 如传入则仅用于鉴权。
-                     * @param _projectId 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * 设置云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
+                     * @param _projectId 云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * 云硬盘扩容后的大小，单位为GiB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * 云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;

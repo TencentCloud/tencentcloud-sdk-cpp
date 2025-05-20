@@ -26,7 +26,8 @@ CreatePrefetchTaskRequest::CreatePrefetchTaskRequest() :
     m_zoneIdHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_encodeUrlHasBeenSet(false),
-    m_headersHasBeenSet(false)
+    m_headersHasBeenSet(false),
+    m_prefetchMediaSegmentsHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string CreatePrefetchTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_prefetchMediaSegmentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrefetchMediaSegments";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_prefetchMediaSegments.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -151,6 +160,22 @@ void CreatePrefetchTaskRequest::SetHeaders(const vector<Header>& _headers)
 bool CreatePrefetchTaskRequest::HeadersHasBeenSet() const
 {
     return m_headersHasBeenSet;
+}
+
+string CreatePrefetchTaskRequest::GetPrefetchMediaSegments() const
+{
+    return m_prefetchMediaSegments;
+}
+
+void CreatePrefetchTaskRequest::SetPrefetchMediaSegments(const string& _prefetchMediaSegments)
+{
+    m_prefetchMediaSegments = _prefetchMediaSegments;
+    m_prefetchMediaSegmentsHasBeenSet = true;
+}
+
+bool CreatePrefetchTaskRequest::PrefetchMediaSegmentsHasBeenSet() const
+{
+    return m_prefetchMediaSegmentsHasBeenSet;
 }
 
 

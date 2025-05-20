@@ -75,14 +75,22 @@ namespace TencentCloud
 
                     /**
                      * 获取指定企业经办签署人OpenId
+
+注: `签署人OpenId未实名时，需要传入签署人姓名以及手机号码。`
                      * @return OpenId 指定企业经办签署人OpenId
+
+注: `签署人OpenId未实名时，需要传入签署人姓名以及手机号码。`
                      * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置指定企业经办签署人OpenId
+
+注: `签署人OpenId未实名时，需要传入签署人姓名以及手机号码。`
                      * @param _openId 指定企业经办签署人OpenId
+
+注: `签署人OpenId未实名时，需要传入签署人姓名以及手机号码。`
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -329,6 +337,8 @@ namespace TencentCloud
 
                     /**
                      * 指定企业经办签署人OpenId
+
+注: `签署人OpenId未实名时，需要传入签署人姓名以及手机号码。`
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

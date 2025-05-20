@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取快照 ID
-                     * @return SnapshotId 快照 ID
+                     * 获取快照记录 ID
+                     * @return SnapshotId 快照记录 ID
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置快照 ID
-                     * @param _snapshotId 快照 ID
+                     * 设置快照记录 ID
+                     * @param _snapshotId 快照记录 ID
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 快照 ID
+                     * 快照记录 ID
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;

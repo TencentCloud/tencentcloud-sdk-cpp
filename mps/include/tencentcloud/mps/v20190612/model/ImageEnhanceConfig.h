@@ -25,10 +25,12 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SuperResolutionConfig.h>
+#include <tencentcloud/mps/v20190612/model/ImageDenoiseConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageQualityEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/ColorEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/SharpEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/FaceEnhanceConfig.h>
+#include <tencentcloud/mps/v20190612/model/LowLightEnhanceConfig.h>
 
 
 namespace TencentCloud
@@ -75,6 +77,31 @@ namespace TencentCloud
                      * 
                      */
                     bool SuperResolutionHasBeenSet() const;
+
+                    /**
+                     * 获取降噪配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Denoise 降噪配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ImageDenoiseConfig GetDenoise() const;
+
+                    /**
+                     * 设置降噪配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _denoise 降噪配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDenoise(const ImageDenoiseConfig& _denoise);
+
+                    /**
+                     * 判断参数 Denoise 是否已赋值
+                     * @return Denoise 是否已赋值
+                     * 
+                     */
+                    bool DenoiseHasBeenSet() const;
 
                     /**
                      * 获取综合增强配置。
@@ -176,6 +203,31 @@ namespace TencentCloud
                      */
                     bool FaceEnhanceHasBeenSet() const;
 
+                    /**
+                     * 获取低光照增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LowLightEnhance 低光照增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    LowLightEnhanceConfig GetLowLightEnhance() const;
+
+                    /**
+                     * 设置低光照增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lowLightEnhance 低光照增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLowLightEnhance(const LowLightEnhanceConfig& _lowLightEnhance);
+
+                    /**
+                     * 判断参数 LowLightEnhance 是否已赋值
+                     * @return LowLightEnhance 是否已赋值
+                     * 
+                     */
+                    bool LowLightEnhanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +236,13 @@ namespace TencentCloud
                      */
                     SuperResolutionConfig m_superResolution;
                     bool m_superResolutionHasBeenSet;
+
+                    /**
+                     * 降噪配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageDenoiseConfig m_denoise;
+                    bool m_denoiseHasBeenSet;
 
                     /**
                      * 综合增强配置。
@@ -212,6 +271,13 @@ namespace TencentCloud
                      */
                     FaceEnhanceConfig m_faceEnhance;
                     bool m_faceEnhanceHasBeenSet;
+
+                    /**
+                     * 低光照增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LowLightEnhanceConfig m_lowLightEnhance;
+                    bool m_lowLightEnhanceHasBeenSet;
 
                 };
             }

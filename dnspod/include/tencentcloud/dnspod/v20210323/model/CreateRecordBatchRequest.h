@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名ID，多个 domain_id 用英文逗号进行分割。
-                     * @return DomainIdList 域名ID，多个 domain_id 用英文逗号进行分割。
+                     * 获取域名ID，多个域名ID用英文逗号进行分割。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @return DomainIdList 域名ID，多个域名ID用英文逗号进行分割。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * 
                      */
                     std::vector<std::string> GetDomainIdList() const;
 
                     /**
-                     * 设置域名ID，多个 domain_id 用英文逗号进行分割。
-                     * @param _domainIdList 域名ID，多个 domain_id 用英文逗号进行分割。
+                     * 设置域名ID，多个域名ID用英文逗号进行分割。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @param _domainIdList 域名ID，多个域名ID用英文逗号进行分割。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * 
                      */
                     void SetDomainIdList(const std::vector<std::string>& _domainIdList);
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名ID，多个 domain_id 用英文逗号进行分割。
+                     * 域名ID，多个域名ID用英文逗号进行分割。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      */
                     std::vector<std::string> m_domainIdList;
                     bool m_domainIdListHasBeenSet;

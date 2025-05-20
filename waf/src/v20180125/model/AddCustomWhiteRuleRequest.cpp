@@ -30,7 +30,8 @@ AddCustomWhiteRuleRequest::AddCustomWhiteRuleRequest() :
     m_bypassHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_jobTypeHasBeenSet(false),
-    m_jobDateTimeHasBeenSet(false)
+    m_jobDateTimeHasBeenSet(false),
+    m_logicalOpHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string AddCustomWhiteRuleRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_jobDateTime.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_logicalOpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicalOp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -247,6 +256,22 @@ void AddCustomWhiteRuleRequest::SetJobDateTime(const JobDateTime& _jobDateTime)
 bool AddCustomWhiteRuleRequest::JobDateTimeHasBeenSet() const
 {
     return m_jobDateTimeHasBeenSet;
+}
+
+string AddCustomWhiteRuleRequest::GetLogicalOp() const
+{
+    return m_logicalOp;
+}
+
+void AddCustomWhiteRuleRequest::SetLogicalOp(const string& _logicalOp)
+{
+    m_logicalOp = _logicalOp;
+    m_logicalOpHasBeenSet = true;
+}
+
+bool AddCustomWhiteRuleRequest::LogicalOpHasBeenSet() const
+{
+    return m_logicalOpHasBeenSet;
 }
 
 

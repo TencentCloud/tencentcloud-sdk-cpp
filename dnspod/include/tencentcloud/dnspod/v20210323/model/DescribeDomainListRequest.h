@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分组ID, 获取指定分组的域名
-                     * @return GroupId 分组ID, 获取指定分组的域名
+                     * 获取分组ID, 获取指定分组的域名，可以通过接口DescribeDomainGroupList查看当前域名分组信息
+                     * @return GroupId 分组ID, 获取指定分组的域名，可以通过接口DescribeDomainGroupList查看当前域名分组信息
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置分组ID, 获取指定分组的域名
-                     * @param _groupId 分组ID, 获取指定分组的域名
+                     * 设置分组ID, 获取指定分组的域名，可以通过接口DescribeDomainGroupList查看当前域名分组信息
+                     * @param _groupId 分组ID, 获取指定分组的域名，可以通过接口DescribeDomainGroupList查看当前域名分组信息
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -190,7 +190,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分组ID, 获取指定分组的域名
+                     * 分组ID, 获取指定分组的域名，可以通过接口DescribeDomainGroupList查看当前域名分组信息
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;

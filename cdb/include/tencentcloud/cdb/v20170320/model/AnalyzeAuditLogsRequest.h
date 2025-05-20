@@ -130,23 +130,23 @@ namespace TencentCloud
                     bool AggregationConditionsHasBeenSet() const;
 
                     /**
-                     * 获取已废弃。该过滤条件下的审计日志结果集作为分析日志。
-                     * @return AuditLogFilter 已废弃。该过滤条件下的审计日志结果集作为分析日志。
-                     * 
+                     * 获取已废弃。
+                     * @return AuditLogFilter 已废弃。
+                     * @deprecated
                      */
                     AuditLogFilter GetAuditLogFilter() const;
 
                     /**
-                     * 设置已废弃。该过滤条件下的审计日志结果集作为分析日志。
-                     * @param _auditLogFilter 已废弃。该过滤条件下的审计日志结果集作为分析日志。
-                     * 
+                     * 设置已废弃。
+                     * @param _auditLogFilter 已废弃。
+                     * @deprecated
                      */
                     void SetAuditLogFilter(const AuditLogFilter& _auditLogFilter);
 
                     /**
                      * 判断参数 AuditLogFilter 是否已赋值
                      * @return AuditLogFilter 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AuditLogFilterHasBeenSet() const;
 
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_aggregationConditionsHasBeenSet;
 
                     /**
-                     * 已废弃。该过滤条件下的审计日志结果集作为分析日志。
+                     * 已废弃。
                      */
                     AuditLogFilter m_auditLogFilter;
                     bool m_auditLogFilterHasBeenSet;

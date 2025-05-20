@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取MX记录优先级，仅当修改为 MX 记录时为必填参数。
-                     * @return MX MX记录优先级，仅当修改为 MX 记录时为必填参数。
+                     * 获取MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * @return MX MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
                      * 
                      */
                     std::string GetMX() const;
 
                     /**
-                     * 设置MX记录优先级，仅当修改为 MX 记录时为必填参数。
-                     * @param _mX MX记录优先级，仅当修改为 MX 记录时为必填参数。
+                     * 设置MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * @param _mX MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
                      * 
                      */
                     void SetMX(const std::string& _mX);
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_valueHasBeenSet;
 
                     /**
-                     * MX记录优先级，仅当修改为 MX 记录时为必填参数。
+                     * MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
                      */
                     std::string m_mX;
                     bool m_mXHasBeenSet;

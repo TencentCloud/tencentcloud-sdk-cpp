@@ -125,6 +125,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateUserNameChangeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationAuthFileRequest.h
   include/tencentcloud/ess/v20201111/model/Staff.h
   include/tencentcloud/ess/v20201111/model/ComponentLimit.h
@@ -236,6 +237,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DynamicFlowApproverResult.h
   include/tencentcloud/ess/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationsRequest.h
+  include/tencentcloud/ess/v20201111/model/StartFlowRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.h
   include/tencentcloud/ess/v20201111/model/CreateUserVerifyUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreatePartnerAutoSignAuthUrlRequest.h
@@ -262,7 +264,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowGroupRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFileCounterSignResponse.h
   include/tencentcloud/ess/v20201111/model/VerifyDigitFileResult.h
-  include/tencentcloud/ess/v20201111/model/StartFlowRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateUserNameChangeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateSealResponse.h
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeUserFlowTypeRequest.h
@@ -440,6 +442,7 @@ set(ess_src
   src/v20201111/model/CreateOrganizationInfoChangeUrlResponse.cpp
   src/v20201111/model/DeleteOrganizationAuthorizationsResponse.cpp
   src/v20201111/model/DescribeExtendedServiceAuthDetailRequest.cpp
+  src/v20201111/model/CreateUserNameChangeUrlRequest.cpp
   src/v20201111/model/CreateOrganizationAuthFileRequest.cpp
   src/v20201111/model/Staff.cpp
   src/v20201111/model/ComponentLimit.cpp
@@ -551,6 +554,7 @@ set(ess_src
   src/v20201111/model/DynamicFlowApproverResult.cpp
   src/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdRequest.cpp
   src/v20201111/model/DeleteOrganizationAuthorizationsRequest.cpp
+  src/v20201111/model/StartFlowRequest.cpp
   src/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.cpp
   src/v20201111/model/CreateUserVerifyUrlRequest.cpp
   src/v20201111/model/CreatePartnerAutoSignAuthUrlRequest.cpp
@@ -577,7 +581,7 @@ set(ess_src
   src/v20201111/model/CreatePrepareFlowGroupRequest.cpp
   src/v20201111/model/CreateFileCounterSignResponse.cpp
   src/v20201111/model/VerifyDigitFileResult.cpp
-  src/v20201111/model/StartFlowRequest.cpp
+  src/v20201111/model/CreateUserNameChangeUrlResponse.cpp
   src/v20201111/model/CreateSealResponse.cpp
   src/v20201111/model/CreatePrepareFlowRequest.cpp
   src/v20201111/model/DescribeUserFlowTypeRequest.cpp

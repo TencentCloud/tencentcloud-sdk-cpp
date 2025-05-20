@@ -52,7 +52,6 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeProductConfigRequest.h
   include/tencentcloud/postgres/v20170312/model/RemoveDBInstanceFromReadOnlyGroupRequest.h
   include/tencentcloud/postgres/v20170312/model/CreateAccountRequest.h
-  include/tencentcloud/postgres/v20170312/model/InitDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeTasksResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeMaintainTimeWindowResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDefaultParametersRequest.h
@@ -174,7 +173,6 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeServerlessDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeBackupOverviewResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeParameterTemplatesRequest.h
-  include/tencentcloud/postgres/v20170312/model/InitDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeClassesResponse.h
   include/tencentcloud/postgres/v20170312/model/DeleteDBInstanceNetworkAccessRequest.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceDeploymentResponse.h
@@ -317,7 +315,6 @@ set(postgres_src
   src/v20170312/model/DescribeProductConfigRequest.cpp
   src/v20170312/model/RemoveDBInstanceFromReadOnlyGroupRequest.cpp
   src/v20170312/model/CreateAccountRequest.cpp
-  src/v20170312/model/InitDBInstancesResponse.cpp
   src/v20170312/model/DescribeTasksResponse.cpp
   src/v20170312/model/DescribeMaintainTimeWindowResponse.cpp
   src/v20170312/model/DescribeDefaultParametersRequest.cpp
@@ -439,7 +436,6 @@ set(postgres_src
   src/v20170312/model/DescribeServerlessDBInstancesResponse.cpp
   src/v20170312/model/DescribeBackupOverviewResponse.cpp
   src/v20170312/model/DescribeParameterTemplatesRequest.cpp
-  src/v20170312/model/InitDBInstancesRequest.cpp
   src/v20170312/model/DescribeClassesResponse.cpp
   src/v20170312/model/DeleteDBInstanceNetworkAccessRequest.cpp
   src/v20170312/model/ModifyDBInstanceDeploymentResponse.cpp

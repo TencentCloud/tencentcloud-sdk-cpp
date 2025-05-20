@@ -2405,6 +2405,49 @@ EssClient::CreateUserMobileChangeUrlOutcomeCallable EssClient::CreateUserMobileC
     return task->get_future();
 }
 
+EssClient::CreateUserNameChangeUrlOutcome EssClient::CreateUserNameChangeUrl(const CreateUserNameChangeUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserNameChangeUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserNameChangeUrlResponse rsp = CreateUserNameChangeUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserNameChangeUrlOutcome(rsp);
+        else
+            return CreateUserNameChangeUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserNameChangeUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateUserNameChangeUrlAsync(const CreateUserNameChangeUrlRequest& request, const CreateUserNameChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserNameChangeUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateUserNameChangeUrlOutcomeCallable EssClient::CreateUserNameChangeUrlCallable(const CreateUserNameChangeUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserNameChangeUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserNameChangeUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateUserVerifyUrlOutcome EssClient::CreateUserVerifyUrl(const CreateUserVerifyUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUserVerifyUrl");

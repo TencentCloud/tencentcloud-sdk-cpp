@@ -308,15 +308,31 @@ namespace TencentCloud
                     bool AuthenticationsHasBeenSet() const;
 
                     /**
-                     * 获取TaskInstance失败后处理方式，取值包括TERMINATE（默认）、INTERRUPT、FAST_INTERRUPT。
-                     * @return FailedAction TaskInstance失败后处理方式，取值包括TERMINATE（默认）、INTERRUPT、FAST_INTERRUPT。
+                     * 获取TaskInstance失败后处理方式，取值包括
+
+- TERMINATE：销毁计算实例（默认）、
+- INTERRUPT：中断任务，保留计算实例、
+- FAST_INTERRUPT： 快速中断任务， 保留计算实例。
+                     * @return FailedAction TaskInstance失败后处理方式，取值包括
+
+- TERMINATE：销毁计算实例（默认）、
+- INTERRUPT：中断任务，保留计算实例、
+- FAST_INTERRUPT： 快速中断任务， 保留计算实例。
                      * 
                      */
                     std::string GetFailedAction() const;
 
                     /**
-                     * 设置TaskInstance失败后处理方式，取值包括TERMINATE（默认）、INTERRUPT、FAST_INTERRUPT。
-                     * @param _failedAction TaskInstance失败后处理方式，取值包括TERMINATE（默认）、INTERRUPT、FAST_INTERRUPT。
+                     * 设置TaskInstance失败后处理方式，取值包括
+
+- TERMINATE：销毁计算实例（默认）、
+- INTERRUPT：中断任务，保留计算实例、
+- FAST_INTERRUPT： 快速中断任务， 保留计算实例。
+                     * @param _failedAction TaskInstance失败后处理方式，取值包括
+
+- TERMINATE：销毁计算实例（默认）、
+- INTERRUPT：中断任务，保留计算实例、
+- FAST_INTERRUPT： 快速中断任务， 保留计算实例。
                      * 
                      */
                     void SetFailedAction(const std::string& _failedAction);
@@ -536,7 +552,11 @@ namespace TencentCloud
                     bool m_authenticationsHasBeenSet;
 
                     /**
-                     * TaskInstance失败后处理方式，取值包括TERMINATE（默认）、INTERRUPT、FAST_INTERRUPT。
+                     * TaskInstance失败后处理方式，取值包括
+
+- TERMINATE：销毁计算实例（默认）、
+- INTERRUPT：中断任务，保留计算实例、
+- FAST_INTERRUPT： 快速中断任务， 保留计算实例。
                      */
                     std::string m_failedAction;
                     bool m_failedActionHasBeenSet;

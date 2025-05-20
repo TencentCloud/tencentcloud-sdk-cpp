@@ -37,7 +37,9 @@ CCRuleItems::CCRuleItems() :
     m_eventIdHasBeenSet(false),
     m_sessionAppliedHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_limitMethodHasBeenSet(false)
+    m_limitMethodHasBeenSet(false),
+    m_celRuleHasBeenSet(false),
+    m_logicalOpHasBeenSet(false)
 {
 }
 
@@ -219,6 +221,26 @@ CoreInternalOutcome CCRuleItems::Deserialize(const rapidjson::Value &value)
         m_limitMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("CelRule") && !value["CelRule"].IsNull())
+    {
+        if (!value["CelRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.CelRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_celRule = string(value["CelRule"].GetString());
+        m_celRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogicalOp") && !value["LogicalOp"].IsNull())
+    {
+        if (!value["LogicalOp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.LogicalOp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logicalOp = string(value["LogicalOp"].GetString());
+        m_logicalOpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +387,22 @@ void CCRuleItems::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "LimitMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_limitMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_celRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CelRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_celRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logicalOpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicalOp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -640,5 +678,37 @@ void CCRuleItems::SetLimitMethod(const string& _limitMethod)
 bool CCRuleItems::LimitMethodHasBeenSet() const
 {
     return m_limitMethodHasBeenSet;
+}
+
+string CCRuleItems::GetCelRule() const
+{
+    return m_celRule;
+}
+
+void CCRuleItems::SetCelRule(const string& _celRule)
+{
+    m_celRule = _celRule;
+    m_celRuleHasBeenSet = true;
+}
+
+bool CCRuleItems::CelRuleHasBeenSet() const
+{
+    return m_celRuleHasBeenSet;
+}
+
+string CCRuleItems::GetLogicalOp() const
+{
+    return m_logicalOp;
+}
+
+void CCRuleItems::SetLogicalOp(const string& _logicalOp)
+{
+    m_logicalOp = _logicalOp;
+    m_logicalOpHasBeenSet = true;
+}
+
+bool CCRuleItems::LogicalOpHasBeenSet() const
+{
+    return m_logicalOpHasBeenSet;
 }
 

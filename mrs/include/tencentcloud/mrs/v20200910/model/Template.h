@@ -679,6 +679,27 @@ namespace TencentCloud
                      */
                     bool TimelineHasBeenSet() const;
 
+                    /**
+                     * 获取内窥镜报告V2
+                     * @return EndoscopyV2 内窥镜报告V2
+                     * 
+                     */
+                    Check GetEndoscopyV2() const;
+
+                    /**
+                     * 设置内窥镜报告V2
+                     * @param _endoscopyV2 内窥镜报告V2
+                     * 
+                     */
+                    void SetEndoscopyV2(const Check& _endoscopyV2);
+
+                    /**
+                     * 判断参数 EndoscopyV2 是否已赋值
+                     * @return EndoscopyV2 是否已赋值
+                     * 
+                     */
+                    bool EndoscopyV2HasBeenSet() const;
+
                 private:
 
                     /**
@@ -854,6 +875,12 @@ namespace TencentCloud
                      */
                     TimelineInformation m_timeline;
                     bool m_timelineHasBeenSet;
+
+                    /**
+                     * 内窥镜报告V2
+                     */
+                    Check m_endoscopyV2;
+                    bool m_endoscopyV2HasBeenSet;
 
                 };
             }

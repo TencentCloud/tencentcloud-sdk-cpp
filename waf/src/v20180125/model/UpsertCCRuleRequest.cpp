@@ -29,11 +29,11 @@ UpsertCCRuleRequest::UpsertCCRuleRequest() :
     m_advanceHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_intervalHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_matchFuncHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_validTimeHasBeenSet(false),
+    m_urlHasBeenSet(false),
+    m_matchFuncHasBeenSet(false),
     m_optionsArrHasBeenSet(false),
     m_editionHasBeenSet(false),
     m_typeHasBeenSet(false),
@@ -42,7 +42,9 @@ UpsertCCRuleRequest::UpsertCCRuleRequest() :
     m_ruleIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_lengthHasBeenSet(false),
-    m_limitMethodHasBeenSet(false)
+    m_limitMethodHasBeenSet(false),
+    m_celRuleHasBeenSet(false),
+    m_logicalOpHasBeenSet(false)
 {
 }
 
@@ -101,22 +103,6 @@ string UpsertCCRuleRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_interval.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_urlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Url";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_matchFuncHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MatchFunc";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_matchFunc, allocator);
-    }
-
     if (m_actionTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +125,22 @@ string UpsertCCRuleRequest::ToJsonString() const
         string key = "ValidTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_validTime, allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchFuncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchFunc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_matchFunc, allocator);
     }
 
     if (m_optionsArrHasBeenSet)
@@ -216,6 +218,22 @@ string UpsertCCRuleRequest::ToJsonString() const
         string key = "LimitMethod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_limitMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_celRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CelRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_celRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logicalOpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicalOp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -322,38 +340,6 @@ bool UpsertCCRuleRequest::IntervalHasBeenSet() const
     return m_intervalHasBeenSet;
 }
 
-string UpsertCCRuleRequest::GetUrl() const
-{
-    return m_url;
-}
-
-void UpsertCCRuleRequest::SetUrl(const string& _url)
-{
-    m_url = _url;
-    m_urlHasBeenSet = true;
-}
-
-bool UpsertCCRuleRequest::UrlHasBeenSet() const
-{
-    return m_urlHasBeenSet;
-}
-
-int64_t UpsertCCRuleRequest::GetMatchFunc() const
-{
-    return m_matchFunc;
-}
-
-void UpsertCCRuleRequest::SetMatchFunc(const int64_t& _matchFunc)
-{
-    m_matchFunc = _matchFunc;
-    m_matchFuncHasBeenSet = true;
-}
-
-bool UpsertCCRuleRequest::MatchFuncHasBeenSet() const
-{
-    return m_matchFuncHasBeenSet;
-}
-
 string UpsertCCRuleRequest::GetActionType() const
 {
     return m_actionType;
@@ -400,6 +386,38 @@ void UpsertCCRuleRequest::SetValidTime(const int64_t& _validTime)
 bool UpsertCCRuleRequest::ValidTimeHasBeenSet() const
 {
     return m_validTimeHasBeenSet;
+}
+
+string UpsertCCRuleRequest::GetUrl() const
+{
+    return m_url;
+}
+
+void UpsertCCRuleRequest::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
+}
+
+int64_t UpsertCCRuleRequest::GetMatchFunc() const
+{
+    return m_matchFunc;
+}
+
+void UpsertCCRuleRequest::SetMatchFunc(const int64_t& _matchFunc)
+{
+    m_matchFunc = _matchFunc;
+    m_matchFuncHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::MatchFuncHasBeenSet() const
+{
+    return m_matchFuncHasBeenSet;
 }
 
 string UpsertCCRuleRequest::GetOptionsArr() const
@@ -544,6 +562,38 @@ void UpsertCCRuleRequest::SetLimitMethod(const string& _limitMethod)
 bool UpsertCCRuleRequest::LimitMethodHasBeenSet() const
 {
     return m_limitMethodHasBeenSet;
+}
+
+string UpsertCCRuleRequest::GetCelRule() const
+{
+    return m_celRule;
+}
+
+void UpsertCCRuleRequest::SetCelRule(const string& _celRule)
+{
+    m_celRule = _celRule;
+    m_celRuleHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::CelRuleHasBeenSet() const
+{
+    return m_celRuleHasBeenSet;
+}
+
+string UpsertCCRuleRequest::GetLogicalOp() const
+{
+    return m_logicalOp;
+}
+
+void UpsertCCRuleRequest::SetLogicalOp(const string& _logicalOp)
+{
+    m_logicalOp = _logicalOp;
+    m_logicalOpHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::LogicalOpHasBeenSet() const
+{
+    return m_logicalOpHasBeenSet;
 }
 
 

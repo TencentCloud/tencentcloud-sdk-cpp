@@ -341,14 +341,22 @@ namespace TencentCloud
 
                     /**
                      * 获取二维码，在生成动态签署人跳转封面页链接时返回
+
+注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存。`
                      * @return SignQrcodeUrl 二维码，在生成动态签署人跳转封面页链接时返回
+
+注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存。`
                      * 
                      */
                     std::string GetSignQrcodeUrl() const;
 
                     /**
                      * 设置二维码，在生成动态签署人跳转封面页链接时返回
+
+注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存。`
                      * @param _signQrcodeUrl 二维码，在生成动态签署人跳转封面页链接时返回
+
+注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存。`
                      * 
                      */
                     void SetSignQrcodeUrl(const std::string& _signQrcodeUrl);
@@ -447,6 +455,8 @@ namespace TencentCloud
 
                     /**
                      * 二维码，在生成动态签署人跳转封面页链接时返回
+
+注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存。`
                      */
                     std::string m_signQrcodeUrl;
                     bool m_signQrcodeUrlHasBeenSet;

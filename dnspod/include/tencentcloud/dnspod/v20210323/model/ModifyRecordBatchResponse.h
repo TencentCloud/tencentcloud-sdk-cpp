@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取见modifyRecordBatchDetail
-                     * @return DetailList 见modifyRecordBatchDetail
+                     * 获取见ModifyRecordBatchDetail
+                     * @return DetailList 见ModifyRecordBatchDetail
                      * 
                      */
                     std::vector<ModifyRecordBatchDetail> GetDetailList() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 见modifyRecordBatchDetail
+                     * 见ModifyRecordBatchDetail
                      */
                     std::vector<ModifyRecordBatchDetail> m_detailList;
                     bool m_detailListHasBeenSet;

@@ -163,15 +163,15 @@ namespace TencentCloud
                     bool OriginProtocolHasBeenSet() const;
 
                     /**
-                     * 获取HTTP 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 http 或者 follow 时生效。
-                     * @return HTTPOriginPort HTTP 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 http 或者 follow 时生效。
+                     * 获取HTTP 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 http 或者 follow 时该参数必填。
+                     * @return HTTPOriginPort HTTP 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 http 或者 follow 时该参数必填。
                      * 
                      */
                     int64_t GetHTTPOriginPort() const;
 
                     /**
-                     * 设置HTTP 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 http 或者 follow 时生效。
-                     * @param _hTTPOriginPort HTTP 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 http 或者 follow 时生效。
+                     * 设置HTTP 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 http 或者 follow 时该参数必填。
+                     * @param _hTTPOriginPort HTTP 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 http 或者 follow 时该参数必填。
                      * 
                      */
                     void SetHTTPOriginPort(const int64_t& _hTTPOriginPort);
@@ -184,15 +184,15 @@ namespace TencentCloud
                     bool HTTPOriginPortHasBeenSet() const;
 
                     /**
-                     * 获取HTTPS 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 https 或者 follow 时生效。
-                     * @return HTTPSOriginPort HTTPS 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 https 或者 follow 时生效。
+                     * 获取HTTPS 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 https 或者 follow 时该参数必填。
+                     * @return HTTPSOriginPort HTTPS 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 https 或者 follow 时该参数必填。
                      * 
                      */
                     int64_t GetHTTPSOriginPort() const;
 
                     /**
-                     * 设置HTTPS 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 https 或者 follow 时生效。
-                     * @param _hTTPSOriginPort HTTPS 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 https 或者 follow 时生效。
+                     * 设置HTTPS 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 https 或者 follow 时该参数必填。
+                     * @param _hTTPSOriginPort HTTPS 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 https 或者 follow 时该参数必填。
                      * 
                      */
                     void SetHTTPSOriginPort(const int64_t& _hTTPSOriginPort);
@@ -205,23 +205,23 @@ namespace TencentCloud
                     bool HTTPSOriginPortHasBeenSet() const;
 
                     /**
-                     * 获取指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWSS3 时会生效，取值有：
+                     * 获取指定是否允许访问私有对象存储源站，当源站类型 OriginType = COS 或 AWSS3 时该参数必填，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>不填写时，默认值为off。
-                     * @return PrivateAccess 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWSS3 时会生效，取值有：
+<li>off：不使用私有鉴权。</li>
+                     * @return PrivateAccess 指定是否允许访问私有对象存储源站，当源站类型 OriginType = COS 或 AWSS3 时该参数必填，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>不填写时，默认值为off。
+<li>off：不使用私有鉴权。</li>
                      * 
                      */
                     std::string GetPrivateAccess() const;
 
                     /**
-                     * 设置指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWSS3 时会生效，取值有：
+                     * 设置指定是否允许访问私有对象存储源站，当源站类型 OriginType = COS 或 AWSS3 时该参数必填，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>不填写时，默认值为off。
-                     * @param _privateAccess 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWSS3 时会生效，取值有：
+<li>off：不使用私有鉴权。</li>
+                     * @param _privateAccess 指定是否允许访问私有对象存储源站，当源站类型 OriginType = COS 或 AWSS3 时该参数必填，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>不填写时，默认值为off。
+<li>off：不使用私有鉴权。</li>
                      * 
                      */
                     void SetPrivateAccess(const std::string& _privateAccess);
@@ -292,21 +292,21 @@ namespace TencentCloud
                     bool m_originProtocolHasBeenSet;
 
                     /**
-                     * HTTP 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 http 或者 follow 时生效。
+                     * HTTP 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 http 或者 follow 时该参数必填。
                      */
                     int64_t m_hTTPOriginPort;
                     bool m_hTTPOriginPortHasBeenSet;
 
                     /**
-                     * HTTPS 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 https 或者 follow 时生效。
+                     * HTTPS 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 https 或者 follow 时该参数必填。
                      */
                     int64_t m_hTTPSOriginPort;
                     bool m_hTTPSOriginPortHasBeenSet;
 
                     /**
-                     * 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWSS3 时会生效，取值有：
+                     * 指定是否允许访问私有对象存储源站，当源站类型 OriginType = COS 或 AWSS3 时该参数必填，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>不填写时，默认值为off。
+<li>off：不使用私有鉴权。</li>
                      */
                     std::string m_privateAccess;
                     bool m_privateAccessHasBeenSet;

@@ -31,7 +31,8 @@ CreateTranscodeTemplateRequest::CreateTranscodeTemplateRequest() :
     m_videoTemplateHasBeenSet(false),
     m_audioTemplateHasBeenSet(false),
     m_tEHDConfigHasBeenSet(false),
-    m_enhanceConfigHasBeenSet(false)
+    m_enhanceConfigHasBeenSet(false),
+    m_stdExtInfoHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,14 @@ string CreateTranscodeTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enhanceConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_stdExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -268,6 +277,22 @@ void CreateTranscodeTemplateRequest::SetEnhanceConfig(const EnhanceConfig& _enha
 bool CreateTranscodeTemplateRequest::EnhanceConfigHasBeenSet() const
 {
     return m_enhanceConfigHasBeenSet;
+}
+
+string CreateTranscodeTemplateRequest::GetStdExtInfo() const
+{
+    return m_stdExtInfo;
+}
+
+void CreateTranscodeTemplateRequest::SetStdExtInfo(const string& _stdExtInfo)
+{
+    m_stdExtInfo = _stdExtInfo;
+    m_stdExtInfoHasBeenSet = true;
+}
+
+bool CreateTranscodeTemplateRequest::StdExtInfoHasBeenSet() const
+{
+    return m_stdExtInfoHasBeenSet;
 }
 
 

@@ -859,13 +859,11 @@ false：否
                     /**
                      * 获取四级分类
 1:"仅含2种数字"
-1:"仅含2种数字"
 2:"仅含3种数字"
 4:"仅含1种字母"
 8:"仅含1种数字"
 
                      * @return ClassFour 四级分类
-1:"仅含2种数字"
 1:"仅含2种数字"
 2:"仅含3种数字"
 4:"仅含1种字母"
@@ -878,13 +876,11 @@ false：否
                     /**
                      * 设置四级分类
 1:"仅含2种数字"
-1:"仅含2种数字"
 2:"仅含3种数字"
 4:"仅含1种字母"
 8:"仅含1种数字"
 
                      * @param _classFour 四级分类
-1:"仅含2种数字"
 1:"仅含2种数字"
 2:"仅含3种数字"
 4:"仅含1种字母"
@@ -1006,15 +1002,15 @@ FilterWords+FilterStart（true）+FilterEnd（true）：使用域名开头或结
                     bool TransTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否搜索白金域名
-                     * @return IsTop 是否搜索白金域名
+                     * 获取是否搜索白金域名（默认值为false）
+                     * @return IsTop 是否搜索白金域名（默认值为false）
                      * 
                      */
                     bool GetIsTop() const;
 
                     /**
-                     * 设置是否搜索白金域名
-                     * @param _isTop 是否搜索白金域名
+                     * 设置是否搜索白金域名（默认值为false）
+                     * @param _isTop 是否搜索白金域名（默认值为false）
                      * 
                      */
                     void SetIsTop(const bool& _isTop);
@@ -1287,7 +1283,6 @@ false：否
                     /**
                      * 四级分类
 1:"仅含2种数字"
-1:"仅含2种数字"
 2:"仅含3种数字"
 4:"仅含1种字母"
 8:"仅含1种数字"
@@ -1326,7 +1321,7 @@ FilterWords+FilterStart（true）+FilterEnd（true）：使用域名开头或结
                     bool m_transTypeHasBeenSet;
 
                     /**
-                     * 是否搜索白金域名
+                     * 是否搜索白金域名（默认值为false）
                      */
                     bool m_isTop;
                     bool m_isTopHasBeenSet;

@@ -26,9 +26,9 @@ GetMsgRecordRequest::GetMsgRecordRequest() :
     m_typeHasBeenSet(false),
     m_countHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_lastRecordIdHasBeenSet(false),
     m_botAppKeyHasBeenSet(false),
     m_sceneHasBeenSet(false),
+    m_lastRecordIdHasBeenSet(false),
     m_midRecordIdHasBeenSet(false)
 {
 }
@@ -64,14 +64,6 @@ string GetMsgRecordRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_lastRecordIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LastRecordId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_lastRecordId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_botAppKeyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -86,6 +78,14 @@ string GetMsgRecordRequest::ToJsonString() const
         string key = "Scene";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_scene, allocator);
+    }
+
+    if (m_lastRecordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastRecordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lastRecordId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_midRecordIdHasBeenSet)
@@ -152,22 +152,6 @@ bool GetMsgRecordRequest::SessionIdHasBeenSet() const
     return m_sessionIdHasBeenSet;
 }
 
-string GetMsgRecordRequest::GetLastRecordId() const
-{
-    return m_lastRecordId;
-}
-
-void GetMsgRecordRequest::SetLastRecordId(const string& _lastRecordId)
-{
-    m_lastRecordId = _lastRecordId;
-    m_lastRecordIdHasBeenSet = true;
-}
-
-bool GetMsgRecordRequest::LastRecordIdHasBeenSet() const
-{
-    return m_lastRecordIdHasBeenSet;
-}
-
 string GetMsgRecordRequest::GetBotAppKey() const
 {
     return m_botAppKey;
@@ -198,6 +182,22 @@ void GetMsgRecordRequest::SetScene(const uint64_t& _scene)
 bool GetMsgRecordRequest::SceneHasBeenSet() const
 {
     return m_sceneHasBeenSet;
+}
+
+string GetMsgRecordRequest::GetLastRecordId() const
+{
+    return m_lastRecordId;
+}
+
+void GetMsgRecordRequest::SetLastRecordId(const string& _lastRecordId)
+{
+    m_lastRecordId = _lastRecordId;
+    m_lastRecordIdHasBeenSet = true;
+}
+
+bool GetMsgRecordRequest::LastRecordIdHasBeenSet() const
+{
+    return m_lastRecordIdHasBeenSet;
 }
 
 string GetMsgRecordRequest::GetMidRecordId() const

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘大小，单位GB。
-                     * @return DiskSize 云硬盘大小，单位GB。
+                     * 获取云硬盘大小，单位GiB。
+                     * @return DiskSize 云硬盘大小，单位GiB。
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置云硬盘大小，单位GB。
-                     * @param _diskSize 云硬盘大小，单位GB。
+                     * 设置云硬盘大小，单位GiB。
+                     * @param _diskSize 云硬盘大小，单位GiB。
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -110,15 +110,23 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。
-                     * @return DiskUsage 云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。
+                     * 获取云硬盘类型。取值范围：<br>
+<li>SYSTEM_DISK：系统盘</li>
+<li>DATA_DISK：数据盘。</li>
+                     * @return DiskUsage 云硬盘类型。取值范围：<br>
+<li>SYSTEM_DISK：系统盘</li>
+<li>DATA_DISK：数据盘。</li>
                      * 
                      */
                     std::string GetDiskUsage() const;
 
                     /**
-                     * 设置云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。
-                     * @param _diskUsage 云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。
+                     * 设置云硬盘类型。取值范围：<br>
+<li>SYSTEM_DISK：系统盘</li>
+<li>DATA_DISK：数据盘。</li>
+                     * @param _diskUsage 云硬盘类型。取值范围：<br>
+<li>SYSTEM_DISK：系统盘</li>
+<li>DATA_DISK：数据盘。</li>
                      * 
                      */
                     void SetDiskUsage(const std::string& _diskUsage);
@@ -152,15 +160,35 @@ namespace TencentCloud
                     bool DiskBackupNameHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘备份点状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中
-                     * @return DiskBackupState 云硬盘备份点状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中
+                     * 获取<p>云硬盘备份点状态。取值范围：</p>
+<ul>
+  <li>NORMAL：正常</li>
+  <li>CREATING：创建中</li>
+  <li>ROLLBACKING：回滚中</li>
+</ul>
+                     * @return DiskBackupState <p>云硬盘备份点状态。取值范围：</p>
+<ul>
+  <li>NORMAL：正常</li>
+  <li>CREATING：创建中</li>
+  <li>ROLLBACKING：回滚中</li>
+</ul>
                      * 
                      */
                     std::string GetDiskBackupState() const;
 
                     /**
-                     * 设置云硬盘备份点状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中
-                     * @param _diskBackupState 云硬盘备份点状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中
+                     * 设置<p>云硬盘备份点状态。取值范围：</p>
+<ul>
+  <li>NORMAL：正常</li>
+  <li>CREATING：创建中</li>
+  <li>ROLLBACKING：回滚中</li>
+</ul>
+                     * @param _diskBackupState <p>云硬盘备份点状态。取值范围：</p>
+<ul>
+  <li>NORMAL：正常</li>
+  <li>CREATING：创建中</li>
+  <li>ROLLBACKING：回滚中</li>
+</ul>
                      * 
                      */
                     void SetDiskBackupState(const std::string& _diskBackupState);
@@ -173,15 +201,15 @@ namespace TencentCloud
                     bool DiskBackupStateHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘创建进度百分比。
-                     * @return Percent 云硬盘创建进度百分比。
+                     * 获取云硬盘备份点创建百分比。
+                     * @return Percent 云硬盘备份点创建百分比。
                      * 
                      */
                     uint64_t GetPercent() const;
 
                     /**
-                     * 设置云硬盘创建进度百分比。
-                     * @param _percent 云硬盘创建进度百分比。
+                     * 设置云硬盘备份点创建百分比。
+                     * @param _percent 云硬盘备份点创建百分比。
                      * 
                      */
                     void SetPercent(const uint64_t& _percent);
@@ -215,15 +243,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。
-                     * @return Encrypt 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。
+                     * 获取云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br></li>true:表示加密盘。
+                     * @return Encrypt 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br></li>true:表示加密盘。
                      * 
                      */
                     bool GetEncrypt() const;
 
                     /**
-                     * 设置云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。
-                     * @param _encrypt 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。
+                     * 设置云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br></li>true:表示加密盘。
+                     * @param _encrypt 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br></li>true:表示加密盘。
                      * 
                      */
                     void SetEncrypt(const bool& _encrypt);
@@ -250,13 +278,15 @@ namespace TencentCloud
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 云硬盘大小，单位GB。
+                     * 云硬盘大小，单位GiB。
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。
+                     * 云硬盘类型。取值范围：<br>
+<li>SYSTEM_DISK：系统盘</li>
+<li>DATA_DISK：数据盘。</li>
                      */
                     std::string m_diskUsage;
                     bool m_diskUsageHasBeenSet;
@@ -268,13 +298,18 @@ namespace TencentCloud
                     bool m_diskBackupNameHasBeenSet;
 
                     /**
-                     * 云硬盘备份点状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中
+                     * <p>云硬盘备份点状态。取值范围：</p>
+<ul>
+  <li>NORMAL：正常</li>
+  <li>CREATING：创建中</li>
+  <li>ROLLBACKING：回滚中</li>
+</ul>
                      */
                     std::string m_diskBackupState;
                     bool m_diskBackupStateHasBeenSet;
 
                     /**
-                     * 云硬盘创建进度百分比。
+                     * 云硬盘备份点创建百分比。
                      */
                     uint64_t m_percent;
                     bool m_percentHasBeenSet;
@@ -286,7 +321,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。
+                     * 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br></li>true:表示加密盘。
                      */
                     bool m_encrypt;
                     bool m_encryptHasBeenSet;

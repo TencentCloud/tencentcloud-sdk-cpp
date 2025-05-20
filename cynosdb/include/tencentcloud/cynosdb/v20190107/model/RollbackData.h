@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool SnapshotTimeHasBeenSet() const;
 
                     /**
-                     * 获取回档到serverlessls集群时最小CPU
-                     * @return MinCpu 回档到serverlessls集群时最小CPU
+                     * 获取回档到 Serverless 集群时最小 CPU
+                     * @return MinCpu 回档到 Serverless 集群时最小 CPU
                      * 
                      */
                     int64_t GetMinCpu() const;
 
                     /**
-                     * 设置回档到serverlessls集群时最小CPU
-                     * @param _minCpu 回档到serverlessls集群时最小CPU
+                     * 设置回档到 Serverless 集群时最小 CPU
+                     * @param _minCpu 回档到 Serverless 集群时最小 CPU
                      * 
                      */
                     void SetMinCpu(const int64_t& _minCpu);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool MinCpuHasBeenSet() const;
 
                     /**
-                     * 获取回档到serverlessls集群时最大CPU
-                     * @return MaxCpu 回档到serverlessls集群时最大CPU
+                     * 获取回档到 Serverless 集群时最大 CPU
+                     * @return MaxCpu 回档到 Serverless 集群时最大 CPU
                      * 
                      */
                     int64_t GetMaxCpu() const;
 
                     /**
-                     * 设置回档到serverlessls集群时最大CPU
-                     * @param _maxCpu 回档到serverlessls集群时最大CPU
+                     * 设置回档到 Serverless 集群时最大 CPU
+                     * @param _maxCpu 回档到 Serverless 集群时最大 CPU
                      * 
                      */
                     void SetMaxCpu(const int64_t& _maxCpu);
@@ -396,13 +396,13 @@ namespace TencentCloud
                     bool m_snapshotTimeHasBeenSet;
 
                     /**
-                     * 回档到serverlessls集群时最小CPU
+                     * 回档到 Serverless 集群时最小 CPU
                      */
                     int64_t m_minCpu;
                     bool m_minCpuHasBeenSet;
 
                     /**
-                     * 回档到serverlessls集群时最大CPU
+                     * 回档到 Serverless 集群时最大 CPU
                      */
                     int64_t m_maxCpu;
                     bool m_maxCpuHasBeenSet;

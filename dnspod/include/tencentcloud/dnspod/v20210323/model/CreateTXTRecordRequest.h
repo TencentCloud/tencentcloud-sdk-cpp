@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取记录线路，通过 API 记录线路获得，中文，比如：默认。
-                     * @return RecordLine 记录线路，通过 API 记录线路获得，中文，比如：默认。
+                     * 获取记录线路
+                     * @return RecordLine 记录线路
                      * 
                      */
                     std::string GetRecordLine() const;
 
                     /**
-                     * 设置记录线路，通过 API 记录线路获得，中文，比如：默认。
-                     * @param _recordLine 记录线路，通过 API 记录线路获得，中文，比如：默认。
+                     * 设置记录线路
+                     * @param _recordLine 记录线路
                      * 
                      */
                     void SetRecordLine(const std::string& _recordLine);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SubDomainHasBeenSet() const;
 
                     /**
-                     * 获取线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
-                     * @return RecordLineId 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 获取线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * @return RecordLineId 线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      * 
                      */
                     std::string GetRecordLineId() const;
 
                     /**
-                     * 设置线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
-                     * @param _recordLineId 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 设置线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * @param _recordLineId 线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      * 
                      */
                     void SetRecordLineId(const std::string& _recordLineId);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
-                     * @return GroupId 记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
+                     * 获取记录分组 Id。
+                     * @return GroupId 记录分组 Id。
                      * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
-                     * 设置记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
-                     * @param _groupId 记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
+                     * 设置记录分组 Id。
+                     * @param _groupId 记录分组 Id。
                      * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
@@ -261,7 +261,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 记录线路，通过 API 记录线路获得，中文，比如：默认。
+                     * 记录线路
                      */
                     std::string m_recordLine;
                     bool m_recordLineHasBeenSet;
@@ -285,7 +285,7 @@ namespace TencentCloud
                     bool m_subDomainHasBeenSet;
 
                     /**
-                     * 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      */
                     std::string m_recordLineId;
                     bool m_recordLineIdHasBeenSet;
@@ -309,7 +309,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
+                     * 记录分组 Id。
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;

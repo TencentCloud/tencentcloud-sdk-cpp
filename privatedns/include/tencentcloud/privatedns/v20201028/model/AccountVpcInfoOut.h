@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VpcId： vpc-xadsafsdasd
-                     * @return VpcId VpcId： vpc-xadsafsdasd
+                     * 获取VpcId
+                     * @return VpcId VpcId
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VpcId： vpc-xadsafsdasd
-                     * @param _vpcId VpcId： vpc-xadsafsdasd
+                     * 设置VpcId
+                     * @param _vpcId VpcId
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -133,7 +133,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VpcId： vpc-xadsafsdasd
+                     * VpcId
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

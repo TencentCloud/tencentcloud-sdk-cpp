@@ -36,7 +36,6 @@ namespace TencentCloud
             {
                 /**
                 * [Vary 特性](https://cloud.tencent.com/document/product/1552/89301) 配置参数。
-该功能灰度中，如需使用，请联系腾讯云客服。
                 */
                 class VaryParameters : public AbstractModel
                 {

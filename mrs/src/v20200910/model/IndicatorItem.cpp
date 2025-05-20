@@ -33,7 +33,8 @@ IndicatorItem::IndicatorItem() :
     m_itemStringHasBeenSet(false),
     m_idHasBeenSet(false),
     m_coordsHasBeenSet(false),
-    m_inferNormalHasBeenSet(false)
+    m_inferNormalHasBeenSet(false),
+    m_sampleHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,16 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
         m_inferNormalHasBeenSet = true;
     }
 
+    if (value.HasMember("Sample") && !value["Sample"].IsNull())
+    {
+        if (!value["Sample"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Sample` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sample = string(value["Sample"].GetString());
+        m_sampleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +300,14 @@ void IndicatorItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "InferNormal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_inferNormal.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sampleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sample";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sample.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +519,21 @@ void IndicatorItem::SetInferNormal(const string& _inferNormal)
 bool IndicatorItem::InferNormalHasBeenSet() const
 {
     return m_inferNormalHasBeenSet;
+}
+
+string IndicatorItem::GetSample() const
+{
+    return m_sample;
+}
+
+void IndicatorItem::SetSample(const string& _sample)
+{
+    m_sample = _sample;
+    m_sampleHasBeenSet = true;
+}
+
+bool IndicatorItem::SampleHasBeenSet() const
+{
+    return m_sampleHasBeenSet;
 }
 

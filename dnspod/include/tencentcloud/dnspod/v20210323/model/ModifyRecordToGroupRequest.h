@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取分组 ID
-                     * @return GroupId 分组 ID
+                     * 获取分组 ID，可通过DescribeRecordGroupList接口获取所有记录分组
+                     * @return GroupId 分组 ID，可通过DescribeRecordGroupList接口获取所有记录分组
                      * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
-                     * 设置分组 ID
-                     * @param _groupId 分组 ID
+                     * 设置分组 ID，可通过DescribeRecordGroupList接口获取所有记录分组
+                     * @param _groupId 分组 ID，可通过DescribeRecordGroupList接口获取所有记录分组
                      * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取记录 ID，多个 ID 用竖线“|”分割
-                     * @return RecordId 记录 ID，多个 ID 用竖线“|”分割
+                     * 获取记录 ID，多个 ID 用竖线“|”分割，可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * @return RecordId 记录 ID，多个 ID 用竖线“|”分割，可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
                      * 
                      */
                     std::string GetRecordId() const;
 
                     /**
-                     * 设置记录 ID，多个 ID 用竖线“|”分割
-                     * @param _recordId 记录 ID，多个 ID 用竖线“|”分割
+                     * 设置记录 ID，多个 ID 用竖线“|”分割，可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * @param _recordId 记录 ID，多个 ID 用竖线“|”分割，可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
                      * 
                      */
                     void SetRecordId(const std::string& _recordId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
-                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
-                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -135,19 +135,19 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 分组 ID
+                     * 分组 ID，可通过DescribeRecordGroupList接口获取所有记录分组
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 记录 ID，多个 ID 用竖线“|”分割
+                     * 记录 ID，多个 ID 用竖线“|”分割，可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;

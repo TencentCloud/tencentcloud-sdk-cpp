@@ -45,7 +45,8 @@ Block::Block() :
     m_eyeHasBeenSet(false),
     m_birthCertHasBeenSet(false),
     m_textTypeListBlocksHasBeenSet(false),
-    m_physicalExaminationHasBeenSet(false)
+    m_physicalExaminationHasBeenSet(false),
+    m_endoscopyV2HasBeenSet(false)
 {
 }
 
@@ -551,6 +552,26 @@ CoreInternalOutcome Block::Deserialize(const rapidjson::Value &value)
         m_physicalExaminationHasBeenSet = true;
     }
 
+    if (value.HasMember("EndoscopyV2") && !value["EndoscopyV2"].IsNull())
+    {
+        if (!value["EndoscopyV2"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Block.EndoscopyV2` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EndoscopyV2"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Check item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_endoscopyV2.push_back(item);
+        }
+        m_endoscopyV2HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -925,6 +946,21 @@ void Block::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_physicalExamination.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_endoscopyV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndoscopyV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_endoscopyV2.begin(); itr != m_endoscopyV2.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1328,5 +1364,21 @@ void Block::SetPhysicalExamination(const PhysicalExaminationV1& _physicalExamina
 bool Block::PhysicalExaminationHasBeenSet() const
 {
     return m_physicalExaminationHasBeenSet;
+}
+
+vector<Check> Block::GetEndoscopyV2() const
+{
+    return m_endoscopyV2;
+}
+
+void Block::SetEndoscopyV2(const vector<Check>& _endoscopyV2)
+{
+    m_endoscopyV2 = _endoscopyV2;
+    m_endoscopyV2HasBeenSet = true;
+}
+
+bool Block::EndoscopyV2HasBeenSet() const
+{
+    return m_endoscopyV2HasBeenSet;
 }
 

@@ -155,8 +155,6 @@
 #include <tencentcloud/postgres/v20170312/model/DestroyDBInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DisIsolateDBInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DisIsolateDBInstancesResponse.h>
-#include <tencentcloud/postgres/v20170312/model/InitDBInstancesRequest.h>
-#include <tencentcloud/postgres/v20170312/model/InitDBInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/InquiryPriceCreateDBInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/InquiryPriceCreateDBInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/InquiryPriceRenewDBInstanceRequest.h>
@@ -447,9 +445,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisIsolateDBInstancesResponse> DisIsolateDBInstancesOutcome;
                 typedef std::future<DisIsolateDBInstancesOutcome> DisIsolateDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DisIsolateDBInstancesRequest&, DisIsolateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisIsolateDBInstancesAsyncHandler;
-                typedef Outcome<Core::Error, Model::InitDBInstancesResponse> InitDBInstancesOutcome;
-                typedef std::future<InitDBInstancesOutcome> InitDBInstancesOutcomeCallable;
-                typedef std::function<void(const PostgresClient*, const Model::InitDBInstancesRequest&, InitDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitDBInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquiryPriceCreateDBInstancesResponse> InquiryPriceCreateDBInstancesOutcome;
                 typedef std::future<InquiryPriceCreateDBInstancesOutcome> InquiryPriceCreateDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::InquiryPriceCreateDBInstancesRequest&, InquiryPriceCreateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateDBInstancesAsyncHandler;
@@ -1176,17 +1171,6 @@ namespace TencentCloud
                 DisIsolateDBInstancesOutcome DisIsolateDBInstances(const Model::DisIsolateDBInstancesRequest &request);
                 void DisIsolateDBInstancesAsync(const Model::DisIsolateDBInstancesRequest& request, const DisIsolateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisIsolateDBInstancesOutcomeCallable DisIsolateDBInstancesCallable(const Model::DisIsolateDBInstancesRequest& request);
-
-                /**
-                 *早期接口，不规范，已提供新接口 CreateInstances 替换
-
-本接口（InitDBInstances）用于初始化云数据库PostgreSQL实例。本接口已废弃，推荐使用接口[CreateInstances](https://cloud.tencent.com/document/api/409/56107)替代。
-                 * @param req InitDBInstancesRequest
-                 * @return InitDBInstancesOutcome
-                 */
-                InitDBInstancesOutcome InitDBInstances(const Model::InitDBInstancesRequest &request);
-                void InitDBInstancesAsync(const Model::InitDBInstancesRequest& request, const InitDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                InitDBInstancesOutcomeCallable InitDBInstancesCallable(const Model::InitDBInstancesRequest& request);
 
                 /**
                  *本接口 (InquiryPriceCreateDBInstances) 用于查询购买实例的价格信息。

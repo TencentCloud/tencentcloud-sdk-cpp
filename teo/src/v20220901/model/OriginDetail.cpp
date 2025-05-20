@@ -28,6 +28,7 @@ OriginDetail::OriginDetail() :
     m_backOriginGroupNameHasBeenSet(false),
     m_privateAccessHasBeenSet(false),
     m_privateParametersHasBeenSet(false),
+    m_hostHeaderHasBeenSet(false),
     m_vodeoSubAppIdHasBeenSet(false),
     m_vodeoDistributionRangeHasBeenSet(false),
     m_vodeoBucketIdHasBeenSet(false),
@@ -119,6 +120,16 @@ CoreInternalOutcome OriginDetail::Deserialize(const rapidjson::Value &value)
             m_privateParameters.push_back(item);
         }
         m_privateParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("HostHeader") && !value["HostHeader"].IsNull())
+    {
+        if (!value["HostHeader"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginDetail.HostHeader` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostHeader = string(value["HostHeader"].GetString());
+        m_hostHeaderHasBeenSet = true;
     }
 
     if (value.HasMember("VodeoSubAppId") && !value["VodeoSubAppId"].IsNull())
@@ -239,6 +250,14 @@ void OriginDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hostHeaderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostHeader";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostHeader.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vodeoSubAppIdHasBeenSet)
@@ -394,6 +413,22 @@ void OriginDetail::SetPrivateParameters(const vector<PrivateParameter>& _private
 bool OriginDetail::PrivateParametersHasBeenSet() const
 {
     return m_privateParametersHasBeenSet;
+}
+
+string OriginDetail::GetHostHeader() const
+{
+    return m_hostHeader;
+}
+
+void OriginDetail::SetHostHeader(const string& _hostHeader)
+{
+    m_hostHeader = _hostHeader;
+    m_hostHeaderHasBeenSet = true;
+}
+
+bool OriginDetail::HostHeaderHasBeenSet() const
+{
+    return m_hostHeaderHasBeenSet;
 }
 
 int64_t OriginDetail::GetVodeoSubAppId() const

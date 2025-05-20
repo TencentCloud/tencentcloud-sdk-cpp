@@ -320,6 +320,27 @@ namespace TencentCloud
                      */
                     bool InferNormalHasBeenSet() const;
 
+                    /**
+                     * 获取标本
+                     * @return Sample 标本
+                     * 
+                     */
+                    std::string GetSample() const;
+
+                    /**
+                     * 设置标本
+                     * @param _sample 标本
+                     * 
+                     */
+                    void SetSample(const std::string& _sample);
+
+                    /**
+                     * 判断参数 Sample 是否已赋值
+                     * @return Sample 是否已赋值
+                     * 
+                     */
+                    bool SampleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +420,12 @@ namespace TencentCloud
                      */
                     std::string m_inferNormal;
                     bool m_inferNormalHasBeenSet;
+
+                    /**
+                     * 标本
+                     */
+                    std::string m_sample;
+                    bool m_sampleHasBeenSet;
 
                 };
             }

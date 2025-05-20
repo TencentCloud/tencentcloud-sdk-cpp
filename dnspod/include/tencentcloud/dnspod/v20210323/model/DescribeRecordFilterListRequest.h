@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId。
-                     * @return DomainId 要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId。
+                     * 获取要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 
+                     * @return DomainId 要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId。
-                     * @param _domainId 要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId。
+                     * 设置要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 
+                     * @param _domainId 要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RecordTypeHasBeenSet() const;
 
                     /**
-                     * 获取获取某些线路ID的解析记录。可以通过接口 DescribeRecordLineList 查看当前域名允许的线路信息。
-                     * @return RecordLine 获取某些线路ID的解析记录。可以通过接口 DescribeRecordLineList 查看当前域名允许的线路信息。
+                     * 获取获取某些线路ID的解析记录。
+                     * @return RecordLine 获取某些线路ID的解析记录。
                      * 
                      */
                     std::vector<std::string> GetRecordLine() const;
 
                     /**
-                     * 设置获取某些线路ID的解析记录。可以通过接口 DescribeRecordLineList 查看当前域名允许的线路信息。
-                     * @param _recordLine 获取某些线路ID的解析记录。可以通过接口 DescribeRecordLineList 查看当前域名允许的线路信息。
+                     * 设置获取某些线路ID的解析记录。
+                     * @param _recordLine 获取某些线路ID的解析记录。
                      * 
                      */
                     void SetRecordLine(const std::vector<std::string>& _recordLine);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool RecordLineHasBeenSet() const;
 
                     /**
-                     * 获取获取某些分组下的解析记录时，传这个分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
-                     * @return GroupId 获取某些分组下的解析记录时，传这个分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
+                     * 获取获取某些分组下的解析记录时，传这个分组 Id。
+                     * @return GroupId 获取某些分组下的解析记录时，传这个分组 Id。
                      * 
                      */
                     std::vector<uint64_t> GetGroupId() const;
 
                     /**
-                     * 设置获取某些分组下的解析记录时，传这个分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
-                     * @param _groupId 获取某些分组下的解析记录时，传这个分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
+                     * 设置获取某些分组下的解析记录时，传这个分组 Id。
+                     * @param _groupId 获取某些分组下的解析记录时，传这个分组 Id。
                      * 
                      */
                     void SetGroupId(const std::vector<uint64_t>& _groupId);
@@ -268,15 +268,15 @@ UPDATED_ON：解析记录更新时间
                     bool SortTypeHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认值为0。如果入参携带"Domain","ffset","Limit" 这3个以外的参数，记录结果限制最大3000条
-                     * @return Offset 偏移量，默认值为0。如果入参携带"Domain","ffset","Limit" 这3个以外的参数，记录结果限制最大3000条
+                     * 获取偏移量，默认值为0。如果入参携带"Domain","offset","Limit" 这3个以外的参数，记录结果限制最大3000条
+                     * @return Offset 偏移量，默认值为0。如果入参携带"Domain","offset","Limit" 这3个以外的参数，记录结果限制最大3000条
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认值为0。如果入参携带"Domain","ffset","Limit" 这3个以外的参数，记录结果限制最大3000条
-                     * @param _offset 偏移量，默认值为0。如果入参携带"Domain","ffset","Limit" 这3个以外的参数，记录结果限制最大3000条
+                     * 设置偏移量，默认值为0。如果入参携带"Domain","offset","Limit" 这3个以外的参数，记录结果限制最大3000条
+                     * @param _offset 偏移量，默认值为0。如果入参携带"Domain","offset","Limit" 这3个以外的参数，记录结果限制最大3000条
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -599,7 +599,7 @@ DISABLE：暂停
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId。
+                     * 要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;
@@ -617,13 +617,13 @@ DISABLE：暂停
                     bool m_recordTypeHasBeenSet;
 
                     /**
-                     * 获取某些线路ID的解析记录。可以通过接口 DescribeRecordLineList 查看当前域名允许的线路信息。
+                     * 获取某些线路ID的解析记录。
                      */
                     std::vector<std::string> m_recordLine;
                     bool m_recordLineHasBeenSet;
 
                     /**
-                     * 获取某些分组下的解析记录时，传这个分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
+                     * 获取某些分组下的解析记录时，传这个分组 Id。
                      */
                     std::vector<uint64_t> m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -656,7 +656,7 @@ UPDATED_ON：解析记录更新时间
                     bool m_sortTypeHasBeenSet;
 
                     /**
-                     * 偏移量，默认值为0。如果入参携带"Domain","ffset","Limit" 这3个以外的参数，记录结果限制最大3000条
+                     * 偏移量，默认值为0。如果入参携带"Domain","offset","Limit" 这3个以外的参数，记录结果限制最大3000条
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

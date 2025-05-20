@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取循环类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CycleType 循环类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCycleType() const;
 
                     /**
                      * 设置循环类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cycleType 循环类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCycleType(const std::string& _cycleType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取循环起始
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartDate 循环起始
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置循环起始
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startDate 循环起始
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartDate(const std::string& _startDate);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取循环结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndDate 循环结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置循环结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endDate 循环结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndDate(const std::string& _endDate);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取副本个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplicaNum 副本个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReplicaNum() const;
 
                     /**
                      * 设置副本个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _replicaNum 副本个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReplicaNum(const uint64_t& _replicaNum);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 循环类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cycleType;
                     bool m_cycleTypeHasBeenSet;
 
                     /**
                      * 循环起始
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startDate;
                     bool m_startDateHasBeenSet;
 
                     /**
                      * 循环结束
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
 
                     /**
                      * 起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 副本个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_replicaNum;
                     bool m_replicaNumHasBeenSet;
