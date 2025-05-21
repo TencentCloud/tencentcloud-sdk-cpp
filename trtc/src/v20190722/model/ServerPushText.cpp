@@ -24,7 +24,9 @@ ServerPushText::ServerPushText() :
     m_textHasBeenSet(false),
     m_interruptHasBeenSet(false),
     m_stopAfterPlayHasBeenSet(false),
-    m_audioHasBeenSet(false)
+    m_audioHasBeenSet(false),
+    m_dropModeHasBeenSet(false),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome ServerPushText::Deserialize(const rapidjson::Value &value)
         m_audioHasBeenSet = true;
     }
 
+    if (value.HasMember("DropMode") && !value["DropMode"].IsNull())
+    {
+        if (!value["DropMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerPushText.DropMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dropMode = value["DropMode"].GetUint64();
+        m_dropModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Priority") && !value["Priority"].IsNull())
+    {
+        if (!value["Priority"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerPushText.Priority` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_priority = value["Priority"].GetUint64();
+        m_priorityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void ServerPushText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Audio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_audio.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dropModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DropMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dropMode, allocator);
+    }
+
+    if (m_priorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Priority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_priority, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void ServerPushText::SetAudio(const string& _audio)
 bool ServerPushText::AudioHasBeenSet() const
 {
     return m_audioHasBeenSet;
+}
+
+uint64_t ServerPushText::GetDropMode() const
+{
+    return m_dropMode;
+}
+
+void ServerPushText::SetDropMode(const uint64_t& _dropMode)
+{
+    m_dropMode = _dropMode;
+    m_dropModeHasBeenSet = true;
+}
+
+bool ServerPushText::DropModeHasBeenSet() const
+{
+    return m_dropModeHasBeenSet;
+}
+
+uint64_t ServerPushText::GetPriority() const
+{
+    return m_priority;
+}
+
+void ServerPushText::SetPriority(const uint64_t& _priority)
+{
+    m_priority = _priority;
+    m_priorityHasBeenSet = true;
+}
+
+bool ServerPushText::PriorityHasBeenSet() const
+{
+    return m_priorityHasBeenSet;
 }
 

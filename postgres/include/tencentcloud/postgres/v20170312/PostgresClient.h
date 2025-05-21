@@ -227,8 +227,6 @@
 #include <tencentcloud/postgres/v20170312/model/SwitchDBInstancePrimaryResponse.h>
 #include <tencentcloud/postgres/v20170312/model/UnlockAccountRequest.h>
 #include <tencentcloud/postgres/v20170312/model/UnlockAccountResponse.h>
-#include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceRequest.h>
-#include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceKernelVersionRequest.h>
 #include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceKernelVersionResponse.h>
 #include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceMajorVersionRequest.h>
@@ -553,9 +551,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnlockAccountResponse> UnlockAccountOutcome;
                 typedef std::future<UnlockAccountOutcome> UnlockAccountOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::UnlockAccountRequest&, UnlockAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockAccountAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpgradeDBInstanceResponse> UpgradeDBInstanceOutcome;
-                typedef std::future<UpgradeDBInstanceOutcome> UpgradeDBInstanceOutcomeCallable;
-                typedef std::function<void(const PostgresClient*, const Model::UpgradeDBInstanceRequest&, UpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeDBInstanceKernelVersionResponse> UpgradeDBInstanceKernelVersionOutcome;
                 typedef std::future<UpgradeDBInstanceKernelVersionOutcome> UpgradeDBInstanceKernelVersionOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::UpgradeDBInstanceKernelVersionRequest&, UpgradeDBInstanceKernelVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceKernelVersionAsyncHandler;
@@ -1500,17 +1495,6 @@ namespace TencentCloud
                 UnlockAccountOutcome UnlockAccount(const Model::UnlockAccountRequest &request);
                 void UnlockAccountAsync(const Model::UnlockAccountRequest& request, const UnlockAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnlockAccountOutcomeCallable UnlockAccountCallable(const Model::UnlockAccountRequest& request);
-
-                /**
-                 *早期接口，不规范，已提供新接口 ModifyDBInstanceSpec 替换
-
-本接口（UpgradeDBInstance）用于升级实例配置。本接口已废弃，推荐使用接口[ModifyDBInstanceSpec](https://cloud.tencent.com/document/api/409/63689)替代。
-                 * @param req UpgradeDBInstanceRequest
-                 * @return UpgradeDBInstanceOutcome
-                 */
-                UpgradeDBInstanceOutcome UpgradeDBInstance(const Model::UpgradeDBInstanceRequest &request);
-                void UpgradeDBInstanceAsync(const Model::UpgradeDBInstanceRequest& request, const UpgradeDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpgradeDBInstanceOutcomeCallable UpgradeDBInstanceCallable(const Model::UpgradeDBInstanceRequest& request);
 
                 /**
                  *本接口（UpgradeDBInstanceKernelVersion）用于升级实例的内核版本号。

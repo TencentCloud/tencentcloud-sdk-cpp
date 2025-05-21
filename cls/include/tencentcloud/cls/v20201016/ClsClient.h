@@ -1501,7 +1501,8 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyLogsetOutcomeCallable ModifyLogsetCallable(const Model::ModifyLogsetRequest& request);
 
                 /**
-                 *修改机器组
+                 *修改机器组。
+注意：修改接口直接覆盖历史数据，改为本次合法入参数据，请谨慎调用此接口。
                  * @param req ModifyMachineGroupRequest
                  * @return ModifyMachineGroupOutcome
                  */

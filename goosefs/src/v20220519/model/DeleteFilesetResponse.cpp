@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/postgres/v20170312/model/UpgradeDBInstanceResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DeleteFilesetResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Postgres::V20170312::Model;
+using namespace TencentCloud::Goosefs::V20220519::Model;
 using namespace std;
 
-UpgradeDBInstanceResponse::UpgradeDBInstanceResponse() :
-    m_dealNameHasBeenSet(false),
-    m_billIdHasBeenSet(false)
+DeleteFilesetResponse::DeleteFilesetResponse()
 {
 }
 
-CoreInternalOutcome UpgradeDBInstanceResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteFilesetResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,51 +61,15 @@ CoreInternalOutcome UpgradeDBInstanceResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
-    {
-        if (!rsp["DealName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_dealName = string(rsp["DealName"].GetString());
-        m_dealNameHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("BillId") && !rsp["BillId"].IsNull())
-    {
-        if (!rsp["BillId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BillId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_billId = string(rsp["BillId"].GetString());
-        m_billIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string UpgradeDBInstanceResponse::ToJsonString() const
+string DeleteFilesetResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_dealNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DealName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_billIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BillId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_billId.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -120,25 +82,5 @@ string UpgradeDBInstanceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string UpgradeDBInstanceResponse::GetDealName() const
-{
-    return m_dealName;
-}
-
-bool UpgradeDBInstanceResponse::DealNameHasBeenSet() const
-{
-    return m_dealNameHasBeenSet;
-}
-
-string UpgradeDBInstanceResponse::GetBillId() const
-{
-    return m_billId;
-}
-
-bool UpgradeDBInstanceResponse::BillIdHasBeenSet() const
-{
-    return m_billIdHasBeenSet;
-}
 
 

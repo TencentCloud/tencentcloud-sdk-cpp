@@ -218,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务最新的一次执行结果信息，该字段用于查询任务列表接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 任务最新的一次执行结果信息，该字段用于查询任务列表接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScanTaskResult GetResult() const;
 
                     /**
                      * 设置任务最新的一次执行结果信息，该字段用于查询任务列表接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _result 任务最新的一次执行结果信息，该字段用于查询任务列表接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResult(const ScanTaskResult& _result);
@@ -268,18 +264,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComplianceUpdate 关联模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetComplianceUpdate() const;
 
                     /**
                      * 设置关联模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _complianceUpdate 关联模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComplianceUpdate(const bool& _complianceUpdate);
@@ -343,7 +335,6 @@ namespace TencentCloud
 
                     /**
                      * 任务最新的一次执行结果信息，该字段用于查询任务列表接口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScanTaskResult m_result;
                     bool m_resultHasBeenSet;
@@ -357,7 +348,6 @@ namespace TencentCloud
 
                     /**
                      * 关联模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_complianceUpdate;
                     bool m_complianceUpdateHasBeenSet;

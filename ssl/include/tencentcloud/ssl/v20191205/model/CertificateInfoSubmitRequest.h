@@ -944,6 +944,48 @@ FILE：手动添加域名文件验证。 需要用户手动在域名站点根目
                      */
                     bool TechTitleHasBeenSet() const;
 
+                    /**
+                     * 获取证书类型
+                     * @return Type 证书类型
+                     * 
+                     */
+                    int64_t GetType() const;
+
+                    /**
+                     * 设置证书类型
+                     * @param _type 证书类型
+                     * 
+                     */
+                    void SetType(const int64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取只针对Dnspod系列证书有效，ca机构类型可为sectigo和digicert
+                     * @return CaType 只针对Dnspod系列证书有效，ca机构类型可为sectigo和digicert
+                     * 
+                     */
+                    std::string GetCaType() const;
+
+                    /**
+                     * 设置只针对Dnspod系列证书有效，ca机构类型可为sectigo和digicert
+                     * @param _caType 只针对Dnspod系列证书有效，ca机构类型可为sectigo和digicert
+                     * 
+                     */
+                    void SetCaType(const std::string& _caType);
+
+                    /**
+                     * 判断参数 CaType 是否已赋值
+                     * @return CaType 是否已赋值
+                     * 
+                     */
+                    bool CaTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1199,6 +1241,18 @@ FILE：手动添加域名文件验证。 需要用户手动在域名站点根目
                      */
                     std::string m_techTitle;
                     bool m_techTitleHasBeenSet;
+
+                    /**
+                     * 证书类型
+                     */
+                    int64_t m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 只针对Dnspod系列证书有效，ca机构类型可为sectigo和digicert
+                     */
+                    std::string m_caType;
+                    bool m_caTypeHasBeenSet;
 
                 };
             }

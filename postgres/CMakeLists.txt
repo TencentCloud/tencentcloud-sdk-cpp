@@ -101,7 +101,6 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/ReadOnlyGroup.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceSpecRequest.h
   include/tencentcloud/postgres/v20170312/model/ModifyAccountRemarkResponse.h
-  include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeZonesRequest.h
   include/tencentcloud/postgres/v20170312/model/SpecInfo.h
   include/tencentcloud/postgres/v20170312/model/ModifyMaintainTimeWindowRequest.h
@@ -260,7 +259,6 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeAccountsResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceChargeTypeRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeParameterTemplateAttributesResponse.h
-  include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBVersionsRequest.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsRequest.h
@@ -364,7 +362,6 @@ set(postgres_src
   src/v20170312/model/ReadOnlyGroup.cpp
   src/v20170312/model/ModifyDBInstanceSpecRequest.cpp
   src/v20170312/model/ModifyAccountRemarkResponse.cpp
-  src/v20170312/model/UpgradeDBInstanceRequest.cpp
   src/v20170312/model/DescribeZonesRequest.cpp
   src/v20170312/model/SpecInfo.cpp
   src/v20170312/model/ModifyMaintainTimeWindowRequest.cpp
@@ -523,7 +520,6 @@ set(postgres_src
   src/v20170312/model/DescribeAccountsResponse.cpp
   src/v20170312/model/ModifyDBInstanceChargeTypeRequest.cpp
   src/v20170312/model/DescribeParameterTemplateAttributesResponse.cpp
-  src/v20170312/model/UpgradeDBInstanceResponse.cpp
   src/v20170312/model/DescribeDBVersionsRequest.cpp
   src/v20170312/model/ModifyDBInstancesProjectRequest.cpp
   src/v20170312/model/DescribeDBSlowlogsRequest.cpp

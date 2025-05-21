@@ -380,34 +380,6 @@ namespace TencentCloud
                      */
                     bool CateBizIdHasBeenSet() const;
 
-                    /**
-                     * 获取文档的用户自定义ID
-                     * @return CustomerKnowledgeId 文档的用户自定义ID
-                     * 
-                     */
-                    std::string GetCustomerKnowledgeId() const;
-
-                    /**
-                     * 判断参数 CustomerKnowledgeId 是否已赋值
-                     * @return CustomerKnowledgeId 是否已赋值
-                     * 
-                     */
-                    bool CustomerKnowledgeIdHasBeenSet() const;
-
-                    /**
-                     * 获取文档的属性标记，0: 不做用户外部权限校验
-                     * @return AttributeFlags 文档的属性标记，0: 不做用户外部权限校验
-                     * 
-                     */
-                    std::vector<uint64_t> GetAttributeFlags() const;
-
-                    /**
-                     * 判断参数 AttributeFlags 是否已赋值
-                     * @return AttributeFlags 是否已赋值
-                     * 
-                     */
-                    bool AttributeFlagsHasBeenSet() const;
-
                 private:
 
                     /**
@@ -553,18 +525,6 @@ namespace TencentCloud
                      */
                     std::string m_cateBizId;
                     bool m_cateBizIdHasBeenSet;
-
-                    /**
-                     * 文档的用户自定义ID
-                     */
-                    std::string m_customerKnowledgeId;
-                    bool m_customerKnowledgeIdHasBeenSet;
-
-                    /**
-                     * 文档的属性标记，0: 不做用户外部权限校验
-                     */
-                    std::vector<uint64_t> m_attributeFlags;
-                    bool m_attributeFlagsHasBeenSet;
 
                 };
             }

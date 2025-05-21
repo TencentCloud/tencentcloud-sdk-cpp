@@ -88,15 +88,23 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。
-                     * @return MachineGroupType 机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。
+                     * 获取机器组类型。 
+Type：ip，Values中为ip字符串列表机器组；
+Type：label，Values中为标签字符串列表机器组。
+                     * @return MachineGroupType 机器组类型。 
+Type：ip，Values中为ip字符串列表机器组；
+Type：label，Values中为标签字符串列表机器组。
                      * 
                      */
                     MachineGroupTypeInfo GetMachineGroupType() const;
 
                     /**
-                     * 设置机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。
-                     * @param _machineGroupType 机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。
+                     * 设置机器组类型。 
+Type：ip，Values中为ip字符串列表机器组；
+Type：label，Values中为标签字符串列表机器组。
+                     * @param _machineGroupType 机器组类型。 
+Type：ip，Values中为ip字符串列表机器组；
+Type：label，Values中为标签字符串列表机器组。
                      * 
                      */
                     void SetMachineGroupType(const MachineGroupTypeInfo& _machineGroupType);
@@ -270,7 +278,9 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。
+                     * 机器组类型。 
+Type：ip，Values中为ip字符串列表机器组；
+Type：label，Values中为标签字符串列表机器组。
                      */
                     MachineGroupTypeInfo m_machineGroupType;
                     bool m_machineGroupTypeHasBeenSet;

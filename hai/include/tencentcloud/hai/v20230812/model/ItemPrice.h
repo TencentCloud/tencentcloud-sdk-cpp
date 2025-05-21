@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取原单价
-                     * @return UnitPrice 原单价
+                     * 获取原单价，元
+                     * @return UnitPrice 原单价，元
                      * 
                      */
                     double GetUnitPrice() const;
 
                     /**
-                     * 设置原单价
-                     * @param _unitPrice 原单价
+                     * 设置原单价，元
+                     * @param _unitPrice 原单价，元
                      * 
                      */
                     void SetUnitPrice(const double& _unitPrice);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UnitPriceHasBeenSet() const;
 
                     /**
-                     * 获取折扣后单价
-                     * @return DiscountUnitPrice 折扣后单价
+                     * 获取折扣后单价，元
+                     * @return DiscountUnitPrice 折扣后单价，元
                      * 
                      */
                     double GetDiscountUnitPrice() const;
 
                     /**
-                     * 设置折扣后单价
-                     * @param _discountUnitPrice 折扣后单价
+                     * 设置折扣后单价，元
+                     * @param _discountUnitPrice 折扣后单价，元
                      * 
                      */
                     void SetDiscountUnitPrice(const double& _discountUnitPrice);
@@ -158,13 +158,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 原单价
+                     * 原单价，元
                      */
                     double m_unitPrice;
                     bool m_unitPriceHasBeenSet;
 
                     /**
-                     * 折扣后单价
+                     * 折扣后单价，元
                      */
                     double m_discountUnitPrice;
                     bool m_discountUnitPriceHasBeenSet;

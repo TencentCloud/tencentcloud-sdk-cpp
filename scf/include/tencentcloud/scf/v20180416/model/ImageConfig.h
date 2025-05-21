@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取参数已废弃
+                     * 获取该参数即将下线，不推荐用户使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EntryPoint 参数已废弃
+                     * @return EntryPoint 该参数即将下线，不推荐用户使用
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEntryPoint() const;
 
                     /**
-                     * 设置参数已废弃
+                     * 设置该参数即将下线，不推荐用户使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _entryPoint 参数已废弃
+                     * @param _entryPoint 该参数即将下线，不推荐用户使用
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -280,7 +280,7 @@ Job 镜像：-1
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 参数已废弃
+                     * 该参数即将下线，不推荐用户使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_entryPoint;

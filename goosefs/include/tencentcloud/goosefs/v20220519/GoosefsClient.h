@@ -35,10 +35,14 @@
 #include <tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateFileSystemRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateFileSystemResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/CreateFilesetRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/CreateFilesetResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteFileSystemRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteFileSystemResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DeleteFilesetRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DeleteFilesetResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeClientNodesRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeClientNodesResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeClusterClientTokenRequest.h>
@@ -53,6 +57,10 @@
 #include <tencentcloud/goosefs/v20220519/model/DescribeFileSystemBucketsResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeFileSystemsRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeFileSystemsResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeFilesetGeneralConfigRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeFilesetGeneralConfigResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeFilesetsRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeFilesetsResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DetachFileSystemBucketRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DetachFileSystemBucketResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/ExpandCapacityRequest.h>
@@ -63,6 +71,10 @@
 #include <tencentcloud/goosefs/v20220519/model/QueryCrossVpcSubnetSupportForClientNodeResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/QueryDataRepositoryBandwidthRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/QueryDataRepositoryBandwidthResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/UpdateFilesetRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/UpdateFilesetResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/UpdateFilesetGeneralConfigRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/UpdateFilesetGeneralConfigResponse.h>
 
 
 namespace TencentCloud
@@ -95,12 +107,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFileSystemResponse> CreateFileSystemOutcome;
                 typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::CreateFileSystemRequest&, CreateFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileSystemAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFilesetResponse> CreateFilesetOutcome;
+                typedef std::future<CreateFilesetOutcome> CreateFilesetOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::CreateFilesetRequest&, CreateFilesetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFilesetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCrossVpcSubnetSupportForClientNodeResponse> DeleteCrossVpcSubnetSupportForClientNodeOutcome;
                 typedef std::future<DeleteCrossVpcSubnetSupportForClientNodeOutcome> DeleteCrossVpcSubnetSupportForClientNodeOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DeleteCrossVpcSubnetSupportForClientNodeRequest&, DeleteCrossVpcSubnetSupportForClientNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCrossVpcSubnetSupportForClientNodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFileSystemResponse> DeleteFileSystemOutcome;
                 typedef std::future<DeleteFileSystemOutcome> DeleteFileSystemOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DeleteFileSystemRequest&, DeleteFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFileSystemAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFilesetResponse> DeleteFilesetOutcome;
+                typedef std::future<DeleteFilesetOutcome> DeleteFilesetOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DeleteFilesetRequest&, DeleteFilesetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFilesetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClientNodesResponse> DescribeClientNodesOutcome;
                 typedef std::future<DescribeClientNodesOutcome> DescribeClientNodesOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DescribeClientNodesRequest&, DescribeClientNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientNodesAsyncHandler;
@@ -122,6 +140,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFileSystemsResponse> DescribeFileSystemsOutcome;
                 typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DescribeFileSystemsRequest&, DescribeFileSystemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileSystemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFilesetGeneralConfigResponse> DescribeFilesetGeneralConfigOutcome;
+                typedef std::future<DescribeFilesetGeneralConfigOutcome> DescribeFilesetGeneralConfigOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DescribeFilesetGeneralConfigRequest&, DescribeFilesetGeneralConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilesetGeneralConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFilesetsResponse> DescribeFilesetsOutcome;
+                typedef std::future<DescribeFilesetsOutcome> DescribeFilesetsOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DescribeFilesetsRequest&, DescribeFilesetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilesetsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetachFileSystemBucketResponse> DetachFileSystemBucketOutcome;
                 typedef std::future<DetachFileSystemBucketOutcome> DetachFileSystemBucketOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DetachFileSystemBucketRequest&, DetachFileSystemBucketOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachFileSystemBucketAsyncHandler;
@@ -137,6 +161,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryDataRepositoryBandwidthResponse> QueryDataRepositoryBandwidthOutcome;
                 typedef std::future<QueryDataRepositoryBandwidthOutcome> QueryDataRepositoryBandwidthOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::QueryDataRepositoryBandwidthRequest&, QueryDataRepositoryBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDataRepositoryBandwidthAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateFilesetResponse> UpdateFilesetOutcome;
+                typedef std::future<UpdateFilesetOutcome> UpdateFilesetOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::UpdateFilesetRequest&, UpdateFilesetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFilesetAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateFilesetGeneralConfigResponse> UpdateFilesetGeneralConfigOutcome;
+                typedef std::future<UpdateFilesetGeneralConfigOutcome> UpdateFilesetGeneralConfigOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::UpdateFilesetGeneralConfigRequest&, UpdateFilesetGeneralConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFilesetGeneralConfigAsyncHandler;
 
 
 
@@ -195,6 +225,15 @@ namespace TencentCloud
                 CreateFileSystemOutcomeCallable CreateFileSystemCallable(const Model::CreateFileSystemRequest& request);
 
                 /**
+                 *创建Fileset
+                 * @param req CreateFilesetRequest
+                 * @return CreateFilesetOutcome
+                 */
+                CreateFilesetOutcome CreateFileset(const Model::CreateFilesetRequest &request);
+                void CreateFilesetAsync(const Model::CreateFilesetRequest& request, const CreateFilesetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFilesetOutcomeCallable CreateFilesetCallable(const Model::CreateFilesetRequest& request);
+
+                /**
                  *为客户端节点删除跨vpc子网访问能力
                  * @param req DeleteCrossVpcSubnetSupportForClientNodeRequest
                  * @return DeleteCrossVpcSubnetSupportForClientNodeOutcome
@@ -211,6 +250,15 @@ namespace TencentCloud
                 DeleteFileSystemOutcome DeleteFileSystem(const Model::DeleteFileSystemRequest &request);
                 void DeleteFileSystemAsync(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFileSystemOutcomeCallable DeleteFileSystemCallable(const Model::DeleteFileSystemRequest& request);
+
+                /**
+                 *删除Fileset
+                 * @param req DeleteFilesetRequest
+                 * @return DeleteFilesetOutcome
+                 */
+                DeleteFilesetOutcome DeleteFileset(const Model::DeleteFilesetRequest &request);
+                void DeleteFilesetAsync(const Model::DeleteFilesetRequest& request, const DeleteFilesetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFilesetOutcomeCallable DeleteFilesetCallable(const Model::DeleteFilesetRequest& request);
 
                 /**
                  *列出集群中所有的客户端节点
@@ -276,6 +324,24 @@ namespace TencentCloud
                 DescribeFileSystemsOutcomeCallable DescribeFileSystemsCallable(const Model::DescribeFileSystemsRequest& request);
 
                 /**
+                 *查询Fileset通用配置
+                 * @param req DescribeFilesetGeneralConfigRequest
+                 * @return DescribeFilesetGeneralConfigOutcome
+                 */
+                DescribeFilesetGeneralConfigOutcome DescribeFilesetGeneralConfig(const Model::DescribeFilesetGeneralConfigRequest &request);
+                void DescribeFilesetGeneralConfigAsync(const Model::DescribeFilesetGeneralConfigRequest& request, const DescribeFilesetGeneralConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFilesetGeneralConfigOutcomeCallable DescribeFilesetGeneralConfigCallable(const Model::DescribeFilesetGeneralConfigRequest& request);
+
+                /**
+                 *查询Fileset列表
+                 * @param req DescribeFilesetsRequest
+                 * @return DescribeFilesetsOutcome
+                 */
+                DescribeFilesetsOutcome DescribeFilesets(const Model::DescribeFilesetsRequest &request);
+                void DescribeFilesetsAsync(const Model::DescribeFilesetsRequest& request, const DescribeFilesetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFilesetsOutcomeCallable DescribeFilesetsCallable(const Model::DescribeFilesetsRequest& request);
+
+                /**
                  *解绑文件系统与Bucket的映射
                  * @param req DetachFileSystemBucketRequest
                  * @return DetachFileSystemBucketOutcome
@@ -319,6 +385,24 @@ namespace TencentCloud
                 QueryDataRepositoryBandwidthOutcome QueryDataRepositoryBandwidth(const Model::QueryDataRepositoryBandwidthRequest &request);
                 void QueryDataRepositoryBandwidthAsync(const Model::QueryDataRepositoryBandwidthRequest& request, const QueryDataRepositoryBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryDataRepositoryBandwidthOutcomeCallable QueryDataRepositoryBandwidthCallable(const Model::QueryDataRepositoryBandwidthRequest& request);
+
+                /**
+                 *修改FIleset
+                 * @param req UpdateFilesetRequest
+                 * @return UpdateFilesetOutcome
+                 */
+                UpdateFilesetOutcome UpdateFileset(const Model::UpdateFilesetRequest &request);
+                void UpdateFilesetAsync(const Model::UpdateFilesetRequest& request, const UpdateFilesetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateFilesetOutcomeCallable UpdateFilesetCallable(const Model::UpdateFilesetRequest& request);
+
+                /**
+                 *修改Fileset通用配置
+                 * @param req UpdateFilesetGeneralConfigRequest
+                 * @return UpdateFilesetGeneralConfigOutcome
+                 */
+                UpdateFilesetGeneralConfigOutcome UpdateFilesetGeneralConfig(const Model::UpdateFilesetGeneralConfigRequest &request);
+                void UpdateFilesetGeneralConfigAsync(const Model::UpdateFilesetGeneralConfigRequest& request, const UpdateFilesetGeneralConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateFilesetGeneralConfigOutcomeCallable UpdateFilesetGeneralConfigCallable(const Model::UpdateFilesetGeneralConfigRequest& request);
 
             };
         }

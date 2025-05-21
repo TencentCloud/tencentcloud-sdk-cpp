@@ -835,7 +835,9 @@ namespace TencentCloud
                 CreateAssetSortingReportTaskOutcomeCallable CreateAssetSortingReportTaskCallable(const Model::CreateAssetSortingReportTaskRequest& request);
 
                 /**
-                 *创建识别规则
+                 *旧版本DSGC接口下线
+
+创建识别规则
                  * @param req CreateClassificationRuleRequest
                  * @return CreateClassificationRuleOutcome
                  */
@@ -988,7 +990,9 @@ namespace TencentCloud
                 CreateIdentifyRuleAnotherNameOutcomeCallable CreateIdentifyRuleAnotherNameCallable(const Model::CreateIdentifyRuleAnotherNameRequest& request);
 
                 /**
-                 *创建新分类
+                 *旧版本DSGC接口下线
+
+创建新分类
                  * @param req CreateNewClassificationRequest
                  * @return CreateNewClassificationOutcome
                  */
@@ -997,7 +1001,9 @@ namespace TencentCloud
                 CreateNewClassificationOutcomeCallable CreateNewClassificationCallable(const Model::CreateNewClassificationRequest& request);
 
                 /**
-                 *创建或复制分级分类模板
+                 *旧版本DSGC接口下线
+
+创建或复制分级分类模板
                  * @param req CreateOrCopyStandardRequest
                  * @return CreateOrCopyStandardOutcome
                  */
@@ -1122,7 +1128,9 @@ namespace TencentCloud
                 DescribeCOSAssetSensitiveDistributionOutcomeCallable DescribeCOSAssetSensitiveDistributionCallable(const Model::DescribeCOSAssetSensitiveDistributionRequest& request);
 
                 /**
-                 *查询分类信息
+                 *旧版本DSGC接口下线
+
+查询分类信息
 
                  * @param req DescribeClassificationInfoRequest
                  * @return DescribeClassificationInfoOutcome
@@ -1132,7 +1140,9 @@ namespace TencentCloud
                 DescribeClassificationInfoOutcomeCallable DescribeClassificationInfoCallable(const Model::DescribeClassificationInfoRequest& request);
 
                 /**
-                 *查询标准下所有分类的识别规则数量(不算子分类下的识别规则)
+                 *旧版本DSGC接口下线
+
+查询标准下所有分类的识别规则数量(不算子分类下的识别规则)
                  * @param req DescribeClassificationRuleCountRequest
                  * @return DescribeClassificationRuleCountOutcome
                  */
@@ -1697,7 +1707,9 @@ namespace TencentCloud
                 DescribeExportTaskResultOutcomeCallable DescribeExportTaskResultCallable(const Model::DescribeExportTaskResultRequest& request);
 
                 /**
-                 *查询标准下所有叶子节点分类
+                 *旧版本DSGC接口下线
+
+查询标准下所有叶子节点分类
                  * @param req DescribeLeafClassificationRequest
                  * @return DescribeLeafClassificationOutcome
                  */
@@ -1742,7 +1754,9 @@ namespace TencentCloud
                 DescribeReportTasksOutcomeCallable DescribeReportTasksCallable(const Model::DescribeReportTasksRequest& request);
 
                 /**
-                 *查询分类下规则列表
+                 *旧版本DSGC接口下线
+
+查询分类下规则列表
 
                  * @param req DescribeRuleListRequest
                  * @return DescribeRuleListOutcome
@@ -1861,7 +1875,9 @@ namespace TencentCloud
                 ListDSPAMetaResourcesOutcomeCallable ListDSPAMetaResourcesCallable(const Model::ListDSPAMetaResourcesRequest& request);
 
                 /**
-                 *编辑识别规则
+                 *旧版本DSGC接口下线
+
+编辑识别规则
                  * @param req ModifyClassificationRuleRequest
                  * @return ModifyClassificationRuleOutcome
                  */
@@ -1870,7 +1886,9 @@ namespace TencentCloud
                 ModifyClassificationRuleOutcomeCallable ModifyClassificationRuleCallable(const Model::ModifyClassificationRuleRequest& request);
 
                 /**
-                 *修改识别规则状态
+                 *旧版本DSGC接口下线
+
+修改识别规则状态
                  * @param req ModifyClassificationRuleStateRequest
                  * @return ModifyClassificationRuleStateOutcome
                  */
@@ -2014,7 +2032,9 @@ namespace TencentCloud
                 ModifyDSPATaskResultOutcomeCallable ModifyDSPATaskResultCallable(const Model::ModifyDSPATaskResultRequest& request);
 
                 /**
-                 *修改敏感级别信息
+                 *旧版本DSGC接口下线
+
+修改敏感级别信息
                  * @param req ModifyLevelInfoRequest
                  * @return ModifyLevelInfoOutcome
                  */
@@ -2023,7 +2043,9 @@ namespace TencentCloud
                 ModifyLevelInfoOutcomeCallable ModifyLevelInfoCallable(const Model::ModifyLevelInfoRequest& request);
 
                 /**
-                 *修改级别名称
+                 *旧版本DSGC接口下线
+
+修改级别名称
                  * @param req ModifyLevelNameRequest
                  * @return ModifyLevelNameOutcome
                  */
@@ -2032,7 +2054,9 @@ namespace TencentCloud
                 ModifyLevelNameOutcomeCallable ModifyLevelNameCallable(const Model::ModifyLevelNameRequest& request);
 
                 /**
-                 *开启级别或关闭级别
+                 *旧版本DSGC接口下线
+
+开启级别或关闭级别
                  * @param req ModifyLevelStateRequest
                  * @return ModifyLevelStateOutcome
                  */
@@ -2041,7 +2065,9 @@ namespace TencentCloud
                 ModifyLevelStateOutcomeCallable ModifyLevelStateCallable(const Model::ModifyLevelStateRequest& request);
 
                 /**
-                 *一个分类合并到另一个分类中（分类拖拽功能）
+                 *旧版本DSGC接口下线
+
+一个分类合并到另一个分类中（分类拖拽功能）
                  * @param req ModifyMergeClassificationRequest
                  * @return ModifyMergeClassificationOutcome
                  */
@@ -2050,7 +2076,9 @@ namespace TencentCloud
                 ModifyMergeClassificationOutcomeCallable ModifyMergeClassificationCallable(const Model::ModifyMergeClassificationRequest& request);
 
                 /**
-                 *修改分类信息
+                 *旧版本DSGC接口下线
+
+修改分类信息
                  * @param req ModifyNewClassificationRequest
                  * @return ModifyNewClassificationOutcome
                  */
@@ -2059,7 +2087,9 @@ namespace TencentCloud
                 ModifyNewClassificationOutcomeCallable ModifyNewClassificationCallable(const Model::ModifyNewClassificationRequest& request);
 
                 /**
-                 *修改分级分类模板信息
+                 *旧版本DSGC接口下线
+
+修改分级分类模板信息
                  * @param req ModifyStandardInfoRequest
                  * @return ModifyStandardInfoOutcome
                  */

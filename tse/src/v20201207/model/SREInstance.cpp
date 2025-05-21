@@ -56,7 +56,11 @@ SREInstance::SREInstance() :
     m_enableClientIntranetHasBeenSet(false),
     m_storageOptionHasBeenSet(false),
     m_zookeeperRegionInfoHasBeenSet(false),
-    m_deployModeHasBeenSet(false)
+    m_deployModeHasBeenSet(false),
+    m_globalTypeHasBeenSet(false),
+    m_groupTypeHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_isMainRegionHasBeenSet(false)
 {
 }
 
@@ -495,6 +499,49 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_deployModeHasBeenSet = true;
     }
 
+    if (value.HasMember("GlobalType") && !value["GlobalType"].IsNull())
+    {
+        if (!value["GlobalType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.GlobalType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_globalType = string(value["GlobalType"].GetString());
+        m_globalTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupType") && !value["GroupType"].IsNull())
+    {
+        if (!value["GroupType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.GroupType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupType = string(value["GroupType"].GetString());
+        m_groupTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SREInstance.GroupId` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GroupId"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_groupId.push_back((*itr).GetString());
+        }
+        m_groupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsMainRegion") && !value["IsMainRegion"].IsNull())
+    {
+        if (!value["IsMainRegion"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.IsMainRegion` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMainRegion = value["IsMainRegion"].GetBool();
+        m_isMainRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -836,6 +883,43 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "DeployMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deployMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_globalTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GlobalType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_globalType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupId.begin(); itr != m_groupId.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isMainRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMainRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMainRegion, allocator);
     }
 
 }
@@ -1415,5 +1499,69 @@ void SREInstance::SetDeployMode(const string& _deployMode)
 bool SREInstance::DeployModeHasBeenSet() const
 {
     return m_deployModeHasBeenSet;
+}
+
+string SREInstance::GetGlobalType() const
+{
+    return m_globalType;
+}
+
+void SREInstance::SetGlobalType(const string& _globalType)
+{
+    m_globalType = _globalType;
+    m_globalTypeHasBeenSet = true;
+}
+
+bool SREInstance::GlobalTypeHasBeenSet() const
+{
+    return m_globalTypeHasBeenSet;
+}
+
+string SREInstance::GetGroupType() const
+{
+    return m_groupType;
+}
+
+void SREInstance::SetGroupType(const string& _groupType)
+{
+    m_groupType = _groupType;
+    m_groupTypeHasBeenSet = true;
+}
+
+bool SREInstance::GroupTypeHasBeenSet() const
+{
+    return m_groupTypeHasBeenSet;
+}
+
+vector<string> SREInstance::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void SREInstance::SetGroupId(const vector<string>& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool SREInstance::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+bool SREInstance::GetIsMainRegion() const
+{
+    return m_isMainRegion;
+}
+
+void SREInstance::SetIsMainRegion(const bool& _isMainRegion)
+{
+    m_isMainRegion = _isMainRegion;
+    m_isMainRegionHasBeenSet = true;
+}
+
+bool SREInstance::IsMainRegionHasBeenSet() const
+{
+    return m_isMainRegionHasBeenSet;
 }
 

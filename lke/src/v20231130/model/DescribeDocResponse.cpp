@@ -47,9 +47,7 @@ DescribeDocResponse::DescribeDocResponse() :
     m_isAllowEditHasBeenSet(false),
     m_attrRangeHasBeenSet(false),
     m_attrLabelsHasBeenSet(false),
-    m_cateBizIdHasBeenSet(false),
-    m_customerKnowledgeIdHasBeenSet(false),
-    m_attributeFlagsHasBeenSet(false)
+    m_cateBizIdHasBeenSet(false)
 {
 }
 
@@ -337,29 +335,6 @@ CoreInternalOutcome DescribeDocResponse::Deserialize(const string &payload)
         m_cateBizIdHasBeenSet = true;
     }
 
-    if (rsp.HasMember("CustomerKnowledgeId") && !rsp["CustomerKnowledgeId"].IsNull())
-    {
-        if (!rsp["CustomerKnowledgeId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CustomerKnowledgeId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_customerKnowledgeId = string(rsp["CustomerKnowledgeId"].GetString());
-        m_customerKnowledgeIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("AttributeFlags") && !rsp["AttributeFlags"].IsNull())
-    {
-        if (!rsp["AttributeFlags"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `AttributeFlags` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["AttributeFlags"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_attributeFlags.push_back((*itr).GetUint64());
-        }
-        m_attributeFlagsHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -567,27 +542,6 @@ string DescribeDocResponse::ToJsonString() const
         string key = "CateBizId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_customerKnowledgeIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CustomerKnowledgeId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_customerKnowledgeId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_attributeFlagsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AttributeFlags";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_attributeFlags.begin(); itr != m_attributeFlags.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
-        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -840,26 +794,6 @@ string DescribeDocResponse::GetCateBizId() const
 bool DescribeDocResponse::CateBizIdHasBeenSet() const
 {
     return m_cateBizIdHasBeenSet;
-}
-
-string DescribeDocResponse::GetCustomerKnowledgeId() const
-{
-    return m_customerKnowledgeId;
-}
-
-bool DescribeDocResponse::CustomerKnowledgeIdHasBeenSet() const
-{
-    return m_customerKnowledgeIdHasBeenSet;
-}
-
-vector<uint64_t> DescribeDocResponse::GetAttributeFlags() const
-{
-    return m_attributeFlags;
-}
-
-bool DescribeDocResponse::AttributeFlagsHasBeenSet() const
-{
-    return m_attributeFlagsHasBeenSet;
 }
 
 

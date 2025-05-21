@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tse/v20201207/model/Metadata.h>
 
 
 namespace TencentCloud
@@ -235,6 +236,31 @@ namespace TencentCloud
                      */
                     bool EditableHasBeenSet() const;
 
+                    /**
+                     * 获取元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Metadatas 元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Metadata> GetMetadatas() const;
+
+                    /**
+                     * 设置元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _metadatas 元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMetadatas(const std::vector<Metadata>& _metadatas);
+
+                    /**
+                     * 判断参数 Metadatas 是否已赋值
+                     * @return Metadatas 是否已赋值
+                     * 
+                     */
+                    bool MetadatasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +316,13 @@ namespace TencentCloud
                      */
                     bool m_editable;
                     bool m_editableHasBeenSet;
+
+                    /**
+                     * 元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Metadata> m_metadatas;
+                    bool m_metadatasHasBeenSet;
 
                 };
             }

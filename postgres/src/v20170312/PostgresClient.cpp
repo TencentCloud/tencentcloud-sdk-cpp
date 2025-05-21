@@ -4426,49 +4426,6 @@ PostgresClient::UnlockAccountOutcomeCallable PostgresClient::UnlockAccountCallab
     return task->get_future();
 }
 
-PostgresClient::UpgradeDBInstanceOutcome PostgresClient::UpgradeDBInstance(const UpgradeDBInstanceRequest &request)
-{
-    auto outcome = MakeRequest(request, "UpgradeDBInstance");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        UpgradeDBInstanceResponse rsp = UpgradeDBInstanceResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return UpgradeDBInstanceOutcome(rsp);
-        else
-            return UpgradeDBInstanceOutcome(o.GetError());
-    }
-    else
-    {
-        return UpgradeDBInstanceOutcome(outcome.GetError());
-    }
-}
-
-void PostgresClient::UpgradeDBInstanceAsync(const UpgradeDBInstanceRequest& request, const UpgradeDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeDBInstance(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-PostgresClient::UpgradeDBInstanceOutcomeCallable PostgresClient::UpgradeDBInstanceCallable(const UpgradeDBInstanceRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<UpgradeDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 PostgresClient::UpgradeDBInstanceKernelVersionOutcome PostgresClient::UpgradeDBInstanceKernelVersion(const UpgradeDBInstanceKernelVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "UpgradeDBInstanceKernelVersion");

@@ -47,16 +47,30 @@ namespace TencentCloud
                     /**
                      * 获取风险面列表
                      * @return RiskSideItmeList 风险面列表
-                     * 
+                     * @deprecated
                      */
                     std::vector<Note> GetRiskSideItmeList() const;
 
                     /**
                      * 判断参数 RiskSideItmeList 是否已赋值
                      * @return RiskSideItmeList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RiskSideItmeListHasBeenSet() const;
+
+                    /**
+                     * 获取风险面列表
+                     * @return RiskSideItemList 风险面列表
+                     * 
+                     */
+                    std::vector<Note> GetRiskSideItemList() const;
+
+                    /**
+                     * 判断参数 RiskSideItemList 是否已赋值
+                     * @return RiskSideItemList 是否已赋值
+                     * 
+                     */
+                    bool RiskSideItemListHasBeenSet() const;
 
                 private:
 
@@ -65,6 +79,12 @@ namespace TencentCloud
                      */
                     std::vector<Note> m_riskSideItmeList;
                     bool m_riskSideItmeListHasBeenSet;
+
+                    /**
+                     * 风险面列表
+                     */
+                    std::vector<Note> m_riskSideItemList;
+                    bool m_riskSideItemListHasBeenSet;
 
                 };
             }

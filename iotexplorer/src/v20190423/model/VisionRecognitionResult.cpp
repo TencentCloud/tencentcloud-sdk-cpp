@@ -23,7 +23,8 @@ using namespace std;
 VisionRecognitionResult::VisionRecognitionResult() :
     m_statusHasBeenSet(false),
     m_detectedClassificationsHasBeenSet(false),
-    m_summaryHasBeenSet(false)
+    m_summaryHasBeenSet(false),
+    m_alternativeSummaryHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome VisionRecognitionResult::Deserialize(const rapidjson::Value 
         m_summaryHasBeenSet = true;
     }
 
+    if (value.HasMember("AlternativeSummary") && !value["AlternativeSummary"].IsNull())
+    {
+        if (!value["AlternativeSummary"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VisionRecognitionResult.AlternativeSummary` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alternativeSummary = string(value["AlternativeSummary"].GetString());
+        m_alternativeSummaryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void VisionRecognitionResult::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Summary";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_summary.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alternativeSummaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlternativeSummary";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alternativeSummary.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void VisionRecognitionResult::SetSummary(const string& _summary)
 bool VisionRecognitionResult::SummaryHasBeenSet() const
 {
     return m_summaryHasBeenSet;
+}
+
+string VisionRecognitionResult::GetAlternativeSummary() const
+{
+    return m_alternativeSummary;
+}
+
+void VisionRecognitionResult::SetAlternativeSummary(const string& _alternativeSummary)
+{
+    m_alternativeSummary = _alternativeSummary;
+    m_alternativeSummaryHasBeenSet = true;
+}
+
+bool VisionRecognitionResult::AlternativeSummaryHasBeenSet() const
+{
+    return m_alternativeSummaryHasBeenSet;
 }
 

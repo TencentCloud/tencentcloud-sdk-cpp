@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool HaTypeHasBeenSet() const;
 
+                    /**
+                     * 获取前端鉴权使用
+                     * @return CheckAuth 前端鉴权使用
+                     * 
+                     */
+                    bool GetCheckAuth() const;
+
+                    /**
+                     * 设置前端鉴权使用
+                     * @param _checkAuth 前端鉴权使用
+                     * 
+                     */
+                    void SetCheckAuth(const bool& _checkAuth);
+
+                    /**
+                     * 判断参数 CheckAuth 是否已赋值
+                     * @return CheckAuth 是否已赋值
+                     * 
+                     */
+                    bool CheckAuthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     int64_t m_haType;
                     bool m_haTypeHasBeenSet;
+
+                    /**
+                     * 前端鉴权使用
+                     */
+                    bool m_checkAuth;
+                    bool m_checkAuthHasBeenSet;
 
                 };
             }

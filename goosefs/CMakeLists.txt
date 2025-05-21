@@ -20,43 +20,56 @@ set(goosefs_public_header
 
 set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/CreateFileSystemResponse.h
-  include/tencentcloud/goosefs/v20220519/model/GooseFSxAttribute.h
+  include/tencentcloud/goosefs/v20220519/model/CreateFilesetRequest.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeFilesetsRequest.h
   include/tencentcloud/goosefs/v20220519/model/ClientNodeAttribute.h
-  include/tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryBandwidthResponse.h
+  include/tencentcloud/goosefs/v20220519/model/GooseFSxAttribute.h
   include/tencentcloud/goosefs/v20220519/model/DescribeClusterRoleTokenRequest.h
   include/tencentcloud/goosefs/v20220519/model/DescribeFileSystemsResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeFilesetGeneralConfigResponse.h
   include/tencentcloud/goosefs/v20220519/model/ExpandCapacityResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DeleteFilesetRequest.h
   include/tencentcloud/goosefs/v20220519/model/FSAttribute.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeFilesetsResponse.h
   include/tencentcloud/goosefs/v20220519/model/DescribeClusterRoleTokenResponse.h
   include/tencentcloud/goosefs/v20220519/model/BatchDeleteClientNodesResponse.h
   include/tencentcloud/goosefs/v20220519/model/QueryCrossVpcSubnetSupportForClientNodeRequest.h
   include/tencentcloud/goosefs/v20220519/model/ChargeAttribute.h
   include/tencentcloud/goosefs/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeRequest.h
   include/tencentcloud/goosefs/v20220519/model/AttachFileSystemBucketRequest.h
+  include/tencentcloud/goosefs/v20220519/model/SubnetInfo.h
   include/tencentcloud/goosefs/v20220519/model/DeleteFileSystemRequest.h
-  include/tencentcloud/goosefs/v20220519/model/DescribeFileSystemBucketsRequest.h
+  include/tencentcloud/goosefs/v20220519/model/CreateFilesetResponse.h
   include/tencentcloud/goosefs/v20220519/model/BatchAddClientNodesResponse.h
-  include/tencentcloud/goosefs/v20220519/model/AttachFileSystemBucketResponse.h
   include/tencentcloud/goosefs/v20220519/model/GooseFSxBuildElement.h
+  include/tencentcloud/goosefs/v20220519/model/AttachFileSystemBucketResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeFilesetGeneralConfigRequest.h
   include/tencentcloud/goosefs/v20220519/model/CreateFileSystemRequest.h
   include/tencentcloud/goosefs/v20220519/model/ClusterRole.h
   include/tencentcloud/goosefs/v20220519/model/DeleteFileSystemResponse.h
   include/tencentcloud/goosefs/v20220519/model/ExpandCapacityRequest.h
   include/tencentcloud/goosefs/v20220519/model/DetachFileSystemBucketRequest.h
   include/tencentcloud/goosefs/v20220519/model/ClientToken.h
+  include/tencentcloud/goosefs/v20220519/model/UpdateFilesetRequest.h
+  include/tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryBandwidthResponse.h
   include/tencentcloud/goosefs/v20220519/model/QueryDataRepositoryBandwidthResponse.h
   include/tencentcloud/goosefs/v20220519/model/QueryDataRepositoryBandwidthRequest.h
   include/tencentcloud/goosefs/v20220519/model/ClientClusterManagerNodeInfo.h
+  include/tencentcloud/goosefs/v20220519/model/FilesetInfo.h
+  include/tencentcloud/goosefs/v20220519/model/UpdateFilesetResponse.h
   include/tencentcloud/goosefs/v20220519/model/LinuxNodeAttribute.h
   include/tencentcloud/goosefs/v20220519/model/BatchDeleteClientNodesRequest.h
-  include/tencentcloud/goosefs/v20220519/model/SubnetInfo.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeFileSystemBucketsRequest.h
+  include/tencentcloud/goosefs/v20220519/model/UpdateFilesetGeneralConfigResponse.h
   include/tencentcloud/goosefs/v20220519/model/QueryCrossVpcSubnetSupportForClientNodeResponse.h
   include/tencentcloud/goosefs/v20220519/model/DescribeFileSystemsRequest.h
+  include/tencentcloud/goosefs/v20220519/model/UpdateFilesetGeneralConfigRequest.h
   include/tencentcloud/goosefs/v20220519/model/DescribeClusterClientTokenRequest.h
   include/tencentcloud/goosefs/v20220519/model/AddCrossVpcSubnetSupportForClientNodeResponse.h
   include/tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h
   include/tencentcloud/goosefs/v20220519/model/DescribeClusterRolesResponse.h
   include/tencentcloud/goosefs/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DeleteFilesetResponse.h
   include/tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusResponse.h
   include/tencentcloud/goosefs/v20220519/model/BatchAddClientNodesRequest.h
   include/tencentcloud/goosefs/v20220519/model/AddCrossVpcSubnetSupportForClientNodeRequest.h
@@ -77,43 +90,56 @@ set(goosefs_public_header_model
 set(goosefs_src
   src/v20220519/GoosefsClient.cpp
   src/v20220519/model/CreateFileSystemResponse.cpp
-  src/v20220519/model/GooseFSxAttribute.cpp
+  src/v20220519/model/CreateFilesetRequest.cpp
+  src/v20220519/model/DescribeFilesetsRequest.cpp
   src/v20220519/model/ClientNodeAttribute.cpp
-  src/v20220519/model/ModifyDataRepositoryBandwidthResponse.cpp
+  src/v20220519/model/GooseFSxAttribute.cpp
   src/v20220519/model/DescribeClusterRoleTokenRequest.cpp
   src/v20220519/model/DescribeFileSystemsResponse.cpp
+  src/v20220519/model/DescribeFilesetGeneralConfigResponse.cpp
   src/v20220519/model/ExpandCapacityResponse.cpp
+  src/v20220519/model/DeleteFilesetRequest.cpp
   src/v20220519/model/FSAttribute.cpp
+  src/v20220519/model/DescribeFilesetsResponse.cpp
   src/v20220519/model/DescribeClusterRoleTokenResponse.cpp
   src/v20220519/model/BatchDeleteClientNodesResponse.cpp
   src/v20220519/model/QueryCrossVpcSubnetSupportForClientNodeRequest.cpp
   src/v20220519/model/ChargeAttribute.cpp
   src/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeRequest.cpp
   src/v20220519/model/AttachFileSystemBucketRequest.cpp
+  src/v20220519/model/SubnetInfo.cpp
   src/v20220519/model/DeleteFileSystemRequest.cpp
-  src/v20220519/model/DescribeFileSystemBucketsRequest.cpp
+  src/v20220519/model/CreateFilesetResponse.cpp
   src/v20220519/model/BatchAddClientNodesResponse.cpp
-  src/v20220519/model/AttachFileSystemBucketResponse.cpp
   src/v20220519/model/GooseFSxBuildElement.cpp
+  src/v20220519/model/AttachFileSystemBucketResponse.cpp
+  src/v20220519/model/DescribeFilesetGeneralConfigRequest.cpp
   src/v20220519/model/CreateFileSystemRequest.cpp
   src/v20220519/model/ClusterRole.cpp
   src/v20220519/model/DeleteFileSystemResponse.cpp
   src/v20220519/model/ExpandCapacityRequest.cpp
   src/v20220519/model/DetachFileSystemBucketRequest.cpp
   src/v20220519/model/ClientToken.cpp
+  src/v20220519/model/UpdateFilesetRequest.cpp
+  src/v20220519/model/ModifyDataRepositoryBandwidthResponse.cpp
   src/v20220519/model/QueryDataRepositoryBandwidthResponse.cpp
   src/v20220519/model/QueryDataRepositoryBandwidthRequest.cpp
   src/v20220519/model/ClientClusterManagerNodeInfo.cpp
+  src/v20220519/model/FilesetInfo.cpp
+  src/v20220519/model/UpdateFilesetResponse.cpp
   src/v20220519/model/LinuxNodeAttribute.cpp
   src/v20220519/model/BatchDeleteClientNodesRequest.cpp
-  src/v20220519/model/SubnetInfo.cpp
+  src/v20220519/model/DescribeFileSystemBucketsRequest.cpp
+  src/v20220519/model/UpdateFilesetGeneralConfigResponse.cpp
   src/v20220519/model/QueryCrossVpcSubnetSupportForClientNodeResponse.cpp
   src/v20220519/model/DescribeFileSystemsRequest.cpp
+  src/v20220519/model/UpdateFilesetGeneralConfigRequest.cpp
   src/v20220519/model/DescribeClusterClientTokenRequest.cpp
   src/v20220519/model/AddCrossVpcSubnetSupportForClientNodeResponse.cpp
   src/v20220519/model/CreateDataRepositoryTaskResponse.cpp
   src/v20220519/model/DescribeClusterRolesResponse.cpp
   src/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeResponse.cpp
+  src/v20220519/model/DeleteFilesetResponse.cpp
   src/v20220519/model/DescribeDataRepositoryTaskStatusResponse.cpp
   src/v20220519/model/BatchAddClientNodesRequest.cpp
   src/v20220519/model/AddCrossVpcSubnetSupportForClientNodeRequest.cpp

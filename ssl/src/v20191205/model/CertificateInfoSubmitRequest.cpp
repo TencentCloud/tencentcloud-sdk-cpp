@@ -60,7 +60,9 @@ CertificateInfoSubmitRequest::CertificateInfoSubmitRequest() :
     m_managerIdHasBeenSet(false),
     m_techPhoneHasBeenSet(false),
     m_techEmailHasBeenSet(false),
-    m_techTitleHasBeenSet(false)
+    m_techTitleHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_caTypeHasBeenSet(false)
 {
 }
 
@@ -378,6 +380,22 @@ string CertificateInfoSubmitRequest::ToJsonString() const
         string key = "TechTitle";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_techTitle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_caTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_caType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -994,6 +1012,38 @@ void CertificateInfoSubmitRequest::SetTechTitle(const string& _techTitle)
 bool CertificateInfoSubmitRequest::TechTitleHasBeenSet() const
 {
     return m_techTitleHasBeenSet;
+}
+
+int64_t CertificateInfoSubmitRequest::GetType() const
+{
+    return m_type;
+}
+
+void CertificateInfoSubmitRequest::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CertificateInfoSubmitRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string CertificateInfoSubmitRequest::GetCaType() const
+{
+    return m_caType;
+}
+
+void CertificateInfoSubmitRequest::SetCaType(const string& _caType)
+{
+    m_caType = _caType;
+    m_caTypeHasBeenSet = true;
+}
+
+bool CertificateInfoSubmitRequest::CaTypeHasBeenSet() const
+{
+    return m_caTypeHasBeenSet;
 }
 
 

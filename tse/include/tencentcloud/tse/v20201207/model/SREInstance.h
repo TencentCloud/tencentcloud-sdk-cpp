@@ -809,6 +809,90 @@ namespace TencentCloud
                      */
                     bool DeployModeHasBeenSet() const;
 
+                    /**
+                     * 获取全局属性
+                     * @return GlobalType 全局属性
+                     * 
+                     */
+                    std::string GetGlobalType() const;
+
+                    /**
+                     * 设置全局属性
+                     * @param _globalType 全局属性
+                     * 
+                     */
+                    void SetGlobalType(const std::string& _globalType);
+
+                    /**
+                     * 判断参数 GlobalType 是否已赋值
+                     * @return GlobalType 是否已赋值
+                     * 
+                     */
+                    bool GlobalTypeHasBeenSet() const;
+
+                    /**
+                     * 获取所属组类型
+                     * @return GroupType 所属组类型
+                     * 
+                     */
+                    std::string GetGroupType() const;
+
+                    /**
+                     * 设置所属组类型
+                     * @param _groupType 所属组类型
+                     * 
+                     */
+                    void SetGroupType(const std::string& _groupType);
+
+                    /**
+                     * 判断参数 GroupType 是否已赋值
+                     * @return GroupType 是否已赋值
+                     * 
+                     */
+                    bool GroupTypeHasBeenSet() const;
+
+                    /**
+                     * 获取组id
+                     * @return GroupId 组id
+                     * 
+                     */
+                    std::vector<std::string> GetGroupId() const;
+
+                    /**
+                     * 设置组id
+                     * @param _groupId 组id
+                     * 
+                     */
+                    void SetGroupId(const std::vector<std::string>& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否为主地域
+                     * @return IsMainRegion 是否为主地域
+                     * 
+                     */
+                    bool GetIsMainRegion() const;
+
+                    /**
+                     * 设置是否为主地域
+                     * @param _isMainRegion 是否为主地域
+                     * 
+                     */
+                    void SetIsMainRegion(const bool& _isMainRegion);
+
+                    /**
+                     * 判断参数 IsMainRegion 是否已赋值
+                     * @return IsMainRegion 是否已赋值
+                     * 
+                     */
+                    bool IsMainRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1026,6 +1110,30 @@ namespace TencentCloud
                      */
                     std::string m_deployMode;
                     bool m_deployModeHasBeenSet;
+
+                    /**
+                     * 全局属性
+                     */
+                    std::string m_globalType;
+                    bool m_globalTypeHasBeenSet;
+
+                    /**
+                     * 所属组类型
+                     */
+                    std::string m_groupType;
+                    bool m_groupTypeHasBeenSet;
+
+                    /**
+                     * 组id
+                     */
+                    std::vector<std::string> m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 是否为主地域
+                     */
+                    bool m_isMainRegion;
+                    bool m_isMainRegionHasBeenSet;
 
                 };
             }

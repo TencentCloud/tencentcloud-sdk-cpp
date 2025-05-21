@@ -447,23 +447,23 @@ namespace TencentCloud
                     bool MonitorVersionHasBeenSet() const;
 
                     /**
-                     * 获取根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
-                     * @return InstanceTags 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
-                     * 
+                     * 获取废弃字段。请使用TagList传参。
+                     * @return InstanceTags 废弃字段。请使用TagList传参。
+                     * @deprecated
                      */
                     InstanceTagInfo GetInstanceTags() const;
 
                     /**
-                     * 设置根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
-                     * @param _instanceTags 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
-                     * 
+                     * 设置废弃字段。请使用TagList传参。
+                     * @param _instanceTags 废弃字段。请使用TagList传参。
+                     * @deprecated
                      */
                     void SetInstanceTags(const InstanceTagInfo& _instanceTags);
 
                     /**
                      * 判断参数 InstanceTags 是否已赋值
                      * @return InstanceTags 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceTagsHasBeenSet() const;
 
@@ -487,6 +487,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TagKeysHasBeenSet() const;
+
+                    /**
+                     * 获取根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * @return TagList 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * 
+                     */
+                    std::vector<InstanceTagInfo> GetTagList() const;
+
+                    /**
+                     * 设置根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * @param _tagList 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * 
+                     */
+                    void SetTagList(const std::vector<InstanceTagInfo>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
 
                 private:
 
@@ -606,7 +627,7 @@ namespace TencentCloud
                     bool m_monitorVersionHasBeenSet;
 
                     /**
-                     * 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * 废弃字段。请使用TagList传参。
                      */
                     InstanceTagInfo m_instanceTags;
                     bool m_instanceTagsHasBeenSet;
@@ -616,6 +637,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;
+
+                    /**
+                     * 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     */
+                    std::vector<InstanceTagInfo> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

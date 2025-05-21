@@ -35,7 +35,8 @@ GovernanceNamespace::GovernanceNamespace() :
     m_removeUserIdsHasBeenSet(false),
     m_removeGroupIdsHasBeenSet(false),
     m_serviceExportToHasBeenSet(false),
-    m_syncToGlobalRegistryHasBeenSet(false)
+    m_syncToGlobalRegistryHasBeenSet(false),
+    m_metadatasHasBeenSet(false)
 {
 }
 
@@ -209,6 +210,26 @@ CoreInternalOutcome GovernanceNamespace::Deserialize(const rapidjson::Value &val
         m_syncToGlobalRegistryHasBeenSet = true;
     }
 
+    if (value.HasMember("Metadatas") && !value["Metadatas"].IsNull())
+    {
+        if (!value["Metadatas"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GovernanceNamespace.Metadatas` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Metadatas"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Metadata item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metadatas.push_back(item);
+        }
+        m_metadatasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -359,6 +380,21 @@ void GovernanceNamespace::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "SyncToGlobalRegistry";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_syncToGlobalRegistry, allocator);
+    }
+
+    if (m_metadatasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadatas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metadatas.begin(); itr != m_metadatas.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -602,5 +638,21 @@ void GovernanceNamespace::SetSyncToGlobalRegistry(const bool& _syncToGlobalRegis
 bool GovernanceNamespace::SyncToGlobalRegistryHasBeenSet() const
 {
     return m_syncToGlobalRegistryHasBeenSet;
+}
+
+vector<Metadata> GovernanceNamespace::GetMetadatas() const
+{
+    return m_metadatas;
+}
+
+void GovernanceNamespace::SetMetadatas(const vector<Metadata>& _metadatas)
+{
+    m_metadatas = _metadatas;
+    m_metadatasHasBeenSet = true;
+}
+
+bool GovernanceNamespace::MetadatasHasBeenSet() const
+{
+    return m_metadatasHasBeenSet;
 }
 

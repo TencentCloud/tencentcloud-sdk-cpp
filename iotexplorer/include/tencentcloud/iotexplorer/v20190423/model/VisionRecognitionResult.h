@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）
-                     * @return Status 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）
+                     * 获取任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）
+                     * @return Status 任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）
-                     * @param _status 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）
+                     * 设置任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）
+                     * @param _status 任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool DetectedClassificationsHasBeenSet() const;
 
                     /**
-                     * 获取视频摘要文本
-                     * @return Summary 视频摘要文本
+                     * 获取摘要文本
+                     * @return Summary 摘要文本
                      * 
                      */
                     std::string GetSummary() const;
 
                     /**
-                     * 设置视频摘要文本
-                     * @param _summary 视频摘要文本
+                     * 设置摘要文本
+                     * @param _summary 摘要文本
                      * 
                      */
                     void SetSummary(const std::string& _summary);
@@ -149,10 +149,31 @@ namespace TencentCloud
                      */
                     bool SummaryHasBeenSet() const;
 
+                    /**
+                     * 获取摘要文本（次选语言）
+                     * @return AlternativeSummary 摘要文本（次选语言）
+                     * 
+                     */
+                    std::string GetAlternativeSummary() const;
+
+                    /**
+                     * 设置摘要文本（次选语言）
+                     * @param _alternativeSummary 摘要文本（次选语言）
+                     * 
+                     */
+                    void SetAlternativeSummary(const std::string& _alternativeSummary);
+
+                    /**
+                     * 判断参数 AlternativeSummary 是否已赋值
+                     * @return AlternativeSummary 是否已赋值
+                     * 
+                     */
+                    bool AlternativeSummaryHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）
+                     * 任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -174,10 +195,16 @@ namespace TencentCloud
                     bool m_detectedClassificationsHasBeenSet;
 
                     /**
-                     * 视频摘要文本
+                     * 摘要文本
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
+
+                    /**
+                     * 摘要文本（次选语言）
+                     */
+                    std::string m_alternativeSummary;
+                    bool m_alternativeSummaryHasBeenSet;
 
                 };
             }

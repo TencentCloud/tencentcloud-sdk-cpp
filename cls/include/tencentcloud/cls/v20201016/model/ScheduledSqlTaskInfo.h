@@ -454,6 +454,27 @@ namespace TencentCloud
                      */
                     bool HasServicesLogHasBeenSet() const;
 
+                    /**
+                     * 获取全文检索标记。1：关闭，2：打开。
+                     * @return FullQuery 全文检索标记。1：关闭，2：打开。
+                     * 
+                     */
+                    uint64_t GetFullQuery() const;
+
+                    /**
+                     * 设置全文检索标记。1：关闭，2：打开。
+                     * @param _fullQuery 全文检索标记。1：关闭，2：打开。
+                     * 
+                     */
+                    void SetFullQuery(const uint64_t& _fullQuery);
+
+                    /**
+                     * 判断参数 FullQuery 是否已赋值
+                     * @return FullQuery 是否已赋值
+                     * 
+                     */
+                    bool FullQueryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -571,6 +592,12 @@ namespace TencentCloud
                      */
                     uint64_t m_hasServicesLog;
                     bool m_hasServicesLogHasBeenSet;
+
+                    /**
+                     * 全文检索标记。1：关闭，2：打开。
+                     */
+                    uint64_t m_fullQuery;
+                    bool m_fullQueryHasBeenSet;
 
                 };
             }

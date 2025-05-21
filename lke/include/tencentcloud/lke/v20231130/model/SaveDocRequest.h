@@ -440,48 +440,6 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                      */
                     bool CateBizIdHasBeenSet() const;
 
-                    /**
-                     * 获取文档的用户自定义ID
-                     * @return CustomerKnowledgeId 文档的用户自定义ID
-                     * 
-                     */
-                    std::string GetCustomerKnowledgeId() const;
-
-                    /**
-                     * 设置文档的用户自定义ID
-                     * @param _customerKnowledgeId 文档的用户自定义ID
-                     * 
-                     */
-                    void SetCustomerKnowledgeId(const std::string& _customerKnowledgeId);
-
-                    /**
-                     * 判断参数 CustomerKnowledgeId 是否已赋值
-                     * @return CustomerKnowledgeId 是否已赋值
-                     * 
-                     */
-                    bool CustomerKnowledgeIdHasBeenSet() const;
-
-                    /**
-                     * 获取文档的属性标记，0: 不做用户外部权限校验
-                     * @return AttributeFlags 文档的属性标记，0: 不做用户外部权限校验
-                     * 
-                     */
-                    std::vector<uint64_t> GetAttributeFlags() const;
-
-                    /**
-                     * 设置文档的属性标记，0: 不做用户外部权限校验
-                     * @param _attributeFlags 文档的属性标记，0: 不做用户外部权限校验
-                     * 
-                     */
-                    void SetAttributeFlags(const std::vector<uint64_t>& _attributeFlags);
-
-                    /**
-                     * 判断参数 AttributeFlags 是否已赋值
-                     * @return AttributeFlags 是否已赋值
-                     * 
-                     */
-                    bool AttributeFlagsHasBeenSet() const;
-
                 private:
 
                     /**
@@ -595,18 +553,6 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                      */
                     std::string m_cateBizId;
                     bool m_cateBizIdHasBeenSet;
-
-                    /**
-                     * 文档的用户自定义ID
-                     */
-                    std::string m_customerKnowledgeId;
-                    bool m_customerKnowledgeIdHasBeenSet;
-
-                    /**
-                     * 文档的属性标记，0: 不做用户外部权限校验
-                     */
-                    std::vector<uint64_t> m_attributeFlags;
-                    bool m_attributeFlagsHasBeenSet;
 
                 };
             }

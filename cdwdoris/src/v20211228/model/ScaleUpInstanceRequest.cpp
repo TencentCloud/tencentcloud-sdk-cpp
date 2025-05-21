@@ -25,7 +25,9 @@ using namespace std;
 ScaleUpInstanceRequest::ScaleUpInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_specNameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_checkAuthHasBeenSet(false),
+    m_rollingRestartHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string ScaleUpInstanceRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkAuthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckAuth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkAuth, allocator);
+    }
+
+    if (m_rollingRestartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollingRestart";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rollingRestart, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void ScaleUpInstanceRequest::SetType(const string& _type)
 bool ScaleUpInstanceRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+bool ScaleUpInstanceRequest::GetCheckAuth() const
+{
+    return m_checkAuth;
+}
+
+void ScaleUpInstanceRequest::SetCheckAuth(const bool& _checkAuth)
+{
+    m_checkAuth = _checkAuth;
+    m_checkAuthHasBeenSet = true;
+}
+
+bool ScaleUpInstanceRequest::CheckAuthHasBeenSet() const
+{
+    return m_checkAuthHasBeenSet;
+}
+
+bool ScaleUpInstanceRequest::GetRollingRestart() const
+{
+    return m_rollingRestart;
+}
+
+void ScaleUpInstanceRequest::SetRollingRestart(const bool& _rollingRestart)
+{
+    m_rollingRestart = _rollingRestart;
+    m_rollingRestartHasBeenSet = true;
+}
+
+bool ScaleUpInstanceRequest::RollingRestartHasBeenSet() const
+{
+    return m_rollingRestartHasBeenSet;
 }
 
 
