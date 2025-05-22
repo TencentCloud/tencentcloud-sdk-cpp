@@ -85,18 +85,18 @@ namespace TencentCloud
 
                     /**
                      * 获取知方式对应的值。
-<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。
+<br> <li/> 当ReceiverType不是 WeCom 时，Values必填。
                      * @return Values 知方式对应的值。
-<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。
+<br> <li/> 当ReceiverType不是 WeCom 时，Values必填。
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置知方式对应的值。
-<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。
+<br> <li/> 当ReceiverType不是 WeCom 时，Values必填。
                      * @param _values 知方式对应的值。
-<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。
+<br> <li/> 当ReceiverType不是 WeCom 时，Values必填。
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -111,11 +111,11 @@ namespace TencentCloud
                     /**
                      * 获取仪表盘通知渠道。
 <br><li/> 支持：["Email","Sms","WeChat","Phone"]。
-<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。
+<br><li/> 当ReceiverType是 Email 或 WeCom 时，ReceiverChannels不能赋值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiverChannels 仪表盘通知渠道。
 <br><li/> 支持：["Email","Sms","WeChat","Phone"]。
-<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。
+<br><li/> 当ReceiverType是 Email 或 WeCom 时，ReceiverChannels不能赋值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,11 +124,11 @@ namespace TencentCloud
                     /**
                      * 设置仪表盘通知渠道。
 <br><li/> 支持：["Email","Sms","WeChat","Phone"]。
-<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。
+<br><li/> 当ReceiverType是 Email 或 WeCom 时，ReceiverChannels不能赋值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiverChannels 仪表盘通知渠道。
 <br><li/> 支持：["Email","Sms","WeChat","Phone"]。
-<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。
+<br><li/> 当ReceiverType是 Email 或 WeCom 时，ReceiverChannels不能赋值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,22 +143,22 @@ namespace TencentCloud
 
                     /**
                      * 获取回调Url。
-<br><li/> 当ReceiverType是 Wecom 时，Url必填。
-<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
+<br><li/> 当ReceiverType是 WeCom 时，Url必填。
+<br><li/> 当ReceiverType不是 WeCom 时，Url不能填写。
                      * @return Url 回调Url。
-<br><li/> 当ReceiverType是 Wecom 时，Url必填。
-<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
+<br><li/> 当ReceiverType是 WeCom 时，Url必填。
+<br><li/> 当ReceiverType不是 WeCom 时，Url不能填写。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置回调Url。
-<br><li/> 当ReceiverType是 Wecom 时，Url必填。
-<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
+<br><li/> 当ReceiverType是 WeCom 时，Url必填。
+<br><li/> 当ReceiverType不是 WeCom 时，Url不能填写。
                      * @param _url 回调Url。
-<br><li/> 当ReceiverType是 Wecom 时，Url必填。
-<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
+<br><li/> 当ReceiverType是 WeCom 时，Url必填。
+<br><li/> 当ReceiverType不是 WeCom 时，Url不能填写。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -184,7 +184,7 @@ namespace TencentCloud
 
                     /**
                      * 知方式对应的值。
-<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。
+<br> <li/> 当ReceiverType不是 WeCom 时，Values必填。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
@@ -192,7 +192,7 @@ namespace TencentCloud
                     /**
                      * 仪表盘通知渠道。
 <br><li/> 支持：["Email","Sms","WeChat","Phone"]。
-<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。
+<br><li/> 当ReceiverType是 Email 或 WeCom 时，ReceiverChannels不能赋值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_receiverChannels;
@@ -200,8 +200,8 @@ namespace TencentCloud
 
                     /**
                      * 回调Url。
-<br><li/> 当ReceiverType是 Wecom 时，Url必填。
-<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
+<br><li/> 当ReceiverType是 WeCom 时，Url必填。
+<br><li/> 当ReceiverType不是 WeCom 时，Url不能填写。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

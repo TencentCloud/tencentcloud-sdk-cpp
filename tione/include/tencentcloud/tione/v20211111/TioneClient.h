@@ -65,6 +65,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeBuildInImagesResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeDatasetsRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeDatasetsResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeEventsRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeEventsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeInferTemplatesRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeInferTemplatesResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeLogsRequest.h>
@@ -190,6 +192,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatasetsResponse> DescribeDatasetsOutcome;
                 typedef std::future<DescribeDatasetsOutcome> DescribeDatasetsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeDatasetsRequest&, DescribeDatasetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatasetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEventsResponse> DescribeEventsOutcome;
+                typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeEventsRequest&, DescribeEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInferTemplatesResponse> DescribeInferTemplatesOutcome;
                 typedef std::future<DescribeInferTemplatesOutcome> DescribeInferTemplatesOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeInferTemplatesRequest&, DescribeInferTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferTemplatesAsyncHandler;
@@ -453,6 +458,15 @@ namespace TencentCloud
                 DescribeDatasetsOutcome DescribeDatasets(const Model::DescribeDatasetsRequest &request);
                 void DescribeDatasetsAsync(const Model::DescribeDatasetsRequest& request, const DescribeDatasetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatasetsOutcomeCallable DescribeDatasetsCallable(const Model::DescribeDatasetsRequest& request);
+
+                /**
+                 *获取任务式建模训练任务，Notebook，在线服务和批量预测任务的事件API
+                 * @param req DescribeEventsRequest
+                 * @return DescribeEventsOutcome
+                 */
+                DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest &request);
+                void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request);
 
                 /**
                  *已废弃，收敛到统一接口

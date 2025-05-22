@@ -35,8 +35,6 @@
 #include <tencentcloud/dsgc/v20190723/model/CreateAssetSortingReportRetryTaskResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/CreateAssetSortingReportTaskRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/CreateAssetSortingReportTaskResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/CreateClassificationRuleRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/CreateClassificationRuleResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/CreateDSPAAssessmentRiskLevelRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/CreateDSPAAssessmentRiskLevelResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/CreateDSPAAssessmentRiskTemplateRequest.h>
@@ -69,10 +67,6 @@
 #include <tencentcloud/dsgc/v20190723/model/CreateDSPASelfBuildMetaResourceResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/CreateIdentifyRuleAnotherNameRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/CreateIdentifyRuleAnotherNameResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/CreateNewClassificationRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/CreateNewClassificationResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/CreateOrCopyStandardRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/CreateOrCopyStandardResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DecribeSuggestRiskLevelMatrixRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DecribeSuggestRiskLevelMatrixResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DeleteCosMetaResourceRequest.h>
@@ -97,10 +91,6 @@
 #include <tencentcloud/dsgc/v20190723/model/DescribeBindDBListResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeCOSAssetSensitiveDistributionRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeCOSAssetSensitiveDistributionResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/DescribeClassificationInfoRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/DescribeClassificationInfoResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/DescribeClassificationRuleCountRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/DescribeClassificationRuleCountResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentHighRiskTop10OverviewRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentHighRiskTop10OverviewResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeDSPAAssessmentLatestRiskDetailInfoRequest.h>
@@ -223,8 +213,6 @@
 #include <tencentcloud/dsgc/v20190723/model/DescribeESAssetSensitiveDistributionResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeExportTaskResultRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeExportTaskResultResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/DescribeLeafClassificationRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/DescribeLeafClassificationResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeMongoAssetSensitiveDistributionRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeMongoAssetSensitiveDistributionResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeRDBAssetSensitiveDistributionRequest.h>
@@ -233,8 +221,6 @@
 #include <tencentcloud/dsgc/v20190723/model/DescribeReportTaskDownloadUrlResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeReportTasksRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeReportTasksResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/DescribeRuleListRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/DescribeRuleListResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeSensitiveCOSDataDistributionRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeSensitiveCOSDataDistributionResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeSensitiveRDBDataDistributionRequest.h>
@@ -259,10 +245,6 @@
 #include <tencentcloud/dsgc/v20190723/model/ListDSPACosMetaResourcesResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/ListDSPAMetaResourcesRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/ListDSPAMetaResourcesResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyClassificationRuleRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyClassificationRuleResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyClassificationRuleStateRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyClassificationRuleStateResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/ModifyDSPAAssessmentRiskRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/ModifyDSPAAssessmentRiskResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/ModifyDSPAAssessmentRiskLatestRequest.h>
@@ -291,18 +273,6 @@
 #include <tencentcloud/dsgc/v20190723/model/ModifyDSPAESTaskResultResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/ModifyDSPATaskResultRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/ModifyDSPATaskResultResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyLevelInfoRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyLevelInfoResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyLevelNameRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyLevelNameResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyLevelStateRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyLevelStateResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyMergeClassificationRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyMergeClassificationResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyNewClassificationRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyNewClassificationResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyStandardInfoRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/ModifyStandardInfoResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/QueryDSPAMetaResourceDbListRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/QueryDSPAMetaResourceDbListResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/QueryResourceDbBindStatusRequest.h>
@@ -351,9 +321,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAssetSortingReportTaskResponse> CreateAssetSortingReportTaskOutcome;
                 typedef std::future<CreateAssetSortingReportTaskOutcome> CreateAssetSortingReportTaskOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::CreateAssetSortingReportTaskRequest&, CreateAssetSortingReportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetSortingReportTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateClassificationRuleResponse> CreateClassificationRuleOutcome;
-                typedef std::future<CreateClassificationRuleOutcome> CreateClassificationRuleOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::CreateClassificationRuleRequest&, CreateClassificationRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClassificationRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDSPAAssessmentRiskLevelResponse> CreateDSPAAssessmentRiskLevelOutcome;
                 typedef std::future<CreateDSPAAssessmentRiskLevelOutcome> CreateDSPAAssessmentRiskLevelOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::CreateDSPAAssessmentRiskLevelRequest&, CreateDSPAAssessmentRiskLevelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDSPAAssessmentRiskLevelAsyncHandler;
@@ -402,12 +369,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateIdentifyRuleAnotherNameResponse> CreateIdentifyRuleAnotherNameOutcome;
                 typedef std::future<CreateIdentifyRuleAnotherNameOutcome> CreateIdentifyRuleAnotherNameOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::CreateIdentifyRuleAnotherNameRequest&, CreateIdentifyRuleAnotherNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIdentifyRuleAnotherNameAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateNewClassificationResponse> CreateNewClassificationOutcome;
-                typedef std::future<CreateNewClassificationOutcome> CreateNewClassificationOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::CreateNewClassificationRequest&, CreateNewClassificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNewClassificationAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateOrCopyStandardResponse> CreateOrCopyStandardOutcome;
-                typedef std::future<CreateOrCopyStandardOutcome> CreateOrCopyStandardOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::CreateOrCopyStandardRequest&, CreateOrCopyStandardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrCopyStandardAsyncHandler;
                 typedef Outcome<Core::Error, Model::DecribeSuggestRiskLevelMatrixResponse> DecribeSuggestRiskLevelMatrixOutcome;
                 typedef std::future<DecribeSuggestRiskLevelMatrixOutcome> DecribeSuggestRiskLevelMatrixOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DecribeSuggestRiskLevelMatrixRequest&, DecribeSuggestRiskLevelMatrixOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DecribeSuggestRiskLevelMatrixAsyncHandler;
@@ -444,12 +405,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCOSAssetSensitiveDistributionResponse> DescribeCOSAssetSensitiveDistributionOutcome;
                 typedef std::future<DescribeCOSAssetSensitiveDistributionOutcome> DescribeCOSAssetSensitiveDistributionOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeCOSAssetSensitiveDistributionRequest&, DescribeCOSAssetSensitiveDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCOSAssetSensitiveDistributionAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeClassificationInfoResponse> DescribeClassificationInfoOutcome;
-                typedef std::future<DescribeClassificationInfoOutcome> DescribeClassificationInfoOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::DescribeClassificationInfoRequest&, DescribeClassificationInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassificationInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeClassificationRuleCountResponse> DescribeClassificationRuleCountOutcome;
-                typedef std::future<DescribeClassificationRuleCountOutcome> DescribeClassificationRuleCountOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::DescribeClassificationRuleCountRequest&, DescribeClassificationRuleCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassificationRuleCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDSPAAssessmentHighRiskTop10OverviewResponse> DescribeDSPAAssessmentHighRiskTop10OverviewOutcome;
                 typedef std::future<DescribeDSPAAssessmentHighRiskTop10OverviewOutcome> DescribeDSPAAssessmentHighRiskTop10OverviewOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeDSPAAssessmentHighRiskTop10OverviewRequest&, DescribeDSPAAssessmentHighRiskTop10OverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDSPAAssessmentHighRiskTop10OverviewAsyncHandler;
@@ -633,9 +588,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExportTaskResultResponse> DescribeExportTaskResultOutcome;
                 typedef std::future<DescribeExportTaskResultOutcome> DescribeExportTaskResultOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeExportTaskResultRequest&, DescribeExportTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportTaskResultAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeLeafClassificationResponse> DescribeLeafClassificationOutcome;
-                typedef std::future<DescribeLeafClassificationOutcome> DescribeLeafClassificationOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::DescribeLeafClassificationRequest&, DescribeLeafClassificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLeafClassificationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMongoAssetSensitiveDistributionResponse> DescribeMongoAssetSensitiveDistributionOutcome;
                 typedef std::future<DescribeMongoAssetSensitiveDistributionOutcome> DescribeMongoAssetSensitiveDistributionOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeMongoAssetSensitiveDistributionRequest&, DescribeMongoAssetSensitiveDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMongoAssetSensitiveDistributionAsyncHandler;
@@ -648,9 +600,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReportTasksResponse> DescribeReportTasksOutcome;
                 typedef std::future<DescribeReportTasksOutcome> DescribeReportTasksOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeReportTasksRequest&, DescribeReportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportTasksAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRuleListResponse> DescribeRuleListOutcome;
-                typedef std::future<DescribeRuleListOutcome> DescribeRuleListOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::DescribeRuleListRequest&, DescribeRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSensitiveCOSDataDistributionResponse> DescribeSensitiveCOSDataDistributionOutcome;
                 typedef std::future<DescribeSensitiveCOSDataDistributionOutcome> DescribeSensitiveCOSDataDistributionOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeSensitiveCOSDataDistributionRequest&, DescribeSensitiveCOSDataDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSensitiveCOSDataDistributionAsyncHandler;
@@ -687,12 +636,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListDSPAMetaResourcesResponse> ListDSPAMetaResourcesOutcome;
                 typedef std::future<ListDSPAMetaResourcesOutcome> ListDSPAMetaResourcesOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::ListDSPAMetaResourcesRequest&, ListDSPAMetaResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDSPAMetaResourcesAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyClassificationRuleResponse> ModifyClassificationRuleOutcome;
-                typedef std::future<ModifyClassificationRuleOutcome> ModifyClassificationRuleOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::ModifyClassificationRuleRequest&, ModifyClassificationRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClassificationRuleAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyClassificationRuleStateResponse> ModifyClassificationRuleStateOutcome;
-                typedef std::future<ModifyClassificationRuleStateOutcome> ModifyClassificationRuleStateOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::ModifyClassificationRuleStateRequest&, ModifyClassificationRuleStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClassificationRuleStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDSPAAssessmentRiskResponse> ModifyDSPAAssessmentRiskOutcome;
                 typedef std::future<ModifyDSPAAssessmentRiskOutcome> ModifyDSPAAssessmentRiskOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::ModifyDSPAAssessmentRiskRequest&, ModifyDSPAAssessmentRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDSPAAssessmentRiskAsyncHandler;
@@ -735,24 +678,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDSPATaskResultResponse> ModifyDSPATaskResultOutcome;
                 typedef std::future<ModifyDSPATaskResultOutcome> ModifyDSPATaskResultOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::ModifyDSPATaskResultRequest&, ModifyDSPATaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDSPATaskResultAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyLevelInfoResponse> ModifyLevelInfoOutcome;
-                typedef std::future<ModifyLevelInfoOutcome> ModifyLevelInfoOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::ModifyLevelInfoRequest&, ModifyLevelInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLevelInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyLevelNameResponse> ModifyLevelNameOutcome;
-                typedef std::future<ModifyLevelNameOutcome> ModifyLevelNameOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::ModifyLevelNameRequest&, ModifyLevelNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLevelNameAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyLevelStateResponse> ModifyLevelStateOutcome;
-                typedef std::future<ModifyLevelStateOutcome> ModifyLevelStateOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::ModifyLevelStateRequest&, ModifyLevelStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLevelStateAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyMergeClassificationResponse> ModifyMergeClassificationOutcome;
-                typedef std::future<ModifyMergeClassificationOutcome> ModifyMergeClassificationOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::ModifyMergeClassificationRequest&, ModifyMergeClassificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMergeClassificationAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyNewClassificationResponse> ModifyNewClassificationOutcome;
-                typedef std::future<ModifyNewClassificationOutcome> ModifyNewClassificationOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::ModifyNewClassificationRequest&, ModifyNewClassificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNewClassificationAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyStandardInfoResponse> ModifyStandardInfoOutcome;
-                typedef std::future<ModifyStandardInfoOutcome> ModifyStandardInfoOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::ModifyStandardInfoRequest&, ModifyStandardInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStandardInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryDSPAMetaResourceDbListResponse> QueryDSPAMetaResourceDbListOutcome;
                 typedef std::future<QueryDSPAMetaResourceDbListOutcome> QueryDSPAMetaResourceDbListOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::QueryDSPAMetaResourceDbListRequest&, QueryDSPAMetaResourceDbListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDSPAMetaResourceDbListAsyncHandler;
@@ -833,17 +758,6 @@ namespace TencentCloud
                 CreateAssetSortingReportTaskOutcome CreateAssetSortingReportTask(const Model::CreateAssetSortingReportTaskRequest &request);
                 void CreateAssetSortingReportTaskAsync(const Model::CreateAssetSortingReportTaskRequest& request, const CreateAssetSortingReportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAssetSortingReportTaskOutcomeCallable CreateAssetSortingReportTaskCallable(const Model::CreateAssetSortingReportTaskRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-创建识别规则
-                 * @param req CreateClassificationRuleRequest
-                 * @return CreateClassificationRuleOutcome
-                 */
-                CreateClassificationRuleOutcome CreateClassificationRule(const Model::CreateClassificationRuleRequest &request);
-                void CreateClassificationRuleAsync(const Model::CreateClassificationRuleRequest& request, const CreateClassificationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateClassificationRuleOutcomeCallable CreateClassificationRuleCallable(const Model::CreateClassificationRuleRequest& request);
 
                 /**
                  *风险项页面---创建风险等级
@@ -990,28 +904,6 @@ namespace TencentCloud
                 CreateIdentifyRuleAnotherNameOutcomeCallable CreateIdentifyRuleAnotherNameCallable(const Model::CreateIdentifyRuleAnotherNameRequest& request);
 
                 /**
-                 *旧版本DSGC接口下线
-
-创建新分类
-                 * @param req CreateNewClassificationRequest
-                 * @return CreateNewClassificationOutcome
-                 */
-                CreateNewClassificationOutcome CreateNewClassification(const Model::CreateNewClassificationRequest &request);
-                void CreateNewClassificationAsync(const Model::CreateNewClassificationRequest& request, const CreateNewClassificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateNewClassificationOutcomeCallable CreateNewClassificationCallable(const Model::CreateNewClassificationRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-创建或复制分级分类模板
-                 * @param req CreateOrCopyStandardRequest
-                 * @return CreateOrCopyStandardOutcome
-                 */
-                CreateOrCopyStandardOutcome CreateOrCopyStandard(const Model::CreateOrCopyStandardRequest &request);
-                void CreateOrCopyStandardAsync(const Model::CreateOrCopyStandardRequest& request, const CreateOrCopyStandardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateOrCopyStandardOutcomeCallable CreateOrCopyStandardCallable(const Model::CreateOrCopyStandardRequest& request);
-
-                /**
                  *风险等级的定义页面-创建风险等级的时候生成的一个默认的矩阵
                  * @param req DecribeSuggestRiskLevelMatrixRequest
                  * @return DecribeSuggestRiskLevelMatrixOutcome
@@ -1126,29 +1018,6 @@ namespace TencentCloud
                 DescribeCOSAssetSensitiveDistributionOutcome DescribeCOSAssetSensitiveDistribution(const Model::DescribeCOSAssetSensitiveDistributionRequest &request);
                 void DescribeCOSAssetSensitiveDistributionAsync(const Model::DescribeCOSAssetSensitiveDistributionRequest& request, const DescribeCOSAssetSensitiveDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCOSAssetSensitiveDistributionOutcomeCallable DescribeCOSAssetSensitiveDistributionCallable(const Model::DescribeCOSAssetSensitiveDistributionRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-查询分类信息
-
-                 * @param req DescribeClassificationInfoRequest
-                 * @return DescribeClassificationInfoOutcome
-                 */
-                DescribeClassificationInfoOutcome DescribeClassificationInfo(const Model::DescribeClassificationInfoRequest &request);
-                void DescribeClassificationInfoAsync(const Model::DescribeClassificationInfoRequest& request, const DescribeClassificationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeClassificationInfoOutcomeCallable DescribeClassificationInfoCallable(const Model::DescribeClassificationInfoRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-查询标准下所有分类的识别规则数量(不算子分类下的识别规则)
-                 * @param req DescribeClassificationRuleCountRequest
-                 * @return DescribeClassificationRuleCountOutcome
-                 */
-                DescribeClassificationRuleCountOutcome DescribeClassificationRuleCount(const Model::DescribeClassificationRuleCountRequest &request);
-                void DescribeClassificationRuleCountAsync(const Model::DescribeClassificationRuleCountRequest& request, const DescribeClassificationRuleCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeClassificationRuleCountOutcomeCallable DescribeClassificationRuleCountCallable(const Model::DescribeClassificationRuleCountRequest& request);
 
                 /**
                  *查询高风险资产的top10
@@ -1707,17 +1576,6 @@ namespace TencentCloud
                 DescribeExportTaskResultOutcomeCallable DescribeExportTaskResultCallable(const Model::DescribeExportTaskResultRequest& request);
 
                 /**
-                 *旧版本DSGC接口下线
-
-查询标准下所有叶子节点分类
-                 * @param req DescribeLeafClassificationRequest
-                 * @return DescribeLeafClassificationOutcome
-                 */
-                DescribeLeafClassificationOutcome DescribeLeafClassification(const Model::DescribeLeafClassificationRequest &request);
-                void DescribeLeafClassificationAsync(const Model::DescribeLeafClassificationRequest& request, const DescribeLeafClassificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeLeafClassificationOutcomeCallable DescribeLeafClassificationCallable(const Model::DescribeLeafClassificationRequest& request);
-
-                /**
                  *数据资产报告-查询mongo 的敏感资产报告，包含（数据库资产，设敏级别数据库top10，资产详情）
                  * @param req DescribeMongoAssetSensitiveDistributionRequest
                  * @return DescribeMongoAssetSensitiveDistributionOutcome
@@ -1752,18 +1610,6 @@ namespace TencentCloud
                 DescribeReportTasksOutcome DescribeReportTasks(const Model::DescribeReportTasksRequest &request);
                 void DescribeReportTasksAsync(const Model::DescribeReportTasksRequest& request, const DescribeReportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReportTasksOutcomeCallable DescribeReportTasksCallable(const Model::DescribeReportTasksRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-查询分类下规则列表
-
-                 * @param req DescribeRuleListRequest
-                 * @return DescribeRuleListOutcome
-                 */
-                DescribeRuleListOutcome DescribeRuleList(const Model::DescribeRuleListRequest &request);
-                void DescribeRuleListAsync(const Model::DescribeRuleListRequest& request, const DescribeRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRuleListOutcomeCallable DescribeRuleListCallable(const Model::DescribeRuleListRequest& request);
 
                 /**
                  *数据资产报告-查询cos的敏感数据分布（分级分布 分类分布 敏感规则分布详情列表）
@@ -1873,28 +1719,6 @@ namespace TencentCloud
                 ListDSPAMetaResourcesOutcome ListDSPAMetaResources(const Model::ListDSPAMetaResourcesRequest &request);
                 void ListDSPAMetaResourcesAsync(const Model::ListDSPAMetaResourcesRequest& request, const ListDSPAMetaResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListDSPAMetaResourcesOutcomeCallable ListDSPAMetaResourcesCallable(const Model::ListDSPAMetaResourcesRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-编辑识别规则
-                 * @param req ModifyClassificationRuleRequest
-                 * @return ModifyClassificationRuleOutcome
-                 */
-                ModifyClassificationRuleOutcome ModifyClassificationRule(const Model::ModifyClassificationRuleRequest &request);
-                void ModifyClassificationRuleAsync(const Model::ModifyClassificationRuleRequest& request, const ModifyClassificationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyClassificationRuleOutcomeCallable ModifyClassificationRuleCallable(const Model::ModifyClassificationRuleRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-修改识别规则状态
-                 * @param req ModifyClassificationRuleStateRequest
-                 * @return ModifyClassificationRuleStateOutcome
-                 */
-                ModifyClassificationRuleStateOutcome ModifyClassificationRuleState(const Model::ModifyClassificationRuleStateRequest &request);
-                void ModifyClassificationRuleStateAsync(const Model::ModifyClassificationRuleStateRequest& request, const ModifyClassificationRuleStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyClassificationRuleStateOutcomeCallable ModifyClassificationRuleStateCallable(const Model::ModifyClassificationRuleStateRequest& request);
 
                 /**
                  *修改DSPA评估风险项，支持修改Status
@@ -2030,72 +1854,6 @@ namespace TencentCloud
                 ModifyDSPATaskResultOutcome ModifyDSPATaskResult(const Model::ModifyDSPATaskResultRequest &request);
                 void ModifyDSPATaskResultAsync(const Model::ModifyDSPATaskResultRequest& request, const ModifyDSPATaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDSPATaskResultOutcomeCallable ModifyDSPATaskResultCallable(const Model::ModifyDSPATaskResultRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-修改敏感级别信息
-                 * @param req ModifyLevelInfoRequest
-                 * @return ModifyLevelInfoOutcome
-                 */
-                ModifyLevelInfoOutcome ModifyLevelInfo(const Model::ModifyLevelInfoRequest &request);
-                void ModifyLevelInfoAsync(const Model::ModifyLevelInfoRequest& request, const ModifyLevelInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyLevelInfoOutcomeCallable ModifyLevelInfoCallable(const Model::ModifyLevelInfoRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-修改级别名称
-                 * @param req ModifyLevelNameRequest
-                 * @return ModifyLevelNameOutcome
-                 */
-                ModifyLevelNameOutcome ModifyLevelName(const Model::ModifyLevelNameRequest &request);
-                void ModifyLevelNameAsync(const Model::ModifyLevelNameRequest& request, const ModifyLevelNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyLevelNameOutcomeCallable ModifyLevelNameCallable(const Model::ModifyLevelNameRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-开启级别或关闭级别
-                 * @param req ModifyLevelStateRequest
-                 * @return ModifyLevelStateOutcome
-                 */
-                ModifyLevelStateOutcome ModifyLevelState(const Model::ModifyLevelStateRequest &request);
-                void ModifyLevelStateAsync(const Model::ModifyLevelStateRequest& request, const ModifyLevelStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyLevelStateOutcomeCallable ModifyLevelStateCallable(const Model::ModifyLevelStateRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-一个分类合并到另一个分类中（分类拖拽功能）
-                 * @param req ModifyMergeClassificationRequest
-                 * @return ModifyMergeClassificationOutcome
-                 */
-                ModifyMergeClassificationOutcome ModifyMergeClassification(const Model::ModifyMergeClassificationRequest &request);
-                void ModifyMergeClassificationAsync(const Model::ModifyMergeClassificationRequest& request, const ModifyMergeClassificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyMergeClassificationOutcomeCallable ModifyMergeClassificationCallable(const Model::ModifyMergeClassificationRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-修改分类信息
-                 * @param req ModifyNewClassificationRequest
-                 * @return ModifyNewClassificationOutcome
-                 */
-                ModifyNewClassificationOutcome ModifyNewClassification(const Model::ModifyNewClassificationRequest &request);
-                void ModifyNewClassificationAsync(const Model::ModifyNewClassificationRequest& request, const ModifyNewClassificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyNewClassificationOutcomeCallable ModifyNewClassificationCallable(const Model::ModifyNewClassificationRequest& request);
-
-                /**
-                 *旧版本DSGC接口下线
-
-修改分级分类模板信息
-                 * @param req ModifyStandardInfoRequest
-                 * @return ModifyStandardInfoOutcome
-                 */
-                ModifyStandardInfoOutcome ModifyStandardInfo(const Model::ModifyStandardInfoRequest &request);
-                void ModifyStandardInfoAsync(const Model::ModifyStandardInfoRequest& request, const ModifyStandardInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyStandardInfoOutcomeCallable ModifyStandardInfoCallable(const Model::ModifyStandardInfoRequest& request);
 
                 /**
                  *查询DSPA实例的db列表

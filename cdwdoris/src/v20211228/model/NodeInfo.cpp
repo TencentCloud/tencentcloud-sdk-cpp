@@ -28,7 +28,10 @@ NodeInfo::NodeInfo() :
     m_nodeRoleHasBeenSet(false),
     m_lastRestartTimeHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_rIpHasBeenSet(false),
+    m_computeGroupIdHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -117,6 +120,36 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
         m_idHasBeenSet = true;
     }
 
+    if (value.HasMember("RIp") && !value["RIp"].IsNull())
+    {
+        if (!value["RIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.RIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rIp = string(value["RIp"].GetString());
+        m_rIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComputeGroupId") && !value["ComputeGroupId"].IsNull())
+    {
+        if (!value["ComputeGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.ComputeGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeGroupId = string(value["ComputeGroupId"].GetString());
+        m_computeGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +219,30 @@ void NodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computeGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +374,53 @@ void NodeInfo::SetId(const string& _id)
 bool NodeInfo::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string NodeInfo::GetRIp() const
+{
+    return m_rIp;
+}
+
+void NodeInfo::SetRIp(const string& _rIp)
+{
+    m_rIp = _rIp;
+    m_rIpHasBeenSet = true;
+}
+
+bool NodeInfo::RIpHasBeenSet() const
+{
+    return m_rIpHasBeenSet;
+}
+
+string NodeInfo::GetComputeGroupId() const
+{
+    return m_computeGroupId;
+}
+
+void NodeInfo::SetComputeGroupId(const string& _computeGroupId)
+{
+    m_computeGroupId = _computeGroupId;
+    m_computeGroupIdHasBeenSet = true;
+}
+
+bool NodeInfo::ComputeGroupIdHasBeenSet() const
+{
+    return m_computeGroupIdHasBeenSet;
+}
+
+string NodeInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void NodeInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool NodeInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

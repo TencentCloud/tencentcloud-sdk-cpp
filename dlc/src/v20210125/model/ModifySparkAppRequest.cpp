@@ -52,7 +52,8 @@ ModifySparkAppRequest::ModifySparkAppRequest() :
     m_appExecutorMaxNumbersHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_isInheritHasBeenSet(false),
-    m_isSessionStartedHasBeenSet(false)
+    m_isSessionStartedHasBeenSet(false),
+    m_dependencyPackagesHasBeenSet(false)
 {
 }
 
@@ -301,6 +302,21 @@ string ModifySparkAppRequest::ToJsonString() const
         string key = "IsSessionStarted";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isSessionStarted, allocator);
+    }
+
+    if (m_dependencyPackagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyPackages";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dependencyPackages.begin(); itr != m_dependencyPackages.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -789,6 +805,22 @@ void ModifySparkAppRequest::SetIsSessionStarted(const bool& _isSessionStarted)
 bool ModifySparkAppRequest::IsSessionStartedHasBeenSet() const
 {
     return m_isSessionStartedHasBeenSet;
+}
+
+vector<DependencyPackage> ModifySparkAppRequest::GetDependencyPackages() const
+{
+    return m_dependencyPackages;
+}
+
+void ModifySparkAppRequest::SetDependencyPackages(const vector<DependencyPackage>& _dependencyPackages)
+{
+    m_dependencyPackages = _dependencyPackages;
+    m_dependencyPackagesHasBeenSet = true;
+}
+
+bool ModifySparkAppRequest::DependencyPackagesHasBeenSet() const
+{
+    return m_dependencyPackagesHasBeenSet;
 }
 
 

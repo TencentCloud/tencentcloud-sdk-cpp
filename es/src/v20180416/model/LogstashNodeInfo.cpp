@@ -23,7 +23,8 @@ using namespace std;
 LogstashNodeInfo::LogstashNodeInfo() :
     m_nodeIdHasBeenSet(false),
     m_ipHasBeenSet(false),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome LogstashNodeInfo::Deserialize(const rapidjson::Value &value)
         m_portHasBeenSet = true;
     }
 
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogstashNodeInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void LogstashNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void LogstashNodeInfo::SetPort(const uint64_t& _port)
 bool LogstashNodeInfo::PortHasBeenSet() const
 {
     return m_portHasBeenSet;
+}
+
+string LogstashNodeInfo::GetZone() const
+{
+    return m_zone;
+}
+
+void LogstashNodeInfo::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool LogstashNodeInfo::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 

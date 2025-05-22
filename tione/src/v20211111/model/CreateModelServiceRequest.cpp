@@ -61,7 +61,9 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_terminationGracePeriodSecondsHasBeenSet(false),
     m_preStopCommandHasBeenSet(false),
     m_grpcEnableHasBeenSet(false),
-    m_healthProbeHasBeenSet(false)
+    m_healthProbeHasBeenSet(false),
+    m_rollingUpdateHasBeenSet(false),
+    m_sidecarHasBeenSet(false)
 {
 }
 
@@ -418,6 +420,24 @@ string CreateModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_healthProbe.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_rollingUpdateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollingUpdate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rollingUpdate.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sidecarHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sidecar";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sidecar.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1050,6 +1070,38 @@ void CreateModelServiceRequest::SetHealthProbe(const HealthProbe& _healthProbe)
 bool CreateModelServiceRequest::HealthProbeHasBeenSet() const
 {
     return m_healthProbeHasBeenSet;
+}
+
+RollingUpdate CreateModelServiceRequest::GetRollingUpdate() const
+{
+    return m_rollingUpdate;
+}
+
+void CreateModelServiceRequest::SetRollingUpdate(const RollingUpdate& _rollingUpdate)
+{
+    m_rollingUpdate = _rollingUpdate;
+    m_rollingUpdateHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::RollingUpdateHasBeenSet() const
+{
+    return m_rollingUpdateHasBeenSet;
+}
+
+SidecarSpec CreateModelServiceRequest::GetSidecar() const
+{
+    return m_sidecar;
+}
+
+void CreateModelServiceRequest::SetSidecar(const SidecarSpec& _sidecar)
+{
+    m_sidecar = _sidecar;
+    m_sidecarHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::SidecarHasBeenSet() const
+{
+    return m_sidecarHasBeenSet;
 }
 
 

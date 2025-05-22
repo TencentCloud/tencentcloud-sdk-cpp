@@ -214,6 +214,69 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取RIP
+                     * @return RIp RIP
+                     * 
+                     */
+                    std::string GetRIp() const;
+
+                    /**
+                     * 设置RIP
+                     * @param _rIp RIP
+                     * 
+                     */
+                    void SetRIp(const std::string& _rIp);
+
+                    /**
+                     * 判断参数 RIp 是否已赋值
+                     * @return RIp 是否已赋值
+                     * 
+                     */
+                    bool RIpHasBeenSet() const;
+
+                    /**
+                     * 获取计算组ID
+                     * @return ComputeGroupId 计算组ID
+                     * 
+                     */
+                    std::string GetComputeGroupId() const;
+
+                    /**
+                     * 设置计算组ID
+                     * @param _computeGroupId 计算组ID
+                     * 
+                     */
+                    void SetComputeGroupId(const std::string& _computeGroupId);
+
+                    /**
+                     * 判断参数 ComputeGroupId 是否已赋值
+                     * @return ComputeGroupId 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _createTime 创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +326,24 @@ namespace TencentCloud
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * RIP
+                     */
+                    std::string m_rIp;
+                    bool m_rIpHasBeenSet;
+
+                    /**
+                     * 计算组ID
+                     */
+                    std::string m_computeGroupId;
+                    bool m_computeGroupIdHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

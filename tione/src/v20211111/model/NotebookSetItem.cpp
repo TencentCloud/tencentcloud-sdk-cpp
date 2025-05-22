@@ -48,6 +48,7 @@ NotebookSetItem::NotebookSetItem() :
     m_userTypesHasBeenSet(false),
     m_sSHConfigHasBeenSet(false),
     m_volumeSourceGooseFSHasBeenSet(false),
+    m_subUinHasBeenSet(false),
     m_subUinNameHasBeenSet(false),
     m_appIdHasBeenSet(false)
 {
@@ -372,6 +373,16 @@ CoreInternalOutcome NotebookSetItem::Deserialize(const rapidjson::Value &value)
         m_volumeSourceGooseFSHasBeenSet = true;
     }
 
+    if (value.HasMember("SubUin") && !value["SubUin"].IsNull())
+    {
+        if (!value["SubUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSetItem.SubUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUin = string(value["SubUin"].GetString());
+        m_subUinHasBeenSet = true;
+    }
+
     if (value.HasMember("SubUinName") && !value["SubUinName"].IsNull())
     {
         if (!value["SubUinName"].IsString())
@@ -634,6 +645,14 @@ void NotebookSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_volumeSourceGooseFS.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subUinNameHasBeenSet)
@@ -1085,6 +1104,22 @@ void NotebookSetItem::SetVolumeSourceGooseFS(const GooseFS& _volumeSourceGooseFS
 bool NotebookSetItem::VolumeSourceGooseFSHasBeenSet() const
 {
     return m_volumeSourceGooseFSHasBeenSet;
+}
+
+string NotebookSetItem::GetSubUin() const
+{
+    return m_subUin;
+}
+
+void NotebookSetItem::SetSubUin(const string& _subUin)
+{
+    m_subUin = _subUin;
+    m_subUinHasBeenSet = true;
+}
+
+bool NotebookSetItem::SubUinHasBeenSet() const
+{
+    return m_subUinHasBeenSet;
 }
 
 string NotebookSetItem::GetSubUinName() const

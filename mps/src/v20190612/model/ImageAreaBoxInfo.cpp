@@ -22,7 +22,8 @@ using namespace std;
 
 ImageAreaBoxInfo::ImageAreaBoxInfo() :
     m_typeHasBeenSet(false),
-    m_areaCoordSetHasBeenSet(false)
+    m_areaCoordSetHasBeenSet(false),
+    m_boundingBoxHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,19 @@ CoreInternalOutcome ImageAreaBoxInfo::Deserialize(const rapidjson::Value &value)
         m_areaCoordSetHasBeenSet = true;
     }
 
+    if (value.HasMember("BoundingBox") && !value["BoundingBox"].IsNull())
+    {
+        if (!value["BoundingBox"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageAreaBoxInfo.BoundingBox` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BoundingBox"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_boundingBox.push_back((*itr).GetDouble());
+        }
+        m_boundingBoxHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -79,6 +93,19 @@ void ImageAreaBoxInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         for (auto itr = m_areaCoordSet.begin(); itr != m_areaCoordSet.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_boundingBoxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BoundingBox";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_boundingBox.begin(); itr != m_boundingBox.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
@@ -115,5 +142,21 @@ void ImageAreaBoxInfo::SetAreaCoordSet(const vector<int64_t>& _areaCoordSet)
 bool ImageAreaBoxInfo::AreaCoordSetHasBeenSet() const
 {
     return m_areaCoordSetHasBeenSet;
+}
+
+vector<double> ImageAreaBoxInfo::GetBoundingBox() const
+{
+    return m_boundingBox;
+}
+
+void ImageAreaBoxInfo::SetBoundingBox(const vector<double>& _boundingBox)
+{
+    m_boundingBox = _boundingBox;
+    m_boundingBoxHasBeenSet = true;
+}
+
+bool ImageAreaBoxInfo::BoundingBoxHasBeenSet() const
+{
+    return m_boundingBoxHasBeenSet;
 }
 

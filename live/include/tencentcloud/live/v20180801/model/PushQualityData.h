@@ -537,6 +537,27 @@ namespace TencentCloud
                      */
                     bool ServerIpHasBeenSet() const;
 
+                    /**
+                     * 获取关键帧间隔 GOP ，单位：ms。
+                     * @return GopSize 关键帧间隔 GOP ，单位：ms。
+                     * 
+                     */
+                    int64_t GetGopSize() const;
+
+                    /**
+                     * 设置关键帧间隔 GOP ，单位：ms。
+                     * @param _gopSize 关键帧间隔 GOP ，单位：ms。
+                     * 
+                     */
+                    void SetGopSize(const int64_t& _gopSize);
+
+                    /**
+                     * 判断参数 GopSize 是否已赋值
+                     * @return GopSize 是否已赋值
+                     * 
+                     */
+                    bool GopSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -678,6 +699,12 @@ namespace TencentCloud
                      */
                     std::string m_serverIp;
                     bool m_serverIpHasBeenSet;
+
+                    /**
+                     * 关键帧间隔 GOP ，单位：ms。
+                     */
+                    int64_t m_gopSize;
+                    bool m_gopSizeHasBeenSet;
 
                 };
             }

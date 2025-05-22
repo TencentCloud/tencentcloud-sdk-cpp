@@ -610,6 +610,56 @@ STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FA
                      */
                     bool CallbackUrlHasBeenSet() const;
 
+                    /**
+                     * 获取任务subUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubUin 任务subUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubUin() const;
+
+                    /**
+                     * 设置任务subUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subUin 任务subUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubUin(const std::string& _subUin);
+
+                    /**
+                     * 判断参数 SubUin 是否已赋值
+                     * @return SubUin 是否已赋值
+                     * 
+                     */
+                    bool SubUinHasBeenSet() const;
+
+                    /**
+                     * 获取任务创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubUinName 任务创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置任务创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subUinName 任务创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -769,6 +819,20 @@ STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FA
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 任务subUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subUin;
+                    bool m_subUinHasBeenSet;
+
+                    /**
+                     * 任务创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
 
                 };
             }

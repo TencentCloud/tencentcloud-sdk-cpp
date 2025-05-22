@@ -23,7 +23,8 @@ using namespace TencentCloud::Ses::V20201002::Model;
 using namespace std;
 
 CreateEmailIdentityRequest::CreateEmailIdentityRequest() :
-    m_emailIdentityHasBeenSet(false)
+    m_emailIdentityHasBeenSet(false),
+    m_dKIMOptionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CreateEmailIdentityRequest::ToJsonString() const
         string key = "EmailIdentity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_emailIdentity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dKIMOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DKIMOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dKIMOption, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CreateEmailIdentityRequest::SetEmailIdentity(const string& _emailIdentity)
 bool CreateEmailIdentityRequest::EmailIdentityHasBeenSet() const
 {
     return m_emailIdentityHasBeenSet;
+}
+
+uint64_t CreateEmailIdentityRequest::GetDKIMOption() const
+{
+    return m_dKIMOption;
+}
+
+void CreateEmailIdentityRequest::SetDKIMOption(const uint64_t& _dKIMOption)
+{
+    m_dKIMOption = _dKIMOption;
+    m_dKIMOptionHasBeenSet = true;
+}
+
+bool CreateEmailIdentityRequest::DKIMOptionHasBeenSet() const
+{
+    return m_dKIMOptionHasBeenSet;
 }
 
 

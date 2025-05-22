@@ -239,15 +239,19 @@ namespace TencentCloud
                     bool ActionTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取订单ID：包年包月计费模式下订购的订单号
-                     * @return OrderId 订单ID：包年包月计费模式下订购的订单号
+                     * 获取订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。
+
+                     * @return OrderId 订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。
+
                      * 
                      */
                     std::string GetOrderId() const;
 
                     /**
-                     * 设置订单ID：包年包月计费模式下订购的订单号
-                     * @param _orderId 订单ID：包年包月计费模式下订购的订单号
+                     * 设置订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。
+
+                     * @param _orderId 订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。
+
                      * 
                      */
                     void SetOrderId(const std::string& _orderId);
@@ -883,7 +887,8 @@ namespace TencentCloud
                     bool m_actionTypeNameHasBeenSet;
 
                     /**
-                     * 订单ID：包年包月计费模式下订购的订单号
+                     * 订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。
+
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;

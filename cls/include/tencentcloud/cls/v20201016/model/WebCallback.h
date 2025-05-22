@@ -265,21 +265,21 @@ namespace TencentCloud
                     /**
                      * 获取该参数已废弃，请使用NoticeContentId。
                      * @return Headers 该参数已废弃，请使用NoticeContentId。
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetHeaders() const;
 
                     /**
                      * 设置该参数已废弃，请使用NoticeContentId。
                      * @param _headers 该参数已废弃，请使用NoticeContentId。
-                     * 
+                     * @deprecated
                      */
                     void SetHeaders(const std::vector<std::string>& _headers);
 
                     /**
                      * 判断参数 Headers 是否已赋值
                      * @return Headers 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool HeadersHasBeenSet() const;
 
@@ -288,7 +288,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Body 该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetBody() const;
 
@@ -297,14 +297,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _body 该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetBody(const std::string& _body);
 
                     /**
                      * 判断参数 Body 是否已赋值
                      * @return Body 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BodyHasBeenSet() const;
 

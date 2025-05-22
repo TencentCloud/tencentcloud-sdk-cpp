@@ -312,10 +312,10 @@ namespace TencentCloud
                     /**
                      * 获取签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: <font color="red">将要废弃</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
+注: <font color="red">不再使用</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
                      * @return VerifyChannel 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: <font color="red">将要废弃</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
+注: <font color="red">不再使用</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
                      * 
                      */
                     std::vector<std::string> GetVerifyChannel() const;
@@ -323,10 +323,10 @@ namespace TencentCloud
                     /**
                      * 设置签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: <font color="red">将要废弃</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
+注: <font color="red">不再使用</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
                      * @param _verifyChannel 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: <font color="red">将要废弃</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
+注: <font color="red">不再使用</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
                      * 
                      */
                     void SetVerifyChannel(const std::vector<std::string>& _verifyChannel);
@@ -479,15 +479,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取<font color="red">字段已经废弃</font>，当前只支持true，默认为true
-                     * @return Required <font color="red">字段已经废弃</font>，当前只支持true，默认为true
+                     * 获取<font color="red">字段不再使用</font>，当前只支持true，默认为true
+                     * @return Required <font color="red">字段不再使用</font>，当前只支持true，默认为true
                      * 
                      */
                     bool GetRequired() const;
 
                     /**
-                     * 设置<font color="red">字段已经废弃</font>，当前只支持true，默认为true
-                     * @param _required <font color="red">字段已经废弃</font>，当前只支持true，默认为true
+                     * 设置<font color="red">字段不再使用</font>，当前只支持true，默认为true
+                     * @param _required <font color="red">字段不再使用</font>，当前只支持true，默认为true
                      * 
                      */
                     void SetRequired(const bool& _required);
@@ -554,15 +554,15 @@ namespace TencentCloud
                     bool CustomApproverTagHasBeenSet() const;
 
                     /**
-                     * 获取已经废弃, 快速注册相关信息
-                     * @return RegisterInfo 已经废弃, 快速注册相关信息
+                     * 获取<font color="red">不再使用</font >, 快速注册相关信息
+                     * @return RegisterInfo <font color="red">不再使用</font >, 快速注册相关信息
                      * 
                      */
                     RegisterInfo GetRegisterInfo() const;
 
                     /**
-                     * 设置已经废弃, 快速注册相关信息
-                     * @param _registerInfo 已经废弃, 快速注册相关信息
+                     * 设置<font color="red">不再使用</font >, 快速注册相关信息
+                     * @param _registerInfo <font color="red">不再使用</font >, 快速注册相关信息
                      * 
                      */
                     void SetRegisterInfo(const RegisterInfo& _registerInfo);
@@ -1238,7 +1238,7 @@ namespace TencentCloud
                     /**
                      * 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: <font color="red">将要废弃</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
+注: <font color="red">不再使用</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
                      */
                     std::vector<std::string> m_verifyChannel;
                     bool m_verifyChannelHasBeenSet;
@@ -1282,7 +1282,7 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * <font color="red">字段已经废弃</font>，当前只支持true，默认为true
+                     * <font color="red">字段不再使用</font>，当前只支持true，默认为true
                      */
                     bool m_required;
                     bool m_requiredHasBeenSet;
@@ -1303,7 +1303,7 @@ namespace TencentCloud
                     bool m_customApproverTagHasBeenSet;
 
                     /**
-                     * 已经废弃, 快速注册相关信息
+                     * <font color="red">不再使用</font >, 快速注册相关信息
                      */
                     RegisterInfo m_registerInfo;
                     bool m_registerInfoHasBeenSet;

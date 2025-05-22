@@ -1850,6 +1850,7 @@ namespace TencentCloud
                  *发起图片处理，功能包括：
 1. 格式转换；
 2. 图像增强；
+3. 图像擦除;
                  * @param req ProcessImageRequest
                  * @return ProcessImageOutcome
                  */

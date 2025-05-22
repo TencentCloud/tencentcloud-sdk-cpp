@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool LaunchTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本。
-                     * @return LaunchTemplateVersion 若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本。
+                     * 获取若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本,可以通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323)查询默认版本。
+                     * @return LaunchTemplateVersion 若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本,可以通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323)查询默认版本。
                      * 
                      */
                     int64_t GetLaunchTemplateVersion() const;
 
                     /**
-                     * 设置若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本。
-                     * @param _launchTemplateVersion 若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本。
+                     * 设置若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本,可以通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323)查询默认版本。
+                     * @param _launchTemplateVersion 若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本,可以通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323)查询默认版本。
                      * 
                      */
                     void SetLaunchTemplateVersion(const int64_t& _launchTemplateVersion);
@@ -118,15 +118,15 @@ namespace TencentCloud
                     bool LaunchTemplateVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例启动模板版本描述。长度为2~256个英文或中文字符。
-                     * @return LaunchTemplateVersionDescription 实例启动模板版本描述。长度为2~256个英文或中文字符。
+                     * 获取实例启动模板版本描述。长度为2~256个英文或中文字符，不指定该参数时默认为空字符。
+                     * @return LaunchTemplateVersionDescription 实例启动模板版本描述。长度为2~256个英文或中文字符，不指定该参数时默认为空字符。
                      * 
                      */
                     std::string GetLaunchTemplateVersionDescription() const;
 
                     /**
-                     * 设置实例启动模板版本描述。长度为2~256个英文或中文字符。
-                     * @param _launchTemplateVersionDescription 实例启动模板版本描述。长度为2~256个英文或中文字符。
+                     * 设置实例启动模板版本描述。长度为2~256个英文或中文字符，不指定该参数时默认为空字符。
+                     * @param _launchTemplateVersionDescription 实例启动模板版本描述。长度为2~256个英文或中文字符，不指定该参数时默认为空字符。
                      * 
                      */
                     void SetLaunchTemplateVersionDescription(const std::string& _launchTemplateVersionDescription);
@@ -269,15 +269,15 @@ namespace TencentCloud
                     bool InternetAccessibleHasBeenSet() const;
 
                     /**
-                     * 获取购买实例数量。包年包月实例取值范围：[1，300]，按量计费实例取值范围：[1，100]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。
-                     * @return InstanceCount 购买实例数量。包年包月实例取值范围：[1，300]，按量计费实例取值范围：[1，100]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。
+                     * 获取购买实例数量。具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。
+                     * @return InstanceCount 购买实例数量。具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
-                     * 设置购买实例数量。包年包月实例取值范围：[1，300]，按量计费实例取值范围：[1，100]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。
-                     * @param _instanceCount 购买实例数量。包年包月实例取值范围：[1，300]，按量计费实例取值范围：[1，100]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。
+                     * 设置购买实例数量。具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。
+                     * @param _instanceCount 购买实例数量。具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。
                      * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
@@ -558,15 +558,15 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool DryRunHasBeenSet() const;
 
                     /**
-                     * 获取CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
-                     * @return CamRoleName CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
+                     * 获取CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
+                     * @return CamRoleName CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
                      * 
                      */
                     std::string GetCamRoleName() const;
 
                     /**
-                     * 设置CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
-                     * @param _camRoleName CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
+                     * 设置CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
+                     * @param _camRoleName CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
                      * 
                      */
                     void SetCamRoleName(const std::string& _camRoleName);
@@ -739,13 +739,13 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool m_launchTemplateIdHasBeenSet;
 
                     /**
-                     * 若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本。
+                     * 若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本,可以通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323)查询默认版本。
                      */
                     int64_t m_launchTemplateVersion;
                     bool m_launchTemplateVersionHasBeenSet;
 
                     /**
-                     * 实例启动模板版本描述。长度为2~256个英文或中文字符。
+                     * 实例启动模板版本描述。长度为2~256个英文或中文字符，不指定该参数时默认为空字符。
                      */
                     std::string m_launchTemplateVersionDescription;
                     bool m_launchTemplateVersionDescriptionHasBeenSet;
@@ -788,7 +788,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool m_internetAccessibleHasBeenSet;
 
                     /**
-                     * 购买实例数量。包年包月实例取值范围：[1，300]，按量计费实例取值范围：[1，100]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。
+                     * 购买实例数量。具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
@@ -870,7 +870,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool m_dryRunHasBeenSet;
 
                     /**
-                     * CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
+                     * CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
                      */
                     std::string m_camRoleName;
                     bool m_camRoleNameHasBeenSet;

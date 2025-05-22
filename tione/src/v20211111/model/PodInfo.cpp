@@ -26,7 +26,8 @@ PodInfo::PodInfo() :
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_resourceConfigInfoHasBeenSet(false)
+    m_resourceConfigInfoHasBeenSet(false),
+    m_subUinHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,16 @@ CoreInternalOutcome PodInfo::Deserialize(const rapidjson::Value &value)
         m_resourceConfigInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("SubUin") && !value["SubUin"].IsNull())
+    {
+        if (!value["SubUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodInfo.SubUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUin = string(value["SubUin"].GetString());
+        m_subUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void PodInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_resourceConfigInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void PodInfo::SetResourceConfigInfo(const ResourceConfigInfo& _resourceConfigInf
 bool PodInfo::ResourceConfigInfoHasBeenSet() const
 {
     return m_resourceConfigInfoHasBeenSet;
+}
+
+string PodInfo::GetSubUin() const
+{
+    return m_subUin;
+}
+
+void PodInfo::SetSubUin(const string& _subUin)
+{
+    m_subUin = _subUin;
+    m_subUinHasBeenSet = true;
+}
+
+bool PodInfo::SubUinHasBeenSet() const
+{
+    return m_subUinHasBeenSet;
 }
 

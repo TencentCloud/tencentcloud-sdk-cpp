@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool EmailIdentityHasBeenSet() const;
 
+                    /**
+                     * 获取生成的dkim密钥长度。0:1024，1:2048
+                     * @return DKIMOption 生成的dkim密钥长度。0:1024，1:2048
+                     * 
+                     */
+                    uint64_t GetDKIMOption() const;
+
+                    /**
+                     * 设置生成的dkim密钥长度。0:1024，1:2048
+                     * @param _dKIMOption 生成的dkim密钥长度。0:1024，1:2048
+                     * 
+                     */
+                    void SetDKIMOption(const uint64_t& _dKIMOption);
+
+                    /**
+                     * 判断参数 DKIMOption 是否已赋值
+                     * @return DKIMOption 是否已赋值
+                     * 
+                     */
+                    bool DKIMOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_emailIdentity;
                     bool m_emailIdentityHasBeenSet;
+
+                    /**
+                     * 生成的dkim密钥长度。0:1024，1:2048
+                     */
+                    uint64_t m_dKIMOption;
+                    bool m_dKIMOptionHasBeenSet;
 
                 };
             }

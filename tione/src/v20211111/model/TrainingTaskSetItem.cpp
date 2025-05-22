@@ -44,7 +44,9 @@ TrainingTaskSetItem::TrainingTaskSetItem() :
     m_imageInfoHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_subUinHasBeenSet(false),
+    m_subUinNameHasBeenSet(false)
 {
 }
 
@@ -327,6 +329,26 @@ CoreInternalOutcome TrainingTaskSetItem::Deserialize(const rapidjson::Value &val
         m_callbackUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("SubUin") && !value["SubUin"].IsNull())
+    {
+        if (!value["SubUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskSetItem.SubUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUin = string(value["SubUin"].GetString());
+        m_subUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubUinName") && !value["SubUinName"].IsNull())
+    {
+        if (!value["SubUinName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskSetItem.SubUinName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUinName = string(value["SubUinName"].GetString());
+        m_subUinNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -540,6 +562,22 @@ void TrainingTaskSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subUinNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUinName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUinName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -927,5 +965,37 @@ void TrainingTaskSetItem::SetCallbackUrl(const string& _callbackUrl)
 bool TrainingTaskSetItem::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+string TrainingTaskSetItem::GetSubUin() const
+{
+    return m_subUin;
+}
+
+void TrainingTaskSetItem::SetSubUin(const string& _subUin)
+{
+    m_subUin = _subUin;
+    m_subUinHasBeenSet = true;
+}
+
+bool TrainingTaskSetItem::SubUinHasBeenSet() const
+{
+    return m_subUinHasBeenSet;
+}
+
+string TrainingTaskSetItem::GetSubUinName() const
+{
+    return m_subUinName;
+}
+
+void TrainingTaskSetItem::SetSubUinName(const string& _subUinName)
+{
+    m_subUinName = _subUinName;
+    m_subUinNameHasBeenSet = true;
+}
+
+bool TrainingTaskSetItem::SubUinNameHasBeenSet() const
+{
+    return m_subUinNameHasBeenSet;
 }
 

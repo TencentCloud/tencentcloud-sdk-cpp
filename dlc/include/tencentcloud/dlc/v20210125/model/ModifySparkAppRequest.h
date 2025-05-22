@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/DependencyPackage.h>
 
 
 namespace TencentCloud
@@ -672,6 +673,27 @@ namespace TencentCloud
                      */
                     bool IsSessionStartedHasBeenSet() const;
 
+                    /**
+                     * 获取标准引擎依赖包
+                     * @return DependencyPackages 标准引擎依赖包
+                     * 
+                     */
+                    std::vector<DependencyPackage> GetDependencyPackages() const;
+
+                    /**
+                     * 设置标准引擎依赖包
+                     * @param _dependencyPackages 标准引擎依赖包
+                     * 
+                     */
+                    void SetDependencyPackages(const std::vector<DependencyPackage>& _dependencyPackages);
+
+                    /**
+                     * 判断参数 DependencyPackages 是否已赋值
+                     * @return DependencyPackages 是否已赋值
+                     * 
+                     */
+                    bool DependencyPackagesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -853,6 +875,12 @@ namespace TencentCloud
                      */
                     bool m_isSessionStarted;
                     bool m_isSessionStartedHasBeenSet;
+
+                    /**
+                     * 标准引擎依赖包
+                     */
+                    std::vector<DependencyPackage> m_dependencyPackages;
+                    bool m_dependencyPackagesHasBeenSet;
 
                 };
             }

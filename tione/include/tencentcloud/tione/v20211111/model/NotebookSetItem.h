@@ -711,6 +711,31 @@ namespace TencentCloud
                     bool VolumeSourceGooseFSHasBeenSet() const;
 
                     /**
+                     * 获取子用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubUin 子用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubUin() const;
+
+                    /**
+                     * 设置子用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subUin 子用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubUin(const std::string& _subUin);
+
+                    /**
+                     * 判断参数 SubUin 是否已赋值
+                     * @return SubUin 是否已赋值
+                     * 
+                     */
+                    bool SubUinHasBeenSet() const;
+
+                    /**
                      * 获取子用户名称
                      * @return SubUinName 子用户名称
                      * 
@@ -942,6 +967,13 @@ namespace TencentCloud
                      */
                     GooseFS m_volumeSourceGooseFS;
                     bool m_volumeSourceGooseFSHasBeenSet;
+
+                    /**
+                     * 子用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subUin;
+                    bool m_subUinHasBeenSet;
 
                     /**
                      * 子用户名称

@@ -33,6 +33,8 @@
 #include <tencentcloud/tione/v20211111/model/VolumeMount.h>
 #include <tencentcloud/tione/v20211111/model/ServiceEIP.h>
 #include <tencentcloud/tione/v20211111/model/HealthProbe.h>
+#include <tencentcloud/tione/v20211111/model/RollingUpdate.h>
+#include <tencentcloud/tione/v20211111/model/SidecarSpec.h>
 
 
 namespace TencentCloud
@@ -776,6 +778,48 @@ HYBRID_PAID:
                      */
                     bool HealthProbeHasBeenSet() const;
 
+                    /**
+                     * 获取滚动更新策略
+                     * @return RollingUpdate 滚动更新策略
+                     * 
+                     */
+                    RollingUpdate GetRollingUpdate() const;
+
+                    /**
+                     * 设置滚动更新策略
+                     * @param _rollingUpdate 滚动更新策略
+                     * 
+                     */
+                    void SetRollingUpdate(const RollingUpdate& _rollingUpdate);
+
+                    /**
+                     * 判断参数 RollingUpdate 是否已赋值
+                     * @return RollingUpdate 是否已赋值
+                     * 
+                     */
+                    bool RollingUpdateHasBeenSet() const;
+
+                    /**
+                     * 获取sidecar配置
+                     * @return Sidecar sidecar配置
+                     * 
+                     */
+                    SidecarSpec GetSidecar() const;
+
+                    /**
+                     * 设置sidecar配置
+                     * @param _sidecar sidecar配置
+                     * 
+                     */
+                    void SetSidecar(const SidecarSpec& _sidecar);
+
+                    /**
+                     * 判断参数 Sidecar 是否已赋值
+                     * @return Sidecar 是否已赋值
+                     * 
+                     */
+                    bool SidecarHasBeenSet() const;
+
                 private:
 
                     /**
@@ -980,6 +1024,18 @@ HYBRID_PAID:
                      */
                     HealthProbe m_healthProbe;
                     bool m_healthProbeHasBeenSet;
+
+                    /**
+                     * 滚动更新策略
+                     */
+                    RollingUpdate m_rollingUpdate;
+                    bool m_rollingUpdateHasBeenSet;
+
+                    /**
+                     * sidecar配置
+                     */
+                    SidecarSpec m_sidecar;
+                    bool m_sidecarHasBeenSet;
 
                 };
             }

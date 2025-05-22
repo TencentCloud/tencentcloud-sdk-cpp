@@ -43,7 +43,8 @@ PushQualityData::PushQualityData() :
     m_streamParamHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_fluxHasBeenSet(false),
-    m_serverIpHasBeenSet(false)
+    m_serverIpHasBeenSet(false),
+    m_gopSizeHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,16 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
         m_serverIpHasBeenSet = true;
     }
 
+    if (value.HasMember("GopSize") && !value["GopSize"].IsNull())
+    {
+        if (!value["GopSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.GopSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gopSize = value["GopSize"].GetInt64();
+        m_gopSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +482,14 @@ void PushQualityData::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ServerIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serverIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gopSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GopSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gopSize, allocator);
     }
 
 }
@@ -842,5 +861,21 @@ void PushQualityData::SetServerIp(const string& _serverIp)
 bool PushQualityData::ServerIpHasBeenSet() const
 {
     return m_serverIpHasBeenSet;
+}
+
+int64_t PushQualityData::GetGopSize() const
+{
+    return m_gopSize;
+}
+
+void PushQualityData::SetGopSize(const int64_t& _gopSize)
+{
+    m_gopSize = _gopSize;
+    m_gopSizeHasBeenSet = true;
+}
+
+bool PushQualityData::GopSizeHasBeenSet() const
+{
+    return m_gopSizeHasBeenSet;
 }
 

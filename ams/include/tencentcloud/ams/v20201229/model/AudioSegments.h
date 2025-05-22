@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取入库时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedAt 创建时间
+                     * @return CreatedAt 入库时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置入库时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createdAt 创建时间
+                     * @param _createdAt 入库时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 入库时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;

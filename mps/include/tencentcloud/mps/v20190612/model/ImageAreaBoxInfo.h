@@ -49,12 +49,12 @@ namespace TencentCloud
                     /**
                      * 获取图片框选区域类型，可选值：
 <li>logo：图标；</li>
-<li>text：文字。</li>
+<li>text：文字；</li>
 默认值：logo。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 图片框选区域类型，可选值：
 <li>logo：图标；</li>
-<li>text：文字。</li>
+<li>text：文字；</li>
 默认值：logo。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -64,12 +64,12 @@ namespace TencentCloud
                     /**
                      * 设置图片框选区域类型，可选值：
 <li>logo：图标；</li>
-<li>text：文字。</li>
+<li>text：文字；</li>
 默认值：logo。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 图片框选区域类型，可选值：
 <li>logo：图标；</li>
-<li>text：文字。</li>
+<li>text：文字；</li>
 默认值：logo。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -112,12 +112,45 @@ namespace TencentCloud
                      */
                     bool AreaCoordSetHasBeenSet() const;
 
+                    /**
+                     * 获取图片框选区域坐标，[x1, y1, x2, y2]，即左上角坐标、右下角坐标， 当AreaCoordSet未指定时生效。
+- [0.1, 0.1, 0.3, 0.3] :  表示比例 （数值小于1）
+- [50, 50, 350, 280] : 表示像素 （数值大于等于1）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BoundingBox 图片框选区域坐标，[x1, y1, x2, y2]，即左上角坐标、右下角坐标， 当AreaCoordSet未指定时生效。
+- [0.1, 0.1, 0.3, 0.3] :  表示比例 （数值小于1）
+- [50, 50, 350, 280] : 表示像素 （数值大于等于1）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<double> GetBoundingBox() const;
+
+                    /**
+                     * 设置图片框选区域坐标，[x1, y1, x2, y2]，即左上角坐标、右下角坐标， 当AreaCoordSet未指定时生效。
+- [0.1, 0.1, 0.3, 0.3] :  表示比例 （数值小于1）
+- [50, 50, 350, 280] : 表示像素 （数值大于等于1）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _boundingBox 图片框选区域坐标，[x1, y1, x2, y2]，即左上角坐标、右下角坐标， 当AreaCoordSet未指定时生效。
+- [0.1, 0.1, 0.3, 0.3] :  表示比例 （数值小于1）
+- [50, 50, 350, 280] : 表示像素 （数值大于等于1）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBoundingBox(const std::vector<double>& _boundingBox);
+
+                    /**
+                     * 判断参数 BoundingBox 是否已赋值
+                     * @return BoundingBox 是否已赋值
+                     * 
+                     */
+                    bool BoundingBoxHasBeenSet() const;
+
                 private:
 
                     /**
                      * 图片框选区域类型，可选值：
 <li>logo：图标；</li>
-<li>text：文字。</li>
+<li>text：文字；</li>
 默认值：logo。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -131,6 +164,15 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;
+
+                    /**
+                     * 图片框选区域坐标，[x1, y1, x2, y2]，即左上角坐标、右下角坐标， 当AreaCoordSet未指定时生效。
+- [0.1, 0.1, 0.3, 0.3] :  表示比例 （数值小于1）
+- [50, 50, 350, 280] : 表示像素 （数值大于等于1）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> m_boundingBox;
+                    bool m_boundingBoxHasBeenSet;
 
                 };
             }
