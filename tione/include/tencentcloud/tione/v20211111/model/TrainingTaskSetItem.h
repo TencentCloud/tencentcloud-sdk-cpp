@@ -660,6 +660,27 @@ STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FA
                      */
                     bool SubUinNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务AppId
+                     * @return AppId 任务AppId
+                     * 
+                     */
+                    std::string GetAppId() const;
+
+                    /**
+                     * 设置任务AppId
+                     * @param _appId 任务AppId
+                     * 
+                     */
+                    void SetAppId(const std::string& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -833,6 +854,12 @@ STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FA
                      */
                     std::string m_subUinName;
                     bool m_subUinNameHasBeenSet;
+
+                    /**
+                     * 任务AppId
+                     */
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }

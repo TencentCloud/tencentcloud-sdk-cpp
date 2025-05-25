@@ -152,27 +152,6 @@ namespace TencentCloud
                     bool RecordLineIdHasBeenSet() const;
 
                     /**
-                     * 获取记录权重值(暂未支持)。
-                     * @return Weight 记录权重值(暂未支持)。
-                     * 
-                     */
-                    uint64_t GetWeight() const;
-
-                    /**
-                     * 设置记录权重值(暂未支持)。
-                     * @param _weight 记录权重值(暂未支持)。
-                     * 
-                     */
-                    void SetWeight(const uint64_t& _weight);
-
-                    /**
-                     * 判断参数 Weight 是否已赋值
-                     * @return Weight 是否已赋值
-                     * 
-                     */
-                    bool WeightHasBeenSet() const;
-
-                    /**
                      * 获取记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选。
                      * @return MX 记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选。
                      * 
@@ -214,48 +193,6 @@ namespace TencentCloud
                      */
                     bool TTLHasBeenSet() const;
 
-                    /**
-                     * 获取记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。
-                     * @return Enabled 记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。
-                     * 
-                     */
-                    uint64_t GetEnabled() const;
-
-                    /**
-                     * 设置记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。
-                     * @param _enabled 记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。
-                     * 
-                     */
-                    void SetEnabled(const uint64_t& _enabled);
-
-                    /**
-                     * 判断参数 Enabled 是否已赋值
-                     * @return Enabled 是否已赋值
-                     * 
-                     */
-                    bool EnabledHasBeenSet() const;
-
-                    /**
-                     * 获取记录备注(暂未支持)。
-                     * @return Remark 记录备注(暂未支持)。
-                     * 
-                     */
-                    std::string GetRemark() const;
-
-                    /**
-                     * 设置记录备注(暂未支持)。
-                     * @param _remark 记录备注(暂未支持)。
-                     * 
-                     */
-                    void SetRemark(const std::string& _remark);
-
-                    /**
-                     * 判断参数 Remark 是否已赋值
-                     * @return Remark 是否已赋值
-                     * 
-                     */
-                    bool RemarkHasBeenSet() const;
-
                 private:
 
                     /**
@@ -289,12 +226,6 @@ namespace TencentCloud
                     bool m_recordLineIdHasBeenSet;
 
                     /**
-                     * 记录权重值(暂未支持)。
-                     */
-                    uint64_t m_weight;
-                    bool m_weightHasBeenSet;
-
-                    /**
                      * 记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选。
                      */
                     uint64_t m_mX;
@@ -305,18 +236,6 @@ namespace TencentCloud
                      */
                     uint64_t m_tTL;
                     bool m_tTLHasBeenSet;
-
-                    /**
-                     * 记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。
-                     */
-                    uint64_t m_enabled;
-                    bool m_enabledHasBeenSet;
-
-                    /**
-                     * 记录备注(暂未支持)。
-                     */
-                    std::string m_remark;
-                    bool m_remarkHasBeenSet;
 
                 };
             }

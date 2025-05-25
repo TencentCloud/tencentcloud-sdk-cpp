@@ -226,6 +226,8 @@ namespace TencentCloud
 <li> 图片控件          </li>
 <li> 水印控件等          </li>
 </ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * @return Components 发起的时候合成到PDF上的填写控件（需要提供填写控件的内容）
 <ul><li> 单行文本控件      </li>
 <li> 多行文本控件      </li>
@@ -234,6 +236,8 @@ namespace TencentCloud
 <li> 图片控件          </li>
 <li> 水印控件等          </li>
 </ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * 
                      */
                     std::vector<Component> GetComponents() const;
@@ -247,6 +251,8 @@ namespace TencentCloud
 <li> 图片控件          </li>
 <li> 水印控件等          </li>
 </ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * @param _components 发起的时候合成到PDF上的填写控件（需要提供填写控件的内容）
 <ul><li> 单行文本控件      </li>
 <li> 多行文本控件      </li>
@@ -255,6 +261,8 @@ namespace TencentCloud
 <li> 图片控件          </li>
 <li> 水印控件等          </li>
 </ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -876,6 +884,8 @@ namespace TencentCloud
 <li> 图片控件          </li>
 <li> 水印控件等          </li>
 </ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;
