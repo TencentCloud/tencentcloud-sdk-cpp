@@ -26,7 +26,8 @@ DescribeRacksRequest::DescribeRacksRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_dstServiceHasBeenSet(false)
+    m_dstServiceHasBeenSet(false),
+    m_rackNameHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string DescribeRacksRequest::ToJsonString() const
         string key = "DstService";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dstService.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rackNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RackName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rackName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void DescribeRacksRequest::SetDstService(const string& _dstService)
 bool DescribeRacksRequest::DstServiceHasBeenSet() const
 {
     return m_dstServiceHasBeenSet;
+}
+
+string DescribeRacksRequest::GetRackName() const
+{
+    return m_rackName;
+}
+
+void DescribeRacksRequest::SetRackName(const string& _rackName)
+{
+    m_rackName = _rackName;
+    m_rackNameHasBeenSet = true;
+}
+
+bool DescribeRacksRequest::RackNameHasBeenSet() const
+{
+    return m_rackNameHasBeenSet;
 }
 
 

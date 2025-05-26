@@ -45,7 +45,8 @@ DescribeDataPerformancePageRequest::DescribeDataPerformancePageRequest() :
     m_fromHasBeenSet(false),
     m_costTypeHasBeenSet(false),
     m_envHasBeenSet(false),
-    m_netStatusHasBeenSet(false)
+    m_netStatusHasBeenSet(false),
+    m_webVitalsHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,14 @@ string DescribeDataPerformancePageRequest::ToJsonString() const
         string key = "NetStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_netStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webVitalsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebVitals";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_webVitals, allocator);
     }
 
 
@@ -614,6 +623,22 @@ void DescribeDataPerformancePageRequest::SetNetStatus(const string& _netStatus)
 bool DescribeDataPerformancePageRequest::NetStatusHasBeenSet() const
 {
     return m_netStatusHasBeenSet;
+}
+
+bool DescribeDataPerformancePageRequest::GetWebVitals() const
+{
+    return m_webVitals;
+}
+
+void DescribeDataPerformancePageRequest::SetWebVitals(const bool& _webVitals)
+{
+    m_webVitals = _webVitals;
+    m_webVitalsHasBeenSet = true;
+}
+
+bool DescribeDataPerformancePageRequest::WebVitalsHasBeenSet() const
+{
+    return m_webVitalsHasBeenSet;
 }
 
 

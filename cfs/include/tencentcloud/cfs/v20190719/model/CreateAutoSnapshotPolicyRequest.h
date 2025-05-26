@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool HourHasBeenSet() const;
 
                     /**
-                     * 获取策略名称
-                     * @return PolicyName 策略名称
+                     * 获取策略名称,限制64个字符数量仅支持输入中文、字母、数字、_或-
+                     * @return PolicyName 策略名称,限制64个字符数量仅支持输入中文、字母、数字、_或-
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置策略名称
-                     * @param _policyName 策略名称
+                     * 设置策略名称,限制64个字符数量仅支持输入中文、字母、数字、_或-
+                     * @param _policyName 策略名称,限制64个字符数量仅支持输入中文、字母、数字、_或-
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool AliveDaysHasBeenSet() const;
 
                     /**
-                     * 获取快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。与DayOfWeek，IntervalDays 三者选一
-                     * @return DayOfMonth 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。与DayOfWeek，IntervalDays 三者选一
+                     * 获取快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照；例如1 代表1号；与DayOfWeek，IntervalDays 三者选一
+                     * @return DayOfMonth 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照；例如1 代表1号；与DayOfWeek，IntervalDays 三者选一
                      * 
                      */
                     std::string GetDayOfMonth() const;
 
                     /**
-                     * 设置快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。与DayOfWeek，IntervalDays 三者选一
-                     * @param _dayOfMonth 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。与DayOfWeek，IntervalDays 三者选一
+                     * 设置快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照；例如1 代表1号；与DayOfWeek，IntervalDays 三者选一
+                     * @param _dayOfMonth 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照；例如1 代表1号；与DayOfWeek，IntervalDays 三者选一
                      * 
                      */
                     void SetDayOfMonth(const std::string& _dayOfMonth);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_hourHasBeenSet;
 
                     /**
-                     * 策略名称
+                     * 策略名称,限制64个字符数量仅支持输入中文、字母、数字、_或-
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_aliveDaysHasBeenSet;
 
                     /**
-                     * 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。与DayOfWeek，IntervalDays 三者选一
+                     * 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照；例如1 代表1号；与DayOfWeek，IntervalDays 三者选一
                      */
                     std::string m_dayOfMonth;
                     bool m_dayOfMonthHasBeenSet;

@@ -32,6 +32,7 @@ ChannelCreateBatchSignUrlRequest::ChannelCreateBatchSignUrlRequest() :
     m_notifyTypeHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
     m_organizationNameHasBeenSet(false),
+    m_signatureTypesHasBeenSet(false),
     m_jumpToDetailHasBeenSet(false),
     m_flowBatchUrlInfoHasBeenSet(false),
     m_openIdHasBeenSet(false),
@@ -126,6 +127,19 @@ string ChannelCreateBatchSignUrlRequest::ToJsonString() const
         string key = "OrganizationName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signatureTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignatureTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_signatureTypes.begin(); itr != m_signatureTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
     if (m_jumpToDetailHasBeenSet)
@@ -335,6 +349,22 @@ void ChannelCreateBatchSignUrlRequest::SetOrganizationName(const string& _organi
 bool ChannelCreateBatchSignUrlRequest::OrganizationNameHasBeenSet() const
 {
     return m_organizationNameHasBeenSet;
+}
+
+vector<int64_t> ChannelCreateBatchSignUrlRequest::GetSignatureTypes() const
+{
+    return m_signatureTypes;
+}
+
+void ChannelCreateBatchSignUrlRequest::SetSignatureTypes(const vector<int64_t>& _signatureTypes)
+{
+    m_signatureTypes = _signatureTypes;
+    m_signatureTypesHasBeenSet = true;
+}
+
+bool ChannelCreateBatchSignUrlRequest::SignatureTypesHasBeenSet() const
+{
+    return m_signatureTypesHasBeenSet;
 }
 
 bool ChannelCreateBatchSignUrlRequest::GetJumpToDetail() const

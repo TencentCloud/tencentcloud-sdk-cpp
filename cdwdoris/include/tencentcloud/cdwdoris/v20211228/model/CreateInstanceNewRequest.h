@@ -394,6 +394,69 @@ namespace TencentCloud
                      */
                     bool UserMultiZoneInfoArrHasBeenSet() const;
 
+                    /**
+                     * 获取是否存算分离
+                     * @return IsSSC 是否存算分离
+                     * 
+                     */
+                    bool GetIsSSC() const;
+
+                    /**
+                     * 设置是否存算分离
+                     * @param _isSSC 是否存算分离
+                     * 
+                     */
+                    void SetIsSSC(const bool& _isSSC);
+
+                    /**
+                     * 判断参数 IsSSC 是否已赋值
+                     * @return IsSSC 是否已赋值
+                     * 
+                     */
+                    bool IsSSCHasBeenSet() const;
+
+                    /**
+                     * 获取CU数
+                     * @return SSCCU CU数
+                     * 
+                     */
+                    int64_t GetSSCCU() const;
+
+                    /**
+                     * 设置CU数
+                     * @param _sSCCU CU数
+                     * 
+                     */
+                    void SetSSCCU(const int64_t& _sSCCU);
+
+                    /**
+                     * 判断参数 SSCCU 是否已赋值
+                     * @return SSCCU 是否已赋值
+                     * 
+                     */
+                    bool SSCCUHasBeenSet() const;
+
+                    /**
+                     * 获取缓存盘大小
+                     * @return CacheDiskSize 缓存盘大小
+                     * 
+                     */
+                    std::string GetCacheDiskSize() const;
+
+                    /**
+                     * 设置缓存盘大小
+                     * @param _cacheDiskSize 缓存盘大小
+                     * 
+                     */
+                    void SetCacheDiskSize(const std::string& _cacheDiskSize);
+
+                    /**
+                     * 判断参数 CacheDiskSize 是否已赋值
+                     * @return CacheDiskSize 是否已赋值
+                     * 
+                     */
+                    bool CacheDiskSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -494,6 +557,24 @@ namespace TencentCloud
                      */
                     std::vector<NetworkInfo> m_userMultiZoneInfoArr;
                     bool m_userMultiZoneInfoArrHasBeenSet;
+
+                    /**
+                     * 是否存算分离
+                     */
+                    bool m_isSSC;
+                    bool m_isSSCHasBeenSet;
+
+                    /**
+                     * CU数
+                     */
+                    int64_t m_sSCCU;
+                    bool m_sSCCUHasBeenSet;
+
+                    /**
+                     * 缓存盘大小
+                     */
+                    std::string m_cacheDiskSize;
+                    bool m_cacheDiskSizeHasBeenSet;
 
                 };
             }

@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StuffContactHasBeenSet() const;
 
                     /**
-                     * 获取身份证号
-                     * @return StuffIDCard 身份证号
+                     * 获取证件号码
+                     * @return StuffIDCard 证件号码
                      * 
                      */
                     std::string GetStuffIDCard() const;
 
                     /**
-                     * 设置身份证号
-                     * @param _stuffIDCard 身份证号
+                     * 设置证件号码
+                     * @param _stuffIDCard 证件号码
                      * 
                      */
                     void SetStuffIDCard(const std::string& _stuffIDCard);
@@ -130,6 +130,47 @@ namespace TencentCloud
                      */
                     bool OperationTimeHasBeenSet() const;
 
+                    /**
+                     * 获取证件类型，非必传，默认为IDENTITY_CARD。
+对应关系如下：IDENTITY_CARD: 身份证,
+HONG_KONG_AND_MACAO_PASS: 港澳通行证',
+PASSPORT: 护照,
+DRIVING_LICENSE: 驾照,
+OTHER: 其他
+                     * @return IDCardType 证件类型，非必传，默认为IDENTITY_CARD。
+对应关系如下：IDENTITY_CARD: 身份证,
+HONG_KONG_AND_MACAO_PASS: 港澳通行证',
+PASSPORT: 护照,
+DRIVING_LICENSE: 驾照,
+OTHER: 其他
+                     * 
+                     */
+                    std::string GetIDCardType() const;
+
+                    /**
+                     * 设置证件类型，非必传，默认为IDENTITY_CARD。
+对应关系如下：IDENTITY_CARD: 身份证,
+HONG_KONG_AND_MACAO_PASS: 港澳通行证',
+PASSPORT: 护照,
+DRIVING_LICENSE: 驾照,
+OTHER: 其他
+                     * @param _iDCardType 证件类型，非必传，默认为IDENTITY_CARD。
+对应关系如下：IDENTITY_CARD: 身份证,
+HONG_KONG_AND_MACAO_PASS: 港澳通行证',
+PASSPORT: 护照,
+DRIVING_LICENSE: 驾照,
+OTHER: 其他
+                     * 
+                     */
+                    void SetIDCardType(const std::string& _iDCardType);
+
+                    /**
+                     * 判断参数 IDCardType 是否已赋值
+                     * @return IDCardType 是否已赋值
+                     * 
+                     */
+                    bool IDCardTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,7 +180,7 @@ namespace TencentCloud
                     bool m_stuffContactHasBeenSet;
 
                     /**
-                     * 身份证号
+                     * 证件号码
                      */
                     std::string m_stuffIDCard;
                     bool m_stuffIDCardHasBeenSet;
@@ -155,6 +196,17 @@ namespace TencentCloud
                      */
                     std::string m_operationTime;
                     bool m_operationTimeHasBeenSet;
+
+                    /**
+                     * 证件类型，非必传，默认为IDENTITY_CARD。
+对应关系如下：IDENTITY_CARD: 身份证,
+HONG_KONG_AND_MACAO_PASS: 港澳通行证',
+PASSPORT: 护照,
+DRIVING_LICENSE: 驾照,
+OTHER: 其他
+                     */
+                    std::string m_iDCardType;
+                    bool m_iDCardTypeHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/faceid/v20180301/model/Encryption.h>
 
 
 namespace TencentCloud
@@ -174,22 +175,12 @@ namespace TencentCloud
                     /**
                      * 获取plus版：描述当前请求所在设备的风险标签。
 - 详情如下：
-01-设备疑似被Root/设备疑似越狱。
-02-设备疑似被注入。
-03-设备疑似为模拟器。
-04-设备疑似存在风险操作。
-05-摄像头疑似被劫持。
 06-疑似黑产设备。
 null-无设备风险。
 - 增强版：此字段不生效，默认为null。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceInfoTag plus版：描述当前请求所在设备的风险标签。
 - 详情如下：
-01-设备疑似被Root/设备疑似越狱。
-02-设备疑似被注入。
-03-设备疑似为模拟器。
-04-设备疑似存在风险操作。
-05-摄像头疑似被劫持。
 06-疑似黑产设备。
 null-无设备风险。
 - 增强版：此字段不生效，默认为null。
@@ -305,6 +296,38 @@ null - 未获取到风险等级。
                      */
                     bool DeviceInfoLevelHasBeenSet() const;
 
+                    /**
+                     * 获取敏感数据加密信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Encryption 敏感数据加密信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    Encryption GetEncryption() const;
+
+                    /**
+                     * 判断参数 Encryption 是否已赋值
+                     * @return Encryption 是否已赋值
+                     * 
+                     */
+                    bool EncryptionHasBeenSet() const;
+
+                    /**
+                     * 获取加密后的数据。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptedBody 加密后的数据。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEncryptedBody() const;
+
+                    /**
+                     * 判断参数 EncryptedBody 是否已赋值
+                     * @return EncryptedBody 是否已赋值
+                     * 
+                     */
+                    bool EncryptedBodyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -366,11 +389,6 @@ null - 未获取到风险等级。
                     /**
                      * plus版：描述当前请求所在设备的风险标签。
 - 详情如下：
-01-设备疑似被Root/设备疑似越狱。
-02-设备疑似被注入。
-03-设备疑似为模拟器。
-04-设备疑似存在风险操作。
-05-摄像头疑似被劫持。
 06-疑似黑产设备。
 null-无设备风险。
 - 增强版：此字段不生效，默认为null。
@@ -425,6 +443,20 @@ null - 未获取到风险等级。
                      */
                     std::string m_deviceInfoLevel;
                     bool m_deviceInfoLevelHasBeenSet;
+
+                    /**
+                     * 敏感数据加密信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Encryption m_encryption;
+                    bool m_encryptionHasBeenSet;
+
+                    /**
+                     * 加密后的数据。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encryptedBody;
+                    bool m_encryptedBodyHasBeenSet;
 
                 };
             }

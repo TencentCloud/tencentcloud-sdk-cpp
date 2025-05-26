@@ -24,7 +24,8 @@ using namespace std;
 
 StartAndroidInstancesAppRequest::StartAndroidInstancesAppRequest() :
     m_androidInstanceIdsHasBeenSet(false),
-    m_packageNameHasBeenSet(false)
+    m_packageNameHasBeenSet(false),
+    m_activityHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string StartAndroidInstancesAppRequest::ToJsonString() const
         string key = "PackageName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_packageName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_activityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Activity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_activity.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +103,22 @@ void StartAndroidInstancesAppRequest::SetPackageName(const string& _packageName)
 bool StartAndroidInstancesAppRequest::PackageNameHasBeenSet() const
 {
     return m_packageNameHasBeenSet;
+}
+
+string StartAndroidInstancesAppRequest::GetActivity() const
+{
+    return m_activity;
+}
+
+void StartAndroidInstancesAppRequest::SetActivity(const string& _activity)
+{
+    m_activity = _activity;
+    m_activityHasBeenSet = true;
+}
+
+bool StartAndroidInstancesAppRequest::ActivityHasBeenSet() const
+{
+    return m_activityHasBeenSet;
 }
 
 

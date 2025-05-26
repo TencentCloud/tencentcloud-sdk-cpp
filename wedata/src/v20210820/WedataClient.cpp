@@ -5802,6 +5802,49 @@ WedataClient::DescribeRealTimeTaskSpeedOutcomeCallable WedataClient::DescribeRea
     return task->get_future();
 }
 
+WedataClient::DescribeRealViewSchemaPageOutcome WedataClient::DescribeRealViewSchemaPage(const DescribeRealViewSchemaPageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRealViewSchemaPage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRealViewSchemaPageResponse rsp = DescribeRealViewSchemaPageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRealViewSchemaPageOutcome(rsp);
+        else
+            return DescribeRealViewSchemaPageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRealViewSchemaPageOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeRealViewSchemaPageAsync(const DescribeRealViewSchemaPageRequest& request, const DescribeRealViewSchemaPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRealViewSchemaPage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeRealViewSchemaPageOutcomeCallable WedataClient::DescribeRealViewSchemaPageCallable(const DescribeRealViewSchemaPageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRealViewSchemaPageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRealViewSchemaPage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeReportTaskDetailOutcome WedataClient::DescribeReportTaskDetail(const DescribeReportTaskDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeReportTaskDetail");

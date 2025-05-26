@@ -155,21 +155,21 @@ namespace TencentCloud
                     /**
                      * 获取实例连接参数【已废弃】
                      * @return PrivateLinkParam 实例连接参数【已废弃】
-                     * 
+                     * @deprecated
                      */
                     PrivateLinkParam GetPrivateLinkParam() const;
 
                     /**
                      * 设置实例连接参数【已废弃】
                      * @param _privateLinkParam 实例连接参数【已废弃】
-                     * 
+                     * @deprecated
                      */
                     void SetPrivateLinkParam(const PrivateLinkParam& _privateLinkParam);
 
                     /**
                      * 判断参数 PrivateLinkParam 是否已赋值
                      * @return PrivateLinkParam 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PrivateLinkParamHasBeenSet() const;
 
@@ -257,6 +257,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取任务描述信息
+                     * @return Description 任务描述信息
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置任务描述信息
+                     * @param _description 任务描述信息
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +339,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 任务描述信息
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

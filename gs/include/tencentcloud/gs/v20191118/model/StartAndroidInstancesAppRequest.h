@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool PackageNameHasBeenSet() const;
 
+                    /**
+                     * 获取启动页。建议指定启动页来启动应用，避免启动失败。如果启动页为空，系统尝试根据 PackageName 启动，但不保证成功。
+                     * @return Activity 启动页。建议指定启动页来启动应用，避免启动失败。如果启动页为空，系统尝试根据 PackageName 启动，但不保证成功。
+                     * 
+                     */
+                    std::string GetActivity() const;
+
+                    /**
+                     * 设置启动页。建议指定启动页来启动应用，避免启动失败。如果启动页为空，系统尝试根据 PackageName 启动，但不保证成功。
+                     * @param _activity 启动页。建议指定启动页来启动应用，避免启动失败。如果启动页为空，系统尝试根据 PackageName 启动，但不保证成功。
+                     * 
+                     */
+                    void SetActivity(const std::string& _activity);
+
+                    /**
+                     * 判断参数 Activity 是否已赋值
+                     * @return Activity 是否已赋值
+                     * 
+                     */
+                    bool ActivityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;
+
+                    /**
+                     * 启动页。建议指定启动页来启动应用，避免启动失败。如果启动页为空，系统尝试根据 PackageName 启动，但不保证成功。
+                     */
+                    std::string m_activity;
+                    bool m_activityHasBeenSet;
 
                 };
             }

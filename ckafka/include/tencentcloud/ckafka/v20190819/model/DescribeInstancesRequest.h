@@ -150,21 +150,21 @@ namespace TencentCloud
                     /**
                      * 获取已废弃。匹配标签key值。
                      * @return TagKey 已废弃。匹配标签key值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetTagKey() const;
 
                     /**
                      * 设置已废弃。匹配标签key值。
                      * @param _tagKey 已废弃。匹配标签key值。
-                     * 
+                     * @deprecated
                      */
                     void SetTagKey(const std::string& _tagKey);
 
                     /**
                      * 判断参数 TagKey 是否已赋值
                      * @return TagKey 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TagKeyHasBeenSet() const;
 

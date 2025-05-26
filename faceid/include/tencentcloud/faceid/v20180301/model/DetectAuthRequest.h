@@ -185,14 +185,18 @@ namespace TencentCloud
 
                     /**
                      * 获取透传字段，在获取验证结果时返回。
+- 最长长度1024位。
                      * @return Extra 透传字段，在获取验证结果时返回。
+- 最长长度1024位。
                      * 
                      */
                     std::string GetExtra() const;
 
                     /**
                      * 设置透传字段，在获取验证结果时返回。
+- 最长长度1024位。
                      * @param _extra 透传字段，在获取验证结果时返回。
+- 最长长度1024位。
                      * 
                      */
                     void SetExtra(const std::string& _extra);
@@ -408,6 +412,7 @@ namespace TencentCloud
 
                     /**
                      * 透传字段，在获取验证结果时返回。
+- 最长长度1024位。
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;

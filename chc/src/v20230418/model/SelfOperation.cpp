@@ -24,7 +24,8 @@ SelfOperation::SelfOperation() :
     m_stuffContactHasBeenSet(false),
     m_stuffIDCardHasBeenSet(false),
     m_stuffNameHasBeenSet(false),
-    m_operationTimeHasBeenSet(false)
+    m_operationTimeHasBeenSet(false),
+    m_iDCardTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome SelfOperation::Deserialize(const rapidjson::Value &value)
         m_operationTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IDCardType") && !value["IDCardType"].IsNull())
+    {
+        if (!value["IDCardType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SelfOperation.IDCardType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iDCardType = string(value["IDCardType"].GetString());
+        m_iDCardTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void SelfOperation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "OperationTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_operationTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iDCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IDCardType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iDCardType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void SelfOperation::SetOperationTime(const string& _operationTime)
 bool SelfOperation::OperationTimeHasBeenSet() const
 {
     return m_operationTimeHasBeenSet;
+}
+
+string SelfOperation::GetIDCardType() const
+{
+    return m_iDCardType;
+}
+
+void SelfOperation::SetIDCardType(const string& _iDCardType)
+{
+    m_iDCardType = _iDCardType;
+    m_iDCardTypeHasBeenSet = true;
+}
+
+bool SelfOperation::IDCardTypeHasBeenSet() const
+{
+    return m_iDCardTypeHasBeenSet;
 }
 

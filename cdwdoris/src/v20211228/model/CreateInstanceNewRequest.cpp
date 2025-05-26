@@ -38,7 +38,10 @@ CreateInstanceNewRequest::CreateInstanceNewRequest() :
     m_caseSensitiveHasBeenSet(false),
     m_enableMultiZonesHasBeenSet(false),
     m_userMultiZoneInfosHasBeenSet(false),
-    m_userMultiZoneInfoArrHasBeenSet(false)
+    m_userMultiZoneInfoArrHasBeenSet(false),
+    m_isSSCHasBeenSet(false),
+    m_sSCCUHasBeenSet(false),
+    m_cacheDiskSizeHasBeenSet(false)
 {
 }
 
@@ -193,6 +196,30 @@ string CreateInstanceNewRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isSSCHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSSC";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSSC, allocator);
+    }
+
+    if (m_sSCCUHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSCCU";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sSCCU, allocator);
+    }
+
+    if (m_cacheDiskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CacheDiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cacheDiskSize.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -457,6 +484,54 @@ void CreateInstanceNewRequest::SetUserMultiZoneInfoArr(const vector<NetworkInfo>
 bool CreateInstanceNewRequest::UserMultiZoneInfoArrHasBeenSet() const
 {
     return m_userMultiZoneInfoArrHasBeenSet;
+}
+
+bool CreateInstanceNewRequest::GetIsSSC() const
+{
+    return m_isSSC;
+}
+
+void CreateInstanceNewRequest::SetIsSSC(const bool& _isSSC)
+{
+    m_isSSC = _isSSC;
+    m_isSSCHasBeenSet = true;
+}
+
+bool CreateInstanceNewRequest::IsSSCHasBeenSet() const
+{
+    return m_isSSCHasBeenSet;
+}
+
+int64_t CreateInstanceNewRequest::GetSSCCU() const
+{
+    return m_sSCCU;
+}
+
+void CreateInstanceNewRequest::SetSSCCU(const int64_t& _sSCCU)
+{
+    m_sSCCU = _sSCCU;
+    m_sSCCUHasBeenSet = true;
+}
+
+bool CreateInstanceNewRequest::SSCCUHasBeenSet() const
+{
+    return m_sSCCUHasBeenSet;
+}
+
+string CreateInstanceNewRequest::GetCacheDiskSize() const
+{
+    return m_cacheDiskSize;
+}
+
+void CreateInstanceNewRequest::SetCacheDiskSize(const string& _cacheDiskSize)
+{
+    m_cacheDiskSize = _cacheDiskSize;
+    m_cacheDiskSizeHasBeenSet = true;
+}
+
+bool CreateInstanceNewRequest::CacheDiskSizeHasBeenSet() const
+{
+    return m_cacheDiskSizeHasBeenSet;
 }
 
 

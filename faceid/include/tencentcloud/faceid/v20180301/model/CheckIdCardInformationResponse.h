@@ -63,12 +63,8 @@ namespace TencentCloud
                     bool SimHasBeenSet() const;
 
                     /**
-                     * 获取业务错误码。
-- 成功情况返回Success,。
-- 错误情况请参考下方错误码 列表中FailedOperation部分
-                     * @return Result 业务错误码。
-- 成功情况返回Success,。
-- 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * 获取业务错误码。- 成功情况返回Success。- 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * @return Result 业务错误码。- 成功情况返回Success。- 错误情况请参考下方错误码 列表中FailedOperation部分
                      * 
                      */
                     std::string GetResult() const;
@@ -287,9 +283,7 @@ namespace TencentCloud
                     bool m_simHasBeenSet;
 
                     /**
-                     * 业务错误码。
-- 成功情况返回Success,。
-- 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * 业务错误码。- 成功情况返回Success。- 错误情况请参考下方错误码 列表中FailedOperation部分
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

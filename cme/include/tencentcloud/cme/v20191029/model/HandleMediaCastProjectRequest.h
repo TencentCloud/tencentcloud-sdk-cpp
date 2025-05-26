@@ -161,18 +161,18 @@ namespace TencentCloud
 
                     /**
                      * 获取输出媒体配置。具体操作方式详见 [操作类型](#Operation) 及下文示例。
-当 Operation 为 ModfiyOutputSetting 时必填。
+当 Operation 为 ModifyOutputSetting 时必填。
                      * @return OutputMediaSetting 输出媒体配置。具体操作方式详见 [操作类型](#Operation) 及下文示例。
-当 Operation 为 ModfiyOutputSetting 时必填。
+当 Operation 为 ModifyOutputSetting 时必填。
                      * 
                      */
                     MediaCastOutputMediaSetting GetOutputMediaSetting() const;
 
                     /**
                      * 设置输出媒体配置。具体操作方式详见 [操作类型](#Operation) 及下文示例。
-当 Operation 为 ModfiyOutputSetting 时必填。
+当 Operation 为 ModifyOutputSetting 时必填。
                      * @param _outputMediaSetting 输出媒体配置。具体操作方式详见 [操作类型](#Operation) 及下文示例。
-当 Operation 为 ModfiyOutputSetting 时必填。
+当 Operation 为 ModifyOutputSetting 时必填。
                      * 
                      */
                     void SetOutputMediaSetting(const MediaCastOutputMediaSetting& _outputMediaSetting);
@@ -291,7 +291,7 @@ namespace TencentCloud
 
                     /**
                      * 输出媒体配置。具体操作方式详见 [操作类型](#Operation) 及下文示例。
-当 Operation 为 ModfiyOutputSetting 时必填。
+当 Operation 为 ModifyOutputSetting 时必填。
                      */
                     MediaCastOutputMediaSetting m_outputMediaSetting;
                     bool m_outputMediaSettingHasBeenSet;

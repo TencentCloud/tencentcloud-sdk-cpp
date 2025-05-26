@@ -194,21 +194,21 @@ namespace TencentCloud
                     /**
                      * 获取已经废弃， 使用InstanceIdList
                      * @return InstanceIds 已经废弃， 使用InstanceIdList
-                     * 
+                     * @deprecated
                      */
                     std::string GetInstanceIds() const;
 
                     /**
                      * 设置已经废弃， 使用InstanceIdList
                      * @param _instanceIds 已经废弃， 使用InstanceIdList
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceIds(const std::string& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceIdsHasBeenSet() const;
 

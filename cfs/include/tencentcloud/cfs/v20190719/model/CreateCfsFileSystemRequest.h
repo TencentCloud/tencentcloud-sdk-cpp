@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NetInterfaceHasBeenSet() const;
 
                     /**
-                     * 获取权限组 ID,pgroupbasic 是默认权限组
-                     * @return PGroupId 权限组 ID,pgroupbasic 是默认权限组
+                     * 获取权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)
+                     * @return PGroupId 权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)
                      * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
-                     * 设置权限组 ID,pgroupbasic 是默认权限组
-                     * @param _pGroupId 权限组 ID,pgroupbasic 是默认权限组
+                     * 设置权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)
+                     * @param _pGroupId 权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)
                      * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
@@ -149,15 +149,19 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取
-                     * @return VpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取
+                     * 获取私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，
+[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)
+                     * @return VpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，
+[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取
-                     * @param _vpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取
+                     * 设置私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，
+[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)
+                     * @param _vpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，
+[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -170,15 +174,19 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取
-                     * @return SubnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取
+                     * 获取子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，
+[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)
+                     * @return SubnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，
+[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取
-                     * @param _subnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取
+                     * 设置子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，
+[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)
+                     * @param _subnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，
+[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -275,15 +283,23 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取
-                     * @return CcnId 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取
+                     * 获取云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口
+[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)
+
+                     * @return CcnId 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口
+[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)
+
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取
-                     * @param _ccnId 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取
+                     * 设置云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口
+[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)
+
+                     * @param _ccnId 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口
+[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)
+
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -338,15 +354,19 @@ namespace TencentCloud
                     bool CapacityHasBeenSet() const;
 
                     /**
-                     * 获取文件系统快照ID，通过查询快照列表获取该参数
-                     * @return SnapshotId 文件系统快照ID，通过查询快照列表获取该参数
+                     * 获取文件系统快照ID，通过查询快照列表获取该参数，
+[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)
+                     * @return SnapshotId 文件系统快照ID，通过查询快照列表获取该参数，
+[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置文件系统快照ID，通过查询快照列表获取该参数
-                     * @param _snapshotId 文件系统快照ID，通过查询快照列表获取该参数
+                     * 设置文件系统快照ID，通过查询快照列表获取该参数，
+[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)
+                     * @param _snapshotId 文件系统快照ID，通过查询快照列表获取该参数，
+[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -359,15 +379,19 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取定期快照策略ID，通过查询快照策略信息获取
-                     * @return AutoSnapshotPolicyId 定期快照策略ID，通过查询快照策略信息获取
+                     * 获取定期快照策略ID，通过查询快照策略信息获取,
+[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)
+                     * @return AutoSnapshotPolicyId 定期快照策略ID，通过查询快照策略信息获取,
+[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)
                      * 
                      */
                     std::string GetAutoSnapshotPolicyId() const;
 
                     /**
-                     * 设置定期快照策略ID，通过查询快照策略信息获取
-                     * @param _autoSnapshotPolicyId 定期快照策略ID，通过查询快照策略信息获取
+                     * 设置定期快照策略ID，通过查询快照策略信息获取,
+[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)
+                     * @param _autoSnapshotPolicyId 定期快照策略ID，通过查询快照策略信息获取,
+[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)
                      * 
                      */
                     void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
@@ -444,7 +468,7 @@ v3.1：创建增强版的通用文件系统
                     bool m_netInterfaceHasBeenSet;
 
                     /**
-                     * 权限组 ID,pgroupbasic 是默认权限组
+                     * 权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)
                      */
                     std::string m_pGroupId;
                     bool m_pGroupIdHasBeenSet;
@@ -462,13 +486,15 @@ v3.1：创建增强版的通用文件系统
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取
+                     * 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，
+[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取
+                     * 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，
+[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -498,7 +524,9 @@ v3.1：创建增强版的通用文件系统
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取
+                     * 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口
+[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)
+
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
@@ -516,13 +544,15 @@ v3.1：创建增强版的通用文件系统
                     bool m_capacityHasBeenSet;
 
                     /**
-                     * 文件系统快照ID，通过查询快照列表获取该参数
+                     * 文件系统快照ID，通过查询快照列表获取该参数，
+[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 定期快照策略ID，通过查询快照策略信息获取
+                     * 定期快照策略ID，通过查询快照策略信息获取,
+[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)
                      */
                     std::string m_autoSnapshotPolicyId;
                     bool m_autoSnapshotPolicyIdHasBeenSet;

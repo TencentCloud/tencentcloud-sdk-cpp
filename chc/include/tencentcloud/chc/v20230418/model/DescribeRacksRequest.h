@@ -255,6 +255,27 @@ hosting-type
                      */
                     bool DstServiceHasBeenSet() const;
 
+                    /**
+                     * 获取机架名称关键字实现模糊搜索
+                     * @return RackName 机架名称关键字实现模糊搜索
+                     * 
+                     */
+                    std::string GetRackName() const;
+
+                    /**
+                     * 设置机架名称关键字实现模糊搜索
+                     * @param _rackName 机架名称关键字实现模糊搜索
+                     * 
+                     */
+                    void SetRackName(const std::string& _rackName);
+
+                    /**
+                     * 判断参数 RackName 是否已赋值
+                     * @return RackName 是否已赋值
+                     * 
+                     */
+                    bool RackNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -312,6 +333,12 @@ hosting-type
                      */
                     std::string m_dstService;
                     bool m_dstServiceHasBeenSet;
+
+                    /**
+                     * 机架名称关键字实现模糊搜索
+                     */
+                    std::string m_rackName;
+                    bool m_rackNameHasBeenSet;
 
                 };
             }

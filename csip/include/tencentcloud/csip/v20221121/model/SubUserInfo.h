@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID，无业务意义
-仅作为唯一键
-                     * @return ID 主键ID，无业务意义
-仅作为唯一键
+                     * 获取主键ID，无业务意义仅作为唯一键
+                     * @return ID 主键ID，无业务意义仅作为唯一键
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置主键ID，无业务意义
-仅作为唯一键
-                     * @param _iD 主键ID，无业务意义
-仅作为唯一键
+                     * 设置主键ID，无业务意义仅作为唯一键
+                     * @param _iD 主键ID，无业务意义仅作为唯一键
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -198,15 +194,15 @@ namespace TencentCloud
                     bool OwnerNickNameHasBeenSet() const;
 
                     /**
-                     * 获取所属主账号memberid
-                     * @return OwnerMemberID 所属主账号memberid
+                     * 获取所属主账号memberId信息
+                     * @return OwnerMemberID 所属主账号memberId信息
                      * 
                      */
                     std::string GetOwnerMemberID() const;
 
                     /**
-                     * 设置所属主账号memberid
-                     * @param _ownerMemberID 所属主账号memberid
+                     * 设置所属主账号memberId信息
+                     * @param _ownerMemberID 所属主账号memberId信息
                      * 
                      */
                     void SetOwnerMemberID(const std::string& _ownerMemberID);
@@ -431,8 +427,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主键ID，无业务意义
-仅作为唯一键
+                     * 主键ID，无业务意义仅作为唯一键
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
@@ -474,7 +469,7 @@ namespace TencentCloud
                     bool m_ownerNickNameHasBeenSet;
 
                     /**
-                     * 所属主账号memberid
+                     * 所属主账号memberId信息
                      */
                     std::string m_ownerMemberID;
                     bool m_ownerMemberIDHasBeenSet;

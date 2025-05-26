@@ -183,19 +183,47 @@ namespace TencentCloud
                     bool SupplierHasBeenSet() const;
 
                     /**
-                     * 获取MongoDB可定义如下的参数: 	['AuthDatabase':'admin', 
-'AuthFlag': "1",	'AuthMechanism':"SCRAM-SHA-1"]
-                     * @return ExtraAttr MongoDB可定义如下的参数: 	['AuthDatabase':'admin', 
-'AuthFlag': "1",	'AuthMechanism':"SCRAM-SHA-1"]
+                     * 获取此参数为数组类型，可以传多个键值对结构对象。
+MongoDB可定义如下的参数：
+'AuthDatabase':'admin',
+'AuthFlag': "1",
+'AuthMechanism':"SCRAM-SHA-1",
+"fetchMethod":"oplog",
+"connectMode":"srv",
+"EncryptedConnProtocol":"mongo_atlas_ssl"；
+其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。
+                     * @return ExtraAttr 此参数为数组类型，可以传多个键值对结构对象。
+MongoDB可定义如下的参数：
+'AuthDatabase':'admin',
+'AuthFlag': "1",
+'AuthMechanism':"SCRAM-SHA-1",
+"fetchMethod":"oplog",
+"connectMode":"srv",
+"EncryptedConnProtocol":"mongo_atlas_ssl"；
+其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。
                      * 
                      */
                     std::vector<KeyValuePairOption> GetExtraAttr() const;
 
                     /**
-                     * 设置MongoDB可定义如下的参数: 	['AuthDatabase':'admin', 
-'AuthFlag': "1",	'AuthMechanism':"SCRAM-SHA-1"]
-                     * @param _extraAttr MongoDB可定义如下的参数: 	['AuthDatabase':'admin', 
-'AuthFlag': "1",	'AuthMechanism':"SCRAM-SHA-1"]
+                     * 设置此参数为数组类型，可以传多个键值对结构对象。
+MongoDB可定义如下的参数：
+'AuthDatabase':'admin',
+'AuthFlag': "1",
+'AuthMechanism':"SCRAM-SHA-1",
+"fetchMethod":"oplog",
+"connectMode":"srv",
+"EncryptedConnProtocol":"mongo_atlas_ssl"；
+其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。
+                     * @param _extraAttr 此参数为数组类型，可以传多个键值对结构对象。
+MongoDB可定义如下的参数：
+'AuthDatabase':'admin',
+'AuthFlag': "1",
+'AuthMechanism':"SCRAM-SHA-1",
+"fetchMethod":"oplog",
+"connectMode":"srv",
+"EncryptedConnProtocol":"mongo_atlas_ssl"；
+其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。
                      * 
                      */
                     void SetExtraAttr(const std::vector<KeyValuePairOption>& _extraAttr);
@@ -229,15 +257,15 @@ namespace TencentCloud
                     bool DatabaseNetEnvHasBeenSet() const;
 
                     /**
-                     * 获取tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。对于mongodb链路，srv表示SRV连接串，为空或不传表示普通连接串，srv仅限于FetchMethod为change_stream的拉取模式
-                     * @return ConnectType tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。对于mongodb链路，srv表示SRV连接串，为空或不传表示普通连接串，srv仅限于FetchMethod为change_stream的拉取模式
+                     * 获取tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+                     * @return ConnectType tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
                      * 
                      */
                     std::string GetConnectType() const;
 
                     /**
-                     * 设置tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。对于mongodb链路，srv表示SRV连接串，为空或不传表示普通连接串，srv仅限于FetchMethod为change_stream的拉取模式
-                     * @param _connectType tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。对于mongodb链路，srv表示SRV连接串，为空或不传表示普通连接串，srv仅限于FetchMethod为change_stream的拉取模式
+                     * 设置tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+                     * @param _connectType tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
                      * 
                      */
                     void SetConnectType(const std::string& _connectType);
@@ -290,8 +318,15 @@ namespace TencentCloud
                     bool m_supplierHasBeenSet;
 
                     /**
-                     * MongoDB可定义如下的参数: 	['AuthDatabase':'admin', 
-'AuthFlag': "1",	'AuthMechanism':"SCRAM-SHA-1"]
+                     * 此参数为数组类型，可以传多个键值对结构对象。
+MongoDB可定义如下的参数：
+'AuthDatabase':'admin',
+'AuthFlag': "1",
+'AuthMechanism':"SCRAM-SHA-1",
+"fetchMethod":"oplog",
+"connectMode":"srv",
+"EncryptedConnProtocol":"mongo_atlas_ssl"；
+其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。
                      */
                     std::vector<KeyValuePairOption> m_extraAttr;
                     bool m_extraAttrHasBeenSet;
@@ -303,7 +338,7 @@ namespace TencentCloud
                     bool m_databaseNetEnvHasBeenSet;
 
                     /**
-                     * tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。对于mongodb链路，srv表示SRV连接串，为空或不传表示普通连接串，srv仅限于FetchMethod为change_stream的拉取模式
+                     * tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
                      */
                     std::string m_connectType;
                     bool m_connectTypeHasBeenSet;

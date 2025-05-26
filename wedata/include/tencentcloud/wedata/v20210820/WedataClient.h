@@ -291,6 +291,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskMetricOverviewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskSpeedRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskSpeedResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRealViewSchemaPageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRealViewSchemaPageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeReportTaskDetailRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeReportTaskDetailResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeReportTaskListRequest.h>
@@ -977,6 +979,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRealTimeTaskSpeedResponse> DescribeRealTimeTaskSpeedOutcome;
                 typedef std::future<DescribeRealTimeTaskSpeedOutcome> DescribeRealTimeTaskSpeedOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeRealTimeTaskSpeedRequest&, DescribeRealTimeTaskSpeedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealTimeTaskSpeedAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRealViewSchemaPageResponse> DescribeRealViewSchemaPageOutcome;
+                typedef std::future<DescribeRealViewSchemaPageOutcome> DescribeRealViewSchemaPageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRealViewSchemaPageRequest&, DescribeRealViewSchemaPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealViewSchemaPageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReportTaskDetailResponse> DescribeReportTaskDetailOutcome;
                 typedef std::future<DescribeReportTaskDetailOutcome> DescribeReportTaskDetailOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeReportTaskDetailRequest&, DescribeReportTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportTaskDetailAsyncHandler;
@@ -2592,6 +2597,15 @@ namespace TencentCloud
                 DescribeRealTimeTaskSpeedOutcome DescribeRealTimeTaskSpeed(const Model::DescribeRealTimeTaskSpeedRequest &request);
                 void DescribeRealTimeTaskSpeedAsync(const Model::DescribeRealTimeTaskSpeedRequest& request, const DescribeRealTimeTaskSpeedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRealTimeTaskSpeedOutcomeCallable DescribeRealTimeTaskSpeedCallable(const Model::DescribeRealTimeTaskSpeedRequest& request);
+
+                /**
+                 *数据集成分页获取数据库SCHEMA信息
+                 * @param req DescribeRealViewSchemaPageRequest
+                 * @return DescribeRealViewSchemaPageOutcome
+                 */
+                DescribeRealViewSchemaPageOutcome DescribeRealViewSchemaPage(const Model::DescribeRealViewSchemaPageRequest &request);
+                void DescribeRealViewSchemaPageAsync(const Model::DescribeRealViewSchemaPageRequest& request, const DescribeRealViewSchemaPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRealViewSchemaPageOutcomeCallable DescribeRealViewSchemaPageCallable(const Model::DescribeRealViewSchemaPageRequest& request);
 
                 /**
                  *查询上报任务详情

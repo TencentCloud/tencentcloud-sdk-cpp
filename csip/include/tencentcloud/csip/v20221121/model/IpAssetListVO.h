@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool AssetCreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取公网ip
-                     * @return PublicIp 公网ip
+                     * 获取公网IP
+                     * @return PublicIp 公网IP
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
-                     * 设置公网ip
-                     * @param _publicIp 公网ip
+                     * 设置公网IP
+                     * @param _publicIp 公网IP
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -699,15 +699,15 @@ namespace TencentCloud
                     bool AddressIdHasBeenSet() const;
 
                     /**
-                     * 获取memberid信息
-                     * @return MemberId memberid信息
+                     * 获取MemberId信息
+                     * @return MemberId MemberId信息
                      * 
                      */
                     std::string GetMemberId() const;
 
                     /**
-                     * 设置memberid信息
-                     * @param _memberId memberid信息
+                     * 设置MemberId信息
+                     * @param _memberId MemberId信息
                      * 
                      */
                     void SetMemberId(const std::string& _memberId);
@@ -821,7 +821,7 @@ namespace TencentCloud
                     bool m_assetCreateTimeHasBeenSet;
 
                     /**
-                     * 公网ip
+                     * 公网IP
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
@@ -971,7 +971,7 @@ namespace TencentCloud
                     bool m_addressIdHasBeenSet;
 
                     /**
-                     * memberid信息
+                     * MemberId信息
                      */
                     std::string m_memberId;
                     bool m_memberIdHasBeenSet;

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PickUpStuffContactHasBeenSet() const;
 
                     /**
-                     * 获取自提人身份证号
-                     * @return PickUpStuffIDCard 自提人身份证号
+                     * 获取自提人证件号码
+                     * @return PickUpStuffIDCard 自提人证件号码
                      * 
                      */
                     std::string GetPickUpStuffIDCard() const;
 
                     /**
-                     * 设置自提人身份证号
-                     * @param _pickUpStuffIDCard 自提人身份证号
+                     * 设置自提人证件号码
+                     * @param _pickUpStuffIDCard 自提人证件号码
                      * 
                      */
                     void SetPickUpStuffIDCard(const std::string& _pickUpStuffIDCard);
@@ -130,6 +130,47 @@ namespace TencentCloud
                      */
                     bool PickUpTimeHasBeenSet() const;
 
+                    /**
+                     * 获取证件类型，非必传，默认为IDENTITY_CARD。
+对应关系如下：IDENTITY_CARD: 身份证,
+HONG_KONG_AND_MACAO_PASS: 港澳通行证',
+PASSPORT: 护照,
+DRIVING_LICENSE: 驾照,
+OTHER: 其他
+                     * @return IDCardType 证件类型，非必传，默认为IDENTITY_CARD。
+对应关系如下：IDENTITY_CARD: 身份证,
+HONG_KONG_AND_MACAO_PASS: 港澳通行证',
+PASSPORT: 护照,
+DRIVING_LICENSE: 驾照,
+OTHER: 其他
+                     * 
+                     */
+                    std::string GetIDCardType() const;
+
+                    /**
+                     * 设置证件类型，非必传，默认为IDENTITY_CARD。
+对应关系如下：IDENTITY_CARD: 身份证,
+HONG_KONG_AND_MACAO_PASS: 港澳通行证',
+PASSPORT: 护照,
+DRIVING_LICENSE: 驾照,
+OTHER: 其他
+                     * @param _iDCardType 证件类型，非必传，默认为IDENTITY_CARD。
+对应关系如下：IDENTITY_CARD: 身份证,
+HONG_KONG_AND_MACAO_PASS: 港澳通行证',
+PASSPORT: 护照,
+DRIVING_LICENSE: 驾照,
+OTHER: 其他
+                     * 
+                     */
+                    void SetIDCardType(const std::string& _iDCardType);
+
+                    /**
+                     * 判断参数 IDCardType 是否已赋值
+                     * @return IDCardType 是否已赋值
+                     * 
+                     */
+                    bool IDCardTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,7 +186,7 @@ namespace TencentCloud
                     bool m_pickUpStuffContactHasBeenSet;
 
                     /**
-                     * 自提人身份证号
+                     * 自提人证件号码
                      */
                     std::string m_pickUpStuffIDCard;
                     bool m_pickUpStuffIDCardHasBeenSet;
@@ -155,6 +196,17 @@ namespace TencentCloud
                      */
                     std::string m_pickUpTime;
                     bool m_pickUpTimeHasBeenSet;
+
+                    /**
+                     * 证件类型，非必传，默认为IDENTITY_CARD。
+对应关系如下：IDENTITY_CARD: 身份证,
+HONG_KONG_AND_MACAO_PASS: 港澳通行证',
+PASSPORT: 护照,
+DRIVING_LICENSE: 驾照,
+OTHER: 其他
+                     */
+                    std::string m_iDCardType;
+                    bool m_iDCardTypeHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/faceid/v20180301/model/Encryption.h>
 
 
 namespace TencentCloud
@@ -117,6 +118,52 @@ namespace TencentCloud
                      */
                     bool IsNeedBestFrameHasBeenSet() const;
 
+                    /**
+                     * 获取是否对回包整体进行加密。
+                     * @return IsEncryptResponse 是否对回包整体进行加密。
+                     * 
+                     */
+                    bool GetIsEncryptResponse() const;
+
+                    /**
+                     * 设置是否对回包整体进行加密。
+                     * @param _isEncryptResponse 是否对回包整体进行加密。
+                     * 
+                     */
+                    void SetIsEncryptResponse(const bool& _isEncryptResponse);
+
+                    /**
+                     * 判断参数 IsEncryptResponse 是否已赋值
+                     * @return IsEncryptResponse 是否已赋值
+                     * 
+                     */
+                    bool IsEncryptResponseHasBeenSet() const;
+
+                    /**
+                     * 获取是否需要对返回中的敏感信息进行加密。  
+只需指定加密算法Algorithm即可，其余字段传入默认值。
+                     * @return Encryption 是否需要对返回中的敏感信息进行加密。  
+只需指定加密算法Algorithm即可，其余字段传入默认值。
+                     * 
+                     */
+                    Encryption GetEncryption() const;
+
+                    /**
+                     * 设置是否需要对返回中的敏感信息进行加密。  
+只需指定加密算法Algorithm即可，其余字段传入默认值。
+                     * @param _encryption 是否需要对返回中的敏感信息进行加密。  
+只需指定加密算法Algorithm即可，其余字段传入默认值。
+                     * 
+                     */
+                    void SetEncryption(const Encryption& _encryption);
+
+                    /**
+                     * 判断参数 Encryption 是否已赋值
+                     * @return Encryption 是否已赋值
+                     * 
+                     */
+                    bool EncryptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +186,19 @@ namespace TencentCloud
                      */
                     bool m_isNeedBestFrame;
                     bool m_isNeedBestFrameHasBeenSet;
+
+                    /**
+                     * 是否对回包整体进行加密。
+                     */
+                    bool m_isEncryptResponse;
+                    bool m_isEncryptResponseHasBeenSet;
+
+                    /**
+                     * 是否需要对返回中的敏感信息进行加密。  
+只需指定加密算法Algorithm即可，其余字段传入默认值。
+                     */
+                    Encryption m_encryption;
+                    bool m_encryptionHasBeenSet;
 
                 };
             }

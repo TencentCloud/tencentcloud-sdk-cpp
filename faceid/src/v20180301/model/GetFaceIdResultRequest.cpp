@@ -25,7 +25,9 @@ using namespace std;
 GetFaceIdResultRequest::GetFaceIdResultRequest() :
     m_faceIdTokenHasBeenSet(false),
     m_isNeedVideoHasBeenSet(false),
-    m_isNeedBestFrameHasBeenSet(false)
+    m_isNeedBestFrameHasBeenSet(false),
+    m_isEncryptResponseHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,23 @@ string GetFaceIdResultRequest::ToJsonString() const
         string key = "IsNeedBestFrame";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isNeedBestFrame, allocator);
+    }
+
+    if (m_isEncryptResponseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsEncryptResponse";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isEncryptResponse, allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -114,6 +133,38 @@ void GetFaceIdResultRequest::SetIsNeedBestFrame(const bool& _isNeedBestFrame)
 bool GetFaceIdResultRequest::IsNeedBestFrameHasBeenSet() const
 {
     return m_isNeedBestFrameHasBeenSet;
+}
+
+bool GetFaceIdResultRequest::GetIsEncryptResponse() const
+{
+    return m_isEncryptResponse;
+}
+
+void GetFaceIdResultRequest::SetIsEncryptResponse(const bool& _isEncryptResponse)
+{
+    m_isEncryptResponse = _isEncryptResponse;
+    m_isEncryptResponseHasBeenSet = true;
+}
+
+bool GetFaceIdResultRequest::IsEncryptResponseHasBeenSet() const
+{
+    return m_isEncryptResponseHasBeenSet;
+}
+
+Encryption GetFaceIdResultRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void GetFaceIdResultRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool GetFaceIdResultRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为隐藏可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hidden 是否为隐藏可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHidden() const;
 
                     /**
                      * 设置是否为隐藏可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hidden 是否为隐藏可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHidden(const bool& _hidden);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 是否为隐藏可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hidden;
                     bool m_hiddenHasBeenSet;

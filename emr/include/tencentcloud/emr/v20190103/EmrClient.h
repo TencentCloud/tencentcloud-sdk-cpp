@@ -35,12 +35,16 @@
 #include <tencentcloud/emr/v20190103/model/CreateCloudInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateClusterRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateClusterResponse.h>
+#include <tencentcloud/emr/v20190103/model/CreateGroupsSTDRequest.h>
+#include <tencentcloud/emr/v20190103/model/CreateGroupsSTDResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateSLInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateSLInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/DeleteAutoScaleStrategyRequest.h>
 #include <tencentcloud/emr/v20190103/model/DeleteAutoScaleStrategyResponse.h>
+#include <tencentcloud/emr/v20190103/model/DeleteGroupsSTDRequest.h>
+#include <tencentcloud/emr/v20190103/model/DeleteGroupsSTDResponse.h>
 #include <tencentcloud/emr/v20190103/model/DeleteNodeResourceConfigRequest.h>
 #include <tencentcloud/emr/v20190103/model/DeleteNodeResourceConfigResponse.h>
 #include <tencentcloud/emr/v20190103/model/DeleteUserManagerUserListRequest.h>
@@ -153,8 +157,12 @@
 #include <tencentcloud/emr/v20190103/model/ModifySLInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifySLInstanceBasicRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifySLInstanceBasicResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyUserGroupRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyUserGroupResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyUserManagerPwdRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyUserManagerPwdResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyUsersOfGroupSTDRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyUsersOfGroupSTDResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyYarnDeployRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyYarnDeployResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyYarnQueueV2Request.h>
@@ -215,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGroupsSTDResponse> CreateGroupsSTDOutcome;
+                typedef std::future<CreateGroupsSTDOutcome> CreateGroupsSTDOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::CreateGroupsSTDRequest&, CreateGroupsSTDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupsSTDAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
@@ -224,6 +235,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAutoScaleStrategyResponse> DeleteAutoScaleStrategyOutcome;
                 typedef std::future<DeleteAutoScaleStrategyOutcome> DeleteAutoScaleStrategyOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DeleteAutoScaleStrategyRequest&, DeleteAutoScaleStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoScaleStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGroupsSTDResponse> DeleteGroupsSTDOutcome;
+                typedef std::future<DeleteGroupsSTDOutcome> DeleteGroupsSTDOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DeleteGroupsSTDRequest&, DeleteGroupsSTDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupsSTDAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNodeResourceConfigResponse> DeleteNodeResourceConfigOutcome;
                 typedef std::future<DeleteNodeResourceConfigOutcome> DeleteNodeResourceConfigOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DeleteNodeResourceConfigRequest&, DeleteNodeResourceConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNodeResourceConfigAsyncHandler;
@@ -392,9 +406,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySLInstanceBasicResponse> ModifySLInstanceBasicOutcome;
                 typedef std::future<ModifySLInstanceBasicOutcome> ModifySLInstanceBasicOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifySLInstanceBasicRequest&, ModifySLInstanceBasicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySLInstanceBasicAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserGroupResponse> ModifyUserGroupOutcome;
+                typedef std::future<ModifyUserGroupOutcome> ModifyUserGroupOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyUserGroupRequest&, ModifyUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserManagerPwdResponse> ModifyUserManagerPwdOutcome;
                 typedef std::future<ModifyUserManagerPwdOutcome> ModifyUserManagerPwdOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyUserManagerPwdRequest&, ModifyUserManagerPwdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserManagerPwdAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUsersOfGroupSTDResponse> ModifyUsersOfGroupSTDOutcome;
+                typedef std::future<ModifyUsersOfGroupSTDOutcome> ModifyUsersOfGroupSTDOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyUsersOfGroupSTDRequest&, ModifyUsersOfGroupSTDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUsersOfGroupSTDAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyYarnDeployResponse> ModifyYarnDeployOutcome;
                 typedef std::future<ModifyYarnDeployOutcome> ModifyYarnDeployOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyYarnDeployRequest&, ModifyYarnDeployOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyYarnDeployAsyncHandler;
@@ -496,6 +516,15 @@ namespace TencentCloud
                 CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
 
                 /**
+                 *用户管理-批量创建用户组
+                 * @param req CreateGroupsSTDRequest
+                 * @return CreateGroupsSTDOutcome
+                 */
+                CreateGroupsSTDOutcome CreateGroupsSTD(const Model::CreateGroupsSTDRequest &request);
+                void CreateGroupsSTDAsync(const Model::CreateGroupsSTDRequest& request, const CreateGroupsSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGroupsSTDOutcomeCallable CreateGroupsSTDCallable(const Model::CreateGroupsSTDRequest& request);
+
+                /**
                  *创建EMR集群实例
                  * @param req CreateInstanceRequest
                  * @return CreateInstanceOutcome
@@ -523,6 +552,15 @@ namespace TencentCloud
                 DeleteAutoScaleStrategyOutcome DeleteAutoScaleStrategy(const Model::DeleteAutoScaleStrategyRequest &request);
                 void DeleteAutoScaleStrategyAsync(const Model::DeleteAutoScaleStrategyRequest& request, const DeleteAutoScaleStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAutoScaleStrategyOutcomeCallable DeleteAutoScaleStrategyCallable(const Model::DeleteAutoScaleStrategyRequest& request);
+
+                /**
+                 *批量删除用户组
+                 * @param req DeleteGroupsSTDRequest
+                 * @return DeleteGroupsSTDOutcome
+                 */
+                DeleteGroupsSTDOutcome DeleteGroupsSTD(const Model::DeleteGroupsSTDRequest &request);
+                void DeleteGroupsSTDAsync(const Model::DeleteGroupsSTDRequest& request, const DeleteGroupsSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGroupsSTDOutcomeCallable DeleteGroupsSTDCallable(const Model::DeleteGroupsSTDRequest& request);
 
                 /**
                  *删除当前集群的节点规格配置
@@ -1033,6 +1071,15 @@ namespace TencentCloud
                 ModifySLInstanceBasicOutcomeCallable ModifySLInstanceBasicCallable(const Model::ModifySLInstanceBasicRequest& request);
 
                 /**
+                 *用户管理-修改用户组
+                 * @param req ModifyUserGroupRequest
+                 * @return ModifyUserGroupOutcome
+                 */
+                ModifyUserGroupOutcome ModifyUserGroup(const Model::ModifyUserGroupRequest &request);
+                void ModifyUserGroupAsync(const Model::ModifyUserGroupRequest& request, const ModifyUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserGroupOutcomeCallable ModifyUserGroupCallable(const Model::ModifyUserGroupRequest& request);
+
+                /**
                  *修改用户密码（用户管理）
                  * @param req ModifyUserManagerPwdRequest
                  * @return ModifyUserManagerPwdOutcome
@@ -1040,6 +1087,15 @@ namespace TencentCloud
                 ModifyUserManagerPwdOutcome ModifyUserManagerPwd(const Model::ModifyUserManagerPwdRequest &request);
                 void ModifyUserManagerPwdAsync(const Model::ModifyUserManagerPwdRequest& request, const ModifyUserManagerPwdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserManagerPwdOutcomeCallable ModifyUserManagerPwdCallable(const Model::ModifyUserManagerPwdRequest& request);
+
+                /**
+                 *变更用户组用户信息
+                 * @param req ModifyUsersOfGroupSTDRequest
+                 * @return ModifyUsersOfGroupSTDOutcome
+                 */
+                ModifyUsersOfGroupSTDOutcome ModifyUsersOfGroupSTD(const Model::ModifyUsersOfGroupSTDRequest &request);
+                void ModifyUsersOfGroupSTDAsync(const Model::ModifyUsersOfGroupSTDRequest& request, const ModifyUsersOfGroupSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUsersOfGroupSTDOutcomeCallable ModifyUsersOfGroupSTDCallable(const Model::ModifyUsersOfGroupSTDRequest& request);
 
                 /**
                  *部署生效。已废弃，请使用`DeployYarnConf`接口进行部署生效

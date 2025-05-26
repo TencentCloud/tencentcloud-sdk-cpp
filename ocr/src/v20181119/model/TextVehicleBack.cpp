@@ -34,7 +34,8 @@ TextVehicleBack::TextVehicleBack() :
     m_subPageCodeHasBeenSet(false),
     m_fuelTypeHasBeenSet(false),
     m_addressElectronicHasBeenSet(false),
-    m_issueAuthorityElectronicHasBeenSet(false)
+    m_issueAuthorityElectronicHasBeenSet(false),
+    m_carBodyColorHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
         m_issueAuthorityElectronicHasBeenSet = true;
     }
 
+    if (value.HasMember("CarBodyColor") && !value["CarBodyColor"].IsNull())
+    {
+        if (!value["CarBodyColor"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.CarBodyColor` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_carBodyColor = string(value["CarBodyColor"].GetString());
+        m_carBodyColorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void TextVehicleBack::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IssueAuthorityElectronic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_issueAuthorityElectronic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_carBodyColorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CarBodyColor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_carBodyColor.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void TextVehicleBack::SetIssueAuthorityElectronic(const string& _issueAuthorityE
 bool TextVehicleBack::IssueAuthorityElectronicHasBeenSet() const
 {
     return m_issueAuthorityElectronicHasBeenSet;
+}
+
+string TextVehicleBack::GetCarBodyColor() const
+{
+    return m_carBodyColor;
+}
+
+void TextVehicleBack::SetCarBodyColor(const string& _carBodyColor)
+{
+    m_carBodyColor = _carBodyColor;
+    m_carBodyColorHasBeenSet = true;
+}
+
+bool TextVehicleBack::CarBodyColorHasBeenSet() const
+{
+    return m_carBodyColorHasBeenSet;
 }
 

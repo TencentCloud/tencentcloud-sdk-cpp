@@ -24,7 +24,8 @@ CustomerReceipt::CustomerReceipt() :
     m_pickUpStuffHasBeenSet(false),
     m_pickUpStuffContactHasBeenSet(false),
     m_pickUpStuffIDCardHasBeenSet(false),
-    m_pickUpTimeHasBeenSet(false)
+    m_pickUpTimeHasBeenSet(false),
+    m_iDCardTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CustomerReceipt::Deserialize(const rapidjson::Value &value)
         m_pickUpTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IDCardType") && !value["IDCardType"].IsNull())
+    {
+        if (!value["IDCardType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerReceipt.IDCardType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iDCardType = string(value["IDCardType"].GetString());
+        m_iDCardTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void CustomerReceipt::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "PickUpTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pickUpTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iDCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IDCardType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iDCardType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void CustomerReceipt::SetPickUpTime(const string& _pickUpTime)
 bool CustomerReceipt::PickUpTimeHasBeenSet() const
 {
     return m_pickUpTimeHasBeenSet;
+}
+
+string CustomerReceipt::GetIDCardType() const
+{
+    return m_iDCardType;
+}
+
+void CustomerReceipt::SetIDCardType(const string& _iDCardType)
+{
+    m_iDCardType = _iDCardType;
+    m_iDCardTypeHasBeenSet = true;
+}
+
+bool CustomerReceipt::IDCardTypeHasBeenSet() const
+{
+    return m_iDCardTypeHasBeenSet;
 }
 

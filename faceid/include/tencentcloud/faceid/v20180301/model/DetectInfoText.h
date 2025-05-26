@@ -828,6 +828,7 @@ namespace TencentCloud
     2：动作活体
     3：静默活体
     4：一闪活体（动作+光线）
+    5：远近活体
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LivenessMode 本次流程最终活体类型。
 - 取值范围：
@@ -836,6 +837,7 @@ namespace TencentCloud
     2：动作活体
     3：静默活体
     4：一闪活体（动作+光线）
+    5：远近活体
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -849,6 +851,7 @@ namespace TencentCloud
     2：动作活体
     3：静默活体
     4：一闪活体（动作+光线）
+    5：远近活体
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _livenessMode 本次流程最终活体类型。
 - 取值范围：
@@ -857,6 +860,7 @@ namespace TencentCloud
     2：动作活体
     3：静默活体
     4：一闪活体（动作+光线）
+    5：远近活体
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1191,6 +1195,7 @@ namespace TencentCloud
     2：动作活体
     3：静默活体
     4：一闪活体（动作+光线）
+    5：远近活体
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_livenessMode;

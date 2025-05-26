@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃
-                     * @return Type 类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃
+                     * 获取类型，DLQ死信队列，IGNORE_ERROR保留，DROP丢弃
+                     * @return Type 类型，DLQ死信队列，IGNORE_ERROR保留，DROP丢弃
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃
-                     * @param _type 类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃
+                     * 设置类型，DLQ死信队列，IGNORE_ERROR保留，DROP丢弃
+                     * @param _type 类型，DLQ死信队列，IGNORE_ERROR保留，DROP丢弃
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -177,7 +177,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃
+                     * 类型，DLQ死信队列，IGNORE_ERROR保留，DROP丢弃
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

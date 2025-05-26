@@ -392,6 +392,27 @@ namespace TencentCloud
                      */
                     bool IssueAuthorityElectronicHasBeenSet() const;
 
+                    /**
+                     * 获取车身颜色
+                     * @return CarBodyColor 车身颜色
+                     * 
+                     */
+                    std::string GetCarBodyColor() const;
+
+                    /**
+                     * 设置车身颜色
+                     * @param _carBodyColor 车身颜色
+                     * 
+                     */
+                    void SetCarBodyColor(const std::string& _carBodyColor);
+
+                    /**
+                     * 判断参数 CarBodyColor 是否已赋值
+                     * @return CarBodyColor 是否已赋值
+                     * 
+                     */
+                    bool CarBodyColorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -490,6 +511,12 @@ namespace TencentCloud
                      */
                     std::string m_issueAuthorityElectronic;
                     bool m_issueAuthorityElectronicHasBeenSet;
+
+                    /**
+                     * 车身颜色
+                     */
+                    std::string m_carBodyColor;
+                    bool m_carBodyColorHasBeenSet;
 
                 };
             }

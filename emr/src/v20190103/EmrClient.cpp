@@ -298,6 +298,49 @@ EmrClient::CreateClusterOutcomeCallable EmrClient::CreateClusterCallable(const C
     return task->get_future();
 }
 
+EmrClient::CreateGroupsSTDOutcome EmrClient::CreateGroupsSTD(const CreateGroupsSTDRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGroupsSTD");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGroupsSTDResponse rsp = CreateGroupsSTDResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGroupsSTDOutcome(rsp);
+        else
+            return CreateGroupsSTDOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGroupsSTDOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::CreateGroupsSTDAsync(const CreateGroupsSTDRequest& request, const CreateGroupsSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGroupsSTD(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::CreateGroupsSTDOutcomeCallable EmrClient::CreateGroupsSTDCallable(const CreateGroupsSTDRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGroupsSTDOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGroupsSTD(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::CreateInstanceOutcome EmrClient::CreateInstance(const CreateInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstance");
@@ -420,6 +463,49 @@ EmrClient::DeleteAutoScaleStrategyOutcomeCallable EmrClient::DeleteAutoScaleStra
         [this, request]()
         {
             return this->DeleteAutoScaleStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::DeleteGroupsSTDOutcome EmrClient::DeleteGroupsSTD(const DeleteGroupsSTDRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGroupsSTD");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGroupsSTDResponse rsp = DeleteGroupsSTDResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGroupsSTDOutcome(rsp);
+        else
+            return DeleteGroupsSTDOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGroupsSTDOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DeleteGroupsSTDAsync(const DeleteGroupsSTDRequest& request, const DeleteGroupsSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGroupsSTD(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DeleteGroupsSTDOutcomeCallable EmrClient::DeleteGroupsSTDCallable(const DeleteGroupsSTDRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGroupsSTDOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGroupsSTD(request);
         }
     );
 
@@ -2835,6 +2921,49 @@ EmrClient::ModifySLInstanceBasicOutcomeCallable EmrClient::ModifySLInstanceBasic
     return task->get_future();
 }
 
+EmrClient::ModifyUserGroupOutcome EmrClient::ModifyUserGroup(const ModifyUserGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserGroupResponse rsp = ModifyUserGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserGroupOutcome(rsp);
+        else
+            return ModifyUserGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserGroupOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyUserGroupAsync(const ModifyUserGroupRequest& request, const ModifyUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyUserGroupOutcomeCallable EmrClient::ModifyUserGroupCallable(const ModifyUserGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::ModifyUserManagerPwdOutcome EmrClient::ModifyUserManagerPwd(const ModifyUserManagerPwdRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUserManagerPwd");
@@ -2871,6 +3000,49 @@ EmrClient::ModifyUserManagerPwdOutcomeCallable EmrClient::ModifyUserManagerPwdCa
         [this, request]()
         {
             return this->ModifyUserManagerPwd(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ModifyUsersOfGroupSTDOutcome EmrClient::ModifyUsersOfGroupSTD(const ModifyUsersOfGroupSTDRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUsersOfGroupSTD");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUsersOfGroupSTDResponse rsp = ModifyUsersOfGroupSTDResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUsersOfGroupSTDOutcome(rsp);
+        else
+            return ModifyUsersOfGroupSTDOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUsersOfGroupSTDOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyUsersOfGroupSTDAsync(const ModifyUsersOfGroupSTDRequest& request, const ModifyUsersOfGroupSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUsersOfGroupSTD(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyUsersOfGroupSTDOutcomeCallable EmrClient::ModifyUsersOfGroupSTDCallable(const ModifyUsersOfGroupSTDRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUsersOfGroupSTDOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUsersOfGroupSTD(request);
         }
     );
 
