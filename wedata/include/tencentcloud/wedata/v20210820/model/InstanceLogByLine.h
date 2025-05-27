@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/JobLogErrorTip.h>
+#include <tencentcloud/wedata/v20210820/model/ExtensionInfoVO.h>
 
 
 namespace TencentCloud
@@ -247,6 +248,56 @@ namespace TencentCloud
                      */
                     bool JobLogErrorTipHasBeenSet() const;
 
+                    /**
+                     * 获取执行实例的扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutionExtendedProps 执行实例的扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ExtensionInfoVO> GetExecutionExtendedProps() const;
+
+                    /**
+                     * 设置执行实例的扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executionExtendedProps 执行实例的扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecutionExtendedProps(const std::vector<ExtensionInfoVO>& _executionExtendedProps);
+
+                    /**
+                     * 判断参数 ExecutionExtendedProps 是否已赋值
+                     * @return ExecutionExtendedProps 是否已赋值
+                     * 
+                     */
+                    bool ExecutionExtendedPropsHasBeenSet() const;
+
+                    /**
+                     * 获取如果queryFileFlag为1，则ext返回当前页数据的结束行信息，下一页把这个extInfo透传过来
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtInfo 如果queryFileFlag为1，则ext返回当前页数据的结束行信息，下一页把这个extInfo透传过来
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 设置如果queryFileFlag为1，则ext返回当前页数据的结束行信息，下一页把这个extInfo透传过来
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extInfo 如果queryFileFlag为1，则ext返回当前页数据的结束行信息，下一页把这个extInfo透传过来
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtInfo(const std::string& _extInfo);
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +355,20 @@ namespace TencentCloud
                      */
                     JobLogErrorTip m_jobLogErrorTip;
                     bool m_jobLogErrorTipHasBeenSet;
+
+                    /**
+                     * 执行实例的扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ExtensionInfoVO> m_executionExtendedProps;
+                    bool m_executionExtendedPropsHasBeenSet;
+
+                    /**
+                     * 如果queryFileFlag为1，则ext返回当前页数据的结束行信息，下一页把这个extInfo透传过来
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
 
                 };
             }

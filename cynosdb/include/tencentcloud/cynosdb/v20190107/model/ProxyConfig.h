@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)
-                     * @return ProxyCount 数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)
+                     * 获取数据库代理组节点个数。该参数不再建议使用,建议使用ProxyZones
+                     * @return ProxyCount 数据库代理组节点个数。该参数不再建议使用,建议使用ProxyZones
                      * 
                      */
                     int64_t GetProxyCount() const;
 
                     /**
-                     * 设置数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)
-                     * @param _proxyCount 数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)
+                     * 设置数据库代理组节点个数。该参数不再建议使用,建议使用ProxyZones
+                     * @param _proxyCount 数据库代理组节点个数。该参数不再建议使用,建议使用ProxyZones
                      * 
                      */
                     void SetProxyCount(const int64_t& _proxyCount);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool MemHasBeenSet() const;
 
                     /**
-                     * 获取连接池类型：SessionConnectionPool(会话级别连接池 )
-                     * @return ConnectionPoolType 连接池类型：SessionConnectionPool(会话级别连接池 )
+                     * 获取连接池类型:SessionConnectionPool(会话级别连接池 )
+                     * @return ConnectionPoolType 连接池类型:SessionConnectionPool(会话级别连接池 )
                      * 
                      */
                     std::string GetConnectionPoolType() const;
 
                     /**
-                     * 设置连接池类型：SessionConnectionPool(会话级别连接池 )
-                     * @param _connectionPoolType 连接池类型：SessionConnectionPool(会话级别连接池 )
+                     * 设置连接池类型:SessionConnectionPool(会话级别连接池 )
+                     * @param _connectionPoolType 连接池类型:SessionConnectionPool(会话级别连接池 )
                      * 
                      */
                     void SetConnectionPoolType(const std::string& _connectionPoolType);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool OpenConnectionPoolHasBeenSet() const;
 
                     /**
-                     * 获取连接池阈值：单位（秒）
-                     * @return ConnectionPoolTimeOut 连接池阈值：单位（秒）
+                     * 获取连接池阈值:单位（秒）
+                     * @return ConnectionPoolTimeOut 连接池阈值:单位（秒）
                      * 
                      */
                     int64_t GetConnectionPoolTimeOut() const;
 
                     /**
-                     * 设置连接池阈值：单位（秒）
-                     * @param _connectionPoolTimeOut 连接池阈值：单位（秒）
+                     * 设置连接池阈值:单位（秒）
+                     * @param _connectionPoolTimeOut 连接池阈值:单位（秒）
                      * 
                      */
                     void SetConnectionPoolTimeOut(const int64_t& _connectionPoolTimeOut);
@@ -218,7 +218,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)
+                     * 数据库代理组节点个数。该参数不再建议使用,建议使用ProxyZones
                      */
                     int64_t m_proxyCount;
                     bool m_proxyCountHasBeenSet;
@@ -236,7 +236,7 @@ namespace TencentCloud
                     bool m_memHasBeenSet;
 
                     /**
-                     * 连接池类型：SessionConnectionPool(会话级别连接池 )
+                     * 连接池类型:SessionConnectionPool(会话级别连接池 )
                      */
                     std::string m_connectionPoolType;
                     bool m_connectionPoolTypeHasBeenSet;
@@ -248,7 +248,7 @@ namespace TencentCloud
                     bool m_openConnectionPoolHasBeenSet;
 
                     /**
-                     * 连接池阈值：单位（秒）
+                     * 连接池阈值:单位（秒）
                      */
                     int64_t m_connectionPoolTimeOut;
                     bool m_connectionPoolTimeOutHasBeenSet;

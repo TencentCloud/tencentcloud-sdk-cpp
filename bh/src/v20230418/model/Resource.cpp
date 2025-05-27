@@ -71,7 +71,8 @@ Resource::Resource() :
     m_externalAccessHasBeenSet(false),
     m_iOAResourceHasBeenSet(false),
     m_packageIOAUserCountHasBeenSet(false),
-    m_packageIOABandwidthHasBeenSet(false)
+    m_packageIOABandwidthHasBeenSet(false),
+    m_iOAResourceIdHasBeenSet(false)
 {
 }
 
@@ -612,6 +613,16 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_packageIOABandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("IOAResourceId") && !value["IOAResourceId"].IsNull())
+    {
+        if (!value["IOAResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.IOAResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iOAResourceId = string(value["IOAResourceId"].GetString());
+        m_iOAResourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1052,6 +1063,14 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "PackageIOABandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_packageIOABandwidth, allocator);
+    }
+
+    if (m_iOAResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IOAResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iOAResourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1871,5 +1890,21 @@ void Resource::SetPackageIOABandwidth(const uint64_t& _packageIOABandwidth)
 bool Resource::PackageIOABandwidthHasBeenSet() const
 {
     return m_packageIOABandwidthHasBeenSet;
+}
+
+string Resource::GetIOAResourceId() const
+{
+    return m_iOAResourceId;
+}
+
+void Resource::SetIOAResourceId(const string& _iOAResourceId)
+{
+    m_iOAResourceId = _iOAResourceId;
+    m_iOAResourceIdHasBeenSet = true;
+}
+
+bool Resource::IOAResourceIdHasBeenSet() const
+{
+    return m_iOAResourceIdHasBeenSet;
 }
 

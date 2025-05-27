@@ -281,6 +281,27 @@ namespace TencentCloud
                      */
                     bool MaxRoCountHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * @return AutoArchive 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * 
+                     */
+                    std::string GetAutoArchive() const;
+
+                    /**
+                     * 设置是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * @param _autoArchive 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * 
+                     */
+                    void SetAutoArchive(const std::string& _autoArchive);
+
+                    /**
+                     * 判断参数 AutoArchive 是否已赋值
+                     * @return AutoArchive 是否已赋值
+                     * 
+                     */
+                    bool AutoArchiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,6 +371,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxRoCount;
                     bool m_maxRoCountHasBeenSet;
+
+                    /**
+                     * 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     */
+                    std::string m_autoArchive;
+                    bool m_autoArchiveHasBeenSet;
 
                 };
             }

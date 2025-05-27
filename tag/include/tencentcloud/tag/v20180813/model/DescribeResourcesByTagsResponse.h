@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取每页大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Limit 每页大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLimit() const;
@@ -118,7 +116,6 @@ namespace TencentCloud
 
                     /**
                      * 每页大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

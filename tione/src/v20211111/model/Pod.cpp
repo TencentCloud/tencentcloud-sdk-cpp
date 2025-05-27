@@ -30,7 +30,9 @@ Pod::Pod() :
     m_containersHasBeenSet(false),
     m_containerInfosHasBeenSet(false),
     m_crossTenantENIInfoHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_startScheduleTimeHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -163,6 +165,26 @@ CoreInternalOutcome Pod::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("StartScheduleTime") && !value["StartScheduleTime"].IsNull())
+    {
+        if (!value["StartScheduleTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.StartScheduleTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startScheduleTime = string(value["StartScheduleTime"].GetString());
+        m_startScheduleTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -257,6 +279,22 @@ void Pod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startScheduleTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartScheduleTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startScheduleTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -420,5 +458,37 @@ void Pod::SetStatus(const string& _status)
 bool Pod::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string Pod::GetStartScheduleTime() const
+{
+    return m_startScheduleTime;
+}
+
+void Pod::SetStartScheduleTime(const string& _startScheduleTime)
+{
+    m_startScheduleTime = _startScheduleTime;
+    m_startScheduleTimeHasBeenSet = true;
+}
+
+bool Pod::StartScheduleTimeHasBeenSet() const
+{
+    return m_startScheduleTimeHasBeenSet;
+}
+
+string Pod::GetMessage() const
+{
+    return m_message;
+}
+
+void Pod::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool Pod::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 

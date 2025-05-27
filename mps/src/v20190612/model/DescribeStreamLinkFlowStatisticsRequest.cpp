@@ -29,7 +29,8 @@ DescribeStreamLinkFlowStatisticsRequest::DescribeStreamLinkFlowStatisticsRequest
     m_pipelineHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_remoteIpHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeStreamLinkFlowStatisticsRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remoteIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteIp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remoteIp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeStreamLinkFlowStatisticsRequest::SetEndTime(const string& _endTime)
 bool DescribeStreamLinkFlowStatisticsRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeStreamLinkFlowStatisticsRequest::GetRemoteIp() const
+{
+    return m_remoteIp;
+}
+
+void DescribeStreamLinkFlowStatisticsRequest::SetRemoteIp(const string& _remoteIp)
+{
+    m_remoteIp = _remoteIp;
+    m_remoteIpHasBeenSet = true;
+}
+
+bool DescribeStreamLinkFlowStatisticsRequest::RemoteIpHasBeenSet() const
+{
+    return m_remoteIpHasBeenSet;
 }
 
 

@@ -273,6 +273,27 @@ namespace TencentCloud
                      */
                     bool TrialHasBeenSet() const;
 
+                    /**
+                     * 获取是否共享clb，0：不共享，1：共享
+                     * @return ShareClb 是否共享clb，0：不共享，1：共享
+                     * 
+                     */
+                    uint64_t GetShareClb() const;
+
+                    /**
+                     * 设置是否共享clb，0：不共享，1：共享
+                     * @param _shareClb 是否共享clb，0：不共享，1：共享
+                     * 
+                     */
+                    void SetShareClb(const uint64_t& _shareClb);
+
+                    /**
+                     * 判断参数 ShareClb 是否已赋值
+                     * @return ShareClb 是否已赋值
+                     * 
+                     */
+                    bool ShareClbHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +361,12 @@ namespace TencentCloud
                      */
                     uint64_t m_trial;
                     bool m_trialHasBeenSet;
+
+                    /**
+                     * 是否共享clb，0：不共享，1：共享
+                     */
+                    uint64_t m_shareClb;
+                    bool m_shareClbHasBeenSet;
 
                 };
             }

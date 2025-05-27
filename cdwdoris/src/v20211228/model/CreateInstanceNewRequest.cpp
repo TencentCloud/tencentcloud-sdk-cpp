@@ -41,7 +41,8 @@ CreateInstanceNewRequest::CreateInstanceNewRequest() :
     m_userMultiZoneInfoArrHasBeenSet(false),
     m_isSSCHasBeenSet(false),
     m_sSCCUHasBeenSet(false),
-    m_cacheDiskSizeHasBeenSet(false)
+    m_cacheDiskSizeHasBeenSet(false),
+    m_cacheDataDiskSizeHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,14 @@ string CreateInstanceNewRequest::ToJsonString() const
         string key = "CacheDiskSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cacheDiskSize.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cacheDataDiskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CacheDataDiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cacheDataDiskSize, allocator);
     }
 
 
@@ -532,6 +541,22 @@ void CreateInstanceNewRequest::SetCacheDiskSize(const string& _cacheDiskSize)
 bool CreateInstanceNewRequest::CacheDiskSizeHasBeenSet() const
 {
     return m_cacheDiskSizeHasBeenSet;
+}
+
+int64_t CreateInstanceNewRequest::GetCacheDataDiskSize() const
+{
+    return m_cacheDataDiskSize;
+}
+
+void CreateInstanceNewRequest::SetCacheDataDiskSize(const int64_t& _cacheDataDiskSize)
+{
+    m_cacheDataDiskSize = _cacheDataDiskSize;
+    m_cacheDataDiskSizeHasBeenSet = true;
+}
+
+bool CreateInstanceNewRequest::CacheDataDiskSizeHasBeenSet() const
+{
+    return m_cacheDataDiskSizeHasBeenSet;
 }
 
 

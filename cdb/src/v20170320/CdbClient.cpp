@@ -2835,6 +2835,49 @@ CdbClient::DescribeClusterInfoOutcomeCallable CdbClient::DescribeClusterInfoCall
     return task->get_future();
 }
 
+CdbClient::DescribeCpuExpandHistoryOutcome CdbClient::DescribeCpuExpandHistory(const DescribeCpuExpandHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCpuExpandHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCpuExpandHistoryResponse rsp = DescribeCpuExpandHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCpuExpandHistoryOutcome(rsp);
+        else
+            return DescribeCpuExpandHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCpuExpandHistoryOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeCpuExpandHistoryAsync(const DescribeCpuExpandHistoryRequest& request, const DescribeCpuExpandHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCpuExpandHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeCpuExpandHistoryOutcomeCallable CdbClient::DescribeCpuExpandHistoryCallable(const DescribeCpuExpandHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCpuExpandHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCpuExpandHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeDBFeaturesOutcome CdbClient::DescribeDBFeatures(const DescribeDBFeaturesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBFeatures");

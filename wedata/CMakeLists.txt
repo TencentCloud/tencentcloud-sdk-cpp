@@ -79,6 +79,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ColumnItem.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupExecResult.h
   include/tencentcloud/wedata/v20210820/model/AlarmEventInfo.h
+  include/tencentcloud/wedata/v20210820/model/ExtensionInfoVO.h
   include/tencentcloud/wedata/v20210820/model/TriggerManualTasksResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskLineageRequest.h
   include/tencentcloud/wedata/v20210820/model/BytesSpeed.h
@@ -931,6 +932,7 @@ set(wedata_src
   src/v20210820/model/ColumnItem.cpp
   src/v20210820/model/RuleGroupExecResult.cpp
   src/v20210820/model/AlarmEventInfo.cpp
+  src/v20210820/model/ExtensionInfoVO.cpp
   src/v20210820/model/TriggerManualTasksResponse.cpp
   src/v20210820/model/DescribeTaskLineageRequest.cpp
   src/v20210820/model/BytesSpeed.cpp

@@ -105,6 +105,132 @@ namespace TencentCloud
                      */
                     bool DomainIdHasBeenSet() const;
 
+                    /**
+                     * 获取K8S集群托管账号维度。1-集群，2-命名空间，3-工作负载
+                     * @return ManageDimension K8S集群托管账号维度。1-集群，2-命名空间，3-工作负载
+                     * 
+                     */
+                    uint64_t GetManageDimension() const;
+
+                    /**
+                     * 设置K8S集群托管账号维度。1-集群，2-命名空间，3-工作负载
+                     * @param _manageDimension K8S集群托管账号维度。1-集群，2-命名空间，3-工作负载
+                     * 
+                     */
+                    void SetManageDimension(const uint64_t& _manageDimension);
+
+                    /**
+                     * 判断参数 ManageDimension 是否已赋值
+                     * @return ManageDimension 是否已赋值
+                     * 
+                     */
+                    bool ManageDimensionHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群托管账号id
+                     * @return ManageAccountId K8S集群托管账号id
+                     * 
+                     */
+                    int64_t GetManageAccountId() const;
+
+                    /**
+                     * 设置K8S集群托管账号id
+                     * @param _manageAccountId K8S集群托管账号id
+                     * 
+                     */
+                    void SetManageAccountId(const int64_t& _manageAccountId);
+
+                    /**
+                     * 判断参数 ManageAccountId 是否已赋值
+                     * @return ManageAccountId 是否已赋值
+                     * 
+                     */
+                    bool ManageAccountIdHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群托管账号名称
+                     * @return ManageAccount K8S集群托管账号名称
+                     * 
+                     */
+                    std::string GetManageAccount() const;
+
+                    /**
+                     * 设置K8S集群托管账号名称
+                     * @param _manageAccount K8S集群托管账号名称
+                     * 
+                     */
+                    void SetManageAccount(const std::string& _manageAccount);
+
+                    /**
+                     * 判断参数 ManageAccount 是否已赋值
+                     * @return ManageAccount 是否已赋值
+                     * 
+                     */
+                    bool ManageAccountHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群托管账号凭证
+                     * @return ManageKubeconfig K8S集群托管账号凭证
+                     * 
+                     */
+                    std::string GetManageKubeconfig() const;
+
+                    /**
+                     * 设置K8S集群托管账号凭证
+                     * @param _manageKubeconfig K8S集群托管账号凭证
+                     * 
+                     */
+                    void SetManageKubeconfig(const std::string& _manageKubeconfig);
+
+                    /**
+                     * 判断参数 ManageKubeconfig 是否已赋值
+                     * @return ManageKubeconfig 是否已赋值
+                     * 
+                     */
+                    bool ManageKubeconfigHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群托管的namespace
+                     * @return Namespace K8S集群托管的namespace
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置K8S集群托管的namespace
+                     * @param _namespace K8S集群托管的namespace
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群托管的workload
+                     * @return Workload K8S集群托管的workload
+                     * 
+                     */
+                    std::string GetWorkload() const;
+
+                    /**
+                     * 设置K8S集群托管的workload
+                     * @param _workload K8S集群托管的workload
+                     * 
+                     */
+                    void SetWorkload(const std::string& _workload);
+
+                    /**
+                     * 判断参数 Workload 是否已赋值
+                     * @return Workload 是否已赋值
+                     * 
+                     */
+                    bool WorkloadHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +250,42 @@ namespace TencentCloud
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
+
+                    /**
+                     * K8S集群托管账号维度。1-集群，2-命名空间，3-工作负载
+                     */
+                    uint64_t m_manageDimension;
+                    bool m_manageDimensionHasBeenSet;
+
+                    /**
+                     * K8S集群托管账号id
+                     */
+                    int64_t m_manageAccountId;
+                    bool m_manageAccountIdHasBeenSet;
+
+                    /**
+                     * K8S集群托管账号名称
+                     */
+                    std::string m_manageAccount;
+                    bool m_manageAccountHasBeenSet;
+
+                    /**
+                     * K8S集群托管账号凭证
+                     */
+                    std::string m_manageKubeconfig;
+                    bool m_manageKubeconfigHasBeenSet;
+
+                    /**
+                     * K8S集群托管的namespace
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * K8S集群托管的workload
+                     */
+                    std::string m_workload;
+                    bool m_workloadHasBeenSet;
 
                 };
             }

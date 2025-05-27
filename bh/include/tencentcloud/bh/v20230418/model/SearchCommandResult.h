@@ -508,6 +508,27 @@ namespace TencentCloud
                      */
                     bool SignValueHasBeenSet() const;
 
+                    /**
+                     * 获取资产类型
+                     * @return DeviceKind 资产类型
+                     * 
+                     */
+                    std::string GetDeviceKind() const;
+
+                    /**
+                     * 设置资产类型
+                     * @param _deviceKind 资产类型
+                     * 
+                     */
+                    void SetDeviceKind(const std::string& _deviceKind);
+
+                    /**
+                     * 判断参数 DeviceKind 是否已赋值
+                     * @return DeviceKind 是否已赋值
+                     * 
+                     */
+                    bool DeviceKindHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,6 +662,12 @@ namespace TencentCloud
                      */
                     std::string m_signValue;
                     bool m_signValueHasBeenSet;
+
+                    /**
+                     * 资产类型
+                     */
+                    std::string m_deviceKind;
+                    bool m_deviceKindHasBeenSet;
 
                 };
             }

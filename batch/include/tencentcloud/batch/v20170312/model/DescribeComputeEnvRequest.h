@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计算环境ID
-                     * @return EnvId 计算环境ID
+                     * 获取计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。
+                     * @return EnvId 计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置计算环境ID
-                     * @param _envId 计算环境ID
+                     * 设置计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。
+                     * @param _envId 计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计算环境ID
+                     * 计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;

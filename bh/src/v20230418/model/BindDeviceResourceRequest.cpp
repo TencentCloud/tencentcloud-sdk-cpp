@@ -25,7 +25,13 @@ using namespace std;
 BindDeviceResourceRequest::BindDeviceResourceRequest() :
     m_deviceIdSetHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_domainIdHasBeenSet(false)
+    m_domainIdHasBeenSet(false),
+    m_manageDimensionHasBeenSet(false),
+    m_manageAccountIdHasBeenSet(false),
+    m_manageAccountHasBeenSet(false),
+    m_manageKubeconfigHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_workloadHasBeenSet(false)
 {
 }
 
@@ -63,6 +69,54 @@ string BindDeviceResourceRequest::ToJsonString() const
         string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_manageDimensionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManageDimension";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_manageDimension, allocator);
+    }
+
+    if (m_manageAccountIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManageAccountId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_manageAccountId, allocator);
+    }
+
+    if (m_manageAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManageAccount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_manageAccount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_manageKubeconfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManageKubeconfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_manageKubeconfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Workload";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workload.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +173,102 @@ void BindDeviceResourceRequest::SetDomainId(const string& _domainId)
 bool BindDeviceResourceRequest::DomainIdHasBeenSet() const
 {
     return m_domainIdHasBeenSet;
+}
+
+uint64_t BindDeviceResourceRequest::GetManageDimension() const
+{
+    return m_manageDimension;
+}
+
+void BindDeviceResourceRequest::SetManageDimension(const uint64_t& _manageDimension)
+{
+    m_manageDimension = _manageDimension;
+    m_manageDimensionHasBeenSet = true;
+}
+
+bool BindDeviceResourceRequest::ManageDimensionHasBeenSet() const
+{
+    return m_manageDimensionHasBeenSet;
+}
+
+int64_t BindDeviceResourceRequest::GetManageAccountId() const
+{
+    return m_manageAccountId;
+}
+
+void BindDeviceResourceRequest::SetManageAccountId(const int64_t& _manageAccountId)
+{
+    m_manageAccountId = _manageAccountId;
+    m_manageAccountIdHasBeenSet = true;
+}
+
+bool BindDeviceResourceRequest::ManageAccountIdHasBeenSet() const
+{
+    return m_manageAccountIdHasBeenSet;
+}
+
+string BindDeviceResourceRequest::GetManageAccount() const
+{
+    return m_manageAccount;
+}
+
+void BindDeviceResourceRequest::SetManageAccount(const string& _manageAccount)
+{
+    m_manageAccount = _manageAccount;
+    m_manageAccountHasBeenSet = true;
+}
+
+bool BindDeviceResourceRequest::ManageAccountHasBeenSet() const
+{
+    return m_manageAccountHasBeenSet;
+}
+
+string BindDeviceResourceRequest::GetManageKubeconfig() const
+{
+    return m_manageKubeconfig;
+}
+
+void BindDeviceResourceRequest::SetManageKubeconfig(const string& _manageKubeconfig)
+{
+    m_manageKubeconfig = _manageKubeconfig;
+    m_manageKubeconfigHasBeenSet = true;
+}
+
+bool BindDeviceResourceRequest::ManageKubeconfigHasBeenSet() const
+{
+    return m_manageKubeconfigHasBeenSet;
+}
+
+string BindDeviceResourceRequest::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void BindDeviceResourceRequest::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool BindDeviceResourceRequest::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
+string BindDeviceResourceRequest::GetWorkload() const
+{
+    return m_workload;
+}
+
+void BindDeviceResourceRequest::SetWorkload(const string& _workload)
+{
+    m_workload = _workload;
+    m_workloadHasBeenSet = true;
+}
+
+bool BindDeviceResourceRequest::WorkloadHasBeenSet() const
+{
+    return m_workloadHasBeenSet;
 }
 
 

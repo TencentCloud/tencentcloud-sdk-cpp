@@ -1194,6 +1194,69 @@ pausing
                      */
                     bool GdnRoleHasBeenSet() const;
 
+                    /**
+                     * 获取二级存储使用量，单位：G
+                     * @return UsedArchiveStorage 二级存储使用量，单位：G
+                     * 
+                     */
+                    int64_t GetUsedArchiveStorage() const;
+
+                    /**
+                     * 设置二级存储使用量，单位：G
+                     * @param _usedArchiveStorage 二级存储使用量，单位：G
+                     * 
+                     */
+                    void SetUsedArchiveStorage(const int64_t& _usedArchiveStorage);
+
+                    /**
+                     * 判断参数 UsedArchiveStorage 是否已赋值
+                     * @return UsedArchiveStorage 是否已赋值
+                     * 
+                     */
+                    bool UsedArchiveStorageHasBeenSet() const;
+
+                    /**
+                     * 获取归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li>
+                     * @return ArchiveStatus 归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li>
+                     * 
+                     */
+                    std::string GetArchiveStatus() const;
+
+                    /**
+                     * 设置归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li>
+                     * @param _archiveStatus 归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li>
+                     * 
+                     */
+                    void SetArchiveStatus(const std::string& _archiveStatus);
+
+                    /**
+                     * 判断参数 ArchiveStatus 是否已赋值
+                     * @return ArchiveStatus 是否已赋值
+                     * 
+                     */
+                    bool ArchiveStatusHasBeenSet() const;
+
+                    /**
+                     * 获取归档进度，百分比。
+                     * @return ArchiveProgress 归档进度，百分比。
+                     * 
+                     */
+                    int64_t GetArchiveProgress() const;
+
+                    /**
+                     * 设置归档进度，百分比。
+                     * @param _archiveProgress 归档进度，百分比。
+                     * 
+                     */
+                    void SetArchiveProgress(const int64_t& _archiveProgress);
+
+                    /**
+                     * 判断参数 ArchiveProgress 是否已赋值
+                     * @return ArchiveProgress 是否已赋值
+                     * 
+                     */
+                    bool ArchiveProgressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1520,6 +1583,24 @@ pausing
                      */
                     std::string m_gdnRole;
                     bool m_gdnRoleHasBeenSet;
+
+                    /**
+                     * 二级存储使用量，单位：G
+                     */
+                    int64_t m_usedArchiveStorage;
+                    bool m_usedArchiveStorageHasBeenSet;
+
+                    /**
+                     * 归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li>
+                     */
+                    std::string m_archiveStatus;
+                    bool m_archiveStatusHasBeenSet;
+
+                    /**
+                     * 归档进度，百分比。
+                     */
+                    int64_t m_archiveProgress;
+                    bool m_archiveProgressHasBeenSet;
 
                 };
             }

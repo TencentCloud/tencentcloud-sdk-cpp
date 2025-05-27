@@ -648,6 +648,27 @@ UPDATING 更新中
                      */
                     bool MonitorSourceHasBeenSet() const;
 
+                    /**
+                     * 获取子用户的 nickname
+                     * @return SubUinName 子用户的 nickname
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置子用户的 nickname
+                     * @param _subUinName 子用户的 nickname
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -816,6 +837,12 @@ UPDATING 更新中
                      */
                     std::string m_monitorSource;
                     bool m_monitorSourceHasBeenSet;
+
+                    /**
+                     * 子用户的 nickname
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
 
                 };
             }

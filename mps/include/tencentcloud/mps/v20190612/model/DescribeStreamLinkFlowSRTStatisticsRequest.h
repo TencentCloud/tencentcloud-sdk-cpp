@@ -197,6 +197,27 @@ UTC时间，如'2020-01-01T12:00:00Z'。
                      */
                     bool PeriodHasBeenSet() const;
 
+                    /**
+                     * 获取对端客户端或者服务端的IP地址
+                     * @return RemoteIp 对端客户端或者服务端的IP地址
+                     * 
+                     */
+                    std::string GetRemoteIp() const;
+
+                    /**
+                     * 设置对端客户端或者服务端的IP地址
+                     * @param _remoteIp 对端客户端或者服务端的IP地址
+                     * 
+                     */
+                    void SetRemoteIp(const std::string& _remoteIp);
+
+                    /**
+                     * 判断参数 RemoteIp 是否已赋值
+                     * @return RemoteIp 是否已赋值
+                     * 
+                     */
+                    bool RemoteIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +263,12 @@ UTC时间，如'2020-01-01T12:00:00Z'。
                      */
                     std::string m_period;
                     bool m_periodHasBeenSet;
+
+                    /**
+                     * 对端客户端或者服务端的IP地址
+                     */
+                    std::string m_remoteIp;
+                    bool m_remoteIpHasBeenSet;
 
                 };
             }

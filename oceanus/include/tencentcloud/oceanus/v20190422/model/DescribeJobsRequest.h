@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool ExtraResultHasBeenSet() const;
 
+                    /**
+                     * 获取查询引用connector
+                     * @return ConnectorOptions 查询引用connector
+                     * 
+                     */
+                    std::string GetConnectorOptions() const;
+
+                    /**
+                     * 设置查询引用connector
+                     * @param _connectorOptions 查询引用connector
+                     * 
+                     */
+                    void SetConnectorOptions(const std::string& _connectorOptions);
+
+                    /**
+                     * 判断参数 ConnectorOptions 是否已赋值
+                     * @return ConnectorOptions 是否已赋值
+                     * 
+                     */
+                    bool ConnectorOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_extraResult;
                     bool m_extraResultHasBeenSet;
+
+                    /**
+                     * 查询引用connector
+                     */
+                    std::string m_connectorOptions;
+                    bool m_connectorOptionsHasBeenSet;
 
                 };
             }

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取kakfa实例Id
-                     * @return InstanceId kakfa实例Id
+                     * 获取kafka实例Id
+                     * @return InstanceId kafka实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置kakfa实例Id
-                     * @param _instanceId kakfa实例Id
+                     * 设置kafka实例Id
+                     * @param _instanceId kafka实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取kakfa数据源的网络信息
-                     * @return Location kakfa数据源的网络信息
+                     * 获取kafka数据源的网络信息
+                     * @return Location kafka数据源的网络信息
                      * 
                      */
                     DatasourceConnectionLocation GetLocation() const;
 
                     /**
-                     * 设置kakfa数据源的网络信息
-                     * @param _location kakfa数据源的网络信息
+                     * 设置kafka数据源的网络信息
+                     * @param _location kafka数据源的网络信息
                      * 
                      */
                     void SetLocation(const DatasourceConnectionLocation& _location);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * kakfa实例Id
+                     * kafka实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * kakfa数据源的网络信息
+                     * kafka数据源的网络信息
                      */
                     DatasourceConnectionLocation m_location;
                     bool m_locationHasBeenSet;

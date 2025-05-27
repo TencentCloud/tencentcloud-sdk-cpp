@@ -38,6 +38,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeBackupOverviewRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditInstanceListResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceProjectResponse.h
+  include/tencentcloud/cdb/v20170320/model/DescribeCpuExpandHistoryResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDataBackupOverviewResponse.h
   include/tencentcloud/cdb/v20170320/model/DeleteAuditPolicyRequest.h
   include/tencentcloud/cdb/v20170320/model/BackupSummaryItem.h
@@ -46,6 +47,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyProtectModeResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateParamTemplateRequest.h
   include/tencentcloud/cdb/v20170320/model/RemoteBackupInfo.h
+  include/tencentcloud/cdb/v20170320/model/PeriodStrategy.h
   include/tencentcloud/cdb/v20170320/model/DescribeParamTemplateInfoRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyCdbProxyAddressVipAndVPortResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstancesRequest.h
@@ -67,10 +69,11 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsRequest.h
   include/tencentcloud/cdb/v20170320/model/StopRollbackResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateCdbProxyAddressRequest.h
+  include/tencentcloud/cdb/v20170320/model/DeleteRotationPasswordResponse.h
   include/tencentcloud/cdb/v20170320/model/AnalyzeAuditLogsRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyBackupEncryptionStatusResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceParamsRequest.h
-  include/tencentcloud/cdb/v20170320/model/DescribeUploadedFilesRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeRoMinScaleResponse.h
   include/tencentcloud/cdb/v20170320/model/StopDBImportJobResponse.h
   include/tencentcloud/cdb/v20170320/model/ProxyAllocation.h
   include/tencentcloud/cdb/v20170320/model/StopCpuExpandRequest.h
@@ -120,6 +123,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/AuditRule.h
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceAlarmEventsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogsRequest.h
+  include/tencentcloud/cdb/v20170320/model/TimeIntervalStrategy.h
   include/tencentcloud/cdb/v20170320/model/DescribeCdbProxyInfoRequest.h
   include/tencentcloud/cdb/v20170320/model/RollbackDBName.h
   include/tencentcloud/cdb/v20170320/model/RuleFilters.h
@@ -213,6 +217,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/RuleTemplateRecordInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeCloneListResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceLogToCLSRequest.h
+  include/tencentcloud/cdb/v20170320/model/AnalysisNodeInfo.h
   include/tencentcloud/cdb/v20170320/model/StartBatchRollbackRequest.h
   include/tencentcloud/cdb/v20170320/model/OpenDBInstanceEncryptionRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceCharsetRequest.h
@@ -227,10 +232,10 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeBackupDownloadRestrictionRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateDeployGroupRequest.h
   include/tencentcloud/cdb/v20170320/model/DeleteAccountsRequest.h
-  include/tencentcloud/cdb/v20170320/model/DeleteRotationPasswordResponse.h
+  include/tencentcloud/cdb/v20170320/model/HistoryJob.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountsResponse.h
   include/tencentcloud/cdb/v20170320/model/RollbackTimeRange.h
-  include/tencentcloud/cdb/v20170320/model/ModifyProtectModeRequest.h
+  include/tencentcloud/cdb/v20170320/model/AuditLog.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditRuleTemplateModifyHistoryResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditLogFilesRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyBackupConfigRequest.h
@@ -299,6 +304,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeProxySupportParamResponse.h
   include/tencentcloud/cdb/v20170320/model/CloseAuditServiceResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeRollbackTaskDetailRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeCpuExpandHistoryRequest.h
   include/tencentcloud/cdb/v20170320/model/AdjustCdbProxyResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyParamTemplateResponse.h
   include/tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadResponse.h
@@ -307,6 +313,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DeleteAuditRuleResponse.h
   include/tencentcloud/cdb/v20170320/model/IsolateDBInstanceRequest.h
   include/tencentcloud/cdb/v20170320/model/InstanceAuditLogFilters.h
+  include/tencentcloud/cdb/v20170320/model/DescribeUploadedFilesRequest.h
   include/tencentcloud/cdb/v20170320/model/InstanceInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeDefaultParamsResponse.h
   include/tencentcloud/cdb/v20170320/model/SwitchCDBProxyRequest.h
@@ -365,7 +372,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyAuditConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/DeviceDiskInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceAlarmEventsResponse.h
-  include/tencentcloud/cdb/v20170320/model/DescribeRoMinScaleResponse.h
   include/tencentcloud/cdb/v20170320/model/RoWeightValue.h
   include/tencentcloud/cdb/v20170320/model/DescribeSlowLogDataResponse.h
   include/tencentcloud/cdb/v20170320/model/DeleteRotationPasswordRequest.h
@@ -379,6 +385,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyRoGroupInfoResponse.h
   include/tencentcloud/cdb/v20170320/model/DeleteAuditRuleRequest.h
   include/tencentcloud/cdb/v20170320/model/DeleteParamTemplateResponse.h
+  include/tencentcloud/cdb/v20170320/model/TimeInterval.h
   include/tencentcloud/cdb/v20170320/model/DBSwitchInfo.h
   include/tencentcloud/cdb/v20170320/model/ResetPasswordResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditRuleTemplateModifyHistoryRequest.h
@@ -410,6 +417,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/OpenAuditServiceRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceCharsetResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBFeaturesRequest.h
+  include/tencentcloud/cdb/v20170320/model/TImeCycle.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupSummariesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewRequest.h
   include/tencentcloud/cdb/v20170320/model/InstEventInfo.h
@@ -427,7 +435,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesRequest.h
   include/tencentcloud/cdb/v20170320/model/InquiryPriceUpgradeInstancesRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstanceParamResponse.h
-  include/tencentcloud/cdb/v20170320/model/AuditLog.h
+  include/tencentcloud/cdb/v20170320/model/ModifyProtectModeRequest.h
   include/tencentcloud/cdb/v20170320/model/ColumnPrivilege.h
   include/tencentcloud/cdb/v20170320/model/DescribeUploadedFilesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBPriceRequest.h
@@ -497,6 +505,7 @@ set(cdb_src
   src/v20170320/model/DescribeBackupOverviewRequest.cpp
   src/v20170320/model/DescribeAuditInstanceListResponse.cpp
   src/v20170320/model/ModifyDBInstanceProjectResponse.cpp
+  src/v20170320/model/DescribeCpuExpandHistoryResponse.cpp
   src/v20170320/model/DescribeDataBackupOverviewResponse.cpp
   src/v20170320/model/DeleteAuditPolicyRequest.cpp
   src/v20170320/model/BackupSummaryItem.cpp
@@ -505,6 +514,7 @@ set(cdb_src
   src/v20170320/model/ModifyProtectModeResponse.cpp
   src/v20170320/model/CreateParamTemplateRequest.cpp
   src/v20170320/model/RemoteBackupInfo.cpp
+  src/v20170320/model/PeriodStrategy.cpp
   src/v20170320/model/DescribeParamTemplateInfoRequest.cpp
   src/v20170320/model/ModifyCdbProxyAddressVipAndVPortResponse.cpp
   src/v20170320/model/DescribeDBInstancesRequest.cpp
@@ -526,10 +536,11 @@ set(cdb_src
   src/v20170320/model/DescribeInstanceParamRecordsRequest.cpp
   src/v20170320/model/StopRollbackResponse.cpp
   src/v20170320/model/CreateCdbProxyAddressRequest.cpp
+  src/v20170320/model/DeleteRotationPasswordResponse.cpp
   src/v20170320/model/AnalyzeAuditLogsRequest.cpp
   src/v20170320/model/ModifyBackupEncryptionStatusResponse.cpp
   src/v20170320/model/DescribeInstanceParamsRequest.cpp
-  src/v20170320/model/DescribeUploadedFilesRequest.cpp
+  src/v20170320/model/DescribeRoMinScaleResponse.cpp
   src/v20170320/model/StopDBImportJobResponse.cpp
   src/v20170320/model/ProxyAllocation.cpp
   src/v20170320/model/StopCpuExpandRequest.cpp
@@ -579,6 +590,7 @@ set(cdb_src
   src/v20170320/model/AuditRule.cpp
   src/v20170320/model/DescribeInstanceAlarmEventsRequest.cpp
   src/v20170320/model/DescribeBinlogsRequest.cpp
+  src/v20170320/model/TimeIntervalStrategy.cpp
   src/v20170320/model/DescribeCdbProxyInfoRequest.cpp
   src/v20170320/model/RollbackDBName.cpp
   src/v20170320/model/RuleFilters.cpp
@@ -672,6 +684,7 @@ set(cdb_src
   src/v20170320/model/RuleTemplateRecordInfo.cpp
   src/v20170320/model/DescribeCloneListResponse.cpp
   src/v20170320/model/DescribeDBInstanceLogToCLSRequest.cpp
+  src/v20170320/model/AnalysisNodeInfo.cpp
   src/v20170320/model/StartBatchRollbackRequest.cpp
   src/v20170320/model/OpenDBInstanceEncryptionRequest.cpp
   src/v20170320/model/DescribeDBInstanceCharsetRequest.cpp
@@ -686,10 +699,10 @@ set(cdb_src
   src/v20170320/model/DescribeBackupDownloadRestrictionRequest.cpp
   src/v20170320/model/CreateDeployGroupRequest.cpp
   src/v20170320/model/DeleteAccountsRequest.cpp
-  src/v20170320/model/DeleteRotationPasswordResponse.cpp
+  src/v20170320/model/HistoryJob.cpp
   src/v20170320/model/DescribeAccountsResponse.cpp
   src/v20170320/model/RollbackTimeRange.cpp
-  src/v20170320/model/ModifyProtectModeRequest.cpp
+  src/v20170320/model/AuditLog.cpp
   src/v20170320/model/DescribeAuditRuleTemplateModifyHistoryResponse.cpp
   src/v20170320/model/DescribeAuditLogFilesRequest.cpp
   src/v20170320/model/ModifyBackupConfigRequest.cpp
@@ -758,6 +771,7 @@ set(cdb_src
   src/v20170320/model/DescribeProxySupportParamResponse.cpp
   src/v20170320/model/CloseAuditServiceResponse.cpp
   src/v20170320/model/DescribeRollbackTaskDetailRequest.cpp
+  src/v20170320/model/DescribeCpuExpandHistoryRequest.cpp
   src/v20170320/model/AdjustCdbProxyResponse.cpp
   src/v20170320/model/ModifyParamTemplateResponse.cpp
   src/v20170320/model/BalanceRoGroupLoadResponse.cpp
@@ -766,6 +780,7 @@ set(cdb_src
   src/v20170320/model/DeleteAuditRuleResponse.cpp
   src/v20170320/model/IsolateDBInstanceRequest.cpp
   src/v20170320/model/InstanceAuditLogFilters.cpp
+  src/v20170320/model/DescribeUploadedFilesRequest.cpp
   src/v20170320/model/InstanceInfo.cpp
   src/v20170320/model/DescribeDefaultParamsResponse.cpp
   src/v20170320/model/SwitchCDBProxyRequest.cpp
@@ -824,7 +839,6 @@ set(cdb_src
   src/v20170320/model/ModifyAuditConfigRequest.cpp
   src/v20170320/model/DeviceDiskInfo.cpp
   src/v20170320/model/DescribeInstanceAlarmEventsResponse.cpp
-  src/v20170320/model/DescribeRoMinScaleResponse.cpp
   src/v20170320/model/RoWeightValue.cpp
   src/v20170320/model/DescribeSlowLogDataResponse.cpp
   src/v20170320/model/DeleteRotationPasswordRequest.cpp
@@ -838,6 +852,7 @@ set(cdb_src
   src/v20170320/model/ModifyRoGroupInfoResponse.cpp
   src/v20170320/model/DeleteAuditRuleRequest.cpp
   src/v20170320/model/DeleteParamTemplateResponse.cpp
+  src/v20170320/model/TimeInterval.cpp
   src/v20170320/model/DBSwitchInfo.cpp
   src/v20170320/model/ResetPasswordResponse.cpp
   src/v20170320/model/DescribeAuditRuleTemplateModifyHistoryRequest.cpp
@@ -869,6 +884,7 @@ set(cdb_src
   src/v20170320/model/OpenAuditServiceRequest.cpp
   src/v20170320/model/DescribeDBInstanceCharsetResponse.cpp
   src/v20170320/model/DescribeDBFeaturesRequest.cpp
+  src/v20170320/model/TImeCycle.cpp
   src/v20170320/model/DescribeBackupSummariesResponse.cpp
   src/v20170320/model/DescribeBinlogBackupOverviewRequest.cpp
   src/v20170320/model/InstEventInfo.cpp
@@ -886,7 +902,7 @@ set(cdb_src
   src/v20170320/model/OfflineIsolatedInstancesRequest.cpp
   src/v20170320/model/InquiryPriceUpgradeInstancesRequest.cpp
   src/v20170320/model/ModifyInstanceParamResponse.cpp
-  src/v20170320/model/AuditLog.cpp
+  src/v20170320/model/ModifyProtectModeRequest.cpp
   src/v20170320/model/ColumnPrivilege.cpp
   src/v20170320/model/DescribeUploadedFilesResponse.cpp
   src/v20170320/model/DescribeDBPriceRequest.cpp

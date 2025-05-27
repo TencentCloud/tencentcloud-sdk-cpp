@@ -41,7 +41,11 @@ SessionResult::SessionResult() :
     m_protocolHasBeenSet(false),
     m_appAssetKindHasBeenSet(false),
     m_appAssetUrlHasBeenSet(false),
-    m_replayTypeHasBeenSet(false)
+    m_replayTypeHasBeenSet(false),
+    m_deviceKindHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_workloadHasBeenSet(false),
+    m_podNameHasBeenSet(false)
 {
 }
 
@@ -260,6 +264,46 @@ CoreInternalOutcome SessionResult::Deserialize(const rapidjson::Value &value)
         m_replayTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceKind") && !value["DeviceKind"].IsNull())
+    {
+        if (!value["DeviceKind"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionResult.DeviceKind` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceKind = string(value["DeviceKind"].GetString());
+        m_deviceKindHasBeenSet = true;
+    }
+
+    if (value.HasMember("Namespace") && !value["Namespace"].IsNull())
+    {
+        if (!value["Namespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionResult.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespace = string(value["Namespace"].GetString());
+        m_namespaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("Workload") && !value["Workload"].IsNull())
+    {
+        if (!value["Workload"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionResult.Workload` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workload = string(value["Workload"].GetString());
+        m_workloadHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodName") && !value["PodName"].IsNull())
+    {
+        if (!value["PodName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionResult.PodName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podName = string(value["PodName"].GetString());
+        m_podNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +477,38 @@ void SessionResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ReplayType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replayType, allocator);
+    }
+
+    if (m_deviceKindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceKind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceKind.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Workload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workload.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -772,5 +848,69 @@ void SessionResult::SetReplayType(const uint64_t& _replayType)
 bool SessionResult::ReplayTypeHasBeenSet() const
 {
     return m_replayTypeHasBeenSet;
+}
+
+string SessionResult::GetDeviceKind() const
+{
+    return m_deviceKind;
+}
+
+void SessionResult::SetDeviceKind(const string& _deviceKind)
+{
+    m_deviceKind = _deviceKind;
+    m_deviceKindHasBeenSet = true;
+}
+
+bool SessionResult::DeviceKindHasBeenSet() const
+{
+    return m_deviceKindHasBeenSet;
+}
+
+string SessionResult::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void SessionResult::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool SessionResult::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
+string SessionResult::GetWorkload() const
+{
+    return m_workload;
+}
+
+void SessionResult::SetWorkload(const string& _workload)
+{
+    m_workload = _workload;
+    m_workloadHasBeenSet = true;
+}
+
+bool SessionResult::WorkloadHasBeenSet() const
+{
+    return m_workloadHasBeenSet;
+}
+
+string SessionResult::GetPodName() const
+{
+    return m_podName;
+}
+
+void SessionResult::SetPodName(const string& _podName)
+{
+    m_podName = _podName;
+    m_podNameHasBeenSet = true;
+}
+
+bool SessionResult::PodNameHasBeenSet() const
+{
+    return m_podNameHasBeenSet;
 }
 

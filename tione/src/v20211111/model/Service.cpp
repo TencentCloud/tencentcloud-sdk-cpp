@@ -53,7 +53,8 @@ Service::Service() :
     m_resourceGroupSWTypeHasBeenSet(false),
     m_archiveStatusHasBeenSet(false),
     m_deployTypeHasBeenSet(false),
-    m_instancePerReplicasHasBeenSet(false)
+    m_instancePerReplicasHasBeenSet(false),
+    m_monitorSourceHasBeenSet(false)
 {
 }
 
@@ -423,6 +424,16 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_instancePerReplicasHasBeenSet = true;
     }
 
+    if (value.HasMember("MonitorSource") && !value["MonitorSource"].IsNull())
+    {
+        if (!value["MonitorSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.MonitorSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorSource = string(value["MonitorSource"].GetString());
+        m_monitorSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -702,6 +713,14 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "InstancePerReplicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instancePerReplicas.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_monitorSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_monitorSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1233,5 +1252,21 @@ void Service::SetInstancePerReplicas(const string& _instancePerReplicas)
 bool Service::InstancePerReplicasHasBeenSet() const
 {
     return m_instancePerReplicasHasBeenSet;
+}
+
+string Service::GetMonitorSource() const
+{
+    return m_monitorSource;
+}
+
+void Service::SetMonitorSource(const string& _monitorSource)
+{
+    m_monitorSource = _monitorSource;
+    m_monitorSourceHasBeenSet = true;
+}
+
+bool Service::MonitorSourceHasBeenSet() const
+{
+    return m_monitorSourceHasBeenSet;
 }
 

@@ -1118,6 +1118,27 @@ namespace TencentCloud
                      */
                     bool PackageIOABandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取堡垒机实例对应的零信任实例id
+                     * @return IOAResourceId 堡垒机实例对应的零信任实例id
+                     * 
+                     */
+                    std::string GetIOAResourceId() const;
+
+                    /**
+                     * 设置堡垒机实例对应的零信任实例id
+                     * @param _iOAResourceId 堡垒机实例对应的零信任实例id
+                     * 
+                     */
+                    void SetIOAResourceId(const std::string& _iOAResourceId);
+
+                    /**
+                     * 判断参数 IOAResourceId 是否已赋值
+                     * @return IOAResourceId 是否已赋值
+                     * 
+                     */
+                    bool IOAResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1425,6 +1446,12 @@ namespace TencentCloud
                      */
                     uint64_t m_packageIOABandwidth;
                     bool m_packageIOABandwidthHasBeenSet;
+
+                    /**
+                     * 堡垒机实例对应的零信任实例id
+                     */
+                    std::string m_iOAResourceId;
+                    bool m_iOAResourceIdHasBeenSet;
 
                 };
             }

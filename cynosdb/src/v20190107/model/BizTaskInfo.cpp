@@ -57,7 +57,8 @@ BizTaskInfo::BizTaskInfo() :
     m_modifyInstanceParamsDataHasBeenSet(false),
     m_taskMaintainInfoHasBeenSet(false),
     m_instanceCLSDeliveryInfosHasBeenSet(false),
-    m_taskProgressInfoHasBeenSet(false)
+    m_taskProgressInfoHasBeenSet(false),
+    m_gdnTaskInfoHasBeenSet(false)
 {
 }
 
@@ -526,6 +527,23 @@ CoreInternalOutcome BizTaskInfo::Deserialize(const rapidjson::Value &value)
         m_taskProgressInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("GdnTaskInfo") && !value["GdnTaskInfo"].IsNull())
+    {
+        if (!value["GdnTaskInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BizTaskInfo.GdnTaskInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gdnTaskInfo.Deserialize(value["GdnTaskInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gdnTaskInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -851,6 +869,15 @@ void BizTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskProgressInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_gdnTaskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GdnTaskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gdnTaskInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1446,5 +1473,21 @@ void BizTaskInfo::SetTaskProgressInfo(const TaskProgressInfo& _taskProgressInfo)
 bool BizTaskInfo::TaskProgressInfoHasBeenSet() const
 {
     return m_taskProgressInfoHasBeenSet;
+}
+
+GdnTaskInfo BizTaskInfo::GetGdnTaskInfo() const
+{
+    return m_gdnTaskInfo;
+}
+
+void BizTaskInfo::SetGdnTaskInfo(const GdnTaskInfo& _gdnTaskInfo)
+{
+    m_gdnTaskInfo = _gdnTaskInfo;
+    m_gdnTaskInfoHasBeenSet = true;
+}
+
+bool BizTaskInfo::GdnTaskInfoHasBeenSet() const
+{
+    return m_gdnTaskInfoHasBeenSet;
 }
 

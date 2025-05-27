@@ -73,7 +73,10 @@ CynosdbClusterDetail::CynosdbClusterDetail() :
     m_slaveZoneAttrHasBeenSet(false),
     m_cynosVersionTagHasBeenSet(false),
     m_gdnIdHasBeenSet(false),
-    m_gdnRoleHasBeenSet(false)
+    m_gdnRoleHasBeenSet(false),
+    m_usedArchiveStorageHasBeenSet(false),
+    m_archiveStatusHasBeenSet(false),
+    m_archiveProgressHasBeenSet(false)
 {
 }
 
@@ -682,6 +685,36 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
         m_gdnRoleHasBeenSet = true;
     }
 
+    if (value.HasMember("UsedArchiveStorage") && !value["UsedArchiveStorage"].IsNull())
+    {
+        if (!value["UsedArchiveStorage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.UsedArchiveStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedArchiveStorage = value["UsedArchiveStorage"].GetInt64();
+        m_usedArchiveStorageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ArchiveStatus") && !value["ArchiveStatus"].IsNull())
+    {
+        if (!value["ArchiveStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ArchiveStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_archiveStatus = string(value["ArchiveStatus"].GetString());
+        m_archiveStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ArchiveProgress") && !value["ArchiveProgress"].IsNull())
+    {
+        if (!value["ArchiveProgress"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ArchiveProgress` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_archiveProgress = value["ArchiveProgress"].GetInt64();
+        m_archiveProgressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1159,6 +1192,30 @@ void CynosdbClusterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "GdnRole";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_gdnRole.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usedArchiveStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedArchiveStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedArchiveStorage, allocator);
+    }
+
+    if (m_archiveStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchiveStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_archiveStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_archiveProgressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchiveProgress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_archiveProgress, allocator);
     }
 
 }
@@ -2010,5 +2067,53 @@ void CynosdbClusterDetail::SetGdnRole(const string& _gdnRole)
 bool CynosdbClusterDetail::GdnRoleHasBeenSet() const
 {
     return m_gdnRoleHasBeenSet;
+}
+
+int64_t CynosdbClusterDetail::GetUsedArchiveStorage() const
+{
+    return m_usedArchiveStorage;
+}
+
+void CynosdbClusterDetail::SetUsedArchiveStorage(const int64_t& _usedArchiveStorage)
+{
+    m_usedArchiveStorage = _usedArchiveStorage;
+    m_usedArchiveStorageHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::UsedArchiveStorageHasBeenSet() const
+{
+    return m_usedArchiveStorageHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetArchiveStatus() const
+{
+    return m_archiveStatus;
+}
+
+void CynosdbClusterDetail::SetArchiveStatus(const string& _archiveStatus)
+{
+    m_archiveStatus = _archiveStatus;
+    m_archiveStatusHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::ArchiveStatusHasBeenSet() const
+{
+    return m_archiveStatusHasBeenSet;
+}
+
+int64_t CynosdbClusterDetail::GetArchiveProgress() const
+{
+    return m_archiveProgress;
+}
+
+void CynosdbClusterDetail::SetArchiveProgress(const int64_t& _archiveProgress)
+{
+    m_archiveProgress = _archiveProgress;
+    m_archiveProgressHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::ArchiveProgressHasBeenSet() const
+{
+    return m_archiveProgressHasBeenSet;
 }
 

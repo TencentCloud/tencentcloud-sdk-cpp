@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
-                     * @return EnvIds 计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * 获取计算环境ID列表，与Filters参数不能同时指定。最大数量上限100。
+                     * @return EnvIds 计算环境ID列表，与Filters参数不能同时指定。最大数量上限100。
                      * 
                      */
                     std::vector<std::string> GetEnvIds() const;
 
                     /**
-                     * 设置计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
-                     * @param _envIds 计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * 设置计算环境ID列表，与Filters参数不能同时指定。最大数量上限100。
+                     * @param _envIds 计算环境ID列表，与Filters参数不能同时指定。最大数量上限100。
                      * 
                      */
                     void SetEnvIds(const std::vector<std::string>& _envIds);
@@ -130,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * 计算环境ID列表，与Filters参数不能同时指定。最大数量上限100。
                      */
                     std::vector<std::string> m_envIds;
                     bool m_envIdsHasBeenSet;

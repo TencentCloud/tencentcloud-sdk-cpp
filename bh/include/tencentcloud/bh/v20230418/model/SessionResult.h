@@ -487,6 +487,90 @@ namespace TencentCloud
                      */
                     bool ReplayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取会话资产类型
+                     * @return DeviceKind 会话资产类型
+                     * 
+                     */
+                    std::string GetDeviceKind() const;
+
+                    /**
+                     * 设置会话资产类型
+                     * @param _deviceKind 会话资产类型
+                     * 
+                     */
+                    void SetDeviceKind(const std::string& _deviceKind);
+
+                    /**
+                     * 判断参数 DeviceKind 是否已赋值
+                     * @return DeviceKind 是否已赋值
+                     * 
+                     */
+                    bool DeviceKindHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群命名空间
+                     * @return Namespace K8S集群命名空间
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置K8S集群命名空间
+                     * @param _namespace K8S集群命名空间
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群工作负载
+                     * @return Workload K8S集群工作负载
+                     * 
+                     */
+                    std::string GetWorkload() const;
+
+                    /**
+                     * 设置K8S集群工作负载
+                     * @param _workload K8S集群工作负载
+                     * 
+                     */
+                    void SetWorkload(const std::string& _workload);
+
+                    /**
+                     * 判断参数 Workload 是否已赋值
+                     * @return Workload 是否已赋值
+                     * 
+                     */
+                    bool WorkloadHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群容器名称
+                     * @return PodName K8S集群容器名称
+                     * 
+                     */
+                    std::string GetPodName() const;
+
+                    /**
+                     * 设置K8S集群容器名称
+                     * @param _podName K8S集群容器名称
+                     * 
+                     */
+                    void SetPodName(const std::string& _podName);
+
+                    /**
+                     * 判断参数 PodName 是否已赋值
+                     * @return PodName 是否已赋值
+                     * 
+                     */
+                    bool PodNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -614,6 +698,30 @@ namespace TencentCloud
                      */
                     uint64_t m_replayType;
                     bool m_replayTypeHasBeenSet;
+
+                    /**
+                     * 会话资产类型
+                     */
+                    std::string m_deviceKind;
+                    bool m_deviceKindHasBeenSet;
+
+                    /**
+                     * K8S集群命名空间
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * K8S集群工作负载
+                     */
+                    std::string m_workload;
+                    bool m_workloadHasBeenSet;
+
+                    /**
+                     * K8S集群容器名称
+                     */
+                    std::string m_podName;
+                    bool m_podNameHasBeenSet;
 
                 };
             }

@@ -42,11 +42,13 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/WorkSpaceSetItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h
   include/tencentcloud/oceanus/v20190422/model/ResultColumn.h
+  include/tencentcloud/oceanus/v20190422/model/Setats.h
   include/tencentcloud/oceanus/v20190422/model/TreeJobSets.h
   include/tencentcloud/oceanus/v20190422/model/ResourceItem.h
   include/tencentcloud/oceanus/v20190422/model/RefJobStatusCountItem.h
   include/tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeFolderResponse.h
+  include/tencentcloud/oceanus/v20190422/model/SetatsDisk.h
   include/tencentcloud/oceanus/v20190422/model/ResourceLoc.h
   include/tencentcloud/oceanus/v20190422/model/CCN.h
   include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesRequest.h
@@ -81,6 +83,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h
   include/tencentcloud/oceanus/v20190422/model/GatewayRefItem.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceRefLatest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateFolderResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourcesResponse.h
@@ -134,6 +137,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/CreateJobRequest.h
   include/tencentcloud/oceanus/v20190422/model/JobInstanceForSubmissionLog.h
   include/tencentcloud/oceanus/v20190422/model/DescribeFolderRequest.h
+  include/tencentcloud/oceanus/v20190422/model/Warehouse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteFoldersResponse.h
   include/tencentcloud/oceanus/v20190422/model/SubFolderInfo.h
   include/tencentcloud/oceanus/v20190422/model/ClusterSession.h
@@ -146,6 +150,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/Order.h
+  include/tencentcloud/oceanus/v20190422/model/SetatsCvmInfo.h
   include/tencentcloud/oceanus/v20190422/model/CopyJobItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h
@@ -179,11 +184,13 @@ set(oceanus_src
   src/v20190422/model/WorkSpaceSetItem.cpp
   src/v20190422/model/DescribeJobSavepointRequest.cpp
   src/v20190422/model/ResultColumn.cpp
+  src/v20190422/model/Setats.cpp
   src/v20190422/model/TreeJobSets.cpp
   src/v20190422/model/ResourceItem.cpp
   src/v20190422/model/RefJobStatusCountItem.cpp
   src/v20190422/model/RunSqlGatewayStatementRequest.cpp
   src/v20190422/model/DescribeFolderResponse.cpp
+  src/v20190422/model/SetatsDisk.cpp
   src/v20190422/model/ResourceLoc.cpp
   src/v20190422/model/CCN.cpp
   src/v20190422/model/DescribeWorkSpacesRequest.cpp
@@ -218,6 +225,7 @@ set(oceanus_src
   src/v20190422/model/DescribeWorkSpacesResponse.cpp
   src/v20190422/model/GatewayRefItem.cpp
   src/v20190422/model/CreateResourceResponse.cpp
+  src/v20190422/model/ResourceRefLatest.cpp
   src/v20190422/model/DescribeSystemResourcesRequest.cpp
   src/v20190422/model/CreateFolderResponse.cpp
   src/v20190422/model/DescribeResourcesResponse.cpp
@@ -271,6 +279,7 @@ set(oceanus_src
   src/v20190422/model/CreateJobRequest.cpp
   src/v20190422/model/JobInstanceForSubmissionLog.cpp
   src/v20190422/model/DescribeFolderRequest.cpp
+  src/v20190422/model/Warehouse.cpp
   src/v20190422/model/DeleteFoldersResponse.cpp
   src/v20190422/model/SubFolderInfo.cpp
   src/v20190422/model/ClusterSession.cpp
@@ -283,6 +292,7 @@ set(oceanus_src
   src/v20190422/model/DescribeJobsResponse.cpp
   src/v20190422/model/DescribeTreeResourcesResponse.cpp
   src/v20190422/model/Order.cpp
+  src/v20190422/model/SetatsCvmInfo.cpp
   src/v20190422/model/CopyJobItem.cpp
   src/v20190422/model/DescribeTreeJobsRequest.cpp
   src/v20190422/model/DescribeJobConfigsResponse.cpp

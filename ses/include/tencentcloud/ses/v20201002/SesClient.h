@@ -59,6 +59,8 @@
 #include <tencentcloud/ses/v20201002/model/GetSendEmailStatusResponse.h>
 #include <tencentcloud/ses/v20201002/model/GetStatisticsReportRequest.h>
 #include <tencentcloud/ses/v20201002/model/GetStatisticsReportResponse.h>
+#include <tencentcloud/ses/v20201002/model/ListAddressUnsubscribeConfigRequest.h>
+#include <tencentcloud/ses/v20201002/model/ListAddressUnsubscribeConfigResponse.h>
 #include <tencentcloud/ses/v20201002/model/ListBlackEmailAddressRequest.h>
 #include <tencentcloud/ses/v20201002/model/ListBlackEmailAddressResponse.h>
 #include <tencentcloud/ses/v20201002/model/ListCustomBlacklistRequest.h>
@@ -153,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetStatisticsReportResponse> GetStatisticsReportOutcome;
                 typedef std::future<GetStatisticsReportOutcome> GetStatisticsReportOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::GetStatisticsReportRequest&, GetStatisticsReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetStatisticsReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListAddressUnsubscribeConfigResponse> ListAddressUnsubscribeConfigOutcome;
+                typedef std::future<ListAddressUnsubscribeConfigOutcome> ListAddressUnsubscribeConfigOutcomeCallable;
+                typedef std::function<void(const SesClient*, const Model::ListAddressUnsubscribeConfigRequest&, ListAddressUnsubscribeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAddressUnsubscribeConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListBlackEmailAddressResponse> ListBlackEmailAddressOutcome;
                 typedef std::future<ListBlackEmailAddressOutcome> ListBlackEmailAddressOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::ListBlackEmailAddressRequest&, ListBlackEmailAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListBlackEmailAddressAsyncHandler;
@@ -357,6 +362,15 @@ namespace TencentCloud
                 GetStatisticsReportOutcome GetStatisticsReport(const Model::GetStatisticsReportRequest &request);
                 void GetStatisticsReportAsync(const Model::GetStatisticsReportRequest& request, const GetStatisticsReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetStatisticsReportOutcomeCallable GetStatisticsReportCallable(const Model::GetStatisticsReportRequest& request);
+
+                /**
+                 *获取地址级退订配置列表
+                 * @param req ListAddressUnsubscribeConfigRequest
+                 * @return ListAddressUnsubscribeConfigOutcome
+                 */
+                ListAddressUnsubscribeConfigOutcome ListAddressUnsubscribeConfig(const Model::ListAddressUnsubscribeConfigRequest &request);
+                void ListAddressUnsubscribeConfigAsync(const Model::ListAddressUnsubscribeConfigRequest& request, const ListAddressUnsubscribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAddressUnsubscribeConfigOutcomeCallable ListAddressUnsubscribeConfigCallable(const Model::ListAddressUnsubscribeConfigRequest& request);
 
                 /**
                  *腾讯云发送的邮件一旦被收件方判断为硬退(Hard Bounce)，腾讯云会拉黑该地址，并不允许所有用户向该地址发送邮件。成为邮箱黑名单。如果业务方确认是误判，可以从黑名单中删除。

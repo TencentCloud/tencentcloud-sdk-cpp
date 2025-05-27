@@ -31,6 +31,7 @@
 #include <tencentcloud/cdb/v20170320/model/DrInfo.h>
 #include <tencentcloud/cdb/v20170320/model/TagInfoItem.h>
 #include <tencentcloud/cdb/v20170320/model/ClusterInfo.h>
+#include <tencentcloud/cdb/v20170320/model/AnalysisNodeInfo.h>
 
 
 namespace TencentCloud
@@ -1061,6 +1062,48 @@ namespace TencentCloud
                      */
                     bool ClusterInfoHasBeenSet() const;
 
+                    /**
+                     * 获取分析引擎节点列表
+                     * @return AnalysisNodeInfos 分析引擎节点列表
+                     * 
+                     */
+                    std::vector<AnalysisNodeInfo> GetAnalysisNodeInfos() const;
+
+                    /**
+                     * 设置分析引擎节点列表
+                     * @param _analysisNodeInfos 分析引擎节点列表
+                     * 
+                     */
+                    void SetAnalysisNodeInfos(const std::vector<AnalysisNodeInfo>& _analysisNodeInfos);
+
+                    /**
+                     * 判断参数 AnalysisNodeInfos 是否已赋值
+                     * @return AnalysisNodeInfos 是否已赋值
+                     * 
+                     */
+                    bool AnalysisNodeInfosHasBeenSet() const;
+
+                    /**
+                     * 获取设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。
+                     * @return DeviceBandwidth 设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。
+                     * 
+                     */
+                    uint64_t GetDeviceBandwidth() const;
+
+                    /**
+                     * 设置设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。
+                     * @param _deviceBandwidth 设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。
+                     * 
+                     */
+                    void SetDeviceBandwidth(const uint64_t& _deviceBandwidth);
+
+                    /**
+                     * 判断参数 DeviceBandwidth 是否已赋值
+                     * @return DeviceBandwidth 是否已赋值
+                     * 
+                     */
+                    bool DeviceBandwidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1350,6 +1393,18 @@ namespace TencentCloud
                      */
                     std::vector<ClusterInfo> m_clusterInfo;
                     bool m_clusterInfoHasBeenSet;
+
+                    /**
+                     * 分析引擎节点列表
+                     */
+                    std::vector<AnalysisNodeInfo> m_analysisNodeInfos;
+                    bool m_analysisNodeInfosHasBeenSet;
+
+                    /**
+                     * 设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。
+                     */
+                    uint64_t m_deviceBandwidth;
+                    bool m_deviceBandwidthHasBeenSet;
 
                 };
             }

@@ -25,7 +25,9 @@ DeviceAccount::DeviceAccount() :
     m_deviceIdHasBeenSet(false),
     m_accountHasBeenSet(false),
     m_boundPasswordHasBeenSet(false),
-    m_boundPrivateKeyHasBeenSet(false)
+    m_boundPrivateKeyHasBeenSet(false),
+    m_boundKubeconfigHasBeenSet(false),
+    m_isK8SManageAccountHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome DeviceAccount::Deserialize(const rapidjson::Value &value)
         m_boundPrivateKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("BoundKubeconfig") && !value["BoundKubeconfig"].IsNull())
+    {
+        if (!value["BoundKubeconfig"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceAccount.BoundKubeconfig` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_boundKubeconfig = value["BoundKubeconfig"].GetBool();
+        m_boundKubeconfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsK8SManageAccount") && !value["IsK8SManageAccount"].IsNull())
+    {
+        if (!value["IsK8SManageAccount"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceAccount.IsK8SManageAccount` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isK8SManageAccount = value["IsK8SManageAccount"].GetBool();
+        m_isK8SManageAccountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void DeviceAccount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "BoundPrivateKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_boundPrivateKey, allocator);
+    }
+
+    if (m_boundKubeconfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BoundKubeconfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_boundKubeconfig, allocator);
+    }
+
+    if (m_isK8SManageAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsK8SManageAccount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isK8SManageAccount, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void DeviceAccount::SetBoundPrivateKey(const bool& _boundPrivateKey)
 bool DeviceAccount::BoundPrivateKeyHasBeenSet() const
 {
     return m_boundPrivateKeyHasBeenSet;
+}
+
+bool DeviceAccount::GetBoundKubeconfig() const
+{
+    return m_boundKubeconfig;
+}
+
+void DeviceAccount::SetBoundKubeconfig(const bool& _boundKubeconfig)
+{
+    m_boundKubeconfig = _boundKubeconfig;
+    m_boundKubeconfigHasBeenSet = true;
+}
+
+bool DeviceAccount::BoundKubeconfigHasBeenSet() const
+{
+    return m_boundKubeconfigHasBeenSet;
+}
+
+bool DeviceAccount::GetIsK8SManageAccount() const
+{
+    return m_isK8SManageAccount;
+}
+
+void DeviceAccount::SetIsK8SManageAccount(const bool& _isK8SManageAccount)
+{
+    m_isK8SManageAccount = _isK8SManageAccount;
+    m_isK8SManageAccountHasBeenSet = true;
+}
+
+bool DeviceAccount::IsK8SManageAccountHasBeenSet() const
+{
+    return m_isK8SManageAccountHasBeenSet;
 }
 

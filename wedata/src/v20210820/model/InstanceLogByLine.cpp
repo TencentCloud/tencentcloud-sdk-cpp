@@ -28,7 +28,9 @@ InstanceLogByLine::InstanceLogByLine() :
     m_instanceIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_workerTypeHasBeenSet(false),
-    m_jobLogErrorTipHasBeenSet(false)
+    m_jobLogErrorTipHasBeenSet(false),
+    m_executionExtendedPropsHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,36 @@ CoreInternalOutcome InstanceLogByLine::Deserialize(const rapidjson::Value &value
         m_jobLogErrorTipHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecutionExtendedProps") && !value["ExecutionExtendedProps"].IsNull())
+    {
+        if (!value["ExecutionExtendedProps"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceLogByLine.ExecutionExtendedProps` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExecutionExtendedProps"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ExtensionInfoVO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_executionExtendedProps.push_back(item);
+        }
+        m_executionExtendedPropsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtInfo") && !value["ExtInfo"].IsNull())
+    {
+        if (!value["ExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLogByLine.ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extInfo = string(value["ExtInfo"].GetString());
+        m_extInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +234,29 @@ void InstanceLogByLine::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_jobLogErrorTip.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_executionExtendedPropsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionExtendedProps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_executionExtendedProps.begin(); itr != m_executionExtendedProps.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -333,5 +388,37 @@ void InstanceLogByLine::SetJobLogErrorTip(const JobLogErrorTip& _jobLogErrorTip)
 bool InstanceLogByLine::JobLogErrorTipHasBeenSet() const
 {
     return m_jobLogErrorTipHasBeenSet;
+}
+
+vector<ExtensionInfoVO> InstanceLogByLine::GetExecutionExtendedProps() const
+{
+    return m_executionExtendedProps;
+}
+
+void InstanceLogByLine::SetExecutionExtendedProps(const vector<ExtensionInfoVO>& _executionExtendedProps)
+{
+    m_executionExtendedProps = _executionExtendedProps;
+    m_executionExtendedPropsHasBeenSet = true;
+}
+
+bool InstanceLogByLine::ExecutionExtendedPropsHasBeenSet() const
+{
+    return m_executionExtendedPropsHasBeenSet;
+}
+
+string InstanceLogByLine::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void InstanceLogByLine::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool InstanceLogByLine::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 

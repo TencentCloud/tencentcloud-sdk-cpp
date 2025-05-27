@@ -294,6 +294,48 @@ namespace TencentCloud
                      */
                     bool FileTypeHasBeenSet() const;
 
+                    /**
+                     * 获取查询文件标志：0: 从执行机获取，1: 从cos获取，获取不到会再从执行机获取
+                     * @return QueryFileFlag 查询文件标志：0: 从执行机获取，1: 从cos获取，获取不到会再从执行机获取
+                     * 
+                     */
+                    int64_t GetQueryFileFlag() const;
+
+                    /**
+                     * 设置查询文件标志：0: 从执行机获取，1: 从cos获取，获取不到会再从执行机获取
+                     * @param _queryFileFlag 查询文件标志：0: 从执行机获取，1: 从cos获取，获取不到会再从执行机获取
+                     * 
+                     */
+                    void SetQueryFileFlag(const int64_t& _queryFileFlag);
+
+                    /**
+                     * 判断参数 QueryFileFlag 是否已赋值
+                     * @return QueryFileFlag 是否已赋值
+                     * 
+                     */
+                    bool QueryFileFlagHasBeenSet() const;
+
+                    /**
+                     * 获取透传字段，如果queryFileFlag为1，则ext回作为上一页的分页标识offset
+                     * @return ExtInfo 透传字段，如果queryFileFlag为1，则ext回作为上一页的分页标识offset
+                     * 
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 设置透传字段，如果queryFileFlag为1，则ext回作为上一页的分页标识offset
+                     * @param _extInfo 透传字段，如果queryFileFlag为1，则ext回作为上一页的分页标识offset
+                     * 
+                     */
+                    void SetExtInfo(const std::string& _extInfo);
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +409,18 @@ namespace TencentCloud
                      */
                     int64_t m_fileType;
                     bool m_fileTypeHasBeenSet;
+
+                    /**
+                     * 查询文件标志：0: 从执行机获取，1: 从cos获取，获取不到会再从执行机获取
+                     */
+                    int64_t m_queryFileFlag;
+                    bool m_queryFileFlagHasBeenSet;
+
+                    /**
+                     * 透传字段，如果queryFileFlag为1，则ext回作为上一页的分页标识offset
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
 
                 };
             }

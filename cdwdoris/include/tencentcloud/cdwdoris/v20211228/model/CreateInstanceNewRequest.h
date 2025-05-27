@@ -439,23 +439,44 @@ namespace TencentCloud
                     /**
                      * 获取缓存盘大小
                      * @return CacheDiskSize 缓存盘大小
-                     * 
+                     * @deprecated
                      */
                     std::string GetCacheDiskSize() const;
 
                     /**
                      * 设置缓存盘大小
                      * @param _cacheDiskSize 缓存盘大小
-                     * 
+                     * @deprecated
                      */
                     void SetCacheDiskSize(const std::string& _cacheDiskSize);
 
                     /**
                      * 判断参数 CacheDiskSize 是否已赋值
                      * @return CacheDiskSize 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CacheDiskSizeHasBeenSet() const;
+
+                    /**
+                     * 获取缓存盘大小
+                     * @return CacheDataDiskSize 缓存盘大小
+                     * 
+                     */
+                    int64_t GetCacheDataDiskSize() const;
+
+                    /**
+                     * 设置缓存盘大小
+                     * @param _cacheDataDiskSize 缓存盘大小
+                     * 
+                     */
+                    void SetCacheDataDiskSize(const int64_t& _cacheDataDiskSize);
+
+                    /**
+                     * 判断参数 CacheDataDiskSize 是否已赋值
+                     * @return CacheDataDiskSize 是否已赋值
+                     * 
+                     */
+                    bool CacheDataDiskSizeHasBeenSet() const;
 
                 private:
 
@@ -575,6 +596,12 @@ namespace TencentCloud
                      */
                     std::string m_cacheDiskSize;
                     bool m_cacheDiskSizeHasBeenSet;
+
+                    /**
+                     * 缓存盘大小
+                     */
+                    int64_t m_cacheDataDiskSize;
+                    bool m_cacheDataDiskSizeHasBeenSet;
 
                 };
             }

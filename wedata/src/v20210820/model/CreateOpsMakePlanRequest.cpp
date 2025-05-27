@@ -48,7 +48,10 @@ CreateOpsMakePlanRequest::CreateOpsMakePlanRequest() :
     m_integrationResourceGroupNameHasBeenSet(false),
     m_makeExtListHasBeenSet(false),
     m_sameSelfWorkflowDependTypeHasBeenSet(false),
-    m_selfWorkflowDependencyHasBeenSet(false)
+    m_selfWorkflowDependencyHasBeenSet(false),
+    m_makeTypeHasBeenSet(false),
+    m_statusListHasBeenSet(false),
+    m_makeCheckEventTypeHasBeenSet(false)
 {
 }
 
@@ -291,6 +294,30 @@ string CreateOpsMakePlanRequest::ToJsonString() const
         string key = "SelfWorkflowDependency";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_selfWorkflowDependency.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_makeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MakeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_makeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_statusList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_makeCheckEventTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MakeCheckEventType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_makeCheckEventType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -715,6 +742,54 @@ void CreateOpsMakePlanRequest::SetSelfWorkflowDependency(const string& _selfWork
 bool CreateOpsMakePlanRequest::SelfWorkflowDependencyHasBeenSet() const
 {
     return m_selfWorkflowDependencyHasBeenSet;
+}
+
+string CreateOpsMakePlanRequest::GetMakeType() const
+{
+    return m_makeType;
+}
+
+void CreateOpsMakePlanRequest::SetMakeType(const string& _makeType)
+{
+    m_makeType = _makeType;
+    m_makeTypeHasBeenSet = true;
+}
+
+bool CreateOpsMakePlanRequest::MakeTypeHasBeenSet() const
+{
+    return m_makeTypeHasBeenSet;
+}
+
+string CreateOpsMakePlanRequest::GetStatusList() const
+{
+    return m_statusList;
+}
+
+void CreateOpsMakePlanRequest::SetStatusList(const string& _statusList)
+{
+    m_statusList = _statusList;
+    m_statusListHasBeenSet = true;
+}
+
+bool CreateOpsMakePlanRequest::StatusListHasBeenSet() const
+{
+    return m_statusListHasBeenSet;
+}
+
+string CreateOpsMakePlanRequest::GetMakeCheckEventType() const
+{
+    return m_makeCheckEventType;
+}
+
+void CreateOpsMakePlanRequest::SetMakeCheckEventType(const string& _makeCheckEventType)
+{
+    m_makeCheckEventType = _makeCheckEventType;
+    m_makeCheckEventTypeHasBeenSet = true;
+}
+
+bool CreateOpsMakePlanRequest::MakeCheckEventTypeHasBeenSet() const
+{
+    return m_makeCheckEventTypeHasBeenSet;
 }
 
 

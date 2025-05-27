@@ -814,6 +814,49 @@ SesClient::GetStatisticsReportOutcomeCallable SesClient::GetStatisticsReportCall
     return task->get_future();
 }
 
+SesClient::ListAddressUnsubscribeConfigOutcome SesClient::ListAddressUnsubscribeConfig(const ListAddressUnsubscribeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAddressUnsubscribeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAddressUnsubscribeConfigResponse rsp = ListAddressUnsubscribeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAddressUnsubscribeConfigOutcome(rsp);
+        else
+            return ListAddressUnsubscribeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAddressUnsubscribeConfigOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::ListAddressUnsubscribeConfigAsync(const ListAddressUnsubscribeConfigRequest& request, const ListAddressUnsubscribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListAddressUnsubscribeConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::ListAddressUnsubscribeConfigOutcomeCallable SesClient::ListAddressUnsubscribeConfigCallable(const ListAddressUnsubscribeConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListAddressUnsubscribeConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ListAddressUnsubscribeConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SesClient::ListBlackEmailAddressOutcome SesClient::ListBlackEmailAddress(const ListBlackEmailAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "ListBlackEmailAddress");

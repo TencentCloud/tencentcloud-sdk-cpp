@@ -33,7 +33,8 @@ ModifyServerlessStrategyRequest::ModifyServerlessStrategyRequest() :
     m_minRoCpuHasBeenSet(false),
     m_maxRoCpuHasBeenSet(false),
     m_minRoCountHasBeenSet(false),
-    m_maxRoCountHasBeenSet(false)
+    m_maxRoCountHasBeenSet(false),
+    m_autoArchiveHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string ModifyServerlessStrategyRequest::ToJsonString() const
         string key = "MaxRoCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxRoCount, allocator);
+    }
+
+    if (m_autoArchiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoArchive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoArchive.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -314,6 +323,22 @@ void ModifyServerlessStrategyRequest::SetMaxRoCount(const int64_t& _maxRoCount)
 bool ModifyServerlessStrategyRequest::MaxRoCountHasBeenSet() const
 {
     return m_maxRoCountHasBeenSet;
+}
+
+string ModifyServerlessStrategyRequest::GetAutoArchive() const
+{
+    return m_autoArchive;
+}
+
+void ModifyServerlessStrategyRequest::SetAutoArchive(const string& _autoArchive)
+{
+    m_autoArchive = _autoArchive;
+    m_autoArchiveHasBeenSet = true;
+}
+
+bool ModifyServerlessStrategyRequest::AutoArchiveHasBeenSet() const
+{
+    return m_autoArchiveHasBeenSet;
 }
 
 

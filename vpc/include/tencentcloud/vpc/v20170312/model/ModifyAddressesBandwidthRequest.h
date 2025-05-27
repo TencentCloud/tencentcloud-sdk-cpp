@@ -91,42 +91,42 @@ namespace TencentCloud
                     /**
                      * 获取包月带宽起始时间(已废弃，输入无效)
                      * @return StartTime 包月带宽起始时间(已废弃，输入无效)
-                     * 
+                     * @deprecated
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置包月带宽起始时间(已废弃，输入无效)
                      * @param _startTime 包月带宽起始时间(已废弃，输入无效)
-                     * 
+                     * @deprecated
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取包月带宽结束时间(已废弃，输入无效)
                      * @return EndTime 包月带宽结束时间(已废弃，输入无效)
-                     * 
+                     * @deprecated
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置包月带宽结束时间(已废弃，输入无效)
                      * @param _endTime 包月带宽结束时间(已废弃，输入无效)
-                     * 
+                     * @deprecated
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EndTimeHasBeenSet() const;
 

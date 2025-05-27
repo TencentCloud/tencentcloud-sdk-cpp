@@ -36,6 +36,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/TaskMaintainInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceCLSDeliveryInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/TaskProgressInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/GdnTaskInfo.h>
 
 
 namespace TencentCloud
@@ -855,6 +856,27 @@ namespace TencentCloud
                      */
                     bool TaskProgressInfoHasBeenSet() const;
 
+                    /**
+                     * 获取全球数据库网络任务
+                     * @return GdnTaskInfo 全球数据库网络任务
+                     * 
+                     */
+                    GdnTaskInfo GetGdnTaskInfo() const;
+
+                    /**
+                     * 设置全球数据库网络任务
+                     * @param _gdnTaskInfo 全球数据库网络任务
+                     * 
+                     */
+                    void SetGdnTaskInfo(const GdnTaskInfo& _gdnTaskInfo);
+
+                    /**
+                     * 判断参数 GdnTaskInfo 是否已赋值
+                     * @return GdnTaskInfo 是否已赋值
+                     * 
+                     */
+                    bool GdnTaskInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1083,6 +1105,12 @@ namespace TencentCloud
                      */
                     TaskProgressInfo m_taskProgressInfo;
                     bool m_taskProgressInfoHasBeenSet;
+
+                    /**
+                     * 全球数据库网络任务
+                     */
+                    GdnTaskInfo m_gdnTaskInfo;
+                    bool m_gdnTaskInfoHasBeenSet;
 
                 };
             }

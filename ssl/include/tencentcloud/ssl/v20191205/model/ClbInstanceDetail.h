@@ -110,6 +110,27 @@ namespace TencentCloud
                      */
                     bool ListenersHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡
+                     * @return Forward 负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡
+                     * 
+                     */
+                    int64_t GetForward() const;
+
+                    /**
+                     * 设置负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡
+                     * @param _forward 负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡
+                     * 
+                     */
+                    void SetForward(const int64_t& _forward);
+
+                    /**
+                     * 判断参数 Forward 是否已赋值
+                     * @return Forward 是否已赋值
+                     * 
+                     */
+                    bool ForwardHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +150,12 @@ namespace TencentCloud
                      */
                     std::vector<ClbListener> m_listeners;
                     bool m_listenersHasBeenSet;
+
+                    /**
+                     * 负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡
+                     */
+                    int64_t m_forward;
+                    bool m_forwardHasBeenSet;
 
                 };
             }

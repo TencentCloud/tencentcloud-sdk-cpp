@@ -154,21 +154,21 @@ namespace TencentCloud
                     /**
                      * 获取该值已废弃
                      * @return CreateTime 该值已废弃
-                     * 
+                     * @deprecated
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置该值已废弃
                      * @param _createTime 该值已废弃
-                     * 
+                     * @deprecated
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CreateTimeHasBeenSet() const;
 

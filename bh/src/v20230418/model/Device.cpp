@@ -41,7 +41,13 @@ Device::Device() :
     m_domainNameHasBeenSet(false),
     m_enableSSLHasBeenSet(false),
     m_sSLCertNameHasBeenSet(false),
-    m_iOAIdHasBeenSet(false)
+    m_iOAIdHasBeenSet(false),
+    m_manageDimensionHasBeenSet(false),
+    m_manageAccountIdHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_workloadHasBeenSet(false),
+    m_syncPodCountHasBeenSet(false),
+    m_totalPodCountHasBeenSet(false)
 {
 }
 
@@ -287,6 +293,66 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_iOAIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ManageDimension") && !value["ManageDimension"].IsNull())
+    {
+        if (!value["ManageDimension"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.ManageDimension` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_manageDimension = value["ManageDimension"].GetUint64();
+        m_manageDimensionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ManageAccountId") && !value["ManageAccountId"].IsNull())
+    {
+        if (!value["ManageAccountId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.ManageAccountId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_manageAccountId = value["ManageAccountId"].GetUint64();
+        m_manageAccountIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Namespace") && !value["Namespace"].IsNull())
+    {
+        if (!value["Namespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespace = string(value["Namespace"].GetString());
+        m_namespaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("Workload") && !value["Workload"].IsNull())
+    {
+        if (!value["Workload"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.Workload` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workload = string(value["Workload"].GetString());
+        m_workloadHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncPodCount") && !value["SyncPodCount"].IsNull())
+    {
+        if (!value["SyncPodCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.SyncPodCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncPodCount = value["SyncPodCount"].GetUint64();
+        m_syncPodCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalPodCount") && !value["TotalPodCount"].IsNull())
+    {
+        if (!value["TotalPodCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.TotalPodCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalPodCount = value["TotalPodCount"].GetUint64();
+        m_totalPodCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -474,6 +540,54 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "IOAId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iOAId, allocator);
+    }
+
+    if (m_manageDimensionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManageDimension";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_manageDimension, allocator);
+    }
+
+    if (m_manageAccountIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManageAccountId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_manageAccountId, allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Workload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workload.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncPodCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncPodCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncPodCount, allocator);
+    }
+
+    if (m_totalPodCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalPodCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalPodCount, allocator);
     }
 
 }
@@ -813,5 +927,101 @@ void Device::SetIOAId(const int64_t& _iOAId)
 bool Device::IOAIdHasBeenSet() const
 {
     return m_iOAIdHasBeenSet;
+}
+
+uint64_t Device::GetManageDimension() const
+{
+    return m_manageDimension;
+}
+
+void Device::SetManageDimension(const uint64_t& _manageDimension)
+{
+    m_manageDimension = _manageDimension;
+    m_manageDimensionHasBeenSet = true;
+}
+
+bool Device::ManageDimensionHasBeenSet() const
+{
+    return m_manageDimensionHasBeenSet;
+}
+
+uint64_t Device::GetManageAccountId() const
+{
+    return m_manageAccountId;
+}
+
+void Device::SetManageAccountId(const uint64_t& _manageAccountId)
+{
+    m_manageAccountId = _manageAccountId;
+    m_manageAccountIdHasBeenSet = true;
+}
+
+bool Device::ManageAccountIdHasBeenSet() const
+{
+    return m_manageAccountIdHasBeenSet;
+}
+
+string Device::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void Device::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool Device::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
+string Device::GetWorkload() const
+{
+    return m_workload;
+}
+
+void Device::SetWorkload(const string& _workload)
+{
+    m_workload = _workload;
+    m_workloadHasBeenSet = true;
+}
+
+bool Device::WorkloadHasBeenSet() const
+{
+    return m_workloadHasBeenSet;
+}
+
+uint64_t Device::GetSyncPodCount() const
+{
+    return m_syncPodCount;
+}
+
+void Device::SetSyncPodCount(const uint64_t& _syncPodCount)
+{
+    m_syncPodCount = _syncPodCount;
+    m_syncPodCountHasBeenSet = true;
+}
+
+bool Device::SyncPodCountHasBeenSet() const
+{
+    return m_syncPodCountHasBeenSet;
+}
+
+uint64_t Device::GetTotalPodCount() const
+{
+    return m_totalPodCount;
+}
+
+void Device::SetTotalPodCount(const uint64_t& _totalPodCount)
+{
+    m_totalPodCount = _totalPodCount;
+    m_totalPodCountHasBeenSet = true;
+}
+
+bool Device::TotalPodCountHasBeenSet() const
+{
+    return m_totalPodCountHasBeenSet;
 }
 

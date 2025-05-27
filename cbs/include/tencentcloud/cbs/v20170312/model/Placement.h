@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool CageIdHasBeenSet() const;
 
                     /**
-                     * 获取实例所属项目ID。不填为默认项目。
-                     * @return ProjectId 实例所属项目ID。不填为默认项目。
+                     * 获取实例所属项目ID，可通过[DescribeProject](/document/api/651/78725)获取。不填默认为0，表示默认项目。
+                     * @return ProjectId 实例所属项目ID，可通过[DescribeProject](/document/api/651/78725)获取。不填默认为0，表示默认项目。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置实例所属项目ID。不填为默认项目。
-                     * @param _projectId 实例所属项目ID。不填为默认项目。
+                     * 设置实例所属项目ID，可通过[DescribeProject](/document/api/651/78725)获取。不填默认为0，表示默认项目。
+                     * @param _projectId 实例所属项目ID，可通过[DescribeProject](/document/api/651/78725)获取。不填默认为0，表示默认项目。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取实例所属项目名称。
+                     * 获取实例所属项目名称，可通过[DescribeProject](/document/api/651/78725)获取。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectName 实例所属项目名称。
+                     * @return ProjectName 实例所属项目名称，可通过[DescribeProject](/document/api/651/78725)获取。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
-                     * 设置实例所属项目名称。
+                     * 设置实例所属项目名称，可通过[DescribeProject](/document/api/651/78725)获取。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectName 实例所属项目名称。
+                     * @param _projectName 实例所属项目名称，可通过[DescribeProject](/document/api/651/78725)获取。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -225,13 +225,13 @@ namespace TencentCloud
                     bool m_cageIdHasBeenSet;
 
                     /**
-                     * 实例所属项目ID。不填为默认项目。
+                     * 实例所属项目ID，可通过[DescribeProject](/document/api/651/78725)获取。不填默认为0，表示默认项目。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 实例所属项目名称。
+                     * 实例所属项目名称，可通过[DescribeProject](/document/api/651/78725)获取。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;

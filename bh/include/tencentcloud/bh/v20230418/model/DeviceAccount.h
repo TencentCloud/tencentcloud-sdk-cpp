@@ -151,6 +151,48 @@ namespace TencentCloud
                      */
                     bool BoundPrivateKeyHasBeenSet() const;
 
+                    /**
+                     * 获取是否托管凭证, true-托管，false-未托管
+                     * @return BoundKubeconfig 是否托管凭证, true-托管，false-未托管
+                     * 
+                     */
+                    bool GetBoundKubeconfig() const;
+
+                    /**
+                     * 设置是否托管凭证, true-托管，false-未托管
+                     * @param _boundKubeconfig 是否托管凭证, true-托管，false-未托管
+                     * 
+                     */
+                    void SetBoundKubeconfig(const bool& _boundKubeconfig);
+
+                    /**
+                     * 判断参数 BoundKubeconfig 是否已赋值
+                     * @return BoundKubeconfig 是否已赋值
+                     * 
+                     */
+                    bool BoundKubeconfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否为k8s资产管理账号	
+                     * @return IsK8SManageAccount 是否为k8s资产管理账号	
+                     * 
+                     */
+                    bool GetIsK8SManageAccount() const;
+
+                    /**
+                     * 设置是否为k8s资产管理账号	
+                     * @param _isK8SManageAccount 是否为k8s资产管理账号	
+                     * 
+                     */
+                    void SetIsK8SManageAccount(const bool& _isK8SManageAccount);
+
+                    /**
+                     * 判断参数 IsK8SManageAccount 是否已赋值
+                     * @return IsK8SManageAccount 是否已赋值
+                     * 
+                     */
+                    bool IsK8SManageAccountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +224,18 @@ namespace TencentCloud
                      */
                     bool m_boundPrivateKey;
                     bool m_boundPrivateKeyHasBeenSet;
+
+                    /**
+                     * 是否托管凭证, true-托管，false-未托管
+                     */
+                    bool m_boundKubeconfig;
+                    bool m_boundKubeconfigHasBeenSet;
+
+                    /**
+                     * 是否为k8s资产管理账号	
+                     */
+                    bool m_isK8SManageAccount;
+                    bool m_isK8SManageAccountHasBeenSet;
 
                 };
             }

@@ -294,6 +294,48 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取实例的开始调度时间
+                     * @return StartScheduleTime 实例的开始调度时间
+                     * 
+                     */
+                    std::string GetStartScheduleTime() const;
+
+                    /**
+                     * 设置实例的开始调度时间
+                     * @param _startScheduleTime 实例的开始调度时间
+                     * 
+                     */
+                    void SetStartScheduleTime(const std::string& _startScheduleTime);
+
+                    /**
+                     * 判断参数 StartScheduleTime 是否已赋值
+                     * @return StartScheduleTime 是否已赋值
+                     * 
+                     */
+                    bool StartScheduleTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例状态的补充信息
+                     * @return Message 实例状态的补充信息
+                     * 
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 设置实例状态的补充信息
+                     * @param _message 实例状态的补充信息
+                     * 
+                     */
+                    void SetMessage(const std::string& _message);
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     * 
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -364,6 +406,18 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 实例的开始调度时间
+                     */
+                    std::string m_startScheduleTime;
+                    bool m_startScheduleTimeHasBeenSet;
+
+                    /**
+                     * 实例状态的补充信息
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

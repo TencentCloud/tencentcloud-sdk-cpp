@@ -72,7 +72,8 @@ Cluster::Cluster() :
     m_totalCpuHasBeenSet(false),
     m_totalMemHasBeenSet(false),
     m_runningCpuHasBeenSet(false),
-    m_runningMemHasBeenSet(false)
+    m_runningMemHasBeenSet(false),
+    m_setatsHasBeenSet(false)
 {
 }
 
@@ -675,6 +676,23 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_runningMemHasBeenSet = true;
     }
 
+    if (value.HasMember("Setats") && !value["Setats"].IsNull())
+    {
+        if (!value["Setats"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.Setats` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_setats.Deserialize(value["Setats"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_setatsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1140,6 +1158,15 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "RunningMem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runningMem, allocator);
+    }
+
+    if (m_setatsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Setats";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_setats.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1975,5 +2002,21 @@ void Cluster::SetRunningMem(const double& _runningMem)
 bool Cluster::RunningMemHasBeenSet() const
 {
     return m_runningMemHasBeenSet;
+}
+
+Setats Cluster::GetSetats() const
+{
+    return m_setats;
+}
+
+void Cluster::SetSetats(const Setats& _setats)
+{
+    m_setats = _setats;
+    m_setatsHasBeenSet = true;
+}
+
+bool Cluster::SetatsHasBeenSet() const
+{
+    return m_setatsHasBeenSet;
 }
 

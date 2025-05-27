@@ -192,6 +192,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ExportInstanceSlowQueriesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAuditServiceResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ResumeServerlessResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/GdnTaskInfo.h
   include/tencentcloud/cynosdb/v20190107/model/SaleZone.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcResponse.h
   include/tencentcloud/cynosdb/v20190107/model/StartCLSDeliveryRequest.h
@@ -629,6 +630,7 @@ set(cynosdb_src
   src/v20190107/model/ExportInstanceSlowQueriesRequest.cpp
   src/v20190107/model/ModifyAuditServiceResponse.cpp
   src/v20190107/model/ResumeServerlessResponse.cpp
+  src/v20190107/model/GdnTaskInfo.cpp
   src/v20190107/model/SaleZone.cpp
   src/v20190107/model/SwitchProxyVpcResponse.cpp
   src/v20190107/model/StartCLSDeliveryRequest.cpp

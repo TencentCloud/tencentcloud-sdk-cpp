@@ -23,7 +23,8 @@ using namespace std;
 ClbInstanceDetail::ClbInstanceDetail() :
     m_loadBalancerIdHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
-    m_listenersHasBeenSet(false)
+    m_listenersHasBeenSet(false),
+    m_forwardHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome ClbInstanceDetail::Deserialize(const rapidjson::Value &value
         m_listenersHasBeenSet = true;
     }
 
+    if (value.HasMember("Forward") && !value["Forward"].IsNull())
+    {
+        if (!value["Forward"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbInstanceDetail.Forward` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_forward = value["Forward"].GetInt64();
+        m_forwardHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void ClbInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_forwardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Forward";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forward, allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void ClbInstanceDetail::SetListeners(const vector<ClbListener>& _listeners)
 bool ClbInstanceDetail::ListenersHasBeenSet() const
 {
     return m_listenersHasBeenSet;
+}
+
+int64_t ClbInstanceDetail::GetForward() const
+{
+    return m_forward;
+}
+
+void ClbInstanceDetail::SetForward(const int64_t& _forward)
+{
+    m_forward = _forward;
+    m_forwardHasBeenSet = true;
+}
+
+bool ClbInstanceDetail::ForwardHasBeenSet() const
+{
+    return m_forwardHasBeenSet;
 }
 

@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdb/v20170320/model/AutoStrategy.h>
+#include <tencentcloud/cdb/v20170320/model/TimeIntervalStrategy.h>
+#include <tencentcloud/cdb/v20170320/model/PeriodStrategy.h>
 
 
 namespace TencentCloud
@@ -131,6 +133,48 @@ namespace TencentCloud
                      */
                     bool AutoStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取按时间段扩容策略
+                     * @return TimeIntervalStrategy 按时间段扩容策略
+                     * 
+                     */
+                    TimeIntervalStrategy GetTimeIntervalStrategy() const;
+
+                    /**
+                     * 设置按时间段扩容策略
+                     * @param _timeIntervalStrategy 按时间段扩容策略
+                     * 
+                     */
+                    void SetTimeIntervalStrategy(const TimeIntervalStrategy& _timeIntervalStrategy);
+
+                    /**
+                     * 判断参数 TimeIntervalStrategy 是否已赋值
+                     * @return TimeIntervalStrategy 是否已赋值
+                     * 
+                     */
+                    bool TimeIntervalStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取按周期扩容策略
+                     * @return PeriodStrategy 按周期扩容策略
+                     * 
+                     */
+                    PeriodStrategy GetPeriodStrategy() const;
+
+                    /**
+                     * 设置按周期扩容策略
+                     * @param _periodStrategy 按周期扩容策略
+                     * 
+                     */
+                    void SetPeriodStrategy(const PeriodStrategy& _periodStrategy);
+
+                    /**
+                     * 判断参数 PeriodStrategy 是否已赋值
+                     * @return PeriodStrategy 是否已赋值
+                     * 
+                     */
+                    bool PeriodStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -157,6 +201,18 @@ namespace TencentCloud
                      */
                     AutoStrategy m_autoStrategy;
                     bool m_autoStrategyHasBeenSet;
+
+                    /**
+                     * 按时间段扩容策略
+                     */
+                    TimeIntervalStrategy m_timeIntervalStrategy;
+                    bool m_timeIntervalStrategyHasBeenSet;
+
+                    /**
+                     * 按周期扩容策略
+                     */
+                    PeriodStrategy m_periodStrategy;
+                    bool m_periodStrategyHasBeenSet;
 
                 };
             }

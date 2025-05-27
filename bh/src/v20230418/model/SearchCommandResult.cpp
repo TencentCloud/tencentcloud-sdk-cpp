@@ -42,7 +42,8 @@ SearchCommandResult::SearchCommandResult() :
     m_deviceDepartmentIdHasBeenSet(false),
     m_deviceDepartmentNameHasBeenSet(false),
     m_sizeHasBeenSet(false),
-    m_signValueHasBeenSet(false)
+    m_signValueHasBeenSet(false),
+    m_deviceKindHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,16 @@ CoreInternalOutcome SearchCommandResult::Deserialize(const rapidjson::Value &val
         m_signValueHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceKind") && !value["DeviceKind"].IsNull())
+    {
+        if (!value["DeviceKind"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchCommandResult.DeviceKind` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceKind = string(value["DeviceKind"].GetString());
+        m_deviceKindHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +463,14 @@ void SearchCommandResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "SignValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_signValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceKindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceKind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceKind.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -807,5 +826,21 @@ void SearchCommandResult::SetSignValue(const string& _signValue)
 bool SearchCommandResult::SignValueHasBeenSet() const
 {
     return m_signValueHasBeenSet;
+}
+
+string SearchCommandResult::GetDeviceKind() const
+{
+    return m_deviceKind;
+}
+
+void SearchCommandResult::SetDeviceKind(const string& _deviceKind)
+{
+    m_deviceKind = _deviceKind;
+    m_deviceKindHasBeenSet = true;
+}
+
+bool SearchCommandResult::DeviceKindHasBeenSet() const
+{
+    return m_deviceKindHasBeenSet;
 }
 

@@ -34,7 +34,9 @@ DownloadLogByLineRequest::DownloadLogByLineRequest() :
     m_subJobIdHasBeenSet(false),
     m_jobTypeHasBeenSet(false),
     m_parseErrorTipHasBeenSet(false),
-    m_fileTypeHasBeenSet(false)
+    m_fileTypeHasBeenSet(false),
+    m_queryFileFlagHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,22 @@ string DownloadLogByLineRequest::ToJsonString() const
         string key = "FileType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fileType, allocator);
+    }
+
+    if (m_queryFileFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryFileFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryFileFlag, allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +357,38 @@ void DownloadLogByLineRequest::SetFileType(const int64_t& _fileType)
 bool DownloadLogByLineRequest::FileTypeHasBeenSet() const
 {
     return m_fileTypeHasBeenSet;
+}
+
+int64_t DownloadLogByLineRequest::GetQueryFileFlag() const
+{
+    return m_queryFileFlag;
+}
+
+void DownloadLogByLineRequest::SetQueryFileFlag(const int64_t& _queryFileFlag)
+{
+    m_queryFileFlag = _queryFileFlag;
+    m_queryFileFlagHasBeenSet = true;
+}
+
+bool DownloadLogByLineRequest::QueryFileFlagHasBeenSet() const
+{
+    return m_queryFileFlagHasBeenSet;
+}
+
+string DownloadLogByLineRequest::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void DownloadLogByLineRequest::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool DownloadLogByLineRequest::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 
 

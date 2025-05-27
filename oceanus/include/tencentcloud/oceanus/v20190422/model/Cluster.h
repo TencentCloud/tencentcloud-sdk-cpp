@@ -32,6 +32,7 @@
 #include <tencentcloud/oceanus/v20190422/model/Order.h>
 #include <tencentcloud/oceanus/v20190422/model/SqlGatewayItem.h>
 #include <tencentcloud/oceanus/v20190422/model/SubEks.h>
+#include <tencentcloud/oceanus/v20190422/model/Setats.h>
 
 
 namespace TencentCloud
@@ -181,15 +182,15 @@ namespace TencentCloud
                     bool CreatorUinHasBeenSet() const;
 
                     /**
-                     * 获取集群状态, 1 未初始化,，3 初始化中，2 运行中
-                     * @return Status 集群状态, 1 未初始化,，3 初始化中，2 运行中
+                     * 获取集群状态, 1 未初始化,3 初始化中，2 运行中
+                     * @return Status 集群状态, 1 未初始化,3 初始化中，2 运行中
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置集群状态, 1 未初始化,，3 初始化中，2 运行中
-                     * @param _status 集群状态, 1 未初始化,，3 初始化中，2 运行中
+                     * 设置集群状态, 1 未初始化,3 初始化中，2 运行中
+                     * @param _status 集群状态, 1 未初始化,3 初始化中，2 运行中
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -1266,6 +1267,31 @@ namespace TencentCloud
                      */
                     bool RunningMemHasBeenSet() const;
 
+                    /**
+                     * 获取setats集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Setats setats集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    Setats GetSetats() const;
+
+                    /**
+                     * 设置setats集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _setats setats集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSetats(const Setats& _setats);
+
+                    /**
+                     * 判断参数 Setats 是否已赋值
+                     * @return Setats 是否已赋值
+                     * 
+                     */
+                    bool SetatsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1305,7 +1331,7 @@ namespace TencentCloud
                     bool m_creatorUinHasBeenSet;
 
                     /**
-                     * 集群状态, 1 未初始化,，3 初始化中，2 运行中
+                     * 集群状态, 1 未初始化,3 初始化中，2 运行中
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -1609,6 +1635,13 @@ namespace TencentCloud
                      */
                     double m_runningMem;
                     bool m_runningMemHasBeenSet;
+
+                    /**
+                     * setats集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Setats m_setats;
+                    bool m_setatsHasBeenSet;
 
                 };
             }

@@ -34,6 +34,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/Attachment.h
   include/tencentcloud/ses/v20201002/model/Template.h
   include/tencentcloud/ses/v20201002/model/ListSendTasksRequest.h
+  include/tencentcloud/ses/v20201002/model/ListAddressUnsubscribeConfigResponse.h
   include/tencentcloud/ses/v20201002/model/GetSendEmailStatusResponse.h
   include/tencentcloud/ses/v20201002/model/TemplatesMetadata.h
   include/tencentcloud/ses/v20201002/model/ReceiverDetail.h
@@ -41,7 +42,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/EmailSender.h
   include/tencentcloud/ses/v20201002/model/BatchSendEmailResponse.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailIdentityRequest.h
-  include/tencentcloud/ses/v20201002/model/Volume.h
+  include/tencentcloud/ses/v20201002/model/ListAddressUnsubscribeConfigRequest.h
   include/tencentcloud/ses/v20201002/model/UpdateEmailIdentityRequest.h
   include/tencentcloud/ses/v20201002/model/GetEmailIdentityRequest.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailIdentityResponse.h
@@ -52,6 +53,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/ListReceiverDetailsResponse.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailTemplateResponse.h
   include/tencentcloud/ses/v20201002/model/UpdateCustomBlackListRequest.h
+  include/tencentcloud/ses/v20201002/model/AddressUnsubscribeConfigData.h
   include/tencentcloud/ses/v20201002/model/CreateEmailIdentityRequest.h
   include/tencentcloud/ses/v20201002/model/ListCustomBlacklistRequest.h
   include/tencentcloud/ses/v20201002/model/UpdateEmailSmtpPassWordRequest.h
@@ -74,6 +76,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/ListBlackEmailAddressResponse.h
   include/tencentcloud/ses/v20201002/model/GetSendEmailStatusRequest.h
   include/tencentcloud/ses/v20201002/model/Simple.h
+  include/tencentcloud/ses/v20201002/model/Volume.h
   include/tencentcloud/ses/v20201002/model/DeleteReceiverRequest.h
   include/tencentcloud/ses/v20201002/model/ListEmailIdentitiesResponse.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailTemplateRequest.h
@@ -118,6 +121,7 @@ set(ses_src
   src/v20201002/model/Attachment.cpp
   src/v20201002/model/Template.cpp
   src/v20201002/model/ListSendTasksRequest.cpp
+  src/v20201002/model/ListAddressUnsubscribeConfigResponse.cpp
   src/v20201002/model/GetSendEmailStatusResponse.cpp
   src/v20201002/model/TemplatesMetadata.cpp
   src/v20201002/model/ReceiverDetail.cpp
@@ -125,7 +129,7 @@ set(ses_src
   src/v20201002/model/EmailSender.cpp
   src/v20201002/model/BatchSendEmailResponse.cpp
   src/v20201002/model/DeleteEmailIdentityRequest.cpp
-  src/v20201002/model/Volume.cpp
+  src/v20201002/model/ListAddressUnsubscribeConfigRequest.cpp
   src/v20201002/model/UpdateEmailIdentityRequest.cpp
   src/v20201002/model/GetEmailIdentityRequest.cpp
   src/v20201002/model/DeleteEmailIdentityResponse.cpp
@@ -136,6 +140,7 @@ set(ses_src
   src/v20201002/model/ListReceiverDetailsResponse.cpp
   src/v20201002/model/DeleteEmailTemplateResponse.cpp
   src/v20201002/model/UpdateCustomBlackListRequest.cpp
+  src/v20201002/model/AddressUnsubscribeConfigData.cpp
   src/v20201002/model/CreateEmailIdentityRequest.cpp
   src/v20201002/model/ListCustomBlacklistRequest.cpp
   src/v20201002/model/UpdateEmailSmtpPassWordRequest.cpp
@@ -158,6 +163,7 @@ set(ses_src
   src/v20201002/model/ListBlackEmailAddressResponse.cpp
   src/v20201002/model/GetSendEmailStatusRequest.cpp
   src/v20201002/model/Simple.cpp
+  src/v20201002/model/Volume.cpp
   src/v20201002/model/DeleteReceiverRequest.cpp
   src/v20201002/model/ListEmailIdentitiesResponse.cpp
   src/v20201002/model/DeleteEmailTemplateRequest.cpp

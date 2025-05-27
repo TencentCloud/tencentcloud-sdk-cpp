@@ -153,6 +153,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeCloneListResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeClusterInfoRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeClusterInfoResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCpuExpandHistoryRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCpuExpandHistoryResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBFeaturesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBFeaturesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsRequest.h>
@@ -576,6 +578,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterInfoResponse> DescribeClusterInfoOutcome;
                 typedef std::future<DescribeClusterInfoOutcome> DescribeClusterInfoOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeClusterInfoRequest&, DescribeClusterInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCpuExpandHistoryResponse> DescribeCpuExpandHistoryOutcome;
+                typedef std::future<DescribeCpuExpandHistoryOutcome> DescribeCpuExpandHistoryOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeCpuExpandHistoryRequest&, DescribeCpuExpandHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCpuExpandHistoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBFeaturesResponse> DescribeDBFeaturesOutcome;
                 typedef std::future<DescribeDBFeaturesOutcome> DescribeDBFeaturesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDBFeaturesRequest&, DescribeDBFeaturesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBFeaturesAsyncHandler;
@@ -1506,6 +1511,15 @@ namespace TencentCloud
                 DescribeClusterInfoOutcome DescribeClusterInfo(const Model::DescribeClusterInfoRequest &request);
                 void DescribeClusterInfoAsync(const Model::DescribeClusterInfoRequest& request, const DescribeClusterInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterInfoOutcomeCallable DescribeClusterInfoCallable(const Model::DescribeClusterInfoRequest& request);
+
+                /**
+                 *本接口（DescribeCpuExpandHistory）用于查询扩容历史。
+                 * @param req DescribeCpuExpandHistoryRequest
+                 * @return DescribeCpuExpandHistoryOutcome
+                 */
+                DescribeCpuExpandHistoryOutcome DescribeCpuExpandHistory(const Model::DescribeCpuExpandHistoryRequest &request);
+                void DescribeCpuExpandHistoryAsync(const Model::DescribeCpuExpandHistoryRequest& request, const DescribeCpuExpandHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCpuExpandHistoryOutcomeCallable DescribeCpuExpandHistoryCallable(const Model::DescribeCpuExpandHistoryRequest& request);
 
                 /**
                  *本接口（DescribeDBFeatures）用于查询云数据库版本属性，包括是否支持数据库加密、数据库审计等功能。

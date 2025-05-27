@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回补录计划id
+                     * 获取返回补录计划名称_ok
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 返回补录计划id
+                     * @return Id 返回补录计划名称_ok
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置返回补录计划id
+                     * 设置返回补录计划名称_ok
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 返回补录计划id
+                     * @param _id 返回补录计划名称_ok
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回补录计划id
+                     * 返回补录计划名称_ok
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;

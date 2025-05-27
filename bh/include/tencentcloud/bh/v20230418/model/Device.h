@@ -490,6 +490,132 @@ namespace TencentCloud
                      */
                     bool IOAIdHasBeenSet() const;
 
+                    /**
+                     * 获取K8S集群托管维度。1-集群，2-命名空间，3-工作负载
+                     * @return ManageDimension K8S集群托管维度。1-集群，2-命名空间，3-工作负载
+                     * 
+                     */
+                    uint64_t GetManageDimension() const;
+
+                    /**
+                     * 设置K8S集群托管维度。1-集群，2-命名空间，3-工作负载
+                     * @param _manageDimension K8S集群托管维度。1-集群，2-命名空间，3-工作负载
+                     * 
+                     */
+                    void SetManageDimension(const uint64_t& _manageDimension);
+
+                    /**
+                     * 判断参数 ManageDimension 是否已赋值
+                     * @return ManageDimension 是否已赋值
+                     * 
+                     */
+                    bool ManageDimensionHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群托管账号id	
+                     * @return ManageAccountId K8S集群托管账号id	
+                     * 
+                     */
+                    uint64_t GetManageAccountId() const;
+
+                    /**
+                     * 设置K8S集群托管账号id	
+                     * @param _manageAccountId K8S集群托管账号id	
+                     * 
+                     */
+                    void SetManageAccountId(const uint64_t& _manageAccountId);
+
+                    /**
+                     * 判断参数 ManageAccountId 是否已赋值
+                     * @return ManageAccountId 是否已赋值
+                     * 
+                     */
+                    bool ManageAccountIdHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群命名空间	
+                     * @return Namespace K8S集群命名空间	
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置K8S集群命名空间	
+                     * @param _namespace K8S集群命名空间	
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群工作负载	
+                     * @return Workload K8S集群工作负载	
+                     * 
+                     */
+                    std::string GetWorkload() const;
+
+                    /**
+                     * 设置K8S集群工作负载	
+                     * @param _workload K8S集群工作负载	
+                     * 
+                     */
+                    void SetWorkload(const std::string& _workload);
+
+                    /**
+                     * 判断参数 Workload 是否已赋值
+                     * @return Workload 是否已赋值
+                     * 
+                     */
+                    bool WorkloadHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群pod已同步数量
+                     * @return SyncPodCount K8S集群pod已同步数量
+                     * 
+                     */
+                    uint64_t GetSyncPodCount() const;
+
+                    /**
+                     * 设置K8S集群pod已同步数量
+                     * @param _syncPodCount K8S集群pod已同步数量
+                     * 
+                     */
+                    void SetSyncPodCount(const uint64_t& _syncPodCount);
+
+                    /**
+                     * 判断参数 SyncPodCount 是否已赋值
+                     * @return SyncPodCount 是否已赋值
+                     * 
+                     */
+                    bool SyncPodCountHasBeenSet() const;
+
+                    /**
+                     * 获取K8S集群pod总数量	
+                     * @return TotalPodCount K8S集群pod总数量	
+                     * 
+                     */
+                    uint64_t GetTotalPodCount() const;
+
+                    /**
+                     * 设置K8S集群pod总数量	
+                     * @param _totalPodCount K8S集群pod总数量	
+                     * 
+                     */
+                    void SetTotalPodCount(const uint64_t& _totalPodCount);
+
+                    /**
+                     * 判断参数 TotalPodCount 是否已赋值
+                     * @return TotalPodCount 是否已赋值
+                     * 
+                     */
+                    bool TotalPodCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -617,6 +743,42 @@ namespace TencentCloud
                      */
                     int64_t m_iOAId;
                     bool m_iOAIdHasBeenSet;
+
+                    /**
+                     * K8S集群托管维度。1-集群，2-命名空间，3-工作负载
+                     */
+                    uint64_t m_manageDimension;
+                    bool m_manageDimensionHasBeenSet;
+
+                    /**
+                     * K8S集群托管账号id	
+                     */
+                    uint64_t m_manageAccountId;
+                    bool m_manageAccountIdHasBeenSet;
+
+                    /**
+                     * K8S集群命名空间	
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * K8S集群工作负载	
+                     */
+                    std::string m_workload;
+                    bool m_workloadHasBeenSet;
+
+                    /**
+                     * K8S集群pod已同步数量
+                     */
+                    uint64_t m_syncPodCount;
+                    bool m_syncPodCountHasBeenSet;
+
+                    /**
+                     * K8S集群pod总数量	
+                     */
+                    uint64_t m_totalPodCount;
+                    bool m_totalPodCountHasBeenSet;
 
                 };
             }

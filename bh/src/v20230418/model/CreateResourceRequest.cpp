@@ -33,7 +33,8 @@ CreateResourceRequest::CreateResourceRequest() :
     m_payModeHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_deployZoneHasBeenSet(false),
-    m_trialHasBeenSet(false)
+    m_trialHasBeenSet(false),
+    m_shareClbHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string CreateResourceRequest::ToJsonString() const
         string key = "Trial";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_trial, allocator);
+    }
+
+    if (m_shareClbHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareClb";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_shareClb, allocator);
     }
 
 
@@ -314,6 +323,22 @@ void CreateResourceRequest::SetTrial(const uint64_t& _trial)
 bool CreateResourceRequest::TrialHasBeenSet() const
 {
     return m_trialHasBeenSet;
+}
+
+uint64_t CreateResourceRequest::GetShareClb() const
+{
+    return m_shareClb;
+}
+
+void CreateResourceRequest::SetShareClb(const uint64_t& _shareClb)
+{
+    m_shareClb = _shareClb;
+    m_shareClbHasBeenSet = true;
+}
+
+bool CreateResourceRequest::ShareClbHasBeenSet() const
+{
+    return m_shareClbHasBeenSet;
 }
 
 

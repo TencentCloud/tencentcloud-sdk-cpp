@@ -903,6 +903,31 @@ DEFAULT: 其他来源
                      */
                     bool InstancePerReplicasHasBeenSet() const;
 
+                    /**
+                     * 获取用于监控查询的Source
+枚举值，部分情况下与CreateSource不同，通过该字段兼容
+                     * @return MonitorSource 用于监控查询的Source
+枚举值，部分情况下与CreateSource不同，通过该字段兼容
+                     * 
+                     */
+                    std::string GetMonitorSource() const;
+
+                    /**
+                     * 设置用于监控查询的Source
+枚举值，部分情况下与CreateSource不同，通过该字段兼容
+                     * @param _monitorSource 用于监控查询的Source
+枚举值，部分情况下与CreateSource不同，通过该字段兼容
+                     * 
+                     */
+                    void SetMonitorSource(const std::string& _monitorSource);
+
+                    /**
+                     * 判断参数 MonitorSource 是否已赋值
+                     * @return MonitorSource 是否已赋值
+                     * 
+                     */
+                    bool MonitorSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1142,6 +1167,13 @@ DEFAULT: 其他来源
                      */
                     std::string m_instancePerReplicas;
                     bool m_instancePerReplicasHasBeenSet;
+
+                    /**
+                     * 用于监控查询的Source
+枚举值，部分情况下与CreateSource不同，通过该字段兼容
+                     */
+                    std::string m_monitorSource;
+                    bool m_monitorSourceHasBeenSet;
 
                 };
             }
