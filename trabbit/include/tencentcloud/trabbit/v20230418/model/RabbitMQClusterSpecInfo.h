@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool PublicNetworkTpsHasBeenSet() const;
 
+                    /**
+                     * 获取实例对应的功能列表，true表示支持，false 表示不支持
+                     * @return Features 实例对应的功能列表，true表示支持，false 表示不支持
+                     * 
+                     */
+                    std::string GetFeatures() const;
+
+                    /**
+                     * 设置实例对应的功能列表，true表示支持，false 表示不支持
+                     * @param _features 实例对应的功能列表，true表示支持，false 表示不支持
+                     * 
+                     */
+                    void SetFeatures(const std::string& _features);
+
+                    /**
+                     * 判断参数 Features 是否已赋值
+                     * @return Features 是否已赋值
+                     * 
+                     */
+                    bool FeaturesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     uint64_t m_publicNetworkTps;
                     bool m_publicNetworkTpsHasBeenSet;
+
+                    /**
+                     * 实例对应的功能列表，true表示支持，false 表示不支持
+                     */
+                    std::string m_features;
+                    bool m_featuresHasBeenSet;
 
                 };
             }

@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdb/v20170320/model/AutoStrategy.h>
+#include <tencentcloud/cdb/v20170320/model/PeriodStrategy.h>
+#include <tencentcloud/cdb/v20170320/model/TimeIntervalStrategy.h>
 
 
 namespace TencentCloud
@@ -92,6 +94,34 @@ namespace TencentCloud
                      */
                     bool AutoStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取按周期扩容策略。
+                     * @return PeriodStrategy 按周期扩容策略。
+                     * 
+                     */
+                    PeriodStrategy GetPeriodStrategy() const;
+
+                    /**
+                     * 判断参数 PeriodStrategy 是否已赋值
+                     * @return PeriodStrategy 是否已赋值
+                     * 
+                     */
+                    bool PeriodStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取按时间段扩容策略
+                     * @return TimeIntervalStrategy 按时间段扩容策略
+                     * 
+                     */
+                    TimeIntervalStrategy GetTimeIntervalStrategy() const;
+
+                    /**
+                     * 判断参数 TimeIntervalStrategy 是否已赋值
+                     * @return TimeIntervalStrategy 是否已赋值
+                     * 
+                     */
+                    bool TimeIntervalStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -114,6 +144,18 @@ namespace TencentCloud
                      */
                     AutoStrategy m_autoStrategy;
                     bool m_autoStrategyHasBeenSet;
+
+                    /**
+                     * 按周期扩容策略。
+                     */
+                    PeriodStrategy m_periodStrategy;
+                    bool m_periodStrategyHasBeenSet;
+
+                    /**
+                     * 按时间段扩容策略
+                     */
+                    TimeIntervalStrategy m_timeIntervalStrategy;
+                    bool m_timeIntervalStrategyHasBeenSet;
 
                 };
             }

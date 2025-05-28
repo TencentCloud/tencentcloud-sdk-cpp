@@ -26,7 +26,8 @@ using namespace std;
 CreateAndroidInstanceWebShellResponse::CreateAndroidInstanceWebShellResponse() :
     m_keyHasBeenSet(false),
     m_addressHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_connectUrlHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome CreateAndroidInstanceWebShellResponse::Deserialize(const str
         m_zoneHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ConnectUrl") && !rsp["ConnectUrl"].IsNull())
+    {
+        if (!rsp["ConnectUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConnectUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_connectUrl = string(rsp["ConnectUrl"].GetString());
+        m_connectUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string CreateAndroidInstanceWebShellResponse::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connectUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ string CreateAndroidInstanceWebShellResponse::GetZone() const
 bool CreateAndroidInstanceWebShellResponse::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string CreateAndroidInstanceWebShellResponse::GetConnectUrl() const
+{
+    return m_connectUrl;
+}
+
+bool CreateAndroidInstanceWebShellResponse::ConnectUrlHasBeenSet() const
+{
+    return m_connectUrlHasBeenSet;
 }
 
 

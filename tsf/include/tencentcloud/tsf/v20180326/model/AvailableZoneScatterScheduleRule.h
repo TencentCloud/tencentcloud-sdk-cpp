@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/CommonOption.h>
 
 
 namespace TencentCloud
@@ -109,6 +110,27 @@ namespace TencentCloud
                      */
                     bool IsForceScheduleHasBeenSet() const;
 
+                    /**
+                     * 获取-
+                     * @return Paths -
+                     * 
+                     */
+                    std::vector<CommonOption> GetPaths() const;
+
+                    /**
+                     * 设置-
+                     * @param _paths -
+                     * 
+                     */
+                    void SetPaths(const std::vector<CommonOption>& _paths);
+
+                    /**
+                     * 判断参数 Paths 是否已赋值
+                     * @return Paths 是否已赋值
+                     * 
+                     */
+                    bool PathsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +150,12 @@ namespace TencentCloud
                      */
                     bool m_isForceSchedule;
                     bool m_isForceScheduleHasBeenSet;
+
+                    /**
+                     * -
+                     */
+                    std::vector<CommonOption> m_paths;
+                    bool m_pathsHasBeenSet;
 
                 };
             }

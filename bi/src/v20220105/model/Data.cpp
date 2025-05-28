@@ -21,7 +21,8 @@ using namespace TencentCloud::Bi::V20220105::Model;
 using namespace std;
 
 Data::Data() :
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_editUrlHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
         m_idHasBeenSet = true;
     }
 
+    if (value.HasMember("EditUrl") && !value["EditUrl"].IsNull())
+    {
+        if (!value["EditUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data.EditUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_editUrl = string(value["EditUrl"].GetString());
+        m_editUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void Data::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_editUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EditUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_editUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void Data::SetId(const int64_t& _id)
 bool Data::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string Data::GetEditUrl() const
+{
+    return m_editUrl;
+}
+
+void Data::SetEditUrl(const string& _editUrl)
+{
+    m_editUrl = _editUrl;
+    m_editUrlHasBeenSet = true;
+}
+
+bool Data::EditUrlHasBeenSet() const
+{
+    return m_editUrlHasBeenSet;
 }
 

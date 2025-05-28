@@ -44,7 +44,11 @@ Project::Project() :
     m_configListHasBeenSet(false),
     m_createdUserNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_ownerNameHasBeenSet(false)
+    m_ownerNameHasBeenSet(false),
+    m_normalCountHasBeenSet(false),
+    m_freeCountHasBeenSet(false),
+    m_adhocCountHasBeenSet(false),
+    m_briefingCountHasBeenSet(false)
 {
 }
 
@@ -306,6 +310,46 @@ CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
         m_ownerNameHasBeenSet = true;
     }
 
+    if (value.HasMember("NormalCount") && !value["NormalCount"].IsNull())
+    {
+        if (!value["NormalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.NormalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_normalCount = value["NormalCount"].GetInt64();
+        m_normalCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("FreeCount") && !value["FreeCount"].IsNull())
+    {
+        if (!value["FreeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.FreeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_freeCount = value["FreeCount"].GetInt64();
+        m_freeCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdhocCount") && !value["AdhocCount"].IsNull())
+    {
+        if (!value["AdhocCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.AdhocCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_adhocCount = value["AdhocCount"].GetInt64();
+        m_adhocCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("BriefingCount") && !value["BriefingCount"].IsNull())
+    {
+        if (!value["BriefingCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.BriefingCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_briefingCount = value["BriefingCount"].GetInt64();
+        m_briefingCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -515,6 +559,38 @@ void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "OwnerName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ownerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_normalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NormalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_normalCount, allocator);
+    }
+
+    if (m_freeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_freeCount, allocator);
+    }
+
+    if (m_adhocCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdhocCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_adhocCount, allocator);
+    }
+
+    if (m_briefingCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BriefingCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_briefingCount, allocator);
     }
 
 }
@@ -902,5 +978,69 @@ void Project::SetOwnerName(const string& _ownerName)
 bool Project::OwnerNameHasBeenSet() const
 {
     return m_ownerNameHasBeenSet;
+}
+
+int64_t Project::GetNormalCount() const
+{
+    return m_normalCount;
+}
+
+void Project::SetNormalCount(const int64_t& _normalCount)
+{
+    m_normalCount = _normalCount;
+    m_normalCountHasBeenSet = true;
+}
+
+bool Project::NormalCountHasBeenSet() const
+{
+    return m_normalCountHasBeenSet;
+}
+
+int64_t Project::GetFreeCount() const
+{
+    return m_freeCount;
+}
+
+void Project::SetFreeCount(const int64_t& _freeCount)
+{
+    m_freeCount = _freeCount;
+    m_freeCountHasBeenSet = true;
+}
+
+bool Project::FreeCountHasBeenSet() const
+{
+    return m_freeCountHasBeenSet;
+}
+
+int64_t Project::GetAdhocCount() const
+{
+    return m_adhocCount;
+}
+
+void Project::SetAdhocCount(const int64_t& _adhocCount)
+{
+    m_adhocCount = _adhocCount;
+    m_adhocCountHasBeenSet = true;
+}
+
+bool Project::AdhocCountHasBeenSet() const
+{
+    return m_adhocCountHasBeenSet;
+}
+
+int64_t Project::GetBriefingCount() const
+{
+    return m_briefingCount;
+}
+
+void Project::SetBriefingCount(const int64_t& _briefingCount)
+{
+    m_briefingCount = _briefingCount;
+    m_briefingCountHasBeenSet = true;
+}
+
+bool Project::BriefingCountHasBeenSet() const
+{
+    return m_briefingCountHasBeenSet;
 }
 

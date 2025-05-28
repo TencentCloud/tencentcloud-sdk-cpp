@@ -29,7 +29,8 @@ RabbitMQClusterSpecInfo::RabbitMQClusterSpecInfo() :
     m_maxConnNumHasBeenSet(false),
     m_maxUserNumHasBeenSet(false),
     m_maxBandWidthHasBeenSet(false),
-    m_publicNetworkTpsHasBeenSet(false)
+    m_publicNetworkTpsHasBeenSet(false),
+    m_featuresHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome RabbitMQClusterSpecInfo::Deserialize(const rapidjson::Value 
         m_publicNetworkTpsHasBeenSet = true;
     }
 
+    if (value.HasMember("Features") && !value["Features"].IsNull())
+    {
+        if (!value["Features"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterSpecInfo.Features` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_features = string(value["Features"].GetString());
+        m_featuresHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void RabbitMQClusterSpecInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "PublicNetworkTps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publicNetworkTps, allocator);
+    }
+
+    if (m_featuresHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Features";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_features.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void RabbitMQClusterSpecInfo::SetPublicNetworkTps(const uint64_t& _publicNetwork
 bool RabbitMQClusterSpecInfo::PublicNetworkTpsHasBeenSet() const
 {
     return m_publicNetworkTpsHasBeenSet;
+}
+
+string RabbitMQClusterSpecInfo::GetFeatures() const
+{
+    return m_features;
+}
+
+void RabbitMQClusterSpecInfo::SetFeatures(const string& _features)
+{
+    m_features = _features;
+    m_featuresHasBeenSet = true;
+}
+
+bool RabbitMQClusterSpecInfo::FeaturesHasBeenSet() const
+{
+    return m_featuresHasBeenSet;
 }
 

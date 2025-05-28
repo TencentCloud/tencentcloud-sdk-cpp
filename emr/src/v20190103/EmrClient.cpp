@@ -1072,6 +1072,49 @@ EmrClient::DescribeGlobalConfigOutcomeCallable EmrClient::DescribeGlobalConfigCa
     return task->get_future();
 }
 
+EmrClient::DescribeGroupsSTDOutcome EmrClient::DescribeGroupsSTD(const DescribeGroupsSTDRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupsSTD");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupsSTDResponse rsp = DescribeGroupsSTDResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupsSTDOutcome(rsp);
+        else
+            return DescribeGroupsSTDOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupsSTDOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeGroupsSTDAsync(const DescribeGroupsSTDRequest& request, const DescribeGroupsSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupsSTD(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeGroupsSTDOutcomeCallable EmrClient::DescribeGroupsSTDCallable(const DescribeGroupsSTDRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupsSTDOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupsSTD(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeHBaseTableOverviewOutcome EmrClient::DescribeHBaseTableOverview(const DescribeHBaseTableOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHBaseTableOverview");

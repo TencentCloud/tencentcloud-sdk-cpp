@@ -23,7 +23,8 @@ using namespace std;
 AvailableZoneScatterScheduleRule::AvailableZoneScatterScheduleRule() :
     m_scatterDimensionHasBeenSet(false),
     m_maxUnbalanceQuantityHasBeenSet(false),
-    m_isForceScheduleHasBeenSet(false)
+    m_isForceScheduleHasBeenSet(false),
+    m_pathsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,26 @@ CoreInternalOutcome AvailableZoneScatterScheduleRule::Deserialize(const rapidjso
         m_isForceScheduleHasBeenSet = true;
     }
 
+    if (value.HasMember("Paths") && !value["Paths"].IsNull())
+    {
+        if (!value["Paths"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AvailableZoneScatterScheduleRule.Paths` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Paths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CommonOption item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_paths.push_back(item);
+        }
+        m_pathsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +112,21 @@ void AvailableZoneScatterScheduleRule::ToJsonObject(rapidjson::Value &value, rap
         string key = "IsForceSchedule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isForceSchedule, allocator);
+    }
+
+    if (m_pathsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Paths";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_paths.begin(); itr != m_paths.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -142,5 +178,21 @@ void AvailableZoneScatterScheduleRule::SetIsForceSchedule(const bool& _isForceSc
 bool AvailableZoneScatterScheduleRule::IsForceScheduleHasBeenSet() const
 {
     return m_isForceScheduleHasBeenSet;
+}
+
+vector<CommonOption> AvailableZoneScatterScheduleRule::GetPaths() const
+{
+    return m_paths;
+}
+
+void AvailableZoneScatterScheduleRule::SetPaths(const vector<CommonOption>& _paths)
+{
+    m_paths = _paths;
+    m_pathsHasBeenSet = true;
+}
+
+bool AvailableZoneScatterScheduleRule::PathsHasBeenSet() const
+{
+    return m_pathsHasBeenSet;
 }
 

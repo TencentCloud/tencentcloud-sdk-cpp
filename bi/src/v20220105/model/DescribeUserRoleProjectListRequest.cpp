@@ -28,7 +28,9 @@ DescribeUserRoleProjectListRequest::DescribeUserRoleProjectListRequest() :
     m_projectIdHasBeenSet(false),
     m_isOnlyBindAppUserHasBeenSet(false),
     m_allPageHasBeenSet(false),
-    m_roleCodeHasBeenSet(false)
+    m_roleCodeHasBeenSet(false),
+    m_userIdListHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,27 @@ string DescribeUserRoleProjectListRequest::ToJsonString() const
         string key = "RoleCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_roleCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userIdList.begin(); itr != m_userIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +212,38 @@ void DescribeUserRoleProjectListRequest::SetRoleCode(const string& _roleCode)
 bool DescribeUserRoleProjectListRequest::RoleCodeHasBeenSet() const
 {
     return m_roleCodeHasBeenSet;
+}
+
+vector<string> DescribeUserRoleProjectListRequest::GetUserIdList() const
+{
+    return m_userIdList;
+}
+
+void DescribeUserRoleProjectListRequest::SetUserIdList(const vector<string>& _userIdList)
+{
+    m_userIdList = _userIdList;
+    m_userIdListHasBeenSet = true;
+}
+
+bool DescribeUserRoleProjectListRequest::UserIdListHasBeenSet() const
+{
+    return m_userIdListHasBeenSet;
+}
+
+string DescribeUserRoleProjectListRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void DescribeUserRoleProjectListRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool DescribeUserRoleProjectListRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
 }
 
 

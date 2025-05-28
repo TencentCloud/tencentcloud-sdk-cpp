@@ -71,6 +71,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeGlobalConfigRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeGlobalConfigResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeGroupsSTDRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeGroupsSTDResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHDFSStorageInfoRequest.h>
@@ -277,6 +279,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGlobalConfigResponse> DescribeGlobalConfigOutcome;
                 typedef std::future<DescribeGlobalConfigOutcome> DescribeGlobalConfigOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeGlobalConfigRequest&, DescribeGlobalConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGroupsSTDResponse> DescribeGroupsSTDOutcome;
+                typedef std::future<DescribeGroupsSTDOutcome> DescribeGroupsSTDOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeGroupsSTDRequest&, DescribeGroupsSTDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupsSTDAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHBaseTableOverviewResponse> DescribeHBaseTableOverviewOutcome;
                 typedef std::future<DescribeHBaseTableOverviewOutcome> DescribeHBaseTableOverviewOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeHBaseTableOverviewRequest&, DescribeHBaseTableOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHBaseTableOverviewAsyncHandler;
@@ -678,6 +683,15 @@ namespace TencentCloud
                 DescribeGlobalConfigOutcome DescribeGlobalConfig(const Model::DescribeGlobalConfigRequest &request);
                 void DescribeGlobalConfigAsync(const Model::DescribeGlobalConfigRequest& request, const DescribeGlobalConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGlobalConfigOutcomeCallable DescribeGlobalConfigCallable(const Model::DescribeGlobalConfigRequest& request);
+
+                /**
+                 *查询用户组
+                 * @param req DescribeGroupsSTDRequest
+                 * @return DescribeGroupsSTDOutcome
+                 */
+                DescribeGroupsSTDOutcome DescribeGroupsSTD(const Model::DescribeGroupsSTDRequest &request);
+                void DescribeGroupsSTDAsync(const Model::DescribeGroupsSTDRequest& request, const DescribeGroupsSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGroupsSTDOutcomeCallable DescribeGroupsSTDCallable(const Model::DescribeGroupsSTDRequest& request);
 
                 /**
                  *获取Hbase表级监控数据概览接口

@@ -26,7 +26,9 @@ using namespace std;
 DescribeCPUExpandStrategyInfoResponse::DescribeCPUExpandStrategyInfoResponse() :
     m_typeHasBeenSet(false),
     m_expandCpuHasBeenSet(false),
-    m_autoStrategyHasBeenSet(false)
+    m_autoStrategyHasBeenSet(false),
+    m_periodStrategyHasBeenSet(false),
+    m_timeIntervalStrategyHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,40 @@ CoreInternalOutcome DescribeCPUExpandStrategyInfoResponse::Deserialize(const str
         m_autoStrategyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PeriodStrategy") && !rsp["PeriodStrategy"].IsNull())
+    {
+        if (!rsp["PeriodStrategy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeriodStrategy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_periodStrategy.Deserialize(rsp["PeriodStrategy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_periodStrategyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TimeIntervalStrategy") && !rsp["TimeIntervalStrategy"].IsNull())
+    {
+        if (!rsp["TimeIntervalStrategy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TimeIntervalStrategy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_timeIntervalStrategy.Deserialize(rsp["TimeIntervalStrategy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_timeIntervalStrategyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +170,24 @@ string DescribeCPUExpandStrategyInfoResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_autoStrategy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_periodStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeriodStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_periodStrategy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_timeIntervalStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeIntervalStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_timeIntervalStrategy.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +230,26 @@ AutoStrategy DescribeCPUExpandStrategyInfoResponse::GetAutoStrategy() const
 bool DescribeCPUExpandStrategyInfoResponse::AutoStrategyHasBeenSet() const
 {
     return m_autoStrategyHasBeenSet;
+}
+
+PeriodStrategy DescribeCPUExpandStrategyInfoResponse::GetPeriodStrategy() const
+{
+    return m_periodStrategy;
+}
+
+bool DescribeCPUExpandStrategyInfoResponse::PeriodStrategyHasBeenSet() const
+{
+    return m_periodStrategyHasBeenSet;
+}
+
+TimeIntervalStrategy DescribeCPUExpandStrategyInfoResponse::GetTimeIntervalStrategy() const
+{
+    return m_timeIntervalStrategy;
+}
+
+bool DescribeCPUExpandStrategyInfoResponse::TimeIntervalStrategyHasBeenSet() const
+{
+    return m_timeIntervalStrategyHasBeenSet;
 }
 
 

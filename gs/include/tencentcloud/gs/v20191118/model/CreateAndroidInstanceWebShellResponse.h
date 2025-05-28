@@ -85,6 +85,20 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取访问链接，可以直接使用此链接访问 WebShell
+                     * @return ConnectUrl 访问链接，可以直接使用此链接访问 WebShell
+                     * 
+                     */
+                    std::string GetConnectUrl() const;
+
+                    /**
+                     * 判断参数 ConnectUrl 是否已赋值
+                     * @return ConnectUrl 是否已赋值
+                     * 
+                     */
+                    bool ConnectUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 访问链接，可以直接使用此链接访问 WebShell
+                     */
+                    std::string m_connectUrl;
+                    bool m_connectUrlHasBeenSet;
 
                 };
             }

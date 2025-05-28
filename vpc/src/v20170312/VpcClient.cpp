@@ -728,6 +728,49 @@ VpcClient::AssociateDirectConnectGatewayNatGatewayOutcomeCallable VpcClient::Ass
     return task->get_future();
 }
 
+VpcClient::AssociateHaVipInstanceOutcome VpcClient::AssociateHaVipInstance(const AssociateHaVipInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateHaVipInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateHaVipInstanceResponse rsp = AssociateHaVipInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateHaVipInstanceOutcome(rsp);
+        else
+            return AssociateHaVipInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateHaVipInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AssociateHaVipInstanceAsync(const AssociateHaVipInstanceRequest& request, const AssociateHaVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateHaVipInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AssociateHaVipInstanceOutcomeCallable VpcClient::AssociateHaVipInstanceCallable(const AssociateHaVipInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateHaVipInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateHaVipInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::AssociateIPv6AddressOutcome VpcClient::AssociateIPv6Address(const AssociateIPv6AddressRequest &request)
 {
     auto outcome = MakeRequest(request, "AssociateIPv6Address");
@@ -11514,6 +11557,49 @@ VpcClient::DisassociateDirectConnectGatewayNatGatewayOutcomeCallable VpcClient::
         [this, request]()
         {
             return this->DisassociateDirectConnectGatewayNatGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DisassociateHaVipInstanceOutcome VpcClient::DisassociateHaVipInstance(const DisassociateHaVipInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateHaVipInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateHaVipInstanceResponse rsp = DisassociateHaVipInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateHaVipInstanceOutcome(rsp);
+        else
+            return DisassociateHaVipInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateHaVipInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DisassociateHaVipInstanceAsync(const DisassociateHaVipInstanceRequest& request, const DisassociateHaVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateHaVipInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DisassociateHaVipInstanceOutcomeCallable VpcClient::DisassociateHaVipInstanceCallable(const DisassociateHaVipInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateHaVipInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateHaVipInstance(request);
         }
     );
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_BI_V20220105_MODEL_DATA_H_
-#define TENCENTCLOUD_BI_V20220105_MODEL_DATA_H_
+#ifndef TENCENTCLOUD_EMR_V20190103_MODEL_FILTER_H_
+#define TENCENTCLOUD_EMR_V20190103_MODEL_FILTER_H_
 
 #include <string>
 #include <vector>
@@ -28,84 +28,79 @@
 
 namespace TencentCloud
 {
-    namespace Bi
+    namespace Emr
     {
-        namespace V20220105
+        namespace V20190103
         {
             namespace Model
             {
                 /**
-                * 数据
+                * 键值对过滤器，用于条件过滤查询.
                 */
-                class Data : public AbstractModel
+                class Filter : public AbstractModel
                 {
                 public:
-                    Data();
-                    ~Data() = default;
+                    Filter();
+                    ~Filter() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取项目Id
-                     * @return Id 项目Id
+                     * 获取需要过滤的字段。
+                     * @return Name 需要过滤的字段。
                      * 
                      */
-                    int64_t GetId() const;
+                    std::string GetName() const;
 
                     /**
-                     * 设置项目Id
-                     * @param _id 项目Id
+                     * 设置需要过滤的字段。
+                     * @param _name 需要过滤的字段。
                      * 
                      */
-                    void SetId(const int64_t& _id);
+                    void SetName(const std::string& _name);
 
                     /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
                      * 
                      */
-                    bool IdHasBeenSet() const;
+                    bool NameHasBeenSet() const;
 
                     /**
-                     * 获取url
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EditUrl url
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取字段的过滤值。
+                     * @return Values 字段的过滤值。
                      * 
                      */
-                    std::string GetEditUrl() const;
+                    std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置url
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _editUrl url
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置字段的过滤值。
+                     * @param _values 字段的过滤值。
                      * 
                      */
-                    void SetEditUrl(const std::string& _editUrl);
+                    void SetValues(const std::vector<std::string>& _values);
 
                     /**
-                     * 判断参数 EditUrl 是否已赋值
-                     * @return EditUrl 是否已赋值
+                     * 判断参数 Values 是否已赋值
+                     * @return Values 是否已赋值
                      * 
                      */
-                    bool EditUrlHasBeenSet() const;
+                    bool ValuesHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 项目Id
+                     * 需要过滤的字段。
                      */
-                    int64_t m_id;
-                    bool m_idHasBeenSet;
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                     /**
-                     * url
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 字段的过滤值。
                      */
-                    std::string m_editUrl;
-                    bool m_editUrlHasBeenSet;
+                    std::vector<std::string> m_values;
+                    bool m_valuesHasBeenSet;
 
                 };
             }
@@ -113,4 +108,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_BI_V20220105_MODEL_DATA_H_
+#endif // !TENCENTCLOUD_EMR_V20190103_MODEL_FILTER_H_

@@ -168,6 +168,48 @@ namespace TencentCloud
                      */
                     bool RoleCodeHasBeenSet() const;
 
+                    /**
+                     * 获取用户id列表
+                     * @return UserIdList 用户id列表
+                     * 
+                     */
+                    std::vector<std::string> GetUserIdList() const;
+
+                    /**
+                     * 设置用户id列表
+                     * @param _userIdList 用户id列表
+                     * 
+                     */
+                    void SetUserIdList(const std::vector<std::string>& _userIdList);
+
+                    /**
+                     * 判断参数 UserIdList 是否已赋值
+                     * @return UserIdList 是否已赋值
+                     * 
+                     */
+                    bool UserIdListHasBeenSet() const;
+
+                    /**
+                     * 获取搜索关键词
+                     * @return Keyword 搜索关键词
+                     * 
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置搜索关键词
+                     * @param _keyword 搜索关键词
+                     * 
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     * 
+                     */
+                    bool KeywordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +247,18 @@ namespace TencentCloud
                      */
                     std::string m_roleCode;
                     bool m_roleCodeHasBeenSet;
+
+                    /**
+                     * 用户id列表
+                     */
+                    std::vector<std::string> m_userIdList;
+                    bool m_userIdListHasBeenSet;
+
+                    /**
+                     * 搜索关键词
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
 
                 };
             }

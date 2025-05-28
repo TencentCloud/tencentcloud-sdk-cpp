@@ -471,6 +471,27 @@ namespace TencentCloud
                      */
                     bool IsolatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取Serverless 扩展字段
+                     * @return ServerlessExt Serverless 扩展字段
+                     * 
+                     */
+                    std::string GetServerlessExt() const;
+
+                    /**
+                     * 设置Serverless 扩展字段
+                     * @param _serverlessExt Serverless 扩展字段
+                     * 
+                     */
+                    void SetServerlessExt(const std::string& _serverlessExt);
+
+                    /**
+                     * 判断参数 ServerlessExt 是否已赋值
+                     * @return ServerlessExt 是否已赋值
+                     * 
+                     */
+                    bool ServerlessExtHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,6 +614,12 @@ namespace TencentCloud
                      */
                     uint64_t m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;
+
+                    /**
+                     * Serverless 扩展字段
+                     */
+                    std::string m_serverlessExt;
+                    bool m_serverlessExtHasBeenSet;
 
                 };
             }

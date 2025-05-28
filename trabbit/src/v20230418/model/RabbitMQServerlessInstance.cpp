@@ -40,7 +40,8 @@ RabbitMQServerlessInstance::RabbitMQServerlessInstance() :
     m_createTimeHasBeenSet(false),
     m_nodeCountHasBeenSet(false),
     m_maxStorageHasBeenSet(false),
-    m_isolatedTimeHasBeenSet(false)
+    m_isolatedTimeHasBeenSet(false),
+    m_serverlessExtHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,16 @@ CoreInternalOutcome RabbitMQServerlessInstance::Deserialize(const rapidjson::Val
         m_isolatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ServerlessExt") && !value["ServerlessExt"].IsNull())
+    {
+        if (!value["ServerlessExt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQServerlessInstance.ServerlessExt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverlessExt = string(value["ServerlessExt"].GetString());
+        m_serverlessExtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +442,14 @@ void RabbitMQServerlessInstance::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "IsolatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isolatedTime, allocator);
+    }
+
+    if (m_serverlessExtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerlessExt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverlessExt.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -754,5 +773,21 @@ void RabbitMQServerlessInstance::SetIsolatedTime(const uint64_t& _isolatedTime)
 bool RabbitMQServerlessInstance::IsolatedTimeHasBeenSet() const
 {
     return m_isolatedTimeHasBeenSet;
+}
+
+string RabbitMQServerlessInstance::GetServerlessExt() const
+{
+    return m_serverlessExt;
+}
+
+void RabbitMQServerlessInstance::SetServerlessExt(const string& _serverlessExt)
+{
+    m_serverlessExt = _serverlessExt;
+    m_serverlessExtHasBeenSet = true;
+}
+
+bool RabbitMQServerlessInstance::ServerlessExtHasBeenSet() const
+{
+    return m_serverlessExtHasBeenSet;
 }
 

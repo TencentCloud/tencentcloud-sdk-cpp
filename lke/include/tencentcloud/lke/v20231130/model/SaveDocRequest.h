@@ -248,15 +248,15 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool AttrRangeHasBeenSet() const;
 
                     /**
-                     * 获取来源(0 源文件导入 1 网页导入)
-                     * @return Source 来源(0 源文件导入 1 网页导入)
+                     * 获取来源（0 从本地文档导入），默认值为0
+                     * @return Source 来源（0 从本地文档导入），默认值为0
                      * 
                      */
                     int64_t GetSource() const;
 
                     /**
-                     * 设置来源(0 源文件导入 1 网页导入)
-                     * @param _source 来源(0 源文件导入 1 网页导入)
+                     * 设置来源（0 从本地文档导入），默认值为0
+                     * @param _source 来源（0 从本地文档导入），默认值为0
                      * 
                      */
                     void SetSource(const int64_t& _source);
@@ -269,15 +269,15 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取网页(或自定义链接)地址
-                     * @return WebUrl 网页(或自定义链接)地址
+                     * 获取自定义链接地址, IsRefer为true的时候，该值才有意义
+                     * @return WebUrl 自定义链接地址, IsRefer为true的时候，该值才有意义
                      * 
                      */
                     std::string GetWebUrl() const;
 
                     /**
-                     * 设置网页(或自定义链接)地址
-                     * @param _webUrl 网页(或自定义链接)地址
+                     * 设置自定义链接地址, IsRefer为true的时候，该值才有意义
+                     * @param _webUrl 自定义链接地址, IsRefer为true的时候，该值才有意义
                      * 
                      */
                     void SetWebUrl(const std::string& _webUrl);
@@ -500,13 +500,13 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool m_attrRangeHasBeenSet;
 
                     /**
-                     * 来源(0 源文件导入 1 网页导入)
+                     * 来源（0 从本地文档导入），默认值为0
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 网页(或自定义链接)地址
+                     * 自定义链接地址, IsRefer为true的时候，该值才有意义
                      */
                     std::string m_webUrl;
                     bool m_webUrlHasBeenSet;

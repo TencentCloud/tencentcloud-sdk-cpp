@@ -412,6 +412,27 @@ namespace TencentCloud
                      */
                     bool LicenseTypeHasBeenSet() const;
 
+                    /**
+                     * 获取授权的层级：Master 主授权；Child 子授权/增强型授权
+                     * @return LicenseLevel 授权的层级：Master 主授权；Child 子授权/增强型授权
+                     * 
+                     */
+                    std::string GetLicenseLevel() const;
+
+                    /**
+                     * 设置授权的层级：Master 主授权；Child 子授权/增强型授权
+                     * @param _licenseLevel 授权的层级：Master 主授权；Child 子授权/增强型授权
+                     * 
+                     */
+                    void SetLicenseLevel(const std::string& _licenseLevel);
+
+                    /**
+                     * 判断参数 LicenseLevel 是否已赋值
+                     * @return LicenseLevel 是否已赋值
+                     * 
+                     */
+                    bool LicenseLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -517,6 +538,12 @@ namespace TencentCloud
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;
+
+                    /**
+                     * 授权的层级：Master 主授权；Child 子授权/增强型授权
+                     */
+                    std::string m_licenseLevel;
+                    bool m_licenseLevelHasBeenSet;
 
                 };
             }

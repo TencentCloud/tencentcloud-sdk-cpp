@@ -643,6 +643,106 @@ namespace TencentCloud
                      */
                     bool OwnerNameHasBeenSet() const;
 
+                    /**
+                     * 获取仪表盘页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NormalCount 仪表盘页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetNormalCount() const;
+
+                    /**
+                     * 设置仪表盘页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _normalCount 仪表盘页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNormalCount(const int64_t& _normalCount);
+
+                    /**
+                     * 判断参数 NormalCount 是否已赋值
+                     * @return NormalCount 是否已赋值
+                     * 
+                     */
+                    bool NormalCountHasBeenSet() const;
+
+                    /**
+                     * 获取自由画布页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FreeCount 自由画布页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFreeCount() const;
+
+                    /**
+                     * 设置自由画布页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _freeCount 自由画布页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFreeCount(const int64_t& _freeCount);
+
+                    /**
+                     * 判断参数 FreeCount 是否已赋值
+                     * @return FreeCount 是否已赋值
+                     * 
+                     */
+                    bool FreeCountHasBeenSet() const;
+
+                    /**
+                     * 获取即席分析页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdhocCount 即席分析页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAdhocCount() const;
+
+                    /**
+                     * 设置即席分析页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _adhocCount 即席分析页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAdhocCount(const int64_t& _adhocCount);
+
+                    /**
+                     * 判断参数 AdhocCount 是否已赋值
+                     * @return AdhocCount 是否已赋值
+                     * 
+                     */
+                    bool AdhocCountHasBeenSet() const;
+
+                    /**
+                     * 获取简报页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BriefingCount 简报页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBriefingCount() const;
+
+                    /**
+                     * 设置简报页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _briefingCount 简报页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBriefingCount(const int64_t& _briefingCount);
+
+                    /**
+                     * 判断参数 BriefingCount 是否已赋值
+                     * @return BriefingCount 是否已赋值
+                     * 
+                     */
+                    bool BriefingCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -811,6 +911,34 @@ namespace TencentCloud
                      */
                     std::string m_ownerName;
                     bool m_ownerNameHasBeenSet;
+
+                    /**
+                     * 仪表盘页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_normalCount;
+                    bool m_normalCountHasBeenSet;
+
+                    /**
+                     * 自由画布页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_freeCount;
+                    bool m_freeCountHasBeenSet;
+
+                    /**
+                     * 即席分析页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_adhocCount;
+                    bool m_adhocCountHasBeenSet;
+
+                    /**
+                     * 简报页面数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_briefingCount;
+                    bool m_briefingCountHasBeenSet;
 
                 };
             }

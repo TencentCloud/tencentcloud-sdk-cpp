@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_BI_V20220105_MODEL_DATA_H_
-#define TENCENTCLOUD_BI_V20220105_MODEL_DATA_H_
+#ifndef TENCENTCLOUD_EMR_V20190103_MODEL_ORDER_H_
+#define TENCENTCLOUD_EMR_V20190103_MODEL_ORDER_H_
 
 #include <string>
 #include <vector>
@@ -28,84 +28,79 @@
 
 namespace TencentCloud
 {
-    namespace Bi
+    namespace Emr
     {
-        namespace V20220105
+        namespace V20190103
         {
             namespace Model
             {
                 /**
-                * 数据
+                * 描述排序，用于排序.
                 */
-                class Data : public AbstractModel
+                class Order : public AbstractModel
                 {
                 public:
-                    Data();
-                    ~Data() = default;
+                    Order();
+                    ~Order() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取项目Id
-                     * @return Id 项目Id
+                     * 获取排序字段。
+                     * @return Name 排序字段。
                      * 
                      */
-                    int64_t GetId() const;
+                    std::string GetName() const;
 
                     /**
-                     * 设置项目Id
-                     * @param _id 项目Id
+                     * 设置排序字段。
+                     * @param _name 排序字段。
                      * 
                      */
-                    void SetId(const int64_t& _id);
+                    void SetName(const std::string& _name);
 
                     /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
                      * 
                      */
-                    bool IdHasBeenSet() const;
+                    bool NameHasBeenSet() const;
 
                     /**
-                     * 获取url
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EditUrl url
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Desc or Asc。
+                     * @return Direction Desc or Asc。
                      * 
                      */
-                    std::string GetEditUrl() const;
+                    std::string GetDirection() const;
 
                     /**
-                     * 设置url
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _editUrl url
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置Desc or Asc。
+                     * @param _direction Desc or Asc。
                      * 
                      */
-                    void SetEditUrl(const std::string& _editUrl);
+                    void SetDirection(const std::string& _direction);
 
                     /**
-                     * 判断参数 EditUrl 是否已赋值
-                     * @return EditUrl 是否已赋值
+                     * 判断参数 Direction 是否已赋值
+                     * @return Direction 是否已赋值
                      * 
                      */
-                    bool EditUrlHasBeenSet() const;
+                    bool DirectionHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 项目Id
+                     * 排序字段。
                      */
-                    int64_t m_id;
-                    bool m_idHasBeenSet;
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                     /**
-                     * url
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Desc or Asc。
                      */
-                    std::string m_editUrl;
-                    bool m_editUrlHasBeenSet;
+                    std::string m_direction;
+                    bool m_directionHasBeenSet;
 
                 };
             }
@@ -113,4 +108,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_BI_V20220105_MODEL_DATA_H_
+#endif // !TENCENTCLOUD_EMR_V20190103_MODEL_ORDER_H_

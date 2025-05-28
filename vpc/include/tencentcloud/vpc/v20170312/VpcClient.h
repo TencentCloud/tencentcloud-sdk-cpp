@@ -55,6 +55,8 @@
 #include <tencentcloud/vpc/v20170312/model/AssociateDhcpIpWithAddressIpResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateDirectConnectGatewayNatGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateDirectConnectGatewayNatGatewayResponse.h>
+#include <tencentcloud/vpc/v20170312/model/AssociateHaVipInstanceRequest.h>
+#include <tencentcloud/vpc/v20170312/model/AssociateHaVipInstanceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateIPv6AddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateIPv6AddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateInstancesToCcnRouteTableRequest.h>
@@ -557,6 +559,8 @@
 #include <tencentcloud/vpc/v20170312/model/DisassociateDhcpIpWithAddressIpResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateDirectConnectGatewayNatGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateDirectConnectGatewayNatGatewayResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DisassociateHaVipInstanceRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DisassociateHaVipInstanceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateIPv6AddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateIPv6AddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateNatGatewayAddressRequest.h>
@@ -907,6 +911,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssociateDirectConnectGatewayNatGatewayResponse> AssociateDirectConnectGatewayNatGatewayOutcome;
                 typedef std::future<AssociateDirectConnectGatewayNatGatewayOutcome> AssociateDirectConnectGatewayNatGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AssociateDirectConnectGatewayNatGatewayRequest&, AssociateDirectConnectGatewayNatGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateDirectConnectGatewayNatGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssociateHaVipInstanceResponse> AssociateHaVipInstanceOutcome;
+                typedef std::future<AssociateHaVipInstanceOutcome> AssociateHaVipInstanceOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::AssociateHaVipInstanceRequest&, AssociateHaVipInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateHaVipInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateIPv6AddressResponse> AssociateIPv6AddressOutcome;
                 typedef std::future<AssociateIPv6AddressOutcome> AssociateIPv6AddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AssociateIPv6AddressRequest&, AssociateIPv6AddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateIPv6AddressAsyncHandler;
@@ -1660,6 +1667,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisassociateDirectConnectGatewayNatGatewayResponse> DisassociateDirectConnectGatewayNatGatewayOutcome;
                 typedef std::future<DisassociateDirectConnectGatewayNatGatewayOutcome> DisassociateDirectConnectGatewayNatGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisassociateDirectConnectGatewayNatGatewayRequest&, DisassociateDirectConnectGatewayNatGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateDirectConnectGatewayNatGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisassociateHaVipInstanceResponse> DisassociateHaVipInstanceOutcome;
+                typedef std::future<DisassociateHaVipInstanceOutcome> DisassociateHaVipInstanceOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DisassociateHaVipInstanceRequest&, DisassociateHaVipInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateHaVipInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisassociateIPv6AddressResponse> DisassociateIPv6AddressOutcome;
                 typedef std::future<DisassociateIPv6AddressOutcome> DisassociateIPv6AddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisassociateIPv6AddressRequest&, DisassociateIPv6AddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateIPv6AddressAsyncHandler;
@@ -2273,6 +2283,15 @@ namespace TencentCloud
                 AssociateDirectConnectGatewayNatGatewayOutcome AssociateDirectConnectGatewayNatGateway(const Model::AssociateDirectConnectGatewayNatGatewayRequest &request);
                 void AssociateDirectConnectGatewayNatGatewayAsync(const Model::AssociateDirectConnectGatewayNatGatewayRequest& request, const AssociateDirectConnectGatewayNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateDirectConnectGatewayNatGatewayOutcomeCallable AssociateDirectConnectGatewayNatGatewayCallable(const Model::AssociateDirectConnectGatewayNatGatewayRequest& request);
+
+                /**
+                 *本接口（AssociateHaVipInstance）用于HAVIP绑定子机或网卡（限制HaVip的飘移范围）。
+                 * @param req AssociateHaVipInstanceRequest
+                 * @return AssociateHaVipInstanceOutcome
+                 */
+                AssociateHaVipInstanceOutcome AssociateHaVipInstance(const Model::AssociateHaVipInstanceRequest &request);
+                void AssociateHaVipInstanceAsync(const Model::AssociateHaVipInstanceRequest& request, const AssociateHaVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateHaVipInstanceOutcomeCallable AssociateHaVipInstanceCallable(const Model::AssociateHaVipInstanceRequest& request);
 
                 /**
                  *本接口（AssociateIPv6Address）用于将弹性公网IPv6（简称EIPv6）实例绑定到 CVM 或弹性网卡配置的内网 IPv6 地址上。
@@ -4739,6 +4758,15 @@ LimitTypes取值范围：
                 DisassociateDirectConnectGatewayNatGatewayOutcome DisassociateDirectConnectGatewayNatGateway(const Model::DisassociateDirectConnectGatewayNatGatewayRequest &request);
                 void DisassociateDirectConnectGatewayNatGatewayAsync(const Model::DisassociateDirectConnectGatewayNatGatewayRequest& request, const DisassociateDirectConnectGatewayNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisassociateDirectConnectGatewayNatGatewayOutcomeCallable DisassociateDirectConnectGatewayNatGatewayCallable(const Model::DisassociateDirectConnectGatewayNatGatewayRequest& request);
+
+                /**
+                 *本接口（DisassociateHaVipInstance）用于HAVIP解绑子机或网卡（去掉HaVip飘移范围）。
+                 * @param req DisassociateHaVipInstanceRequest
+                 * @return DisassociateHaVipInstanceOutcome
+                 */
+                DisassociateHaVipInstanceOutcome DisassociateHaVipInstance(const Model::DisassociateHaVipInstanceRequest &request);
+                void DisassociateHaVipInstanceAsync(const Model::DisassociateHaVipInstanceRequest& request, const DisassociateHaVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateHaVipInstanceOutcomeCallable DisassociateHaVipInstanceCallable(const Model::DisassociateHaVipInstanceRequest& request);
 
                 /**
                  *本接口（DisassociateIPv6Address）用于解绑弹性公网 IPv6（简称EIPv6）实例。
