@@ -824,15 +824,15 @@ namespace TencentCloud
                     bool EngineSourceHasBeenSet() const;
 
                     /**
-                     * 获取新的漏洞风险id(同全网漏洞表的riskid)
-                     * @return VulRiskId 新的漏洞风险id(同全网漏洞表的riskid)
+                     * 获取新的漏洞风险id(同全网漏洞表的RiskId)
+                     * @return VulRiskId 新的漏洞风险id(同全网漏洞表的RiskId)
                      * 
                      */
                     std::string GetVulRiskId() const;
 
                     /**
-                     * 设置新的漏洞风险id(同全网漏洞表的riskid)
-                     * @param _vulRiskId 新的漏洞风险id(同全网漏洞表的riskid)
+                     * 设置新的漏洞风险id(同全网漏洞表的RiskId)
+                     * @param _vulRiskId 新的漏洞风险id(同全网漏洞表的RiskId)
                      * 
                      */
                     void SetVulRiskId(const std::string& _vulRiskId);
@@ -1132,7 +1132,7 @@ namespace TencentCloud
                     bool m_engineSourceHasBeenSet;
 
                     /**
-                     * 新的漏洞风险id(同全网漏洞表的riskid)
+                     * 新的漏洞风险id(同全网漏洞表的RiskId)
                      */
                     std::string m_vulRiskId;
                     bool m_vulRiskIdHasBeenSet;

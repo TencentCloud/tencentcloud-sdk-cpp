@@ -104,6 +104,11 @@ namespace TencentCloud
 18：完税凭证
 19：海关缴款书
 20：银行回单
+21：网约车行程单
+22：海关进/出口货物报关单
+23：海外发票
+24：购物小票
+25：销货清单
 -1：其他发票
                      * @return Types 需要识别的票据类型列表，为空或不填表示识别全部类型。当传入单个类型时，图片均采用该票类型进行处理。
 暂不支持多个参数进行局部控制。
@@ -124,6 +129,11 @@ namespace TencentCloud
 18：完税凭证
 19：海关缴款书
 20：银行回单
+21：网约车行程单
+22：海关进/出口货物报关单
+23：海外发票
+24：购物小票
+25：销货清单
 -1：其他发票
                      * 
                      */
@@ -149,6 +159,11 @@ namespace TencentCloud
 18：完税凭证
 19：海关缴款书
 20：银行回单
+21：网约车行程单
+22：海关进/出口货物报关单
+23：海外发票
+24：购物小票
+25：销货清单
 -1：其他发票
                      * @param _types 需要识别的票据类型列表，为空或不填表示识别全部类型。当传入单个类型时，图片均采用该票类型进行处理。
 暂不支持多个参数进行局部控制。
@@ -169,6 +184,11 @@ namespace TencentCloud
 18：完税凭证
 19：海关缴款书
 20：银行回单
+21：网约车行程单
+22：海关进/出口货物报关单
+23：海外发票
+24：购物小票
+25：销货清单
 -1：其他发票
                      * 
                      */
@@ -307,6 +327,27 @@ namespace TencentCloud
                      */
                     bool EnableItemPolygonHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启二维码识别。
+                     * @return EnableQRCode 是否开启二维码识别。
+                     * 
+                     */
+                    bool GetEnableQRCode() const;
+
+                    /**
+                     * 设置是否开启二维码识别。
+                     * @param _enableQRCode 是否开启二维码识别。
+                     * 
+                     */
+                    void SetEnableQRCode(const bool& _enableQRCode);
+
+                    /**
+                     * 判断参数 EnableQRCode 是否已赋值
+                     * @return EnableQRCode 是否已赋值
+                     * 
+                     */
+                    bool EnableQRCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +382,11 @@ namespace TencentCloud
 18：完税凭证
 19：海关缴款书
 20：银行回单
+21：网约车行程单
+22：海关进/出口货物报关单
+23：海外发票
+24：购物小票
+25：销货清单
 -1：其他发票
                      */
                     std::vector<int64_t> m_types;
@@ -381,6 +427,12 @@ namespace TencentCloud
                      */
                     bool m_enableItemPolygon;
                     bool m_enableItemPolygonHasBeenSet;
+
+                    /**
+                     * 是否开启二维码识别。
+                     */
+                    bool m_enableQRCode;
+                    bool m_enableQRCodeHasBeenSet;
 
                 };
             }

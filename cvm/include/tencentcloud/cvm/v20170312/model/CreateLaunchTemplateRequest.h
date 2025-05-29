@@ -541,15 +541,15 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool DryRunHasBeenSet() const;
 
                     /**
-                     * 获取CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
-                     * @return CamRoleName CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
+                     * 获取CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/36223)接口返回值中的`RoleName `获取。
+                     * @return CamRoleName CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/36223)接口返回值中的`RoleName `获取。
                      * 
                      */
                     std::string GetCamRoleName() const;
 
                     /**
-                     * 设置CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
-                     * @param _camRoleName CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
+                     * 设置CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/36223)接口返回值中的`RoleName `获取。
+                     * @param _camRoleName CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/36223)接口返回值中的`RoleName `获取。
                      * 
                      */
                     void SetCamRoleName(const std::string& _camRoleName);
@@ -869,7 +869,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool m_dryRunHasBeenSet;
 
                     /**
-                     * CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
+                     * CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/36223)接口返回值中的`RoleName `获取。
                      */
                     std::string m_camRoleName;
                     bool m_camRoleNameHasBeenSet;

@@ -1717,6 +1717,49 @@ CynosdbClient::DescribeBackupConfigOutcomeCallable CynosdbClient::DescribeBackup
     return task->get_future();
 }
 
+CynosdbClient::DescribeBackupDownloadRestrictionOutcome CynosdbClient::DescribeBackupDownloadRestriction(const DescribeBackupDownloadRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupDownloadRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupDownloadRestrictionResponse rsp = DescribeBackupDownloadRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupDownloadRestrictionOutcome(rsp);
+        else
+            return DescribeBackupDownloadRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupDownloadRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeBackupDownloadRestrictionAsync(const DescribeBackupDownloadRestrictionRequest& request, const DescribeBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupDownloadRestriction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeBackupDownloadRestrictionOutcomeCallable CynosdbClient::DescribeBackupDownloadRestrictionCallable(const DescribeBackupDownloadRestrictionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupDownloadRestrictionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupDownloadRestriction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeBackupDownloadUrlOutcome CynosdbClient::DescribeBackupDownloadUrl(const DescribeBackupDownloadUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupDownloadUrl");
@@ -1753,6 +1796,49 @@ CynosdbClient::DescribeBackupDownloadUrlOutcomeCallable CynosdbClient::DescribeB
         [this, request]()
         {
             return this->DescribeBackupDownloadUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeBackupDownloadUserRestrictionOutcome CynosdbClient::DescribeBackupDownloadUserRestriction(const DescribeBackupDownloadUserRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupDownloadUserRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupDownloadUserRestrictionResponse rsp = DescribeBackupDownloadUserRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupDownloadUserRestrictionOutcome(rsp);
+        else
+            return DescribeBackupDownloadUserRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupDownloadUserRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeBackupDownloadUserRestrictionAsync(const DescribeBackupDownloadUserRestrictionRequest& request, const DescribeBackupDownloadUserRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupDownloadUserRestriction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeBackupDownloadUserRestrictionOutcomeCallable CynosdbClient::DescribeBackupDownloadUserRestrictionCallable(const DescribeBackupDownloadUserRestrictionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupDownloadUserRestrictionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupDownloadUserRestriction(request);
         }
     );
 
@@ -2398,6 +2484,49 @@ CynosdbClient::DescribeClusterPasswordComplexityOutcomeCallable CynosdbClient::D
         [this, request]()
         {
             return this->DescribeClusterPasswordComplexity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeClusterReadOnlyOutcome CynosdbClient::DescribeClusterReadOnly(const DescribeClusterReadOnlyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterReadOnly");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterReadOnlyResponse rsp = DescribeClusterReadOnlyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterReadOnlyOutcome(rsp);
+        else
+            return DescribeClusterReadOnlyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterReadOnlyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeClusterReadOnlyAsync(const DescribeClusterReadOnlyRequest& request, const DescribeClusterReadOnlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterReadOnly(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeClusterReadOnlyOutcomeCallable CynosdbClient::DescribeClusterReadOnlyCallable(const DescribeClusterReadOnlyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterReadOnlyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterReadOnly(request);
         }
     );
 
@@ -4512,6 +4641,92 @@ CynosdbClient::ModifyBackupConfigOutcomeCallable CynosdbClient::ModifyBackupConf
     return task->get_future();
 }
 
+CynosdbClient::ModifyBackupDownloadRestrictionOutcome CynosdbClient::ModifyBackupDownloadRestriction(const ModifyBackupDownloadRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupDownloadRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupDownloadRestrictionResponse rsp = ModifyBackupDownloadRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupDownloadRestrictionOutcome(rsp);
+        else
+            return ModifyBackupDownloadRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupDownloadRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyBackupDownloadRestrictionAsync(const ModifyBackupDownloadRestrictionRequest& request, const ModifyBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBackupDownloadRestriction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyBackupDownloadRestrictionOutcomeCallable CynosdbClient::ModifyBackupDownloadRestrictionCallable(const ModifyBackupDownloadRestrictionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBackupDownloadRestrictionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBackupDownloadRestriction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyBackupDownloadUserRestrictionOutcome CynosdbClient::ModifyBackupDownloadUserRestriction(const ModifyBackupDownloadUserRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupDownloadUserRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupDownloadUserRestrictionResponse rsp = ModifyBackupDownloadUserRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupDownloadUserRestrictionOutcome(rsp);
+        else
+            return ModifyBackupDownloadUserRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupDownloadUserRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyBackupDownloadUserRestrictionAsync(const ModifyBackupDownloadUserRestrictionRequest& request, const ModifyBackupDownloadUserRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBackupDownloadUserRestriction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyBackupDownloadUserRestrictionOutcomeCallable CynosdbClient::ModifyBackupDownloadUserRestrictionCallable(const ModifyBackupDownloadUserRestrictionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBackupDownloadUserRestrictionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBackupDownloadUserRestriction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ModifyBackupNameOutcome CynosdbClient::ModifyBackupName(const ModifyBackupNameRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyBackupName");
@@ -4806,6 +5021,49 @@ CynosdbClient::ModifyClusterPasswordComplexityOutcomeCallable CynosdbClient::Mod
         [this, request]()
         {
             return this->ModifyClusterPasswordComplexity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyClusterReadOnlyOutcome CynosdbClient::ModifyClusterReadOnly(const ModifyClusterReadOnlyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterReadOnly");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterReadOnlyResponse rsp = ModifyClusterReadOnlyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterReadOnlyOutcome(rsp);
+        else
+            return ModifyClusterReadOnlyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterReadOnlyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyClusterReadOnlyAsync(const ModifyClusterReadOnlyRequest& request, const ModifyClusterReadOnlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterReadOnly(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyClusterReadOnlyOutcomeCallable CynosdbClient::ModifyClusterReadOnlyCallable(const ModifyClusterReadOnlyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterReadOnlyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterReadOnly(request);
         }
     );
 

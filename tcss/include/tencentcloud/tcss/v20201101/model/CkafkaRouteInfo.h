@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ckafkal路由详情
+                * Ckafka路由详情
                 */
                 class CkafkaRouteInfo : public AbstractModel
                 {

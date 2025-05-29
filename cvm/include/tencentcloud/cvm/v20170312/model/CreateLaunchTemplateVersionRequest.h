@@ -76,15 +76,15 @@ namespace TencentCloud
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取启动模板ID，新版本将基于该实例启动模板ID创建。
-                     * @return LaunchTemplateId 启动模板ID，新版本将基于该实例启动模板ID创建。
+                     * 获取启动模板ID，新版本将基于该实例启动模板ID创建。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。
+                     * @return LaunchTemplateId 启动模板ID，新版本将基于该实例启动模板ID创建。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。
                      * 
                      */
                     std::string GetLaunchTemplateId() const;
 
                     /**
-                     * 设置启动模板ID，新版本将基于该实例启动模板ID创建。
-                     * @param _launchTemplateId 启动模板ID，新版本将基于该实例启动模板ID创建。
+                     * 设置启动模板ID，新版本将基于该实例启动模板ID创建。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。
+                     * @param _launchTemplateId 启动模板ID，新版本将基于该实例启动模板ID创建。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。
                      * 
                      */
                     void SetLaunchTemplateId(const std::string& _launchTemplateId);
@@ -437,15 +437,15 @@ namespace TencentCloud
                     bool ActionTimerHasBeenSet() const;
 
                     /**
-                     * 获取置放群组id，仅支持指定一个。
-                     * @return DisasterRecoverGroupIds 置放群组id，仅支持指定一个。
+                     * 获取置放群组id，仅支持指定一个。可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
+                     * @return DisasterRecoverGroupIds 置放群组id，仅支持指定一个。可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
                      * 
                      */
                     std::vector<std::string> GetDisasterRecoverGroupIds() const;
 
                     /**
-                     * 设置置放群组id，仅支持指定一个。
-                     * @param _disasterRecoverGroupIds 置放群组id，仅支持指定一个。
+                     * 设置置放群组id，仅支持指定一个。可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
+                     * @param _disasterRecoverGroupIds 置放群组id，仅支持指定一个。可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
                      * 
                      */
                     void SetDisasterRecoverGroupIds(const std::vector<std::string>& _disasterRecoverGroupIds);
@@ -579,15 +579,15 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool CamRoleNameHasBeenSet() const;
 
                     /**
-                     * 获取高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。
-                     * @return HpcClusterId 高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。
+                     * 获取高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。该参数可以通过调用 [DescribeHpcClusters](https://cloud.tencent.com/document/api/213/83220) 的返回值中的 `HpcClusterId` 字段来获取。
+                     * @return HpcClusterId 高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。该参数可以通过调用 [DescribeHpcClusters](https://cloud.tencent.com/document/api/213/83220) 的返回值中的 `HpcClusterId` 字段来获取。
                      * 
                      */
                     std::string GetHpcClusterId() const;
 
                     /**
-                     * 设置高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。
-                     * @param _hpcClusterId 高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。
+                     * 设置高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。该参数可以通过调用 [DescribeHpcClusters](https://cloud.tencent.com/document/api/213/83220) 的返回值中的 `HpcClusterId` 字段来获取。
+                     * @param _hpcClusterId 高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。该参数可以通过调用 [DescribeHpcClusters](https://cloud.tencent.com/document/api/213/83220) 的返回值中的 `HpcClusterId` 字段来获取。
                      * 
                      */
                     void SetHpcClusterId(const std::string& _hpcClusterId);
@@ -733,7 +733,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool m_placementHasBeenSet;
 
                     /**
-                     * 启动模板ID，新版本将基于该实例启动模板ID创建。
+                     * 启动模板ID，新版本将基于该实例启动模板ID创建。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。
                      */
                     std::string m_launchTemplateId;
                     bool m_launchTemplateIdHasBeenSet;
@@ -836,7 +836,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool m_actionTimerHasBeenSet;
 
                     /**
-                     * 置放群组id，仅支持指定一个。
+                     * 置放群组id，仅支持指定一个。可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
                      */
                     std::vector<std::string> m_disasterRecoverGroupIds;
                     bool m_disasterRecoverGroupIdsHasBeenSet;
@@ -876,7 +876,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool m_camRoleNameHasBeenSet;
 
                     /**
-                     * 高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。
+                     * 高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。该参数可以通过调用 [DescribeHpcClusters](https://cloud.tencent.com/document/api/213/83220) 的返回值中的 `HpcClusterId` 字段来获取。
                      */
                     std::string m_hpcClusterId;
                     bool m_hpcClusterIdHasBeenSet;

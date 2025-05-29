@@ -83,6 +83,49 @@ SesClient::BatchSendEmailOutcomeCallable SesClient::BatchSendEmailCallable(const
     return task->get_future();
 }
 
+SesClient::CreateAddressUnsubscribeConfigOutcome SesClient::CreateAddressUnsubscribeConfig(const CreateAddressUnsubscribeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAddressUnsubscribeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAddressUnsubscribeConfigResponse rsp = CreateAddressUnsubscribeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAddressUnsubscribeConfigOutcome(rsp);
+        else
+            return CreateAddressUnsubscribeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAddressUnsubscribeConfigOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::CreateAddressUnsubscribeConfigAsync(const CreateAddressUnsubscribeConfigRequest& request, const CreateAddressUnsubscribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAddressUnsubscribeConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::CreateAddressUnsubscribeConfigOutcomeCallable SesClient::CreateAddressUnsubscribeConfigCallable(const CreateAddressUnsubscribeConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAddressUnsubscribeConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAddressUnsubscribeConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SesClient::CreateCustomBlacklistOutcome SesClient::CreateCustomBlacklist(const CreateCustomBlacklistRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustomBlacklist");
@@ -377,6 +420,49 @@ SesClient::CreateReceiverDetailWithDataOutcomeCallable SesClient::CreateReceiver
         [this, request]()
         {
             return this->CreateReceiverDetailWithData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SesClient::DeleteAddressUnsubscribeConfigOutcome SesClient::DeleteAddressUnsubscribeConfig(const DeleteAddressUnsubscribeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAddressUnsubscribeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAddressUnsubscribeConfigResponse rsp = DeleteAddressUnsubscribeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAddressUnsubscribeConfigOutcome(rsp);
+        else
+            return DeleteAddressUnsubscribeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAddressUnsubscribeConfigOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::DeleteAddressUnsubscribeConfigAsync(const DeleteAddressUnsubscribeConfigRequest& request, const DeleteAddressUnsubscribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAddressUnsubscribeConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::DeleteAddressUnsubscribeConfigOutcomeCallable SesClient::DeleteAddressUnsubscribeConfigCallable(const DeleteAddressUnsubscribeConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAddressUnsubscribeConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAddressUnsubscribeConfig(request);
         }
     );
 
@@ -1237,6 +1323,49 @@ SesClient::SendEmailOutcomeCallable SesClient::SendEmailCallable(const SendEmail
         [this, request]()
         {
             return this->SendEmail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SesClient::UpdateAddressUnsubscribeConfigOutcome SesClient::UpdateAddressUnsubscribeConfig(const UpdateAddressUnsubscribeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAddressUnsubscribeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAddressUnsubscribeConfigResponse rsp = UpdateAddressUnsubscribeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAddressUnsubscribeConfigOutcome(rsp);
+        else
+            return UpdateAddressUnsubscribeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAddressUnsubscribeConfigOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::UpdateAddressUnsubscribeConfigAsync(const UpdateAddressUnsubscribeConfigRequest& request, const UpdateAddressUnsubscribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAddressUnsubscribeConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::UpdateAddressUnsubscribeConfigOutcomeCallable SesClient::UpdateAddressUnsubscribeConfigCallable(const UpdateAddressUnsubscribeConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAddressUnsubscribeConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAddressUnsubscribeConfig(request);
         }
     );
 

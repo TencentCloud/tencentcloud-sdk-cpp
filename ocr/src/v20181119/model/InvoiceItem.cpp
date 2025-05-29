@@ -31,7 +31,8 @@ InvoiceItem::InvoiceItem() :
     m_typeDescriptionHasBeenSet(false),
     m_cutImageHasBeenSet(false),
     m_subTypeDescriptionHasBeenSet(false),
-    m_itemPolygonHasBeenSet(false)
+    m_itemPolygonHasBeenSet(false),
+    m_qRCodeHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,16 @@ CoreInternalOutcome InvoiceItem::Deserialize(const rapidjson::Value &value)
         m_itemPolygonHasBeenSet = true;
     }
 
+    if (value.HasMember("QRCode") && !value["QRCode"].IsNull())
+    {
+        if (!value["QRCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InvoiceItem.QRCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qRCode = string(value["QRCode"].GetString());
+        m_qRCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -276,6 +287,14 @@ void InvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_qRCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QRCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qRCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -455,5 +474,21 @@ void InvoiceItem::SetItemPolygon(const vector<ItemPolygonInfo>& _itemPolygon)
 bool InvoiceItem::ItemPolygonHasBeenSet() const
 {
     return m_itemPolygonHasBeenSet;
+}
+
+string InvoiceItem::GetQRCode() const
+{
+    return m_qRCode;
+}
+
+void InvoiceItem::SetQRCode(const string& _qRCode)
+{
+    m_qRCode = _qRCode;
+    m_qRCodeHasBeenSet = true;
+}
+
+bool InvoiceItem::QRCodeHasBeenSet() const
+{
+    return m_qRCodeHasBeenSet;
 }
 

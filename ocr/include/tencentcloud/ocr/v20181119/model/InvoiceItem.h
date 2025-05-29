@@ -364,6 +364,27 @@ FailedOperation.UnKnowError：表示识别失败；
                      */
                     bool ItemPolygonHasBeenSet() const;
 
+                    /**
+                     * 获取二维码数据。
+                     * @return QRCode 二维码数据。
+                     * 
+                     */
+                    std::string GetQRCode() const;
+
+                    /**
+                     * 设置二维码数据。
+                     * @param _qRCode 二维码数据。
+                     * 
+                     */
+                    void SetQRCode(const std::string& _qRCode);
+
+                    /**
+                     * 判断参数 QRCode 是否已赋值
+                     * @return QRCode 是否已赋值
+                     * 
+                     */
+                    bool QRCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +473,12 @@ FailedOperation.UnKnowError：表示识别失败；
                      */
                     std::vector<ItemPolygonInfo> m_itemPolygon;
                     bool m_itemPolygonHasBeenSet;
+
+                    /**
+                     * 二维码数据。
+                     */
+                    std::string m_qRCode;
+                    bool m_qRCodeHasBeenSet;
 
                 };
             }

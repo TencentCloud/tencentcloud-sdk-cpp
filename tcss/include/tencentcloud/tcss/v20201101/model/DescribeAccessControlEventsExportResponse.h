@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取execle下载地址
-                     * @return DownloadUrl execle下载地址
+                     * 获取excel下载地址
+                     * @return DownloadUrl excel下载地址
                      * 
                      */
                     std::string GetDownloadUrl() const;
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * execle下载地址
+                     * excel下载地址
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;

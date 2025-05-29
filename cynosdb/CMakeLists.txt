@@ -23,11 +23,14 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceCLSLogDeliveryResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigRequest.h
   include/tencentcloud/cynosdb/v20190107/model/BizTaskModifyInstanceParam.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyClusterReadOnlyResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterStorageRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageDetailResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/SearchClusterTablesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodRequest.h
   include/tencentcloud/cynosdb/v20190107/model/AccountParam.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeProjectSecurityGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabaseTablesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterParamsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RefundResourcePackageResponse.h
@@ -50,6 +53,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/OpenReadOnlyInstanceExclusiveAccessResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SearchClusterDatabasesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateParamTemplateRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadUserRestrictionRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyResourcePackageNameRequest.h
   include/tencentcloud/cynosdb/v20190107/model/UpgradeProxy.h
@@ -68,17 +72,21 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ModifyBinlogSaveDaysRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ProxySpec.h
   include/tencentcloud/cynosdb/v20190107/model/AddInstancesResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/BackupLimitClusterRestriction.h
   include/tencentcloud/cynosdb/v20190107/model/SlowQueriesItem.h
+  include/tencentcloud/cynosdb/v20190107/model/PolicyRule.h
   include/tencentcloud/cynosdb/v20190107/model/ProxyGroupInfo.h
   include/tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateProxyEndPointRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyBackupDownloadUserRestrictionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/AuditRuleTemplateInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeParamTemplateDetailRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/ModifyAccountPrivilegesRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/OpenReadOnlyInstanceExclusiveAccessRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ExportResourcePackageDeductDetailsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/StartCLSDeliveryResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ParamItemInfo.h
   include/tencentcloud/cynosdb/v20190107/model/UpgradeProxyResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeClusterReadOnlyResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeProxyNodesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ProxyNodeInfo.h
@@ -92,6 +100,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeProxyNodesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditLogsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/InquirePriceCreateResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeClusterReadOnlyRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CreateClustersRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterParamLogsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CloseProxyResponse.h
@@ -102,7 +111,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterDatabaseRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/DescribeServerlessStrategyResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageDetailRequest.h
   include/tencentcloud/cynosdb/v20190107/model/InstanceCLSDeliveryInfo.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsRequest.h
@@ -140,6 +149,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DeleteParamTemplateRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ServerlessSpec.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyBackupDownloadRestrictionRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailDatabasesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateParamTemplateResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesResponse.h
@@ -154,7 +164,8 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/InstanceParamItem.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RollbackData.h
-  include/tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/UnbindClusterResourcePackagesRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyBackupDownloadUserRestrictionRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceParamsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchClusterVpcResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeZonesRequest.h
@@ -179,20 +190,21 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DbInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadUrlRequest.h
   include/tencentcloud/cynosdb/v20190107/model/InstanceAuditStatus.h
-  include/tencentcloud/cynosdb/v20190107/model/CopyClusterPasswordComplexityRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/OpenWanRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateProxyEndPointResponse.h
   include/tencentcloud/cynosdb/v20190107/model/NetAddr.h
-  include/tencentcloud/cynosdb/v20190107/model/OpenWanRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/CopyClusterPasswordComplexityRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountPrivilegesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/InquirePriceCreateRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAuditServiceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterNameResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CrossRegionBackupItem.h
   include/tencentcloud/cynosdb/v20190107/model/ExportInstanceSlowQueriesRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/ModifyAuditServiceResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ParamItem.h
   include/tencentcloud/cynosdb/v20190107/model/ResumeServerlessResponse.h
   include/tencentcloud/cynosdb/v20190107/model/GdnTaskInfo.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadUserRestrictionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SaleZone.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcResponse.h
   include/tencentcloud/cynosdb/v20190107/model/StartCLSDeliveryRequest.h
@@ -208,6 +220,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/IsolateClusterRequest.h
   include/tencentcloud/cynosdb/v20190107/model/AddInstancesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstanceDetail.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadRestrictionRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RollbackTable.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceErrorLogsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailRequest.h
@@ -260,6 +273,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeFlowResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ExportInstanceErrorLogsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ActivateInstanceRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadRestrictionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteClusterDatabaseRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbErrorLogItem.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyVipVportRequest.h
@@ -312,16 +326,18 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/CynosdbCluster.h
   include/tencentcloud/cynosdb/v20190107/model/OpenWanResponse.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineClusterResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ClusterTaskId.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountHostRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeFlowRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabaseTablesResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/OpenReadOnlyInstanceExclusiveAccessRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyAccountPrivilegesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CreateBackupRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CreateCLSDeliveryRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupListResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageDetailRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeServerlessStrategyResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterParamRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyClusterReadOnlyRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineInstanceResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateAuditLogFileRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeSSLStatusResponse.h
@@ -332,12 +348,13 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/CynosdbClusterDetail.h
   include/tencentcloud/cynosdb/v20190107/model/RestartInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/PackageDetail.h
+  include/tencentcloud/cynosdb/v20190107/model/BackupLimitVpcItem.h
   include/tencentcloud/cynosdb/v20190107/model/BinlogConfigInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAccountPrivilegesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountParamsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/OpenSSLResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/ParamItem.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyAuditServiceResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceSlowQueriesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyResourcePackageClustersResponse.h
@@ -377,7 +394,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditRuleTemplatesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/LogicBackupConfigInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteBackupResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/DescribeProjectSecurityGroupsResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyBackupDownloadRestrictionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ParamDetail.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordResponse.h
@@ -403,7 +420,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterParamResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SecurityGroup.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterPasswordComplexityRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/UnbindClusterResourcePackagesRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/BackupLimitRestriction.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyInstanceParamResponse.h
   include/tencentcloud/cynosdb/v20190107/model/TaskProgressInfo.h
   include/tencentcloud/cynosdb/v20190107/model/TemplateParamInfo.h
@@ -448,7 +465,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeParamTemplateDetailResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyBinlogSaveDaysResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteAuditRuleTemplatesResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/PolicyRule.h
+  include/tencentcloud/cynosdb/v20190107/model/ClusterReadOnlyValue.h
   include/tencentcloud/cynosdb/v20190107/model/ZoneStockInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteCLSDeliveryResponse.h
   include/tencentcloud/cynosdb/v20190107/model/InquirePriceRenewResponse.h
@@ -461,11 +478,14 @@ set(cynosdb_src
   src/v20190107/model/DescribeInstanceCLSLogDeliveryResponse.cpp
   src/v20190107/model/ModifyMaintainPeriodConfigRequest.cpp
   src/v20190107/model/BizTaskModifyInstanceParam.cpp
+  src/v20190107/model/ModifyClusterReadOnlyResponse.cpp
   src/v20190107/model/ModifyClusterStorageRequest.cpp
   src/v20190107/model/DescribeResourcePackageDetailResponse.cpp
+  src/v20190107/model/UpgradeInstanceRequest.cpp
   src/v20190107/model/SearchClusterTablesRequest.cpp
   src/v20190107/model/DescribeMaintainPeriodRequest.cpp
   src/v20190107/model/AccountParam.cpp
+  src/v20190107/model/DescribeProjectSecurityGroupsResponse.cpp
   src/v20190107/model/DescribeClusterDatabaseTablesRequest.cpp
   src/v20190107/model/DescribeClusterParamsResponse.cpp
   src/v20190107/model/RefundResourcePackageResponse.cpp
@@ -488,6 +508,7 @@ set(cynosdb_src
   src/v20190107/model/OpenReadOnlyInstanceExclusiveAccessResponse.cpp
   src/v20190107/model/SearchClusterDatabasesResponse.cpp
   src/v20190107/model/CreateParamTemplateRequest.cpp
+  src/v20190107/model/DescribeBackupDownloadUserRestrictionRequest.cpp
   src/v20190107/model/DescribeClusterDetailRequest.cpp
   src/v20190107/model/ModifyResourcePackageNameRequest.cpp
   src/v20190107/model/UpgradeProxy.cpp
@@ -506,17 +527,21 @@ set(cynosdb_src
   src/v20190107/model/ModifyBinlogSaveDaysRequest.cpp
   src/v20190107/model/ProxySpec.cpp
   src/v20190107/model/AddInstancesResponse.cpp
+  src/v20190107/model/BackupLimitClusterRestriction.cpp
   src/v20190107/model/SlowQueriesItem.cpp
+  src/v20190107/model/PolicyRule.cpp
   src/v20190107/model/ProxyGroupInfo.cpp
   src/v20190107/model/AssociateSecurityGroupsResponse.cpp
   src/v20190107/model/CreateProxyEndPointRequest.cpp
+  src/v20190107/model/ModifyBackupDownloadUserRestrictionResponse.cpp
   src/v20190107/model/AuditRuleTemplateInfo.cpp
   src/v20190107/model/DescribeParamTemplateDetailRequest.cpp
-  src/v20190107/model/ModifyAccountPrivilegesRequest.cpp
+  src/v20190107/model/OpenReadOnlyInstanceExclusiveAccessRequest.cpp
   src/v20190107/model/ExportResourcePackageDeductDetailsRequest.cpp
   src/v20190107/model/StartCLSDeliveryResponse.cpp
   src/v20190107/model/ParamItemInfo.cpp
   src/v20190107/model/UpgradeProxyResponse.cpp
+  src/v20190107/model/DescribeClusterReadOnlyResponse.cpp
   src/v20190107/model/DescribeInstanceSpecsRequest.cpp
   src/v20190107/model/DescribeProxyNodesResponse.cpp
   src/v20190107/model/ProxyNodeInfo.cpp
@@ -530,6 +555,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeProxyNodesRequest.cpp
   src/v20190107/model/DescribeAuditLogsRequest.cpp
   src/v20190107/model/InquirePriceCreateResponse.cpp
+  src/v20190107/model/DescribeClusterReadOnlyRequest.cpp
   src/v20190107/model/CreateClustersRequest.cpp
   src/v20190107/model/DescribeClusterParamLogsRequest.cpp
   src/v20190107/model/CloseProxyResponse.cpp
@@ -540,7 +566,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeClusterInstanceGrpsResponse.cpp
   src/v20190107/model/ModifyBackupConfigResponse.cpp
   src/v20190107/model/ModifyClusterDatabaseRequest.cpp
-  src/v20190107/model/DescribeServerlessStrategyResponse.cpp
+  src/v20190107/model/DescribeResourcePackageDetailRequest.cpp
   src/v20190107/model/InstanceCLSDeliveryInfo.cpp
   src/v20190107/model/ModifyMaintainPeriodConfigResponse.cpp
   src/v20190107/model/DisassociateSecurityGroupsRequest.cpp
@@ -578,6 +604,7 @@ set(cynosdb_src
   src/v20190107/model/DeleteParamTemplateRequest.cpp
   src/v20190107/model/RevokeAccountPrivilegesResponse.cpp
   src/v20190107/model/ServerlessSpec.cpp
+  src/v20190107/model/ModifyBackupDownloadRestrictionRequest.cpp
   src/v20190107/model/DescribeClusterDetailDatabasesResponse.cpp
   src/v20190107/model/CreateParamTemplateResponse.cpp
   src/v20190107/model/DescribeAccountAllGrantPrivilegesResponse.cpp
@@ -592,7 +619,8 @@ set(cynosdb_src
   src/v20190107/model/InstanceParamItem.cpp
   src/v20190107/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20190107/model/RollbackData.cpp
-  src/v20190107/model/UpgradeInstanceRequest.cpp
+  src/v20190107/model/UnbindClusterResourcePackagesRequest.cpp
+  src/v20190107/model/ModifyBackupDownloadUserRestrictionRequest.cpp
   src/v20190107/model/DescribeInstanceParamsResponse.cpp
   src/v20190107/model/SwitchClusterVpcResponse.cpp
   src/v20190107/model/DescribeZonesRequest.cpp
@@ -617,20 +645,21 @@ set(cynosdb_src
   src/v20190107/model/DbInfo.cpp
   src/v20190107/model/DescribeBackupDownloadUrlRequest.cpp
   src/v20190107/model/InstanceAuditStatus.cpp
-  src/v20190107/model/CopyClusterPasswordComplexityRequest.cpp
+  src/v20190107/model/OpenWanRequest.cpp
   src/v20190107/model/DescribeClusterInstanceGroupsResponse.cpp
   src/v20190107/model/CreateProxyEndPointResponse.cpp
   src/v20190107/model/NetAddr.cpp
-  src/v20190107/model/OpenWanRequest.cpp
+  src/v20190107/model/CopyClusterPasswordComplexityRequest.cpp
   src/v20190107/model/ModifyAccountPrivilegesResponse.cpp
   src/v20190107/model/InquirePriceCreateRequest.cpp
   src/v20190107/model/ModifyAuditServiceRequest.cpp
   src/v20190107/model/ModifyClusterNameResponse.cpp
   src/v20190107/model/CrossRegionBackupItem.cpp
   src/v20190107/model/ExportInstanceSlowQueriesRequest.cpp
-  src/v20190107/model/ModifyAuditServiceResponse.cpp
+  src/v20190107/model/ParamItem.cpp
   src/v20190107/model/ResumeServerlessResponse.cpp
   src/v20190107/model/GdnTaskInfo.cpp
+  src/v20190107/model/DescribeBackupDownloadUserRestrictionResponse.cpp
   src/v20190107/model/SaleZone.cpp
   src/v20190107/model/SwitchProxyVpcResponse.cpp
   src/v20190107/model/StartCLSDeliveryRequest.cpp
@@ -646,6 +675,7 @@ set(cynosdb_src
   src/v20190107/model/IsolateClusterRequest.cpp
   src/v20190107/model/AddInstancesRequest.cpp
   src/v20190107/model/CynosdbInstanceDetail.cpp
+  src/v20190107/model/DescribeBackupDownloadRestrictionRequest.cpp
   src/v20190107/model/RollbackTable.cpp
   src/v20190107/model/DescribeInstanceErrorLogsRequest.cpp
   src/v20190107/model/DescribeInstanceDetailRequest.cpp
@@ -698,6 +728,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeFlowResponse.cpp
   src/v20190107/model/ExportInstanceErrorLogsRequest.cpp
   src/v20190107/model/ActivateInstanceRequest.cpp
+  src/v20190107/model/DescribeBackupDownloadRestrictionResponse.cpp
   src/v20190107/model/DeleteClusterDatabaseRequest.cpp
   src/v20190107/model/CynosdbErrorLogItem.cpp
   src/v20190107/model/ModifyVipVportRequest.cpp
@@ -750,16 +781,18 @@ set(cynosdb_src
   src/v20190107/model/CynosdbCluster.cpp
   src/v20190107/model/OpenWanResponse.cpp
   src/v20190107/model/OfflineClusterResponse.cpp
+  src/v20190107/model/ClusterTaskId.cpp
   src/v20190107/model/ModifyAccountHostRequest.cpp
   src/v20190107/model/DescribeFlowRequest.cpp
   src/v20190107/model/DescribeClusterDatabaseTablesResponse.cpp
-  src/v20190107/model/OpenReadOnlyInstanceExclusiveAccessRequest.cpp
+  src/v20190107/model/ModifyAccountPrivilegesRequest.cpp
   src/v20190107/model/CreateBackupRequest.cpp
   src/v20190107/model/CreateCLSDeliveryRequest.cpp
   src/v20190107/model/DescribeMaintainPeriodResponse.cpp
   src/v20190107/model/DescribeBackupListResponse.cpp
-  src/v20190107/model/DescribeResourcePackageDetailRequest.cpp
+  src/v20190107/model/DescribeServerlessStrategyResponse.cpp
   src/v20190107/model/ModifyClusterParamRequest.cpp
+  src/v20190107/model/ModifyClusterReadOnlyRequest.cpp
   src/v20190107/model/OfflineInstanceResponse.cpp
   src/v20190107/model/CreateAuditLogFileRequest.cpp
   src/v20190107/model/DescribeSSLStatusResponse.cpp
@@ -770,12 +803,13 @@ set(cynosdb_src
   src/v20190107/model/CynosdbClusterDetail.cpp
   src/v20190107/model/RestartInstanceRequest.cpp
   src/v20190107/model/PackageDetail.cpp
+  src/v20190107/model/BackupLimitVpcItem.cpp
   src/v20190107/model/BinlogConfigInfo.cpp
   src/v20190107/model/DescribeAccountPrivilegesRequest.cpp
   src/v20190107/model/ModifyAccountParamsResponse.cpp
   src/v20190107/model/DescribeInstanceSpecsResponse.cpp
   src/v20190107/model/OpenSSLResponse.cpp
-  src/v20190107/model/ParamItem.cpp
+  src/v20190107/model/ModifyAuditServiceResponse.cpp
   src/v20190107/model/DescribeClusterDetailResponse.cpp
   src/v20190107/model/DescribeInstanceSlowQueriesRequest.cpp
   src/v20190107/model/ModifyResourcePackageClustersResponse.cpp
@@ -815,7 +849,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeAuditRuleTemplatesResponse.cpp
   src/v20190107/model/LogicBackupConfigInfo.cpp
   src/v20190107/model/DeleteBackupResponse.cpp
-  src/v20190107/model/DescribeProjectSecurityGroupsResponse.cpp
+  src/v20190107/model/ModifyBackupDownloadRestrictionResponse.cpp
   src/v20190107/model/ParamDetail.cpp
   src/v20190107/model/OfflineClusterRequest.cpp
   src/v20190107/model/ResetAccountPasswordResponse.cpp
@@ -841,7 +875,7 @@ set(cynosdb_src
   src/v20190107/model/ModifyClusterParamResponse.cpp
   src/v20190107/model/SecurityGroup.cpp
   src/v20190107/model/ModifyClusterPasswordComplexityRequest.cpp
-  src/v20190107/model/UnbindClusterResourcePackagesRequest.cpp
+  src/v20190107/model/BackupLimitRestriction.cpp
   src/v20190107/model/ModifyInstanceParamResponse.cpp
   src/v20190107/model/TaskProgressInfo.cpp
   src/v20190107/model/TemplateParamInfo.cpp
@@ -886,7 +920,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeParamTemplateDetailResponse.cpp
   src/v20190107/model/ModifyBinlogSaveDaysResponse.cpp
   src/v20190107/model/DeleteAuditRuleTemplatesResponse.cpp
-  src/v20190107/model/PolicyRule.cpp
+  src/v20190107/model/ClusterReadOnlyValue.cpp
   src/v20190107/model/ZoneStockInfo.cpp
   src/v20190107/model/DeleteCLSDeliveryResponse.cpp
   src/v20190107/model/InquirePriceRenewResponse.cpp

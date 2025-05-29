@@ -115,10 +115,12 @@ namespace TencentCloud
                      * 获取应用模板的执行状态。
 
 - SUCCESS：成功
+- RUNNING：运行中
 - FAILED：失败
                      * @return ApplyState 应用模板的执行状态。
 
 - SUCCESS：成功
+- RUNNING：运行中
 - FAILED：失败
                      * 
                      */
@@ -128,10 +130,12 @@ namespace TencentCloud
                      * 设置应用模板的执行状态。
 
 - SUCCESS：成功
+- RUNNING：运行中
 - FAILED：失败
                      * @param _applyState 应用模板的执行状态。
 
 - SUCCESS：成功
+- RUNNING：运行中
 - FAILED：失败
                      * 
                      */
@@ -252,6 +256,7 @@ namespace TencentCloud
                      * 应用模板的执行状态。
 
 - SUCCESS：成功
+- RUNNING：运行中
 - FAILED：失败
                      */
                     std::string m_applyState;
