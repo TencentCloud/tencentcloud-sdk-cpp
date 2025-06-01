@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_MQTT_V20240516_MODEL_MODIFYINSPUBLICENDPOINTREQUEST_H_
-#define TENCENTCLOUD_MQTT_V20240516_MODEL_MODIFYINSPUBLICENDPOINTREQUEST_H_
+#ifndef TENCENTCLOUD_MQTT_V20240516_MODEL_DESCRIBEMESSAGEBYTOPICREQUEST_H_
+#define TENCENTCLOUD_MQTT_V20240516_MODEL_DESCRIBEMESSAGEBYTOPICREQUEST_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/mqtt/v20240516/model/PublicAccessRule.h>
 
 
 namespace TencentCloud
@@ -33,13 +32,13 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ModifyInsPublicEndpoint请求参数结构体
+                * DescribeMessageByTopic请求参数结构体
                 */
-                class ModifyInsPublicEndpointRequest : public AbstractModel
+                class DescribeMessageByTopicRequest : public AbstractModel
                 {
                 public:
-                    ModifyInsPublicEndpointRequest();
-                    ~ModifyInsPublicEndpointRequest() = default;
+                    DescribeMessageByTopicRequest();
+                    ~DescribeMessageByTopicRequest() = default;
                     std::string ToJsonString() const;
 
 
@@ -65,46 +64,67 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取带宽，单位：Mbps
-                     * @return Bandwidth 带宽，单位：Mbps
+                     * 获取home/room
+                     * @return Topic home/room
                      * 
                      */
-                    int64_t GetBandwidth() const;
+                    std::string GetTopic() const;
 
                     /**
-                     * 设置带宽，单位：Mbps
-                     * @param _bandwidth 带宽，单位：Mbps
+                     * 设置home/room
+                     * @param _topic home/room
                      * 
                      */
-                    void SetBandwidth(const int64_t& _bandwidth);
+                    void SetTopic(const std::string& _topic);
 
                     /**
-                     * 判断参数 Bandwidth 是否已赋值
-                     * @return Bandwidth 是否已赋值
+                     * 判断参数 Topic 是否已赋值
+                     * @return Topic 是否已赋值
                      * 
                      */
-                    bool BandwidthHasBeenSet() const;
+                    bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取公网访问规则
-                     * @return Rules 公网访问规则
+                     * 获取开始时间，毫秒级时间戳 。
+                     * @return StartTime 开始时间，毫秒级时间戳 。
                      * 
                      */
-                    std::vector<PublicAccessRule> GetRules() const;
+                    int64_t GetStartTime() const;
 
                     /**
-                     * 设置公网访问规则
-                     * @param _rules 公网访问规则
+                     * 设置开始时间，毫秒级时间戳 。
+                     * @param _startTime 开始时间，毫秒级时间戳 。
                      * 
                      */
-                    void SetRules(const std::vector<PublicAccessRule>& _rules);
+                    void SetStartTime(const int64_t& _startTime);
 
                     /**
-                     * 判断参数 Rules 是否已赋值
-                     * @return Rules 是否已赋值
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
                      * 
                      */
-                    bool RulesHasBeenSet() const;
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取查询消息条数，最大1024，默认100.
+                     * @return MaxNumber 查询消息条数，最大1024，默认100.
+                     * 
+                     */
+                    int64_t GetMaxNumber() const;
+
+                    /**
+                     * 设置查询消息条数，最大1024，默认100.
+                     * @param _maxNumber 查询消息条数，最大1024，默认100.
+                     * 
+                     */
+                    void SetMaxNumber(const int64_t& _maxNumber);
+
+                    /**
+                     * 判断参数 MaxNumber 是否已赋值
+                     * @return MaxNumber 是否已赋值
+                     * 
+                     */
+                    bool MaxNumberHasBeenSet() const;
 
                 private:
 
@@ -115,16 +135,22 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 带宽，单位：Mbps
+                     * home/room
                      */
-                    int64_t m_bandwidth;
-                    bool m_bandwidthHasBeenSet;
+                    std::string m_topic;
+                    bool m_topicHasBeenSet;
 
                     /**
-                     * 公网访问规则
+                     * 开始时间，毫秒级时间戳 。
                      */
-                    std::vector<PublicAccessRule> m_rules;
-                    bool m_rulesHasBeenSet;
+                    int64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 查询消息条数，最大1024，默认100.
+                     */
+                    int64_t m_maxNumber;
+                    bool m_maxNumberHasBeenSet;
 
                 };
             }
@@ -132,4 +158,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_MQTT_V20240516_MODEL_MODIFYINSPUBLICENDPOINTREQUEST_H_
+#endif // !TENCENTCLOUD_MQTT_V20240516_MODEL_DESCRIBEMESSAGEBYTOPICREQUEST_H_

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统快照ID,查询文件系统快照列表获取
-                     * @return SnapshotId 文件系统快照ID,查询文件系统快照列表获取
+                     * 获取快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
+                     * @return SnapshotId 快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置文件系统快照ID,查询文件系统快照列表获取
-                     * @param _snapshotId 文件系统快照ID,查询文件系统快照列表获取
+                     * 设置快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
+                     * @param _snapshotId 快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统快照名称，与AliveDays 必须填一个
-                     * @return SnapshotName 文件系统快照名称，与AliveDays 必须填一个
+                     * 获取文件系统快照名称，与AliveDays 必须填一个，快照名称，支持不超过64字符长度，支持中文、数字、_、-
+                     * @return SnapshotName 文件系统快照名称，与AliveDays 必须填一个，快照名称，支持不超过64字符长度，支持中文、数字、_、-
                      * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
-                     * 设置文件系统快照名称，与AliveDays 必须填一个
-                     * @param _snapshotName 文件系统快照名称，与AliveDays 必须填一个
+                     * 设置文件系统快照名称，与AliveDays 必须填一个，快照名称，支持不超过64字符长度，支持中文、数字、_、-
+                     * @param _snapshotName 文件系统快照名称，与AliveDays 必须填一个，快照名称，支持不超过64字符长度，支持中文、数字、_、-
                      * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
@@ -108,13 +108,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统快照ID,查询文件系统快照列表获取
+                     * 快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 文件系统快照名称，与AliveDays 必须填一个
+                     * 文件系统快照名称，与AliveDays 必须填一个，快照名称，支持不超过64字符长度，支持中文、数字、_、-
                      */
                     std::string m_snapshotName;
                     bool m_snapshotNameHasBeenSet;

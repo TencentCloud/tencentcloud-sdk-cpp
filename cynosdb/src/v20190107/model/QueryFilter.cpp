@@ -21,8 +21,8 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 QueryFilter::QueryFilter() :
-    m_namesHasBeenSet(false),
     m_valuesHasBeenSet(false),
+    m_namesHasBeenSet(false),
     m_exactMatchHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_operatorHasBeenSet(false)
@@ -33,19 +33,6 @@ CoreInternalOutcome QueryFilter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Names") && !value["Names"].IsNull())
-    {
-        if (!value["Names"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `QueryFilter.Names` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Names"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_names.push_back((*itr).GetString());
-        }
-        m_namesHasBeenSet = true;
-    }
 
     if (value.HasMember("Values") && !value["Values"].IsNull())
     {
@@ -58,6 +45,19 @@ CoreInternalOutcome QueryFilter::Deserialize(const rapidjson::Value &value)
             m_values.push_back((*itr).GetString());
         }
         m_valuesHasBeenSet = true;
+    }
+
+    if (value.HasMember("Names") && !value["Names"].IsNull())
+    {
+        if (!value["Names"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `QueryFilter.Names` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Names"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_names.push_back((*itr).GetString());
+        }
+        m_namesHasBeenSet = true;
     }
 
     if (value.HasMember("ExactMatch") && !value["ExactMatch"].IsNull())
@@ -97,19 +97,6 @@ CoreInternalOutcome QueryFilter::Deserialize(const rapidjson::Value &value)
 void QueryFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_namesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Names";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_names.begin(); itr != m_names.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_valuesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +105,19 @@ void QueryFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_values.begin(); itr != m_values.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_namesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Names";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_names.begin(); itr != m_names.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -150,22 +150,6 @@ void QueryFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 }
 
 
-vector<string> QueryFilter::GetNames() const
-{
-    return m_names;
-}
-
-void QueryFilter::SetNames(const vector<string>& _names)
-{
-    m_names = _names;
-    m_namesHasBeenSet = true;
-}
-
-bool QueryFilter::NamesHasBeenSet() const
-{
-    return m_namesHasBeenSet;
-}
-
 vector<string> QueryFilter::GetValues() const
 {
     return m_values;
@@ -180,6 +164,22 @@ void QueryFilter::SetValues(const vector<string>& _values)
 bool QueryFilter::ValuesHasBeenSet() const
 {
     return m_valuesHasBeenSet;
+}
+
+vector<string> QueryFilter::GetNames() const
+{
+    return m_names;
+}
+
+void QueryFilter::SetNames(const vector<string>& _names)
+{
+    m_names = _names;
+    m_namesHasBeenSet = true;
+}
+
+bool QueryFilter::NamesHasBeenSet() const
+{
+    return m_namesHasBeenSet;
 }
 
 bool QueryFilter::GetExactMatch() const

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取算法：hmac-based，public-key
-                     * @return Algorithm 算法：hmac-based，public-key
+                     * 获取签名方式：hmac-based，public-key
+                     * @return Algorithm 签名方式：hmac-based，public-key
                      * 
                      */
                     std::string GetAlgorithm() const;
 
                     /**
-                     * 设置算法：hmac-based，public-key
-                     * @param _algorithm 算法：hmac-based，public-key
+                     * 设置签名方式：hmac-based，public-key
+                     * @param _algorithm 签名方式：hmac-based，public-key
                      * 
                      */
                     void SetAlgorithm(const std::string& _algorithm);
@@ -85,23 +85,23 @@ namespace TencentCloud
                     bool AlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取设备连接时传递jwt的key；
-username-使用用户名字段传递；
-password-使用密码字段传递
-                     * @return From 设备连接时传递jwt的key；
-username-使用用户名字段传递；
-password-使用密码字段传递
+                     * 获取认证字段
+password：对应 MQTT CONNECT Packet 中 password 字段，
+username：对应 MQTT CONNECT Packet 中 username 字段
+                     * @return From 认证字段
+password：对应 MQTT CONNECT Packet 中 password 字段，
+username：对应 MQTT CONNECT Packet 中 username 字段
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置设备连接时传递jwt的key；
-username-使用用户名字段传递；
-password-使用密码字段传递
-                     * @param _from 设备连接时传递jwt的key；
-username-使用用户名字段传递；
-password-使用密码字段传递
+                     * 设置认证字段
+password：对应 MQTT CONNECT Packet 中 password 字段，
+username：对应 MQTT CONNECT Packet 中 username 字段
+                     * @param _from 认证字段
+password：对应 MQTT CONNECT Packet 中 password 字段，
+username：对应 MQTT CONNECT Packet 中 username 字段
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -114,15 +114,15 @@ password-使用密码字段传递
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取密码
-                     * @return Secret 密码
+                     * 获取密钥，Algorithm为hmac-based需要传递该字段。
+                     * @return Secret 密钥，Algorithm为hmac-based需要传递该字段。
                      * 
                      */
                     std::string GetSecret() const;
 
                     /**
-                     * 设置密码
-                     * @param _secret 密码
+                     * 设置密钥，Algorithm为hmac-based需要传递该字段。
+                     * @param _secret 密钥，Algorithm为hmac-based需要传递该字段。
                      * 
                      */
                     void SetSecret(const std::string& _secret);
@@ -135,15 +135,15 @@ password-使用密码字段传递
                     bool SecretHasBeenSet() const;
 
                     /**
-                     * 获取公钥
-                     * @return PublicKey 公钥
+                     * 获取公钥，Algorithm为public-key时需要传递该字段。
+                     * @return PublicKey 公钥，Algorithm为public-key时需要传递该字段。
                      * 
                      */
                     std::string GetPublicKey() const;
 
                     /**
-                     * 设置公钥
-                     * @param _publicKey 公钥
+                     * 设置公钥，Algorithm为public-key时需要传递该字段。
+                     * @param _publicKey 公钥，Algorithm为public-key时需要传递该字段。
                      * 
                      */
                     void SetPublicKey(const std::string& _publicKey);
@@ -156,36 +156,36 @@ password-使用密码字段传递
                     bool PublicKeyHasBeenSet() const;
 
                     /**
-                     * 获取JSKS文本
-                     * @return Text JSKS文本
+                     * 获取认证器是否开启：open-启用；close-关闭
+                     * @return Status 认证器是否开启：open-启用；close-关闭
                      * 
                      */
-                    std::string GetText() const;
+                    std::string GetStatus() const;
 
                     /**
-                     * 设置JSKS文本
-                     * @param _text JSKS文本
+                     * 设置认证器是否开启：open-启用；close-关闭
+                     * @param _status 认证器是否开启：open-启用；close-关闭
                      * 
                      */
-                    void SetText(const std::string& _text);
+                    void SetStatus(const std::string& _status);
 
                     /**
-                     * 判断参数 Text 是否已赋值
-                     * @return Text 是否已赋值
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
                      * 
                      */
-                    bool TextHasBeenSet() const;
+                    bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取说明
-                     * @return Remark 说明
+                     * 获取说明，不能超过 128 个字符
+                     * @return Remark 说明，不能超过 128 个字符
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置说明
-                     * @param _remark 说明
+                     * 设置说明，不能超过 128 个字符
+                     * @param _remark 说明，不能超过 128 个字符
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -197,51 +197,78 @@ password-使用密码字段传递
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取JSKS文本
+                     * @return Text JSKS文本
+                     * @deprecated
+                     */
+                    std::string GetText() const;
+
+                    /**
+                     * 设置JSKS文本
+                     * @param _text JSKS文本
+                     * @deprecated
+                     */
+                    void SetText(const std::string& _text);
+
+                    /**
+                     * 判断参数 Text 是否已赋值
+                     * @return Text 是否已赋值
+                     * @deprecated
+                     */
+                    bool TextHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 算法：hmac-based，public-key
+                     * 签名方式：hmac-based，public-key
                      */
                     std::string m_algorithm;
                     bool m_algorithmHasBeenSet;
 
                     /**
-                     * 设备连接时传递jwt的key；
-username-使用用户名字段传递；
-password-使用密码字段传递
+                     * 认证字段
+password：对应 MQTT CONNECT Packet 中 password 字段，
+username：对应 MQTT CONNECT Packet 中 username 字段
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 密码
+                     * 密钥，Algorithm为hmac-based需要传递该字段。
                      */
                     std::string m_secret;
                     bool m_secretHasBeenSet;
 
                     /**
-                     * 公钥
+                     * 公钥，Algorithm为public-key时需要传递该字段。
                      */
                     std::string m_publicKey;
                     bool m_publicKeyHasBeenSet;
+
+                    /**
+                     * 认证器是否开启：open-启用；close-关闭
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 说明，不能超过 128 个字符
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                     /**
                      * JSKS文本
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
-
-                    /**
-                     * 说明
-                     */
-                    std::string m_remark;
-                    bool m_remarkHasBeenSet;
 
                 };
             }

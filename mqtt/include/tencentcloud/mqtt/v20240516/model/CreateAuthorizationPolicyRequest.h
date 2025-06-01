@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PolicyVersionHasBeenSet() const;
 
                     /**
-                     * 获取策略优先级，越小越优先，不能重复
-                     * @return Priority 策略优先级，越小越优先，不能重复
+                     * 获取策略优先级，越小越优先，不能重复，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @return Priority 策略优先级，越小越优先，不能重复，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
-                     * 设置策略优先级，越小越优先，不能重复
-                     * @param _priority 策略优先级，越小越优先，不能重复
+                     * 设置策略优先级，越小越优先，不能重复，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @param _priority 策略优先级，越小越优先，不能重复，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -128,22 +128,26 @@ namespace TencentCloud
 
                     /**
                      * 获取决策：
-allow 允许
-deny 拒绝
+allow：允许符合该策略的设备的访问请求。
+deny：拒绝覆盖该策略的设备的访问请求。
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * @return Effect 决策：
-allow 允许
-deny 拒绝
+allow：允许符合该策略的设备的访问请求。
+deny：拒绝覆盖该策略的设备的访问请求。
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     std::string GetEffect() const;
 
                     /**
                      * 设置决策：
-allow 允许
-deny 拒绝
+allow：允许符合该策略的设备的访问请求。
+deny：拒绝覆盖该策略的设备的访问请求。
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * @param _effect 决策：
-allow 允许
-deny 拒绝
+allow：允许符合该策略的设备的访问请求。
+deny：拒绝覆盖该策略的设备的访问请求。
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetEffect(const std::string& _effect);
@@ -156,11 +160,11 @@ deny 拒绝
                     bool EffectHasBeenSet() const;
 
                     /**
-                     * 获取操作
+                     * 获取操作,支持多选，多个操作用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
 connect：连接
 pub：发布
 sub：订阅
-                     * @return Actions 操作
+                     * @return Actions 操作,支持多选，多个操作用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
 connect：连接
 pub：发布
 sub：订阅
@@ -169,11 +173,11 @@ sub：订阅
                     std::string GetActions() const;
 
                     /**
-                     * 设置操作
+                     * 设置操作,支持多选，多个操作用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
 connect：连接
 pub：发布
 sub：订阅
-                     * @param _actions 操作
+                     * @param _actions 操作,支持多选，多个操作用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
 connect：连接
 pub：发布
 sub：订阅
@@ -189,11 +193,11 @@ sub：订阅
                     bool ActionsHasBeenSet() const;
 
                     /**
-                     * 获取条件-保留消息
+                     * 获取条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
 1,匹配保留消息；
 2,匹配非保留消息，
 3.匹配保留和非保留消息
-                     * @return Retain 条件-保留消息
+                     * @return Retain 条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
 1,匹配保留消息；
 2,匹配非保留消息，
 3.匹配保留和非保留消息
@@ -202,11 +206,11 @@ sub：订阅
                     int64_t GetRetain() const;
 
                     /**
-                     * 设置条件-保留消息
+                     * 设置条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
 1,匹配保留消息；
 2,匹配非保留消息，
 3.匹配保留和非保留消息
-                     * @param _retain 条件-保留消息
+                     * @param _retain 条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
 1,匹配保留消息；
 2,匹配非保留消息，
 3.匹配保留和非保留消息
@@ -226,10 +230,12 @@ sub：订阅
 0：最多一次
 1：最少一次
 2：精确一次
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * @return Qos 条件：服务质量
 0：最多一次
 1：最少一次
 2：精确一次
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     std::string GetQos() const;
@@ -239,10 +245,12 @@ sub：订阅
 0：最多一次
 1：最少一次
 2：精确一次
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * @param _qos 条件：服务质量
 0：最多一次
 1：最少一次
 2：精确一次
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetQos(const std::string& _qos);
@@ -255,15 +263,19 @@ sub：订阅
                     bool QosHasBeenSet() const;
 
                     /**
-                     * 获取资源，需要匹配的订阅
-                     * @return Resources 资源，需要匹配的订阅
+                     * 获取资源，需要匹配的订阅，支持配置多条匹配规则，多个用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+
+                     * @return Resources 资源，需要匹配的订阅，支持配置多条匹配规则，多个用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+
                      * 
                      */
                     std::string GetResources() const;
 
                     /**
-                     * 设置资源，需要匹配的订阅
-                     * @param _resources 资源，需要匹配的订阅
+                     * 设置资源，需要匹配的订阅，支持配置多条匹配规则，多个用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+
+                     * @param _resources 资源，需要匹配的订阅，支持配置多条匹配规则，多个用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+
                      * 
                      */
                     void SetResources(const std::string& _resources);
@@ -318,15 +330,15 @@ sub：订阅
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取条件：客户端IP地址，支持IP或者CIDR
-                     * @return Ip 条件：客户端IP地址，支持IP或者CIDR
+                     * 获取条件：客户端IP地址，支持IP或者CIDR，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @return Ip 条件：客户端IP地址，支持IP或者CIDR，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置条件：客户端IP地址，支持IP或者CIDR
-                     * @param _ip 条件：客户端IP地址，支持IP或者CIDR
+                     * 设置条件：客户端IP地址，支持IP或者CIDR，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @param _ip 条件：客户端IP地址，支持IP或者CIDR，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -380,21 +392,22 @@ sub：订阅
                     bool m_policyVersionHasBeenSet;
 
                     /**
-                     * 策略优先级，越小越优先，不能重复
+                     * 策略优先级，越小越优先，不能重复，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
                      * 决策：
-allow 允许
-deny 拒绝
+allow：允许符合该策略的设备的访问请求。
+deny：拒绝覆盖该策略的设备的访问请求。
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     std::string m_effect;
                     bool m_effectHasBeenSet;
 
                     /**
-                     * 操作
+                     * 操作,支持多选，多个操作用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
 connect：连接
 pub：发布
 sub：订阅
@@ -403,7 +416,7 @@ sub：订阅
                     bool m_actionsHasBeenSet;
 
                     /**
-                     * 条件-保留消息
+                     * 条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
 1,匹配保留消息；
 2,匹配非保留消息，
 3.匹配保留和非保留消息
@@ -416,12 +429,14 @@ sub：订阅
 0：最多一次
 1：最少一次
 2：精确一次
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     std::string m_qos;
                     bool m_qosHasBeenSet;
 
                     /**
-                     * 资源，需要匹配的订阅
+                     * 资源，需要匹配的订阅，支持配置多条匹配规则，多个用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+
                      */
                     std::string m_resources;
                     bool m_resourcesHasBeenSet;
@@ -439,7 +454,7 @@ sub：订阅
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * 条件：客户端IP地址，支持IP或者CIDR
+                     * 条件：客户端IP地址，支持IP或者CIDR，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;

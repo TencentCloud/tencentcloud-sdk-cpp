@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * @return Names 搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * 
-                     */
-                    std::vector<std::string> GetNames() const;
-
-                    /**
-                     * 设置搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * @param _names 搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * 
-                     */
-                    void SetNames(const std::vector<std::string>& _names);
-
-                    /**
-                     * 判断参数 Names 是否已赋值
-                     * @return Names 是否已赋值
-                     * 
-                     */
-                    bool NamesHasBeenSet() const;
-
-                    /**
                      * 获取搜索字符串
                      * @return Values 搜索字符串
                      * 
@@ -87,6 +66,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ValuesHasBeenSet() const;
+
+                    /**
+                     * 获取搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
+                     * @return Names 搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
+                     * 
+                     */
+                    std::vector<std::string> GetNames() const;
+
+                    /**
+                     * 设置搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
+                     * @param _names 搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
+                     * 
+                     */
+                    void SetNames(const std::vector<std::string>& _names);
+
+                    /**
+                     * 判断参数 Names 是否已赋值
+                     * @return Names 是否已赋值
+                     * 
+                     */
+                    bool NamesHasBeenSet() const;
 
                     /**
                      * 获取是否精确匹配
@@ -154,16 +154,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
-                     */
-                    std::vector<std::string> m_names;
-                    bool m_namesHasBeenSet;
-
-                    /**
                      * 搜索字符串
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
+
+                    /**
+                     * 搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
+                     */
+                    std::vector<std::string> m_names;
+                    bool m_namesHasBeenSet;
 
                     /**
                      * 是否精确匹配

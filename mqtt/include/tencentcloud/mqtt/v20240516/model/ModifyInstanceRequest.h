@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取要修改的备注信息，最多64个字符。
-                     * @return Remark 要修改的备注信息，最多64个字符。
+                     * 获取要修改的备注信息，最多128个字符。
+                     * @return Remark 要修改的备注信息，最多128个字符。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置要修改的备注信息，最多64个字符。
-                     * @param _remark 要修改的备注信息，最多64个字符。
+                     * 设置要修改的备注信息，最多128个字符。
+                     * @param _remark 要修改的备注信息，最多128个字符。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -137,7 +137,7 @@ API：手动通过API注册
                      * @return DeviceCertificateProvisionType 客户端证书注册方式：
 JITP：自动注册
 API：手动通过API注册
-                     * 
+                     * @deprecated
                      */
                     std::string GetDeviceCertificateProvisionType() const;
 
@@ -148,35 +148,35 @@ API：手动通过API注册
                      * @param _deviceCertificateProvisionType 客户端证书注册方式：
 JITP：自动注册
 API：手动通过API注册
-                     * 
+                     * @deprecated
                      */
                     void SetDeviceCertificateProvisionType(const std::string& _deviceCertificateProvisionType);
 
                     /**
                      * 判断参数 DeviceCertificateProvisionType 是否已赋值
                      * @return DeviceCertificateProvisionType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DeviceCertificateProvisionTypeHasBeenSet() const;
 
                     /**
                      * 获取自动注册证书是否自动激活
                      * @return AutomaticActivation 自动注册证书是否自动激活
-                     * 
+                     * @deprecated
                      */
                     bool GetAutomaticActivation() const;
 
                     /**
                      * 设置自动注册证书是否自动激活
                      * @param _automaticActivation 自动注册证书是否自动激活
-                     * 
+                     * @deprecated
                      */
                     void SetAutomaticActivation(const bool& _automaticActivation);
 
                     /**
                      * 判断参数 AutomaticActivation 是否已赋值
                      * @return AutomaticActivation 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AutomaticActivationHasBeenSet() const;
 
@@ -216,7 +216,7 @@ API：手动通过API注册
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 要修改的备注信息，最多64个字符。
+                     * 要修改的备注信息，最多128个字符。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

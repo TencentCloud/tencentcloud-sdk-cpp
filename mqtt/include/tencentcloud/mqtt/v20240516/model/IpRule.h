@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取是否允许放行
-                     * @return Allow 是否允许放行
+                     * 获取当前仅支持允许，默认允许。
+                     * @return Allow 当前仅支持允许，默认允许。
                      * 
                      */
                     bool GetAllow() const;
 
                     /**
-                     * 设置是否允许放行
-                     * @param _allow 是否允许放行
+                     * 设置当前仅支持允许，默认允许。
+                     * @param _allow 当前仅支持允许，默认允许。
                      * 
                      */
                     void SetAllow(const bool& _allow);
@@ -118,7 +118,7 @@ namespace TencentCloud
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 是否允许放行
+                     * 当前仅支持允许，默认允许。
                      */
                     bool m_allow;
                     bool m_allowHasBeenSet;

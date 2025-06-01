@@ -57,7 +57,7 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/ApplyRegistrationCodeResponse.h
   include/tencentcloud/mqtt/v20240516/model/ModifyInstanceResponse.h
   include/tencentcloud/mqtt/v20240516/model/CreateHttpAuthenticatorResponse.h
-  include/tencentcloud/mqtt/v20240516/model/ModifyInsPublicEndpointResponse.h
+  include/tencentcloud/mqtt/v20240516/model/MQTTMessage.h
   include/tencentcloud/mqtt/v20240516/model/MQTTMessageItem.h
   include/tencentcloud/mqtt/v20240516/model/ModifyJWKSAuthenticatorResponse.h
   include/tencentcloud/mqtt/v20240516/model/CreateInsPublicEndpointResponse.h
@@ -68,10 +68,12 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/DeactivateCaCertificateResponse.h
   include/tencentcloud/mqtt/v20240516/model/DeleteCaCertificateRequest.h
   include/tencentcloud/mqtt/v20240516/model/DeleteDeviceCertificateRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeMessageByTopicRequest.h
   include/tencentcloud/mqtt/v20240516/model/DescribeInsPublicEndpointsRequest.h
   include/tencentcloud/mqtt/v20240516/model/DeleteUserResponse.h
   include/tencentcloud/mqtt/v20240516/model/ActivateCaCertificateResponse.h
   include/tencentcloud/mqtt/v20240516/model/DeleteDeviceCertificateResponse.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeMessageByTopicResponse.h
   include/tencentcloud/mqtt/v20240516/model/DeleteInstanceResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeProductSKUListResponse.h
   include/tencentcloud/mqtt/v20240516/model/CreateJWKSAuthenticatorRequest.h
@@ -99,6 +101,7 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/DescribeTopicListRequest.h
   include/tencentcloud/mqtt/v20240516/model/CreateTopicResponse.h
   include/tencentcloud/mqtt/v20240516/model/RevokedDeviceCertificateRequest.h
+  include/tencentcloud/mqtt/v20240516/model/ModifyInsPublicEndpointResponse.h
   include/tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorRequest.h
   include/tencentcloud/mqtt/v20240516/model/RegisterCaCertificateRequest.h
@@ -187,7 +190,7 @@ set(mqtt_src
   src/v20240516/model/ApplyRegistrationCodeResponse.cpp
   src/v20240516/model/ModifyInstanceResponse.cpp
   src/v20240516/model/CreateHttpAuthenticatorResponse.cpp
-  src/v20240516/model/ModifyInsPublicEndpointResponse.cpp
+  src/v20240516/model/MQTTMessage.cpp
   src/v20240516/model/MQTTMessageItem.cpp
   src/v20240516/model/ModifyJWKSAuthenticatorResponse.cpp
   src/v20240516/model/CreateInsPublicEndpointResponse.cpp
@@ -198,10 +201,12 @@ set(mqtt_src
   src/v20240516/model/DeactivateCaCertificateResponse.cpp
   src/v20240516/model/DeleteCaCertificateRequest.cpp
   src/v20240516/model/DeleteDeviceCertificateRequest.cpp
+  src/v20240516/model/DescribeMessageByTopicRequest.cpp
   src/v20240516/model/DescribeInsPublicEndpointsRequest.cpp
   src/v20240516/model/DeleteUserResponse.cpp
   src/v20240516/model/ActivateCaCertificateResponse.cpp
   src/v20240516/model/DeleteDeviceCertificateResponse.cpp
+  src/v20240516/model/DescribeMessageByTopicResponse.cpp
   src/v20240516/model/DeleteInstanceResponse.cpp
   src/v20240516/model/DescribeProductSKUListResponse.cpp
   src/v20240516/model/CreateJWKSAuthenticatorRequest.cpp
@@ -229,6 +234,7 @@ set(mqtt_src
   src/v20240516/model/DescribeTopicListRequest.cpp
   src/v20240516/model/CreateTopicResponse.cpp
   src/v20240516/model/RevokedDeviceCertificateRequest.cpp
+  src/v20240516/model/ModifyInsPublicEndpointResponse.cpp
   src/v20240516/model/CreateAuthorizationPolicyResponse.cpp
   src/v20240516/model/DescribeAuthenticatorRequest.cpp
   src/v20240516/model/RegisterCaCertificateRequest.cpp

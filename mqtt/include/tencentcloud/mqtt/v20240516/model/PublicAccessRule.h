@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IpRuleHasBeenSet() const;
 
                     /**
-                     * 获取允许或者拒绝
-                     * @return Allow 允许或者拒绝
+                     * 获取当前仅支持允许，默认允许（allow）
+                     * @return Allow 当前仅支持允许，默认允许（allow）
                      * 
                      */
                     bool GetAllow() const;
 
                     /**
-                     * 设置允许或者拒绝
-                     * @param _allow 允许或者拒绝
+                     * 设置当前仅支持允许，默认允许（allow）
+                     * @param _allow 当前仅支持允许，默认允许（allow）
                      * 
                      */
                     void SetAllow(const bool& _allow);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AllowHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
-                     * @return Remark 备注信息
+                     * 获取备注信息，最多64个字符。
+                     * @return Remark 备注信息，最多64个字符。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息
-                     * @param _remark 备注信息
+                     * 设置备注信息，最多64个字符。
+                     * @param _remark 备注信息，最多64个字符。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_ipRuleHasBeenSet;
 
                     /**
-                     * 允许或者拒绝
+                     * 当前仅支持允许，默认允许（allow）
                      */
                     bool m_allow;
                     bool m_allowHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * 备注信息，最多64个字符。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

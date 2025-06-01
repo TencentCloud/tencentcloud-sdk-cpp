@@ -87,6 +87,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceListRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceListResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeMessageByTopicRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeMessageByTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageListRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeProductSKUListRequest.h>
@@ -237,6 +239,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceListResponse> DescribeInstanceListOutcome;
                 typedef std::future<DescribeInstanceListOutcome> DescribeInstanceListOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeInstanceListRequest&, DescribeInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMessageByTopicResponse> DescribeMessageByTopicOutcome;
+                typedef std::future<DescribeMessageByTopicOutcome> DescribeMessageByTopicOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeMessageByTopicRequest&, DescribeMessageByTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageByTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMessageListResponse> DescribeMessageListOutcome;
                 typedef std::future<DescribeMessageListOutcome> DescribeMessageListOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeMessageListRequest&, DescribeMessageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageListAsyncHandler;
@@ -346,7 +351,7 @@ namespace TencentCloud
                 CreateHttpAuthenticatorOutcomeCallable CreateHttpAuthenticatorCallable(const Model::CreateHttpAuthenticatorRequest& request);
 
                 /**
-                 *为MQTT实例创建公网接入点
+                 *为MQTT实例创建公网接入点，未开启公网的集群可调用。
                  * @param req CreateInsPublicEndpointRequest
                  * @return CreateInsPublicEndpointOutcome
                  */
@@ -594,6 +599,15 @@ namespace TencentCloud
                 DescribeInstanceListOutcomeCallable DescribeInstanceListCallable(const Model::DescribeInstanceListRequest& request);
 
                 /**
+                 *根据订阅查询消息
+                 * @param req DescribeMessageByTopicRequest
+                 * @return DescribeMessageByTopicOutcome
+                 */
+                DescribeMessageByTopicOutcome DescribeMessageByTopic(const Model::DescribeMessageByTopicRequest &request);
+                void DescribeMessageByTopicAsync(const Model::DescribeMessageByTopicRequest& request, const DescribeMessageByTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMessageByTopicOutcomeCallable DescribeMessageByTopicCallable(const Model::DescribeMessageByTopicRequest& request);
+
+                /**
                  *根据一级Topic查询消息列表
                  * @param req DescribeMessageListRequest
                  * @return DescribeMessageListOutcome
@@ -653,7 +667,7 @@ namespace TencentCloud
                 DescribeUserListOutcomeCallable DescribeUserListCallable(const Model::DescribeUserListRequest& request);
 
                 /**
-                 *修改策略规则
+                 *修改策略规则，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)
                  * @param req ModifyAuthorizationPolicyRequest
                  * @return ModifyAuthorizationPolicyOutcome
                  */
@@ -699,7 +713,7 @@ namespace TencentCloud
                 ModifyInstanceCertBindingOutcomeCallable ModifyInstanceCertBindingCallable(const Model::ModifyInstanceCertBindingRequest& request);
 
                 /**
-                 *修改MQTT JWKS 认证器
+                 *修改MQTT JWKS 认证器，全量配置修改，需要提交完整的修改后配置。
                  * @param req ModifyJWKSAuthenticatorRequest
                  * @return ModifyJWKSAuthenticatorOutcome
                  */

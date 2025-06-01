@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取快照策略ID,查询快照策略列表获取
-                     * @return AutoSnapshotPolicyId 快照策略ID,查询快照策略列表获取
+                     * 获取解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取
+                     * @return AutoSnapshotPolicyId 解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取
                      * 
                      */
                     std::string GetAutoSnapshotPolicyId() const;
 
                     /**
-                     * 设置快照策略ID,查询快照策略列表获取
-                     * @param _autoSnapshotPolicyId 快照策略ID,查询快照策略列表获取
+                     * 设置解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取
+                     * @param _autoSnapshotPolicyId 解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取
                      * 
                      */
                     void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
@@ -213,7 +213,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 快照策略ID,查询快照策略列表获取
+                     * 解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取
                      */
                     std::string m_autoSnapshotPolicyId;
                     bool m_autoSnapshotPolicyIdHasBeenSet;

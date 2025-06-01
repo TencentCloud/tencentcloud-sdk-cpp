@@ -24,9 +24,9 @@ using namespace std;
 
 ModifyInstanceCertBindingRequest::ModifyInstanceCertBindingRequest() :
     m_instanceIdHasBeenSet(false),
+    m_x509ModeHasBeenSet(false),
     m_sSLServerCertIdHasBeenSet(false),
     m_sSLCaCertIdHasBeenSet(false),
-    m_x509ModeHasBeenSet(false),
     m_deviceCertificateProvisionTypeHasBeenSet(false),
     m_automaticActivationHasBeenSet(false)
 {
@@ -47,6 +47,14 @@ string ModifyInstanceCertBindingRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_x509ModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "X509Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_x509Mode.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_sSLServerCertIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -61,14 +69,6 @@ string ModifyInstanceCertBindingRequest::ToJsonString() const
         string key = "SSLCaCertId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sSLCaCertId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_x509ModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "X509Mode";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_x509Mode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceCertificateProvisionTypeHasBeenSet)
@@ -111,6 +111,22 @@ bool ModifyInstanceCertBindingRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
+string ModifyInstanceCertBindingRequest::GetX509Mode() const
+{
+    return m_x509Mode;
+}
+
+void ModifyInstanceCertBindingRequest::SetX509Mode(const string& _x509Mode)
+{
+    m_x509Mode = _x509Mode;
+    m_x509ModeHasBeenSet = true;
+}
+
+bool ModifyInstanceCertBindingRequest::X509ModeHasBeenSet() const
+{
+    return m_x509ModeHasBeenSet;
+}
+
 string ModifyInstanceCertBindingRequest::GetSSLServerCertId() const
 {
     return m_sSLServerCertId;
@@ -141,22 +157,6 @@ void ModifyInstanceCertBindingRequest::SetSSLCaCertId(const string& _sSLCaCertId
 bool ModifyInstanceCertBindingRequest::SSLCaCertIdHasBeenSet() const
 {
     return m_sSLCaCertIdHasBeenSet;
-}
-
-string ModifyInstanceCertBindingRequest::GetX509Mode() const
-{
-    return m_x509Mode;
-}
-
-void ModifyInstanceCertBindingRequest::SetX509Mode(const string& _x509Mode)
-{
-    m_x509Mode = _x509Mode;
-    m_x509ModeHasBeenSet = true;
-}
-
-bool ModifyInstanceCertBindingRequest::X509ModeHasBeenSet() const
-{
-    return m_x509ModeHasBeenSet;
 }
 
 string ModifyInstanceCertBindingRequest::GetDeviceCertificateProvisionType() const

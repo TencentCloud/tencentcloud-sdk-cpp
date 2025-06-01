@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取jwks端点
-                     * @return Endpoint jwks端点
+                     * 获取jwks服务地址
+                     * @return Endpoint jwks服务地址
                      * 
                      */
                     std::string GetEndpoint() const;
 
                     /**
-                     * 设置jwks端点
-                     * @param _endpoint jwks端点
+                     * 设置jwks服务地址
+                     * @param _endpoint jwks服务地址
                      * 
                      */
                     void SetEndpoint(const std::string& _endpoint);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool EndpointHasBeenSet() const;
 
                     /**
-                     * 获取最大并发连接数，默认8，范围：1-20
-                     * @return Concurrency 最大并发连接数，默认8，范围：1-20
+                     * 获取最大并发连接数，默认8，范围：1-10
+                     * @return Concurrency 最大并发连接数，默认8，范围：1-10
                      * 
                      */
                     int64_t GetConcurrency() const;
 
                     /**
-                     * 设置最大并发连接数，默认8，范围：1-20
-                     * @param _concurrency 最大并发连接数，默认8，范围：1-20
+                     * 设置最大并发连接数，默认8，范围：1-10
+                     * @param _concurrency 最大并发连接数，默认8，范围：1-10
                      * 
                      */
                     void SetConcurrency(const int64_t& _concurrency);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool ConcurrencyHasBeenSet() const;
 
                     /**
-                     * 获取网络请求方法 Get 或 Post，默认post
-                     * @return Method 网络请求方法 Get 或 Post，默认post
+                     * 获取网络请求方法 GET 或 POST，默认POST
+                     * @return Method 网络请求方法 GET 或 POST，默认POST
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
-                     * 设置网络请求方法 Get 或 Post，默认post
-                     * @param _method 网络请求方法 Get 或 Post，默认post
+                     * 设置网络请求方法 GET 或 POST，默认POST
+                     * @param _method 网络请求方法 GET 或 POST，默认POST
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取认证器是否开启：open-启用；close-关闭
-                     * @return Status 认证器是否开启：open-启用；close-关闭
+                     * 获取认证器是否开启：open-启用；close-关闭，默认open-启用
+                     * @return Status 认证器是否开启：open-启用；close-关闭，默认open-启用
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置认证器是否开启：open-启用；close-关闭
-                     * @param _status 认证器是否开启：open-启用；close-关闭
+                     * 设置认证器是否开启：open-启用；close-关闭，默认open-启用
+                     * @param _status 认证器是否开启：open-启用；close-关闭，默认open-启用
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取说明
-                     * @return Remark 说明
+                     * 获取说明，最多支持128个字符。
+                     * @return Remark 说明，最多支持128个字符。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置说明
-                     * @param _remark 说明
+                     * 设置说明，最多支持128个字符。
+                     * @param _remark 说明，最多支持128个字符。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -257,37 +257,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * jwks端点
+                     * jwks服务地址
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;
 
                     /**
-                     * 最大并发连接数，默认8，范围：1-20
+                     * 最大并发连接数，默认8，范围：1-10
                      */
                     int64_t m_concurrency;
                     bool m_concurrencyHasBeenSet;
 
                     /**
-                     * 网络请求方法 Get 或 Post，默认post
+                     * 网络请求方法 GET 或 POST，默认POST
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 认证器是否开启：open-启用；close-关闭
+                     * 认证器是否开启：open-启用；close-关闭，默认open-启用
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 说明
+                     * 说明，最多支持128个字符。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

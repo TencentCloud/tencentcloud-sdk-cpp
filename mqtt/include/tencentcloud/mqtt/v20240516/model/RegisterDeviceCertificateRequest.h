@@ -151,13 +151,9 @@ namespace TencentCloud
                      * 获取 客户端证书状态，默认激活状态（ACTIVE）
 ACTIVE：激活     
 INACTIVE：未激活     
-REVOKED：吊销 
-PENDING_ACTIVATION：注册待激活
                      * @return Status  客户端证书状态，默认激活状态（ACTIVE）
 ACTIVE：激活     
 INACTIVE：未激活     
-REVOKED：吊销 
-PENDING_ACTIVATION：注册待激活
                      * 
                      */
                     std::string GetStatus() const;
@@ -166,13 +162,9 @@ PENDING_ACTIVATION：注册待激活
                      * 设置 客户端证书状态，默认激活状态（ACTIVE）
 ACTIVE：激活     
 INACTIVE：未激活     
-REVOKED：吊销 
-PENDING_ACTIVATION：注册待激活
                      * @param _status  客户端证书状态，默认激活状态（ACTIVE）
 ACTIVE：激活     
 INACTIVE：未激活     
-REVOKED：吊销 
-PENDING_ACTIVATION：注册待激活
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -220,8 +212,6 @@ PENDING_ACTIVATION：注册待激活
                      *  客户端证书状态，默认激活状态（ACTIVE）
 ACTIVE：激活     
 INACTIVE：未激活     
-REVOKED：吊销 
-PENDING_ACTIVATION：注册待激活
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

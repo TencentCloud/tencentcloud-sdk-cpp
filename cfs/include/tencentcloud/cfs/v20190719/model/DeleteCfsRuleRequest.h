@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
-                     * @return PGroupId 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * 获取权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
+                     * @return PGroupId 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
-                     * 设置权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
-                     * @param _pGroupId 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * 设置权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
+                     * @param _pGroupId 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取规则 ID，通过查询权限组规则接口获取
-                     * @return RuleId 规则 ID，通过查询权限组规则接口获取
+                     * 获取规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取
+                     * @return RuleId 规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则 ID，通过查询权限组规则接口获取
-                     * @param _ruleId 规则 ID，通过查询权限组规则接口获取
+                     * 设置规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取
+                     * @param _ruleId 规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      */
                     std::string m_pGroupId;
                     bool m_pGroupIdHasBeenSet;
 
                     /**
-                     * 规则 ID，通过查询权限组规则接口获取
+                     * 规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;

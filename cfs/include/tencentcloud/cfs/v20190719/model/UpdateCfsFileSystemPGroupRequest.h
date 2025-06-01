@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
-                     * @return PGroupId 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * 获取权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
+                     * @return PGroupId 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
-                     * 设置权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
-                     * @param _pGroupId 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * 设置权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
+                     * @param _pGroupId 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统 ID，通过查询文件系统接口获取
-                     * @return FileSystemId 文件系统 ID，通过查询文件系统接口获取
+                     * 获取文件系统 ID，通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取
+                     * @return FileSystemId 文件系统 ID，通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统 ID，通过查询文件系统接口获取
-                     * @param _fileSystemId 文件系统 ID，通过查询文件系统接口获取
+                     * 设置文件系统 ID，通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取
+                     * @param _fileSystemId 文件系统 ID，通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      */
                     std::string m_pGroupId;
                     bool m_pGroupIdHasBeenSet;
 
                     /**
-                     * 文件系统 ID，通过查询文件系统接口获取
+                     * 文件系统 ID，通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;

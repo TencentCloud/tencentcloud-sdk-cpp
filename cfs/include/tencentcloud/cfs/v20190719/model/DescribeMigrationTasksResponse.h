@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移任务的数量
-                     * @return TotalCount 迁移任务的数量
+                     * 获取迁移任务的总数量
+                     * @return TotalCount 迁移任务的总数量
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移任务的数量
+                     * 迁移任务的总数量
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

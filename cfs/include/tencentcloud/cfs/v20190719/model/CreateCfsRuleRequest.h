@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
-                     * @return PGroupId 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * 获取权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
+                     * @return PGroupId 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
-                     * 设置权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
-                     * @param _pGroupId 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * 设置权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
+                     * @param _pGroupId 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
@@ -127,13 +127,13 @@ namespace TencentCloud
                     bool RWPermissionHasBeenSet() const;
 
                     /**
-                     * 获取用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。
+                     * 获取用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。默认值为root_squash
 all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
 no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
 root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
 no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息
 
-                     * @return UserPermission 用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。
+                     * @return UserPermission 用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。默认值为root_squash
 all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
 no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
 root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
@@ -144,13 +144,13 @@ no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 
                     std::string GetUserPermission() const;
 
                     /**
-                     * 设置用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。
+                     * 设置用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。默认值为root_squash
 all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
 no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
 root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
 no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息
 
-                     * @param _userPermission 用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。
+                     * @param _userPermission 用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。默认值为root_squash
 all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
 no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
 root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
@@ -170,7 +170,7 @@ no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 
                 private:
 
                     /**
-                     * 权限组 ID，通过创建权限组接口或者创建权限组规则接口获取
+                     * 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      */
                     std::string m_pGroupId;
                     bool m_pGroupIdHasBeenSet;
@@ -194,7 +194,7 @@ no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 
                     bool m_rWPermissionHasBeenSet;
 
                     /**
-                     * 用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。
+                     * 用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。默认值为root_squash
 all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
 no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
 root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。

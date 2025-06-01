@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统 ID，通过查询文件系统接口获取
-                     * @return FileSystemId 文件系统 ID，通过查询文件系统接口获取
+                     * 获取文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)
+                     * @return FileSystemId 文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统 ID，通过查询文件系统接口获取
-                     * @param _fileSystemId 文件系统 ID，通过查询文件系统接口获取
+                     * 设置文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)
+                     * @param _fileSystemId 文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取快照名称，不超过64字符
-                     * @return SnapshotName 快照名称，不超过64字符
+                     * 获取快照名称，支持不超过64字符长度，支持中文、数字、_、-
+                     * @return SnapshotName 快照名称，支持不超过64字符长度，支持中文、数字、_、-
                      * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
-                     * 设置快照名称，不超过64字符
-                     * @param _snapshotName 快照名称，不超过64字符
+                     * 设置快照名称，支持不超过64字符长度，支持中文、数字、_、-
+                     * @param _snapshotName 快照名称，支持不超过64字符长度，支持中文、数字、_、-
                      * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
@@ -109,13 +109,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统 ID，通过查询文件系统接口获取
+                     * 文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 快照名称，不超过64字符
+                     * 快照名称，支持不超过64字符长度，支持中文、数字、_、-
                      */
                     std::string m_snapshotName;
                     bool m_snapshotNameHasBeenSet;

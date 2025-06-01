@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取端点
-                     * @return Endpoint 端点
+                     * 获取服务地址
+                     * @return Endpoint 服务地址
                      * 
                      */
                     std::string GetEndpoint() const;
 
                     /**
-                     * 设置端点
-                     * @param _endpoint 端点
+                     * 设置服务地址
+                     * @param _endpoint 服务地址
                      * 
                      */
                     void SetEndpoint(const std::string& _endpoint);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取最大并发连接数，默认8，范围：1-20
-                     * @return Concurrency 最大并发连接数，默认8，范围：1-20
+                     * 获取最大并发连接数，默认8，范围：1-10
+                     * @return Concurrency 最大并发连接数，默认8，范围：1-10
                      * 
                      */
                     int64_t GetConcurrency() const;
 
                     /**
-                     * 设置最大并发连接数，默认8，范围：1-20
-                     * @param _concurrency 最大并发连接数，默认8，范围：1-20
+                     * 设置最大并发连接数，默认8，范围：1-10
+                     * @param _concurrency 最大并发连接数，默认8，范围：1-10
                      * 
                      */
                     void SetConcurrency(const int64_t& _concurrency);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ReadTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取说明
-                     * @return Remark 说明
+                     * 获取说明，最多支持128个字符。
+                     * @return Remark 说明，最多支持128个字符。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置说明
-                     * @param _remark 说明
+                     * 设置说明，最多支持128个字符。
+                     * @param _remark 说明，最多支持128个字符。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -257,13 +257,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 端点
+                     * 服务地址
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;
@@ -275,7 +275,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 最大并发连接数，默认8，范围：1-20
+                     * 最大并发连接数，默认8，范围：1-10
                      */
                     int64_t m_concurrency;
                     bool m_concurrencyHasBeenSet;
@@ -293,7 +293,7 @@ namespace TencentCloud
                     bool m_readTimeoutHasBeenSet;
 
                     /**
-                     * 说明
+                     * 说明，最多支持128个字符。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

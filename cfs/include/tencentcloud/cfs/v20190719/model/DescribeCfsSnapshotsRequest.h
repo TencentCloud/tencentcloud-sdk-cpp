@@ -181,15 +181,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取按创建时间排序取值CreationTime
-                     * @return OrderField 按创建时间排序取值CreationTime
+                     * 获取按创建时间排序取值
+                     * @return OrderField 按创建时间排序取值
                      * 
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置按创建时间排序取值CreationTime
-                     * @param _orderField 按创建时间排序取值CreationTime
+                     * 设置按创建时间排序取值
+                     * @param _orderField 按创建时间排序取值
                      * 
                      */
                     void SetOrderField(const std::string& _orderField);
@@ -263,7 +263,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 按创建时间排序取值CreationTime
+                     * 按创建时间排序取值
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;

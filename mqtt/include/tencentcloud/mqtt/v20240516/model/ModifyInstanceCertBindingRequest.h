@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -62,48 +62,6 @@ namespace TencentCloud
                      * 
                      */
                     bool InstanceIdHasBeenSet() const;
-
-                    /**
-                     * 获取服务端证书id
-                     * @return SSLServerCertId 服务端证书id
-                     * 
-                     */
-                    std::string GetSSLServerCertId() const;
-
-                    /**
-                     * 设置服务端证书id
-                     * @param _sSLServerCertId 服务端证书id
-                     * 
-                     */
-                    void SetSSLServerCertId(const std::string& _sSLServerCertId);
-
-                    /**
-                     * 判断参数 SSLServerCertId 是否已赋值
-                     * @return SSLServerCertId 是否已赋值
-                     * 
-                     */
-                    bool SSLServerCertIdHasBeenSet() const;
-
-                    /**
-                     * 获取CA证书id
-                     * @return SSLCaCertId CA证书id
-                     * 
-                     */
-                    std::string GetSSLCaCertId() const;
-
-                    /**
-                     * 设置CA证书id
-                     * @param _sSLCaCertId CA证书id
-                     * 
-                     */
-                    void SetSSLCaCertId(const std::string& _sSLCaCertId);
-
-                    /**
-                     * 判断参数 SSLCaCertId 是否已赋值
-                     * @return SSLCaCertId 是否已赋值
-                     * 
-                     */
-                    bool SSLCaCertIdHasBeenSet() const;
 
                     /**
                      * 获取加密通信方式
@@ -139,23 +97,69 @@ BYOC：一设备一证书认证
                     bool X509ModeHasBeenSet() const;
 
                     /**
+                     * 获取服务端证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS或BYOC时为必填。
+                     * @return SSLServerCertId 服务端证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS或BYOC时为必填。
+                     * 
+                     */
+                    std::string GetSSLServerCertId() const;
+
+                    /**
+                     * 设置服务端证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS或BYOC时为必填。
+                     * @param _sSLServerCertId 服务端证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS或BYOC时为必填。
+                     * 
+                     */
+                    void SetSSLServerCertId(const std::string& _sSLServerCertId);
+
+                    /**
+                     * 判断参数 SSLServerCertId 是否已赋值
+                     * @return SSLServerCertId 是否已赋值
+                     * 
+                     */
+                    bool SSLServerCertIdHasBeenSet() const;
+
+                    /**
+                     * 获取CA证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS时为必填
+                     * @return SSLCaCertId CA证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS时为必填
+                     * 
+                     */
+                    std::string GetSSLCaCertId() const;
+
+                    /**
+                     * 设置CA证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS时为必填
+                     * @param _sSLCaCertId CA证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS时为必填
+                     * 
+                     */
+                    void SetSSLCaCertId(const std::string& _sSLCaCertId);
+
+                    /**
+                     * 判断参数 SSLCaCertId 是否已赋值
+                     * @return SSLCaCertId 是否已赋值
+                     * 
+                     */
+                    bool SSLCaCertIdHasBeenSet() const;
+
+                    /**
                      * 获取设备证书注册类型：
-JITP，自动注册；
-MANUAL 手动注册
+JITP：自动注册；
+API：手动注册
+默认值：API
                      * @return DeviceCertificateProvisionType 设备证书注册类型：
-JITP，自动注册；
-MANUAL 手动注册
+JITP：自动注册；
+API：手动注册
+默认值：API
                      * 
                      */
                     std::string GetDeviceCertificateProvisionType() const;
 
                     /**
                      * 设置设备证书注册类型：
-JITP，自动注册；
-MANUAL 手动注册
+JITP：自动注册；
+API：手动注册
+默认值：API
                      * @param _deviceCertificateProvisionType 设备证书注册类型：
-JITP，自动注册；
-MANUAL 手动注册
+JITP：自动注册；
+API：手动注册
+默认值：API
                      * 
                      */
                     void SetDeviceCertificateProvisionType(const std::string& _deviceCertificateProvisionType);
@@ -191,22 +195,10 @@ MANUAL 手动注册
                 private:
 
                     /**
-                     * 实例ID
+                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
-
-                    /**
-                     * 服务端证书id
-                     */
-                    std::string m_sSLServerCertId;
-                    bool m_sSLServerCertIdHasBeenSet;
-
-                    /**
-                     * CA证书id
-                     */
-                    std::string m_sSLCaCertId;
-                    bool m_sSLCaCertIdHasBeenSet;
 
                     /**
                      * 加密通信方式
@@ -218,9 +210,22 @@ BYOC：一设备一证书认证
                     bool m_x509ModeHasBeenSet;
 
                     /**
+                     * 服务端证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS或BYOC时为必填。
+                     */
+                    std::string m_sSLServerCertId;
+                    bool m_sSLServerCertIdHasBeenSet;
+
+                    /**
+                     * CA证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS时为必填
+                     */
+                    std::string m_sSLCaCertId;
+                    bool m_sSLCaCertIdHasBeenSet;
+
+                    /**
                      * 设备证书注册类型：
-JITP，自动注册；
-MANUAL 手动注册
+JITP：自动注册；
+API：手动注册
+默认值：API
                      */
                     std::string m_deviceCertificateProvisionType;
                     bool m_deviceCertificateProvisionTypeHasBeenSet;

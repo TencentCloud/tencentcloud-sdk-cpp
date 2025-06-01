@@ -154,63 +154,63 @@ namespace TencentCloud
                     /**
                      * 获取死信重发次数	
                      * @return DeadLetterResendTimes 死信重发次数	
-                     * 
+                     * @deprecated
                      */
                     int64_t GetDeadLetterResendTimes() const;
 
                     /**
                      * 设置死信重发次数	
                      * @param _deadLetterResendTimes 死信重发次数	
-                     * 
+                     * @deprecated
                      */
                     void SetDeadLetterResendTimes(const int64_t& _deadLetterResendTimes);
 
                     /**
                      * 判断参数 DeadLetterResendTimes 是否已赋值
                      * @return DeadLetterResendTimes 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DeadLetterResendTimesHasBeenSet() const;
 
                     /**
                      * 获取死信重发成功次数
                      * @return DeadLetterResendSuccessTimes 死信重发成功次数
-                     * 
+                     * @deprecated
                      */
                     int64_t GetDeadLetterResendSuccessTimes() const;
 
                     /**
                      * 设置死信重发成功次数
                      * @param _deadLetterResendSuccessTimes 死信重发成功次数
-                     * 
+                     * @deprecated
                      */
                     void SetDeadLetterResendSuccessTimes(const int64_t& _deadLetterResendSuccessTimes);
 
                     /**
                      * 判断参数 DeadLetterResendSuccessTimes 是否已赋值
                      * @return DeadLetterResendSuccessTimes 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DeadLetterResendSuccessTimesHasBeenSet() const;
 
                     /**
                      * 获取子topic
                      * @return SubTopic 子topic
-                     * 
+                     * @deprecated
                      */
                     std::string GetSubTopic() const;
 
                     /**
                      * 设置子topic
                      * @param _subTopic 子topic
-                     * 
+                     * @deprecated
                      */
                     void SetSubTopic(const std::string& _subTopic);
 
                     /**
                      * 判断参数 SubTopic 是否已赋值
                      * @return SubTopic 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SubTopicHasBeenSet() const;
 
