@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id列表
-                     * @return ApplicationIds 应用id列表
+                     * 获取应用id列表。单次请求数量上限为100个。
+                     * @return ApplicationIds 应用id列表。单次请求数量上限为100个。
                      * 
                      */
                     std::vector<std::string> GetApplicationIds() const;
 
                     /**
-                     * 设置应用id列表
-                     * @param _applicationIds 应用id列表
+                     * 设置应用id列表。单次请求数量上限为100个。
+                     * @param _applicationIds 应用id列表。单次请求数量上限为100个。
                      * 
                      */
                     void SetApplicationIds(const std::vector<std::string>& _applicationIds);
@@ -172,7 +172,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用id列表
+                     * 应用id列表。单次请求数量上限为100个。
                      */
                     std::vector<std::string> m_applicationIds;
                     bool m_applicationIdsHasBeenSet;

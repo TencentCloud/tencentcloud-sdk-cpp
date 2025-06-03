@@ -31,7 +31,8 @@ DescribeViewsRequest::DescribeViewsRequest() :
     m_sortHasBeenSet(false),
     m_ascHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_describeTypeHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string DescribeViewsRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_describeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DescribeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_describeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +280,22 @@ void DescribeViewsRequest::SetEndTime(const string& _endTime)
 bool DescribeViewsRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeViewsRequest::GetDescribeType() const
+{
+    return m_describeType;
+}
+
+void DescribeViewsRequest::SetDescribeType(const string& _describeType)
+{
+    m_describeType = _describeType;
+    m_describeTypeHasBeenSet = true;
+}
+
+bool DescribeViewsRequest::DescribeTypeHasBeenSet() const
+{
+    return m_describeTypeHasBeenSet;
 }
 
 

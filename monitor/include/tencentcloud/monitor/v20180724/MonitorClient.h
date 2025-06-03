@@ -153,6 +153,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeDNSConfigResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeExporterIntegrationsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeExporterIntegrationsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeExternalClusterRegisterCommandRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeExternalClusterRegisterCommandResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaChannelsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaChannelsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaConfigRequest.h>
@@ -558,6 +560,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExporterIntegrationsResponse> DescribeExporterIntegrationsOutcome;
                 typedef std::future<DescribeExporterIntegrationsOutcome> DescribeExporterIntegrationsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeExporterIntegrationsRequest&, DescribeExporterIntegrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExporterIntegrationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExternalClusterRegisterCommandResponse> DescribeExternalClusterRegisterCommandOutcome;
+                typedef std::future<DescribeExternalClusterRegisterCommandOutcome> DescribeExternalClusterRegisterCommandOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeExternalClusterRegisterCommandRequest&, DescribeExternalClusterRegisterCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalClusterRegisterCommandAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGrafanaChannelsResponse> DescribeGrafanaChannelsOutcome;
                 typedef std::future<DescribeGrafanaChannelsOutcome> DescribeGrafanaChannelsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeGrafanaChannelsRequest&, DescribeGrafanaChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrafanaChannelsAsyncHandler;
@@ -1450,6 +1455,15 @@ namespace TencentCloud
                 DescribeExporterIntegrationsOutcome DescribeExporterIntegrations(const Model::DescribeExporterIntegrationsRequest &request);
                 void DescribeExporterIntegrationsAsync(const Model::DescribeExporterIntegrationsRequest& request, const DescribeExporterIntegrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExporterIntegrationsOutcomeCallable DescribeExporterIntegrationsCallable(const Model::DescribeExporterIntegrationsRequest& request);
+
+                /**
+                 *查看外部集群注册命令
+                 * @param req DescribeExternalClusterRegisterCommandRequest
+                 * @return DescribeExternalClusterRegisterCommandOutcome
+                 */
+                DescribeExternalClusterRegisterCommandOutcome DescribeExternalClusterRegisterCommand(const Model::DescribeExternalClusterRegisterCommandRequest &request);
+                void DescribeExternalClusterRegisterCommandAsync(const Model::DescribeExternalClusterRegisterCommandRequest& request, const DescribeExternalClusterRegisterCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExternalClusterRegisterCommandOutcomeCallable DescribeExternalClusterRegisterCommandCallable(const Model::DescribeExternalClusterRegisterCommandRequest& request);
 
                 /**
                  *列出 Grafana 所有告警通道

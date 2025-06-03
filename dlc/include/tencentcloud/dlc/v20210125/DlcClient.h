@@ -203,6 +203,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeSubUserAccessPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTableResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTablePartitionsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTablePartitionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTablesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTablesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTablesNameRequest.h>
@@ -601,6 +603,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTableResponse> DescribeTableOutcome;
                 typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTableRequest&, DescribeTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTablePartitionsResponse> DescribeTablePartitionsOutcome;
+                typedef std::future<DescribeTablePartitionsOutcome> DescribeTablePartitionsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeTablePartitionsRequest&, DescribeTablePartitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablePartitionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTablesResponse> DescribeTablesOutcome;
                 typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTablesRequest&, DescribeTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
@@ -1584,6 +1589,15 @@ namespace TencentCloud
                 DescribeTableOutcome DescribeTable(const Model::DescribeTableRequest &request);
                 void DescribeTableAsync(const Model::DescribeTableRequest& request, const DescribeTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTableOutcomeCallable DescribeTableCallable(const Model::DescribeTableRequest& request);
+
+                /**
+                 *本接口（DescribeTablePartitions）用于查询数据表分区信息
+                 * @param req DescribeTablePartitionsRequest
+                 * @return DescribeTablePartitionsOutcome
+                 */
+                DescribeTablePartitionsOutcome DescribeTablePartitions(const Model::DescribeTablePartitionsRequest &request);
+                void DescribeTablePartitionsAsync(const Model::DescribeTablePartitionsRequest& request, const DescribeTablePartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTablePartitionsOutcomeCallable DescribeTablePartitionsCallable(const Model::DescribeTablePartitionsRequest& request);
 
                 /**
                  *本接口（DescribeTables）用于查询数据表列表。

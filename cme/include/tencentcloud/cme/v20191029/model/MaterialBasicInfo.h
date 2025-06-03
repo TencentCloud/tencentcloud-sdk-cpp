@@ -286,7 +286,7 @@ namespace TencentCloud
                      * @return TagInfoSet 媒体绑定的标签信息列表 。
 该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<MaterialTagInfo> GetTagInfoSet() const;
 
@@ -297,14 +297,14 @@ namespace TencentCloud
                      * @param _tagInfoSet 媒体绑定的标签信息列表 。
 该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetTagInfoSet(const std::vector<MaterialTagInfo>& _tagInfoSet);
 
                     /**
                      * 判断参数 TagInfoSet 是否已赋值
                      * @return TagInfoSet 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TagInfoSetHasBeenSet() const;
 

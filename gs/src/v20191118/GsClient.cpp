@@ -1115,6 +1115,49 @@ GsClient::DestroyAndroidInstancesOutcomeCallable GsClient::DestroyAndroidInstanc
     return task->get_future();
 }
 
+GsClient::DistributeFileToAndroidInstancesOutcome GsClient::DistributeFileToAndroidInstances(const DistributeFileToAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DistributeFileToAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DistributeFileToAndroidInstancesResponse rsp = DistributeFileToAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DistributeFileToAndroidInstancesOutcome(rsp);
+        else
+            return DistributeFileToAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DistributeFileToAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DistributeFileToAndroidInstancesAsync(const DistributeFileToAndroidInstancesRequest& request, const DistributeFileToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DistributeFileToAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DistributeFileToAndroidInstancesOutcomeCallable GsClient::DistributeFileToAndroidInstancesCallable(const DistributeFileToAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DistributeFileToAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DistributeFileToAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::ExecuteCommandOnAndroidInstancesOutcome GsClient::ExecuteCommandOnAndroidInstances(const ExecuteCommandOnAndroidInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "ExecuteCommandOnAndroidInstances");
@@ -2441,6 +2484,49 @@ GsClient::UploadFileToAndroidInstancesOutcomeCallable GsClient::UploadFileToAndr
         [this, request]()
         {
             return this->UploadFileToAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::UploadFilesToAndroidInstancesOutcome GsClient::UploadFilesToAndroidInstances(const UploadFilesToAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadFilesToAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadFilesToAndroidInstancesResponse rsp = UploadFilesToAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadFilesToAndroidInstancesOutcome(rsp);
+        else
+            return UploadFilesToAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadFilesToAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::UploadFilesToAndroidInstancesAsync(const UploadFilesToAndroidInstancesRequest& request, const UploadFilesToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadFilesToAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::UploadFilesToAndroidInstancesOutcomeCallable GsClient::UploadFilesToAndroidInstancesCallable(const UploadFilesToAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadFilesToAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadFilesToAndroidInstances(request);
         }
     );
 

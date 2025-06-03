@@ -19,7 +19,6 @@ set(postgres_public_header
   )
 
 set(postgres_public_header_model
-  include/tencentcloud/postgres/v20170312/model/CreateDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/TaskDetail.h
   include/tencentcloud/postgres/v20170312/model/SetAutoRenewFlagRequest.h
   include/tencentcloud/postgres/v20170312/model/DeleteBackupPlanResponse.h
@@ -72,7 +71,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/NormalQueryItem.h
   include/tencentcloud/postgres/v20170312/model/Tag.h
   include/tencentcloud/postgres/v20170312/model/DescribeBackupSummariesRequest.h
-  include/tencentcloud/postgres/v20170312/model/CreateBackupPlanRequest.h
+  include/tencentcloud/postgres/v20170312/model/DescribeDBInstanceAttributeRequest.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectResponse.h
   include/tencentcloud/postgres/v20170312/model/CreateBaseBackupResponse.h
   include/tencentcloud/postgres/v20170312/model/LockAccountResponse.h
@@ -110,7 +109,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/SetAutoRenewFlagResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyPrivilege.h
   include/tencentcloud/postgres/v20170312/model/NetworkAccess.h
-  include/tencentcloud/postgres/v20170312/model/DescribeDBInstanceAttributeRequest.h
+  include/tencentcloud/postgres/v20170312/model/CreateBackupPlanRequest.h
   include/tencentcloud/postgres/v20170312/model/ResetAccountPasswordResponse.h
   include/tencentcloud/postgres/v20170312/model/RemoveDBInstanceFromReadOnlyGroupResponse.h
   include/tencentcloud/postgres/v20170312/model/RawSlowQuery.h
@@ -274,13 +273,11 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeBaseBackupsRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeEncryptionKeysResponse.h
   include/tencentcloud/postgres/v20170312/model/CreateReadOnlyGroupNetworkAccessResponse.h
-  include/tencentcloud/postgres/v20170312/model/CreateDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/DeleteAccountResponse.h
   )
 
 set(postgres_src
   src/v20170312/PostgresClient.cpp
-  src/v20170312/model/CreateDBInstancesRequest.cpp
   src/v20170312/model/TaskDetail.cpp
   src/v20170312/model/SetAutoRenewFlagRequest.cpp
   src/v20170312/model/DeleteBackupPlanResponse.cpp
@@ -333,7 +330,7 @@ set(postgres_src
   src/v20170312/model/NormalQueryItem.cpp
   src/v20170312/model/Tag.cpp
   src/v20170312/model/DescribeBackupSummariesRequest.cpp
-  src/v20170312/model/CreateBackupPlanRequest.cpp
+  src/v20170312/model/DescribeDBInstanceAttributeRequest.cpp
   src/v20170312/model/ModifyDBInstancesProjectResponse.cpp
   src/v20170312/model/CreateBaseBackupResponse.cpp
   src/v20170312/model/LockAccountResponse.cpp
@@ -371,7 +368,7 @@ set(postgres_src
   src/v20170312/model/SetAutoRenewFlagResponse.cpp
   src/v20170312/model/ModifyPrivilege.cpp
   src/v20170312/model/NetworkAccess.cpp
-  src/v20170312/model/DescribeDBInstanceAttributeRequest.cpp
+  src/v20170312/model/CreateBackupPlanRequest.cpp
   src/v20170312/model/ResetAccountPasswordResponse.cpp
   src/v20170312/model/RemoveDBInstanceFromReadOnlyGroupResponse.cpp
   src/v20170312/model/RawSlowQuery.cpp
@@ -535,7 +532,6 @@ set(postgres_src
   src/v20170312/model/DescribeBaseBackupsRequest.cpp
   src/v20170312/model/DescribeEncryptionKeysResponse.cpp
   src/v20170312/model/CreateReadOnlyGroupNetworkAccessResponse.cpp
-  src/v20170312/model/CreateDBInstancesResponse.cpp
   src/v20170312/model/DeleteAccountResponse.cpp
   )
 

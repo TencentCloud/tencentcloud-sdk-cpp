@@ -14,24 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/es/v20250101/model/WebSearchResponse.h>
+#include <tencentcloud/gs/v20191118/model/UploadFilesToAndroidInstancesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Es::V20250101::Model;
+using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
-WebSearchResponse::WebSearchResponse() :
-    m_queryHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_searchEngineHasBeenSet(false),
-    m_resultsHasBeenSet(false)
+UploadFilesToAndroidInstancesResponse::UploadFilesToAndroidInstancesResponse() :
+    m_taskSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome WebSearchResponse::Deserialize(const string &payload)
+CoreInternalOutcome UploadFilesToAndroidInstancesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,99 +62,45 @@ CoreInternalOutcome WebSearchResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Query") && !rsp["Query"].IsNull())
+    if (rsp.HasMember("TaskSet") && !rsp["TaskSet"].IsNull())
     {
-        if (!rsp["Query"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Query` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_query = string(rsp["Query"].GetString());
-        m_queryHasBeenSet = true;
-    }
+        if (!rsp["TaskSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskSet` is not array type"));
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
-    {
-        if (!rsp["Status"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = string(rsp["Status"].GetString());
-        m_statusHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("SearchEngine") && !rsp["SearchEngine"].IsNull())
-    {
-        if (!rsp["SearchEngine"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SearchEngine` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_searchEngine = string(rsp["SearchEngine"].GetString());
-        m_searchEngineHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Results") && !rsp["Results"].IsNull())
-    {
-        if (!rsp["Results"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Results` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Results"];
+        const rapidjson::Value &tmpValue = rsp["TaskSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            WebPage item;
+            AndroidInstanceTask item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_results.push_back(item);
+            m_taskSet.push_back(item);
         }
-        m_resultsHasBeenSet = true;
+        m_taskSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string WebSearchResponse::ToJsonString() const
+string UploadFilesToAndroidInstancesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_queryHasBeenSet)
+    if (m_taskSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Query";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_searchEngineHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SearchEngine";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_searchEngine.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resultsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Results";
+        string key = "TaskSet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_results.begin(); itr != m_results.end(); ++itr, ++i)
+        for (auto itr = m_taskSet.begin(); itr != m_taskSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -176,44 +119,14 @@ string WebSearchResponse::ToJsonString() const
 }
 
 
-string WebSearchResponse::GetQuery() const
+vector<AndroidInstanceTask> UploadFilesToAndroidInstancesResponse::GetTaskSet() const
 {
-    return m_query;
+    return m_taskSet;
 }
 
-bool WebSearchResponse::QueryHasBeenSet() const
+bool UploadFilesToAndroidInstancesResponse::TaskSetHasBeenSet() const
 {
-    return m_queryHasBeenSet;
-}
-
-string WebSearchResponse::GetStatus() const
-{
-    return m_status;
-}
-
-bool WebSearchResponse::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
-string WebSearchResponse::GetSearchEngine() const
-{
-    return m_searchEngine;
-}
-
-bool WebSearchResponse::SearchEngineHasBeenSet() const
-{
-    return m_searchEngineHasBeenSet;
-}
-
-vector<WebPage> WebSearchResponse::GetResults() const
-{
-    return m_results;
-}
-
-bool WebSearchResponse::ResultsHasBeenSet() const
-{
-    return m_resultsHasBeenSet;
+    return m_taskSetHasBeenSet;
 }
 
 

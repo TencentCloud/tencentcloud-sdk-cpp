@@ -644,27 +644,27 @@ namespace TencentCloud
                     bool DryRunHasBeenSet() const;
 
                     /**
-                     * 获取指定实例的产品版本。
-- local：本地盘版。
-- cloud：云盘版，
-- cdc：独享集群版。如果不传默认发货为本地盘版本。
-                     * @return ProductVersion 指定实例的产品版本。
-- local：本地盘版。
-- cloud：云盘版，
-- cdc：独享集群版。如果不传默认发货为本地盘版本。
+                     * 获取指实例部署模式。
+- local：传统架构，默认为 local。
+- cdc：独享集群。
+- cloud：云原生，当前已暂停售卖。
+                     * @return ProductVersion 指实例部署模式。
+- local：传统架构，默认为 local。
+- cdc：独享集群。
+- cloud：云原生，当前已暂停售卖。
                      * 
                      */
                     std::string GetProductVersion() const;
 
                     /**
-                     * 设置指定实例的产品版本。
-- local：本地盘版。
-- cloud：云盘版，
-- cdc：独享集群版。如果不传默认发货为本地盘版本。
-                     * @param _productVersion 指定实例的产品版本。
-- local：本地盘版。
-- cloud：云盘版，
-- cdc：独享集群版。如果不传默认发货为本地盘版本。
+                     * 设置指实例部署模式。
+- local：传统架构，默认为 local。
+- cdc：独享集群。
+- cloud：云原生，当前已暂停售卖。
+                     * @param _productVersion 指实例部署模式。
+- local：传统架构，默认为 local。
+- cdc：独享集群。
+- cloud：云原生，当前已暂停售卖。
                      * 
                      */
                     void SetProductVersion(const std::string& _productVersion);
@@ -900,10 +900,10 @@ namespace TencentCloud
                     bool m_dryRunHasBeenSet;
 
                     /**
-                     * 指定实例的产品版本。
-- local：本地盘版。
-- cloud：云盘版，
-- cdc：独享集群版。如果不传默认发货为本地盘版本。
+                     * 指实例部署模式。
+- local：传统架构，默认为 local。
+- cdc：独享集群。
+- cloud：云原生，当前已暂停售卖。
                      */
                     std::string m_productVersion;
                     bool m_productVersionHasBeenSet;

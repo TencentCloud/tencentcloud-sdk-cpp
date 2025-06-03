@@ -41,8 +41,6 @@
 #include <tencentcloud/es/v20250101/model/ParseDocumentAsyncResponse.h>
 #include <tencentcloud/es/v20250101/model/RunRerankRequest.h>
 #include <tencentcloud/es/v20250101/model/RunRerankResponse.h>
-#include <tencentcloud/es/v20250101/model/WebSearchRequest.h>
-#include <tencentcloud/es/v20250101/model/WebSearchResponse.h>
 
 
 namespace TencentCloud
@@ -84,9 +82,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunRerankResponse> RunRerankOutcome;
                 typedef std::future<RunRerankOutcome> RunRerankOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RunRerankRequest&, RunRerankOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunRerankAsyncHandler;
-                typedef Outcome<Core::Error, Model::WebSearchResponse> WebSearchOutcome;
-                typedef std::future<WebSearchOutcome> WebSearchOutcomeCallable;
-                typedef std::function<void(const EsClient*, const Model::WebSearchRequest&, WebSearchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WebSearchAsyncHandler;
 
 
 
@@ -177,15 +172,6 @@ namespace TencentCloud
                 RunRerankOutcome RunRerank(const Model::RunRerankRequest &request);
                 void RunRerankAsync(const Model::RunRerankRequest& request, const RunRerankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunRerankOutcomeCallable RunRerankCallable(const Model::RunRerankRequest& request);
-
-                /**
-                 *WebSearch API 是一个网页搜索服务，支持多种搜索引擎，可以获取网页的标题、URL、摘要和正文内容。
-                 * @param req WebSearchRequest
-                 * @return WebSearchOutcome
-                 */
-                WebSearchOutcome WebSearch(const Model::WebSearchRequest &request);
-                void WebSearchAsync(const Model::WebSearchRequest& request, const WebSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                WebSearchOutcomeCallable WebSearchCallable(const Model::WebSearchRequest& request);
 
             };
         }

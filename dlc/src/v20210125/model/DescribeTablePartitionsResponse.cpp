@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lke/v20231130/model/CreateReconstructDocumentFlowResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTablePartitionsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Lke::V20231130::Model;
+using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-CreateReconstructDocumentFlowResponse::CreateReconstructDocumentFlowResponse() :
-    m_taskIdHasBeenSet(false)
+DescribeTablePartitionsResponse::DescribeTablePartitionsResponse()
 {
 }
 
-CoreInternalOutcome CreateReconstructDocumentFlowResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeTablePartitionsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,33 +61,15 @@ CoreInternalOutcome CreateReconstructDocumentFlowResponse::Deserialize(const str
     }
 
 
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
-    {
-        if (!rsp["TaskId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_taskId = string(rsp["TaskId"].GetString());
-        m_taskIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string CreateReconstructDocumentFlowResponse::ToJsonString() const
+string DescribeTablePartitionsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_taskIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string CreateReconstructDocumentFlowResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateReconstructDocumentFlowResponse::GetTaskId() const
-{
-    return m_taskId;
-}
-
-bool CreateReconstructDocumentFlowResponse::TaskIdHasBeenSet() const
-{
-    return m_taskIdHasBeenSet;
-}
 
 

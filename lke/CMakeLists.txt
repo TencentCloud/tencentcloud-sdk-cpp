@@ -49,7 +49,6 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/GetAnswerTypeDataCountResponse.h
   include/tencentcloud/lke/v20231130/model/DescribeQARequest.h
   include/tencentcloud/lke/v20231130/model/AttrLabelRefer.h
-  include/tencentcloud/lke/v20231130/model/CreateReconstructDocumentFlowConfig.h
   include/tencentcloud/lke/v20231130/model/DescribeUnsatisfiedReplyContextRequest.h
   include/tencentcloud/lke/v20231130/model/Procedure.h
   include/tencentcloud/lke/v20231130/model/QAQuery.h
@@ -207,7 +206,6 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ListAppResponse.h
   include/tencentcloud/lke/v20231130/model/AppInfo.h
   include/tencentcloud/lke/v20231130/model/CateInfo.h
-  include/tencentcloud/lke/v20231130/model/CreateReconstructDocumentFlowRequest.h
   include/tencentcloud/lke/v20231130/model/RunReRankResponse.h
   include/tencentcloud/lke/v20231130/model/ProcedureDebugging.h
   include/tencentcloud/lke/v20231130/model/KnowledgeQaConfig.h
@@ -300,7 +298,6 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DescribeRobotBizIDByAppKeyRequest.h
   include/tencentcloud/lke/v20231130/model/CreateVarRequest.h
   include/tencentcloud/lke/v20231130/model/DocumentRecognizeInfo.h
-  include/tencentcloud/lke/v20231130/model/CreateReconstructDocumentFlowResponse.h
   include/tencentcloud/lke/v20231130/model/HistorySummary.h
   include/tencentcloud/lke/v20231130/model/VerifyQAResponse.h
   include/tencentcloud/lke/v20231130/model/ReleaseConfigs.h
@@ -348,7 +345,6 @@ set(lke_src
   src/v20231130/model/GetAnswerTypeDataCountResponse.cpp
   src/v20231130/model/DescribeQARequest.cpp
   src/v20231130/model/AttrLabelRefer.cpp
-  src/v20231130/model/CreateReconstructDocumentFlowConfig.cpp
   src/v20231130/model/DescribeUnsatisfiedReplyContextRequest.cpp
   src/v20231130/model/Procedure.cpp
   src/v20231130/model/QAQuery.cpp
@@ -506,7 +502,6 @@ set(lke_src
   src/v20231130/model/ListAppResponse.cpp
   src/v20231130/model/AppInfo.cpp
   src/v20231130/model/CateInfo.cpp
-  src/v20231130/model/CreateReconstructDocumentFlowRequest.cpp
   src/v20231130/model/RunReRankResponse.cpp
   src/v20231130/model/ProcedureDebugging.cpp
   src/v20231130/model/KnowledgeQaConfig.cpp
@@ -599,7 +594,6 @@ set(lke_src
   src/v20231130/model/DescribeRobotBizIDByAppKeyRequest.cpp
   src/v20231130/model/CreateVarRequest.cpp
   src/v20231130/model/DocumentRecognizeInfo.cpp
-  src/v20231130/model/CreateReconstructDocumentFlowResponse.cpp
   src/v20231130/model/HistorySummary.cpp
   src/v20231130/model/VerifyQAResponse.cpp
   src/v20231130/model/ReleaseConfigs.cpp

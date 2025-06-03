@@ -427,49 +427,6 @@ LkeClient::CreateQACateOutcomeCallable LkeClient::CreateQACateCallable(const Cre
     return task->get_future();
 }
 
-LkeClient::CreateReconstructDocumentFlowOutcome LkeClient::CreateReconstructDocumentFlow(const CreateReconstructDocumentFlowRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateReconstructDocumentFlow");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateReconstructDocumentFlowResponse rsp = CreateReconstructDocumentFlowResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateReconstructDocumentFlowOutcome(rsp);
-        else
-            return CreateReconstructDocumentFlowOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateReconstructDocumentFlowOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::CreateReconstructDocumentFlowAsync(const CreateReconstructDocumentFlowRequest& request, const CreateReconstructDocumentFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateReconstructDocumentFlow(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::CreateReconstructDocumentFlowOutcomeCallable LkeClient::CreateReconstructDocumentFlowCallable(const CreateReconstructDocumentFlowRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateReconstructDocumentFlowOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateReconstructDocumentFlow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::CreateRejectedQuestionOutcome LkeClient::CreateRejectedQuestion(const CreateRejectedQuestionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRejectedQuestion");

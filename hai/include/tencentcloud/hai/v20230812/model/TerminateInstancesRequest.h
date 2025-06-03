@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID列表
-可通过DescribeInstances接口获取ID列表.单次能查询100个InstanceId
-                     * @return InstanceIds 实例ID列表
-可通过DescribeInstances接口获取ID列表.单次能查询100个InstanceId
+                     * 获取实例ID列表。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID列表。单次能查询100个InstanceId。
+                     * @return InstanceIds 实例ID列表。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID列表。单次能查询100个InstanceId。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例ID列表
-可通过DescribeInstances接口获取ID列表.单次能查询100个InstanceId
-                     * @param _instanceIds 实例ID列表
-可通过DescribeInstances接口获取ID列表.单次能查询100个InstanceId
+                     * 设置实例ID列表。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID列表。单次能查询100个InstanceId。
+                     * @param _instanceIds 实例ID列表。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID列表。单次能查询100个InstanceId。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -91,8 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID列表
-可通过DescribeInstances接口获取ID列表.单次能查询100个InstanceId
+                     * 实例ID列表。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID列表。单次能查询100个InstanceId。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

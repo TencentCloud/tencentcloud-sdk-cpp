@@ -75,6 +75,20 @@ namespace TencentCloud
                      */
                     bool FailedUserListHasBeenSet() const;
 
+                    /**
+                     * 获取流程id。大于0表示启动了流程；等于0表示没有启动流程
+                     * @return FlowId 流程id。大于0表示启动了流程；等于0表示没有启动流程
+                     * 
+                     */
+                    int64_t GetFlowId() const;
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -90,6 +104,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_failedUserList;
                     bool m_failedUserListHasBeenSet;
+
+                    /**
+                     * 流程id。大于0表示启动了流程；等于0表示没有启动流程
+                     */
+                    int64_t m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                 };
             }

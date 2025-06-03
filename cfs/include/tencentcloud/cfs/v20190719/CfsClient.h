@@ -325,7 +325,6 @@ namespace TencentCloud
 
                 /**
                  *用于创建迁移任务。
-此接口需提交工单，开启白名单之后才能使用。
                  * @param req CreateMigrationTaskRequest
                  * @return CreateMigrationTaskOutcome
                  */
@@ -379,8 +378,7 @@ namespace TencentCloud
                 DeleteCfsSnapshotOutcomeCallable DeleteCfsSnapshotCallable(const Model::DeleteCfsSnapshotRequest& request);
 
                 /**
-                 *用于删除迁移任务。
-此接口需提交工单，开启白名单之后才能使用。
+                 *用于删除迁移任务。不支持删除等待中、创建中、运行中、取消中、终止中状态的任务。
                  * @param req DeleteMigrationTaskRequest
                  * @return DeleteMigrationTaskOutcome
                  */
@@ -427,7 +425,6 @@ namespace TencentCloud
 
                 /**
                  *用于获取数据源桶列表。
-此接口需提交工单，开启白名单之后才能使用。
                  * @param req DescribeBucketListRequest
                  * @return DescribeBucketListOutcome
                  */
@@ -572,8 +569,7 @@ namespace TencentCloud
                 SignUpCfsServiceOutcomeCallable SignUpCfsServiceCallable(const Model::SignUpCfsServiceRequest& request);
 
                 /**
-                 *用于终止迁移任务，非运行中状态不支持终止。
-此接口需提交工单，开启白名单之后才能使用。
+                 *用于终止迁移任务，可以终止等待中、运行中状态的任务。
                  * @param req StopMigrationTaskRequest
                  * @return StopMigrationTaskOutcome
                  */

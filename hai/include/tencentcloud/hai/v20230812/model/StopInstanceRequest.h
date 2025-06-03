@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-可通过DescribeInstances获取实例ID
-                     * @return InstanceId 实例ID
-可通过DescribeInstances获取实例ID
+                     * 获取实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。
+                     * @return InstanceId 实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-可通过DescribeInstances获取实例ID
-                     * @param _instanceId 实例ID
-可通过DescribeInstances获取实例ID
+                     * 设置实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。
+                     * @param _instanceId 实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -120,8 +116,7 @@ STOP_CHARGE -- 关闭hai实例，释放计算资源，停止收取计算资源�
                 private:
 
                     /**
-                     * 实例ID
-可通过DescribeInstances获取实例ID
+                     * 实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

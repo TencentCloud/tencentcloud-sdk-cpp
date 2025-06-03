@@ -3910,6 +3910,49 @@ DlcClient::DescribeTableOutcomeCallable DlcClient::DescribeTableCallable(const D
     return task->get_future();
 }
 
+DlcClient::DescribeTablePartitionsOutcome DlcClient::DescribeTablePartitions(const DescribeTablePartitionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTablePartitions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTablePartitionsResponse rsp = DescribeTablePartitionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTablePartitionsOutcome(rsp);
+        else
+            return DescribeTablePartitionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTablePartitionsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTablePartitionsAsync(const DescribeTablePartitionsRequest& request, const DescribeTablePartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTablePartitions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeTablePartitionsOutcomeCallable DlcClient::DescribeTablePartitionsCallable(const DescribeTablePartitionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTablePartitionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTablePartitions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeTablesOutcome DlcClient::DescribeTables(const DescribeTablesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTables");

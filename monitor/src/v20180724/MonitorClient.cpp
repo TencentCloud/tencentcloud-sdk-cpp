@@ -2835,6 +2835,49 @@ MonitorClient::DescribeExporterIntegrationsOutcomeCallable MonitorClient::Descri
     return task->get_future();
 }
 
+MonitorClient::DescribeExternalClusterRegisterCommandOutcome MonitorClient::DescribeExternalClusterRegisterCommand(const DescribeExternalClusterRegisterCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExternalClusterRegisterCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExternalClusterRegisterCommandResponse rsp = DescribeExternalClusterRegisterCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExternalClusterRegisterCommandOutcome(rsp);
+        else
+            return DescribeExternalClusterRegisterCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExternalClusterRegisterCommandOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeExternalClusterRegisterCommandAsync(const DescribeExternalClusterRegisterCommandRequest& request, const DescribeExternalClusterRegisterCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExternalClusterRegisterCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeExternalClusterRegisterCommandOutcomeCallable MonitorClient::DescribeExternalClusterRegisterCommandCallable(const DescribeExternalClusterRegisterCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExternalClusterRegisterCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExternalClusterRegisterCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeGrafanaChannelsOutcome MonitorClient::DescribeGrafanaChannels(const DescribeGrafanaChannelsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGrafanaChannels");

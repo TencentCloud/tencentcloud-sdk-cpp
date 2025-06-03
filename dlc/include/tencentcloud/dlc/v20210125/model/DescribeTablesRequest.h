@@ -282,6 +282,31 @@ table-id - String - （过滤条件）table id形如：12342。
                      */
                     bool TableFormatHasBeenSet() const;
 
+                    /**
+                     * 获取查询类型：all：全部数据（默认）、permission：有权限的数据
+注意：此字段需要开启白名单使用，如果需要使用，请提交工单联系我们。
+                     * @return DescribeType 查询类型：all：全部数据（默认）、permission：有权限的数据
+注意：此字段需要开启白名单使用，如果需要使用，请提交工单联系我们。
+                     * 
+                     */
+                    std::string GetDescribeType() const;
+
+                    /**
+                     * 设置查询类型：all：全部数据（默认）、permission：有权限的数据
+注意：此字段需要开启白名单使用，如果需要使用，请提交工单联系我们。
+                     * @param _describeType 查询类型：all：全部数据（默认）、permission：有权限的数据
+注意：此字段需要开启白名单使用，如果需要使用，请提交工单联系我们。
+                     * 
+                     */
+                    void SetDescribeType(const std::string& _describeType);
+
+                    /**
+                     * 判断参数 DescribeType 是否已赋值
+                     * @return DescribeType 是否已赋值
+                     * 
+                     */
+                    bool DescribeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -351,6 +376,13 @@ table-id - String - （过滤条件）table id形如：12342。
                      */
                     std::string m_tableFormat;
                     bool m_tableFormatHasBeenSet;
+
+                    /**
+                     * 查询类型：all：全部数据（默认）、permission：有权限的数据
+注意：此字段需要开启白名单使用，如果需要使用，请提交工单联系我们。
+                     */
+                    std::string m_describeType;
+                    bool m_describeTypeHasBeenSet;
 
                 };
             }

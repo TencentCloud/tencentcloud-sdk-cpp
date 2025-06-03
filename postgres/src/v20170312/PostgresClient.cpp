@@ -341,49 +341,6 @@ PostgresClient::CreateDBInstanceNetworkAccessOutcomeCallable PostgresClient::Cre
     return task->get_future();
 }
 
-PostgresClient::CreateDBInstancesOutcome PostgresClient::CreateDBInstances(const CreateDBInstancesRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateDBInstances");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateDBInstancesResponse rsp = CreateDBInstancesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateDBInstancesOutcome(rsp);
-        else
-            return CreateDBInstancesOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateDBInstancesOutcome(outcome.GetError());
-    }
-}
-
-void PostgresClient::CreateDBInstancesAsync(const CreateDBInstancesRequest& request, const CreateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDBInstances(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-PostgresClient::CreateDBInstancesOutcomeCallable PostgresClient::CreateDBInstancesCallable(const CreateDBInstancesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 PostgresClient::CreateDatabaseOutcome PostgresClient::CreateDatabase(const CreateDatabaseRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDatabase");

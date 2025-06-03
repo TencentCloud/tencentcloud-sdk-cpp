@@ -73,6 +73,8 @@
 #include <tencentcloud/gs/v20191118/model/DescribeInstancesCountResponse.h>
 #include <tencentcloud/gs/v20191118/model/DestroyAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/DestroyAndroidInstancesResponse.h>
+#include <tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesRequest.h>
+#include <tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/ExecuteCommandOnAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/ExecuteCommandOnAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/FetchAndroidInstancesLogsRequest.h>
@@ -135,6 +137,8 @@
 #include <tencentcloud/gs/v20191118/model/UninstallAndroidInstancesAppResponse.h>
 #include <tencentcloud/gs/v20191118/model/UploadFileToAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/UploadFileToAndroidInstancesResponse.h>
+#include <tencentcloud/gs/v20191118/model/UploadFilesToAndroidInstancesRequest.h>
+#include <tencentcloud/gs/v20191118/model/UploadFilesToAndroidInstancesResponse.h>
 
 
 namespace TencentCloud
@@ -224,6 +228,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyAndroidInstancesResponse> DestroyAndroidInstancesOutcome;
                 typedef std::future<DestroyAndroidInstancesOutcome> DestroyAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DestroyAndroidInstancesRequest&, DestroyAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyAndroidInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DistributeFileToAndroidInstancesResponse> DistributeFileToAndroidInstancesOutcome;
+                typedef std::future<DistributeFileToAndroidInstancesOutcome> DistributeFileToAndroidInstancesOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DistributeFileToAndroidInstancesRequest&, DistributeFileToAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeFileToAndroidInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExecuteCommandOnAndroidInstancesResponse> ExecuteCommandOnAndroidInstancesOutcome;
                 typedef std::future<ExecuteCommandOnAndroidInstancesOutcome> ExecuteCommandOnAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ExecuteCommandOnAndroidInstancesRequest&, ExecuteCommandOnAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteCommandOnAndroidInstancesAsyncHandler;
@@ -317,6 +324,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UploadFileToAndroidInstancesResponse> UploadFileToAndroidInstancesOutcome;
                 typedef std::future<UploadFileToAndroidInstancesOutcome> UploadFileToAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::UploadFileToAndroidInstancesRequest&, UploadFileToAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFileToAndroidInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadFilesToAndroidInstancesResponse> UploadFilesToAndroidInstancesOutcome;
+                typedef std::future<UploadFilesToAndroidInstancesOutcome> UploadFilesToAndroidInstancesOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::UploadFilesToAndroidInstancesRequest&, UploadFilesToAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFilesToAndroidInstancesAsyncHandler;
 
 
 
@@ -548,6 +558,15 @@ namespace TencentCloud
                 DestroyAndroidInstancesOutcome DestroyAndroidInstances(const Model::DestroyAndroidInstancesRequest &request);
                 void DestroyAndroidInstancesAsync(const Model::DestroyAndroidInstancesRequest& request, const DestroyAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyAndroidInstancesOutcomeCallable DestroyAndroidInstancesCallable(const Model::DestroyAndroidInstancesRequest& request);
+
+                /**
+                 *分发文件到安卓实例
+                 * @param req DistributeFileToAndroidInstancesRequest
+                 * @return DistributeFileToAndroidInstancesOutcome
+                 */
+                DistributeFileToAndroidInstancesOutcome DistributeFileToAndroidInstances(const Model::DistributeFileToAndroidInstancesRequest &request);
+                void DistributeFileToAndroidInstancesAsync(const Model::DistributeFileToAndroidInstancesRequest& request, const DistributeFileToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DistributeFileToAndroidInstancesOutcomeCallable DistributeFileToAndroidInstancesCallable(const Model::DistributeFileToAndroidInstancesRequest& request);
 
                 /**
                  *在安卓实例上异步执行命令，命令输出结果如果内容过长会被截断
@@ -830,6 +849,15 @@ namespace TencentCloud
                 UploadFileToAndroidInstancesOutcome UploadFileToAndroidInstances(const Model::UploadFileToAndroidInstancesRequest &request);
                 void UploadFileToAndroidInstancesAsync(const Model::UploadFileToAndroidInstancesRequest& request, const UploadFileToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadFileToAndroidInstancesOutcomeCallable UploadFileToAndroidInstancesCallable(const Model::UploadFileToAndroidInstancesRequest& request);
+
+                /**
+                 *批量上传文件到安卓实例
+                 * @param req UploadFilesToAndroidInstancesRequest
+                 * @return UploadFilesToAndroidInstancesOutcome
+                 */
+                UploadFilesToAndroidInstancesOutcome UploadFilesToAndroidInstances(const Model::UploadFilesToAndroidInstancesRequest &request);
+                void UploadFilesToAndroidInstancesAsync(const Model::UploadFilesToAndroidInstancesRequest& request, const UploadFilesToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadFilesToAndroidInstancesOutcomeCallable UploadFilesToAndroidInstancesCallable(const Model::UploadFilesToAndroidInstancesRequest& request);
 
             };
         }

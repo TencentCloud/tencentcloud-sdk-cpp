@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取迁移状态。0: 已完成；1: 进行中；2: 已终止
-                     * @return Status 迁移状态。0: 已完成；1: 进行中；2: 已终止
+                     * 获取迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中
+                     * @return Status 迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -80,7 +80,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 迁移状态。0: 已完成；1: 进行中；2: 已终止
+                     * 迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

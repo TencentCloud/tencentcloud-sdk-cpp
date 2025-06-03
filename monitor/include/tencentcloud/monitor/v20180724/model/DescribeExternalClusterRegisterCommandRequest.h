@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_HAI_V20230812_MODEL_STARTINSTANCEREQUEST_H_
-#define TENCENTCLOUD_HAI_V20230812_MODEL_STARTINSTANCEREQUEST_H_
+#ifndef TENCENTCLOUD_MONITOR_V20180724_MODEL_DESCRIBEEXTERNALCLUSTERREGISTERCOMMANDREQUEST_H_
+#define TENCENTCLOUD_MONITOR_V20180724_MODEL_DESCRIBEEXTERNALCLUSTERREGISTERCOMMANDREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,33 +25,33 @@
 
 namespace TencentCloud
 {
-    namespace Hai
+    namespace Monitor
     {
-        namespace V20230812
+        namespace V20180724
         {
             namespace Model
             {
                 /**
-                * StartInstance请求参数结构体
+                * DescribeExternalClusterRegisterCommand请求参数结构体
                 */
-                class StartInstanceRequest : public AbstractModel
+                class DescribeExternalClusterRegisterCommandRequest : public AbstractModel
                 {
                 public:
-                    StartInstanceRequest();
-                    ~StartInstanceRequest() = default;
+                    DescribeExternalClusterRegisterCommandRequest();
+                    ~DescribeExternalClusterRegisterCommandRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。
-                     * @return InstanceId 实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。
+                     * 获取实例 ID
+                     * @return InstanceId 实例 ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。
-                     * @param _instanceId 实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。
+                     * 设置实例 ID
+                     * @param _instanceId 实例 ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,39 +64,39 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取默认为False，True代表只验证接口连通性
-                     * @return DryRun 默认为False，True代表只验证接口连通性
+                     * 获取集群 ID
+                     * @return ClusterId 集群 ID
                      * 
                      */
-                    bool GetDryRun() const;
+                    std::string GetClusterId() const;
 
                     /**
-                     * 设置默认为False，True代表只验证接口连通性
-                     * @param _dryRun 默认为False，True代表只验证接口连通性
+                     * 设置集群 ID
+                     * @param _clusterId 集群 ID
                      * 
                      */
-                    void SetDryRun(const bool& _dryRun);
+                    void SetClusterId(const std::string& _clusterId);
 
                     /**
-                     * 判断参数 DryRun 是否已赋值
-                     * @return DryRun 是否已赋值
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
                      * 
                      */
-                    bool DryRunHasBeenSet() const;
+                    bool ClusterIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。
+                     * 实例 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 默认为False，True代表只验证接口连通性
+                     * 集群 ID
                      */
-                    bool m_dryRun;
-                    bool m_dryRunHasBeenSet;
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }
@@ -104,4 +104,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_HAI_V20230812_MODEL_STARTINSTANCEREQUEST_H_
+#endif // !TENCENTCLOUD_MONITOR_V20180724_MODEL_DESCRIBEEXTERNALCLUSTERREGISTERCOMMANDREQUEST_H_

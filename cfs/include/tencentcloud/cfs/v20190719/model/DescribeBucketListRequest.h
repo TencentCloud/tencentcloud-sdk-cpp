@@ -65,18 +65,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源账号的SecretId
-
                      * @return SrcSecretId 数据源账号的SecretId
-
                      * 
                      */
                     std::string GetSrcSecretId() const;
 
                     /**
                      * 设置数据源账号的SecretId
-
                      * @param _srcSecretId 数据源账号的SecretId
-
                      * 
                      */
                     void SetSrcSecretId(const std::string& _srcSecretId);
@@ -119,7 +115,6 @@ namespace TencentCloud
 
                     /**
                      * 数据源账号的SecretId
-
                      */
                     std::string m_srcSecretId;
                     bool m_srcSecretIdHasBeenSet;
