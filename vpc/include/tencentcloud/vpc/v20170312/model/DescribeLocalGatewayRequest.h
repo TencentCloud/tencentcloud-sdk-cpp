@@ -44,15 +44,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取支持的过滤条件如下:\n<li>vpc-id:按照VPCID过滤。</li>\n<li>local-gateway-name:本地网关名称,支持模糊查询。</li>\n<li>local-gateway-id:本地网关实例ID。</li>\n<li>cdc-id:cdc实例ID。</li>
-                     * @return Filters 支持的过滤条件如下:\n<li>vpc-id:按照VPCID过滤。</li>\n<li>local-gateway-name:本地网关名称,支持模糊查询。</li>\n<li>local-gateway-id:本地网关实例ID。</li>\n<li>cdc-id:cdc实例ID。</li>
+                     * 获取支持的过滤条件如下:
+<li>vpc-id:按照VPCID过滤。</li>
+<li>local-gateway-name:本地网关名称,支持模糊查询。</li>
+<li>local-gateway-id:本地网关实例ID。</li>
+<li>cdc-id:cdc实例ID。</li>
+                     * @return Filters 支持的过滤条件如下:
+<li>vpc-id:按照VPCID过滤。</li>
+<li>local-gateway-name:本地网关名称,支持模糊查询。</li>
+<li>local-gateway-id:本地网关实例ID。</li>
+<li>cdc-id:cdc实例ID。</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置支持的过滤条件如下:\n<li>vpc-id:按照VPCID过滤。</li>\n<li>local-gateway-name:本地网关名称,支持模糊查询。</li>\n<li>local-gateway-id:本地网关实例ID。</li>\n<li>cdc-id:cdc实例ID。</li>
-                     * @param _filters 支持的过滤条件如下:\n<li>vpc-id:按照VPCID过滤。</li>\n<li>local-gateway-name:本地网关名称,支持模糊查询。</li>\n<li>local-gateway-id:本地网关实例ID。</li>\n<li>cdc-id:cdc实例ID。</li>
+                     * 设置支持的过滤条件如下:
+<li>vpc-id:按照VPCID过滤。</li>
+<li>local-gateway-name:本地网关名称,支持模糊查询。</li>
+<li>local-gateway-id:本地网关实例ID。</li>
+<li>cdc-id:cdc实例ID。</li>
+                     * @param _filters 支持的过滤条件如下:
+<li>vpc-id:按照VPCID过滤。</li>
+<li>local-gateway-name:本地网关名称,支持模糊查询。</li>
+<li>local-gateway-id:本地网关实例ID。</li>
+<li>cdc-id:cdc实例ID。</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -109,7 +125,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 支持的过滤条件如下:\n<li>vpc-id:按照VPCID过滤。</li>\n<li>local-gateway-name:本地网关名称,支持模糊查询。</li>\n<li>local-gateway-id:本地网关实例ID。</li>\n<li>cdc-id:cdc实例ID。</li>
+                     * 支持的过滤条件如下:
+<li>vpc-id:按照VPCID过滤。</li>
+<li>local-gateway-name:本地网关名称,支持模糊查询。</li>
+<li>local-gateway-id:本地网关实例ID。</li>
+<li>cdc-id:cdc实例ID。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

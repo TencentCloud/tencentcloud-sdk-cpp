@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeAssetImageRegistryVulListExportResponse::DescribeAssetImageRegistryVulListExportResponse() :
-    m_downloadUrlHasBeenSet(false)
+    m_downloadUrlHasBeenSet(false),
+    m_jobIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome DescribeAssetImageRegistryVulListExportResponse::Deserialize
         m_downloadUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
+    {
+        if (!rsp["JobId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobId = string(rsp["JobId"].GetString());
+        m_jobIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string DescribeAssetImageRegistryVulListExportResponse::ToJsonString() const
         string key = "DownloadUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string DescribeAssetImageRegistryVulListExportResponse::GetDownloadUrl() const
 bool DescribeAssetImageRegistryVulListExportResponse::DownloadUrlHasBeenSet() const
 {
     return m_downloadUrlHasBeenSet;
+}
+
+string DescribeAssetImageRegistryVulListExportResponse::GetJobId() const
+{
+    return m_jobId;
+}
+
+bool DescribeAssetImageRegistryVulListExportResponse::JobIdHasBeenSet() const
+{
+    return m_jobIdHasBeenSet;
 }
 
 

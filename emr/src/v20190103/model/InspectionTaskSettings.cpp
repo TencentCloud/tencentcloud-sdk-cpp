@@ -26,7 +26,8 @@ InspectionTaskSettings::InspectionTaskSettings() :
     m_nameHasBeenSet(false),
     m_taskSettingsHasBeenSet(false),
     m_selectedHasBeenSet(false),
-    m_enableHasBeenSet(false)
+    m_enableHasBeenSet(false),
+    m_settingsJsonHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome InspectionTaskSettings::Deserialize(const rapidjson::Value &
         m_enableHasBeenSet = true;
     }
 
+    if (value.HasMember("SettingsJson") && !value["SettingsJson"].IsNull())
+    {
+        if (!value["SettingsJson"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InspectionTaskSettings.SettingsJson` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_settingsJson = string(value["SettingsJson"].GetString());
+        m_settingsJsonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void InspectionTaskSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_enable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_settingsJsonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SettingsJson";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_settingsJson.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void InspectionTaskSettings::SetEnable(const string& _enable)
 bool InspectionTaskSettings::EnableHasBeenSet() const
 {
     return m_enableHasBeenSet;
+}
+
+string InspectionTaskSettings::GetSettingsJson() const
+{
+    return m_settingsJson;
+}
+
+void InspectionTaskSettings::SetSettingsJson(const string& _settingsJson)
+{
+    m_settingsJson = _settingsJson;
+    m_settingsJsonHasBeenSet = true;
+}
+
+bool InspectionTaskSettings::SettingsJsonHasBeenSet() const
+{
+    return m_settingsJsonHasBeenSet;
 }
 

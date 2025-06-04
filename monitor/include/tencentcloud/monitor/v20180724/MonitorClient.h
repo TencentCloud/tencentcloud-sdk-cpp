@@ -43,6 +43,8 @@
 #include <tencentcloud/monitor/v20180724/model/CreateConditionsTemplateResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateExporterIntegrationRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateExporterIntegrationResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateExternalClusterRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateExternalClusterResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateGrafanaInstanceRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateGrafanaInstanceResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateGrafanaIntegrationRequest.h>
@@ -155,6 +157,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeExporterIntegrationsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeExternalClusterRegisterCommandRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeExternalClusterRegisterCommandResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeExternalClusterUninstallCommandRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeExternalClusterUninstallCommandResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaChannelsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaChannelsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaConfigRequest.h>
@@ -395,6 +399,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateExporterIntegrationResponse> CreateExporterIntegrationOutcome;
                 typedef std::future<CreateExporterIntegrationOutcome> CreateExporterIntegrationOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateExporterIntegrationRequest&, CreateExporterIntegrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExporterIntegrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExternalClusterResponse> CreateExternalClusterOutcome;
+                typedef std::future<CreateExternalClusterOutcome> CreateExternalClusterOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateExternalClusterRequest&, CreateExternalClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExternalClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGrafanaInstanceResponse> CreateGrafanaInstanceOutcome;
                 typedef std::future<CreateGrafanaInstanceOutcome> CreateGrafanaInstanceOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateGrafanaInstanceRequest&, CreateGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGrafanaInstanceAsyncHandler;
@@ -563,6 +570,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExternalClusterRegisterCommandResponse> DescribeExternalClusterRegisterCommandOutcome;
                 typedef std::future<DescribeExternalClusterRegisterCommandOutcome> DescribeExternalClusterRegisterCommandOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeExternalClusterRegisterCommandRequest&, DescribeExternalClusterRegisterCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalClusterRegisterCommandAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExternalClusterUninstallCommandResponse> DescribeExternalClusterUninstallCommandOutcome;
+                typedef std::future<DescribeExternalClusterUninstallCommandOutcome> DescribeExternalClusterUninstallCommandOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeExternalClusterUninstallCommandRequest&, DescribeExternalClusterUninstallCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalClusterUninstallCommandAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGrafanaChannelsResponse> DescribeGrafanaChannelsOutcome;
                 typedef std::future<DescribeGrafanaChannelsOutcome> DescribeGrafanaChannelsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeGrafanaChannelsRequest&, DescribeGrafanaChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrafanaChannelsAsyncHandler;
@@ -951,6 +961,15 @@ namespace TencentCloud
                 CreateExporterIntegrationOutcome CreateExporterIntegration(const Model::CreateExporterIntegrationRequest &request);
                 void CreateExporterIntegrationAsync(const Model::CreateExporterIntegrationRequest& request, const CreateExporterIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateExporterIntegrationOutcomeCallable CreateExporterIntegrationCallable(const Model::CreateExporterIntegrationRequest& request);
+
+                /**
+                 *注册外部集群到云上 TMP 实例
+                 * @param req CreateExternalClusterRequest
+                 * @return CreateExternalClusterOutcome
+                 */
+                CreateExternalClusterOutcome CreateExternalCluster(const Model::CreateExternalClusterRequest &request);
+                void CreateExternalClusterAsync(const Model::CreateExternalClusterRequest& request, const CreateExternalClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExternalClusterOutcomeCallable CreateExternalClusterCallable(const Model::CreateExternalClusterRequest& request);
 
                 /**
                  *本接口（CreateGrafanaInstance）用于创建 Grafana 包年包月实例，默认基础版、到期自动续费、不可使用代金券。
@@ -1464,6 +1483,15 @@ namespace TencentCloud
                 DescribeExternalClusterRegisterCommandOutcome DescribeExternalClusterRegisterCommand(const Model::DescribeExternalClusterRegisterCommandRequest &request);
                 void DescribeExternalClusterRegisterCommandAsync(const Model::DescribeExternalClusterRegisterCommandRequest& request, const DescribeExternalClusterRegisterCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExternalClusterRegisterCommandOutcomeCallable DescribeExternalClusterRegisterCommandCallable(const Model::DescribeExternalClusterRegisterCommandRequest& request);
+
+                /**
+                 *查看外部集群 Agent 卸载命令
+                 * @param req DescribeExternalClusterUninstallCommandRequest
+                 * @return DescribeExternalClusterUninstallCommandOutcome
+                 */
+                DescribeExternalClusterUninstallCommandOutcome DescribeExternalClusterUninstallCommand(const Model::DescribeExternalClusterUninstallCommandRequest &request);
+                void DescribeExternalClusterUninstallCommandAsync(const Model::DescribeExternalClusterUninstallCommandRequest& request, const DescribeExternalClusterUninstallCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExternalClusterUninstallCommandOutcomeCallable DescribeExternalClusterUninstallCommandCallable(const Model::DescribeExternalClusterUninstallCommandRequest& request);
 
                 /**
                  *列出 Grafana 所有告警通道

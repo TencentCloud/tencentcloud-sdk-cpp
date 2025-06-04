@@ -26,7 +26,8 @@ using namespace std;
 DescribeJobEventsResponse::DescribeJobEventsResponse() :
     m_eventsHasBeenSet(false),
     m_runningOrderIdsHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_versionsHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,19 @@ CoreInternalOutcome DescribeJobEventsResponse::Deserialize(const string &payload
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Versions") && !rsp["Versions"].IsNull())
+    {
+        if (!rsp["Versions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Versions` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Versions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_versions.push_back((*itr).GetUint64());
+        }
+        m_versionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +167,19 @@ string DescribeJobEventsResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
+    if (m_versionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Versions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_versions.begin(); itr != m_versions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -193,6 +220,16 @@ uint64_t DescribeJobEventsResponse::GetTotalCount() const
 bool DescribeJobEventsResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<uint64_t> DescribeJobEventsResponse::GetVersions() const
+{
+    return m_versions;
+}
+
+bool DescribeJobEventsResponse::VersionsHasBeenSet() const
+{
+    return m_versionsHasBeenSet;
 }
 
 

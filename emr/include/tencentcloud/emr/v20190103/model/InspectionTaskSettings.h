@@ -173,6 +173,27 @@ namespace TencentCloud
                      */
                     bool EnableHasBeenSet() const;
 
+                    /**
+                     * 获取事件Json模板
+                     * @return SettingsJson 事件Json模板
+                     * 
+                     */
+                    std::string GetSettingsJson() const;
+
+                    /**
+                     * 设置事件Json模板
+                     * @param _settingsJson 事件Json模板
+                     * 
+                     */
+                    void SetSettingsJson(const std::string& _settingsJson);
+
+                    /**
+                     * 判断参数 SettingsJson 是否已赋值
+                     * @return SettingsJson 是否已赋值
+                     * 
+                     */
+                    bool SettingsJsonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +231,12 @@ namespace TencentCloud
                      */
                     std::string m_enable;
                     bool m_enableHasBeenSet;
+
+                    /**
+                     * 事件Json模板
+                     */
+                    std::string m_settingsJson;
+                    bool m_settingsJsonHasBeenSet;
 
                 };
             }

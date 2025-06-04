@@ -894,6 +894,27 @@ VALIDATION: 参数非法
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取节点内网IP，同innerIP
+                     * @return HostIP 节点内网IP，同innerIP
+                     * 
+                     */
+                    std::string GetHostIP() const;
+
+                    /**
+                     * 设置节点内网IP，同innerIP
+                     * @param _hostIP 节点内网IP，同innerIP
+                     * 
+                     */
+                    void SetHostIP(const std::string& _hostIP);
+
+                    /**
+                     * 判断参数 HostIP 是否已赋值
+                     * @return HostIP 是否已赋值
+                     * 
+                     */
+                    bool HostIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1131,6 +1152,12 @@ VALIDATION: 参数非法
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 节点内网IP，同innerIP
+                     */
+                    std::string m_hostIP;
+                    bool m_hostIPHasBeenSet;
 
                 };
             }

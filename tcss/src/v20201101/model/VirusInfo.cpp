@@ -52,7 +52,8 @@ VirusInfo::VirusInfo() :
     m_innerIPHasBeenSet(false),
     m_nodeUniqueIDHasBeenSet(false),
     m_hostIDHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_hostIPHasBeenSet(false)
 {
 }
 
@@ -384,6 +385,16 @@ CoreInternalOutcome VirusInfo::Deserialize(const rapidjson::Value &value)
         m_clusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("HostIP") && !value["HostIP"].IsNull())
+    {
+        if (!value["HostIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.HostIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostIP = string(value["HostIP"].GetString());
+        m_hostIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -650,6 +661,14 @@ void VirusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostIP.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1165,5 +1184,21 @@ void VirusInfo::SetClusterName(const string& _clusterName)
 bool VirusInfo::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string VirusInfo::GetHostIP() const
+{
+    return m_hostIP;
+}
+
+void VirusInfo::SetHostIP(const string& _hostIP)
+{
+    m_hostIP = _hostIP;
+    m_hostIPHasBeenSet = true;
+}
+
+bool VirusInfo::HostIPHasBeenSet() const
+{
+    return m_hostIPHasBeenSet;
 }
 

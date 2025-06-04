@@ -49,21 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取宿主机IP（废弃）
                      * @return HostIp 宿主机IP（废弃）
-                     * 
+                     * @deprecated
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置宿主机IP（废弃）
                      * @param _hostIp 宿主机IP（废弃）
-                     * 
+                     * @deprecated
                      */
                     void SetHostIp(const std::string& _hostIp);
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool HostIpHasBeenSet() const;
 

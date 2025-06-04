@@ -237,6 +237,69 @@ namespace TencentCloud
                      */
                     bool AuthorHasBeenSet() const;
 
+                    /**
+                     * 获取文档上传状态
+                     * @return DocStatus 文档上传状态
+                     * 
+                     */
+                    std::string GetDocStatus() const;
+
+                    /**
+                     * 设置文档上传状态
+                     * @param _docStatus 文档上传状态
+                     * 
+                     */
+                    void SetDocStatus(const std::string& _docStatus);
+
+                    /**
+                     * 判断参数 DocStatus 是否已赋值
+                     * @return DocStatus 是否已赋值
+                     * 
+                     */
+                    bool DocStatusHasBeenSet() const;
+
+                    /**
+                     * 获取上传文件失败时具体的错误消息
+                     * @return ErrMsg 上传文件失败时具体的错误消息
+                     * 
+                     */
+                    std::string GetErrMsg() const;
+
+                    /**
+                     * 设置上传文件失败时具体的错误消息
+                     * @param _errMsg 上传文件失败时具体的错误消息
+                     * 
+                     */
+                    void SetErrMsg(const std::string& _errMsg);
+
+                    /**
+                     * 判断参数 ErrMsg 是否已赋值
+                     * @return ErrMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrMsgHasBeenSet() const;
+
+                    /**
+                     * 获取Cos存储文件ID
+                     * @return FileId Cos存储文件ID
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置Cos存储文件ID
+                     * @param _fileId Cos存储文件ID
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,6 +355,24 @@ namespace TencentCloud
                      */
                     std::string m_author;
                     bool m_authorHasBeenSet;
+
+                    /**
+                     * 文档上传状态
+                     */
+                    std::string m_docStatus;
+                    bool m_docStatusHasBeenSet;
+
+                    /**
+                     * 上传文件失败时具体的错误消息
+                     */
+                    std::string m_errMsg;
+                    bool m_errMsgHasBeenSet;
+
+                    /**
+                     * Cos存储文件ID
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                 };
             }

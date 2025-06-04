@@ -29,7 +29,10 @@ QureyKnowledgeDocumentSet::QureyKnowledgeDocumentSet() :
     m_fileTitleHasBeenSet(false),
     m_fileMetaDataHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_authorHasBeenSet(false)
+    m_authorHasBeenSet(false),
+    m_docStatusHasBeenSet(false),
+    m_errMsgHasBeenSet(false),
+    m_fileIdHasBeenSet(false)
 {
 }
 
@@ -142,6 +145,36 @@ CoreInternalOutcome QureyKnowledgeDocumentSet::Deserialize(const rapidjson::Valu
         m_authorHasBeenSet = true;
     }
 
+    if (value.HasMember("DocStatus") && !value["DocStatus"].IsNull())
+    {
+        if (!value["DocStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QureyKnowledgeDocumentSet.DocStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_docStatus = string(value["DocStatus"].GetString());
+        m_docStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrMsg") && !value["ErrMsg"].IsNull())
+    {
+        if (!value["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QureyKnowledgeDocumentSet.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(value["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QureyKnowledgeDocumentSet.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +254,30 @@ void QureyKnowledgeDocumentSet::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "Author";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_author.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_docStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -368,5 +425,53 @@ void QureyKnowledgeDocumentSet::SetAuthor(const string& _author)
 bool QureyKnowledgeDocumentSet::AuthorHasBeenSet() const
 {
     return m_authorHasBeenSet;
+}
+
+string QureyKnowledgeDocumentSet::GetDocStatus() const
+{
+    return m_docStatus;
+}
+
+void QureyKnowledgeDocumentSet::SetDocStatus(const string& _docStatus)
+{
+    m_docStatus = _docStatus;
+    m_docStatusHasBeenSet = true;
+}
+
+bool QureyKnowledgeDocumentSet::DocStatusHasBeenSet() const
+{
+    return m_docStatusHasBeenSet;
+}
+
+string QureyKnowledgeDocumentSet::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+void QureyKnowledgeDocumentSet::SetErrMsg(const string& _errMsg)
+{
+    m_errMsg = _errMsg;
+    m_errMsgHasBeenSet = true;
+}
+
+bool QureyKnowledgeDocumentSet::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
+}
+
+string QureyKnowledgeDocumentSet::GetFileId() const
+{
+    return m_fileId;
+}
+
+void QureyKnowledgeDocumentSet::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool QureyKnowledgeDocumentSet::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 

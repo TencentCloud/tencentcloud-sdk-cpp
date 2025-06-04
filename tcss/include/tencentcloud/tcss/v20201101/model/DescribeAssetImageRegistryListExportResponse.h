@@ -57,6 +57,20 @@ namespace TencentCloud
                      */
                     bool DownloadUrlHasBeenSet() const;
 
+                    /**
+                     * 获取导出任务id
+                     * @return JobId 导出任务id
+                     * 
+                     */
+                    std::string GetJobId() const;
+
+                    /**
+                     * 判断参数 JobId 是否已赋值
+                     * @return JobId 是否已赋值
+                     * 
+                     */
+                    bool JobIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +78,12 @@ namespace TencentCloud
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
+
+                    /**
+                     * 导出任务id
+                     */
+                    std::string m_jobId;
+                    bool m_jobIdHasBeenSet;
 
                 };
             }

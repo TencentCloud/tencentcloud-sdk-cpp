@@ -71,84 +71,84 @@ namespace TencentCloud
                     /**
                      * 获取专用集群类型id（移到下一层级，已经废弃，后续将删除）
                      * @return DedicatedClusterTypeId 专用集群类型id（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     std::string GetDedicatedClusterTypeId() const;
 
                     /**
                      * 设置专用集群类型id（移到下一层级，已经废弃，后续将删除）
                      * @param _dedicatedClusterTypeId 专用集群类型id（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     void SetDedicatedClusterTypeId(const std::string& _dedicatedClusterTypeId);
 
                     /**
                      * 判断参数 DedicatedClusterTypeId 是否已赋值
                      * @return DedicatedClusterTypeId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DedicatedClusterTypeIdHasBeenSet() const;
 
                     /**
                      * 获取支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
                      * @return SupportedStorageType 支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetSupportedStorageType() const;
 
                     /**
                      * 设置支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
                      * @param _supportedStorageType 支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     void SetSupportedStorageType(const std::vector<std::string>& _supportedStorageType);
 
                     /**
                      * 判断参数 SupportedStorageType 是否已赋值
                      * @return SupportedStorageType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SupportedStorageTypeHasBeenSet() const;
 
                     /**
                      * 获取支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
                      * @return SupportedUplinkSpeed 支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     std::vector<int64_t> GetSupportedUplinkSpeed() const;
 
                     /**
                      * 设置支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
                      * @param _supportedUplinkSpeed 支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     void SetSupportedUplinkSpeed(const std::vector<int64_t>& _supportedUplinkSpeed);
 
                     /**
                      * 判断参数 SupportedUplinkSpeed 是否已赋值
                      * @return SupportedUplinkSpeed 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SupportedUplinkSpeedHasBeenSet() const;
 
                     /**
                      * 获取支持的实例族列表（移到下一层级，已经废弃，后续将删除）
                      * @return SupportedInstanceFamily 支持的实例族列表（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetSupportedInstanceFamily() const;
 
                     /**
                      * 设置支持的实例族列表（移到下一层级，已经废弃，后续将删除）
                      * @param _supportedInstanceFamily 支持的实例族列表（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     void SetSupportedInstanceFamily(const std::vector<std::string>& _supportedInstanceFamily);
 
                     /**
                      * 判断参数 SupportedInstanceFamily 是否已赋值
                      * @return SupportedInstanceFamily 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SupportedInstanceFamilyHasBeenSet() const;
 

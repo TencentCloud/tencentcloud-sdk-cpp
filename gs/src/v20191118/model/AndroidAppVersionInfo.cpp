@@ -25,7 +25,8 @@ AndroidAppVersionInfo::AndroidAppVersionInfo() :
     m_stateHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_commandHasBeenSet(false),
-    m_uninstallCommandHasBeenSet(false)
+    m_uninstallCommandHasBeenSet(false),
+    m_cleanupModeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome AndroidAppVersionInfo::Deserialize(const rapidjson::Value &v
         m_uninstallCommandHasBeenSet = true;
     }
 
+    if (value.HasMember("CleanupMode") && !value["CleanupMode"].IsNull())
+    {
+        if (!value["CleanupMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidAppVersionInfo.CleanupMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cleanupMode = string(value["CleanupMode"].GetString());
+        m_cleanupModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void AndroidAppVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "UninstallCommand";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uninstallCommand.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cleanupModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CleanupMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cleanupMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void AndroidAppVersionInfo::SetUninstallCommand(const string& _uninstallCommand)
 bool AndroidAppVersionInfo::UninstallCommandHasBeenSet() const
 {
     return m_uninstallCommandHasBeenSet;
+}
+
+string AndroidAppVersionInfo::GetCleanupMode() const
+{
+    return m_cleanupMode;
+}
+
+void AndroidAppVersionInfo::SetCleanupMode(const string& _cleanupMode)
+{
+    m_cleanupMode = _cleanupMode;
+    m_cleanupModeHasBeenSet = true;
+}
+
+bool AndroidAppVersionInfo::CleanupModeHasBeenSet() const
+{
+    return m_cleanupModeHasBeenSet;
 }
 

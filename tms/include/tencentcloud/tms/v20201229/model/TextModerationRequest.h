@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool DeviceHasBeenSet() const;
 
                     /**
-                     * 获取表示Content的原始语种，枚举值（"en","zh",""）en表示英文，zh表示中文，空字符表示默认语种中文，非中文场景耗时会更高，具体由送审文本内容决定，非中文场景需要联系客服确认
-                     * @return SourceLanguage 表示Content的原始语种，枚举值（"en","zh",""）en表示英文，zh表示中文，空字符表示默认语种中文，非中文场景耗时会更高，具体由送审文本内容决定，非中文场景需要联系客服确认
+                     * 获取表示Content的原始语种，枚举值包括 "en" 和 "zh"。其中，"en" 表示英文，"zh" 表示中文。非中文场景的处理耗时较高，具体情况取决于送审文本长度，非中文场景需[反馈工单](#https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认。
+                     * @return SourceLanguage 表示Content的原始语种，枚举值包括 "en" 和 "zh"。其中，"en" 表示英文，"zh" 表示中文。非中文场景的处理耗时较高，具体情况取决于送审文本长度，非中文场景需[反馈工单](#https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认。
                      * 
                      */
                     std::string GetSourceLanguage() const;
 
                     /**
-                     * 设置表示Content的原始语种，枚举值（"en","zh",""）en表示英文，zh表示中文，空字符表示默认语种中文，非中文场景耗时会更高，具体由送审文本内容决定，非中文场景需要联系客服确认
-                     * @param _sourceLanguage 表示Content的原始语种，枚举值（"en","zh",""）en表示英文，zh表示中文，空字符表示默认语种中文，非中文场景耗时会更高，具体由送审文本内容决定，非中文场景需要联系客服确认
+                     * 设置表示Content的原始语种，枚举值包括 "en" 和 "zh"。其中，"en" 表示英文，"zh" 表示中文。非中文场景的处理耗时较高，具体情况取决于送审文本长度，非中文场景需[反馈工单](#https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认。
+                     * @param _sourceLanguage 表示Content的原始语种，枚举值包括 "en" 和 "zh"。其中，"en" 表示英文，"zh" 表示中文。非中文场景的处理耗时较高，具体情况取决于送审文本长度，非中文场景需[反馈工单](#https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认。
                      * 
                      */
                     void SetSourceLanguage(const std::string& _sourceLanguage);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool SourceLanguageHasBeenSet() const;
 
                     /**
-                     * 获取审核的业务类型，枚举值有{"","TEXT","TEXT_AIGC"},缺省值""和"TEXT"标识传统文本审核，"TEXT_AIGC"标识文本AIGC审核
-                     * @return Type 审核的业务类型，枚举值有{"","TEXT","TEXT_AIGC"},缺省值""和"TEXT"标识传统文本审核，"TEXT_AIGC"标识文本AIGC审核
+                     * 获取审核的业务类型，枚举值包括 "TEXT" 和 "TEXT_AIGC"。"TEXT" 表示传统文本审核，"TEXT_AIGC" 表示文本AIGC审核。
+                     * @return Type 审核的业务类型，枚举值包括 "TEXT" 和 "TEXT_AIGC"。"TEXT" 表示传统文本审核，"TEXT_AIGC" 表示文本AIGC审核。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置审核的业务类型，枚举值有{"","TEXT","TEXT_AIGC"},缺省值""和"TEXT"标识传统文本审核，"TEXT_AIGC"标识文本AIGC审核
-                     * @param _type 审核的业务类型，枚举值有{"","TEXT","TEXT_AIGC"},缺省值""和"TEXT"标识传统文本审核，"TEXT_AIGC"标识文本AIGC审核
+                     * 设置审核的业务类型，枚举值包括 "TEXT" 和 "TEXT_AIGC"。"TEXT" 表示传统文本审核，"TEXT_AIGC" 表示文本AIGC审核。
+                     * @param _type 审核的业务类型，枚举值包括 "TEXT" 和 "TEXT_AIGC"。"TEXT" 表示传统文本审核，"TEXT_AIGC" 表示文本AIGC审核。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -229,13 +229,13 @@ namespace TencentCloud
                     bool m_deviceHasBeenSet;
 
                     /**
-                     * 表示Content的原始语种，枚举值（"en","zh",""）en表示英文，zh表示中文，空字符表示默认语种中文，非中文场景耗时会更高，具体由送审文本内容决定，非中文场景需要联系客服确认
+                     * 表示Content的原始语种，枚举值包括 "en" 和 "zh"。其中，"en" 表示英文，"zh" 表示中文。非中文场景的处理耗时较高，具体情况取决于送审文本长度，非中文场景需[反馈工单](#https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认。
                      */
                     std::string m_sourceLanguage;
                     bool m_sourceLanguageHasBeenSet;
 
                     /**
-                     * 审核的业务类型，枚举值有{"","TEXT","TEXT_AIGC"},缺省值""和"TEXT"标识传统文本审核，"TEXT_AIGC"标识文本AIGC审核
+                     * 审核的业务类型，枚举值包括 "TEXT" 和 "TEXT_AIGC"。"TEXT" 表示传统文本审核，"TEXT_AIGC" 表示文本AIGC审核。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

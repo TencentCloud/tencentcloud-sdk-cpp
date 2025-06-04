@@ -90,14 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 获取扩容开始时间
+说明：此项显示的格式是 int 类型的 unix 时间戳
                      * @return StartTime 扩容开始时间
+说明：此项显示的格式是 int 类型的 unix 时间戳
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置扩容开始时间
+说明：此项显示的格式是 int 类型的 unix 时间戳
                      * @param _startTime 扩容开始时间
+说明：此项显示的格式是 int 类型的 unix 时间戳
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -111,14 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 获取扩容结束时间
+说明：此项显示的格式是 int 类型的 unix 时间戳
                      * @return EndTime 扩容结束时间
+说明：此项显示的格式是 int 类型的 unix 时间戳
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置扩容结束时间
+说明：此项显示的格式是 int 类型的 unix 时间戳
                      * @param _endTime 扩容结束时间
+说明：此项显示的格式是 int 类型的 unix 时间戳
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -230,12 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 扩容开始时间
+说明：此项显示的格式是 int 类型的 unix 时间戳
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 扩容结束时间
+说明：此项显示的格式是 int 类型的 unix 时间戳
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

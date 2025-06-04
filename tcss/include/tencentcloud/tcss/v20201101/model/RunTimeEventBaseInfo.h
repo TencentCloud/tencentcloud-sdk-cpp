@@ -813,6 +813,27 @@ MountNamespace逃逸、
                      */
                     bool WorkloadTypeHasBeenSet() const;
 
+                    /**
+                     * 获取容器运行状态
+                     * @return ContainerStatus 容器运行状态
+                     * 
+                     */
+                    std::string GetContainerStatus() const;
+
+                    /**
+                     * 设置容器运行状态
+                     * @param _containerStatus 容器运行状态
+                     * 
+                     */
+                    void SetContainerStatus(const std::string& _containerStatus);
+
+                    /**
+                     * 判断参数 ContainerStatus 是否已赋值
+                     * @return ContainerStatus 是否已赋值
+                     * 
+                     */
+                    bool ContainerStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1029,6 +1050,12 @@ MountNamespace逃逸、
                      */
                     std::string m_workloadType;
                     bool m_workloadTypeHasBeenSet;
+
+                    /**
+                     * 容器运行状态
+                     */
+                    std::string m_containerStatus;
+                    bool m_containerStatusHasBeenSet;
 
                 };
             }

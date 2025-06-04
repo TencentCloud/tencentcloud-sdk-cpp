@@ -26,7 +26,9 @@ using namespace std;
 DescribeAssetSyncLastTimeResponse::DescribeAssetSyncLastTimeResponse() :
     m_assetSyncLastTimeHasBeenSet(false),
     m_taskStatusHasBeenSet(false),
-    m_taskProcessHasBeenSet(false)
+    m_taskProcessHasBeenSet(false),
+    m_failedHostCountHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,26 @@ CoreInternalOutcome DescribeAssetSyncLastTimeResponse::Deserialize(const string 
         m_taskProcessHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FailedHostCount") && !rsp["FailedHostCount"].IsNull())
+    {
+        if (!rsp["FailedHostCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FailedHostCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failedHostCount = rsp["FailedHostCount"].GetUint64();
+        m_failedHostCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = rsp["TaskId"].GetUint64();
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +148,22 @@ string DescribeAssetSyncLastTimeResponse::ToJsonString() const
         string key = "TaskProcess";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskProcess, allocator);
+    }
+
+    if (m_failedHostCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedHostCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failedHostCount, allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +206,26 @@ int64_t DescribeAssetSyncLastTimeResponse::GetTaskProcess() const
 bool DescribeAssetSyncLastTimeResponse::TaskProcessHasBeenSet() const
 {
     return m_taskProcessHasBeenSet;
+}
+
+uint64_t DescribeAssetSyncLastTimeResponse::GetFailedHostCount() const
+{
+    return m_failedHostCount;
+}
+
+bool DescribeAssetSyncLastTimeResponse::FailedHostCountHasBeenSet() const
+{
+    return m_failedHostCountHasBeenSet;
+}
+
+uint64_t DescribeAssetSyncLastTimeResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool DescribeAssetSyncLastTimeResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

@@ -25,7 +25,9 @@ using namespace std;
 
 DescribeAccessControlEventsResponse::DescribeAccessControlEventsResponse() :
     m_totalCountHasBeenSet(false),
-    m_eventSetHasBeenSet(false)
+    m_eventSetHasBeenSet(false),
+    m_supportCoreVersionHasBeenSet(false),
+    m_interceptionFailureTipHasBeenSet(false)
 {
 }
 
@@ -93,6 +95,26 @@ CoreInternalOutcome DescribeAccessControlEventsResponse::Deserialize(const strin
         m_eventSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SupportCoreVersion") && !rsp["SupportCoreVersion"].IsNull())
+    {
+        if (!rsp["SupportCoreVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SupportCoreVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportCoreVersion = string(rsp["SupportCoreVersion"].GetString());
+        m_supportCoreVersionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InterceptionFailureTip") && !rsp["InterceptionFailureTip"].IsNull())
+    {
+        if (!rsp["InterceptionFailureTip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InterceptionFailureTip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_interceptionFailureTip = string(rsp["InterceptionFailureTip"].GetString());
+        m_interceptionFailureTipHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +148,22 @@ string DescribeAccessControlEventsResponse::ToJsonString() const
         }
     }
 
+    if (m_supportCoreVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportCoreVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_supportCoreVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_interceptionFailureTipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InterceptionFailureTip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_interceptionFailureTip.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +194,26 @@ vector<AccessControlEventInfo> DescribeAccessControlEventsResponse::GetEventSet(
 bool DescribeAccessControlEventsResponse::EventSetHasBeenSet() const
 {
     return m_eventSetHasBeenSet;
+}
+
+string DescribeAccessControlEventsResponse::GetSupportCoreVersion() const
+{
+    return m_supportCoreVersion;
+}
+
+bool DescribeAccessControlEventsResponse::SupportCoreVersionHasBeenSet() const
+{
+    return m_supportCoreVersionHasBeenSet;
+}
+
+string DescribeAccessControlEventsResponse::GetInterceptionFailureTip() const
+{
+    return m_interceptionFailureTip;
+}
+
+bool DescribeAccessControlEventsResponse::InterceptionFailureTipHasBeenSet() const
+{
+    return m_interceptionFailureTipHasBeenSet;
 }
 
 

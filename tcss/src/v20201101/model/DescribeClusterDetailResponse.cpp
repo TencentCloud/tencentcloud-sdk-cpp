@@ -49,7 +49,8 @@ DescribeClusterDetailResponse::DescribeClusterDetailResponse() :
     m_podCountHasBeenSet(false),
     m_serviceCountHasBeenSet(false),
     m_ingressCountHasBeenSet(false),
-    m_masterIpsHasBeenSet(false)
+    m_masterIpsHasBeenSet(false),
+    m_ownerNameHasBeenSet(false)
 {
 }
 
@@ -347,6 +348,16 @@ CoreInternalOutcome DescribeClusterDetailResponse::Deserialize(const string &pay
         m_masterIpsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OwnerName") && !rsp["OwnerName"].IsNull())
+    {
+        if (!rsp["OwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerName = string(rsp["OwnerName"].GetString());
+        m_ownerNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -563,6 +574,14 @@ string DescribeClusterDetailResponse::ToJsonString() const
         string key = "MasterIps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_masterIps.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -835,6 +854,16 @@ string DescribeClusterDetailResponse::GetMasterIps() const
 bool DescribeClusterDetailResponse::MasterIpsHasBeenSet() const
 {
     return m_masterIpsHasBeenSet;
+}
+
+string DescribeClusterDetailResponse::GetOwnerName() const
+{
+    return m_ownerName;
+}
+
+bool DescribeClusterDetailResponse::OwnerNameHasBeenSet() const
+{
+    return m_ownerNameHasBeenSet;
 }
 
 

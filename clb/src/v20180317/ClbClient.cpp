@@ -1846,6 +1846,49 @@ ClbClient::DescribeLBListenersOutcomeCallable ClbClient::DescribeLBListenersCall
     return task->get_future();
 }
 
+ClbClient::DescribeLBOperateProtectOutcome ClbClient::DescribeLBOperateProtect(const DescribeLBOperateProtectRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLBOperateProtect");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLBOperateProtectResponse rsp = DescribeLBOperateProtectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLBOperateProtectOutcome(rsp);
+        else
+            return DescribeLBOperateProtectOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLBOperateProtectOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeLBOperateProtectAsync(const DescribeLBOperateProtectRequest& request, const DescribeLBOperateProtectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLBOperateProtect(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeLBOperateProtectOutcomeCallable ClbClient::DescribeLBOperateProtectCallable(const DescribeLBOperateProtectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLBOperateProtectOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLBOperateProtect(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeListenersOutcome ClbClient::DescribeListeners(const DescribeListenersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeListeners");

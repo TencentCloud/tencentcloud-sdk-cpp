@@ -63,6 +63,48 @@ namespace TencentCloud
                      */
                     bool UuidHasBeenSet() const;
 
+                    /**
+                     * 获取超级节点唯一id
+                     * @return NodeUniqueIds 超级节点唯一id
+                     * 
+                     */
+                    std::vector<std::string> GetNodeUniqueIds() const;
+
+                    /**
+                     * 设置超级节点唯一id
+                     * @param _nodeUniqueIds 超级节点唯一id
+                     * 
+                     */
+                    void SetNodeUniqueIds(const std::vector<std::string>& _nodeUniqueIds);
+
+                    /**
+                     * 判断参数 NodeUniqueIds 是否已赋值
+                     * @return NodeUniqueIds 是否已赋值
+                     * 
+                     */
+                    bool NodeUniqueIdsHasBeenSet() const;
+
+                    /**
+                     * 获取uuid列表
+                     * @return UUIDs uuid列表
+                     * 
+                     */
+                    std::vector<std::string> GetUUIDs() const;
+
+                    /**
+                     * 设置uuid列表
+                     * @param _uUIDs uuid列表
+                     * 
+                     */
+                    void SetUUIDs(const std::vector<std::string>& _uUIDs);
+
+                    /**
+                     * 判断参数 UUIDs 是否已赋值
+                     * @return UUIDs 是否已赋值
+                     * 
+                     */
+                    bool UUIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +112,18 @@ namespace TencentCloud
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * 超级节点唯一id
+                     */
+                    std::vector<std::string> m_nodeUniqueIds;
+                    bool m_nodeUniqueIdsHasBeenSet;
+
+                    /**
+                     * uuid列表
+                     */
+                    std::vector<std::string> m_uUIDs;
+                    bool m_uUIDsHasBeenSet;
 
                 };
             }

@@ -33,6 +33,8 @@
 #include <tencentcloud/gs/v20191118/model/CreateAndroidAppResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidAppVersionRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidAppVersionResponse.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceADBRequest.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceADBResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceImageRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceImageResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceLabelRequest.h>
@@ -81,6 +83,8 @@
 #include <tencentcloud/gs/v20191118/model/FetchAndroidInstancesLogsResponse.h>
 #include <tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppRequest.h>
 #include <tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppResponse.h>
+#include <tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppWithURLRequest.h>
+#include <tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppWithURLResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidAppRequest.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidAppResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidAppVersionRequest.h>
@@ -93,6 +97,8 @@
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesInformationResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesLabelsRequest.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesLabelsResponse.h>
+#include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesPropertiesRequest.h>
+#include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesPropertiesResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionRequest.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesUserIdRequest.h>
@@ -168,6 +174,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAndroidAppVersionResponse> CreateAndroidAppVersionOutcome;
                 typedef std::future<CreateAndroidAppVersionOutcome> CreateAndroidAppVersionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateAndroidAppVersionRequest&, CreateAndroidAppVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidAppVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAndroidInstanceADBResponse> CreateAndroidInstanceADBOutcome;
+                typedef std::future<CreateAndroidInstanceADBOutcome> CreateAndroidInstanceADBOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::CreateAndroidInstanceADBRequest&, CreateAndroidInstanceADBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstanceADBAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAndroidInstanceImageResponse> CreateAndroidInstanceImageOutcome;
                 typedef std::future<CreateAndroidInstanceImageOutcome> CreateAndroidInstanceImageOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateAndroidInstanceImageRequest&, CreateAndroidInstanceImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstanceImageAsyncHandler;
@@ -240,6 +249,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InstallAndroidInstancesAppResponse> InstallAndroidInstancesAppOutcome;
                 typedef std::future<InstallAndroidInstancesAppOutcome> InstallAndroidInstancesAppOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::InstallAndroidInstancesAppRequest&, InstallAndroidInstancesAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallAndroidInstancesAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstallAndroidInstancesAppWithURLResponse> InstallAndroidInstancesAppWithURLOutcome;
+                typedef std::future<InstallAndroidInstancesAppWithURLOutcome> InstallAndroidInstancesAppWithURLOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::InstallAndroidInstancesAppWithURLRequest&, InstallAndroidInstancesAppWithURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallAndroidInstancesAppWithURLAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAndroidAppResponse> ModifyAndroidAppOutcome;
                 typedef std::future<ModifyAndroidAppOutcome> ModifyAndroidAppOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ModifyAndroidAppRequest&, ModifyAndroidAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidAppAsyncHandler;
@@ -258,6 +270,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAndroidInstancesLabelsResponse> ModifyAndroidInstancesLabelsOutcome;
                 typedef std::future<ModifyAndroidInstancesLabelsOutcome> ModifyAndroidInstancesLabelsOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstancesLabelsRequest&, ModifyAndroidInstancesLabelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstancesLabelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAndroidInstancesPropertiesResponse> ModifyAndroidInstancesPropertiesOutcome;
+                typedef std::future<ModifyAndroidInstancesPropertiesOutcome> ModifyAndroidInstancesPropertiesOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstancesPropertiesRequest&, ModifyAndroidInstancesPropertiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstancesPropertiesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAndroidInstancesResolutionResponse> ModifyAndroidInstancesResolutionOutcome;
                 typedef std::future<ModifyAndroidInstancesResolutionOutcome> ModifyAndroidInstancesResolutionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstancesResolutionRequest&, ModifyAndroidInstancesResolutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstancesResolutionAsyncHandler;
@@ -331,7 +346,7 @@ namespace TencentCloud
 
 
                 /**
-                 *备份云手机到指定存储
+                 *备份云手机数据到指定存储，支持 COS 和兼容 AWS S3 协议的对象存储服务。如果是备份到 COS 时，会使用公网流量，授权 COS bucket 请在控制台中操作。
                  * @param req BackUpAndroidInstanceToStorageRequest
                  * @return BackUpAndroidInstanceToStorageOutcome
                  */
@@ -350,7 +365,7 @@ namespace TencentCloud
 
                 /**
                  *复制安卓实例：
-1. 排除和包含文件只能指定/data下的文件，不指定时复制整个/data目录
+1. 排除和包含文件只能指定 /data 下的文件，不指定时复制整个 /data 目录
 2. 源实例和目的实例必须在同一区域
 3. 复制时，源实例和目的实例都会停机，复制完后实例会自动启动
 4. 复制时会产生大量内网流量，请限制并发
@@ -380,6 +395,15 @@ namespace TencentCloud
                 CreateAndroidAppVersionOutcomeCallable CreateAndroidAppVersionCallable(const Model::CreateAndroidAppVersionRequest& request);
 
                 /**
+                 *创建云手机实例 ADB 连接信息，请将返回结果的 PrivateKey 字段保存为 pem 文件，并将 pem 文件权限设置为 600，再参考返回结果的 ConnectCommand 使用 adb 连接实例。
+                 * @param req CreateAndroidInstanceADBRequest
+                 * @return CreateAndroidInstanceADBOutcome
+                 */
+                CreateAndroidInstanceADBOutcome CreateAndroidInstanceADB(const Model::CreateAndroidInstanceADBRequest &request);
+                void CreateAndroidInstanceADBAsync(const Model::CreateAndroidInstanceADBRequest& request, const CreateAndroidInstanceADBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAndroidInstanceADBOutcomeCallable CreateAndroidInstanceADBCallable(const Model::CreateAndroidInstanceADBRequest& request);
+
+                /**
                  *创建安卓实例镜像
                  * @param req CreateAndroidInstanceImageRequest
                  * @return CreateAndroidInstanceImageOutcome
@@ -398,7 +422,7 @@ namespace TencentCloud
                 CreateAndroidInstanceLabelOutcomeCallable CreateAndroidInstanceLabelCallable(const Model::CreateAndroidInstanceLabelRequest& request);
 
                 /**
-                 *创建安卓实例 SSH 连接
+                 *创建安卓实例 SSH 连接信息，请将返回结果的 PrivateKey 字段保存为 pem 文件，并将 pem 文件权限设置为 600，再参考返回结果的 ConnectCommand 使用 ssh 连接实例。
                  * @param req CreateAndroidInstanceSSHRequest
                  * @return CreateAndroidInstanceSSHOutcome
                  */
@@ -407,7 +431,7 @@ namespace TencentCloud
                 CreateAndroidInstanceSSHOutcomeCallable CreateAndroidInstanceSSHCallable(const Model::CreateAndroidInstanceSSHRequest& request);
 
                 /**
-                 *创建安卓实例 WebShell 连接
+                 *创建安卓实例 WebShell 连接信息，返回的 ConnectUrl 可通过浏览器直接打开访问，链接有效期 1 小时，链接打开后可持续使用。
                  * @param req CreateAndroidInstanceWebShellRequest
                  * @return CreateAndroidInstanceWebShellOutcome
                  */
@@ -560,7 +584,7 @@ namespace TencentCloud
                 DestroyAndroidInstancesOutcomeCallable DestroyAndroidInstancesCallable(const Model::DestroyAndroidInstancesRequest& request);
 
                 /**
-                 *分发文件到安卓实例
+                 *将一个文件批量分发到多个实例，一次接口调用触发一次文件分发，一次文件分发只会从公网下载一次，然后文件会走内网分发到实例列表中的实例。
                  * @param req DistributeFileToAndroidInstancesRequest
                  * @return DistributeFileToAndroidInstancesOutcome
                  */
@@ -578,7 +602,7 @@ namespace TencentCloud
                 ExecuteCommandOnAndroidInstancesOutcomeCallable ExecuteCommandOnAndroidInstancesCallable(const Model::ExecuteCommandOnAndroidInstancesRequest& request);
 
                 /**
-                 *批量获取安卓实例日志
+                 *批量将实例的 logcat 日志文件上传到您已授权的 COS bucket 中，授权 COS bucket 请在控制台中操作。
                  * @param req FetchAndroidInstancesLogsRequest
                  * @return FetchAndroidInstancesLogsOutcome
                  */
@@ -594,6 +618,15 @@ namespace TencentCloud
                 InstallAndroidInstancesAppOutcome InstallAndroidInstancesApp(const Model::InstallAndroidInstancesAppRequest &request);
                 void InstallAndroidInstancesAppAsync(const Model::InstallAndroidInstancesAppRequest& request, const InstallAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InstallAndroidInstancesAppOutcomeCallable InstallAndroidInstancesAppCallable(const Model::InstallAndroidInstancesAppRequest& request);
+
+                /**
+                 *安装安卓实例应用
+                 * @param req InstallAndroidInstancesAppWithURLRequest
+                 * @return InstallAndroidInstancesAppWithURLOutcome
+                 */
+                InstallAndroidInstancesAppWithURLOutcome InstallAndroidInstancesAppWithURL(const Model::InstallAndroidInstancesAppWithURLRequest &request);
+                void InstallAndroidInstancesAppWithURLAsync(const Model::InstallAndroidInstancesAppWithURLRequest& request, const InstallAndroidInstancesAppWithURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstallAndroidInstancesAppWithURLOutcomeCallable InstallAndroidInstancesAppWithURLCallable(const Model::InstallAndroidInstancesAppWithURLRequest& request);
 
                 /**
                  *修改安卓应用信息
@@ -648,6 +681,15 @@ namespace TencentCloud
                 ModifyAndroidInstancesLabelsOutcome ModifyAndroidInstancesLabels(const Model::ModifyAndroidInstancesLabelsRequest &request);
                 void ModifyAndroidInstancesLabelsAsync(const Model::ModifyAndroidInstancesLabelsRequest& request, const ModifyAndroidInstancesLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAndroidInstancesLabelsOutcomeCallable ModifyAndroidInstancesLabelsCallable(const Model::ModifyAndroidInstancesLabelsRequest& request);
+
+                /**
+                 *批量修改安卓实例属性
+                 * @param req ModifyAndroidInstancesPropertiesRequest
+                 * @return ModifyAndroidInstancesPropertiesOutcome
+                 */
+                ModifyAndroidInstancesPropertiesOutcome ModifyAndroidInstancesProperties(const Model::ModifyAndroidInstancesPropertiesRequest &request);
+                void ModifyAndroidInstancesPropertiesAsync(const Model::ModifyAndroidInstancesPropertiesRequest& request, const ModifyAndroidInstancesPropertiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAndroidInstancesPropertiesOutcomeCallable ModifyAndroidInstancesPropertiesCallable(const Model::ModifyAndroidInstancesPropertiesRequest& request);
 
                 /**
                  *修改安卓实例分辨率。需要注意的是该接口需要重启才能生效。
@@ -707,7 +749,7 @@ namespace TencentCloud
                 RestartAndroidInstancesAppOutcomeCallable RestartAndroidInstancesAppCallable(const Model::RestartAndroidInstancesAppRequest& request);
 
                 /**
-                 *指定存储还原云手机
+                 *使用指定存储数据还原云手机，支持 COS 和兼容 AWS S3 协议的对象存储服务。如果还原数据来自 COS 时，会使用公网流量，授权 COS bucket 请在控制台中操作。
                  * @param req RestoreAndroidInstanceFromStorageRequest
                  * @return RestoreAndroidInstanceFromStorageOutcome
                  */
@@ -842,7 +884,7 @@ namespace TencentCloud
                 UninstallAndroidInstancesAppOutcomeCallable UninstallAndroidInstancesAppCallable(const Model::UninstallAndroidInstancesAppRequest& request);
 
                 /**
-                 *上传文件到安卓实例
+                 *将文件下载到指定实例列表的实例上，每个实例都会从公网下载文件。如果您需要将同一个文件分发到多个实例，建议使用 DistributeFileToAndroidInstances 接口减少公网下载的流量。如果您需要将不同的文件下载到不同的实例，可考虑使用 UploadFilesToAndroidInstances 接口批量将不同文件下载到不同的实例。
                  * @param req UploadFileToAndroidInstancesRequest
                  * @return UploadFileToAndroidInstancesOutcome
                  */
@@ -851,7 +893,7 @@ namespace TencentCloud
                 UploadFileToAndroidInstancesOutcomeCallable UploadFileToAndroidInstancesCallable(const Model::UploadFileToAndroidInstancesRequest& request);
 
                 /**
-                 *批量上传文件到安卓实例
+                 *批量将不同的文件下载到不同的实例，每个实例下载文件都是从公网下载，建议只用在文件下载使用一次的场景。如果您需要将同一个文件分发到不同实例，建议使用 DistributeFileToAndroidInstances 接口。
                  * @param req UploadFilesToAndroidInstancesRequest
                  * @return UploadFilesToAndroidInstancesOutcome
                  */

@@ -26,7 +26,8 @@ CreateAndroidAppVersionRequest::CreateAndroidAppVersionRequest() :
     m_androidAppIdHasBeenSet(false),
     m_downloadUrlHasBeenSet(false),
     m_commandHasBeenSet(false),
-    m_uninstallCommandHasBeenSet(false)
+    m_uninstallCommandHasBeenSet(false),
+    m_cleanupModeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateAndroidAppVersionRequest::ToJsonString() const
         string key = "UninstallCommand";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_uninstallCommand.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cleanupModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CleanupMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cleanupMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateAndroidAppVersionRequest::SetUninstallCommand(const string& _uninstal
 bool CreateAndroidAppVersionRequest::UninstallCommandHasBeenSet() const
 {
     return m_uninstallCommandHasBeenSet;
+}
+
+string CreateAndroidAppVersionRequest::GetCleanupMode() const
+{
+    return m_cleanupMode;
+}
+
+void CreateAndroidAppVersionRequest::SetCleanupMode(const string& _cleanupMode)
+{
+    m_cleanupMode = _cleanupMode;
+    m_cleanupModeHasBeenSet = true;
+}
+
+bool CreateAndroidAppVersionRequest::CleanupModeHasBeenSet() const
+{
+    return m_cleanupModeHasBeenSet;
 }
 
 

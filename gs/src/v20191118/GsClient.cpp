@@ -255,6 +255,49 @@ GsClient::CreateAndroidAppVersionOutcomeCallable GsClient::CreateAndroidAppVersi
     return task->get_future();
 }
 
+GsClient::CreateAndroidInstanceADBOutcome GsClient::CreateAndroidInstanceADB(const CreateAndroidInstanceADBRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidInstanceADB");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidInstanceADBResponse rsp = CreateAndroidInstanceADBResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidInstanceADBOutcome(rsp);
+        else
+            return CreateAndroidInstanceADBOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidInstanceADBOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidInstanceADBAsync(const CreateAndroidInstanceADBRequest& request, const CreateAndroidInstanceADBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAndroidInstanceADB(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CreateAndroidInstanceADBOutcomeCallable GsClient::CreateAndroidInstanceADBCallable(const CreateAndroidInstanceADBRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAndroidInstanceADBOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAndroidInstanceADB(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::CreateAndroidInstanceImageOutcome GsClient::CreateAndroidInstanceImage(const CreateAndroidInstanceImageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAndroidInstanceImage");
@@ -1287,6 +1330,49 @@ GsClient::InstallAndroidInstancesAppOutcomeCallable GsClient::InstallAndroidInst
     return task->get_future();
 }
 
+GsClient::InstallAndroidInstancesAppWithURLOutcome GsClient::InstallAndroidInstancesAppWithURL(const InstallAndroidInstancesAppWithURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstallAndroidInstancesAppWithURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstallAndroidInstancesAppWithURLResponse rsp = InstallAndroidInstancesAppWithURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstallAndroidInstancesAppWithURLOutcome(rsp);
+        else
+            return InstallAndroidInstancesAppWithURLOutcome(o.GetError());
+    }
+    else
+    {
+        return InstallAndroidInstancesAppWithURLOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::InstallAndroidInstancesAppWithURLAsync(const InstallAndroidInstancesAppWithURLRequest& request, const InstallAndroidInstancesAppWithURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InstallAndroidInstancesAppWithURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::InstallAndroidInstancesAppWithURLOutcomeCallable GsClient::InstallAndroidInstancesAppWithURLCallable(const InstallAndroidInstancesAppWithURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InstallAndroidInstancesAppWithURLOutcome()>>(
+        [this, request]()
+        {
+            return this->InstallAndroidInstancesAppWithURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::ModifyAndroidAppOutcome GsClient::ModifyAndroidApp(const ModifyAndroidAppRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAndroidApp");
@@ -1538,6 +1624,49 @@ GsClient::ModifyAndroidInstancesLabelsOutcomeCallable GsClient::ModifyAndroidIns
         [this, request]()
         {
             return this->ModifyAndroidInstancesLabels(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::ModifyAndroidInstancesPropertiesOutcome GsClient::ModifyAndroidInstancesProperties(const ModifyAndroidInstancesPropertiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAndroidInstancesProperties");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAndroidInstancesPropertiesResponse rsp = ModifyAndroidInstancesPropertiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAndroidInstancesPropertiesOutcome(rsp);
+        else
+            return ModifyAndroidInstancesPropertiesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAndroidInstancesPropertiesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ModifyAndroidInstancesPropertiesAsync(const ModifyAndroidInstancesPropertiesRequest& request, const ModifyAndroidInstancesPropertiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAndroidInstancesProperties(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ModifyAndroidInstancesPropertiesOutcomeCallable GsClient::ModifyAndroidInstancesPropertiesCallable(const ModifyAndroidInstancesPropertiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesPropertiesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAndroidInstancesProperties(request);
         }
     );
 

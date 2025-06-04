@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool UninstallCommandHasBeenSet() const;
 
+                    /**
+                     * 获取应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。
+                     * @return CleanupMode 应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。
+                     * 
+                     */
+                    std::string GetCleanupMode() const;
+
+                    /**
+                     * 设置应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。
+                     * @param _cleanupMode 应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。
+                     * 
+                     */
+                    void SetCleanupMode(const std::string& _cleanupMode);
+
+                    /**
+                     * 判断参数 CleanupMode 是否已赋值
+                     * @return CleanupMode 是否已赋值
+                     * 
+                     */
+                    bool CleanupModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_uninstallCommand;
                     bool m_uninstallCommandHasBeenSet;
+
+                    /**
+                     * 应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。
+                     */
+                    std::string m_cleanupMode;
+                    bool m_cleanupModeHasBeenSet;
 
                 };
             }

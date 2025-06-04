@@ -51,7 +51,8 @@ ClusterInfoItem::ClusterInfoItem() :
     m_masterAddressesHasBeenSet(false),
     m_coresCntHasBeenSet(false),
     m_clusterAuditStatusHasBeenSet(false),
-    m_clusterAuditFailedInfoHasBeenSet(false)
+    m_clusterAuditFailedInfoHasBeenSet(false),
+    m_ownerNameHasBeenSet(false)
 {
 }
 
@@ -373,6 +374,16 @@ CoreInternalOutcome ClusterInfoItem::Deserialize(const rapidjson::Value &value)
         m_clusterAuditFailedInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("OwnerName") && !value["OwnerName"].IsNull())
+    {
+        if (!value["OwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfoItem.OwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerName = string(value["OwnerName"].GetString());
+        m_ownerNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -631,6 +642,14 @@ void ClusterInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ClusterAuditFailedInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterAuditFailedInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1130,5 +1149,21 @@ void ClusterInfoItem::SetClusterAuditFailedInfo(const string& _clusterAuditFaile
 bool ClusterInfoItem::ClusterAuditFailedInfoHasBeenSet() const
 {
     return m_clusterAuditFailedInfoHasBeenSet;
+}
+
+string ClusterInfoItem::GetOwnerName() const
+{
+    return m_ownerName;
+}
+
+void ClusterInfoItem::SetOwnerName(const string& _ownerName)
+{
+    m_ownerName = _ownerName;
+    m_ownerNameHasBeenSet = true;
+}
+
+bool ClusterInfoItem::OwnerNameHasBeenSet() const
+{
+    return m_ownerNameHasBeenSet;
 }
 

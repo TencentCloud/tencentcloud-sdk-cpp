@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取快照策略ID，通过快照策略列表获取
-                     * @return AutoSnapshotPolicyId 快照策略ID，通过快照策略列表获取
+                     * 获取需要解绑的文件系统ID列表，用"," 分割，文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)
+                     * @return AutoSnapshotPolicyId 需要解绑的文件系统ID列表，用"," 分割，文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)
                      * 
                      */
                     std::string GetAutoSnapshotPolicyId() const;
 
                     /**
-                     * 设置快照策略ID，通过快照策略列表获取
-                     * @param _autoSnapshotPolicyId 快照策略ID，通过快照策略列表获取
+                     * 设置需要解绑的文件系统ID列表，用"," 分割，文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)
+                     * @param _autoSnapshotPolicyId 需要解绑的文件系统ID列表，用"," 分割，文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)
                      * 
                      */
                     void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统id列表，用“,”分隔，文件系统id通过查询文件系统列表获得
-                     * @return FileSystemIds 文件系统id列表，用“,”分隔，文件系统id通过查询文件系统列表获得
+                     * 获取解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取
+                     * @return FileSystemIds 解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取
                      * 
                      */
                     std::string GetFileSystemIds() const;
 
                     /**
-                     * 设置文件系统id列表，用“,”分隔，文件系统id通过查询文件系统列表获得
-                     * @param _fileSystemIds 文件系统id列表，用“,”分隔，文件系统id通过查询文件系统列表获得
+                     * 设置解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取
+                     * @param _fileSystemIds 解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取
                      * 
                      */
                     void SetFileSystemIds(const std::string& _fileSystemIds);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 快照策略ID，通过快照策略列表获取
+                     * 需要解绑的文件系统ID列表，用"," 分割，文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)
                      */
                     std::string m_autoSnapshotPolicyId;
                     bool m_autoSnapshotPolicyIdHasBeenSet;
 
                     /**
-                     * 文件系统id列表，用“,”分隔，文件系统id通过查询文件系统列表获得
+                     * 解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取
                      */
                     std::string m_fileSystemIds;
                     bool m_fileSystemIdsHasBeenSet;

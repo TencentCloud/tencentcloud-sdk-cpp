@@ -107,6 +107,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeIdleLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLBListenersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLBListenersResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeLBOperateProtectRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeLBOperateProtectResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerListByCertIdRequest.h>
@@ -345,6 +347,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLBListenersResponse> DescribeLBListenersOutcome;
                 typedef std::future<DescribeLBListenersOutcome> DescribeLBListenersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeLBListenersRequest&, DescribeLBListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLBListenersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLBOperateProtectResponse> DescribeLBOperateProtectOutcome;
+                typedef std::future<DescribeLBOperateProtectOutcome> DescribeLBOperateProtectOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeLBOperateProtectRequest&, DescribeLBOperateProtectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLBOperateProtectAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeListenersResponse> DescribeListenersOutcome;
                 typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeListenersRequest&, DescribeListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListenersAsyncHandler;
@@ -922,6 +927,15 @@ BGP带宽包必须传带宽包id
                 DescribeLBListenersOutcome DescribeLBListeners(const Model::DescribeLBListenersRequest &request);
                 void DescribeLBListenersAsync(const Model::DescribeLBListenersRequest& request, const DescribeLBListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLBListenersOutcomeCallable DescribeLBListenersCallable(const Model::DescribeLBListenersRequest& request);
+
+                /**
+                 *查询负载均衡的操作保护信息。
+                 * @param req DescribeLBOperateProtectRequest
+                 * @return DescribeLBOperateProtectOutcome
+                 */
+                DescribeLBOperateProtectOutcome DescribeLBOperateProtect(const Model::DescribeLBOperateProtectRequest &request);
+                void DescribeLBOperateProtectAsync(const Model::DescribeLBOperateProtectRequest& request, const DescribeLBOperateProtectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLBOperateProtectOutcomeCallable DescribeLBOperateProtectCallable(const Model::DescribeLBOperateProtectRequest& request);
 
                 /**
                  *DescribeListeners 接口可根据负载均衡器 ID、监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。

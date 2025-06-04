@@ -745,6 +745,27 @@ namespace TencentCloud
                      */
                     bool ClusterAuditFailedInfoHasBeenSet() const;
 
+                    /**
+                     * 获取所有者名称
+                     * @return OwnerName 所有者名称
+                     * 
+                     */
+                    std::string GetOwnerName() const;
+
+                    /**
+                     * 设置所有者名称
+                     * @param _ownerName 所有者名称
+                     * 
+                     */
+                    void SetOwnerName(const std::string& _ownerName);
+
+                    /**
+                     * 判断参数 OwnerName 是否已赋值
+                     * @return OwnerName 是否已赋值
+                     * 
+                     */
+                    bool OwnerNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -944,6 +965,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterAuditFailedInfo;
                     bool m_clusterAuditFailedInfoHasBeenSet;
+
+                    /**
+                     * 所有者名称
+                     */
+                    std::string m_ownerName;
+                    bool m_ownerNameHasBeenSet;
 
                 };
             }

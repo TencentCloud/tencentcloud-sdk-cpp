@@ -30,7 +30,10 @@ KnowledgeDocumentSet::KnowledgeDocumentSet() :
     m_nameHasBeenSet(false),
     m_fileTitleHasBeenSet(false),
     m_fileMetaDataHasBeenSet(false),
-    m_authorHasBeenSet(false)
+    m_authorHasBeenSet(false),
+    m_docStatusHasBeenSet(false),
+    m_errMsgHasBeenSet(false),
+    m_fileIdHasBeenSet(false)
 {
 }
 
@@ -153,6 +156,36 @@ CoreInternalOutcome KnowledgeDocumentSet::Deserialize(const rapidjson::Value &va
         m_authorHasBeenSet = true;
     }
 
+    if (value.HasMember("DocStatus") && !value["DocStatus"].IsNull())
+    {
+        if (!value["DocStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeDocumentSet.DocStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_docStatus = string(value["DocStatus"].GetString());
+        m_docStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrMsg") && !value["ErrMsg"].IsNull())
+    {
+        if (!value["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeDocumentSet.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(value["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeDocumentSet.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +273,30 @@ void KnowledgeDocumentSet::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Author";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_author.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_docStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -403,5 +460,53 @@ void KnowledgeDocumentSet::SetAuthor(const string& _author)
 bool KnowledgeDocumentSet::AuthorHasBeenSet() const
 {
     return m_authorHasBeenSet;
+}
+
+string KnowledgeDocumentSet::GetDocStatus() const
+{
+    return m_docStatus;
+}
+
+void KnowledgeDocumentSet::SetDocStatus(const string& _docStatus)
+{
+    m_docStatus = _docStatus;
+    m_docStatusHasBeenSet = true;
+}
+
+bool KnowledgeDocumentSet::DocStatusHasBeenSet() const
+{
+    return m_docStatusHasBeenSet;
+}
+
+string KnowledgeDocumentSet::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+void KnowledgeDocumentSet::SetErrMsg(const string& _errMsg)
+{
+    m_errMsg = _errMsg;
+    m_errMsgHasBeenSet = true;
+}
+
+bool KnowledgeDocumentSet::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
+}
+
+string KnowledgeDocumentSet::GetFileId() const
+{
+    return m_fileId;
+}
+
+void KnowledgeDocumentSet::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool KnowledgeDocumentSet::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 

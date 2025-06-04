@@ -470,6 +470,49 @@ MonitorClient::CreateExporterIntegrationOutcomeCallable MonitorClient::CreateExp
     return task->get_future();
 }
 
+MonitorClient::CreateExternalClusterOutcome MonitorClient::CreateExternalCluster(const CreateExternalClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExternalCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExternalClusterResponse rsp = CreateExternalClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExternalClusterOutcome(rsp);
+        else
+            return CreateExternalClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExternalClusterOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateExternalClusterAsync(const CreateExternalClusterRequest& request, const CreateExternalClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExternalCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateExternalClusterOutcomeCallable MonitorClient::CreateExternalClusterCallable(const CreateExternalClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExternalClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExternalCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreateGrafanaInstanceOutcome MonitorClient::CreateGrafanaInstance(const CreateGrafanaInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateGrafanaInstance");
@@ -2871,6 +2914,49 @@ MonitorClient::DescribeExternalClusterRegisterCommandOutcomeCallable MonitorClie
         [this, request]()
         {
             return this->DescribeExternalClusterRegisterCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeExternalClusterUninstallCommandOutcome MonitorClient::DescribeExternalClusterUninstallCommand(const DescribeExternalClusterUninstallCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExternalClusterUninstallCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExternalClusterUninstallCommandResponse rsp = DescribeExternalClusterUninstallCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExternalClusterUninstallCommandOutcome(rsp);
+        else
+            return DescribeExternalClusterUninstallCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExternalClusterUninstallCommandOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeExternalClusterUninstallCommandAsync(const DescribeExternalClusterUninstallCommandRequest& request, const DescribeExternalClusterUninstallCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExternalClusterUninstallCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeExternalClusterUninstallCommandOutcomeCallable MonitorClient::DescribeExternalClusterUninstallCommandCallable(const DescribeExternalClusterUninstallCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExternalClusterUninstallCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExternalClusterUninstallCommand(request);
         }
     );
 

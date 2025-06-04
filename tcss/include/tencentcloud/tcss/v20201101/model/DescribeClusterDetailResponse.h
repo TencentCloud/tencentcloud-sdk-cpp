@@ -407,6 +407,20 @@ namespace TencentCloud
                      */
                     bool MasterIpsHasBeenSet() const;
 
+                    /**
+                     * 获取所有者名称
+                     * @return OwnerName 所有者名称
+                     * 
+                     */
+                    std::string GetOwnerName() const;
+
+                    /**
+                     * 判断参数 OwnerName 是否已赋值
+                     * @return OwnerName 是否已赋值
+                     * 
+                     */
+                    bool OwnerNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -564,6 +578,12 @@ namespace TencentCloud
                      */
                     std::string m_masterIps;
                     bool m_masterIpsHasBeenSet;
+
+                    /**
+                     * 所有者名称
+                     */
+                    std::string m_ownerName;
+                    bool m_ownerNameHasBeenSet;
 
                 };
             }
