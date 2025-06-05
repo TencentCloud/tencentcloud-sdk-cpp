@@ -1588,6 +1588,49 @@ ChcClient::DescribeWorkOrderTypesOutcomeCallable ChcClient::DescribeWorkOrderTyp
     return task->get_future();
 }
 
+ChcClient::ExportCustomerWorkOrderDetailOutcome ChcClient::ExportCustomerWorkOrderDetail(const ExportCustomerWorkOrderDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportCustomerWorkOrderDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportCustomerWorkOrderDetailResponse rsp = ExportCustomerWorkOrderDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportCustomerWorkOrderDetailOutcome(rsp);
+        else
+            return ExportCustomerWorkOrderDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportCustomerWorkOrderDetailOutcome(outcome.GetError());
+    }
+}
+
+void ChcClient::ExportCustomerWorkOrderDetailAsync(const ExportCustomerWorkOrderDetailRequest& request, const ExportCustomerWorkOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportCustomerWorkOrderDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChcClient::ExportCustomerWorkOrderDetailOutcomeCallable ChcClient::ExportCustomerWorkOrderDetailCallable(const ExportCustomerWorkOrderDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportCustomerWorkOrderDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportCustomerWorkOrderDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ChcClient::ModifyWorkOrderTypeCollectFlagOutcome ChcClient::ModifyWorkOrderTypeCollectFlag(const ModifyWorkOrderTypeCollectFlagRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyWorkOrderTypeCollectFlag");

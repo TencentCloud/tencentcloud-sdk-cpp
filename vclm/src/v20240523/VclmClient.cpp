@@ -169,6 +169,49 @@ VclmClient::DescribePortraitSingJobOutcomeCallable VclmClient::DescribePortraitS
     return task->get_future();
 }
 
+VclmClient::DescribeTemplateToVideoJobOutcome VclmClient::DescribeTemplateToVideoJob(const DescribeTemplateToVideoJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTemplateToVideoJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTemplateToVideoJobResponse rsp = DescribeTemplateToVideoJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTemplateToVideoJobOutcome(rsp);
+        else
+            return DescribeTemplateToVideoJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTemplateToVideoJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeTemplateToVideoJobAsync(const DescribeTemplateToVideoJobRequest& request, const DescribeTemplateToVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTemplateToVideoJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::DescribeTemplateToVideoJobOutcomeCallable VclmClient::DescribeTemplateToVideoJobCallable(const DescribeTemplateToVideoJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTemplateToVideoJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTemplateToVideoJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VclmClient::DescribeVideoStylizationJobOutcome VclmClient::DescribeVideoStylizationJob(const DescribeVideoStylizationJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVideoStylizationJob");
@@ -291,6 +334,49 @@ VclmClient::SubmitPortraitSingJobOutcomeCallable VclmClient::SubmitPortraitSingJ
         [this, request]()
         {
             return this->SubmitPortraitSingJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VclmClient::SubmitTemplateToVideoJobOutcome VclmClient::SubmitTemplateToVideoJob(const SubmitTemplateToVideoJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitTemplateToVideoJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitTemplateToVideoJobResponse rsp = SubmitTemplateToVideoJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitTemplateToVideoJobOutcome(rsp);
+        else
+            return SubmitTemplateToVideoJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitTemplateToVideoJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitTemplateToVideoJobAsync(const SubmitTemplateToVideoJobRequest& request, const SubmitTemplateToVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitTemplateToVideoJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::SubmitTemplateToVideoJobOutcomeCallable VclmClient::SubmitTemplateToVideoJobCallable(const SubmitTemplateToVideoJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitTemplateToVideoJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitTemplateToVideoJob(request);
         }
     );
 

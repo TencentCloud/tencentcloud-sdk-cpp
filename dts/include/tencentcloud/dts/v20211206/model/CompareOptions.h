@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取线程数，取值1-5，默认为1
-                     * @return ThreadCount 线程数，取值1-5，默认为1
+                     * 获取线程数，取值1-8，默认为1
+                     * @return ThreadCount 线程数，取值1-8，默认为1
                      * 
                      */
                     int64_t GetThreadCount() const;
 
                     /**
-                     * 设置线程数，取值1-5，默认为1
-                     * @param _threadCount 线程数，取值1-5，默认为1
+                     * 设置线程数，取值1-8，默认为1
+                     * @param _threadCount 线程数，取值1-8，默认为1
                      * 
                      */
                     void SetThreadCount(const int64_t& _threadCount);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * 线程数，取值1-5，默认为1
+                     * 线程数，取值1-8，默认为1
                      */
                     int64_t m_threadCount;
                     bool m_threadCountHasBeenSet;

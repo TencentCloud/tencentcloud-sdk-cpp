@@ -166,42 +166,42 @@ namespace TencentCloud
                     /**
                      * 获取该字段已废弃。
                      * @return Status 该字段已废弃。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置该字段已废弃。
                      * @param _status 该字段已废弃。
-                     * 
+                     * @deprecated
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取该字段已废弃。
                      * @return Message 该字段已废弃。
-                     * 
+                     * @deprecated
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置该字段已废弃。
                      * @param _message 该字段已废弃。
-                     * 
+                     * @deprecated
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MessageHasBeenSet() const;
 

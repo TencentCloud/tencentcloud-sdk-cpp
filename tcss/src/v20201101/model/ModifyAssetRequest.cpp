@@ -24,7 +24,10 @@ using namespace std;
 
 ModifyAssetRequest::ModifyAssetRequest() :
     m_allHasBeenSet(false),
-    m_hostsHasBeenSet(false)
+    m_hostsHasBeenSet(false),
+    m_allSuperHostHasBeenSet(false),
+    m_nodeUniqueIdsHasBeenSet(false),
+    m_timeoutSecHasBeenSet(false)
 {
 }
 
@@ -54,6 +57,35 @@ string ModifyAssetRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_allSuperHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllSuperHost";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_allSuperHost, allocator);
+    }
+
+    if (m_nodeUniqueIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeUniqueIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nodeUniqueIds.begin(); itr != m_nodeUniqueIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_timeoutSecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeoutSec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeoutSec, allocator);
     }
 
 
@@ -94,6 +126,54 @@ void ModifyAssetRequest::SetHosts(const vector<string>& _hosts)
 bool ModifyAssetRequest::HostsHasBeenSet() const
 {
     return m_hostsHasBeenSet;
+}
+
+bool ModifyAssetRequest::GetAllSuperHost() const
+{
+    return m_allSuperHost;
+}
+
+void ModifyAssetRequest::SetAllSuperHost(const bool& _allSuperHost)
+{
+    m_allSuperHost = _allSuperHost;
+    m_allSuperHostHasBeenSet = true;
+}
+
+bool ModifyAssetRequest::AllSuperHostHasBeenSet() const
+{
+    return m_allSuperHostHasBeenSet;
+}
+
+vector<string> ModifyAssetRequest::GetNodeUniqueIds() const
+{
+    return m_nodeUniqueIds;
+}
+
+void ModifyAssetRequest::SetNodeUniqueIds(const vector<string>& _nodeUniqueIds)
+{
+    m_nodeUniqueIds = _nodeUniqueIds;
+    m_nodeUniqueIdsHasBeenSet = true;
+}
+
+bool ModifyAssetRequest::NodeUniqueIdsHasBeenSet() const
+{
+    return m_nodeUniqueIdsHasBeenSet;
+}
+
+uint64_t ModifyAssetRequest::GetTimeoutSec() const
+{
+    return m_timeoutSec;
+}
+
+void ModifyAssetRequest::SetTimeoutSec(const uint64_t& _timeoutSec)
+{
+    m_timeoutSec = _timeoutSec;
+    m_timeoutSecHasBeenSet = true;
+}
+
+bool ModifyAssetRequest::TimeoutSecHasBeenSet() const
+{
+    return m_timeoutSecHasBeenSet;
 }
 
 

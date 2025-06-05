@@ -181,18 +181,18 @@ namespace TencentCloud
                     bool ConflictHandleOptionHasBeenSet() const;
 
                     /**
-                     * 获取DDL同步选项，具体描述要同步那些DDL
+                     * 获取DDL同步选项，具体描述要同步哪些DDL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdlOptions DDL同步选项，具体描述要同步那些DDL
+                     * @return DdlOptions DDL同步选项，具体描述要同步哪些DDL
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DdlOption> GetDdlOptions() const;
 
                     /**
-                     * 设置DDL同步选项，具体描述要同步那些DDL
+                     * 设置DDL同步选项，具体描述要同步哪些DDL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ddlOptions DDL同步选项，具体描述要同步那些DDL
+                     * @param _ddlOptions DDL同步选项，具体描述要同步哪些DDL
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -371,7 +371,7 @@ namespace TencentCloud
                     bool m_conflictHandleOptionHasBeenSet;
 
                     /**
-                     * DDL同步选项，具体描述要同步那些DDL
+                     * DDL同步选项，具体描述要同步哪些DDL
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DdlOption> m_ddlOptions;

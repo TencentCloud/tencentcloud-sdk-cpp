@@ -129,23 +129,23 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取（废弃）可用区
-                     * @return Zone （废弃）可用区
-                     * 
+                     * 获取可用区
+                     * @return Zone 可用区
+                     * @deprecated
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置（废弃）可用区
-                     * @param _zone （废弃）可用区
-                     * 
+                     * 设置可用区
+                     * @param _zone 可用区
+                     * @deprecated
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -171,44 +171,44 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取（废弃）Pid，可通过获取独享集群售卖配置接口得到
-                     * @return Pid （废弃）Pid，可通过获取独享集群售卖配置接口得到
-                     * 
+                     * 获取Pid，可通过获取独享集群售卖配置接口得到
+                     * @return Pid Pid，可通过获取独享集群售卖配置接口得到
+                     * @deprecated
                      */
                     int64_t GetPid() const;
 
                     /**
-                     * 设置（废弃）Pid，可通过获取独享集群售卖配置接口得到
-                     * @param _pid （废弃）Pid，可通过获取独享集群售卖配置接口得到
-                     * 
+                     * 设置Pid，可通过获取独享集群售卖配置接口得到
+                     * @param _pid Pid，可通过获取独享集群售卖配置接口得到
+                     * @deprecated
                      */
                     void SetPid(const int64_t& _pid);
 
                     /**
                      * 判断参数 Pid 是否已赋值
                      * @return Pid 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PidHasBeenSet() const;
 
                     /**
-                     * 获取（废弃）机型
-                     * @return Machine （废弃）机型
-                     * 
+                     * 获取机型
+                     * @return Machine 机型
+                     * @deprecated
                      */
                     std::string GetMachine() const;
 
                     /**
-                     * 设置（废弃）机型
-                     * @param _machine （废弃）机型
-                     * 
+                     * 设置机型
+                     * @param _machine 机型
+                     * @deprecated
                      */
                     void SetMachine(const std::string& _machine);
 
                     /**
                      * 判断参数 Machine 是否已赋值
                      * @return Machine 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MachineHasBeenSet() const;
 
@@ -276,44 +276,44 @@ namespace TencentCloud
                     bool DbVersionIdHasBeenSet() const;
 
                     /**
-                     * 获取（废弃）是否手动指定一组服务器分配, 运维使用
-                     * @return Manual （废弃）是否手动指定一组服务器分配, 运维使用
-                     * 
+                     * 获取是否手动指定一组服务器分配, 运维使用
+                     * @return Manual 是否手动指定一组服务器分配, 运维使用
+                     * @deprecated
                      */
                     int64_t GetManual() const;
 
                     /**
-                     * 设置（废弃）是否手动指定一组服务器分配, 运维使用
-                     * @param _manual （废弃）是否手动指定一组服务器分配, 运维使用
-                     * 
+                     * 设置是否手动指定一组服务器分配, 运维使用
+                     * @param _manual 是否手动指定一组服务器分配, 运维使用
+                     * @deprecated
                      */
                     void SetManual(const int64_t& _manual);
 
                     /**
                      * 判断参数 Manual 是否已赋值
                      * @return Manual 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ManualHasBeenSet() const;
 
                     /**
-                     * 获取（废弃）DeviceNo参数
-                     * @return DeviceNo （废弃）DeviceNo参数
-                     * 
+                     * 获取DeviceNo参数
+                     * @return DeviceNo DeviceNo参数
+                     * @deprecated
                      */
                     std::string GetDeviceNo() const;
 
                     /**
-                     * 设置（废弃）DeviceNo参数
-                     * @param _deviceNo （废弃）DeviceNo参数
-                     * 
+                     * 设置DeviceNo参数
+                     * @param _deviceNo DeviceNo参数
+                     * @deprecated
                      */
                     void SetDeviceNo(const std::string& _deviceNo);
 
                     /**
                      * 判断参数 DeviceNo 是否已赋值
                      * @return DeviceNo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DeviceNoHasBeenSet() const;
 
@@ -617,7 +617,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * （废弃）可用区
+                     * 可用区
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -629,13 +629,13 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * （废弃）Pid，可通过获取独享集群售卖配置接口得到
+                     * Pid，可通过获取独享集群售卖配置接口得到
                      */
                     int64_t m_pid;
                     bool m_pidHasBeenSet;
 
                     /**
-                     * （废弃）机型
+                     * 机型
                      */
                     std::string m_machine;
                     bool m_machineHasBeenSet;
@@ -659,13 +659,13 @@ namespace TencentCloud
                     bool m_dbVersionIdHasBeenSet;
 
                     /**
-                     * （废弃）是否手动指定一组服务器分配, 运维使用
+                     * 是否手动指定一组服务器分配, 运维使用
                      */
                     int64_t m_manual;
                     bool m_manualHasBeenSet;
 
                     /**
-                     * （废弃）DeviceNo参数
+                     * DeviceNo参数
                      */
                     std::string m_deviceNo;
                     bool m_deviceNoHasBeenSet;

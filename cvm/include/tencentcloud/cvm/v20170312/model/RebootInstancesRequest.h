@@ -66,21 +66,21 @@ namespace TencentCloud
                     /**
                      * 获取本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常重启失败后选择强制重启实例。取值范围：<br><li>true：表示在正常重启失败后进行强制重启</li><li>false：表示在正常重启失败后不进行强制重启</li><br>默认取值：false。
                      * @return ForceReboot 本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常重启失败后选择强制重启实例。取值范围：<br><li>true：表示在正常重启失败后进行强制重启</li><li>false：表示在正常重启失败后不进行强制重启</li><br>默认取值：false。
-                     * 
+                     * @deprecated
                      */
                     bool GetForceReboot() const;
 
                     /**
                      * 设置本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常重启失败后选择强制重启实例。取值范围：<br><li>true：表示在正常重启失败后进行强制重启</li><li>false：表示在正常重启失败后不进行强制重启</li><br>默认取值：false。
                      * @param _forceReboot 本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常重启失败后选择强制重启实例。取值范围：<br><li>true：表示在正常重启失败后进行强制重启</li><li>false：表示在正常重启失败后不进行强制重启</li><br>默认取值：false。
-                     * 
+                     * @deprecated
                      */
                     void SetForceReboot(const bool& _forceReboot);
 
                     /**
                      * 判断参数 ForceReboot 是否已赋值
                      * @return ForceReboot 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ForceRebootHasBeenSet() const;
 

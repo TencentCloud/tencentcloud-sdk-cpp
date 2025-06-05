@@ -172,21 +172,21 @@ namespace TencentCloud
                     /**
                      * 获取分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
                      * @return Offset 分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
                      * @param _offset 分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
-                     * 
+                     * @deprecated
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OffsetHasBeenSet() const;
 

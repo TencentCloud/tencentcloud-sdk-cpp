@@ -426,6 +426,111 @@ namespace TencentCloud
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取主机类型
+                     * @return MachineType 主机类型
+                     * 
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 设置主机类型
+                     * @param _machineType 主机类型
+                     * 
+                     */
+                    void SetMachineType(const std::string& _machineType);
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     * 
+                     */
+                    bool MachineTypeHasBeenSet() const;
+
+                    /**
+                     * 获取可用区ID
+                     * @return RegionId 可用区ID
+                     * 
+                     */
+                    uint64_t GetRegionId() const;
+
+                    /**
+                     * 设置可用区ID
+                     * @param _regionId 可用区ID
+                     * 
+                     */
+                    void SetRegionId(const uint64_t& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     * 
+                     */
+                    bool RegionIdHasBeenSet() const;
+
+                    /**
+                     * 获取修复任务是否创建了快照： 0-未创建，其他-已创建
+                     * @return HasSnapshot 修复任务是否创建了快照： 0-未创建，其他-已创建
+                     * 
+                     */
+                    uint64_t GetHasSnapshot() const;
+
+                    /**
+                     * 设置修复任务是否创建了快照： 0-未创建，其他-已创建
+                     * @param _hasSnapshot 修复任务是否创建了快照： 0-未创建，其他-已创建
+                     * 
+                     */
+                    void SetHasSnapshot(const uint64_t& _hasSnapshot);
+
+                    /**
+                     * 判断参数 HasSnapshot 是否已赋值
+                     * @return HasSnapshot 是否已赋值
+                     * 
+                     */
+                    bool HasSnapshotHasBeenSet() const;
+
+                    /**
+                     * 获取最后修复时间
+                     * @return LatestFixTime 最后修复时间
+                     * 
+                     */
+                    std::string GetLatestFixTime() const;
+
+                    /**
+                     * 设置最后修复时间
+                     * @param _latestFixTime 最后修复时间
+                     * 
+                     */
+                    void SetLatestFixTime(const std::string& _latestFixTime);
+
+                    /**
+                     * 判断参数 LatestFixTime 是否已赋值
+                     * @return LatestFixTime 是否已赋值
+                     * 
+                     */
+                    bool LatestFixTimeHasBeenSet() const;
+
+                    /**
+                     * 获取说明
+                     * @return DescriptionEn 说明
+                     * 
+                     */
+                    std::string GetDescriptionEn() const;
+
+                    /**
+                     * 设置说明
+                     * @param _descriptionEn 说明
+                     * 
+                     */
+                    void SetDescriptionEn(const std::string& _descriptionEn);
+
+                    /**
+                     * 判断参数 DescriptionEn 是否已赋值
+                     * @return DescriptionEn 是否已赋值
+                     * 
+                     */
+                    bool DescriptionEnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -535,6 +640,36 @@ namespace TencentCloud
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * 主机类型
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
+
+                    /**
+                     * 可用区ID
+                     */
+                    uint64_t m_regionId;
+                    bool m_regionIdHasBeenSet;
+
+                    /**
+                     * 修复任务是否创建了快照： 0-未创建，其他-已创建
+                     */
+                    uint64_t m_hasSnapshot;
+                    bool m_hasSnapshotHasBeenSet;
+
+                    /**
+                     * 最后修复时间
+                     */
+                    std::string m_latestFixTime;
+                    bool m_latestFixTimeHasBeenSet;
+
+                    /**
+                     * 说明
+                     */
+                    std::string m_descriptionEn;
+                    bool m_descriptionEnHasBeenSet;
 
                 };
             }

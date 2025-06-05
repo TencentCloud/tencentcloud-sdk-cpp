@@ -556,6 +556,48 @@ namespace TencentCloud
                      */
                     bool ClusterTopologyHasBeenSet() const;
 
+                    /**
+                     * 获取原实例所在地域名，当传入异地备份时为必选项，例：ap-guangzhou
+                     * @return SrcRegion 原实例所在地域名，当传入异地备份时为必选项，例：ap-guangzhou
+                     * 
+                     */
+                    std::string GetSrcRegion() const;
+
+                    /**
+                     * 设置原实例所在地域名，当传入异地备份时为必选项，例：ap-guangzhou
+                     * @param _srcRegion 原实例所在地域名，当传入异地备份时为必选项，例：ap-guangzhou
+                     * 
+                     */
+                    void SetSrcRegion(const std::string& _srcRegion);
+
+                    /**
+                     * 判断参数 SrcRegion 是否已赋值
+                     * @return SrcRegion 是否已赋值
+                     * 
+                     */
+                    bool SrcRegionHasBeenSet() const;
+
+                    /**
+                     * 获取异地数据备份id
+                     * @return SpecifiedSubBackupId 异地数据备份id
+                     * 
+                     */
+                    int64_t GetSpecifiedSubBackupId() const;
+
+                    /**
+                     * 设置异地数据备份id
+                     * @param _specifiedSubBackupId 异地数据备份id
+                     * 
+                     */
+                    void SetSpecifiedSubBackupId(const int64_t& _specifiedSubBackupId);
+
+                    /**
+                     * 判断参数 SpecifiedSubBackupId 是否已赋值
+                     * @return SpecifiedSubBackupId 是否已赋值
+                     * 
+                     */
+                    bool SpecifiedSubBackupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -703,6 +745,18 @@ namespace TencentCloud
                      */
                     ClusterTopology m_clusterTopology;
                     bool m_clusterTopologyHasBeenSet;
+
+                    /**
+                     * 原实例所在地域名，当传入异地备份时为必选项，例：ap-guangzhou
+                     */
+                    std::string m_srcRegion;
+                    bool m_srcRegionHasBeenSet;
+
+                    /**
+                     * 异地数据备份id
+                     */
+                    int64_t m_specifiedSubBackupId;
+                    bool m_specifiedSubBackupIdHasBeenSet;
 
                 };
             }

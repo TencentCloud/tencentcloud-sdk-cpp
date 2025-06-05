@@ -37,7 +37,8 @@ AddAssetImageRegistryRegistryDetailRequest::AddAssetImageRegistryRegistryDetailR
     m_needScanHasBeenSet(false),
     m_syncModeHasBeenSet(false),
     m_webhookUrlHasBeenSet(false),
-    m_webhookTokenHasBeenSet(false)
+    m_webhookTokenHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,14 @@ string AddAssetImageRegistryRegistryDetailRequest::ToJsonString() const
         string key = "WebhookToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_webhookToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -421,6 +430,22 @@ void AddAssetImageRegistryRegistryDetailRequest::SetWebhookToken(const string& _
 bool AddAssetImageRegistryRegistryDetailRequest::WebhookTokenHasBeenSet() const
 {
     return m_webhookTokenHasBeenSet;
+}
+
+string AddAssetImageRegistryRegistryDetailRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void AddAssetImageRegistryRegistryDetailRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool AddAssetImageRegistryRegistryDetailRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

@@ -95,6 +95,8 @@
 #include <tencentcloud/chc/v20230418/model/DescribeWorkOrderStatisticsResponse.h>
 #include <tencentcloud/chc/v20230418/model/DescribeWorkOrderTypesRequest.h>
 #include <tencentcloud/chc/v20230418/model/DescribeWorkOrderTypesResponse.h>
+#include <tencentcloud/chc/v20230418/model/ExportCustomerWorkOrderDetailRequest.h>
+#include <tencentcloud/chc/v20230418/model/ExportCustomerWorkOrderDetailResponse.h>
 #include <tencentcloud/chc/v20230418/model/ModifyWorkOrderTypeCollectFlagRequest.h>
 #include <tencentcloud/chc/v20230418/model/ModifyWorkOrderTypeCollectFlagResponse.h>
 
@@ -219,6 +221,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWorkOrderTypesResponse> DescribeWorkOrderTypesOutcome;
                 typedef std::future<DescribeWorkOrderTypesOutcome> DescribeWorkOrderTypesOutcomeCallable;
                 typedef std::function<void(const ChcClient*, const Model::DescribeWorkOrderTypesRequest&, DescribeWorkOrderTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkOrderTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportCustomerWorkOrderDetailResponse> ExportCustomerWorkOrderDetailOutcome;
+                typedef std::future<ExportCustomerWorkOrderDetailOutcome> ExportCustomerWorkOrderDetailOutcomeCallable;
+                typedef std::function<void(const ChcClient*, const Model::ExportCustomerWorkOrderDetailRequest&, ExportCustomerWorkOrderDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportCustomerWorkOrderDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWorkOrderTypeCollectFlagResponse> ModifyWorkOrderTypeCollectFlagOutcome;
                 typedef std::future<ModifyWorkOrderTypeCollectFlagOutcome> ModifyWorkOrderTypeCollectFlagOutcomeCallable;
                 typedef std::function<void(const ChcClient*, const Model::ModifyWorkOrderTypeCollectFlagRequest&, ModifyWorkOrderTypeCollectFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkOrderTypeCollectFlagAsyncHandler;
@@ -548,6 +553,15 @@ namespace TencentCloud
                 DescribeWorkOrderTypesOutcome DescribeWorkOrderTypes(const Model::DescribeWorkOrderTypesRequest &request);
                 void DescribeWorkOrderTypesAsync(const Model::DescribeWorkOrderTypesRequest& request, const DescribeWorkOrderTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWorkOrderTypesOutcomeCallable DescribeWorkOrderTypesCallable(const Model::DescribeWorkOrderTypesRequest& request);
+
+                /**
+                 *导出工单详情
+                 * @param req ExportCustomerWorkOrderDetailRequest
+                 * @return ExportCustomerWorkOrderDetailOutcome
+                 */
+                ExportCustomerWorkOrderDetailOutcome ExportCustomerWorkOrderDetail(const Model::ExportCustomerWorkOrderDetailRequest &request);
+                void ExportCustomerWorkOrderDetailAsync(const Model::ExportCustomerWorkOrderDetailRequest& request, const ExportCustomerWorkOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportCustomerWorkOrderDetailOutcomeCallable ExportCustomerWorkOrderDetailCallable(const Model::ExportCustomerWorkOrderDetailRequest& request);
 
                 /**
                  *如果当前该工单类型是收藏状态，调用接口后变成未收藏状态，如果是未收藏状态，调用该接口变为收藏状态

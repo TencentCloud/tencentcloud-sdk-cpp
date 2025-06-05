@@ -142,6 +142,27 @@ namespace TencentCloud
                      */
                     bool FileActionHasBeenSet() const;
 
+                    /**
+                     * 获取命令行参数 没有填*
+                     * @return Args 命令行参数 没有填*
+                     * 
+                     */
+                    std::string GetArgs() const;
+
+                    /**
+                     * 设置命令行参数 没有填*
+                     * @param _args 命令行参数 没有填*
+                     * 
+                     */
+                    void SetArgs(const std::string& _args);
+
+                    /**
+                     * 判断参数 Args 是否已赋值
+                     * @return Args 是否已赋值
+                     * 
+                     */
+                    bool ArgsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +191,12 @@ namespace TencentCloud
                      */
                     std::string m_fileAction;
                     bool m_fileActionHasBeenSet;
+
+                    /**
+                     * 命令行参数 没有填*
+                     */
+                    std::string m_args;
+                    bool m_argsHasBeenSet;
 
                 };
             }

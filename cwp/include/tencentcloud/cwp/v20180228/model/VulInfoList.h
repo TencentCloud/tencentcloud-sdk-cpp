@@ -645,6 +645,27 @@ namespace TencentCloud
                      */
                     bool VulFixSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取最近修复时间
+                     * @return LatestFixTime 最近修复时间
+                     * 
+                     */
+                    std::string GetLatestFixTime() const;
+
+                    /**
+                     * 设置最近修复时间
+                     * @param _latestFixTime 最近修复时间
+                     * 
+                     */
+                    void SetLatestFixTime(const std::string& _latestFixTime);
+
+                    /**
+                     * 判断参数 LatestFixTime 是否已赋值
+                     * @return LatestFixTime 是否已赋值
+                     * 
+                     */
+                    bool LatestFixTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -816,6 +837,12 @@ namespace TencentCloud
                      */
                     uint64_t m_vulFixSwitch;
                     bool m_vulFixSwitchHasBeenSet;
+
+                    /**
+                     * 最近修复时间
+                     */
+                    std::string m_latestFixTime;
+                    bool m_latestFixTimeHasBeenSet;
 
                 };
             }

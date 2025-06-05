@@ -24,7 +24,8 @@ FileTamperRule::FileTamperRule() :
     m_processPathHasBeenSet(false),
     m_targetHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_fileActionHasBeenSet(false)
+    m_fileActionHasBeenSet(false),
+    m_argsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome FileTamperRule::Deserialize(const rapidjson::Value &value)
         m_fileActionHasBeenSet = true;
     }
 
+    if (value.HasMember("Args") && !value["Args"].IsNull())
+    {
+        if (!value["Args"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileTamperRule.Args` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_args = string(value["Args"].GetString());
+        m_argsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void FileTamperRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FileAction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_argsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Args";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_args.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void FileTamperRule::SetFileAction(const string& _fileAction)
 bool FileTamperRule::FileActionHasBeenSet() const
 {
     return m_fileActionHasBeenSet;
+}
+
+string FileTamperRule::GetArgs() const
+{
+    return m_args;
+}
+
+void FileTamperRule::SetArgs(const string& _args)
+{
+    m_args = _args;
+    m_argsHasBeenSet = true;
+}
+
+bool FileTamperRule::ArgsHasBeenSet() const
+{
+    return m_argsHasBeenSet;
 }
 

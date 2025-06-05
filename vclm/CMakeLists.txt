@@ -20,14 +20,19 @@ set(vclm_public_header
 
 set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/CheckAnimateImageJobResponse.h
-  include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobResponse.h
   include/tencentcloud/vclm/v20240523/model/CheckAnimateImageJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/Image.h
   include/tencentcloud/vclm/v20240523/model/LogoRect.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobRequest.h
@@ -40,14 +45,19 @@ set(vclm_public_header_model
 set(vclm_src
   src/v20240523/VclmClient.cpp
   src/v20240523/model/CheckAnimateImageJobResponse.cpp
-  src/v20240523/model/SubmitVideoStylizationJobRequest.cpp
+  src/v20240523/model/SubmitTemplateToVideoJobRequest.cpp
+  src/v20240523/model/SubmitTemplateToVideoJobResponse.cpp
   src/v20240523/model/CheckAnimateImageJobRequest.cpp
   src/v20240523/model/DescribeVideoStylizationJobRequest.cpp
   src/v20240523/model/DescribePortraitSingJobRequest.cpp
   src/v20240523/model/DescribeImageAnimateJobResponse.cpp
+  src/v20240523/model/SubmitVideoStylizationJobRequest.cpp
   src/v20240523/model/SubmitPortraitSingJobRequest.cpp
+  src/v20240523/model/Image.cpp
   src/v20240523/model/LogoRect.cpp
   src/v20240523/model/SubmitImageAnimateJobResponse.cpp
+  src/v20240523/model/DescribeTemplateToVideoJobResponse.cpp
+  src/v20240523/model/DescribeTemplateToVideoJobRequest.cpp
   src/v20240523/model/SubmitVideoStylizationJobResponse.cpp
   src/v20240523/model/DescribeVideoStylizationJobResponse.cpp
   src/v20240523/model/SubmitImageAnimateJobRequest.cpp

@@ -38,7 +38,12 @@ VulEffectHostList::VulEffectHostList() :
     m_instanceStateHasBeenSet(false),
     m_publicIpAddressesHasBeenSet(false),
     m_cloudTagsHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_machineTypeHasBeenSet(false),
+    m_regionIdHasBeenSet(false),
+    m_hasSnapshotHasBeenSet(false),
+    m_latestFixTimeHasBeenSet(false),
+    m_descriptionEnHasBeenSet(false)
 {
 }
 
@@ -247,6 +252,56 @@ CoreInternalOutcome VulEffectHostList::Deserialize(const rapidjson::Value &value
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
+    {
+        if (!value["RegionId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.RegionId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionId = value["RegionId"].GetUint64();
+        m_regionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("HasSnapshot") && !value["HasSnapshot"].IsNull())
+    {
+        if (!value["HasSnapshot"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.HasSnapshot` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasSnapshot = value["HasSnapshot"].GetUint64();
+        m_hasSnapshotHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestFixTime") && !value["LatestFixTime"].IsNull())
+    {
+        if (!value["LatestFixTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.LatestFixTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestFixTime = string(value["LatestFixTime"].GetString());
+        m_latestFixTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DescriptionEn") && !value["DescriptionEn"].IsNull())
+    {
+        if (!value["DescriptionEn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.DescriptionEn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_descriptionEn = string(value["DescriptionEn"].GetString());
+        m_descriptionEnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -409,6 +464,46 @@ void VulEffectHostList::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_regionId, allocator);
+    }
+
+    if (m_hasSnapshotHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasSnapshot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasSnapshot, allocator);
+    }
+
+    if (m_latestFixTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestFixTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestFixTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionEnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DescriptionEn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_descriptionEn.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -700,5 +795,85 @@ void VulEffectHostList::SetMachineExtraInfo(const MachineExtraInfo& _machineExtr
 bool VulEffectHostList::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+string VulEffectHostList::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void VulEffectHostList::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool VulEffectHostList::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
+}
+
+uint64_t VulEffectHostList::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void VulEffectHostList::SetRegionId(const uint64_t& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool VulEffectHostList::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
+}
+
+uint64_t VulEffectHostList::GetHasSnapshot() const
+{
+    return m_hasSnapshot;
+}
+
+void VulEffectHostList::SetHasSnapshot(const uint64_t& _hasSnapshot)
+{
+    m_hasSnapshot = _hasSnapshot;
+    m_hasSnapshotHasBeenSet = true;
+}
+
+bool VulEffectHostList::HasSnapshotHasBeenSet() const
+{
+    return m_hasSnapshotHasBeenSet;
+}
+
+string VulEffectHostList::GetLatestFixTime() const
+{
+    return m_latestFixTime;
+}
+
+void VulEffectHostList::SetLatestFixTime(const string& _latestFixTime)
+{
+    m_latestFixTime = _latestFixTime;
+    m_latestFixTimeHasBeenSet = true;
+}
+
+bool VulEffectHostList::LatestFixTimeHasBeenSet() const
+{
+    return m_latestFixTimeHasBeenSet;
+}
+
+string VulEffectHostList::GetDescriptionEn() const
+{
+    return m_descriptionEn;
+}
+
+void VulEffectHostList::SetDescriptionEn(const string& _descriptionEn)
+{
+    m_descriptionEn = _descriptionEn;
+    m_descriptionEnHasBeenSet = true;
+}
+
+bool VulEffectHostList::DescriptionEnHasBeenSet() const
+{
+    return m_descriptionEnHasBeenSet;
 }
 

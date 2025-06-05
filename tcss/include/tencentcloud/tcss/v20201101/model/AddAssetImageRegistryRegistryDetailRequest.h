@@ -358,6 +358,27 @@ namespace TencentCloud
                      */
                     bool WebhookTokenHasBeenSet() const;
 
+                    /**
+                     * 获取tcr实例ID
+                     * @return InstanceId tcr实例ID
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置tcr实例ID
+                     * @param _instanceId tcr实例ID
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -449,6 +470,12 @@ namespace TencentCloud
                      */
                     std::string m_webhookToken;
                     bool m_webhookTokenHasBeenSet;
+
+                    /**
+                     * tcr实例ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

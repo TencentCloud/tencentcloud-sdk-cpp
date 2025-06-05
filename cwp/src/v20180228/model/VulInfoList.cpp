@@ -47,7 +47,8 @@ VulInfoList::VulInfoList() :
     m_attackLevelHasBeenSet(false),
     m_fixNoNeedRestartHasBeenSet(false),
     m_methodHasBeenSet(false),
-    m_vulFixSwitchHasBeenSet(false)
+    m_vulFixSwitchHasBeenSet(false),
+    m_latestFixTimeHasBeenSet(false)
 {
 }
 
@@ -326,6 +327,16 @@ CoreInternalOutcome VulInfoList::Deserialize(const rapidjson::Value &value)
         m_vulFixSwitchHasBeenSet = true;
     }
 
+    if (value.HasMember("LatestFixTime") && !value["LatestFixTime"].IsNull())
+    {
+        if (!value["LatestFixTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.LatestFixTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestFixTime = string(value["LatestFixTime"].GetString());
+        m_latestFixTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +558,14 @@ void VulInfoList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "VulFixSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulFixSwitch, allocator);
+    }
+
+    if (m_latestFixTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestFixTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestFixTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -982,5 +1001,21 @@ void VulInfoList::SetVulFixSwitch(const uint64_t& _vulFixSwitch)
 bool VulInfoList::VulFixSwitchHasBeenSet() const
 {
     return m_vulFixSwitchHasBeenSet;
+}
+
+string VulInfoList::GetLatestFixTime() const
+{
+    return m_latestFixTime;
+}
+
+void VulInfoList::SetLatestFixTime(const string& _latestFixTime)
+{
+    m_latestFixTime = _latestFixTime;
+    m_latestFixTimeHasBeenSet = true;
+}
+
+bool VulInfoList::LatestFixTimeHasBeenSet() const
+{
+    return m_latestFixTimeHasBeenSet;
 }
 

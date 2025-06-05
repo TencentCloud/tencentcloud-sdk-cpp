@@ -38,7 +38,8 @@ SearchSessionRequest::SearchSessionRequest() :
     m_statusHasBeenSet(false),
     m_idHasBeenSet(false),
     m_appAssetKindSetHasBeenSet(false),
-    m_appAssetUrlHasBeenSet(false)
+    m_appAssetUrlHasBeenSet(false),
+    m_deviceKindHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,14 @@ string SearchSessionRequest::ToJsonString() const
         string key = "AppAssetUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appAssetUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceKindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceKind";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceKind.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -444,6 +453,22 @@ void SearchSessionRequest::SetAppAssetUrl(const string& _appAssetUrl)
 bool SearchSessionRequest::AppAssetUrlHasBeenSet() const
 {
     return m_appAssetUrlHasBeenSet;
+}
+
+string SearchSessionRequest::GetDeviceKind() const
+{
+    return m_deviceKind;
+}
+
+void SearchSessionRequest::SetDeviceKind(const string& _deviceKind)
+{
+    m_deviceKind = _deviceKind;
+    m_deviceKindHasBeenSet = true;
+}
+
+bool SearchSessionRequest::DeviceKindHasBeenSet() const
+{
+    return m_deviceKindHasBeenSet;
 }
 
 

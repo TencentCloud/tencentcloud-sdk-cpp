@@ -47,14 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。
                      * @return TotalCount 符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TotalCountHasBeenSet() const;
 

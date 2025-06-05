@@ -60,6 +60,7 @@ set(chc_public_header_model
   include/tencentcloud/chc/v20230418/model/DescribeModelRequest.h
   include/tencentcloud/chc/v20230418/model/ModelVersionDetail.h
   include/tencentcloud/chc/v20230418/model/CreateRackOffWorkOrderRequest.h
+  include/tencentcloud/chc/v20230418/model/ExportCustomerWorkOrderDetailResponse.h
   include/tencentcloud/chc/v20230418/model/AvailableModelVersion.h
   include/tencentcloud/chc/v20230418/model/CustomerReceipt.h
   include/tencentcloud/chc/v20230418/model/Cage.h
@@ -81,6 +82,7 @@ set(chc_public_header_model
   include/tencentcloud/chc/v20230418/model/CreateMovingWorkOrderResponse.h
   include/tencentcloud/chc/v20230418/model/Campus.h
   include/tencentcloud/chc/v20230418/model/WorkOrderData.h
+  include/tencentcloud/chc/v20230418/model/ExportCustomerWorkOrderDetailRequest.h
   include/tencentcloud/chc/v20230418/model/NetDeviceModel.h
   include/tencentcloud/chc/v20230418/model/ModelVersion.h
   include/tencentcloud/chc/v20230418/model/DescribeResourceUsageResponse.h
@@ -181,6 +183,7 @@ set(chc_src
   src/v20230418/model/DescribeModelRequest.cpp
   src/v20230418/model/ModelVersionDetail.cpp
   src/v20230418/model/CreateRackOffWorkOrderRequest.cpp
+  src/v20230418/model/ExportCustomerWorkOrderDetailResponse.cpp
   src/v20230418/model/AvailableModelVersion.cpp
   src/v20230418/model/CustomerReceipt.cpp
   src/v20230418/model/Cage.cpp
@@ -202,6 +205,7 @@ set(chc_src
   src/v20230418/model/CreateMovingWorkOrderResponse.cpp
   src/v20230418/model/Campus.cpp
   src/v20230418/model/WorkOrderData.cpp
+  src/v20230418/model/ExportCustomerWorkOrderDetailRequest.cpp
   src/v20230418/model/NetDeviceModel.cpp
   src/v20230418/model/ModelVersion.cpp
   src/v20230418/model/DescribeResourceUsageResponse.cpp
