@@ -1204,7 +1204,7 @@ namespace TencentCloud
                 DeletePositionSpaceOutcomeCallable DeletePositionSpaceCallable(const Model::DeletePositionSpaceRequest& request);
 
                 /**
-                 *提供删除某个项目的能力
+                 *提供删除某个项目的能力。
                  * @param req DeleteProjectRequest
                  * @return DeleteProjectOutcome
                  */
@@ -2106,7 +2106,7 @@ namespace TencentCloud
                 ModifyProductCloudStorageAIServiceOutcomeCallable ModifyProductCloudStorageAIServiceCallable(const Model::ModifyProductCloudStorageAIServiceRequest& request);
 
                 /**
-                 *修改项目
+                 *修改项目。
                  * @param req ModifyProjectRequest
                  * @return ModifyProjectOutcome
                  */

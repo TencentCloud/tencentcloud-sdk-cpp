@@ -576,7 +576,9 @@ namespace TencentCloud
                 DetachDisksOutcomeCallable DetachDisksCallable(const Model::DetachDisksRequest& request);
 
                 /**
-                 *获取快照概览信息
+                 *为进一步规范化API命名，该接口决定预下线，新接口命名为：DescribeSnapshotOverview
+
+获取快照概览信息
                  * @param req GetSnapOverviewRequest
                  * @return GetSnapOverviewOutcome
                  */

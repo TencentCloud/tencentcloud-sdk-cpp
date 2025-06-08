@@ -1846,6 +1846,49 @@ TemClient::ModifyEnvironmentOutcomeCallable TemClient::ModifyEnvironmentCallable
     return task->get_future();
 }
 
+TemClient::ModifyGatewayIngressOutcome TemClient::ModifyGatewayIngress(const ModifyGatewayIngressRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGatewayIngress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGatewayIngressResponse rsp = ModifyGatewayIngressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGatewayIngressOutcome(rsp);
+        else
+            return ModifyGatewayIngressOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGatewayIngressOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::ModifyGatewayIngressAsync(const ModifyGatewayIngressRequest& request, const ModifyGatewayIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGatewayIngress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::ModifyGatewayIngressOutcomeCallable TemClient::ModifyGatewayIngressCallable(const ModifyGatewayIngressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGatewayIngressOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGatewayIngress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::ModifyIngressOutcome TemClient::ModifyIngress(const ModifyIngressRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyIngress");

@@ -24,9 +24,11 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220901/model/DenyActionParameters.h>
+#include <tencentcloud/teo/v20220901/model/RedirectActionParameters.h>
+#include <tencentcloud/teo/v20220901/model/ChallengeActionParameters.h>
 #include <tencentcloud/teo/v20220901/model/BlockIPActionParameters.h>
 #include <tencentcloud/teo/v20220901/model/ReturnCustomPageActionParameters.h>
-#include <tencentcloud/teo/v20220901/model/RedirectActionParameters.h>
 
 
 namespace TencentCloud
@@ -51,18 +53,54 @@ namespace TencentCloud
 
                     /**
                      * 获取安全执行的具体动作。取值有：
-<li>Deny：拦截；</li><li>Monitor：观察；</li><li>ReturnCustomPage：使用指定页面拦截；</li><li>Redirect：重定向至 URL；</li><li>BlockIP：IP 封禁；</li><li>JSChallenge：JavaScript 挑战；</li><li>ManagedChallenge：托管挑战；</li><li>Disabled：未启用；</li><li>Allow：放行。</li>
+<li>Deny：拦截，阻止请求访问站点资源；</li>
+<li>Monitor：观察，仅记录日志；</li>
+<li>Redirect：重定向至 URL；</li>
+<li>Disabled：未启用，不启用指定规则；</li>
+<li>Allow：允许访问，但延迟处理请求；</li>
+<li>Challenge：挑战，响应挑战内容；</li>
+<li>BlockIP：待废弃，IP 封禁；</li>
+<li>ReturnCustomPage：待废弃，使用指定页面拦截；</li>
+<li>JSChallenge：待废弃，JavaScript 挑战；</li>
+<li>ManagedChallenge：待废弃，托管挑战。</li>
                      * @return Name 安全执行的具体动作。取值有：
-<li>Deny：拦截；</li><li>Monitor：观察；</li><li>ReturnCustomPage：使用指定页面拦截；</li><li>Redirect：重定向至 URL；</li><li>BlockIP：IP 封禁；</li><li>JSChallenge：JavaScript 挑战；</li><li>ManagedChallenge：托管挑战；</li><li>Disabled：未启用；</li><li>Allow：放行。</li>
+<li>Deny：拦截，阻止请求访问站点资源；</li>
+<li>Monitor：观察，仅记录日志；</li>
+<li>Redirect：重定向至 URL；</li>
+<li>Disabled：未启用，不启用指定规则；</li>
+<li>Allow：允许访问，但延迟处理请求；</li>
+<li>Challenge：挑战，响应挑战内容；</li>
+<li>BlockIP：待废弃，IP 封禁；</li>
+<li>ReturnCustomPage：待废弃，使用指定页面拦截；</li>
+<li>JSChallenge：待废弃，JavaScript 挑战；</li>
+<li>ManagedChallenge：待废弃，托管挑战。</li>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置安全执行的具体动作。取值有：
-<li>Deny：拦截；</li><li>Monitor：观察；</li><li>ReturnCustomPage：使用指定页面拦截；</li><li>Redirect：重定向至 URL；</li><li>BlockIP：IP 封禁；</li><li>JSChallenge：JavaScript 挑战；</li><li>ManagedChallenge：托管挑战；</li><li>Disabled：未启用；</li><li>Allow：放行。</li>
+<li>Deny：拦截，阻止请求访问站点资源；</li>
+<li>Monitor：观察，仅记录日志；</li>
+<li>Redirect：重定向至 URL；</li>
+<li>Disabled：未启用，不启用指定规则；</li>
+<li>Allow：允许访问，但延迟处理请求；</li>
+<li>Challenge：挑战，响应挑战内容；</li>
+<li>BlockIP：待废弃，IP 封禁；</li>
+<li>ReturnCustomPage：待废弃，使用指定页面拦截；</li>
+<li>JSChallenge：待废弃，JavaScript 挑战；</li>
+<li>ManagedChallenge：待废弃，托管挑战。</li>
                      * @param _name 安全执行的具体动作。取值有：
-<li>Deny：拦截；</li><li>Monitor：观察；</li><li>ReturnCustomPage：使用指定页面拦截；</li><li>Redirect：重定向至 URL；</li><li>BlockIP：IP 封禁；</li><li>JSChallenge：JavaScript 挑战；</li><li>ManagedChallenge：托管挑战；</li><li>Disabled：未启用；</li><li>Allow：放行。</li>
+<li>Deny：拦截，阻止请求访问站点资源；</li>
+<li>Monitor：观察，仅记录日志；</li>
+<li>Redirect：重定向至 URL；</li>
+<li>Disabled：未启用，不启用指定规则；</li>
+<li>Allow：允许访问，但延迟处理请求；</li>
+<li>Challenge：挑战，响应挑战内容；</li>
+<li>BlockIP：待废弃，IP 封禁；</li>
+<li>ReturnCustomPage：待废弃，使用指定页面拦截；</li>
+<li>JSChallenge：待废弃，JavaScript 挑战；</li>
+<li>ManagedChallenge：待废弃，托管挑战。</li>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -75,46 +113,25 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取当 Name 为 BlockIP 时的附加参数。
-                     * @return BlockIPActionParameters 当 Name 为 BlockIP 时的附加参数。
+                     * 获取当 Name 为 Deny 时的附加参数。
+                     * @return DenyActionParameters 当 Name 为 Deny 时的附加参数。
                      * 
                      */
-                    BlockIPActionParameters GetBlockIPActionParameters() const;
+                    DenyActionParameters GetDenyActionParameters() const;
 
                     /**
-                     * 设置当 Name 为 BlockIP 时的附加参数。
-                     * @param _blockIPActionParameters 当 Name 为 BlockIP 时的附加参数。
+                     * 设置当 Name 为 Deny 时的附加参数。
+                     * @param _denyActionParameters 当 Name 为 Deny 时的附加参数。
                      * 
                      */
-                    void SetBlockIPActionParameters(const BlockIPActionParameters& _blockIPActionParameters);
+                    void SetDenyActionParameters(const DenyActionParameters& _denyActionParameters);
 
                     /**
-                     * 判断参数 BlockIPActionParameters 是否已赋值
-                     * @return BlockIPActionParameters 是否已赋值
+                     * 判断参数 DenyActionParameters 是否已赋值
+                     * @return DenyActionParameters 是否已赋值
                      * 
                      */
-                    bool BlockIPActionParametersHasBeenSet() const;
-
-                    /**
-                     * 获取当 Name 为 ReturnCustomPage 时的附加参数。
-                     * @return ReturnCustomPageActionParameters 当 Name 为 ReturnCustomPage 时的附加参数。
-                     * 
-                     */
-                    ReturnCustomPageActionParameters GetReturnCustomPageActionParameters() const;
-
-                    /**
-                     * 设置当 Name 为 ReturnCustomPage 时的附加参数。
-                     * @param _returnCustomPageActionParameters 当 Name 为 ReturnCustomPage 时的附加参数。
-                     * 
-                     */
-                    void SetReturnCustomPageActionParameters(const ReturnCustomPageActionParameters& _returnCustomPageActionParameters);
-
-                    /**
-                     * 判断参数 ReturnCustomPageActionParameters 是否已赋值
-                     * @return ReturnCustomPageActionParameters 是否已赋值
-                     * 
-                     */
-                    bool ReturnCustomPageActionParametersHasBeenSet() const;
+                    bool DenyActionParametersHasBeenSet() const;
 
                     /**
                      * 获取当 Name 为 Redirect 时的附加参数。
@@ -137,32 +154,116 @@ namespace TencentCloud
                      */
                     bool RedirectActionParametersHasBeenSet() const;
 
+                    /**
+                     * 获取当 Name 为 Challenge 时的附加参数。
+                     * @return ChallengeActionParameters 当 Name 为 Challenge 时的附加参数。
+                     * 
+                     */
+                    ChallengeActionParameters GetChallengeActionParameters() const;
+
+                    /**
+                     * 设置当 Name 为 Challenge 时的附加参数。
+                     * @param _challengeActionParameters 当 Name 为 Challenge 时的附加参数。
+                     * 
+                     */
+                    void SetChallengeActionParameters(const ChallengeActionParameters& _challengeActionParameters);
+
+                    /**
+                     * 判断参数 ChallengeActionParameters 是否已赋值
+                     * @return ChallengeActionParameters 是否已赋值
+                     * 
+                     */
+                    bool ChallengeActionParametersHasBeenSet() const;
+
+                    /**
+                     * 获取待废弃，当 Name 为 BlockIP 时的附加参数。
+                     * @return BlockIPActionParameters 待废弃，当 Name 为 BlockIP 时的附加参数。
+                     * 
+                     */
+                    BlockIPActionParameters GetBlockIPActionParameters() const;
+
+                    /**
+                     * 设置待废弃，当 Name 为 BlockIP 时的附加参数。
+                     * @param _blockIPActionParameters 待废弃，当 Name 为 BlockIP 时的附加参数。
+                     * 
+                     */
+                    void SetBlockIPActionParameters(const BlockIPActionParameters& _blockIPActionParameters);
+
+                    /**
+                     * 判断参数 BlockIPActionParameters 是否已赋值
+                     * @return BlockIPActionParameters 是否已赋值
+                     * 
+                     */
+                    bool BlockIPActionParametersHasBeenSet() const;
+
+                    /**
+                     * 获取待废弃，当 Name 为 ReturnCustomPage 时的附加参数。
+                     * @return ReturnCustomPageActionParameters 待废弃，当 Name 为 ReturnCustomPage 时的附加参数。
+                     * 
+                     */
+                    ReturnCustomPageActionParameters GetReturnCustomPageActionParameters() const;
+
+                    /**
+                     * 设置待废弃，当 Name 为 ReturnCustomPage 时的附加参数。
+                     * @param _returnCustomPageActionParameters 待废弃，当 Name 为 ReturnCustomPage 时的附加参数。
+                     * 
+                     */
+                    void SetReturnCustomPageActionParameters(const ReturnCustomPageActionParameters& _returnCustomPageActionParameters);
+
+                    /**
+                     * 判断参数 ReturnCustomPageActionParameters 是否已赋值
+                     * @return ReturnCustomPageActionParameters 是否已赋值
+                     * 
+                     */
+                    bool ReturnCustomPageActionParametersHasBeenSet() const;
+
                 private:
 
                     /**
                      * 安全执行的具体动作。取值有：
-<li>Deny：拦截；</li><li>Monitor：观察；</li><li>ReturnCustomPage：使用指定页面拦截；</li><li>Redirect：重定向至 URL；</li><li>BlockIP：IP 封禁；</li><li>JSChallenge：JavaScript 挑战；</li><li>ManagedChallenge：托管挑战；</li><li>Disabled：未启用；</li><li>Allow：放行。</li>
+<li>Deny：拦截，阻止请求访问站点资源；</li>
+<li>Monitor：观察，仅记录日志；</li>
+<li>Redirect：重定向至 URL；</li>
+<li>Disabled：未启用，不启用指定规则；</li>
+<li>Allow：允许访问，但延迟处理请求；</li>
+<li>Challenge：挑战，响应挑战内容；</li>
+<li>BlockIP：待废弃，IP 封禁；</li>
+<li>ReturnCustomPage：待废弃，使用指定页面拦截；</li>
+<li>JSChallenge：待废弃，JavaScript 挑战；</li>
+<li>ManagedChallenge：待废弃，托管挑战。</li>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 当 Name 为 BlockIP 时的附加参数。
+                     * 当 Name 为 Deny 时的附加参数。
                      */
-                    BlockIPActionParameters m_blockIPActionParameters;
-                    bool m_blockIPActionParametersHasBeenSet;
-
-                    /**
-                     * 当 Name 为 ReturnCustomPage 时的附加参数。
-                     */
-                    ReturnCustomPageActionParameters m_returnCustomPageActionParameters;
-                    bool m_returnCustomPageActionParametersHasBeenSet;
+                    DenyActionParameters m_denyActionParameters;
+                    bool m_denyActionParametersHasBeenSet;
 
                     /**
                      * 当 Name 为 Redirect 时的附加参数。
                      */
                     RedirectActionParameters m_redirectActionParameters;
                     bool m_redirectActionParametersHasBeenSet;
+
+                    /**
+                     * 当 Name 为 Challenge 时的附加参数。
+                     */
+                    ChallengeActionParameters m_challengeActionParameters;
+                    bool m_challengeActionParametersHasBeenSet;
+
+                    /**
+                     * 待废弃，当 Name 为 BlockIP 时的附加参数。
+                     */
+                    BlockIPActionParameters m_blockIPActionParameters;
+                    bool m_blockIPActionParametersHasBeenSet;
+
+                    /**
+                     * 待废弃，当 Name 为 ReturnCustomPage 时的附加参数。
+                     */
+                    ReturnCustomPageActionParameters m_returnCustomPageActionParameters;
+                    bool m_returnCustomPageActionParametersHasBeenSet;
 
                 };
             }

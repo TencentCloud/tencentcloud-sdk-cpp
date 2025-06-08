@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/AutoScaleGroupAdvanceAttrs.h>
 
 
 namespace TencentCloud
@@ -152,15 +153,15 @@ namespace TencentCloud
                     bool StrategyTypeHasBeenSet() const;
 
                     /**
-                     * 获取下次能可扩容时间。
-                     * @return NextTimeCanScale 下次能可扩容时间。
+                     * 获取下次可扩容时间。
+                     * @return NextTimeCanScale 下次可扩容时间。
                      * 
                      */
                     uint64_t GetNextTimeCanScale() const;
 
                     /**
-                     * 设置下次能可扩容时间。
-                     * @param _nextTimeCanScale 下次能可扩容时间。
+                     * 设置下次可扩容时间。
+                     * @param _nextTimeCanScale 下次可扩容时间。
                      * 
                      */
                     void SetNextTimeCanScale(const uint64_t& _nextTimeCanScale);
@@ -257,15 +258,15 @@ namespace TencentCloud
                     bool PostPayPercentMinHasBeenSet() const;
 
                     /**
-                     * 获取预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)
-                     * @return ChangeToPod 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)
+                     * 获取预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选
+                     * @return ChangeToPod 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选
                      * 
                      */
                     int64_t GetChangeToPod() const;
 
                     /**
-                     * 设置预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)
-                     * @param _changeToPod 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)
+                     * 设置预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选
+                     * @param _changeToPod 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选
                      * 
                      */
                     void SetChangeToPod(const int64_t& _changeToPod);
@@ -382,6 +383,27 @@ namespace TencentCloud
                      */
                     bool EnableMNodeHasBeenSet() const;
 
+                    /**
+                     * 获取伸缩组更多设置
+                     * @return ExtraAdvanceAttrs 伸缩组更多设置
+                     * 
+                     */
+                    AutoScaleGroupAdvanceAttrs GetExtraAdvanceAttrs() const;
+
+                    /**
+                     * 设置伸缩组更多设置
+                     * @param _extraAdvanceAttrs 伸缩组更多设置
+                     * 
+                     */
+                    void SetExtraAdvanceAttrs(const AutoScaleGroupAdvanceAttrs& _extraAdvanceAttrs);
+
+                    /**
+                     * 判断参数 ExtraAdvanceAttrs 是否已赋值
+                     * @return ExtraAdvanceAttrs 是否已赋值
+                     * 
+                     */
+                    bool ExtraAdvanceAttrsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -415,7 +437,7 @@ namespace TencentCloud
                     bool m_strategyTypeHasBeenSet;
 
                     /**
-                     * 下次能可扩容时间。
+                     * 下次可扩容时间。
                      */
                     uint64_t m_nextTimeCanScale;
                     bool m_nextTimeCanScaleHasBeenSet;
@@ -445,7 +467,7 @@ namespace TencentCloud
                     bool m_postPayPercentMinHasBeenSet;
 
                     /**
-                     * 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)
+                     * 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选
                      */
                     int64_t m_changeToPod;
                     bool m_changeToPodHasBeenSet;
@@ -479,6 +501,12 @@ namespace TencentCloud
                      */
                     int64_t m_enableMNode;
                     bool m_enableMNodeHasBeenSet;
+
+                    /**
+                     * 伸缩组更多设置
+                     */
+                    AutoScaleGroupAdvanceAttrs m_extraAdvanceAttrs;
+                    bool m_extraAdvanceAttrsHasBeenSet;
 
                 };
             }

@@ -25,6 +25,7 @@
 #include <tencentcloud/emr/v20190103/model/Tag.h>
 #include <tencentcloud/emr/v20190103/model/PodSpec.h>
 #include <tencentcloud/emr/v20190103/model/PodParameter.h>
+#include <tencentcloud/emr/v20190103/model/ComputeResourceAdvanceParams.h>
 
 
 namespace TencentCloud
@@ -678,6 +679,27 @@ namespace TencentCloud
                      */
                     bool ComputeResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取计算资源高级设置
+                     * @return ComputeResourceAdvanceParams 计算资源高级设置
+                     * 
+                     */
+                    ComputeResourceAdvanceParams GetComputeResourceAdvanceParams() const;
+
+                    /**
+                     * 设置计算资源高级设置
+                     * @param _computeResourceAdvanceParams 计算资源高级设置
+                     * 
+                     */
+                    void SetComputeResourceAdvanceParams(const ComputeResourceAdvanceParams& _computeResourceAdvanceParams);
+
+                    /**
+                     * 判断参数 ComputeResourceAdvanceParams 是否已赋值
+                     * @return ComputeResourceAdvanceParams 是否已赋值
+                     * 
+                     */
+                    bool ComputeResourceAdvanceParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -858,6 +880,12 @@ namespace TencentCloud
                      */
                     std::string m_computeResourceId;
                     bool m_computeResourceIdHasBeenSet;
+
+                    /**
+                     * 计算资源高级设置
+                     */
+                    ComputeResourceAdvanceParams m_computeResourceAdvanceParams;
+                    bool m_computeResourceAdvanceParamsHasBeenSet;
 
                 };
             }

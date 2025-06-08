@@ -171,8 +171,8 @@ namespace TencentCloud
                     bool IssueNumberHasBeenSet() const;
 
                     /**
-                     * 获取证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证。
-                     * @return Type 证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证。
+                     * 获取证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。
+                     * @return Type 证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。
                      * 
                      */
                     std::string GetType() const;
@@ -283,7 +283,7 @@ namespace TencentCloud
                     bool m_issueNumberHasBeenSet;
 
                     /**
-                     * 证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证。
+                     * 证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

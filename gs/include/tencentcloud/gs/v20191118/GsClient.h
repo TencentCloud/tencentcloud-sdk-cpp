@@ -73,6 +73,10 @@
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceTasksStatusResponse.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstancesResponse.h>
+#include <tencentcloud/gs/v20191118/model/DescribeAndroidInstancesAppBlacklistRequest.h>
+#include <tencentcloud/gs/v20191118/model/DescribeAndroidInstancesAppBlacklistResponse.h>
+#include <tencentcloud/gs/v20191118/model/DescribeAndroidInstancesByAppsRequest.h>
+#include <tencentcloud/gs/v20191118/model/DescribeAndroidInstancesByAppsResponse.h>
 #include <tencentcloud/gs/v20191118/model/DescribeInstancesCountRequest.h>
 #include <tencentcloud/gs/v20191118/model/DescribeInstancesCountResponse.h>
 #include <tencentcloud/gs/v20191118/model/DestroyAndroidInstancesRequest.h>
@@ -87,6 +91,8 @@
 #include <tencentcloud/gs/v20191118/model/ExecuteCommandOnAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/FetchAndroidInstancesLogsRequest.h>
 #include <tencentcloud/gs/v20191118/model/FetchAndroidInstancesLogsResponse.h>
+#include <tencentcloud/gs/v20191118/model/ImportAndroidInstanceImageRequest.h>
+#include <tencentcloud/gs/v20191118/model/ImportAndroidInstanceImageResponse.h>
 #include <tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppRequest.h>
 #include <tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppResponse.h>
 #include <tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppWithURLRequest.h>
@@ -99,6 +105,8 @@
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstanceInformationResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstanceResolutionRequest.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstanceResolutionResponse.h>
+#include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesAppBlacklistRequest.h>
+#include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesAppBlacklistResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesInformationRequest.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesInformationResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesLabelsRequest.h>
@@ -107,6 +115,8 @@
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesPropertiesResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionRequest.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionResponse.h>
+#include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResourcesRequest.h>
+#include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResourcesResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesUserIdRequest.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstancesUserIdResponse.h>
 #include <tencentcloud/gs/v20191118/model/RebootAndroidInstanceHostsRequest.h>
@@ -121,6 +131,10 @@
 #include <tencentcloud/gs/v20191118/model/RestoreAndroidInstanceFromStorageResponse.h>
 #include <tencentcloud/gs/v20191118/model/SaveGameArchiveRequest.h>
 #include <tencentcloud/gs/v20191118/model/SaveGameArchiveResponse.h>
+#include <tencentcloud/gs/v20191118/model/SetAndroidInstancesBGAppKeepAliveRequest.h>
+#include <tencentcloud/gs/v20191118/model/SetAndroidInstancesBGAppKeepAliveResponse.h>
+#include <tencentcloud/gs/v20191118/model/SetAndroidInstancesFGAppKeepAliveRequest.h>
+#include <tencentcloud/gs/v20191118/model/SetAndroidInstancesFGAppKeepAliveResponse.h>
 #include <tencentcloud/gs/v20191118/model/StartAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/StartAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/StartAndroidInstancesAppRequest.h>
@@ -240,6 +254,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAndroidInstancesResponse> DescribeAndroidInstancesOutcome;
                 typedef std::future<DescribeAndroidInstancesOutcome> DescribeAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DescribeAndroidInstancesRequest&, DescribeAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAndroidInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAndroidInstancesAppBlacklistResponse> DescribeAndroidInstancesAppBlacklistOutcome;
+                typedef std::future<DescribeAndroidInstancesAppBlacklistOutcome> DescribeAndroidInstancesAppBlacklistOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DescribeAndroidInstancesAppBlacklistRequest&, DescribeAndroidInstancesAppBlacklistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAndroidInstancesAppBlacklistAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAndroidInstancesByAppsResponse> DescribeAndroidInstancesByAppsOutcome;
+                typedef std::future<DescribeAndroidInstancesByAppsOutcome> DescribeAndroidInstancesByAppsOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DescribeAndroidInstancesByAppsRequest&, DescribeAndroidInstancesByAppsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAndroidInstancesByAppsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstancesCountResponse> DescribeInstancesCountOutcome;
                 typedef std::future<DescribeInstancesCountOutcome> DescribeInstancesCountOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DescribeInstancesCountRequest&, DescribeInstancesCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesCountAsyncHandler;
@@ -261,6 +281,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FetchAndroidInstancesLogsResponse> FetchAndroidInstancesLogsOutcome;
                 typedef std::future<FetchAndroidInstancesLogsOutcome> FetchAndroidInstancesLogsOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::FetchAndroidInstancesLogsRequest&, FetchAndroidInstancesLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchAndroidInstancesLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportAndroidInstanceImageResponse> ImportAndroidInstanceImageOutcome;
+                typedef std::future<ImportAndroidInstanceImageOutcome> ImportAndroidInstanceImageOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::ImportAndroidInstanceImageRequest&, ImportAndroidInstanceImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportAndroidInstanceImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::InstallAndroidInstancesAppResponse> InstallAndroidInstancesAppOutcome;
                 typedef std::future<InstallAndroidInstancesAppOutcome> InstallAndroidInstancesAppOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::InstallAndroidInstancesAppRequest&, InstallAndroidInstancesAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallAndroidInstancesAppAsyncHandler;
@@ -279,6 +302,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAndroidInstanceResolutionResponse> ModifyAndroidInstanceResolutionOutcome;
                 typedef std::future<ModifyAndroidInstanceResolutionOutcome> ModifyAndroidInstanceResolutionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstanceResolutionRequest&, ModifyAndroidInstanceResolutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstanceResolutionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAndroidInstancesAppBlacklistResponse> ModifyAndroidInstancesAppBlacklistOutcome;
+                typedef std::future<ModifyAndroidInstancesAppBlacklistOutcome> ModifyAndroidInstancesAppBlacklistOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstancesAppBlacklistRequest&, ModifyAndroidInstancesAppBlacklistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstancesAppBlacklistAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAndroidInstancesInformationResponse> ModifyAndroidInstancesInformationOutcome;
                 typedef std::future<ModifyAndroidInstancesInformationOutcome> ModifyAndroidInstancesInformationOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstancesInformationRequest&, ModifyAndroidInstancesInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstancesInformationAsyncHandler;
@@ -291,6 +317,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAndroidInstancesResolutionResponse> ModifyAndroidInstancesResolutionOutcome;
                 typedef std::future<ModifyAndroidInstancesResolutionOutcome> ModifyAndroidInstancesResolutionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstancesResolutionRequest&, ModifyAndroidInstancesResolutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstancesResolutionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAndroidInstancesResourcesResponse> ModifyAndroidInstancesResourcesOutcome;
+                typedef std::future<ModifyAndroidInstancesResourcesOutcome> ModifyAndroidInstancesResourcesOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstancesResourcesRequest&, ModifyAndroidInstancesResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstancesResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAndroidInstancesUserIdResponse> ModifyAndroidInstancesUserIdOutcome;
                 typedef std::future<ModifyAndroidInstancesUserIdOutcome> ModifyAndroidInstancesUserIdOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstancesUserIdRequest&, ModifyAndroidInstancesUserIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstancesUserIdAsyncHandler;
@@ -312,6 +341,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SaveGameArchiveResponse> SaveGameArchiveOutcome;
                 typedef std::future<SaveGameArchiveOutcome> SaveGameArchiveOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::SaveGameArchiveRequest&, SaveGameArchiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveGameArchiveAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetAndroidInstancesBGAppKeepAliveResponse> SetAndroidInstancesBGAppKeepAliveOutcome;
+                typedef std::future<SetAndroidInstancesBGAppKeepAliveOutcome> SetAndroidInstancesBGAppKeepAliveOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::SetAndroidInstancesBGAppKeepAliveRequest&, SetAndroidInstancesBGAppKeepAliveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAndroidInstancesBGAppKeepAliveAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetAndroidInstancesFGAppKeepAliveResponse> SetAndroidInstancesFGAppKeepAliveOutcome;
+                typedef std::future<SetAndroidInstancesFGAppKeepAliveOutcome> SetAndroidInstancesFGAppKeepAliveOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::SetAndroidInstancesFGAppKeepAliveRequest&, SetAndroidInstancesFGAppKeepAliveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAndroidInstancesFGAppKeepAliveAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartAndroidInstancesResponse> StartAndroidInstancesOutcome;
                 typedef std::future<StartAndroidInstancesOutcome> StartAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::StartAndroidInstancesRequest&, StartAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartAndroidInstancesAsyncHandler;
@@ -590,6 +625,24 @@ namespace TencentCloud
                 DescribeAndroidInstancesOutcomeCallable DescribeAndroidInstancesCallable(const Model::DescribeAndroidInstancesRequest& request);
 
                 /**
+                 *查询安卓实例黑名单
+                 * @param req DescribeAndroidInstancesAppBlacklistRequest
+                 * @return DescribeAndroidInstancesAppBlacklistOutcome
+                 */
+                DescribeAndroidInstancesAppBlacklistOutcome DescribeAndroidInstancesAppBlacklist(const Model::DescribeAndroidInstancesAppBlacklistRequest &request);
+                void DescribeAndroidInstancesAppBlacklistAsync(const Model::DescribeAndroidInstancesAppBlacklistRequest& request, const DescribeAndroidInstancesAppBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAndroidInstancesAppBlacklistOutcomeCallable DescribeAndroidInstancesAppBlacklistCallable(const Model::DescribeAndroidInstancesAppBlacklistRequest& request);
+
+                /**
+                 *查询安装指定应用的安卓实例
+                 * @param req DescribeAndroidInstancesByAppsRequest
+                 * @return DescribeAndroidInstancesByAppsOutcome
+                 */
+                DescribeAndroidInstancesByAppsOutcome DescribeAndroidInstancesByApps(const Model::DescribeAndroidInstancesByAppsRequest &request);
+                void DescribeAndroidInstancesByAppsAsync(const Model::DescribeAndroidInstancesByAppsRequest& request, const DescribeAndroidInstancesByAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAndroidInstancesByAppsOutcomeCallable DescribeAndroidInstancesByAppsCallable(const Model::DescribeAndroidInstancesByAppsRequest& request);
+
+                /**
                  *获取并发总数和运行数
                  * @param req DescribeInstancesCountRequest
                  * @return DescribeInstancesCountOutcome
@@ -653,6 +706,15 @@ namespace TencentCloud
                 FetchAndroidInstancesLogsOutcomeCallable FetchAndroidInstancesLogsCallable(const Model::FetchAndroidInstancesLogsRequest& request);
 
                 /**
+                 *导入安卓实例镜像，当镜像的 AndroidInstanceImageState 为 NORMAL 时，镜像导入完成处于可用状态。
+                 * @param req ImportAndroidInstanceImageRequest
+                 * @return ImportAndroidInstanceImageOutcome
+                 */
+                ImportAndroidInstanceImageOutcome ImportAndroidInstanceImage(const Model::ImportAndroidInstanceImageRequest &request);
+                void ImportAndroidInstanceImageAsync(const Model::ImportAndroidInstanceImageRequest& request, const ImportAndroidInstanceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportAndroidInstanceImageOutcomeCallable ImportAndroidInstanceImageCallable(const Model::ImportAndroidInstanceImageRequest& request);
+
+                /**
                  *安装安卓实例应用
                  * @param req InstallAndroidInstancesAppRequest
                  * @return InstallAndroidInstancesAppOutcome
@@ -707,6 +769,15 @@ namespace TencentCloud
                 ModifyAndroidInstanceResolutionOutcomeCallable ModifyAndroidInstanceResolutionCallable(const Model::ModifyAndroidInstanceResolutionRequest& request);
 
                 /**
+                 *修改安卓实例应用黑名单
+                 * @param req ModifyAndroidInstancesAppBlacklistRequest
+                 * @return ModifyAndroidInstancesAppBlacklistOutcome
+                 */
+                ModifyAndroidInstancesAppBlacklistOutcome ModifyAndroidInstancesAppBlacklist(const Model::ModifyAndroidInstancesAppBlacklistRequest &request);
+                void ModifyAndroidInstancesAppBlacklistAsync(const Model::ModifyAndroidInstancesAppBlacklistRequest& request, const ModifyAndroidInstancesAppBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAndroidInstancesAppBlacklistOutcomeCallable ModifyAndroidInstancesAppBlacklistCallable(const Model::ModifyAndroidInstancesAppBlacklistRequest& request);
+
+                /**
                  *批量修改安卓实例信息
                  * @param req ModifyAndroidInstancesInformationRequest
                  * @return ModifyAndroidInstancesInformationOutcome
@@ -741,6 +812,15 @@ namespace TencentCloud
                 ModifyAndroidInstancesResolutionOutcome ModifyAndroidInstancesResolution(const Model::ModifyAndroidInstancesResolutionRequest &request);
                 void ModifyAndroidInstancesResolutionAsync(const Model::ModifyAndroidInstancesResolutionRequest& request, const ModifyAndroidInstancesResolutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAndroidInstancesResolutionOutcomeCallable ModifyAndroidInstancesResolutionCallable(const Model::ModifyAndroidInstancesResolutionRequest& request);
+
+                /**
+                 *批量修改安卓实例资源限制
+                 * @param req ModifyAndroidInstancesResourcesRequest
+                 * @return ModifyAndroidInstancesResourcesOutcome
+                 */
+                ModifyAndroidInstancesResourcesOutcome ModifyAndroidInstancesResources(const Model::ModifyAndroidInstancesResourcesRequest &request);
+                void ModifyAndroidInstancesResourcesAsync(const Model::ModifyAndroidInstancesResourcesRequest& request, const ModifyAndroidInstancesResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAndroidInstancesResourcesOutcomeCallable ModifyAndroidInstancesResourcesCallable(const Model::ModifyAndroidInstancesResourcesRequest& request);
 
                 /**
                  *批量修改安卓实例的用户ID
@@ -807,6 +887,24 @@ namespace TencentCloud
                 SaveGameArchiveOutcome SaveGameArchive(const Model::SaveGameArchiveRequest &request);
                 void SaveGameArchiveAsync(const Model::SaveGameArchiveRequest& request, const SaveGameArchiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SaveGameArchiveOutcomeCallable SaveGameArchiveCallable(const Model::SaveGameArchiveRequest& request);
+
+                /**
+                 *批量设置安卓实例应用后台保活，开启应用保活，只是降低应用被杀死或回收的优先级，并不能保证应用不会被杀死或回收（如出现内存不足等资源限制时，应用也有概率被杀死或回收）
+                 * @param req SetAndroidInstancesBGAppKeepAliveRequest
+                 * @return SetAndroidInstancesBGAppKeepAliveOutcome
+                 */
+                SetAndroidInstancesBGAppKeepAliveOutcome SetAndroidInstancesBGAppKeepAlive(const Model::SetAndroidInstancesBGAppKeepAliveRequest &request);
+                void SetAndroidInstancesBGAppKeepAliveAsync(const Model::SetAndroidInstancesBGAppKeepAliveRequest& request, const SetAndroidInstancesBGAppKeepAliveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetAndroidInstancesBGAppKeepAliveOutcomeCallable SetAndroidInstancesBGAppKeepAliveCallable(const Model::SetAndroidInstancesBGAppKeepAliveRequest& request);
+
+                /**
+                 *批量设置安卓实例应用前台保活，开启应用保活，只是降低应用被杀死或回收的优先级，并不能保证应用不会被杀死或回收（如出现内存不足等资源限制时，应用也有概率被杀死或回收）
+                 * @param req SetAndroidInstancesFGAppKeepAliveRequest
+                 * @return SetAndroidInstancesFGAppKeepAliveOutcome
+                 */
+                SetAndroidInstancesFGAppKeepAliveOutcome SetAndroidInstancesFGAppKeepAlive(const Model::SetAndroidInstancesFGAppKeepAliveRequest &request);
+                void SetAndroidInstancesFGAppKeepAliveAsync(const Model::SetAndroidInstancesFGAppKeepAliveRequest& request, const SetAndroidInstancesFGAppKeepAliveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetAndroidInstancesFGAppKeepAliveOutcomeCallable SetAndroidInstancesFGAppKeepAliveCallable(const Model::SetAndroidInstancesFGAppKeepAliveRequest& request);
 
                 /**
                  *重启安卓实例

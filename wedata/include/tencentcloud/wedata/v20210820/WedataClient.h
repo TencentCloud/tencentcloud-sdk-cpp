@@ -215,6 +215,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeEventConsumeTasksResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeExecStrategyRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeExecStrategyResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeExecutorGroupMetricRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeExecutorGroupMetricResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFieldBasicInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFieldBasicInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFolderWorkflowListRequest.h>
@@ -865,6 +867,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExecStrategyResponse> DescribeExecStrategyOutcome;
                 typedef std::future<DescribeExecStrategyOutcome> DescribeExecStrategyOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeExecStrategyRequest&, DescribeExecStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExecStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExecutorGroupMetricResponse> DescribeExecutorGroupMetricOutcome;
+                typedef std::future<DescribeExecutorGroupMetricOutcome> DescribeExecutorGroupMetricOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeExecutorGroupMetricRequest&, DescribeExecutorGroupMetricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExecutorGroupMetricAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFieldBasicInfoResponse> DescribeFieldBasicInfoOutcome;
                 typedef std::future<DescribeFieldBasicInfoOutcome> DescribeFieldBasicInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeFieldBasicInfoRequest&, DescribeFieldBasicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFieldBasicInfoAsyncHandler;
@@ -2255,6 +2260,15 @@ namespace TencentCloud
                 DescribeExecStrategyOutcome DescribeExecStrategy(const Model::DescribeExecStrategyRequest &request);
                 void DescribeExecStrategyAsync(const Model::DescribeExecStrategyRequest& request, const DescribeExecStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExecStrategyOutcomeCallable DescribeExecStrategyCallable(const Model::DescribeExecStrategyRequest& request);
+
+                /**
+                 *商业化版本：根据id查询执行资源组指标
+                 * @param req DescribeExecutorGroupMetricRequest
+                 * @return DescribeExecutorGroupMetricOutcome
+                 */
+                DescribeExecutorGroupMetricOutcome DescribeExecutorGroupMetric(const Model::DescribeExecutorGroupMetricRequest &request);
+                void DescribeExecutorGroupMetricAsync(const Model::DescribeExecutorGroupMetricRequest& request, const DescribeExecutorGroupMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExecutorGroupMetricOutcomeCallable DescribeExecutorGroupMetricCallable(const Model::DescribeExecutorGroupMetricRequest& request);
 
                 /**
                  *元数据模型-字段基础信息查询接口

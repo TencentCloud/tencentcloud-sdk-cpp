@@ -513,6 +513,49 @@ EssClient::CreateBatchSignUrlOutcomeCallable EssClient::CreateBatchSignUrlCallab
     return task->get_future();
 }
 
+EssClient::CreateContractDiffTaskWebUrlOutcome EssClient::CreateContractDiffTaskWebUrl(const CreateContractDiffTaskWebUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateContractDiffTaskWebUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateContractDiffTaskWebUrlResponse rsp = CreateContractDiffTaskWebUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateContractDiffTaskWebUrlOutcome(rsp);
+        else
+            return CreateContractDiffTaskWebUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateContractDiffTaskWebUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateContractDiffTaskWebUrlAsync(const CreateContractDiffTaskWebUrlRequest& request, const CreateContractDiffTaskWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateContractDiffTaskWebUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateContractDiffTaskWebUrlOutcomeCallable EssClient::CreateContractDiffTaskWebUrlCallable(const CreateContractDiffTaskWebUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateContractDiffTaskWebUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateContractDiffTaskWebUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateConvertTaskApiOutcome EssClient::CreateConvertTaskApi(const CreateConvertTaskApiRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConvertTaskApi");
@@ -2957,6 +3000,49 @@ EssClient::DescribeCancelFlowsTaskOutcomeCallable EssClient::DescribeCancelFlows
         [this, request]()
         {
             return this->DescribeCancelFlowsTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DescribeContractDiffTaskWebUrlOutcome EssClient::DescribeContractDiffTaskWebUrl(const DescribeContractDiffTaskWebUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeContractDiffTaskWebUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeContractDiffTaskWebUrlResponse rsp = DescribeContractDiffTaskWebUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeContractDiffTaskWebUrlOutcome(rsp);
+        else
+            return DescribeContractDiffTaskWebUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeContractDiffTaskWebUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeContractDiffTaskWebUrlAsync(const DescribeContractDiffTaskWebUrlRequest& request, const DescribeContractDiffTaskWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeContractDiffTaskWebUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeContractDiffTaskWebUrlOutcomeCallable EssClient::DescribeContractDiffTaskWebUrlCallable(const DescribeContractDiffTaskWebUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeContractDiffTaskWebUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeContractDiffTaskWebUrl(request);
         }
     );
 

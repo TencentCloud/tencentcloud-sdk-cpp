@@ -22,9 +22,11 @@ using namespace std;
 
 SecurityAction::SecurityAction() :
     m_nameHasBeenSet(false),
+    m_denyActionParametersHasBeenSet(false),
+    m_redirectActionParametersHasBeenSet(false),
+    m_challengeActionParametersHasBeenSet(false),
     m_blockIPActionParametersHasBeenSet(false),
-    m_returnCustomPageActionParametersHasBeenSet(false),
-    m_redirectActionParametersHasBeenSet(false)
+    m_returnCustomPageActionParametersHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,57 @@ CoreInternalOutcome SecurityAction::Deserialize(const rapidjson::Value &value)
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DenyActionParameters") && !value["DenyActionParameters"].IsNull())
+    {
+        if (!value["DenyActionParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityAction.DenyActionParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_denyActionParameters.Deserialize(value["DenyActionParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_denyActionParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("RedirectActionParameters") && !value["RedirectActionParameters"].IsNull())
+    {
+        if (!value["RedirectActionParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityAction.RedirectActionParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_redirectActionParameters.Deserialize(value["RedirectActionParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_redirectActionParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChallengeActionParameters") && !value["ChallengeActionParameters"].IsNull())
+    {
+        if (!value["ChallengeActionParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityAction.ChallengeActionParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_challengeActionParameters.Deserialize(value["ChallengeActionParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_challengeActionParametersHasBeenSet = true;
     }
 
     if (value.HasMember("BlockIPActionParameters") && !value["BlockIPActionParameters"].IsNull())
@@ -77,23 +130,6 @@ CoreInternalOutcome SecurityAction::Deserialize(const rapidjson::Value &value)
         m_returnCustomPageActionParametersHasBeenSet = true;
     }
 
-    if (value.HasMember("RedirectActionParameters") && !value["RedirectActionParameters"].IsNull())
-    {
-        if (!value["RedirectActionParameters"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `SecurityAction.RedirectActionParameters` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_redirectActionParameters.Deserialize(value["RedirectActionParameters"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_redirectActionParametersHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +143,33 @@ void SecurityAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_denyActionParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DenyActionParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_denyActionParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_redirectActionParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedirectActionParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_redirectActionParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_challengeActionParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChallengeActionParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_challengeActionParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_blockIPActionParametersHasBeenSet)
@@ -127,15 +190,6 @@ void SecurityAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         m_returnCustomPageActionParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_redirectActionParametersHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RedirectActionParameters";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_redirectActionParameters.ToJsonObject(value[key.c_str()], allocator);
-    }
-
 }
 
 
@@ -153,6 +207,54 @@ void SecurityAction::SetName(const string& _name)
 bool SecurityAction::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+DenyActionParameters SecurityAction::GetDenyActionParameters() const
+{
+    return m_denyActionParameters;
+}
+
+void SecurityAction::SetDenyActionParameters(const DenyActionParameters& _denyActionParameters)
+{
+    m_denyActionParameters = _denyActionParameters;
+    m_denyActionParametersHasBeenSet = true;
+}
+
+bool SecurityAction::DenyActionParametersHasBeenSet() const
+{
+    return m_denyActionParametersHasBeenSet;
+}
+
+RedirectActionParameters SecurityAction::GetRedirectActionParameters() const
+{
+    return m_redirectActionParameters;
+}
+
+void SecurityAction::SetRedirectActionParameters(const RedirectActionParameters& _redirectActionParameters)
+{
+    m_redirectActionParameters = _redirectActionParameters;
+    m_redirectActionParametersHasBeenSet = true;
+}
+
+bool SecurityAction::RedirectActionParametersHasBeenSet() const
+{
+    return m_redirectActionParametersHasBeenSet;
+}
+
+ChallengeActionParameters SecurityAction::GetChallengeActionParameters() const
+{
+    return m_challengeActionParameters;
+}
+
+void SecurityAction::SetChallengeActionParameters(const ChallengeActionParameters& _challengeActionParameters)
+{
+    m_challengeActionParameters = _challengeActionParameters;
+    m_challengeActionParametersHasBeenSet = true;
+}
+
+bool SecurityAction::ChallengeActionParametersHasBeenSet() const
+{
+    return m_challengeActionParametersHasBeenSet;
 }
 
 BlockIPActionParameters SecurityAction::GetBlockIPActionParameters() const
@@ -185,21 +287,5 @@ void SecurityAction::SetReturnCustomPageActionParameters(const ReturnCustomPageA
 bool SecurityAction::ReturnCustomPageActionParametersHasBeenSet() const
 {
     return m_returnCustomPageActionParametersHasBeenSet;
-}
-
-RedirectActionParameters SecurityAction::GetRedirectActionParameters() const
-{
-    return m_redirectActionParameters;
-}
-
-void SecurityAction::SetRedirectActionParameters(const RedirectActionParameters& _redirectActionParameters)
-{
-    m_redirectActionParameters = _redirectActionParameters;
-    m_redirectActionParametersHasBeenSet = true;
-}
-
-bool SecurityAction::RedirectActionParametersHasBeenSet() const
-{
-    return m_redirectActionParametersHasBeenSet;
 }
 

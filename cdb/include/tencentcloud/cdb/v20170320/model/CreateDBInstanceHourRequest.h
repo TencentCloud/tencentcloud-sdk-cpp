@@ -135,18 +135,18 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
+                     * 获取私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
 说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。
-                     * @return UniqVpcId 私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
+                     * @return UniqVpcId 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
 说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
+                     * 设置私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
 说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。
-                     * @param _uniqVpcId 私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
+                     * @param _uniqVpcId 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
 说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。
                      * 
                      */
@@ -979,7 +979,7 @@ namespace TencentCloud
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
+                     * 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
 说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。
                      */
                     std::string m_uniqVpcId;

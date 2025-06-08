@@ -36,7 +36,8 @@ AutoScaleResourceConf::AutoScaleResourceConf() :
     m_yarnNodeLabelHasBeenSet(false),
     m_groupStatusHasBeenSet(false),
     m_parallelHasBeenSet(false),
-    m_enableMNodeHasBeenSet(false)
+    m_enableMNodeHasBeenSet(false),
+    m_extraAdvanceAttrsHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,23 @@ CoreInternalOutcome AutoScaleResourceConf::Deserialize(const rapidjson::Value &v
         m_enableMNodeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtraAdvanceAttrs") && !value["ExtraAdvanceAttrs"].IsNull())
+    {
+        if (!value["ExtraAdvanceAttrs"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.ExtraAdvanceAttrs` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extraAdvanceAttrs.Deserialize(value["ExtraAdvanceAttrs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extraAdvanceAttrsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +356,15 @@ void AutoScaleResourceConf::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "EnableMNode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableMNode, allocator);
+    }
+
+    if (m_extraAdvanceAttrsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraAdvanceAttrs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extraAdvanceAttrs.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -597,5 +624,21 @@ void AutoScaleResourceConf::SetEnableMNode(const int64_t& _enableMNode)
 bool AutoScaleResourceConf::EnableMNodeHasBeenSet() const
 {
     return m_enableMNodeHasBeenSet;
+}
+
+AutoScaleGroupAdvanceAttrs AutoScaleResourceConf::GetExtraAdvanceAttrs() const
+{
+    return m_extraAdvanceAttrs;
+}
+
+void AutoScaleResourceConf::SetExtraAdvanceAttrs(const AutoScaleGroupAdvanceAttrs& _extraAdvanceAttrs)
+{
+    m_extraAdvanceAttrs = _extraAdvanceAttrs;
+    m_extraAdvanceAttrsHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::ExtraAdvanceAttrsHasBeenSet() const
+{
+    return m_extraAdvanceAttrsHasBeenSet;
 }
 

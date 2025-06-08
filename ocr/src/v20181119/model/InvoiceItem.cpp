@@ -32,7 +32,8 @@ InvoiceItem::InvoiceItem() :
     m_cutImageHasBeenSet(false),
     m_subTypeDescriptionHasBeenSet(false),
     m_itemPolygonHasBeenSet(false),
-    m_qRCodeHasBeenSet(false)
+    m_qRCodeHasBeenSet(false),
+    m_invoiceSealInfoHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,23 @@ CoreInternalOutcome InvoiceItem::Deserialize(const rapidjson::Value &value)
         m_qRCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("InvoiceSealInfo") && !value["InvoiceSealInfo"].IsNull())
+    {
+        if (!value["InvoiceSealInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InvoiceItem.InvoiceSealInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_invoiceSealInfo.Deserialize(value["InvoiceSealInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_invoiceSealInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -295,6 +313,15 @@ void InvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "QRCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_qRCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invoiceSealInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvoiceSealInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_invoiceSealInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -490,5 +517,21 @@ void InvoiceItem::SetQRCode(const string& _qRCode)
 bool InvoiceItem::QRCodeHasBeenSet() const
 {
     return m_qRCodeHasBeenSet;
+}
+
+InvoiceSealInfo InvoiceItem::GetInvoiceSealInfo() const
+{
+    return m_invoiceSealInfo;
+}
+
+void InvoiceItem::SetInvoiceSealInfo(const InvoiceSealInfo& _invoiceSealInfo)
+{
+    m_invoiceSealInfo = _invoiceSealInfo;
+    m_invoiceSealInfoHasBeenSet = true;
+}
+
+bool InvoiceItem::InvoiceSealInfoHasBeenSet() const
+{
+    return m_invoiceSealInfoHasBeenSet;
 }
 

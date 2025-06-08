@@ -32,7 +32,8 @@ RecognizeGeneralInvoiceRequest::RecognizeGeneralInvoiceRequest() :
     m_enableMultiplePageHasBeenSet(false),
     m_enableCutImageHasBeenSet(false),
     m_enableItemPolygonHasBeenSet(false),
-    m_enableQRCodeHasBeenSet(false)
+    m_enableQRCodeHasBeenSet(false),
+    m_enableSealHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,14 @@ string RecognizeGeneralInvoiceRequest::ToJsonString() const
         string key = "EnableQRCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableQRCode, allocator);
+    }
+
+    if (m_enableSealHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSeal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSeal, allocator);
     }
 
 
@@ -294,6 +303,22 @@ void RecognizeGeneralInvoiceRequest::SetEnableQRCode(const bool& _enableQRCode)
 bool RecognizeGeneralInvoiceRequest::EnableQRCodeHasBeenSet() const
 {
     return m_enableQRCodeHasBeenSet;
+}
+
+bool RecognizeGeneralInvoiceRequest::GetEnableSeal() const
+{
+    return m_enableSeal;
+}
+
+void RecognizeGeneralInvoiceRequest::SetEnableSeal(const bool& _enableSeal)
+{
+    m_enableSeal = _enableSeal;
+    m_enableSealHasBeenSet = true;
+}
+
+bool RecognizeGeneralInvoiceRequest::EnableSealHasBeenSet() const
+{
+    return m_enableSealHasBeenSet;
 }
 
 

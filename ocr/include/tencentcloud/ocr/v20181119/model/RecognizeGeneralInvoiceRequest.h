@@ -348,6 +348,27 @@ namespace TencentCloud
                      */
                     bool EnableQRCodeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启印章识别，默认为false
+                     * @return EnableSeal 是否开启印章识别，默认为false
+                     * 
+                     */
+                    bool GetEnableSeal() const;
+
+                    /**
+                     * 设置是否开启印章识别，默认为false
+                     * @param _enableSeal 是否开启印章识别，默认为false
+                     * 
+                     */
+                    void SetEnableSeal(const bool& _enableSeal);
+
+                    /**
+                     * 判断参数 EnableSeal 是否已赋值
+                     * @return EnableSeal 是否已赋值
+                     * 
+                     */
+                    bool EnableSealHasBeenSet() const;
+
                 private:
 
                     /**
@@ -433,6 +454,12 @@ namespace TencentCloud
                      */
                     bool m_enableQRCode;
                     bool m_enableQRCodeHasBeenSet;
+
+                    /**
+                     * 是否开启印章识别，默认为false
+                     */
+                    bool m_enableSeal;
+                    bool m_enableSealHasBeenSet;
 
                 };
             }

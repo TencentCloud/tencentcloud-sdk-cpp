@@ -27,6 +27,7 @@
 #include <tencentcloud/ocr/v20181119/model/Polygon.h>
 #include <tencentcloud/ocr/v20181119/model/SingleInvoiceItem.h>
 #include <tencentcloud/ocr/v20181119/model/ItemPolygonInfo.h>
+#include <tencentcloud/ocr/v20181119/model/InvoiceSealInfo.h>
 
 
 namespace TencentCloud
@@ -239,15 +240,15 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool SingleInvoiceInfosHasBeenSet() const;
 
                     /**
-                     * 获取发票处于识别图片或PDF文件中的页教，默认从1开始。
-                     * @return Page 发票处于识别图片或PDF文件中的页教，默认从1开始。
+                     * 获取发票处于识别图片或PDF文件中的页码，默认从1开始。
+                     * @return Page 发票处于识别图片或PDF文件中的页码，默认从1开始。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
-                     * 设置发票处于识别图片或PDF文件中的页教，默认从1开始。
-                     * @param _page 发票处于识别图片或PDF文件中的页教，默认从1开始。
+                     * 设置发票处于识别图片或PDF文件中的页码，默认从1开始。
+                     * @param _page 发票处于识别图片或PDF文件中的页码，默认从1开始。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -385,6 +386,27 @@ FailedOperation.UnKnowError：表示识别失败；
                      */
                     bool QRCodeHasBeenSet() const;
 
+                    /**
+                     * 获取印章信息
+                     * @return InvoiceSealInfo 印章信息
+                     * 
+                     */
+                    InvoiceSealInfo GetInvoiceSealInfo() const;
+
+                    /**
+                     * 设置印章信息
+                     * @param _invoiceSealInfo 印章信息
+                     * 
+                     */
+                    void SetInvoiceSealInfo(const InvoiceSealInfo& _invoiceSealInfo);
+
+                    /**
+                     * 判断参数 InvoiceSealInfo 是否已赋值
+                     * @return InvoiceSealInfo 是否已赋值
+                     * 
+                     */
+                    bool InvoiceSealInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -439,7 +461,7 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool m_singleInvoiceInfosHasBeenSet;
 
                     /**
-                     * 发票处于识别图片或PDF文件中的页教，默认从1开始。
+                     * 发票处于识别图片或PDF文件中的页码，默认从1开始。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
@@ -479,6 +501,12 @@ FailedOperation.UnKnowError：表示识别失败；
                      */
                     std::string m_qRCode;
                     bool m_qRCodeHasBeenSet;
+
+                    /**
+                     * 印章信息
+                     */
+                    InvoiceSealInfo m_invoiceSealInfo;
+                    bool m_invoiceSealInfoHasBeenSet;
 
                 };
             }

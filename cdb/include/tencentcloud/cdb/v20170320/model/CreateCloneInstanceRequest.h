@@ -116,15 +116,15 @@ namespace TencentCloud
                     bool SpecifiedBackupIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
-                     * @return UniqVpcId 私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
+                     * 获取私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
+                     * @return UniqVpcId 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
-                     * @param _uniqVpcId 私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
+                     * 设置私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
+                     * @param _uniqVpcId 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -621,7 +621,7 @@ namespace TencentCloud
                     bool m_specifiedBackupIdHasBeenSet;
 
                     /**
-                     * 私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
+                     * 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;

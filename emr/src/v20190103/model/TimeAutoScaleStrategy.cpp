@@ -40,7 +40,8 @@ TimeAutoScaleStrategy::TimeAutoScaleStrategy() :
     m_softDeployInfoHasBeenSet(false),
     m_serviceNodeInfoHasBeenSet(false),
     m_compensateFlagHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_graceDownLabelHasBeenSet(false)
 {
 }
 
@@ -272,6 +273,26 @@ CoreInternalOutcome TimeAutoScaleStrategy::Deserialize(const rapidjson::Value &v
         m_groupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("GraceDownLabel") && !value["GraceDownLabel"].IsNull())
+    {
+        if (!value["GraceDownLabel"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TimeAutoScaleStrategy.GraceDownLabel` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GraceDownLabel"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TkeLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_graceDownLabel.push_back(item);
+        }
+        m_graceDownLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -455,6 +476,21 @@ void TimeAutoScaleStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupId, allocator);
+    }
+
+    if (m_graceDownLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraceDownLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_graceDownLabel.begin(); itr != m_graceDownLabel.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -778,5 +814,21 @@ void TimeAutoScaleStrategy::SetGroupId(const int64_t& _groupId)
 bool TimeAutoScaleStrategy::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+vector<TkeLabel> TimeAutoScaleStrategy::GetGraceDownLabel() const
+{
+    return m_graceDownLabel;
+}
+
+void TimeAutoScaleStrategy::SetGraceDownLabel(const vector<TkeLabel>& _graceDownLabel)
+{
+    m_graceDownLabel = _graceDownLabel;
+    m_graceDownLabelHasBeenSet = true;
+}
+
+bool TimeAutoScaleStrategy::GraceDownLabelHasBeenSet() const
+{
+    return m_graceDownLabelHasBeenSet;
 }
 

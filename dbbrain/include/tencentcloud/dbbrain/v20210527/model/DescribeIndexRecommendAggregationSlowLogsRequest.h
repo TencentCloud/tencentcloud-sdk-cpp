@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DbHasBeenSet() const;
 
                     /**
-                     * 获取表明。
-                     * @return Collection 表明。
+                     * 获取表名。
+                     * @return Collection 表名。
                      * 
                      */
                     std::string GetCollection() const;
 
                     /**
-                     * 设置表明。
-                     * @param _collection 表明。
+                     * 设置表名。
+                     * @param _collection 表名。
                      * 
                      */
                     void SetCollection(const std::string& _collection);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CollectionHasBeenSet() const;
 
                     /**
-                     * 获取签名。
-                     * @return Signs 签名。
+                     * 获取签名。这个值是DescribelndexRecommendInfo接口返回
+                     * @return Signs 签名。这个值是DescribelndexRecommendInfo接口返回
                      * 
                      */
                     std::vector<std::string> GetSigns() const;
 
                     /**
-                     * 设置签名。
-                     * @param _signs 签名。
+                     * 设置签名。这个值是DescribelndexRecommendInfo接口返回
+                     * @param _signs 签名。这个值是DescribelndexRecommendInfo接口返回
                      * 
                      */
                     void SetSigns(const std::vector<std::string>& _signs);
@@ -168,13 +168,13 @@ namespace TencentCloud
                     bool m_dbHasBeenSet;
 
                     /**
-                     * 表明。
+                     * 表名。
                      */
                     std::string m_collection;
                     bool m_collectionHasBeenSet;
 
                     /**
-                     * 签名。
+                     * 签名。这个值是DescribelndexRecommendInfo接口返回
                      */
                     std::vector<std::string> m_signs;
                     bool m_signsHasBeenSet;

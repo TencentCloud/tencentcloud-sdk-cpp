@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取按业务系统名过滤
-                     * @return InstanceName 按业务系统名过滤
+                     * 获取按业务系统名过滤，支持模糊检索
+                     * @return InstanceName 按业务系统名过滤，支持模糊检索
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置按业务系统名过滤
-                     * @param _instanceName 按业务系统名过滤
+                     * 设置按业务系统名过滤，支持模糊检索
+                     * @param _instanceName 按业务系统名过滤，支持模糊检索
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -84,6 +84,27 @@ namespace TencentCloud
                      * 
                      */
                     bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取按业务系统 ID 过滤，支持模糊检索
+                     * @return InstanceId 按业务系统 ID 过滤，支持模糊检索
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置按业务系统 ID 过滤，支持模糊检索
+                     * @param _instanceId 按业务系统 ID 过滤，支持模糊检索
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取按业务系统 ID 过滤
@@ -157,10 +178,16 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 按业务系统名过滤
+                     * 按业务系统名过滤，支持模糊检索
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 按业务系统 ID 过滤，支持模糊检索
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                     /**
                      * 按业务系统 ID 过滤

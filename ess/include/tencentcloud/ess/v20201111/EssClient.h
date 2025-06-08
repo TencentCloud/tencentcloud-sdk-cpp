@@ -45,6 +45,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchSignUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchSignUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateContractDiffTaskWebUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateContractDiffTaskWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentRequest.h>
@@ -159,6 +161,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeBillUsageDetailResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractDiffTaskWebUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractDiffTaskWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosRequest.h>
@@ -280,6 +284,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchSignUrlResponse> CreateBatchSignUrlOutcome;
                 typedef std::future<CreateBatchSignUrlOutcome> CreateBatchSignUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchSignUrlRequest&, CreateBatchSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchSignUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateContractDiffTaskWebUrlResponse> CreateContractDiffTaskWebUrlOutcome;
+                typedef std::future<CreateContractDiffTaskWebUrlOutcome> CreateContractDiffTaskWebUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateContractDiffTaskWebUrlRequest&, CreateContractDiffTaskWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContractDiffTaskWebUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConvertTaskApiResponse> CreateConvertTaskApiOutcome;
                 typedef std::future<CreateConvertTaskApiOutcome> CreateConvertTaskApiOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateConvertTaskApiRequest&, CreateConvertTaskApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConvertTaskApiAsyncHandler;
@@ -451,6 +458,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCancelFlowsTaskResponse> DescribeCancelFlowsTaskOutcome;
                 typedef std::future<DescribeCancelFlowsTaskOutcome> DescribeCancelFlowsTaskOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeCancelFlowsTaskRequest&, DescribeCancelFlowsTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCancelFlowsTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeContractDiffTaskWebUrlResponse> DescribeContractDiffTaskWebUrlOutcome;
+                typedef std::future<DescribeContractDiffTaskWebUrlOutcome> DescribeContractDiffTaskWebUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeContractDiffTaskWebUrlRequest&, DescribeContractDiffTaskWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractDiffTaskWebUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExtendedServiceAuthDetailResponse> DescribeExtendedServiceAuthDetailOutcome;
                 typedef std::future<DescribeExtendedServiceAuthDetailOutcome> DescribeExtendedServiceAuthDetailOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeExtendedServiceAuthDetailRequest&, DescribeExtendedServiceAuthDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtendedServiceAuthDetailAsyncHandler;
@@ -760,6 +770,21 @@ namespace TencentCloud
                 CreateBatchSignUrlOutcome CreateBatchSignUrl(const Model::CreateBatchSignUrlRequest &request);
                 void CreateBatchSignUrlAsync(const Model::CreateBatchSignUrlRequest& request, const CreateBatchSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBatchSignUrlOutcomeCallable CreateBatchSignUrlCallable(const Model::CreateBatchSignUrlRequest& request);
+
+                /**
+                 *接口（CreateContractDiffTaskWebUrl）用于创建合同对比的可嵌入web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
+注：本接口生成的web页面暂不支持<a href="https://qian.tencent.com/developers/companyApis/embedPages/CreateWebThemeConfig" target="_blank">设置本企业嵌入式页面主题配置</a>
+
+未跳过上传确认的嵌入页面长相如下：
+![image](https://qcloudimg.tencent-cloud.cn/raw/32f3526ad7152757202a7e4e760356db.jpg)
+跳过上传确认的嵌入页面长相如下：
+![image](https://qcloudimg.tencent-cloud.cn/raw/c68047feddbc106e261870687b6ab89d.jpg)
+                 * @param req CreateContractDiffTaskWebUrlRequest
+                 * @return CreateContractDiffTaskWebUrlOutcome
+                 */
+                CreateContractDiffTaskWebUrlOutcome CreateContractDiffTaskWebUrl(const Model::CreateContractDiffTaskWebUrlRequest &request);
+                void CreateContractDiffTaskWebUrlAsync(const Model::CreateContractDiffTaskWebUrlRequest& request, const CreateContractDiffTaskWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateContractDiffTaskWebUrlOutcomeCallable CreateContractDiffTaskWebUrlCallable(const Model::CreateContractDiffTaskWebUrlRequest& request);
 
                 /**
                  *此接口（CreateConvertTaskApi）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />
@@ -1865,6 +1890,19 @@ namespace TencentCloud
                 DescribeCancelFlowsTaskOutcome DescribeCancelFlowsTask(const Model::DescribeCancelFlowsTaskRequest &request);
                 void DescribeCancelFlowsTaskAsync(const Model::DescribeCancelFlowsTaskRequest& request, const DescribeCancelFlowsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCancelFlowsTaskOutcomeCallable DescribeCancelFlowsTaskCallable(const Model::DescribeCancelFlowsTaskRequest& request);
+
+                /**
+                 *接口（DescribeContractDiffTaskWebUrl）用于获取合同对比结果可嵌入的web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
+注：本接口生成的web页面暂不支持<a href="https://qian.tencent.com/developers/companyApis/embedPages/CreateWebThemeConfig" target="_blank">设置本企业嵌入式页面主题配置</a>
+
+嵌入页面长相如下：
+![image](https://qcloudimg.tencent-cloud.cn/raw/c68047feddbc106e261870687b6ab89d.jpg)
+                 * @param req DescribeContractDiffTaskWebUrlRequest
+                 * @return DescribeContractDiffTaskWebUrlOutcome
+                 */
+                DescribeContractDiffTaskWebUrlOutcome DescribeContractDiffTaskWebUrl(const Model::DescribeContractDiffTaskWebUrlRequest &request);
+                void DescribeContractDiffTaskWebUrlAsync(const Model::DescribeContractDiffTaskWebUrlRequest& request, const DescribeContractDiffTaskWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeContractDiffTaskWebUrlOutcomeCallable DescribeContractDiffTaskWebUrlCallable(const Model::DescribeContractDiffTaskWebUrlRequest& request);
 
                 /**
                  *查询企业扩展服务的授权详情（列表），当前支持查询以下内容：

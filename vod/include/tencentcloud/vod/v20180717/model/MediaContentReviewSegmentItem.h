@@ -191,21 +191,21 @@ namespace TencentCloud
                     /**
                      * 获取该字段已废弃，请使用 PicUrlExpireTime。
                      * @return PicUrlExpireTimeStamp 该字段已废弃，请使用 PicUrlExpireTime。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetPicUrlExpireTimeStamp() const;
 
                     /**
                      * 设置该字段已废弃，请使用 PicUrlExpireTime。
                      * @param _picUrlExpireTimeStamp 该字段已废弃，请使用 PicUrlExpireTime。
-                     * 
+                     * @deprecated
                      */
                     void SetPicUrlExpireTimeStamp(const int64_t& _picUrlExpireTimeStamp);
 
                     /**
                      * 判断参数 PicUrlExpireTimeStamp 是否已赋值
                      * @return PicUrlExpireTimeStamp 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PicUrlExpireTimeStampHasBeenSet() const;
 

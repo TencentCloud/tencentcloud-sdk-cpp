@@ -24,7 +24,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/DescribeConfigDataResponse.h
   include/tencentcloud/tem/v20210701/model/NamespacePage.h
   include/tencentcloud/tem/v20210701/model/DescribeApplicationInfoResponse.h
-  include/tencentcloud/tem/v20210701/model/ModifyIngressResponse.h
+  include/tencentcloud/tem/v20210701/model/ModifyGatewayIngressRequest.h
   include/tencentcloud/tem/v20210701/model/DeleteApplicationServiceRequest.h
   include/tencentcloud/tem/v20210701/model/RestartApplicationPodRequest.h
   include/tencentcloud/tem/v20210701/model/DestroyLogConfigResponse.h
@@ -127,6 +127,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/MountedSettingConf.h
   include/tencentcloud/tem/v20210701/model/CreateLogConfigResponse.h
   include/tencentcloud/tem/v20210701/model/DescribeConfigDataListResponse.h
+  include/tencentcloud/tem/v20210701/model/ModifyGatewayIngressResponse.h
   include/tencentcloud/tem/v20210701/model/ModifyApplicationServiceRequest.h
   include/tencentcloud/tem/v20210701/model/DescribePagedLogConfigListResponse.h
   include/tencentcloud/tem/v20210701/model/HealthCheckConfig.h
@@ -166,6 +167,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/ModifyEnvironmentResponse.h
   include/tencentcloud/tem/v20210701/model/ModifyApplicationReplicasRequest.h
   include/tencentcloud/tem/v20210701/model/ModifyLogConfigRequest.h
+  include/tencentcloud/tem/v20210701/model/ModifyIngressResponse.h
   include/tencentcloud/tem/v20210701/model/DestroyLogConfigRequest.h
   include/tencentcloud/tem/v20210701/model/EnableApplicationAutoscalerRequest.h
   include/tencentcloud/tem/v20210701/model/EksService.h
@@ -234,7 +236,7 @@ set(tem_src
   src/v20210701/model/DescribeConfigDataResponse.cpp
   src/v20210701/model/NamespacePage.cpp
   src/v20210701/model/DescribeApplicationInfoResponse.cpp
-  src/v20210701/model/ModifyIngressResponse.cpp
+  src/v20210701/model/ModifyGatewayIngressRequest.cpp
   src/v20210701/model/DeleteApplicationServiceRequest.cpp
   src/v20210701/model/RestartApplicationPodRequest.cpp
   src/v20210701/model/DestroyLogConfigResponse.cpp
@@ -337,6 +339,7 @@ set(tem_src
   src/v20210701/model/MountedSettingConf.cpp
   src/v20210701/model/CreateLogConfigResponse.cpp
   src/v20210701/model/DescribeConfigDataListResponse.cpp
+  src/v20210701/model/ModifyGatewayIngressResponse.cpp
   src/v20210701/model/ModifyApplicationServiceRequest.cpp
   src/v20210701/model/DescribePagedLogConfigListResponse.cpp
   src/v20210701/model/HealthCheckConfig.cpp
@@ -376,6 +379,7 @@ set(tem_src
   src/v20210701/model/ModifyEnvironmentResponse.cpp
   src/v20210701/model/ModifyApplicationReplicasRequest.cpp
   src/v20210701/model/ModifyLogConfigRequest.cpp
+  src/v20210701/model/ModifyIngressResponse.cpp
   src/v20210701/model/DestroyLogConfigRequest.cpp
   src/v20210701/model/EnableApplicationAutoscalerRequest.cpp
   src/v20210701/model/EksService.cpp

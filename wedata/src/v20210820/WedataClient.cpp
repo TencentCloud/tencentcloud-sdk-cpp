@@ -4168,6 +4168,49 @@ WedataClient::DescribeExecStrategyOutcomeCallable WedataClient::DescribeExecStra
     return task->get_future();
 }
 
+WedataClient::DescribeExecutorGroupMetricOutcome WedataClient::DescribeExecutorGroupMetric(const DescribeExecutorGroupMetricRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExecutorGroupMetric");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExecutorGroupMetricResponse rsp = DescribeExecutorGroupMetricResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExecutorGroupMetricOutcome(rsp);
+        else
+            return DescribeExecutorGroupMetricOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExecutorGroupMetricOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeExecutorGroupMetricAsync(const DescribeExecutorGroupMetricRequest& request, const DescribeExecutorGroupMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExecutorGroupMetric(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeExecutorGroupMetricOutcomeCallable WedataClient::DescribeExecutorGroupMetricCallable(const DescribeExecutorGroupMetricRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExecutorGroupMetricOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExecutorGroupMetric(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeFieldBasicInfoOutcome WedataClient::DescribeFieldBasicInfo(const DescribeFieldBasicInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFieldBasicInfo");

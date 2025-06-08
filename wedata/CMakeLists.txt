@@ -187,6 +187,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/UpdateProjectUserRoleRequest.h
   include/tencentcloud/wedata/v20210820/model/LineageParamRecord.h
   include/tencentcloud/wedata/v20210820/model/BatchResult.h
+  include/tencentcloud/wedata/v20210820/model/ExecutorResourceGroupInfo.h
   include/tencentcloud/wedata/v20210820/model/GetBatchDetailErrorLogRequest.h
   include/tencentcloud/wedata/v20210820/model/InstanceLogByLine.h
   include/tencentcloud/wedata/v20210820/model/StartTaskInfo.h
@@ -245,6 +246,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/CreateTaskAlarmRegularRequest.h
   include/tencentcloud/wedata/v20210820/model/ModifyRuleRequest.h
   include/tencentcloud/wedata/v20210820/model/RunTasksByMultiWorkflowResponse.h
+  include/tencentcloud/wedata/v20210820/model/WorkflowExtOpsDtoPage.h
   include/tencentcloud/wedata/v20210820/model/DataSourceInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeBaseBizCatalogsResponse.h
   include/tencentcloud/wedata/v20210820/model/FindAllFolderResponse.h
@@ -285,7 +287,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/CosTokenResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskLinksRequest.h
   include/tencentcloud/wedata/v20210820/model/DeleteTaskDsResponse.h
-  include/tencentcloud/wedata/v20210820/model/LifecycleInfo.h
+  include/tencentcloud/wedata/v20210820/model/ExecutorResourcePackageUsageInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeAllByFolderNewResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeDsParentFolderTreeRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDataServicePublishedApiListResp.h
@@ -373,7 +375,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeAlarmReceiverRequest.h
   include/tencentcloud/wedata/v20210820/model/InstanceVO.h
   include/tencentcloud/wedata/v20210820/model/DescribeStatisticInstanceStatusTrendOpsResponse.h
-  include/tencentcloud/wedata/v20210820/model/SchedulerTaskInstanceInfo.h
+  include/tencentcloud/wedata/v20210820/model/MQPackageVO.h
   include/tencentcloud/wedata/v20210820/model/DescribeSchedulerTaskCntByStatusResponse.h
   include/tencentcloud/wedata/v20210820/model/TaskExtInfo.h
   include/tencentcloud/wedata/v20210820/model/ModifyWorkflowInfoRequest.h
@@ -467,6 +469,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/SubmitTaskTestRunResponse.h
   include/tencentcloud/wedata/v20210820/model/UpdateProjectUserRoleResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRoleListRequest.h
+  include/tencentcloud/wedata/v20210820/model/ExecutorResourcePackageInfo.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskAlarmRegularResponse.h
   include/tencentcloud/wedata/v20210820/model/InstanceSearchCondition.h
   include/tencentcloud/wedata/v20210820/model/CreateRuleResponse.h
@@ -496,6 +499,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/InstanceLogList.h
   include/tencentcloud/wedata/v20210820/model/ModifyMonitorStatusRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeColumnLineageResponse.h
+  include/tencentcloud/wedata/v20210820/model/SchedulerTaskInstanceInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationTaskRequest.h
   include/tencentcloud/wedata/v20210820/model/DiagnoseRep.h
   include/tencentcloud/wedata/v20210820/model/DescribeWorkflowListByProjectIdResponse.h
@@ -532,6 +536,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeTaskByStatusReportResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyDimensionWeightRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateMakeDatetimeInfo.h
+  include/tencentcloud/wedata/v20210820/model/ExecutorResourcePackageExtInfo.h
   include/tencentcloud/wedata/v20210820/model/InstanceApiOpsRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateCodeTemplateResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskLockStatusResponse.h
@@ -574,6 +579,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeDutyScheduleDetailsResponse.h
   include/tencentcloud/wedata/v20210820/model/TaskLineageInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeTableQualityDetailsResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeExecutorGroupMetricRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeProjectUsersRequest.h
   include/tencentcloud/wedata/v20210820/model/LineageTask.h
   include/tencentcloud/wedata/v20210820/model/CommonIdOpsDto.h
@@ -817,6 +823,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/CreateHiveTableByDDLRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeFormVersionParamRequest.h
   include/tencentcloud/wedata/v20210820/model/DatabaseInfo.h
+  include/tencentcloud/wedata/v20210820/model/LifecycleInfo.h
   include/tencentcloud/wedata/v20210820/model/GetIntegrationNodeColumnSchemaResponse.h
   include/tencentcloud/wedata/v20210820/model/StopIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeOpsWorkflowsResponse.h
@@ -845,6 +852,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ListBatchDetailRequest.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskNameRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeTrendStatRequest.h
+  include/tencentcloud/wedata/v20210820/model/ExecutorUsageTrendInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeOpsInstanceLogListResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeApproveTypeListResponse.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupExecResultPage.h
@@ -855,7 +863,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DeleteProjectUsersRequest.h
   include/tencentcloud/wedata/v20210820/model/BaseTenant.h
   include/tencentcloud/wedata/v20210820/model/DescribeWorkflowExecuteByIdRequest.h
-  include/tencentcloud/wedata/v20210820/model/WorkflowExtOpsDtoPage.h
+  include/tencentcloud/wedata/v20210820/model/DescribeExecutorGroupMetricResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTableLineageResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleExecLogRequest.h
   include/tencentcloud/wedata/v20210820/model/BatchRerunIntegrationTaskInstancesResponse.h
@@ -1040,6 +1048,7 @@ set(wedata_src
   src/v20210820/model/UpdateProjectUserRoleRequest.cpp
   src/v20210820/model/LineageParamRecord.cpp
   src/v20210820/model/BatchResult.cpp
+  src/v20210820/model/ExecutorResourceGroupInfo.cpp
   src/v20210820/model/GetBatchDetailErrorLogRequest.cpp
   src/v20210820/model/InstanceLogByLine.cpp
   src/v20210820/model/StartTaskInfo.cpp
@@ -1098,6 +1107,7 @@ set(wedata_src
   src/v20210820/model/CreateTaskAlarmRegularRequest.cpp
   src/v20210820/model/ModifyRuleRequest.cpp
   src/v20210820/model/RunTasksByMultiWorkflowResponse.cpp
+  src/v20210820/model/WorkflowExtOpsDtoPage.cpp
   src/v20210820/model/DataSourceInfo.cpp
   src/v20210820/model/DescribeBaseBizCatalogsResponse.cpp
   src/v20210820/model/FindAllFolderResponse.cpp
@@ -1138,7 +1148,7 @@ set(wedata_src
   src/v20210820/model/CosTokenResponse.cpp
   src/v20210820/model/ModifyTaskLinksRequest.cpp
   src/v20210820/model/DeleteTaskDsResponse.cpp
-  src/v20210820/model/LifecycleInfo.cpp
+  src/v20210820/model/ExecutorResourcePackageUsageInfo.cpp
   src/v20210820/model/DescribeAllByFolderNewResponse.cpp
   src/v20210820/model/DescribeDsParentFolderTreeRequest.cpp
   src/v20210820/model/DescribeDataServicePublishedApiListResp.cpp
@@ -1226,7 +1236,7 @@ set(wedata_src
   src/v20210820/model/DescribeAlarmReceiverRequest.cpp
   src/v20210820/model/InstanceVO.cpp
   src/v20210820/model/DescribeStatisticInstanceStatusTrendOpsResponse.cpp
-  src/v20210820/model/SchedulerTaskInstanceInfo.cpp
+  src/v20210820/model/MQPackageVO.cpp
   src/v20210820/model/DescribeSchedulerTaskCntByStatusResponse.cpp
   src/v20210820/model/TaskExtInfo.cpp
   src/v20210820/model/ModifyWorkflowInfoRequest.cpp
@@ -1320,6 +1330,7 @@ set(wedata_src
   src/v20210820/model/SubmitTaskTestRunResponse.cpp
   src/v20210820/model/UpdateProjectUserRoleResponse.cpp
   src/v20210820/model/DescribeRoleListRequest.cpp
+  src/v20210820/model/ExecutorResourcePackageInfo.cpp
   src/v20210820/model/ModifyTaskAlarmRegularResponse.cpp
   src/v20210820/model/InstanceSearchCondition.cpp
   src/v20210820/model/CreateRuleResponse.cpp
@@ -1349,6 +1360,7 @@ set(wedata_src
   src/v20210820/model/InstanceLogList.cpp
   src/v20210820/model/ModifyMonitorStatusRequest.cpp
   src/v20210820/model/DescribeColumnLineageResponse.cpp
+  src/v20210820/model/SchedulerTaskInstanceInfo.cpp
   src/v20210820/model/DescribeIntegrationTaskRequest.cpp
   src/v20210820/model/DiagnoseRep.cpp
   src/v20210820/model/DescribeWorkflowListByProjectIdResponse.cpp
@@ -1385,6 +1397,7 @@ set(wedata_src
   src/v20210820/model/DescribeTaskByStatusReportResponse.cpp
   src/v20210820/model/ModifyDimensionWeightRequest.cpp
   src/v20210820/model/CreateMakeDatetimeInfo.cpp
+  src/v20210820/model/ExecutorResourcePackageExtInfo.cpp
   src/v20210820/model/InstanceApiOpsRequest.cpp
   src/v20210820/model/CreateCodeTemplateResponse.cpp
   src/v20210820/model/DescribeTaskLockStatusResponse.cpp
@@ -1427,6 +1440,7 @@ set(wedata_src
   src/v20210820/model/DescribeDutyScheduleDetailsResponse.cpp
   src/v20210820/model/TaskLineageInfo.cpp
   src/v20210820/model/DescribeTableQualityDetailsResponse.cpp
+  src/v20210820/model/DescribeExecutorGroupMetricRequest.cpp
   src/v20210820/model/DescribeProjectUsersRequest.cpp
   src/v20210820/model/LineageTask.cpp
   src/v20210820/model/CommonIdOpsDto.cpp
@@ -1670,6 +1684,7 @@ set(wedata_src
   src/v20210820/model/CreateHiveTableByDDLRequest.cpp
   src/v20210820/model/DescribeFormVersionParamRequest.cpp
   src/v20210820/model/DatabaseInfo.cpp
+  src/v20210820/model/LifecycleInfo.cpp
   src/v20210820/model/GetIntegrationNodeColumnSchemaResponse.cpp
   src/v20210820/model/StopIntegrationTaskResponse.cpp
   src/v20210820/model/DescribeOpsWorkflowsResponse.cpp
@@ -1698,6 +1713,7 @@ set(wedata_src
   src/v20210820/model/ListBatchDetailRequest.cpp
   src/v20210820/model/ModifyTaskNameRequest.cpp
   src/v20210820/model/DescribeTrendStatRequest.cpp
+  src/v20210820/model/ExecutorUsageTrendInfo.cpp
   src/v20210820/model/DescribeOpsInstanceLogListResponse.cpp
   src/v20210820/model/DescribeApproveTypeListResponse.cpp
   src/v20210820/model/RuleGroupExecResultPage.cpp
@@ -1708,7 +1724,7 @@ set(wedata_src
   src/v20210820/model/DeleteProjectUsersRequest.cpp
   src/v20210820/model/BaseTenant.cpp
   src/v20210820/model/DescribeWorkflowExecuteByIdRequest.cpp
-  src/v20210820/model/WorkflowExtOpsDtoPage.cpp
+  src/v20210820/model/DescribeExecutorGroupMetricResponse.cpp
   src/v20210820/model/DescribeTableLineageResponse.cpp
   src/v20210820/model/DescribeRuleExecLogRequest.cpp
   src/v20210820/model/BatchRerunIntegrationTaskInstancesResponse.cpp

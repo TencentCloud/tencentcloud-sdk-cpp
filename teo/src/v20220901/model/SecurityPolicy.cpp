@@ -22,7 +22,10 @@ using namespace std;
 
 SecurityPolicy::SecurityPolicy() :
     m_customRulesHasBeenSet(false),
-    m_managedRulesHasBeenSet(false)
+    m_managedRulesHasBeenSet(false),
+    m_httpDDoSProtectionHasBeenSet(false),
+    m_rateLimitingRulesHasBeenSet(false),
+    m_exceptionRulesHasBeenSet(false)
 {
 }
 
@@ -65,6 +68,57 @@ CoreInternalOutcome SecurityPolicy::Deserialize(const rapidjson::Value &value)
         m_managedRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("HttpDDoSProtection") && !value["HttpDDoSProtection"].IsNull())
+    {
+        if (!value["HttpDDoSProtection"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.HttpDDoSProtection` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_httpDDoSProtection.Deserialize(value["HttpDDoSProtection"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_httpDDoSProtectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RateLimitingRules") && !value["RateLimitingRules"].IsNull())
+    {
+        if (!value["RateLimitingRules"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.RateLimitingRules` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rateLimitingRules.Deserialize(value["RateLimitingRules"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rateLimitingRulesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExceptionRules") && !value["ExceptionRules"].IsNull())
+    {
+        if (!value["ExceptionRules"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.ExceptionRules` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_exceptionRules.Deserialize(value["ExceptionRules"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_exceptionRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +142,33 @@ void SecurityPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_managedRules.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_httpDDoSProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpDDoSProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_httpDDoSProtection.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rateLimitingRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateLimitingRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rateLimitingRules.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_exceptionRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExceptionRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_exceptionRules.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +204,53 @@ void SecurityPolicy::SetManagedRules(const ManagedRules& _managedRules)
 bool SecurityPolicy::ManagedRulesHasBeenSet() const
 {
     return m_managedRulesHasBeenSet;
+}
+
+HttpDDoSProtection SecurityPolicy::GetHttpDDoSProtection() const
+{
+    return m_httpDDoSProtection;
+}
+
+void SecurityPolicy::SetHttpDDoSProtection(const HttpDDoSProtection& _httpDDoSProtection)
+{
+    m_httpDDoSProtection = _httpDDoSProtection;
+    m_httpDDoSProtectionHasBeenSet = true;
+}
+
+bool SecurityPolicy::HttpDDoSProtectionHasBeenSet() const
+{
+    return m_httpDDoSProtectionHasBeenSet;
+}
+
+RateLimitingRules SecurityPolicy::GetRateLimitingRules() const
+{
+    return m_rateLimitingRules;
+}
+
+void SecurityPolicy::SetRateLimitingRules(const RateLimitingRules& _rateLimitingRules)
+{
+    m_rateLimitingRules = _rateLimitingRules;
+    m_rateLimitingRulesHasBeenSet = true;
+}
+
+bool SecurityPolicy::RateLimitingRulesHasBeenSet() const
+{
+    return m_rateLimitingRulesHasBeenSet;
+}
+
+ExceptionRules SecurityPolicy::GetExceptionRules() const
+{
+    return m_exceptionRules;
+}
+
+void SecurityPolicy::SetExceptionRules(const ExceptionRules& _exceptionRules)
+{
+    m_exceptionRules = _exceptionRules;
+    m_exceptionRulesHasBeenSet = true;
+}
+
+bool SecurityPolicy::ExceptionRulesHasBeenSet() const
+{
+    return m_exceptionRulesHasBeenSet;
 }
 

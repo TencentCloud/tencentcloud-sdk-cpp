@@ -50,7 +50,8 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_scaleOutServiceConfAssignHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
     m_resourceBaseTypeHasBeenSet(false),
-    m_computeResourceIdHasBeenSet(false)
+    m_computeResourceIdHasBeenSet(false),
+    m_computeResourceAdvanceParamsHasBeenSet(false)
 {
 }
 
@@ -319,6 +320,15 @@ string ScaleOutInstanceRequest::ToJsonString() const
         string key = "ComputeResourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_computeResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeResourceAdvanceParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeResourceAdvanceParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_computeResourceAdvanceParams.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -775,6 +785,22 @@ void ScaleOutInstanceRequest::SetComputeResourceId(const string& _computeResourc
 bool ScaleOutInstanceRequest::ComputeResourceIdHasBeenSet() const
 {
     return m_computeResourceIdHasBeenSet;
+}
+
+ComputeResourceAdvanceParams ScaleOutInstanceRequest::GetComputeResourceAdvanceParams() const
+{
+    return m_computeResourceAdvanceParams;
+}
+
+void ScaleOutInstanceRequest::SetComputeResourceAdvanceParams(const ComputeResourceAdvanceParams& _computeResourceAdvanceParams)
+{
+    m_computeResourceAdvanceParams = _computeResourceAdvanceParams;
+    m_computeResourceAdvanceParamsHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::ComputeResourceAdvanceParamsHasBeenSet() const
+{
+    return m_computeResourceAdvanceParamsHasBeenSet;
 }
 
 

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/RepeatStrategy.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
+#include <tencentcloud/emr/v20190103/model/TkeLabel.h>
 
 
 namespace TencentCloud
@@ -500,6 +501,27 @@ namespace TencentCloud
                      */
                     bool GroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取优雅缩容业务pod标签，当node不存在上述pod或超过优雅缩容时间时，缩容节点
+                     * @return GraceDownLabel 优雅缩容业务pod标签，当node不存在上述pod或超过优雅缩容时间时，缩容节点
+                     * 
+                     */
+                    std::vector<TkeLabel> GetGraceDownLabel() const;
+
+                    /**
+                     * 设置优雅缩容业务pod标签，当node不存在上述pod或超过优雅缩容时间时，缩容节点
+                     * @param _graceDownLabel 优雅缩容业务pod标签，当node不存在上述pod或超过优雅缩容时间时，缩容节点
+                     * 
+                     */
+                    void SetGraceDownLabel(const std::vector<TkeLabel>& _graceDownLabel);
+
+                    /**
+                     * 判断参数 GraceDownLabel 是否已赋值
+                     * @return GraceDownLabel 是否已赋值
+                     * 
+                     */
+                    bool GraceDownLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -629,6 +651,12 @@ namespace TencentCloud
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 优雅缩容业务pod标签，当node不存在上述pod或超过优雅缩容时间时，缩容节点
+                     */
+                    std::vector<TkeLabel> m_graceDownLabel;
+                    bool m_graceDownLabelHasBeenSet;
 
                 };
             }
