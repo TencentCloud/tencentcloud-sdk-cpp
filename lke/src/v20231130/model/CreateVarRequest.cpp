@@ -26,7 +26,9 @@ CreateVarRequest::CreateVarRequest() :
     m_appBizIdHasBeenSet(false),
     m_varNameHasBeenSet(false),
     m_varDescHasBeenSet(false),
-    m_varTypeHasBeenSet(false)
+    m_varTypeHasBeenSet(false),
+    m_varDefaultValueHasBeenSet(false),
+    m_varDefaultFileNameHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string CreateVarRequest::ToJsonString() const
         string key = "VarType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_varType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_varDefaultValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VarDefaultValue";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_varDefaultValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_varDefaultFileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VarDefaultFileName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_varDefaultFileName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +157,38 @@ void CreateVarRequest::SetVarType(const string& _varType)
 bool CreateVarRequest::VarTypeHasBeenSet() const
 {
     return m_varTypeHasBeenSet;
+}
+
+string CreateVarRequest::GetVarDefaultValue() const
+{
+    return m_varDefaultValue;
+}
+
+void CreateVarRequest::SetVarDefaultValue(const string& _varDefaultValue)
+{
+    m_varDefaultValue = _varDefaultValue;
+    m_varDefaultValueHasBeenSet = true;
+}
+
+bool CreateVarRequest::VarDefaultValueHasBeenSet() const
+{
+    return m_varDefaultValueHasBeenSet;
+}
+
+string CreateVarRequest::GetVarDefaultFileName() const
+{
+    return m_varDefaultFileName;
+}
+
+void CreateVarRequest::SetVarDefaultFileName(const string& _varDefaultFileName)
+{
+    m_varDefaultFileName = _varDefaultFileName;
+    m_varDefaultFileNameHasBeenSet = true;
+}
+
+bool CreateVarRequest::VarDefaultFileNameHasBeenSet() const
+{
+    return m_varDefaultFileNameHasBeenSet;
 }
 
 

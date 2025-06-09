@@ -255,6 +255,49 @@ IoaClient::DescribeDLPFileDetectResultOutcomeCallable IoaClient::DescribeDLPFile
     return task->get_future();
 }
 
+IoaClient::DescribeDeviceHardwareInfoListOutcome IoaClient::DescribeDeviceHardwareInfoList(const DescribeDeviceHardwareInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceHardwareInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceHardwareInfoListResponse rsp = DescribeDeviceHardwareInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceHardwareInfoListOutcome(rsp);
+        else
+            return DescribeDeviceHardwareInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceHardwareInfoListOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDeviceHardwareInfoListAsync(const DescribeDeviceHardwareInfoListRequest& request, const DescribeDeviceHardwareInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceHardwareInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeDeviceHardwareInfoListOutcomeCallable IoaClient::DescribeDeviceHardwareInfoListCallable(const DescribeDeviceHardwareInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceHardwareInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceHardwareInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::DescribeDevicesOutcome IoaClient::DescribeDevices(const DescribeDevicesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDevices");

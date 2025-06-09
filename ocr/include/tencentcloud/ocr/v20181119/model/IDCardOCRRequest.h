@@ -259,21 +259,21 @@ Config = {"CropIdCard":true,"CropPortrait":true}
                     /**
                      * 获取用于控制是否开启日期校验，默认值为true，打开会进行日期校验。
                      * @return EnableDateVerify 用于控制是否开启日期校验，默认值为true，打开会进行日期校验。
-                     * 
+                     * @deprecated
                      */
                     bool GetEnableDateVerify() const;
 
                     /**
                      * 设置用于控制是否开启日期校验，默认值为true，打开会进行日期校验。
                      * @param _enableDateVerify 用于控制是否开启日期校验，默认值为true，打开会进行日期校验。
-                     * 
+                     * @deprecated
                      */
                     void SetEnableDateVerify(const bool& _enableDateVerify);
 
                     /**
                      * 判断参数 EnableDateVerify 是否已赋值
                      * @return EnableDateVerify 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EnableDateVerifyHasBeenSet() const;
 

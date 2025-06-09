@@ -76,7 +76,8 @@ Certificates::Certificates() :
     m_supportDownloadTypeHasBeenSet(false),
     m_certRevokedTimeHasBeenSet(false),
     m_hostingResourceTypesHasBeenSet(false),
-    m_hostingConfigHasBeenSet(false)
+    m_hostingConfigHasBeenSet(false),
+    m_isHostingUploadRenewCertHasBeenSet(false)
 {
 }
 
@@ -711,6 +712,16 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_hostingConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("IsHostingUploadRenewCert") && !value["IsHostingUploadRenewCert"].IsNull())
+    {
+        if (!value["IsHostingUploadRenewCert"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.IsHostingUploadRenewCert` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isHostingUploadRenewCert = value["IsHostingUploadRenewCert"].GetBool();
+        m_isHostingUploadRenewCertHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1211,6 +1222,14 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hostingConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isHostingUploadRenewCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsHostingUploadRenewCert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isHostingUploadRenewCert, allocator);
     }
 
 }
@@ -2110,5 +2129,21 @@ void Certificates::SetHostingConfig(const HostingConfig& _hostingConfig)
 bool Certificates::HostingConfigHasBeenSet() const
 {
     return m_hostingConfigHasBeenSet;
+}
+
+bool Certificates::GetIsHostingUploadRenewCert() const
+{
+    return m_isHostingUploadRenewCert;
+}
+
+void Certificates::SetIsHostingUploadRenewCert(const bool& _isHostingUploadRenewCert)
+{
+    m_isHostingUploadRenewCert = _isHostingUploadRenewCert;
+    m_isHostingUploadRenewCertHasBeenSet = true;
+}
+
+bool Certificates::IsHostingUploadRenewCertHasBeenSet() const
+{
+    return m_isHostingUploadRenewCertHasBeenSet;
 }
 

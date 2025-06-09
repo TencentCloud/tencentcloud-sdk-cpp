@@ -28,7 +28,8 @@ ModifyCloudStorageAIServiceRequest::ModifyCloudStorageAIServiceRequest() :
     m_serviceTypeHasBeenSet(false),
     m_enabledHasBeenSet(false),
     m_rOIHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_sHLConfigHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,15 @@ string ModifyCloudStorageAIServiceRequest::ToJsonString() const
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sHLConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SHLConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sHLConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -189,6 +199,22 @@ void ModifyCloudStorageAIServiceRequest::SetConfig(const string& _config)
 bool ModifyCloudStorageAIServiceRequest::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+DiarySHLConfig ModifyCloudStorageAIServiceRequest::GetSHLConfig() const
+{
+    return m_sHLConfig;
+}
+
+void ModifyCloudStorageAIServiceRequest::SetSHLConfig(const DiarySHLConfig& _sHLConfig)
+{
+    m_sHLConfig = _sHLConfig;
+    m_sHLConfigHasBeenSet = true;
+}
+
+bool ModifyCloudStorageAIServiceRequest::SHLConfigHasBeenSet() const
+{
+    return m_sHLConfigHasBeenSet;
 }
 
 

@@ -38,7 +38,8 @@ ModelInfo::ModelInfo() :
     m_isDefaultHasBeenSet(false),
     m_roleLenLimitHasBeenSet(false),
     m_isExclusiveHasBeenSet(false),
-    m_supportAiCallStatusHasBeenSet(false)
+    m_supportAiCallStatusHasBeenSet(false),
+    m_concurrencyHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_supportAiCallStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Concurrency") && !value["Concurrency"].IsNull())
+    {
+        if (!value["Concurrency"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.Concurrency` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_concurrency = value["Concurrency"].GetUint64();
+        m_concurrencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -400,6 +411,14 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SupportAiCallStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportAiCallStatus, allocator);
+    }
+
+    if (m_concurrencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Concurrency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_concurrency, allocator);
     }
 
 }
@@ -691,5 +710,21 @@ void ModelInfo::SetSupportAiCallStatus(const uint64_t& _supportAiCallStatus)
 bool ModelInfo::SupportAiCallStatusHasBeenSet() const
 {
     return m_supportAiCallStatusHasBeenSet;
+}
+
+uint64_t ModelInfo::GetConcurrency() const
+{
+    return m_concurrency;
+}
+
+void ModelInfo::SetConcurrency(const uint64_t& _concurrency)
+{
+    m_concurrency = _concurrency;
+    m_concurrencyHasBeenSet = true;
+}
+
+bool ModelInfo::ConcurrencyHasBeenSet() const
+{
+    return m_concurrencyHasBeenSet;
 }
 

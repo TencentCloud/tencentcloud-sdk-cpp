@@ -126,6 +126,48 @@ namespace TencentCloud
                      */
                     bool VarTypeHasBeenSet() const;
 
+                    /**
+                     * 获取自定义变量默认值
+                     * @return VarDefaultValue 自定义变量默认值
+                     * 
+                     */
+                    std::string GetVarDefaultValue() const;
+
+                    /**
+                     * 设置自定义变量默认值
+                     * @param _varDefaultValue 自定义变量默认值
+                     * 
+                     */
+                    void SetVarDefaultValue(const std::string& _varDefaultValue);
+
+                    /**
+                     * 判断参数 VarDefaultValue 是否已赋值
+                     * @return VarDefaultValue 是否已赋值
+                     * 
+                     */
+                    bool VarDefaultValueHasBeenSet() const;
+
+                    /**
+                     * 获取自定义变量文件默认名称
+                     * @return VarDefaultFileName 自定义变量文件默认名称
+                     * 
+                     */
+                    std::string GetVarDefaultFileName() const;
+
+                    /**
+                     * 设置自定义变量文件默认名称
+                     * @param _varDefaultFileName 自定义变量文件默认名称
+                     * 
+                     */
+                    void SetVarDefaultFileName(const std::string& _varDefaultFileName);
+
+                    /**
+                     * 判断参数 VarDefaultFileName 是否已赋值
+                     * @return VarDefaultFileName 是否已赋值
+                     * 
+                     */
+                    bool VarDefaultFileNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     std::string m_varType;
                     bool m_varTypeHasBeenSet;
+
+                    /**
+                     * 自定义变量默认值
+                     */
+                    std::string m_varDefaultValue;
+                    bool m_varDefaultValueHasBeenSet;
+
+                    /**
+                     * 自定义变量文件默认名称
+                     */
+                    std::string m_varDefaultFileName;
+                    bool m_varDefaultFileNameHasBeenSet;
 
                 };
             }

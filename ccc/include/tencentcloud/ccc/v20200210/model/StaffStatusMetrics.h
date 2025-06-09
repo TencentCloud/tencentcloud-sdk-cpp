@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ccc/v20200210/model/StaffStatusExtra.h>
+#include <tencentcloud/ccc/v20200210/model/Client.h>
 
 
 namespace TencentCloud
@@ -391,6 +392,27 @@ namespace TencentCloud
                      */
                     bool LastStatusTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取客服登录的端信息
+                     * @return ClientInfo 客服登录的端信息
+                     * 
+                     */
+                    std::vector<Client> GetClientInfo() const;
+
+                    /**
+                     * 设置客服登录的端信息
+                     * @param _clientInfo 客服登录的端信息
+                     * 
+                     */
+                    void SetClientInfo(const std::vector<Client>& _clientInfo);
+
+                    /**
+                     * 判断参数 ClientInfo 是否已赋值
+                     * @return ClientInfo 是否已赋值
+                     * 
+                     */
+                    bool ClientInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -490,6 +512,12 @@ namespace TencentCloud
                      */
                     int64_t m_lastStatusTimestamp;
                     bool m_lastStatusTimestampHasBeenSet;
+
+                    /**
+                     * 客服登录的端信息
+                     */
+                    std::vector<Client> m_clientInfo;
+                    bool m_clientInfoHasBeenSet;
 
                 };
             }

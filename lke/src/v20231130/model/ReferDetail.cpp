@@ -33,7 +33,8 @@ ReferDetail::ReferDetail() :
     m_orgDataHasBeenSet(false),
     m_pageInfosHasBeenSet(false),
     m_sheetInfosHasBeenSet(false),
-    m_docBizIdHasBeenSet(false)
+    m_docBizIdHasBeenSet(false),
+    m_knowledgeBizIdHasBeenSet(false)
 {
 }
 
@@ -188,6 +189,16 @@ CoreInternalOutcome ReferDetail::Deserialize(const rapidjson::Value &value)
         m_docBizIdHasBeenSet = true;
     }
 
+    if (value.HasMember("KnowledgeBizId") && !value["KnowledgeBizId"].IsNull())
+    {
+        if (!value["KnowledgeBizId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReferDetail.KnowledgeBizId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_knowledgeBizId = string(value["KnowledgeBizId"].GetString());
+        m_knowledgeBizIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -314,6 +325,14 @@ void ReferDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "DocBizId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_docBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_knowledgeBizId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -525,5 +544,21 @@ void ReferDetail::SetDocBizId(const string& _docBizId)
 bool ReferDetail::DocBizIdHasBeenSet() const
 {
     return m_docBizIdHasBeenSet;
+}
+
+string ReferDetail::GetKnowledgeBizId() const
+{
+    return m_knowledgeBizId;
+}
+
+void ReferDetail::SetKnowledgeBizId(const string& _knowledgeBizId)
+{
+    m_knowledgeBizId = _knowledgeBizId;
+    m_knowledgeBizIdHasBeenSet = true;
+}
+
+bool ReferDetail::KnowledgeBizIdHasBeenSet() const
+{
+    return m_knowledgeBizIdHasBeenSet;
 }
 

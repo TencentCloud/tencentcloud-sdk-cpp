@@ -31,7 +31,8 @@ ListDocRequest::ListDocRequest() :
     m_queryTypeHasBeenSet(false),
     m_cateBizIdHasBeenSet(false),
     m_fileTypesHasBeenSet(false),
-    m_filterFlagHasBeenSet(false)
+    m_filterFlagHasBeenSet(false),
+    m_showCurrCateHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,14 @@ string ListDocRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_showCurrCateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowCurrCate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_showCurrCate, allocator);
     }
 
 
@@ -281,6 +290,22 @@ void ListDocRequest::SetFilterFlag(const vector<DocFilterFlag>& _filterFlag)
 bool ListDocRequest::FilterFlagHasBeenSet() const
 {
     return m_filterFlagHasBeenSet;
+}
+
+uint64_t ListDocRequest::GetShowCurrCate() const
+{
+    return m_showCurrCate;
+}
+
+void ListDocRequest::SetShowCurrCate(const uint64_t& _showCurrCate)
+{
+    m_showCurrCate = _showCurrCate;
+    m_showCurrCateHasBeenSet = true;
+}
+
+bool ListDocRequest::ShowCurrCateHasBeenSet() const
+{
+    return m_showCurrCateHasBeenSet;
 }
 
 

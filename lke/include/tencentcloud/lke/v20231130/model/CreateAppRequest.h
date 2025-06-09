@@ -85,6 +85,27 @@ namespace TencentCloud
                      */
                     bool BaseConfigHasBeenSet() const;
 
+                    /**
+                     * 获取应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * @return Pattern 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * 
+                     */
+                    std::string GetPattern() const;
+
+                    /**
+                     * 设置应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * @param _pattern 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * 
+                     */
+                    void SetPattern(const std::string& _pattern);
+
+                    /**
+                     * 判断参数 Pattern 是否已赋值
+                     * @return Pattern 是否已赋值
+                     * 
+                     */
+                    bool PatternHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +119,12 @@ namespace TencentCloud
                      */
                     BaseConfig m_baseConfig;
                     bool m_baseConfigHasBeenSet;
+
+                    /**
+                     * 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     */
+                    std::string m_pattern;
+                    bool m_patternHasBeenSet;
 
                 };
             }

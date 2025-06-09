@@ -47,7 +47,8 @@ DescribeDocResponse::DescribeDocResponse() :
     m_isAllowEditHasBeenSet(false),
     m_attrRangeHasBeenSet(false),
     m_attrLabelsHasBeenSet(false),
-    m_cateBizIdHasBeenSet(false)
+    m_cateBizIdHasBeenSet(false),
+    m_isDisabledHasBeenSet(false)
 {
 }
 
@@ -335,6 +336,16 @@ CoreInternalOutcome DescribeDocResponse::Deserialize(const string &payload)
         m_cateBizIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsDisabled") && !rsp["IsDisabled"].IsNull())
+    {
+        if (!rsp["IsDisabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDisabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDisabled = rsp["IsDisabled"].GetBool();
+        m_isDisabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -542,6 +553,14 @@ string DescribeDocResponse::ToJsonString() const
         string key = "CateBizId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDisabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDisabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDisabled, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -794,6 +813,16 @@ string DescribeDocResponse::GetCateBizId() const
 bool DescribeDocResponse::CateBizIdHasBeenSet() const
 {
     return m_cateBizIdHasBeenSet;
+}
+
+bool DescribeDocResponse::GetIsDisabled() const
+{
+    return m_isDisabled;
+}
+
+bool DescribeDocResponse::IsDisabledHasBeenSet() const
+{
+    return m_isDisabledHasBeenSet;
 }
 
 

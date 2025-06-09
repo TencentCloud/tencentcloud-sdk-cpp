@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool DiskBackupQuotaHasBeenSet() const;
 
                     /**
-                     * 获取创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。
-                     * @return BurstPerformance 创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。
+                     * 获取创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）且云盘大小不小于460GiB。
+                     * @return BurstPerformance 创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）且云盘大小不小于460GiB。
                      * 
                      */
                     bool GetBurstPerformance() const;
 
                     /**
-                     * 设置创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。
-                     * @param _burstPerformance 创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。
+                     * 设置创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）且云盘大小不小于460GiB。
+                     * @param _burstPerformance 创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）且云盘大小不小于460GiB。
                      * 
                      */
                     void SetBurstPerformance(const bool& _burstPerformance);
@@ -550,7 +550,7 @@ namespace TencentCloud
                     bool m_diskBackupQuotaHasBeenSet;
 
                     /**
-                     * 创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。
+                     * 创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）且云盘大小不小于460GiB。
                      */
                     bool m_burstPerformance;
                     bool m_burstPerformanceHasBeenSet;

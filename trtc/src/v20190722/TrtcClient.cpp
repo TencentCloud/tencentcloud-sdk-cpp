@@ -341,6 +341,49 @@ TrtcClient::DeletePictureOutcomeCallable TrtcClient::DeletePictureCallable(const
     return task->get_future();
 }
 
+TrtcClient::DeleteVoicePrintOutcome TrtcClient::DeleteVoicePrint(const DeleteVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVoicePrintResponse rsp = DeleteVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVoicePrintOutcome(rsp);
+        else
+            return DeleteVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteVoicePrintAsync(const DeleteVoicePrintRequest& request, const DeleteVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DeleteVoicePrintOutcomeCallable TrtcClient::DeleteVoicePrintCallable(const DeleteVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVoicePrint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeAIConversationOutcome TrtcClient::DescribeAIConversation(const DescribeAIConversationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAIConversation");
@@ -1459,6 +1502,49 @@ TrtcClient::DescribeUserInfoOutcomeCallable TrtcClient::DescribeUserInfoCallable
     return task->get_future();
 }
 
+TrtcClient::DescribeVoicePrintOutcome TrtcClient::DescribeVoicePrint(const DescribeVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVoicePrintResponse rsp = DescribeVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVoicePrintOutcome(rsp);
+        else
+            return DescribeVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeVoicePrintAsync(const DescribeVoicePrintRequest& request, const DescribeVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeVoicePrintOutcomeCallable TrtcClient::DescribeVoicePrintCallable(const DescribeVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVoicePrint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeWebRecordOutcome TrtcClient::DescribeWebRecord(const DescribeWebRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWebRecord");
@@ -1667,6 +1753,49 @@ TrtcClient::ModifyPictureOutcomeCallable TrtcClient::ModifyPictureCallable(const
         [this, request]()
         {
             return this->ModifyPicture(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::RegisterVoicePrintOutcome TrtcClient::RegisterVoicePrint(const RegisterVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegisterVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegisterVoicePrintResponse rsp = RegisterVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegisterVoicePrintOutcome(rsp);
+        else
+            return RegisterVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return RegisterVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::RegisterVoicePrintAsync(const RegisterVoicePrintRequest& request, const RegisterVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RegisterVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::RegisterVoicePrintOutcomeCallable TrtcClient::RegisterVoicePrintCallable(const RegisterVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RegisterVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->RegisterVoicePrint(request);
         }
     );
 
@@ -2484,6 +2613,49 @@ TrtcClient::UpdateStreamIngestOutcomeCallable TrtcClient::UpdateStreamIngestCall
         [this, request]()
         {
             return this->UpdateStreamIngest(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::UpdateVoicePrintOutcome TrtcClient::UpdateVoicePrint(const UpdateVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateVoicePrintResponse rsp = UpdateVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateVoicePrintOutcome(rsp);
+        else
+            return UpdateVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::UpdateVoicePrintAsync(const UpdateVoicePrintRequest& request, const UpdateVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::UpdateVoicePrintOutcomeCallable TrtcClient::UpdateVoicePrintCallable(const UpdateVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateVoicePrint(request);
         }
     );
 

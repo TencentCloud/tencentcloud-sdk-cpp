@@ -119,12 +119,14 @@ namespace TencentCloud
 <li>DELETE:  删除</li>
 <li>ENABLE: 启用</li>
 <li>DISABLE: 停用</li>
+<li>COPY: 复制新建</li>
 </ul>
                      * @return OperateType 操作类型，可取值如下:
 <ul>
 <li>DELETE:  删除</li>
 <li>ENABLE: 启用</li>
 <li>DISABLE: 停用</li>
+<li>COPY: 复制新建</li>
 </ul>
                      * 
                      */
@@ -136,12 +138,14 @@ namespace TencentCloud
 <li>DELETE:  删除</li>
 <li>ENABLE: 启用</li>
 <li>DISABLE: 停用</li>
+<li>COPY: 复制新建</li>
 </ul>
                      * @param _operateType 操作类型，可取值如下:
 <ul>
 <li>DELETE:  删除</li>
 <li>ENABLE: 启用</li>
 <li>DISABLE: 停用</li>
+<li>COPY: 复制新建</li>
 </ul>
                      * 
                      */
@@ -181,6 +185,7 @@ namespace TencentCloud
 <li>DELETE:  删除</li>
 <li>ENABLE: 启用</li>
 <li>DISABLE: 停用</li>
+<li>COPY: 复制新建</li>
 </ul>
                      */
                     std::string m_operateType;

@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
+                     * 获取围笼Id，可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CageId 围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
+                     * @return CageId 围笼Id，可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCageId() const;
 
                     /**
-                     * 设置围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
+                     * 设置围笼Id，可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cageId 围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
+                     * @param _cageId 围笼Id，可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,18 +164,18 @@ namespace TencentCloud
                     bool CdcNameHasBeenSet() const;
 
                     /**
-                     * 获取实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
+                     * 获取实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CdcId 实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
+                     * @return CdcId 实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
+                     * 设置实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cdcId 实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
+                     * @param _cdcId 实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -218,7 +218,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
+                     * 围笼Id，可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cageId;
@@ -245,7 +245,7 @@ namespace TencentCloud
                     bool m_cdcNameHasBeenSet;
 
                     /**
-                     * 实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
+                     * 实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;

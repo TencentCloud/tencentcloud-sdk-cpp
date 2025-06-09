@@ -509,6 +509,27 @@ namespace TencentCloud
                      */
                     bool SimilarQuestionTipsHasBeenSet() const;
 
+                    /**
+                     * 获取问答是否停用，false:未停用，ture:已停用
+                     * @return IsDisabled 问答是否停用，false:未停用，ture:已停用
+                     * 
+                     */
+                    bool GetIsDisabled() const;
+
+                    /**
+                     * 设置问答是否停用，false:未停用，ture:已停用
+                     * @param _isDisabled 问答是否停用，false:未停用，ture:已停用
+                     * 
+                     */
+                    void SetIsDisabled(const bool& _isDisabled);
+
+                    /**
+                     * 判断参数 IsDisabled 是否已赋值
+                     * @return IsDisabled 是否已赋值
+                     * 
+                     */
+                    bool IsDisabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -642,6 +663,12 @@ namespace TencentCloud
                      */
                     std::string m_similarQuestionTips;
                     bool m_similarQuestionTipsHasBeenSet;
+
+                    /**
+                     * 问答是否停用，false:未停用，ture:已停用
+                     */
+                    bool m_isDisabled;
+                    bool m_isDisabledHasBeenSet;
 
                 };
             }

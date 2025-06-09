@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Cos TaskFilter 
+                * Cos TaskFilter
                 */
                 class TaskFilter : public AbstractModel
                 {

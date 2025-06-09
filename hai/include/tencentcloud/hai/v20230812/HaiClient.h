@@ -43,6 +43,8 @@
 #include <tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsResponse.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h>
+#include <tencentcloud/hai/v20230812/model/ResetInstancesPasswordRequest.h>
+#include <tencentcloud/hai/v20230812/model/ResetInstancesPasswordResponse.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesResponse.h>
 #include <tencentcloud/hai/v20230812/model/StartInstanceRequest.h>
@@ -95,6 +97,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceRunInstancesResponse> InquirePriceRunInstancesOutcome;
                 typedef std::future<InquirePriceRunInstancesOutcome> InquirePriceRunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::InquirePriceRunInstancesRequest&, InquirePriceRunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRunInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetInstancesPasswordResponse> ResetInstancesPasswordOutcome;
+                typedef std::future<ResetInstancesPasswordOutcome> ResetInstancesPasswordOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::ResetInstancesPasswordRequest&, ResetInstancesPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunInstancesResponse> RunInstancesOutcome;
                 typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::RunInstancesRequest&, RunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunInstancesAsyncHandler;
@@ -199,6 +204,15 @@ namespace TencentCloud
                 InquirePriceRunInstancesOutcome InquirePriceRunInstances(const Model::InquirePriceRunInstancesRequest &request);
                 void InquirePriceRunInstancesAsync(const Model::InquirePriceRunInstancesRequest& request, const InquirePriceRunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquirePriceRunInstancesOutcomeCallable InquirePriceRunInstancesCallable(const Model::InquirePriceRunInstancesRequest& request);
+
+                /**
+                 *本接口 (ResetInstancesPassword) 用于重置实例的用户密码。
+                 * @param req ResetInstancesPasswordRequest
+                 * @return ResetInstancesPasswordOutcome
+                 */
+                ResetInstancesPasswordOutcome ResetInstancesPassword(const Model::ResetInstancesPasswordRequest &request);
+                void ResetInstancesPasswordAsync(const Model::ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetInstancesPasswordOutcomeCallable ResetInstancesPasswordCallable(const Model::ResetInstancesPasswordRequest& request);
 
                 /**
                  *本接口 (RunInstances) 用于创建一个或多个指定配置的实例。

@@ -54,7 +54,8 @@ ListDocItem::ListDocItem() :
     m_createTimeHasBeenSet(false),
     m_cateBizIdHasBeenSet(false),
     m_customerKnowledgeIdHasBeenSet(false),
-    m_attributeFlagsHasBeenSet(false)
+    m_attributeFlagsHasBeenSet(false),
+    m_isDisabledHasBeenSet(false)
 {
 }
 
@@ -419,6 +420,16 @@ CoreInternalOutcome ListDocItem::Deserialize(const rapidjson::Value &value)
         m_attributeFlagsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDisabled") && !value["IsDisabled"].IsNull())
+    {
+        if (!value["IsDisabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.IsDisabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDisabled = value["IsDisabled"].GetBool();
+        m_isDisabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -713,6 +724,14 @@ void ListDocItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_isDisabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDisabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDisabled, allocator);
     }
 
 }
@@ -1260,5 +1279,21 @@ void ListDocItem::SetAttributeFlags(const vector<uint64_t>& _attributeFlags)
 bool ListDocItem::AttributeFlagsHasBeenSet() const
 {
     return m_attributeFlagsHasBeenSet;
+}
+
+bool ListDocItem::GetIsDisabled() const
+{
+    return m_isDisabled;
+}
+
+void ListDocItem::SetIsDisabled(const bool& _isDisabled)
+{
+    m_isDisabled = _isDisabled;
+    m_isDisabledHasBeenSet = true;
+}
+
+bool ListDocItem::IsDisabledHasBeenSet() const
+{
+    return m_isDisabledHasBeenSet;
 }
 

@@ -107,14 +107,22 @@ namespace TencentCloud
 
                     /**
                      * 获取查询问题
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的问答
                      * @return Query 查询问题
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的问答
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置查询问题
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的问答
                      * @param _query 查询问题
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的问答
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -294,6 +302,27 @@ namespace TencentCloud
                      */
                     bool QueryTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否只展示当前分类的数据 0不是，1是
+                     * @return ShowCurrCate 是否只展示当前分类的数据 0不是，1是
+                     * 
+                     */
+                    uint64_t GetShowCurrCate() const;
+
+                    /**
+                     * 设置是否只展示当前分类的数据 0不是，1是
+                     * @param _showCurrCate 是否只展示当前分类的数据 0不是，1是
+                     * 
+                     */
+                    void SetShowCurrCate(const uint64_t& _showCurrCate);
+
+                    /**
+                     * 判断参数 ShowCurrCate 是否已赋值
+                     * @return ShowCurrCate 是否已赋值
+                     * 
+                     */
+                    bool ShowCurrCateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -316,6 +345,8 @@ namespace TencentCloud
 
                     /**
                      * 查询问题
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的问答
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
@@ -367,6 +398,12 @@ namespace TencentCloud
                      */
                     std::string m_queryType;
                     bool m_queryTypeHasBeenSet;
+
+                    /**
+                     * 是否只展示当前分类的数据 0不是，1是
+                     */
+                    uint64_t m_showCurrCate;
+                    bool m_showCurrCateHasBeenSet;
 
                 };
             }

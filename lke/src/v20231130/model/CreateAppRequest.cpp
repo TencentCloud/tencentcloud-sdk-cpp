@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAppRequest::CreateAppRequest() :
     m_appTypeHasBeenSet(false),
-    m_baseConfigHasBeenSet(false)
+    m_baseConfigHasBeenSet(false),
+    m_patternHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string CreateAppRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_baseConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_patternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pattern";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void CreateAppRequest::SetBaseConfig(const BaseConfig& _baseConfig)
 bool CreateAppRequest::BaseConfigHasBeenSet() const
 {
     return m_baseConfigHasBeenSet;
+}
+
+string CreateAppRequest::GetPattern() const
+{
+    return m_pattern;
+}
+
+void CreateAppRequest::SetPattern(const string& _pattern)
+{
+    m_pattern = _pattern;
+    m_patternHasBeenSet = true;
+}
+
+bool CreateAppRequest::PatternHasBeenSet() const
+{
+    return m_patternHasBeenSet;
 }
 
 

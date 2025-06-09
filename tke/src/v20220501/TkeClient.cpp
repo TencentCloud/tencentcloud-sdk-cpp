@@ -126,6 +126,49 @@ TkeClient::CreateNodePoolOutcomeCallable TkeClient::CreateNodePoolCallable(const
     return task->get_future();
 }
 
+TkeClient::DeleteClusterMachinesOutcome TkeClient::DeleteClusterMachines(const DeleteClusterMachinesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterMachines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterMachinesResponse rsp = DeleteClusterMachinesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterMachinesOutcome(rsp);
+        else
+            return DeleteClusterMachinesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterMachinesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterMachinesAsync(const DeleteClusterMachinesRequest& request, const DeleteClusterMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterMachines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteClusterMachinesOutcomeCallable TkeClient::DeleteClusterMachinesCallable(const DeleteClusterMachinesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterMachinesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterMachines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DeleteHealthCheckPolicyOutcome TkeClient::DeleteHealthCheckPolicy(const DeleteHealthCheckPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteHealthCheckPolicy");

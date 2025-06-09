@@ -1584,6 +1584,27 @@ null：用户上传证书（没有套餐类型），
                      */
                     bool HostingConfigHasBeenSet() const;
 
+                    /**
+                     * 获取是否是上传托管续费证书
+                     * @return IsHostingUploadRenewCert 是否是上传托管续费证书
+                     * 
+                     */
+                    bool GetIsHostingUploadRenewCert() const;
+
+                    /**
+                     * 设置是否是上传托管续费证书
+                     * @param _isHostingUploadRenewCert 是否是上传托管续费证书
+                     * 
+                     */
+                    void SetIsHostingUploadRenewCert(const bool& _isHostingUploadRenewCert);
+
+                    /**
+                     * 判断参数 IsHostingUploadRenewCert 是否已赋值
+                     * @return IsHostingUploadRenewCert 是否已赋值
+                     * 
+                     */
+                    bool IsHostingUploadRenewCertHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2010,6 +2031,12 @@ null：用户上传证书（没有套餐类型），
                      */
                     HostingConfig m_hostingConfig;
                     bool m_hostingConfigHasBeenSet;
+
+                    /**
+                     * 是否是上传托管续费证书
+                     */
+                    bool m_isHostingUploadRenewCert;
+                    bool m_isHostingUploadRenewCertHasBeenSet;
 
                 };
             }

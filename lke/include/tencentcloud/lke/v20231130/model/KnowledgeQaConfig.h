@@ -34,6 +34,7 @@
 #include <tencentcloud/lke/v20231130/model/KnowledgeQaPlugin.h>
 #include <tencentcloud/lke/v20231130/model/IntentAchievement.h>
 #include <tencentcloud/lke/v20231130/model/AICallConfig.h>
+#include <tencentcloud/lke/v20231130/model/ShareKnowledgeBase.h>
 
 
 namespace TencentCloud
@@ -479,6 +480,27 @@ namespace TencentCloud
                      */
                     bool AiCallHasBeenSet() const;
 
+                    /**
+                     * 获取共享知识库关联配置
+                     * @return ShareKnowledgeBases 共享知识库关联配置
+                     * 
+                     */
+                    std::vector<ShareKnowledgeBase> GetShareKnowledgeBases() const;
+
+                    /**
+                     * 设置共享知识库关联配置
+                     * @param _shareKnowledgeBases 共享知识库关联配置
+                     * 
+                     */
+                    void SetShareKnowledgeBases(const std::vector<ShareKnowledgeBase>& _shareKnowledgeBases);
+
+                    /**
+                     * 判断参数 ShareKnowledgeBases 是否已赋值
+                     * @return ShareKnowledgeBases 是否已赋值
+                     * 
+                     */
+                    bool ShareKnowledgeBasesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -597,6 +619,12 @@ namespace TencentCloud
                      */
                     AICallConfig m_aiCall;
                     bool m_aiCallHasBeenSet;
+
+                    /**
+                     * 共享知识库关联配置
+                     */
+                    std::vector<ShareKnowledgeBase> m_shareKnowledgeBases;
+                    bool m_shareKnowledgeBasesHasBeenSet;
 
                 };
             }

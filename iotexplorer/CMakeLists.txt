@@ -402,6 +402,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/BindCloudStorageUserResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicPolicyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeviceActivationDetail.h
+  include/tencentcloud/iotexplorer/v20190423/model/DiarySHLConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/UnbindDevicesResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/TargetInfo.h
@@ -810,6 +811,7 @@ set(iotexplorer_src
   src/v20190423/model/BindCloudStorageUserResponse.cpp
   src/v20190423/model/DeleteTopicPolicyResponse.cpp
   src/v20190423/model/DeviceActivationDetail.cpp
+  src/v20190423/model/DiarySHLConfig.cpp
   src/v20190423/model/UnbindDevicesResponse.cpp
   src/v20190423/model/CreateBatchProductionResponse.cpp
   src/v20190423/model/TargetInfo.cpp

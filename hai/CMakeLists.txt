@@ -23,6 +23,7 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/StopInstanceRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsResponse.h
+  include/tencentcloud/hai/v20230812/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusResponse.h
   include/tencentcloud/hai/v20230812/model/Instance.h
   include/tencentcloud/hai/v20230812/model/TerminateInstancesResponse.h
@@ -37,6 +38,7 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/DescribeApplicationsRequest.h
   include/tencentcloud/hai/v20230812/model/SceneInfo.h
   include/tencentcloud/hai/v20230812/model/CreateApplicationRequest.h
+  include/tencentcloud/hai/v20230812/model/ResetInstancesPasswordRequest.h
   include/tencentcloud/hai/v20230812/model/RunInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/SystemDisk.h
@@ -69,6 +71,7 @@ set(hai_src
   src/v20230812/model/InquirePriceRunInstancesResponse.cpp
   src/v20230812/model/StopInstanceRequest.cpp
   src/v20230812/model/DescribeServiceLoginSettingsResponse.cpp
+  src/v20230812/model/ResetInstancesPasswordResponse.cpp
   src/v20230812/model/DescribeInstanceNetworkStatusResponse.cpp
   src/v20230812/model/Instance.cpp
   src/v20230812/model/TerminateInstancesResponse.cpp
@@ -83,6 +86,7 @@ set(hai_src
   src/v20230812/model/DescribeApplicationsRequest.cpp
   src/v20230812/model/SceneInfo.cpp
   src/v20230812/model/CreateApplicationRequest.cpp
+  src/v20230812/model/ResetInstancesPasswordRequest.cpp
   src/v20230812/model/RunInstancesRequest.cpp
   src/v20230812/model/DescribeInstancesResponse.cpp
   src/v20230812/model/SystemDisk.cpp

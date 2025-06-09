@@ -380,6 +380,20 @@ namespace TencentCloud
                      */
                     bool CateBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取文档是否停用，false:未停用，true:已停用
+                     * @return IsDisabled 文档是否停用，false:未停用，true:已停用
+                     * 
+                     */
+                    bool GetIsDisabled() const;
+
+                    /**
+                     * 判断参数 IsDisabled 是否已赋值
+                     * @return IsDisabled 是否已赋值
+                     * 
+                     */
+                    bool IsDisabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -525,6 +539,12 @@ namespace TencentCloud
                      */
                     std::string m_cateBizId;
                     bool m_cateBizIdHasBeenSet;
+
+                    /**
+                     * 文档是否停用，false:未停用，true:已停用
+                     */
+                    bool m_isDisabled;
+                    bool m_isDisabledHasBeenSet;
 
                 };
             }

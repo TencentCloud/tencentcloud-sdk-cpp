@@ -85,6 +85,8 @@
 #include <tencentcloud/gs/v20191118/model/DisableAndroidInstancesAppResponse.h>
 #include <tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesResponse.h>
+#include <tencentcloud/gs/v20191118/model/DistributePhotoToAndroidInstancesRequest.h>
+#include <tencentcloud/gs/v20191118/model/DistributePhotoToAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/EnableAndroidInstancesAppRequest.h>
 #include <tencentcloud/gs/v20191118/model/EnableAndroidInstancesAppResponse.h>
 #include <tencentcloud/gs/v20191118/model/ExecuteCommandOnAndroidInstancesRequest.h>
@@ -272,6 +274,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DistributeFileToAndroidInstancesResponse> DistributeFileToAndroidInstancesOutcome;
                 typedef std::future<DistributeFileToAndroidInstancesOutcome> DistributeFileToAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DistributeFileToAndroidInstancesRequest&, DistributeFileToAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeFileToAndroidInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DistributePhotoToAndroidInstancesResponse> DistributePhotoToAndroidInstancesOutcome;
+                typedef std::future<DistributePhotoToAndroidInstancesOutcome> DistributePhotoToAndroidInstancesOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DistributePhotoToAndroidInstancesRequest&, DistributePhotoToAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributePhotoToAndroidInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableAndroidInstancesAppResponse> EnableAndroidInstancesAppOutcome;
                 typedef std::future<EnableAndroidInstancesAppOutcome> EnableAndroidInstancesAppOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::EnableAndroidInstancesAppRequest&, EnableAndroidInstancesAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableAndroidInstancesAppAsyncHandler;
@@ -472,7 +477,7 @@ namespace TencentCloud
                 CreateAndroidInstanceImageOutcomeCallable CreateAndroidInstanceImageCallable(const Model::CreateAndroidInstanceImageRequest& request);
 
                 /**
-                 *创建安卓实例
+                 *创建安卓实例标签
                  * @param req CreateAndroidInstanceLabelRequest
                  * @return CreateAndroidInstanceLabelOutcome
                  */
@@ -562,7 +567,7 @@ namespace TencentCloud
                 DeleteAndroidInstanceImagesOutcomeCallable DeleteAndroidInstanceImagesCallable(const Model::DeleteAndroidInstanceImagesRequest& request);
 
                 /**
-                 *创建安卓实例
+                 *删除安卓实例标签
                  * @param req DeleteAndroidInstanceLabelRequest
                  * @return DeleteAndroidInstanceLabelOutcome
                  */
@@ -598,7 +603,7 @@ namespace TencentCloud
                 DescribeAndroidInstanceImagesOutcomeCallable DescribeAndroidInstanceImagesCallable(const Model::DescribeAndroidInstanceImagesRequest& request);
 
                 /**
-                 *创建安卓实例
+                 *查询安卓实例标签
                  * @param req DescribeAndroidInstanceLabelsRequest
                  * @return DescribeAndroidInstanceLabelsOutcome
                  */
@@ -679,6 +684,15 @@ namespace TencentCloud
                 DistributeFileToAndroidInstancesOutcomeCallable DistributeFileToAndroidInstancesCallable(const Model::DistributeFileToAndroidInstancesRequest& request);
 
                 /**
+                 *将一张照片批量分发到多个实例的相册中，一次接口调用触发一次照片分发，一次照片分发只会从公网下载一次，然后照片会走内网分发到实例列表中的实例。
+                 * @param req DistributePhotoToAndroidInstancesRequest
+                 * @return DistributePhotoToAndroidInstancesOutcome
+                 */
+                DistributePhotoToAndroidInstancesOutcome DistributePhotoToAndroidInstances(const Model::DistributePhotoToAndroidInstancesRequest &request);
+                void DistributePhotoToAndroidInstancesAsync(const Model::DistributePhotoToAndroidInstancesRequest& request, const DistributePhotoToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DistributePhotoToAndroidInstancesOutcomeCallable DistributePhotoToAndroidInstancesCallable(const Model::DistributePhotoToAndroidInstancesRequest& request);
+
+                /**
                  *批量启用安卓实例应用
                  * @param req EnableAndroidInstancesAppRequest
                  * @return EnableAndroidInstancesAppOutcome
@@ -724,7 +738,7 @@ namespace TencentCloud
                 InstallAndroidInstancesAppOutcomeCallable InstallAndroidInstancesAppCallable(const Model::InstallAndroidInstancesAppRequest& request);
 
                 /**
-                 *安装安卓实例应用
+                 *通过 URL 安装安卓实例应用
                  * @param req InstallAndroidInstancesAppWithURLRequest
                  * @return InstallAndroidInstancesAppWithURLOutcome
                  */
@@ -787,7 +801,7 @@ namespace TencentCloud
                 ModifyAndroidInstancesInformationOutcomeCallable ModifyAndroidInstancesInformationCallable(const Model::ModifyAndroidInstancesInformationRequest& request);
 
                 /**
-                 *修改安卓实例分辨率。需要注意的是该接口可能导致正在运行的应用出现闪退，所以建议在实例维护时期才进行调用。
+                 *批量修改安卓实例的标签
                  * @param req ModifyAndroidInstancesLabelsRequest
                  * @return ModifyAndroidInstancesLabelsOutcome
                  */
@@ -862,7 +876,7 @@ namespace TencentCloud
                 ResetAndroidInstancesOutcomeCallable ResetAndroidInstancesCallable(const Model::ResetAndroidInstancesRequest& request);
 
                 /**
-                 *启动安卓实例应用
+                 *重启安卓实例应用
                  * @param req RestartAndroidInstancesAppRequest
                  * @return RestartAndroidInstancesAppOutcome
                  */
@@ -907,7 +921,7 @@ namespace TencentCloud
                 SetAndroidInstancesFGAppKeepAliveOutcomeCallable SetAndroidInstancesFGAppKeepAliveCallable(const Model::SetAndroidInstancesFGAppKeepAliveRequest& request);
 
                 /**
-                 *重启安卓实例
+                 *开机安卓实例
                  * @param req StartAndroidInstancesRequest
                  * @return StartAndroidInstancesOutcome
                  */
@@ -943,7 +957,7 @@ namespace TencentCloud
                 StartPublishStreamToCSSOutcomeCallable StartPublishStreamToCSSCallable(const Model::StartPublishStreamToCSSRequest& request);
 
                 /**
-                 *重启安卓实例
+                 *关机安卓实例
                  * @param req StopAndroidInstancesRequest
                  * @return StopAndroidInstancesOutcome
                  */

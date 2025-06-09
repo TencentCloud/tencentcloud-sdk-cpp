@@ -28,7 +28,8 @@ DescribeBackupFilesRequest::DescribeBackupFilesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_orderByHasBeenSet(false)
+    m_orderByHasBeenSet(false),
+    m_orderByTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeBackupFilesRequest::ToJsonString() const
         string key = "OrderBy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderByType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderByType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeBackupFilesRequest::SetOrderBy(const string& _orderBy)
 bool DescribeBackupFilesRequest::OrderByHasBeenSet() const
 {
     return m_orderByHasBeenSet;
+}
+
+string DescribeBackupFilesRequest::GetOrderByType() const
+{
+    return m_orderByType;
+}
+
+void DescribeBackupFilesRequest::SetOrderByType(const string& _orderByType)
+{
+    m_orderByType = _orderByType;
+    m_orderByTypeHasBeenSet = true;
+}
+
+bool DescribeBackupFilesRequest::OrderByTypeHasBeenSet() const
+{
+    return m_orderByTypeHasBeenSet;
 }
 
 

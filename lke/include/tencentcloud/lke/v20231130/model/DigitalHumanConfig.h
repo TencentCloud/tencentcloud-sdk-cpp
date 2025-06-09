@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool AvatarHasBeenSet() const;
 
+                    /**
+                     * 获取预览图
+                     * @return PreviewUrl 预览图
+                     * 
+                     */
+                    std::string GetPreviewUrl() const;
+
+                    /**
+                     * 设置预览图
+                     * @param _previewUrl 预览图
+                     * 
+                     */
+                    void SetPreviewUrl(const std::string& _previewUrl);
+
+                    /**
+                     * 判断参数 PreviewUrl 是否已赋值
+                     * @return PreviewUrl 是否已赋值
+                     * 
+                     */
+                    bool PreviewUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_avatar;
                     bool m_avatarHasBeenSet;
+
+                    /**
+                     * 预览图
+                     */
+                    std::string m_previewUrl;
+                    bool m_previewUrlHasBeenSet;
 
                 };
             }

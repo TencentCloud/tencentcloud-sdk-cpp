@@ -470,6 +470,49 @@ HaiClient::InquirePriceRunInstancesOutcomeCallable HaiClient::InquirePriceRunIns
     return task->get_future();
 }
 
+HaiClient::ResetInstancesPasswordOutcome HaiClient::ResetInstancesPassword(const ResetInstancesPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetInstancesPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetInstancesPasswordResponse rsp = ResetInstancesPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetInstancesPasswordOutcome(rsp);
+        else
+            return ResetInstancesPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetInstancesPasswordOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::ResetInstancesPasswordAsync(const ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetInstancesPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::ResetInstancesPasswordOutcomeCallable HaiClient::ResetInstancesPasswordCallable(const ResetInstancesPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetInstancesPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetInstancesPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HaiClient::RunInstancesOutcome HaiClient::RunInstances(const RunInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RunInstances");

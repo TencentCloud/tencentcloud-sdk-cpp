@@ -874,6 +874,34 @@ null：用户上传证书（没有套餐类型），
                      */
                     bool CertChainInfoHasBeenSet() const;
 
+                    /**
+                     * 获取证书域名类型， 1（单域名）；2（多域名）；3（泛域名）；4（多泛域名）
+                     * @return DomainType 证书域名类型， 1（单域名）；2（多域名）；3（泛域名）；4（多泛域名）
+                     * 
+                     */
+                    uint64_t GetDomainType() const;
+
+                    /**
+                     * 判断参数 DomainType 是否已赋值
+                     * @return DomainType 是否已赋值
+                     * 
+                     */
+                    bool DomainTypeHasBeenSet() const;
+
+                    /**
+                     * 获取证书类型，DV（域名型）；OV（企业型）；EV（增强型）
+                     * @return CertType 证书类型，DV（域名型）；OV（企业型）；EV（增强型）
+                     * 
+                     */
+                    std::string GetCertType() const;
+
+                    /**
+                     * 判断参数 CertType 是否已赋值
+                     * @return CertType 是否已赋值
+                     * 
+                     */
+                    bool CertTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1245,6 +1273,18 @@ null：用户上传证书（没有套餐类型），
                      */
                     std::vector<CertBasicInfo> m_certChainInfo;
                     bool m_certChainInfoHasBeenSet;
+
+                    /**
+                     * 证书域名类型， 1（单域名）；2（多域名）；3（泛域名）；4（多泛域名）
+                     */
+                    uint64_t m_domainType;
+                    bool m_domainTypeHasBeenSet;
+
+                    /**
+                     * 证书类型，DV（域名型）；OV（企业型）；EV（增强型）
+                     */
+                    std::string m_certType;
+                    bool m_certTypeHasBeenSet;
 
                 };
             }

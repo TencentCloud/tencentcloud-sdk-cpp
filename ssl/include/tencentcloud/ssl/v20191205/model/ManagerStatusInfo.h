@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ssl/v20191205/model/ManagerPreAuditDomain.h>
 
 
 namespace TencentCloud
@@ -130,6 +131,27 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取管理人预审核的域名列表
+                     * @return ManagerPreAuditDomains 管理人预审核的域名列表
+                     * 
+                     */
+                    std::vector<ManagerPreAuditDomain> GetManagerPreAuditDomains() const;
+
+                    /**
+                     * 设置管理人预审核的域名列表
+                     * @param _managerPreAuditDomains 管理人预审核的域名列表
+                     * 
+                     */
+                    void SetManagerPreAuditDomains(const std::vector<ManagerPreAuditDomain>& _managerPreAuditDomains);
+
+                    /**
+                     * 判断参数 ManagerPreAuditDomains 是否已赋值
+                     * @return ManagerPreAuditDomains 是否已赋值
+                     * 
+                     */
+                    bool ManagerPreAuditDomainsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +177,12 @@ namespace TencentCloud
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 管理人预审核的域名列表
+                     */
+                    std::vector<ManagerPreAuditDomain> m_managerPreAuditDomains;
+                    bool m_managerPreAuditDomainsHasBeenSet;
 
                 };
             }

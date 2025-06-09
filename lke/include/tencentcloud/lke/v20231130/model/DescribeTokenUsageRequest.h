@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool SubScenesHasBeenSet() const;
 
+                    /**
+                     * 获取应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)
+                     * @return AppType 应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)
+                     * 
+                     */
+                    std::string GetAppType() const;
+
+                    /**
+                     * 设置应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)
+                     * @param _appType 应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)
+                     * 
+                     */
+                    void SetAppType(const std::string& _appType);
+
+                    /**
+                     * 判断参数 AppType 是否已赋值
+                     * @return AppType 是否已赋值
+                     * 
+                     */
+                    bool AppTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_subScenes;
                     bool m_subScenesHasBeenSet;
+
+                    /**
+                     * 应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)
+                     */
+                    std::string m_appType;
+                    bool m_appTypeHasBeenSet;
 
                 };
             }

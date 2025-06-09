@@ -24,7 +24,9 @@ TaskFLowVar::TaskFLowVar() :
     m_varIdHasBeenSet(false),
     m_varNameHasBeenSet(false),
     m_varDescHasBeenSet(false),
-    m_varTypeHasBeenSet(false)
+    m_varTypeHasBeenSet(false),
+    m_varDefaultValueHasBeenSet(false),
+    m_varDefaultFileNameHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome TaskFLowVar::Deserialize(const rapidjson::Value &value)
         m_varTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("VarDefaultValue") && !value["VarDefaultValue"].IsNull())
+    {
+        if (!value["VarDefaultValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskFLowVar.VarDefaultValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_varDefaultValue = string(value["VarDefaultValue"].GetString());
+        m_varDefaultValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("VarDefaultFileName") && !value["VarDefaultFileName"].IsNull())
+    {
+        if (!value["VarDefaultFileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskFLowVar.VarDefaultFileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_varDefaultFileName = string(value["VarDefaultFileName"].GetString());
+        m_varDefaultFileNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void TaskFLowVar::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "VarType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_varType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_varDefaultValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VarDefaultValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_varDefaultValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_varDefaultFileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VarDefaultFileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_varDefaultFileName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void TaskFLowVar::SetVarType(const string& _varType)
 bool TaskFLowVar::VarTypeHasBeenSet() const
 {
     return m_varTypeHasBeenSet;
+}
+
+string TaskFLowVar::GetVarDefaultValue() const
+{
+    return m_varDefaultValue;
+}
+
+void TaskFLowVar::SetVarDefaultValue(const string& _varDefaultValue)
+{
+    m_varDefaultValue = _varDefaultValue;
+    m_varDefaultValueHasBeenSet = true;
+}
+
+bool TaskFLowVar::VarDefaultValueHasBeenSet() const
+{
+    return m_varDefaultValueHasBeenSet;
+}
+
+string TaskFLowVar::GetVarDefaultFileName() const
+{
+    return m_varDefaultFileName;
+}
+
+void TaskFLowVar::SetVarDefaultFileName(const string& _varDefaultFileName)
+{
+    m_varDefaultFileName = _varDefaultFileName;
+    m_varDefaultFileNameHasBeenSet = true;
+}
+
+bool TaskFLowVar::VarDefaultFileNameHasBeenSet() const
+{
+    return m_varDefaultFileNameHasBeenSet;
 }
 

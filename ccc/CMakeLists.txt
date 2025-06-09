@@ -148,7 +148,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/AITransferItem.h
   include/tencentcloud/ccc/v20200210/model/Filter.h
   include/tencentcloud/ccc/v20200210/model/AbortAgentCruiseDialingCampaignRequest.h
-  include/tencentcloud/ccc/v20200210/model/ForceMemberOfflineResponse.h
+  include/tencentcloud/ccc/v20200210/model/Client.h
   include/tencentcloud/ccc/v20200210/model/CreateOwnNumberApplyResponse.h
   include/tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupResponse.h
   include/tencentcloud/ccc/v20200210/model/HangUpCallResponse.h
@@ -207,6 +207,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribePredictiveDialingSessionsRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberRequest.h
+  include/tencentcloud/ccc/v20200210/model/ForceMemberOfflineResponse.h
   include/tencentcloud/ccc/v20200210/model/StaffBuyInfo.h
   include/tencentcloud/ccc/v20200210/model/CreateOwnNumberApplyRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeCallInMetricsRequest.h
@@ -345,7 +346,7 @@ set(ccc_src
   src/v20200210/model/AITransferItem.cpp
   src/v20200210/model/Filter.cpp
   src/v20200210/model/AbortAgentCruiseDialingCampaignRequest.cpp
-  src/v20200210/model/ForceMemberOfflineResponse.cpp
+  src/v20200210/model/Client.cpp
   src/v20200210/model/CreateOwnNumberApplyResponse.cpp
   src/v20200210/model/BindNumberCallOutSkillGroupResponse.cpp
   src/v20200210/model/HangUpCallResponse.cpp
@@ -404,6 +405,7 @@ set(ccc_src
   src/v20200210/model/DescribePredictiveDialingSessionsRequest.cpp
   src/v20200210/model/CreateSDKLoginTokenRequest.cpp
   src/v20200210/model/DescribeActiveCarrierPrivilegeNumberRequest.cpp
+  src/v20200210/model/ForceMemberOfflineResponse.cpp
   src/v20200210/model/StaffBuyInfo.cpp
   src/v20200210/model/CreateOwnNumberApplyRequest.cpp
   src/v20200210/model/DescribeCallInMetricsRequest.cpp

@@ -1373,6 +1373,49 @@ GsClient::DistributeFileToAndroidInstancesOutcomeCallable GsClient::DistributeFi
     return task->get_future();
 }
 
+GsClient::DistributePhotoToAndroidInstancesOutcome GsClient::DistributePhotoToAndroidInstances(const DistributePhotoToAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DistributePhotoToAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DistributePhotoToAndroidInstancesResponse rsp = DistributePhotoToAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DistributePhotoToAndroidInstancesOutcome(rsp);
+        else
+            return DistributePhotoToAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DistributePhotoToAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DistributePhotoToAndroidInstancesAsync(const DistributePhotoToAndroidInstancesRequest& request, const DistributePhotoToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DistributePhotoToAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DistributePhotoToAndroidInstancesOutcomeCallable GsClient::DistributePhotoToAndroidInstancesCallable(const DistributePhotoToAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DistributePhotoToAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DistributePhotoToAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::EnableAndroidInstancesAppOutcome GsClient::EnableAndroidInstancesApp(const EnableAndroidInstancesAppRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableAndroidInstancesApp");

@@ -86,14 +86,18 @@ namespace TencentCloud
 
                     /**
                      * 获取回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。
+此参数为true时，AutoStartInstance才能为true。
                      * @return AutoStopInstance 回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。
+此参数为true时，AutoStartInstance才能为true。
                      * 
                      */
                     bool GetAutoStopInstance() const;
 
                     /**
                      * 设置回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。
+此参数为true时，AutoStartInstance才能为true。
                      * @param _autoStopInstance 回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。
+此参数为true时，AutoStartInstance才能为true。
                      * 
                      */
                     void SetAutoStopInstance(const bool& _autoStopInstance);
@@ -142,6 +146,7 @@ namespace TencentCloud
 
                     /**
                      * 回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。
+此参数为true时，AutoStartInstance才能为true。
                      */
                     bool m_autoStopInstance;
                     bool m_autoStopInstanceHasBeenSet;

@@ -23,7 +23,8 @@ using namespace std;
 DigitalHumanConfig::DigitalHumanConfig() :
     m_assetKeyHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_avatarHasBeenSet(false)
+    m_avatarHasBeenSet(false),
+    m_previewUrlHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome DigitalHumanConfig::Deserialize(const rapidjson::Value &valu
         m_avatarHasBeenSet = true;
     }
 
+    if (value.HasMember("PreviewUrl") && !value["PreviewUrl"].IsNull())
+    {
+        if (!value["PreviewUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DigitalHumanConfig.PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewUrl = string(value["PreviewUrl"].GetString());
+        m_previewUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void DigitalHumanConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Avatar";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_avatar.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previewUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void DigitalHumanConfig::SetAvatar(const string& _avatar)
 bool DigitalHumanConfig::AvatarHasBeenSet() const
 {
     return m_avatarHasBeenSet;
+}
+
+string DigitalHumanConfig::GetPreviewUrl() const
+{
+    return m_previewUrl;
+}
+
+void DigitalHumanConfig::SetPreviewUrl(const string& _previewUrl)
+{
+    m_previewUrl = _previewUrl;
+    m_previewUrlHasBeenSet = true;
+}
+
+bool DigitalHumanConfig::PreviewUrlHasBeenSet() const
+{
+    return m_previewUrlHasBeenSet;
 }
 

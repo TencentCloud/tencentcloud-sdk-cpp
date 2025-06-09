@@ -35,7 +35,8 @@ KnowledgeQaConfig::KnowledgeQaConfig() :
     m_thoughtModelHasBeenSet(false),
     m_intentAchievementsHasBeenSet(false),
     m_imageTextRetrievalHasBeenSet(false),
-    m_aiCallHasBeenSet(false)
+    m_aiCallHasBeenSet(false),
+    m_shareKnowledgeBasesHasBeenSet(false)
 {
 }
 
@@ -280,6 +281,26 @@ CoreInternalOutcome KnowledgeQaConfig::Deserialize(const rapidjson::Value &value
         m_aiCallHasBeenSet = true;
     }
 
+    if (value.HasMember("ShareKnowledgeBases") && !value["ShareKnowledgeBases"].IsNull())
+    {
+        if (!value["ShareKnowledgeBases"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.ShareKnowledgeBases` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ShareKnowledgeBases"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ShareKnowledgeBase item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_shareKnowledgeBases.push_back(item);
+        }
+        m_shareKnowledgeBasesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -434,6 +455,21 @@ void KnowledgeQaConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiCall.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_shareKnowledgeBasesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareKnowledgeBases";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_shareKnowledgeBases.begin(); itr != m_shareKnowledgeBases.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -677,5 +713,21 @@ void KnowledgeQaConfig::SetAiCall(const AICallConfig& _aiCall)
 bool KnowledgeQaConfig::AiCallHasBeenSet() const
 {
     return m_aiCallHasBeenSet;
+}
+
+vector<ShareKnowledgeBase> KnowledgeQaConfig::GetShareKnowledgeBases() const
+{
+    return m_shareKnowledgeBases;
+}
+
+void KnowledgeQaConfig::SetShareKnowledgeBases(const vector<ShareKnowledgeBase>& _shareKnowledgeBases)
+{
+    m_shareKnowledgeBases = _shareKnowledgeBases;
+    m_shareKnowledgeBasesHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::ShareKnowledgeBasesHasBeenSet() const
+{
+    return m_shareKnowledgeBasesHasBeenSet;
 }
 

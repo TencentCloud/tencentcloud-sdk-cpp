@@ -28,7 +28,8 @@ DescribeTokenUsageGraphRequest::DescribeTokenUsageGraphRequest() :
     m_modelNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_appBizIdsHasBeenSet(false)
+    m_appBizIdsHasBeenSet(false),
+    m_appTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string DescribeTokenUsageGraphRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_appTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -199,6 +208,22 @@ void DescribeTokenUsageGraphRequest::SetAppBizIds(const vector<string>& _appBizI
 bool DescribeTokenUsageGraphRequest::AppBizIdsHasBeenSet() const
 {
     return m_appBizIdsHasBeenSet;
+}
+
+string DescribeTokenUsageGraphRequest::GetAppType() const
+{
+    return m_appType;
+}
+
+void DescribeTokenUsageGraphRequest::SetAppType(const string& _appType)
+{
+    m_appType = _appType;
+    m_appTypeHasBeenSet = true;
+}
+
+bool DescribeTokenUsageGraphRequest::AppTypeHasBeenSet() const
+{
+    return m_appTypeHasBeenSet;
 }
 
 

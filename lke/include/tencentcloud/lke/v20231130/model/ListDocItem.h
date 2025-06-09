@@ -885,6 +885,27 @@ namespace TencentCloud
                      */
                     bool AttributeFlagsHasBeenSet() const;
 
+                    /**
+                     * 获取false:未停用，ture:已停用
+                     * @return IsDisabled false:未停用，ture:已停用
+                     * 
+                     */
+                    bool GetIsDisabled() const;
+
+                    /**
+                     * 设置false:未停用，ture:已停用
+                     * @param _isDisabled false:未停用，ture:已停用
+                     * 
+                     */
+                    void SetIsDisabled(const bool& _isDisabled);
+
+                    /**
+                     * 判断参数 IsDisabled 是否已赋值
+                     * @return IsDisabled 是否已赋值
+                     * 
+                     */
+                    bool IsDisabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1121,6 +1142,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_attributeFlags;
                     bool m_attributeFlagsHasBeenSet;
+
+                    /**
+                     * false:未停用，ture:已停用
+                     */
+                    bool m_isDisabled;
+                    bool m_isDisabledHasBeenSet;
 
                 };
             }

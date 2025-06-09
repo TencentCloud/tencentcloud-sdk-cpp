@@ -465,6 +465,27 @@ namespace TencentCloud
                      */
                     bool SupportAiCallStatusHasBeenSet() const;
 
+                    /**
+                     * 获取专属并发数
+                     * @return Concurrency 专属并发数
+                     * 
+                     */
+                    uint64_t GetConcurrency() const;
+
+                    /**
+                     * 设置专属并发数
+                     * @param _concurrency 专属并发数
+                     * 
+                     */
+                    void SetConcurrency(const uint64_t& _concurrency);
+
+                    /**
+                     * 判断参数 Concurrency 是否已赋值
+                     * @return Concurrency 是否已赋值
+                     * 
+                     */
+                    bool ConcurrencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -584,6 +605,12 @@ namespace TencentCloud
                      */
                     uint64_t m_supportAiCallStatus;
                     bool m_supportAiCallStatusHasBeenSet;
+
+                    /**
+                     * 专属并发数
+                     */
+                    uint64_t m_concurrency;
+                    bool m_concurrencyHasBeenSet;
 
                 };
             }

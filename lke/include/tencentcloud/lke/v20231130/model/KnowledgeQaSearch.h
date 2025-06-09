@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强
+                     * 获取知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强，database:数据库
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强
+                     * @return Type 知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强，database:数据库
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强
+                     * 设置知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强，database:数据库
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强
+                     * @param _type 知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强，database:数据库
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,7 +274,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强
+                     * 知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强，database:数据库
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;

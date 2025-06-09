@@ -52,7 +52,8 @@ DescribeQAResponse::DescribeQAResponse() :
     m_qaAuditStatusHasBeenSet(false),
     m_picAuditStatusHasBeenSet(false),
     m_videoAuditStatusHasBeenSet(false),
-    m_questionDescHasBeenSet(false)
+    m_questionDescHasBeenSet(false),
+    m_isDisabledHasBeenSet(false)
 {
 }
 
@@ -410,6 +411,16 @@ CoreInternalOutcome DescribeQAResponse::Deserialize(const string &payload)
         m_questionDescHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsDisabled") && !rsp["IsDisabled"].IsNull())
+    {
+        if (!rsp["IsDisabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDisabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDisabled = rsp["IsDisabled"].GetBool();
+        m_isDisabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -671,6 +682,14 @@ string DescribeQAResponse::ToJsonString() const
         string key = "QuestionDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_questionDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDisabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDisabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDisabled, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -973,6 +992,16 @@ string DescribeQAResponse::GetQuestionDesc() const
 bool DescribeQAResponse::QuestionDescHasBeenSet() const
 {
     return m_questionDescHasBeenSet;
+}
+
+bool DescribeQAResponse::GetIsDisabled() const
+{
+    return m_isDisabled;
+}
+
+bool DescribeQAResponse::IsDisabledHasBeenSet() const
+{
+    return m_isDisabledHasBeenSet;
 }
 
 

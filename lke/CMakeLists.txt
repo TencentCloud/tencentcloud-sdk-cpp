@@ -38,6 +38,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/MsgRecord.h
   include/tencentcloud/lke/v20231130/model/CreateDocCateResponse.h
   include/tencentcloud/lke/v20231130/model/DeleteDocCateResponse.h
+  include/tencentcloud/lke/v20231130/model/WorkflowRef.h
   include/tencentcloud/lke/v20231130/model/ExportAttributeLabelResponse.h
   include/tencentcloud/lke/v20231130/model/KnowledgeCapacityPieGraphDetail.h
   include/tencentcloud/lke/v20231130/model/WorkflowInfo.h
@@ -222,8 +223,10 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/GetDocPreviewResponse.h
   include/tencentcloud/lke/v20231130/model/DescribeConcurrencyUsageResponse.h
   include/tencentcloud/lke/v20231130/model/TaskFLowVar.h
+  include/tencentcloud/lke/v20231130/model/AttributeLabelRefByWorkflow.h
   include/tencentcloud/lke/v20231130/model/CreateReleaseResponse.h
   include/tencentcloud/lke/v20231130/model/QueryRewriteRequest.h
+  include/tencentcloud/lke/v20231130/model/ShareKnowledgeBase.h
   include/tencentcloud/lke/v20231130/model/ModifyAppRequest.h
   include/tencentcloud/lke/v20231130/model/RunReRankRequest.h
   include/tencentcloud/lke/v20231130/model/KnowledgeDetail.h
@@ -334,6 +337,7 @@ set(lke_src
   src/v20231130/model/MsgRecord.cpp
   src/v20231130/model/CreateDocCateResponse.cpp
   src/v20231130/model/DeleteDocCateResponse.cpp
+  src/v20231130/model/WorkflowRef.cpp
   src/v20231130/model/ExportAttributeLabelResponse.cpp
   src/v20231130/model/KnowledgeCapacityPieGraphDetail.cpp
   src/v20231130/model/WorkflowInfo.cpp
@@ -518,8 +522,10 @@ set(lke_src
   src/v20231130/model/GetDocPreviewResponse.cpp
   src/v20231130/model/DescribeConcurrencyUsageResponse.cpp
   src/v20231130/model/TaskFLowVar.cpp
+  src/v20231130/model/AttributeLabelRefByWorkflow.cpp
   src/v20231130/model/CreateReleaseResponse.cpp
   src/v20231130/model/QueryRewriteRequest.cpp
+  src/v20231130/model/ShareKnowledgeBase.cpp
   src/v20231130/model/ModifyAppRequest.cpp
   src/v20231130/model/RunReRankRequest.cpp
   src/v20231130/model/KnowledgeDetail.cpp

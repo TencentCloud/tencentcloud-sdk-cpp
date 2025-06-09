@@ -28,7 +28,8 @@ DescribeDBsRequest::DescribeDBsRequest() :
     m_offsetHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_orderByTypeHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+    m_encryptionHasBeenSet(false),
+    m_orderByHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string DescribeDBsRequest::ToJsonString() const
         string key = "Encryption";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_encryption.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void DescribeDBsRequest::SetEncryption(const string& _encryption)
 bool DescribeDBsRequest::EncryptionHasBeenSet() const
 {
     return m_encryptionHasBeenSet;
+}
+
+string DescribeDBsRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeDBsRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeDBsRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
 }
 
 

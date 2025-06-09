@@ -482,6 +482,20 @@ namespace TencentCloud
                      */
                     bool QuestionDescHasBeenSet() const;
 
+                    /**
+                     * 获取问答是否停用，false:未停用，true已停用
+                     * @return IsDisabled 问答是否停用，false:未停用，true已停用
+                     * 
+                     */
+                    bool GetIsDisabled() const;
+
+                    /**
+                     * 判断参数 IsDisabled 是否已赋值
+                     * @return IsDisabled 是否已赋值
+                     * 
+                     */
+                    bool IsDisabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -672,6 +686,12 @@ namespace TencentCloud
                      */
                     std::string m_questionDesc;
                     bool m_questionDescHasBeenSet;
+
+                    /**
+                     * 问答是否停用，false:未停用，true已停用
+                     */
+                    bool m_isDisabled;
+                    bool m_isDisabledHasBeenSet;
 
                 };
             }

@@ -33,6 +33,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoListRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoListResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeLocalAccountsRequest.h>
@@ -70,6 +72,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDLPFileDetectResultResponse> DescribeDLPFileDetectResultOutcome;
                 typedef std::future<DescribeDLPFileDetectResultOutcome> DescribeDLPFileDetectResultOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDLPFileDetectResultRequest&, DescribeDLPFileDetectResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDLPFileDetectResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceHardwareInfoListResponse> DescribeDeviceHardwareInfoListOutcome;
+                typedef std::future<DescribeDeviceHardwareInfoListOutcome> DescribeDeviceHardwareInfoListOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeDeviceHardwareInfoListRequest&, DescribeDeviceHardwareInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceHardwareInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDevicesResponse> DescribeDevicesOutcome;
                 typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDevicesRequest&, DescribeDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
@@ -129,6 +134,15 @@ namespace TencentCloud
                 DescribeDLPFileDetectResultOutcome DescribeDLPFileDetectResult(const Model::DescribeDLPFileDetectResultRequest &request);
                 void DescribeDLPFileDetectResultAsync(const Model::DescribeDLPFileDetectResultRequest& request, const DescribeDLPFileDetectResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDLPFileDetectResultOutcomeCallable DescribeDLPFileDetectResultCallable(const Model::DescribeDLPFileDetectResultRequest& request);
+
+                /**
+                 *查询满足条件的查询终端硬件信息列表，私有化调用path为：/capi/Assets/Device/DescribeDeviceHardwareInfoList
+                 * @param req DescribeDeviceHardwareInfoListRequest
+                 * @return DescribeDeviceHardwareInfoListOutcome
+                 */
+                DescribeDeviceHardwareInfoListOutcome DescribeDeviceHardwareInfoList(const Model::DescribeDeviceHardwareInfoListRequest &request);
+                void DescribeDeviceHardwareInfoListAsync(const Model::DescribeDeviceHardwareInfoListRequest& request, const DescribeDeviceHardwareInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceHardwareInfoListOutcomeCallable DescribeDeviceHardwareInfoListCallable(const Model::DescribeDeviceHardwareInfoListRequest& request);
 
                 /**
                  *查询满足条件的终端数据详情，私有化调用path为：/capi/Assets/Device/DescribeDevices

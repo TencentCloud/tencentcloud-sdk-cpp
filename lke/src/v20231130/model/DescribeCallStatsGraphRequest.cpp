@@ -31,7 +31,8 @@ DescribeCallStatsGraphRequest::DescribeCallStatsGraphRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_appBizIdsHasBeenSet(false),
-    m_subScenesHasBeenSet(false)
+    m_subScenesHasBeenSet(false),
+    m_appTypeHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,14 @@ string DescribeCallStatsGraphRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_appTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -279,6 +288,22 @@ void DescribeCallStatsGraphRequest::SetSubScenes(const vector<string>& _subScene
 bool DescribeCallStatsGraphRequest::SubScenesHasBeenSet() const
 {
     return m_subScenesHasBeenSet;
+}
+
+string DescribeCallStatsGraphRequest::GetAppType() const
+{
+    return m_appType;
+}
+
+void DescribeCallStatsGraphRequest::SetAppType(const string& _appType)
+{
+    m_appType = _appType;
+    m_appTypeHasBeenSet = true;
+}
+
+bool DescribeCallStatsGraphRequest::AppTypeHasBeenSet() const
+{
+    return m_appTypeHasBeenSet;
 }
 
 

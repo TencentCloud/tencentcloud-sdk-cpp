@@ -31,7 +31,9 @@ AgentConfig::AgentConfig() :
     m_turnDetectionModeHasBeenSet(false),
     m_filterOneWordHasBeenSet(false),
     m_welcomeMessagePriorityHasBeenSet(false),
-    m_filterBracketsContentHasBeenSet(false)
+    m_filterBracketsContentHasBeenSet(false),
+    m_ambientSoundHasBeenSet(false),
+    m_voicePrintHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,40 @@ CoreInternalOutcome AgentConfig::Deserialize(const rapidjson::Value &value)
         m_filterBracketsContentHasBeenSet = true;
     }
 
+    if (value.HasMember("AmbientSound") && !value["AmbientSound"].IsNull())
+    {
+        if (!value["AmbientSound"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.AmbientSound` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ambientSound.Deserialize(value["AmbientSound"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ambientSoundHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoicePrint") && !value["VoicePrint"].IsNull())
+    {
+        if (!value["VoicePrint"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.VoicePrint` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_voicePrint.Deserialize(value["VoicePrint"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_voicePrintHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +279,24 @@ void AgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "FilterBracketsContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_filterBracketsContent, allocator);
+    }
+
+    if (m_ambientSoundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmbientSound";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ambientSound.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_voicePrintHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoicePrint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_voicePrint.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -422,5 +476,37 @@ void AgentConfig::SetFilterBracketsContent(const uint64_t& _filterBracketsConten
 bool AgentConfig::FilterBracketsContentHasBeenSet() const
 {
     return m_filterBracketsContentHasBeenSet;
+}
+
+AmbientSound AgentConfig::GetAmbientSound() const
+{
+    return m_ambientSound;
+}
+
+void AgentConfig::SetAmbientSound(const AmbientSound& _ambientSound)
+{
+    m_ambientSound = _ambientSound;
+    m_ambientSoundHasBeenSet = true;
+}
+
+bool AgentConfig::AmbientSoundHasBeenSet() const
+{
+    return m_ambientSoundHasBeenSet;
+}
+
+VoicePrint AgentConfig::GetVoicePrint() const
+{
+    return m_voicePrint;
+}
+
+void AgentConfig::SetVoicePrint(const VoicePrint& _voicePrint)
+{
+    m_voicePrint = _voicePrint;
+    m_voicePrintHasBeenSet = true;
+}
+
+bool AgentConfig::VoicePrintHasBeenSet() const
+{
+    return m_voicePrintHasBeenSet;
 }
 

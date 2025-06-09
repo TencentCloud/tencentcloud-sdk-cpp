@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取输出云硬盘备份点列表的排列顺序。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>
-                     * @return Order 输出云硬盘备份点列表的排列顺序。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>
+                     * 获取输出云硬盘备份点列表的排列顺序，默认排序：ASC。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>
+                     * @return Order 输出云硬盘备份点列表的排列顺序，默认排序：ASC。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置输出云硬盘备份点列表的排列顺序。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>
-                     * @param _order 输出云硬盘备份点列表的排列顺序。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>
+                     * 设置输出云硬盘备份点列表的排列顺序，默认排序：ASC。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>
+                     * @param _order 输出云硬盘备份点列表的排列顺序，默认排序：ASC。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 输出云硬盘备份点列表的排列顺序。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>
+                     * 输出云硬盘备份点列表的排列顺序，默认排序：ASC。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;

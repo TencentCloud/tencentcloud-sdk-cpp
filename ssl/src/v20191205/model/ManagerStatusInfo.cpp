@@ -24,7 +24,8 @@ ManagerStatusInfo::ManagerStatusInfo() :
     m_typeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_managerPreAuditDomainsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome ManagerStatusInfo::Deserialize(const rapidjson::Value &value
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ManagerPreAuditDomains") && !value["ManagerPreAuditDomains"].IsNull())
+    {
+        if (!value["ManagerPreAuditDomains"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ManagerStatusInfo.ManagerPreAuditDomains` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ManagerPreAuditDomains"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ManagerPreAuditDomain item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_managerPreAuditDomains.push_back(item);
+        }
+        m_managerPreAuditDomainsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +131,21 @@ void ManagerStatusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_managerPreAuditDomainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManagerPreAuditDomains";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_managerPreAuditDomains.begin(); itr != m_managerPreAuditDomains.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +213,21 @@ void ManagerStatusInfo::SetExpireTime(const string& _expireTime)
 bool ManagerStatusInfo::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+vector<ManagerPreAuditDomain> ManagerStatusInfo::GetManagerPreAuditDomains() const
+{
+    return m_managerPreAuditDomains;
+}
+
+void ManagerStatusInfo::SetManagerPreAuditDomains(const vector<ManagerPreAuditDomain>& _managerPreAuditDomains)
+{
+    m_managerPreAuditDomains = _managerPreAuditDomains;
+    m_managerPreAuditDomainsHasBeenSet = true;
+}
+
+bool ManagerStatusInfo::ManagerPreAuditDomainsHasBeenSet() const
+{
+    return m_managerPreAuditDomainsHasBeenSet;
 }
 

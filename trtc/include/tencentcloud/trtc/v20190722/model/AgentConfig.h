@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/AmbientSound.h>
+#include <tencentcloud/trtc/v20190722/model/VoicePrint.h>
 
 
 namespace TencentCloud
@@ -309,6 +311,48 @@ namespace TencentCloud
                      */
                     bool FilterBracketsContentHasBeenSet() const;
 
+                    /**
+                     * 获取环境音设置
+                     * @return AmbientSound 环境音设置
+                     * 
+                     */
+                    AmbientSound GetAmbientSound() const;
+
+                    /**
+                     * 设置环境音设置
+                     * @param _ambientSound 环境音设置
+                     * 
+                     */
+                    void SetAmbientSound(const AmbientSound& _ambientSound);
+
+                    /**
+                     * 判断参数 AmbientSound 是否已赋值
+                     * @return AmbientSound 是否已赋值
+                     * 
+                     */
+                    bool AmbientSoundHasBeenSet() const;
+
+                    /**
+                     * 获取声纹配置
+                     * @return VoicePrint 声纹配置
+                     * 
+                     */
+                    VoicePrint GetVoicePrint() const;
+
+                    /**
+                     * 设置声纹配置
+                     * @param _voicePrint 声纹配置
+                     * 
+                     */
+                    void SetVoicePrint(const VoicePrint& _voicePrint);
+
+                    /**
+                     * 判断参数 VoicePrint 是否已赋值
+                     * @return VoicePrint 是否已赋值
+                     * 
+                     */
+                    bool VoicePrintHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +428,18 @@ namespace TencentCloud
                      */
                     uint64_t m_filterBracketsContent;
                     bool m_filterBracketsContentHasBeenSet;
+
+                    /**
+                     * 环境音设置
+                     */
+                    AmbientSound m_ambientSound;
+                    bool m_ambientSoundHasBeenSet;
+
+                    /**
+                     * 声纹配置
+                     */
+                    VoicePrint m_voicePrint;
+                    bool m_voicePrintHasBeenSet;
 
                 };
             }

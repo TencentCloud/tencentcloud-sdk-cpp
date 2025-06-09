@@ -27,6 +27,8 @@
 #include <tencentcloud/tke/v20220501/model/CreateHealthCheckPolicyResponse.h>
 #include <tencentcloud/tke/v20220501/model/CreateNodePoolRequest.h>
 #include <tencentcloud/tke/v20220501/model/CreateNodePoolResponse.h>
+#include <tencentcloud/tke/v20220501/model/DeleteClusterMachinesRequest.h>
+#include <tencentcloud/tke/v20220501/model/DeleteClusterMachinesResponse.h>
 #include <tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyRequest.h>
 #include <tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyResponse.h>
 #include <tencentcloud/tke/v20220501/model/DeleteNodePoolRequest.h>
@@ -71,6 +73,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNodePoolResponse> CreateNodePoolOutcome;
                 typedef std::future<CreateNodePoolOutcome> CreateNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateNodePoolRequest&, CreateNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNodePoolAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteClusterMachinesResponse> DeleteClusterMachinesOutcome;
+                typedef std::future<DeleteClusterMachinesOutcome> DeleteClusterMachinesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteClusterMachinesRequest&, DeleteClusterMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterMachinesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteHealthCheckPolicyResponse> DeleteHealthCheckPolicyOutcome;
                 typedef std::future<DeleteHealthCheckPolicyOutcome> DeleteHealthCheckPolicyOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteHealthCheckPolicyRequest&, DeleteHealthCheckPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHealthCheckPolicyAsyncHandler;
@@ -127,6 +132,15 @@ namespace TencentCloud
                 CreateNodePoolOutcome CreateNodePool(const Model::CreateNodePoolRequest &request);
                 void CreateNodePoolAsync(const Model::CreateNodePoolRequest& request, const CreateNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNodePoolOutcomeCallable CreateNodePoolCallable(const Model::CreateNodePoolRequest& request);
+
+                /**
+                 *删除原生节点池节点
+                 * @param req DeleteClusterMachinesRequest
+                 * @return DeleteClusterMachinesOutcome
+                 */
+                DeleteClusterMachinesOutcome DeleteClusterMachines(const Model::DeleteClusterMachinesRequest &request);
+                void DeleteClusterMachinesAsync(const Model::DeleteClusterMachinesRequest& request, const DeleteClusterMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteClusterMachinesOutcomeCallable DeleteClusterMachinesCallable(const Model::DeleteClusterMachinesRequest& request);
 
                 /**
                  *删除健康检测策略

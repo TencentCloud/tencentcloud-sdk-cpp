@@ -34,7 +34,8 @@ ListQARequest::ListQARequest() :
     m_queryAnswerHasBeenSet(false),
     m_cateBizIdHasBeenSet(false),
     m_qaBizIdsHasBeenSet(false),
-    m_queryTypeHasBeenSet(false)
+    m_queryTypeHasBeenSet(false),
+    m_showCurrCateHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,14 @@ string ListQARequest::ToJsonString() const
         string key = "QueryType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_queryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_showCurrCateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowCurrCate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_showCurrCate, allocator);
     }
 
 
@@ -354,6 +363,22 @@ void ListQARequest::SetQueryType(const string& _queryType)
 bool ListQARequest::QueryTypeHasBeenSet() const
 {
     return m_queryTypeHasBeenSet;
+}
+
+uint64_t ListQARequest::GetShowCurrCate() const
+{
+    return m_showCurrCate;
+}
+
+void ListQARequest::SetShowCurrCate(const uint64_t& _showCurrCate)
+{
+    m_showCurrCate = _showCurrCate;
+    m_showCurrCateHasBeenSet = true;
+}
+
+bool ListQARequest::ShowCurrCateHasBeenSet() const
+{
+    return m_showCurrCateHasBeenSet;
 }
 
 

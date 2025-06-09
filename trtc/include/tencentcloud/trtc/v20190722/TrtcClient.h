@@ -37,6 +37,8 @@
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteVoicePrintRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteVoicePrintResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAIConversationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAIConversationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAITranscriptionRequest.h>
@@ -89,6 +91,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeUserEventResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUserInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUserInfoResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeVoicePrintRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeVoicePrintResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeWebRecordRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeWebRecordResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomRequest.h>
@@ -99,6 +103,8 @@
 #include <tencentcloud/trtc/v20190722/model/ModifyCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyPictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyPictureResponse.h>
+#include <tencentcloud/trtc/v20190722/model/RegisterVoicePrintRequest.h>
+#include <tencentcloud/trtc/v20190722/model/RegisterVoicePrintResponse.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserRequest.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserResponse.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdRequest.h>
@@ -137,6 +143,8 @@
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdateStreamIngestRequest.h>
 #include <tencentcloud/trtc/v20190722/model/UpdateStreamIngestResponse.h>
+#include <tencentcloud/trtc/v20190722/model/UpdateVoicePrintRequest.h>
+#include <tencentcloud/trtc/v20190722/model/UpdateVoicePrintResponse.h>
 
 
 namespace TencentCloud
@@ -172,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePictureResponse> DeletePictureOutcome;
                 typedef std::future<DeletePictureOutcome> DeletePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeletePictureRequest&, DeletePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePictureAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVoicePrintResponse> DeleteVoicePrintOutcome;
+                typedef std::future<DeleteVoicePrintOutcome> DeleteVoicePrintOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DeleteVoicePrintRequest&, DeleteVoicePrintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVoicePrintAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAIConversationResponse> DescribeAIConversationOutcome;
                 typedef std::future<DescribeAIConversationOutcome> DescribeAIConversationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeAIConversationRequest&, DescribeAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIConversationAsyncHandler;
@@ -250,6 +261,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserInfoResponse> DescribeUserInfoOutcome;
                 typedef std::future<DescribeUserInfoOutcome> DescribeUserInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeUserInfoRequest&, DescribeUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVoicePrintResponse> DescribeVoicePrintOutcome;
+                typedef std::future<DescribeVoicePrintOutcome> DescribeVoicePrintOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeVoicePrintRequest&, DescribeVoicePrintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVoicePrintAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWebRecordResponse> DescribeWebRecordOutcome;
                 typedef std::future<DescribeWebRecordOutcome> DescribeWebRecordOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeWebRecordRequest&, DescribeWebRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebRecordAsyncHandler;
@@ -265,6 +279,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPictureResponse> ModifyPictureOutcome;
                 typedef std::future<ModifyPictureOutcome> ModifyPictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::ModifyPictureRequest&, ModifyPictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPictureAsyncHandler;
+                typedef Outcome<Core::Error, Model::RegisterVoicePrintResponse> RegisterVoicePrintOutcome;
+                typedef std::future<RegisterVoicePrintOutcome> RegisterVoicePrintOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::RegisterVoicePrintRequest&, RegisterVoicePrintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterVoicePrintAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveUserResponse> RemoveUserOutcome;
                 typedef std::future<RemoveUserOutcome> RemoveUserOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::RemoveUserRequest&, RemoveUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserAsyncHandler;
@@ -322,6 +339,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateStreamIngestResponse> UpdateStreamIngestOutcome;
                 typedef std::future<UpdateStreamIngestOutcome> UpdateStreamIngestOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::UpdateStreamIngestRequest&, UpdateStreamIngestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateStreamIngestAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateVoicePrintResponse> UpdateVoicePrintOutcome;
+                typedef std::future<UpdateVoicePrintOutcome> UpdateVoicePrintOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::UpdateVoicePrintRequest&, UpdateVoicePrintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVoicePrintAsyncHandler;
 
 
 
@@ -399,6 +419,15 @@ namespace TencentCloud
                 DeletePictureOutcome DeletePicture(const Model::DeletePictureRequest &request);
                 void DeletePictureAsync(const Model::DeletePictureRequest& request, const DeletePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePictureOutcomeCallable DeletePictureCallable(const Model::DeletePictureRequest& request);
+
+                /**
+                 *传入声纹ID，删除之前注册的声纹信息
+                 * @param req DeleteVoicePrintRequest
+                 * @return DeleteVoicePrintOutcome
+                 */
+                DeleteVoicePrintOutcome DeleteVoicePrint(const Model::DeleteVoicePrintRequest &request);
+                void DeleteVoicePrintAsync(const Model::DeleteVoicePrintRequest& request, const DeleteVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVoicePrintOutcomeCallable DeleteVoicePrintCallable(const Model::DeleteVoicePrintRequest& request);
 
                 /**
                  *查询AI对话任务状态。
@@ -737,6 +766,15 @@ xa0
                 DescribeUserInfoOutcomeCallable DescribeUserInfoCallable(const Model::DescribeUserInfoRequest& request);
 
                 /**
+                 *查询先前注册的声纹信息
+                 * @param req DescribeVoicePrintRequest
+                 * @return DescribeVoicePrintOutcome
+                 */
+                DescribeVoicePrintOutcome DescribeVoicePrint(const Model::DescribeVoicePrintRequest &request);
+                void DescribeVoicePrintAsync(const Model::DescribeVoicePrintRequest& request, const DescribeVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVoicePrintOutcomeCallable DescribeVoicePrintCallable(const Model::DescribeVoicePrintRequest& request);
+
+                /**
                  *查询页面录制任务
                  * @param req DescribeWebRecordRequest
                  * @return DescribeWebRecordOutcome
@@ -780,6 +818,15 @@ xa0
                 ModifyPictureOutcome ModifyPicture(const Model::ModifyPictureRequest &request);
                 void ModifyPictureAsync(const Model::ModifyPictureRequest& request, const ModifyPictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPictureOutcomeCallable ModifyPictureCallable(const Model::ModifyPictureRequest& request);
+
+                /**
+                 *传入音频base64串，注册声纹信息，返回声纹ID
+                 * @param req RegisterVoicePrintRequest
+                 * @return RegisterVoicePrintOutcome
+                 */
+                RegisterVoicePrintOutcome RegisterVoicePrint(const Model::RegisterVoicePrintRequest &request);
+                void RegisterVoicePrintAsync(const Model::RegisterVoicePrintRequest& request, const RegisterVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RegisterVoicePrintOutcomeCallable RegisterVoicePrintCallable(const Model::RegisterVoicePrintRequest& request);
 
                 /**
                  *接口说明：将用户从房间移出，适用于主播/房主/管理员踢人等场景。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。
@@ -1014,6 +1061,15 @@ MCU 混流转码费用，请参考文档：[云端混流转码计费说明](http
                 UpdateStreamIngestOutcome UpdateStreamIngest(const Model::UpdateStreamIngestRequest &request);
                 void UpdateStreamIngestAsync(const Model::UpdateStreamIngestRequest& request, const UpdateStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateStreamIngestOutcomeCallable UpdateStreamIngestCallable(const Model::UpdateStreamIngestRequest& request);
+
+                /**
+                 *传入声纹ID以及对应音频信息，更新对应声纹信息
+                 * @param req UpdateVoicePrintRequest
+                 * @return UpdateVoicePrintOutcome
+                 */
+                UpdateVoicePrintOutcome UpdateVoicePrint(const Model::UpdateVoicePrintRequest &request);
+                void UpdateVoicePrintAsync(const Model::UpdateVoicePrintRequest& request, const UpdateVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateVoicePrintOutcomeCallable UpdateVoicePrintCallable(const Model::UpdateVoicePrintRequest& request);
 
             };
         }

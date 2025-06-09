@@ -36,7 +36,8 @@ StaffStatusMetrics::StaffStatusMetrics() :
     m_useMobileAcceptHasBeenSet(false),
     m_useMobileCallOutHasBeenSet(false),
     m_lastOnlineTimestampHasBeenSet(false),
-    m_lastStatusTimestampHasBeenSet(false)
+    m_lastStatusTimestampHasBeenSet(false),
+    m_clientInfoHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,26 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
         m_lastStatusTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientInfo") && !value["ClientInfo"].IsNull())
+    {
+        if (!value["ClientInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.ClientInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClientInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Client item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clientInfo.push_back(item);
+        }
+        m_clientInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +367,21 @@ void StaffStatusMetrics::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "LastStatusTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastStatusTimestamp, allocator);
+    }
+
+    if (m_clientInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clientInfo.begin(); itr != m_clientInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -605,5 +641,21 @@ void StaffStatusMetrics::SetLastStatusTimestamp(const int64_t& _lastStatusTimest
 bool StaffStatusMetrics::LastStatusTimestampHasBeenSet() const
 {
     return m_lastStatusTimestampHasBeenSet;
+}
+
+vector<Client> StaffStatusMetrics::GetClientInfo() const
+{
+    return m_clientInfo;
+}
+
+void StaffStatusMetrics::SetClientInfo(const vector<Client>& _clientInfo)
+{
+    m_clientInfo = _clientInfo;
+    m_clientInfoHasBeenSet = true;
+}
+
+bool StaffStatusMetrics::ClientInfoHasBeenSet() const
+{
+    return m_clientInfoHasBeenSet;
 }
 

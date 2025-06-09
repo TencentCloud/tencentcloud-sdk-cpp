@@ -33,7 +33,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/Certificates.h
   include/tencentcloud/ssl/v20191205/model/CertificateExtra.h
   include/tencentcloud/ssl/v20191205/model/TeoInstanceList.h
-  include/tencentcloud/ssl/v20191205/model/RootCertificates.h
+  include/tencentcloud/ssl/v20191205/model/ManagerPreAuditDomain.h
   include/tencentcloud/ssl/v20191205/model/CdnInstanceDetail.h
   include/tencentcloud/ssl/v20191205/model/VerifyManagerResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateDetailRequest.h
@@ -108,6 +108,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeCertificatesResponse.h
   include/tencentcloud/ssl/v20191205/model/CommitCertificateInformationResponse.h
   include/tencentcloud/ssl/v20191205/model/DeleteManagerResponse.h
+  include/tencentcloud/ssl/v20191205/model/RootCertificates.h
   include/tencentcloud/ssl/v20191205/model/SubmitAuditManagerRequest.h
   include/tencentcloud/ssl/v20191205/model/UploadCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/DeployCertificateInstanceResponse.h
@@ -237,7 +238,7 @@ set(ssl_src
   src/v20191205/model/Certificates.cpp
   src/v20191205/model/CertificateExtra.cpp
   src/v20191205/model/TeoInstanceList.cpp
-  src/v20191205/model/RootCertificates.cpp
+  src/v20191205/model/ManagerPreAuditDomain.cpp
   src/v20191205/model/CdnInstanceDetail.cpp
   src/v20191205/model/VerifyManagerResponse.cpp
   src/v20191205/model/DescribeCertificateDetailRequest.cpp
@@ -312,6 +313,7 @@ set(ssl_src
   src/v20191205/model/DescribeCertificatesResponse.cpp
   src/v20191205/model/CommitCertificateInformationResponse.cpp
   src/v20191205/model/DeleteManagerResponse.cpp
+  src/v20191205/model/RootCertificates.cpp
   src/v20191205/model/SubmitAuditManagerRequest.cpp
   src/v20191205/model/UploadCertificateResponse.cpp
   src/v20191205/model/DeployCertificateInstanceResponse.cpp
