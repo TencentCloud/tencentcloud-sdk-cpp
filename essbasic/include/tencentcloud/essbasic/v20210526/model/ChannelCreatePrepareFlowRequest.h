@@ -215,23 +215,23 @@ namespace TencentCloud
                     bool FlowOptionHasBeenSet() const;
 
                     /**
-                     * 获取合同签署人信息
-                     * @return FlowApproverList 合同签署人信息
-                     * 
+                     * 获取已废弃，请用FlowInfo.Approvers
+                     * @return FlowApproverList 已废弃，请用FlowInfo.Approvers
+                     * @deprecated
                      */
                     std::vector<CommonFlowApprover> GetFlowApproverList() const;
 
                     /**
-                     * 设置合同签署人信息
-                     * @param _flowApproverList 合同签署人信息
-                     * 
+                     * 设置已废弃，请用FlowInfo.Approvers
+                     * @param _flowApproverList 已废弃，请用FlowInfo.Approvers
+                     * @deprecated
                      */
                     void SetFlowApproverList(const std::vector<CommonFlowApprover>& _flowApproverList);
 
                     /**
                      * 判断参数 FlowApproverList 是否已赋值
                      * @return FlowApproverList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool FlowApproverListHasBeenSet() const;
 
@@ -404,7 +404,7 @@ namespace TencentCloud
                     bool m_flowOptionHasBeenSet;
 
                     /**
-                     * 合同签署人信息
+                     * 已废弃，请用FlowInfo.Approvers
                      */
                     std::vector<CommonFlowApprover> m_flowApproverList;
                     bool m_flowApproverListHasBeenSet;

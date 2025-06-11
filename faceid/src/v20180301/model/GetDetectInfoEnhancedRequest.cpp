@@ -31,7 +31,8 @@ GetDetectInfoEnhancedRequest::GetDetectInfoEnhancedRequest() :
     m_isNeedIdCardAvatarHasBeenSet(false),
     m_isEncryptHasBeenSet(false),
     m_encryptionHasBeenSet(false),
-    m_isEncryptResponseHasBeenSet(false)
+    m_isEncryptResponseHasBeenSet(false),
+    m_isReturnAllVideoHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string GetDetectInfoEnhancedRequest::ToJsonString() const
         string key = "IsEncryptResponse";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isEncryptResponse, allocator);
+    }
+
+    if (m_isReturnAllVideoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsReturnAllVideo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isReturnAllVideo, allocator);
     }
 
 
@@ -265,6 +274,22 @@ void GetDetectInfoEnhancedRequest::SetIsEncryptResponse(const bool& _isEncryptRe
 bool GetDetectInfoEnhancedRequest::IsEncryptResponseHasBeenSet() const
 {
     return m_isEncryptResponseHasBeenSet;
+}
+
+bool GetDetectInfoEnhancedRequest::GetIsReturnAllVideo() const
+{
+    return m_isReturnAllVideo;
+}
+
+void GetDetectInfoEnhancedRequest::SetIsReturnAllVideo(const bool& _isReturnAllVideo)
+{
+    m_isReturnAllVideo = _isReturnAllVideo;
+    m_isReturnAllVideoHasBeenSet = true;
+}
+
+bool GetDetectInfoEnhancedRequest::IsReturnAllVideoHasBeenSet() const
+{
+    return m_isReturnAllVideoHasBeenSet;
 }
 
 

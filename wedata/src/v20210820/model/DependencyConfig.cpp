@@ -25,7 +25,8 @@ DependencyConfig::DependencyConfig() :
     m_subordinateCyclicTypeHasBeenSet(false),
     m_dependencyStrategyHasBeenSet(false),
     m_parentTaskHasBeenSet(false),
-    m_sonTaskHasBeenSet(false)
+    m_sonTaskHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome DependencyConfig::Deserialize(const rapidjson::Value &value)
         m_sonTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("Offset") && !value["Offset"].IsNull())
+    {
+        if (!value["Offset"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DependencyConfig.Offset` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_offset = string(value["Offset"].GetString());
+        m_offsetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ void DependencyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sonTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_offset.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -228,5 +247,21 @@ void DependencyConfig::SetSonTask(const TaskInnerInfo& _sonTask)
 bool DependencyConfig::SonTaskHasBeenSet() const
 {
     return m_sonTaskHasBeenSet;
+}
+
+string DependencyConfig::GetOffset() const
+{
+    return m_offset;
+}
+
+void DependencyConfig::SetOffset(const string& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DependencyConfig::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 

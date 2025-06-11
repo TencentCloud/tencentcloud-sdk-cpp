@@ -513,6 +513,49 @@ HaiClient::ResetInstancesPasswordOutcomeCallable HaiClient::ResetInstancesPasswo
     return task->get_future();
 }
 
+HaiClient::ResizeInstanceDiskOutcome HaiClient::ResizeInstanceDisk(const ResizeInstanceDiskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResizeInstanceDisk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResizeInstanceDiskResponse rsp = ResizeInstanceDiskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResizeInstanceDiskOutcome(rsp);
+        else
+            return ResizeInstanceDiskOutcome(o.GetError());
+    }
+    else
+    {
+        return ResizeInstanceDiskOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::ResizeInstanceDiskAsync(const ResizeInstanceDiskRequest& request, const ResizeInstanceDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResizeInstanceDisk(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::ResizeInstanceDiskOutcomeCallable HaiClient::ResizeInstanceDiskCallable(const ResizeInstanceDiskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResizeInstanceDiskOutcome()>>(
+        [this, request]()
+        {
+            return this->ResizeInstanceDisk(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HaiClient::RunInstancesOutcome HaiClient::RunInstances(const RunInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RunInstances");

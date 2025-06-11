@@ -21,7 +21,8 @@ using namespace TencentCloud::Faceid::V20180301::Model;
 using namespace std;
 
 DetectInfoVideoData::DetectInfoVideoData() :
-    m_livenessVideoHasBeenSet(false)
+    m_livenessVideoHasBeenSet(false),
+    m_livenessVideosHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,26 @@ CoreInternalOutcome DetectInfoVideoData::Deserialize(const rapidjson::Value &val
         m_livenessVideoHasBeenSet = true;
     }
 
+    if (value.HasMember("LivenessVideos") && !value["LivenessVideos"].IsNull())
+    {
+        if (!value["LivenessVideos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DetectInfoVideoData.LivenessVideos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LivenessVideos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VideoDetailData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_livenessVideos.push_back(item);
+        }
+        m_livenessVideosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +74,21 @@ void DetectInfoVideoData::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "LivenessVideo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_livenessVideo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_livenessVideosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessVideos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_livenessVideos.begin(); itr != m_livenessVideos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -72,5 +108,21 @@ void DetectInfoVideoData::SetLivenessVideo(const string& _livenessVideo)
 bool DetectInfoVideoData::LivenessVideoHasBeenSet() const
 {
     return m_livenessVideoHasBeenSet;
+}
+
+vector<VideoDetailData> DetectInfoVideoData::GetLivenessVideos() const
+{
+    return m_livenessVideos;
+}
+
+void DetectInfoVideoData::SetLivenessVideos(const vector<VideoDetailData>& _livenessVideos)
+{
+    m_livenessVideos = _livenessVideos;
+    m_livenessVideosHasBeenSet = true;
+}
+
+bool DetectInfoVideoData::LivenessVideosHasBeenSet() const
+{
+    return m_livenessVideosHasBeenSet;
 }
 

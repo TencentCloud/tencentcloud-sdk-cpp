@@ -626,6 +626,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallPolicyDiscoverResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageSimpleListResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeComplianceAssetPolicyItemListResponse.h
+  include/tencentcloud/tcss/v20201101/model/ModifyRiskDnsEventStatusRequest.h
   include/tencentcloud/tcss/v20201101/model/ComplianceFilters.h
   include/tencentcloud/tcss/v20201101/model/ImageVirusInfo.h
   include/tencentcloud/tcss/v20201101/model/ModifyEscapeWhiteListResponse.h
@@ -802,6 +803,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeAccessControlRulesResponse.h
   include/tencentcloud/tcss/v20201101/model/ModifyEscapeRuleResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeSecLogVasInfoResponse.h
+  include/tencentcloud/tcss/v20201101/model/ModifyRiskDnsEventStatusResponse.h
   include/tencentcloud/tcss/v20201101/model/ModifyVirusAutoIsolateSettingResponse.h
   include/tencentcloud/tcss/v20201101/model/AssetSimpleImageInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeCompliancePolicyItemAffectedSummaryRequest.h
@@ -1473,6 +1475,7 @@ set(tcss_src
   src/v20201101/model/DescribeNetworkFirewallPolicyDiscoverResponse.cpp
   src/v20201101/model/DescribeAssetImageSimpleListResponse.cpp
   src/v20201101/model/DescribeComplianceAssetPolicyItemListResponse.cpp
+  src/v20201101/model/ModifyRiskDnsEventStatusRequest.cpp
   src/v20201101/model/ComplianceFilters.cpp
   src/v20201101/model/ImageVirusInfo.cpp
   src/v20201101/model/ModifyEscapeWhiteListResponse.cpp
@@ -1649,6 +1652,7 @@ set(tcss_src
   src/v20201101/model/DescribeAccessControlRulesResponse.cpp
   src/v20201101/model/ModifyEscapeRuleResponse.cpp
   src/v20201101/model/DescribeSecLogVasInfoResponse.cpp
+  src/v20201101/model/ModifyRiskDnsEventStatusResponse.cpp
   src/v20201101/model/ModifyVirusAutoIsolateSettingResponse.cpp
   src/v20201101/model/AssetSimpleImageInfo.cpp
   src/v20201101/model/DescribeCompliancePolicyItemAffectedSummaryRequest.cpp

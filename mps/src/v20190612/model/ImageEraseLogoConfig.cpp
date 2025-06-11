@@ -22,7 +22,8 @@ using namespace std;
 
 ImageEraseLogoConfig::ImageEraseLogoConfig() :
     m_switchHasBeenSet(false),
-    m_imageAreaBoxesHasBeenSet(false)
+    m_imageAreaBoxesHasBeenSet(false),
+    m_detectTypesHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome ImageEraseLogoConfig::Deserialize(const rapidjson::Value &va
         m_imageAreaBoxesHasBeenSet = true;
     }
 
+    if (value.HasMember("DetectTypes") && !value["DetectTypes"].IsNull())
+    {
+        if (!value["DetectTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageEraseLogoConfig.DetectTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DetectTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_detectTypes.push_back((*itr).GetString());
+        }
+        m_detectTypesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +102,19 @@ void ImageEraseLogoConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_detectTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetectTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_detectTypes.begin(); itr != m_detectTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -124,5 +151,21 @@ void ImageEraseLogoConfig::SetImageAreaBoxes(const vector<ImageAreaBoxInfo>& _im
 bool ImageEraseLogoConfig::ImageAreaBoxesHasBeenSet() const
 {
     return m_imageAreaBoxesHasBeenSet;
+}
+
+vector<string> ImageEraseLogoConfig::GetDetectTypes() const
+{
+    return m_detectTypes;
+}
+
+void ImageEraseLogoConfig::SetDetectTypes(const vector<string>& _detectTypes)
+{
+    m_detectTypes = _detectTypes;
+    m_detectTypesHasBeenSet = true;
+}
+
+bool ImageEraseLogoConfig::DetectTypesHasBeenSet() const
+{
+    return m_detectTypesHasBeenSet;
 }
 

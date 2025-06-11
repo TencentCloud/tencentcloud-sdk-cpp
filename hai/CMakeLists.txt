@@ -21,18 +21,20 @@ set(hai_public_header
 set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/NetworkStatus.h
   include/tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h
-  include/tencentcloud/hai/v20230812/model/StopInstanceRequest.h
+  include/tencentcloud/hai/v20230812/model/ResizeInstanceDiskResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsResponse.h
   include/tencentcloud/hai/v20230812/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusResponse.h
   include/tencentcloud/hai/v20230812/model/Instance.h
+  include/tencentcloud/hai/v20230812/model/TerminateInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/TerminateInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h
   include/tencentcloud/hai/v20230812/model/StartInstanceRequest.h
   include/tencentcloud/hai/v20230812/model/LoginSetting.h
   include/tencentcloud/hai/v20230812/model/RegionInfo.h
+  include/tencentcloud/hai/v20230812/model/ResizeInstanceDiskRequest.h
   include/tencentcloud/hai/v20230812/model/Price.h
-  include/tencentcloud/hai/v20230812/model/TerminateInstancesRequest.h
+  include/tencentcloud/hai/v20230812/model/StopInstanceRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeMuskPromptsRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeScenesResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeApplicationsRequest.h
@@ -69,18 +71,20 @@ set(hai_src
   src/v20230812/HaiClient.cpp
   src/v20230812/model/NetworkStatus.cpp
   src/v20230812/model/InquirePriceRunInstancesResponse.cpp
-  src/v20230812/model/StopInstanceRequest.cpp
+  src/v20230812/model/ResizeInstanceDiskResponse.cpp
   src/v20230812/model/DescribeServiceLoginSettingsResponse.cpp
   src/v20230812/model/ResetInstancesPasswordResponse.cpp
   src/v20230812/model/DescribeInstanceNetworkStatusResponse.cpp
   src/v20230812/model/Instance.cpp
+  src/v20230812/model/TerminateInstancesRequest.cpp
   src/v20230812/model/TerminateInstancesResponse.cpp
   src/v20230812/model/DescribeApplicationsResponse.cpp
   src/v20230812/model/StartInstanceRequest.cpp
   src/v20230812/model/LoginSetting.cpp
   src/v20230812/model/RegionInfo.cpp
+  src/v20230812/model/ResizeInstanceDiskRequest.cpp
   src/v20230812/model/Price.cpp
-  src/v20230812/model/TerminateInstancesRequest.cpp
+  src/v20230812/model/StopInstanceRequest.cpp
   src/v20230812/model/DescribeMuskPromptsRequest.cpp
   src/v20230812/model/DescribeScenesResponse.cpp
   src/v20230812/model/DescribeApplicationsRequest.cpp

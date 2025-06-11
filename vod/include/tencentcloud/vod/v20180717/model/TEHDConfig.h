@@ -69,18 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取视频码率上限，当 Type 指定了极速高清类型时有效。
-不填或填0表示不设视频码率上限。
+不填或填0表示由云点播自动设置码率上限。
                      * @return MaxVideoBitrate 视频码率上限，当 Type 指定了极速高清类型时有效。
-不填或填0表示不设视频码率上限。
+不填或填0表示由云点播自动设置码率上限。
                      * 
                      */
                     uint64_t GetMaxVideoBitrate() const;
 
                     /**
                      * 设置视频码率上限，当 Type 指定了极速高清类型时有效。
-不填或填0表示不设视频码率上限。
+不填或填0表示由云点播自动设置码率上限。
                      * @param _maxVideoBitrate 视频码率上限，当 Type 指定了极速高清类型时有效。
-不填或填0表示不设视频码率上限。
+不填或填0表示由云点播自动设置码率上限。
                      * 
                      */
                     void SetMaxVideoBitrate(const uint64_t& _maxVideoBitrate);
@@ -102,7 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 视频码率上限，当 Type 指定了极速高清类型时有效。
-不填或填0表示不设视频码率上限。
+不填或填0表示由云点播自动设置码率上限。
                      */
                     uint64_t m_maxVideoBitrate;
                     bool m_maxVideoBitrateHasBeenSet;

@@ -188,6 +188,27 @@ BandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式
                      */
                     bool ExtensiveParametersHasBeenSet() const;
 
+                    /**
+                     * 获取使用已有clb开启内网或外网访问
+                     * @return ExistedLoadBalancerId 使用已有clb开启内网或外网访问
+                     * 
+                     */
+                    std::string GetExistedLoadBalancerId() const;
+
+                    /**
+                     * 设置使用已有clb开启内网或外网访问
+                     * @param _existedLoadBalancerId 使用已有clb开启内网或外网访问
+                     * 
+                     */
+                    void SetExistedLoadBalancerId(const std::string& _existedLoadBalancerId);
+
+                    /**
+                     * 判断参数 ExistedLoadBalancerId 是否已赋值
+                     * @return ExistedLoadBalancerId 是否已赋值
+                     * 
+                     */
+                    bool ExistedLoadBalancerIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -230,6 +251,12 @@ BandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式
                      */
                     std::string m_extensiveParameters;
                     bool m_extensiveParametersHasBeenSet;
+
+                    /**
+                     * 使用已有clb开启内网或外网访问
+                     */
+                    std::string m_existedLoadBalancerId;
+                    bool m_existedLoadBalancerIdHasBeenSet;
 
                 };
             }

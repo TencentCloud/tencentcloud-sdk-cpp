@@ -629,6 +629,8 @@
 #include <tencentcloud/tcss/v20201101/model/ModifyRaspRulesResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyReverseShellStatusRequest.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyReverseShellStatusResponse.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyRiskDnsEventStatusRequest.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyRiskDnsEventStatusResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyRiskSyscallStatusRequest.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyRiskSyscallStatusResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifySecLogCleanSettingInfoRequest.h>
@@ -1620,6 +1622,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyReverseShellStatusResponse> ModifyReverseShellStatusOutcome;
                 typedef std::future<ModifyReverseShellStatusOutcome> ModifyReverseShellStatusOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::ModifyReverseShellStatusRequest&, ModifyReverseShellStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReverseShellStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRiskDnsEventStatusResponse> ModifyRiskDnsEventStatusOutcome;
+                typedef std::future<ModifyRiskDnsEventStatusOutcome> ModifyRiskDnsEventStatusOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::ModifyRiskDnsEventStatusRequest&, ModifyRiskDnsEventStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRiskDnsEventStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRiskSyscallStatusResponse> ModifyRiskSyscallStatusOutcome;
                 typedef std::future<ModifyRiskSyscallStatusOutcome> ModifyRiskSyscallStatusOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::ModifyRiskSyscallStatusRequest&, ModifyRiskSyscallStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRiskSyscallStatusAsyncHandler;
@@ -4456,6 +4461,15 @@ namespace TencentCloud
                 ModifyReverseShellStatusOutcome ModifyReverseShellStatus(const Model::ModifyReverseShellStatusRequest &request);
                 void ModifyReverseShellStatusAsync(const Model::ModifyReverseShellStatusRequest& request, const ModifyReverseShellStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyReverseShellStatusOutcomeCallable ModifyReverseShellStatusCallable(const Model::ModifyReverseShellStatusRequest& request);
+
+                /**
+                 *编辑恶意请求事件状态
+                 * @param req ModifyRiskDnsEventStatusRequest
+                 * @return ModifyRiskDnsEventStatusOutcome
+                 */
+                ModifyRiskDnsEventStatusOutcome ModifyRiskDnsEventStatus(const Model::ModifyRiskDnsEventStatusRequest &request);
+                void ModifyRiskDnsEventStatusAsync(const Model::ModifyRiskDnsEventStatusRequest& request, const ModifyRiskDnsEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRiskDnsEventStatusOutcomeCallable ModifyRiskDnsEventStatusCallable(const Model::ModifyRiskDnsEventStatusRequest& request);
 
                 /**
                  *修改高危系统调用事件的状态信息

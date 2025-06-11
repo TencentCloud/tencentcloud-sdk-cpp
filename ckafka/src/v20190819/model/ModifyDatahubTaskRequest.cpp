@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyDatahubTaskRequest::ModifyDatahubTaskRequest() :
     m_taskIdHasBeenSet(false),
-    m_taskNameHasBeenSet(false)
+    m_taskNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyDatahubTaskRequest::ToJsonString() const
         string key = "TaskName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyDatahubTaskRequest::SetTaskName(const string& _taskName)
 bool ModifyDatahubTaskRequest::TaskNameHasBeenSet() const
 {
     return m_taskNameHasBeenSet;
+}
+
+string ModifyDatahubTaskRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void ModifyDatahubTaskRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ModifyDatahubTaskRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

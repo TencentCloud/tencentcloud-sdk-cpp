@@ -162,6 +162,62 @@ MainlandPermit：港澳台来往内地通行证
                      */
                     bool ReprintHasBeenSet() const;
 
+                    /**
+                     * 获取是否截图
+                     * @return Screenshot 是否截图
+                     * 
+                     */
+                    GeneralCardWarnInfo GetScreenshot() const;
+
+                    /**
+                     * 判断参数 Screenshot 是否已赋值
+                     * @return Screenshot 是否已赋值
+                     * 
+                     */
+                    bool ScreenshotHasBeenSet() const;
+
+                    /**
+                     * 获取是否遮挡
+                     * @return Cover 是否遮挡
+                     * 
+                     */
+                    GeneralCardWarnInfo GetCover() const;
+
+                    /**
+                     * 判断参数 Cover 是否已赋值
+                     * @return Cover 是否已赋值
+                     * 
+                     */
+                    bool CoverHasBeenSet() const;
+
+                    /**
+                     * 获取是否重叠
+                     * @return Overlap 是否重叠
+                     * 
+                     */
+                    GeneralCardWarnInfo GetOverlap() const;
+
+                    /**
+                     * 判断参数 Overlap 是否已赋值
+                     * @return Overlap 是否已赋值
+                     * 
+                     */
+                    bool OverlapHasBeenSet() const;
+
+                    /**
+                     * 获取是否水印
+                     * @return Watermark 是否水印
+                     * 
+                     */
+                    GeneralCardWarnInfo GetWatermark() const;
+
+                    /**
+                     * 判断参数 Watermark 是否已赋值
+                     * @return Watermark 是否已赋值
+                     * 
+                     */
+                    bool WatermarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +271,30 @@ MainlandPermit：港澳台来往内地通行证
                      */
                     GeneralCardWarnInfo m_reprint;
                     bool m_reprintHasBeenSet;
+
+                    /**
+                     * 是否截图
+                     */
+                    GeneralCardWarnInfo m_screenshot;
+                    bool m_screenshotHasBeenSet;
+
+                    /**
+                     * 是否遮挡
+                     */
+                    GeneralCardWarnInfo m_cover;
+                    bool m_coverHasBeenSet;
+
+                    /**
+                     * 是否重叠
+                     */
+                    GeneralCardWarnInfo m_overlap;
+                    bool m_overlapHasBeenSet;
+
+                    /**
+                     * 是否水印
+                     */
+                    GeneralCardWarnInfo m_watermark;
+                    bool m_watermarkHasBeenSet;
 
                 };
             }

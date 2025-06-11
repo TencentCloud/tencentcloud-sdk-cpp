@@ -45,6 +45,8 @@
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h>
 #include <tencentcloud/hai/v20230812/model/ResetInstancesPasswordRequest.h>
 #include <tencentcloud/hai/v20230812/model/ResetInstancesPasswordResponse.h>
+#include <tencentcloud/hai/v20230812/model/ResizeInstanceDiskRequest.h>
+#include <tencentcloud/hai/v20230812/model/ResizeInstanceDiskResponse.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesResponse.h>
 #include <tencentcloud/hai/v20230812/model/StartInstanceRequest.h>
@@ -100,6 +102,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetInstancesPasswordResponse> ResetInstancesPasswordOutcome;
                 typedef std::future<ResetInstancesPasswordOutcome> ResetInstancesPasswordOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::ResetInstancesPasswordRequest&, ResetInstancesPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResizeInstanceDiskResponse> ResizeInstanceDiskOutcome;
+                typedef std::future<ResizeInstanceDiskOutcome> ResizeInstanceDiskOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::ResizeInstanceDiskRequest&, ResizeInstanceDiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeInstanceDiskAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunInstancesResponse> RunInstancesOutcome;
                 typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::RunInstancesRequest&, RunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunInstancesAsyncHandler;
@@ -213,6 +218,15 @@ namespace TencentCloud
                 ResetInstancesPasswordOutcome ResetInstancesPassword(const Model::ResetInstancesPasswordRequest &request);
                 void ResetInstancesPasswordAsync(const Model::ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetInstancesPasswordOutcomeCallable ResetInstancesPasswordCallable(const Model::ResetInstancesPasswordRequest& request);
+
+                /**
+                 *本接口（ResizeInstanceDisk）用于对指定HAI实例进行扩容云硬盘操作。
+                 * @param req ResizeInstanceDiskRequest
+                 * @return ResizeInstanceDiskOutcome
+                 */
+                ResizeInstanceDiskOutcome ResizeInstanceDisk(const Model::ResizeInstanceDiskRequest &request);
+                void ResizeInstanceDiskAsync(const Model::ResizeInstanceDiskRequest& request, const ResizeInstanceDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResizeInstanceDiskOutcomeCallable ResizeInstanceDiskCallable(const Model::ResizeInstanceDiskRequest& request);
 
                 /**
                  *本接口 (RunInstances) 用于创建一个或多个指定配置的实例。

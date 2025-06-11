@@ -28,7 +28,8 @@ CreateClusterEndpointRequest::CreateClusterEndpointRequest() :
     m_isExtranetHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
-    m_extensiveParametersHasBeenSet(false)
+    m_extensiveParametersHasBeenSet(false),
+    m_existedLoadBalancerIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateClusterEndpointRequest::ToJsonString() const
         string key = "ExtensiveParameters";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extensiveParameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_existedLoadBalancerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExistedLoadBalancerId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_existedLoadBalancerId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateClusterEndpointRequest::SetExtensiveParameters(const string& _extensi
 bool CreateClusterEndpointRequest::ExtensiveParametersHasBeenSet() const
 {
     return m_extensiveParametersHasBeenSet;
+}
+
+string CreateClusterEndpointRequest::GetExistedLoadBalancerId() const
+{
+    return m_existedLoadBalancerId;
+}
+
+void CreateClusterEndpointRequest::SetExistedLoadBalancerId(const string& _existedLoadBalancerId)
+{
+    m_existedLoadBalancerId = _existedLoadBalancerId;
+    m_existedLoadBalancerIdHasBeenSet = true;
+}
+
+bool CreateClusterEndpointRequest::ExistedLoadBalancerIdHasBeenSet() const
+{
+    return m_existedLoadBalancerIdHasBeenSet;
 }
 
 

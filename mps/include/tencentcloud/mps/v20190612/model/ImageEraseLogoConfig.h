@@ -113,6 +113,39 @@ namespace TencentCloud
                      */
                     bool ImageAreaBoxesHasBeenSet() const;
 
+                    /**
+                     * 获取图片框选区域类型，可选值：
+<li>logo：图标；</li>
+<li>text：文字；</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DetectTypes 图片框选区域类型，可选值：
+<li>logo：图标；</li>
+<li>text：文字；</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetDetectTypes() const;
+
+                    /**
+                     * 设置图片框选区域类型，可选值：
+<li>logo：图标；</li>
+<li>text：文字；</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _detectTypes 图片框选区域类型，可选值：
+<li>logo：图标；</li>
+<li>text：文字；</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDetectTypes(const std::vector<std::string>& _detectTypes);
+
+                    /**
+                     * 判断参数 DetectTypes 是否已赋值
+                     * @return DetectTypes 是否已赋值
+                     * 
+                     */
+                    bool DetectTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -132,6 +165,15 @@ namespace TencentCloud
                      */
                     std::vector<ImageAreaBoxInfo> m_imageAreaBoxes;
                     bool m_imageAreaBoxesHasBeenSet;
+
+                    /**
+                     * 图片框选区域类型，可选值：
+<li>logo：图标；</li>
+<li>text：文字；</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_detectTypes;
+                    bool m_detectTypesHasBeenSet;
 
                 };
             }

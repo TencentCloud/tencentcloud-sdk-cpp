@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool TaskFolderIdHasBeenSet() const;
 
                     /**
-                     * 获取指定脚本内容，base64编码
-                     * @return Content 指定脚本内容，base64编码
+                     * 获取（必填参数）指定脚本内容，base64编码
+                     * @return Content （必填参数）指定脚本内容，base64编码
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置指定脚本内容，base64编码
-                     * @param _content 指定脚本内容，base64编码
+                     * 设置（必填参数）指定脚本内容，base64编码
+                     * @param _content （必填参数）指定脚本内容，base64编码
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取代码模版ID
-                     * @return CodeTemplateId 代码模版ID
+                     * 获取代码模板ID
+                     * @return CodeTemplateId 代码模板ID
                      * 
                      */
                     std::string GetCodeTemplateId() const;
 
                     /**
-                     * 设置代码模版ID
-                     * @param _codeTemplateId 代码模版ID
+                     * 设置代码模板ID
+                     * @param _codeTemplateId 代码模板ID
                      * 
                      */
                     void SetCodeTemplateId(const std::string& _codeTemplateId);
@@ -358,13 +358,13 @@ namespace TencentCloud
                     bool m_taskFolderIdHasBeenSet;
 
                     /**
-                     * 指定脚本内容，base64编码
+                     * （必填参数）指定脚本内容，base64编码
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 代码模版ID
+                     * 代码模板ID
                      */
                     std::string m_codeTemplateId;
                     bool m_codeTemplateIdHasBeenSet;

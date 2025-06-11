@@ -280,6 +280,27 @@ namespace TencentCloud
                      */
                     bool IsEncryptResponseHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要返回认证中间过程的刷脸重试视频，默认不开启，多段视频需要存储到COS空间中，因此开启后还需要额外开启数据存储服务才可生效。详见[数据存储指引](https://cloud.tencent.com/document/product/1007/104229)。
+                     * @return IsReturnAllVideo 是否需要返回认证中间过程的刷脸重试视频，默认不开启，多段视频需要存储到COS空间中，因此开启后还需要额外开启数据存储服务才可生效。详见[数据存储指引](https://cloud.tencent.com/document/product/1007/104229)。
+                     * 
+                     */
+                    bool GetIsReturnAllVideo() const;
+
+                    /**
+                     * 设置是否需要返回认证中间过程的刷脸重试视频，默认不开启，多段视频需要存储到COS空间中，因此开启后还需要额外开启数据存储服务才可生效。详见[数据存储指引](https://cloud.tencent.com/document/product/1007/104229)。
+                     * @param _isReturnAllVideo 是否需要返回认证中间过程的刷脸重试视频，默认不开启，多段视频需要存储到COS空间中，因此开启后还需要额外开启数据存储服务才可生效。详见[数据存储指引](https://cloud.tencent.com/document/product/1007/104229)。
+                     * 
+                     */
+                    void SetIsReturnAllVideo(const bool& _isReturnAllVideo);
+
+                    /**
+                     * 判断参数 IsReturnAllVideo 是否已赋值
+                     * @return IsReturnAllVideo 是否已赋值
+                     * 
+                     */
+                    bool IsReturnAllVideoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +368,12 @@ namespace TencentCloud
                      */
                     bool m_isEncryptResponse;
                     bool m_isEncryptResponseHasBeenSet;
+
+                    /**
+                     * 是否需要返回认证中间过程的刷脸重试视频，默认不开启，多段视频需要存储到COS空间中，因此开启后还需要额外开启数据存储服务才可生效。详见[数据存储指引](https://cloud.tencent.com/document/product/1007/104229)。
+                     */
+                    bool m_isReturnAllVideo;
+                    bool m_isReturnAllVideoHasBeenSet;
 
                 };
             }

@@ -56,6 +56,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/IntentionVerifyData.h
   include/tencentcloud/faceid/v20180301/model/LivenessCompareRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectDetail.h
+  include/tencentcloud/faceid/v20180301/model/VideoDetailData.h
   include/tencentcloud/faceid/v20180301/model/RetrievalLivenessExtraInfo.h
   include/tencentcloud/faceid/v20180301/model/IntentionActionConfig.h
   include/tencentcloud/faceid/v20180301/model/CheckBankCardInformationRequest.h
@@ -154,6 +155,7 @@ set(faceid_src
   src/v20180301/model/IntentionVerifyData.cpp
   src/v20180301/model/LivenessCompareRequest.cpp
   src/v20180301/model/DetectDetail.cpp
+  src/v20180301/model/VideoDetailData.cpp
   src/v20180301/model/RetrievalLivenessExtraInfo.cpp
   src/v20180301/model/IntentionActionConfig.cpp
   src/v20180301/model/CheckBankCardInformationRequest.cpp

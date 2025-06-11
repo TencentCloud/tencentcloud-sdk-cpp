@@ -37,7 +37,8 @@ CreateBatchSignUrlRequest::CreateBatchSignUrlRequest() :
     m_flowBatchUrlInfoHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false),
     m_urlUseEnvHasBeenSet(false),
-    m_canBatchRejectHasBeenSet(false)
+    m_canBatchRejectHasBeenSet(false),
+    m_canSkipReadFlowHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,14 @@ string CreateBatchSignUrlRequest::ToJsonString() const
         string key = "CanBatchReject";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_canBatchReject, allocator);
+    }
+
+    if (m_canSkipReadFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanSkipReadFlow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canSkipReadFlow, allocator);
     }
 
 
@@ -427,6 +436,22 @@ void CreateBatchSignUrlRequest::SetCanBatchReject(const bool& _canBatchReject)
 bool CreateBatchSignUrlRequest::CanBatchRejectHasBeenSet() const
 {
     return m_canBatchRejectHasBeenSet;
+}
+
+bool CreateBatchSignUrlRequest::GetCanSkipReadFlow() const
+{
+    return m_canSkipReadFlow;
+}
+
+void CreateBatchSignUrlRequest::SetCanSkipReadFlow(const bool& _canSkipReadFlow)
+{
+    m_canSkipReadFlow = _canSkipReadFlow;
+    m_canSkipReadFlowHasBeenSet = true;
+}
+
+bool CreateBatchSignUrlRequest::CanSkipReadFlowHasBeenSet() const
+{
+    return m_canSkipReadFlowHasBeenSet;
 }
 
 

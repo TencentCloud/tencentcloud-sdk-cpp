@@ -133,6 +133,8 @@
 #include <tencentcloud/wedata/v20210820/model/DeleteIntegrationNodeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteIntegrationTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteLinkRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteLinkResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteOfflineTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteOfflineTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteProjectParamDsRequest.h>
@@ -277,6 +279,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeOpsWorkflowsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOrganizationalFunctionsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOrganizationalFunctionsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeParentTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeParentTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribePendingSubmitTaskListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribePendingSubmitTaskListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectRequest.h>
@@ -295,6 +299,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskSpeedResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealViewSchemaPageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealViewSchemaPageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRelatedTasksByTaskIdRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRelatedTasksByTaskIdResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeReportTaskDetailRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeReportTaskDetailResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeReportTaskListRequest.h>
@@ -379,6 +385,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskByCycleReportResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskByStatusReportRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskByStatusReportResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskLineageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskLineageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskLockStatusRequest.h>
@@ -403,6 +411,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTopTableStatResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTrendStatRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTrendStatResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeWorkflowByFordIdsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeWorkflowByFordIdsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowExecuteByIdRequest.h>
@@ -499,6 +509,8 @@
 #include <tencentcloud/wedata/v20210820/model/MoveTasksToFolderResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterDsEventRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterDsEventResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RegisterDsEventListenerRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RegisterDsEventListenerResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterEventRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterEventListenerRequest.h>
@@ -744,6 +756,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteIntegrationTaskResponse> DeleteIntegrationTaskOutcome;
                 typedef std::future<DeleteIntegrationTaskOutcome> DeleteIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteIntegrationTaskRequest&, DeleteIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIntegrationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLinkResponse> DeleteLinkOutcome;
+                typedef std::future<DeleteLinkOutcome> DeleteLinkOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteLinkRequest&, DeleteLinkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLinkAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOfflineTaskResponse> DeleteOfflineTaskOutcome;
                 typedef std::future<DeleteOfflineTaskOutcome> DeleteOfflineTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteOfflineTaskRequest&, DeleteOfflineTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOfflineTaskAsyncHandler;
@@ -960,6 +975,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOrganizationalFunctionsResponse> DescribeOrganizationalFunctionsOutcome;
                 typedef std::future<DescribeOrganizationalFunctionsOutcome> DescribeOrganizationalFunctionsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeOrganizationalFunctionsRequest&, DescribeOrganizationalFunctionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationalFunctionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeParentTaskResponse> DescribeParentTaskOutcome;
+                typedef std::future<DescribeParentTaskOutcome> DescribeParentTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeParentTaskRequest&, DescribeParentTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParentTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePendingSubmitTaskListResponse> DescribePendingSubmitTaskListOutcome;
                 typedef std::future<DescribePendingSubmitTaskListOutcome> DescribePendingSubmitTaskListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribePendingSubmitTaskListRequest&, DescribePendingSubmitTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePendingSubmitTaskListAsyncHandler;
@@ -987,6 +1005,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRealViewSchemaPageResponse> DescribeRealViewSchemaPageOutcome;
                 typedef std::future<DescribeRealViewSchemaPageOutcome> DescribeRealViewSchemaPageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeRealViewSchemaPageRequest&, DescribeRealViewSchemaPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealViewSchemaPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRelatedTasksByTaskIdResponse> DescribeRelatedTasksByTaskIdOutcome;
+                typedef std::future<DescribeRelatedTasksByTaskIdOutcome> DescribeRelatedTasksByTaskIdOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRelatedTasksByTaskIdRequest&, DescribeRelatedTasksByTaskIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedTasksByTaskIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReportTaskDetailResponse> DescribeReportTaskDetailOutcome;
                 typedef std::future<DescribeReportTaskDetailOutcome> DescribeReportTaskDetailOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeReportTaskDetailRequest&, DescribeReportTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportTaskDetailAsyncHandler;
@@ -1113,6 +1134,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskByStatusReportResponse> DescribeTaskByStatusReportOutcome;
                 typedef std::future<DescribeTaskByStatusReportOutcome> DescribeTaskByStatusReportOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskByStatusReportRequest&, DescribeTaskByStatusReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskByStatusReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskDetailDsResponse> DescribeTaskDetailDsOutcome;
+                typedef std::future<DescribeTaskDetailDsOutcome> DescribeTaskDetailDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTaskDetailDsRequest&, DescribeTaskDetailDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskLineageResponse> DescribeTaskLineageOutcome;
                 typedef std::future<DescribeTaskLineageOutcome> DescribeTaskLineageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskLineageRequest&, DescribeTaskLineageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskLineageAsyncHandler;
@@ -1149,6 +1173,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTrendStatResponse> DescribeTrendStatOutcome;
                 typedef std::future<DescribeTrendStatOutcome> DescribeTrendStatOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTrendStatRequest&, DescribeTrendStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrendStatAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkflowByFordIdsResponse> DescribeWorkflowByFordIdsOutcome;
+                typedef std::future<DescribeWorkflowByFordIdsOutcome> DescribeWorkflowByFordIdsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeWorkflowByFordIdsRequest&, DescribeWorkflowByFordIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowByFordIdsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkflowCanvasInfoResponse> DescribeWorkflowCanvasInfoOutcome;
                 typedef std::future<DescribeWorkflowCanvasInfoOutcome> DescribeWorkflowCanvasInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeWorkflowCanvasInfoRequest&, DescribeWorkflowCanvasInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowCanvasInfoAsyncHandler;
@@ -1293,6 +1320,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RegisterDsEventResponse> RegisterDsEventOutcome;
                 typedef std::future<RegisterDsEventOutcome> RegisterDsEventOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RegisterDsEventRequest&, RegisterDsEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterDsEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::RegisterDsEventListenerResponse> RegisterDsEventListenerOutcome;
+                typedef std::future<RegisterDsEventListenerOutcome> RegisterDsEventListenerOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RegisterDsEventListenerRequest&, RegisterDsEventListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterDsEventListenerAsyncHandler;
                 typedef Outcome<Core::Error, Model::RegisterEventResponse> RegisterEventOutcome;
                 typedef std::future<RegisterEventOutcome> RegisterEventOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RegisterEventRequest&, RegisterEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterEventAsyncHandler;
@@ -1891,6 +1921,15 @@ namespace TencentCloud
                 DeleteIntegrationTaskOutcomeCallable DeleteIntegrationTaskCallable(const Model::DeleteIntegrationTaskRequest& request);
 
                 /**
+                 *删除任务连接
+                 * @param req DeleteLinkRequest
+                 * @return DeleteLinkOutcome
+                 */
+                DeleteLinkOutcome DeleteLink(const Model::DeleteLinkRequest &request);
+                void DeleteLinkAsync(const Model::DeleteLinkRequest& request, const DeleteLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLinkOutcomeCallable DeleteLinkCallable(const Model::DeleteLinkRequest& request);
+
+                /**
                  *删除任务
                  * @param req DeleteOfflineTaskRequest
                  * @return DeleteOfflineTaskOutcome
@@ -1918,7 +1957,7 @@ namespace TencentCloud
                 DeleteProjectUsersOutcomeCallable DeleteProjectUsersCallable(const Model::DeleteProjectUsersRequest& request);
 
                 /**
-                 *资源管理删除资源
+                 *资源管理删除资源。本接口已废弃，请使用接口DeleteResourceFile。
                  * @param req DeleteResourceRequest
                  * @return DeleteResourceOutcome
                  */
@@ -2541,6 +2580,15 @@ namespace TencentCloud
                 DescribeOrganizationalFunctionsOutcomeCallable DescribeOrganizationalFunctionsCallable(const Model::DescribeOrganizationalFunctionsRequest& request);
 
                 /**
+                 *查询任务父依赖
+                 * @param req DescribeParentTaskRequest
+                 * @return DescribeParentTaskOutcome
+                 */
+                DescribeParentTaskOutcome DescribeParentTask(const Model::DescribeParentTaskRequest &request);
+                void DescribeParentTaskAsync(const Model::DescribeParentTaskRequest& request, const DescribeParentTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeParentTaskOutcomeCallable DescribeParentTaskCallable(const Model::DescribeParentTaskRequest& request);
+
+                /**
                  *获取待提交任务预提交校验信息（注意：工作流编号或者任务编号列表，必须填一项）
                  * @param req DescribePendingSubmitTaskListRequest
                  * @return DescribePendingSubmitTaskListOutcome
@@ -2620,6 +2668,15 @@ namespace TencentCloud
                 DescribeRealViewSchemaPageOutcome DescribeRealViewSchemaPage(const Model::DescribeRealViewSchemaPageRequest &request);
                 void DescribeRealViewSchemaPageAsync(const Model::DescribeRealViewSchemaPageRequest& request, const DescribeRealViewSchemaPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRealViewSchemaPageOutcomeCallable DescribeRealViewSchemaPageCallable(const Model::DescribeRealViewSchemaPageRequest& request);
+
+                /**
+                 *根据任务ID分页查询任务绑定监听的事件
+                 * @param req DescribeRelatedTasksByTaskIdRequest
+                 * @return DescribeRelatedTasksByTaskIdOutcome
+                 */
+                DescribeRelatedTasksByTaskIdOutcome DescribeRelatedTasksByTaskId(const Model::DescribeRelatedTasksByTaskIdRequest &request);
+                void DescribeRelatedTasksByTaskIdAsync(const Model::DescribeRelatedTasksByTaskIdRequest& request, const DescribeRelatedTasksByTaskIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRelatedTasksByTaskIdOutcomeCallable DescribeRelatedTasksByTaskIdCallable(const Model::DescribeRelatedTasksByTaskIdRequest& request);
 
                 /**
                  *查询上报任务详情
@@ -3007,6 +3064,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 DescribeTaskByStatusReportOutcomeCallable DescribeTaskByStatusReportCallable(const Model::DescribeTaskByStatusReportRequest& request);
 
                 /**
+                 *查询任务具体详情【新】
+                 * @param req DescribeTaskDetailDsRequest
+                 * @return DescribeTaskDetailDsOutcome
+                 */
+                DescribeTaskDetailDsOutcome DescribeTaskDetailDs(const Model::DescribeTaskDetailDsRequest &request);
+                void DescribeTaskDetailDsAsync(const Model::DescribeTaskDetailDsRequest& request, const DescribeTaskDetailDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskDetailDsOutcomeCallable DescribeTaskDetailDsCallable(const Model::DescribeTaskDetailDsRequest& request);
+
+                /**
                  *通过任务查询表的血缘关系
                  * @param req DescribeTaskLineageRequest
                  * @return DescribeTaskLineageOutcome
@@ -3113,6 +3179,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 DescribeTrendStatOutcome DescribeTrendStat(const Model::DescribeTrendStatRequest &request);
                 void DescribeTrendStatAsync(const Model::DescribeTrendStatRequest& request, const DescribeTrendStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTrendStatOutcomeCallable DescribeTrendStatCallable(const Model::DescribeTrendStatRequest& request);
+
+                /**
+                 *根据文件夹查询工作流
+                 * @param req DescribeWorkflowByFordIdsRequest
+                 * @return DescribeWorkflowByFordIdsOutcome
+                 */
+                DescribeWorkflowByFordIdsOutcome DescribeWorkflowByFordIds(const Model::DescribeWorkflowByFordIdsRequest &request);
+                void DescribeWorkflowByFordIdsAsync(const Model::DescribeWorkflowByFordIdsRequest& request, const DescribeWorkflowByFordIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkflowByFordIdsOutcomeCallable DescribeWorkflowByFordIdsCallable(const Model::DescribeWorkflowByFordIdsRequest& request);
 
                 /**
                  *查询工作流画布
@@ -3467,7 +3542,7 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
 
                 /**
                  *<p style="color:red;">[注意：该版本只满足广州区部分白名单客户使用]</p>
-更新任务
+更新任务。本接口已废弃，请使用接口ModifyTaskInfoDs。
                  * @param req ModifyTaskInfoRequest
                  * @return ModifyTaskInfoOutcome
                  */
@@ -3550,6 +3625,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 RegisterDsEventOutcomeCallable RegisterDsEventCallable(const Model::RegisterDsEventRequest& request);
 
                 /**
+                 *注册事件监听者
+                 * @param req RegisterDsEventListenerRequest
+                 * @return RegisterDsEventListenerOutcome
+                 */
+                RegisterDsEventListenerOutcome RegisterDsEventListener(const Model::RegisterDsEventListenerRequest &request);
+                void RegisterDsEventListenerAsync(const Model::RegisterDsEventListenerRequest& request, const RegisterDsEventListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RegisterDsEventListenerOutcomeCallable RegisterDsEventListenerCallable(const Model::RegisterDsEventListenerRequest& request);
+
+                /**
                  *<p style="color:red;">[注意：该版本只满足广州区部分白名单客户使用]</p>
 注册事件。本接口已废弃，请使用接口RegisterDsEvent。
                  * @param req RegisterEventRequest
@@ -3561,7 +3645,7 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
 
                 /**
                  *<p style="color:red;">[注意：该版本只满足广州区部分白名单客户使用]</p>
-注册事件监听器
+注册事件监听器。本接口已废弃，请使用接口RegisterDsEventListener。
                  * @param req RegisterEventListenerRequest
                  * @return RegisterEventListenerOutcome
                  */

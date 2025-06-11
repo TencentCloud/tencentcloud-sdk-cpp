@@ -151,6 +151,90 @@ namespace TencentCloud
                      */
                     bool GpuHasBeenSet() const;
 
+                    /**
+                     * 获取节点资源的配额类型，exact表示精确配额，fuzzy 表示模糊配额。
+                     * @return QuotaType 节点资源的配额类型，exact表示精确配额，fuzzy 表示模糊配额。
+                     * 
+                     */
+                    std::string GetQuotaType() const;
+
+                    /**
+                     * 设置节点资源的配额类型，exact表示精确配额，fuzzy 表示模糊配额。
+                     * @param _quotaType 节点资源的配额类型，exact表示精确配额，fuzzy 表示模糊配额。
+                     * 
+                     */
+                    void SetQuotaType(const std::string& _quotaType);
+
+                    /**
+                     * 判断参数 QuotaType 是否已赋值
+                     * @return QuotaType 是否已赋值
+                     * 
+                     */
+                    bool QuotaTypeHasBeenSet() const;
+
+                    /**
+                     * 获取配额的计费类型，PREPAID表示包月，POSTPAID_BY_HOUR表示按量。
+                     * @return ChargeType 配额的计费类型，PREPAID表示包月，POSTPAID_BY_HOUR表示按量。
+                     * 
+                     */
+                    std::string GetChargeType() const;
+
+                    /**
+                     * 设置配额的计费类型，PREPAID表示包月，POSTPAID_BY_HOUR表示按量。
+                     * @param _chargeType 配额的计费类型，PREPAID表示包月，POSTPAID_BY_HOUR表示按量。
+                     * 
+                     */
+                    void SetChargeType(const std::string& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     * 
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取QuotaType为 exact 时，此字段有效，表示精确配额的资源类型。
+                     * @return ResourceType QuotaType为 exact 时，此字段有效，表示精确配额的资源类型。
+                     * 
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置QuotaType为 exact 时，此字段有效，表示精确配额的资源类型。
+                     * @param _resourceType QuotaType为 exact 时，此字段有效，表示精确配额的资源类型。
+                     * 
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取置放群组 ID
+                     * @return DisasterRecoverGroupId 置放群组 ID
+                     * 
+                     */
+                    std::string GetDisasterRecoverGroupId() const;
+
+                    /**
+                     * 设置置放群组 ID
+                     * @param _disasterRecoverGroupId 置放群组 ID
+                     * 
+                     */
+                    void SetDisasterRecoverGroupId(const std::string& _disasterRecoverGroupId);
+
+                    /**
+                     * 判断参数 DisasterRecoverGroupId 是否已赋值
+                     * @return DisasterRecoverGroupId 是否已赋值
+                     * 
+                     */
+                    bool DisasterRecoverGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +266,30 @@ namespace TencentCloud
                      */
                     double m_gpu;
                     bool m_gpuHasBeenSet;
+
+                    /**
+                     * 节点资源的配额类型，exact表示精确配额，fuzzy 表示模糊配额。
+                     */
+                    std::string m_quotaType;
+                    bool m_quotaTypeHasBeenSet;
+
+                    /**
+                     * 配额的计费类型，PREPAID表示包月，POSTPAID_BY_HOUR表示按量。
+                     */
+                    std::string m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * QuotaType为 exact 时，此字段有效，表示精确配额的资源类型。
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 置放群组 ID
+                     */
+                    std::string m_disasterRecoverGroupId;
+                    bool m_disasterRecoverGroupIdHasBeenSet;
 
                 };
             }

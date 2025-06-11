@@ -86,10 +86,10 @@ namespace TencentCloud
                     bool RefreshSettingsHasBeenSet() const;
 
                     /**
-                     * 获取刷新模式。取值范围：
+                     * 获取刷新模式。默认值为 ROLLING_UPDATE_RESET，取值范围：
 <li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
 <li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
-                     * @return RefreshMode 刷新模式。取值范围：
+                     * @return RefreshMode 刷新模式。默认值为 ROLLING_UPDATE_RESET，取值范围：
 <li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
 <li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
                      * 
@@ -97,10 +97,10 @@ namespace TencentCloud
                     std::string GetRefreshMode() const;
 
                     /**
-                     * 设置刷新模式。取值范围：
+                     * 设置刷新模式。默认值为 ROLLING_UPDATE_RESET，取值范围：
 <li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
 <li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
-                     * @param _refreshMode 刷新模式。取值范围：
+                     * @param _refreshMode 刷新模式。默认值为 ROLLING_UPDATE_RESET，取值范围：
 <li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
 <li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
                      * 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_refreshSettingsHasBeenSet;
 
                     /**
-                     * 刷新模式。取值范围：
+                     * 刷新模式。默认值为 ROLLING_UPDATE_RESET，取值范围：
 <li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
 <li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
                      */

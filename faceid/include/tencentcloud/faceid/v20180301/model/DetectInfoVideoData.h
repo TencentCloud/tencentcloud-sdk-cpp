@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/faceid/v20180301/model/VideoDetailData.h>
 
 
 namespace TencentCloud
@@ -71,6 +72,31 @@ namespace TencentCloud
                      */
                     bool LivenessVideoHasBeenSet() const;
 
+                    /**
+                     * 获取当次token中所有用户活体视频的COS存储路径，仅当您开启数据存储服务且“IsReturnAllVideo”入参取值为true 时返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LivenessVideos 当次token中所有用户活体视频的COS存储路径，仅当您开启数据存储服务且“IsReturnAllVideo”入参取值为true 时返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<VideoDetailData> GetLivenessVideos() const;
+
+                    /**
+                     * 设置当次token中所有用户活体视频的COS存储路径，仅当您开启数据存储服务且“IsReturnAllVideo”入参取值为true 时返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _livenessVideos 当次token中所有用户活体视频的COS存储路径，仅当您开启数据存储服务且“IsReturnAllVideo”入参取值为true 时返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLivenessVideos(const std::vector<VideoDetailData>& _livenessVideos);
+
+                    /**
+                     * 判断参数 LivenessVideos 是否已赋值
+                     * @return LivenessVideos 是否已赋值
+                     * 
+                     */
+                    bool LivenessVideosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +105,13 @@ namespace TencentCloud
                      */
                     std::string m_livenessVideo;
                     bool m_livenessVideoHasBeenSet;
+
+                    /**
+                     * 当次token中所有用户活体视频的COS存储路径，仅当您开启数据存储服务且“IsReturnAllVideo”入参取值为true 时返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VideoDetailData> m_livenessVideos;
+                    bool m_livenessVideosHasBeenSet;
 
                 };
             }

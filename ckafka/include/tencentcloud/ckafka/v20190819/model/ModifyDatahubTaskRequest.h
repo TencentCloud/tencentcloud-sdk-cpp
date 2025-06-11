@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool TaskNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务描述信息
+                     * @return Description 任务描述信息
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置任务描述信息
+                     * @param _description 任务描述信息
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
+
+                    /**
+                     * 任务描述信息
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

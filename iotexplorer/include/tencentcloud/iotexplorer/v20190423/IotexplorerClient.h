@@ -1231,7 +1231,7 @@ namespace TencentCloud
                 DeleteTopicPolicyOutcomeCallable DeleteTopicPolicyCallable(const Model::DeleteTopicPolicyRequest& request);
 
                 /**
-                 *删除规则
+                 *删除规则。
                  * @param req DeleteTopicRuleRequest
                  * @return DeleteTopicRuleOutcome
                  */
