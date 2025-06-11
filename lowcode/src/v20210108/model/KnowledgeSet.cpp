@@ -27,7 +27,8 @@ KnowledgeSet::KnowledgeSet() :
     m_activeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_metaHasBeenSet(false)
+    m_metaHasBeenSet(false),
+    m_totalSizeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome KnowledgeSet::Deserialize(const rapidjson::Value &value)
         m_metaHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalSize") && !value["TotalSize"].IsNull())
+    {
+        if (!value["TotalSize"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeSet.TotalSize` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalSize = string(value["TotalSize"].GetString());
+        m_totalSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void KnowledgeSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Meta";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_meta.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalSize.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void KnowledgeSet::SetMeta(const string& _meta)
 bool KnowledgeSet::MetaHasBeenSet() const
 {
     return m_metaHasBeenSet;
+}
+
+string KnowledgeSet::GetTotalSize() const
+{
+    return m_totalSize;
+}
+
+void KnowledgeSet::SetTotalSize(const string& _totalSize)
+{
+    m_totalSize = _totalSize;
+    m_totalSizeHasBeenSet = true;
+}
+
+bool KnowledgeSet::TotalSizeHasBeenSet() const
+{
+    return m_totalSizeHasBeenSet;
 }
 

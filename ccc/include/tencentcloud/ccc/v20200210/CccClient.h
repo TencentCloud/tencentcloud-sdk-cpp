@@ -27,6 +27,8 @@
 #include <tencentcloud/ccc/v20200210/model/AbortAgentCruiseDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/AbortPredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/AbortPredictiveDialingCampaignResponse.h>
+#include <tencentcloud/ccc/v20200210/model/BindNumberCallInInterfaceRequest.h>
+#include <tencentcloud/ccc/v20200210/model/BindNumberCallInInterfaceResponse.h>
 #include <tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupRequest.h>
 #include <tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListRequest.h>
@@ -187,6 +189,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AbortPredictiveDialingCampaignResponse> AbortPredictiveDialingCampaignOutcome;
                 typedef std::future<AbortPredictiveDialingCampaignOutcome> AbortPredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::AbortPredictiveDialingCampaignRequest&, AbortPredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AbortPredictiveDialingCampaignAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindNumberCallInInterfaceResponse> BindNumberCallInInterfaceOutcome;
+                typedef std::future<BindNumberCallInInterfaceOutcome> BindNumberCallInInterfaceOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::BindNumberCallInInterfaceRequest&, BindNumberCallInInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindNumberCallInInterfaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindNumberCallOutSkillGroupResponse> BindNumberCallOutSkillGroupOutcome;
                 typedef std::future<BindNumberCallOutSkillGroupOutcome> BindNumberCallOutSkillGroupOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::BindNumberCallOutSkillGroupRequest&, BindNumberCallOutSkillGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindNumberCallOutSkillGroupAsyncHandler;
@@ -417,6 +422,15 @@ namespace TencentCloud
                 AbortPredictiveDialingCampaignOutcome AbortPredictiveDialingCampaign(const Model::AbortPredictiveDialingCampaignRequest &request);
                 void AbortPredictiveDialingCampaignAsync(const Model::AbortPredictiveDialingCampaignRequest& request, const AbortPredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AbortPredictiveDialingCampaignOutcomeCallable AbortPredictiveDialingCampaignCallable(const Model::AbortPredictiveDialingCampaignRequest& request);
+
+                /**
+                 *绑定号码呼入回调接口
+                 * @param req BindNumberCallInInterfaceRequest
+                 * @return BindNumberCallInInterfaceOutcome
+                 */
+                BindNumberCallInInterfaceOutcome BindNumberCallInInterface(const Model::BindNumberCallInInterfaceRequest &request);
+                void BindNumberCallInInterfaceAsync(const Model::BindNumberCallInInterfaceRequest& request, const BindNumberCallInInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindNumberCallInInterfaceOutcomeCallable BindNumberCallInInterfaceCallable(const Model::BindNumberCallInInterfaceRequest& request);
 
                 /**
                  *绑定号码外呼技能组

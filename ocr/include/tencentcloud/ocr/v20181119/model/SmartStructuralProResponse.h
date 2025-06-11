@@ -87,6 +87,20 @@ namespace TencentCloud
                      */
                     bool WordListHasBeenSet() const;
 
+                    /**
+                     * 获取识别出的token个数
+                     * @return TokenNum 识别出的token个数
+                     * 
+                     */
+                    int64_t GetTokenNum() const;
+
+                    /**
+                     * 判断参数 TokenNum 是否已赋值
+                     * @return TokenNum 是否已赋值
+                     * 
+                     */
+                    bool TokenNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +120,12 @@ namespace TencentCloud
                      */
                     std::vector<WordItem> m_wordList;
                     bool m_wordListHasBeenSet;
+
+                    /**
+                     * 识别出的token个数
+                     */
+                    int64_t m_tokenNum;
+                    bool m_tokenNumHasBeenSet;
 
                 };
             }

@@ -49,21 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取给文件分配的 ID 信息。
                      * @return DocumentSetId 给文件分配的 ID 信息。
-                     * 
+                     * @deprecated
                      */
                     std::string GetDocumentSetId() const;
 
                     /**
                      * 设置给文件分配的 ID 信息。
                      * @param _documentSetId 给文件分配的 ID 信息。
-                     * 
+                     * @deprecated
                      */
                     void SetDocumentSetId(const std::string& _documentSetId);
 
                     /**
                      * 判断参数 DocumentSetId 是否已赋值
                      * @return DocumentSetId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DocumentSetIdHasBeenSet() const;
 
@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool FileMetaDataHasBeenSet() const;
 
+                    /**
+                     * 获取Cos存储文件ID
+                     * @return FileId Cos存储文件ID
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置Cos存储文件ID
+                     * @param _fileId Cos存储文件ID
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_fileMetaData;
                     bool m_fileMetaDataHasBeenSet;
+
+                    /**
+                     * Cos存储文件ID
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                 };
             }

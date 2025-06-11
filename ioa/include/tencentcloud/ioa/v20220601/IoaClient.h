@@ -43,6 +43,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeRootAccountGroupResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationResponse.h>
 
 
 namespace TencentCloud
@@ -87,6 +89,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSoftCensusListByDeviceResponse> DescribeSoftCensusListByDeviceOutcome;
                 typedef std::future<DescribeSoftCensusListByDeviceOutcome> DescribeSoftCensusListByDeviceOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeSoftCensusListByDeviceRequest&, DescribeSoftCensusListByDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSoftCensusListByDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSoftwareInformationResponse> DescribeSoftwareInformationOutcome;
+                typedef std::future<DescribeSoftwareInformationOutcome> DescribeSoftwareInformationOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeSoftwareInformationRequest&, DescribeSoftwareInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSoftwareInformationAsyncHandler;
 
 
 
@@ -179,6 +184,15 @@ namespace TencentCloud
                 DescribeSoftCensusListByDeviceOutcome DescribeSoftCensusListByDevice(const Model::DescribeSoftCensusListByDeviceRequest &request);
                 void DescribeSoftCensusListByDeviceAsync(const Model::DescribeSoftCensusListByDeviceRequest& request, const DescribeSoftCensusListByDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSoftCensusListByDeviceOutcomeCallable DescribeSoftCensusListByDeviceCallable(const Model::DescribeSoftCensusListByDeviceRequest& request);
+
+                /**
+                 *查看指定终端的软件详情列表,私有化调用path为：capi/Software/DescribeSoftwareInformation
+                 * @param req DescribeSoftwareInformationRequest
+                 * @return DescribeSoftwareInformationOutcome
+                 */
+                DescribeSoftwareInformationOutcome DescribeSoftwareInformation(const Model::DescribeSoftwareInformationRequest &request);
+                void DescribeSoftwareInformationAsync(const Model::DescribeSoftwareInformationRequest& request, const DescribeSoftwareInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSoftwareInformationOutcomeCallable DescribeSoftwareInformationCallable(const Model::DescribeSoftwareInformationRequest& request);
 
             };
         }

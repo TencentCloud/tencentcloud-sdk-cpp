@@ -45,6 +45,8 @@
 #include <tencentcloud/lke/v20231130/model/CreateRejectedQuestionResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateReleaseRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateReleaseResponse.h>
+#include <tencentcloud/lke/v20231130/model/CreateSharedKnowledgeRequest.h>
+#include <tencentcloud/lke/v20231130/model/CreateSharedKnowledgeResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateVarRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateVarResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteAppRequest.h>
@@ -61,6 +63,8 @@
 #include <tencentcloud/lke/v20231130/model/DeleteQACateResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteRejectedQuestionRequest.h>
 #include <tencentcloud/lke/v20231130/model/DeleteRejectedQuestionResponse.h>
+#include <tencentcloud/lke/v20231130/model/DeleteSharedKnowledgeRequest.h>
+#include <tencentcloud/lke/v20231130/model/DeleteSharedKnowledgeResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAttributeLabelRequest.h>
@@ -93,6 +97,8 @@
 #include <tencentcloud/lke/v20231130/model/DescribeSearchStatsGraphResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeSegmentsRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeSegmentsResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeSharedKnowledgeRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeSharedKnowledgeResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeStorageCredentialRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeStorageCredentialResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeTokenUsageRequest.h>
@@ -157,6 +163,8 @@
 #include <tencentcloud/lke/v20231130/model/ListQAResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListQACateRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListQACateResponse.h>
+#include <tencentcloud/lke/v20231130/model/ListReferShareKnowledgeRequest.h>
+#include <tencentcloud/lke/v20231130/model/ListReferShareKnowledgeResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListRejectedQuestionRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListRejectedQuestionResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListRejectedQuestionPreviewRequest.h>
@@ -171,6 +179,8 @@
 #include <tencentcloud/lke/v20231130/model/ListReleaseQAPreviewResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListSelectDocRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListSelectDocResponse.h>
+#include <tencentcloud/lke/v20231130/model/ListSharedKnowledgeRequest.h>
+#include <tencentcloud/lke/v20231130/model/ListSharedKnowledgeResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListUnsatisfiedReplyRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListUnsatisfiedReplyResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListUsageCallDetailRequest.h>
@@ -199,6 +209,8 @@
 #include <tencentcloud/lke/v20231130/model/RateMsgRecordResponse.h>
 #include <tencentcloud/lke/v20231130/model/ReconstructDocumentRequest.h>
 #include <tencentcloud/lke/v20231130/model/ReconstructDocumentResponse.h>
+#include <tencentcloud/lke/v20231130/model/ReferShareKnowledgeRequest.h>
+#include <tencentcloud/lke/v20231130/model/ReferShareKnowledgeResponse.h>
 #include <tencentcloud/lke/v20231130/model/RenameDocRequest.h>
 #include <tencentcloud/lke/v20231130/model/RenameDocResponse.h>
 #include <tencentcloud/lke/v20231130/model/RetryDocAuditRequest.h>
@@ -213,6 +225,8 @@
 #include <tencentcloud/lke/v20231130/model/SaveDocResponse.h>
 #include <tencentcloud/lke/v20231130/model/StopDocParseRequest.h>
 #include <tencentcloud/lke/v20231130/model/StopDocParseResponse.h>
+#include <tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeRequest.h>
+#include <tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeResponse.h>
 #include <tencentcloud/lke/v20231130/model/UploadAttributeLabelRequest.h>
 #include <tencentcloud/lke/v20231130/model/UploadAttributeLabelResponse.h>
 #include <tencentcloud/lke/v20231130/model/VerifyQARequest.h>
@@ -264,6 +278,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateReleaseResponse> CreateReleaseOutcome;
                 typedef std::future<CreateReleaseOutcome> CreateReleaseOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateReleaseRequest&, CreateReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReleaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSharedKnowledgeResponse> CreateSharedKnowledgeOutcome;
+                typedef std::future<CreateSharedKnowledgeOutcome> CreateSharedKnowledgeOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::CreateSharedKnowledgeRequest&, CreateSharedKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSharedKnowledgeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateVarResponse> CreateVarOutcome;
                 typedef std::future<CreateVarOutcome> CreateVarOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateVarRequest&, CreateVarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVarAsyncHandler;
@@ -288,6 +305,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRejectedQuestionResponse> DeleteRejectedQuestionOutcome;
                 typedef std::future<DeleteRejectedQuestionOutcome> DeleteRejectedQuestionOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DeleteRejectedQuestionRequest&, DeleteRejectedQuestionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRejectedQuestionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSharedKnowledgeResponse> DeleteSharedKnowledgeOutcome;
+                typedef std::future<DeleteSharedKnowledgeOutcome> DeleteSharedKnowledgeOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DeleteSharedKnowledgeRequest&, DeleteSharedKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSharedKnowledgeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAppResponse> DescribeAppOutcome;
                 typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeAppRequest&, DescribeAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppAsyncHandler;
@@ -336,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSegmentsResponse> DescribeSegmentsOutcome;
                 typedef std::future<DescribeSegmentsOutcome> DescribeSegmentsOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeSegmentsRequest&, DescribeSegmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSegmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSharedKnowledgeResponse> DescribeSharedKnowledgeOutcome;
+                typedef std::future<DescribeSharedKnowledgeOutcome> DescribeSharedKnowledgeOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeSharedKnowledgeRequest&, DescribeSharedKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedKnowledgeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStorageCredentialResponse> DescribeStorageCredentialOutcome;
                 typedef std::future<DescribeStorageCredentialOutcome> DescribeStorageCredentialOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeStorageCredentialRequest&, DescribeStorageCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStorageCredentialAsyncHandler;
@@ -432,6 +455,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListQACateResponse> ListQACateOutcome;
                 typedef std::future<ListQACateOutcome> ListQACateOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListQACateRequest&, ListQACateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListQACateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListReferShareKnowledgeResponse> ListReferShareKnowledgeOutcome;
+                typedef std::future<ListReferShareKnowledgeOutcome> ListReferShareKnowledgeOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ListReferShareKnowledgeRequest&, ListReferShareKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListReferShareKnowledgeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListRejectedQuestionResponse> ListRejectedQuestionOutcome;
                 typedef std::future<ListRejectedQuestionOutcome> ListRejectedQuestionOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListRejectedQuestionRequest&, ListRejectedQuestionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRejectedQuestionAsyncHandler;
@@ -453,6 +479,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListSelectDocResponse> ListSelectDocOutcome;
                 typedef std::future<ListSelectDocOutcome> ListSelectDocOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListSelectDocRequest&, ListSelectDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSelectDocAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListSharedKnowledgeResponse> ListSharedKnowledgeOutcome;
+                typedef std::future<ListSharedKnowledgeOutcome> ListSharedKnowledgeOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ListSharedKnowledgeRequest&, ListSharedKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSharedKnowledgeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListUnsatisfiedReplyResponse> ListUnsatisfiedReplyOutcome;
                 typedef std::future<ListUnsatisfiedReplyOutcome> ListUnsatisfiedReplyOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListUnsatisfiedReplyRequest&, ListUnsatisfiedReplyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUnsatisfiedReplyAsyncHandler;
@@ -495,6 +524,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReconstructDocumentResponse> ReconstructDocumentOutcome;
                 typedef std::future<ReconstructDocumentOutcome> ReconstructDocumentOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ReconstructDocumentRequest&, ReconstructDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReconstructDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReferShareKnowledgeResponse> ReferShareKnowledgeOutcome;
+                typedef std::future<ReferShareKnowledgeOutcome> ReferShareKnowledgeOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ReferShareKnowledgeRequest&, ReferShareKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReferShareKnowledgeAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenameDocResponse> RenameDocOutcome;
                 typedef std::future<RenameDocOutcome> RenameDocOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::RenameDocRequest&, RenameDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenameDocAsyncHandler;
@@ -516,6 +548,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopDocParseResponse> StopDocParseOutcome;
                 typedef std::future<StopDocParseOutcome> StopDocParseOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::StopDocParseRequest&, StopDocParseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopDocParseAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateSharedKnowledgeResponse> UpdateSharedKnowledgeOutcome;
+                typedef std::future<UpdateSharedKnowledgeOutcome> UpdateSharedKnowledgeOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::UpdateSharedKnowledgeRequest&, UpdateSharedKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSharedKnowledgeAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadAttributeLabelResponse> UploadAttributeLabelOutcome;
                 typedef std::future<UploadAttributeLabelOutcome> UploadAttributeLabelOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::UploadAttributeLabelRequest&, UploadAttributeLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadAttributeLabelAsyncHandler;
@@ -627,6 +662,15 @@ namespace TencentCloud
                 CreateReleaseOutcomeCallable CreateReleaseCallable(const Model::CreateReleaseRequest& request);
 
                 /**
+                 *创建共享知识库。
+                 * @param req CreateSharedKnowledgeRequest
+                 * @return CreateSharedKnowledgeOutcome
+                 */
+                CreateSharedKnowledgeOutcome CreateSharedKnowledge(const Model::CreateSharedKnowledgeRequest &request);
+                void CreateSharedKnowledgeAsync(const Model::CreateSharedKnowledgeRequest& request, const CreateSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSharedKnowledgeOutcomeCallable CreateSharedKnowledgeCallable(const Model::CreateSharedKnowledgeRequest& request);
+
+                /**
                  *创建变量
                  * @param req CreateVarRequest
                  * @return CreateVarOutcome
@@ -697,6 +741,15 @@ namespace TencentCloud
                 DeleteRejectedQuestionOutcome DeleteRejectedQuestion(const Model::DeleteRejectedQuestionRequest &request);
                 void DeleteRejectedQuestionAsync(const Model::DeleteRejectedQuestionRequest& request, const DeleteRejectedQuestionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRejectedQuestionOutcomeCallable DeleteRejectedQuestionCallable(const Model::DeleteRejectedQuestionRequest& request);
+
+                /**
+                 *删除共享知识库。
+                 * @param req DeleteSharedKnowledgeRequest
+                 * @return DeleteSharedKnowledgeOutcome
+                 */
+                DeleteSharedKnowledgeOutcome DeleteSharedKnowledge(const Model::DeleteSharedKnowledgeRequest &request);
+                void DeleteSharedKnowledgeAsync(const Model::DeleteSharedKnowledgeRequest& request, const DeleteSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSharedKnowledgeOutcomeCallable DeleteSharedKnowledgeCallable(const Model::DeleteSharedKnowledgeRequest& request);
 
                 /**
                  *获取企业下应用详情
@@ -841,6 +894,15 @@ namespace TencentCloud
                 DescribeSegmentsOutcome DescribeSegments(const Model::DescribeSegmentsRequest &request);
                 void DescribeSegmentsAsync(const Model::DescribeSegmentsRequest& request, const DescribeSegmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSegmentsOutcomeCallable DescribeSegmentsCallable(const Model::DescribeSegmentsRequest& request);
+
+                /**
+                 *查询共享知识库。
+                 * @param req DescribeSharedKnowledgeRequest
+                 * @return DescribeSharedKnowledgeOutcome
+                 */
+                DescribeSharedKnowledgeOutcome DescribeSharedKnowledge(const Model::DescribeSharedKnowledgeRequest &request);
+                void DescribeSharedKnowledgeAsync(const Model::DescribeSharedKnowledgeRequest& request, const DescribeSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSharedKnowledgeOutcomeCallable DescribeSharedKnowledgeCallable(const Model::DescribeSharedKnowledgeRequest& request);
 
                 /**
                  *获取文件上传临时密钥
@@ -1134,6 +1196,15 @@ namespace TencentCloud
                 ListQACateOutcomeCallable ListQACateCallable(const Model::ListQACateRequest& request);
 
                 /**
+                 *查看应用引用了哪些共享知识库，可以看到共享知识库的基础信息，包括名称，id等
+                 * @param req ListReferShareKnowledgeRequest
+                 * @return ListReferShareKnowledgeOutcome
+                 */
+                ListReferShareKnowledgeOutcome ListReferShareKnowledge(const Model::ListReferShareKnowledgeRequest &request);
+                void ListReferShareKnowledgeAsync(const Model::ListReferShareKnowledgeRequest& request, const ListReferShareKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListReferShareKnowledgeOutcomeCallable ListReferShareKnowledgeCallable(const Model::ListReferShareKnowledgeRequest& request);
+
+                /**
                  *获取拒答问题
                  * @param req ListRejectedQuestionRequest
                  * @return ListRejectedQuestionOutcome
@@ -1195,6 +1266,15 @@ namespace TencentCloud
                 ListSelectDocOutcome ListSelectDoc(const Model::ListSelectDocRequest &request);
                 void ListSelectDocAsync(const Model::ListSelectDocRequest& request, const ListSelectDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListSelectDocOutcomeCallable ListSelectDocCallable(const Model::ListSelectDocRequest& request);
+
+                /**
+                 *列举共享知识库。
+                 * @param req ListSharedKnowledgeRequest
+                 * @return ListSharedKnowledgeOutcome
+                 */
+                ListSharedKnowledgeOutcome ListSharedKnowledge(const Model::ListSharedKnowledgeRequest &request);
+                void ListSharedKnowledgeAsync(const Model::ListSharedKnowledgeRequest& request, const ListSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListSharedKnowledgeOutcomeCallable ListSharedKnowledgeCallable(const Model::ListSharedKnowledgeRequest& request);
 
                 /**
                  *查询不满意回复列表
@@ -1326,6 +1406,15 @@ namespace TencentCloud
                 ReconstructDocumentOutcomeCallable ReconstructDocumentCallable(const Model::ReconstructDocumentRequest& request);
 
                 /**
+                 *应用引用共享知识库，可以引用一个或多个，每次都是全量覆盖
+                 * @param req ReferShareKnowledgeRequest
+                 * @return ReferShareKnowledgeOutcome
+                 */
+                ReferShareKnowledgeOutcome ReferShareKnowledge(const Model::ReferShareKnowledgeRequest &request);
+                void ReferShareKnowledgeAsync(const Model::ReferShareKnowledgeRequest& request, const ReferShareKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReferShareKnowledgeOutcomeCallable ReferShareKnowledgeCallable(const Model::ReferShareKnowledgeRequest& request);
+
+                /**
                  *文档重命名
                  * @param req RenameDocRequest
                  * @return RenameDocOutcome
@@ -1392,6 +1481,15 @@ namespace TencentCloud
                 StopDocParseOutcome StopDocParse(const Model::StopDocParseRequest &request);
                 void StopDocParseAsync(const Model::StopDocParseRequest& request, const StopDocParseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopDocParseOutcomeCallable StopDocParseCallable(const Model::StopDocParseRequest& request);
+
+                /**
+                 *更新共享知识库。
+                 * @param req UpdateSharedKnowledgeRequest
+                 * @return UpdateSharedKnowledgeOutcome
+                 */
+                UpdateSharedKnowledgeOutcome UpdateSharedKnowledge(const Model::UpdateSharedKnowledgeRequest &request);
+                void UpdateSharedKnowledgeAsync(const Model::UpdateSharedKnowledgeRequest& request, const UpdateSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateSharedKnowledgeOutcomeCallable UpdateSharedKnowledgeCallable(const Model::UpdateSharedKnowledgeRequest& request);
 
                 /**
                  *上传导入属性标签

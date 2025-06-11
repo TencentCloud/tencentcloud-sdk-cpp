@@ -126,6 +126,49 @@ CccClient::AbortPredictiveDialingCampaignOutcomeCallable CccClient::AbortPredict
     return task->get_future();
 }
 
+CccClient::BindNumberCallInInterfaceOutcome CccClient::BindNumberCallInInterface(const BindNumberCallInInterfaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindNumberCallInInterface");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindNumberCallInInterfaceResponse rsp = BindNumberCallInInterfaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindNumberCallInInterfaceOutcome(rsp);
+        else
+            return BindNumberCallInInterfaceOutcome(o.GetError());
+    }
+    else
+    {
+        return BindNumberCallInInterfaceOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::BindNumberCallInInterfaceAsync(const BindNumberCallInInterfaceRequest& request, const BindNumberCallInInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindNumberCallInInterface(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::BindNumberCallInInterfaceOutcomeCallable CccClient::BindNumberCallInInterfaceCallable(const BindNumberCallInInterfaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindNumberCallInInterfaceOutcome()>>(
+        [this, request]()
+        {
+            return this->BindNumberCallInInterface(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::BindNumberCallOutSkillGroupOutcome CccClient::BindNumberCallOutSkillGroup(const BindNumberCallOutSkillGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "BindNumberCallOutSkillGroup");

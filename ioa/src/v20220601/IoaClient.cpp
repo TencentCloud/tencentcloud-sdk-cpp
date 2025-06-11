@@ -470,3 +470,46 @@ IoaClient::DescribeSoftCensusListByDeviceOutcomeCallable IoaClient::DescribeSoft
     return task->get_future();
 }
 
+IoaClient::DescribeSoftwareInformationOutcome IoaClient::DescribeSoftwareInformation(const DescribeSoftwareInformationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSoftwareInformation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSoftwareInformationResponse rsp = DescribeSoftwareInformationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSoftwareInformationOutcome(rsp);
+        else
+            return DescribeSoftwareInformationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSoftwareInformationOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeSoftwareInformationAsync(const DescribeSoftwareInformationRequest& request, const DescribeSoftwareInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSoftwareInformation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeSoftwareInformationOutcomeCallable IoaClient::DescribeSoftwareInformationCallable(const DescribeSoftwareInformationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSoftwareInformationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSoftwareInformation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

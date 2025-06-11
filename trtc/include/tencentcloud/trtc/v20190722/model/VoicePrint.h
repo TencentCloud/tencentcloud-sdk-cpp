@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取默认为0，表示不启用声纹。1表示使用固定声纹，且需要填写voiceprint id。2表示使用动态声纹，不需要使用voiceprint id，内部动态选择主讲人声纹
-                     * @return Mode 默认为0，表示不启用声纹。1表示使用固定声纹，且需要填写voiceprint id。2表示使用动态声纹，不需要使用voiceprint id，内部动态选择主讲人声纹
+                     * 获取默认为0，表示不启用声纹。1表示启用声纹，此时需要填写voiceprint id。
+                     * @return Mode 默认为0，表示不启用声纹。1表示启用声纹，此时需要填写voiceprint id。
                      * 
                      */
                     uint64_t GetMode() const;
 
                     /**
-                     * 设置默认为0，表示不启用声纹。1表示使用固定声纹，且需要填写voiceprint id。2表示使用动态声纹，不需要使用voiceprint id，内部动态选择主讲人声纹
-                     * @param _mode 默认为0，表示不启用声纹。1表示使用固定声纹，且需要填写voiceprint id。2表示使用动态声纹，不需要使用voiceprint id，内部动态选择主讲人声纹
+                     * 设置默认为0，表示不启用声纹。1表示启用声纹，此时需要填写voiceprint id。
+                     * @param _mode 默认为0，表示不启用声纹。1表示启用声纹，此时需要填写voiceprint id。
                      * 
                      */
                     void SetMode(const uint64_t& _mode);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取只有当VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id
-                     * @return IdList 只有当VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id
+                     * 获取VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id
+                     * @return IdList VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id
                      * 
                      */
                     std::vector<std::string> GetIdList() const;
 
                     /**
-                     * 设置只有当VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id
-                     * @param _idList 只有当VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id
+                     * 设置VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id
+                     * @param _idList VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id
                      * 
                      */
                     void SetIdList(const std::vector<std::string>& _idList);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 默认为0，表示不启用声纹。1表示使用固定声纹，且需要填写voiceprint id。2表示使用动态声纹，不需要使用voiceprint id，内部动态选择主讲人声纹
+                     * 默认为0，表示不启用声纹。1表示启用声纹，此时需要填写voiceprint id。
                      */
                     uint64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 只有当VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id
+                     * VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id
                      */
                     std::vector<std::string> m_idList;
                     bool m_idListHasBeenSet;

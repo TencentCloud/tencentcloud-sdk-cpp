@@ -1846,6 +1846,49 @@ DnspodClient::DescribeDomainShareUserListOutcomeCallable DnspodClient::DescribeD
     return task->get_future();
 }
 
+DnspodClient::DescribeDomainVipListOutcome DnspodClient::DescribeDomainVipList(const DescribeDomainVipListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainVipList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainVipListResponse rsp = DescribeDomainVipListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainVipListOutcome(rsp);
+        else
+            return DescribeDomainVipListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainVipListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeDomainVipListAsync(const DescribeDomainVipListRequest& request, const DescribeDomainVipListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainVipList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeDomainVipListOutcomeCallable DnspodClient::DescribeDomainVipListCallable(const DescribeDomainVipListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainVipListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainVipList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeDomainWhoisOutcome DnspodClient::DescribeDomainWhois(const DescribeDomainWhoisRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainWhois");
@@ -2742,6 +2785,49 @@ DnspodClient::DescribeVASStatisticOutcomeCallable DnspodClient::DescribeVASStati
         [this, request]()
         {
             return this->DescribeVASStatistic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeVasListOutcome DnspodClient::DescribeVasList(const DescribeVasListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVasList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVasListResponse rsp = DescribeVasListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVasListOutcome(rsp);
+        else
+            return DescribeVasListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVasListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeVasListAsync(const DescribeVasListRequest& request, const DescribeVasListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVasList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeVasListOutcomeCallable DnspodClient::DescribeVasListCallable(const DescribeVasListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVasListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVasList(request);
         }
     );
 

@@ -422,6 +422,27 @@ True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                     bool IdleConnectTimeoutHasBeenSet() const;
 
                     /**
+                     * 获取TCP_SSL和QUIC是否支持PP
+                     * @return ProxyProtocol TCP_SSL和QUIC是否支持PP
+                     * 
+                     */
+                    bool GetProxyProtocol() const;
+
+                    /**
+                     * 设置TCP_SSL和QUIC是否支持PP
+                     * @param _proxyProtocol TCP_SSL和QUIC是否支持PP
+                     * 
+                     */
+                    void SetProxyProtocol(const bool& _proxyProtocol);
+
+                    /**
+                     * 判断参数 ProxyProtocol 是否已赋值
+                     * @return ProxyProtocol 是否已赋值
+                     * 
+                     */
+                    bool ProxyProtocolHasBeenSet() const;
+
+                    /**
                      * 获取是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
 不传则表示不修改。
                      * @return SnatEnable 是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
@@ -574,6 +595,12 @@ True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                      */
                     int64_t m_idleConnectTimeout;
                     bool m_idleConnectTimeoutHasBeenSet;
+
+                    /**
+                     * TCP_SSL和QUIC是否支持PP
+                     */
+                    bool m_proxyProtocol;
+                    bool m_proxyProtocolHasBeenSet;
 
                     /**
                      * 是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。

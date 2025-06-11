@@ -27,7 +27,8 @@ CreateSubdomainValidateTXTValueResponse::CreateSubdomainValidateTXTValueResponse
     m_domainHasBeenSet(false),
     m_subdomainHasBeenSet(false),
     m_recordTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_parentDomainHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome CreateSubdomainValidateTXTValueResponse::Deserialize(const s
         m_valueHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ParentDomain") && !rsp["ParentDomain"].IsNull())
+    {
+        if (!rsp["ParentDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParentDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentDomain = string(rsp["ParentDomain"].GetString());
+        m_parentDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string CreateSubdomainValidateTXTValueResponse::ToJsonString() const
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentDomain.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ string CreateSubdomainValidateTXTValueResponse::GetValue() const
 bool CreateSubdomainValidateTXTValueResponse::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+string CreateSubdomainValidateTXTValueResponse::GetParentDomain() const
+{
+    return m_parentDomain;
+}
+
+bool CreateSubdomainValidateTXTValueResponse::ParentDomainHasBeenSet() const
+{
+    return m_parentDomainHasBeenSet;
 }
 
 

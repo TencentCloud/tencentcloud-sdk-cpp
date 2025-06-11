@@ -39,6 +39,7 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_maxConnHasBeenSet(false),
     m_maxCpsHasBeenSet(false),
     m_idleConnectTimeoutHasBeenSet(false),
+    m_proxyProtocolHasBeenSet(false),
     m_snatEnableHasBeenSet(false),
     m_dataCompressModeHasBeenSet(false)
 {
@@ -180,6 +181,14 @@ string ModifyListenerRequest::ToJsonString() const
         string key = "IdleConnectTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_idleConnectTimeout, allocator);
+    }
+
+    if (m_proxyProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxyProtocol, allocator);
     }
 
     if (m_snatEnableHasBeenSet)
@@ -460,6 +469,22 @@ void ModifyListenerRequest::SetIdleConnectTimeout(const int64_t& _idleConnectTim
 bool ModifyListenerRequest::IdleConnectTimeoutHasBeenSet() const
 {
     return m_idleConnectTimeoutHasBeenSet;
+}
+
+bool ModifyListenerRequest::GetProxyProtocol() const
+{
+    return m_proxyProtocol;
+}
+
+void ModifyListenerRequest::SetProxyProtocol(const bool& _proxyProtocol)
+{
+    m_proxyProtocol = _proxyProtocol;
+    m_proxyProtocolHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::ProxyProtocolHasBeenSet() const
+{
+    return m_proxyProtocolHasBeenSet;
 }
 
 bool ModifyListenerRequest::GetSnatEnable() const

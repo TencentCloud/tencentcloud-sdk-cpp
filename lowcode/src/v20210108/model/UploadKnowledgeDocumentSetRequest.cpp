@@ -32,7 +32,8 @@ UploadKnowledgeDocumentSetRequest::UploadKnowledgeDocumentSetRequest() :
     m_fileTitleHasBeenSet(false),
     m_fileMetaDataHasBeenSet(false),
     m_documentSetIdHasBeenSet(false),
-    m_delimiterHasBeenSet(false)
+    m_delimiterHasBeenSet(false),
+    m_fileIdHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string UploadKnowledgeDocumentSetRequest::ToJsonString() const
         string key = "Delimiter";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_delimiter.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void UploadKnowledgeDocumentSetRequest::SetDelimiter(const string& _delimiter)
 bool UploadKnowledgeDocumentSetRequest::DelimiterHasBeenSet() const
 {
     return m_delimiterHasBeenSet;
+}
+
+string UploadKnowledgeDocumentSetRequest::GetFileId() const
+{
+    return m_fileId;
+}
+
+void UploadKnowledgeDocumentSetRequest::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool UploadKnowledgeDocumentSetRequest::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 
 

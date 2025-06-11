@@ -728,6 +728,135 @@ OcrClient::EstateCertOCROutcomeCallable OcrClient::EstateCertOCRCallable(const E
     return task->get_future();
 }
 
+OcrClient::ExtractDocBasicOutcome OcrClient::ExtractDocBasic(const ExtractDocBasicRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExtractDocBasic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExtractDocBasicResponse rsp = ExtractDocBasicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExtractDocBasicOutcome(rsp);
+        else
+            return ExtractDocBasicOutcome(o.GetError());
+    }
+    else
+    {
+        return ExtractDocBasicOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::ExtractDocBasicAsync(const ExtractDocBasicRequest& request, const ExtractDocBasicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExtractDocBasic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::ExtractDocBasicOutcomeCallable OcrClient::ExtractDocBasicCallable(const ExtractDocBasicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExtractDocBasicOutcome()>>(
+        [this, request]()
+        {
+            return this->ExtractDocBasic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::ExtractDocMultiOutcome OcrClient::ExtractDocMulti(const ExtractDocMultiRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExtractDocMulti");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExtractDocMultiResponse rsp = ExtractDocMultiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExtractDocMultiOutcome(rsp);
+        else
+            return ExtractDocMultiOutcome(o.GetError());
+    }
+    else
+    {
+        return ExtractDocMultiOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::ExtractDocMultiAsync(const ExtractDocMultiRequest& request, const ExtractDocMultiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExtractDocMulti(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::ExtractDocMultiOutcomeCallable OcrClient::ExtractDocMultiCallable(const ExtractDocMultiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExtractDocMultiOutcome()>>(
+        [this, request]()
+        {
+            return this->ExtractDocMulti(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::ExtractDocMultiProOutcome OcrClient::ExtractDocMultiPro(const ExtractDocMultiProRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExtractDocMultiPro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExtractDocMultiProResponse rsp = ExtractDocMultiProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExtractDocMultiProOutcome(rsp);
+        else
+            return ExtractDocMultiProOutcome(o.GetError());
+    }
+    else
+    {
+        return ExtractDocMultiProOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::ExtractDocMultiProAsync(const ExtractDocMultiProRequest& request, const ExtractDocMultiProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExtractDocMultiPro(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::ExtractDocMultiProOutcomeCallable OcrClient::ExtractDocMultiProCallable(const ExtractDocMultiProRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExtractDocMultiProOutcome()>>(
+        [this, request]()
+        {
+            return this->ExtractDocMultiPro(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::FinanBillOCROutcome OcrClient::FinanBillOCR(const FinanBillOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "FinanBillOCR");
@@ -1237,6 +1366,49 @@ OcrClient::HKIDCardOCROutcomeCallable OcrClient::HKIDCardOCRCallable(const HKIDC
         [this, request]()
         {
             return this->HKIDCardOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::HandwritingEssayOCROutcome OcrClient::HandwritingEssayOCR(const HandwritingEssayOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "HandwritingEssayOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        HandwritingEssayOCRResponse rsp = HandwritingEssayOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return HandwritingEssayOCROutcome(rsp);
+        else
+            return HandwritingEssayOCROutcome(o.GetError());
+    }
+    else
+    {
+        return HandwritingEssayOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::HandwritingEssayOCRAsync(const HandwritingEssayOCRRequest& request, const HandwritingEssayOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->HandwritingEssayOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::HandwritingEssayOCROutcomeCallable OcrClient::HandwritingEssayOCRCallable(const HandwritingEssayOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<HandwritingEssayOCROutcome()>>(
+        [this, request]()
+        {
+            return this->HandwritingEssayOCR(request);
         }
     );
 

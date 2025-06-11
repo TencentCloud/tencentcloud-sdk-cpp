@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool FileSizeHasBeenSet() const;
 
+                    /**
+                     * 获取Cos存储文件ID
+                     * @return FileId Cos存储文件ID
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置Cos存储文件ID
+                     * @param _fileId Cos存储文件ID
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     uint64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;
+
+                    /**
+                     * Cos存储文件ID
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                 };
             }

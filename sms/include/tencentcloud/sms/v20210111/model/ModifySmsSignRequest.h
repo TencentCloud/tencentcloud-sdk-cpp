@@ -92,7 +92,6 @@ namespace TencentCloud
 5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。
 注1：必须按照对应关系选择证明类型，否则会审核失败。
 注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-示例值：0
                      * @return SignType 签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：
 0：公司，可选 DocumentType 有（0，1）。
 1：APP，可选 DocumentType 有（0，1，2，3，4） 。
@@ -100,7 +99,6 @@ namespace TencentCloud
 5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。
 注1：必须按照对应关系选择证明类型，否则会审核失败。
 注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-示例值：0
                      * 
                      */
                     uint64_t GetSignType() const;
@@ -113,7 +111,6 @@ namespace TencentCloud
 5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。
 注1：必须按照对应关系选择证明类型，否则会审核失败。
 注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-示例值：0
                      * @param _signType 签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：
 0：公司，可选 DocumentType 有（0，1）。
 1：APP，可选 DocumentType 有（0，1，2，3，4） 。
@@ -121,7 +118,6 @@ namespace TencentCloud
 5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。
 注1：必须按照对应关系选择证明类型，否则会审核失败。
 注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-示例值：0
                      * 
                      */
                     void SetSignType(const uint64_t& _signType);
@@ -142,7 +138,6 @@ namespace TencentCloud
 4：应用后台管理截图（个人开发APP）。
 7：商标注册书。
 注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-示例值：1
                      * @return DocumentType 证明类型：
 0：三证合一。
 1：企业营业执照。
@@ -151,7 +146,6 @@ namespace TencentCloud
 4：应用后台管理截图（个人开发APP）。
 7：商标注册书。
 注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-示例值：1
                      * 
                      */
                     uint64_t GetDocumentType() const;
@@ -165,7 +159,6 @@ namespace TencentCloud
 4：应用后台管理截图（个人开发APP）。
 7：商标注册书。
 注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-示例值：1
                      * @param _documentType 证明类型：
 0：三证合一。
 1：企业营业执照。
@@ -174,7 +167,6 @@ namespace TencentCloud
 4：应用后台管理截图（个人开发APP）。
 7：商标注册书。
 注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-示例值：1
                      * 
                      */
                     void SetDocumentType(const uint64_t& _documentType);
@@ -362,7 +354,6 @@ namespace TencentCloud
 5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。
 注1：必须按照对应关系选择证明类型，否则会审核失败。
 注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-示例值：0
                      */
                     uint64_t m_signType;
                     bool m_signTypeHasBeenSet;
@@ -376,7 +367,6 @@ namespace TencentCloud
 4：应用后台管理截图（个人开发APP）。
 7：商标注册书。
 注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-示例值：1
                      */
                     uint64_t m_documentType;
                     bool m_documentTypeHasBeenSet;

@@ -221,7 +221,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
         const rapidjson::Value &tmpValue = value["ClientInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            Client item;
+            ClientInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -643,12 +643,12 @@ bool StaffStatusMetrics::LastStatusTimestampHasBeenSet() const
     return m_lastStatusTimestampHasBeenSet;
 }
 
-vector<Client> StaffStatusMetrics::GetClientInfo() const
+vector<ClientInfo> StaffStatusMetrics::GetClientInfo() const
 {
     return m_clientInfo;
 }
 
-void StaffStatusMetrics::SetClientInfo(const vector<Client>& _clientInfo)
+void StaffStatusMetrics::SetClientInfo(const vector<ClientInfo>& _clientInfo)
 {
     m_clientInfo = _clientInfo;
     m_clientInfoHasBeenSet = true;

@@ -24,7 +24,8 @@ UploadKnowledgeDocumentSetRsp::UploadKnowledgeDocumentSetRsp() :
     m_documentSetIdHasBeenSet(false),
     m_documentSetNameHasBeenSet(false),
     m_fileTitleHasBeenSet(false),
-    m_fileMetaDataHasBeenSet(false)
+    m_fileMetaDataHasBeenSet(false),
+    m_fileIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome UploadKnowledgeDocumentSetRsp::Deserialize(const rapidjson::
         m_fileMetaDataHasBeenSet = true;
     }
 
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UploadKnowledgeDocumentSetRsp.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void UploadKnowledgeDocumentSetRsp::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "FileMetaData";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileMetaData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void UploadKnowledgeDocumentSetRsp::SetFileMetaData(const string& _fileMetaData)
 bool UploadKnowledgeDocumentSetRsp::FileMetaDataHasBeenSet() const
 {
     return m_fileMetaDataHasBeenSet;
+}
+
+string UploadKnowledgeDocumentSetRsp::GetFileId() const
+{
+    return m_fileId;
+}
+
+void UploadKnowledgeDocumentSetRsp::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool UploadKnowledgeDocumentSetRsp::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 

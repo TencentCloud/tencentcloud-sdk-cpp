@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CCC_V20200210_MODEL_CLIENT_H_
-#define TENCENTCLOUD_CCC_V20200210_MODEL_CLIENT_H_
+#ifndef TENCENTCLOUD_CCC_V20200210_MODEL_CLIENTINFO_H_
+#define TENCENTCLOUD_CCC_V20200210_MODEL_CLIENTINFO_H_
 
 #include <string>
 #include <vector>
@@ -37,11 +37,11 @@ namespace TencentCloud
                 /**
                 * 座席登录的终端信息
                 */
-                class Client : public AbstractModel
+                class ClientInfo : public AbstractModel
                 {
                 public:
-                    Client();
-                    ~Client() = default;
+                    ClientInfo();
+                    ~ClientInfo() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
@@ -108,4 +108,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CCC_V20200210_MODEL_CLIENT_H_
+#endif // !TENCENTCLOUD_CCC_V20200210_MODEL_CLIENTINFO_H_

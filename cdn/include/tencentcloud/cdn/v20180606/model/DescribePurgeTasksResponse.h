@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取详细刷新记录
-                     * @return PurgeLogs 详细刷新记录
+                     * 获取详细刷新纪录
+                     * @return PurgeLogs 详细刷新纪录
                      * 
                      */
                     std::vector<PurgeTask> GetPurgeLogs() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 详细刷新记录
+                     * 详细刷新纪录
                      */
                     std::vector<PurgeTask> m_purgeLogs;
                     bool m_purgeLogsHasBeenSet;

@@ -898,7 +898,7 @@ namespace TencentCloud
                 BindDevicesOutcomeCallable BindDevicesCallable(const Model::BindDevicesRequest& request);
 
                 /**
-                 *批量绑定子产品
+                 *批量绑定子产品。
                  * @param req BindProductsRequest
                  * @return BindProductsOutcome
                  */
@@ -1593,7 +1593,7 @@ namespace TencentCloud
                 DescribeGatewaySubDeviceListOutcomeCallable DescribeGatewaySubDeviceListCallable(const Model::DescribeGatewaySubDeviceListRequest& request);
 
                 /**
-                 *用于获取网关可绑定或解绑的子产品
+                 *用于获取网关可绑定或解绑的子产品。
                  * @param req DescribeGatewaySubProductsRequest
                  * @return DescribeGatewaySubProductsOutcome
                  */
@@ -2326,7 +2326,7 @@ namespace TencentCloud
                 UnbindDevicesOutcomeCallable UnbindDevicesCallable(const Model::UnbindDevicesRequest& request);
 
                 /**
-                 *批量解绑子产品
+                 *批量解绑子产品。
                  * @param req UnbindProductsRequest
                  * @return UnbindProductsOutcome
                  */

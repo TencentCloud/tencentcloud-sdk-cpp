@@ -513,6 +513,49 @@ LkeClient::CreateReleaseOutcomeCallable LkeClient::CreateReleaseCallable(const C
     return task->get_future();
 }
 
+LkeClient::CreateSharedKnowledgeOutcome LkeClient::CreateSharedKnowledge(const CreateSharedKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSharedKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSharedKnowledgeResponse rsp = CreateSharedKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSharedKnowledgeOutcome(rsp);
+        else
+            return CreateSharedKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSharedKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::CreateSharedKnowledgeAsync(const CreateSharedKnowledgeRequest& request, const CreateSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSharedKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::CreateSharedKnowledgeOutcomeCallable LkeClient::CreateSharedKnowledgeCallable(const CreateSharedKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSharedKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSharedKnowledge(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::CreateVarOutcome LkeClient::CreateVar(const CreateVarRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateVar");
@@ -850,6 +893,49 @@ LkeClient::DeleteRejectedQuestionOutcomeCallable LkeClient::DeleteRejectedQuesti
         [this, request]()
         {
             return this->DeleteRejectedQuestion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DeleteSharedKnowledgeOutcome LkeClient::DeleteSharedKnowledge(const DeleteSharedKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSharedKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSharedKnowledgeResponse rsp = DeleteSharedKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSharedKnowledgeOutcome(rsp);
+        else
+            return DeleteSharedKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSharedKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DeleteSharedKnowledgeAsync(const DeleteSharedKnowledgeRequest& request, const DeleteSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSharedKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DeleteSharedKnowledgeOutcomeCallable LkeClient::DeleteSharedKnowledgeCallable(const DeleteSharedKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSharedKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSharedKnowledge(request);
         }
     );
 
@@ -1538,6 +1624,49 @@ LkeClient::DescribeSegmentsOutcomeCallable LkeClient::DescribeSegmentsCallable(c
         [this, request]()
         {
             return this->DescribeSegments(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DescribeSharedKnowledgeOutcome LkeClient::DescribeSharedKnowledge(const DescribeSharedKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSharedKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSharedKnowledgeResponse rsp = DescribeSharedKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSharedKnowledgeOutcome(rsp);
+        else
+            return DescribeSharedKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSharedKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeSharedKnowledgeAsync(const DescribeSharedKnowledgeRequest& request, const DescribeSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSharedKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeSharedKnowledgeOutcomeCallable LkeClient::DescribeSharedKnowledgeCallable(const DescribeSharedKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSharedKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSharedKnowledge(request);
         }
     );
 
@@ -2921,6 +3050,49 @@ LkeClient::ListQACateOutcomeCallable LkeClient::ListQACateCallable(const ListQAC
     return task->get_future();
 }
 
+LkeClient::ListReferShareKnowledgeOutcome LkeClient::ListReferShareKnowledge(const ListReferShareKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListReferShareKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListReferShareKnowledgeResponse rsp = ListReferShareKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListReferShareKnowledgeOutcome(rsp);
+        else
+            return ListReferShareKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return ListReferShareKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListReferShareKnowledgeAsync(const ListReferShareKnowledgeRequest& request, const ListReferShareKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListReferShareKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListReferShareKnowledgeOutcomeCallable LkeClient::ListReferShareKnowledgeCallable(const ListReferShareKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListReferShareKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->ListReferShareKnowledge(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::ListRejectedQuestionOutcome LkeClient::ListRejectedQuestion(const ListRejectedQuestionRequest &request)
 {
     auto outcome = MakeRequest(request, "ListRejectedQuestion");
@@ -3215,6 +3387,49 @@ LkeClient::ListSelectDocOutcomeCallable LkeClient::ListSelectDocCallable(const L
         [this, request]()
         {
             return this->ListSelectDoc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::ListSharedKnowledgeOutcome LkeClient::ListSharedKnowledge(const ListSharedKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListSharedKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListSharedKnowledgeResponse rsp = ListSharedKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListSharedKnowledgeOutcome(rsp);
+        else
+            return ListSharedKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return ListSharedKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListSharedKnowledgeAsync(const ListSharedKnowledgeRequest& request, const ListSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListSharedKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListSharedKnowledgeOutcomeCallable LkeClient::ListSharedKnowledgeCallable(const ListSharedKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListSharedKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->ListSharedKnowledge(request);
         }
     );
 
@@ -3824,6 +4039,49 @@ LkeClient::ReconstructDocumentOutcomeCallable LkeClient::ReconstructDocumentCall
     return task->get_future();
 }
 
+LkeClient::ReferShareKnowledgeOutcome LkeClient::ReferShareKnowledge(const ReferShareKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReferShareKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReferShareKnowledgeResponse rsp = ReferShareKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReferShareKnowledgeOutcome(rsp);
+        else
+            return ReferShareKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return ReferShareKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ReferShareKnowledgeAsync(const ReferShareKnowledgeRequest& request, const ReferShareKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReferShareKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ReferShareKnowledgeOutcomeCallable LkeClient::ReferShareKnowledgeCallable(const ReferShareKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReferShareKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->ReferShareKnowledge(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::RenameDocOutcome LkeClient::RenameDoc(const RenameDocRequest &request)
 {
     auto outcome = MakeRequest(request, "RenameDoc");
@@ -4118,6 +4376,49 @@ LkeClient::StopDocParseOutcomeCallable LkeClient::StopDocParseCallable(const Sto
         [this, request]()
         {
             return this->StopDocParse(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::UpdateSharedKnowledgeOutcome LkeClient::UpdateSharedKnowledge(const UpdateSharedKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateSharedKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateSharedKnowledgeResponse rsp = UpdateSharedKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateSharedKnowledgeOutcome(rsp);
+        else
+            return UpdateSharedKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateSharedKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::UpdateSharedKnowledgeAsync(const UpdateSharedKnowledgeRequest& request, const UpdateSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateSharedKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::UpdateSharedKnowledgeOutcomeCallable LkeClient::UpdateSharedKnowledgeCallable(const UpdateSharedKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateSharedKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateSharedKnowledge(request);
         }
     );
 

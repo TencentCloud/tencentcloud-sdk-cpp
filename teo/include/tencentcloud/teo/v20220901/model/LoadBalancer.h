@@ -249,15 +249,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取该负载均衡实例绑的定四层层代理实例的列表。
-                     * @return L4UsedList 该负载均衡实例绑的定四层层代理实例的列表。
+                     * 获取该负载均衡实例绑的四层代理实例的列表。
+                     * @return L4UsedList 该负载均衡实例绑的四层代理实例的列表。
                      * 
                      */
                     std::vector<std::string> GetL4UsedList() const;
 
                     /**
-                     * 设置该负载均衡实例绑的定四层层代理实例的列表。
-                     * @param _l4UsedList 该负载均衡实例绑的定四层层代理实例的列表。
+                     * 设置该负载均衡实例绑的四层代理实例的列表。
+                     * @param _l4UsedList 该负载均衡实例绑的四层代理实例的列表。
                      * 
                      */
                     void SetL4UsedList(const std::vector<std::string>& _l4UsedList);
@@ -349,7 +349,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 该负载均衡实例绑的定四层层代理实例的列表。
+                     * 该负载均衡实例绑的四层代理实例的列表。
                      */
                     std::vector<std::string> m_l4UsedList;
                     bool m_l4UsedListHasBeenSet;

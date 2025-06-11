@@ -452,6 +452,27 @@ namespace TencentCloud
                     bool IdleConnectTimeoutHasBeenSet() const;
 
                     /**
+                     * 获取TCP_SSL和QUIC是否支持PP
+                     * @return ProxyProtocol TCP_SSL和QUIC是否支持PP
+                     * 
+                     */
+                    bool GetProxyProtocol() const;
+
+                    /**
+                     * 设置TCP_SSL和QUIC是否支持PP
+                     * @param _proxyProtocol TCP_SSL和QUIC是否支持PP
+                     * 
+                     */
+                    void SetProxyProtocol(const bool& _proxyProtocol);
+
+                    /**
+                     * 判断参数 ProxyProtocol 是否已赋值
+                     * @return ProxyProtocol 是否已赋值
+                     * 
+                     */
+                    bool ProxyProtocolHasBeenSet() const;
+
+                    /**
                      * 获取是否开启SNAT，True（开启）、False（关闭）。
 默认为关闭。
                      * @return SnatEnable 是否开启SNAT，True（开启）、False（关闭）。
@@ -684,6 +705,12 @@ namespace TencentCloud
                      */
                     int64_t m_idleConnectTimeout;
                     bool m_idleConnectTimeoutHasBeenSet;
+
+                    /**
+                     * TCP_SSL和QUIC是否支持PP
+                     */
+                    bool m_proxyProtocol;
+                    bool m_proxyProtocolHasBeenSet;
 
                     /**
                      * 是否开启SNAT，True（开启）、False（关闭）。

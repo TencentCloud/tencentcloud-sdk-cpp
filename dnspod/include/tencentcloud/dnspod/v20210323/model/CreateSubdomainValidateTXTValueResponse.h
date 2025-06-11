@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要添加 TXT 记录的域名。
-                     * @return Domain 需要添加 TXT 记录的域名。
+                     * 获取需要添加 TXT 记录的主域名。
+                     * @return Domain 需要添加 TXT 记录的主域名。
                      * 
                      */
                     std::string GetDomain() const;
@@ -99,10 +99,24 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。
+                     * @return ParentDomain 需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。
+                     * 
+                     */
+                    std::string GetParentDomain() const;
+
+                    /**
+                     * 判断参数 ParentDomain 是否已赋值
+                     * @return ParentDomain 是否已赋值
+                     * 
+                     */
+                    bool ParentDomainHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 需要添加 TXT 记录的域名。
+                     * 需要添加 TXT 记录的主域名。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
@@ -124,6 +138,12 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。
+                     */
+                    std::string m_parentDomain;
+                    bool m_parentDomainHasBeenSet;
 
                 };
             }

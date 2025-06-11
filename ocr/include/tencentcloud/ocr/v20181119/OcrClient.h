@@ -55,6 +55,12 @@
 #include <tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/EstateCertOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/EstateCertOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/ExtractDocBasicRequest.h>
+#include <tencentcloud/ocr/v20181119/model/ExtractDocBasicResponse.h>
+#include <tencentcloud/ocr/v20181119/model/ExtractDocMultiRequest.h>
+#include <tencentcloud/ocr/v20181119/model/ExtractDocMultiResponse.h>
+#include <tencentcloud/ocr/v20181119/model/ExtractDocMultiProRequest.h>
+#include <tencentcloud/ocr/v20181119/model/ExtractDocMultiProResponse.h>
 #include <tencentcloud/ocr/v20181119/model/FinanBillOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/FinanBillOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/FinanBillSliceOCRRequest.h>
@@ -79,6 +85,8 @@
 #include <tencentcloud/ocr/v20181119/model/GetOCRTokenResponse.h>
 #include <tencentcloud/ocr/v20181119/model/HKIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/HKIDCardOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/HandwritingEssayOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/HandwritingEssayOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/IDCardOCRRequest.h>
@@ -255,6 +263,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EstateCertOCRResponse> EstateCertOCROutcome;
                 typedef std::future<EstateCertOCROutcome> EstateCertOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::EstateCertOCRRequest&, EstateCertOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstateCertOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExtractDocBasicResponse> ExtractDocBasicOutcome;
+                typedef std::future<ExtractDocBasicOutcome> ExtractDocBasicOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::ExtractDocBasicRequest&, ExtractDocBasicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractDocBasicAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExtractDocMultiResponse> ExtractDocMultiOutcome;
+                typedef std::future<ExtractDocMultiOutcome> ExtractDocMultiOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::ExtractDocMultiRequest&, ExtractDocMultiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractDocMultiAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExtractDocMultiProResponse> ExtractDocMultiProOutcome;
+                typedef std::future<ExtractDocMultiProOutcome> ExtractDocMultiProOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::ExtractDocMultiProRequest&, ExtractDocMultiProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractDocMultiProAsyncHandler;
                 typedef Outcome<Core::Error, Model::FinanBillOCRResponse> FinanBillOCROutcome;
                 typedef std::future<FinanBillOCROutcome> FinanBillOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::FinanBillOCRRequest&, FinanBillOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> FinanBillOCRAsyncHandler;
@@ -291,6 +308,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::HKIDCardOCRResponse> HKIDCardOCROutcome;
                 typedef std::future<HKIDCardOCROutcome> HKIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::HKIDCardOCRRequest&, HKIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> HKIDCardOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::HandwritingEssayOCRResponse> HandwritingEssayOCROutcome;
+                typedef std::future<HandwritingEssayOCROutcome> HandwritingEssayOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::HandwritingEssayOCRRequest&, HandwritingEssayOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> HandwritingEssayOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::HmtResidentPermitOCRResponse> HmtResidentPermitOCROutcome;
                 typedef std::future<HmtResidentPermitOCROutcome> HmtResidentPermitOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::HmtResidentPermitOCRRequest&, HmtResidentPermitOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> HmtResidentPermitOCRAsyncHandler;
@@ -651,6 +671,43 @@ namespace TencentCloud
                 EstateCertOCROutcomeCallable EstateCertOCRCallable(const Model::EstateCertOCRRequest& request);
 
                 /**
+                 *本接口支持识别并提取制式卡证、票据、表单等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
+
+接口别名：SmartStructuralOCRV2
+
+默认接口请求频率限制：5次/秒。
+                 * @param req ExtractDocBasicRequest
+                 * @return ExtractDocBasicOutcome
+                 */
+                ExtractDocBasicOutcome ExtractDocBasic(const Model::ExtractDocBasicRequest &request);
+                void ExtractDocBasicAsync(const Model::ExtractDocBasicRequest& request, const ExtractDocBasicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExtractDocBasicOutcomeCallable ExtractDocBasicCallable(const Model::ExtractDocBasicRequest& request);
+
+                /**
+                 *本接口支持识别并提取场景复杂、版式多等结构化场景的字段信息。重点场景包括：金融、医疗、交通、出行、保险。点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
+
+接口别名：SmartStructuralPro
+
+默认接口请求频率限制：5次/秒。
+                 * @param req ExtractDocMultiRequest
+                 * @return ExtractDocMultiOutcome
+                 */
+                ExtractDocMultiOutcome ExtractDocMulti(const Model::ExtractDocMultiRequest &request);
+                void ExtractDocMultiAsync(const Model::ExtractDocMultiRequest& request, const ExtractDocMultiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExtractDocMultiOutcomeCallable ExtractDocMultiCallable(const Model::ExtractDocMultiRequest& request);
+
+                /**
+                 *本接口当前仅支持复杂磅单收发货单抽取，更多强推理场景支持定制咨询。点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
+
+默认接口请求频率限制：5次/秒。
+                 * @param req ExtractDocMultiProRequest
+                 * @return ExtractDocMultiProOutcome
+                 */
+                ExtractDocMultiProOutcome ExtractDocMultiPro(const Model::ExtractDocMultiProRequest &request);
+                void ExtractDocMultiProAsync(const Model::ExtractDocMultiProRequest& request, const ExtractDocMultiProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExtractDocMultiProOutcomeCallable ExtractDocMultiProCallable(const Model::ExtractDocMultiProRequest& request);
+
+                /**
                  *本接口支持常见银行票据的自动分类和识别。整单识别包括支票（含现金支票、普通支票、转账支票），承兑汇票（含银行承兑汇票、商业承兑汇票）以及进账单等，适用于中国人民银行印发的 2010 版银行票据凭证版式（银发[2010]299 号）。
 
 默认接口请求频率限制：5次/秒。
@@ -957,6 +1014,17 @@ namespace TencentCloud
                 HKIDCardOCROutcome HKIDCardOCR(const Model::HKIDCardOCRRequest &request);
                 void HKIDCardOCRAsync(const Model::HKIDCardOCRRequest& request, const HKIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 HKIDCardOCROutcomeCallable HKIDCardOCRCallable(const Model::HKIDCardOCRRequest& request);
+
+                /**
+                 *本接口专为教育场景设计，可高精度识别中英文手写字符，智能分栏并按阅读顺序分割内容，自动过滤手写与印刷体混排干扰，精准返回词、行、段落及标题的文本与坐标信息。点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
+
+默认接口请求频率限制：5次/秒。
+                 * @param req HandwritingEssayOCRRequest
+                 * @return HandwritingEssayOCROutcome
+                 */
+                HandwritingEssayOCROutcome HandwritingEssayOCR(const Model::HandwritingEssayOCRRequest &request);
+                void HandwritingEssayOCRAsync(const Model::HandwritingEssayOCRRequest& request, const HandwritingEssayOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                HandwritingEssayOCROutcomeCallable HandwritingEssayOCRCallable(const Model::HandwritingEssayOCRRequest& request);
 
                 /**
                  *港澳台居住证OCR支持港澳台居住证正反面全字段内容检测识别功能，包括姓名、性别、出生日期、地址、身份证号、签发机关、有效期限、签发次数、通行证号码关键字段识别。可以应用于港澳台居住证信息识别场景，例如银行开户、用户注册等。
@@ -1698,7 +1766,7 @@ namespace TencentCloud
                 SmartStructuralOCROutcomeCallable SmartStructuralOCRCallable(const Model::SmartStructuralOCRRequest& request);
 
                 /**
-                 *本接口支持智能提取各类证照、票据、表单、合同等结构化场景的key:value字段信息，并支持提取表格信息的key:value组的结构化，灵活高效，适用于各类非标准材料的信息录入场景，点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
+                 *本接口支持识别并提取制式卡证、票据、表单等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
 
 默认接口请求频率限制：5次/秒。
                  * @param req SmartStructuralOCRV2Request
@@ -1709,7 +1777,7 @@ namespace TencentCloud
                 SmartStructuralOCRV2OutcomeCallable SmartStructuralOCRV2Callable(const Model::SmartStructuralOCRV2Request& request);
 
                 /**
-                 *本接口支持智能提取各类证照、票据、表单、合同等结构化场景的key:value字段信息，并支持提取表格信息的key:value组的结构化，灵活高效，适用于各类非标准材料的信息录入场景，点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
+                 *本接口支持识别并提取场景复杂、版式多等结构化场景的字段信息。重点场景包括：金融、医疗、交通、出行、保险。点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
 
 默认接口请求频率限制：5次/秒。
                  * @param req SmartStructuralProRequest

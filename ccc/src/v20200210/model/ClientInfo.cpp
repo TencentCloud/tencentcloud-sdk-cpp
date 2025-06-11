@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ccc/v20200210/model/Client.h>
+#include <tencentcloud/ccc/v20200210/model/ClientInfo.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ccc::V20200210::Model;
 using namespace std;
 
-Client::Client() :
+ClientInfo::ClientInfo() :
     m_clientTypeHasBeenSet(false),
     m_isConnectedHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome Client::Deserialize(const rapidjson::Value &value)
+CoreInternalOutcome ClientInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -35,7 +35,7 @@ CoreInternalOutcome Client::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Client.ClientType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientInfo.ClientType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientType = string(value["ClientType"].GetString());
         m_clientTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Client::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsConnected"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `Client.IsConnected` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientInfo.IsConnected` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isConnected = value["IsConnected"].GetBool();
         m_isConnectedHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome Client::Deserialize(const rapidjson::Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Client::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+void ClientInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_clientTypeHasBeenSet)
@@ -77,34 +77,34 @@ void Client::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
 }
 
 
-string Client::GetClientType() const
+string ClientInfo::GetClientType() const
 {
     return m_clientType;
 }
 
-void Client::SetClientType(const string& _clientType)
+void ClientInfo::SetClientType(const string& _clientType)
 {
     m_clientType = _clientType;
     m_clientTypeHasBeenSet = true;
 }
 
-bool Client::ClientTypeHasBeenSet() const
+bool ClientInfo::ClientTypeHasBeenSet() const
 {
     return m_clientTypeHasBeenSet;
 }
 
-bool Client::GetIsConnected() const
+bool ClientInfo::GetIsConnected() const
 {
     return m_isConnected;
 }
 
-void Client::SetIsConnected(const bool& _isConnected)
+void ClientInfo::SetIsConnected(const bool& _isConnected)
 {
     m_isConnected = _isConnected;
     m_isConnectedHasBeenSet = true;
 }
 
-bool Client::IsConnectedHasBeenSet() const
+bool ClientInfo::IsConnectedHasBeenSet() const
 {
     return m_isConnectedHasBeenSet;
 }

@@ -201,6 +201,27 @@ ENABLED 已启用
                      */
                     bool MetaHasBeenSet() const;
 
+                    /**
+                     * 获取知识库容量,单位字节
+                     * @return TotalSize 知识库容量,单位字节
+                     * 
+                     */
+                    std::string GetTotalSize() const;
+
+                    /**
+                     * 设置知识库容量,单位字节
+                     * @param _totalSize 知识库容量,单位字节
+                     * 
+                     */
+                    void SetTotalSize(const std::string& _totalSize);
+
+                    /**
+                     * 判断参数 TotalSize 是否已赋值
+                     * @return TotalSize 是否已赋值
+                     * 
+                     */
+                    bool TotalSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +267,12 @@ ENABLED 已启用
                      */
                     std::string m_meta;
                     bool m_metaHasBeenSet;
+
+                    /**
+                     * 知识库容量,单位字节
+                     */
+                    std::string m_totalSize;
+                    bool m_totalSizeHasBeenSet;
 
                 };
             }

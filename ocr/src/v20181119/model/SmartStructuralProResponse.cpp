@@ -26,7 +26,8 @@ using namespace std;
 SmartStructuralProResponse::SmartStructuralProResponse() :
     m_angleHasBeenSet(false),
     m_structuralListHasBeenSet(false),
-    m_wordListHasBeenSet(false)
+    m_wordListHasBeenSet(false),
+    m_tokenNumHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,16 @@ CoreInternalOutcome SmartStructuralProResponse::Deserialize(const string &payloa
         m_wordListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TokenNum") && !rsp["TokenNum"].IsNull())
+    {
+        if (!rsp["TokenNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TokenNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenNum = rsp["TokenNum"].GetInt64();
+        m_tokenNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +173,14 @@ string SmartStructuralProResponse::ToJsonString() const
         }
     }
 
+    if (m_tokenNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tokenNum, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -202,6 +221,16 @@ vector<WordItem> SmartStructuralProResponse::GetWordList() const
 bool SmartStructuralProResponse::WordListHasBeenSet() const
 {
     return m_wordListHasBeenSet;
+}
+
+int64_t SmartStructuralProResponse::GetTokenNum() const
+{
+    return m_tokenNum;
+}
+
+bool SmartStructuralProResponse::TokenNumHasBeenSet() const
+{
+    return m_tokenNumHasBeenSet;
 }
 
 

@@ -28,7 +28,8 @@ SearchDocInfo::SearchDocInfo() :
     m_fileTitleHasBeenSet(false),
     m_fileMetaDataHasBeenSet(false),
     m_docDescHasBeenSet(false),
-    m_fileSizeHasBeenSet(false)
+    m_fileSizeHasBeenSet(false),
+    m_fileIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome SearchDocInfo::Deserialize(const rapidjson::Value &value)
         m_fileSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchDocInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void SearchDocInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fileSize, allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void SearchDocInfo::SetFileSize(const uint64_t& _fileSize)
 bool SearchDocInfo::FileSizeHasBeenSet() const
 {
     return m_fileSizeHasBeenSet;
+}
+
+string SearchDocInfo::GetFileId() const
+{
+    return m_fileId;
+}
+
+void SearchDocInfo::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool SearchDocInfo::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 

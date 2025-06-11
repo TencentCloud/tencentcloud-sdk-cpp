@@ -107,6 +107,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareInfoResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareUserListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareUserListResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainVipListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainVipListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainWhoisRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainWhoisResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeFileInfoByJobIdRequest.h>
@@ -149,6 +151,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeUserDetailResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeVASStatisticRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeVASStatisticResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeVasListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeVasListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainCustomLineRequest.h>
@@ -339,6 +343,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainShareUserListResponse> DescribeDomainShareUserListOutcome;
                 typedef std::future<DescribeDomainShareUserListOutcome> DescribeDomainShareUserListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainShareUserListRequest&, DescribeDomainShareUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainShareUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainVipListResponse> DescribeDomainVipListOutcome;
+                typedef std::future<DescribeDomainVipListOutcome> DescribeDomainVipListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainVipListRequest&, DescribeDomainVipListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainVipListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainWhoisResponse> DescribeDomainWhoisOutcome;
                 typedef std::future<DescribeDomainWhoisOutcome> DescribeDomainWhoisOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainWhoisRequest&, DescribeDomainWhoisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainWhoisAsyncHandler;
@@ -402,6 +409,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVASStatisticResponse> DescribeVASStatisticOutcome;
                 typedef std::future<DescribeVASStatisticOutcome> DescribeVASStatisticOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeVASStatisticRequest&, DescribeVASStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVASStatisticAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVasListResponse> DescribeVasListOutcome;
+                typedef std::future<DescribeVasListOutcome> DescribeVasListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeVasListRequest&, DescribeVasListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVasListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DownloadSnapshotResponse> DownloadSnapshotOutcome;
                 typedef std::future<DownloadSnapshotOutcome> DownloadSnapshotOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DownloadSnapshotRequest&, DownloadSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadSnapshotAsyncHandler;
@@ -865,6 +875,15 @@ namespace TencentCloud
                 DescribeDomainShareUserListOutcomeCallable DescribeDomainShareUserListCallable(const Model::DescribeDomainShareUserListRequest& request);
 
                 /**
+                 *获取套餐列表
+                 * @param req DescribeDomainVipListRequest
+                 * @return DescribeDomainVipListOutcome
+                 */
+                DescribeDomainVipListOutcome DescribeDomainVipList(const Model::DescribeDomainVipListRequest &request);
+                void DescribeDomainVipListAsync(const Model::DescribeDomainVipListRequest& request, const DescribeDomainVipListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainVipListOutcomeCallable DescribeDomainVipListCallable(const Model::DescribeDomainVipListRequest& request);
+
+                /**
                  *获取域名Whois信息
                  * @param req DescribeDomainWhoisRequest
                  * @return DescribeDomainWhoisOutcome
@@ -1058,6 +1077,15 @@ namespace TencentCloud
                 DescribeVASStatisticOutcome DescribeVASStatistic(const Model::DescribeVASStatisticRequest &request);
                 void DescribeVASStatisticAsync(const Model::DescribeVASStatisticRequest& request, const DescribeVASStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVASStatisticOutcomeCallable DescribeVASStatisticCallable(const Model::DescribeVASStatisticRequest& request);
+
+                /**
+                 *获取增值服务列表
+                 * @param req DescribeVasListRequest
+                 * @return DescribeVasListOutcome
+                 */
+                DescribeVasListOutcome DescribeVasList(const Model::DescribeVasListRequest &request);
+                void DescribeVasListAsync(const Model::DescribeVasListRequest& request, const DescribeVasListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVasListOutcomeCallable DescribeVasListCallable(const Model::DescribeVasListRequest& request);
 
                 /**
                  *下载快照
