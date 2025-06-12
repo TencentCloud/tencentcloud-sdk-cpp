@@ -2620,7 +2620,9 @@ namespace TencentCloud
                 AddLoginWhiteListsOutcomeCallable AddLoginWhiteListsCallable(const Model::AddLoginWhiteListsRequest& request);
 
                 /**
-                 *取消漏洞忽略
+                 *产品变动切换到了\\n切换到 AddVulIgnoreRule / ModifyVulIgnoreRule  CancelVulIgnoreRule\\n相关接口
+
+取消漏洞忽略
                  * @param req CancelIgnoreVulRequest
                  * @return CancelIgnoreVulOutcome
                  */
@@ -6448,7 +6450,9 @@ namespace TencentCloud
                 GetLocalStorageItemOutcomeCallable GetLocalStorageItemCallable(const Model::GetLocalStorageItemRequest& request);
 
                 /**
-                 *本接口 (IgnoreImpactedHosts) 用于忽略漏洞。
+                 *产品变动切换到了\\n切换到 AddVulIgnoreRule / ModifyVulIgnoreRule  CancelVulIgnoreRule\\n相关接口
+
+本接口 (IgnoreImpactedHosts) 用于忽略漏洞。
                  * @param req IgnoreImpactedHostsRequest
                  * @return IgnoreImpactedHostsOutcome
                  */

@@ -599,6 +599,49 @@ LkeClient::CreateVarOutcomeCallable LkeClient::CreateVarCallable(const CreateVar
     return task->get_future();
 }
 
+LkeClient::CreateWorkflowRunOutcome LkeClient::CreateWorkflowRun(const CreateWorkflowRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWorkflowRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWorkflowRunResponse rsp = CreateWorkflowRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWorkflowRunOutcome(rsp);
+        else
+            return CreateWorkflowRunOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWorkflowRunOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::CreateWorkflowRunAsync(const CreateWorkflowRunRequest& request, const CreateWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWorkflowRun(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::CreateWorkflowRunOutcomeCallable LkeClient::CreateWorkflowRunCallable(const CreateWorkflowRunRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWorkflowRunOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWorkflowRun(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::DeleteAppOutcome LkeClient::DeleteApp(const DeleteAppRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteApp");
@@ -1330,6 +1373,49 @@ LkeClient::DescribeKnowledgeUsagePieGraphOutcomeCallable LkeClient::DescribeKnow
     return task->get_future();
 }
 
+LkeClient::DescribeNodeRunOutcome LkeClient::DescribeNodeRun(const DescribeNodeRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNodeRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNodeRunResponse rsp = DescribeNodeRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNodeRunOutcome(rsp);
+        else
+            return DescribeNodeRunOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNodeRunOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeNodeRunAsync(const DescribeNodeRunRequest& request, const DescribeNodeRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNodeRun(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeNodeRunOutcomeCallable LkeClient::DescribeNodeRunCallable(const DescribeNodeRunRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNodeRunOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNodeRun(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::DescribeQAOutcome LkeClient::DescribeQA(const DescribeQARequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQA");
@@ -1839,6 +1925,49 @@ LkeClient::DescribeUnsatisfiedReplyContextOutcomeCallable LkeClient::DescribeUns
         [this, request]()
         {
             return this->DescribeUnsatisfiedReplyContext(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DescribeWorkflowRunOutcome LkeClient::DescribeWorkflowRun(const DescribeWorkflowRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkflowRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkflowRunResponse rsp = DescribeWorkflowRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkflowRunOutcome(rsp);
+        else
+            return DescribeWorkflowRunOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkflowRunOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeWorkflowRunAsync(const DescribeWorkflowRunRequest& request, const DescribeWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWorkflowRun(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeWorkflowRunOutcomeCallable LkeClient::DescribeWorkflowRunCallable(const DescribeWorkflowRunRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWorkflowRunOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWorkflowRun(request);
         }
     );
 
@@ -3523,6 +3652,49 @@ LkeClient::ListUsageCallDetailOutcomeCallable LkeClient::ListUsageCallDetailCall
     return task->get_future();
 }
 
+LkeClient::ListWorkflowRunsOutcome LkeClient::ListWorkflowRuns(const ListWorkflowRunsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListWorkflowRuns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListWorkflowRunsResponse rsp = ListWorkflowRunsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListWorkflowRunsOutcome(rsp);
+        else
+            return ListWorkflowRunsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListWorkflowRunsOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListWorkflowRunsAsync(const ListWorkflowRunsRequest& request, const ListWorkflowRunsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListWorkflowRuns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListWorkflowRunsOutcomeCallable LkeClient::ListWorkflowRunsCallable(const ListWorkflowRunsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListWorkflowRunsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListWorkflowRuns(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::ModifyAppOutcome LkeClient::ModifyApp(const ModifyAppRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyApp");
@@ -4376,6 +4548,49 @@ LkeClient::StopDocParseOutcomeCallable LkeClient::StopDocParseCallable(const Sto
         [this, request]()
         {
             return this->StopDocParse(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::StopWorkflowRunOutcome LkeClient::StopWorkflowRun(const StopWorkflowRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopWorkflowRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopWorkflowRunResponse rsp = StopWorkflowRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopWorkflowRunOutcome(rsp);
+        else
+            return StopWorkflowRunOutcome(o.GetError());
+    }
+    else
+    {
+        return StopWorkflowRunOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::StopWorkflowRunAsync(const StopWorkflowRunRequest& request, const StopWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopWorkflowRun(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::StopWorkflowRunOutcomeCallable LkeClient::StopWorkflowRunCallable(const StopWorkflowRunRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopWorkflowRunOutcome()>>(
+        [this, request]()
+        {
+            return this->StopWorkflowRun(request);
         }
     );
 

@@ -221,6 +221,8 @@
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleResponse.h>
+#include <tencentcloud/ess/v20201111/model/OperateSealsRequest.h>
+#include <tencentcloud/ess/v20201111/model/OperateSealsResponse.h>
 #include <tencentcloud/ess/v20201111/model/OperateTemplateRequest.h>
 #include <tencentcloud/ess/v20201111/model/OperateTemplateResponse.h>
 #include <tencentcloud/ess/v20201111/model/RenewAutoSignLicenseRequest.h>
@@ -548,6 +550,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIntegrationRoleResponse> ModifyIntegrationRoleOutcome;
                 typedef std::future<ModifyIntegrationRoleOutcome> ModifyIntegrationRoleOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyIntegrationRoleRequest&, ModifyIntegrationRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIntegrationRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::OperateSealsResponse> OperateSealsOutcome;
+                typedef std::future<OperateSealsOutcome> OperateSealsOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::OperateSealsRequest&, OperateSealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateSealsAsyncHandler;
                 typedef Outcome<Core::Error, Model::OperateTemplateResponse> OperateTemplateOutcome;
                 typedef std::future<OperateTemplateOutcome> OperateTemplateOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::OperateTemplateRequest&, OperateTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateTemplateAsyncHandler;
@@ -2338,6 +2343,15 @@ namespace TencentCloud
                 ModifyIntegrationRoleOutcome ModifyIntegrationRole(const Model::ModifyIntegrationRoleRequest &request);
                 void ModifyIntegrationRoleAsync(const Model::ModifyIntegrationRoleRequest& request, const ModifyIntegrationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIntegrationRoleOutcomeCallable ModifyIntegrationRoleCallable(const Model::ModifyIntegrationRoleRequest& request);
+
+                /**
+                 *修改印章状态（停用、启用）
+                 * @param req OperateSealsRequest
+                 * @return OperateSealsOutcome
+                 */
+                OperateSealsOutcome OperateSeals(const Model::OperateSealsRequest &request);
+                void OperateSealsAsync(const Model::OperateSealsRequest& request, const OperateSealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OperateSealsOutcomeCallable OperateSealsCallable(const Model::OperateSealsRequest& request);
 
                 /**
                  *此接口（OperateTemplate）用于对企业自有模板进行管理操作，所有操作都会有对应的回调触发，具体参考回调文档 <a href="https://qian.tencent.com/developers/company/callback_types_templates" target="_blank">模板操作相关回调</a>

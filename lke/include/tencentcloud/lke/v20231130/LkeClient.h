@@ -49,6 +49,8 @@
 #include <tencentcloud/lke/v20231130/model/CreateSharedKnowledgeResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateVarRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateVarResponse.h>
+#include <tencentcloud/lke/v20231130/model/CreateWorkflowRunRequest.h>
+#include <tencentcloud/lke/v20231130/model/CreateWorkflowRunResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/DeleteAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteAttributeLabelRequest.h>
@@ -83,6 +85,8 @@
 #include <tencentcloud/lke/v20231130/model/DescribeKnowledgeUsageResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeKnowledgeUsagePieGraphRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeKnowledgeUsagePieGraphResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeNodeRunRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeNodeRunResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeQARequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeQAResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeReferRequest.h>
@@ -107,6 +111,8 @@
 #include <tencentcloud/lke/v20231130/model/DescribeTokenUsageGraphResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeUnsatisfiedReplyContextRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeUnsatisfiedReplyContextResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeWorkflowRunRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeWorkflowRunResponse.h>
 #include <tencentcloud/lke/v20231130/model/ExportAttributeLabelRequest.h>
 #include <tencentcloud/lke/v20231130/model/ExportAttributeLabelResponse.h>
 #include <tencentcloud/lke/v20231130/model/ExportQAListRequest.h>
@@ -185,6 +191,8 @@
 #include <tencentcloud/lke/v20231130/model/ListUnsatisfiedReplyResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListUsageCallDetailRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListUsageCallDetailResponse.h>
+#include <tencentcloud/lke/v20231130/model/ListWorkflowRunsRequest.h>
+#include <tencentcloud/lke/v20231130/model/ListWorkflowRunsResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAttributeLabelRequest.h>
@@ -225,6 +233,8 @@
 #include <tencentcloud/lke/v20231130/model/SaveDocResponse.h>
 #include <tencentcloud/lke/v20231130/model/StopDocParseRequest.h>
 #include <tencentcloud/lke/v20231130/model/StopDocParseResponse.h>
+#include <tencentcloud/lke/v20231130/model/StopWorkflowRunRequest.h>
+#include <tencentcloud/lke/v20231130/model/StopWorkflowRunResponse.h>
 #include <tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeRequest.h>
 #include <tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeResponse.h>
 #include <tencentcloud/lke/v20231130/model/UploadAttributeLabelRequest.h>
@@ -284,6 +294,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateVarResponse> CreateVarOutcome;
                 typedef std::future<CreateVarOutcome> CreateVarOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateVarRequest&, CreateVarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVarAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWorkflowRunResponse> CreateWorkflowRunOutcome;
+                typedef std::future<CreateWorkflowRunOutcome> CreateWorkflowRunOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::CreateWorkflowRunRequest&, CreateWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAppResponse> DeleteAppOutcome;
                 typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DeleteAppRequest&, DeleteAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppAsyncHandler;
@@ -335,6 +348,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKnowledgeUsagePieGraphResponse> DescribeKnowledgeUsagePieGraphOutcome;
                 typedef std::future<DescribeKnowledgeUsagePieGraphOutcome> DescribeKnowledgeUsagePieGraphOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeKnowledgeUsagePieGraphRequest&, DescribeKnowledgeUsagePieGraphOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKnowledgeUsagePieGraphAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNodeRunResponse> DescribeNodeRunOutcome;
+                typedef std::future<DescribeNodeRunOutcome> DescribeNodeRunOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeNodeRunRequest&, DescribeNodeRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQAResponse> DescribeQAOutcome;
                 typedef std::future<DescribeQAOutcome> DescribeQAOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeQARequest&, DescribeQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQAAsyncHandler;
@@ -371,6 +387,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUnsatisfiedReplyContextResponse> DescribeUnsatisfiedReplyContextOutcome;
                 typedef std::future<DescribeUnsatisfiedReplyContextOutcome> DescribeUnsatisfiedReplyContextOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeUnsatisfiedReplyContextRequest&, DescribeUnsatisfiedReplyContextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnsatisfiedReplyContextAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkflowRunResponse> DescribeWorkflowRunOutcome;
+                typedef std::future<DescribeWorkflowRunOutcome> DescribeWorkflowRunOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeWorkflowRunRequest&, DescribeWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportAttributeLabelResponse> ExportAttributeLabelOutcome;
                 typedef std::future<ExportAttributeLabelOutcome> ExportAttributeLabelOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ExportAttributeLabelRequest&, ExportAttributeLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportAttributeLabelAsyncHandler;
@@ -488,6 +507,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListUsageCallDetailResponse> ListUsageCallDetailOutcome;
                 typedef std::future<ListUsageCallDetailOutcome> ListUsageCallDetailOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListUsageCallDetailRequest&, ListUsageCallDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUsageCallDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListWorkflowRunsResponse> ListWorkflowRunsOutcome;
+                typedef std::future<ListWorkflowRunsOutcome> ListWorkflowRunsOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ListWorkflowRunsRequest&, ListWorkflowRunsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkflowRunsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAppResponse> ModifyAppOutcome;
                 typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ModifyAppRequest&, ModifyAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
@@ -548,6 +570,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopDocParseResponse> StopDocParseOutcome;
                 typedef std::future<StopDocParseOutcome> StopDocParseOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::StopDocParseRequest&, StopDocParseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopDocParseAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopWorkflowRunResponse> StopWorkflowRunOutcome;
+                typedef std::future<StopWorkflowRunOutcome> StopWorkflowRunOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::StopWorkflowRunRequest&, StopWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopWorkflowRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateSharedKnowledgeResponse> UpdateSharedKnowledgeOutcome;
                 typedef std::future<UpdateSharedKnowledgeOutcome> UpdateSharedKnowledgeOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::UpdateSharedKnowledgeRequest&, UpdateSharedKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSharedKnowledgeAsyncHandler;
@@ -678,6 +703,16 @@ namespace TencentCloud
                 CreateVarOutcome CreateVar(const Model::CreateVarRequest &request);
                 void CreateVarAsync(const Model::CreateVarRequest& request, const CreateVarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateVarOutcomeCallable CreateVarCallable(const Model::CreateVarRequest& request);
+
+                /**
+                 *本接口用来创建工作流的异步运行实例，创建成功后工作流会在后台异步运行，接口返回工作流运行实例ID（WorkflowRunId）等信息。后面可通过调用DescribeWorkflowRun接口查工作流运行的详情。
+注意：工作流的异步运行是基于应用的，需要先把对应的应用配置成“单工作流模式”，并且打开“异步调用”的开关，才能创建成功。
+                 * @param req CreateWorkflowRunRequest
+                 * @return CreateWorkflowRunOutcome
+                 */
+                CreateWorkflowRunOutcome CreateWorkflowRun(const Model::CreateWorkflowRunRequest &request);
+                void CreateWorkflowRunAsync(const Model::CreateWorkflowRunRequest& request, const CreateWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWorkflowRunOutcomeCallable CreateWorkflowRunCallable(const Model::CreateWorkflowRunRequest& request);
 
                 /**
                  *删除应用
@@ -833,6 +868,15 @@ namespace TencentCloud
                 DescribeKnowledgeUsagePieGraphOutcomeCallable DescribeKnowledgeUsagePieGraphCallable(const Model::DescribeKnowledgeUsagePieGraphRequest& request);
 
                 /**
+                 *通过DescribeWorkflowRun接口获取了工作流异步运行的整体内容，其中包含了基本的节点信息，再通用本接口可查看节点的运行详情（包括输入、输出、日志等）。
+                 * @param req DescribeNodeRunRequest
+                 * @return DescribeNodeRunOutcome
+                 */
+                DescribeNodeRunOutcome DescribeNodeRun(const Model::DescribeNodeRunRequest &request);
+                void DescribeNodeRunAsync(const Model::DescribeNodeRunRequest& request, const DescribeNodeRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNodeRunOutcomeCallable DescribeNodeRunCallable(const Model::DescribeNodeRunRequest& request);
+
+                /**
                  *问答详情
                  * @param req DescribeQARequest
                  * @return DescribeQAOutcome
@@ -939,6 +983,15 @@ namespace TencentCloud
                 DescribeUnsatisfiedReplyContextOutcome DescribeUnsatisfiedReplyContext(const Model::DescribeUnsatisfiedReplyContextRequest &request);
                 void DescribeUnsatisfiedReplyContextAsync(const Model::DescribeUnsatisfiedReplyContextRequest& request, const DescribeUnsatisfiedReplyContextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUnsatisfiedReplyContextOutcomeCallable DescribeUnsatisfiedReplyContextCallable(const Model::DescribeUnsatisfiedReplyContextRequest& request);
+
+                /**
+                 *创建了工作流的异步运行实例后，通过本接口可以查询整体的运行详情。
+                 * @param req DescribeWorkflowRunRequest
+                 * @return DescribeWorkflowRunOutcome
+                 */
+                DescribeWorkflowRunOutcome DescribeWorkflowRun(const Model::DescribeWorkflowRunRequest &request);
+                void DescribeWorkflowRunAsync(const Model::DescribeWorkflowRunRequest& request, const DescribeWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkflowRunOutcomeCallable DescribeWorkflowRunCallable(const Model::DescribeWorkflowRunRequest& request);
 
                 /**
                  *导出属性标签
@@ -1295,6 +1348,15 @@ namespace TencentCloud
                 ListUsageCallDetailOutcomeCallable ListUsageCallDetailCallable(const Model::ListUsageCallDetailRequest& request);
 
                 /**
+                 *此接口可查询已创建的所有工作流异步运行实例。
+                 * @param req ListWorkflowRunsRequest
+                 * @return ListWorkflowRunsOutcome
+                 */
+                ListWorkflowRunsOutcome ListWorkflowRuns(const Model::ListWorkflowRunsRequest &request);
+                void ListWorkflowRunsAsync(const Model::ListWorkflowRunsRequest& request, const ListWorkflowRunsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListWorkflowRunsOutcomeCallable ListWorkflowRunsCallable(const Model::ListWorkflowRunsRequest& request);
+
+                /**
                  *修改应用请求结构体
                  * @param req ModifyAppRequest
                  * @return ModifyAppOutcome
@@ -1481,6 +1543,15 @@ namespace TencentCloud
                 StopDocParseOutcome StopDocParse(const Model::StopDocParseRequest &request);
                 void StopDocParseAsync(const Model::StopDocParseRequest& request, const StopDocParseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopDocParseOutcomeCallable StopDocParseCallable(const Model::StopDocParseRequest& request);
+
+                /**
+                 *此接口用来停止正在进行的工作流异步运行实例。
+                 * @param req StopWorkflowRunRequest
+                 * @return StopWorkflowRunOutcome
+                 */
+                StopWorkflowRunOutcome StopWorkflowRun(const Model::StopWorkflowRunRequest &request);
+                void StopWorkflowRunAsync(const Model::StopWorkflowRunRequest& request, const StopWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopWorkflowRunOutcomeCallable StopWorkflowRunCallable(const Model::StopWorkflowRunRequest& request);
 
                 /**
                  *更新共享知识库。

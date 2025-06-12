@@ -47,9 +47,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略类型。可选值 auto、manual。如果返回为NULL说明尚未开通弹性扩容策略
+                     * 获取策略类型。输出值 auto、manual。如果返回为 NULL 说明尚未开通弹性扩容策略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 策略类型。可选值 auto、manual。如果返回为NULL说明尚未开通弹性扩容策略
+                     * @return Type 策略类型。输出值 auto、manual。如果返回为 NULL 说明尚未开通弹性扩容策略。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,9 +63,9 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取手动扩容的 CPU 。Type为 manual 时有效。
+                     * 获取手动扩容的 CPU 。Type 为 manual 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpandCpu 手动扩容的 CPU 。Type为 manual 时有效。
+                     * @return ExpandCpu 手动扩容的 CPU 。Type 为 manual 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,9 +79,9 @@ namespace TencentCloud
                     bool ExpandCpuHasBeenSet() const;
 
                     /**
-                     * 获取自动扩容策略。Type 为 auto 时有效
+                     * 获取自动扩容策略。Type 为 auto 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoStrategy 自动扩容策略。Type 为 auto 时有效
+                     * @return AutoStrategy 自动扩容策略。Type 为 auto 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -109,8 +109,8 @@ namespace TencentCloud
                     bool PeriodStrategyHasBeenSet() const;
 
                     /**
-                     * 获取按时间段扩容策略
-                     * @return TimeIntervalStrategy 按时间段扩容策略
+                     * 获取按时间段扩容策略。
+                     * @return TimeIntervalStrategy 按时间段扩容策略。
                      * 
                      */
                     TimeIntervalStrategy GetTimeIntervalStrategy() const;
@@ -125,21 +125,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略类型。可选值 auto、manual。如果返回为NULL说明尚未开通弹性扩容策略
+                     * 策略类型。输出值 auto、manual。如果返回为 NULL 说明尚未开通弹性扩容策略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 手动扩容的 CPU 。Type为 manual 时有效。
+                     * 手动扩容的 CPU 。Type 为 manual 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expandCpu;
                     bool m_expandCpuHasBeenSet;
 
                     /**
-                     * 自动扩容策略。Type 为 auto 时有效
+                     * 自动扩容策略。Type 为 auto 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AutoStrategy m_autoStrategy;
@@ -152,7 +152,7 @@ namespace TencentCloud
                     bool m_periodStrategyHasBeenSet;
 
                     /**
-                     * 按时间段扩容策略
+                     * 按时间段扩容策略。
                      */
                     TimeIntervalStrategy m_timeIntervalStrategy;
                     bool m_timeIntervalStrategyHasBeenSet;

@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID 。
-                     * @return InstanceId 实例 ID 。
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID 。
-                     * @param _instanceId 实例 ID 。
+                     * 设置实例 ID。
+                     * @param _instanceId 实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -67,15 +67,19 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期
-                     * @return Type 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期
+                     * 获取扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期。
+
+                     * @return Type 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期。
+
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期
-                     * @param _type 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期
+                     * 设置扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期。
+
+                     * @param _type 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期。
+
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -134,15 +138,15 @@ namespace TencentCloud
                     bool AutoStrategyHasBeenSet() const;
 
                     /**
-                     * 获取按时间段扩容策略
-                     * @return TimeIntervalStrategy 按时间段扩容策略
+                     * 获取按时间段扩容策略。
+                     * @return TimeIntervalStrategy 按时间段扩容策略。
                      * 
                      */
                     TimeIntervalStrategy GetTimeIntervalStrategy() const;
 
                     /**
-                     * 设置按时间段扩容策略
-                     * @param _timeIntervalStrategy 按时间段扩容策略
+                     * 设置按时间段扩容策略。
+                     * @param _timeIntervalStrategy 按时间段扩容策略。
                      * 
                      */
                     void SetTimeIntervalStrategy(const TimeIntervalStrategy& _timeIntervalStrategy);
@@ -155,15 +159,15 @@ namespace TencentCloud
                     bool TimeIntervalStrategyHasBeenSet() const;
 
                     /**
-                     * 获取按周期扩容策略
-                     * @return PeriodStrategy 按周期扩容策略
+                     * 获取按周期扩容策略。
+                     * @return PeriodStrategy 按周期扩容策略。
                      * 
                      */
                     PeriodStrategy GetPeriodStrategy() const;
 
                     /**
-                     * 设置按周期扩容策略
-                     * @param _periodStrategy 按周期扩容策略
+                     * 设置按周期扩容策略。
+                     * @param _periodStrategy 按周期扩容策略。
                      * 
                      */
                     void SetPeriodStrategy(const PeriodStrategy& _periodStrategy);
@@ -178,13 +182,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID 。
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期
+                     * 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期。
+
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -203,13 +208,13 @@ namespace TencentCloud
                     bool m_autoStrategyHasBeenSet;
 
                     /**
-                     * 按时间段扩容策略
+                     * 按时间段扩容策略。
                      */
                     TimeIntervalStrategy m_timeIntervalStrategy;
                     bool m_timeIntervalStrategyHasBeenSet;
 
                     /**
-                     * 按周期扩容策略
+                     * 按周期扩容策略。
                      */
                     PeriodStrategy m_periodStrategy;
                     bool m_periodStrategyHasBeenSet;

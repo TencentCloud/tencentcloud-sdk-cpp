@@ -903,7 +903,7 @@ namespace TencentCloud
                 UploadCertificateOutcomeCallable UploadCertificateCallable(const Model::UploadCertificateRequest& request);
 
                 /**
-                 *本接口（UploadConfirmLetter）用于上传证书确认函。
+                 *本接口（UploadConfirmLetter）上传证书确认函，不再维护其功能，请用户前往腾讯云证书控制台上传证书确认函
                  * @param req UploadConfirmLetterRequest
                  * @return UploadConfirmLetterOutcome
                  */
@@ -912,7 +912,7 @@ namespace TencentCloud
                 UploadConfirmLetterOutcomeCallable UploadConfirmLetterCallable(const Model::UploadConfirmLetterRequest& request);
 
                 /**
-                 *本接口（UploadRevokeLetter）用于上传证书吊销确认函。
+                 *本接口（UploadRevokeLetter）上传证书吊销确认函，不再维护其功能，请用户前往腾讯云证书控制台上传证书吊销确认函
                  * @param req UploadRevokeLetterRequest
                  * @return UploadRevokeLetterOutcome
                  */

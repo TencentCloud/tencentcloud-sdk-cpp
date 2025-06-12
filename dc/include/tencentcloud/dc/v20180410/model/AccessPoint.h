@@ -321,6 +321,27 @@ namespace TencentCloud
                      */
                     bool AddressHasBeenSet() const;
 
+                    /**
+                     * 获取是否MACsec
+                     * @return IsMacSec 是否MACsec
+                     * 
+                     */
+                    bool GetIsMacSec() const;
+
+                    /**
+                     * 设置是否MACsec
+                     * @param _isMacSec 是否MACsec
+                     * 
+                     */
+                    void SetIsMacSec(const bool& _isMacSec);
+
+                    /**
+                     * 判断参数 IsMacSec 是否已赋值
+                     * @return IsMacSec 是否已赋值
+                     * 
+                     */
+                    bool IsMacSecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,6 +421,12 @@ namespace TencentCloud
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
+
+                    /**
+                     * 是否MACsec
+                     */
+                    bool m_isMacSec;
+                    bool m_isMacSecHasBeenSet;
 
                 };
             }

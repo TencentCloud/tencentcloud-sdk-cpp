@@ -469,6 +469,27 @@ ChinaOther：中国其他；
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否MACsec需求
+                     * @return IsMacSec 是否MACsec需求
+                     * 
+                     */
+                    bool GetIsMacSec() const;
+
+                    /**
+                     * 设置是否MACsec需求
+                     * @param _isMacSec 是否MACsec需求
+                     * 
+                     */
+                    void SetIsMacSec(const bool& _isMacSec);
+
+                    /**
+                     * 判断参数 IsMacSec 是否已赋值
+                     * @return IsMacSec 是否已赋值
+                     * 
+                     */
+                    bool IsMacSecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,6 +611,12 @@ ChinaOther：中国其他；
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否MACsec需求
+                     */
+                    bool m_isMacSec;
+                    bool m_isMacSecHasBeenSet;
 
                 };
             }

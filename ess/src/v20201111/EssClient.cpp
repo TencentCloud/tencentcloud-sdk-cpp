@@ -4297,6 +4297,49 @@ EssClient::ModifyIntegrationRoleOutcomeCallable EssClient::ModifyIntegrationRole
     return task->get_future();
 }
 
+EssClient::OperateSealsOutcome EssClient::OperateSeals(const OperateSealsRequest &request)
+{
+    auto outcome = MakeRequest(request, "OperateSeals");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OperateSealsResponse rsp = OperateSealsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OperateSealsOutcome(rsp);
+        else
+            return OperateSealsOutcome(o.GetError());
+    }
+    else
+    {
+        return OperateSealsOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::OperateSealsAsync(const OperateSealsRequest& request, const OperateSealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OperateSeals(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::OperateSealsOutcomeCallable EssClient::OperateSealsCallable(const OperateSealsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OperateSealsOutcome()>>(
+        [this, request]()
+        {
+            return this->OperateSeals(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::OperateTemplateOutcome EssClient::OperateTemplate(const OperateTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "OperateTemplate");

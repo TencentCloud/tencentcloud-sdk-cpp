@@ -814,6 +814,48 @@ namespace TencentCloud
                      */
                     bool IsThreeArchHasBeenSet() const;
 
+                    /**
+                     * 获取是否MACsec
+                     * @return IsMacSec 是否MACsec
+                     * 
+                     */
+                    bool GetIsMacSec() const;
+
+                    /**
+                     * 设置是否MACsec
+                     * @param _isMacSec 是否MACsec
+                     * 
+                     */
+                    void SetIsMacSec(const bool& _isMacSec);
+
+                    /**
+                     * 判断参数 IsMacSec 是否已赋值
+                     * @return IsMacSec 是否已赋值
+                     * 
+                     */
+                    bool IsMacSecHasBeenSet() const;
+
+                    /**
+                     * 获取端口规格(Mbps)
+                     * @return PortSpecification 端口规格(Mbps)
+                     * 
+                     */
+                    uint64_t GetPortSpecification() const;
+
+                    /**
+                     * 设置端口规格(Mbps)
+                     * @param _portSpecification 端口规格(Mbps)
+                     * 
+                     */
+                    void SetPortSpecification(const uint64_t& _portSpecification);
+
+                    /**
+                     * 判断参数 PortSpecification 是否已赋值
+                     * @return PortSpecification 是否已赋值
+                     * 
+                     */
+                    bool PortSpecificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1033,6 +1075,18 @@ namespace TencentCloud
                      */
                     bool m_isThreeArch;
                     bool m_isThreeArchHasBeenSet;
+
+                    /**
+                     * 是否MACsec
+                     */
+                    bool m_isMacSec;
+                    bool m_isMacSecHasBeenSet;
+
+                    /**
+                     * 端口规格(Mbps)
+                     */
+                    uint64_t m_portSpecification;
+                    bool m_portSpecificationHasBeenSet;
 
                 };
             }

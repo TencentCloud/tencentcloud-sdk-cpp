@@ -184,6 +184,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/ApproverComponentLimitType.h
   include/tencentcloud/ess/v20201111/model/HasAuthOrganization.h
   include/tencentcloud/ess/v20201111/model/RecipientComponentInfo.h
+  include/tencentcloud/ess/v20201111/model/OperateSealsResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowGroupResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationRoleResponse.h
@@ -330,6 +331,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowBlockchainEvidenceUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlRequest.h
   include/tencentcloud/ess/v20201111/model/FileUrl.h
+  include/tencentcloud/ess/v20201111/model/OperateSealsRequest.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationGroupInvitationLinkResponse.h
@@ -505,6 +507,7 @@ set(ess_src
   src/v20201111/model/ApproverComponentLimitType.cpp
   src/v20201111/model/HasAuthOrganization.cpp
   src/v20201111/model/RecipientComponentInfo.cpp
+  src/v20201111/model/OperateSealsResponse.cpp
   src/v20201111/model/CreateFlowEvidenceReportResponse.cpp
   src/v20201111/model/CreatePrepareFlowGroupResponse.cpp
   src/v20201111/model/CreateIntegrationRoleResponse.cpp
@@ -651,6 +654,7 @@ set(ess_src
   src/v20201111/model/CreateFlowBlockchainEvidenceUrlRequest.cpp
   src/v20201111/model/CreateBatchQuickSignUrlRequest.cpp
   src/v20201111/model/FileUrl.cpp
+  src/v20201111/model/OperateSealsRequest.cpp
   src/v20201111/model/CreateOrganizationInfoChangeUrlRequest.cpp
   src/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.cpp
   src/v20201111/model/CreateOrganizationGroupInvitationLinkResponse.cpp

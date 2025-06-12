@@ -33,7 +33,8 @@ AccessPoint::AccessPoint() :
     m_areaHasBeenSet(false),
     m_accessPointTypeHasBeenSet(false),
     m_availablePortInfoHasBeenSet(false),
-    m_addressHasBeenSet(false)
+    m_addressHasBeenSet(false),
+    m_isMacSecHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,16 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
         m_addressHasBeenSet = true;
     }
 
+    if (value.HasMember("IsMacSec") && !value["IsMacSec"].IsNull())
+    {
+        if (!value["IsMacSec"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.IsMacSec` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMacSec = value["IsMacSec"].GetBool();
+        m_isMacSecHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -322,6 +333,14 @@ void AccessPoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Address";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isMacSecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMacSec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMacSec, allocator);
     }
 
 }
@@ -533,5 +552,21 @@ void AccessPoint::SetAddress(const string& _address)
 bool AccessPoint::AddressHasBeenSet() const
 {
     return m_addressHasBeenSet;
+}
+
+bool AccessPoint::GetIsMacSec() const
+{
+    return m_isMacSec;
+}
+
+void AccessPoint::SetIsMacSec(const bool& _isMacSec)
+{
+    m_isMacSec = _isMacSec;
+    m_isMacSecHasBeenSet = true;
+}
+
+bool AccessPoint::IsMacSecHasBeenSet() const
+{
+    return m_isMacSecHasBeenSet;
 }
 

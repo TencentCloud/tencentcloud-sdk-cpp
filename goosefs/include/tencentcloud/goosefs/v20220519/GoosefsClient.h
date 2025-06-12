@@ -288,7 +288,9 @@ namespace TencentCloud
                 DescribeClusterRoleTokenOutcomeCallable DescribeClusterRoleTokenCallable(const Model::DescribeClusterRoleTokenRequest& request);
 
                 /**
-                 *查询GooseFS集群角色
+                 *接口废弃
+
+查询GooseFS集群角色
                  * @param req DescribeClusterRolesRequest
                  * @return DescribeClusterRolesOutcome
                  */

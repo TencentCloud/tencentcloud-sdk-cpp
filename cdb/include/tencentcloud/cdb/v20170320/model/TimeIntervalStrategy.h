@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始扩容时间
-                     * @return StartTime 开始扩容时间
+                     * 获取开始扩容时间。
+说明：此值的格式为 Integer 的时间戳。
+                     * @return StartTime 开始扩容时间。
+说明：此值的格式为 Integer 的时间戳。
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置开始扩容时间
-                     * @param _startTime 开始扩容时间
+                     * 设置开始扩容时间。
+说明：此值的格式为 Integer 的时间戳。
+                     * @param _startTime 开始扩容时间。
+说明：此值的格式为 Integer 的时间戳。
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -68,15 +72,19 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束扩容时间
-                     * @return EndTime 结束扩容时间
+                     * 获取结束扩容时间。
+说明：此值的格式为 Integer 的时间戳。
+                     * @return EndTime 结束扩容时间。
+说明：此值的格式为 Integer 的时间戳。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束扩容时间
-                     * @param _endTime 结束扩容时间
+                     * 设置结束扩容时间。
+说明：此值的格式为 Integer 的时间戳。
+                     * @param _endTime 结束扩容时间。
+说明：此值的格式为 Integer 的时间戳。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -91,13 +99,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始扩容时间
+                     * 开始扩容时间。
+说明：此值的格式为 Integer 的时间戳。
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束扩容时间
+                     * 结束扩容时间。
+说明：此值的格式为 Integer 的时间戳。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

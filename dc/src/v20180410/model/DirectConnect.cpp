@@ -55,7 +55,9 @@ DirectConnect::DirectConnect() :
     m_minBandwidthHasBeenSet(false),
     m_constructHasBeenSet(false),
     m_accessPointNameHasBeenSet(false),
-    m_isThreeArchHasBeenSet(false)
+    m_isThreeArchHasBeenSet(false),
+    m_isMacSecHasBeenSet(false),
+    m_portSpecificationHasBeenSet(false)
 {
 }
 
@@ -424,6 +426,26 @@ CoreInternalOutcome DirectConnect::Deserialize(const rapidjson::Value &value)
         m_isThreeArchHasBeenSet = true;
     }
 
+    if (value.HasMember("IsMacSec") && !value["IsMacSec"].IsNull())
+    {
+        if (!value["IsMacSec"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnect.IsMacSec` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMacSec = value["IsMacSec"].GetBool();
+        m_isMacSecHasBeenSet = true;
+    }
+
+    if (value.HasMember("PortSpecification") && !value["PortSpecification"].IsNull())
+    {
+        if (!value["PortSpecification"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnect.PortSpecification` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_portSpecification = value["PortSpecification"].GetUint64();
+        m_portSpecificationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -716,6 +738,22 @@ void DirectConnect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "IsThreeArch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isThreeArch, allocator);
+    }
+
+    if (m_isMacSecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMacSec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMacSec, allocator);
+    }
+
+    if (m_portSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_portSpecification, allocator);
     }
 
 }
@@ -1279,5 +1317,37 @@ void DirectConnect::SetIsThreeArch(const bool& _isThreeArch)
 bool DirectConnect::IsThreeArchHasBeenSet() const
 {
     return m_isThreeArchHasBeenSet;
+}
+
+bool DirectConnect::GetIsMacSec() const
+{
+    return m_isMacSec;
+}
+
+void DirectConnect::SetIsMacSec(const bool& _isMacSec)
+{
+    m_isMacSec = _isMacSec;
+    m_isMacSecHasBeenSet = true;
+}
+
+bool DirectConnect::IsMacSecHasBeenSet() const
+{
+    return m_isMacSecHasBeenSet;
+}
+
+uint64_t DirectConnect::GetPortSpecification() const
+{
+    return m_portSpecification;
+}
+
+void DirectConnect::SetPortSpecification(const uint64_t& _portSpecification)
+{
+    m_portSpecification = _portSpecification;
+    m_portSpecificationHasBeenSet = true;
+}
+
+bool DirectConnect::PortSpecificationHasBeenSet() const
+{
+    return m_portSpecificationHasBeenSet;
 }
 
