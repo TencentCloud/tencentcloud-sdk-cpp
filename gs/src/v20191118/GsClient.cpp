@@ -556,6 +556,49 @@ GsClient::CreateAndroidInstancesOutcomeCallable GsClient::CreateAndroidInstances
     return task->get_future();
 }
 
+GsClient::CreateAndroidInstancesAccessTokenOutcome GsClient::CreateAndroidInstancesAccessToken(const CreateAndroidInstancesAccessTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidInstancesAccessToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidInstancesAccessTokenResponse rsp = CreateAndroidInstancesAccessTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidInstancesAccessTokenOutcome(rsp);
+        else
+            return CreateAndroidInstancesAccessTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidInstancesAccessTokenOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidInstancesAccessTokenAsync(const CreateAndroidInstancesAccessTokenRequest& request, const CreateAndroidInstancesAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAndroidInstancesAccessToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CreateAndroidInstancesAccessTokenOutcomeCallable GsClient::CreateAndroidInstancesAccessTokenCallable(const CreateAndroidInstancesAccessTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAndroidInstancesAccessTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAndroidInstancesAccessToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::CreateAndroidInstancesScreenshotOutcome GsClient::CreateAndroidInstancesScreenshot(const CreateAndroidInstancesScreenshotRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAndroidInstancesScreenshot");
@@ -764,6 +807,49 @@ GsClient::DeleteAndroidAppVersionOutcomeCallable GsClient::DeleteAndroidAppVersi
         [this, request]()
         {
             return this->DeleteAndroidAppVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DeleteAndroidInstanceBackupFilesOutcome GsClient::DeleteAndroidInstanceBackupFiles(const DeleteAndroidInstanceBackupFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAndroidInstanceBackupFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAndroidInstanceBackupFilesResponse rsp = DeleteAndroidInstanceBackupFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAndroidInstanceBackupFilesOutcome(rsp);
+        else
+            return DeleteAndroidInstanceBackupFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAndroidInstanceBackupFilesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DeleteAndroidInstanceBackupFilesAsync(const DeleteAndroidInstanceBackupFilesRequest& request, const DeleteAndroidInstanceBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAndroidInstanceBackupFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DeleteAndroidInstanceBackupFilesOutcomeCallable GsClient::DeleteAndroidInstanceBackupFilesCallable(const DeleteAndroidInstanceBackupFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAndroidInstanceBackupFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAndroidInstanceBackupFiles(request);
         }
     );
 
@@ -2226,6 +2312,49 @@ GsClient::RebootAndroidInstancesOutcomeCallable GsClient::RebootAndroidInstances
         [this, request]()
         {
             return this->RebootAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::RenewAndroidInstancesAccessTokenOutcome GsClient::RenewAndroidInstancesAccessToken(const RenewAndroidInstancesAccessTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewAndroidInstancesAccessToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewAndroidInstancesAccessTokenResponse rsp = RenewAndroidInstancesAccessTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewAndroidInstancesAccessTokenOutcome(rsp);
+        else
+            return RenewAndroidInstancesAccessTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewAndroidInstancesAccessTokenOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::RenewAndroidInstancesAccessTokenAsync(const RenewAndroidInstancesAccessTokenRequest& request, const RenewAndroidInstancesAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewAndroidInstancesAccessToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::RenewAndroidInstancesAccessTokenOutcomeCallable GsClient::RenewAndroidInstancesAccessTokenCallable(const RenewAndroidInstancesAccessTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewAndroidInstancesAccessTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewAndroidInstancesAccessToken(request);
         }
     );
 

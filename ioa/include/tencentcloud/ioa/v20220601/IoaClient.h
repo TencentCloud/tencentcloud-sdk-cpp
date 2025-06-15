@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskRequest.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskResponse.h>
+#include <tencentcloud/ioa/v20220601/model/CreateDeviceTaskRequest.h>
+#include <tencentcloud/ioa/v20220601/model/CreateDeviceTaskResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupRequest.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreatePrivilegeCodeRequest.h>
@@ -35,6 +37,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoListRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoListResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeviceInfoRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeviceInfoResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeLocalAccountsRequest.h>
@@ -62,6 +66,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDLPFileDetectionTaskResponse> CreateDLPFileDetectionTaskOutcome;
                 typedef std::future<CreateDLPFileDetectionTaskOutcome> CreateDLPFileDetectionTaskOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::CreateDLPFileDetectionTaskRequest&, CreateDLPFileDetectionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDLPFileDetectionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDeviceTaskResponse> CreateDeviceTaskOutcome;
+                typedef std::future<CreateDeviceTaskOutcome> CreateDeviceTaskOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::CreateDeviceTaskRequest&, CreateDeviceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeviceVirtualGroupResponse> CreateDeviceVirtualGroupOutcome;
                 typedef std::future<CreateDeviceVirtualGroupOutcome> CreateDeviceVirtualGroupOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::CreateDeviceVirtualGroupRequest&, CreateDeviceVirtualGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceVirtualGroupAsyncHandler;
@@ -77,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceHardwareInfoListResponse> DescribeDeviceHardwareInfoListOutcome;
                 typedef std::future<DescribeDeviceHardwareInfoListOutcome> DescribeDeviceHardwareInfoListOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDeviceHardwareInfoListRequest&, DescribeDeviceHardwareInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceHardwareInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceInfoResponse> DescribeDeviceInfoOutcome;
+                typedef std::future<DescribeDeviceInfoOutcome> DescribeDeviceInfoOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeDeviceInfoRequest&, DescribeDeviceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDevicesResponse> DescribeDevicesOutcome;
                 typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDevicesRequest&, DescribeDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
@@ -103,6 +113,15 @@ namespace TencentCloud
                 CreateDLPFileDetectionTaskOutcome CreateDLPFileDetectionTask(const Model::CreateDLPFileDetectionTaskRequest &request);
                 void CreateDLPFileDetectionTaskAsync(const Model::CreateDLPFileDetectionTaskRequest& request, const CreateDLPFileDetectionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDLPFileDetectionTaskOutcomeCallable CreateDLPFileDetectionTaskCallable(const Model::CreateDLPFileDetectionTaskRequest& request);
+
+                /**
+                 *创建获取终端进程网络服务信息任务，私有化调用path为：capi/Assets/Device/DescribeDeviceInfo
+                 * @param req CreateDeviceTaskRequest
+                 * @return CreateDeviceTaskOutcome
+                 */
+                CreateDeviceTaskOutcome CreateDeviceTask(const Model::CreateDeviceTaskRequest &request);
+                void CreateDeviceTaskAsync(const Model::CreateDeviceTaskRequest& request, const CreateDeviceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeviceTaskOutcomeCallable CreateDeviceTaskCallable(const Model::CreateDeviceTaskRequest& request);
 
                 /**
                  *创建终端自定义分组，私有化调用path为：/capi/Assets/Device/CreateDeviceVirtualGroup
@@ -148,6 +167,15 @@ namespace TencentCloud
                 DescribeDeviceHardwareInfoListOutcome DescribeDeviceHardwareInfoList(const Model::DescribeDeviceHardwareInfoListRequest &request);
                 void DescribeDeviceHardwareInfoListAsync(const Model::DescribeDeviceHardwareInfoListRequest& request, const DescribeDeviceHardwareInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceHardwareInfoListOutcomeCallable DescribeDeviceHardwareInfoListCallable(const Model::DescribeDeviceHardwareInfoListRequest& request);
+
+                /**
+                 *获取终端进程网络服务信息，私有化调用path为：capi/Assets/Device/DescribeDeviceInfo
+                 * @param req DescribeDeviceInfoRequest
+                 * @return DescribeDeviceInfoOutcome
+                 */
+                DescribeDeviceInfoOutcome DescribeDeviceInfo(const Model::DescribeDeviceInfoRequest &request);
+                void DescribeDeviceInfoAsync(const Model::DescribeDeviceInfoRequest& request, const DescribeDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceInfoOutcomeCallable DescribeDeviceInfoCallable(const Model::DescribeDeviceInfoRequest& request);
 
                 /**
                  *查询满足条件的终端数据详情，私有化调用path为：/capi/Assets/Device/DescribeDevices

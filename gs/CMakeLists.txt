@@ -71,6 +71,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidAppVersionRequest.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResourcesResponse.h
+  include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesAppBlacklistResponse.h
   include/tencentcloud/gs/v20191118/model/UploadFilesToAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/StartAndroidInstancesAppRequest.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionResponse.h
@@ -108,6 +109,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstancesScreenshotRequest.h
   include/tencentcloud/gs/v20191118/model/CreateCosCredentialRequest.h
   include/tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppResponse.h
+  include/tencentcloud/gs/v20191118/model/DeleteAndroidInstanceBackupFilesRequest.h
   include/tencentcloud/gs/v20191118/model/AndroidInstanceTask.h
   include/tencentcloud/gs/v20191118/model/ConnectAndroidInstanceResponse.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstancesRequest.h
@@ -122,6 +124,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceADBResponse.h
   include/tencentcloud/gs/v20191118/model/StopAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/StartPublishStreamToCSSRequest.h
+  include/tencentcloud/gs/v20191118/model/CreateAndroidInstancesAccessTokenRequest.h
   include/tencentcloud/gs/v20191118/model/CreateSessionResponse.h
   include/tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/EnableAndroidInstancesAppRequest.h
@@ -135,8 +138,9 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/S3Options.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstancesAppBlacklistRequest.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceWebShellRequest.h
-  include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesAppBlacklistResponse.h
+  include/tencentcloud/gs/v20191118/model/CreateAndroidInstancesAccessTokenResponse.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesLabelsResponse.h
+  include/tencentcloud/gs/v20191118/model/RenewAndroidInstancesAccessTokenRequest.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstanceLabelsRequest.h
   include/tencentcloud/gs/v20191118/model/CopyAndroidInstanceResponse.h
   include/tencentcloud/gs/v20191118/model/SetAndroidInstancesFGAppKeepAliveRequest.h
@@ -160,6 +164,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesPropertiesResponse.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceSSHResponse.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesInformationResponse.h
+  include/tencentcloud/gs/v20191118/model/RenewAndroidInstancesAccessTokenResponse.h
   include/tencentcloud/gs/v20191118/model/CreateCosCredentialResponse.h
   include/tencentcloud/gs/v20191118/model/UploadFileToAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/AndroidInstanceAppBlacklist.h
@@ -180,6 +185,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/LabelRequirement.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidAppVersionResponse.h
   include/tencentcloud/gs/v20191118/model/FetchAndroidInstancesLogsRequest.h
+  include/tencentcloud/gs/v20191118/model/DeleteAndroidInstanceBackupFilesResponse.h
   include/tencentcloud/gs/v20191118/model/BackUpAndroidInstanceToStorageResponse.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceSSHRequest.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidAppResponse.h
@@ -241,6 +247,7 @@ set(gs_src
   src/v20191118/model/DistributeFileToAndroidInstancesResponse.cpp
   src/v20191118/model/ModifyAndroidAppVersionRequest.cpp
   src/v20191118/model/ModifyAndroidInstancesResourcesResponse.cpp
+  src/v20191118/model/ModifyAndroidInstancesAppBlacklistResponse.cpp
   src/v20191118/model/UploadFilesToAndroidInstancesRequest.cpp
   src/v20191118/model/StartAndroidInstancesAppRequest.cpp
   src/v20191118/model/ModifyAndroidInstancesResolutionResponse.cpp
@@ -278,6 +285,7 @@ set(gs_src
   src/v20191118/model/CreateAndroidInstancesScreenshotRequest.cpp
   src/v20191118/model/CreateCosCredentialRequest.cpp
   src/v20191118/model/InstallAndroidInstancesAppResponse.cpp
+  src/v20191118/model/DeleteAndroidInstanceBackupFilesRequest.cpp
   src/v20191118/model/AndroidInstanceTask.cpp
   src/v20191118/model/ConnectAndroidInstanceResponse.cpp
   src/v20191118/model/DescribeAndroidInstancesRequest.cpp
@@ -292,6 +300,7 @@ set(gs_src
   src/v20191118/model/CreateAndroidInstanceADBResponse.cpp
   src/v20191118/model/StopAndroidInstancesRequest.cpp
   src/v20191118/model/StartPublishStreamToCSSRequest.cpp
+  src/v20191118/model/CreateAndroidInstancesAccessTokenRequest.cpp
   src/v20191118/model/CreateSessionResponse.cpp
   src/v20191118/model/DistributeFileToAndroidInstancesRequest.cpp
   src/v20191118/model/EnableAndroidInstancesAppRequest.cpp
@@ -305,8 +314,9 @@ set(gs_src
   src/v20191118/model/S3Options.cpp
   src/v20191118/model/DescribeAndroidInstancesAppBlacklistRequest.cpp
   src/v20191118/model/CreateAndroidInstanceWebShellRequest.cpp
-  src/v20191118/model/ModifyAndroidInstancesAppBlacklistResponse.cpp
+  src/v20191118/model/CreateAndroidInstancesAccessTokenResponse.cpp
   src/v20191118/model/ModifyAndroidInstancesLabelsResponse.cpp
+  src/v20191118/model/RenewAndroidInstancesAccessTokenRequest.cpp
   src/v20191118/model/DescribeAndroidInstanceLabelsRequest.cpp
   src/v20191118/model/CopyAndroidInstanceResponse.cpp
   src/v20191118/model/SetAndroidInstancesFGAppKeepAliveRequest.cpp
@@ -330,6 +340,7 @@ set(gs_src
   src/v20191118/model/ModifyAndroidInstancesPropertiesResponse.cpp
   src/v20191118/model/CreateAndroidInstanceSSHResponse.cpp
   src/v20191118/model/ModifyAndroidInstancesInformationResponse.cpp
+  src/v20191118/model/RenewAndroidInstancesAccessTokenResponse.cpp
   src/v20191118/model/CreateCosCredentialResponse.cpp
   src/v20191118/model/UploadFileToAndroidInstancesResponse.cpp
   src/v20191118/model/AndroidInstanceAppBlacklist.cpp
@@ -350,6 +361,7 @@ set(gs_src
   src/v20191118/model/LabelRequirement.cpp
   src/v20191118/model/CreateAndroidAppVersionResponse.cpp
   src/v20191118/model/FetchAndroidInstancesLogsRequest.cpp
+  src/v20191118/model/DeleteAndroidInstanceBackupFilesResponse.cpp
   src/v20191118/model/BackUpAndroidInstanceToStorageResponse.cpp
   src/v20191118/model/CreateAndroidInstanceSSHRequest.cpp
   src/v20191118/model/CreateAndroidAppResponse.cpp

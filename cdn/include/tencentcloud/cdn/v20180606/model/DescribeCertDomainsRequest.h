@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CertHasBeenSet() const;
 
                     /**
-                     * 获取托管证书ID，Cert和CertId不能均未空，都填写时以CertId为准。
-                     * @return CertId 托管证书ID，Cert和CertId不能均未空，都填写时以CertId为准。
+                     * 获取托管证书ID，Cert和CertId不能均为空，都填写时以CertId为准。
+                     * @return CertId 托管证书ID，Cert和CertId不能均为空，都填写时以CertId为准。
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置托管证书ID，Cert和CertId不能均未空，都填写时以CertId为准。
-                     * @param _certId 托管证书ID，Cert和CertId不能均未空，都填写时以CertId为准。
+                     * 设置托管证书ID，Cert和CertId不能均为空，都填写时以CertId为准。
+                     * @param _certId 托管证书ID，Cert和CertId不能均为空，都填写时以CertId为准。
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_certHasBeenSet;
 
                     /**
-                     * 托管证书ID，Cert和CertId不能均未空，都填写时以CertId为准。
+                     * 托管证书ID，Cert和CertId不能均为空，都填写时以CertId为准。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;

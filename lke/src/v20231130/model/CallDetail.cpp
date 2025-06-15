@@ -32,7 +32,8 @@ CallDetail::CallDetail() :
     m_uinAccountHasBeenSet(false),
     m_appNameHasBeenSet(false),
     m_pageUsageHasBeenSet(false),
-    m_subSceneHasBeenSet(false)
+    m_subSceneHasBeenSet(false),
+    m_billingTagHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome CallDetail::Deserialize(const rapidjson::Value &value)
         m_subSceneHasBeenSet = true;
     }
 
+    if (value.HasMember("BillingTag") && !value["BillingTag"].IsNull())
+    {
+        if (!value["BillingTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CallDetail.BillingTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingTag = string(value["BillingTag"].GetString());
+        m_billingTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void CallDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SubScene";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billingTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingTag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void CallDetail::SetSubScene(const string& _subScene)
 bool CallDetail::SubSceneHasBeenSet() const
 {
     return m_subSceneHasBeenSet;
+}
+
+string CallDetail::GetBillingTag() const
+{
+    return m_billingTag;
+}
+
+void CallDetail::SetBillingTag(const string& _billingTag)
+{
+    m_billingTag = _billingTag;
+    m_billingTagHasBeenSet = true;
+}
+
+bool CallDetail::BillingTagHasBeenSet() const
+{
+    return m_billingTagHasBeenSet;
 }
 

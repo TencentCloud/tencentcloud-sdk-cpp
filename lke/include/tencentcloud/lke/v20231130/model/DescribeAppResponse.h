@@ -227,6 +227,20 @@ namespace TencentCloud
                      */
                     bool AppStatusDescHasBeenSet() const;
 
+                    /**
+                     * 获取应用是否在复制中
+                     * @return IsCopying 应用是否在复制中
+                     * 
+                     */
+                    bool GetIsCopying() const;
+
+                    /**
+                     * 判断参数 IsCopying 是否已赋值
+                     * @return IsCopying 是否已赋值
+                     * 
+                     */
+                    bool IsCopyingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -306,6 +320,12 @@ namespace TencentCloud
                      */
                     std::string m_appStatusDesc;
                     bool m_appStatusDescHasBeenSet;
+
+                    /**
+                     * 应用是否在复制中
+                     */
+                    bool m_isCopying;
+                    bool m_isCopyingHasBeenSet;
 
                 };
             }

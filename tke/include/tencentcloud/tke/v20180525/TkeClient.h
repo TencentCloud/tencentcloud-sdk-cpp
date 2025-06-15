@@ -269,6 +269,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeLogConfigsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeMasterComponentRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeMasterComponentResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeOSImagesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeOSImagesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeOpenPolicyListRequest.h>
@@ -409,6 +411,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyClusterTagsResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyMasterComponentRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyMasterComponentResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyNodePoolInstanceTypesRequest.h>
@@ -862,6 +866,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogSwitchesResponse> DescribeLogSwitchesOutcome;
                 typedef std::future<DescribeLogSwitchesOutcome> DescribeLogSwitchesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeLogSwitchesRequest&, DescribeLogSwitchesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogSwitchesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMasterComponentResponse> DescribeMasterComponentOutcome;
+                typedef std::future<DescribeMasterComponentOutcome> DescribeMasterComponentOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeMasterComponentRequest&, DescribeMasterComponentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMasterComponentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOSImagesResponse> DescribeOSImagesOutcome;
                 typedef std::future<DescribeOSImagesOutcome> DescribeOSImagesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeOSImagesRequest&, DescribeOSImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOSImagesAsyncHandler;
@@ -1072,6 +1079,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterVirtualNodePoolResponse> ModifyClusterVirtualNodePoolOutcome;
                 typedef std::future<ModifyClusterVirtualNodePoolOutcome> ModifyClusterVirtualNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterVirtualNodePoolRequest&, ModifyClusterVirtualNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterVirtualNodePoolAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMasterComponentResponse> ModifyMasterComponentOutcome;
+                typedef std::future<ModifyMasterComponentOutcome> ModifyMasterComponentOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyMasterComponentRequest&, ModifyMasterComponentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMasterComponentAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNodePoolDesiredCapacityAboutAsgResponse> ModifyNodePoolDesiredCapacityAboutAsgOutcome;
                 typedef std::future<ModifyNodePoolDesiredCapacityAboutAsgOutcome> ModifyNodePoolDesiredCapacityAboutAsgOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyNodePoolDesiredCapacityAboutAsgRequest&, ModifyNodePoolDesiredCapacityAboutAsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodePoolDesiredCapacityAboutAsgAsyncHandler;
@@ -2288,6 +2298,15 @@ namespace TencentCloud
                 DescribeLogSwitchesOutcomeCallable DescribeLogSwitchesCallable(const Model::DescribeLogSwitchesRequest& request);
 
                 /**
+                 *进行master组件停机故障演练时，获取master组件运行状态，支持kube-apiserver、kube-scheduler、kube-controller-manager
+                 * @param req DescribeMasterComponentRequest
+                 * @return DescribeMasterComponentOutcome
+                 */
+                DescribeMasterComponentOutcome DescribeMasterComponent(const Model::DescribeMasterComponentRequest &request);
+                void DescribeMasterComponentAsync(const Model::DescribeMasterComponentRequest& request, const DescribeMasterComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMasterComponentOutcomeCallable DescribeMasterComponentCallable(const Model::DescribeMasterComponentRequest& request);
+
+                /**
                  *获取OS聚合信息
                  * @param req DescribeOSImagesRequest
                  * @return DescribeOSImagesOutcome
@@ -2916,6 +2935,15 @@ namespace TencentCloud
                 ModifyClusterVirtualNodePoolOutcome ModifyClusterVirtualNodePool(const Model::ModifyClusterVirtualNodePoolRequest &request);
                 void ModifyClusterVirtualNodePoolAsync(const Model::ModifyClusterVirtualNodePoolRequest& request, const ModifyClusterVirtualNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClusterVirtualNodePoolOutcomeCallable ModifyClusterVirtualNodePoolCallable(const Model::ModifyClusterVirtualNodePoolRequest& request);
+
+                /**
+                 *修改master组件，支持kube-apiserver、kube-scheduler、kube-controller-manager副本数调整为0和恢复
+                 * @param req ModifyMasterComponentRequest
+                 * @return ModifyMasterComponentOutcome
+                 */
+                ModifyMasterComponentOutcome ModifyMasterComponent(const Model::ModifyMasterComponentRequest &request);
+                void ModifyMasterComponentAsync(const Model::ModifyMasterComponentRequest& request, const ModifyMasterComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMasterComponentOutcomeCallable ModifyMasterComponentCallable(const Model::ModifyMasterComponentRequest& request);
 
                 /**
                  *修改节点池关联伸缩组的期望实例数

@@ -346,6 +346,27 @@ namespace TencentCloud
                      */
                     bool SubSceneHasBeenSet() const;
 
+                    /**
+                     * 获取账单明细对应的自定义tag
+                     * @return BillingTag 账单明细对应的自定义tag
+                     * 
+                     */
+                    std::string GetBillingTag() const;
+
+                    /**
+                     * 设置账单明细对应的自定义tag
+                     * @param _billingTag 账单明细对应的自定义tag
+                     * 
+                     */
+                    void SetBillingTag(const std::string& _billingTag);
+
+                    /**
+                     * 判断参数 BillingTag 是否已赋值
+                     * @return BillingTag 是否已赋值
+                     * 
+                     */
+                    bool BillingTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +452,12 @@ namespace TencentCloud
                      */
                     std::string m_subScene;
                     bool m_subSceneHasBeenSet;
+
+                    /**
+                     * 账单明细对应的自定义tag
+                     */
+                    std::string m_billingTag;
+                    bool m_billingTagHasBeenSet;
 
                 };
             }

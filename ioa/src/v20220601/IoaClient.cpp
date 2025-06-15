@@ -83,6 +83,49 @@ IoaClient::CreateDLPFileDetectionTaskOutcomeCallable IoaClient::CreateDLPFileDet
     return task->get_future();
 }
 
+IoaClient::CreateDeviceTaskOutcome IoaClient::CreateDeviceTask(const CreateDeviceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeviceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeviceTaskResponse rsp = CreateDeviceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeviceTaskOutcome(rsp);
+        else
+            return CreateDeviceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeviceTaskOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::CreateDeviceTaskAsync(const CreateDeviceTaskRequest& request, const CreateDeviceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDeviceTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::CreateDeviceTaskOutcomeCallable IoaClient::CreateDeviceTaskCallable(const CreateDeviceTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDeviceTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDeviceTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::CreateDeviceVirtualGroupOutcome IoaClient::CreateDeviceVirtualGroup(const CreateDeviceVirtualGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDeviceVirtualGroup");
@@ -291,6 +334,49 @@ IoaClient::DescribeDeviceHardwareInfoListOutcomeCallable IoaClient::DescribeDevi
         [this, request]()
         {
             return this->DescribeDeviceHardwareInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::DescribeDeviceInfoOutcome IoaClient::DescribeDeviceInfo(const DescribeDeviceInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceInfoResponse rsp = DescribeDeviceInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceInfoOutcome(rsp);
+        else
+            return DescribeDeviceInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceInfoOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDeviceInfoAsync(const DescribeDeviceInfoRequest& request, const DescribeDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeDeviceInfoOutcomeCallable IoaClient::DescribeDeviceInfoCallable(const DescribeDeviceInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceInfo(request);
         }
     );
 

@@ -34,8 +34,10 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeRootAccountGroupResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoItem.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultData.h
+  include/tencentcloud/ioa/v20220601/model/DescribeDeviceInfoResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeDevicesResponse.h
   include/tencentcloud/ioa/v20220601/model/CreatePrivilegeCodeRspData.h
+  include/tencentcloud/ioa/v20220601/model/DescribeDeviceInfoRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeAccountGroupsData.h
   include/tencentcloud/ioa/v20220601/model/RuleExpression.h
@@ -48,19 +50,25 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceResponse.h
   include/tencentcloud/ioa/v20220601/model/FilterGroup.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDevicePageData.h
+  include/tencentcloud/ioa/v20220601/model/DeviceNetworkInfo.h
   include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationRequest.h
   include/tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h
   include/tencentcloud/ioa/v20220601/model/Paging.h
+  include/tencentcloud/ioa/v20220601/model/CreateDeviceTaskRequest.h
   include/tencentcloud/ioa/v20220601/model/DeviceDetail.h
+  include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsData.h
+  include/tencentcloud/ioa/v20220601/model/DeviceServiceInfo.h
   include/tencentcloud/ioa/v20220601/model/GetAccountGroupData.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceRequest.h
   include/tencentcloud/ioa/v20220601/model/Filter.h
-  include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsData.h
-  include/tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationPageData.h
+  include/tencentcloud/ioa/v20220601/model/DeviceProcessInfo.h
+  include/tencentcloud/ioa/v20220601/model/DescribeDeviceInfoRspData.h
+  include/tencentcloud/ioa/v20220601/model/CreateDeviceTaskResponse.h
   include/tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsPage.h
+  include/tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationPageData.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultResponse.h
   include/tencentcloud/ioa/v20220601/model/Condition.h
   include/tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskRequest.h
@@ -87,8 +95,10 @@ set(ioa_src
   src/v20220601/model/DescribeRootAccountGroupResponse.cpp
   src/v20220601/model/DescribeDeviceHardwareInfoItem.cpp
   src/v20220601/model/DescribeDLPFileDetectResultData.cpp
+  src/v20220601/model/DescribeDeviceInfoResponse.cpp
   src/v20220601/model/DescribeDevicesResponse.cpp
   src/v20220601/model/CreatePrivilegeCodeRspData.cpp
+  src/v20220601/model/DescribeDeviceInfoRequest.cpp
   src/v20220601/model/DescribeLocalAccountsResponse.cpp
   src/v20220601/model/DescribeAccountGroupsData.cpp
   src/v20220601/model/RuleExpression.cpp
@@ -101,19 +111,25 @@ set(ioa_src
   src/v20220601/model/DescribeSoftCensusListByDeviceResponse.cpp
   src/v20220601/model/FilterGroup.cpp
   src/v20220601/model/DescribeSoftCensusListByDevicePageData.cpp
+  src/v20220601/model/DeviceNetworkInfo.cpp
   src/v20220601/model/DescribeLocalAccountsRequest.cpp
   src/v20220601/model/DescribeSoftwareInformationRequest.cpp
   src/v20220601/model/CreateDeviceVirtualGroupRequest.cpp
   src/v20220601/model/DescribeDevicesRequest.cpp
   src/v20220601/model/Paging.cpp
+  src/v20220601/model/CreateDeviceTaskRequest.cpp
   src/v20220601/model/DeviceDetail.cpp
+  src/v20220601/model/DescribeLocalAccountsData.cpp
+  src/v20220601/model/DeviceServiceInfo.cpp
   src/v20220601/model/GetAccountGroupData.cpp
   src/v20220601/model/DescribeSoftCensusListByDeviceRequest.cpp
   src/v20220601/model/Filter.cpp
-  src/v20220601/model/DescribeLocalAccountsData.cpp
-  src/v20220601/model/DescribeSoftwareInformationPageData.cpp
+  src/v20220601/model/DeviceProcessInfo.cpp
+  src/v20220601/model/DescribeDeviceInfoRspData.cpp
+  src/v20220601/model/CreateDeviceTaskResponse.cpp
   src/v20220601/model/CreateDLPFileDetectionTaskResponse.cpp
   src/v20220601/model/DescribeLocalAccountsPage.cpp
+  src/v20220601/model/DescribeSoftwareInformationPageData.cpp
   src/v20220601/model/DescribeDLPFileDetectResultResponse.cpp
   src/v20220601/model/Condition.cpp
   src/v20220601/model/CreateDLPFileDetectionTaskRequest.cpp

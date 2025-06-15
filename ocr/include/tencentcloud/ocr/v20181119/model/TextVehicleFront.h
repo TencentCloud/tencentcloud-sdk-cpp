@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool SealHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return StateElectronic 状态
+                     * 获取状态，该字段仅支持电子行驶证返回
+                     * @return StateElectronic 状态，该字段仅支持电子行驶证返回
                      * 
                      */
                     std::string GetStateElectronic() const;
 
                     /**
-                     * 设置状态
-                     * @param _stateElectronic 状态
+                     * 设置状态，该字段仅支持电子行驶证返回
+                     * @param _stateElectronic 状态，该字段仅支持电子行驶证返回
                      * 
                      */
                     void SetStateElectronic(const std::string& _stateElectronic);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool StateElectronicHasBeenSet() const;
 
                     /**
-                     * 获取检验有效期
-                     * @return InspectionValidityTimeElectronic 检验有效期
+                     * 获取检验有效期，该字段仅支持电子行驶证返回
+                     * @return InspectionValidityTimeElectronic 检验有效期，该字段仅支持电子行驶证返回
                      * 
                      */
                     std::string GetInspectionValidityTimeElectronic() const;
 
                     /**
-                     * 设置检验有效期
-                     * @param _inspectionValidityTimeElectronic 检验有效期
+                     * 设置检验有效期，该字段仅支持电子行驶证返回
+                     * @param _inspectionValidityTimeElectronic 检验有效期，该字段仅支持电子行驶证返回
                      * 
                      */
                     void SetInspectionValidityTimeElectronic(const std::string& _inspectionValidityTimeElectronic);
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool InspectionValidityTimeElectronicHasBeenSet() const;
 
                     /**
-                     * 获取生成时间
-                     * @return GenerationTimeElectronic 生成时间
+                     * 获取生成时间，该字段仅支持电子行驶证返回
+                     * @return GenerationTimeElectronic 生成时间，该字段仅支持电子行驶证返回
                      * 
                      */
                     std::string GetGenerationTimeElectronic() const;
 
                     /**
-                     * 设置生成时间
-                     * @param _generationTimeElectronic 生成时间
+                     * 设置生成时间，该字段仅支持电子行驶证返回
+                     * @param _generationTimeElectronic 生成时间，该字段仅支持电子行驶证返回
                      * 
                      */
                     void SetGenerationTimeElectronic(const std::string& _generationTimeElectronic);
@@ -464,19 +464,19 @@ namespace TencentCloud
                     bool m_sealHasBeenSet;
 
                     /**
-                     * 状态
+                     * 状态，该字段仅支持电子行驶证返回
                      */
                     std::string m_stateElectronic;
                     bool m_stateElectronicHasBeenSet;
 
                     /**
-                     * 检验有效期
+                     * 检验有效期，该字段仅支持电子行驶证返回
                      */
                     std::string m_inspectionValidityTimeElectronic;
                     bool m_inspectionValidityTimeElectronicHasBeenSet;
 
                     /**
-                     * 生成时间
+                     * 生成时间，该字段仅支持电子行驶证返回
                      */
                     std::string m_generationTimeElectronic;
                     bool m_generationTimeElectronicHasBeenSet;

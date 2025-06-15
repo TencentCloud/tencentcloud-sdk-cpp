@@ -32,7 +32,8 @@ ListUsageCallDetailRequest::ListUsageCallDetailRequest() :
     m_appBizIdsHasBeenSet(false),
     m_callTypeHasBeenSet(false),
     m_subScenesHasBeenSet(false),
-    m_appTypeHasBeenSet(false)
+    m_appTypeHasBeenSet(false),
+    m_billingTagHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,14 @@ string ListUsageCallDetailRequest::ToJsonString() const
         string key = "AppType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billingTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_billingTag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -304,6 +313,22 @@ void ListUsageCallDetailRequest::SetAppType(const string& _appType)
 bool ListUsageCallDetailRequest::AppTypeHasBeenSet() const
 {
     return m_appTypeHasBeenSet;
+}
+
+string ListUsageCallDetailRequest::GetBillingTag() const
+{
+    return m_billingTag;
+}
+
+void ListUsageCallDetailRequest::SetBillingTag(const string& _billingTag)
+{
+    m_billingTag = _billingTag;
+    m_billingTagHasBeenSet = true;
+}
+
+bool ListUsageCallDetailRequest::BillingTagHasBeenSet() const
+{
+    return m_billingTagHasBeenSet;
 }
 
 

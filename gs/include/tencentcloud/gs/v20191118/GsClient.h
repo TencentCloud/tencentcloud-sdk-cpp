@@ -47,6 +47,8 @@
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceWebShellResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesResponse.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesAccessTokenRequest.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesAccessTokenResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesScreenshotRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesScreenshotResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateCosCredentialRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidAppResponse.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidAppVersionRequest.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidAppVersionResponse.h>
+#include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceBackupFilesRequest.h>
+#include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceBackupFilesResponse.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceImagesRequest.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceImagesResponse.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceLabelRequest.h>
@@ -125,6 +129,8 @@
 #include <tencentcloud/gs/v20191118/model/RebootAndroidInstanceHostsResponse.h>
 #include <tencentcloud/gs/v20191118/model/RebootAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/RebootAndroidInstancesResponse.h>
+#include <tencentcloud/gs/v20191118/model/RenewAndroidInstancesAccessTokenRequest.h>
+#include <tencentcloud/gs/v20191118/model/RenewAndroidInstancesAccessTokenResponse.h>
 #include <tencentcloud/gs/v20191118/model/ResetAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/ResetAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/RestartAndroidInstancesAppRequest.h>
@@ -217,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAndroidInstancesResponse> CreateAndroidInstancesOutcome;
                 typedef std::future<CreateAndroidInstancesOutcome> CreateAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateAndroidInstancesRequest&, CreateAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAndroidInstancesAccessTokenResponse> CreateAndroidInstancesAccessTokenOutcome;
+                typedef std::future<CreateAndroidInstancesAccessTokenOutcome> CreateAndroidInstancesAccessTokenOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::CreateAndroidInstancesAccessTokenRequest&, CreateAndroidInstancesAccessTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstancesAccessTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAndroidInstancesScreenshotResponse> CreateAndroidInstancesScreenshotOutcome;
                 typedef std::future<CreateAndroidInstancesScreenshotOutcome> CreateAndroidInstancesScreenshotOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateAndroidInstancesScreenshotRequest&, CreateAndroidInstancesScreenshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstancesScreenshotAsyncHandler;
@@ -232,6 +241,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAndroidAppVersionResponse> DeleteAndroidAppVersionOutcome;
                 typedef std::future<DeleteAndroidAppVersionOutcome> DeleteAndroidAppVersionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DeleteAndroidAppVersionRequest&, DeleteAndroidAppVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAndroidAppVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAndroidInstanceBackupFilesResponse> DeleteAndroidInstanceBackupFilesOutcome;
+                typedef std::future<DeleteAndroidInstanceBackupFilesOutcome> DeleteAndroidInstanceBackupFilesOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DeleteAndroidInstanceBackupFilesRequest&, DeleteAndroidInstanceBackupFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAndroidInstanceBackupFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAndroidInstanceImagesResponse> DeleteAndroidInstanceImagesOutcome;
                 typedef std::future<DeleteAndroidInstanceImagesOutcome> DeleteAndroidInstanceImagesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DeleteAndroidInstanceImagesRequest&, DeleteAndroidInstanceImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAndroidInstanceImagesAsyncHandler;
@@ -334,6 +346,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RebootAndroidInstancesResponse> RebootAndroidInstancesOutcome;
                 typedef std::future<RebootAndroidInstancesOutcome> RebootAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::RebootAndroidInstancesRequest&, RebootAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootAndroidInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewAndroidInstancesAccessTokenResponse> RenewAndroidInstancesAccessTokenOutcome;
+                typedef std::future<RenewAndroidInstancesAccessTokenOutcome> RenewAndroidInstancesAccessTokenOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::RenewAndroidInstancesAccessTokenRequest&, RenewAndroidInstancesAccessTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewAndroidInstancesAccessTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetAndroidInstancesResponse> ResetAndroidInstancesOutcome;
                 typedef std::future<ResetAndroidInstancesOutcome> ResetAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ResetAndroidInstancesRequest&, ResetAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAndroidInstancesAsyncHandler;
@@ -513,6 +528,15 @@ namespace TencentCloud
                 CreateAndroidInstancesOutcomeCallable CreateAndroidInstancesCallable(const Model::CreateAndroidInstancesRequest& request);
 
                 /**
+                 *创建安卓实例访问Token
+                 * @param req CreateAndroidInstancesAccessTokenRequest
+                 * @return CreateAndroidInstancesAccessTokenOutcome
+                 */
+                CreateAndroidInstancesAccessTokenOutcome CreateAndroidInstancesAccessToken(const Model::CreateAndroidInstancesAccessTokenRequest &request);
+                void CreateAndroidInstancesAccessTokenAsync(const Model::CreateAndroidInstancesAccessTokenRequest& request, const CreateAndroidInstancesAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAndroidInstancesAccessTokenOutcomeCallable CreateAndroidInstancesAccessTokenCallable(const Model::CreateAndroidInstancesAccessTokenRequest& request);
+
+                /**
                  *安卓实例截图
                  * @param req CreateAndroidInstancesScreenshotRequest
                  * @return CreateAndroidInstancesScreenshotOutcome
@@ -556,6 +580,15 @@ namespace TencentCloud
                 DeleteAndroidAppVersionOutcome DeleteAndroidAppVersion(const Model::DeleteAndroidAppVersionRequest &request);
                 void DeleteAndroidAppVersionAsync(const Model::DeleteAndroidAppVersionRequest& request, const DeleteAndroidAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAndroidAppVersionOutcomeCallable DeleteAndroidAppVersionCallable(const Model::DeleteAndroidAppVersionRequest& request);
+
+                /**
+                 *删除安卓实例备份文件
+                 * @param req DeleteAndroidInstanceBackupFilesRequest
+                 * @return DeleteAndroidInstanceBackupFilesOutcome
+                 */
+                DeleteAndroidInstanceBackupFilesOutcome DeleteAndroidInstanceBackupFiles(const Model::DeleteAndroidInstanceBackupFilesRequest &request);
+                void DeleteAndroidInstanceBackupFilesAsync(const Model::DeleteAndroidInstanceBackupFilesRequest& request, const DeleteAndroidInstanceBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAndroidInstanceBackupFilesOutcomeCallable DeleteAndroidInstanceBackupFilesCallable(const Model::DeleteAndroidInstanceBackupFilesRequest& request);
 
                 /**
                  *删除安卓实例镜像
@@ -865,6 +898,15 @@ namespace TencentCloud
                 RebootAndroidInstancesOutcome RebootAndroidInstances(const Model::RebootAndroidInstancesRequest &request);
                 void RebootAndroidInstancesAsync(const Model::RebootAndroidInstancesRequest& request, const RebootAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RebootAndroidInstancesOutcomeCallable RebootAndroidInstancesCallable(const Model::RebootAndroidInstancesRequest& request);
+
+                /**
+                 *续期安卓实例访问Token
+                 * @param req RenewAndroidInstancesAccessTokenRequest
+                 * @return RenewAndroidInstancesAccessTokenOutcome
+                 */
+                RenewAndroidInstancesAccessTokenOutcome RenewAndroidInstancesAccessToken(const Model::RenewAndroidInstancesAccessTokenRequest &request);
+                void RenewAndroidInstancesAccessTokenAsync(const Model::RenewAndroidInstancesAccessTokenRequest& request, const RenewAndroidInstancesAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewAndroidInstancesAccessTokenOutcomeCallable RenewAndroidInstancesAccessTokenCallable(const Model::RenewAndroidInstancesAccessTokenRequest& request);
 
                 /**
                  *重置安卓实例

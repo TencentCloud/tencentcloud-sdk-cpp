@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return PageNumber 页码
+                     * 获取页码（从1开始）
+                     * @return PageNumber 页码（从1开始）
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码
-                     * @param _pageNumber 页码
+                     * 设置页码（从1开始）
+                     * @param _pageNumber 页码（从1开始）
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取分页数量
-                     * @return PageSize 分页数量
+                     * 获取分页数量(最大值1000)
+                     * @return PageSize 分页数量(最大值1000)
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置分页数量
-                     * @param _pageSize 分页数量
+                     * 设置分页数量(最大值1000)
+                     * @param _pageSize 分页数量(最大值1000)
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool AppTypeHasBeenSet() const;
 
+                    /**
+                     * 获取账单明细对应的自定义tag
+                     * @return BillingTag 账单明细对应的自定义tag
+                     * 
+                     */
+                    std::string GetBillingTag() const;
+
+                    /**
+                     * 设置账单明细对应的自定义tag
+                     * @param _billingTag 账单明细对应的自定义tag
+                     * 
+                     */
+                    void SetBillingTag(const std::string& _billingTag);
+
+                    /**
+                     * 判断参数 BillingTag 是否已赋值
+                     * @return BillingTag 是否已赋值
+                     * 
+                     */
+                    bool BillingTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,13 +294,13 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 页码
+                     * 页码（从1开始）
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 分页数量
+                     * 分页数量(最大值1000)
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;
+
+                    /**
+                     * 账单明细对应的自定义tag
+                     */
+                    std::string m_billingTag;
+                    bool m_billingTagHasBeenSet;
 
                 };
             }

@@ -36,7 +36,8 @@ DescribeAppResponse::DescribeAppResponse() :
     m_bareAnswerInAppealHasBeenSet(false),
     m_appKeyHasBeenSet(false),
     m_appStatusHasBeenSet(false),
-    m_appStatusDescHasBeenSet(false)
+    m_appStatusDescHasBeenSet(false),
+    m_isCopyingHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,16 @@ CoreInternalOutcome DescribeAppResponse::Deserialize(const string &payload)
         m_appStatusDescHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsCopying") && !rsp["IsCopying"].IsNull())
+    {
+        if (!rsp["IsCopying"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsCopying` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCopying = rsp["IsCopying"].GetBool();
+        m_isCopyingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -332,6 +343,14 @@ string DescribeAppResponse::ToJsonString() const
         string key = "AppStatusDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appStatusDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCopyingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCopying";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCopying, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -474,6 +493,16 @@ string DescribeAppResponse::GetAppStatusDesc() const
 bool DescribeAppResponse::AppStatusDescHasBeenSet() const
 {
     return m_appStatusDescHasBeenSet;
+}
+
+bool DescribeAppResponse::GetIsCopying() const
+{
+    return m_isCopying;
+}
+
+bool DescribeAppResponse::IsCopyingHasBeenSet() const
+{
+    return m_isCopyingHasBeenSet;
 }
 
 

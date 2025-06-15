@@ -253,18 +253,18 @@ day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数�
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取Domains 传入多个时，默认（false)返回多个域名的汇总数据
+                     * 获取Domains 传入多个时，默认(false)返回多个域名的汇总数据
 可按需指定为 true，返回每一个 Domain 的明细数据（statusCode、2xx、3xx、4xx、5xx 指标暂不支持）
-                     * @return Detail Domains 传入多个时，默认（false)返回多个域名的汇总数据
+                     * @return Detail Domains 传入多个时，默认(false)返回多个域名的汇总数据
 可按需指定为 true，返回每一个 Domain 的明细数据（statusCode、2xx、3xx、4xx、5xx 指标暂不支持）
                      * 
                      */
                     bool GetDetail() const;
 
                     /**
-                     * 设置Domains 传入多个时，默认（false)返回多个域名的汇总数据
+                     * 设置Domains 传入多个时，默认(false)返回多个域名的汇总数据
 可按需指定为 true，返回每一个 Domain 的明细数据（statusCode、2xx、3xx、4xx、5xx 指标暂不支持）
-                     * @param _detail Domains 传入多个时，默认（false)返回多个域名的汇总数据
+                     * @param _detail Domains 传入多个时，默认(false)返回多个域名的汇总数据
 可按需指定为 true，返回每一个 Domain 的明细数据（statusCode、2xx、3xx、4xx、5xx 指标暂不支持）
                      * 
                      */
@@ -387,7 +387,7 @@ day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数�
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * Domains 传入多个时，默认（false)返回多个域名的汇总数据
+                     * Domains 传入多个时，默认(false)返回多个域名的汇总数据
 可按需指定为 true，返回每一个 Domain 的明细数据（statusCode、2xx、3xx、4xx、5xx 指标暂不支持）
                      */
                     bool m_detail;

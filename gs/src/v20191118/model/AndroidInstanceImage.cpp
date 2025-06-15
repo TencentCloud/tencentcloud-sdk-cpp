@@ -24,7 +24,8 @@ AndroidInstanceImage::AndroidInstanceImage() :
     m_androidInstanceImageIdHasBeenSet(false),
     m_androidInstanceImageNameHasBeenSet(false),
     m_androidInstanceImageStateHasBeenSet(false),
-    m_androidInstanceImageZoneHasBeenSet(false)
+    m_androidInstanceImageZoneHasBeenSet(false),
+    m_androidVersionHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome AndroidInstanceImage::Deserialize(const rapidjson::Value &va
         m_androidInstanceImageZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("AndroidVersion") && !value["AndroidVersion"].IsNull())
+    {
+        if (!value["AndroidVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstanceImage.AndroidVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_androidVersion = string(value["AndroidVersion"].GetString());
+        m_androidVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void AndroidInstanceImage::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "AndroidInstanceImageZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_androidInstanceImageZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_androidVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AndroidVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_androidVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void AndroidInstanceImage::SetAndroidInstanceImageZone(const string& _androidIns
 bool AndroidInstanceImage::AndroidInstanceImageZoneHasBeenSet() const
 {
     return m_androidInstanceImageZoneHasBeenSet;
+}
+
+string AndroidInstanceImage::GetAndroidVersion() const
+{
+    return m_androidVersion;
+}
+
+void AndroidInstanceImage::SetAndroidVersion(const string& _androidVersion)
+{
+    m_androidVersion = _androidVersion;
+    m_androidVersionHasBeenSet = true;
+}
+
+bool AndroidInstanceImage::AndroidVersionHasBeenSet() const
+{
+    return m_androidVersionHasBeenSet;
 }
 

@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
-ModifyAndroidInstancesResolutionResponse::ModifyAndroidInstancesResolutionResponse()
+ModifyAndroidInstancesResolutionResponse::ModifyAndroidInstancesResolutionResponse() :
+    m_androidInstanceErrorsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome ModifyAndroidInstancesResolutionResponse::Deserialize(const 
     }
 
 
+    if (rsp.HasMember("AndroidInstanceErrors") && !rsp["AndroidInstanceErrors"].IsNull())
+    {
+        if (!rsp["AndroidInstanceErrors"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AndroidInstanceErrors` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AndroidInstanceErrors"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AndroidInstanceError item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_androidInstanceErrors.push_back(item);
+        }
+        m_androidInstanceErrorsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string ModifyAndroidInstancesResolutionResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_androidInstanceErrorsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AndroidInstanceErrors";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_androidInstanceErrors.begin(); itr != m_androidInstanceErrors.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string ModifyAndroidInstancesResolutionResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<AndroidInstanceError> ModifyAndroidInstancesResolutionResponse::GetAndroidInstanceErrors() const
+{
+    return m_androidInstanceErrors;
+}
+
+bool ModifyAndroidInstancesResolutionResponse::AndroidInstanceErrorsHasBeenSet() const
+{
+    return m_androidInstanceErrorsHasBeenSet;
+}
 
 

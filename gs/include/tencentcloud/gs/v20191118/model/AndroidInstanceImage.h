@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool AndroidInstanceImageZoneHasBeenSet() const;
 
+                    /**
+                     * 获取安卓10
+                     * @return AndroidVersion 安卓10
+                     * 
+                     */
+                    std::string GetAndroidVersion() const;
+
+                    /**
+                     * 设置安卓10
+                     * @param _androidVersion 安卓10
+                     * 
+                     */
+                    void SetAndroidVersion(const std::string& _androidVersion);
+
+                    /**
+                     * 判断参数 AndroidVersion 是否已赋值
+                     * @return AndroidVersion 是否已赋值
+                     * 
+                     */
+                    bool AndroidVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_androidInstanceImageZone;
                     bool m_androidInstanceImageZoneHasBeenSet;
+
+                    /**
+                     * 安卓10
+                     */
+                    std::string m_androidVersion;
+                    bool m_androidVersionHasBeenSet;
 
                 };
             }

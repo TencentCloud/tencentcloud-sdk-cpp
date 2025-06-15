@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/gs/v20191118/model/AndroidInstanceError.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取安卓实例错误列表
+                     * @return AndroidInstanceErrors 安卓实例错误列表
+                     * 
+                     */
+                    std::vector<AndroidInstanceError> GetAndroidInstanceErrors() const;
+
+                    /**
+                     * 判断参数 AndroidInstanceErrors 是否已赋值
+                     * @return AndroidInstanceErrors 是否已赋值
+                     * 
+                     */
+                    bool AndroidInstanceErrorsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 安卓实例错误列表
+                     */
+                    std::vector<AndroidInstanceError> m_androidInstanceErrors;
+                    bool m_androidInstanceErrorsHasBeenSet;
 
                 };
             }

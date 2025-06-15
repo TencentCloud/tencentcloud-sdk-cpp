@@ -67,19 +67,19 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期。
-
-                     * @return Type 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期。
-
+                     * 获取扩容类型，支持自动扩容和自定义扩容。
+说明：1. auto 表示自动扩容。2. manual 表示自定义扩容，扩容时间为立即生效。3. timeInterval 表示自定义扩容，扩容时间为按时间段。4. period 表示自定义扩容，扩容时间为按周期。
+                     * @return Type 扩容类型，支持自动扩容和自定义扩容。
+说明：1. auto 表示自动扩容。2. manual 表示自定义扩容，扩容时间为立即生效。3. timeInterval 表示自定义扩容，扩容时间为按时间段。4. period 表示自定义扩容，扩容时间为按周期。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期。
-
-                     * @param _type 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期。
-
+                     * 设置扩容类型，支持自动扩容和自定义扩容。
+说明：1. auto 表示自动扩容。2. manual 表示自定义扩容，扩容时间为立即生效。3. timeInterval 表示自定义扩容，扩容时间为按时间段。4. period 表示自定义扩容，扩容时间为按周期。
+                     * @param _type 扩容类型，支持自动扩容和自定义扩容。
+说明：1. auto 表示自动扩容。2. manual 表示自定义扩容，扩容时间为立即生效。3. timeInterval 表示自定义扩容，扩容时间为按时间段。4. period 表示自定义扩容，扩容时间为按周期。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -92,19 +92,19 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取手动扩容时，扩容的 CPU 核心数。
-说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
-                     * @return ExpandCpu 手动扩容时，扩容的 CPU 核心数。
-说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
+                     * 获取自定义扩容时，扩容的 CPU 核心数。
+说明：1. Type 为 manual、timeInterval、period 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
+                     * @return ExpandCpu 自定义扩容时，扩容的 CPU 核心数。
+说明：1. Type 为 manual、timeInterval、period 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
                      * 
                      */
                     int64_t GetExpandCpu() const;
 
                     /**
-                     * 设置手动扩容时，扩容的 CPU 核心数。
-说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
-                     * @param _expandCpu 手动扩容时，扩容的 CPU 核心数。
-说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
+                     * 设置自定义扩容时，扩容的 CPU 核心数。
+说明：1. Type 为 manual、timeInterval、period 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
+                     * @param _expandCpu 自定义扩容时，扩容的 CPU 核心数。
+说明：1. Type 为 manual、timeInterval、period 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
                      * 
                      */
                     void SetExpandCpu(const int64_t& _expandCpu);
@@ -188,15 +188,15 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期。
-
+                     * 扩容类型，支持自动扩容和自定义扩容。
+说明：1. auto 表示自动扩容。2. manual 表示自定义扩容，扩容时间为立即生效。3. timeInterval 表示自定义扩容，扩容时间为按时间段。4. period 表示自定义扩容，扩容时间为按周期。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 手动扩容时，扩容的 CPU 核心数。
-说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
+                     * 自定义扩容时，扩容的 CPU 核心数。
+说明：1. Type 为 manual、timeInterval、period 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。
                      */
                     int64_t m_expandCpu;
                     bool m_expandCpuHasBeenSet;
