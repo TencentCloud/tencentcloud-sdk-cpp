@@ -23,8 +23,13 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 DescribeTopAttackInfoRequest::DescribeTopAttackInfoRequest() :
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_queryTypeHasBeenSet(false),
     m_memberIdHasBeenSet(false),
-    m_operatedMemberIdHasBeenSet(false)
+    m_operatedMemberIdHasBeenSet(false),
+    m_assetNameHasBeenSet(false),
+    m_assetTypeHasBeenSet(false)
 {
 }
 
@@ -34,6 +39,30 @@ string DescribeTopAttackInfoRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryType, allocator);
+    }
 
     if (m_memberIdHasBeenSet)
     {
@@ -61,6 +90,22 @@ string DescribeTopAttackInfoRequest::ToJsonString() const
         }
     }
 
+    if (m_assetNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_assetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_assetType, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -68,6 +113,54 @@ string DescribeTopAttackInfoRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeTopAttackInfoRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeTopAttackInfoRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeTopAttackInfoRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeTopAttackInfoRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeTopAttackInfoRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeTopAttackInfoRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+int64_t DescribeTopAttackInfoRequest::GetQueryType() const
+{
+    return m_queryType;
+}
+
+void DescribeTopAttackInfoRequest::SetQueryType(const int64_t& _queryType)
+{
+    m_queryType = _queryType;
+    m_queryTypeHasBeenSet = true;
+}
+
+bool DescribeTopAttackInfoRequest::QueryTypeHasBeenSet() const
+{
+    return m_queryTypeHasBeenSet;
+}
 
 vector<string> DescribeTopAttackInfoRequest::GetMemberId() const
 {
@@ -99,6 +192,38 @@ void DescribeTopAttackInfoRequest::SetOperatedMemberId(const vector<string>& _op
 bool DescribeTopAttackInfoRequest::OperatedMemberIdHasBeenSet() const
 {
     return m_operatedMemberIdHasBeenSet;
+}
+
+string DescribeTopAttackInfoRequest::GetAssetName() const
+{
+    return m_assetName;
+}
+
+void DescribeTopAttackInfoRequest::SetAssetName(const string& _assetName)
+{
+    m_assetName = _assetName;
+    m_assetNameHasBeenSet = true;
+}
+
+bool DescribeTopAttackInfoRequest::AssetNameHasBeenSet() const
+{
+    return m_assetNameHasBeenSet;
+}
+
+int64_t DescribeTopAttackInfoRequest::GetAssetType() const
+{
+    return m_assetType;
+}
+
+void DescribeTopAttackInfoRequest::SetAssetType(const int64_t& _assetType)
+{
+    m_assetType = _assetType;
+    m_assetTypeHasBeenSet = true;
+}
+
+bool DescribeTopAttackInfoRequest::AssetTypeHasBeenSet() const
+{
+    return m_assetTypeHasBeenSet;
 }
 
 

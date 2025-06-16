@@ -685,6 +685,49 @@ CsipClient::DescribeDomainAssetsOutcomeCallable CsipClient::DescribeDomainAssets
     return task->get_future();
 }
 
+CsipClient::DescribeExposuresOutcome CsipClient::DescribeExposures(const DescribeExposuresRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExposures");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExposuresResponse rsp = DescribeExposuresResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExposuresOutcome(rsp);
+        else
+            return DescribeExposuresOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExposuresOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeExposuresAsync(const DescribeExposuresRequest& request, const DescribeExposuresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExposures(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeExposuresOutcomeCallable CsipClient::DescribeExposuresCallable(const DescribeExposuresRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExposuresOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExposures(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeGatewayAssetsOutcome CsipClient::DescribeGatewayAssets(const DescribeGatewayAssetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGatewayAssets");

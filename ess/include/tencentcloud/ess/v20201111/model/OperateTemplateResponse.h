@@ -43,7 +43,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取模板ID，为32位字符串，模板复制新建时返回
+                     * @return TemplateId 模板ID，为32位字符串，模板复制新建时返回
+                     * 
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     * 
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取模板名称，模板复制新建时返回
+                     * @return TemplateName 模板名称，模板复制新建时返回
+                     * 
+                     */
+                    std::string GetTemplateName() const;
+
+                    /**
+                     * 判断参数 TemplateName 是否已赋值
+                     * @return TemplateName 是否已赋值
+                     * 
+                     */
+                    bool TemplateNameHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 模板ID，为32位字符串，模板复制新建时返回
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 模板名称，模板复制新建时返回
+                     */
+                    std::string m_templateName;
+                    bool m_templateNameHasBeenSet;
 
                 };
             }

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/AmbientSound.h>
 #include <tencentcloud/trtc/v20190722/model/VoicePrint.h>
+#include <tencentcloud/trtc/v20190722/model/TurnDetection.h>
 
 
 namespace TencentCloud
@@ -353,6 +354,27 @@ namespace TencentCloud
                      */
                     bool VoicePrintHasBeenSet() const;
 
+                    /**
+                     * 获取语义断句检测
+                     * @return TurnDetection 语义断句检测
+                     * 
+                     */
+                    TurnDetection GetTurnDetection() const;
+
+                    /**
+                     * 设置语义断句检测
+                     * @param _turnDetection 语义断句检测
+                     * 
+                     */
+                    void SetTurnDetection(const TurnDetection& _turnDetection);
+
+                    /**
+                     * 判断参数 TurnDetection 是否已赋值
+                     * @return TurnDetection 是否已赋值
+                     * 
+                     */
+                    bool TurnDetectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -440,6 +462,12 @@ namespace TencentCloud
                      */
                     VoicePrint m_voicePrint;
                     bool m_voicePrintHasBeenSet;
+
+                    /**
+                     * 语义断句检测
+                     */
+                    TurnDetection m_turnDetection;
+                    bool m_turnDetectionHasBeenSet;
 
                 };
             }

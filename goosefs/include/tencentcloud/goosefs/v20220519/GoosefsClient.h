@@ -31,6 +31,8 @@
 #include <tencentcloud/goosefs/v20220519/model/BatchAddClientNodesResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/BatchDeleteClientNodesRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/BatchDeleteClientNodesResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/BuildClientNodeMountCommandRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/BuildClientNodeMountCommandResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateFileSystemRequest.h>
@@ -101,6 +103,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchDeleteClientNodesResponse> BatchDeleteClientNodesOutcome;
                 typedef std::future<BatchDeleteClientNodesOutcome> BatchDeleteClientNodesOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::BatchDeleteClientNodesRequest&, BatchDeleteClientNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteClientNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::BuildClientNodeMountCommandResponse> BuildClientNodeMountCommandOutcome;
+                typedef std::future<BuildClientNodeMountCommandOutcome> BuildClientNodeMountCommandOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::BuildClientNodeMountCommandRequest&, BuildClientNodeMountCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BuildClientNodeMountCommandAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDataRepositoryTaskResponse> CreateDataRepositoryTaskOutcome;
                 typedef std::future<CreateDataRepositoryTaskOutcome> CreateDataRepositoryTaskOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::CreateDataRepositoryTaskRequest&, CreateDataRepositoryTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataRepositoryTaskAsyncHandler;
@@ -205,6 +210,15 @@ namespace TencentCloud
                 BatchDeleteClientNodesOutcome BatchDeleteClientNodes(const Model::BatchDeleteClientNodesRequest &request);
                 void BatchDeleteClientNodesAsync(const Model::BatchDeleteClientNodesRequest& request, const BatchDeleteClientNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchDeleteClientNodesOutcomeCallable BatchDeleteClientNodesCallable(const Model::BatchDeleteClientNodesRequest& request);
+
+                /**
+                 *生成客户端的挂载命令
+                 * @param req BuildClientNodeMountCommandRequest
+                 * @return BuildClientNodeMountCommandOutcome
+                 */
+                BuildClientNodeMountCommandOutcome BuildClientNodeMountCommand(const Model::BuildClientNodeMountCommandRequest &request);
+                void BuildClientNodeMountCommandAsync(const Model::BuildClientNodeMountCommandRequest& request, const BuildClientNodeMountCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BuildClientNodeMountCommandOutcomeCallable BuildClientNodeMountCommandCallable(const Model::BuildClientNodeMountCommandRequest& request);
 
                 /**
                  *创建数据流通任务,包括从将文件系统的数据上传到存储桶下, 以及从存储桶下载到文件系统里。

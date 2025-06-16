@@ -212,6 +212,49 @@ GoosefsClient::BatchDeleteClientNodesOutcomeCallable GoosefsClient::BatchDeleteC
     return task->get_future();
 }
 
+GoosefsClient::BuildClientNodeMountCommandOutcome GoosefsClient::BuildClientNodeMountCommand(const BuildClientNodeMountCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "BuildClientNodeMountCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BuildClientNodeMountCommandResponse rsp = BuildClientNodeMountCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BuildClientNodeMountCommandOutcome(rsp);
+        else
+            return BuildClientNodeMountCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return BuildClientNodeMountCommandOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::BuildClientNodeMountCommandAsync(const BuildClientNodeMountCommandRequest& request, const BuildClientNodeMountCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BuildClientNodeMountCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::BuildClientNodeMountCommandOutcomeCallable GoosefsClient::BuildClientNodeMountCommandCallable(const BuildClientNodeMountCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BuildClientNodeMountCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->BuildClientNodeMountCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GoosefsClient::CreateDataRepositoryTaskOutcome GoosefsClient::CreateDataRepositoryTask(const CreateDataRepositoryTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDataRepositoryTask");

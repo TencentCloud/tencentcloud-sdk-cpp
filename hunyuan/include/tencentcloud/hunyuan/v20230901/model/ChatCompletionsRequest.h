@@ -714,6 +714,27 @@ namespace TencentCloud
                      */
                     bool WebSearchOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取用户传入Topic
+                     * @return TopicChoice 用户传入Topic
+                     * 
+                     */
+                    std::string GetTopicChoice() const;
+
+                    /**
+                     * 设置用户传入Topic
+                     * @param _topicChoice 用户传入Topic
+                     * 
+                     */
+                    void SetTopicChoice(const std::string& _topicChoice);
+
+                    /**
+                     * 判断参数 TopicChoice 是否已赋值
+                     * @return TopicChoice 是否已赋值
+                     * 
+                     */
+                    bool TopicChoiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -898,6 +919,12 @@ namespace TencentCloud
                      */
                     WebSearchOptions m_webSearchOptions;
                     bool m_webSearchOptionsHasBeenSet;
+
+                    /**
+                     * 用户传入Topic
+                     */
+                    std::string m_topicChoice;
+                    bool m_topicChoiceHasBeenSet;
 
                 };
             }

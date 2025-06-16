@@ -29,10 +29,10 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyUebaRuleSwitchResponse.h
   include/tencentcloud/csip/v20221121/model/FilterDataObject.h
   include/tencentcloud/csip/v20221121/model/ReportItemKey.h
-  include/tencentcloud/csip/v20221121/model/TaskAdvanceCFG.h
+  include/tencentcloud/csip/v20221121/model/DescribeSubnetAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/CVMAssetVO.h
   include/tencentcloud/csip/v20221121/model/AssetViewCFGRisk.h
-  include/tencentcloud/csip/v20221121/model/DescribeSubnetAssetsRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeSubUserInfoRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeScanReportListRequest.h
   include/tencentcloud/csip/v20221121/model/AlertInfo.h
   include/tencentcloud/csip/v20221121/model/KeyValue.h
@@ -75,6 +75,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/NICAsset.h
   include/tencentcloud/csip/v20221121/model/OrganizationInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeListenerListResponse.h
+  include/tencentcloud/csip/v20221121/model/TaskAdvanceCFG.h
   include/tencentcloud/csip/v20221121/model/DBAssetVO.h
   include/tencentcloud/csip/v20221121/model/AssetInfoDetail.h
   include/tencentcloud/csip/v20221121/model/SubnetAsset.h
@@ -146,6 +147,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ReportTaskIdList.h
   include/tencentcloud/csip/v20221121/model/UebaRule.h
   include/tencentcloud/csip/v20221121/model/AddNewBindRoleUserResponse.h
+  include/tencentcloud/csip/v20221121/model/ExposesItem.h
   include/tencentcloud/csip/v20221121/model/RelatedEvent.h
   include/tencentcloud/csip/v20221121/model/VULViewVULRiskData.h
   include/tencentcloud/csip/v20221121/model/DescribeAlertListResponse.h
@@ -155,6 +157,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeVULRiskAdvanceCFGListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewVULRiskListRequest.h
   include/tencentcloud/csip/v20221121/model/TaskCenterCFGRiskInputParam.h
+  include/tencentcloud/csip/v20221121/model/DescribeExposuresRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeAlertListRequest.h
   include/tencentcloud/csip/v20221121/model/CreateDomainAndIpRequest.h
   include/tencentcloud/csip/v20221121/model/DomainAssetVO.h
@@ -171,6 +174,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterServerRiskListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeTaskLogListRequest.h
+  include/tencentcloud/csip/v20221121/model/Filters.h
   include/tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskRequest.h
   include/tencentcloud/csip/v20221121/model/ClbListenerListInfo.h
   include/tencentcloud/csip/v20221121/model/Element.h
@@ -182,7 +186,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/AssetCluster.h
   include/tencentcloud/csip/v20221121/model/CreateDomainAndIpResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeTaskLogListResponse.h
-  include/tencentcloud/csip/v20221121/model/DescribeSubUserInfoRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeExposuresResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewPortRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeTaskLogURLRequest.h
   include/tencentcloud/csip/v20221121/model/AddNewBindRoleUserRequest.h
@@ -200,10 +204,10 @@ set(csip_src
   src/v20221121/model/ModifyUebaRuleSwitchResponse.cpp
   src/v20221121/model/FilterDataObject.cpp
   src/v20221121/model/ReportItemKey.cpp
-  src/v20221121/model/TaskAdvanceCFG.cpp
+  src/v20221121/model/DescribeSubnetAssetsRequest.cpp
   src/v20221121/model/CVMAssetVO.cpp
   src/v20221121/model/AssetViewCFGRisk.cpp
-  src/v20221121/model/DescribeSubnetAssetsRequest.cpp
+  src/v20221121/model/DescribeSubUserInfoRequest.cpp
   src/v20221121/model/DescribeScanReportListRequest.cpp
   src/v20221121/model/AlertInfo.cpp
   src/v20221121/model/KeyValue.cpp
@@ -246,6 +250,7 @@ set(csip_src
   src/v20221121/model/NICAsset.cpp
   src/v20221121/model/OrganizationInfo.cpp
   src/v20221121/model/DescribeListenerListResponse.cpp
+  src/v20221121/model/TaskAdvanceCFG.cpp
   src/v20221121/model/DBAssetVO.cpp
   src/v20221121/model/AssetInfoDetail.cpp
   src/v20221121/model/SubnetAsset.cpp
@@ -317,6 +322,7 @@ set(csip_src
   src/v20221121/model/ReportTaskIdList.cpp
   src/v20221121/model/UebaRule.cpp
   src/v20221121/model/AddNewBindRoleUserResponse.cpp
+  src/v20221121/model/ExposesItem.cpp
   src/v20221121/model/RelatedEvent.cpp
   src/v20221121/model/VULViewVULRiskData.cpp
   src/v20221121/model/DescribeAlertListResponse.cpp
@@ -326,6 +332,7 @@ set(csip_src
   src/v20221121/model/DescribeVULRiskAdvanceCFGListRequest.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewVULRiskListRequest.cpp
   src/v20221121/model/TaskCenterCFGRiskInputParam.cpp
+  src/v20221121/model/DescribeExposuresRequest.cpp
   src/v20221121/model/DescribeAlertListRequest.cpp
   src/v20221121/model/CreateDomainAndIpRequest.cpp
   src/v20221121/model/DomainAssetVO.cpp
@@ -342,6 +349,7 @@ set(csip_src
   src/v20221121/model/DescribeCVMAssetsRequest.cpp
   src/v20221121/model/DescribeRiskCenterServerRiskListRequest.cpp
   src/v20221121/model/DescribeTaskLogListRequest.cpp
+  src/v20221121/model/Filters.cpp
   src/v20221121/model/ModifyRiskCenterScanTaskRequest.cpp
   src/v20221121/model/ClbListenerListInfo.cpp
   src/v20221121/model/Element.cpp
@@ -353,7 +361,7 @@ set(csip_src
   src/v20221121/model/AssetCluster.cpp
   src/v20221121/model/CreateDomainAndIpResponse.cpp
   src/v20221121/model/DescribeTaskLogListResponse.cpp
-  src/v20221121/model/DescribeSubUserInfoRequest.cpp
+  src/v20221121/model/DescribeExposuresResponse.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewPortRiskListResponse.cpp
   src/v20221121/model/DescribeTaskLogURLRequest.cpp
   src/v20221121/model/AddNewBindRoleUserRequest.cpp

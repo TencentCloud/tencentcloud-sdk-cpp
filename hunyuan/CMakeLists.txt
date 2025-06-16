@@ -81,6 +81,7 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/Timeline.h
   include/tencentcloud/hunyuan/v20230901/model/File3Ds.h
   include/tencentcloud/hunyuan/v20230901/model/Delta.h
+  include/tencentcloud/hunyuan/v20230901/model/Processes.h
   include/tencentcloud/hunyuan/v20230901/model/TextToImageLiteResponse.h
   include/tencentcloud/hunyuan/v20230901/model/TextToImageLiteRequest.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobResponse.h
@@ -177,6 +178,7 @@ set(hunyuan_src
   src/v20230901/model/Timeline.cpp
   src/v20230901/model/File3Ds.cpp
   src/v20230901/model/Delta.cpp
+  src/v20230901/model/Processes.cpp
   src/v20230901/model/TextToImageLiteResponse.cpp
   src/v20230901/model/TextToImageLiteRequest.cpp
   src/v20230901/model/QueryHunyuanImageJobResponse.cpp

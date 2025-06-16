@@ -43,7 +43,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_stopHasBeenSet(false),
     m_enableRecommendedQuestionsHasBeenSet(false),
     m_enableDeepReadHasBeenSet(false),
-    m_webSearchOptionsHasBeenSet(false)
+    m_webSearchOptionsHasBeenSet(false),
+    m_topicChoiceHasBeenSet(false)
 {
 }
 
@@ -241,6 +242,14 @@ string ChatCompletionsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_webSearchOptions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_topicChoiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicChoice";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicChoice.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -585,6 +594,22 @@ void ChatCompletionsRequest::SetWebSearchOptions(const WebSearchOptions& _webSea
 bool ChatCompletionsRequest::WebSearchOptionsHasBeenSet() const
 {
     return m_webSearchOptionsHasBeenSet;
+}
+
+string ChatCompletionsRequest::GetTopicChoice() const
+{
+    return m_topicChoice;
+}
+
+void ChatCompletionsRequest::SetTopicChoice(const string& _topicChoice)
+{
+    m_topicChoice = _topicChoice;
+    m_topicChoiceHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::TopicChoiceHasBeenSet() const
+{
+    return m_topicChoiceHasBeenSet;
 }
 
 

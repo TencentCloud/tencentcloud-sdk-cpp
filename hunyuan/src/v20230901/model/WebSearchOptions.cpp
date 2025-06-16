@@ -22,7 +22,8 @@ using namespace std;
 
 WebSearchOptions::WebSearchOptions() :
     m_knowledgeHasBeenSet(false),
-    m_userLocationHasBeenSet(false)
+    m_userLocationHasBeenSet(false),
+    m_processesHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,16 @@ CoreInternalOutcome WebSearchOptions::Deserialize(const rapidjson::Value &value)
         m_userLocationHasBeenSet = true;
     }
 
+    if (value.HasMember("Processes") && !value["Processes"].IsNull())
+    {
+        if (!value["Processes"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebSearchOptions.Processes` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_processes = value["Processes"].GetBool();
+        m_processesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -97,6 +108,14 @@ void WebSearchOptions::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_userLocation.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_processesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Processes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processes, allocator);
     }
 
 }
@@ -132,5 +151,21 @@ void WebSearchOptions::SetUserLocation(const UserLocation& _userLocation)
 bool WebSearchOptions::UserLocationHasBeenSet() const
 {
     return m_userLocationHasBeenSet;
+}
+
+bool WebSearchOptions::GetProcesses() const
+{
+    return m_processes;
+}
+
+void WebSearchOptions::SetProcesses(const bool& _processes)
+{
+    m_processes = _processes;
+    m_processesHasBeenSet = true;
+}
+
+bool WebSearchOptions::ProcessesHasBeenSet() const
+{
+    return m_processesHasBeenSet;
 }
 

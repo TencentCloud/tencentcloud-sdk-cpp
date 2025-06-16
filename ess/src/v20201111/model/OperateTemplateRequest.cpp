@@ -26,7 +26,8 @@ OperateTemplateRequest::OperateTemplateRequest() :
     m_operatorHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_operateTypeHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_templateNameHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,14 @@ string OperateTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_templateNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -141,6 +150,22 @@ void OperateTemplateRequest::SetAgent(const Agent& _agent)
 bool OperateTemplateRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string OperateTemplateRequest::GetTemplateName() const
+{
+    return m_templateName;
+}
+
+void OperateTemplateRequest::SetTemplateName(const string& _templateName)
+{
+    m_templateName = _templateName;
+    m_templateNameHasBeenSet = true;
+}
+
+bool OperateTemplateRequest::TemplateNameHasBeenSet() const
+{
+    return m_templateNameHasBeenSet;
 }
 
 

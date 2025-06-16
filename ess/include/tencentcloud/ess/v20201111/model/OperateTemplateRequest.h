@@ -160,6 +160,31 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取模板名称，长度不超过64字符。<br>
+模板复制时指定有效，若为空，则复制后模板名称为 **原模板名称_副本**。
+                     * @return TemplateName 模板名称，长度不超过64字符。<br>
+模板复制时指定有效，若为空，则复制后模板名称为 **原模板名称_副本**。
+                     * 
+                     */
+                    std::string GetTemplateName() const;
+
+                    /**
+                     * 设置模板名称，长度不超过64字符。<br>
+模板复制时指定有效，若为空，则复制后模板名称为 **原模板名称_副本**。
+                     * @param _templateName 模板名称，长度不超过64字符。<br>
+模板复制时指定有效，若为空，则复制后模板名称为 **原模板名称_副本**。
+                     * 
+                     */
+                    void SetTemplateName(const std::string& _templateName);
+
+                    /**
+                     * 判断参数 TemplateName 是否已赋值
+                     * @return TemplateName 是否已赋值
+                     * 
+                     */
+                    bool TemplateNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +218,13 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 模板名称，长度不超过64字符。<br>
+模板复制时指定有效，若为空，则复制后模板名称为 **原模板名称_副本**。
+                     */
+                    std::string m_templateName;
+                    bool m_templateNameHasBeenSet;
 
                 };
             }

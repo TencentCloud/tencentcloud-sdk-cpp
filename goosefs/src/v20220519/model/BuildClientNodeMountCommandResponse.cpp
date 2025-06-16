@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/essbasic/v20210526/model/OperateTemplateResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/BuildClientNodeMountCommandResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Essbasic::V20210526::Model;
+using namespace TencentCloud::Goosefs::V20220519::Model;
 using namespace std;
 
-OperateTemplateResponse::OperateTemplateResponse() :
-    m_templateIdHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+BuildClientNodeMountCommandResponse::BuildClientNodeMountCommandResponse() :
+    m_commandHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome OperateTemplateResponse::Deserialize(const string &payload)
+CoreInternalOutcome BuildClientNodeMountCommandResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,32 @@ CoreInternalOutcome OperateTemplateResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("TemplateId") && !rsp["TemplateId"].IsNull())
+    if (rsp.HasMember("Command") && !rsp["Command"].IsNull())
     {
-        if (!rsp["TemplateId"].IsString())
+        if (!rsp["Command"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_templateId = string(rsp["TemplateId"].GetString());
-        m_templateIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TemplateName") && !rsp["TemplateName"].IsNull())
-    {
-        if (!rsp["TemplateName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TemplateName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_templateName = string(rsp["TemplateName"].GetString());
-        m_templateNameHasBeenSet = true;
+        m_command = string(rsp["Command"].GetString());
+        m_commandHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string OperateTemplateResponse::ToJsonString() const
+string BuildClientNodeMountCommandResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_templateIdHasBeenSet)
+    if (m_commandHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TemplateId";
+        string key = "Command";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_templateNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TemplateName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +102,14 @@ string OperateTemplateResponse::ToJsonString() const
 }
 
 
-string OperateTemplateResponse::GetTemplateId() const
+string BuildClientNodeMountCommandResponse::GetCommand() const
 {
-    return m_templateId;
+    return m_command;
 }
 
-bool OperateTemplateResponse::TemplateIdHasBeenSet() const
+bool BuildClientNodeMountCommandResponse::CommandHasBeenSet() const
 {
-    return m_templateIdHasBeenSet;
-}
-
-string OperateTemplateResponse::GetTemplateName() const
-{
-    return m_templateName;
-}
-
-bool OperateTemplateResponse::TemplateNameHasBeenSet() const
-{
-    return m_templateNameHasBeenSet;
+    return m_commandHasBeenSet;
 }
 
 

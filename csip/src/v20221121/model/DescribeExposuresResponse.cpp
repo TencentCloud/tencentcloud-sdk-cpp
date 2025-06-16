@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/essbasic/v20210526/model/OperateTemplateResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeExposuresResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Essbasic::V20210526::Model;
+using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
-OperateTemplateResponse::OperateTemplateResponse() :
-    m_templateIdHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+DescribeExposuresResponse::DescribeExposuresResponse() :
+    m_totalCountHasBeenSet(false),
+    m_exposeListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome OperateTemplateResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeExposuresResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +63,67 @@ CoreInternalOutcome OperateTemplateResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("TemplateId") && !rsp["TemplateId"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["TemplateId"].IsString())
+        if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_templateId = string(rsp["TemplateId"].GetString());
-        m_templateIdHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TemplateName") && !rsp["TemplateName"].IsNull())
+    if (rsp.HasMember("ExposeList") && !rsp["ExposeList"].IsNull())
     {
-        if (!rsp["TemplateName"].IsString())
+        if (!rsp["ExposeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExposeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExposeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `TemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            ExposesItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_exposeList.push_back(item);
         }
-        m_templateName = string(rsp["TemplateName"].GetString());
-        m_templateNameHasBeenSet = true;
+        m_exposeListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string OperateTemplateResponse::ToJsonString() const
+string DescribeExposuresResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_templateIdHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TemplateId";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_templateNameHasBeenSet)
+    if (m_exposeListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TemplateName";
+        string key = "ExposeList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_exposeList.begin(); itr != m_exposeList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +138,24 @@ string OperateTemplateResponse::ToJsonString() const
 }
 
 
-string OperateTemplateResponse::GetTemplateId() const
+int64_t DescribeExposuresResponse::GetTotalCount() const
 {
-    return m_templateId;
+    return m_totalCount;
 }
 
-bool OperateTemplateResponse::TemplateIdHasBeenSet() const
+bool DescribeExposuresResponse::TotalCountHasBeenSet() const
 {
-    return m_templateIdHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-string OperateTemplateResponse::GetTemplateName() const
+vector<ExposesItem> DescribeExposuresResponse::GetExposeList() const
 {
-    return m_templateName;
+    return m_exposeList;
 }
 
-bool OperateTemplateResponse::TemplateNameHasBeenSet() const
+bool DescribeExposuresResponse::ExposeListHasBeenSet() const
 {
-    return m_templateNameHasBeenSet;
+    return m_exposeListHasBeenSet;
 }
 
 

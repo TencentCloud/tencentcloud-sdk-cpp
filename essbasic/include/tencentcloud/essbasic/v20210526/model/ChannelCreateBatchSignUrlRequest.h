@@ -357,18 +357,18 @@ namespace TencentCloud
                     bool NotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取批量签署的合同流程ID数组。
+                     * 获取批量签署的合同流程ID数组。<font color="red">此参数必传。</font>
 注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
-                     * @return FlowIds 批量签署的合同流程ID数组。
+                     * @return FlowIds 批量签署的合同流程ID数组。<font color="red">此参数必传。</font>
 注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置批量签署的合同流程ID数组。
+                     * 设置批量签署的合同流程ID数组。<font color="red">此参数必传。</font>
 注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
-                     * @param _flowIds 批量签署的合同流程ID数组。
+                     * @param _flowIds 批量签署的合同流程ID数组。<font color="red">此参数必传。</font>
 注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
                      * 
                      */
@@ -789,7 +789,7 @@ namespace TencentCloud
                     bool m_notifyTypeHasBeenSet;
 
                     /**
-                     * 批量签署的合同流程ID数组。
+                     * 批量签署的合同流程ID数组。<font color="red">此参数必传。</font>
 注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
                      */
                     std::vector<std::string> m_flowIds;

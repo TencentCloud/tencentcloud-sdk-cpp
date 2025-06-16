@@ -33,7 +33,8 @@ ChatCompletionsResponse::ChatCompletionsResponse() :
     m_moderationLevelHasBeenSet(false),
     m_searchInfoHasBeenSet(false),
     m_replacesHasBeenSet(false),
-    m_recommendedQuestionsHasBeenSet(false)
+    m_recommendedQuestionsHasBeenSet(false),
+    m_processesHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,23 @@ CoreInternalOutcome ChatCompletionsResponse::Deserialize(const string &payload)
         m_recommendedQuestionsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Processes") && !rsp["Processes"].IsNull())
+    {
+        if (!rsp["Processes"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Processes` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_processes.Deserialize(rsp["Processes"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_processesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +345,15 @@ string ChatCompletionsResponse::ToJsonString() const
         }
     }
 
+    if (m_processesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Processes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_processes.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -437,6 +464,16 @@ vector<string> ChatCompletionsResponse::GetRecommendedQuestions() const
 bool ChatCompletionsResponse::RecommendedQuestionsHasBeenSet() const
 {
     return m_recommendedQuestionsHasBeenSet;
+}
+
+Processes ChatCompletionsResponse::GetProcesses() const
+{
+    return m_processes;
+}
+
+bool ChatCompletionsResponse::ProcessesHasBeenSet() const
+{
+    return m_processesHasBeenSet;
 }
 
 

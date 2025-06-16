@@ -188,6 +188,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/MaxVideoUser.h
   include/tencentcloud/trtc/v20190722/model/AuditStorageParams.h
   include/tencentcloud/trtc/v20190722/model/AgentParams.h
+  include/tencentcloud/trtc/v20190722/model/TurnDetection.h
   include/tencentcloud/trtc/v20190722/model/UpdateStreamIngestRequest.h
   include/tencentcloud/trtc/v20190722/model/StopWebRecordResponse.h
   include/tencentcloud/trtc/v20190722/model/DeletePictureRequest.h
@@ -397,6 +398,7 @@ set(trtc_src
   src/v20190722/model/MaxVideoUser.cpp
   src/v20190722/model/AuditStorageParams.cpp
   src/v20190722/model/AgentParams.cpp
+  src/v20190722/model/TurnDetection.cpp
   src/v20190722/model/UpdateStreamIngestRequest.cpp
   src/v20190722/model/StopWebRecordResponse.cpp
   src/v20190722/model/DeletePictureRequest.cpp

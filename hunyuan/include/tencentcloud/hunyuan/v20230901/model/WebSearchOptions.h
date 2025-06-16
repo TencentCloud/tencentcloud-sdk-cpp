@@ -90,6 +90,27 @@ namespace TencentCloud
                      */
                     bool UserLocationHasBeenSet() const;
 
+                    /**
+                     * 获取打开开关，会返回搜索状态
+                     * @return Processes 打开开关，会返回搜索状态
+                     * 
+                     */
+                    bool GetProcesses() const;
+
+                    /**
+                     * 设置打开开关，会返回搜索状态
+                     * @param _processes 打开开关，会返回搜索状态
+                     * 
+                     */
+                    void SetProcesses(const bool& _processes);
+
+                    /**
+                     * 判断参数 Processes 是否已赋值
+                     * @return Processes 是否已赋值
+                     * 
+                     */
+                    bool ProcessesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -103,6 +124,12 @@ namespace TencentCloud
                      */
                     UserLocation m_userLocation;
                     bool m_userLocationHasBeenSet;
+
+                    /**
+                     * 打开开关，会返回搜索状态
+                     */
+                    bool m_processes;
+                    bool m_processesHasBeenSet;
 
                 };
             }

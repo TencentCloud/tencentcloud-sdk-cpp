@@ -26,7 +26,8 @@ AndroidAppVersionInfo::AndroidAppVersionInfo() :
     m_createTimeHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_uninstallCommandHasBeenSet(false),
-    m_cleanupModeHasBeenSet(false)
+    m_cleanupModeHasBeenSet(false),
+    m_androidAppVersionNameHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome AndroidAppVersionInfo::Deserialize(const rapidjson::Value &v
         m_cleanupModeHasBeenSet = true;
     }
 
+    if (value.HasMember("AndroidAppVersionName") && !value["AndroidAppVersionName"].IsNull())
+    {
+        if (!value["AndroidAppVersionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidAppVersionInfo.AndroidAppVersionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_androidAppVersionName = string(value["AndroidAppVersionName"].GetString());
+        m_androidAppVersionNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void AndroidAppVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "CleanupMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cleanupMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_androidAppVersionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AndroidAppVersionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_androidAppVersionName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void AndroidAppVersionInfo::SetCleanupMode(const string& _cleanupMode)
 bool AndroidAppVersionInfo::CleanupModeHasBeenSet() const
 {
     return m_cleanupModeHasBeenSet;
+}
+
+string AndroidAppVersionInfo::GetAndroidAppVersionName() const
+{
+    return m_androidAppVersionName;
+}
+
+void AndroidAppVersionInfo::SetAndroidAppVersionName(const string& _androidAppVersionName)
+{
+    m_androidAppVersionName = _androidAppVersionName;
+    m_androidAppVersionNameHasBeenSet = true;
+}
+
+bool AndroidAppVersionInfo::AndroidAppVersionNameHasBeenSet() const
+{
+    return m_androidAppVersionNameHasBeenSet;
 }
 

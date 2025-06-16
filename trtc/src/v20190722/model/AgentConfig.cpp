@@ -33,7 +33,8 @@ AgentConfig::AgentConfig() :
     m_welcomeMessagePriorityHasBeenSet(false),
     m_filterBracketsContentHasBeenSet(false),
     m_ambientSoundHasBeenSet(false),
-    m_voicePrintHasBeenSet(false)
+    m_voicePrintHasBeenSet(false),
+    m_turnDetectionHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,23 @@ CoreInternalOutcome AgentConfig::Deserialize(const rapidjson::Value &value)
         m_voicePrintHasBeenSet = true;
     }
 
+    if (value.HasMember("TurnDetection") && !value["TurnDetection"].IsNull())
+    {
+        if (!value["TurnDetection"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.TurnDetection` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_turnDetection.Deserialize(value["TurnDetection"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_turnDetectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +315,15 @@ void AgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_voicePrint.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_turnDetectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TurnDetection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_turnDetection.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -508,5 +535,21 @@ void AgentConfig::SetVoicePrint(const VoicePrint& _voicePrint)
 bool AgentConfig::VoicePrintHasBeenSet() const
 {
     return m_voicePrintHasBeenSet;
+}
+
+TurnDetection AgentConfig::GetTurnDetection() const
+{
+    return m_turnDetection;
+}
+
+void AgentConfig::SetTurnDetection(const TurnDetection& _turnDetection)
+{
+    m_turnDetection = _turnDetection;
+    m_turnDetectionHasBeenSet = true;
+}
+
+bool AgentConfig::TurnDetectionHasBeenSet() const
+{
+    return m_turnDetectionHasBeenSet;
 }
 
