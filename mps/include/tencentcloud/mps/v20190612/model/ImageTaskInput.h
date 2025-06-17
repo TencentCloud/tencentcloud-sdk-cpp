@@ -27,6 +27,7 @@
 #include <tencentcloud/mps/v20190612/model/ImageEncodeConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageEraseConfig.h>
+#include <tencentcloud/mps/v20190612/model/BlindWatermarkConfig.h>
 
 
 namespace TencentCloud
@@ -124,6 +125,31 @@ namespace TencentCloud
                      */
                     bool EraseConfigHasBeenSet() const;
 
+                    /**
+                     * 获取盲水印配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BlindWatermarkConfig 盲水印配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    BlindWatermarkConfig GetBlindWatermarkConfig() const;
+
+                    /**
+                     * 设置盲水印配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _blindWatermarkConfig 盲水印配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBlindWatermarkConfig(const BlindWatermarkConfig& _blindWatermarkConfig);
+
+                    /**
+                     * 判断参数 BlindWatermarkConfig 是否已赋值
+                     * @return BlindWatermarkConfig 是否已赋值
+                     * 
+                     */
+                    bool BlindWatermarkConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -146,6 +172,13 @@ namespace TencentCloud
                      */
                     ImageEraseConfig m_eraseConfig;
                     bool m_eraseConfigHasBeenSet;
+
+                    /**
+                     * 盲水印配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlindWatermarkConfig m_blindWatermarkConfig;
+                    bool m_blindWatermarkConfigHasBeenSet;
 
                 };
             }

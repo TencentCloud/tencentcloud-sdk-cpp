@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRV2Response.h>
+#include <tencentcloud/ssl/v20191205/model/UploadUpdateCertificateInstanceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ocr::V20181119::Model;
+using namespace TencentCloud::Ssl::V20191205::Model;
 using namespace std;
 
-SmartStructuralOCRV2Response::SmartStructuralOCRV2Response() :
-    m_angleHasBeenSet(false),
-    m_structuralListHasBeenSet(false),
-    m_wordListHasBeenSet(false)
+UploadUpdateCertificateInstanceResponse::UploadUpdateCertificateInstanceResponse() :
+    m_deployRecordIdHasBeenSet(false),
+    m_deployStatusHasBeenSet(false),
+    m_updateSyncProgressHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome SmartStructuralOCRV2Response::Deserialize(const string &payload)
+CoreInternalOutcome UploadUpdateCertificateInstanceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,98 +64,81 @@ CoreInternalOutcome SmartStructuralOCRV2Response::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
+    if (rsp.HasMember("DeployRecordId") && !rsp["DeployRecordId"].IsNull())
     {
-        if (!rsp["Angle"].IsLosslessDouble())
+        if (!rsp["DeployRecordId"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployRecordId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_angle = rsp["Angle"].GetDouble();
-        m_angleHasBeenSet = true;
+        m_deployRecordId = rsp["DeployRecordId"].GetUint64();
+        m_deployRecordIdHasBeenSet = true;
     }
 
-    if (rsp.HasMember("StructuralList") && !rsp["StructuralList"].IsNull())
+    if (rsp.HasMember("DeployStatus") && !rsp["DeployStatus"].IsNull())
     {
-        if (!rsp["StructuralList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `StructuralList` is not array type"));
+        if (!rsp["DeployStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployStatus = rsp["DeployStatus"].GetInt64();
+        m_deployStatusHasBeenSet = true;
+    }
 
-        const rapidjson::Value &tmpValue = rsp["StructuralList"];
+    if (rsp.HasMember("UpdateSyncProgress") && !rsp["UpdateSyncProgress"].IsNull())
+    {
+        if (!rsp["UpdateSyncProgress"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UpdateSyncProgress` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["UpdateSyncProgress"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            GroupInfo item;
+            UpdateSyncProgress item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_structuralList.push_back(item);
+            m_updateSyncProgress.push_back(item);
         }
-        m_structuralListHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("WordList") && !rsp["WordList"].IsNull())
-    {
-        if (!rsp["WordList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `WordList` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["WordList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            WordItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_wordList.push_back(item);
-        }
-        m_wordListHasBeenSet = true;
+        m_updateSyncProgressHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string SmartStructuralOCRV2Response::ToJsonString() const
+string UploadUpdateCertificateInstanceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_angleHasBeenSet)
+    if (m_deployRecordIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Angle";
+        string key = "DeployRecordId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_angle, allocator);
+        value.AddMember(iKey, m_deployRecordId, allocator);
     }
 
-    if (m_structuralListHasBeenSet)
+    if (m_deployStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StructuralList";
+        string key = "DeployStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deployStatus, allocator);
+    }
+
+    if (m_updateSyncProgressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateSyncProgress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_structuralList.begin(); itr != m_structuralList.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_wordListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "WordList";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_wordList.begin(); itr != m_wordList.end(); ++itr, ++i)
+        for (auto itr = m_updateSyncProgress.begin(); itr != m_updateSyncProgress.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -174,34 +157,34 @@ string SmartStructuralOCRV2Response::ToJsonString() const
 }
 
 
-double SmartStructuralOCRV2Response::GetAngle() const
+uint64_t UploadUpdateCertificateInstanceResponse::GetDeployRecordId() const
 {
-    return m_angle;
+    return m_deployRecordId;
 }
 
-bool SmartStructuralOCRV2Response::AngleHasBeenSet() const
+bool UploadUpdateCertificateInstanceResponse::DeployRecordIdHasBeenSet() const
 {
-    return m_angleHasBeenSet;
+    return m_deployRecordIdHasBeenSet;
 }
 
-vector<GroupInfo> SmartStructuralOCRV2Response::GetStructuralList() const
+int64_t UploadUpdateCertificateInstanceResponse::GetDeployStatus() const
 {
-    return m_structuralList;
+    return m_deployStatus;
 }
 
-bool SmartStructuralOCRV2Response::StructuralListHasBeenSet() const
+bool UploadUpdateCertificateInstanceResponse::DeployStatusHasBeenSet() const
 {
-    return m_structuralListHasBeenSet;
+    return m_deployStatusHasBeenSet;
 }
 
-vector<WordItem> SmartStructuralOCRV2Response::GetWordList() const
+vector<UpdateSyncProgress> UploadUpdateCertificateInstanceResponse::GetUpdateSyncProgress() const
 {
-    return m_wordList;
+    return m_updateSyncProgress;
 }
 
-bool SmartStructuralOCRV2Response::WordListHasBeenSet() const
+bool UploadUpdateCertificateInstanceResponse::UpdateSyncProgressHasBeenSet() const
 {
-    return m_wordListHasBeenSet;
+    return m_updateSyncProgressHasBeenSet;
 }
 
 

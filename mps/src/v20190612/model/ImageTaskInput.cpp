@@ -23,7 +23,8 @@ using namespace std;
 ImageTaskInput::ImageTaskInput() :
     m_encodeConfigHasBeenSet(false),
     m_enhanceConfigHasBeenSet(false),
-    m_eraseConfigHasBeenSet(false)
+    m_eraseConfigHasBeenSet(false),
+    m_blindWatermarkConfigHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,23 @@ CoreInternalOutcome ImageTaskInput::Deserialize(const rapidjson::Value &value)
         m_eraseConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("BlindWatermarkConfig") && !value["BlindWatermarkConfig"].IsNull())
+    {
+        if (!value["BlindWatermarkConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.BlindWatermarkConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_blindWatermarkConfig.Deserialize(value["BlindWatermarkConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_blindWatermarkConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +133,15 @@ void ImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eraseConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_blindWatermarkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlindWatermarkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_blindWatermarkConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -166,5 +193,21 @@ void ImageTaskInput::SetEraseConfig(const ImageEraseConfig& _eraseConfig)
 bool ImageTaskInput::EraseConfigHasBeenSet() const
 {
     return m_eraseConfigHasBeenSet;
+}
+
+BlindWatermarkConfig ImageTaskInput::GetBlindWatermarkConfig() const
+{
+    return m_blindWatermarkConfig;
+}
+
+void ImageTaskInput::SetBlindWatermarkConfig(const BlindWatermarkConfig& _blindWatermarkConfig)
+{
+    m_blindWatermarkConfig = _blindWatermarkConfig;
+    m_blindWatermarkConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::BlindWatermarkConfigHasBeenSet() const
+{
+    return m_blindWatermarkConfigHasBeenSet;
 }
 

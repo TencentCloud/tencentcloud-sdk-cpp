@@ -2706,6 +2706,49 @@ SslClient::UploadRevokeLetterOutcomeCallable SslClient::UploadRevokeLetterCallab
     return task->get_future();
 }
 
+SslClient::UploadUpdateCertificateInstanceOutcome SslClient::UploadUpdateCertificateInstance(const UploadUpdateCertificateInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadUpdateCertificateInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadUpdateCertificateInstanceResponse rsp = UploadUpdateCertificateInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadUpdateCertificateInstanceOutcome(rsp);
+        else
+            return UploadUpdateCertificateInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadUpdateCertificateInstanceOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::UploadUpdateCertificateInstanceAsync(const UploadUpdateCertificateInstanceRequest& request, const UploadUpdateCertificateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadUpdateCertificateInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::UploadUpdateCertificateInstanceOutcomeCallable SslClient::UploadUpdateCertificateInstanceCallable(const UploadUpdateCertificateInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadUpdateCertificateInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadUpdateCertificateInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::VerifyManagerOutcome SslClient::VerifyManager(const VerifyManagerRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyManager");

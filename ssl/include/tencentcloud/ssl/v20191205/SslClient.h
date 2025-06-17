@@ -147,6 +147,8 @@
 #include <tencentcloud/ssl/v20191205/model/UploadConfirmLetterResponse.h>
 #include <tencentcloud/ssl/v20191205/model/UploadRevokeLetterRequest.h>
 #include <tencentcloud/ssl/v20191205/model/UploadRevokeLetterResponse.h>
+#include <tencentcloud/ssl/v20191205/model/UploadUpdateCertificateInstanceRequest.h>
+#include <tencentcloud/ssl/v20191205/model/UploadUpdateCertificateInstanceResponse.h>
 #include <tencentcloud/ssl/v20191205/model/VerifyManagerRequest.h>
 #include <tencentcloud/ssl/v20191205/model/VerifyManagerResponse.h>
 
@@ -349,6 +351,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UploadRevokeLetterResponse> UploadRevokeLetterOutcome;
                 typedef std::future<UploadRevokeLetterOutcome> UploadRevokeLetterOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::UploadRevokeLetterRequest&, UploadRevokeLetterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadRevokeLetterAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadUpdateCertificateInstanceResponse> UploadUpdateCertificateInstanceOutcome;
+                typedef std::future<UploadUpdateCertificateInstanceOutcome> UploadUpdateCertificateInstanceOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::UploadUpdateCertificateInstanceRequest&, UploadUpdateCertificateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadUpdateCertificateInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyManagerResponse> VerifyManagerOutcome;
                 typedef std::future<VerifyManagerOutcome> VerifyManagerOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::VerifyManagerRequest&, VerifyManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyManagerAsyncHandler;
@@ -919,6 +924,15 @@ namespace TencentCloud
                 UploadRevokeLetterOutcome UploadRevokeLetter(const Model::UploadRevokeLetterRequest &request);
                 void UploadRevokeLetterAsync(const Model::UploadRevokeLetterRequest& request, const UploadRevokeLetterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadRevokeLetterOutcomeCallable UploadRevokeLetterCallable(const Model::UploadRevokeLetterRequest& request);
+
+                /**
+                 *更新证书内容（证书ID不变）并更新关联的云资源，本接口为异步接口， 调用之后DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常
+                 * @param req UploadUpdateCertificateInstanceRequest
+                 * @return UploadUpdateCertificateInstanceOutcome
+                 */
+                UploadUpdateCertificateInstanceOutcome UploadUpdateCertificateInstance(const Model::UploadUpdateCertificateInstanceRequest &request);
+                void UploadUpdateCertificateInstanceAsync(const Model::UploadUpdateCertificateInstanceRequest& request, const UploadUpdateCertificateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadUpdateCertificateInstanceOutcomeCallable UploadUpdateCertificateInstanceCallable(const Model::UploadUpdateCertificateInstanceRequest& request);
 
                 /**
                  *重新核验管理人

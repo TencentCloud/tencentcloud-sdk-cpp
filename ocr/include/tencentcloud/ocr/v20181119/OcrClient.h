@@ -171,10 +171,6 @@
 #include <tencentcloud/ocr/v20181119/model/ShipInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRV2Request.h>
-#include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRV2Response.h>
-#include <tencentcloud/ocr/v20181119/model/SmartStructuralProRequest.h>
-#include <tencentcloud/ocr/v20181119/model/SmartStructuralProResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRRequest.h>
@@ -437,12 +433,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SmartStructuralOCRResponse> SmartStructuralOCROutcome;
                 typedef std::future<SmartStructuralOCROutcome> SmartStructuralOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SmartStructuralOCRRequest&, SmartStructuralOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> SmartStructuralOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::SmartStructuralOCRV2Response> SmartStructuralOCRV2Outcome;
-                typedef std::future<SmartStructuralOCRV2Outcome> SmartStructuralOCRV2OutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::SmartStructuralOCRV2Request&, SmartStructuralOCRV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> SmartStructuralOCRV2AsyncHandler;
-                typedef Outcome<Core::Error, Model::SmartStructuralProResponse> SmartStructuralProOutcome;
-                typedef std::future<SmartStructuralProOutcome> SmartStructuralProOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::SmartStructuralProRequest&, SmartStructuralProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SmartStructuralProAsyncHandler;
                 typedef Outcome<Core::Error, Model::TableOCRResponse> TableOCROutcome;
                 typedef std::future<TableOCROutcome> TableOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::TableOCRRequest&, TableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> TableOCRAsyncHandler;
@@ -1764,28 +1754,6 @@ namespace TencentCloud
                 SmartStructuralOCROutcome SmartStructuralOCR(const Model::SmartStructuralOCRRequest &request);
                 void SmartStructuralOCRAsync(const Model::SmartStructuralOCRRequest& request, const SmartStructuralOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SmartStructuralOCROutcomeCallable SmartStructuralOCRCallable(const Model::SmartStructuralOCRRequest& request);
-
-                /**
-                 *本接口支持识别并提取制式卡证、票据、表单等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
-
-默认接口请求频率限制：5次/秒。
-                 * @param req SmartStructuralOCRV2Request
-                 * @return SmartStructuralOCRV2Outcome
-                 */
-                SmartStructuralOCRV2Outcome SmartStructuralOCRV2(const Model::SmartStructuralOCRV2Request &request);
-                void SmartStructuralOCRV2Async(const Model::SmartStructuralOCRV2Request& request, const SmartStructuralOCRV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SmartStructuralOCRV2OutcomeCallable SmartStructuralOCRV2Callable(const Model::SmartStructuralOCRV2Request& request);
-
-                /**
-                 *本接口支持识别并提取场景复杂、版式多等结构化场景的字段信息。重点场景包括：金融、医疗、交通、出行、保险。点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
-
-默认接口请求频率限制：5次/秒。
-                 * @param req SmartStructuralProRequest
-                 * @return SmartStructuralProOutcome
-                 */
-                SmartStructuralProOutcome SmartStructuralPro(const Model::SmartStructuralProRequest &request);
-                void SmartStructuralProAsync(const Model::SmartStructuralProRequest& request, const SmartStructuralProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SmartStructuralProOutcomeCallable SmartStructuralProCallable(const Model::SmartStructuralProRequest& request);
 
                 /**
                  *<b>此接口为表格识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/49525">新版表格识别</a>。</b>

@@ -58,6 +58,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsRequest.h
   include/tencentcloud/ssl/v20191205/model/CancelCertificateOrderResponse.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificatesExpiringNotificationSwitchResponse.h
+  include/tencentcloud/ssl/v20191205/model/UploadUpdateCertificateInstanceRequest.h
   include/tencentcloud/ssl/v20191205/model/PackageInfo.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostLiveInstanceListRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostDdosInstanceListResponse.h
@@ -136,6 +137,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/TkeSecretDetail.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostDeployRecordResponse.h
   include/tencentcloud/ssl/v20191205/model/CheckCertificateDomainVerificationResponse.h
+  include/tencentcloud/ssl/v20191205/model/UploadUpdateCertificateInstanceResponse.h
   include/tencentcloud/ssl/v20191205/model/Tags.h
   include/tencentcloud/ssl/v20191205/model/DescribeDownloadCertificateUrlResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostTkeInstanceListRequest.h
@@ -263,6 +265,7 @@ set(ssl_src
   src/v20191205/model/DescribeCertificateOperateLogsRequest.cpp
   src/v20191205/model/CancelCertificateOrderResponse.cpp
   src/v20191205/model/ModifyCertificatesExpiringNotificationSwitchResponse.cpp
+  src/v20191205/model/UploadUpdateCertificateInstanceRequest.cpp
   src/v20191205/model/PackageInfo.cpp
   src/v20191205/model/DescribeHostLiveInstanceListRequest.cpp
   src/v20191205/model/DescribeHostDdosInstanceListResponse.cpp
@@ -341,6 +344,7 @@ set(ssl_src
   src/v20191205/model/TkeSecretDetail.cpp
   src/v20191205/model/DescribeHostDeployRecordResponse.cpp
   src/v20191205/model/CheckCertificateDomainVerificationResponse.cpp
+  src/v20191205/model/UploadUpdateCertificateInstanceResponse.cpp
   src/v20191205/model/Tags.cpp
   src/v20191205/model/DescribeDownloadCertificateUrlResponse.cpp
   src/v20191205/model/DescribeHostTkeInstanceListRequest.cpp
