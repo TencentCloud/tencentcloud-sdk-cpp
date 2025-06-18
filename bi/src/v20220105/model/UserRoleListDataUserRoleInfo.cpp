@@ -43,7 +43,8 @@ UserRoleListDataUserRoleInfo::UserRoleListDataUserRoleInfo() :
     m_appUserNameHasBeenSet(false),
     m_inValidateAppRangeHasBeenSet(false),
     m_appOpenUserIdHasBeenSet(false),
-    m_emailActivationStatusHasBeenSet(false)
+    m_emailActivationStatusHasBeenSet(false),
+    m_userGroupListHasBeenSet(false)
 {
 }
 
@@ -295,6 +296,26 @@ CoreInternalOutcome UserRoleListDataUserRoleInfo::Deserialize(const rapidjson::V
         m_emailActivationStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("UserGroupList") && !value["UserGroupList"].IsNull())
+    {
+        if (!value["UserGroupList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserRoleListDataUserRoleInfo.UserGroupList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["UserGroupList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UserGroupDTO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_userGroupList.push_back(item);
+        }
+        m_userGroupListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -496,6 +517,21 @@ void UserRoleListDataUserRoleInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "EmailActivationStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_emailActivationStatus, allocator);
+    }
+
+    if (m_userGroupListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserGroupList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_userGroupList.begin(); itr != m_userGroupList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -867,5 +903,21 @@ void UserRoleListDataUserRoleInfo::SetEmailActivationStatus(const int64_t& _emai
 bool UserRoleListDataUserRoleInfo::EmailActivationStatusHasBeenSet() const
 {
     return m_emailActivationStatusHasBeenSet;
+}
+
+vector<UserGroupDTO> UserRoleListDataUserRoleInfo::GetUserGroupList() const
+{
+    return m_userGroupList;
+}
+
+void UserRoleListDataUserRoleInfo::SetUserGroupList(const vector<UserGroupDTO>& _userGroupList)
+{
+    m_userGroupList = _userGroupList;
+    m_userGroupListHasBeenSet = true;
+}
+
+bool UserRoleListDataUserRoleInfo::UserGroupListHasBeenSet() const
+{
+    return m_userGroupListHasBeenSet;
 }
 

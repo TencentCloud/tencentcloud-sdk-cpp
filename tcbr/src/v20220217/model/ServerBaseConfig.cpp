@@ -45,7 +45,9 @@ ServerBaseConfig::ServerBaseConfig() :
     m_internalAccessHasBeenSet(false),
     m_internalDomainHasBeenSet(false),
     m_operationModeHasBeenSet(false),
-    m_timerScaleHasBeenSet(false)
+    m_timerScaleHasBeenSet(false),
+    m_entryPointHasBeenSet(false),
+    m_cmdHasBeenSet(false)
 {
 }
 
@@ -327,6 +329,32 @@ CoreInternalOutcome ServerBaseConfig::Deserialize(const rapidjson::Value &value)
         m_timerScaleHasBeenSet = true;
     }
 
+    if (value.HasMember("EntryPoint") && !value["EntryPoint"].IsNull())
+    {
+        if (!value["EntryPoint"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.EntryPoint` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EntryPoint"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_entryPoint.push_back((*itr).GetString());
+        }
+        m_entryPointHasBeenSet = true;
+    }
+
+    if (value.HasMember("Cmd") && !value["Cmd"].IsNull())
+    {
+        if (!value["Cmd"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.Cmd` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Cmd"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cmd.push_back((*itr).GetString());
+        }
+        m_cmdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -550,6 +578,32 @@ void ServerBaseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_entryPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EntryPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_entryPoint.begin(); itr != m_entryPoint.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cmdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cmd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cmd.begin(); itr != m_cmd.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -954,5 +1008,37 @@ void ServerBaseConfig::SetTimerScale(const vector<TimerScale>& _timerScale)
 bool ServerBaseConfig::TimerScaleHasBeenSet() const
 {
     return m_timerScaleHasBeenSet;
+}
+
+vector<string> ServerBaseConfig::GetEntryPoint() const
+{
+    return m_entryPoint;
+}
+
+void ServerBaseConfig::SetEntryPoint(const vector<string>& _entryPoint)
+{
+    m_entryPoint = _entryPoint;
+    m_entryPointHasBeenSet = true;
+}
+
+bool ServerBaseConfig::EntryPointHasBeenSet() const
+{
+    return m_entryPointHasBeenSet;
+}
+
+vector<string> ServerBaseConfig::GetCmd() const
+{
+    return m_cmd;
+}
+
+void ServerBaseConfig::SetCmd(const vector<string>& _cmd)
+{
+    m_cmd = _cmd;
+    m_cmdHasBeenSet = true;
+}
+
+bool ServerBaseConfig::CmdHasBeenSet() const
+{
+    return m_cmdHasBeenSet;
 }
 

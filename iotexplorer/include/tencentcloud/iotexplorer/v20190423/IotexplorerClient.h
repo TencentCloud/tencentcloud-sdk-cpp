@@ -43,6 +43,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CheckFirmwareUpdateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateAISearchTaskAsyncRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateAISearchTaskAsyncResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceRequest.h>
@@ -105,6 +107,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeAISearchTaskAsyncRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeAISearchTaskAsyncResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeActivateDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeActivateDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeActivateLicenseServiceRequest.h>
@@ -399,6 +403,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ControlDeviceDataResponse> ControlDeviceDataOutcome;
                 typedef std::future<ControlDeviceDataOutcome> ControlDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ControlDeviceDataRequest&, ControlDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDeviceDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAISearchTaskAsyncResponse> CreateAISearchTaskAsyncOutcome;
+                typedef std::future<CreateAISearchTaskAsyncOutcome> CreateAISearchTaskAsyncOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateAISearchTaskAsyncRequest&, CreateAISearchTaskAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAISearchTaskAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchProductionResponse> CreateBatchProductionOutcome;
                 typedef std::future<CreateBatchProductionOutcome> CreateBatchProductionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateBatchProductionRequest&, CreateBatchProductionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchProductionAsyncHandler;
@@ -492,6 +499,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTopicRuleResponse> DeleteTopicRuleOutcome;
                 typedef std::future<DeleteTopicRuleOutcome> DeleteTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteTopicRuleRequest&, DeleteTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAISearchTaskAsyncResponse> DescribeAISearchTaskAsyncOutcome;
+                typedef std::future<DescribeAISearchTaskAsyncOutcome> DescribeAISearchTaskAsyncOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeAISearchTaskAsyncRequest&, DescribeAISearchTaskAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAISearchTaskAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeActivateDeviceResponse> DescribeActivateDeviceOutcome;
                 typedef std::future<DescribeActivateDeviceOutcome> DescribeActivateDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeActivateDeviceRequest&, DescribeActivateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActivateDeviceAsyncHandler;
@@ -961,6 +971,15 @@ namespace TencentCloud
                 ControlDeviceDataOutcomeCallable ControlDeviceDataCallable(const Model::ControlDeviceDataRequest& request);
 
                 /**
+                 *创建视频语义异步搜索任务
+                 * @param req CreateAISearchTaskAsyncRequest
+                 * @return CreateAISearchTaskAsyncOutcome
+                 */
+                CreateAISearchTaskAsyncOutcome CreateAISearchTaskAsync(const Model::CreateAISearchTaskAsyncRequest &request);
+                void CreateAISearchTaskAsyncAsync(const Model::CreateAISearchTaskAsyncRequest& request, const CreateAISearchTaskAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAISearchTaskAsyncOutcomeCallable CreateAISearchTaskAsyncCallable(const Model::CreateAISearchTaskAsyncRequest& request);
+
+                /**
                  *用于新建批量生产设备
                  * @param req CreateBatchProductionRequest
                  * @return CreateBatchProductionOutcome
@@ -1238,6 +1257,15 @@ namespace TencentCloud
                 DeleteTopicRuleOutcome DeleteTopicRule(const Model::DeleteTopicRuleRequest &request);
                 void DeleteTopicRuleAsync(const Model::DeleteTopicRuleRequest& request, const DeleteTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTopicRuleOutcomeCallable DeleteTopicRuleCallable(const Model::DeleteTopicRuleRequest& request);
+
+                /**
+                 *获取视频语义异步搜索任务详情
+                 * @param req DescribeAISearchTaskAsyncRequest
+                 * @return DescribeAISearchTaskAsyncOutcome
+                 */
+                DescribeAISearchTaskAsyncOutcome DescribeAISearchTaskAsync(const Model::DescribeAISearchTaskAsyncRequest &request);
+                void DescribeAISearchTaskAsyncAsync(const Model::DescribeAISearchTaskAsyncRequest& request, const DescribeAISearchTaskAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAISearchTaskAsyncOutcomeCallable DescribeAISearchTaskAsyncCallable(const Model::DescribeAISearchTaskAsyncRequest& request);
 
                 /**
                  *获取设备激活详情

@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool IsReferHasBeenSet() const;
 
                     /**
-                     * 获取标签适用范围 1：全部，2：按条件
-                     * @return AttrRange 标签适用范围 1：全部，2：按条件
+                     * 获取标签适用范围，需要传参为1
+                     * @return AttrRange 标签适用范围，需要传参为1
                      * 
                      */
                     uint64_t GetAttrRange() const;
 
                     /**
-                     * 设置标签适用范围 1：全部，2：按条件
-                     * @param _attrRange 标签适用范围 1：全部，2：按条件
+                     * 设置标签适用范围，需要传参为1
+                     * @param _attrRange 标签适用范围，需要传参为1
                      * 
                      */
                     void SetAttrRange(const uint64_t& _attrRange);
@@ -299,6 +299,27 @@ namespace TencentCloud
                      */
                     bool CateBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * @return IsDownload 是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * 
+                     */
+                    bool GetIsDownload() const;
+
+                    /**
+                     * 设置是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * @param _isDownload 是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * 
+                     */
+                    void SetIsDownload(const bool& _isDownload);
+
+                    /**
+                     * 判断参数 IsDownload 是否已赋值
+                     * @return IsDownload 是否已赋值
+                     * 
+                     */
+                    bool IsDownloadHasBeenSet() const;
+
                 private:
 
                     /**
@@ -320,7 +341,7 @@ namespace TencentCloud
                     bool m_isReferHasBeenSet;
 
                     /**
-                     * 标签适用范围 1：全部，2：按条件
+                     * 标签适用范围，需要传参为1
                      */
                     uint64_t m_attrRange;
                     bool m_attrRangeHasBeenSet;
@@ -373,6 +394,12 @@ namespace TencentCloud
                      */
                     std::string m_cateBizId;
                     bool m_cateBizIdHasBeenSet;
+
+                    /**
+                     * 是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     */
+                    bool m_isDownload;
+                    bool m_isDownloadHasBeenSet;
 
                 };
             }

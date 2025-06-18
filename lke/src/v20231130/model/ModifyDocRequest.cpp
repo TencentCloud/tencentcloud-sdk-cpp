@@ -34,7 +34,8 @@ ModifyDocRequest::ModifyDocRequest() :
     m_referUrlTypeHasBeenSet(false),
     m_expireStartHasBeenSet(false),
     m_expireEndHasBeenSet(false),
-    m_cateBizIdHasBeenSet(false)
+    m_cateBizIdHasBeenSet(false),
+    m_isDownloadHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,14 @@ string ModifyDocRequest::ToJsonString() const
         string key = "CateBizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDownloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDownload";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDownload, allocator);
     }
 
 
@@ -346,6 +355,22 @@ void ModifyDocRequest::SetCateBizId(const string& _cateBizId)
 bool ModifyDocRequest::CateBizIdHasBeenSet() const
 {
     return m_cateBizIdHasBeenSet;
+}
+
+bool ModifyDocRequest::GetIsDownload() const
+{
+    return m_isDownload;
+}
+
+void ModifyDocRequest::SetIsDownload(const bool& _isDownload)
+{
+    m_isDownload = _isDownload;
+    m_isDownloadHasBeenSet = true;
+}
+
+bool ModifyDocRequest::IsDownloadHasBeenSet() const
+{
+    return m_isDownloadHasBeenSet;
 }
 
 

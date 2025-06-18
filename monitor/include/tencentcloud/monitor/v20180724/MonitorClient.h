@@ -83,6 +83,8 @@
 #include <tencentcloud/monitor/v20180724/model/DeleteAlarmNoticesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteAlarmPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteAlarmPolicyResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteAlarmShieldsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteAlarmShieldsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteAlertRulesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteAlertRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteExporterIntegrationRequest.h>
@@ -459,6 +461,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAlarmPolicyResponse> DeleteAlarmPolicyOutcome;
                 typedef std::future<DeleteAlarmPolicyOutcome> DeleteAlarmPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteAlarmPolicyRequest&, DeleteAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAlarmShieldsResponse> DeleteAlarmShieldsOutcome;
+                typedef std::future<DeleteAlarmShieldsOutcome> DeleteAlarmShieldsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteAlarmShieldsRequest&, DeleteAlarmShieldsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmShieldsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAlertRulesResponse> DeleteAlertRulesOutcome;
                 typedef std::future<DeleteAlertRulesOutcome> DeleteAlertRulesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteAlertRulesRequest&, DeleteAlertRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlertRulesAsyncHandler;
@@ -1146,6 +1151,15 @@ namespace TencentCloud
                 DeleteAlarmPolicyOutcome DeleteAlarmPolicy(const Model::DeleteAlarmPolicyRequest &request);
                 void DeleteAlarmPolicyAsync(const Model::DeleteAlarmPolicyRequest& request, const DeleteAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAlarmPolicyOutcomeCallable DeleteAlarmPolicyCallable(const Model::DeleteAlarmPolicyRequest& request);
+
+                /**
+                 *删除告警屏蔽规则
+                 * @param req DeleteAlarmShieldsRequest
+                 * @return DeleteAlarmShieldsOutcome
+                 */
+                DeleteAlarmShieldsOutcome DeleteAlarmShields(const Model::DeleteAlarmShieldsRequest &request);
+                void DeleteAlarmShieldsAsync(const Model::DeleteAlarmShieldsRequest& request, const DeleteAlarmShieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAlarmShieldsOutcomeCallable DeleteAlarmShieldsCallable(const Model::DeleteAlarmShieldsRequest& request);
 
                 /**
                  *批量删除 Prometheus 报警规则

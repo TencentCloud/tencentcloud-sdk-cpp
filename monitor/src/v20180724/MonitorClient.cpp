@@ -1330,6 +1330,49 @@ MonitorClient::DeleteAlarmPolicyOutcomeCallable MonitorClient::DeleteAlarmPolicy
     return task->get_future();
 }
 
+MonitorClient::DeleteAlarmShieldsOutcome MonitorClient::DeleteAlarmShields(const DeleteAlarmShieldsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAlarmShields");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAlarmShieldsResponse rsp = DeleteAlarmShieldsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAlarmShieldsOutcome(rsp);
+        else
+            return DeleteAlarmShieldsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAlarmShieldsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteAlarmShieldsAsync(const DeleteAlarmShieldsRequest& request, const DeleteAlarmShieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAlarmShields(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteAlarmShieldsOutcomeCallable MonitorClient::DeleteAlarmShieldsCallable(const DeleteAlarmShieldsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAlarmShieldsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAlarmShields(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DeleteAlertRulesOutcome MonitorClient::DeleteAlertRules(const DeleteAlertRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAlertRules");

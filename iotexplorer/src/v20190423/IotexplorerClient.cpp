@@ -470,6 +470,49 @@ IotexplorerClient::ControlDeviceDataOutcomeCallable IotexplorerClient::ControlDe
     return task->get_future();
 }
 
+IotexplorerClient::CreateAISearchTaskAsyncOutcome IotexplorerClient::CreateAISearchTaskAsync(const CreateAISearchTaskAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAISearchTaskAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAISearchTaskAsyncResponse rsp = CreateAISearchTaskAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAISearchTaskAsyncOutcome(rsp);
+        else
+            return CreateAISearchTaskAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAISearchTaskAsyncOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateAISearchTaskAsyncAsync(const CreateAISearchTaskAsyncRequest& request, const CreateAISearchTaskAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAISearchTaskAsync(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateAISearchTaskAsyncOutcomeCallable IotexplorerClient::CreateAISearchTaskAsyncCallable(const CreateAISearchTaskAsyncRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAISearchTaskAsyncOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAISearchTaskAsync(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateBatchProductionOutcome IotexplorerClient::CreateBatchProduction(const CreateBatchProductionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchProduction");
@@ -1796,6 +1839,49 @@ IotexplorerClient::DeleteTopicRuleOutcomeCallable IotexplorerClient::DeleteTopic
         [this, request]()
         {
             return this->DeleteTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeAISearchTaskAsyncOutcome IotexplorerClient::DescribeAISearchTaskAsync(const DescribeAISearchTaskAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAISearchTaskAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAISearchTaskAsyncResponse rsp = DescribeAISearchTaskAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAISearchTaskAsyncOutcome(rsp);
+        else
+            return DescribeAISearchTaskAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAISearchTaskAsyncOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeAISearchTaskAsyncAsync(const DescribeAISearchTaskAsyncRequest& request, const DescribeAISearchTaskAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAISearchTaskAsync(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeAISearchTaskAsyncOutcomeCallable IotexplorerClient::DescribeAISearchTaskAsyncCallable(const DescribeAISearchTaskAsyncRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAISearchTaskAsyncOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAISearchTaskAsync(request);
         }
     );
 

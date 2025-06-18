@@ -24,7 +24,8 @@ KnowledgeDetail::KnowledgeDetail() :
     m_appNameHasBeenSet(false),
     m_usedCharSizeHasBeenSet(false),
     m_proportionHasBeenSet(false),
-    m_exceedCharSizeHasBeenSet(false)
+    m_exceedCharSizeHasBeenSet(false),
+    m_isSharedKnowledgeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome KnowledgeDetail::Deserialize(const rapidjson::Value &value)
         m_exceedCharSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSharedKnowledge") && !value["IsSharedKnowledge"].IsNull())
+    {
+        if (!value["IsSharedKnowledge"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeDetail.IsSharedKnowledge` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSharedKnowledge = value["IsSharedKnowledge"].GetBool();
+        m_isSharedKnowledgeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void KnowledgeDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ExceedCharSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_exceedCharSize.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSharedKnowledgeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSharedKnowledge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSharedKnowledge, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void KnowledgeDetail::SetExceedCharSize(const string& _exceedCharSize)
 bool KnowledgeDetail::ExceedCharSizeHasBeenSet() const
 {
     return m_exceedCharSizeHasBeenSet;
+}
+
+bool KnowledgeDetail::GetIsSharedKnowledge() const
+{
+    return m_isSharedKnowledge;
+}
+
+void KnowledgeDetail::SetIsSharedKnowledge(const bool& _isSharedKnowledge)
+{
+    m_isSharedKnowledge = _isSharedKnowledge;
+    m_isSharedKnowledgeHasBeenSet = true;
+}
+
+bool KnowledgeDetail::IsSharedKnowledgeHasBeenSet() const
+{
+    return m_isSharedKnowledgeHasBeenSet;
 }
 

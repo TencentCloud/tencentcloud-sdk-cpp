@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/253/7167)接口获得。
-                     * @return Database 数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/253/7167)接口获得。
+                     * 获取数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/236/17493)接口获得。
+                     * @return Database 数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/236/17493)接口获得。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
-                     * 设置数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/253/7167)接口获得。
-                     * @param _database 数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/253/7167)接口获得。
+                     * 设置数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/236/17493)接口获得。
+                     * @param _database 数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/236/17493)接口获得。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/253/7167)接口获得。
+                     * 数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/236/17493)接口获得。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;

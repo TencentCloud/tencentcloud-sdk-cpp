@@ -24,7 +24,8 @@ using namespace std;
 
 CreateLogsetRequest::CreateLogsetRequest() :
     m_logsetNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_logsetIdHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string CreateLogsetRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_logsetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogsetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logsetId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -96,6 +105,22 @@ void CreateLogsetRequest::SetTags(const vector<Tag>& _tags)
 bool CreateLogsetRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateLogsetRequest::GetLogsetId() const
+{
+    return m_logsetId;
+}
+
+void CreateLogsetRequest::SetLogsetId(const string& _logsetId)
+{
+    m_logsetId = _logsetId;
+    m_logsetIdHasBeenSet = true;
+}
+
+bool CreateLogsetRequest::LogsetIdHasBeenSet() const
+{
+    return m_logsetIdHasBeenSet;
 }
 
 

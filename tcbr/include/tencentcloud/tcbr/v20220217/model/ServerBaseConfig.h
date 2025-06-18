@@ -573,6 +573,48 @@ namespace TencentCloud
                      */
                     bool TimerScaleHasBeenSet() const;
 
+                    /**
+                     * 获取Dockerfile EntryPoint 参数
+                     * @return EntryPoint Dockerfile EntryPoint 参数
+                     * 
+                     */
+                    std::vector<std::string> GetEntryPoint() const;
+
+                    /**
+                     * 设置Dockerfile EntryPoint 参数
+                     * @param _entryPoint Dockerfile EntryPoint 参数
+                     * 
+                     */
+                    void SetEntryPoint(const std::vector<std::string>& _entryPoint);
+
+                    /**
+                     * 判断参数 EntryPoint 是否已赋值
+                     * @return EntryPoint 是否已赋值
+                     * 
+                     */
+                    bool EntryPointHasBeenSet() const;
+
+                    /**
+                     * 获取Dockerfile Cmd 参数
+                     * @return Cmd Dockerfile Cmd 参数
+                     * 
+                     */
+                    std::vector<std::string> GetCmd() const;
+
+                    /**
+                     * 设置Dockerfile Cmd 参数
+                     * @param _cmd Dockerfile Cmd 参数
+                     * 
+                     */
+                    void SetCmd(const std::vector<std::string>& _cmd);
+
+                    /**
+                     * 判断参数 Cmd 是否已赋值
+                     * @return Cmd 是否已赋值
+                     * 
+                     */
+                    bool CmdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -724,6 +766,18 @@ namespace TencentCloud
                      */
                     std::vector<TimerScale> m_timerScale;
                     bool m_timerScaleHasBeenSet;
+
+                    /**
+                     * Dockerfile EntryPoint 参数
+                     */
+                    std::vector<std::string> m_entryPoint;
+                    bool m_entryPointHasBeenSet;
+
+                    /**
+                     * Dockerfile Cmd 参数
+                     */
+                    std::vector<std::string> m_cmd;
+                    bool m_cmdHasBeenSet;
 
                 };
             }

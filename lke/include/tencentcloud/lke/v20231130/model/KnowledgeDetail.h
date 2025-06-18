@@ -146,6 +146,31 @@ namespace TencentCloud
                      */
                     bool ExceedCharSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否共享知识库类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSharedKnowledge 是否共享知识库类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsSharedKnowledge() const;
+
+                    /**
+                     * 设置是否共享知识库类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSharedKnowledge 是否共享知识库类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSharedKnowledge(const bool& _isSharedKnowledge);
+
+                    /**
+                     * 判断参数 IsSharedKnowledge 是否已赋值
+                     * @return IsSharedKnowledge 是否已赋值
+                     * 
+                     */
+                    bool IsSharedKnowledgeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +200,13 @@ namespace TencentCloud
                      */
                     std::string m_exceedCharSize;
                     bool m_exceedCharSizeHasBeenSet;
+
+                    /**
+                     * 是否共享知识库类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isSharedKnowledge;
+                    bool m_isSharedKnowledgeHasBeenSet;
 
                 };
             }

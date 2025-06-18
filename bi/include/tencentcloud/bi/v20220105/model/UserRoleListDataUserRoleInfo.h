@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/bi/v20220105/model/UserRoleListDataRoleInfo.h>
+#include <tencentcloud/bi/v20220105/model/UserGroupDTO.h>
 
 
 namespace TencentCloud
@@ -606,6 +607,31 @@ namespace TencentCloud
                      */
                     bool EmailActivationStatusHasBeenSet() const;
 
+                    /**
+                     * 获取用户组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserGroupList 用户组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<UserGroupDTO> GetUserGroupList() const;
+
+                    /**
+                     * 设置用户组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userGroupList 用户组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserGroupList(const std::vector<UserGroupDTO>& _userGroupList);
+
+                    /**
+                     * 判断参数 UserGroupList 是否已赋值
+                     * @return UserGroupList 是否已赋值
+                     * 
+                     */
+                    bool UserGroupListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -764,6 +790,13 @@ namespace TencentCloud
                      */
                     int64_t m_emailActivationStatus;
                     bool m_emailActivationStatusHasBeenSet;
+
+                    /**
+                     * 用户组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<UserGroupDTO> m_userGroupList;
+                    bool m_userGroupListHasBeenSet;
 
                 };
             }
