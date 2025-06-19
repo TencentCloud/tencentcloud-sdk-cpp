@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取Encryptid
-                     * @return Encrypt Encryptid
+                     * 获取Encrypted
+                     * @return Encrypt Encrypted
                      * 
                      */
                     int64_t GetEncrypt() const;
 
                     /**
-                     * 设置Encryptid
-                     * @param _encrypt Encryptid
+                     * 设置Encrypted
+                     * @param _encrypt Encrypted
                      * 
                      */
                     void SetEncrypt(const int64_t& _encrypt);
@@ -193,7 +193,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * Encryptid
+                     * Encrypted
                      */
                     int64_t m_encrypt;
                     bool m_encryptHasBeenSet;

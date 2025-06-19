@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型名称
-                     * @return Model 模型名称
+                     * 获取说明：选择生成向量的模型
+备注：仅一个模型可选
+                     * @return Model 说明：选择生成向量的模型
+备注：仅一个模型可选
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _model 模型名称
+                     * 设置说明：选择生成向量的模型
+备注：仅一个模型可选
+                     * @param _model 说明：选择生成向量的模型
+备注：仅一个模型可选
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -64,15 +68,19 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取需要 embedding 的文本, 单条文本最大长度500个字符, 总条数最大7条
-                     * @return Inputs 需要 embedding 的文本, 单条文本最大长度500个字符, 总条数最大7条
+                     * 获取说明：需要 embedding 的文本
+备注：单条query最多2000个字符，总条数最多7条
+                     * @return Inputs 说明：需要 embedding 的文本
+备注：单条query最多2000个字符，总条数最多7条
                      * 
                      */
                     std::vector<std::string> GetInputs() const;
 
                     /**
-                     * 设置需要 embedding 的文本, 单条文本最大长度500个字符, 总条数最大7条
-                     * @param _inputs 需要 embedding 的文本, 单条文本最大长度500个字符, 总条数最大7条
+                     * 设置说明：需要 embedding 的文本
+备注：单条query最多2000个字符，总条数最多7条
+                     * @param _inputs 说明：需要 embedding 的文本
+备注：单条query最多2000个字符，总条数最多7条
                      * 
                      */
                     void SetInputs(const std::vector<std::string>& _inputs);
@@ -87,13 +95,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型名称
+                     * 说明：选择生成向量的模型
+备注：仅一个模型可选
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 需要 embedding 的文本, 单条文本最大长度500个字符, 总条数最大7条
+                     * 说明：需要 embedding 的文本
+备注：单条query最多2000个字符，总条数最多7条
                      */
                     std::vector<std::string> m_inputs;
                     bool m_inputsHasBeenSet;

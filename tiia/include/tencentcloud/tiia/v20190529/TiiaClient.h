@@ -45,8 +45,6 @@
 #include <tencentcloud/tiia/v20190529/model/DetectEnvelopeResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelResponse.h>
-#include <tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h>
-#include <tencentcloud/tiia/v20190529/model/DetectLabelBetaResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelProRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelProResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectMisbehaviorRequest.h>
@@ -114,9 +112,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectLabelResponse> DetectLabelOutcome;
                 typedef std::future<DetectLabelOutcome> DetectLabelOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectLabelRequest&, DetectLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelAsyncHandler;
-                typedef Outcome<Core::Error, Model::DetectLabelBetaResponse> DetectLabelBetaOutcome;
-                typedef std::future<DetectLabelBetaOutcome> DetectLabelBetaOutcomeCallable;
-                typedef std::function<void(const TiiaClient*, const Model::DetectLabelBetaRequest&, DetectLabelBetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelBetaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectLabelProResponse> DetectLabelProOutcome;
                 typedef std::future<DetectLabelProOutcome> DetectLabelProOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectLabelProRequest&, DetectLabelProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelProAsyncHandler;
@@ -339,18 +334,6 @@ namespace TencentCloud
                 DetectLabelOutcome DetectLabel(const Model::DetectLabelRequest &request);
                 void DetectLabelAsync(const Model::DetectLabelRequest& request, const DetectLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectLabelOutcomeCallable DetectLabelCallable(const Model::DetectLabelRequest& request);
-
-                /**
-                 *图像标签测试接口
-
->     
-- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
-                 * @param req DetectLabelBetaRequest
-                 * @return DetectLabelBetaOutcome
-                 */
-                DetectLabelBetaOutcome DetectLabelBeta(const Model::DetectLabelBetaRequest &request);
-                void DetectLabelBetaAsync(const Model::DetectLabelBetaRequest& request, const DetectLabelBetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DetectLabelBetaOutcomeCallable DetectLabelBetaCallable(const Model::DetectLabelBetaRequest& request);
 
                 /**
                  *通用图像标签可识别数千种常见物体或场景，覆盖日常物品、场景、动物、植物、食物、饮品、交通工具等多个大类，返回主体的标签名称和所属细分类目等。

@@ -225,6 +225,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20250101/model/RerankResult.h
   include/tencentcloud/es/v20250101/model/GetDocumentParseResultRequest.h
   include/tencentcloud/es/v20250101/model/Usage.h
+  include/tencentcloud/es/v20250101/model/DocumentParseConfig.h
   include/tencentcloud/es/v20250101/model/ParseDocumentResponse.h
   include/tencentcloud/es/v20250101/model/Document.h
   include/tencentcloud/es/v20250101/model/GetTextEmbeddingRequest.h
@@ -460,6 +461,7 @@ set(es_src
   src/v20250101/model/RerankResult.cpp
   src/v20250101/model/GetDocumentParseResultRequest.cpp
   src/v20250101/model/Usage.cpp
+  src/v20250101/model/DocumentParseConfig.cpp
   src/v20250101/model/ParseDocumentResponse.cpp
   src/v20250101/model/Document.cpp
   src/v20250101/model/GetTextEmbeddingRequest.cpp

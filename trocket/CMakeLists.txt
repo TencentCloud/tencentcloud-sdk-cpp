@@ -32,6 +32,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeMessageListRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteMQTTInsPublicEndpointRequest.h
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceRequest.h
+  include/tencentcloud/trocket/v20230308/model/MigrationTaskItem.h
   include/tencentcloud/trocket/v20230308/model/FusionInstanceItem.h
   include/tencentcloud/trocket/v20230308/model/InstanceItemExtraInfo.h
   include/tencentcloud/trocket/v20230308/model/CreateMQTTInsPublicEndpointResponse.h
@@ -40,6 +41,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DeleteTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/MigratingTopic.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeMigrationTaskListResponse.h
   include/tencentcloud/trocket/v20230308/model/PublicAccessRule.h
   include/tencentcloud/trocket/v20230308/model/VpcInfo.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTProductSKUListResponse.h
@@ -68,6 +70,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceListRequest.h
   include/tencentcloud/trocket/v20230308/model/ResendDeadLetterMessageResponse.h
   include/tencentcloud/trocket/v20230308/model/MQTTMessageItem.h
+  include/tencentcloud/trocket/v20230308/model/DescribeMigrationTaskListRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteMQTTUserRequest.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceCertBindingRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateMQTTTopicResponse.h
@@ -205,6 +208,7 @@ set(trocket_src
   src/v20230308/model/DescribeMessageListRequest.cpp
   src/v20230308/model/DeleteMQTTInsPublicEndpointRequest.cpp
   src/v20230308/model/ModifyInstanceRequest.cpp
+  src/v20230308/model/MigrationTaskItem.cpp
   src/v20230308/model/FusionInstanceItem.cpp
   src/v20230308/model/InstanceItemExtraInfo.cpp
   src/v20230308/model/CreateMQTTInsPublicEndpointResponse.cpp
@@ -213,6 +217,7 @@ set(trocket_src
   src/v20230308/model/DeleteTopicRequest.cpp
   src/v20230308/model/MigratingTopic.cpp
   src/v20230308/model/ModifyMQTTInstanceRequest.cpp
+  src/v20230308/model/DescribeMigrationTaskListResponse.cpp
   src/v20230308/model/PublicAccessRule.cpp
   src/v20230308/model/VpcInfo.cpp
   src/v20230308/model/DescribeMQTTProductSKUListResponse.cpp
@@ -241,6 +246,7 @@ set(trocket_src
   src/v20230308/model/DescribeInstanceListRequest.cpp
   src/v20230308/model/ResendDeadLetterMessageResponse.cpp
   src/v20230308/model/MQTTMessageItem.cpp
+  src/v20230308/model/DescribeMigrationTaskListRequest.cpp
   src/v20230308/model/DeleteMQTTUserRequest.cpp
   src/v20230308/model/ModifyMQTTInstanceCertBindingRequest.cpp
   src/v20230308/model/CreateMQTTTopicResponse.cpp

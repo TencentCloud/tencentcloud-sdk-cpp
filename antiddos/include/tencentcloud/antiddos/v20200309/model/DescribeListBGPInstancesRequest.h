@@ -485,15 +485,15 @@ namespace TencentCloud
                     bool FilterTransRegionFlagHasBeenSet() const;
 
                     /**
-                     * 获取zoenid列表
-                     * @return FilterZoneIdList zoenid列表
+                     * 获取ZoneID列表
+                     * @return FilterZoneIdList ZoneID列表
                      * 
                      */
                     std::vector<int64_t> GetFilterZoneIdList() const;
 
                     /**
-                     * 设置zoenid列表
-                     * @param _filterZoneIdList zoenid列表
+                     * 设置ZoneID列表
+                     * @param _filterZoneIdList ZoneID列表
                      * 
                      */
                     void SetFilterZoneIdList(const std::vector<int64_t>& _filterZoneIdList);
@@ -634,7 +634,7 @@ namespace TencentCloud
                     bool m_filterTransRegionFlagHasBeenSet;
 
                     /**
-                     * zoenid列表
+                     * ZoneID列表
                      */
                     std::vector<int64_t> m_filterZoneIdList;
                     bool m_filterZoneIdListHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 CreateBatchOrganizationRegistrationTasksRequest::CreateBatchOrganizationRegistrationTasksRequest() :
     m_agentHasBeenSet(false),
     m_registrationOrganizationsHasBeenSet(false),
-    m_endpointHasBeenSet(false)
+    m_endpointHasBeenSet(false),
+    m_batchAuthMethodHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,14 @@ string CreateBatchOrganizationRegistrationTasksRequest::ToJsonString() const
         string key = "Endpoint";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_batchAuthMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchAuthMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_batchAuthMethod, allocator);
     }
 
 
@@ -122,6 +131,22 @@ void CreateBatchOrganizationRegistrationTasksRequest::SetEndpoint(const string& 
 bool CreateBatchOrganizationRegistrationTasksRequest::EndpointHasBeenSet() const
 {
     return m_endpointHasBeenSet;
+}
+
+uint64_t CreateBatchOrganizationRegistrationTasksRequest::GetBatchAuthMethod() const
+{
+    return m_batchAuthMethod;
+}
+
+void CreateBatchOrganizationRegistrationTasksRequest::SetBatchAuthMethod(const uint64_t& _batchAuthMethod)
+{
+    m_batchAuthMethod = _batchAuthMethod;
+    m_batchAuthMethodHasBeenSet = true;
+}
+
+bool CreateBatchOrganizationRegistrationTasksRequest::BatchAuthMethodHasBeenSet() const
+{
+    return m_batchAuthMethodHasBeenSet;
 }
 
 

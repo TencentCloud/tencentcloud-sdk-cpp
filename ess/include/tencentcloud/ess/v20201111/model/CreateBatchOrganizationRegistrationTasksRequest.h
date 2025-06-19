@@ -173,6 +173,59 @@ namespace TencentCloud
                      */
                     bool EndpointHasBeenSet() const;
 
+                    /**
+                     * 获取认证链接使用单链接还是多链接模式
+
+<ul>
+<li>0 - 多链接(默认)，指批量生成链接， 每一个企业会拥有一个认证链接，然后分别认证</li>
+<li>1 - 单链接 ， 指批量生成链接，然后会将多个链接聚合成一个链接，进行认证</li>
+</ul>
+
+p.s.
+请注意， 如果使用单链接的模式并且认证方式是授权书方式的时候，必须在接口中传递超管授权书。
+                     * @return BatchAuthMethod 认证链接使用单链接还是多链接模式
+
+<ul>
+<li>0 - 多链接(默认)，指批量生成链接， 每一个企业会拥有一个认证链接，然后分别认证</li>
+<li>1 - 单链接 ， 指批量生成链接，然后会将多个链接聚合成一个链接，进行认证</li>
+</ul>
+
+p.s.
+请注意， 如果使用单链接的模式并且认证方式是授权书方式的时候，必须在接口中传递超管授权书。
+                     * 
+                     */
+                    uint64_t GetBatchAuthMethod() const;
+
+                    /**
+                     * 设置认证链接使用单链接还是多链接模式
+
+<ul>
+<li>0 - 多链接(默认)，指批量生成链接， 每一个企业会拥有一个认证链接，然后分别认证</li>
+<li>1 - 单链接 ， 指批量生成链接，然后会将多个链接聚合成一个链接，进行认证</li>
+</ul>
+
+p.s.
+请注意， 如果使用单链接的模式并且认证方式是授权书方式的时候，必须在接口中传递超管授权书。
+                     * @param _batchAuthMethod 认证链接使用单链接还是多链接模式
+
+<ul>
+<li>0 - 多链接(默认)，指批量生成链接， 每一个企业会拥有一个认证链接，然后分别认证</li>
+<li>1 - 单链接 ， 指批量生成链接，然后会将多个链接聚合成一个链接，进行认证</li>
+</ul>
+
+p.s.
+请注意， 如果使用单链接的模式并且认证方式是授权书方式的时候，必须在接口中传递超管授权书。
+                     * 
+                     */
+                    void SetBatchAuthMethod(const uint64_t& _batchAuthMethod);
+
+                    /**
+                     * 判断参数 BatchAuthMethod 是否已赋值
+                     * @return BatchAuthMethod 是否已赋值
+                     * 
+                     */
+                    bool BatchAuthMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +262,20 @@ namespace TencentCloud
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;
+
+                    /**
+                     * 认证链接使用单链接还是多链接模式
+
+<ul>
+<li>0 - 多链接(默认)，指批量生成链接， 每一个企业会拥有一个认证链接，然后分别认证</li>
+<li>1 - 单链接 ， 指批量生成链接，然后会将多个链接聚合成一个链接，进行认证</li>
+</ul>
+
+p.s.
+请注意， 如果使用单链接的模式并且认证方式是授权书方式的时候，必须在接口中传递超管授权书。
+                     */
+                    uint64_t m_batchAuthMethod;
+                    bool m_batchAuthMethodHasBeenSet;
 
                 };
             }

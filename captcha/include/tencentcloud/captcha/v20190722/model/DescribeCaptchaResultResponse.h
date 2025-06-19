@@ -163,6 +163,20 @@ EvilLevel=100 请求有恶意
                      */
                     bool DeviceRiskCategoryHasBeenSet() const;
 
+                    /**
+                     * 获取验证码评分
+                     * @return Score 验证码评分
+                     * 
+                     */
+                    int64_t GetScore() const;
+
+                    /**
+                     * 判断参数 Score 是否已赋值
+                     * @return Score 是否已赋值
+                     * 
+                     */
+                    bool ScoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +231,12 @@ EvilLevel=100 请求有恶意
                      */
                     std::string m_deviceRiskCategory;
                     bool m_deviceRiskCategoryHasBeenSet;
+
+                    /**
+                     * 验证码评分
+                     */
+                    int64_t m_score;
+                    bool m_scoreHasBeenSet;
 
                 };
             }

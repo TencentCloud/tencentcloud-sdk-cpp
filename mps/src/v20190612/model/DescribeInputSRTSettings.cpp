@@ -29,7 +29,8 @@ DescribeInputSRTSettings::DescribeInputSRTSettings() :
     m_peerIdleTimeoutHasBeenSet(false),
     m_passphraseHasBeenSet(false),
     m_pbKeyLenHasBeenSet(false),
-    m_sourceAddressesHasBeenSet(false)
+    m_sourceAddressesHasBeenSet(false),
+    m_fECHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,23 @@ CoreInternalOutcome DescribeInputSRTSettings::Deserialize(const rapidjson::Value
         m_sourceAddressesHasBeenSet = true;
     }
 
+    if (value.HasMember("FEC") && !value["FEC"].IsNull())
+    {
+        if (!value["FEC"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeInputSRTSettings.FEC` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fEC.Deserialize(value["FEC"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fECHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +240,15 @@ void DescribeInputSRTSettings::ToJsonObject(rapidjson::Value &value, rapidjson::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_fECHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FEC";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fEC.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -369,5 +396,21 @@ void DescribeInputSRTSettings::SetSourceAddresses(const vector<SRTSourceAddressR
 bool DescribeInputSRTSettings::SourceAddressesHasBeenSet() const
 {
     return m_sourceAddressesHasBeenSet;
+}
+
+SRTFECSimpleOptions DescribeInputSRTSettings::GetFEC() const
+{
+    return m_fEC;
+}
+
+void DescribeInputSRTSettings::SetFEC(const SRTFECSimpleOptions& _fEC)
+{
+    m_fEC = _fEC;
+    m_fECHasBeenSet = true;
+}
+
+bool DescribeInputSRTSettings::FECHasBeenSet() const
+{
+    return m_fECHasBeenSet;
 }
 

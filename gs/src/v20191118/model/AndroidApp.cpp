@@ -27,7 +27,8 @@ AndroidApp::AndroidApp() :
     m_androidAppVersionInfoHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_appModeHasBeenSet(false)
+    m_appModeHasBeenSet(false),
+    m_updateStateHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome AndroidApp::Deserialize(const rapidjson::Value &value)
         m_appModeHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateState") && !value["UpdateState"].IsNull())
+    {
+        if (!value["UpdateState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidApp.UpdateState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateState = string(value["UpdateState"].GetString());
+        m_updateStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void AndroidApp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AppMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void AndroidApp::SetAppMode(const string& _appMode)
 bool AndroidApp::AppModeHasBeenSet() const
 {
     return m_appModeHasBeenSet;
+}
+
+string AndroidApp::GetUpdateState() const
+{
+    return m_updateState;
+}
+
+void AndroidApp::SetUpdateState(const string& _updateState)
+{
+    m_updateState = _updateState;
+    m_updateStateHasBeenSet = true;
+}
+
+bool AndroidApp::UpdateStateHasBeenSet() const
+{
+    return m_updateStateHasBeenSet;
 }
 

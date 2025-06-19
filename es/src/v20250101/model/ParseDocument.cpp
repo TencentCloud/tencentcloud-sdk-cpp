@@ -23,7 +23,10 @@ using namespace std;
 ParseDocument::ParseDocument() :
     m_fileTypeHasBeenSet(false),
     m_fileUrlHasBeenSet(false),
-    m_fileContentHasBeenSet(false)
+    m_fileContentHasBeenSet(false),
+    m_documentParseConfigHasBeenSet(false),
+    m_fileStartPageNumberHasBeenSet(false),
+    m_fileEndPageNumberHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,43 @@ CoreInternalOutcome ParseDocument::Deserialize(const rapidjson::Value &value)
         m_fileContentHasBeenSet = true;
     }
 
+    if (value.HasMember("DocumentParseConfig") && !value["DocumentParseConfig"].IsNull())
+    {
+        if (!value["DocumentParseConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParseDocument.DocumentParseConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_documentParseConfig.Deserialize(value["DocumentParseConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_documentParseConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileStartPageNumber") && !value["FileStartPageNumber"].IsNull())
+    {
+        if (!value["FileStartPageNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParseDocument.FileStartPageNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileStartPageNumber = value["FileStartPageNumber"].GetInt64();
+        m_fileStartPageNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileEndPageNumber") && !value["FileEndPageNumber"].IsNull())
+    {
+        if (!value["FileEndPageNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParseDocument.FileEndPageNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileEndPageNumber = value["FileEndPageNumber"].GetInt64();
+        m_fileEndPageNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +131,31 @@ void ParseDocument::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "FileContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_documentParseConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocumentParseConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_documentParseConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fileStartPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileStartPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileStartPageNumber, allocator);
+    }
+
+    if (m_fileEndPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileEndPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileEndPageNumber, allocator);
     }
 
 }
@@ -142,5 +207,53 @@ void ParseDocument::SetFileContent(const string& _fileContent)
 bool ParseDocument::FileContentHasBeenSet() const
 {
     return m_fileContentHasBeenSet;
+}
+
+DocumentParseConfig ParseDocument::GetDocumentParseConfig() const
+{
+    return m_documentParseConfig;
+}
+
+void ParseDocument::SetDocumentParseConfig(const DocumentParseConfig& _documentParseConfig)
+{
+    m_documentParseConfig = _documentParseConfig;
+    m_documentParseConfigHasBeenSet = true;
+}
+
+bool ParseDocument::DocumentParseConfigHasBeenSet() const
+{
+    return m_documentParseConfigHasBeenSet;
+}
+
+int64_t ParseDocument::GetFileStartPageNumber() const
+{
+    return m_fileStartPageNumber;
+}
+
+void ParseDocument::SetFileStartPageNumber(const int64_t& _fileStartPageNumber)
+{
+    m_fileStartPageNumber = _fileStartPageNumber;
+    m_fileStartPageNumberHasBeenSet = true;
+}
+
+bool ParseDocument::FileStartPageNumberHasBeenSet() const
+{
+    return m_fileStartPageNumberHasBeenSet;
+}
+
+int64_t ParseDocument::GetFileEndPageNumber() const
+{
+    return m_fileEndPageNumber;
+}
+
+void ParseDocument::SetFileEndPageNumber(const int64_t& _fileEndPageNumber)
+{
+    m_fileEndPageNumber = _fileEndPageNumber;
+    m_fileEndPageNumberHasBeenSet = true;
+}
+
+bool ParseDocument::FileEndPageNumberHasBeenSet() const
+{
+    return m_fileEndPageNumberHasBeenSet;
 }
 

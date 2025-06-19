@@ -634,6 +634,27 @@ namespace TencentCloud
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取租户ID字符串
+                     * @return AppIdStr 租户ID字符串
+                     * 
+                     */
+                    std::string GetAppIdStr() const;
+
+                    /**
+                     * 设置租户ID字符串
+                     * @param _appIdStr 租户ID字符串
+                     * 
+                     */
+                    void SetAppIdStr(const std::string& _appIdStr);
+
+                    /**
+                     * 判断参数 AppIdStr 是否已赋值
+                     * @return AppIdStr 是否已赋值
+                     * 
+                     */
+                    bool AppIdStrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -803,6 +824,12 @@ namespace TencentCloud
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * 租户ID字符串
+                     */
+                    std::string m_appIdStr;
+                    bool m_appIdStrHasBeenSet;
 
                 };
             }

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/CreateOutputSRTSettingsDestinations.h>
+#include <tencentcloud/mps/v20190612/model/SRTFECFullOptions.h>
 
 
 namespace TencentCloud
@@ -236,6 +237,27 @@ namespace TencentCloud
                      */
                     bool ModeHasBeenSet() const;
 
+                    /**
+                     * 获取SRT FEC 设置
+                     * @return FEC SRT FEC 设置
+                     * 
+                     */
+                    SRTFECFullOptions GetFEC() const;
+
+                    /**
+                     * 设置SRT FEC 设置
+                     * @param _fEC SRT FEC 设置
+                     * 
+                     */
+                    void SetFEC(const SRTFECFullOptions& _fEC);
+
+                    /**
+                     * 判断参数 FEC 是否已赋值
+                     * @return FEC 是否已赋值
+                     * 
+                     */
+                    bool FECHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +313,12 @@ namespace TencentCloud
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
+
+                    /**
+                     * SRT FEC 设置
+                     */
+                    SRTFECFullOptions m_fEC;
+                    bool m_fECHasBeenSet;
 
                 };
             }

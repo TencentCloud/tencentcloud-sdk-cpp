@@ -109,6 +109,8 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeMigratingTopicListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMigratingTopicStatsRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMigratingTopicStatsResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMigrationTaskListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMigrationTaskListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeProductSKUsRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeProductSKUsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeRoleListRequest.h>
@@ -298,6 +300,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMigratingTopicStatsResponse> DescribeMigratingTopicStatsOutcome;
                 typedef std::future<DescribeMigratingTopicStatsOutcome> DescribeMigratingTopicStatsOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeMigratingTopicStatsRequest&, DescribeMigratingTopicStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigratingTopicStatsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMigrationTaskListResponse> DescribeMigrationTaskListOutcome;
+                typedef std::future<DescribeMigrationTaskListOutcome> DescribeMigrationTaskListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMigrationTaskListRequest&, DescribeMigrationTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrationTaskListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProductSKUsResponse> DescribeProductSKUsOutcome;
                 typedef std::future<DescribeProductSKUsOutcome> DescribeProductSKUsOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeProductSKUsRequest&, DescribeProductSKUsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductSKUsAsyncHandler;
@@ -782,6 +787,19 @@ namespace TencentCloud
                 DescribeMigratingTopicStatsOutcome DescribeMigratingTopicStats(const Model::DescribeMigratingTopicStatsRequest &request);
                 void DescribeMigratingTopicStatsAsync(const Model::DescribeMigratingTopicStatsRequest& request, const DescribeMigratingTopicStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMigratingTopicStatsOutcomeCallable DescribeMigratingTopicStatsCallable(const Model::DescribeMigratingTopicStatsRequest& request);
+
+                /**
+                 *获取数据迁移任务列表，Filter参数使用说明如下：
+
+TaskId，根据任务ID精确查找
+InstanceId，根据实例ID精确查找
+Type，根据任务类型精确查找
+                 * @param req DescribeMigrationTaskListRequest
+                 * @return DescribeMigrationTaskListOutcome
+                 */
+                DescribeMigrationTaskListOutcome DescribeMigrationTaskList(const Model::DescribeMigrationTaskListRequest &request);
+                void DescribeMigrationTaskListAsync(const Model::DescribeMigrationTaskListRequest& request, const DescribeMigrationTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMigrationTaskListOutcomeCallable DescribeMigrationTaskListCallable(const Model::DescribeMigrationTaskListRequest& request);
 
                 /**
                  *查询产品售卖规格，针对 RocketMQ 5.x 集群。

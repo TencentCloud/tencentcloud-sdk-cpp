@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool BackupJobIdHasBeenSet() const;
 
                     /**
-                     * 获取实例对应snapshoit的id
-                     * @return TaskId 实例对应snapshoit的id
+                     * 获取实例对应Snapshot的id
+                     * @return TaskId 实例对应Snapshot的id
                      * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
-                     * 设置实例对应snapshoit的id
-                     * @param _taskId 实例对应snapshoit的id
+                     * 设置实例对应Snapshot的id
+                     * @param _taskId 实例对应Snapshot的id
                      * 
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -475,7 +475,7 @@ namespace TencentCloud
                     bool m_backupJobIdHasBeenSet;
 
                     /**
-                     * 实例对应snapshoit的id
+                     * 实例对应Snapshot的id
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;

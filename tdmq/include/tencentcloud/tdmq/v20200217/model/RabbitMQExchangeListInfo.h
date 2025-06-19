@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取exchange 名
-                     * @return ExchangeName exchange 名
+                     * 获取exchange 名称
+                     * @return ExchangeName exchange 名称
                      * 
                      */
                     std::string GetExchangeName() const;
 
                     /**
-                     * 设置exchange 名
-                     * @param _exchangeName exchange 名
+                     * 设置exchange 名称
+                     * @param _exchangeName exchange 名称
                      * 
                      */
                     void SetExchangeName(const std::string& _exchangeName);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool ExchangeTypeHasBeenSet() const;
 
                     /**
-                     * 获取VHost参数
-                     * @return VirtualHost VHost参数
+                     * 获取交换机所属 Virtual Host 名称
+                     * @return VirtualHost 交换机所属 Virtual Host 名称
                      * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
-                     * 设置VHost参数
-                     * @param _virtualHost VHost参数
+                     * 设置交换机所属 Virtual Host 名称
+                     * @param _virtualHost 交换机所属 Virtual Host 名称
                      * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
@@ -402,10 +402,52 @@ namespace TencentCloud
                      */
                     bool MessagesDelayedHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间时间戳
+                     * @return CreateTs 创建时间时间戳
+                     * 
+                     */
+                    uint64_t GetCreateTs() const;
+
+                    /**
+                     * 设置创建时间时间戳
+                     * @param _createTs 创建时间时间戳
+                     * 
+                     */
+                    void SetCreateTs(const uint64_t& _createTs);
+
+                    /**
+                     * 判断参数 CreateTs 是否已赋值
+                     * @return CreateTs 是否已赋值
+                     * 
+                     */
+                    bool CreateTsHasBeenSet() const;
+
+                    /**
+                     * 获取修改时间时间戳
+                     * @return ModifyTs 修改时间时间戳
+                     * 
+                     */
+                    uint64_t GetModifyTs() const;
+
+                    /**
+                     * 设置修改时间时间戳
+                     * @param _modifyTs 修改时间时间戳
+                     * 
+                     */
+                    void SetModifyTs(const uint64_t& _modifyTs);
+
+                    /**
+                     * 判断参数 ModifyTs 是否已赋值
+                     * @return ModifyTs 是否已赋值
+                     * 
+                     */
+                    bool ModifyTsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * exchange 名
+                     * exchange 名称
                      */
                     std::string m_exchangeName;
                     bool m_exchangeNameHasBeenSet;
@@ -424,7 +466,7 @@ namespace TencentCloud
                     bool m_exchangeTypeHasBeenSet;
 
                     /**
-                     * VHost参数
+                     * 交换机所属 Virtual Host 名称
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
@@ -504,6 +546,18 @@ namespace TencentCloud
                      */
                     uint64_t m_messagesDelayed;
                     bool m_messagesDelayedHasBeenSet;
+
+                    /**
+                     * 创建时间时间戳
+                     */
+                    uint64_t m_createTs;
+                    bool m_createTsHasBeenSet;
+
+                    /**
+                     * 修改时间时间戳
+                     */
+                    uint64_t m_modifyTs;
+                    bool m_modifyTsHasBeenSet;
 
                 };
             }

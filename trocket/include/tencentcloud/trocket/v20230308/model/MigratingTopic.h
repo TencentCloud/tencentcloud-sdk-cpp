@@ -68,15 +68,35 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写
-                     * @return MigrationStatus 迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写
+                     * 获取迁移状态 
+S_RW_D_NA 源集群读写，
+S_RW_D_R 源集群读写目标集群读，
+S_RW_D_RW 源集群读写目标集群读写，
+S_R_D_RW 源集群读目标集群读写，
+S_NA_D_RW 目标集群读写
+                     * @return MigrationStatus 迁移状态 
+S_RW_D_NA 源集群读写，
+S_RW_D_R 源集群读写目标集群读，
+S_RW_D_RW 源集群读写目标集群读写，
+S_R_D_RW 源集群读目标集群读写，
+S_NA_D_RW 目标集群读写
                      * 
                      */
                     std::string GetMigrationStatus() const;
 
                     /**
-                     * 设置迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写
-                     * @param _migrationStatus 迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写
+                     * 设置迁移状态 
+S_RW_D_NA 源集群读写，
+S_RW_D_R 源集群读写目标集群读，
+S_RW_D_RW 源集群读写目标集群读写，
+S_R_D_RW 源集群读目标集群读写，
+S_NA_D_RW 目标集群读写
+                     * @param _migrationStatus 迁移状态 
+S_RW_D_NA 源集群读写，
+S_RW_D_R 源集群读写目标集群读，
+S_RW_D_RW 源集群读写目标集群读写，
+S_R_D_RW 源集群读目标集群读写，
+S_NA_D_RW 目标集群读写
                      * 
                      */
                     void SetMigrationStatus(const std::string& _migrationStatus);
@@ -256,7 +276,12 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写
+                     * 迁移状态 
+S_RW_D_NA 源集群读写，
+S_RW_D_R 源集群读写目标集群读，
+S_RW_D_RW 源集群读写目标集群读写，
+S_R_D_RW 源集群读目标集群读写，
+S_NA_D_RW 目标集群读写
                      */
                     std::string m_migrationStatus;
                     bool m_migrationStatusHasBeenSet;

@@ -42,6 +42,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DetachCcnResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ShareBlueprintAcrossAccountsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/BlueprintPrice.h
+  include/tencentcloud/lighthouse/v20200324/model/SyncBlueprintRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeScenesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesResponse.h
@@ -158,6 +159,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/SyncBlueprintResponse.h
   include/tencentcloud/lighthouse/v20200324/model/SupportIpv6Detail.h
   include/tencentcloud/lighthouse/v20200324/model/ApplyDiskBackupRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordResponse.h
@@ -326,6 +328,7 @@ set(lighthouse_src
   src/v20200324/model/DetachCcnResponse.cpp
   src/v20200324/model/ShareBlueprintAcrossAccountsRequest.cpp
   src/v20200324/model/BlueprintPrice.cpp
+  src/v20200324/model/SyncBlueprintRequest.cpp
   src/v20200324/model/DescribeScenesResponse.cpp
   src/v20200324/model/InquirePriceRenewInstancesResponse.cpp
   src/v20200324/model/DeleteFirewallRulesResponse.cpp
@@ -442,6 +445,7 @@ set(lighthouse_src
   src/v20200324/model/DescribeBlueprintsResponse.cpp
   src/v20200324/model/DescribeKeyPairsRequest.cpp
   src/v20200324/model/DescribeCcnAttachedInstancesRequest.cpp
+  src/v20200324/model/SyncBlueprintResponse.cpp
   src/v20200324/model/SupportIpv6Detail.cpp
   src/v20200324/model/ApplyDiskBackupRequest.cpp
   src/v20200324/model/ResetInstancesPasswordResponse.cpp

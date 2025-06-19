@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取盲水印文字，需要经过 URL 安全的 Base64 编码。
+                     * 获取盲水印文字，经过URL安全的Base64编码的4Byte数据。Base64解码之后，少于4Byte将会填充0x00到4Byte，超过4Byte将会截断为4Byte。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EmbedText 盲水印文字，需要经过 URL 安全的 Base64 编码。
+                     * @return EmbedText 盲水印文字，经过URL安全的Base64编码的4Byte数据。Base64解码之后，少于4Byte将会填充0x00到4Byte，超过4Byte将会截断为4Byte。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEmbedText() const;
 
                     /**
-                     * 设置盲水印文字，需要经过 URL 安全的 Base64 编码。
+                     * 设置盲水印文字，经过URL安全的Base64编码的4Byte数据。Base64解码之后，少于4Byte将会填充0x00到4Byte，超过4Byte将会截断为4Byte。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _embedText 盲水印文字，需要经过 URL 安全的 Base64 编码。
+                     * @param _embedText 盲水印文字，经过URL安全的Base64编码的4Byte数据。Base64解码之后，少于4Byte将会填充0x00到4Byte，超过4Byte将会截断为4Byte。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 盲水印文字，需要经过 URL 安全的 Base64 编码。
+                     * 盲水印文字，经过URL安全的Base64编码的4Byte数据。Base64解码之后，少于4Byte将会填充0x00到4Byte，超过4Byte将会截断为4Byte。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_embedText;

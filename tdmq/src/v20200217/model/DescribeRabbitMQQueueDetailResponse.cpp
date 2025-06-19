@@ -53,7 +53,9 @@ DescribeRabbitMQQueueDetailResponse::DescribeRabbitMQQueueDetailResponse() :
     m_quorumInitialGroupSizeHasBeenSet(false),
     m_exclusiveHasBeenSet(false),
     m_policyHasBeenSet(false),
-    m_argumentsHasBeenSet(false)
+    m_argumentsHasBeenSet(false),
+    m_createTsHasBeenSet(false),
+    m_modifyTsHasBeenSet(false)
 {
 }
 
@@ -391,6 +393,26 @@ CoreInternalOutcome DescribeRabbitMQQueueDetailResponse::Deserialize(const strin
         m_argumentsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CreateTs") && !rsp["CreateTs"].IsNull())
+    {
+        if (!rsp["CreateTs"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTs` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTs = rsp["CreateTs"].GetUint64();
+        m_createTsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ModifyTs") && !rsp["ModifyTs"].IsNull())
+    {
+        if (!rsp["ModifyTs"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyTs` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTs = rsp["ModifyTs"].GetUint64();
+        m_modifyTsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -639,6 +661,22 @@ string DescribeRabbitMQQueueDetailResponse::ToJsonString() const
         string key = "Arguments";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_arguments.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTs, allocator);
+    }
+
+    if (m_modifyTsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modifyTs, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -951,6 +989,26 @@ string DescribeRabbitMQQueueDetailResponse::GetArguments() const
 bool DescribeRabbitMQQueueDetailResponse::ArgumentsHasBeenSet() const
 {
     return m_argumentsHasBeenSet;
+}
+
+uint64_t DescribeRabbitMQQueueDetailResponse::GetCreateTs() const
+{
+    return m_createTs;
+}
+
+bool DescribeRabbitMQQueueDetailResponse::CreateTsHasBeenSet() const
+{
+    return m_createTsHasBeenSet;
+}
+
+uint64_t DescribeRabbitMQQueueDetailResponse::GetModifyTs() const
+{
+    return m_modifyTs;
+}
+
+bool DescribeRabbitMQQueueDetailResponse::ModifyTsHasBeenSet() const
+{
+    return m_modifyTsHasBeenSet;
 }
 
 

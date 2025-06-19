@@ -48,7 +48,8 @@ ExposesItem::ExposesItem() :
     m_scanTaskStatusHasBeenSet(false),
     m_uuidHasBeenSet(false),
     m_hasScanHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_appIdStrHasBeenSet(false)
 {
 }
 
@@ -337,6 +338,16 @@ CoreInternalOutcome ExposesItem::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AppIdStr") && !value["AppIdStr"].IsNull())
+    {
+        if (!value["AppIdStr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExposesItem.AppIdStr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appIdStr = string(value["AppIdStr"].GetString());
+        m_appIdStrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -566,6 +577,14 @@ void ExposesItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_appIdStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppIdStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appIdStr.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1017,5 +1036,21 @@ void ExposesItem::SetAppId(const uint64_t& _appId)
 bool ExposesItem::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+string ExposesItem::GetAppIdStr() const
+{
+    return m_appIdStr;
+}
+
+void ExposesItem::SetAppIdStr(const string& _appIdStr)
+{
+    m_appIdStr = _appIdStr;
+    m_appIdStrHasBeenSet = true;
+}
+
+bool ExposesItem::AppIdStrHasBeenSet() const
+{
+    return m_appIdStrHasBeenSet;
 }
 

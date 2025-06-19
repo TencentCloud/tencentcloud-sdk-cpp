@@ -131,42 +131,42 @@ namespace TencentCloud
                     /**
                      * 获取应用日志配置项，废弃参数
                      * @return ApplicationLogConfig 应用日志配置项，废弃参数
-                     * 
+                     * @deprecated
                      */
                     std::string GetApplicationLogConfig() const;
 
                     /**
                      * 设置应用日志配置项，废弃参数
                      * @param _applicationLogConfig 应用日志配置项，废弃参数
-                     * 
+                     * @deprecated
                      */
                     void SetApplicationLogConfig(const std::string& _applicationLogConfig);
 
                     /**
                      * 判断参数 ApplicationLogConfig 是否已赋值
                      * @return ApplicationLogConfig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ApplicationLogConfigHasBeenSet() const;
 
                     /**
                      * 获取应用资源类型，废弃参数
                      * @return ApplicationResourceType 应用资源类型，废弃参数
-                     * 
+                     * @deprecated
                      */
                     std::string GetApplicationResourceType() const;
 
                     /**
                      * 设置应用资源类型，废弃参数
                      * @param _applicationResourceType 应用资源类型，废弃参数
-                     * 
+                     * @deprecated
                      */
                     void SetApplicationResourceType(const std::string& _applicationResourceType);
 
                     /**
                      * 判断参数 ApplicationResourceType 是否已赋值
                      * @return ApplicationResourceType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ApplicationResourceTypeHasBeenSet() const;
 

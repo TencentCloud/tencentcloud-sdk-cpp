@@ -4555,6 +4555,49 @@ LighthouseClient::StopInstancesOutcomeCallable LighthouseClient::StopInstancesCa
     return task->get_future();
 }
 
+LighthouseClient::SyncBlueprintOutcome LighthouseClient::SyncBlueprint(const SyncBlueprintRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncBlueprint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncBlueprintResponse rsp = SyncBlueprintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncBlueprintOutcome(rsp);
+        else
+            return SyncBlueprintOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncBlueprintOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::SyncBlueprintAsync(const SyncBlueprintRequest& request, const SyncBlueprintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SyncBlueprint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::SyncBlueprintOutcomeCallable LighthouseClient::SyncBlueprintCallable(const SyncBlueprintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SyncBlueprintOutcome()>>(
+        [this, request]()
+        {
+            return this->SyncBlueprint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::TerminateDisksOutcome LighthouseClient::TerminateDisks(const TerminateDisksRequest &request)
 {
     auto outcome = MakeRequest(request, "TerminateDisks");

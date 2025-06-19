@@ -37,7 +37,9 @@ RabbitMQQueueListInfo::RabbitMQQueueListInfo() :
     m_nodeHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_argumentsHasBeenSet(false),
-    m_exclusiveHasBeenSet(false)
+    m_exclusiveHasBeenSet(false),
+    m_createTsHasBeenSet(false),
+    m_modifyTsHasBeenSet(false)
 {
 }
 
@@ -223,6 +225,26 @@ CoreInternalOutcome RabbitMQQueueListInfo::Deserialize(const rapidjson::Value &v
         m_exclusiveHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTs") && !value["CreateTs"].IsNull())
+    {
+        if (!value["CreateTs"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.CreateTs` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTs = value["CreateTs"].GetUint64();
+        m_createTsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyTs") && !value["ModifyTs"].IsNull())
+    {
+        if (!value["ModifyTs"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.ModifyTs` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTs = value["ModifyTs"].GetUint64();
+        m_modifyTsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +387,22 @@ void RabbitMQQueueListInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Exclusive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exclusive, allocator);
+    }
+
+    if (m_createTsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTs, allocator);
+    }
+
+    if (m_modifyTsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modifyTs, allocator);
     }
 
 }
@@ -640,5 +678,37 @@ void RabbitMQQueueListInfo::SetExclusive(const bool& _exclusive)
 bool RabbitMQQueueListInfo::ExclusiveHasBeenSet() const
 {
     return m_exclusiveHasBeenSet;
+}
+
+uint64_t RabbitMQQueueListInfo::GetCreateTs() const
+{
+    return m_createTs;
+}
+
+void RabbitMQQueueListInfo::SetCreateTs(const uint64_t& _createTs)
+{
+    m_createTs = _createTs;
+    m_createTsHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::CreateTsHasBeenSet() const
+{
+    return m_createTsHasBeenSet;
+}
+
+uint64_t RabbitMQQueueListInfo::GetModifyTs() const
+{
+    return m_modifyTs;
+}
+
+void RabbitMQQueueListInfo::SetModifyTs(const uint64_t& _modifyTs)
+{
+    m_modifyTs = _modifyTs;
+    m_modifyTsHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::ModifyTsHasBeenSet() const
+{
+    return m_modifyTsHasBeenSet;
 }
 

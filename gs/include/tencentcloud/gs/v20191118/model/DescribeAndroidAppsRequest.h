@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool AndroidAppIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，支持过滤的字段有：UserId
-                     * @return Filters 过滤条件，支持过滤的字段有：UserId
+                     * 获取过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。
+                     * @return Filters 过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，支持过滤的字段有：UserId
-                     * @param _filters 过滤条件，支持过滤的字段有：UserId
+                     * 设置过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。
+                     * @param _filters 过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_androidAppIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，支持过滤的字段有：UserId
+                     * 过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

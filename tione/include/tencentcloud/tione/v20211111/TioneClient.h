@@ -29,6 +29,8 @@
 #include <tencentcloud/tione/v20211111/model/CreateDatasetResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateModelServiceResponse.h>
+#include <tencentcloud/tione/v20211111/model/CreateModelServiceAuthTokenRequest.h>
+#include <tencentcloud/tione/v20211111/model/CreateModelServiceAuthTokenResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateNotebookRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateNotebookResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/tione/v20211111/model/DeleteDatasetResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceResponse.h>
+#include <tencentcloud/tione/v20211111/model/DeleteModelServiceAuthTokenRequest.h>
+#include <tencentcloud/tione/v20211111/model/DeleteModelServiceAuthTokenResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceGroupRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceGroupResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteNotebookRequest.h>
@@ -101,6 +105,10 @@
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyModelServiceAuthTokenRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyModelServiceAuthTokenResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyModelServiceAuthorizationRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyModelServiceAuthorizationResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsResponse.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h>
@@ -138,6 +146,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateModelServiceResponse> CreateModelServiceOutcome;
                 typedef std::future<CreateModelServiceOutcome> CreateModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateModelServiceRequest&, CreateModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateModelServiceAuthTokenResponse> CreateModelServiceAuthTokenOutcome;
+                typedef std::future<CreateModelServiceAuthTokenOutcome> CreateModelServiceAuthTokenOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::CreateModelServiceAuthTokenRequest&, CreateModelServiceAuthTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelServiceAuthTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNotebookResponse> CreateNotebookOutcome;
                 typedef std::future<CreateNotebookOutcome> CreateNotebookOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateNotebookRequest&, CreateNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookAsyncHandler;
@@ -156,6 +167,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteModelServiceResponse> DeleteModelServiceOutcome;
                 typedef std::future<DeleteModelServiceOutcome> DeleteModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteModelServiceRequest&, DeleteModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteModelServiceAuthTokenResponse> DeleteModelServiceAuthTokenOutcome;
+                typedef std::future<DeleteModelServiceAuthTokenOutcome> DeleteModelServiceAuthTokenOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DeleteModelServiceAuthTokenRequest&, DeleteModelServiceAuthTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteModelServiceAuthTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteModelServiceGroupResponse> DeleteModelServiceGroupOutcome;
                 typedef std::future<DeleteModelServiceGroupOutcome> DeleteModelServiceGroupOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteModelServiceGroupRequest&, DeleteModelServiceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteModelServiceGroupAsyncHandler;
@@ -246,6 +260,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyModelServiceResponse> ModifyModelServiceOutcome;
                 typedef std::future<ModifyModelServiceOutcome> ModifyModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyModelServiceRequest&, ModifyModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyModelServiceAuthTokenResponse> ModifyModelServiceAuthTokenOutcome;
+                typedef std::future<ModifyModelServiceAuthTokenOutcome> ModifyModelServiceAuthTokenOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyModelServiceAuthTokenRequest&, ModifyModelServiceAuthTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServiceAuthTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyModelServiceAuthorizationResponse> ModifyModelServiceAuthorizationOutcome;
+                typedef std::future<ModifyModelServiceAuthorizationOutcome> ModifyModelServiceAuthorizationOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyModelServiceAuthorizationRequest&, ModifyModelServiceAuthorizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServiceAuthorizationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNotebookTagsResponse> ModifyNotebookTagsOutcome;
                 typedef std::future<ModifyNotebookTagsOutcome> ModifyNotebookTagsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyNotebookTagsRequest&, ModifyNotebookTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotebookTagsAsyncHandler;
@@ -301,6 +321,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 CreateModelServiceOutcomeCallable CreateModelServiceCallable(const Model::CreateModelServiceRequest& request);
 
                 /**
+                 *创建一个 AuthToken
+                 * @param req CreateModelServiceAuthTokenRequest
+                 * @return CreateModelServiceAuthTokenOutcome
+                 */
+                CreateModelServiceAuthTokenOutcome CreateModelServiceAuthToken(const Model::CreateModelServiceAuthTokenRequest &request);
+                void CreateModelServiceAuthTokenAsync(const Model::CreateModelServiceAuthTokenRequest& request, const CreateModelServiceAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateModelServiceAuthTokenOutcomeCallable CreateModelServiceAuthTokenCallable(const Model::CreateModelServiceAuthTokenRequest& request);
+
+                /**
                  *创建Notebook
                  * @param req CreateNotebookRequest
                  * @return CreateNotebookOutcome
@@ -353,6 +382,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DeleteModelServiceOutcome DeleteModelService(const Model::DeleteModelServiceRequest &request);
                 void DeleteModelServiceAsync(const Model::DeleteModelServiceRequest& request, const DeleteModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteModelServiceOutcomeCallable DeleteModelServiceCallable(const Model::DeleteModelServiceRequest& request);
+
+                /**
+                 *删除一个 AuthToken
+                 * @param req DeleteModelServiceAuthTokenRequest
+                 * @return DeleteModelServiceAuthTokenOutcome
+                 */
+                DeleteModelServiceAuthTokenOutcome DeleteModelServiceAuthToken(const Model::DeleteModelServiceAuthTokenRequest &request);
+                void DeleteModelServiceAuthTokenAsync(const Model::DeleteModelServiceAuthTokenRequest& request, const DeleteModelServiceAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteModelServiceAuthTokenOutcomeCallable DeleteModelServiceAuthTokenCallable(const Model::DeleteModelServiceAuthTokenRequest& request);
 
                 /**
                  *根据服务组id删除服务组下所有模型服务
@@ -625,6 +663,24 @@ https://cloud.tencent.com/document/product/1278/85305
                 ModifyModelServiceOutcome ModifyModelService(const Model::ModifyModelServiceRequest &request);
                 void ModifyModelServiceAsync(const Model::ModifyModelServiceRequest& request, const ModifyModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyModelServiceOutcomeCallable ModifyModelServiceCallable(const Model::ModifyModelServiceRequest& request);
+
+                /**
+                 *修改一个 AuthToken
+                 * @param req ModifyModelServiceAuthTokenRequest
+                 * @return ModifyModelServiceAuthTokenOutcome
+                 */
+                ModifyModelServiceAuthTokenOutcome ModifyModelServiceAuthToken(const Model::ModifyModelServiceAuthTokenRequest &request);
+                void ModifyModelServiceAuthTokenAsync(const Model::ModifyModelServiceAuthTokenRequest& request, const ModifyModelServiceAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyModelServiceAuthTokenOutcomeCallable ModifyModelServiceAuthTokenCallable(const Model::ModifyModelServiceAuthTokenRequest& request);
+
+                /**
+                 *修改服务鉴权配置
+                 * @param req ModifyModelServiceAuthorizationRequest
+                 * @return ModifyModelServiceAuthorizationOutcome
+                 */
+                ModifyModelServiceAuthorizationOutcome ModifyModelServiceAuthorization(const Model::ModifyModelServiceAuthorizationRequest &request);
+                void ModifyModelServiceAuthorizationAsync(const Model::ModifyModelServiceAuthorizationRequest& request, const ModifyModelServiceAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyModelServiceAuthorizationOutcomeCallable ModifyModelServiceAuthorizationCallable(const Model::ModifyModelServiceAuthorizationRequest& request);
 
                 /**
                  *修改Notebook标签

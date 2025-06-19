@@ -67,6 +67,8 @@
 #include <tencentcloud/lke/v20231130/model/DeleteRejectedQuestionResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteSharedKnowledgeRequest.h>
 #include <tencentcloud/lke/v20231130/model/DeleteSharedKnowledgeResponse.h>
+#include <tencentcloud/lke/v20231130/model/DeleteVarRequest.h>
+#include <tencentcloud/lke/v20231130/model/DeleteVarResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAttributeLabelRequest.h>
@@ -237,6 +239,8 @@
 #include <tencentcloud/lke/v20231130/model/StopWorkflowRunResponse.h>
 #include <tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeRequest.h>
 #include <tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeResponse.h>
+#include <tencentcloud/lke/v20231130/model/UpdateVarRequest.h>
+#include <tencentcloud/lke/v20231130/model/UpdateVarResponse.h>
 #include <tencentcloud/lke/v20231130/model/UploadAttributeLabelRequest.h>
 #include <tencentcloud/lke/v20231130/model/UploadAttributeLabelResponse.h>
 #include <tencentcloud/lke/v20231130/model/VerifyQARequest.h>
@@ -321,6 +325,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSharedKnowledgeResponse> DeleteSharedKnowledgeOutcome;
                 typedef std::future<DeleteSharedKnowledgeOutcome> DeleteSharedKnowledgeOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DeleteSharedKnowledgeRequest&, DeleteSharedKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSharedKnowledgeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVarResponse> DeleteVarOutcome;
+                typedef std::future<DeleteVarOutcome> DeleteVarOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DeleteVarRequest&, DeleteVarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVarAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAppResponse> DescribeAppOutcome;
                 typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeAppRequest&, DescribeAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppAsyncHandler;
@@ -576,6 +583,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateSharedKnowledgeResponse> UpdateSharedKnowledgeOutcome;
                 typedef std::future<UpdateSharedKnowledgeOutcome> UpdateSharedKnowledgeOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::UpdateSharedKnowledgeRequest&, UpdateSharedKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSharedKnowledgeAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateVarResponse> UpdateVarOutcome;
+                typedef std::future<UpdateVarOutcome> UpdateVarOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::UpdateVarRequest&, UpdateVarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVarAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadAttributeLabelResponse> UploadAttributeLabelOutcome;
                 typedef std::future<UploadAttributeLabelOutcome> UploadAttributeLabelOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::UploadAttributeLabelRequest&, UploadAttributeLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadAttributeLabelAsyncHandler;
@@ -785,6 +795,15 @@ namespace TencentCloud
                 DeleteSharedKnowledgeOutcome DeleteSharedKnowledge(const Model::DeleteSharedKnowledgeRequest &request);
                 void DeleteSharedKnowledgeAsync(const Model::DeleteSharedKnowledgeRequest& request, const DeleteSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSharedKnowledgeOutcomeCallable DeleteSharedKnowledgeCallable(const Model::DeleteSharedKnowledgeRequest& request);
+
+                /**
+                 *删除变量
+                 * @param req DeleteVarRequest
+                 * @return DeleteVarOutcome
+                 */
+                DeleteVarOutcome DeleteVar(const Model::DeleteVarRequest &request);
+                void DeleteVarAsync(const Model::DeleteVarRequest& request, const DeleteVarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVarOutcomeCallable DeleteVarCallable(const Model::DeleteVarRequest& request);
 
                 /**
                  *获取企业下应用详情
@@ -1561,6 +1580,15 @@ namespace TencentCloud
                 UpdateSharedKnowledgeOutcome UpdateSharedKnowledge(const Model::UpdateSharedKnowledgeRequest &request);
                 void UpdateSharedKnowledgeAsync(const Model::UpdateSharedKnowledgeRequest& request, const UpdateSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateSharedKnowledgeOutcomeCallable UpdateSharedKnowledgeCallable(const Model::UpdateSharedKnowledgeRequest& request);
+
+                /**
+                 *更新变量
+                 * @param req UpdateVarRequest
+                 * @return UpdateVarOutcome
+                 */
+                UpdateVarOutcome UpdateVar(const Model::UpdateVarRequest &request);
+                void UpdateVarAsync(const Model::UpdateVarRequest& request, const UpdateVarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateVarOutcomeCallable UpdateVarCallable(const Model::UpdateVarRequest& request);
 
                 /**
                  *上传导入属性标签

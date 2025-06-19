@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SRTSourceAddressReq.h>
+#include <tencentcloud/mps/v20190612/model/SRTFECSimpleOptions.h>
 
 
 namespace TencentCloud
@@ -236,6 +237,27 @@ namespace TencentCloud
                      */
                     bool SourceAddressesHasBeenSet() const;
 
+                    /**
+                     * 获取SRT FEC 设置
+                     * @return FEC SRT FEC 设置
+                     * 
+                     */
+                    SRTFECSimpleOptions GetFEC() const;
+
+                    /**
+                     * 设置SRT FEC 设置
+                     * @param _fEC SRT FEC 设置
+                     * 
+                     */
+                    void SetFEC(const SRTFECSimpleOptions& _fEC);
+
+                    /**
+                     * 判断参数 FEC 是否已赋值
+                     * @return FEC 是否已赋值
+                     * 
+                     */
+                    bool FECHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +313,12 @@ namespace TencentCloud
                      */
                     std::vector<SRTSourceAddressReq> m_sourceAddresses;
                     bool m_sourceAddressesHasBeenSet;
+
+                    /**
+                     * SRT FEC 设置
+                     */
+                    SRTFECSimpleOptions m_fEC;
+                    bool m_fECHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ CreateOutputSRTSettings::CreateOutputSRTSettings() :
     m_peerIdleTimeoutHasBeenSet(false),
     m_passphraseHasBeenSet(false),
     m_pbKeyLenHasBeenSet(false),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_fECHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,23 @@ CoreInternalOutcome CreateOutputSRTSettings::Deserialize(const rapidjson::Value 
         m_modeHasBeenSet = true;
     }
 
+    if (value.HasMember("FEC") && !value["FEC"].IsNull())
+    {
+        if (!value["FEC"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateOutputSRTSettings.FEC` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fEC.Deserialize(value["FEC"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fECHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +240,15 @@ void CreateOutputSRTSettings::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Mode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fECHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FEC";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fEC.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -369,5 +396,21 @@ void CreateOutputSRTSettings::SetMode(const string& _mode)
 bool CreateOutputSRTSettings::ModeHasBeenSet() const
 {
     return m_modeHasBeenSet;
+}
+
+SRTFECFullOptions CreateOutputSRTSettings::GetFEC() const
+{
+    return m_fEC;
+}
+
+void CreateOutputSRTSettings::SetFEC(const SRTFECFullOptions& _fEC)
+{
+    m_fEC = _fEC;
+    m_fECHasBeenSet = true;
+}
+
+bool CreateOutputSRTSettings::FECHasBeenSet() const
+{
+    return m_fECHasBeenSet;
 }
 

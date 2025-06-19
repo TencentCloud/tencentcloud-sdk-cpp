@@ -986,6 +986,49 @@ LkeClient::DeleteSharedKnowledgeOutcomeCallable LkeClient::DeleteSharedKnowledge
     return task->get_future();
 }
 
+LkeClient::DeleteVarOutcome LkeClient::DeleteVar(const DeleteVarRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVar");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVarResponse rsp = DeleteVarResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVarOutcome(rsp);
+        else
+            return DeleteVarOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVarOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DeleteVarAsync(const DeleteVarRequest& request, const DeleteVarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVar(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DeleteVarOutcomeCallable LkeClient::DeleteVarCallable(const DeleteVarRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVarOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVar(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::DescribeAppOutcome LkeClient::DescribeApp(const DescribeAppRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApp");
@@ -4634,6 +4677,49 @@ LkeClient::UpdateSharedKnowledgeOutcomeCallable LkeClient::UpdateSharedKnowledge
         [this, request]()
         {
             return this->UpdateSharedKnowledge(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::UpdateVarOutcome LkeClient::UpdateVar(const UpdateVarRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateVar");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateVarResponse rsp = UpdateVarResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateVarOutcome(rsp);
+        else
+            return UpdateVarOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateVarOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::UpdateVarAsync(const UpdateVarRequest& request, const UpdateVarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateVar(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::UpdateVarOutcomeCallable LkeClient::UpdateVarCallable(const UpdateVarRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateVarOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateVar(request);
         }
     );
 

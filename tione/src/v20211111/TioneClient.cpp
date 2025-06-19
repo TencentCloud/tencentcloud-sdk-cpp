@@ -169,6 +169,49 @@ TioneClient::CreateModelServiceOutcomeCallable TioneClient::CreateModelServiceCa
     return task->get_future();
 }
 
+TioneClient::CreateModelServiceAuthTokenOutcome TioneClient::CreateModelServiceAuthToken(const CreateModelServiceAuthTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateModelServiceAuthToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateModelServiceAuthTokenResponse rsp = CreateModelServiceAuthTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateModelServiceAuthTokenOutcome(rsp);
+        else
+            return CreateModelServiceAuthTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateModelServiceAuthTokenOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::CreateModelServiceAuthTokenAsync(const CreateModelServiceAuthTokenRequest& request, const CreateModelServiceAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateModelServiceAuthToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::CreateModelServiceAuthTokenOutcomeCallable TioneClient::CreateModelServiceAuthTokenCallable(const CreateModelServiceAuthTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateModelServiceAuthTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateModelServiceAuthToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::CreateNotebookOutcome TioneClient::CreateNotebook(const CreateNotebookRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNotebook");
@@ -420,6 +463,49 @@ TioneClient::DeleteModelServiceOutcomeCallable TioneClient::DeleteModelServiceCa
         [this, request]()
         {
             return this->DeleteModelService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DeleteModelServiceAuthTokenOutcome TioneClient::DeleteModelServiceAuthToken(const DeleteModelServiceAuthTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteModelServiceAuthToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteModelServiceAuthTokenResponse rsp = DeleteModelServiceAuthTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteModelServiceAuthTokenOutcome(rsp);
+        else
+            return DeleteModelServiceAuthTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteModelServiceAuthTokenOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DeleteModelServiceAuthTokenAsync(const DeleteModelServiceAuthTokenRequest& request, const DeleteModelServiceAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteModelServiceAuthToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DeleteModelServiceAuthTokenOutcomeCallable TioneClient::DeleteModelServiceAuthTokenCallable(const DeleteModelServiceAuthTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteModelServiceAuthTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteModelServiceAuthToken(request);
         }
     );
 
@@ -1710,6 +1796,92 @@ TioneClient::ModifyModelServiceOutcomeCallable TioneClient::ModifyModelServiceCa
         [this, request]()
         {
             return this->ModifyModelService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::ModifyModelServiceAuthTokenOutcome TioneClient::ModifyModelServiceAuthToken(const ModifyModelServiceAuthTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModelServiceAuthToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModelServiceAuthTokenResponse rsp = ModifyModelServiceAuthTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModelServiceAuthTokenOutcome(rsp);
+        else
+            return ModifyModelServiceAuthTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModelServiceAuthTokenOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyModelServiceAuthTokenAsync(const ModifyModelServiceAuthTokenRequest& request, const ModifyModelServiceAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyModelServiceAuthToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::ModifyModelServiceAuthTokenOutcomeCallable TioneClient::ModifyModelServiceAuthTokenCallable(const ModifyModelServiceAuthTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyModelServiceAuthTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyModelServiceAuthToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::ModifyModelServiceAuthorizationOutcome TioneClient::ModifyModelServiceAuthorization(const ModifyModelServiceAuthorizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModelServiceAuthorization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModelServiceAuthorizationResponse rsp = ModifyModelServiceAuthorizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModelServiceAuthorizationOutcome(rsp);
+        else
+            return ModifyModelServiceAuthorizationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModelServiceAuthorizationOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyModelServiceAuthorizationAsync(const ModifyModelServiceAuthorizationRequest& request, const ModifyModelServiceAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyModelServiceAuthorization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::ModifyModelServiceAuthorizationOutcomeCallable TioneClient::ModifyModelServiceAuthorizationCallable(const ModifyModelServiceAuthorizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyModelServiceAuthorizationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyModelServiceAuthorization(request);
         }
     );
 
