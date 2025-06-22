@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ScaleUpThresholdHasBeenSet() const;
 
                     /**
-                     * 获取扩容后目标阈值，范围[1-90]，该值要小于 ScaleUpThreshold
-                     * @return TargetThreshold 扩容后目标阈值，范围[1-90]，该值要小于 ScaleUpThreshold
+                     * 获取扩容后目标阈值，范围[10-90]，该值要小于 ScaleUpThreshold
+                     * @return TargetThreshold 扩容后目标阈值，范围[10-90]，该值要小于 ScaleUpThreshold
                      * 
                      */
                     uint64_t GetTargetThreshold() const;
 
                     /**
-                     * 设置扩容后目标阈值，范围[1-90]，该值要小于 ScaleUpThreshold
-                     * @param _targetThreshold 扩容后目标阈值，范围[1-90]，该值要小于 ScaleUpThreshold
+                     * 设置扩容后目标阈值，范围[10-90]，该值要小于 ScaleUpThreshold
+                     * @param _targetThreshold 扩容后目标阈值，范围[10-90]，该值要小于 ScaleUpThreshold
                      * 
                      */
                     void SetTargetThreshold(const uint64_t& _targetThreshold);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_scaleUpThresholdHasBeenSet;
 
                     /**
-                     * 扩容后目标阈值，范围[1-90]，该值要小于 ScaleUpThreshold
+                     * 扩容后目标阈值，范围[10-90]，该值要小于 ScaleUpThreshold
                      */
                     uint64_t m_targetThreshold;
                     bool m_targetThresholdHasBeenSet;

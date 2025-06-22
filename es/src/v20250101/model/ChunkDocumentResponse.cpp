@@ -24,7 +24,8 @@ using namespace TencentCloud::Es::V20250101::Model;
 using namespace std;
 
 ChunkDocumentResponse::ChunkDocumentResponse() :
-    m_chunksHasBeenSet(false)
+    m_chunksHasBeenSet(false),
+    m_usageHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,23 @@ CoreInternalOutcome ChunkDocumentResponse::Deserialize(const string &payload)
         m_chunksHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Usage") && !rsp["Usage"].IsNull())
+    {
+        if (!rsp["Usage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Usage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usage.Deserialize(rsp["Usage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ string ChunkDocumentResponse::ToJsonString() const
         }
     }
 
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +154,16 @@ vector<Chunk> ChunkDocumentResponse::GetChunks() const
 bool ChunkDocumentResponse::ChunksHasBeenSet() const
 {
     return m_chunksHasBeenSet;
+}
+
+Usage ChunkDocumentResponse::GetUsage() const
+{
+    return m_usage;
+}
+
+bool ChunkDocumentResponse::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
 }
 
 

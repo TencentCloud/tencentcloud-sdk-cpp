@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 可以传入多种类型的内容，如图片或文本。
+                * 可以传入多种类型的内容，如图片、文本。
                 */
                 class Content : public AbstractModel
                 {
@@ -50,12 +50,12 @@ namespace TencentCloud
                     /**
                      * 获取内容类型
 注意：
-需包含至少一个 Type 为"text"的参数及至少一个 Type 为"image_url"的参数。
+需包含至少一个 Type 为"text"的参数。
 参数值可选范围：[text", "image_url"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 内容类型
 注意：
-需包含至少一个 Type 为"text"的参数及至少一个 Type 为"image_url"的参数。
+需包含至少一个 Type 为"text"的参数。
 参数值可选范围：[text", "image_url"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -65,12 +65,12 @@ namespace TencentCloud
                     /**
                      * 设置内容类型
 注意：
-需包含至少一个 Type 为"text"的参数及至少一个 Type 为"image_url"的参数。
+需包含至少一个 Type 为"text"的参数。
 参数值可选范围：[text", "image_url"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 内容类型
 注意：
-需包含至少一个 Type 为"text"的参数及至少一个 Type 为"image_url"的参数。
+需包含至少一个 Type 为"text"的参数。
 参数值可选范围：[text", "image_url"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -143,7 +143,7 @@ namespace TencentCloud
                     /**
                      * 内容类型
 注意：
-需包含至少一个 Type 为"text"的参数及至少一个 Type 为"image_url"的参数。
+需包含至少一个 Type 为"text"的参数。
 参数值可选范围：[text", "image_url"]
 注意：此字段可能返回 null，表示取不到有效值。
                      */

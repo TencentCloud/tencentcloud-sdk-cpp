@@ -99,6 +99,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateModifyAdminAuthorizationUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateModifyAdminAuthorizationUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationAuthFileRequest.h>
@@ -153,6 +155,8 @@
 #include <tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationUrlsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationUrlsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBillUsageRequest.h>
@@ -367,6 +371,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLegalSealQrCodeResponse> CreateLegalSealQrCodeOutcome;
                 typedef std::future<CreateLegalSealQrCodeOutcome> CreateLegalSealQrCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateLegalSealQrCodeRequest&, CreateLegalSealQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLegalSealQrCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateModifyAdminAuthorizationUrlResponse> CreateModifyAdminAuthorizationUrlOutcome;
+                typedef std::future<CreateModifyAdminAuthorizationUrlOutcome> CreateModifyAdminAuthorizationUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateModifyAdminAuthorizationUrlRequest&, CreateModifyAdminAuthorizationUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModifyAdminAuthorizationUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateMultiFlowSignQRCodeResponse> CreateMultiFlowSignQRCodeOutcome;
                 typedef std::future<CreateMultiFlowSignQRCodeOutcome> CreateMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateMultiFlowSignQRCodeRequest&, CreateMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiFlowSignQRCodeAsyncHandler;
@@ -448,6 +455,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSealPoliciesResponse> DeleteSealPoliciesOutcome;
                 typedef std::future<DeleteSealPoliciesOutcome> DeleteSealPoliciesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteSealPoliciesRequest&, DeleteSealPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSealPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBatchOrganizationRegistrationTasksResponse> DescribeBatchOrganizationRegistrationTasksOutcome;
+                typedef std::future<DescribeBatchOrganizationRegistrationTasksOutcome> DescribeBatchOrganizationRegistrationTasksOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeBatchOrganizationRegistrationTasksRequest&, DescribeBatchOrganizationRegistrationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOrganizationRegistrationTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBatchOrganizationRegistrationUrlsResponse> DescribeBatchOrganizationRegistrationUrlsOutcome;
                 typedef std::future<DescribeBatchOrganizationRegistrationUrlsOutcome> DescribeBatchOrganizationRegistrationUrlsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeBatchOrganizationRegistrationUrlsRequest&, DescribeBatchOrganizationRegistrationUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOrganizationRegistrationUrlsAsyncHandler;
@@ -1439,6 +1449,18 @@ namespace TencentCloud
                 CreateLegalSealQrCodeOutcomeCallable CreateLegalSealQrCodeCallable(const Model::CreateLegalSealQrCodeRequest& request);
 
                 /**
+                 *本接口（CreateModifyAdminAuthorizationUrl）用于重新上传超管授权书。
+
+注意:
+1. 重新上传超管授权书，必须是审核失败的情况下才能重新上传,可以通过回调[!授权书认证审核结果回调](https://qian.tencent.com/developers/company/callback_types_staffs#%E5%8D%81%E5%85%AD-%E6%8E%88%E6%9D%83%E4%B9%A6%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)得到
+                 * @param req CreateModifyAdminAuthorizationUrlRequest
+                 * @return CreateModifyAdminAuthorizationUrlOutcome
+                 */
+                CreateModifyAdminAuthorizationUrlOutcome CreateModifyAdminAuthorizationUrl(const Model::CreateModifyAdminAuthorizationUrlRequest &request);
+                void CreateModifyAdminAuthorizationUrlAsync(const Model::CreateModifyAdminAuthorizationUrlRequest& request, const CreateModifyAdminAuthorizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateModifyAdminAuthorizationUrlOutcomeCallable CreateModifyAdminAuthorizationUrlCallable(const Model::CreateModifyAdminAuthorizationUrlRequest& request);
+
+                /**
                  *此接口（CreateMultiFlowSignQRCode）用于创建一码多签签署码。
 
 **适用场景**:
@@ -1858,6 +1880,15 @@ namespace TencentCloud
                 DeleteSealPoliciesOutcome DeleteSealPolicies(const Model::DeleteSealPoliciesRequest &request);
                 void DeleteSealPoliciesAsync(const Model::DeleteSealPoliciesRequest& request, const DeleteSealPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSealPoliciesOutcomeCallable DeleteSealPoliciesCallable(const Model::DeleteSealPoliciesRequest& request);
+
+                /**
+                 *本接口（DescribeBatchOrganizationRegistrationTasks）用于查询企业批量认证任务状态。
+                 * @param req DescribeBatchOrganizationRegistrationTasksRequest
+                 * @return DescribeBatchOrganizationRegistrationTasksOutcome
+                 */
+                DescribeBatchOrganizationRegistrationTasksOutcome DescribeBatchOrganizationRegistrationTasks(const Model::DescribeBatchOrganizationRegistrationTasksRequest &request);
+                void DescribeBatchOrganizationRegistrationTasksAsync(const Model::DescribeBatchOrganizationRegistrationTasksRequest& request, const DescribeBatchOrganizationRegistrationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchOrganizationRegistrationTasksOutcomeCallable DescribeBatchOrganizationRegistrationTasksCallable(const Model::DescribeBatchOrganizationRegistrationTasksRequest& request);
 
                 /**
                  *此接口用于获取企业批量认证异步任务的状态及结果。

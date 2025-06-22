@@ -2792,6 +2792,49 @@ EssbasicClient::CreateLegalSealQrCodeOutcomeCallable EssbasicClient::CreateLegal
     return task->get_future();
 }
 
+EssbasicClient::CreateModifyAdminAuthorizationUrlOutcome EssbasicClient::CreateModifyAdminAuthorizationUrl(const CreateModifyAdminAuthorizationUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateModifyAdminAuthorizationUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateModifyAdminAuthorizationUrlResponse rsp = CreateModifyAdminAuthorizationUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateModifyAdminAuthorizationUrlOutcome(rsp);
+        else
+            return CreateModifyAdminAuthorizationUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateModifyAdminAuthorizationUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateModifyAdminAuthorizationUrlAsync(const CreateModifyAdminAuthorizationUrlRequest& request, const CreateModifyAdminAuthorizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateModifyAdminAuthorizationUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateModifyAdminAuthorizationUrlOutcomeCallable EssbasicClient::CreateModifyAdminAuthorizationUrlCallable(const CreateModifyAdminAuthorizationUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateModifyAdminAuthorizationUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateModifyAdminAuthorizationUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateOrganizationAuthFileOutcome EssbasicClient::CreateOrganizationAuthFile(const CreateOrganizationAuthFileRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOrganizationAuthFile");
@@ -3043,6 +3086,49 @@ EssbasicClient::DeleteOrganizationAuthorizationsOutcomeCallable EssbasicClient::
         [this, request]()
         {
             return this->DeleteOrganizationAuthorizations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::DescribeBatchOrganizationRegistrationTasksOutcome EssbasicClient::DescribeBatchOrganizationRegistrationTasks(const DescribeBatchOrganizationRegistrationTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchOrganizationRegistrationTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchOrganizationRegistrationTasksResponse rsp = DescribeBatchOrganizationRegistrationTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchOrganizationRegistrationTasksOutcome(rsp);
+        else
+            return DescribeBatchOrganizationRegistrationTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchOrganizationRegistrationTasksOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeBatchOrganizationRegistrationTasksAsync(const DescribeBatchOrganizationRegistrationTasksRequest& request, const DescribeBatchOrganizationRegistrationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchOrganizationRegistrationTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeBatchOrganizationRegistrationTasksOutcomeCallable EssbasicClient::DescribeBatchOrganizationRegistrationTasksCallable(const DescribeBatchOrganizationRegistrationTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchOrganizationRegistrationTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchOrganizationRegistrationTasks(request);
         }
     );
 

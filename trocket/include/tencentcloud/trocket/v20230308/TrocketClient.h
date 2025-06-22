@@ -115,6 +115,8 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeProductSKUsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeRoleListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeRoleListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeSmoothMigrationTaskListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeSmoothMigrationTaskListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeSourceClusterGroupListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeSourceClusterGroupListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicRequest.h>
@@ -309,6 +311,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRoleListResponse> DescribeRoleListOutcome;
                 typedef std::future<DescribeRoleListOutcome> DescribeRoleListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeRoleListRequest&, DescribeRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSmoothMigrationTaskListResponse> DescribeSmoothMigrationTaskListOutcome;
+                typedef std::future<DescribeSmoothMigrationTaskListOutcome> DescribeSmoothMigrationTaskListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeSmoothMigrationTaskListRequest&, DescribeSmoothMigrationTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmoothMigrationTaskListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSourceClusterGroupListResponse> DescribeSourceClusterGroupListOutcome;
                 typedef std::future<DescribeSourceClusterGroupListOutcome> DescribeSourceClusterGroupListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeSourceClusterGroupListRequest&, DescribeSourceClusterGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceClusterGroupListAsyncHandler;
@@ -821,6 +826,21 @@ Type，根据任务类型精确查找
                 DescribeRoleListOutcome DescribeRoleList(const Model::DescribeRoleListRequest &request);
                 void DescribeRoleListAsync(const Model::DescribeRoleListRequest& request, const DescribeRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRoleListOutcomeCallable DescribeRoleListCallable(const Model::DescribeRoleListRequest& request);
+
+                /**
+                 *用于查询平滑迁移任务列表
+
+查询参数Filters， 支持的字段如下：
+TaskStatus, 支持多选 
+ConnectionType，支持多选 
+InstanceId，精确搜索 
+TaskName，支持模糊搜索
+                 * @param req DescribeSmoothMigrationTaskListRequest
+                 * @return DescribeSmoothMigrationTaskListOutcome
+                 */
+                DescribeSmoothMigrationTaskListOutcome DescribeSmoothMigrationTaskList(const Model::DescribeSmoothMigrationTaskListRequest &request);
+                void DescribeSmoothMigrationTaskListAsync(const Model::DescribeSmoothMigrationTaskListRequest& request, const DescribeSmoothMigrationTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSmoothMigrationTaskListOutcomeCallable DescribeSmoothMigrationTaskListCallable(const Model::DescribeSmoothMigrationTaskListRequest& request);
 
                 /**
                  *平滑迁移过程获取源集群group列表接口

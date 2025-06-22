@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool ScaleUpThresholdHasBeenSet() const;
 
                     /**
-                     * 获取扩容后达到阈值，范围[1-90]
-                     * @return TargetThreshold 扩容后达到阈值，范围[1-90]
+                     * 获取扩容后达到阈值，范围[10-90]
+                     * @return TargetThreshold 扩容后达到阈值，范围[10-90]
                      * 
                      */
                     uint64_t GetTargetThreshold() const;
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_scaleUpThresholdHasBeenSet;
 
                     /**
-                     * 扩容后达到阈值，范围[1-90]
+                     * 扩容后达到阈值，范围[10-90]
                      */
                     uint64_t m_targetThreshold;
                     bool m_targetThresholdHasBeenSet;

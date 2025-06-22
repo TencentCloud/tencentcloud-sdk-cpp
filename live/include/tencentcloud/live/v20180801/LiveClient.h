@@ -201,6 +201,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveCertResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveCertsRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveCertsResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveCloudEffectListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveCloudEffectListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDelayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDelayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainRequest.h>
@@ -225,6 +227,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLivePadProcessorListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePadRulesRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePadRulesResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLivePadStreamListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLivePadStreamListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePadTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePadTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePadTemplatesRequest.h>
@@ -391,6 +395,10 @@
 #include <tencentcloud/live/v20180801/model/ResumeDelayLiveStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/ResumeLiveStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/ResumeLiveStreamResponse.h>
+#include <tencentcloud/live/v20180801/model/SendLiveCloudEffectRequest.h>
+#include <tencentcloud/live/v20180801/model/SendLiveCloudEffectResponse.h>
+#include <tencentcloud/live/v20180801/model/StartLivePadStreamRequest.h>
+#include <tencentcloud/live/v20180801/model/StartLivePadStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/StartLiveStreamMonitorRequest.h>
 #include <tencentcloud/live/v20180801/model/StartLiveStreamMonitorResponse.h>
 #include <tencentcloud/live/v20180801/model/StopCasterPgmRequest.h>
@@ -399,6 +407,8 @@
 #include <tencentcloud/live/v20180801/model/StopCasterPvwResponse.h>
 #include <tencentcloud/live/v20180801/model/StopLivePadProcessorRequest.h>
 #include <tencentcloud/live/v20180801/model/StopLivePadProcessorResponse.h>
+#include <tencentcloud/live/v20180801/model/StopLivePadStreamRequest.h>
+#include <tencentcloud/live/v20180801/model/StopLivePadStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/StopLiveRecordRequest.h>
 #include <tencentcloud/live/v20180801/model/StopLiveRecordResponse.h>
 #include <tencentcloud/live/v20180801/model/StopLiveStreamMonitorRequest.h>
@@ -694,6 +704,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveCertsResponse> DescribeLiveCertsOutcome;
                 typedef std::future<DescribeLiveCertsOutcome> DescribeLiveCertsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveCertsRequest&, DescribeLiveCertsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCertsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveCloudEffectListResponse> DescribeLiveCloudEffectListOutcome;
+                typedef std::future<DescribeLiveCloudEffectListOutcome> DescribeLiveCloudEffectListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveCloudEffectListRequest&, DescribeLiveCloudEffectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCloudEffectListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLiveDelayInfoListResponse> DescribeLiveDelayInfoListOutcome;
                 typedef std::future<DescribeLiveDelayInfoListOutcome> DescribeLiveDelayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveDelayInfoListRequest&, DescribeLiveDelayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDelayInfoListAsyncHandler;
@@ -730,6 +743,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLivePadRulesResponse> DescribeLivePadRulesOutcome;
                 typedef std::future<DescribeLivePadRulesOutcome> DescribeLivePadRulesOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLivePadRulesRequest&, DescribeLivePadRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePadRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLivePadStreamListResponse> DescribeLivePadStreamListOutcome;
+                typedef std::future<DescribeLivePadStreamListOutcome> DescribeLivePadStreamListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLivePadStreamListRequest&, DescribeLivePadStreamListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePadStreamListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLivePadTemplateResponse> DescribeLivePadTemplateOutcome;
                 typedef std::future<DescribeLivePadTemplateOutcome> DescribeLivePadTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLivePadTemplateRequest&, DescribeLivePadTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePadTemplateAsyncHandler;
@@ -979,6 +995,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResumeLiveStreamResponse> ResumeLiveStreamOutcome;
                 typedef std::future<ResumeLiveStreamOutcome> ResumeLiveStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ResumeLiveStreamRequest&, ResumeLiveStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeLiveStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendLiveCloudEffectResponse> SendLiveCloudEffectOutcome;
+                typedef std::future<SendLiveCloudEffectOutcome> SendLiveCloudEffectOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::SendLiveCloudEffectRequest&, SendLiveCloudEffectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendLiveCloudEffectAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartLivePadStreamResponse> StartLivePadStreamOutcome;
+                typedef std::future<StartLivePadStreamOutcome> StartLivePadStreamOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::StartLivePadStreamRequest&, StartLivePadStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartLivePadStreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartLiveStreamMonitorResponse> StartLiveStreamMonitorOutcome;
                 typedef std::future<StartLiveStreamMonitorOutcome> StartLiveStreamMonitorOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StartLiveStreamMonitorRequest&, StartLiveStreamMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartLiveStreamMonitorAsyncHandler;
@@ -991,6 +1013,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopLivePadProcessorResponse> StopLivePadProcessorOutcome;
                 typedef std::future<StopLivePadProcessorOutcome> StopLivePadProcessorOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopLivePadProcessorRequest&, StopLivePadProcessorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopLivePadProcessorAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopLivePadStreamResponse> StopLivePadStreamOutcome;
+                typedef std::future<StopLivePadStreamOutcome> StopLivePadStreamOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::StopLivePadStreamRequest&, StopLivePadStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopLivePadStreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopLiveRecordResponse> StopLiveRecordOutcome;
                 typedef std::future<StopLiveRecordOutcome> StopLiveRecordOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopLiveRecordRequest&, StopLiveRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopLiveRecordAsyncHandler;
@@ -1890,6 +1915,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveCertsOutcomeCallable DescribeLiveCertsCallable(const Model::DescribeLiveCertsRequest& request);
 
                 /**
+                 *使用该接口查询云端特效列表，特效列表中包含一部分官方精品特效，同时包含用户自定义生成的特效。
+                 * @param req DescribeLiveCloudEffectListRequest
+                 * @return DescribeLiveCloudEffectListOutcome
+                 */
+                DescribeLiveCloudEffectListOutcome DescribeLiveCloudEffectList(const Model::DescribeLiveCloudEffectListRequest &request);
+                void DescribeLiveCloudEffectListAsync(const Model::DescribeLiveCloudEffectListRequest& request, const DescribeLiveCloudEffectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveCloudEffectListOutcomeCallable DescribeLiveCloudEffectListCallable(const Model::DescribeLiveCloudEffectListRequest& request);
+
+                /**
                  *获取直播延播列表。
                  * @param req DescribeLiveDelayInfoListRequest
                  * @return DescribeLiveDelayInfoListOutcome
@@ -2000,6 +2034,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLivePadRulesOutcome DescribeLivePadRules(const Model::DescribeLivePadRulesRequest &request);
                 void DescribeLivePadRulesAsync(const Model::DescribeLivePadRulesRequest& request, const DescribeLivePadRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLivePadRulesOutcomeCallable DescribeLivePadRulesCallable(const Model::DescribeLivePadRulesRequest& request);
+
+                /**
+                 *使用该接口查询垫片流列表。垫片流状态更新存在一定延迟，可间隔30秒以上查询，避免频繁查询该接口。
+                 * @param req DescribeLivePadStreamListRequest
+                 * @return DescribeLivePadStreamListOutcome
+                 */
+                DescribeLivePadStreamListOutcome DescribeLivePadStreamList(const Model::DescribeLivePadStreamListRequest &request);
+                void DescribeLivePadStreamListAsync(const Model::DescribeLivePadStreamListRequest& request, const DescribeLivePadStreamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLivePadStreamListOutcomeCallable DescribeLivePadStreamListCallable(const Model::DescribeLivePadStreamListRequest& request);
 
                 /**
                  *获取单个直播垫片模板
@@ -2805,6 +2848,24 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ResumeLiveStreamOutcomeCallable ResumeLiveStreamCallable(const Model::ResumeLiveStreamRequest& request);
 
                 /**
+                 *使用该接口发送云端特效到线上正活跃的直播流，观众可在播放端看到特效从直播流画面中展示。
+                 * @param req SendLiveCloudEffectRequest
+                 * @return SendLiveCloudEffectOutcome
+                 */
+                SendLiveCloudEffectOutcome SendLiveCloudEffect(const Model::SendLiveCloudEffectRequest &request);
+                void SendLiveCloudEffectAsync(const Model::SendLiveCloudEffectRequest& request, const SendLiveCloudEffectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendLiveCloudEffectOutcomeCallable SendLiveCloudEffectCallable(const Model::SendLiveCloudEffectRequest& request);
+
+                /**
+                 *使用该接口将直播流开始切入垫片。
+                 * @param req StartLivePadStreamRequest
+                 * @return StartLivePadStreamOutcome
+                 */
+                StartLivePadStreamOutcome StartLivePadStream(const Model::StartLivePadStreamRequest &request);
+                void StartLivePadStreamAsync(const Model::StartLivePadStreamRequest& request, const StartLivePadStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartLivePadStreamOutcomeCallable StartLivePadStreamCallable(const Model::StartLivePadStreamRequest& request);
+
+                /**
                  *该接口用来启动直播流监播任务。
                  * @param req StartLiveStreamMonitorRequest
                  * @return StartLiveStreamMonitorOutcome
@@ -2840,6 +2901,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 StopLivePadProcessorOutcome StopLivePadProcessor(const Model::StopLivePadProcessorRequest &request);
                 void StopLivePadProcessorAsync(const Model::StopLivePadProcessorRequest& request, const StopLivePadProcessorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopLivePadProcessorOutcomeCallable StopLivePadProcessorCallable(const Model::StopLivePadProcessorRequest& request);
+
+                /**
+                 *使用该接口将直播流停止切入垫片。
+                 * @param req StopLivePadStreamRequest
+                 * @return StopLivePadStreamOutcome
+                 */
+                StopLivePadStreamOutcome StopLivePadStream(const Model::StopLivePadStreamRequest &request);
+                void StopLivePadStreamAsync(const Model::StopLivePadStreamRequest& request, const StopLivePadStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopLivePadStreamOutcomeCallable StopLivePadStreamCallable(const Model::StopLivePadStreamRequest& request);
 
                 /**
                  *说明：录制后的文件存放于点播平台。用户如需使用录制功能，需首先自行开通点播账号并确保账号可用。录制文件存放后，相关费用（含存储以及下行播放流量）按照点播平台计费方式收取，请参考对应文档。

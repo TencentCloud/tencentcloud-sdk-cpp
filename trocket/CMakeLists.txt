@@ -22,9 +22,11 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DetailedRolePerm.h
   include/tencentcloud/trocket/v20230308/model/DescribeProductSKUsRequest.h
   include/tencentcloud/trocket/v20230308/model/ResetConsumerGroupOffsetResponse.h
+  include/tencentcloud/trocket/v20230308/model/DescribeSmoothMigrationTaskListRequest.h
   include/tencentcloud/trocket/v20230308/model/ProductSKU.h
   include/tencentcloud/trocket/v20230308/model/DescribeRoleListResponse.h
   include/tencentcloud/trocket/v20230308/model/DeleteMQTTTopicRequest.h
+  include/tencentcloud/trocket/v20230308/model/SmoothMigrationTaskItem.h
   include/tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/SourceClusterTopicConfig.h
   include/tencentcloud/trocket/v20230308/model/ConsumeGroupItem.h
@@ -40,7 +42,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/TopicStageChangeResult.h
   include/tencentcloud/trocket/v20230308/model/DeleteTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/MigratingTopic.h
-  include/tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeSmoothMigrationTaskListResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMigrationTaskListResponse.h
   include/tencentcloud/trocket/v20230308/model/PublicAccessRule.h
   include/tencentcloud/trocket/v20230308/model/VpcInfo.h
@@ -164,6 +166,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceEndpointRequest.h
   include/tencentcloud/trocket/v20230308/model/ChangeMigratingTopicToNextStageRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTUserListRequest.h
+  include/tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceRequest.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateMQTTInstanceRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h
@@ -198,9 +201,11 @@ set(trocket_src
   src/v20230308/model/DetailedRolePerm.cpp
   src/v20230308/model/DescribeProductSKUsRequest.cpp
   src/v20230308/model/ResetConsumerGroupOffsetResponse.cpp
+  src/v20230308/model/DescribeSmoothMigrationTaskListRequest.cpp
   src/v20230308/model/ProductSKU.cpp
   src/v20230308/model/DescribeRoleListResponse.cpp
   src/v20230308/model/DeleteMQTTTopicRequest.cpp
+  src/v20230308/model/SmoothMigrationTaskItem.cpp
   src/v20230308/model/CreateInstanceResponse.cpp
   src/v20230308/model/SourceClusterTopicConfig.cpp
   src/v20230308/model/ConsumeGroupItem.cpp
@@ -216,7 +221,7 @@ set(trocket_src
   src/v20230308/model/TopicStageChangeResult.cpp
   src/v20230308/model/DeleteTopicRequest.cpp
   src/v20230308/model/MigratingTopic.cpp
-  src/v20230308/model/ModifyMQTTInstanceRequest.cpp
+  src/v20230308/model/DescribeSmoothMigrationTaskListResponse.cpp
   src/v20230308/model/DescribeMigrationTaskListResponse.cpp
   src/v20230308/model/PublicAccessRule.cpp
   src/v20230308/model/VpcInfo.cpp
@@ -340,6 +345,7 @@ set(trocket_src
   src/v20230308/model/ModifyInstanceEndpointRequest.cpp
   src/v20230308/model/ChangeMigratingTopicToNextStageRequest.cpp
   src/v20230308/model/DescribeMQTTUserListRequest.cpp
+  src/v20230308/model/ModifyMQTTInstanceRequest.cpp
   src/v20230308/model/ModifyMQTTInstanceResponse.cpp
   src/v20230308/model/CreateMQTTInstanceRequest.cpp
   src/v20230308/model/DescribeTopicListResponse.cpp

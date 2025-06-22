@@ -2018,6 +2018,49 @@ TrocketClient::DescribeRoleListOutcomeCallable TrocketClient::DescribeRoleListCa
     return task->get_future();
 }
 
+TrocketClient::DescribeSmoothMigrationTaskListOutcome TrocketClient::DescribeSmoothMigrationTaskList(const DescribeSmoothMigrationTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSmoothMigrationTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSmoothMigrationTaskListResponse rsp = DescribeSmoothMigrationTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSmoothMigrationTaskListOutcome(rsp);
+        else
+            return DescribeSmoothMigrationTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSmoothMigrationTaskListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeSmoothMigrationTaskListAsync(const DescribeSmoothMigrationTaskListRequest& request, const DescribeSmoothMigrationTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSmoothMigrationTaskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeSmoothMigrationTaskListOutcomeCallable TrocketClient::DescribeSmoothMigrationTaskListCallable(const DescribeSmoothMigrationTaskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSmoothMigrationTaskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSmoothMigrationTaskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::DescribeSourceClusterGroupListOutcome TrocketClient::DescribeSourceClusterGroupList(const DescribeSourceClusterGroupListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSourceClusterGroupList");

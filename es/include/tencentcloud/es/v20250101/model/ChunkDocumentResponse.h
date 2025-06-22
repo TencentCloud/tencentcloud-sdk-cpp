@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/es/v20250101/model/Chunk.h>
+#include <tencentcloud/es/v20250101/model/Usage.h>
 
 
 namespace TencentCloud
@@ -58,6 +59,20 @@ namespace TencentCloud
                      */
                     bool ChunksHasBeenSet() const;
 
+                    /**
+                     * 获取token消耗量
+                     * @return Usage token消耗量
+                     * 
+                     */
+                    Usage GetUsage() const;
+
+                    /**
+                     * 判断参数 Usage 是否已赋值
+                     * @return Usage 是否已赋值
+                     * 
+                     */
+                    bool UsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +80,12 @@ namespace TencentCloud
                      */
                     std::vector<Chunk> m_chunks;
                     bool m_chunksHasBeenSet;
+
+                    /**
+                     * token消耗量
+                     */
+                    Usage m_usage;
+                    bool m_usageHasBeenSet;
 
                 };
             }

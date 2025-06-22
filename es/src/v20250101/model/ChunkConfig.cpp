@@ -22,7 +22,8 @@ using namespace std;
 
 ChunkConfig::ChunkConfig() :
     m_maxChunkSizeHasBeenSet(false),
-    m_delimitersHasBeenSet(false)
+    m_delimitersHasBeenSet(false),
+    m_chunkOverlapHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome ChunkConfig::Deserialize(const rapidjson::Value &value)
         m_delimitersHasBeenSet = true;
     }
 
+    if (value.HasMember("ChunkOverlap") && !value["ChunkOverlap"].IsNull())
+    {
+        if (!value["ChunkOverlap"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChunkConfig.ChunkOverlap` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_chunkOverlap = value["ChunkOverlap"].GetUint64();
+        m_chunkOverlapHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void ChunkConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_chunkOverlapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChunkOverlap";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_chunkOverlap, allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void ChunkConfig::SetDelimiters(const vector<string>& _delimiters)
 bool ChunkConfig::DelimitersHasBeenSet() const
 {
     return m_delimitersHasBeenSet;
+}
+
+uint64_t ChunkConfig::GetChunkOverlap() const
+{
+    return m_chunkOverlap;
+}
+
+void ChunkConfig::SetChunkOverlap(const uint64_t& _chunkOverlap)
+{
+    m_chunkOverlap = _chunkOverlap;
+    m_chunkOverlapHasBeenSet = true;
+}
+
+bool ChunkConfig::ChunkOverlapHasBeenSet() const
+{
+    return m_chunkOverlapHasBeenSet;
 }
 

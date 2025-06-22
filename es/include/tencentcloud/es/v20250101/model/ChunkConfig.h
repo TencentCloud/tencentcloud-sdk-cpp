@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool DelimitersHasBeenSet() const;
 
+                    /**
+                     * 获取相邻切片重合字符数，需要小于分片长度
+                     * @return ChunkOverlap 相邻切片重合字符数，需要小于分片长度
+                     * 
+                     */
+                    uint64_t GetChunkOverlap() const;
+
+                    /**
+                     * 设置相邻切片重合字符数，需要小于分片长度
+                     * @param _chunkOverlap 相邻切片重合字符数，需要小于分片长度
+                     * 
+                     */
+                    void SetChunkOverlap(const uint64_t& _chunkOverlap);
+
+                    /**
+                     * 判断参数 ChunkOverlap 是否已赋值
+                     * @return ChunkOverlap 是否已赋值
+                     * 
+                     */
+                    bool ChunkOverlapHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_delimiters;
                     bool m_delimitersHasBeenSet;
+
+                    /**
+                     * 相邻切片重合字符数，需要小于分片长度
+                     */
+                    uint64_t m_chunkOverlap;
+                    bool m_chunkOverlapHasBeenSet;
 
                 };
             }
