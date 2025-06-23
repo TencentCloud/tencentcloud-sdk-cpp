@@ -56,7 +56,6 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/CreateReconstructDocumentFlowConfig.h
   include/tencentcloud/lkeap/v20240522/model/RunRerankRequest.h
   include/tencentcloud/lkeap/v20240522/model/ChatUsage.h
-  include/tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeRealtimeResponse.h
   include/tencentcloud/lkeap/v20240522/model/GetSplitDocumentResultRequest.h
   include/tencentcloud/lkeap/v20240522/model/Delta.h
   include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentSSERequest.h
@@ -73,7 +72,6 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/GetSplitDocumentResultResponse.h
   include/tencentcloud/lkeap/v20240522/model/ModifyQAResponse.h
   include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentFailedPage.h
-  include/tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeRealtimeRequest.h
   include/tencentcloud/lkeap/v20240522/model/SplitDocumentFailedPage.h
   include/tencentcloud/lkeap/v20240522/model/ModifyAttributeLabelResponse.h
   include/tencentcloud/lkeap/v20240522/model/QueryRewriteResponse.h
@@ -137,7 +135,6 @@ set(lkeap_src
   src/v20240522/model/CreateReconstructDocumentFlowConfig.cpp
   src/v20240522/model/RunRerankRequest.cpp
   src/v20240522/model/ChatUsage.cpp
-  src/v20240522/model/RetrieveKnowledgeRealtimeResponse.cpp
   src/v20240522/model/GetSplitDocumentResultRequest.cpp
   src/v20240522/model/Delta.cpp
   src/v20240522/model/ReconstructDocumentSSERequest.cpp
@@ -154,7 +151,6 @@ set(lkeap_src
   src/v20240522/model/GetSplitDocumentResultResponse.cpp
   src/v20240522/model/ModifyQAResponse.cpp
   src/v20240522/model/ReconstructDocumentFailedPage.cpp
-  src/v20240522/model/RetrieveKnowledgeRealtimeRequest.cpp
   src/v20240522/model/SplitDocumentFailedPage.cpp
   src/v20240522/model/ModifyAttributeLabelResponse.cpp
   src/v20240522/model/QueryRewriteResponse.cpp

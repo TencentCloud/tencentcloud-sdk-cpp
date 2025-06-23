@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool BindingInfoListHasBeenSet() const;
 
                     /**
-                     * 获取数量
-                     * @return TotalCount 数量
+                     * 获取路由关系数量
+                     * @return TotalCount 路由关系数量
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_bindingInfoListHasBeenSet;
 
                     /**
-                     * 数量
+                     * 路由关系数量
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

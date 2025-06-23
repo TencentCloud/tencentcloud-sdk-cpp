@@ -40,7 +40,8 @@ CreateCfsFileSystemRequest::CreateCfsFileSystemRequest() :
     m_snapshotIdHasBeenSet(false),
     m_autoSnapshotPolicyIdHasBeenSet(false),
     m_enableAutoScaleUpHasBeenSet(false),
-    m_cfsVersionHasBeenSet(false)
+    m_cfsVersionHasBeenSet(false),
+    m_metaTypeHasBeenSet(false)
 {
 }
 
@@ -200,6 +201,14 @@ string CreateCfsFileSystemRequest::ToJsonString() const
         string key = "CfsVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cfsVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_metaType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -496,6 +505,22 @@ void CreateCfsFileSystemRequest::SetCfsVersion(const string& _cfsVersion)
 bool CreateCfsFileSystemRequest::CfsVersionHasBeenSet() const
 {
     return m_cfsVersionHasBeenSet;
+}
+
+string CreateCfsFileSystemRequest::GetMetaType() const
+{
+    return m_metaType;
+}
+
+void CreateCfsFileSystemRequest::SetMetaType(const string& _metaType)
+{
+    m_metaType = _metaType;
+    m_metaTypeHasBeenSet = true;
+}
+
+bool CreateCfsFileSystemRequest::MetaTypeHasBeenSet() const
+{
+    return m_metaTypeHasBeenSet;
 }
 
 

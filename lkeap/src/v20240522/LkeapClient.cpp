@@ -1072,49 +1072,6 @@ LkeapClient::RetrieveKnowledgeOutcomeCallable LkeapClient::RetrieveKnowledgeCall
     return task->get_future();
 }
 
-LkeapClient::RetrieveKnowledgeRealtimeOutcome LkeapClient::RetrieveKnowledgeRealtime(const RetrieveKnowledgeRealtimeRequest &request)
-{
-    auto outcome = MakeRequest(request, "RetrieveKnowledgeRealtime");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RetrieveKnowledgeRealtimeResponse rsp = RetrieveKnowledgeRealtimeResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RetrieveKnowledgeRealtimeOutcome(rsp);
-        else
-            return RetrieveKnowledgeRealtimeOutcome(o.GetError());
-    }
-    else
-    {
-        return RetrieveKnowledgeRealtimeOutcome(outcome.GetError());
-    }
-}
-
-void LkeapClient::RetrieveKnowledgeRealtimeAsync(const RetrieveKnowledgeRealtimeRequest& request, const RetrieveKnowledgeRealtimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RetrieveKnowledgeRealtime(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeapClient::RetrieveKnowledgeRealtimeOutcomeCallable LkeapClient::RetrieveKnowledgeRealtimeCallable(const RetrieveKnowledgeRealtimeRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<RetrieveKnowledgeRealtimeOutcome()>>(
-        [this, request]()
-        {
-            return this->RetrieveKnowledgeRealtime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeapClient::RunRerankOutcome LkeapClient::RunRerank(const RunRerankRequest &request)
 {
     auto outcome = MakeRequest(request, "RunRerank");

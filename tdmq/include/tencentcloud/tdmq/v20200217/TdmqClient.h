@@ -1467,7 +1467,7 @@ namespace TencentCloud
                 DescribeRabbitMQUserOutcomeCallable DescribeRabbitMQUserCallable(const Model::DescribeRabbitMQUserRequest& request);
 
                 /**
-                 *获取单个RabbitMQ专享实例信息
+                 *获取单个 RabbitMQ 托管版实例信息
                  * @param req DescribeRabbitMQVipInstanceRequest
                  * @return DescribeRabbitMQVipInstanceOutcome
                  */
@@ -1476,7 +1476,7 @@ namespace TencentCloud
                 DescribeRabbitMQVipInstanceOutcomeCallable DescribeRabbitMQVipInstanceCallable(const Model::DescribeRabbitMQVipInstanceRequest& request);
 
                 /**
-                 *查询用户已购的RabbitMQ专享实例列表
+                 *查询用户已购的 RabbitMQ 托管版实例列表
                  * @param req DescribeRabbitMQVipInstancesRequest
                  * @return DescribeRabbitMQVipInstancesOutcome
                  */

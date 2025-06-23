@@ -42,7 +42,8 @@ FusionInstanceItem::FusionInstanceItem() :
     m_renewFlagHasBeenSet(false),
     m_instanceItemExtraInfoHasBeenSet(false),
     m_destroyTimeHasBeenSet(false),
-    m_zoneIdsHasBeenSet(false)
+    m_zoneIdsHasBeenSet(false),
+    m_enableDeletionProtectionHasBeenSet(false)
 {
 }
 
@@ -291,6 +292,16 @@ CoreInternalOutcome FusionInstanceItem::Deserialize(const rapidjson::Value &valu
         m_zoneIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableDeletionProtection") && !value["EnableDeletionProtection"].IsNull())
+    {
+        if (!value["EnableDeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FusionInstanceItem.EnableDeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDeletionProtection = value["EnableDeletionProtection"].GetBool();
+        m_enableDeletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -485,6 +496,14 @@ void FusionInstanceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_enableDeletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDeletionProtection, allocator);
     }
 
 }
@@ -840,5 +859,21 @@ void FusionInstanceItem::SetZoneIds(const vector<int64_t>& _zoneIds)
 bool FusionInstanceItem::ZoneIdsHasBeenSet() const
 {
     return m_zoneIdsHasBeenSet;
+}
+
+bool FusionInstanceItem::GetEnableDeletionProtection() const
+{
+    return m_enableDeletionProtection;
+}
+
+void FusionInstanceItem::SetEnableDeletionProtection(const bool& _enableDeletionProtection)
+{
+    m_enableDeletionProtection = _enableDeletionProtection;
+    m_enableDeletionProtectionHasBeenSet = true;
+}
+
+bool FusionInstanceItem::EnableDeletionProtectionHasBeenSet() const
+{
+    return m_enableDeletionProtectionHasBeenSet;
 }
 

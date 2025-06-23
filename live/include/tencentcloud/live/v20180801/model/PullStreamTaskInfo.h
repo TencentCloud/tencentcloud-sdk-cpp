@@ -755,11 +755,9 @@ pause：暂停中。
                      * 获取备源类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupSourceType 备源类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupSourceType() const;
@@ -768,11 +766,9 @@ PullVodPushLive -点播。
                      * 设置备源类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupSourceType 备源类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupSourceType(const std::string& _backupSourceType);
@@ -786,18 +782,14 @@ PullVodPushLive -点播。
 
                     /**
                      * 获取备源URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupSourceUrl 备源URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupSourceUrl() const;
 
                     /**
                      * 设置备源URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupSourceUrl 备源URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupSourceUrl(const std::string& _backupSourceUrl);
@@ -811,18 +803,14 @@ PullVodPushLive -点播。
 
                     /**
                      * 获取水印信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WatermarkList 水印信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PullPushWatermarkInfo> GetWatermarkList() const;
 
                     /**
                      * 设置水印信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _watermarkList 水印信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWatermarkList(const std::vector<PullPushWatermarkInfo>& _watermarkList);
@@ -838,11 +826,9 @@ PullVodPushLive -点播。
                      * 获取点播源是否启用本地推流模式，默认0，不启用。
 0 - 不启用。
 1 - 启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VodLocalMode 点播源是否启用本地推流模式，默认0，不启用。
 0 - 不启用。
 1 - 启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVodLocalMode() const;
@@ -851,11 +837,9 @@ PullVodPushLive -点播。
                      * 设置点播源是否启用本地推流模式，默认0，不启用。
 0 - 不启用。
 1 - 启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vodLocalMode 点播源是否启用本地推流模式，默认0，不启用。
 0 - 不启用。
 1 - 启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVodLocalMode(const int64_t& _vodLocalMode);
@@ -869,18 +853,14 @@ PullVodPushLive -点播。
 
                     /**
                      * 获取录制模板 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordTemplateId 录制模板 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordTemplateId() const;
 
                     /**
                      * 设置录制模板 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordTemplateId 录制模板 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordTemplateId(const std::string& _recordTemplateId);
@@ -894,18 +874,14 @@ PullVodPushLive -点播。
 
                     /**
                      * 获取新增的推流地址。用于单任务推两路场景。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupToUrl 新增的推流地址。用于单任务推两路场景。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupToUrl() const;
 
                     /**
                      * 设置新增的推流地址。用于单任务推两路场景。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupToUrl 新增的推流地址。用于单任务推两路场景。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupToUrl(const std::string& _backupToUrl);
@@ -919,18 +895,14 @@ PullVodPushLive -点播。
 
                     /**
                      * 获取直播转码模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeTemplateName 直播转码模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTranscodeTemplateName() const;
 
                     /**
                      * 设置直播转码模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transcodeTemplateName 直播转码模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTranscodeTemplateName(const std::string& _transcodeTemplateName);
@@ -1141,21 +1113,18 @@ pause：暂停中。
                      * 备源类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupSourceType;
                     bool m_backupSourceTypeHasBeenSet;
 
                     /**
                      * 备源URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupSourceUrl;
                     bool m_backupSourceUrlHasBeenSet;
 
                     /**
                      * 水印信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PullPushWatermarkInfo> m_watermarkList;
                     bool m_watermarkListHasBeenSet;
@@ -1164,28 +1133,24 @@ PullVodPushLive -点播。
                      * 点播源是否启用本地推流模式，默认0，不启用。
 0 - 不启用。
 1 - 启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vodLocalMode;
                     bool m_vodLocalModeHasBeenSet;
 
                     /**
                      * 录制模板 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordTemplateId;
                     bool m_recordTemplateIdHasBeenSet;
 
                     /**
                      * 新增的推流地址。用于单任务推两路场景。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupToUrl;
                     bool m_backupToUrlHasBeenSet;
 
                     /**
                      * 直播转码模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transcodeTemplateName;
                     bool m_transcodeTemplateNameHasBeenSet;

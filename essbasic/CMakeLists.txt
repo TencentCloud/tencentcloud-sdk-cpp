@@ -136,6 +136,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/FillApproverInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreatePersonAuthCertificateImageResponse.h
   include/tencentcloud/essbasic/v20210526/model/IntentionActionResultDetail.h
+  include/tencentcloud/essbasic/v20210526/model/ModifyPartnerAutoSignAuthUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateEmployeeQualificationSealQrCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelArchiveDynamicApproverData.h
   include/tencentcloud/essbasic/v20210526/model/DescribeBatchOrganizationRegistrationTasksRequest.h
@@ -289,6 +290,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ModifyPartnerAutoSignAuthUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/IntentionQuestion.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowBlockchainEvidenceUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUserFlowTypeRequest.h
@@ -548,6 +550,7 @@ set(essbasic_src
   src/v20210526/model/FillApproverInfo.cpp
   src/v20210526/model/CreatePersonAuthCertificateImageResponse.cpp
   src/v20210526/model/IntentionActionResultDetail.cpp
+  src/v20210526/model/ModifyPartnerAutoSignAuthUrlRequest.cpp
   src/v20210526/model/CreateEmployeeQualificationSealQrCodeRequest.cpp
   src/v20210526/model/ChannelArchiveDynamicApproverData.cpp
   src/v20210526/model/DescribeBatchOrganizationRegistrationTasksRequest.cpp
@@ -701,6 +704,7 @@ set(essbasic_src
   src/v20210526/model/ChannelDeleteRoleResponse.cpp
   src/v20210526/model/ChannelCreateReleaseFlowResponse.cpp
   src/v20210526/model/DescribeChannelFlowEvidenceReportResponse.cpp
+  src/v20210526/model/ModifyPartnerAutoSignAuthUrlResponse.cpp
   src/v20210526/model/IntentionQuestion.cpp
   src/v20210526/model/CreateFlowBlockchainEvidenceUrlRequest.cpp
   src/v20210526/model/DescribeUserFlowTypeRequest.cpp

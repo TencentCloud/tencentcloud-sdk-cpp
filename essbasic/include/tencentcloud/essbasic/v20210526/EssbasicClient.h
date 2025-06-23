@@ -197,6 +197,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ModifyExtendedServiceResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ModifyFlowDeadlineRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ModifyFlowDeadlineResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ModifyPartnerAutoSignAuthUrlRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ModifyPartnerAutoSignAuthUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/OperateChannelTemplateRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/OperateChannelTemplateResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/OperateTemplateRequest.h>
@@ -484,6 +486,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyFlowDeadlineResponse> ModifyFlowDeadlineOutcome;
                 typedef std::future<ModifyFlowDeadlineOutcome> ModifyFlowDeadlineOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ModifyFlowDeadlineRequest&, ModifyFlowDeadlineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFlowDeadlineAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPartnerAutoSignAuthUrlResponse> ModifyPartnerAutoSignAuthUrlOutcome;
+                typedef std::future<ModifyPartnerAutoSignAuthUrlOutcome> ModifyPartnerAutoSignAuthUrlOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ModifyPartnerAutoSignAuthUrlRequest&, ModifyPartnerAutoSignAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPartnerAutoSignAuthUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::OperateChannelTemplateResponse> OperateChannelTemplateOutcome;
                 typedef std::future<OperateChannelTemplateOutcome> OperateChannelTemplateOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::OperateChannelTemplateRequest&, OperateChannelTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateChannelTemplateAsyncHandler;
@@ -2241,6 +2246,24 @@ Agent参数中的OpenId 必须为审批者的openId，且链接必须由审批�
                 ModifyFlowDeadlineOutcome ModifyFlowDeadline(const Model::ModifyFlowDeadlineRequest &request);
                 void ModifyFlowDeadlineAsync(const Model::ModifyFlowDeadlineRequest& request, const ModifyFlowDeadlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyFlowDeadlineOutcomeCallable ModifyFlowDeadlineCallable(const Model::ModifyFlowDeadlineRequest& request);
+
+                /**
+                 *创建一个用于更新他方自动签授权的链接（可选择他方授权或我方授权）。通过这个链接，合作方企业可以直接进入小程序，进行自动签更新授权（印章）操作。
+
+如果授权企业尚未开通企业自动签功能，该链接还将引导他们首先开通本企业的自动签服务
+
+
+注: 
+1. <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Agent.ProxyOperator.OpenId 需要传递超管或者法人的OpenId)
+2. 2. 只能更新授权的印章，被授权的企业无法更新
+3. 授权企业和被授权企业必须都是已认证企业
+4. <font color='red'>需要授权企业或被授权企业的超管或者法人打开链接</font>走开通逻辑。
+                 * @param req ModifyPartnerAutoSignAuthUrlRequest
+                 * @return ModifyPartnerAutoSignAuthUrlOutcome
+                 */
+                ModifyPartnerAutoSignAuthUrlOutcome ModifyPartnerAutoSignAuthUrl(const Model::ModifyPartnerAutoSignAuthUrlRequest &request);
+                void ModifyPartnerAutoSignAuthUrlAsync(const Model::ModifyPartnerAutoSignAuthUrlRequest& request, const ModifyPartnerAutoSignAuthUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPartnerAutoSignAuthUrlOutcomeCallable ModifyPartnerAutoSignAuthUrlCallable(const Model::ModifyPartnerAutoSignAuthUrlRequest& request);
 
                 /**
                  *此接口（OperateChannelTemplate）用于针对第三方应用平台模板库中的模板对子客企业发布授权的查询和设置。

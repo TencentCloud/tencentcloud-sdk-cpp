@@ -23,8 +23,8 @@ using namespace TencentCloud::Trocket::V20230308::Model;
 using namespace std;
 
 DescribeSmoothMigrationTaskListRequest::DescribeSmoothMigrationTaskListRequest() :
-    m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
 }
@@ -36,20 +36,20 @@ string DescribeSmoothMigrationTaskListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
     if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -75,22 +75,6 @@ string DescribeSmoothMigrationTaskListRequest::ToJsonString() const
 }
 
 
-int64_t DescribeSmoothMigrationTaskListRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeSmoothMigrationTaskListRequest::SetOffset(const int64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeSmoothMigrationTaskListRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
 int64_t DescribeSmoothMigrationTaskListRequest::GetLimit() const
 {
     return m_limit;
@@ -105,6 +89,22 @@ void DescribeSmoothMigrationTaskListRequest::SetLimit(const int64_t& _limit)
 bool DescribeSmoothMigrationTaskListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t DescribeSmoothMigrationTaskListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeSmoothMigrationTaskListRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeSmoothMigrationTaskListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 vector<Filter> DescribeSmoothMigrationTaskListRequest::GetFilters() const

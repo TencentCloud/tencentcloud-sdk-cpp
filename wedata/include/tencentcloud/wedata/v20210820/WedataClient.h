@@ -263,6 +263,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationTasksResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationVersionNodesInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationVersionNodesInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeManualTriggerRecordPageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeManualTriggerRecordPageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOfflineTaskTokenRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOfflineTaskTokenResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOperateOpsTasksRequest.h>
@@ -493,6 +495,8 @@
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskAlarmRegularResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyTaskInfoDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyTaskInfoDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskLinksRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskLinksResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskLinksDsRequest.h>
@@ -951,6 +955,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIntegrationVersionNodesInfoResponse> DescribeIntegrationVersionNodesInfoOutcome;
                 typedef std::future<DescribeIntegrationVersionNodesInfoOutcome> DescribeIntegrationVersionNodesInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeIntegrationVersionNodesInfoRequest&, DescribeIntegrationVersionNodesInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationVersionNodesInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeManualTriggerRecordPageResponse> DescribeManualTriggerRecordPageOutcome;
+                typedef std::future<DescribeManualTriggerRecordPageOutcome> DescribeManualTriggerRecordPageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeManualTriggerRecordPageRequest&, DescribeManualTriggerRecordPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeManualTriggerRecordPageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOfflineTaskTokenResponse> DescribeOfflineTaskTokenOutcome;
                 typedef std::future<DescribeOfflineTaskTokenOutcome> DescribeOfflineTaskTokenOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeOfflineTaskTokenRequest&, DescribeOfflineTaskTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineTaskTokenAsyncHandler;
@@ -1296,6 +1303,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTaskInfoResponse> ModifyTaskInfoOutcome;
                 typedef std::future<ModifyTaskInfoOutcome> ModifyTaskInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ModifyTaskInfoRequest&, ModifyTaskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTaskInfoDsResponse> ModifyTaskInfoDsOutcome;
+                typedef std::future<ModifyTaskInfoDsOutcome> ModifyTaskInfoDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyTaskInfoDsRequest&, ModifyTaskInfoDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskInfoDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTaskLinksResponse> ModifyTaskLinksOutcome;
                 typedef std::future<ModifyTaskLinksOutcome> ModifyTaskLinksOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ModifyTaskLinksRequest&, ModifyTaskLinksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskLinksAsyncHandler;
@@ -2508,6 +2518,15 @@ namespace TencentCloud
                 DescribeIntegrationVersionNodesInfoOutcomeCallable DescribeIntegrationVersionNodesInfoCallable(const Model::DescribeIntegrationVersionNodesInfoRequest& request);
 
                 /**
+                 *查询手动任务触发记录
+                 * @param req DescribeManualTriggerRecordPageRequest
+                 * @return DescribeManualTriggerRecordPageOutcome
+                 */
+                DescribeManualTriggerRecordPageOutcome DescribeManualTriggerRecordPage(const Model::DescribeManualTriggerRecordPageRequest &request);
+                void DescribeManualTriggerRecordPageAsync(const Model::DescribeManualTriggerRecordPageRequest& request, const DescribeManualTriggerRecordPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeManualTriggerRecordPageOutcomeCallable DescribeManualTriggerRecordPageCallable(const Model::DescribeManualTriggerRecordPageRequest& request);
+
+                /**
                  *获取离线任务长连接Token
                  * @param req DescribeOfflineTaskTokenRequest
                  * @return DescribeOfflineTaskTokenOutcome
@@ -3549,6 +3568,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 ModifyTaskInfoOutcome ModifyTaskInfo(const Model::ModifyTaskInfoRequest &request);
                 void ModifyTaskInfoAsync(const Model::ModifyTaskInfoRequest& request, const ModifyTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTaskInfoOutcomeCallable ModifyTaskInfoCallable(const Model::ModifyTaskInfoRequest& request);
+
+                /**
+                 *更新任务Ds
+                 * @param req ModifyTaskInfoDsRequest
+                 * @return ModifyTaskInfoDsOutcome
+                 */
+                ModifyTaskInfoDsOutcome ModifyTaskInfoDs(const Model::ModifyTaskInfoDsRequest &request);
+                void ModifyTaskInfoDsAsync(const Model::ModifyTaskInfoDsRequest& request, const ModifyTaskInfoDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTaskInfoDsOutcomeCallable ModifyTaskInfoDsCallable(const Model::ModifyTaskInfoDsRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该版本只满足广州区部分白名单客户使用]</p>

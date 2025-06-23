@@ -124,6 +124,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageMultiThumbnailResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/BindProductInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeFreeCloudStorageNumRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/InvokeVideosKeywordsAnalyzerResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDevicePositionListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateStudioProductRequest.h
@@ -271,7 +272,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceTasksRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ListFirmwaresRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/PublishMessageRequest.h
-  include/tencentcloud/iotexplorer/v20190423/model/PositionFenceItem.h
+  include/tencentcloud/iotexplorer/v20190423/model/ModifySpacePropertyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/VideoLicenseEntity.h
   include/tencentcloud/iotexplorer/v20190423/model/GetCOSURLResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h
@@ -328,7 +329,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTaskFileInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceRequest.h
-  include/tencentcloud/iotexplorer/v20190423/model/ModifySpacePropertyRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/PositionFenceItem.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/TransferCloudStorageResponse.h
@@ -356,6 +357,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTask.h
   include/tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/InvokeVideosKeywordsAnalyzerRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeProductCloudStorageAIServiceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayRequest.h
@@ -538,6 +540,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeCloudStorageMultiThumbnailResponse.cpp
   src/v20190423/model/BindProductInfo.cpp
   src/v20190423/model/DescribeFreeCloudStorageNumRequest.cpp
+  src/v20190423/model/InvokeVideosKeywordsAnalyzerResponse.cpp
   src/v20190423/model/DescribeDevicePositionListRequest.cpp
   src/v20190423/model/InvokeExternalSourceAIServiceTaskResponse.cpp
   src/v20190423/model/CreateStudioProductRequest.cpp
@@ -685,7 +688,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeCloudStorageAIServiceTasksRequest.cpp
   src/v20190423/model/ListFirmwaresRequest.cpp
   src/v20190423/model/PublishMessageRequest.cpp
-  src/v20190423/model/PositionFenceItem.cpp
+  src/v20190423/model/ModifySpacePropertyRequest.cpp
   src/v20190423/model/VideoLicenseEntity.cpp
   src/v20190423/model/GetCOSURLResponse.cpp
   src/v20190423/model/GetTopicRuleListResponse.cpp
@@ -742,7 +745,7 @@ set(iotexplorer_src
   src/v20190423/model/CloudStorageAIServiceTaskFileInfo.cpp
   src/v20190423/model/DescribeTWeSeeConfigResponse.cpp
   src/v20190423/model/ModifyPositionFenceRequest.cpp
-  src/v20190423/model/ModifySpacePropertyRequest.cpp
+  src/v20190423/model/PositionFenceItem.cpp
   src/v20190423/model/DeleteTopicRuleResponse.cpp
   src/v20190423/model/ModifyModelDefinitionRequest.cpp
   src/v20190423/model/TransferCloudStorageResponse.cpp
@@ -770,6 +773,7 @@ set(iotexplorer_src
   src/v20190423/model/CloudStorageAIServiceTask.cpp
   src/v20190423/model/ListTopicPolicyRequest.cpp
   src/v20190423/model/DeleteLoRaFrequencyRequest.cpp
+  src/v20190423/model/InvokeVideosKeywordsAnalyzerRequest.cpp
   src/v20190423/model/InvokeExternalSourceAIServiceTaskRequest.cpp
   src/v20190423/model/DescribeProductCloudStorageAIServiceRequest.cpp
   src/v20190423/model/DeleteLoRaGatewayRequest.cpp

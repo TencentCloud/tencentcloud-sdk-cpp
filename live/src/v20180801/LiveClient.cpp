@@ -4340,49 +4340,6 @@ LiveClient::DescribeLivePackageInfoOutcomeCallable LiveClient::DescribeLivePacka
     return task->get_future();
 }
 
-LiveClient::DescribeLivePadProcessorListOutcome LiveClient::DescribeLivePadProcessorList(const DescribeLivePadProcessorListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeLivePadProcessorList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeLivePadProcessorListResponse rsp = DescribeLivePadProcessorListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeLivePadProcessorListOutcome(rsp);
-        else
-            return DescribeLivePadProcessorListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeLivePadProcessorListOutcome(outcome.GetError());
-    }
-}
-
-void LiveClient::DescribeLivePadProcessorListAsync(const DescribeLivePadProcessorListRequest& request, const DescribeLivePadProcessorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLivePadProcessorList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LiveClient::DescribeLivePadProcessorListOutcomeCallable LiveClient::DescribeLivePadProcessorListCallable(const DescribeLivePadProcessorListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeLivePadProcessorListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLivePadProcessorList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LiveClient::DescribeLivePadRulesOutcome LiveClient::DescribeLivePadRules(const DescribeLivePadRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLivePadRules");
@@ -8246,49 +8203,6 @@ LiveClient::StopCasterPvwOutcomeCallable LiveClient::StopCasterPvwCallable(const
         [this, request]()
         {
             return this->StopCasterPvw(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LiveClient::StopLivePadProcessorOutcome LiveClient::StopLivePadProcessor(const StopLivePadProcessorRequest &request)
-{
-    auto outcome = MakeRequest(request, "StopLivePadProcessor");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        StopLivePadProcessorResponse rsp = StopLivePadProcessorResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return StopLivePadProcessorOutcome(rsp);
-        else
-            return StopLivePadProcessorOutcome(o.GetError());
-    }
-    else
-    {
-        return StopLivePadProcessorOutcome(outcome.GetError());
-    }
-}
-
-void LiveClient::StopLivePadProcessorAsync(const StopLivePadProcessorRequest& request, const StopLivePadProcessorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopLivePadProcessor(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LiveClient::StopLivePadProcessorOutcomeCallable LiveClient::StopLivePadProcessorCallable(const StopLivePadProcessorRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<StopLivePadProcessorOutcome()>>(
-        [this, request]()
-        {
-            return this->StopLivePadProcessor(request);
         }
     );
 

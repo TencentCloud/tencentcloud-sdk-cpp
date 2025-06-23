@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool InternetPayModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启实例删除保护,默认false
+                     * @return DeleteProtect 是否开启实例删除保护,默认false
+                     * 
+                     */
+                    bool GetDeleteProtect() const;
+
+                    /**
+                     * 设置是否开启实例删除保护,默认false
+                     * @param _deleteProtect 是否开启实例删除保护,默认false
+                     * 
+                     */
+                    void SetDeleteProtect(const bool& _deleteProtect);
+
+                    /**
+                     * 判断参数 DeleteProtect 是否已赋值
+                     * @return DeleteProtect 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_internetPayMode;
                     bool m_internetPayModeHasBeenSet;
+
+                    /**
+                     * 是否开启实例删除保护,默认false
+                     */
+                    bool m_deleteProtect;
+                    bool m_deleteProtectHasBeenSet;
 
                 };
             }

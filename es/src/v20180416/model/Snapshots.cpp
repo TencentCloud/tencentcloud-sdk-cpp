@@ -23,6 +23,7 @@ using namespace std;
 Snapshots::Snapshots() :
     m_snapshotNameHasBeenSet(false),
     m_uuidHasBeenSet(false),
+    m_repositoryHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_indicesHasBeenSet(false),
     m_dataStreamsHasBeenSet(false),
@@ -61,6 +62,16 @@ CoreInternalOutcome Snapshots::Deserialize(const rapidjson::Value &value)
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Repository") && !value["Repository"].IsNull())
+    {
+        if (!value["Repository"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.Repository` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repository = string(value["Repository"].GetString());
+        m_repositoryHasBeenSet = true;
     }
 
     if (value.HasMember("Version") && !value["Version"].IsNull())
@@ -222,6 +233,14 @@ void Snapshots::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_repositoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Repository";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repository.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_versionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -368,6 +387,22 @@ void Snapshots::SetUuid(const string& _uuid)
 bool Snapshots::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+string Snapshots::GetRepository() const
+{
+    return m_repository;
+}
+
+void Snapshots::SetRepository(const string& _repository)
+{
+    m_repository = _repository;
+    m_repositoryHasBeenSet = true;
+}
+
+bool Snapshots::RepositoryHasBeenSet() const
+{
+    return m_repositoryHasBeenSet;
 }
 
 string Snapshots::GetVersion() const

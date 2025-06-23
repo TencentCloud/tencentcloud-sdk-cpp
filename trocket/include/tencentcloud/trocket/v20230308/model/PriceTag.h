@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 价格标签信息
+                * 价格标签信息，一个完整的价格标签包含计价类别和计费项标签。
                 */
                 class PriceTag : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计价名称
-                     * @return Name 计价名称
+                     * 获取计价名称（枚举值：tps：TPS基础价；stepTps：TPS步长）
+                     * @return Name 计价名称（枚举值：tps：TPS基础价；stepTps：TPS步长）
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置计价名称
-                     * @param _name 计价名称
+                     * 设置计价名称（枚举值：tps：TPS基础价；stepTps：TPS步长）
+                     * @param _name 计价名称（枚举值：tps：TPS基础价；stepTps：TPS步长）
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取步长
+                     * 获取计费项对应的步长数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Step 步长
+                     * @return Step 计费项对应的步长数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStep() const;
 
                     /**
-                     * 设置步长
+                     * 设置计费项对应的步长数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _step 步长
+                     * @param _step 计费项对应的步长数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,13 +95,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计价名称
+                     * 计价名称（枚举值：tps：TPS基础价；stepTps：TPS步长）
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 步长
+                     * 计费项对应的步长数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_step;

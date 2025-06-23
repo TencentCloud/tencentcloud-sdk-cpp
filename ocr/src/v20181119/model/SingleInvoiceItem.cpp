@@ -55,7 +55,9 @@ SingleInvoiceItem::SingleInvoiceItem() :
     m_customsDeclarationHasBeenSet(false),
     m_overseasInvoiceHasBeenSet(false),
     m_shoppingReceiptHasBeenSet(false),
-    m_saleInventoryHasBeenSet(false)
+    m_saleInventoryHasBeenSet(false),
+    m_motorVehicleSaleInvoiceElectronicHasBeenSet(false),
+    m_usedCarPurchaseInvoiceElectronicHasBeenSet(false)
 {
 }
 
@@ -659,6 +661,40 @@ CoreInternalOutcome SingleInvoiceItem::Deserialize(const rapidjson::Value &value
         m_saleInventoryHasBeenSet = true;
     }
 
+    if (value.HasMember("MotorVehicleSaleInvoiceElectronic") && !value["MotorVehicleSaleInvoiceElectronic"].IsNull())
+    {
+        if (!value["MotorVehicleSaleInvoiceElectronic"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.MotorVehicleSaleInvoiceElectronic` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_motorVehicleSaleInvoiceElectronic.Deserialize(value["MotorVehicleSaleInvoiceElectronic"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_motorVehicleSaleInvoiceElectronicHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsedCarPurchaseInvoiceElectronic") && !value["UsedCarPurchaseInvoiceElectronic"].IsNull())
+    {
+        if (!value["UsedCarPurchaseInvoiceElectronic"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.UsedCarPurchaseInvoiceElectronic` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usedCarPurchaseInvoiceElectronic.Deserialize(value["UsedCarPurchaseInvoiceElectronic"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usedCarPurchaseInvoiceElectronicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -979,6 +1015,24 @@ void SingleInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_saleInventory.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_motorVehicleSaleInvoiceElectronicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MotorVehicleSaleInvoiceElectronic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_motorVehicleSaleInvoiceElectronic.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_usedCarPurchaseInvoiceElectronicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedCarPurchaseInvoiceElectronic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usedCarPurchaseInvoiceElectronic.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1542,5 +1596,37 @@ void SingleInvoiceItem::SetSaleInventory(const SaleInventory& _saleInventory)
 bool SingleInvoiceItem::SaleInventoryHasBeenSet() const
 {
     return m_saleInventoryHasBeenSet;
+}
+
+MotorVehicleSaleInvoice SingleInvoiceItem::GetMotorVehicleSaleInvoiceElectronic() const
+{
+    return m_motorVehicleSaleInvoiceElectronic;
+}
+
+void SingleInvoiceItem::SetMotorVehicleSaleInvoiceElectronic(const MotorVehicleSaleInvoice& _motorVehicleSaleInvoiceElectronic)
+{
+    m_motorVehicleSaleInvoiceElectronic = _motorVehicleSaleInvoiceElectronic;
+    m_motorVehicleSaleInvoiceElectronicHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::MotorVehicleSaleInvoiceElectronicHasBeenSet() const
+{
+    return m_motorVehicleSaleInvoiceElectronicHasBeenSet;
+}
+
+UsedCarPurchaseInvoice SingleInvoiceItem::GetUsedCarPurchaseInvoiceElectronic() const
+{
+    return m_usedCarPurchaseInvoiceElectronic;
+}
+
+void SingleInvoiceItem::SetUsedCarPurchaseInvoiceElectronic(const UsedCarPurchaseInvoice& _usedCarPurchaseInvoiceElectronic)
+{
+    m_usedCarPurchaseInvoiceElectronic = _usedCarPurchaseInvoiceElectronic;
+    m_usedCarPurchaseInvoiceElectronicHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::UsedCarPurchaseInvoiceElectronicHasBeenSet() const
+{
+    return m_usedCarPurchaseInvoiceElectronicHasBeenSet;
 }
 

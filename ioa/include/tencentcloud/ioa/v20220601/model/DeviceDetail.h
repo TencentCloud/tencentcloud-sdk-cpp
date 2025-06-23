@@ -404,6 +404,111 @@ namespace TencentCloud
                     bool CriticalVulListCountHasBeenSet() const;
 
                     /**
+                     * 获取操作系统名称
+                     * @return Os 操作系统名称
+                     * 
+                     */
+                    std::string GetOs() const;
+
+                    /**
+                     * 设置操作系统名称
+                     * @param _os 操作系统名称
+                     * 
+                     */
+                    void SetOs(const std::string& _os);
+
+                    /**
+                     * 判断参数 Os 是否已赋值
+                     * @return Os 是否已赋值
+                     * 
+                     */
+                    bool OsHasBeenSet() const;
+
+                    /**
+                     * 获取操作系统位数
+                     * @return OsBits 操作系统位数
+                     * 
+                     */
+                    int64_t GetOsBits() const;
+
+                    /**
+                     * 设置操作系统位数
+                     * @param _osBits 操作系统位数
+                     * 
+                     */
+                    void SetOsBits(const int64_t& _osBits);
+
+                    /**
+                     * 判断参数 OsBits 是否已赋值
+                     * @return OsBits 是否已赋值
+                     * 
+                     */
+                    bool OsBitsHasBeenSet() const;
+
+                    /**
+                     * 获取操作系统版本
+                     * @return OsVersion 操作系统版本
+                     * 
+                     */
+                    std::string GetOsVersion() const;
+
+                    /**
+                     * 设置操作系统版本
+                     * @param _osVersion 操作系统版本
+                     * 
+                     */
+                    void SetOsVersion(const std::string& _osVersion);
+
+                    /**
+                     * 判断参数 OsVersion 是否已赋值
+                     * @return OsVersion 是否已赋值
+                     * 
+                     */
+                    bool OsVersionHasBeenSet() const;
+
+                    /**
+                     * 获取操作系统语言
+                     * @return OsLanguage 操作系统语言
+                     * 
+                     */
+                    std::string GetOsLanguage() const;
+
+                    /**
+                     * 设置操作系统语言
+                     * @param _osLanguage 操作系统语言
+                     * 
+                     */
+                    void SetOsLanguage(const std::string& _osLanguage);
+
+                    /**
+                     * 判断参数 OsLanguage 是否已赋值
+                     * @return OsLanguage 是否已赋值
+                     * 
+                     */
+                    bool OsLanguageHasBeenSet() const;
+
+                    /**
+                     * 获取操作系统安装时间
+                     * @return OsInstallDate 操作系统安装时间
+                     * 
+                     */
+                    std::string GetOsInstallDate() const;
+
+                    /**
+                     * 设置操作系统安装时间
+                     * @param _osInstallDate 操作系统安装时间
+                     * 
+                     */
+                    void SetOsInstallDate(const std::string& _osInstallDate);
+
+                    /**
+                     * 判断参数 OsInstallDate 是否已赋值
+                     * @return OsInstallDate 是否已赋值
+                     * 
+                     */
+                    bool OsInstallDateHasBeenSet() const;
+
+                    /**
                      * 获取设备名，和Name相同
                      * @return ComputerName 设备名，和Name相同
                      * 
@@ -1073,6 +1178,36 @@ namespace TencentCloud
                      */
                     int64_t m_criticalVulListCount;
                     bool m_criticalVulListCountHasBeenSet;
+
+                    /**
+                     * 操作系统名称
+                     */
+                    std::string m_os;
+                    bool m_osHasBeenSet;
+
+                    /**
+                     * 操作系统位数
+                     */
+                    int64_t m_osBits;
+                    bool m_osBitsHasBeenSet;
+
+                    /**
+                     * 操作系统版本
+                     */
+                    std::string m_osVersion;
+                    bool m_osVersionHasBeenSet;
+
+                    /**
+                     * 操作系统语言
+                     */
+                    std::string m_osLanguage;
+                    bool m_osLanguageHasBeenSet;
+
+                    /**
+                     * 操作系统安装时间
+                     */
+                    std::string m_osInstallDate;
+                    bool m_osInstallDateHasBeenSet;
 
                     /**
                      * 设备名，和Name相同

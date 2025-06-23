@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消费组名称
+                     * 获取消费组名称，可在[DescribeSourceClusterGroupList](https://cloud.tencent.com/document/api/1493/118006)接口返回的[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)数据中获取。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupName 消费组名称
+                     * @return GroupName 消费组名称，可在[DescribeSourceClusterGroupList](https://cloud.tencent.com/document/api/1493/118006)接口返回的[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)数据中获取。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置消费组名称
+                     * 设置消费组名称，可在[DescribeSourceClusterGroupList](https://cloud.tencent.com/document/api/1493/118006)接口返回的[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)数据中获取。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupName 消费组名称
+                     * @param _groupName 消费组名称，可在[DescribeSourceClusterGroupList](https://cloud.tencent.com/document/api/1493/118006)接口返回的[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)数据中获取。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -152,12 +152,16 @@ Unknown 未知
 Success 成功
 Failure 失败
 AlreadyExists 已存在
+
+仅作为出参时使用
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImportStatus 导入状态
 Unknown 未知
 Success 成功
 Failure 失败
 AlreadyExists 已存在
+
+仅作为出参时使用
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -169,12 +173,16 @@ Unknown 未知
 Success 成功
 Failure 失败
 AlreadyExists 已存在
+
+仅作为出参时使用
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _importStatus 导入状态
 Unknown 未知
 Success 成功
 Failure 失败
 AlreadyExists 已存在
+
+仅作为出参时使用
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -290,7 +298,7 @@ AlreadyExists 已存在
                 private:
 
                     /**
-                     * 消费组名称
+                     * 消费组名称，可在[DescribeSourceClusterGroupList](https://cloud.tencent.com/document/api/1493/118006)接口返回的[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)数据中获取。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
@@ -323,6 +331,8 @@ Unknown 未知
 Success 成功
 Failure 失败
 AlreadyExists 已存在
+
+仅作为出参时使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_importStatus;

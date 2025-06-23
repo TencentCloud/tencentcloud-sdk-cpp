@@ -615,6 +615,31 @@ namespace TencentCloud
                      */
                     bool CmdHasBeenSet() const;
 
+                    /**
+                     * 获取会话亲和性开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionAffinity 会话亲和性开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSessionAffinity() const;
+
+                    /**
+                     * 设置会话亲和性开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sessionAffinity 会话亲和性开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSessionAffinity(const std::string& _sessionAffinity);
+
+                    /**
+                     * 判断参数 SessionAffinity 是否已赋值
+                     * @return SessionAffinity 是否已赋值
+                     * 
+                     */
+                    bool SessionAffinityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -778,6 +803,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_cmd;
                     bool m_cmdHasBeenSet;
+
+                    /**
+                     * 会话亲和性开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionAffinity;
+                    bool m_sessionAffinityHasBeenSet;
 
                 };
             }

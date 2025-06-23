@@ -146,6 +146,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/Recipient.h
   include/tencentcloud/ess/v20201111/model/OccupiedSeal.h
   include/tencentcloud/ess/v20201111/model/IntentionActionResultDetail.h
+  include/tencentcloud/ess/v20201111/model/ModifyPartnerAutoSignAuthUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateEmployeeQualificationSealQrCodeRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksRequest.h
   include/tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageResponse.h
@@ -331,6 +332,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h
   include/tencentcloud/ess/v20201111/model/RenewAutoSignLicenseResponse.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h
+  include/tencentcloud/ess/v20201111/model/ModifyPartnerAutoSignAuthUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationSubOrganizationActiveRecordRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowBlockchainEvidenceUrlRequest.h
@@ -474,6 +476,7 @@ set(ess_src
   src/v20201111/model/Recipient.cpp
   src/v20201111/model/OccupiedSeal.cpp
   src/v20201111/model/IntentionActionResultDetail.cpp
+  src/v20201111/model/ModifyPartnerAutoSignAuthUrlRequest.cpp
   src/v20201111/model/CreateEmployeeQualificationSealQrCodeRequest.cpp
   src/v20201111/model/DescribeBatchOrganizationRegistrationTasksRequest.cpp
   src/v20201111/model/CreatePersonAuthCertificateImageResponse.cpp
@@ -659,6 +662,7 @@ set(ess_src
   src/v20201111/model/DescribeFlowInfoResponse.cpp
   src/v20201111/model/RenewAutoSignLicenseResponse.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeResponse.cpp
+  src/v20201111/model/ModifyPartnerAutoSignAuthUrlResponse.cpp
   src/v20201111/model/CreateFlowResponse.cpp
   src/v20201111/model/CreateIntegrationSubOrganizationActiveRecordRequest.cpp
   src/v20201111/model/CreateFlowBlockchainEvidenceUrlRequest.cpp

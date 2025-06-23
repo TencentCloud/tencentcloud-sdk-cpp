@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * RabbiteMQ集群基本信息
+                * RabbitMQ 集群基本信息
                 */
                 class RabbitMQClusterInfo : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群 ID
+                     * @return ClusterId 集群 ID
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群 ID
+                     * @param _clusterId 集群 ID
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，毫秒为单位
-                     * @return CreateTime 创建时间，毫秒为单位
+                     * 获取创建时间，毫秒为单位。unix 时间戳
+                     * @return CreateTime 创建时间，毫秒为单位。unix 时间戳
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，毫秒为单位
-                     * @param _createTime 创建时间，毫秒为单位
+                     * 设置创建时间，毫秒为单位。unix 时间戳
+                     * @param _createTime 创建时间，毫秒为单位。unix 时间戳
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool MessageStackNumberHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
+                     * @return ExpireTime 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _expireTime 过期时间
+                     * 设置实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
+                     * @param _expireTime 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -556,15 +556,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取开始隔离时间
-                     * @return IsolatedTime 开始隔离时间
+                     * 获取开始隔离时间。unix 时间戳
+                     * @return IsolatedTime 开始隔离时间。unix 时间戳
                      * 
                      */
                     int64_t GetIsolatedTime() const;
 
                     /**
-                     * 设置开始隔离时间
-                     * @param _isolatedTime 开始隔离时间
+                     * 设置开始隔离时间。unix 时间戳
+                     * @param _isolatedTime 开始隔离时间。unix 时间戳
                      * 
                      */
                     void SetIsolatedTime(const int64_t& _isolatedTime);
@@ -600,7 +600,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群 ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -618,7 +618,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 创建时间，毫秒为单位
+                     * 创建时间，毫秒为单位。unix 时间戳
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -666,7 +666,7 @@ namespace TencentCloud
                     bool m_messageStackNumberHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
@@ -745,7 +745,7 @@ namespace TencentCloud
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 开始隔离时间
+                     * 开始隔离时间。unix 时间戳
                      */
                     int64_t m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;

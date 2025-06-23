@@ -912,6 +912,27 @@ namespace TencentCloud
                      */
                     bool UncleanLeaderElectionEnableHasBeenSet() const;
 
+                    /**
+                     * 获取实例删除保护开关: 1 开启 0 关闭
+                     * @return DeleteProtectionEnable 实例删除保护开关: 1 开启 0 关闭
+                     * 
+                     */
+                    int64_t GetDeleteProtectionEnable() const;
+
+                    /**
+                     * 设置实例删除保护开关: 1 开启 0 关闭
+                     * @param _deleteProtectionEnable 实例删除保护开关: 1 开启 0 关闭
+                     * 
+                     */
+                    void SetDeleteProtectionEnable(const int64_t& _deleteProtectionEnable);
+
+                    /**
+                     * 判断参数 DeleteProtectionEnable 是否已赋值
+                     * @return DeleteProtectionEnable 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectionEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1159,6 +1180,12 @@ namespace TencentCloud
                      */
                     int64_t m_uncleanLeaderElectionEnable;
                     bool m_uncleanLeaderElectionEnableHasBeenSet;
+
+                    /**
+                     * 实例删除保护开关: 1 开启 0 关闭
+                     */
+                    int64_t m_deleteProtectionEnable;
+                    bool m_deleteProtectionEnableHasBeenSet;
 
                 };
             }

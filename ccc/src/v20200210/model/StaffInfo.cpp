@@ -31,7 +31,8 @@ StaffInfo::StaffInfo() :
     m_roleListHasBeenSet(false),
     m_skillGroupListHasBeenSet(false),
     m_lastModifyTimestampHasBeenSet(false),
-    m_extensionNumberHasBeenSet(false)
+    m_extensionNumberHasBeenSet(false),
+    m_forwardingConfigHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,23 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
         m_extensionNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("ForwardingConfig") && !value["ForwardingConfig"].IsNull())
+    {
+        if (!value["ForwardingConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.ForwardingConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_forwardingConfig.Deserialize(value["ForwardingConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_forwardingConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +286,15 @@ void StaffInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ExtensionNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_extensionNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forwardingConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardingConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_forwardingConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -447,5 +474,21 @@ void StaffInfo::SetExtensionNumber(const string& _extensionNumber)
 bool StaffInfo::ExtensionNumberHasBeenSet() const
 {
     return m_extensionNumberHasBeenSet;
+}
+
+ForwardingConfig StaffInfo::GetForwardingConfig() const
+{
+    return m_forwardingConfig;
+}
+
+void StaffInfo::SetForwardingConfig(const ForwardingConfig& _forwardingConfig)
+{
+    m_forwardingConfig = _forwardingConfig;
+    m_forwardingConfigHasBeenSet = true;
+}
+
+bool StaffInfo::ForwardingConfigHasBeenSet() const
+{
+    return m_forwardingConfigHasBeenSet;
 }
 

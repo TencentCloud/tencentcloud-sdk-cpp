@@ -48,18 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取开始扩容时间。
-说明：此值的格式为 Integer 的时间戳。
+说明：此值的格式为 Integer 的时间戳（秒级）。
                      * @return StartTime 开始扩容时间。
-说明：此值的格式为 Integer 的时间戳。
+说明：此值的格式为 Integer 的时间戳（秒级）。
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始扩容时间。
-说明：此值的格式为 Integer 的时间戳。
+说明：此值的格式为 Integer 的时间戳（秒级）。
                      * @param _startTime 开始扩容时间。
-说明：此值的格式为 Integer 的时间戳。
+说明：此值的格式为 Integer 的时间戳（秒级）。
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -73,18 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取结束扩容时间。
-说明：此值的格式为 Integer 的时间戳。
+说明：此值的格式为 Integer 的时间戳（秒级）。
                      * @return EndTime 结束扩容时间。
-说明：此值的格式为 Integer 的时间戳。
+说明：此值的格式为 Integer 的时间戳（秒级）。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束扩容时间。
-说明：此值的格式为 Integer 的时间戳。
+说明：此值的格式为 Integer 的时间戳（秒级）。
                      * @param _endTime 结束扩容时间。
-说明：此值的格式为 Integer 的时间戳。
+说明：此值的格式为 Integer 的时间戳（秒级）。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -100,14 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 开始扩容时间。
-说明：此值的格式为 Integer 的时间戳。
+说明：此值的格式为 Integer 的时间戳（秒级）。
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 结束扩容时间。
-说明：此值的格式为 Integer 的时间戳。
+说明：此值的格式为 Integer 的时间戳（秒级）。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

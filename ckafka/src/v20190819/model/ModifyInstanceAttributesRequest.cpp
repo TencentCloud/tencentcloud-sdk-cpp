@@ -32,7 +32,8 @@ ModifyInstanceAttributesRequest::ModifyInstanceAttributesRequest() :
     m_publicNetworkHasBeenSet(false),
     m_dynamicDiskConfigHasBeenSet(false),
     m_maxMessageByteHasBeenSet(false),
-    m_uncleanLeaderElectionEnableHasBeenSet(false)
+    m_uncleanLeaderElectionEnableHasBeenSet(false),
+    m_deleteProtectionEnableHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,14 @@ string ModifyInstanceAttributesRequest::ToJsonString() const
         string key = "UncleanLeaderElectionEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_uncleanLeaderElectionEnable, allocator);
+    }
+
+    if (m_deleteProtectionEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteProtectionEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteProtectionEnable, allocator);
     }
 
 
@@ -292,6 +301,22 @@ void ModifyInstanceAttributesRequest::SetUncleanLeaderElectionEnable(const int64
 bool ModifyInstanceAttributesRequest::UncleanLeaderElectionEnableHasBeenSet() const
 {
     return m_uncleanLeaderElectionEnableHasBeenSet;
+}
+
+int64_t ModifyInstanceAttributesRequest::GetDeleteProtectionEnable() const
+{
+    return m_deleteProtectionEnable;
+}
+
+void ModifyInstanceAttributesRequest::SetDeleteProtectionEnable(const int64_t& _deleteProtectionEnable)
+{
+    m_deleteProtectionEnable = _deleteProtectionEnable;
+    m_deleteProtectionEnableHasBeenSet = true;
+}
+
+bool ModifyInstanceAttributesRequest::DeleteProtectionEnableHasBeenSet() const
+{
+    return m_deleteProtectionEnableHasBeenSet;
 }
 
 

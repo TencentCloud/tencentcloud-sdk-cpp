@@ -21,6 +21,7 @@ set(ccc_public_header
 set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeExtensionRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateCCCSkillGroupResponse.h
+  include/tencentcloud/ccc/v20200210/model/ModifyStaffPasswordRequest.h
   include/tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateIVRSessionRequest.h
   include/tencentcloud/ccc/v20200210/model/CompanyApplyInfo.h
@@ -107,7 +108,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/UpdateCCCSkillGroupRequest.h
   include/tencentcloud/ccc/v20200210/model/RestoreMemberOnlineRequest.h
   include/tencentcloud/ccc/v20200210/model/TimeRange.h
-  include/tencentcloud/ccc/v20200210/model/ModifyStaffPasswordRequest.h
+  include/tencentcloud/ccc/v20200210/model/ForwardingConfig.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h
   include/tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/ModifyExtensionRequest.h
@@ -146,6 +147,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/CreateExtensionRequest.h
   include/tencentcloud/ccc/v20200210/model/StaffSkillGroupList.h
   include/tencentcloud/ccc/v20200210/model/ResetExtensionPasswordResponse.h
+  include/tencentcloud/ccc/v20200210/model/ForwardingTarget.h
   include/tencentcloud/ccc/v20200210/model/CreateAutoCalloutTaskRequest.h
   include/tencentcloud/ccc/v20200210/model/AILatencyDetail.h
   include/tencentcloud/ccc/v20200210/model/AITransferItem.h
@@ -222,6 +224,7 @@ set(ccc_src
   src/v20200210/CccClient.cpp
   src/v20200210/model/DescribeExtensionRequest.cpp
   src/v20200210/model/CreateCCCSkillGroupResponse.cpp
+  src/v20200210/model/ModifyStaffPasswordRequest.cpp
   src/v20200210/model/StopAutoCalloutTaskRequest.cpp
   src/v20200210/model/CreateIVRSessionRequest.cpp
   src/v20200210/model/CompanyApplyInfo.cpp
@@ -308,7 +311,7 @@ set(ccc_src
   src/v20200210/model/UpdateCCCSkillGroupRequest.cpp
   src/v20200210/model/RestoreMemberOnlineRequest.cpp
   src/v20200210/model/TimeRange.cpp
-  src/v20200210/model/ModifyStaffPasswordRequest.cpp
+  src/v20200210/model/ForwardingConfig.cpp
   src/v20200210/model/DescribeTelCdrRequest.cpp
   src/v20200210/model/ModifyStaffResponse.cpp
   src/v20200210/model/ModifyExtensionRequest.cpp
@@ -347,6 +350,7 @@ set(ccc_src
   src/v20200210/model/CreateExtensionRequest.cpp
   src/v20200210/model/StaffSkillGroupList.cpp
   src/v20200210/model/ResetExtensionPasswordResponse.cpp
+  src/v20200210/model/ForwardingTarget.cpp
   src/v20200210/model/CreateAutoCalloutTaskRequest.cpp
   src/v20200210/model/AILatencyDetail.cpp
   src/v20200210/model/AITransferItem.cpp

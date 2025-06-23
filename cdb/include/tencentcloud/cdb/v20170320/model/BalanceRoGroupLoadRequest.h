@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取RO 组的 ID，格式如：cdbrg-c1nl9rpv。
-                     * @return RoGroupId RO 组的 ID，格式如：cdbrg-c1nl9rpv。
+                     * 获取RO 组的 ID，格式如：cdbrg-c1nl9rpv。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 获取。
+                     * @return RoGroupId RO 组的 ID，格式如：cdbrg-c1nl9rpv。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 获取。
                      * 
                      */
                     std::string GetRoGroupId() const;
 
                     /**
-                     * 设置RO 组的 ID，格式如：cdbrg-c1nl9rpv。
-                     * @param _roGroupId RO 组的 ID，格式如：cdbrg-c1nl9rpv。
+                     * 设置RO 组的 ID，格式如：cdbrg-c1nl9rpv。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 获取。
+                     * @param _roGroupId RO 组的 ID，格式如：cdbrg-c1nl9rpv。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 获取。
                      * 
                      */
                     void SetRoGroupId(const std::string& _roGroupId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * RO 组的 ID，格式如：cdbrg-c1nl9rpv。
+                     * RO 组的 ID，格式如：cdbrg-c1nl9rpv。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 获取。
                      */
                     std::string m_roGroupId;
                     bool m_roGroupIdHasBeenSet;

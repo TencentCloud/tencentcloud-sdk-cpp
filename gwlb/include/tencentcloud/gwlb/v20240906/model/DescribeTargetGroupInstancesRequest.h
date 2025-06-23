@@ -81,15 +81,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取显示数量限制，默认20，最大1000。
-                     * @return Limit 显示数量限制，默认20，最大1000。
+                     * 获取显示数量限制，默认20，最大100。
+                     * @return Limit 显示数量限制，默认20，最大100。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置显示数量限制，默认20，最大1000。
-                     * @param _limit 显示数量限制，默认20，最大1000。
+                     * 设置显示数量限制，默认20，最大100。
+                     * @param _limit 显示数量限制，默认20，最大100。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 显示数量限制，默认20，最大1000。
+                     * 显示数量限制，默认20，最大100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

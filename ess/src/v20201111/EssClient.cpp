@@ -4383,6 +4383,49 @@ EssClient::ModifyIntegrationRoleOutcomeCallable EssClient::ModifyIntegrationRole
     return task->get_future();
 }
 
+EssClient::ModifyPartnerAutoSignAuthUrlOutcome EssClient::ModifyPartnerAutoSignAuthUrl(const ModifyPartnerAutoSignAuthUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPartnerAutoSignAuthUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPartnerAutoSignAuthUrlResponse rsp = ModifyPartnerAutoSignAuthUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPartnerAutoSignAuthUrlOutcome(rsp);
+        else
+            return ModifyPartnerAutoSignAuthUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPartnerAutoSignAuthUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::ModifyPartnerAutoSignAuthUrlAsync(const ModifyPartnerAutoSignAuthUrlRequest& request, const ModifyPartnerAutoSignAuthUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPartnerAutoSignAuthUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::ModifyPartnerAutoSignAuthUrlOutcomeCallable EssClient::ModifyPartnerAutoSignAuthUrlCallable(const ModifyPartnerAutoSignAuthUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPartnerAutoSignAuthUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPartnerAutoSignAuthUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::OperateSealsOutcome EssClient::OperateSeals(const OperateSealsRequest &request)
 {
     auto outcome = MakeRequest(request, "OperateSeals");

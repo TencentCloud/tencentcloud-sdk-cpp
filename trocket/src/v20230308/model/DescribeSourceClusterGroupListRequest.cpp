@@ -24,9 +24,9 @@ using namespace std;
 
 DescribeSourceClusterGroupListRequest::DescribeSourceClusterGroupListRequest() :
     m_taskIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
+    m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -45,6 +45,22 @@ string DescribeSourceClusterGroupListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -58,22 +74,6 @@ string DescribeSourceClusterGroupListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -100,20 +100,20 @@ bool DescribeSourceClusterGroupListRequest::TaskIdHasBeenSet() const
     return m_taskIdHasBeenSet;
 }
 
-vector<Filter> DescribeSourceClusterGroupListRequest::GetFilters() const
+int64_t DescribeSourceClusterGroupListRequest::GetLimit() const
 {
-    return m_filters;
+    return m_limit;
 }
 
-void DescribeSourceClusterGroupListRequest::SetFilters(const vector<Filter>& _filters)
+void DescribeSourceClusterGroupListRequest::SetLimit(const int64_t& _limit)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool DescribeSourceClusterGroupListRequest::FiltersHasBeenSet() const
+bool DescribeSourceClusterGroupListRequest::LimitHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_limitHasBeenSet;
 }
 
 int64_t DescribeSourceClusterGroupListRequest::GetOffset() const
@@ -132,20 +132,20 @@ bool DescribeSourceClusterGroupListRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-int64_t DescribeSourceClusterGroupListRequest::GetLimit() const
+vector<Filter> DescribeSourceClusterGroupListRequest::GetFilters() const
 {
-    return m_limit;
+    return m_filters;
 }
 
-void DescribeSourceClusterGroupListRequest::SetLimit(const int64_t& _limit)
+void DescribeSourceClusterGroupListRequest::SetFilters(const vector<Filter>& _filters)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
 }
 
-bool DescribeSourceClusterGroupListRequest::LimitHasBeenSet() const
+bool DescribeSourceClusterGroupListRequest::FiltersHasBeenSet() const
 {
-    return m_limitHasBeenSet;
+    return m_filtersHasBeenSet;
 }
 
 

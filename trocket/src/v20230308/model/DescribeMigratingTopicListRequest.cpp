@@ -24,9 +24,9 @@ using namespace std;
 
 DescribeMigratingTopicListRequest::DescribeMigratingTopicListRequest() :
     m_taskIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
+    m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -45,6 +45,22 @@ string DescribeMigratingTopicListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -58,22 +74,6 @@ string DescribeMigratingTopicListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -100,20 +100,20 @@ bool DescribeMigratingTopicListRequest::TaskIdHasBeenSet() const
     return m_taskIdHasBeenSet;
 }
 
-vector<Filter> DescribeMigratingTopicListRequest::GetFilters() const
+int64_t DescribeMigratingTopicListRequest::GetLimit() const
 {
-    return m_filters;
+    return m_limit;
 }
 
-void DescribeMigratingTopicListRequest::SetFilters(const vector<Filter>& _filters)
+void DescribeMigratingTopicListRequest::SetLimit(const int64_t& _limit)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool DescribeMigratingTopicListRequest::FiltersHasBeenSet() const
+bool DescribeMigratingTopicListRequest::LimitHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_limitHasBeenSet;
 }
 
 int64_t DescribeMigratingTopicListRequest::GetOffset() const
@@ -132,20 +132,20 @@ bool DescribeMigratingTopicListRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-int64_t DescribeMigratingTopicListRequest::GetLimit() const
+vector<Filter> DescribeMigratingTopicListRequest::GetFilters() const
 {
-    return m_limit;
+    return m_filters;
 }
 
-void DescribeMigratingTopicListRequest::SetLimit(const int64_t& _limit)
+void DescribeMigratingTopicListRequest::SetFilters(const vector<Filter>& _filters)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
 }
 
-bool DescribeMigratingTopicListRequest::LimitHasBeenSet() const
+bool DescribeMigratingTopicListRequest::FiltersHasBeenSet() const
 {
-    return m_limitHasBeenSet;
+    return m_filtersHasBeenSet;
 }
 
 

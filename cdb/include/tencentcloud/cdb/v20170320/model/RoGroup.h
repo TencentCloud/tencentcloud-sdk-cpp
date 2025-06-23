@@ -70,14 +70,18 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组 ID。
+说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。
                      * @return RoGroupId 只读组 ID。
+说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。
                      * 
                      */
                     std::string GetRoGroupId() const;
 
                     /**
                      * 设置只读组 ID。
+说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。
                      * @param _roGroupId 只读组 ID。
+说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。
                      * 
                      */
                     void SetRoGroupId(const std::string& _roGroupId);
@@ -132,15 +136,15 @@ namespace TencentCloud
                     bool RoOfflineDelayHasBeenSet() const;
 
                     /**
-                     * 获取延迟阈值。
-                     * @return RoMaxDelayTime 延迟阈值。
+                     * 获取延迟阈值。单位：秒。值范围：1-10000，整数。
+                     * @return RoMaxDelayTime 延迟阈值。单位：秒。值范围：1-10000，整数。
                      * 
                      */
                     int64_t GetRoMaxDelayTime() const;
 
                     /**
-                     * 设置延迟阈值。
-                     * @param _roMaxDelayTime 延迟阈值。
+                     * 设置延迟阈值。单位：秒。值范围：1-10000，整数。
+                     * @param _roMaxDelayTime 延迟阈值。单位：秒。值范围：1-10000，整数。
                      * 
                      */
                     void SetRoMaxDelayTime(const int64_t& _roMaxDelayTime);
@@ -363,15 +367,15 @@ namespace TencentCloud
                     bool RoGroupZoneHasBeenSet() const;
 
                     /**
-                     * 获取延迟复制时间。
-                     * @return DelayReplicationTime 延迟复制时间。
+                     * 获取延迟复制时间。单位：秒。值范围：1-259200，整数。
+                     * @return DelayReplicationTime 延迟复制时间。单位：秒。值范围：1-259200，整数。
                      * 
                      */
                     int64_t GetDelayReplicationTime() const;
 
                     /**
-                     * 设置延迟复制时间。
-                     * @param _delayReplicationTime 延迟复制时间。
+                     * 设置延迟复制时间。单位：秒。值范围：1-259200，整数。
+                     * @param _delayReplicationTime 延迟复制时间。单位：秒。值范围：1-259200，整数。
                      * 
                      */
                     void SetDelayReplicationTime(const int64_t& _delayReplicationTime);
@@ -393,6 +397,7 @@ namespace TencentCloud
 
                     /**
                      * 只读组 ID。
+说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。
                      */
                     std::string m_roGroupId;
                     bool m_roGroupIdHasBeenSet;
@@ -410,7 +415,7 @@ namespace TencentCloud
                     bool m_roOfflineDelayHasBeenSet;
 
                     /**
-                     * 延迟阈值。
+                     * 延迟阈值。单位：秒。值范围：1-10000，整数。
                      */
                     int64_t m_roMaxDelayTime;
                     bool m_roMaxDelayTimeHasBeenSet;
@@ -476,7 +481,7 @@ namespace TencentCloud
                     bool m_roGroupZoneHasBeenSet;
 
                     /**
-                     * 延迟复制时间。
+                     * 延迟复制时间。单位：秒。值范围：1-259200，整数。
                      */
                     int64_t m_delayReplicationTime;
                     bool m_delayReplicationTimeHasBeenSet;

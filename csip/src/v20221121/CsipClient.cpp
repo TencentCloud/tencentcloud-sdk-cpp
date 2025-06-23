@@ -298,6 +298,49 @@ CsipClient::DescribeAlertListOutcomeCallable CsipClient::DescribeAlertListCallab
     return task->get_future();
 }
 
+CsipClient::DescribeAssetRiskListOutcome CsipClient::DescribeAssetRiskList(const DescribeAssetRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetRiskListResponse rsp = DescribeAssetRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetRiskListOutcome(rsp);
+        else
+            return DescribeAssetRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAssetRiskListAsync(const DescribeAssetRiskListRequest& request, const DescribeAssetRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAssetRiskListOutcomeCallable CsipClient::DescribeAssetRiskListCallable(const DescribeAssetRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetRiskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeAssetViewVulRiskListOutcome CsipClient::DescribeAssetViewVulRiskList(const DescribeAssetViewVulRiskListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetViewVulRiskList");
@@ -384,6 +427,49 @@ CsipClient::DescribeCFWAssetStatisticsOutcomeCallable CsipClient::DescribeCFWAss
     return task->get_future();
 }
 
+CsipClient::DescribeCSIPRiskStatisticsOutcome CsipClient::DescribeCSIPRiskStatistics(const DescribeCSIPRiskStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCSIPRiskStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCSIPRiskStatisticsResponse rsp = DescribeCSIPRiskStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCSIPRiskStatisticsOutcome(rsp);
+        else
+            return DescribeCSIPRiskStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCSIPRiskStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeCSIPRiskStatisticsAsync(const DescribeCSIPRiskStatisticsRequest& request, const DescribeCSIPRiskStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCSIPRiskStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeCSIPRiskStatisticsOutcomeCallable CsipClient::DescribeCSIPRiskStatisticsCallable(const DescribeCSIPRiskStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCSIPRiskStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCSIPRiskStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeCVMAssetInfoOutcome CsipClient::DescribeCVMAssetInfo(const DescribeCVMAssetInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCVMAssetInfo");
@@ -463,6 +549,49 @@ CsipClient::DescribeCVMAssetsOutcomeCallable CsipClient::DescribeCVMAssetsCallab
         [this, request]()
         {
             return this->DescribeCVMAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeCheckViewRisksOutcome CsipClient::DescribeCheckViewRisks(const DescribeCheckViewRisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCheckViewRisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCheckViewRisksResponse rsp = DescribeCheckViewRisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCheckViewRisksOutcome(rsp);
+        else
+            return DescribeCheckViewRisksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCheckViewRisksOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeCheckViewRisksAsync(const DescribeCheckViewRisksRequest& request, const DescribeCheckViewRisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCheckViewRisks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeCheckViewRisksOutcomeCallable CsipClient::DescribeCheckViewRisksCallable(const DescribeCheckViewRisksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCheckViewRisksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCheckViewRisks(request);
         }
     );
 
@@ -678,6 +807,92 @@ CsipClient::DescribeDomainAssetsOutcomeCallable CsipClient::DescribeDomainAssets
         [this, request]()
         {
             return this->DescribeDomainAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeExposeAssetCategoryOutcome CsipClient::DescribeExposeAssetCategory(const DescribeExposeAssetCategoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExposeAssetCategory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExposeAssetCategoryResponse rsp = DescribeExposeAssetCategoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExposeAssetCategoryOutcome(rsp);
+        else
+            return DescribeExposeAssetCategoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExposeAssetCategoryOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeExposeAssetCategoryAsync(const DescribeExposeAssetCategoryRequest& request, const DescribeExposeAssetCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExposeAssetCategory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeExposeAssetCategoryOutcomeCallable CsipClient::DescribeExposeAssetCategoryCallable(const DescribeExposeAssetCategoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExposeAssetCategoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExposeAssetCategory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeExposePathOutcome CsipClient::DescribeExposePath(const DescribeExposePathRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExposePath");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExposePathResponse rsp = DescribeExposePathResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExposePathOutcome(rsp);
+        else
+            return DescribeExposePathOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExposePathOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeExposePathAsync(const DescribeExposePathRequest& request, const DescribeExposePathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExposePath(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeExposePathOutcomeCallable CsipClient::DescribeExposePathCallable(const DescribeExposePathRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExposePathOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExposePath(request);
         }
     );
 
@@ -943,6 +1158,49 @@ CsipClient::DescribeOrganizationUserInfoOutcomeCallable CsipClient::DescribeOrga
     return task->get_future();
 }
 
+CsipClient::DescribeOtherCloudAssetsOutcome CsipClient::DescribeOtherCloudAssets(const DescribeOtherCloudAssetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOtherCloudAssets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOtherCloudAssetsResponse rsp = DescribeOtherCloudAssetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOtherCloudAssetsOutcome(rsp);
+        else
+            return DescribeOtherCloudAssetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOtherCloudAssetsOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeOtherCloudAssetsAsync(const DescribeOtherCloudAssetsRequest& request, const DescribeOtherCloudAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOtherCloudAssets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeOtherCloudAssetsOutcomeCallable CsipClient::DescribeOtherCloudAssetsCallable(const DescribeOtherCloudAssetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOtherCloudAssetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOtherCloudAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribePublicIpAssetsOutcome CsipClient::DescribePublicIpAssets(const DescribePublicIpAssetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePublicIpAssets");
@@ -979,6 +1237,49 @@ CsipClient::DescribePublicIpAssetsOutcomeCallable CsipClient::DescribePublicIpAs
         [this, request]()
         {
             return this->DescribePublicIpAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeRepositoryImageAssetsOutcome CsipClient::DescribeRepositoryImageAssets(const DescribeRepositoryImageAssetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRepositoryImageAssets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRepositoryImageAssetsResponse rsp = DescribeRepositoryImageAssetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRepositoryImageAssetsOutcome(rsp);
+        else
+            return DescribeRepositoryImageAssetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRepositoryImageAssetsOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRepositoryImageAssetsAsync(const DescribeRepositoryImageAssetsRequest& request, const DescribeRepositoryImageAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRepositoryImageAssets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRepositoryImageAssetsOutcomeCallable CsipClient::DescribeRepositoryImageAssetsCallable(const DescribeRepositoryImageAssetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRepositoryImageAssetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRepositoryImageAssets(request);
         }
     );
 
@@ -1158,6 +1459,49 @@ CsipClient::DescribeRiskCenterAssetViewWeakPasswordRiskListOutcomeCallable CsipC
     return task->get_future();
 }
 
+CsipClient::DescribeRiskCenterCFGViewCFGRiskListOutcome CsipClient::DescribeRiskCenterCFGViewCFGRiskList(const DescribeRiskCenterCFGViewCFGRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskCenterCFGViewCFGRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskCenterCFGViewCFGRiskListResponse rsp = DescribeRiskCenterCFGViewCFGRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskCenterCFGViewCFGRiskListOutcome(rsp);
+        else
+            return DescribeRiskCenterCFGViewCFGRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskCenterCFGViewCFGRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRiskCenterCFGViewCFGRiskListAsync(const DescribeRiskCenterCFGViewCFGRiskListRequest& request, const DescribeRiskCenterCFGViewCFGRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskCenterCFGViewCFGRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRiskCenterCFGViewCFGRiskListOutcomeCallable CsipClient::DescribeRiskCenterCFGViewCFGRiskListCallable(const DescribeRiskCenterCFGViewCFGRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskCenterCFGViewCFGRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskCenterCFGViewCFGRiskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeRiskCenterPortViewPortRiskListOutcome CsipClient::DescribeRiskCenterPortViewPortRiskList(const DescribeRiskCenterPortViewPortRiskListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRiskCenterPortViewPortRiskList");
@@ -1330,6 +1674,135 @@ CsipClient::DescribeRiskCenterWebsiteRiskListOutcomeCallable CsipClient::Describ
     return task->get_future();
 }
 
+CsipClient::DescribeRiskDetailListOutcome CsipClient::DescribeRiskDetailList(const DescribeRiskDetailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskDetailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskDetailListResponse rsp = DescribeRiskDetailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskDetailListOutcome(rsp);
+        else
+            return DescribeRiskDetailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskDetailListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRiskDetailListAsync(const DescribeRiskDetailListRequest& request, const DescribeRiskDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskDetailList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRiskDetailListOutcomeCallable CsipClient::DescribeRiskDetailListCallable(const DescribeRiskDetailListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskDetailListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskDetailList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeRiskRuleDetailOutcome CsipClient::DescribeRiskRuleDetail(const DescribeRiskRuleDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskRuleDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskRuleDetailResponse rsp = DescribeRiskRuleDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskRuleDetailOutcome(rsp);
+        else
+            return DescribeRiskRuleDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskRuleDetailOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRiskRuleDetailAsync(const DescribeRiskRuleDetailRequest& request, const DescribeRiskRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskRuleDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRiskRuleDetailOutcomeCallable CsipClient::DescribeRiskRuleDetailCallable(const DescribeRiskRuleDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskRuleDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskRuleDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeRiskRulesOutcome CsipClient::DescribeRiskRules(const DescribeRiskRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskRulesResponse rsp = DescribeRiskRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskRulesOutcome(rsp);
+        else
+            return DescribeRiskRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskRulesOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRiskRulesAsync(const DescribeRiskRulesRequest& request, const DescribeRiskRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRiskRulesOutcomeCallable CsipClient::DescribeRiskRulesCallable(const DescribeRiskRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeScanReportListOutcome CsipClient::DescribeScanReportList(const DescribeScanReportListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScanReportList");
@@ -1366,6 +1839,49 @@ CsipClient::DescribeScanReportListOutcomeCallable CsipClient::DescribeScanReport
         [this, request]()
         {
             return this->DescribeScanReportList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeScanStatisticOutcome CsipClient::DescribeScanStatistic(const DescribeScanStatisticRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScanStatistic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScanStatisticResponse rsp = DescribeScanStatisticResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScanStatisticOutcome(rsp);
+        else
+            return DescribeScanStatisticOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScanStatisticOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeScanStatisticAsync(const DescribeScanStatisticRequest& request, const DescribeScanStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScanStatistic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeScanStatisticOutcomeCallable CsipClient::DescribeScanStatisticCallable(const DescribeScanStatisticRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScanStatisticOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScanStatistic(request);
         }
     );
 
@@ -1710,6 +2226,49 @@ CsipClient::DescribeUebaRuleOutcomeCallable CsipClient::DescribeUebaRuleCallable
         [this, request]()
         {
             return this->DescribeUebaRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeVULListOutcome CsipClient::DescribeVULList(const DescribeVULListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVULList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVULListResponse rsp = DescribeVULListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVULListOutcome(rsp);
+        else
+            return DescribeVULListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVULListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeVULListAsync(const DescribeVULListRequest& request, const DescribeVULListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVULList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeVULListOutcomeCallable CsipClient::DescribeVULListCallable(const DescribeVULListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVULListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVULList(request);
         }
     );
 

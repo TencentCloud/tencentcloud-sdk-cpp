@@ -932,6 +932,27 @@ namespace TencentCloud
                      */
                     bool LogTraceIdKeyHasBeenSet() const;
 
+                    /**
+                     * 获取业务系统鉴权 token
+                     * @return Token 业务系统鉴权 token
+                     * 
+                     */
+                    std::string GetToken() const;
+
+                    /**
+                     * 设置业务系统鉴权 token
+                     * @param _token 业务系统鉴权 token
+                     * 
+                     */
+                    void SetToken(const std::string& _token);
+
+                    /**
+                     * 判断参数 Token 是否已赋值
+                     * @return Token 是否已赋值
+                     * 
+                     */
+                    bool TokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1185,6 +1206,12 @@ namespace TencentCloud
                      */
                     std::string m_logTraceIdKey;
                     bool m_logTraceIdKeyHasBeenSet;
+
+                    /**
+                     * 业务系统鉴权 token
+                     */
+                    std::string m_token;
+                    bool m_tokenHasBeenSet;
 
                 };
             }

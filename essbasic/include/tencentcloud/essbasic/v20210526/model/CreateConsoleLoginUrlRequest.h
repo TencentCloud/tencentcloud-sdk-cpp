@@ -437,12 +437,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可选的此企业允许的授权方式, 可以设置的方式有:
-<ul><li>1：上传授权书</li>
+<ul>
 <li>2：转法定代表人授权</li>
+<li>5：授权书+对公打款</li>
 </ul>
                      * @return AuthorizationTypes 可选的此企业允许的授权方式, 可以设置的方式有:
-<ul><li>1：上传授权书</li>
+<ul>
 <li>2：转法定代表人授权</li>
+<li>5：授权书+对公打款</li>
 </ul>
                      * 
                      */
@@ -450,12 +452,14 @@ namespace TencentCloud
 
                     /**
                      * 设置可选的此企业允许的授权方式, 可以设置的方式有:
-<ul><li>1：上传授权书</li>
+<ul>
 <li>2：转法定代表人授权</li>
+<li>5：授权书+对公打款</li>
 </ul>
                      * @param _authorizationTypes 可选的此企业允许的授权方式, 可以设置的方式有:
-<ul><li>1：上传授权书</li>
+<ul>
 <li>2：转法定代表人授权</li>
+<li>5：授权书+对公打款</li>
 </ul>
                      * 
                      */
@@ -843,8 +847,9 @@ namespace TencentCloud
 
                     /**
                      * 可选的此企业允许的授权方式, 可以设置的方式有:
-<ul><li>1：上传授权书</li>
+<ul>
 <li>2：转法定代表人授权</li>
+<li>5：授权书+对公打款</li>
 </ul>
                      */
                     std::vector<int64_t> m_authorizationTypes;

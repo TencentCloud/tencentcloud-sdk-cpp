@@ -275,6 +275,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InvokeTWeSeeRecognitionTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InvokeTWeSeeRecognitionTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeVideosKeywordsAnalyzerRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeVideosKeywordsAnalyzerResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresRequest.h>
@@ -751,6 +753,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InvokeTWeSeeRecognitionTaskResponse> InvokeTWeSeeRecognitionTaskOutcome;
                 typedef std::future<InvokeTWeSeeRecognitionTaskOutcome> InvokeTWeSeeRecognitionTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::InvokeTWeSeeRecognitionTaskRequest&, InvokeTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeTWeSeeRecognitionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::InvokeVideosKeywordsAnalyzerResponse> InvokeVideosKeywordsAnalyzerOutcome;
+                typedef std::future<InvokeVideosKeywordsAnalyzerOutcome> InvokeVideosKeywordsAnalyzerOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::InvokeVideosKeywordsAnalyzerRequest&, InvokeVideosKeywordsAnalyzerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeVideosKeywordsAnalyzerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListEventHistoryResponse> ListEventHistoryOutcome;
                 typedef std::future<ListEventHistoryOutcome> ListEventHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListEventHistoryRequest&, ListEventHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEventHistoryAsyncHandler;
@@ -1034,7 +1039,7 @@ namespace TencentCloud
                 CreateExternalSourceAIServiceTaskOutcomeCallable CreateExternalSourceAIServiceTaskCallable(const Model::CreateExternalSourceAIServiceTaskRequest& request);
 
                 /**
-                 *创建围栏绑定信息
+                 *> 创建围栏绑定信息。
                  * @param req CreateFenceBindRequest
                  * @return CreateFenceBindOutcome
                  */
@@ -1079,7 +1084,7 @@ namespace TencentCloud
                 CreateLoRaGatewayOutcomeCallable CreateLoRaGatewayCallable(const Model::CreateLoRaGatewayRequest& request);
 
                 /**
-                 *创建围栏
+                 *创建围栏。
                  * @param req CreatePositionFenceRequest
                  * @return CreatePositionFenceOutcome
                  */
@@ -1178,7 +1183,7 @@ namespace TencentCloud
                 DeleteDevicesOutcomeCallable DeleteDevicesCallable(const Model::DeleteDevicesRequest& request);
 
                 /**
-                 *删除围栏绑定信息
+                 *删除围栏绑定信息。
                  * @param req DeleteFenceBindRequest
                  * @return DeleteFenceBindOutcome
                  */
@@ -1205,7 +1210,7 @@ namespace TencentCloud
                 DeleteLoRaGatewayOutcomeCallable DeleteLoRaGatewayCallable(const Model::DeleteLoRaGatewayRequest& request);
 
                 /**
-                 *删除围栏
+                 *删除围栏。
                  * @param req DeletePositionFenceRequest
                  * @return DeletePositionFenceOutcome
                  */
@@ -1214,7 +1219,7 @@ namespace TencentCloud
                 DeletePositionFenceOutcomeCallable DeletePositionFenceCallable(const Model::DeletePositionFenceRequest& request);
 
                 /**
-                 *删除位置空间
+                 *删除位置空间。
                  * @param req DeletePositionSpaceRequest
                  * @return DeletePositionSpaceOutcome
                  */
@@ -1549,7 +1554,7 @@ namespace TencentCloud
                 DescribeDevicePositionListOutcomeCallable DescribeDevicePositionListCallable(const Model::DescribeDevicePositionListRequest& request);
 
                 /**
-                 *获取围栏绑定信息列表
+                 *获取围栏绑定信息列表。
                  * @param req DescribeFenceBindListRequest
                  * @return DescribeFenceBindListOutcome
                  */
@@ -1558,7 +1563,7 @@ namespace TencentCloud
                 DescribeFenceBindListOutcomeCallable DescribeFenceBindListCallable(const Model::DescribeFenceBindListRequest& request);
 
                 /**
-                 *获取围栏告警事件列表
+                 *获取围栏告警事件列表。
                  * @param req DescribeFenceEventListRequest
                  * @return DescribeFenceEventListOutcome
                  */
@@ -1711,7 +1716,7 @@ namespace TencentCloud
                 DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request);
 
                 /**
-                 *获取位置空间中围栏告警事件列表
+                 *获取位置空间中围栏告警事件列表。
                  * @param req DescribeSpaceFenceEventListRequest
                  * @return DescribeSpaceFenceEventListOutcome
                  */
@@ -2017,6 +2022,15 @@ namespace TencentCloud
                 InvokeTWeSeeRecognitionTaskOutcomeCallable InvokeTWeSeeRecognitionTaskCallable(const Model::InvokeTWeSeeRecognitionTaskRequest& request);
 
                 /**
+                 *获取某个时间段的视频内容关键字
+                 * @param req InvokeVideosKeywordsAnalyzerRequest
+                 * @return InvokeVideosKeywordsAnalyzerOutcome
+                 */
+                InvokeVideosKeywordsAnalyzerOutcome InvokeVideosKeywordsAnalyzer(const Model::InvokeVideosKeywordsAnalyzerRequest &request);
+                void InvokeVideosKeywordsAnalyzerAsync(const Model::InvokeVideosKeywordsAnalyzerRequest& request, const InvokeVideosKeywordsAnalyzerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeVideosKeywordsAnalyzerOutcomeCallable InvokeVideosKeywordsAnalyzerCallable(const Model::InvokeVideosKeywordsAnalyzerRequest& request);
+
+                /**
                  *获取设备的历史事件
                  * @param req ListEventHistoryRequest
                  * @return ListEventHistoryOutcome
@@ -2071,7 +2085,7 @@ namespace TencentCloud
                 ModifyCloudStorageAIServiceCallbackOutcomeCallable ModifyCloudStorageAIServiceCallbackCallable(const Model::ModifyCloudStorageAIServiceCallbackRequest& request);
 
                 /**
-                 *更新围栏绑定信息
+                 *更新围栏绑定信息。
                  * @param req ModifyFenceBindRequest
                  * @return ModifyFenceBindOutcome
                  */
@@ -2107,7 +2121,7 @@ namespace TencentCloud
                 ModifyModelDefinitionOutcomeCallable ModifyModelDefinitionCallable(const Model::ModifyModelDefinitionRequest& request);
 
                 /**
-                 *更新围栏
+                 *更新围栏。
                  * @param req ModifyPositionFenceRequest
                  * @return ModifyPositionFenceOutcome
                  */
@@ -2116,7 +2130,7 @@ namespace TencentCloud
                 ModifyPositionFenceOutcomeCallable ModifyPositionFenceCallable(const Model::ModifyPositionFenceRequest& request);
 
                 /**
-                 *更新位置空间
+                 *更新位置空间。
                  * @param req ModifyPositionSpaceRequest
                  * @return ModifyPositionSpaceOutcome
                  */

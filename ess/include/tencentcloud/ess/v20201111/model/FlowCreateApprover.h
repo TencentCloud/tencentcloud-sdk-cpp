@@ -554,15 +554,15 @@ namespace TencentCloud
                     bool CustomApproverTagHasBeenSet() const;
 
                     /**
-                     * 获取<font color="red">不再使用</font >, 快速注册相关信息
-                     * @return RegisterInfo <font color="red">不再使用</font >, 快速注册相关信息
+                     * 获取快速注册相关信息
+                     * @return RegisterInfo 快速注册相关信息
                      * 
                      */
                     RegisterInfo GetRegisterInfo() const;
 
                     /**
-                     * 设置<font color="red">不再使用</font >, 快速注册相关信息
-                     * @param _registerInfo <font color="red">不再使用</font >, 快速注册相关信息
+                     * 设置快速注册相关信息
+                     * @param _registerInfo 快速注册相关信息
                      * 
                      */
                     void SetRegisterInfo(const RegisterInfo& _registerInfo);
@@ -1303,7 +1303,7 @@ namespace TencentCloud
                     bool m_customApproverTagHasBeenSet;
 
                     /**
-                     * <font color="red">不再使用</font >, 快速注册相关信息
+                     * 快速注册相关信息
                      */
                     RegisterInfo m_registerInfo;
                     bool m_registerInfoHasBeenSet;

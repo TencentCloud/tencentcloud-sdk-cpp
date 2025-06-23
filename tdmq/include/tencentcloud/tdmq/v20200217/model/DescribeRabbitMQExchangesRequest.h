@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 id
-                     * @return InstanceId 实例 id
+                     * 获取实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * @return InstanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 id
-                     * @param _instanceId 实例 id
+                     * 设置实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * @param _instanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取vhost 参数
-                     * @return VirtualHost vhost 参数
+                     * 获取VirtualHost 名称，形如 testvhost。有效的 VirtualHost 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，在左侧导航栏点击 Vhost，并在 Vhost 列表中找到Vhost名称。
+                     * @return VirtualHost VirtualHost 名称，形如 testvhost。有效的 VirtualHost 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，在左侧导航栏点击 Vhost，并在 Vhost 列表中找到Vhost名称。
                      * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
-                     * 设置vhost 参数
-                     * @param _virtualHost vhost 参数
+                     * 设置VirtualHost 名称，形如 testvhost。有效的 VirtualHost 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，在左侧导航栏点击 Vhost，并在 Vhost 列表中找到Vhost名称。
+                     * @param _virtualHost VirtualHost 名称，形如 testvhost。有效的 VirtualHost 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，在左侧导航栏点击 Vhost，并在 Vhost 列表中找到Vhost名称。
                      * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VirtualHostHasBeenSet() const;
 
                     /**
-                     * 获取分页 offset
-                     * @return Offset 分页 offset
+                     * 获取分页 offset，默认 0
+                     * @return Offset 分页 offset，默认 0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页 offset
-                     * @param _offset 分页 offset
+                     * 设置分页 offset，默认 0
+                     * @param _offset 分页 offset，默认 0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页 limit
-                     * @return Limit 分页 limit
+                     * 获取分页 limit，默认 20
+                     * @return Limit 分页 limit，默认 20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页 limit
-                     * @param _limit 分页 limit
+                     * 设置分页 limit，默认 20
+                     * @param _limit 分页 limit，默认 20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取筛选 exchange 类型, 数组中每个元素为选中的过滤类型
-                     * @return ExchangeTypeFilters 筛选 exchange 类型, 数组中每个元素为选中的过滤类型
+                     * 获取筛选 exchange 类型, 数组中每个元素为选中的过滤类型，仅支持 direct、fanout、topic、header
+                     * @return ExchangeTypeFilters 筛选 exchange 类型, 数组中每个元素为选中的过滤类型，仅支持 direct、fanout、topic、header
                      * 
                      */
                     std::vector<std::string> GetExchangeTypeFilters() const;
 
                     /**
-                     * 设置筛选 exchange 类型, 数组中每个元素为选中的过滤类型
-                     * @param _exchangeTypeFilters 筛选 exchange 类型, 数组中每个元素为选中的过滤类型
+                     * 设置筛选 exchange 类型, 数组中每个元素为选中的过滤类型，仅支持 direct、fanout、topic、header
+                     * @param _exchangeTypeFilters 筛选 exchange 类型, 数组中每个元素为选中的过滤类型，仅支持 direct、fanout、topic、header
                      * 
                      */
                     void SetExchangeTypeFilters(const std::vector<std::string>& _exchangeTypeFilters);
@@ -245,14 +245,22 @@ MessageRateOut - 消费速率；
 
                     /**
                      * 获取排序顺序，ascend 或 descend
+ascend：升序
+descend：降序
                      * @return SortOrder 排序顺序，ascend 或 descend
+ascend：升序
+descend：降序
                      * 
                      */
                     std::string GetSortOrder() const;
 
                     /**
                      * 设置排序顺序，ascend 或 descend
+ascend：升序
+descend：降序
                      * @param _sortOrder 排序顺序，ascend 或 descend
+ascend：升序
+descend：降序
                      * 
                      */
                     void SetSortOrder(const std::string& _sortOrder);
@@ -267,25 +275,25 @@ MessageRateOut - 消费速率；
                 private:
 
                     /**
-                     * 实例 id
+                     * 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * vhost 参数
+                     * VirtualHost 名称，形如 testvhost。有效的 VirtualHost 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，在左侧导航栏点击 Vhost，并在 Vhost 列表中找到Vhost名称。
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
 
                     /**
-                     * 分页 offset
+                     * 分页 offset，默认 0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页 limit
+                     * 分页 limit，默认 20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -297,7 +305,7 @@ MessageRateOut - 消费速率；
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 筛选 exchange 类型, 数组中每个元素为选中的过滤类型
+                     * 筛选 exchange 类型, 数组中每个元素为选中的过滤类型，仅支持 direct、fanout、topic、header
                      */
                     std::vector<std::string> m_exchangeTypeFilters;
                     bool m_exchangeTypeFiltersHasBeenSet;
@@ -325,6 +333,8 @@ MessageRateOut - 消费速率；
 
                     /**
                      * 排序顺序，ascend 或 descend
+ascend：升序
+descend：降序
                      */
                     std::string m_sortOrder;
                     bool m_sortOrderHasBeenSet;

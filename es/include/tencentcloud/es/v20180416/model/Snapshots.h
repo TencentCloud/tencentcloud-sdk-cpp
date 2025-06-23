@@ -98,6 +98,31 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
+                     * 获取仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Repository 仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRepository() const;
+
+                    /**
+                     * 设置仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _repository 仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRepository(const std::string& _repository);
+
+                    /**
+                     * 判断参数 Repository 是否已赋值
+                     * @return Repository 是否已赋值
+                     * 
+                     */
+                    bool RepositoryHasBeenSet() const;
+
+                    /**
                      * 获取该快照所属集群的版本号
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 该快照所属集群的版本号
@@ -444,6 +469,13 @@ SUCCESS     备份成功
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * 仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_repository;
+                    bool m_repositoryHasBeenSet;
 
                     /**
                      * 该快照所属集群的版本号

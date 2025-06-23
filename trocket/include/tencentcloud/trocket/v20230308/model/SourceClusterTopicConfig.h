@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主题名称
-                     * @return TopicName 主题名称
+                     * 获取主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。
+                     * @return TopicName 主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置主题名称
-                     * @param _topicName 主题名称
+                     * 设置主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。
+                     * @param _topicName 主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -230,11 +230,15 @@ Unknown 未知，
 AlreadyExists 已存在，
 Success 成功，
 Failure 失败
+
+仅作为出参可用
                      * @return ImportStatus 导入状态，
 Unknown 未知，
 AlreadyExists 已存在，
 Success 成功，
 Failure 失败
+
+仅作为出参可用
                      * 
                      */
                     std::string GetImportStatus() const;
@@ -245,11 +249,15 @@ Unknown 未知，
 AlreadyExists 已存在，
 Success 成功，
 Failure 失败
+
+仅作为出参可用
                      * @param _importStatus 导入状态，
 Unknown 未知，
 AlreadyExists 已存在，
 Success 成功，
 Failure 失败
+
+仅作为出参可用
                      * 
                      */
                     void SetImportStatus(const std::string& _importStatus);
@@ -327,7 +335,7 @@ Failure 失败
                 private:
 
                     /**
-                     * 主题名称
+                     * 主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -381,6 +389,8 @@ Unknown 未知，
 AlreadyExists 已存在，
 Success 成功，
 Failure 失败
+
+仅作为出参可用
                      */
                     std::string m_importStatus;
                     bool m_importStatusHasBeenSet;

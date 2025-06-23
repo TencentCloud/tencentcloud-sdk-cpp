@@ -947,6 +947,56 @@ namespace TencentCloud
                      */
                     bool SaleInventoryHasBeenSet() const;
 
+                    /**
+                     * 获取机动车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MotorVehicleSaleInvoiceElectronic 机动车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MotorVehicleSaleInvoice GetMotorVehicleSaleInvoiceElectronic() const;
+
+                    /**
+                     * 设置机动车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _motorVehicleSaleInvoiceElectronic 机动车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMotorVehicleSaleInvoiceElectronic(const MotorVehicleSaleInvoice& _motorVehicleSaleInvoiceElectronic);
+
+                    /**
+                     * 判断参数 MotorVehicleSaleInvoiceElectronic 是否已赋值
+                     * @return MotorVehicleSaleInvoiceElectronic 是否已赋值
+                     * 
+                     */
+                    bool MotorVehicleSaleInvoiceElectronicHasBeenSet() const;
+
+                    /**
+                     * 获取二手车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UsedCarPurchaseInvoiceElectronic 二手车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    UsedCarPurchaseInvoice GetUsedCarPurchaseInvoiceElectronic() const;
+
+                    /**
+                     * 设置二手车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _usedCarPurchaseInvoiceElectronic 二手车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUsedCarPurchaseInvoiceElectronic(const UsedCarPurchaseInvoice& _usedCarPurchaseInvoiceElectronic);
+
+                    /**
+                     * 判断参数 UsedCarPurchaseInvoiceElectronic 是否已赋值
+                     * @return UsedCarPurchaseInvoiceElectronic 是否已赋值
+                     * 
+                     */
+                    bool UsedCarPurchaseInvoiceElectronicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1193,6 +1243,20 @@ namespace TencentCloud
                      */
                     SaleInventory m_saleInventory;
                     bool m_saleInventoryHasBeenSet;
+
+                    /**
+                     * 机动车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MotorVehicleSaleInvoice m_motorVehicleSaleInvoiceElectronic;
+                    bool m_motorVehicleSaleInvoiceElectronicHasBeenSet;
+
+                    /**
+                     * 二手车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UsedCarPurchaseInvoice m_usedCarPurchaseInvoiceElectronic;
+                    bool m_usedCarPurchaseInvoiceElectronicHasBeenSet;
 
                 };
             }

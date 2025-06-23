@@ -223,8 +223,6 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveForbidStreamListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePackageInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePackageInfoResponse.h>
-#include <tencentcloud/live/v20180801/model/DescribeLivePadProcessorListRequest.h>
-#include <tencentcloud/live/v20180801/model/DescribeLivePadProcessorListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePadRulesRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePadRulesResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePadStreamListRequest.h>
@@ -405,8 +403,6 @@
 #include <tencentcloud/live/v20180801/model/StopCasterPgmResponse.h>
 #include <tencentcloud/live/v20180801/model/StopCasterPvwRequest.h>
 #include <tencentcloud/live/v20180801/model/StopCasterPvwResponse.h>
-#include <tencentcloud/live/v20180801/model/StopLivePadProcessorRequest.h>
-#include <tencentcloud/live/v20180801/model/StopLivePadProcessorResponse.h>
 #include <tencentcloud/live/v20180801/model/StopLivePadStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/StopLivePadStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/StopLiveRecordRequest.h>
@@ -737,9 +733,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLivePackageInfoResponse> DescribeLivePackageInfoOutcome;
                 typedef std::future<DescribeLivePackageInfoOutcome> DescribeLivePackageInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLivePackageInfoRequest&, DescribeLivePackageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePackageInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeLivePadProcessorListResponse> DescribeLivePadProcessorListOutcome;
-                typedef std::future<DescribeLivePadProcessorListOutcome> DescribeLivePadProcessorListOutcomeCallable;
-                typedef std::function<void(const LiveClient*, const Model::DescribeLivePadProcessorListRequest&, DescribeLivePadProcessorListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePadProcessorListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLivePadRulesResponse> DescribeLivePadRulesOutcome;
                 typedef std::future<DescribeLivePadRulesOutcome> DescribeLivePadRulesOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLivePadRulesRequest&, DescribeLivePadRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePadRulesAsyncHandler;
@@ -1010,9 +1003,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopCasterPvwResponse> StopCasterPvwOutcome;
                 typedef std::future<StopCasterPvwOutcome> StopCasterPvwOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopCasterPvwRequest&, StopCasterPvwOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopCasterPvwAsyncHandler;
-                typedef Outcome<Core::Error, Model::StopLivePadProcessorResponse> StopLivePadProcessorOutcome;
-                typedef std::future<StopLivePadProcessorOutcome> StopLivePadProcessorOutcomeCallable;
-                typedef std::function<void(const LiveClient*, const Model::StopLivePadProcessorRequest&, StopLivePadProcessorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopLivePadProcessorAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopLivePadStreamResponse> StopLivePadStreamOutcome;
                 typedef std::future<StopLivePadStreamOutcome> StopLivePadStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopLivePadStreamRequest&, StopLivePadStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopLivePadStreamAsyncHandler;
@@ -2018,15 +2008,6 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLivePackageInfoOutcomeCallable DescribeLivePackageInfoCallable(const Model::DescribeLivePackageInfoRequest& request);
 
                 /**
-                 *使用该接口查询垫片流。垫片流状态更新存在一定延迟，可间隔30秒以上查询，避免频繁查询该接口。
-                 * @param req DescribeLivePadProcessorListRequest
-                 * @return DescribeLivePadProcessorListOutcome
-                 */
-                DescribeLivePadProcessorListOutcome DescribeLivePadProcessorList(const Model::DescribeLivePadProcessorListRequest &request);
-                void DescribeLivePadProcessorListAsync(const Model::DescribeLivePadProcessorListRequest& request, const DescribeLivePadProcessorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeLivePadProcessorListOutcomeCallable DescribeLivePadProcessorListCallable(const Model::DescribeLivePadProcessorListRequest& request);
-
-                /**
                  *获取直播垫片规则列表。
                  * @param req DescribeLivePadRulesRequest
                  * @return DescribeLivePadRulesOutcome
@@ -2892,15 +2873,6 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 StopCasterPvwOutcome StopCasterPvw(const Model::StopCasterPvwRequest &request);
                 void StopCasterPvwAsync(const Model::StopCasterPvwRequest& request, const StopCasterPvwAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopCasterPvwOutcomeCallable StopCasterPvwCallable(const Model::StopCasterPvwRequest& request);
-
-                /**
-                 *使用该接口停止垫片流。
-                 * @param req StopLivePadProcessorRequest
-                 * @return StopLivePadProcessorOutcome
-                 */
-                StopLivePadProcessorOutcome StopLivePadProcessor(const Model::StopLivePadProcessorRequest &request);
-                void StopLivePadProcessorAsync(const Model::StopLivePadProcessorRequest& request, const StopLivePadProcessorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                StopLivePadProcessorOutcomeCallable StopLivePadProcessorCallable(const Model::StopLivePadProcessorRequest& request);
 
                 /**
                  *使用该接口将直播流停止切入垫片。

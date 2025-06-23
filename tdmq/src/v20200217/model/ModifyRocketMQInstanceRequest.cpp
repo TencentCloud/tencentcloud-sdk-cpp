@@ -26,7 +26,8 @@ ModifyRocketMQInstanceRequest::ModifyRocketMQInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_messageRetentionHasBeenSet(false)
+    m_messageRetentionHasBeenSet(false),
+    m_enableDeletionProtectionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyRocketMQInstanceRequest::ToJsonString() const
         string key = "MessageRetention";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_messageRetention, allocator);
+    }
+
+    if (m_enableDeletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDeletionProtection, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyRocketMQInstanceRequest::SetMessageRetention(const int64_t& _messageR
 bool ModifyRocketMQInstanceRequest::MessageRetentionHasBeenSet() const
 {
     return m_messageRetentionHasBeenSet;
+}
+
+bool ModifyRocketMQInstanceRequest::GetEnableDeletionProtection() const
+{
+    return m_enableDeletionProtection;
+}
+
+void ModifyRocketMQInstanceRequest::SetEnableDeletionProtection(const bool& _enableDeletionProtection)
+{
+    m_enableDeletionProtection = _enableDeletionProtection;
+    m_enableDeletionProtectionHasBeenSet = true;
+}
+
+bool ModifyRocketMQInstanceRequest::EnableDeletionProtectionHasBeenSet() const
+{
+    return m_enableDeletionProtectionHasBeenSet;
 }
 
 

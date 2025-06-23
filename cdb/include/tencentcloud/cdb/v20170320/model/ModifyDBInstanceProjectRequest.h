@@ -85,14 +85,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所属项目的 ID，可在账号中心下的项目管理页面查询。
+说明：此项为必填。
                      * @return NewProjectId 实例所属项目的 ID，可在账号中心下的项目管理页面查询。
+说明：此项为必填。
                      * 
                      */
                     int64_t GetNewProjectId() const;
 
                     /**
                      * 设置实例所属项目的 ID，可在账号中心下的项目管理页面查询。
+说明：此项为必填。
                      * @param _newProjectId 实例所属项目的 ID，可在账号中心下的项目管理页面查询。
+说明：此项为必填。
                      * 
                      */
                     void SetNewProjectId(const int64_t& _newProjectId);
@@ -119,6 +123,7 @@ namespace TencentCloud
 
                     /**
                      * 实例所属项目的 ID，可在账号中心下的项目管理页面查询。
+说明：此项为必填。
                      */
                     int64_t m_newProjectId;
                     bool m_newProjectIdHasBeenSet;

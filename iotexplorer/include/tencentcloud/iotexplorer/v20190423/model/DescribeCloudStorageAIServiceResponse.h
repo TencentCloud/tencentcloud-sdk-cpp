@@ -155,6 +155,20 @@ namespace TencentCloud
                      */
                     bool ROIHasBeenSet() const;
 
+                    /**
+                     * 获取云存 AI 套餐 ID
+                     * @return PackageId 云存 AI 套餐 ID
+                     * 
+                     */
+                    std::string GetPackageId() const;
+
+                    /**
+                     * 判断参数 PackageId 是否已赋值
+                     * @return PackageId 是否已赋值
+                     * 
+                     */
+                    bool PackageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +219,12 @@ namespace TencentCloud
                      */
                     std::string m_rOI;
                     bool m_rOIHasBeenSet;
+
+                    /**
+                     * 云存 AI 套餐 ID
+                     */
+                    std::string m_packageId;
+                    bool m_packageIdHasBeenSet;
 
                 };
             }

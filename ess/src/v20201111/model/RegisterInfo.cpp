@@ -23,7 +23,8 @@ using namespace std;
 RegisterInfo::RegisterInfo() :
     m_legalNameHasBeenSet(false),
     m_usccHasBeenSet(false),
-    m_unifiedSocialCreditCodeHasBeenSet(false)
+    m_unifiedSocialCreditCodeHasBeenSet(false),
+    m_authorizationTypesHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,19 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
         m_unifiedSocialCreditCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("AuthorizationTypes") && !value["AuthorizationTypes"].IsNull())
+    {
+        if (!value["AuthorizationTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.AuthorizationTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AuthorizationTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_authorizationTypes.push_back((*itr).GetUint64());
+        }
+        m_authorizationTypesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +105,19 @@ void RegisterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UnifiedSocialCreditCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_unifiedSocialCreditCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_authorizationTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_authorizationTypes.begin(); itr != m_authorizationTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 }
@@ -142,5 +169,21 @@ void RegisterInfo::SetUnifiedSocialCreditCode(const string& _unifiedSocialCredit
 bool RegisterInfo::UnifiedSocialCreditCodeHasBeenSet() const
 {
     return m_unifiedSocialCreditCodeHasBeenSet;
+}
+
+vector<uint64_t> RegisterInfo::GetAuthorizationTypes() const
+{
+    return m_authorizationTypes;
+}
+
+void RegisterInfo::SetAuthorizationTypes(const vector<uint64_t>& _authorizationTypes)
+{
+    m_authorizationTypes = _authorizationTypes;
+    m_authorizationTypesHasBeenSet = true;
+}
+
+bool RegisterInfo::AuthorizationTypesHasBeenSet() const
+{
+    return m_authorizationTypesHasBeenSet;
 }
 

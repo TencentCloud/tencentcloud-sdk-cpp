@@ -147,6 +147,146 @@ namespace TencentCloud
                      */
                     bool ChannelIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要返回总结，默认为False；  开启后会加大接口响应时长
+                     * @return EnableSummary 是否需要返回总结，默认为False；  开启后会加大接口响应时长
+                     * 
+                     */
+                    bool GetEnableSummary() const;
+
+                    /**
+                     * 设置是否需要返回总结，默认为False；  开启后会加大接口响应时长
+                     * @param _enableSummary 是否需要返回总结，默认为False；  开启后会加大接口响应时长
+                     * 
+                     */
+                    void SetEnableSummary(const bool& _enableSummary);
+
+                    /**
+                     * 判断参数 EnableSummary 是否已赋值
+                     * @return EnableSummary 是否已赋值
+                     * 
+                     */
+                    bool EnableSummaryHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间。
+
+注：
+1. 单位为毫秒（ms）
+2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）
+3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为"过去三天关于猫咪的视频"， 则会将"过去三天忽略"）
+                     * @return StartTimeMs 开始时间。
+
+注：
+1. 单位为毫秒（ms）
+2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）
+3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为"过去三天关于猫咪的视频"， 则会将"过去三天忽略"）
+                     * 
+                     */
+                    int64_t GetStartTimeMs() const;
+
+                    /**
+                     * 设置开始时间。
+
+注：
+1. 单位为毫秒（ms）
+2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）
+3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为"过去三天关于猫咪的视频"， 则会将"过去三天忽略"）
+                     * @param _startTimeMs 开始时间。
+
+注：
+1. 单位为毫秒（ms）
+2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）
+3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为"过去三天关于猫咪的视频"， 则会将"过去三天忽略"）
+                     * 
+                     */
+                    void SetStartTimeMs(const int64_t& _startTimeMs);
+
+                    /**
+                     * 判断参数 StartTimeMs 是否已赋值
+                     * @return StartTimeMs 是否已赋值
+                     * 
+                     */
+                    bool StartTimeMsHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间。
+
+注：
+1. 单位为毫秒（ms）
+2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）
+3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为"过去三天关于猫咪的视频"， 则会将"过去三天忽略"）
+                     * @return EndTimeMs 结束时间。
+
+注：
+1. 单位为毫秒（ms）
+2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）
+3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为"过去三天关于猫咪的视频"， 则会将"过去三天忽略"）
+                     * 
+                     */
+                    int64_t GetEndTimeMs() const;
+
+                    /**
+                     * 设置结束时间。
+
+注：
+1. 单位为毫秒（ms）
+2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）
+3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为"过去三天关于猫咪的视频"， 则会将"过去三天忽略"）
+                     * @param _endTimeMs 结束时间。
+
+注：
+1. 单位为毫秒（ms）
+2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）
+3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为"过去三天关于猫咪的视频"， 则会将"过去三天忽略"）
+                     * 
+                     */
+                    void SetEndTimeMs(const int64_t& _endTimeMs);
+
+                    /**
+                     * 判断参数 EndTimeMs 是否已赋值
+                     * @return EndTimeMs 是否已赋值
+                     * 
+                     */
+                    bool EndTimeMsHasBeenSet() const;
+
+                    /**
+                     * 获取时区。默认值：Asia/Shanghai
+
+注：
+符合iana标准 https://www.iana.org/time-zones，例如Asia/Shanghai、Asia/Bangkok
+
+                     * @return TimeZone 时区。默认值：Asia/Shanghai
+
+注：
+符合iana标准 https://www.iana.org/time-zones，例如Asia/Shanghai、Asia/Bangkok
+
+                     * 
+                     */
+                    std::string GetTimeZone() const;
+
+                    /**
+                     * 设置时区。默认值：Asia/Shanghai
+
+注：
+符合iana标准 https://www.iana.org/time-zones，例如Asia/Shanghai、Asia/Bangkok
+
+                     * @param _timeZone 时区。默认值：Asia/Shanghai
+
+注：
+符合iana标准 https://www.iana.org/time-zones，例如Asia/Shanghai、Asia/Bangkok
+
+                     * 
+                     */
+                    void SetTimeZone(const std::string& _timeZone);
+
+                    /**
+                     * 判断参数 TimeZone 是否已赋值
+                     * @return TimeZone 是否已赋值
+                     * 
+                     */
+                    bool TimeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +318,44 @@ namespace TencentCloud
                      */
                     uint64_t m_channelId;
                     bool m_channelIdHasBeenSet;
+
+                    /**
+                     * 是否需要返回总结，默认为False；  开启后会加大接口响应时长
+                     */
+                    bool m_enableSummary;
+                    bool m_enableSummaryHasBeenSet;
+
+                    /**
+                     * 开始时间。
+
+注：
+1. 单位为毫秒（ms）
+2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）
+3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为"过去三天关于猫咪的视频"， 则会将"过去三天忽略"）
+                     */
+                    int64_t m_startTimeMs;
+                    bool m_startTimeMsHasBeenSet;
+
+                    /**
+                     * 结束时间。
+
+注：
+1. 单位为毫秒（ms）
+2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）
+3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为"过去三天关于猫咪的视频"， 则会将"过去三天忽略"）
+                     */
+                    int64_t m_endTimeMs;
+                    bool m_endTimeMsHasBeenSet;
+
+                    /**
+                     * 时区。默认值：Asia/Shanghai
+
+注：
+符合iana标准 https://www.iana.org/time-zones，例如Asia/Shanghai、Asia/Bangkok
+
+                     */
+                    std::string m_timeZone;
+                    bool m_timeZoneHasBeenSet;
 
                 };
             }

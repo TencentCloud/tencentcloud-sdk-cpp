@@ -5458,6 +5458,49 @@ IotexplorerClient::InvokeTWeSeeRecognitionTaskOutcomeCallable IotexplorerClient:
     return task->get_future();
 }
 
+IotexplorerClient::InvokeVideosKeywordsAnalyzerOutcome IotexplorerClient::InvokeVideosKeywordsAnalyzer(const InvokeVideosKeywordsAnalyzerRequest &request)
+{
+    auto outcome = MakeRequest(request, "InvokeVideosKeywordsAnalyzer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InvokeVideosKeywordsAnalyzerResponse rsp = InvokeVideosKeywordsAnalyzerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InvokeVideosKeywordsAnalyzerOutcome(rsp);
+        else
+            return InvokeVideosKeywordsAnalyzerOutcome(o.GetError());
+    }
+    else
+    {
+        return InvokeVideosKeywordsAnalyzerOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::InvokeVideosKeywordsAnalyzerAsync(const InvokeVideosKeywordsAnalyzerRequest& request, const InvokeVideosKeywordsAnalyzerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InvokeVideosKeywordsAnalyzer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::InvokeVideosKeywordsAnalyzerOutcomeCallable IotexplorerClient::InvokeVideosKeywordsAnalyzerCallable(const InvokeVideosKeywordsAnalyzerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InvokeVideosKeywordsAnalyzerOutcome()>>(
+        [this, request]()
+        {
+            return this->InvokeVideosKeywordsAnalyzer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::ListEventHistoryOutcome IotexplorerClient::ListEventHistory(const ListEventHistoryRequest &request)
 {
     auto outcome = MakeRequest(request, "ListEventHistory");

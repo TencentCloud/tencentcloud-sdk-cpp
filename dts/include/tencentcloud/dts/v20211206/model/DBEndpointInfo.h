@@ -277,6 +277,27 @@ MongoDB可定义如下的参数：
                      */
                     bool ConnectTypeHasBeenSet() const;
 
+                    /**
+                     * 获取云联网网关所属账号，如果云联网网关为其他账号资源需要填写
+                     * @return CcnOwnerUin 云联网网关所属账号，如果云联网网关为其他账号资源需要填写
+                     * 
+                     */
+                    std::string GetCcnOwnerUin() const;
+
+                    /**
+                     * 设置云联网网关所属账号，如果云联网网关为其他账号资源需要填写
+                     * @param _ccnOwnerUin 云联网网关所属账号，如果云联网网关为其他账号资源需要填写
+                     * 
+                     */
+                    void SetCcnOwnerUin(const std::string& _ccnOwnerUin);
+
+                    /**
+                     * 判断参数 CcnOwnerUin 是否已赋值
+                     * @return CcnOwnerUin 是否已赋值
+                     * 
+                     */
+                    bool CcnOwnerUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -342,6 +363,12 @@ MongoDB可定义如下的参数：
                      */
                     std::string m_connectType;
                     bool m_connectTypeHasBeenSet;
+
+                    /**
+                     * 云联网网关所属账号，如果云联网网关为其他账号资源需要填写
+                     */
+                    std::string m_ccnOwnerUin;
+                    bool m_ccnOwnerUinHasBeenSet;
 
                 };
             }

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ccc/v20200210/model/SkillGroupItem.h>
+#include <tencentcloud/ccc/v20200210/model/ForwardingConfig.h>
 
 
 namespace TencentCloud
@@ -153,19 +154,15 @@ namespace TencentCloud
                     bool StaffNumberHasBeenSet() const;
 
                     /**
-                     * 获取用户角色id
-一个用户绑定了多个角色时以RoleIdList为准
-                     * @return RoleId 用户角色id
-一个用户绑定了多个角色时以RoleIdList为准
+                     * 获取用户角色 ID，一个用户绑定了多个角色时以RoleIdList为准
+                     * @return RoleId 用户角色 ID，一个用户绑定了多个角色时以RoleIdList为准
                      * @deprecated
                      */
                     uint64_t GetRoleId() const;
 
                     /**
-                     * 设置用户角色id
-一个用户绑定了多个角色时以RoleIdList为准
-                     * @param _roleId 用户角色id
-一个用户绑定了多个角色时以RoleIdList为准
+                     * 设置用户角色 ID，一个用户绑定了多个角色时以RoleIdList为准
+                     * @param _roleId 用户角色 ID，一个用户绑定了多个角色时以RoleIdList为准
                      * @deprecated
                      */
                     void SetRoleId(const uint64_t& _roleId);
@@ -282,6 +279,27 @@ namespace TencentCloud
                      */
                     bool ExtensionNumberHasBeenSet() const;
 
+                    /**
+                     * 获取呼叫转移配置
+                     * @return ForwardingConfig 呼叫转移配置
+                     * 
+                     */
+                    ForwardingConfig GetForwardingConfig() const;
+
+                    /**
+                     * 设置呼叫转移配置
+                     * @param _forwardingConfig 呼叫转移配置
+                     * 
+                     */
+                    void SetForwardingConfig(const ForwardingConfig& _forwardingConfig);
+
+                    /**
+                     * 判断参数 ForwardingConfig 是否已赋值
+                     * @return ForwardingConfig 是否已赋值
+                     * 
+                     */
+                    bool ForwardingConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,8 +333,7 @@ namespace TencentCloud
                     bool m_staffNumberHasBeenSet;
 
                     /**
-                     * 用户角色id
-一个用户绑定了多个角色时以RoleIdList为准
+                     * 用户角色 ID，一个用户绑定了多个角色时以RoleIdList为准
                      */
                     uint64_t m_roleId;
                     bool m_roleIdHasBeenSet;
@@ -350,6 +367,12 @@ namespace TencentCloud
                      */
                     std::string m_extensionNumber;
                     bool m_extensionNumberHasBeenSet;
+
+                    /**
+                     * 呼叫转移配置
+                     */
+                    ForwardingConfig m_forwardingConfig;
+                    bool m_forwardingConfigHasBeenSet;
 
                 };
             }

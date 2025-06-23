@@ -139,15 +139,15 @@ namespace TencentCloud
                     bool ShrinkPeriodHasBeenSet() const;
 
                     /**
-                     * 获取弹性扩容观测周期（秒级）
-                     * @return ExpandSecondPeriod 弹性扩容观测周期（秒级）
+                     * 获取弹性扩容观测周期（秒级），可取值为：5，30，45，60，180，300，600，900，1800。
+                     * @return ExpandSecondPeriod 弹性扩容观测周期（秒级），可取值为：5，30，45，60，180，300，600，900，1800。
                      * 
                      */
                     int64_t GetExpandSecondPeriod() const;
 
                     /**
-                     * 设置弹性扩容观测周期（秒级）
-                     * @param _expandSecondPeriod 弹性扩容观测周期（秒级）
+                     * 设置弹性扩容观测周期（秒级），可取值为：5，30，45，60，180，300，600，900，1800。
+                     * @param _expandSecondPeriod 弹性扩容观测周期（秒级），可取值为：5，30，45，60，180，300，600，900，1800。
                      * 
                      */
                     void SetExpandSecondPeriod(const int64_t& _expandSecondPeriod);
@@ -160,15 +160,15 @@ namespace TencentCloud
                     bool ExpandSecondPeriodHasBeenSet() const;
 
                     /**
-                     * 获取缩容观测周期（秒级）
-                     * @return ShrinkSecondPeriod 缩容观测周期（秒级）
+                     * 获取缩容观测周期（秒级），可取值为：300。
+                     * @return ShrinkSecondPeriod 缩容观测周期（秒级），可取值为：300。
                      * 
                      */
                     int64_t GetShrinkSecondPeriod() const;
 
                     /**
-                     * 设置缩容观测周期（秒级）
-                     * @param _shrinkSecondPeriod 缩容观测周期（秒级）
+                     * 设置缩容观测周期（秒级），可取值为：300。
+                     * @param _shrinkSecondPeriod 缩容观测周期（秒级），可取值为：300。
                      * 
                      */
                     void SetShrinkSecondPeriod(const int64_t& _shrinkSecondPeriod);
@@ -209,13 +209,13 @@ namespace TencentCloud
                     bool m_shrinkPeriodHasBeenSet;
 
                     /**
-                     * 弹性扩容观测周期（秒级）
+                     * 弹性扩容观测周期（秒级），可取值为：5，30，45，60，180，300，600，900，1800。
                      */
                     int64_t m_expandSecondPeriod;
                     bool m_expandSecondPeriodHasBeenSet;
 
                     /**
-                     * 缩容观测周期（秒级）
+                     * 缩容观测周期（秒级），可取值为：300。
                      */
                     int64_t m_shrinkSecondPeriod;
                     bool m_shrinkSecondPeriodHasBeenSet;

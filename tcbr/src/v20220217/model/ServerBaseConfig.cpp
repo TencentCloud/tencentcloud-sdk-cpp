@@ -47,7 +47,8 @@ ServerBaseConfig::ServerBaseConfig() :
     m_operationModeHasBeenSet(false),
     m_timerScaleHasBeenSet(false),
     m_entryPointHasBeenSet(false),
-    m_cmdHasBeenSet(false)
+    m_cmdHasBeenSet(false),
+    m_sessionAffinityHasBeenSet(false)
 {
 }
 
@@ -355,6 +356,16 @@ CoreInternalOutcome ServerBaseConfig::Deserialize(const rapidjson::Value &value)
         m_cmdHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionAffinity") && !value["SessionAffinity"].IsNull())
+    {
+        if (!value["SessionAffinity"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.SessionAffinity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionAffinity = string(value["SessionAffinity"].GetString());
+        m_sessionAffinityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -605,6 +616,14 @@ void ServerBaseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_sessionAffinityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionAffinity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionAffinity.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1040,5 +1059,21 @@ void ServerBaseConfig::SetCmd(const vector<string>& _cmd)
 bool ServerBaseConfig::CmdHasBeenSet() const
 {
     return m_cmdHasBeenSet;
+}
+
+string ServerBaseConfig::GetSessionAffinity() const
+{
+    return m_sessionAffinity;
+}
+
+void ServerBaseConfig::SetSessionAffinity(const string& _sessionAffinity)
+{
+    m_sessionAffinity = _sessionAffinity;
+    m_sessionAffinityHasBeenSet = true;
+}
+
+bool ServerBaseConfig::SessionAffinityHasBeenSet() const
+{
+    return m_sessionAffinityHasBeenSet;
 }
 

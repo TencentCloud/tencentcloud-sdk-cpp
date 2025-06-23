@@ -68,16 +68,14 @@ namespace TencentCloud
                      * 获取指定授权方式 支持多选:
 
 <ul>
-<li><strong>1</strong>:上传授权书方式</li>
 <li><strong>2</strong>: 法人授权方式</li>
-<li><strong>3</strong>: 法人身份认证方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
                      * @return AuthorizationTypes 指定授权方式 支持多选:
 
 <ul>
-<li><strong>1</strong>:上传授权书方式</li>
 <li><strong>2</strong>: 法人授权方式</li>
-<li><strong>3</strong>: 法人身份认证方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
                      * 
                      */
@@ -87,16 +85,14 @@ namespace TencentCloud
                      * 设置指定授权方式 支持多选:
 
 <ul>
-<li><strong>1</strong>:上传授权书方式</li>
 <li><strong>2</strong>: 法人授权方式</li>
-<li><strong>3</strong>: 法人身份认证方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
                      * @param _authorizationTypes 指定授权方式 支持多选:
 
 <ul>
-<li><strong>1</strong>:上传授权书方式</li>
 <li><strong>2</strong>: 法人授权方式</li>
-<li><strong>3</strong>: 法人身份认证方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
                      * 
                      */
@@ -688,9 +684,8 @@ p.s. 如果上传授权书 ，需遵循以下条件
                      * 指定授权方式 支持多选:
 
 <ul>
-<li><strong>1</strong>:上传授权书方式</li>
 <li><strong>2</strong>: 法人授权方式</li>
-<li><strong>3</strong>: 法人身份认证方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
                      */
                     std::vector<uint64_t> m_authorizationTypes;

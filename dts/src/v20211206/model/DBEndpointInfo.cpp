@@ -29,7 +29,8 @@ DBEndpointInfo::DBEndpointInfo() :
     m_supplierHasBeenSet(false),
     m_extraAttrHasBeenSet(false),
     m_databaseNetEnvHasBeenSet(false),
-    m_connectTypeHasBeenSet(false)
+    m_connectTypeHasBeenSet(false),
+    m_ccnOwnerUinHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome DBEndpointInfo::Deserialize(const rapidjson::Value &value)
         m_connectTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CcnOwnerUin") && !value["CcnOwnerUin"].IsNull())
+    {
+        if (!value["CcnOwnerUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBEndpointInfo.CcnOwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ccnOwnerUin = string(value["CcnOwnerUin"].GetString());
+        m_ccnOwnerUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -239,6 +250,14 @@ void DBEndpointInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ConnectType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_connectType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ccnOwnerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcnOwnerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ccnOwnerUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -386,5 +405,21 @@ void DBEndpointInfo::SetConnectType(const string& _connectType)
 bool DBEndpointInfo::ConnectTypeHasBeenSet() const
 {
     return m_connectTypeHasBeenSet;
+}
+
+string DBEndpointInfo::GetCcnOwnerUin() const
+{
+    return m_ccnOwnerUin;
+}
+
+void DBEndpointInfo::SetCcnOwnerUin(const string& _ccnOwnerUin)
+{
+    m_ccnOwnerUin = _ccnOwnerUin;
+    m_ccnOwnerUinHasBeenSet = true;
+}
+
+bool DBEndpointInfo::CcnOwnerUinHasBeenSet() const
+{
+    return m_ccnOwnerUinHasBeenSet;
 }
 

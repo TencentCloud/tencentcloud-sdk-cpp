@@ -61,7 +61,8 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_isRemoteCommandExecutionAnalysisHasBeenSet(false),
     m_isMemoryHijackingAnalysisHasBeenSet(false),
     m_logIndexTypeHasBeenSet(false),
-    m_logTraceIdKeyHasBeenSet(false)
+    m_logTraceIdKeyHasBeenSet(false),
+    m_tokenHasBeenSet(false)
 {
 }
 
@@ -493,6 +494,16 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_logTraceIdKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("Token") && !value["Token"].IsNull())
+    {
+        if (!value["Token"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.Token` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_token = string(value["Token"].GetString());
+        m_tokenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -838,6 +849,14 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "LogTraceIdKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logTraceIdKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Token";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1497,5 +1516,21 @@ void ApmInstanceDetail::SetLogTraceIdKey(const string& _logTraceIdKey)
 bool ApmInstanceDetail::LogTraceIdKeyHasBeenSet() const
 {
     return m_logTraceIdKeyHasBeenSet;
+}
+
+string ApmInstanceDetail::GetToken() const
+{
+    return m_token;
+}
+
+void ApmInstanceDetail::SetToken(const string& _token)
+{
+    m_token = _token;
+    m_tokenHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::TokenHasBeenSet() const
+{
+    return m_tokenHasBeenSet;
 }
 

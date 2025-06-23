@@ -55,7 +55,8 @@ TaskAlarmInfo::TaskAlarmInfo() :
     m_larkWebHooksHasBeenSet(false),
     m_dingDingWebHooksHasBeenSet(false),
     m_businessTypeHasBeenSet(false),
-    m_alarmMessageRuleHasBeenSet(false)
+    m_alarmMessageRuleHasBeenSet(false),
+    m_reportTargetHasBeenSet(false)
 {
 }
 
@@ -437,6 +438,16 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_alarmMessageRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("ReportTarget") && !value["ReportTarget"].IsNull())
+    {
+        if (!value["ReportTarget"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.ReportTarget` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_reportTarget = value["ReportTarget"].GetInt64();
+        m_reportTargetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -741,6 +752,14 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "AlarmMessageRule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alarmMessageRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reportTargetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportTarget";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reportTarget, allocator);
     }
 
 }
@@ -1304,5 +1323,21 @@ void TaskAlarmInfo::SetAlarmMessageRule(const string& _alarmMessageRule)
 bool TaskAlarmInfo::AlarmMessageRuleHasBeenSet() const
 {
     return m_alarmMessageRuleHasBeenSet;
+}
+
+int64_t TaskAlarmInfo::GetReportTarget() const
+{
+    return m_reportTarget;
+}
+
+void TaskAlarmInfo::SetReportTarget(const int64_t& _reportTarget)
+{
+    m_reportTarget = _reportTarget;
+    m_reportTargetHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::ReportTargetHasBeenSet() const
+{
+    return m_reportTargetHasBeenSet;
 }
 

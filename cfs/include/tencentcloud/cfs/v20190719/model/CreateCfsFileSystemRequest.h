@@ -453,6 +453,35 @@ v3.1：创建增强版的通用文件系统
                      */
                     bool CfsVersionHasBeenSet() const;
 
+                    /**
+                     * 获取turbo文件系统元数据属性
+basic：创建标准型的元数据
+enhanced：创建增强型的元数据
+                     * @return MetaType turbo文件系统元数据属性
+basic：创建标准型的元数据
+enhanced：创建增强型的元数据
+                     * 
+                     */
+                    std::string GetMetaType() const;
+
+                    /**
+                     * 设置turbo文件系统元数据属性
+basic：创建标准型的元数据
+enhanced：创建增强型的元数据
+                     * @param _metaType turbo文件系统元数据属性
+basic：创建标准型的元数据
+enhanced：创建增强型的元数据
+                     * 
+                     */
+                    void SetMetaType(const std::string& _metaType);
+
+                    /**
+                     * 判断参数 MetaType 是否已赋值
+                     * @return MetaType 是否已赋值
+                     * 
+                     */
+                    bool MetaTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,6 +599,14 @@ v3.1：创建增强版的通用文件系统
                      */
                     std::string m_cfsVersion;
                     bool m_cfsVersionHasBeenSet;
+
+                    /**
+                     * turbo文件系统元数据属性
+basic：创建标准型的元数据
+enhanced：创建增强型的元数据
+                     */
+                    std::string m_metaType;
+                    bool m_metaTypeHasBeenSet;
 
                 };
             }

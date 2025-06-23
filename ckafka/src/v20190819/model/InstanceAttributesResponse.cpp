@@ -61,7 +61,8 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_freePartitionNumberHasBeenSet(false),
     m_elasticFloatBandwidthHasBeenSet(false),
     m_customCertIdHasBeenSet(false),
-    m_uncleanLeaderElectionEnableHasBeenSet(false)
+    m_uncleanLeaderElectionEnableHasBeenSet(false),
+    m_deleteProtectionEnableHasBeenSet(false)
 {
 }
 
@@ -527,6 +528,16 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_uncleanLeaderElectionEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("DeleteProtectionEnable") && !value["DeleteProtectionEnable"].IsNull())
+    {
+        if (!value["DeleteProtectionEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.DeleteProtectionEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteProtectionEnable = value["DeleteProtectionEnable"].GetInt64();
+        m_deleteProtectionEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -887,6 +898,14 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "UncleanLeaderElectionEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_uncleanLeaderElectionEnable, allocator);
+    }
+
+    if (m_deleteProtectionEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteProtectionEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteProtectionEnable, allocator);
     }
 
 }
@@ -1546,5 +1565,21 @@ void InstanceAttributesResponse::SetUncleanLeaderElectionEnable(const int64_t& _
 bool InstanceAttributesResponse::UncleanLeaderElectionEnableHasBeenSet() const
 {
     return m_uncleanLeaderElectionEnableHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetDeleteProtectionEnable() const
+{
+    return m_deleteProtectionEnable;
+}
+
+void InstanceAttributesResponse::SetDeleteProtectionEnable(const int64_t& _deleteProtectionEnable)
+{
+    m_deleteProtectionEnable = _deleteProtectionEnable;
+    m_deleteProtectionEnableHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::DeleteProtectionEnableHasBeenSet() const
+{
+    return m_deleteProtectionEnableHasBeenSet;
 }
 

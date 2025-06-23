@@ -209,18 +209,46 @@ OTHER 其他
                     bool SourceNameServerHasBeenSet() const;
 
                     /**
-                     * 获取任务状态 Configuration 迁移配置 SourceConnecting 连接源集群中 MetaDataImport 元数据导入 EndpointSetup 切换接入点 ServiceMigration 切流中 Completed 已完成 Cancelled 已取消
+                     * 获取任务状态:
+Configuration 迁移配置,
+SourceConnecting 连接源集群中,
+ MetaDataImport 元数据导入,
+EndpointSetup 切换接入点,
+ServiceMigration 切流中,
+Completed 已完成,
+Cancelled 已取消
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskStatus 任务状态 Configuration 迁移配置 SourceConnecting 连接源集群中 MetaDataImport 元数据导入 EndpointSetup 切换接入点 ServiceMigration 切流中 Completed 已完成 Cancelled 已取消
+                     * @return TaskStatus 任务状态:
+Configuration 迁移配置,
+SourceConnecting 连接源集群中,
+ MetaDataImport 元数据导入,
+EndpointSetup 切换接入点,
+ServiceMigration 切流中,
+Completed 已完成,
+Cancelled 已取消
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
-                     * 设置任务状态 Configuration 迁移配置 SourceConnecting 连接源集群中 MetaDataImport 元数据导入 EndpointSetup 切换接入点 ServiceMigration 切流中 Completed 已完成 Cancelled 已取消
+                     * 设置任务状态:
+Configuration 迁移配置,
+SourceConnecting 连接源集群中,
+ MetaDataImport 元数据导入,
+EndpointSetup 切换接入点,
+ServiceMigration 切流中,
+Completed 已完成,
+Cancelled 已取消
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskStatus 任务状态 Configuration 迁移配置 SourceConnecting 连接源集群中 MetaDataImport 元数据导入 EndpointSetup 切换接入点 ServiceMigration 切流中 Completed 已完成 Cancelled 已取消
+                     * @param _taskStatus 任务状态:
+Configuration 迁移配置,
+SourceConnecting 连接源集群中,
+ MetaDataImport 元数据导入,
+EndpointSetup 切换接入点,
+ServiceMigration 切流中,
+Completed 已完成,
+Cancelled 已取消
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -314,7 +342,14 @@ OTHER 其他
                     bool m_sourceNameServerHasBeenSet;
 
                     /**
-                     * 任务状态 Configuration 迁移配置 SourceConnecting 连接源集群中 MetaDataImport 元数据导入 EndpointSetup 切换接入点 ServiceMigration 切流中 Completed 已完成 Cancelled 已取消
+                     * 任务状态:
+Configuration 迁移配置,
+SourceConnecting 连接源集群中,
+ MetaDataImport 元数据导入,
+EndpointSetup 切换接入点,
+ServiceMigration 切流中,
+Completed 已完成,
+Cancelled 已取消
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskStatus;

@@ -891,6 +891,31 @@ namespace TencentCloud
                      */
                     bool AlarmMessageRuleHasBeenSet() const;
 
+                    /**
+                     * 获取 0- wedata, 1-inlong
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportTarget  0- wedata, 1-inlong
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetReportTarget() const;
+
+                    /**
+                     * 设置 0- wedata, 1-inlong
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reportTarget  0- wedata, 1-inlong
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReportTarget(const int64_t& _reportTarget);
+
+                    /**
+                     * 判断参数 ReportTarget 是否已赋值
+                     * @return ReportTarget 是否已赋值
+                     * 
+                     */
+                    bool ReportTargetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1129,6 +1154,13 @@ namespace TencentCloud
                      */
                     std::string m_alarmMessageRule;
                     bool m_alarmMessageRuleHasBeenSet;
+
+                    /**
+                     *  0- wedata, 1-inlong
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_reportTarget;
+                    bool m_reportTargetHasBeenSet;
 
                 };
             }
