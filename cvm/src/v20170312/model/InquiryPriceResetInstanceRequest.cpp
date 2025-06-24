@@ -27,7 +27,8 @@ InquiryPriceResetInstanceRequest::InquiryPriceResetInstanceRequest() :
     m_imageIdHasBeenSet(false),
     m_systemDiskHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
-    m_enhancedServiceHasBeenSet(false)
+    m_enhancedServiceHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string InquiryPriceResetInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enhancedService.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -167,6 +176,22 @@ void InquiryPriceResetInstanceRequest::SetEnhancedService(const EnhancedService&
 bool InquiryPriceResetInstanceRequest::EnhancedServiceHasBeenSet() const
 {
     return m_enhancedServiceHasBeenSet;
+}
+
+string InquiryPriceResetInstanceRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void InquiryPriceResetInstanceRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool InquiryPriceResetInstanceRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 

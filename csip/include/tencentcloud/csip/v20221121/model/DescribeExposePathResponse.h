@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取暴露路径节点内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 暴露路径节点内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 暴露路径节点内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

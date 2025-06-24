@@ -1889,6 +1889,49 @@ EmrClient::DescribeServiceNodeInfosOutcomeCallable EmrClient::DescribeServiceNod
     return task->get_future();
 }
 
+EmrClient::DescribeSparkApplicationsOutcome EmrClient::DescribeSparkApplications(const DescribeSparkApplicationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSparkApplications");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSparkApplicationsResponse rsp = DescribeSparkApplicationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSparkApplicationsOutcome(rsp);
+        else
+            return DescribeSparkApplicationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSparkApplicationsOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeSparkApplicationsAsync(const DescribeSparkApplicationsRequest& request, const DescribeSparkApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSparkApplications(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeSparkApplicationsOutcomeCallable EmrClient::DescribeSparkApplicationsCallable(const DescribeSparkApplicationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSparkApplicationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSparkApplications(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeSparkQueriesOutcome EmrClient::DescribeSparkQueries(const DescribeSparkQueriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSparkQueries");

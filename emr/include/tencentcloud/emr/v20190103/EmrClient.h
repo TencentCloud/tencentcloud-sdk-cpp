@@ -109,6 +109,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeSLInstanceListResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeServiceNodeInfosRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeServiceNodeInfosResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeSparkApplicationsRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeSparkApplicationsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeSparkQueriesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeSparkQueriesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeStarRocksQueryInfoRequest.h>
@@ -336,6 +338,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServiceNodeInfosResponse> DescribeServiceNodeInfosOutcome;
                 typedef std::future<DescribeServiceNodeInfosOutcome> DescribeServiceNodeInfosOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeServiceNodeInfosRequest&, DescribeServiceNodeInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceNodeInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSparkApplicationsResponse> DescribeSparkApplicationsOutcome;
+                typedef std::future<DescribeSparkApplicationsOutcome> DescribeSparkApplicationsOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeSparkApplicationsRequest&, DescribeSparkApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkApplicationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSparkQueriesResponse> DescribeSparkQueriesOutcome;
                 typedef std::future<DescribeSparkQueriesOutcome> DescribeSparkQueriesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeSparkQueriesRequest&, DescribeSparkQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkQueriesAsyncHandler;
@@ -854,6 +859,15 @@ namespace TencentCloud
                 DescribeServiceNodeInfosOutcome DescribeServiceNodeInfos(const Model::DescribeServiceNodeInfosRequest &request);
                 void DescribeServiceNodeInfosAsync(const Model::DescribeServiceNodeInfosRequest& request, const DescribeServiceNodeInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServiceNodeInfosOutcomeCallable DescribeServiceNodeInfosCallable(const Model::DescribeServiceNodeInfosRequest& request);
+
+                /**
+                 *获取spark应用列表
+                 * @param req DescribeSparkApplicationsRequest
+                 * @return DescribeSparkApplicationsOutcome
+                 */
+                DescribeSparkApplicationsOutcome DescribeSparkApplications(const Model::DescribeSparkApplicationsRequest &request);
+                void DescribeSparkApplicationsAsync(const Model::DescribeSparkApplicationsRequest& request, const DescribeSparkApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSparkApplicationsOutcomeCallable DescribeSparkApplicationsCallable(const Model::DescribeSparkApplicationsRequest& request);
 
                 /**
                  *查询Spark查询信息列表

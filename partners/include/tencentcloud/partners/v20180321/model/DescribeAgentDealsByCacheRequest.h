@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取下单时间范围起始点【请保持时间范围最大90天】
-                     * @return CreatTimeRangeStart 下单时间范围起始点【请保持时间范围最大90天】
+                     * 获取下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】
+                     * @return CreatTimeRangeStart 下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】
                      * 
                      */
                     std::string GetCreatTimeRangeStart() const;
 
                     /**
-                     * 设置下单时间范围起始点【请保持时间范围最大90天】
-                     * @param _creatTimeRangeStart 下单时间范围起始点【请保持时间范围最大90天】
+                     * 设置下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】
+                     * @param _creatTimeRangeStart 下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】
                      * 
                      */
                     void SetCreatTimeRangeStart(const std::string& _creatTimeRangeStart);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool CreatTimeRangeStartHasBeenSet() const;
 
                     /**
-                     * 获取下单时间范围终止点【请保持时间范围最大90天】
-                     * @return CreatTimeRangeEnd 下单时间范围终止点【请保持时间范围最大90天】
+                     * 获取下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】
+                     * @return CreatTimeRangeEnd 下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】
                      * 
                      */
                     std::string GetCreatTimeRangeEnd() const;
 
                     /**
-                     * 设置下单时间范围终止点【请保持时间范围最大90天】
-                     * @param _creatTimeRangeEnd 下单时间范围终止点【请保持时间范围最大90天】
+                     * 设置下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】
+                     * @param _creatTimeRangeEnd 下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】
                      * 
                      */
                     void SetCreatTimeRangeEnd(const std::string& _creatTimeRangeEnd);
@@ -267,13 +267,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 下单时间范围起始点【请保持时间范围最大90天】
+                     * 下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】
                      */
                     std::string m_creatTimeRangeStart;
                     bool m_creatTimeRangeStartHasBeenSet;
 
                     /**
-                     * 下单时间范围终止点【请保持时间范围最大90天】
+                     * 下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】
                      */
                     std::string m_creatTimeRangeEnd;
                     bool m_creatTimeRangeEndHasBeenSet;

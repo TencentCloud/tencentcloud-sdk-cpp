@@ -389,6 +389,62 @@ API：通过API手动注册
                      */
                     bool AuthorizationPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取共享订阅组数最大限制
+                     * @return SharedSubscriptionGroupLimit 共享订阅组数最大限制
+                     * 
+                     */
+                    int64_t GetSharedSubscriptionGroupLimit() const;
+
+                    /**
+                     * 判断参数 SharedSubscriptionGroupLimit 是否已赋值
+                     * @return SharedSubscriptionGroupLimit 是否已赋值
+                     * 
+                     */
+                    bool SharedSubscriptionGroupLimitHasBeenSet() const;
+
+                    /**
+                     * 获取单个共享订阅组TopicFilter数限制
+                     * @return MaxTopicFilterPerSharedSubscriptionGroup 单个共享订阅组TopicFilter数限制
+                     * 
+                     */
+                    int64_t GetMaxTopicFilterPerSharedSubscriptionGroup() const;
+
+                    /**
+                     * 判断参数 MaxTopicFilterPerSharedSubscriptionGroup 是否已赋值
+                     * @return MaxTopicFilterPerSharedSubscriptionGroup 是否已赋值
+                     * 
+                     */
+                    bool MaxTopicFilterPerSharedSubscriptionGroupHasBeenSet() const;
+
+                    /**
+                     * 获取自动订阅规则条数限制
+                     * @return AutoSubscriptionPolicyLimit 自动订阅规则条数限制
+                     * 
+                     */
+                    int64_t GetAutoSubscriptionPolicyLimit() const;
+
+                    /**
+                     * 判断参数 AutoSubscriptionPolicyLimit 是否已赋值
+                     * @return AutoSubscriptionPolicyLimit 是否已赋值
+                     * 
+                     */
+                    bool AutoSubscriptionPolicyLimitHasBeenSet() const;
+
+                    /**
+                     * 获取单条自动订阅规则TopicFilter数限制
+                     * @return MaxTopicFilterPerAutoSubscriptionPolicy 单条自动订阅规则TopicFilter数限制
+                     * 
+                     */
+                    int64_t GetMaxTopicFilterPerAutoSubscriptionPolicy() const;
+
+                    /**
+                     * 判断参数 MaxTopicFilterPerAutoSubscriptionPolicy 是否已赋值
+                     * @return MaxTopicFilterPerAutoSubscriptionPolicy 是否已赋值
+                     * 
+                     */
+                    bool MaxTopicFilterPerAutoSubscriptionPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -539,6 +595,30 @@ API：通过API手动注册
                      */
                     bool m_authorizationPolicy;
                     bool m_authorizationPolicyHasBeenSet;
+
+                    /**
+                     * 共享订阅组数最大限制
+                     */
+                    int64_t m_sharedSubscriptionGroupLimit;
+                    bool m_sharedSubscriptionGroupLimitHasBeenSet;
+
+                    /**
+                     * 单个共享订阅组TopicFilter数限制
+                     */
+                    int64_t m_maxTopicFilterPerSharedSubscriptionGroup;
+                    bool m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet;
+
+                    /**
+                     * 自动订阅规则条数限制
+                     */
+                    int64_t m_autoSubscriptionPolicyLimit;
+                    bool m_autoSubscriptionPolicyLimitHasBeenSet;
+
+                    /**
+                     * 单条自动订阅规则TopicFilter数限制
+                     */
+                    int64_t m_maxTopicFilterPerAutoSubscriptionPolicy;
+                    bool m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet;
 
                 };
             }

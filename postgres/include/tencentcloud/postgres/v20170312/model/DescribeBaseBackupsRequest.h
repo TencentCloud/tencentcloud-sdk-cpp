@@ -91,11 +91,13 @@ db-instance-id：按照实例ID过滤，类型为string。
 db-instance-name：按照实例名过滤，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
 base-backup-id：按照备份集ID过滤，类型为string。
+db-instance-status：按实例状态过滤，类型为string。取值参考DBInstance结构的DBInstanceStatus字段。
                      * @return Filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
 db-instance-name：按照实例名过滤，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
 base-backup-id：按照备份集ID过滤，类型为string。
+db-instance-status：按实例状态过滤，类型为string。取值参考DBInstance结构的DBInstanceStatus字段。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
@@ -106,11 +108,13 @@ db-instance-id：按照实例ID过滤，类型为string。
 db-instance-name：按照实例名过滤，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
 base-backup-id：按照备份集ID过滤，类型为string。
+db-instance-status：按实例状态过滤，类型为string。取值参考DBInstance结构的DBInstanceStatus字段。
                      * @param _filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
 db-instance-name：按照实例名过滤，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
 base-backup-id：按照备份集ID过滤，类型为string。
+db-instance-status：按实例状态过滤，类型为string。取值参考DBInstance结构的DBInstanceStatus字段。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -226,6 +230,7 @@ db-instance-id：按照实例ID过滤，类型为string。
 db-instance-name：按照实例名过滤，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
 base-backup-id：按照备份集ID过滤，类型为string。
+db-instance-status：按实例状态过滤，类型为string。取值参考DBInstance结构的DBInstanceStatus字段。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

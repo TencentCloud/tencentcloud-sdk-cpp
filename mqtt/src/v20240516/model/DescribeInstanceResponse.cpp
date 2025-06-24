@@ -47,7 +47,11 @@ DescribeInstanceResponse::DescribeInstanceResponse() :
     m_maxCaNumHasBeenSet(false),
     m_registrationCodeHasBeenSet(false),
     m_maxSubscriptionHasBeenSet(false),
-    m_authorizationPolicyHasBeenSet(false)
+    m_authorizationPolicyHasBeenSet(false),
+    m_sharedSubscriptionGroupLimitHasBeenSet(false),
+    m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet(false),
+    m_autoSubscriptionPolicyLimitHasBeenSet(false),
+    m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet(false)
 {
 }
 
@@ -325,6 +329,46 @@ CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
         m_authorizationPolicyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SharedSubscriptionGroupLimit") && !rsp["SharedSubscriptionGroupLimit"].IsNull())
+    {
+        if (!rsp["SharedSubscriptionGroupLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SharedSubscriptionGroupLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sharedSubscriptionGroupLimit = rsp["SharedSubscriptionGroupLimit"].GetInt64();
+        m_sharedSubscriptionGroupLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MaxTopicFilterPerSharedSubscriptionGroup") && !rsp["MaxTopicFilterPerSharedSubscriptionGroup"].IsNull())
+    {
+        if (!rsp["MaxTopicFilterPerSharedSubscriptionGroup"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxTopicFilterPerSharedSubscriptionGroup` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxTopicFilterPerSharedSubscriptionGroup = rsp["MaxTopicFilterPerSharedSubscriptionGroup"].GetInt64();
+        m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoSubscriptionPolicyLimit") && !rsp["AutoSubscriptionPolicyLimit"].IsNull())
+    {
+        if (!rsp["AutoSubscriptionPolicyLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoSubscriptionPolicyLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoSubscriptionPolicyLimit = rsp["AutoSubscriptionPolicyLimit"].GetInt64();
+        m_autoSubscriptionPolicyLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MaxTopicFilterPerAutoSubscriptionPolicy") && !rsp["MaxTopicFilterPerAutoSubscriptionPolicy"].IsNull())
+    {
+        if (!rsp["MaxTopicFilterPerAutoSubscriptionPolicy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxTopicFilterPerAutoSubscriptionPolicy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxTopicFilterPerAutoSubscriptionPolicy = rsp["MaxTopicFilterPerAutoSubscriptionPolicy"].GetInt64();
+        m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -525,6 +569,38 @@ string DescribeInstanceResponse::ToJsonString() const
         string key = "AuthorizationPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_authorizationPolicy, allocator);
+    }
+
+    if (m_sharedSubscriptionGroupLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SharedSubscriptionGroupLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sharedSubscriptionGroupLimit, allocator);
+    }
+
+    if (m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTopicFilterPerSharedSubscriptionGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxTopicFilterPerSharedSubscriptionGroup, allocator);
+    }
+
+    if (m_autoSubscriptionPolicyLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSubscriptionPolicyLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoSubscriptionPolicyLimit, allocator);
+    }
+
+    if (m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTopicFilterPerAutoSubscriptionPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxTopicFilterPerAutoSubscriptionPolicy, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -777,6 +853,46 @@ bool DescribeInstanceResponse::GetAuthorizationPolicy() const
 bool DescribeInstanceResponse::AuthorizationPolicyHasBeenSet() const
 {
     return m_authorizationPolicyHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetSharedSubscriptionGroupLimit() const
+{
+    return m_sharedSubscriptionGroupLimit;
+}
+
+bool DescribeInstanceResponse::SharedSubscriptionGroupLimitHasBeenSet() const
+{
+    return m_sharedSubscriptionGroupLimitHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetMaxTopicFilterPerSharedSubscriptionGroup() const
+{
+    return m_maxTopicFilterPerSharedSubscriptionGroup;
+}
+
+bool DescribeInstanceResponse::MaxTopicFilterPerSharedSubscriptionGroupHasBeenSet() const
+{
+    return m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetAutoSubscriptionPolicyLimit() const
+{
+    return m_autoSubscriptionPolicyLimit;
+}
+
+bool DescribeInstanceResponse::AutoSubscriptionPolicyLimitHasBeenSet() const
+{
+    return m_autoSubscriptionPolicyLimitHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetMaxTopicFilterPerAutoSubscriptionPolicy() const
+{
+    return m_maxTopicFilterPerAutoSubscriptionPolicy;
+}
+
+bool DescribeInstanceResponse::MaxTopicFilterPerAutoSubscriptionPolicyHasBeenSet() const
+{
+    return m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet;
 }
 
 

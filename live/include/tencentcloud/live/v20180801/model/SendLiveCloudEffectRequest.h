@@ -127,6 +127,27 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
+                     * 获取默认随系统配置，云端特效循环 少于5次。可自定义指定礼物循环次数，不超过100次。
+                     * @return LoopTimes 默认随系统配置，云端特效循环 少于5次。可自定义指定礼物循环次数，不超过100次。
+                     * 
+                     */
+                    int64_t GetLoopTimes() const;
+
+                    /**
+                     * 设置默认随系统配置，云端特效循环 少于5次。可自定义指定礼物循环次数，不超过100次。
+                     * @param _loopTimes 默认随系统配置，云端特效循环 少于5次。可自定义指定礼物循环次数，不超过100次。
+                     * 
+                     */
+                    void SetLoopTimes(const int64_t& _loopTimes);
+
+                    /**
+                     * 判断参数 LoopTimes 是否已赋值
+                     * @return LoopTimes 是否已赋值
+                     * 
+                     */
+                    bool LoopTimesHasBeenSet() const;
+
+                    /**
                      * 获取操作人备注信息。
                      * @return Operator 操作人备注信息。
                      * 
@@ -247,6 +268,12 @@ namespace TencentCloud
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 默认随系统配置，云端特效循环 少于5次。可自定义指定礼物循环次数，不超过100次。
+                     */
+                    int64_t m_loopTimes;
+                    bool m_loopTimesHasBeenSet;
 
                     /**
                      * 操作人备注信息。

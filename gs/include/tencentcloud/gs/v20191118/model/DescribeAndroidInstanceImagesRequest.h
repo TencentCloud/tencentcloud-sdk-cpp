@@ -64,6 +64,27 @@ namespace TencentCloud
                     bool AndroidInstanceImageIdsHasBeenSet() const;
 
                     /**
+                     * 获取镜像可用区列表
+                     * @return AndroidInstanceImageZones 镜像可用区列表
+                     * 
+                     */
+                    std::vector<std::string> GetAndroidInstanceImageZones() const;
+
+                    /**
+                     * 设置镜像可用区列表
+                     * @param _androidInstanceImageZones 镜像可用区列表
+                     * 
+                     */
+                    void SetAndroidInstanceImageZones(const std::vector<std::string>& _androidInstanceImageZones);
+
+                    /**
+                     * 判断参数 AndroidInstanceImageZones 是否已赋值
+                     * @return AndroidInstanceImageZones 是否已赋值
+                     * 
+                     */
+                    bool AndroidInstanceImageZonesHasBeenSet() const;
+
+                    /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
                      * 
@@ -112,6 +133,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_androidInstanceImageIds;
                     bool m_androidInstanceImageIdsHasBeenSet;
+
+                    /**
+                     * 镜像可用区列表
+                     */
+                    std::vector<std::string> m_androidInstanceImageZones;
+                    bool m_androidInstanceImageZonesHasBeenSet;
 
                     /**
                      * 偏移量，默认为0

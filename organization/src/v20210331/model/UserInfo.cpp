@@ -32,7 +32,8 @@ UserInfo::UserInfo() :
     m_userIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_isSelectedHasBeenSet(false)
+    m_isSelectedHasBeenSet(false),
+    m_passwordHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_isSelectedHasBeenSet = true;
     }
 
+    if (value.HasMember("Password") && !value["Password"].IsNull())
+    {
+        if (!value["Password"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserInfo.Password` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_password = string(value["Password"].GetString());
+        m_passwordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IsSelected";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSelected, allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void UserInfo::SetIsSelected(const bool& _isSelected)
 bool UserInfo::IsSelectedHasBeenSet() const
 {
     return m_isSelectedHasBeenSet;
+}
+
+string UserInfo::GetPassword() const
+{
+    return m_password;
+}
+
+void UserInfo::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool UserInfo::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
 }
 

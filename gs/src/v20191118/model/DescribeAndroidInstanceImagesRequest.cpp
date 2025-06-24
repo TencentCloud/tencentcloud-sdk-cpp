@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeAndroidInstanceImagesRequest::DescribeAndroidInstanceImagesRequest() :
     m_androidInstanceImageIdsHasBeenSet(false),
+    m_androidInstanceImageZonesHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -44,6 +45,19 @@ string DescribeAndroidInstanceImagesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_androidInstanceImageIds.begin(); itr != m_androidInstanceImageIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_androidInstanceImageZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AndroidInstanceImageZones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_androidInstanceImageZones.begin(); itr != m_androidInstanceImageZones.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -87,6 +101,22 @@ void DescribeAndroidInstanceImagesRequest::SetAndroidInstanceImageIds(const vect
 bool DescribeAndroidInstanceImagesRequest::AndroidInstanceImageIdsHasBeenSet() const
 {
     return m_androidInstanceImageIdsHasBeenSet;
+}
+
+vector<string> DescribeAndroidInstanceImagesRequest::GetAndroidInstanceImageZones() const
+{
+    return m_androidInstanceImageZones;
+}
+
+void DescribeAndroidInstanceImagesRequest::SetAndroidInstanceImageZones(const vector<string>& _androidInstanceImageZones)
+{
+    m_androidInstanceImageZones = _androidInstanceImageZones;
+    m_androidInstanceImageZonesHasBeenSet = true;
+}
+
+bool DescribeAndroidInstanceImagesRequest::AndroidInstanceImageZonesHasBeenSet() const
+{
+    return m_androidInstanceImageZonesHasBeenSet;
 }
 
 uint64_t DescribeAndroidInstanceImagesRequest::GetOffset() const

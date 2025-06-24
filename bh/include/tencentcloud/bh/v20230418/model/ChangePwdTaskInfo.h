@@ -489,6 +489,27 @@ namespace TencentCloud
                      */
                     bool NextTimeHasBeenSet() const;
 
+                    /**
+                     * 获取上次执行时间
+                     * @return LastTime 上次执行时间
+                     * 
+                     */
+                    std::string GetLastTime() const;
+
+                    /**
+                     * 设置上次执行时间
+                     * @param _lastTime 上次执行时间
+                     * 
+                     */
+                    void SetLastTime(const std::string& _lastTime);
+
+                    /**
+                     * 判断参数 LastTime 是否已赋值
+                     * @return LastTime 是否已赋值
+                     * 
+                     */
+                    bool LastTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -616,6 +637,12 @@ namespace TencentCloud
                      */
                     std::string m_nextTime;
                     bool m_nextTimeHasBeenSet;
+
+                    /**
+                     * 上次执行时间
+                     */
+                    std::string m_lastTime;
+                    bool m_lastTimeHasBeenSet;
 
                 };
             }

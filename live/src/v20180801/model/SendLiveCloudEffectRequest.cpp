@@ -27,6 +27,7 @@ SendLiveCloudEffectRequest::SendLiveCloudEffectRequest() :
     m_pushDomainNameHasBeenSet(false),
     m_streamNameHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_loopTimesHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_zoomFactorHasBeenSet(false),
     m_xPositionHasBeenSet(false),
@@ -71,6 +72,14 @@ string SendLiveCloudEffectRequest::ToJsonString() const
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loopTimesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoopTimes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_loopTimes, allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -175,6 +184,22 @@ void SendLiveCloudEffectRequest::SetId(const string& _id)
 bool SendLiveCloudEffectRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+int64_t SendLiveCloudEffectRequest::GetLoopTimes() const
+{
+    return m_loopTimes;
+}
+
+void SendLiveCloudEffectRequest::SetLoopTimes(const int64_t& _loopTimes)
+{
+    m_loopTimes = _loopTimes;
+    m_loopTimesHasBeenSet = true;
+}
+
+bool SendLiveCloudEffectRequest::LoopTimesHasBeenSet() const
+{
+    return m_loopTimesHasBeenSet;
 }
 
 string SendLiveCloudEffectRequest::GetOperator() const

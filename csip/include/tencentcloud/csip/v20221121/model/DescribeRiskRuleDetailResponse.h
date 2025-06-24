@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskRuleId 风险规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskRuleId() const;
@@ -119,7 +117,6 @@ namespace TencentCloud
 
                     /**
                      * 风险规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskRuleId;
                     bool m_riskRuleIdHasBeenSet;
