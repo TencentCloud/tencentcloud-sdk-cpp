@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取是否允许放行
-                     * @return Allow 是否允许放行
+                     * 获取是否允许放行，默认为false表示拒绝
+                     * @return Allow 是否允许放行，默认为false表示拒绝
                      * 
                      */
                     bool GetAllow() const;
 
                     /**
-                     * 设置是否允许放行
-                     * @param _allow 是否允许放行
+                     * 设置是否允许放行，默认为false表示拒绝
+                     * @param _allow 是否允许放行，默认为false表示拒绝
                      * 
                      */
                     void SetAllow(const bool& _allow);
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -122,14 +118,13 @@ namespace TencentCloud
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 是否允许放行
+                     * 是否允许放行，默认为false表示拒绝
                      */
                     bool m_allow;
                     bool m_allowHasBeenSet;
 
                     /**
                      * 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

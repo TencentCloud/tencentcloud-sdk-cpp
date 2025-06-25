@@ -282,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板和模板数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Template 模板和模板数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Template GetTemplate() const;
 
                     /**
                      * 设置模板和模板数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _template 模板和模板数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplate(const Template& _template);
@@ -357,18 +353,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrMsg 任务异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置任务异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errMsg 任务异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
@@ -471,7 +463,6 @@ namespace TencentCloud
 
                     /**
                      * 模板和模板数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Template m_template;
                     bool m_templateHasBeenSet;
@@ -492,7 +483,6 @@ namespace TencentCloud
 
                     /**
                      * 任务异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;

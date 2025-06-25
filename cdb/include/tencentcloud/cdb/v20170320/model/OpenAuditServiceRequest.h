@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CDB实例ID
-                     * @return InstanceId CDB实例ID
+                     * 获取CDB 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId CDB 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置CDB实例ID
-                     * @param _instanceId CDB实例ID
+                     * 设置CDB 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId CDB 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,42 +66,42 @@ namespace TencentCloud
 
                     /**
                      * 获取审计日志保存时长。支持值包括：
-7 - 一周
+7 - 一周；
 30 - 一个月；
 90 - 三个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
-1825 - 五年；
+1825 - 五年。
                      * @return LogExpireDay 审计日志保存时长。支持值包括：
-7 - 一周
+7 - 一周；
 30 - 一个月；
 90 - 三个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
-1825 - 五年；
+1825 - 五年。
                      * 
                      */
                     uint64_t GetLogExpireDay() const;
 
                     /**
                      * 设置审计日志保存时长。支持值包括：
-7 - 一周
+7 - 一周；
 30 - 一个月；
 90 - 三个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
-1825 - 五年；
+1825 - 五年。
                      * @param _logExpireDay 审计日志保存时长。支持值包括：
-7 - 一周
+7 - 一周；
 30 - 一个月；
 90 - 三个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
-1825 - 五年；
+1825 - 五年。
                      * 
                      */
                     void SetLogExpireDay(const uint64_t& _logExpireDay);
@@ -114,23 +114,47 @@ namespace TencentCloud
                     bool LogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取高频审计日志保存时长。支持值包括：
-7 - 一周
+                     * 获取高频审计日志保存时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：
+3 - 3天；
+7 - 一周；
 30 - 一个月；
-                     * @return HighLogExpireDay 高频审计日志保存时长。支持值包括：
-7 - 一周
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @return HighLogExpireDay 高频审计日志保存时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：
+3 - 3天；
+7 - 一周；
 30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     uint64_t GetHighLogExpireDay() const;
 
                     /**
-                     * 设置高频审计日志保存时长。支持值包括：
-7 - 一周
+                     * 设置高频审计日志保存时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：
+3 - 3天；
+7 - 一周；
 30 - 一个月；
-                     * @param _highLogExpireDay 高频审计日志保存时长。支持值包括：
-7 - 一周
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @param _highLogExpireDay 高频审计日志保存时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：
+3 - 3天；
+7 - 一周；
 30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     void SetHighLogExpireDay(const uint64_t& _highLogExpireDay);
@@ -164,15 +188,15 @@ namespace TencentCloud
                     bool AuditRuleFiltersHasBeenSet() const;
 
                     /**
-                     * 获取规则模板ID。同AuditRuleFilters都不填是全审计。
-                     * @return RuleTemplateIds 规则模板ID。同AuditRuleFilters都不填是全审计。
+                     * 获取规则模板 ID。
+                     * @return RuleTemplateIds 规则模板 ID。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
-                     * 设置规则模板ID。同AuditRuleFilters都不填是全审计。
-                     * @param _ruleTemplateIds 规则模板ID。同AuditRuleFilters都不填是全审计。
+                     * 设置规则模板 ID。
+                     * @param _ruleTemplateIds 规则模板 ID。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -185,15 +209,15 @@ namespace TencentCloud
                     bool RuleTemplateIdsHasBeenSet() const;
 
                     /**
-                     * 获取审计类型。true-全审计；默认false-规则审计。
-                     * @return AuditAll 审计类型。true-全审计；默认false-规则审计。
+                     * 获取审计类型。true - 全审计；默认 false - 规则审计。
+                     * @return AuditAll 审计类型。true - 全审计；默认 false - 规则审计。
                      * 
                      */
                     bool GetAuditAll() const;
 
                     /**
-                     * 设置审计类型。true-全审计；默认false-规则审计。
-                     * @param _auditAll 审计类型。true-全审计；默认false-规则审计。
+                     * 设置审计类型。true - 全审计；默认 false - 规则审计。
+                     * @param _auditAll 审计类型。true - 全审计；默认 false - 规则审计。
                      * 
                      */
                     void SetAuditAll(const bool& _auditAll);
@@ -208,28 +232,34 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CDB实例ID
+                     * CDB 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 审计日志保存时长。支持值包括：
-7 - 一周
+7 - 一周；
 30 - 一个月；
 90 - 三个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
-1825 - 五年；
+1825 - 五年。
                      */
                     uint64_t m_logExpireDay;
                     bool m_logExpireDayHasBeenSet;
 
                     /**
-                     * 高频审计日志保存时长。支持值包括：
-7 - 一周
+                     * 高频审计日志保存时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：
+3 - 3天；
+7 - 一周；
 30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      */
                     uint64_t m_highLogExpireDay;
                     bool m_highLogExpireDayHasBeenSet;
@@ -241,13 +271,13 @@ namespace TencentCloud
                     bool m_auditRuleFiltersHasBeenSet;
 
                     /**
-                     * 规则模板ID。同AuditRuleFilters都不填是全审计。
+                     * 规则模板 ID。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;
 
                     /**
-                     * 审计类型。true-全审计；默认false-规则审计。
+                     * 审计类型。true - 全审计；默认 false - 规则审计。
                      */
                     bool m_auditAll;
                     bool m_auditAllHasBeenSet;

@@ -87,23 +87,44 @@ namespace TencentCloud
                     /**
                      * 获取扫描Bucket任务结果ID
                      * @return BucketResultId 扫描Bucket任务结果ID
-                     * 
+                     * @deprecated
                      */
                     int64_t GetBucketResultId() const;
 
                     /**
                      * 设置扫描Bucket任务结果ID
                      * @param _bucketResultId 扫描Bucket任务结果ID
-                     * 
+                     * @deprecated
                      */
                     void SetBucketResultId(const int64_t& _bucketResultId);
 
                     /**
                      * 判断参数 BucketResultId 是否已赋值
                      * @return BucketResultId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BucketResultIdHasBeenSet() const;
+
+                    /**
+                     * 获取扫描结果id
+                     * @return ScanResultId 扫描结果id
+                     * 
+                     */
+                    int64_t GetScanResultId() const;
+
+                    /**
+                     * 设置扫描结果id
+                     * @param _scanResultId 扫描结果id
+                     * 
+                     */
+                    void SetScanResultId(const int64_t& _scanResultId);
+
+                    /**
+                     * 判断参数 ScanResultId 是否已赋值
+                     * @return ScanResultId 是否已赋值
+                     * 
+                     */
+                    bool ScanResultIdHasBeenSet() const;
 
                 private:
 
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     int64_t m_bucketResultId;
                     bool m_bucketResultIdHasBeenSet;
+
+                    /**
+                     * 扫描结果id
+                     */
+                    int64_t m_scanResultId;
+                    bool m_scanResultIdHasBeenSet;
 
                 };
             }

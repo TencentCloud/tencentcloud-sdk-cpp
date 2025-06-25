@@ -30,7 +30,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_filtersHasBeenSet(false),
     m_dbTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,14 @@ string DescribeInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -251,6 +260,22 @@ void DescribeInstancesRequest::SetInstanceIds(const vector<string>& _instanceIds
 bool DescribeInstancesRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string DescribeInstancesRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void DescribeInstancesRequest::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 

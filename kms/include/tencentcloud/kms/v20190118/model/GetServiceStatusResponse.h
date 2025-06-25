@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool ProRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空
-                     * @return ProResourceId 旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空
+                     * 获取旗舰版购买记录的唯一性标识。如果未开通旗舰版，则返回值为空
+                     * @return ProResourceId 旗舰版购买记录的唯一性标识。如果未开通旗舰版，则返回值为空
                      * 
                      */
                     std::string GetProResourceId() const;
@@ -212,6 +212,62 @@ namespace TencentCloud
                      */
                     bool ExclusiveHSMListHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持数据密钥托管。1:支持，0:不支持。
+                     * @return IsAllowedDataKeyHosted 是否支持数据密钥托管。1:支持，0:不支持。
+                     * 
+                     */
+                    bool GetIsAllowedDataKeyHosted() const;
+
+                    /**
+                     * 判断参数 IsAllowedDataKeyHosted 是否已赋值
+                     * @return IsAllowedDataKeyHosted 是否已赋值
+                     * 
+                     */
+                    bool IsAllowedDataKeyHostedHasBeenSet() const;
+
+                    /**
+                     * 获取IsAllowedDataKeyHosted为1时有效，数据密钥的购买额度
+                     * @return DataKeyLimit IsAllowedDataKeyHosted为1时有效，数据密钥的购买额度
+                     * 
+                     */
+                    uint64_t GetDataKeyLimit() const;
+
+                    /**
+                     * 判断参数 DataKeyLimit 是否已赋值
+                     * @return DataKeyLimit 是否已赋值
+                     * 
+                     */
+                    bool DataKeyLimitHasBeenSet() const;
+
+                    /**
+                     * 获取IsAllowedDataKeyHosted为1时有效，数据密钥免费额度。
+                     * @return FreeDataKeyLimit IsAllowedDataKeyHosted为1时有效，数据密钥免费额度。
+                     * 
+                     */
+                    uint64_t GetFreeDataKeyLimit() const;
+
+                    /**
+                     * 判断参数 FreeDataKeyLimit 是否已赋值
+                     * @return FreeDataKeyLimit 是否已赋值
+                     * 
+                     */
+                    bool FreeDataKeyLimitHasBeenSet() const;
+
+                    /**
+                     * 获取IsAllowedDataKeyHosted为1时有效，已使用的数据密钥数量。
+                     * @return DataKeyUsedCount IsAllowedDataKeyHosted为1时有效，已使用的数据密钥数量。
+                     * 
+                     */
+                    uint64_t GetDataKeyUsedCount() const;
+
+                    /**
+                     * 判断参数 DataKeyUsedCount 是否已赋值
+                     * @return DataKeyUsedCount 是否已赋值
+                     * 
+                     */
+                    bool DataKeyUsedCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -245,7 +301,7 @@ namespace TencentCloud
                     bool m_proRenewFlagHasBeenSet;
 
                     /**
-                     * 旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空
+                     * 旗舰版购买记录的唯一性标识。如果未开通旗舰版，则返回值为空
                      */
                     std::string m_proResourceId;
                     bool m_proResourceIdHasBeenSet;
@@ -285,6 +341,30 @@ namespace TencentCloud
                      */
                     std::vector<ExclusiveHSM> m_exclusiveHSMList;
                     bool m_exclusiveHSMListHasBeenSet;
+
+                    /**
+                     * 是否支持数据密钥托管。1:支持，0:不支持。
+                     */
+                    bool m_isAllowedDataKeyHosted;
+                    bool m_isAllowedDataKeyHostedHasBeenSet;
+
+                    /**
+                     * IsAllowedDataKeyHosted为1时有效，数据密钥的购买额度
+                     */
+                    uint64_t m_dataKeyLimit;
+                    bool m_dataKeyLimitHasBeenSet;
+
+                    /**
+                     * IsAllowedDataKeyHosted为1时有效，数据密钥免费额度。
+                     */
+                    uint64_t m_freeDataKeyLimit;
+                    bool m_freeDataKeyLimitHasBeenSet;
+
+                    /**
+                     * IsAllowedDataKeyHosted为1时有效，已使用的数据密钥数量。
+                     */
+                    uint64_t m_dataKeyUsedCount;
+                    bool m_dataKeyUsedCountHasBeenSet;
 
                 };
             }

@@ -31,6 +31,7 @@
 #include <tencentcloud/emr/v20190103/model/CustomMetaInfo.h>
 #include <tencentcloud/emr/v20190103/model/ExternalService.h>
 #include <tencentcloud/emr/v20190103/model/MultiZoneSetting.h>
+#include <tencentcloud/emr/v20190103/model/NodeMark.h>
 
 
 namespace TencentCloud
@@ -901,6 +902,27 @@ Hadoop-Hbase
                      */
                     bool CosBucketHasBeenSet() const;
 
+                    /**
+                     * 获取节点标识信息，目前只提供给tf平台使用
+                     * @return NodeMarks 节点标识信息，目前只提供给tf平台使用
+                     * 
+                     */
+                    std::vector<NodeMark> GetNodeMarks() const;
+
+                    /**
+                     * 设置节点标识信息，目前只提供给tf平台使用
+                     * @param _nodeMarks 节点标识信息，目前只提供给tf平台使用
+                     * 
+                     */
+                    void SetNodeMarks(const std::vector<NodeMark>& _nodeMarks);
+
+                    /**
+                     * 判断参数 NodeMarks 是否已赋值
+                     * @return NodeMarks 是否已赋值
+                     * 
+                     */
+                    bool NodeMarksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1139,6 +1161,12 @@ Hadoop-Hbase
                      */
                     std::string m_cosBucket;
                     bool m_cosBucketHasBeenSet;
+
+                    /**
+                     * 节点标识信息，目前只提供给tf平台使用
+                     */
+                    std::vector<NodeMark> m_nodeMarks;
+                    bool m_nodeMarksHasBeenSet;
 
                 };
             }

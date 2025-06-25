@@ -24,6 +24,7 @@ using namespace std;
 
 AssociateIPv6AddressRequest::AssociateIPv6AddressRequest() :
     m_iPv6AddressIdHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_privateIPv6AddressHasBeenSet(false)
 {
@@ -42,6 +43,14 @@ string AssociateIPv6AddressRequest::ToJsonString() const
         string key = "IPv6AddressId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_iPv6AddressId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_networkInterfaceIdHasBeenSet)
@@ -82,6 +91,22 @@ void AssociateIPv6AddressRequest::SetIPv6AddressId(const string& _iPv6AddressId)
 bool AssociateIPv6AddressRequest::IPv6AddressIdHasBeenSet() const
 {
     return m_iPv6AddressIdHasBeenSet;
+}
+
+string AssociateIPv6AddressRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void AssociateIPv6AddressRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool AssociateIPv6AddressRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 string AssociateIPv6AddressRequest::GetNetworkInterfaceId() const

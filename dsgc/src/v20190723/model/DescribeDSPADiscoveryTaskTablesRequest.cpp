@@ -26,7 +26,8 @@ DescribeDSPADiscoveryTaskTablesRequest::DescribeDSPADiscoveryTaskTablesRequest()
     m_dspaIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_dbResultIdHasBeenSet(false),
-    m_dbNameHasBeenSet(false)
+    m_dbNameHasBeenSet(false),
+    m_scanResultIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeDSPADiscoveryTaskTablesRequest::ToJsonString() const
         string key = "DbName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dbName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scanResultIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanResultId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scanResultId, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeDSPADiscoveryTaskTablesRequest::SetDbName(const string& _dbName)
 bool DescribeDSPADiscoveryTaskTablesRequest::DbNameHasBeenSet() const
 {
     return m_dbNameHasBeenSet;
+}
+
+int64_t DescribeDSPADiscoveryTaskTablesRequest::GetScanResultId() const
+{
+    return m_scanResultId;
+}
+
+void DescribeDSPADiscoveryTaskTablesRequest::SetScanResultId(const int64_t& _scanResultId)
+{
+    m_scanResultId = _scanResultId;
+    m_scanResultIdHasBeenSet = true;
+}
+
+bool DescribeDSPADiscoveryTaskTablesRequest::ScanResultIdHasBeenSet() const
+{
+    return m_scanResultIdHasBeenSet;
 }
 
 

@@ -156,15 +156,35 @@ namespace TencentCloud
                     bool ConsumerLagHasBeenSet() const;
 
                     /**
-                     * 获取消费者客户端类型（grpc；remoting；http）
-                     * @return ChannelProtocol 消费者客户端类型（grpc；remoting；http）
+                     * 获取消费者客户端类型，枚举值如下：
+
+- grpc：GRPC协议
+- remoting：Remoting协议
+- http：HTTP协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelProtocol 消费者客户端类型，枚举值如下：
+
+- grpc：GRPC协议
+- remoting：Remoting协议
+- http：HTTP协议
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelProtocol() const;
 
                     /**
-                     * 设置消费者客户端类型（grpc；remoting；http）
-                     * @param _channelProtocol 消费者客户端类型（grpc；remoting；http）
+                     * 设置消费者客户端类型，枚举值如下：
+
+- grpc：GRPC协议
+- remoting：Remoting协议
+- http：HTTP协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _channelProtocol 消费者客户端类型，枚举值如下：
+
+- grpc：GRPC协议
+- remoting：Remoting协议
+- http：HTTP协议
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelProtocol(const std::string& _channelProtocol);
@@ -210,7 +230,12 @@ namespace TencentCloud
                     bool m_consumerLagHasBeenSet;
 
                     /**
-                     * 消费者客户端类型（grpc；remoting；http）
+                     * 消费者客户端类型，枚举值如下：
+
+- grpc：GRPC协议
+- remoting：Remoting协议
+- http：HTTP协议
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelProtocol;
                     bool m_channelProtocolHasBeenSet;

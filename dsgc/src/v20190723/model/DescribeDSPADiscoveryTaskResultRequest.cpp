@@ -31,7 +31,10 @@ DescribeDSPADiscoveryTaskResultRequest::DescribeDSPADiscoveryTaskResultRequest()
     m_dbNameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false)
+    m_resourceRegionHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_fetchHistoryHasBeenSet(false)
 {
 }
 
@@ -112,6 +115,30 @@ string DescribeDSPADiscoveryTaskResultRequest::ToJsonString() const
         string key = "ResourceRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fetchHistoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FetchHistory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fetchHistory, allocator);
     }
 
 
@@ -264,6 +291,54 @@ void DescribeDSPADiscoveryTaskResultRequest::SetResourceRegion(const string& _re
 bool DescribeDSPADiscoveryTaskResultRequest::ResourceRegionHasBeenSet() const
 {
     return m_resourceRegionHasBeenSet;
+}
+
+string DescribeDSPADiscoveryTaskResultRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeDSPADiscoveryTaskResultRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeDSPADiscoveryTaskResultRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeDSPADiscoveryTaskResultRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeDSPADiscoveryTaskResultRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeDSPADiscoveryTaskResultRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+bool DescribeDSPADiscoveryTaskResultRequest::GetFetchHistory() const
+{
+    return m_fetchHistory;
+}
+
+void DescribeDSPADiscoveryTaskResultRequest::SetFetchHistory(const bool& _fetchHistory)
+{
+    m_fetchHistory = _fetchHistory;
+    m_fetchHistoryHasBeenSet = true;
+}
+
+bool DescribeDSPADiscoveryTaskResultRequest::FetchHistoryHasBeenSet() const
+{
+    return m_fetchHistoryHasBeenSet;
 }
 
 

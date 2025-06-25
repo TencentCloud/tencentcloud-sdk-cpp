@@ -35,7 +35,8 @@ ClbDomainsInfo::ClbDomainsInfo() :
     m_cdcClustersHasBeenSet(false),
     m_cloudTypeHasBeenSet(false),
     m_noteHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_accessStatusHasBeenSet(false)
 {
 }
 
@@ -210,6 +211,16 @@ CoreInternalOutcome ClbDomainsInfo::Deserialize(const rapidjson::Value &value)
         m_labelsHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessStatus") && !value["AccessStatus"].IsNull())
+    {
+        if (!value["AccessStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbDomainsInfo.AccessStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessStatus = value["AccessStatus"].GetInt64();
+        m_accessStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -352,6 +363,14 @@ void ClbDomainsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_accessStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accessStatus, allocator);
     }
 
 }
@@ -595,5 +614,21 @@ void ClbDomainsInfo::SetLabels(const vector<string>& _labels)
 bool ClbDomainsInfo::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+int64_t ClbDomainsInfo::GetAccessStatus() const
+{
+    return m_accessStatus;
+}
+
+void ClbDomainsInfo::SetAccessStatus(const int64_t& _accessStatus)
+{
+    m_accessStatus = _accessStatus;
+    m_accessStatusHasBeenSet = true;
+}
+
+bool ClbDomainsInfo::AccessStatusHasBeenSet() const
+{
+    return m_accessStatusHasBeenSet;
 }
 

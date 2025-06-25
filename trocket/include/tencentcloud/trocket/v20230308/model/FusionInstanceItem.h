@@ -252,23 +252,31 @@ DELETING，删除中
                     bool GroupNumLimitHasBeenSet() const;
 
                     /**
-                     * 获取计费模式，
-POSTPAID，按量计费
-PREPAID，包年包月
-                     * @return PayMode 计费模式，
-POSTPAID，按量计费
-PREPAID，包年包月
+                     * 获取计费模式，枚举值如下：
+
+- POSTPAID：按量计费
+
+- PREPAID：包年包月
+                     * @return PayMode 计费模式，枚举值如下：
+
+- POSTPAID：按量计费
+
+- PREPAID：包年包月
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置计费模式，
-POSTPAID，按量计费
-PREPAID，包年包月
-                     * @param _payMode 计费模式，
-POSTPAID，按量计费
-PREPAID，包年包月
+                     * 设置计费模式，枚举值如下：
+
+- POSTPAID：按量计费
+
+- PREPAID：包年包月
+                     * @param _payMode 计费模式，枚举值如下：
+
+- POSTPAID：按量计费
+
+- PREPAID：包年包月
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -281,18 +289,18 @@ PREPAID，包年包月
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间，秒为单位
+                     * 获取到期时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpiryTime 到期时间，秒为单位
+                     * @return ExpiryTime 到期时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpiryTime() const;
 
                     /**
-                     * 设置到期时间，秒为单位
+                     * 设置到期时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expiryTime 到期时间，秒为单位
+                     * @param _expiryTime 到期时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -445,18 +453,14 @@ PREPAID，包年包月
 
                     /**
                      * 获取弹性TPS限流值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaledTpsLimit 弹性TPS限流值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScaledTpsLimit() const;
 
                     /**
                      * 设置弹性TPS限流值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scaledTpsLimit 弹性TPS限流值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScaledTpsLimit(const int64_t& _scaledTpsLimit);
@@ -470,18 +474,14 @@ PREPAID，包年包月
 
                     /**
                      * 获取消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageRetention 消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMessageRetention() const;
 
                     /**
                      * 设置消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageRetention 消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageRetention(const int64_t& _messageRetention);
@@ -495,18 +495,14 @@ PREPAID，包年包月
 
                     /**
                      * 获取延迟消息最大时长，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxMessageDelay 延迟消息最大时长，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxMessageDelay() const;
 
                     /**
                      * 设置延迟消息最大时长，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxMessageDelay 延迟消息最大时长，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxMessageDelay(const int64_t& _maxMessageDelay);
@@ -519,19 +515,27 @@ PREPAID，包年包月
                     bool MaxMessageDelayHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenewFlag 是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取预付费集群是否自动续费，枚举值如下：
+
+- 0: 不自动续费
+- 1: 自动续费
+                     * @return RenewFlag 预付费集群是否自动续费，枚举值如下：
+
+- 0: 不自动续费
+- 1: 自动续费
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
-                     * 设置是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _renewFlag 是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置预付费集群是否自动续费，枚举值如下：
+
+- 0: 不自动续费
+- 1: 自动续费
+                     * @param _renewFlag 预付费集群是否自动续费，枚举值如下：
+
+- 0: 不自动续费
+- 1: 自动续费
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -569,18 +573,18 @@ PREPAID，包年包月
                     bool InstanceItemExtraInfoHasBeenSet() const;
 
                     /**
-                     * 获取预销毁时间
+                     * 获取预销毁时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DestroyTime 预销毁时间
+                     * @return DestroyTime 预销毁时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDestroyTime() const;
 
                     /**
-                     * 设置预销毁时间
+                     * 设置预销毁时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _destroyTime 预销毁时间
+                     * @param _destroyTime 预销毁时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -594,18 +598,18 @@ PREPAID，包年包月
                     bool DestroyTimeHasBeenSet() const;
 
                     /**
-                     * 获取所属可用区列表
+                     * 获取所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneIds 所属可用区列表
+                     * @return ZoneIds 所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
-                     * 设置所属可用区列表
+                     * 设置所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneIds 所属可用区列表
+                     * @param _zoneIds 所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -698,15 +702,17 @@ DELETING，删除中
                     bool m_groupNumLimitHasBeenSet;
 
                     /**
-                     * 计费模式，
-POSTPAID，按量计费
-PREPAID，包年包月
+                     * 计费模式，枚举值如下：
+
+- POSTPAID：按量计费
+
+- PREPAID：包年包月
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 到期时间，秒为单位
+                     * 到期时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expiryTime;
@@ -753,28 +759,27 @@ PREPAID，包年包月
 
                     /**
                      * 弹性TPS限流值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scaledTpsLimit;
                     bool m_scaledTpsLimitHasBeenSet;
 
                     /**
                      * 消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_messageRetention;
                     bool m_messageRetentionHasBeenSet;
 
                     /**
                      * 延迟消息最大时长，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxMessageDelay;
                     bool m_maxMessageDelayHasBeenSet;
 
                     /**
-                     * 是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 预付费集群是否自动续费，枚举值如下：
+
+- 0: 不自动续费
+- 1: 自动续费
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
@@ -787,14 +792,14 @@ PREPAID，包年包月
                     bool m_instanceItemExtraInfoHasBeenSet;
 
                     /**
-                     * 预销毁时间
+                     * 预销毁时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_destroyTime;
                     bool m_destroyTimeHasBeenSet;
 
                     /**
-                     * 所属可用区列表
+                     * 所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_zoneIds;

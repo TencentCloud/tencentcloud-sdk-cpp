@@ -73,7 +73,8 @@ DomainsPartInfo::DomainsPartInfo() :
     m_labelsHasBeenSet(false),
     m_probeStatusHasBeenSet(false),
     m_upstreamPolicyHasBeenSet(false),
-    m_upstreamRulesHasBeenSet(false)
+    m_upstreamRulesHasBeenSet(false),
+    m_useCaseHasBeenSet(false)
 {
 }
 
@@ -647,6 +648,16 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_upstreamRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("UseCase") && !value["UseCase"].IsNull())
+    {
+        if (!value["UseCase"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.UseCase` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_useCase = value["UseCase"].GetInt64();
+        m_useCaseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1115,6 +1126,14 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_useCaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseCase";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useCase, allocator);
     }
 
 }
@@ -1966,5 +1985,21 @@ void DomainsPartInfo::SetUpstreamRules(const vector<UpstreamRule>& _upstreamRule
 bool DomainsPartInfo::UpstreamRulesHasBeenSet() const
 {
     return m_upstreamRulesHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetUseCase() const
+{
+    return m_useCase;
+}
+
+void DomainsPartInfo::SetUseCase(const int64_t& _useCase)
+{
+    m_useCase = _useCase;
+    m_useCaseHasBeenSet = true;
+}
+
+bool DomainsPartInfo::UseCaseHasBeenSet() const
+{
+    return m_useCaseHasBeenSet;
 }
 

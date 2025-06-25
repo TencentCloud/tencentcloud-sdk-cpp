@@ -28,7 +28,8 @@ DescribeNewestVulResponse::DescribeNewestVulResponse() :
     m_vulNameHasBeenSet(false),
     m_submitTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_cVEIDHasBeenSet(false)
+    m_cVEIDHasBeenSet(false),
+    m_supportDefenseHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome DescribeNewestVulResponse::Deserialize(const string &payload
         m_cVEIDHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SupportDefense") && !rsp["SupportDefense"].IsNull())
+    {
+        if (!rsp["SupportDefense"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SupportDefense` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportDefense = rsp["SupportDefense"].GetInt64();
+        m_supportDefenseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ string DescribeNewestVulResponse::ToJsonString() const
         string key = "CVEID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cVEID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportDefenseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportDefense";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportDefense, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +245,16 @@ string DescribeNewestVulResponse::GetCVEID() const
 bool DescribeNewestVulResponse::CVEIDHasBeenSet() const
 {
     return m_cVEIDHasBeenSet;
+}
+
+int64_t DescribeNewestVulResponse::GetSupportDefense() const
+{
+    return m_supportDefense;
+}
+
+bool DescribeNewestVulResponse::SupportDefenseHasBeenSet() const
+{
+    return m_supportDefenseHasBeenSet;
 }
 
 

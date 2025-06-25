@@ -30,7 +30,8 @@ DspaDiscoveryTaskDetail::DspaDiscoveryTaskDetail() :
     m_generalRuleSetEnableHasBeenSet(false),
     m_defaultComplianceInfoHasBeenSet(false),
     m_customComplianceInfoHasBeenSet(false),
-    m_timingStartTimeHasBeenSet(false)
+    m_timingStartTimeHasBeenSet(false),
+    m_scanRangeHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,16 @@ CoreInternalOutcome DspaDiscoveryTaskDetail::Deserialize(const rapidjson::Value 
         m_timingStartTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ScanRange") && !value["ScanRange"].IsNull())
+    {
+        if (!value["ScanRange"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryTaskDetail.ScanRange` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanRange = string(value["ScanRange"].GetString());
+        m_scanRangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -266,6 +277,14 @@ void DspaDiscoveryTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "TimingStartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timingStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scanRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanRange.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -429,5 +448,21 @@ void DspaDiscoveryTaskDetail::SetTimingStartTime(const string& _timingStartTime)
 bool DspaDiscoveryTaskDetail::TimingStartTimeHasBeenSet() const
 {
     return m_timingStartTimeHasBeenSet;
+}
+
+string DspaDiscoveryTaskDetail::GetScanRange() const
+{
+    return m_scanRange;
+}
+
+void DspaDiscoveryTaskDetail::SetScanRange(const string& _scanRange)
+{
+    m_scanRange = _scanRange;
+    m_scanRangeHasBeenSet = true;
+}
+
+bool DspaDiscoveryTaskDetail::ScanRangeHasBeenSet() const
+{
+    return m_scanRangeHasBeenSet;
 }
 

@@ -34,7 +34,9 @@ DspaCOSDiscoveryTaskResult::DspaCOSDiscoveryTaskResult() :
     m_statusHasBeenSet(false),
     m_errorInfoHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
-    m_overSizeHasBeenSet(false)
+    m_overSizeHasBeenSet(false),
+    m_taskInstanceIdHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -183,6 +185,26 @@ CoreInternalOutcome DspaCOSDiscoveryTaskResult::Deserialize(const rapidjson::Val
         m_overSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskInstanceId") && !value["TaskInstanceId"].IsNull())
+    {
+        if (!value["TaskInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaCOSDiscoveryTaskResult.TaskInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskInstanceId = string(value["TaskInstanceId"].GetString());
+        m_taskInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaCOSDiscoveryTaskResult.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +322,22 @@ void DspaCOSDiscoveryTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "OverSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_overSize.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +565,37 @@ void DspaCOSDiscoveryTaskResult::SetOverSize(const string& _overSize)
 bool DspaCOSDiscoveryTaskResult::OverSizeHasBeenSet() const
 {
     return m_overSizeHasBeenSet;
+}
+
+string DspaCOSDiscoveryTaskResult::GetTaskInstanceId() const
+{
+    return m_taskInstanceId;
+}
+
+void DspaCOSDiscoveryTaskResult::SetTaskInstanceId(const string& _taskInstanceId)
+{
+    m_taskInstanceId = _taskInstanceId;
+    m_taskInstanceIdHasBeenSet = true;
+}
+
+bool DspaCOSDiscoveryTaskResult::TaskInstanceIdHasBeenSet() const
+{
+    return m_taskInstanceIdHasBeenSet;
+}
+
+string DspaCOSDiscoveryTaskResult::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DspaCOSDiscoveryTaskResult::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DspaCOSDiscoveryTaskResult::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
 }
 

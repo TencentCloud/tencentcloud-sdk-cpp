@@ -30,7 +30,8 @@ DocSegment::DocSegment() :
     m_orgDataHasBeenSet(false),
     m_docIdHasBeenSet(false),
     m_docBizIdHasBeenSet(false),
-    m_docUrlHasBeenSet(false)
+    m_docUrlHasBeenSet(false),
+    m_webUrlHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome DocSegment::Deserialize(const rapidjson::Value &value)
         m_docUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("WebUrl") && !value["WebUrl"].IsNull())
+    {
+        if (!value["WebUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocSegment.WebUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_webUrl = string(value["WebUrl"].GetString());
+        m_webUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void DocSegment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DocUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_docUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void DocSegment::SetDocUrl(const string& _docUrl)
 bool DocSegment::DocUrlHasBeenSet() const
 {
     return m_docUrlHasBeenSet;
+}
+
+string DocSegment::GetWebUrl() const
+{
+    return m_webUrl;
+}
+
+void DocSegment::SetWebUrl(const string& _webUrl)
+{
+    m_webUrl = _webUrl;
+    m_webUrlHasBeenSet = true;
+}
+
+bool DocSegment::WebUrlHasBeenSet() const
+{
+    return m_webUrlHasBeenSet;
 }
 

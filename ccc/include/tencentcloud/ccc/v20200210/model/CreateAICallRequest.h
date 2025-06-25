@@ -541,15 +541,15 @@ HoaiMy
                     bool WelcomeTypeHasBeenSet() const;
 
                     /**
-                     * 获取0: 默认可打断， 1：高优先不可打断
-                     * @return WelcomeMessagePriority 0: 默认可打断， 1：高优先不可打断
+                     * 获取0: 默认可打断， 2：高优先不可打断
+                     * @return WelcomeMessagePriority 0: 默认可打断， 2：高优先不可打断
                      * 
                      */
                     int64_t GetWelcomeMessagePriority() const;
 
                     /**
-                     * 设置0: 默认可打断， 1：高优先不可打断
-                     * @param _welcomeMessagePriority 0: 默认可打断， 1：高优先不可打断
+                     * 设置0: 默认可打断， 2：高优先不可打断
+                     * @param _welcomeMessagePriority 0: 默认可打断， 2：高优先不可打断
                      * 
                      */
                     void SetWelcomeMessagePriority(const int64_t& _welcomeMessagePriority);
@@ -1473,7 +1473,7 @@ HoaiMy
                     bool m_welcomeTypeHasBeenSet;
 
                     /**
-                     * 0: 默认可打断， 1：高优先不可打断
+                     * 0: 默认可打断， 2：高优先不可打断
                      */
                     int64_t m_welcomeMessagePriority;
                     bool m_welcomeMessagePriorityHasBeenSet;

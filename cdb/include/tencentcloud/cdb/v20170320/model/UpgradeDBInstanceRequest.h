@@ -174,15 +174,19 @@ namespace TencentCloud
                     bool SlaveZoneHasBeenSet() const;
 
                     /**
-                     * 获取主实例数据库引擎版本，支持值包括：5.5、5.6 和 5.7。
-                     * @return EngineVersion 主实例数据库引擎版本，支持值包括：5.5、5.6 和 5.7。
+                     * 获取主实例数据库引擎版本，支持值包括：5.5、5.6、5.7、8.0。
+说明：升级数据库版本请使用 [UpgradeDBInstanceEngineVersion](https://cloud.tencent.com/document/api/236/15870) 接口。
+                     * @return EngineVersion 主实例数据库引擎版本，支持值包括：5.5、5.6、5.7、8.0。
+说明：升级数据库版本请使用 [UpgradeDBInstanceEngineVersion](https://cloud.tencent.com/document/api/236/15870) 接口。
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置主实例数据库引擎版本，支持值包括：5.5、5.6 和 5.7。
-                     * @param _engineVersion 主实例数据库引擎版本，支持值包括：5.5、5.6 和 5.7。
+                     * 设置主实例数据库引擎版本，支持值包括：5.5、5.6、5.7、8.0。
+说明：升级数据库版本请使用 [UpgradeDBInstanceEngineVersion](https://cloud.tencent.com/document/api/236/15870) 接口。
+                     * @param _engineVersion 主实例数据库引擎版本，支持值包括：5.5、5.6、5.7、8.0。
+说明：升级数据库版本请使用 [UpgradeDBInstanceEngineVersion](https://cloud.tencent.com/document/api/236/15870) 接口。
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -216,18 +220,18 @@ namespace TencentCloud
                     bool WaitSwitchHasBeenSet() const;
 
                     /**
-                     * 获取备库 2 的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。
+                     * 获取备库2的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口查询支持的可用区。
 备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。
-                     * @return BackupZone 备库 2 的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。
+                     * @return BackupZone 备库2的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口查询支持的可用区。
 备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。
                      * 
                      */
                     std::string GetBackupZone() const;
 
                     /**
-                     * 设置备库 2 的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。
+                     * 设置备库2的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口查询支持的可用区。
 备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。
-                     * @param _backupZone 备库 2 的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。
+                     * @param _backupZone 备库2的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口查询支持的可用区。
 备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。
                      * 
                      */
@@ -539,7 +543,8 @@ namespace TencentCloud
                     bool m_slaveZoneHasBeenSet;
 
                     /**
-                     * 主实例数据库引擎版本，支持值包括：5.5、5.6 和 5.7。
+                     * 主实例数据库引擎版本，支持值包括：5.5、5.6、5.7、8.0。
+说明：升级数据库版本请使用 [UpgradeDBInstanceEngineVersion](https://cloud.tencent.com/document/api/236/15870) 接口。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
@@ -551,7 +556,7 @@ namespace TencentCloud
                     bool m_waitSwitchHasBeenSet;
 
                     /**
-                     * 备库 2 的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。
+                     * 备库2的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口查询支持的可用区。
 备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。
                      */
                     std::string m_backupZone;

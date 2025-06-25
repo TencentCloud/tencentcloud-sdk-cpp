@@ -29,6 +29,8 @@
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelReferResponse.h>
 #include <tencentcloud/lke/v20231130/model/ConvertDocumentRequest.h>
 #include <tencentcloud/lke/v20231130/model/ConvertDocumentResponse.h>
+#include <tencentcloud/lke/v20231130/model/CreateAgentRequest.h>
+#include <tencentcloud/lke/v20231130/model/CreateAgentResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateAttributeLabelRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/lke/v20231130/model/CreateVarResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateWorkflowRunRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateWorkflowRunResponse.h>
+#include <tencentcloud/lke/v20231130/model/DeleteAgentRequest.h>
+#include <tencentcloud/lke/v20231130/model/DeleteAgentResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/DeleteAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteAttributeLabelRequest.h>
@@ -71,6 +75,8 @@
 #include <tencentcloud/lke/v20231130/model/DeleteVarResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAppResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeAppAgentListRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeAppAgentListResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAttributeLabelRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAttributeLabelResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeCallStatsGraphRequest.h>
@@ -195,6 +201,8 @@
 #include <tencentcloud/lke/v20231130/model/ListUsageCallDetailResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListWorkflowRunsRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListWorkflowRunsResponse.h>
+#include <tencentcloud/lke/v20231130/model/ModifyAgentRequest.h>
+#include <tencentcloud/lke/v20231130/model/ModifyAgentResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAttributeLabelRequest.h>
@@ -268,6 +276,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ConvertDocumentResponse> ConvertDocumentOutcome;
                 typedef std::future<ConvertDocumentOutcome> ConvertDocumentOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ConvertDocumentRequest&, ConvertDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConvertDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAgentResponse> CreateAgentOutcome;
+                typedef std::future<CreateAgentOutcome> CreateAgentOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::CreateAgentRequest&, CreateAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAppResponse> CreateAppOutcome;
                 typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateAppRequest&, CreateAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
@@ -301,6 +312,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateWorkflowRunResponse> CreateWorkflowRunOutcome;
                 typedef std::future<CreateWorkflowRunOutcome> CreateWorkflowRunOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateWorkflowRunRequest&, CreateWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowRunAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAgentResponse> DeleteAgentOutcome;
+                typedef std::future<DeleteAgentOutcome> DeleteAgentOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DeleteAgentRequest&, DeleteAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAppResponse> DeleteAppOutcome;
                 typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DeleteAppRequest&, DeleteAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppAsyncHandler;
@@ -331,6 +345,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAppResponse> DescribeAppOutcome;
                 typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeAppRequest&, DescribeAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppAgentListResponse> DescribeAppAgentListOutcome;
+                typedef std::future<DescribeAppAgentListOutcome> DescribeAppAgentListOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeAppAgentListRequest&, DescribeAppAgentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppAgentListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAttributeLabelResponse> DescribeAttributeLabelOutcome;
                 typedef std::future<DescribeAttributeLabelOutcome> DescribeAttributeLabelOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeAttributeLabelRequest&, DescribeAttributeLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttributeLabelAsyncHandler;
@@ -517,6 +534,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListWorkflowRunsResponse> ListWorkflowRunsOutcome;
                 typedef std::future<ListWorkflowRunsOutcome> ListWorkflowRunsOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListWorkflowRunsRequest&, ListWorkflowRunsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkflowRunsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAgentResponse> ModifyAgentOutcome;
+                typedef std::future<ModifyAgentOutcome> ModifyAgentOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ModifyAgentRequest&, ModifyAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAppResponse> ModifyAppOutcome;
                 typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ModifyAppRequest&, ModifyAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
@@ -625,6 +645,15 @@ namespace TencentCloud
                 ConvertDocumentOutcomeCallable ConvertDocumentCallable(const Model::ConvertDocumentRequest& request);
 
                 /**
+                 *你创建一个Agent
+                 * @param req CreateAgentRequest
+                 * @return CreateAgentOutcome
+                 */
+                CreateAgentOutcome CreateAgent(const Model::CreateAgentRequest &request);
+                void CreateAgentAsync(const Model::CreateAgentRequest& request, const CreateAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAgentOutcomeCallable CreateAgentCallable(const Model::CreateAgentRequest& request);
+
+                /**
                  *创建知识引擎应用。
                  * @param req CreateAppRequest
                  * @return CreateAppOutcome
@@ -725,6 +754,15 @@ namespace TencentCloud
                 CreateWorkflowRunOutcomeCallable CreateWorkflowRunCallable(const Model::CreateWorkflowRunRequest& request);
 
                 /**
+                 *删除Agent
+                 * @param req DeleteAgentRequest
+                 * @return DeleteAgentOutcome
+                 */
+                DeleteAgentOutcome DeleteAgent(const Model::DeleteAgentRequest &request);
+                void DeleteAgentAsync(const Model::DeleteAgentRequest& request, const DeleteAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAgentOutcomeCallable DeleteAgentCallable(const Model::DeleteAgentRequest& request);
+
+                /**
                  *删除应用
                  * @param req DeleteAppRequest
                  * @return DeleteAppOutcome
@@ -813,6 +851,15 @@ namespace TencentCloud
                 DescribeAppOutcome DescribeApp(const Model::DescribeAppRequest &request);
                 void DescribeAppAsync(const Model::DescribeAppRequest& request, const DescribeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAppOutcomeCallable DescribeAppCallable(const Model::DescribeAppRequest& request);
+
+                /**
+                 *查询指定应用下的Agent列表
+                 * @param req DescribeAppAgentListRequest
+                 * @return DescribeAppAgentListOutcome
+                 */
+                DescribeAppAgentListOutcome DescribeAppAgentList(const Model::DescribeAppAgentListRequest &request);
+                void DescribeAppAgentListAsync(const Model::DescribeAppAgentListRequest& request, const DescribeAppAgentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppAgentListOutcomeCallable DescribeAppAgentListCallable(const Model::DescribeAppAgentListRequest& request);
 
                 /**
                  *查询属性标签详情
@@ -1374,6 +1421,15 @@ namespace TencentCloud
                 ListWorkflowRunsOutcome ListWorkflowRuns(const Model::ListWorkflowRunsRequest &request);
                 void ListWorkflowRunsAsync(const Model::ListWorkflowRunsRequest& request, const ListWorkflowRunsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListWorkflowRunsOutcomeCallable ListWorkflowRunsCallable(const Model::ListWorkflowRunsRequest& request);
+
+                /**
+                 *修改Agent信息
+                 * @param req ModifyAgentRequest
+                 * @return ModifyAgentOutcome
+                 */
+                ModifyAgentOutcome ModifyAgent(const Model::ModifyAgentRequest &request);
+                void ModifyAgentAsync(const Model::ModifyAgentRequest& request, const ModifyAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAgentOutcomeCallable ModifyAgentCallable(const Model::ModifyAgentRequest& request);
 
                 /**
                  *修改应用请求结构体

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称
-                     * @return Topic 主题名称
+                     * 获取主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
+                     * @return Topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题名称
-                     * @param _topic 主题名称
+                     * 设置主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
+                     * @param _topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取要查询消息的开始时间，**Unix时间戳（毫秒）**
+                     * @return StartTime 要查询消息的开始时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置要查询消息的开始时间，**Unix时间戳（毫秒）**
+                     * @param _startTime 要查询消息的开始时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取要查询消息的结束时间，**Unix时间戳（毫秒）**
+                     * @return EndTime 要查询消息的结束时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置要查询消息的结束时间，**Unix时间戳（毫秒）**
+                     * @param _endTime 要查询消息的结束时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取一次查询标识
-                     * @return TaskRequestId 一次查询标识
+                     * 获取一次查询标识。第一次查询可传空字符串，当查询结果涉及分页，请求下一页数据时该入参的值取上一次请求响应中的出参TaskRequestId 值即可。
+                     * @return TaskRequestId 一次查询标识。第一次查询可传空字符串，当查询结果涉及分页，请求下一页数据时该入参的值取上一次请求响应中的出参TaskRequestId 值即可。
                      * 
                      */
                     std::string GetTaskRequestId() const;
 
                     /**
-                     * 设置一次查询标识
-                     * @param _taskRequestId 一次查询标识
+                     * 设置一次查询标识。第一次查询可传空字符串，当查询结果涉及分页，请求下一页数据时该入参的值取上一次请求响应中的出参TaskRequestId 值即可。
+                     * @param _taskRequestId 一次查询标识。第一次查询可传空字符串，当查询结果涉及分页，请求下一页数据时该入参的值取上一次请求响应中的出参TaskRequestId 值即可。
                      * 
                      */
                     void SetTaskRequestId(const std::string& _taskRequestId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TaskRequestIdHasBeenSet() const;
 
                     /**
-                     * 获取查询起始位置
-                     * @return Offset 查询起始位置
+                     * 获取查询起始位置，默认为0。
+                     * @return Offset 查询起始位置，默认为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始位置
-                     * @param _offset 查询起始位置
+                     * 设置查询起始位置，默认为0。
+                     * @param _offset 查询起始位置，默认为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询结果限制数量
-                     * @return Limit 查询结果限制数量
+                     * 获取查询结果限制数量，默认20。
+                     * @return Limit 查询结果限制数量，默认20。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询结果限制数量
-                     * @param _limit 查询结果限制数量
+                     * 设置查询结果限制数量，默认20。
+                     * @param _limit 查询结果限制数量，默认20。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取消费组名称
-                     * @return ConsumerGroup 消费组名称
+                     * 获取消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。
+                     * @return ConsumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。
                      * 
                      */
                     std::string GetConsumerGroup() const;
 
                     /**
-                     * 设置消费组名称
-                     * @param _consumerGroup 消费组名称
+                     * 设置消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。
+                     * @param _consumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。
                      * 
                      */
                     void SetConsumerGroup(const std::string& _consumerGroup);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool ConsumerGroupHasBeenSet() const;
 
                     /**
-                     * 获取消息 ID
-                     * @return MsgId 消息 ID
+                     * 获取消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
+                     * @return MsgId 消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      * 
                      */
                     std::string GetMsgId() const;
 
                     /**
-                     * 设置消息 ID
-                     * @param _msgId 消息 ID
+                     * 设置消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
+                     * @param _msgId 消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      * 
                      */
                     void SetMsgId(const std::string& _msgId);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool MsgIdHasBeenSet() const;
 
                     /**
-                     * 获取消息 Key
-                     * @return MsgKey 消息 Key
+                     * 获取消息 Key，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
+                     * @return MsgKey 消息 Key，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      * 
                      */
                     std::string GetMsgKey() const;
 
                     /**
-                     * 设置消息 Key
-                     * @param _msgKey 消息 Key
+                     * 设置消息 Key，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
+                     * @param _msgKey 消息 Key，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      * 
                      */
                     void SetMsgKey(const std::string& _msgKey);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool RecentMessageNumHasBeenSet() const;
 
                     /**
-                     * 获取是否查询死信消息
-                     * @return QueryDeadLetterMessage 是否查询死信消息
+                     * 获取是否查询死信消息，默认为false
+                     * @return QueryDeadLetterMessage 是否查询死信消息，默认为false
                      * 
                      */
                     bool GetQueryDeadLetterMessage() const;
 
                     /**
-                     * 设置是否查询死信消息
-                     * @param _queryDeadLetterMessage 是否查询死信消息
+                     * 设置是否查询死信消息，默认为false
+                     * @param _queryDeadLetterMessage 是否查询死信消息，默认为false
                      * 
                      */
                     void SetQueryDeadLetterMessage(const bool& _queryDeadLetterMessage);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool QueryDeadLetterMessageHasBeenSet() const;
 
                     /**
-                     * 获取消息 Tag
-                     * @return Tag 消息 Tag
+                     * 获取消息 Tag，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
+                     * @return Tag 消息 Tag，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
-                     * 设置消息 Tag
-                     * @param _tag 消息 Tag
+                     * 设置消息 Tag，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
+                     * @param _tag 消息 Tag，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -318,61 +318,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名称
+                     * 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 要查询消息的开始时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 要查询消息的结束时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 一次查询标识
+                     * 一次查询标识。第一次查询可传空字符串，当查询结果涉及分页，请求下一页数据时该入参的值取上一次请求响应中的出参TaskRequestId 值即可。
                      */
                     std::string m_taskRequestId;
                     bool m_taskRequestIdHasBeenSet;
 
                     /**
-                     * 查询起始位置
+                     * 查询起始位置，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询结果限制数量
+                     * 查询结果限制数量，默认20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 消费组名称
+                     * 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。
                      */
                     std::string m_consumerGroup;
                     bool m_consumerGroupHasBeenSet;
 
                     /**
-                     * 消息 ID
+                     * 消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      */
                     std::string m_msgId;
                     bool m_msgIdHasBeenSet;
 
                     /**
-                     * 消息 Key
+                     * 消息 Key，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      */
                     std::string m_msgKey;
                     bool m_msgKeyHasBeenSet;
@@ -384,13 +384,13 @@ namespace TencentCloud
                     bool m_recentMessageNumHasBeenSet;
 
                     /**
-                     * 是否查询死信消息
+                     * 是否查询死信消息，默认为false
                      */
                     bool m_queryDeadLetterMessage;
                     bool m_queryDeadLetterMessageHasBeenSet;
 
                     /**
-                     * 消息 Tag
+                     * 消息 Tag，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

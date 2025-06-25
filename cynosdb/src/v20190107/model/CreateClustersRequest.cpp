@@ -65,7 +65,9 @@ CreateClustersRequest::CreateClustersRequest() :
     m_slaveZoneHasBeenSet(false),
     m_instanceInitInfosHasBeenSet(false),
     m_gdnIdHasBeenSet(false),
-    m_proxyConfigHasBeenSet(false)
+    m_proxyConfigHasBeenSet(false),
+    m_autoArchiveHasBeenSet(false),
+    m_autoArchiveDelayHoursHasBeenSet(false)
 {
 }
 
@@ -450,6 +452,22 @@ string CreateClustersRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_proxyConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_autoArchiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoArchive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoArchive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoArchiveDelayHoursHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoArchiveDelayHours";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoArchiveDelayHours, allocator);
     }
 
 
@@ -1146,6 +1164,38 @@ void CreateClustersRequest::SetProxyConfig(const ProxyConfig& _proxyConfig)
 bool CreateClustersRequest::ProxyConfigHasBeenSet() const
 {
     return m_proxyConfigHasBeenSet;
+}
+
+string CreateClustersRequest::GetAutoArchive() const
+{
+    return m_autoArchive;
+}
+
+void CreateClustersRequest::SetAutoArchive(const string& _autoArchive)
+{
+    m_autoArchive = _autoArchive;
+    m_autoArchiveHasBeenSet = true;
+}
+
+bool CreateClustersRequest::AutoArchiveHasBeenSet() const
+{
+    return m_autoArchiveHasBeenSet;
+}
+
+int64_t CreateClustersRequest::GetAutoArchiveDelayHours() const
+{
+    return m_autoArchiveDelayHours;
+}
+
+void CreateClustersRequest::SetAutoArchiveDelayHours(const int64_t& _autoArchiveDelayHours)
+{
+    m_autoArchiveDelayHours = _autoArchiveDelayHours;
+    m_autoArchiveDelayHoursHasBeenSet = true;
+}
+
+bool CreateClustersRequest::AutoArchiveDelayHoursHasBeenSet() const
+{
+    return m_autoArchiveDelayHoursHasBeenSet;
 }
 
 

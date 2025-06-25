@@ -1071,15 +1071,15 @@ public：公有云域名
                     bool SgIDHasBeenSet() const;
 
                     /**
-                     * 获取clbwaf接入状态
-                     * @return AccessStatus clbwaf接入状态
+                     * 获取clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”
+                     * @return AccessStatus clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”
                      * 
                      */
                     int64_t GetAccessStatus() const;
 
                     /**
-                     * 设置clbwaf接入状态
-                     * @param _accessStatus clbwaf接入状态
+                     * 设置clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”
+                     * @param _accessStatus clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”
                      * 
                      */
                     void SetAccessStatus(const int64_t& _accessStatus);
@@ -1396,7 +1396,7 @@ public：公有云域名
                     bool m_sgIDHasBeenSet;
 
                     /**
-                     * clbwaf接入状态
+                     * clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”
                      */
                     int64_t m_accessStatus;
                     bool m_accessStatusHasBeenSet;

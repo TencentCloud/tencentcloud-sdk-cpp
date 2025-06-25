@@ -205,6 +205,10 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeDsFolderTreeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsParentFolderTreeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsParentFolderTreeResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsTaskVersionInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsTaskVersionInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsTaskVersionListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsTaskVersionListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDutyScheduleDetailsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDutyScheduleDetailsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDutyScheduleListRequest.h>
@@ -868,6 +872,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDsParentFolderTreeResponse> DescribeDsParentFolderTreeOutcome;
                 typedef std::future<DescribeDsParentFolderTreeOutcome> DescribeDsParentFolderTreeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDsParentFolderTreeRequest&, DescribeDsParentFolderTreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsParentFolderTreeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDsTaskVersionInfoResponse> DescribeDsTaskVersionInfoOutcome;
+                typedef std::future<DescribeDsTaskVersionInfoOutcome> DescribeDsTaskVersionInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDsTaskVersionInfoRequest&, DescribeDsTaskVersionInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsTaskVersionInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDsTaskVersionListResponse> DescribeDsTaskVersionListOutcome;
+                typedef std::future<DescribeDsTaskVersionListOutcome> DescribeDsTaskVersionListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDsTaskVersionListRequest&, DescribeDsTaskVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsTaskVersionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDutyScheduleDetailsResponse> DescribeDutyScheduleDetailsOutcome;
                 typedef std::future<DescribeDutyScheduleDetailsOutcome> DescribeDutyScheduleDetailsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDutyScheduleDetailsRequest&, DescribeDutyScheduleDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDutyScheduleDetailsAsyncHandler;
@@ -2257,6 +2267,24 @@ namespace TencentCloud
                 DescribeDsParentFolderTreeOutcomeCallable DescribeDsParentFolderTreeCallable(const Model::DescribeDsParentFolderTreeRequest& request);
 
                 /**
+                 *查看任务版本详细信息
+                 * @param req DescribeDsTaskVersionInfoRequest
+                 * @return DescribeDsTaskVersionInfoOutcome
+                 */
+                DescribeDsTaskVersionInfoOutcome DescribeDsTaskVersionInfo(const Model::DescribeDsTaskVersionInfoRequest &request);
+                void DescribeDsTaskVersionInfoAsync(const Model::DescribeDsTaskVersionInfoRequest& request, const DescribeDsTaskVersionInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDsTaskVersionInfoOutcomeCallable DescribeDsTaskVersionInfoCallable(const Model::DescribeDsTaskVersionInfoRequest& request);
+
+                /**
+                 *拉取任务版本列表
+                 * @param req DescribeDsTaskVersionListRequest
+                 * @return DescribeDsTaskVersionListOutcome
+                 */
+                DescribeDsTaskVersionListOutcome DescribeDsTaskVersionList(const Model::DescribeDsTaskVersionListRequest &request);
+                void DescribeDsTaskVersionListAsync(const Model::DescribeDsTaskVersionListRequest& request, const DescribeDsTaskVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDsTaskVersionListOutcomeCallable DescribeDsTaskVersionListCallable(const Model::DescribeDsTaskVersionListRequest& request);
+
+                /**
                  *获取值班日历
                  * @param req DescribeDutyScheduleDetailsRequest
                  * @return DescribeDutyScheduleDetailsOutcome
@@ -3119,7 +3147,7 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 DescribeTaskRunHistoryOutcomeCallable DescribeTaskRunHistoryCallable(const Model::DescribeTaskRunHistoryRequest& request);
 
                 /**
-                 *查询任务脚本
+                 *查询任务脚本。本接口已废弃，请使用接口GetPaginationTaskScript。
                  * @param req DescribeTaskScriptRequest
                  * @return DescribeTaskScriptOutcome
                  */
@@ -3608,7 +3636,7 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
 
                 /**
                  *<p style="color:red;">[注意：该版本只满足广州区部分白名单客户使用]</p>
-修改任务脚本
+修改任务脚本。本接口已废弃，请使用接口ModifyTaskInfoDs。
                  * @param req ModifyTaskScriptRequest
                  * @return ModifyTaskScriptOutcome
                  */

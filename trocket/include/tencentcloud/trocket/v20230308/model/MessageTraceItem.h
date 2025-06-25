@@ -47,18 +47,42 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取步骤
+                     * 获取消息处理阶段，枚举值如下：
+
+- produce：消息生产
+
+- persist：消息存储
+
+- consume：消息消费
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Stage 步骤
+                     * @return Stage 消息处理阶段，枚举值如下：
+
+- produce：消息生产
+
+- persist：消息存储
+
+- consume：消息消费
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStage() const;
 
                     /**
-                     * 设置步骤
+                     * 设置消息处理阶段，枚举值如下：
+
+- produce：消息生产
+
+- persist：消息存储
+
+- consume：消息消费
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _stage 步骤
+                     * @param _stage 消息处理阶段，枚举值如下：
+
+- produce：消息生产
+
+- persist：消息存储
+
+- consume：消息消费
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,7 +123,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 步骤
+                     * 消息处理阶段，枚举值如下：
+
+- produce：消息生产
+
+- persist：消息存储
+
+- consume：消息消费
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stage;

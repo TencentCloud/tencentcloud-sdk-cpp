@@ -262,15 +262,15 @@ namespace TencentCloud
                     bool InternetAccessibleHasBeenSet() const;
 
                     /**
-                     * 获取购买工作空间数量
-                     * @return SpaceCount 购买工作空间数量
+                     * 获取购买工作空间实例的数量
+                     * @return SpaceCount 购买工作空间实例的数量
                      * 
                      */
                     int64_t GetSpaceCount() const;
 
                     /**
-                     * 设置购买工作空间数量
-                     * @param _spaceCount 购买工作空间数量
+                     * 设置购买工作空间实例的数量
+                     * @param _spaceCount 购买工作空间实例的数量
                      * 
                      */
                     void SetSpaceCount(const int64_t& _spaceCount);
@@ -576,7 +576,7 @@ namespace TencentCloud
                     bool m_internetAccessibleHasBeenSet;
 
                     /**
-                     * 购买工作空间数量
+                     * 购买工作空间实例的数量
                      */
                     int64_t m_spaceCount;
                     bool m_spaceCountHasBeenSet;

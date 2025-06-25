@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,14 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取目标数据库版本。
+说明：可选值5.6、5.7、8.0，不支持跨版本升级，升级后不支持版本降级。
                      * @return DstMysqlVersion 目标数据库版本。
+说明：可选值5.6、5.7、8.0，不支持跨版本升级，升级后不支持版本降级。
                      * 
                      */
                     std::string GetDstMysqlVersion() const;
 
                     /**
                      * 设置目标数据库版本。
+说明：可选值5.6、5.7、8.0，不支持跨版本升级，升级后不支持版本降级。
                      * @param _dstMysqlVersion 目标数据库版本。
+说明：可选值5.6、5.7、8.0，不支持跨版本升级，升级后不支持版本降级。
                      * 
                      */
                     void SetDstMysqlVersion(const std::string& _dstMysqlVersion);
@@ -87,13 +91,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 目标数据库版本。
+说明：可选值5.6、5.7、8.0，不支持跨版本升级，升级后不支持版本降级。
                      */
                     std::string m_dstMysqlVersion;
                     bool m_dstMysqlVersionHasBeenSet;

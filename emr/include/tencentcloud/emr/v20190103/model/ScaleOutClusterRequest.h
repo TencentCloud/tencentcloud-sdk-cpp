@@ -28,6 +28,7 @@
 #include <tencentcloud/emr/v20190103/model/PodSpecInfo.h>
 #include <tencentcloud/emr/v20190103/model/NodeResourceSpec.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutServiceConfGroupsInfo.h>
+#include <tencentcloud/emr/v20190103/model/NodeMark.h>
 
 
 namespace TencentCloud
@@ -493,6 +494,27 @@ namespace TencentCloud
                      */
                     bool ScaleOutServiceConfGroupsInfoHasBeenSet() const;
 
+                    /**
+                     * 获取节点标记信息，当前只提供给tf平台使用
+                     * @return NodeMarks 节点标记信息，当前只提供给tf平台使用
+                     * 
+                     */
+                    NodeMark GetNodeMarks() const;
+
+                    /**
+                     * 设置节点标记信息，当前只提供给tf平台使用
+                     * @param _nodeMarks 节点标记信息，当前只提供给tf平台使用
+                     * 
+                     */
+                    void SetNodeMarks(const NodeMark& _nodeMarks);
+
+                    /**
+                     * 判断参数 NodeMarks 是否已赋值
+                     * @return NodeMarks 是否已赋值
+                     * 
+                     */
+                    bool NodeMarksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -620,6 +642,12 @@ namespace TencentCloud
                      */
                     std::vector<ScaleOutServiceConfGroupsInfo> m_scaleOutServiceConfGroupsInfo;
                     bool m_scaleOutServiceConfGroupsInfoHasBeenSet;
+
+                    /**
+                     * 节点标记信息，当前只提供给tf平台使用
+                     */
+                    NodeMark m_nodeMarks;
+                    bool m_nodeMarksHasBeenSet;
 
                 };
             }

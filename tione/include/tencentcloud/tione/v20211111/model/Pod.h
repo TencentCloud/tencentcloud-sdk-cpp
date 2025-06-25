@@ -336,6 +336,27 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取当前实例所在的节点 IP
+                     * @return NodeIP 当前实例所在的节点 IP
+                     * 
+                     */
+                    std::string GetNodeIP() const;
+
+                    /**
+                     * 设置当前实例所在的节点 IP
+                     * @param _nodeIP 当前实例所在的节点 IP
+                     * 
+                     */
+                    void SetNodeIP(const std::string& _nodeIP);
+
+                    /**
+                     * 判断参数 NodeIP 是否已赋值
+                     * @return NodeIP 是否已赋值
+                     * 
+                     */
+                    bool NodeIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -418,6 +439,12 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 当前实例所在的节点 IP
+                     */
+                    std::string m_nodeIP;
+                    bool m_nodeIPHasBeenSet;
 
                 };
             }

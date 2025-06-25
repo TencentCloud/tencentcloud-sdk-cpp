@@ -87,21 +87,21 @@ namespace TencentCloud
                     /**
                      * 获取数据库扫描结果ID
                      * @return DbResultId 数据库扫描结果ID
-                     * 
+                     * @deprecated
                      */
                     int64_t GetDbResultId() const;
 
                     /**
                      * 设置数据库扫描结果ID
                      * @param _dbResultId 数据库扫描结果ID
-                     * 
+                     * @deprecated
                      */
                     void SetDbResultId(const int64_t& _dbResultId);
 
                     /**
                      * 判断参数 DbResultId 是否已赋值
                      * @return DbResultId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DbResultIdHasBeenSet() const;
 
@@ -125,6 +125,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DbNameHasBeenSet() const;
+
+                    /**
+                     * 获取任务扫描id
+                     * @return ScanResultId 任务扫描id
+                     * 
+                     */
+                    int64_t GetScanResultId() const;
+
+                    /**
+                     * 设置任务扫描id
+                     * @param _scanResultId 任务扫描id
+                     * 
+                     */
+                    void SetScanResultId(const int64_t& _scanResultId);
+
+                    /**
+                     * 判断参数 ScanResultId 是否已赋值
+                     * @return ScanResultId 是否已赋值
+                     * 
+                     */
+                    bool ScanResultIdHasBeenSet() const;
 
                 private:
 
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
+
+                    /**
+                     * 任务扫描id
+                     */
+                    int64_t m_scanResultId;
+                    bool m_scanResultIdHasBeenSet;
 
                 };
             }

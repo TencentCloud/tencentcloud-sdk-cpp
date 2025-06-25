@@ -133,8 +133,8 @@ namespace TencentCloud
                     bool MessageTracksHasBeenSet() const;
 
                     /**
-                     * 获取Topic
-                     * @return ShowTopicName Topic
+                     * 获取主题名称
+                     * @return ShowTopicName 主题名称
                      * 
                      */
                     std::string GetShowTopicName() const;
@@ -203,7 +203,7 @@ namespace TencentCloud
                     bool m_messageTracksHasBeenSet;
 
                     /**
-                     * Topic
+                     * 主题名称
                      */
                     std::string m_showTopicName;
                     bool m_showTopicNameHasBeenSet;

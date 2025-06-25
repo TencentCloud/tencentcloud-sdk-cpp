@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取法人姓名
-                     * @return LegalName 法人姓名
+                     * 获取<font color="red">字段不再使用</font>，法人姓名
+                     * @return LegalName <font color="red">字段不再使用</font>，法人姓名
                      * 
                      */
                     std::string GetLegalName() const;
 
                     /**
-                     * 设置法人姓名
-                     * @param _legalName 法人姓名
+                     * 设置<font color="red">字段不再使用</font>，法人姓名
+                     * @param _legalName <font color="red">字段不再使用</font>，法人姓名
                      * 
                      */
                     void SetLegalName(const std::string& _legalName);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool UsccHasBeenSet() const;
 
                     /**
-                     * 获取社会统一信用代码
-                     * @return UnifiedSocialCreditCode 社会统一信用代码
+                     * 获取<font color="red">字段不再使用</font>，社会统一信用代码
+                     * @return UnifiedSocialCreditCode <font color="red">字段不再使用</font>，社会统一信用代码
                      * 
                      */
                     std::string GetUnifiedSocialCreditCode() const;
 
                     /**
-                     * 设置社会统一信用代码
-                     * @param _unifiedSocialCreditCode 社会统一信用代码
+                     * 设置<font color="red">字段不再使用</font>，社会统一信用代码
+                     * @param _unifiedSocialCreditCode <font color="red">字段不再使用</font>，社会统一信用代码
                      * 
                      */
                     void SetUnifiedSocialCreditCode(const std::string& _unifiedSocialCreditCode);
@@ -126,7 +126,7 @@ namespace TencentCloud
 <li><strong>2</strong>: 法人授权方式</li>
 <li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
-                     * 
+                     * @deprecated
                      */
                     std::vector<uint64_t> GetAuthorizationTypes() const;
 
@@ -143,21 +143,62 @@ namespace TencentCloud
 <li><strong>2</strong>: 法人授权方式</li>
 <li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
-                     * 
+                     * @deprecated
                      */
                     void SetAuthorizationTypes(const std::vector<uint64_t>& _authorizationTypes);
 
                     /**
                      * 判断参数 AuthorizationTypes 是否已赋值
                      * @return AuthorizationTypes 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AuthorizationTypesHasBeenSet() const;
+
+                    /**
+                     * 获取指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * @return AuthorizationType 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * 
+                     */
+                    int64_t GetAuthorizationType() const;
+
+                    /**
+                     * 设置指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * @param _authorizationType 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * 
+                     */
+                    void SetAuthorizationType(const int64_t& _authorizationType);
+
+                    /**
+                     * 判断参数 AuthorizationType 是否已赋值
+                     * @return AuthorizationType 是否已赋值
+                     * 
+                     */
+                    bool AuthorizationTypeHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 法人姓名
+                     * <font color="red">字段不再使用</font>，法人姓名
                      */
                     std::string m_legalName;
                     bool m_legalNameHasBeenSet;
@@ -170,7 +211,7 @@ namespace TencentCloud
                     bool m_usccHasBeenSet;
 
                     /**
-                     * 社会统一信用代码
+                     * <font color="red">字段不再使用</font>，社会统一信用代码
                      */
                     std::string m_unifiedSocialCreditCode;
                     bool m_unifiedSocialCreditCodeHasBeenSet;
@@ -185,6 +226,17 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_authorizationTypes;
                     bool m_authorizationTypesHasBeenSet;
+
+                    /**
+                     * 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     */
+                    int64_t m_authorizationType;
+                    bool m_authorizationTypeHasBeenSet;
 
                 };
             }

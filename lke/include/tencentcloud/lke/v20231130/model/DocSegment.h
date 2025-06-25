@@ -296,6 +296,27 @@ namespace TencentCloud
                      */
                     bool DocUrlHasBeenSet() const;
 
+                    /**
+                     * 获取文档的自定义链接
+                     * @return WebUrl 文档的自定义链接
+                     * 
+                     */
+                    std::string GetWebUrl() const;
+
+                    /**
+                     * 设置文档的自定义链接
+                     * @param _webUrl 文档的自定义链接
+                     * 
+                     */
+                    void SetWebUrl(const std::string& _webUrl);
+
+                    /**
+                     * 判断参数 WebUrl 是否已赋值
+                     * @return WebUrl 是否已赋值
+                     * 
+                     */
+                    bool WebUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +388,12 @@ namespace TencentCloud
                      */
                     std::string m_docUrl;
                     bool m_docUrlHasBeenSet;
+
+                    /**
+                     * 文档的自定义链接
+                     */
+                    std::string m_webUrl;
+                    bool m_webUrlHasBeenSet;
 
                 };
             }

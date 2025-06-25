@@ -46,31 +46,47 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例类型，
-EXPERIMENT 体验版
-BASIC 基础版
-PRO  专业版
-PLATINUM 铂金版
-                     * @return InstanceType 实例类型，
-EXPERIMENT 体验版
-BASIC 基础版
-PRO  专业版
-PLATINUM 铂金版
+                     * 获取实例类型，枚举值如下：
+
+- EXPERIMENT：体验版
+
+- BASIC：基础版
+
+- PRO：专业版
+
+- PLATINUM：铂金版
+                     * @return InstanceType 实例类型，枚举值如下：
+
+- EXPERIMENT：体验版
+
+- BASIC：基础版
+
+- PRO：专业版
+
+- PLATINUM：铂金版
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型，
-EXPERIMENT 体验版
-BASIC 基础版
-PRO  专业版
-PLATINUM 铂金版
-                     * @param _instanceType 实例类型，
-EXPERIMENT 体验版
-BASIC 基础版
-PRO  专业版
-PLATINUM 铂金版
+                     * 设置实例类型，枚举值如下：
+
+- EXPERIMENT：体验版
+
+- BASIC：基础版
+
+- PRO：专业版
+
+- PLATINUM：铂金版
+                     * @param _instanceType 实例类型，枚举值如下：
+
+- EXPERIMENT：体验版
+
+- BASIC：基础版
+
+- PRO：专业版
+
+- PLATINUM：铂金版
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -83,15 +99,15 @@ PLATINUM 铂金版
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return Name 集群名称
+                     * 获取集群名称，不能为空， 3-64个字符，只能包含数字、字母、“-”和“_”
+                     * @return Name 集群名称，不能为空， 3-64个字符，只能包含数字、字母、“-”和“_”
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _name 集群名称
+                     * 设置集群名称，不能为空， 3-64个字符，只能包含数字、字母、“-”和“_”
+                     * @param _name 集群名称，不能为空， 3-64个字符，只能包含数字、字母、“-”和“_”
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -104,15 +120,15 @@ PLATINUM 铂金版
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取商品规格，可用规格如下：experiment_500, basic_1k, basic_2k, basic_3k, basic_4k, basic_5k, basic_6k, basic_7k, basic_8k, basic_9k, basic_10k, pro_4k, pro_6k, pro_8k, pro_1w, pro_15k, pro_2w, pro_25k, pro_3w, pro_35k, pro_4w, pro_45k, pro_5w, pro_55k, pro_60k, pro_65k, pro_70k, pro_75k, pro_80k, pro_85k, pro_90k, pro_95k, pro_100k, platinum_1w, platinum_2w, platinum_3w, platinum_4w, platinum_5w, platinum_6w, platinum_7w, platinum_8w, platinum_9w, platinum_10w, platinum_12w, platinum_14w, platinum_16w, platinum_18w, platinum_20w, platinum_25w, platinum_30w, platinum_35w, platinum_40w, platinum_45w, platinum_50w, platinum_60w, platinum_70w, platinum_80w, platinum_90w, platinum_100w
-                     * @return SkuCode 商品规格，可用规格如下：experiment_500, basic_1k, basic_2k, basic_3k, basic_4k, basic_5k, basic_6k, basic_7k, basic_8k, basic_9k, basic_10k, pro_4k, pro_6k, pro_8k, pro_1w, pro_15k, pro_2w, pro_25k, pro_3w, pro_35k, pro_4w, pro_45k, pro_5w, pro_55k, pro_60k, pro_65k, pro_70k, pro_75k, pro_80k, pro_85k, pro_90k, pro_95k, pro_100k, platinum_1w, platinum_2w, platinum_3w, platinum_4w, platinum_5w, platinum_6w, platinum_7w, platinum_8w, platinum_9w, platinum_10w, platinum_12w, platinum_14w, platinum_16w, platinum_18w, platinum_20w, platinum_25w, platinum_30w, platinum_35w, platinum_40w, platinum_45w, platinum_50w, platinum_60w, platinum_70w, platinum_80w, platinum_90w, platinum_100w
+                     * 获取商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参获得。
+                     * @return SkuCode 商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参获得。
                      * 
                      */
                     std::string GetSkuCode() const;
 
                     /**
-                     * 设置商品规格，可用规格如下：experiment_500, basic_1k, basic_2k, basic_3k, basic_4k, basic_5k, basic_6k, basic_7k, basic_8k, basic_9k, basic_10k, pro_4k, pro_6k, pro_8k, pro_1w, pro_15k, pro_2w, pro_25k, pro_3w, pro_35k, pro_4w, pro_45k, pro_5w, pro_55k, pro_60k, pro_65k, pro_70k, pro_75k, pro_80k, pro_85k, pro_90k, pro_95k, pro_100k, platinum_1w, platinum_2w, platinum_3w, platinum_4w, platinum_5w, platinum_6w, platinum_7w, platinum_8w, platinum_9w, platinum_10w, platinum_12w, platinum_14w, platinum_16w, platinum_18w, platinum_20w, platinum_25w, platinum_30w, platinum_35w, platinum_40w, platinum_45w, platinum_50w, platinum_60w, platinum_70w, platinum_80w, platinum_90w, platinum_100w
-                     * @param _skuCode 商品规格，可用规格如下：experiment_500, basic_1k, basic_2k, basic_3k, basic_4k, basic_5k, basic_6k, basic_7k, basic_8k, basic_9k, basic_10k, pro_4k, pro_6k, pro_8k, pro_1w, pro_15k, pro_2w, pro_25k, pro_3w, pro_35k, pro_4w, pro_45k, pro_5w, pro_55k, pro_60k, pro_65k, pro_70k, pro_75k, pro_80k, pro_85k, pro_90k, pro_95k, pro_100k, platinum_1w, platinum_2w, platinum_3w, platinum_4w, platinum_5w, platinum_6w, platinum_7w, platinum_8w, platinum_9w, platinum_10w, platinum_12w, platinum_14w, platinum_16w, platinum_18w, platinum_20w, platinum_25w, platinum_30w, platinum_35w, platinum_40w, platinum_45w, platinum_50w, platinum_60w, platinum_70w, platinum_80w, platinum_90w, platinum_100w
+                     * 设置商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参获得。
+                     * @param _skuCode 商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参获得。
                      * 
                      */
                     void SetSkuCode(const std::string& _skuCode);
@@ -251,15 +267,15 @@ PLATINUM 铂金版
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取公网访问白名单
-                     * @return IpRules 公网访问白名单
+                     * 获取公网访问白名单，不填表示拒绝所有 IP 访问
+                     * @return IpRules 公网访问白名单，不填表示拒绝所有 IP 访问
                      * 
                      */
                     std::vector<IpRule> GetIpRules() const;
 
                     /**
-                     * 设置公网访问白名单
-                     * @param _ipRules 公网访问白名单
+                     * 设置公网访问白名单，不填表示拒绝所有 IP 访问
+                     * @param _ipRules 公网访问白名单，不填表示拒绝所有 IP 访问
                      * 
                      */
                     void SetIpRules(const std::vector<IpRule>& _ipRules);
@@ -272,15 +288,31 @@ PLATINUM 铂金版
                     bool IpRulesHasBeenSet() const;
 
                     /**
-                     * 获取消息保留时长（单位：小时）
-                     * @return MessageRetention 消息保留时长（单位：小时）
+                     * 获取消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：
+
+- 默认值：DefaultRetention 参数
+- 最小值：RetentionLowerLimit 参数
+- 最大值：RetentionUpperLimit 参数
+                     * @return MessageRetention 消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：
+
+- 默认值：DefaultRetention 参数
+- 最小值：RetentionLowerLimit 参数
+- 最大值：RetentionUpperLimit 参数
                      * 
                      */
                     int64_t GetMessageRetention() const;
 
                     /**
-                     * 设置消息保留时长（单位：小时）
-                     * @param _messageRetention 消息保留时长（单位：小时）
+                     * 设置消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：
+
+- 默认值：DefaultRetention 参数
+- 最小值：RetentionLowerLimit 参数
+- 最大值：RetentionUpperLimit 参数
+                     * @param _messageRetention 消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：
+
+- 默认值：DefaultRetention 参数
+- 最小值：RetentionLowerLimit 参数
+- 最大值：RetentionUpperLimit 参数
                      * 
                      */
                     void SetMessageRetention(const int64_t& _messageRetention);
@@ -314,15 +346,15 @@ PLATINUM 铂金版
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
-                     * @return RenewFlag 是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
+                     * 获取预付费集群是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
+                     * @return RenewFlag 预付费集群是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
-                     * 设置是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
-                     * @param _renewFlag 是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
+                     * 设置预付费集群是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
+                     * @param _renewFlag 预付费集群是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -335,15 +367,15 @@ PLATINUM 铂金版
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取购买时长（单位：月），默认值为1
-                     * @return TimeSpan 购买时长（单位：月），默认值为1
+                     * 获取预付费集群的购买时长（单位：月），取值范围为1～60，默认值为1
+                     * @return TimeSpan 预付费集群的购买时长（单位：月），取值范围为1～60，默认值为1
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置购买时长（单位：月），默认值为1
-                     * @param _timeSpan 购买时长（单位：月），默认值为1
+                     * 设置预付费集群的购买时长（单位：月），取值范围为1～60，默认值为1
+                     * @param _timeSpan 预付费集群的购买时长（单位：月），取值范围为1～60，默认值为1
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -356,15 +388,27 @@ PLATINUM 铂金版
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取最大可创建主题数
-                     * @return MaxTopicNum 最大可创建主题数
+                     * 获取最大可创建主题数，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：
+
+- 默认值和最小值：TopicNumLimit 参数
+- 最大值：TopicNumUpperLimit 参数
+                     * @return MaxTopicNum 最大可创建主题数，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：
+
+- 默认值和最小值：TopicNumLimit 参数
+- 最大值：TopicNumUpperLimit 参数
                      * 
                      */
                     int64_t GetMaxTopicNum() const;
 
                     /**
-                     * 设置最大可创建主题数
-                     * @param _maxTopicNum 最大可创建主题数
+                     * 设置最大可创建主题数，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：
+
+- 默认值和最小值：TopicNumLimit 参数
+- 最大值：TopicNumUpperLimit 参数
+                     * @param _maxTopicNum 最大可创建主题数，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：
+
+- 默认值和最小值：TopicNumLimit 参数
+- 最大值：TopicNumUpperLimit 参数
                      * 
                      */
                     void SetMaxTopicNum(const int64_t& _maxTopicNum);
@@ -377,15 +421,15 @@ PLATINUM 铂金版
                     bool MaxTopicNumHasBeenSet() const;
 
                     /**
-                     * 获取部署可用区列表
-                     * @return ZoneIds 部署可用区列表
+                     * 获取部署可用区列表，从 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口获得。
+                     * @return ZoneIds 部署可用区列表，从 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口获得。
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
-                     * 设置部署可用区列表
-                     * @param _zoneIds 部署可用区列表
+                     * 设置部署可用区列表，从 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口获得。
+                     * @param _zoneIds 部署可用区列表，从 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口获得。
                      * 
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
@@ -400,23 +444,27 @@ PLATINUM 铂金版
                 private:
 
                     /**
-                     * 实例类型，
-EXPERIMENT 体验版
-BASIC 基础版
-PRO  专业版
-PLATINUM 铂金版
+                     * 实例类型，枚举值如下：
+
+- EXPERIMENT：体验版
+
+- BASIC：基础版
+
+- PRO：专业版
+
+- PLATINUM：铂金版
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * 集群名称，不能为空， 3-64个字符，只能包含数字、字母、“-”和“_”
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 商品规格，可用规格如下：experiment_500, basic_1k, basic_2k, basic_3k, basic_4k, basic_5k, basic_6k, basic_7k, basic_8k, basic_9k, basic_10k, pro_4k, pro_6k, pro_8k, pro_1w, pro_15k, pro_2w, pro_25k, pro_3w, pro_35k, pro_4w, pro_45k, pro_5w, pro_55k, pro_60k, pro_65k, pro_70k, pro_75k, pro_80k, pro_85k, pro_90k, pro_95k, pro_100k, platinum_1w, platinum_2w, platinum_3w, platinum_4w, platinum_5w, platinum_6w, platinum_7w, platinum_8w, platinum_9w, platinum_10w, platinum_12w, platinum_14w, platinum_16w, platinum_18w, platinum_20w, platinum_25w, platinum_30w, platinum_35w, platinum_40w, platinum_45w, platinum_50w, platinum_60w, platinum_70w, platinum_80w, platinum_90w, platinum_100w
+                     * 商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参获得。
                      */
                     std::string m_skuCode;
                     bool m_skuCodeHasBeenSet;
@@ -458,13 +506,17 @@ PLATINUM 铂金版
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 公网访问白名单
+                     * 公网访问白名单，不填表示拒绝所有 IP 访问
                      */
                     std::vector<IpRule> m_ipRules;
                     bool m_ipRulesHasBeenSet;
 
                     /**
-                     * 消息保留时长（单位：小时）
+                     * 消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：
+
+- 默认值：DefaultRetention 参数
+- 最小值：RetentionLowerLimit 参数
+- 最大值：RetentionUpperLimit 参数
                      */
                     int64_t m_messageRetention;
                     bool m_messageRetentionHasBeenSet;
@@ -476,25 +528,28 @@ PLATINUM 铂金版
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
+                     * 预付费集群是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 购买时长（单位：月），默认值为1
+                     * 预付费集群的购买时长（单位：月），取值范围为1～60，默认值为1
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 最大可创建主题数
+                     * 最大可创建主题数，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：
+
+- 默认值和最小值：TopicNumLimit 参数
+- 最大值：TopicNumUpperLimit 参数
                      */
                     int64_t m_maxTopicNum;
                     bool m_maxTopicNumHasBeenSet;
 
                     /**
-                     * 部署可用区列表
+                     * 部署可用区列表，从 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口获得。
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;

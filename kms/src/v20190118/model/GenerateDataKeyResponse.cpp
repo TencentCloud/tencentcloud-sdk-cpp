@@ -26,7 +26,8 @@ using namespace std;
 GenerateDataKeyResponse::GenerateDataKeyResponse() :
     m_keyIdHasBeenSet(false),
     m_plaintextHasBeenSet(false),
-    m_ciphertextBlobHasBeenSet(false)
+    m_ciphertextBlobHasBeenSet(false),
+    m_dataKeyIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome GenerateDataKeyResponse::Deserialize(const string &payload)
         m_ciphertextBlobHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DataKeyId") && !rsp["DataKeyId"].IsNull())
+    {
+        if (!rsp["DataKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataKeyId = string(rsp["DataKeyId"].GetString());
+        m_dataKeyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string GenerateDataKeyResponse::ToJsonString() const
         string key = "CiphertextBlob";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ciphertextBlob.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataKeyId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ string GenerateDataKeyResponse::GetCiphertextBlob() const
 bool GenerateDataKeyResponse::CiphertextBlobHasBeenSet() const
 {
     return m_ciphertextBlobHasBeenSet;
+}
+
+string GenerateDataKeyResponse::GetDataKeyId() const
+{
+    return m_dataKeyId;
+}
+
+bool GenerateDataKeyResponse::DataKeyIdHasBeenSet() const
+{
+    return m_dataKeyIdHasBeenSet;
 }
 
 

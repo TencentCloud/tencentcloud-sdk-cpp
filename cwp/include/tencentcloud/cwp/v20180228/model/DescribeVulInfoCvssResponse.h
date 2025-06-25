@@ -281,6 +281,20 @@ namespace TencentCloud
                      */
                     bool FixSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持防御： 0-不支持 1-支持
+                     * @return SupportDefence 是否支持防御： 0-不支持 1-支持
+                     * 
+                     */
+                    int64_t GetSupportDefence() const;
+
+                    /**
+                     * 判断参数 SupportDefence 是否已赋值
+                     * @return SupportDefence 是否已赋值
+                     * 
+                     */
+                    bool SupportDefenceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +398,12 @@ namespace TencentCloud
                      */
                     int64_t m_fixSwitch;
                     bool m_fixSwitchHasBeenSet;
+
+                    /**
+                     * 是否支持防御： 0-不支持 1-支持
+                     */
+                    int64_t m_supportDefence;
+                    bool m_supportDefenceHasBeenSet;
 
                 };
             }

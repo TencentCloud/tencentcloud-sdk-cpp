@@ -361,6 +361,69 @@ namespace TencentCloud
                      */
                     bool TotalFieldHasBeenSet() const;
 
+                    /**
+                     * 获取任务实例id
+                     * @return TaskInstanceId 任务实例id
+                     * 
+                     */
+                    std::string GetTaskInstanceId() const;
+
+                    /**
+                     * 设置任务实例id
+                     * @param _taskInstanceId 任务实例id
+                     * 
+                     */
+                    void SetTaskInstanceId(const std::string& _taskInstanceId);
+
+                    /**
+                     * 判断参数 TaskInstanceId 是否已赋值
+                     * @return TaskInstanceId 是否已赋值
+                     * 
+                     */
+                    bool TaskInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间
+                     * @return StartTime 开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置开始时间
+                     * @param _startTime 开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取扫描范围（full:全量扫描 incre：变更扫描）
+                     * @return ScanRange 扫描范围（full:全量扫描 incre：变更扫描）
+                     * 
+                     */
+                    std::string GetScanRange() const;
+
+                    /**
+                     * 设置扫描范围（full:全量扫描 incre：变更扫描）
+                     * @param _scanRange 扫描范围（full:全量扫描 incre：变更扫描）
+                     * 
+                     */
+                    void SetScanRange(const std::string& _scanRange);
+
+                    /**
+                     * 判断参数 ScanRange 是否已赋值
+                     * @return ScanRange 是否已赋值
+                     * 
+                     */
+                    bool ScanRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +515,24 @@ namespace TencentCloud
                      */
                     int64_t m_totalField;
                     bool m_totalFieldHasBeenSet;
+
+                    /**
+                     * 任务实例id
+                     */
+                    std::string m_taskInstanceId;
+                    bool m_taskInstanceIdHasBeenSet;
+
+                    /**
+                     * 开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 扫描范围（full:全量扫描 incre：变更扫描）
+                     */
+                    std::string m_scanRange;
+                    bool m_scanRangeHasBeenSet;
 
                 };
             }

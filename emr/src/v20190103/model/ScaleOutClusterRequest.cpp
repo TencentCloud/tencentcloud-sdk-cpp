@@ -42,7 +42,8 @@ ScaleOutClusterRequest::ScaleOutClusterRequest() :
     m_resourceSpecHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_scaleOutServiceConfGroupsInfoHasBeenSet(false)
+    m_scaleOutServiceConfGroupsInfoHasBeenSet(false),
+    m_nodeMarksHasBeenSet(false)
 {
 }
 
@@ -251,6 +252,15 @@ string ScaleOutClusterRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_nodeMarksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeMarks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_nodeMarks.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -579,6 +589,22 @@ void ScaleOutClusterRequest::SetScaleOutServiceConfGroupsInfo(const vector<Scale
 bool ScaleOutClusterRequest::ScaleOutServiceConfGroupsInfoHasBeenSet() const
 {
     return m_scaleOutServiceConfGroupsInfoHasBeenSet;
+}
+
+NodeMark ScaleOutClusterRequest::GetNodeMarks() const
+{
+    return m_nodeMarks;
+}
+
+void ScaleOutClusterRequest::SetNodeMarks(const NodeMark& _nodeMarks)
+{
+    m_nodeMarks = _nodeMarks;
+    m_nodeMarksHasBeenSet = true;
+}
+
+bool ScaleOutClusterRequest::NodeMarksHasBeenSet() const
+{
+    return m_nodeMarksHasBeenSet;
 }
 
 

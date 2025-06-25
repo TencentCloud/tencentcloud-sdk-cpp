@@ -69,7 +69,8 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_gmEncPrivateKeyHasBeenSet(false),
     m_gmSSLIdHasBeenSet(false),
     m_upstreamPolicyHasBeenSet(false),
-    m_upstreamRulesHasBeenSet(false)
+    m_upstreamRulesHasBeenSet(false),
+    m_useCaseHasBeenSet(false)
 {
 }
 
@@ -493,6 +494,14 @@ string AddSpartaProtectionRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_useCaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseCase";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useCase, allocator);
     }
 
 
@@ -1253,6 +1262,22 @@ void AddSpartaProtectionRequest::SetUpstreamRules(const vector<UpstreamRule>& _u
 bool AddSpartaProtectionRequest::UpstreamRulesHasBeenSet() const
 {
     return m_upstreamRulesHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetUseCase() const
+{
+    return m_useCase;
+}
+
+void AddSpartaProtectionRequest::SetUseCase(const int64_t& _useCase)
+{
+    m_useCase = _useCase;
+    m_useCaseHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::UseCaseHasBeenSet() const
+{
+    return m_useCaseHasBeenSet;
 }
 
 

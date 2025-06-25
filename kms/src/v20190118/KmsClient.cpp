@@ -212,6 +212,49 @@ KmsClient::BindCloudResourceOutcomeCallable KmsClient::BindCloudResourceCallable
     return task->get_future();
 }
 
+KmsClient::CancelDataKeyDeletionOutcome KmsClient::CancelDataKeyDeletion(const CancelDataKeyDeletionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelDataKeyDeletion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelDataKeyDeletionResponse rsp = CancelDataKeyDeletionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelDataKeyDeletionOutcome(rsp);
+        else
+            return CancelDataKeyDeletionOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelDataKeyDeletionOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::CancelDataKeyDeletionAsync(const CancelDataKeyDeletionRequest& request, const CancelDataKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelDataKeyDeletion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::CancelDataKeyDeletionOutcomeCallable KmsClient::CancelDataKeyDeletionCallable(const CancelDataKeyDeletionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelDataKeyDeletionOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelDataKeyDeletion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::CancelKeyArchiveOutcome KmsClient::CancelKeyArchive(const CancelKeyArchiveRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelKeyArchive");
@@ -506,6 +549,92 @@ KmsClient::DeleteWhiteBoxKeyOutcomeCallable KmsClient::DeleteWhiteBoxKeyCallable
         [this, request]()
         {
             return this->DeleteWhiteBoxKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::DescribeDataKeyOutcome KmsClient::DescribeDataKey(const DescribeDataKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataKeyResponse rsp = DescribeDataKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataKeyOutcome(rsp);
+        else
+            return DescribeDataKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DescribeDataKeyAsync(const DescribeDataKeyRequest& request, const DescribeDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DescribeDataKeyOutcomeCallable KmsClient::DescribeDataKeyCallable(const DescribeDataKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::DescribeDataKeysOutcome KmsClient::DescribeDataKeys(const DescribeDataKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataKeysResponse rsp = DescribeDataKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataKeysOutcome(rsp);
+        else
+            return DescribeDataKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataKeysOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DescribeDataKeysAsync(const DescribeDataKeysRequest& request, const DescribeDataKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DescribeDataKeysOutcomeCallable KmsClient::DescribeDataKeysCallable(const DescribeDataKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataKeys(request);
         }
     );
 
@@ -814,6 +943,92 @@ KmsClient::DescribeWhiteBoxServiceStatusOutcomeCallable KmsClient::DescribeWhite
     return task->get_future();
 }
 
+KmsClient::DisableDataKeyOutcome KmsClient::DisableDataKey(const DisableDataKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableDataKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableDataKeyResponse rsp = DisableDataKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableDataKeyOutcome(rsp);
+        else
+            return DisableDataKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableDataKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DisableDataKeyAsync(const DisableDataKeyRequest& request, const DisableDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableDataKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DisableDataKeyOutcomeCallable KmsClient::DisableDataKeyCallable(const DisableDataKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableDataKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableDataKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::DisableDataKeysOutcome KmsClient::DisableDataKeys(const DisableDataKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableDataKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableDataKeysResponse rsp = DisableDataKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableDataKeysOutcome(rsp);
+        else
+            return DisableDataKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableDataKeysOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DisableDataKeysAsync(const DisableDataKeysRequest& request, const DisableDataKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableDataKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DisableDataKeysOutcomeCallable KmsClient::DisableDataKeysCallable(const DisableDataKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableDataKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableDataKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::DisableKeyOutcome KmsClient::DisableKey(const DisableKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableKey");
@@ -1022,6 +1237,92 @@ KmsClient::DisableWhiteBoxKeysOutcomeCallable KmsClient::DisableWhiteBoxKeysCall
         [this, request]()
         {
             return this->DisableWhiteBoxKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::EnableDataKeyOutcome KmsClient::EnableDataKey(const EnableDataKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableDataKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableDataKeyResponse rsp = EnableDataKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableDataKeyOutcome(rsp);
+        else
+            return EnableDataKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableDataKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::EnableDataKeyAsync(const EnableDataKeyRequest& request, const EnableDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableDataKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::EnableDataKeyOutcomeCallable KmsClient::EnableDataKeyCallable(const EnableDataKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableDataKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableDataKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::EnableDataKeysOutcome KmsClient::EnableDataKeys(const EnableDataKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableDataKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableDataKeysResponse rsp = EnableDataKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableDataKeysOutcome(rsp);
+        else
+            return EnableDataKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableDataKeysOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::EnableDataKeysAsync(const EnableDataKeysRequest& request, const EnableDataKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableDataKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::EnableDataKeysOutcomeCallable KmsClient::EnableDataKeysCallable(const EnableDataKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableDataKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableDataKeys(request);
         }
     );
 
@@ -1416,6 +1717,92 @@ KmsClient::GenerateRandomOutcomeCallable KmsClient::GenerateRandomCallable(const
     return task->get_future();
 }
 
+KmsClient::GetDataKeyCiphertextBlobOutcome KmsClient::GetDataKeyCiphertextBlob(const GetDataKeyCiphertextBlobRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDataKeyCiphertextBlob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDataKeyCiphertextBlobResponse rsp = GetDataKeyCiphertextBlobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDataKeyCiphertextBlobOutcome(rsp);
+        else
+            return GetDataKeyCiphertextBlobOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDataKeyCiphertextBlobOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::GetDataKeyCiphertextBlobAsync(const GetDataKeyCiphertextBlobRequest& request, const GetDataKeyCiphertextBlobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDataKeyCiphertextBlob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::GetDataKeyCiphertextBlobOutcomeCallable KmsClient::GetDataKeyCiphertextBlobCallable(const GetDataKeyCiphertextBlobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDataKeyCiphertextBlobOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDataKeyCiphertextBlob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::GetDataKeyPlaintextOutcome KmsClient::GetDataKeyPlaintext(const GetDataKeyPlaintextRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDataKeyPlaintext");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDataKeyPlaintextResponse rsp = GetDataKeyPlaintextResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDataKeyPlaintextOutcome(rsp);
+        else
+            return GetDataKeyPlaintextOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDataKeyPlaintextOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::GetDataKeyPlaintextAsync(const GetDataKeyPlaintextRequest& request, const GetDataKeyPlaintextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDataKeyPlaintext(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::GetDataKeyPlaintextOutcomeCallable KmsClient::GetDataKeyPlaintextCallable(const GetDataKeyPlaintextRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDataKeyPlaintextOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDataKeyPlaintext(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::GetKeyRotationStatusOutcome KmsClient::GetKeyRotationStatus(const GetKeyRotationStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "GetKeyRotationStatus");
@@ -1631,6 +2018,49 @@ KmsClient::GetServiceStatusOutcomeCallable KmsClient::GetServiceStatusCallable(c
     return task->get_future();
 }
 
+KmsClient::ImportDataKeyOutcome KmsClient::ImportDataKey(const ImportDataKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportDataKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportDataKeyResponse rsp = ImportDataKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportDataKeyOutcome(rsp);
+        else
+            return ImportDataKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportDataKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::ImportDataKeyAsync(const ImportDataKeyRequest& request, const ImportDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportDataKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::ImportDataKeyOutcomeCallable KmsClient::ImportDataKeyCallable(const ImportDataKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportDataKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportDataKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::ImportKeyMaterialOutcome KmsClient::ImportKeyMaterial(const ImportKeyMaterialRequest &request)
 {
     auto outcome = MakeRequest(request, "ImportKeyMaterial");
@@ -1710,6 +2140,92 @@ KmsClient::ListAlgorithmsOutcomeCallable KmsClient::ListAlgorithmsCallable(const
         [this, request]()
         {
             return this->ListAlgorithms(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::ListDataKeyDetailOutcome KmsClient::ListDataKeyDetail(const ListDataKeyDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListDataKeyDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListDataKeyDetailResponse rsp = ListDataKeyDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListDataKeyDetailOutcome(rsp);
+        else
+            return ListDataKeyDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ListDataKeyDetailOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::ListDataKeyDetailAsync(const ListDataKeyDetailRequest& request, const ListDataKeyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListDataKeyDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::ListDataKeyDetailOutcomeCallable KmsClient::ListDataKeyDetailCallable(const ListDataKeyDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListDataKeyDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ListDataKeyDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::ListDataKeysOutcome KmsClient::ListDataKeys(const ListDataKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListDataKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListDataKeysResponse rsp = ListDataKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListDataKeysOutcome(rsp);
+        else
+            return ListDataKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return ListDataKeysOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::ListDataKeysAsync(const ListDataKeysRequest& request, const ListDataKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListDataKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::ListDataKeysOutcomeCallable KmsClient::ListDataKeysCallable(const ListDataKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListDataKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->ListDataKeys(request);
         }
     );
 
@@ -2061,6 +2577,49 @@ KmsClient::ReEncryptOutcomeCallable KmsClient::ReEncryptCallable(const ReEncrypt
     return task->get_future();
 }
 
+KmsClient::ScheduleDataKeyDeletionOutcome KmsClient::ScheduleDataKeyDeletion(const ScheduleDataKeyDeletionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScheduleDataKeyDeletion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScheduleDataKeyDeletionResponse rsp = ScheduleDataKeyDeletionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScheduleDataKeyDeletionOutcome(rsp);
+        else
+            return ScheduleDataKeyDeletionOutcome(o.GetError());
+    }
+    else
+    {
+        return ScheduleDataKeyDeletionOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::ScheduleDataKeyDeletionAsync(const ScheduleDataKeyDeletionRequest& request, const ScheduleDataKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScheduleDataKeyDeletion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::ScheduleDataKeyDeletionOutcomeCallable KmsClient::ScheduleDataKeyDeletionCallable(const ScheduleDataKeyDeletionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScheduleDataKeyDeletionOutcome()>>(
+        [this, request]()
+        {
+            return this->ScheduleDataKeyDeletion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::ScheduleKeyDeletionOutcome KmsClient::ScheduleKeyDeletion(const ScheduleKeyDeletionRequest &request)
 {
     auto outcome = MakeRequest(request, "ScheduleKeyDeletion");
@@ -2226,6 +2785,92 @@ KmsClient::UpdateAliasOutcomeCallable KmsClient::UpdateAliasCallable(const Updat
         [this, request]()
         {
             return this->UpdateAlias(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::UpdateDataKeyDescriptionOutcome KmsClient::UpdateDataKeyDescription(const UpdateDataKeyDescriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDataKeyDescription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDataKeyDescriptionResponse rsp = UpdateDataKeyDescriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDataKeyDescriptionOutcome(rsp);
+        else
+            return UpdateDataKeyDescriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDataKeyDescriptionOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::UpdateDataKeyDescriptionAsync(const UpdateDataKeyDescriptionRequest& request, const UpdateDataKeyDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDataKeyDescription(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::UpdateDataKeyDescriptionOutcomeCallable KmsClient::UpdateDataKeyDescriptionCallable(const UpdateDataKeyDescriptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDataKeyDescriptionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDataKeyDescription(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::UpdateDataKeyNameOutcome KmsClient::UpdateDataKeyName(const UpdateDataKeyNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDataKeyName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDataKeyNameResponse rsp = UpdateDataKeyNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDataKeyNameOutcome(rsp);
+        else
+            return UpdateDataKeyNameOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDataKeyNameOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::UpdateDataKeyNameAsync(const UpdateDataKeyNameRequest& request, const UpdateDataKeyNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDataKeyName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::UpdateDataKeyNameOutcomeCallable KmsClient::UpdateDataKeyNameCallable(const UpdateDataKeyNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDataKeyNameOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDataKeyName(request);
         }
     );
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取审计规则
-                     * @return RuleFilters 审计规则
+                     * 获取审计规则。
+                     * @return RuleFilters 审计规则。
                      * 
                      */
                     std::vector<RuleFilters> GetRuleFilters() const;
 
                     /**
-                     * 设置审计规则
-                     * @param _ruleFilters 审计规则
+                     * 设置审计规则。
+                     * @param _ruleFilters 审计规则。
                      * 
                      */
                     void SetRuleFilters(const std::vector<RuleFilters>& _ruleFilters);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool RuleFiltersHasBeenSet() const;
 
                     /**
-                     * 获取规则模板名称
-                     * @return RuleTemplateName 规则模板名称
+                     * 获取规则模板名称。最多支持输入30个字符。
+                     * @return RuleTemplateName 规则模板名称。最多支持输入30个字符。
                      * 
                      */
                     std::string GetRuleTemplateName() const;
 
                     /**
-                     * 设置规则模板名称
-                     * @param _ruleTemplateName 规则模板名称
+                     * 设置规则模板名称。最多支持输入30个字符。
+                     * @param _ruleTemplateName 规则模板名称。最多支持输入30个字符。
                      * 
                      */
                     void SetRuleTemplateName(const std::string& _ruleTemplateName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RuleTemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取规则模板描述
-                     * @return Description 规则模板描述
+                     * 获取规则模板描述。最多支持输入200个字符。
+                     * @return Description 规则模板描述。最多支持输入200个字符。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置规则模板描述
-                     * @param _description 规则模板描述
+                     * 设置规则模板描述。最多支持输入200个字符。
+                     * @param _description 规则模板描述。最多支持输入200个字符。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取告警等级。1-低风险，2-中风险，3-高风险
-                     * @return AlarmLevel 告警等级。1-低风险，2-中风险，3-高风险
+                     * 获取告警等级。1 - 低风险，2 - 中风险，3 - 高风险。默认值为1。
+                     * @return AlarmLevel 告警等级。1 - 低风险，2 - 中风险，3 - 高风险。默认值为1。
                      * 
                      */
                     uint64_t GetAlarmLevel() const;
 
                     /**
-                     * 设置告警等级。1-低风险，2-中风险，3-高风险
-                     * @param _alarmLevel 告警等级。1-低风险，2-中风险，3-高风险
+                     * 设置告警等级。1 - 低风险，2 - 中风险，3 - 高风险。默认值为1。
+                     * @param _alarmLevel 告警等级。1 - 低风险，2 - 中风险，3 - 高风险。默认值为1。
                      * 
                      */
                     void SetAlarmLevel(const uint64_t& _alarmLevel);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool AlarmLevelHasBeenSet() const;
 
                     /**
-                     * 获取告警策略。0-不告警，1-告警
-                     * @return AlarmPolicy 告警策略。0-不告警，1-告警
+                     * 获取告警策略。0 - 不告警，1 - 告警。默认值为0。
+                     * @return AlarmPolicy 告警策略。0 - 不告警，1 - 告警。默认值为0。
                      * 
                      */
                     uint64_t GetAlarmPolicy() const;
 
                     /**
-                     * 设置告警策略。0-不告警，1-告警
-                     * @param _alarmPolicy 告警策略。0-不告警，1-告警
+                     * 设置告警策略。0 - 不告警，1 - 告警。默认值为0。
+                     * @param _alarmPolicy 告警策略。0 - 不告警，1 - 告警。默认值为0。
                      * 
                      */
                     void SetAlarmPolicy(const uint64_t& _alarmPolicy);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 审计规则
+                     * 审计规则。
                      */
                     std::vector<RuleFilters> m_ruleFilters;
                     bool m_ruleFiltersHasBeenSet;
 
                     /**
-                     * 规则模板名称
+                     * 规则模板名称。最多支持输入30个字符。
                      */
                     std::string m_ruleTemplateName;
                     bool m_ruleTemplateNameHasBeenSet;
 
                     /**
-                     * 规则模板描述
+                     * 规则模板描述。最多支持输入200个字符。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 告警等级。1-低风险，2-中风险，3-高风险
+                     * 告警等级。1 - 低风险，2 - 中风险，3 - 高风险。默认值为1。
                      */
                     uint64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
 
                     /**
-                     * 告警策略。0-不告警，1-告警
+                     * 告警策略。0 - 不告警，1 - 告警。默认值为0。
                      */
                     uint64_t m_alarmPolicy;
                     bool m_alarmPolicyHasBeenSet;

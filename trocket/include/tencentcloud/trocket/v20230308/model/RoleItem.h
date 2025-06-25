@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，秒为单位
-                     * @return CreatedTime 创建时间，秒为单位
+                     * 获取角色的创建时间，**Unix时间戳（毫秒）**
+                     * @return CreatedTime 角色的创建时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间，秒为单位
-                     * @param _createdTime 创建时间，秒为单位
+                     * 设置角色的创建时间，**Unix时间戳（毫秒）**
+                     * @param _createdTime 角色的创建时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     void SetCreatedTime(const int64_t& _createdTime);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改时间，秒为单位
-                     * @return ModifiedTime 修改时间，秒为单位
+                     * 获取角色的更新时间，**Unix时间戳（毫秒）**
+                     * @return ModifiedTime 角色的更新时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetModifiedTime() const;
 
                     /**
-                     * 设置修改时间，秒为单位
-                     * @param _modifiedTime 修改时间，秒为单位
+                     * 设置角色的更新时间，**Unix时间戳（毫秒）**
+                     * @param _modifiedTime 角色的更新时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     void SetModifiedTime(const int64_t& _modifiedTime);
@@ -300,13 +300,13 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 创建时间，秒为单位
+                     * 角色的创建时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 修改时间，秒为单位
+                     * 角色的更新时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;

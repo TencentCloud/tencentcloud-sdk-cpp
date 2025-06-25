@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID。
-                     * @return ProjectId 项目ID。
+                     * 获取项目 ID。可通过 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725) 接口获取。
+                     * @return ProjectId 项目 ID。可通过 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725) 接口获取。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID。
-                     * @param _projectId 项目ID。
+                     * 设置项目 ID。可通过 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725) 接口获取。
+                     * @param _projectId 项目 ID。可通过 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725) 接口获取。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID。
+                     * 项目 ID。可通过 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725) 接口获取。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;

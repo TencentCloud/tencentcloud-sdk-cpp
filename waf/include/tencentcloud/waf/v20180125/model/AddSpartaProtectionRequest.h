@@ -381,23 +381,23 @@ UpstreamProtocol：与Protocol相同
                     bool SSLIdHasBeenSet() const;
 
                     /**
-                     * 获取待废弃，可不填。Waf的资源ID。
-                     * @return ResourceId 待废弃，可不填。Waf的资源ID。
-                     * 
+                     * 获取Waf的资源ID。
+                     * @return ResourceId Waf的资源ID。
+                     * @deprecated
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置待废弃，可不填。Waf的资源ID。
-                     * @param _resourceId 待废弃，可不填。Waf的资源ID。
-                     * 
+                     * 设置Waf的资源ID。
+                     * @param _resourceId Waf的资源ID。
+                     * @deprecated
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -473,44 +473,44 @@ https：使用https协议回源
                     bool HttpsUpstreamPortHasBeenSet() const;
 
                     /**
-                     * 获取待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * @return IsGray 待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * 
+                     * 获取是否开启灰度，0表示不开启灰度。
+                     * @return IsGray 是否开启灰度，0表示不开启灰度。
+                     * @deprecated
                      */
                     int64_t GetIsGray() const;
 
                     /**
-                     * 设置待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * @param _isGray 待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * 
+                     * 设置是否开启灰度，0表示不开启灰度。
+                     * @param _isGray 是否开启灰度，0表示不开启灰度。
+                     * @deprecated
                      */
                     void SetIsGray(const int64_t& _isGray);
 
                     /**
                      * 判断参数 IsGray 是否已赋值
                      * @return IsGray 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsGrayHasBeenSet() const;
 
                     /**
-                     * 获取待废弃，可不填。灰度的地区
-                     * @return GrayAreas 待废弃，可不填。灰度的地区
-                     * 
+                     * 获取灰度的地区
+                     * @return GrayAreas 灰度的地区
+                     * @deprecated
                      */
                     std::vector<std::string> GetGrayAreas() const;
 
                     /**
-                     * 设置待废弃，可不填。灰度的地区
-                     * @param _grayAreas 待废弃，可不填。灰度的地区
-                     * 
+                     * 设置灰度的地区
+                     * @param _grayAreas 灰度的地区
+                     * @deprecated
                      */
                     void SetGrayAreas(const std::vector<std::string>& _grayAreas);
 
                     /**
                      * 判断参数 GrayAreas 是否已赋值
                      * @return GrayAreas 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool GrayAreasHasBeenSet() const;
 
@@ -615,56 +615,56 @@ https：使用https协议回源
                     bool IsHttp2HasBeenSet() const;
 
                     /**
-                     * 获取待废弃，可不填。WAF实例类型。
+                     * 获取WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
 cdn-waf：CDN上的Web防护能力
-                     * @return Edition 待废弃，可不填。WAF实例类型。
+                     * @return Edition WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
 cdn-waf：CDN上的Web防护能力
-                     * 
+                     * @deprecated
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置待废弃，可不填。WAF实例类型。
+                     * 设置WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
 cdn-waf：CDN上的Web防护能力
-                     * @param _edition 待废弃，可不填。WAF实例类型。
+                     * @param _edition WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
 cdn-waf：CDN上的Web防护能力
-                     * 
+                     * @deprecated
                      */
                     void SetEdition(const std::string& _edition);
 
                     /**
                      * 判断参数 Edition 是否已赋值
                      * @return Edition 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * @return Anycast 待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * 
+                     * 获取目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @return Anycast 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @deprecated
                      */
                     int64_t GetAnycast() const;
 
                     /**
-                     * 设置待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * @param _anycast 待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * 
+                     * 设置目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @param _anycast 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @deprecated
                      */
                     void SetAnycast(const int64_t& _anycast);
 
                     /**
                      * 判断参数 Anycast 是否已赋值
                      * @return Anycast 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AnycastHasBeenSet() const;
 
@@ -1191,6 +1191,27 @@ cdn-waf：CDN上的Web防护能力
                      */
                     bool UpstreamRulesHasBeenSet() const;
 
+                    /**
+                     * 获取业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @return UseCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    int64_t GetUseCase() const;
+
+                    /**
+                     * 设置业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @param _useCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    void SetUseCase(const int64_t& _useCase);
+
+                    /**
+                     * 判断参数 UseCase 是否已赋值
+                     * @return UseCase 是否已赋值
+                     * 
+                     */
+                    bool UseCaseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1287,7 +1308,7 @@ UpstreamProtocol：与Protocol相同
                     bool m_sSLIdHasBeenSet;
 
                     /**
-                     * 待废弃，可不填。Waf的资源ID。
+                     * Waf的资源ID。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
@@ -1313,13 +1334,13 @@ https：使用https协议回源
                     bool m_httpsUpstreamPortHasBeenSet;
 
                     /**
-                     * 待废弃，可不填。是否开启灰度，0表示不开启灰度。
+                     * 是否开启灰度，0表示不开启灰度。
                      */
                     int64_t m_isGray;
                     bool m_isGrayHasBeenSet;
 
                     /**
-                     * 待废弃，可不填。灰度的地区
+                     * 灰度的地区
                      */
                     std::vector<std::string> m_grayAreas;
                     bool m_grayAreasHasBeenSet;
@@ -1353,7 +1374,7 @@ https：使用https协议回源
                     bool m_isHttp2HasBeenSet;
 
                     /**
-                     * 待废弃，可不填。WAF实例类型。
+                     * WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
 cdn-waf：CDN上的Web防护能力
@@ -1362,7 +1383,7 @@ cdn-waf：CDN上的Web防护能力
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
                      */
                     int64_t m_anycast;
                     bool m_anycastHasBeenSet;
@@ -1514,6 +1535,12 @@ cdn-waf：CDN上的Web防护能力
                      */
                     std::vector<UpstreamRule> m_upstreamRules;
                     bool m_upstreamRulesHasBeenSet;
+
+                    /**
+                     * 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     */
+                    int64_t m_useCase;
+                    bool m_useCaseHasBeenSet;
 
                 };
             }

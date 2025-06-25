@@ -168,6 +168,98 @@ namespace TencentCloud
                      */
                     bool EncryptionAlgorithmHasBeenSet() const;
 
+                    /**
+                     * 获取表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。
+                     * @return IsHostedByKms 表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。
+                     * 
+                     */
+                    uint64_t GetIsHostedByKms() const;
+
+                    /**
+                     * 设置表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。
+                     * @param _isHostedByKms 表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。
+                     * 
+                     */
+                    void SetIsHostedByKms(const uint64_t& _isHostedByKms);
+
+                    /**
+                     * 判断参数 IsHostedByKms 是否已赋值
+                     * @return IsHostedByKms 是否已赋值
+                     * 
+                     */
+                    bool IsHostedByKmsHasBeenSet() const;
+
+                    /**
+                     * 获取数据密钥的名称，当IsHostedByKms为1时,必须填写。当IsHostedByKms为0时,可以不填，KMS不托管。
+                     * @return DataKeyName 数据密钥的名称，当IsHostedByKms为1时,必须填写。当IsHostedByKms为0时,可以不填，KMS不托管。
+                     * 
+                     */
+                    std::string GetDataKeyName() const;
+
+                    /**
+                     * 设置数据密钥的名称，当IsHostedByKms为1时,必须填写。当IsHostedByKms为0时,可以不填，KMS不托管。
+                     * @param _dataKeyName 数据密钥的名称，当IsHostedByKms为1时,必须填写。当IsHostedByKms为0时,可以不填，KMS不托管。
+                     * 
+                     */
+                    void SetDataKeyName(const std::string& _dataKeyName);
+
+                    /**
+                     * 判断参数 DataKeyName 是否已赋值
+                     * @return DataKeyName 是否已赋值
+                     * 
+                     */
+                    bool DataKeyNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据密钥 的描述，最大100字节
+                     * @return Description 数据密钥 的描述，最大100字节
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置数据密钥 的描述，最大100字节
+                     * @param _description 数据密钥 的描述，最大100字节
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取KMS 独享版对应的 HSM 集群 ID。
+当KeyId 没有传入时有效，如果指定HsmClusterId,会默认在此集群下生成根密钥，然后利用创建的根密钥产生数据密钥。
+如果没有指定HsmClusterId，则会在公有云共享集群下创建一个根密钥，然后利用创建的根密钥产生数据密钥。
+                     * @return HsmClusterId KMS 独享版对应的 HSM 集群 ID。
+当KeyId 没有传入时有效，如果指定HsmClusterId,会默认在此集群下生成根密钥，然后利用创建的根密钥产生数据密钥。
+如果没有指定HsmClusterId，则会在公有云共享集群下创建一个根密钥，然后利用创建的根密钥产生数据密钥。
+                     * 
+                     */
+                    std::string GetHsmClusterId() const;
+
+                    /**
+                     * 设置KMS 独享版对应的 HSM 集群 ID。
+当KeyId 没有传入时有效，如果指定HsmClusterId,会默认在此集群下生成根密钥，然后利用创建的根密钥产生数据密钥。
+如果没有指定HsmClusterId，则会在公有云共享集群下创建一个根密钥，然后利用创建的根密钥产生数据密钥。
+                     * @param _hsmClusterId KMS 独享版对应的 HSM 集群 ID。
+当KeyId 没有传入时有效，如果指定HsmClusterId,会默认在此集群下生成根密钥，然后利用创建的根密钥产生数据密钥。
+如果没有指定HsmClusterId，则会在公有云共享集群下创建一个根密钥，然后利用创建的根密钥产生数据密钥。
+                     * 
+                     */
+                    void SetHsmClusterId(const std::string& _hsmClusterId);
+
+                    /**
+                     * 判断参数 HsmClusterId 是否已赋值
+                     * @return HsmClusterId 是否已赋值
+                     * 
+                     */
+                    bool HsmClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +297,32 @@ namespace TencentCloud
                      */
                     std::string m_encryptionAlgorithm;
                     bool m_encryptionAlgorithmHasBeenSet;
+
+                    /**
+                     * 表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。
+                     */
+                    uint64_t m_isHostedByKms;
+                    bool m_isHostedByKmsHasBeenSet;
+
+                    /**
+                     * 数据密钥的名称，当IsHostedByKms为1时,必须填写。当IsHostedByKms为0时,可以不填，KMS不托管。
+                     */
+                    std::string m_dataKeyName;
+                    bool m_dataKeyNameHasBeenSet;
+
+                    /**
+                     * 数据密钥 的描述，最大100字节
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * KMS 独享版对应的 HSM 集群 ID。
+当KeyId 没有传入时有效，如果指定HsmClusterId,会默认在此集群下生成根密钥，然后利用创建的根密钥产生数据密钥。
+如果没有指定HsmClusterId，则会在公有云共享集群下创建一个根密钥，然后利用创建的根密钥产生数据密钥。
+                     */
+                    std::string m_hsmClusterId;
+                    bool m_hsmClusterIdHasBeenSet;
 
                 };
             }

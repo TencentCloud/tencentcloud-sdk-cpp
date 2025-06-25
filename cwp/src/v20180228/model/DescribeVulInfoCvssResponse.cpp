@@ -40,7 +40,8 @@ DescribeVulInfoCvssResponse::DescribeVulInfoCvssResponse() :
     m_labelsHasBeenSet(false),
     m_defenseAttackCountHasBeenSet(false),
     m_successFixCountHasBeenSet(false),
-    m_fixSwitchHasBeenSet(false)
+    m_fixSwitchHasBeenSet(false),
+    m_supportDefenceHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome DescribeVulInfoCvssResponse::Deserialize(const string &paylo
         m_fixSwitchHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SupportDefence") && !rsp["SupportDefence"].IsNull())
+    {
+        if (!rsp["SupportDefence"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SupportDefence` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportDefence = rsp["SupportDefence"].GetInt64();
+        m_supportDefenceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -392,6 +403,14 @@ string DescribeVulInfoCvssResponse::ToJsonString() const
         string key = "FixSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fixSwitch, allocator);
+    }
+
+    if (m_supportDefenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportDefence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportDefence, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -574,6 +593,16 @@ int64_t DescribeVulInfoCvssResponse::GetFixSwitch() const
 bool DescribeVulInfoCvssResponse::FixSwitchHasBeenSet() const
 {
     return m_fixSwitchHasBeenSet;
+}
+
+int64_t DescribeVulInfoCvssResponse::GetSupportDefence() const
+{
+    return m_supportDefence;
+}
+
+bool DescribeVulInfoCvssResponse::SupportDefenceHasBeenSet() const
+{
+    return m_supportDefenceHasBeenSet;
 }
 
 

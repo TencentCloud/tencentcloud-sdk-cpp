@@ -440,6 +440,27 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                      */
                     bool CateBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * @return IsDownload 是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * 
+                     */
+                    bool GetIsDownload() const;
+
+                    /**
+                     * 设置是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * @param _isDownload 是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * 
+                     */
+                    void SetIsDownload(const bool& _isDownload);
+
+                    /**
+                     * 判断参数 IsDownload 是否已赋值
+                     * @return IsDownload 是否已赋值
+                     * 
+                     */
+                    bool IsDownloadHasBeenSet() const;
+
                 private:
 
                     /**
@@ -553,6 +574,12 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                      */
                     std::string m_cateBizId;
                     bool m_cateBizIdHasBeenSet;
+
+                    /**
+                     * 是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     */
+                    bool m_isDownload;
+                    bool m_isDownloadHasBeenSet;
 
                 };
             }

@@ -309,6 +309,34 @@ namespace TencentCloud
                      */
                     bool RepurchaseRenewSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动新增机器绑定rasp防护,false 关闭 true 开启
+                     * @return AutoBindRaspSwitch 是否自动新增机器绑定rasp防护,false 关闭 true 开启
+                     * 
+                     */
+                    bool GetAutoBindRaspSwitch() const;
+
+                    /**
+                     * 判断参数 AutoBindRaspSwitch 是否已赋值
+                     * @return AutoBindRaspSwitch 是否已赋值
+                     * 
+                     */
+                    bool AutoBindRaspSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动新增机器开启rasp防护,false 关闭 true 开启
+                     * @return AutoOpenRaspSwitch 是否自动新增机器开启rasp防护,false 关闭 true 开启
+                     * 
+                     */
+                    bool GetAutoOpenRaspSwitch() const;
+
+                    /**
+                     * 判断参数 AutoOpenRaspSwitch 是否已赋值
+                     * @return AutoOpenRaspSwitch 是否已赋值
+                     * 
+                     */
+                    bool AutoOpenRaspSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -424,6 +452,18 @@ namespace TencentCloud
                      */
                     bool m_repurchaseRenewSwitch;
                     bool m_repurchaseRenewSwitchHasBeenSet;
+
+                    /**
+                     * 是否自动新增机器绑定rasp防护,false 关闭 true 开启
+                     */
+                    bool m_autoBindRaspSwitch;
+                    bool m_autoBindRaspSwitchHasBeenSet;
+
+                    /**
+                     * 是否自动新增机器开启rasp防护,false 关闭 true 开启
+                     */
+                    bool m_autoOpenRaspSwitch;
+                    bool m_autoOpenRaspSwitchHasBeenSet;
 
                 };
             }

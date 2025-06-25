@@ -39,7 +39,8 @@ SaveDocRequest::SaveDocRequest() :
     m_expireEndHasBeenSet(false),
     m_isReferHasBeenSet(false),
     m_optHasBeenSet(false),
-    m_cateBizIdHasBeenSet(false)
+    m_cateBizIdHasBeenSet(false),
+    m_isDownloadHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,14 @@ string SaveDocRequest::ToJsonString() const
         string key = "CateBizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDownloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDownload";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDownload, allocator);
     }
 
 
@@ -471,6 +480,22 @@ void SaveDocRequest::SetCateBizId(const string& _cateBizId)
 bool SaveDocRequest::CateBizIdHasBeenSet() const
 {
     return m_cateBizIdHasBeenSet;
+}
+
+bool SaveDocRequest::GetIsDownload() const
+{
+    return m_isDownload;
+}
+
+void SaveDocRequest::SetIsDownload(const bool& _isDownload)
+{
+    m_isDownload = _isDownload;
+    m_isDownloadHasBeenSet = true;
+}
+
+bool SaveDocRequest::IsDownloadHasBeenSet() const
+{
+    return m_isDownloadHasBeenSet;
 }
 
 

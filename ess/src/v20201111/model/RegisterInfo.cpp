@@ -24,7 +24,8 @@ RegisterInfo::RegisterInfo() :
     m_legalNameHasBeenSet(false),
     m_usccHasBeenSet(false),
     m_unifiedSocialCreditCodeHasBeenSet(false),
-    m_authorizationTypesHasBeenSet(false)
+    m_authorizationTypesHasBeenSet(false),
+    m_authorizationTypeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
         m_authorizationTypesHasBeenSet = true;
     }
 
+    if (value.HasMember("AuthorizationType") && !value["AuthorizationType"].IsNull())
+    {
+        if (!value["AuthorizationType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.AuthorizationType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_authorizationType = value["AuthorizationType"].GetInt64();
+        m_authorizationTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void RegisterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_authorizationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authorizationType, allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void RegisterInfo::SetAuthorizationTypes(const vector<uint64_t>& _authorizationT
 bool RegisterInfo::AuthorizationTypesHasBeenSet() const
 {
     return m_authorizationTypesHasBeenSet;
+}
+
+int64_t RegisterInfo::GetAuthorizationType() const
+{
+    return m_authorizationType;
+}
+
+void RegisterInfo::SetAuthorizationType(const int64_t& _authorizationType)
+{
+    m_authorizationType = _authorizationType;
+    m_authorizationTypeHasBeenSet = true;
+}
+
+bool RegisterInfo::AuthorizationTypeHasBeenSet() const
+{
+    return m_authorizationTypeHasBeenSet;
 }
 

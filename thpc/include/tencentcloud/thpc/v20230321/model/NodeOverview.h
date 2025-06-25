@@ -47,6 +47,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取集群ID
+                     * @return ClusterId 集群ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群ID
+                     * @param _clusterId 集群ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取节点实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 节点实例ID。
@@ -267,7 +288,55 @@ namespace TencentCloud
                      */
                     bool NodeAllocateStateHasBeenSet() const;
 
+                    /**
+                     * 获取节点的名称
+                     * @return NodeName 节点的名称
+                     * 
+                     */
+                    std::string GetNodeName() const;
+
+                    /**
+                     * 设置节点的名称
+                     * @param _nodeName 节点的名称
+                     * 
+                     */
+                    void SetNodeName(const std::string& _nodeName);
+
+                    /**
+                     * 判断参数 NodeName 是否已赋值
+                     * @return NodeName 是否已赋值
+                     * 
+                     */
+                    bool NodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取节点的创建时间
+                     * @return CreateTime 节点的创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置节点的创建时间
+                     * @param _createTime 节点的创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 集群ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * 节点实例ID。
@@ -330,6 +399,18 @@ namespace TencentCloud
                      */
                     std::string m_nodeAllocateState;
                     bool m_nodeAllocateStateHasBeenSet;
+
+                    /**
+                     * 节点的名称
+                     */
+                    std::string m_nodeName;
+                    bool m_nodeNameHasBeenSet;
+
+                    /**
+                     * 节点的创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeDSPADiscoveryTaskResultResponse::DescribeDSPADiscoveryTaskResultResponse() :
     m_itemsHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_maxCountHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeDSPADiscoveryTaskResultResponse::Deserialize(const s
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaxCount") && !rsp["MaxCount"].IsNull())
+    {
+        if (!rsp["MaxCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxCount = rsp["MaxCount"].GetInt64();
+        m_maxCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeDSPADiscoveryTaskResultResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
+    if (m_maxCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ int64_t DescribeDSPADiscoveryTaskResultResponse::GetTotalCount() const
 bool DescribeDSPADiscoveryTaskResultResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+int64_t DescribeDSPADiscoveryTaskResultResponse::GetMaxCount() const
+{
+    return m_maxCount;
+}
+
+bool DescribeDSPADiscoveryTaskResultResponse::MaxCountHasBeenSet() const
+{
+    return m_maxCountHasBeenSet;
 }
 
 

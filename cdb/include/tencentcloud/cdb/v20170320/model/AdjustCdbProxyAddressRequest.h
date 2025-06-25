@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取代理组ID
-                     * @return ProxyGroupId 代理组ID
+                     * 获取代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * @return ProxyGroupId 代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
-                     * 设置代理组ID
-                     * @param _proxyGroupId 代理组ID
+                     * 设置代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * @param _proxyGroupId 代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
@@ -111,15 +111,19 @@ namespace TencentCloud
                     bool IsKickOutHasBeenSet() const;
 
                     /**
-                     * 获取最小保留数量，最小取值：0
-                     * @return MinCount 最小保留数量，最小取值：0
+                     * 获取最小保留数量，最小取值：0。
+说明：当 IsKickOut 为 true 时才有效。
+                     * @return MinCount 最小保留数量，最小取值：0。
+说明：当 IsKickOut 为 true 时才有效。
                      * 
                      */
                     uint64_t GetMinCount() const;
 
                     /**
-                     * 设置最小保留数量，最小取值：0
-                     * @param _minCount 最小保留数量，最小取值：0
+                     * 设置最小保留数量，最小取值：0。
+说明：当 IsKickOut 为 true 时才有效。
+                     * @param _minCount 最小保留数量，最小取值：0。
+说明：当 IsKickOut 为 true 时才有效。
                      * 
                      */
                     void SetMinCount(const uint64_t& _minCount);
@@ -132,15 +136,15 @@ namespace TencentCloud
                     bool MinCountHasBeenSet() const;
 
                     /**
-                     * 获取延迟剔除阈值，最小取值：0
-                     * @return MaxDelay 延迟剔除阈值，最小取值：0
+                     * 获取延迟剔除阈值，最小取值：1，取值范围：[1,10000]，整数。
+                     * @return MaxDelay 延迟剔除阈值，最小取值：1，取值范围：[1,10000]，整数。
                      * 
                      */
                     uint64_t GetMaxDelay() const;
 
                     /**
-                     * 设置延迟剔除阈值，最小取值：0
-                     * @param _maxDelay 延迟剔除阈值，最小取值：0
+                     * 设置延迟剔除阈值，最小取值：1，取值范围：[1,10000]，整数。
+                     * @param _maxDelay 延迟剔除阈值，最小取值：1，取值范围：[1,10000]，整数。
                      * 
                      */
                     void SetMaxDelay(const uint64_t& _maxDelay);
@@ -216,15 +220,15 @@ namespace TencentCloud
                     bool ReadOnlyHasBeenSet() const;
 
                     /**
-                     * 获取代理组地址ID
-                     * @return ProxyAddressId 代理组地址ID
+                     * 获取代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * @return ProxyAddressId 代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      * 
                      */
                     std::string GetProxyAddressId() const;
 
                     /**
-                     * 设置代理组地址ID
-                     * @param _proxyAddressId 代理组地址ID
+                     * 设置代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * @param _proxyAddressId 代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      * 
                      */
                     void SetProxyAddressId(const std::string& _proxyAddressId);
@@ -237,15 +241,15 @@ namespace TencentCloud
                     bool ProxyAddressIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启事务分离，取值："true" | "false"
-                     * @return TransSplit 是否开启事务分离，取值："true" | "false"
+                     * 获取是否开启事务分离，取值："true" | "false"，默认值 false。
+                     * @return TransSplit 是否开启事务分离，取值："true" | "false"，默认值 false。
                      * 
                      */
                     bool GetTransSplit() const;
 
                     /**
-                     * 设置是否开启事务分离，取值："true" | "false"
-                     * @param _transSplit 是否开启事务分离，取值："true" | "false"
+                     * 设置是否开启事务分离，取值："true" | "false"，默认值 false。
+                     * @param _transSplit 是否开启事务分离，取值："true" | "false"，默认值 false。
                      * 
                      */
                     void SetTransSplit(const bool& _transSplit);
@@ -258,18 +262,18 @@ namespace TencentCloud
                     bool TransSplitHasBeenSet() const;
 
                     /**
-                     * 获取是否开启连接池
+                     * 获取是否开启连接池。默认关闭。
 注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
-                     * @return ConnectionPool 是否开启连接池
+                     * @return ConnectionPool 是否开启连接池。默认关闭。
 注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      * 
                      */
                     bool GetConnectionPool() const;
 
                     /**
-                     * 设置是否开启连接池
+                     * 设置是否开启连接池。默认关闭。
 注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
-                     * @param _connectionPool 是否开启连接池
+                     * @param _connectionPool 是否开启连接池。默认关闭。
 注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      * 
                      */
@@ -304,15 +308,15 @@ namespace TencentCloud
                     bool ProxyAllocationHasBeenSet() const;
 
                     /**
-                     * 获取是否开启自适应负载均衡
-                     * @return AutoLoadBalance 是否开启自适应负载均衡
+                     * 获取是否开启自适应负载均衡。默认关闭。
+                     * @return AutoLoadBalance 是否开启自适应负载均衡。默认关闭。
                      * 
                      */
                     bool GetAutoLoadBalance() const;
 
                     /**
-                     * 设置是否开启自适应负载均衡
-                     * @param _autoLoadBalance 是否开启自适应负载均衡
+                     * 设置是否开启自适应负载均衡。默认关闭。
+                     * @param _autoLoadBalance 是否开启自适应负载均衡。默认关闭。
                      * 
                      */
                     void SetAutoLoadBalance(const bool& _autoLoadBalance);
@@ -325,15 +329,15 @@ namespace TencentCloud
                     bool AutoLoadBalanceHasBeenSet() const;
 
                     /**
-                     * 获取访问模式：就近访问，均衡分配
-                     * @return AccessMode 访问模式：就近访问，均衡分配
+                     * 获取访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。
+                     * @return AccessMode 访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。
                      * 
                      */
                     std::string GetAccessMode() const;
 
                     /**
-                     * 设置访问模式：就近访问，均衡分配
-                     * @param _accessMode 访问模式：就近访问，均衡分配
+                     * 设置访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。
+                     * @param _accessMode 访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。
                      * 
                      */
                     void SetAccessMode(const std::string& _accessMode);
@@ -348,7 +352,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 代理组ID
+                     * 代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      */
                     std::string m_proxyGroupId;
                     bool m_proxyGroupIdHasBeenSet;
@@ -367,13 +371,14 @@ namespace TencentCloud
                     bool m_isKickOutHasBeenSet;
 
                     /**
-                     * 最小保留数量，最小取值：0
+                     * 最小保留数量，最小取值：0。
+说明：当 IsKickOut 为 true 时才有效。
                      */
                     uint64_t m_minCount;
                     bool m_minCountHasBeenSet;
 
                     /**
-                     * 延迟剔除阈值，最小取值：0
+                     * 延迟剔除阈值，最小取值：1，取值范围：[1,10000]，整数。
                      */
                     uint64_t m_maxDelay;
                     bool m_maxDelayHasBeenSet;
@@ -397,19 +402,19 @@ namespace TencentCloud
                     bool m_readOnlyHasBeenSet;
 
                     /**
-                     * 代理组地址ID
+                     * 代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      */
                     std::string m_proxyAddressId;
                     bool m_proxyAddressIdHasBeenSet;
 
                     /**
-                     * 是否开启事务分离，取值："true" | "false"
+                     * 是否开启事务分离，取值："true" | "false"，默认值 false。
                      */
                     bool m_transSplit;
                     bool m_transSplitHasBeenSet;
 
                     /**
-                     * 是否开启连接池
+                     * 是否开启连接池。默认关闭。
 注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      */
                     bool m_connectionPool;
@@ -422,13 +427,13 @@ namespace TencentCloud
                     bool m_proxyAllocationHasBeenSet;
 
                     /**
-                     * 是否开启自适应负载均衡
+                     * 是否开启自适应负载均衡。默认关闭。
                      */
                     bool m_autoLoadBalance;
                     bool m_autoLoadBalanceHasBeenSet;
 
                     /**
-                     * 访问模式：就近访问，均衡分配
+                     * 访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。
                      */
                     std::string m_accessMode;
                     bool m_accessModeHasBeenSet;

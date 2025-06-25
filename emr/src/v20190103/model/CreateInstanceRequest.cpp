@@ -55,7 +55,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_versionIDHasBeenSet(false),
     m_multiZoneHasBeenSet(false),
     m_multiZoneSettingsHasBeenSet(false),
-    m_cosBucketHasBeenSet(false)
+    m_cosBucketHasBeenSet(false),
+    m_nodeMarksHasBeenSet(false)
 {
 }
 
@@ -372,6 +373,21 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "CosBucket";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cosBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeMarksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeMarks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeMarks.begin(); itr != m_nodeMarks.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -908,6 +924,22 @@ void CreateInstanceRequest::SetCosBucket(const string& _cosBucket)
 bool CreateInstanceRequest::CosBucketHasBeenSet() const
 {
     return m_cosBucketHasBeenSet;
+}
+
+vector<NodeMark> CreateInstanceRequest::GetNodeMarks() const
+{
+    return m_nodeMarks;
+}
+
+void CreateInstanceRequest::SetNodeMarks(const vector<NodeMark>& _nodeMarks)
+{
+    m_nodeMarks = _nodeMarks;
+    m_nodeMarksHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::NodeMarksHasBeenSet() const
+{
+    return m_nodeMarksHasBeenSet;
 }
 
 

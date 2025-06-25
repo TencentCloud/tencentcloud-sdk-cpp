@@ -28,7 +28,11 @@ GenerateDataKeyRequest::GenerateDataKeyRequest() :
     m_numberOfBytesHasBeenSet(false),
     m_encryptionContextHasBeenSet(false),
     m_encryptionPublicKeyHasBeenSet(false),
-    m_encryptionAlgorithmHasBeenSet(false)
+    m_encryptionAlgorithmHasBeenSet(false),
+    m_isHostedByKmsHasBeenSet(false),
+    m_dataKeyNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_hsmClusterIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +89,38 @@ string GenerateDataKeyRequest::ToJsonString() const
         string key = "EncryptionAlgorithm";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_encryptionAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isHostedByKmsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsHostedByKms";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isHostedByKms, allocator);
+    }
+
+    if (m_dataKeyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataKeyName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataKeyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hsmClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HsmClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hsmClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +225,70 @@ void GenerateDataKeyRequest::SetEncryptionAlgorithm(const string& _encryptionAlg
 bool GenerateDataKeyRequest::EncryptionAlgorithmHasBeenSet() const
 {
     return m_encryptionAlgorithmHasBeenSet;
+}
+
+uint64_t GenerateDataKeyRequest::GetIsHostedByKms() const
+{
+    return m_isHostedByKms;
+}
+
+void GenerateDataKeyRequest::SetIsHostedByKms(const uint64_t& _isHostedByKms)
+{
+    m_isHostedByKms = _isHostedByKms;
+    m_isHostedByKmsHasBeenSet = true;
+}
+
+bool GenerateDataKeyRequest::IsHostedByKmsHasBeenSet() const
+{
+    return m_isHostedByKmsHasBeenSet;
+}
+
+string GenerateDataKeyRequest::GetDataKeyName() const
+{
+    return m_dataKeyName;
+}
+
+void GenerateDataKeyRequest::SetDataKeyName(const string& _dataKeyName)
+{
+    m_dataKeyName = _dataKeyName;
+    m_dataKeyNameHasBeenSet = true;
+}
+
+bool GenerateDataKeyRequest::DataKeyNameHasBeenSet() const
+{
+    return m_dataKeyNameHasBeenSet;
+}
+
+string GenerateDataKeyRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void GenerateDataKeyRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool GenerateDataKeyRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string GenerateDataKeyRequest::GetHsmClusterId() const
+{
+    return m_hsmClusterId;
+}
+
+void GenerateDataKeyRequest::SetHsmClusterId(const string& _hsmClusterId)
+{
+    m_hsmClusterId = _hsmClusterId;
+    m_hsmClusterIdHasBeenSet = true;
+}
+
+bool GenerateDataKeyRequest::HsmClusterIdHasBeenSet() const
+{
+    return m_hsmClusterIdHasBeenSet;
 }
 
 

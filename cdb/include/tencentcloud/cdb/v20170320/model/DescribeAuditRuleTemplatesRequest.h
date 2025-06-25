@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RuleTemplateNamesHasBeenSet() const;
 
                     /**
-                     * 获取单次请求返回的数量。默认值20。
-                     * @return Limit 单次请求返回的数量。默认值20。
+                     * 获取单次请求返回的数量。默认值20，最大值为1000。
+                     * @return Limit 单次请求返回的数量。默认值20，最大值为1000。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置单次请求返回的数量。默认值20。
-                     * @param _limit 单次请求返回的数量。默认值20。
+                     * 设置单次请求返回的数量。默认值20，最大值为1000。
+                     * @param _limit 单次请求返回的数量。默认值20，最大值为1000。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_ruleTemplateNamesHasBeenSet;
 
                     /**
-                     * 单次请求返回的数量。默认值20。
+                     * 单次请求返回的数量。默认值20，最大值为1000。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

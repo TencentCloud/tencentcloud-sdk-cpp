@@ -77,7 +77,8 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_sharedClusterIdDescHasBeenSet(false),
     m_timingResourceHasBeenSet(false),
     m_tkeClusterIdHasBeenSet(false),
-    m_configurableServicesHasBeenSet(false)
+    m_configurableServicesHasBeenSet(false),
+    m_nodeMarkHasBeenSet(false)
 {
 }
 
@@ -693,6 +694,16 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_configurableServicesHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeMark") && !value["NodeMark"].IsNull())
+    {
+        if (!value["NodeMark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.NodeMark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeMark = string(value["NodeMark"].GetString());
+        m_nodeMarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1175,6 +1186,14 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_nodeMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeMark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2090,5 +2109,21 @@ void NodeHardwareInfo::SetConfigurableServices(const vector<string>& _configurab
 bool NodeHardwareInfo::ConfigurableServicesHasBeenSet() const
 {
     return m_configurableServicesHasBeenSet;
+}
+
+string NodeHardwareInfo::GetNodeMark() const
+{
+    return m_nodeMark;
+}
+
+void NodeHardwareInfo::SetNodeMark(const string& _nodeMark)
+{
+    m_nodeMark = _nodeMark;
+    m_nodeMarkHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::NodeMarkHasBeenSet() const
+{
+    return m_nodeMarkHasBeenSet;
 }
 

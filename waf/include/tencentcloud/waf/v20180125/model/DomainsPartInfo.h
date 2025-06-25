@@ -332,23 +332,23 @@ namespace TencentCloud
                     bool IsCdnHasBeenSet() const;
 
                     /**
-                     * 获取是否开启灰度，已废弃。
-                     * @return IsGray 是否开启灰度，已废弃。
-                     * 
+                     * 获取是否开启灰度。
+                     * @return IsGray 是否开启灰度。
+                     * @deprecated
                      */
                     uint64_t GetIsGray() const;
 
                     /**
-                     * 设置是否开启灰度，已废弃。
-                     * @param _isGray 是否开启灰度，已废弃。
-                     * 
+                     * 设置是否开启灰度。
+                     * @param _isGray 是否开启灰度。
+                     * @deprecated
                      */
                     void SetIsGray(const uint64_t& _isGray);
 
                     /**
                      * 判断参数 IsGray 是否已赋值
                      * @return IsGray 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsGrayHasBeenSet() const;
 
@@ -1349,6 +1349,27 @@ https：使用https协议回源
                      */
                     bool UpstreamRulesHasBeenSet() const;
 
+                    /**
+                     * 获取业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @return UseCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    int64_t GetUseCase() const;
+
+                    /**
+                     * 设置业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @param _useCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    void SetUseCase(const int64_t& _useCase);
+
+                    /**
+                     * 判断参数 UseCase 是否已赋值
+                     * @return UseCase 是否已赋值
+                     * 
+                     */
+                    bool UseCaseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1431,7 +1452,7 @@ https：使用https协议回源
                     bool m_isCdnHasBeenSet;
 
                     /**
-                     * 是否开启灰度，已废弃。
+                     * 是否开启灰度。
                      */
                     uint64_t m_isGray;
                     bool m_isGrayHasBeenSet;
@@ -1715,6 +1736,12 @@ https：使用https协议回源
                      */
                     std::vector<UpstreamRule> m_upstreamRules;
                     bool m_upstreamRulesHasBeenSet;
+
+                    /**
+                     * 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     */
+                    int64_t m_useCase;
+                    bool m_useCaseHasBeenSet;
 
                 };
             }

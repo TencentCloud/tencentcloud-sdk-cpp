@@ -368,6 +368,27 @@ selfbuilt-db 表示自建数据库
                      */
                     bool DataSourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取	full:全量扫描 incre:变更扫描
+                     * @return ScanRange 	full:全量扫描 incre:变更扫描
+                     * 
+                     */
+                    std::string GetScanRange() const;
+
+                    /**
+                     * 设置	full:全量扫描 incre:变更扫描
+                     * @param _scanRange 	full:全量扫描 incre:变更扫描
+                     * 
+                     */
+                    void SetScanRange(const std::string& _scanRange);
+
+                    /**
+                     * 判断参数 ScanRange 是否已赋值
+                     * @return ScanRange 是否已赋值
+                     * 
+                     */
+                    bool ScanRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -461,6 +482,12 @@ selfbuilt-db 表示自建数据库
                      */
                     std::string m_dataSourceType;
                     bool m_dataSourceTypeHasBeenSet;
+
+                    /**
+                     * 	full:全量扫描 incre:变更扫描
+                     */
+                    std::string m_scanRange;
+                    bool m_scanRangeHasBeenSet;
 
                 };
             }

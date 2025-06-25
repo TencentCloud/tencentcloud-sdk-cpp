@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新账户的名称
-                     * @return User 新账户的名称
+                     * 获取账号名，可输入1 - 32个字符。
+                     * @return User 账号名，可输入1 - 32个字符。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置新账户的名称
-                     * @param _user 新账户的名称
+                     * 设置账号名，可输入1 - 32个字符。
+                     * @param _user 账号名，可输入1 - 32个字符。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -68,15 +68,27 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取新账户的域名
-                     * @return Host 新账户的域名
+                     * 获取账号的主机。
+说明：
+1. IP 形式，支持填入%。
+2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
+                     * @return Host 账号的主机。
+说明：
+1. IP 形式，支持填入%。
+2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置新账户的域名
-                     * @param _host 新账户的域名
+                     * 设置账号的主机。
+说明：
+1. IP 形式，支持填入%。
+2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
+                     * @param _host 账号的主机。
+说明：
+1. IP 形式，支持填入%。
+2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -91,13 +103,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新账户的名称
+                     * 账号名，可输入1 - 32个字符。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 新账户的域名
+                     * 账号的主机。
+说明：
+1. IP 形式，支持填入%。
+2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

@@ -48,7 +48,8 @@ DescribeDocResponse::DescribeDocResponse() :
     m_attrRangeHasBeenSet(false),
     m_attrLabelsHasBeenSet(false),
     m_cateBizIdHasBeenSet(false),
-    m_isDisabledHasBeenSet(false)
+    m_isDisabledHasBeenSet(false),
+    m_isDownloadHasBeenSet(false)
 {
 }
 
@@ -346,6 +347,16 @@ CoreInternalOutcome DescribeDocResponse::Deserialize(const string &payload)
         m_isDisabledHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsDownload") && !rsp["IsDownload"].IsNull())
+    {
+        if (!rsp["IsDownload"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDownload` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDownload = rsp["IsDownload"].GetBool();
+        m_isDownloadHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -561,6 +572,14 @@ string DescribeDocResponse::ToJsonString() const
         string key = "IsDisabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDisabled, allocator);
+    }
+
+    if (m_isDownloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDownload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDownload, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -823,6 +842,16 @@ bool DescribeDocResponse::GetIsDisabled() const
 bool DescribeDocResponse::IsDisabledHasBeenSet() const
 {
     return m_isDisabledHasBeenSet;
+}
+
+bool DescribeDocResponse::GetIsDownload() const
+{
+    return m_isDownload;
+}
+
+bool DescribeDocResponse::IsDownloadHasBeenSet() const
+{
+    return m_isDownloadHasBeenSet;
 }
 
 

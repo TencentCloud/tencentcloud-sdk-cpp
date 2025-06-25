@@ -35,6 +35,8 @@
 #include <tencentcloud/bh/v20230418/model/BindDeviceAccountPrivateKeyResponse.h>
 #include <tencentcloud/bh/v20230418/model/BindDeviceResourceRequest.h>
 #include <tencentcloud/bh/v20230418/model/BindDeviceResourceResponse.h>
+#include <tencentcloud/bh/v20230418/model/CheckLDAPConnectionRequest.h>
+#include <tencentcloud/bh/v20230418/model/CheckLDAPConnectionResponse.h>
 #include <tencentcloud/bh/v20230418/model/CreateAccessWhiteListRuleRequest.h>
 #include <tencentcloud/bh/v20230418/model/CreateAccessWhiteListRuleResponse.h>
 #include <tencentcloud/bh/v20230418/model/CreateAclRequest.h>
@@ -105,6 +107,8 @@
 #include <tencentcloud/bh/v20230418/model/DescribeDevicesResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeDomainsRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeDomainsResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeLDAPUnitSetRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeLDAPUnitSetResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeLoginEventRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeLoginEventResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeOperationEventRequest.h>
@@ -131,6 +135,8 @@
 #include <tencentcloud/bh/v20230418/model/ModifyDeviceResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyDeviceGroupRequest.h>
 #include <tencentcloud/bh/v20230418/model/ModifyDeviceGroupResponse.h>
+#include <tencentcloud/bh/v20230418/model/ModifyLDAPSettingRequest.h>
+#include <tencentcloud/bh/v20230418/model/ModifyLDAPSettingResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyOAuthSettingRequest.h>
 #include <tencentcloud/bh/v20230418/model/ModifyOAuthSettingResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyOperationTaskRequest.h>
@@ -141,6 +147,8 @@
 #include <tencentcloud/bh/v20230418/model/ModifyUserResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyUserGroupRequest.h>
 #include <tencentcloud/bh/v20230418/model/ModifyUserGroupResponse.h>
+#include <tencentcloud/bh/v20230418/model/ReplaySessionRequest.h>
+#include <tencentcloud/bh/v20230418/model/ReplaySessionResponse.h>
 #include <tencentcloud/bh/v20230418/model/ResetDeviceAccountPasswordRequest.h>
 #include <tencentcloud/bh/v20230418/model/ResetDeviceAccountPasswordResponse.h>
 #include <tencentcloud/bh/v20230418/model/ResetDeviceAccountPrivateKeyRequest.h>
@@ -169,6 +177,10 @@
 #include <tencentcloud/bh/v20230418/model/SearchSubtaskResultByIdResponse.h>
 #include <tencentcloud/bh/v20230418/model/SearchTaskResultRequest.h>
 #include <tencentcloud/bh/v20230418/model/SearchTaskResultResponse.h>
+#include <tencentcloud/bh/v20230418/model/SetLDAPSyncFlagRequest.h>
+#include <tencentcloud/bh/v20230418/model/SetLDAPSyncFlagResponse.h>
+#include <tencentcloud/bh/v20230418/model/UnlockUserRequest.h>
+#include <tencentcloud/bh/v20230418/model/UnlockUserResponse.h>
 
 
 namespace TencentCloud
@@ -201,6 +213,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindDeviceResourceResponse> BindDeviceResourceOutcome;
                 typedef std::future<BindDeviceResourceOutcome> BindDeviceResourceOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::BindDeviceResourceRequest&, BindDeviceResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDeviceResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckLDAPConnectionResponse> CheckLDAPConnectionOutcome;
+                typedef std::future<CheckLDAPConnectionOutcome> CheckLDAPConnectionOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::CheckLDAPConnectionRequest&, CheckLDAPConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckLDAPConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAccessWhiteListRuleResponse> CreateAccessWhiteListRuleOutcome;
                 typedef std::future<CreateAccessWhiteListRuleOutcome> CreateAccessWhiteListRuleOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::CreateAccessWhiteListRuleRequest&, CreateAccessWhiteListRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessWhiteListRuleAsyncHandler;
@@ -306,6 +321,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainsResponse> DescribeDomainsOutcome;
                 typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeDomainsRequest&, DescribeDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLDAPUnitSetResponse> DescribeLDAPUnitSetOutcome;
+                typedef std::future<DescribeLDAPUnitSetOutcome> DescribeLDAPUnitSetOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeLDAPUnitSetRequest&, DescribeLDAPUnitSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLDAPUnitSetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLoginEventResponse> DescribeLoginEventOutcome;
                 typedef std::future<DescribeLoginEventOutcome> DescribeLoginEventOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeLoginEventRequest&, DescribeLoginEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginEventAsyncHandler;
@@ -345,6 +363,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDeviceGroupResponse> ModifyDeviceGroupOutcome;
                 typedef std::future<ModifyDeviceGroupOutcome> ModifyDeviceGroupOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ModifyDeviceGroupRequest&, ModifyDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLDAPSettingResponse> ModifyLDAPSettingOutcome;
+                typedef std::future<ModifyLDAPSettingOutcome> ModifyLDAPSettingOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::ModifyLDAPSettingRequest&, ModifyLDAPSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLDAPSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOAuthSettingResponse> ModifyOAuthSettingOutcome;
                 typedef std::future<ModifyOAuthSettingOutcome> ModifyOAuthSettingOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ModifyOAuthSettingRequest&, ModifyOAuthSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOAuthSettingAsyncHandler;
@@ -360,6 +381,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserGroupResponse> ModifyUserGroupOutcome;
                 typedef std::future<ModifyUserGroupOutcome> ModifyUserGroupOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ModifyUserGroupRequest&, ModifyUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaySessionResponse> ReplaySessionOutcome;
+                typedef std::future<ReplaySessionOutcome> ReplaySessionOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::ReplaySessionRequest&, ReplaySessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaySessionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetDeviceAccountPasswordResponse> ResetDeviceAccountPasswordOutcome;
                 typedef std::future<ResetDeviceAccountPasswordOutcome> ResetDeviceAccountPasswordOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ResetDeviceAccountPasswordRequest&, ResetDeviceAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDeviceAccountPasswordAsyncHandler;
@@ -402,6 +426,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchTaskResultResponse> SearchTaskResultOutcome;
                 typedef std::future<SearchTaskResultOutcome> SearchTaskResultOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::SearchTaskResultRequest&, SearchTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchTaskResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetLDAPSyncFlagResponse> SetLDAPSyncFlagOutcome;
+                typedef std::future<SetLDAPSyncFlagOutcome> SetLDAPSyncFlagOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::SetLDAPSyncFlagRequest&, SetLDAPSyncFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetLDAPSyncFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnlockUserResponse> UnlockUserOutcome;
+                typedef std::future<UnlockUserOutcome> UnlockUserOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::UnlockUserRequest&, UnlockUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockUserAsyncHandler;
 
 
 
@@ -458,6 +488,15 @@ namespace TencentCloud
                 BindDeviceResourceOutcome BindDeviceResource(const Model::BindDeviceResourceRequest &request);
                 void BindDeviceResourceAsync(const Model::BindDeviceResourceRequest& request, const BindDeviceResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindDeviceResourceOutcomeCallable BindDeviceResourceCallable(const Model::BindDeviceResourceRequest& request);
+
+                /**
+                 *测试LDAP连接
+                 * @param req CheckLDAPConnectionRequest
+                 * @return CheckLDAPConnectionOutcome
+                 */
+                CheckLDAPConnectionOutcome CheckLDAPConnection(const Model::CheckLDAPConnectionRequest &request);
+                void CheckLDAPConnectionAsync(const Model::CheckLDAPConnectionRequest& request, const CheckLDAPConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckLDAPConnectionOutcomeCallable CheckLDAPConnectionCallable(const Model::CheckLDAPConnectionRequest& request);
 
                 /**
                  *添加访问白名单规则
@@ -775,6 +814,15 @@ namespace TencentCloud
                 DescribeDomainsOutcomeCallable DescribeDomainsCallable(const Model::DescribeDomainsRequest& request);
 
                 /**
+                 *获取LDAP ou 列表
+                 * @param req DescribeLDAPUnitSetRequest
+                 * @return DescribeLDAPUnitSetOutcome
+                 */
+                DescribeLDAPUnitSetOutcome DescribeLDAPUnitSet(const Model::DescribeLDAPUnitSetRequest &request);
+                void DescribeLDAPUnitSetAsync(const Model::DescribeLDAPUnitSetRequest& request, const DescribeLDAPUnitSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLDAPUnitSetOutcomeCallable DescribeLDAPUnitSetCallable(const Model::DescribeLDAPUnitSetRequest& request);
+
+                /**
                  *查询登录日志
                  * @param req DescribeLoginEventRequest
                  * @return DescribeLoginEventOutcome
@@ -892,6 +940,15 @@ namespace TencentCloud
                 ModifyDeviceGroupOutcomeCallable ModifyDeviceGroupCallable(const Model::ModifyDeviceGroupRequest& request);
 
                 /**
+                 *修改LDAP配置信息
+                 * @param req ModifyLDAPSettingRequest
+                 * @return ModifyLDAPSettingOutcome
+                 */
+                ModifyLDAPSettingOutcome ModifyLDAPSetting(const Model::ModifyLDAPSettingRequest &request);
+                void ModifyLDAPSettingAsync(const Model::ModifyLDAPSettingRequest& request, const ModifyLDAPSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLDAPSettingOutcomeCallable ModifyLDAPSettingCallable(const Model::ModifyLDAPSettingRequest& request);
+
+                /**
                  *设置OAuth认证参数
                  * @param req ModifyOAuthSettingRequest
                  * @return ModifyOAuthSettingOutcome
@@ -935,6 +992,15 @@ namespace TencentCloud
                 ModifyUserGroupOutcome ModifyUserGroup(const Model::ModifyUserGroupRequest &request);
                 void ModifyUserGroupAsync(const Model::ModifyUserGroupRequest& request, const ModifyUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserGroupOutcomeCallable ModifyUserGroupCallable(const Model::ModifyUserGroupRequest& request);
+
+                /**
+                 *会话回放
+                 * @param req ReplaySessionRequest
+                 * @return ReplaySessionOutcome
+                 */
+                ReplaySessionOutcome ReplaySession(const Model::ReplaySessionRequest &request);
+                void ReplaySessionAsync(const Model::ReplaySessionRequest& request, const ReplaySessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaySessionOutcomeCallable ReplaySessionCallable(const Model::ReplaySessionRequest& request);
 
                 /**
                  *清除设备账号绑定密码
@@ -1061,6 +1127,24 @@ namespace TencentCloud
                 SearchTaskResultOutcome SearchTaskResult(const Model::SearchTaskResultRequest &request);
                 void SearchTaskResultAsync(const Model::SearchTaskResultRequest& request, const SearchTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchTaskResultOutcomeCallable SearchTaskResultCallable(const Model::SearchTaskResultRequest& request);
+
+                /**
+                 *设置LDAP 立即同步标记
+                 * @param req SetLDAPSyncFlagRequest
+                 * @return SetLDAPSyncFlagOutcome
+                 */
+                SetLDAPSyncFlagOutcome SetLDAPSyncFlag(const Model::SetLDAPSyncFlagRequest &request);
+                void SetLDAPSyncFlagAsync(const Model::SetLDAPSyncFlagRequest& request, const SetLDAPSyncFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetLDAPSyncFlagOutcomeCallable SetLDAPSyncFlagCallable(const Model::SetLDAPSyncFlagRequest& request);
+
+                /**
+                 *解锁用户
+                 * @param req UnlockUserRequest
+                 * @return UnlockUserOutcome
+                 */
+                UnlockUserOutcome UnlockUser(const Model::UnlockUserRequest &request);
+                void UnlockUserAsync(const Model::UnlockUserRequest& request, const UnlockUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnlockUserOutcomeCallable UnlockUserCallable(const Model::UnlockUserRequest& request);
 
             };
         }

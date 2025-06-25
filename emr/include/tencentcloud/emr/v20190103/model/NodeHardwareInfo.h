@@ -1275,6 +1275,27 @@ namespace TencentCloud
                      */
                     bool ConfigurableServicesHasBeenSet() const;
 
+                    /**
+                     * 获取节点标注信息，目前只提供给tf平台使用
+                     * @return NodeMark 节点标注信息，目前只提供给tf平台使用
+                     * 
+                     */
+                    std::string GetNodeMark() const;
+
+                    /**
+                     * 设置节点标注信息，目前只提供给tf平台使用
+                     * @param _nodeMark 节点标注信息，目前只提供给tf平台使用
+                     * 
+                     */
+                    void SetNodeMark(const std::string& _nodeMark);
+
+                    /**
+                     * 判断参数 NodeMark 是否已赋值
+                     * @return NodeMark 是否已赋值
+                     * 
+                     */
+                    bool NodeMarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1625,6 +1646,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_configurableServices;
                     bool m_configurableServicesHasBeenSet;
+
+                    /**
+                     * 节点标注信息，目前只提供给tf平台使用
+                     */
+                    std::string m_nodeMark;
+                    bool m_nodeMarkHasBeenSet;
 
                 };
             }

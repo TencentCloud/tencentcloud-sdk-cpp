@@ -32,7 +32,8 @@ Pod::Pod() :
     m_crossTenantENIInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_startScheduleTimeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_nodeIPHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,16 @@ CoreInternalOutcome Pod::Deserialize(const rapidjson::Value &value)
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeIP") && !value["NodeIP"].IsNull())
+    {
+        if (!value["NodeIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.NodeIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeIP = string(value["NodeIP"].GetString());
+        m_nodeIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -295,6 +306,14 @@ void Pod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeIP.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -490,5 +509,21 @@ void Pod::SetMessage(const string& _message)
 bool Pod::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+string Pod::GetNodeIP() const
+{
+    return m_nodeIP;
+}
+
+void Pod::SetNodeIP(const string& _nodeIP)
+{
+    m_nodeIP = _nodeIP;
+    m_nodeIPHasBeenSet = true;
+}
+
+bool Pod::NodeIPHasBeenSet() const
+{
+    return m_nodeIPHasBeenSet;
 }
 

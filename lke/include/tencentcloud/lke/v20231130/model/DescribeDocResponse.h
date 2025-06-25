@@ -394,6 +394,22 @@ namespace TencentCloud
                      */
                     bool IsDisabledHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDownload 是否支持下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsDownload() const;
+
+                    /**
+                     * 判断参数 IsDownload 是否已赋值
+                     * @return IsDownload 是否已赋值
+                     * 
+                     */
+                    bool IsDownloadHasBeenSet() const;
+
                 private:
 
                     /**
@@ -545,6 +561,13 @@ namespace TencentCloud
                      */
                     bool m_isDisabled;
                     bool m_isDisabledHasBeenSet;
+
+                    /**
+                     * 是否支持下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDownload;
+                    bool m_isDownloadHasBeenSet;
 
                 };
             }

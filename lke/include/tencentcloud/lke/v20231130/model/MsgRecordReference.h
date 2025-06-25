@@ -151,6 +151,90 @@ namespace TencentCloud
                      */
                     bool DocIdHasBeenSet() const;
 
+                    /**
+                     * 获取知识库名称
+                     * @return KnowledgeName 知识库名称
+                     * 
+                     */
+                    std::string GetKnowledgeName() const;
+
+                    /**
+                     * 设置知识库名称
+                     * @param _knowledgeName 知识库名称
+                     * 
+                     */
+                    void SetKnowledgeName(const std::string& _knowledgeName);
+
+                    /**
+                     * 判断参数 KnowledgeName 是否已赋值
+                     * @return KnowledgeName 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeNameHasBeenSet() const;
+
+                    /**
+                     * 获取知识库业务id
+                     * @return KnowledgeBizId 知识库业务id
+                     * 
+                     */
+                    std::string GetKnowledgeBizId() const;
+
+                    /**
+                     * 设置知识库业务id
+                     * @param _knowledgeBizId 知识库业务id
+                     * 
+                     */
+                    void SetKnowledgeBizId(const std::string& _knowledgeBizId);
+
+                    /**
+                     * 判断参数 KnowledgeBizId 是否已赋值
+                     * @return KnowledgeBizId 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBizIdHasBeenSet() const;
+
+                    /**
+                     * 获取文档业务id
+                     * @return DocBizId 文档业务id
+                     * 
+                     */
+                    std::string GetDocBizId() const;
+
+                    /**
+                     * 设置文档业务id
+                     * @param _docBizId 文档业务id
+                     * 
+                     */
+                    void SetDocBizId(const std::string& _docBizId);
+
+                    /**
+                     * 判断参数 DocBizId 是否已赋值
+                     * @return DocBizId 是否已赋值
+                     * 
+                     */
+                    bool DocBizIdHasBeenSet() const;
+
+                    /**
+                     * 获取问答业务id
+                     * @return QaBizId 问答业务id
+                     * 
+                     */
+                    std::string GetQaBizId() const;
+
+                    /**
+                     * 设置问答业务id
+                     * @param _qaBizId 问答业务id
+                     * 
+                     */
+                    void SetQaBizId(const std::string& _qaBizId);
+
+                    /**
+                     * 判断参数 QaBizId 是否已赋值
+                     * @return QaBizId 是否已赋值
+                     * 
+                     */
+                    bool QaBizIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +266,30 @@ namespace TencentCloud
                      */
                     std::string m_docId;
                     bool m_docIdHasBeenSet;
+
+                    /**
+                     * 知识库名称
+                     */
+                    std::string m_knowledgeName;
+                    bool m_knowledgeNameHasBeenSet;
+
+                    /**
+                     * 知识库业务id
+                     */
+                    std::string m_knowledgeBizId;
+                    bool m_knowledgeBizIdHasBeenSet;
+
+                    /**
+                     * 文档业务id
+                     */
+                    std::string m_docBizId;
+                    bool m_docBizIdHasBeenSet;
+
+                    /**
+                     * 问答业务id
+                     */
+                    std::string m_qaBizId;
+                    bool m_qaBizIdHasBeenSet;
 
                 };
             }

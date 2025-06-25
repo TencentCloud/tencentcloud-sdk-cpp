@@ -273,6 +273,27 @@ namespace TencentCloud
                      */
                     bool CategoryIdListHasBeenSet() const;
 
+                    /**
+                     * 获取任务扫描id
+                     * @return ScanResultId 任务扫描id
+                     * 
+                     */
+                    int64_t GetScanResultId() const;
+
+                    /**
+                     * 设置任务扫描id
+                     * @param _scanResultId 任务扫描id
+                     * 
+                     */
+                    void SetScanResultId(const int64_t& _scanResultId);
+
+                    /**
+                     * 判断参数 ScanResultId 是否已赋值
+                     * @return ScanResultId 是否已赋值
+                     * 
+                     */
+                    bool ScanResultIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +361,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_categoryIdList;
                     bool m_categoryIdListHasBeenSet;
+
+                    /**
+                     * 任务扫描id
+                     */
+                    int64_t m_scanResultId;
+                    bool m_scanResultIdHasBeenSet;
 
                 };
             }

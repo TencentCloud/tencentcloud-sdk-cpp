@@ -26,6 +26,7 @@
 #include <tencentcloud/emr/v20190103/model/PodSpec.h>
 #include <tencentcloud/emr/v20190103/model/PodParameter.h>
 #include <tencentcloud/emr/v20190103/model/ComputeResourceAdvanceParams.h>
+#include <tencentcloud/emr/v20190103/model/NodeMark.h>
 
 
 namespace TencentCloud
@@ -700,6 +701,27 @@ namespace TencentCloud
                      */
                     bool ComputeResourceAdvanceParamsHasBeenSet() const;
 
+                    /**
+                     * 获取节点标记信息，目前只提供tf平台使用
+                     * @return NodeMarks 节点标记信息，目前只提供tf平台使用
+                     * 
+                     */
+                    NodeMark GetNodeMarks() const;
+
+                    /**
+                     * 设置节点标记信息，目前只提供tf平台使用
+                     * @param _nodeMarks 节点标记信息，目前只提供tf平台使用
+                     * 
+                     */
+                    void SetNodeMarks(const NodeMark& _nodeMarks);
+
+                    /**
+                     * 判断参数 NodeMarks 是否已赋值
+                     * @return NodeMarks 是否已赋值
+                     * 
+                     */
+                    bool NodeMarksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -886,6 +908,12 @@ namespace TencentCloud
                      */
                     ComputeResourceAdvanceParams m_computeResourceAdvanceParams;
                     bool m_computeResourceAdvanceParamsHasBeenSet;
+
+                    /**
+                     * 节点标记信息，目前只提供tf平台使用
+                     */
+                    NodeMark m_nodeMarks;
+                    bool m_nodeMarksHasBeenSet;
 
                 };
             }

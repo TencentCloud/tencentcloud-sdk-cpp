@@ -236,8 +236,8 @@ PLATINUM 铂金版
                     bool MaxMessageDelayHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，秒为单位
-                     * @return CreatedTime 创建时间，秒为单位
+                     * 获取创建时间，**Unix时间戳（毫秒）**
+                     * @return CreatedTime 创建时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetCreatedTime() const;
@@ -338,8 +338,28 @@ PLATINUM 铂金版
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return InstanceStatus 实例状态
+                     * 获取实例状态，枚举值如下：
+
+- RUNNING：运行中
+- ABNORMAL：异常
+- OVERDUE：隔离中
+- DESTROYED：已销毁
+- CREATING：创建中
+- MODIFYING：变配中
+- CREATE_FAILURE：创建失败
+- MODIFY_FAILURE：变配失败
+- DELETING：删除中
+                     * @return InstanceStatus 实例状态，枚举值如下：
+
+- RUNNING：运行中
+- ABNORMAL：异常
+- OVERDUE：隔离中
+- DESTROYED：已销毁
+- CREATING：创建中
+- MODIFYING：变配中
+- CREATE_FAILURE：创建失败
+- MODIFY_FAILURE：变配失败
+- DELETING：删除中
                      * 
                      */
                     std::string GetInstanceStatus() const;
@@ -366,8 +386,14 @@ PLATINUM 铂金版
                     bool SkuCodeHasBeenSet() const;
 
                     /**
-                     * 获取计费模式
-                     * @return PayMode 计费模式
+                     * 获取计费模式，枚举值如下：
+
+- POSTPAID：后付费按量计费
+- PREPAID：预付费包年包月
+                     * @return PayMode 计费模式，枚举值如下：
+
+- POSTPAID：后付费按量计费
+- PREPAID：预付费包年包月
                      * 
                      */
                     std::string GetPayMode() const;
@@ -394,8 +420,14 @@ PLATINUM 铂金版
                     bool ScaledTpsEnabledHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费
-                     * @return RenewFlag 是否自动续费
+                     * 获取预付费集群是否自动续费，枚举值如下：
+
+- 0: 不自动续费
+- 1: 自动续费
+                     * @return RenewFlag 预付费集群是否自动续费，枚举值如下：
+
+- 0: 不自动续费
+- 1: 自动续费
                      * 
                      */
                     int64_t GetRenewFlag() const;
@@ -408,8 +440,8 @@ PLATINUM 铂金版
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取到期时间
-                     * @return ExpiryTime 到期时间
+                     * 获取到期时间，**Unix时间戳（毫秒）**
+                     * @return ExpiryTime 到期时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetExpiryTime() const;
@@ -484,8 +516,8 @@ PLATINUM 铂金版
                     bool TopicNumUpperLimitHasBeenSet() const;
 
                     /**
-                     * 获取可用区列表
-                     * @return ZoneIds 可用区列表
+                     * 获取所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口。
+                     * @return ZoneIds 所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口。
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
@@ -582,7 +614,7 @@ PLATINUM 铂金版
                     bool m_maxMessageDelayHasBeenSet;
 
                     /**
-                     * 创建时间，秒为单位
+                     * 创建时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;
@@ -626,7 +658,17 @@ PLATINUM 铂金版
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * 实例状态，枚举值如下：
+
+- RUNNING：运行中
+- ABNORMAL：异常
+- OVERDUE：隔离中
+- DESTROYED：已销毁
+- CREATING：创建中
+- MODIFYING：变配中
+- CREATE_FAILURE：创建失败
+- MODIFY_FAILURE：变配失败
+- DELETING：删除中
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
@@ -638,7 +680,10 @@ PLATINUM 铂金版
                     bool m_skuCodeHasBeenSet;
 
                     /**
-                     * 计费模式
+                     * 计费模式，枚举值如下：
+
+- POSTPAID：后付费按量计费
+- PREPAID：预付费包年包月
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
@@ -650,13 +695,16 @@ PLATINUM 铂金版
                     bool m_scaledTpsEnabledHasBeenSet;
 
                     /**
-                     * 是否自动续费
+                     * 预付费集群是否自动续费，枚举值如下：
+
+- 0: 不自动续费
+- 1: 自动续费
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 到期时间
+                     * 到期时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_expiryTime;
                     bool m_expiryTimeHasBeenSet;
@@ -689,7 +737,7 @@ PLATINUM 铂金版
                     bool m_topicNumUpperLimitHasBeenSet;
 
                     /**
-                     * 可用区列表
+                     * 所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口。
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;

@@ -1037,6 +1037,48 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     bool ProxyConfigHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动归档
+                     * @return AutoArchive 是否自动归档
+                     * 
+                     */
+                    std::string GetAutoArchive() const;
+
+                    /**
+                     * 设置是否自动归档
+                     * @param _autoArchive 是否自动归档
+                     * 
+                     */
+                    void SetAutoArchive(const std::string& _autoArchive);
+
+                    /**
+                     * 判断参数 AutoArchive 是否已赋值
+                     * @return AutoArchive 是否已赋值
+                     * 
+                     */
+                    bool AutoArchiveHasBeenSet() const;
+
+                    /**
+                     * 获取暂停后的归档处理时间
+                     * @return AutoArchiveDelayHours 暂停后的归档处理时间
+                     * 
+                     */
+                    int64_t GetAutoArchiveDelayHours() const;
+
+                    /**
+                     * 设置暂停后的归档处理时间
+                     * @param _autoArchiveDelayHours 暂停后的归档处理时间
+                     * 
+                     */
+                    void SetAutoArchiveDelayHours(const int64_t& _autoArchiveDelayHours);
+
+                    /**
+                     * 判断参数 AutoArchiveDelayHours 是否已赋值
+                     * @return AutoArchiveDelayHours 是否已赋值
+                     * 
+                     */
+                    bool AutoArchiveDelayHoursHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1318,6 +1360,18 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     ProxyConfig m_proxyConfig;
                     bool m_proxyConfigHasBeenSet;
+
+                    /**
+                     * 是否自动归档
+                     */
+                    std::string m_autoArchive;
+                    bool m_autoArchiveHasBeenSet;
+
+                    /**
+                     * 暂停后的归档处理时间
+                     */
+                    int64_t m_autoArchiveDelayHours;
+                    bool m_autoArchiveDelayHoursHasBeenSet;
 
                 };
             }

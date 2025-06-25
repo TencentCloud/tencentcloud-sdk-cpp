@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称
-                     * @return Topic 主题名称
+                     * 获取主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
+                     * @return Topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题名称
-                     * @param _topic 主题名称
+                     * 设置主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
+                     * @param _topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取重置位点时间（单位：毫秒）-1表示重置到最新位点
-                     * @return ResetTimestamp 重置位点时间（单位：毫秒）-1表示重置到最新位点
+                     * 获取重置位点的时间戳（单位：毫秒），指定为 -1 时表示重置到最新位点
+                     * @return ResetTimestamp 重置位点的时间戳（单位：毫秒），指定为 -1 时表示重置到最新位点
                      * 
                      */
                     int64_t GetResetTimestamp() const;
 
                     /**
-                     * 设置重置位点时间（单位：毫秒）-1表示重置到最新位点
-                     * @param _resetTimestamp 重置位点时间（单位：毫秒）-1表示重置到最新位点
+                     * 设置重置位点的时间戳（单位：毫秒），指定为 -1 时表示重置到最新位点
+                     * @param _resetTimestamp 重置位点的时间戳（单位：毫秒），指定为 -1 时表示重置到最新位点
                      * 
                      */
                     void SetResetTimestamp(const int64_t& _resetTimestamp);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ResetTimestampHasBeenSet() const;
 
                     /**
-                     * 获取消费组名称
-                     * @return ConsumerGroup 消费组名称
+                     * 获取消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。
+                     * @return ConsumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。
                      * 
                      */
                     std::string GetConsumerGroup() const;
 
                     /**
-                     * 设置消费组名称
-                     * @param _consumerGroup 消费组名称
+                     * 设置消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。
+                     * @param _consumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。
                      * 
                      */
                     void SetConsumerGroup(const std::string& _consumerGroup);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名称
+                     * 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 重置位点时间（单位：毫秒）-1表示重置到最新位点
+                     * 重置位点的时间戳（单位：毫秒），指定为 -1 时表示重置到最新位点
                      */
                     int64_t m_resetTimestamp;
                     bool m_resetTimestampHasBeenSet;
 
                     /**
-                     * 消费组名称
+                     * 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。
                      */
                     std::string m_consumerGroup;
                     bool m_consumerGroupHasBeenSet;

@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取最大展示扫描结果次数
+                     * @return MaxCount 最大展示扫描结果次数
+                     * 
+                     */
+                    int64_t GetMaxCount() const;
+
+                    /**
+                     * 判断参数 MaxCount 是否已赋值
+                     * @return MaxCount 是否已赋值
+                     * 
+                     */
+                    bool MaxCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 最大展示扫描结果次数
+                     */
+                    int64_t m_maxCount;
+                    bool m_maxCountHasBeenSet;
 
                 };
             }

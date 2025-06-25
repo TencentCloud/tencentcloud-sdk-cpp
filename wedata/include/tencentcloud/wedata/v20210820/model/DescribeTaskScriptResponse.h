@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务脚本内容
+                     * 获取任务脚本内容，BASE64编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 任务脚本内容
+                     * @return Data 任务脚本内容，BASE64编码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务脚本内容
+                     * 任务脚本内容，BASE64编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskScriptContent m_data;

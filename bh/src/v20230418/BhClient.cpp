@@ -298,6 +298,49 @@ BhClient::BindDeviceResourceOutcomeCallable BhClient::BindDeviceResourceCallable
     return task->get_future();
 }
 
+BhClient::CheckLDAPConnectionOutcome BhClient::CheckLDAPConnection(const CheckLDAPConnectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckLDAPConnection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckLDAPConnectionResponse rsp = CheckLDAPConnectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckLDAPConnectionOutcome(rsp);
+        else
+            return CheckLDAPConnectionOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckLDAPConnectionOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::CheckLDAPConnectionAsync(const CheckLDAPConnectionRequest& request, const CheckLDAPConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckLDAPConnection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::CheckLDAPConnectionOutcomeCallable BhClient::CheckLDAPConnectionCallable(const CheckLDAPConnectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckLDAPConnectionOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckLDAPConnection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::CreateAccessWhiteListRuleOutcome BhClient::CreateAccessWhiteListRule(const CreateAccessWhiteListRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAccessWhiteListRule");
@@ -1803,6 +1846,49 @@ BhClient::DescribeDomainsOutcomeCallable BhClient::DescribeDomainsCallable(const
     return task->get_future();
 }
 
+BhClient::DescribeLDAPUnitSetOutcome BhClient::DescribeLDAPUnitSet(const DescribeLDAPUnitSetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLDAPUnitSet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLDAPUnitSetResponse rsp = DescribeLDAPUnitSetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLDAPUnitSetOutcome(rsp);
+        else
+            return DescribeLDAPUnitSetOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLDAPUnitSetOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeLDAPUnitSetAsync(const DescribeLDAPUnitSetRequest& request, const DescribeLDAPUnitSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLDAPUnitSet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::DescribeLDAPUnitSetOutcomeCallable BhClient::DescribeLDAPUnitSetCallable(const DescribeLDAPUnitSetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLDAPUnitSetOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLDAPUnitSet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::DescribeLoginEventOutcome BhClient::DescribeLoginEvent(const DescribeLoginEventRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLoginEvent");
@@ -2362,6 +2448,49 @@ BhClient::ModifyDeviceGroupOutcomeCallable BhClient::ModifyDeviceGroupCallable(c
     return task->get_future();
 }
 
+BhClient::ModifyLDAPSettingOutcome BhClient::ModifyLDAPSetting(const ModifyLDAPSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLDAPSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLDAPSettingResponse rsp = ModifyLDAPSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLDAPSettingOutcome(rsp);
+        else
+            return ModifyLDAPSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLDAPSettingOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::ModifyLDAPSettingAsync(const ModifyLDAPSettingRequest& request, const ModifyLDAPSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLDAPSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::ModifyLDAPSettingOutcomeCallable BhClient::ModifyLDAPSettingCallable(const ModifyLDAPSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLDAPSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLDAPSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::ModifyOAuthSettingOutcome BhClient::ModifyOAuthSetting(const ModifyOAuthSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyOAuthSetting");
@@ -2570,6 +2699,49 @@ BhClient::ModifyUserGroupOutcomeCallable BhClient::ModifyUserGroupCallable(const
         [this, request]()
         {
             return this->ModifyUserGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::ReplaySessionOutcome BhClient::ReplaySession(const ReplaySessionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaySession");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaySessionResponse rsp = ReplaySessionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaySessionOutcome(rsp);
+        else
+            return ReplaySessionOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaySessionOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::ReplaySessionAsync(const ReplaySessionRequest& request, const ReplaySessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaySession(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::ReplaySessionOutcomeCallable BhClient::ReplaySessionCallable(const ReplaySessionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaySessionOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaySession(request);
         }
     );
 
@@ -3172,6 +3344,92 @@ BhClient::SearchTaskResultOutcomeCallable BhClient::SearchTaskResultCallable(con
         [this, request]()
         {
             return this->SearchTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::SetLDAPSyncFlagOutcome BhClient::SetLDAPSyncFlag(const SetLDAPSyncFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetLDAPSyncFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetLDAPSyncFlagResponse rsp = SetLDAPSyncFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetLDAPSyncFlagOutcome(rsp);
+        else
+            return SetLDAPSyncFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return SetLDAPSyncFlagOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::SetLDAPSyncFlagAsync(const SetLDAPSyncFlagRequest& request, const SetLDAPSyncFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetLDAPSyncFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::SetLDAPSyncFlagOutcomeCallable BhClient::SetLDAPSyncFlagCallable(const SetLDAPSyncFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetLDAPSyncFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->SetLDAPSyncFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::UnlockUserOutcome BhClient::UnlockUser(const UnlockUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnlockUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnlockUserResponse rsp = UnlockUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnlockUserOutcome(rsp);
+        else
+            return UnlockUserOutcome(o.GetError());
+    }
+    else
+    {
+        return UnlockUserOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::UnlockUserAsync(const UnlockUserRequest& request, const UnlockUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnlockUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::UnlockUserOutcomeCallable BhClient::UnlockUserCallable(const UnlockUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnlockUserOutcome()>>(
+        [this, request]()
+        {
+            return this->UnlockUser(request);
         }
     );
 

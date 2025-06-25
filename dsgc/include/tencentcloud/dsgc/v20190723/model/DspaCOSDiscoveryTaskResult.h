@@ -340,6 +340,48 @@ namespace TencentCloud
                      */
                     bool OverSizeHasBeenSet() const;
 
+                    /**
+                     * 获取任务实例id
+                     * @return TaskInstanceId 任务实例id
+                     * 
+                     */
+                    std::string GetTaskInstanceId() const;
+
+                    /**
+                     * 设置任务实例id
+                     * @param _taskInstanceId 任务实例id
+                     * 
+                     */
+                    void SetTaskInstanceId(const std::string& _taskInstanceId);
+
+                    /**
+                     * 判断参数 TaskInstanceId 是否已赋值
+                     * @return TaskInstanceId 是否已赋值
+                     * 
+                     */
+                    bool TaskInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间
+                     * @return StartTime 开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置开始时间
+                     * @param _startTime 开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +467,18 @@ namespace TencentCloud
                      */
                     std::string m_overSize;
                     bool m_overSizeHasBeenSet;
+
+                    /**
+                     * 任务实例id
+                     */
+                    std::string m_taskInstanceId;
+                    bool m_taskInstanceIdHasBeenSet;
+
+                    /**
+                     * 开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
 
                 };
             }

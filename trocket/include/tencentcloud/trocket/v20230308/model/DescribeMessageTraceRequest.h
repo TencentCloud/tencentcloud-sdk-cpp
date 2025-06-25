@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称
-                     * @return Topic 主题名称
+                     * 获取主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
+                     * @return Topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题名称
-                     * @param _topic 主题名称
+                     * 设置主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
+                     * @param _topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取消息ID
-                     * @return MsgId 消息ID
+                     * 获取消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
+                     * @return MsgId 消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      * 
                      */
                     std::string GetMsgId() const;
 
                     /**
-                     * 设置消息ID
-                     * @param _msgId 消息ID
+                     * 设置消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
+                     * @param _msgId 消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      * 
                      */
                     void SetMsgId(const std::string& _msgId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MsgIdHasBeenSet() const;
 
                     /**
-                     * 获取是否是死信消息
-                     * @return QueryDeadLetterMessage 是否是死信消息
+                     * 获取是否是死信消息，默认为false
+                     * @return QueryDeadLetterMessage 是否是死信消息，默认为false
                      * 
                      */
                     bool GetQueryDeadLetterMessage() const;
 
                     /**
-                     * 设置是否是死信消息
-                     * @param _queryDeadLetterMessage 是否是死信消息
+                     * 设置是否是死信消息，默认为false
+                     * @param _queryDeadLetterMessage 是否是死信消息，默认为false
                      * 
                      */
                     void SetQueryDeadLetterMessage(const bool& _queryDeadLetterMessage);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool QueryDeadLetterMessageHasBeenSet() const;
 
                     /**
-                     * 获取是否是延时消息
-                     * @return QueryDelayMessage 是否是延时消息
+                     * 获取是否是延时消息，默认为false
+                     * @return QueryDelayMessage 是否是延时消息，默认为false
                      * 
                      */
                     bool GetQueryDelayMessage() const;
 
                     /**
-                     * 设置是否是延时消息
-                     * @param _queryDelayMessage 是否是延时消息
+                     * 设置是否是延时消息，默认为false
+                     * @param _queryDelayMessage 是否是延时消息，默认为false
                      * 
                      */
                     void SetQueryDelayMessage(const bool& _queryDelayMessage);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名称
+                     * 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 消息ID
+                     * 消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。
                      */
                     std::string m_msgId;
                     bool m_msgIdHasBeenSet;
 
                     /**
-                     * 是否是死信消息
+                     * 是否是死信消息，默认为false
                      */
                     bool m_queryDeadLetterMessage;
                     bool m_queryDeadLetterMessageHasBeenSet;
 
                     /**
-                     * 是否是延时消息
+                     * 是否是延时消息，默认为false
                      */
                     bool m_queryDelayMessage;
                     bool m_queryDelayMessageHasBeenSet;

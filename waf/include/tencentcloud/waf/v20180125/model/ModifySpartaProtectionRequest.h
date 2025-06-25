@@ -410,23 +410,23 @@ https：使用https协议回源
                     bool LoadBalanceHasBeenSet() const;
 
                     /**
-                     * 获取待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * @return IsGray 待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * 
+                     * 获取是否开启灰度，0表示不开启灰度。
+                     * @return IsGray 是否开启灰度，0表示不开启灰度。
+                     * @deprecated
                      */
                     int64_t GetIsGray() const;
 
                     /**
-                     * 设置待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * @param _isGray 待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * 
+                     * 设置是否开启灰度，0表示不开启灰度。
+                     * @param _isGray 是否开启灰度，0表示不开启灰度。
+                     * @deprecated
                      */
                     void SetIsGray(const int64_t& _isGray);
 
                     /**
                      * 判断参数 IsGray 是否已赋值
                      * @return IsGray 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsGrayHasBeenSet() const;
 
@@ -494,23 +494,23 @@ https：使用https协议回源
                     bool IsKeepAliveHasBeenSet() const;
 
                     /**
-                     * 获取待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * @return Anycast 待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * 
+                     * 获取目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @return Anycast 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @deprecated
                      */
                     int64_t GetAnycast() const;
 
                     /**
-                     * 设置待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * @param _anycast 待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * 
+                     * 设置目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @param _anycast 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @deprecated
                      */
                     void SetAnycast(const int64_t& _anycast);
 
                     /**
                      * 判断参数 Anycast 是否已赋值
                      * @return Anycast 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AnycastHasBeenSet() const;
 
@@ -1034,6 +1034,27 @@ https：使用https协议回源
                      */
                     bool UpstreamRulesHasBeenSet() const;
 
+                    /**
+                     * 获取业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @return UseCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    int64_t GetUseCase() const;
+
+                    /**
+                     * 设置业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @param _useCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    void SetUseCase(const int64_t& _useCase);
+
+                    /**
+                     * 判断参数 UseCase 是否已赋值
+                     * @return UseCase 是否已赋值
+                     * 
+                     */
+                    bool UseCaseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1141,7 +1162,7 @@ https：使用https协议回源
                     bool m_loadBalanceHasBeenSet;
 
                     /**
-                     * 待废弃，可不填。是否开启灰度，0表示不开启灰度。
+                     * 是否开启灰度，0表示不开启灰度。
                      */
                     int64_t m_isGray;
                     bool m_isGrayHasBeenSet;
@@ -1165,7 +1186,7 @@ https：使用https协议回源
                     bool m_isKeepAliveHasBeenSet;
 
                     /**
-                     * 待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
                      */
                     int64_t m_anycast;
                     bool m_anycastHasBeenSet;
@@ -1317,6 +1338,12 @@ https：使用https协议回源
                      */
                     std::vector<UpstreamRule> m_upstreamRules;
                     bool m_upstreamRulesHasBeenSet;
+
+                    /**
+                     * 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     */
+                    int64_t m_useCase;
+                    bool m_useCaseHasBeenSet;
 
                 };
             }

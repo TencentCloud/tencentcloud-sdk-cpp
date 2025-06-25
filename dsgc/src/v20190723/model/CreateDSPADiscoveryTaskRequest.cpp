@@ -38,7 +38,8 @@ CreateDSPADiscoveryTaskRequest::CreateDSPADiscoveryTaskRequest() :
     m_timingStartTimeHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_rowsHasBeenSet(false),
-    m_globalOrderFieldHasBeenSet(false)
+    m_globalOrderFieldHasBeenSet(false),
+    m_scanRangeHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,14 @@ string CreateDSPADiscoveryTaskRequest::ToJsonString() const
         string key = "GlobalOrderField";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_globalOrderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scanRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanRange";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scanRange.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -444,6 +453,22 @@ void CreateDSPADiscoveryTaskRequest::SetGlobalOrderField(const string& _globalOr
 bool CreateDSPADiscoveryTaskRequest::GlobalOrderFieldHasBeenSet() const
 {
     return m_globalOrderFieldHasBeenSet;
+}
+
+string CreateDSPADiscoveryTaskRequest::GetScanRange() const
+{
+    return m_scanRange;
+}
+
+void CreateDSPADiscoveryTaskRequest::SetScanRange(const string& _scanRange)
+{
+    m_scanRange = _scanRange;
+    m_scanRangeHasBeenSet = true;
+}
+
+bool CreateDSPADiscoveryTaskRequest::ScanRangeHasBeenSet() const
+{
+    return m_scanRangeHasBeenSet;
 }
 
 

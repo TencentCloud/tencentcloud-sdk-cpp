@@ -3953,6 +3953,92 @@ WedataClient::DescribeDsParentFolderTreeOutcomeCallable WedataClient::DescribeDs
     return task->get_future();
 }
 
+WedataClient::DescribeDsTaskVersionInfoOutcome WedataClient::DescribeDsTaskVersionInfo(const DescribeDsTaskVersionInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDsTaskVersionInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDsTaskVersionInfoResponse rsp = DescribeDsTaskVersionInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDsTaskVersionInfoOutcome(rsp);
+        else
+            return DescribeDsTaskVersionInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDsTaskVersionInfoOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDsTaskVersionInfoAsync(const DescribeDsTaskVersionInfoRequest& request, const DescribeDsTaskVersionInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDsTaskVersionInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDsTaskVersionInfoOutcomeCallable WedataClient::DescribeDsTaskVersionInfoCallable(const DescribeDsTaskVersionInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDsTaskVersionInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDsTaskVersionInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DescribeDsTaskVersionListOutcome WedataClient::DescribeDsTaskVersionList(const DescribeDsTaskVersionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDsTaskVersionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDsTaskVersionListResponse rsp = DescribeDsTaskVersionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDsTaskVersionListOutcome(rsp);
+        else
+            return DescribeDsTaskVersionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDsTaskVersionListOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDsTaskVersionListAsync(const DescribeDsTaskVersionListRequest& request, const DescribeDsTaskVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDsTaskVersionList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDsTaskVersionListOutcomeCallable WedataClient::DescribeDsTaskVersionListCallable(const DescribeDsTaskVersionListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDsTaskVersionListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDsTaskVersionList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeDutyScheduleDetailsOutcome WedataClient::DescribeDutyScheduleDetails(const DescribeDutyScheduleDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDutyScheduleDetails");

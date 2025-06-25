@@ -258,6 +258,27 @@ namespace TencentCloud
                      */
                     bool TimingStartTimeHasBeenSet() const;
 
+                    /**
+                     * 获取full:全量扫描 incre:变更扫描
+                     * @return ScanRange full:全量扫描 incre:变更扫描
+                     * 
+                     */
+                    std::string GetScanRange() const;
+
+                    /**
+                     * 设置full:全量扫描 incre:变更扫描
+                     * @param _scanRange full:全量扫描 incre:变更扫描
+                     * 
+                     */
+                    void SetScanRange(const std::string& _scanRange);
+
+                    /**
+                     * 判断参数 ScanRange 是否已赋值
+                     * @return ScanRange 是否已赋值
+                     * 
+                     */
+                    bool ScanRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +340,12 @@ namespace TencentCloud
                      */
                     std::string m_timingStartTime;
                     bool m_timingStartTimeHasBeenSet;
+
+                    /**
+                     * full:全量扫描 incre:变更扫描
+                     */
+                    std::string m_scanRange;
+                    bool m_scanRangeHasBeenSet;
 
                 };
             }

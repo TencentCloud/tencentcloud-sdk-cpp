@@ -26,7 +26,9 @@ ModifyAutoOpenProVersionConfigRequest::ModifyAutoOpenProVersionConfigRequest() :
     m_statusHasBeenSet(false),
     m_autoRepurchaseSwitchHasBeenSet(false),
     m_autoRepurchaseRenewSwitchHasBeenSet(false),
-    m_repurchaseRenewSwitchHasBeenSet(false)
+    m_repurchaseRenewSwitchHasBeenSet(false),
+    m_autoBindRaspSwitchHasBeenSet(false),
+    m_autoOpenRaspSwitchHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string ModifyAutoOpenProVersionConfigRequest::ToJsonString() const
         string key = "RepurchaseRenewSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_repurchaseRenewSwitch, allocator);
+    }
+
+    if (m_autoBindRaspSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoBindRaspSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoBindRaspSwitch, allocator);
+    }
+
+    if (m_autoOpenRaspSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoOpenRaspSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoOpenRaspSwitch, allocator);
     }
 
 
@@ -139,6 +157,38 @@ void ModifyAutoOpenProVersionConfigRequest::SetRepurchaseRenewSwitch(const uint6
 bool ModifyAutoOpenProVersionConfigRequest::RepurchaseRenewSwitchHasBeenSet() const
 {
     return m_repurchaseRenewSwitchHasBeenSet;
+}
+
+uint64_t ModifyAutoOpenProVersionConfigRequest::GetAutoBindRaspSwitch() const
+{
+    return m_autoBindRaspSwitch;
+}
+
+void ModifyAutoOpenProVersionConfigRequest::SetAutoBindRaspSwitch(const uint64_t& _autoBindRaspSwitch)
+{
+    m_autoBindRaspSwitch = _autoBindRaspSwitch;
+    m_autoBindRaspSwitchHasBeenSet = true;
+}
+
+bool ModifyAutoOpenProVersionConfigRequest::AutoBindRaspSwitchHasBeenSet() const
+{
+    return m_autoBindRaspSwitchHasBeenSet;
+}
+
+uint64_t ModifyAutoOpenProVersionConfigRequest::GetAutoOpenRaspSwitch() const
+{
+    return m_autoOpenRaspSwitch;
+}
+
+void ModifyAutoOpenProVersionConfigRequest::SetAutoOpenRaspSwitch(const uint64_t& _autoOpenRaspSwitch)
+{
+    m_autoOpenRaspSwitch = _autoOpenRaspSwitch;
+    m_autoOpenRaspSwitchHasBeenSet = true;
+}
+
+bool ModifyAutoOpenProVersionConfigRequest::AutoOpenRaspSwitchHasBeenSet() const
+{
+    return m_autoOpenRaspSwitchHasBeenSet;
 }
 
 

@@ -147,6 +147,22 @@ namespace TencentCloud
                      */
                     bool ParseResultCosUrlHasBeenSet() const;
 
+                    /**
+                     * 获取是否可下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDownload 是否可下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsDownload() const;
+
+                    /**
+                     * 判断参数 IsDownload 是否已赋值
+                     * @return IsDownload 是否已赋值
+                     * 
+                     */
+                    bool IsDownloadHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +209,13 @@ namespace TencentCloud
                      */
                     std::string m_parseResultCosUrl;
                     bool m_parseResultCosUrlHasBeenSet;
+
+                    /**
+                     * 是否可下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDownload;
+                    bool m_isDownloadHasBeenSet;
 
                 };
             }

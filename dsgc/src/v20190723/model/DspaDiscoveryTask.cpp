@@ -31,7 +31,8 @@ DspaDiscoveryTask::DspaDiscoveryTask() :
     m_generalRuleSetEnableHasBeenSet(false),
     m_resultHasBeenSet(false),
     m_timingStartTimeHasBeenSet(false),
-    m_complianceUpdateHasBeenSet(false)
+    m_complianceUpdateHasBeenSet(false),
+    m_scanRangeHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,16 @@ CoreInternalOutcome DspaDiscoveryTask::Deserialize(const rapidjson::Value &value
         m_complianceUpdateHasBeenSet = true;
     }
 
+    if (value.HasMember("ScanRange") && !value["ScanRange"].IsNull())
+    {
+        if (!value["ScanRange"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryTask.ScanRange` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanRange = string(value["ScanRange"].GetString());
+        m_scanRangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ void DspaDiscoveryTask::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ComplianceUpdate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_complianceUpdate, allocator);
+    }
+
+    if (m_scanRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanRange.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -438,5 +457,21 @@ void DspaDiscoveryTask::SetComplianceUpdate(const bool& _complianceUpdate)
 bool DspaDiscoveryTask::ComplianceUpdateHasBeenSet() const
 {
     return m_complianceUpdateHasBeenSet;
+}
+
+string DspaDiscoveryTask::GetScanRange() const
+{
+    return m_scanRange;
+}
+
+void DspaDiscoveryTask::SetScanRange(const string& _scanRange)
+{
+    m_scanRange = _scanRange;
+    m_scanRangeHasBeenSet = true;
+}
+
+bool DspaDiscoveryTask::ScanRangeHasBeenSet() const
+{
+    return m_scanRangeHasBeenSet;
 }
 

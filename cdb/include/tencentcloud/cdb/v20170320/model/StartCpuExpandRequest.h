@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -139,14 +139,18 @@ namespace TencentCloud
 
                     /**
                      * 获取按时间段扩容策略。
+说明：当 Type 为 timeInterval 时，TimeIntervalStrategy 必填。
                      * @return TimeIntervalStrategy 按时间段扩容策略。
+说明：当 Type 为 timeInterval 时，TimeIntervalStrategy 必填。
                      * 
                      */
                     TimeIntervalStrategy GetTimeIntervalStrategy() const;
 
                     /**
                      * 设置按时间段扩容策略。
+说明：当 Type 为 timeInterval 时，TimeIntervalStrategy 必填。
                      * @param _timeIntervalStrategy 按时间段扩容策略。
+说明：当 Type 为 timeInterval 时，TimeIntervalStrategy 必填。
                      * 
                      */
                     void SetTimeIntervalStrategy(const TimeIntervalStrategy& _timeIntervalStrategy);
@@ -160,14 +164,18 @@ namespace TencentCloud
 
                     /**
                      * 获取按周期扩容策略。
+说明：当 Type 为 period 时，PeriodStrategy 必填。
                      * @return PeriodStrategy 按周期扩容策略。
+说明：当 Type 为 period 时，PeriodStrategy 必填。
                      * 
                      */
                     PeriodStrategy GetPeriodStrategy() const;
 
                     /**
                      * 设置按周期扩容策略。
+说明：当 Type 为 period 时，PeriodStrategy 必填。
                      * @param _periodStrategy 按周期扩容策略。
+说明：当 Type 为 period 时，PeriodStrategy 必填。
                      * 
                      */
                     void SetPeriodStrategy(const PeriodStrategy& _periodStrategy);
@@ -182,7 +190,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -209,12 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 按时间段扩容策略。
+说明：当 Type 为 timeInterval 时，TimeIntervalStrategy 必填。
                      */
                     TimeIntervalStrategy m_timeIntervalStrategy;
                     bool m_timeIntervalStrategyHasBeenSet;
 
                     /**
                      * 按周期扩容策略。
+说明：当 Type 为 period 时，PeriodStrategy 必填。
                      */
                     PeriodStrategy m_periodStrategy;
                     bool m_periodStrategyHasBeenSet;

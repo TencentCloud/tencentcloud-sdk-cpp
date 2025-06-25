@@ -26,7 +26,10 @@ DescribeDSPACOSDiscoveryTaskResultRequest::DescribeDSPACOSDiscoveryTaskResultReq
     m_dspaIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_fetchHistoryHasBeenSet(false)
 {
 }
 
@@ -74,6 +77,30 @@ string DescribeDSPACOSDiscoveryTaskResultRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fetchHistoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FetchHistory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fetchHistory, allocator);
     }
 
 
@@ -146,6 +173,54 @@ void DescribeDSPACOSDiscoveryTaskResultRequest::SetFilters(const vector<Filter>&
 bool DescribeDSPACOSDiscoveryTaskResultRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeDSPACOSDiscoveryTaskResultRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeDSPACOSDiscoveryTaskResultRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeDSPACOSDiscoveryTaskResultRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeDSPACOSDiscoveryTaskResultRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeDSPACOSDiscoveryTaskResultRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeDSPACOSDiscoveryTaskResultRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+bool DescribeDSPACOSDiscoveryTaskResultRequest::GetFetchHistory() const
+{
+    return m_fetchHistory;
+}
+
+void DescribeDSPACOSDiscoveryTaskResultRequest::SetFetchHistory(const bool& _fetchHistory)
+{
+    m_fetchHistory = _fetchHistory;
+    m_fetchHistoryHasBeenSet = true;
+}
+
+bool DescribeDSPACOSDiscoveryTaskResultRequest::FetchHistoryHasBeenSet() const
+{
+    return m_fetchHistoryHasBeenSet;
 }
 
 

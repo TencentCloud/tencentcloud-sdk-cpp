@@ -87,6 +87,20 @@ namespace TencentCloud
                      */
                     bool CiphertextBlobHasBeenSet() const;
 
+                    /**
+                     * 获取DataKey的全局唯一标识,当KMS托管数据密钥时返回。
+                     * @return DataKeyId DataKey的全局唯一标识,当KMS托管数据密钥时返回。
+                     * 
+                     */
+                    std::string GetDataKeyId() const;
+
+                    /**
+                     * 判断参数 DataKeyId 是否已赋值
+                     * @return DataKeyId 是否已赋值
+                     * 
+                     */
+                    bool DataKeyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +121,12 @@ namespace TencentCloud
                      */
                     std::string m_ciphertextBlob;
                     bool m_ciphertextBlobHasBeenSet;
+
+                    /**
+                     * DataKey的全局唯一标识,当KMS托管数据密钥时返回。
+                     */
+                    std::string m_dataKeyId;
+                    bool m_dataKeyIdHasBeenSet;
 
                 };
             }

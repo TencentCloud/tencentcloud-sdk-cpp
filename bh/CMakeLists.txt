@@ -58,13 +58,16 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/DescribeResourcesRequest.h
   include/tencentcloud/bh/v20230418/model/BindDeviceResourceResponse.h
   include/tencentcloud/bh/v20230418/model/ResetDeviceAccountPrivateKeyResponse.h
+  include/tencentcloud/bh/v20230418/model/SetLDAPSyncFlagResponse.h
   include/tencentcloud/bh/v20230418/model/DeleteUserGroupMembersResponse.h
   include/tencentcloud/bh/v20230418/model/CmdTemplate.h
   include/tencentcloud/bh/v20230418/model/SearchCommandResult.h
+  include/tencentcloud/bh/v20230418/model/DescribeLDAPUnitSetRequest.h
   include/tencentcloud/bh/v20230418/model/SearchSubtaskResultByIdResponse.h
   include/tencentcloud/bh/v20230418/model/ModifyOAuthSettingRequest.h
   include/tencentcloud/bh/v20230418/model/CreateUserGroupRequest.h
   include/tencentcloud/bh/v20230418/model/SearchFileTypeFilter.h
+  include/tencentcloud/bh/v20230418/model/ReplaySessionRequest.h
   include/tencentcloud/bh/v20230418/model/BindDeviceAccountPrivateKeyResponse.h
   include/tencentcloud/bh/v20230418/model/IOAUserGroup.h
   include/tencentcloud/bh/v20230418/model/SearchCommandBySidRequest.h
@@ -114,9 +117,11 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/DescribeDeviceGroupsRequest.h
   include/tencentcloud/bh/v20230418/model/CreateAssetSyncJobResponse.h
   include/tencentcloud/bh/v20230418/model/BindDeviceAccountPrivateKeyRequest.h
+  include/tencentcloud/bh/v20230418/model/ModifyLDAPSettingRequest.h
   include/tencentcloud/bh/v20230418/model/ModifyChangePwdTaskRequest.h
   include/tencentcloud/bh/v20230418/model/CreateAssetSyncJobRequest.h
   include/tencentcloud/bh/v20230418/model/Group.h
+  include/tencentcloud/bh/v20230418/model/UnlockUserResponse.h
   include/tencentcloud/bh/v20230418/model/DescribeAssetSyncStatusRequest.h
   include/tencentcloud/bh/v20230418/model/Clb.h
   include/tencentcloud/bh/v20230418/model/AccessDevicesResponse.h
@@ -128,14 +133,16 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/ModifyDeviceGroupResponse.h
   include/tencentcloud/bh/v20230418/model/ModifyOAuthSettingResponse.h
   include/tencentcloud/bh/v20230418/model/DescribeOperationTaskRequest.h
+  include/tencentcloud/bh/v20230418/model/DescribeLDAPUnitSetResponse.h
   include/tencentcloud/bh/v20230418/model/DescribeUserGroupMembersResponse.h
   include/tencentcloud/bh/v20230418/model/ImportExternalDeviceResponse.h
   include/tencentcloud/bh/v20230418/model/SearchSessionCommandResponse.h
   include/tencentcloud/bh/v20230418/model/DeleteAccessWhiteListRulesRequest.h
-  include/tencentcloud/bh/v20230418/model/DeleteUserGroupsRequest.h
+  include/tencentcloud/bh/v20230418/model/CheckLDAPConnectionRequest.h
   include/tencentcloud/bh/v20230418/model/User.h
   include/tencentcloud/bh/v20230418/model/ResetUserRequest.h
   include/tencentcloud/bh/v20230418/model/Device.h
+  include/tencentcloud/bh/v20230418/model/DeleteUserGroupsRequest.h
   include/tencentcloud/bh/v20230418/model/CreateDeviceAccountResponse.h
   include/tencentcloud/bh/v20230418/model/ExternalDevice.h
   include/tencentcloud/bh/v20230418/model/ModifyDeviceGroupRequest.h
@@ -147,12 +154,14 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/DescribeChangePwdTaskRequest.h
   include/tencentcloud/bh/v20230418/model/SearchFileBySidResponse.h
   include/tencentcloud/bh/v20230418/model/DescribeOperationEventRequest.h
+  include/tencentcloud/bh/v20230418/model/SetLDAPSyncFlagRequest.h
   include/tencentcloud/bh/v20230418/model/ModifyDeviceResponse.h
   include/tencentcloud/bh/v20230418/model/ModifyUserResponse.h
   include/tencentcloud/bh/v20230418/model/ChangePwdTaskDetail.h
   include/tencentcloud/bh/v20230418/model/ModifyCmdTemplateRequest.h
   include/tencentcloud/bh/v20230418/model/CreateOperationTaskRequest.h
   include/tencentcloud/bh/v20230418/model/DescribeCmdTemplatesResponse.h
+  include/tencentcloud/bh/v20230418/model/UnlockUserRequest.h
   include/tencentcloud/bh/v20230418/model/CreateDeviceAccountRequest.h
   include/tencentcloud/bh/v20230418/model/AddDeviceGroupMembersResponse.h
   include/tencentcloud/bh/v20230418/model/DeleteCmdTemplatesRequest.h
@@ -171,7 +180,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/DescribeDomainsRequest.h
   include/tencentcloud/bh/v20230418/model/DescribeCmdTemplatesRequest.h
   include/tencentcloud/bh/v20230418/model/ModifyAclResponse.h
-  include/tencentcloud/bh/v20230418/model/DeleteDeviceGroupsResponse.h
+  include/tencentcloud/bh/v20230418/model/DescribeAclsRequest.h
   include/tencentcloud/bh/v20230418/model/DeleteDeviceGroupsRequest.h
   include/tencentcloud/bh/v20230418/model/DescribeDeviceGroupMembersResponse.h
   include/tencentcloud/bh/v20230418/model/SearchAuditLogResponse.h
@@ -179,6 +188,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/Resource.h
   include/tencentcloud/bh/v20230418/model/RunChangePwdTaskResponse.h
   include/tencentcloud/bh/v20230418/model/BindDeviceResourceRequest.h
+  include/tencentcloud/bh/v20230418/model/CheckLDAPConnectionResponse.h
   include/tencentcloud/bh/v20230418/model/RunOperationTaskRequest.h
   include/tencentcloud/bh/v20230418/model/Acl.h
   include/tencentcloud/bh/v20230418/model/TagFilter.h
@@ -189,10 +199,12 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/SearchFileBySidRequest.h
   include/tencentcloud/bh/v20230418/model/DescribeOperationEventResponse.h
   include/tencentcloud/bh/v20230418/model/DescribeDomainsResponse.h
+  include/tencentcloud/bh/v20230418/model/ModifyLDAPSettingResponse.h
   include/tencentcloud/bh/v20230418/model/SearchFileResult.h
+  include/tencentcloud/bh/v20230418/model/ReplaySessionResponse.h
   include/tencentcloud/bh/v20230418/model/DeleteAclsResponse.h
   include/tencentcloud/bh/v20230418/model/DescribeDeviceGroupMembersRequest.h
-  include/tencentcloud/bh/v20230418/model/DescribeAclsRequest.h
+  include/tencentcloud/bh/v20230418/model/DeleteDeviceGroupsResponse.h
   include/tencentcloud/bh/v20230418/model/AddDeviceGroupMembersRequest.h
   include/tencentcloud/bh/v20230418/model/DeleteDeviceAccountsResponse.h
   include/tencentcloud/bh/v20230418/model/DeleteAccessWhiteListRulesResponse.h
@@ -240,13 +252,16 @@ set(bh_src
   src/v20230418/model/DescribeResourcesRequest.cpp
   src/v20230418/model/BindDeviceResourceResponse.cpp
   src/v20230418/model/ResetDeviceAccountPrivateKeyResponse.cpp
+  src/v20230418/model/SetLDAPSyncFlagResponse.cpp
   src/v20230418/model/DeleteUserGroupMembersResponse.cpp
   src/v20230418/model/CmdTemplate.cpp
   src/v20230418/model/SearchCommandResult.cpp
+  src/v20230418/model/DescribeLDAPUnitSetRequest.cpp
   src/v20230418/model/SearchSubtaskResultByIdResponse.cpp
   src/v20230418/model/ModifyOAuthSettingRequest.cpp
   src/v20230418/model/CreateUserGroupRequest.cpp
   src/v20230418/model/SearchFileTypeFilter.cpp
+  src/v20230418/model/ReplaySessionRequest.cpp
   src/v20230418/model/BindDeviceAccountPrivateKeyResponse.cpp
   src/v20230418/model/IOAUserGroup.cpp
   src/v20230418/model/SearchCommandBySidRequest.cpp
@@ -296,9 +311,11 @@ set(bh_src
   src/v20230418/model/DescribeDeviceGroupsRequest.cpp
   src/v20230418/model/CreateAssetSyncJobResponse.cpp
   src/v20230418/model/BindDeviceAccountPrivateKeyRequest.cpp
+  src/v20230418/model/ModifyLDAPSettingRequest.cpp
   src/v20230418/model/ModifyChangePwdTaskRequest.cpp
   src/v20230418/model/CreateAssetSyncJobRequest.cpp
   src/v20230418/model/Group.cpp
+  src/v20230418/model/UnlockUserResponse.cpp
   src/v20230418/model/DescribeAssetSyncStatusRequest.cpp
   src/v20230418/model/Clb.cpp
   src/v20230418/model/AccessDevicesResponse.cpp
@@ -310,14 +327,16 @@ set(bh_src
   src/v20230418/model/ModifyDeviceGroupResponse.cpp
   src/v20230418/model/ModifyOAuthSettingResponse.cpp
   src/v20230418/model/DescribeOperationTaskRequest.cpp
+  src/v20230418/model/DescribeLDAPUnitSetResponse.cpp
   src/v20230418/model/DescribeUserGroupMembersResponse.cpp
   src/v20230418/model/ImportExternalDeviceResponse.cpp
   src/v20230418/model/SearchSessionCommandResponse.cpp
   src/v20230418/model/DeleteAccessWhiteListRulesRequest.cpp
-  src/v20230418/model/DeleteUserGroupsRequest.cpp
+  src/v20230418/model/CheckLDAPConnectionRequest.cpp
   src/v20230418/model/User.cpp
   src/v20230418/model/ResetUserRequest.cpp
   src/v20230418/model/Device.cpp
+  src/v20230418/model/DeleteUserGroupsRequest.cpp
   src/v20230418/model/CreateDeviceAccountResponse.cpp
   src/v20230418/model/ExternalDevice.cpp
   src/v20230418/model/ModifyDeviceGroupRequest.cpp
@@ -329,12 +348,14 @@ set(bh_src
   src/v20230418/model/DescribeChangePwdTaskRequest.cpp
   src/v20230418/model/SearchFileBySidResponse.cpp
   src/v20230418/model/DescribeOperationEventRequest.cpp
+  src/v20230418/model/SetLDAPSyncFlagRequest.cpp
   src/v20230418/model/ModifyDeviceResponse.cpp
   src/v20230418/model/ModifyUserResponse.cpp
   src/v20230418/model/ChangePwdTaskDetail.cpp
   src/v20230418/model/ModifyCmdTemplateRequest.cpp
   src/v20230418/model/CreateOperationTaskRequest.cpp
   src/v20230418/model/DescribeCmdTemplatesResponse.cpp
+  src/v20230418/model/UnlockUserRequest.cpp
   src/v20230418/model/CreateDeviceAccountRequest.cpp
   src/v20230418/model/AddDeviceGroupMembersResponse.cpp
   src/v20230418/model/DeleteCmdTemplatesRequest.cpp
@@ -353,7 +374,7 @@ set(bh_src
   src/v20230418/model/DescribeDomainsRequest.cpp
   src/v20230418/model/DescribeCmdTemplatesRequest.cpp
   src/v20230418/model/ModifyAclResponse.cpp
-  src/v20230418/model/DeleteDeviceGroupsResponse.cpp
+  src/v20230418/model/DescribeAclsRequest.cpp
   src/v20230418/model/DeleteDeviceGroupsRequest.cpp
   src/v20230418/model/DescribeDeviceGroupMembersResponse.cpp
   src/v20230418/model/SearchAuditLogResponse.cpp
@@ -361,6 +382,7 @@ set(bh_src
   src/v20230418/model/Resource.cpp
   src/v20230418/model/RunChangePwdTaskResponse.cpp
   src/v20230418/model/BindDeviceResourceRequest.cpp
+  src/v20230418/model/CheckLDAPConnectionResponse.cpp
   src/v20230418/model/RunOperationTaskRequest.cpp
   src/v20230418/model/Acl.cpp
   src/v20230418/model/TagFilter.cpp
@@ -371,10 +393,12 @@ set(bh_src
   src/v20230418/model/SearchFileBySidRequest.cpp
   src/v20230418/model/DescribeOperationEventResponse.cpp
   src/v20230418/model/DescribeDomainsResponse.cpp
+  src/v20230418/model/ModifyLDAPSettingResponse.cpp
   src/v20230418/model/SearchFileResult.cpp
+  src/v20230418/model/ReplaySessionResponse.cpp
   src/v20230418/model/DeleteAclsResponse.cpp
   src/v20230418/model/DescribeDeviceGroupMembersRequest.cpp
-  src/v20230418/model/DescribeAclsRequest.cpp
+  src/v20230418/model/DeleteDeviceGroupsResponse.cpp
   src/v20230418/model/AddDeviceGroupMembersRequest.cpp
   src/v20230418/model/DeleteDeviceAccountsResponse.cpp
   src/v20230418/model/DeleteAccessWhiteListRulesResponse.cpp

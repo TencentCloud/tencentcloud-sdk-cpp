@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取展示Topic名
-                     * @return ShowTopicName 展示Topic名
+                     * 获取主题名称
+                     * @return ShowTopicName 主题名称
                      * 
                      */
                     std::string GetShowTopicName() const;
@@ -77,7 +77,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 展示Topic名
+                     * 主题名称
                      */
                     std::string m_showTopicName;
                     bool m_showTopicNameHasBeenSet;

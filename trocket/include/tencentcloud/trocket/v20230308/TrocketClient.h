@@ -61,6 +61,8 @@
 #include <tencentcloud/trocket/v20230308/model/DeleteTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerClientRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerClientResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerClientListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerClientListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupListRequest.h>
@@ -230,6 +232,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConsumerClientResponse> DescribeConsumerClientOutcome;
                 typedef std::future<DescribeConsumerClientOutcome> DescribeConsumerClientOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerClientRequest&, DescribeConsumerClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerClientAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsumerClientListResponse> DescribeConsumerClientListOutcome;
+                typedef std::future<DescribeConsumerClientListOutcome> DescribeConsumerClientListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerClientListRequest&, DescribeConsumerClientListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerClientListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConsumerGroupResponse> DescribeConsumerGroupOutcome;
                 typedef std::future<DescribeConsumerGroupOutcome> DescribeConsumerGroupOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerGroupRequest&, DescribeConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerGroupAsyncHandler;
@@ -471,7 +476,7 @@ namespace TencentCloud
                 DeleteConsumerGroupOutcomeCallable DeleteConsumerGroupCallable(const Model::DeleteConsumerGroupRequest& request);
 
                 /**
-                 *删除 RocketMQ 5.x 集群。
+                 *删除 RocketMQ 5.x 集群，删除前请先删除正在使用的主题、消费组和角色信息。
                  * @param req DeleteInstanceRequest
                  * @return DeleteInstanceOutcome
                  */
@@ -550,6 +555,15 @@ namespace TencentCloud
                 DescribeConsumerClientOutcome DescribeConsumerClient(const Model::DescribeConsumerClientRequest &request);
                 void DescribeConsumerClientAsync(const Model::DescribeConsumerClientRequest& request, const DescribeConsumerClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConsumerClientOutcomeCallable DescribeConsumerClientCallable(const Model::DescribeConsumerClientRequest& request);
+
+                /**
+                 *查询消费组下的客户端连接列表。
+                 * @param req DescribeConsumerClientListRequest
+                 * @return DescribeConsumerClientListOutcome
+                 */
+                DescribeConsumerClientListOutcome DescribeConsumerClientList(const Model::DescribeConsumerClientListRequest &request);
+                void DescribeConsumerClientListAsync(const Model::DescribeConsumerClientListRequest& request, const DescribeConsumerClientListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsumerClientListOutcomeCallable DescribeConsumerClientListCallable(const Model::DescribeConsumerClientListRequest& request);
 
                 /**
                  *查询消费组详情
@@ -949,7 +963,7 @@ TopicName，主题名称过滤
                 ModifyConsumerGroupOutcomeCallable ModifyConsumerGroupCallable(const Model::ModifyConsumerGroupRequest& request);
 
                 /**
-                 *修改 RocketMQ 5.x 集群属性。
+                 *修改 RocketMQ 5.x 集群属性，仅支持修改运行中的集群。
                  * @param req ModifyInstanceRequest
                  * @return ModifyInstanceOutcome
                  */
@@ -958,7 +972,7 @@ TopicName，主题名称过滤
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
 
                 /**
-                 *修改 RocketMQ 5.x 集群接入点。
+                 *修改 RocketMQ 5.x 集群接入点，操作前请先确认接入点已存在。
                  * @param req ModifyInstanceEndpointRequest
                  * @return ModifyInstanceEndpointOutcome
                  */

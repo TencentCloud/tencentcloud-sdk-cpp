@@ -30,7 +30,8 @@ GetDocPreviewResponse::GetDocPreviewResponse() :
     m_urlHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_newNameHasBeenSet(false),
-    m_parseResultCosUrlHasBeenSet(false)
+    m_parseResultCosUrlHasBeenSet(false),
+    m_isDownloadHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome GetDocPreviewResponse::Deserialize(const string &payload)
         m_parseResultCosUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsDownload") && !rsp["IsDownload"].IsNull())
+    {
+        if (!rsp["IsDownload"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDownload` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDownload = rsp["IsDownload"].GetBool();
+        m_isDownloadHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ string GetDocPreviewResponse::ToJsonString() const
         string key = "ParseResultCosUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_parseResultCosUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDownloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDownload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDownload, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -284,6 +303,16 @@ string GetDocPreviewResponse::GetParseResultCosUrl() const
 bool GetDocPreviewResponse::ParseResultCosUrlHasBeenSet() const
 {
     return m_parseResultCosUrlHasBeenSet;
+}
+
+bool GetDocPreviewResponse::GetIsDownload() const
+{
+    return m_isDownload;
+}
+
+bool GetDocPreviewResponse::IsDownloadHasBeenSet() const
+{
+    return m_isDownloadHasBeenSet;
 }
 
 

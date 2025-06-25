@@ -113,6 +113,20 @@ namespace TencentCloud
                      */
                     bool CVEIDHasBeenSet() const;
 
+                    /**
+                     * 获取漏洞是否支持防御 0:不支持 1:支持
+                     * @return SupportDefense 漏洞是否支持防御 0:不支持 1:支持
+                     * 
+                     */
+                    int64_t GetSupportDefense() const;
+
+                    /**
+                     * 判断参数 SupportDefense 是否已赋值
+                     * @return SupportDefense 是否已赋值
+                     * 
+                     */
+                    bool SupportDefenseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_cVEID;
                     bool m_cVEIDHasBeenSet;
+
+                    /**
+                     * 漏洞是否支持防御 0:不支持 1:支持
+                     */
+                    int64_t m_supportDefense;
+                    bool m_supportDefenseHasBeenSet;
 
                 };
             }
