@@ -44,7 +44,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_enableRecommendedQuestionsHasBeenSet(false),
     m_enableDeepReadHasBeenSet(false),
     m_webSearchOptionsHasBeenSet(false),
-    m_topicChoiceHasBeenSet(false)
+    m_topicChoiceHasBeenSet(false),
+    m_enableThinkingHasBeenSet(false)
 {
 }
 
@@ -250,6 +251,14 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "TopicChoice";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_topicChoice.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableThinkingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableThinking";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableThinking, allocator);
     }
 
 
@@ -610,6 +619,22 @@ void ChatCompletionsRequest::SetTopicChoice(const string& _topicChoice)
 bool ChatCompletionsRequest::TopicChoiceHasBeenSet() const
 {
     return m_topicChoiceHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetEnableThinking() const
+{
+    return m_enableThinking;
+}
+
+void ChatCompletionsRequest::SetEnableThinking(const bool& _enableThinking)
+{
+    m_enableThinking = _enableThinking;
+    m_enableThinkingHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::EnableThinkingHasBeenSet() const
+{
+    return m_enableThinkingHasBeenSet;
 }
 
 

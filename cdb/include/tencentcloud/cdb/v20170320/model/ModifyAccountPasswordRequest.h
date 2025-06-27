@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NewPasswordHasBeenSet() const;
 
                     /**
-                     * 获取云数据库账号。
-                     * @return Accounts 云数据库账号。
+                     * 获取云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @return Accounts 云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     std::vector<Account> GetAccounts() const;
 
                     /**
-                     * 设置云数据库账号。
-                     * @param _accounts 云数据库账号。
+                     * 设置云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @param _accounts 云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     void SetAccounts(const std::vector<Account>& _accounts);
@@ -121,7 +121,7 @@ namespace TencentCloud
                     bool m_newPasswordHasBeenSet;
 
                     /**
-                     * 云数据库账号。
+                     * 云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      */
                     std::vector<Account> m_accounts;
                     bool m_accountsHasBeenSet;

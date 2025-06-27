@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取慢查询详情。
-                     * @return InstanceProxySlowLogDetail 慢查询详情。
+                     * 获取慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。
+                     * @return InstanceProxySlowLogDetail 慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。
                      * 
                      */
                     std::vector<InstanceProxySlowlogDetail> GetInstanceProxySlowLogDetail() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 慢查询详情。
+                     * 慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。
                      */
                     std::vector<InstanceProxySlowlogDetail> m_instanceProxySlowLogDetail;
                     bool m_instanceProxySlowLogDetailHasBeenSet;

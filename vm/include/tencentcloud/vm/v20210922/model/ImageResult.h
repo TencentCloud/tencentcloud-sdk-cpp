@@ -285,6 +285,27 @@ Block 确认违规
                      */
                     bool RecognitionResultsHasBeenSet() const;
 
+                    /**
+                     * 获取审核命中类型
+                     * @return HitType 审核命中类型
+                     * 
+                     */
+                    std::string GetHitType() const;
+
+                    /**
+                     * 设置审核命中类型
+                     * @param _hitType 审核命中类型
+                     * 
+                     */
+                    void SetHitType(const std::string& _hitType);
+
+                    /**
+                     * 判断参数 HitType 是否已赋值
+                     * @return HitType 是否已赋值
+                     * 
+                     */
+                    bool HitTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -352,6 +373,12 @@ Block 确认违规
                      */
                     std::vector<RecognitionResult> m_recognitionResults;
                     bool m_recognitionResultsHasBeenSet;
+
+                    /**
+                     * 审核命中类型
+                     */
+                    std::string m_hitType;
+                    bool m_hitTypeHasBeenSet;
 
                 };
             }

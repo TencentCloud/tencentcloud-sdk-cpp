@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scene 场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scene 场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScene(const std::string& _scene);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSuggestion() const;
 
                     /**
                      * 设置建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suggestion 建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuggestion(const int64_t& _suggestion);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称：歌曲名，语种名，说话人名 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称：歌曲名，语种名，说话人名 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称：歌曲名，语种名，说话人名 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称：歌曲名，语种名，说话人名 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const int64_t& _score);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetStartTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const double& _startTime);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const double& _endTime);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 场景
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;
 
                     /**
                      * 建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 名称：歌曲名，语种名，说话人名 等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 得分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_endTime;
                     bool m_endTimeHasBeenSet;

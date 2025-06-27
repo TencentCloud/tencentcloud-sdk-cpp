@@ -68,6 +68,27 @@ namespace TencentCloud
                     bool PatternHasBeenSet() const;
 
                     /**
+                     * 获取queryHash
+                     * @return QueryHash queryHash
+                     * 
+                     */
+                    std::string GetQueryHash() const;
+
+                    /**
+                     * 设置queryHash
+                     * @param _queryHash queryHash
+                     * 
+                     */
+                    void SetQueryHash(const std::string& _queryHash);
+
+                    /**
+                     * 判断参数 QueryHash 是否已赋值
+                     * @return QueryHash 是否已赋值
+                     * 
+                     */
+                    bool QueryHashHasBeenSet() const;
+
+                    /**
                      * 获取最大执行时间
                      * @return MaxTime 最大执行时间
                      * 
@@ -137,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_pattern;
                     bool m_patternHasBeenSet;
+
+                    /**
+                     * queryHash
+                     */
+                    std::string m_queryHash;
+                    bool m_queryHashHasBeenSet;
 
                     /**
                      * 最大执行时间

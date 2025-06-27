@@ -459,6 +459,8 @@
 #include <tencentcloud/wedata/v20210820/model/GetOfflineDIInstanceListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineInstanceListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineInstanceListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/GetPaginationTaskScriptRequest.h>
+#include <tencentcloud/wedata/v20210820/model/GetPaginationTaskScriptResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetTaskInstanceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetTaskInstanceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/JudgeResourceFileRequest.h>
@@ -1253,6 +1255,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetOfflineInstanceListResponse> GetOfflineInstanceListOutcome;
                 typedef std::future<GetOfflineInstanceListOutcome> GetOfflineInstanceListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetOfflineInstanceListRequest&, GetOfflineInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOfflineInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPaginationTaskScriptResponse> GetPaginationTaskScriptOutcome;
+                typedef std::future<GetPaginationTaskScriptOutcome> GetPaginationTaskScriptOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetPaginationTaskScriptRequest&, GetPaginationTaskScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPaginationTaskScriptAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTaskInstanceResponse> GetTaskInstanceOutcome;
                 typedef std::future<GetTaskInstanceOutcome> GetTaskInstanceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetTaskInstanceRequest&, GetTaskInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskInstanceAsyncHandler;
@@ -3415,6 +3420,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 GetOfflineInstanceListOutcome GetOfflineInstanceList(const Model::GetOfflineInstanceListRequest &request);
                 void GetOfflineInstanceListAsync(const Model::GetOfflineInstanceListRequest& request, const GetOfflineInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetOfflineInstanceListOutcomeCallable GetOfflineInstanceListCallable(const Model::GetOfflineInstanceListRequest& request);
+
+                /**
+                 *获取带分页的任务脚本
+                 * @param req GetPaginationTaskScriptRequest
+                 * @return GetPaginationTaskScriptOutcome
+                 */
+                GetPaginationTaskScriptOutcome GetPaginationTaskScript(const Model::GetPaginationTaskScriptRequest &request);
+                void GetPaginationTaskScriptAsync(const Model::GetPaginationTaskScriptRequest& request, const GetPaginationTaskScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPaginationTaskScriptOutcomeCallable GetPaginationTaskScriptCallable(const Model::GetPaginationTaskScriptRequest& request);
 
                 /**
                  *获取实例列表

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取一级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 一级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置一级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 一级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取二级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabel 二级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
                      * 设置二级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subLabel 二级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
                      * 设置风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出行音频角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioRole 出行音频角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAudioRole() const;
 
                     /**
                      * 设置出行音频角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _audioRole 出行音频角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAudioRole(const std::string& _audioRole);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出行语音文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioText 出行语音文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAudioText() const;
 
                     /**
                      * 设置出行语音文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _audioText 出行语音文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAudioText(const std::string& _audioText);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetStartTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const double& _startTime);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const double& _endTime);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 一级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 二级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
 
                     /**
                      * 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
                      * 出行音频角色
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_audioRole;
                     bool m_audioRoleHasBeenSet;
 
                     /**
                      * 出行语音文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_audioText;
                     bool m_audioTextHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_endTime;
                     bool m_endTimeHasBeenSet;

@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool ExceedCharSizeHasBeenSet() const;
 
                     /**
-                     * 获取是否共享知识库类型
+                     * 获取废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsSharedKnowledge 是否共享知识库类型
+                     * @return IsSharedKnowledge 废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsSharedKnowledge() const;
 
                     /**
-                     * 设置是否共享知识库类型
+                     * 设置废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isSharedKnowledge 是否共享知识库类型
+                     * @param _isSharedKnowledge 废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -170,6 +170,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IsSharedKnowledgeHasBeenSet() const;
+
+                    /**
+                     * 获取知识库类型:0默认1共享
+                     * @return KnowledgeType 知识库类型:0默认1共享
+                     * 
+                     */
+                    int64_t GetKnowledgeType() const;
+
+                    /**
+                     * 设置知识库类型:0默认1共享
+                     * @param _knowledgeType 知识库类型:0默认1共享
+                     * 
+                     */
+                    void SetKnowledgeType(const int64_t& _knowledgeType);
+
+                    /**
+                     * 判断参数 KnowledgeType 是否已赋值
+                     * @return KnowledgeType 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeTypeHasBeenSet() const;
 
                 private:
 
@@ -202,11 +223,17 @@ namespace TencentCloud
                     bool m_exceedCharSizeHasBeenSet;
 
                     /**
-                     * 是否共享知识库类型
+                     * 废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isSharedKnowledge;
                     bool m_isSharedKnowledgeHasBeenSet;
+
+                    /**
+                     * 知识库类型:0默认1共享
+                     */
+                    int64_t m_knowledgeType;
+                    bool m_knowledgeTypeHasBeenSet;
 
                 };
             }

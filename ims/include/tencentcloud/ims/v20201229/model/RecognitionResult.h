@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前可能的取值：Scene（图片场景模型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 当前可能的取值：Scene（图片场景模型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置当前可能的取值：Scene（图片场景模型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 当前可能的取值：Scene（图片场景模型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Label对应模型下的识别标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags Label对应模型下的识别标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecognitionTag> GetTags() const;
 
                     /**
                      * 设置Label对应模型下的识别标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags Label对应模型下的识别标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<RecognitionTag>& _tags);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 当前可能的取值：Scene（图片场景模型）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * Label对应模型下的识别标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecognitionTag> m_tags;
                     bool m_tagsHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取传入的类型可选：URL，COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 传入的类型可选：URL，COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置传入的类型可选：URL，COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 传入的类型可选：URL，COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Url地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url Url地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置Url地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url Url地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -125,14 +117,12 @@ namespace TencentCloud
 
                     /**
                      * 传入的类型可选：URL，COS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * Url地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

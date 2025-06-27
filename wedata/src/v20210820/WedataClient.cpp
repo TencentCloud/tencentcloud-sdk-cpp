@@ -9414,6 +9414,49 @@ WedataClient::GetOfflineInstanceListOutcomeCallable WedataClient::GetOfflineInst
     return task->get_future();
 }
 
+WedataClient::GetPaginationTaskScriptOutcome WedataClient::GetPaginationTaskScript(const GetPaginationTaskScriptRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPaginationTaskScript");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPaginationTaskScriptResponse rsp = GetPaginationTaskScriptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPaginationTaskScriptOutcome(rsp);
+        else
+            return GetPaginationTaskScriptOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPaginationTaskScriptOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetPaginationTaskScriptAsync(const GetPaginationTaskScriptRequest& request, const GetPaginationTaskScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetPaginationTaskScript(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::GetPaginationTaskScriptOutcomeCallable WedataClient::GetPaginationTaskScriptCallable(const GetPaginationTaskScriptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetPaginationTaskScriptOutcome()>>(
+        [this, request]()
+        {
+            return this->GetPaginationTaskScript(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::GetTaskInstanceOutcome WedataClient::GetTaskInstance(const GetTaskInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "GetTaskInstance");

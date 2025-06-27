@@ -158,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回黑白库比对结果的详细信息，如：序号、库名称、恶意标签等信息；详细返回信息敬请参考对应数据结构（[LibDetail](https://cloud.tencent.com/document/product/1125/53274#LibDetail)）的描述文档
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 该字段用于返回黑白库比对结果的详细信息，如：序号、库名称、恶意标签等信息；详细返回信息敬请参考对应数据结构（[LibDetail](https://cloud.tencent.com/document/product/1125/53274#LibDetail)）的描述文档
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LibDetail> GetDetails() const;
 
                     /**
                      * 设置该字段用于返回黑白库比对结果的详细信息，如：序号、库名称、恶意标签等信息；详细返回信息敬请参考对应数据结构（[LibDetail](https://cloud.tencent.com/document/product/1125/53274#LibDetail)）的描述文档
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _details 该字段用于返回黑白库比对结果的详细信息，如：序号、库名称、恶意标签等信息；详细返回信息敬请参考对应数据结构（[LibDetail](https://cloud.tencent.com/document/product/1125/53274#LibDetail)）的描述文档
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetails(const std::vector<LibDetail>& _details);
@@ -216,7 +212,6 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回黑白库比对结果的详细信息，如：序号、库名称、恶意标签等信息；详细返回信息敬请参考对应数据结构（[LibDetail](https://cloud.tencent.com/document/product/1125/53274#LibDetail)）的描述文档
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LibDetail> m_details;
                     bool m_detailsHasBeenSet;

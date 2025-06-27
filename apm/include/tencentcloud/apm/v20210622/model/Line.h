@@ -152,6 +152,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取指标数据单位
+                     * @return MetricUnit 指标数据单位
+                     * 
+                     */
+                    std::string GetMetricUnit() const;
+
+                    /**
+                     * 设置指标数据单位
+                     * @param _metricUnit 指标数据单位
+                     * 
+                     */
+                    void SetMetricUnit(const std::string& _metricUnit);
+
+                    /**
+                     * 判断参数 MetricUnit 是否已赋值
+                     * @return MetricUnit 是否已赋值
+                     * 
+                     */
+                    bool MetricUnitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +204,12 @@ namespace TencentCloud
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 指标数据单位
+                     */
+                    std::string m_metricUnit;
+                    bool m_metricUnitHasBeenSet;
 
                 };
             }

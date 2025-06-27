@@ -22,6 +22,7 @@ using namespace std;
 
 SlowLogPattern::SlowLogPattern() :
     m_patternHasBeenSet(false),
+    m_queryHashHasBeenSet(false),
     m_maxTimeHasBeenSet(false),
     m_averageTimeHasBeenSet(false),
     m_totalHasBeenSet(false)
@@ -41,6 +42,16 @@ CoreInternalOutcome SlowLogPattern::Deserialize(const rapidjson::Value &value)
         }
         m_pattern = string(value["Pattern"].GetString());
         m_patternHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueryHash") && !value["QueryHash"].IsNull())
+    {
+        if (!value["QueryHash"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowLogPattern.QueryHash` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queryHash = string(value["QueryHash"].GetString());
+        m_queryHashHasBeenSet = true;
     }
 
     if (value.HasMember("MaxTime") && !value["MaxTime"].IsNull())
@@ -88,6 +99,14 @@ void SlowLogPattern::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_queryHashHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryHash";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queryHash.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_maxTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -129,6 +148,22 @@ void SlowLogPattern::SetPattern(const string& _pattern)
 bool SlowLogPattern::PatternHasBeenSet() const
 {
     return m_patternHasBeenSet;
+}
+
+string SlowLogPattern::GetQueryHash() const
+{
+    return m_queryHash;
+}
+
+void SlowLogPattern::SetQueryHash(const string& _queryHash)
+{
+    m_queryHash = _queryHash;
+    m_queryHashHasBeenSet = true;
+}
+
+bool SlowLogPattern::QueryHashHasBeenSet() const
+{
+    return m_queryHashHasBeenSet;
 }
 
 uint64_t SlowLogPattern::GetMaxTime() const

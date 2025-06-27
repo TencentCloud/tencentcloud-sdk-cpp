@@ -86,8 +86,16 @@ namespace TencentCloud
                     bool ConsumerLagHasBeenSet() const;
 
                     /**
-                     * 获取消费者类型
-                     * @return ConsumeType 消费者类型
+                     * 获取消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
+                     * @return ConsumeType 消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
                      * 
                      */
                     std::string GetConsumeType() const;
@@ -100,8 +108,8 @@ namespace TencentCloud
                     bool ConsumeTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，秒为单位
-                     * @return CreatedTime 创建时间，秒为单位
+                     * 获取创建时间，**Unix时间戳（毫秒）**
+                     * @return CreatedTime 创建时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetCreatedTime() const;
@@ -210,13 +218,17 @@ CLUSTERING 集群模式
                     bool m_consumerLagHasBeenSet;
 
                     /**
-                     * 消费者类型
+                     * 消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
                      */
                     std::string m_consumeType;
                     bool m_consumeTypeHasBeenSet;
 
                     /**
-                     * 创建时间，秒为单位
+                     * 创建时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;

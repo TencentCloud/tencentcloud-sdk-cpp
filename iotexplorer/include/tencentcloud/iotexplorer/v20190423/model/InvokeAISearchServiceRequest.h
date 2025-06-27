@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取是否需要返回总结，默认为False；  开启后会加大接口响应时长
-                     * @return EnableSummary 是否需要返回总结，默认为False；  开启后会加大接口响应时长
+                     * 获取是否需要返回总结，默认为True；  开启后会加大接口响应时长
+                     * @return EnableSummary 是否需要返回总结，默认为True；  开启后会加大接口响应时长
                      * 
                      */
                     bool GetEnableSummary() const;
 
                     /**
-                     * 设置是否需要返回总结，默认为False；  开启后会加大接口响应时长
-                     * @param _enableSummary 是否需要返回总结，默认为False；  开启后会加大接口响应时长
+                     * 设置是否需要返回总结，默认为True；  开启后会加大接口响应时长
+                     * @param _enableSummary 是否需要返回总结，默认为True；  开启后会加大接口响应时长
                      * 
                      */
                     void SetEnableSummary(const bool& _enableSummary);
@@ -320,7 +320,7 @@ namespace TencentCloud
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 是否需要返回总结，默认为False；  开启后会加大接口响应时长
+                     * 是否需要返回总结，默认为True；  开启后会加大接口响应时长
                      */
                     bool m_enableSummary;
                     bool m_enableSummaryHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称
-                     * @return Topic 主题名称
+                     * 获取主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
+                     * @return Topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题名称
-                     * @param _topic 主题名称
+                     * 设置主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
+                     * @param _topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -127,15 +127,15 @@ TRANSACTION:事务消息
                     bool TopicTypeHasBeenSet() const;
 
                     /**
-                     * 获取队列数量
-                     * @return QueueNum 队列数量
+                     * 获取队列数量，取值范围3～16
+                     * @return QueueNum 队列数量，取值范围3～16
                      * 
                      */
                     int64_t GetQueueNum() const;
 
                     /**
-                     * 设置队列数量
-                     * @param _queueNum 队列数量
+                     * 设置队列数量，取值范围3～16
+                     * @param _queueNum 队列数量，取值范围3～16
                      * 
                      */
                     void SetQueueNum(const int64_t& _queueNum);
@@ -148,15 +148,15 @@ TRANSACTION:事务消息
                     bool QueueNumHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取备注，最多 128 字符
+                     * @return Remark 备注，最多 128 字符
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置备注，最多 128 字符
+                     * @param _remark 备注，最多 128 字符
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -169,15 +169,15 @@ TRANSACTION:事务消息
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取消息保留时长
-                     * @return MsgTTL 消息保留时长
+                     * 获取消息保留时长（单位：小时）
+                     * @return MsgTTL 消息保留时长（单位：小时）
                      * 
                      */
                     int64_t GetMsgTTL() const;
 
                     /**
-                     * 设置消息保留时长
-                     * @param _msgTTL 消息保留时长
+                     * 设置消息保留时长（单位：小时）
+                     * @param _msgTTL 消息保留时长（单位：小时）
                      * 
                      */
                     void SetMsgTTL(const int64_t& _msgTTL);
@@ -213,13 +213,13 @@ TRANSACTION:事务消息
                 private:
 
                     /**
-                     * 集群ID
+                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名称
+                     * 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
@@ -236,19 +236,19 @@ TRANSACTION:事务消息
                     bool m_topicTypeHasBeenSet;
 
                     /**
-                     * 队列数量
+                     * 队列数量，取值范围3～16
                      */
                     int64_t m_queueNum;
                     bool m_queueNumHasBeenSet;
 
                     /**
-                     * 备注
+                     * 备注，最多 128 字符
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 消息保留时长
+                     * 消息保留时长（单位：小时）
                      */
                     int64_t m_msgTTL;
                     bool m_msgTTLHasBeenSet;

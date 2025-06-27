@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库的账号，包括用户名和域名。
-                     * @return Accounts 数据库的账号，包括用户名和域名。
+                     * 获取数据库的账号，包括用户名和域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @return Accounts 数据库的账号，包括用户名和域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     std::vector<Account> GetAccounts() const;
 
                     /**
-                     * 设置数据库的账号，包括用户名和域名。
-                     * @param _accounts 数据库的账号，包括用户名和域名。
+                     * 设置数据库的账号，包括用户名和域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @param _accounts 数据库的账号，包括用户名和域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     void SetAccounts(const std::vector<Account>& _accounts);
@@ -218,7 +218,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据库的账号，包括用户名和域名。
+                     * 数据库的账号，包括用户名和域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      */
                     std::vector<Account> m_accounts;
                     bool m_accountsHasBeenSet;

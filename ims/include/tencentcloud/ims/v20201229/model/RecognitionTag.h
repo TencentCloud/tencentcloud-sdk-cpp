@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 标签名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置标签名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 标签名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取置信分：0～100，数值越大表示置信度越高
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 置信分：0～100，数值越大表示置信度越高
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置置信分：0～100，数值越大表示置信度越高
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 置信分：0～100，数值越大表示置信度越高
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const int64_t& _score);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签位置信息，若模型无位置信息，则可能为零值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 标签位置信息，若模型无位置信息，则可能为零值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Location GetLocation() const;
 
                     /**
                      * 设置标签位置信息，若模型无位置信息，则可能为零值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location 标签位置信息，若模型无位置信息，则可能为零值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const Location& _location);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 标签名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 置信分：0～100，数值越大表示置信度越高
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
                      * 标签位置信息，若模型无位置信息，则可能为零值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Location m_location;
                     bool m_locationHasBeenSet;

@@ -29,7 +29,8 @@ ImageResult::ImageResult() :
     m_urlHasBeenSet(false),
     m_extraHasBeenSet(false),
     m_subLabelHasBeenSet(false),
-    m_recognitionResultsHasBeenSet(false)
+    m_recognitionResultsHasBeenSet(false),
+    m_hitTypeHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome ImageResult::Deserialize(const rapidjson::Value &value)
         m_recognitionResultsHasBeenSet = true;
     }
 
+    if (value.HasMember("HitType") && !value["HitType"].IsNull())
+    {
+        if (!value["HitType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageResult.HitType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitType = string(value["HitType"].GetString());
+        m_hitTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -239,6 +250,14 @@ void ImageResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hitType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -386,5 +405,21 @@ void ImageResult::SetRecognitionResults(const vector<RecognitionResult>& _recogn
 bool ImageResult::RecognitionResultsHasBeenSet() const
 {
     return m_recognitionResultsHasBeenSet;
+}
+
+string ImageResult::GetHitType() const
+{
+    return m_hitType;
+}
+
+void ImageResult::SetHitType(const string& _hitType)
+{
+    m_hitType = _hitType;
+    m_hitTypeHasBeenSet = true;
+}
+
+bool ImageResult::HitTypeHasBeenSet() const
+{
+    return m_hitTypeHasBeenSet;
 }
 

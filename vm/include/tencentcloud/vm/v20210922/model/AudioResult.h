@@ -435,6 +435,27 @@ namespace TencentCloud
                      */
                     bool LabelResultsHasBeenSet() const;
 
+                    /**
+                     * 获取审核命中类型
+                     * @return HitType 审核命中类型
+                     * 
+                     */
+                    std::string GetHitType() const;
+
+                    /**
+                     * 设置审核命中类型
+                     * @param _hitType 审核命中类型
+                     * 
+                     */
+                    void SetHitType(const std::string& _hitType);
+
+                    /**
+                     * 判断参数 HitType 是否已赋值
+                     * @return HitType 是否已赋值
+                     * 
+                     */
+                    bool HitTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -545,6 +566,12 @@ namespace TencentCloud
                      */
                     std::vector<LabelResult> m_labelResults;
                     bool m_labelResultsHasBeenSet;
+
+                    /**
+                     * 审核命中类型
+                     */
+                    std::string m_hitType;
+                    bool m_hitTypeHasBeenSet;
 
                 };
             }

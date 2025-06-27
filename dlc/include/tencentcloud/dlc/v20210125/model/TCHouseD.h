@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Doirs数据源详细信息
+                * Doris数据源详细信息
                 */
                 class TCHouseD : public AbstractModel
                 {

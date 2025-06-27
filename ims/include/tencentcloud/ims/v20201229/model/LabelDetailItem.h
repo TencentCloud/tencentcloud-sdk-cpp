@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回识别对象的ID以方便识别和区分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 该字段用于返回识别对象的ID以方便识别和区分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置该字段用于返回识别对象的ID以方便识别和区分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 该字段用于返回识别对象的ID以方便识别和区分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回识命中的子标签名称。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 该字段用于返回识命中的子标签名称。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取该字段用于返回时命中的子标签名称。
+                     * @return Name 该字段用于返回时命中的子标签名称。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置该字段用于返回识命中的子标签名称。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 该字段用于返回识命中的子标签名称。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置该字段用于返回时命中的子标签名称。
+                     * @param _name 该字段用于返回时命中的子标签名称。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScore() const;
 
                     /**
                      * 设置该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const uint64_t& _score);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回识别对象的ID以方便识别和区分。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 该字段用于返回识命中的子标签名称。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 该字段用于返回时命中的子标签名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_score;
                     bool m_scoreHasBeenSet;

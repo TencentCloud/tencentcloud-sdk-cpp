@@ -25,7 +25,8 @@ MediaAiAnalysisDescriptionItem::MediaAiAnalysisDescriptionItem() :
     m_confidenceHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_keywordsHasBeenSet(false),
-    m_paragraphsHasBeenSet(false)
+    m_paragraphsHasBeenSet(false),
+    m_mindMapUrlHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,16 @@ CoreInternalOutcome MediaAiAnalysisDescriptionItem::Deserialize(const rapidjson:
         m_paragraphsHasBeenSet = true;
     }
 
+    if (value.HasMember("MindMapUrl") && !value["MindMapUrl"].IsNull())
+    {
+        if (!value["MindMapUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisDescriptionItem.MindMapUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mindMapUrl = string(value["MindMapUrl"].GetString());
+        m_mindMapUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +165,14 @@ void MediaAiAnalysisDescriptionItem::ToJsonObject(rapidjson::Value &value, rapid
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_mindMapUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MindMapUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mindMapUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -237,5 +256,21 @@ void MediaAiAnalysisDescriptionItem::SetParagraphs(const vector<AiParagraphInfo>
 bool MediaAiAnalysisDescriptionItem::ParagraphsHasBeenSet() const
 {
     return m_paragraphsHasBeenSet;
+}
+
+string MediaAiAnalysisDescriptionItem::GetMindMapUrl() const
+{
+    return m_mindMapUrl;
+}
+
+void MediaAiAnalysisDescriptionItem::SetMindMapUrl(const string& _mindMapUrl)
+{
+    m_mindMapUrl = _mindMapUrl;
+    m_mindMapUrlHasBeenSet = true;
+}
+
+bool MediaAiAnalysisDescriptionItem::MindMapUrlHasBeenSet() const
+{
+    return m_mindMapUrlHasBeenSet;
 }
 

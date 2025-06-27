@@ -147,15 +147,15 @@ TRANSACTION:事务消息
                     bool QueueNumHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Remark 描述
+                     * 获取备注信息
+                     * @return Remark 备注信息
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置描述
-                     * @param _remark 描述
+                     * 设置备注信息
+                     * @param _remark 备注信息
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -269,18 +269,14 @@ TRANSACTION:事务消息
 
                     /**
                      * 获取消息保留时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgTTL 消息保留时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMsgTTL() const;
 
                     /**
                      * 设置消息保留时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _msgTTL 消息保留时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMsgTTL(const int64_t& _msgTTL);
@@ -323,7 +319,7 @@ TRANSACTION:事务消息
                     bool m_queueNumHasBeenSet;
 
                     /**
-                     * 描述
+                     * 备注信息
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -358,7 +354,6 @@ TRANSACTION:事务消息
 
                     /**
                      * 消息保留时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_msgTTL;
                     bool m_msgTTLHasBeenSet;

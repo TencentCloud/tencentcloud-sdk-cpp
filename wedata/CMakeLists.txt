@@ -378,6 +378,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/BatchCreateTaskVersionAsyncRequest.h
   include/tencentcloud/wedata/v20210820/model/TaskTypeOpsDto.h
   include/tencentcloud/wedata/v20210820/model/BatchModifyOpsOwnersResponse.h
+  include/tencentcloud/wedata/v20210820/model/GetPaginationTaskScriptResponseInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeDsTaskVersionListRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateTaskAlarmRegularResponse.h
   include/tencentcloud/wedata/v20210820/model/DeleteRuleTemplateRequest.h
@@ -582,6 +583,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/RunRerunScheduleInstancesResponse.h
   include/tencentcloud/wedata/v20210820/model/DependencyConfig.h
   include/tencentcloud/wedata/v20210820/model/RobAndLockIntegrationTaskRequest.h
+  include/tencentcloud/wedata/v20210820/model/GetPaginationTaskScriptRequest.h
   include/tencentcloud/wedata/v20210820/model/InstanceLogVO.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/DataCheckStat.h
@@ -881,6 +883,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/FolderOpsDto.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskLockStatusRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleExecStatRequest.h
+  include/tencentcloud/wedata/v20210820/model/GetPaginationTaskScriptResponse.h
   include/tencentcloud/wedata/v20210820/model/GetInstanceLogRequest.h
   include/tencentcloud/wedata/v20210820/model/RuleConfig.h
   include/tencentcloud/wedata/v20210820/model/LogContent.h
@@ -1281,6 +1284,7 @@ set(wedata_src
   src/v20210820/model/BatchCreateTaskVersionAsyncRequest.cpp
   src/v20210820/model/TaskTypeOpsDto.cpp
   src/v20210820/model/BatchModifyOpsOwnersResponse.cpp
+  src/v20210820/model/GetPaginationTaskScriptResponseInfo.cpp
   src/v20210820/model/DescribeDsTaskVersionListRequest.cpp
   src/v20210820/model/CreateTaskAlarmRegularResponse.cpp
   src/v20210820/model/DeleteRuleTemplateRequest.cpp
@@ -1485,6 +1489,7 @@ set(wedata_src
   src/v20210820/model/RunRerunScheduleInstancesResponse.cpp
   src/v20210820/model/DependencyConfig.cpp
   src/v20210820/model/RobAndLockIntegrationTaskRequest.cpp
+  src/v20210820/model/GetPaginationTaskScriptRequest.cpp
   src/v20210820/model/InstanceLogVO.cpp
   src/v20210820/model/ModifyTaskInfoResponse.cpp
   src/v20210820/model/DataCheckStat.cpp
@@ -1784,6 +1789,7 @@ set(wedata_src
   src/v20210820/model/FolderOpsDto.cpp
   src/v20210820/model/DescribeTaskLockStatusRequest.cpp
   src/v20210820/model/DescribeRuleExecStatRequest.cpp
+  src/v20210820/model/GetPaginationTaskScriptResponse.cpp
   src/v20210820/model/GetInstanceLogRequest.cpp
   src/v20210820/model/RuleConfig.cpp
   src/v20210820/model/LogContent.cpp

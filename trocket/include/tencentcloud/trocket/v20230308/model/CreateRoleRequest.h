@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool PermTypeHasBeenSet() const;
 
                     /**
-                     * 获取Topic&Group维度权限配置
-                     * @return DetailedPerms Topic&Group维度权限配置
+                     * 获取Topic&Group维度权限配置，权限类型为 TopicAndGroup 时必填
+                     * @return DetailedPerms Topic&Group维度权限配置，权限类型为 TopicAndGroup 时必填
                      * 
                      */
                     std::vector<DetailedRolePerm> GetDetailedPerms() const;
 
                     /**
-                     * 设置Topic&Group维度权限配置
-                     * @param _detailedPerms Topic&Group维度权限配置
+                     * 设置Topic&Group维度权限配置，权限类型为 TopicAndGroup 时必填
+                     * @param _detailedPerms Topic&Group维度权限配置，权限类型为 TopicAndGroup 时必填
                      * 
                      */
                     void SetDetailedPerms(const std::vector<DetailedRolePerm>& _detailedPerms);
@@ -193,7 +193,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -229,7 +229,7 @@ namespace TencentCloud
                     bool m_permTypeHasBeenSet;
 
                     /**
-                     * Topic&Group维度权限配置
+                     * Topic&Group维度权限配置，权限类型为 TopicAndGroup 时必填
                      */
                     std::vector<DetailedRolePerm> m_detailedPerms;
                     bool m_detailedPermsHasBeenSet;

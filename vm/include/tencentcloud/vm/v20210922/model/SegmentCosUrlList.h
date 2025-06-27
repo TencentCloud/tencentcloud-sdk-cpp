@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取全量图片片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageAllUrl 全量图片片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageAllUrl() const;
 
                     /**
                      * 设置全量图片片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageAllUrl 全量图片片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageAllUrl(const std::string& _imageAllUrl);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取全量音频片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioAllUrl 全量音频片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAudioAllUrl() const;
 
                     /**
                      * 设置全量音频片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _audioAllUrl 全量音频片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAudioAllUrl(const std::string& _audioAllUrl);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取违规图片片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageBlockUrl 违规图片片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageBlockUrl() const;
 
                     /**
                      * 设置违规图片片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageBlockUrl 违规图片片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageBlockUrl(const std::string& _imageBlockUrl);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取违规音频片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioBlockUrl 违规音频片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAudioBlockUrl() const;
 
                     /**
                      * 设置违规音频片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _audioBlockUrl 违规音频片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAudioBlockUrl(const std::string& _audioBlockUrl);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取全量音频识别文本的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrUrl 全量音频识别文本的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAsrUrl() const;
 
                     /**
                      * 设置全量音频识别文本的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrUrl 全量音频识别文本的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrUrl(const std::string& _asrUrl);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 全量图片片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageAllUrl;
                     bool m_imageAllUrlHasBeenSet;
 
                     /**
                      * 全量音频片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_audioAllUrl;
                     bool m_audioAllUrlHasBeenSet;
 
                     /**
                      * 违规图片片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageBlockUrl;
                     bool m_imageBlockUrlHasBeenSet;
 
                     /**
                      * 违规音频片段的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_audioBlockUrl;
                     bool m_audioBlockUrlHasBeenSet;
 
                     /**
                      * 全量音频识别文本的cos url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asrUrl;
                     bool m_asrUrlHasBeenSet;

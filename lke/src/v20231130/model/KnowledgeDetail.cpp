@@ -25,7 +25,8 @@ KnowledgeDetail::KnowledgeDetail() :
     m_usedCharSizeHasBeenSet(false),
     m_proportionHasBeenSet(false),
     m_exceedCharSizeHasBeenSet(false),
-    m_isSharedKnowledgeHasBeenSet(false)
+    m_isSharedKnowledgeHasBeenSet(false),
+    m_knowledgeTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome KnowledgeDetail::Deserialize(const rapidjson::Value &value)
         m_isSharedKnowledgeHasBeenSet = true;
     }
 
+    if (value.HasMember("KnowledgeType") && !value["KnowledgeType"].IsNull())
+    {
+        if (!value["KnowledgeType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeDetail.KnowledgeType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_knowledgeType = value["KnowledgeType"].GetInt64();
+        m_knowledgeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void KnowledgeDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsSharedKnowledge";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSharedKnowledge, allocator);
+    }
+
+    if (m_knowledgeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_knowledgeType, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void KnowledgeDetail::SetIsSharedKnowledge(const bool& _isSharedKnowledge)
 bool KnowledgeDetail::IsSharedKnowledgeHasBeenSet() const
 {
     return m_isSharedKnowledgeHasBeenSet;
+}
+
+int64_t KnowledgeDetail::GetKnowledgeType() const
+{
+    return m_knowledgeType;
+}
+
+void KnowledgeDetail::SetKnowledgeType(const int64_t& _knowledgeType)
+{
+    m_knowledgeType = _knowledgeType;
+    m_knowledgeTypeHasBeenSet = true;
+}
+
+bool KnowledgeDetail::KnowledgeTypeHasBeenSet() const
+{
+    return m_knowledgeTypeHasBeenSet;
 }
 

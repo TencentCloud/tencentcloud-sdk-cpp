@@ -87,14 +87,30 @@ namespace TencentCloud
 
                     /**
                      * 获取新账户的密码。
+说明：
+1. 在8 ～ 64位字符数以内（推荐12位以上）。
+2. 至少包含其中两项：小写字母 a ~ z 或 大写字母 A ～ Z。数字0 ～ 9。_+-,&=!@#$%^*().|。
+3. 不能包含非法字符。
                      * @return Password 新账户的密码。
+说明：
+1. 在8 ～ 64位字符数以内（推荐12位以上）。
+2. 至少包含其中两项：小写字母 a ~ z 或 大写字母 A ～ Z。数字0 ～ 9。_+-,&=!@#$%^*().|。
+3. 不能包含非法字符。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置新账户的密码。
+说明：
+1. 在8 ～ 64位字符数以内（推荐12位以上）。
+2. 至少包含其中两项：小写字母 a ~ z 或 大写字母 A ～ Z。数字0 ～ 9。_+-,&=!@#$%^*().|。
+3. 不能包含非法字符。
                      * @param _password 新账户的密码。
+说明：
+1. 在8 ～ 64位字符数以内（推荐12位以上）。
+2. 至少包含其中两项：小写字母 a ~ z 或 大写字母 A ～ Z。数字0 ～ 9。_+-,&=!@#$%^*().|。
+3. 不能包含非法字符。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -107,15 +123,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取备注信息。
-                     * @return Description 备注信息。
+                     * 获取备注信息。最多支持输入255个字符。
+                     * @return Description 备注信息。最多支持输入255个字符。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置备注信息。
-                     * @param _description 备注信息。
+                     * 设置备注信息。最多支持输入255个字符。
+                     * @param _description 备注信息。最多支持输入255个字符。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -164,12 +180,16 @@ namespace TencentCloud
 
                     /**
                      * 新账户的密码。
+说明：
+1. 在8 ～ 64位字符数以内（推荐12位以上）。
+2. 至少包含其中两项：小写字母 a ~ z 或 大写字母 A ～ Z。数字0 ～ 9。_+-,&=!@#$%^*().|。
+3. 不能包含非法字符。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 备注信息。
+                     * 备注信息。最多支持输入255个字符。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

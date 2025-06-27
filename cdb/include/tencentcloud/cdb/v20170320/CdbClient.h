@@ -1014,7 +1014,7 @@ namespace TencentCloud
                 CloseWanServiceOutcomeCallable CloseWanServiceCallable(const Model::CloseWanServiceRequest& request);
 
                 /**
-                 *本接口(CreateAccounts)用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息以及最大可用连接数。
+                 *本接口（CreateAccounts）用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息以及最大可用连接数。
                  * @param req CreateAccountsRequest
                  * @return CreateAccountsOutcome
                  */
@@ -1970,7 +1970,7 @@ namespace TencentCloud
                 ModifyAccountHostOutcomeCallable ModifyAccountHostCallable(const Model::ModifyAccountHostRequest& request);
 
                 /**
-                 *本接口(ModifyAccountMaxUserConnections)用于修改云数据库账户最大可用连接数。
+                 *本接口（ModifyAccountMaxUserConnections）用于修改云数据库账户最大可用连接数。
                  * @param req ModifyAccountMaxUserConnectionsRequest
                  * @return ModifyAccountMaxUserConnectionsOutcome
                  */

@@ -52,12 +52,10 @@ namespace TencentCloud
 以及其他令人反感、不安全或不适宜的内容类型。
 
 如音频中无复杂类型「TextResults」的返回则代表该音频中无相关违规内容；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告。
 以及其他令人反感、不安全或不适宜的内容类型。
 
 如音频中无复杂类型「TextResults」的返回则代表该音频中无相关违规内容；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
@@ -67,12 +65,10 @@ namespace TencentCloud
 以及其他令人反感、不安全或不适宜的内容类型。
 
 如音频中无复杂类型「TextResults」的返回则代表该音频中无相关违规内容；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告。
 以及其他令人反感、不安全或不适宜的内容类型。
 
 如音频中无复杂类型「TextResults」的返回则代表该音频中无相关违规内容；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -86,18 +82,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命中的关键词，为空则代表该违规内容出自于模型的判断；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keywords 命中的关键词，为空则代表该违规内容出自于模型的判断；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
                      * 设置命中的关键词，为空则代表该违规内容出自于模型的判断；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keywords 命中的关键词，为空则代表该违规内容出自于模型的判断；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
@@ -111,18 +103,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命中关键词库的库标识；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibId 命中关键词库的库标识；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLibId() const;
 
                     /**
                      * 设置命中关键词库的库标识；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _libId 命中关键词库的库标识；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLibId(const std::string& _libId);
@@ -136,18 +124,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命中关键词库的名字；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibName 命中关键词库的名字；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLibName() const;
 
                     /**
                      * 设置命中关键词库的名字；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _libName 命中关键词库的名字；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLibName(const std::string& _libName);
@@ -162,10 +146,8 @@ namespace TencentCloud
                     /**
                      * 获取机器判断当前分类的置信度，取值范围：0~100。分数越高，表示越有可能属于当前分类。
 （如：Porn 99，则该样本属于色情的置信度非常高。）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 机器判断当前分类的置信度，取值范围：0~100。分数越高，表示越有可能属于当前分类。
 （如：Porn 99，则该样本属于色情的置信度非常高。）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScore() const;
@@ -173,10 +155,8 @@ namespace TencentCloud
                     /**
                      * 设置机器判断当前分类的置信度，取值范围：0~100。分数越高，表示越有可能属于当前分类。
 （如：Porn 99，则该样本属于色情的置信度非常高。）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 机器判断当前分类的置信度，取值范围：0~100。分数越高，表示越有可能属于当前分类。
 （如：Porn 99，则该样本属于色情的置信度非常高。）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const int64_t& _score);
@@ -191,10 +171,8 @@ namespace TencentCloud
                     /**
                      * 获取建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuggestion() const;
@@ -202,10 +180,8 @@ namespace TencentCloud
                     /**
                      * 设置建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suggestion 建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -248,22 +224,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabel 该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
                      * 设置该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subLabel 该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
@@ -303,28 +271,24 @@ namespace TencentCloud
 以及其他令人反感、不安全或不适宜的内容类型。
 
 如音频中无复杂类型「TextResults」的返回则代表该音频中无相关违规内容；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 命中的关键词，为空则代表该违规内容出自于模型的判断；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;
 
                     /**
                      * 命中关键词库的库标识；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_libId;
                     bool m_libIdHasBeenSet;
 
                     /**
                      * 命中关键词库的名字；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_libName;
                     bool m_libNameHasBeenSet;
@@ -332,7 +296,6 @@ namespace TencentCloud
                     /**
                      * 机器判断当前分类的置信度，取值范围：0~100。分数越高，表示越有可能属于当前分类。
 （如：Porn 99，则该样本属于色情的置信度非常高。）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
@@ -340,7 +303,6 @@ namespace TencentCloud
                     /**
                      * 建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
@@ -355,8 +317,6 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;

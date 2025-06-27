@@ -173,15 +173,19 @@ namespace TencentCloud
                     bool DataEngineNameHasBeenSet() const;
 
                     /**
-                     * 获取单位毫秒，引擎内执行耗时
-                     * @return JobTimeSum 单位毫秒，引擎内执行耗时
+                     * 获取单位毫秒，引擎内执行耗时, 反映真正用于计算所需的耗时，即从  Spark 任务第一个 Task  开始执行到任务结束之间的耗时。
+具体的：会统计任务的每个 Spark Stage 第一个 Task 到最后一个 Task 完成时长之和，不包含任务开始的排队耗时（即剔除从任务提交到 Spark Task 开始执行之间的调度等其他耗时），也不包含任务执行过程中多个 Spark Stage 之间因 executor 资源不足而等待执行 Task 所消耗的时间。
+                     * @return JobTimeSum 单位毫秒，引擎内执行耗时, 反映真正用于计算所需的耗时，即从  Spark 任务第一个 Task  开始执行到任务结束之间的耗时。
+具体的：会统计任务的每个 Spark Stage 第一个 Task 到最后一个 Task 完成时长之和，不包含任务开始的排队耗时（即剔除从任务提交到 Spark Task 开始执行之间的调度等其他耗时），也不包含任务执行过程中多个 Spark Stage 之间因 executor 资源不足而等待执行 Task 所消耗的时间。
                      * 
                      */
                     int64_t GetJobTimeSum() const;
 
                     /**
-                     * 设置单位毫秒，引擎内执行耗时
-                     * @param _jobTimeSum 单位毫秒，引擎内执行耗时
+                     * 设置单位毫秒，引擎内执行耗时, 反映真正用于计算所需的耗时，即从  Spark 任务第一个 Task  开始执行到任务结束之间的耗时。
+具体的：会统计任务的每个 Spark Stage 第一个 Task 到最后一个 Task 完成时长之和，不包含任务开始的排队耗时（即剔除从任务提交到 Spark Task 开始执行之间的调度等其他耗时），也不包含任务执行过程中多个 Spark Stage 之间因 executor 资源不足而等待执行 Task 所消耗的时间。
+                     * @param _jobTimeSum 单位毫秒，引擎内执行耗时, 反映真正用于计算所需的耗时，即从  Spark 任务第一个 Task  开始执行到任务结束之间的耗时。
+具体的：会统计任务的每个 Spark Stage 第一个 Task 到最后一个 Task 完成时长之和，不包含任务开始的排队耗时（即剔除从任务提交到 Spark Task 开始执行之间的调度等其他耗时），也不包含任务执行过程中多个 Spark Stage 之间因 executor 资源不足而等待执行 Task 所消耗的时间。
                      * 
                      */
                     void SetJobTimeSum(const int64_t& _jobTimeSum);
@@ -194,15 +198,15 @@ namespace TencentCloud
                     bool JobTimeSumHasBeenSet() const;
 
                     /**
-                     * 获取单位秒，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和
-                     * @return TaskTimeSum 单位秒，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和
+                     * 获取单位秒，累计 CPU* 秒 ( 累计 CPU * 时 = 累计 CPU* 秒/ 3600)，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和
+                     * @return TaskTimeSum 单位秒，累计 CPU* 秒 ( 累计 CPU * 时 = 累计 CPU* 秒/ 3600)，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和
                      * 
                      */
                     int64_t GetTaskTimeSum() const;
 
                     /**
-                     * 设置单位秒，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和
-                     * @param _taskTimeSum 单位秒，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和
+                     * 设置单位秒，累计 CPU* 秒 ( 累计 CPU * 时 = 累计 CPU* 秒/ 3600)，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和
+                     * @param _taskTimeSum 单位秒，累计 CPU* 秒 ( 累计 CPU * 时 = 累计 CPU* 秒/ 3600)，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和
                      * 
                      */
                     void SetTaskTimeSum(const int64_t& _taskTimeSum);
@@ -442,13 +446,14 @@ namespace TencentCloud
                     bool m_dataEngineNameHasBeenSet;
 
                     /**
-                     * 单位毫秒，引擎内执行耗时
+                     * 单位毫秒，引擎内执行耗时, 反映真正用于计算所需的耗时，即从  Spark 任务第一个 Task  开始执行到任务结束之间的耗时。
+具体的：会统计任务的每个 Spark Stage 第一个 Task 到最后一个 Task 完成时长之和，不包含任务开始的排队耗时（即剔除从任务提交到 Spark Task 开始执行之间的调度等其他耗时），也不包含任务执行过程中多个 Spark Stage 之间因 executor 资源不足而等待执行 Task 所消耗的时间。
                      */
                     int64_t m_jobTimeSum;
                     bool m_jobTimeSumHasBeenSet;
 
                     /**
-                     * 单位秒，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和
+                     * 单位秒，累计 CPU* 秒 ( 累计 CPU * 时 = 累计 CPU* 秒/ 3600)，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和
                      */
                     int64_t m_taskTimeSum;
                     bool m_taskTimeSumHasBeenSet;

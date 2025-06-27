@@ -38,7 +38,8 @@ AudioResult::AudioResult() :
     m_labelResultsHasBeenSet(false),
     m_travelResultsHasBeenSet(false),
     m_subTagHasBeenSet(false),
-    m_subTagCodeHasBeenSet(false)
+    m_subTagCodeHasBeenSet(false),
+    m_hitTypeHasBeenSet(false)
 {
 }
 
@@ -297,6 +298,16 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
         m_subTagCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("HitType") && !value["HitType"].IsNull())
+    {
+        if (!value["HitType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioResult.HitType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitType = string(value["HitType"].GetString());
+        m_hitTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -495,6 +506,14 @@ void AudioResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SubTagCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subTagCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hitType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -786,5 +805,21 @@ void AudioResult::SetSubTagCode(const string& _subTagCode)
 bool AudioResult::SubTagCodeHasBeenSet() const
 {
     return m_subTagCodeHasBeenSet;
+}
+
+string AudioResult::GetHitType() const
+{
+    return m_hitType;
+}
+
+void AudioResult::SetHitType(const string& _hitType)
+{
+    m_hitType = _hitType;
+    m_hitTypeHasBeenSet = true;
+}
+
+bool AudioResult::HitTypeHasBeenSet() const
+{
+    return m_hitTypeHasBeenSet;
 }
 

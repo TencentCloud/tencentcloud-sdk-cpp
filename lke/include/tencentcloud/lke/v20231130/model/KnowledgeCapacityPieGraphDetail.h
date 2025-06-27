@@ -121,6 +121,27 @@ namespace TencentCloud
                      */
                     bool ProportionHasBeenSet() const;
 
+                    /**
+                     * 获取知识库类型:0默认1共享
+                     * @return KnowledgeType 知识库类型:0默认1共享
+                     * 
+                     */
+                    int64_t GetKnowledgeType() const;
+
+                    /**
+                     * 设置知识库类型:0默认1共享
+                     * @param _knowledgeType 知识库类型:0默认1共享
+                     * 
+                     */
+                    void SetKnowledgeType(const int64_t& _knowledgeType);
+
+                    /**
+                     * 判断参数 KnowledgeType 是否已赋值
+                     * @return KnowledgeType 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +164,12 @@ namespace TencentCloud
                      */
                     double m_proportion;
                     bool m_proportionHasBeenSet;
+
+                    /**
+                     * 知识库类型:0默认1共享
+                     */
+                    int64_t m_knowledgeType;
+                    bool m_knowledgeTypeHasBeenSet;
 
                 };
             }

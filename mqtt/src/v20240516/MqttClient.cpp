@@ -1459,6 +1459,49 @@ MqttClient::DescribeMessageByTopicOutcomeCallable MqttClient::DescribeMessageByT
     return task->get_future();
 }
 
+MqttClient::DescribeMessageDetailsOutcome MqttClient::DescribeMessageDetails(const DescribeMessageDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMessageDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMessageDetailsResponse rsp = DescribeMessageDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMessageDetailsOutcome(rsp);
+        else
+            return DescribeMessageDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMessageDetailsOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeMessageDetailsAsync(const DescribeMessageDetailsRequest& request, const DescribeMessageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMessageDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DescribeMessageDetailsOutcomeCallable MqttClient::DescribeMessageDetailsCallable(const DescribeMessageDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMessageDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMessageDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::DescribeMessageListOutcome MqttClient::DescribeMessageList(const DescribeMessageListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMessageList");

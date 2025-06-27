@@ -68,15 +68,35 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取主题类型
-                     * @return TopicType 主题类型
+                     * 获取主题类型，枚举值如下：
+
+- NORMAL：普通消息主题
+- FIFO：顺序消息主题
+- DELAY：延迟消息主题
+- TRANSACTION：事务消息主题
+                     * @return TopicType 主题类型，枚举值如下：
+
+- NORMAL：普通消息主题
+- FIFO：顺序消息主题
+- DELAY：延迟消息主题
+- TRANSACTION：事务消息主题
                      * 
                      */
                     std::string GetTopicType() const;
 
                     /**
-                     * 设置主题类型
-                     * @param _topicType 主题类型
+                     * 设置主题类型，枚举值如下：
+
+- NORMAL：普通消息主题
+- FIFO：顺序消息主题
+- DELAY：延迟消息主题
+- TRANSACTION：事务消息主题
+                     * @param _topicType 主题类型，枚举值如下：
+
+- NORMAL：普通消息主题
+- FIFO：顺序消息主题
+- DELAY：延迟消息主题
+- TRANSACTION：事务消息主题
                      * 
                      */
                     void SetTopicType(const std::string& _topicType);
@@ -131,15 +151,15 @@ namespace TencentCloud
                     bool ConsumerLagHasBeenSet() const;
 
                     /**
-                     * 获取订阅规则
-                     * @return SubString 订阅规则
+                     * 获取订阅规则，`*`表示订阅全部TAG
+                     * @return SubString 订阅规则，`*`表示订阅全部TAG
                      * 
                      */
                     std::string GetSubString() const;
 
                     /**
-                     * 设置订阅规则
-                     * @param _subString 订阅规则
+                     * 设置订阅规则，`*`表示订阅全部TAG
+                     * @param _subString 订阅规则，`*`表示订阅全部TAG
                      * 
                      */
                     void SetSubString(const std::string& _subString);
@@ -152,15 +172,15 @@ namespace TencentCloud
                     bool SubStringHasBeenSet() const;
 
                     /**
-                     * 获取最后消费进度更新时间
-                     * @return LastUpdateTime 最后消费进度更新时间
+                     * 获取最后消费进度更新时间，**Unix时间戳（毫秒）**
+                     * @return LastUpdateTime 最后消费进度更新时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetLastUpdateTime() const;
 
                     /**
-                     * 设置最后消费进度更新时间
-                     * @param _lastUpdateTime 最后消费进度更新时间
+                     * 设置最后消费进度更新时间，**Unix时间戳（毫秒）**
+                     * @param _lastUpdateTime 最后消费进度更新时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     void SetLastUpdateTime(const int64_t& _lastUpdateTime);
@@ -181,7 +201,12 @@ namespace TencentCloud
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 主题类型
+                     * 主题类型，枚举值如下：
+
+- NORMAL：普通消息主题
+- FIFO：顺序消息主题
+- DELAY：延迟消息主题
+- TRANSACTION：事务消息主题
                      */
                     std::string m_topicType;
                     bool m_topicTypeHasBeenSet;
@@ -199,13 +224,13 @@ namespace TencentCloud
                     bool m_consumerLagHasBeenSet;
 
                     /**
-                     * 订阅规则
+                     * 订阅规则，`*`表示订阅全部TAG
                      */
                     std::string m_subString;
                     bool m_subStringHasBeenSet;
 
                     /**
-                     * 最后消费进度更新时间
+                     * 最后消费进度更新时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;

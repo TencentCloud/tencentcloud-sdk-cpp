@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务创建结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Results 任务创建结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskResult> GetResults() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 任务创建结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskResult> m_results;
                     bool m_resultsHasBeenSet;

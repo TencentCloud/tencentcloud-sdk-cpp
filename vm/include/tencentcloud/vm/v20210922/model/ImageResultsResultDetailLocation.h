@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取x坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return X x坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetX() const;
 
                     /**
                      * 设置x坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _x x坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetX(const double& _x);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取y坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Y y坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetY() const;
 
                     /**
                      * 设置y坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _y y坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetY(const double& _y);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _width 宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _height 高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取旋转角度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rotate 旋转角度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRotate() const;
 
                     /**
                      * 设置旋转角度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rotate 旋转角度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRotate(const double& _rotate);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * x坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_x;
                     bool m_xHasBeenSet;
 
                     /**
                      * y坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_y;
                     bool m_yHasBeenSet;
 
                     /**
                      * 宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 高度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
                      * 旋转角度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_rotate;
                     bool m_rotateHasBeenSet;

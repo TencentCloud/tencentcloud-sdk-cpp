@@ -156,6 +156,31 @@ namespace TencentCloud
                      */
                     bool ParagraphsHasBeenSet() const;
 
+                    /**
+                     * 获取摘要思维导图地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MindMapUrl 摘要思维导图地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMindMapUrl() const;
+
+                    /**
+                     * 设置摘要思维导图地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mindMapUrl 摘要思维导图地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMindMapUrl(const std::string& _mindMapUrl);
+
+                    /**
+                     * 判断参数 MindMapUrl 是否已赋值
+                     * @return MindMapUrl 是否已赋值
+                     * 
+                     */
+                    bool MindMapUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +213,13 @@ namespace TencentCloud
                      */
                     std::vector<AiParagraphInfo> m_paragraphs;
                     bool m_paragraphsHasBeenSet;
+
+                    /**
+                     * 摘要思维导图地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_mindMapUrl;
+                    bool m_mindMapUrlHasBeenSet;
 
                 };
             }

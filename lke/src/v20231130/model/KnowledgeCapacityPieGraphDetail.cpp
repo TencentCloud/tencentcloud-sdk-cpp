@@ -23,7 +23,8 @@ using namespace std;
 KnowledgeCapacityPieGraphDetail::KnowledgeCapacityPieGraphDetail() :
     m_appNameHasBeenSet(false),
     m_usedCharSizeHasBeenSet(false),
-    m_proportionHasBeenSet(false)
+    m_proportionHasBeenSet(false),
+    m_knowledgeTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome KnowledgeCapacityPieGraphDetail::Deserialize(const rapidjson
         m_proportionHasBeenSet = true;
     }
 
+    if (value.HasMember("KnowledgeType") && !value["KnowledgeType"].IsNull())
+    {
+        if (!value["KnowledgeType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeCapacityPieGraphDetail.KnowledgeType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_knowledgeType = value["KnowledgeType"].GetInt64();
+        m_knowledgeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void KnowledgeCapacityPieGraphDetail::ToJsonObject(rapidjson::Value &value, rapi
         string key = "Proportion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_proportion, allocator);
+    }
+
+    if (m_knowledgeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_knowledgeType, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void KnowledgeCapacityPieGraphDetail::SetProportion(const double& _proportion)
 bool KnowledgeCapacityPieGraphDetail::ProportionHasBeenSet() const
 {
     return m_proportionHasBeenSet;
+}
+
+int64_t KnowledgeCapacityPieGraphDetail::GetKnowledgeType() const
+{
+    return m_knowledgeType;
+}
+
+void KnowledgeCapacityPieGraphDetail::SetKnowledgeType(const int64_t& _knowledgeType)
+{
+    m_knowledgeType = _knowledgeType;
+    m_knowledgeTypeHasBeenSet = true;
+}
+
+bool KnowledgeCapacityPieGraphDetail::KnowledgeTypeHasBeenSet() const
+{
+    return m_knowledgeTypeHasBeenSet;
 }
 

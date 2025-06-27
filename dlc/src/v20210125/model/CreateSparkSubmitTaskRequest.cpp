@@ -35,7 +35,8 @@ CreateSparkSubmitTaskRequest::CreateSparkSubmitTaskRequest() :
     m_executorNumbersHasBeenSet(false),
     m_executorMaxNumbersHasBeenSet(false),
     m_cmdArgsHasBeenSet(false),
-    m_sourceInfoHasBeenSet(false)
+    m_sourceInfoHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,14 @@ string CreateSparkSubmitTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -378,6 +387,22 @@ void CreateSparkSubmitTaskRequest::SetSourceInfo(const vector<KVPair>& _sourceIn
 bool CreateSparkSubmitTaskRequest::SourceInfoHasBeenSet() const
 {
     return m_sourceInfoHasBeenSet;
+}
+
+string CreateSparkSubmitTaskRequest::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void CreateSparkSubmitTaskRequest::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool CreateSparkSubmitTaskRequest::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
 }
 
 

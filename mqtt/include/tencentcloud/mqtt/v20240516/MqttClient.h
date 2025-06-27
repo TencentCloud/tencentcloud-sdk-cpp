@@ -89,6 +89,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageByTopicRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageByTopicResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeMessageDetailsRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeMessageDetailsResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageListRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeProductSKUListRequest.h>
@@ -242,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMessageByTopicResponse> DescribeMessageByTopicOutcome;
                 typedef std::future<DescribeMessageByTopicOutcome> DescribeMessageByTopicOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeMessageByTopicRequest&, DescribeMessageByTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageByTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMessageDetailsResponse> DescribeMessageDetailsOutcome;
+                typedef std::future<DescribeMessageDetailsOutcome> DescribeMessageDetailsOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeMessageDetailsRequest&, DescribeMessageDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMessageListResponse> DescribeMessageListOutcome;
                 typedef std::future<DescribeMessageListOutcome> DescribeMessageListOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeMessageListRequest&, DescribeMessageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageListAsyncHandler;
@@ -606,6 +611,15 @@ namespace TencentCloud
                 DescribeMessageByTopicOutcome DescribeMessageByTopic(const Model::DescribeMessageByTopicRequest &request);
                 void DescribeMessageByTopicAsync(const Model::DescribeMessageByTopicRequest& request, const DescribeMessageByTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMessageByTopicOutcomeCallable DescribeMessageByTopicCallable(const Model::DescribeMessageByTopicRequest& request);
+
+                /**
+                 *查询MQTT消息详情
+                 * @param req DescribeMessageDetailsRequest
+                 * @return DescribeMessageDetailsOutcome
+                 */
+                DescribeMessageDetailsOutcome DescribeMessageDetails(const Model::DescribeMessageDetailsRequest &request);
+                void DescribeMessageDetailsAsync(const Model::DescribeMessageDetailsRequest& request, const DescribeMessageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMessageDetailsOutcomeCallable DescribeMessageDetailsCallable(const Model::DescribeMessageDetailsRequest& request);
 
                 /**
                  *根据一级Topic查询消息列表

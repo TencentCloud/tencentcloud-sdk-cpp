@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool VideoURLHasBeenSet() const;
 
                     /**
-                     * 获取播放链接过期时间
-                     * @return ExpireTime 播放链接过期时间
+                     * 获取播放链接过期时间（时间戳，单位秒）
+                     * @return ExpireTime 播放链接过期时间（时间戳，单位秒）
                      * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
-                     * 设置播放链接过期时间
-                     * @param _expireTime 播放链接过期时间
+                     * 设置播放链接过期时间（时间戳，单位秒）
+                     * @param _expireTime 播放链接过期时间（时间戳，单位秒）
                      * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_videoURLHasBeenSet;
 
                     /**
-                     * 播放链接过期时间
+                     * 播放链接过期时间（时间戳，单位秒）
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

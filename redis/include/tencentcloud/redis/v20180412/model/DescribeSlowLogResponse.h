@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool InstanceSlowlogDetailHasBeenSet() const;
 
                     /**
-                     * 获取慢查询详情。
-                     * @return InstanceSlowLogDetail 慢查询详情。
+                     * 获取慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。
+                     * @return InstanceSlowLogDetail 慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。
                      * 
                      */
                     std::vector<InstanceSlowlogDetail> GetInstanceSlowLogDetail() const;
@@ -101,7 +101,7 @@ namespace TencentCloud
                     bool m_instanceSlowlogDetailHasBeenSet;
 
                     /**
-                     * 慢查询详情。
+                     * 慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。
                      */
                     std::vector<InstanceSlowlogDetail> m_instanceSlowLogDetail;
                     bool m_instanceSlowLogDetailHasBeenSet;

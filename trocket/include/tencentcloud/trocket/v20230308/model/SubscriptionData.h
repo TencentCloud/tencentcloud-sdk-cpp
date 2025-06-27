@@ -198,18 +198,34 @@ namespace TencentCloud
                     bool IsOnlineHasBeenSet() const;
 
                     /**
-                     * 获取消费类型
+                     * 获取消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConsumeType 消费类型
+                     * @return ConsumeType 消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConsumeType() const;
 
                     /**
-                     * 设置消费类型
+                     * 设置消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _consumeType 消费类型
+                     * @param _consumeType 消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,18 +289,30 @@ namespace TencentCloud
                     bool ExpressionTypeHasBeenSet() const;
 
                     /**
-                     * 获取订阅一致性
+                     * 获取订阅一致性，枚举如下：
+
+- 0: 订阅一致
+- 1: 订阅不一致
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Consistency 订阅一致性
+                     * @return Consistency 订阅一致性，枚举如下：
+
+- 0: 订阅一致
+- 1: 订阅不一致
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetConsistency() const;
 
                     /**
-                     * 设置订阅一致性
+                     * 设置订阅一致性，枚举如下：
+
+- 0: 订阅一致
+- 1: 订阅不一致
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _consistency 订阅一致性
+                     * @param _consistency 订阅一致性，枚举如下：
+
+- 0: 订阅一致
+- 1: 订阅不一致
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -500,7 +528,11 @@ CLUSTERING 集群模式;
                     bool m_isOnlineHasBeenSet;
 
                     /**
-                     * 消费类型
+                     * 消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_consumeType;
@@ -521,7 +553,10 @@ CLUSTERING 集群模式;
                     bool m_expressionTypeHasBeenSet;
 
                     /**
-                     * 订阅一致性
+                     * 订阅一致性，枚举如下：
+
+- 0: 订阅一致
+- 1: 订阅不一致
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_consistency;

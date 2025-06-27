@@ -333,15 +333,15 @@ namespace TencentCloud
                     bool EnableEnhancementHasBeenSet() const;
 
                     /**
-                     * 获取可调用的工具列表，仅对 hunyuan-turbo、hunyuan-functioncall 模型生效。
-                     * @return Tools 可调用的工具列表，仅对 hunyuan-turbo、hunyuan-functioncall 模型生效。
+                     * 获取可调用的工具列表，仅对 hunyuan-turbos、hunyuan-t1、hunyuan-functioncall 模型生效。
+                     * @return Tools 可调用的工具列表，仅对 hunyuan-turbos、hunyuan-t1、hunyuan-functioncall 模型生效。
                      * 
                      */
                     std::vector<Tool> GetTools() const;
 
                     /**
-                     * 设置可调用的工具列表，仅对 hunyuan-turbo、hunyuan-functioncall 模型生效。
-                     * @param _tools 可调用的工具列表，仅对 hunyuan-turbo、hunyuan-functioncall 模型生效。
+                     * 设置可调用的工具列表，仅对 hunyuan-turbos、hunyuan-t1、hunyuan-functioncall 模型生效。
+                     * @param _tools 可调用的工具列表，仅对 hunyuan-turbos、hunyuan-t1、hunyuan-functioncall 模型生效。
                      * 
                      */
                     void SetTools(const std::vector<Tool>& _tools);
@@ -743,6 +743,27 @@ namespace TencentCloud
                      */
                     bool TopicChoiceHasBeenSet() const;
 
+                    /**
+                     * 获取模型思维链开关 说明： 1. 未传值时默认开启，打开模型思维链推理能力。 2. 关闭后，关闭模型思维链推理能力。  开关当前仅对hunyuan-a13b模型生效 示例值：ture
+                     * @return EnableThinking 模型思维链开关 说明： 1. 未传值时默认开启，打开模型思维链推理能力。 2. 关闭后，关闭模型思维链推理能力。  开关当前仅对hunyuan-a13b模型生效 示例值：ture
+                     * 
+                     */
+                    bool GetEnableThinking() const;
+
+                    /**
+                     * 设置模型思维链开关 说明： 1. 未传值时默认开启，打开模型思维链推理能力。 2. 关闭后，关闭模型思维链推理能力。  开关当前仅对hunyuan-a13b模型生效 示例值：ture
+                     * @param _enableThinking 模型思维链开关 说明： 1. 未传值时默认开启，打开模型思维链推理能力。 2. 关闭后，关闭模型思维链推理能力。  开关当前仅对hunyuan-a13b模型生效 示例值：ture
+                     * 
+                     */
+                    void SetEnableThinking(const bool& _enableThinking);
+
+                    /**
+                     * 判断参数 EnableThinking 是否已赋值
+                     * @return EnableThinking 是否已赋值
+                     * 
+                     */
+                    bool EnableThinkingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -823,7 +844,7 @@ namespace TencentCloud
                     bool m_enableEnhancementHasBeenSet;
 
                     /**
-                     * 可调用的工具列表，仅对 hunyuan-turbo、hunyuan-functioncall 模型生效。
+                     * 可调用的工具列表，仅对 hunyuan-turbos、hunyuan-t1、hunyuan-functioncall 模型生效。
                      */
                     std::vector<Tool> m_tools;
                     bool m_toolsHasBeenSet;
@@ -935,6 +956,12 @@ namespace TencentCloud
                      */
                     std::string m_topicChoice;
                     bool m_topicChoiceHasBeenSet;
+
+                    /**
+                     * 模型思维链开关 说明： 1. 未传值时默认开启，打开模型思维链推理能力。 2. 关闭后，关闭模型思维链推理能力。  开关当前仅对hunyuan-a13b模型生效 示例值：ture
+                     */
+                    bool m_enableThinking;
+                    bool m_enableThinkingHasBeenSet;
 
                 };
             }
