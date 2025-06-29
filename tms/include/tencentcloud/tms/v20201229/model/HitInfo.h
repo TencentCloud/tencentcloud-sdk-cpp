@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标识模型命中还是关键词命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 标识模型命中还是关键词命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置标识模型命中还是关键词命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 标识模型命中还是关键词命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命中关键词
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keyword 命中关键词
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置命中关键词
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyword 命中关键词
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义词库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibName 自定义词库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLibName() const;
 
                     /**
                      * 设置自定义词库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _libName 自定义词库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLibName(const std::string& _libName);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Positions 位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Positions> GetPositions() const;
 
                     /**
                      * 设置位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _positions 位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPositions(const std::vector<Positions>& _positions);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 标识模型命中还是关键词命中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 命中关键词
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
                      * 自定义词库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_libName;
                     bool m_libNameHasBeenSet;
 
                     /**
                      * 位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Positions> m_positions;
                     bool m_positionsHasBeenSet;

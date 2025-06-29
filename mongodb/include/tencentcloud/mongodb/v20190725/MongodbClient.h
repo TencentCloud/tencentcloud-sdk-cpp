@@ -67,6 +67,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceURLResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstancesResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDetailedSlowLogsRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDetailedSlowLogsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupRequest.h>
@@ -205,6 +207,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDetailedSlowLogsResponse> DescribeDetailedSlowLogsOutcome;
+                typedef std::future<DescribeDetailedSlowLogsOutcome> DescribeDetailedSlowLogsOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeDetailedSlowLogsRequest&, DescribeDetailedSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetailedSlowLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
@@ -495,6 +500,15 @@ namespace TencentCloud
                 DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest &request);
                 void DescribeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
+
+                /**
+                 *查询实例慢日志详情
+                 * @param req DescribeDetailedSlowLogsRequest
+                 * @return DescribeDetailedSlowLogsOutcome
+                 */
+                DescribeDetailedSlowLogsOutcome DescribeDetailedSlowLogs(const Model::DescribeDetailedSlowLogsRequest &request);
+                void DescribeDetailedSlowLogsAsync(const Model::DescribeDetailedSlowLogsRequest& request, const DescribeDetailedSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDetailedSlowLogsOutcomeCallable DescribeDetailedSlowLogsCallable(const Model::DescribeDetailedSlowLogsRequest& request);
 
                 /**
                  *本接口（DescribeInstanceParams）用于查询当前实例可修改的参数列表。

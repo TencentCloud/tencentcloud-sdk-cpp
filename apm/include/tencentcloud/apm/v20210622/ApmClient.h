@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/apm/v20210622/model/CreateApmInstanceRequest.h>
 #include <tencentcloud/apm/v20210622/model/CreateApmInstanceResponse.h>
+#include <tencentcloud/apm/v20210622/model/CreateProfileTaskRequest.h>
+#include <tencentcloud/apm/v20210622/model/CreateProfileTaskResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesRequest.h>
@@ -66,6 +68,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApmInstanceResponse> CreateApmInstanceOutcome;
                 typedef std::future<CreateApmInstanceOutcome> CreateApmInstanceOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::CreateApmInstanceRequest&, CreateApmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApmInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProfileTaskResponse> CreateProfileTaskOutcome;
+                typedef std::future<CreateProfileTaskOutcome> CreateProfileTaskOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::CreateProfileTaskRequest&, CreateProfileTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProfileTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApmAgentResponse> DescribeApmAgentOutcome;
                 typedef std::future<DescribeApmAgentOutcome> DescribeApmAgentOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmAgentRequest&, DescribeApmAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmAgentAsyncHandler;
@@ -113,6 +118,15 @@ namespace TencentCloud
                 CreateApmInstanceOutcome CreateApmInstance(const Model::CreateApmInstanceRequest &request);
                 void CreateApmInstanceAsync(const Model::CreateApmInstanceRequest& request, const CreateApmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateApmInstanceOutcomeCallable CreateApmInstanceCallable(const Model::CreateApmInstanceRequest& request);
+
+                /**
+                 *创建事件任务
+                 * @param req CreateProfileTaskRequest
+                 * @return CreateProfileTaskOutcome
+                 */
+                CreateProfileTaskOutcome CreateProfileTask(const Model::CreateProfileTaskRequest &request);
+                void CreateProfileTaskAsync(const Model::CreateProfileTaskRequest& request, const CreateProfileTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProfileTaskOutcomeCallable CreateProfileTaskCallable(const Model::CreateProfileTaskRequest& request);
 
                 /**
                  *获取 APM 接入点

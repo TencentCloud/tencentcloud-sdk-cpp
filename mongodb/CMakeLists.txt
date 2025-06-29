@@ -93,6 +93,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionRequest.h
   include/tencentcloud/mongodb/v20190725/model/DeleteAccountUserRequest.h
   include/tencentcloud/mongodb/v20190725/model/SpecItem.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeDetailedSlowLogsRequest.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressResponse.h
   include/tencentcloud/mongodb/v20190725/model/DropDBInstanceParamTplRequest.h
   include/tencentcloud/mongodb/v20190725/model/CreateAccountUserResponse.h
@@ -149,6 +150,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/BackupDownloadTask.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBBackupsRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsRequest.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeDetailedSlowLogsResponse.h
   include/tencentcloud/mongodb/v20190725/model/ShardInfo.h
   include/tencentcloud/mongodb/v20190725/model/SetBackupRulesResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNodePropertyRequest.h
@@ -169,6 +171,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/ModifyInstanceParamsRequest.h
   include/tencentcloud/mongodb/v20190725/model/CreateBackupDownloadTaskResponse.h
   include/tencentcloud/mongodb/v20190725/model/DbURL.h
+  include/tencentcloud/mongodb/v20190725/model/SlowLogItem.h
   include/tencentcloud/mongodb/v20190725/model/SpecificationInfo.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogPatternsRequest.h
   include/tencentcloud/mongodb/v20190725/model/FlashbackCollection.h
@@ -271,6 +274,7 @@ set(mongodb_src
   src/v20190725/model/EnableTransparentDataEncryptionRequest.cpp
   src/v20190725/model/DeleteAccountUserRequest.cpp
   src/v20190725/model/SpecItem.cpp
+  src/v20190725/model/DescribeDetailedSlowLogsRequest.cpp
   src/v20190725/model/ModifyDBInstanceNetworkAddressResponse.cpp
   src/v20190725/model/DropDBInstanceParamTplRequest.cpp
   src/v20190725/model/CreateAccountUserResponse.cpp
@@ -327,6 +331,7 @@ set(mongodb_src
   src/v20190725/model/BackupDownloadTask.cpp
   src/v20190725/model/DescribeDBBackupsRequest.cpp
   src/v20190725/model/DescribeClientConnectionsRequest.cpp
+  src/v20190725/model/DescribeDetailedSlowLogsResponse.cpp
   src/v20190725/model/ShardInfo.cpp
   src/v20190725/model/SetBackupRulesResponse.cpp
   src/v20190725/model/DescribeDBInstanceNodePropertyRequest.cpp
@@ -347,6 +352,7 @@ set(mongodb_src
   src/v20190725/model/ModifyInstanceParamsRequest.cpp
   src/v20190725/model/CreateBackupDownloadTaskResponse.cpp
   src/v20190725/model/DbURL.cpp
+  src/v20190725/model/SlowLogItem.cpp
   src/v20190725/model/SpecificationInfo.cpp
   src/v20190725/model/DescribeSlowLogPatternsRequest.cpp
   src/v20190725/model/FlashbackCollection.cpp

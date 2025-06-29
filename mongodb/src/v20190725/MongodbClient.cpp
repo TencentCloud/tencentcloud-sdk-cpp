@@ -986,6 +986,49 @@ MongodbClient::DescribeDBInstancesOutcomeCallable MongodbClient::DescribeDBInsta
     return task->get_future();
 }
 
+MongodbClient::DescribeDetailedSlowLogsOutcome MongodbClient::DescribeDetailedSlowLogs(const DescribeDetailedSlowLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDetailedSlowLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDetailedSlowLogsResponse rsp = DescribeDetailedSlowLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDetailedSlowLogsOutcome(rsp);
+        else
+            return DescribeDetailedSlowLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDetailedSlowLogsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDetailedSlowLogsAsync(const DescribeDetailedSlowLogsRequest& request, const DescribeDetailedSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDetailedSlowLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeDetailedSlowLogsOutcomeCallable MongodbClient::DescribeDetailedSlowLogsCallable(const DescribeDetailedSlowLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDetailedSlowLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDetailedSlowLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeInstanceParamsOutcome MongodbClient::DescribeInstanceParams(const DescribeInstanceParamsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceParams");

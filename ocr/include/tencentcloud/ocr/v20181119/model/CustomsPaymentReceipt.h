@@ -89,6 +89,27 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取海关缴款书常用字段
+                     * @return CommonContent 海关缴款书常用字段
+                     * 
+                     */
+                    std::vector<OtherInvoiceItem> GetCommonContent() const;
+
+                    /**
+                     * 设置海关缴款书常用字段
+                     * @param _commonContent 海关缴款书常用字段
+                     * 
+                     */
+                    void SetCommonContent(const std::vector<OtherInvoiceItem>& _commonContent);
+
+                    /**
+                     * 判断参数 CommonContent 是否已赋值
+                     * @return CommonContent 是否已赋值
+                     * 
+                     */
+                    bool CommonContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +123,12 @@ namespace TencentCloud
                      */
                     std::vector<OtherInvoiceItem> m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 海关缴款书常用字段
+                     */
+                    std::vector<OtherInvoiceItem> m_commonContent;
+                    bool m_commonContentHasBeenSet;
 
                 };
             }

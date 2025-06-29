@@ -212,6 +212,49 @@ TeoClient::CheckCnameStatusOutcomeCallable TeoClient::CheckCnameStatusCallable(c
     return task->get_future();
 }
 
+TeoClient::ConfirmOriginACLUpdateOutcome TeoClient::ConfirmOriginACLUpdate(const ConfirmOriginACLUpdateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConfirmOriginACLUpdate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConfirmOriginACLUpdateResponse rsp = ConfirmOriginACLUpdateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConfirmOriginACLUpdateOutcome(rsp);
+        else
+            return ConfirmOriginACLUpdateOutcome(o.GetError());
+    }
+    else
+    {
+        return ConfirmOriginACLUpdateOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ConfirmOriginACLUpdateAsync(const ConfirmOriginACLUpdateRequest& request, const ConfirmOriginACLUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConfirmOriginACLUpdate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ConfirmOriginACLUpdateOutcomeCallable TeoClient::ConfirmOriginACLUpdateCallable(const ConfirmOriginACLUpdateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConfirmOriginACLUpdateOutcome()>>(
+        [this, request]()
+        {
+            return this->ConfirmOriginACLUpdate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateAccelerationDomainOutcome TeoClient::CreateAccelerationDomain(const CreateAccelerationDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAccelerationDomain");
@@ -3351,6 +3394,49 @@ TeoClient::DescribeLoadBalancerListOutcomeCallable TeoClient::DescribeLoadBalanc
     return task->get_future();
 }
 
+TeoClient::DescribeOriginACLOutcome TeoClient::DescribeOriginACL(const DescribeOriginACLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOriginACL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOriginACLResponse rsp = DescribeOriginACLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOriginACLOutcome(rsp);
+        else
+            return DescribeOriginACLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOriginACLOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeOriginACLAsync(const DescribeOriginACLRequest& request, const DescribeOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOriginACL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeOriginACLOutcomeCallable TeoClient::DescribeOriginACLCallable(const DescribeOriginACLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOriginACLOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOriginACL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeOriginGroupOutcome TeoClient::DescribeOriginGroup(const DescribeOriginGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOriginGroup");
@@ -4340,6 +4426,49 @@ TeoClient::DestroyPlanOutcomeCallable TeoClient::DestroyPlanCallable(const Destr
     return task->get_future();
 }
 
+TeoClient::DisableOriginACLOutcome TeoClient::DisableOriginACL(const DisableOriginACLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableOriginACL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableOriginACLResponse rsp = DisableOriginACLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableOriginACLOutcome(rsp);
+        else
+            return DisableOriginACLOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableOriginACLOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DisableOriginACLAsync(const DisableOriginACLRequest& request, const DisableOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableOriginACL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DisableOriginACLOutcomeCallable TeoClient::DisableOriginACLCallable(const DisableOriginACLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableOriginACLOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableOriginACL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DownloadL4LogsOutcome TeoClient::DownloadL4Logs(const DownloadL4LogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DownloadL4Logs");
@@ -4419,6 +4548,49 @@ TeoClient::DownloadL7LogsOutcomeCallable TeoClient::DownloadL7LogsCallable(const
         [this, request]()
         {
             return this->DownloadL7Logs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::EnableOriginACLOutcome TeoClient::EnableOriginACL(const EnableOriginACLRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableOriginACL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableOriginACLResponse rsp = EnableOriginACLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableOriginACLOutcome(rsp);
+        else
+            return EnableOriginACLOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableOriginACLOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::EnableOriginACLAsync(const EnableOriginACLRequest& request, const EnableOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableOriginACL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::EnableOriginACLOutcomeCallable TeoClient::EnableOriginACLCallable(const EnableOriginACLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableOriginACLOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableOriginACL(request);
         }
     );
 
@@ -5666,6 +5838,49 @@ TeoClient::ModifyLoadBalancerOutcomeCallable TeoClient::ModifyLoadBalancerCallab
         [this, request]()
         {
             return this->ModifyLoadBalancer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyOriginACLOutcome TeoClient::ModifyOriginACL(const ModifyOriginACLRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOriginACL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOriginACLResponse rsp = ModifyOriginACLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOriginACLOutcome(rsp);
+        else
+            return ModifyOriginACLOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOriginACLOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyOriginACLAsync(const ModifyOriginACLRequest& request, const ModifyOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOriginACL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyOriginACLOutcomeCallable TeoClient::ModifyOriginACLCallable(const ModifyOriginACLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOriginACLOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOriginACL(request);
         }
     );
 

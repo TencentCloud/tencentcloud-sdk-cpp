@@ -83,6 +83,49 @@ ApmClient::CreateApmInstanceOutcomeCallable ApmClient::CreateApmInstanceCallable
     return task->get_future();
 }
 
+ApmClient::CreateProfileTaskOutcome ApmClient::CreateProfileTask(const CreateProfileTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProfileTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProfileTaskResponse rsp = CreateProfileTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProfileTaskOutcome(rsp);
+        else
+            return CreateProfileTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProfileTaskOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::CreateProfileTaskAsync(const CreateProfileTaskRequest& request, const CreateProfileTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateProfileTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::CreateProfileTaskOutcomeCallable ApmClient::CreateProfileTaskCallable(const CreateProfileTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateProfileTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateProfileTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::DescribeApmAgentOutcome ApmClient::DescribeApmAgent(const DescribeApmAgentRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApmAgent");

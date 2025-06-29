@@ -22,7 +22,8 @@ using namespace std;
 
 CustomsPaymentReceipt::CustomsPaymentReceipt() :
     m_titleHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_commonContentHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome CustomsPaymentReceipt::Deserialize(const rapidjson::Value &v
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("CommonContent") && !value["CommonContent"].IsNull())
+    {
+        if (!value["CommonContent"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CustomsPaymentReceipt.CommonContent` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CommonContent"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OtherInvoiceItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_commonContent.push_back(item);
+        }
+        m_commonContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +106,21 @@ void CustomsPaymentReceipt::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
 
         int i=0;
         for (auto itr = m_content.begin(); itr != m_content.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_commonContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommonContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_commonContent.begin(); itr != m_commonContent.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -124,5 +160,21 @@ void CustomsPaymentReceipt::SetContent(const vector<OtherInvoiceItem>& _content)
 bool CustomsPaymentReceipt::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+vector<OtherInvoiceItem> CustomsPaymentReceipt::GetCommonContent() const
+{
+    return m_commonContent;
+}
+
+void CustomsPaymentReceipt::SetCommonContent(const vector<OtherInvoiceItem>& _commonContent)
+{
+    m_commonContent = _commonContent;
+    m_commonContentHasBeenSet = true;
+}
+
+bool CustomsPaymentReceipt::CommonContentHasBeenSet() const
+{
+    return m_commonContentHasBeenSet;
 }
 

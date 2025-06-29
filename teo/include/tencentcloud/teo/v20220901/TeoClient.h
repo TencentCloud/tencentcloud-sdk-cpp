@@ -31,6 +31,8 @@
 #include <tencentcloud/teo/v20220901/model/BindZoneToPlanResponse.h>
 #include <tencentcloud/teo/v20220901/model/CheckCnameStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/CheckCnameStatusResponse.h>
+#include <tencentcloud/teo/v20220901/model/ConfirmOriginACLUpdateRequest.h>
+#include <tencentcloud/teo/v20220901/model/ConfirmOriginACLUpdateResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateAccelerationDomainRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateAccelerationDomainResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateAliasDomainRequest.h>
@@ -177,6 +179,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeL7AccSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeLoadBalancerListRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeLoadBalancerListResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeOriginACLRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupHealthStatusRequest.h>
@@ -223,10 +227,14 @@
 #include <tencentcloud/teo/v20220901/model/DescribeZonesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DestroyPlanRequest.h>
 #include <tencentcloud/teo/v20220901/model/DestroyPlanResponse.h>
+#include <tencentcloud/teo/v20220901/model/DisableOriginACLRequest.h>
+#include <tencentcloud/teo/v20220901/model/DisableOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/DownloadL4LogsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DownloadL4LogsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DownloadL7LogsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DownloadL7LogsResponse.h>
+#include <tencentcloud/teo/v20220901/model/EnableOriginACLRequest.h>
+#include <tencentcloud/teo/v20220901/model/EnableOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/ExportZoneConfigRequest.h>
 #include <tencentcloud/teo/v20220901/model/ExportZoneConfigResponse.h>
 #include <tencentcloud/teo/v20220901/model/HandleFunctionRuntimeEnvironmentRequest.h>
@@ -285,6 +293,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyL7AccSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyLoadBalancerRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyLoadBalancerResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyOriginACLRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyPlanRequest.h>
@@ -335,6 +345,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckCnameStatusResponse> CheckCnameStatusOutcome;
                 typedef std::future<CheckCnameStatusOutcome> CheckCnameStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CheckCnameStatusRequest&, CheckCnameStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCnameStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ConfirmOriginACLUpdateResponse> ConfirmOriginACLUpdateOutcome;
+                typedef std::future<ConfirmOriginACLUpdateOutcome> ConfirmOriginACLUpdateOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ConfirmOriginACLUpdateRequest&, ConfirmOriginACLUpdateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmOriginACLUpdateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAccelerationDomainResponse> CreateAccelerationDomainOutcome;
                 typedef std::future<CreateAccelerationDomainOutcome> CreateAccelerationDomainOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateAccelerationDomainRequest&, CreateAccelerationDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccelerationDomainAsyncHandler;
@@ -554,6 +567,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLoadBalancerListResponse> DescribeLoadBalancerListOutcome;
                 typedef std::future<DescribeLoadBalancerListOutcome> DescribeLoadBalancerListOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeLoadBalancerListRequest&, DescribeLoadBalancerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOriginACLResponse> DescribeOriginACLOutcome;
+                typedef std::future<DescribeOriginACLOutcome> DescribeOriginACLOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeOriginACLRequest&, DescribeOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginACLAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOriginGroupResponse> DescribeOriginGroupOutcome;
                 typedef std::future<DescribeOriginGroupOutcome> DescribeOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeOriginGroupRequest&, DescribeOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginGroupAsyncHandler;
@@ -623,12 +639,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyPlanResponse> DestroyPlanOutcome;
                 typedef std::future<DestroyPlanOutcome> DestroyPlanOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DestroyPlanRequest&, DestroyPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableOriginACLResponse> DisableOriginACLOutcome;
+                typedef std::future<DisableOriginACLOutcome> DisableOriginACLOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DisableOriginACLRequest&, DisableOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableOriginACLAsyncHandler;
                 typedef Outcome<Core::Error, Model::DownloadL4LogsResponse> DownloadL4LogsOutcome;
                 typedef std::future<DownloadL4LogsOutcome> DownloadL4LogsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DownloadL4LogsRequest&, DownloadL4LogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadL4LogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DownloadL7LogsResponse> DownloadL7LogsOutcome;
                 typedef std::future<DownloadL7LogsOutcome> DownloadL7LogsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DownloadL7LogsRequest&, DownloadL7LogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadL7LogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableOriginACLResponse> EnableOriginACLOutcome;
+                typedef std::future<EnableOriginACLOutcome> EnableOriginACLOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::EnableOriginACLRequest&, EnableOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableOriginACLAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportZoneConfigResponse> ExportZoneConfigOutcome;
                 typedef std::future<ExportZoneConfigOutcome> ExportZoneConfigOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ExportZoneConfigRequest&, ExportZoneConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportZoneConfigAsyncHandler;
@@ -716,6 +738,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancerResponse> ModifyLoadBalancerOutcome;
                 typedef std::future<ModifyLoadBalancerOutcome> ModifyLoadBalancerOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyLoadBalancerRequest&, ModifyLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOriginACLResponse> ModifyOriginACLOutcome;
+                typedef std::future<ModifyOriginACLOutcome> ModifyOriginACLOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyOriginACLRequest&, ModifyOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOriginACLAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOriginGroupResponse> ModifyOriginGroupOutcome;
                 typedef std::future<ModifyOriginGroupOutcome> ModifyOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyOriginGroupRequest&, ModifyOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOriginGroupAsyncHandler;
@@ -790,6 +815,15 @@ namespace TencentCloud
                 CheckCnameStatusOutcome CheckCnameStatus(const Model::CheckCnameStatusRequest &request);
                 void CheckCnameStatusAsync(const Model::CheckCnameStatusRequest& request, const CheckCnameStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckCnameStatusOutcomeCallable CheckCnameStatusCallable(const Model::CheckCnameStatusRequest& request);
+
+                /**
+                 *本接口用于回源 IP 网段发生变更时，确认已将最新回源 IP 网段更新至源站防火墙。确认已更新至最新的回源 IP 网段后，相关变更通知将会停止推送。
+                 * @param req ConfirmOriginACLUpdateRequest
+                 * @return ConfirmOriginACLUpdateOutcome
+                 */
+                ConfirmOriginACLUpdateOutcome ConfirmOriginACLUpdate(const Model::ConfirmOriginACLUpdateRequest &request);
+                void ConfirmOriginACLUpdateAsync(const Model::ConfirmOriginACLUpdateRequest& request, const ConfirmOriginACLUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ConfirmOriginACLUpdateOutcomeCallable ConfirmOriginACLUpdateCallable(const Model::ConfirmOriginACLUpdateRequest& request);
 
                 /**
                  *在创建完站点之后，您可以通过本接口创建加速域名。 
@@ -1464,6 +1498,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeLoadBalancerListOutcomeCallable DescribeLoadBalancerListCallable(const Model::DescribeLoadBalancerListRequest& request);
 
                 /**
+                 *本接口用于查询站点下的七层加速域名/四层代理实例与回源 IP 网段的绑定关系，以及回源 IP 网段详情。如果您想通过自动化脚本定期获取回源 IP 网段的最新版本，可以较低频率（建议每三天一次）轮询本接口，若 NextOriginACL 字段有返回值，则将最新的回源 IP 网段同步到源站防火墙配置中。
+                 * @param req DescribeOriginACLRequest
+                 * @return DescribeOriginACLOutcome
+                 */
+                DescribeOriginACLOutcome DescribeOriginACL(const Model::DescribeOriginACLRequest &request);
+                void DescribeOriginACLAsync(const Model::DescribeOriginACLRequest& request, const DescribeOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOriginACLOutcomeCallable DescribeOriginACLCallable(const Model::DescribeOriginACLRequest& request);
+
+                /**
                  *获取源站组列表
                  * @param req DescribeOriginGroupRequest
                  * @return DescribeOriginGroupOutcome
@@ -1682,6 +1725,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DestroyPlanOutcomeCallable DestroyPlanCallable(const Model::DestroyPlanRequest& request);
 
                 /**
+                 *本接口用于关闭站点的源站防护功能。停用后，相关资源不再仅使用「源站防护」提供的回源 IP 网段请求您的源站，同时停止发送回源 IP 网段更新通知。
+                 * @param req DisableOriginACLRequest
+                 * @return DisableOriginACLOutcome
+                 */
+                DisableOriginACLOutcome DisableOriginACL(const Model::DisableOriginACLRequest &request);
+                void DisableOriginACLAsync(const Model::DisableOriginACLRequest& request, const DisableOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableOriginACLOutcomeCallable DisableOriginACLCallable(const Model::DisableOriginACLRequest& request);
+
+                /**
                  *本接口（DownloadL4Logs）用于下载四层离线日志。
                  * @param req DownloadL4LogsRequest
                  * @return DownloadL4LogsOutcome
@@ -1698,6 +1750,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DownloadL7LogsOutcome DownloadL7Logs(const Model::DownloadL7LogsRequest &request);
                 void DownloadL7LogsAsync(const Model::DownloadL7LogsRequest& request, const DownloadL7LogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadL7LogsOutcomeCallable DownloadL7LogsCallable(const Model::DownloadL7LogsRequest& request);
+
+                /**
+                 *开启回源白名单功能，按照4/7层实例开启。当前启用时候的实例数有上限设置，七层域名为200，四层转发实例为100，总实例个数不超过200，超过会提醒报错；可以先最大数量开启，超过的数量用ModifyOriginACL接口来设置。
+                 * @param req EnableOriginACLRequest
+                 * @return EnableOriginACLOutcome
+                 */
+                EnableOriginACLOutcome EnableOriginACL(const Model::EnableOriginACLRequest &request);
+                void EnableOriginACLAsync(const Model::EnableOriginACLRequest& request, const EnableOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableOriginACLOutcomeCallable EnableOriginACLCallable(const Model::EnableOriginACLRequest& request);
 
                 /**
                  *导出站点配置接口，本接口支持用户根据需要的配置项进行配置导出，导出的配置用于导入站点配置接口（ImportZoneConfig）进行配置导入。该功能仅支持标准版和企业版套餐站点使用。
@@ -1968,6 +2029,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyLoadBalancerOutcome ModifyLoadBalancer(const Model::ModifyLoadBalancerRequest &request);
                 void ModifyLoadBalancerAsync(const Model::ModifyLoadBalancerRequest& request, const ModifyLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLoadBalancerOutcomeCallable ModifyLoadBalancerCallable(const Model::ModifyLoadBalancerRequest& request);
+
+                /**
+                 *本接口用于对七层加速域名/四层代理实例启用/关闭特定回源 IP 网段回源。单次支持提交的七层加速域名的数量最大为 200，四层代理实例的数量最大为 100，支持七层加速域名/四层代理实例混合提交，总实例个数最大为 200。如需变更超过 200 个实例，请通过本接口分批提交。
+                 * @param req ModifyOriginACLRequest
+                 * @return ModifyOriginACLOutcome
+                 */
+                ModifyOriginACLOutcome ModifyOriginACL(const Model::ModifyOriginACLRequest &request);
+                void ModifyOriginACLAsync(const Model::ModifyOriginACLRequest& request, const ModifyOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOriginACLOutcomeCallable ModifyOriginACLCallable(const Model::ModifyOriginACLRequest& request);
 
                 /**
                  *修改源站组配置，新提交的源站记录将会覆盖原有源站组中的源站记录。

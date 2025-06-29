@@ -32,20 +32,21 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DescribeTagValuesResponse.h
   include/tencentcloud/apm/v20210622/model/Span.h
   include/tencentcloud/apm/v20210622/model/ApmAgentInfo.h
-  include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListResponse.h
+  include/tencentcloud/apm/v20210622/model/ApmApplicationConfigView.h
   include/tencentcloud/apm/v20210622/model/ApmMetricRecord.h
   include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeTagValuesRequest.h
   include/tencentcloud/apm/v20210622/model/ApmField.h
   include/tencentcloud/apm/v20210622/model/Line.h
-  include/tencentcloud/apm/v20210622/model/ApmApplicationConfigView.h
-  include/tencentcloud/apm/v20210622/model/ApmTag.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListResponse.h
+  include/tencentcloud/apm/v20210622/model/CreateProfileTaskResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListRequest.h
   include/tencentcloud/apm/v20210622/model/APMKVItem.h
   include/tencentcloud/apm/v20210622/model/OrderBy.h
   include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListRequest.h
+  include/tencentcloud/apm/v20210622/model/ApmTag.h
   include/tencentcloud/apm/v20210622/model/Filter.h
   include/tencentcloud/apm/v20210622/model/APMKV.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListRequest.h
@@ -55,6 +56,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h
   include/tencentcloud/apm/v20210622/model/CreateApmInstanceResponse.h
   include/tencentcloud/apm/v20210622/model/SpanReference.h
+  include/tencentcloud/apm/v20210622/model/CreateProfileTaskRequest.h
   include/tencentcloud/apm/v20210622/model/SpanProcess.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigRequest.h
   include/tencentcloud/apm/v20210622/model/ModifyApmInstanceResponse.h
@@ -81,20 +83,21 @@ set(apm_src
   src/v20210622/model/DescribeTagValuesResponse.cpp
   src/v20210622/model/Span.cpp
   src/v20210622/model/ApmAgentInfo.cpp
-  src/v20210622/model/DescribeGeneralSpanListResponse.cpp
+  src/v20210622/model/ApmApplicationConfigView.cpp
   src/v20210622/model/ApmMetricRecord.cpp
   src/v20210622/model/DescribeServiceOverviewRequest.cpp
   src/v20210622/model/DescribeApmAgentResponse.cpp
   src/v20210622/model/DescribeTagValuesRequest.cpp
   src/v20210622/model/ApmField.cpp
   src/v20210622/model/Line.cpp
-  src/v20210622/model/ApmApplicationConfigView.cpp
-  src/v20210622/model/ApmTag.cpp
+  src/v20210622/model/DescribeGeneralSpanListResponse.cpp
+  src/v20210622/model/CreateProfileTaskResponse.cpp
+  src/v20210622/model/DescribeGeneralSpanListRequest.cpp
   src/v20210622/model/APMKVItem.cpp
   src/v20210622/model/OrderBy.cpp
   src/v20210622/model/DescribeMetricRecordsResponse.cpp
   src/v20210622/model/DescribeGeneralOTSpanListResponse.cpp
-  src/v20210622/model/DescribeGeneralSpanListRequest.cpp
+  src/v20210622/model/ApmTag.cpp
   src/v20210622/model/Filter.cpp
   src/v20210622/model/APMKV.cpp
   src/v20210622/model/DescribeGeneralOTSpanListRequest.cpp
@@ -104,6 +107,7 @@ set(apm_src
   src/v20210622/model/DescribeGeneralMetricDataRequest.cpp
   src/v20210622/model/CreateApmInstanceResponse.cpp
   src/v20210622/model/SpanReference.cpp
+  src/v20210622/model/CreateProfileTaskRequest.cpp
   src/v20210622/model/SpanProcess.cpp
   src/v20210622/model/DescribeGeneralApmApplicationConfigRequest.cpp
   src/v20210622/model/ModifyApmInstanceResponse.cpp
