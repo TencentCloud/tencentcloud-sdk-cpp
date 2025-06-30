@@ -24,7 +24,15 @@ include_directories("../../../core/include/")
 include_directories("../../../cbs/include/")
 link_directories(${CMAKE_SOURCE_DIR}/ft_build/lib)
 
-add_executable(core_ft Cbs_DescribeDisks_SetCA_Ft.cpp Main.cpp)
+add_executable(core_ft
+               Core_Utilts_Ft.cpp
+               Cbs_DescribeDisks_SetCA_Ft.cpp
+               Core_Http_Ft.cpp Core_Http_Url_Ft.cpp
+               Core_Http_HttpRequest_Ft.cpp
+               Core_Http_HttpResponse_Ft.cpp
+               Core_Profile_HttpProfile_Ft.cpp
+               Core_Profile_ClientProfile_Ft.cpp
+               Main.cpp)
 target_link_libraries(core_ft tencentcloud-sdk-cpp-cbs tencentcloud-sdk-cpp-core)
 target_link_libraries(core_ft gtest gmock_main -lpthread -lm)
 
