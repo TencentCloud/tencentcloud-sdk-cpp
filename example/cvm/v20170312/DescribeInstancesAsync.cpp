@@ -20,6 +20,7 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/NetworkProxy.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/core/CurlAsync.h>
 #include <tencentcloud/cvm/v20170312/CvmClient.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesResponse.h>
@@ -39,20 +40,25 @@ using namespace std;
 int main()
 {
     TencentCloud::InitAPI();
-
     // use the sdk
 
-    string secretId = "<your secret id>";
-    string secretKey = "<your secret key>";
     Credential cred = Credential(getenv("TENCENTCLOUD_SECRET_ID"),
                                  getenv("TENCENTCLOUD_SECRET_KEY"));
 
     DescribeInstancesRequest req = DescribeInstancesRequest();
     req.SetOffset(0);
     req.SetLimit(5);
+    cout << req.ToJsonString() << endl;
+    /*
+    ClientProfile cpf;
+    auto hpf = cpf.GetHttpProfile();
+    hpf.SetProtocol(TencentCloud::HttpProfile::HTTP);
+    cpf.SetHttpProfile(hpf);
+    CvmClient cvm_client = CvmClient(cred, "ap-guangzhou", cpf);
+    */
+   CvmClient cvm_client = CvmClient(cred, "ap-guangzhou");
 
-    CvmClient cvm_client = CvmClient(cred, "ap-guangzhou");
-
+#if 1
     // use callback
     cout<<"Use callback..."<<endl;
     auto callback = [](const CvmClient* client, const DescribeInstancesRequest& req, CvmClient::DescribeInstancesOutcome outcome, const shared_ptr<const AsyncCallerContext>& context)
@@ -80,13 +86,15 @@ int main()
     cvm_client.DescribeInstancesAsync(req, callback, context);
 
     this_thread::sleep_for(chrono::seconds(5));
+#endif
 
-
+#if 0
     // use future
     cout<<"Use future..."<<endl;
     auto ret = cvm_client.DescribeInstancesCallable(req);
-    auto outcome = ret.get();
-
+    cout << "after cvm_client.DescribeInstancesCallable(req)" << endl;
+    auto outcome = ret.get(); // 主线程卡在这
+    cout << "after ret.get()" << endl;
     if (!outcome.IsSuccess())
     {
         cout << outcome.GetError().PrintAll() << endl;
@@ -104,6 +112,8 @@ int main()
             cout<<(*itr).GetPlacement().GetZone()<<endl;
         }
     }
+#endif
+    // this_thread::sleep_for(chrono::seconds(10));
 
     TencentCloud::ShutdownAPI();
 

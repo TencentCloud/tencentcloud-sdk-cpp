@@ -23,6 +23,7 @@ set(core_public_header
     include/tencentcloud/core/CommonClient.h
     include/tencentcloud/core/Config.h
     include/tencentcloud/core/Credential.h
+    include/tencentcloud/core/CurlAsync.h
     include/tencentcloud/core/Error.h
     include/tencentcloud/core/Executor.h
     include/tencentcloud/core/NetworkProxy.h
@@ -59,6 +60,7 @@ set(core_src
     src/AsyncCallerContext.cpp
     src/CommonClient.cpp
     src/Credential.cpp
+    src/CurlAsync.cpp
     src/Executor.cpp
     src/NetworkProxy.cpp
     src/Sign.cpp

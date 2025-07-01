@@ -22,6 +22,7 @@
 #include <tencentcloud/core/http/HttpClient.h>
 #include "AbstractModel.h"
 #include <map>
+#include <future>
 
 namespace TencentCloud
 {
@@ -45,7 +46,9 @@ namespace TencentCloud
 
     protected:
         HttpClient::HttpResponseOutcome MakeRequest(const AbstractModel& request, const std::string &actionName);
+        std::future<HttpClient::HttpResponseOutcome> MakeRequestAsync(const AbstractModel& request, const std::string &actionName);
         HttpClient::HttpResponseOutcome DoRequest(const std::string &actionName, const std::string &body, std::map<std::string, std::string> &headers);
+        std::future<HttpClient::HttpResponseOutcome> DoRequestAsync(const AbstractModel& request, const std::string &actionName);
 
         void GenerateSignature(HttpRequest &request);
 

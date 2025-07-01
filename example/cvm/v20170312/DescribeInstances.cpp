@@ -41,6 +41,7 @@ int main()
     // use the sdk
     const char * sid = getenv("TENCENTCLOUD_SECRET_ID");
     const char * skey = getenv("TENCENTCLOUD_SECRET_KEY");
+
     string secretId = nullptr == sid ? "" : sid;
     string secretKey = nullptr == skey ? "" : skey;
     Credential cred = Credential(secretId, secretKey);

@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.15)
 
 cmake_policy(SET CMP0048 NEW)
 
@@ -38,6 +38,7 @@ set_property(GLOBAL
     USE_FOLDERS ON)
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # include(ExternalProject)
 include(GNUInstallDirs)

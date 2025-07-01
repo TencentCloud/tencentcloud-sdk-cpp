@@ -35,14 +35,19 @@ namespace TencentCloud
         ~HttpClient();
 
         void SetReqTimeout(int64_t timeoutOfMs);
+        int64_t GetReqTimeout() const {return m_reqTimeout;};
         void SetConnectTimeout(int64_t timeoutOfMs);
+        int64_t GetConnectTimeout() const {return m_connectTimeout;};
 
         void SetCaInfo(std::string caInfo);
+        std::string GetCaInfo() const {return m_caInfo;};
         void SetCaPath(std::string caPath);
+        std::string GetCaPath() const {return m_caPath;};
 
         HttpResponseOutcome SendRequest(const HttpRequest &request);
 
         void SetProxy(const NetworkProxy &proxy);
+        NetworkProxy GetProxy() const {return m_proxy;};
 
         static void InitGlobalState();
         static void CleanupGlobalState();
