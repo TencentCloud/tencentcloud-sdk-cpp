@@ -933,6 +933,258 @@ namespace TencentCloud
                     bool LogTraceIdKeyHasBeenSet() const;
 
                     /**
+                     * 获取是否开启删除任意文件检测（0-关闭，1-开启）
+                     * @return IsDeleteAnyFileAnalysis 是否开启删除任意文件检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsDeleteAnyFileAnalysis() const;
+
+                    /**
+                     * 设置是否开启删除任意文件检测（0-关闭，1-开启）
+                     * @param _isDeleteAnyFileAnalysis 是否开启删除任意文件检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsDeleteAnyFileAnalysis(const int64_t& _isDeleteAnyFileAnalysis);
+
+                    /**
+                     * 判断参数 IsDeleteAnyFileAnalysis 是否已赋值
+                     * @return IsDeleteAnyFileAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsDeleteAnyFileAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启读取任意文件检测（0-关闭，1-开启）
+                     * @return IsReadAnyFileAnalysis 是否开启读取任意文件检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsReadAnyFileAnalysis() const;
+
+                    /**
+                     * 设置是否开启读取任意文件检测（0-关闭，1-开启）
+                     * @param _isReadAnyFileAnalysis 是否开启读取任意文件检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsReadAnyFileAnalysis(const int64_t& _isReadAnyFileAnalysis);
+
+                    /**
+                     * 判断参数 IsReadAnyFileAnalysis 是否已赋值
+                     * @return IsReadAnyFileAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsReadAnyFileAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启上传任意文件检测（0-关闭，1-开启）
+                     * @return IsUploadAnyFileAnalysis 是否开启上传任意文件检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsUploadAnyFileAnalysis() const;
+
+                    /**
+                     * 设置是否开启上传任意文件检测（0-关闭，1-开启）
+                     * @param _isUploadAnyFileAnalysis 是否开启上传任意文件检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsUploadAnyFileAnalysis(const int64_t& _isUploadAnyFileAnalysis);
+
+                    /**
+                     * 判断参数 IsUploadAnyFileAnalysis 是否已赋值
+                     * @return IsUploadAnyFileAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsUploadAnyFileAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启包含任意文件检测（0-关闭，1-开启）
+                     * @return IsIncludeAnyFileAnalysis 是否开启包含任意文件检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsIncludeAnyFileAnalysis() const;
+
+                    /**
+                     * 设置是否开启包含任意文件检测（0-关闭，1-开启）
+                     * @param _isIncludeAnyFileAnalysis 是否开启包含任意文件检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsIncludeAnyFileAnalysis(const int64_t& _isIncludeAnyFileAnalysis);
+
+                    /**
+                     * 判断参数 IsIncludeAnyFileAnalysis 是否已赋值
+                     * @return IsIncludeAnyFileAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsIncludeAnyFileAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启目录遍历检测（0-关闭，1-开启）
+                     * @return IsDirectoryTraversalAnalysis 是否开启目录遍历检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsDirectoryTraversalAnalysis() const;
+
+                    /**
+                     * 设置是否开启目录遍历检测（0-关闭，1-开启）
+                     * @param _isDirectoryTraversalAnalysis 是否开启目录遍历检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsDirectoryTraversalAnalysis(const int64_t& _isDirectoryTraversalAnalysis);
+
+                    /**
+                     * 判断参数 IsDirectoryTraversalAnalysis 是否已赋值
+                     * @return IsDirectoryTraversalAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsDirectoryTraversalAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启模板引擎注入检测（0-关闭，1-开启）
+                     * @return IsTemplateEngineInjectionAnalysis 是否开启模板引擎注入检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsTemplateEngineInjectionAnalysis() const;
+
+                    /**
+                     * 设置是否开启模板引擎注入检测（0-关闭，1-开启）
+                     * @param _isTemplateEngineInjectionAnalysis 是否开启模板引擎注入检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsTemplateEngineInjectionAnalysis(const int64_t& _isTemplateEngineInjectionAnalysis);
+
+                    /**
+                     * 判断参数 IsTemplateEngineInjectionAnalysis 是否已赋值
+                     * @return IsTemplateEngineInjectionAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsTemplateEngineInjectionAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启脚本引擎注入检测（0-关闭，1-开启）
+                     * @return IsScriptEngineInjectionAnalysis 是否开启脚本引擎注入检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsScriptEngineInjectionAnalysis() const;
+
+                    /**
+                     * 设置是否开启脚本引擎注入检测（0-关闭，1-开启）
+                     * @param _isScriptEngineInjectionAnalysis 是否开启脚本引擎注入检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsScriptEngineInjectionAnalysis(const int64_t& _isScriptEngineInjectionAnalysis);
+
+                    /**
+                     * 判断参数 IsScriptEngineInjectionAnalysis 是否已赋值
+                     * @return IsScriptEngineInjectionAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsScriptEngineInjectionAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启表达式注入检测（0-关闭，1-开启）
+                     * @return IsExpressionInjectionAnalysis 是否开启表达式注入检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsExpressionInjectionAnalysis() const;
+
+                    /**
+                     * 设置是否开启表达式注入检测（0-关闭，1-开启）
+                     * @param _isExpressionInjectionAnalysis 是否开启表达式注入检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsExpressionInjectionAnalysis(const int64_t& _isExpressionInjectionAnalysis);
+
+                    /**
+                     * 判断参数 IsExpressionInjectionAnalysis 是否已赋值
+                     * @return IsExpressionInjectionAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsExpressionInjectionAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启JNDI注入检测（0-关闭，1-开启）
+                     * @return IsJNDIInjectionAnalysis 是否开启JNDI注入检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsJNDIInjectionAnalysis() const;
+
+                    /**
+                     * 设置是否开启JNDI注入检测（0-关闭，1-开启）
+                     * @param _isJNDIInjectionAnalysis 是否开启JNDI注入检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsJNDIInjectionAnalysis(const int64_t& _isJNDIInjectionAnalysis);
+
+                    /**
+                     * 判断参数 IsJNDIInjectionAnalysis 是否已赋值
+                     * @return IsJNDIInjectionAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsJNDIInjectionAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启JNI注入检测（0-关闭，1-开启）
+                     * @return IsJNIInjectionAnalysis 是否开启JNI注入检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsJNIInjectionAnalysis() const;
+
+                    /**
+                     * 设置是否开启JNI注入检测（0-关闭，1-开启）
+                     * @param _isJNIInjectionAnalysis 是否开启JNI注入检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsJNIInjectionAnalysis(const int64_t& _isJNIInjectionAnalysis);
+
+                    /**
+                     * 判断参数 IsJNIInjectionAnalysis 是否已赋值
+                     * @return IsJNIInjectionAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsJNIInjectionAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启Webshell后门检测（0-关闭，1-开启）
+                     * @return IsWebshellBackdoorAnalysis 是否开启Webshell后门检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsWebshellBackdoorAnalysis() const;
+
+                    /**
+                     * 设置是否开启Webshell后门检测（0-关闭，1-开启）
+                     * @param _isWebshellBackdoorAnalysis 是否开启Webshell后门检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsWebshellBackdoorAnalysis(const int64_t& _isWebshellBackdoorAnalysis);
+
+                    /**
+                     * 判断参数 IsWebshellBackdoorAnalysis 是否已赋值
+                     * @return IsWebshellBackdoorAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsWebshellBackdoorAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启反序列化检测（0-关闭，1-开启）
+                     * @return IsDeserializationAnalysis 是否开启反序列化检测（0-关闭，1-开启）
+                     * 
+                     */
+                    int64_t GetIsDeserializationAnalysis() const;
+
+                    /**
+                     * 设置是否开启反序列化检测（0-关闭，1-开启）
+                     * @param _isDeserializationAnalysis 是否开启反序列化检测（0-关闭，1-开启）
+                     * 
+                     */
+                    void SetIsDeserializationAnalysis(const int64_t& _isDeserializationAnalysis);
+
+                    /**
+                     * 判断参数 IsDeserializationAnalysis 是否已赋值
+                     * @return IsDeserializationAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsDeserializationAnalysisHasBeenSet() const;
+
+                    /**
                      * 获取业务系统鉴权 token
                      * @return Token 业务系统鉴权 token
                      * 
@@ -1206,6 +1458,78 @@ namespace TencentCloud
                      */
                     std::string m_logTraceIdKey;
                     bool m_logTraceIdKeyHasBeenSet;
+
+                    /**
+                     * 是否开启删除任意文件检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isDeleteAnyFileAnalysis;
+                    bool m_isDeleteAnyFileAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启读取任意文件检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isReadAnyFileAnalysis;
+                    bool m_isReadAnyFileAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启上传任意文件检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isUploadAnyFileAnalysis;
+                    bool m_isUploadAnyFileAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启包含任意文件检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isIncludeAnyFileAnalysis;
+                    bool m_isIncludeAnyFileAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启目录遍历检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isDirectoryTraversalAnalysis;
+                    bool m_isDirectoryTraversalAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启模板引擎注入检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isTemplateEngineInjectionAnalysis;
+                    bool m_isTemplateEngineInjectionAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启脚本引擎注入检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isScriptEngineInjectionAnalysis;
+                    bool m_isScriptEngineInjectionAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启表达式注入检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isExpressionInjectionAnalysis;
+                    bool m_isExpressionInjectionAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启JNDI注入检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isJNDIInjectionAnalysis;
+                    bool m_isJNDIInjectionAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启JNI注入检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isJNIInjectionAnalysis;
+                    bool m_isJNIInjectionAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启Webshell后门检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isWebshellBackdoorAnalysis;
+                    bool m_isWebshellBackdoorAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启反序列化检测（0-关闭，1-开启）
+                     */
+                    int64_t m_isDeserializationAnalysis;
+                    bool m_isDeserializationAnalysisHasBeenSet;
 
                     /**
                      * 业务系统鉴权 token

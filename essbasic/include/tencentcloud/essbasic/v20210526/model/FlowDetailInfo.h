@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/FlowApproverDetail.h>
+#include <tencentcloud/essbasic/v20210526/model/UserFlowType.h>
 
 
 namespace TencentCloud
@@ -91,14 +92,18 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程的类别分类（如销售合同/入职合同等）。
+该字段将被废弃，不建议使用。	请使用 UserFlowType
                      * @return FlowType 合同流程的类别分类（如销售合同/入职合同等）。
+该字段将被废弃，不建议使用。	请使用 UserFlowType
                      * 
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 设置合同流程的类别分类（如销售合同/入职合同等）。
+该字段将被废弃，不建议使用。	请使用 UserFlowType
                      * @param _flowType 合同流程的类别分类（如销售合同/入职合同等）。
+该字段将被废弃，不建议使用。	请使用 UserFlowType
                      * 
                      */
                     void SetFlowType(const std::string& _flowType);
@@ -322,6 +327,60 @@ namespace TencentCloud
                      */
                     bool NeedCreateReviewHasBeenSet() const;
 
+                    /**
+                     * 获取用户合同的自定义分类。
+
+自定义合同类型的位置，在下图所示地方:
+![image](https://qcloudimg.tencent-cloud.cn/raw/37138cc5f3c38e6f788f4b82f695cebf.png)
+                     * @return UserFlowType 用户合同的自定义分类。
+
+自定义合同类型的位置，在下图所示地方:
+![image](https://qcloudimg.tencent-cloud.cn/raw/37138cc5f3c38e6f788f4b82f695cebf.png)
+                     * 
+                     */
+                    UserFlowType GetUserFlowType() const;
+
+                    /**
+                     * 设置用户合同的自定义分类。
+
+自定义合同类型的位置，在下图所示地方:
+![image](https://qcloudimg.tencent-cloud.cn/raw/37138cc5f3c38e6f788f4b82f695cebf.png)
+                     * @param _userFlowType 用户合同的自定义分类。
+
+自定义合同类型的位置，在下图所示地方:
+![image](https://qcloudimg.tencent-cloud.cn/raw/37138cc5f3c38e6f788f4b82f695cebf.png)
+                     * 
+                     */
+                    void SetUserFlowType(const UserFlowType& _userFlowType);
+
+                    /**
+                     * 判断参数 UserFlowType 是否已赋值
+                     * @return UserFlowType 是否已赋值
+                     * 
+                     */
+                    bool UserFlowTypeHasBeenSet() const;
+
+                    /**
+                     * 获取发起模板时,使用的模板Id
+                     * @return TemplateId 发起模板时,使用的模板Id
+                     * 
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置发起模板时,使用的模板Id
+                     * @param _templateId 发起模板时,使用的模板Id
+                     * 
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     * 
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -338,6 +397,7 @@ namespace TencentCloud
 
                     /**
                      * 合同流程的类别分类（如销售合同/入职合同等）。
+该字段将被废弃，不建议使用。	请使用 UserFlowType
                      */
                     std::string m_flowType;
                     bool m_flowTypeHasBeenSet;
@@ -400,6 +460,21 @@ namespace TencentCloud
                      */
                     bool m_needCreateReview;
                     bool m_needCreateReviewHasBeenSet;
+
+                    /**
+                     * 用户合同的自定义分类。
+
+自定义合同类型的位置，在下图所示地方:
+![image](https://qcloudimg.tencent-cloud.cn/raw/37138cc5f3c38e6f788f4b82f695cebf.png)
+                     */
+                    UserFlowType m_userFlowType;
+                    bool m_userFlowTypeHasBeenSet;
+
+                    /**
+                     * 发起模板时,使用的模板Id
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
 
                 };
             }

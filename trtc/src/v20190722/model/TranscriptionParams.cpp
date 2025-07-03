@@ -28,7 +28,8 @@ TranscriptionParams::TranscriptionParams() :
     m_maxIdleTimeHasBeenSet(false),
     m_transcriptionModeHasBeenSet(false),
     m_targetUserIdHasBeenSet(false),
-    m_targetUserIdListHasBeenSet(false)
+    m_targetUserIdListHasBeenSet(false),
+    m_voicePrintHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,23 @@ CoreInternalOutcome TranscriptionParams::Deserialize(const rapidjson::Value &val
         m_targetUserIdListHasBeenSet = true;
     }
 
+    if (value.HasMember("VoicePrint") && !value["VoicePrint"].IsNull())
+    {
+        if (!value["VoicePrint"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranscriptionParams.VoicePrint` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_voicePrint.Deserialize(value["VoicePrint"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_voicePrintHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +212,15 @@ void TranscriptionParams::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_voicePrintHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoicePrint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_voicePrint.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -325,5 +352,21 @@ void TranscriptionParams::SetTargetUserIdList(const vector<string>& _targetUserI
 bool TranscriptionParams::TargetUserIdListHasBeenSet() const
 {
     return m_targetUserIdListHasBeenSet;
+}
+
+VoicePrint TranscriptionParams::GetVoicePrint() const
+{
+    return m_voicePrint;
+}
+
+void TranscriptionParams::SetVoicePrint(const VoicePrint& _voicePrint)
+{
+    m_voicePrint = _voicePrint;
+    m_voicePrintHasBeenSet = true;
+}
+
+bool TranscriptionParams::VoicePrintHasBeenSet() const
+{
+    return m_voicePrintHasBeenSet;
 }
 

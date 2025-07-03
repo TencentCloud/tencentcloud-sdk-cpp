@@ -58,7 +58,8 @@ JobConfig::JobConfig() :
     m_jobManagerMemHasBeenSet(false),
     m_taskManagerCpuHasBeenSet(false),
     m_taskManagerMemHasBeenSet(false),
-    m_jobConfigItemHasBeenSet(false)
+    m_jobConfigItemHasBeenSet(false),
+    m_checkpointTimeoutSecondHasBeenSet(false)
 {
 }
 
@@ -505,6 +506,16 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_jobConfigItemHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckpointTimeoutSecond") && !value["CheckpointTimeoutSecond"].IsNull())
+    {
+        if (!value["CheckpointTimeoutSecond"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.CheckpointTimeoutSecond` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkpointTimeoutSecond = value["CheckpointTimeoutSecond"].GetInt64();
+        m_checkpointTimeoutSecondHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -839,6 +850,14 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_jobConfigItem.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_checkpointTimeoutSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointTimeoutSecond";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkpointTimeoutSecond, allocator);
     }
 
 }
@@ -1450,5 +1469,21 @@ void JobConfig::SetJobConfigItem(const JobConfig& _jobConfigItem)
 bool JobConfig::JobConfigItemHasBeenSet() const
 {
     return m_jobConfigItemHasBeenSet;
+}
+
+int64_t JobConfig::GetCheckpointTimeoutSecond() const
+{
+    return m_checkpointTimeoutSecond;
+}
+
+void JobConfig::SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSecond)
+{
+    m_checkpointTimeoutSecond = _checkpointTimeoutSecond;
+    m_checkpointTimeoutSecondHasBeenSet = true;
+}
+
+bool JobConfig::CheckpointTimeoutSecondHasBeenSet() const
+{
+    return m_checkpointTimeoutSecondHasBeenSet;
 }
 

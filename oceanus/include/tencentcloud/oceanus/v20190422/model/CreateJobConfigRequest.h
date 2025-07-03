@@ -741,6 +741,69 @@ namespace TencentCloud
                      */
                     bool TaskManagerMemHasBeenSet() const;
 
+                    /**
+                     * 获取0=默认使用老的 1=使用新的
+                     * @return UseOldSystemConnector 0=默认使用老的 1=使用新的
+                     * 
+                     */
+                    int64_t GetUseOldSystemConnector() const;
+
+                    /**
+                     * 设置0=默认使用老的 1=使用新的
+                     * @param _useOldSystemConnector 0=默认使用老的 1=使用新的
+                     * 
+                     */
+                    void SetUseOldSystemConnector(const int64_t& _useOldSystemConnector);
+
+                    /**
+                     * 判断参数 UseOldSystemConnector 是否已赋值
+                     * @return UseOldSystemConnector 是否已赋值
+                     * 
+                     */
+                    bool UseOldSystemConnectorHasBeenSet() const;
+
+                    /**
+                     * 获取压缩参数
+                     * @return ProgramArgsAfterGzip 压缩参数
+                     * 
+                     */
+                    std::string GetProgramArgsAfterGzip() const;
+
+                    /**
+                     * 设置压缩参数
+                     * @param _programArgsAfterGzip 压缩参数
+                     * 
+                     */
+                    void SetProgramArgsAfterGzip(const std::string& _programArgsAfterGzip);
+
+                    /**
+                     * 判断参数 ProgramArgsAfterGzip 是否已赋值
+                     * @return ProgramArgsAfterGzip 是否已赋值
+                     * 
+                     */
+                    bool ProgramArgsAfterGzipHasBeenSet() const;
+
+                    /**
+                     * 获取checkpoint 超时时间
+                     * @return CheckpointTimeoutSecond checkpoint 超时时间
+                     * 
+                     */
+                    int64_t GetCheckpointTimeoutSecond() const;
+
+                    /**
+                     * 设置checkpoint 超时时间
+                     * @param _checkpointTimeoutSecond checkpoint 超时时间
+                     * 
+                     */
+                    void SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSecond);
+
+                    /**
+                     * 判断参数 CheckpointTimeoutSecond 是否已赋值
+                     * @return CheckpointTimeoutSecond 是否已赋值
+                     * 
+                     */
+                    bool CheckpointTimeoutSecondHasBeenSet() const;
+
                 private:
 
                     /**
@@ -940,6 +1003,24 @@ namespace TencentCloud
                      */
                     double m_taskManagerMem;
                     bool m_taskManagerMemHasBeenSet;
+
+                    /**
+                     * 0=默认使用老的 1=使用新的
+                     */
+                    int64_t m_useOldSystemConnector;
+                    bool m_useOldSystemConnectorHasBeenSet;
+
+                    /**
+                     * 压缩参数
+                     */
+                    std::string m_programArgsAfterGzip;
+                    bool m_programArgsAfterGzipHasBeenSet;
+
+                    /**
+                     * checkpoint 超时时间
+                     */
+                    int64_t m_checkpointTimeoutSecond;
+                    bool m_checkpointTimeoutSecondHasBeenSet;
 
                 };
             }

@@ -111,15 +111,43 @@ namespace TencentCloud
                     bool AuditTaskHasBeenSet() const;
 
                     /**
-                     * 获取日志保留时长。
-                     * @return LogExpireDay 日志保留时长。
+                     * 获取日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @return LogExpireDay 日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     uint64_t GetLogExpireDay() const;
 
                     /**
-                     * 设置日志保留时长。
-                     * @param _logExpireDay 日志保留时长。
+                     * 设置日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @param _logExpireDay 日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     void SetLogExpireDay(const uint64_t& _logExpireDay);
@@ -132,15 +160,47 @@ namespace TencentCloud
                     bool LogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取高频存储时长。
-                     * @return HighLogExpireDay 高频存储时长。
+                     * 获取高频存储时长。支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @return HighLogExpireDay 高频存储时长。支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     uint64_t GetHighLogExpireDay() const;
 
                     /**
-                     * 设置高频存储时长。
-                     * @param _highLogExpireDay 高频存储时长。
+                     * 设置高频存储时长。支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @param _highLogExpireDay 高频存储时长。支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     void SetHighLogExpireDay(const uint64_t& _highLogExpireDay);
@@ -153,15 +213,15 @@ namespace TencentCloud
                     bool HighLogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取低频存储时长。
-                     * @return LowLogExpireDay 低频存储时长。
+                     * 获取低频存储时长。单位：天，等于日志保存时长减去高频存储时长。
+                     * @return LowLogExpireDay 低频存储时长。单位：天，等于日志保存时长减去高频存储时长。
                      * 
                      */
                     uint64_t GetLowLogExpireDay() const;
 
                     /**
-                     * 设置低频存储时长。
-                     * @param _lowLogExpireDay 低频存储时长。
+                     * 设置低频存储时长。单位：天，等于日志保存时长减去高频存储时长。
+                     * @param _lowLogExpireDay 低频存储时长。单位：天，等于日志保存时长减去高频存储时长。
                      * 
                      */
                     void SetLowLogExpireDay(const uint64_t& _lowLogExpireDay);
@@ -174,15 +234,15 @@ namespace TencentCloud
                     bool LowLogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取日志存储量。
-                     * @return BillingAmount 日志存储量。
+                     * 获取日志存储量(单位：GB)。
+                     * @return BillingAmount 日志存储量(单位：GB)。
                      * 
                      */
                     double GetBillingAmount() const;
 
                     /**
-                     * 设置日志存储量。
-                     * @param _billingAmount 日志存储量。
+                     * 设置日志存储量(单位：GB)。
+                     * @param _billingAmount 日志存储量(单位：GB)。
                      * 
                      */
                     void SetBillingAmount(const double& _billingAmount);
@@ -195,15 +255,15 @@ namespace TencentCloud
                     bool BillingAmountHasBeenSet() const;
 
                     /**
-                     * 获取高频存储量。
-                     * @return HighRealStorage 高频存储量。
+                     * 获取高频存储量(单位：GB)。
+                     * @return HighRealStorage 高频存储量(单位：GB)。
                      * 
                      */
                     double GetHighRealStorage() const;
 
                     /**
-                     * 设置高频存储量。
-                     * @param _highRealStorage 高频存储量。
+                     * 设置高频存储量(单位：GB)。
+                     * @param _highRealStorage 高频存储量(单位：GB)。
                      * 
                      */
                     void SetHighRealStorage(const double& _highRealStorage);
@@ -216,15 +276,15 @@ namespace TencentCloud
                     bool HighRealStorageHasBeenSet() const;
 
                     /**
-                     * 获取低频存储量。
-                     * @return LowRealStorage 低频存储量。
+                     * 获取低频存储量(单位：GB)。
+                     * @return LowRealStorage 低频存储量(单位：GB)。
                      * 
                      */
                     double GetLowRealStorage() const;
 
                     /**
-                     * 设置低频存储量。
-                     * @param _lowRealStorage 低频存储量。
+                     * 设置低频存储量(单位：GB)。
+                     * @param _lowRealStorage 低频存储量(单位：GB)。
                      * 
                      */
                     void SetLowRealStorage(const double& _lowRealStorage);
@@ -300,15 +360,15 @@ namespace TencentCloud
                     bool InstanceInfoHasBeenSet() const;
 
                     /**
-                     * 获取总存储量。
-                     * @return RealStorage 总存储量。
+                     * 获取总存储量(单位：GB)。
+                     * @return RealStorage 总存储量(单位：GB)。
                      * 
                      */
                     double GetRealStorage() const;
 
                     /**
-                     * 设置总存储量。
-                     * @param _realStorage 总存储量。
+                     * 设置总存储量(单位：GB)。
+                     * @param _realStorage 总存储量(单位：GB)。
                      * 
                      */
                     void SetRealStorage(const double& _realStorage);
@@ -383,37 +443,52 @@ namespace TencentCloud
                     bool m_auditTaskHasBeenSet;
 
                     /**
-                     * 日志保留时长。
+                     * 日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      */
                     uint64_t m_logExpireDay;
                     bool m_logExpireDayHasBeenSet;
 
                     /**
-                     * 高频存储时长。
+                     * 高频存储时长。支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      */
                     uint64_t m_highLogExpireDay;
                     bool m_highLogExpireDayHasBeenSet;
 
                     /**
-                     * 低频存储时长。
+                     * 低频存储时长。单位：天，等于日志保存时长减去高频存储时长。
                      */
                     uint64_t m_lowLogExpireDay;
                     bool m_lowLogExpireDayHasBeenSet;
 
                     /**
-                     * 日志存储量。
+                     * 日志存储量(单位：GB)。
                      */
                     double m_billingAmount;
                     bool m_billingAmountHasBeenSet;
 
                     /**
-                     * 高频存储量。
+                     * 高频存储量(单位：GB)。
                      */
                     double m_highRealStorage;
                     bool m_highRealStorageHasBeenSet;
 
                     /**
-                     * 低频存储量。
+                     * 低频存储量(单位：GB)。
                      */
                     double m_lowRealStorage;
                     bool m_lowRealStorageHasBeenSet;
@@ -437,7 +512,7 @@ namespace TencentCloud
                     bool m_instanceInfoHasBeenSet;
 
                     /**
-                     * 总存储量。
+                     * 总存储量(单位：GB)。
                      */
                     double m_realStorage;
                     bool m_realStorageHasBeenSet;

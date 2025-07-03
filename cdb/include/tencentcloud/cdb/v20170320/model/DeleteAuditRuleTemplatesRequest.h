@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取审计规则模板ID。
-                     * @return RuleTemplateIds 审计规则模板ID。
+                     * 获取审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取，单次允许最多删除5个规则模板。
+                     * @return RuleTemplateIds 审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取，单次允许最多删除5个规则模板。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
-                     * 设置审计规则模板ID。
-                     * @param _ruleTemplateIds 审计规则模板ID。
+                     * 设置审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取，单次允许最多删除5个规则模板。
+                     * @param _ruleTemplateIds 审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取，单次允许最多删除5个规则模板。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 审计规则模板ID。
+                     * 审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取，单次允许最多删除5个规则模板。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;

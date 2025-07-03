@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _instanceId 实例 ID
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取查询的开始时间。只能查看30天内的扩容历史
-                     * @return StartTime 查询的开始时间。只能查看30天内的扩容历史
+                     * 获取查询的开始时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
+                     * @return StartTime 查询的开始时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置查询的开始时间。只能查看30天内的扩容历史
-                     * @param _startTime 查询的开始时间。只能查看30天内的扩容历史
+                     * 设置查询的开始时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
+                     * @param _startTime 查询的开始时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询的结束时间。只能查看30天内的扩容历史
-                     * @return EndTime 查询的结束时间。只能查看30天内的扩容历史
+                     * 获取查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
+                     * @return EndTime 查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置查询的结束时间。只能查看30天内的扩容历史
-                     * @param _endTime 查询的结束时间。只能查看30天内的扩容历史
+                     * 设置查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
+                     * @param _endTime 查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -192,7 +192,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -210,13 +210,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 查询的开始时间。只能查看30天内的扩容历史
+                     * 查询的开始时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询的结束时间。只能查看30天内的扩容历史
+                     * 查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

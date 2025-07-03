@@ -65,7 +65,8 @@ InstanceInfo::InstanceInfo() :
     m_last3MaxQPSHasBeenSet(false),
     m_last3MaxBandwidthHasBeenSet(false),
     m_majorEventsProPkgHasBeenSet(false),
-    m_basicFlagHasBeenSet(false)
+    m_basicFlagHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -601,6 +602,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_basicFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkConfig") && !value["NetworkConfig"].IsNull())
+    {
+        if (!value["NetworkConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.NetworkConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_networkConfig.Deserialize(value["NetworkConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_networkConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -977,6 +995,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "BasicFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_basicFlag, allocator);
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_networkConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1700,5 +1727,21 @@ void InstanceInfo::SetBasicFlag(const uint64_t& _basicFlag)
 bool InstanceInfo::BasicFlagHasBeenSet() const
 {
     return m_basicFlagHasBeenSet;
+}
+
+NetworkConfig InstanceInfo::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+void InstanceInfo::SetNetworkConfig(const NetworkConfig& _networkConfig)
+{
+    m_networkConfig = _networkConfig;
+    m_networkConfigHasBeenSet = true;
+}
+
+bool InstanceInfo::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 

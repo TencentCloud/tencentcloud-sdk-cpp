@@ -33,6 +33,8 @@
 #include <tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ControlAIConversationRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ControlAIConversationResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAIAgentCallRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAIAgentCallResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAICallRequest.h>
@@ -198,6 +200,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindStaffSkillGroupListResponse> BindStaffSkillGroupListOutcome;
                 typedef std::future<BindStaffSkillGroupListOutcome> BindStaffSkillGroupListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::BindStaffSkillGroupListRequest&, BindStaffSkillGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindStaffSkillGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ControlAIConversationResponse> ControlAIConversationOutcome;
+                typedef std::future<ControlAIConversationOutcome> ControlAIConversationOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ControlAIConversationRequest&, ControlAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlAIConversationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAIAgentCallResponse> CreateAIAgentCallOutcome;
                 typedef std::future<CreateAIAgentCallOutcome> CreateAIAgentCallOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateAIAgentCallRequest&, CreateAIAgentCallOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIAgentCallAsyncHandler;
@@ -449,6 +454,15 @@ namespace TencentCloud
                 BindStaffSkillGroupListOutcome BindStaffSkillGroupList(const Model::BindStaffSkillGroupListRequest &request);
                 void BindStaffSkillGroupListAsync(const Model::BindStaffSkillGroupListRequest& request, const BindStaffSkillGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindStaffSkillGroupListOutcomeCallable BindStaffSkillGroupListCallable(const Model::BindStaffSkillGroupListRequest& request);
+
+                /**
+                 *提供服务端控制机器人的功能
+                 * @param req ControlAIConversationRequest
+                 * @return ControlAIConversationOutcome
+                 */
+                ControlAIConversationOutcome ControlAIConversation(const Model::ControlAIConversationRequest &request);
+                void ControlAIConversationAsync(const Model::ControlAIConversationRequest& request, const ControlAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ControlAIConversationOutcomeCallable ControlAIConversationCallable(const Model::ControlAIConversationRequest& request);
 
                 /**
                  *用于调用AI模型发起外呼通话，仅限自有电话号码使用，目前开通高级版座席**限时**免费体验。

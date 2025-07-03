@@ -26,7 +26,8 @@ ServerPushText::ServerPushText() :
     m_stopAfterPlayHasBeenSet(false),
     m_audioHasBeenSet(false),
     m_dropModeHasBeenSet(false),
-    m_priorityHasBeenSet(false)
+    m_priorityHasBeenSet(false),
+    m_addHistoryHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ServerPushText::Deserialize(const rapidjson::Value &value)
         m_priorityHasBeenSet = true;
     }
 
+    if (value.HasMember("AddHistory") && !value["AddHistory"].IsNull())
+    {
+        if (!value["AddHistory"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerPushText.AddHistory` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_addHistory = value["AddHistory"].GetBool();
+        m_addHistoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ServerPushText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Priority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_priority, allocator);
+    }
+
+    if (m_addHistoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddHistory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_addHistory, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ServerPushText::SetPriority(const uint64_t& _priority)
 bool ServerPushText::PriorityHasBeenSet() const
 {
     return m_priorityHasBeenSet;
+}
+
+bool ServerPushText::GetAddHistory() const
+{
+    return m_addHistory;
+}
+
+void ServerPushText::SetAddHistory(const bool& _addHistory)
+{
+    m_addHistory = _addHistory;
+    m_addHistoryHasBeenSet = true;
+}
+
+bool ServerPushText::AddHistoryHasBeenSet() const
+{
+    return m_addHistoryHasBeenSet;
 }
 

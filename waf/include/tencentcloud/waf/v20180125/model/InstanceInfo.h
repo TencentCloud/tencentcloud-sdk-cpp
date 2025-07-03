@@ -35,6 +35,7 @@
 #include <tencentcloud/waf/v20180125/model/MiniPkg.h>
 #include <tencentcloud/waf/v20180125/model/MiniExtendPkg.h>
 #include <tencentcloud/waf/v20180125/model/MajorEventsProPkg.h>
+#include <tencentcloud/waf/v20180125/model/NetworkConfig.h>
 
 
 namespace TencentCloud
@@ -1042,6 +1043,27 @@ namespace TencentCloud
                      */
                     bool BasicFlagHasBeenSet() const;
 
+                    /**
+                     * 获取实例的网络配置
+                     * @return NetworkConfig 实例的网络配置
+                     * 
+                     */
+                    NetworkConfig GetNetworkConfig() const;
+
+                    /**
+                     * 设置实例的网络配置
+                     * @param _networkConfig 实例的网络配置
+                     * 
+                     */
+                    void SetNetworkConfig(const NetworkConfig& _networkConfig);
+
+                    /**
+                     * 判断参数 NetworkConfig 是否已赋值
+                     * @return NetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool NetworkConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1323,6 +1345,12 @@ namespace TencentCloud
                      */
                     uint64_t m_basicFlag;
                     bool m_basicFlagHasBeenSet;
+
+                    /**
+                     * 实例的网络配置
+                     */
+                    NetworkConfig m_networkConfig;
+                    bool m_networkConfigHasBeenSet;
 
                 };
             }

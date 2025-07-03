@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组 ID。
-                     * @return SecurityGroupId 安全组 ID。
+                     * 获取安全组 ID。可通过 [DescribeDBSecurityGroups](https://cloud.tencent.com/document/api/236/15854) 接口获取。
+                     * @return SecurityGroupId 安全组 ID。可通过 [DescribeDBSecurityGroups](https://cloud.tencent.com/document/api/236/15854) 接口获取。
                      * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
-                     * 设置安全组 ID。
-                     * @param _securityGroupId 安全组 ID。
+                     * 设置安全组 ID。可通过 [DescribeDBSecurityGroups](https://cloud.tencent.com/document/api/236/15854) 接口获取。
+                     * @param _securityGroupId 安全组 ID。可通过 [DescribeDBSecurityGroups](https://cloud.tencent.com/document/api/236/15854) 接口获取。
                      * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID 列表，一个或者多个实例 ID 组成的数组。
-                     * @return InstanceIds 实例 ID 列表，一个或者多个实例 ID 组成的数组。
+                     * 获取实例 ID 列表，一个或者多个实例 ID 组成的数组。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceIds 实例 ID 列表，一个或者多个实例 ID 组成的数组。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例 ID 列表，一个或者多个实例 ID 组成的数组。
-                     * @param _instanceIds 实例 ID 列表，一个或者多个实例 ID 组成的数组。
+                     * 设置实例 ID 列表，一个或者多个实例 ID 组成的数组。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceIds 实例 ID 列表，一个或者多个实例 ID 组成的数组。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
-                     * @return ForReadonlyInstance 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     * 获取当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组，需要将该入参置为 True，默认为 False。
+                     * @return ForReadonlyInstance 当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组，需要将该入参置为 True，默认为 False。
                      * 
                      */
                     bool GetForReadonlyInstance() const;
 
                     /**
-                     * 设置当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
-                     * @param _forReadonlyInstance 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     * 设置当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组，需要将该入参置为 True，默认为 False。
+                     * @param _forReadonlyInstance 当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组，需要将该入参置为 True，默认为 False。
                      * 
                      */
                     void SetForReadonlyInstance(const bool& _forReadonlyInstance);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安全组 ID。
+                     * 安全组 ID。可通过 [DescribeDBSecurityGroups](https://cloud.tencent.com/document/api/236/15854) 接口获取。
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
 
                     /**
-                     * 实例 ID 列表，一个或者多个实例 ID 组成的数组。
+                     * 实例 ID 列表，一个或者多个实例 ID 组成的数组。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     * 当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组，需要将该入参置为 True，默认为 False。
                      */
                     bool m_forReadonlyInstance;
                     bool m_forReadonlyInstanceHasBeenSet;

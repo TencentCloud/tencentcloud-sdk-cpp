@@ -61,6 +61,10 @@
 #include <tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/TextToImageRequest.h>
 #include <tencentcloud/aiart/v20221229/model/TextToImageResponse.h>
+#include <tencentcloud/aiart/v20221229/model/TextToImageLiteRequest.h>
+#include <tencentcloud/aiart/v20221229/model/TextToImageLiteResponse.h>
+#include <tencentcloud/aiart/v20221229/model/TextToImageRapidRequest.h>
+#include <tencentcloud/aiart/v20221229/model/TextToImageRapidResponse.h>
 #include <tencentcloud/aiart/v20221229/model/UploadTrainPortraitImagesRequest.h>
 #include <tencentcloud/aiart/v20221229/model/UploadTrainPortraitImagesResponse.h>
 
@@ -134,6 +138,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TextToImageResponse> TextToImageOutcome;
                 typedef std::future<TextToImageOutcome> TextToImageOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::TextToImageRequest&, TextToImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToImageLiteResponse> TextToImageLiteOutcome;
+                typedef std::future<TextToImageLiteOutcome> TextToImageLiteOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::TextToImageLiteRequest&, TextToImageLiteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageLiteAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToImageRapidResponse> TextToImageRapidOutcome;
+                typedef std::future<TextToImageRapidOutcome> TextToImageRapidOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::TextToImageRapidRequest&, TextToImageRapidOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageRapidAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadTrainPortraitImagesResponse> UploadTrainPortraitImagesOutcome;
                 typedef std::future<UploadTrainPortraitImagesOutcome> UploadTrainPortraitImagesOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::UploadTrainPortraitImagesRequest&, UploadTrainPortraitImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTrainPortraitImagesAsyncHandler;
@@ -376,6 +386,26 @@ AI 美照默认提供1个并发，代表最多能同时处理1个已提交的任
                 TextToImageOutcome TextToImage(const Model::TextToImageRequest &request);
                 void TextToImageAsync(const Model::TextToImageRequest& request, const TextToImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextToImageOutcomeCallable TextToImageCallable(const Model::TextToImageRequest& request);
+
+                /**
+                 *混元文生图接口，基于混元大模型，根据输入的文本描述智能生成图片
+默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req TextToImageLiteRequest
+                 * @return TextToImageLiteOutcome
+                 */
+                TextToImageLiteOutcome TextToImageLite(const Model::TextToImageLiteRequest &request);
+                void TextToImageLiteAsync(const Model::TextToImageLiteRequest& request, const TextToImageLiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToImageLiteOutcomeCallable TextToImageLiteCallable(const Model::TextToImageLiteRequest& request);
+
+                /**
+                 *混元文生图接口，基于混元大模型，根据输入的文本描述智能生成图片
+默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req TextToImageRapidRequest
+                 * @return TextToImageRapidOutcome
+                 */
+                TextToImageRapidOutcome TextToImageRapid(const Model::TextToImageRapidRequest &request);
+                void TextToImageRapidAsync(const Model::TextToImageRapidRequest& request, const TextToImageRapidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToImageRapidOutcomeCallable TextToImageRapidCallable(const Model::TextToImageRapidRequest& request);
 
                 /**
                  *AI 写真分为上传训练图片、训练写真模型（可选跳过）、生成写真图片3个环节，需要依次调用对应接口。

@@ -73,7 +73,8 @@ Cluster::Cluster() :
     m_totalMemHasBeenSet(false),
     m_runningCpuHasBeenSet(false),
     m_runningMemHasBeenSet(false),
-    m_setatsHasBeenSet(false)
+    m_setatsHasBeenSet(false),
+    m_yarnsHasBeenSet(false)
 {
 }
 
@@ -693,6 +694,26 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_setatsHasBeenSet = true;
     }
 
+    if (value.HasMember("Yarns") && !value["Yarns"].IsNull())
+    {
+        if (!value["Yarns"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.Yarns` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Yarns"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HadoopYarnItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_yarns.push_back(item);
+        }
+        m_yarnsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1167,6 +1188,21 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_setats.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_yarnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Yarns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_yarns.begin(); itr != m_yarns.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -2018,5 +2054,21 @@ void Cluster::SetSetats(const Setats& _setats)
 bool Cluster::SetatsHasBeenSet() const
 {
     return m_setatsHasBeenSet;
+}
+
+vector<HadoopYarnItem> Cluster::GetYarns() const
+{
+    return m_yarns;
+}
+
+void Cluster::SetYarns(const vector<HadoopYarnItem>& _yarns)
+{
+    m_yarns = _yarns;
+    m_yarnsHasBeenSet = true;
+}
+
+bool Cluster::YarnsHasBeenSet() const
+{
+    return m_yarnsHasBeenSet;
 }
 

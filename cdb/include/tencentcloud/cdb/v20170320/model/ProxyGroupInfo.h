@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool SupportUpgradeProxyVersionHasBeenSet() const;
 
                     /**
-                     * 获取代理状态
-                     * @return Status 代理状态
+                     * 获取代理状态。0 - 初始化中，1 - 在线中，2 - 在线中-读写分离中，3 - 下线，4 - 销毁。
+                     * @return Status 代理状态。0 - 初始化中，1 - 在线中，2 - 在线中-读写分离中，3 - 下线，4 - 销毁。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置代理状态
-                     * @param _status 代理状态
+                     * 设置代理状态。0 - 初始化中，1 - 在线中，2 - 在线中-读写分离中，3 - 下线，4 - 销毁。
+                     * @param _status 代理状态。0 - 初始化中，1 - 在线中，2 - 在线中-读写分离中，3 - 下线，4 - 销毁。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取代理任务状态
-                     * @return TaskStatus 代理任务状态
+                     * 获取代理任务状态，Upgrading - 升级中，UpgradeTo - 升级待切换，UpgradeSwitching - 升级切换中，ProxyCreateAddress - 配置地址中，ProxyModifyAddress - 修改地址中，ProxyCloseAddress - 关闭地址中。
+                     * @return TaskStatus 代理任务状态，Upgrading - 升级中，UpgradeTo - 升级待切换，UpgradeSwitching - 升级切换中，ProxyCreateAddress - 配置地址中，ProxyModifyAddress - 修改地址中，ProxyCloseAddress - 关闭地址中。
                      * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
-                     * 设置代理任务状态
-                     * @param _taskStatus 代理任务状态
+                     * 设置代理任务状态，Upgrading - 升级中，UpgradeTo - 升级待切换，UpgradeSwitching - 升级切换中，ProxyCreateAddress - 配置地址中，ProxyModifyAddress - 修改地址中，ProxyCloseAddress - 关闭地址中。
+                     * @param _taskStatus 代理任务状态，Upgrading - 升级中，UpgradeTo - 升级待切换，UpgradeSwitching - 升级切换中，ProxyCreateAddress - 配置地址中，ProxyModifyAddress - 修改地址中，ProxyCloseAddress - 关闭地址中。
                      * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
@@ -279,13 +279,13 @@ namespace TencentCloud
                     bool m_supportUpgradeProxyVersionHasBeenSet;
 
                     /**
-                     * 代理状态
+                     * 代理状态。0 - 初始化中，1 - 在线中，2 - 在线中-读写分离中，3 - 下线，4 - 销毁。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 代理任务状态
+                     * 代理任务状态，Upgrading - 升级中，UpgradeTo - 升级待切换，UpgradeSwitching - 升级切换中，ProxyCreateAddress - 配置地址中，ProxyModifyAddress - 修改地址中，ProxyCloseAddress - 关闭地址中。
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;

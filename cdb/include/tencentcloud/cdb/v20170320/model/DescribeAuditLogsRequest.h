@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间。
-                     * @return StartTime 开始时间。
+                     * 获取开始时间(建议开始到结束时间区间最大7天)。
+                     * @return StartTime 开始时间(建议开始到结束时间区间最大7天)。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间。
-                     * @param _startTime 开始时间。
+                     * 设置开始时间(建议开始到结束时间区间最大7天)。
+                     * @param _startTime 开始时间(建议开始到结束时间区间最大7天)。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间。
-                     * @return EndTime 结束时间。
+                     * 获取结束时间(建议开始到结束时间区间最大7天）。
+                     * @return EndTime 结束时间(建议开始到结束时间区间最大7天）。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间。
-                     * @param _endTime 结束时间。
+                     * 设置结束时间(建议开始到结束时间区间最大7天）。
+                     * @param _endTime 结束时间(建议开始到结束时间区间最大7天）。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序方式。支持值包括："ASC" - 升序，"DESC" - 降序。
-                     * @return Order 排序方式。支持值包括："ASC" - 升序，"DESC" - 降序。
+                     * 获取排序方式。支持值包括："ASC" - 升序，"DESC" - 降序，默认降序排序。
+                     * @return Order 排序方式。支持值包括："ASC" - 升序，"DESC" - 降序，默认降序排序。
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方式。支持值包括："ASC" - 升序，"DESC" - 降序。
-                     * @param _order 排序方式。支持值包括："ASC" - 升序，"DESC" - 降序。
+                     * 设置排序方式。支持值包括："ASC" - 升序，"DESC" - 降序，默认降序排序。
+                     * @param _order 排序方式。支持值包括："ASC" - 升序，"DESC" - 降序，默认降序排序。
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -170,11 +170,11 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序字段。支持值包括：
+                     * 获取排序字段。支持值包括(默认按照时间戳排序)：
 "timestamp" - 时间戳；
 "affectRows" - 影响行数；
 "execTime" - 执行时间。
-                     * @return OrderBy 排序字段。支持值包括：
+                     * @return OrderBy 排序字段。支持值包括(默认按照时间戳排序)：
 "timestamp" - 时间戳；
 "affectRows" - 影响行数；
 "execTime" - 执行时间。
@@ -183,11 +183,11 @@ namespace TencentCloud
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段。支持值包括：
+                     * 设置排序字段。支持值包括(默认按照时间戳排序)：
 "timestamp" - 时间戳；
 "affectRows" - 影响行数；
 "execTime" - 执行时间。
-                     * @param _orderBy 排序字段。支持值包括：
+                     * @param _orderBy 排序字段。支持值包括(默认按照时间戳排序)：
 "timestamp" - 时间戳；
 "affectRows" - 影响行数；
 "execTime" - 执行时间。
@@ -226,19 +226,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间。
+                     * 开始时间(建议开始到结束时间区间最大7天)。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间。
+                     * 结束时间(建议开始到结束时间区间最大7天）。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -256,13 +256,13 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序方式。支持值包括："ASC" - 升序，"DESC" - 降序。
+                     * 排序方式。支持值包括："ASC" - 升序，"DESC" - 降序，默认降序排序。
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序字段。支持值包括：
+                     * 排序字段。支持值包括(默认按照时间戳排序)：
 "timestamp" - 时间戳；
 "affectRows" - 影响行数；
 "execTime" - 执行时间。

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取错误码。
-                     * @return Code 错误码。
+                     * 获取错误码。0代表成功，其他对应不同的报错场景。
+                     * @return Code 错误码。0代表成功，其他对应不同的报错场景。
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
-                     * 设置错误码。
-                     * @param _code 错误码。
+                     * 设置错误码。0代表成功，其他对应不同的报错场景。
+                     * @param _code 错误码。0代表成功，其他对应不同的报错场景。
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -365,7 +365,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 错误码。
+                     * 错误码。0代表成功，其他对应不同的报错场景。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;

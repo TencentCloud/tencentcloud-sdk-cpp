@@ -101,6 +101,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/TraceModeConfiguration.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteWorkSpaceResponse.h
+  include/tencentcloud/oceanus/v20190422/model/HadoopYarnItem.h
   include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Property.h
@@ -243,6 +244,7 @@ set(oceanus_src
   src/v20190422/model/TraceModeConfiguration.cpp
   src/v20190422/model/RunJobsRequest.cpp
   src/v20190422/model/DeleteWorkSpaceResponse.cpp
+  src/v20190422/model/HadoopYarnItem.cpp
   src/v20190422/model/TriggerJobSavepointResponse.cpp
   src/v20190422/model/DeleteJobsResponse.cpp
   src/v20190422/model/Property.cpp

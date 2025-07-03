@@ -329,6 +329,27 @@ namespace TencentCloud
                      */
                     bool LocalDiskNumHasBeenSet() const;
 
+                    /**
+                     * 获取GPU信息
+                     * @return GpuDesc GPU信息
+                     * 
+                     */
+                    std::string GetGpuDesc() const;
+
+                    /**
+                     * 设置GPU信息
+                     * @param _gpuDesc GPU信息
+                     * 
+                     */
+                    void SetGpuDesc(const std::string& _gpuDesc);
+
+                    /**
+                     * 判断参数 GpuDesc 是否已赋值
+                     * @return GpuDesc 是否已赋值
+                     * 
+                     */
+                    bool GpuDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -410,6 +431,12 @@ namespace TencentCloud
                      */
                     int64_t m_localDiskNum;
                     bool m_localDiskNumHasBeenSet;
+
+                    /**
+                     * GPU信息
+                     */
+                    std::string m_gpuDesc;
+                    bool m_gpuDescHasBeenSet;
 
                 };
             }

@@ -33,6 +33,7 @@
 #include <tencentcloud/oceanus/v20190422/model/SqlGatewayItem.h>
 #include <tencentcloud/oceanus/v20190422/model/SubEks.h>
 #include <tencentcloud/oceanus/v20190422/model/Setats.h>
+#include <tencentcloud/oceanus/v20190422/model/HadoopYarnItem.h>
 
 
 namespace TencentCloud
@@ -1292,6 +1293,31 @@ namespace TencentCloud
                      */
                     bool SetatsHasBeenSet() const;
 
+                    /**
+                     * 获取[]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Yarns []
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<HadoopYarnItem> GetYarns() const;
+
+                    /**
+                     * 设置[]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _yarns []
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetYarns(const std::vector<HadoopYarnItem>& _yarns);
+
+                    /**
+                     * 判断参数 Yarns 是否已赋值
+                     * @return Yarns 是否已赋值
+                     * 
+                     */
+                    bool YarnsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1642,6 +1668,13 @@ namespace TencentCloud
                      */
                     Setats m_setats;
                     bool m_setatsHasBeenSet;
+
+                    /**
+                     * []
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<HadoopYarnItem> m_yarns;
+                    bool m_yarnsHasBeenSet;
 
                 };
             }

@@ -29,6 +29,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeIvrAudioListResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribePredictiveDialingCampaignsElement.h
+  include/tencentcloud/ccc/v20200210/model/ServerPushText.h
   include/tencentcloud/ccc/v20200210/model/ResetExtensionPasswordRequest.h
   include/tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrResponse.h
@@ -43,6 +44,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsRequest.h
   include/tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberRequest.h
   include/tencentcloud/ccc/v20200210/model/ModifyStaffPasswordResponse.h
+  include/tencentcloud/ccc/v20200210/model/ControlAIConversationResponse.h
   include/tencentcloud/ccc/v20200210/model/TransferToManualRequest.h
   include/tencentcloud/ccc/v20200210/model/CreatePredictiveDialingCampaignRequest.h
   include/tencentcloud/ccc/v20200210/model/RestoreMemberOnlineResponse.h
@@ -96,6 +98,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/CarrierPrivilegeNumberApplicant.h
   include/tencentcloud/ccc/v20200210/model/ErrStaffItem.h
   include/tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignResponse.h
+  include/tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignRequest.h
   include/tencentcloud/ccc/v20200210/model/PSTNSession.h
   include/tencentcloud/ccc/v20200210/model/UpdatePredictiveDialingCampaignRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeStaffInfoListRequest.h
@@ -168,7 +171,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeCCCBuyInfoListResponse.h
   include/tencentcloud/ccc/v20200210/model/ActiveCarrierPrivilegeNumber.h
   include/tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListResponse.h
-  include/tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignRequest.h
+  include/tencentcloud/ccc/v20200210/model/ControlAIConversationRequest.h
   include/tencentcloud/ccc/v20200210/model/UploadAudioInfo.h
   include/tencentcloud/ccc/v20200210/model/CompanyStateInfo.h
   include/tencentcloud/ccc/v20200210/model/DeleteExtensionResponse.h
@@ -232,6 +235,7 @@ set(ccc_src
   src/v20200210/model/ModifyStaffRequest.cpp
   src/v20200210/model/DescribeIvrAudioListResponse.cpp
   src/v20200210/model/DescribePredictiveDialingCampaignsElement.cpp
+  src/v20200210/model/ServerPushText.cpp
   src/v20200210/model/ResetExtensionPasswordRequest.cpp
   src/v20200210/model/DisableCCCPhoneNumberResponse.cpp
   src/v20200210/model/DescribeProtectedTelCdrResponse.cpp
@@ -246,6 +250,7 @@ set(ccc_src
   src/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsRequest.cpp
   src/v20200210/model/DisableCCCPhoneNumberRequest.cpp
   src/v20200210/model/ModifyStaffPasswordResponse.cpp
+  src/v20200210/model/ControlAIConversationResponse.cpp
   src/v20200210/model/TransferToManualRequest.cpp
   src/v20200210/model/CreatePredictiveDialingCampaignRequest.cpp
   src/v20200210/model/RestoreMemberOnlineResponse.cpp
@@ -299,6 +304,7 @@ set(ccc_src
   src/v20200210/model/CarrierPrivilegeNumberApplicant.cpp
   src/v20200210/model/ErrStaffItem.cpp
   src/v20200210/model/PausePredictiveDialingCampaignResponse.cpp
+  src/v20200210/model/ResumePredictiveDialingCampaignRequest.cpp
   src/v20200210/model/PSTNSession.cpp
   src/v20200210/model/UpdatePredictiveDialingCampaignRequest.cpp
   src/v20200210/model/DescribeStaffInfoListRequest.cpp
@@ -371,7 +377,7 @@ set(ccc_src
   src/v20200210/model/DescribeCCCBuyInfoListResponse.cpp
   src/v20200210/model/ActiveCarrierPrivilegeNumber.cpp
   src/v20200210/model/UnbindStaffSkillGroupListResponse.cpp
-  src/v20200210/model/ResumePredictiveDialingCampaignRequest.cpp
+  src/v20200210/model/ControlAIConversationRequest.cpp
   src/v20200210/model/UploadAudioInfo.cpp
   src/v20200210/model/CompanyStateInfo.cpp
   src/v20200210/model/DeleteExtensionResponse.cpp

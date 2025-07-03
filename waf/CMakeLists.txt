@@ -355,6 +355,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/Goods.h
   include/tencentcloud/waf/v20180125/model/UpsertIpAccessControlResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessHistogramRequest.h
+  include/tencentcloud/waf/v20180125/model/NetworkConfig.h
   include/tencentcloud/waf/v20180125/model/BotScoreRuleEntry.h
   include/tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessExportsResponse.h
@@ -814,6 +815,7 @@ set(waf_src
   src/v20180125/model/Goods.cpp
   src/v20180125/model/UpsertIpAccessControlResponse.cpp
   src/v20180125/model/DescribeAccessHistogramRequest.cpp
+  src/v20180125/model/NetworkConfig.cpp
   src/v20180125/model/BotScoreRuleEntry.cpp
   src/v20180125/model/DescribeWafThreatenIntelligenceRequest.cpp
   src/v20180125/model/DescribeAccessExportsResponse.cpp

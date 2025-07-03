@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取代理组ID
-                     * @return ProxyGroupId 代理组ID
+                     * 获取代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * @return ProxyGroupId 代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
-                     * 设置代理组ID
-                     * @param _proxyGroupId 代理组ID
+                     * 设置代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * @param _proxyGroupId 代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取代理组地址ID
-                     * @return ProxyAddressId 代理组地址ID
+                     * 获取代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。如果不传则会对所有代理组地址进行负载均衡。
+                     * @return ProxyAddressId 代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。如果不传则会对所有代理组地址进行负载均衡。
                      * 
                      */
                     std::string GetProxyAddressId() const;
 
                     /**
-                     * 设置代理组地址ID
-                     * @param _proxyAddressId 代理组地址ID
+                     * 设置代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。如果不传则会对所有代理组地址进行负载均衡。
+                     * @param _proxyAddressId 代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。如果不传则会对所有代理组地址进行负载均衡。
                      * 
                      */
                     void SetProxyAddressId(const std::string& _proxyAddressId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 代理组ID
+                     * 代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      */
                     std::string m_proxyGroupId;
                     bool m_proxyGroupIdHasBeenSet;
 
                     /**
-                     * 代理组地址ID
+                     * 代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。如果不传则会对所有代理组地址进行负载均衡。
                      */
                     std::string m_proxyAddressId;
                     bool m_proxyAddressIdHasBeenSet;

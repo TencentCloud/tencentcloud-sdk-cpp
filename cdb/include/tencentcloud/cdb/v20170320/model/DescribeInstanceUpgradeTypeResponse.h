@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例升级类型。
-                     * @return UpgradeType 实例升级类型。
+                     * 获取实例升级类型。Trsf - 迁移升级，InPlace - 原地升级，Topology - 架构升级。
+                     * @return UpgradeType 实例升级类型。Trsf - 迁移升级，InPlace - 原地升级，Topology - 架构升级。
                      * 
                      */
                     std::string GetUpgradeType() const;
@@ -80,7 +80,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例升级类型。
+                     * 实例升级类型。Trsf - 迁移升级，InPlace - 原地升级，Topology - 架构升级。
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;

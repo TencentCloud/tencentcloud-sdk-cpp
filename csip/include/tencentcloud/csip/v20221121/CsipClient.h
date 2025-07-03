@@ -33,6 +33,8 @@
 #include <tencentcloud/csip/v20221121/model/DeleteDomainAndIpResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAccessKeyAssetRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAccessKeyAssetResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAlertListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAlertListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssetProcessListRequest.h>
@@ -49,6 +51,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCallRecordRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCallRecordResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCheckViewRisksRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCheckViewRisksResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterAssetsRequest.h>
@@ -117,6 +121,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeScanTaskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSearchBugInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSearchBugInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSourceIPAssetRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSourceIPAssetResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSubUserInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSubUserInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSubnetAssetsRequest.h>
@@ -182,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRiskScanTaskResponse> DeleteRiskScanTaskOutcome;
                 typedef std::future<DeleteRiskScanTaskOutcome> DeleteRiskScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteRiskScanTaskRequest&, DeleteRiskScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRiskScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccessKeyAssetResponse> DescribeAccessKeyAssetOutcome;
+                typedef std::future<DescribeAccessKeyAssetOutcome> DescribeAccessKeyAssetOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeAccessKeyAssetRequest&, DescribeAccessKeyAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessKeyAssetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAlertListResponse> DescribeAlertListOutcome;
                 typedef std::future<DescribeAlertListOutcome> DescribeAlertListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAlertListRequest&, DescribeAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertListAsyncHandler;
@@ -206,6 +215,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCVMAssetsResponse> DescribeCVMAssetsOutcome;
                 typedef std::future<DescribeCVMAssetsOutcome> DescribeCVMAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCVMAssetsRequest&, DescribeCVMAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCVMAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCallRecordResponse> DescribeCallRecordOutcome;
+                typedef std::future<DescribeCallRecordOutcome> DescribeCallRecordOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCallRecordRequest&, DescribeCallRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCheckViewRisksResponse> DescribeCheckViewRisksOutcome;
                 typedef std::future<DescribeCheckViewRisksOutcome> DescribeCheckViewRisksOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCheckViewRisksRequest&, DescribeCheckViewRisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCheckViewRisksAsyncHandler;
@@ -308,6 +320,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSearchBugInfoResponse> DescribeSearchBugInfoOutcome;
                 typedef std::future<DescribeSearchBugInfoOutcome> DescribeSearchBugInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSearchBugInfoRequest&, DescribeSearchBugInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchBugInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSourceIPAssetResponse> DescribeSourceIPAssetOutcome;
+                typedef std::future<DescribeSourceIPAssetOutcome> DescribeSourceIPAssetOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSourceIPAssetRequest&, DescribeSourceIPAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceIPAssetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubUserInfoResponse> DescribeSubUserInfoOutcome;
                 typedef std::future<DescribeSubUserInfoOutcome> DescribeSubUserInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSubUserInfoRequest&, DescribeSubUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubUserInfoAsyncHandler;
@@ -411,6 +426,15 @@ namespace TencentCloud
                 DeleteRiskScanTaskOutcomeCallable DeleteRiskScanTaskCallable(const Model::DeleteRiskScanTaskRequest& request);
 
                 /**
+                 *获取用户访问密钥资产列表
+                 * @param req DescribeAccessKeyAssetRequest
+                 * @return DescribeAccessKeyAssetOutcome
+                 */
+                DescribeAccessKeyAssetOutcome DescribeAccessKeyAsset(const Model::DescribeAccessKeyAssetRequest &request);
+                void DescribeAccessKeyAssetAsync(const Model::DescribeAccessKeyAssetRequest& request, const DescribeAccessKeyAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccessKeyAssetOutcomeCallable DescribeAccessKeyAssetCallable(const Model::DescribeAccessKeyAssetRequest& request);
+
+                /**
                  *告警中心全量告警列表接口
                  * @param req DescribeAlertListRequest
                  * @return DescribeAlertListOutcome
@@ -481,6 +505,15 @@ namespace TencentCloud
                 DescribeCVMAssetsOutcome DescribeCVMAssets(const Model::DescribeCVMAssetsRequest &request);
                 void DescribeCVMAssetsAsync(const Model::DescribeCVMAssetsRequest& request, const DescribeCVMAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCVMAssetsOutcomeCallable DescribeCVMAssetsCallable(const Model::DescribeCVMAssetsRequest& request);
+
+                /**
+                 *获取调用记录列表
+                 * @param req DescribeCallRecordRequest
+                 * @return DescribeCallRecordOutcome
+                 */
+                DescribeCallRecordOutcome DescribeCallRecord(const Model::DescribeCallRecordRequest &request);
+                void DescribeCallRecordAsync(const Model::DescribeCallRecordRequest& request, const DescribeCallRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCallRecordOutcomeCallable DescribeCallRecordCallable(const Model::DescribeCallRecordRequest& request);
 
                 /**
                  *检查视角下云资源配置风险列表示例
@@ -787,6 +820,15 @@ namespace TencentCloud
                 DescribeSearchBugInfoOutcome DescribeSearchBugInfo(const Model::DescribeSearchBugInfoRequest &request);
                 void DescribeSearchBugInfoAsync(const Model::DescribeSearchBugInfoRequest& request, const DescribeSearchBugInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSearchBugInfoOutcomeCallable DescribeSearchBugInfoCallable(const Model::DescribeSearchBugInfoRequest& request);
+
+                /**
+                 *获取用户访问密钥资产列表（源IP视角）
+                 * @param req DescribeSourceIPAssetRequest
+                 * @return DescribeSourceIPAssetOutcome
+                 */
+                DescribeSourceIPAssetOutcome DescribeSourceIPAsset(const Model::DescribeSourceIPAssetRequest &request);
+                void DescribeSourceIPAssetAsync(const Model::DescribeSourceIPAssetRequest& request, const DescribeSourceIPAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSourceIPAssetOutcomeCallable DescribeSourceIPAssetCallable(const Model::DescribeSourceIPAssetRequest& request);
 
                 /**
                  *查询集团的子账号列表

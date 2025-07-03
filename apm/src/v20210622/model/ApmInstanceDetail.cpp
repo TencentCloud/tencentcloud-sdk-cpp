@@ -62,6 +62,18 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_isMemoryHijackingAnalysisHasBeenSet(false),
     m_logIndexTypeHasBeenSet(false),
     m_logTraceIdKeyHasBeenSet(false),
+    m_isDeleteAnyFileAnalysisHasBeenSet(false),
+    m_isReadAnyFileAnalysisHasBeenSet(false),
+    m_isUploadAnyFileAnalysisHasBeenSet(false),
+    m_isIncludeAnyFileAnalysisHasBeenSet(false),
+    m_isDirectoryTraversalAnalysisHasBeenSet(false),
+    m_isTemplateEngineInjectionAnalysisHasBeenSet(false),
+    m_isScriptEngineInjectionAnalysisHasBeenSet(false),
+    m_isExpressionInjectionAnalysisHasBeenSet(false),
+    m_isJNDIInjectionAnalysisHasBeenSet(false),
+    m_isJNIInjectionAnalysisHasBeenSet(false),
+    m_isWebshellBackdoorAnalysisHasBeenSet(false),
+    m_isDeserializationAnalysisHasBeenSet(false),
     m_tokenHasBeenSet(false)
 {
 }
@@ -494,6 +506,126 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_logTraceIdKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDeleteAnyFileAnalysis") && !value["IsDeleteAnyFileAnalysis"].IsNull())
+    {
+        if (!value["IsDeleteAnyFileAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsDeleteAnyFileAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDeleteAnyFileAnalysis = value["IsDeleteAnyFileAnalysis"].GetInt64();
+        m_isDeleteAnyFileAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsReadAnyFileAnalysis") && !value["IsReadAnyFileAnalysis"].IsNull())
+    {
+        if (!value["IsReadAnyFileAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsReadAnyFileAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isReadAnyFileAnalysis = value["IsReadAnyFileAnalysis"].GetInt64();
+        m_isReadAnyFileAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsUploadAnyFileAnalysis") && !value["IsUploadAnyFileAnalysis"].IsNull())
+    {
+        if (!value["IsUploadAnyFileAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsUploadAnyFileAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isUploadAnyFileAnalysis = value["IsUploadAnyFileAnalysis"].GetInt64();
+        m_isUploadAnyFileAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsIncludeAnyFileAnalysis") && !value["IsIncludeAnyFileAnalysis"].IsNull())
+    {
+        if (!value["IsIncludeAnyFileAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsIncludeAnyFileAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isIncludeAnyFileAnalysis = value["IsIncludeAnyFileAnalysis"].GetInt64();
+        m_isIncludeAnyFileAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDirectoryTraversalAnalysis") && !value["IsDirectoryTraversalAnalysis"].IsNull())
+    {
+        if (!value["IsDirectoryTraversalAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsDirectoryTraversalAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDirectoryTraversalAnalysis = value["IsDirectoryTraversalAnalysis"].GetInt64();
+        m_isDirectoryTraversalAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsTemplateEngineInjectionAnalysis") && !value["IsTemplateEngineInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsTemplateEngineInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsTemplateEngineInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isTemplateEngineInjectionAnalysis = value["IsTemplateEngineInjectionAnalysis"].GetInt64();
+        m_isTemplateEngineInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsScriptEngineInjectionAnalysis") && !value["IsScriptEngineInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsScriptEngineInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsScriptEngineInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isScriptEngineInjectionAnalysis = value["IsScriptEngineInjectionAnalysis"].GetInt64();
+        m_isScriptEngineInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsExpressionInjectionAnalysis") && !value["IsExpressionInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsExpressionInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsExpressionInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isExpressionInjectionAnalysis = value["IsExpressionInjectionAnalysis"].GetInt64();
+        m_isExpressionInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsJNDIInjectionAnalysis") && !value["IsJNDIInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsJNDIInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsJNDIInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isJNDIInjectionAnalysis = value["IsJNDIInjectionAnalysis"].GetInt64();
+        m_isJNDIInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsJNIInjectionAnalysis") && !value["IsJNIInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsJNIInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsJNIInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isJNIInjectionAnalysis = value["IsJNIInjectionAnalysis"].GetInt64();
+        m_isJNIInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsWebshellBackdoorAnalysis") && !value["IsWebshellBackdoorAnalysis"].IsNull())
+    {
+        if (!value["IsWebshellBackdoorAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsWebshellBackdoorAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isWebshellBackdoorAnalysis = value["IsWebshellBackdoorAnalysis"].GetInt64();
+        m_isWebshellBackdoorAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDeserializationAnalysis") && !value["IsDeserializationAnalysis"].IsNull())
+    {
+        if (!value["IsDeserializationAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsDeserializationAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDeserializationAnalysis = value["IsDeserializationAnalysis"].GetInt64();
+        m_isDeserializationAnalysisHasBeenSet = true;
+    }
+
     if (value.HasMember("Token") && !value["Token"].IsNull())
     {
         if (!value["Token"].IsString())
@@ -849,6 +981,102 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "LogTraceIdKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logTraceIdKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDeleteAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeleteAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDeleteAnyFileAnalysis, allocator);
+    }
+
+    if (m_isReadAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsReadAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isReadAnyFileAnalysis, allocator);
+    }
+
+    if (m_isUploadAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsUploadAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isUploadAnyFileAnalysis, allocator);
+    }
+
+    if (m_isIncludeAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsIncludeAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isIncludeAnyFileAnalysis, allocator);
+    }
+
+    if (m_isDirectoryTraversalAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDirectoryTraversalAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDirectoryTraversalAnalysis, allocator);
+    }
+
+    if (m_isTemplateEngineInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTemplateEngineInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isTemplateEngineInjectionAnalysis, allocator);
+    }
+
+    if (m_isScriptEngineInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsScriptEngineInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isScriptEngineInjectionAnalysis, allocator);
+    }
+
+    if (m_isExpressionInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExpressionInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isExpressionInjectionAnalysis, allocator);
+    }
+
+    if (m_isJNDIInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsJNDIInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isJNDIInjectionAnalysis, allocator);
+    }
+
+    if (m_isJNIInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsJNIInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isJNIInjectionAnalysis, allocator);
+    }
+
+    if (m_isWebshellBackdoorAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsWebshellBackdoorAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isWebshellBackdoorAnalysis, allocator);
+    }
+
+    if (m_isDeserializationAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeserializationAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDeserializationAnalysis, allocator);
     }
 
     if (m_tokenHasBeenSet)
@@ -1516,6 +1744,198 @@ void ApmInstanceDetail::SetLogTraceIdKey(const string& _logTraceIdKey)
 bool ApmInstanceDetail::LogTraceIdKeyHasBeenSet() const
 {
     return m_logTraceIdKeyHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsDeleteAnyFileAnalysis() const
+{
+    return m_isDeleteAnyFileAnalysis;
+}
+
+void ApmInstanceDetail::SetIsDeleteAnyFileAnalysis(const int64_t& _isDeleteAnyFileAnalysis)
+{
+    m_isDeleteAnyFileAnalysis = _isDeleteAnyFileAnalysis;
+    m_isDeleteAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsDeleteAnyFileAnalysisHasBeenSet() const
+{
+    return m_isDeleteAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsReadAnyFileAnalysis() const
+{
+    return m_isReadAnyFileAnalysis;
+}
+
+void ApmInstanceDetail::SetIsReadAnyFileAnalysis(const int64_t& _isReadAnyFileAnalysis)
+{
+    m_isReadAnyFileAnalysis = _isReadAnyFileAnalysis;
+    m_isReadAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsReadAnyFileAnalysisHasBeenSet() const
+{
+    return m_isReadAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsUploadAnyFileAnalysis() const
+{
+    return m_isUploadAnyFileAnalysis;
+}
+
+void ApmInstanceDetail::SetIsUploadAnyFileAnalysis(const int64_t& _isUploadAnyFileAnalysis)
+{
+    m_isUploadAnyFileAnalysis = _isUploadAnyFileAnalysis;
+    m_isUploadAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsUploadAnyFileAnalysisHasBeenSet() const
+{
+    return m_isUploadAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsIncludeAnyFileAnalysis() const
+{
+    return m_isIncludeAnyFileAnalysis;
+}
+
+void ApmInstanceDetail::SetIsIncludeAnyFileAnalysis(const int64_t& _isIncludeAnyFileAnalysis)
+{
+    m_isIncludeAnyFileAnalysis = _isIncludeAnyFileAnalysis;
+    m_isIncludeAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsIncludeAnyFileAnalysisHasBeenSet() const
+{
+    return m_isIncludeAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsDirectoryTraversalAnalysis() const
+{
+    return m_isDirectoryTraversalAnalysis;
+}
+
+void ApmInstanceDetail::SetIsDirectoryTraversalAnalysis(const int64_t& _isDirectoryTraversalAnalysis)
+{
+    m_isDirectoryTraversalAnalysis = _isDirectoryTraversalAnalysis;
+    m_isDirectoryTraversalAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsDirectoryTraversalAnalysisHasBeenSet() const
+{
+    return m_isDirectoryTraversalAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsTemplateEngineInjectionAnalysis() const
+{
+    return m_isTemplateEngineInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsTemplateEngineInjectionAnalysis(const int64_t& _isTemplateEngineInjectionAnalysis)
+{
+    m_isTemplateEngineInjectionAnalysis = _isTemplateEngineInjectionAnalysis;
+    m_isTemplateEngineInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsTemplateEngineInjectionAnalysisHasBeenSet() const
+{
+    return m_isTemplateEngineInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsScriptEngineInjectionAnalysis() const
+{
+    return m_isScriptEngineInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsScriptEngineInjectionAnalysis(const int64_t& _isScriptEngineInjectionAnalysis)
+{
+    m_isScriptEngineInjectionAnalysis = _isScriptEngineInjectionAnalysis;
+    m_isScriptEngineInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsScriptEngineInjectionAnalysisHasBeenSet() const
+{
+    return m_isScriptEngineInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsExpressionInjectionAnalysis() const
+{
+    return m_isExpressionInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsExpressionInjectionAnalysis(const int64_t& _isExpressionInjectionAnalysis)
+{
+    m_isExpressionInjectionAnalysis = _isExpressionInjectionAnalysis;
+    m_isExpressionInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsExpressionInjectionAnalysisHasBeenSet() const
+{
+    return m_isExpressionInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsJNDIInjectionAnalysis() const
+{
+    return m_isJNDIInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsJNDIInjectionAnalysis(const int64_t& _isJNDIInjectionAnalysis)
+{
+    m_isJNDIInjectionAnalysis = _isJNDIInjectionAnalysis;
+    m_isJNDIInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsJNDIInjectionAnalysisHasBeenSet() const
+{
+    return m_isJNDIInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsJNIInjectionAnalysis() const
+{
+    return m_isJNIInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsJNIInjectionAnalysis(const int64_t& _isJNIInjectionAnalysis)
+{
+    m_isJNIInjectionAnalysis = _isJNIInjectionAnalysis;
+    m_isJNIInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsJNIInjectionAnalysisHasBeenSet() const
+{
+    return m_isJNIInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsWebshellBackdoorAnalysis() const
+{
+    return m_isWebshellBackdoorAnalysis;
+}
+
+void ApmInstanceDetail::SetIsWebshellBackdoorAnalysis(const int64_t& _isWebshellBackdoorAnalysis)
+{
+    m_isWebshellBackdoorAnalysis = _isWebshellBackdoorAnalysis;
+    m_isWebshellBackdoorAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsWebshellBackdoorAnalysisHasBeenSet() const
+{
+    return m_isWebshellBackdoorAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsDeserializationAnalysis() const
+{
+    return m_isDeserializationAnalysis;
+}
+
+void ApmInstanceDetail::SetIsDeserializationAnalysis(const int64_t& _isDeserializationAnalysis)
+{
+    m_isDeserializationAnalysis = _isDeserializationAnalysis;
+    m_isDeserializationAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsDeserializationAnalysisHasBeenSet() const
+{
+    return m_isDeserializationAnalysisHasBeenSet;
 }
 
 string ApmInstanceDetail::GetToken() const

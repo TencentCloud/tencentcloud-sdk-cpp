@@ -59,7 +59,8 @@ JobV1::JobV1() :
     m_runningCpuHasBeenSet(false),
     m_runningMemHasBeenSet(false),
     m_openJobDefaultAlarmHasBeenSet(false),
-    m_progressDescHasBeenSet(false)
+    m_progressDescHasBeenSet(false),
+    m_continueAlarmHasBeenSet(false)
 {
 }
 
@@ -475,6 +476,16 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         m_progressDescHasBeenSet = true;
     }
 
+    if (value.HasMember("ContinueAlarm") && !value["ContinueAlarm"].IsNull())
+    {
+        if (!value["ContinueAlarm"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.ContinueAlarm` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_continueAlarm = value["ContinueAlarm"].GetInt64();
+        m_continueAlarmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -800,6 +811,14 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ProgressDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_progressDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_continueAlarmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContinueAlarm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_continueAlarm, allocator);
     }
 
 }
@@ -1427,5 +1446,21 @@ void JobV1::SetProgressDesc(const string& _progressDesc)
 bool JobV1::ProgressDescHasBeenSet() const
 {
     return m_progressDescHasBeenSet;
+}
+
+int64_t JobV1::GetContinueAlarm() const
+{
+    return m_continueAlarm;
+}
+
+void JobV1::SetContinueAlarm(const int64_t& _continueAlarm)
+{
+    m_continueAlarm = _continueAlarm;
+    m_continueAlarmHasBeenSet = true;
+}
+
+bool JobV1::ContinueAlarmHasBeenSet() const
+{
+    return m_continueAlarmHasBeenSet;
 }
 

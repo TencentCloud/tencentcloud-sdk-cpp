@@ -857,6 +857,92 @@ AiartClient::TextToImageOutcomeCallable AiartClient::TextToImageCallable(const T
     return task->get_future();
 }
 
+AiartClient::TextToImageLiteOutcome AiartClient::TextToImageLite(const TextToImageLiteRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToImageLite");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToImageLiteResponse rsp = TextToImageLiteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToImageLiteOutcome(rsp);
+        else
+            return TextToImageLiteOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToImageLiteOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::TextToImageLiteAsync(const TextToImageLiteRequest& request, const TextToImageLiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextToImageLite(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::TextToImageLiteOutcomeCallable AiartClient::TextToImageLiteCallable(const TextToImageLiteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextToImageLiteOutcome()>>(
+        [this, request]()
+        {
+            return this->TextToImageLite(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::TextToImageRapidOutcome AiartClient::TextToImageRapid(const TextToImageRapidRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToImageRapid");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToImageRapidResponse rsp = TextToImageRapidResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToImageRapidOutcome(rsp);
+        else
+            return TextToImageRapidOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToImageRapidOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::TextToImageRapidAsync(const TextToImageRapidRequest& request, const TextToImageRapidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextToImageRapid(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::TextToImageRapidOutcomeCallable AiartClient::TextToImageRapidCallable(const TextToImageRapidRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextToImageRapidOutcome()>>(
+        [this, request]()
+        {
+            return this->TextToImageRapid(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::UploadTrainPortraitImagesOutcome AiartClient::UploadTrainPortraitImages(const UploadTrainPortraitImagesRequest &request)
 {
     auto outcome = MakeRequest(request, "UploadTrainPortraitImages");

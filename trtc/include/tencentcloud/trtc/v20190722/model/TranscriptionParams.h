@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/VoicePrint.h>
 
 
 namespace TencentCloud
@@ -222,6 +223,27 @@ https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.9
                      */
                     bool TargetUserIdListHasBeenSet() const;
 
+                    /**
+                     * 获取声纹配置
+                     * @return VoicePrint 声纹配置
+                     * 
+                     */
+                    VoicePrint GetVoicePrint() const;
+
+                    /**
+                     * 设置声纹配置
+                     * @param _voicePrint 声纹配置
+                     * 
+                     */
+                    void SetVoicePrint(const VoicePrint& _voicePrint);
+
+                    /**
+                     * 判断参数 VoicePrint 是否已赋值
+                     * @return VoicePrint 是否已赋值
+                     * 
+                     */
+                    bool VoicePrintHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +295,12 @@ https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.9
                      */
                     std::vector<std::string> m_targetUserIdList;
                     bool m_targetUserIdListHasBeenSet;
+
+                    /**
+                     * 声纹配置
+                     */
+                    VoicePrint m_voicePrint;
+                    bool m_voicePrintHasBeenSet;
 
                 };
             }

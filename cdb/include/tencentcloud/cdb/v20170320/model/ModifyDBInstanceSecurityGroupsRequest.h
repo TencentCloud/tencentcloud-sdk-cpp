@@ -64,18 +64,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
+                     * 获取要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 [DescribeDBSecurityGroups](hhttps://cloud.tencent.com/document/api/236/15854) 接口获取。输入的安全组 ID 数组无长度限制。
 注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
-                     * @return SecurityGroupIds 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
+                     * @return SecurityGroupIds 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 [DescribeDBSecurityGroups](hhttps://cloud.tencent.com/document/api/236/15854) 接口获取。输入的安全组 ID 数组无长度限制。
 注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
+                     * 设置要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 [DescribeDBSecurityGroups](hhttps://cloud.tencent.com/document/api/236/15854) 接口获取。输入的安全组 ID 数组无长度限制。
 注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
-                     * @param _securityGroupIds 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
+                     * @param _securityGroupIds 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 [DescribeDBSecurityGroups](hhttps://cloud.tencent.com/document/api/236/15854) 接口获取。输入的安全组 ID 数组无长度限制。
 注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
-                     * @return ForReadonlyInstance 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     * 获取当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组， 需要将该入参置为 True。默认为 False。
+                     * @return ForReadonlyInstance 当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组， 需要将该入参置为 True。默认为 False。
                      * 
                      */
                     bool GetForReadonlyInstance() const;
 
                     /**
-                     * 设置当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
-                     * @param _forReadonlyInstance 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     * 设置当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组， 需要将该入参置为 True。默认为 False。
+                     * @param _forReadonlyInstance 当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组， 需要将该入参置为 True。默认为 False。
                      * 
                      */
                     void SetForReadonlyInstance(const bool& _forReadonlyInstance);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ForReadonlyInstanceHasBeenSet() const;
 
                     /**
-                     * 获取变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
-                     * @return OpResourceId 变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
+                     * 获取变更集群版实例只读组时，InstanceId 传实例 ID，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
+                     * @return OpResourceId 变更集群版实例只读组时，InstanceId 传实例 ID，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
                      * 
                      */
                     std::string GetOpResourceId() const;
 
                     /**
-                     * 设置变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
-                     * @param _opResourceId 变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
+                     * 设置变更集群版实例只读组时，InstanceId 传实例 ID，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
+                     * @param _opResourceId 变更集群版实例只读组时，InstanceId 传实例 ID，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
                      * 
                      */
                     void SetOpResourceId(const std::string& _opResourceId);
@@ -139,20 +139,20 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
+                     * 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 [DescribeDBSecurityGroups](hhttps://cloud.tencent.com/document/api/236/15854) 接口获取。输入的安全组 ID 数组无长度限制。
 注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     * 当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组， 需要将该入参置为 True。默认为 False。
                      */
                     bool m_forReadonlyInstance;
                     bool m_forReadonlyInstanceHasBeenSet;
 
                     /**
-                     * 变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
+                     * 变更集群版实例只读组时，InstanceId 传实例 ID，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
                      */
                     std::string m_opResourceId;
                     bool m_opResourceIdHasBeenSet;
