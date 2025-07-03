@@ -18,8 +18,10 @@
 
 namespace TencentCloud 
 {
-    class CurlAsync {
+    class CurlAsync 
+    {
         friend class AbstractClient;
+        
     public:
         static CurlAsync* GetInstance();
         bool Start();
@@ -28,10 +30,13 @@ namespace TencentCloud
     private:
         void AddRequest(HttpClient* httpClient, HttpRequest request, std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise);
 
-        class Garbo {
+        class Garbo 
+        {
         public:
-            ~Garbo() {
-                if (CurlAsync::m_instance != nullptr) {
+            ~Garbo() 
+            {
+                if (CurlAsync::m_instance != nullptr) 
+                {
                     delete CurlAsync::m_instance;
                     CurlAsync::m_instance = nullptr;
                 }
@@ -39,13 +44,13 @@ namespace TencentCloud
         };
 
         // template<typename ClientType, typename ReqType, typename HandlerType>
-        struct AsyncContext {
+        struct AsyncContext 
+        {
             // ClientType client;
             // ReqType request;
             // HandlerType handler;
-
-            HttpRequest request;
-            std::shared_ptr<const AsyncCallerContext> reqContext;
+            // HttpRequest request;
+            // std::shared_ptr<const AsyncCallerContext> reqContext;
 
             std::ostringstream responseStream;
             HttpResponse response;
@@ -53,8 +58,10 @@ namespace TencentCloud
             curl_slist* headerList = nullptr;
             std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise;
 
-            virtual ~AsyncContext() {
-                if (headerList) {
+            virtual ~AsyncContext() 
+            {
+                if (headerList) 
+                {
                     curl_slist_free_all(headerList);
                 }
             }
@@ -71,7 +78,6 @@ namespace TencentCloud
 
         CURLM* m_multiHandle;
         std::mutex m_multiHandleMutex;
-        std::vector<CURL*> m_easyHandles; 
         std::unordered_map<CURL*, std::shared_ptr<AsyncContext>> m_activeContexts;
         std::mutex m_esayHandlesMutex;
 

@@ -147,16 +147,16 @@ void CurlAsync::Shutdown()
 
     if (m_multiHandle)
     {
-        lock_guard<mutex> lock(m_esayHandlesMutex);
-        // 清理所有easy handle
-        for (auto handle : m_easyHandles)
+        for (auto& pair : m_activeContexts)
         {
+            auto handle = pair.first;
+            auto ctx = pair.second;
             unique_lock<mutex> ul(m_multiHandleMutex);
             curl_multi_remove_handle(m_multiHandle, handle);
             ul.unlock();
             curl_easy_cleanup(handle);
         }
-        m_easyHandles.clear();
+        m_activeContexts.clear();
 
         curl_multi_cleanup(m_multiHandle);
         m_multiHandle = nullptr;
@@ -168,6 +168,9 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::sha
     if (!m_multiHandle)
     {
         cerr << "multi handle init error" << endl;
+        if (promise) {
+            promise->set_exception(std::make_exception_ptr(Core::Error("InitError", "curl multi handle not initialized")));
+        }
         return;
     }
 
@@ -175,6 +178,9 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::sha
     if (!easy_handle)
     {
         cerr << "easy handle init error" << endl;
+        if (promise) {
+            promise->set_exception(std::make_exception_ptr(Core::Error("InitError", "curl easy handle not initialized")));
+        }
         return;
     }
 
@@ -243,7 +249,8 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::sha
     setCUrlProxy(easy_handle, httpClient->GetProxy());
 
     curl_easy_setopt(easy_handle, CURLOPT_ERRORBUFFER, ctx->errorBuffer);
-
+    
+    
     unique_lock<mutex> ul(m_multiHandleMutex);
     CURLMcode mc = curl_multi_add_handle(m_multiHandle, easy_handle);
     ul.unlock();
@@ -256,7 +263,6 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::sha
         return;
     } else {
         lock_guard<mutex> lock(m_esayHandlesMutex);
-        m_easyHandles.push_back(easy_handle);
         m_activeContexts[easy_handle] = ctx;
         cout << "add request to multi handle success" << endl;
     }
@@ -356,7 +362,6 @@ void CurlAsync::readTaskResult() {
                     auto it = m_activeContexts.find(easy_handle);
                     if (it != m_activeContexts.end()) {
                         m_activeContexts.erase(it);
-                        m_easyHandles.erase(std::remove(m_easyHandles.begin(), m_easyHandles.end(), easy_handle), m_easyHandles.end());
                     }
                 }
             }

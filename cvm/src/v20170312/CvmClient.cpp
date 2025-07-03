@@ -1572,26 +1572,31 @@ void CvmClient::DescribeInstancesAsync(const DescribeInstancesRequest& request,
 
     auto ignoreFuture = std::async(std::launch::async, [this, request, handler, context](std::future<HttpClient::HttpResponseOutcome> f) mutable {
         DescribeInstancesOutcome finalOutcome;
+        try {
+            // 获取请求结果，可能抛出异常
+            auto httpOutcome = f.get();
 
-        // 获取请求结果
-        auto httpOutcome = f.get();
+            if (httpOutcome.IsSuccess()) {
+                const auto& resp = httpOutcome.GetResult();
+                std::string payload(resp.Body(), resp.BodySize());
 
-        if (httpOutcome.IsSuccess()) {
-            const auto& resp = httpOutcome.GetResult();
-            std::string payload(resp.Body(), resp.BodySize());
-
-            DescribeInstancesResponse rsp;
-            auto o = rsp.Deserialize(payload);
-            if (o.IsSuccess()) {
-                finalOutcome = DescribeInstancesOutcome(rsp);
+                DescribeInstancesResponse rsp;
+                auto o = rsp.Deserialize(payload);
+                if (o.IsSuccess()) {
+                    finalOutcome = DescribeInstancesOutcome(rsp);
+                } else {
+                    finalOutcome = DescribeInstancesOutcome(o.GetError());
+                }
             } else {
-                finalOutcome = DescribeInstancesOutcome(o.GetError());
+                finalOutcome = DescribeInstancesOutcome(httpOutcome.GetError());
             }
-        } else {
-            finalOutcome = DescribeInstancesOutcome(httpOutcome.GetError());
+        } catch (const std::exception& ex) {
+            finalOutcome = DescribeInstancesOutcome(Core::Error("FutureException", ex.what()));
+        } catch (...) {
+            finalOutcome = DescribeInstancesOutcome(Core::Error("UnknownError", "Unknown exception in future.get()"));
         }
 
-        // 不论是否成功，触发 handler
+        // 触发 handler
         handler(this, request, finalOutcome, context);
     }, std::move(httpFuture));
 }
