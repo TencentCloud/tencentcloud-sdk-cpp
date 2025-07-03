@@ -30,6 +30,8 @@ namespace TencentCloud
     class AbstractClient
     {
     public:
+        typedef std::function<void(const HttpClient::HttpResponseOutcome&)> AsyncCallback;
+
         AbstractClient(const std::string &endpoint, const std::string &version, const Credential &credential, const std::string &region);
         AbstractClient(const std::string &endpoint, const std::string &version, const Credential &credential, const std::string &region, const ClientProfile &profile);
         ~AbstractClient();
@@ -46,13 +48,27 @@ namespace TencentCloud
         HttpClient::HttpResponseOutcome MakeRequestOctetStream(const std::string &actionName, std::map<std::string, std::string> &headers, const std::string &body);
 
     protected:
+
         HttpClient::HttpResponseOutcome MakeRequest(const AbstractModel& request, const std::string &actionName);
-        std::future<HttpClient::HttpResponseOutcome> MakeRequestAsync(const AbstractModel& request, const std::string &actionName);
+        std::future<HttpClient::HttpResponseOutcome> MakeRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback);
 
         HttpClient::HttpResponseOutcome DoRequest(const std::string &actionName, const std::string &body, std::map<std::string, std::string> &headers);
-        std::future<HttpClient::HttpResponseOutcome> DoRequestAsync(const AbstractModel& request, const std::string &actionName);
+        std::future<HttpClient::HttpResponseOutcome> DoRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback handler);
 
         void GenerateSignature(HttpRequest &request);
+
+        // void doCallback(HttpClient::HttpResponseOutcome outcome){
+        //     auto r = outcome.GetResult();
+        //     string payload = string(r.Body(), r.BodySize());
+        //     DescribeInstancesResponse rsp = DescribeInstancesResponse();
+        //     auto o = rsp.Deserialize(payload);
+        //     DescribeInstancesOutcome response;
+        //     if (o.IsSuccess())
+        //         response = DescribeInstancesOutcome(rsp);
+        //     else
+        //         response = DescribeInstancesOutcome(o.GetError());
+        //     handler(this, request, response, context);
+        // }
 
     private:
         Credential m_credential;

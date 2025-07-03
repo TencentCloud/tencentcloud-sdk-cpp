@@ -100,9 +100,9 @@ HttpClient::HttpResponseOutcome AbstractClient::MakeRequest(const AbstractModel&
     return DoRequest(actionName, body, headers);
 }
 
-std::future<HttpClient::HttpResponseOutcome> AbstractClient::MakeRequestAsync(const AbstractModel& request, const std::string &actionName)
+std::future<HttpClient::HttpResponseOutcome> AbstractClient::MakeRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback)
 {
-    return DoRequestAsync(request, actionName);
+    return DoRequestAsync(request, actionName, callback);
 }
 
 HttpClient::HttpResponseOutcome AbstractClient::MakeRequestJson(const std::string &actionName, const std::string &params)
@@ -187,7 +187,7 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
     return m_httpClient->SendRequest(httpRequest);
 }
 
-std::future<HttpClient::HttpResponseOutcome> AbstractClient::DoRequestAsync(const AbstractModel& request, const std::string &actionName)
+std::future<HttpClient::HttpResponseOutcome> AbstractClient::DoRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback)
 {
     std::cout << "AbstractClient::DoRequestAsync()" << std::endl;
 
@@ -260,7 +260,7 @@ std::future<HttpClient::HttpResponseOutcome> AbstractClient::DoRequestAsync(cons
     }
 
     auto promise = std::make_shared<std::promise<HttpClient::HttpResponseOutcome>>();
-    CurlAsync::GetInstance()->AddRequest(m_httpClient, httpRequest, promise);
+    CurlAsync::GetInstance()->AddRequest(m_httpClient, httpRequest, promise, callback);
     return promise->get_future();
 }
 

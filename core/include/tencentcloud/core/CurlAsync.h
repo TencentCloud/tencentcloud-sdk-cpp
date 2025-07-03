@@ -28,7 +28,7 @@ namespace TencentCloud
         void Shutdown();
 
     private:
-        void AddRequest(HttpClient* httpClient, HttpRequest request, std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise);
+        void AddRequest(HttpClient* httpClient, HttpRequest request, std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise, AbstractClient::AsyncCallback callback);
 
         class Garbo 
         {
@@ -43,22 +43,16 @@ namespace TencentCloud
             }
         };
 
-        // template<typename ClientType, typename ReqType, typename HandlerType>
         struct AsyncContext 
         {
-            // ClientType client;
-            // ReqType request;
-            // HandlerType handler;
-            // HttpRequest request;
-            // std::shared_ptr<const AsyncCallerContext> reqContext;
-
             std::ostringstream responseStream;
             HttpResponse response;
             char errorBuffer[CURL_ERROR_SIZE];
             curl_slist* headerList = nullptr;
             std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise;
+            AbstractClient::AsyncCallback callback;
 
-            virtual ~AsyncContext() 
+            ~AsyncContext() 
             {
                 if (headerList) 
                 {

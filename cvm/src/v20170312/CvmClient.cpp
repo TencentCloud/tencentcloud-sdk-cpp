@@ -19,6 +19,7 @@
 #include <tencentcloud/core/Runnable.h>
 #include <tencentcloud/core/CurlAsync.h>
 #include <tencentcloud/core/Credential.h>
+#include <tencentcloud/core/http/HttpClient.h>
 #include <iostream>
 
 using namespace TencentCloud;
@@ -1568,37 +1569,25 @@ void CvmClient::DescribeInstancesAsync(const DescribeInstancesRequest& request,
                                      const DescribeInstancesAsyncHandler& handler, 
                                      const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto httpFuture = this->MakeRequestAsync(request, "DescribeInstances");
-
-    auto ignoreFuture = std::async(std::launch::async, [this, request, handler, context](std::future<HttpClient::HttpResponseOutcome> f) mutable {
-        DescribeInstancesOutcome finalOutcome;
-        try {
-            // 获取请求结果，可能抛出异常
-            auto httpOutcome = f.get();
-
-            if (httpOutcome.IsSuccess()) {
-                const auto& resp = httpOutcome.GetResult();
-                std::string payload(resp.Body(), resp.BodySize());
-
-                DescribeInstancesResponse rsp;
-                auto o = rsp.Deserialize(payload);
-                if (o.IsSuccess()) {
-                    finalOutcome = DescribeInstancesOutcome(rsp);
-                } else {
-                    finalOutcome = DescribeInstancesOutcome(o.GetError());
-                }
-            } else {
-                finalOutcome = DescribeInstancesOutcome(httpOutcome.GetError());
-            }
-        } catch (const std::exception& ex) {
-            finalOutcome = DescribeInstancesOutcome(Core::Error("FutureException", ex.what()));
-        } catch (...) {
-            finalOutcome = DescribeInstancesOutcome(Core::Error("UnknownError", "Unknown exception in future.get()"));
+    this->MakeRequestAsync(request, "DescribeInstances", [=](HttpClient::HttpResponseOutcome outcome){
+        DescribeInstancesOutcome response;
+        if (outcome.IsSuccess()) 
+        {
+            auto r = outcome.GetResult();
+            string payload = string(r.Body(), r.BodySize());
+            DescribeInstancesResponse rsp = DescribeInstancesResponse();
+            auto o = rsp.Deserialize(payload);
+            if (o.IsSuccess())
+                response = DescribeInstancesOutcome(rsp);
+            else
+                response = DescribeInstancesOutcome(o.GetError());
+        } 
+        else
+        {
+            response = DescribeInstancesOutcome(outcome.GetError());
         }
-
-        // 触发 handler
-        handler(this, request, finalOutcome, context);
-    }, std::move(httpFuture));
+        handler(this, request, response, context); 
+    });
 }
 
 CvmClient::DescribeInstancesOutcomeCallable CvmClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
@@ -1610,7 +1599,7 @@ CvmClient::DescribeInstancesOutcomeCallable CvmClient::DescribeInstancesCallable
                        const DescribeInstancesOutcome& outcome,
                        const std::shared_ptr<const AsyncCallerContext>& context)
     {
-        promise->set_value(outcome);  // 不管成功还是失败都塞入结果
+        promise->set_value(outcome);
     };
 
     this->DescribeInstancesAsync(request, handler, std::make_shared<AsyncCallerContext>());

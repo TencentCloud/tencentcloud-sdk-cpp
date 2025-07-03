@@ -45,8 +45,6 @@ int main()
     Credential cred = Credential(getenv("TENCENTCLOUD_SECRET_ID"),
                                  getenv("TENCENTCLOUD_SECRET_KEY"));
 
-
-
     DescribeInstancesRequest req = DescribeInstancesRequest();
     req.SetOffset(0);
     req.SetLimit(5);
@@ -60,7 +58,7 @@ int main()
     */
    CvmClient cvm_client = CvmClient(cred, "ap-guangzhou");
 
-#if 1
+#if 0
     // use callback
     cout<<"Use callback..."<<endl;
     auto callback = [](const CvmClient* client, const DescribeInstancesRequest& req, CvmClient::DescribeInstancesOutcome outcome, const shared_ptr<const AsyncCallerContext>& context)
@@ -90,7 +88,7 @@ int main()
     this_thread::sleep_for(chrono::seconds(5));
 #endif
 
-#if 0
+#if 1
     // use future
     cout<<"Use future..."<<endl;
     auto ret = cvm_client.DescribeInstancesCallable(req);

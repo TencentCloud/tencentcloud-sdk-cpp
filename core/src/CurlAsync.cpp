@@ -163,14 +163,12 @@ void CurlAsync::Shutdown()
     }
 }
 
-void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise)
+void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise, AbstractClient::AsyncCallback callback)
 {
     if (!m_multiHandle)
     {
         cerr << "multi handle init error" << endl;
-        if (promise) {
-            promise->set_exception(std::make_exception_ptr(Core::Error("InitError", "curl multi handle not initialized")));
-        }
+        callback(HttpClient::HttpResponseOutcome(Core::Error("CurlError", "multi handle not initialized")));
         return;
     }
 
@@ -178,14 +176,13 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::sha
     if (!easy_handle)
     {
         cerr << "easy handle init error" << endl;
-        if (promise) {
-            promise->set_exception(std::make_exception_ptr(Core::Error("InitError", "curl easy handle not initialized")));
-        }
+        callback(HttpClient::HttpResponseOutcome(Core::Error("CurlError", "easy handle not initialized")));
         return;
     }
 
     shared_ptr<AsyncContext> ctx = make_shared<AsyncContext>();
     ctx->promise = promise; 
+    ctx->callback = callback;
 
     std::string url = request.GetUrl().ToString();
     cout << "CurlAsync::AddRequest() url = " << url << endl;
@@ -256,9 +253,7 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::sha
     ul.unlock();
     if (mc != CURLM_OK) {
         cerr << "add request to multi handle error: " << curl_multi_strerror(mc) << endl;
-        if (ctx && ctx->promise) {
-            ctx->promise->set_exception(std::make_exception_ptr(Core::Error("PerformError", curl_multi_strerror(mc))));
-        }
+        callback(HttpClient::HttpResponseOutcome(Core::Error("CurlError", "add request to multi handle error")));
         curl_easy_cleanup(easy_handle);
         return;
     } else {
@@ -347,7 +342,16 @@ void CurlAsync::readTaskResult() {
                 } else {
                     outcome = HttpClient::HttpResponseOutcome(Core::Error("CurlError", ctx->errorBuffer));
                 }
-                ctx->promise->set_value(outcome);
+
+                // 1. 调用 callback（如果存在）
+                if (ctx->callback) {
+                    ctx->callback(outcome);
+                }
+
+                // 2. 设置 promise（如果存在）
+                if (ctx->promise) {
+                    ctx->promise->set_value(outcome);
+                }
 
                 cout << "handle success" << endl;
                 // 从多句柄移除并清理
