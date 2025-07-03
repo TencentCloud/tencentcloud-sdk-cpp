@@ -49,15 +49,39 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv 等）。
-                     * @return Url 直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv 等）。
+                     * 获取直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。
+trtc地址如下：
+ trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`
+`<roomid>` 为trtc的房间号id, 为数字
+`<sdkappid>` 为trtc的sdk app id
+`<userid>` 为服务进入房间的用户id,可以区分谁是机器人
+<`usersig>` 为trtc 用户的签名
+                     * @return Url 直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。
+trtc地址如下：
+ trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`
+`<roomid>` 为trtc的房间号id, 为数字
+`<sdkappid>` 为trtc的sdk app id
+`<userid>` 为服务进入房间的用户id,可以区分谁是机器人
+<`usersig>` 为trtc 用户的签名
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv 等）。
-                     * @param _url 直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv 等）。
+                     * 设置直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。
+trtc地址如下：
+ trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`
+`<roomid>` 为trtc的房间号id, 为数字
+`<sdkappid>` 为trtc的sdk app id
+`<userid>` 为服务进入房间的用户id,可以区分谁是机器人
+<`usersig>` 为trtc 用户的签名
+                     * @param _url 直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。
+trtc地址如下：
+ trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`
+`<roomid>` 为trtc的房间号id, 为数字
+`<sdkappid>` 为trtc的sdk app id
+`<userid>` 为服务进入房间的用户id,可以区分谁是机器人
+<`usersig>` 为trtc 用户的签名
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -298,7 +322,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv 等）。
+                     * 直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。
+trtc地址如下：
+ trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`
+`<roomid>` 为trtc的房间号id, 为数字
+`<sdkappid>` 为trtc的sdk app id
+`<userid>` 为服务进入房间的用户id,可以区分谁是机器人
+<`usersig>` 为trtc 用户的签名
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

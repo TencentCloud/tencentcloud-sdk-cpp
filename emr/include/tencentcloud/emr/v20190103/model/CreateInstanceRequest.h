@@ -923,6 +923,27 @@ Hadoop-Hbase
                      */
                     bool NodeMarksHasBeenSet() const;
 
+                    /**
+                     * 获取CLB id
+                     * @return LoadBalancerId CLB id
+                     * 
+                     */
+                    std::string GetLoadBalancerId() const;
+
+                    /**
+                     * 设置CLB id
+                     * @param _loadBalancerId CLB id
+                     * 
+                     */
+                    void SetLoadBalancerId(const std::string& _loadBalancerId);
+
+                    /**
+                     * 判断参数 LoadBalancerId 是否已赋值
+                     * @return LoadBalancerId 是否已赋值
+                     * 
+                     */
+                    bool LoadBalancerIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1167,6 +1188,12 @@ Hadoop-Hbase
                      */
                     std::vector<NodeMark> m_nodeMarks;
                     bool m_nodeMarksHasBeenSet;
+
+                    /**
+                     * CLB id
+                     */
+                    std::string m_loadBalancerId;
+                    bool m_loadBalancerIdHasBeenSet;
 
                 };
             }

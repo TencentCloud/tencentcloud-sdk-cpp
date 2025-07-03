@@ -73,7 +73,9 @@ InstanceInfo::InstanceInfo() :
     m_accountTypeHasBeenSet(false),
     m_monitorModeHasBeenSet(false),
     m_cNSummaryHasBeenSet(false),
-    m_computeGroupCountHasBeenSet(false)
+    m_computeGroupCountHasBeenSet(false),
+    m_cosStorageSizeHasBeenSet(false),
+    m_isMasterNonVMHasBeenSet(false)
 {
 }
 
@@ -656,6 +658,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_computeGroupCountHasBeenSet = true;
     }
 
+    if (value.HasMember("CosStorageSize") && !value["CosStorageSize"].IsNull())
+    {
+        if (!value["CosStorageSize"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CosStorageSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosStorageSize = value["CosStorageSize"].GetDouble();
+        m_cosStorageSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsMasterNonVM") && !value["IsMasterNonVM"].IsNull())
+    {
+        if (!value["IsMasterNonVM"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsMasterNonVM` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMasterNonVM = value["IsMasterNonVM"].GetBool();
+        m_isMasterNonVMHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1106,6 +1128,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ComputeGroupCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_computeGroupCount, allocator);
+    }
+
+    if (m_cosStorageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosStorageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cosStorageSize, allocator);
+    }
+
+    if (m_isMasterNonVMHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMasterNonVM";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMasterNonVM, allocator);
     }
 
 }
@@ -1957,5 +1995,37 @@ void InstanceInfo::SetComputeGroupCount(const int64_t& _computeGroupCount)
 bool InstanceInfo::ComputeGroupCountHasBeenSet() const
 {
     return m_computeGroupCountHasBeenSet;
+}
+
+double InstanceInfo::GetCosStorageSize() const
+{
+    return m_cosStorageSize;
+}
+
+void InstanceInfo::SetCosStorageSize(const double& _cosStorageSize)
+{
+    m_cosStorageSize = _cosStorageSize;
+    m_cosStorageSizeHasBeenSet = true;
+}
+
+bool InstanceInfo::CosStorageSizeHasBeenSet() const
+{
+    return m_cosStorageSizeHasBeenSet;
+}
+
+bool InstanceInfo::GetIsMasterNonVM() const
+{
+    return m_isMasterNonVM;
+}
+
+void InstanceInfo::SetIsMasterNonVM(const bool& _isMasterNonVM)
+{
+    m_isMasterNonVM = _isMasterNonVM;
+    m_isMasterNonVMHasBeenSet = true;
+}
+
+bool InstanceInfo::IsMasterNonVMHasBeenSet() const
+{
+    return m_isMasterNonVMHasBeenSet;
 }
 

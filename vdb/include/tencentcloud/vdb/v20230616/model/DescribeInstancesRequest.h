@@ -358,6 +358,27 @@ namespace TencentCloud
                      */
                     bool TaskStatusHasBeenSet() const;
 
+                    /**
+                     * 获取根据实例vip搜索实例
+                     * @return Networks 根据实例vip搜索实例
+                     * 
+                     */
+                    std::vector<std::string> GetNetworks() const;
+
+                    /**
+                     * 设置根据实例vip搜索实例
+                     * @param _networks 根据实例vip搜索实例
+                     * 
+                     */
+                    void SetNetworks(const std::vector<std::string>& _networks);
+
+                    /**
+                     * 判断参数 Networks 是否已赋值
+                     * @return Networks 是否已赋值
+                     * 
+                     */
+                    bool NetworksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -449,6 +470,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_taskStatus;
                     bool m_taskStatusHasBeenSet;
+
+                    /**
+                     * 根据实例vip搜索实例
+                     */
+                    std::vector<std::string> m_networks;
+                    bool m_networksHasBeenSet;
 
                 };
             }

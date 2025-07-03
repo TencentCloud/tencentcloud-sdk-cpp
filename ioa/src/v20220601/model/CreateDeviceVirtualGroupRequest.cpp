@@ -23,6 +23,7 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 CreateDeviceVirtualGroupRequest::CreateDeviceVirtualGroupRequest() :
+    m_domainInstanceIdHasBeenSet(false),
     m_deviceVirtualGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_osTypeHasBeenSet(false),
@@ -38,6 +39,14 @@ string CreateDeviceVirtualGroupRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_domainInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainInstanceId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_deviceVirtualGroupNameHasBeenSet)
     {
@@ -95,6 +104,22 @@ string CreateDeviceVirtualGroupRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateDeviceVirtualGroupRequest::GetDomainInstanceId() const
+{
+    return m_domainInstanceId;
+}
+
+void CreateDeviceVirtualGroupRequest::SetDomainInstanceId(const string& _domainInstanceId)
+{
+    m_domainInstanceId = _domainInstanceId;
+    m_domainInstanceIdHasBeenSet = true;
+}
+
+bool CreateDeviceVirtualGroupRequest::DomainInstanceIdHasBeenSet() const
+{
+    return m_domainInstanceIdHasBeenSet;
+}
 
 string CreateDeviceVirtualGroupRequest::GetDeviceVirtualGroupName() const
 {

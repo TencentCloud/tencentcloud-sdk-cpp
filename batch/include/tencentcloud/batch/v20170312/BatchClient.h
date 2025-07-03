@@ -53,6 +53,8 @@
 #include <tencentcloud/batch/v20170312/model/DescribeInstanceCategoriesResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeJobRequest.h>
 #include <tencentcloud/batch/v20170312/model/DescribeJobResponse.h>
+#include <tencentcloud/batch/v20170312/model/DescribeJobMonitorDataRequest.h>
+#include <tencentcloud/batch/v20170312/model/DescribeJobMonitorDataResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeJobSubmitInfoRequest.h>
 #include <tencentcloud/batch/v20170312/model/DescribeJobSubmitInfoResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeJobsRequest.h>
@@ -140,6 +142,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJobResponse> DescribeJobOutcome;
                 typedef std::future<DescribeJobOutcome> DescribeJobOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::DescribeJobRequest&, DescribeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobMonitorDataResponse> DescribeJobMonitorDataOutcome;
+                typedef std::future<DescribeJobMonitorDataOutcome> DescribeJobMonitorDataOutcomeCallable;
+                typedef std::function<void(const BatchClient*, const Model::DescribeJobMonitorDataRequest&, DescribeJobMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobMonitorDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobSubmitInfoResponse> DescribeJobSubmitInfoOutcome;
                 typedef std::future<DescribeJobSubmitInfoOutcome> DescribeJobSubmitInfoOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::DescribeJobSubmitInfoRequest&, DescribeJobSubmitInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobSubmitInfoAsyncHandler;
@@ -327,6 +332,15 @@ namespace TencentCloud
                 DescribeJobOutcome DescribeJob(const Model::DescribeJobRequest &request);
                 void DescribeJobAsync(const Model::DescribeJobRequest& request, const DescribeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeJobOutcomeCallable DescribeJobCallable(const Model::DescribeJobRequest& request);
+
+                /**
+                 *查询作业任务实例的资源使用监控信息。当前只支持查询弹性节点任务并且Job未删除；暂不支持计算环境类任务；该接口只支持查询作业实例时间范围之内的资源使用情况。
+                 * @param req DescribeJobMonitorDataRequest
+                 * @return DescribeJobMonitorDataOutcome
+                 */
+                DescribeJobMonitorDataOutcome DescribeJobMonitorData(const Model::DescribeJobMonitorDataRequest &request);
+                void DescribeJobMonitorDataAsync(const Model::DescribeJobMonitorDataRequest& request, const DescribeJobMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobMonitorDataOutcomeCallable DescribeJobMonitorDataCallable(const Model::DescribeJobMonitorDataRequest& request);
 
                 /**
                  *用于查询指定作业的提交信息，其返回内容包括 JobId 和 SubmitJob 接口中作为输入参数的作业提交信息

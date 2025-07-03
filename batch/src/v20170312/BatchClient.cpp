@@ -685,6 +685,49 @@ BatchClient::DescribeJobOutcomeCallable BatchClient::DescribeJobCallable(const D
     return task->get_future();
 }
 
+BatchClient::DescribeJobMonitorDataOutcome BatchClient::DescribeJobMonitorData(const DescribeJobMonitorDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobMonitorData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobMonitorDataResponse rsp = DescribeJobMonitorDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobMonitorDataOutcome(rsp);
+        else
+            return DescribeJobMonitorDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobMonitorDataOutcome(outcome.GetError());
+    }
+}
+
+void BatchClient::DescribeJobMonitorDataAsync(const DescribeJobMonitorDataRequest& request, const DescribeJobMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJobMonitorData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BatchClient::DescribeJobMonitorDataOutcomeCallable BatchClient::DescribeJobMonitorDataCallable(const DescribeJobMonitorDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJobMonitorDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJobMonitorData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BatchClient::DescribeJobSubmitInfoOutcome BatchClient::DescribeJobSubmitInfo(const DescribeJobSubmitInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeJobSubmitInfo");

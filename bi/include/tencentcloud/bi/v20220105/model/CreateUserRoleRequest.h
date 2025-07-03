@@ -107,6 +107,27 @@ namespace TencentCloud
                      */
                     bool UserInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取用户组id列表
+                     * @return UserGroups 用户组id列表
+                     * 
+                     */
+                    std::vector<uint64_t> GetUserGroups() const;
+
+                    /**
+                     * 设置用户组id列表
+                     * @param _userGroups 用户组id列表
+                     * 
+                     */
+                    void SetUserGroups(const std::vector<uint64_t>& _userGroups);
+
+                    /**
+                     * 判断参数 UserGroups 是否已赋值
+                     * @return UserGroups 是否已赋值
+                     * 
+                     */
+                    bool UserGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +147,12 @@ namespace TencentCloud
                      */
                     std::vector<UserInfo> m_userInfoList;
                     bool m_userInfoListHasBeenSet;
+
+                    /**
+                     * 用户组id列表
+                     */
+                    std::vector<uint64_t> m_userGroups;
+                    bool m_userGroupsHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取暴露资产分类列表
-                     * @return ExposeAssetTypeList 暴露资产分类列表
+                     * 获取云边界分析资产分类列表
+                     * @return ExposeAssetTypeList 云边界分析资产分类列表
                      * 
                      */
                     std::vector<ExposeAssetTypeItem> GetExposeAssetTypeList() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 暴露资产分类列表
+                     * 云边界分析资产分类列表
                      */
                     std::vector<ExposeAssetTypeItem> m_exposeAssetTypeList;
                     bool m_exposeAssetTypeListHasBeenSet;

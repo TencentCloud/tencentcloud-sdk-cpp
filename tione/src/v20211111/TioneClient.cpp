@@ -1545,6 +1545,49 @@ TioneClient::DescribeNotebooksOutcomeCallable TioneClient::DescribeNotebooksCall
     return task->get_future();
 }
 
+TioneClient::DescribePlatformImagesOutcome TioneClient::DescribePlatformImages(const DescribePlatformImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlatformImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlatformImagesResponse rsp = DescribePlatformImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlatformImagesOutcome(rsp);
+        else
+            return DescribePlatformImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlatformImagesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribePlatformImagesAsync(const DescribePlatformImagesRequest& request, const DescribePlatformImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePlatformImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribePlatformImagesOutcomeCallable TioneClient::DescribePlatformImagesCallable(const DescribePlatformImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePlatformImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePlatformImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::DescribeTrainingModelVersionOutcome TioneClient::DescribeTrainingModelVersion(const DescribeTrainingModelVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrainingModelVersion");

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取修改后的实例名称。
-                     * @return InstanceName 修改后的实例名称。
+                     * 获取修改后的实例名称，仅支持数字,英文大小写字母、中文以及特殊字符-_./()[]（）+=:：@ 且长度不能超过60。
+                     * @return InstanceName 修改后的实例名称，仅支持数字,英文大小写字母、中文以及特殊字符-_./()[]（）+=:：@ 且长度不能超过60。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置修改后的实例名称。
-                     * @param _instanceName 修改后的实例名称。
+                     * 设置修改后的实例名称，仅支持数字,英文大小写字母、中文以及特殊字符-_./()[]（）+=:：@ 且长度不能超过60。
+                     * @param _instanceName 修改后的实例名称，仅支持数字,英文大小写字母、中文以及特殊字符-_./()[]（）+=:：@ 且长度不能超过60。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 修改后的实例名称。
+                     * 修改后的实例名称，仅支持数字,英文大小写字母、中文以及特殊字符-_./()[]（）+=:：@ 且长度不能超过60。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

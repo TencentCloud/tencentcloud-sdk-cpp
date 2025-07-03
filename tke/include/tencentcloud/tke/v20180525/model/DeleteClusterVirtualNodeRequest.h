@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID，通过DescribeClusters接口获取
+                     * @return ClusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID，通过DescribeClusters接口获取
+                     * @param _clusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点列表
-                     * @return NodeNames 虚拟节点列表
+                     * 获取虚拟节点ID列表
+                     * @return NodeNames 虚拟节点ID列表
                      * 
                      */
                     std::vector<std::string> GetNodeNames() const;
 
                     /**
-                     * 设置虚拟节点列表
-                     * @param _nodeNames 虚拟节点列表
+                     * 设置虚拟节点ID列表
+                     * @param _nodeNames 虚拟节点ID列表
                      * 
                      */
                     void SetNodeNames(const std::vector<std::string>& _nodeNames);
@@ -108,13 +108,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，通过DescribeClusters接口获取
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 虚拟节点列表
+                     * 虚拟节点ID列表
                      */
                     std::vector<std::string> m_nodeNames;
                     bool m_nodeNamesHasBeenSet;

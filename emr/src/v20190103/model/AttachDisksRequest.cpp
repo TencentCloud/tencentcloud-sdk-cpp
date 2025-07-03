@@ -30,7 +30,9 @@ AttachDisksRequest::AttachDisksRequest() :
     m_createDiskHasBeenSet(false),
     m_diskSpecHasBeenSet(false),
     m_deleteWithInstanceHasBeenSet(false),
-    m_selectiveConfServicesHasBeenSet(false)
+    m_selectiveConfServicesHasBeenSet(false),
+    m_chargeTypeHasBeenSet(false),
+    m_underWriteDurationHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,22 @@ string AttachDisksRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_chargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_chargeType, allocator);
+    }
+
+    if (m_underWriteDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnderWriteDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_underWriteDuration, allocator);
     }
 
 
@@ -255,6 +273,38 @@ void AttachDisksRequest::SetSelectiveConfServices(const vector<string>& _selecti
 bool AttachDisksRequest::SelectiveConfServicesHasBeenSet() const
 {
     return m_selectiveConfServicesHasBeenSet;
+}
+
+int64_t AttachDisksRequest::GetChargeType() const
+{
+    return m_chargeType;
+}
+
+void AttachDisksRequest::SetChargeType(const int64_t& _chargeType)
+{
+    m_chargeType = _chargeType;
+    m_chargeTypeHasBeenSet = true;
+}
+
+bool AttachDisksRequest::ChargeTypeHasBeenSet() const
+{
+    return m_chargeTypeHasBeenSet;
+}
+
+int64_t AttachDisksRequest::GetUnderWriteDuration() const
+{
+    return m_underWriteDuration;
+}
+
+void AttachDisksRequest::SetUnderWriteDuration(const int64_t& _underWriteDuration)
+{
+    m_underWriteDuration = _underWriteDuration;
+    m_underWriteDurationHasBeenSet = true;
+}
+
+bool AttachDisksRequest::UnderWriteDurationHasBeenSet() const
+{
+    return m_underWriteDurationHasBeenSet;
 }
 
 

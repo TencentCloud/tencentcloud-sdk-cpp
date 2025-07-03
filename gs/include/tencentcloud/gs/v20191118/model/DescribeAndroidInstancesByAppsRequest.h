@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/gs/v20191118/model/Filter.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,27 @@ namespace TencentCloud
                      */
                     bool AndroidAppIdsHasBeenSet() const;
 
+                    /**
+                     * 获取字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID
+                     * @return Filters 字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID
+                     * @param _filters 字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +146,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_androidAppIds;
                     bool m_androidAppIdsHasBeenSet;
+
+                    /**
+                     * 字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

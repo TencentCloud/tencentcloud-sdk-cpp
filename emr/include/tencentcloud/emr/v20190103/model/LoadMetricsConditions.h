@@ -72,6 +72,31 @@ namespace TencentCloud
                      */
                     bool LoadMetricsHasBeenSet() const;
 
+                    /**
+                     * 获取0:所有条件满足
+1：满足任意一个
+                     * @return Match 0:所有条件满足
+1：满足任意一个
+                     * 
+                     */
+                    int64_t GetMatch() const;
+
+                    /**
+                     * 设置0:所有条件满足
+1：满足任意一个
+                     * @param _match 0:所有条件满足
+1：满足任意一个
+                     * 
+                     */
+                    void SetMatch(const int64_t& _match);
+
+                    /**
+                     * 判断参数 Match 是否已赋值
+                     * @return Match 是否已赋值
+                     * 
+                     */
+                    bool MatchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +105,13 @@ namespace TencentCloud
                      */
                     std::vector<LoadMetricsCondition> m_loadMetrics;
                     bool m_loadMetricsHasBeenSet;
+
+                    /**
+                     * 0:所有条件满足
+1：满足任意一个
+                     */
+                    int64_t m_match;
+                    bool m_matchHasBeenSet;
 
                 };
             }

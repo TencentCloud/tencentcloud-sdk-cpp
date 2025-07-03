@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID，通过DescribeClusters接口获取
+                     * @return ClusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID，通过DescribeClusters接口获取
+                     * @param _clusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取超级节点池ID列表
-                     * @return NodePoolIds 超级节点池ID列表
+                     * 获取节点池ID，通过DescribeNodePools接口获取
+                     * @return NodePoolIds 节点池ID，通过DescribeNodePools接口获取
                      * 
                      */
                     std::vector<std::string> GetNodePoolIds() const;
 
                     /**
-                     * 设置超级节点池ID列表
-                     * @param _nodePoolIds 超级节点池ID列表
+                     * 设置节点池ID，通过DescribeNodePools接口获取
+                     * @param _nodePoolIds 节点池ID，通过DescribeNodePools接口获取
                      * 
                      */
                     void SetNodePoolIds(const std::vector<std::string>& _nodePoolIds);
@@ -108,13 +108,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，通过DescribeClusters接口获取
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 超级节点池ID列表
+                     * 节点池ID，通过DescribeNodePools接口获取
                      */
                     std::vector<std::string> m_nodePoolIds;
                     bool m_nodePoolIdsHasBeenSet;

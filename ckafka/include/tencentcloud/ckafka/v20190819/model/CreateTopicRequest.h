@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @return TopicName 主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 获取只能包含字母、数字、下划线、“-”、“.”
+                     * @return TopicName 只能包含字母、数字、下划线、“-”、“.”
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @param _topicName 主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 设置只能包含字母、数字、下划线、“-”、“.”
+                     * @param _topicName 只能包含字母、数字、下划线、“-”、“.”
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -409,7 +409,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 只能包含字母、数字、下划线、“-”、“.”
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

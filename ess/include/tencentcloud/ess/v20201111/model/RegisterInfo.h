@@ -155,13 +155,13 @@ namespace TencentCloud
                     bool AuthorizationTypesHasBeenSet() const;
 
                     /**
-                     * 获取指定企业认证的授权方式 支持多选:
+                     * 获取指定企业认证的授权方式:
 
 <ul>
 <li><strong>2</strong>: 法人授权方式</li>
 <li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
-                     * @return AuthorizationType 指定企业认证的授权方式 支持多选:
+                     * @return AuthorizationType 指定企业认证的授权方式:
 
 <ul>
 <li><strong>2</strong>: 法人授权方式</li>
@@ -172,13 +172,13 @@ namespace TencentCloud
                     int64_t GetAuthorizationType() const;
 
                     /**
-                     * 设置指定企业认证的授权方式 支持多选:
+                     * 设置指定企业认证的授权方式:
 
 <ul>
 <li><strong>2</strong>: 法人授权方式</li>
 <li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
-                     * @param _authorizationType 指定企业认证的授权方式 支持多选:
+                     * @param _authorizationType 指定企业认证的授权方式:
 
 <ul>
 <li><strong>2</strong>: 法人授权方式</li>
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_authorizationTypesHasBeenSet;
 
                     /**
-                     * 指定企业认证的授权方式 支持多选:
+                     * 指定企业认证的授权方式:
 
 <ul>
 <li><strong>2</strong>: 法人授权方式</li>

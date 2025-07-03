@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取事件展示数量。
-                     * @return Limit 事件展示数量。
+                     * 获取事件展示数量。默认为100，最大为200。
+                     * @return Limit 事件展示数量。默认为100，最大为200。
                      * 
                      */
                     std::string GetLimit() const;
 
                     /**
-                     * 设置事件展示数量。
-                     * @param _limit 事件展示数量。
+                     * 设置事件展示数量。默认为100，最大为200。
+                     * @param _limit 事件展示数量。默认为100，最大为200。
                      * 
                      */
                     void SetLimit(const std::string& _limit);
@@ -234,7 +234,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -270,7 +270,7 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 事件展示数量。
+                     * 事件展示数量。默认为100，最大为200。
                      */
                     std::string m_limit;
                     bool m_limitHasBeenSet;

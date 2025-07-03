@@ -335,15 +335,15 @@ Modify 集群变更中；
                     bool CoreSummaryHasBeenSet() const;
 
                     /**
-                     * 获取高可用，“true" "false"
-                     * @return HA 高可用，“true" "false"
+                     * 获取高可用，"true" "false"
+                     * @return HA 高可用，"true" "false"
                      * 
                      */
                     std::string GetHA() const;
 
                     /**
-                     * 设置高可用，“true" "false"
-                     * @param _hA 高可用，“true" "false"
+                     * 设置高可用，"true" "false"
+                     * @param _hA 高可用，"true" "false"
                      * 
                      */
                     void SetHA(const std::string& _hA);
@@ -1194,6 +1194,48 @@ Modify 集群变更中；
                      */
                     bool ComputeGroupCountHasBeenSet() const;
 
+                    /**
+                     * 获取存算分离cos存储数据
+                     * @return CosStorageSize 存算分离cos存储数据
+                     * 
+                     */
+                    double GetCosStorageSize() const;
+
+                    /**
+                     * 设置存算分离cos存储数据
+                     * @param _cosStorageSize 存算分离cos存储数据
+                     * 
+                     */
+                    void SetCosStorageSize(const double& _cosStorageSize);
+
+                    /**
+                     * 判断参数 CosStorageSize 是否已赋值
+                     * @return CosStorageSize 是否已赋值
+                     * 
+                     */
+                    bool CosStorageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取存算分离的指标 当是true 不支持新建计算组
+                     * @return IsMasterNonVM 存算分离的指标 当是true 不支持新建计算组
+                     * 
+                     */
+                    bool GetIsMasterNonVM() const;
+
+                    /**
+                     * 设置存算分离的指标 当是true 不支持新建计算组
+                     * @param _isMasterNonVM 存算分离的指标 当是true 不支持新建计算组
+                     * 
+                     */
+                    void SetIsMasterNonVM(const bool& _isMasterNonVM);
+
+                    /**
+                     * 判断参数 IsMasterNonVM 是否已赋值
+                     * @return IsMasterNonVM 是否已赋值
+                     * 
+                     */
+                    bool IsMasterNonVMHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1278,7 +1320,7 @@ Modify 集群变更中；
                     bool m_coreSummaryHasBeenSet;
 
                     /**
-                     * 高可用，“true" "false"
+                     * 高可用，"true" "false"
                      */
                     std::string m_hA;
                     bool m_hAHasBeenSet;
@@ -1521,6 +1563,18 @@ Modify 集群变更中；
                      */
                     int64_t m_computeGroupCount;
                     bool m_computeGroupCountHasBeenSet;
+
+                    /**
+                     * 存算分离cos存储数据
+                     */
+                    double m_cosStorageSize;
+                    bool m_cosStorageSizeHasBeenSet;
+
+                    /**
+                     * 存算分离的指标 当是true 不支持新建计算组
+                     */
+                    bool m_isMasterNonVM;
+                    bool m_isMasterNonVMHasBeenSet;
 
                 };
             }

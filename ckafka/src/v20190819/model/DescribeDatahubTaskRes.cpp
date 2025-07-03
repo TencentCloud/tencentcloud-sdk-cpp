@@ -35,7 +35,9 @@ DescribeDatahubTaskRes::DescribeDatahubTaskRes() :
     m_schemaNameHasBeenSet(false),
     m_transformsParamHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_isolateStatusHasBeenSet(false)
 {
 }
 
@@ -242,6 +244,26 @@ CoreInternalOutcome DescribeDatahubTaskRes::Deserialize(const rapidjson::Value &
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDatahubTaskRes.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolateStatus") && !value["IsolateStatus"].IsNull())
+    {
+        if (!value["IsolateStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDatahubTaskRes.IsolateStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateStatus = value["IsolateStatus"].GetInt64();
+        m_isolateStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -385,6 +407,22 @@ void DescribeDatahubTaskRes::ToJsonObject(rapidjson::Value &value, rapidjson::Do
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolateStatus, allocator);
     }
 
 }
@@ -628,5 +666,37 @@ void DescribeDatahubTaskRes::SetTags(const vector<Tag>& _tags)
 bool DescribeDatahubTaskRes::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string DescribeDatahubTaskRes::GetDescription() const
+{
+    return m_description;
+}
+
+void DescribeDatahubTaskRes::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool DescribeDatahubTaskRes::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+int64_t DescribeDatahubTaskRes::GetIsolateStatus() const
+{
+    return m_isolateStatus;
+}
+
+void DescribeDatahubTaskRes::SetIsolateStatus(const int64_t& _isolateStatus)
+{
+    m_isolateStatus = _isolateStatus;
+    m_isolateStatusHasBeenSet = true;
+}
+
+bool DescribeDatahubTaskRes::IsolateStatusHasBeenSet() const
+{
+    return m_isolateStatusHasBeenSet;
 }
 

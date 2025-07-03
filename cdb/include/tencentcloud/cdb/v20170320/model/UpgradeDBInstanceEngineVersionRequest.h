@@ -65,15 +65,19 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主实例数据库引擎版本，支持值包括：5.6 和 5.7。
-                     * @return EngineVersion 主实例数据库引擎版本，支持值包括：5.6 和 5.7。
+                     * 获取主实例数据库引擎版本，支持值包括：5.6、5.7、8.0。
+说明：不支持越级升级，升级后不支持降级。
+                     * @return EngineVersion 主实例数据库引擎版本，支持值包括：5.6、5.7、8.0。
+说明：不支持越级升级，升级后不支持降级。
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置主实例数据库引擎版本，支持值包括：5.6 和 5.7。
-                     * @param _engineVersion 主实例数据库引擎版本，支持值包括：5.6 和 5.7。
+                     * 设置主实例数据库引擎版本，支持值包括：5.6、5.7、8.0。
+说明：不支持越级升级，升级后不支持降级。
+                     * @param _engineVersion 主实例数据库引擎版本，支持值包括：5.6、5.7、8.0。
+说明：不支持越级升级，升级后不支持降级。
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -107,15 +111,15 @@ namespace TencentCloud
                     bool WaitSwitchHasBeenSet() const;
 
                     /**
-                     * 获取是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。
-                     * @return UpgradeSubversion 是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。
+                     * 获取是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。无默认值，请指定要升级的版本类型。
+                     * @return UpgradeSubversion 是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。无默认值，请指定要升级的版本类型。
                      * 
                      */
                     int64_t GetUpgradeSubversion() const;
 
                     /**
-                     * 设置是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。
-                     * @param _upgradeSubversion 是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。
+                     * 设置是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。无默认值，请指定要升级的版本类型。
+                     * @param _upgradeSubversion 是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。无默认值，请指定要升级的版本类型。
                      * 
                      */
                     void SetUpgradeSubversion(const int64_t& _upgradeSubversion);
@@ -128,15 +132,15 @@ namespace TencentCloud
                     bool UpgradeSubversionHasBeenSet() const;
 
                     /**
-                     * 获取延迟阈值。取值范围1~10
-                     * @return MaxDelayTime 延迟阈值。取值范围1~10
+                     * 获取延迟阈值。取值范围：1 - 10。无默认值，不传此参数时，延迟阈值为0，表示延迟阈值不做设置。
+                     * @return MaxDelayTime 延迟阈值。取值范围：1 - 10。无默认值，不传此参数时，延迟阈值为0，表示延迟阈值不做设置。
                      * 
                      */
                     int64_t GetMaxDelayTime() const;
 
                     /**
-                     * 设置延迟阈值。取值范围1~10
-                     * @param _maxDelayTime 延迟阈值。取值范围1~10
+                     * 设置延迟阈值。取值范围：1 - 10。无默认值，不传此参数时，延迟阈值为0，表示延迟阈值不做设置。
+                     * @param _maxDelayTime 延迟阈值。取值范围：1 - 10。无默认值，不传此参数时，延迟阈值为0，表示延迟阈值不做设置。
                      * 
                      */
                     void SetMaxDelayTime(const int64_t& _maxDelayTime);
@@ -149,15 +153,15 @@ namespace TencentCloud
                     bool MaxDelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略
-                     * @return IgnoreErrKeyword 5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略
+                     * 获取5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略。无默认值，不传此参数表示不做处理。
+                     * @return IgnoreErrKeyword 5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略。无默认值，不传此参数表示不做处理。
                      * 
                      */
                     int64_t GetIgnoreErrKeyword() const;
 
                     /**
-                     * 设置5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略
-                     * @param _ignoreErrKeyword 5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略
+                     * 设置5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略。无默认值，不传此参数表示不做处理。
+                     * @param _ignoreErrKeyword 5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略。无默认值，不传此参数表示不做处理。
                      * 
                      */
                     void SetIgnoreErrKeyword(const int64_t& _ignoreErrKeyword);
@@ -199,7 +203,8 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主实例数据库引擎版本，支持值包括：5.6 和 5.7。
+                     * 主实例数据库引擎版本，支持值包括：5.6、5.7、8.0。
+说明：不支持越级升级，升级后不支持降级。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
@@ -211,19 +216,19 @@ namespace TencentCloud
                     bool m_waitSwitchHasBeenSet;
 
                     /**
-                     * 是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。
+                     * 是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。无默认值，请指定要升级的版本类型。
                      */
                     int64_t m_upgradeSubversion;
                     bool m_upgradeSubversionHasBeenSet;
 
                     /**
-                     * 延迟阈值。取值范围1~10
+                     * 延迟阈值。取值范围：1 - 10。无默认值，不传此参数时，延迟阈值为0，表示延迟阈值不做设置。
                      */
                     int64_t m_maxDelayTime;
                     bool m_maxDelayTimeHasBeenSet;
 
                     /**
-                     * 5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略
+                     * 5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略。无默认值，不传此参数表示不做处理。
                      */
                     int64_t m_ignoreErrKeyword;
                     bool m_ignoreErrKeywordHasBeenSet;

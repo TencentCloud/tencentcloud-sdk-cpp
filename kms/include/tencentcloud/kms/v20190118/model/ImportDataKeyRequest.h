@@ -127,27 +127,19 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取当导入密文数据密钥时，无需传入根密钥,如果传入也会忽略。
-当KeyId 为空，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。
-如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。
-如果KeyId 不为空，根据指定的根密钥加密数据密钥。
-                     * @return KeyId 当导入密文数据密钥时，无需传入根密钥,如果传入也会忽略。
-当KeyId 为空，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。
-如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。
-如果KeyId 不为空，根据指定的根密钥加密数据密钥。
+                     * 获取当导入密文数据密钥时，无需传入根密钥,如果传入会校验此KeyId是否和密文中一致。
+当导入明文数据密钥，KeyId 不能为空，会根据指定的根密钥加密数据密钥。
+                     * @return KeyId 当导入密文数据密钥时，无需传入根密钥,如果传入会校验此KeyId是否和密文中一致。
+当导入明文数据密钥，KeyId 不能为空，会根据指定的根密钥加密数据密钥。
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
-                     * 设置当导入密文数据密钥时，无需传入根密钥,如果传入也会忽略。
-当KeyId 为空，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。
-如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。
-如果KeyId 不为空，根据指定的根密钥加密数据密钥。
-                     * @param _keyId 当导入密文数据密钥时，无需传入根密钥,如果传入也会忽略。
-当KeyId 为空，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。
-如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。
-如果KeyId 不为空，根据指定的根密钥加密数据密钥。
+                     * 设置当导入密文数据密钥时，无需传入根密钥,如果传入会校验此KeyId是否和密文中一致。
+当导入明文数据密钥，KeyId 不能为空，会根据指定的根密钥加密数据密钥。
+                     * @param _keyId 当导入密文数据密钥时，无需传入根密钥,如果传入会校验此KeyId是否和密文中一致。
+当导入明文数据密钥，KeyId 不能为空，会根据指定的根密钥加密数据密钥。
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -160,23 +152,15 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取KMS 独享版对应的 HSM 集群 ID。
-当KeyId 没有传入时有效，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。
-如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。
-                     * @return HsmClusterId KMS 独享版对应的 HSM 集群 ID。
-当KeyId 没有传入时有效，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。
-如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。
+                     * 获取KMS 独享版对应的 HSM 集群 ID。如果指定HsmClusterId，表明根密钥在此集群里，会校验KeyId是否和HsmClusterId对应。
+                     * @return HsmClusterId KMS 独享版对应的 HSM 集群 ID。如果指定HsmClusterId，表明根密钥在此集群里，会校验KeyId是否和HsmClusterId对应。
                      * 
                      */
                     std::string GetHsmClusterId() const;
 
                     /**
-                     * 设置KMS 独享版对应的 HSM 集群 ID。
-当KeyId 没有传入时有效，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。
-如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。
-                     * @param _hsmClusterId KMS 独享版对应的 HSM 集群 ID。
-当KeyId 没有传入时有效，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。
-如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。
+                     * 设置KMS 独享版对应的 HSM 集群 ID。如果指定HsmClusterId，表明根密钥在此集群里，会校验KeyId是否和HsmClusterId对应。
+                     * @param _hsmClusterId KMS 独享版对应的 HSM 集群 ID。如果指定HsmClusterId，表明根密钥在此集群里，会校验KeyId是否和HsmClusterId对应。
                      * 
                      */
                     void SetHsmClusterId(const std::string& _hsmClusterId);
@@ -215,18 +199,14 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 当导入密文数据密钥时，无需传入根密钥,如果传入也会忽略。
-当KeyId 为空，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。
-如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。
-如果KeyId 不为空，根据指定的根密钥加密数据密钥。
+                     * 当导入密文数据密钥时，无需传入根密钥,如果传入会校验此KeyId是否和密文中一致。
+当导入明文数据密钥，KeyId 不能为空，会根据指定的根密钥加密数据密钥。
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * KMS 独享版对应的 HSM 集群 ID。
-当KeyId 没有传入时有效，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。
-如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。
+                     * KMS 独享版对应的 HSM 集群 ID。如果指定HsmClusterId，表明根密钥在此集群里，会校验KeyId是否和HsmClusterId对应。
                      */
                     std::string m_hsmClusterId;
                     bool m_hsmClusterIdHasBeenSet;

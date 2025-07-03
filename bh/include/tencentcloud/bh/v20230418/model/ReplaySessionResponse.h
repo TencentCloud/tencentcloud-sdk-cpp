@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bh/v20230418/model/ReplayInformation.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取回放所需信息
+                     * @return ReplayInfo 回放所需信息
+                     * 
+                     */
+                    ReplayInformation GetReplayInfo() const;
+
+                    /**
+                     * 判断参数 ReplayInfo 是否已赋值
+                     * @return ReplayInfo 是否已赋值
+                     * 
+                     */
+                    bool ReplayInfoHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 回放所需信息
+                     */
+                    ReplayInformation m_replayInfo;
+                    bool m_replayInfoHasBeenSet;
 
                 };
             }

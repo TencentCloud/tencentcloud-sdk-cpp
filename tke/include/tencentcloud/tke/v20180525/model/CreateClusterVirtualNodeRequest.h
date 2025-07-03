@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID，通过DescribeClusters接口获取
+                     * @return ClusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID，通过DescribeClusters接口获取
+                     * @param _clusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点所属节点池
-                     * @return NodePoolId 虚拟节点所属节点池
+                     * 获取虚拟节点所属节点池，通过DescribeNodePools接口获取
+                     * @return NodePoolId 虚拟节点所属节点池，通过DescribeNodePools接口获取
                      * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
-                     * 设置虚拟节点所属节点池
-                     * @param _nodePoolId 虚拟节点所属节点池
+                     * 设置虚拟节点所属节点池，通过DescribeNodePools接口获取
+                     * @param _nodePoolId 虚拟节点所属节点池，通过DescribeNodePools接口获取
                      * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点所属子网
-                     * @return SubnetId 虚拟节点所属子网
+                     * 获取虚拟节点所属子网，SubnetId、SubnetIds、VirtualNodes必选一个。
+                     * @return SubnetId 虚拟节点所属子网，SubnetId、SubnetIds、VirtualNodes必选一个。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置虚拟节点所属子网
-                     * @param _subnetId 虚拟节点所属子网
+                     * 设置虚拟节点所属子网，SubnetId、SubnetIds、VirtualNodes必选一个。
+                     * @param _subnetId 虚拟节点所属子网，SubnetId、SubnetIds、VirtualNodes必选一个。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点子网ID列表，和参数SubnetId互斥
-                     * @return SubnetIds 虚拟节点子网ID列表，和参数SubnetId互斥
+                     * 获取虚拟节点子网ID列表，SubnetId、SubnetIds、VirtualNodes必选一个。
+                     * @return SubnetIds 虚拟节点子网ID列表，SubnetId、SubnetIds、VirtualNodes必选一个。
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
-                     * 设置虚拟节点子网ID列表，和参数SubnetId互斥
-                     * @param _subnetIds 虚拟节点子网ID列表，和参数SubnetId互斥
+                     * 设置虚拟节点子网ID列表，SubnetId、SubnetIds、VirtualNodes必选一个。
+                     * @param _subnetIds 虚拟节点子网ID列表，SubnetId、SubnetIds、VirtualNodes必选一个。
                      * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点列表
-                     * @return VirtualNodes 虚拟节点列表
+                     * 获取虚拟节点列表，SubnetId、SubnetIds、VirtualNodes必选一个。
+                     * @return VirtualNodes 虚拟节点列表，SubnetId、SubnetIds、VirtualNodes必选一个。
                      * 
                      */
                     std::vector<VirtualNodeSpec> GetVirtualNodes() const;
 
                     /**
-                     * 设置虚拟节点列表
-                     * @param _virtualNodes 虚拟节点列表
+                     * 设置虚拟节点列表，SubnetId、SubnetIds、VirtualNodes必选一个。
+                     * @param _virtualNodes 虚拟节点列表，SubnetId、SubnetIds、VirtualNodes必选一个。
                      * 
                      */
                     void SetVirtualNodes(const std::vector<VirtualNodeSpec>& _virtualNodes);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，通过DescribeClusters接口获取
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 虚拟节点所属节点池
+                     * 虚拟节点所属节点池，通过DescribeNodePools接口获取
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 虚拟节点所属子网
+                     * 虚拟节点所属子网，SubnetId、SubnetIds、VirtualNodes必选一个。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 虚拟节点子网ID列表，和参数SubnetId互斥
+                     * 虚拟节点子网ID列表，SubnetId、SubnetIds、VirtualNodes必选一个。
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * 虚拟节点列表
+                     * 虚拟节点列表，SubnetId、SubnetIds、VirtualNodes必选一个。
                      */
                     std::vector<VirtualNodeSpec> m_virtualNodes;
                     bool m_virtualNodesHasBeenSet;

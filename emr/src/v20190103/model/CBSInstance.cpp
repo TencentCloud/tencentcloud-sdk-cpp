@@ -36,7 +36,8 @@ CBSInstance::CBSInstance() :
     m_instanceIdListHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_shareableHasBeenSet(false),
-    m_emrResourceIdHasBeenSet(false)
+    m_emrResourceIdHasBeenSet(false),
+    m_underwriteExpiredTimeHasBeenSet(false)
 {
 }
 
@@ -208,6 +209,16 @@ CoreInternalOutcome CBSInstance::Deserialize(const rapidjson::Value &value)
         m_emrResourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("UnderwriteExpiredTime") && !value["UnderwriteExpiredTime"].IsNull())
+    {
+        if (!value["UnderwriteExpiredTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CBSInstance.UnderwriteExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_underwriteExpiredTime = string(value["UnderwriteExpiredTime"].GetString());
+        m_underwriteExpiredTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +357,14 @@ void CBSInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EmrResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_emrResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_underwriteExpiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnderwriteExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_underwriteExpiredTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -605,5 +624,21 @@ void CBSInstance::SetEmrResourceId(const string& _emrResourceId)
 bool CBSInstance::EmrResourceIdHasBeenSet() const
 {
     return m_emrResourceIdHasBeenSet;
+}
+
+string CBSInstance::GetUnderwriteExpiredTime() const
+{
+    return m_underwriteExpiredTime;
+}
+
+void CBSInstance::SetUnderwriteExpiredTime(const string& _underwriteExpiredTime)
+{
+    m_underwriteExpiredTime = _underwriteExpiredTime;
+    m_underwriteExpiredTimeHasBeenSet = true;
+}
+
+bool CBSInstance::UnderwriteExpiredTimeHasBeenSet() const
+{
+    return m_underwriteExpiredTimeHasBeenSet;
 }
 

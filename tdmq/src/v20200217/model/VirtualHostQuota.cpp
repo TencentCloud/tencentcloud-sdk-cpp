@@ -22,7 +22,10 @@ using namespace std;
 
 VirtualHostQuota::VirtualHostQuota() :
     m_maxVirtualHostHasBeenSet(false),
-    m_usedVirtualHostHasBeenSet(false)
+    m_usedVirtualHostHasBeenSet(false),
+    m_maxConnectionPerVhostHasBeenSet(false),
+    m_maxExchangePerVhostHasBeenSet(false),
+    m_maxQueuePerVhostHasBeenSet(false)
 {
 }
 
@@ -51,6 +54,36 @@ CoreInternalOutcome VirtualHostQuota::Deserialize(const rapidjson::Value &value)
         m_usedVirtualHostHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxConnectionPerVhost") && !value["MaxConnectionPerVhost"].IsNull())
+    {
+        if (!value["MaxConnectionPerVhost"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirtualHostQuota.MaxConnectionPerVhost` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxConnectionPerVhost = value["MaxConnectionPerVhost"].GetInt64();
+        m_maxConnectionPerVhostHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxExchangePerVhost") && !value["MaxExchangePerVhost"].IsNull())
+    {
+        if (!value["MaxExchangePerVhost"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirtualHostQuota.MaxExchangePerVhost` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxExchangePerVhost = value["MaxExchangePerVhost"].GetInt64();
+        m_maxExchangePerVhostHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxQueuePerVhost") && !value["MaxQueuePerVhost"].IsNull())
+    {
+        if (!value["MaxQueuePerVhost"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirtualHostQuota.MaxQueuePerVhost` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxQueuePerVhost = value["MaxQueuePerVhost"].GetInt64();
+        m_maxQueuePerVhostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +105,30 @@ void VirtualHostQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "UsedVirtualHost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedVirtualHost, allocator);
+    }
+
+    if (m_maxConnectionPerVhostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConnectionPerVhost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxConnectionPerVhost, allocator);
+    }
+
+    if (m_maxExchangePerVhostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxExchangePerVhost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxExchangePerVhost, allocator);
+    }
+
+    if (m_maxQueuePerVhostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxQueuePerVhost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxQueuePerVhost, allocator);
     }
 
 }
@@ -107,5 +164,53 @@ void VirtualHostQuota::SetUsedVirtualHost(const int64_t& _usedVirtualHost)
 bool VirtualHostQuota::UsedVirtualHostHasBeenSet() const
 {
     return m_usedVirtualHostHasBeenSet;
+}
+
+int64_t VirtualHostQuota::GetMaxConnectionPerVhost() const
+{
+    return m_maxConnectionPerVhost;
+}
+
+void VirtualHostQuota::SetMaxConnectionPerVhost(const int64_t& _maxConnectionPerVhost)
+{
+    m_maxConnectionPerVhost = _maxConnectionPerVhost;
+    m_maxConnectionPerVhostHasBeenSet = true;
+}
+
+bool VirtualHostQuota::MaxConnectionPerVhostHasBeenSet() const
+{
+    return m_maxConnectionPerVhostHasBeenSet;
+}
+
+int64_t VirtualHostQuota::GetMaxExchangePerVhost() const
+{
+    return m_maxExchangePerVhost;
+}
+
+void VirtualHostQuota::SetMaxExchangePerVhost(const int64_t& _maxExchangePerVhost)
+{
+    m_maxExchangePerVhost = _maxExchangePerVhost;
+    m_maxExchangePerVhostHasBeenSet = true;
+}
+
+bool VirtualHostQuota::MaxExchangePerVhostHasBeenSet() const
+{
+    return m_maxExchangePerVhostHasBeenSet;
+}
+
+int64_t VirtualHostQuota::GetMaxQueuePerVhost() const
+{
+    return m_maxQueuePerVhost;
+}
+
+void VirtualHostQuota::SetMaxQueuePerVhost(const int64_t& _maxQueuePerVhost)
+{
+    m_maxQueuePerVhost = _maxQueuePerVhost;
+    m_maxQueuePerVhostHasBeenSet = true;
+}
+
+bool VirtualHostQuota::MaxQueuePerVhostHasBeenSet() const
+{
+    return m_maxQueuePerVhostHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取互联网暴露资产数量
-                     * @return TotalCount 互联网暴露资产数量
+                     * 获取云边界分析资产数量
+                     * @return TotalCount 云边界分析资产数量
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取互联网暴露资产列表
-                     * @return ExposeList 互联网暴露资产列表
+                     * 获取云边界分析资产列表
+                     * @return ExposeList 云边界分析资产列表
                      * 
                      */
                     std::vector<ExposesItem> GetExposeList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 互联网暴露资产数量
+                     * 云边界分析资产数量
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 互联网暴露资产列表
+                     * 云边界分析资产列表
                      */
                     std::vector<ExposesItem> m_exposeList;
                     bool m_exposeListHasBeenSet;

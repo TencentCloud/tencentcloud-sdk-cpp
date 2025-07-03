@@ -33,7 +33,8 @@ ScreenTaskInfo::ScreenTaskInfo() :
     m_weekNumHasBeenSet(false),
     m_dayNumHasBeenSet(false),
     m_hourNumHasBeenSet(false),
-    m_minuteNumHasBeenSet(false)
+    m_minuteNumHasBeenSet(false),
+    m_workflowNumHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome ScreenTaskInfo::Deserialize(const rapidjson::Value &value)
         m_minuteNumHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkflowNum") && !value["WorkflowNum"].IsNull())
+    {
+        if (!value["WorkflowNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScreenTaskInfo.WorkflowNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_workflowNum = value["WorkflowNum"].GetUint64();
+        m_workflowNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void ScreenTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "MinuteNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minuteNum, allocator);
+    }
+
+    if (m_workflowNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_workflowNum, allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void ScreenTaskInfo::SetMinuteNum(const uint64_t& _minuteNum)
 bool ScreenTaskInfo::MinuteNumHasBeenSet() const
 {
     return m_minuteNumHasBeenSet;
+}
+
+uint64_t ScreenTaskInfo::GetWorkflowNum() const
+{
+    return m_workflowNum;
+}
+
+void ScreenTaskInfo::SetWorkflowNum(const uint64_t& _workflowNum)
+{
+    m_workflowNum = _workflowNum;
+    m_workflowNumHasBeenSet = true;
+}
+
+bool ScreenTaskInfo::WorkflowNumHasBeenSet() const
+{
+    return m_workflowNumHasBeenSet;
 }
 

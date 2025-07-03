@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcbr/v20220217/model/HpaPolicy.h>
 #include <tencentcloud/tcbr/v20220217/model/TimerScale.h>
+#include <tencentcloud/tcbr/v20220217/model/VpcConf.h>
 
 
 namespace TencentCloud
@@ -640,6 +641,27 @@ namespace TencentCloud
                      */
                     bool SessionAffinityHasBeenSet() const;
 
+                    /**
+                     * 获取Vpc 配置参数
+                     * @return VpcConf Vpc 配置参数
+                     * 
+                     */
+                    VpcConf GetVpcConf() const;
+
+                    /**
+                     * 设置Vpc 配置参数
+                     * @param _vpcConf Vpc 配置参数
+                     * 
+                     */
+                    void SetVpcConf(const VpcConf& _vpcConf);
+
+                    /**
+                     * 判断参数 VpcConf 是否已赋值
+                     * @return VpcConf 是否已赋值
+                     * 
+                     */
+                    bool VpcConfHasBeenSet() const;
+
                 private:
 
                     /**
@@ -810,6 +832,12 @@ namespace TencentCloud
                      */
                     std::string m_sessionAffinity;
                     bool m_sessionAffinityHasBeenSet;
+
+                    /**
+                     * Vpc 配置参数
+                     */
+                    VpcConf m_vpcConf;
+                    bool m_vpcConfHasBeenSet;
 
                 };
             }

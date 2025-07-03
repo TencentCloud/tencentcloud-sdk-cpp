@@ -28,7 +28,8 @@ AndroidApp::AndroidApp() :
     m_createTimeHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_appModeHasBeenSet(false),
-    m_updateStateHasBeenSet(false)
+    m_updateStateHasBeenSet(false),
+    m_packageNameHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome AndroidApp::Deserialize(const rapidjson::Value &value)
         m_updateStateHasBeenSet = true;
     }
 
+    if (value.HasMember("PackageName") && !value["PackageName"].IsNull())
+    {
+        if (!value["PackageName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidApp.PackageName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageName = string(value["PackageName"].GetString());
+        m_packageNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void AndroidApp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "UpdateState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packageNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_packageName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void AndroidApp::SetUpdateState(const string& _updateState)
 bool AndroidApp::UpdateStateHasBeenSet() const
 {
     return m_updateStateHasBeenSet;
+}
+
+string AndroidApp::GetPackageName() const
+{
+    return m_packageName;
+}
+
+void AndroidApp::SetPackageName(const string& _packageName)
+{
+    m_packageName = _packageName;
+    m_packageNameHasBeenSet = true;
+}
+
+bool AndroidApp::PackageNameHasBeenSet() const
+{
+    return m_packageNameHasBeenSet;
 }
 

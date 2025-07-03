@@ -52,7 +52,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_launchTemplateHasBeenSet(false),
     m_dedicatedClusterIdHasBeenSet(false),
     m_chcIdsHasBeenSet(false),
-    m_disableApiTerminationHasBeenSet(false)
+    m_disableApiTerminationHasBeenSet(false),
+    m_enableJumboFrameHasBeenSet(false)
 {
 }
 
@@ -342,6 +343,14 @@ string RunInstancesRequest::ToJsonString() const
         string key = "DisableApiTermination";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableApiTermination, allocator);
+    }
+
+    if (m_enableJumboFrameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableJumboFrame";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableJumboFrame, allocator);
     }
 
 
@@ -830,6 +839,22 @@ void RunInstancesRequest::SetDisableApiTermination(const bool& _disableApiTermin
 bool RunInstancesRequest::DisableApiTerminationHasBeenSet() const
 {
     return m_disableApiTerminationHasBeenSet;
+}
+
+bool RunInstancesRequest::GetEnableJumboFrame() const
+{
+    return m_enableJumboFrame;
+}
+
+void RunInstancesRequest::SetEnableJumboFrame(const bool& _enableJumboFrame)
+{
+    m_enableJumboFrame = _enableJumboFrame;
+    m_enableJumboFrameHasBeenSet = true;
+}
+
+bool RunInstancesRequest::EnableJumboFrameHasBeenSet() const
+{
+    return m_enableJumboFrameHasBeenSet;
 }
 
 

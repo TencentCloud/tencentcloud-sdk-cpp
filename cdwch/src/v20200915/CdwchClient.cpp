@@ -384,6 +384,49 @@ CdwchClient::DescribeBackUpTablesOutcomeCallable CdwchClient::DescribeBackUpTabl
     return task->get_future();
 }
 
+CdwchClient::DescribeCNInstancesOutcome CdwchClient::DescribeCNInstances(const DescribeCNInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCNInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCNInstancesResponse rsp = DescribeCNInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCNInstancesOutcome(rsp);
+        else
+            return DescribeCNInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCNInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeCNInstancesAsync(const DescribeCNInstancesRequest& request, const DescribeCNInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCNInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeCNInstancesOutcomeCallable CdwchClient::DescribeCNInstancesCallable(const DescribeCNInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCNInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCNInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::DescribeCkSqlApisOutcome CdwchClient::DescribeCkSqlApis(const DescribeCkSqlApisRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCkSqlApis");

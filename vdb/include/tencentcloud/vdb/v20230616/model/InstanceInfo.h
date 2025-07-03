@@ -586,6 +586,69 @@ namespace TencentCloud
                     bool IsNoExpiredHasBeenSet() const;
 
                     /**
+                     * 获取产品版本，0-标准版，1-容量增强版
+                     * @return ProductType 产品版本，0-标准版，1-容量增强版
+                     * 
+                     */
+                    int64_t GetProductType() const;
+
+                    /**
+                     * 设置产品版本，0-标准版，1-容量增强版
+                     * @param _productType 产品版本，0-标准版，1-容量增强版
+                     * 
+                     */
+                    void SetProductType(const int64_t& _productType);
+
+                    /**
+                     * 判断参数 ProductType 是否已赋值
+                     * @return ProductType 是否已赋值
+                     * 
+                     */
+                    bool ProductTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例类型
+                     * @return InstanceType 实例类型
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型
+                     * @param _instanceType 实例类型
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取节点类型
+                     * @return NodeType 节点类型
+                     * 
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置节点类型
+                     * @param _nodeType 节点类型
+                     * 
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     * 
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
+                    /**
                      * 获取外网地址。
                      * @return WanAddress 外网地址。
                      * 
@@ -668,6 +731,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TaskStatusHasBeenSet() const;
+
+                    /**
+                     * 获取绑定的安全组id
+                     * @return SecurityGroupIds 绑定的安全组id
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置绑定的安全组id
+                     * @param _securityGroupIds 绑定的安全组id
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
 
                 private:
 
@@ -825,6 +909,24 @@ namespace TencentCloud
                     bool m_isNoExpiredHasBeenSet;
 
                     /**
+                     * 产品版本，0-标准版，1-容量增强版
+                     */
+                    int64_t m_productType;
+                    bool m_productTypeHasBeenSet;
+
+                    /**
+                     * 实例类型
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 节点类型
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
+
+                    /**
                      * 外网地址。
                      */
                     std::string m_wanAddress;
@@ -847,6 +949,12 @@ namespace TencentCloud
                      */
                     int64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;
+
+                    /**
+                     * 绑定的安全组id
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }

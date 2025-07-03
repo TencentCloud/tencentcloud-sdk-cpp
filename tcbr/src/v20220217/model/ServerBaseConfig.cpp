@@ -48,7 +48,8 @@ ServerBaseConfig::ServerBaseConfig() :
     m_timerScaleHasBeenSet(false),
     m_entryPointHasBeenSet(false),
     m_cmdHasBeenSet(false),
-    m_sessionAffinityHasBeenSet(false)
+    m_sessionAffinityHasBeenSet(false),
+    m_vpcConfHasBeenSet(false)
 {
 }
 
@@ -366,6 +367,23 @@ CoreInternalOutcome ServerBaseConfig::Deserialize(const rapidjson::Value &value)
         m_sessionAffinityHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcConf") && !value["VpcConf"].IsNull())
+    {
+        if (!value["VpcConf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.VpcConf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vpcConf.Deserialize(value["VpcConf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vpcConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -624,6 +642,15 @@ void ServerBaseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SessionAffinity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionAffinity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vpcConf.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1075,5 +1102,21 @@ void ServerBaseConfig::SetSessionAffinity(const string& _sessionAffinity)
 bool ServerBaseConfig::SessionAffinityHasBeenSet() const
 {
     return m_sessionAffinityHasBeenSet;
+}
+
+VpcConf ServerBaseConfig::GetVpcConf() const
+{
+    return m_vpcConf;
+}
+
+void ServerBaseConfig::SetVpcConf(const VpcConf& _vpcConf)
+{
+    m_vpcConf = _vpcConf;
+    m_vpcConfHasBeenSet = true;
+}
+
+bool ServerBaseConfig::VpcConfHasBeenSet() const
+{
+    return m_vpcConfHasBeenSet;
 }
 

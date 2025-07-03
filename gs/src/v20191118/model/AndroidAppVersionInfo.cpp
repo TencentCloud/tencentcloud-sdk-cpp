@@ -27,7 +27,9 @@ AndroidAppVersionInfo::AndroidAppVersionInfo() :
     m_commandHasBeenSet(false),
     m_uninstallCommandHasBeenSet(false),
     m_cleanupModeHasBeenSet(false),
-    m_androidAppVersionNameHasBeenSet(false)
+    m_androidAppVersionNameHasBeenSet(false),
+    m_activityHasBeenSet(false),
+    m_versionNameHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome AndroidAppVersionInfo::Deserialize(const rapidjson::Value &v
         m_androidAppVersionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Activity") && !value["Activity"].IsNull())
+    {
+        if (!value["Activity"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidAppVersionInfo.Activity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_activity = string(value["Activity"].GetString());
+        m_activityHasBeenSet = true;
+    }
+
+    if (value.HasMember("VersionName") && !value["VersionName"].IsNull())
+    {
+        if (!value["VersionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidAppVersionInfo.VersionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_versionName = string(value["VersionName"].GetString());
+        m_versionNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void AndroidAppVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "AndroidAppVersionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_androidAppVersionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_activityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Activity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_activity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void AndroidAppVersionInfo::SetAndroidAppVersionName(const string& _androidAppVe
 bool AndroidAppVersionInfo::AndroidAppVersionNameHasBeenSet() const
 {
     return m_androidAppVersionNameHasBeenSet;
+}
+
+string AndroidAppVersionInfo::GetActivity() const
+{
+    return m_activity;
+}
+
+void AndroidAppVersionInfo::SetActivity(const string& _activity)
+{
+    m_activity = _activity;
+    m_activityHasBeenSet = true;
+}
+
+bool AndroidAppVersionInfo::ActivityHasBeenSet() const
+{
+    return m_activityHasBeenSet;
+}
+
+string AndroidAppVersionInfo::GetVersionName() const
+{
+    return m_versionName;
+}
+
+void AndroidAppVersionInfo::SetVersionName(const string& _versionName)
+{
+    m_versionName = _versionName;
+    m_versionNameHasBeenSet = true;
+}
+
+bool AndroidAppVersionInfo::VersionNameHasBeenSet() const
+{
+    return m_versionNameHasBeenSet;
 }
 

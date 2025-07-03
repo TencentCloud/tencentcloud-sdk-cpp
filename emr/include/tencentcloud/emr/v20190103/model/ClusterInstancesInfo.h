@@ -1154,6 +1154,27 @@ namespace TencentCloud
                      */
                     bool ClusterRelationInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取Redis信息
+                     * @return RedisId Redis信息
+                     * 
+                     */
+                    std::string GetRedisId() const;
+
+                    /**
+                     * 设置Redis信息
+                     * @param _redisId Redis信息
+                     * 
+                     */
+                    void SetRedisId(const std::string& _redisId);
+
+                    /**
+                     * 判断参数 RedisId 是否已赋值
+                     * @return RedisId 是否已赋值
+                     * 
+                     */
+                    bool RedisIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1465,6 +1486,12 @@ namespace TencentCloud
                      */
                     std::vector<ClusterRelationMeta> m_clusterRelationInfoList;
                     bool m_clusterRelationInfoListHasBeenSet;
+
+                    /**
+                     * Redis信息
+                     */
+                    std::string m_redisId;
+                    bool m_redisIdHasBeenSet;
 
                 };
             }

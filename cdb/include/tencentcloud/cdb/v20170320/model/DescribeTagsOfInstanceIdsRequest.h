@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例列表。
-                     * @return InstanceIds 实例列表。
+                     * 获取实例列表。实例 ID 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。可传入的数组长度暂无限制。
+                     * @return InstanceIds 实例列表。实例 ID 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。可传入的数组长度暂无限制。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例列表。
-                     * @param _instanceIds 实例列表。
+                     * 设置实例列表。实例 ID 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。可传入的数组长度暂无限制。
+                     * @param _instanceIds 实例列表。实例 ID 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。可传入的数组长度暂无限制。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页大小。
-                     * @return Limit 分页大小。
+                     * 获取分页大小。默认为15。
+                     * @return Limit 分页大小。默认为15。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小。
-                     * @param _limit 分页大小。
+                     * 设置分页大小。默认为15。
+                     * @param _limit 分页大小。默认为15。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例列表。
+                     * 实例列表。实例 ID 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。可传入的数组长度暂无限制。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页大小。
+                     * 分页大小。默认为15。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -50,14 +50,18 @@ namespace TencentCloud
 
                     /**
                      * 获取RW 节点拓扑。
+说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。
                      * @return ReadWriteNode RW 节点拓扑。
+说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。
                      * 
                      */
                     ReadWriteNode GetReadWriteNode() const;
 
                     /**
                      * 设置RW 节点拓扑。
+说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。
                      * @param _readWriteNode RW 节点拓扑。
+说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。
                      * 
                      */
                     void SetReadWriteNode(const ReadWriteNode& _readWriteNode);
@@ -71,14 +75,18 @@ namespace TencentCloud
 
                     /**
                      * 获取RO 节点拓扑。
+说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。
                      * @return ReadOnlyNodes RO 节点拓扑。
+说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。
                      * 
                      */
                     std::vector<ReadonlyNode> GetReadOnlyNodes() const;
 
                     /**
                      * 设置RO 节点拓扑。
+说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。
                      * @param _readOnlyNodes RO 节点拓扑。
+说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。
                      * 
                      */
                     void SetReadOnlyNodes(const std::vector<ReadonlyNode>& _readOnlyNodes);
@@ -94,12 +102,14 @@ namespace TencentCloud
 
                     /**
                      * RW 节点拓扑。
+说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。
                      */
                     ReadWriteNode m_readWriteNode;
                     bool m_readWriteNodeHasBeenSet;
 
                     /**
                      * RO 节点拓扑。
+说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。
                      */
                     std::vector<ReadonlyNode> m_readOnlyNodes;
                     bool m_readOnlyNodesHasBeenSet;

@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
-ReplaySessionResponse::ReplaySessionResponse()
+ReplaySessionResponse::ReplaySessionResponse() :
+    m_replayInfoHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome ReplaySessionResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ReplayInfo") && !rsp["ReplayInfo"].IsNull())
+    {
+        if (!rsp["ReplayInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReplayInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_replayInfo.Deserialize(rsp["ReplayInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_replayInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string ReplaySessionResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_replayInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplayInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_replayInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string ReplaySessionResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+ReplayInformation ReplaySessionResponse::GetReplayInfo() const
+{
+    return m_replayInfo;
+}
+
+bool ReplaySessionResponse::ReplayInfoHasBeenSet() const
+{
+    return m_replayInfoHasBeenSet;
+}
 
 

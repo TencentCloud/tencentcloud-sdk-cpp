@@ -56,6 +56,7 @@ BizLicense：营业执照
 HmtResidentPermit：港澳台居住证
 ForeignPermanentResident：外国人永居证
 MainlandPermit：港澳台来往内地通行证
+SocialSecurityCard：社保卡
                      * @return CardType 卡证类型参数，包含以下范围： 
 General：通用卡证
 IDCard：身份证 
@@ -67,6 +68,7 @@ BizLicense：营业执照
 HmtResidentPermit：港澳台居住证
 ForeignPermanentResident：外国人永居证
 MainlandPermit：港澳台来往内地通行证
+SocialSecurityCard：社保卡
                      * 
                      */
                     std::string GetCardType() const;
@@ -232,6 +234,7 @@ BizLicense：营业执照
 HmtResidentPermit：港澳台居住证
 ForeignPermanentResident：外国人永居证
 MainlandPermit：港澳台来往内地通行证
+SocialSecurityCard：社保卡
                      */
                     std::string m_cardType;
                     bool m_cardTypeHasBeenSet;

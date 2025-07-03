@@ -1296,6 +1296,48 @@ namespace TencentCloud
                      */
                     bool NodeMarkHasBeenSet() const;
 
+                    /**
+                     * 获取包销资源是否支持设置自动续费
+                     * @return UnderwriteSetAutoRenew 包销资源是否支持设置自动续费
+                     * 
+                     */
+                    bool GetUnderwriteSetAutoRenew() const;
+
+                    /**
+                     * 设置包销资源是否支持设置自动续费
+                     * @param _underwriteSetAutoRenew 包销资源是否支持设置自动续费
+                     * 
+                     */
+                    void SetUnderwriteSetAutoRenew(const bool& _underwriteSetAutoRenew);
+
+                    /**
+                     * 判断参数 UnderwriteSetAutoRenew 是否已赋值
+                     * @return UnderwriteSetAutoRenew 是否已赋值
+                     * 
+                     */
+                    bool UnderwriteSetAutoRenewHasBeenSet() const;
+
+                    /**
+                     * 获取Gpu信息
+                     * @return GpuDesc Gpu信息
+                     * 
+                     */
+                    std::string GetGpuDesc() const;
+
+                    /**
+                     * 设置Gpu信息
+                     * @param _gpuDesc Gpu信息
+                     * 
+                     */
+                    void SetGpuDesc(const std::string& _gpuDesc);
+
+                    /**
+                     * 判断参数 GpuDesc 是否已赋值
+                     * @return GpuDesc 是否已赋值
+                     * 
+                     */
+                    bool GpuDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1652,6 +1694,18 @@ namespace TencentCloud
                      */
                     std::string m_nodeMark;
                     bool m_nodeMarkHasBeenSet;
+
+                    /**
+                     * 包销资源是否支持设置自动续费
+                     */
+                    bool m_underwriteSetAutoRenew;
+                    bool m_underwriteSetAutoRenewHasBeenSet;
+
+                    /**
+                     * Gpu信息
+                     */
+                    std::string m_gpuDesc;
+                    bool m_gpuDescHasBeenSet;
 
                 };
             }

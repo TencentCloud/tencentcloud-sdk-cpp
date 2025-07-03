@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发票代码
-                     * @return InvoiceNum 发票代码
+                     * 获取发票号码
+                     * @return InvoiceNum 发票号码
                      * 
                      */
                     std::string GetInvoiceNum() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool InvoiceNumHasBeenSet() const;
 
                     /**
-                     * 获取发票号码
-                     * @return InvoiceCode 发票号码
+                     * 获取发票代码
+                     * @return InvoiceCode 发票代码
                      * 
                      */
                     std::string GetInvoiceCode() const;
@@ -218,13 +218,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发票代码
+                     * 发票号码
                      */
                     std::string m_invoiceNum;
                     bool m_invoiceNumHasBeenSet;
 
                     /**
-                     * 发票号码
+                     * 发票代码
                      */
                     std::string m_invoiceCode;
                     bool m_invoiceCodeHasBeenSet;

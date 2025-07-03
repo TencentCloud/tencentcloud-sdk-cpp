@@ -26,7 +26,8 @@ UpdateCloudRunServerRequest::UpdateCloudRunServerRequest() :
     m_envIdHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_deployInfoHasBeenSet(false),
-    m_serverConfigHasBeenSet(false)
+    m_serverConfigHasBeenSet(false),
+    m_businessHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,14 @@ string UpdateCloudRunServerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_serverConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_businessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Business";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -141,6 +150,22 @@ void UpdateCloudRunServerRequest::SetServerConfig(const ServerBaseConfig& _serve
 bool UpdateCloudRunServerRequest::ServerConfigHasBeenSet() const
 {
     return m_serverConfigHasBeenSet;
+}
+
+string UpdateCloudRunServerRequest::GetBusiness() const
+{
+    return m_business;
+}
+
+void UpdateCloudRunServerRequest::SetBusiness(const string& _business)
+{
+    m_business = _business;
+    m_businessHasBeenSet = true;
+}
+
+bool UpdateCloudRunServerRequest::BusinessHasBeenSet() const
+{
+    return m_businessHasBeenSet;
 }
 
 

@@ -415,6 +415,27 @@ namespace TencentCloud
                      */
                     bool EnablePublicAccessHasBeenSet() const;
 
+                    /**
+                     * 获取是否打开集群删除保护，不传默认为 false
+                     * @return EnableDeletionProtection 是否打开集群删除保护，不传默认为 false
+                     * 
+                     */
+                    bool GetEnableDeletionProtection() const;
+
+                    /**
+                     * 设置是否打开集群删除保护，不传默认为 false
+                     * @param _enableDeletionProtection 是否打开集群删除保护，不传默认为 false
+                     * 
+                     */
+                    void SetEnableDeletionProtection(const bool& _enableDeletionProtection);
+
+                    /**
+                     * 判断参数 EnableDeletionProtection 是否已赋值
+                     * @return EnableDeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool EnableDeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -521,6 +542,12 @@ namespace TencentCloud
                      */
                     bool m_enablePublicAccess;
                     bool m_enablePublicAccessHasBeenSet;
+
+                    /**
+                     * 是否打开集群删除保护，不传默认为 false
+                     */
+                    bool m_enableDeletionProtection;
+                    bool m_enableDeletionProtectionHasBeenSet;
 
                 };
             }

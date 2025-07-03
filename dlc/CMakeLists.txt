@@ -129,6 +129,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DataEngineConfigInstanceInfo.h
   include/tencentcloud/dlc/v20210125/model/CrontabResumeSuspendStrategy.h
   include/tencentcloud/dlc/v20210125/model/VpcInfo.h
+  include/tencentcloud/dlc/v20210125/model/CustomConfig.h
   include/tencentcloud/dlc/v20210125/model/NotebookSessions.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLRequest.h
   include/tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyResponse.h
@@ -547,6 +548,7 @@ set(dlc_src
   src/v20210125/model/DataEngineConfigInstanceInfo.cpp
   src/v20210125/model/CrontabResumeSuspendStrategy.cpp
   src/v20210125/model/VpcInfo.cpp
+  src/v20210125/model/CustomConfig.cpp
   src/v20210125/model/NotebookSessions.cpp
   src/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLRequest.cpp
   src/v20210125/model/DetachWorkGroupPolicyResponse.cpp

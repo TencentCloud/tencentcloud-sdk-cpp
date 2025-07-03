@@ -599,3 +599,89 @@ IoaClient::DescribeSoftwareInformationOutcomeCallable IoaClient::DescribeSoftwar
     return task->get_future();
 }
 
+IoaClient::DescribeVirtualDevicesOutcome IoaClient::DescribeVirtualDevices(const DescribeVirtualDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirtualDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirtualDevicesResponse rsp = DescribeVirtualDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirtualDevicesOutcome(rsp);
+        else
+            return DescribeVirtualDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirtualDevicesOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeVirtualDevicesAsync(const DescribeVirtualDevicesRequest& request, const DescribeVirtualDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVirtualDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeVirtualDevicesOutcomeCallable IoaClient::DescribeVirtualDevicesCallable(const DescribeVirtualDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVirtualDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVirtualDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::ModifyVirtualDeviceGroupsOutcome IoaClient::ModifyVirtualDeviceGroups(const ModifyVirtualDeviceGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVirtualDeviceGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVirtualDeviceGroupsResponse rsp = ModifyVirtualDeviceGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVirtualDeviceGroupsOutcome(rsp);
+        else
+            return ModifyVirtualDeviceGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVirtualDeviceGroupsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::ModifyVirtualDeviceGroupsAsync(const ModifyVirtualDeviceGroupsRequest& request, const ModifyVirtualDeviceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVirtualDeviceGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::ModifyVirtualDeviceGroupsOutcomeCallable IoaClient::ModifyVirtualDeviceGroupsCallable(const ModifyVirtualDeviceGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVirtualDeviceGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVirtualDeviceGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

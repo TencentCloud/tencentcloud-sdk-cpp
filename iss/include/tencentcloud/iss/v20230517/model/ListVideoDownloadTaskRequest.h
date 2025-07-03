@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取排序规则（仅支持 StartTime，EndTime，倒序为-StartTime，-EndTime）
-                     * @return SortRule 排序规则（仅支持 StartTime，EndTime，倒序为-StartTime，-EndTime）
+                     * 获取排序规则（仅支持 StartTime，倒序为-StartTime）
+                     * @return SortRule 排序规则（仅支持 StartTime，倒序为-StartTime）
                      * 
                      */
                     std::string GetSortRule() const;
 
                     /**
-                     * 设置排序规则（仅支持 StartTime，EndTime，倒序为-StartTime，-EndTime）
-                     * @param _sortRule 排序规则（仅支持 StartTime，EndTime，倒序为-StartTime，-EndTime）
+                     * 设置排序规则（仅支持 StartTime，倒序为-StartTime）
+                     * @param _sortRule 排序规则（仅支持 StartTime，倒序为-StartTime）
                      * 
                      */
                     void SetSortRule(const std::string& _sortRule);
@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool UrlExpiresHasBeenSet() const;
 
+                    /**
+                     * 获取任务日期，默认当天
+                     * @return Date 任务日期，默认当天
+                     * 
+                     */
+                    std::string GetDate() const;
+
+                    /**
+                     * 设置任务日期，默认当天
+                     * @param _date 任务日期，默认当天
+                     * 
+                     */
+                    void SetDate(const std::string& _date);
+
+                    /**
+                     * 判断参数 Date 是否已赋值
+                     * @return Date 是否已赋值
+                     * 
+                     */
+                    bool DateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -252,7 +273,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 排序规则（仅支持 StartTime，EndTime，倒序为-StartTime，-EndTime）
+                     * 排序规则（仅支持 StartTime，倒序为-StartTime）
                      */
                     std::string m_sortRule;
                     bool m_sortRuleHasBeenSet;
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     int64_t m_urlExpires;
                     bool m_urlExpiresHasBeenSet;
+
+                    /**
+                     * 任务日期，默认当天
+                     */
+                    std::string m_date;
+                    bool m_dateHasBeenSet;
 
                 };
             }

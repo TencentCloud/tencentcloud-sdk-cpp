@@ -29,7 +29,8 @@ IDCardOCRRequest::IDCardOCRRequest() :
     m_configHasBeenSet(false),
     m_enableRecognitionRectifyHasBeenSet(false),
     m_enableReflectDetailHasBeenSet(false),
-    m_enableDateVerifyHasBeenSet(false)
+    m_enableDateVerifyHasBeenSet(false),
+    m_cardWarnTypeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string IDCardOCRRequest::ToJsonString() const
         string key = "EnableDateVerify";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDateVerify, allocator);
+    }
+
+    if (m_cardWarnTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardWarnType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cardWarnType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void IDCardOCRRequest::SetEnableDateVerify(const bool& _enableDateVerify)
 bool IDCardOCRRequest::EnableDateVerifyHasBeenSet() const
 {
     return m_enableDateVerifyHasBeenSet;
+}
+
+string IDCardOCRRequest::GetCardWarnType() const
+{
+    return m_cardWarnType;
+}
+
+void IDCardOCRRequest::SetCardWarnType(const string& _cardWarnType)
+{
+    m_cardWarnType = _cardWarnType;
+    m_cardWarnTypeHasBeenSet = true;
+}
+
+bool IDCardOCRRequest::CardWarnTypeHasBeenSet() const
+{
+    return m_cardWarnTypeHasBeenSet;
 }
 
 

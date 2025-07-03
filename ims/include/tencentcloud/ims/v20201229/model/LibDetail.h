@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回自定义库的名称,以方便自定义库管理和配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibName 该字段用于返回自定义库的名称,以方便自定义库管理和配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLibName() const;
 
                     /**
                      * 设置该字段用于返回自定义库的名称,以方便自定义库管理和配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _libName 该字段用于返回自定义库的名称,以方便自定义库管理和配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLibName(const std::string& _libName);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回其他自定义标签以满足您的定制化场景需求，若无需求则可略过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 该字段用于返回其他自定义标签以满足您的定制化场景需求，若无需求则可略过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置该字段用于返回其他自定义标签以满足您的定制化场景需求，若无需求则可略过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 该字段用于返回其他自定义标签以满足您的定制化场景需求，若无需求则可略过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -217,7 +209,6 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回自定义库的名称,以方便自定义库管理和配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_libName;
                     bool m_libNameHasBeenSet;
@@ -236,7 +227,6 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回其他自定义标签以满足您的定制化场景需求，若无需求则可略过。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

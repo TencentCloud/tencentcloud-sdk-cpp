@@ -386,6 +386,27 @@ namespace TencentCloud
                      */
                     bool EmrResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取包销到期时间
+                     * @return UnderwriteExpiredTime 包销到期时间
+                     * 
+                     */
+                    std::string GetUnderwriteExpiredTime() const;
+
+                    /**
+                     * 设置包销到期时间
+                     * @param _underwriteExpiredTime 包销到期时间
+                     * 
+                     */
+                    void SetUnderwriteExpiredTime(const std::string& _underwriteExpiredTime);
+
+                    /**
+                     * 判断参数 UnderwriteExpiredTime 是否已赋值
+                     * @return UnderwriteExpiredTime 是否已赋值
+                     * 
+                     */
+                    bool UnderwriteExpiredTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -484,6 +505,12 @@ namespace TencentCloud
                      */
                     std::string m_emrResourceId;
                     bool m_emrResourceIdHasBeenSet;
+
+                    /**
+                     * 包销到期时间
+                     */
+                    std::string m_underwriteExpiredTime;
+                    bool m_underwriteExpiredTimeHasBeenSet;
 
                 };
             }

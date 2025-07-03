@@ -120,12 +120,12 @@ namespace TencentCloud
                     /**
                      * 获取服务区域，取值有：
 <li>mainland: 中国大陆；</li>
-<li>overseas: 全球（不包括中国大陆)；</li>
-<li>global: 全球（包括中国大陆)。</li>
+<li>overseas: 全球（不包括中国大陆）；</li>
+<li>global: 全球（包括中国大陆）。</li>
                      * @return Area 服务区域，取值有：
 <li>mainland: 中国大陆；</li>
-<li>overseas: 全球（不包括中国大陆)；</li>
-<li>global: 全球（包括中国大陆)。</li>
+<li>overseas: 全球（不包括中国大陆）；</li>
+<li>global: 全球（包括中国大陆）。</li>
                      * 
                      */
                     std::string GetArea() const;
@@ -133,12 +133,12 @@ namespace TencentCloud
                     /**
                      * 设置服务区域，取值有：
 <li>mainland: 中国大陆；</li>
-<li>overseas: 全球（不包括中国大陆)；</li>
-<li>global: 全球（包括中国大陆)。</li>
+<li>overseas: 全球（不包括中国大陆）；</li>
+<li>global: 全球（包括中国大陆）。</li>
                      * @param _area 服务区域，取值有：
 <li>mainland: 中国大陆；</li>
-<li>overseas: 全球（不包括中国大陆)；</li>
-<li>global: 全球（包括中国大陆)。</li>
+<li>overseas: 全球（不包括中国大陆）；</li>
+<li>global: 全球（包括中国大陆）。</li>
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -149,6 +149,35 @@ namespace TencentCloud
                      * 
                      */
                     bool AreaHasBeenSet() const;
+
+                    /**
+                     * 获取自动续费开关。取值有：
+<li>true: 已开启自动续费；</li>
+<li>false: 未开启自动续费。</li>
+                     * @return AutoRenewal 自动续费开关。取值有：
+<li>true: 已开启自动续费；</li>
+<li>false: 未开启自动续费。</li>
+                     * 
+                     */
+                    bool GetAutoRenewal() const;
+
+                    /**
+                     * 设置自动续费开关。取值有：
+<li>true: 已开启自动续费；</li>
+<li>false: 未开启自动续费。</li>
+                     * @param _autoRenewal 自动续费开关。取值有：
+<li>true: 已开启自动续费；</li>
+<li>false: 未开启自动续费。</li>
+                     * 
+                     */
+                    void SetAutoRenewal(const bool& _autoRenewal);
+
+                    /**
+                     * 判断参数 AutoRenewal 是否已赋值
+                     * @return AutoRenewal 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewalHasBeenSet() const;
 
                     /**
                      * 获取套餐状态，取值有：
@@ -546,11 +575,19 @@ namespace TencentCloud
                     /**
                      * 服务区域，取值有：
 <li>mainland: 中国大陆；</li>
-<li>overseas: 全球（不包括中国大陆)；</li>
-<li>global: 全球（包括中国大陆)。</li>
+<li>overseas: 全球（不包括中国大陆）；</li>
+<li>global: 全球（包括中国大陆）。</li>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 自动续费开关。取值有：
+<li>true: 已开启自动续费；</li>
+<li>false: 未开启自动续费。</li>
+                     */
+                    bool m_autoRenewal;
+                    bool m_autoRenewalHasBeenSet;
 
                     /**
                      * 套餐状态，取值有：

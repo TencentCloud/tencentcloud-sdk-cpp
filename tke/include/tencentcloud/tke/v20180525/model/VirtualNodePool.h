@@ -117,14 +117,26 @@ namespace TencentCloud
 
                     /**
                      * 获取节点池生命周期
+- creating：创建中
+- normal：正常
+- updating：更新中
                      * @return LifeState 节点池生命周期
+- creating：创建中
+- normal：正常
+- updating：更新中
                      * 
                      */
                     std::string GetLifeState() const;
 
                     /**
                      * 设置节点池生命周期
+- creating：创建中
+- normal：正常
+- updating：更新中
                      * @param _lifeState 节点池生命周期
+- creating：创建中
+- normal：正常
+- updating：更新中
                      * 
                      */
                     void SetLifeState(const std::string& _lifeState);
@@ -209,6 +221,9 @@ namespace TencentCloud
 
                     /**
                      * 节点池生命周期
+- creating：创建中
+- normal：正常
+- updating：更新中
                      */
                     std::string m_lifeState;
                     bool m_lifeStateHasBeenSet;

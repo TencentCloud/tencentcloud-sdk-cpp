@@ -350,6 +350,27 @@ OFF/ON/CREATING/DELETING
                      */
                     bool ControlPlaneEndpointInfoHasBeenSet() const;
 
+                    /**
+                     * 获取TLS加密的数据流公网接入点
+                     * @return PublicTlsAccessEndpoint TLS加密的数据流公网接入点
+                     * 
+                     */
+                    std::string GetPublicTlsAccessEndpoint() const;
+
+                    /**
+                     * 设置TLS加密的数据流公网接入点
+                     * @param _publicTlsAccessEndpoint TLS加密的数据流公网接入点
+                     * 
+                     */
+                    void SetPublicTlsAccessEndpoint(const std::string& _publicTlsAccessEndpoint);
+
+                    /**
+                     * 判断参数 PublicTlsAccessEndpoint 是否已赋值
+                     * @return PublicTlsAccessEndpoint 是否已赋值
+                     * 
+                     */
+                    bool PublicTlsAccessEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -437,6 +458,12 @@ OFF/ON/CREATING/DELETING
                      */
                     VpcEndpointInfo m_controlPlaneEndpointInfo;
                     bool m_controlPlaneEndpointInfoHasBeenSet;
+
+                    /**
+                     * TLS加密的数据流公网接入点
+                     */
+                    std::string m_publicTlsAccessEndpoint;
+                    bool m_publicTlsAccessEndpointHasBeenSet;
 
                 };
             }

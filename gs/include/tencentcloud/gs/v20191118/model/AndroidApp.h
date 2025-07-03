@@ -215,6 +215,27 @@ namespace TencentCloud
                      */
                     bool UpdateStateHasBeenSet() const;
 
+                    /**
+                     * 获取安卓应用包名
+                     * @return PackageName 安卓应用包名
+                     * 
+                     */
+                    std::string GetPackageName() const;
+
+                    /**
+                     * 设置安卓应用包名
+                     * @param _packageName 安卓应用包名
+                     * 
+                     */
+                    void SetPackageName(const std::string& _packageName);
+
+                    /**
+                     * 判断参数 PackageName 是否已赋值
+                     * @return PackageName 是否已赋值
+                     * 
+                     */
+                    bool PackageNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +285,12 @@ namespace TencentCloud
                      */
                     std::string m_updateState;
                     bool m_updateStateHasBeenSet;
+
+                    /**
+                     * 安卓应用包名
+                     */
+                    std::string m_packageName;
+                    bool m_packageNameHasBeenSet;
 
                 };
             }

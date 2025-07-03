@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
-                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
-                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
-                     * @return Topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
+                     * 获取主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。
+                     * @return Topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
-                     * @param _topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
+                     * 设置主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。
+                     * @param _topic 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -86,35 +86,35 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取主题类型
-UNSPECIFIED:未指定,
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
-                     * @return TopicType 主题类型
-UNSPECIFIED:未指定,
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
+                     * 获取主题类型，枚举值如下：
+
+- NORMAL: 普通消息
+- FIFO: 顺序消息
+- DELAY: 延时消息
+- TRANSACTION: 事务消息
+                     * @return TopicType 主题类型，枚举值如下：
+
+- NORMAL: 普通消息
+- FIFO: 顺序消息
+- DELAY: 延时消息
+- TRANSACTION: 事务消息
                      * 
                      */
                     std::string GetTopicType() const;
 
                     /**
-                     * 设置主题类型
-UNSPECIFIED:未指定,
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
-                     * @param _topicType 主题类型
-UNSPECIFIED:未指定,
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
+                     * 设置主题类型，枚举值如下：
+
+- NORMAL: 普通消息
+- FIFO: 顺序消息
+- DELAY: 延时消息
+- TRANSACTION: 事务消息
+                     * @param _topicType 主题类型，枚举值如下：
+
+- NORMAL: 普通消息
+- FIFO: 顺序消息
+- DELAY: 延时消息
+- TRANSACTION: 事务消息
                      * 
                      */
                     void SetTopicType(const std::string& _topicType);
@@ -148,15 +148,15 @@ TRANSACTION:事务消息
                     bool QueueNumHasBeenSet() const;
 
                     /**
-                     * 获取备注，最多 128 字符
-                     * @return Remark 备注，最多 128 字符
+                     * 获取备注信息，最多 128 个字符
+                     * @return Remark 备注信息，最多 128 个字符
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注，最多 128 字符
-                     * @param _remark 备注，最多 128 字符
+                     * 设置备注信息，最多 128 个字符
+                     * @param _remark 备注信息，最多 128 个字符
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -213,24 +213,24 @@ TRANSACTION:事务消息
                 private:
 
                     /**
-                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。
+                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。
+                     * 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 主题类型
-UNSPECIFIED:未指定,
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
+                     * 主题类型，枚举值如下：
+
+- NORMAL: 普通消息
+- FIFO: 顺序消息
+- DELAY: 延时消息
+- TRANSACTION: 事务消息
                      */
                     std::string m_topicType;
                     bool m_topicTypeHasBeenSet;
@@ -242,7 +242,7 @@ TRANSACTION:事务消息
                     bool m_queueNumHasBeenSet;
 
                     /**
-                     * 备注，最多 128 字符
+                     * 备注信息，最多 128 个字符
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

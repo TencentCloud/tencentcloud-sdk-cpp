@@ -128,6 +128,27 @@ namespace TencentCloud
                      */
                     bool ServerConfigHasBeenSet() const;
 
+                    /**
+                     * 获取业务类型，默认tcr
+                     * @return Business 业务类型，默认tcr
+                     * 
+                     */
+                    std::string GetBusiness() const;
+
+                    /**
+                     * 设置业务类型，默认tcr
+                     * @param _business 业务类型，默认tcr
+                     * 
+                     */
+                    void SetBusiness(const std::string& _business);
+
+                    /**
+                     * 判断参数 Business 是否已赋值
+                     * @return Business 是否已赋值
+                     * 
+                     */
+                    bool BusinessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +174,12 @@ namespace TencentCloud
                      */
                     ServerBaseConfig m_serverConfig;
                     bool m_serverConfigHasBeenSet;
+
+                    /**
+                     * 业务类型，默认tcr
+                     */
+                    std::string m_business;
+                    bool m_businessHasBeenSet;
 
                 };
             }

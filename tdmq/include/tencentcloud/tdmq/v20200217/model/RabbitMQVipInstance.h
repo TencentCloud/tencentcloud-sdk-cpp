@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tdmq/v20200217/model/VpcEndpointInfo.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -495,15 +496,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，0 专享版、1 Serverless 版
-                     * @return InstanceType 实例类型，0 专享版、1 Serverless 版
+                     * 获取实例类型，0 托管版、1 Serverless 版
+                     * @return InstanceType 实例类型，0 托管版、1 Serverless 版
                      * 
                      */
                     uint64_t GetInstanceType() const;
 
                     /**
-                     * 设置实例类型，0 专享版、1 Serverless 版
-                     * @param _instanceType 实例类型，0 专享版、1 Serverless 版
+                     * 设置实例类型，0 托管版、1 Serverless 版
+                     * @param _instanceType 实例类型，0 托管版、1 Serverless 版
                      * 
                      */
                     void SetInstanceType(const uint64_t& _instanceType);
@@ -516,15 +517,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取隔离时间，毫秒为单位
-                     * @return IsolatedTime 隔离时间，毫秒为单位
+                     * 获取隔离时间，毫秒为单位。unix 时间戳
+                     * @return IsolatedTime 隔离时间，毫秒为单位。unix 时间戳
                      * 
                      */
                     uint64_t GetIsolatedTime() const;
 
                     /**
-                     * 设置隔离时间，毫秒为单位
-                     * @param _isolatedTime 隔离时间，毫秒为单位
+                     * 设置隔离时间，毫秒为单位。unix 时间戳
+                     * @param _isolatedTime 隔离时间，毫秒为单位。unix 时间戳
                      * 
                      */
                     void SetIsolatedTime(const uint64_t& _isolatedTime);
@@ -535,6 +536,48 @@ namespace TencentCloud
                      * 
                      */
                     bool IsolatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否已开启删除保护
+                     * @return EnableDeletionProtection 是否已开启删除保护
+                     * 
+                     */
+                    bool GetEnableDeletionProtection() const;
+
+                    /**
+                     * 设置是否已开启删除保护
+                     * @param _enableDeletionProtection 是否已开启删除保护
+                     * 
+                     */
+                    void SetEnableDeletionProtection(const bool& _enableDeletionProtection);
+
+                    /**
+                     * 判断参数 EnableDeletionProtection 是否已赋值
+                     * @return EnableDeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool EnableDeletionProtectionHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表
+                     * @return Tags 标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签列表
+                     * @param _tags 标签列表
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
 
                 private:
 
@@ -665,16 +708,28 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 实例类型，0 专享版、1 Serverless 版
+                     * 实例类型，0 托管版、1 Serverless 版
                      */
                     uint64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 隔离时间，毫秒为单位
+                     * 隔离时间，毫秒为单位。unix 时间戳
                      */
                     uint64_t m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;
+
+                    /**
+                     * 是否已开启删除保护
+                     */
+                    bool m_enableDeletionProtection;
+                    bool m_enableDeletionProtectionHasBeenSet;
+
+                    /**
+                     * 标签列表
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

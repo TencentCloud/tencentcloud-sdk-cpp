@@ -88,6 +88,69 @@ namespace TencentCloud
                      */
                     bool UsedVirtualHostHasBeenSet() const;
 
+                    /**
+                     * 获取单个 vhost 下允许的最大连接数
+                     * @return MaxConnectionPerVhost 单个 vhost 下允许的最大连接数
+                     * 
+                     */
+                    int64_t GetMaxConnectionPerVhost() const;
+
+                    /**
+                     * 设置单个 vhost 下允许的最大连接数
+                     * @param _maxConnectionPerVhost 单个 vhost 下允许的最大连接数
+                     * 
+                     */
+                    void SetMaxConnectionPerVhost(const int64_t& _maxConnectionPerVhost);
+
+                    /**
+                     * 判断参数 MaxConnectionPerVhost 是否已赋值
+                     * @return MaxConnectionPerVhost 是否已赋值
+                     * 
+                     */
+                    bool MaxConnectionPerVhostHasBeenSet() const;
+
+                    /**
+                     * 获取单个 vhost 下允许的最大交换机数
+                     * @return MaxExchangePerVhost 单个 vhost 下允许的最大交换机数
+                     * 
+                     */
+                    int64_t GetMaxExchangePerVhost() const;
+
+                    /**
+                     * 设置单个 vhost 下允许的最大交换机数
+                     * @param _maxExchangePerVhost 单个 vhost 下允许的最大交换机数
+                     * 
+                     */
+                    void SetMaxExchangePerVhost(const int64_t& _maxExchangePerVhost);
+
+                    /**
+                     * 判断参数 MaxExchangePerVhost 是否已赋值
+                     * @return MaxExchangePerVhost 是否已赋值
+                     * 
+                     */
+                    bool MaxExchangePerVhostHasBeenSet() const;
+
+                    /**
+                     * 获取单个 vhost 下允许的最大队列机数
+                     * @return MaxQueuePerVhost 单个 vhost 下允许的最大队列机数
+                     * 
+                     */
+                    int64_t GetMaxQueuePerVhost() const;
+
+                    /**
+                     * 设置单个 vhost 下允许的最大队列机数
+                     * @param _maxQueuePerVhost 单个 vhost 下允许的最大队列机数
+                     * 
+                     */
+                    void SetMaxQueuePerVhost(const int64_t& _maxQueuePerVhost);
+
+                    /**
+                     * 判断参数 MaxQueuePerVhost 是否已赋值
+                     * @return MaxQueuePerVhost 是否已赋值
+                     * 
+                     */
+                    bool MaxQueuePerVhostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +164,24 @@ namespace TencentCloud
                      */
                     int64_t m_usedVirtualHost;
                     bool m_usedVirtualHostHasBeenSet;
+
+                    /**
+                     * 单个 vhost 下允许的最大连接数
+                     */
+                    int64_t m_maxConnectionPerVhost;
+                    bool m_maxConnectionPerVhostHasBeenSet;
+
+                    /**
+                     * 单个 vhost 下允许的最大交换机数
+                     */
+                    int64_t m_maxExchangePerVhost;
+                    bool m_maxExchangePerVhostHasBeenSet;
+
+                    /**
+                     * 单个 vhost 下允许的最大队列机数
+                     */
+                    int64_t m_maxQueuePerVhost;
+                    bool m_maxQueuePerVhostHasBeenSet;
 
                 };
             }

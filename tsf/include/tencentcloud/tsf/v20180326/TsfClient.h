@@ -147,6 +147,8 @@
 #include <tencentcloud/tsf/v20180326/model/DeleteUnitNamespacesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteUnitRuleRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteUnitRuleResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DeployContainerApplicationRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DeployContainerApplicationResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeployContainerGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeployContainerGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeployGroupRequest.h>
@@ -669,6 +671,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUnitRuleResponse> DeleteUnitRuleOutcome;
                 typedef std::future<DeleteUnitRuleOutcome> DeleteUnitRuleOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteUnitRuleRequest&, DeleteUnitRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUnitRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeployContainerApplicationResponse> DeployContainerApplicationOutcome;
+                typedef std::future<DeployContainerApplicationOutcome> DeployContainerApplicationOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DeployContainerApplicationRequest&, DeployContainerApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployContainerApplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeployContainerGroupResponse> DeployContainerGroupOutcome;
                 typedef std::future<DeployContainerGroupOutcome> DeployContainerGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeployContainerGroupRequest&, DeployContainerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployContainerGroupAsyncHandler;
@@ -1715,6 +1720,15 @@ namespace TencentCloud
                 DeleteUnitRuleOutcome DeleteUnitRule(const Model::DeleteUnitRuleRequest &request);
                 void DeleteUnitRuleAsync(const Model::DeleteUnitRuleRequest& request, const DeleteUnitRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUnitRuleOutcomeCallable DeleteUnitRuleCallable(const Model::DeleteUnitRuleRequest& request);
+
+                /**
+                 *部署容器应用-更新
+                 * @param req DeployContainerApplicationRequest
+                 * @return DeployContainerApplicationOutcome
+                 */
+                DeployContainerApplicationOutcome DeployContainerApplication(const Model::DeployContainerApplicationRequest &request);
+                void DeployContainerApplicationAsync(const Model::DeployContainerApplicationRequest& request, const DeployContainerApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployContainerApplicationOutcomeCallable DeployContainerApplicationCallable(const Model::DeployContainerApplicationRequest& request);
 
                 /**
                  *部署容器应用-更新

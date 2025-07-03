@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool VpcDataStreamEndpointStatusHasBeenSet() const;
 
+                    /**
+                     * 获取TLS加密的数据流接入点
+                     * @return VpcTlsEndpoint TLS加密的数据流接入点
+                     * 
+                     */
+                    std::string GetVpcTlsEndpoint() const;
+
+                    /**
+                     * 设置TLS加密的数据流接入点
+                     * @param _vpcTlsEndpoint TLS加密的数据流接入点
+                     * 
+                     */
+                    void SetVpcTlsEndpoint(const std::string& _vpcTlsEndpoint);
+
+                    /**
+                     * 判断参数 VpcTlsEndpoint 是否已赋值
+                     * @return VpcTlsEndpoint 是否已赋值
+                     * 
+                     */
+                    bool VpcTlsEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_vpcDataStreamEndpointStatus;
                     bool m_vpcDataStreamEndpointStatusHasBeenSet;
+
+                    /**
+                     * TLS加密的数据流接入点
+                     */
+                    std::string m_vpcTlsEndpoint;
+                    bool m_vpcTlsEndpointHasBeenSet;
 
                 };
             }

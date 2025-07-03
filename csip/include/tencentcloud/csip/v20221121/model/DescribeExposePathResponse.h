@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取暴露路径节点内容
-                     * @return Content 暴露路径节点内容
+                     * 获取云边界分析路径节点内容
+                     * @return Content 云边界分析路径节点内容
                      * 
                      */
                     std::string GetContent() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 暴露路径节点内容
+                     * 云边界分析路径节点内容
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

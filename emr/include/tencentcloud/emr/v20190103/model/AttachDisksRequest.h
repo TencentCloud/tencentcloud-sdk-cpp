@@ -219,6 +219,48 @@ ALIGN_DEADLINE：自动对其到期时间
                      */
                     bool SelectiveConfServicesHasBeenSet() const;
 
+                    /**
+                     * 获取磁盘计费类型（1包月、3包销）
+                     * @return ChargeType 磁盘计费类型（1包月、3包销）
+                     * 
+                     */
+                    int64_t GetChargeType() const;
+
+                    /**
+                     * 设置磁盘计费类型（1包月、3包销）
+                     * @param _chargeType 磁盘计费类型（1包月、3包销）
+                     * 
+                     */
+                    void SetChargeType(const int64_t& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     * 
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取磁盘包销购买时长（仅支持12、24、36、48、60）
+                     * @return UnderWriteDuration 磁盘包销购买时长（仅支持12、24、36、48、60）
+                     * 
+                     */
+                    int64_t GetUnderWriteDuration() const;
+
+                    /**
+                     * 设置磁盘包销购买时长（仅支持12、24、36、48、60）
+                     * @param _underWriteDuration 磁盘包销购买时长（仅支持12、24、36、48、60）
+                     * 
+                     */
+                    void SetUnderWriteDuration(const int64_t& _underWriteDuration);
+
+                    /**
+                     * 判断参数 UnderWriteDuration 是否已赋值
+                     * @return UnderWriteDuration 是否已赋值
+                     * 
+                     */
+                    bool UnderWriteDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -270,6 +312,18 @@ ALIGN_DEADLINE：自动对其到期时间
                      */
                     std::vector<std::string> m_selectiveConfServices;
                     bool m_selectiveConfServicesHasBeenSet;
+
+                    /**
+                     * 磁盘计费类型（1包月、3包销）
+                     */
+                    int64_t m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * 磁盘包销购买时长（仅支持12、24、36、48、60）
+                     */
+                    int64_t m_underWriteDuration;
+                    bool m_underWriteDurationHasBeenSet;
 
                 };
             }

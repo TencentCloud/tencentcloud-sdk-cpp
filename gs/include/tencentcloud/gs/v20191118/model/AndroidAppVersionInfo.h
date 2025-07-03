@@ -181,15 +181,15 @@ CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
                     bool CleanupModeHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用版本名称
-                     * @return AndroidAppVersionName 安卓应用版本名称
+                     * 获取安卓应用版本名称（版本描述、备注）
+                     * @return AndroidAppVersionName 安卓应用版本名称（版本描述、备注）
                      * 
                      */
                     std::string GetAndroidAppVersionName() const;
 
                     /**
-                     * 设置安卓应用版本名称
-                     * @param _androidAppVersionName 安卓应用版本名称
+                     * 设置安卓应用版本名称（版本描述、备注）
+                     * @param _androidAppVersionName 安卓应用版本名称（版本描述、备注）
                      * 
                      */
                     void SetAndroidAppVersionName(const std::string& _androidAppVersionName);
@@ -200,6 +200,48 @@ CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
                      * 
                      */
                     bool AndroidAppVersionNameHasBeenSet() const;
+
+                    /**
+                     * 获取安卓应用启动页
+                     * @return Activity 安卓应用启动页
+                     * 
+                     */
+                    std::string GetActivity() const;
+
+                    /**
+                     * 设置安卓应用启动页
+                     * @param _activity 安卓应用启动页
+                     * 
+                     */
+                    void SetActivity(const std::string& _activity);
+
+                    /**
+                     * 判断参数 Activity 是否已赋值
+                     * @return Activity 是否已赋值
+                     * 
+                     */
+                    bool ActivityHasBeenSet() const;
+
+                    /**
+                     * 获取应用版本号（Version Name）
+                     * @return VersionName 应用版本号（Version Name）
+                     * 
+                     */
+                    std::string GetVersionName() const;
+
+                    /**
+                     * 设置应用版本号（Version Name）
+                     * @param _versionName 应用版本号（Version Name）
+                     * 
+                     */
+                    void SetVersionName(const std::string& _versionName);
+
+                    /**
+                     * 判断参数 VersionName 是否已赋值
+                     * @return VersionName 是否已赋值
+                     * 
+                     */
+                    bool VersionNameHasBeenSet() const;
 
                 private:
 
@@ -242,10 +284,22 @@ CREATE_FAIL：创建失败、CREATE_SUCCESS：创建成功）
                     bool m_cleanupModeHasBeenSet;
 
                     /**
-                     * 安卓应用版本名称
+                     * 安卓应用版本名称（版本描述、备注）
                      */
                     std::string m_androidAppVersionName;
                     bool m_androidAppVersionNameHasBeenSet;
+
+                    /**
+                     * 安卓应用启动页
+                     */
+                    std::string m_activity;
+                    bool m_activityHasBeenSet;
+
+                    /**
+                     * 应用版本号（Version Name）
+                     */
+                    std::string m_versionName;
+                    bool m_versionNameHasBeenSet;
 
                 };
             }

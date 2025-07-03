@@ -25,7 +25,8 @@ using namespace std;
 DescribeAndroidInstancesByAppsRequest::DescribeAndroidInstancesByAppsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_androidAppIdsHasBeenSet(false)
+    m_androidAppIdsHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,21 @@ string DescribeAndroidInstancesByAppsRequest::ToJsonString() const
         for (auto itr = m_androidAppIds.begin(); itr != m_androidAppIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -119,6 +135,22 @@ void DescribeAndroidInstancesByAppsRequest::SetAndroidAppIds(const vector<string
 bool DescribeAndroidInstancesByAppsRequest::AndroidAppIdsHasBeenSet() const
 {
     return m_androidAppIdsHasBeenSet;
+}
+
+vector<Filter> DescribeAndroidInstancesByAppsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeAndroidInstancesByAppsRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeAndroidInstancesByAppsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

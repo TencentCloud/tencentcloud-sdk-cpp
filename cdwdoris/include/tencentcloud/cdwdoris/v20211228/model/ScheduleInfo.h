@@ -72,12 +72,16 @@ namespace TencentCloud
 Day-天
 Week-周
 Month-月
+Quarter-季度
+Year-年
 Once-单次
 
                      * @return ScheduleType 调度类型，不传该参数时为立即执行：
 Day-天
 Week-周
 Month-月
+Quarter-季度
+Year-年
 Once-单次
 
                      * 
@@ -89,12 +93,16 @@ Once-单次
 Day-天
 Week-周
 Month-月
+Quarter-季度
+Year-年
 Once-单次
 
                      * @param _scheduleType 调度类型，不传该参数时为立即执行：
 Day-天
 Week-周
 Month-月
+Quarter-季度
+Year-年
 Once-单次
 
                      * 
@@ -242,6 +250,8 @@ Table-按表
 Day-天
 Week-周
 Month-月
+Quarter-季度
+Year-年
 Once-单次
 
                      */

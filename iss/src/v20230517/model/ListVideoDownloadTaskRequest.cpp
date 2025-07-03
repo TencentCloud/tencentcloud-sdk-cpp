@@ -31,7 +31,8 @@ ListVideoDownloadTaskRequest::ListVideoDownloadTaskRequest() :
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_downloadTaskIdHasBeenSet(false),
-    m_urlExpiresHasBeenSet(false)
+    m_urlExpiresHasBeenSet(false),
+    m_dateHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string ListVideoDownloadTaskRequest::ToJsonString() const
         string key = "UrlExpires";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_urlExpires, allocator);
+    }
+
+    if (m_dateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Date";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void ListVideoDownloadTaskRequest::SetUrlExpires(const int64_t& _urlExpires)
 bool ListVideoDownloadTaskRequest::UrlExpiresHasBeenSet() const
 {
     return m_urlExpiresHasBeenSet;
+}
+
+string ListVideoDownloadTaskRequest::GetDate() const
+{
+    return m_date;
+}
+
+void ListVideoDownloadTaskRequest::SetDate(const string& _date)
+{
+    m_date = _date;
+    m_dateHasBeenSet = true;
+}
+
+bool ListVideoDownloadTaskRequest::DateHasBeenSet() const
+{
+    return m_dateHasBeenSet;
 }
 
 

@@ -30,6 +30,7 @@
 #include <tencentcloud/cfg/v20210820/model/TagWithDescribe.h>
 #include <tencentcloud/cfg/v20210820/model/ApmServiceInfo.h>
 #include <tencentcloud/cfg/v20210820/model/TaskOrg.h>
+#include <tencentcloud/cfg/v20210820/model/TaskTarget.h>
 
 
 namespace TencentCloud
@@ -843,6 +844,48 @@ namespace TencentCloud
                      */
                     bool TaskArchIdHasBeenSet() const;
 
+                    /**
+                     * 获取演练场景
+                     * @return TaskScenario 演练场景
+                     * 
+                     */
+                    std::vector<TaskTarget> GetTaskScenario() const;
+
+                    /**
+                     * 设置演练场景
+                     * @param _taskScenario 演练场景
+                     * 
+                     */
+                    void SetTaskScenario(const std::vector<TaskTarget>& _taskScenario);
+
+                    /**
+                     * 判断参数 TaskScenario 是否已赋值
+                     * @return TaskScenario 是否已赋值
+                     * 
+                     */
+                    bool TaskScenarioHasBeenSet() const;
+
+                    /**
+                     * 获取演练目的
+                     * @return TaskPurpose 演练目的
+                     * 
+                     */
+                    std::vector<TaskTarget> GetTaskPurpose() const;
+
+                    /**
+                     * 设置演练目的
+                     * @param _taskPurpose 演练目的
+                     * 
+                     */
+                    void SetTaskPurpose(const std::vector<TaskTarget>& _taskPurpose);
+
+                    /**
+                     * 判断参数 TaskPurpose 是否已赋值
+                     * @return TaskPurpose 是否已赋值
+                     * 
+                     */
+                    bool TaskPurposeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1068,6 +1111,18 @@ namespace TencentCloud
                      */
                     std::string m_taskArchId;
                     bool m_taskArchIdHasBeenSet;
+
+                    /**
+                     * 演练场景
+                     */
+                    std::vector<TaskTarget> m_taskScenario;
+                    bool m_taskScenarioHasBeenSet;
+
+                    /**
+                     * 演练目的
+                     */
+                    std::vector<TaskTarget> m_taskPurpose;
+                    bool m_taskPurposeHasBeenSet;
 
                 };
             }

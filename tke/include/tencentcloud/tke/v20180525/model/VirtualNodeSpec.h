@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点展示名称
-                     * @return DisplayName 节点展示名称
+                     * 获取节点展示名称，建议不超过20个字符
+                     * @return DisplayName 节点展示名称，建议不超过20个字符
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置节点展示名称
-                     * @param _displayName 节点展示名称
+                     * 设置节点展示名称，建议不超过20个字符
+                     * @param _displayName 节点展示名称，建议不超过20个字符
                      * 
                      */
                     void SetDisplayName(const std::string& _displayName);
@@ -113,7 +113,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点展示名称
+                     * 节点展示名称，建议不超过20个字符
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;

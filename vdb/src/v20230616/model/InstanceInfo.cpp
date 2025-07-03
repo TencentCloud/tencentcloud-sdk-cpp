@@ -46,10 +46,14 @@ InstanceInfo::InstanceInfo() :
     m_extendHasBeenSet(false),
     m_expiredAtHasBeenSet(false),
     m_isNoExpiredHasBeenSet(false),
+    m_productTypeHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false),
     m_wanAddressHasBeenSet(false),
     m_isolateAtHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
-    m_taskStatusHasBeenSet(false)
+    m_taskStatusHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -328,6 +332,36 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_isNoExpiredHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductType") && !value["ProductType"].IsNull())
+    {
+        if (!value["ProductType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ProductType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_productType = value["ProductType"].GetInt64();
+        m_productTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeType") && !value["NodeType"].IsNull())
+    {
+        if (!value["NodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeType = string(value["NodeType"].GetString());
+        m_nodeTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("WanAddress") && !value["WanAddress"].IsNull())
     {
         if (!value["WanAddress"].IsString())
@@ -366,6 +400,19 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_taskStatus = value["TaskStatus"].GetInt64();
         m_taskStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
+    {
+        if (!value["SecurityGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.SecurityGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupIds.push_back((*itr).GetString());
+        }
+        m_securityGroupIdsHasBeenSet = true;
     }
 
 
@@ -589,6 +636,30 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, m_isNoExpired, allocator);
     }
 
+    if (m_productTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_productType, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_wanAddressHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -619,6 +690,19 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TaskStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskStatus, allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1024,6 +1108,54 @@ bool InstanceInfo::IsNoExpiredHasBeenSet() const
     return m_isNoExpiredHasBeenSet;
 }
 
+int64_t InstanceInfo::GetProductType() const
+{
+    return m_productType;
+}
+
+void InstanceInfo::SetProductType(const int64_t& _productType)
+{
+    m_productType = _productType;
+    m_productTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::ProductTypeHasBeenSet() const
+{
+    return m_productTypeHasBeenSet;
+}
+
+string InstanceInfo::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void InstanceInfo::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+string InstanceInfo::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void InstanceInfo::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
+}
+
 string InstanceInfo::GetWanAddress() const
 {
     return m_wanAddress;
@@ -1086,5 +1218,21 @@ void InstanceInfo::SetTaskStatus(const int64_t& _taskStatus)
 bool InstanceInfo::TaskStatusHasBeenSet() const
 {
     return m_taskStatusHasBeenSet;
+}
+
+vector<string> InstanceInfo::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void InstanceInfo::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool InstanceInfo::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 

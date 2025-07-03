@@ -66,7 +66,8 @@ ClusterInstancesInfo::ClusterInstancesInfo() :
     m_clusterTitleHasBeenSet(false),
     m_configDetailHasBeenSet(false),
     m_bindFileSystemNumHasBeenSet(false),
-    m_clusterRelationInfoListHasBeenSet(false)
+    m_clusterRelationInfoListHasBeenSet(false),
+    m_redisIdHasBeenSet(false)
 {
 }
 
@@ -589,6 +590,16 @@ CoreInternalOutcome ClusterInstancesInfo::Deserialize(const rapidjson::Value &va
         m_clusterRelationInfoListHasBeenSet = true;
     }
 
+    if (value.HasMember("RedisId") && !value["RedisId"].IsNull())
+    {
+        if (!value["RedisId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.RedisId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_redisId = string(value["RedisId"].GetString());
+        m_redisIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -992,6 +1003,14 @@ void ClusterInstancesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_redisIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedisId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_redisId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1731,5 +1750,21 @@ void ClusterInstancesInfo::SetClusterRelationInfoList(const vector<ClusterRelati
 bool ClusterInstancesInfo::ClusterRelationInfoListHasBeenSet() const
 {
     return m_clusterRelationInfoListHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetRedisId() const
+{
+    return m_redisId;
+}
+
+void ClusterInstancesInfo::SetRedisId(const string& _redisId)
+{
+    m_redisId = _redisId;
+    m_redisIdHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::RedisIdHasBeenSet() const
+{
+    return m_redisIdHasBeenSet;
 }
 

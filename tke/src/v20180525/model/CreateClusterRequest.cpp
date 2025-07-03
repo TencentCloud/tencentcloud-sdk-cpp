@@ -32,7 +32,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_existedInstancesForNodeHasBeenSet(false),
     m_instanceDataDiskMountSettingsHasBeenSet(false),
     m_extensionAddonsHasBeenSet(false),
-    m_cdcIdHasBeenSet(false)
+    m_cdcIdHasBeenSet(false),
+    m_disableAddonsHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,19 @@ string CreateClusterRequest::ToJsonString() const
         string key = "CdcId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableAddonsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableAddons";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_disableAddons.begin(); itr != m_disableAddons.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -321,6 +335,22 @@ void CreateClusterRequest::SetCdcId(const string& _cdcId)
 bool CreateClusterRequest::CdcIdHasBeenSet() const
 {
     return m_cdcIdHasBeenSet;
+}
+
+vector<string> CreateClusterRequest::GetDisableAddons() const
+{
+    return m_disableAddons;
+}
+
+void CreateClusterRequest::SetDisableAddons(const vector<string>& _disableAddons)
+{
+    m_disableAddons = _disableAddons;
+    m_disableAddonsHasBeenSet = true;
+}
+
+bool CreateClusterRequest::DisableAddonsHasBeenSet() const
+{
+    return m_disableAddonsHasBeenSet;
 }
 
 

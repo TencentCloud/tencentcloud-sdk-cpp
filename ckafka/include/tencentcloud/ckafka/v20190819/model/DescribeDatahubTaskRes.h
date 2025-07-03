@@ -374,6 +374,48 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取任务描述信息	
+                     * @return Description 任务描述信息	
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置任务描述信息	
+                     * @param _description 任务描述信息	
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取1:正常 2:隔离中
+                     * @return IsolateStatus 1:正常 2:隔离中
+                     * 
+                     */
+                    int64_t GetIsolateStatus() const;
+
+                    /**
+                     * 设置1:正常 2:隔离中
+                     * @param _isolateStatus 1:正常 2:隔离中
+                     * 
+                     */
+                    void SetIsolateStatus(const int64_t& _isolateStatus);
+
+                    /**
+                     * 判断参数 IsolateStatus 是否已赋值
+                     * @return IsolateStatus 是否已赋值
+                     * 
+                     */
+                    bool IsolateStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -467,6 +509,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 任务描述信息	
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 1:正常 2:隔离中
+                     */
+                    int64_t m_isolateStatus;
+                    bool m_isolateStatusHasBeenSet;
 
                 };
             }

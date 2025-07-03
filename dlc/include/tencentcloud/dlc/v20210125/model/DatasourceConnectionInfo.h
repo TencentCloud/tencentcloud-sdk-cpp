@@ -27,6 +27,7 @@
 #include <tencentcloud/dlc/v20210125/model/DatasourceConnectionConfig.h>
 #include <tencentcloud/dlc/v20210125/model/DataEngineInfo.h>
 #include <tencentcloud/dlc/v20210125/model/NetworkConnection.h>
+#include <tencentcloud/dlc/v20210125/model/CustomConfig.h>
 
 
 namespace TencentCloud
@@ -418,6 +419,48 @@ namespace TencentCloud
                      */
                     bool ConnectivityTipsHasBeenSet() const;
 
+                    /**
+                     * 获取自定义参数
+                     * @return CustomConfig 自定义参数
+                     * 
+                     */
+                    std::vector<CustomConfig> GetCustomConfig() const;
+
+                    /**
+                     * 设置自定义参数
+                     * @param _customConfig 自定义参数
+                     * 
+                     */
+                    void SetCustomConfig(const std::vector<CustomConfig>& _customConfig);
+
+                    /**
+                     * 判断参数 CustomConfig 是否已赋值
+                     * @return CustomConfig 是否已赋值
+                     * 
+                     */
+                    bool CustomConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否允许回退
+                     * @return AllowRollback 是否允许回退
+                     * 
+                     */
+                    bool GetAllowRollback() const;
+
+                    /**
+                     * 设置是否允许回退
+                     * @param _allowRollback 是否允许回退
+                     * 
+                     */
+                    void SetAllowRollback(const bool& _allowRollback);
+
+                    /**
+                     * 判断参数 AllowRollback 是否已赋值
+                     * @return AllowRollback 是否已赋值
+                     * 
+                     */
+                    bool AllowRollbackHasBeenSet() const;
+
                 private:
 
                     /**
@@ -524,6 +567,18 @@ namespace TencentCloud
                      */
                     std::string m_connectivityTips;
                     bool m_connectivityTipsHasBeenSet;
+
+                    /**
+                     * 自定义参数
+                     */
+                    std::vector<CustomConfig> m_customConfig;
+                    bool m_customConfigHasBeenSet;
+
+                    /**
+                     * 是否允许回退
+                     */
+                    bool m_allowRollback;
+                    bool m_allowRollbackHasBeenSet;
 
                 };
             }

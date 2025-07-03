@@ -25,7 +25,8 @@ using namespace std;
 CreateQualityControlTemplateRequest::CreateQualityControlTemplateRequest() :
     m_nameHasBeenSet(false),
     m_qualityControlItemSetHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_recordFormatHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string CreateQualityControlTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordFormat.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -121,6 +130,22 @@ void CreateQualityControlTemplateRequest::SetComment(const string& _comment)
 bool CreateQualityControlTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string CreateQualityControlTemplateRequest::GetRecordFormat() const
+{
+    return m_recordFormat;
+}
+
+void CreateQualityControlTemplateRequest::SetRecordFormat(const string& _recordFormat)
+{
+    m_recordFormat = _recordFormat;
+    m_recordFormatHasBeenSet = true;
+}
+
+bool CreateQualityControlTemplateRequest::RecordFormatHasBeenSet() const
+{
+    return m_recordFormatHasBeenSet;
 }
 
 

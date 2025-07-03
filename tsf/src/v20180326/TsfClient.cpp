@@ -2706,6 +2706,49 @@ TsfClient::DeleteUnitRuleOutcomeCallable TsfClient::DeleteUnitRuleCallable(const
     return task->get_future();
 }
 
+TsfClient::DeployContainerApplicationOutcome TsfClient::DeployContainerApplication(const DeployContainerApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeployContainerApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeployContainerApplicationResponse rsp = DeployContainerApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeployContainerApplicationOutcome(rsp);
+        else
+            return DeployContainerApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeployContainerApplicationOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeployContainerApplicationAsync(const DeployContainerApplicationRequest& request, const DeployContainerApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeployContainerApplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeployContainerApplicationOutcomeCallable TsfClient::DeployContainerApplicationCallable(const DeployContainerApplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeployContainerApplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->DeployContainerApplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DeployContainerGroupOutcome TsfClient::DeployContainerGroup(const DeployContainerGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeployContainerGroup");

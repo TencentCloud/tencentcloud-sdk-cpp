@@ -380,15 +380,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取返回结果集排序方式，目前支持："ASC" 或者 "DESC"。
-                     * @return OrderDirection 返回结果集排序方式，目前支持："ASC" 或者 "DESC"。
+                     * 获取返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
+                     * @return OrderDirection 返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
                      * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
-                     * 设置返回结果集排序方式，目前支持："ASC" 或者 "DESC"。
-                     * @param _orderDirection 返回结果集排序方式，目前支持："ASC" 或者 "DESC"。
+                     * 设置返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
+                     * @param _orderDirection 返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
                      * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
@@ -402,14 +402,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否以安全组 ID 为过滤条件。
+说明：0表示否，1表示是。
                      * @return WithSecurityGroup 是否以安全组 ID 为过滤条件。
+说明：0表示否，1表示是。
                      * 
                      */
                     int64_t GetWithSecurityGroup() const;
 
                     /**
                      * 设置是否以安全组 ID 为过滤条件。
+说明：0表示否，1表示是。
                      * @param _withSecurityGroup 是否以安全组 ID 为过滤条件。
+说明：0表示否，1表示是。
                      * 
                      */
                     void SetWithSecurityGroup(const int64_t& _withSecurityGroup);
@@ -762,15 +766,15 @@ namespace TencentCloud
                     bool ProxyIdsHasBeenSet() const;
 
                     /**
-                     * 获取数据库引擎类型。
-                     * @return EngineTypes 数据库引擎类型。
+                     * 获取数据库引擎类型。可选值为：InnoDB、RocksDB。
+                     * @return EngineTypes 数据库引擎类型。可选值为：InnoDB、RocksDB。
                      * 
                      */
                     std::vector<std::string> GetEngineTypes() const;
 
                     /**
-                     * 设置数据库引擎类型。
-                     * @param _engineTypes 数据库引擎类型。
+                     * 设置数据库引擎类型。可选值为：InnoDB、RocksDB。
+                     * @param _engineTypes 数据库引擎类型。可选值为：InnoDB、RocksDB。
                      * 
                      */
                     void SetEngineTypes(const std::vector<std::string>& _engineTypes);
@@ -783,15 +787,15 @@ namespace TencentCloud
                     bool EngineTypesHasBeenSet() const;
 
                     /**
-                     * 获取是否获取集群版实例节点信息，可填：true或false
-                     * @return QueryClusterInfo 是否获取集群版实例节点信息，可填：true或false
+                     * 获取是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
+                     * @return QueryClusterInfo 是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
                      * 
                      */
                     bool GetQueryClusterInfo() const;
 
                     /**
-                     * 设置是否获取集群版实例节点信息，可填：true或false
-                     * @param _queryClusterInfo 是否获取集群版实例节点信息，可填：true或false
+                     * 设置是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
+                     * @param _queryClusterInfo 是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
                      * 
                      */
                     void SetQueryClusterInfo(const bool& _queryClusterInfo);
@@ -902,13 +906,14 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 返回结果集排序方式，目前支持："ASC" 或者 "DESC"。
+                     * 返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;
 
                     /**
                      * 是否以安全组 ID 为过滤条件。
+说明：0表示否，1表示是。
                      */
                     int64_t m_withSecurityGroup;
                     bool m_withSecurityGroupHasBeenSet;
@@ -1011,13 +1016,13 @@ namespace TencentCloud
                     bool m_proxyIdsHasBeenSet;
 
                     /**
-                     * 数据库引擎类型。
+                     * 数据库引擎类型。可选值为：InnoDB、RocksDB。
                      */
                     std::vector<std::string> m_engineTypes;
                     bool m_engineTypesHasBeenSet;
 
                     /**
-                     * 是否获取集群版实例节点信息，可填：true或false
+                     * 是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
                      */
                     bool m_queryClusterInfo;
                     bool m_queryClusterInfoHasBeenSet;

@@ -37,7 +37,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_taskStatusHasBeenSet(false)
+    m_taskStatusHasBeenSet(false),
+    m_networksHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,19 @@ string DescribeInstancesRequest::ToJsonString() const
         for (auto itr = m_taskStatus.begin(); itr != m_taskStatus.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_networksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Networks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_networks.begin(); itr != m_networks.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -466,6 +480,22 @@ void DescribeInstancesRequest::SetTaskStatus(const vector<int64_t>& _taskStatus)
 bool DescribeInstancesRequest::TaskStatusHasBeenSet() const
 {
     return m_taskStatusHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetNetworks() const
+{
+    return m_networks;
+}
+
+void DescribeInstancesRequest::SetNetworks(const vector<string>& _networks)
+{
+    m_networks = _networks;
+    m_networksHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::NetworksHasBeenSet() const
+{
+    return m_networksHasBeenSet;
 }
 
 

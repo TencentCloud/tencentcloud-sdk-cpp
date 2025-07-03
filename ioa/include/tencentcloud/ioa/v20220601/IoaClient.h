@@ -49,6 +49,10 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeVirtualDevicesRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeVirtualDevicesResponse.h>
+#include <tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsRequest.h>
+#include <tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsResponse.h>
 
 
 namespace TencentCloud
@@ -102,6 +106,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSoftwareInformationResponse> DescribeSoftwareInformationOutcome;
                 typedef std::future<DescribeSoftwareInformationOutcome> DescribeSoftwareInformationOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeSoftwareInformationRequest&, DescribeSoftwareInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSoftwareInformationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVirtualDevicesResponse> DescribeVirtualDevicesOutcome;
+                typedef std::future<DescribeVirtualDevicesOutcome> DescribeVirtualDevicesOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeVirtualDevicesRequest&, DescribeVirtualDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirtualDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVirtualDeviceGroupsResponse> ModifyVirtualDeviceGroupsOutcome;
+                typedef std::future<ModifyVirtualDeviceGroupsOutcome> ModifyVirtualDeviceGroupsOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::ModifyVirtualDeviceGroupsRequest&, ModifyVirtualDeviceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVirtualDeviceGroupsAsyncHandler;
 
 
 
@@ -221,6 +231,24 @@ namespace TencentCloud
                 DescribeSoftwareInformationOutcome DescribeSoftwareInformation(const Model::DescribeSoftwareInformationRequest &request);
                 void DescribeSoftwareInformationAsync(const Model::DescribeSoftwareInformationRequest& request, const DescribeSoftwareInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSoftwareInformationOutcomeCallable DescribeSoftwareInformationCallable(const Model::DescribeSoftwareInformationRequest& request);
+
+                /**
+                 *展示自定义分组终端列表，私有化调用path为：/capi/Assets/DescribeVirtualDevices
+                 * @param req DescribeVirtualDevicesRequest
+                 * @return DescribeVirtualDevicesOutcome
+                 */
+                DescribeVirtualDevicesOutcome DescribeVirtualDevices(const Model::DescribeVirtualDevicesRequest &request);
+                void DescribeVirtualDevicesAsync(const Model::DescribeVirtualDevicesRequest& request, const DescribeVirtualDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVirtualDevicesOutcomeCallable DescribeVirtualDevicesCallable(const Model::DescribeVirtualDevicesRequest& request);
+
+                /**
+                 *终端自定义分组增减终端，私有化调用path为：/capi/Assets/Device/ModifyVirtualDeviceGroups
+                 * @param req ModifyVirtualDeviceGroupsRequest
+                 * @return ModifyVirtualDeviceGroupsOutcome
+                 */
+                ModifyVirtualDeviceGroupsOutcome ModifyVirtualDeviceGroups(const Model::ModifyVirtualDeviceGroupsRequest &request);
+                void ModifyVirtualDeviceGroupsAsync(const Model::ModifyVirtualDeviceGroupsRequest& request, const ModifyVirtualDeviceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVirtualDeviceGroupsOutcomeCallable ModifyVirtualDeviceGroupsCallable(const Model::ModifyVirtualDeviceGroupsRequest& request);
 
             };
         }

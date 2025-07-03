@@ -21,7 +21,8 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 LoadMetricsConditions::LoadMetricsConditions() :
-    m_loadMetricsHasBeenSet(false)
+    m_loadMetricsHasBeenSet(false),
+    m_matchHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,16 @@ CoreInternalOutcome LoadMetricsConditions::Deserialize(const rapidjson::Value &v
         m_loadMetricsHasBeenSet = true;
     }
 
+    if (value.HasMember("Match") && !value["Match"].IsNull())
+    {
+        if (!value["Match"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadMetricsConditions.Match` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_match = value["Match"].GetInt64();
+        m_matchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void LoadMetricsConditions::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         }
     }
 
+    if (m_matchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Match";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_match, allocator);
+    }
+
 }
 
 
@@ -89,5 +108,21 @@ void LoadMetricsConditions::SetLoadMetrics(const vector<LoadMetricsCondition>& _
 bool LoadMetricsConditions::LoadMetricsHasBeenSet() const
 {
     return m_loadMetricsHasBeenSet;
+}
+
+int64_t LoadMetricsConditions::GetMatch() const
+{
+    return m_match;
+}
+
+void LoadMetricsConditions::SetMatch(const int64_t& _match)
+{
+    m_match = _match;
+    m_matchHasBeenSet = true;
+}
+
+bool LoadMetricsConditions::MatchHasBeenSet() const
+{
+    return m_matchHasBeenSet;
 }
 

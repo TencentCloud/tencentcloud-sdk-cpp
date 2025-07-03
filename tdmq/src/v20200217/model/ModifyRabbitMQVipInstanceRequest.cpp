@@ -25,7 +25,8 @@ using namespace std;
 ModifyRabbitMQVipInstanceRequest::ModifyRabbitMQVipInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_enableDeletionProtectionHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyRabbitMQVipInstanceRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableDeletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDeletionProtection, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyRabbitMQVipInstanceRequest::SetRemark(const string& _remark)
 bool ModifyRabbitMQVipInstanceRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+bool ModifyRabbitMQVipInstanceRequest::GetEnableDeletionProtection() const
+{
+    return m_enableDeletionProtection;
+}
+
+void ModifyRabbitMQVipInstanceRequest::SetEnableDeletionProtection(const bool& _enableDeletionProtection)
+{
+    m_enableDeletionProtection = _enableDeletionProtection;
+    m_enableDeletionProtectionHasBeenSet = true;
+}
+
+bool ModifyRabbitMQVipInstanceRequest::EnableDeletionProtectionHasBeenSet() const
+{
+    return m_enableDeletionProtectionHasBeenSet;
 }
 
 

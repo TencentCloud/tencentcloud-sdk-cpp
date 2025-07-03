@@ -26,7 +26,8 @@ ModifyQualityControlTemplateRequest::ModifyQualityControlTemplateRequest() :
     m_definitionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_qualityControlItemSetHasBeenSet(false)
+    m_qualityControlItemSetHasBeenSet(false),
+    m_recordFormatHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string ModifyQualityControlTemplateRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_recordFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordFormat.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void ModifyQualityControlTemplateRequest::SetQualityControlItemSet(const vector<
 bool ModifyQualityControlTemplateRequest::QualityControlItemSetHasBeenSet() const
 {
     return m_qualityControlItemSetHasBeenSet;
+}
+
+string ModifyQualityControlTemplateRequest::GetRecordFormat() const
+{
+    return m_recordFormat;
+}
+
+void ModifyQualityControlTemplateRequest::SetRecordFormat(const string& _recordFormat)
+{
+    m_recordFormat = _recordFormat;
+    m_recordFormatHasBeenSet = true;
+}
+
+bool ModifyQualityControlTemplateRequest::RecordFormatHasBeenSet() const
+{
+    return m_recordFormatHasBeenSet;
 }
 
 

@@ -367,6 +367,27 @@ namespace TencentCloud
                      */
                     bool MinuteNumHasBeenSet() const;
 
+                    /**
+                     * 获取工作流总数
+                     * @return WorkflowNum 工作流总数
+                     * 
+                     */
+                    uint64_t GetWorkflowNum() const;
+
+                    /**
+                     * 设置工作流总数
+                     * @param _workflowNum 工作流总数
+                     * 
+                     */
+                    void SetWorkflowNum(const uint64_t& _workflowNum);
+
+                    /**
+                     * 判断参数 WorkflowNum 是否已赋值
+                     * @return WorkflowNum 是否已赋值
+                     * 
+                     */
+                    bool WorkflowNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -458,6 +479,12 @@ namespace TencentCloud
                      */
                     uint64_t m_minuteNum;
                     bool m_minuteNumHasBeenSet;
+
+                    /**
+                     * 工作流总数
+                     */
+                    uint64_t m_workflowNum;
+                    bool m_workflowNumHasBeenSet;
 
                 };
             }

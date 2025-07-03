@@ -125,9 +125,10 @@ namespace TencentCloud
 DEPLOYING: 部署中
 RUNNING: 运行中 
 DEPLOY_FAILED: 部署失败
- RELEASING 释放中 
+RELEASING 释放中 
 RELEASED：已释放 
 EXCEPTION：异常
+DEBT_OR_EXPIRED: 欠费过期
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStatus 节点状态 
 注意：此字段为枚举值
@@ -135,9 +136,10 @@ EXCEPTION：异常
 DEPLOYING: 部署中
 RUNNING: 运行中 
 DEPLOY_FAILED: 部署失败
- RELEASING 释放中 
+RELEASING 释放中 
 RELEASED：已释放 
 EXCEPTION：异常
+DEBT_OR_EXPIRED: 欠费过期
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,9 +152,10 @@ EXCEPTION：异常
 DEPLOYING: 部署中
 RUNNING: 运行中 
 DEPLOY_FAILED: 部署失败
- RELEASING 释放中 
+RELEASING 释放中 
 RELEASED：已释放 
 EXCEPTION：异常
+DEBT_OR_EXPIRED: 欠费过期
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceStatus 节点状态 
 注意：此字段为枚举值
@@ -160,9 +163,10 @@ EXCEPTION：异常
 DEPLOYING: 部署中
 RUNNING: 运行中 
 DEPLOY_FAILED: 部署失败
- RELEASING 释放中 
+RELEASING 释放中 
 RELEASED：已释放 
 EXCEPTION：异常
+DEBT_OR_EXPIRED: 欠费过期
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -466,9 +470,10 @@ DISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不�
 DEPLOYING: 部署中
 RUNNING: 运行中 
 DEPLOY_FAILED: 部署失败
- RELEASING 释放中 
+RELEASING 释放中 
 RELEASED：已释放 
 EXCEPTION：异常
+DEBT_OR_EXPIRED: 欠费过期
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceStatus;

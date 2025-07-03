@@ -38,7 +38,8 @@ NetworkConnection::NetworkConnection() :
     m_datasourceConnectionVpcIdHasBeenSet(false),
     m_datasourceConnectionSubnetIdHasBeenSet(false),
     m_datasourceConnectionCidrBlockHasBeenSet(false),
-    m_datasourceConnectionSubnetCidrBlockHasBeenSet(false)
+    m_datasourceConnectionSubnetCidrBlockHasBeenSet(false),
+    m_eGSupportHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome NetworkConnection::Deserialize(const rapidjson::Value &value
         m_datasourceConnectionSubnetCidrBlockHasBeenSet = true;
     }
 
+    if (value.HasMember("EGSupport") && !value["EGSupport"].IsNull())
+    {
+        if (!value["EGSupport"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkConnection.EGSupport` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_eGSupport = value["EGSupport"].GetInt64();
+        m_eGSupportHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void NetworkConnection::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "DatasourceConnectionSubnetCidrBlock";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_datasourceConnectionSubnetCidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eGSupportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EGSupport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_eGSupport, allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void NetworkConnection::SetDatasourceConnectionSubnetCidrBlock(const string& _da
 bool NetworkConnection::DatasourceConnectionSubnetCidrBlockHasBeenSet() const
 {
     return m_datasourceConnectionSubnetCidrBlockHasBeenSet;
+}
+
+int64_t NetworkConnection::GetEGSupport() const
+{
+    return m_eGSupport;
+}
+
+void NetworkConnection::SetEGSupport(const int64_t& _eGSupport)
+{
+    m_eGSupport = _eGSupport;
+    m_eGSupportHasBeenSet = true;
+}
+
+bool NetworkConnection::EGSupportHasBeenSet() const
+{
+    return m_eGSupportHasBeenSet;
 }
 

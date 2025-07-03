@@ -24,6 +24,7 @@ Plan::Plan() :
     m_planTypeHasBeenSet(false),
     m_planIdHasBeenSet(false),
     m_areaHasBeenSet(false),
+    m_autoRenewalHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_zonesInfoHasBeenSet(false),
@@ -76,6 +77,16 @@ CoreInternalOutcome Plan::Deserialize(const rapidjson::Value &value)
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRenewal") && !value["AutoRenewal"].IsNull())
+    {
+        if (!value["AutoRenewal"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Plan.AutoRenewal` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewal = value["AutoRenewal"].GetBool();
+        m_autoRenewalHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -282,6 +293,14 @@ void Plan::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_autoRenewalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewal, allocator);
+    }
+
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -471,6 +490,22 @@ void Plan::SetArea(const string& _area)
 bool Plan::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+bool Plan::GetAutoRenewal() const
+{
+    return m_autoRenewal;
+}
+
+void Plan::SetAutoRenewal(const bool& _autoRenewal)
+{
+    m_autoRenewal = _autoRenewal;
+    m_autoRenewalHasBeenSet = true;
+}
+
+bool Plan::AutoRenewalHasBeenSet() const
+{
+    return m_autoRenewalHasBeenSet;
 }
 
 string Plan::GetStatus() const

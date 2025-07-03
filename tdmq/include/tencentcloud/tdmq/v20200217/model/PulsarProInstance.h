@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tdmq/v20200217/model/Tag.h>
+#include <tencentcloud/tdmq/v20200217/model/CertificateInfo.h>
 
 
 namespace TencentCloud
@@ -495,6 +496,27 @@ namespace TencentCloud
                      */
                     bool TenantHasBeenSet() const;
 
+                    /**
+                     * 获取集群的证书列表
+                     * @return CertificateList 集群的证书列表
+                     * 
+                     */
+                    std::vector<CertificateInfo> GetCertificateList() const;
+
+                    /**
+                     * 设置集群的证书列表
+                     * @param _certificateList 集群的证书列表
+                     * 
+                     */
+                    void SetCertificateList(const std::vector<CertificateInfo>& _certificateList);
+
+                    /**
+                     * 判断参数 CertificateList 是否已赋值
+                     * @return CertificateList 是否已赋值
+                     * 
+                     */
+                    bool CertificateListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -623,6 +645,12 @@ namespace TencentCloud
                      */
                     std::string m_tenant;
                     bool m_tenantHasBeenSet;
+
+                    /**
+                     * 集群的证书列表
+                     */
+                    std::vector<CertificateInfo> m_certificateList;
+                    bool m_certificateListHasBeenSet;
 
                 };
             }

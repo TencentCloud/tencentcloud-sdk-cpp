@@ -32,7 +32,8 @@ ModifyStaffRequest::ModifyStaffRequest() :
     m_skillGroupIdsHasBeenSet(false),
     m_useMobileCallOutHasBeenSet(false),
     m_useMobileAcceptHasBeenSet(false),
-    m_extensionNumberHasBeenSet(false)
+    m_extensionNumberHasBeenSet(false),
+    m_forwardingConfigHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,15 @@ string ModifyStaffRequest::ToJsonString() const
         string key = "ExtensionNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extensionNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forwardingConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardingConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_forwardingConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -294,6 +304,22 @@ void ModifyStaffRequest::SetExtensionNumber(const string& _extensionNumber)
 bool ModifyStaffRequest::ExtensionNumberHasBeenSet() const
 {
     return m_extensionNumberHasBeenSet;
+}
+
+ForwardingConfig ModifyStaffRequest::GetForwardingConfig() const
+{
+    return m_forwardingConfig;
+}
+
+void ModifyStaffRequest::SetForwardingConfig(const ForwardingConfig& _forwardingConfig)
+{
+    m_forwardingConfig = _forwardingConfig;
+    m_forwardingConfigHasBeenSet = true;
+}
+
+bool ModifyStaffRequest::ForwardingConfigHasBeenSet() const
+{
+    return m_forwardingConfigHasBeenSet;
 }
 
 

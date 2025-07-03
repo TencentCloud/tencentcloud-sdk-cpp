@@ -106,6 +106,31 @@ namespace TencentCloud
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取录制文件格式。可选值：
+<li>PNG: PNG图片</li>
+                     * @return RecordFormat 录制文件格式。可选值：
+<li>PNG: PNG图片</li>
+                     * 
+                     */
+                    std::string GetRecordFormat() const;
+
+                    /**
+                     * 设置录制文件格式。可选值：
+<li>PNG: PNG图片</li>
+                     * @param _recordFormat 录制文件格式。可选值：
+<li>PNG: PNG图片</li>
+                     * 
+                     */
+                    void SetRecordFormat(const std::string& _recordFormat);
+
+                    /**
+                     * 判断参数 RecordFormat 是否已赋值
+                     * @return RecordFormat 是否已赋值
+                     * 
+                     */
+                    bool RecordFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +150,13 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * 录制文件格式。可选值：
+<li>PNG: PNG图片</li>
+                     */
+                    std::string m_recordFormat;
+                    bool m_recordFormatHasBeenSet;
 
                 };
             }

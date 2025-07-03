@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID，通过DescribeClusters接口获取
+                     * @return ClusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID，通过DescribeClusters接口获取
+                     * @param _clusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点池ID
-                     * @return NodePoolId 节点池ID
+                     * 获取节点池ID，通过DescribeNodePools接口获取
+                     * @return NodePoolId 节点池ID，通过DescribeNodePools接口获取
                      * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
-                     * 设置节点池ID
-                     * @param _nodePoolId 节点池ID
+                     * 设置节点池ID，通过DescribeNodePools接口获取
+                     * @param _nodePoolId 节点池ID，通过DescribeNodePools接口获取
                      * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取节点名称
-                     * @return NodeNames 节点名称
+                     * 获取节点名称，可搜索DescribeClusterVirtualNode接口节点
+                     * @return NodeNames 节点名称，可搜索DescribeClusterVirtualNode接口节点
                      * 
                      */
                     std::vector<std::string> GetNodeNames() const;
 
                     /**
-                     * 设置节点名称
-                     * @param _nodeNames 节点名称
+                     * 设置节点名称，可搜索DescribeClusterVirtualNode接口节点
+                     * @param _nodeNames 节点名称，可搜索DescribeClusterVirtualNode接口节点
                      * 
                      */
                     void SetNodeNames(const std::vector<std::string>& _nodeNames);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，通过DescribeClusters接口获取
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点池ID
+                     * 节点池ID，通过DescribeNodePools接口获取
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 节点名称
+                     * 节点名称，可搜索DescribeClusterVirtualNode接口节点
                      */
                     std::vector<std::string> m_nodeNames;
                     bool m_nodeNamesHasBeenSet;

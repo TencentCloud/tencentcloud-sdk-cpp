@@ -38,7 +38,8 @@ CreateRabbitMQVipInstanceRequest::CreateRabbitMQVipInstanceRequest() :
     m_isIntlHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_enablePublicAccessHasBeenSet(false)
+    m_enablePublicAccessHasBeenSet(false),
+    m_enableDeletionProtectionHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,14 @@ string CreateRabbitMQVipInstanceRequest::ToJsonString() const
         string key = "EnablePublicAccess";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enablePublicAccess, allocator);
+    }
+
+    if (m_enableDeletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDeletionProtection, allocator);
     }
 
 
@@ -451,6 +460,22 @@ void CreateRabbitMQVipInstanceRequest::SetEnablePublicAccess(const bool& _enable
 bool CreateRabbitMQVipInstanceRequest::EnablePublicAccessHasBeenSet() const
 {
     return m_enablePublicAccessHasBeenSet;
+}
+
+bool CreateRabbitMQVipInstanceRequest::GetEnableDeletionProtection() const
+{
+    return m_enableDeletionProtection;
+}
+
+void CreateRabbitMQVipInstanceRequest::SetEnableDeletionProtection(const bool& _enableDeletionProtection)
+{
+    m_enableDeletionProtection = _enableDeletionProtection;
+    m_enableDeletionProtectionHasBeenSet = true;
+}
+
+bool CreateRabbitMQVipInstanceRequest::EnableDeletionProtectionHasBeenSet() const
+{
+    return m_enableDeletionProtectionHasBeenSet;
 }
 
 
