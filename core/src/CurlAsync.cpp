@@ -109,6 +109,10 @@ bool CurlAsync::Start()
     if (!m_stopIoThread && m_multiHandle)
         return true;
 
+    m_stopIoThread = false;
+
+    HttpClient::InitGlobalState();
+
     m_multiHandle = curl_multi_init();
     if (!m_multiHandle)
     {
@@ -117,7 +121,6 @@ bool CurlAsync::Start()
     }
     cout << "CurlAsync::Start m_multiHandle = " << m_multiHandle << endl;
 
-    m_stopIoThread = false;
     m_ioThread = std::thread(&CurlAsync::IoThreadLoop, this);
     
     return true;
@@ -126,15 +129,17 @@ bool CurlAsync::Start()
 // 清理所有资源
 void CurlAsync::Shutdown()
 {
-    {
-        lock_guard<mutex> lk(m_stopIoMutex);
-        if (m_stopIoThread) 
-            return;
+    lock_guard<mutex> lk(m_stopIoMutex);
+    if (m_stopIoThread) 
+        return;
 
-        cout << "shutdown curlasync..." << endl;
-        
-        m_stopIoThread = true;
-    }
+    cout << "shutdown curlasync..." << endl;
+
+    m_stopIoThread = true;
+    
+
+    HttpClient::CleanupGlobalState();
+
 
     if (m_ioThread.joinable()) {
         m_ioThread.join();
@@ -158,19 +163,19 @@ void CurlAsync::Shutdown()
     }
 }
 
-CURL* CurlAsync::AddRequest(HttpClient* httpClient, const HttpRequest &request, std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise)
+void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise)
 {
     if (!m_multiHandle)
     {
         cerr << "multi handle init error" << endl;
-        return nullptr;
+        return;
     }
 
     CURL* easy_handle = curl_easy_init();
     if (!easy_handle)
     {
         cerr << "easy handle init error" << endl;
-        return nullptr;
+        return;
     }
 
     shared_ptr<AsyncContext> ctx = make_shared<AsyncContext>();
@@ -248,15 +253,13 @@ CURL* CurlAsync::AddRequest(HttpClient* httpClient, const HttpRequest &request, 
             ctx->promise->set_exception(std::make_exception_ptr(Core::Error("PerformError", curl_multi_strerror(mc))));
         }
         curl_easy_cleanup(easy_handle);
-        return nullptr;
+        return;
     } else {
         lock_guard<mutex> lock(m_esayHandlesMutex);
         m_easyHandles.push_back(easy_handle);
         m_activeContexts[easy_handle] = ctx;
         cout << "add request to multi handle success" << endl;
     }
-
-    return easy_handle; 
 }
 
 void CurlAsync::IoThreadLoop()

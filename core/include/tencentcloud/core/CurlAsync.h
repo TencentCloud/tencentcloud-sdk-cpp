@@ -13,18 +13,21 @@
 #include <memory>
 #include <future>
 
+#include "AbstractClient.h"
+#include "AsyncCallerContext.h"
+
 namespace TencentCloud 
 {
     class CurlAsync {
+        friend class AbstractClient;
     public:
-        ~CurlAsync();
         static CurlAsync* GetInstance();
-
         bool Start();
-        CURL* AddRequest(HttpClient* httpClient, const HttpRequest &request, std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise);
         void Shutdown();
 
     private:
+        void AddRequest(HttpClient* httpClient, HttpRequest request, std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise);
+
         class Garbo {
         public:
             ~Garbo() {
@@ -35,14 +38,22 @@ namespace TencentCloud
             }
         };
 
+        // template<typename ClientType, typename ReqType, typename HandlerType>
         struct AsyncContext {
+            // ClientType client;
+            // ReqType request;
+            // HandlerType handler;
+
+            HttpRequest request;
+            std::shared_ptr<const AsyncCallerContext> reqContext;
+
             std::ostringstream responseStream;
             HttpResponse response;
             char errorBuffer[CURL_ERROR_SIZE];
             curl_slist* headerList = nullptr;
             std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise;
 
-            ~AsyncContext() {
+            virtual ~AsyncContext() {
                 if (headerList) {
                     curl_slist_free_all(headerList);
                 }
@@ -50,6 +61,7 @@ namespace TencentCloud
         };
 
         CurlAsync();
+        ~CurlAsync();
         void IoThreadLoop(); 
         void readTaskResult();
 

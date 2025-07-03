@@ -1568,42 +1568,49 @@ void CvmClient::DescribeInstancesAsync(const DescribeInstancesRequest& request,
                                      const DescribeInstancesAsyncHandler& handler, 
                                      const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstances(request), context);
-    };
+    auto httpFuture = this->MakeRequestAsync(request, "DescribeInstances");
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    auto ignoreFuture = std::async(std::launch::async, [this, request, handler, context](std::future<HttpClient::HttpResponseOutcome> f) mutable {
+        DescribeInstancesOutcome finalOutcome;
+
+        // 获取请求结果
+        auto httpOutcome = f.get();
+
+        if (httpOutcome.IsSuccess()) {
+            const auto& resp = httpOutcome.GetResult();
+            std::string payload(resp.Body(), resp.BodySize());
+
+            DescribeInstancesResponse rsp;
+            auto o = rsp.Deserialize(payload);
+            if (o.IsSuccess()) {
+                finalOutcome = DescribeInstancesOutcome(rsp);
+            } else {
+                finalOutcome = DescribeInstancesOutcome(o.GetError());
+            }
+        } else {
+            finalOutcome = DescribeInstancesOutcome(httpOutcome.GetError());
+        }
+
+        // 不论是否成功，触发 handler
+        handler(this, request, finalOutcome, context);
+    }, std::move(httpFuture));
 }
 
 CvmClient::DescribeInstancesOutcomeCallable CvmClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
 {
-    auto httpFuture = MakeRequestAsync(request, "DescribeInstances");
-    cout << "after MakeRequestAsync" << endl;
-    return std::async(std::launch::async, [this](std::future<HttpClient::HttpResponseOutcome> f) mutable -> DescribeInstancesOutcome {
-        auto outcome = f.get();
-        cout << "after f.get();" << endl;
-        if (outcome.IsSuccess())
-        {
-            auto r = outcome.GetResult();
-            std::string payload(r.Body(), r.BodySize());
-            DescribeInstancesResponse rsp;
-            auto o = rsp.Deserialize(payload);
-            if (o.IsSuccess()){
-                cout << "o.IsSuccess()\n";
-                return DescribeInstancesOutcome(rsp);
-            }
-            else{
-                cout << "o.GetError()\n";
-                return DescribeInstancesOutcome(o.GetError());
-            }
-        }
-        else
-        {
-            cout << "outcome.GetError()\n";
-            return DescribeInstancesOutcome(outcome.GetError());
-        }
-    }, std::move(httpFuture)); // 注意传参时 move
+    auto promise = std::make_shared<std::promise<DescribeInstancesOutcome>>();
+
+    auto handler = [=](const CvmClient* client,
+                       const DescribeInstancesRequest& req,
+                       const DescribeInstancesOutcome& outcome,
+                       const std::shared_ptr<const AsyncCallerContext>& context)
+    {
+        promise->set_value(outcome);  // 不管成功还是失败都塞入结果
+    };
+
+    this->DescribeInstancesAsync(request, handler, std::make_shared<AsyncCallerContext>());
+
+    return promise->get_future();
 }
 
 CvmClient::DescribeInstancesActionTimerOutcome CvmClient::DescribeInstancesActionTimer(const DescribeInstancesActionTimerRequest &request)

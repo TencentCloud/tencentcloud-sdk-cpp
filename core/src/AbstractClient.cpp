@@ -187,7 +187,6 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
     return m_httpClient->SendRequest(httpRequest);
 }
 
-
 std::future<HttpClient::HttpResponseOutcome> AbstractClient::DoRequestAsync(const AbstractModel& request, const std::string &actionName)
 {
     std::cout << "AbstractClient::DoRequestAsync()" << std::endl;

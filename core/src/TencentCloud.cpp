@@ -20,12 +20,12 @@
 
 void TencentCloud::InitAPI()
 {
-    Executor::GetInstance()->Start();
+    // Executor::GetInstance()->Start();
     CurlAsync::GetInstance()->Start();
 }
 
 void TencentCloud::ShutdownAPI()
 {
     CurlAsync::GetInstance()->Shutdown();
-    Executor::GetInstance()->Shutdown();
+    // Executor::GetInstance()->Shutdown();
 }

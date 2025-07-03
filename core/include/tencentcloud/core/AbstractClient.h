@@ -17,10 +17,11 @@
 #ifndef TENCENTCLOUD_CORE_ABSTRACTCLIENT_H_
 #define TENCENTCLOUD_CORE_ABSTRACTCLIENT_H_
 
-#include "Credential.h"
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/http/HttpClient.h>
+#include "Credential.h"
 #include "AbstractModel.h"
+#include "AsyncCallerContext.h"
 #include <map>
 #include <future>
 
@@ -47,6 +48,7 @@ namespace TencentCloud
     protected:
         HttpClient::HttpResponseOutcome MakeRequest(const AbstractModel& request, const std::string &actionName);
         std::future<HttpClient::HttpResponseOutcome> MakeRequestAsync(const AbstractModel& request, const std::string &actionName);
+
         HttpClient::HttpResponseOutcome DoRequest(const std::string &actionName, const std::string &body, std::map<std::string, std::string> &headers);
         std::future<HttpClient::HttpResponseOutcome> DoRequestAsync(const AbstractModel& request, const std::string &actionName);
 
