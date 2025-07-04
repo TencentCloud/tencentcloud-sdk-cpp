@@ -28,7 +28,7 @@ namespace TencentCloud
         void Shutdown();
 
     private:
-        void AddRequest(HttpClient* httpClient, HttpRequest request, std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise, AbstractClient::AsyncCallback callback);
+        void AddRequest(HttpClient* httpClient, HttpRequest request, AbstractClient::AsyncCallback callback);
 
         class Garbo 
         {
@@ -49,7 +49,6 @@ namespace TencentCloud
             HttpResponse response;
             char errorBuffer[CURL_ERROR_SIZE];
             curl_slist* headerList = nullptr;
-            std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise;
             AbstractClient::AsyncCallback callback;
 
             ~AsyncContext() 
@@ -71,7 +70,7 @@ namespace TencentCloud
         static Garbo m_garbo;
 
         CURLM* m_multiHandle;
-        std::mutex m_multiHandleMutex;
+        // std::mutex m_multiHandleMutex;
         std::unordered_map<CURL*, std::shared_ptr<AsyncContext>> m_activeContexts;
         std::mutex m_esayHandlesMutex;
 

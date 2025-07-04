@@ -151,9 +151,9 @@ void CurlAsync::Shutdown()
         {
             auto handle = pair.first;
             auto ctx = pair.second;
-            unique_lock<mutex> ul(m_multiHandleMutex);
+            // unique_lock<mutex> ul(m_multiHandleMutex);
             curl_multi_remove_handle(m_multiHandle, handle);
-            ul.unlock();
+            // ul.unlock();
             curl_easy_cleanup(handle);
         }
         m_activeContexts.clear();
@@ -163,7 +163,7 @@ void CurlAsync::Shutdown()
     }
 }
 
-void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::shared_ptr<std::promise<HttpClient::HttpResponseOutcome>> promise, AbstractClient::AsyncCallback callback)
+void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, AbstractClient::AsyncCallback callback)
 {
     if (!m_multiHandle)
     {
@@ -181,7 +181,6 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::sha
     }
 
     shared_ptr<AsyncContext> ctx = make_shared<AsyncContext>();
-    ctx->promise = promise; 
     ctx->callback = callback;
 
     std::string url = request.GetUrl().ToString();
@@ -248,9 +247,9 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, std::sha
     curl_easy_setopt(easy_handle, CURLOPT_ERRORBUFFER, ctx->errorBuffer);
     
     
-    unique_lock<mutex> ul(m_multiHandleMutex);
+    // unique_lock<mutex> ul(m_multiHandleMutex);
     CURLMcode mc = curl_multi_add_handle(m_multiHandle, easy_handle);
-    ul.unlock();
+    // ul.unlock();
     if (mc != CURLM_OK) {
         cerr << "add request to multi handle error: " << curl_multi_strerror(mc) << endl;
         callback(HttpClient::HttpResponseOutcome(Core::Error("CurlError", "add request to multi handle error")));
@@ -268,9 +267,9 @@ void CurlAsync::IoThreadLoop()
     cout << "start iothread loop..." << endl;
     while (!m_stopIoThread && m_multiHandle) {
         int still_running = 0;
-        unique_lock<mutex> ul(m_multiHandleMutex);
+        // unique_lock<mutex> ul(m_multiHandleMutex);
         CURLMcode mc = curl_multi_perform(m_multiHandle, &still_running);
-        ul.unlock();
+        // ul.unlock();
         if (mc != CURLM_OK)
         {
             cerr << "curl_multi_perform error: " << curl_multi_strerror(mc) << endl;
@@ -278,9 +277,9 @@ void CurlAsync::IoThreadLoop()
         cout << "after cur_multi_perform ..., still_running = " << still_running << endl;
 
         int numfds = 0;
-        ul.lock();
+        // ul.lock();
         mc = curl_multi_poll(m_multiHandle, nullptr, 0, 2000, &numfds);
-        ul.unlock();
+        // ul.unlock();
         if (mc == CURLM_OK)
         {
             readTaskResult();
@@ -297,9 +296,9 @@ void CurlAsync::readTaskResult() {
     CURLMsg* msg;
     int msgs_left;
     do {
-        unique_lock<mutex> ul(m_multiHandleMutex);
+        // unique_lock<mutex> ul(m_multiHandleMutex);
         msg = curl_multi_info_read(m_multiHandle, &msgs_left);
-        ul.unlock();
+        // ul.unlock();
         cout << "curl_multi_info_read..." << endl;
         if (msg && msg->msg == CURLMSG_DONE)
         {
@@ -313,7 +312,7 @@ void CurlAsync::readTaskResult() {
                     ctx = it->second;
                 }
             }
-            if (ctx && ctx->promise) {
+            if (ctx) {
                 HttpClient::HttpResponseOutcome outcome;
                 if (msg->data.result == CURLE_OK) {
                     int64_t response_code = 0;
@@ -348,16 +347,11 @@ void CurlAsync::readTaskResult() {
                     ctx->callback(outcome);
                 }
 
-                // 2. 设置 promise（如果存在）
-                if (ctx->promise) {
-                    ctx->promise->set_value(outcome);
-                }
-
                 cout << "handle success" << endl;
                 // 从多句柄移除并清理
-                ul.lock();
+                // ul.lock();
                 curl_multi_remove_handle(m_multiHandle, easy_handle);
-                ul.unlock();
+                // ul.unlock();
                 curl_easy_cleanup(easy_handle);
                 
                 // 从跟踪列表中移除
@@ -372,9 +366,9 @@ void CurlAsync::readTaskResult() {
             else 
             {
                 cout << "curl_multi_info_read error: " << endl;
-                ul.lock();
+                // ul.lock();
                 curl_multi_remove_handle(m_multiHandle, easy_handle);
-                ul.unlock();
+                // ul.unlock();
                 curl_easy_cleanup(easy_handle);
             }
         }

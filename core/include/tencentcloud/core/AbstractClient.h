@@ -50,10 +50,10 @@ namespace TencentCloud
     protected:
 
         HttpClient::HttpResponseOutcome MakeRequest(const AbstractModel& request, const std::string &actionName);
-        std::future<HttpClient::HttpResponseOutcome> MakeRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback);
+        void MakeRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback);
 
         HttpClient::HttpResponseOutcome DoRequest(const std::string &actionName, const std::string &body, std::map<std::string, std::string> &headers);
-        std::future<HttpClient::HttpResponseOutcome> DoRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback handler);
+        void DoRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback handler);
 
         void GenerateSignature(HttpRequest &request);
 
