@@ -149,7 +149,9 @@ void CurlAsync::Shutdown()
         {
             auto handle = pair.first;
             auto ctx = pair.second;
+            // unique_lock<mutex> ul(m_multiHandleMutex);
             curl_multi_remove_handle(m_multiHandle, handle);
+            // ul.unlock();
             curl_easy_cleanup(handle);
         }
         m_activeContexts.clear();
@@ -245,9 +247,10 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, Abstract
     curl_easy_setopt(easy_handle, CURLOPT_ERRORBUFFER, ctx->errorBuffer);
     
     
+    // unique_lock<mutex> ul(m_multiHandleMutex);
     CURLMcode mc = curl_multi_add_handle(m_multiHandle, easy_handle);
-    if (mc != CURLM_OK) 
-    {
+    // ul.unlock();
+    if (mc != CURLM_OK) {
         cerr << "add request to multi handle error: " << curl_multi_strerror(mc) << endl;
         callback(HttpClient::HttpResponseOutcome(Core::Error("CurlError", "add request to multi handle error")));
         curl_easy_cleanup(easy_handle);
@@ -267,7 +270,9 @@ void CurlAsync::CurlMultiLoop()
     while (!m_stopIoThread && m_multiHandle) 
     {
         int still_running = 0;
+        // unique_lock<mutex> ul(m_multiHandleMutex);
         CURLMcode mc = curl_multi_perform(m_multiHandle, &still_running);
+        // ul.unlock();
         if (mc != CURLM_OK)
         {
             cerr << "curl_multi_perform error: " << curl_multi_strerror(mc) << endl;
@@ -275,7 +280,9 @@ void CurlAsync::CurlMultiLoop()
         // cout << "after cur_multi_perform ..., still_running = " << still_running << endl;
 
         int numfds = 0;
+        // ul.lock();
         mc = curl_multi_poll(m_multiHandle, nullptr, 0, 2000, &numfds);
+        // ul.unlock();
         if (mc == CURLM_OK)
         {
             ReadTaskResult();
@@ -294,8 +301,10 @@ void CurlAsync::ReadTaskResult()
     int msgs_left;
 
     do {
+        // unique_lock<mutex> ul(m_multiHandleMutex);
         msg = curl_multi_info_read(m_multiHandle, &msgs_left);
-        // cout << "curl_multi_info_read..." << endl;
+        // ul.unlock();
+        cout << "curl_multi_info_read..." << endl;
         if (msg && msg->msg == CURLMSG_DONE)
         {
             // cout << "curl_multi_info_read msg done " << endl;
@@ -347,9 +356,11 @@ void CurlAsync::ReadTaskResult()
                     ctx->callback(outcome);
                 }
 
-                // cout << "handle success" << endl;
+                cout << "handle success" << endl;
                 // 从多句柄移除并清理
+                // ul.lock();
                 curl_multi_remove_handle(m_multiHandle, easy_handle);
+                // ul.unlock();
                 curl_easy_cleanup(easy_handle);
                 {
                     lock_guard<mutex> lock(m_easyHandlesMutex);
@@ -361,8 +372,10 @@ void CurlAsync::ReadTaskResult()
             }
             else 
             {
-                cerr << "curl_multi_info_read error: " << endl;
+                cout << "curl_multi_info_read error: " << endl;
+                // ul.lock();
                 curl_multi_remove_handle(m_multiHandle, easy_handle);
+                // ul.unlock();
                 curl_easy_cleanup(easy_handle);
             }
         }
