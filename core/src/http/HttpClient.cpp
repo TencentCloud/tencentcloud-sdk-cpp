@@ -142,9 +142,6 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
     curl_easy_reset(m_curlHandle);
     HttpResponse response;
 
-    std::cout << "[Debug] BodySize = " << request.BodySize() << std::endl;
-    std::cout << "[Debug] Body = [" << std::string(request.Body(), request.BodySize()) << "]" << std::endl;
-
     std::string url = request.GetUrl().ToString();
     switch (request.GetMethod())
     {

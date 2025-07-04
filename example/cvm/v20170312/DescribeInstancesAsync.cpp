@@ -92,9 +92,7 @@ int main()
     // use future
     cout<<"Use future..."<<endl;
     auto ret = cvm_client.DescribeInstancesCallable(req);
-    cout << "after cvm_client.DescribeInstancesCallable(req)" << endl;
     auto outcome = ret.get(); // 主线程卡在这
-    cout << "after ret.get()" << endl;
     if (!outcome.IsSuccess())
     {
         cout << outcome.GetError().PrintAll() << endl;
@@ -113,7 +111,6 @@ int main()
         }
     }
 #endif
-    // this_thread::sleep_for(chrono::seconds(10));
 
     TencentCloud::ShutdownAPI();
 

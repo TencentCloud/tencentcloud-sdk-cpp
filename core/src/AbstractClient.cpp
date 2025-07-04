@@ -100,11 +100,6 @@ HttpClient::HttpResponseOutcome AbstractClient::MakeRequest(const AbstractModel&
     return DoRequest(actionName, body, headers);
 }
 
-// void AbstractClient::MakeRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback)
-// {
-//    DoRequestAsync(request, actionName, callback);
-// }
-
 HttpClient::HttpResponseOutcome AbstractClient::MakeRequestJson(const std::string &actionName, const std::string &params)
 {
     std::map<std::string, std::string> headers;
@@ -178,19 +173,11 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
     m_httpClient->SetCaInfo(httpProfile.GetCaInfo());
     m_httpClient->SetCaPath(httpProfile.GetCaPath());
 
-    std::cout << "body = [" << body << "], size = " << body.size() << std::endl;
-    std::cout << "Final Headers:" << std::endl;
-    for (auto& h : httpRequest.Headers()) {
-        std::cout << h.first << ": " << h.second << std::endl;
-    }
-
     return m_httpClient->SendRequest(httpRequest);
 }
 
 void AbstractClient::DoRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback)
 {
-    std::cout << "AbstractClient::DoRequestAsync()" << std::endl;
-
     const string body = request.ToJsonString();
     std::map<std::string, std::string> headers;
     headers.insert(std::make_pair("Content-Type", "application/json"));
@@ -251,15 +238,7 @@ void AbstractClient::DoRequestAsync(const AbstractModel& request, const std::str
     m_httpClient->SetCaInfo(httpProfile.GetCaInfo());
     m_httpClient->SetCaPath(httpProfile.GetCaPath());
 
-    std::cout << "body = " << body << ", size = " << body.size() << std::endl;
-    std::cout << "Final Headers:" << std::endl;
-    for (auto& h : httpRequest.Headers()) {
-        std::cout << h.first << ": " << h.second << std::endl;
-    }
-
-    // auto promise = std::make_shared<std::promise<HttpClient::HttpResponseOutcome>>();
     CurlAsync::GetInstance()->AddRequest(m_httpClient, httpRequest, callback);
-    // return promise->get_future();
 }
 
 void AbstractClient::GenerateSignature(HttpRequest &request)
