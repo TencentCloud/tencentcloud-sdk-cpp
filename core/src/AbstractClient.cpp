@@ -100,10 +100,10 @@ HttpClient::HttpResponseOutcome AbstractClient::MakeRequest(const AbstractModel&
     return DoRequest(actionName, body, headers);
 }
 
-void AbstractClient::MakeRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback)
-{
-   DoRequestAsync(request, actionName, callback);
-}
+// void AbstractClient::MakeRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback)
+// {
+//    DoRequestAsync(request, actionName, callback);
+// }
 
 HttpClient::HttpResponseOutcome AbstractClient::MakeRequestJson(const std::string &actionName, const std::string &params)
 {

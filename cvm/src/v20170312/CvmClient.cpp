@@ -1569,25 +1569,9 @@ void CvmClient::DescribeInstancesAsync(const DescribeInstancesRequest& request,
                                      const DescribeInstancesAsyncHandler& handler, 
                                      const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    this->MakeRequestAsync(request, "DescribeInstances", [=](HttpClient::HttpResponseOutcome outcome){
-        DescribeInstancesOutcome response;
-        if (outcome.IsSuccess()) 
-        {
-            auto r = outcome.GetResult();
-            string payload = string(r.Body(), r.BodySize());
-            DescribeInstancesResponse rsp = DescribeInstancesResponse();
-            auto o = rsp.Deserialize(payload);
-            if (o.IsSuccess())
-                response = DescribeInstancesOutcome(rsp);
-            else
-                response = DescribeInstancesOutcome(o.GetError());
-        } 
-        else
-        {
-            response = DescribeInstancesOutcome(outcome.GetError());
-        }
-        handler(this, request, response, context); 
-    });
+    MakeRequestAsync<CvmClient, DescribeInstancesRequest, DescribeInstancesAsyncHandler, 
+                    DescribeInstancesResponse, DescribeInstancesOutcome>(
+                        this, request, "DescribeInstances", handler, context);
 }
 
 CvmClient::DescribeInstancesOutcomeCallable CvmClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)

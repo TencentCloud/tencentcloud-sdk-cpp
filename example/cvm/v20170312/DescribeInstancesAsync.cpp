@@ -58,7 +58,7 @@ int main()
     */
    CvmClient cvm_client = CvmClient(cred, "ap-guangzhou");
 
-#if 0
+#if 1
     // use callback
     cout<<"Use callback..."<<endl;
     auto callback = [](const CvmClient* client, const DescribeInstancesRequest& req, CvmClient::DescribeInstancesOutcome outcome, const shared_ptr<const AsyncCallerContext>& context)

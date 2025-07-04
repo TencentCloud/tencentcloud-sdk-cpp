@@ -50,25 +50,44 @@ namespace TencentCloud
     protected:
 
         HttpClient::HttpResponseOutcome MakeRequest(const AbstractModel& request, const std::string &actionName);
-        void MakeRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback);
+
+        template<typename ClientType, typename ReqType, typename HandlerType, typename RespType, typename OutcomeType>
+        void MakeRequestAsync(ClientType* client, const ReqType& request, const std::string &actionName, HandlerType handler, const std::shared_ptr<const AsyncCallerContext>& context)
+        {
+            auto callback = [this, client, request, handler, context](const HttpClient::HttpResponseOutcome& outcome)
+            {
+                auto response = HandleResponse<RespType, OutcomeType>(outcome);
+                handler(client, request, response, context);
+            };
+            DoRequestAsync(request, actionName, callback);
+        }
 
         HttpClient::HttpResponseOutcome DoRequest(const std::string &actionName, const std::string &body, std::map<std::string, std::string> &headers);
         void DoRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback handler);
 
         void GenerateSignature(HttpRequest &request);
 
-        // void doCallback(HttpClient::HttpResponseOutcome outcome){
-        //     auto r = outcome.GetResult();
-        //     string payload = string(r.Body(), r.BodySize());
-        //     DescribeInstancesResponse rsp = DescribeInstancesResponse();
-        //     auto o = rsp.Deserialize(payload);
-        //     DescribeInstancesOutcome response;
-        //     if (o.IsSuccess())
-        //         response = DescribeInstancesOutcome(rsp);
-        //     else
-        //         response = DescribeInstancesOutcome(o.GetError());
-        //     handler(this, request, response, context);
-        // }
+        template <typename RespType, typename OutcomeType>
+        OutcomeType HandleResponse(const HttpClient::HttpResponseOutcome &outcome)
+        {
+            OutcomeType response;
+            if (outcome.IsSuccess()) 
+            {
+                auto r = outcome.GetResult();
+                std::string payload = std::string(r.Body(), r.BodySize());
+                RespType rsp = RespType();
+                auto o = rsp.Deserialize(payload);
+                if (o.IsSuccess())
+                    response = OutcomeType(rsp);
+                else
+                    response = OutcomeType(o.GetError());
+            } 
+            else
+            {
+                response = OutcomeType(outcome.GetError());
+            }
+            return response;
+        };
 
     private:
         Credential m_credential;

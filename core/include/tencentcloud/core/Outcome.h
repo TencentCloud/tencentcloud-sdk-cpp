@@ -60,6 +60,11 @@ namespace TencentCloud
             return m_error;
         }
 
+        inline E GetError() const
+        {
+            return m_error;
+        }
+
         inline R GetResult() const
         {
             return m_result;

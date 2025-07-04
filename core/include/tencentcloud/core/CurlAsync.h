@@ -45,10 +45,10 @@ namespace TencentCloud
 
         struct AsyncContext 
         {
-            std::ostringstream responseStream;
-            HttpResponse response;
-            char errorBuffer[CURL_ERROR_SIZE];
             curl_slist* headerList = nullptr;
+            char errorBuffer[CURL_ERROR_SIZE];
+            HttpResponse response;
+            std::ostringstream responseStream;
             AbstractClient::AsyncCallback callback;
 
             ~AsyncContext() 
@@ -62,8 +62,8 @@ namespace TencentCloud
 
         CurlAsync();
         ~CurlAsync();
-        void IoThreadLoop(); 
-        void readTaskResult();
+        void CurlMultiLoop(); 
+        void ReadTaskResult();
 
         static CurlAsync* m_instance;
         static std::mutex m_instanceMutex;

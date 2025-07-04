@@ -121,7 +121,7 @@ bool CurlAsync::Start()
     }
     cout << "CurlAsync::Start m_multiHandle = " << m_multiHandle << endl;
 
-    m_ioThread = std::thread(&CurlAsync::IoThreadLoop, this);
+    m_ioThread = std::thread(&CurlAsync::CurlMultiLoop, this);
     
     return true;
 }
@@ -133,7 +133,7 @@ void CurlAsync::Shutdown()
     if (m_stopIoThread) 
         return;
 
-    cout << "shutdown curlasync..." << endl;
+    cout << "CurlAsync::Shutdown" << endl;
 
     m_stopIoThread = true;
 
@@ -216,10 +216,12 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, Abstract
     curl_easy_setopt(easy_handle, CURLOPT_SSL_VERIFYPEER, 1L);
     curl_easy_setopt(easy_handle, CURLOPT_SSL_VERIFYHOST, 2L);
 
-    if (httpClient->GetCaInfo() != ""){
+    if (httpClient->GetCaInfo() != "")
+    {
         curl_easy_setopt(easy_handle, CURLOPT_CAINFO, httpClient->GetCaInfo().c_str());
     }
-    if (httpClient->GetCaPath() != ""){
+    if (httpClient->GetCaPath() != "")
+    {
         curl_easy_setopt(easy_handle, CURLOPT_CAPATH, httpClient->GetCaPath().c_str());
     }
 
@@ -244,53 +246,59 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, Abstract
     
     
     CURLMcode mc = curl_multi_add_handle(m_multiHandle, easy_handle);
-    if (mc != CURLM_OK) {
+    if (mc != CURLM_OK) 
+    {
         cerr << "add request to multi handle error: " << curl_multi_strerror(mc) << endl;
         callback(HttpClient::HttpResponseOutcome(Core::Error("CurlError", "add request to multi handle error")));
         curl_easy_cleanup(easy_handle);
         return;
-    } else {
+    } 
+    else 
+    {
         lock_guard<mutex> lock(m_easyHandlesMutex);
         m_activeContexts[easy_handle] = ctx;
         cout << "add request to multi handle success" << endl;
     }
 }
 
-void CurlAsync::IoThreadLoop()
+void CurlAsync::CurlMultiLoop()
 {
-    cout << "start iothread loop..." << endl;
-    while (!m_stopIoThread && m_multiHandle) {
+    cout << "CurlAsync::CurlMultiLoop" << endl;
+    while (!m_stopIoThread && m_multiHandle) 
+    {
         int still_running = 0;
         CURLMcode mc = curl_multi_perform(m_multiHandle, &still_running);
         if (mc != CURLM_OK)
         {
             cerr << "curl_multi_perform error: " << curl_multi_strerror(mc) << endl;
         }
-        cout << "after cur_multi_perform ..., still_running = " << still_running << endl;
+        // cout << "after cur_multi_perform ..., still_running = " << still_running << endl;
 
         int numfds = 0;
         mc = curl_multi_poll(m_multiHandle, nullptr, 0, 2000, &numfds);
         if (mc == CURLM_OK)
         {
-            readTaskResult();
+            ReadTaskResult();
         }
         else
         {
             cerr << "curl_multi_poll error: " << curl_multi_strerror(mc) << endl;
         } 
-        cout << "after curl_multi_poll timeout..., numfds = " << numfds << endl;
+        // cout << "after curl_multi_poll timeout..., numfds = " << numfds << endl;
     }
 }
 
-void CurlAsync::readTaskResult() {
+void CurlAsync::ReadTaskResult() 
+{
     CURLMsg* msg;
     int msgs_left;
+
     do {
         msg = curl_multi_info_read(m_multiHandle, &msgs_left);
-        cout << "curl_multi_info_read..." << endl;
+        // cout << "curl_multi_info_read..." << endl;
         if (msg && msg->msg == CURLMSG_DONE)
         {
-            cout << "curl_multi_info_read msg done " << endl;
+            // cout << "curl_multi_info_read msg done " << endl;
             CURL* easy_handle = msg->easy_handle;
             std::shared_ptr<AsyncContext> ctx;
             {
@@ -300,7 +308,8 @@ void CurlAsync::readTaskResult() {
                     ctx = it->second;
                 }
             }
-            if (ctx) {
+            if (ctx) 
+            {
                 HttpClient::HttpResponseOutcome outcome;
                 if (msg->data.result == CURLE_OK) {
                     int64_t response_code = 0;
@@ -326,21 +335,22 @@ void CurlAsync::readTaskResult() {
                     {
                         outcome = HttpClient::HttpResponseOutcome(ctx->response);
                     }
-                } else {
+                } 
+                else 
+                {
                     outcome = HttpClient::HttpResponseOutcome(Core::Error("CurlError", ctx->errorBuffer));
                 }
 
                 // 调用回调
-                if (ctx->callback) {
+                if (ctx->callback) 
+                {
                     ctx->callback(outcome);
                 }
 
-                cout << "handle success" << endl;
+                // cout << "handle success" << endl;
                 // 从多句柄移除并清理
                 curl_multi_remove_handle(m_multiHandle, easy_handle);
                 curl_easy_cleanup(easy_handle);
-                
-                // 从跟踪列表中移除
                 {
                     lock_guard<mutex> lock(m_easyHandlesMutex);
                     auto it = m_activeContexts.find(easy_handle);
@@ -351,7 +361,7 @@ void CurlAsync::readTaskResult() {
             }
             else 
             {
-                cout << "curl_multi_info_read error: " << endl;
+                cerr << "curl_multi_info_read error: " << endl;
                 curl_multi_remove_handle(m_multiHandle, easy_handle);
                 curl_easy_cleanup(easy_handle);
             }
