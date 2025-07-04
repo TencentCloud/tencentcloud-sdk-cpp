@@ -100,9 +100,9 @@ HttpClient::HttpResponseOutcome AbstractClient::MakeRequest(const AbstractModel&
     return DoRequest(actionName, body, headers);
 }
 
-std::future<HttpClient::HttpResponseOutcome> AbstractClient::MakeRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback)
+void AbstractClient::MakeRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback)
 {
-    return DoRequestAsync(request, actionName, callback);
+   DoRequestAsync(request, actionName, callback);
 }
 
 HttpClient::HttpResponseOutcome AbstractClient::MakeRequestJson(const std::string &actionName, const std::string &params)
@@ -187,7 +187,7 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
     return m_httpClient->SendRequest(httpRequest);
 }
 
-std::future<HttpClient::HttpResponseOutcome> AbstractClient::DoRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback)
+void AbstractClient::DoRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback)
 {
     std::cout << "AbstractClient::DoRequestAsync()" << std::endl;
 
@@ -205,9 +205,7 @@ std::future<HttpClient::HttpResponseOutcome> AbstractClient::DoRequestAsync(cons
         m_service = endpoint.substr(0, pos);
     else
     {
-        auto promise = std::make_shared<std::promise<HttpClient::HttpResponseOutcome>>();
-        promise->set_exception(std::make_exception_ptr(Core::Error("ClientError", "endpoint `"+ endpoint + "` is not valid")));
-        return promise->get_future();
+        callback(HttpClient::HttpResponseOutcome(Core::Error("ClientError", "endpoint `"+ endpoint + "` is not valid")));
     }
 
     Url url;
@@ -259,9 +257,9 @@ std::future<HttpClient::HttpResponseOutcome> AbstractClient::DoRequestAsync(cons
         std::cout << h.first << ": " << h.second << std::endl;
     }
 
-    auto promise = std::make_shared<std::promise<HttpClient::HttpResponseOutcome>>();
-    CurlAsync::GetInstance()->AddRequest(m_httpClient, httpRequest, promise, callback);
-    return promise->get_future();
+    // auto promise = std::make_shared<std::promise<HttpClient::HttpResponseOutcome>>();
+    CurlAsync::GetInstance()->AddRequest(m_httpClient, httpRequest, callback);
+    // return promise->get_future();
 }
 
 void AbstractClient::GenerateSignature(HttpRequest &request)
