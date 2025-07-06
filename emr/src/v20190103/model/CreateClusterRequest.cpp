@@ -44,7 +44,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_dependServiceHasBeenSet(false),
     m_zoneResourceConfigurationHasBeenSet(false),
     m_cosBucketHasBeenSet(false),
-    m_nodeMarksHasBeenSet(false)
+    m_nodeMarksHasBeenSet(false),
+    m_loadBalancerIdHasBeenSet(false)
 {
 }
 
@@ -278,6 +279,14 @@ string CreateClusterRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_loadBalancerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -638,6 +647,22 @@ void CreateClusterRequest::SetNodeMarks(const vector<NodeMark>& _nodeMarks)
 bool CreateClusterRequest::NodeMarksHasBeenSet() const
 {
     return m_nodeMarksHasBeenSet;
+}
+
+string CreateClusterRequest::GetLoadBalancerId() const
+{
+    return m_loadBalancerId;
+}
+
+void CreateClusterRequest::SetLoadBalancerId(const string& _loadBalancerId)
+{
+    m_loadBalancerId = _loadBalancerId;
+    m_loadBalancerIdHasBeenSet = true;
+}
+
+bool CreateClusterRequest::LoadBalancerIdHasBeenSet() const
+{
+    return m_loadBalancerIdHasBeenSet;
 }
 
 

@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/ScanVulResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeviceVirtualGroupsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
-ScanVulResponse::ScanVulResponse() :
-    m_taskIdHasBeenSet(false),
-    m_basicVersionCountHasBeenSet(false),
-    m_successCountHasBeenSet(false)
+DescribeDeviceVirtualGroupsResponse::DescribeDeviceVirtualGroupsResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ScanVulResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeDeviceVirtualGroupsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,68 +62,40 @@ CoreInternalOutcome ScanVulResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["TaskId"].IsUint64())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_taskId = rsp["TaskId"].GetUint64();
-        m_taskIdHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("BasicVersionCount") && !rsp["BasicVersionCount"].IsNull())
-    {
-        if (!rsp["BasicVersionCount"].IsUint64())
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `BasicVersionCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_basicVersionCount = rsp["BasicVersionCount"].GetUint64();
-        m_basicVersionCountHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("SuccessCount") && !rsp["SuccessCount"].IsNull())
-    {
-        if (!rsp["SuccessCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `SuccessCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_successCount = rsp["SuccessCount"].GetUint64();
-        m_successCountHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ScanVulResponse::ToJsonString() const
+string DescribeDeviceVirtualGroupsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_taskIdHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_taskId, allocator);
-    }
-
-    if (m_basicVersionCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BasicVersionCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_basicVersionCount, allocator);
-    }
-
-    if (m_successCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SuccessCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_successCount, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +110,14 @@ string ScanVulResponse::ToJsonString() const
 }
 
 
-uint64_t ScanVulResponse::GetTaskId() const
+DescribeDeviceVirtualGroupsPageRsp DescribeDeviceVirtualGroupsResponse::GetData() const
 {
-    return m_taskId;
+    return m_data;
 }
 
-bool ScanVulResponse::TaskIdHasBeenSet() const
+bool DescribeDeviceVirtualGroupsResponse::DataHasBeenSet() const
 {
-    return m_taskIdHasBeenSet;
-}
-
-uint64_t ScanVulResponse::GetBasicVersionCount() const
-{
-    return m_basicVersionCount;
-}
-
-bool ScanVulResponse::BasicVersionCountHasBeenSet() const
-{
-    return m_basicVersionCountHasBeenSet;
-}
-
-uint64_t ScanVulResponse::GetSuccessCount() const
-{
-    return m_successCount;
-}
-
-bool ScanVulResponse::SuccessCountHasBeenSet() const
-{
-    return m_successCountHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

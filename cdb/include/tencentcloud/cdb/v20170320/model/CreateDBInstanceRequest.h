@@ -157,18 +157,18 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
-说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。
+说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。若此项不填，则系统会选择默认的 VPC。
                      * @return UniqVpcId 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
-说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。
+说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。若此项不填，则系统会选择默认的 VPC。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
-说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。
+说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。若此项不填，则系统会选择默认的 VPC。
                      * @param _uniqVpcId 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
-说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。
+说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。若此项不填，则系统会选择默认的 VPC。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -182,14 +182,18 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。
+说明：若此项不填，则系统会选择默认 VPC 下的默认子网。
                      * @return UniqSubnetId 私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。
+说明：若此项不填，则系统会选择默认 VPC 下的默认子网。
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。
+说明：若此项不填，则系统会选择默认 VPC 下的默认子网。
                      * @param _uniqSubnetId 私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。
+说明：若此项不填，则系统会选择默认 VPC 下的默认子网。
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -224,14 +228,18 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义端口，端口支持范围：[ 1024-65535 ]。
+说明：若此项不填，则默认为3306。
                      * @return Port 自定义端口，端口支持范围：[ 1024-65535 ]。
+说明：若此项不填，则默认为3306。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置自定义端口，端口支持范围：[ 1024-65535 ]。
+说明：若此项不填，则默认为3306。
                      * @param _port 自定义端口，端口支持范围：[ 1024-65535 ]。
+说明：若此项不填，则默认为3306。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -245,18 +253,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。
-说明：必填项。
+说明：请选择实例类型，不填会默认选择 master。
                      * @return InstanceRole 实例类型，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。
-说明：必填项。
+说明：请选择实例类型，不填会默认选择 master。
                      * 
                      */
                     std::string GetInstanceRole() const;
 
                     /**
                      * 设置实例类型，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。
-说明：必填项。
+说明：请选择实例类型，不填会默认选择 master。
                      * @param _instanceRole 实例类型，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。
-说明：必填项。
+说明：请选择实例类型，不填会默认选择 master。
                      * 
                      */
                     void SetInstanceRole(const std::string& _instanceRole);
@@ -269,15 +277,15 @@ namespace TencentCloud
                     bool InstanceRoleHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID，购买只读实例时必填，该字段表示只读实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。
-                     * @return MasterInstanceId 实例 ID，购买只读实例时必填，该字段表示只读实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。
+                     * 获取实例 ID，购买只读实例或灾备实例时必填，该字段表示只读实例或灾备实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。
+                     * @return MasterInstanceId 实例 ID，购买只读实例或灾备实例时必填，该字段表示只读实例或灾备实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。
                      * 
                      */
                     std::string GetMasterInstanceId() const;
 
                     /**
-                     * 设置实例 ID，购买只读实例时必填，该字段表示只读实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。
-                     * @param _masterInstanceId 实例 ID，购买只读实例时必填，该字段表示只读实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。
+                     * 设置实例 ID，购买只读实例或灾备实例时必填，该字段表示只读实例或灾备实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。
+                     * @param _masterInstanceId 实例 ID，购买只读实例或灾备实例时必填，该字段表示只读实例或灾备实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。
                      * 
                      */
                     void SetMasterInstanceId(const std::string& _masterInstanceId);
@@ -449,15 +457,15 @@ namespace TencentCloud
                     bool BackupZoneHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。
-                     * @return AutoRenewFlag 自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。
+                     * 获取自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。默认为0。
+                     * @return AutoRenewFlag 自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。默认为0。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。
-                     * @param _autoRenewFlag 自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。
+                     * 设置自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。默认为0。
+                     * @param _autoRenewFlag 自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。默认为0。
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -990,13 +998,14 @@ namespace TencentCloud
 
                     /**
                      * 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
-说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。
+说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。若此项不填，则系统会选择默认的 VPC。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。
+说明：若此项不填，则系统会选择默认 VPC 下的默认子网。
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
@@ -1009,19 +1018,20 @@ namespace TencentCloud
 
                     /**
                      * 自定义端口，端口支持范围：[ 1024-65535 ]。
+说明：若此项不填，则默认为3306。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 实例类型，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。
-说明：必填项。
+说明：请选择实例类型，不填会默认选择 master。
                      */
                     std::string m_instanceRole;
                     bool m_instanceRoleHasBeenSet;
 
                     /**
-                     * 实例 ID，购买只读实例时必填，该字段表示只读实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。
+                     * 实例 ID，购买只读实例或灾备实例时必填，该字段表示只读实例或灾备实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。
                      */
                     std::string m_masterInstanceId;
                     bool m_masterInstanceIdHasBeenSet;
@@ -1072,7 +1082,7 @@ namespace TencentCloud
                     bool m_backupZoneHasBeenSet;
 
                     /**
-                     * 自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。
+                     * 自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。默认为0。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;

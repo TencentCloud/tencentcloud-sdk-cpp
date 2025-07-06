@@ -589,6 +589,27 @@ namespace TencentCloud
                      */
                     bool NodeMarksHasBeenSet() const;
 
+                    /**
+                     * 获取clb id
+                     * @return LoadBalancerId clb id
+                     * 
+                     */
+                    std::string GetLoadBalancerId() const;
+
+                    /**
+                     * 设置clb id
+                     * @param _loadBalancerId clb id
+                     * 
+                     */
+                    void SetLoadBalancerId(const std::string& _loadBalancerId);
+
+                    /**
+                     * 判断参数 LoadBalancerId 是否已赋值
+                     * @return LoadBalancerId 是否已赋值
+                     * 
+                     */
+                    bool LoadBalancerIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -741,6 +762,12 @@ namespace TencentCloud
                      */
                     std::vector<NodeMark> m_nodeMarks;
                     bool m_nodeMarksHasBeenSet;
+
+                    /**
+                     * clb id
+                     */
+                    std::string m_loadBalancerId;
+                    bool m_loadBalancerIdHasBeenSet;
 
                 };
             }

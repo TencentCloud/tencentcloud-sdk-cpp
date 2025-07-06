@@ -39,7 +39,8 @@ RiskProcessEvent::RiskProcessEvent() :
     m_handleStatusHasBeenSet(false),
     m_onlineStatusHasBeenSet(false),
     m_machineExtraInfoHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_firstDetectionMethodHasBeenSet(false)
 {
 }
 
@@ -251,6 +252,16 @@ CoreInternalOutcome RiskProcessEvent::Deserialize(const rapidjson::Value &value)
         m_uuidHasBeenSet = true;
     }
 
+    if (value.HasMember("FirstDetectionMethod") && !value["FirstDetectionMethod"].IsNull())
+    {
+        if (!value["FirstDetectionMethod"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskProcessEvent.FirstDetectionMethod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstDetectionMethod = value["FirstDetectionMethod"].GetUint64();
+        m_firstDetectionMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -419,6 +430,14 @@ void RiskProcessEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_firstDetectionMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstDetectionMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_firstDetectionMethod, allocator);
     }
 
 }
@@ -726,5 +745,21 @@ void RiskProcessEvent::SetUuid(const string& _uuid)
 bool RiskProcessEvent::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+uint64_t RiskProcessEvent::GetFirstDetectionMethod() const
+{
+    return m_firstDetectionMethod;
+}
+
+void RiskProcessEvent::SetFirstDetectionMethod(const uint64_t& _firstDetectionMethod)
+{
+    m_firstDetectionMethod = _firstDetectionMethod;
+    m_firstDetectionMethodHasBeenSet = true;
+}
+
+bool RiskProcessEvent::FirstDetectionMethodHasBeenSet() const
+{
+    return m_firstDetectionMethodHasBeenSet;
 }
 

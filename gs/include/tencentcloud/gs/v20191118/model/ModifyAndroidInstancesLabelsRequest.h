@@ -65,27 +65,6 @@ namespace TencentCloud
                     bool AndroidInstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取安卓实例标签列表
-                     * @return AndroidInstanceLabels 安卓实例标签列表
-                     * 
-                     */
-                    std::vector<AndroidInstanceLabel> GetAndroidInstanceLabels() const;
-
-                    /**
-                     * 设置安卓实例标签列表
-                     * @param _androidInstanceLabels 安卓实例标签列表
-                     * 
-                     */
-                    void SetAndroidInstanceLabels(const std::vector<AndroidInstanceLabel>& _androidInstanceLabels);
-
-                    /**
-                     * 判断参数 AndroidInstanceLabels 是否已赋值
-                     * @return AndroidInstanceLabels 是否已赋值
-                     * 
-                     */
-                    bool AndroidInstanceLabelsHasBeenSet() const;
-
-                    /**
                      * 获取操作类型。ADD：标签键不存在的添加新标签，标签键存在的将覆盖原有标签REMOVE：根据标签键删除标签REPLACE：使用请求标签列表替换原来所有标签CLEAR：清除所有标签
                      * @return Operation 操作类型。ADD：标签键不存在的添加新标签，标签键存在的将覆盖原有标签REMOVE：根据标签键删除标签REPLACE：使用请求标签列表替换原来所有标签CLEAR：清除所有标签
                      * 
@@ -106,6 +85,27 @@ namespace TencentCloud
                      */
                     bool OperationHasBeenSet() const;
 
+                    /**
+                     * 获取安卓实例标签列表
+                     * @return AndroidInstanceLabels 安卓实例标签列表
+                     * 
+                     */
+                    std::vector<AndroidInstanceLabel> GetAndroidInstanceLabels() const;
+
+                    /**
+                     * 设置安卓实例标签列表
+                     * @param _androidInstanceLabels 安卓实例标签列表
+                     * 
+                     */
+                    void SetAndroidInstanceLabels(const std::vector<AndroidInstanceLabel>& _androidInstanceLabels);
+
+                    /**
+                     * 判断参数 AndroidInstanceLabels 是否已赋值
+                     * @return AndroidInstanceLabels 是否已赋值
+                     * 
+                     */
+                    bool AndroidInstanceLabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,16 +115,16 @@ namespace TencentCloud
                     bool m_androidInstanceIdsHasBeenSet;
 
                     /**
-                     * 安卓实例标签列表
-                     */
-                    std::vector<AndroidInstanceLabel> m_androidInstanceLabels;
-                    bool m_androidInstanceLabelsHasBeenSet;
-
-                    /**
                      * 操作类型。ADD：标签键不存在的添加新标签，标签键存在的将覆盖原有标签REMOVE：根据标签键删除标签REPLACE：使用请求标签列表替换原来所有标签CLEAR：清除所有标签
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
+
+                    /**
+                     * 安卓实例标签列表
+                     */
+                    std::vector<AndroidInstanceLabel> m_androidInstanceLabels;
+                    bool m_androidInstanceLabelsHasBeenSet;
 
                 };
             }

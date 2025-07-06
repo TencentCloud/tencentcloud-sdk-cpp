@@ -101,6 +101,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/ModifyUserTypeResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEnginePythonSparkImagesRequest.h
   include/tencentcloud/dlc/v20210125/model/CancelSparkSessionBatchSQLRequest.h
+  include/tencentcloud/dlc/v20210125/model/CancelTasksRequest.h
   include/tencentcloud/dlc/v20210125/model/TasksOverview.h
   include/tencentcloud/dlc/v20210125/model/CreateDatabaseResponse.h
   include/tencentcloud/dlc/v20210125/model/DropDMSPartitionsResponse.h
@@ -407,6 +408,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementsResponse.h
   include/tencentcloud/dlc/v20210125/model/CancelSparkSessionBatchSQLResponse.h
   include/tencentcloud/dlc/v20210125/model/DatabaseInfo.h
+  include/tencentcloud/dlc/v20210125/model/CancelTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEnginesRequest.h
   include/tencentcloud/dlc/v20210125/model/JobLogResult.h
   include/tencentcloud/dlc/v20210125/model/DropDMSDatabaseResponse.h
@@ -520,6 +522,7 @@ set(dlc_src
   src/v20210125/model/ModifyUserTypeResponse.cpp
   src/v20210125/model/DescribeDataEnginePythonSparkImagesRequest.cpp
   src/v20210125/model/CancelSparkSessionBatchSQLRequest.cpp
+  src/v20210125/model/CancelTasksRequest.cpp
   src/v20210125/model/TasksOverview.cpp
   src/v20210125/model/CreateDatabaseResponse.cpp
   src/v20210125/model/DropDMSPartitionsResponse.cpp
@@ -826,6 +829,7 @@ set(dlc_src
   src/v20210125/model/DescribeNotebookSessionStatementsResponse.cpp
   src/v20210125/model/CancelSparkSessionBatchSQLResponse.cpp
   src/v20210125/model/DatabaseInfo.cpp
+  src/v20210125/model/CancelTasksResponse.cpp
   src/v20210125/model/DescribeDataEnginesRequest.cpp
   src/v20210125/model/JobLogResult.cpp
   src/v20210125/model/DropDMSDatabaseResponse.cpp

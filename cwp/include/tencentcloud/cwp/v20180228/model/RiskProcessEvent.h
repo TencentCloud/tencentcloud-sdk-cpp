@@ -446,6 +446,27 @@ namespace TencentCloud
                      */
                     bool UuidHasBeenSet() const;
 
+                    /**
+                     * 获取首次检出方式 0扫描;1实时监控
+                     * @return FirstDetectionMethod 首次检出方式 0扫描;1实时监控
+                     * 
+                     */
+                    uint64_t GetFirstDetectionMethod() const;
+
+                    /**
+                     * 设置首次检出方式 0扫描;1实时监控
+                     * @param _firstDetectionMethod 首次检出方式 0扫描;1实时监控
+                     * 
+                     */
+                    void SetFirstDetectionMethod(const uint64_t& _firstDetectionMethod);
+
+                    /**
+                     * 判断参数 FirstDetectionMethod 是否已赋值
+                     * @return FirstDetectionMethod 是否已赋值
+                     * 
+                     */
+                    bool FirstDetectionMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -561,6 +582,12 @@ namespace TencentCloud
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * 首次检出方式 0扫描;1实时监控
+                     */
+                    uint64_t m_firstDetectionMethod;
+                    bool m_firstDetectionMethodHasBeenSet;
 
                 };
             }

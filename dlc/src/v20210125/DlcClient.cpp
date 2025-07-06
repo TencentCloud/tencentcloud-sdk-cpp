@@ -642,6 +642,49 @@ DlcClient::CancelTaskOutcomeCallable DlcClient::CancelTaskCallable(const CancelT
     return task->get_future();
 }
 
+DlcClient::CancelTasksOutcome DlcClient::CancelTasks(const CancelTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelTasksResponse rsp = CancelTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelTasksOutcome(rsp);
+        else
+            return CancelTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelTasksOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CancelTasksAsync(const CancelTasksRequest& request, const CancelTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CancelTasksOutcomeCallable DlcClient::CancelTasksCallable(const CancelTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CheckDataEngineConfigPairsValidityOutcome DlcClient::CheckDataEngineConfigPairsValidity(const CheckDataEngineConfigPairsValidityRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckDataEngineConfigPairsValidity");

@@ -31,6 +31,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppWithURLResponse.h
   include/tencentcloud/gs/v20191118/model/SyncExecuteCommandOnAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/RebootAndroidInstanceHostsResponse.h
+  include/tencentcloud/gs/v20191118/model/SetAndroidInstancesBGAppKeepAliveResponse.h
   include/tencentcloud/gs/v20191118/model/UninstallAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/StopAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidAppVersionResponse.h
@@ -57,18 +58,19 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstanceResolutionResponse.h
   include/tencentcloud/gs/v20191118/model/DeleteAndroidInstanceImagesRequest.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstanceAppsResponse.h
-  include/tencentcloud/gs/v20191118/model/EnableAndroidInstancesAppResponse.h
+  include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceSSHResponse.h
   include/tencentcloud/gs/v20191118/model/ResetAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/UploadFileToAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/CleanAndroidInstancesAppDataRequest.h
   include/tencentcloud/gs/v20191118/model/DisableAndroidInstancesAppRequest.h
-  include/tencentcloud/gs/v20191118/model/SaveGameArchiveResponse.h
+  include/tencentcloud/gs/v20191118/model/EnableAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/ConnectAndroidInstanceRequest.h
   include/tencentcloud/gs/v20191118/model/CopyAndroidInstanceRequest.h
   include/tencentcloud/gs/v20191118/model/SyncExecuteCommandOnAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/StartAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/RestoreAndroidInstanceFromStorageResponse.h
   include/tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesResponse.h
+  include/tencentcloud/gs/v20191118/model/SaveGameArchiveResponse.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidAppVersionRequest.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResourcesResponse.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesAppBlacklistResponse.h
@@ -162,7 +164,6 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/RebootAndroidInstanceHostsRequest.h
   include/tencentcloud/gs/v20191118/model/COSOptions.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesPropertiesResponse.h
-  include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceSSHResponse.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesInformationResponse.h
   include/tencentcloud/gs/v20191118/model/RenewAndroidInstancesAccessTokenResponse.h
   include/tencentcloud/gs/v20191118/model/CreateCosCredentialResponse.h
@@ -176,7 +177,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/DescribeInstancesCountRequest.h
   include/tencentcloud/gs/v20191118/model/TrylockWorkerRequest.h
   include/tencentcloud/gs/v20191118/model/AndroidInstanceUploadFile.h
-  include/tencentcloud/gs/v20191118/model/SetAndroidInstancesBGAppKeepAliveResponse.h
+  include/tencentcloud/gs/v20191118/model/AndroidInstanceLabelDetail.h
   include/tencentcloud/gs/v20191118/model/UploadFilesToAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/RebootAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/Filter.h
@@ -207,6 +208,7 @@ set(gs_src
   src/v20191118/model/InstallAndroidInstancesAppWithURLResponse.cpp
   src/v20191118/model/SyncExecuteCommandOnAndroidInstancesRequest.cpp
   src/v20191118/model/RebootAndroidInstanceHostsResponse.cpp
+  src/v20191118/model/SetAndroidInstancesBGAppKeepAliveResponse.cpp
   src/v20191118/model/UninstallAndroidInstancesAppResponse.cpp
   src/v20191118/model/StopAndroidInstancesAppResponse.cpp
   src/v20191118/model/ModifyAndroidAppVersionResponse.cpp
@@ -233,18 +235,19 @@ set(gs_src
   src/v20191118/model/ModifyAndroidInstanceResolutionResponse.cpp
   src/v20191118/model/DeleteAndroidInstanceImagesRequest.cpp
   src/v20191118/model/DescribeAndroidInstanceAppsResponse.cpp
-  src/v20191118/model/EnableAndroidInstancesAppResponse.cpp
+  src/v20191118/model/CreateAndroidInstanceSSHResponse.cpp
   src/v20191118/model/ResetAndroidInstancesRequest.cpp
   src/v20191118/model/UploadFileToAndroidInstancesRequest.cpp
   src/v20191118/model/CleanAndroidInstancesAppDataRequest.cpp
   src/v20191118/model/DisableAndroidInstancesAppRequest.cpp
-  src/v20191118/model/SaveGameArchiveResponse.cpp
+  src/v20191118/model/EnableAndroidInstancesAppResponse.cpp
   src/v20191118/model/ConnectAndroidInstanceRequest.cpp
   src/v20191118/model/CopyAndroidInstanceRequest.cpp
   src/v20191118/model/SyncExecuteCommandOnAndroidInstancesResponse.cpp
   src/v20191118/model/StartAndroidInstancesResponse.cpp
   src/v20191118/model/RestoreAndroidInstanceFromStorageResponse.cpp
   src/v20191118/model/DistributeFileToAndroidInstancesResponse.cpp
+  src/v20191118/model/SaveGameArchiveResponse.cpp
   src/v20191118/model/ModifyAndroidAppVersionRequest.cpp
   src/v20191118/model/ModifyAndroidInstancesResourcesResponse.cpp
   src/v20191118/model/ModifyAndroidInstancesAppBlacklistResponse.cpp
@@ -338,7 +341,6 @@ set(gs_src
   src/v20191118/model/RebootAndroidInstanceHostsRequest.cpp
   src/v20191118/model/COSOptions.cpp
   src/v20191118/model/ModifyAndroidInstancesPropertiesResponse.cpp
-  src/v20191118/model/CreateAndroidInstanceSSHResponse.cpp
   src/v20191118/model/ModifyAndroidInstancesInformationResponse.cpp
   src/v20191118/model/RenewAndroidInstancesAccessTokenResponse.cpp
   src/v20191118/model/CreateCosCredentialResponse.cpp
@@ -352,7 +354,7 @@ set(gs_src
   src/v20191118/model/DescribeInstancesCountRequest.cpp
   src/v20191118/model/TrylockWorkerRequest.cpp
   src/v20191118/model/AndroidInstanceUploadFile.cpp
-  src/v20191118/model/SetAndroidInstancesBGAppKeepAliveResponse.cpp
+  src/v20191118/model/AndroidInstanceLabelDetail.cpp
   src/v20191118/model/UploadFilesToAndroidInstancesResponse.cpp
   src/v20191118/model/RebootAndroidInstancesRequest.cpp
   src/v20191118/model/Filter.cpp

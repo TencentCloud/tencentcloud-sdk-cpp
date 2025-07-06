@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制量，默认为20，最大值为100	
-                     * @return Limit 限制量，默认为20，最大值为100	
+                     * 获取限制量，默认为 20，最大值为 500	
+                     * @return Limit 限制量，默认为 20，最大值为 500	
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置限制量，默认为20，最大值为100	
-                     * @param _limit 限制量，默认为20，最大值为100	
+                     * 设置限制量，默认为 20，最大值为 500	
+                     * @param _limit 限制量，默认为 20，最大值为 500	
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取应用 ID 列表。通过应用 ID 做集合查询
-                     * @return AndroidAppIds 应用 ID 列表。通过应用 ID 做集合查询
+                     * 获取应用 ID 列表。当 AndroidIds 为多条数据时（例如 app1, app2），返回的实例列表为：安装了 app1 应用的实例和安装了 app2 应用的实例集合（并集）。
+                     * @return AndroidAppIds 应用 ID 列表。当 AndroidIds 为多条数据时（例如 app1, app2），返回的实例列表为：安装了 app1 应用的实例和安装了 app2 应用的实例集合（并集）。
                      * 
                      */
                     std::vector<std::string> GetAndroidAppIds() const;
 
                     /**
-                     * 设置应用 ID 列表。通过应用 ID 做集合查询
-                     * @param _androidAppIds 应用 ID 列表。通过应用 ID 做集合查询
+                     * 设置应用 ID 列表。当 AndroidIds 为多条数据时（例如 app1, app2），返回的实例列表为：安装了 app1 应用的实例和安装了 app2 应用的实例集合（并集）。
+                     * @param _androidAppIds 应用 ID 列表。当 AndroidIds 为多条数据时（例如 app1, app2），返回的实例列表为：安装了 app1 应用的实例和安装了 app2 应用的实例集合（并集）。
                      * 
                      */
                     void SetAndroidAppIds(const std::vector<std::string>& _androidAppIds);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool AndroidAppIdsHasBeenSet() const;
 
                     /**
-                     * 获取字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID
-                     * @return Filters 字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID
+                     * 获取字段过滤器，Filter 的 Name 有以下值： AndroidInstanceId：实例 Id
+                     * @return Filters 字段过滤器，Filter 的 Name 有以下值： AndroidInstanceId：实例 Id
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID
-                     * @param _filters 字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID
+                     * 设置字段过滤器，Filter 的 Name 有以下值： AndroidInstanceId：实例 Id
+                     * @param _filters 字段过滤器，Filter 的 Name 有以下值： AndroidInstanceId：实例 Id
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -136,19 +136,19 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制量，默认为20，最大值为100	
+                     * 限制量，默认为 20，最大值为 500	
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 应用 ID 列表。通过应用 ID 做集合查询
+                     * 应用 ID 列表。当 AndroidIds 为多条数据时（例如 app1, app2），返回的实例列表为：安装了 app1 应用的实例和安装了 app2 应用的实例集合（并集）。
                      */
                     std::vector<std::string> m_androidAppIds;
                     bool m_androidAppIdsHasBeenSet;
 
                     /**
-                     * 字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID
+                     * 字段过滤器，Filter 的 Name 有以下值： AndroidInstanceId：实例 Id
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

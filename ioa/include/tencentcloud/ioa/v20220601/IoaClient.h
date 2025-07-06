@@ -39,6 +39,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoListResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceInfoRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceInfoResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeviceVirtualGroupsRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeviceVirtualGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeLocalAccountsRequest.h>
@@ -91,6 +93,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceInfoResponse> DescribeDeviceInfoOutcome;
                 typedef std::future<DescribeDeviceInfoOutcome> DescribeDeviceInfoOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDeviceInfoRequest&, DescribeDeviceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceVirtualGroupsResponse> DescribeDeviceVirtualGroupsOutcome;
+                typedef std::future<DescribeDeviceVirtualGroupsOutcome> DescribeDeviceVirtualGroupsOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeDeviceVirtualGroupsRequest&, DescribeDeviceVirtualGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceVirtualGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDevicesResponse> DescribeDevicesOutcome;
                 typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDevicesRequest&, DescribeDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
@@ -186,6 +191,15 @@ namespace TencentCloud
                 DescribeDeviceInfoOutcome DescribeDeviceInfo(const Model::DescribeDeviceInfoRequest &request);
                 void DescribeDeviceInfoAsync(const Model::DescribeDeviceInfoRequest& request, const DescribeDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceInfoOutcomeCallable DescribeDeviceInfoCallable(const Model::DescribeDeviceInfoRequest& request);
+
+                /**
+                 *查询终端自定义分组列表，私有化调用path为：/capi/Assets/Device/DescribeDeviceVirtualGroups
+                 * @param req DescribeDeviceVirtualGroupsRequest
+                 * @return DescribeDeviceVirtualGroupsOutcome
+                 */
+                DescribeDeviceVirtualGroupsOutcome DescribeDeviceVirtualGroups(const Model::DescribeDeviceVirtualGroupsRequest &request);
+                void DescribeDeviceVirtualGroupsAsync(const Model::DescribeDeviceVirtualGroupsRequest& request, const DescribeDeviceVirtualGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceVirtualGroupsOutcomeCallable DescribeDeviceVirtualGroupsCallable(const Model::DescribeDeviceVirtualGroupsRequest& request);
 
                 /**
                  *查询满足条件的终端数据详情，私有化调用path为：/capi/Assets/Device/DescribeDevices

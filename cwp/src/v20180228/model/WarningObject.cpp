@@ -26,7 +26,8 @@ WarningObject::WarningObject() :
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_controlBitsHasBeenSet(false),
-    m_hostRangeHasBeenSet(false)
+    m_hostRangeHasBeenSet(false),
+    m_unitHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome WarningObject::Deserialize(const rapidjson::Value &value)
         m_hostRangeHasBeenSet = true;
     }
 
+    if (value.HasMember("Unit") && !value["Unit"].IsNull())
+    {
+        if (!value["Unit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WarningObject.Unit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unit = string(value["Unit"].GetString());
+        m_unitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void WarningObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "HostRange";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hostRange, allocator);
+    }
+
+    if (m_unitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Unit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void WarningObject::SetHostRange(const int64_t& _hostRange)
 bool WarningObject::HostRangeHasBeenSet() const
 {
     return m_hostRangeHasBeenSet;
+}
+
+string WarningObject::GetUnit() const
+{
+    return m_unit;
+}
+
+void WarningObject::SetUnit(const string& _unit)
+{
+    m_unit = _unit;
+    m_unitHasBeenSet = true;
+}
+
+bool WarningObject::UnitHasBeenSet() const
+{
+    return m_unitHasBeenSet;
 }
 

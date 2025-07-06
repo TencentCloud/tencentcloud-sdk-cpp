@@ -1569,7 +1569,7 @@ namespace TencentCloud
                 DescribeDBInstanceGTIDOutcomeCallable DescribeDBInstanceGTIDCallable(const Model::DescribeDBInstanceGTIDRequest& request);
 
                 /**
-                 *本接口（DescribeDBInstanceInfo）用于查询实例基本信息（实例 ID，实例名称，是否开通加密）。
+                 *本接口（DescribeDBInstanceInfo）用于查询实例基本信息（实例 ID，实例名称，是否开通加密），只读实例不支持查询。
                  * @param req DescribeDBInstanceInfoRequest
                  * @return DescribeDBInstanceInfoOutcome
                  */
@@ -1835,7 +1835,7 @@ namespace TencentCloud
                 DescribeRollbackTaskDetailOutcomeCallable DescribeRollbackTaskDetailCallable(const Model::DescribeRollbackTaskDetailRequest& request);
 
                 /**
-                 *查询 SSL 开通情况。如果已经开通 SSL ，会同步返回证书下载链接。
+                 *本接口（DescribeSSLStatus）用于查询 SSL 开通情况。如果已经开通 SSL ，会同步返回证书下载链接。
                  * @param req DescribeSSLStatusRequest
                  * @return DescribeSSLStatusOutcome
                  */

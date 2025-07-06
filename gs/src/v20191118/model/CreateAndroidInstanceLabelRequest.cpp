@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAndroidInstanceLabelRequest::CreateAndroidInstanceLabelRequest() :
     m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateAndroidInstanceLabelRequest::ToJsonString() const
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateAndroidInstanceLabelRequest::SetValue(const string& _value)
 bool CreateAndroidInstanceLabelRequest::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+string CreateAndroidInstanceLabelRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateAndroidInstanceLabelRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateAndroidInstanceLabelRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

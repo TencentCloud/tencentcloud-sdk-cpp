@@ -57,6 +57,34 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取自选主机里面包含基础版个数
+                     * @return BasicVersionCount 自选主机里面包含基础版个数
+                     * 
+                     */
+                    uint64_t GetBasicVersionCount() const;
+
+                    /**
+                     * 判断参数 BasicVersionCount 是否已赋值
+                     * @return BasicVersionCount 是否已赋值
+                     * 
+                     */
+                    bool BasicVersionCountHasBeenSet() const;
+
+                    /**
+                     * 获取创建扫描任务机器个数
+                     * @return SuccessCount 创建扫描任务机器个数
+                     * 
+                     */
+                    uint64_t GetSuccessCount() const;
+
+                    /**
+                     * 判断参数 SuccessCount 是否已赋值
+                     * @return SuccessCount 是否已赋值
+                     * 
+                     */
+                    bool SuccessCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +92,18 @@ namespace TencentCloud
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 自选主机里面包含基础版个数
+                     */
+                    uint64_t m_basicVersionCount;
+                    bool m_basicVersionCountHasBeenSet;
+
+                    /**
+                     * 创建扫描任务机器个数
+                     */
+                    uint64_t m_successCount;
+                    bool m_successCountHasBeenSet;
 
                 };
             }

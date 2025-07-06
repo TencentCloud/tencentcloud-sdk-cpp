@@ -384,6 +384,49 @@ IoaClient::DescribeDeviceInfoOutcomeCallable IoaClient::DescribeDeviceInfoCallab
     return task->get_future();
 }
 
+IoaClient::DescribeDeviceVirtualGroupsOutcome IoaClient::DescribeDeviceVirtualGroups(const DescribeDeviceVirtualGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceVirtualGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceVirtualGroupsResponse rsp = DescribeDeviceVirtualGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceVirtualGroupsOutcome(rsp);
+        else
+            return DescribeDeviceVirtualGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceVirtualGroupsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDeviceVirtualGroupsAsync(const DescribeDeviceVirtualGroupsRequest& request, const DescribeDeviceVirtualGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceVirtualGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeDeviceVirtualGroupsOutcomeCallable IoaClient::DescribeDeviceVirtualGroupsCallable(const DescribeDeviceVirtualGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceVirtualGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceVirtualGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::DescribeDevicesOutcome IoaClient::DescribeDevices(const DescribeDevicesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDevices");

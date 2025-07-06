@@ -24,8 +24,8 @@ using namespace std;
 
 ModifyAndroidInstancesLabelsRequest::ModifyAndroidInstancesLabelsRequest() :
     m_androidInstanceIdsHasBeenSet(false),
-    m_androidInstanceLabelsHasBeenSet(false),
-    m_operationHasBeenSet(false)
+    m_operationHasBeenSet(false),
+    m_androidInstanceLabelsHasBeenSet(false)
 {
 }
 
@@ -49,6 +49,14 @@ string ModifyAndroidInstancesLabelsRequest::ToJsonString() const
         }
     }
 
+    if (m_operationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operation.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_androidInstanceLabelsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -62,14 +70,6 @@ string ModifyAndroidInstancesLabelsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_operationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operation";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_operation.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -96,22 +96,6 @@ bool ModifyAndroidInstancesLabelsRequest::AndroidInstanceIdsHasBeenSet() const
     return m_androidInstanceIdsHasBeenSet;
 }
 
-vector<AndroidInstanceLabel> ModifyAndroidInstancesLabelsRequest::GetAndroidInstanceLabels() const
-{
-    return m_androidInstanceLabels;
-}
-
-void ModifyAndroidInstancesLabelsRequest::SetAndroidInstanceLabels(const vector<AndroidInstanceLabel>& _androidInstanceLabels)
-{
-    m_androidInstanceLabels = _androidInstanceLabels;
-    m_androidInstanceLabelsHasBeenSet = true;
-}
-
-bool ModifyAndroidInstancesLabelsRequest::AndroidInstanceLabelsHasBeenSet() const
-{
-    return m_androidInstanceLabelsHasBeenSet;
-}
-
 string ModifyAndroidInstancesLabelsRequest::GetOperation() const
 {
     return m_operation;
@@ -126,6 +110,22 @@ void ModifyAndroidInstancesLabelsRequest::SetOperation(const string& _operation)
 bool ModifyAndroidInstancesLabelsRequest::OperationHasBeenSet() const
 {
     return m_operationHasBeenSet;
+}
+
+vector<AndroidInstanceLabel> ModifyAndroidInstancesLabelsRequest::GetAndroidInstanceLabels() const
+{
+    return m_androidInstanceLabels;
+}
+
+void ModifyAndroidInstancesLabelsRequest::SetAndroidInstanceLabels(const vector<AndroidInstanceLabel>& _androidInstanceLabels)
+{
+    m_androidInstanceLabels = _androidInstanceLabels;
+    m_androidInstanceLabelsHasBeenSet = true;
+}
+
+bool ModifyAndroidInstancesLabelsRequest::AndroidInstanceLabelsHasBeenSet() const
+{
+    return m_androidInstanceLabelsHasBeenSet;
 }
 
 

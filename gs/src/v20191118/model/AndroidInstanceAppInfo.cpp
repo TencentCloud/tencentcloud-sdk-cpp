@@ -26,7 +26,8 @@ AndroidInstanceAppInfo::AndroidInstanceAppInfo() :
     m_androidAppVersionHasBeenSet(false),
     m_packageNameHasBeenSet(false),
     m_packageVersionHasBeenSet(false),
-    m_packageLabelHasBeenSet(false)
+    m_packageLabelHasBeenSet(false),
+    m_versionNameHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome AndroidInstanceAppInfo::Deserialize(const rapidjson::Value &
         m_packageLabelHasBeenSet = true;
     }
 
+    if (value.HasMember("VersionName") && !value["VersionName"].IsNull())
+    {
+        if (!value["VersionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstanceAppInfo.VersionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_versionName = string(value["VersionName"].GetString());
+        m_versionNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void AndroidInstanceAppInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "PackageLabel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_packageLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void AndroidInstanceAppInfo::SetPackageLabel(const string& _packageLabel)
 bool AndroidInstanceAppInfo::PackageLabelHasBeenSet() const
 {
     return m_packageLabelHasBeenSet;
+}
+
+string AndroidInstanceAppInfo::GetVersionName() const
+{
+    return m_versionName;
+}
+
+void AndroidInstanceAppInfo::SetVersionName(const string& _versionName)
+{
+    m_versionName = _versionName;
+    m_versionNameHasBeenSet = true;
+}
+
+bool AndroidInstanceAppInfo::VersionNameHasBeenSet() const
+{
+    return m_versionNameHasBeenSet;
 }
 

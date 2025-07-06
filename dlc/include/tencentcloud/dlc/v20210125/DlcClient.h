@@ -51,6 +51,8 @@
 #include <tencentcloud/dlc/v20210125/model/CancelSparkSessionBatchSQLResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CancelTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CancelTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CancelTasksRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CancelTasksResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CheckDataEngineConfigPairsValidityRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CheckDataEngineConfigPairsValidityResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CheckDataEngineImageCanBeRollbackRequest.h>
@@ -375,6 +377,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelTaskResponse> CancelTaskOutcome;
                 typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelTasksResponse> CancelTasksOutcome;
+                typedef std::future<CancelTasksOutcome> CancelTasksOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CancelTasksRequest&, CancelTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckDataEngineConfigPairsValidityResponse> CheckDataEngineConfigPairsValidityOutcome;
                 typedef std::future<CheckDataEngineConfigPairsValidityOutcome> CheckDataEngineConfigPairsValidityOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CheckDataEngineConfigPairsValidityRequest&, CheckDataEngineConfigPairsValidityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDataEngineConfigPairsValidityAsyncHandler;
@@ -905,6 +910,15 @@ namespace TencentCloud
                 CancelTaskOutcome CancelTask(const Model::CancelTaskRequest &request);
                 void CancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelTaskOutcomeCallable CancelTaskCallable(const Model::CancelTaskRequest& request);
+
+                /**
+                 *批量取消任务
+                 * @param req CancelTasksRequest
+                 * @return CancelTasksOutcome
+                 */
+                CancelTasksOutcome CancelTasks(const Model::CancelTasksRequest &request);
+                void CancelTasksAsync(const Model::CancelTasksRequest& request, const CancelTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelTasksOutcomeCallable CancelTasksCallable(const Model::CancelTasksRequest& request);
 
                 /**
                  *本接口（CheckDataEngineConfigPairsValidity）用于检查引擎用户自定义参数的有效性

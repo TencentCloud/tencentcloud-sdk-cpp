@@ -196,6 +196,31 @@ namespace TencentCloud
                      */
                     bool PositionHasBeenSet() const;
 
+                    /**
+                     * 获取类目名称英文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NameEn 类目名称英文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNameEn() const;
+
+                    /**
+                     * 设置类目名称英文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nameEn 类目名称英文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNameEn(const std::string& _nameEn);
+
+                    /**
+                     * 判断参数 NameEn 是否已赋值
+                     * @return NameEn 是否已赋值
+                     * 
+                     */
+                    bool NameEnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +264,13 @@ namespace TencentCloud
                      */
                     int64_t m_position;
                     bool m_positionHasBeenSet;
+
+                    /**
+                     * 类目名称英文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nameEn;
+                    bool m_nameEnHasBeenSet;
 
                 };
             }

@@ -27,7 +27,8 @@ CreateAndroidInstancesRequest::CreateAndroidInstancesRequest() :
     m_typeHasBeenSet(false),
     m_numberHasBeenSet(false),
     m_hostSerialNumbersHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
+    m_imageIdHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,21 @@ string CreateAndroidInstancesRequest::ToJsonString() const
         string key = "ImageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -169,6 +185,22 @@ void CreateAndroidInstancesRequest::SetImageId(const string& _imageId)
 bool CreateAndroidInstancesRequest::ImageIdHasBeenSet() const
 {
     return m_imageIdHasBeenSet;
+}
+
+vector<AndroidInstanceLabel> CreateAndroidInstancesRequest::GetLabels() const
+{
+    return m_labels;
+}
+
+void CreateAndroidInstancesRequest::SetLabels(const vector<AndroidInstanceLabel>& _labels)
+{
+    m_labels = _labels;
+    m_labelsHasBeenSet = true;
+}
+
+bool CreateAndroidInstancesRequest::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 
 

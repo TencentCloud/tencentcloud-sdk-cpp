@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取内存
-                     * @return Memory 内存
+                     * 获取内存，单位为MB
+                     * @return Memory 内存，单位为MB
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置内存
-                     * @param _memory 内存
+                     * 设置内存，单位为MB
+                     * @param _memory 内存，单位为MB
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -172,7 +172,7 @@ namespace TencentCloud
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * 内存
+                     * 内存，单位为MB
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;

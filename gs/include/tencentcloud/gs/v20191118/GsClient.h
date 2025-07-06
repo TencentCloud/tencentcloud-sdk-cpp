@@ -672,7 +672,7 @@ namespace TencentCloud
                 DescribeAndroidInstancesAppBlacklistOutcomeCallable DescribeAndroidInstancesAppBlacklistCallable(const Model::DescribeAndroidInstancesAppBlacklistRequest& request);
 
                 /**
-                 *查询安装指定应用的安卓实例
+                 *批量查询安装指定应用的安卓实例
                  * @param req DescribeAndroidInstancesByAppsRequest
                  * @return DescribeAndroidInstancesByAppsOutcome
                  */

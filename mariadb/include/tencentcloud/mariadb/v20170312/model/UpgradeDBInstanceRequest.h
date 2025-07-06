@@ -176,6 +176,69 @@ namespace TencentCloud
                      */
                     bool ZonesHasBeenSet() const;
 
+                    /**
+                     * 获取切换开始时间，格式如: "2019-12-12 07:00:00"。开始时间必须在当前时间一个小时以后，3天以内。
+                     * @return SwitchStartTime 切换开始时间，格式如: "2019-12-12 07:00:00"。开始时间必须在当前时间一个小时以后，3天以内。
+                     * 
+                     */
+                    std::string GetSwitchStartTime() const;
+
+                    /**
+                     * 设置切换开始时间，格式如: "2019-12-12 07:00:00"。开始时间必须在当前时间一个小时以后，3天以内。
+                     * @param _switchStartTime 切换开始时间，格式如: "2019-12-12 07:00:00"。开始时间必须在当前时间一个小时以后，3天以内。
+                     * 
+                     */
+                    void SetSwitchStartTime(const std::string& _switchStartTime);
+
+                    /**
+                     * 判断参数 SwitchStartTime 是否已赋值
+                     * @return SwitchStartTime 是否已赋值
+                     * 
+                     */
+                    bool SwitchStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取切换结束时间, 格式如: "2019-12-12 07:15:00"，结束时间必须大于开始时间。
+                     * @return SwitchEndTime 切换结束时间, 格式如: "2019-12-12 07:15:00"，结束时间必须大于开始时间。
+                     * 
+                     */
+                    std::string GetSwitchEndTime() const;
+
+                    /**
+                     * 设置切换结束时间, 格式如: "2019-12-12 07:15:00"，结束时间必须大于开始时间。
+                     * @param _switchEndTime 切换结束时间, 格式如: "2019-12-12 07:15:00"，结束时间必须大于开始时间。
+                     * 
+                     */
+                    void SetSwitchEndTime(const std::string& _switchEndTime);
+
+                    /**
+                     * 判断参数 SwitchEndTime 是否已赋值
+                     * @return SwitchEndTime 是否已赋值
+                     * 
+                     */
+                    bool SwitchEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动重试。 0：不自动重试 1：自动重试
+                     * @return SwitchAutoRetry 是否自动重试。 0：不自动重试 1：自动重试
+                     * 
+                     */
+                    int64_t GetSwitchAutoRetry() const;
+
+                    /**
+                     * 设置是否自动重试。 0：不自动重试 1：自动重试
+                     * @param _switchAutoRetry 是否自动重试。 0：不自动重试 1：自动重试
+                     * 
+                     */
+                    void SetSwitchAutoRetry(const int64_t& _switchAutoRetry);
+
+                    /**
+                     * 判断参数 SwitchAutoRetry 是否已赋值
+                     * @return SwitchAutoRetry 是否已赋值
+                     * 
+                     */
+                    bool SwitchAutoRetryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +278,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
+
+                    /**
+                     * 切换开始时间，格式如: "2019-12-12 07:00:00"。开始时间必须在当前时间一个小时以后，3天以内。
+                     */
+                    std::string m_switchStartTime;
+                    bool m_switchStartTimeHasBeenSet;
+
+                    /**
+                     * 切换结束时间, 格式如: "2019-12-12 07:15:00"，结束时间必须大于开始时间。
+                     */
+                    std::string m_switchEndTime;
+                    bool m_switchEndTimeHasBeenSet;
+
+                    /**
+                     * 是否自动重试。 0：不自动重试 1：自动重试
+                     */
+                    int64_t m_switchAutoRetry;
+                    bool m_switchAutoRetryHasBeenSet;
 
                 };
             }
