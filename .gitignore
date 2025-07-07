@@ -17,3 +17,4 @@ ft_build/
 example/cvm/v20170312/build/
 .vscode/
 .cache/
+example/cvm/v20170312/stress_test.cpp

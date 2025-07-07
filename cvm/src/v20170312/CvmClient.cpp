@@ -17,10 +17,6 @@
 #include <tencentcloud/cvm/v20170312/CvmClient.h>
 #include <tencentcloud/core/Executor.h>
 #include <tencentcloud/core/Runnable.h>
-#include <tencentcloud/core/CurlAsync.h>
-#include <tencentcloud/core/Credential.h>
-#include <tencentcloud/core/http/HttpClient.h>
-#include <iostream>
 
 using namespace TencentCloud;
 using namespace TencentCloud::Cvm::V20170312;
@@ -684,6 +680,7 @@ CvmClient::DeleteImagesOutcomeCallable CvmClient::DeleteImagesCallable(const Del
             return this->DeleteImages(request);
         }
     );
+
     Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
     return task->get_future();
 }
@@ -773,6 +770,7 @@ CvmClient::DeleteKeyPairsOutcomeCallable CvmClient::DeleteKeyPairsCallable(const
     Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
     return task->get_future();
 }
+
 CvmClient::DeleteLaunchTemplateOutcome CvmClient::DeleteLaunchTemplate(const DeleteLaunchTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLaunchTemplate");
@@ -1417,6 +1415,7 @@ CvmClient::DescribeInstanceFamilyConfigsOutcomeCallable CvmClient::DescribeInsta
     Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
     return task->get_future();
 }
+
 CvmClient::DescribeInstanceInternetBandwidthConfigsOutcome CvmClient::DescribeInstanceInternetBandwidthConfigs(const DescribeInstanceInternetBandwidthConfigsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceInternetBandwidthConfigs");
@@ -1459,6 +1458,7 @@ CvmClient::DescribeInstanceInternetBandwidthConfigsOutcomeCallable CvmClient::De
     Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
     return task->get_future();
 }
+
 CvmClient::DescribeInstanceTypeConfigsOutcome CvmClient::DescribeInstanceTypeConfigs(const DescribeInstanceTypeConfigsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceTypeConfigs");
@@ -1565,30 +1565,27 @@ CvmClient::DescribeInstancesOutcome CvmClient::DescribeInstances(const DescribeI
     }
 }
 
-void CvmClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, 
-                                     const DescribeInstancesAsyncHandler& handler, 
-                                     const std::shared_ptr<const AsyncCallerContext>& context)
+void CvmClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    MakeRequestAsync<CvmClient, DescribeInstancesRequest, DescribeInstancesAsyncHandler, 
-                    DescribeInstancesResponse, DescribeInstancesOutcome>(
-                        this, request, "DescribeInstances", handler, context);
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
 CvmClient::DescribeInstancesOutcomeCallable CvmClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
 {
-    auto promise = std::make_shared<std::promise<DescribeInstancesOutcome>>();
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstances(request);
+        }
+    );
 
-    auto handler = [=](const CvmClient* client,
-                       const DescribeInstancesRequest& req,
-                       const DescribeInstancesOutcome& outcome,
-                       const std::shared_ptr<const AsyncCallerContext>& context)
-    {
-        promise->set_value(outcome);
-    };
-
-    this->DescribeInstancesAsync(request, handler, std::make_shared<AsyncCallerContext>());
-
-    return promise->get_future();
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
 }
 
 CvmClient::DescribeInstancesActionTimerOutcome CvmClient::DescribeInstancesActionTimer(const DescribeInstancesActionTimerRequest &request)
@@ -4428,8 +4425,4 @@ CvmClient::TerminateInstancesOutcomeCallable CvmClient::TerminateInstancesCallab
     Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
     return task->get_future();
 }
-
-
-
-
 
