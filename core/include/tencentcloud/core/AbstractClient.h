@@ -63,7 +63,7 @@ namespace TencentCloud
         }
 
         HttpClient::HttpResponseOutcome DoRequest(const std::string &actionName, const std::string &body, std::map<std::string, std::string> &headers);
-        void DoRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback handler);
+        void DoRequestAsync(AbstractModel request, const std::string &actionName, const AsyncCallback& handler);
 
         void GenerateSignature(HttpRequest &request);
 

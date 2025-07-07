@@ -66,7 +66,8 @@ namespace
         out << proxy.GetHostName() << ":" << proxy.GetPort();
         curl_easy_setopt(curlHandle, CURLOPT_PROXY, out.str().c_str());
 
-        if (!proxy.GetUser().empty()) {
+        if (!proxy.GetUser().empty()) 
+        {
             out.clear();
             out << proxy.GetUser() << ":" << proxy.GetPassword();
             curl_easy_setopt(curlHandle, CURLOPT_PROXYUSERPWD, out.str().c_str());
@@ -158,7 +159,7 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, Abstract
 {
     if (!m_multiHandle)
     {
-        cerr << "multi handle init error" << endl;
+        cerr << "curl multi handle not init" << endl;
         callback(HttpClient::HttpResponseOutcome(Core::Error("CurlError", "multi handle not initialized")));
         return;
     }
@@ -166,7 +167,7 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, Abstract
     CURL* easy_handle = curl_easy_init();
     if (!easy_handle)
     {
-        cerr << "easy handle init error" << endl;
+        cerr << "curl_easy_init error" << endl;
         callback(HttpClient::HttpResponseOutcome(Core::Error("CurlError", "easy handle not initialized")));
         return;
     }
@@ -235,10 +236,12 @@ void CurlAsync::AddRequest(HttpClient* httpClient, HttpRequest request, Abstract
 
     curl_easy_setopt(easy_handle, CURLOPT_ERRORBUFFER, ctx->errorBuffer);
     
-    
+    unique_lock<mutex> ul(m_multiHandleMutex);
     CURLMcode mc = curl_multi_add_handle(m_multiHandle, easy_handle);
-    if (mc != CURLM_OK) {
-        cerr << "add request to multi handle error: " << curl_multi_strerror(mc) << endl;
+    ul.unlock();
+    if (mc != CURLM_OK) 
+    {
+        cerr << "curl_multi_add_handle error: " << curl_multi_strerror(mc) << endl;
         callback(HttpClient::HttpResponseOutcome(Core::Error("CurlError", "add request to multi handle error")));
         curl_easy_cleanup(easy_handle);
         return;
@@ -259,6 +262,7 @@ void CurlAsync::CurlMultiLoop()
         if (mc != CURLM_OK)
         {
             cerr << "curl_multi_perform error: " << curl_multi_strerror(mc) << endl;
+            Shutdown();
         }
 
         int numfds = 0;
@@ -270,6 +274,7 @@ void CurlAsync::CurlMultiLoop()
         else
         {
             cerr << "curl_multi_poll error: " << curl_multi_strerror(mc) << endl;
+            Shutdown();
         } 
     }
 }

@@ -70,6 +70,7 @@ namespace TencentCloud
         static Garbo m_garbo;
 
         CURLM* m_multiHandle;
+        std::mutex m_multiHandleMutex;
         std::unordered_map<CURL*, std::shared_ptr<AsyncContext>> m_activeContexts;
         std::mutex m_easyHandlesMutex;
 

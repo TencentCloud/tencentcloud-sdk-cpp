@@ -176,7 +176,7 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
     return m_httpClient->SendRequest(httpRequest);
 }
 
-void AbstractClient::DoRequestAsync(const AbstractModel& request, const std::string &actionName, AsyncCallback callback)
+void AbstractClient::DoRequestAsync(AbstractModel request, const std::string &actionName, const AsyncCallback& callback)
 {
     const string body = request.ToJsonString();
     std::map<std::string, std::string> headers;
