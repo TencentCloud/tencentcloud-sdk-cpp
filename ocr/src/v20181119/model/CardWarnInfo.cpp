@@ -25,7 +25,9 @@ CardWarnInfo::CardWarnInfo() :
     m_occlusionCheckHasBeenSet(false),
     m_copyCheckHasBeenSet(false),
     m_reshootCheckHasBeenSet(false),
-    m_pSCheckHasBeenSet(false)
+    m_pSCheckHasBeenSet(false),
+    m_blurCheckHasBeenSet(false),
+    m_blurScoreHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome CardWarnInfo::Deserialize(const rapidjson::Value &value)
         m_pSCheckHasBeenSet = true;
     }
 
+    if (value.HasMember("BlurCheck") && !value["BlurCheck"].IsNull())
+    {
+        if (!value["BlurCheck"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CardWarnInfo.BlurCheck` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_blurCheck = value["BlurCheck"].GetInt64();
+        m_blurCheckHasBeenSet = true;
+    }
+
+    if (value.HasMember("BlurScore") && !value["BlurScore"].IsNull())
+    {
+        if (!value["BlurScore"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `CardWarnInfo.BlurScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_blurScore = value["BlurScore"].GetDouble();
+        m_blurScoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void CardWarnInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "PSCheck";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pSCheck, allocator);
+    }
+
+    if (m_blurCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlurCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blurCheck, allocator);
+    }
+
+    if (m_blurScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlurScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blurScore, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void CardWarnInfo::SetPSCheck(const int64_t& _pSCheck)
 bool CardWarnInfo::PSCheckHasBeenSet() const
 {
     return m_pSCheckHasBeenSet;
+}
+
+int64_t CardWarnInfo::GetBlurCheck() const
+{
+    return m_blurCheck;
+}
+
+void CardWarnInfo::SetBlurCheck(const int64_t& _blurCheck)
+{
+    m_blurCheck = _blurCheck;
+    m_blurCheckHasBeenSet = true;
+}
+
+bool CardWarnInfo::BlurCheckHasBeenSet() const
+{
+    return m_blurCheckHasBeenSet;
+}
+
+double CardWarnInfo::GetBlurScore() const
+{
+    return m_blurScore;
+}
+
+void CardWarnInfo::SetBlurScore(const double& _blurScore)
+{
+    m_blurScore = _blurScore;
+    m_blurScoreHasBeenSet = true;
+}
+
+bool CardWarnInfo::BlurScoreHasBeenSet() const
+{
+    return m_blurScoreHasBeenSet;
 }
 

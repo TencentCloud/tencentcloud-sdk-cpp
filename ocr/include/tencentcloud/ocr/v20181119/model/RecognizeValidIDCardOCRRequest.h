@@ -325,6 +325,27 @@ namespace TencentCloud
                      */
                     bool EnableWordCheckHasBeenSet() const;
 
+                    /**
+                     * 获取默认值为false，打开返回证件是否模糊。
+                     * @return EnableQualityCheck 默认值为false，打开返回证件是否模糊。
+                     * 
+                     */
+                    bool GetEnableQualityCheck() const;
+
+                    /**
+                     * 设置默认值为false，打开返回证件是否模糊。
+                     * @param _enableQualityCheck 默认值为false，打开返回证件是否模糊。
+                     * 
+                     */
+                    void SetEnableQualityCheck(const bool& _enableQualityCheck);
+
+                    /**
+                     * 判断参数 EnableQualityCheck 是否已赋值
+                     * @return EnableQualityCheck 是否已赋值
+                     * 
+                     */
+                    bool EnableQualityCheckHasBeenSet() const;
+
                 private:
 
                     /**
@@ -405,6 +426,12 @@ namespace TencentCloud
                      */
                     bool m_enableWordCheck;
                     bool m_enableWordCheckHasBeenSet;
+
+                    /**
+                     * 默认值为false，打开返回证件是否模糊。
+                     */
+                    bool m_enableQualityCheck;
+                    bool m_enableQualityCheckHasBeenSet;
 
                 };
             }

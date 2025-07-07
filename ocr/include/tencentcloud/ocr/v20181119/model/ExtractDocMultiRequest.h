@@ -193,6 +193,9 @@ AirWayBill -- 航空运单识别模板
 Table -- 表格模版
 SteelLabel -- 实物标签识别模板
 CarInsurance -- 车辆保险单识别模板
+MultiRealEstateCertificate -- 房产材料识别模板
+MultiRealEstateMaterial -- 房产证明识别模板
+HongKongUtilityBill -- 香港水电煤单识别模板
                      * @return ConfigId 配置id支持：
 General -- 通用场景 
 InvoiceEng -- 国际invoice模版 
@@ -208,6 +211,9 @@ AirWayBill -- 航空运单识别模板
 Table -- 表格模版
 SteelLabel -- 实物标签识别模板
 CarInsurance -- 车辆保险单识别模板
+MultiRealEstateCertificate -- 房产材料识别模板
+MultiRealEstateMaterial -- 房产证明识别模板
+HongKongUtilityBill -- 香港水电煤单识别模板
                      * 
                      */
                     std::string GetConfigId() const;
@@ -228,6 +234,9 @@ AirWayBill -- 航空运单识别模板
 Table -- 表格模版
 SteelLabel -- 实物标签识别模板
 CarInsurance -- 车辆保险单识别模板
+MultiRealEstateCertificate -- 房产材料识别模板
+MultiRealEstateMaterial -- 房产证明识别模板
+HongKongUtilityBill -- 香港水电煤单识别模板
                      * @param _configId 配置id支持：
 General -- 通用场景 
 InvoiceEng -- 国际invoice模版 
@@ -243,6 +252,9 @@ AirWayBill -- 航空运单识别模板
 Table -- 表格模版
 SteelLabel -- 实物标签识别模板
 CarInsurance -- 车辆保险单识别模板
+MultiRealEstateCertificate -- 房产材料识别模板
+MultiRealEstateMaterial -- 房产证明识别模板
+HongKongUtilityBill -- 香港水电煤单识别模板
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -373,6 +385,9 @@ AirWayBill -- 航空运单识别模板
 Table -- 表格模版
 SteelLabel -- 实物标签识别模板
 CarInsurance -- 车辆保险单识别模板
+MultiRealEstateCertificate -- 房产材料识别模板
+MultiRealEstateMaterial -- 房产证明识别模板
+HongKongUtilityBill -- 香港水电煤单识别模板
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;

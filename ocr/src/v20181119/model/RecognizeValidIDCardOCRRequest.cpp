@@ -33,7 +33,8 @@ RecognizeValidIDCardOCRRequest::RecognizeValidIDCardOCRRequest() :
     m_enableCopyCheckHasBeenSet(false),
     m_enableReshootCheckHasBeenSet(false),
     m_enablePSCheckHasBeenSet(false),
-    m_enableWordCheckHasBeenSet(false)
+    m_enableWordCheckHasBeenSet(false),
+    m_enableQualityCheckHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string RecognizeValidIDCardOCRRequest::ToJsonString() const
         string key = "EnableWordCheck";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableWordCheck, allocator);
+    }
+
+    if (m_enableQualityCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableQualityCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableQualityCheck, allocator);
     }
 
 
@@ -314,6 +323,22 @@ void RecognizeValidIDCardOCRRequest::SetEnableWordCheck(const bool& _enableWordC
 bool RecognizeValidIDCardOCRRequest::EnableWordCheckHasBeenSet() const
 {
     return m_enableWordCheckHasBeenSet;
+}
+
+bool RecognizeValidIDCardOCRRequest::GetEnableQualityCheck() const
+{
+    return m_enableQualityCheck;
+}
+
+void RecognizeValidIDCardOCRRequest::SetEnableQualityCheck(const bool& _enableQualityCheck)
+{
+    m_enableQualityCheck = _enableQualityCheck;
+    m_enableQualityCheckHasBeenSet = true;
+}
+
+bool RecognizeValidIDCardOCRRequest::EnableQualityCheckHasBeenSet() const
+{
+    return m_enableQualityCheckHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@ using namespace std;
 
 TerminateInstancesRequest::TerminateInstancesRequest() :
     m_instanceIdsHasBeenSet(false),
+    m_releaseAddressHasBeenSet(false),
     m_releasePrepaidDataDisksHasBeenSet(false)
 {
 }
@@ -46,6 +47,14 @@ string TerminateInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_releaseAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReleaseAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_releaseAddress, allocator);
     }
 
     if (m_releasePrepaidDataDisksHasBeenSet)
@@ -78,6 +87,22 @@ void TerminateInstancesRequest::SetInstanceIds(const vector<string>& _instanceId
 bool TerminateInstancesRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+bool TerminateInstancesRequest::GetReleaseAddress() const
+{
+    return m_releaseAddress;
+}
+
+void TerminateInstancesRequest::SetReleaseAddress(const bool& _releaseAddress)
+{
+    m_releaseAddress = _releaseAddress;
+    m_releaseAddressHasBeenSet = true;
+}
+
+bool TerminateInstancesRequest::ReleaseAddressHasBeenSet() const
+{
+    return m_releaseAddressHasBeenSet;
 }
 
 bool TerminateInstancesRequest::GetReleasePrepaidDataDisks() const

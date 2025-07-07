@@ -61,7 +61,8 @@ Instance::Instance() :
     m_disableApiTerminationHasBeenSet(false),
     m_defaultLoginUserHasBeenSet(false),
     m_defaultLoginPortHasBeenSet(false),
-    m_latestOperationErrorMsgHasBeenSet(false)
+    m_latestOperationErrorMsgHasBeenSet(false),
+    m_publicIPv6AddressesHasBeenSet(false)
 {
 }
 
@@ -557,6 +558,19 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_latestOperationErrorMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicIPv6Addresses") && !value["PublicIPv6Addresses"].IsNull())
+    {
+        if (!value["PublicIPv6Addresses"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Instance.PublicIPv6Addresses` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PublicIPv6Addresses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_publicIPv6Addresses.push_back((*itr).GetString());
+        }
+        m_publicIPv6AddressesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -935,6 +949,19 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "LatestOperationErrorMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestOperationErrorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIPv6AddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIPv6Addresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_publicIPv6Addresses.begin(); itr != m_publicIPv6Addresses.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1594,5 +1621,21 @@ void Instance::SetLatestOperationErrorMsg(const string& _latestOperationErrorMsg
 bool Instance::LatestOperationErrorMsgHasBeenSet() const
 {
     return m_latestOperationErrorMsgHasBeenSet;
+}
+
+vector<string> Instance::GetPublicIPv6Addresses() const
+{
+    return m_publicIPv6Addresses;
+}
+
+void Instance::SetPublicIPv6Addresses(const vector<string>& _publicIPv6Addresses)
+{
+    m_publicIPv6Addresses = _publicIPv6Addresses;
+    m_publicIPv6AddressesHasBeenSet = true;
+}
+
+bool Instance::PublicIPv6AddressesHasBeenSet() const
+{
+    return m_publicIPv6AddressesHasBeenSet;
 }
 

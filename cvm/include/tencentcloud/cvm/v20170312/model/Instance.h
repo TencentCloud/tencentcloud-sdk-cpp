@@ -955,6 +955,27 @@ namespace TencentCloud
                      */
                     bool LatestOperationErrorMsgHasBeenSet() const;
 
+                    /**
+                     * 获取实例绑定的公网IPv6地址。
+                     * @return PublicIPv6Addresses 实例绑定的公网IPv6地址。
+                     * 
+                     */
+                    std::vector<std::string> GetPublicIPv6Addresses() const;
+
+                    /**
+                     * 设置实例绑定的公网IPv6地址。
+                     * @param _publicIPv6Addresses 实例绑定的公网IPv6地址。
+                     * 
+                     */
+                    void SetPublicIPv6Addresses(const std::vector<std::string>& _publicIPv6Addresses);
+
+                    /**
+                     * 判断参数 PublicIPv6Addresses 是否已赋值
+                     * @return PublicIPv6Addresses 是否已赋值
+                     * 
+                     */
+                    bool PublicIPv6AddressesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1212,6 +1233,12 @@ namespace TencentCloud
                      */
                     std::string m_latestOperationErrorMsg;
                     bool m_latestOperationErrorMsgHasBeenSet;
+
+                    /**
+                     * 实例绑定的公网IPv6地址。
+                     */
+                    std::vector<std::string> m_publicIPv6Addresses;
+                    bool m_publicIPv6AddressesHasBeenSet;
 
                 };
             }
