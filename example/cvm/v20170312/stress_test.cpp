@@ -129,7 +129,7 @@ int main() {
     CvmClient client(cred, "ap-guangzhou");
 
     const int TOTAL_REQUESTS = 1000;
-    const int QPS_LIMIT = 35;
+    const int QPS_LIMIT = 33;
 
     request_latencies.reserve(TOTAL_REQUESTS);
     cout << "Starting pressure test with " << TOTAL_REQUESTS << " async requests..." << endl;

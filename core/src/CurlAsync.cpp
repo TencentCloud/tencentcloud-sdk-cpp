@@ -150,7 +150,10 @@ void CurlAsync::Shutdown()
         }
         m_activeContexts.clear();
 
-        curl_multi_cleanup(m_multiHandle);
+        if (m_multiHandle)
+        {
+            curl_multi_cleanup(m_multiHandle);
+        }
         m_multiHandle = nullptr;
     }
 }
@@ -342,6 +345,10 @@ void CurlAsync::ReadTaskResult()
                     lock_guard<mutex> lock(m_easyHandlesMutex);
                     auto it = m_activeContexts.find(easy_handle);
                     if (it != m_activeContexts.end()) {
+                        if (it->second->headerList) 
+                        {
+                            curl_slist_free_all(it->second->headerList);
+                        }
                         m_activeContexts.erase(it);
                     }
                 }

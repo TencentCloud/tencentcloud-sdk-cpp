@@ -50,14 +50,6 @@ namespace TencentCloud
             HttpResponse response;
             std::ostringstream responseStream;
             AbstractClient::AsyncCallback callback;
-
-            ~AsyncContext() 
-            {
-                if (headerList) 
-                {
-                    curl_slist_free_all(headerList);
-                }
-            }
         };
 
         CurlAsync();
