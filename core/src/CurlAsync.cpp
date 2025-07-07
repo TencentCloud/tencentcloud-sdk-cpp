@@ -261,7 +261,9 @@ void CurlAsync::CurlMultiLoop()
     while (!m_stopIoThread && m_multiHandle) 
     {
         int still_running = 0;
+        unique_lock<mutex> ul(m_multiHandleMutex);
         CURLMcode mc = curl_multi_perform(m_multiHandle, &still_running);
+        ul.unlock();
         if (mc != CURLM_OK)
         {
             cerr << "curl_multi_perform error: " << curl_multi_strerror(mc) << endl;
@@ -288,7 +290,9 @@ void CurlAsync::ReadTaskResult()
     int msgs_left;
 
     do {
+        unique_lock<mutex> ul(m_multiHandleMutex);
         msg = curl_multi_info_read(m_multiHandle, &msgs_left);
+        ul.unlock();
         if (msg && msg->msg == CURLMSG_DONE)
         {
             CURL* easy_handle = msg->easy_handle;
@@ -338,8 +342,9 @@ void CurlAsync::ReadTaskResult()
                 {
                     ctx->callback(outcome);
                 }
-
+                ul.lock();
                 curl_multi_remove_handle(m_multiHandle, easy_handle);
+                ul.unlock();
                 curl_easy_cleanup(easy_handle);
                 {
                     lock_guard<mutex> lock(m_easyHandlesMutex);
@@ -356,7 +361,9 @@ void CurlAsync::ReadTaskResult()
             else 
             {
                 cerr << "curl_multi_info_read error: " << endl;
+                ul.lock();
                 curl_multi_remove_handle(m_multiHandle, easy_handle);
+                ul.unlock();
                 curl_easy_cleanup(easy_handle);
             }
         }
