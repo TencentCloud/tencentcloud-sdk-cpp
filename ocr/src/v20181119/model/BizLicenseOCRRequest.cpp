@@ -26,7 +26,8 @@ BizLicenseOCRRequest::BizLicenseOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_enableCopyWarnHasBeenSet(false),
-    m_enablePeriodCompleteHasBeenSet(false)
+    m_enablePeriodCompleteHasBeenSet(false),
+    m_enableBusinessCertificateHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string BizLicenseOCRRequest::ToJsonString() const
         string key = "EnablePeriodComplete";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enablePeriodComplete, allocator);
+    }
+
+    if (m_enableBusinessCertificateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBusinessCertificate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableBusinessCertificate, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void BizLicenseOCRRequest::SetEnablePeriodComplete(const bool& _enablePeriodComp
 bool BizLicenseOCRRequest::EnablePeriodCompleteHasBeenSet() const
 {
     return m_enablePeriodCompleteHasBeenSet;
+}
+
+bool BizLicenseOCRRequest::GetEnableBusinessCertificate() const
+{
+    return m_enableBusinessCertificate;
+}
+
+void BizLicenseOCRRequest::SetEnableBusinessCertificate(const bool& _enableBusinessCertificate)
+{
+    m_enableBusinessCertificate = _enableBusinessCertificate;
+    m_enableBusinessCertificateHasBeenSet = true;
+}
+
+bool BizLicenseOCRRequest::EnableBusinessCertificateHasBeenSet() const
+{
+    return m_enableBusinessCertificateHasBeenSet;
 }
 
 

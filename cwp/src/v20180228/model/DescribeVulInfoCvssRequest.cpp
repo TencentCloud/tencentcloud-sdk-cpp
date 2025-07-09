@@ -23,7 +23,8 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 DescribeVulInfoCvssRequest::DescribeVulInfoCvssRequest() :
-    m_vulIdHasBeenSet(false)
+    m_vulIdHasBeenSet(false),
+    m_sourceHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeVulInfoCvssRequest::ToJsonString() const
         string key = "VulId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_vulId, allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeVulInfoCvssRequest::SetVulId(const uint64_t& _vulId)
 bool DescribeVulInfoCvssRequest::VulIdHasBeenSet() const
 {
     return m_vulIdHasBeenSet;
+}
+
+string DescribeVulInfoCvssRequest::GetSource() const
+{
+    return m_source;
+}
+
+void DescribeVulInfoCvssRequest::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool DescribeVulInfoCvssRequest::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
 }
 
 

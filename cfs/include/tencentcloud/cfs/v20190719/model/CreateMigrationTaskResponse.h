@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移任务Id
-                     * @return TaskId 迁移任务Id
+                     * 获取迁移任务 ID
+                     * @return TaskId 迁移任务 ID
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移任务Id
+                     * 迁移任务 ID
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

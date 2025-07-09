@@ -29,6 +29,7 @@
 #include <tencentcloud/teo/v20220901/model/HttpDDoSProtection.h>
 #include <tencentcloud/teo/v20220901/model/RateLimitingRules.h>
 #include <tencentcloud/teo/v20220901/model/ExceptionRules.h>
+#include <tencentcloud/teo/v20220901/model/BotManagement.h>
 
 
 namespace TencentCloud
@@ -94,15 +95,15 @@ namespace TencentCloud
                     bool ManagedRulesHasBeenSet() const;
 
                     /**
-                     * 获取HTTP DDOS防护配置。
-                     * @return HttpDDoSProtection HTTP DDOS防护配置。
+                     * 获取HTTP DDOS 防护配置。
+                     * @return HttpDDoSProtection HTTP DDOS 防护配置。
                      * 
                      */
                     HttpDDoSProtection GetHttpDDoSProtection() const;
 
                     /**
-                     * 设置HTTP DDOS防护配置。
-                     * @param _httpDDoSProtection HTTP DDOS防护配置。
+                     * 设置HTTP DDOS 防护配置。
+                     * @param _httpDDoSProtection HTTP DDOS 防护配置。
                      * 
                      */
                     void SetHttpDDoSProtection(const HttpDDoSProtection& _httpDDoSProtection);
@@ -156,6 +157,27 @@ namespace TencentCloud
                      */
                     bool ExceptionRulesHasBeenSet() const;
 
+                    /**
+                     * 获取Bot 管理配置。
+                     * @return BotManagement Bot 管理配置。
+                     * 
+                     */
+                    BotManagement GetBotManagement() const;
+
+                    /**
+                     * 设置Bot 管理配置。
+                     * @param _botManagement Bot 管理配置。
+                     * 
+                     */
+                    void SetBotManagement(const BotManagement& _botManagement);
+
+                    /**
+                     * 判断参数 BotManagement 是否已赋值
+                     * @return BotManagement 是否已赋值
+                     * 
+                     */
+                    bool BotManagementHasBeenSet() const;
+
                 private:
 
                     /**
@@ -171,7 +193,7 @@ namespace TencentCloud
                     bool m_managedRulesHasBeenSet;
 
                     /**
-                     * HTTP DDOS防护配置。
+                     * HTTP DDOS 防护配置。
                      */
                     HttpDDoSProtection m_httpDDoSProtection;
                     bool m_httpDDoSProtectionHasBeenSet;
@@ -187,6 +209,12 @@ namespace TencentCloud
                      */
                     ExceptionRules m_exceptionRules;
                     bool m_exceptionRulesHasBeenSet;
+
+                    /**
+                     * Bot 管理配置。
+                     */
+                    BotManagement m_botManagement;
+                    bool m_botManagementHasBeenSet;
 
                 };
             }

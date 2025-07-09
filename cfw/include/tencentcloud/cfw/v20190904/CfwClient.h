@@ -121,6 +121,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeIPStatusListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeIdsWhiteRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeIdsWhiteRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeLogStorageStatisticRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeLogStorageStatisticResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeLogsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeLogsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleRequest.h>
@@ -412,6 +414,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIdsWhiteRuleResponse> DescribeIdsWhiteRuleOutcome;
                 typedef std::future<DescribeIdsWhiteRuleOutcome> DescribeIdsWhiteRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeIdsWhiteRuleRequest&, DescribeIdsWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIdsWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogStorageStatisticResponse> DescribeLogStorageStatisticOutcome;
+                typedef std::future<DescribeLogStorageStatisticOutcome> DescribeLogStorageStatisticOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeLogStorageStatisticRequest&, DescribeLogStorageStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStorageStatisticAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogsResponse> DescribeLogsOutcome;
                 typedef std::future<DescribeLogsOutcome> DescribeLogsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeLogsRequest&, DescribeLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogsAsyncHandler;
@@ -1056,6 +1061,15 @@ namespace TencentCloud
                 DescribeIdsWhiteRuleOutcome DescribeIdsWhiteRule(const Model::DescribeIdsWhiteRuleRequest &request);
                 void DescribeIdsWhiteRuleAsync(const Model::DescribeIdsWhiteRuleRequest& request, const DescribeIdsWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIdsWhiteRuleOutcomeCallable DescribeIdsWhiteRuleCallable(const Model::DescribeIdsWhiteRuleRequest& request);
+
+                /**
+                 *租户日志存储统计
+                 * @param req DescribeLogStorageStatisticRequest
+                 * @return DescribeLogStorageStatisticOutcome
+                 */
+                DescribeLogStorageStatisticOutcome DescribeLogStorageStatistic(const Model::DescribeLogStorageStatisticRequest &request);
+                void DescribeLogStorageStatisticAsync(const Model::DescribeLogStorageStatisticRequest& request, const DescribeLogStorageStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogStorageStatisticOutcomeCallable DescribeLogStorageStatisticCallable(const Model::DescribeLogStorageStatisticRequest& request);
 
                 /**
                  *日志审计日志查询

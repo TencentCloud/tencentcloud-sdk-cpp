@@ -32,7 +32,8 @@ SendEmailStatus::SendEmailStatus() :
     m_userOpenedHasBeenSet(false),
     m_userClickedHasBeenSet(false),
     m_userUnsubscribedHasBeenSet(false),
-    m_userComplaintedHasBeenSet(false)
+    m_userComplaintedHasBeenSet(false),
+    m_userComplainedHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
         m_userComplaintedHasBeenSet = true;
     }
 
+    if (value.HasMember("UserComplained") && !value["UserComplained"].IsNull())
+    {
+        if (!value["UserComplained"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.UserComplained` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_userComplained = value["UserComplained"].GetBool();
+        m_userComplainedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void SendEmailStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "UserComplainted";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_userComplainted, allocator);
+    }
+
+    if (m_userComplainedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserComplained";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userComplained, allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void SendEmailStatus::SetUserComplainted(const bool& _userComplainted)
 bool SendEmailStatus::UserComplaintedHasBeenSet() const
 {
     return m_userComplaintedHasBeenSet;
+}
+
+bool SendEmailStatus::GetUserComplained() const
+{
+    return m_userComplained;
+}
+
+void SendEmailStatus::SetUserComplained(const bool& _userComplained)
+{
+    m_userComplained = _userComplained;
+    m_userComplainedHasBeenSet = true;
+}
+
+bool SendEmailStatus::UserComplainedHasBeenSet() const
+{
+    return m_userComplainedHasBeenSet;
 }
 

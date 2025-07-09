@@ -25,7 +25,8 @@ SecurityPolicy::SecurityPolicy() :
     m_managedRulesHasBeenSet(false),
     m_httpDDoSProtectionHasBeenSet(false),
     m_rateLimitingRulesHasBeenSet(false),
-    m_exceptionRulesHasBeenSet(false)
+    m_exceptionRulesHasBeenSet(false),
+    m_botManagementHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,23 @@ CoreInternalOutcome SecurityPolicy::Deserialize(const rapidjson::Value &value)
         m_exceptionRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("BotManagement") && !value["BotManagement"].IsNull())
+    {
+        if (!value["BotManagement"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.BotManagement` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_botManagement.Deserialize(value["BotManagement"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_botManagementHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -169,6 +187,15 @@ void SecurityPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_exceptionRules.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_botManagementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotManagement";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_botManagement.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -252,5 +279,21 @@ void SecurityPolicy::SetExceptionRules(const ExceptionRules& _exceptionRules)
 bool SecurityPolicy::ExceptionRulesHasBeenSet() const
 {
     return m_exceptionRulesHasBeenSet;
+}
+
+BotManagement SecurityPolicy::GetBotManagement() const
+{
+    return m_botManagement;
+}
+
+void SecurityPolicy::SetBotManagement(const BotManagement& _botManagement)
+{
+    m_botManagement = _botManagement;
+    m_botManagementHasBeenSet = true;
+}
+
+bool SecurityPolicy::BotManagementHasBeenSet() const
+{
+    return m_botManagementHasBeenSet;
 }
 

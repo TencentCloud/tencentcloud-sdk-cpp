@@ -49,6 +49,8 @@
 #include <tencentcloud/tke/v20220501/model/ModifyNodePoolResponse.h>
 #include <tencentcloud/tke/v20220501/model/RebootMachinesRequest.h>
 #include <tencentcloud/tke/v20220501/model/RebootMachinesResponse.h>
+#include <tencentcloud/tke/v20220501/model/SetMachineLoginRequest.h>
+#include <tencentcloud/tke/v20220501/model/SetMachineLoginResponse.h>
 #include <tencentcloud/tke/v20220501/model/StartMachinesRequest.h>
 #include <tencentcloud/tke/v20220501/model/StartMachinesResponse.h>
 #include <tencentcloud/tke/v20220501/model/StopMachinesRequest.h>
@@ -106,6 +108,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RebootMachinesResponse> RebootMachinesOutcome;
                 typedef std::future<RebootMachinesOutcome> RebootMachinesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::RebootMachinesRequest&, RebootMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootMachinesAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetMachineLoginResponse> SetMachineLoginOutcome;
+                typedef std::future<SetMachineLoginOutcome> SetMachineLoginOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::SetMachineLoginRequest&, SetMachineLoginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetMachineLoginAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartMachinesResponse> StartMachinesOutcome;
                 typedef std::future<StartMachinesOutcome> StartMachinesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::StartMachinesRequest&, StartMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMachinesAsyncHandler;
@@ -231,6 +236,15 @@ namespace TencentCloud
                 RebootMachinesOutcome RebootMachines(const Model::RebootMachinesRequest &request);
                 void RebootMachinesAsync(const Model::RebootMachinesRequest& request, const RebootMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RebootMachinesOutcomeCallable RebootMachinesCallable(const Model::RebootMachinesRequest& request);
+
+                /**
+                 *设置是否开启节点登录
+                 * @param req SetMachineLoginRequest
+                 * @return SetMachineLoginOutcome
+                 */
+                SetMachineLoginOutcome SetMachineLogin(const Model::SetMachineLoginRequest &request);
+                void SetMachineLoginAsync(const Model::SetMachineLoginRequest& request, const SetMachineLoginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetMachineLoginOutcomeCallable SetMachineLoginCallable(const Model::SetMachineLoginRequest& request);
 
                 /**
                  *本接口 (StartMachines) 用于启动一个或多个原生节点实例。

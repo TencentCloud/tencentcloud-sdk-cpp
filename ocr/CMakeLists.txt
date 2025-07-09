@@ -218,6 +218,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/ArithmeticOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/NonTaxIncomeBill.h
   include/tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/GetOCRTokenRequest.h
   include/tencentcloud/ocr/v20181119/model/FinanBillSliceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnResponse.h
   include/tencentcloud/ocr/v20181119/model/ClassifyStoreNameResponse.h
@@ -318,7 +319,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceDetectRequest.h
   include/tencentcloud/ocr/v20181119/model/WaybillOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RecognizeStoreNameResponse.h
-  include/tencentcloud/ocr/v20181119/model/GetOCRTokenRequest.h
+  include/tencentcloud/ocr/v20181119/model/BusinessCertificateInfo.h
   include/tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewResponse.h
   include/tencentcloud/ocr/v20181119/model/MLIDCardOCRResponse.h
@@ -542,6 +543,7 @@ set(ocr_src
   src/v20181119/model/ArithmeticOCRRequest.cpp
   src/v20181119/model/NonTaxIncomeBill.cpp
   src/v20181119/model/VerifyOfdVatInvoiceOCRRequest.cpp
+  src/v20181119/model/GetOCRTokenRequest.cpp
   src/v20181119/model/FinanBillSliceOCRRequest.cpp
   src/v20181119/model/RecognizeGeneralCardWarnResponse.cpp
   src/v20181119/model/ClassifyStoreNameResponse.cpp
@@ -642,7 +644,7 @@ set(ocr_src
   src/v20181119/model/MixedInvoiceDetectRequest.cpp
   src/v20181119/model/WaybillOCRRequest.cpp
   src/v20181119/model/RecognizeStoreNameResponse.cpp
-  src/v20181119/model/GetOCRTokenRequest.cpp
+  src/v20181119/model/BusinessCertificateInfo.cpp
   src/v20181119/model/RideHailingTransportLicenseOCRRequest.cpp
   src/v20181119/model/VatInvoiceVerifyNewResponse.cpp
   src/v20181119/model/MLIDCardOCRResponse.cpp

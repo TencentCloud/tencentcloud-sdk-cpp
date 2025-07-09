@@ -1975,6 +1975,49 @@ LcicClient::DescribeUserOutcomeCallable LcicClient::DescribeUserCallable(const D
     return task->get_future();
 }
 
+LcicClient::DescribeUserDetailOutcome LcicClient::DescribeUserDetail(const DescribeUserDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserDetailResponse rsp = DescribeUserDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserDetailOutcome(rsp);
+        else
+            return DescribeUserDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserDetailOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeUserDetailAsync(const DescribeUserDetailRequest& request, const DescribeUserDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeUserDetailOutcomeCallable LcicClient::DescribeUserDetailCallable(const DescribeUserDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeWhiteBoardSnapshotOutcome LcicClient::DescribeWhiteBoardSnapshot(const DescribeWhiteBoardSnapshotRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWhiteBoardSnapshot");

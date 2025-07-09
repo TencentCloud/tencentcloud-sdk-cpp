@@ -154,6 +154,27 @@ namespace TencentCloud
                      */
                     bool EnablePeriodCompleteHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持营业类证件识别（包括营业执照和非营业执照的其他证件），默认为false
+                     * @return EnableBusinessCertificate 是否支持营业类证件识别（包括营业执照和非营业执照的其他证件），默认为false
+                     * 
+                     */
+                    bool GetEnableBusinessCertificate() const;
+
+                    /**
+                     * 设置是否支持营业类证件识别（包括营业执照和非营业执照的其他证件），默认为false
+                     * @param _enableBusinessCertificate 是否支持营业类证件识别（包括营业执照和非营业执照的其他证件），默认为false
+                     * 
+                     */
+                    void SetEnableBusinessCertificate(const bool& _enableBusinessCertificate);
+
+                    /**
+                     * 判断参数 EnableBusinessCertificate 是否已赋值
+                     * @return EnableBusinessCertificate 是否已赋值
+                     * 
+                     */
+                    bool EnableBusinessCertificateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -186,6 +207,12 @@ namespace TencentCloud
                      */
                     bool m_enablePeriodComplete;
                     bool m_enablePeriodCompleteHasBeenSet;
+
+                    /**
+                     * 是否支持营业类证件识别（包括营业执照和非营业执照的其他证件），默认为false
+                     */
+                    bool m_enableBusinessCertificate;
+                    bool m_enableBusinessCertificateHasBeenSet;
 
                 };
             }

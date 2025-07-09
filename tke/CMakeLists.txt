@@ -52,10 +52,12 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/Tag.h
   include/tencentcloud/tke/v20220501/model/MachineSetScaling.h
   include/tencentcloud/tke/v20220501/model/ModifyNodePoolRequest.h
+  include/tencentcloud/tke/v20220501/model/SuperNodeInfo.h
   include/tencentcloud/tke/v20220501/model/UpdateNativeNodePoolParam.h
   include/tencentcloud/tke/v20220501/model/Annotation.h
   include/tencentcloud/tke/v20220501/model/DescribeClusterInstancesRequest.h
   include/tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyResponse.h
+  include/tencentcloud/tke/v20220501/model/SetMachineLoginRequest.h
   include/tencentcloud/tke/v20220501/model/GPUParams.h
   include/tencentcloud/tke/v20220501/model/DeleteClusterMachinesRequest.h
   include/tencentcloud/tke/v20220501/model/LifecycleConfig.h
@@ -83,7 +85,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/HealthCheckTemplate.h
   include/tencentcloud/tke/v20220501/model/InternetAccessible.h
   include/tencentcloud/tke/v20220501/model/ModifyHealthCheckPolicyRequest.h
-  include/tencentcloud/tke/v20220501/model/SuperNodeInfo.h
+  include/tencentcloud/tke/v20220501/model/SetMachineLoginResponse.h
   include/tencentcloud/tke/v20220501/model/ManuallyAdded.h
   include/tencentcloud/tke/v20220501/model/ManagementConfig.h
   include/tencentcloud/tke/v20220501/model/ModifyHealthCheckPolicyResponse.h
@@ -768,10 +770,12 @@ set(tke_src
   src/v20220501/model/Tag.cpp
   src/v20220501/model/MachineSetScaling.cpp
   src/v20220501/model/ModifyNodePoolRequest.cpp
+  src/v20220501/model/SuperNodeInfo.cpp
   src/v20220501/model/UpdateNativeNodePoolParam.cpp
   src/v20220501/model/Annotation.cpp
   src/v20220501/model/DescribeClusterInstancesRequest.cpp
   src/v20220501/model/DeleteHealthCheckPolicyResponse.cpp
+  src/v20220501/model/SetMachineLoginRequest.cpp
   src/v20220501/model/GPUParams.cpp
   src/v20220501/model/DeleteClusterMachinesRequest.cpp
   src/v20220501/model/LifecycleConfig.cpp
@@ -799,7 +803,7 @@ set(tke_src
   src/v20220501/model/HealthCheckTemplate.cpp
   src/v20220501/model/InternetAccessible.cpp
   src/v20220501/model/ModifyHealthCheckPolicyRequest.cpp
-  src/v20220501/model/SuperNodeInfo.cpp
+  src/v20220501/model/SetMachineLoginResponse.cpp
   src/v20220501/model/ManuallyAdded.cpp
   src/v20220501/model/ManagementConfig.cpp
   src/v20220501/model/ModifyHealthCheckPolicyResponse.cpp

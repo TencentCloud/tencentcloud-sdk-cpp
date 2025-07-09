@@ -88,6 +88,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeLiveDomainPlayInfoListRequest.h
   include/tencentcloud/live/v20180801/model/CasterInputInfo.h
   include/tencentcloud/live/v20180801/model/DeleteLiveWatermarkRuleResponse.h
+  include/tencentcloud/live/v20180801/model/ChildTemplateInfo.h
   include/tencentcloud/live/v20180801/model/DeleteCasterMarkWordInfoResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLogDownloadListResponse.h
   include/tencentcloud/live/v20180801/model/ReleaseCasterRequest.h
@@ -588,6 +589,7 @@ set(live_src
   src/v20180801/model/DescribeLiveDomainPlayInfoListRequest.cpp
   src/v20180801/model/CasterInputInfo.cpp
   src/v20180801/model/DeleteLiveWatermarkRuleResponse.cpp
+  src/v20180801/model/ChildTemplateInfo.cpp
   src/v20180801/model/DeleteCasterMarkWordInfoResponse.cpp
   src/v20180801/model/DescribeLogDownloadListResponse.cpp
   src/v20180801/model/ReleaseCasterRequest.cpp

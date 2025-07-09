@@ -48,18 +48,26 @@ namespace TencentCloud
 
                     /**
                      * 获取模块名称，取值为：
-<li>waf：托管规则。</li>
+<li>managed-rule：托管规则 Id；</li>
+<li>managed-group：托管规则组；</li>
+<li>waf：待废弃，托管规则。</li>
                      * @return Module 模块名称，取值为：
-<li>waf：托管规则。</li>
+<li>managed-rule：托管规则 Id；</li>
+<li>managed-group：托管规则组；</li>
+<li>waf：待废弃，托管规则。</li>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名称，取值为：
-<li>waf：托管规则。</li>
+<li>managed-rule：托管规则 Id；</li>
+<li>managed-group：托管规则组；</li>
+<li>waf：待废弃，托管规则。</li>
                      * @param _module 模块名称，取值为：
-<li>waf：托管规则。</li>
+<li>managed-rule：托管规则 Id；</li>
+<li>managed-group：托管规则组；</li>
+<li>waf：待废弃，托管规则。</li>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -96,7 +104,9 @@ namespace TencentCloud
 
                     /**
                      * 模块名称，取值为：
-<li>waf：托管规则。</li>
+<li>managed-rule：托管规则 Id；</li>
+<li>managed-group：托管规则组；</li>
+<li>waf：待废弃，托管规则。</li>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;

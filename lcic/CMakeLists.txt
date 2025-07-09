@@ -119,6 +119,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/BatchUserInfo.h
   include/tencentcloud/lcic/v20220817/model/BatchAddGroupMemberRequest.h
   include/tencentcloud/lcic/v20220817/model/TransferItem.h
+  include/tencentcloud/lcic/v20220817/model/DescribeUserDetailResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeRecordStreamResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeCurrentMemberListRequest.h
@@ -158,7 +159,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DescribeDocumentsByRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginOriginIdResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeQuestionListResponse.h
-  include/tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotResponse.h
+  include/tencentcloud/lcic/v20220817/model/DescribeUserDetailRequest.h
   include/tencentcloud/lcic/v20220817/model/GetRoomsResponse.h
   include/tencentcloud/lcic/v20220817/model/SetMarqueeResponse.h
   include/tencentcloud/lcic/v20220817/model/QuestionInfo.h
@@ -173,6 +174,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/BatchDescribeDocumentResponse.h
   include/tencentcloud/lcic/v20220817/model/DeleteGroupResponse.h
   include/tencentcloud/lcic/v20220817/model/CreateRoomResponse.h
+  include/tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeSdkAppIdUsersRequest.h
   include/tencentcloud/lcic/v20220817/model/AddGroupMemberResponse.h
   include/tencentcloud/lcic/v20220817/model/MsgBody.h
@@ -296,6 +298,7 @@ set(lcic_src
   src/v20220817/model/BatchUserInfo.cpp
   src/v20220817/model/BatchAddGroupMemberRequest.cpp
   src/v20220817/model/TransferItem.cpp
+  src/v20220817/model/DescribeUserDetailResponse.cpp
   src/v20220817/model/DescribeRoomResponse.cpp
   src/v20220817/model/DescribeRecordStreamResponse.cpp
   src/v20220817/model/DescribeCurrentMemberListRequest.cpp
@@ -335,7 +338,7 @@ set(lcic_src
   src/v20220817/model/DescribeDocumentsByRoomResponse.cpp
   src/v20220817/model/LoginOriginIdResponse.cpp
   src/v20220817/model/DescribeQuestionListResponse.cpp
-  src/v20220817/model/DescribeWhiteBoardSnapshotResponse.cpp
+  src/v20220817/model/DescribeUserDetailRequest.cpp
   src/v20220817/model/GetRoomsResponse.cpp
   src/v20220817/model/SetMarqueeResponse.cpp
   src/v20220817/model/QuestionInfo.cpp
@@ -350,6 +353,7 @@ set(lcic_src
   src/v20220817/model/BatchDescribeDocumentResponse.cpp
   src/v20220817/model/DeleteGroupResponse.cpp
   src/v20220817/model/CreateRoomResponse.cpp
+  src/v20220817/model/DescribeWhiteBoardSnapshotResponse.cpp
   src/v20220817/model/DescribeSdkAppIdUsersRequest.cpp
   src/v20220817/model/AddGroupMemberResponse.cpp
   src/v20220817/model/MsgBody.cpp

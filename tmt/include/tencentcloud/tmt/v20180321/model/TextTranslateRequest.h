@@ -300,15 +300,15 @@ hi：印地语
                     bool UntranslatedTextHasBeenSet() const;
 
                     /**
-                     * 获取需要使用的术语库列表
-                     * @return TermRepoIDList 需要使用的术语库列表
+                     * 获取需要使用的术语库列表，通过 [术语库操作指南](https://cloud.tencent.com/document/product/551/107926) 自行创建术语库获取。
+                     * @return TermRepoIDList 需要使用的术语库列表，通过 [术语库操作指南](https://cloud.tencent.com/document/product/551/107926) 自行创建术语库获取。
                      * 
                      */
                     std::vector<std::string> GetTermRepoIDList() const;
 
                     /**
-                     * 设置需要使用的术语库列表
-                     * @param _termRepoIDList 需要使用的术语库列表
+                     * 设置需要使用的术语库列表，通过 [术语库操作指南](https://cloud.tencent.com/document/product/551/107926) 自行创建术语库获取。
+                     * @param _termRepoIDList 需要使用的术语库列表，通过 [术语库操作指南](https://cloud.tencent.com/document/product/551/107926) 自行创建术语库获取。
                      * 
                      */
                     void SetTermRepoIDList(const std::vector<std::string>& _termRepoIDList);
@@ -321,15 +321,15 @@ hi：印地语
                     bool TermRepoIDListHasBeenSet() const;
 
                     /**
-                     * 获取需要使用的例句库列表
-                     * @return SentRepoIDList 需要使用的例句库列表
+                     * 获取需要使用的例句库列表，通过 [例句库操作指南](https://cloud.tencent.com/document/product/551/107927) 自行创建例句库获取。
+                     * @return SentRepoIDList 需要使用的例句库列表，通过 [例句库操作指南](https://cloud.tencent.com/document/product/551/107927) 自行创建例句库获取。
                      * 
                      */
                     std::vector<std::string> GetSentRepoIDList() const;
 
                     /**
-                     * 设置需要使用的例句库列表
-                     * @param _sentRepoIDList 需要使用的例句库列表
+                     * 设置需要使用的例句库列表，通过 [例句库操作指南](https://cloud.tencent.com/document/product/551/107927) 自行创建例句库获取。
+                     * @param _sentRepoIDList 需要使用的例句库列表，通过 [例句库操作指南](https://cloud.tencent.com/document/product/551/107927) 自行创建例句库获取。
                      * 
                      */
                     void SetSentRepoIDList(const std::vector<std::string>& _sentRepoIDList);
@@ -412,13 +412,13 @@ hi：印地语
                     bool m_untranslatedTextHasBeenSet;
 
                     /**
-                     * 需要使用的术语库列表
+                     * 需要使用的术语库列表，通过 [术语库操作指南](https://cloud.tencent.com/document/product/551/107926) 自行创建术语库获取。
                      */
                     std::vector<std::string> m_termRepoIDList;
                     bool m_termRepoIDListHasBeenSet;
 
                     /**
-                     * 需要使用的例句库列表
+                     * 需要使用的例句库列表，通过 [例句库操作指南](https://cloud.tencent.com/document/product/551/107927) 自行创建例句库获取。
                      */
                     std::vector<std::string> m_sentRepoIDList;
                     bool m_sentRepoIDListHasBeenSet;

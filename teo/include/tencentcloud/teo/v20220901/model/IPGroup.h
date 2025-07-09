@@ -111,13 +111,34 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
+                     * 获取IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。
+                     * @return IPTotalCount IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。
+                     * 
+                     */
+                    int64_t GetIPTotalCount() const;
+
+                    /**
+                     * 设置IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。
+                     * @param _iPTotalCount IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。
+                     * 
+                     */
+                    void SetIPTotalCount(const int64_t& _iPTotalCount);
+
+                    /**
+                     * 判断参数 IPTotalCount 是否已赋值
+                     * @return IPTotalCount 是否已赋值
+                     * 
+                     */
+                    bool IPTotalCountHasBeenSet() const;
+
+                    /**
                      * 获取IP 定时过期信息。
-作为入参：用于为指定的 IP 地址或网段配置定时过期时间。
+作为入参，用于为指定的 IP 地址或网段配置定时过期时间。
 作为出参，包含以下两类信息：
 <li>当前未到期的定时过期信息：尚未触发的过期配置。</li>
 <li>一周内已到期的定时过期信息：已触发的过期配置。</li>
                      * @return IPExpireInfo IP 定时过期信息。
-作为入参：用于为指定的 IP 地址或网段配置定时过期时间。
+作为入参，用于为指定的 IP 地址或网段配置定时过期时间。
 作为出参，包含以下两类信息：
 <li>当前未到期的定时过期信息：尚未触发的过期配置。</li>
 <li>一周内已到期的定时过期信息：已触发的过期配置。</li>
@@ -127,12 +148,12 @@ namespace TencentCloud
 
                     /**
                      * 设置IP 定时过期信息。
-作为入参：用于为指定的 IP 地址或网段配置定时过期时间。
+作为入参，用于为指定的 IP 地址或网段配置定时过期时间。
 作为出参，包含以下两类信息：
 <li>当前未到期的定时过期信息：尚未触发的过期配置。</li>
 <li>一周内已到期的定时过期信息：已触发的过期配置。</li>
                      * @param _iPExpireInfo IP 定时过期信息。
-作为入参：用于为指定的 IP 地址或网段配置定时过期时间。
+作为入参，用于为指定的 IP 地址或网段配置定时过期时间。
 作为出参，包含以下两类信息：
 <li>当前未到期的定时过期信息：尚未触发的过期配置。</li>
 <li>一周内已到期的定时过期信息：已触发的过期配置。</li>
@@ -168,8 +189,14 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
+                     * IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。
+                     */
+                    int64_t m_iPTotalCount;
+                    bool m_iPTotalCountHasBeenSet;
+
+                    /**
                      * IP 定时过期信息。
-作为入参：用于为指定的 IP 地址或网段配置定时过期时间。
+作为入参，用于为指定的 IP 地址或网段配置定时过期时间。
 作为出参，包含以下两类信息：
 <li>当前未到期的定时过期信息：尚未触发的过期配置。</li>
 <li>一周内已到期的定时过期信息：已触发的过期配置。</li>

@@ -113,6 +113,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeSupervisorsResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeUserDetailRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeUserDetailResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotResponse.h>
 #include <tencentcloud/lcic/v20220817/model/EndRoomRequest.h>
@@ -312,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserDetailResponse> DescribeUserDetailOutcome;
+                typedef std::future<DescribeUserDetailOutcome> DescribeUserDetailOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeUserDetailRequest&, DescribeUserDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWhiteBoardSnapshotResponse> DescribeWhiteBoardSnapshotOutcome;
                 typedef std::future<DescribeWhiteBoardSnapshotOutcome> DescribeWhiteBoardSnapshotOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeWhiteBoardSnapshotRequest&, DescribeWhiteBoardSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteBoardSnapshotAsyncHandler;
@@ -816,6 +821,15 @@ namespace TencentCloud
                 DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest &request);
                 void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request);
+
+                /**
+                 *获取用户信息
+                 * @param req DescribeUserDetailRequest
+                 * @return DescribeUserDetailOutcome
+                 */
+                DescribeUserDetailOutcome DescribeUserDetail(const Model::DescribeUserDetailRequest &request);
+                void DescribeUserDetailAsync(const Model::DescribeUserDetailRequest& request, const DescribeUserDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserDetailOutcomeCallable DescribeUserDetailCallable(const Model::DescribeUserDetailRequest& request);
 
                 /**
                  *查询白板板书截图

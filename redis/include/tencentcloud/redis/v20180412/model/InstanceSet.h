@@ -361,6 +361,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * @return Type 实例类型。
 - 2：Redis 2.8 内存版（标准架构）。
 - 3：CKV 3.2 内存版（标准架构）。
@@ -374,6 +375,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * 
                      */
                     int64_t GetType() const;
@@ -392,6 +394,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * @param _type 实例类型。
 - 2：Redis 2.8 内存版（标准架构）。
 - 3：CKV 3.2 内存版（标准架构）。
@@ -405,6 +408,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -1119,14 +1123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的节点详细信息。
+只有多可用区实例会返回。
                      * @return NodeSet 实例的节点详细信息。
+只有多可用区实例会返回。
                      * 
                      */
                     std::vector<RedisNodeInfo> GetNodeSet() const;
 
                     /**
                      * 设置实例的节点详细信息。
+只有多可用区实例会返回。
                      * @param _nodeSet 实例的节点详细信息。
+只有多可用区实例会返回。
                      * 
                      */
                     void SetNodeSet(const std::vector<RedisNodeInfo>& _nodeSet);
@@ -1470,6 +1478,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
@@ -1676,6 +1685,7 @@ namespace TencentCloud
 
                     /**
                      * 实例的节点详细信息。
+只有多可用区实例会返回。
                      */
                     std::vector<RedisNodeInfo> m_nodeSet;
                     bool m_nodeSetHasBeenSet;

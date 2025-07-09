@@ -45,7 +45,8 @@ BizLicenseOCRResponse::BizLicenseOCRResponse() :
     m_titleHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
     m_registrationAuthorityHasBeenSet(false),
-    m_electronicHasBeenSet(false)
+    m_electronicHasBeenSet(false),
+    m_businessCertificateHasBeenSet(false)
 {
 }
 
@@ -309,6 +310,26 @@ CoreInternalOutcome BizLicenseOCRResponse::Deserialize(const string &payload)
         m_electronicHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BusinessCertificate") && !rsp["BusinessCertificate"].IsNull())
+    {
+        if (!rsp["BusinessCertificate"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BusinessCertificate` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["BusinessCertificate"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BusinessCertificateInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_businessCertificate.push_back(item);
+        }
+        m_businessCertificateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -503,6 +524,21 @@ string BizLicenseOCRResponse::ToJsonString() const
         string key = "Electronic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_electronic, allocator);
+    }
+
+    if (m_businessCertificateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessCertificate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_businessCertificate.begin(); itr != m_businessCertificate.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -735,6 +771,16 @@ bool BizLicenseOCRResponse::GetElectronic() const
 bool BizLicenseOCRResponse::ElectronicHasBeenSet() const
 {
     return m_electronicHasBeenSet;
+}
+
+vector<BusinessCertificateInfo> BizLicenseOCRResponse::GetBusinessCertificate() const
+{
+    return m_businessCertificate;
+}
+
+bool BizLicenseOCRResponse::BusinessCertificateHasBeenSet() const
+{
+    return m_businessCertificateHasBeenSet;
 }
 
 

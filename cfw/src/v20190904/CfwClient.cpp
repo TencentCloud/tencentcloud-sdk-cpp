@@ -2147,6 +2147,49 @@ CfwClient::DescribeIdsWhiteRuleOutcomeCallable CfwClient::DescribeIdsWhiteRuleCa
     return task->get_future();
 }
 
+CfwClient::DescribeLogStorageStatisticOutcome CfwClient::DescribeLogStorageStatistic(const DescribeLogStorageStatisticRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogStorageStatistic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogStorageStatisticResponse rsp = DescribeLogStorageStatisticResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogStorageStatisticOutcome(rsp);
+        else
+            return DescribeLogStorageStatisticOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogStorageStatisticOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeLogStorageStatisticAsync(const DescribeLogStorageStatisticRequest& request, const DescribeLogStorageStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogStorageStatistic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeLogStorageStatisticOutcomeCallable CfwClient::DescribeLogStorageStatisticCallable(const DescribeLogStorageStatisticRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogStorageStatisticOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogStorageStatistic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeLogsOutcome CfwClient::DescribeLogs(const DescribeLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLogs");

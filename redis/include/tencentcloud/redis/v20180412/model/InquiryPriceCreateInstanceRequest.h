@@ -53,6 +53,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * @return TypeId 实例类型。
 - 2：Redis 2.8 内存版（标准架构）。
 - 6：Redis 4.0 内存版（标准架构）。
@@ -63,6 +64,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * 
                      */
                     uint64_t GetTypeId() const;
@@ -78,6 +80,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * @param _typeId 实例类型。
 - 2：Redis 2.8 内存版（标准架构）。
 - 6：Redis 4.0 内存版（标准架构）。
@@ -88,6 +91,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * 
                      */
                     void SetTypeId(const uint64_t& _typeId);
@@ -354,6 +358,7 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      */
                     uint64_t m_typeId;
                     bool m_typeIdHasBeenSet;

@@ -158,6 +158,48 @@ namespace TencentCloud
                      */
                     bool FileNameHasBeenSet() const;
 
+                    /**
+                     * 获取文档的起始页码
+                     * @return FileStartPageNumber 文档的起始页码
+                     * 
+                     */
+                    int64_t GetFileStartPageNumber() const;
+
+                    /**
+                     * 设置文档的起始页码
+                     * @param _fileStartPageNumber 文档的起始页码
+                     * 
+                     */
+                    void SetFileStartPageNumber(const int64_t& _fileStartPageNumber);
+
+                    /**
+                     * 判断参数 FileStartPageNumber 是否已赋值
+                     * @return FileStartPageNumber 是否已赋值
+                     * 
+                     */
+                    bool FileStartPageNumberHasBeenSet() const;
+
+                    /**
+                     * 获取文档的结束页码
+                     * @return FileEndPageNumber 文档的结束页码
+                     * 
+                     */
+                    int64_t GetFileEndPageNumber() const;
+
+                    /**
+                     * 设置文档的结束页码
+                     * @param _fileEndPageNumber 文档的结束页码
+                     * 
+                     */
+                    void SetFileEndPageNumber(const int64_t& _fileEndPageNumber);
+
+                    /**
+                     * 判断参数 FileEndPageNumber 是否已赋值
+                     * @return FileEndPageNumber 是否已赋值
+                     * 
+                     */
+                    bool FileEndPageNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -190,6 +232,18 @@ namespace TencentCloud
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
+
+                    /**
+                     * 文档的起始页码
+                     */
+                    int64_t m_fileStartPageNumber;
+                    bool m_fileStartPageNumberHasBeenSet;
+
+                    /**
+                     * 文档的结束页码
+                     */
+                    int64_t m_fileEndPageNumber;
+                    bool m_fileEndPageNumberHasBeenSet;
 
                 };
             }

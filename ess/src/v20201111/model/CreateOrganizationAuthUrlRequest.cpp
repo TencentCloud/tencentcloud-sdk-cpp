@@ -43,7 +43,8 @@ CreateOrganizationAuthUrlRequest::CreateOrganizationAuthUrlRequest() :
     m_businessLicenseHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_initializationHasBeenSet(false),
-    m_powerOfAttorneysHasBeenSet(false)
+    m_powerOfAttorneysHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,14 @@ string CreateOrganizationAuthUrlRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -580,6 +589,22 @@ void CreateOrganizationAuthUrlRequest::SetPowerOfAttorneys(const vector<string>&
 bool CreateOrganizationAuthUrlRequest::PowerOfAttorneysHasBeenSet() const
 {
     return m_powerOfAttorneysHasBeenSet;
+}
+
+string CreateOrganizationAuthUrlRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void CreateOrganizationAuthUrlRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 
