@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/ZoneSetting.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
+#include <tencentcloud/emr/v20190103/model/SLInstance.h>
 
 
 namespace TencentCloud
@@ -285,6 +286,20 @@ namespace TencentCloud
                      */
                     bool NodeNumHasBeenSet() const;
 
+                    /**
+                     * 获取Serverless Instance infomation
+                     * @return SLInstance Serverless Instance infomation
+                     * 
+                     */
+                    std::vector<SLInstance> GetSLInstance() const;
+
+                    /**
+                     * 判断参数 SLInstance 是否已赋值
+                     * @return SLInstance 是否已赋值
+                     * 
+                     */
+                    bool SLInstanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -389,6 +404,12 @@ namespace TencentCloud
                      */
                     int64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
+
+                    /**
+                     * Serverless Instance infomation
+                     */
+                    std::vector<SLInstance> m_sLInstance;
+                    bool m_sLInstanceHasBeenSet;
 
                 };
             }

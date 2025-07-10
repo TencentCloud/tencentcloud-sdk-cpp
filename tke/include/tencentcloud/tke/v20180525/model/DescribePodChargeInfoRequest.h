@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群 ID。TKE 集群可通过 [DescribeClusters](https://cloud.tencent.com/document/api/457/31862) 接口返回值中的ClusterId获取。
+                     * @return ClusterId 集群 ID。TKE 集群可通过 [DescribeClusters](https://cloud.tencent.com/document/api/457/31862) 接口返回值中的ClusterId获取。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群 ID。TKE 集群可通过 [DescribeClusters](https://cloud.tencent.com/document/api/457/31862) 接口返回值中的ClusterId获取。
+                     * @param _clusterId 集群 ID。TKE 集群可通过 [DescribeClusters](https://cloud.tencent.com/document/api/457/31862) 接口返回值中的ClusterId获取。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Pod的Uid
-                     * @return Uids Pod的Uid
+                     * 获取Pod的Uid，可以通过Uids 来批量查询，也可以通过 Namespace 和 Name 来查询某个 Pod 的计费信息。Uids 不传时，Namespace 和 Name 必须同时传。
+                     * @return Uids Pod的Uid，可以通过Uids 来批量查询，也可以通过 Namespace 和 Name 来查询某个 Pod 的计费信息。Uids 不传时，Namespace 和 Name 必须同时传。
                      * 
                      */
                     std::vector<std::string> GetUids() const;
 
                     /**
-                     * 设置Pod的Uid
-                     * @param _uids Pod的Uid
+                     * 设置Pod的Uid，可以通过Uids 来批量查询，也可以通过 Namespace 和 Name 来查询某个 Pod 的计费信息。Uids 不传时，Namespace 和 Name 必须同时传。
+                     * @param _uids Pod的Uid，可以通过Uids 来批量查询，也可以通过 Namespace 和 Name 来查询某个 Pod 的计费信息。Uids 不传时，Namespace 和 Name 必须同时传。
                      * 
                      */
                     void SetUids(const std::vector<std::string>& _uids);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群 ID。TKE 集群可通过 [DescribeClusters](https://cloud.tencent.com/document/api/457/31862) 接口返回值中的ClusterId获取。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Pod的Uid
+                     * Pod的Uid，可以通过Uids 来批量查询，也可以通过 Namespace 和 Name 来查询某个 Pod 的计费信息。Uids 不传时，Namespace 和 Name 必须同时传。
                      */
                     std::vector<std::string> m_uids;
                     bool m_uidsHasBeenSet;

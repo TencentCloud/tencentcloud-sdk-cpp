@@ -31,7 +31,8 @@ DocSegment::DocSegment() :
     m_docIdHasBeenSet(false),
     m_docBizIdHasBeenSet(false),
     m_docUrlHasBeenSet(false),
-    m_webUrlHasBeenSet(false)
+    m_webUrlHasBeenSet(false),
+    m_pageInfosHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,19 @@ CoreInternalOutcome DocSegment::Deserialize(const rapidjson::Value &value)
         m_webUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("PageInfos") && !value["PageInfos"].IsNull())
+    {
+        if (!value["PageInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DocSegment.PageInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PageInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_pageInfos.push_back((*itr).GetUint64());
+        }
+        m_pageInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +257,19 @@ void DocSegment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "WebUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_webUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_pageInfos.begin(); itr != m_pageInfos.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 }
@@ -422,5 +449,21 @@ void DocSegment::SetWebUrl(const string& _webUrl)
 bool DocSegment::WebUrlHasBeenSet() const
 {
     return m_webUrlHasBeenSet;
+}
+
+vector<uint64_t> DocSegment::GetPageInfos() const
+{
+    return m_pageInfos;
+}
+
+void DocSegment::SetPageInfos(const vector<uint64_t>& _pageInfos)
+{
+    m_pageInfos = _pageInfos;
+    m_pageInfosHasBeenSet = true;
+}
+
+bool DocSegment::PageInfosHasBeenSet() const
+{
+    return m_pageInfosHasBeenSet;
 }
 

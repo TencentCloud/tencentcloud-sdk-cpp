@@ -1048,7 +1048,7 @@ namespace TencentCloud
                 CreateFenceBindOutcomeCallable CreateFenceBindCallable(const Model::CreateFenceBindRequest& request);
 
                 /**
-                 *开通免费云存服务
+                 *开通云存卡服务
                  * @param req CreateFreeCloudStorageRequest
                  * @return CreateFreeCloudStorageOutcome
                  */

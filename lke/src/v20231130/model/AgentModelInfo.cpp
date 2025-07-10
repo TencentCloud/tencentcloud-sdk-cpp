@@ -28,7 +28,8 @@ AgentModelInfo::AgentModelInfo() :
     m_isEnabledHasBeenSet(false),
     m_historyLimitHasBeenSet(false),
     m_modelContextWordsLimitHasBeenSet(false),
-    m_instructionsWordsLimitHasBeenSet(false)
+    m_instructionsWordsLimitHasBeenSet(false),
+    m_maxReasoningRoundHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome AgentModelInfo::Deserialize(const rapidjson::Value &value)
         m_instructionsWordsLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxReasoningRound") && !value["MaxReasoningRound"].IsNull())
+    {
+        if (!value["MaxReasoningRound"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentModelInfo.MaxReasoningRound` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxReasoningRound = value["MaxReasoningRound"].GetUint64();
+        m_maxReasoningRoundHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void AgentModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "InstructionsWordsLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instructionsWordsLimit, allocator);
+    }
+
+    if (m_maxReasoningRoundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxReasoningRound";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxReasoningRound, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void AgentModelInfo::SetInstructionsWordsLimit(const uint64_t& _instructionsWord
 bool AgentModelInfo::InstructionsWordsLimitHasBeenSet() const
 {
     return m_instructionsWordsLimitHasBeenSet;
+}
+
+uint64_t AgentModelInfo::GetMaxReasoningRound() const
+{
+    return m_maxReasoningRound;
+}
+
+void AgentModelInfo::SetMaxReasoningRound(const uint64_t& _maxReasoningRound)
+{
+    m_maxReasoningRound = _maxReasoningRound;
+    m_maxReasoningRoundHasBeenSet = true;
+}
+
+bool AgentModelInfo::MaxReasoningRoundHasBeenSet() const
+{
+    return m_maxReasoningRoundHasBeenSet;
 }
 

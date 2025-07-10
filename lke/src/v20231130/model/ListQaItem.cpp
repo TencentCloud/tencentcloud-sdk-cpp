@@ -43,7 +43,8 @@ ListQaItem::ListQaItem() :
     m_attrLabelsHasBeenSet(false),
     m_similarQuestionNumHasBeenSet(false),
     m_similarQuestionTipsHasBeenSet(false),
-    m_isDisabledHasBeenSet(false)
+    m_isDisabledHasBeenSet(false),
+    m_staffNameHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,16 @@ CoreInternalOutcome ListQaItem::Deserialize(const rapidjson::Value &value)
         m_isDisabledHasBeenSet = true;
     }
 
+    if (value.HasMember("StaffName") && !value["StaffName"].IsNull())
+    {
+        if (!value["StaffName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.StaffName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_staffName = string(value["StaffName"].GetString());
+        m_staffNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +499,14 @@ void ListQaItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "IsDisabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDisabled, allocator);
+    }
+
+    if (m_staffNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaffName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_staffName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -859,5 +878,21 @@ void ListQaItem::SetIsDisabled(const bool& _isDisabled)
 bool ListQaItem::IsDisabledHasBeenSet() const
 {
     return m_isDisabledHasBeenSet;
+}
+
+string ListQaItem::GetStaffName() const
+{
+    return m_staffName;
+}
+
+void ListQaItem::SetStaffName(const string& _staffName)
+{
+    m_staffName = _staffName;
+    m_staffNameHasBeenSet = true;
+}
+
+bool ListQaItem::StaffNameHasBeenSet() const
+{
+    return m_staffNameHasBeenSet;
 }
 

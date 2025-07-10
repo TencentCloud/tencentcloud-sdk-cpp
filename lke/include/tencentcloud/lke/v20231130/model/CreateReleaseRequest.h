@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool DescHasBeenSet() const;
 
+                    /**
+                     * 获取渠道业务ID
+                     * @return ChannelBizIds 渠道业务ID
+                     * 
+                     */
+                    std::vector<std::string> GetChannelBizIds() const;
+
+                    /**
+                     * 设置渠道业务ID
+                     * @param _channelBizIds 渠道业务ID
+                     * 
+                     */
+                    void SetChannelBizIds(const std::vector<std::string>& _channelBizIds);
+
+                    /**
+                     * 判断参数 ChannelBizIds 是否已赋值
+                     * @return ChannelBizIds 是否已赋值
+                     * 
+                     */
+                    bool ChannelBizIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
+
+                    /**
+                     * 渠道业务ID
+                     */
+                    std::vector<std::string> m_channelBizIds;
+                    bool m_channelBizIdsHasBeenSet;
 
                 };
             }

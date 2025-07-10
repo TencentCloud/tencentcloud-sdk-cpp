@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +14,28 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CORE_CONFIG_H_
-#define TENCENTCLOUD_CORE_CONFIG_H_
+#include <tencentcloud/tione/v20211111/model/PublicDataSourceFS.h>
 
-// version = (major << 16) + (minor << 8) + patch
-#define TENCENTCLOUD_VERSION ((3 << 16) + (0 << 8) + 8)
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Tione::V20211111::Model;
+using namespace std;
 
-#define TENCENTCLOUD_VERSION_STR "3.1.39"
+PublicDataSourceFS::PublicDataSourceFS()
+{
+}
 
-#endif // !TENCENTCLOUD_CORE_CONFIG_H_
+CoreInternalOutcome PublicDataSourceFS::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+
+    return CoreInternalOutcome(true);
+}
+
+void PublicDataSourceFS::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+}
+
+

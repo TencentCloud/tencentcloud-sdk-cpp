@@ -704,42 +704,42 @@ namespace TencentCloud
                     /**
                      * 获取数据卷信息-废弃，请用VolumeInfoList参数
                      * @return VolumeInfos 数据卷信息-废弃，请用VolumeInfoList参数
-                     * 
+                     * @deprecated
                      */
                     VolumeInfo GetVolumeInfos() const;
 
                     /**
                      * 设置数据卷信息-废弃，请用VolumeInfoList参数
                      * @param _volumeInfos 数据卷信息-废弃，请用VolumeInfoList参数
-                     * 
+                     * @deprecated
                      */
                     void SetVolumeInfos(const VolumeInfo& _volumeInfos);
 
                     /**
                      * 判断参数 VolumeInfos 是否已赋值
                      * @return VolumeInfos 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VolumeInfosHasBeenSet() const;
 
                     /**
                      * 获取数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
                      * @return VolumeMountInfos 数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
-                     * 
+                     * @deprecated
                      */
                     VolumeMountInfo GetVolumeMountInfos() const;
 
                     /**
                      * 设置数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
                      * @param _volumeMountInfos 数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
-                     * 
+                     * @deprecated
                      */
                     void SetVolumeMountInfos(const VolumeMountInfo& _volumeMountInfos);
 
                     /**
                      * 判断参数 VolumeMountInfos 是否已赋值
                      * @return VolumeMountInfos 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VolumeMountInfosHasBeenSet() const;
 

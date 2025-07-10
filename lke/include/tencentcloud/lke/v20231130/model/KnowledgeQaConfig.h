@@ -35,6 +35,7 @@
 #include <tencentcloud/lke/v20231130/model/IntentAchievement.h>
 #include <tencentcloud/lke/v20231130/model/AICallConfig.h>
 #include <tencentcloud/lke/v20231130/model/ShareKnowledgeBase.h>
+#include <tencentcloud/lke/v20231130/model/BackgroundImageConfig.h>
 
 
 namespace TencentCloud
@@ -501,6 +502,56 @@ namespace TencentCloud
                      */
                     bool ShareKnowledgeBasesHasBeenSet() const;
 
+                    /**
+                     * 获取背景图相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackgroundImage 背景图相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    BackgroundImageConfig GetBackgroundImage() const;
+
+                    /**
+                     * 设置背景图相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _backgroundImage 背景图相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBackgroundImage(const BackgroundImageConfig& _backgroundImage);
+
+                    /**
+                     * 判断参数 BackgroundImage 是否已赋值
+                     * @return BackgroundImage 是否已赋值
+                     * 
+                     */
+                    bool BackgroundImageHasBeenSet() const;
+
+                    /**
+                     * 获取开场问题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OpeningQuestions 开场问题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetOpeningQuestions() const;
+
+                    /**
+                     * 设置开场问题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _openingQuestions 开场问题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOpeningQuestions(const std::vector<std::string>& _openingQuestions);
+
+                    /**
+                     * 判断参数 OpeningQuestions 是否已赋值
+                     * @return OpeningQuestions 是否已赋值
+                     * 
+                     */
+                    bool OpeningQuestionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -625,6 +676,20 @@ namespace TencentCloud
                      */
                     std::vector<ShareKnowledgeBase> m_shareKnowledgeBases;
                     bool m_shareKnowledgeBasesHasBeenSet;
+
+                    /**
+                     * 背景图相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BackgroundImageConfig m_backgroundImage;
+                    bool m_backgroundImageHasBeenSet;
+
+                    /**
+                     * 开场问题
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_openingQuestions;
+                    bool m_openingQuestionsHasBeenSet;
 
                 };
             }

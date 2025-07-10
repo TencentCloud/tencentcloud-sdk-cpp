@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取工作负载类型
-                     * @return Kind 工作负载类型
+                     * 获取工作负载类型，如 deployment、statefulset和pod等。
+                     * @return Kind 工作负载类型，如 deployment、statefulset和pod等。
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置工作负载类型
-                     * @param _kind 工作负载类型
+                     * 设置工作负载类型，如 deployment、statefulset和pod等。
+                     * @param _kind 工作负载类型，如 deployment、statefulset和pod等。
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -310,7 +310,7 @@ namespace TencentCloud
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 工作负载类型
+                     * 工作负载类型，如 deployment、statefulset和pod等。
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;

@@ -92,21 +92,21 @@ namespace TencentCloud
                     /**
                      * 获取守护线程数 拼写错误，废弃
                      * @return DeamonThreadCount 守护线程数 拼写错误，废弃
-                     * 
+                     * @deprecated
                      */
                     std::vector<CurvePoint> GetDeamonThreadCount() const;
 
                     /**
                      * 设置守护线程数 拼写错误，废弃
                      * @param _deamonThreadCount 守护线程数 拼写错误，废弃
-                     * 
+                     * @deprecated
                      */
                     void SetDeamonThreadCount(const std::vector<CurvePoint>& _deamonThreadCount);
 
                     /**
                      * 判断参数 DeamonThreadCount 是否已赋值
                      * @return DeamonThreadCount 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DeamonThreadCountHasBeenSet() const;
 

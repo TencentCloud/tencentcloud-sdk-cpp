@@ -36,7 +36,9 @@ KnowledgeQaConfig::KnowledgeQaConfig() :
     m_intentAchievementsHasBeenSet(false),
     m_imageTextRetrievalHasBeenSet(false),
     m_aiCallHasBeenSet(false),
-    m_shareKnowledgeBasesHasBeenSet(false)
+    m_shareKnowledgeBasesHasBeenSet(false),
+    m_backgroundImageHasBeenSet(false),
+    m_openingQuestionsHasBeenSet(false)
 {
 }
 
@@ -301,6 +303,36 @@ CoreInternalOutcome KnowledgeQaConfig::Deserialize(const rapidjson::Value &value
         m_shareKnowledgeBasesHasBeenSet = true;
     }
 
+    if (value.HasMember("BackgroundImage") && !value["BackgroundImage"].IsNull())
+    {
+        if (!value["BackgroundImage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.BackgroundImage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_backgroundImage.Deserialize(value["BackgroundImage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_backgroundImageHasBeenSet = true;
+    }
+
+    if (value.HasMember("OpeningQuestions") && !value["OpeningQuestions"].IsNull())
+    {
+        if (!value["OpeningQuestions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.OpeningQuestions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OpeningQuestions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_openingQuestions.push_back((*itr).GetString());
+        }
+        m_openingQuestionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +501,28 @@ void KnowledgeQaConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_backgroundImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackgroundImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_backgroundImage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_openingQuestionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpeningQuestions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_openingQuestions.begin(); itr != m_openingQuestions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -729,5 +783,37 @@ void KnowledgeQaConfig::SetShareKnowledgeBases(const vector<ShareKnowledgeBase>&
 bool KnowledgeQaConfig::ShareKnowledgeBasesHasBeenSet() const
 {
     return m_shareKnowledgeBasesHasBeenSet;
+}
+
+BackgroundImageConfig KnowledgeQaConfig::GetBackgroundImage() const
+{
+    return m_backgroundImage;
+}
+
+void KnowledgeQaConfig::SetBackgroundImage(const BackgroundImageConfig& _backgroundImage)
+{
+    m_backgroundImage = _backgroundImage;
+    m_backgroundImageHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::BackgroundImageHasBeenSet() const
+{
+    return m_backgroundImageHasBeenSet;
+}
+
+vector<string> KnowledgeQaConfig::GetOpeningQuestions() const
+{
+    return m_openingQuestions;
+}
+
+void KnowledgeQaConfig::SetOpeningQuestions(const vector<string>& _openingQuestions)
+{
+    m_openingQuestions = _openingQuestions;
+    m_openingQuestionsHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::OpeningQuestionsHasBeenSet() const
+{
+    return m_openingQuestionsHasBeenSet;
 }
 

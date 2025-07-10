@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例计费模式，0表示后付费，即按量计费。
-                     * @return PayMode 实例计费模式，0表示后付费，即按量计费。
+                     * 获取实例计费模式，0表示后付费，即按量计费，1表示预付费，即包年包月。
+                     * @return PayMode 实例计费模式，0表示后付费，即按量计费，1表示预付费，即包年包月。
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置实例计费模式，0表示后付费，即按量计费。
-                     * @param _payMode 实例计费模式，0表示后付费，即按量计费。
+                     * 设置实例计费模式，0表示后付费，即按量计费，1表示预付费，即包年包月。
+                     * @param _payMode 实例计费模式，0表示后付费，即按量计费，1表示预付费，即包年包月。
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取实例存储类型，填写CLOUD_HSSD，表示性能云存储。
-                     * @return DiskType 实例存储类型，填写CLOUD_HSSD，表示性能云存储。
+                     * 获取实例存储类型，CLOUD_HSSD表示性能云存储， CLOUD_BSSD表示标准云存储。
+                     * @return DiskType 实例存储类型，CLOUD_HSSD表示性能云存储， CLOUD_BSSD表示标准云存储。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置实例存储类型，填写CLOUD_HSSD，表示性能云存储。
-                     * @param _diskType 实例存储类型，填写CLOUD_HSSD，表示性能云存储。
+                     * 设置实例存储类型，CLOUD_HSSD表示性能云存储， CLOUD_BSSD表示标准云存储。
+                     * @param _diskType 实例存储类型，CLOUD_HSSD表示性能云存储， CLOUD_BSSD表示标准云存储。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -234,6 +234,27 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取部署模式
+                     * @return DeploymentMode 部署模式
+                     * 
+                     */
+                    std::string GetDeploymentMode() const;
+
+                    /**
+                     * 设置部署模式
+                     * @param _deploymentMode 部署模式
+                     * 
+                     */
+                    void SetDeploymentMode(const std::string& _deploymentMode);
+
+                    /**
+                     * 判断参数 DeploymentMode 是否已赋值
+                     * @return DeploymentMode 是否已赋值
+                     * 
+                     */
+                    bool DeploymentModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -243,13 +264,13 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例计费模式，0表示后付费，即按量计费。
+                     * 实例计费模式，0表示后付费，即按量计费，1表示预付费，即包年包月。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 实例存储类型，填写CLOUD_HSSD，表示性能云存储。
+                     * 实例存储类型，CLOUD_HSSD表示性能云存储， CLOUD_BSSD表示标准云存储。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
@@ -289,6 +310,12 @@ namespace TencentCloud
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * 部署模式
+                     */
+                    std::string m_deploymentMode;
+                    bool m_deploymentModeHasBeenSet;
 
                 };
             }

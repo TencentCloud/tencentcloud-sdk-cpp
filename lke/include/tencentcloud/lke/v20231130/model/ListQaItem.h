@@ -530,6 +530,27 @@ namespace TencentCloud
                      */
                     bool IsDisabledHasBeenSet() const;
 
+                    /**
+                     * 获取员工名称
+                     * @return StaffName 员工名称
+                     * 
+                     */
+                    std::string GetStaffName() const;
+
+                    /**
+                     * 设置员工名称
+                     * @param _staffName 员工名称
+                     * 
+                     */
+                    void SetStaffName(const std::string& _staffName);
+
+                    /**
+                     * 判断参数 StaffName 是否已赋值
+                     * @return StaffName 是否已赋值
+                     * 
+                     */
+                    bool StaffNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -669,6 +690,12 @@ namespace TencentCloud
                      */
                     bool m_isDisabled;
                     bool m_isDisabledHasBeenSet;
+
+                    /**
+                     * 员工名称
+                     */
+                    std::string m_staffName;
+                    bool m_staffNameHasBeenSet;
 
                 };
             }

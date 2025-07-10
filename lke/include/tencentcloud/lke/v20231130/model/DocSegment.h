@@ -317,6 +317,27 @@ namespace TencentCloud
                      */
                     bool WebUrlHasBeenSet() const;
 
+                    /**
+                     * 获取页码信息
+                     * @return PageInfos 页码信息
+                     * 
+                     */
+                    std::vector<uint64_t> GetPageInfos() const;
+
+                    /**
+                     * 设置页码信息
+                     * @param _pageInfos 页码信息
+                     * 
+                     */
+                    void SetPageInfos(const std::vector<uint64_t>& _pageInfos);
+
+                    /**
+                     * 判断参数 PageInfos 是否已赋值
+                     * @return PageInfos 是否已赋值
+                     * 
+                     */
+                    bool PageInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,6 +415,12 @@ namespace TencentCloud
                      */
                     std::string m_webUrl;
                     bool m_webUrlHasBeenSet;
+
+                    /**
+                     * 页码信息
+                     */
+                    std::vector<uint64_t> m_pageInfos;
+                    bool m_pageInfosHasBeenSet;
 
                 };
             }

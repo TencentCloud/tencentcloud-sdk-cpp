@@ -101,6 +101,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/UploadAttributeLabelRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeAppAgentListRequest.h
   include/tencentcloud/lke/v20231130/model/CreateQAResponse.h
+  include/tencentcloud/lke/v20231130/model/BackgroundImageConfig.h
   include/tencentcloud/lke/v20231130/model/DescribeReleaseInfoResponse.h
   include/tencentcloud/lke/v20231130/model/ModifyRejectedQuestionRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeWorkflowRunResponse.h
@@ -145,6 +146,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ApiVarAttrInfo.h
   include/tencentcloud/lke/v20231130/model/AgentThought.h
   include/tencentcloud/lke/v20231130/model/CheckAttributeLabelReferRequest.h
+  include/tencentcloud/lke/v20231130/model/AgentKnowledge.h
   include/tencentcloud/lke/v20231130/model/UpdateVarResponse.h
   include/tencentcloud/lke/v20231130/model/ConvertDocumentRequest.h
   include/tencentcloud/lke/v20231130/model/ListWorkflowRunsRequest.h
@@ -461,6 +463,7 @@ set(lke_src
   src/v20231130/model/UploadAttributeLabelRequest.cpp
   src/v20231130/model/DescribeAppAgentListRequest.cpp
   src/v20231130/model/CreateQAResponse.cpp
+  src/v20231130/model/BackgroundImageConfig.cpp
   src/v20231130/model/DescribeReleaseInfoResponse.cpp
   src/v20231130/model/ModifyRejectedQuestionRequest.cpp
   src/v20231130/model/DescribeWorkflowRunResponse.cpp
@@ -505,6 +508,7 @@ set(lke_src
   src/v20231130/model/ApiVarAttrInfo.cpp
   src/v20231130/model/AgentThought.cpp
   src/v20231130/model/CheckAttributeLabelReferRequest.cpp
+  src/v20231130/model/AgentKnowledge.cpp
   src/v20231130/model/UpdateVarResponse.cpp
   src/v20231130/model/ConvertDocumentRequest.cpp
   src/v20231130/model/ListWorkflowRunsRequest.cpp

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/AgentKnowledgeFilterDocAndAnswer.h>
 #include <tencentcloud/lke/v20231130/model/AgentKnowledgeFilterTag.h>
+#include <tencentcloud/lke/v20231130/model/AgentKnowledge.h>
 
 
 namespace TencentCloud
@@ -111,6 +112,48 @@ namespace TencentCloud
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取知识库列表
+                     * @return KnowledgeList 知识库列表
+                     * 
+                     */
+                    std::vector<AgentKnowledge> GetKnowledgeList() const;
+
+                    /**
+                     * 设置知识库列表
+                     * @param _knowledgeList 知识库列表
+                     * 
+                     */
+                    void SetKnowledgeList(const std::vector<AgentKnowledge>& _knowledgeList);
+
+                    /**
+                     * 判断参数 KnowledgeList 是否已赋值
+                     * @return KnowledgeList 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeListHasBeenSet() const;
+
+                    /**
+                     * 获取是否检索全部知识
+                     * @return AllKnowledge 是否检索全部知识
+                     * 
+                     */
+                    bool GetAllKnowledge() const;
+
+                    /**
+                     * 设置是否检索全部知识
+                     * @param _allKnowledge 是否检索全部知识
+                     * 
+                     */
+                    void SetAllKnowledge(const bool& _allKnowledge);
+
+                    /**
+                     * 判断参数 AllKnowledge 是否已赋值
+                     * @return AllKnowledge 是否已赋值
+                     * 
+                     */
+                    bool AllKnowledgeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -130,6 +173,18 @@ namespace TencentCloud
                      */
                     AgentKnowledgeFilterTag m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * 知识库列表
+                     */
+                    std::vector<AgentKnowledge> m_knowledgeList;
+                    bool m_knowledgeListHasBeenSet;
+
+                    /**
+                     * 是否检索全部知识
+                     */
+                    bool m_allKnowledge;
+                    bool m_allKnowledgeHasBeenSet;
 
                 };
             }

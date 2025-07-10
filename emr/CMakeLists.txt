@@ -147,6 +147,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeHiveQueriesResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h
   include/tencentcloud/emr/v20190103/model/CreateSLInstanceResponse.h
+  include/tencentcloud/emr/v20190103/model/SLInstance.h
   include/tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnApplicationsRequest.h
   include/tencentcloud/emr/v20190103/model/DiskGroup.h
@@ -505,6 +506,7 @@ set(emr_src
   src/v20190103/model/DescribeHiveQueriesResponse.cpp
   src/v20190103/model/DescribeInstanceRenewNodesResponse.cpp
   src/v20190103/model/CreateSLInstanceResponse.cpp
+  src/v20190103/model/SLInstance.cpp
   src/v20190103/model/DescribeClusterNodesResponse.cpp
   src/v20190103/model/DescribeYarnApplicationsRequest.cpp
   src/v20190103/model/DiskGroup.cpp

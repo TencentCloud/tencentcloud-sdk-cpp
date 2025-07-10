@@ -28,7 +28,8 @@ GetVarListRequest::GetVarListRequest() :
     m_keywordHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_varTypeHasBeenSet(false)
+    m_varTypeHasBeenSet(false),
+    m_needInternalVarHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string GetVarListRequest::ToJsonString() const
         string key = "VarType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_varType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needInternalVarHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedInternalVar";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needInternalVar, allocator);
     }
 
 
@@ -194,6 +203,22 @@ void GetVarListRequest::SetVarType(const string& _varType)
 bool GetVarListRequest::VarTypeHasBeenSet() const
 {
     return m_varTypeHasBeenSet;
+}
+
+bool GetVarListRequest::GetNeedInternalVar() const
+{
+    return m_needInternalVar;
+}
+
+void GetVarListRequest::SetNeedInternalVar(const bool& _needInternalVar)
+{
+    m_needInternalVar = _needInternalVar;
+    m_needInternalVarHasBeenSet = true;
+}
+
+bool GetVarListRequest::NeedInternalVarHasBeenSet() const
+{
+    return m_needInternalVarHasBeenSet;
 }
 
 

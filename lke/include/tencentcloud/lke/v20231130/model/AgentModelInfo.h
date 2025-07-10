@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool InstructionsWordsLimitHasBeenSet() const;
 
+                    /**
+                     * 获取单次会话最大推理轮数
+                     * @return MaxReasoningRound 单次会话最大推理轮数
+                     * 
+                     */
+                    uint64_t GetMaxReasoningRound() const;
+
+                    /**
+                     * 设置单次会话最大推理轮数
+                     * @param _maxReasoningRound 单次会话最大推理轮数
+                     * 
+                     */
+                    void SetMaxReasoningRound(const uint64_t& _maxReasoningRound);
+
+                    /**
+                     * 判断参数 MaxReasoningRound 是否已赋值
+                     * @return MaxReasoningRound 是否已赋值
+                     * 
+                     */
+                    bool MaxReasoningRoundHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     uint64_t m_instructionsWordsLimit;
                     bool m_instructionsWordsLimitHasBeenSet;
+
+                    /**
+                     * 单次会话最大推理轮数
+                     */
+                    uint64_t m_maxReasoningRound;
+                    bool m_maxReasoningRoundHasBeenSet;
 
                 };
             }

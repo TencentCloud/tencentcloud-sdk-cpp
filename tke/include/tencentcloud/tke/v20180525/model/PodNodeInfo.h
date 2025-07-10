@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取 节点名称
-                     * @return NodeName  节点名称
+                     * 获取节点 ID
+                     * @return NodeName 节点 ID
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置 节点名称
-                     * @param _nodeName  节点名称
+                     * 设置节点 ID
+                     * @param _nodeName 节点 ID
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     *  节点名称
+                     * 节点 ID
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;

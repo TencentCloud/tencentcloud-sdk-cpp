@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取预留券名称。
-                     * @return InstanceName 预留券名称。
+                     * 获取预留券名称，名称不得超过60个字符。
+                     * @return InstanceName 预留券名称，名称不得超过60个字符。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置预留券名称。
-                     * @param _instanceName 预留券名称。
+                     * 设置预留券名称，名称不得超过60个字符。
+                     * @param _instanceName 预留券名称，名称不得超过60个字符。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -170,7 +170,7 @@ namespace TencentCloud
                     bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
-                     * 预留券名称。
+                     * 预留券名称，名称不得超过60个字符。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

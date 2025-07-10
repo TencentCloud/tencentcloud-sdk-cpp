@@ -40,7 +40,8 @@ DescribeSLInstanceResponse::DescribeSLInstanceResponse() :
     m_createTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
-    m_nodeNumHasBeenSet(false)
+    m_nodeNumHasBeenSet(false),
+    m_sLInstanceHasBeenSet(false)
 {
 }
 
@@ -268,6 +269,26 @@ CoreInternalOutcome DescribeSLInstanceResponse::Deserialize(const string &payloa
         m_nodeNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SLInstance") && !rsp["SLInstance"].IsNull())
+    {
+        if (!rsp["SLInstance"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SLInstance` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SLInstance"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SLInstance item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sLInstance.push_back(item);
+        }
+        m_sLInstanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -426,6 +447,21 @@ string DescribeSLInstanceResponse::ToJsonString() const
         string key = "NodeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeNum, allocator);
+    }
+
+    if (m_sLInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SLInstance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sLInstance.begin(); itr != m_sLInstance.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -608,6 +644,16 @@ int64_t DescribeSLInstanceResponse::GetNodeNum() const
 bool DescribeSLInstanceResponse::NodeNumHasBeenSet() const
 {
     return m_nodeNumHasBeenSet;
+}
+
+vector<SLInstance> DescribeSLInstanceResponse::GetSLInstance() const
+{
+    return m_sLInstance;
+}
+
+bool DescribeSLInstanceResponse::SLInstanceHasBeenSet() const
+{
+    return m_sLInstanceHasBeenSet;
 }
 
 

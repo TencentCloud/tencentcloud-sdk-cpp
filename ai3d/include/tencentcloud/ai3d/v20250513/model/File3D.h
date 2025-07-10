@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取3D文件的格式。取值范围：OBJ
-                     * @return Type 3D文件的格式。取值范围：OBJ
+                     * 获取文件格式
+                     * @return Type 文件格式
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置3D文件的格式。取值范围：OBJ
-                     * @param _type 3D文件的格式。取值范围：OBJ
+                     * 设置文件格式
+                     * @param _type 文件格式
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -112,7 +112,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 3D文件的格式。取值范围：OBJ
+                     * 文件格式
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

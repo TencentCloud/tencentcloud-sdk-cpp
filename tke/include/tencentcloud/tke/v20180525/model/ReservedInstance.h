@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取 上个周期预留券的抵扣状态，Deduct、NotDeduct
-                     * @return DeductStatus  上个周期预留券的抵扣状态，Deduct、NotDeduct
+                     * 获取 上个周期预留券的抵扣状态，Deduct：已抵扣、NotDeduct：未抵扣
+                     * @return DeductStatus  上个周期预留券的抵扣状态，Deduct：已抵扣、NotDeduct：未抵扣
                      * 
                      */
                     std::string GetDeductStatus() const;
 
                     /**
-                     * 设置 上个周期预留券的抵扣状态，Deduct、NotDeduct
-                     * @param _deductStatus  上个周期预留券的抵扣状态，Deduct、NotDeduct
+                     * 设置 上个周期预留券的抵扣状态，Deduct：已抵扣、NotDeduct：未抵扣
+                     * @param _deductStatus  上个周期预留券的抵扣状态，Deduct：已抵扣、NotDeduct：未抵扣
                      * 
                      */
                     void SetDeductStatus(const std::string& _deductStatus);
@@ -475,7 +475,7 @@ namespace TencentCloud
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     *  上个周期预留券的抵扣状态，Deduct、NotDeduct
+                     *  上个周期预留券的抵扣状态，Deduct：已抵扣、NotDeduct：未抵扣
                      */
                     std::string m_deductStatus;
                     bool m_deductStatusHasBeenSet;

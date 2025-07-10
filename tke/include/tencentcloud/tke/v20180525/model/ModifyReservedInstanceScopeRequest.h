@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预留券唯一 ID
-                     * @return ReservedInstanceIds 预留券唯一 ID
+                     * 获取预留券实例ID。可通过 [DescribeReservedInstances](https://cloud.tencent.com/document/product/457/99162) 接口返回值中的ReservedInstanceId获取。
+                     * @return ReservedInstanceIds 预留券实例ID。可通过 [DescribeReservedInstances](https://cloud.tencent.com/document/product/457/99162) 接口返回值中的ReservedInstanceId获取。
                      * 
                      */
                     std::vector<std::string> GetReservedInstanceIds() const;
 
                     /**
-                     * 设置预留券唯一 ID
-                     * @param _reservedInstanceIds 预留券唯一 ID
+                     * 设置预留券实例ID。可通过 [DescribeReservedInstances](https://cloud.tencent.com/document/product/457/99162) 接口返回值中的ReservedInstanceId获取。
+                     * @param _reservedInstanceIds 预留券实例ID。可通过 [DescribeReservedInstances](https://cloud.tencent.com/document/product/457/99162) 接口返回值中的ReservedInstanceId获取。
                      * 
                      */
                     void SetReservedInstanceIds(const std::vector<std::string>& _reservedInstanceIds);
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 预留券唯一 ID
+                     * 预留券实例ID。可通过 [DescribeReservedInstances](https://cloud.tencent.com/document/product/457/99162) 接口返回值中的ReservedInstanceId获取。
                      */
                     std::vector<std::string> m_reservedInstanceIds;
                     bool m_reservedInstanceIdsHasBeenSet;

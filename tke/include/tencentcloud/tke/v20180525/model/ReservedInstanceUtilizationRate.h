@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CPUHasBeenSet() const;
 
                     /**
-                     * 获取内存
-                     * @return Memory 内存
+                     * 获取内存，单位：GiB
+                     * @return Memory 内存，单位：GiB
                      * 
                      */
                     double GetMemory() const;
 
                     /**
-                     * 设置内存
-                     * @param _memory 内存
+                     * 设置内存，单位：GiB
+                     * @param _memory 内存，单位：GiB
                      * 
                      */
                     void SetMemory(const double& _memory);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取 预留券类型
-                     * @return Type  预留券类型
+                     * 获取 预留券类型, common：CPU通用，amd：AMD专用，windows-common: Windows容器 CPU通用，windows-amd：Windows容器 AMD专用，sa4，sa5，s7，s8，t4，v100，l20，l40，a10\*gnv4，a10\*gnv4v，a10\*pnv4
+                     * @return Type  预留券类型, common：CPU通用，amd：AMD专用，windows-common: Windows容器 CPU通用，windows-amd：Windows容器 AMD专用，sa4，sa5，s7，s8，t4，v100，l20，l40，a10\*gnv4，a10\*gnv4v，a10\*pnv4
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置 预留券类型
-                     * @param _type  预留券类型
+                     * 设置 预留券类型, common：CPU通用，amd：AMD专用，windows-common: Windows容器 CPU通用，windows-amd：Windows容器 AMD专用，sa4，sa5，s7，s8，t4，v100，l20，l40，a10\*gnv4，a10\*gnv4v，a10\*pnv4
+                     * @param _type  预留券类型, common：CPU通用，amd：AMD专用，windows-common: Windows容器 CPU通用，windows-amd：Windows容器 AMD专用，sa4，sa5，s7，s8，t4，v100，l20，l40，a10\*gnv4，a10\*gnv4v，a10\*pnv4
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点名称
-                     * @return NodeName 节点名称
+                     * 获取节点 ID
+                     * @return NodeName 节点 ID
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置节点名称
-                     * @param _nodeName 节点名称
+                     * 设置节点 ID
+                     * @param _nodeName 节点 ID
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -277,13 +277,13 @@ namespace TencentCloud
                     bool m_cPUHasBeenSet;
 
                     /**
-                     * 内存
+                     * 内存，单位：GiB
                      */
                     double m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     *  预留券类型
+                     *  预留券类型, common：CPU通用，amd：AMD专用，windows-common: Windows容器 CPU通用，windows-amd：Windows容器 AMD专用，sa4，sa5，s7，s8，t4，v100，l20，l40，a10\*gnv4，a10\*gnv4v，a10\*pnv4
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -307,7 +307,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点名称
+                     * 节点 ID
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;

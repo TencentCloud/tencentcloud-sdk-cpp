@@ -37,7 +37,8 @@ DescribeAppResponse::DescribeAppResponse() :
     m_appKeyHasBeenSet(false),
     m_appStatusHasBeenSet(false),
     m_appStatusDescHasBeenSet(false),
-    m_isCopyingHasBeenSet(false)
+    m_isCopyingHasBeenSet(false),
+    m_agentTypeHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,16 @@ CoreInternalOutcome DescribeAppResponse::Deserialize(const string &payload)
         m_isCopyingHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AgentType") && !rsp["AgentType"].IsNull())
+    {
+        if (!rsp["AgentType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentType = string(rsp["AgentType"].GetString());
+        m_agentTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -351,6 +362,14 @@ string DescribeAppResponse::ToJsonString() const
         string key = "IsCopying";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCopying, allocator);
+    }
+
+    if (m_agentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -503,6 +522,16 @@ bool DescribeAppResponse::GetIsCopying() const
 bool DescribeAppResponse::IsCopyingHasBeenSet() const
 {
     return m_isCopyingHasBeenSet;
+}
+
+string DescribeAppResponse::GetAgentType() const
+{
+    return m_agentType;
+}
+
+bool DescribeAppResponse::AgentTypeHasBeenSet() const
+{
+    return m_agentTypeHasBeenSet;
 }
 
 

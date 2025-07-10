@@ -341,6 +341,27 @@ namespace TencentCloud
                      */
                     bool SampleHasBeenSet() const;
 
+                    /**
+                     * 获取检测方法
+                     * @return Method 检测方法
+                     * 
+                     */
+                    std::string GetMethod() const;
+
+                    /**
+                     * 设置检测方法
+                     * @param _method 检测方法
+                     * 
+                     */
+                    void SetMethod(const std::string& _method);
+
+                    /**
+                     * 判断参数 Method 是否已赋值
+                     * @return Method 是否已赋值
+                     * 
+                     */
+                    bool MethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,6 +447,12 @@ namespace TencentCloud
                      */
                     std::string m_sample;
                     bool m_sampleHasBeenSet;
+
+                    /**
+                     * 检测方法
+                     */
+                    std::string m_method;
+                    bool m_methodHasBeenSet;
 
                 };
             }

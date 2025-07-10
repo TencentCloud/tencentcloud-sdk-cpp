@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
 #include <tencentcloud/tione/v20211111/model/GooseFSx.h>
+#include <tencentcloud/tione/v20211111/model/PublicDataSourceFS.h>
 
 
 namespace TencentCloud
@@ -320,6 +321,27 @@ namespace TencentCloud
                      */
                     bool ModelCategoryHasBeenSet() const;
 
+                    /**
+                     * 获取数据源的配置
+                     * @return PublicDataSource 数据源的配置
+                     * 
+                     */
+                    PublicDataSourceFS GetPublicDataSource() const;
+
+                    /**
+                     * 设置数据源的配置
+                     * @param _publicDataSource 数据源的配置
+                     * 
+                     */
+                    void SetPublicDataSource(const PublicDataSourceFS& _publicDataSource);
+
+                    /**
+                     * 判断参数 PublicDataSource 是否已赋值
+                     * @return PublicDataSource 是否已赋值
+                     * 
+                     */
+                    bool PublicDataSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +420,12 @@ namespace TencentCloud
                      */
                     std::string m_modelCategory;
                     bool m_modelCategoryHasBeenSet;
+
+                    /**
+                     * 数据源的配置
+                     */
+                    PublicDataSourceFS m_publicDataSource;
+                    bool m_publicDataSourceHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ CreateSLInstanceRequest::CreateSLInstanceRequest() :
     m_zoneSettingsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_prePaySettingHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_deploymentModeHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,14 @@ string CreateSLInstanceRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deploymentModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploymentMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deploymentMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -279,6 +288,22 @@ void CreateSLInstanceRequest::SetClientToken(const string& _clientToken)
 bool CreateSLInstanceRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+string CreateSLInstanceRequest::GetDeploymentMode() const
+{
+    return m_deploymentMode;
+}
+
+void CreateSLInstanceRequest::SetDeploymentMode(const string& _deploymentMode)
+{
+    m_deploymentMode = _deploymentMode;
+    m_deploymentModeHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::DeploymentModeHasBeenSet() const
+{
+    return m_deploymentModeHasBeenSet;
 }
 
 

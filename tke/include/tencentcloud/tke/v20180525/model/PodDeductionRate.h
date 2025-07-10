@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取Pod 的内存
-                     * @return Memory Pod 的内存
+                     * 获取Pod 的内存，单位：GiB
+                     * @return Memory Pod 的内存，单位：GiB
                      * 
                      */
                     double GetMemory() const;
 
                     /**
-                     * 设置Pod 的内存
-                     * @param _memory Pod 的内存
+                     * 设置Pod 的内存，单位：GiB
+                     * @param _memory Pod 的内存，单位：GiB
                      * 
                      */
                     void SetMemory(const double& _memory);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取 Pod 的类型
-                     * @return Type  Pod 的类型
+                     * 获取 Pod 的类型， intel，amd，windows-common，windows-amd，sa4，sa5，s7，s8，t4，v100，l20，l40，a10\*gnv4，a10\*gnv4v，a10\*pnv4
+                     * @return Type  Pod 的类型， intel，amd，windows-common，windows-amd，sa4，sa5，s7，s8，t4，v100，l20，l40，a10\*gnv4，a10\*gnv4v，a10\*pnv4
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置 Pod 的类型
-                     * @param _type  Pod 的类型
+                     * 设置 Pod 的类型， intel，amd，windows-common，windows-amd，sa4，sa5，s7，s8，t4，v100，l20，l40，a10\*gnv4，a10\*gnv4v，a10\*pnv4
+                     * @param _type  Pod 的类型， intel，amd，windows-common，windows-amd，sa4，sa5，s7，s8，t4，v100，l20，l40，a10\*gnv4，a10\*gnv4v，a10\*pnv4
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -181,13 +181,13 @@ namespace TencentCloud
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * Pod 的内存
+                     * Pod 的内存，单位：GiB
                      */
                     double m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     *  Pod 的类型
+                     *  Pod 的类型， intel，amd，windows-common，windows-amd，sa4，sa5，s7，s8，t4，v100，l20，l40，a10\*gnv4，a10\*gnv4v，a10\*pnv4
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

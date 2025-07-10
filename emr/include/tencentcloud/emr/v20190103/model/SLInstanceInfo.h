@@ -455,6 +455,27 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取主备部署角色
+                     * @return DeployRole 主备部署角色
+                     * 
+                     */
+                    std::string GetDeployRole() const;
+
+                    /**
+                     * 设置主备部署角色
+                     * @param _deployRole 主备部署角色
+                     * 
+                     */
+                    void SetDeployRole(const std::string& _deployRole);
+
+                    /**
+                     * 判断参数 DeployRole 是否已赋值
+                     * @return DeployRole 是否已赋值
+                     * 
+                     */
+                    bool DeployRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -572,6 +593,12 @@ namespace TencentCloud
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 主备部署角色
+                     */
+                    std::string m_deployRole;
+                    bool m_deployRoleHasBeenSet;
 
                 };
             }

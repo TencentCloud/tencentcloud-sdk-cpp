@@ -69,18 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志名称，格式为：日期小时-域名
-如 2018120101-test.vod2.mqcloud.com。
+如 example.com。
                      * @return Name 日志名称，格式为：日期小时-域名
-如 2018120101-test.vod2.mqcloud.com。
+如 example.com。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置日志名称，格式为：日期小时-域名
-如 2018120101-test.vod2.mqcloud.com。
+如 example.com。
                      * @param _name 日志名称，格式为：日期小时-域名
-如 2018120101-test.vod2.mqcloud.com。
+如 example.com。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -165,7 +165,7 @@ namespace TencentCloud
 
                     /**
                      * 日志名称，格式为：日期小时-域名
-如 2018120101-test.vod2.mqcloud.com。
+如 example.com。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

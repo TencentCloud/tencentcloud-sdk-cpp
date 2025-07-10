@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预留券实例ID，每次请求实例的上限为100。
-                     * @return ReservedInstanceIds 预留券实例ID，每次请求实例的上限为100。
+                     * 获取预留券实例ID。可通过 [DescribeReservedInstances](https://cloud.tencent.com/document/product/457/99162) 接口返回值中的ReservedInstanceId获取，每次请求实例的上限为100。
+                     * @return ReservedInstanceIds 预留券实例ID。可通过 [DescribeReservedInstances](https://cloud.tencent.com/document/product/457/99162) 接口返回值中的ReservedInstanceId获取，每次请求实例的上限为100。
                      * 
                      */
                     std::vector<std::string> GetReservedInstanceIds() const;
 
                     /**
-                     * 设置预留券实例ID，每次请求实例的上限为100。
-                     * @param _reservedInstanceIds 预留券实例ID，每次请求实例的上限为100。
+                     * 设置预留券实例ID。可通过 [DescribeReservedInstances](https://cloud.tencent.com/document/product/457/99162) 接口返回值中的ReservedInstanceId获取，每次请求实例的上限为100。
+                     * @param _reservedInstanceIds 预留券实例ID。可通过 [DescribeReservedInstances](https://cloud.tencent.com/document/product/457/99162) 接口返回值中的ReservedInstanceId获取，每次请求实例的上限为100。
                      * 
                      */
                     void SetReservedInstanceIds(const std::vector<std::string>& _reservedInstanceIds);
@@ -109,7 +109,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 预留券实例ID，每次请求实例的上限为100。
+                     * 预留券实例ID。可通过 [DescribeReservedInstances](https://cloud.tencent.com/document/product/457/99162) 接口返回值中的ReservedInstanceId获取，每次请求实例的上限为100。
                      */
                     std::vector<std::string> m_reservedInstanceIds;
                     bool m_reservedInstanceIdsHasBeenSet;

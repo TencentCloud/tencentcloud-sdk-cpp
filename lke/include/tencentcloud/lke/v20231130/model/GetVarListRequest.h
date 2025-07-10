@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool VarTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要内部变量(默认false)
+                     * @return NeedInternalVar 是否需要内部变量(默认false)
+                     * 
+                     */
+                    bool GetNeedInternalVar() const;
+
+                    /**
+                     * 设置是否需要内部变量(默认false)
+                     * @param _needInternalVar 是否需要内部变量(默认false)
+                     * 
+                     */
+                    void SetNeedInternalVar(const bool& _needInternalVar);
+
+                    /**
+                     * 判断参数 NeedInternalVar 是否已赋值
+                     * @return NeedInternalVar 是否已赋值
+                     * 
+                     */
+                    bool NeedInternalVarHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_varType;
                     bool m_varTypeHasBeenSet;
+
+                    /**
+                     * 是否需要内部变量(默认false)
+                     */
+                    bool m_needInternalVar;
+                    bool m_needInternalVarHasBeenSet;
 
                 };
             }
