@@ -22,7 +22,8 @@ using namespace std;
 
 RefreshSettings::RefreshSettings() :
     m_rollingUpdateSettingsHasBeenSet(false),
-    m_checkInstanceTargetHealthHasBeenSet(false)
+    m_checkInstanceTargetHealthHasBeenSet(false),
+    m_checkInstanceTargetHealthTimeoutHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome RefreshSettings::Deserialize(const rapidjson::Value &value)
         m_checkInstanceTargetHealthHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckInstanceTargetHealthTimeout") && !value["CheckInstanceTargetHealthTimeout"].IsNull())
+    {
+        if (!value["CheckInstanceTargetHealthTimeout"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RefreshSettings.CheckInstanceTargetHealthTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkInstanceTargetHealthTimeout = value["CheckInstanceTargetHealthTimeout"].GetUint64();
+        m_checkInstanceTargetHealthTimeoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void RefreshSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CheckInstanceTargetHealth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_checkInstanceTargetHealth, allocator);
+    }
+
+    if (m_checkInstanceTargetHealthTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckInstanceTargetHealthTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkInstanceTargetHealthTimeout, allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void RefreshSettings::SetCheckInstanceTargetHealth(const bool& _checkInstanceTar
 bool RefreshSettings::CheckInstanceTargetHealthHasBeenSet() const
 {
     return m_checkInstanceTargetHealthHasBeenSet;
+}
+
+uint64_t RefreshSettings::GetCheckInstanceTargetHealthTimeout() const
+{
+    return m_checkInstanceTargetHealthTimeout;
+}
+
+void RefreshSettings::SetCheckInstanceTargetHealthTimeout(const uint64_t& _checkInstanceTargetHealthTimeout)
+{
+    m_checkInstanceTargetHealthTimeout = _checkInstanceTargetHealthTimeout;
+    m_checkInstanceTargetHealthTimeoutHasBeenSet = true;
+}
+
+bool RefreshSettings::CheckInstanceTargetHealthTimeoutHasBeenSet() const
+{
+    return m_checkInstanceTargetHealthTimeoutHasBeenSet;
 }
 

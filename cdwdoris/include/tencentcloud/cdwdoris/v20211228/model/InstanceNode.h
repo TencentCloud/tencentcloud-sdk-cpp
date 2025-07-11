@@ -299,6 +299,27 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
+                     * 获取虚拟可用区
+                     * @return VirtualZone 虚拟可用区
+                     * 
+                     */
+                    std::string GetVirtualZone() const;
+
+                    /**
+                     * 设置虚拟可用区
+                     * @param _virtualZone 虚拟可用区
+                     * 
+                     */
+                    void SetVirtualZone(const std::string& _virtualZone);
+
+                    /**
+                     * 判断参数 VirtualZone 是否已赋值
+                     * @return VirtualZone 是否已赋值
+                     * 
+                     */
+                    bool VirtualZoneHasBeenSet() const;
+
+                    /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
                      * 
@@ -413,6 +434,12 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 虚拟可用区
+                     */
+                    std::string m_virtualZone;
+                    bool m_virtualZoneHasBeenSet;
 
                     /**
                      * 创建时间

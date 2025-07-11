@@ -28,7 +28,8 @@ ModifyUserPrivilegesV3Request::ModifyUserPrivilegesV3Request() :
     m_userPrivilegesHasBeenSet(false),
     m_whiteHostHasBeenSet(false),
     m_updateTypeHasBeenSet(false),
-    m_updateComputeGroupsHasBeenSet(false)
+    m_updateComputeGroupsHasBeenSet(false),
+    m_defaultComputeGroupHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,14 @@ string ModifyUserPrivilegesV3Request::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_defaultComputeGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultComputeGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_defaultComputeGroup.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -195,6 +204,22 @@ void ModifyUserPrivilegesV3Request::SetUpdateComputeGroups(const vector<string>&
 bool ModifyUserPrivilegesV3Request::UpdateComputeGroupsHasBeenSet() const
 {
     return m_updateComputeGroupsHasBeenSet;
+}
+
+string ModifyUserPrivilegesV3Request::GetDefaultComputeGroup() const
+{
+    return m_defaultComputeGroup;
+}
+
+void ModifyUserPrivilegesV3Request::SetDefaultComputeGroup(const string& _defaultComputeGroup)
+{
+    m_defaultComputeGroup = _defaultComputeGroup;
+    m_defaultComputeGroupHasBeenSet = true;
+}
+
+bool ModifyUserPrivilegesV3Request::DefaultComputeGroupHasBeenSet() const
+{
+    return m_defaultComputeGroupHasBeenSet;
 }
 
 

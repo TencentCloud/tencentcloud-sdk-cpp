@@ -43,7 +43,8 @@ RestoreStatus::RestoreStatus() :
     m_reserveReplicaHasBeenSet(false),
     m_reserveDynamicPartitionEnableHasBeenSet(false),
     m_backupJobIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_iDHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,16 @@ CoreInternalOutcome RestoreStatus::Deserialize(const rapidjson::Value &value)
         m_taskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ID") && !value["ID"].IsNull())
+    {
+        if (!value["ID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RestoreStatus.ID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_iD = value["ID"].GetInt64();
+        m_iDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +482,14 @@ void RestoreStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
+    }
+
+    if (m_iDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iD, allocator);
     }
 
 }
@@ -842,5 +861,21 @@ void RestoreStatus::SetTaskId(const int64_t& _taskId)
 bool RestoreStatus::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+int64_t RestoreStatus::GetID() const
+{
+    return m_iD;
+}
+
+void RestoreStatus::SetID(const int64_t& _iD)
+{
+    m_iD = _iD;
+    m_iDHasBeenSet = true;
+}
+
+bool RestoreStatus::IDHasBeenSet() const
+{
+    return m_iDHasBeenSet;
 }
 

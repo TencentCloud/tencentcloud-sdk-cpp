@@ -1287,6 +1287,49 @@ TeoClient::CreateSharedCNAMEOutcomeCallable TeoClient::CreateSharedCNAMECallable
     return task->get_future();
 }
 
+TeoClient::CreateWebSecurityTemplateOutcome TeoClient::CreateWebSecurityTemplate(const CreateWebSecurityTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWebSecurityTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWebSecurityTemplateResponse rsp = CreateWebSecurityTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWebSecurityTemplateOutcome(rsp);
+        else
+            return CreateWebSecurityTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWebSecurityTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateWebSecurityTemplateAsync(const CreateWebSecurityTemplateRequest& request, const CreateWebSecurityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWebSecurityTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateWebSecurityTemplateOutcomeCallable TeoClient::CreateWebSecurityTemplateCallable(const CreateWebSecurityTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWebSecurityTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWebSecurityTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateZoneOutcome TeoClient::CreateZone(const CreateZoneRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateZone");
@@ -2097,6 +2140,49 @@ TeoClient::DeleteSharedCNAMEOutcomeCallable TeoClient::DeleteSharedCNAMECallable
         [this, request]()
         {
             return this->DeleteSharedCNAME(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteWebSecurityTemplateOutcome TeoClient::DeleteWebSecurityTemplate(const DeleteWebSecurityTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWebSecurityTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWebSecurityTemplateResponse rsp = DeleteWebSecurityTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWebSecurityTemplateOutcome(rsp);
+        else
+            return DeleteWebSecurityTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWebSecurityTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteWebSecurityTemplateAsync(const DeleteWebSecurityTemplateRequest& request, const DeleteWebSecurityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteWebSecurityTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteWebSecurityTemplateOutcomeCallable TeoClient::DeleteWebSecurityTemplateCallable(const DeleteWebSecurityTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteWebSecurityTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteWebSecurityTemplate(request);
         }
     );
 
@@ -4254,6 +4340,92 @@ TeoClient::DescribeTopL7CacheDataOutcomeCallable TeoClient::DescribeTopL7CacheDa
     return task->get_future();
 }
 
+TeoClient::DescribeWebSecurityTemplateOutcome TeoClient::DescribeWebSecurityTemplate(const DescribeWebSecurityTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWebSecurityTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWebSecurityTemplateResponse rsp = DescribeWebSecurityTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWebSecurityTemplateOutcome(rsp);
+        else
+            return DescribeWebSecurityTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWebSecurityTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeWebSecurityTemplateAsync(const DescribeWebSecurityTemplateRequest& request, const DescribeWebSecurityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWebSecurityTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeWebSecurityTemplateOutcomeCallable TeoClient::DescribeWebSecurityTemplateCallable(const DescribeWebSecurityTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWebSecurityTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWebSecurityTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeWebSecurityTemplatesOutcome TeoClient::DescribeWebSecurityTemplates(const DescribeWebSecurityTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWebSecurityTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWebSecurityTemplatesResponse rsp = DescribeWebSecurityTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWebSecurityTemplatesOutcome(rsp);
+        else
+            return DescribeWebSecurityTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWebSecurityTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeWebSecurityTemplatesAsync(const DescribeWebSecurityTemplatesRequest& request, const DescribeWebSecurityTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWebSecurityTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeWebSecurityTemplatesOutcomeCallable TeoClient::DescribeWebSecurityTemplatesCallable(const DescribeWebSecurityTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWebSecurityTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWebSecurityTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeZoneConfigImportResultOutcome TeoClient::DescribeZoneConfigImportResult(const DescribeZoneConfigImportResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZoneConfigImportResult");
@@ -6139,6 +6311,49 @@ TeoClient::ModifySecurityPolicyOutcomeCallable TeoClient::ModifySecurityPolicyCa
         [this, request]()
         {
             return this->ModifySecurityPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyWebSecurityTemplateOutcome TeoClient::ModifyWebSecurityTemplate(const ModifyWebSecurityTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWebSecurityTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWebSecurityTemplateResponse rsp = ModifyWebSecurityTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWebSecurityTemplateOutcome(rsp);
+        else
+            return ModifyWebSecurityTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWebSecurityTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyWebSecurityTemplateAsync(const ModifyWebSecurityTemplateRequest& request, const ModifyWebSecurityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWebSecurityTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyWebSecurityTemplateOutcomeCallable TeoClient::ModifyWebSecurityTemplateCallable(const ModifyWebSecurityTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWebSecurityTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWebSecurityTemplate(request);
         }
     );
 

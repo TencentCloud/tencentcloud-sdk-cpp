@@ -35,20 +35,25 @@ set(igtm_public_header_model
   include/tencentcloud/igtm/v20231024/model/DescribeDnsLineListRequest.h
   include/tencentcloud/igtm/v20231024/model/DescribeInstanceListRequest.h
   include/tencentcloud/igtm/v20231024/model/Source.h
-  include/tencentcloud/igtm/v20231024/model/ModifyAddressPoolResponse.h
+  include/tencentcloud/igtm/v20231024/model/InstanceDetail.h
   include/tencentcloud/igtm/v20231024/model/AddressLocation.h
+  include/tencentcloud/igtm/v20231024/model/DetectTaskPackage.h
   include/tencentcloud/igtm/v20231024/model/CreateAddressPoolRequest.h
+  include/tencentcloud/igtm/v20231024/model/DescribeDetectTaskPackageListResponse.h
   include/tencentcloud/igtm/v20231024/model/DescribeAddressPoolDetailResponse.h
   include/tencentcloud/igtm/v20231024/model/DescribeQuotasRequest.h
   include/tencentcloud/igtm/v20231024/model/MainAddressPool.h
   include/tencentcloud/igtm/v20231024/model/Quota.h
   include/tencentcloud/igtm/v20231024/model/ModifyMonitorRequest.h
+  include/tencentcloud/igtm/v20231024/model/DescribeInstancePackageListResponse.h
+  include/tencentcloud/igtm/v20231024/model/Instance.h
   include/tencentcloud/igtm/v20231024/model/ModifyStrategyRequest.h
   include/tencentcloud/igtm/v20231024/model/DescribeDetectorsRequest.h
   include/tencentcloud/igtm/v20231024/model/DeleteStrategyRequest.h
   include/tencentcloud/igtm/v20231024/model/CreateInstanceRequest.h
   include/tencentcloud/igtm/v20231024/model/DescribeAddressPoolDetailRequest.h
   include/tencentcloud/igtm/v20231024/model/CreateMonitorRequest.h
+  include/tencentcloud/igtm/v20231024/model/DescribeDetectTaskPackageListRequest.h
   include/tencentcloud/igtm/v20231024/model/DescribeStrategyListResponse.h
   include/tencentcloud/igtm/v20231024/model/CreateStrategyRequest.h
   include/tencentcloud/igtm/v20231024/model/DescribeDnsLineListResponse.h
@@ -59,26 +64,30 @@ set(igtm_public_header_model
   include/tencentcloud/igtm/v20231024/model/Address.h
   include/tencentcloud/igtm/v20231024/model/CreateInstanceResponse.h
   include/tencentcloud/igtm/v20231024/model/DetectorGroup.h
-  include/tencentcloud/igtm/v20231024/model/ModifyInstanceConfigRequest.h
+  include/tencentcloud/igtm/v20231024/model/DescribeDetectPackageDetailRequest.h
   include/tencentcloud/igtm/v20231024/model/MainPoolWeight.h
+  include/tencentcloud/igtm/v20231024/model/ModifyAddressPoolResponse.h
   include/tencentcloud/igtm/v20231024/model/CreateAddressPoolResponse.h
-  include/tencentcloud/igtm/v20231024/model/InstanceInfo.h
+  include/tencentcloud/igtm/v20231024/model/DescribeInstancePackageListRequest.h
   include/tencentcloud/igtm/v20231024/model/DescribeStrategyDetailResponse.h
   include/tencentcloud/igtm/v20231024/model/DescribeMonitorsRequest.h
   include/tencentcloud/igtm/v20231024/model/ModifyMonitorResponse.h
-  include/tencentcloud/igtm/v20231024/model/InstanceConfig.h
+  include/tencentcloud/igtm/v20231024/model/CostItem.h
   include/tencentcloud/igtm/v20231024/model/DescribeAddressLocationRequest.h
   include/tencentcloud/igtm/v20231024/model/DescribeStrategyListRequest.h
   include/tencentcloud/igtm/v20231024/model/DescribeMonitorDetailRequest.h
-  include/tencentcloud/igtm/v20231024/model/Instance.h
+  include/tencentcloud/igtm/v20231024/model/DescribeDetectPackageDetailResponse.h
   include/tencentcloud/igtm/v20231024/model/MonitorDetail.h
   include/tencentcloud/igtm/v20231024/model/DescribeAddressPoolListResponse.h
   include/tencentcloud/igtm/v20231024/model/CreateMonitorResponse.h
+  include/tencentcloud/igtm/v20231024/model/InstanceInfo.h
+  include/tencentcloud/igtm/v20231024/model/InstancePackage.h
   include/tencentcloud/igtm/v20231024/model/DeleteStrategyResponse.h
   include/tencentcloud/igtm/v20231024/model/ModifyAddressPoolRequest.h
-  include/tencentcloud/igtm/v20231024/model/InstanceDetail.h
+  include/tencentcloud/igtm/v20231024/model/InstanceConfig.h
   include/tencentcloud/igtm/v20231024/model/StrategyDetail.h
   include/tencentcloud/igtm/v20231024/model/DescribeQuotasResponse.h
+  include/tencentcloud/igtm/v20231024/model/ModifyInstanceConfigRequest.h
   include/tencentcloud/igtm/v20231024/model/DescribeAddressLocationResponse.h
   include/tencentcloud/igtm/v20231024/model/DescribeInstanceListResponse.h
   include/tencentcloud/igtm/v20231024/model/ResourceFilter.h
@@ -103,20 +112,25 @@ set(igtm_src
   src/v20231024/model/DescribeDnsLineListRequest.cpp
   src/v20231024/model/DescribeInstanceListRequest.cpp
   src/v20231024/model/Source.cpp
-  src/v20231024/model/ModifyAddressPoolResponse.cpp
+  src/v20231024/model/InstanceDetail.cpp
   src/v20231024/model/AddressLocation.cpp
+  src/v20231024/model/DetectTaskPackage.cpp
   src/v20231024/model/CreateAddressPoolRequest.cpp
+  src/v20231024/model/DescribeDetectTaskPackageListResponse.cpp
   src/v20231024/model/DescribeAddressPoolDetailResponse.cpp
   src/v20231024/model/DescribeQuotasRequest.cpp
   src/v20231024/model/MainAddressPool.cpp
   src/v20231024/model/Quota.cpp
   src/v20231024/model/ModifyMonitorRequest.cpp
+  src/v20231024/model/DescribeInstancePackageListResponse.cpp
+  src/v20231024/model/Instance.cpp
   src/v20231024/model/ModifyStrategyRequest.cpp
   src/v20231024/model/DescribeDetectorsRequest.cpp
   src/v20231024/model/DeleteStrategyRequest.cpp
   src/v20231024/model/CreateInstanceRequest.cpp
   src/v20231024/model/DescribeAddressPoolDetailRequest.cpp
   src/v20231024/model/CreateMonitorRequest.cpp
+  src/v20231024/model/DescribeDetectTaskPackageListRequest.cpp
   src/v20231024/model/DescribeStrategyListResponse.cpp
   src/v20231024/model/CreateStrategyRequest.cpp
   src/v20231024/model/DescribeDnsLineListResponse.cpp
@@ -127,26 +141,30 @@ set(igtm_src
   src/v20231024/model/Address.cpp
   src/v20231024/model/CreateInstanceResponse.cpp
   src/v20231024/model/DetectorGroup.cpp
-  src/v20231024/model/ModifyInstanceConfigRequest.cpp
+  src/v20231024/model/DescribeDetectPackageDetailRequest.cpp
   src/v20231024/model/MainPoolWeight.cpp
+  src/v20231024/model/ModifyAddressPoolResponse.cpp
   src/v20231024/model/CreateAddressPoolResponse.cpp
-  src/v20231024/model/InstanceInfo.cpp
+  src/v20231024/model/DescribeInstancePackageListRequest.cpp
   src/v20231024/model/DescribeStrategyDetailResponse.cpp
   src/v20231024/model/DescribeMonitorsRequest.cpp
   src/v20231024/model/ModifyMonitorResponse.cpp
-  src/v20231024/model/InstanceConfig.cpp
+  src/v20231024/model/CostItem.cpp
   src/v20231024/model/DescribeAddressLocationRequest.cpp
   src/v20231024/model/DescribeStrategyListRequest.cpp
   src/v20231024/model/DescribeMonitorDetailRequest.cpp
-  src/v20231024/model/Instance.cpp
+  src/v20231024/model/DescribeDetectPackageDetailResponse.cpp
   src/v20231024/model/MonitorDetail.cpp
   src/v20231024/model/DescribeAddressPoolListResponse.cpp
   src/v20231024/model/CreateMonitorResponse.cpp
+  src/v20231024/model/InstanceInfo.cpp
+  src/v20231024/model/InstancePackage.cpp
   src/v20231024/model/DeleteStrategyResponse.cpp
   src/v20231024/model/ModifyAddressPoolRequest.cpp
-  src/v20231024/model/InstanceDetail.cpp
+  src/v20231024/model/InstanceConfig.cpp
   src/v20231024/model/StrategyDetail.cpp
   src/v20231024/model/DescribeQuotasResponse.cpp
+  src/v20231024/model/ModifyInstanceConfigRequest.cpp
   src/v20231024/model/DescribeAddressLocationResponse.cpp
   src/v20231024/model/DescribeInstanceListResponse.cpp
   src/v20231024/model/ResourceFilter.cpp

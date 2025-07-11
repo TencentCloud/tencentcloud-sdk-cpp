@@ -230,6 +230,48 @@ namespace TencentCloud
                      */
                     bool EKSIdHasBeenSet() const;
 
+                    /**
+                     * 获取TKE容器集群ID。
+                     * @return TKEId TKE容器集群ID。
+                     * 
+                     */
+                    std::string GetTKEId() const;
+
+                    /**
+                     * 设置TKE容器集群ID。
+                     * @param _tKEId TKE容器集群ID。
+                     * 
+                     */
+                    void SetTKEId(const std::string& _tKEId);
+
+                    /**
+                     * 判断参数 TKEId 是否已赋值
+                     * @return TKEId 是否已赋值
+                     * 
+                     */
+                    bool TKEIdHasBeenSet() const;
+
+                    /**
+                     * 获取TKE系统节点池ID。
+                     * @return TKESystemNodePoolId TKE系统节点池ID。
+                     * 
+                     */
+                    std::string GetTKESystemNodePoolId() const;
+
+                    /**
+                     * 设置TKE系统节点池ID。
+                     * @param _tKESystemNodePoolId TKE系统节点池ID。
+                     * 
+                     */
+                    void SetTKESystemNodePoolId(const std::string& _tKESystemNodePoolId);
+
+                    /**
+                     * 判断参数 TKESystemNodePoolId 是否已赋值
+                     * @return TKESystemNodePoolId 是否已赋值
+                     * 
+                     */
+                    bool TKESystemNodePoolIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +325,18 @@ namespace TencentCloud
                      */
                     std::string m_eKSId;
                     bool m_eKSIdHasBeenSet;
+
+                    /**
+                     * TKE容器集群ID。
+                     */
+                    std::string m_tKEId;
+                    bool m_tKEIdHasBeenSet;
+
+                    /**
+                     * TKE系统节点池ID。
+                     */
+                    std::string m_tKESystemNodePoolId;
+                    bool m_tKESystemNodePoolIdHasBeenSet;
 
                 };
             }

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DorisSourceInfo.h>
 #include <tencentcloud/cdwdoris/v20211228/model/BackupCosInfo.h>
+#include <tencentcloud/cdwdoris/v20211228/model/SnapshotRemainPolicy.h>
 
 
 namespace TencentCloud
@@ -342,6 +343,27 @@ namespace TencentCloud
                      */
                     bool ErrorReasonHasBeenSet() const;
 
+                    /**
+                     * 获取快照保留策略
+                     * @return SnapshotRemainPolicy 快照保留策略
+                     * 
+                     */
+                    SnapshotRemainPolicy GetSnapshotRemainPolicy() const;
+
+                    /**
+                     * 设置快照保留策略
+                     * @param _snapshotRemainPolicy 快照保留策略
+                     * 
+                     */
+                    void SetSnapshotRemainPolicy(const SnapshotRemainPolicy& _snapshotRemainPolicy);
+
+                    /**
+                     * 判断参数 SnapshotRemainPolicy 是否已赋值
+                     * @return SnapshotRemainPolicy 是否已赋值
+                     * 
+                     */
+                    bool SnapshotRemainPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +449,12 @@ namespace TencentCloud
                      */
                     std::string m_errorReason;
                     bool m_errorReasonHasBeenSet;
+
+                    /**
+                     * 快照保留策略
+                     */
+                    SnapshotRemainPolicy m_snapshotRemainPolicy;
+                    bool m_snapshotRemainPolicyHasBeenSet;
 
                 };
             }

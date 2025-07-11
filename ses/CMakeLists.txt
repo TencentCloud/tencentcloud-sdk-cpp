@@ -108,6 +108,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/CycleEmailParam.h
   include/tencentcloud/ses/v20201002/model/CreateAddressUnsubscribeConfigResponse.h
   include/tencentcloud/ses/v20201002/model/ListReceiversResponse.h
+  include/tencentcloud/ses/v20201002/model/TagList.h
   )
 
 set(ses_src
@@ -201,6 +202,7 @@ set(ses_src
   src/v20201002/model/CycleEmailParam.cpp
   src/v20201002/model/CreateAddressUnsubscribeConfigResponse.cpp
   src/v20201002/model/ListReceiversResponse.cpp
+  src/v20201002/model/TagList.cpp
   )
 
 set(ses_include

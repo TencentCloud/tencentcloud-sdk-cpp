@@ -131,6 +131,27 @@ namespace TencentCloud
                     bool AndroidInstanceImageZoneHasBeenSet() const;
 
                     /**
+                     * 获取镜像描述
+                     * @return AndroidInstanceImageDescription 镜像描述
+                     * 
+                     */
+                    std::string GetAndroidInstanceImageDescription() const;
+
+                    /**
+                     * 设置镜像描述
+                     * @param _androidInstanceImageDescription 镜像描述
+                     * 
+                     */
+                    void SetAndroidInstanceImageDescription(const std::string& _androidInstanceImageDescription);
+
+                    /**
+                     * 判断参数 AndroidInstanceImageDescription 是否已赋值
+                     * @return AndroidInstanceImageDescription 是否已赋值
+                     * 
+                     */
+                    bool AndroidInstanceImageDescriptionHasBeenSet() const;
+
+                    /**
                      * 获取安卓10
                      * @return AndroidVersion 安卓10
                      * 
@@ -150,6 +171,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AndroidVersionHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _createTime 创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
 
                 private:
 
@@ -178,10 +220,22 @@ namespace TencentCloud
                     bool m_androidInstanceImageZoneHasBeenSet;
 
                     /**
+                     * 镜像描述
+                     */
+                    std::string m_androidInstanceImageDescription;
+                    bool m_androidInstanceImageDescriptionHasBeenSet;
+
+                    /**
                      * 安卓10
                      */
                     std::string m_androidVersion;
                     bool m_androidVersionHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

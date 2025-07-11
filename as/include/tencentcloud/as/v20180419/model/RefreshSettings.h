@@ -89,6 +89,27 @@ namespace TencentCloud
                      */
                     bool CheckInstanceTargetHealthHasBeenSet() const;
 
+                    /**
+                     * 获取实例后端服务健康状态检查的超时时间，单位为秒，取值范围[60,7200]，默认时间1800秒。仅在CheckInstanceTargetHealth参数开启后生效，若实例健康检查超时，则标记为刷新失败。
+                     * @return CheckInstanceTargetHealthTimeout 实例后端服务健康状态检查的超时时间，单位为秒，取值范围[60,7200]，默认时间1800秒。仅在CheckInstanceTargetHealth参数开启后生效，若实例健康检查超时，则标记为刷新失败。
+                     * 
+                     */
+                    uint64_t GetCheckInstanceTargetHealthTimeout() const;
+
+                    /**
+                     * 设置实例后端服务健康状态检查的超时时间，单位为秒，取值范围[60,7200]，默认时间1800秒。仅在CheckInstanceTargetHealth参数开启后生效，若实例健康检查超时，则标记为刷新失败。
+                     * @param _checkInstanceTargetHealthTimeout 实例后端服务健康状态检查的超时时间，单位为秒，取值范围[60,7200]，默认时间1800秒。仅在CheckInstanceTargetHealth参数开启后生效，若实例健康检查超时，则标记为刷新失败。
+                     * 
+                     */
+                    void SetCheckInstanceTargetHealthTimeout(const uint64_t& _checkInstanceTargetHealthTimeout);
+
+                    /**
+                     * 判断参数 CheckInstanceTargetHealthTimeout 是否已赋值
+                     * @return CheckInstanceTargetHealthTimeout 是否已赋值
+                     * 
+                     */
+                    bool CheckInstanceTargetHealthTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +123,12 @@ namespace TencentCloud
                      */
                     bool m_checkInstanceTargetHealth;
                     bool m_checkInstanceTargetHealthHasBeenSet;
+
+                    /**
+                     * 实例后端服务健康状态检查的超时时间，单位为秒，取值范围[60,7200]，默认时间1800秒。仅在CheckInstanceTargetHealth参数开启后生效，若实例健康检查超时，则标记为刷新失败。
+                     */
+                    uint64_t m_checkInstanceTargetHealthTimeout;
+                    bool m_checkInstanceTargetHealthTimeoutHasBeenSet;
 
                 };
             }

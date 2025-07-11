@@ -34,7 +34,8 @@ BackUpJobDisplay::BackUpJobDisplay() :
     m_jobStatusNumHasBeenSet(false),
     m_backupCosInfoHasBeenSet(false),
     m_isUserDefineBucketHasBeenSet(false),
-    m_errorReasonHasBeenSet(false)
+    m_errorReasonHasBeenSet(false),
+    m_snapshotRemainPolicyHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,23 @@ CoreInternalOutcome BackUpJobDisplay::Deserialize(const rapidjson::Value &value)
         m_errorReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("SnapshotRemainPolicy") && !value["SnapshotRemainPolicy"].IsNull())
+    {
+        if (!value["SnapshotRemainPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.SnapshotRemainPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_snapshotRemainPolicy.Deserialize(value["SnapshotRemainPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_snapshotRemainPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +334,15 @@ void BackUpJobDisplay::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ErrorReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapshotRemainPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotRemainPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_snapshotRemainPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -543,5 +570,21 @@ void BackUpJobDisplay::SetErrorReason(const string& _errorReason)
 bool BackUpJobDisplay::ErrorReasonHasBeenSet() const
 {
     return m_errorReasonHasBeenSet;
+}
+
+SnapshotRemainPolicy BackUpJobDisplay::GetSnapshotRemainPolicy() const
+{
+    return m_snapshotRemainPolicy;
+}
+
+void BackUpJobDisplay::SetSnapshotRemainPolicy(const SnapshotRemainPolicy& _snapshotRemainPolicy)
+{
+    m_snapshotRemainPolicy = _snapshotRemainPolicy;
+    m_snapshotRemainPolicyHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::SnapshotRemainPolicyHasBeenSet() const
+{
+    return m_snapshotRemainPolicyHasBeenSet;
 }
 

@@ -470,6 +470,92 @@ IgtmClient::DescribeAddressPoolListOutcomeCallable IgtmClient::DescribeAddressPo
     return task->get_future();
 }
 
+IgtmClient::DescribeDetectPackageDetailOutcome IgtmClient::DescribeDetectPackageDetail(const DescribeDetectPackageDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDetectPackageDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDetectPackageDetailResponse rsp = DescribeDetectPackageDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDetectPackageDetailOutcome(rsp);
+        else
+            return DescribeDetectPackageDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDetectPackageDetailOutcome(outcome.GetError());
+    }
+}
+
+void IgtmClient::DescribeDetectPackageDetailAsync(const DescribeDetectPackageDetailRequest& request, const DescribeDetectPackageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDetectPackageDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IgtmClient::DescribeDetectPackageDetailOutcomeCallable IgtmClient::DescribeDetectPackageDetailCallable(const DescribeDetectPackageDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDetectPackageDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDetectPackageDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IgtmClient::DescribeDetectTaskPackageListOutcome IgtmClient::DescribeDetectTaskPackageList(const DescribeDetectTaskPackageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDetectTaskPackageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDetectTaskPackageListResponse rsp = DescribeDetectTaskPackageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDetectTaskPackageListOutcome(rsp);
+        else
+            return DescribeDetectTaskPackageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDetectTaskPackageListOutcome(outcome.GetError());
+    }
+}
+
+void IgtmClient::DescribeDetectTaskPackageListAsync(const DescribeDetectTaskPackageListRequest& request, const DescribeDetectTaskPackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDetectTaskPackageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IgtmClient::DescribeDetectTaskPackageListOutcomeCallable IgtmClient::DescribeDetectTaskPackageListCallable(const DescribeDetectTaskPackageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDetectTaskPackageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDetectTaskPackageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IgtmClient::DescribeDetectorsOutcome IgtmClient::DescribeDetectors(const DescribeDetectorsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDetectors");
@@ -635,6 +721,49 @@ IgtmClient::DescribeInstanceListOutcomeCallable IgtmClient::DescribeInstanceList
         [this, request]()
         {
             return this->DescribeInstanceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IgtmClient::DescribeInstancePackageListOutcome IgtmClient::DescribeInstancePackageList(const DescribeInstancePackageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancePackageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancePackageListResponse rsp = DescribeInstancePackageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancePackageListOutcome(rsp);
+        else
+            return DescribeInstancePackageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancePackageListOutcome(outcome.GetError());
+    }
+}
+
+void IgtmClient::DescribeInstancePackageListAsync(const DescribeInstancePackageListRequest& request, const DescribeInstancePackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancePackageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IgtmClient::DescribeInstancePackageListOutcomeCallable IgtmClient::DescribeInstancePackageListCallable(const DescribeInstancePackageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancePackageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancePackageList(request);
         }
     );
 

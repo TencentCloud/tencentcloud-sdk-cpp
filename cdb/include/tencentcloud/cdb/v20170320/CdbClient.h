@@ -1224,7 +1224,7 @@ namespace TencentCloud
                 DeleteAuditRuleOutcomeCallable DeleteAuditRuleCallable(const Model::DeleteAuditRuleRequest& request);
 
                 /**
-                 *删除审计规则模板
+                 *本接口（DeleteAuditRuleTemplates）用于删除审计规则模板。
                  * @param req DeleteAuditRuleTemplatesRequest
                  * @return DeleteAuditRuleTemplatesOutcome
                  */

@@ -157,6 +157,48 @@ namespace TencentCloud
                      */
                     bool LimitRangeHasBeenSet() const;
 
+                    /**
+                     * 获取系统节点池实例规格。
+                     * @return SystemNodeInstanceType 系统节点池实例规格。
+                     * 
+                     */
+                    std::string GetSystemNodeInstanceType() const;
+
+                    /**
+                     * 设置系统节点池实例规格。
+                     * @param _systemNodeInstanceType 系统节点池实例规格。
+                     * 
+                     */
+                    void SetSystemNodeInstanceType(const std::string& _systemNodeInstanceType);
+
+                    /**
+                     * 判断参数 SystemNodeInstanceType 是否已赋值
+                     * @return SystemNodeInstanceType 是否已赋值
+                     * 
+                     */
+                    bool SystemNodeInstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取系统节点池实例数量。
+                     * @return SystemNodeCount 系统节点池实例数量。
+                     * 
+                     */
+                    uint64_t GetSystemNodeCount() const;
+
+                    /**
+                     * 设置系统节点池实例数量。
+                     * @param _systemNodeCount 系统节点池实例数量。
+                     * 
+                     */
+                    void SetSystemNodeCount(const uint64_t& _systemNodeCount);
+
+                    /**
+                     * 判断参数 SystemNodeCount 是否已赋值
+                     * @return SystemNodeCount 是否已赋值
+                     * 
+                     */
+                    bool SystemNodeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +231,18 @@ namespace TencentCloud
                      */
                     LimitRange m_limitRange;
                     bool m_limitRangeHasBeenSet;
+
+                    /**
+                     * 系统节点池实例规格。
+                     */
+                    std::string m_systemNodeInstanceType;
+                    bool m_systemNodeInstanceTypeHasBeenSet;
+
+                    /**
+                     * 系统节点池实例数量。
+                     */
+                    uint64_t m_systemNodeCount;
+                    bool m_systemNodeCountHasBeenSet;
 
                 };
             }

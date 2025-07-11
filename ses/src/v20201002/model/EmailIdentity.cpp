@@ -26,7 +26,8 @@ EmailIdentity::EmailIdentity() :
     m_sendingEnabledHasBeenSet(false),
     m_currentReputationLevelHasBeenSet(false),
     m_dailyQuotaHasBeenSet(false),
-    m_sendIpHasBeenSet(false)
+    m_sendIpHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,26 @@ CoreInternalOutcome EmailIdentity::Deserialize(const rapidjson::Value &value)
         m_sendIpHasBeenSet = true;
     }
 
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EmailIdentity.TagList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagList.push_back(item);
+        }
+        m_tagListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -155,6 +176,21 @@ void EmailIdentity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         for (auto itr = m_sendIp.begin(); itr != m_sendIp.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -255,5 +291,21 @@ void EmailIdentity::SetSendIp(const vector<string>& _sendIp)
 bool EmailIdentity::SendIpHasBeenSet() const
 {
     return m_sendIpHasBeenSet;
+}
+
+vector<TagList> EmailIdentity::GetTagList() const
+{
+    return m_tagList;
+}
+
+void EmailIdentity::SetTagList(const vector<TagList>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool EmailIdentity::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 

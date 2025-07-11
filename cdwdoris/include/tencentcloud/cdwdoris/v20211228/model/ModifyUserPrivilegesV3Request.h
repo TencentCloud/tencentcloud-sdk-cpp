@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool WhiteHostHasBeenSet() const;
 
                     /**
-                     * 获取更新类型，默认0，1为更新绑定计算组
-                     * @return UpdateType 更新类型，默认0，1为更新绑定计算组
+                     * 获取更新类型，默认0，1为更新绑定计算组，2为更新默认计算组
+                     * @return UpdateType 更新类型，默认0，1为更新绑定计算组，2为更新默认计算组
                      * 
                      */
                     int64_t GetUpdateType() const;
 
                     /**
-                     * 设置更新类型，默认0，1为更新绑定计算组
-                     * @param _updateType 更新类型，默认0，1为更新绑定计算组
+                     * 设置更新类型，默认0，1为更新绑定计算组，2为更新默认计算组
+                     * @param _updateType 更新类型，默认0，1为更新绑定计算组，2为更新默认计算组
                      * 
                      */
                     void SetUpdateType(const int64_t& _updateType);
@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool UpdateComputeGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取默认计算组
+                     * @return DefaultComputeGroup 默认计算组
+                     * 
+                     */
+                    std::string GetDefaultComputeGroup() const;
+
+                    /**
+                     * 设置默认计算组
+                     * @param _defaultComputeGroup 默认计算组
+                     * 
+                     */
+                    void SetDefaultComputeGroup(const std::string& _defaultComputeGroup);
+
+                    /**
+                     * 判断参数 DefaultComputeGroup 是否已赋值
+                     * @return DefaultComputeGroup 是否已赋值
+                     * 
+                     */
+                    bool DefaultComputeGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -196,7 +217,7 @@ namespace TencentCloud
                     bool m_whiteHostHasBeenSet;
 
                     /**
-                     * 更新类型，默认0，1为更新绑定计算组
+                     * 更新类型，默认0，1为更新绑定计算组，2为更新默认计算组
                      */
                     int64_t m_updateType;
                     bool m_updateTypeHasBeenSet;
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_updateComputeGroups;
                     bool m_updateComputeGroupsHasBeenSet;
+
+                    /**
+                     * 默认计算组
+                     */
+                    std::string m_defaultComputeGroup;
+                    bool m_defaultComputeGroupHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/gs/v20191118/model/Filter.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,39 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取字段过滤器。Filter 的 Name 有以下值：
+ImageName：镜像名称
+ImageState：镜像状态
+AndroidVersion：安卓版本
+                     * @return Filters 字段过滤器。Filter 的 Name 有以下值：
+ImageName：镜像名称
+ImageState：镜像状态
+AndroidVersion：安卓版本
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置字段过滤器。Filter 的 Name 有以下值：
+ImageName：镜像名称
+ImageState：镜像状态
+AndroidVersion：安卓版本
+                     * @param _filters 字段过滤器。Filter 的 Name 有以下值：
+ImageName：镜像名称
+ImageState：镜像状态
+AndroidVersion：安卓版本
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +185,15 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 字段过滤器。Filter 的 Name 有以下值：
+ImageName：镜像名称
+ImageState：镜像状态
+AndroidVersion：安卓版本
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

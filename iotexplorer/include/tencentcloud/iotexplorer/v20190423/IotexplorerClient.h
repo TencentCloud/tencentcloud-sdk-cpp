@@ -940,7 +940,9 @@ namespace TencentCloud
                 CallDeviceActionSyncOutcomeCallable CallDeviceActionSyncCallable(const Model::CallDeviceActionSyncRequest& request);
 
                 /**
-                 *取消分配
+                 *业务已下线
+
+取消分配
                  * @param req CancelAssignTWeCallLicenseRequest
                  * @return CancelAssignTWeCallLicenseOutcome
                  */

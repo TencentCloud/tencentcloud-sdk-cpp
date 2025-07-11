@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool AndroidInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取安卓实例镜像描述
+                     * @return AndroidInstanceImageDescription 安卓实例镜像描述
+                     * 
+                     */
+                    std::string GetAndroidInstanceImageDescription() const;
+
+                    /**
+                     * 设置安卓实例镜像描述
+                     * @param _androidInstanceImageDescription 安卓实例镜像描述
+                     * 
+                     */
+                    void SetAndroidInstanceImageDescription(const std::string& _androidInstanceImageDescription);
+
+                    /**
+                     * 判断参数 AndroidInstanceImageDescription 是否已赋值
+                     * @return AndroidInstanceImageDescription 是否已赋值
+                     * 
+                     */
+                    bool AndroidInstanceImageDescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_androidInstanceId;
                     bool m_androidInstanceIdHasBeenSet;
+
+                    /**
+                     * 安卓实例镜像描述
+                     */
+                    std::string m_androidInstanceImageDescription;
+                    bool m_androidInstanceImageDescriptionHasBeenSet;
 
                 };
             }

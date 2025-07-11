@@ -23,7 +23,8 @@ using namespace std;
 BackupCosInfo::BackupCosInfo() :
     m_cosBucketHasBeenSet(false),
     m_cosPathHasBeenSet(false),
-    m_snapShotPathHasBeenSet(false)
+    m_snapShotPathHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome BackupCosInfo::Deserialize(const rapidjson::Value &value)
         m_snapShotPathHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupCosInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void BackupCosInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "SnapShotPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_snapShotPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void BackupCosInfo::SetSnapShotPath(const string& _snapShotPath)
 bool BackupCosInfo::SnapShotPathHasBeenSet() const
 {
     return m_snapShotPathHasBeenSet;
+}
+
+string BackupCosInfo::GetRegion() const
+{
+    return m_region;
+}
+
+void BackupCosInfo::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool BackupCosInfo::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

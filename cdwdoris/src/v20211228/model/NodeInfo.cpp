@@ -31,7 +31,8 @@ NodeInfo::NodeInfo() :
     m_idHasBeenSet(false),
     m_rIpHasBeenSet(false),
     m_computeGroupIdHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_virtualZoneHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("VirtualZone") && !value["VirtualZone"].IsNull())
+    {
+        if (!value["VirtualZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.VirtualZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_virtualZone = string(value["VirtualZone"].GetString());
+        m_virtualZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void NodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_virtualZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VirtualZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_virtualZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void NodeInfo::SetCreateTime(const string& _createTime)
 bool NodeInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string NodeInfo::GetVirtualZone() const
+{
+    return m_virtualZone;
+}
+
+void NodeInfo::SetVirtualZone(const string& _virtualZone)
+{
+    m_virtualZone = _virtualZone;
+    m_virtualZoneHasBeenSet = true;
+}
+
+bool NodeInfo::VirtualZoneHasBeenSet() const
+{
+    return m_virtualZoneHasBeenSet;
 }
 

@@ -230,6 +230,27 @@ GetCatalog：获取Catalog列表；
                      */
                     bool TableNameHasBeenSet() const;
 
+                    /**
+                     * 获取用户名列表
+                     * @return UserNames 用户名列表
+                     * 
+                     */
+                    std::vector<std::string> GetUserNames() const;
+
+                    /**
+                     * 设置用户名列表
+                     * @param _userNames 用户名列表
+                     * 
+                     */
+                    void SetUserNames(const std::vector<std::string>& _userNames);
+
+                    /**
+                     * 判断参数 UserNames 是否已赋值
+                     * @return UserNames 是否已赋值
+                     * 
+                     */
+                    bool UserNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,6 +305,12 @@ GetCatalog：获取Catalog列表；
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 用户名列表
+                     */
+                    std::vector<std::string> m_userNames;
+                    bool m_userNamesHasBeenSet;
 
                 };
             }

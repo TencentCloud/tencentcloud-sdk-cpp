@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ses/v20201002/model/TagList.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取tag 标签
+                     * @return TagList tag 标签
+                     * 
+                     */
+                    std::vector<TagList> GetTagList() const;
+
+                    /**
+                     * 设置tag 标签
+                     * @param _tagList tag 标签
+                     * 
+                     */
+                    void SetTagList(const std::vector<TagList>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
+                    /**
+                     * 获取分页 limit
+                     * @return Limit 分页 limit
+                     * 
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置分页 limit
+                     * @param _limit 分页 limit
+                     * 
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分页 offset
+                     * @return Offset 分页 offset
+                     * 
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置分页 offset
+                     * @param _offset 分页 offset
+                     * 
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * tag 标签
+                     */
+                    std::vector<TagList> m_tagList;
+                    bool m_tagListHasBeenSet;
+
+                    /**
+                     * 分页 limit
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 分页 offset
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

@@ -81,18 +81,18 @@ off：关闭
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取UA黑白名单生效规则列表
+                     * 获取UA黑白名单生效规则列表，不能超过10条规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FilterRules UA黑白名单生效规则列表
+                     * @return FilterRules UA黑白名单生效规则列表，不能超过10条规则
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UserAgentFilterRule> GetFilterRules() const;
 
                     /**
-                     * 设置UA黑白名单生效规则列表
+                     * 设置UA黑白名单生效规则列表，不能超过10条规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _filterRules UA黑白名单生效规则列表
+                     * @param _filterRules UA黑白名单生效规则列表，不能超过10条规则
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -117,7 +117,7 @@ off：关闭
                     bool m_switchHasBeenSet;
 
                     /**
-                     * UA黑白名单生效规则列表
+                     * UA黑白名单生效规则列表，不能超过10条规则
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UserAgentFilterRule> m_filterRules;

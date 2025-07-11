@@ -43,6 +43,10 @@
 #include <tencentcloud/igtm/v20231024/model/DescribeAddressPoolDetailResponse.h>
 #include <tencentcloud/igtm/v20231024/model/DescribeAddressPoolListRequest.h>
 #include <tencentcloud/igtm/v20231024/model/DescribeAddressPoolListResponse.h>
+#include <tencentcloud/igtm/v20231024/model/DescribeDetectPackageDetailRequest.h>
+#include <tencentcloud/igtm/v20231024/model/DescribeDetectPackageDetailResponse.h>
+#include <tencentcloud/igtm/v20231024/model/DescribeDetectTaskPackageListRequest.h>
+#include <tencentcloud/igtm/v20231024/model/DescribeDetectTaskPackageListResponse.h>
 #include <tencentcloud/igtm/v20231024/model/DescribeDetectorsRequest.h>
 #include <tencentcloud/igtm/v20231024/model/DescribeDetectorsResponse.h>
 #include <tencentcloud/igtm/v20231024/model/DescribeDnsLineListRequest.h>
@@ -51,6 +55,8 @@
 #include <tencentcloud/igtm/v20231024/model/DescribeInstanceDetailResponse.h>
 #include <tencentcloud/igtm/v20231024/model/DescribeInstanceListRequest.h>
 #include <tencentcloud/igtm/v20231024/model/DescribeInstanceListResponse.h>
+#include <tencentcloud/igtm/v20231024/model/DescribeInstancePackageListRequest.h>
+#include <tencentcloud/igtm/v20231024/model/DescribeInstancePackageListResponse.h>
 #include <tencentcloud/igtm/v20231024/model/DescribeMonitorDetailRequest.h>
 #include <tencentcloud/igtm/v20231024/model/DescribeMonitorDetailResponse.h>
 #include <tencentcloud/igtm/v20231024/model/DescribeMonitorsRequest.h>
@@ -113,6 +119,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAddressPoolListResponse> DescribeAddressPoolListOutcome;
                 typedef std::future<DescribeAddressPoolListOutcome> DescribeAddressPoolListOutcomeCallable;
                 typedef std::function<void(const IgtmClient*, const Model::DescribeAddressPoolListRequest&, DescribeAddressPoolListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddressPoolListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDetectPackageDetailResponse> DescribeDetectPackageDetailOutcome;
+                typedef std::future<DescribeDetectPackageDetailOutcome> DescribeDetectPackageDetailOutcomeCallable;
+                typedef std::function<void(const IgtmClient*, const Model::DescribeDetectPackageDetailRequest&, DescribeDetectPackageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetectPackageDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDetectTaskPackageListResponse> DescribeDetectTaskPackageListOutcome;
+                typedef std::future<DescribeDetectTaskPackageListOutcome> DescribeDetectTaskPackageListOutcomeCallable;
+                typedef std::function<void(const IgtmClient*, const Model::DescribeDetectTaskPackageListRequest&, DescribeDetectTaskPackageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetectTaskPackageListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDetectorsResponse> DescribeDetectorsOutcome;
                 typedef std::future<DescribeDetectorsOutcome> DescribeDetectorsOutcomeCallable;
                 typedef std::function<void(const IgtmClient*, const Model::DescribeDetectorsRequest&, DescribeDetectorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetectorsAsyncHandler;
@@ -125,6 +137,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceListResponse> DescribeInstanceListOutcome;
                 typedef std::future<DescribeInstanceListOutcome> DescribeInstanceListOutcomeCallable;
                 typedef std::function<void(const IgtmClient*, const Model::DescribeInstanceListRequest&, DescribeInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancePackageListResponse> DescribeInstancePackageListOutcome;
+                typedef std::future<DescribeInstancePackageListOutcome> DescribeInstancePackageListOutcomeCallable;
+                typedef std::function<void(const IgtmClient*, const Model::DescribeInstancePackageListRequest&, DescribeInstancePackageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancePackageListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMonitorDetailResponse> DescribeMonitorDetailOutcome;
                 typedef std::future<DescribeMonitorDetailOutcome> DescribeMonitorDetailOutcomeCallable;
                 typedef std::function<void(const IgtmClient*, const Model::DescribeMonitorDetailRequest&, DescribeMonitorDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorDetailAsyncHandler;
@@ -246,6 +261,24 @@ namespace TencentCloud
                 DescribeAddressPoolListOutcomeCallable DescribeAddressPoolListCallable(const Model::DescribeAddressPoolListRequest& request);
 
                 /**
+                 *探测任务包详情
+                 * @param req DescribeDetectPackageDetailRequest
+                 * @return DescribeDetectPackageDetailOutcome
+                 */
+                DescribeDetectPackageDetailOutcome DescribeDetectPackageDetail(const Model::DescribeDetectPackageDetailRequest &request);
+                void DescribeDetectPackageDetailAsync(const Model::DescribeDetectPackageDetailRequest& request, const DescribeDetectPackageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDetectPackageDetailOutcomeCallable DescribeDetectPackageDetailCallable(const Model::DescribeDetectPackageDetailRequest& request);
+
+                /**
+                 *探测任务套餐列表
+                 * @param req DescribeDetectTaskPackageListRequest
+                 * @return DescribeDetectTaskPackageListOutcome
+                 */
+                DescribeDetectTaskPackageListOutcome DescribeDetectTaskPackageList(const Model::DescribeDetectTaskPackageListRequest &request);
+                void DescribeDetectTaskPackageListAsync(const Model::DescribeDetectTaskPackageListRequest& request, const DescribeDetectTaskPackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDetectTaskPackageListOutcomeCallable DescribeDetectTaskPackageListCallable(const Model::DescribeDetectTaskPackageListRequest& request);
+
+                /**
                  *获取探测节点列表接口
                  * @param req DescribeDetectorsRequest
                  * @return DescribeDetectorsOutcome
@@ -280,6 +313,15 @@ namespace TencentCloud
                 DescribeInstanceListOutcome DescribeInstanceList(const Model::DescribeInstanceListRequest &request);
                 void DescribeInstanceListAsync(const Model::DescribeInstanceListRequest& request, const DescribeInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceListOutcomeCallable DescribeInstanceListCallable(const Model::DescribeInstanceListRequest& request);
+
+                /**
+                 *实例套餐列表
+                 * @param req DescribeInstancePackageListRequest
+                 * @return DescribeInstancePackageListOutcome
+                 */
+                DescribeInstancePackageListOutcome DescribeInstancePackageList(const Model::DescribeInstancePackageListRequest &request);
+                void DescribeInstancePackageListAsync(const Model::DescribeInstancePackageListRequest& request, const DescribeInstancePackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancePackageListOutcomeCallable DescribeInstancePackageListCallable(const Model::DescribeInstancePackageListRequest& request);
 
                 /**
                  *查询监控器详情接口

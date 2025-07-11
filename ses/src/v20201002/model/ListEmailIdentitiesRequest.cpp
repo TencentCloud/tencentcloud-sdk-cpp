@@ -22,7 +22,10 @@
 using namespace TencentCloud::Ses::V20201002::Model;
 using namespace std;
 
-ListEmailIdentitiesRequest::ListEmailIdentitiesRequest()
+ListEmailIdentitiesRequest::ListEmailIdentitiesRequest() :
+    m_tagListHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,37 @@ string ListEmailIdentitiesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +74,53 @@ string ListEmailIdentitiesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<TagList> ListEmailIdentitiesRequest::GetTagList() const
+{
+    return m_tagList;
+}
+
+void ListEmailIdentitiesRequest::SetTagList(const vector<TagList>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool ListEmailIdentitiesRequest::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
+}
+
+uint64_t ListEmailIdentitiesRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void ListEmailIdentitiesRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool ListEmailIdentitiesRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+uint64_t ListEmailIdentitiesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void ListEmailIdentitiesRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool ListEmailIdentitiesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
 
 
