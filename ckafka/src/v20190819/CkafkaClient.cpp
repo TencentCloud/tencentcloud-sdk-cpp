@@ -599,49 +599,6 @@ CkafkaClient::CreateDatahubTopicOutcomeCallable CkafkaClient::CreateDatahubTopic
     return task->get_future();
 }
 
-CkafkaClient::CreateInstancePostOutcome CkafkaClient::CreateInstancePost(const CreateInstancePostRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateInstancePost");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateInstancePostResponse rsp = CreateInstancePostResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateInstancePostOutcome(rsp);
-        else
-            return CreateInstancePostOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateInstancePostOutcome(outcome.GetError());
-    }
-}
-
-void CkafkaClient::CreateInstancePostAsync(const CreateInstancePostRequest& request, const CreateInstancePostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInstancePost(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CkafkaClient::CreateInstancePostOutcomeCallable CkafkaClient::CreateInstancePostCallable(const CreateInstancePostRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateInstancePostOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInstancePost(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CkafkaClient::CreateInstancePreOutcome CkafkaClient::CreateInstancePre(const CreateInstancePreRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstancePre");

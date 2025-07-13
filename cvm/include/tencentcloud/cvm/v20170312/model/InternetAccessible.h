@@ -206,7 +206,7 @@ namespace TencentCloud
 
 示例值：WanIP
 
-此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * @return IPv4AddressType 公网 IP 类型。
 
 - WanIP：普通公网IP。
@@ -217,7 +217,7 @@ namespace TencentCloud
 
 示例值：WanIP
 
-此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * 
                      */
                     std::string GetIPv4AddressType() const;
@@ -233,7 +233,7 @@ namespace TencentCloud
 
 示例值：WanIP
 
-此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * @param _iPv4AddressType 公网 IP 类型。
 
 - WanIP：普通公网IP。
@@ -244,7 +244,7 @@ namespace TencentCloud
 
 示例值：WanIP
 
-此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * 
                      */
                     void SetIPv4AddressType(const std::string& _iPv4AddressType);
@@ -264,7 +264,7 @@ namespace TencentCloud
 如需为资源分配IPv6地址，请指定弹性公网IPv6类型。
 示例值：EIPv6
 
-此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * @return IPv6AddressType 弹性公网 IPv6 类型。
 - EIPv6：弹性公网 IPv6。
 - HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。
@@ -272,7 +272,7 @@ namespace TencentCloud
 如需为资源分配IPv6地址，请指定弹性公网IPv6类型。
 示例值：EIPv6
 
-此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * 
                      */
                     std::string GetIPv6AddressType() const;
@@ -285,7 +285,7 @@ namespace TencentCloud
 如需为资源分配IPv6地址，请指定弹性公网IPv6类型。
 示例值：EIPv6
 
-此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * @param _iPv6AddressType 弹性公网 IPv6 类型。
 - EIPv6：弹性公网 IPv6。
 - HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。
@@ -293,7 +293,7 @@ namespace TencentCloud
 如需为资源分配IPv6地址，请指定弹性公网IPv6类型。
 示例值：EIPv6
 
-此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * 
                      */
                     void SetIPv6AddressType(const std::string& _iPv6AddressType);
@@ -388,7 +388,7 @@ namespace TencentCloud
 
 示例值：WanIP
 
-此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      */
                     std::string m_iPv4AddressType;
                     bool m_iPv4AddressTypeHasBeenSet;
@@ -401,7 +401,7 @@ namespace TencentCloud
 如需为资源分配IPv6地址，请指定弹性公网IPv6类型。
 示例值：EIPv6
 
-此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      */
                     std::string m_iPv6AddressType;
                     bool m_iPv6AddressTypeHasBeenSet;

@@ -45,6 +45,8 @@
 #include <tencentcloud/live/v20180801/model/CancelCommonMixStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/CopyCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/CopyCasterResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateAuditKeywordsRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateAuditKeywordsResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterInputPushUrlRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/live/v20180801/model/CreateRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateScreenshotTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateScreenshotTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteAuditKeywordsRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteAuditKeywordsResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterInputInfoRequest.h>
@@ -153,6 +157,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditKeywordsRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditKeywordsResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBackupStreamListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeBackupStreamListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListRequest.h>
@@ -466,6 +472,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CopyCasterResponse> CopyCasterOutcome;
                 typedef std::future<CopyCasterOutcome> CopyCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CopyCasterRequest&, CopyCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyCasterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAuditKeywordsResponse> CreateAuditKeywordsOutcome;
+                typedef std::future<CreateAuditKeywordsOutcome> CreateAuditKeywordsOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateAuditKeywordsRequest&, CreateAuditKeywordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditKeywordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCasterResponse> CreateCasterOutcome;
                 typedef std::future<CreateCasterOutcome> CreateCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateCasterRequest&, CreateCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterAsyncHandler;
@@ -541,6 +550,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateScreenshotTaskResponse> CreateScreenshotTaskOutcome;
                 typedef std::future<CreateScreenshotTaskOutcome> CreateScreenshotTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateScreenshotTaskRequest&, CreateScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScreenshotTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAuditKeywordsResponse> DeleteAuditKeywordsOutcome;
+                typedef std::future<DeleteAuditKeywordsOutcome> DeleteAuditKeywordsOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteAuditKeywordsRequest&, DeleteAuditKeywordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditKeywordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCasterResponse> DeleteCasterOutcome;
                 typedef std::future<DeleteCasterOutcome> DeleteCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteCasterRequest&, DeleteCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterAsyncHandler;
@@ -628,6 +640,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAreaBillBandwidthAndFluxListResponse> DescribeAreaBillBandwidthAndFluxListOutcome;
                 typedef std::future<DescribeAreaBillBandwidthAndFluxListOutcome> DescribeAreaBillBandwidthAndFluxListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeAreaBillBandwidthAndFluxListRequest&, DescribeAreaBillBandwidthAndFluxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBillBandwidthAndFluxListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditKeywordsResponse> DescribeAuditKeywordsOutcome;
+                typedef std::future<DescribeAuditKeywordsOutcome> DescribeAuditKeywordsOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeAuditKeywordsRequest&, DescribeAuditKeywordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditKeywordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupStreamListResponse> DescribeBackupStreamListOutcome;
                 typedef std::future<DescribeBackupStreamListOutcome> DescribeBackupStreamListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeBackupStreamListRequest&, DescribeBackupStreamListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupStreamListAsyncHandler;
@@ -1132,6 +1147,15 @@ namespace TencentCloud
                 CopyCasterOutcomeCallable CopyCasterCallable(const Model::CopyCasterRequest& request);
 
                 /**
+                 *创建关键词，并关联到关键词库。
+                 * @param req CreateAuditKeywordsRequest
+                 * @return CreateAuditKeywordsOutcome
+                 */
+                CreateAuditKeywordsOutcome CreateAuditKeywords(const Model::CreateAuditKeywordsRequest &request);
+                void CreateAuditKeywordsAsync(const Model::CreateAuditKeywordsRequest& request, const CreateAuditKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuditKeywordsOutcomeCallable CreateAuditKeywordsCallable(const Model::CreateAuditKeywordsRequest& request);
+
+                /**
                  *该接口用来创建新的导播台
                  * @param req CreateCasterRequest
                  * @return CreateCasterOutcome
@@ -1413,6 +1437,15 @@ namespace TencentCloud
                 CreateScreenshotTaskOutcomeCallable CreateScreenshotTaskCallable(const Model::CreateScreenshotTaskRequest& request);
 
                 /**
+                 *删除关键词信息。
+                 * @param req DeleteAuditKeywordsRequest
+                 * @return DeleteAuditKeywordsOutcome
+                 */
+                DeleteAuditKeywordsOutcome DeleteAuditKeywords(const Model::DeleteAuditKeywordsRequest &request);
+                void DeleteAuditKeywordsAsync(const Model::DeleteAuditKeywordsRequest& request, const DeleteAuditKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAuditKeywordsOutcomeCallable DeleteAuditKeywordsCallable(const Model::DeleteAuditKeywordsRequest& request);
+
+                /**
                  *该接口用来删除一个导播台的所有信息。
 注意，调用该接口后，所有的导播台信息将被清除，包括正在直播的内容也将直接中断。
                  * @param req DeleteCasterRequest
@@ -1679,6 +1712,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeAreaBillBandwidthAndFluxListOutcome DescribeAreaBillBandwidthAndFluxList(const Model::DescribeAreaBillBandwidthAndFluxListRequest &request);
                 void DescribeAreaBillBandwidthAndFluxListAsync(const Model::DescribeAreaBillBandwidthAndFluxListRequest& request, const DescribeAreaBillBandwidthAndFluxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAreaBillBandwidthAndFluxListOutcomeCallable DescribeAreaBillBandwidthAndFluxListCallable(const Model::DescribeAreaBillBandwidthAndFluxListRequest& request);
+
+                /**
+                 *获取关键词信息。
+                 * @param req DescribeAuditKeywordsRequest
+                 * @return DescribeAuditKeywordsOutcome
+                 */
+                DescribeAuditKeywordsOutcome DescribeAuditKeywords(const Model::DescribeAuditKeywordsRequest &request);
+                void DescribeAuditKeywordsAsync(const Model::DescribeAuditKeywordsRequest& request, const DescribeAuditKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditKeywordsOutcomeCallable DescribeAuditKeywordsCallable(const Model::DescribeAuditKeywordsRequest& request);
 
                 /**
                  *返回正在直播中的流列表。适用于推流成功后查询在线流信息。

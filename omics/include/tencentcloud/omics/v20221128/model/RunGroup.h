@@ -480,15 +480,15 @@ namespace TencentCloud
                     bool InputCosUriHasBeenSet() const;
 
                     /**
-                     * 获取输入模版ID。
-                     * @return InputTemplateId 输入模版ID。
+                     * 获取输入模板ID。
+                     * @return InputTemplateId 输入模板ID。
                      * 
                      */
                     std::string GetInputTemplateId() const;
 
                     /**
-                     * 设置输入模版ID。
-                     * @param _inputTemplateId 输入模版ID。
+                     * 设置输入模板ID。
+                     * @param _inputTemplateId 输入模板ID。
                      * 
                      */
                     void SetInputTemplateId(const std::string& _inputTemplateId);
@@ -876,7 +876,7 @@ namespace TencentCloud
                     bool m_inputCosUriHasBeenSet;
 
                     /**
-                     * 输入模版ID。
+                     * 输入模板ID。
                      */
                     std::string m_inputTemplateId;
                     bool m_inputTemplateIdHasBeenSet;

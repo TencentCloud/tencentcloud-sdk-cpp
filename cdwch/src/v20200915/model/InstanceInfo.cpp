@@ -73,7 +73,8 @@ InstanceInfo::InstanceInfo() :
     m_detailsHasBeenSet(false),
     m_isWhiteSGsHasBeenSet(false),
     m_bindSGsHasBeenSet(false),
-    m_hasPublicCloudClbHasBeenSet(false)
+    m_hasPublicCloudClbHasBeenSet(false),
+    m_upgradeZkVersionsHasBeenSet(false)
 {
 }
 
@@ -663,6 +664,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_hasPublicCloudClbHasBeenSet = true;
     }
 
+    if (value.HasMember("UpgradeZkVersions") && !value["UpgradeZkVersions"].IsNull())
+    {
+        if (!value["UpgradeZkVersions"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.UpgradeZkVersions` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_upgradeZkVersions = string(value["UpgradeZkVersions"].GetString());
+        m_upgradeZkVersionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1115,6 +1126,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "HasPublicCloudClb";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasPublicCloudClb, allocator);
+    }
+
+    if (m_upgradeZkVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeZkVersions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_upgradeZkVersions.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1966,5 +1985,21 @@ void InstanceInfo::SetHasPublicCloudClb(const bool& _hasPublicCloudClb)
 bool InstanceInfo::HasPublicCloudClbHasBeenSet() const
 {
     return m_hasPublicCloudClbHasBeenSet;
+}
+
+string InstanceInfo::GetUpgradeZkVersions() const
+{
+    return m_upgradeZkVersions;
+}
+
+void InstanceInfo::SetUpgradeZkVersions(const string& _upgradeZkVersions)
+{
+    m_upgradeZkVersions = _upgradeZkVersions;
+    m_upgradeZkVersionsHasBeenSet = true;
+}
+
+bool InstanceInfo::UpgradeZkVersionsHasBeenSet() const
+{
+    return m_upgradeZkVersionsHasBeenSet;
 }
 

@@ -49,8 +49,6 @@
 #include <tencentcloud/ckafka/v20190819/model/CreateDatahubTaskResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateDatahubTopicRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateDatahubTopicResponse.h>
-#include <tencentcloud/ckafka/v20190819/model/CreateInstancePostRequest.h>
-#include <tencentcloud/ckafka/v20190819/model/CreateInstancePostResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionRequest.h>
@@ -252,9 +250,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDatahubTopicResponse> CreateDatahubTopicOutcome;
                 typedef std::future<CreateDatahubTopicOutcome> CreateDatahubTopicOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateDatahubTopicRequest&, CreateDatahubTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatahubTopicAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateInstancePostResponse> CreateInstancePostOutcome;
-                typedef std::future<CreateInstancePostOutcome> CreateInstancePostOutcomeCallable;
-                typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePostRequest&, CreateInstancePostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePostAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstancePreResponse> CreateInstancePreOutcome;
                 typedef std::future<CreateInstancePreOutcome> CreateInstancePreOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePreRequest&, CreateInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePreAsyncHandler;
@@ -596,15 +591,6 @@ namespace TencentCloud
                 CreateDatahubTopicOutcome CreateDatahubTopic(const Model::CreateDatahubTopicRequest &request);
                 void CreateDatahubTopicAsync(const Model::CreateDatahubTopicRequest& request, const CreateDatahubTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDatahubTopicOutcomeCallable CreateDatahubTopicCallable(const Model::CreateDatahubTopicRequest& request);
-
-                /**
-                 *由于出参需要更新，建议用户迁移使用 CreatePostPaidInstance 接口。创建按量计费实例。通常用于 SDK 或云 API 控制台调用接口，创建后付费 CKafka 实例。调用接口与在 CKafka 控制台购买按量付费实例效果相同。
-                 * @param req CreateInstancePostRequest
-                 * @return CreateInstancePostOutcome
-                 */
-                CreateInstancePostOutcome CreateInstancePost(const Model::CreateInstancePostRequest &request);
-                void CreateInstancePostAsync(const Model::CreateInstancePostRequest& request, const CreateInstancePostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateInstancePostOutcomeCallable CreateInstancePostCallable(const Model::CreateInstancePostRequest& request);
 
                 /**
                  *创建实例(预付费包年包月),  仅支持创建专业版实例

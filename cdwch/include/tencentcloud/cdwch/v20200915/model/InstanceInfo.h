@@ -337,15 +337,15 @@ Modify 集群变更中；
                     bool CommonSummaryHasBeenSet() const;
 
                     /**
-                     * 获取高可用，“true" "false"
-                     * @return HA 高可用，“true" "false"
+                     * 获取高可用,"true" "false"
+                     * @return HA 高可用,"true" "false"
                      * 
                      */
                     std::string GetHA() const;
 
                     /**
-                     * 设置高可用，“true" "false"
-                     * @param _hA 高可用，“true" "false"
+                     * 设置高可用,"true" "false"
+                     * @param _hA 高可用,"true" "false"
                      * 
                      */
                     void SetHA(const std::string& _hA);
@@ -1176,6 +1176,27 @@ Modify 集群变更中；
                      */
                     bool HasPublicCloudClbHasBeenSet() const;
 
+                    /**
+                     * 获取可升级的zk版本
+                     * @return UpgradeZkVersions 可升级的zk版本
+                     * 
+                     */
+                    std::string GetUpgradeZkVersions() const;
+
+                    /**
+                     * 设置可升级的zk版本
+                     * @param _upgradeZkVersions 可升级的zk版本
+                     * 
+                     */
+                    void SetUpgradeZkVersions(const std::string& _upgradeZkVersions);
+
+                    /**
+                     * 判断参数 UpgradeZkVersions 是否已赋值
+                     * @return UpgradeZkVersions 是否已赋值
+                     * 
+                     */
+                    bool UpgradeZkVersionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1260,7 +1281,7 @@ Modify 集群变更中；
                     bool m_commonSummaryHasBeenSet;
 
                     /**
-                     * 高可用，“true" "false"
+                     * 高可用,"true" "false"
                      */
                     std::string m_hA;
                     bool m_hAHasBeenSet;
@@ -1498,6 +1519,12 @@ Modify 集群变更中；
                      */
                     bool m_hasPublicCloudClb;
                     bool m_hasPublicCloudClbHasBeenSet;
+
+                    /**
+                     * 可升级的zk版本
+                     */
+                    std::string m_upgradeZkVersions;
+                    bool m_upgradeZkVersionsHasBeenSet;
 
                 };
             }

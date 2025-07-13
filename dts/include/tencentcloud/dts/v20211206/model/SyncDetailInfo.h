@@ -221,15 +221,15 @@ namespace TencentCloud
                     bool StepInfosHasBeenSet() const;
 
                     /**
-                     * 获取不能发起一致性校验的原因
-                     * @return CauseOfCompareDisable 不能发起一致性校验的原因
+                     * 获取不能发起内置校验的原因
+                     * @return CauseOfCompareDisable 不能发起内置校验的原因
                      * 
                      */
                     std::string GetCauseOfCompareDisable() const;
 
                     /**
-                     * 设置不能发起一致性校验的原因
-                     * @param _causeOfCompareDisable 不能发起一致性校验的原因
+                     * 设置不能发起内置校验的原因
+                     * @param _causeOfCompareDisable 不能发起内置校验的原因
                      * 
                      */
                     void SetCauseOfCompareDisable(const std::string& _causeOfCompareDisable);
@@ -314,7 +314,7 @@ namespace TencentCloud
                     bool m_stepInfosHasBeenSet;
 
                     /**
-                     * 不能发起一致性校验的原因
+                     * 不能发起内置校验的原因
                      */
                     std::string m_causeOfCompareDisable;
                     bool m_causeOfCompareDisableHasBeenSet;

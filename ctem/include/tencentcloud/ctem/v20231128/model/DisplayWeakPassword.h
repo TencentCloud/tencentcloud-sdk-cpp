@@ -257,6 +257,48 @@ namespace TencentCloud
                      */
                     bool ScreenshotUrlHasBeenSet() const;
 
+                    /**
+                     * 获取状态：unrepaired:未修复，repaired:已修复, offline:资产已下线, ignore:已忽略, checking:复测中
+                     * @return Status 状态：unrepaired:未修复，repaired:已修复, offline:资产已下线, ignore:已忽略, checking:复测中
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置状态：unrepaired:未修复，repaired:已修复, offline:资产已下线, ignore:已忽略, checking:复测中
+                     * @param _status 状态：unrepaired:未修复，repaired:已修复, offline:资产已下线, ignore:已忽略, checking:复测中
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取上次复测时间
+                     * @return LastCheckTime 上次复测时间
+                     * 
+                     */
+                    std::string GetLastCheckTime() const;
+
+                    /**
+                     * 设置上次复测时间
+                     * @param _lastCheckTime 上次复测时间
+                     * 
+                     */
+                    void SetLastCheckTime(const std::string& _lastCheckTime);
+
+                    /**
+                     * 判断参数 LastCheckTime 是否已赋值
+                     * @return LastCheckTime 是否已赋值
+                     * 
+                     */
+                    bool LastCheckTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +360,18 @@ namespace TencentCloud
                      */
                     std::string m_screenshotUrl;
                     bool m_screenshotUrlHasBeenSet;
+
+                    /**
+                     * 状态：unrepaired:未修复，repaired:已修复, offline:资产已下线, ignore:已忽略, checking:复测中
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 上次复测时间
+                     */
+                    std::string m_lastCheckTime;
+                    bool m_lastCheckTimeHasBeenSet;
 
                 };
             }

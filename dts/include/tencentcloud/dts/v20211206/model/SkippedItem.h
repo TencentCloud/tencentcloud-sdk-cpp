@@ -68,6 +68,27 @@ namespace TencentCloud
                     bool DbHasBeenSet() const;
 
                     /**
+                     * 获取schema名
+                     * @return Schema schema名
+                     * 
+                     */
+                    std::string GetSchema() const;
+
+                    /**
+                     * 设置schema名
+                     * @param _schema schema名
+                     * 
+                     */
+                    void SetSchema(const std::string& _schema);
+
+                    /**
+                     * 判断参数 Schema 是否已赋值
+                     * @return Schema 是否已赋值
+                     * 
+                     */
+                    bool SchemaHasBeenSet() const;
+
+                    /**
                      * 获取表名
                      * @return Table 表名
                      * 
@@ -116,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_db;
                     bool m_dbHasBeenSet;
+
+                    /**
+                     * schema名
+                     */
+                    std::string m_schema;
+                    bool m_schemaHasBeenSet;
 
                     /**
                      * 表名

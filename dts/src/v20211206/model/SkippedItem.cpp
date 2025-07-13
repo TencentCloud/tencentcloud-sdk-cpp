@@ -22,6 +22,7 @@ using namespace std;
 
 SkippedItem::SkippedItem() :
     m_dbHasBeenSet(false),
+    m_schemaHasBeenSet(false),
     m_tableHasBeenSet(false),
     m_reasonHasBeenSet(false)
 {
@@ -40,6 +41,16 @@ CoreInternalOutcome SkippedItem::Deserialize(const rapidjson::Value &value)
         }
         m_db = string(value["Db"].GetString());
         m_dbHasBeenSet = true;
+    }
+
+    if (value.HasMember("Schema") && !value["Schema"].IsNull())
+    {
+        if (!value["Schema"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SkippedItem.Schema` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schema = string(value["Schema"].GetString());
+        m_schemaHasBeenSet = true;
     }
 
     if (value.HasMember("Table") && !value["Table"].IsNull())
@@ -77,6 +88,14 @@ void SkippedItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_db.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_schemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Schema";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_tableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,22 @@ void SkippedItem::SetDb(const string& _db)
 bool SkippedItem::DbHasBeenSet() const
 {
     return m_dbHasBeenSet;
+}
+
+string SkippedItem::GetSchema() const
+{
+    return m_schema;
+}
+
+void SkippedItem::SetSchema(const string& _schema)
+{
+    m_schema = _schema;
+    m_schemaHasBeenSet = true;
+}
+
+bool SkippedItem::SchemaHasBeenSet() const
+{
+    return m_schemaHasBeenSet;
 }
 
 string SkippedItem::GetTable() const
