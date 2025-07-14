@@ -20,12 +20,9 @@ set(monitor_public_header
   )
 
 set(monitor_public_header_model
-  include/tencentcloud/monitor/v20230616/model/GetMonitorDataResponse.h
-  include/tencentcloud/monitor/v20230616/model/Expr.h
-  include/tencentcloud/monitor/v20230616/model/GetMonitorDataRequest.h
-  include/tencentcloud/monitor/v20230616/model/Instance.h
-  include/tencentcloud/monitor/v20230616/model/DataPoint.h
-  include/tencentcloud/monitor/v20230616/model/Dimension.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesRequest.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesResponse.h
+  include/tencentcloud/monitor/v20230616/model/PageByNoParams.h
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmShieldsRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyInfoRequest.h
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h
@@ -507,12 +504,9 @@ set(monitor_public_header_model
 set(monitor_src
   src/v20230616/MonitorClient.cpp
   src/v20180724/MonitorClient.cpp
-  src/v20230616/model/GetMonitorDataResponse.cpp
-  src/v20230616/model/Expr.cpp
-  src/v20230616/model/GetMonitorDataRequest.cpp
-  src/v20230616/model/Instance.cpp
-  src/v20230616/model/DataPoint.cpp
-  src/v20230616/model/Dimension.cpp
+  src/v20230616/model/DescribeAlarmNotifyHistoriesRequest.cpp
+  src/v20230616/model/DescribeAlarmNotifyHistoriesResponse.cpp
+  src/v20230616/model/PageByNoParams.cpp
   src/v20180724/model/DeleteAlarmShieldsRequest.cpp
   src/v20180724/model/ModifyAlarmPolicyInfoRequest.cpp
   src/v20180724/model/AlarmPolicyTriggerTask.cpp

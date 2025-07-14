@@ -21,6 +21,7 @@ set(ctem_public_header
 set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/ModifyCustomerResponse.h
   include/tencentcloud/ctem/v20231128/model/DisplayWechatOfficialAccount.h
+  include/tencentcloud/ctem/v20231128/model/DisplayGithub.h
   include/tencentcloud/ctem/v20231128/model/ModifyCustomerRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeWechatAppletsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeManagesRequest.h
@@ -31,7 +32,7 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DisplayJobRecord.h
   include/tencentcloud/ctem/v20231128/model/DescribeAppsRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeDarkWebsRequest.h
-  include/tencentcloud/ctem/v20231128/model/DisplayNetDisk.h
+  include/tencentcloud/ctem/v20231128/model/DisplayLeakageEmail.h
   include/tencentcloud/ctem/v20231128/model/DescribeHttpsRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeEnterprisesResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeSuspiciousAssetsResponse.h
@@ -40,18 +41,22 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DescribeSensitiveInfosRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeNetDisksRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeAssetsRequest.h
+  include/tencentcloud/ctem/v20231128/model/DisplayLeakageData.h
+  include/tencentcloud/ctem/v20231128/model/DescribeLeakageDatasRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeJobRecordDetailsRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeJobRecordDetailsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeSubDomainsRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeCustomersRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayJobRecordDetail.h
-  include/tencentcloud/ctem/v20231128/model/DisplayGithub.h
+  include/tencentcloud/ctem/v20231128/model/DisplayPort.h
+  include/tencentcloud/ctem/v20231128/model/DescribeLeakageCodesRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayAsset.h
   include/tencentcloud/ctem/v20231128/model/DisplayApp.h
   include/tencentcloud/ctem/v20231128/model/DescribeVulsResponse.h
   include/tencentcloud/ctem/v20231128/model/DisplaySubDomain.h
-  include/tencentcloud/ctem/v20231128/model/DisplayToolCommon.h
+  include/tencentcloud/ctem/v20231128/model/DescribeWechatAppletsRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeGithubsResponse.h
+  include/tencentcloud/ctem/v20231128/model/DescribeLeakageEmailsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeAssetsResponse.h
   include/tencentcloud/ctem/v20231128/model/Customer.h
   include/tencentcloud/ctem/v20231128/model/DescribeWechatOfficialAccountsResponse.h
@@ -66,16 +71,19 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DescribeSubDomainsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeCustomersResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeDomainsResponse.h
-  include/tencentcloud/ctem/v20231128/model/DisplayPort.h
+  include/tencentcloud/ctem/v20231128/model/DisplayNetDisk.h
   include/tencentcloud/ctem/v20231128/model/DescribeEnterprisesRequest.h
-  include/tencentcloud/ctem/v20231128/model/DescribeWechatAppletsRequest.h
+  include/tencentcloud/ctem/v20231128/model/DescribeLeakageDatasResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeConfigsRequest.h
+  include/tencentcloud/ctem/v20231128/model/DisplayToolCommon.h
+  include/tencentcloud/ctem/v20231128/model/DisplayLeakageCode.h
   include/tencentcloud/ctem/v20231128/model/DescribeAppsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeWeakPasswordsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribePortsResponse.h
   include/tencentcloud/ctem/v20231128/model/DisplaySuspiciousAsset.h
   include/tencentcloud/ctem/v20231128/model/Filter.h
   include/tencentcloud/ctem/v20231128/model/DisplayWeakPassword.h
+  include/tencentcloud/ctem/v20231128/model/DescribeLeakageEmailsRequest.h
   include/tencentcloud/ctem/v20231128/model/IdndValue.h
   include/tencentcloud/ctem/v20231128/model/CreateCustomerResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeHttpsResponse.h
@@ -84,6 +92,7 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DescribeSensitiveInfosResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeJobRecordsRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayDarkWeb.h
+  include/tencentcloud/ctem/v20231128/model/DescribeLeakageCodesResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeManagesResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeDomainsRequest.h
   include/tencentcloud/ctem/v20231128/model/JobRecordProgress.h
@@ -100,6 +109,7 @@ set(ctem_src
   src/v20231128/CtemClient.cpp
   src/v20231128/model/ModifyCustomerResponse.cpp
   src/v20231128/model/DisplayWechatOfficialAccount.cpp
+  src/v20231128/model/DisplayGithub.cpp
   src/v20231128/model/ModifyCustomerRequest.cpp
   src/v20231128/model/DescribeWechatAppletsResponse.cpp
   src/v20231128/model/DescribeManagesRequest.cpp
@@ -110,7 +120,7 @@ set(ctem_src
   src/v20231128/model/DisplayJobRecord.cpp
   src/v20231128/model/DescribeAppsRequest.cpp
   src/v20231128/model/DescribeDarkWebsRequest.cpp
-  src/v20231128/model/DisplayNetDisk.cpp
+  src/v20231128/model/DisplayLeakageEmail.cpp
   src/v20231128/model/DescribeHttpsRequest.cpp
   src/v20231128/model/DescribeEnterprisesResponse.cpp
   src/v20231128/model/DescribeSuspiciousAssetsResponse.cpp
@@ -119,18 +129,22 @@ set(ctem_src
   src/v20231128/model/DescribeSensitiveInfosRequest.cpp
   src/v20231128/model/DescribeNetDisksRequest.cpp
   src/v20231128/model/DescribeAssetsRequest.cpp
+  src/v20231128/model/DisplayLeakageData.cpp
+  src/v20231128/model/DescribeLeakageDatasRequest.cpp
   src/v20231128/model/DescribeJobRecordDetailsRequest.cpp
   src/v20231128/model/DescribeJobRecordDetailsResponse.cpp
   src/v20231128/model/DescribeSubDomainsRequest.cpp
   src/v20231128/model/DescribeCustomersRequest.cpp
   src/v20231128/model/DisplayJobRecordDetail.cpp
-  src/v20231128/model/DisplayGithub.cpp
+  src/v20231128/model/DisplayPort.cpp
+  src/v20231128/model/DescribeLeakageCodesRequest.cpp
   src/v20231128/model/DisplayAsset.cpp
   src/v20231128/model/DisplayApp.cpp
   src/v20231128/model/DescribeVulsResponse.cpp
   src/v20231128/model/DisplaySubDomain.cpp
-  src/v20231128/model/DisplayToolCommon.cpp
+  src/v20231128/model/DescribeWechatAppletsRequest.cpp
   src/v20231128/model/DescribeGithubsResponse.cpp
+  src/v20231128/model/DescribeLeakageEmailsResponse.cpp
   src/v20231128/model/DescribeAssetsResponse.cpp
   src/v20231128/model/Customer.cpp
   src/v20231128/model/DescribeWechatOfficialAccountsResponse.cpp
@@ -145,16 +159,19 @@ set(ctem_src
   src/v20231128/model/DescribeSubDomainsResponse.cpp
   src/v20231128/model/DescribeCustomersResponse.cpp
   src/v20231128/model/DescribeDomainsResponse.cpp
-  src/v20231128/model/DisplayPort.cpp
+  src/v20231128/model/DisplayNetDisk.cpp
   src/v20231128/model/DescribeEnterprisesRequest.cpp
-  src/v20231128/model/DescribeWechatAppletsRequest.cpp
+  src/v20231128/model/DescribeLeakageDatasResponse.cpp
   src/v20231128/model/DescribeConfigsRequest.cpp
+  src/v20231128/model/DisplayToolCommon.cpp
+  src/v20231128/model/DisplayLeakageCode.cpp
   src/v20231128/model/DescribeAppsResponse.cpp
   src/v20231128/model/DescribeWeakPasswordsResponse.cpp
   src/v20231128/model/DescribePortsResponse.cpp
   src/v20231128/model/DisplaySuspiciousAsset.cpp
   src/v20231128/model/Filter.cpp
   src/v20231128/model/DisplayWeakPassword.cpp
+  src/v20231128/model/DescribeLeakageEmailsRequest.cpp
   src/v20231128/model/IdndValue.cpp
   src/v20231128/model/CreateCustomerResponse.cpp
   src/v20231128/model/DescribeHttpsResponse.cpp
@@ -163,6 +180,7 @@ set(ctem_src
   src/v20231128/model/DescribeSensitiveInfosResponse.cpp
   src/v20231128/model/DescribeJobRecordsRequest.cpp
   src/v20231128/model/DisplayDarkWeb.cpp
+  src/v20231128/model/DescribeLeakageCodesResponse.cpp
   src/v20231128/model/DescribeManagesResponse.cpp
   src/v20231128/model/DescribeDomainsRequest.cpp
   src/v20231128/model/JobRecordProgress.cpp

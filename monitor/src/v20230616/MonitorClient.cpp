@@ -40,42 +40,42 @@ MonitorClient::MonitorClient(const Credential &credential, const string &region,
 }
 
 
-MonitorClient::GetMonitorDataOutcome MonitorClient::GetMonitorData(const GetMonitorDataRequest &request)
+MonitorClient::DescribeAlarmNotifyHistoriesOutcome MonitorClient::DescribeAlarmNotifyHistories(const DescribeAlarmNotifyHistoriesRequest &request)
 {
-    auto outcome = MakeRequest(request, "GetMonitorData");
+    auto outcome = MakeRequest(request, "DescribeAlarmNotifyHistories");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        GetMonitorDataResponse rsp = GetMonitorDataResponse();
+        DescribeAlarmNotifyHistoriesResponse rsp = DescribeAlarmNotifyHistoriesResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return GetMonitorDataOutcome(rsp);
+            return DescribeAlarmNotifyHistoriesOutcome(rsp);
         else
-            return GetMonitorDataOutcome(o.GetError());
+            return DescribeAlarmNotifyHistoriesOutcome(o.GetError());
     }
     else
     {
-        return GetMonitorDataOutcome(outcome.GetError());
+        return DescribeAlarmNotifyHistoriesOutcome(outcome.GetError());
     }
 }
 
-void MonitorClient::GetMonitorDataAsync(const GetMonitorDataRequest& request, const GetMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void MonitorClient::DescribeAlarmNotifyHistoriesAsync(const DescribeAlarmNotifyHistoriesRequest& request, const DescribeAlarmNotifyHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->GetMonitorData(request), context);
+        handler(this, request, this->DescribeAlarmNotifyHistories(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-MonitorClient::GetMonitorDataOutcomeCallable MonitorClient::GetMonitorDataCallable(const GetMonitorDataRequest &request)
+MonitorClient::DescribeAlarmNotifyHistoriesOutcomeCallable MonitorClient::DescribeAlarmNotifyHistoriesCallable(const DescribeAlarmNotifyHistoriesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetMonitorDataOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmNotifyHistoriesOutcome()>>(
         [this, request]()
         {
-            return this->GetMonitorData(request);
+            return this->DescribeAlarmNotifyHistories(request);
         }
     );
 

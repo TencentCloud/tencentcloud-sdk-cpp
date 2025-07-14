@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/kms/v20190118/model/ExclusiveHSM.h>
+#include <tencentcloud/kms/v20190118/model/DestinationSyncConfig.h>
 
 
 namespace TencentCloud
@@ -268,6 +269,34 @@ namespace TencentCloud
                      */
                     bool DataKeyUsedCountHasBeenSet() const;
 
+                    /**
+                     * 获取同步任务的目标地域信息
+                     * @return SyncTaskList 同步任务的目标地域信息
+                     * 
+                     */
+                    std::vector<DestinationSyncConfig> GetSyncTaskList() const;
+
+                    /**
+                     * 判断参数 SyncTaskList 是否已赋值
+                     * @return SyncTaskList 是否已赋值
+                     * 
+                     */
+                    bool SyncTaskListHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持同步任务。true:支持，false:不支持。
+                     * @return IsAllowedSync 是否支持同步任务。true:支持，false:不支持。
+                     * 
+                     */
+                    bool GetIsAllowedSync() const;
+
+                    /**
+                     * 判断参数 IsAllowedSync 是否已赋值
+                     * @return IsAllowedSync 是否已赋值
+                     * 
+                     */
+                    bool IsAllowedSyncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -365,6 +394,18 @@ namespace TencentCloud
                      */
                     uint64_t m_dataKeyUsedCount;
                     bool m_dataKeyUsedCountHasBeenSet;
+
+                    /**
+                     * 同步任务的目标地域信息
+                     */
+                    std::vector<DestinationSyncConfig> m_syncTaskList;
+                    bool m_syncTaskListHasBeenSet;
+
+                    /**
+                     * 是否支持同步任务。true:支持，false:不支持。
+                     */
+                    bool m_isAllowedSync;
+                    bool m_isAllowedSyncHasBeenSet;
 
                 };
             }

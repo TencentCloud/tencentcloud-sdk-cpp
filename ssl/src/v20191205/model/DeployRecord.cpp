@@ -28,7 +28,8 @@ DeployRecord::DeployRecord() :
     m_typeHasBeenSet(false),
     m_recordDetailListHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_pendingTotalCountHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome DeployRecord::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PendingTotalCount") && !value["PendingTotalCount"].IsNull())
+    {
+        if (!value["PendingTotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployRecord.PendingTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pendingTotalCount = value["PendingTotalCount"].GetInt64();
+        m_pendingTotalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void DeployRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pendingTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PendingTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pendingTotalCount, allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void DeployRecord::SetCreateTime(const string& _createTime)
 bool DeployRecord::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+int64_t DeployRecord::GetPendingTotalCount() const
+{
+    return m_pendingTotalCount;
+}
+
+void DeployRecord::SetPendingTotalCount(const int64_t& _pendingTotalCount)
+{
+    m_pendingTotalCount = _pendingTotalCount;
+    m_pendingTotalCountHasBeenSet = true;
+}
+
+bool DeployRecord::PendingTotalCountHasBeenSet() const
+{
+    return m_pendingTotalCountHasBeenSet;
 }
 

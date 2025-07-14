@@ -24,7 +24,8 @@ using namespace std;
 
 SwitchProxyRequest::SwitchProxyRequest() :
     m_instanceIdHasBeenSet(false),
-    m_proxyIDHasBeenSet(false)
+    m_proxyIDHasBeenSet(false),
+    m_proxyIDListHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string SwitchProxyRequest::ToJsonString() const
         string key = "ProxyID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_proxyID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyIDListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyIDList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_proxyIDList.begin(); itr != m_proxyIDList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -89,6 +103,22 @@ void SwitchProxyRequest::SetProxyID(const string& _proxyID)
 bool SwitchProxyRequest::ProxyIDHasBeenSet() const
 {
     return m_proxyIDHasBeenSet;
+}
+
+vector<string> SwitchProxyRequest::GetProxyIDList() const
+{
+    return m_proxyIDList;
+}
+
+void SwitchProxyRequest::SetProxyIDList(const vector<string>& _proxyIDList)
+{
+    m_proxyIDList = _proxyIDList;
+    m_proxyIDListHasBeenSet = true;
+}
+
+bool SwitchProxyRequest::ProxyIDListHasBeenSet() const
+{
+    return m_proxyIDListHasBeenSet;
 }
 
 

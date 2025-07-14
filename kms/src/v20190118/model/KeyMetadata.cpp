@@ -38,7 +38,14 @@ KeyMetadata::KeyMetadata() :
     m_resourceIdHasBeenSet(false),
     m_hsmClusterIdHasBeenSet(false),
     m_rotateDaysHasBeenSet(false),
-    m_lastRotateTimeHasBeenSet(false)
+    m_lastRotateTimeHasBeenSet(false),
+    m_isSyncReplicaHasBeenSet(false),
+    m_sourceRegionHasBeenSet(false),
+    m_syncStatusHasBeenSet(false),
+    m_syncMessagesHasBeenSet(false),
+    m_syncStartTimeHasBeenSet(false),
+    m_syncEndTimeHasBeenSet(false),
+    m_sourceHsmClusterIdHasBeenSet(false)
 {
 }
 
@@ -227,6 +234,76 @@ CoreInternalOutcome KeyMetadata::Deserialize(const rapidjson::Value &value)
         m_lastRotateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSyncReplica") && !value["IsSyncReplica"].IsNull())
+    {
+        if (!value["IsSyncReplica"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyMetadata.IsSyncReplica` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSyncReplica = value["IsSyncReplica"].GetInt64();
+        m_isSyncReplicaHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceRegion") && !value["SourceRegion"].IsNull())
+    {
+        if (!value["SourceRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyMetadata.SourceRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceRegion = string(value["SourceRegion"].GetString());
+        m_sourceRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncStatus") && !value["SyncStatus"].IsNull())
+    {
+        if (!value["SyncStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyMetadata.SyncStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncStatus = value["SyncStatus"].GetInt64();
+        m_syncStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncMessages") && !value["SyncMessages"].IsNull())
+    {
+        if (!value["SyncMessages"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyMetadata.SyncMessages` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncMessages = string(value["SyncMessages"].GetString());
+        m_syncMessagesHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncStartTime") && !value["SyncStartTime"].IsNull())
+    {
+        if (!value["SyncStartTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyMetadata.SyncStartTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncStartTime = value["SyncStartTime"].GetUint64();
+        m_syncStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncEndTime") && !value["SyncEndTime"].IsNull())
+    {
+        if (!value["SyncEndTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyMetadata.SyncEndTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncEndTime = value["SyncEndTime"].GetUint64();
+        m_syncEndTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceHsmClusterId") && !value["SourceHsmClusterId"].IsNull())
+    {
+        if (!value["SourceHsmClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyMetadata.SourceHsmClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceHsmClusterId = string(value["SourceHsmClusterId"].GetString());
+        m_sourceHsmClusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +453,62 @@ void KeyMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "LastRotateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastRotateTime, allocator);
+    }
+
+    if (m_isSyncReplicaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSyncReplica";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSyncReplica, allocator);
+    }
+
+    if (m_sourceRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncStatus, allocator);
+    }
+
+    if (m_syncMessagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncMessages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncMessages.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncStartTime, allocator);
+    }
+
+    if (m_syncEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncEndTime, allocator);
+    }
+
+    if (m_sourceHsmClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceHsmClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceHsmClusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +800,117 @@ void KeyMetadata::SetLastRotateTime(const uint64_t& _lastRotateTime)
 bool KeyMetadata::LastRotateTimeHasBeenSet() const
 {
     return m_lastRotateTimeHasBeenSet;
+}
+
+int64_t KeyMetadata::GetIsSyncReplica() const
+{
+    return m_isSyncReplica;
+}
+
+void KeyMetadata::SetIsSyncReplica(const int64_t& _isSyncReplica)
+{
+    m_isSyncReplica = _isSyncReplica;
+    m_isSyncReplicaHasBeenSet = true;
+}
+
+bool KeyMetadata::IsSyncReplicaHasBeenSet() const
+{
+    return m_isSyncReplicaHasBeenSet;
+}
+
+string KeyMetadata::GetSourceRegion() const
+{
+    return m_sourceRegion;
+}
+
+void KeyMetadata::SetSourceRegion(const string& _sourceRegion)
+{
+    m_sourceRegion = _sourceRegion;
+    m_sourceRegionHasBeenSet = true;
+}
+
+bool KeyMetadata::SourceRegionHasBeenSet() const
+{
+    return m_sourceRegionHasBeenSet;
+}
+
+int64_t KeyMetadata::GetSyncStatus() const
+{
+    return m_syncStatus;
+}
+
+void KeyMetadata::SetSyncStatus(const int64_t& _syncStatus)
+{
+    m_syncStatus = _syncStatus;
+    m_syncStatusHasBeenSet = true;
+}
+
+bool KeyMetadata::SyncStatusHasBeenSet() const
+{
+    return m_syncStatusHasBeenSet;
+}
+
+string KeyMetadata::GetSyncMessages() const
+{
+    return m_syncMessages;
+}
+
+void KeyMetadata::SetSyncMessages(const string& _syncMessages)
+{
+    m_syncMessages = _syncMessages;
+    m_syncMessagesHasBeenSet = true;
+}
+
+bool KeyMetadata::SyncMessagesHasBeenSet() const
+{
+    return m_syncMessagesHasBeenSet;
+}
+
+uint64_t KeyMetadata::GetSyncStartTime() const
+{
+    return m_syncStartTime;
+}
+
+void KeyMetadata::SetSyncStartTime(const uint64_t& _syncStartTime)
+{
+    m_syncStartTime = _syncStartTime;
+    m_syncStartTimeHasBeenSet = true;
+}
+
+bool KeyMetadata::SyncStartTimeHasBeenSet() const
+{
+    return m_syncStartTimeHasBeenSet;
+}
+
+uint64_t KeyMetadata::GetSyncEndTime() const
+{
+    return m_syncEndTime;
+}
+
+void KeyMetadata::SetSyncEndTime(const uint64_t& _syncEndTime)
+{
+    m_syncEndTime = _syncEndTime;
+    m_syncEndTimeHasBeenSet = true;
+}
+
+bool KeyMetadata::SyncEndTimeHasBeenSet() const
+{
+    return m_syncEndTimeHasBeenSet;
+}
+
+string KeyMetadata::GetSourceHsmClusterId() const
+{
+    return m_sourceHsmClusterId;
+}
+
+void KeyMetadata::SetSourceHsmClusterId(const string& _sourceHsmClusterId)
+{
+    m_sourceHsmClusterId = _sourceHsmClusterId;
+    m_sourceHsmClusterIdHasBeenSet = true;
+}
+
+bool KeyMetadata::SourceHsmClusterIdHasBeenSet() const
+{
+    return m_sourceHsmClusterIdHasBeenSet;
 }
 

@@ -139,6 +139,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServiceRateLimitResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesLightRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesLightResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewaysRequest.h>
@@ -449,6 +451,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayServicesResponse> DescribeCloudNativeAPIGatewayServicesOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayServicesOutcome> DescribeCloudNativeAPIGatewayServicesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayServicesRequest&, DescribeCloudNativeAPIGatewayServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayServicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayServicesLightResponse> DescribeCloudNativeAPIGatewayServicesLightOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayServicesLightOutcome> DescribeCloudNativeAPIGatewayServicesLightOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayServicesLightRequest&, DescribeCloudNativeAPIGatewayServicesLightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayServicesLightAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayUpstreamResponse> DescribeCloudNativeAPIGatewayUpstreamOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayUpstreamOutcome> DescribeCloudNativeAPIGatewayUpstreamOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayUpstreamRequest&, DescribeCloudNativeAPIGatewayUpstreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayUpstreamAsyncHandler;
@@ -1156,6 +1161,15 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayServicesOutcome DescribeCloudNativeAPIGatewayServices(const Model::DescribeCloudNativeAPIGatewayServicesRequest &request);
                 void DescribeCloudNativeAPIGatewayServicesAsync(const Model::DescribeCloudNativeAPIGatewayServicesRequest& request, const DescribeCloudNativeAPIGatewayServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudNativeAPIGatewayServicesOutcomeCallable DescribeCloudNativeAPIGatewayServicesCallable(const Model::DescribeCloudNativeAPIGatewayServicesRequest& request);
+
+                /**
+                 *轻量查询云原生网关服务列表
+                 * @param req DescribeCloudNativeAPIGatewayServicesLightRequest
+                 * @return DescribeCloudNativeAPIGatewayServicesLightOutcome
+                 */
+                DescribeCloudNativeAPIGatewayServicesLightOutcome DescribeCloudNativeAPIGatewayServicesLight(const Model::DescribeCloudNativeAPIGatewayServicesLightRequest &request);
+                void DescribeCloudNativeAPIGatewayServicesLightAsync(const Model::DescribeCloudNativeAPIGatewayServicesLightRequest& request, const DescribeCloudNativeAPIGatewayServicesLightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayServicesLightOutcomeCallable DescribeCloudNativeAPIGatewayServicesLightCallable(const Model::DescribeCloudNativeAPIGatewayServicesLightRequest& request);
 
                 /**
                  *获取云原生网关服务详情下的Upstream列表

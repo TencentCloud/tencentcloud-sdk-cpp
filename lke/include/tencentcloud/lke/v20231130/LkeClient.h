@@ -27,16 +27,12 @@
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelExistResponse.h>
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelReferRequest.h>
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelReferResponse.h>
-#include <tencentcloud/lke/v20231130/model/ConvertDocumentRequest.h>
-#include <tencentcloud/lke/v20231130/model/ConvertDocumentResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateAgentRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateAgentResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateAttributeLabelRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateAttributeLabelResponse.h>
-#include <tencentcloud/lke/v20231130/model/CreateCorpRequest.h>
-#include <tencentcloud/lke/v20231130/model/CreateCorpResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateDocCateRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateDocCateResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateQARequest.h>
@@ -85,8 +81,6 @@
 #include <tencentcloud/lke/v20231130/model/DescribeConcurrencyUsageResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeConcurrencyUsageGraphRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeConcurrencyUsageGraphResponse.h>
-#include <tencentcloud/lke/v20231130/model/DescribeCorpRequest.h>
-#include <tencentcloud/lke/v20231130/model/DescribeCorpResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeDocRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeDocResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeKnowledgeUsageRequest.h>
@@ -137,14 +131,10 @@
 #include <tencentcloud/lke/v20231130/model/GetAppSecretResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetDocPreviewRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetDocPreviewResponse.h>
-#include <tencentcloud/lke/v20231130/model/GetEmbeddingRequest.h>
-#include <tencentcloud/lke/v20231130/model/GetEmbeddingResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetLikeDataCountRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetLikeDataCountResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetMsgRecordRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetMsgRecordResponse.h>
-#include <tencentcloud/lke/v20231130/model/GetReconstructDocumentResultRequest.h>
-#include <tencentcloud/lke/v20231130/model/GetReconstructDocumentResultResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetTaskStatusRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetTaskStatusResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetVarListRequest.h>
@@ -221,12 +211,8 @@
 #include <tencentcloud/lke/v20231130/model/ModifyQACateResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyRejectedQuestionRequest.h>
 #include <tencentcloud/lke/v20231130/model/ModifyRejectedQuestionResponse.h>
-#include <tencentcloud/lke/v20231130/model/QueryRewriteRequest.h>
-#include <tencentcloud/lke/v20231130/model/QueryRewriteResponse.h>
 #include <tencentcloud/lke/v20231130/model/RateMsgRecordRequest.h>
 #include <tencentcloud/lke/v20231130/model/RateMsgRecordResponse.h>
-#include <tencentcloud/lke/v20231130/model/ReconstructDocumentRequest.h>
-#include <tencentcloud/lke/v20231130/model/ReconstructDocumentResponse.h>
 #include <tencentcloud/lke/v20231130/model/ReferShareKnowledgeRequest.h>
 #include <tencentcloud/lke/v20231130/model/ReferShareKnowledgeResponse.h>
 #include <tencentcloud/lke/v20231130/model/RenameDocRequest.h>
@@ -237,8 +223,6 @@
 #include <tencentcloud/lke/v20231130/model/RetryDocParseResponse.h>
 #include <tencentcloud/lke/v20231130/model/RetryReleaseRequest.h>
 #include <tencentcloud/lke/v20231130/model/RetryReleaseResponse.h>
-#include <tencentcloud/lke/v20231130/model/RunReRankRequest.h>
-#include <tencentcloud/lke/v20231130/model/RunReRankResponse.h>
 #include <tencentcloud/lke/v20231130/model/SaveDocRequest.h>
 #include <tencentcloud/lke/v20231130/model/SaveDocResponse.h>
 #include <tencentcloud/lke/v20231130/model/StopDocParseRequest.h>
@@ -273,9 +257,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAttributeLabelReferResponse> CheckAttributeLabelReferOutcome;
                 typedef std::future<CheckAttributeLabelReferOutcome> CheckAttributeLabelReferOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CheckAttributeLabelReferRequest&, CheckAttributeLabelReferOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAttributeLabelReferAsyncHandler;
-                typedef Outcome<Core::Error, Model::ConvertDocumentResponse> ConvertDocumentOutcome;
-                typedef std::future<ConvertDocumentOutcome> ConvertDocumentOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::ConvertDocumentRequest&, ConvertDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConvertDocumentAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAgentResponse> CreateAgentOutcome;
                 typedef std::future<CreateAgentOutcome> CreateAgentOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateAgentRequest&, CreateAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentAsyncHandler;
@@ -285,9 +266,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAttributeLabelResponse> CreateAttributeLabelOutcome;
                 typedef std::future<CreateAttributeLabelOutcome> CreateAttributeLabelOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateAttributeLabelRequest&, CreateAttributeLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAttributeLabelAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateCorpResponse> CreateCorpOutcome;
-                typedef std::future<CreateCorpOutcome> CreateCorpOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::CreateCorpRequest&, CreateCorpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCorpAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDocCateResponse> CreateDocCateOutcome;
                 typedef std::future<CreateDocCateOutcome> CreateDocCateOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateDocCateRequest&, CreateDocCateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocCateAsyncHandler;
@@ -360,9 +338,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConcurrencyUsageGraphResponse> DescribeConcurrencyUsageGraphOutcome;
                 typedef std::future<DescribeConcurrencyUsageGraphOutcome> DescribeConcurrencyUsageGraphOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeConcurrencyUsageGraphRequest&, DescribeConcurrencyUsageGraphOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcurrencyUsageGraphAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCorpResponse> DescribeCorpOutcome;
-                typedef std::future<DescribeCorpOutcome> DescribeCorpOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::DescribeCorpRequest&, DescribeCorpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCorpAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDocResponse> DescribeDocOutcome;
                 typedef std::future<DescribeDocOutcome> DescribeDocOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeDocRequest&, DescribeDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDocAsyncHandler;
@@ -438,18 +413,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDocPreviewResponse> GetDocPreviewOutcome;
                 typedef std::future<GetDocPreviewOutcome> GetDocPreviewOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetDocPreviewRequest&, GetDocPreviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDocPreviewAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetEmbeddingResponse> GetEmbeddingOutcome;
-                typedef std::future<GetEmbeddingOutcome> GetEmbeddingOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::GetEmbeddingRequest&, GetEmbeddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetEmbeddingAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetLikeDataCountResponse> GetLikeDataCountOutcome;
                 typedef std::future<GetLikeDataCountOutcome> GetLikeDataCountOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetLikeDataCountRequest&, GetLikeDataCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLikeDataCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetMsgRecordResponse> GetMsgRecordOutcome;
                 typedef std::future<GetMsgRecordOutcome> GetMsgRecordOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetMsgRecordRequest&, GetMsgRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMsgRecordAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetReconstructDocumentResultResponse> GetReconstructDocumentResultOutcome;
-                typedef std::future<GetReconstructDocumentResultOutcome> GetReconstructDocumentResultOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::GetReconstructDocumentResultRequest&, GetReconstructDocumentResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetReconstructDocumentResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTaskStatusResponse> GetTaskStatusOutcome;
                 typedef std::future<GetTaskStatusOutcome> GetTaskStatusOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetTaskStatusRequest&, GetTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskStatusAsyncHandler;
@@ -564,15 +533,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRejectedQuestionResponse> ModifyRejectedQuestionOutcome;
                 typedef std::future<ModifyRejectedQuestionOutcome> ModifyRejectedQuestionOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ModifyRejectedQuestionRequest&, ModifyRejectedQuestionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRejectedQuestionAsyncHandler;
-                typedef Outcome<Core::Error, Model::QueryRewriteResponse> QueryRewriteOutcome;
-                typedef std::future<QueryRewriteOutcome> QueryRewriteOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::QueryRewriteRequest&, QueryRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryRewriteAsyncHandler;
                 typedef Outcome<Core::Error, Model::RateMsgRecordResponse> RateMsgRecordOutcome;
                 typedef std::future<RateMsgRecordOutcome> RateMsgRecordOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::RateMsgRecordRequest&, RateMsgRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RateMsgRecordAsyncHandler;
-                typedef Outcome<Core::Error, Model::ReconstructDocumentResponse> ReconstructDocumentOutcome;
-                typedef std::future<ReconstructDocumentOutcome> ReconstructDocumentOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::ReconstructDocumentRequest&, ReconstructDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReconstructDocumentAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReferShareKnowledgeResponse> ReferShareKnowledgeOutcome;
                 typedef std::future<ReferShareKnowledgeOutcome> ReferShareKnowledgeOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ReferShareKnowledgeRequest&, ReferShareKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReferShareKnowledgeAsyncHandler;
@@ -588,9 +551,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RetryReleaseResponse> RetryReleaseOutcome;
                 typedef std::future<RetryReleaseOutcome> RetryReleaseOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::RetryReleaseRequest&, RetryReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryReleaseAsyncHandler;
-                typedef Outcome<Core::Error, Model::RunReRankResponse> RunReRankOutcome;
-                typedef std::future<RunReRankOutcome> RunReRankOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::RunReRankRequest&, RunReRankOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunReRankAsyncHandler;
                 typedef Outcome<Core::Error, Model::SaveDocResponse> SaveDocOutcome;
                 typedef std::future<SaveDocOutcome> SaveDocOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::SaveDocRequest&, SaveDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveDocAsyncHandler;
@@ -634,17 +594,6 @@ namespace TencentCloud
                 CheckAttributeLabelReferOutcomeCallable CheckAttributeLabelReferCallable(const Model::CheckAttributeLabelReferRequest& request);
 
                 /**
-                 *产品规划
-
-接口支持图片和PDF转可编辑word格式文件，将文件中的图片、文本、表格等元素识别，并根据位置进行还原。
-                 * @param req ConvertDocumentRequest
-                 * @return ConvertDocumentOutcome
-                 */
-                ConvertDocumentOutcome ConvertDocument(const Model::ConvertDocumentRequest &request);
-                void ConvertDocumentAsync(const Model::ConvertDocumentRequest& request, const ConvertDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ConvertDocumentOutcomeCallable ConvertDocumentCallable(const Model::ConvertDocumentRequest& request);
-
-                /**
                  *你创建一个Agent
                  * @param req CreateAgentRequest
                  * @return CreateAgentOutcome
@@ -670,15 +619,6 @@ namespace TencentCloud
                 CreateAttributeLabelOutcome CreateAttributeLabel(const Model::CreateAttributeLabelRequest &request);
                 void CreateAttributeLabelAsync(const Model::CreateAttributeLabelRequest& request, const CreateAttributeLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAttributeLabelOutcomeCallable CreateAttributeLabelCallable(const Model::CreateAttributeLabelRequest& request);
-
-                /**
-                 *创建企业
-                 * @param req CreateCorpRequest
-                 * @return CreateCorpOutcome
-                 */
-                CreateCorpOutcome CreateCorp(const Model::CreateCorpRequest &request);
-                void CreateCorpAsync(const Model::CreateCorpRequest& request, const CreateCorpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateCorpOutcomeCallable CreateCorpCallable(const Model::CreateCorpRequest& request);
 
                 /**
                  *创建Doc分类
@@ -896,15 +836,6 @@ namespace TencentCloud
                 DescribeConcurrencyUsageGraphOutcome DescribeConcurrencyUsageGraph(const Model::DescribeConcurrencyUsageGraphRequest &request);
                 void DescribeConcurrencyUsageGraphAsync(const Model::DescribeConcurrencyUsageGraphRequest& request, const DescribeConcurrencyUsageGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConcurrencyUsageGraphOutcomeCallable DescribeConcurrencyUsageGraphCallable(const Model::DescribeConcurrencyUsageGraphRequest& request);
-
-                /**
-                 *企业详情
-                 * @param req DescribeCorpRequest
-                 * @return DescribeCorpOutcome
-                 */
-                DescribeCorpOutcome DescribeCorp(const Model::DescribeCorpRequest &request);
-                void DescribeCorpAsync(const Model::DescribeCorpRequest& request, const DescribeCorpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCorpOutcomeCallable DescribeCorpCallable(const Model::DescribeCorpRequest& request);
 
                 /**
                  *文档详情
@@ -1132,17 +1063,6 @@ namespace TencentCloud
                 GetDocPreviewOutcomeCallable GetDocPreviewCallable(const Model::GetDocPreviewRequest& request);
 
                 /**
-                 *本接口（GetEmbedding）调用文本表示模型，将文本转化为用数值表示的向量形式，可用于文本检索、信息推荐、知识挖掘等场景。
-开通[产品体验](https://lke.cloud.tencent.com/lke/#/trialProduct)后可获得50wtoken体验额度。
-本接口（GetEmbedding）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。
-                 * @param req GetEmbeddingRequest
-                 * @return GetEmbeddingOutcome
-                 */
-                GetEmbeddingOutcome GetEmbedding(const Model::GetEmbeddingRequest &request);
-                void GetEmbeddingAsync(const Model::GetEmbeddingRequest& request, const GetEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetEmbeddingOutcomeCallable GetEmbeddingCallable(const Model::GetEmbeddingRequest& request);
-
-                /**
                  *点赞点踩数据统计
                  * @param req GetLikeDataCountRequest
                  * @return GetLikeDataCountOutcome
@@ -1160,15 +1080,6 @@ namespace TencentCloud
                 GetMsgRecordOutcome GetMsgRecord(const Model::GetMsgRecordRequest &request);
                 void GetMsgRecordAsync(const Model::GetMsgRecordRequest& request, const GetMsgRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetMsgRecordOutcomeCallable GetMsgRecordCallable(const Model::GetMsgRecordRequest& request);
-
-                /**
-                 *本接口为异步接口的查询结果接口，用于获取文档解析处理结果。
-                 * @param req GetReconstructDocumentResultRequest
-                 * @return GetReconstructDocumentResultOutcome
-                 */
-                GetReconstructDocumentResultOutcome GetReconstructDocumentResult(const Model::GetReconstructDocumentResultRequest &request);
-                void GetReconstructDocumentResultAsync(const Model::GetReconstructDocumentResultRequest& request, const GetReconstructDocumentResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetReconstructDocumentResultOutcomeCallable GetReconstructDocumentResultCallable(const Model::GetReconstructDocumentResultRequest& request);
 
                 /**
                  *获取任务状态
@@ -1513,16 +1424,6 @@ namespace TencentCloud
                 ModifyRejectedQuestionOutcomeCallable ModifyRejectedQuestionCallable(const Model::ModifyRejectedQuestionRequest& request);
 
                 /**
-                 *多轮改写（QueryRewrite）主要用于多轮对话中，进行指代消解和省略补全。使用本接口，无需输入prompt描述，根据对话历史即可生成更精确的用户查询。在应用场景上，本接口可应用于智能问答、对话式搜索等多种场景。
-开通[产品体验](https://lke.cloud.tencent.com/lke/#/trialProduct)后可获得50wtoken体验额度。本接口（QueryRewrite）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。
-                 * @param req QueryRewriteRequest
-                 * @return QueryRewriteOutcome
-                 */
-                QueryRewriteOutcome QueryRewrite(const Model::QueryRewriteRequest &request);
-                void QueryRewriteAsync(const Model::QueryRewriteRequest& request, const QueryRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                QueryRewriteOutcomeCallable QueryRewriteCallable(const Model::QueryRewriteRequest& request);
-
-                /**
                  *点赞点踩消息
                  * @param req RateMsgRecordRequest
                  * @return RateMsgRecordOutcome
@@ -1530,17 +1431,6 @@ namespace TencentCloud
                 RateMsgRecordOutcome RateMsgRecord(const Model::RateMsgRecordRequest &request);
                 void RateMsgRecordAsync(const Model::RateMsgRecordRequest& request, const RateMsgRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RateMsgRecordOutcomeCallable RateMsgRecordCallable(const Model::RateMsgRecordRequest& request);
-
-                /**
-                 *支持将图片或PDF文件转换成Markdown格式文件，可解析包括表格、公式、图片、标题、段落、页眉、页脚等内容元素，并将内容智能转换成阅读顺序。
-
-体验期间单账号限制qps仅为1，若有正式接入需要请与产研团队沟通开放。
-                 * @param req ReconstructDocumentRequest
-                 * @return ReconstructDocumentOutcome
-                 */
-                ReconstructDocumentOutcome ReconstructDocument(const Model::ReconstructDocumentRequest &request);
-                void ReconstructDocumentAsync(const Model::ReconstructDocumentRequest& request, const ReconstructDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ReconstructDocumentOutcomeCallable ReconstructDocumentCallable(const Model::ReconstructDocumentRequest& request);
 
                 /**
                  *应用引用共享知识库，可以引用一个或多个，每次都是全量覆盖
@@ -1586,15 +1476,6 @@ namespace TencentCloud
                 RetryReleaseOutcome RetryRelease(const Model::RetryReleaseRequest &request);
                 void RetryReleaseAsync(const Model::RetryReleaseRequest& request, const RetryReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RetryReleaseOutcomeCallable RetryReleaseCallable(const Model::RetryReleaseRequest& request);
-
-                /**
-                 *基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按分数由高到低对切片进行排序，并输出对应的打分结果。（这个接口已下线，请使用新接口，接口文档：https://cloud.tencent.com/document/product/1772/115339）。
-                 * @param req RunReRankRequest
-                 * @return RunReRankOutcome
-                 */
-                RunReRankOutcome RunReRank(const Model::RunReRankRequest &request);
-                void RunReRankAsync(const Model::RunReRankRequest& request, const RunReRankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RunReRankOutcomeCallable RunReRankCallable(const Model::RunReRankRequest& request);
 
                 /**
                  *知识库文档问答保存。

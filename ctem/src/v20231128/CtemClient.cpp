@@ -599,6 +599,135 @@ CtemClient::DescribeJobRecordsOutcomeCallable CtemClient::DescribeJobRecordsCall
     return task->get_future();
 }
 
+CtemClient::DescribeLeakageCodesOutcome CtemClient::DescribeLeakageCodes(const DescribeLeakageCodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLeakageCodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLeakageCodesResponse rsp = DescribeLeakageCodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLeakageCodesOutcome(rsp);
+        else
+            return DescribeLeakageCodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLeakageCodesOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeLeakageCodesAsync(const DescribeLeakageCodesRequest& request, const DescribeLeakageCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLeakageCodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::DescribeLeakageCodesOutcomeCallable CtemClient::DescribeLeakageCodesCallable(const DescribeLeakageCodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLeakageCodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLeakageCodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CtemClient::DescribeLeakageDatasOutcome CtemClient::DescribeLeakageDatas(const DescribeLeakageDatasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLeakageDatas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLeakageDatasResponse rsp = DescribeLeakageDatasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLeakageDatasOutcome(rsp);
+        else
+            return DescribeLeakageDatasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLeakageDatasOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeLeakageDatasAsync(const DescribeLeakageDatasRequest& request, const DescribeLeakageDatasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLeakageDatas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::DescribeLeakageDatasOutcomeCallable CtemClient::DescribeLeakageDatasCallable(const DescribeLeakageDatasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLeakageDatasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLeakageDatas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CtemClient::DescribeLeakageEmailsOutcome CtemClient::DescribeLeakageEmails(const DescribeLeakageEmailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLeakageEmails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLeakageEmailsResponse rsp = DescribeLeakageEmailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLeakageEmailsOutcome(rsp);
+        else
+            return DescribeLeakageEmailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLeakageEmailsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeLeakageEmailsAsync(const DescribeLeakageEmailsRequest& request, const DescribeLeakageEmailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLeakageEmails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::DescribeLeakageEmailsOutcomeCallable CtemClient::DescribeLeakageEmailsCallable(const DescribeLeakageEmailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLeakageEmailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLeakageEmails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CtemClient::DescribeManagesOutcome CtemClient::DescribeManages(const DescribeManagesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeManages");

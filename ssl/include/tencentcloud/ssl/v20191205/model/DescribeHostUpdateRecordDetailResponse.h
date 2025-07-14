@@ -114,6 +114,20 @@ namespace TencentCloud
                      */
                     bool RunningTotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取待部署总数
+                     * @return PendingTotalCount 待部署总数
+                     * 
+                     */
+                    int64_t GetPendingTotalCount() const;
+
+                    /**
+                     * 判断参数 PendingTotalCount 是否已赋值
+                     * @return PendingTotalCount 是否已赋值
+                     * 
+                     */
+                    bool PendingTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +159,12 @@ namespace TencentCloud
                      */
                     int64_t m_runningTotalCount;
                     bool m_runningTotalCountHasBeenSet;
+
+                    /**
+                     * 待部署总数
+                     */
+                    int64_t m_pendingTotalCount;
+                    bool m_pendingTotalCountHasBeenSet;
 
                 };
             }
