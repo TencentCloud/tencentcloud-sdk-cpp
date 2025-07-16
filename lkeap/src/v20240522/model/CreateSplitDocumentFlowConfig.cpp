@@ -24,7 +24,8 @@ CreateSplitDocumentFlowConfig::CreateSplitDocumentFlowConfig() :
     m_tableResultTypeHasBeenSet(false),
     m_resultTypeHasBeenSet(false),
     m_enableMllmHasBeenSet(false),
-    m_maxChunkSizeHasBeenSet(false)
+    m_maxChunkSizeHasBeenSet(false),
+    m_ignoreFailedPageHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CreateSplitDocumentFlowConfig::Deserialize(const rapidjson::
         m_maxChunkSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("IgnoreFailedPage") && !value["IgnoreFailedPage"].IsNull())
+    {
+        if (!value["IgnoreFailedPage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateSplitDocumentFlowConfig.IgnoreFailedPage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoreFailedPage = value["IgnoreFailedPage"].GetBool();
+        m_ignoreFailedPageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void CreateSplitDocumentFlowConfig::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "MaxChunkSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxChunkSize, allocator);
+    }
+
+    if (m_ignoreFailedPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreFailedPage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoreFailedPage, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void CreateSplitDocumentFlowConfig::SetMaxChunkSize(const int64_t& _maxChunkSize
 bool CreateSplitDocumentFlowConfig::MaxChunkSizeHasBeenSet() const
 {
     return m_maxChunkSizeHasBeenSet;
+}
+
+bool CreateSplitDocumentFlowConfig::GetIgnoreFailedPage() const
+{
+    return m_ignoreFailedPage;
+}
+
+void CreateSplitDocumentFlowConfig::SetIgnoreFailedPage(const bool& _ignoreFailedPage)
+{
+    m_ignoreFailedPage = _ignoreFailedPage;
+    m_ignoreFailedPageHasBeenSet = true;
+}
+
+bool CreateSplitDocumentFlowConfig::IgnoreFailedPageHasBeenSet() const
+{
+    return m_ignoreFailedPageHasBeenSet;
 }
 

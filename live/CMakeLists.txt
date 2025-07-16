@@ -78,6 +78,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/CreatePullStreamConfigRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveCertsRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveCertResponse.h
+  include/tencentcloud/live/v20180801/model/AuditKeywordInfo.h
   include/tencentcloud/live/v20180801/model/DescribeVisitTopSumInfoListRequest.h
   include/tencentcloud/live/v20180801/model/StopLivePadStreamResponse.h
   include/tencentcloud/live/v20180801/model/DescribePushBandwidthAndFluxListResponse.h
@@ -196,6 +197,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/ModifyLivePlayDomainResponse.h
   include/tencentcloud/live/v20180801/model/CreateLiveRecordRuleResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveDomainCertBindingsResponse.h
+  include/tencentcloud/live/v20180801/model/StopScreenshotTaskResponse.h
   include/tencentcloud/live/v20180801/model/CreateLivePadTemplateResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveRecordTemplatesResponse.h
   include/tencentcloud/live/v20180801/model/DescribeScreenshotTaskRequest.h
@@ -376,6 +378,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeLiveRecordRulesResponse.h
   include/tencentcloud/live/v20180801/model/StopLiveStreamMonitorRequest.h
   include/tencentcloud/live/v20180801/model/DeleteLiveSnapshotTemplateResponse.h
+  include/tencentcloud/live/v20180801/model/AuditKeyword.h
   include/tencentcloud/live/v20180801/model/CreateCommonMixStreamResponse.h
   include/tencentcloud/live/v20180801/model/ModifyLiveDomainRefererRequest.h
   include/tencentcloud/live/v20180801/model/DomainInfo.h
@@ -498,7 +501,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/HttpCodeInfo.h
   include/tencentcloud/live/v20180801/model/DescribeLiveStreamPublishedListResponse.h
   include/tencentcloud/live/v20180801/model/AddDelayLiveStreamResponse.h
-  include/tencentcloud/live/v20180801/model/StopScreenshotTaskResponse.h
+  include/tencentcloud/live/v20180801/model/AuditKeywordDeleteDetail.h
   include/tencentcloud/live/v20180801/model/DescribeLivePadTemplatesRequest.h
   include/tencentcloud/live/v20180801/model/EnableLiveDomainRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveTranscodeTotalInfoResponse.h
@@ -585,6 +588,7 @@ set(live_src
   src/v20180801/model/CreatePullStreamConfigRequest.cpp
   src/v20180801/model/DescribeLiveCertsRequest.cpp
   src/v20180801/model/DescribeLiveCertResponse.cpp
+  src/v20180801/model/AuditKeywordInfo.cpp
   src/v20180801/model/DescribeVisitTopSumInfoListRequest.cpp
   src/v20180801/model/StopLivePadStreamResponse.cpp
   src/v20180801/model/DescribePushBandwidthAndFluxListResponse.cpp
@@ -703,6 +707,7 @@ set(live_src
   src/v20180801/model/ModifyLivePlayDomainResponse.cpp
   src/v20180801/model/CreateLiveRecordRuleResponse.cpp
   src/v20180801/model/DescribeLiveDomainCertBindingsResponse.cpp
+  src/v20180801/model/StopScreenshotTaskResponse.cpp
   src/v20180801/model/CreateLivePadTemplateResponse.cpp
   src/v20180801/model/DescribeLiveRecordTemplatesResponse.cpp
   src/v20180801/model/DescribeScreenshotTaskRequest.cpp
@@ -883,6 +888,7 @@ set(live_src
   src/v20180801/model/DescribeLiveRecordRulesResponse.cpp
   src/v20180801/model/StopLiveStreamMonitorRequest.cpp
   src/v20180801/model/DeleteLiveSnapshotTemplateResponse.cpp
+  src/v20180801/model/AuditKeyword.cpp
   src/v20180801/model/CreateCommonMixStreamResponse.cpp
   src/v20180801/model/ModifyLiveDomainRefererRequest.cpp
   src/v20180801/model/DomainInfo.cpp
@@ -1005,7 +1011,7 @@ set(live_src
   src/v20180801/model/HttpCodeInfo.cpp
   src/v20180801/model/DescribeLiveStreamPublishedListResponse.cpp
   src/v20180801/model/AddDelayLiveStreamResponse.cpp
-  src/v20180801/model/StopScreenshotTaskResponse.cpp
+  src/v20180801/model/AuditKeywordDeleteDetail.cpp
   src/v20180801/model/DescribeLivePadTemplatesRequest.cpp
   src/v20180801/model/EnableLiveDomainRequest.cpp
   src/v20180801/model/DescribeLiveTranscodeTotalInfoResponse.cpp

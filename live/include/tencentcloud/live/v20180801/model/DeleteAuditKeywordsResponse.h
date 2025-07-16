@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/live/v20180801/model/AuditKeywordDeleteDetail.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取成功删除关键词的数量。
+                     * @return SuccessCount 成功删除关键词的数量。
+                     * 
+                     */
+                    int64_t GetSuccessCount() const;
+
+                    /**
+                     * 判断参数 SuccessCount 是否已赋值
+                     * @return SuccessCount 是否已赋值
+                     * 
+                     */
+                    bool SuccessCountHasBeenSet() const;
+
+                    /**
+                     * 获取关键词详情列表。
+                     * @return Infos 关键词详情列表。
+                     * 
+                     */
+                    std::vector<AuditKeywordDeleteDetail> GetInfos() const;
+
+                    /**
+                     * 判断参数 Infos 是否已赋值
+                     * @return Infos 是否已赋值
+                     * 
+                     */
+                    bool InfosHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 成功删除关键词的数量。
+                     */
+                    int64_t m_successCount;
+                    bool m_successCountHasBeenSet;
+
+                    /**
+                     * 关键词详情列表。
+                     */
+                    std::vector<AuditKeywordDeleteDetail> m_infos;
+                    bool m_infosHasBeenSet;
 
                 };
             }

@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取响应类型。1：返回进度信息，2：返回解析结果
-                     * @return ResponseType 响应类型。1：返回进度信息，2：返回解析结果
+                     * 获取响应类型。1：返回进度信息， 2：返回解析结果
+                     * @return ResponseType 响应类型。1：返回进度信息， 2：返回解析结果
                      * 
                      */
                     std::string GetResponseType() const;
@@ -101,13 +101,9 @@ namespace TencentCloud
                     bool ProgressMessageHasBeenSet() const;
 
                     /**
-                     * 获取文档解析结果的临时下载地址。
-文件类型为zip压缩包，下载链接有效期30分钟。
-压缩包内包含*.md、*.json以及images文件夹。
+                     * 获取文档解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟。压缩包内包含*.md、*.json以及images文件夹。
 
-                     * @return DocumentRecognizeResultUrl 文档解析结果的临时下载地址。
-文件类型为zip压缩包，下载链接有效期30分钟。
-压缩包内包含*.md、*.json以及images文件夹。
+                     * @return DocumentRecognizeResultUrl 文档解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟。压缩包内包含*.md、*.json以及images文件夹。
 
                      * 
                      */
@@ -134,6 +130,34 @@ namespace TencentCloud
                      */
                     bool FailedPagesHasBeenSet() const;
 
+                    /**
+                     * 获取文档解析失败页数
+                     * @return FailPageNum 文档解析失败页数
+                     * 
+                     */
+                    int64_t GetFailPageNum() const;
+
+                    /**
+                     * 判断参数 FailPageNum 是否已赋值
+                     * @return FailPageNum 是否已赋值
+                     * 
+                     */
+                    bool FailPageNumHasBeenSet() const;
+
+                    /**
+                     * 获取文档解析成功页数
+                     * @return SuccessPageNum 文档解析成功页数
+                     * 
+                     */
+                    int64_t GetSuccessPageNum() const;
+
+                    /**
+                     * 判断参数 SuccessPageNum 是否已赋值
+                     * @return SuccessPageNum 是否已赋值
+                     * 
+                     */
+                    bool SuccessPageNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,7 +167,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 响应类型。1：返回进度信息，2：返回解析结果
+                     * 响应类型。1：返回进度信息， 2：返回解析结果
                      */
                     std::string m_responseType;
                     bool m_responseTypeHasBeenSet;
@@ -161,9 +185,7 @@ namespace TencentCloud
                     bool m_progressMessageHasBeenSet;
 
                     /**
-                     * 文档解析结果的临时下载地址。
-文件类型为zip压缩包，下载链接有效期30分钟。
-压缩包内包含*.md、*.json以及images文件夹。
+                     * 文档解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟。压缩包内包含*.md、*.json以及images文件夹。
 
                      */
                     std::string m_documentRecognizeResultUrl;
@@ -174,6 +196,18 @@ namespace TencentCloud
                      */
                     std::vector<ReconstructDocumentFailedPage> m_failedPages;
                     bool m_failedPagesHasBeenSet;
+
+                    /**
+                     * 文档解析失败页数
+                     */
+                    int64_t m_failPageNum;
+                    bool m_failPageNumHasBeenSet;
+
+                    /**
+                     * 文档解析成功页数
+                     */
+                    int64_t m_successPageNum;
+                    bool m_successPageNumHasBeenSet;
 
                 };
             }

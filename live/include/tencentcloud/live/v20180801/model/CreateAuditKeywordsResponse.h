@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/live/v20180801/model/AuditKeywordInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取添加成功的关键词 Id 列表。
+                     * @return KeywordIds 添加成功的关键词 Id 列表。
+                     * 
+                     */
+                    std::vector<std::string> GetKeywordIds() const;
+
+                    /**
+                     * 判断参数 KeywordIds 是否已赋值
+                     * @return KeywordIds 是否已赋值
+                     * 
+                     */
+                    bool KeywordIdsHasBeenSet() const;
+
+                    /**
+                     * 获取重复关键词列表。
+                     * @return DupInfos 重复关键词列表。
+                     * 
+                     */
+                    std::vector<AuditKeywordInfo> GetDupInfos() const;
+
+                    /**
+                     * 判断参数 DupInfos 是否已赋值
+                     * @return DupInfos 是否已赋值
+                     * 
+                     */
+                    bool DupInfosHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 添加成功的关键词 Id 列表。
+                     */
+                    std::vector<std::string> m_keywordIds;
+                    bool m_keywordIdsHasBeenSet;
+
+                    /**
+                     * 重复关键词列表。
+                     */
+                    std::vector<AuditKeywordInfo> m_dupInfos;
+                    bool m_dupInfosHasBeenSet;
 
                 };
             }

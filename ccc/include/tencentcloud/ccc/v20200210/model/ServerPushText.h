@@ -176,13 +176,13 @@ namespace TencentCloud
                     bool DropModeHasBeenSet() const;
 
                     /**
-                     * 获取ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。**目前仅支持传入0，如果需要传入1，请提工单联系我们添加权限。**
+                     * 获取ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。
 注意：在接收到Priority=1的消息后，后续其他任何消息都会被忽略（包括Priority=1的消息），直到Priority=1的消息处理结束。该字段可与Interrupt、DropMode字段配合使用。
 例子：
 - Priority=1、Interrupt=true，会打断现有交互，立刻播报，播报过程中不会被打断
 - Priority=1、Interrupt=false、DropMode=1，会等待当前交互结束，再进行播报，播报过程中不会被打断
 
-                     * @return Priority ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。**目前仅支持传入0，如果需要传入1，请提工单联系我们添加权限。**
+                     * @return Priority ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。
 注意：在接收到Priority=1的消息后，后续其他任何消息都会被忽略（包括Priority=1的消息），直到Priority=1的消息处理结束。该字段可与Interrupt、DropMode字段配合使用。
 例子：
 - Priority=1、Interrupt=true，会打断现有交互，立刻播报，播报过程中不会被打断
@@ -193,13 +193,13 @@ namespace TencentCloud
                     uint64_t GetPriority() const;
 
                     /**
-                     * 设置ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。**目前仅支持传入0，如果需要传入1，请提工单联系我们添加权限。**
+                     * 设置ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。
 注意：在接收到Priority=1的消息后，后续其他任何消息都会被忽略（包括Priority=1的消息），直到Priority=1的消息处理结束。该字段可与Interrupt、DropMode字段配合使用。
 例子：
 - Priority=1、Interrupt=true，会打断现有交互，立刻播报，播报过程中不会被打断
 - Priority=1、Interrupt=false、DropMode=1，会等待当前交互结束，再进行播报，播报过程中不会被打断
 
-                     * @param _priority ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。**目前仅支持传入0，如果需要传入1，请提工单联系我们添加权限。**
+                     * @param _priority ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。
 注意：在接收到Priority=1的消息后，后续其他任何消息都会被忽略（包括Priority=1的消息），直到Priority=1的消息处理结束。该字段可与Interrupt、DropMode字段配合使用。
 例子：
 - Priority=1、Interrupt=true，会打断现有交互，立刻播报，播报过程中不会被打断
@@ -276,7 +276,7 @@ namespace TencentCloud
                     bool m_dropModeHasBeenSet;
 
                     /**
-                     * ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。**目前仅支持传入0，如果需要传入1，请提工单联系我们添加权限。**
+                     * ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。
 注意：在接收到Priority=1的消息后，后续其他任何消息都会被忽略（包括Priority=1的消息），直到Priority=1的消息处理结束。该字段可与Interrupt、DropMode字段配合使用。
 例子：
 - Priority=1、Interrupt=true，会打断现有交互，立刻播报，播报过程中不会被打断

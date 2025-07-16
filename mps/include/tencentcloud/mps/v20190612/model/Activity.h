@@ -65,7 +65,6 @@ namespace TencentCloud
 
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityType 原子任务类型：
 <li>input: 起始节点</li>
 <li>output：终止节点</li>
@@ -83,7 +82,6 @@ namespace TencentCloud
 
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActivityType() const;
@@ -106,7 +104,6 @@ namespace TencentCloud
 
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activityType 原子任务类型：
 <li>input: 起始节点</li>
 <li>output：终止节点</li>
@@ -124,7 +121,6 @@ namespace TencentCloud
 
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActivityType(const std::string& _activityType);
@@ -138,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后驱节点索引数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReardriveIndex 后驱节点索引数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetReardriveIndex() const;
 
                     /**
                      * 设置后驱节点索引数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reardriveIndex 后驱节点索引数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReardriveIndex(const std::vector<int64_t>& _reardriveIndex);
@@ -206,14 +198,12 @@ namespace TencentCloud
 
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;
 
                     /**
                      * 后驱节点索引数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_reardriveIndex;
                     bool m_reardriveIndexHasBeenSet;

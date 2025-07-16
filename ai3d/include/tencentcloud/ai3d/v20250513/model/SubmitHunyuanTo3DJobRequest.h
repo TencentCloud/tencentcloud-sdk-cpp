@@ -45,10 +45,10 @@ namespace TencentCloud
 
                     /**
                      * 获取文生3D，3D内容的描述，中文正向提示词。
-最多支持200个 utf-8 字符。
+最多支持1024个 utf-8 字符。
 文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。
                      * @return Prompt 文生3D，3D内容的描述，中文正向提示词。
-最多支持200个 utf-8 字符。
+最多支持1024个 utf-8 字符。
 文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。
                      * 
                      */
@@ -56,10 +56,10 @@ namespace TencentCloud
 
                     /**
                      * 设置文生3D，3D内容的描述，中文正向提示词。
-最多支持200个 utf-8 字符。
+最多支持1024个 utf-8 字符。
 文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。
                      * @param _prompt 文生3D，3D内容的描述，中文正向提示词。
-最多支持200个 utf-8 字符。
+最多支持1024个 utf-8 字符。
 文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。
                      * 
                      */
@@ -245,7 +245,7 @@ back：后视图；
 
                     /**
                      * 文生3D，3D内容的描述，中文正向提示词。
-最多支持200个 utf-8 字符。
+最多支持1024个 utf-8 字符。
 文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。
                      */
                     std::string m_prompt;

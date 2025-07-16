@@ -54,7 +54,8 @@ ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_grpcEnableHasBeenSet(false),
     m_healthProbeHasBeenSet(false),
     m_rollingUpdateHasBeenSet(false),
-    m_sidecarHasBeenSet(false)
+    m_sidecarHasBeenSet(false),
+    m_resourceGroupIdHasBeenSet(false)
 {
 }
 
@@ -350,6 +351,14 @@ string ModifyModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sidecar.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resourceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -870,6 +879,22 @@ void ModifyModelServiceRequest::SetSidecar(const SidecarSpec& _sidecar)
 bool ModifyModelServiceRequest::SidecarHasBeenSet() const
 {
     return m_sidecarHasBeenSet;
+}
+
+string ModifyModelServiceRequest::GetResourceGroupId() const
+{
+    return m_resourceGroupId;
+}
+
+void ModifyModelServiceRequest::SetResourceGroupId(const string& _resourceGroupId)
+{
+    m_resourceGroupId = _resourceGroupId;
+    m_resourceGroupIdHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::ResourceGroupIdHasBeenSet() const
+{
+    return m_resourceGroupIdHasBeenSet;
 }
 
 

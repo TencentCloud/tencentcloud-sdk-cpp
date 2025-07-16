@@ -139,9 +139,7 @@ namespace TencentCloud
 
                     /**
                      * 获取视频处理任务信息，仅当 TaskType 为 BatchTask，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchTaskResult 视频处理任务信息，仅当 TaskType 为 BatchTask，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BatchSubTaskResult GetBatchTaskResult() const;
@@ -269,7 +267,6 @@ namespace TencentCloud
 
                     /**
                      * 视频处理任务信息，仅当 TaskType 为 BatchTask，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BatchSubTaskResult m_batchTaskResult;
                     bool m_batchTaskResultHasBeenSet;

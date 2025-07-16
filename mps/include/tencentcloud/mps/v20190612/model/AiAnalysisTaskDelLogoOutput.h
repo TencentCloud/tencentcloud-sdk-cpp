@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基于画面提取的字幕文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginSubtitlePath 基于画面提取的字幕文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginSubtitlePath() const;
 
                     /**
                      * 设置基于画面提取的字幕文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originSubtitlePath 基于画面提取的字幕文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginSubtitlePath(const std::string& _originSubtitlePath);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基于画面提取的字幕翻译文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranslateSubtitlePath 基于画面提取的字幕翻译文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTranslateSubtitlePath() const;
 
                     /**
                      * 设置基于画面提取的字幕翻译文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _translateSubtitlePath 基于画面提取的字幕翻译文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTranslateSubtitlePath(const std::string& _translateSubtitlePath);
@@ -155,14 +147,12 @@ namespace TencentCloud
 
                     /**
                      * 基于画面提取的字幕文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originSubtitlePath;
                     bool m_originSubtitlePathHasBeenSet;
 
                     /**
                      * 基于画面提取的字幕翻译文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_translateSubtitlePath;
                     bool m_translateSubtitlePathHasBeenSet;

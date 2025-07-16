@@ -25,7 +25,9 @@ DocumentUsage::DocumentUsage() :
     m_totalTokenHasBeenSet(false),
     m_totalTokensHasBeenSet(false),
     m_splitTokensHasBeenSet(false),
-    m_mllmTokensHasBeenSet(false)
+    m_mllmTokensHasBeenSet(false),
+    m_successPageNumHasBeenSet(false),
+    m_failPageNumHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome DocumentUsage::Deserialize(const rapidjson::Value &value)
         m_mllmTokensHasBeenSet = true;
     }
 
+    if (value.HasMember("SuccessPageNum") && !value["SuccessPageNum"].IsNull())
+    {
+        if (!value["SuccessPageNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentUsage.SuccessPageNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_successPageNum = value["SuccessPageNum"].GetInt64();
+        m_successPageNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailPageNum") && !value["FailPageNum"].IsNull())
+    {
+        if (!value["FailPageNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentUsage.FailPageNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failPageNum = value["FailPageNum"].GetInt64();
+        m_failPageNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void DocumentUsage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "MllmTokens";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mllmTokens, allocator);
+    }
+
+    if (m_successPageNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessPageNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_successPageNum, allocator);
+    }
+
+    if (m_failPageNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailPageNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failPageNum, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void DocumentUsage::SetMllmTokens(const int64_t& _mllmTokens)
 bool DocumentUsage::MllmTokensHasBeenSet() const
 {
     return m_mllmTokensHasBeenSet;
+}
+
+int64_t DocumentUsage::GetSuccessPageNum() const
+{
+    return m_successPageNum;
+}
+
+void DocumentUsage::SetSuccessPageNum(const int64_t& _successPageNum)
+{
+    m_successPageNum = _successPageNum;
+    m_successPageNumHasBeenSet = true;
+}
+
+bool DocumentUsage::SuccessPageNumHasBeenSet() const
+{
+    return m_successPageNumHasBeenSet;
+}
+
+int64_t DocumentUsage::GetFailPageNum() const
+{
+    return m_failPageNum;
+}
+
+void DocumentUsage::SetFailPageNum(const int64_t& _failPageNum)
+{
+    m_failPageNum = _failPageNum;
+    m_failPageNumHasBeenSet = true;
+}
+
+bool DocumentUsage::FailPageNumHasBeenSet() const
+{
+    return m_failPageNumHasBeenSet;
 }
 

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前热词库 id 状态，为 0 表示查询的时刻，没有模板绑定这个热词库，可以删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 当前热词库 id 状态，为 0 表示查询的时刻，没有模板绑定这个热词库，可以删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取热词库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 热词库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
@@ -95,12 +91,10 @@ namespace TencentCloud
 文件热词库为 1，返回创建是上传的文件内容
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 临时热词库为 0，返回创建时候的字符串
 文件热词库为 1，返回创建是上传的文件内容
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
@@ -114,9 +108,7 @@ namespace TencentCloud
 
                     /**
                      * 获取热词文件上传时的文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 热词文件上传时的文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
@@ -146,11 +138,9 @@ namespace TencentCloud
                      * 获取热词库文本，根据 Type 区分
 如果 Type 为 0，是热词库字符串
 如果 Type 是 1，是热词库文本文件的文件内容 base64 编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 热词库文本，根据 Type 区分
 如果 Type 为 0，是热词库字符串
 如果 Type 是 1，是热词库文本文件的文件内容 base64 编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
@@ -164,9 +154,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前热词库包含的词语数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WordCount 当前热词库包含的词语数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWordCount() const;
@@ -180,9 +168,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分页偏移量，默认值：0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offset 分页偏移量，默认值：0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOffset() const;
@@ -196,9 +182,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回记录条数，默认值：10，最大值：100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Limit 返回记录条数，默认值：10，最大值：100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLimit() const;
@@ -212,9 +196,7 @@ namespace TencentCloud
 
                     /**
                      * 获取热词库创建时间 ISOUTC 格式 "2006-01-02T15:04:05Z"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 热词库创建时间 ISOUTC 格式 "2006-01-02T15:04:05Z"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -228,9 +210,7 @@ namespace TencentCloud
 
                     /**
                      * 获取热词库修改时间 ISOUTC 格式 "2006-01-02T15:04:05Z"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 热词库修改时间 ISOUTC 格式 "2006-01-02T15:04:05Z"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
@@ -252,14 +232,12 @@ namespace TencentCloud
 
                     /**
                      * 当前热词库 id 状态，为 0 表示查询的时刻，没有模板绑定这个热词库，可以删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 热词库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -269,14 +247,12 @@ namespace TencentCloud
 文件热词库为 1，返回创建是上传的文件内容
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 热词文件上传时的文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
@@ -291,42 +267,36 @@ namespace TencentCloud
                      * 热词库文本，根据 Type 区分
 如果 Type 为 0，是热词库字符串
 如果 Type 是 1，是热词库文本文件的文件内容 base64 编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
                      * 当前热词库包含的词语数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_wordCount;
                     bool m_wordCountHasBeenSet;
 
                     /**
                      * 分页偏移量，默认值：0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
                      * 返回记录条数，默认值：10，最大值：100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
                      * 热词库创建时间 ISOUTC 格式 "2006-01-02T15:04:05Z"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 热词库修改时间 ISOUTC 格式 "2006-01-02T15:04:05Z"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

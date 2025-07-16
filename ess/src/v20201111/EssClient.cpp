@@ -298,6 +298,49 @@ EssClient::CreateBatchCancelFlowUrlOutcomeCallable EssClient::CreateBatchCancelF
     return task->get_future();
 }
 
+EssClient::CreateBatchInformationExtractionTaskOutcome EssClient::CreateBatchInformationExtractionTask(const CreateBatchInformationExtractionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchInformationExtractionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchInformationExtractionTaskResponse rsp = CreateBatchInformationExtractionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchInformationExtractionTaskOutcome(rsp);
+        else
+            return CreateBatchInformationExtractionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchInformationExtractionTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateBatchInformationExtractionTaskAsync(const CreateBatchInformationExtractionTaskRequest& request, const CreateBatchInformationExtractionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchInformationExtractionTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateBatchInformationExtractionTaskOutcomeCallable EssClient::CreateBatchInformationExtractionTaskCallable(const CreateBatchInformationExtractionTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchInformationExtractionTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchInformationExtractionTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateBatchInitOrganizationUrlOutcome EssClient::CreateBatchInitOrganizationUrl(const CreateBatchInitOrganizationUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchInitOrganizationUrl");
@@ -3516,6 +3559,49 @@ EssClient::DescribeFlowTemplatesOutcomeCallable EssClient::DescribeFlowTemplates
         [this, request]()
         {
             return this->DescribeFlowTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DescribeInformationExtractionTaskOutcome EssClient::DescribeInformationExtractionTask(const DescribeInformationExtractionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInformationExtractionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInformationExtractionTaskResponse rsp = DescribeInformationExtractionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInformationExtractionTaskOutcome(rsp);
+        else
+            return DescribeInformationExtractionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInformationExtractionTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeInformationExtractionTaskAsync(const DescribeInformationExtractionTaskRequest& request, const DescribeInformationExtractionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInformationExtractionTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeInformationExtractionTaskOutcomeCallable EssClient::DescribeInformationExtractionTaskCallable(const DescribeInformationExtractionTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInformationExtractionTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInformationExtractionTask(request);
         }
     );
 

@@ -820,6 +820,27 @@ HYBRID_PAID:
                      */
                     bool SidecarHasBeenSet() const;
 
+                    /**
+                     * 获取资源组 id
+                     * @return ResourceGroupId 资源组 id
+                     * 
+                     */
+                    std::string GetResourceGroupId() const;
+
+                    /**
+                     * 设置资源组 id
+                     * @param _resourceGroupId 资源组 id
+                     * 
+                     */
+                    void SetResourceGroupId(const std::string& _resourceGroupId);
+
+                    /**
+                     * 判断参数 ResourceGroupId 是否已赋值
+                     * @return ResourceGroupId 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1036,6 +1057,12 @@ HYBRID_PAID:
                      */
                     SidecarSpec m_sidecar;
                     bool m_sidecarHasBeenSet;
+
+                    /**
+                     * 资源组 id
+                     */
+                    std::string m_resourceGroupId;
+                    bool m_resourceGroupIdHasBeenSet;
 
                 };
             }

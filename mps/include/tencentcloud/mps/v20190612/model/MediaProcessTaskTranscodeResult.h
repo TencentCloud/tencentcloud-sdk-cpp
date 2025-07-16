@@ -180,18 +180,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转码进度，取值范围 [0-100]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 转码进度，取值范围 [0-100]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置转码进度，取值范围 [0-100]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progress 转码进度，取值范围 [0-100]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -244,7 +240,6 @@ namespace TencentCloud
 
                     /**
                      * 转码进度，取值范围 [0-100]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;

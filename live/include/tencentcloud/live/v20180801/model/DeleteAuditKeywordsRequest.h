@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取要删除的关键词 Id 列表。
+                     * @return KeywordIds 要删除的关键词 Id 列表。
+                     * 
+                     */
+                    std::vector<std::string> GetKeywordIds() const;
+
+                    /**
+                     * 设置要删除的关键词 Id 列表。
+                     * @param _keywordIds 要删除的关键词 Id 列表。
+                     * 
+                     */
+                    void SetKeywordIds(const std::vector<std::string>& _keywordIds);
+
+                    /**
+                     * 判断参数 KeywordIds 是否已赋值
+                     * @return KeywordIds 是否已赋值
+                     * 
+                     */
+                    bool KeywordIdsHasBeenSet() const;
+
+                    /**
+                     * 获取关键词库 Id。
+                     * @return LibId 关键词库 Id。
+                     * 
+                     */
+                    std::string GetLibId() const;
+
+                    /**
+                     * 设置关键词库 Id。
+                     * @param _libId 关键词库 Id。
+                     * 
+                     */
+                    void SetLibId(const std::string& _libId);
+
+                    /**
+                     * 判断参数 LibId 是否已赋值
+                     * @return LibId 是否已赋值
+                     * 
+                     */
+                    bool LibIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 要删除的关键词 Id 列表。
+                     */
+                    std::vector<std::string> m_keywordIds;
+                    bool m_keywordIdsHasBeenSet;
+
+                    /**
+                     * 关键词库 Id。
+                     */
+                    std::string m_libId;
+                    bool m_libIdHasBeenSet;
 
                 };
             }

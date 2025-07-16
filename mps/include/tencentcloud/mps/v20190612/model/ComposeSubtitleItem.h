@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool StyleIdHasBeenSet() const;
 
                     /**
-                     * 获取字幕文本。
-                     * @return Text 字幕文本。
+                     * 获取字幕文本。<br/>注：长文本可能超出画面范围，建议使用 \n 进行换行。
+                     * @return Text 字幕文本。<br/>注：长文本可能超出画面范围，建议使用 \n 进行换行。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置字幕文本。
-                     * @param _text 字幕文本。
+                     * 设置字幕文本。<br/>注：长文本可能超出画面范围，建议使用 \n 进行换行。
+                     * @param _text 字幕文本。<br/>注：长文本可能超出画面范围，建议使用 \n 进行换行。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -119,7 +119,7 @@ namespace TencentCloud
                     bool m_styleIdHasBeenSet;
 
                     /**
-                     * 字幕文本。
+                     * 字幕文本。<br/>注：长文本可能超出画面范围，建议使用 \n 进行换行。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;

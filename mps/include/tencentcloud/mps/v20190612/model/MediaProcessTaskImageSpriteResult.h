@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对视频截雪碧图任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 对视频截雪碧图任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaImageSpriteItem GetOutput() const;
 
                     /**
                      * 设置对视频截雪碧图任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 对视频截雪碧图任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const MediaImageSpriteItem& _output);
@@ -180,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
                      * 设置任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginProcessTime(const std::string& _beginProcessTime);
@@ -205,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _finishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -262,21 +250,18 @@ namespace TencentCloud
 
                     /**
                      * 对视频截雪碧图任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaImageSpriteItem m_output;
                     bool m_outputHasBeenSet;
 
                     /**
                      * 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginProcessTime;
                     bool m_beginProcessTimeHasBeenSet;
 
                     /**
                      * 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;

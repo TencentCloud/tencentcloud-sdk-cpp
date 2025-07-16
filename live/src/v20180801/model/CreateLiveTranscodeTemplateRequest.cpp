@@ -44,7 +44,9 @@ CreateLiveTranscodeTemplateRequest::CreateLiveTranscodeTemplateRequest() :
     m_adaptBitratePercentHasBeenSet(false),
     m_shortEdgeAsHeightHasBeenSet(false),
     m_dRMTypeHasBeenSet(false),
-    m_dRMTracksHasBeenSet(false)
+    m_dRMTracksHasBeenSet(false),
+    m_isAdaptiveBitRateHasBeenSet(false),
+    m_adaptiveChildrenHasBeenSet(false)
 {
 }
 
@@ -229,6 +231,29 @@ string CreateLiveTranscodeTemplateRequest::ToJsonString() const
         string key = "DRMTracks";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dRMTracks.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAdaptiveBitRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAdaptiveBitRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isAdaptiveBitRate, allocator);
+    }
+
+    if (m_adaptiveChildrenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdaptiveChildren";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_adaptiveChildren.begin(); itr != m_adaptiveChildren.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -589,6 +614,38 @@ void CreateLiveTranscodeTemplateRequest::SetDRMTracks(const string& _dRMTracks)
 bool CreateLiveTranscodeTemplateRequest::DRMTracksHasBeenSet() const
 {
     return m_dRMTracksHasBeenSet;
+}
+
+int64_t CreateLiveTranscodeTemplateRequest::GetIsAdaptiveBitRate() const
+{
+    return m_isAdaptiveBitRate;
+}
+
+void CreateLiveTranscodeTemplateRequest::SetIsAdaptiveBitRate(const int64_t& _isAdaptiveBitRate)
+{
+    m_isAdaptiveBitRate = _isAdaptiveBitRate;
+    m_isAdaptiveBitRateHasBeenSet = true;
+}
+
+bool CreateLiveTranscodeTemplateRequest::IsAdaptiveBitRateHasBeenSet() const
+{
+    return m_isAdaptiveBitRateHasBeenSet;
+}
+
+vector<ChildTemplateInfo> CreateLiveTranscodeTemplateRequest::GetAdaptiveChildren() const
+{
+    return m_adaptiveChildren;
+}
+
+void CreateLiveTranscodeTemplateRequest::SetAdaptiveChildren(const vector<ChildTemplateInfo>& _adaptiveChildren)
+{
+    m_adaptiveChildren = _adaptiveChildren;
+    m_adaptiveChildrenHasBeenSet = true;
+}
+
+bool CreateLiveTranscodeTemplateRequest::AdaptiveChildrenHasBeenSet() const
+{
+    return m_adaptiveChildrenHasBeenSet;
 }
 
 

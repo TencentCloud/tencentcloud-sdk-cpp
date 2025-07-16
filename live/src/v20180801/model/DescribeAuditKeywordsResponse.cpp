@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-DescribeAuditKeywordsResponse::DescribeAuditKeywordsResponse()
+DescribeAuditKeywordsResponse::DescribeAuditKeywordsResponse() :
+    m_totalHasBeenSet(false),
+    m_infosHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeAuditKeywordsResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Infos") && !rsp["Infos"].IsNull())
+    {
+        if (!rsp["Infos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Infos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Infos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AuditKeywordInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_infos.push_back(item);
+        }
+        m_infosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeAuditKeywordsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
+    if (m_infosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Infos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_infos.begin(); itr != m_infos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeAuditKeywordsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeAuditKeywordsResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeAuditKeywordsResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
+}
+
+vector<AuditKeywordInfo> DescribeAuditKeywordsResponse::GetInfos() const
+{
+    return m_infos;
+}
+
+bool DescribeAuditKeywordsResponse::InfosHasBeenSet() const
+{
+    return m_infosHasBeenSet;
+}
 
 

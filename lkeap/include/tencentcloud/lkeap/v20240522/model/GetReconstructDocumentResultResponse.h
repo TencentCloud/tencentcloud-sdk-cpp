@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lkeap/v20240522/model/ReconstructDocumentFailedPage.h>
+#include <tencentcloud/lkeap/v20240522/model/DocumentUsage.h>
 
 
 namespace TencentCloud
@@ -96,6 +97,20 @@ namespace TencentCloud
                      */
                     bool FailedPagesHasBeenSet() const;
 
+                    /**
+                     * 获取文档拆分任务的用量	
+                     * @return Usage 文档拆分任务的用量	
+                     * 
+                     */
+                    DocumentUsage GetUsage() const;
+
+                    /**
+                     * 判断参数 Usage 是否已赋值
+                     * @return Usage 是否已赋值
+                     * 
+                     */
+                    bool UsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +135,12 @@ namespace TencentCloud
                      */
                     std::vector<ReconstructDocumentFailedPage> m_failedPages;
                     bool m_failedPagesHasBeenSet;
+
+                    /**
+                     * 文档拆分任务的用量	
+                     */
+                    DocumentUsage m_usage;
+                    bool m_usageHasBeenSet;
 
                 };
             }

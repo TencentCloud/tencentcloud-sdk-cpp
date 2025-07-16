@@ -24,7 +24,8 @@ ReconstructDocumentSSEConfig::ReconstructDocumentSSEConfig() :
     m_tableResultTypeHasBeenSet(false),
     m_markdownImageResponseTypeHasBeenSet(false),
     m_returnPageFormatHasBeenSet(false),
-    m_pageFormatHasBeenSet(false)
+    m_pageFormatHasBeenSet(false),
+    m_ignoreFailedPageHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ReconstructDocumentSSEConfig::Deserialize(const rapidjson::V
         m_pageFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("IgnoreFailedPage") && !value["IgnoreFailedPage"].IsNull())
+    {
+        if (!value["IgnoreFailedPage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReconstructDocumentSSEConfig.IgnoreFailedPage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoreFailedPage = value["IgnoreFailedPage"].GetBool();
+        m_ignoreFailedPageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ReconstructDocumentSSEConfig::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "PageFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pageFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ignoreFailedPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreFailedPage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoreFailedPage, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ReconstructDocumentSSEConfig::SetPageFormat(const string& _pageFormat)
 bool ReconstructDocumentSSEConfig::PageFormatHasBeenSet() const
 {
     return m_pageFormatHasBeenSet;
+}
+
+bool ReconstructDocumentSSEConfig::GetIgnoreFailedPage() const
+{
+    return m_ignoreFailedPage;
+}
+
+void ReconstructDocumentSSEConfig::SetIgnoreFailedPage(const bool& _ignoreFailedPage)
+{
+    m_ignoreFailedPage = _ignoreFailedPage;
+    m_ignoreFailedPageHasBeenSet = true;
+}
+
+bool ReconstructDocumentSSEConfig::IgnoreFailedPageHasBeenSet() const
+{
+    return m_ignoreFailedPageHasBeenSet;
 }
 

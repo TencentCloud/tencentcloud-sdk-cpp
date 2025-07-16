@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取AI任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data AI任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AITaskInfo GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * AI任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AITaskInfo m_data;
                     bool m_dataHasBeenSet;

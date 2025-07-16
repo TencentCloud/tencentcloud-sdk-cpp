@@ -105,22 +105,22 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取文件的 URL 地址。
-文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。
+                     * 获取说明：文件的 URL 地址。
+备注：文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。
 参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)
-                     * @return FileUrl 文件的 URL 地址。
-文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。
+                     * @return FileUrl 说明：文件的 URL 地址。
+备注：文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。
 参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)
                      * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置文件的 URL 地址。
-文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。
+                     * 设置说明：文件的 URL 地址。
+备注：文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。
 参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)
-                     * @param _fileUrl 文件的 URL 地址。
-文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。
+                     * @param _fileUrl 说明：文件的 URL 地址。
+备注：文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。
 参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)
                      * 
                      */
@@ -171,19 +171,23 @@ namespace TencentCloud
                     bool FileBase64HasBeenSet() const;
 
                     /**
-                     * 获取文档的起始页码。
-当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。
-                     * @return FileStartPageNumber 文档的起始页码。
-当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。
+                     * 获取说明：文档的起始页码。
+备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。
+默认值：无
+                     * @return FileStartPageNumber 说明：文档的起始页码。
+备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。
+默认值：无
                      * 
                      */
                     int64_t GetFileStartPageNumber() const;
 
                     /**
-                     * 设置文档的起始页码。
-当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。
-                     * @param _fileStartPageNumber 文档的起始页码。
-当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。
+                     * 设置说明：文档的起始页码。
+备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。
+默认值：无
+                     * @param _fileStartPageNumber 说明：文档的起始页码。
+备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。
+默认值：无
                      * 
                      */
                     void SetFileStartPageNumber(const int64_t& _fileStartPageNumber);
@@ -196,19 +200,23 @@ namespace TencentCloud
                     bool FileStartPageNumberHasBeenSet() const;
 
                     /**
-                     * 获取文档的结束页码。
-当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
-                     * @return FileEndPageNumber 文档的结束页码。
-当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
+                     * 获取说明：文档的结束页码。
+备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
+默认值：无
+                     * @return FileEndPageNumber 说明：文档的结束页码。
+备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
+默认值：无
                      * 
                      */
                     int64_t GetFileEndPageNumber() const;
 
                     /**
-                     * 设置文档的结束页码。
-当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
-                     * @param _fileEndPageNumber 文档的结束页码。
-当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
+                     * 设置说明：文档的结束页码。
+备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
+默认值：无
+                     * @param _fileEndPageNumber 说明：文档的结束页码。
+备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
+默认值：无
                      * 
                      */
                     void SetFileEndPageNumber(const int64_t& _fileEndPageNumber);
@@ -221,15 +229,23 @@ namespace TencentCloud
                     bool FileEndPageNumberHasBeenSet() const;
 
                     /**
-                     * 获取创建文档解析任务配置信息。
-                     * @return Config 创建文档解析任务配置信息。
+                     * 获取说明：创建文档解析任务配置信息。
+备注：可设置结果的返回格式
+默认值：无
+                     * @return Config 说明：创建文档解析任务配置信息。
+备注：可设置结果的返回格式
+默认值：无
                      * 
                      */
                     CreateReconstructDocumentFlowConfig GetConfig() const;
 
                     /**
-                     * 设置创建文档解析任务配置信息。
-                     * @param _config 创建文档解析任务配置信息。
+                     * 设置说明：创建文档解析任务配置信息。
+备注：可设置结果的返回格式
+默认值：无
+                     * @param _config 说明：创建文档解析任务配置信息。
+备注：可设置结果的返回格式
+默认值：无
                      * 
                      */
                     void SetConfig(const CreateReconstructDocumentFlowConfig& _config);
@@ -260,8 +276,8 @@ namespace TencentCloud
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * 文件的 URL 地址。
-文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。
+                     * 说明：文件的 URL 地址。
+备注：文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。
 参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)
                      */
                     std::string m_fileUrl;
@@ -278,21 +294,25 @@ namespace TencentCloud
                     bool m_fileBase64HasBeenSet;
 
                     /**
-                     * 文档的起始页码。
-当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。
+                     * 说明：文档的起始页码。
+备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。
+默认值：无
                      */
                     int64_t m_fileStartPageNumber;
                     bool m_fileStartPageNumberHasBeenSet;
 
                     /**
-                     * 文档的结束页码。
-当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
+                     * 说明：文档的结束页码。
+备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
+默认值：无
                      */
                     int64_t m_fileEndPageNumber;
                     bool m_fileEndPageNumberHasBeenSet;
 
                     /**
-                     * 创建文档解析任务配置信息。
+                     * 说明：创建文档解析任务配置信息。
+备注：可设置结果的返回格式
+默认值：无
                      */
                     CreateReconstructDocumentFlowConfig m_config;
                     bool m_configHasBeenSet;

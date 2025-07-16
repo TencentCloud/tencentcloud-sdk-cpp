@@ -36,8 +36,10 @@ HKIDCardOCRResponse::HKIDCardOCRResponse() :
     m_currentIssueDateHasBeenSet(false),
     m_fakeDetectResultHasBeenSet(false),
     m_headImageHasBeenSet(false),
+    m_smallHeadImageHasBeenSet(false),
     m_warningCodeHasBeenSet(false),
-    m_warnCardInfosHasBeenSet(false)
+    m_warnCardInfosHasBeenSet(false),
+    m_windowEmbeddedTextHasBeenSet(false)
 {
 }
 
@@ -195,6 +197,16 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
         m_headImageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SmallHeadImage") && !rsp["SmallHeadImage"].IsNull())
+    {
+        if (!rsp["SmallHeadImage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmallHeadImage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_smallHeadImage = string(rsp["SmallHeadImage"].GetString());
+        m_smallHeadImageHasBeenSet = true;
+    }
+
     if (rsp.HasMember("WarningCode") && !rsp["WarningCode"].IsNull())
     {
         if (!rsp["WarningCode"].IsArray())
@@ -219,6 +231,16 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
             m_warnCardInfos.push_back((*itr).GetInt64());
         }
         m_warnCardInfosHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WindowEmbeddedText") && !rsp["WindowEmbeddedText"].IsNull())
+    {
+        if (!rsp["WindowEmbeddedText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WindowEmbeddedText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_windowEmbeddedText = string(rsp["WindowEmbeddedText"].GetString());
+        m_windowEmbeddedTextHasBeenSet = true;
     }
 
 
@@ -327,6 +349,14 @@ string HKIDCardOCRResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_headImage.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_smallHeadImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmallHeadImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_smallHeadImage.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_warningCodeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -351,6 +381,14 @@ string HKIDCardOCRResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_windowEmbeddedTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WindowEmbeddedText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_windowEmbeddedText.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -485,6 +523,16 @@ bool HKIDCardOCRResponse::HeadImageHasBeenSet() const
     return m_headImageHasBeenSet;
 }
 
+string HKIDCardOCRResponse::GetSmallHeadImage() const
+{
+    return m_smallHeadImage;
+}
+
+bool HKIDCardOCRResponse::SmallHeadImageHasBeenSet() const
+{
+    return m_smallHeadImageHasBeenSet;
+}
+
 vector<int64_t> HKIDCardOCRResponse::GetWarningCode() const
 {
     return m_warningCode;
@@ -503,6 +551,16 @@ vector<int64_t> HKIDCardOCRResponse::GetWarnCardInfos() const
 bool HKIDCardOCRResponse::WarnCardInfosHasBeenSet() const
 {
     return m_warnCardInfosHasBeenSet;
+}
+
+string HKIDCardOCRResponse::GetWindowEmbeddedText() const
+{
+    return m_windowEmbeddedText;
+}
+
+bool HKIDCardOCRResponse::WindowEmbeddedTextHasBeenSet() const
+{
+    return m_windowEmbeddedTextHasBeenSet;
 }
 
 

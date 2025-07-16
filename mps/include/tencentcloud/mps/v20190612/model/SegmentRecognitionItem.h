@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取拆条片段URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SegmentUrl 拆条片段URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSegmentUrl() const;
 
                     /**
                      * 设置拆条片段URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _segmentUrl 拆条片段URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSegmentUrl(const std::string& _segmentUrl);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取拆条片段封面。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CovImgUrl 拆条片段封面。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCovImgUrl() const;
 
                     /**
                      * 设置拆条片段封面。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _covImgUrl 拆条片段封面。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCovImgUrl(const std::string& _covImgUrl);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分段标题。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 分段标题。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置分段标题。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _title 分段标题。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分段概要。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Summary 分段概要。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSummary() const;
 
                     /**
                      * 设置分段概要。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _summary 分段概要。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSummary(const std::string& _summary);
@@ -232,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取直播切片对应直播起始时间点，采用 ISO 日期格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 直播切片对应直播起始时间点，采用 ISO 日期格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置直播切片对应直播起始时间点，采用 ISO 日期格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginTime 直播切片对应直播起始时间点，采用 ISO 日期格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -257,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取直播切片对应直播结束时间点，采用 ISO 日期格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 直播切片对应直播结束时间点，采用 ISO 日期格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置直播切片对应直播结束时间点，采用 ISO 日期格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 直播切片对应直播结束时间点，采用 ISO 日期格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -407,28 +383,24 @@ namespace TencentCloud
 
                     /**
                      * 拆条片段URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_segmentUrl;
                     bool m_segmentUrlHasBeenSet;
 
                     /**
                      * 拆条片段封面。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_covImgUrl;
                     bool m_covImgUrlHasBeenSet;
 
                     /**
                      * 分段标题。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
                      * 分段概要。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
@@ -441,14 +413,12 @@ namespace TencentCloud
 
                     /**
                      * 直播切片对应直播起始时间点，采用 ISO 日期格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
                      * 直播切片对应直播结束时间点，采用 ISO 日期格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

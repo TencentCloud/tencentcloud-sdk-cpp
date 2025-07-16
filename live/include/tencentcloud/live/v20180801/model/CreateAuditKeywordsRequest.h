@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/live/v20180801/model/AuditKeyword.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取关键词列表。
+                     * @return Keywords 关键词列表。
+                     * 
+                     */
+                    std::vector<AuditKeyword> GetKeywords() const;
+
+                    /**
+                     * 设置关键词列表。
+                     * @param _keywords 关键词列表。
+                     * 
+                     */
+                    void SetKeywords(const std::vector<AuditKeyword>& _keywords);
+
+                    /**
+                     * 判断参数 Keywords 是否已赋值
+                     * @return Keywords 是否已赋值
+                     * 
+                     */
+                    bool KeywordsHasBeenSet() const;
+
+                    /**
+                     * 获取直播审核词库Id。
+                     * @return LibId 直播审核词库Id。
+                     * 
+                     */
+                    std::string GetLibId() const;
+
+                    /**
+                     * 设置直播审核词库Id。
+                     * @param _libId 直播审核词库Id。
+                     * 
+                     */
+                    void SetLibId(const std::string& _libId);
+
+                    /**
+                     * 判断参数 LibId 是否已赋值
+                     * @return LibId 是否已赋值
+                     * 
+                     */
+                    bool LibIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 关键词列表。
+                     */
+                    std::vector<AuditKeyword> m_keywords;
+                    bool m_keywordsHasBeenSet;
+
+                    /**
+                     * 直播审核词库Id。
+                     */
+                    std::string m_libId;
+                    bool m_libIdHasBeenSet;
 
                 };
             }

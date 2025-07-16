@@ -771,6 +771,27 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取主机安全agent版本
+                     * @return AgentVersion 主机安全agent版本
+                     * 
+                     */
+                    std::string GetAgentVersion() const;
+
+                    /**
+                     * 设置主机安全agent版本
+                     * @param _agentVersion 主机安全agent版本
+                     * 
+                     */
+                    void SetAgentVersion(const std::string& _agentVersion);
+
+                    /**
+                     * 判断参数 AgentVersion 是否已赋值
+                     * @return AgentVersion 是否已赋值
+                     * 
+                     */
+                    bool AgentVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -977,6 +998,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 主机安全agent版本
+                     */
+                    std::string m_agentVersion;
+                    bool m_agentVersionHasBeenSet;
 
                 };
             }

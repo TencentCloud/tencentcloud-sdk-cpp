@@ -202,18 +202,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展参数，序列化的 json 字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StdExtInfo 扩展参数，序列化的 json 字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStdExtInfo() const;
 
                     /**
                      * 设置扩展参数，序列化的 json 字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stdExtInfo 扩展参数，序列化的 json 字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStdExtInfo(const std::string& _stdExtInfo);
@@ -296,7 +292,6 @@ namespace TencentCloud
 
                     /**
                      * 扩展参数，序列化的 json 字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stdExtInfo;
                     bool m_stdExtInfoHasBeenSet;

@@ -24,6 +24,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FlowBatchUrlInfo.h
   include/tencentcloud/ess/v20201111/model/BillUsageDetail.h
   include/tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskResponse.h
+  include/tencentcloud/ess/v20201111/model/ExtractionField.h
   include/tencentcloud/ess/v20201111/model/IntentionActionResult.h
   include/tencentcloud/ess/v20201111/model/DescribeUserFlowTypeResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFileCounterSignResultRequest.h
@@ -42,6 +43,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationVerifyStatusResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowForwardsRequest.h
+  include/tencentcloud/ess/v20201111/model/DescribeInformationExtractionTaskRequest.h
   include/tencentcloud/ess/v20201111/model/CreateDynamicFlowApproverRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h
@@ -151,7 +153,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksRequest.h
   include/tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageResponse.h
   include/tencentcloud/ess/v20201111/model/FailedDeleteStaffData.h
-  include/tencentcloud/ess/v20201111/model/FlowForwardResult.h
+  include/tencentcloud/ess/v20201111/model/DescribeInformationExtractionTaskResponse.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h
   include/tencentcloud/ess/v20201111/model/UserThreeFactor.h
   include/tencentcloud/ess/v20201111/model/OrganizationAuthUrl.h
@@ -167,7 +169,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewRequest.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationAuthStatusRequest.h
-  include/tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateBatchInformationExtractionTaskRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesRequest.h
   include/tencentcloud/ess/v20201111/model/FlowGroupInfo.h
   include/tencentcloud/ess/v20201111/model/TemplateUserFlowType.h
@@ -247,9 +249,10 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/StartFlowRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.h
   include/tencentcloud/ess/v20201111/model/CreateUserVerifyUrlRequest.h
+  include/tencentcloud/ess/v20201111/model/FailedCreateStaffData.h
   include/tencentcloud/ess/v20201111/model/CreatePartnerAutoSignAuthUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksResponse.h
-  include/tencentcloud/ess/v20201111/model/FailedCreateStaffData.h
+  include/tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/SubOrgBillUsage.h
   include/tencentcloud/ess/v20201111/model/ApproverRestriction.h
@@ -286,6 +289,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFileCounterSignResultResponse.h
   include/tencentcloud/ess/v20201111/model/PermissionGroup.h
   include/tencentcloud/ess/v20201111/model/CancelFlowRequest.h
+  include/tencentcloud/ess/v20201111/model/FlowForwardResult.h
   include/tencentcloud/ess/v20201111/model/UploadFile.h
   include/tencentcloud/ess/v20201111/model/Component.h
   include/tencentcloud/ess/v20201111/model/IntegrationDepartment.h
@@ -294,6 +298,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateBatchSignUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosRequest.h
   include/tencentcloud/ess/v20201111/model/VerifyDigitFileRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateBatchInformationExtractionTaskResponse.h
   include/tencentcloud/ess/v20201111/model/UpdateIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/FlowGroupApprovers.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h
@@ -354,6 +359,7 @@ set(ess_src
   src/v20201111/model/FlowBatchUrlInfo.cpp
   src/v20201111/model/BillUsageDetail.cpp
   src/v20201111/model/DescribeCancelFlowsTaskResponse.cpp
+  src/v20201111/model/ExtractionField.cpp
   src/v20201111/model/IntentionActionResult.cpp
   src/v20201111/model/DescribeUserFlowTypeResponse.cpp
   src/v20201111/model/DescribeFileCounterSignResultRequest.cpp
@@ -372,6 +378,7 @@ set(ess_src
   src/v20201111/model/DescribeOrganizationVerifyStatusResponse.cpp
   src/v20201111/model/DeleteExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/CreateFlowForwardsRequest.cpp
+  src/v20201111/model/DescribeInformationExtractionTaskRequest.cpp
   src/v20201111/model/CreateDynamicFlowApproverRequest.cpp
   src/v20201111/model/CreateFlowApproversResponse.cpp
   src/v20201111/model/DescribeFileUrlsResponse.cpp
@@ -481,7 +488,7 @@ set(ess_src
   src/v20201111/model/DescribeBatchOrganizationRegistrationTasksRequest.cpp
   src/v20201111/model/CreatePersonAuthCertificateImageResponse.cpp
   src/v20201111/model/FailedDeleteStaffData.cpp
-  src/v20201111/model/FlowForwardResult.cpp
+  src/v20201111/model/DescribeInformationExtractionTaskResponse.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlResponse.cpp
   src/v20201111/model/UserThreeFactor.cpp
   src/v20201111/model/OrganizationAuthUrl.cpp
@@ -497,7 +504,7 @@ set(ess_src
   src/v20201111/model/CreateFlowSignReviewRequest.cpp
   src/v20201111/model/CreateOrganizationAuthUrlResponse.cpp
   src/v20201111/model/DescribeOrganizationAuthStatusRequest.cpp
-  src/v20201111/model/CreateSchemeUrlResponse.cpp
+  src/v20201111/model/CreateBatchInformationExtractionTaskRequest.cpp
   src/v20201111/model/CreateFlowByFilesRequest.cpp
   src/v20201111/model/FlowGroupInfo.cpp
   src/v20201111/model/TemplateUserFlowType.cpp
@@ -577,9 +584,10 @@ set(ess_src
   src/v20201111/model/StartFlowRequest.cpp
   src/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.cpp
   src/v20201111/model/CreateUserVerifyUrlRequest.cpp
+  src/v20201111/model/FailedCreateStaffData.cpp
   src/v20201111/model/CreatePartnerAutoSignAuthUrlRequest.cpp
   src/v20201111/model/DescribeBatchOrganizationRegistrationTasksResponse.cpp
-  src/v20201111/model/FailedCreateStaffData.cpp
+  src/v20201111/model/CreateSchemeUrlResponse.cpp
   src/v20201111/model/CreateExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/SubOrgBillUsage.cpp
   src/v20201111/model/ApproverRestriction.cpp
@@ -616,6 +624,7 @@ set(ess_src
   src/v20201111/model/DescribeFileCounterSignResultResponse.cpp
   src/v20201111/model/PermissionGroup.cpp
   src/v20201111/model/CancelFlowRequest.cpp
+  src/v20201111/model/FlowForwardResult.cpp
   src/v20201111/model/UploadFile.cpp
   src/v20201111/model/Component.cpp
   src/v20201111/model/IntegrationDepartment.cpp
@@ -624,6 +633,7 @@ set(ess_src
   src/v20201111/model/CreateBatchSignUrlRequest.cpp
   src/v20201111/model/CreateExtendedServiceAuthInfosRequest.cpp
   src/v20201111/model/VerifyDigitFileRequest.cpp
+  src/v20201111/model/CreateBatchInformationExtractionTaskResponse.cpp
   src/v20201111/model/UpdateIntegrationEmployeesRequest.cpp
   src/v20201111/model/FlowGroupApprovers.cpp
   src/v20201111/model/DescribeFlowBriefsRequest.cpp

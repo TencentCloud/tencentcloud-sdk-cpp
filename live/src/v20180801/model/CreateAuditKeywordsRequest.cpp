@@ -22,7 +22,9 @@
 using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-CreateAuditKeywordsRequest::CreateAuditKeywordsRequest()
+CreateAuditKeywordsRequest::CreateAuditKeywordsRequest() :
+    m_keywordsHasBeenSet(false),
+    m_libIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,29 @@ string CreateAuditKeywordsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_keywordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keywords";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_libIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LibId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_libId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +65,37 @@ string CreateAuditKeywordsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<AuditKeyword> CreateAuditKeywordsRequest::GetKeywords() const
+{
+    return m_keywords;
+}
+
+void CreateAuditKeywordsRequest::SetKeywords(const vector<AuditKeyword>& _keywords)
+{
+    m_keywords = _keywords;
+    m_keywordsHasBeenSet = true;
+}
+
+bool CreateAuditKeywordsRequest::KeywordsHasBeenSet() const
+{
+    return m_keywordsHasBeenSet;
+}
+
+string CreateAuditKeywordsRequest::GetLibId() const
+{
+    return m_libId;
+}
+
+void CreateAuditKeywordsRequest::SetLibId(const string& _libId)
+{
+    m_libId = _libId;
+    m_libIdHasBeenSet = true;
+}
+
+bool CreateAuditKeywordsRequest::LibIdHasBeenSet() const
+{
+    return m_libIdHasBeenSet;
+}
 
 

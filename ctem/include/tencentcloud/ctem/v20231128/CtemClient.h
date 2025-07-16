@@ -41,6 +41,14 @@
 #include <tencentcloud/ctem/v20231128/model/DescribeDomainsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeEnterprisesRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeEnterprisesResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeAppsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeAppsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeMiniProgramsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeMiniProgramsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeWebsitesRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeWebsitesResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeWechatOfficialsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeWechatOfficialsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeGithubsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeGithubsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeHttpsRequest.h>
@@ -120,6 +128,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEnterprisesResponse> DescribeEnterprisesOutcome;
                 typedef std::future<DescribeEnterprisesOutcome> DescribeEnterprisesOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeEnterprisesRequest&, DescribeEnterprisesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnterprisesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFakeAppsResponse> DescribeFakeAppsOutcome;
+                typedef std::future<DescribeFakeAppsOutcome> DescribeFakeAppsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeFakeAppsRequest&, DescribeFakeAppsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFakeAppsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFakeMiniProgramsResponse> DescribeFakeMiniProgramsOutcome;
+                typedef std::future<DescribeFakeMiniProgramsOutcome> DescribeFakeMiniProgramsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeFakeMiniProgramsRequest&, DescribeFakeMiniProgramsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFakeMiniProgramsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFakeWebsitesResponse> DescribeFakeWebsitesOutcome;
+                typedef std::future<DescribeFakeWebsitesOutcome> DescribeFakeWebsitesOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeFakeWebsitesRequest&, DescribeFakeWebsitesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFakeWebsitesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFakeWechatOfficialsResponse> DescribeFakeWechatOfficialsOutcome;
+                typedef std::future<DescribeFakeWechatOfficialsOutcome> DescribeFakeWechatOfficialsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeFakeWechatOfficialsRequest&, DescribeFakeWechatOfficialsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFakeWechatOfficialsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGithubsResponse> DescribeGithubsOutcome;
                 typedef std::future<DescribeGithubsOutcome> DescribeGithubsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeGithubsRequest&, DescribeGithubsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGithubsAsyncHandler;
@@ -260,6 +280,42 @@ namespace TencentCloud
                 DescribeEnterprisesOutcome DescribeEnterprises(const Model::DescribeEnterprisesRequest &request);
                 void DescribeEnterprisesAsync(const Model::DescribeEnterprisesRequest& request, const DescribeEnterprisesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnterprisesOutcomeCallable DescribeEnterprisesCallable(const Model::DescribeEnterprisesRequest& request);
+
+                /**
+                 *查询仿冒应用
+                 * @param req DescribeFakeAppsRequest
+                 * @return DescribeFakeAppsOutcome
+                 */
+                DescribeFakeAppsOutcome DescribeFakeApps(const Model::DescribeFakeAppsRequest &request);
+                void DescribeFakeAppsAsync(const Model::DescribeFakeAppsRequest& request, const DescribeFakeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFakeAppsOutcomeCallable DescribeFakeAppsCallable(const Model::DescribeFakeAppsRequest& request);
+
+                /**
+                 *查询仿冒小程序
+                 * @param req DescribeFakeMiniProgramsRequest
+                 * @return DescribeFakeMiniProgramsOutcome
+                 */
+                DescribeFakeMiniProgramsOutcome DescribeFakeMiniPrograms(const Model::DescribeFakeMiniProgramsRequest &request);
+                void DescribeFakeMiniProgramsAsync(const Model::DescribeFakeMiniProgramsRequest& request, const DescribeFakeMiniProgramsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFakeMiniProgramsOutcomeCallable DescribeFakeMiniProgramsCallable(const Model::DescribeFakeMiniProgramsRequest& request);
+
+                /**
+                 *查询仿冒网站
+                 * @param req DescribeFakeWebsitesRequest
+                 * @return DescribeFakeWebsitesOutcome
+                 */
+                DescribeFakeWebsitesOutcome DescribeFakeWebsites(const Model::DescribeFakeWebsitesRequest &request);
+                void DescribeFakeWebsitesAsync(const Model::DescribeFakeWebsitesRequest& request, const DescribeFakeWebsitesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFakeWebsitesOutcomeCallable DescribeFakeWebsitesCallable(const Model::DescribeFakeWebsitesRequest& request);
+
+                /**
+                 *查询仿冒公众号
+                 * @param req DescribeFakeWechatOfficialsRequest
+                 * @return DescribeFakeWechatOfficialsOutcome
+                 */
+                DescribeFakeWechatOfficialsOutcome DescribeFakeWechatOfficials(const Model::DescribeFakeWechatOfficialsRequest &request);
+                void DescribeFakeWechatOfficialsAsync(const Model::DescribeFakeWechatOfficialsRequest& request, const DescribeFakeWechatOfficialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFakeWechatOfficialsOutcomeCallable DescribeFakeWechatOfficialsCallable(const Model::DescribeFakeWechatOfficialsRequest& request);
 
                 /**
                  *查看Github泄露数据

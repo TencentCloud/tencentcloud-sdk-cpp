@@ -556,6 +556,49 @@ MpsClient::CreateLiveRecordTemplateOutcomeCallable MpsClient::CreateLiveRecordTe
     return task->get_future();
 }
 
+MpsClient::CreateMediaEvaluationOutcome MpsClient::CreateMediaEvaluation(const CreateMediaEvaluationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMediaEvaluation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMediaEvaluationResponse rsp = CreateMediaEvaluationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMediaEvaluationOutcome(rsp);
+        else
+            return CreateMediaEvaluationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMediaEvaluationOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateMediaEvaluationAsync(const CreateMediaEvaluationRequest& request, const CreateMediaEvaluationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMediaEvaluation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateMediaEvaluationOutcomeCallable MpsClient::CreateMediaEvaluationCallable(const CreateMediaEvaluationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMediaEvaluationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMediaEvaluation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreatePersonSampleOutcome MpsClient::CreatePersonSample(const CreatePersonSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePersonSample");

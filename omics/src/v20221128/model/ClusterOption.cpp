@@ -27,7 +27,8 @@ ClusterOption::ClusterOption() :
     m_resourceQuotaHasBeenSet(false),
     m_limitRangeHasBeenSet(false),
     m_systemNodeInstanceTypeHasBeenSet(false),
-    m_systemNodeCountHasBeenSet(false)
+    m_systemNodeCountHasBeenSet(false),
+    m_autoUpgradeClusterLevelHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,16 @@ CoreInternalOutcome ClusterOption::Deserialize(const rapidjson::Value &value)
         m_systemNodeCountHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoUpgradeClusterLevel") && !value["AutoUpgradeClusterLevel"].IsNull())
+    {
+        if (!value["AutoUpgradeClusterLevel"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOption.AutoUpgradeClusterLevel` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoUpgradeClusterLevel = value["AutoUpgradeClusterLevel"].GetBool();
+        m_autoUpgradeClusterLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +194,14 @@ void ClusterOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "SystemNodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_systemNodeCount, allocator);
+    }
+
+    if (m_autoUpgradeClusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoUpgradeClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoUpgradeClusterLevel, allocator);
     }
 
 }
@@ -298,5 +317,21 @@ void ClusterOption::SetSystemNodeCount(const uint64_t& _systemNodeCount)
 bool ClusterOption::SystemNodeCountHasBeenSet() const
 {
     return m_systemNodeCountHasBeenSet;
+}
+
+bool ClusterOption::GetAutoUpgradeClusterLevel() const
+{
+    return m_autoUpgradeClusterLevel;
+}
+
+void ClusterOption::SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel)
+{
+    m_autoUpgradeClusterLevel = _autoUpgradeClusterLevel;
+    m_autoUpgradeClusterLevelHasBeenSet = true;
+}
+
+bool ClusterOption::AutoUpgradeClusterLevelHasBeenSet() const
+{
+    return m_autoUpgradeClusterLevelHasBeenSet;
 }
 

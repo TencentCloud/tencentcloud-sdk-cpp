@@ -35,6 +35,8 @@
 #include <tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchInformationExtractionTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchInformationExtractionTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchInitOrganizationUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchInitOrganizationUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchOrganizationAuthorizationUrlRequest.h>
@@ -185,6 +187,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeInformationExtractionTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeInformationExtractionTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h>
@@ -277,6 +281,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchCancelFlowUrlResponse> CreateBatchCancelFlowUrlOutcome;
                 typedef std::future<CreateBatchCancelFlowUrlOutcome> CreateBatchCancelFlowUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchCancelFlowUrlRequest&, CreateBatchCancelFlowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchCancelFlowUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchInformationExtractionTaskResponse> CreateBatchInformationExtractionTaskOutcome;
+                typedef std::future<CreateBatchInformationExtractionTaskOutcome> CreateBatchInformationExtractionTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateBatchInformationExtractionTaskRequest&, CreateBatchInformationExtractionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchInformationExtractionTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchInitOrganizationUrlResponse> CreateBatchInitOrganizationUrlOutcome;
                 typedef std::future<CreateBatchInitOrganizationUrlOutcome> CreateBatchInitOrganizationUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchInitOrganizationUrlRequest&, CreateBatchInitOrganizationUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchInitOrganizationUrlAsyncHandler;
@@ -502,6 +509,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlowTemplatesResponse> DescribeFlowTemplatesOutcome;
                 typedef std::future<DescribeFlowTemplatesOutcome> DescribeFlowTemplatesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFlowTemplatesRequest&, DescribeFlowTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInformationExtractionTaskResponse> DescribeInformationExtractionTaskOutcome;
+                typedef std::future<DescribeInformationExtractionTaskOutcome> DescribeInformationExtractionTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeInformationExtractionTaskRequest&, DescribeInformationExtractionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInformationExtractionTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIntegrationDepartmentsResponse> DescribeIntegrationDepartmentsOutcome;
                 typedef std::future<DescribeIntegrationDepartmentsOutcome> DescribeIntegrationDepartmentsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeIntegrationDepartmentsRequest&, DescribeIntegrationDepartmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationDepartmentsAsyncHandler;
@@ -697,6 +707,21 @@ namespace TencentCloud
                 CreateBatchCancelFlowUrlOutcome CreateBatchCancelFlowUrl(const Model::CreateBatchCancelFlowUrlRequest &request);
                 void CreateBatchCancelFlowUrlAsync(const Model::CreateBatchCancelFlowUrlRequest& request, const CreateBatchCancelFlowUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBatchCancelFlowUrlOutcomeCallable CreateBatchCancelFlowUrlCallable(const Model::CreateBatchCancelFlowUrlRequest& request);
+
+                /**
+                 *此接口（CreateBatchInformationExtractionTask）用来通过上传后的PDF资源编号来批量创建合同智能审查任务。<br/>
+
+适用场景：根据合同关键词（字段名称）来提取PDF合同文件的字段结果信息。
+
+注: 
+1. PDF格式限制大小为10M以下
+2. 仅支持5个PDF文件批量发起
+                 * @param req CreateBatchInformationExtractionTaskRequest
+                 * @return CreateBatchInformationExtractionTaskOutcome
+                 */
+                CreateBatchInformationExtractionTaskOutcome CreateBatchInformationExtractionTask(const Model::CreateBatchInformationExtractionTaskRequest &request);
+                void CreateBatchInformationExtractionTaskAsync(const Model::CreateBatchInformationExtractionTaskRequest& request, const CreateBatchInformationExtractionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchInformationExtractionTaskOutcomeCallable CreateBatchInformationExtractionTaskCallable(const Model::CreateBatchInformationExtractionTaskRequest& request);
 
                 /**
                  *支持企业进行批量初始化操作：
@@ -2123,6 +2148,15 @@ namespace TencentCloud
                 DescribeFlowTemplatesOutcome DescribeFlowTemplates(const Model::DescribeFlowTemplatesRequest &request);
                 void DescribeFlowTemplatesAsync(const Model::DescribeFlowTemplatesRequest& request, const DescribeFlowTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFlowTemplatesOutcomeCallable DescribeFlowTemplatesCallable(const Model::DescribeFlowTemplatesRequest& request);
+
+                /**
+                 *本接口（DescribeInformationExtractionTask）用于获取合同智能提取任务详情，包括任务的状态和提取的字段结果信息。
+                 * @param req DescribeInformationExtractionTaskRequest
+                 * @return DescribeInformationExtractionTaskOutcome
+                 */
+                DescribeInformationExtractionTaskOutcome DescribeInformationExtractionTask(const Model::DescribeInformationExtractionTaskRequest &request);
+                void DescribeInformationExtractionTaskAsync(const Model::DescribeInformationExtractionTaskRequest& request, const DescribeInformationExtractionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInformationExtractionTaskOutcomeCallable DescribeInformationExtractionTaskCallable(const Model::DescribeInformationExtractionTaskRequest& request);
 
                 /**
                  *此接口（DescribeIntegrationDepartments）用于查询企业的部门信息列表，支持查询单个部门节点或单个部门节点及一级子节点部门列表。

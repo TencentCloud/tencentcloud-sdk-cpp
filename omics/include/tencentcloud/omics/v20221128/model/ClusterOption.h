@@ -199,6 +199,27 @@ namespace TencentCloud
                      */
                     bool SystemNodeCountHasBeenSet() const;
 
+                    /**
+                     * 获取纳管环境自动升配
+                     * @return AutoUpgradeClusterLevel 纳管环境自动升配
+                     * 
+                     */
+                    bool GetAutoUpgradeClusterLevel() const;
+
+                    /**
+                     * 设置纳管环境自动升配
+                     * @param _autoUpgradeClusterLevel 纳管环境自动升配
+                     * 
+                     */
+                    void SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel);
+
+                    /**
+                     * 判断参数 AutoUpgradeClusterLevel 是否已赋值
+                     * @return AutoUpgradeClusterLevel 是否已赋值
+                     * 
+                     */
+                    bool AutoUpgradeClusterLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -243,6 +264,12 @@ namespace TencentCloud
                      */
                     uint64_t m_systemNodeCount;
                     bool m_systemNodeCountHasBeenSet;
+
+                    /**
+                     * 纳管环境自动升配
+                     */
+                    bool m_autoUpgradeClusterLevel;
+                    bool m_autoUpgradeClusterLevelHasBeenSet;
 
                 };
             }

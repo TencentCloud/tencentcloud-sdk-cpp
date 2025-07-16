@@ -235,18 +235,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Drm信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrmInfo Drm信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DrmInfo GetDrmInfo() const;
 
                     /**
                      * 设置Drm信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _drmInfo Drm信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDrmInfo(const DrmInfo& _drmInfo);
@@ -262,11 +258,9 @@ namespace TencentCloud
                      * 获取自适应转码模板类型：
 Common：音视频类型
 PureAudio：纯音频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefinitionType 自适应转码模板类型：
 Common：音视频类型
 PureAudio：纯音频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefinitionType() const;
@@ -275,11 +269,9 @@ PureAudio：纯音频类型
                      * 设置自适应转码模板类型：
 Common：音视频类型
 PureAudio：纯音频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _definitionType 自适应转码模板类型：
 Common：音视频类型
 PureAudio：纯音频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefinitionType(const std::string& _definitionType);
@@ -346,7 +338,6 @@ PureAudio：纯音频类型
 
                     /**
                      * Drm信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DrmInfo m_drmInfo;
                     bool m_drmInfoHasBeenSet;
@@ -355,7 +346,6 @@ PureAudio：纯音频类型
                      * 自适应转码模板类型：
 Common：音视频类型
 PureAudio：纯音频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_definitionType;
                     bool m_definitionTypeHasBeenSet;

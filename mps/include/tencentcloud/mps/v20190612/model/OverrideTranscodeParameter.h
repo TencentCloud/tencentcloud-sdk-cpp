@@ -200,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字幕流配置参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubtitleTemplate 字幕流配置参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SubtitleTemplate GetSubtitleTemplate() const;
 
                     /**
                      * 设置字幕流配置参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subtitleTemplate 字幕流配置参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate);
@@ -225,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外挂音轨参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddonAudioStream 外挂音轨参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MediaInputInfo> GetAddonAudioStream() const;
 
                     /**
                      * 设置外挂音轨参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addonAudioStream 外挂音轨参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddonAudioStream(const std::vector<MediaInputInfo>& _addonAudioStream);
@@ -250,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转码扩展字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StdExtInfo 转码扩展字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStdExtInfo() const;
 
                     /**
                      * 设置转码扩展字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stdExtInfo 转码扩展字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStdExtInfo(const std::string& _stdExtInfo);
@@ -275,18 +263,14 @@ namespace TencentCloud
 
                     /**
                      * 获取要插入的字幕文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddOnSubtitles 要插入的字幕文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AddOnSubtitle> GetAddOnSubtitles() const;
 
                     /**
                      * 设置要插入的字幕文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addOnSubtitles 要插入的字幕文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddOnSubtitles(const std::vector<AddOnSubtitle>& _addOnSubtitles);
@@ -343,28 +327,24 @@ namespace TencentCloud
 
                     /**
                      * 字幕流配置参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SubtitleTemplate m_subtitleTemplate;
                     bool m_subtitleTemplateHasBeenSet;
 
                     /**
                      * 外挂音轨参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaInputInfo> m_addonAudioStream;
                     bool m_addonAudioStreamHasBeenSet;
 
                     /**
                      * 转码扩展字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stdExtInfo;
                     bool m_stdExtInfoHasBeenSet;
 
                     /**
                      * 要插入的字幕文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AddOnSubtitle> m_addOnSubtitles;
                     bool m_addOnSubtitlesHasBeenSet;

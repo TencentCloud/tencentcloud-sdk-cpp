@@ -24,7 +24,9 @@ ModifyConditionsTemplateRequestEventCondition::ModifyConditionsTemplateRequestEv
     m_alarmNotifyPeriodHasBeenSet(false),
     m_alarmNotifyTypeHasBeenSet(false),
     m_eventIDHasBeenSet(false),
-    m_ruleIDHasBeenSet(false)
+    m_ruleIDHasBeenSet(false),
+    m_metricNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome ModifyConditionsTemplateRequestEventCondition::Deserialize(c
         m_ruleIDHasBeenSet = true;
     }
 
+    if (value.HasMember("MetricName") && !value["MetricName"].IsNull())
+    {
+        if (!value["MetricName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyConditionsTemplateRequestEventCondition.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricName = string(value["MetricName"].GetString());
+        m_metricNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyConditionsTemplateRequestEventCondition.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void ModifyConditionsTemplateRequestEventCondition::ToJsonObject(rapidjson::Valu
         string key = "RuleID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ruleID, allocator);
+    }
+
+    if (m_metricNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void ModifyConditionsTemplateRequestEventCondition::SetRuleID(const int64_t& _ru
 bool ModifyConditionsTemplateRequestEventCondition::RuleIDHasBeenSet() const
 {
     return m_ruleIDHasBeenSet;
+}
+
+string ModifyConditionsTemplateRequestEventCondition::GetMetricName() const
+{
+    return m_metricName;
+}
+
+void ModifyConditionsTemplateRequestEventCondition::SetMetricName(const string& _metricName)
+{
+    m_metricName = _metricName;
+    m_metricNameHasBeenSet = true;
+}
+
+bool ModifyConditionsTemplateRequestEventCondition::MetricNameHasBeenSet() const
+{
+    return m_metricNameHasBeenSet;
+}
+
+string ModifyConditionsTemplateRequestEventCondition::GetDescription() const
+{
+    return m_description;
+}
+
+void ModifyConditionsTemplateRequestEventCondition::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ModifyConditionsTemplateRequestEventCondition::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

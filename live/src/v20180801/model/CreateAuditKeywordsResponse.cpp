@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-CreateAuditKeywordsResponse::CreateAuditKeywordsResponse()
+CreateAuditKeywordsResponse::CreateAuditKeywordsResponse() :
+    m_keywordIdsHasBeenSet(false),
+    m_dupInfosHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,39 @@ CoreInternalOutcome CreateAuditKeywordsResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("KeywordIds") && !rsp["KeywordIds"].IsNull())
+    {
+        if (!rsp["KeywordIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KeywordIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["KeywordIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keywordIds.push_back((*itr).GetString());
+        }
+        m_keywordIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DupInfos") && !rsp["DupInfos"].IsNull())
+    {
+        if (!rsp["DupInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DupInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DupInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AuditKeywordInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dupInfos.push_back(item);
+        }
+        m_dupInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +105,34 @@ string CreateAuditKeywordsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_keywordIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeywordIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keywordIds.begin(); itr != m_keywordIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_dupInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DupInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dupInfos.begin(); itr != m_dupInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +145,25 @@ string CreateAuditKeywordsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> CreateAuditKeywordsResponse::GetKeywordIds() const
+{
+    return m_keywordIds;
+}
+
+bool CreateAuditKeywordsResponse::KeywordIdsHasBeenSet() const
+{
+    return m_keywordIdsHasBeenSet;
+}
+
+vector<AuditKeywordInfo> CreateAuditKeywordsResponse::GetDupInfos() const
+{
+    return m_dupInfos;
+}
+
+bool CreateAuditKeywordsResponse::DupInfosHasBeenSet() const
+{
+    return m_dupInfosHasBeenSet;
+}
 
 

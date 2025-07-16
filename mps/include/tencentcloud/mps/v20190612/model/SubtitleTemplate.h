@@ -72,13 +72,15 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取指定要压制到视频中的字幕轨道，Path 和 StreamIndex 至少指定一个；如果指定了Path，则优先使用Path。
-Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
+                     * 获取指定要压制到视频中的字幕轨道，Streamindex的取值从0开始，0表示使用源视频中的第一条字幕轨。如果指定了Path，则优先使用Path。Path 和 StreamIndex 至少指定一个。
+
+- 注意：StreamIndex必须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
 
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StreamIndex 指定要压制到视频中的字幕轨道，Path 和 StreamIndex 至少指定一个；如果指定了Path，则优先使用Path。
-Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
+                     * @return StreamIndex 指定要压制到视频中的字幕轨道，Streamindex的取值从0开始，0表示使用源视频中的第一条字幕轨。如果指定了Path，则优先使用Path。Path 和 StreamIndex 至少指定一个。
+
+- 注意：StreamIndex必须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
 
 
 注意：此字段可能返回 null，表示取不到有效值。
@@ -87,13 +89,15 @@ Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文
                     int64_t GetStreamIndex() const;
 
                     /**
-                     * 设置指定要压制到视频中的字幕轨道，Path 和 StreamIndex 至少指定一个；如果指定了Path，则优先使用Path。
-Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
+                     * 设置指定要压制到视频中的字幕轨道，Streamindex的取值从0开始，0表示使用源视频中的第一条字幕轨。如果指定了Path，则优先使用Path。Path 和 StreamIndex 至少指定一个。
+
+- 注意：StreamIndex必须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
 
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _streamIndex 指定要压制到视频中的字幕轨道，Path 和 StreamIndex 至少指定一个；如果指定了Path，则优先使用Path。
-Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
+                     * @param _streamIndex 指定要压制到视频中的字幕轨道，Streamindex的取值从0开始，0表示使用源视频中的第一条字幕轨。如果指定了Path，则优先使用Path。Path 和 StreamIndex 至少指定一个。
+
+- 注意：StreamIndex必须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
 
 
 注意：此字段可能返回 null，表示取不到有效值。
@@ -127,7 +131,7 @@ Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文
 <li>korean.ttf：韩语</li>
 <li>japanese.ttf：日语</li>
 <li>thai.ttf：泰语</li>
-默认：hei.ttf 黑体。
+默认：hei.ttf 黑体。注意：楷体推荐使用kai.ttf
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FontType 字体类型，支持：
 <li>hei.ttf：黑体</li>
@@ -147,7 +151,7 @@ Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文
 <li>korean.ttf：韩语</li>
 <li>japanese.ttf：日语</li>
 <li>thai.ttf：泰语</li>
-默认：hei.ttf 黑体。
+默认：hei.ttf 黑体。注意：楷体推荐使用kai.ttf
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,7 +176,7 @@ Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文
 <li>korean.ttf：韩语</li>
 <li>japanese.ttf：日语</li>
 <li>thai.ttf：泰语</li>
-默认：hei.ttf 黑体。
+默认：hei.ttf 黑体。注意：楷体推荐使用kai.ttf
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fontType 字体类型，支持：
 <li>hei.ttf：黑体</li>
@@ -192,7 +196,7 @@ Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文
 <li>korean.ttf：韩语</li>
 <li>japanese.ttf：日语</li>
 <li>thai.ttf：泰语</li>
-默认：hei.ttf 黑体。
+默认：hei.ttf 黑体。注意：楷体推荐使用kai.ttf
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -548,8 +552,9 @@ Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 指定要压制到视频中的字幕轨道，Path 和 StreamIndex 至少指定一个；如果指定了Path，则优先使用Path。
-Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
+                     * 指定要压制到视频中的字幕轨道，Streamindex的取值从0开始，0表示使用源视频中的第一条字幕轨。如果指定了Path，则优先使用Path。Path 和 StreamIndex 至少指定一个。
+
+- 注意：StreamIndex必须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
 
 
 注意：此字段可能返回 null，表示取不到有效值。
@@ -576,7 +581,7 @@ Streamindex的取值须与源文件中的字幕轨索引一致。例如，源文
 <li>korean.ttf：韩语</li>
 <li>japanese.ttf：日语</li>
 <li>thai.ttf：泰语</li>
-默认：hei.ttf 黑体。
+默认：hei.ttf 黑体。注意：楷体推荐使用kai.ttf
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fontType;

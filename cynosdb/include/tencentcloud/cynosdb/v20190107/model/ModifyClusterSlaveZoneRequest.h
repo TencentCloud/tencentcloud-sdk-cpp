@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool BinlogSyncWayHasBeenSet() const;
 
+                    /**
+                     * 获取半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。
+                     * @return SemiSyncTimeout 半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。
+                     * 
+                     */
+                    int64_t GetSemiSyncTimeout() const;
+
+                    /**
+                     * 设置半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。
+                     * @param _semiSyncTimeout 半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。
+                     * 
+                     */
+                    void SetSemiSyncTimeout(const int64_t& _semiSyncTimeout);
+
+                    /**
+                     * 判断参数 SemiSyncTimeout 是否已赋值
+                     * @return SemiSyncTimeout 是否已赋值
+                     * 
+                     */
+                    bool SemiSyncTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_binlogSyncWay;
                     bool m_binlogSyncWayHasBeenSet;
+
+                    /**
+                     * 半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。
+                     */
+                    int64_t m_semiSyncTimeout;
+                    bool m_semiSyncTimeoutHasBeenSet;
 
                 };
             }

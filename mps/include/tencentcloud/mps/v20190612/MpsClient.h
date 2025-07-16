@@ -47,6 +47,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateLiveRecordTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateLiveRecordTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateMediaEvaluationRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateMediaEvaluationResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateQualityControlTemplateRequest.h>
@@ -335,6 +337,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLiveRecordTemplateResponse> CreateLiveRecordTemplateOutcome;
                 typedef std::future<CreateLiveRecordTemplateOutcome> CreateLiveRecordTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateLiveRecordTemplateRequest&, CreateLiveRecordTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveRecordTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMediaEvaluationResponse> CreateMediaEvaluationOutcome;
+                typedef std::future<CreateMediaEvaluationOutcome> CreateMediaEvaluationOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateMediaEvaluationRequest&, CreateMediaEvaluationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMediaEvaluationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePersonSampleResponse> CreatePersonSampleOutcome;
                 typedef std::future<CreatePersonSampleOutcome> CreatePersonSampleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreatePersonSampleRequest&, CreatePersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonSampleAsyncHandler;
@@ -803,6 +808,18 @@ namespace TencentCloud
                 CreateLiveRecordTemplateOutcome CreateLiveRecordTemplate(const Model::CreateLiveRecordTemplateRequest &request);
                 void CreateLiveRecordTemplateAsync(const Model::CreateLiveRecordTemplateRequest& request, const CreateLiveRecordTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateLiveRecordTemplateOutcomeCallable CreateLiveRecordTemplateCallable(const Model::CreateLiveRecordTemplateRequest& request);
+
+                /**
+                 *发起视频评测任务，功能包括：
+
+1. 对一个原视频和多个转码后的视频进行评分。
+2. 计算不同转码方式的 BD-Rate。
+                 * @param req CreateMediaEvaluationRequest
+                 * @return CreateMediaEvaluationOutcome
+                 */
+                CreateMediaEvaluationOutcome CreateMediaEvaluation(const Model::CreateMediaEvaluationRequest &request);
+                void CreateMediaEvaluationAsync(const Model::CreateMediaEvaluationRequest& request, const CreateMediaEvaluationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMediaEvaluationOutcomeCallable CreateMediaEvaluationCallable(const Model::CreateMediaEvaluationRequest& request);
 
                 /**
                  *该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、内容不适宜等视频处理。

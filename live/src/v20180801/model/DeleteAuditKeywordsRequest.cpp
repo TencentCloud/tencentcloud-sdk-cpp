@@ -22,7 +22,9 @@
 using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-DeleteAuditKeywordsRequest::DeleteAuditKeywordsRequest()
+DeleteAuditKeywordsRequest::DeleteAuditKeywordsRequest() :
+    m_keywordIdsHasBeenSet(false),
+    m_libIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,27 @@ string DeleteAuditKeywordsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_keywordIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeywordIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keywordIds.begin(); itr != m_keywordIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_libIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LibId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_libId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +63,37 @@ string DeleteAuditKeywordsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> DeleteAuditKeywordsRequest::GetKeywordIds() const
+{
+    return m_keywordIds;
+}
+
+void DeleteAuditKeywordsRequest::SetKeywordIds(const vector<string>& _keywordIds)
+{
+    m_keywordIds = _keywordIds;
+    m_keywordIdsHasBeenSet = true;
+}
+
+bool DeleteAuditKeywordsRequest::KeywordIdsHasBeenSet() const
+{
+    return m_keywordIdsHasBeenSet;
+}
+
+string DeleteAuditKeywordsRequest::GetLibId() const
+{
+    return m_libId;
+}
+
+void DeleteAuditKeywordsRequest::SetLibId(const string& _libId)
+{
+    m_libId = _libId;
+    m_libIdHasBeenSet = true;
+}
+
+bool DeleteAuditKeywordsRequest::LibIdHasBeenSet() const
+{
+    return m_libIdHasBeenSet;
+}
 
 

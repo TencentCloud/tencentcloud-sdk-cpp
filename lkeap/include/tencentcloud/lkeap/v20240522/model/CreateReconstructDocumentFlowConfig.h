@@ -124,6 +124,27 @@ namespace TencentCloud
                      */
                     bool ResultTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否忽略失败页，返回已成功的页数据。默认为true。
+                     * @return IgnoreFailedPage 是否忽略失败页，返回已成功的页数据。默认为true。
+                     * 
+                     */
+                    bool GetIgnoreFailedPage() const;
+
+                    /**
+                     * 设置是否忽略失败页，返回已成功的页数据。默认为true。
+                     * @param _ignoreFailedPage 是否忽略失败页，返回已成功的页数据。默认为true。
+                     * 
+                     */
+                    void SetIgnoreFailedPage(const bool& _ignoreFailedPage);
+
+                    /**
+                     * 判断参数 IgnoreFailedPage 是否已赋值
+                     * @return IgnoreFailedPage 是否已赋值
+                     * 
+                     */
+                    bool IgnoreFailedPageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -146,6 +167,12 @@ namespace TencentCloud
                      */
                     std::string m_resultType;
                     bool m_resultTypeHasBeenSet;
+
+                    /**
+                     * 是否忽略失败页，返回已成功的页数据。默认为true。
+                     */
+                    bool m_ignoreFailedPage;
+                    bool m_ignoreFailedPageHasBeenSet;
 
                 };
             }

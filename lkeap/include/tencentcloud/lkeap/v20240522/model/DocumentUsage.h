@@ -151,6 +151,48 @@ namespace TencentCloud
                      */
                     bool MllmTokensHasBeenSet() const;
 
+                    /**
+                     * 获取解析成功页数
+                     * @return SuccessPageNum 解析成功页数
+                     * 
+                     */
+                    int64_t GetSuccessPageNum() const;
+
+                    /**
+                     * 设置解析成功页数
+                     * @param _successPageNum 解析成功页数
+                     * 
+                     */
+                    void SetSuccessPageNum(const int64_t& _successPageNum);
+
+                    /**
+                     * 判断参数 SuccessPageNum 是否已赋值
+                     * @return SuccessPageNum 是否已赋值
+                     * 
+                     */
+                    bool SuccessPageNumHasBeenSet() const;
+
+                    /**
+                     * 获取解析失败页数
+                     * @return FailPageNum 解析失败页数
+                     * 
+                     */
+                    int64_t GetFailPageNum() const;
+
+                    /**
+                     * 设置解析失败页数
+                     * @param _failPageNum 解析失败页数
+                     * 
+                     */
+                    void SetFailPageNum(const int64_t& _failPageNum);
+
+                    /**
+                     * 判断参数 FailPageNum 是否已赋值
+                     * @return FailPageNum 是否已赋值
+                     * 
+                     */
+                    bool FailPageNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +224,18 @@ namespace TencentCloud
                      */
                     int64_t m_mllmTokens;
                     bool m_mllmTokensHasBeenSet;
+
+                    /**
+                     * 解析成功页数
+                     */
+                    int64_t m_successPageNum;
+                    bool m_successPageNumHasBeenSet;
+
+                    /**
+                     * 解析失败页数
+                     */
+                    int64_t m_failPageNum;
+                    bool m_failPageNumHasBeenSet;
 
                 };
             }

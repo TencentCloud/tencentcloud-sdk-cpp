@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool BinlogSyncWayHasBeenSet() const;
 
+                    /**
+                     * 获取半同步超时时间，单位ms
+                     * @return SemiSyncTimeout 半同步超时时间，单位ms
+                     * 
+                     */
+                    int64_t GetSemiSyncTimeout() const;
+
+                    /**
+                     * 设置半同步超时时间，单位ms
+                     * @param _semiSyncTimeout 半同步超时时间，单位ms
+                     * 
+                     */
+                    void SetSemiSyncTimeout(const int64_t& _semiSyncTimeout);
+
+                    /**
+                     * 判断参数 SemiSyncTimeout 是否已赋值
+                     * @return SemiSyncTimeout 是否已赋值
+                     * 
+                     */
+                    bool SemiSyncTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_binlogSyncWay;
                     bool m_binlogSyncWayHasBeenSet;
+
+                    /**
+                     * 半同步超时时间，单位ms
+                     */
+                    int64_t m_semiSyncTimeout;
+                    bool m_semiSyncTimeoutHasBeenSet;
 
                 };
             }
