@@ -206,12 +206,10 @@ SYSTEM: 系统接入域名
 FREE: 免费版
 STANDARD：标准版
 ULTIMATE：旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageType 套餐类型
 FREE: 免费版
 STANDARD：标准版
 ULTIMATE：旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageType() const;
@@ -221,12 +219,10 @@ ULTIMATE：旗舰版
 FREE: 免费版
 STANDARD：标准版
 ULTIMATE：旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageType 套餐类型
 FREE: 免费版
 STANDARD：标准版
 ULTIMATE：旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -276,23 +272,15 @@ UNKNOWN: 未知
                     bool WorkingStatusHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-ENABLED: 正常
-DISABLED: 禁用
-                     * @return Status 实例状态
-ENABLED: 正常
-DISABLED: 禁用
+                     * 获取实例状态，ENABLED: 正常；DISABLED: 禁用
+                     * @return Status 实例状态，ENABLED: 正常；DISABLED: 禁用
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置实例状态
-ENABLED: 正常
-DISABLED: 禁用
-                     * @param _status 实例状态
-ENABLED: 正常
-DISABLED: 禁用
+                     * 设置实例状态，ENABLED: 正常；DISABLED: 禁用
+                     * @param _status 实例状态，ENABLED: 正常；DISABLED: 禁用
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -306,18 +294,14 @@ DISABLED: 禁用
 
                     /**
                      * 获取cname是否接入：true已接入；false未接入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCnameConfigured cname是否接入：true已接入；false未接入
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsCnameConfigured() const;
 
                     /**
                      * 设置cname是否接入：true已接入；false未接入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCnameConfigured cname是否接入：true已接入；false未接入
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCnameConfigured(const bool& _isCnameConfigured);
@@ -331,18 +315,14 @@ DISABLED: 禁用
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -419,18 +399,14 @@ DISABLED: 禁用
 
                     /**
                      * 获取实例绑定套餐资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 实例绑定套餐资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置实例绑定套餐资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 实例绑定套餐资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -556,7 +532,6 @@ SYSTEM: 系统接入域名
 FREE: 免费版
 STANDARD：标准版
 ULTIMATE：旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
@@ -572,23 +547,19 @@ UNKNOWN: 未知
                     bool m_workingStatusHasBeenSet;
 
                     /**
-                     * 实例状态
-ENABLED: 正常
-DISABLED: 禁用
+                     * 实例状态，ENABLED: 正常；DISABLED: 禁用
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * cname是否接入：true已接入；false未接入
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isCnameConfigured;
                     bool m_isCnameConfiguredHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -613,7 +584,6 @@ DISABLED: 禁用
 
                     /**
                      * 实例绑定套餐资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

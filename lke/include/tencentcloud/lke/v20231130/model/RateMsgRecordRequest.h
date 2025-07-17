@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取1点赞2点踩
-                     * @return Score 1点赞2点踩
+                     * 获取1: 点赞,  2: 点踩
+                     * @return Score 1: 点赞,  2: 点踩
                      * 
                      */
                     uint64_t GetScore() const;
 
                     /**
-                     * 设置1点赞2点踩
-                     * @param _score 1点赞2点踩
+                     * 设置1: 点赞,  2: 点踩
+                     * @param _score 1: 点赞,  2: 点踩
                      * 
                      */
                     void SetScore(const uint64_t& _score);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取原因
-                     * @return Reasons 原因
+                     * 获取原因，只有Score参数为2即点踩的时候才需要输入
+                     * @return Reasons 原因，只有Score参数为2即点踩的时候才需要输入
                      * 
                      */
                     std::vector<std::string> GetReasons() const;
 
                     /**
-                     * 设置原因
-                     * @param _reasons 原因
+                     * 设置原因，只有Score参数为2即点踩的时候才需要输入
+                     * @param _reasons 原因，只有Score参数为2即点踩的时候才需要输入
                      * 
                      */
                     void SetReasons(const std::vector<std::string>& _reasons);
@@ -141,13 +141,13 @@ namespace TencentCloud
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 1点赞2点踩
+                     * 1: 点赞,  2: 点踩
                      */
                     uint64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 原因
+                     * 原因，只有Score参数为2即点踩的时候才需要输入
                      */
                     std::vector<std::string> m_reasons;
                     bool m_reasonsHasBeenSet;

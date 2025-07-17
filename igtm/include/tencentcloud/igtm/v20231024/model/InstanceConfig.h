@@ -89,19 +89,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取CUSTOM: 自定义接入域名
-SYSTEM: 系统接入域名
-                     * @return AccessType CUSTOM: 自定义接入域名
-SYSTEM: 系统接入域名
+                     * 获取CUSTOM: 自定义接入域名，SYSTEM: 系统接入域名
+                     * @return AccessType CUSTOM: 自定义接入域名，SYSTEM: 系统接入域名
                      * 
                      */
                     std::string GetAccessType() const;
 
                     /**
-                     * 设置CUSTOM: 自定义接入域名
-SYSTEM: 系统接入域名
-                     * @param _accessType CUSTOM: 自定义接入域名
-SYSTEM: 系统接入域名
+                     * 设置CUSTOM: 自定义接入域名，SYSTEM: 系统接入域名
+                     * @param _accessType CUSTOM: 自定义接入域名，SYSTEM: 系统接入域名
                      * 
                      */
                     void SetAccessType(const std::string& _accessType);
@@ -156,19 +152,15 @@ SYSTEM: 系统接入域名
                     bool GlobalTtlHasBeenSet() const;
 
                     /**
-                     * 获取接入主域名，自定义接入域名时必填
-
-                     * @return AccessDomain 接入主域名，自定义接入域名时必填
-
+                     * 获取接入主域名
+                     * @return AccessDomain 接入主域名
                      * 
                      */
                     std::string GetAccessDomain() const;
 
                     /**
-                     * 设置接入主域名，自定义接入域名时必填
-
-                     * @param _accessDomain 接入主域名，自定义接入域名时必填
-
+                     * 设置接入主域名
+                     * @param _accessDomain 接入主域名
                      * 
                      */
                     void SetAccessDomain(const std::string& _accessDomain);
@@ -181,15 +173,15 @@ SYSTEM: 系统接入域名
                     bool AccessDomainHasBeenSet() const;
 
                     /**
-                     * 获取接入子域名，自定义接入域名时必填
-                     * @return AccessSubDomain 接入子域名，自定义接入域名时必填
+                     * 获取接入子域名
+                     * @return AccessSubDomain 接入子域名
                      * 
                      */
                     std::string GetAccessSubDomain() const;
 
                     /**
-                     * 设置接入子域名，自定义接入域名时必填
-                     * @param _accessSubDomain 接入子域名，自定义接入域名时必填
+                     * 设置接入子域名
+                     * @param _accessSubDomain 接入子域名
                      * 
                      */
                     void SetAccessSubDomain(const std::string& _accessSubDomain);
@@ -216,8 +208,7 @@ SYSTEM: 系统接入域名
                     bool m_domainHasBeenSet;
 
                     /**
-                     * CUSTOM: 自定义接入域名
-SYSTEM: 系统接入域名
+                     * CUSTOM: 自定义接入域名，SYSTEM: 系统接入域名
                      */
                     std::string m_accessType;
                     bool m_accessTypeHasBeenSet;
@@ -235,14 +226,13 @@ SYSTEM: 系统接入域名
                     bool m_globalTtlHasBeenSet;
 
                     /**
-                     * 接入主域名，自定义接入域名时必填
-
+                     * 接入主域名
                      */
                     std::string m_accessDomain;
                     bool m_accessDomainHasBeenSet;
 
                     /**
-                     * 接入子域名，自定义接入域名时必填
+                     * 接入子域名
                      */
                     std::string m_accessSubDomain;
                     bool m_accessSubDomainHasBeenSet;

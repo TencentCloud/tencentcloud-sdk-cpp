@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorName 监控器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMonitorName() const;
 
                     /**
                      * 设置监控器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitorName 监控器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitorName(const std::string& _monitorName);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 所属用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置所属用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 所属用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控节点id组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectorGroupIds 监控节点id组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetDetectorGroupIds() const;
 
                     /**
                      * 设置监控节点id组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectorGroupIds 监控节点id组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectorGroupIds(const std::vector<uint64_t>& _detectorGroupIds);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测协议 PING TCP HTTP HTTPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckProtocol 探测协议 PING TCP HTTP HTTPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckProtocol() const;
 
                     /**
                      * 设置探测协议 PING TCP HTTP HTTPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkProtocol 探测协议 PING TCP HTTP HTTPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckProtocol(const std::string& _checkProtocol);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckInterval 探测周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCheckInterval() const;
 
                     /**
                      * 设置探测周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkInterval 探测周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckInterval(const uint64_t& _checkInterval);
@@ -194,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发包数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PingNum 发包数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPingNum() const;
 
                     /**
                      * 设置发包数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pingNum 发包数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPingNum(const uint64_t& _pingNum);
@@ -219,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tcp端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TcpPort tcp端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTcpPort() const;
 
                     /**
                      * 设置tcp端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tcpPort tcp端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTcpPort(const uint64_t& _tcpPort);
@@ -244,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测 host
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host 探测 host
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置探测 host
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host 探测 host
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -269,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 探测路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置探测路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 探测路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -294,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取返回值阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnCodeThreshold 返回值阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReturnCodeThreshold() const;
 
                     /**
                      * 设置返回值阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _returnCodeThreshold 返回值阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReturnCodeThreshold(const uint64_t& _returnCodeThreshold);
@@ -319,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启3xx重定向跟随 ENABLED DISABLED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableRedirect 是否开启3xx重定向跟随 ENABLED DISABLED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnableRedirect() const;
 
                     /**
                      * 设置是否开启3xx重定向跟随 ENABLED DISABLED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableRedirect 是否开启3xx重定向跟随 ENABLED DISABLED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableRedirect(const std::string& _enableRedirect);
@@ -345,10 +301,8 @@ namespace TencentCloud
                     /**
                      * 获取是否启用 sni
 ENABLED DISABLED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableSni 是否启用 sni
 ENABLED DISABLED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnableSni() const;
@@ -356,10 +310,8 @@ ENABLED DISABLED
                     /**
                      * 设置是否启用 sni
 ENABLED DISABLED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableSni 是否启用 sni
 ENABLED DISABLED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableSni(const std::string& _enableSni);
@@ -373,18 +325,14 @@ ENABLED DISABLED
 
                     /**
                      * 获取丢包率上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PacketLossRate 丢包率上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPacketLossRate() const;
 
                     /**
                      * 设置丢包率上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packetLossRate 丢包率上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPacketLossRate(const uint64_t& _packetLossRate);
@@ -398,18 +346,14 @@ ENABLED DISABLED
 
                     /**
                      * 获取探测超时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeout 探测超时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTimeout() const;
 
                     /**
                      * 设置探测超时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeout 探测超时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeout(const uint64_t& _timeout);
@@ -423,18 +367,14 @@ ENABLED DISABLED
 
                     /**
                      * 获取失败次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailTimes 失败次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFailTimes() const;
 
                     /**
                      * 设置失败次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failTimes 失败次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailTimes(const uint64_t& _failTimes);
@@ -448,18 +388,14 @@ ENABLED DISABLED
 
                     /**
                      * 获取失败率上限100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailRate 失败率上限100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFailRate() const;
 
                     /**
                      * 设置失败率上限100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failRate 失败率上限100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailRate(const uint64_t& _failRate);
@@ -473,18 +409,14 @@ ENABLED DISABLED
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedOn 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdOn 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
@@ -498,18 +430,14 @@ ENABLED DISABLED
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedOn 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedOn() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedOn 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedOn(const std::string& _updatedOn);
@@ -524,10 +452,8 @@ ENABLED DISABLED
                     /**
                      * 获取监控节点类型
 AUTO INTERNAL OVERSEAS IPV6 ALL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectorStyle 监控节点类型
 AUTO INTERNAL OVERSEAS IPV6 ALL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDetectorStyle() const;
@@ -535,10 +461,8 @@ AUTO INTERNAL OVERSEAS IPV6 ALL
                     /**
                      * 设置监控节点类型
 AUTO INTERNAL OVERSEAS IPV6 ALL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectorStyle 监控节点类型
 AUTO INTERNAL OVERSEAS IPV6 ALL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectorStyle(const std::string& _detectorStyle);
@@ -552,18 +476,14 @@ AUTO INTERNAL OVERSEAS IPV6 ALL
 
                     /**
                      * 获取探测次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectNum 探测次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDetectNum() const;
 
                     /**
                      * 设置探测次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectNum 探测次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectNum(const uint64_t& _detectNum);
@@ -577,18 +497,14 @@ AUTO INTERNAL OVERSEAS IPV6 ALL
 
                     /**
                      * 获取持续周期数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContinuePeriod 持续周期数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetContinuePeriod() const;
 
                     /**
                      * 设置持续周期数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _continuePeriod 持续周期数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContinuePeriod(const uint64_t& _continuePeriod);
@@ -610,77 +526,66 @@ AUTO INTERNAL OVERSEAS IPV6 ALL
 
                     /**
                      * 监控器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_monitorName;
                     bool m_monitorNameHasBeenSet;
 
                     /**
                      * 所属用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 监控节点id组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_detectorGroupIds;
                     bool m_detectorGroupIdsHasBeenSet;
 
                     /**
                      * 探测协议 PING TCP HTTP HTTPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkProtocol;
                     bool m_checkProtocolHasBeenSet;
 
                     /**
                      * 探测周期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_checkInterval;
                     bool m_checkIntervalHasBeenSet;
 
                     /**
                      * 发包数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_pingNum;
                     bool m_pingNumHasBeenSet;
 
                     /**
                      * tcp端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_tcpPort;
                     bool m_tcpPortHasBeenSet;
 
                     /**
                      * 探测 host
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
                      * 探测路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 返回值阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_returnCodeThreshold;
                     bool m_returnCodeThresholdHasBeenSet;
 
                     /**
                      * 是否开启3xx重定向跟随 ENABLED DISABLED
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_enableRedirect;
                     bool m_enableRedirectHasBeenSet;
@@ -688,49 +593,42 @@ AUTO INTERNAL OVERSEAS IPV6 ALL
                     /**
                      * 是否启用 sni
 ENABLED DISABLED
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_enableSni;
                     bool m_enableSniHasBeenSet;
 
                     /**
                      * 丢包率上限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_packetLossRate;
                     bool m_packetLossRateHasBeenSet;
 
                     /**
                      * 探测超时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;
 
                     /**
                      * 失败次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_failTimes;
                     bool m_failTimesHasBeenSet;
 
                     /**
                      * 失败率上限100
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_failRate;
                     bool m_failRateHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedOn;
                     bool m_updatedOnHasBeenSet;
@@ -738,21 +636,18 @@ ENABLED DISABLED
                     /**
                      * 监控节点类型
 AUTO INTERNAL OVERSEAS IPV6 ALL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_detectorStyle;
                     bool m_detectorStyleHasBeenSet;
 
                     /**
                      * 探测次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_detectNum;
                     bool m_detectNumHasBeenSet;
 
                     /**
                      * 持续周期数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_continuePeriod;
                     bool m_continuePeriodHasBeenSet;

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/ImageCacheEvent.h>
+#include <tencentcloud/tke/v20180525/model/ImageRegistryCredential.h>
+#include <tencentcloud/tke/v20180525/model/Tag.h>
 
 
 namespace TencentCloud
@@ -281,6 +283,69 @@ UpdateFailed：更新失败
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取镜像缓存保留时间天数，过期将会自动清理，默认为0，永不过期。
+                     * @return RetentionDays 镜像缓存保留时间天数，过期将会自动清理，默认为0，永不过期。
+                     * 
+                     */
+                    uint64_t GetRetentionDays() const;
+
+                    /**
+                     * 设置镜像缓存保留时间天数，过期将会自动清理，默认为0，永不过期。
+                     * @param _retentionDays 镜像缓存保留时间天数，过期将会自动清理，默认为0，永不过期。
+                     * 
+                     */
+                    void SetRetentionDays(const uint64_t& _retentionDays);
+
+                    /**
+                     * 判断参数 RetentionDays 是否已赋值
+                     * @return RetentionDays 是否已赋值
+                     * 
+                     */
+                    bool RetentionDaysHasBeenSet() const;
+
+                    /**
+                     * 获取镜像拉取凭证
+                     * @return ImageRegistryCredentials 镜像拉取凭证
+                     * 
+                     */
+                    std::vector<ImageRegistryCredential> GetImageRegistryCredentials() const;
+
+                    /**
+                     * 设置镜像拉取凭证
+                     * @param _imageRegistryCredentials 镜像拉取凭证
+                     * 
+                     */
+                    void SetImageRegistryCredentials(const std::vector<ImageRegistryCredential>& _imageRegistryCredentials);
+
+                    /**
+                     * 判断参数 ImageRegistryCredentials 是否已赋值
+                     * @return ImageRegistryCredentials 是否已赋值
+                     * 
+                     */
+                    bool ImageRegistryCredentialsHasBeenSet() const;
+
+                    /**
+                     * 获取腾讯云标签
+                     * @return Tags 腾讯云标签
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置腾讯云标签
+                     * @param _tags 腾讯云标签
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -348,6 +413,24 @@ UpdateFailed：更新失败
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 镜像缓存保留时间天数，过期将会自动清理，默认为0，永不过期。
+                     */
+                    uint64_t m_retentionDays;
+                    bool m_retentionDaysHasBeenSet;
+
+                    /**
+                     * 镜像拉取凭证
+                     */
+                    std::vector<ImageRegistryCredential> m_imageRegistryCredentials;
+                    bool m_imageRegistryCredentialsHasBeenSet;
+
+                    /**
+                     * 腾讯云标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

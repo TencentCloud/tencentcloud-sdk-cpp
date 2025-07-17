@@ -95,15 +95,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取批量创建合同智能提取任务接口返回的合同智能提取任务ID。
-                     * @return TaskId 批量创建合同智能提取任务接口返回的合同智能提取任务ID。
+                     * 获取合同智能提取任务ID，该参数通过调用接口[批量创建合同智能提取任务接口](https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchInformationExtractionTask)获取。
+                     * @return TaskId 合同智能提取任务ID，该参数通过调用接口[批量创建合同智能提取任务接口](https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchInformationExtractionTask)获取。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置批量创建合同智能提取任务接口返回的合同智能提取任务ID。
-                     * @param _taskId 批量创建合同智能提取任务接口返回的合同智能提取任务ID。
+                     * 设置合同智能提取任务ID，该参数通过调用接口[批量创建合同智能提取任务接口](https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchInformationExtractionTask)获取。
+                     * @param _taskId 合同智能提取任务ID，该参数通过调用接口[批量创建合同智能提取任务接口](https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchInformationExtractionTask)获取。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -132,7 +132,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 批量创建合同智能提取任务接口返回的合同智能提取任务ID。
+                     * 合同智能提取任务ID，该参数通过调用接口[批量创建合同智能提取任务接口](https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchInformationExtractionTask)获取。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

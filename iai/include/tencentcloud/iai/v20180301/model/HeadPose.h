@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取上下偏移[-30,30]。
-                     * @return Pitch 上下偏移[-30,30]。
+                     * 获取上下偏移。
+- 取值范围：[-30,30]。
+                     * @return Pitch 上下偏移。
+- 取值范围：[-30,30]。
                      * 
                      */
                     int64_t GetPitch() const;
 
                     /**
-                     * 设置上下偏移[-30,30]。
-                     * @param _pitch 上下偏移[-30,30]。
+                     * 设置上下偏移。
+- 取值范围：[-30,30]。
+                     * @param _pitch 上下偏移。
+- 取值范围：[-30,30]。
                      * 
                      */
                     void SetPitch(const int64_t& _pitch);
@@ -68,15 +72,19 @@ namespace TencentCloud
                     bool PitchHasBeenSet() const;
 
                     /**
-                     * 获取左右偏移[-30,30]。
-                     * @return Yaw 左右偏移[-30,30]。
+                     * 获取左右偏移。
+- 取值范围：[-30,30]。
+                     * @return Yaw 左右偏移。
+- 取值范围：[-30,30]。
                      * 
                      */
                     int64_t GetYaw() const;
 
                     /**
-                     * 设置左右偏移[-30,30]。
-                     * @param _yaw 左右偏移[-30,30]。
+                     * 设置左右偏移。
+- 取值范围：[-30,30]。
+                     * @param _yaw 左右偏移。
+- 取值范围：[-30,30]。
                      * 
                      */
                     void SetYaw(const int64_t& _yaw);
@@ -89,15 +97,19 @@ namespace TencentCloud
                     bool YawHasBeenSet() const;
 
                     /**
-                     * 获取平面旋转[-180,180]。
-                     * @return Roll 平面旋转[-180,180]。
+                     * 获取平面旋转。
+- 取值范围：[-180,180]。
+                     * @return Roll 平面旋转。
+- 取值范围：[-180,180]。
                      * 
                      */
                     int64_t GetRoll() const;
 
                     /**
-                     * 设置平面旋转[-180,180]。
-                     * @param _roll 平面旋转[-180,180]。
+                     * 设置平面旋转。
+- 取值范围：[-180,180]。
+                     * @param _roll 平面旋转。
+- 取值范围：[-180,180]。
                      * 
                      */
                     void SetRoll(const int64_t& _roll);
@@ -112,19 +124,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 上下偏移[-30,30]。
+                     * 上下偏移。
+- 取值范围：[-30,30]。
                      */
                     int64_t m_pitch;
                     bool m_pitchHasBeenSet;
 
                     /**
-                     * 左右偏移[-30,30]。
+                     * 左右偏移。
+- 取值范围：[-30,30]。
                      */
                     int64_t m_yaw;
                     bool m_yawHasBeenSet;
 
                     /**
-                     * 平面旋转[-180,180]。
+                     * 平面旋转。
+- 取值范围：[-180,180]。
                      */
                     int64_t m_roll;
                     bool m_rollHasBeenSet;

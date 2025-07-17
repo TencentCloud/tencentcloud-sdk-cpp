@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 资源 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -231,12 +227,10 @@ SYSTEM: 系统接入域名
 FREE: 免费版
 STANDARD：标准版
 ULTIMATE：旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageType 套餐类型
 FREE: 免费版
 STANDARD：标准版
 ULTIMATE：旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageType() const;
@@ -246,12 +240,10 @@ ULTIMATE：旗舰版
 FREE: 免费版
 STANDARD：标准版
 ULTIMATE：旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageType 套餐类型
 FREE: 免费版
 STANDARD：标准版
 ULTIMATE：旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -269,13 +261,11 @@ NORMAL: 健康
 FAULTY: 有风险
 DOWN: 宕机
 UNKNOWN: 未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkingStatus 实例运行状态
 NORMAL: 健康
 FAULTY: 有风险
 DOWN: 宕机
 UNKNOWN: 未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkingStatus() const;
@@ -286,13 +276,11 @@ NORMAL: 健康
 FAULTY: 有风险
 DOWN: 宕机
 UNKNOWN: 未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workingStatus 实例运行状态
 NORMAL: 健康
 FAULTY: 有风险
 DOWN: 宕机
 UNKNOWN: 未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkingStatus(const std::string& _workingStatus);
@@ -305,23 +293,15 @@ UNKNOWN: 未知
                     bool WorkingStatusHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-ENABLED: 正常
-DISABLED: 禁用
-                     * @return Status 实例状态
-ENABLED: 正常
-DISABLED: 禁用
+                     * 获取实例状态，ENABLED: 正常，DISABLED: 禁用
+                     * @return Status 实例状态，ENABLED: 正常，DISABLED: 禁用
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置实例状态
-ENABLED: 正常
-DISABLED: 禁用
-                     * @param _status 实例状态
-ENABLED: 正常
-DISABLED: 禁用
+                     * 设置实例状态，ENABLED: 正常，DISABLED: 禁用
+                     * @param _status 实例状态，ENABLED: 正常，DISABLED: 禁用
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -335,18 +315,14 @@ DISABLED: 禁用
 
                     /**
                      * 获取是否cname接入：true已接入；false未接入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCnameConfigured 是否cname接入：true已接入；false未接入
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsCnameConfigured() const;
 
                     /**
                      * 设置是否cname接入：true已接入；false未接入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCnameConfigured 是否cname接入：true已接入；false未接入
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCnameConfigured(const bool& _isCnameConfigured);
@@ -360,18 +336,14 @@ DISABLED: 禁用
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -385,18 +357,14 @@ DISABLED: 禁用
 
                     /**
                      * 获取策略数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyNum 策略数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStrategyNum() const;
 
                     /**
                      * 设置策略数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyNum 策略数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyNum(const int64_t& _strategyNum);
@@ -410,18 +378,14 @@ DISABLED: 禁用
 
                     /**
                      * 获取绑定地址池个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressPoolNum 绑定地址池个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAddressPoolNum() const;
 
                     /**
                      * 设置绑定地址池个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addressPoolNum 绑定地址池个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddressPoolNum(const int64_t& _addressPoolNum);
@@ -435,18 +399,14 @@ DISABLED: 禁用
 
                     /**
                      * 获取绑定监控器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorNum 绑定监控器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMonitorNum() const;
 
                     /**
                      * 设置绑定监控器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitorNum 绑定监控器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitorNum(const int64_t& _monitorNum);
@@ -460,18 +420,14 @@ DISABLED: 禁用
 
                     /**
                      * 获取地址池id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoolId 地址池id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPoolId() const;
 
                     /**
                      * 设置地址池id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _poolId 地址池id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPoolId(const uint64_t& _poolId);
@@ -485,18 +441,14 @@ DISABLED: 禁用
 
                     /**
                      * 获取地址池名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoolName 地址池名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPoolName() const;
 
                     /**
                      * 设置地址池名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _poolName 地址池名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPoolName(const std::string& _poolName);
@@ -566,7 +518,6 @@ DISABLED: 禁用
 
                     /**
                      * 资源 id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
@@ -608,7 +559,6 @@ SYSTEM: 系统接入域名
 FREE: 免费版
 STANDARD：标准版
 ULTIMATE：旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
@@ -619,64 +569,54 @@ NORMAL: 健康
 FAULTY: 有风险
 DOWN: 宕机
 UNKNOWN: 未知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workingStatus;
                     bool m_workingStatusHasBeenSet;
 
                     /**
-                     * 实例状态
-ENABLED: 正常
-DISABLED: 禁用
+                     * 实例状态，ENABLED: 正常，DISABLED: 禁用
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 是否cname接入：true已接入；false未接入
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isCnameConfigured;
                     bool m_isCnameConfiguredHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * 策略数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_strategyNum;
                     bool m_strategyNumHasBeenSet;
 
                     /**
                      * 绑定地址池个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_addressPoolNum;
                     bool m_addressPoolNumHasBeenSet;
 
                     /**
                      * 绑定监控器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_monitorNum;
                     bool m_monitorNumHasBeenSet;
 
                     /**
                      * 地址池id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_poolId;
                     bool m_poolIdHasBeenSet;
 
                     /**
                      * 地址池名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_poolName;
                     bool m_poolNameHasBeenSet;

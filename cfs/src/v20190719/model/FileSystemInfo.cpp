@@ -46,7 +46,9 @@ FileSystemInfo::FileSystemInfo() :
     m_tieringStateHasBeenSet(false),
     m_tieringDetailHasBeenSet(false),
     m_autoScaleUpRuleHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_exstraPerformanceInfoHasBeenSet(false),
+    m_metaTypeHasBeenSet(false)
 {
 }
 
@@ -346,6 +348,36 @@ CoreInternalOutcome FileSystemInfo::Deserialize(const rapidjson::Value &value)
         m_versionHasBeenSet = true;
     }
 
+    if (value.HasMember("ExstraPerformanceInfo") && !value["ExstraPerformanceInfo"].IsNull())
+    {
+        if (!value["ExstraPerformanceInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FileSystemInfo.ExstraPerformanceInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExstraPerformanceInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ExstraPerformanceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_exstraPerformanceInfo.push_back(item);
+        }
+        m_exstraPerformanceInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetaType") && !value["MetaType"].IsNull())
+    {
+        if (!value["MetaType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileSystemInfo.MetaType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metaType = string(value["MetaType"].GetString());
+        m_metaTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -569,6 +601,29 @@ void FileSystemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exstraPerformanceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExstraPerformanceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_exstraPerformanceInfo.begin(); itr != m_exstraPerformanceInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_metaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metaType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -988,5 +1043,37 @@ void FileSystemInfo::SetVersion(const string& _version)
 bool FileSystemInfo::VersionHasBeenSet() const
 {
     return m_versionHasBeenSet;
+}
+
+vector<ExstraPerformanceInfo> FileSystemInfo::GetExstraPerformanceInfo() const
+{
+    return m_exstraPerformanceInfo;
+}
+
+void FileSystemInfo::SetExstraPerformanceInfo(const vector<ExstraPerformanceInfo>& _exstraPerformanceInfo)
+{
+    m_exstraPerformanceInfo = _exstraPerformanceInfo;
+    m_exstraPerformanceInfoHasBeenSet = true;
+}
+
+bool FileSystemInfo::ExstraPerformanceInfoHasBeenSet() const
+{
+    return m_exstraPerformanceInfoHasBeenSet;
+}
+
+string FileSystemInfo::GetMetaType() const
+{
+    return m_metaType;
+}
+
+void FileSystemInfo::SetMetaType(const string& _metaType)
+{
+    m_metaType = _metaType;
+    m_metaTypeHasBeenSet = true;
+}
+
+bool FileSystemInfo::MetaTypeHasBeenSet() const
+{
+    return m_metaTypeHasBeenSet;
 }
 

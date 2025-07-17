@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组线路id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DnsLineId 分组线路id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDnsLineId() const;
 
                     /**
                      * 设置分组线路id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dnsLineId 分组线路id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDnsLineId(const uint64_t& _dnsLineId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父节点 0为根节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Parent 父节点 0为根节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetParent() const;
 
                     /**
                      * 设置父节点 0为根节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parent 父节点 0为根节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParent(const uint64_t& _parent);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取线路名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LineName 线路名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLineName() const;
 
                     /**
                      * 设置线路名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lineName 线路名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLineName(const std::string& _lineName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取10=9 DNSPod 线路 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LineId 10=9 DNSPod 线路 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLineId() const;
 
                     /**
                      * 设置10=9 DNSPod 线路 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lineId 10=9 DNSPod 线路 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLineId(const std::string& _lineId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否已使用过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Useful 是否已使用过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUseful() const;
 
                     /**
                      * 设置是否已使用过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _useful 是否已使用过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUseful(const bool& _useful);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0为未使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubGroup 0为未使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSubGroup() const;
 
                     /**
                      * 设置0为未使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subGroup 0为未使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubGroup(const uint64_t& _subGroup);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LinePackage 权限标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLinePackage() const;
 
                     /**
                      * 设置权限标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _linePackage 权限标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLinePackage(const uint64_t& _linePackage);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weight 1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 分组线路id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_dnsLineId;
                     bool m_dnsLineIdHasBeenSet;
 
                     /**
                      * 父节点 0为根节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_parent;
                     bool m_parentHasBeenSet;
 
                     /**
                      * 线路名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lineName;
                     bool m_lineNameHasBeenSet;
 
                     /**
                      * 10=9 DNSPod 线路 id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lineId;
                     bool m_lineIdHasBeenSet;
 
                     /**
                      * 是否已使用过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_useful;
                     bool m_usefulHasBeenSet;
 
                     /**
                      * 0为未使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_subGroup;
                     bool m_subGroupHasBeenSet;
 
                     /**
                      * 权限标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_linePackage;
                     bool m_linePackageHasBeenSet;
 
                     /**
                      * 1
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

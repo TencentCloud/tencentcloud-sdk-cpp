@@ -96,6 +96,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/UnbindAutoSnapshotPolicyRequest.h
   include/tencentcloud/cfs/v20190719/model/UnbindAutoSnapshotPolicyResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsServiceStatusResponse.h
+  include/tencentcloud/cfs/v20190719/model/ExstraPerformanceInfo.h
   include/tencentcloud/cfs/v20190719/model/PGroupRuleInfo.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsSnapshotsRequest.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemSizeLimitResponse.h
@@ -210,6 +211,7 @@ set(cfs_src
   src/v20190719/model/UnbindAutoSnapshotPolicyRequest.cpp
   src/v20190719/model/UnbindAutoSnapshotPolicyResponse.cpp
   src/v20190719/model/DescribeCfsServiceStatusResponse.cpp
+  src/v20190719/model/ExstraPerformanceInfo.cpp
   src/v20190719/model/PGroupRuleInfo.cpp
   src/v20190719/model/DescribeCfsSnapshotsRequest.cpp
   src/v20190719/model/UpdateCfsFileSystemSizeLimitResponse.cpp

@@ -24,7 +24,8 @@ TaskTarget::TaskTarget() :
     m_targetIdHasBeenSet(false),
     m_targetDescHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_targetStatusHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome TaskTarget::Deserialize(const rapidjson::Value &value)
         m_sourceHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetStatus") && !value["TargetStatus"].IsNull())
+    {
+        if (!value["TargetStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskTarget.TargetStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetStatus = value["TargetStatus"].GetInt64();
+        m_targetStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void TaskTarget::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_source, allocator);
+    }
+
+    if (m_targetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetStatus, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void TaskTarget::SetSource(const int64_t& _source)
 bool TaskTarget::SourceHasBeenSet() const
 {
     return m_sourceHasBeenSet;
+}
+
+int64_t TaskTarget::GetTargetStatus() const
+{
+    return m_targetStatus;
+}
+
+void TaskTarget::SetTargetStatus(const int64_t& _targetStatus)
+{
+    m_targetStatus = _targetStatus;
+    m_targetStatusHasBeenSet = true;
+}
+
+bool TaskTarget::TargetStatusHasBeenSet() const
+{
+    return m_targetStatusHasBeenSet;
 }
 

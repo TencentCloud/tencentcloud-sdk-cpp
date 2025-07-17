@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取地址值：只支持ipv4、ipv6和域名格式；
 不支持回环地址、保留地址、内网地址与腾讯保留网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Addr 地址值：只支持ipv4、ipv6和域名格式；
 不支持回环地址、保留地址、内网地址与腾讯保留网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddr() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置地址值：只支持ipv4、ipv6和域名格式；
 不支持回环地址、保留地址、内网地址与腾讯保留网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addr 地址值：只支持ipv4、ipv6和域名格式；
 不支持回环地址、保留地址、内网地址与腾讯保留网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddr(const std::string& _addr);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用:DISABLED不启用；ENABLED启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsEnable 是否启用:DISABLED不启用；ENABLED启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsEnable() const;
 
                     /**
                      * 设置是否启用:DISABLED不启用；ENABLED启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isEnable 是否启用:DISABLED不启用；ENABLED启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsEnable(const std::string& _isEnable);
@@ -102,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressId 地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAddressId() const;
 
                     /**
                      * 设置地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addressId 地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddressId(const uint64_t& _addressId);
@@ -127,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 地址名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置地址名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location 地址名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const std::string& _location);
@@ -152,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取OK正常，DOWN故障，WARN风险，UNKNOWN探测中，UNMONITORED未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status OK正常，DOWN故障，WARN风险，UNKNOWN探测中，UNMONITORED未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置OK正常，DOWN故障，WARN风险，UNKNOWN探测中，UNMONITORED未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status OK正常，DOWN故障，WARN风险，UNKNOWN探测中，UNMONITORED未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -202,18 +182,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedOn 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdOn 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
@@ -227,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedOn 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedOn() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedOn 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedOn(const std::string& _updatedOn);
@@ -255,35 +227,30 @@ namespace TencentCloud
                     /**
                      * 地址值：只支持ipv4、ipv6和域名格式；
 不支持回环地址、保留地址、内网地址与腾讯保留网段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addr;
                     bool m_addrHasBeenSet;
 
                     /**
                      * 是否启用:DISABLED不启用；ENABLED启用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isEnable;
                     bool m_isEnableHasBeenSet;
 
                     /**
                      * 地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_addressId;
                     bool m_addressIdHasBeenSet;
 
                     /**
                      * 地址名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
 
                     /**
                      * OK正常，DOWN故障，WARN风险，UNKNOWN探测中，UNMONITORED未知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -297,14 +264,12 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedOn;
                     bool m_updatedOnHasBeenSet;

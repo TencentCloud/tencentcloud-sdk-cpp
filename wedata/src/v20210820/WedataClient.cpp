@@ -814,6 +814,49 @@ WedataClient::BatchUpdateIntegrationTasksOutcomeCallable WedataClient::BatchUpda
     return task->get_future();
 }
 
+WedataClient::BindProjectExecutorResourceOutcome WedataClient::BindProjectExecutorResource(const BindProjectExecutorResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindProjectExecutorResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindProjectExecutorResourceResponse rsp = BindProjectExecutorResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindProjectExecutorResourceOutcome(rsp);
+        else
+            return BindProjectExecutorResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return BindProjectExecutorResourceOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::BindProjectExecutorResourceAsync(const BindProjectExecutorResourceRequest& request, const BindProjectExecutorResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindProjectExecutorResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::BindProjectExecutorResourceOutcomeCallable WedataClient::BindProjectExecutorResourceCallable(const BindProjectExecutorResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindProjectExecutorResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->BindProjectExecutorResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::CheckAlarmRegularNameExistOutcome WedataClient::CheckAlarmRegularNameExist(const CheckAlarmRegularNameExistRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckAlarmRegularNameExist");
@@ -1108,6 +1151,49 @@ WedataClient::CountOpsInstanceStateOutcomeCallable WedataClient::CountOpsInstanc
         [this, request]()
         {
             return this->CountOpsInstanceState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::CreateBaseProjectOutcome WedataClient::CreateBaseProject(const CreateBaseProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBaseProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBaseProjectResponse rsp = CreateBaseProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBaseProjectOutcome(rsp);
+        else
+            return CreateBaseProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBaseProjectOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateBaseProjectAsync(const CreateBaseProjectRequest& request, const CreateBaseProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBaseProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::CreateBaseProjectOutcomeCallable WedataClient::CreateBaseProjectCallable(const CreateBaseProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBaseProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBaseProject(request);
         }
     );
 
@@ -2871,6 +2957,49 @@ WedataClient::DeleteTaskDsOutcomeCallable WedataClient::DeleteTaskDsCallable(con
         [this, request]()
         {
             return this->DeleteTaskDs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DeleteTaskLineageOutcome WedataClient::DeleteTaskLineage(const DeleteTaskLineageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTaskLineage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTaskLineageResponse rsp = DeleteTaskLineageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTaskLineageOutcome(rsp);
+        else
+            return DeleteTaskLineageOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTaskLineageOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteTaskLineageAsync(const DeleteTaskLineageRequest& request, const DeleteTaskLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTaskLineage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DeleteTaskLineageOutcomeCallable WedataClient::DeleteTaskLineageCallable(const DeleteTaskLineageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTaskLineageOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTaskLineage(request);
         }
     );
 
@@ -8855,6 +8984,49 @@ WedataClient::DiagnoseProOutcomeCallable WedataClient::DiagnoseProCallable(const
     return task->get_future();
 }
 
+WedataClient::DisableProjectOutcome WedataClient::DisableProject(const DisableProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableProjectResponse rsp = DisableProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableProjectOutcome(rsp);
+        else
+            return DisableProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableProjectOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DisableProjectAsync(const DisableProjectRequest& request, const DisableProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DisableProjectOutcomeCallable WedataClient::DisableProjectCallable(const DisableProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DownloadLogByLineOutcome WedataClient::DownloadLogByLine(const DownloadLogByLineRequest &request)
 {
     auto outcome = MakeRequest(request, "DownloadLogByLine");
@@ -8934,6 +9106,49 @@ WedataClient::DryRunDIOfflineTaskOutcomeCallable WedataClient::DryRunDIOfflineTa
         [this, request]()
         {
             return this->DryRunDIOfflineTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::EnableProjectOutcome WedataClient::EnableProject(const EnableProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableProjectResponse rsp = EnableProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableProjectOutcome(rsp);
+        else
+            return EnableProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableProjectOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::EnableProjectAsync(const EnableProjectRequest& request, const EnableProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::EnableProjectOutcomeCallable WedataClient::EnableProjectCallable(const EnableProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableProject(request);
         }
     );
 
@@ -10095,6 +10310,49 @@ WedataClient::ModifyMonitorStatusOutcomeCallable WedataClient::ModifyMonitorStat
         [this, request]()
         {
             return this->ModifyMonitorStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::ModifyProjectOutcome WedataClient::ModifyProject(const ModifyProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProjectResponse rsp = ModifyProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProjectOutcome(rsp);
+        else
+            return ModifyProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProjectOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ModifyProjectAsync(const ModifyProjectRequest& request, const ModifyProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::ModifyProjectOutcomeCallable WedataClient::ModifyProjectCallable(const ModifyProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyProject(request);
         }
     );
 
@@ -11815,6 +12073,49 @@ WedataClient::TriggerManualTasksOutcomeCallable WedataClient::TriggerManualTasks
         [this, request]()
         {
             return this->TriggerManualTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::UnboundProjectExecutorResourceOutcome WedataClient::UnboundProjectExecutorResource(const UnboundProjectExecutorResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnboundProjectExecutorResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnboundProjectExecutorResourceResponse rsp = UnboundProjectExecutorResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnboundProjectExecutorResourceOutcome(rsp);
+        else
+            return UnboundProjectExecutorResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return UnboundProjectExecutorResourceOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UnboundProjectExecutorResourceAsync(const UnboundProjectExecutorResourceRequest& request, const UnboundProjectExecutorResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnboundProjectExecutorResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::UnboundProjectExecutorResourceOutcomeCallable WedataClient::UnboundProjectExecutorResourceCallable(const UnboundProjectExecutorResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnboundProjectExecutorResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->UnboundProjectExecutorResource(request);
         }
     );
 

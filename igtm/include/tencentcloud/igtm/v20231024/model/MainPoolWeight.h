@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址池id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoolId 地址池id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPoolId() const;
 
                     /**
                      * 设置地址池id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _poolId 地址池id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPoolId(const uint64_t& _poolId);
@@ -100,7 +96,6 @@ namespace TencentCloud
 
                     /**
                      * 地址池id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_poolId;
                     bool m_poolIdHasBeenSet;

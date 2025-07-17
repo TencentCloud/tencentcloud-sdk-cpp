@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Addr ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddr() const;
 
                     /**
                      * 设置ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addr ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddr(const std::string& _addr);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const std::string& _location);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addr;
                     bool m_addrHasBeenSet;
 
                     /**
                      * 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;

@@ -26,7 +26,8 @@ CreateAccessKeyCheckTaskRequest::CreateAccessKeyCheckTaskRequest() :
     m_memberIdHasBeenSet(false),
     m_riskIDListHasBeenSet(false),
     m_accessKeyListHasBeenSet(false),
-    m_subUinListHasBeenSet(false)
+    m_subUinListHasBeenSet(false),
+    m_riskRuleIDListHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,19 @@ string CreateAccessKeyCheckTaskRequest::ToJsonString() const
         for (auto itr = m_subUinList.begin(); itr != m_subUinList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_riskRuleIDListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskRuleIDList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_riskRuleIDList.begin(); itr != m_riskRuleIDList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -159,6 +173,22 @@ void CreateAccessKeyCheckTaskRequest::SetSubUinList(const vector<string>& _subUi
 bool CreateAccessKeyCheckTaskRequest::SubUinListHasBeenSet() const
 {
     return m_subUinListHasBeenSet;
+}
+
+vector<int64_t> CreateAccessKeyCheckTaskRequest::GetRiskRuleIDList() const
+{
+    return m_riskRuleIDList;
+}
+
+void CreateAccessKeyCheckTaskRequest::SetRiskRuleIDList(const vector<int64_t>& _riskRuleIDList)
+{
+    m_riskRuleIDList = _riskRuleIDList;
+    m_riskRuleIDListHasBeenSet = true;
+}
+
+bool CreateAccessKeyCheckTaskRequest::RiskRuleIDListHasBeenSet() const
+{
+    return m_riskRuleIDListHasBeenSet;
 }
 
 

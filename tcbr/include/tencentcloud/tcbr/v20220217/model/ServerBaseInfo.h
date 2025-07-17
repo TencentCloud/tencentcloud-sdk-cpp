@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool TrafficTypeHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _createTime 创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_trafficType;
                     bool m_trafficTypeHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

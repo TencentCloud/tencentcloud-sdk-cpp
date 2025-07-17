@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool SubUinListHasBeenSet() const;
 
+                    /**
+                     * 获取风险规则id列表
+                     * @return RiskRuleIDList 风险规则id列表
+                     * 
+                     */
+                    std::vector<int64_t> GetRiskRuleIDList() const;
+
+                    /**
+                     * 设置风险规则id列表
+                     * @param _riskRuleIDList 风险规则id列表
+                     * 
+                     */
+                    void SetRiskRuleIDList(const std::vector<int64_t>& _riskRuleIDList);
+
+                    /**
+                     * 判断参数 RiskRuleIDList 是否已赋值
+                     * @return RiskRuleIDList 是否已赋值
+                     * 
+                     */
+                    bool RiskRuleIDListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_subUinList;
                     bool m_subUinListHasBeenSet;
+
+                    /**
+                     * 风险规则id列表
+                     */
+                    std::vector<int64_t> m_riskRuleIDList;
+                    bool m_riskRuleIDListHasBeenSet;
 
                 };
             }

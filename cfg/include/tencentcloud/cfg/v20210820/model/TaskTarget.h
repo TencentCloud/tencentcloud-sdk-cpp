@@ -134,6 +134,27 @@ namespace TencentCloud
                      */
                     bool SourceHasBeenSet() const;
 
+                    /**
+                     * 获取目标标签是否已被删除
+                     * @return TargetStatus 目标标签是否已被删除
+                     * 
+                     */
+                    int64_t GetTargetStatus() const;
+
+                    /**
+                     * 设置目标标签是否已被删除
+                     * @param _targetStatus 目标标签是否已被删除
+                     * 
+                     */
+                    void SetTargetStatus(const int64_t& _targetStatus);
+
+                    /**
+                     * 判断参数 TargetStatus 是否已赋值
+                     * @return TargetStatus 是否已赋值
+                     * 
+                     */
+                    bool TargetStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,6 +181,12 @@ namespace TencentCloud
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;
+
+                    /**
+                     * 目标标签是否已被删除
+                     */
+                    int64_t m_targetStatus;
+                    bool m_targetStatusHasBeenSet;
 
                 };
             }
