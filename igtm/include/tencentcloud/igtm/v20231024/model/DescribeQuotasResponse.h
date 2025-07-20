@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取配额id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quotas 配额id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Quota GetQuotas() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 配额id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Quota m_quotas;
                     bool m_quotasHasBeenSet;

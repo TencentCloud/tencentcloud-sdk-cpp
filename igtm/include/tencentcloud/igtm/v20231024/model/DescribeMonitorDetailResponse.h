@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取探测规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorDetail 探测规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MonitorDetail GetMonitorDetail() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 探测规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MonitorDetail m_monitorDetail;
                     bool m_monitorDetailHasBeenSet;

@@ -30,7 +30,11 @@ DiagHistoryEventItem::DiagHistoryEventItem() :
     m_diagItemHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_metricHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_clusterNameHasBeenSet(false),
+    m_vipHasBeenSet(false),
+    m_vportHasBeenSet(false)
 {
 }
 
@@ -139,6 +143,46 @@ CoreInternalOutcome DiagHistoryEventItem::Deserialize(const rapidjson::Value &va
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
+    {
+        if (!value["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(value["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vip") && !value["Vip"].IsNull())
+    {
+        if (!value["Vip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.Vip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vip = string(value["Vip"].GetString());
+        m_vipHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vport") && !value["Vport"].IsNull())
+    {
+        if (!value["Vport"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vport = value["Vport"].GetInt64();
+        m_vportHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +268,38 @@ void DiagHistoryEventItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vport, allocator);
     }
 
 }
@@ -387,5 +463,69 @@ void DiagHistoryEventItem::SetRegion(const string& _region)
 bool DiagHistoryEventItem::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+string DiagHistoryEventItem::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DiagHistoryEventItem::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DiagHistoryEventItem::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string DiagHistoryEventItem::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void DiagHistoryEventItem::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool DiagHistoryEventItem::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
+}
+
+string DiagHistoryEventItem::GetVip() const
+{
+    return m_vip;
+}
+
+void DiagHistoryEventItem::SetVip(const string& _vip)
+{
+    m_vip = _vip;
+    m_vipHasBeenSet = true;
+}
+
+bool DiagHistoryEventItem::VipHasBeenSet() const
+{
+    return m_vipHasBeenSet;
+}
+
+int64_t DiagHistoryEventItem::GetVport() const
+{
+    return m_vport;
+}
+
+void DiagHistoryEventItem::SetVport(const int64_t& _vport)
+{
+    m_vport = _vport;
+    m_vportHasBeenSet = true;
+}
+
+bool DiagHistoryEventItem::VportHasBeenSet() const
+{
+    return m_vportHasBeenSet;
 }
 

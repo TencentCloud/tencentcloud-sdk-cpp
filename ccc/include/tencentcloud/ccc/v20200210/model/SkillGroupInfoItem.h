@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool AliasHasBeenSet() const;
 
+                    /**
+                     * 获取是否同振
+                     * @return RingAll 是否同振
+                     * 
+                     */
+                    bool GetRingAll() const;
+
+                    /**
+                     * 设置是否同振
+                     * @param _ringAll 是否同振
+                     * 
+                     */
+                    void SetRingAll(const bool& _ringAll);
+
+                    /**
+                     * 判断参数 RingAll 是否已赋值
+                     * @return RingAll 是否已赋值
+                     * 
+                     */
+                    bool RingAllHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
+
+                    /**
+                     * 是否同振
+                     */
+                    bool m_ringAll;
+                    bool m_ringAllHasBeenSet;
 
                 };
             }

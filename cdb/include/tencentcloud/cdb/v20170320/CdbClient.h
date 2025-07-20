@@ -1233,7 +1233,7 @@ namespace TencentCloud
                 DeleteAuditRuleTemplatesOutcomeCallable DeleteAuditRuleTemplatesCallable(const Model::DeleteAuditRuleTemplatesRequest& request);
 
                 /**
-                 *本接口(DeleteBackup)用于删除数据库备份。本接口只支持删除手动发起的备份。
+                 *本接口（DeleteBackup）用于删除数据库备份。本接口只支持删除手动发起的备份。
                  * @param req DeleteBackupRequest
                  * @return DeleteBackupOutcome
                  */

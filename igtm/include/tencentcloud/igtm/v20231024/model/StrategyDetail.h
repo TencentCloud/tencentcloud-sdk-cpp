@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyId 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStrategyId() const;
 
                     /**
                      * 设置策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyId 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyId(const uint64_t& _strategyId);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -200,18 +188,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否保留线路：enabled保留，disabled不保留，只保留默认线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeepDomainRecords 是否保留线路：enabled保留，disabled不保留，只保留默认线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeepDomainRecords() const;
 
                     /**
                      * 设置是否保留线路：enabled保留，disabled不保留，只保留默认线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keepDomainRecords 是否保留线路：enabled保留，disabled不保留，只保留默认线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeepDomainRecords(const std::string& _keepDomainRecords);
@@ -250,18 +234,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedOn 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdOn 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
@@ -275,18 +255,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedOn 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedOn() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedOn 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedOn(const std::string& _updatedOn);
@@ -300,18 +276,14 @@ namespace TencentCloud
 
                     /**
                      * 获取调度模式：AUTO默认；PAUSE仅暂停不切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchPoolType 调度模式：AUTO默认；PAUSE仅暂停不切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSwitchPoolType() const;
 
                     /**
                      * 设置调度模式：AUTO默认；PAUSE仅暂停不切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switchPoolType 调度模式：AUTO默认；PAUSE仅暂停不切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitchPoolType(const std::string& _switchPoolType);
@@ -327,21 +299,18 @@ namespace TencentCloud
 
                     /**
                      * 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_strategyId;
                     bool m_strategyIdHasBeenSet;
 
                     /**
                      * 策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -369,7 +338,6 @@ namespace TencentCloud
 
                     /**
                      * 是否保留线路：enabled保留，disabled不保留，只保留默认线路
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keepDomainRecords;
                     bool m_keepDomainRecordsHasBeenSet;
@@ -383,21 +351,18 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedOn;
                     bool m_updatedOnHasBeenSet;
 
                     /**
                      * 调度模式：AUTO默认；PAUSE仅暂停不切换
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switchPoolType;
                     bool m_switchPoolTypeHasBeenSet;

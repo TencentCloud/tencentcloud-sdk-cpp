@@ -42,7 +42,9 @@ CdbZoneSellConf::CdbZoneSellConf() :
     m_sellTypeHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_isSupportIpv6HasBeenSet(false),
-    m_engineTypeHasBeenSet(false)
+    m_engineTypeHasBeenSet(false),
+    m_cloudNativeClusterStatusHasBeenSet(false),
+    m_diskTypeConfHasBeenSet(false)
 {
 }
 
@@ -313,6 +315,36 @@ CoreInternalOutcome CdbZoneSellConf::Deserialize(const rapidjson::Value &value)
         m_engineTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudNativeClusterStatus") && !value["CloudNativeClusterStatus"].IsNull())
+    {
+        if (!value["CloudNativeClusterStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CdbZoneSellConf.CloudNativeClusterStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudNativeClusterStatus = value["CloudNativeClusterStatus"].GetInt64();
+        m_cloudNativeClusterStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskTypeConf") && !value["DiskTypeConf"].IsNull())
+    {
+        if (!value["DiskTypeConf"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CdbZoneSellConf.DiskTypeConf` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DiskTypeConf"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DiskTypeConfigItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_diskTypeConf.push_back(item);
+        }
+        m_diskTypeConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -532,6 +564,29 @@ void CdbZoneSellConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         for (auto itr = m_engineType.begin(); itr != m_engineType.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cloudNativeClusterStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudNativeClusterStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudNativeClusterStatus, allocator);
+    }
+
+    if (m_diskTypeConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskTypeConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_diskTypeConf.begin(); itr != m_diskTypeConf.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -888,5 +943,37 @@ void CdbZoneSellConf::SetEngineType(const vector<string>& _engineType)
 bool CdbZoneSellConf::EngineTypeHasBeenSet() const
 {
     return m_engineTypeHasBeenSet;
+}
+
+int64_t CdbZoneSellConf::GetCloudNativeClusterStatus() const
+{
+    return m_cloudNativeClusterStatus;
+}
+
+void CdbZoneSellConf::SetCloudNativeClusterStatus(const int64_t& _cloudNativeClusterStatus)
+{
+    m_cloudNativeClusterStatus = _cloudNativeClusterStatus;
+    m_cloudNativeClusterStatusHasBeenSet = true;
+}
+
+bool CdbZoneSellConf::CloudNativeClusterStatusHasBeenSet() const
+{
+    return m_cloudNativeClusterStatusHasBeenSet;
+}
+
+vector<DiskTypeConfigItem> CdbZoneSellConf::GetDiskTypeConf() const
+{
+    return m_diskTypeConf;
+}
+
+void CdbZoneSellConf::SetDiskTypeConf(const vector<DiskTypeConfigItem>& _diskTypeConf)
+{
+    m_diskTypeConf = _diskTypeConf;
+    m_diskTypeConfHasBeenSet = true;
+}
+
+bool CdbZoneSellConf::DiskTypeConfHasBeenSet() const
+{
+    return m_diskTypeConfHasBeenSet;
 }
 

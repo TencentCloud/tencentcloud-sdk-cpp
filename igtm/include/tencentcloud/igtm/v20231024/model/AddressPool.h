@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址池 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoolId 地址池 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPoolId() const;
 
                     /**
                      * 设置地址池 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _poolId 地址池 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPoolId(const uint64_t& _poolId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址池名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoolName 地址池名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPoolName() const;
 
                     /**
                      * 设置地址池名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _poolName 地址池名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPoolName(const std::string& _poolName);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址池地址类型：IPV4、IPV6、DOMAIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddrType 地址池地址类型：IPV4、IPV6、DOMAIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddrType() const;
 
                     /**
                      * 设置地址池地址类型：IPV4、IPV6、DOMAIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addrType 地址池地址类型：IPV4、IPV6、DOMAIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddrType(const std::string& _addrType);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量策略: WEIGHT负载均衡，ALL解析全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrafficStrategy 流量策略: WEIGHT负载均衡，ALL解析全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrafficStrategy() const;
 
                     /**
                      * 设置流量策略: WEIGHT负载均衡，ALL解析全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trafficStrategy 流量策略: WEIGHT负载均衡，ALL解析全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrafficStrategy(const std::string& _trafficStrategy);
@@ -175,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取OK正常，DOWN故障，WARN风险，UNKNOWN未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status OK正常，DOWN故障，WARN风险，UNKNOWN未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置OK正常，DOWN故障，WARN风险，UNKNOWN未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status OK正常，DOWN故障，WARN风险，UNKNOWN未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -200,18 +180,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressNum 地址数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAddressNum() const;
 
                     /**
                      * 设置地址数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addressNum 地址数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddressNum(const int64_t& _addressNum);
@@ -225,18 +201,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorGroupNum 探点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMonitorGroupNum() const;
 
                     /**
                      * 设置探点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitorGroupNum 探点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitorGroupNum(const int64_t& _monitorGroupNum);
@@ -250,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorTaskNum 探测任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMonitorTaskNum() const;
 
                     /**
                      * 设置探测任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitorTaskNum 探测任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitorTaskNum(const int64_t& _monitorTaskNum);
@@ -325,18 +293,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedOn 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdOn 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
@@ -350,18 +314,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedOn 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedOn() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedOn 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedOn(const std::string& _updatedOn);
@@ -377,28 +337,24 @@ namespace TencentCloud
 
                     /**
                      * 地址池 id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_poolId;
                     bool m_poolIdHasBeenSet;
 
                     /**
                      * 地址池名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_poolName;
                     bool m_poolNameHasBeenSet;
 
                     /**
                      * 地址池地址类型：IPV4、IPV6、DOMAIN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addrType;
                     bool m_addrTypeHasBeenSet;
 
                     /**
                      * 流量策略: WEIGHT负载均衡，ALL解析全部
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trafficStrategy;
                     bool m_trafficStrategyHasBeenSet;
@@ -412,28 +368,24 @@ namespace TencentCloud
 
                     /**
                      * OK正常，DOWN故障，WARN风险，UNKNOWN未知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 地址数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_addressNum;
                     bool m_addressNumHasBeenSet;
 
                     /**
                      * 探点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_monitorGroupNum;
                     bool m_monitorGroupNumHasBeenSet;
 
                     /**
                      * 探测任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_monitorTaskNum;
                     bool m_monitorTaskNumHasBeenSet;
@@ -454,14 +406,12 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedOn;
                     bool m_updatedOnHasBeenSet;

@@ -29,7 +29,8 @@ SkillGroupInfoItem::SkillGroupInfoItem() :
     m_maxConcurrencyHasBeenSet(false),
     m_lastModifyTimestampHasBeenSet(false),
     m_skillGroupTypeHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+    m_aliasHasBeenSet(false),
+    m_ringAllHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome SkillGroupInfoItem::Deserialize(const rapidjson::Value &valu
         m_aliasHasBeenSet = true;
     }
 
+    if (value.HasMember("RingAll") && !value["RingAll"].IsNull())
+    {
+        if (!value["RingAll"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SkillGroupInfoItem.RingAll` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ringAll = value["RingAll"].GetBool();
+        m_ringAllHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void SkillGroupInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Alias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ringAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RingAll";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ringAll, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void SkillGroupInfoItem::SetAlias(const string& _alias)
 bool SkillGroupInfoItem::AliasHasBeenSet() const
 {
     return m_aliasHasBeenSet;
+}
+
+bool SkillGroupInfoItem::GetRingAll() const
+{
+    return m_ringAll;
+}
+
+void SkillGroupInfoItem::SetRingAll(const bool& _ringAll)
+{
+    m_ringAll = _ringAll;
+    m_ringAllHasBeenSet = true;
+}
+
+bool SkillGroupInfoItem::RingAllHasBeenSet() const
+{
+    return m_ringAllHasBeenSet;
 }
 

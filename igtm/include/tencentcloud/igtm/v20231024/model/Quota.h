@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测任务配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskQuota 探测任务配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTaskQuota() const;
 
                     /**
                      * 设置探测任务配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskQuota 探测任务配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskQuota(const uint64_t& _taskQuota);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址池配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoolQuota 地址池配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPoolQuota() const;
 
                     /**
                      * 设置地址池配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _poolQuota 地址池配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPoolQuota(const uint64_t& _poolQuota);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressQuota 地址配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAddressQuota() const;
 
                     /**
                      * 设置地址配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addressQuota 地址配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddressQuota(const uint64_t& _addressQuota);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探点资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorQuota 探点资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMonitorQuota() const;
 
                     /**
                      * 设置探点资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitorQuota 探点资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitorQuota(const uint64_t& _monitorQuota);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageQuota 消息资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMessageQuota() const;
 
                     /**
                      * 设置消息资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageQuota 消息资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageQuota(const uint64_t& _messageQuota);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用探测任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedTaskQuota 已使用探测任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUsedTaskQuota() const;
 
                     /**
                      * 设置已使用探测任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedTaskQuota 已使用探测任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedTaskQuota(const uint64_t& _usedTaskQuota);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用体验实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedFreeInstanceNum 已使用体验实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUsedFreeInstanceNum() const;
 
                     /**
                      * 设置已使用体验实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedFreeInstanceNum 已使用体验实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedFreeInstanceNum(const uint64_t& _usedFreeInstanceNum);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用付费实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedBillInstanceNum 已使用付费实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUsedBillInstanceNum() const;
 
                     /**
                      * 设置已使用付费实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedBillInstanceNum 已使用付费实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedBillInstanceNum(const uint64_t& _usedBillInstanceNum);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体验套餐总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreePackageNum 体验套餐总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFreePackageNum() const;
 
                     /**
                      * 设置体验套餐总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _freePackageNum 体验套餐总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFreePackageNum(const uint64_t& _freePackageNum);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用付费套餐数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedBillPackageNum 已使用付费套餐数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUsedBillPackageNum() const;
 
                     /**
                      * 设置已使用付费套餐数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedBillPackageNum 已使用付费套餐数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedBillPackageNum(const uint64_t& _usedBillPackageNum);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取付费套餐总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillPackageNum 付费套餐总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBillPackageNum() const;
 
                     /**
                      * 设置付费套餐总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billPackageNum 付费套餐总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillPackageNum(const uint64_t& _billPackageNum);
@@ -325,77 +281,66 @@ namespace TencentCloud
 
                     /**
                      * 探测任务配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_taskQuota;
                     bool m_taskQuotaHasBeenSet;
 
                     /**
                      * 地址池配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_poolQuota;
                     bool m_poolQuotaHasBeenSet;
 
                     /**
                      * 地址配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_addressQuota;
                     bool m_addressQuotaHasBeenSet;
 
                     /**
                      * 探点资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_monitorQuota;
                     bool m_monitorQuotaHasBeenSet;
 
                     /**
                      * 消息资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_messageQuota;
                     bool m_messageQuotaHasBeenSet;
 
                     /**
                      * 已使用探测任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_usedTaskQuota;
                     bool m_usedTaskQuotaHasBeenSet;
 
                     /**
                      * 已使用体验实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_usedFreeInstanceNum;
                     bool m_usedFreeInstanceNumHasBeenSet;
 
                     /**
                      * 已使用付费实例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_usedBillInstanceNum;
                     bool m_usedBillInstanceNumHasBeenSet;
 
                     /**
                      * 体验套餐总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_freePackageNum;
                     bool m_freePackageNumHasBeenSet;
 
                     /**
                      * 已使用付费套餐数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_usedBillPackageNum;
                     bool m_usedBillPackageNumHasBeenSet;
 
                     /**
                      * 付费套餐总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_billPackageNum;
                     bool m_billPackageNumHasBeenSet;

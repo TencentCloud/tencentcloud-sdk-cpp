@@ -814,49 +814,6 @@ AiartClient::SubmitTrainPortraitModelJobOutcomeCallable AiartClient::SubmitTrain
     return task->get_future();
 }
 
-AiartClient::TextToImageOutcome AiartClient::TextToImage(const TextToImageRequest &request)
-{
-    auto outcome = MakeRequest(request, "TextToImage");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        TextToImageResponse rsp = TextToImageResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return TextToImageOutcome(rsp);
-        else
-            return TextToImageOutcome(o.GetError());
-    }
-    else
-    {
-        return TextToImageOutcome(outcome.GetError());
-    }
-}
-
-void AiartClient::TextToImageAsync(const TextToImageRequest& request, const TextToImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TextToImage(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-AiartClient::TextToImageOutcomeCallable AiartClient::TextToImageCallable(const TextToImageRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<TextToImageOutcome()>>(
-        [this, request]()
-        {
-            return this->TextToImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 AiartClient::TextToImageLiteOutcome AiartClient::TextToImageLite(const TextToImageLiteRequest &request)
 {
     auto outcome = MakeRequest(request, "TextToImageLite");

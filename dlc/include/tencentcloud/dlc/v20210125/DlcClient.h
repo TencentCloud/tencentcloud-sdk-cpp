@@ -233,6 +233,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeUserDataEngineConfigResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUserInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUserInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeUserRegisterTimeRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeUserRegisterTimeResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUserRolesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUserRolesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUserTypeRequest.h>
@@ -650,6 +652,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserInfoResponse> DescribeUserInfoOutcome;
                 typedef std::future<DescribeUserInfoOutcome> DescribeUserInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeUserInfoRequest&, DescribeUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserRegisterTimeResponse> DescribeUserRegisterTimeOutcome;
+                typedef std::future<DescribeUserRegisterTimeOutcome> DescribeUserRegisterTimeOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeUserRegisterTimeRequest&, DescribeUserRegisterTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserRegisterTimeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserRolesResponse> DescribeUserRolesOutcome;
                 typedef std::future<DescribeUserRolesOutcome> DescribeUserRolesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeUserRolesRequest&, DescribeUserRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserRolesAsyncHandler;
@@ -1731,6 +1736,15 @@ namespace TencentCloud
                 DescribeUserInfoOutcome DescribeUserInfo(const Model::DescribeUserInfoRequest &request);
                 void DescribeUserInfoAsync(const Model::DescribeUserInfoRequest& request, const DescribeUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserInfoOutcomeCallable DescribeUserInfoCallable(const Model::DescribeUserInfoRequest& request);
+
+                /**
+                 *该接口（DescribeUserRegisterTime）用于查询当前用户注册时间，并判断是否是老用户。
+                 * @param req DescribeUserRegisterTimeRequest
+                 * @return DescribeUserRegisterTimeOutcome
+                 */
+                DescribeUserRegisterTimeOutcome DescribeUserRegisterTime(const Model::DescribeUserRegisterTimeRequest &request);
+                void DescribeUserRegisterTimeAsync(const Model::DescribeUserRegisterTimeRequest& request, const DescribeUserRegisterTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserRegisterTimeOutcomeCallable DescribeUserRegisterTimeCallable(const Model::DescribeUserRegisterTimeRequest& request);
 
                 /**
                  *列举用户角色信息

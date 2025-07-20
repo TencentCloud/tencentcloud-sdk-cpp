@@ -74,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址池集合id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainAddressPoolId 地址池集合id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMainAddressPoolId() const;
 
                     /**
                      * 设置地址池集合id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mainAddressPoolId 地址池集合id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMainAddressPoolId(const uint64_t& _mainAddressPoolId);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取切换阀值，不能大于主力集合内地址总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinSurviveNum 切换阀值，不能大于主力集合内地址总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMinSurviveNum() const;
 
                     /**
                      * 设置切换阀值，不能大于主力集合内地址总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minSurviveNum 切换阀值，不能大于主力集合内地址总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinSurviveNum(const uint64_t& _minSurviveNum);
@@ -124,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrafficStrategy 切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrafficStrategy() const;
 
                     /**
                      * 设置切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trafficStrategy 切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrafficStrategy(const std::string& _trafficStrategy);
@@ -158,21 +146,18 @@ namespace TencentCloud
 
                     /**
                      * 地址池集合id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mainAddressPoolId;
                     bool m_mainAddressPoolIdHasBeenSet;
 
                     /**
                      * 切换阀值，不能大于主力集合内地址总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_minSurviveNum;
                     bool m_minSurviveNumHasBeenSet;
 
                     /**
                      * 切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trafficStrategy;
                     bool m_trafficStrategyHasBeenSet;

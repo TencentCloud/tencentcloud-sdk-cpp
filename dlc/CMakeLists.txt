@@ -69,6 +69,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateDMSTableRequest.h
   include/tencentcloud/dlc/v20210125/model/DMSTable.h
   include/tencentcloud/dlc/v20210125/model/ModifyAdvancedStoreLocationResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeUserRegisterTimeRequest.h
   include/tencentcloud/dlc/v20210125/model/DMSSds.h
   include/tencentcloud/dlc/v20210125/model/OpendThirdAccessUserInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEnginesScaleDetailResponse.h
@@ -229,6 +230,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/SwitchDataEngineImageResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateCHDFSBindingProductRequest.h
+  include/tencentcloud/dlc/v20210125/model/DescribeUserRegisterTimeResponse.h
   include/tencentcloud/dlc/v20210125/model/NotebookSessionInfo.h
   include/tencentcloud/dlc/v20210125/model/DataEngineBasicInfo.h
   include/tencentcloud/dlc/v20210125/model/ModifySparkAppRequest.h
@@ -490,6 +492,7 @@ set(dlc_src
   src/v20210125/model/CreateDMSTableRequest.cpp
   src/v20210125/model/DMSTable.cpp
   src/v20210125/model/ModifyAdvancedStoreLocationResponse.cpp
+  src/v20210125/model/DescribeUserRegisterTimeRequest.cpp
   src/v20210125/model/DMSSds.cpp
   src/v20210125/model/OpendThirdAccessUserInfo.cpp
   src/v20210125/model/DescribeDataEnginesScaleDetailResponse.cpp
@@ -650,6 +653,7 @@ set(dlc_src
   src/v20210125/model/SwitchDataEngineImageResponse.cpp
   src/v20210125/model/DescribeSparkAppTasksResponse.cpp
   src/v20210125/model/CreateCHDFSBindingProductRequest.cpp
+  src/v20210125/model/DescribeUserRegisterTimeResponse.cpp
   src/v20210125/model/NotebookSessionInfo.cpp
   src/v20210125/model/DataEngineBasicInfo.cpp
   src/v20210125/model/ModifySparkAppRequest.cpp

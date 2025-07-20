@@ -4555,6 +4555,49 @@ DlcClient::DescribeUserInfoOutcomeCallable DlcClient::DescribeUserInfoCallable(c
     return task->get_future();
 }
 
+DlcClient::DescribeUserRegisterTimeOutcome DlcClient::DescribeUserRegisterTime(const DescribeUserRegisterTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserRegisterTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserRegisterTimeResponse rsp = DescribeUserRegisterTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserRegisterTimeOutcome(rsp);
+        else
+            return DescribeUserRegisterTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserRegisterTimeOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeUserRegisterTimeAsync(const DescribeUserRegisterTimeRequest& request, const DescribeUserRegisterTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserRegisterTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeUserRegisterTimeOutcomeCallable DlcClient::DescribeUserRegisterTimeCallable(const DescribeUserRegisterTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserRegisterTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserRegisterTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeUserRolesOutcome DlcClient::DescribeUserRoles(const DescribeUserRolesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserRoles");

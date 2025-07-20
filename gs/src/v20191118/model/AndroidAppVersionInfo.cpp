@@ -29,7 +29,10 @@ AndroidAppVersionInfo::AndroidAppVersionInfo() :
     m_cleanupModeHasBeenSet(false),
     m_androidAppVersionNameHasBeenSet(false),
     m_activityHasBeenSet(false),
-    m_versionNameHasBeenSet(false)
+    m_versionNameHasBeenSet(false),
+    m_mD5HasBeenSet(false),
+    m_fileSizeHasBeenSet(false),
+    m_packageNameHasBeenSet(false)
 {
 }
 
@@ -128,6 +131,36 @@ CoreInternalOutcome AndroidAppVersionInfo::Deserialize(const rapidjson::Value &v
         m_versionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("MD5") && !value["MD5"].IsNull())
+    {
+        if (!value["MD5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidAppVersionInfo.MD5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mD5 = string(value["MD5"].GetString());
+        m_mD5HasBeenSet = true;
+    }
+
+    if (value.HasMember("FileSize") && !value["FileSize"].IsNull())
+    {
+        if (!value["FileSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidAppVersionInfo.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSize = value["FileSize"].GetInt64();
+        m_fileSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PackageName") && !value["PackageName"].IsNull())
+    {
+        if (!value["PackageName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidAppVersionInfo.PackageName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageName = string(value["PackageName"].GetString());
+        m_packageNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +238,30 @@ void AndroidAppVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "VersionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_versionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mD5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MD5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mD5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileSize, allocator);
+    }
+
+    if (m_packageNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_packageName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +409,53 @@ void AndroidAppVersionInfo::SetVersionName(const string& _versionName)
 bool AndroidAppVersionInfo::VersionNameHasBeenSet() const
 {
     return m_versionNameHasBeenSet;
+}
+
+string AndroidAppVersionInfo::GetMD5() const
+{
+    return m_mD5;
+}
+
+void AndroidAppVersionInfo::SetMD5(const string& _mD5)
+{
+    m_mD5 = _mD5;
+    m_mD5HasBeenSet = true;
+}
+
+bool AndroidAppVersionInfo::MD5HasBeenSet() const
+{
+    return m_mD5HasBeenSet;
+}
+
+int64_t AndroidAppVersionInfo::GetFileSize() const
+{
+    return m_fileSize;
+}
+
+void AndroidAppVersionInfo::SetFileSize(const int64_t& _fileSize)
+{
+    m_fileSize = _fileSize;
+    m_fileSizeHasBeenSet = true;
+}
+
+bool AndroidAppVersionInfo::FileSizeHasBeenSet() const
+{
+    return m_fileSizeHasBeenSet;
+}
+
+string AndroidAppVersionInfo::GetPackageName() const
+{
+    return m_packageName;
+}
+
+void AndroidAppVersionInfo::SetPackageName(const string& _packageName)
+{
+    m_packageName = _packageName;
+    m_packageNameHasBeenSet = true;
+}
+
+bool AndroidAppVersionInfo::PackageNameHasBeenSet() const
+{
+    return m_packageNameHasBeenSet;
 }
 

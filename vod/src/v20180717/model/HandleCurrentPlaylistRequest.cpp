@@ -27,6 +27,7 @@ HandleCurrentPlaylistRequest::HandleCurrentPlaylistRequest() :
     m_roundPlayIdHasBeenSet(false),
     m_operationHasBeenSet(false),
     m_itemIdHasBeenSet(false),
+    m_segmentIndexHasBeenSet(false),
     m_roundPlaylistHasBeenSet(false)
 {
 }
@@ -68,6 +69,14 @@ string HandleCurrentPlaylistRequest::ToJsonString() const
         string key = "ItemId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_itemId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_segmentIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentIndex";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_segmentIndex, allocator);
     }
 
     if (m_roundPlaylistHasBeenSet)
@@ -155,6 +164,22 @@ void HandleCurrentPlaylistRequest::SetItemId(const string& _itemId)
 bool HandleCurrentPlaylistRequest::ItemIdHasBeenSet() const
 {
     return m_itemIdHasBeenSet;
+}
+
+int64_t HandleCurrentPlaylistRequest::GetSegmentIndex() const
+{
+    return m_segmentIndex;
+}
+
+void HandleCurrentPlaylistRequest::SetSegmentIndex(const int64_t& _segmentIndex)
+{
+    m_segmentIndex = _segmentIndex;
+    m_segmentIndexHasBeenSet = true;
+}
+
+bool HandleCurrentPlaylistRequest::SegmentIndexHasBeenSet() const
+{
+    return m_segmentIndexHasBeenSet;
 }
 
 vector<RoundPlayListItemInfo> HandleCurrentPlaylistRequest::GetRoundPlaylist() const

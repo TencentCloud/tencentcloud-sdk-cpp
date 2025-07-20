@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/aiart/v20221229/model/TextToImageResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeUserRegisterTimeResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Aiart::V20221229::Model;
+using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-TextToImageResponse::TextToImageResponse() :
-    m_resultImageHasBeenSet(false)
+DescribeUserRegisterTimeResponse::DescribeUserRegisterTimeResponse() :
+    m_registerTimeHasBeenSet(false),
+    m_isOldUserHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome TextToImageResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeUserRegisterTimeResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +63,50 @@ CoreInternalOutcome TextToImageResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("ResultImage") && !rsp["ResultImage"].IsNull())
+    if (rsp.HasMember("RegisterTime") && !rsp["RegisterTime"].IsNull())
     {
-        if (!rsp["ResultImage"].IsString())
+        if (!rsp["RegisterTime"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `ResultImage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegisterTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_resultImage = string(rsp["ResultImage"].GetString());
-        m_resultImageHasBeenSet = true;
+        m_registerTime = rsp["RegisterTime"].GetInt64();
+        m_registerTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsOldUser") && !rsp["IsOldUser"].IsNull())
+    {
+        if (!rsp["IsOldUser"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsOldUser` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOldUser = rsp["IsOldUser"].GetBool();
+        m_isOldUserHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string TextToImageResponse::ToJsonString() const
+string DescribeUserRegisterTimeResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_resultImageHasBeenSet)
+    if (m_registerTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResultImage";
+        string key = "RegisterTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_resultImage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_registerTime, allocator);
+    }
+
+    if (m_isOldUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOldUser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOldUser, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +121,24 @@ string TextToImageResponse::ToJsonString() const
 }
 
 
-string TextToImageResponse::GetResultImage() const
+int64_t DescribeUserRegisterTimeResponse::GetRegisterTime() const
 {
-    return m_resultImage;
+    return m_registerTime;
 }
 
-bool TextToImageResponse::ResultImageHasBeenSet() const
+bool DescribeUserRegisterTimeResponse::RegisterTimeHasBeenSet() const
 {
-    return m_resultImageHasBeenSet;
+    return m_registerTimeHasBeenSet;
+}
+
+bool DescribeUserRegisterTimeResponse::GetIsOldUser() const
+{
+    return m_isOldUser;
+}
+
+bool DescribeUserRegisterTimeResponse::IsOldUserHasBeenSet() const
+{
+    return m_isOldUserHasBeenSet;
 }
 
 

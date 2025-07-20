@@ -143,8 +143,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费0不1是
-                     * @return AutoRenewFlag 是否自动续费0不1是
+                     * 获取是否自动续费：0否1是
+                     * @return AutoRenewFlag 是否自动续费：0否1是
                      * 
                      */
                     uint64_t GetAutoRenewFlag() const;
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否自动续费0不1是
+                     * 是否自动续费：0否1是
                      */
                     uint64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
