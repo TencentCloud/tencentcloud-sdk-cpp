@@ -66,4 +66,22 @@ namespace
 
         TencentCloud::ShutdownAPI();
     }
+
+    TEST(cvm, DescribeInstances_WithEmptyToken)
+    {
+        TencentCloud::InitAPI();
+
+        string sec_id = CUtils::GetEnv("TENCENTCLOUD_SECRET_ID");
+        string sec_key = CUtils::GetEnv("TENCENTCLOUD_SECRET_KEY");
+        Credential cred = Credential(sec_id, sec_key, "");
+        DescribeInstancesRequest req = DescribeInstancesRequest();
+        CvmClient client = CvmClient(cred, "ap-guangzhou");
+
+        auto outcome = client.DescribeInstances(req);
+        EXPECT_TRUE(outcome.IsSuccess());
+        EXPECT_TRUE(outcome.GetError().GetErrorCode().empty());
+        EXPECT_TRUE(outcome.GetResult().InstanceSetHasBeenSet());
+
+        TencentCloud::ShutdownAPI();
+    }
 }
