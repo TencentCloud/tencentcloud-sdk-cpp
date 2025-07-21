@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取监控器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorDataSet 监控器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MonitorDetail> GetMonitorDataSet() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 监控器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MonitorDetail> m_monitorDataSet;
                     bool m_monitorDataSetHasBeenSet;

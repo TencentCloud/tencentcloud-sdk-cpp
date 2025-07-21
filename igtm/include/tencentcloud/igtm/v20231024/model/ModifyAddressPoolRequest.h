@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool PoolNameHasBeenSet() const;
 
                     /**
-                     * 获取流量策略: WEIGHT负载均衡，ALl解析全部
-                     * @return TrafficStrategy 流量策略: WEIGHT负载均衡，ALl解析全部
+                     * 获取流量策略: WEIGHT负载均衡，ALL解析全部
+                     * @return TrafficStrategy 流量策略: WEIGHT负载均衡，ALL解析全部
                      * 
                      */
                     std::string GetTrafficStrategy() const;
 
                     /**
-                     * 设置流量策略: WEIGHT负载均衡，ALl解析全部
-                     * @param _trafficStrategy 流量策略: WEIGHT负载均衡，ALl解析全部
+                     * 设置流量策略: WEIGHT负载均衡，ALL解析全部
+                     * @param _trafficStrategy 流量策略: WEIGHT负载均衡，ALL解析全部
                      * 
                      */
                     void SetTrafficStrategy(const std::string& _trafficStrategy);
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_poolNameHasBeenSet;
 
                     /**
-                     * 流量策略: WEIGHT负载均衡，ALl解析全部
+                     * 流量策略: WEIGHT负载均衡，ALL解析全部
                      */
                     std::string m_trafficStrategy;
                     bool m_trafficStrategyHasBeenSet;

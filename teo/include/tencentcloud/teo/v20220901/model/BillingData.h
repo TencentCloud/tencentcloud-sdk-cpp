@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 计费数据项
+                * 计费数据项。
                 */
                 class BillingData : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间。
-                     * @return Time 时间。
+                     * 获取数据时间戳。
+                     * @return Time 数据时间戳。
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置时间。
-                     * @param _time 时间。
+                     * 设置数据时间戳。
+                     * @param _time 数据时间戳。
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -88,10 +88,94 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取数据点所属站点 ID。若使用内容标识符功能，则该项值为内容标识符。
+                     * @return ZoneId 数据点所属站点 ID。若使用内容标识符功能，则该项值为内容标识符。
+                     * 
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置数据点所属站点 ID。若使用内容标识符功能，则该项值为内容标识符。
+                     * @param _zoneId 数据点所属站点 ID。若使用内容标识符功能，则该项值为内容标识符。
+                     * 
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据点所属域名。
+                     * @return Host 数据点所属域名。
+                     * 
+                     */
+                    std::string GetHost() const;
+
+                    /**
+                     * 设置数据点所属域名。
+                     * @param _host 数据点所属域名。
+                     * 
+                     */
+                    void SetHost(const std::string& _host);
+
+                    /**
+                     * 判断参数 Host 是否已赋值
+                     * @return Host 是否已赋值
+                     * 
+                     */
+                    bool HostHasBeenSet() const;
+
+                    /**
+                     * 获取数据点所属四层代理实例 ID。
+                     * @return ProxyId 数据点所属四层代理实例 ID。
+                     * 
+                     */
+                    std::string GetProxyId() const;
+
+                    /**
+                     * 设置数据点所属四层代理实例 ID。
+                     * @param _proxyId 数据点所属四层代理实例 ID。
+                     * 
+                     */
+                    void SetProxyId(const std::string& _proxyId);
+
+                    /**
+                     * 判断参数 ProxyId 是否已赋值
+                     * @return ProxyId 是否已赋值
+                     * 
+                     */
+                    bool ProxyIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据点所属计费大区 ID。计费大区以实际服务用户客户端的 EdgeOne 节点所在区域为准。取值有：<li>CH：中国大陆境内</li><li>AF：非洲</li><li>AS1：亚太一区</li><li>AS2：亚太二区</li><li>AS3：亚太三区</li><li>EU：欧洲</li><li>MidEast：中东</li><li>NA：北美</li><li> SA：南美</li>
+                     * @return RegionId 数据点所属计费大区 ID。计费大区以实际服务用户客户端的 EdgeOne 节点所在区域为准。取值有：<li>CH：中国大陆境内</li><li>AF：非洲</li><li>AS1：亚太一区</li><li>AS2：亚太二区</li><li>AS3：亚太三区</li><li>EU：欧洲</li><li>MidEast：中东</li><li>NA：北美</li><li> SA：南美</li>
+                     * 
+                     */
+                    std::string GetRegionId() const;
+
+                    /**
+                     * 设置数据点所属计费大区 ID。计费大区以实际服务用户客户端的 EdgeOne 节点所在区域为准。取值有：<li>CH：中国大陆境内</li><li>AF：非洲</li><li>AS1：亚太一区</li><li>AS2：亚太二区</li><li>AS3：亚太三区</li><li>EU：欧洲</li><li>MidEast：中东</li><li>NA：北美</li><li> SA：南美</li>
+                     * @param _regionId 数据点所属计费大区 ID。计费大区以实际服务用户客户端的 EdgeOne 节点所在区域为准。取值有：<li>CH：中国大陆境内</li><li>AF：非洲</li><li>AS1：亚太一区</li><li>AS2：亚太二区</li><li>AS3：亚太三区</li><li>EU：欧洲</li><li>MidEast：中东</li><li>NA：北美</li><li> SA：南美</li>
+                     * 
+                     */
+                    void SetRegionId(const std::string& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     * 
+                     */
+                    bool RegionIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 时间。
+                     * 数据时间戳。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
@@ -101,6 +185,30 @@ namespace TencentCloud
                      */
                     uint64_t m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 数据点所属站点 ID。若使用内容标识符功能，则该项值为内容标识符。
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 数据点所属域名。
+                     */
+                    std::string m_host;
+                    bool m_hostHasBeenSet;
+
+                    /**
+                     * 数据点所属四层代理实例 ID。
+                     */
+                    std::string m_proxyId;
+                    bool m_proxyIdHasBeenSet;
+
+                    /**
+                     * 数据点所属计费大区 ID。计费大区以实际服务用户客户端的 EdgeOne 节点所在区域为准。取值有：<li>CH：中国大陆境内</li><li>AF：非洲</li><li>AS1：亚太一区</li><li>AS2：亚太二区</li><li>AS3：亚太三区</li><li>EU：欧洲</li><li>MidEast：中东</li><li>NA：北美</li><li> SA：南美</li>
+                     */
+                    std::string m_regionId;
+                    bool m_regionIdHasBeenSet;
 
                 };
             }

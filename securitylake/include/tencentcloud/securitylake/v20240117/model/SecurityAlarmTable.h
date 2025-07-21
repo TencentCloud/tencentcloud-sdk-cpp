@@ -931,18 +931,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义富化字段信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RichCustomInfos 自定义富化字段信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRichCustomInfos() const;
 
                     /**
                      * 设置自定义富化字段信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _richCustomInfos 自定义富化字段信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRichCustomInfos(const std::vector<std::string>& _richCustomInfos);
@@ -1357,7 +1353,6 @@ namespace TencentCloud
 
                     /**
                      * 自定义富化字段信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_richCustomInfos;
                     bool m_richCustomInfosHasBeenSet;

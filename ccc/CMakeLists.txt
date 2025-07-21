@@ -71,6 +71,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribePredictiveDialingCampaignsRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeNumbersResponse.h
+  include/tencentcloud/ccc/v20200210/model/ZHToneWordsInfo.h
   include/tencentcloud/ccc/v20200210/model/DeletePredictiveDialingCampaignRequest.h
   include/tencentcloud/ccc/v20200210/model/UploadIvrAudioRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeStaffInfoListResponse.h
@@ -163,6 +164,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/TransferToManualResponse.h
   include/tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskResponse.h
   include/tencentcloud/ccc/v20200210/model/AbortPredictiveDialingCampaignRequest.h
+  include/tencentcloud/ccc/v20200210/model/ToneWordInfo.h
   include/tencentcloud/ccc/v20200210/model/TelCdrInfo.h
   include/tencentcloud/ccc/v20200210/model/SkillGroupItem.h
   include/tencentcloud/ccc/v20200210/model/MessageBody.h
@@ -277,6 +279,7 @@ set(ccc_src
   src/v20200210/model/DescribePredictiveDialingCampaignsRequest.cpp
   src/v20200210/model/DescribeSkillGroupInfoListResponse.cpp
   src/v20200210/model/DescribeNumbersResponse.cpp
+  src/v20200210/model/ZHToneWordsInfo.cpp
   src/v20200210/model/DeletePredictiveDialingCampaignRequest.cpp
   src/v20200210/model/UploadIvrAudioRequest.cpp
   src/v20200210/model/DescribeStaffInfoListResponse.cpp
@@ -369,6 +372,7 @@ set(ccc_src
   src/v20200210/model/TransferToManualResponse.cpp
   src/v20200210/model/StopAutoCalloutTaskResponse.cpp
   src/v20200210/model/AbortPredictiveDialingCampaignRequest.cpp
+  src/v20200210/model/ToneWordInfo.cpp
   src/v20200210/model/TelCdrInfo.cpp
   src/v20200210/model/SkillGroupItem.cpp
   src/v20200210/model/MessageBody.cpp

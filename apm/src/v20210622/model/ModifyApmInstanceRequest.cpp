@@ -62,7 +62,9 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_isJNDIInjectionAnalysisHasBeenSet(false),
     m_isJNIInjectionAnalysisHasBeenSet(false),
     m_isWebshellBackdoorAnalysisHasBeenSet(false),
-    m_isDeserializationAnalysisHasBeenSet(false)
+    m_isDeserializationAnalysisHasBeenSet(false),
+    m_urlLongSegmentThresholdHasBeenSet(false),
+    m_urlNumberSegmentThresholdHasBeenSet(false)
 {
 }
 
@@ -403,6 +405,22 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "IsDeserializationAnalysis";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isDeserializationAnalysis, allocator);
+    }
+
+    if (m_urlLongSegmentThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlLongSegmentThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_urlLongSegmentThreshold, allocator);
+    }
+
+    if (m_urlNumberSegmentThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlNumberSegmentThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_urlNumberSegmentThreshold, allocator);
     }
 
 
@@ -1051,6 +1069,38 @@ void ModifyApmInstanceRequest::SetIsDeserializationAnalysis(const int64_t& _isDe
 bool ModifyApmInstanceRequest::IsDeserializationAnalysisHasBeenSet() const
 {
     return m_isDeserializationAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetUrlLongSegmentThreshold() const
+{
+    return m_urlLongSegmentThreshold;
+}
+
+void ModifyApmInstanceRequest::SetUrlLongSegmentThreshold(const int64_t& _urlLongSegmentThreshold)
+{
+    m_urlLongSegmentThreshold = _urlLongSegmentThreshold;
+    m_urlLongSegmentThresholdHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::UrlLongSegmentThresholdHasBeenSet() const
+{
+    return m_urlLongSegmentThresholdHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetUrlNumberSegmentThreshold() const
+{
+    return m_urlNumberSegmentThreshold;
+}
+
+void ModifyApmInstanceRequest::SetUrlNumberSegmentThreshold(const int64_t& _urlNumberSegmentThreshold)
+{
+    m_urlNumberSegmentThreshold = _urlNumberSegmentThreshold;
+    m_urlNumberSegmentThresholdHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::UrlNumberSegmentThresholdHasBeenSet() const
+{
+    return m_urlNumberSegmentThresholdHasBeenSet;
 }
 
 

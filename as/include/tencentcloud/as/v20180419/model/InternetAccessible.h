@@ -146,6 +146,182 @@ namespace TencentCloud
                      */
                     bool BandwidthPackageIdHasBeenSet() const;
 
+                    /**
+                     * 获取线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
+
+<li>BGP：常规 BGP 线路</li>
+已开通静态单线IP白名单的用户，可选值：
+
+<li>CMCC：中国移动</li>
+<li>CTCC：中国电信</li>
+<li>CUCC：中国联通</li>
+注意：仅部分地域支持静态单线IP。
+
+                     * @return InternetServiceProvider 线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
+
+<li>BGP：常规 BGP 线路</li>
+已开通静态单线IP白名单的用户，可选值：
+
+<li>CMCC：中国移动</li>
+<li>CTCC：中国电信</li>
+<li>CUCC：中国联通</li>
+注意：仅部分地域支持静态单线IP。
+
+                     * 
+                     */
+                    std::string GetInternetServiceProvider() const;
+
+                    /**
+                     * 设置线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
+
+<li>BGP：常规 BGP 线路</li>
+已开通静态单线IP白名单的用户，可选值：
+
+<li>CMCC：中国移动</li>
+<li>CTCC：中国电信</li>
+<li>CUCC：中国联通</li>
+注意：仅部分地域支持静态单线IP。
+
+                     * @param _internetServiceProvider 线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
+
+<li>BGP：常规 BGP 线路</li>
+已开通静态单线IP白名单的用户，可选值：
+
+<li>CMCC：中国移动</li>
+<li>CTCC：中国电信</li>
+<li>CUCC：中国联通</li>
+注意：仅部分地域支持静态单线IP。
+
+                     * 
+                     */
+                    void SetInternetServiceProvider(const std::string& _internetServiceProvider);
+
+                    /**
+                     * 判断参数 InternetServiceProvider 是否已赋值
+                     * @return InternetServiceProvider 是否已赋值
+                     * 
+                     */
+                    bool InternetServiceProviderHasBeenSet() const;
+
+                    /**
+                     * 获取公网 IP 类型。
+
+<li> WanIP：普通公网IP。</li>
+<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
+<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646) 。  </li> 
+如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。
+
+精品IP 高防IP功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+                     * @return IPv4AddressType 公网 IP 类型。
+
+<li> WanIP：普通公网IP。</li>
+<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
+<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646) 。  </li> 
+如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。
+
+精品IP 高防IP功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+                     * 
+                     */
+                    std::string GetIPv4AddressType() const;
+
+                    /**
+                     * 设置公网 IP 类型。
+
+<li> WanIP：普通公网IP。</li>
+<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
+<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646) 。  </li> 
+如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。
+
+精品IP 高防IP功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+                     * @param _iPv4AddressType 公网 IP 类型。
+
+<li> WanIP：普通公网IP。</li>
+<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
+<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646) 。  </li> 
+如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。
+
+精品IP 高防IP功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+                     * 
+                     */
+                    void SetIPv4AddressType(const std::string& _iPv4AddressType);
+
+                    /**
+                     * 判断参数 IPv4AddressType 是否已赋值
+                     * @return IPv4AddressType 是否已赋值
+                     * 
+                     */
+                    bool IPv4AddressTypeHasBeenSet() const;
+
+                    /**
+                     * 获取高防包唯一ID，申请高防IP时，该字段必传。
+                     * @return AntiDDoSPackageId 高防包唯一ID，申请高防IP时，该字段必传。
+                     * 
+                     */
+                    std::string GetAntiDDoSPackageId() const;
+
+                    /**
+                     * 设置高防包唯一ID，申请高防IP时，该字段必传。
+                     * @param _antiDDoSPackageId 高防包唯一ID，申请高防IP时，该字段必传。
+                     * 
+                     */
+                    void SetAntiDDoSPackageId(const std::string& _antiDDoSPackageId);
+
+                    /**
+                     * 判断参数 AntiDDoSPackageId 是否已赋值
+                     * @return AntiDDoSPackageId 是否已赋值
+                     * 
+                     */
+                    bool AntiDDoSPackageIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例销毁时是否一并销毁绑定的弹性IP。
+
+取值范围：
+<li>TRUE：表示保留EIP</li>
+<li>FALSE：表示不保留</li>
+请注意，当IPv4AddressType字段指定EIP类型时，默认不保留EIP。WanIP不受此字段影响始终随实例销毁。
+变更配置此字段，已绑定伸缩组会立刻生效。
+
+                     * @return IsKeepEIP 实例销毁时是否一并销毁绑定的弹性IP。
+
+取值范围：
+<li>TRUE：表示保留EIP</li>
+<li>FALSE：表示不保留</li>
+请注意，当IPv4AddressType字段指定EIP类型时，默认不保留EIP。WanIP不受此字段影响始终随实例销毁。
+变更配置此字段，已绑定伸缩组会立刻生效。
+
+                     * 
+                     */
+                    bool GetIsKeepEIP() const;
+
+                    /**
+                     * 设置实例销毁时是否一并销毁绑定的弹性IP。
+
+取值范围：
+<li>TRUE：表示保留EIP</li>
+<li>FALSE：表示不保留</li>
+请注意，当IPv4AddressType字段指定EIP类型时，默认不保留EIP。WanIP不受此字段影响始终随实例销毁。
+变更配置此字段，已绑定伸缩组会立刻生效。
+
+                     * @param _isKeepEIP 实例销毁时是否一并销毁绑定的弹性IP。
+
+取值范围：
+<li>TRUE：表示保留EIP</li>
+<li>FALSE：表示不保留</li>
+请注意，当IPv4AddressType字段指定EIP类型时，默认不保留EIP。WanIP不受此字段影响始终随实例销毁。
+变更配置此字段，已绑定伸缩组会立刻生效。
+
+                     * 
+                     */
+                    void SetIsKeepEIP(const bool& _isKeepEIP);
+
+                    /**
+                     * 判断参数 IsKeepEIP 是否已赋值
+                     * @return IsKeepEIP 是否已赋值
+                     * 
+                     */
+                    bool IsKeepEIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +351,53 @@ namespace TencentCloud
                      */
                     std::string m_bandwidthPackageId;
                     bool m_bandwidthPackageIdHasBeenSet;
+
+                    /**
+                     * 线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
+
+<li>BGP：常规 BGP 线路</li>
+已开通静态单线IP白名单的用户，可选值：
+
+<li>CMCC：中国移动</li>
+<li>CTCC：中国电信</li>
+<li>CUCC：中国联通</li>
+注意：仅部分地域支持静态单线IP。
+
+                     */
+                    std::string m_internetServiceProvider;
+                    bool m_internetServiceProviderHasBeenSet;
+
+                    /**
+                     * 公网 IP 类型。
+
+<li> WanIP：普通公网IP。</li>
+<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
+<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646) 。  </li> 
+如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。
+
+精品IP 高防IP功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
+                     */
+                    std::string m_iPv4AddressType;
+                    bool m_iPv4AddressTypeHasBeenSet;
+
+                    /**
+                     * 高防包唯一ID，申请高防IP时，该字段必传。
+                     */
+                    std::string m_antiDDoSPackageId;
+                    bool m_antiDDoSPackageIdHasBeenSet;
+
+                    /**
+                     * 实例销毁时是否一并销毁绑定的弹性IP。
+
+取值范围：
+<li>TRUE：表示保留EIP</li>
+<li>FALSE：表示不保留</li>
+请注意，当IPv4AddressType字段指定EIP类型时，默认不保留EIP。WanIP不受此字段影响始终随实例销毁。
+变更配置此字段，已绑定伸缩组会立刻生效。
+
+                     */
+                    bool m_isKeepEIP;
+                    bool m_isKeepEIPHasBeenSet;
 
                 };
             }

@@ -154,6 +154,27 @@ issued：绑定失败。
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取证书加密算法
+                     * @return Algorithm 证书加密算法
+                     * 
+                     */
+                    std::string GetAlgorithm() const;
+
+                    /**
+                     * 设置证书加密算法
+                     * @param _algorithm 证书加密算法
+                     * 
+                     */
+                    void SetAlgorithm(const std::string& _algorithm);
+
+                    /**
+                     * 判断参数 Algorithm 是否已赋值
+                     * @return Algorithm 是否已赋值
+                     * 
+                     */
+                    bool AlgorithmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -185,6 +206,12 @@ issued：绑定失败。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 证书加密算法
+                     */
+                    std::string m_algorithm;
+                    bool m_algorithmHasBeenSet;
 
                 };
             }

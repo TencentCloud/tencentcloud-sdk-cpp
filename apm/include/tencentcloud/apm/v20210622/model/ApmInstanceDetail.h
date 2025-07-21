@@ -1205,6 +1205,48 @@ namespace TencentCloud
                      */
                     bool TokenHasBeenSet() const;
 
+                    /**
+                     * 获取URL长分段收敛阈值
+                     * @return UrlLongSegmentThreshold URL长分段收敛阈值
+                     * 
+                     */
+                    int64_t GetUrlLongSegmentThreshold() const;
+
+                    /**
+                     * 设置URL长分段收敛阈值
+                     * @param _urlLongSegmentThreshold URL长分段收敛阈值
+                     * 
+                     */
+                    void SetUrlLongSegmentThreshold(const int64_t& _urlLongSegmentThreshold);
+
+                    /**
+                     * 判断参数 UrlLongSegmentThreshold 是否已赋值
+                     * @return UrlLongSegmentThreshold 是否已赋值
+                     * 
+                     */
+                    bool UrlLongSegmentThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取URL数字分段收敛阈值
+                     * @return UrlNumberSegmentThreshold URL数字分段收敛阈值
+                     * 
+                     */
+                    int64_t GetUrlNumberSegmentThreshold() const;
+
+                    /**
+                     * 设置URL数字分段收敛阈值
+                     * @param _urlNumberSegmentThreshold URL数字分段收敛阈值
+                     * 
+                     */
+                    void SetUrlNumberSegmentThreshold(const int64_t& _urlNumberSegmentThreshold);
+
+                    /**
+                     * 判断参数 UrlNumberSegmentThreshold 是否已赋值
+                     * @return UrlNumberSegmentThreshold 是否已赋值
+                     * 
+                     */
+                    bool UrlNumberSegmentThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1536,6 +1578,18 @@ namespace TencentCloud
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;
+
+                    /**
+                     * URL长分段收敛阈值
+                     */
+                    int64_t m_urlLongSegmentThreshold;
+                    bool m_urlLongSegmentThresholdHasBeenSet;
+
+                    /**
+                     * URL数字分段收敛阈值
+                     */
+                    int64_t m_urlNumberSegmentThreshold;
+                    bool m_urlNumberSegmentThresholdHasBeenSet;
 
                 };
             }

@@ -657,6 +657,48 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取新证书加密算法
+                     * @return Algorithm 新证书加密算法
+                     * 
+                     */
+                    std::string GetAlgorithm() const;
+
+                    /**
+                     * 设置新证书加密算法
+                     * @param _algorithm 新证书加密算法
+                     * 
+                     */
+                    void SetAlgorithm(const std::string& _algorithm);
+
+                    /**
+                     * 判断参数 Algorithm 是否已赋值
+                     * @return Algorithm 是否已赋值
+                     * 
+                     */
+                    bool AlgorithmHasBeenSet() const;
+
+                    /**
+                     * 获取旧证书加密算法
+                     * @return OldAlgorithm 旧证书加密算法
+                     * 
+                     */
+                    std::string GetOldAlgorithm() const;
+
+                    /**
+                     * 设置旧证书加密算法
+                     * @param _oldAlgorithm 旧证书加密算法
+                     * 
+                     */
+                    void SetOldAlgorithm(const std::string& _oldAlgorithm);
+
+                    /**
+                     * 判断参数 OldAlgorithm 是否已赋值
+                     * @return OldAlgorithm 是否已赋值
+                     * 
+                     */
+                    bool OldAlgorithmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -828,6 +870,18 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 新证书加密算法
+                     */
+                    std::string m_algorithm;
+                    bool m_algorithmHasBeenSet;
+
+                    /**
+                     * 旧证书加密算法
+                     */
+                    std::string m_oldAlgorithm;
+                    bool m_oldAlgorithmHasBeenSet;
 
                 };
             }

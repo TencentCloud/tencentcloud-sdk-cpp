@@ -733,7 +733,9 @@ namespace TencentCloud
                 RecoverRecycleTablesOutcomeCallable RecoverRecycleTablesCallable(const Model::RecoverRecycleTablesRequest& request);
 
                 /**
-                 *表格数据回档
+                 *不再使用
+
+表格数据回档
                  * @param req RollbackTablesRequest
                  * @return RollbackTablesOutcome
                  */

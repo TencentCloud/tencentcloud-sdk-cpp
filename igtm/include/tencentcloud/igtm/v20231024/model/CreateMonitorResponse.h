@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取监控器id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorId 监控器id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMonitorId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 监控器id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_monitorId;
                     bool m_monitorIdHasBeenSet;

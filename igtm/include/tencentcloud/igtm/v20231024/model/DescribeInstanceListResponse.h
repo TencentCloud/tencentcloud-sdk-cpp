@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceSet 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Instance> GetInstanceSet() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持系统域名接入：true支持；false不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SystemAccessEnabled 是否支持系统域名接入：true支持；false不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSystemAccessEnabled() const;
@@ -96,21 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Instance> m_instanceSet;
                     bool m_instanceSetHasBeenSet;
 
                     /**
                      * 列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 是否支持系统域名接入：true支持；false不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_systemAccessEnabled;
                     bool m_systemAccessEnabledHasBeenSet;

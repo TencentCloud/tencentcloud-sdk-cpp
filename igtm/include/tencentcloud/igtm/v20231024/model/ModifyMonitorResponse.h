@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取success 为修改成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Msg success 为修改成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMsg() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * success 为修改成功
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_msg;
                     bool m_msgHasBeenSet;

@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ID值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID ID值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置ID值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iD ID值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cdwch-cn或者其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType cdwch-cn或者其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置cdwch-cn或者其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType cdwch-cn或者其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cdwch-cn或者其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName cdwch-cn或者其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置cdwch-cn或者其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName cdwch-cn或者其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Running
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status Running
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置Running
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status Running
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusDesc 运行中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
                      * 设置运行中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusDesc 运行中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStateInfo 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceStateInfo GetInstanceStateInfo() const;
 
                     /**
                      * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceStateInfo 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceStateInfo(const InstanceStateInfo& _instanceStateInfo);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceID -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceID -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resources 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CNResource> GetResources() const;
 
                     /**
                      * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resources 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResources(const std::vector<CNResource>& _resources);
@@ -252,56 +220,48 @@ namespace TencentCloud
 
                     /**
                      * ID值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
                      * cdwch-cn或者其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * cdwch-cn或者其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * Running
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 运行中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
 
                     /**
                      * 无
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceStateInfo m_instanceStateInfo;
                     bool m_instanceStateInfoHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
                      * 无
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CNResource> m_resources;
                     bool m_resourcesHasBeenSet;

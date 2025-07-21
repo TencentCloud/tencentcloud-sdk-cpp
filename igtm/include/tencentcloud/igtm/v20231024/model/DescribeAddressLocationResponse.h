@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressLocation 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AddressLocation> GetAddressLocation() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AddressLocation> m_addressLocation;
                     bool m_addressLocationHasBeenSet;

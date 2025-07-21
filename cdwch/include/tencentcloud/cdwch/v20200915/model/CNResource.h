@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return ID 无
+                     * 获取资源id
+                     * @return ID 资源id
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置无
-                     * @param _iD 无
+                     * 设置资源id
+                     * @param _iD 资源id
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return InstanceID 无
+                     * 获取集群的id
+                     * @return InstanceID 集群的id
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置无
-                     * @param _instanceID 无
+                     * 设置集群的id
+                     * @param _instanceID 集群的id
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return AppID 无
+                     * 获取用户appid
+                     * @return AppID 用户appid
                      * 
                      */
                     int64_t GetAppID() const;
 
                     /**
-                     * 设置无
-                     * @param _appID 无
+                     * 设置用户appid
+                     * @param _appID 用户appid
                      * 
                      */
                     void SetAppID(const int64_t& _appID);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool AppIDHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Uin 无
+                     * 获取用户uin
+                     * @return Uin 用户uin
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置无
-                     * @param _uin 无
+                     * 设置用户uin
+                     * @param _uin 用户uin
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Component 无
+                     * 获取组件
+                     * @return Component 组件
                      * 
                      */
                     std::string GetComponent() const;
 
                     /**
-                     * 设置无
-                     * @param _component 无
+                     * 设置组件
+                     * @param _component 组件
                      * 
                      */
                     void SetComponent(const std::string& _component);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ComponentHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return DeployMode 无
+                     * 获取部署模式
+                     * @return DeployMode 部署模式
                      * 
                      */
                     int64_t GetDeployMode() const;
 
                     /**
-                     * 设置无
-                     * @param _deployMode 无
+                     * 设置部署模式
+                     * @param _deployMode 部署模式
                      * 
                      */
                     void SetDeployMode(const int64_t& _deployMode);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool DeployModeHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return SpecName 无
+                     * 获取规格名称
+                     * @return SpecName 规格名称
                      * 
                      */
                     std::string GetSpecName() const;
 
                     /**
-                     * 设置无
-                     * @param _specName 无
+                     * 设置规格名称
+                     * @param _specName 规格名称
                      * 
                      */
                     void SetSpecName(const std::string& _specName);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool SpecNameHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ResourceID 无
+                     * 获取资源id
+                     * @return ResourceID 资源id
                      * 
                      */
                     std::string GetResourceID() const;
 
                     /**
-                     * 设置无
-                     * @param _resourceID 无
+                     * 设置资源id
+                     * @param _resourceID 资源id
                      * 
                      */
                     void SetResourceID(const std::string& _resourceID);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ResourceIDHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Status 无
+                     * 获取资源的状态
+                     * @return Status 资源的状态
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置无
-                     * @param _status 无
+                     * 设置资源的状态
+                     * @param _status 资源的状态
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return IP 无
+                     * 获取私有网络ip
+                     * @return IP 私有网络ip
                      * 
                      */
                     std::string GetIP() const;
 
                     /**
-                     * 设置无
-                     * @param _iP 无
+                     * 设置私有网络ip
+                     * @param _iP 私有网络ip
                      * 
                      */
                     void SetIP(const std::string& _iP);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool IPHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return CPU 无
+                     * 获取核数
+                     * @return CPU 核数
                      * 
                      */
                     uint64_t GetCPU() const;
 
                     /**
-                     * 设置无
-                     * @param _cPU 无
+                     * 设置核数
+                     * @param _cPU 核数
                      * 
                      */
                     void SetCPU(const uint64_t& _cPU);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool CPUHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Memory 无
+                     * 获取内存
+                     * @return Memory 内存
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置无
-                     * @param _memory 无
+                     * 设置内存
+                     * @param _memory 内存
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Storage 无
+                     * 获取存储大小
+                     * @return Storage 存储大小
                      * 
                      */
                     uint64_t GetStorage() const;
 
                     /**
-                     * 设置无
-                     * @param _storage 无
+                     * 设置存储大小
+                     * @param _storage 存储大小
                      * 
                      */
                     void SetStorage(const uint64_t& _storage);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return UUID 无
+                     * 获取服务器ID
+                     * @return UUID 服务器ID
                      * 
                      */
                     std::string GetUUID() const;
 
                     /**
-                     * 设置无
-                     * @param _uUID 无
+                     * 设置服务器ID
+                     * @param _uUID 服务器ID
                      * 
                      */
                     void SetUUID(const std::string& _uUID);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool UUIDHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Region 无
+                     * 获取地域
+                     * @return Region 地域
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置无
-                     * @param _region 无
+                     * 设置地域
+                     * @param _region 地域
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Zone 无
+                     * 获取地区
+                     * @return Zone 地区
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置无
-                     * @param _zone 无
+                     * 设置地区
+                     * @param _zone 地区
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Details 无
+                     * 获取详细信息
+                     * @return Details 详细信息
                      * 
                      */
                     std::string GetDetails() const;
 
                     /**
-                     * 设置无
-                     * @param _details 无
+                     * 设置详细信息
+                     * @param _details 详细信息
                      * 
                      */
                     void SetDetails(const std::string& _details);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool DetailsHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return CreateTime 无
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置无
-                     * @param _createTime 无
+                     * 设置创建时间
+                     * @param _createTime 创建时间
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ModifyTime 无
+                     * 获取修改时间
+                     * @return ModifyTime 修改时间
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置无
-                     * @param _modifyTime 无
+                     * 设置修改时间
+                     * @param _modifyTime 修改时间
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ExpireTime 无
+                     * 获取过期时间
+                     * @return ExpireTime 过期时间
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置无
-                     * @param _expireTime 无
+                     * 设置过期时间
+                     * @param _expireTime 过期时间
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -469,121 +469,121 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 资源id
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 无
+                     * 集群的id
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 无
+                     * 用户appid
                      */
                     int64_t m_appID;
                     bool m_appIDHasBeenSet;
 
                     /**
-                     * 无
+                     * 用户uin
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 无
+                     * 组件
                      */
                     std::string m_component;
                     bool m_componentHasBeenSet;
 
                     /**
-                     * 无
+                     * 部署模式
                      */
                     int64_t m_deployMode;
                     bool m_deployModeHasBeenSet;
 
                     /**
-                     * 无
+                     * 规格名称
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
 
                     /**
-                     * 无
+                     * 资源id
                      */
                     std::string m_resourceID;
                     bool m_resourceIDHasBeenSet;
 
                     /**
-                     * 无
+                     * 资源的状态
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 无
+                     * 私有网络ip
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
 
                     /**
-                     * 无
+                     * 核数
                      */
                     uint64_t m_cPU;
                     bool m_cPUHasBeenSet;
 
                     /**
-                     * 无
+                     * 内存
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 无
+                     * 存储大小
                      */
                     uint64_t m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 无
+                     * 服务器ID
                      */
                     std::string m_uUID;
                     bool m_uUIDHasBeenSet;
 
                     /**
-                     * 无
+                     * 地域
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 无
+                     * 地区
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 无
+                     * 详细信息
                      */
                     std::string m_details;
                     bool m_detailsHasBeenSet;
 
                     /**
-                     * 无
+                     * 创建时间
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 无
+                     * 修改时间
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 无
+                     * 过期时间
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;

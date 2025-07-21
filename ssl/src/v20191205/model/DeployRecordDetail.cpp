@@ -42,7 +42,9 @@ DeployRecordDetail::DeployRecordDetail() :
     m_envIdHasBeenSet(false),
     m_tCBTypeHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_algorithmHasBeenSet(false),
+    m_oldAlgorithmHasBeenSet(false)
 {
 }
 
@@ -277,6 +279,26 @@ CoreInternalOutcome DeployRecordDetail::Deserialize(const rapidjson::Value &valu
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("Algorithm") && !value["Algorithm"].IsNull())
+    {
+        if (!value["Algorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployRecordDetail.Algorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_algorithm = string(value["Algorithm"].GetString());
+        m_algorithmHasBeenSet = true;
+    }
+
+    if (value.HasMember("OldAlgorithm") && !value["OldAlgorithm"].IsNull())
+    {
+        if (!value["OldAlgorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployRecordDetail.OldAlgorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldAlgorithm = string(value["OldAlgorithm"].GetString());
+        m_oldAlgorithmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -468,6 +490,22 @@ void DeployRecordDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_algorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Algorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_algorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oldAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldAlgorithm.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -823,5 +861,37 @@ void DeployRecordDetail::SetUrl(const vector<string>& _url)
 bool DeployRecordDetail::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string DeployRecordDetail::GetAlgorithm() const
+{
+    return m_algorithm;
+}
+
+void DeployRecordDetail::SetAlgorithm(const string& _algorithm)
+{
+    m_algorithm = _algorithm;
+    m_algorithmHasBeenSet = true;
+}
+
+bool DeployRecordDetail::AlgorithmHasBeenSet() const
+{
+    return m_algorithmHasBeenSet;
+}
+
+string DeployRecordDetail::GetOldAlgorithm() const
+{
+    return m_oldAlgorithm;
+}
+
+void DeployRecordDetail::SetOldAlgorithm(const string& _oldAlgorithm)
+{
+    m_oldAlgorithm = _oldAlgorithm;
+    m_oldAlgorithmHasBeenSet = true;
+}
+
+bool DeployRecordDetail::OldAlgorithmHasBeenSet() const
+{
+    return m_oldAlgorithmHasBeenSet;
 }
 

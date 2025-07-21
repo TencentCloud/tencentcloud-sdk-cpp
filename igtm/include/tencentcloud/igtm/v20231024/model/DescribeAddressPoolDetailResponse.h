@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源组详情描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressPool 资源组详情描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AddressPoolDetail GetAddressPool() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源组中的资源列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressSet 资源组中的资源列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Address> GetAddressSet() const;
@@ -81,14 +77,12 @@ namespace TencentCloud
 
                     /**
                      * 资源组详情描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AddressPoolDetail m_addressPool;
                     bool m_addressPoolHasBeenSet;
 
                     /**
                      * 资源组中的资源列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Address> m_addressSet;
                     bool m_addressSetHasBeenSet;

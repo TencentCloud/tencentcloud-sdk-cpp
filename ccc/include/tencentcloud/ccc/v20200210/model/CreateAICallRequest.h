@@ -24,6 +24,7 @@
 #include <tencentcloud/ccc/v20200210/model/AITransferItem.h>
 #include <tencentcloud/ccc/v20200210/model/Variable.h>
 #include <tencentcloud/ccc/v20200210/model/AICallExtractConfigElement.h>
+#include <tencentcloud/ccc/v20200210/model/ToneWordInfo.h>
 
 
 namespace TencentCloud
@@ -1338,6 +1339,69 @@ HoaiMy
                      */
                     bool VariablesHasBeenSet() const;
 
+                    /**
+                     * 获取模型topP
+                     * @return TopP 模型topP
+                     * 
+                     */
+                    double GetTopP() const;
+
+                    /**
+                     * 设置模型topP
+                     * @param _topP 模型topP
+                     * 
+                     */
+                    void SetTopP(const double& _topP);
+
+                    /**
+                     * 判断参数 TopP 是否已赋值
+                     * @return TopP 是否已赋值
+                     * 
+                     */
+                    bool TopPHasBeenSet() const;
+
+                    /**
+                     * 获取vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * @return VadLevel vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * 
+                     */
+                    uint64_t GetVadLevel() const;
+
+                    /**
+                     * 设置vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * @param _vadLevel vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * 
+                     */
+                    void SetVadLevel(const uint64_t& _vadLevel);
+
+                    /**
+                     * 判断参数 VadLevel 是否已赋值
+                     * @return VadLevel 是否已赋值
+                     * 
+                     */
+                    bool VadLevelHasBeenSet() const;
+
+                    /**
+                     * 获取衔接语
+                     * @return ToneWord 衔接语
+                     * 
+                     */
+                    ToneWordInfo GetToneWord() const;
+
+                    /**
+                     * 设置衔接语
+                     * @param _toneWord 衔接语
+                     * 
+                     */
+                    void SetToneWord(const ToneWordInfo& _toneWord);
+
+                    /**
+                     * 判断参数 ToneWord 是否已赋值
+                     * @return ToneWord 是否已赋值
+                     * 
+                     */
+                    bool ToneWordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1684,6 +1748,24 @@ HoaiMy
                      */
                     std::vector<Variable> m_variables;
                     bool m_variablesHasBeenSet;
+
+                    /**
+                     * 模型topP
+                     */
+                    double m_topP;
+                    bool m_topPHasBeenSet;
+
+                    /**
+                     * vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     */
+                    uint64_t m_vadLevel;
+                    bool m_vadLevelHasBeenSet;
+
+                    /**
+                     * 衔接语
+                     */
+                    ToneWordInfo m_toneWord;
+                    bool m_toneWordHasBeenSet;
 
                 };
             }

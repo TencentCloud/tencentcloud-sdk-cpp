@@ -28,7 +28,8 @@ DescribeBillingDataRequest::DescribeBillingDataRequest() :
     m_zoneIdsHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_intervalHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_groupByHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,19 @@ string DescribeBillingDataRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_groupByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupBy.begin(); itr != m_groupBy.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -201,6 +215,22 @@ void DescribeBillingDataRequest::SetFilters(const vector<BillingDataFilter>& _fi
 bool DescribeBillingDataRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<string> DescribeBillingDataRequest::GetGroupBy() const
+{
+    return m_groupBy;
+}
+
+void DescribeBillingDataRequest::SetGroupBy(const vector<string>& _groupBy)
+{
+    m_groupBy = _groupBy;
+    m_groupByHasBeenSet = true;
+}
+
+bool DescribeBillingDataRequest::GroupByHasBeenSet() const
+{
+    return m_groupByHasBeenSet;
 }
 
 

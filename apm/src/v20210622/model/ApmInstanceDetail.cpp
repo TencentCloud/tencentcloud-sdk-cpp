@@ -74,7 +74,9 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_isJNIInjectionAnalysisHasBeenSet(false),
     m_isWebshellBackdoorAnalysisHasBeenSet(false),
     m_isDeserializationAnalysisHasBeenSet(false),
-    m_tokenHasBeenSet(false)
+    m_tokenHasBeenSet(false),
+    m_urlLongSegmentThresholdHasBeenSet(false),
+    m_urlNumberSegmentThresholdHasBeenSet(false)
 {
 }
 
@@ -636,6 +638,26 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_tokenHasBeenSet = true;
     }
 
+    if (value.HasMember("UrlLongSegmentThreshold") && !value["UrlLongSegmentThreshold"].IsNull())
+    {
+        if (!value["UrlLongSegmentThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.UrlLongSegmentThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_urlLongSegmentThreshold = value["UrlLongSegmentThreshold"].GetInt64();
+        m_urlLongSegmentThresholdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UrlNumberSegmentThreshold") && !value["UrlNumberSegmentThreshold"].IsNull())
+    {
+        if (!value["UrlNumberSegmentThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.UrlNumberSegmentThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_urlNumberSegmentThreshold = value["UrlNumberSegmentThreshold"].GetInt64();
+        m_urlNumberSegmentThresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1085,6 +1107,22 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Token";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlLongSegmentThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlLongSegmentThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_urlLongSegmentThreshold, allocator);
+    }
+
+    if (m_urlNumberSegmentThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlNumberSegmentThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_urlNumberSegmentThreshold, allocator);
     }
 
 }
@@ -1952,5 +1990,37 @@ void ApmInstanceDetail::SetToken(const string& _token)
 bool ApmInstanceDetail::TokenHasBeenSet() const
 {
     return m_tokenHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetUrlLongSegmentThreshold() const
+{
+    return m_urlLongSegmentThreshold;
+}
+
+void ApmInstanceDetail::SetUrlLongSegmentThreshold(const int64_t& _urlLongSegmentThreshold)
+{
+    m_urlLongSegmentThreshold = _urlLongSegmentThreshold;
+    m_urlLongSegmentThresholdHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::UrlLongSegmentThresholdHasBeenSet() const
+{
+    return m_urlLongSegmentThresholdHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetUrlNumberSegmentThreshold() const
+{
+    return m_urlNumberSegmentThreshold;
+}
+
+void ApmInstanceDetail::SetUrlNumberSegmentThreshold(const int64_t& _urlNumberSegmentThreshold)
+{
+    m_urlNumberSegmentThreshold = _urlNumberSegmentThreshold;
+    m_urlNumberSegmentThresholdHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::UrlNumberSegmentThresholdHasBeenSet() const
+{
+    return m_urlNumberSegmentThresholdHasBeenSet;
 }
 
