@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool InstanceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取需要绑定的对象维度信息
-                     * @return Dimensions 需要绑定的对象维度信息
+                     * 获取需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息
+                     * @return Dimensions 需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息
                      * 
                      */
                     std::vector<BindingPolicyObjectDimension> GetDimensions() const;
 
                     /**
-                     * 设置需要绑定的对象维度信息
-                     * @param _dimensions 需要绑定的对象维度信息
+                     * 设置需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息
+                     * @param _dimensions 需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息
                      * 
                      */
                     void SetDimensions(const std::vector<BindingPolicyObjectDimension>& _dimensions);
@@ -217,7 +217,7 @@ namespace TencentCloud
                     bool m_instanceGroupIdHasBeenSet;
 
                     /**
-                     * 需要绑定的对象维度信息
+                     * 需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息
                      */
                     std::vector<BindingPolicyObjectDimension> m_dimensions;
                     bool m_dimensionsHasBeenSet;

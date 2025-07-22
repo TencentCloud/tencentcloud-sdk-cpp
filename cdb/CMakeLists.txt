@@ -310,6 +310,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyParamTemplateResponse.h
   include/tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadResponse.h
   include/tencentcloud/cdb/v20170320/model/DeviceNetInfo.h
+  include/tencentcloud/cdb/v20170320/model/ModifyRoGroupVipVportResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceVipVportResponse.h
   include/tencentcloud/cdb/v20170320/model/DeleteAuditRuleResponse.h
   include/tencentcloud/cdb/v20170320/model/IsolateDBInstanceRequest.h
@@ -415,6 +416,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeBackupSummariesRequest.h
   include/tencentcloud/cdb/v20170320/model/AnalyzeAuditLogsResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateDBInstanceResponse.h
+  include/tencentcloud/cdb/v20170320/model/ModifyRoGroupVipVportRequest.h
   include/tencentcloud/cdb/v20170320/model/OpenAuditServiceRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceCharsetResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBFeaturesRequest.h
@@ -778,6 +780,7 @@ set(cdb_src
   src/v20170320/model/ModifyParamTemplateResponse.cpp
   src/v20170320/model/BalanceRoGroupLoadResponse.cpp
   src/v20170320/model/DeviceNetInfo.cpp
+  src/v20170320/model/ModifyRoGroupVipVportResponse.cpp
   src/v20170320/model/ModifyDBInstanceVipVportResponse.cpp
   src/v20170320/model/DeleteAuditRuleResponse.cpp
   src/v20170320/model/IsolateDBInstanceRequest.cpp
@@ -883,6 +886,7 @@ set(cdb_src
   src/v20170320/model/DescribeBackupSummariesRequest.cpp
   src/v20170320/model/AnalyzeAuditLogsResponse.cpp
   src/v20170320/model/CreateDBInstanceResponse.cpp
+  src/v20170320/model/ModifyRoGroupVipVportRequest.cpp
   src/v20170320/model/OpenAuditServiceRequest.cpp
   src/v20170320/model/DescribeDBInstanceCharsetResponse.cpp
   src/v20170320/model/DescribeDBFeaturesRequest.cpp

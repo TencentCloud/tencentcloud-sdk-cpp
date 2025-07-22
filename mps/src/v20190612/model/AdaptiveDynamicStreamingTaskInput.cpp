@@ -29,7 +29,8 @@ AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_segmentObjectNameHasBeenSet(false),
     m_addOnSubtitlesHasBeenSet(false),
     m_drmInfoHasBeenSet(false),
-    m_definitionTypeHasBeenSet(false)
+    m_definitionTypeHasBeenSet(false),
+    m_subtitleTemplateHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,23 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
         m_definitionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleTemplate") && !value["SubtitleTemplate"].IsNull())
+    {
+        if (!value["SubtitleTemplate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.SubtitleTemplate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subtitleTemplate.Deserialize(value["SubtitleTemplate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subtitleTemplateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -255,6 +273,15 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
         string key = "DefinitionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_definitionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subtitleTemplate.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -402,5 +429,21 @@ void AdaptiveDynamicStreamingTaskInput::SetDefinitionType(const string& _definit
 bool AdaptiveDynamicStreamingTaskInput::DefinitionTypeHasBeenSet() const
 {
     return m_definitionTypeHasBeenSet;
+}
+
+SubtitleTemplate AdaptiveDynamicStreamingTaskInput::GetSubtitleTemplate() const
+{
+    return m_subtitleTemplate;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate)
+{
+    m_subtitleTemplate = _subtitleTemplate;
+    m_subtitleTemplateHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::SubtitleTemplateHasBeenSet() const
+{
+    return m_subtitleTemplateHasBeenSet;
 }
 

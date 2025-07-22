@@ -6318,6 +6318,49 @@ CynosdbClient::RenewClustersOutcomeCallable CynosdbClient::RenewClustersCallable
     return task->get_future();
 }
 
+CynosdbClient::ReplayInstanceAuditLogOutcome CynosdbClient::ReplayInstanceAuditLog(const ReplayInstanceAuditLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplayInstanceAuditLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplayInstanceAuditLogResponse rsp = ReplayInstanceAuditLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplayInstanceAuditLogOutcome(rsp);
+        else
+            return ReplayInstanceAuditLogOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplayInstanceAuditLogOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ReplayInstanceAuditLogAsync(const ReplayInstanceAuditLogRequest& request, const ReplayInstanceAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplayInstanceAuditLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ReplayInstanceAuditLogOutcomeCallable CynosdbClient::ReplayInstanceAuditLogCallable(const ReplayInstanceAuditLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplayInstanceAuditLogOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplayInstanceAuditLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ResetAccountPasswordOutcome CynosdbClient::ResetAccountPassword(const ResetAccountPasswordRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetAccountPassword");

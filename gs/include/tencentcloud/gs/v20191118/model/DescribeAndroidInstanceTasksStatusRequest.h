@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取时间范围限制，以天数为单位
+                     * @return RecentDays 时间范围限制，以天数为单位
+                     * 
+                     */
+                    int64_t GetRecentDays() const;
+
+                    /**
+                     * 设置时间范围限制，以天数为单位
+                     * @param _recentDays 时间范围限制，以天数为单位
+                     * 
+                     */
+                    void SetRecentDays(const int64_t& _recentDays);
+
+                    /**
+                     * 判断参数 RecentDays 是否已赋值
+                     * @return RecentDays 是否已赋值
+                     * 
+                     */
+                    bool RecentDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 时间范围限制，以天数为单位
+                     */
+                    int64_t m_recentDays;
+                    bool m_recentDaysHasBeenSet;
 
                 };
             }

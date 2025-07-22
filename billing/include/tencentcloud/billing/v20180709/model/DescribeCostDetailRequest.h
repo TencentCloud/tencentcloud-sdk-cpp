@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool MonthHasBeenSet() const;
 
                     /**
-                     * 获取查询指定产品信息（暂时未开放获取）
-                     * @return ProductCode 查询指定产品信息（暂时未开放获取）
+                     * 获取查询指定产品信息
+                     * @return ProductCode 查询指定产品信息
                      * 
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置查询指定产品信息（暂时未开放获取）
-                     * @param _productCode 查询指定产品信息（暂时未开放获取）
+                     * 设置查询指定产品信息
+                     * @param _productCode 查询指定产品信息
                      * 
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -275,7 +275,7 @@ namespace TencentCloud
                     bool m_monthHasBeenSet;
 
                     /**
-                     * 查询指定产品信息（暂时未开放获取）
+                     * 查询指定产品信息
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;

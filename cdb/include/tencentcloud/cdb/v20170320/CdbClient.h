@@ -311,6 +311,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyRemoteBackupConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyRoGroupInfoRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyRoGroupInfoResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyRoGroupVipVportRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyRoGroupVipVportResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyTimeWindowRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyTimeWindowResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesRequest.h>
@@ -815,6 +817,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRoGroupInfoResponse> ModifyRoGroupInfoOutcome;
                 typedef std::future<ModifyRoGroupInfoOutcome> ModifyRoGroupInfoOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyRoGroupInfoRequest&, ModifyRoGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoGroupInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoGroupVipVportResponse> ModifyRoGroupVipVportOutcome;
+                typedef std::future<ModifyRoGroupVipVportOutcome> ModifyRoGroupVipVportOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyRoGroupVipVportRequest&, ModifyRoGroupVipVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoGroupVipVportAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTimeWindowResponse> ModifyTimeWindowOutcome;
                 typedef std::future<ModifyTimeWindowOutcome> ModifyTimeWindowOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyTimeWindowRequest&, ModifyTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTimeWindowAsyncHandler;
@@ -2237,6 +2242,15 @@ namespace TencentCloud
                 ModifyRoGroupInfoOutcome ModifyRoGroupInfo(const Model::ModifyRoGroupInfoRequest &request);
                 void ModifyRoGroupInfoAsync(const Model::ModifyRoGroupInfoRequest& request, const ModifyRoGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRoGroupInfoOutcomeCallable ModifyRoGroupInfoCallable(const Model::ModifyRoGroupInfoRequest& request);
+
+                /**
+                 *该接口（ModifyRoGroupVipVport）用于修改Ro组的vip和vport。
+                 * @param req ModifyRoGroupVipVportRequest
+                 * @return ModifyRoGroupVipVportOutcome
+                 */
+                ModifyRoGroupVipVportOutcome ModifyRoGroupVipVport(const Model::ModifyRoGroupVipVportRequest &request);
+                void ModifyRoGroupVipVportAsync(const Model::ModifyRoGroupVipVportRequest& request, const ModifyRoGroupVipVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoGroupVipVportOutcomeCallable ModifyRoGroupVipVportCallable(const Model::ModifyRoGroupVipVportRequest& request);
 
                 /**
                  *本接口(ModifyTimeWindow)用于更新云数据库实例的维护时间窗口。

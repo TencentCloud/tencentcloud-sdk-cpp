@@ -26,7 +26,8 @@ DescribeAndroidInstanceTasksStatusRequest::DescribeAndroidInstanceTasksStatusReq
     m_taskIdsHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_recentDaysHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string DescribeAndroidInstanceTasksStatusRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_recentDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecentDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_recentDays, allocator);
     }
 
 
@@ -151,6 +160,22 @@ void DescribeAndroidInstanceTasksStatusRequest::SetLimit(const uint64_t& _limit)
 bool DescribeAndroidInstanceTasksStatusRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t DescribeAndroidInstanceTasksStatusRequest::GetRecentDays() const
+{
+    return m_recentDays;
+}
+
+void DescribeAndroidInstanceTasksStatusRequest::SetRecentDays(const int64_t& _recentDays)
+{
+    m_recentDays = _recentDays;
+    m_recentDaysHasBeenSet = true;
+}
+
+bool DescribeAndroidInstanceTasksStatusRequest::RecentDaysHasBeenSet() const
+{
+    return m_recentDaysHasBeenSet;
 }
 
 

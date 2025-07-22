@@ -3050,6 +3050,49 @@ TeoClient::DescribeDDoSAttackTopDataOutcomeCallable TeoClient::DescribeDDoSAttac
     return task->get_future();
 }
 
+TeoClient::DescribeDDoSProtectionOutcome TeoClient::DescribeDDoSProtection(const DescribeDDoSProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDDoSProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDDoSProtectionResponse rsp = DescribeDDoSProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDDoSProtectionOutcome(rsp);
+        else
+            return DescribeDDoSProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDDoSProtectionOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeDDoSProtectionAsync(const DescribeDDoSProtectionRequest& request, const DescribeDDoSProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDDoSProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeDDoSProtectionOutcomeCallable TeoClient::DescribeDDoSProtectionCallable(const DescribeDDoSProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDDoSProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDDoSProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeDefaultCertificatesOutcome TeoClient::DescribeDefaultCertificates(const DescribeDefaultCertificatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDefaultCertificates");
@@ -5838,6 +5881,49 @@ TeoClient::ModifyCustomErrorPageOutcomeCallable TeoClient::ModifyCustomErrorPage
         [this, request]()
         {
             return this->ModifyCustomErrorPage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyDDoSProtectionOutcome TeoClient::ModifyDDoSProtection(const ModifyDDoSProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDDoSProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDDoSProtectionResponse rsp = ModifyDDoSProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDDoSProtectionOutcome(rsp);
+        else
+            return ModifyDDoSProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDDoSProtectionOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyDDoSProtectionAsync(const ModifyDDoSProtectionRequest& request, const ModifyDDoSProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDDoSProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyDDoSProtectionOutcomeCallable TeoClient::ModifyDDoSProtectionCallable(const ModifyDDoSProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDDoSProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDDoSProtection(request);
         }
     );
 

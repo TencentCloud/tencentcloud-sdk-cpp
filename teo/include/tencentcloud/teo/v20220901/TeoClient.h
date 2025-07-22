@@ -163,6 +163,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackTopDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackTopDataResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeDDoSProtectionRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeDDoSProtectionResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDeployHistoryRequest.h>
@@ -293,6 +295,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyContentIdentifierResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyCustomErrorPageRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyCustomErrorPageResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyDDoSProtectionRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyDDoSProtectionResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsStatusRequest.h>
@@ -581,6 +585,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDDoSAttackTopDataResponse> DescribeDDoSAttackTopDataOutcome;
                 typedef std::future<DescribeDDoSAttackTopDataOutcome> DescribeDDoSAttackTopDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDDoSAttackTopDataRequest&, DescribeDDoSAttackTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSAttackTopDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDDoSProtectionResponse> DescribeDDoSProtectionOutcome;
+                typedef std::future<DescribeDDoSProtectionOutcome> DescribeDDoSProtectionOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeDDoSProtectionRequest&, DescribeDDoSProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDefaultCertificatesResponse> DescribeDefaultCertificatesOutcome;
                 typedef std::future<DescribeDefaultCertificatesOutcome> DescribeDefaultCertificatesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDefaultCertificatesRequest&, DescribeDefaultCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultCertificatesAsyncHandler;
@@ -776,6 +783,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCustomErrorPageResponse> ModifyCustomErrorPageOutcome;
                 typedef std::future<ModifyCustomErrorPageOutcome> ModifyCustomErrorPageOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyCustomErrorPageRequest&, ModifyCustomErrorPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomErrorPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDDoSProtectionResponse> ModifyDDoSProtectionOutcome;
+                typedef std::future<ModifyDDoSProtectionOutcome> ModifyDDoSProtectionOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyDDoSProtectionRequest&, ModifyDDoSProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDDoSProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDnsRecordsResponse> ModifyDnsRecordsOutcome;
                 typedef std::future<ModifyDnsRecordsOutcome> ModifyDnsRecordsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyDnsRecordsRequest&, ModifyDnsRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDnsRecordsAsyncHandler;
@@ -1521,6 +1531,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeDDoSAttackTopDataOutcomeCallable DescribeDDoSAttackTopDataCallable(const Model::DescribeDDoSAttackTopDataRequest& request);
 
                 /**
+                 *获取站点的独立 DDoS 防护信息。
+                 * @param req DescribeDDoSProtectionRequest
+                 * @return DescribeDDoSProtectionOutcome
+                 */
+                DescribeDDoSProtectionOutcome DescribeDDoSProtection(const Model::DescribeDDoSProtectionRequest &request);
+                void DescribeDDoSProtectionAsync(const Model::DescribeDDoSProtectionRequest& request, const DescribeDDoSProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDDoSProtectionOutcomeCallable DescribeDDoSProtectionCallable(const Model::DescribeDDoSProtectionRequest& request);
+
+                /**
                  *查询默认证书列表
                  * @param req DescribeDefaultCertificatesRequest
                  * @return DescribeDefaultCertificatesOutcome
@@ -2128,6 +2147,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyCustomErrorPageOutcome ModifyCustomErrorPage(const Model::ModifyCustomErrorPageRequest &request);
                 void ModifyCustomErrorPageAsync(const Model::ModifyCustomErrorPageRequest& request, const ModifyCustomErrorPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCustomErrorPageOutcomeCallable ModifyCustomErrorPageCallable(const Model::ModifyCustomErrorPageRequest& request);
+
+                /**
+                 *修改站点的独立 DDoS 防护。
+                 * @param req ModifyDDoSProtectionRequest
+                 * @return ModifyDDoSProtectionOutcome
+                 */
+                ModifyDDoSProtectionOutcome ModifyDDoSProtection(const Model::ModifyDDoSProtectionRequest &request);
+                void ModifyDDoSProtectionAsync(const Model::ModifyDDoSProtectionRequest& request, const ModifyDDoSProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDDoSProtectionOutcomeCallable ModifyDDoSProtectionCallable(const Model::ModifyDDoSProtectionRequest& request);
 
                 /**
                  *您可以通过本接口批量修改 DNS 记录。

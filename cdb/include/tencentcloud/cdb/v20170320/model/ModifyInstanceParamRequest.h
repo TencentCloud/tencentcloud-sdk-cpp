@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例短 ID 列表。
-                     * @return InstanceIds 实例短 ID 列表。
+                     * 获取实例 ID 列表。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceIds 实例 ID 列表。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例短 ID 列表。
-                     * @param _instanceIds 实例短 ID 列表。
+                     * 设置实例 ID 列表。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceIds 实例 ID 列表。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ParamListHasBeenSet() const;
 
                     /**
-                     * 获取模板id，ParamList和TemplateId必须至少传其中之一
-                     * @return TemplateId 模板id，ParamList和TemplateId必须至少传其中之一
+                     * 获取模板 ID，ParamList 和 TemplateId 必须至少传其中之一。可通过 [DescribeParamTemplateInfo](https://cloud.tencent.com/document/product/236/32660) 接口获取。
+                     * @return TemplateId 模板 ID，ParamList 和 TemplateId 必须至少传其中之一。可通过 [DescribeParamTemplateInfo](https://cloud.tencent.com/document/product/236/32660) 接口获取。
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模板id，ParamList和TemplateId必须至少传其中之一
-                     * @param _templateId 模板id，ParamList和TemplateId必须至少传其中之一
+                     * 设置模板 ID，ParamList 和 TemplateId 必须至少传其中之一。可通过 [DescribeParamTemplateInfo](https://cloud.tencent.com/document/product/236/32660) 接口获取。
+                     * @param _templateId 模板 ID，ParamList 和 TemplateId 必须至少传其中之一。可通过 [DescribeParamTemplateInfo](https://cloud.tencent.com/document/product/236/32660) 接口获取。
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -172,7 +172,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例短 ID 列表。
+                     * 实例 ID 列表。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_paramListHasBeenSet;
 
                     /**
-                     * 模板id，ParamList和TemplateId必须至少传其中之一
+                     * 模板 ID，ParamList 和 TemplateId 必须至少传其中之一。可通过 [DescribeParamTemplateInfo](https://cloud.tencent.com/document/product/236/32660) 接口获取。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

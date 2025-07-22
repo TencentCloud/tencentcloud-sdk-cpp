@@ -6232,6 +6232,49 @@ CdbClient::ModifyRoGroupInfoOutcomeCallable CdbClient::ModifyRoGroupInfoCallable
     return task->get_future();
 }
 
+CdbClient::ModifyRoGroupVipVportOutcome CdbClient::ModifyRoGroupVipVport(const ModifyRoGroupVipVportRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoGroupVipVport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoGroupVipVportResponse rsp = ModifyRoGroupVipVportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoGroupVipVportOutcome(rsp);
+        else
+            return ModifyRoGroupVipVportOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoGroupVipVportOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyRoGroupVipVportAsync(const ModifyRoGroupVipVportRequest& request, const ModifyRoGroupVipVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRoGroupVipVport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyRoGroupVipVportOutcomeCallable CdbClient::ModifyRoGroupVipVportCallable(const ModifyRoGroupVipVportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoGroupVipVportOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRoGroupVipVport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ModifyTimeWindowOutcome CdbClient::ModifyTimeWindow(const ModifyTimeWindowRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTimeWindow");

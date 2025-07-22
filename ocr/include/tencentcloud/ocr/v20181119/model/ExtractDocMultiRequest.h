@@ -329,6 +329,31 @@ HongKongUtilityBill -- 香港水电煤单识别模板
                      */
                     bool ConfigAdvancedHasBeenSet() const;
 
+                    /**
+                     * 获取cn时，添加的key为中文  
+en时，添加的key为英语
+                     * @return OutputLanguage cn时，添加的key为中文  
+en时，添加的key为英语
+                     * 
+                     */
+                    std::string GetOutputLanguage() const;
+
+                    /**
+                     * 设置cn时，添加的key为中文  
+en时，添加的key为英语
+                     * @param _outputLanguage cn时，添加的key为中文  
+en时，添加的key为英语
+                     * 
+                     */
+                    void SetOutputLanguage(const std::string& _outputLanguage);
+
+                    /**
+                     * 判断参数 OutputLanguage 是否已赋值
+                     * @return OutputLanguage 是否已赋值
+                     * 
+                     */
+                    bool OutputLanguageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -409,6 +434,13 @@ HongKongUtilityBill -- 香港水电煤单识别模板
                      */
                     ConfigAdvanced m_configAdvanced;
                     bool m_configAdvancedHasBeenSet;
+
+                    /**
+                     * cn时，添加的key为中文  
+en时，添加的key为英语
+                     */
+                    std::string m_outputLanguage;
+                    bool m_outputLanguageHasBeenSet;
 
                 };
             }
