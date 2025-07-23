@@ -95,21 +95,21 @@ namespace TencentCloud
                     /**
                      * 获取现病史
                      * @return DiseasePresent 现病史
-                     * 
+                     * @deprecated
                      */
                     std::string GetDiseasePresent() const;
 
                     /**
                      * 设置现病史
                      * @param _diseasePresent 现病史
-                     * 
+                     * @deprecated
                      */
                     void SetDiseasePresent(const std::string& _diseasePresent);
 
                     /**
                      * 判断参数 DiseasePresent 是否已赋值
                      * @return DiseasePresent 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DiseasePresentHasBeenSet() const;
 

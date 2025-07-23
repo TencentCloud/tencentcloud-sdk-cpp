@@ -22,11 +22,13 @@ using namespace std;
 
 SwitchInfo::SwitchInfo() :
     m_enableHasBeenSet(false),
+    m_errorMsgHasBeenSet(false),
     m_logsetIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_topicIdHasBeenSet(false),
-    m_versionHasBeenSet(false),
+    m_topicRegionHasBeenSet(false),
     m_upgradeAbleHasBeenSet(false),
-    m_topicRegionHasBeenSet(false)
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,16 @@ CoreInternalOutcome SwitchInfo::Deserialize(const rapidjson::Value &value)
         m_enableHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorMsg") && !value["ErrorMsg"].IsNull())
+    {
+        if (!value["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SwitchInfo.ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(value["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
     if (value.HasMember("LogsetId") && !value["LogsetId"].IsNull())
     {
         if (!value["LogsetId"].IsString())
@@ -53,6 +65,16 @@ CoreInternalOutcome SwitchInfo::Deserialize(const rapidjson::Value &value)
         }
         m_logsetId = string(value["LogsetId"].GetString());
         m_logsetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SwitchInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
     }
 
     if (value.HasMember("TopicId") && !value["TopicId"].IsNull())
@@ -65,14 +87,14 @@ CoreInternalOutcome SwitchInfo::Deserialize(const rapidjson::Value &value)
         m_topicIdHasBeenSet = true;
     }
 
-    if (value.HasMember("Version") && !value["Version"].IsNull())
+    if (value.HasMember("TopicRegion") && !value["TopicRegion"].IsNull())
     {
-        if (!value["Version"].IsString())
+        if (!value["TopicRegion"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `SwitchInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchInfo.TopicRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_version = string(value["Version"].GetString());
-        m_versionHasBeenSet = true;
+        m_topicRegion = string(value["TopicRegion"].GetString());
+        m_topicRegionHasBeenSet = true;
     }
 
     if (value.HasMember("UpgradeAble") && !value["UpgradeAble"].IsNull())
@@ -85,14 +107,14 @@ CoreInternalOutcome SwitchInfo::Deserialize(const rapidjson::Value &value)
         m_upgradeAbleHasBeenSet = true;
     }
 
-    if (value.HasMember("TopicRegion") && !value["TopicRegion"].IsNull())
+    if (value.HasMember("Version") && !value["Version"].IsNull())
     {
-        if (!value["TopicRegion"].IsString())
+        if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `SwitchInfo.TopicRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_topicRegion = string(value["TopicRegion"].GetString());
-        m_topicRegionHasBeenSet = true;
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
     }
 
 
@@ -110,12 +132,28 @@ void SwitchInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_enable, allocator);
     }
 
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_logsetIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogsetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logsetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topicIdHasBeenSet)
@@ -126,12 +164,12 @@ void SwitchInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_versionHasBeenSet)
+    if (m_topicRegionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Version";
+        string key = "TopicRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_upgradeAbleHasBeenSet)
@@ -142,12 +180,12 @@ void SwitchInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_upgradeAble, allocator);
     }
 
-    if (m_topicRegionHasBeenSet)
+    if (m_versionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TopicRegion";
+        string key = "Version";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_topicRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -169,6 +207,22 @@ bool SwitchInfo::EnableHasBeenSet() const
     return m_enableHasBeenSet;
 }
 
+string SwitchInfo::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+void SwitchInfo::SetErrorMsg(const string& _errorMsg)
+{
+    m_errorMsg = _errorMsg;
+    m_errorMsgHasBeenSet = true;
+}
+
+bool SwitchInfo::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
+}
+
 string SwitchInfo::GetLogsetId() const
 {
     return m_logsetId;
@@ -183,6 +237,22 @@ void SwitchInfo::SetLogsetId(const string& _logsetId)
 bool SwitchInfo::LogsetIdHasBeenSet() const
 {
     return m_logsetIdHasBeenSet;
+}
+
+string SwitchInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void SwitchInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool SwitchInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 string SwitchInfo::GetTopicId() const
@@ -201,20 +271,20 @@ bool SwitchInfo::TopicIdHasBeenSet() const
     return m_topicIdHasBeenSet;
 }
 
-string SwitchInfo::GetVersion() const
+string SwitchInfo::GetTopicRegion() const
 {
-    return m_version;
+    return m_topicRegion;
 }
 
-void SwitchInfo::SetVersion(const string& _version)
+void SwitchInfo::SetTopicRegion(const string& _topicRegion)
 {
-    m_version = _version;
-    m_versionHasBeenSet = true;
+    m_topicRegion = _topicRegion;
+    m_topicRegionHasBeenSet = true;
 }
 
-bool SwitchInfo::VersionHasBeenSet() const
+bool SwitchInfo::TopicRegionHasBeenSet() const
 {
-    return m_versionHasBeenSet;
+    return m_topicRegionHasBeenSet;
 }
 
 bool SwitchInfo::GetUpgradeAble() const
@@ -233,19 +303,19 @@ bool SwitchInfo::UpgradeAbleHasBeenSet() const
     return m_upgradeAbleHasBeenSet;
 }
 
-string SwitchInfo::GetTopicRegion() const
+string SwitchInfo::GetVersion() const
 {
-    return m_topicRegion;
+    return m_version;
 }
 
-void SwitchInfo::SetTopicRegion(const string& _topicRegion)
+void SwitchInfo::SetVersion(const string& _version)
 {
-    m_topicRegion = _topicRegion;
-    m_topicRegionHasBeenSet = true;
+    m_version = _version;
+    m_versionHasBeenSet = true;
 }
 
-bool SwitchInfo::TopicRegionHasBeenSet() const
+bool SwitchInfo::VersionHasBeenSet() const
 {
-    return m_topicRegionHasBeenSet;
+    return m_versionHasBeenSet;
 }
 

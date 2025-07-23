@@ -21,8 +21,8 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 Switch::Switch() :
-    m_clusterIdHasBeenSet(false),
     m_auditHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_eventHasBeenSet(false),
     m_logHasBeenSet(false),
     m_masterLogHasBeenSet(false)
@@ -33,16 +33,6 @@ CoreInternalOutcome Switch::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
-    {
-        if (!value["ClusterId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Switch.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_clusterId = string(value["ClusterId"].GetString());
-        m_clusterIdHasBeenSet = true;
-    }
 
     if (value.HasMember("Audit") && !value["Audit"].IsNull())
     {
@@ -59,6 +49,16 @@ CoreInternalOutcome Switch::Deserialize(const rapidjson::Value &value)
         }
 
         m_auditHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Switch.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
     }
 
     if (value.HasMember("Event") && !value["Event"].IsNull())
@@ -119,14 +119,6 @@ CoreInternalOutcome Switch::Deserialize(const rapidjson::Value &value)
 void Switch::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_clusterIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_auditHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -134,6 +126,14 @@ void Switch::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_audit.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eventHasBeenSet)
@@ -166,22 +166,6 @@ void Switch::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
 }
 
 
-string Switch::GetClusterId() const
-{
-    return m_clusterId;
-}
-
-void Switch::SetClusterId(const string& _clusterId)
-{
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
-}
-
-bool Switch::ClusterIdHasBeenSet() const
-{
-    return m_clusterIdHasBeenSet;
-}
-
 SwitchInfo Switch::GetAudit() const
 {
     return m_audit;
@@ -196,6 +180,22 @@ void Switch::SetAudit(const SwitchInfo& _audit)
 bool Switch::AuditHasBeenSet() const
 {
     return m_auditHasBeenSet;
+}
+
+string Switch::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void Switch::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool Switch::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 SwitchInfo Switch::GetEvent() const

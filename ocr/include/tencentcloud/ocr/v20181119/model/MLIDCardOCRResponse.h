@@ -100,16 +100,8 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取告警码
--9103	证照翻拍告警
--9102	证照复印件告警
--9106       证件遮挡告警
--9107       模糊图片告警
-                     * @return Warn 告警码
--9103	证照翻拍告警
--9102	证照复印件告警
--9106       证件遮挡告警
--9107       模糊图片告警
+                     * 获取该字段已废弃， 将固定返回空数组，不建议使用。
+                     * @return Warn 该字段已废弃， 将固定返回空数组，不建议使用。
                      * @deprecated
                      */
                     std::vector<int64_t> GetWarn() const;
@@ -136,28 +128,16 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取此字段为扩展字段。
-返回字段识别结果的置信度，格式如下
-{
-  字段名:{
-    Confidence:0.9999
-  }
-}
-                     * @return AdvancedInfo 此字段为扩展字段。
-返回字段识别结果的置信度，格式如下
-{
-  字段名:{
-    Confidence:0.9999
-  }
-}
-                     * 
+                     * 获取该字段已废弃， 将固定返回"1"，不建议使用。
+                     * @return AdvancedInfo 该字段已废弃， 将固定返回"1"，不建议使用。
+                     * @deprecated
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
                      * 判断参数 AdvancedInfo 是否已赋值
                      * @return AdvancedInfo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
@@ -272,11 +252,7 @@ MyKid 儿童卡
                     bool m_sexHasBeenSet;
 
                     /**
-                     * 告警码
--9103	证照翻拍告警
--9102	证照复印件告警
--9106       证件遮挡告警
--9107       模糊图片告警
+                     * 该字段已废弃， 将固定返回空数组，不建议使用。
                      */
                     std::vector<int64_t> m_warn;
                     bool m_warnHasBeenSet;
@@ -288,13 +264,7 @@ MyKid 儿童卡
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 此字段为扩展字段。
-返回字段识别结果的置信度，格式如下
-{
-  字段名:{
-    Confidence:0.9999
-  }
-}
+                     * 该字段已废弃， 将固定返回"1"，不建议使用。
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;

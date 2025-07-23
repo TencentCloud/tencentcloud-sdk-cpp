@@ -280,32 +280,16 @@ namespace TencentCloud
                     bool WarnCardInfosHasBeenSet() const;
 
                     /**
-                     * 获取字段置信度：
-{
-    "ID": {
-        "Confidence": 0.9999
-    },
-    "ThaiName": {
-        "Confidence": 0.9996
-    }
-}
-                     * @return AdvancedInfo 字段置信度：
-{
-    "ID": {
-        "Confidence": 0.9999
-    },
-    "ThaiName": {
-        "Confidence": 0.9996
-    }
-}
-                     * 
+                     * 获取该字段已废弃， 将固定返回"1"，不建议使用。 
+                     * @return AdvancedInfo 该字段已废弃， 将固定返回"1"，不建议使用。 
+                     * @deprecated
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
                      * 判断参数 AdvancedInfo 是否已赋值
                      * @return AdvancedInfo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
@@ -414,15 +398,7 @@ namespace TencentCloud
                     bool m_warnCardInfosHasBeenSet;
 
                     /**
-                     * 字段置信度：
-{
-    "ID": {
-        "Confidence": 0.9999
-    },
-    "ThaiName": {
-        "Confidence": 0.9996
-    }
-}
+                     * 该字段已废弃， 将固定返回"1"，不建议使用。 
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;

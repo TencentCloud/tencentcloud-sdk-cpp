@@ -195,21 +195,21 @@ namespace TencentCloud
                     /**
                      * 获取废弃，用TagItems
                      * @return Tags 废弃，用TagItems
-                     * 
+                     * @deprecated
                      */
                     Tag GetTags() const;
 
                     /**
                      * 设置废弃，用TagItems
                      * @param _tags 废弃，用TagItems
-                     * 
+                     * @deprecated
                      */
                     void SetTags(const Tag& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TagsHasBeenSet() const;
 

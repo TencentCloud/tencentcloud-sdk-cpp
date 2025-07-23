@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool TransfusionHistoryHasBeenSet() const;
 
+                    /**
+                     * 获取现病史
+                     * @return DiseasePresent 现病史
+                     * 
+                     */
+                    std::string GetDiseasePresent() const;
+
+                    /**
+                     * 设置现病史
+                     * @param _diseasePresent 现病史
+                     * 
+                     */
+                    void SetDiseasePresent(const std::string& _diseasePresent);
+
+                    /**
+                     * 判断参数 DiseasePresent 是否已赋值
+                     * @return DiseasePresent 是否已赋值
+                     * 
+                     */
+                    bool DiseasePresentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     std::string m_transfusionHistory;
                     bool m_transfusionHistoryHasBeenSet;
+
+                    /**
+                     * 现病史
+                     */
+                    std::string m_diseasePresent;
+                    bool m_diseasePresentHasBeenSet;
 
                 };
             }

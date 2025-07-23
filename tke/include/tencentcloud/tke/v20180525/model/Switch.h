@@ -48,27 +48,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
-                     * 
-                     */
-                    std::string GetClusterId() const;
-
-                    /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
-                     * 
-                     */
-                    void SetClusterId(const std::string& _clusterId);
-
-                    /**
-                     * 判断参数 ClusterId 是否已赋值
-                     * @return ClusterId 是否已赋值
-                     * 
-                     */
-                    bool ClusterIdHasBeenSet() const;
-
-                    /**
                      * 获取审计开关的详细信息
                      * @return Audit 审计开关的详细信息
                      * 
@@ -88,6 +67,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AuditHasBeenSet() const;
+
+                    /**
+                     * 获取集群ID
+                     * @return ClusterId 集群ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群ID
+                     * @param _clusterId 集群ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取事件开关的详细信息
@@ -155,16 +155,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
-                     */
-                    std::string m_clusterId;
-                    bool m_clusterIdHasBeenSet;
-
-                    /**
                      * 审计开关的详细信息
                      */
                     SwitchInfo m_audit;
                     bool m_auditHasBeenSet;
+
+                    /**
+                     * 集群ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * 事件开关的详细信息

@@ -25,7 +25,8 @@ DiseaseMedicalHistory::DiseaseMedicalHistory() :
     m_allergyHistoryHasBeenSet(false),
     m_infectHistoryHasBeenSet(false),
     m_operationHistoryHasBeenSet(false),
-    m_transfusionHistoryHasBeenSet(false)
+    m_transfusionHistoryHasBeenSet(false),
+    m_diseasePresentHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome DiseaseMedicalHistory::Deserialize(const rapidjson::Value &v
         m_transfusionHistoryHasBeenSet = true;
     }
 
+    if (value.HasMember("DiseasePresent") && !value["DiseasePresent"].IsNull())
+    {
+        if (!value["DiseasePresent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DiseaseMedicalHistory.DiseasePresent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diseasePresent = string(value["DiseasePresent"].GetString());
+        m_diseasePresentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void DiseaseMedicalHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "TransfusionHistory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_transfusionHistory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diseasePresentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiseasePresent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diseasePresent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void DiseaseMedicalHistory::SetTransfusionHistory(const string& _transfusionHist
 bool DiseaseMedicalHistory::TransfusionHistoryHasBeenSet() const
 {
     return m_transfusionHistoryHasBeenSet;
+}
+
+string DiseaseMedicalHistory::GetDiseasePresent() const
+{
+    return m_diseasePresent;
+}
+
+void DiseaseMedicalHistory::SetDiseasePresent(const string& _diseasePresent)
+{
+    m_diseasePresent = _diseasePresent;
+    m_diseasePresentHasBeenSet = true;
+}
+
+bool DiseaseMedicalHistory::DiseasePresentHasBeenSet() const
+{
+    return m_diseasePresentHasBeenSet;
 }
 
