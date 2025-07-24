@@ -29,6 +29,7 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DisplayAsset.h
   include/tencentcloud/ctem/v20231128/model/DescribeWechatAppletsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeCustomersRequest.h
+  include/tencentcloud/ctem/v20231128/model/ModifyLabelRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayLeakageData.h
   include/tencentcloud/ctem/v20231128/model/DescribeFakeWebsitesResponse.h
   include/tencentcloud/ctem/v20231128/model/DisplayWechatOfficialAccount.h
@@ -59,6 +60,7 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DisplayEnterprise.h
   include/tencentcloud/ctem/v20231128/model/StopJobRecordRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplaySensitiveInfo.h
+  include/tencentcloud/ctem/v20231128/model/ModifyLabelResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeEnterprisesRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeLeakageCodesRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayFakeMiniProgram.h
@@ -129,6 +131,7 @@ set(ctem_src
   src/v20231128/model/DisplayAsset.cpp
   src/v20231128/model/DescribeWechatAppletsResponse.cpp
   src/v20231128/model/DescribeCustomersRequest.cpp
+  src/v20231128/model/ModifyLabelRequest.cpp
   src/v20231128/model/DisplayLeakageData.cpp
   src/v20231128/model/DescribeFakeWebsitesResponse.cpp
   src/v20231128/model/DisplayWechatOfficialAccount.cpp
@@ -159,6 +162,7 @@ set(ctem_src
   src/v20231128/model/DisplayEnterprise.cpp
   src/v20231128/model/StopJobRecordRequest.cpp
   src/v20231128/model/DisplaySensitiveInfo.cpp
+  src/v20231128/model/ModifyLabelResponse.cpp
   src/v20231128/model/DescribeEnterprisesRequest.cpp
   src/v20231128/model/DescribeLeakageCodesRequest.cpp
   src/v20231128/model/DisplayFakeMiniProgram.cpp

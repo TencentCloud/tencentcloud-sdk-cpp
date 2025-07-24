@@ -90,6 +90,27 @@ namespace TencentCloud
                     bool CommandIdHasBeenSet() const;
 
                     /**
+                     * 获取执行的命令的名称
+                     * @return CommandName 执行的命令的名称
+                     * 
+                     */
+                    std::string GetCommandName() const;
+
+                    /**
+                     * 设置执行的命令的名称
+                     * @param _commandName 执行的命令的名称
+                     * 
+                     */
+                    void SetCommandName(const std::string& _commandName);
+
+                    /**
+                     * 判断参数 CommandName 是否已赋值
+                     * @return CommandName 是否已赋值
+                     * 
+                     */
+                    bool CommandNameHasBeenSet() const;
+
+                    /**
                      * 获取执行任务状态。取值范围：
 
 - PENDING：等待下发
@@ -532,6 +553,12 @@ namespace TencentCloud
                      */
                     std::string m_commandId;
                     bool m_commandIdHasBeenSet;
+
+                    /**
+                     * 执行的命令的名称
+                     */
+                    std::string m_commandName;
+                    bool m_commandNameHasBeenSet;
 
                     /**
                      * 执行任务状态。取值范围：

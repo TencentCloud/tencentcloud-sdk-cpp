@@ -339,15 +339,15 @@ namespace TencentCloud
                     bool EndPortHasBeenSet() const;
 
                     /**
-                     * 获取解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
-                     * @return DeregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+                     * 获取解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。
+                     * @return DeregisterTargetRst 解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。
                      * 
                      */
                     bool GetDeregisterTargetRst() const;
 
                     /**
-                     * 设置解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
-                     * @param _deregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+                     * 设置解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。
+                     * @param _deregisterTargetRst 解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。
                      * 
                      */
                     void SetDeregisterTargetRst(const bool& _deregisterTargetRst);
@@ -675,7 +675,7 @@ namespace TencentCloud
                     bool m_endPortHasBeenSet;
 
                     /**
-                     * 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+                     * 解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。
                      */
                     bool m_deregisterTargetRst;
                     bool m_deregisterTargetRstHasBeenSet;

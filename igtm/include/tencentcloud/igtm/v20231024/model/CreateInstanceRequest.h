@@ -227,15 +227,15 @@ ULTIMATE：旗舰版
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取套餐资源id，必填
-                     * @return ResourceId 套餐资源id，必填
+                     * 获取套餐资源id
+                     * @return ResourceId 套餐资源id
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置套餐资源id，必填
-                     * @param _resourceId 套餐资源id，必填
+                     * 设置套餐资源id
+                     * @param _resourceId 套餐资源id
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -302,7 +302,7 @@ ULTIMATE：旗舰版
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 套餐资源id，必填
+                     * 套餐资源id
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

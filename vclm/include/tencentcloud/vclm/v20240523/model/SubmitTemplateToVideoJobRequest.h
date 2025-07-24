@@ -164,6 +164,27 @@ namespace TencentCloud
                      */
                     bool LogoParamHasBeenSet() const;
 
+                    /**
+                     * 获取视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。
+                     * @return Resolution 视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。
+                     * 
+                     */
+                    std::string GetResolution() const;
+
+                    /**
+                     * 设置视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。
+                     * @param _resolution 视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。
+                     * 
+                     */
+                    void SetResolution(const std::string& _resolution);
+
+                    /**
+                     * 判断参数 Resolution 是否已赋值
+                     * @return Resolution 是否已赋值
+                     * 
+                     */
+                    bool ResolutionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +219,12 @@ namespace TencentCloud
                      */
                     LogoParam m_logoParam;
                     bool m_logoParamHasBeenSet;
+
+                    /**
+                     * 视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。
+                     */
+                    std::string m_resolution;
+                    bool m_resolutionHasBeenSet;
 
                 };
             }

@@ -85,6 +85,8 @@
 #include <tencentcloud/ctem/v20231128/model/DescribeWechatOfficialAccountsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/ModifyCustomerRequest.h>
 #include <tencentcloud/ctem/v20231128/model/ModifyCustomerResponse.h>
+#include <tencentcloud/ctem/v20231128/model/ModifyLabelRequest.h>
+#include <tencentcloud/ctem/v20231128/model/ModifyLabelResponse.h>
 #include <tencentcloud/ctem/v20231128/model/StopJobRecordRequest.h>
 #include <tencentcloud/ctem/v20231128/model/StopJobRecordResponse.h>
 
@@ -194,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCustomerResponse> ModifyCustomerOutcome;
                 typedef std::future<ModifyCustomerOutcome> ModifyCustomerOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::ModifyCustomerRequest&, ModifyCustomerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLabelResponse> ModifyLabelOutcome;
+                typedef std::future<ModifyLabelOutcome> ModifyLabelOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::ModifyLabelRequest&, ModifyLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLabelAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopJobRecordResponse> StopJobRecordOutcome;
                 typedef std::future<StopJobRecordOutcome> StopJobRecordOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::StopJobRecordRequest&, StopJobRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopJobRecordAsyncHandler;
@@ -478,6 +483,15 @@ namespace TencentCloud
                 ModifyCustomerOutcome ModifyCustomer(const Model::ModifyCustomerRequest &request);
                 void ModifyCustomerAsync(const Model::ModifyCustomerRequest& request, const ModifyCustomerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCustomerOutcomeCallable ModifyCustomerCallable(const Model::ModifyCustomerRequest& request);
+
+                /**
+                 *修改标签
+                 * @param req ModifyLabelRequest
+                 * @return ModifyLabelOutcome
+                 */
+                ModifyLabelOutcome ModifyLabel(const Model::ModifyLabelRequest &request);
+                void ModifyLabelAsync(const Model::ModifyLabelRequest& request, const ModifyLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLabelOutcomeCallable ModifyLabelCallable(const Model::ModifyLabelRequest& request);
 
                 /**
                  *停止扫描

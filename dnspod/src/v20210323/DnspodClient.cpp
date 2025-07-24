@@ -2448,6 +2448,49 @@ DnspodClient::DescribeRecordTypeOutcomeCallable DnspodClient::DescribeRecordType
     return task->get_future();
 }
 
+DnspodClient::DescribeResolveCountOutcome DnspodClient::DescribeResolveCount(const DescribeResolveCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResolveCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResolveCountResponse rsp = DescribeResolveCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResolveCountOutcome(rsp);
+        else
+            return DescribeResolveCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResolveCountOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeResolveCountAsync(const DescribeResolveCountRequest& request, const DescribeResolveCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResolveCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeResolveCountOutcomeCallable DnspodClient::DescribeResolveCountCallable(const DescribeResolveCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResolveCountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResolveCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeSnapshotConfigOutcome DnspodClient::DescribeSnapshotConfig(const DescribeSnapshotConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSnapshotConfig");

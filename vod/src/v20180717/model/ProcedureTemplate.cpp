@@ -27,6 +27,7 @@ ProcedureTemplate::ProcedureTemplate() :
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
+    m_aiRecognitionTaskSetHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
     m_miniProgramPublishTaskHasBeenSet(false),
     m_reviewAudioVideoTaskHasBeenSet(false),
@@ -119,6 +120,26 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
         }
 
         m_aiAnalysisTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("AiRecognitionTaskSet") && !value["AiRecognitionTaskSet"].IsNull())
+    {
+        if (!value["AiRecognitionTaskSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.AiRecognitionTaskSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AiRecognitionTaskSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AiRecognitionTaskInput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_aiRecognitionTaskSet.push_back(item);
+        }
+        m_aiRecognitionTaskSetHasBeenSet = true;
     }
 
     if (value.HasMember("AiRecognitionTask") && !value["AiRecognitionTask"].IsNull())
@@ -248,6 +269,21 @@ void ProcedureTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiAnalysisTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiRecognitionTaskSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiRecognitionTaskSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_aiRecognitionTaskSet.begin(); itr != m_aiRecognitionTaskSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_aiRecognitionTaskHasBeenSet)
@@ -390,6 +426,22 @@ void ProcedureTemplate::SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysis
 bool ProcedureTemplate::AiAnalysisTaskHasBeenSet() const
 {
     return m_aiAnalysisTaskHasBeenSet;
+}
+
+vector<AiRecognitionTaskInput> ProcedureTemplate::GetAiRecognitionTaskSet() const
+{
+    return m_aiRecognitionTaskSet;
+}
+
+void ProcedureTemplate::SetAiRecognitionTaskSet(const vector<AiRecognitionTaskInput>& _aiRecognitionTaskSet)
+{
+    m_aiRecognitionTaskSet = _aiRecognitionTaskSet;
+    m_aiRecognitionTaskSetHasBeenSet = true;
+}
+
+bool ProcedureTemplate::AiRecognitionTaskSetHasBeenSet() const
+{
+    return m_aiRecognitionTaskSetHasBeenSet;
 }
 
 AiRecognitionTaskInput ProcedureTemplate::GetAiRecognitionTask() const

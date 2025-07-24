@@ -1717,6 +1717,49 @@ EssClient::CreateLegalSealQrCodeOutcomeCallable EssClient::CreateLegalSealQrCode
     return task->get_future();
 }
 
+EssClient::CreateMiniAppPrepareFlowOutcome EssClient::CreateMiniAppPrepareFlow(const CreateMiniAppPrepareFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMiniAppPrepareFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMiniAppPrepareFlowResponse rsp = CreateMiniAppPrepareFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMiniAppPrepareFlowOutcome(rsp);
+        else
+            return CreateMiniAppPrepareFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMiniAppPrepareFlowOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateMiniAppPrepareFlowAsync(const CreateMiniAppPrepareFlowRequest& request, const CreateMiniAppPrepareFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMiniAppPrepareFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateMiniAppPrepareFlowOutcomeCallable EssClient::CreateMiniAppPrepareFlowCallable(const CreateMiniAppPrepareFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMiniAppPrepareFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMiniAppPrepareFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateModifyAdminAuthorizationUrlOutcome EssClient::CreateModifyAdminAuthorizationUrl(const CreateModifyAdminAuthorizationUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateModifyAdminAuthorizationUrl");

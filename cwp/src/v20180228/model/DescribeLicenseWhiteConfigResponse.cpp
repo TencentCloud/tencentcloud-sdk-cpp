@@ -26,7 +26,8 @@ using namespace std;
 DescribeLicenseWhiteConfigResponse::DescribeLicenseWhiteConfigResponse() :
     m_flagShipHasBeenSet(false),
     m_professionalHasBeenSet(false),
-    m_prattWhitneyHasBeenSet(false)
+    m_prattWhitneyHasBeenSet(false),
+    m_rASPHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,23 @@ CoreInternalOutcome DescribeLicenseWhiteConfigResponse::Deserialize(const string
         m_prattWhitneyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RASP") && !rsp["RASP"].IsNull())
+    {
+        if (!rsp["RASP"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RASP` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rASP.Deserialize(rsp["RASP"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rASPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -150,6 +168,15 @@ string DescribeLicenseWhiteConfigResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_prattWhitney.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rASPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RASP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rASP.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -192,6 +219,16 @@ VersionWhiteConfig DescribeLicenseWhiteConfigResponse::GetPrattWhitney() const
 bool DescribeLicenseWhiteConfigResponse::PrattWhitneyHasBeenSet() const
 {
     return m_prattWhitneyHasBeenSet;
+}
+
+VersionWhiteConfig DescribeLicenseWhiteConfigResponse::GetRASP() const
+{
+    return m_rASP;
+}
+
+bool DescribeLicenseWhiteConfigResponse::RASPHasBeenSet() const
+{
+    return m_rASPHasBeenSet;
 }
 
 

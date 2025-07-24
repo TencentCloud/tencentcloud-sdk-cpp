@@ -190,6 +190,27 @@ namespace TencentCloud
                      */
                     bool TrackForAllMembersHasBeenSet() const;
 
+                    /**
+                     * 获取任务ID
+                     * @return ExportId 任务ID
+                     * 
+                     */
+                    std::string GetExportId() const;
+
+                    /**
+                     * 设置任务ID
+                     * @param _exportId 任务ID
+                     * 
+                     */
+                    void SetExportId(const std::string& _exportId);
+
+                    /**
+                     * 判断参数 ExportId 是否已赋值
+                     * @return ExportId 是否已赋值
+                     * 
+                     */
+                    bool ExportIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     uint64_t m_trackForAllMembers;
                     bool m_trackForAllMembersHasBeenSet;
+
+                    /**
+                     * 任务ID
+                     */
+                    std::string m_exportId;
+                    bool m_exportIdHasBeenSet;
 
                 };
             }

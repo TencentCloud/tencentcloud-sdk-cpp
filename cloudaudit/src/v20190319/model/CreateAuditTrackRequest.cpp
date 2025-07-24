@@ -29,7 +29,8 @@ CreateAuditTrackRequest::CreateAuditTrackRequest() :
     m_actionTypeHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_eventNamesHasBeenSet(false),
-    m_trackForAllMembersHasBeenSet(false)
+    m_trackForAllMembersHasBeenSet(false),
+    m_exportIdHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,14 @@ string CreateAuditTrackRequest::ToJsonString() const
         string key = "TrackForAllMembers";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_trackForAllMembers, allocator);
+    }
+
+    if (m_exportIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExportId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_exportId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -220,6 +229,22 @@ void CreateAuditTrackRequest::SetTrackForAllMembers(const uint64_t& _trackForAll
 bool CreateAuditTrackRequest::TrackForAllMembersHasBeenSet() const
 {
     return m_trackForAllMembersHasBeenSet;
+}
+
+string CreateAuditTrackRequest::GetExportId() const
+{
+    return m_exportId;
+}
+
+void CreateAuditTrackRequest::SetExportId(const string& _exportId)
+{
+    m_exportId = _exportId;
+    m_exportIdHasBeenSet = true;
+}
+
+bool CreateAuditTrackRequest::ExportIdHasBeenSet() const
+{
+    return m_exportIdHasBeenSet;
 }
 
 

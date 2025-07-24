@@ -1373,6 +1373,49 @@ CtemClient::ModifyCustomerOutcomeCallable CtemClient::ModifyCustomerCallable(con
     return task->get_future();
 }
 
+CtemClient::ModifyLabelOutcome CtemClient::ModifyLabel(const ModifyLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLabelResponse rsp = ModifyLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLabelOutcome(rsp);
+        else
+            return ModifyLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLabelOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::ModifyLabelAsync(const ModifyLabelRequest& request, const ModifyLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLabel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::ModifyLabelOutcomeCallable CtemClient::ModifyLabelCallable(const ModifyLabelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLabelOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLabel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CtemClient::StopJobRecordOutcome CtemClient::StopJobRecord(const StopJobRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "StopJobRecord");

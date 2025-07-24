@@ -34,7 +34,8 @@ AgentConfig::AgentConfig() :
     m_filterBracketsContentHasBeenSet(false),
     m_ambientSoundHasBeenSet(false),
     m_voicePrintHasBeenSet(false),
-    m_turnDetectionHasBeenSet(false)
+    m_turnDetectionHasBeenSet(false),
+    m_subtitleModeHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome AgentConfig::Deserialize(const rapidjson::Value &value)
         m_turnDetectionHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleMode") && !value["SubtitleMode"].IsNull())
+    {
+        if (!value["SubtitleMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.SubtitleMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleMode = value["SubtitleMode"].GetUint64();
+        m_subtitleModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +335,14 @@ void AgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_turnDetection.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subtitleModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subtitleMode, allocator);
     }
 
 }
@@ -551,5 +570,21 @@ void AgentConfig::SetTurnDetection(const TurnDetection& _turnDetection)
 bool AgentConfig::TurnDetectionHasBeenSet() const
 {
     return m_turnDetectionHasBeenSet;
+}
+
+uint64_t AgentConfig::GetSubtitleMode() const
+{
+    return m_subtitleMode;
+}
+
+void AgentConfig::SetSubtitleMode(const uint64_t& _subtitleMode)
+{
+    m_subtitleMode = _subtitleMode;
+    m_subtitleModeHasBeenSet = true;
+}
+
+bool AgentConfig::SubtitleModeHasBeenSet() const
+{
+    return m_subtitleModeHasBeenSet;
 }
 

@@ -86,6 +86,20 @@ namespace TencentCloud
                      */
                     bool PrattWhitneyHasBeenSet() const;
 
+                    /**
+                     * 获取重保授权包 配置信息
+                     * @return RASP 重保授权包 配置信息
+                     * 
+                     */
+                    VersionWhiteConfig GetRASP() const;
+
+                    /**
+                     * 判断参数 RASP 是否已赋值
+                     * @return RASP 是否已赋值
+                     * 
+                     */
+                    bool RASPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +119,12 @@ namespace TencentCloud
                      */
                     VersionWhiteConfig m_prattWhitney;
                     bool m_prattWhitneyHasBeenSet;
+
+                    /**
+                     * 重保授权包 配置信息
+                     */
+                    VersionWhiteConfig m_rASP;
+                    bool m_rASPHasBeenSet;
 
                 };
             }

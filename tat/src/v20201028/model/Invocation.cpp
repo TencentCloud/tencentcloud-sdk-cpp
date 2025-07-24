@@ -23,6 +23,7 @@ using namespace std;
 Invocation::Invocation() :
     m_invocationIdHasBeenSet(false),
     m_commandIdHasBeenSet(false),
+    m_commandNameHasBeenSet(false),
     m_invocationStatusHasBeenSet(false),
     m_invocationTaskBasicInfoSetHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -67,6 +68,16 @@ CoreInternalOutcome Invocation::Deserialize(const rapidjson::Value &value)
         }
         m_commandId = string(value["CommandId"].GetString());
         m_commandIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CommandName") && !value["CommandName"].IsNull())
+    {
+        if (!value["CommandName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Invocation.CommandName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_commandName = string(value["CommandName"].GetString());
+        m_commandNameHasBeenSet = true;
     }
 
     if (value.HasMember("InvocationStatus") && !value["InvocationStatus"].IsNull())
@@ -282,6 +293,14 @@ void Invocation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_commandId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_commandNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommandName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_commandName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_invocationStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -466,6 +485,22 @@ void Invocation::SetCommandId(const string& _commandId)
 bool Invocation::CommandIdHasBeenSet() const
 {
     return m_commandIdHasBeenSet;
+}
+
+string Invocation::GetCommandName() const
+{
+    return m_commandName;
+}
+
+void Invocation::SetCommandName(const string& _commandName)
+{
+    m_commandName = _commandName;
+    m_commandNameHasBeenSet = true;
+}
+
+bool Invocation::CommandNameHasBeenSet() const
+{
+    return m_commandNameHasBeenSet;
 }
 
 string Invocation::GetInvocationStatus() const
