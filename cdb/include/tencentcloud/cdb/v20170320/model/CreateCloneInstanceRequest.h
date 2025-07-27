@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取克隆源实例Id。
-                     * @return InstanceId 克隆源实例Id。
+                     * 获取克隆源实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
+                     * @return InstanceId 克隆源实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置克隆源实例Id。
-                     * @param _instanceId 克隆源实例Id。
+                     * 设置克隆源实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
+                     * @param _instanceId 克隆源实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -200,15 +200,15 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取新产生的克隆实例名称。
-                     * @return InstanceName 新产生的克隆实例名称。
+                     * 获取新产生的克隆实例名称。支持输入最大60个字符。
+                     * @return InstanceName 新产生的克隆实例名称。支持输入最大60个字符。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置新产生的克隆实例名称。
-                     * @param _instanceName 新产生的克隆实例名称。
+                     * 设置新产生的克隆实例名称。支持输入最大60个字符。
+                     * @param _instanceName 新产生的克隆实例名称。支持输入最大60个字符。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -601,7 +601,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 克隆源实例Id。
+                     * 克隆源实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -645,7 +645,7 @@ namespace TencentCloud
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 新产生的克隆实例名称。
+                     * 新产生的克隆实例名称。支持输入最大60个字符。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

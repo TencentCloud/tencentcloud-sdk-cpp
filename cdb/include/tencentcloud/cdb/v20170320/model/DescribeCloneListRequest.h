@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询指定源实例的克隆任务列表。
-                     * @return InstanceId 查询指定源实例的克隆任务列表。
+                     * 获取查询指定源实例的克隆任务列表。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取实例 ID。
+                     * @return InstanceId 查询指定源实例的克隆任务列表。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置查询指定源实例的克隆任务列表。
-                     * @param _instanceId 查询指定源实例的克隆任务列表。
+                     * 设置查询指定源实例的克隆任务列表。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取实例 ID。
+                     * @param _instanceId 查询指定源实例的克隆任务列表。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页查询时的每页条目数，默认值为20。
-                     * @return Limit 分页查询时的每页条目数，默认值为20。
+                     * 获取分页查询时的每页条目数，默认值为20，建议最大取值100。
+                     * @return Limit 分页查询时的每页条目数，默认值为20，建议最大取值100。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页查询时的每页条目数，默认值为20。
-                     * @param _limit 分页查询时的每页条目数，默认值为20。
+                     * 设置分页查询时的每页条目数，默认值为20，建议最大取值100。
+                     * @param _limit 分页查询时的每页条目数，默认值为20，建议最大取值100。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询指定源实例的克隆任务列表。
+                     * 查询指定源实例的克隆任务列表。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页查询时的每页条目数，默认值为20。
+                     * 分页查询时的每页条目数，默认值为20，建议最大取值100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

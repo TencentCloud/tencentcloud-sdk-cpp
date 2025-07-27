@@ -110,6 +110,68 @@ namespace TencentCloud
                     bool FlagHasBeenSet() const;
 
                     /**
+                     * 获取云端特效生成状态。
+生成中 - GENERATING。
+处理中 - PROCESSING。
+生成失败 - FAILED。
+已完成 - FINISH。
+
+                     * @return Status 云端特效生成状态。
+生成中 - GENERATING。
+处理中 - PROCESSING。
+生成失败 - FAILED。
+已完成 - FINISH。
+
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置云端特效生成状态。
+生成中 - GENERATING。
+处理中 - PROCESSING。
+生成失败 - FAILED。
+已完成 - FINISH。
+
+                     * @param _status 云端特效生成状态。
+生成中 - GENERATING。
+处理中 - PROCESSING。
+生成失败 - FAILED。
+已完成 - FINISH。
+
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取特效信息，生成失败时，此处返回失败原因。
+                     * @return Message 特效信息，生成失败时，此处返回失败原因。
+                     * 
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 设置特效信息，生成失败时，此处返回失败原因。
+                     * @param _message 特效信息，生成失败时，此处返回失败原因。
+                     * 
+                     */
+                    void SetMessage(const std::string& _message);
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     * 
+                     */
+                    bool MessageHasBeenSet() const;
+
+                    /**
                      * 获取云端特效预览图片。
                      * @return PreviewImageUrl 云端特效预览图片。
                      * 
@@ -224,6 +286,23 @@ UGC : 用户上传特效。
                      */
                     std::string m_flag;
                     bool m_flagHasBeenSet;
+
+                    /**
+                     * 云端特效生成状态。
+生成中 - GENERATING。
+处理中 - PROCESSING。
+生成失败 - FAILED。
+已完成 - FINISH。
+
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 特效信息，生成失败时，此处返回失败原因。
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                     /**
                      * 云端特效预览图片。

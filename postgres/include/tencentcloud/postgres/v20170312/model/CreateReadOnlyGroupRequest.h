@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主实例ID
-                     * @return MasterDBInstanceId 主实例ID
+                     * 获取主实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return MasterDBInstanceId 主实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetMasterDBInstanceId() const;
 
                     /**
-                     * 设置主实例ID
-                     * @param _masterDBInstanceId 主实例ID
+                     * 设置主实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _masterDBInstanceId 主实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetMasterDBInstanceId(const std::string& _masterDBInstanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MasterDBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取只读组名称
-                     * @return Name 只读组名称
+                     * 获取只读组名称。仅支持长度小于60的中文/英文/数字/"_"/"-"。
+                     * @return Name 只读组名称。仅支持长度小于60的中文/英文/数字/"_"/"-"。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置只读组名称
-                     * @param _name 只读组名称
+                     * 设置只读组名称。仅支持长度小于60的中文/英文/数字/"_"/"-"。
+                     * @param _name 只读组名称。仅支持长度小于60的中文/英文/数字/"_"/"-"。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取项目ID。默认值为0，表示归属于默认项目。
+                     * @return ProjectId 项目ID。默认值为0，表示归属于默认项目。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置项目ID。默认值为0，表示归属于默认项目。
+                     * @param _projectId 项目ID。默认值为0，表示归属于默认项目。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID
-                     * @return VpcId 私有网络ID
+                     * 获取私有网络ID。注：默认使用基础网络，当前不支持基础网络，故该参数必填。
+                     * @return VpcId 私有网络ID。注：默认使用基础网络，当前不支持基础网络，故该参数必填。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID
-                     * @param _vpcId 私有网络ID
+                     * 设置私有网络ID。注：默认使用基础网络，当前不支持基础网络，故该参数必填。
+                     * @param _vpcId 私有网络ID。注：默认使用基础网络，当前不支持基础网络，故该参数必填。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
-                     * @return SubnetId 子网ID
+                     * 获取子网ID。注：默认使用基础网络，当前不支持基础网络，故该参数必填。
+                     * @return SubnetId 子网ID。注：默认使用基础网络，当前不支持基础网络，故该参数必填。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID
-                     * @param _subnetId 子网ID
+                     * 设置子网ID。注：默认使用基础网络，当前不支持基础网络，故该参数必填。
+                     * @param _subnetId 子网ID。注：默认使用基础网络，当前不支持基础网络，故该参数必填。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间大小开关：0关、1开
-                     * @return ReplayLagEliminate 延迟时间大小开关：0关、1开
+                     * 获取延迟时间大小开关：0关、1开。该参数必填。
+                     * @return ReplayLagEliminate 延迟时间大小开关：0关、1开。该参数必填。
                      * 
                      */
                     uint64_t GetReplayLagEliminate() const;
 
                     /**
-                     * 设置延迟时间大小开关：0关、1开
-                     * @param _replayLagEliminate 延迟时间大小开关：0关、1开
+                     * 设置延迟时间大小开关：0关、1开。该参数必填。
+                     * @param _replayLagEliminate 延迟时间大小开关：0关、1开。该参数必填。
                      * 
                      */
                     void SetReplayLagEliminate(const uint64_t& _replayLagEliminate);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ReplayLagEliminateHasBeenSet() const;
 
                     /**
-                     * 获取延迟空间大小开关： 0关、1开
-                     * @return ReplayLatencyEliminate 延迟空间大小开关： 0关、1开
+                     * 获取延迟空间大小开关： 0关、1开。该参数的填写需要与ReplayLagEliminate一致。
+                     * @return ReplayLatencyEliminate 延迟空间大小开关： 0关、1开。该参数的填写需要与ReplayLagEliminate一致。
                      * 
                      */
                     uint64_t GetReplayLatencyEliminate() const;
 
                     /**
-                     * 设置延迟空间大小开关： 0关、1开
-                     * @param _replayLatencyEliminate 延迟空间大小开关： 0关、1开
+                     * 设置延迟空间大小开关： 0关、1开。该参数的填写需要与ReplayLagEliminate一致。
+                     * @param _replayLatencyEliminate 延迟空间大小开关： 0关、1开。该参数的填写需要与ReplayLagEliminate一致。
                      * 
                      */
                     void SetReplayLatencyEliminate(const uint64_t& _replayLatencyEliminate);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ReplayLatencyEliminateHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间大小阈值，单位ms
-                     * @return MaxReplayLag 延迟时间大小阈值，单位ms
+                     * 获取延迟时间大小阈值，取值为正整数，单位s。当ReplayLagEliminate为1时，该参数必填；当ReplayLagEliminate为0时，该参数需填0。
+                     * @return MaxReplayLag 延迟时间大小阈值，取值为正整数，单位s。当ReplayLagEliminate为1时，该参数必填；当ReplayLagEliminate为0时，该参数需填0。
                      * 
                      */
                     uint64_t GetMaxReplayLag() const;
 
                     /**
-                     * 设置延迟时间大小阈值，单位ms
-                     * @param _maxReplayLag 延迟时间大小阈值，单位ms
+                     * 设置延迟时间大小阈值，取值为正整数，单位s。当ReplayLagEliminate为1时，该参数必填；当ReplayLagEliminate为0时，该参数需填0。
+                     * @param _maxReplayLag 延迟时间大小阈值，取值为正整数，单位s。当ReplayLagEliminate为1时，该参数必填；当ReplayLagEliminate为0时，该参数需填0。
                      * 
                      */
                     void SetMaxReplayLag(const uint64_t& _maxReplayLag);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool MaxReplayLagHasBeenSet() const;
 
                     /**
-                     * 获取延迟空间大小阈值，单位MB
-                     * @return MaxReplayLatency 延迟空间大小阈值，单位MB
+                     * 获取延迟空间大小阈值，取值为正整数，单位MB。当ReplayLatencyEliminate为1时，该参数必填；当ReplayLatencyEliminate为0时，该参数需填0。
+                     * @return MaxReplayLatency 延迟空间大小阈值，取值为正整数，单位MB。当ReplayLatencyEliminate为1时，该参数必填；当ReplayLatencyEliminate为0时，该参数需填0。
                      * 
                      */
                     uint64_t GetMaxReplayLatency() const;
 
                     /**
-                     * 设置延迟空间大小阈值，单位MB
-                     * @param _maxReplayLatency 延迟空间大小阈值，单位MB
+                     * 设置延迟空间大小阈值，取值为正整数，单位MB。当ReplayLatencyEliminate为1时，该参数必填；当ReplayLatencyEliminate为0时，该参数需填0。
+                     * @param _maxReplayLatency 延迟空间大小阈值，取值为正整数，单位MB。当ReplayLatencyEliminate为1时，该参数必填；当ReplayLatencyEliminate为0时，该参数需填0。
                      * 
                      */
                     void SetMaxReplayLatency(const uint64_t& _maxReplayLatency);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool MaxReplayLatencyHasBeenSet() const;
 
                     /**
-                     * 获取延迟剔除最小保留实例数
-                     * @return MinDelayEliminateReserve 延迟剔除最小保留实例数
+                     * 获取延迟剔除最小保留实例数。取值范围[0,100]。当ReplayLatencyEliminate为1时，该参数必填；当ReplayLagEliminate为0时，该参数无效。
+                     * @return MinDelayEliminateReserve 延迟剔除最小保留实例数。取值范围[0,100]。当ReplayLatencyEliminate为1时，该参数必填；当ReplayLagEliminate为0时，该参数无效。
                      * 
                      */
                     uint64_t GetMinDelayEliminateReserve() const;
 
                     /**
-                     * 设置延迟剔除最小保留实例数
-                     * @param _minDelayEliminateReserve 延迟剔除最小保留实例数
+                     * 设置延迟剔除最小保留实例数。取值范围[0,100]。当ReplayLatencyEliminate为1时，该参数必填；当ReplayLagEliminate为0时，该参数无效。
+                     * @param _minDelayEliminateReserve 延迟剔除最小保留实例数。取值范围[0,100]。当ReplayLatencyEliminate为1时，该参数必填；当ReplayLagEliminate为0时，该参数无效。
                      * 
                      */
                     void SetMinDelayEliminateReserve(const uint64_t& _minDelayEliminateReserve);
@@ -276,61 +276,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主实例ID
+                     * 主实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_masterDBInstanceId;
                     bool m_masterDBInstanceIdHasBeenSet;
 
                     /**
-                     * 只读组名称
+                     * 只读组名称。仅支持长度小于60的中文/英文/数字/"_"/"-"。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * 项目ID。默认值为0，表示归属于默认项目。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 私有网络ID
+                     * 私有网络ID。注：默认使用基础网络，当前不支持基础网络，故该参数必填。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * 子网ID。注：默认使用基础网络，当前不支持基础网络，故该参数必填。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 延迟时间大小开关：0关、1开
+                     * 延迟时间大小开关：0关、1开。该参数必填。
                      */
                     uint64_t m_replayLagEliminate;
                     bool m_replayLagEliminateHasBeenSet;
 
                     /**
-                     * 延迟空间大小开关： 0关、1开
+                     * 延迟空间大小开关： 0关、1开。该参数的填写需要与ReplayLagEliminate一致。
                      */
                     uint64_t m_replayLatencyEliminate;
                     bool m_replayLatencyEliminateHasBeenSet;
 
                     /**
-                     * 延迟时间大小阈值，单位ms
+                     * 延迟时间大小阈值，取值为正整数，单位s。当ReplayLagEliminate为1时，该参数必填；当ReplayLagEliminate为0时，该参数需填0。
                      */
                     uint64_t m_maxReplayLag;
                     bool m_maxReplayLagHasBeenSet;
 
                     /**
-                     * 延迟空间大小阈值，单位MB
+                     * 延迟空间大小阈值，取值为正整数，单位MB。当ReplayLatencyEliminate为1时，该参数必填；当ReplayLatencyEliminate为0时，该参数需填0。
                      */
                     uint64_t m_maxReplayLatency;
                     bool m_maxReplayLatencyHasBeenSet;
 
                     /**
-                     * 延迟剔除最小保留实例数
+                     * 延迟剔除最小保留实例数。取值范围[0,100]。当ReplayLatencyEliminate为1时，该参数必填；当ReplayLagEliminate为0时，该参数无效。
                      */
                     uint64_t m_minDelayEliminateReserve;
                     bool m_minDelayEliminateReserveHasBeenSet;

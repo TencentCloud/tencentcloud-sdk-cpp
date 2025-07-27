@@ -151,6 +151,8 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeStoreNameResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTableMultiOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTableMultiOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h>
@@ -403,6 +405,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeTableAccurateOCRResponse> RecognizeTableAccurateOCROutcome;
                 typedef std::future<RecognizeTableAccurateOCROutcome> RecognizeTableAccurateOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeTableAccurateOCRRequest&, RecognizeTableAccurateOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableAccurateOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeTableMultiOCRResponse> RecognizeTableMultiOCROutcome;
+                typedef std::future<RecognizeTableMultiOCROutcome> RecognizeTableMultiOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeTableMultiOCRRequest&, RecognizeTableMultiOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableMultiOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeTableOCRResponse> RecognizeTableOCROutcome;
                 typedef std::future<RecognizeTableOCROutcome> RecognizeTableOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeTableOCRRequest&, RecognizeTableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableOCRAsyncHandler;
@@ -1655,6 +1660,17 @@ namespace TencentCloud
                 RecognizeTableAccurateOCROutcome RecognizeTableAccurateOCR(const Model::RecognizeTableAccurateOCRRequest &request);
                 void RecognizeTableAccurateOCRAsync(const Model::RecognizeTableAccurateOCRRequest& request, const RecognizeTableAccurateOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeTableAccurateOCROutcomeCallable RecognizeTableAccurateOCRCallable(const Model::RecognizeTableAccurateOCRRequest& request);
+
+                /**
+                 *基于MLLM(多模态大语言模型)的表格识别能力，针对复杂表格的算法识别效果更佳，适配财务报表识别场景，并可输出直接对接业务系统的Excel数据。
+
+默认接口请求频率限制：1次/秒。
+                 * @param req RecognizeTableMultiOCRRequest
+                 * @return RecognizeTableMultiOCROutcome
+                 */
+                RecognizeTableMultiOCROutcome RecognizeTableMultiOCR(const Model::RecognizeTableMultiOCRRequest &request);
+                void RecognizeTableMultiOCRAsync(const Model::RecognizeTableMultiOCRRequest& request, const RecognizeTableMultiOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeTableMultiOCROutcomeCallable RecognizeTableMultiOCRCallable(const Model::RecognizeTableMultiOCRRequest& request);
 
                 /**
                  *本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。

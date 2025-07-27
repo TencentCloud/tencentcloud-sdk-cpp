@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库实例ID，形如postgres-6fego161
-                     * @return DBInstanceId 数据库实例ID，形如postgres-6fego161
+                     * 获取数据库实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 数据库实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置数据库实例ID，形如postgres-6fego161
-                     * @param _dBInstanceId 数据库实例ID，形如postgres-6fego161
+                     * 设置数据库实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 数据库实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,18 +64,18 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+                     * 获取实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"。
 
-                     * @return InstanceName 实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+                     * @return InstanceName 实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"。
 
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+                     * 设置实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"。
 
-                     * @param _instanceName 实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+                     * @param _instanceName 实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"。
 
                      * 
                      */
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库实例ID，形如postgres-6fego161
+                     * 数据库实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+                     * 实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"。
 
                      */
                     std::string m_instanceName;

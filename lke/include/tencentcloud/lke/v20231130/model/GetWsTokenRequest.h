@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入类型， 5-API 访客
-                     * @return Type 接入类型， 5-API 访客
+                     * 获取接入类型， 5-API 访客，目前仅支持传5
+                     * @return Type 接入类型， 5-API 访客，目前仅支持传5
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置接入类型， 5-API 访客
-                     * @param _type 接入类型， 5-API 访客
+                     * 设置接入类型， 5-API 访客，目前仅支持传5
+                     * @param _type 接入类型， 5-API 访客，目前仅支持传5
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -134,7 +134,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接入类型， 5-API 访客
+                     * 接入类型， 5-API 访客，目前仅支持传5
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

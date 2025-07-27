@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区ID。可以通过接口DescribeZones获取。
-                     * @return Zone 可用区ID。可以通过接口DescribeZones获取。
+                     * 获取可用区名称。可以通过接口[DescribeZones](https://cloud.tencent.com/document/product/409/16769)获取。
+                     * @return Zone 可用区名称。可以通过接口[DescribeZones](https://cloud.tencent.com/document/product/409/16769)获取。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区ID。可以通过接口DescribeZones获取。
-                     * @param _zone 可用区ID。可以通过接口DescribeZones获取。
+                     * 设置可用区名称。可以通过接口[DescribeZones](https://cloud.tencent.com/document/product/409/16769)获取。
+                     * @param _zone 可用区名称。可以通过接口[DescribeZones](https://cloud.tencent.com/document/product/409/16769)获取。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool DBEngineHasBeenSet() const;
 
                     /**
-                     * 获取数据库主版本号。例如12，13，可以通过接口DescribeDBVersions获取。
-                     * @return DBMajorVersion 数据库主版本号。例如12，13，可以通过接口DescribeDBVersions获取。
+                     * 获取数据库主版本号。例如12，13，可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取。
+                     * @return DBMajorVersion 数据库主版本号。例如12，13，可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取。
                      * 
                      */
                     std::string GetDBMajorVersion() const;
 
                     /**
-                     * 设置数据库主版本号。例如12，13，可以通过接口DescribeDBVersions获取。
-                     * @param _dBMajorVersion 数据库主版本号。例如12，13，可以通过接口DescribeDBVersions获取。
+                     * 设置数据库主版本号。例如12，13，可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取。
+                     * @param _dBMajorVersion 数据库主版本号。例如12，13，可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取。
                      * 
                      */
                     void SetDBMajorVersion(const std::string& _dBMajorVersion);
@@ -116,7 +116,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用区ID。可以通过接口DescribeZones获取。
+                     * 可用区名称。可以通过接口[DescribeZones](https://cloud.tencent.com/document/product/409/16769)获取。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -130,7 +130,7 @@ namespace TencentCloud
                     bool m_dBEngineHasBeenSet;
 
                     /**
-                     * 数据库主版本号。例如12，13，可以通过接口DescribeDBVersions获取。
+                     * 数据库主版本号。例如12，13，可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取。
                      */
                     std::string m_dBMajorVersion;
                     bool m_dBMajorVersionHasBeenSet;

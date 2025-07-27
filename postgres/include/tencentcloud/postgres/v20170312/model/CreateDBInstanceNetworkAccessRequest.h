@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如：postgres-6bwgamo3。
-                     * @return DBInstanceId 实例ID，形如：postgres-6bwgamo3。
+                     * 获取实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如：postgres-6bwgamo3。
-                     * @param _dBInstanceId 实例ID，形如：postgres-6bwgamo3。
+                     * 设置实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool IsAssignVipHasBeenSet() const;
 
                     /**
-                     * 获取目标VIP地址。
-                     * @return Vip 目标VIP地址。
+                     * 获取目标VIP地址。当不指定该参数，且IsAssignVip为true时，默认自动分配Vip。
+                     * @return Vip 目标VIP地址。当不指定该参数，且IsAssignVip为true时，默认自动分配Vip。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置目标VIP地址。
-                     * @param _vip 目标VIP地址。
+                     * 设置目标VIP地址。当不指定该参数，且IsAssignVip为true时，默认自动分配Vip。
+                     * @param _vip 目标VIP地址。当不指定该参数，且IsAssignVip为true时，默认自动分配Vip。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，形如：postgres-6bwgamo3。
+                     * 实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_isAssignVipHasBeenSet;
 
                     /**
-                     * 目标VIP地址。
+                     * 目标VIP地址。当不指定该参数，且IsAssignVip为true时，默认自动分配Vip。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;

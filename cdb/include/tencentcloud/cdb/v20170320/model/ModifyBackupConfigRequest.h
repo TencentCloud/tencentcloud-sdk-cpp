@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
-                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * 获取实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
-                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * 设置实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,23 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。
-                     * @return ExpireDays 备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。
+                     * 获取数据备份文件的保留时间，单位为天。
+1. MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。
+2. MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。
+                     * @return ExpireDays 数据备份文件的保留时间，单位为天。
+1. MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。
+2. MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。
                      * 
                      */
                     int64_t GetExpireDays() const;
 
                     /**
-                     * 设置备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。
-                     * @param _expireDays 备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。
+                     * 设置数据备份文件的保留时间，单位为天。
+1. MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。
+2. MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。
+                     * @param _expireDays 数据备份文件的保留时间，单位为天。
+1. MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。
+2. MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。
                      * 
                      */
                     void SetExpireDays(const int64_t& _expireDays);
@@ -128,15 +136,23 @@ namespace TencentCloud
                     bool BackupMethodHasBeenSet() const;
 
                     /**
-                     * 获取binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。
-                     * @return BinlogExpireDays binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。
+                     * 获取binlog 的保留时间，单位为天。
+1. MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。
+2. MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。
+                     * @return BinlogExpireDays binlog 的保留时间，单位为天。
+1. MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。
+2. MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。
                      * 
                      */
                     int64_t GetBinlogExpireDays() const;
 
                     /**
-                     * 设置binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。
-                     * @param _binlogExpireDays binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。
+                     * 设置binlog 的保留时间，单位为天。
+1. MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。
+2. MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。
+                     * @param _binlogExpireDays binlog 的保留时间，单位为天。
+1. MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。
+2. MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。
                      * 
                      */
                     void SetBinlogExpireDays(const int64_t& _binlogExpireDays);
@@ -170,15 +186,15 @@ namespace TencentCloud
                     bool BackupTimeWindowHasBeenSet() const;
 
                     /**
-                     * 获取定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效
-                     * @return EnableBackupPeriodSave 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效
+                     * 获取定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。
+                     * @return EnableBackupPeriodSave 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。
                      * 
                      */
                     std::string GetEnableBackupPeriodSave() const;
 
                     /**
-                     * 设置定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效
-                     * @param _enableBackupPeriodSave 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效
+                     * 设置定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。
+                     * @param _enableBackupPeriodSave 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。
                      * 
                      */
                     void SetEnableBackupPeriodSave(const std::string& _enableBackupPeriodSave);
@@ -466,13 +482,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。
+                     * 数据备份文件的保留时间，单位为天。
+1. MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。
+2. MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。
                      */
                     int64_t m_expireDays;
                     bool m_expireDaysHasBeenSet;
@@ -490,7 +508,9 @@ namespace TencentCloud
                     bool m_backupMethodHasBeenSet;
 
                     /**
-                     * binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。
+                     * binlog 的保留时间，单位为天。
+1. MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。
+2. MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。
                      */
                     int64_t m_binlogExpireDays;
                     bool m_binlogExpireDaysHasBeenSet;
@@ -502,7 +522,7 @@ namespace TencentCloud
                     bool m_backupTimeWindowHasBeenSet;
 
                     /**
-                     * 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效
+                     * 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。
                      */
                     std::string m_enableBackupPeriodSave;
                     bool m_enableBackupPeriodSaveHasBeenSet;

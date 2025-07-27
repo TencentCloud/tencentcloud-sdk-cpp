@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Sql的执行时间。
-                     * @return Timestamp Sql的执行时间。
+                     * 获取Sql的执行时间。秒级时间戳。
+                     * @return Timestamp Sql的执行时间。秒级时间戳。
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
-                     * 设置Sql的执行时间。
-                     * @param _timestamp Sql的执行时间。
+                     * 设置Sql的执行时间。秒级时间戳。
+                     * @param _timestamp Sql的执行时间。秒级时间戳。
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -280,7 +280,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Sql的执行时间。
+                     * Sql的执行时间。秒级时间戳。
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;

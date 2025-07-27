@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
-                     * @return DBInstanceIdSet 实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
+                     * 获取实例ID集合。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时操作多个实例。
+                     * @return DBInstanceIdSet 实例ID集合。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时操作多个实例。
                      * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
-                     * 设置实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
-                     * @param _dBInstanceIdSet 实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
+                     * 设置实例ID集合。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时操作多个实例。
+                     * @param _dBInstanceIdSet 实例ID集合。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时操作多个实例。
                      * 
                      */
                     void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取所属新项目的ID
-                     * @return ProjectId 所属新项目的ID
+                     * 获取所属新项目的ID。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)获取
+                     * @return ProjectId 所属新项目的ID。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)获取
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置所属新项目的ID
-                     * @param _projectId 所属新项目的ID
+                     * 设置所属新项目的ID。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)获取
+                     * @param _projectId 所属新项目的ID。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)获取
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
+                     * 实例ID集合。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时操作多个实例。
                      */
                     std::vector<std::string> m_dBInstanceIdSet;
                     bool m_dBInstanceIdSetHasBeenSet;
 
                     /**
-                     * 所属新项目的ID
+                     * 所属新项目的ID。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)获取
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

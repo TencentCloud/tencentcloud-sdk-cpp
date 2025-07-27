@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取Cpu总量
-                     * @return CpuTotal Cpu总量
+                     * 获取Cpu总数量
+                     * @return CpuTotal Cpu总数量
                      * 
                      */
                     int64_t GetCpuTotal() const;
 
                     /**
-                     * 设置Cpu总量
-                     * @param _cpuTotal Cpu总量
+                     * 设置Cpu总数量
+                     * @param _cpuTotal Cpu总数量
                      * 
                      */
                     void SetCpuTotal(const int64_t& _cpuTotal);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CpuAvailableHasBeenSet() const;
 
                     /**
-                     * 获取内存总量
-                     * @return MemTotal 内存总量
+                     * 获取内存总量，单位GB
+                     * @return MemTotal 内存总量，单位GB
                      * 
                      */
                     int64_t GetMemTotal() const;
 
                     /**
-                     * 设置内存总量
-                     * @param _memTotal 内存总量
+                     * 设置内存总量，单位GB
+                     * @param _memTotal 内存总量，单位GB
                      * 
                      */
                     void SetMemTotal(const int64_t& _memTotal);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool MemTotalHasBeenSet() const;
 
                     /**
-                     * 获取内存可用量
-                     * @return MemAvailable 内存可用量
+                     * 获取内存可用量，单位GB
+                     * @return MemAvailable 内存可用量，单位GB
                      * 
                      */
                     int64_t GetMemAvailable() const;
 
                     /**
-                     * 设置内存可用量
-                     * @param _memAvailable 内存可用量
+                     * 设置内存可用量，单位GB
+                     * @param _memAvailable 内存可用量，单位GB
                      * 
                      */
                     void SetMemAvailable(const int64_t& _memAvailable);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool MemAvailableHasBeenSet() const;
 
                     /**
-                     * 获取磁盘总量
-                     * @return DiskTotal 磁盘总量
+                     * 获取磁盘总量，单位GB
+                     * @return DiskTotal 磁盘总量，单位GB
                      * 
                      */
                     int64_t GetDiskTotal() const;
 
                     /**
-                     * 设置磁盘总量
-                     * @param _diskTotal 磁盘总量
+                     * 设置磁盘总量，单位GB
+                     * @param _diskTotal 磁盘总量，单位GB
                      * 
                      */
                     void SetDiskTotal(const int64_t& _diskTotal);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool DiskTotalHasBeenSet() const;
 
                     /**
-                     * 获取磁盘可用量
-                     * @return DiskAvailable 磁盘可用量
+                     * 获取磁盘可用量，单位GB
+                     * @return DiskAvailable 磁盘可用量，单位GB
                      * 
                      */
                     int64_t GetDiskAvailable() const;
 
                     /**
-                     * 设置磁盘可用量
-                     * @param _diskAvailable 磁盘可用量
+                     * 设置磁盘可用量，单位GB
+                     * @param _diskAvailable 磁盘可用量，单位GB
                      * 
                      */
                     void SetDiskAvailable(const int64_t& _diskAvailable);
@@ -310,7 +310,7 @@ namespace TencentCloud
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * Cpu总量
+                     * Cpu总数量
                      */
                     int64_t m_cpuTotal;
                     bool m_cpuTotalHasBeenSet;
@@ -322,25 +322,25 @@ namespace TencentCloud
                     bool m_cpuAvailableHasBeenSet;
 
                     /**
-                     * 内存总量
+                     * 内存总量，单位GB
                      */
                     int64_t m_memTotal;
                     bool m_memTotalHasBeenSet;
 
                     /**
-                     * 内存可用量
+                     * 内存可用量，单位GB
                      */
                     int64_t m_memAvailable;
                     bool m_memAvailableHasBeenSet;
 
                     /**
-                     * 磁盘总量
+                     * 磁盘总量，单位GB
                      */
                     int64_t m_diskTotal;
                     bool m_diskTotalHasBeenSet;
 
                     /**
-                     * 磁盘可用量
+                     * 磁盘可用量，单位GB
                      */
                     int64_t m_diskAvailable;
                     bool m_diskAvailableHasBeenSet;

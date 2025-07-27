@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID，可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID，可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例 ID，可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID，可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取日志类型：error/slowlog
-                     * @return LogType 日志类型：error/slowlog
+                     * 获取日志类型。error：错误日志，slowlog：慢日志。
+                     * @return LogType 日志类型。error：错误日志，slowlog：慢日志。
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置日志类型：error/slowlog
-                     * @param _logType 日志类型：error/slowlog
+                     * 设置日志类型。error：错误日志，slowlog：慢日志。
+                     * @param _logType 日志类型。error：错误日志，slowlog：慢日志。
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取投递状态：ON/OFF
-                     * @return Status 投递状态：ON/OFF
+                     * 获取投递状态。ON：开启，OFF：关闭。
+                     * @return Status 投递状态。ON：开启，OFF：关闭。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置投递状态：ON/OFF
-                     * @param _status 投递状态：ON/OFF
+                     * 设置投递状态。ON：开启，OFF：关闭。
+                     * @param _status 投递状态。ON：开启，OFF：关闭。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否需要创建日志集
-                     * @return CreateLogset 是否需要创建日志集
+                     * 获取是否需要创建日志集。默认为 false。
+                     * @return CreateLogset 是否需要创建日志集。默认为 false。
                      * 
                      */
                     bool GetCreateLogset() const;
 
                     /**
-                     * 设置是否需要创建日志集
-                     * @param _createLogset 是否需要创建日志集
+                     * 设置是否需要创建日志集。默认为 false。
+                     * @param _createLogset 是否需要创建日志集。默认为 false。
                      * 
                      */
                     void SetCreateLogset(const bool& _createLogset);
@@ -127,15 +127,19 @@ namespace TencentCloud
                     bool CreateLogsetHasBeenSet() const;
 
                     /**
-                     * 获取需要创建日志集时为日志集名称；选择已有日志集时，为日志集ID
-                     * @return Logset 需要创建日志集时为日志集名称；选择已有日志集时，为日志集ID
+                     * 获取需要创建日志集时为日志集名称；选择已有日志集时，为日志集 ID。默认为空。
+说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。
+                     * @return Logset 需要创建日志集时为日志集名称；选择已有日志集时，为日志集 ID。默认为空。
+说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。
                      * 
                      */
                     std::string GetLogset() const;
 
                     /**
-                     * 设置需要创建日志集时为日志集名称；选择已有日志集时，为日志集ID
-                     * @param _logset 需要创建日志集时为日志集名称；选择已有日志集时，为日志集ID
+                     * 设置需要创建日志集时为日志集名称；选择已有日志集时，为日志集 ID。默认为空。
+说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。
+                     * @param _logset 需要创建日志集时为日志集名称；选择已有日志集时，为日志集 ID。默认为空。
+说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。
                      * 
                      */
                     void SetLogset(const std::string& _logset);
@@ -148,15 +152,15 @@ namespace TencentCloud
                     bool LogsetHasBeenSet() const;
 
                     /**
-                     * 获取是否需要创建日志主题
-                     * @return CreateLogTopic 是否需要创建日志主题
+                     * 获取是否需要创建日志主题。默认为 false。
+                     * @return CreateLogTopic 是否需要创建日志主题。默认为 false。
                      * 
                      */
                     bool GetCreateLogTopic() const;
 
                     /**
-                     * 设置是否需要创建日志主题
-                     * @param _createLogTopic 是否需要创建日志主题
+                     * 设置是否需要创建日志主题。默认为 false。
+                     * @param _createLogTopic 是否需要创建日志主题。默认为 false。
                      * 
                      */
                     void SetCreateLogTopic(const bool& _createLogTopic);
@@ -169,15 +173,19 @@ namespace TencentCloud
                     bool CreateLogTopicHasBeenSet() const;
 
                     /**
-                     * 获取需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题ID
-                     * @return LogTopic 需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题ID
+                     * 获取需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题 ID。默认为空。
+说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。
+                     * @return LogTopic 需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题 ID。默认为空。
+说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。
                      * 
                      */
                     std::string GetLogTopic() const;
 
                     /**
-                     * 设置需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题ID
-                     * @param _logTopic 需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题ID
+                     * 设置需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题 ID。默认为空。
+说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。
+                     * @param _logTopic 需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题 ID。默认为空。
+说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。
                      * 
                      */
                     void SetLogTopic(const std::string& _logTopic);
@@ -190,15 +198,15 @@ namespace TencentCloud
                     bool LogTopicHasBeenSet() const;
 
                     /**
-                     * 获取日志主题有效期，不填写时，默认30天
-                     * @return Period 日志主题有效期，不填写时，默认30天
+                     * 获取日志主题有效期，不填写时，默认30天，最大值3600。
+                     * @return Period 日志主题有效期，不填写时，默认30天，最大值3600。
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置日志主题有效期，不填写时，默认30天
-                     * @param _period 日志主题有效期，不填写时，默认30天
+                     * 设置日志主题有效期，不填写时，默认30天，最大值3600。
+                     * @param _period 日志主题有效期，不填写时，默认30天，最大值3600。
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -211,15 +219,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取创建日志主题时，是否创建索引
-                     * @return CreateIndex 创建日志主题时，是否创建索引
+                     * 获取创建日志主题时，是否创建索引，默认为 false。
+                     * @return CreateIndex 创建日志主题时，是否创建索引，默认为 false。
                      * 
                      */
                     bool GetCreateIndex() const;
 
                     /**
-                     * 设置创建日志主题时，是否创建索引
-                     * @param _createIndex 创建日志主题时，是否创建索引
+                     * 设置创建日志主题时，是否创建索引，默认为 false。
+                     * @param _createIndex 创建日志主题时，是否创建索引，默认为 false。
                      * 
                      */
                     void SetCreateIndex(const bool& _createIndex);
@@ -232,15 +240,15 @@ namespace TencentCloud
                     bool CreateIndexHasBeenSet() const;
 
                     /**
-                     * 获取CLS所在地域
-                     * @return ClsRegion CLS所在地域
+                     * 获取CLS 所在地域，不填择默认为 Region 的参数值。
+                     * @return ClsRegion CLS 所在地域，不填择默认为 Region 的参数值。
                      * 
                      */
                     std::string GetClsRegion() const;
 
                     /**
-                     * 设置CLS所在地域
-                     * @param _clsRegion CLS所在地域
+                     * 设置CLS 所在地域，不填择默认为 Region 的参数值。
+                     * @param _clsRegion CLS 所在地域，不填择默认为 Region 的参数值。
                      * 
                      */
                     void SetClsRegion(const std::string& _clsRegion);
@@ -255,61 +263,63 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID，可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 日志类型：error/slowlog
+                     * 日志类型。error：错误日志，slowlog：慢日志。
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * 投递状态：ON/OFF
+                     * 投递状态。ON：开启，OFF：关闭。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否需要创建日志集
+                     * 是否需要创建日志集。默认为 false。
                      */
                     bool m_createLogset;
                     bool m_createLogsetHasBeenSet;
 
                     /**
-                     * 需要创建日志集时为日志集名称；选择已有日志集时，为日志集ID
+                     * 需要创建日志集时为日志集名称；选择已有日志集时，为日志集 ID。默认为空。
+说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。
                      */
                     std::string m_logset;
                     bool m_logsetHasBeenSet;
 
                     /**
-                     * 是否需要创建日志主题
+                     * 是否需要创建日志主题。默认为 false。
                      */
                     bool m_createLogTopic;
                     bool m_createLogTopicHasBeenSet;
 
                     /**
-                     * 需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题ID
+                     * 需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题 ID。默认为空。
+说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。
                      */
                     std::string m_logTopic;
                     bool m_logTopicHasBeenSet;
 
                     /**
-                     * 日志主题有效期，不填写时，默认30天
+                     * 日志主题有效期，不填写时，默认30天，最大值3600。
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 创建日志主题时，是否创建索引
+                     * 创建日志主题时，是否创建索引，默认为 false。
                      */
                     bool m_createIndex;
                     bool m_createIndexHasBeenSet;
 
                     /**
-                     * CLS所在地域
+                     * CLS 所在地域，不填择默认为 Region 的参数值。
                      */
                     std::string m_clsRegion;
                     bool m_clsRegionHasBeenSet;

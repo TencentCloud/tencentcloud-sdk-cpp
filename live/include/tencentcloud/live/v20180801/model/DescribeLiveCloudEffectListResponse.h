@@ -58,6 +58,34 @@ namespace TencentCloud
                      */
                     bool InfoListHasBeenSet() const;
 
+                    /**
+                     * 获取允许创建的云端特效个数。
+                     * @return EnableCreateNum 允许创建的云端特效个数。
+                     * 
+                     */
+                    int64_t GetEnableCreateNum() const;
+
+                    /**
+                     * 判断参数 EnableCreateNum 是否已赋值
+                     * @return EnableCreateNum 是否已赋值
+                     * 
+                     */
+                    bool EnableCreateNumHasBeenSet() const;
+
+                    /**
+                     * 获取当前已有的特效总个数。
+                     * @return TotalNum 当前已有的特效总个数。
+                     * 
+                     */
+                    int64_t GetTotalNum() const;
+
+                    /**
+                     * 判断参数 TotalNum 是否已赋值
+                     * @return TotalNum 是否已赋值
+                     * 
+                     */
+                    bool TotalNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +93,18 @@ namespace TencentCloud
                      */
                     std::vector<CloudEffectInfo> m_infoList;
                     bool m_infoListHasBeenSet;
+
+                    /**
+                     * 允许创建的云端特效个数。
+                     */
+                    int64_t m_enableCreateNum;
+                    bool m_enableCreateNumHasBeenSet;
+
+                    /**
+                     * 当前已有的特效总个数。
+                     */
+                    int64_t m_totalNum;
+                    bool m_totalNumHasBeenSet;
 
                 };
             }

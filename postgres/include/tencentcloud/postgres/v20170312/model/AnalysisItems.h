@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CallNumHasBeenSet() const;
 
                     /**
-                     * 获取在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的比例（小数返回）
-                     * @return CallPercent 在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的比例（小数返回）
+                     * 获取在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的百分比。
+                     * @return CallPercent 在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的百分比。
                      * 
                      */
                     double GetCallPercent() const;
 
                     /**
-                     * 设置在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的比例（小数返回）
-                     * @param _callPercent 在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的比例（小数返回）
+                     * 设置在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的百分比。
+                     * @param _callPercent 在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的百分比。
                      * 
                      */
                     void SetCallPercent(const double& _callPercent);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool AvgCostTimeHasBeenSet() const;
 
                     /**
-                     * 获取在选定时间范围内，慢SQL第一条开始执行的时间戳
-                     * @return FirstTime 在选定时间范围内，慢SQL第一条开始执行的时间戳
+                     * 获取在选定时间范围内，慢SQL第一条开始执行的时间
+                     * @return FirstTime 在选定时间范围内，慢SQL第一条开始执行的时间
                      * 
                      */
                     std::string GetFirstTime() const;
 
                     /**
-                     * 设置在选定时间范围内，慢SQL第一条开始执行的时间戳
-                     * @param _firstTime 在选定时间范围内，慢SQL第一条开始执行的时间戳
+                     * 设置在选定时间范围内，慢SQL第一条开始执行的时间
+                     * @param _firstTime 在选定时间范围内，慢SQL第一条开始执行的时间
                      * 
                      */
                     void SetFirstTime(const std::string& _firstTime);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool FirstTimeHasBeenSet() const;
 
                     /**
-                     * 获取在选定时间范围内，慢SQL最后一条开始执行的时间戳
-                     * @return LastTime 在选定时间范围内，慢SQL最后一条开始执行的时间戳
+                     * 获取在选定时间范围内，慢SQL最后一条开始执行的时间
+                     * @return LastTime 在选定时间范围内，慢SQL最后一条开始执行的时间
                      * 
                      */
                     std::string GetLastTime() const;
 
                     /**
-                     * 设置在选定时间范围内，慢SQL最后一条开始执行的时间戳
-                     * @param _lastTime 在选定时间范围内，慢SQL最后一条开始执行的时间戳
+                     * 设置在选定时间范围内，慢SQL最后一条开始执行的时间
+                     * @param _lastTime 在选定时间范围内，慢SQL最后一条开始执行的时间
                      * 
                      */
                     void SetLastTime(const std::string& _lastTime);
@@ -352,7 +352,7 @@ namespace TencentCloud
                     bool m_callNumHasBeenSet;
 
                     /**
-                     * 在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的比例（小数返回）
+                     * 在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的百分比。
                      */
                     double m_callPercent;
                     bool m_callPercentHasBeenSet;
@@ -388,13 +388,13 @@ namespace TencentCloud
                     bool m_avgCostTimeHasBeenSet;
 
                     /**
-                     * 在选定时间范围内，慢SQL第一条开始执行的时间戳
+                     * 在选定时间范围内，慢SQL第一条开始执行的时间
                      */
                     std::string m_firstTime;
                     bool m_firstTimeHasBeenSet;
 
                     /**
-                     * 在选定时间范围内，慢SQL最后一条开始执行的时间戳
+                     * 在选定时间范围内，慢SQL最后一条开始执行的时间
                      */
                     std::string m_lastTime;
                     bool m_lastTimeHasBeenSet;

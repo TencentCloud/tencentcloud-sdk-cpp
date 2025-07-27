@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数模板名称。
-                     * @return Name 参数模板名称。
+                     * 获取参数模板名称。支持输入最大60个字符。
+                     * @return Name 参数模板名称。支持输入最大60个字符。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置参数模板名称。
-                     * @param _name 参数模板名称。
+                     * 设置参数模板名称。支持输入最大60个字符。
+                     * @param _name 参数模板名称。支持输入最大60个字符。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取MySQL 版本号。
-                     * @return EngineVersion MySQL 版本号。
+                     * 获取MySQL 版本号。可选值：5.6、5.7、8.0。
+                     * @return EngineVersion MySQL 版本号。可选值：5.6、5.7、8.0。
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置MySQL 版本号。
-                     * @param _engineVersion MySQL 版本号。
+                     * 设置MySQL 版本号。可选值：5.6、5.7、8.0。
+                     * @param _engineVersion MySQL 版本号。可选值：5.6、5.7、8.0。
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取源参数模板 ID。
-                     * @return TemplateId 源参数模板 ID。
+                     * 获取源参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。
+                     * @return TemplateId 源参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置源参数模板 ID。
-                     * @param _templateId 源参数模板 ID。
+                     * 设置源参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。
+                     * @param _templateId 源参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -171,14 +171,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例引擎类型，默认为"InnoDB"，支持值包括："InnoDB"，"RocksDB"。
+说明：数据库版本 MySQL 5.7、MySQL 8.0才支持 RocksDB。
                      * @return EngineType 实例引擎类型，默认为"InnoDB"，支持值包括："InnoDB"，"RocksDB"。
+说明：数据库版本 MySQL 5.7、MySQL 8.0才支持 RocksDB。
                      * 
                      */
                     std::string GetEngineType() const;
 
                     /**
                      * 设置实例引擎类型，默认为"InnoDB"，支持值包括："InnoDB"，"RocksDB"。
+说明：数据库版本 MySQL 5.7、MySQL 8.0才支持 RocksDB。
                      * @param _engineType 实例引擎类型，默认为"InnoDB"，支持值包括："InnoDB"，"RocksDB"。
+说明：数据库版本 MySQL 5.7、MySQL 8.0才支持 RocksDB。
                      * 
                      */
                     void SetEngineType(const std::string& _engineType);
@@ -193,7 +197,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数模板名称。
+                     * 参数模板名称。支持输入最大60个字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -205,13 +209,13 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * MySQL 版本号。
+                     * MySQL 版本号。可选值：5.6、5.7、8.0。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 源参数模板 ID。
+                     * 源参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -230,6 +234,7 @@ namespace TencentCloud
 
                     /**
                      * 实例引擎类型，默认为"InnoDB"，支持值包括："InnoDB"，"RocksDB"。
+说明：数据库版本 MySQL 5.7、MySQL 8.0才支持 RocksDB。
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;

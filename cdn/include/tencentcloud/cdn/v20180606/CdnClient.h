@@ -473,7 +473,9 @@ namespace TencentCloud
                 CreateClsLogTopicOutcomeCallable CreateClsLogTopicCallable(const Model::CreateClsLogTopicRequest& request);
 
                 /**
-                 *### <font color=red>**该接口已废弃** </font><br>
+                 *以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)
+
+### <font color=red>**该接口已废弃** </font><br>
 CreateDiagnoseUrl 用于添加域名诊断任务URL。
                  * @param req CreateDiagnoseUrlRequest
                  * @return CreateDiagnoseUrlOutcome
@@ -656,7 +658,9 @@ DDoS统计数据查询
                 DescribeDDoSDataOutcomeCallable DescribeDDoSDataCallable(const Model::DescribeDDoSDataRequest& request);
 
                 /**
-                 *### <font color=red>**该接口已废弃** </font><br>
+                 *以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)
+
+### <font color=red>**该接口已废弃** </font><br>
 DescribeDiagnoseReport 用于获取指定报告id的内容。
                  * @param req DescribeDiagnoseReportRequest
                  * @return DescribeDiagnoseReportOutcome
@@ -988,7 +992,9 @@ EnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时
                 EnableClsLogTopicOutcomeCallable EnableClsLogTopicCallable(const Model::EnableClsLogTopicRequest& request);
 
                 /**
-                 *### <font color=red>**该接口已废弃** </font><br>
+                 *以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)
+
+### <font color=red>**该接口已废弃** </font><br>
 GetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。
                  * @param req GetDisableRecordsRequest
                  * @return GetDisableRecordsOutcome
@@ -1016,7 +1022,9 @@ GetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。
                 ListClsTopicDomainsOutcomeCallable ListClsTopicDomainsCallable(const Model::ListClsTopicDomainsRequest& request);
 
                 /**
-                 *### <font color=red>**该接口已废弃** </font><br>
+                 *以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)
+
+### <font color=red>**该接口已废弃** </font><br>
 ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情。
                  * @param req ListDiagnoseReportRequest
                  * @return ListDiagnoseReportOutcome

@@ -24,7 +24,8 @@ using namespace std;
 
 CreateCosCredentialRequest::CreateCosCredentialRequest() :
     m_cosTypeHasBeenSet(false),
-    m_androidAppCosInfoHasBeenSet(false)
+    m_androidAppCosInfoHasBeenSet(false),
+    m_androidAppFileCosInfoHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,15 @@ string CreateCosCredentialRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_androidAppCosInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_androidAppFileCosInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AndroidAppFileCosInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_androidAppFileCosInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -90,6 +100,22 @@ void CreateCosCredentialRequest::SetAndroidAppCosInfo(const AndroidAppCosInfo& _
 bool CreateCosCredentialRequest::AndroidAppCosInfoHasBeenSet() const
 {
     return m_androidAppCosInfoHasBeenSet;
+}
+
+FileCosInfo CreateCosCredentialRequest::GetAndroidAppFileCosInfo() const
+{
+    return m_androidAppFileCosInfo;
+}
+
+void CreateCosCredentialRequest::SetAndroidAppFileCosInfo(const FileCosInfo& _androidAppFileCosInfo)
+{
+    m_androidAppFileCosInfo = _androidAppFileCosInfo;
+    m_androidAppFileCosInfoHasBeenSet = true;
+}
+
+bool CreateCosCredentialRequest::AndroidAppFileCosInfoHasBeenSet() const
+{
+    return m_androidAppFileCosInfoHasBeenSet;
 }
 
 

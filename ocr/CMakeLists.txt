@@ -182,11 +182,12 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/FinancialBill.h
   include/tencentcloud/ocr/v20181119/model/LicensePlateOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralBasicOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/TextVehicleBack.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeTableMultiOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralEfficientOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/AdvertiseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/AirTicketInfo.h
   include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/TextVehicleBack.h
   include/tencentcloud/ocr/v20181119/model/ImageEnhancementRequest.h
   include/tencentcloud/ocr/v20181119/model/ExtractDocBasicResponse.h
   include/tencentcloud/ocr/v20181119/model/EnglishOCRRequest.h
@@ -206,6 +207,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewRequest.h
   include/tencentcloud/ocr/v20181119/model/InstitutionOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/CarInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeTableMultiOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/FlightInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/DetailInformationOfAirTicketTupleList.h
   include/tencentcloud/ocr/v20181119/model/TextVehicleFront.h
@@ -507,11 +509,12 @@ set(ocr_src
   src/v20181119/model/FinancialBill.cpp
   src/v20181119/model/LicensePlateOCRRequest.cpp
   src/v20181119/model/GeneralBasicOCRRequest.cpp
-  src/v20181119/model/TextVehicleBack.cpp
+  src/v20181119/model/RecognizeTableMultiOCRRequest.cpp
   src/v20181119/model/GeneralEfficientOCRRequest.cpp
   src/v20181119/model/AdvertiseOCRRequest.cpp
   src/v20181119/model/AirTicketInfo.cpp
   src/v20181119/model/RideHailingDriverLicenseOCRResponse.cpp
+  src/v20181119/model/TextVehicleBack.cpp
   src/v20181119/model/ImageEnhancementRequest.cpp
   src/v20181119/model/ExtractDocBasicResponse.cpp
   src/v20181119/model/EnglishOCRRequest.cpp
@@ -531,6 +534,7 @@ set(ocr_src
   src/v20181119/model/VatInvoiceVerifyNewRequest.cpp
   src/v20181119/model/InstitutionOCRRequest.cpp
   src/v20181119/model/CarInvoiceInfo.cpp
+  src/v20181119/model/RecognizeTableMultiOCRResponse.cpp
   src/v20181119/model/FlightInvoiceInfo.cpp
   src/v20181119/model/DetailInformationOfAirTicketTupleList.cpp
   src/v20181119/model/TextVehicleFront.cpp

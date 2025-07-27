@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
-                     * @return EngineVersion 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
+                     * 获取引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]。
+说明：引擎版本为必填。
+                     * @return EngineVersion 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]。
+说明：引擎版本为必填。
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
-                     * @param _engineVersion 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
+                     * 设置引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]。
+说明：引擎版本为必填。
+                     * @param _engineVersion 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]。
+说明：引擎版本为必填。
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -64,15 +68,15 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
-                     * @return TemplateType 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
+                     * 获取默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。默认值为：HIGH_STABILITY。
+                     * @return TemplateType 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。默认值为：HIGH_STABILITY。
                      * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
-                     * 设置默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
-                     * @param _templateType 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
+                     * 设置默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。默认值为：HIGH_STABILITY。
+                     * @param _templateType 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。默认值为：HIGH_STABILITY。
                      * 
                      */
                     void SetTemplateType(const std::string& _templateType);
@@ -85,15 +89,15 @@ namespace TencentCloud
                     bool TemplateTypeHasBeenSet() const;
 
                     /**
-                     * 获取参数模板引擎，默认值：InnoDB
-                     * @return EngineType 参数模板引擎，默认值：InnoDB
+                     * 获取参数模板引擎，默认值：InnoDB，可取值：InnoDB、RocksDB。
+                     * @return EngineType 参数模板引擎，默认值：InnoDB，可取值：InnoDB、RocksDB。
                      * 
                      */
                     std::string GetEngineType() const;
 
                     /**
-                     * 设置参数模板引擎，默认值：InnoDB
-                     * @param _engineType 参数模板引擎，默认值：InnoDB
+                     * 设置参数模板引擎，默认值：InnoDB，可取值：InnoDB、RocksDB。
+                     * @param _engineType 参数模板引擎，默认值：InnoDB，可取值：InnoDB、RocksDB。
                      * 
                      */
                     void SetEngineType(const std::string& _engineType);
@@ -108,19 +112,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
+                     * 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]。
+说明：引擎版本为必填。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
+                     * 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。默认值为：HIGH_STABILITY。
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;
 
                     /**
-                     * 参数模板引擎，默认值：InnoDB
+                     * 参数模板引擎，默认值：InnoDB，可取值：InnoDB、RocksDB。
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;

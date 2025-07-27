@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AsyncRequestIdHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，每次请求返回的记录数。默认值为 20，最大值为 100。
-                     * @return Limit 分页参数，每次请求返回的记录数。默认值为 20，最大值为 100。
+                     * 获取分页参数，每次请求返回的记录数。默认值为20，建议最大取值为100。
+                     * @return Limit 分页参数，每次请求返回的记录数。默认值为20，建议最大取值为100。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数，每次请求返回的记录数。默认值为 20，最大值为 100。
-                     * @param _limit 分页参数，每次请求返回的记录数。默认值为 20，最大值为 100。
+                     * 设置分页参数，每次请求返回的记录数。默认值为20，建议最大取值为100。
+                     * @param _limit 分页参数，每次请求返回的记录数。默认值为20，建议最大取值为100。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_asyncRequestIdHasBeenSet;
 
                     /**
-                     * 分页参数，每次请求返回的记录数。默认值为 20，最大值为 100。
+                     * 分页参数，每次请求返回的记录数。默认值为20，建议最大取值为100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

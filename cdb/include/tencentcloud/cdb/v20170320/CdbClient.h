@@ -1439,7 +1439,7 @@ namespace TencentCloud
                 DescribeBackupOverviewOutcomeCallable DescribeBackupOverviewCallable(const Model::DescribeBackupOverviewRequest& request);
 
                 /**
-                 *本接口(DescribeBackupSummaries)用于查询备份的统计情况，返回以实例为维度的备份占用容量，以及每个实例的数据备份和日志备份的个数和容量（容量单位为字节）。
+                 *本接口（DescribeBackupSummaries）用于查询备份的统计情况，返回以实例为维度的备份占用容量，以及每个实例的数据备份和日志备份的个数和容量（容量单位为字节）。
                  * @param req DescribeBackupSummariesRequest
                  * @return DescribeBackupSummariesOutcome
                  */
@@ -1583,7 +1583,7 @@ namespace TencentCloud
                 DescribeDBInstanceInfoOutcomeCallable DescribeDBInstanceInfoCallable(const Model::DescribeDBInstanceInfoRequest& request);
 
                 /**
-                 *本接口(DescribeDBInstanceLogToCLS)用于查询实例慢日志、错误日志投递CLS的配置，通过AppId、Region以及实例ID过滤出当前实例日志投递CLS的配置。
+                 *本接口（DescribeDBInstanceLogToCLS）用于查询实例慢日志、错误日志投递CLS的配置，通过AppId、Region以及实例ID过滤出当前实例日志投递CLS的配置。
                  * @param req DescribeDBInstanceLogToCLSRequest
                  * @return DescribeDBInstanceLogToCLSOutcome
                  */
@@ -1831,7 +1831,7 @@ namespace TencentCloud
                 DescribeRollbackRangeTimeOutcomeCallable DescribeRollbackRangeTimeCallable(const Model::DescribeRollbackRangeTimeRequest& request);
 
                 /**
-                 *本接口(DescribeRollbackTaskDetail)用于查询云数据库实例回档任务详情。
+                 *本接口（DescribeRollbackTaskDetail）用于查询云数据库实例回档任务详情。
                  * @param req DescribeRollbackTaskDetailRequest
                  * @return DescribeRollbackTaskDetailOutcome
                  */
@@ -1877,7 +1877,7 @@ namespace TencentCloud
                 DescribeSupportedPrivilegesOutcomeCallable DescribeSupportedPrivilegesCallable(const Model::DescribeSupportedPrivilegesRequest& request);
 
                 /**
-                 *本接口(DescribeTableColumns)用于查询云数据库实例的指定数据库表的列信息，仅支持主实例和灾备实例。
+                 *本接口（DescribeTableColumns）用于查询云数据库实例的指定数据库表的列信息，仅支持主实例和灾备实例。
                  * @param req DescribeTableColumnsRequest
                  * @return DescribeTableColumnsOutcome
                  */
@@ -2053,7 +2053,7 @@ namespace TencentCloud
                 ModifyAutoRenewFlagOutcomeCallable ModifyAutoRenewFlagCallable(const Model::ModifyAutoRenewFlagRequest& request);
 
                 /**
-                 *本接口(ModifyBackupConfig)用于修改数据库备份配置信息。
+                 *本接口（ModifyBackupConfig）用于修改数据库备份配置信息。
                  * @param req ModifyBackupConfigRequest
                  * @return ModifyBackupConfigOutcome
                  */
@@ -2188,7 +2188,7 @@ namespace TencentCloud
                 ModifyInstanceTagOutcomeCallable ModifyInstanceTagCallable(const Model::ModifyInstanceTagRequest& request);
 
                 /**
-                 *该接口用于修改实例本地binlog保留策略。
+                 *本接口（ModifyLocalBinlogConfig）用于修改实例本地 binlog 保留策略。
                  * @param req ModifyLocalBinlogConfigRequest
                  * @return ModifyLocalBinlogConfigOutcome
                  */

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数模板ID。
-                     * @return TemplateId 参数模板ID。
+                     * 获取参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。
+                     * @return TemplateId 参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置参数模板ID。
-                     * @param _templateId 参数模板ID。
+                     * 设置参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。
+                     * @param _templateId 参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数模板ID。
+                     * 参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

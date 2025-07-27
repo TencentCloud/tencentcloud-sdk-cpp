@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库版本，大版本号，例如11，12，13
-                     * @return DBMajorVersion 数据库版本，大版本号，例如11，12，13
+                     * 获取数据库版本，大版本号，例如11，12，13。可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)接口获取
+                     * @return DBMajorVersion 数据库版本，大版本号，例如11，12，13。可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)接口获取
                      * 
                      */
                     std::string GetDBMajorVersion() const;
 
                     /**
-                     * 设置数据库版本，大版本号，例如11，12，13
-                     * @param _dBMajorVersion 数据库版本，大版本号，例如11，12，13
+                     * 设置数据库版本，大版本号，例如11，12，13。可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)接口获取
+                     * @param _dBMajorVersion 数据库版本，大版本号，例如11，12，13。可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)接口获取
                      * 
                      */
                     void SetDBMajorVersion(const std::string& _dBMajorVersion);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库版本，大版本号，例如11，12，13
+                     * 数据库版本，大版本号，例如11，12，13。可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)接口获取
                      */
                     std::string m_dBMajorVersion;
                     bool m_dBMajorVersionHasBeenSet;

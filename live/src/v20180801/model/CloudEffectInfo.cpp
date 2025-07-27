@@ -24,6 +24,8 @@ CloudEffectInfo::CloudEffectInfo() :
     m_idHasBeenSet(false),
     m_promptHasBeenSet(false),
     m_flagHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_messageHasBeenSet(false),
     m_previewImageUrlHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -64,6 +66,26 @@ CoreInternalOutcome CloudEffectInfo::Deserialize(const rapidjson::Value &value)
         }
         m_flag = string(value["Flag"].GetString());
         m_flagHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudEffectInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudEffectInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
     }
 
     if (value.HasMember("PreviewImageUrl") && !value["PreviewImageUrl"].IsNull())
@@ -135,6 +157,22 @@ void CloudEffectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Flag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
     if (m_previewImageUrlHasBeenSet)
@@ -218,6 +256,38 @@ void CloudEffectInfo::SetFlag(const string& _flag)
 bool CloudEffectInfo::FlagHasBeenSet() const
 {
     return m_flagHasBeenSet;
+}
+
+string CloudEffectInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void CloudEffectInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CloudEffectInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string CloudEffectInfo::GetMessage() const
+{
+    return m_message;
+}
+
+void CloudEffectInfo::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool CloudEffectInfo::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 
 string CloudEffectInfo::GetPreviewImageUrl() const

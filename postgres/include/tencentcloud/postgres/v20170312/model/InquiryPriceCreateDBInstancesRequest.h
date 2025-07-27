@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
-                     * @return Zone 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * 获取可用区名称。该参数可以通过调用[ DescribeZones](https://cloud.tencent.com/document/product/409/16769) 接口的返回值中的Zone字段来获取。
+                     * @return Zone 可用区名称。该参数可以通过调用[ DescribeZones](https://cloud.tencent.com/document/product/409/16769) 接口的返回值中的Zone字段来获取。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
-                     * @param _zone 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * 设置可用区名称。该参数可以通过调用[ DescribeZones](https://cloud.tencent.com/document/product/409/16769) 接口的返回值中的Zone字段来获取。
+                     * @param _zone 可用区名称。该参数可以通过调用[ DescribeZones](https://cloud.tencent.com/document/product/409/16769) 接口的返回值中的Zone字段来获取。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取规格ID。该参数可以通过调用DescribeClasses接口的返回值中的SpecCode字段来获取。
-                     * @return SpecCode 规格ID。该参数可以通过调用DescribeClasses接口的返回值中的SpecCode字段来获取。
+                     * 获取规格ID。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/product/409/89019)接口的返回值中的SpecCode字段来获取。
+                     * @return SpecCode 规格ID。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/product/409/89019)接口的返回值中的SpecCode字段来获取。
                      * 
                      */
                     std::string GetSpecCode() const;
 
                     /**
-                     * 设置规格ID。该参数可以通过调用DescribeClasses接口的返回值中的SpecCode字段来获取。
-                     * @param _specCode 规格ID。该参数可以通过调用DescribeClasses接口的返回值中的SpecCode字段来获取。
+                     * 设置规格ID。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/product/409/89019)接口的返回值中的SpecCode字段来获取。
+                     * @param _specCode 规格ID。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/product/409/89019)接口的返回值中的SpecCode字段来获取。
                      * 
                      */
                     void SetSpecCode(const std::string& _specCode);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取存储容量大小，单位：GB。
-                     * @return Storage 存储容量大小，单位：GB。
+                     * 获取存储容量大小，单位：GB。该参数的设置步长为10。
+                     * @return Storage 存储容量大小，单位：GB。该参数的设置步长为10。
                      * 
                      */
                     uint64_t GetStorage() const;
 
                     /**
-                     * 设置存储容量大小，单位：GB。
-                     * @param _storage 存储容量大小，单位：GB。
+                     * 设置存储容量大小，单位：GB。该参数的设置步长为10。
+                     * @param _storage 存储容量大小，单位：GB。该参数的设置步长为10。
                      * 
                      */
                     void SetStorage(const uint64_t& _storage);
@@ -169,15 +169,19 @@ namespace TencentCloud
                     bool PidHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
-                     * @return InstanceChargeType 实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
+                     * 获取实例计费类型。目前支持：PREPAID（预付费，即包年包月）和 POSTPAID（按量计费）。
+默认值：PREPAID
+                     * @return InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月）和 POSTPAID（按量计费）。
+默认值：PREPAID
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
-                     * @param _instanceChargeType 实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
+                     * 设置实例计费类型。目前支持：PREPAID（预付费，即包年包月）和 POSTPAID（按量计费）。
+默认值：PREPAID
+                     * @param _instanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月）和 POSTPAID（按量计费）。
+默认值：PREPAID
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -250,19 +254,19 @@ mssql_compatible（MSSQL兼容-云数据库PostgreSQL）
                 private:
 
                     /**
-                     * 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * 可用区名称。该参数可以通过调用[ DescribeZones](https://cloud.tencent.com/document/product/409/16769) 接口的返回值中的Zone字段来获取。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 规格ID。该参数可以通过调用DescribeClasses接口的返回值中的SpecCode字段来获取。
+                     * 规格ID。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/product/409/89019)接口的返回值中的SpecCode字段来获取。
                      */
                     std::string m_specCode;
                     bool m_specCodeHasBeenSet;
 
                     /**
-                     * 存储容量大小，单位：GB。
+                     * 存储容量大小，单位：GB。该参数的设置步长为10。
                      */
                     uint64_t m_storage;
                     bool m_storageHasBeenSet;
@@ -286,7 +290,8 @@ mssql_compatible（MSSQL兼容-云数据库PostgreSQL）
                     bool m_pidHasBeenSet;
 
                     /**
-                     * 实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
+                     * 实例计费类型。目前支持：PREPAID（预付费，即包年包月）和 POSTPAID（按量计费）。
+默认值：PREPAID
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;

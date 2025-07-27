@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
-                     * @return DBInstanceIdSet 实例ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * 获取实例ID列表。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时解隔离多个实例。
+                     * @return DBInstanceIdSet 实例ID列表。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时解隔离多个实例。
                      * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
-                     * 设置实例ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
-                     * @param _dBInstanceIdSet 实例ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * 设置实例ID列表。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时解隔离多个实例。
+                     * @param _dBInstanceIdSet 实例ID列表。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时解隔离多个实例。
                      * 
                      */
                     void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
@@ -66,10 +66,10 @@ namespace TencentCloud
                     /**
                      * 获取购买时长，单位：月。
 <li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
-<li>后付费：只支持1</li>
+<li>后付费：该参数不生效</li>
                      * @return Period 购买时长，单位：月。
 <li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
-<li>后付费：只支持1</li>
+<li>后付费：该参数不生效</li>
                      * 
                      */
                     int64_t GetPeriod() const;
@@ -77,10 +77,10 @@ namespace TencentCloud
                     /**
                      * 设置购买时长，单位：月。
 <li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
-<li>后付费：只支持1</li>
+<li>后付费：该参数不生效</li>
                      * @param _period 购买时长，单位：月。
 <li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
-<li>后付费：只支持1</li>
+<li>后付费：该参数不生效</li>
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -149,7 +149,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * 实例ID列表。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时解隔离多个实例。
                      */
                     std::vector<std::string> m_dBInstanceIdSet;
                     bool m_dBInstanceIdSetHasBeenSet;
@@ -157,7 +157,7 @@ namespace TencentCloud
                     /**
                      * 购买时长，单位：月。
 <li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
-<li>后付费：只支持1</li>
+<li>后付费：该参数不生效</li>
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;

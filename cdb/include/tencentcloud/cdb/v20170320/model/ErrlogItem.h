@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取错误发生时间。
-                     * @return Timestamp 错误发生时间。
+                     * 获取错误发生时间。时间戳，秒级
+                     * @return Timestamp 错误发生时间。时间戳，秒级
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
-                     * 设置错误发生时间。
-                     * @param _timestamp 错误发生时间。
+                     * 设置错误发生时间。时间戳，秒级
+                     * @param _timestamp 错误发生时间。时间戳，秒级
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 错误发生时间。
+                     * 错误发生时间。时间戳，秒级
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;

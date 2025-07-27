@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return DBInstanceId 实例 ID
+                     * 获取实例 ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例 ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _dBInstanceId 实例 ID
+                     * 设置实例 ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例 ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开启或关闭SSL
-                     * @return SSLEnabled 开启或关闭SSL
+                     * 获取开启或关闭SSL。true - 开启 ；false - 关闭。
+                     * @return SSLEnabled 开启或关闭SSL。true - 开启 ；false - 关闭。
                      * 
                      */
                     bool GetSSLEnabled() const;
 
                     /**
-                     * 设置开启或关闭SSL
-                     * @param _sSLEnabled 开启或关闭SSL
+                     * 设置开启或关闭SSL。true - 开启 ；false - 关闭。
+                     * @param _sSLEnabled 开启或关闭SSL。true - 开启 ；false - 关闭。
                      * 
                      */
                     void SetSSLEnabled(const bool& _sSLEnabled);
@@ -108,13 +108,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * 实例 ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 开启或关闭SSL
+                     * 开启或关闭SSL。true - 开启 ；false - 关闭。
                      */
                     bool m_sSLEnabled;
                     bool m_sSLEnabledHasBeenSet;

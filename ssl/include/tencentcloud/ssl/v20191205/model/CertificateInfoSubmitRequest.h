@@ -982,6 +982,27 @@ FILE：手动添加域名文件验证。 需要用户手动在域名站点根目
                      */
                     bool CaTypeHasBeenSet() const;
 
+                    /**
+                     * 获取签名算法
+                     * @return SignAlgo 签名算法
+                     * 
+                     */
+                    std::string GetSignAlgo() const;
+
+                    /**
+                     * 设置签名算法
+                     * @param _signAlgo 签名算法
+                     * 
+                     */
+                    void SetSignAlgo(const std::string& _signAlgo);
+
+                    /**
+                     * 判断参数 SignAlgo 是否已赋值
+                     * @return SignAlgo 是否已赋值
+                     * 
+                     */
+                    bool SignAlgoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1248,6 +1269,12 @@ FILE：手动添加域名文件验证。 需要用户手动在域名站点根目
                      */
                     std::string m_caType;
                     bool m_caTypeHasBeenSet;
+
+                    /**
+                     * 签名算法
+                     */
+                    std::string m_signAlgo;
+                    bool m_signAlgoHasBeenSet;
 
                 };
             }

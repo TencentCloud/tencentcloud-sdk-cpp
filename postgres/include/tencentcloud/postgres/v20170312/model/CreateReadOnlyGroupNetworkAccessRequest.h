@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取RO组ID，形如：pgro-4t9c6g7k。
-                     * @return ReadOnlyGroupId RO组ID，形如：pgro-4t9c6g7k。
+                     * 获取RO组ID，形如：pgrogrp-4t9c6g7k。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取
+                     * @return ReadOnlyGroupId RO组ID，形如：pgrogrp-4t9c6g7k。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取
                      * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
-                     * 设置RO组ID，形如：pgro-4t9c6g7k。
-                     * @param _readOnlyGroupId RO组ID，形如：pgro-4t9c6g7k。
+                     * 设置RO组ID，形如：pgrogrp-4t9c6g7k。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取
+                     * @param _readOnlyGroupId RO组ID，形如：pgrogrp-4t9c6g7k。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取
                      * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool IsAssignVipHasBeenSet() const;
 
                     /**
-                     * 获取目标VIP地址。
-                     * @return Vip 目标VIP地址。
+                     * 获取目标VIP地址。当不指定该参数，且IsAssignVip为true时，默认自动分配Vip。
+                     * @return Vip 目标VIP地址。当不指定该参数，且IsAssignVip为true时，默认自动分配Vip。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置目标VIP地址。
-                     * @param _vip 目标VIP地址。
+                     * 设置目标VIP地址。当不指定该参数，且IsAssignVip为true时，默认自动分配Vip。
+                     * @param _vip 目标VIP地址。当不指定该参数，且IsAssignVip为true时，默认自动分配Vip。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * RO组ID，形如：pgro-4t9c6g7k。
+                     * RO组ID，形如：pgrogrp-4t9c6g7k。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取
                      */
                     std::string m_readOnlyGroupId;
                     bool m_readOnlyGroupIdHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_isAssignVipHasBeenSet;
 
                     /**
-                     * 目标VIP地址。
+                     * 目标VIP地址。当不指定该参数，且IsAssignVip为true时，默认自动分配Vip。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取只读组ID
-                     * @return ReadOnlyGroupId 只读组ID
+                     * 获取只读组ID。
+                     * @return ReadOnlyGroupId 只读组ID。
                      * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
-                     * 设置只读组ID
-                     * @param _readOnlyGroupId 只读组ID
+                     * 设置只读组ID。
+                     * @param _readOnlyGroupId 只读组ID。
                      * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ReadOnlyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取只读组名称
-                     * @return ReadOnlyGroupName 只读组名称
+                     * 获取只读组名称。仅支持长度小于60的中文/英文/数字/"_"/"-"
+                     * @return ReadOnlyGroupName 只读组名称。仅支持长度小于60的中文/英文/数字/"_"/"-"
                      * 
                      */
                     std::string GetReadOnlyGroupName() const;
 
                     /**
-                     * 设置只读组名称
-                     * @param _readOnlyGroupName 只读组名称
+                     * 设置只读组名称。仅支持长度小于60的中文/英文/数字/"_"/"-"
+                     * @param _readOnlyGroupName 只读组名称。仅支持长度小于60的中文/英文/数字/"_"/"-"
                      * 
                      */
                     void SetReadOnlyGroupName(const std::string& _readOnlyGroupName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ReplayLatencyEliminateHasBeenSet() const;
 
                     /**
-                     * 获取延迟日志大小阈值，单位MB
-                     * @return MaxReplayLatency 延迟日志大小阈值，单位MB
+                     * 获取延迟日志大小阈值，单位MB。当开启延迟日志大小配置，应输入正整数
+                     * @return MaxReplayLatency 延迟日志大小阈值，单位MB。当开启延迟日志大小配置，应输入正整数
                      * 
                      */
                     uint64_t GetMaxReplayLatency() const;
 
                     /**
-                     * 设置延迟日志大小阈值，单位MB
-                     * @param _maxReplayLatency 延迟日志大小阈值，单位MB
+                     * 设置延迟日志大小阈值，单位MB。当开启延迟日志大小配置，应输入正整数
+                     * @param _maxReplayLatency 延迟日志大小阈值，单位MB。当开启延迟日志大小配置，应输入正整数
                      * 
                      */
                     void SetMaxReplayLatency(const uint64_t& _maxReplayLatency);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool MaxReplayLatencyHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间大小阈值，单位ms
-                     * @return MaxReplayLag 延迟时间大小阈值，单位ms
+                     * 获取延迟时间大小阈值，单位s。当开启延迟时间配置时，应输入正整数。
+                     * @return MaxReplayLag 延迟时间大小阈值，单位s。当开启延迟时间配置时，应输入正整数。
                      * 
                      */
                     uint64_t GetMaxReplayLag() const;
 
                     /**
-                     * 设置延迟时间大小阈值，单位ms
-                     * @param _maxReplayLag 延迟时间大小阈值，单位ms
+                     * 设置延迟时间大小阈值，单位s。当开启延迟时间配置时，应输入正整数。
+                     * @param _maxReplayLag 延迟时间大小阈值，单位s。当开启延迟时间配置时，应输入正整数。
                      * 
                      */
                     void SetMaxReplayLag(const uint64_t& _maxReplayLag);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool RebalanceHasBeenSet() const;
 
                     /**
-                     * 获取延迟剔除最小保留实例数
-                     * @return MinDelayEliminateReserve 延迟剔除最小保留实例数
+                     * 获取延迟剔除最小保留实例数。取值范围[0,100]
+                     * @return MinDelayEliminateReserve 延迟剔除最小保留实例数。取值范围[0,100]
                      * 
                      */
                     uint64_t GetMinDelayEliminateReserve() const;
 
                     /**
-                     * 设置延迟剔除最小保留实例数
-                     * @param _minDelayEliminateReserve 延迟剔除最小保留实例数
+                     * 设置延迟剔除最小保留实例数。取值范围[0,100]
+                     * @param _minDelayEliminateReserve 延迟剔除最小保留实例数。取值范围[0,100]
                      * 
                      */
                     void SetMinDelayEliminateReserve(const uint64_t& _minDelayEliminateReserve);
@@ -213,13 +213,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 只读组ID
+                     * 只读组ID。
                      */
                     std::string m_readOnlyGroupId;
                     bool m_readOnlyGroupIdHasBeenSet;
 
                     /**
-                     * 只读组名称
+                     * 只读组名称。仅支持长度小于60的中文/英文/数字/"_"/"-"
                      */
                     std::string m_readOnlyGroupName;
                     bool m_readOnlyGroupNameHasBeenSet;
@@ -237,13 +237,13 @@ namespace TencentCloud
                     bool m_replayLatencyEliminateHasBeenSet;
 
                     /**
-                     * 延迟日志大小阈值，单位MB
+                     * 延迟日志大小阈值，单位MB。当开启延迟日志大小配置，应输入正整数
                      */
                     uint64_t m_maxReplayLatency;
                     bool m_maxReplayLatencyHasBeenSet;
 
                     /**
-                     * 延迟时间大小阈值，单位ms
+                     * 延迟时间大小阈值，单位s。当开启延迟时间配置时，应输入正整数。
                      */
                     uint64_t m_maxReplayLag;
                     bool m_maxReplayLagHasBeenSet;
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_rebalanceHasBeenSet;
 
                     /**
-                     * 延迟剔除最小保留实例数
+                     * 延迟剔除最小保留实例数。取值范围[0,100]
                      */
                     uint64_t m_minDelayEliminateReserve;
                     bool m_minDelayEliminateReserveHasBeenSet;

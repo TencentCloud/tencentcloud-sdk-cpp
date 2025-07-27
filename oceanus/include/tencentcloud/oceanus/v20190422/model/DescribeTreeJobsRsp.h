@@ -198,6 +198,56 @@ namespace TencentCloud
                      */
                     bool RequestIdHasBeenSet() const;
 
+                    /**
+                     * 获取attach-000
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PageAttach attach-000
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPageAttach() const;
+
+                    /**
+                     * 设置attach-000
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pageAttach attach-000
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPageAttach(const std::string& _pageAttach);
+
+                    /**
+                     * 判断参数 PageAttach 是否已赋值
+                     * @return PageAttach 是否已赋值
+                     * 
+                     */
+                    bool PageAttachHasBeenSet() const;
+
+                    /**
+                     * 获取bool
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasMore bool
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetHasMore() const;
+
+                    /**
+                     * 设置bool
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hasMore bool
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHasMore(const bool& _hasMore);
+
+                    /**
+                     * 判断参数 HasMore 是否已赋值
+                     * @return HasMore 是否已赋值
+                     * 
+                     */
+                    bool HasMoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +291,20 @@ namespace TencentCloud
                      */
                     std::string m_requestId;
                     bool m_requestIdHasBeenSet;
+
+                    /**
+                     * attach-000
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pageAttach;
+                    bool m_pageAttachHasBeenSet;
+
+                    /**
+                     * bool
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_hasMore;
+                    bool m_hasMoreHasBeenSet;
 
                 };
             }

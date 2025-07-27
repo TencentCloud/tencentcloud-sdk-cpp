@@ -34,6 +34,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/SetAndroidInstancesBGAppKeepAliveResponse.h
   include/tencentcloud/gs/v20191118/model/UninstallAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/StopAndroidInstancesAppResponse.h
+  include/tencentcloud/gs/v20191118/model/FileCosInfo.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidAppVersionResponse.h
   include/tencentcloud/gs/v20191118/model/CleanAndroidInstancesAppDataResponse.h
   include/tencentcloud/gs/v20191118/model/DeleteAndroidAppResponse.h
@@ -211,6 +212,7 @@ set(gs_src
   src/v20191118/model/SetAndroidInstancesBGAppKeepAliveResponse.cpp
   src/v20191118/model/UninstallAndroidInstancesAppResponse.cpp
   src/v20191118/model/StopAndroidInstancesAppResponse.cpp
+  src/v20191118/model/FileCosInfo.cpp
   src/v20191118/model/ModifyAndroidAppVersionResponse.cpp
   src/v20191118/model/CleanAndroidInstancesAppDataResponse.cpp
   src/v20191118/model/DeleteAndroidAppResponse.cpp

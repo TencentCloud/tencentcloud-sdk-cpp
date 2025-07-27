@@ -2792,6 +2792,49 @@ OcrClient::RecognizeTableAccurateOCROutcomeCallable OcrClient::RecognizeTableAcc
     return task->get_future();
 }
 
+OcrClient::RecognizeTableMultiOCROutcome OcrClient::RecognizeTableMultiOCR(const RecognizeTableMultiOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeTableMultiOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeTableMultiOCRResponse rsp = RecognizeTableMultiOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeTableMultiOCROutcome(rsp);
+        else
+            return RecognizeTableMultiOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeTableMultiOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeTableMultiOCRAsync(const RecognizeTableMultiOCRRequest& request, const RecognizeTableMultiOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeTableMultiOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeTableMultiOCROutcomeCallable OcrClient::RecognizeTableMultiOCRCallable(const RecognizeTableMultiOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeTableMultiOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeTableMultiOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizeTableOCROutcome OcrClient::RecognizeTableOCR(const RecognizeTableOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeTableOCR");
