@@ -24,7 +24,8 @@ AiAnalysisTaskDelLogoOutput::AiAnalysisTaskDelLogoOutput() :
     m_pathHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_originSubtitlePathHasBeenSet(false),
-    m_translateSubtitlePathHasBeenSet(false)
+    m_translateSubtitlePathHasBeenSet(false),
+    m_subtitlePosHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,23 @@ CoreInternalOutcome AiAnalysisTaskDelLogoOutput::Deserialize(const rapidjson::Va
         m_translateSubtitlePathHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitlePos") && !value["SubtitlePos"].IsNull())
+    {
+        if (!value["SubtitlePos"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDelLogoOutput.SubtitlePos` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subtitlePos.Deserialize(value["SubtitlePos"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subtitlePosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +136,15 @@ void AiAnalysisTaskDelLogoOutput::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "TranslateSubtitlePath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_translateSubtitlePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitlePosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitlePos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subtitlePos.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -185,5 +212,21 @@ void AiAnalysisTaskDelLogoOutput::SetTranslateSubtitlePath(const string& _transl
 bool AiAnalysisTaskDelLogoOutput::TranslateSubtitlePathHasBeenSet() const
 {
     return m_translateSubtitlePathHasBeenSet;
+}
+
+SubtitlePosition AiAnalysisTaskDelLogoOutput::GetSubtitlePos() const
+{
+    return m_subtitlePos;
+}
+
+void AiAnalysisTaskDelLogoOutput::SetSubtitlePos(const SubtitlePosition& _subtitlePos)
+{
+    m_subtitlePos = _subtitlePos;
+    m_subtitlePosHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDelLogoOutput::SubtitlePosHasBeenSet() const
+{
+    return m_subtitlePosHasBeenSet;
 }
 

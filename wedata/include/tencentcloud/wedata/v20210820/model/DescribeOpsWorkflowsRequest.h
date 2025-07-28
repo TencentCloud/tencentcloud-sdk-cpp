@@ -378,6 +378,27 @@ namespace TencentCloud
                      */
                     bool KeyWordHasBeenSet() const;
 
+                    /**
+                     * 获取**时区** timeZone, 默认UTC+8
+                     * @return ScheduleTimeZone **时区** timeZone, 默认UTC+8
+                     * 
+                     */
+                    std::string GetScheduleTimeZone() const;
+
+                    /**
+                     * 设置**时区** timeZone, 默认UTC+8
+                     * @param _scheduleTimeZone **时区** timeZone, 默认UTC+8
+                     * 
+                     */
+                    void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
+
+                    /**
+                     * 判断参数 ScheduleTimeZone 是否已赋值
+                     * @return ScheduleTimeZone 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -475,6 +496,12 @@ namespace TencentCloud
                      */
                     std::string m_keyWord;
                     bool m_keyWordHasBeenSet;
+
+                    /**
+                     * **时区** timeZone, 默认UTC+8
+                     */
+                    std::string m_scheduleTimeZone;
+                    bool m_scheduleTimeZoneHasBeenSet;
 
                 };
             }

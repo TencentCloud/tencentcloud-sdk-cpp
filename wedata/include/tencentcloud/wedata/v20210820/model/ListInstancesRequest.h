@@ -641,6 +641,56 @@ timeZone, 默认UTC+8
                      */
                     bool ScheduleTimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取**实例最近更新时间过滤条件**
+过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
+                     * @return LastUpdateTimeFrom **实例最近更新时间过滤条件**
+过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
+                     * 
+                     */
+                    std::string GetLastUpdateTimeFrom() const;
+
+                    /**
+                     * 设置**实例最近更新时间过滤条件**
+过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
+                     * @param _lastUpdateTimeFrom **实例最近更新时间过滤条件**
+过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
+                     * 
+                     */
+                    void SetLastUpdateTimeFrom(const std::string& _lastUpdateTimeFrom);
+
+                    /**
+                     * 判断参数 LastUpdateTimeFrom 是否已赋值
+                     * @return LastUpdateTimeFrom 是否已赋值
+                     * 
+                     */
+                    bool LastUpdateTimeFromHasBeenSet() const;
+
+                    /**
+                     * 获取**实例最近更新时间过滤条件**
+过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
+                     * @return LastUpdateTimeTo **实例最近更新时间过滤条件**
+过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
+                     * 
+                     */
+                    std::string GetLastUpdateTimeTo() const;
+
+                    /**
+                     * 设置**实例最近更新时间过滤条件**
+过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
+                     * @param _lastUpdateTimeTo **实例最近更新时间过滤条件**
+过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
+                     * 
+                     */
+                    void SetLastUpdateTimeTo(const std::string& _lastUpdateTimeTo);
+
+                    /**
+                     * 判断参数 LastUpdateTimeTo 是否已赋值
+                     * @return LastUpdateTimeTo 是否已赋值
+                     * 
+                     */
+                    bool LastUpdateTimeToHasBeenSet() const;
+
                 private:
 
                     /**
@@ -806,6 +856,20 @@ timeZone, 默认UTC+8
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * **实例最近更新时间过滤条件**
+过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
+                     */
+                    std::string m_lastUpdateTimeFrom;
+                    bool m_lastUpdateTimeFromHasBeenSet;
+
+                    /**
+                     * **实例最近更新时间过滤条件**
+过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss
+                     */
+                    std::string m_lastUpdateTimeTo;
+                    bool m_lastUpdateTimeToHasBeenSet;
 
                 };
             }

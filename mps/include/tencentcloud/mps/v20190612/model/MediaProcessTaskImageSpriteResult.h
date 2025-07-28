@@ -155,14 +155,18 @@ namespace TencentCloud
 
                     /**
                      * 获取对视频截雪碧图任务的输出。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 对视频截雪碧图任务的输出。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaImageSpriteItem GetOutput() const;
 
                     /**
                      * 设置对视频截雪碧图任务的输出。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 对视频截雪碧图任务的输出。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const MediaImageSpriteItem& _output);
@@ -250,6 +254,7 @@ namespace TencentCloud
 
                     /**
                      * 对视频截雪碧图任务的输出。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaImageSpriteItem m_output;
                     bool m_outputHasBeenSet;

@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool ConfidenceHasBeenSet() const;
 
+                    /**
+                     * 获取根据不同类型决定
+                     * @return SpecialInfo 根据不同类型决定
+                     * 
+                     */
+                    std::string GetSpecialInfo() const;
+
+                    /**
+                     * 设置根据不同类型决定
+                     * @param _specialInfo 根据不同类型决定
+                     * 
+                     */
+                    void SetSpecialInfo(const std::string& _specialInfo);
+
+                    /**
+                     * 判断参数 SpecialInfo 是否已赋值
+                     * @return SpecialInfo 是否已赋值
+                     * 
+                     */
+                    bool SpecialInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
+
+                    /**
+                     * 根据不同类型决定
+                     */
+                    std::string m_specialInfo;
+                    bool m_specialInfoHasBeenSet;
 
                 };
             }

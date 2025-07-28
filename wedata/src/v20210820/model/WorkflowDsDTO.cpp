@@ -34,7 +34,9 @@ WorkflowDsDTO::WorkflowDsDTO() :
     m_tasksHasBeenSet(false),
     m_linksHasBeenSet(false),
     m_paramsHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false)
+    m_workflowTypeHasBeenSet(false),
+    m_updateUserHasBeenSet(false),
+    m_updateUserIdHasBeenSet(false)
 {
 }
 
@@ -213,6 +215,26 @@ CoreInternalOutcome WorkflowDsDTO::Deserialize(const rapidjson::Value &value)
         m_workflowTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateUser") && !value["UpdateUser"].IsNull())
+    {
+        if (!value["UpdateUser"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.UpdateUser` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateUser = string(value["UpdateUser"].GetString());
+        m_updateUserHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateUserId") && !value["UpdateUserId"].IsNull())
+    {
+        if (!value["UpdateUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.UpdateUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateUserId = string(value["UpdateUserId"].GetString());
+        m_updateUserIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -351,6 +373,22 @@ void WorkflowDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "WorkflowType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workflowType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateUser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateUser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateUserId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -578,5 +616,37 @@ void WorkflowDsDTO::SetWorkflowType(const string& _workflowType)
 bool WorkflowDsDTO::WorkflowTypeHasBeenSet() const
 {
     return m_workflowTypeHasBeenSet;
+}
+
+string WorkflowDsDTO::GetUpdateUser() const
+{
+    return m_updateUser;
+}
+
+void WorkflowDsDTO::SetUpdateUser(const string& _updateUser)
+{
+    m_updateUser = _updateUser;
+    m_updateUserHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::UpdateUserHasBeenSet() const
+{
+    return m_updateUserHasBeenSet;
+}
+
+string WorkflowDsDTO::GetUpdateUserId() const
+{
+    return m_updateUserId;
+}
+
+void WorkflowDsDTO::SetUpdateUserId(const string& _updateUserId)
+{
+    m_updateUserId = _updateUserId;
+    m_updateUserIdHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::UpdateUserIdHasBeenSet() const
+{
+    return m_updateUserIdHasBeenSet;
 }
 

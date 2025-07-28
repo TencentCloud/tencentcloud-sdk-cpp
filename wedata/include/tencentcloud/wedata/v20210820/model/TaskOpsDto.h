@@ -2311,6 +2311,27 @@ no：任务无需满足自依赖
                      */
                     bool SelfWorkFlowDependTypeHasBeenSet() const;
 
+                    /**
+                     * 获取允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * @return AllowRedoType 允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * 
+                     */
+                    std::string GetAllowRedoType() const;
+
+                    /**
+                     * 设置允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * @param _allowRedoType 允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * 
+                     */
+                    void SetAllowRedoType(const std::string& _allowRedoType);
+
+                    /**
+                     * 判断参数 AllowRedoType 是否已赋值
+                     * @return AllowRedoType 是否已赋值
+                     * 
+                     */
+                    bool AllowRedoTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2944,6 +2965,12 @@ no：任务无需满足自依赖
                      */
                     std::string m_selfWorkFlowDependType;
                     bool m_selfWorkFlowDependTypeHasBeenSet;
+
+                    /**
+                     * 允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     */
+                    std::string m_allowRedoType;
+                    bool m_allowRedoTypeHasBeenSet;
 
                 };
             }

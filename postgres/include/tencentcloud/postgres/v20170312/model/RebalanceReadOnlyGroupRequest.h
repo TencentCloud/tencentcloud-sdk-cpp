@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取只读组ID
-                     * @return ReadOnlyGroupId 只读组ID
+                     * 获取只读组ID。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取
+                     * @return ReadOnlyGroupId 只读组ID。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取
                      * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
-                     * 设置只读组ID
-                     * @param _readOnlyGroupId 只读组ID
+                     * 设置只读组ID。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取
+                     * @param _readOnlyGroupId 只读组ID。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取
                      * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 只读组ID
+                     * 只读组ID。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取
                      */
                     std::string m_readOnlyGroupId;
                     bool m_readOnlyGroupIdHasBeenSet;

@@ -84,7 +84,8 @@ InstanceOpsDto::InstanceOpsDto() :
     m_deletedFatherListHasBeenSet(false),
     m_circulateInstanceListHasBeenSet(false),
     m_concurrentStrategyHasBeenSet(false),
-    m_scheduleRunTypeHasBeenSet(false)
+    m_scheduleRunTypeHasBeenSet(false),
+    m_allowRedoTypeHasBeenSet(false)
 {
 }
 
@@ -770,6 +771,16 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_scheduleRunTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowRedoType") && !value["AllowRedoType"].IsNull())
+    {
+        if (!value["AllowRedoType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.AllowRedoType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowRedoType = string(value["AllowRedoType"].GetString());
+        m_allowRedoTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1308,6 +1319,14 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ScheduleRunType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scheduleRunType, allocator);
+    }
+
+    if (m_allowRedoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowRedoType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_allowRedoType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2335,5 +2354,21 @@ void InstanceOpsDto::SetScheduleRunType(const uint64_t& _scheduleRunType)
 bool InstanceOpsDto::ScheduleRunTypeHasBeenSet() const
 {
     return m_scheduleRunTypeHasBeenSet;
+}
+
+string InstanceOpsDto::GetAllowRedoType() const
+{
+    return m_allowRedoType;
+}
+
+void InstanceOpsDto::SetAllowRedoType(const string& _allowRedoType)
+{
+    m_allowRedoType = _allowRedoType;
+    m_allowRedoTypeHasBeenSet = true;
+}
+
+bool InstanceOpsDto::AllowRedoTypeHasBeenSet() const
+{
+    return m_allowRedoTypeHasBeenSet;
 }
 

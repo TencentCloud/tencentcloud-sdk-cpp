@@ -23,7 +23,9 @@ using namespace std;
 SmartSubtitlesTaskInput::SmartSubtitlesTaskInput() :
     m_definitionHasBeenSet(false),
     m_userExtParaHasBeenSet(false),
-    m_rawParameterHasBeenSet(false)
+    m_rawParameterHasBeenSet(false),
+    m_outputStorageHasBeenSet(false),
+    m_outputObjectPathHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,33 @@ CoreInternalOutcome SmartSubtitlesTaskInput::Deserialize(const rapidjson::Value 
         m_rawParameterHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputStorage") && !value["OutputStorage"].IsNull())
+    {
+        if (!value["OutputStorage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitlesTaskInput.OutputStorage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_outputStorageHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputObjectPath") && !value["OutputObjectPath"].IsNull())
+    {
+        if (!value["OutputObjectPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitlesTaskInput.OutputObjectPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputObjectPath = string(value["OutputObjectPath"].GetString());
+        m_outputObjectPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +128,23 @@ void SmartSubtitlesTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rawParameter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_outputStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_outputStorage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_outputObjectPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputObjectPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputObjectPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +196,37 @@ void SmartSubtitlesTaskInput::SetRawParameter(const RawSmartSubtitleParameter& _
 bool SmartSubtitlesTaskInput::RawParameterHasBeenSet() const
 {
     return m_rawParameterHasBeenSet;
+}
+
+TaskOutputStorage SmartSubtitlesTaskInput::GetOutputStorage() const
+{
+    return m_outputStorage;
+}
+
+void SmartSubtitlesTaskInput::SetOutputStorage(const TaskOutputStorage& _outputStorage)
+{
+    m_outputStorage = _outputStorage;
+    m_outputStorageHasBeenSet = true;
+}
+
+bool SmartSubtitlesTaskInput::OutputStorageHasBeenSet() const
+{
+    return m_outputStorageHasBeenSet;
+}
+
+string SmartSubtitlesTaskInput::GetOutputObjectPath() const
+{
+    return m_outputObjectPath;
+}
+
+void SmartSubtitlesTaskInput::SetOutputObjectPath(const string& _outputObjectPath)
+{
+    m_outputObjectPath = _outputObjectPath;
+    m_outputObjectPathHasBeenSet = true;
+}
+
+bool SmartSubtitlesTaskInput::OutputObjectPathHasBeenSet() const
+{
+    return m_outputObjectPathHasBeenSet;
 }
 

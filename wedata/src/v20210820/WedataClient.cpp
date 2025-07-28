@@ -8210,6 +8210,49 @@ WedataClient::DescribeTaskLockStatusOutcomeCallable WedataClient::DescribeTaskLo
     return task->get_future();
 }
 
+WedataClient::DescribeTaskParamDsOutcome WedataClient::DescribeTaskParamDs(const DescribeTaskParamDsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskParamDs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskParamDsResponse rsp = DescribeTaskParamDsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskParamDsOutcome(rsp);
+        else
+            return DescribeTaskParamDsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskParamDsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeTaskParamDsAsync(const DescribeTaskParamDsRequest& request, const DescribeTaskParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskParamDs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeTaskParamDsOutcomeCallable WedataClient::DescribeTaskParamDsCallable(const DescribeTaskParamDsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskParamDsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskParamDs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeTaskRunHistoryOutcome WedataClient::DescribeTaskRunHistory(const DescribeTaskRunHistoryRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskRunHistory");
@@ -9536,6 +9579,49 @@ WedataClient::GetIntegrationNodeColumnSchemaOutcomeCallable WedataClient::GetInt
         [this, request]()
         {
             return this->GetIntegrationNodeColumnSchema(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::GetJobStatusOutcome WedataClient::GetJobStatus(const GetJobStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetJobStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetJobStatusResponse rsp = GetJobStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetJobStatusOutcome(rsp);
+        else
+            return GetJobStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return GetJobStatusOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetJobStatusAsync(const GetJobStatusRequest& request, const GetJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetJobStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::GetJobStatusOutcomeCallable WedataClient::GetJobStatusCallable(const GetJobStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetJobStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->GetJobStatus(request);
         }
     );
 
@@ -11091,6 +11177,135 @@ WedataClient::RegisterEventListenerOutcomeCallable WedataClient::RegisterEventLi
     return task->get_future();
 }
 
+WedataClient::RemoveDatabaseOutcome WedataClient::RemoveDatabase(const RemoveDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveDatabaseResponse rsp = RemoveDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveDatabaseOutcome(rsp);
+        else
+            return RemoveDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::RemoveDatabaseAsync(const RemoveDatabaseRequest& request, const RemoveDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveDatabase(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::RemoveDatabaseOutcomeCallable WedataClient::RemoveDatabaseCallable(const RemoveDatabaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveDatabaseOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveDatabase(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::RemoveSchemaOutcome WedataClient::RemoveSchema(const RemoveSchemaRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveSchema");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveSchemaResponse rsp = RemoveSchemaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveSchemaOutcome(rsp);
+        else
+            return RemoveSchemaOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveSchemaOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::RemoveSchemaAsync(const RemoveSchemaRequest& request, const RemoveSchemaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveSchema(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::RemoveSchemaOutcomeCallable WedataClient::RemoveSchemaCallable(const RemoveSchemaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveSchemaOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveSchema(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::RemoveTableOutcome WedataClient::RemoveTable(const RemoveTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveTableResponse rsp = RemoveTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveTableOutcome(rsp);
+        else
+            return RemoveTableOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveTableOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::RemoveTableAsync(const RemoveTableRequest& request, const RemoveTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::RemoveTableOutcomeCallable WedataClient::RemoveTableCallable(const RemoveTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveTableOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::RemoveWorkflowDsOutcome WedataClient::RemoveWorkflowDs(const RemoveWorkflowDsRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveWorkflowDs");
@@ -11213,6 +11428,135 @@ WedataClient::RenewWorkflowSchedulerInfoDsOutcomeCallable WedataClient::RenewWor
         [this, request]()
         {
             return this->RenewWorkflowSchedulerInfoDs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::ReportDatabaseOutcome WedataClient::ReportDatabase(const ReportDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportDatabaseResponse rsp = ReportDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportDatabaseOutcome(rsp);
+        else
+            return ReportDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ReportDatabaseAsync(const ReportDatabaseRequest& request, const ReportDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportDatabase(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::ReportDatabaseOutcomeCallable WedataClient::ReportDatabaseCallable(const ReportDatabaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportDatabaseOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportDatabase(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::ReportSchemaOutcome WedataClient::ReportSchema(const ReportSchemaRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportSchema");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportSchemaResponse rsp = ReportSchemaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportSchemaOutcome(rsp);
+        else
+            return ReportSchemaOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportSchemaOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ReportSchemaAsync(const ReportSchemaRequest& request, const ReportSchemaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportSchema(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::ReportSchemaOutcomeCallable WedataClient::ReportSchemaCallable(const ReportSchemaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportSchemaOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportSchema(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::ReportTableOutcome WedataClient::ReportTable(const ReportTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportTableResponse rsp = ReportTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportTableOutcome(rsp);
+        else
+            return ReportTableOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportTableOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ReportTableAsync(const ReportTableRequest& request, const ReportTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::ReportTableOutcomeCallable WedataClient::ReportTableCallable(const ReportTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportTableOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportTable(request);
         }
     );
 

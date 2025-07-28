@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
+#include <tencentcloud/mps/v20190612/model/SubtitlePosition.h>
 
 
 namespace TencentCloud
@@ -131,6 +132,31 @@ namespace TencentCloud
                      */
                     bool TranslateSubtitlePathHasBeenSet() const;
 
+                    /**
+                     * 获取擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubtitlePos 擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SubtitlePosition GetSubtitlePos() const;
+
+                    /**
+                     * 设置擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subtitlePos 擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubtitlePos(const SubtitlePosition& _subtitlePos);
+
+                    /**
+                     * 判断参数 SubtitlePos 是否已赋值
+                     * @return SubtitlePos 是否已赋值
+                     * 
+                     */
+                    bool SubtitlePosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +182,13 @@ namespace TencentCloud
                      */
                     std::string m_translateSubtitlePath;
                     bool m_translateSubtitlePathHasBeenSet;
+
+                    /**
+                     * 擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SubtitlePosition m_subtitlePos;
+                    bool m_subtitlePosHasBeenSet;
 
                 };
             }

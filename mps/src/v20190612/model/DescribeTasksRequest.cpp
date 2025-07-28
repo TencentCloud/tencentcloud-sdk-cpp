@@ -25,7 +25,9 @@ using namespace std;
 DescribeTasksRequest::DescribeTasksRequest() :
     m_statusHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_scrollTokenHasBeenSet(false)
+    m_scrollTokenHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribeTasksRequest::ToJsonString() const
         string key = "ScrollToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scrollToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribeTasksRequest::SetScrollToken(const string& _scrollToken)
 bool DescribeTasksRequest::ScrollTokenHasBeenSet() const
 {
     return m_scrollTokenHasBeenSet;
+}
+
+string DescribeTasksRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeTasksRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeTasksRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeTasksRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 

@@ -155,14 +155,18 @@ namespace TencentCloud
 
                     /**
                      * 获取对视频按指定时间点截图任务输出。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 对视频按指定时间点截图任务输出。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaSnapshotByTimeOffsetItem GetOutput() const;
 
                     /**
                      * 设置对视频按指定时间点截图任务输出。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 对视频按指定时间点截图任务输出。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const MediaSnapshotByTimeOffsetItem& _output);
@@ -250,6 +254,7 @@ namespace TencentCloud
 
                     /**
                      * 对视频按指定时间点截图任务输出。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaSnapshotByTimeOffsetItem m_output;
                     bool m_outputHasBeenSet;

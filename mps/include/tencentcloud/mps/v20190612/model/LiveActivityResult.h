@@ -51,11 +51,9 @@ namespace TencentCloud
                      * 获取原子任务类型。
 <li>LiveRecord：直播录制。</li>
 <li>AiQualityControl：媒体质检。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityType 原子任务类型。
 <li>LiveRecord：直播录制。</li>
 <li>AiQualityControl：媒体质检。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActivityType() const;
@@ -64,11 +62,9 @@ namespace TencentCloud
                      * 设置原子任务类型。
 <li>LiveRecord：直播录制。</li>
 <li>AiQualityControl：媒体质检。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activityType 原子任务类型。
 <li>LiveRecord：直播录制。</li>
 <li>AiQualityControl：媒体质检。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActivityType(const std::string& _activityType);
@@ -111,7 +107,6 @@ namespace TencentCloud
                      * 原子任务类型。
 <li>LiveRecord：直播录制。</li>
 <li>AiQualityControl：媒体质检。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;

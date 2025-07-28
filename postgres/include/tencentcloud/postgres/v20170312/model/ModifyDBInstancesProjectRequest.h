@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取所属新项目的ID。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)获取
-                     * @return ProjectId 所属新项目的ID。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)获取
+                     * 获取所属新项目的ID。可通过[DescribeProjects](https://cloud.tencent.com/document/api/651/78725)获取
+                     * @return ProjectId 所属新项目的ID。可通过[DescribeProjects](https://cloud.tencent.com/document/api/651/78725)获取
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置所属新项目的ID。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)获取
-                     * @param _projectId 所属新项目的ID。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)获取
+                     * 设置所属新项目的ID。可通过[DescribeProjects](https://cloud.tencent.com/document/api/651/78725)获取
+                     * @param _projectId 所属新项目的ID。可通过[DescribeProjects](https://cloud.tencent.com/document/api/651/78725)获取
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_dBInstanceIdSetHasBeenSet;
 
                     /**
-                     * 所属新项目的ID。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)获取
+                     * 所属新项目的ID。可通过[DescribeProjects](https://cloud.tencent.com/document/api/651/78725)获取
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

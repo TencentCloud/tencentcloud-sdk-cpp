@@ -211,6 +211,27 @@ namespace TencentCloud
                      */
                     bool RepeatableHasBeenSet() const;
 
+                    /**
+                     * 获取私钥密码
+                     * @return KeyPassword 私钥密码
+                     * 
+                     */
+                    std::string GetKeyPassword() const;
+
+                    /**
+                     * 设置私钥密码
+                     * @param _keyPassword 私钥密码
+                     * 
+                     */
+                    void SetKeyPassword(const std::string& _keyPassword);
+
+                    /**
+                     * 判断参数 KeyPassword 是否已赋值
+                     * @return KeyPassword 是否已赋值
+                     * 
+                     */
+                    bool KeyPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +281,12 @@ namespace TencentCloud
                      */
                     bool m_repeatable;
                     bool m_repeatableHasBeenSet;
+
+                    /**
+                     * 私钥密码
+                     */
+                    std::string m_keyPassword;
+                    bool m_keyPasswordHasBeenSet;
 
                 };
             }

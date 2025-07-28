@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool ScrollTokenHasBeenSet() const;
 
+                    /**
+                     * 获取查询任务开始时间
+                     * @return StartTime 查询任务开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置查询任务开始时间
+                     * @param _startTime 查询任务开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取查询任务结束时间。
+                     * @return EndTime 查询任务结束时间。
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置查询任务结束时间。
+                     * @param _endTime 查询任务结束时间。
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     std::string m_scrollToken;
                     bool m_scrollTokenHasBeenSet;
+
+                    /**
+                     * 查询任务开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 查询任务结束时间。
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

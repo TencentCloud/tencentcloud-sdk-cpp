@@ -2573,6 +2573,31 @@ namespace TencentCloud
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AllowRedoType 允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAllowRedoType() const;
+
+                    /**
+                     * 设置允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _allowRedoType 允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAllowRedoType(const std::string& _allowRedoType);
+
+                    /**
+                     * 判断参数 AllowRedoType 是否已赋值
+                     * @return AllowRedoType 是否已赋值
+                     * 
+                     */
+                    bool AllowRedoTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -3278,6 +3303,13 @@ namespace TencentCloud
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_allowRedoType;
+                    bool m_allowRedoTypeHasBeenSet;
 
                 };
             }

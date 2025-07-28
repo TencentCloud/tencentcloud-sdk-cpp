@@ -28,8 +28,8 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiQualityControlTaskInput.h>
-#include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitlesTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 
 
 namespace TencentCloud
@@ -277,6 +277,27 @@ namespace TencentCloud
                     bool AiQualityControlTaskHasBeenSet() const;
 
                     /**
+                     * 获取智能字幕
+                     * @return SmartSubtitlesTask 智能字幕
+                     * 
+                     */
+                    SmartSubtitlesTaskInput GetSmartSubtitlesTask() const;
+
+                    /**
+                     * 设置智能字幕
+                     * @param _smartSubtitlesTask 智能字幕
+                     * 
+                     */
+                    void SetSmartSubtitlesTask(const SmartSubtitlesTaskInput& _smartSubtitlesTask);
+
+                    /**
+                     * 判断参数 SmartSubtitlesTask 是否已赋值
+                     * @return SmartSubtitlesTask 是否已赋值
+                     * 
+                     */
+                    bool SmartSubtitlesTaskHasBeenSet() const;
+
+                    /**
                      * 获取任务的事件通知信息，不填代表不获取事件通知。
                      * @return TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
                      * 
@@ -411,27 +432,6 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取智能字幕
-                     * @return SmartSubtitlesTask 智能字幕
-                     * 
-                     */
-                    SmartSubtitlesTaskInput GetSmartSubtitlesTask() const;
-
-                    /**
-                     * 设置智能字幕
-                     * @param _smartSubtitlesTask 智能字幕
-                     * 
-                     */
-                    void SetSmartSubtitlesTask(const SmartSubtitlesTaskInput& _smartSubtitlesTask);
-
-                    /**
-                     * 判断参数 SmartSubtitlesTask 是否已赋值
-                     * @return SmartSubtitlesTask 是否已赋值
-                     * 
-                     */
-                    bool SmartSubtitlesTaskHasBeenSet() const;
-
-                    /**
                      * 获取是否跳过元信息获取，可选值： 
 0：表示不跳过 
 1：表示跳过 
@@ -530,6 +530,12 @@ namespace TencentCloud
                     bool m_aiQualityControlTaskHasBeenSet;
 
                     /**
+                     * 智能字幕
+                     */
+                    SmartSubtitlesTaskInput m_smartSubtitlesTask;
+                    bool m_smartSubtitlesTaskHasBeenSet;
+
+                    /**
                      * 任务的事件通知信息，不填代表不获取事件通知。
                      */
                     TaskNotifyConfig m_taskNotifyConfig;
@@ -566,12 +572,6 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
-
-                    /**
-                     * 智能字幕
-                     */
-                    SmartSubtitlesTaskInput m_smartSubtitlesTask;
-                    bool m_smartSubtitlesTaskHasBeenSet;
 
                     /**
                      * 是否跳过元信息获取，可选值： 

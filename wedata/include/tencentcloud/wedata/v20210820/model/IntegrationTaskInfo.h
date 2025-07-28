@@ -29,6 +29,7 @@
 #include <tencentcloud/wedata/v20210820/model/IntegrationNodeMapping.h>
 #include <tencentcloud/wedata/v20210820/model/OfflineTaskAddParam.h>
 #include <tencentcloud/wedata/v20210820/model/TaskImportInfo.h>
+#include <tencentcloud/wedata/v20210820/model/IntegrationTag.h>
 
 
 namespace TencentCloud
@@ -1339,6 +1340,56 @@ namespace TencentCloud
                      */
                     bool CurrentSyncPositionHasBeenSet() const;
 
+                    /**
+                     * 获取标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagList 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<IntegrationTag> GetTagList() const;
+
+                    /**
+                     * 设置标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagList 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagList(const std::vector<IntegrationTag>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
+                    /**
+                     * 获取错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrorMessage 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetErrorMessage() const;
+
+                    /**
+                     * 设置错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _errorMessage 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetErrorMessage(const std::string& _errorMessage);
+
+                    /**
+                     * 判断参数 ErrorMessage 是否已赋值
+                     * @return ErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool ErrorMessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1701,6 +1752,20 @@ namespace TencentCloud
                      */
                     int64_t m_currentSyncPosition;
                     bool m_currentSyncPositionHasBeenSet;
+
+                    /**
+                     * 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IntegrationTag> m_tagList;
+                    bool m_tagListHasBeenSet;
+
+                    /**
+                     * 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errorMessage;
+                    bool m_errorMessageHasBeenSet;
 
                 };
             }

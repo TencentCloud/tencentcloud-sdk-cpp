@@ -27,7 +27,8 @@ QualityControlTemplate::QualityControlTemplate() :
     m_typeHasBeenSet(false),
     m_qualityControlItemSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_strategyHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,23 @@ CoreInternalOutcome QualityControlTemplate::Deserialize(const rapidjson::Value &
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Strategy") && !value["Strategy"].IsNull())
+    {
+        if (!value["Strategy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityControlTemplate.Strategy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_strategy.Deserialize(value["Strategy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_strategyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +202,15 @@ void QualityControlTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_strategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Strategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_strategy.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -299,5 +326,21 @@ void QualityControlTemplate::SetUpdateTime(const string& _updateTime)
 bool QualityControlTemplate::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+QualityControlStrategy QualityControlTemplate::GetStrategy() const
+{
+    return m_strategy;
+}
+
+void QualityControlTemplate::SetStrategy(const QualityControlStrategy& _strategy)
+{
+    m_strategy = _strategy;
+    m_strategyHasBeenSet = true;
+}
+
+bool QualityControlTemplate::StrategyHasBeenSet() const
+{
+    return m_strategyHasBeenSet;
 }
 

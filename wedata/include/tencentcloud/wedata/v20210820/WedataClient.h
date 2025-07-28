@@ -403,6 +403,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskLineageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskLockStatusRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskLockStatusResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskParamDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskParamDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskRunHistoryRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskRunHistoryResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskScriptRequest.h>
@@ -465,6 +467,8 @@
 #include <tencentcloud/wedata/v20210820/model/GetInstanceLogResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetIntegrationNodeColumnSchemaRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetIntegrationNodeColumnSchemaResponse.h>
+#include <tencentcloud/wedata/v20210820/model/GetJobStatusRequest.h>
+#include <tencentcloud/wedata/v20210820/model/GetJobStatusResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineDIInstanceListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineDIInstanceListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineInstanceListRequest.h>
@@ -537,12 +541,24 @@
 #include <tencentcloud/wedata/v20210820/model/RegisterEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterEventListenerRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterEventListenerResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RemoveDatabaseRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RemoveDatabaseResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RemoveSchemaRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RemoveSchemaResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RemoveTableRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RemoveTableResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RemoveWorkflowDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RemoveWorkflowDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RenewWorkflowOwnerDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RenewWorkflowOwnerDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RenewWorkflowSchedulerInfoDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RenewWorkflowSchedulerInfoDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ReportDatabaseRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ReportDatabaseResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ReportSchemaRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ReportSchemaResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ReportTableRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ReportTableResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ReportTaskLineageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ReportTaskLineageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ResumeIntegrationTaskRequest.h>
@@ -1185,6 +1201,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskLockStatusResponse> DescribeTaskLockStatusOutcome;
                 typedef std::future<DescribeTaskLockStatusOutcome> DescribeTaskLockStatusOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskLockStatusRequest&, DescribeTaskLockStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskLockStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskParamDsResponse> DescribeTaskParamDsOutcome;
+                typedef std::future<DescribeTaskParamDsOutcome> DescribeTaskParamDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTaskParamDsRequest&, DescribeTaskParamDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskParamDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskRunHistoryResponse> DescribeTaskRunHistoryOutcome;
                 typedef std::future<DescribeTaskRunHistoryOutcome> DescribeTaskRunHistoryOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskRunHistoryRequest&, DescribeTaskRunHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskRunHistoryAsyncHandler;
@@ -1278,6 +1297,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetIntegrationNodeColumnSchemaResponse> GetIntegrationNodeColumnSchemaOutcome;
                 typedef std::future<GetIntegrationNodeColumnSchemaOutcome> GetIntegrationNodeColumnSchemaOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetIntegrationNodeColumnSchemaRequest&, GetIntegrationNodeColumnSchemaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetIntegrationNodeColumnSchemaAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetJobStatusResponse> GetJobStatusOutcome;
+                typedef std::future<GetJobStatusOutcome> GetJobStatusOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetJobStatusRequest&, GetJobStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetJobStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetOfflineDIInstanceListResponse> GetOfflineDIInstanceListOutcome;
                 typedef std::future<GetOfflineDIInstanceListOutcome> GetOfflineDIInstanceListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetOfflineDIInstanceListRequest&, GetOfflineDIInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOfflineDIInstanceListAsyncHandler;
@@ -1386,6 +1408,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RegisterEventListenerResponse> RegisterEventListenerOutcome;
                 typedef std::future<RegisterEventListenerOutcome> RegisterEventListenerOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RegisterEventListenerRequest&, RegisterEventListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterEventListenerAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveDatabaseResponse> RemoveDatabaseOutcome;
+                typedef std::future<RemoveDatabaseOutcome> RemoveDatabaseOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RemoveDatabaseRequest&, RemoveDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveSchemaResponse> RemoveSchemaOutcome;
+                typedef std::future<RemoveSchemaOutcome> RemoveSchemaOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RemoveSchemaRequest&, RemoveSchemaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveSchemaAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveTableResponse> RemoveTableOutcome;
+                typedef std::future<RemoveTableOutcome> RemoveTableOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RemoveTableRequest&, RemoveTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveWorkflowDsResponse> RemoveWorkflowDsOutcome;
                 typedef std::future<RemoveWorkflowDsOutcome> RemoveWorkflowDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RemoveWorkflowDsRequest&, RemoveWorkflowDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveWorkflowDsAsyncHandler;
@@ -1395,6 +1426,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewWorkflowSchedulerInfoDsResponse> RenewWorkflowSchedulerInfoDsOutcome;
                 typedef std::future<RenewWorkflowSchedulerInfoDsOutcome> RenewWorkflowSchedulerInfoDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RenewWorkflowSchedulerInfoDsRequest&, RenewWorkflowSchedulerInfoDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewWorkflowSchedulerInfoDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReportDatabaseResponse> ReportDatabaseOutcome;
+                typedef std::future<ReportDatabaseOutcome> ReportDatabaseOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ReportDatabaseRequest&, ReportDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReportSchemaResponse> ReportSchemaOutcome;
+                typedef std::future<ReportSchemaOutcome> ReportSchemaOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ReportSchemaRequest&, ReportSchemaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportSchemaAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReportTableResponse> ReportTableOutcome;
+                typedef std::future<ReportTableOutcome> ReportTableOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ReportTableRequest&, ReportTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReportTaskLineageResponse> ReportTaskLineageOutcome;
                 typedef std::future<ReportTaskLineageOutcome> ReportTaskLineageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ReportTaskLineageRequest&, ReportTaskLineageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportTaskLineageAsyncHandler;
@@ -3205,6 +3245,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 DescribeTaskLockStatusOutcomeCallable DescribeTaskLockStatusCallable(const Model::DescribeTaskLockStatusRequest& request);
 
                 /**
+                 *查询任务引用参数
+                 * @param req DescribeTaskParamDsRequest
+                 * @return DescribeTaskParamDsOutcome
+                 */
+                DescribeTaskParamDsOutcome DescribeTaskParamDs(const Model::DescribeTaskParamDsRequest &request);
+                void DescribeTaskParamDsAsync(const Model::DescribeTaskParamDsRequest& request, const DescribeTaskParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskParamDsOutcomeCallable DescribeTaskParamDsCallable(const Model::DescribeTaskParamDsRequest& request);
+
+                /**
                  *分页查询任务运行历史
                  * @param req DescribeTaskRunHistoryRequest
                  * @return DescribeTaskRunHistoryOutcome
@@ -3482,6 +3531,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 GetIntegrationNodeColumnSchemaOutcome GetIntegrationNodeColumnSchema(const Model::GetIntegrationNodeColumnSchemaRequest &request);
                 void GetIntegrationNodeColumnSchemaAsync(const Model::GetIntegrationNodeColumnSchemaRequest& request, const GetIntegrationNodeColumnSchemaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetIntegrationNodeColumnSchemaOutcomeCallable GetIntegrationNodeColumnSchemaCallable(const Model::GetIntegrationNodeColumnSchemaRequest& request);
+
+                /**
+                 *获取异步任务执行结果
+                 * @param req GetJobStatusRequest
+                 * @return GetJobStatusOutcome
+                 */
+                GetJobStatusOutcome GetJobStatus(const Model::GetJobStatusRequest &request);
+                void GetJobStatusAsync(const Model::GetJobStatusRequest& request, const GetJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetJobStatusOutcomeCallable GetJobStatusCallable(const Model::GetJobStatusRequest& request);
 
                 /**
                  *获取离线任务实例列表(新)
@@ -3813,6 +3871,33 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 RegisterEventListenerOutcomeCallable RegisterEventListenerCallable(const Model::RegisterEventListenerRequest& request);
 
                 /**
+                 *移除database元数据
+                 * @param req RemoveDatabaseRequest
+                 * @return RemoveDatabaseOutcome
+                 */
+                RemoveDatabaseOutcome RemoveDatabase(const Model::RemoveDatabaseRequest &request);
+                void RemoveDatabaseAsync(const Model::RemoveDatabaseRequest& request, const RemoveDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveDatabaseOutcomeCallable RemoveDatabaseCallable(const Model::RemoveDatabaseRequest& request);
+
+                /**
+                 *移除schema元数据
+                 * @param req RemoveSchemaRequest
+                 * @return RemoveSchemaOutcome
+                 */
+                RemoveSchemaOutcome RemoveSchema(const Model::RemoveSchemaRequest &request);
+                void RemoveSchemaAsync(const Model::RemoveSchemaRequest& request, const RemoveSchemaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveSchemaOutcomeCallable RemoveSchemaCallable(const Model::RemoveSchemaRequest& request);
+
+                /**
+                 *移除table元数据
+                 * @param req RemoveTableRequest
+                 * @return RemoveTableOutcome
+                 */
+                RemoveTableOutcome RemoveTable(const Model::RemoveTableRequest &request);
+                void RemoveTableAsync(const Model::RemoveTableRequest& request, const RemoveTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveTableOutcomeCallable RemoveTableCallable(const Model::RemoveTableRequest& request);
+
+                /**
                  *删除编排空间工作流
                  * @param req RemoveWorkflowDsRequest
                  * @return RemoveWorkflowDsOutcome
@@ -3838,6 +3923,33 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 RenewWorkflowSchedulerInfoDsOutcome RenewWorkflowSchedulerInfoDs(const Model::RenewWorkflowSchedulerInfoDsRequest &request);
                 void RenewWorkflowSchedulerInfoDsAsync(const Model::RenewWorkflowSchedulerInfoDsRequest& request, const RenewWorkflowSchedulerInfoDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewWorkflowSchedulerInfoDsOutcomeCallable RenewWorkflowSchedulerInfoDsCallable(const Model::RenewWorkflowSchedulerInfoDsRequest& request);
+
+                /**
+                 *上报database元数据
+                 * @param req ReportDatabaseRequest
+                 * @return ReportDatabaseOutcome
+                 */
+                ReportDatabaseOutcome ReportDatabase(const Model::ReportDatabaseRequest &request);
+                void ReportDatabaseAsync(const Model::ReportDatabaseRequest& request, const ReportDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportDatabaseOutcomeCallable ReportDatabaseCallable(const Model::ReportDatabaseRequest& request);
+
+                /**
+                 *上报schema元数据
+                 * @param req ReportSchemaRequest
+                 * @return ReportSchemaOutcome
+                 */
+                ReportSchemaOutcome ReportSchema(const Model::ReportSchemaRequest &request);
+                void ReportSchemaAsync(const Model::ReportSchemaRequest& request, const ReportSchemaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportSchemaOutcomeCallable ReportSchemaCallable(const Model::ReportSchemaRequest& request);
+
+                /**
+                 *上报table元数据
+                 * @param req ReportTableRequest
+                 * @return ReportTableOutcome
+                 */
+                ReportTableOutcome ReportTable(const Model::ReportTableRequest &request);
+                void ReportTableAsync(const Model::ReportTableRequest& request, const ReportTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportTableOutcomeCallable ReportTableCallable(const Model::ReportTableRequest& request);
 
                 /**
                  *血缘上报接口

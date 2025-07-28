@@ -34,6 +34,7 @@
 #include <tencentcloud/mps/v20190612/model/ScheduleReviewTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleAnalysisTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/ScheduleExecRuleTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleSmartSubtitleTaskResult.h>
 
 
@@ -308,6 +309,31 @@ namespace TencentCloud
                     bool QualityControlTaskHasBeenSet() const;
 
                     /**
+                     * 获取条件判断任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecRuleTask 条件判断任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ScheduleExecRuleTaskResult GetExecRuleTask() const;
+
+                    /**
+                     * 设置条件判断任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _execRuleTask 条件判断任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecRuleTask(const ScheduleExecRuleTaskResult& _execRuleTask);
+
+                    /**
+                     * 判断参数 ExecRuleTask 是否已赋值
+                     * @return ExecRuleTask 是否已赋值
+                     * 
+                     */
+                    bool ExecRuleTaskHasBeenSet() const;
+
+                    /**
                      * 获取智能字幕任务输出
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmartSubtitlesTask 智能字幕任务输出
@@ -403,6 +429,13 @@ namespace TencentCloud
                      */
                     ScheduleQualityControlTaskResult m_qualityControlTask;
                     bool m_qualityControlTaskHasBeenSet;
+
+                    /**
+                     * 条件判断任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScheduleExecRuleTaskResult m_execRuleTask;
+                    bool m_execRuleTaskHasBeenSet;
 
                     /**
                      * 智能字幕任务输出

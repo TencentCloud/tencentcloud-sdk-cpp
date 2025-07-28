@@ -22,8 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
-#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/OrganizationAuthorizationOptions.h>
+#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 
 
 namespace TencentCloud
@@ -473,27 +473,6 @@ namespace TencentCloud
                     bool AuthorizationTypesHasBeenSet() const;
 
                     /**
-                     * 获取暂未开放
-                     * @return Operator 暂未开放
-                     * @deprecated
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置暂未开放
-                     * @param _operator 暂未开放
-                     * @deprecated
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     * @deprecated
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
                      * 获取子客经办人身份证
 注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      * @return ProxyOperatorIdCardNumber 子客经办人身份证
@@ -738,6 +717,60 @@ namespace TencentCloud
                      */
                     bool OrganizationAuthorizationOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取组织机构对公打款 账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * @return BankAccountNumber 组织机构对公打款 账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * 
+                     */
+                    std::string GetBankAccountNumber() const;
+
+                    /**
+                     * 设置组织机构对公打款 账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * @param _bankAccountNumber 组织机构对公打款 账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * 
+                     */
+                    void SetBankAccountNumber(const std::string& _bankAccountNumber);
+
+                    /**
+                     * 判断参数 BankAccountNumber 是否已赋值
+                     * @return BankAccountNumber 是否已赋值
+                     * 
+                     */
+                    bool BankAccountNumberHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return Operator 无
+                     * @deprecated
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置无
+                     * @param _operator 无
+                     * @deprecated
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     * @deprecated
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -856,12 +889,6 @@ namespace TencentCloud
                     bool m_authorizationTypesHasBeenSet;
 
                     /**
-                     * 暂未开放
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
                      * 子客经办人身份证
 注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      */
@@ -928,6 +955,21 @@ namespace TencentCloud
                      */
                     OrganizationAuthorizationOptions m_organizationAuthorizationOptions;
                     bool m_organizationAuthorizationOptionsHasBeenSet;
+
+                    /**
+                     * 组织机构对公打款 账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     */
+                    std::string m_bankAccountNumber;
+                    bool m_bankAccountNumberHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

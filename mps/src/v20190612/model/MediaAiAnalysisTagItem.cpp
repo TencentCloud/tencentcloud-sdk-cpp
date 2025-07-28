@@ -22,7 +22,8 @@ using namespace std;
 
 MediaAiAnalysisTagItem::MediaAiAnalysisTagItem() :
     m_tagHasBeenSet(false),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_specialInfoHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome MediaAiAnalysisTagItem::Deserialize(const rapidjson::Value &
         m_confidenceHasBeenSet = true;
     }
 
+    if (value.HasMember("SpecialInfo") && !value["SpecialInfo"].IsNull())
+    {
+        if (!value["SpecialInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisTagItem.SpecialInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specialInfo = string(value["SpecialInfo"].GetString());
+        m_specialInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void MediaAiAnalysisTagItem::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
+    }
+
+    if (m_specialInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecialInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specialInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void MediaAiAnalysisTagItem::SetConfidence(const double& _confidence)
 bool MediaAiAnalysisTagItem::ConfidenceHasBeenSet() const
 {
     return m_confidenceHasBeenSet;
+}
+
+string MediaAiAnalysisTagItem::GetSpecialInfo() const
+{
+    return m_specialInfo;
+}
+
+void MediaAiAnalysisTagItem::SetSpecialInfo(const string& _specialInfo)
+{
+    m_specialInfo = _specialInfo;
+    m_specialInfoHasBeenSet = true;
+}
+
+bool MediaAiAnalysisTagItem::SpecialInfoHasBeenSet() const
+{
+    return m_specialInfoHasBeenSet;
 }
 

@@ -309,6 +309,27 @@ PureAudio：纯音频类型
                      */
                     bool SubtitleTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取转码参数扩展字段
+                     * @return StdExtInfo 转码参数扩展字段
+                     * 
+                     */
+                    std::string GetStdExtInfo() const;
+
+                    /**
+                     * 设置转码参数扩展字段
+                     * @param _stdExtInfo 转码参数扩展字段
+                     * 
+                     */
+                    void SetStdExtInfo(const std::string& _stdExtInfo);
+
+                    /**
+                     * 判断参数 StdExtInfo 是否已赋值
+                     * @return StdExtInfo 是否已赋值
+                     * 
+                     */
+                    bool StdExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -382,6 +403,12 @@ PureAudio：纯音频类型
                      */
                     SubtitleTemplate m_subtitleTemplate;
                     bool m_subtitleTemplateHasBeenSet;
+
+                    /**
+                     * 转码参数扩展字段
+                     */
+                    std::string m_stdExtInfo;
+                    bool m_stdExtInfoHasBeenSet;
 
                 };
             }

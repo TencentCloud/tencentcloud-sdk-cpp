@@ -44,7 +44,8 @@ RuleGroupExecStrategy::RuleGroupExecStrategy() :
     m_schemaNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false)
 {
 }
 
@@ -306,6 +307,16 @@ CoreInternalOutcome RuleGroupExecStrategy::Deserialize(const rapidjson::Value &v
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleTimeZone") && !value["ScheduleTimeZone"].IsNull())
+    {
+        if (!value["ScheduleTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.ScheduleTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeZone = string(value["ScheduleTimeZone"].GetString());
+        m_scheduleTimeZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -515,6 +526,14 @@ void RuleGroupExecStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -902,5 +921,21 @@ void RuleGroupExecStrategy::SetDescription(const string& _description)
 bool RuleGroupExecStrategy::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void RuleGroupExecStrategy::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
 }
 

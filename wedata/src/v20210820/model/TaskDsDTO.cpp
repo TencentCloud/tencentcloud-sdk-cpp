@@ -120,7 +120,8 @@ TaskDsDTO::TaskDsDTO() :
     m_scheduleRunTypeHasBeenSet(false),
     m_concurrentStrategyHasBeenSet(false),
     m_scheduleTimeZoneHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_templateIdHasBeenSet(false),
+    m_allowRedoTypeHasBeenSet(false)
 {
 }
 
@@ -1233,6 +1234,16 @@ CoreInternalOutcome TaskDsDTO::Deserialize(const rapidjson::Value &value)
         m_templateIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowRedoType") && !value["AllowRedoType"].IsNull())
+    {
+        if (!value["AllowRedoType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDsDTO.AllowRedoType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowRedoType = string(value["AllowRedoType"].GetString());
+        m_allowRedoTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2103,6 +2114,14 @@ void TaskDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowRedoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowRedoType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_allowRedoType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3706,5 +3725,21 @@ void TaskDsDTO::SetTemplateId(const string& _templateId)
 bool TaskDsDTO::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+string TaskDsDTO::GetAllowRedoType() const
+{
+    return m_allowRedoType;
+}
+
+void TaskDsDTO::SetAllowRedoType(const string& _allowRedoType)
+{
+    m_allowRedoType = _allowRedoType;
+    m_allowRedoTypeHasBeenSet = true;
+}
+
+bool TaskDsDTO::AllowRedoTypeHasBeenSet() const
+{
+    return m_allowRedoTypeHasBeenSet;
 }
 

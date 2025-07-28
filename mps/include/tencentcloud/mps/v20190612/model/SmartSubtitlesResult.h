@@ -49,22 +49,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务的类型，取值范围：
-<li>AsrFullTextRecognition：语音全文识别，</li>
+                     * 获取任务的类型，取值范围： 
+<li>AsrFullTextRecognition：语音全文识别，</li> 
 <li>TransTextRecognition：语音翻译。</li>
-                     * @return Type 任务的类型，取值范围：
-<li>AsrFullTextRecognition：语音全文识别，</li>
+                     * @return Type 任务的类型，取值范围： 
+<li>AsrFullTextRecognition：语音全文识别，</li> 
 <li>TransTextRecognition：语音翻译。</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置任务的类型，取值范围：
-<li>AsrFullTextRecognition：语音全文识别，</li>
+                     * 设置任务的类型，取值范围： 
+<li>AsrFullTextRecognition：语音全文识别，</li> 
 <li>TransTextRecognition：语音翻译。</li>
-                     * @param _type 任务的类型，取值范围：
-<li>AsrFullTextRecognition：语音全文识别，</li>
+                     * @param _type 任务的类型，取值范围： 
+<li>AsrFullTextRecognition：语音全文识别，</li> 
 <li>TransTextRecognition：语音翻译。</li>
                      * 
                      */
@@ -142,8 +142,8 @@ TransTextRecognition 时有效。
                 private:
 
                     /**
-                     * 任务的类型，取值范围：
-<li>AsrFullTextRecognition：语音全文识别，</li>
+                     * 任务的类型，取值范围： 
+<li>AsrFullTextRecognition：语音全文识别，</li> 
 <li>TransTextRecognition：语音翻译。</li>
                      */
                     std::string m_type;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return DBInstanceId 实例ID。
+                     * 获取实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _dBInstanceId 实例ID。
+                     * 设置实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取链接的有效时间，默认为12小时。
-                     * @return URLExpireTime 链接的有效时间，默认为12小时。
+                     * 获取链接的有效时间，取值为[0,36]，默认为12小时。
+                     * @return URLExpireTime 链接的有效时间，取值为[0,36]，默认为12小时。
                      * 
                      */
                     uint64_t GetURLExpireTime() const;
 
                     /**
-                     * 设置链接的有效时间，默认为12小时。
-                     * @param _uRLExpireTime 链接的有效时间，默认为12小时。
+                     * 设置链接的有效时间，取值为[0,36]，默认为12小时。
+                     * @param _uRLExpireTime 链接的有效时间，取值为[0,36]，默认为12小时。
                      * 
                      */
                     void SetURLExpireTime(const uint64_t& _uRLExpireTime);
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * 链接的有效时间，默认为12小时。
+                     * 链接的有效时间，取值为[0,36]，默认为12小时。
                      */
                     uint64_t m_uRLExpireTime;
                     bool m_uRLExpireTimeHasBeenSet;

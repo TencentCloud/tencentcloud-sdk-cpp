@@ -30,7 +30,8 @@ AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_addOnSubtitlesHasBeenSet(false),
     m_drmInfoHasBeenSet(false),
     m_definitionTypeHasBeenSet(false),
-    m_subtitleTemplateHasBeenSet(false)
+    m_subtitleTemplateHasBeenSet(false),
+    m_stdExtInfoHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
         m_subtitleTemplateHasBeenSet = true;
     }
 
+    if (value.HasMember("StdExtInfo") && !value["StdExtInfo"].IsNull())
+    {
+        if (!value["StdExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.StdExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stdExtInfo = string(value["StdExtInfo"].GetString());
+        m_stdExtInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +293,14 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_subtitleTemplate.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_stdExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -445,5 +464,21 @@ void AdaptiveDynamicStreamingTaskInput::SetSubtitleTemplate(const SubtitleTempla
 bool AdaptiveDynamicStreamingTaskInput::SubtitleTemplateHasBeenSet() const
 {
     return m_subtitleTemplateHasBeenSet;
+}
+
+string AdaptiveDynamicStreamingTaskInput::GetStdExtInfo() const
+{
+    return m_stdExtInfo;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetStdExtInfo(const string& _stdExtInfo)
+{
+    m_stdExtInfo = _stdExtInfo;
+    m_stdExtInfoHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::StdExtInfoHasBeenSet() const
+{
+    return m_stdExtInfoHasBeenSet;
 }
 

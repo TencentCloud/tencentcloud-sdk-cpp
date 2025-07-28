@@ -110,7 +110,8 @@ TaskOpsDto::TaskOpsDto() :
     m_parentTaskInfosHasBeenSet(false),
     m_extResourceFlagHasBeenSet(false),
     m_newParentTaskInfosHasBeenSet(false),
-    m_selfWorkFlowDependTypeHasBeenSet(false)
+    m_selfWorkFlowDependTypeHasBeenSet(false),
+    m_allowRedoTypeHasBeenSet(false)
 {
 }
 
@@ -1081,6 +1082,16 @@ CoreInternalOutcome TaskOpsDto::Deserialize(const rapidjson::Value &value)
         m_selfWorkFlowDependTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowRedoType") && !value["AllowRedoType"].IsNull())
+    {
+        if (!value["AllowRedoType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.AllowRedoType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowRedoType = string(value["AllowRedoType"].GetString());
+        m_allowRedoTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1826,6 +1837,14 @@ void TaskOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SelfWorkFlowDependType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_selfWorkFlowDependType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowRedoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowRedoType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_allowRedoType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3269,5 +3288,21 @@ void TaskOpsDto::SetSelfWorkFlowDependType(const string& _selfWorkFlowDependType
 bool TaskOpsDto::SelfWorkFlowDependTypeHasBeenSet() const
 {
     return m_selfWorkFlowDependTypeHasBeenSet;
+}
+
+string TaskOpsDto::GetAllowRedoType() const
+{
+    return m_allowRedoType;
+}
+
+void TaskOpsDto::SetAllowRedoType(const string& _allowRedoType)
+{
+    m_allowRedoType = _allowRedoType;
+    m_allowRedoTypeHasBeenSet = true;
+}
+
+bool TaskOpsDto::AllowRedoTypeHasBeenSet() const
+{
+    return m_allowRedoTypeHasBeenSet;
 }
 

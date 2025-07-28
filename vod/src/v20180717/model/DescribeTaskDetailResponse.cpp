@@ -50,7 +50,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_describeFileAttributesTaskHasBeenSet(false),
     m_qualityInspectTaskHasBeenSet(false),
     m_qualityEnhanceTaskHasBeenSet(false),
-    m_complexAdaptiveDynamicStreamingTaskHasBeenSet(false)
+    m_complexAdaptiveDynamicStreamingTaskHasBeenSet(false),
+    m_processMediaByMPSTaskHasBeenSet(false)
 {
 }
 
@@ -512,6 +513,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_complexAdaptiveDynamicStreamingTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProcessMediaByMPSTask") && !rsp["ProcessMediaByMPSTask"].IsNull())
+    {
+        if (!rsp["ProcessMediaByMPSTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessMediaByMPSTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_processMediaByMPSTask.Deserialize(rsp["ProcessMediaByMPSTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_processMediaByMPSTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -758,6 +776,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_complexAdaptiveDynamicStreamingTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_processMediaByMPSTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessMediaByMPSTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_processMediaByMPSTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1040,6 +1067,16 @@ ComplexAdaptiveDynamicStreamingTask DescribeTaskDetailResponse::GetComplexAdapti
 bool DescribeTaskDetailResponse::ComplexAdaptiveDynamicStreamingTaskHasBeenSet() const
 {
     return m_complexAdaptiveDynamicStreamingTaskHasBeenSet;
+}
+
+ProcessMediaByMPS DescribeTaskDetailResponse::GetProcessMediaByMPSTask() const
+{
+    return m_processMediaByMPSTask;
+}
+
+bool DescribeTaskDetailResponse::ProcessMediaByMPSTaskHasBeenSet() const
+{
+    return m_processMediaByMPSTaskHasBeenSet;
 }
 
 

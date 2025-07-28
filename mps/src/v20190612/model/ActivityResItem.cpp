@@ -31,6 +31,7 @@ ActivityResItem::ActivityResItem() :
     m_reviewTaskHasBeenSet(false),
     m_analysisTaskHasBeenSet(false),
     m_qualityControlTaskHasBeenSet(false),
+    m_execRuleTaskHasBeenSet(false),
     m_smartSubtitlesTaskHasBeenSet(false)
 {
 }
@@ -210,6 +211,23 @@ CoreInternalOutcome ActivityResItem::Deserialize(const rapidjson::Value &value)
         m_qualityControlTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecRuleTask") && !value["ExecRuleTask"].IsNull())
+    {
+        if (!value["ExecRuleTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityResItem.ExecRuleTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_execRuleTask.Deserialize(value["ExecRuleTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_execRuleTaskHasBeenSet = true;
+    }
+
     if (value.HasMember("SmartSubtitlesTask") && !value["SmartSubtitlesTask"].IsNull())
     {
         if (!value["SmartSubtitlesTask"].IsObject())
@@ -322,6 +340,15 @@ void ActivityResItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qualityControlTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_execRuleTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecRuleTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_execRuleTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_smartSubtitlesTaskHasBeenSet)
@@ -494,6 +521,22 @@ void ActivityResItem::SetQualityControlTask(const ScheduleQualityControlTaskResu
 bool ActivityResItem::QualityControlTaskHasBeenSet() const
 {
     return m_qualityControlTaskHasBeenSet;
+}
+
+ScheduleExecRuleTaskResult ActivityResItem::GetExecRuleTask() const
+{
+    return m_execRuleTask;
+}
+
+void ActivityResItem::SetExecRuleTask(const ScheduleExecRuleTaskResult& _execRuleTask)
+{
+    m_execRuleTask = _execRuleTask;
+    m_execRuleTaskHasBeenSet = true;
+}
+
+bool ActivityResItem::ExecRuleTaskHasBeenSet() const
+{
+    return m_execRuleTaskHasBeenSet;
 }
 
 ScheduleSmartSubtitleTaskResult ActivityResItem::GetSmartSubtitlesTask() const

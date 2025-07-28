@@ -34,6 +34,7 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiQualityControlTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/ExecRulesTask.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitlesTaskInput.h>
 
 
@@ -308,6 +309,31 @@ namespace TencentCloud
                     bool QualityControlTaskHasBeenSet() const;
 
                     /**
+                     * 获取任务条件判断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecRulesTask 任务条件判断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExecRulesTask GetExecRulesTask() const;
+
+                    /**
+                     * 设置任务条件判断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _execRulesTask 任务条件判断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecRulesTask(const ExecRulesTask& _execRulesTask);
+
+                    /**
+                     * 判断参数 ExecRulesTask 是否已赋值
+                     * @return ExecRulesTask 是否已赋值
+                     * 
+                     */
+                    bool ExecRulesTaskHasBeenSet() const;
+
+                    /**
                      * 获取智能字幕任务
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmartSubtitlesTask 智能字幕任务
@@ -403,6 +429,13 @@ namespace TencentCloud
                      */
                     AiQualityControlTaskInput m_qualityControlTask;
                     bool m_qualityControlTaskHasBeenSet;
+
+                    /**
+                     * 任务条件判断
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExecRulesTask m_execRulesTask;
+                    bool m_execRulesTaskHasBeenSet;
 
                     /**
                      * 智能字幕任务

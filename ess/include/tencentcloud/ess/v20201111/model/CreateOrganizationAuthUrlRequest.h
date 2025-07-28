@@ -701,6 +701,72 @@ p.s. 如果上传授权书 ，需遵循以下条件
                      */
                     bool UserDataHasBeenSet() const;
 
+                    /**
+                     * 获取组织机构对公打款账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * @return BankAccountNumber 组织机构对公打款账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * 
+                     */
+                    std::string GetBankAccountNumber() const;
+
+                    /**
+                     * 设置组织机构对公打款账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * @param _bankAccountNumber 组织机构对公打款账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * 
+                     */
+                    void SetBankAccountNumber(const std::string& _bankAccountNumber);
+
+                    /**
+                     * 判断参数 BankAccountNumber 是否已赋值
+                     * @return BankAccountNumber 是否已赋值
+                     * 
+                     */
+                    bool BankAccountNumberHasBeenSet() const;
+
+                    /**
+                     * 获取对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在对公打款不为空时有效
+                     * @return BankAccountNumberSame 对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在对公打款不为空时有效
+                     * 
+                     */
+                    bool GetBankAccountNumberSame() const;
+
+                    /**
+                     * 设置对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在对公打款不为空时有效
+                     * @param _bankAccountNumberSame 对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在对公打款不为空时有效
+                     * 
+                     */
+                    void SetBankAccountNumberSame(const bool& _bankAccountNumberSame);
+
+                    /**
+                     * 判断参数 BankAccountNumberSame 是否已赋值
+                     * @return BankAccountNumberSame 是否已赋值
+                     * 
+                     */
+                    bool BankAccountNumberSameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -883,6 +949,24 @@ p.s. 如果上传授权书 ，需遵循以下条件
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
+
+                    /**
+                     * 组织机构对公打款账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     */
+                    std::string m_bankAccountNumber;
+                    bool m_bankAccountNumberHasBeenSet;
+
+                    /**
+                     * 对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在对公打款不为空时有效
+                     */
+                    bool m_bankAccountNumberSame;
+                    bool m_bankAccountNumberSameHasBeenSet;
 
                 };
             }

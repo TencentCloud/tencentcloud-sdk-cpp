@@ -34,7 +34,6 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_endpointHasBeenSet(false),
     m_autoJumpBackEventHasBeenSet(false),
     m_authorizationTypesHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_proxyOperatorIdCardNumberHasBeenSet(false),
     m_autoJumpUrlHasBeenSet(false),
     m_topNavigationStatusHasBeenSet(false),
@@ -43,7 +42,9 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_proxyAddressHasBeenSet(false),
     m_proxyLegalNameHasBeenSet(false),
     m_powerOfAttorneysHasBeenSet(false),
-    m_organizationAuthorizationOptionsHasBeenSet(false)
+    m_organizationAuthorizationOptionsHasBeenSet(false),
+    m_bankAccountNumberHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -148,15 +149,6 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         }
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_proxyOperatorIdCardNumberHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -233,6 +225,23 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_organizationAuthorizationOptions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_bankAccountNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BankAccountNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bankAccountNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -419,22 +428,6 @@ bool CreateConsoleLoginUrlRequest::AuthorizationTypesHasBeenSet() const
     return m_authorizationTypesHasBeenSet;
 }
 
-UserInfo CreateConsoleLoginUrlRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void CreateConsoleLoginUrlRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool CreateConsoleLoginUrlRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 string CreateConsoleLoginUrlRequest::GetProxyOperatorIdCardNumber() const
 {
     return m_proxyOperatorIdCardNumber;
@@ -577,6 +570,38 @@ void CreateConsoleLoginUrlRequest::SetOrganizationAuthorizationOptions(const Org
 bool CreateConsoleLoginUrlRequest::OrganizationAuthorizationOptionsHasBeenSet() const
 {
     return m_organizationAuthorizationOptionsHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetBankAccountNumber() const
+{
+    return m_bankAccountNumber;
+}
+
+void CreateConsoleLoginUrlRequest::SetBankAccountNumber(const string& _bankAccountNumber)
+{
+    m_bankAccountNumber = _bankAccountNumber;
+    m_bankAccountNumberHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::BankAccountNumberHasBeenSet() const
+{
+    return m_bankAccountNumberHasBeenSet;
+}
+
+UserInfo CreateConsoleLoginUrlRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void CreateConsoleLoginUrlRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

@@ -32,7 +32,9 @@ DescribeTokenUsageResponse::DescribeTokenUsageResponse() :
     m_pageUsageHasBeenSet(false),
     m_splitTokenUsageHasBeenSet(false),
     m_ragSearchUsageHasBeenSet(false),
-    m_internetSearchUsageHasBeenSet(false)
+    m_internetSearchUsageHasBeenSet(false),
+    m_dosageTypeLimitHasBeenSet(false),
+    m_dosageTypeCurrHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,26 @@ CoreInternalOutcome DescribeTokenUsageResponse::Deserialize(const string &payloa
         m_internetSearchUsageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DosageTypeLimit") && !rsp["DosageTypeLimit"].IsNull())
+    {
+        if (!rsp["DosageTypeLimit"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `DosageTypeLimit` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_dosageTypeLimit = rsp["DosageTypeLimit"].GetDouble();
+        m_dosageTypeLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DosageTypeCurr") && !rsp["DosageTypeCurr"].IsNull())
+    {
+        if (!rsp["DosageTypeCurr"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `DosageTypeCurr` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_dosageTypeCurr = rsp["DosageTypeCurr"].GetDouble();
+        m_dosageTypeCurrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +262,22 @@ string DescribeTokenUsageResponse::ToJsonString() const
         string key = "InternetSearchUsage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_internetSearchUsage, allocator);
+    }
+
+    if (m_dosageTypeLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DosageTypeLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dosageTypeLimit, allocator);
+    }
+
+    if (m_dosageTypeCurrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DosageTypeCurr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dosageTypeCurr, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +380,26 @@ double DescribeTokenUsageResponse::GetInternetSearchUsage() const
 bool DescribeTokenUsageResponse::InternetSearchUsageHasBeenSet() const
 {
     return m_internetSearchUsageHasBeenSet;
+}
+
+double DescribeTokenUsageResponse::GetDosageTypeLimit() const
+{
+    return m_dosageTypeLimit;
+}
+
+bool DescribeTokenUsageResponse::DosageTypeLimitHasBeenSet() const
+{
+    return m_dosageTypeLimitHasBeenSet;
+}
+
+double DescribeTokenUsageResponse::GetDosageTypeCurr() const
+{
+    return m_dosageTypeCurr;
+}
+
+bool DescribeTokenUsageResponse::DosageTypeCurrHasBeenSet() const
+{
+    return m_dosageTypeCurrHasBeenSet;
 }
 
 

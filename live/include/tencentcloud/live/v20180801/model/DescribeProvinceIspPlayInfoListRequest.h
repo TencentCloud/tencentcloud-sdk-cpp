@@ -143,13 +143,11 @@ namespace TencentCloud
 “FluxPerSecond”：平均流量
 “Flux”：流量
 “Request”：请求数
-“Online”：并发连接数
                      * @return StatType 统计指标类型：
 “Bandwidth”：带宽
 “FluxPerSecond”：平均流量
 “Flux”：流量
 “Request”：请求数
-“Online”：并发连接数
                      * 
                      */
                     std::string GetStatType() const;
@@ -160,13 +158,11 @@ namespace TencentCloud
 “FluxPerSecond”：平均流量
 “Flux”：流量
 “Request”：请求数
-“Online”：并发连接数
                      * @param _statType 统计指标类型：
 “Bandwidth”：带宽
 “FluxPerSecond”：平均流量
 “Flux”：流量
 “Request”：请求数
-“Online”：并发连接数
                      * 
                      */
                     void SetStatType(const std::string& _statType);
@@ -325,7 +321,6 @@ namespace TencentCloud
 “FluxPerSecond”：平均流量
 “Flux”：流量
 “Request”：请求数
-“Online”：并发连接数
                      */
                     std::string m_statType;
                     bool m_statTypeHasBeenSet;

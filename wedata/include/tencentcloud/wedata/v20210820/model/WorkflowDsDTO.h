@@ -411,6 +411,56 @@ namespace TencentCloud
                      */
                     bool WorkflowTypeHasBeenSet() const;
 
+                    /**
+                     * 获取最近更新人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateUser 最近更新人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUpdateUser() const;
+
+                    /**
+                     * 设置最近更新人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _updateUser 最近更新人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpdateUser(const std::string& _updateUser);
+
+                    /**
+                     * 判断参数 UpdateUser 是否已赋值
+                     * @return UpdateUser 是否已赋值
+                     * 
+                     */
+                    bool UpdateUserHasBeenSet() const;
+
+                    /**
+                     * 获取最近更新人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateUserId 最近更新人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUpdateUserId() const;
+
+                    /**
+                     * 设置最近更新人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _updateUserId 最近更新人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpdateUserId(const std::string& _updateUserId);
+
+                    /**
+                     * 判断参数 UpdateUserId 是否已赋值
+                     * @return UpdateUserId 是否已赋值
+                     * 
+                     */
+                    bool UpdateUserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -513,6 +563,20 @@ namespace TencentCloud
                      */
                     std::string m_workflowType;
                     bool m_workflowTypeHasBeenSet;
+
+                    /**
+                     * 最近更新人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateUser;
+                    bool m_updateUserHasBeenSet;
+
+                    /**
+                     * 最近更新人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateUserId;
+                    bool m_updateUserIdHasBeenSet;
 
                 };
             }

@@ -37,7 +37,8 @@ InstanceLifeCycleOpsDto::InstanceLifeCycleOpsDto() :
     m_executionJobIdHasBeenSet(false),
     m_instanceRunTypeHasBeenSet(false),
     m_totalLifeRoundHasBeenSet(false),
-    m_taskTypeHasBeenSet(false)
+    m_taskTypeHasBeenSet(false),
+    m_resourceGroupHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,16 @@ CoreInternalOutcome InstanceLifeCycleOpsDto::Deserialize(const rapidjson::Value 
         m_taskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceGroup") && !value["ResourceGroup"].IsNull())
+    {
+        if (!value["ResourceGroup"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLifeCycleOpsDto.ResourceGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroup = string(value["ResourceGroup"].GetString());
+        m_resourceGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -390,6 +401,14 @@ void InstanceLifeCycleOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskType.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_resourceGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroup.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -665,5 +684,21 @@ void InstanceLifeCycleOpsDto::SetTaskType(const TaskTypeOpsDto& _taskType)
 bool InstanceLifeCycleOpsDto::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+string InstanceLifeCycleOpsDto::GetResourceGroup() const
+{
+    return m_resourceGroup;
+}
+
+void InstanceLifeCycleOpsDto::SetResourceGroup(const string& _resourceGroup)
+{
+    m_resourceGroup = _resourceGroup;
+    m_resourceGroupHasBeenSet = true;
+}
+
+bool InstanceLifeCycleOpsDto::ResourceGroupHasBeenSet() const
+{
+    return m_resourceGroupHasBeenSet;
 }
 

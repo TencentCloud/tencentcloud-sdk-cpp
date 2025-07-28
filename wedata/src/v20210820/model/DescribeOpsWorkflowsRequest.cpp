@@ -38,7 +38,8 @@ DescribeOpsWorkflowsRequest::DescribeOpsWorkflowsRequest() :
     m_sortTypeHasBeenSet(false),
     m_projectIdsHasBeenSet(false),
     m_workflowTypeListHasBeenSet(false),
-    m_keyWordHasBeenSet(false)
+    m_keyWordHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,14 @@ string DescribeOpsWorkflowsRequest::ToJsonString() const
         string key = "KeyWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -449,6 +458,22 @@ void DescribeOpsWorkflowsRequest::SetKeyWord(const string& _keyWord)
 bool DescribeOpsWorkflowsRequest::KeyWordHasBeenSet() const
 {
     return m_keyWordHasBeenSet;
+}
+
+string DescribeOpsWorkflowsRequest::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void DescribeOpsWorkflowsRequest::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool DescribeOpsWorkflowsRequest::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
 }
 
 

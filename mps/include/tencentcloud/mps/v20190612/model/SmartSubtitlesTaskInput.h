@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/RawSmartSubtitleParameter.h>
+#include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,96 @@ namespace TencentCloud
                      */
                     bool RawParameterHasBeenSet() const;
 
+                    /**
+                     * 获取媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。 
+**注意**：当InputInfo.Type为URL时，该参数是必填项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutputStorage 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。 
+**注意**：当InputInfo.Type为URL时，该参数是必填项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TaskOutputStorage GetOutputStorage() const;
+
+                    /**
+                     * 设置媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。 
+**注意**：当InputInfo.Type为URL时，该参数是必填项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outputStorage 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。 
+**注意**：当InputInfo.Type为URL时，该参数是必填项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOutputStorage(const TaskOutputStorage& _outputStorage);
+
+                    /**
+                     * 判断参数 OutputStorage 是否已赋值
+                     * @return OutputStorage 是否已赋值
+                     * 
+                     */
+                    bool OutputStorageHasBeenSet() const;
+
+                    /**
+                     * 获取生成字幕文件的输出路径，可以为相对路径或者绝对路径。
+若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。
+
+相对路径示例:
+- 文件名_{变量名}.{format}
+- 文件名.{format}
+
+绝对路径示例：
+- /自定义路径/文件名_{变量名}.{format}
+
+如果不填，则默认为相对路径: `{inputName}_smartsubtitle_{definition}.{format}`。
+                     * @return OutputObjectPath 生成字幕文件的输出路径，可以为相对路径或者绝对路径。
+若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。
+
+相对路径示例:
+- 文件名_{变量名}.{format}
+- 文件名.{format}
+
+绝对路径示例：
+- /自定义路径/文件名_{变量名}.{format}
+
+如果不填，则默认为相对路径: `{inputName}_smartsubtitle_{definition}.{format}`。
+                     * 
+                     */
+                    std::string GetOutputObjectPath() const;
+
+                    /**
+                     * 设置生成字幕文件的输出路径，可以为相对路径或者绝对路径。
+若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。
+
+相对路径示例:
+- 文件名_{变量名}.{format}
+- 文件名.{format}
+
+绝对路径示例：
+- /自定义路径/文件名_{变量名}.{format}
+
+如果不填，则默认为相对路径: `{inputName}_smartsubtitle_{definition}.{format}`。
+                     * @param _outputObjectPath 生成字幕文件的输出路径，可以为相对路径或者绝对路径。
+若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。
+
+相对路径示例:
+- 文件名_{变量名}.{format}
+- 文件名.{format}
+
+绝对路径示例：
+- /自定义路径/文件名_{变量名}.{format}
+
+如果不填，则默认为相对路径: `{inputName}_smartsubtitle_{definition}.{format}`。
+                     * 
+                     */
+                    void SetOutputObjectPath(const std::string& _outputObjectPath);
+
+                    /**
+                     * 判断参数 OutputObjectPath 是否已赋值
+                     * @return OutputObjectPath 是否已赋值
+                     * 
+                     */
+                    bool OutputObjectPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +225,30 @@ namespace TencentCloud
                      */
                     RawSmartSubtitleParameter m_rawParameter;
                     bool m_rawParameterHasBeenSet;
+
+                    /**
+                     * 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。 
+**注意**：当InputInfo.Type为URL时，该参数是必填项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TaskOutputStorage m_outputStorage;
+                    bool m_outputStorageHasBeenSet;
+
+                    /**
+                     * 生成字幕文件的输出路径，可以为相对路径或者绝对路径。
+若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。
+
+相对路径示例:
+- 文件名_{变量名}.{format}
+- 文件名.{format}
+
+绝对路径示例：
+- /自定义路径/文件名_{变量名}.{format}
+
+如果不填，则默认为相对路径: `{inputName}_smartsubtitle_{definition}.{format}`。
+                     */
+                    std::string m_outputObjectPath;
+                    bool m_outputObjectPathHasBeenSet;
 
                 };
             }
