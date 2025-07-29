@@ -336,15 +336,15 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool ReferUrlTypeHasBeenSet() const;
 
                     /**
-                     * 获取有效开始时间，unix时间戳
-                     * @return ExpireStart 有效开始时间，unix时间戳
+                     * 获取有效开始时间，unix秒级时间戳
+                     * @return ExpireStart 有效开始时间，unix秒级时间戳
                      * 
                      */
                     std::string GetExpireStart() const;
 
                     /**
-                     * 设置有效开始时间，unix时间戳
-                     * @param _expireStart 有效开始时间，unix时间戳
+                     * 设置有效开始时间，unix秒级时间戳
+                     * @param _expireStart 有效开始时间，unix秒级时间戳
                      * 
                      */
                     void SetExpireStart(const std::string& _expireStart);
@@ -357,15 +357,15 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool ExpireStartHasBeenSet() const;
 
                     /**
-                     * 获取有效结束时间，unix时间戳，0代表永久有效
-                     * @return ExpireEnd 有效结束时间，unix时间戳，0代表永久有效
+                     * 获取有效结束时间，unix秒级时间戳，0代表永久有效
+                     * @return ExpireEnd 有效结束时间，unix秒级时间戳，0代表永久有效
                      * 
                      */
                     std::string GetExpireEnd() const;
 
                     /**
-                     * 设置有效结束时间，unix时间戳，0代表永久有效
-                     * @param _expireEnd 有效结束时间，unix时间戳，0代表永久有效
+                     * 设置有效结束时间，unix秒级时间戳，0代表永久有效
+                     * @param _expireEnd 有效结束时间，unix秒级时间戳，0代表永久有效
                      * 
                      */
                     void SetExpireEnd(const std::string& _expireEnd);
@@ -546,13 +546,13 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool m_referUrlTypeHasBeenSet;
 
                     /**
-                     * 有效开始时间，unix时间戳
+                     * 有效开始时间，unix秒级时间戳
                      */
                     std::string m_expireStart;
                     bool m_expireStartHasBeenSet;
 
                     /**
-                     * 有效结束时间，unix时间戳，0代表永久有效
+                     * 有效结束时间，unix秒级时间戳，0代表永久有效
                      */
                     std::string m_expireEnd;
                     bool m_expireEndHasBeenSet;

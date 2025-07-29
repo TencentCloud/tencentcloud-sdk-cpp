@@ -22,7 +22,6 @@ set(ecdn_public_header_model
   include/tencentcloud/ecdn/v20191012/model/DescribeEcdnStatisticsRequest.h
   include/tencentcloud/ecdn/v20191012/model/DescribeDomainsConfigResponse.h
   include/tencentcloud/ecdn/v20191012/model/AdvanceHttps.h
-  include/tencentcloud/ecdn/v20191012/model/PurgeUrlsCacheRequest.h
   include/tencentcloud/ecdn/v20191012/model/ResourceData.h
   include/tencentcloud/ecdn/v20191012/model/Https.h
   include/tencentcloud/ecdn/v20191012/model/Cache.h
@@ -32,8 +31,7 @@ set(ecdn_public_header_model
   include/tencentcloud/ecdn/v20191012/model/DomainData.h
   include/tencentcloud/ecdn/v20191012/model/Sort.h
   include/tencentcloud/ecdn/v20191012/model/IpFreqLimit.h
-  include/tencentcloud/ecdn/v20191012/model/DescribePurgeTasksRequest.h
-  include/tencentcloud/ecdn/v20191012/model/DescribeEcdnStatisticsResponse.h
+  include/tencentcloud/ecdn/v20191012/model/DomainFilter.h
   include/tencentcloud/ecdn/v20191012/model/DomainLogs.h
   include/tencentcloud/ecdn/v20191012/model/Hsts.h
   include/tencentcloud/ecdn/v20191012/model/DetailData.h
@@ -45,19 +43,16 @@ set(ecdn_public_header_model
   include/tencentcloud/ecdn/v20191012/model/DomainBriefInfo.h
   include/tencentcloud/ecdn/v20191012/model/Tag.h
   include/tencentcloud/ecdn/v20191012/model/WebSocket.h
-  include/tencentcloud/ecdn/v20191012/model/PurgeUrlsCacheResponse.h
   include/tencentcloud/ecdn/v20191012/model/IpFilter.h
   include/tencentcloud/ecdn/v20191012/model/ResponseHeader.h
   include/tencentcloud/ecdn/v20191012/model/DescribeDomainsResponse.h
-  include/tencentcloud/ecdn/v20191012/model/DescribePurgeTasksResponse.h
+  include/tencentcloud/ecdn/v20191012/model/DescribeEcdnStatisticsResponse.h
   include/tencentcloud/ecdn/v20191012/model/IpStatus.h
-  include/tencentcloud/ecdn/v20191012/model/PurgeTask.h
   include/tencentcloud/ecdn/v20191012/model/CacheRule.h
   include/tencentcloud/ecdn/v20191012/model/DescribeIpStatusResponse.h
   include/tencentcloud/ecdn/v20191012/model/Origin.h
   include/tencentcloud/ecdn/v20191012/model/ServerCert.h
   include/tencentcloud/ecdn/v20191012/model/CacheKey.h
-  include/tencentcloud/ecdn/v20191012/model/DomainFilter.h
   include/tencentcloud/ecdn/v20191012/model/DescribeEcdnDomainStatisticsRequest.h
   include/tencentcloud/ecdn/v20191012/model/DescribeEcdnDomainLogsRequest.h
   include/tencentcloud/ecdn/v20191012/model/DomainDetailInfo.h
@@ -70,7 +65,6 @@ set(ecdn_src
   src/v20191012/model/DescribeEcdnStatisticsRequest.cpp
   src/v20191012/model/DescribeDomainsConfigResponse.cpp
   src/v20191012/model/AdvanceHttps.cpp
-  src/v20191012/model/PurgeUrlsCacheRequest.cpp
   src/v20191012/model/ResourceData.cpp
   src/v20191012/model/Https.cpp
   src/v20191012/model/Cache.cpp
@@ -80,8 +74,7 @@ set(ecdn_src
   src/v20191012/model/DomainData.cpp
   src/v20191012/model/Sort.cpp
   src/v20191012/model/IpFreqLimit.cpp
-  src/v20191012/model/DescribePurgeTasksRequest.cpp
-  src/v20191012/model/DescribeEcdnStatisticsResponse.cpp
+  src/v20191012/model/DomainFilter.cpp
   src/v20191012/model/DomainLogs.cpp
   src/v20191012/model/Hsts.cpp
   src/v20191012/model/DetailData.cpp
@@ -93,19 +86,16 @@ set(ecdn_src
   src/v20191012/model/DomainBriefInfo.cpp
   src/v20191012/model/Tag.cpp
   src/v20191012/model/WebSocket.cpp
-  src/v20191012/model/PurgeUrlsCacheResponse.cpp
   src/v20191012/model/IpFilter.cpp
   src/v20191012/model/ResponseHeader.cpp
   src/v20191012/model/DescribeDomainsResponse.cpp
-  src/v20191012/model/DescribePurgeTasksResponse.cpp
+  src/v20191012/model/DescribeEcdnStatisticsResponse.cpp
   src/v20191012/model/IpStatus.cpp
-  src/v20191012/model/PurgeTask.cpp
   src/v20191012/model/CacheRule.cpp
   src/v20191012/model/DescribeIpStatusResponse.cpp
   src/v20191012/model/Origin.cpp
   src/v20191012/model/ServerCert.cpp
   src/v20191012/model/CacheKey.cpp
-  src/v20191012/model/DomainFilter.cpp
   src/v20191012/model/DescribeEcdnDomainStatisticsRequest.cpp
   src/v20191012/model/DescribeEcdnDomainLogsRequest.cpp
   src/v20191012/model/DomainDetailInfo.cpp

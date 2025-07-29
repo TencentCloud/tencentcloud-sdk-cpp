@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool CamRangerGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取0: 灵活场景 1: 固定场景
+                     * @return ComputeGroupType 0: 灵活场景 1: 固定场景
+                     * 
+                     */
+                    int64_t GetComputeGroupType() const;
+
+                    /**
+                     * 设置0: 灵活场景 1: 固定场景
+                     * @param _computeGroupType 0: 灵活场景 1: 固定场景
+                     * 
+                     */
+                    void SetComputeGroupType(const int64_t& _computeGroupType);
+
+                    /**
+                     * 判断参数 ComputeGroupType 是否已赋值
+                     * @return ComputeGroupType 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_camRangerGroupIds;
                     bool m_camRangerGroupIdsHasBeenSet;
+
+                    /**
+                     * 0: 灵活场景 1: 固定场景
+                     */
+                    int64_t m_computeGroupType;
+                    bool m_computeGroupTypeHasBeenSet;
 
                 };
             }

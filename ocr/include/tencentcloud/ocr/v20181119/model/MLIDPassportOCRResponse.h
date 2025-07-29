@@ -304,6 +304,20 @@ namespace TencentCloud
                      */
                     bool WarnCardInfosHasBeenSet() const;
 
+                    /**
+                     * 获取输入图片中的卡证数量（仅请求曼谷地域[ap-bangkok]返回）
+                     * @return CardCount 输入图片中的卡证数量（仅请求曼谷地域[ap-bangkok]返回）
+                     * 
+                     */
+                    int64_t GetCardCount() const;
+
+                    /**
+                     * 判断参数 CardCount 是否已赋值
+                     * @return CardCount 是否已赋值
+                     * 
+                     */
+                    bool CardCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -418,6 +432,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_warnCardInfos;
                     bool m_warnCardInfosHasBeenSet;
+
+                    /**
+                     * 输入图片中的卡证数量（仅请求曼谷地域[ap-bangkok]返回）
+                     */
+                    int64_t m_cardCount;
+                    bool m_cardCountHasBeenSet;
 
                 };
             }

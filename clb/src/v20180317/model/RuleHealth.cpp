@@ -24,6 +24,7 @@ RuleHealth::RuleHealth() :
     m_locationIdHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_urlHasBeenSet(false),
+    m_ruleIdHasBeenSet(false),
     m_targetsHasBeenSet(false)
 {
 }
@@ -61,6 +62,16 @@ CoreInternalOutcome RuleHealth::Deserialize(const rapidjson::Value &value)
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
+    {
+        if (!value["RuleId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleHealth.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleId = string(value["RuleId"].GetString());
+        m_ruleIdHasBeenSet = true;
     }
 
     if (value.HasMember("Targets") && !value["Targets"].IsNull())
@@ -112,6 +123,14 @@ void RuleHealth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetsHasBeenSet)
@@ -178,6 +197,22 @@ void RuleHealth::SetUrl(const string& _url)
 bool RuleHealth::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string RuleHealth::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void RuleHealth::SetRuleId(const string& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool RuleHealth::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
 }
 
 vector<TargetHealth> RuleHealth::GetTargets() const

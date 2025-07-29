@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ECDN_V20191012_MODEL_PURGEURLSCACHERESPONSE_H_
-#define TENCENTCLOUD_ECDN_V20191012_MODEL_PURGEURLSCACHERESPONSE_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_PROCESSMEDIABYMPSRESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_PROCESSMEDIABYMPSRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,27 +25,27 @@
 
 namespace TencentCloud
 {
-    namespace Ecdn
+    namespace Vod
     {
-        namespace V20191012
+        namespace V20180717
         {
             namespace Model
             {
                 /**
-                * PurgeUrlsCache返回参数结构体
+                * ProcessMediaByMPS返回参数结构体
                 */
-                class PurgeUrlsCacheResponse : public AbstractModel
+                class ProcessMediaByMPSResponse : public AbstractModel
                 {
                 public:
-                    PurgeUrlsCacheResponse();
-                    ~PurgeUrlsCacheResponse() = default;
+                    ProcessMediaByMPSResponse();
+                    ~ProcessMediaByMPSResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取刷新任务Id。
-                     * @return TaskId 刷新任务Id。
+                     * 获取任务 ID。
+                     * @return TaskId 任务 ID。
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 刷新任务Id。
+                     * 任务 ID。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ECDN_V20191012_MODEL_PURGEURLSCACHERESPONSE_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_PROCESSMEDIABYMPSRESPONSE_H_

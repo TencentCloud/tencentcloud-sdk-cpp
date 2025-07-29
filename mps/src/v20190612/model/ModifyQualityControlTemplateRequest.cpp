@@ -27,7 +27,8 @@ ModifyQualityControlTemplateRequest::ModifyQualityControlTemplateRequest() :
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_qualityControlItemSetHasBeenSet(false),
-    m_recordFormatHasBeenSet(false)
+    m_recordFormatHasBeenSet(false),
+    m_strategyHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,15 @@ string ModifyQualityControlTemplateRequest::ToJsonString() const
         string key = "RecordFormat";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recordFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_strategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Strategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_strategy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -171,6 +181,22 @@ void ModifyQualityControlTemplateRequest::SetRecordFormat(const string& _recordF
 bool ModifyQualityControlTemplateRequest::RecordFormatHasBeenSet() const
 {
     return m_recordFormatHasBeenSet;
+}
+
+QualityControlStrategy ModifyQualityControlTemplateRequest::GetStrategy() const
+{
+    return m_strategy;
+}
+
+void ModifyQualityControlTemplateRequest::SetStrategy(const QualityControlStrategy& _strategy)
+{
+    m_strategy = _strategy;
+    m_strategyHasBeenSet = true;
+}
+
+bool ModifyQualityControlTemplateRequest::StrategyHasBeenSet() const
+{
+    return m_strategyHasBeenSet;
 }
 
 

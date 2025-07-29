@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/QualityControlItemConfig.h>
+#include <tencentcloud/mps/v20190612/model/QualityControlStrategy.h>
 
 
 namespace TencentCloud
@@ -131,6 +132,27 @@ namespace TencentCloud
                      */
                     bool RecordFormatHasBeenSet() const;
 
+                    /**
+                     * 获取媒体质检抽检策略。
+                     * @return Strategy 媒体质检抽检策略。
+                     * 
+                     */
+                    QualityControlStrategy GetStrategy() const;
+
+                    /**
+                     * 设置媒体质检抽检策略。
+                     * @param _strategy 媒体质检抽检策略。
+                     * 
+                     */
+                    void SetStrategy(const QualityControlStrategy& _strategy);
+
+                    /**
+                     * 判断参数 Strategy 是否已赋值
+                     * @return Strategy 是否已赋值
+                     * 
+                     */
+                    bool StrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -157,6 +179,12 @@ namespace TencentCloud
                      */
                     std::string m_recordFormat;
                     bool m_recordFormatHasBeenSet;
+
+                    /**
+                     * 媒体质检抽检策略。
+                     */
+                    QualityControlStrategy m_strategy;
+                    bool m_strategyHasBeenSet;
 
                 };
             }

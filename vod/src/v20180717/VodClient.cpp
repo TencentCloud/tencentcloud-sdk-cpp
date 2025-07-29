@@ -6920,6 +6920,49 @@ VodClient::ProcessMediaOutcomeCallable VodClient::ProcessMediaCallable(const Pro
     return task->get_future();
 }
 
+VodClient::ProcessMediaByMPSOutcome VodClient::ProcessMediaByMPS(const ProcessMediaByMPSRequest &request)
+{
+    auto outcome = MakeRequest(request, "ProcessMediaByMPS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ProcessMediaByMPSResponse rsp = ProcessMediaByMPSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ProcessMediaByMPSOutcome(rsp);
+        else
+            return ProcessMediaByMPSOutcome(o.GetError());
+    }
+    else
+    {
+        return ProcessMediaByMPSOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ProcessMediaByMPSAsync(const ProcessMediaByMPSRequest& request, const ProcessMediaByMPSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ProcessMediaByMPS(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ProcessMediaByMPSOutcomeCallable VodClient::ProcessMediaByMPSCallable(const ProcessMediaByMPSRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ProcessMediaByMPSOutcome()>>(
+        [this, request]()
+        {
+            return this->ProcessMediaByMPS(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ProcessMediaByProcedureOutcome VodClient::ProcessMediaByProcedure(const ProcessMediaByProcedureRequest &request)
 {
     auto outcome = MakeRequest(request, "ProcessMediaByProcedure");

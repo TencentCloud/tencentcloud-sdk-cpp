@@ -701,6 +701,27 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool AccessLogTopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启七层高级路由
+                     * @return AdvancedRoute 是否开启七层高级路由
+                     * 
+                     */
+                    bool GetAdvancedRoute() const;
+
+                    /**
+                     * 设置是否开启七层高级路由
+                     * @param _advancedRoute 是否开启七层高级路由
+                     * 
+                     */
+                    void SetAdvancedRoute(const bool& _advancedRoute);
+
+                    /**
+                     * 判断参数 AdvancedRoute 是否已赋值
+                     * @return AdvancedRoute 是否已赋值
+                     * 
+                     */
+                    bool AdvancedRouteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -888,6 +909,12 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_accessLogTopicId;
                     bool m_accessLogTopicIdHasBeenSet;
+
+                    /**
+                     * 是否开启七层高级路由
+                     */
+                    bool m_advancedRoute;
+                    bool m_advancedRouteHasBeenSet;
 
                 };
             }

@@ -35,10 +35,6 @@
 #include <tencentcloud/ecdn/v20191012/model/DescribeEcdnStatisticsResponse.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribeIpStatusRequest.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribeIpStatusResponse.h>
-#include <tencentcloud/ecdn/v20191012/model/DescribePurgeTasksRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/DescribePurgeTasksResponse.h>
-#include <tencentcloud/ecdn/v20191012/model/PurgeUrlsCacheRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/PurgeUrlsCacheResponse.h>
 
 
 namespace TencentCloud
@@ -71,12 +67,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpStatusResponse> DescribeIpStatusOutcome;
                 typedef std::future<DescribeIpStatusOutcome> DescribeIpStatusOutcomeCallable;
                 typedef std::function<void(const EcdnClient*, const Model::DescribeIpStatusRequest&, DescribeIpStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribePurgeTasksResponse> DescribePurgeTasksOutcome;
-                typedef std::future<DescribePurgeTasksOutcome> DescribePurgeTasksOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::DescribePurgeTasksRequest&, DescribePurgeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePurgeTasksAsyncHandler;
-                typedef Outcome<Core::Error, Model::PurgeUrlsCacheResponse> PurgeUrlsCacheOutcome;
-                typedef std::future<PurgeUrlsCacheOutcome> PurgeUrlsCacheOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::PurgeUrlsCacheRequest&, PurgeUrlsCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurgeUrlsCacheAsyncHandler;
 
 
 
@@ -161,32 +151,6 @@ DescribeIpStatus 用于查询域名所在加速平台的所有节点信息, 如�
                 DescribeIpStatusOutcome DescribeIpStatus(const Model::DescribeIpStatusRequest &request);
                 void DescribeIpStatusAsync(const Model::DescribeIpStatusRequest& request, const DescribeIpStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIpStatusOutcomeCallable DescribeIpStatusCallable(const Model::DescribeIpStatusRequest& request);
-
-                /**
-                 *ECDN即将下线，如需要动态加速请使用EdgeOne
-
-DescribePurgeTasks 用于查询刷新任务提交历史记录及执行进度。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/api/228/37873"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-                 * @param req DescribePurgeTasksRequest
-                 * @return DescribePurgeTasksOutcome
-                 */
-                DescribePurgeTasksOutcome DescribePurgeTasks(const Model::DescribePurgeTasksRequest &request);
-                void DescribePurgeTasksAsync(const Model::DescribePurgeTasksRequest& request, const DescribePurgeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribePurgeTasksOutcomeCallable DescribePurgeTasksCallable(const Model::DescribePurgeTasksRequest& request);
-
-                /**
-                 *ECDN即将下线，如需要动态加速请使用EdgeOne
-
-PurgeUrlsCache 用于批量刷新Url，一次提交将返回一个刷新任务id。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/api/228/37870"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-                 * @param req PurgeUrlsCacheRequest
-                 * @return PurgeUrlsCacheOutcome
-                 */
-                PurgeUrlsCacheOutcome PurgeUrlsCache(const Model::PurgeUrlsCacheRequest &request);
-                void PurgeUrlsCacheAsync(const Model::PurgeUrlsCacheRequest& request, const PurgeUrlsCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                PurgeUrlsCacheOutcomeCallable PurgeUrlsCacheCallable(const Model::PurgeUrlsCacheRequest& request);
 
             };
         }

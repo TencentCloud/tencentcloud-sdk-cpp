@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ecdn/v20191012/model/PurgeUrlsCacheResponse.h>
+#include <tencentcloud/vod/v20180717/model/ProcessMediaByMPSResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ecdn::V20191012::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-PurgeUrlsCacheResponse::PurgeUrlsCacheResponse() :
+ProcessMediaByMPSResponse::ProcessMediaByMPSResponse() :
     m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome PurgeUrlsCacheResponse::Deserialize(const string &payload)
+CoreInternalOutcome ProcessMediaByMPSResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -76,7 +76,7 @@ CoreInternalOutcome PurgeUrlsCacheResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
-string PurgeUrlsCacheResponse::ToJsonString() const
+string ProcessMediaByMPSResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -102,12 +102,12 @@ string PurgeUrlsCacheResponse::ToJsonString() const
 }
 
 
-string PurgeUrlsCacheResponse::GetTaskId() const
+string ProcessMediaByMPSResponse::GetTaskId() const
 {
     return m_taskId;
 }
 
-bool PurgeUrlsCacheResponse::TaskIdHasBeenSet() const
+bool ProcessMediaByMPSResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
 }

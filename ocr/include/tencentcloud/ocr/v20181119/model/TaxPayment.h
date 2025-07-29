@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/OtherInvoiceItem.h>
+#include <tencentcloud/ocr/v20181119/model/OtherInvoiceList.h>
 
 
 namespace TencentCloud
@@ -97,6 +98,27 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取表格。
+                     * @return TableItems 表格。
+                     * 
+                     */
+                    std::vector<OtherInvoiceList> GetTableItems() const;
+
+                    /**
+                     * 设置表格。
+                     * @param _tableItems 表格。
+                     * 
+                     */
+                    void SetTableItems(const std::vector<OtherInvoiceList>& _tableItems);
+
+                    /**
+                     * 判断参数 TableItems 是否已赋值
+                     * @return TableItems 是否已赋值
+                     * 
+                     */
+                    bool TableItemsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +134,12 @@ namespace TencentCloud
                      */
                     std::vector<OtherInvoiceItem> m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 表格。
+                     */
+                    std::vector<OtherInvoiceList> m_tableItems;
+                    bool m_tableItemsHasBeenSet;
 
                 };
             }

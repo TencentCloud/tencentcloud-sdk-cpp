@@ -52,7 +52,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_egressHasBeenSet(false),
     m_lBChargePrepaidHasBeenSet(false),
     m_lBChargeTypeHasBeenSet(false),
-    m_accessLogTopicIdHasBeenSet(false)
+    m_accessLogTopicIdHasBeenSet(false),
+    m_advancedRouteHasBeenSet(false)
 {
 }
 
@@ -323,6 +324,14 @@ string CreateLoadBalancerRequest::ToJsonString() const
         string key = "AccessLogTopicId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_accessLogTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_advancedRouteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedRoute";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_advancedRoute, allocator);
     }
 
 
@@ -811,6 +820,22 @@ void CreateLoadBalancerRequest::SetAccessLogTopicId(const string& _accessLogTopi
 bool CreateLoadBalancerRequest::AccessLogTopicIdHasBeenSet() const
 {
     return m_accessLogTopicIdHasBeenSet;
+}
+
+bool CreateLoadBalancerRequest::GetAdvancedRoute() const
+{
+    return m_advancedRoute;
+}
+
+void CreateLoadBalancerRequest::SetAdvancedRoute(const bool& _advancedRoute)
+{
+    m_advancedRoute = _advancedRoute;
+    m_advancedRouteHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::AdvancedRouteHasBeenSet() const
+{
+    return m_advancedRouteHasBeenSet;
 }
 
 

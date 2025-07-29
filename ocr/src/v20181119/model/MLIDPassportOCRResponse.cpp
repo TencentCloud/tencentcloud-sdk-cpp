@@ -40,7 +40,8 @@ MLIDPassportOCRResponse::MLIDPassportOCRResponse() :
     m_givenNameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_passportRecognizeInfosHasBeenSet(false),
-    m_warnCardInfosHasBeenSet(false)
+    m_warnCardInfosHasBeenSet(false),
+    m_cardCountHasBeenSet(false)
 {
 }
 
@@ -261,6 +262,16 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
         m_warnCardInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CardCount") && !rsp["CardCount"].IsNull())
+    {
+        if (!rsp["CardCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CardCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardCount = rsp["CardCount"].GetInt64();
+        m_cardCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -416,6 +427,14 @@ string MLIDPassportOCRResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_cardCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cardCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -598,6 +617,16 @@ vector<int64_t> MLIDPassportOCRResponse::GetWarnCardInfos() const
 bool MLIDPassportOCRResponse::WarnCardInfosHasBeenSet() const
 {
     return m_warnCardInfosHasBeenSet;
+}
+
+int64_t MLIDPassportOCRResponse::GetCardCount() const
+{
+    return m_cardCount;
+}
+
+bool MLIDPassportOCRResponse::CardCountHasBeenSet() const
+{
+    return m_cardCountHasBeenSet;
 }
 
 

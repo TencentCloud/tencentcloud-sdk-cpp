@@ -119,6 +119,27 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
+                     * 获取高级路由规则ID
+                     * @return RuleId 高级路由规则ID
+                     * 
+                     */
+                    std::string GetRuleId() const;
+
+                    /**
+                     * 设置高级路由规则ID
+                     * @param _ruleId 高级路由规则ID
+                     * 
+                     */
+                    void SetRuleId(const std::string& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
+                    /**
                      * 获取本规则上绑定的后端服务的健康检查状态
                      * @return Targets 本规则上绑定的后端服务的健康检查状态
                      * 
@@ -160,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 高级路由规则ID
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                     /**
                      * 本规则上绑定的后端服务的健康检查状态

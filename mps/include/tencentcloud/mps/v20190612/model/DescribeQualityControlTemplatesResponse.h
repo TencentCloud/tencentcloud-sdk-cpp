@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体质检模板详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QualityControlTemplateSet 媒体质检模板详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<QualityControlTemplate> GetQualityControlTemplateSet() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 媒体质检模板详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<QualityControlTemplate> m_qualityControlTemplateSet;
                     bool m_qualityControlTemplateSetHasBeenSet;

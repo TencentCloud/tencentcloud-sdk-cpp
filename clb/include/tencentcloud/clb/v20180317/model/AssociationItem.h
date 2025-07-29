@@ -268,6 +268,27 @@ namespace TencentCloud
                      */
                     bool WeightHasBeenSet() const;
 
+                    /**
+                     * 获取高级路由规则ID
+                     * @return RuleId 高级路由规则ID
+                     * 
+                     */
+                    std::string GetRuleId() const;
+
+                    /**
+                     * 设置高级路由规则ID
+                     * @param _ruleId 高级路由规则ID
+                     * 
+                     */
+                    void SetRuleId(const std::string& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -332,6 +353,12 @@ namespace TencentCloud
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
+
+                    /**
+                     * 高级路由规则ID
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                 };
             }
