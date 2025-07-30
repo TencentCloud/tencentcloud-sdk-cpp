@@ -23,6 +23,7 @@ using namespace TencentCloud::Ctem::V20231128::Model;
 using namespace std;
 
 DescribeManagesRequest::DescribeManagesRequest() :
+    m_customerIdListHasBeenSet(false),
     m_isAggregationHasBeenSet(false),
     m_isNewHasBeenSet(false),
     m_customerIdHasBeenSet(false),
@@ -45,6 +46,19 @@ string DescribeManagesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_customerIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomerIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_customerIdList.begin(); itr != m_customerIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
 
     if (m_isAggregationHasBeenSet)
     {
@@ -169,6 +183,22 @@ string DescribeManagesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<int64_t> DescribeManagesRequest::GetCustomerIdList() const
+{
+    return m_customerIdList;
+}
+
+void DescribeManagesRequest::SetCustomerIdList(const vector<int64_t>& _customerIdList)
+{
+    m_customerIdList = _customerIdList;
+    m_customerIdListHasBeenSet = true;
+}
+
+bool DescribeManagesRequest::CustomerIdListHasBeenSet() const
+{
+    return m_customerIdListHasBeenSet;
+}
 
 bool DescribeManagesRequest::GetIsAggregation() const
 {

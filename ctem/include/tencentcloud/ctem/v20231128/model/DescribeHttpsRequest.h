@@ -44,6 +44,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取企业ID列表，可多选
+                     * @return CustomerIdList 企业ID列表，可多选
+                     * 
+                     */
+                    std::vector<int64_t> GetCustomerIdList() const;
+
+                    /**
+                     * 设置企业ID列表，可多选
+                     * @param _customerIdList 企业ID列表，可多选
+                     * 
+                     */
+                    void SetCustomerIdList(const std::vector<int64_t>& _customerIdList);
+
+                    /**
+                     * 判断参数 CustomerIdList 是否已赋值
+                     * @return CustomerIdList 是否已赋值
+                     * 
+                     */
+                    bool CustomerIdListHasBeenSet() const;
+
+                    /**
                      * 获取是否聚合数据
                      * @return IsAggregation 是否聚合数据
                      * 
@@ -359,6 +380,12 @@ namespace TencentCloud
                     bool HasExpirationRiskHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 企业ID列表，可多选
+                     */
+                    std::vector<int64_t> m_customerIdList;
+                    bool m_customerIdListHasBeenSet;
 
                     /**
                      * 是否聚合数据

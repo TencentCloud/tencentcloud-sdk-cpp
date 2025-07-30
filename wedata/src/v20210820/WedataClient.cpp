@@ -7479,6 +7479,49 @@ WedataClient::DescribeSuccessorOpsTaskInfosOutcomeCallable WedataClient::Describ
     return task->get_future();
 }
 
+WedataClient::DescribeSuccessorTaskInfoListOutcome WedataClient::DescribeSuccessorTaskInfoList(const DescribeSuccessorTaskInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSuccessorTaskInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSuccessorTaskInfoListResponse rsp = DescribeSuccessorTaskInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSuccessorTaskInfoListOutcome(rsp);
+        else
+            return DescribeSuccessorTaskInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSuccessorTaskInfoListOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeSuccessorTaskInfoListAsync(const DescribeSuccessorTaskInfoListRequest& request, const DescribeSuccessorTaskInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSuccessorTaskInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeSuccessorTaskInfoListOutcomeCallable WedataClient::DescribeSuccessorTaskInfoListCallable(const DescribeSuccessorTaskInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSuccessorTaskInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSuccessorTaskInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeTableBasicInfoOutcome WedataClient::DescribeTableBasicInfo(const DescribeTableBasicInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTableBasicInfo");

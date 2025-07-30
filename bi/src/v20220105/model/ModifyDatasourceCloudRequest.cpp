@@ -43,7 +43,9 @@ ModifyDatasourceCloudRequest::ModifyDatasourceCloudRequest() :
     m_dataOriginHasBeenSet(false),
     m_dataOriginProjectIdHasBeenSet(false),
     m_dataOriginDatasourceIdHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_schemaHasBeenSet(false),
+    m_dbVersionHasBeenSet(false)
 {
 }
 
@@ -220,6 +222,22 @@ string ModifyDatasourceCloudRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Schema";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dbVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -564,6 +582,38 @@ void ModifyDatasourceCloudRequest::SetClusterId(const string& _clusterId)
 bool ModifyDatasourceCloudRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string ModifyDatasourceCloudRequest::GetSchema() const
+{
+    return m_schema;
+}
+
+void ModifyDatasourceCloudRequest::SetSchema(const string& _schema)
+{
+    m_schema = _schema;
+    m_schemaHasBeenSet = true;
+}
+
+bool ModifyDatasourceCloudRequest::SchemaHasBeenSet() const
+{
+    return m_schemaHasBeenSet;
+}
+
+string ModifyDatasourceCloudRequest::GetDbVersion() const
+{
+    return m_dbVersion;
+}
+
+void ModifyDatasourceCloudRequest::SetDbVersion(const string& _dbVersion)
+{
+    m_dbVersion = _dbVersion;
+    m_dbVersionHasBeenSet = true;
+}
+
+bool ModifyDatasourceCloudRequest::DbVersionHasBeenSet() const
+{
+    return m_dbVersionHasBeenSet;
 }
 
 

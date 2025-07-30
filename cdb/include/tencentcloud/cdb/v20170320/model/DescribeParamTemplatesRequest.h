@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取引擎版本，缺省则查询所有
-                     * @return EngineVersions 引擎版本，缺省则查询所有
+                     * 获取引擎版本，缺省则查询所有。可取值为：5.5、5.6、5.7、8.0。
+                     * @return EngineVersions 引擎版本，缺省则查询所有。可取值为：5.5、5.6、5.7、8.0。
                      * 
                      */
                     std::vector<std::string> GetEngineVersions() const;
 
                     /**
-                     * 设置引擎版本，缺省则查询所有
-                     * @param _engineVersions 引擎版本，缺省则查询所有
+                     * 设置引擎版本，缺省则查询所有。可取值为：5.5、5.6、5.7、8.0。
+                     * @param _engineVersions 引擎版本，缺省则查询所有。可取值为：5.5、5.6、5.7、8.0。
                      * 
                      */
                     void SetEngineVersions(const std::vector<std::string>& _engineVersions);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EngineVersionsHasBeenSet() const;
 
                     /**
-                     * 获取引擎类型，缺省则查询所有
-                     * @return EngineTypes 引擎类型，缺省则查询所有
+                     * 获取引擎类型，缺省则查询所有。可取值为：InnoDB、RocksDB，不区分大小写。
+                     * @return EngineTypes 引擎类型，缺省则查询所有。可取值为：InnoDB、RocksDB，不区分大小写。
                      * 
                      */
                     std::vector<std::string> GetEngineTypes() const;
 
                     /**
-                     * 设置引擎类型，缺省则查询所有
-                     * @param _engineTypes 引擎类型，缺省则查询所有
+                     * 设置引擎类型，缺省则查询所有。可取值为：InnoDB、RocksDB，不区分大小写。
+                     * @param _engineTypes 引擎类型，缺省则查询所有。可取值为：InnoDB、RocksDB，不区分大小写。
                      * 
                      */
                     void SetEngineTypes(const std::vector<std::string>& _engineTypes);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EngineTypesHasBeenSet() const;
 
                     /**
-                     * 获取模板名称，缺省则查询所有
-                     * @return TemplateNames 模板名称，缺省则查询所有
+                     * 获取模板名称，缺省则查询所有。支持模糊匹配。
+                     * @return TemplateNames 模板名称，缺省则查询所有。支持模糊匹配。
                      * 
                      */
                     std::vector<std::string> GetTemplateNames() const;
 
                     /**
-                     * 设置模板名称，缺省则查询所有
-                     * @param _templateNames 模板名称，缺省则查询所有
+                     * 设置模板名称，缺省则查询所有。支持模糊匹配。
+                     * @param _templateNames 模板名称，缺省则查询所有。支持模糊匹配。
                      * 
                      */
                     void SetTemplateNames(const std::vector<std::string>& _templateNames);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TemplateNamesHasBeenSet() const;
 
                     /**
-                     * 获取模板id，缺省则查询所有
-                     * @return TemplateIds 模板id，缺省则查询所有
+                     * 获取模板 ID，缺省则查询所有。
+                     * @return TemplateIds 模板 ID，缺省则查询所有。
                      * 
                      */
                     std::vector<int64_t> GetTemplateIds() const;
 
                     /**
-                     * 设置模板id，缺省则查询所有
-                     * @param _templateIds 模板id，缺省则查询所有
+                     * 设置模板 ID，缺省则查询所有。
+                     * @param _templateIds 模板 ID，缺省则查询所有。
                      * 
                      */
                     void SetTemplateIds(const std::vector<int64_t>& _templateIds);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 引擎版本，缺省则查询所有
+                     * 引擎版本，缺省则查询所有。可取值为：5.5、5.6、5.7、8.0。
                      */
                     std::vector<std::string> m_engineVersions;
                     bool m_engineVersionsHasBeenSet;
 
                     /**
-                     * 引擎类型，缺省则查询所有
+                     * 引擎类型，缺省则查询所有。可取值为：InnoDB、RocksDB，不区分大小写。
                      */
                     std::vector<std::string> m_engineTypes;
                     bool m_engineTypesHasBeenSet;
 
                     /**
-                     * 模板名称，缺省则查询所有
+                     * 模板名称，缺省则查询所有。支持模糊匹配。
                      */
                     std::vector<std::string> m_templateNames;
                     bool m_templateNamesHasBeenSet;
 
                     /**
-                     * 模板id，缺省则查询所有
+                     * 模板 ID，缺省则查询所有。
                      */
                     std::vector<int64_t> m_templateIds;
                     bool m_templateIdsHasBeenSet;

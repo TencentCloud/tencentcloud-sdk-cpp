@@ -983,6 +983,56 @@ namespace TencentCloud
                      */
                     bool OwnerNameHasBeenSet() const;
 
+                    /**
+                     * 获取数据库schema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Schema 数据库schema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSchema() const;
+
+                    /**
+                     * 设置数据库schema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _schema 数据库schema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSchema(const std::string& _schema);
+
+                    /**
+                     * 判断参数 Schema 是否已赋值
+                     * @return Schema 是否已赋值
+                     * 
+                     */
+                    bool SchemaHasBeenSet() const;
+
+                    /**
+                     * 获取数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbVersion 数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDbVersion() const;
+
+                    /**
+                     * 设置数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dbVersion 数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDbVersion(const std::string& _dbVersion);
+
+                    /**
+                     * 判断参数 DbVersion 是否已赋值
+                     * @return DbVersion 是否已赋值
+                     * 
+                     */
+                    bool DbVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1247,6 +1297,20 @@ namespace TencentCloud
                      */
                     std::string m_ownerName;
                     bool m_ownerNameHasBeenSet;
+
+                    /**
+                     * 数据库schema
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schema;
+                    bool m_schemaHasBeenSet;
+
+                    /**
+                     * 数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dbVersion;
+                    bool m_dbVersionHasBeenSet;
 
                 };
             }

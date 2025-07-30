@@ -34,7 +34,9 @@ TargetGroupInfo::TargetGroupInfo() :
     m_registeredInstancesCountHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_weightHasBeenSet(false),
-    m_fullListenSwitchHasBeenSet(false)
+    m_fullListenSwitchHasBeenSet(false),
+    m_keepaliveEnableHasBeenSet(false),
+    m_sessionExpireTimeHasBeenSet(false)
 {
 }
 
@@ -203,6 +205,26 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
         m_fullListenSwitchHasBeenSet = true;
     }
 
+    if (value.HasMember("KeepaliveEnable") && !value["KeepaliveEnable"].IsNull())
+    {
+        if (!value["KeepaliveEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.KeepaliveEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_keepaliveEnable = value["KeepaliveEnable"].GetBool();
+        m_keepaliveEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionExpireTime") && !value["SessionExpireTime"].IsNull())
+    {
+        if (!value["SessionExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.SessionExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionExpireTime = value["SessionExpireTime"].GetInt64();
+        m_sessionExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -334,6 +356,22 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "FullListenSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fullListenSwitch, allocator);
+    }
+
+    if (m_keepaliveEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepaliveEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keepaliveEnable, allocator);
+    }
+
+    if (m_sessionExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sessionExpireTime, allocator);
     }
 
 }
@@ -561,5 +599,37 @@ void TargetGroupInfo::SetFullListenSwitch(const bool& _fullListenSwitch)
 bool TargetGroupInfo::FullListenSwitchHasBeenSet() const
 {
     return m_fullListenSwitchHasBeenSet;
+}
+
+bool TargetGroupInfo::GetKeepaliveEnable() const
+{
+    return m_keepaliveEnable;
+}
+
+void TargetGroupInfo::SetKeepaliveEnable(const bool& _keepaliveEnable)
+{
+    m_keepaliveEnable = _keepaliveEnable;
+    m_keepaliveEnableHasBeenSet = true;
+}
+
+bool TargetGroupInfo::KeepaliveEnableHasBeenSet() const
+{
+    return m_keepaliveEnableHasBeenSet;
+}
+
+int64_t TargetGroupInfo::GetSessionExpireTime() const
+{
+    return m_sessionExpireTime;
+}
+
+void TargetGroupInfo::SetSessionExpireTime(const int64_t& _sessionExpireTime)
+{
+    m_sessionExpireTime = _sessionExpireTime;
+    m_sessionExpireTimeHasBeenSet = true;
+}
+
+bool TargetGroupInfo::SessionExpireTimeHasBeenSet() const
+{
+    return m_sessionExpireTimeHasBeenSet;
 }
 

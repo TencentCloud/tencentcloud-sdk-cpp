@@ -112,14 +112,18 @@ namespace TencentCloud
 
                     /**
                      * 获取下载地址
+说明：此下载地址和参数 InternetUrl 的下载地址一样。
                      * @return IntranetUrl 下载地址
+说明：此下载地址和参数 InternetUrl 的下载地址一样。
                      * 
                      */
                     std::string GetIntranetUrl() const;
 
                     /**
                      * 设置下载地址
+说明：此下载地址和参数 InternetUrl 的下载地址一样。
                      * @param _intranetUrl 下载地址
+说明：此下载地址和参数 InternetUrl 的下载地址一样。
                      * 
                      */
                     void SetIntranetUrl(const std::string& _intranetUrl);
@@ -133,14 +137,18 @@ namespace TencentCloud
 
                     /**
                      * 获取下载地址
+说明：此下载地址和参数 IntranetUrl 的下载地址一样。
                      * @return InternetUrl 下载地址
+说明：此下载地址和参数 IntranetUrl 的下载地址一样。
                      * 
                      */
                     std::string GetInternetUrl() const;
 
                     /**
                      * 设置下载地址
+说明：此下载地址和参数 IntranetUrl 的下载地址一样。
                      * @param _internetUrl 下载地址
+说明：此下载地址和参数 IntranetUrl 的下载地址一样。
                      * 
                      */
                     void SetInternetUrl(const std::string& _internetUrl);
@@ -302,21 +310,21 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
-                     * 
+                     * @deprecated
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
                      * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -342,12 +350,14 @@ namespace TencentCloud
 
                     /**
                      * 下载地址
+说明：此下载地址和参数 InternetUrl 的下载地址一样。
                      */
                     std::string m_intranetUrl;
                     bool m_intranetUrlHasBeenSet;
 
                     /**
                      * 下载地址
+说明：此下载地址和参数 IntranetUrl 的下载地址一样。
                      */
                     std::string m_internetUrl;
                     bool m_internetUrlHasBeenSet;

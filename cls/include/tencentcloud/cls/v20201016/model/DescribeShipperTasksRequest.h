@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递规则ID
-                     * @return ShipperId 投递规则ID
+                     * 获取投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
+                     * @return ShipperId 投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
                      * 
                      */
                     std::string GetShipperId() const;
 
                     /**
-                     * 设置投递规则ID
-                     * @param _shipperId 投递规则ID
+                     * 设置投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
+                     * @param _shipperId 投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
                      * 
                      */
                     void SetShipperId(const std::string& _shipperId);
@@ -116,7 +124,9 @@ StartTime必须小于EndTime
                 private:
 
                     /**
-                     * 投递规则ID
+                     * 投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
                      */
                     std::string m_shipperId;
                     bool m_shipperIdHasBeenSet;

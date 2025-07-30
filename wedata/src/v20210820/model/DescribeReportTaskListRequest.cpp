@@ -25,7 +25,6 @@ using namespace std;
 DescribeReportTaskListRequest::DescribeReportTaskListRequest() :
     m_pageNumHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_tenantIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
@@ -59,14 +58,6 @@ string DescribeReportTaskListRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
-    }
-
-    if (m_tenantIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TenantId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_tenantId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectIdHasBeenSet)
@@ -179,22 +170,6 @@ void DescribeReportTaskListRequest::SetPageSize(const uint64_t& _pageSize)
 bool DescribeReportTaskListRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
-}
-
-string DescribeReportTaskListRequest::GetTenantId() const
-{
-    return m_tenantId;
-}
-
-void DescribeReportTaskListRequest::SetTenantId(const string& _tenantId)
-{
-    m_tenantId = _tenantId;
-    m_tenantIdHasBeenSet = true;
-}
-
-bool DescribeReportTaskListRequest::TenantIdHasBeenSet() const
-{
-    return m_tenantIdHasBeenSet;
 }
 
 string DescribeReportTaskListRequest::GetProjectId() const

@@ -44,15 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题 ID
-                     * @return TopicId 日志主题 ID
+                     * 获取日志主题Id。
+
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @return TopicId 日志主题Id。
+
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题 ID
-                     * @param _topicId 日志主题 ID
+                     * 设置日志主题Id。
+
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @param _topicId 日志主题Id。
+
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -65,15 +73,23 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志集ID
-                     * @return LogsetId 日志集ID
+                     * 获取日志集Id。
+
+- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
+                     * @return LogsetId 日志集Id。
+
+- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置日志集ID
-                     * @param _logsetId 日志集ID
+                     * 设置日志集Id。
+
+- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
+                     * @param _logsetId 日志集Id。
+
+- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -86,15 +102,15 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取投递任务名称
-                     * @return Name 投递任务名称
+                     * 获取COS导入任务名称,最大支持128个字节。
+                     * @return Name COS导入任务名称,最大支持128个字节。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置投递任务名称
-                     * @param _name 投递任务名称
+                     * 设置COS导入任务名称,最大支持128个字节。
+                     * @param _name COS导入任务名称,最大支持128个字节。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -107,15 +123,23 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
-                     * @return Bucket COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
+                     * 获取COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。	
+
+- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。
+                     * @return Bucket COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。	
+
+- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
-                     * @param _bucket COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
+                     * 设置COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。	
+
+- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。
+                     * @param _bucket COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。	
+
+- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -195,15 +219,15 @@ namespace TencentCloud
                     bool PrefixHasBeenSet() const;
 
                     /**
-                     * 获取supported: "", "gzip", "lzop", "snappy"; 默认空
-                     * @return Compress supported: "", "gzip", "lzop", "snappy"; 默认空
+                     * 获取supported: "", "gzip", "lzop", "snappy"。默认空，不压缩。
+                     * @return Compress supported: "", "gzip", "lzop", "snappy"。默认空，不压缩。
                      * 
                      */
                     std::string GetCompress() const;
 
                     /**
-                     * 设置supported: "", "gzip", "lzop", "snappy"; 默认空
-                     * @param _compress supported: "", "gzip", "lzop", "snappy"; 默认空
+                     * 设置supported: "", "gzip", "lzop", "snappy"。默认空，不压缩。
+                     * @param _compress supported: "", "gzip", "lzop", "snappy"。默认空，不压缩。
                      * 
                      */
                     void SetCompress(const std::string& _compress);
@@ -281,25 +305,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题 ID
+                     * 日志主题Id。
+
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志集ID
+                     * 日志集Id。
+
+- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * 投递任务名称
+                     * COS导入任务名称,最大支持128个字节。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
+                     * COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。	
+
+- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
@@ -324,7 +354,7 @@ namespace TencentCloud
                     bool m_prefixHasBeenSet;
 
                     /**
-                     * supported: "", "gzip", "lzop", "snappy"; 默认空
+                     * supported: "", "gzip", "lzop", "snappy"。默认空，不压缩。
                      */
                     std::string m_compress;
                     bool m_compressHasBeenSet;

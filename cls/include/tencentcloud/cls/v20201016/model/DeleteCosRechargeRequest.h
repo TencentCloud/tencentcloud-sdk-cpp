@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取COS导入配置Id
-                     * @return Id COS导入配置Id
+                     * 获取COS导入配置Id。
+- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。
+                     * @return Id COS导入配置Id。
+- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置COS导入配置Id
-                     * @param _id COS导入配置Id
+                     * 设置COS导入配置Id。
+- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。
+                     * @param _id COS导入配置Id。
+- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -64,15 +68,19 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取日志主题Id
-                     * @return TopicId 日志主题Id
+                     * 获取日志主题Id。
+-  通过[获取日志主题列表](https://cloud.tencent.com/document/api/614/56454)获取日志主题Id。
+                     * @return TopicId 日志主题Id。
+-  通过[获取日志主题列表](https://cloud.tencent.com/document/api/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题Id
-                     * @param _topicId 日志主题Id
+                     * 设置日志主题Id。
+-  通过[获取日志主题列表](https://cloud.tencent.com/document/api/614/56454)获取日志主题Id。
+                     * @param _topicId 日志主题Id。
+-  通过[获取日志主题列表](https://cloud.tencent.com/document/api/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -87,13 +95,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * COS导入配置Id
+                     * COS导入配置Id。
+- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 日志主题Id
+                     * 日志主题Id。
+-  通过[获取日志主题列表](https://cloud.tencent.com/document/api/614/56454)获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取参数模板对应实例版本
-                     * @return EngineVersion 参数模板对应实例版本
+                     * 获取参数模板对应实例版本，可取值：5.5、5.6、5.7、8.0。
+                     * @return EngineVersion 参数模板对应实例版本，可取值：5.5、5.6、5.7、8.0。
                      * 
                      */
                     std::string GetEngineVersion() const;
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 参数模板对应实例版本
+                     * 参数模板对应实例版本，可取值：5.5、5.6、5.7、8.0。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;

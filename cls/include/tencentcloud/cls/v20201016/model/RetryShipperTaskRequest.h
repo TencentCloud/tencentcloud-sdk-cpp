@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递规则ID
-                     * @return ShipperId 投递规则ID
+                     * 获取投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
+                     * @return ShipperId 投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
                      * 
                      */
                     std::string GetShipperId() const;
 
                     /**
-                     * 设置投递规则ID
-                     * @param _shipperId 投递规则ID
+                     * 设置投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
+                     * @param _shipperId 投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
                      * 
                      */
                     void SetShipperId(const std::string& _shipperId);
@@ -64,15 +72,23 @@ namespace TencentCloud
                     bool ShipperIdHasBeenSet() const;
 
                     /**
-                     * 获取投递任务ID
-                     * @return TaskId 投递任务ID
+                     * 获取投递任务Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745) 获取TaskId。
+                     * @return TaskId 投递任务Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745) 获取TaskId。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置投递任务ID
-                     * @param _taskId 投递任务ID
+                     * 设置投递任务Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745) 获取TaskId。
+                     * @param _taskId 投递任务Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745) 获取TaskId。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -87,13 +103,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 投递规则ID
+                     * 投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
                      */
                     std::string m_shipperId;
                     bool m_shipperIdHasBeenSet;
 
                     /**
-                     * 投递任务ID
+                     * 投递任务Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745) 获取TaskId。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

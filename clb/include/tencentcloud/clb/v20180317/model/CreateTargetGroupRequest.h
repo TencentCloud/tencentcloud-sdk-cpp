@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取目标组后端转发协议。v2新版目标组该项必填。目前支持tcp、udp。
-                     * @return Protocol 目标组后端转发协议。v2新版目标组该项必填。目前支持tcp、udp。
+                     * 获取目标组后端转发协议。v2新版目标组该项必填。目前支持TCP、UDP、HTTP、HTTPS、GRPC。
+                     * @return Protocol 目标组后端转发协议。v2新版目标组该项必填。目前支持TCP、UDP、HTTP、HTTPS、GRPC。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置目标组后端转发协议。v2新版目标组该项必填。目前支持tcp、udp。
-                     * @param _protocol 目标组后端转发协议。v2新版目标组该项必填。目前支持tcp、udp。
+                     * 设置目标组后端转发协议。v2新版目标组该项必填。目前支持TCP、UDP、HTTP、HTTPS、GRPC。
+                     * @param _protocol 目标组后端转发协议。v2新版目标组该项必填。目前支持TCP、UDP、HTTP、HTTPS、GRPC。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -237,15 +237,15 @@ v1 目标组类型不支持设置 Weight 参数。
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取全监听目标组标识，为true表示是全监听目标组，false表示不是全监听目标组。
-                     * @return FullListenSwitch 全监听目标组标识，为true表示是全监听目标组，false表示不是全监听目标组。
+                     * 获取全监听目标组标识，true表示是全监听目标组，false表示不是全监听目标组。仅V2新版类型目标组支持该参数。
+                     * @return FullListenSwitch 全监听目标组标识，true表示是全监听目标组，false表示不是全监听目标组。仅V2新版类型目标组支持该参数。
                      * 
                      */
                     bool GetFullListenSwitch() const;
 
                     /**
-                     * 设置全监听目标组标识，为true表示是全监听目标组，false表示不是全监听目标组。
-                     * @param _fullListenSwitch 全监听目标组标识，为true表示是全监听目标组，false表示不是全监听目标组。
+                     * 设置全监听目标组标识，true表示是全监听目标组，false表示不是全监听目标组。仅V2新版类型目标组支持该参数。
+                     * @param _fullListenSwitch 全监听目标组标识，true表示是全监听目标组，false表示不是全监听目标组。仅V2新版类型目标组支持该参数。
                      * 
                      */
                     void SetFullListenSwitch(const bool& _fullListenSwitch);
@@ -279,15 +279,15 @@ v1 目标组类型不支持设置 Weight 参数。
                     bool KeepaliveEnableHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
-                     * @return SessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
+                     * 获取会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。仅V2新版且后端转发协议为HTTP/HTTPS/GRPC目标组支持该参数。
+                     * @return SessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。仅V2新版且后端转发协议为HTTP/HTTPS/GRPC目标组支持该参数。
                      * 
                      */
                     uint64_t GetSessionExpireTime() const;
 
                     /**
-                     * 设置会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
-                     * @param _sessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
+                     * 设置会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。仅V2新版且后端转发协议为HTTP/HTTPS/GRPC目标组支持该参数。
+                     * @param _sessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。仅V2新版且后端转发协议为HTTP/HTTPS/GRPC目标组支持该参数。
                      * 
                      */
                     void SetSessionExpireTime(const uint64_t& _sessionExpireTime);
@@ -333,7 +333,7 @@ v1 目标组类型不支持设置 Weight 参数。
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 目标组后端转发协议。v2新版目标组该项必填。目前支持tcp、udp。
+                     * 目标组后端转发协议。v2新版目标组该项必填。目前支持TCP、UDP、HTTP、HTTPS、GRPC。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -356,7 +356,7 @@ v1 目标组类型不支持设置 Weight 参数。
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 全监听目标组标识，为true表示是全监听目标组，false表示不是全监听目标组。
+                     * 全监听目标组标识，true表示是全监听目标组，false表示不是全监听目标组。仅V2新版类型目标组支持该参数。
                      */
                     bool m_fullListenSwitch;
                     bool m_fullListenSwitchHasBeenSet;
@@ -368,7 +368,7 @@ v1 目标组类型不支持设置 Weight 参数。
                     bool m_keepaliveEnableHasBeenSet;
 
                     /**
-                     * 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
+                     * 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。仅V2新版且后端转发协议为HTTP/HTTPS/GRPC目标组支持该参数。
                      */
                     uint64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;

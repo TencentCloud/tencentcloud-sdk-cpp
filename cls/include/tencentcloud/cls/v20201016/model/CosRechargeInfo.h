@@ -153,15 +153,23 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取COS存储桶所在地域
-                     * @return BucketRegion COS存储桶所在地域
+                     * 获取COS存储桶所在地域。
+
+- 通过[地域和访问域名](https://cloud.tencent.com/document/product/436/6224)获取地域信息。
+                     * @return BucketRegion COS存储桶所在地域。
+
+- 通过[地域和访问域名](https://cloud.tencent.com/document/product/436/6224)获取地域信息。
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
-                     * 设置COS存储桶所在地域
-                     * @param _bucketRegion COS存储桶所在地域
+                     * 设置COS存储桶所在地域。
+
+- 通过[地域和访问域名](https://cloud.tencent.com/document/product/436/6224)获取地域信息。
+                     * @param _bucketRegion COS存储桶所在地域。
+
+- 通过[地域和访问域名](https://cloud.tencent.com/document/product/436/6224)获取地域信息。
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -262,15 +270,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @return CreateTime 创建时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置创建时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @param _createTime 创建时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -283,15 +291,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取更新时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @return UpdateTime 更新时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置更新时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @param _updateTime 更新时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -325,15 +333,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取supported: "", "gzip", "lzop", "snappy”; 默认空
-                     * @return Compress supported: "", "gzip", "lzop", "snappy”; 默认空
+                     * 获取压缩方式supported: "", "gzip", "lzop", "snappy”;  默认空不压缩
+                     * @return Compress 压缩方式supported: "", "gzip", "lzop", "snappy”;  默认空不压缩
                      * 
                      */
                     std::string GetCompress() const;
 
                     /**
-                     * 设置supported: "", "gzip", "lzop", "snappy”; 默认空
-                     * @param _compress supported: "", "gzip", "lzop", "snappy”; 默认空
+                     * 设置压缩方式supported: "", "gzip", "lzop", "snappy”;  默认空不压缩
+                     * @param _compress 压缩方式supported: "", "gzip", "lzop", "snappy”;  默认空不压缩
                      * 
                      */
                     void SetCompress(const std::string& _compress);
@@ -441,7 +449,9 @@ namespace TencentCloud
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * COS存储桶所在地域
+                     * COS存储桶所在地域。
+
+- 通过[地域和访问域名](https://cloud.tencent.com/document/product/436/6224)获取地域信息。
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
@@ -472,13 +482,13 @@ namespace TencentCloud
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间。时间格式：YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间。时间格式：YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
@@ -490,7 +500,7 @@ namespace TencentCloud
                     bool m_progressHasBeenSet;
 
                     /**
-                     * supported: "", "gzip", "lzop", "snappy”; 默认空
+                     * 压缩方式supported: "", "gzip", "lzop", "snappy”;  默认空不压缩
                      */
                     std::string m_compress;
                     bool m_compressHasBeenSet;

@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool RunningTotalCountHasBeenSet() const;
 
                     /**
-                     * 获取带部署总数
-                     * @return PendingTotalCount 带部署总数
+                     * 获取待部署总数
+                     * @return PendingTotalCount 待部署总数
                      * 
                      */
                     int64_t GetPendingTotalCount() const;
@@ -161,7 +161,7 @@ namespace TencentCloud
                     bool m_runningTotalCountHasBeenSet;
 
                     /**
-                     * 带部署总数
+                     * 待部署总数
                      */
                     int64_t m_pendingTotalCount;
                     bool m_pendingTotalCountHasBeenSet;

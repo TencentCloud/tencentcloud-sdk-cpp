@@ -238,6 +238,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeTenantProjectsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskRunHistoryResponse.h
   include/tencentcloud/wedata/v20210820/model/LockIntegrationTaskRequest.h
+  include/tencentcloud/wedata/v20210820/model/DescribeSuccessorTaskInfoListResponse.h
   include/tencentcloud/wedata/v20210820/model/BatchStopWorkflowsByIdsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDutyScheduleListResponse.h
   include/tencentcloud/wedata/v20210820/model/AsyncResourceVO.h
@@ -537,6 +538,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesByPageResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountResponse.h
   include/tencentcloud/wedata/v20210820/model/DataSourceConnectStatus.h
+  include/tencentcloud/wedata/v20210820/model/SuccessorTaskInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeFunctionTypesRequest.h
   include/tencentcloud/wedata/v20210820/model/DimensionCount.h
   include/tencentcloud/wedata/v20210820/model/AttributeItemDTO.h
@@ -743,6 +745,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/RuleExecResultPage.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskByStatusReportRequest.h
   include/tencentcloud/wedata/v20210820/model/ExtParam.h
+  include/tencentcloud/wedata/v20210820/model/DescribeSuccessorTaskInfoListRequest.h
   include/tencentcloud/wedata/v20210820/model/BatchForceSuccessIntegrationTaskInstancesRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskInstanceNodeInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskByCycleReportRequest.h
@@ -1177,6 +1180,7 @@ set(wedata_src
   src/v20210820/model/DescribeTenantProjectsRequest.cpp
   src/v20210820/model/DescribeTaskRunHistoryResponse.cpp
   src/v20210820/model/LockIntegrationTaskRequest.cpp
+  src/v20210820/model/DescribeSuccessorTaskInfoListResponse.cpp
   src/v20210820/model/BatchStopWorkflowsByIdsRequest.cpp
   src/v20210820/model/DescribeDutyScheduleListResponse.cpp
   src/v20210820/model/AsyncResourceVO.cpp
@@ -1476,6 +1480,7 @@ set(wedata_src
   src/v20210820/model/DescribeRuleTemplatesByPageResponse.cpp
   src/v20210820/model/DescribeTemplateDimCountResponse.cpp
   src/v20210820/model/DataSourceConnectStatus.cpp
+  src/v20210820/model/SuccessorTaskInfo.cpp
   src/v20210820/model/DescribeFunctionTypesRequest.cpp
   src/v20210820/model/DimensionCount.cpp
   src/v20210820/model/AttributeItemDTO.cpp
@@ -1682,6 +1687,7 @@ set(wedata_src
   src/v20210820/model/RuleExecResultPage.cpp
   src/v20210820/model/DescribeTaskByStatusReportRequest.cpp
   src/v20210820/model/ExtParam.cpp
+  src/v20210820/model/DescribeSuccessorTaskInfoListRequest.cpp
   src/v20210820/model/BatchForceSuccessIntegrationTaskInstancesRequest.cpp
   src/v20210820/model/DescribeRealTimeTaskInstanceNodeInfoResponse.cpp
   src/v20210820/model/DescribeTaskByCycleReportRequest.cpp

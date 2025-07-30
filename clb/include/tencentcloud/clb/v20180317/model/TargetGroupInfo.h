@@ -204,22 +204,18 @@ namespace TencentCloud
                     bool AssociatedRuleHasBeenSet() const;
 
                     /**
-                     * 获取后端转发协议类型，支持类型TCP， UDP。仅V2新版目标组支持返回该参数。
-
+                     * 获取目标组后端转发协议, 仅v2新版目标组返回有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Protocol 后端转发协议类型，支持类型TCP， UDP。仅V2新版目标组支持返回该参数。
-
+                     * @return Protocol 目标组后端转发协议, 仅v2新版目标组返回有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置后端转发协议类型，支持类型TCP， UDP。仅V2新版目标组支持返回该参数。
-
+                     * 设置目标组后端转发协议, 仅v2新版目标组返回有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _protocol 后端转发协议类型，支持类型TCP， UDP。仅V2新版目标组支持返回该参数。
-
+                     * @param _protocol 目标组后端转发协议, 仅v2新版目标组返回有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -233,15 +229,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
-                     * @return TargetGroupType 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
+                     * 获取目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。
+                     * @return TargetGroupType 目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。
                      * 
                      */
                     std::string GetTargetGroupType() const;
 
                     /**
-                     * 设置目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
-                     * @param _targetGroupType 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
+                     * 设置目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。
+                     * @param _targetGroupType 目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。
                      * 
                      */
                     void SetTargetGroupType(const std::string& _targetGroupType);
@@ -318,14 +314,18 @@ namespace TencentCloud
 
                     /**
                      * 获取默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weight 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -338,15 +338,15 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取是否全监听目标组
-                     * @return FullListenSwitch 是否全监听目标组
+                     * 获取是否全监听目标组。
+                     * @return FullListenSwitch 是否全监听目标组。
                      * 
                      */
                     bool GetFullListenSwitch() const;
 
                     /**
-                     * 设置是否全监听目标组
-                     * @param _fullListenSwitch 是否全监听目标组
+                     * 设置是否全监听目标组。
+                     * @param _fullListenSwitch 是否全监听目标组。
                      * 
                      */
                     void SetFullListenSwitch(const bool& _fullListenSwitch);
@@ -357,6 +357,48 @@ namespace TencentCloud
                      * 
                      */
                     bool FullListenSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * @return KeepaliveEnable 是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * 
+                     */
+                    bool GetKeepaliveEnable() const;
+
+                    /**
+                     * 设置是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * @param _keepaliveEnable 是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * 
+                     */
+                    void SetKeepaliveEnable(const bool& _keepaliveEnable);
+
+                    /**
+                     * 判断参数 KeepaliveEnable 是否已赋值
+                     * @return KeepaliveEnable 是否已赋值
+                     * 
+                     */
+                    bool KeepaliveEnableHasBeenSet() const;
+
+                    /**
+                     * 获取会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * @return SessionExpireTime 会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * 
+                     */
+                    int64_t GetSessionExpireTime() const;
+
+                    /**
+                     * 设置会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * @param _sessionExpireTime 会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * 
+                     */
+                    void SetSessionExpireTime(const int64_t& _sessionExpireTime);
+
+                    /**
+                     * 判断参数 SessionExpireTime 是否已赋值
+                     * @return SessionExpireTime 是否已赋值
+                     * 
+                     */
+                    bool SessionExpireTimeHasBeenSet() const;
 
                 private:
 
@@ -405,15 +447,14 @@ namespace TencentCloud
                     bool m_associatedRuleHasBeenSet;
 
                     /**
-                     * 后端转发协议类型，支持类型TCP， UDP。仅V2新版目标组支持返回该参数。
-
+                     * 目标组后端转发协议, 仅v2新版目标组返回有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
+                     * 目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。
                      */
                     std::string m_targetGroupType;
                     bool m_targetGroupTypeHasBeenSet;
@@ -438,15 +479,28 @@ namespace TencentCloud
 
                     /**
                      * 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 是否全监听目标组
+                     * 是否全监听目标组。
                      */
                     bool m_fullListenSwitch;
                     bool m_fullListenSwitchHasBeenSet;
+
+                    /**
+                     * 是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     */
+                    bool m_keepaliveEnable;
+                    bool m_keepaliveEnableHasBeenSet;
+
+                    /**
+                     * 会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     */
+                    int64_t m_sessionExpireTime;
+                    bool m_sessionExpireTimeHasBeenSet;
 
                 };
             }

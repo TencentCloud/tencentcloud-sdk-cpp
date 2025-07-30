@@ -550,6 +550,27 @@ namespace TencentCloud
                      */
                     bool OldAlgorithmHasBeenSet() const;
 
+                    /**
+                     * 获取实例状态，不同云产品状态不一样
+                     * @return InstanceStatus 实例状态，不同云产品状态不一样
+                     * 
+                     */
+                    std::string GetInstanceStatus() const;
+
+                    /**
+                     * 设置实例状态，不同云产品状态不一样
+                     * @param _instanceStatus 实例状态，不同云产品状态不一样
+                     * 
+                     */
+                    void SetInstanceStatus(const std::string& _instanceStatus);
+
+                    /**
+                     * 判断参数 InstanceStatus 是否已赋值
+                     * @return InstanceStatus 是否已赋值
+                     * 
+                     */
+                    bool InstanceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -695,6 +716,12 @@ namespace TencentCloud
                      */
                     std::string m_oldAlgorithm;
                     bool m_oldAlgorithmHasBeenSet;
+
+                    /**
+                     * 实例状态，不同云产品状态不一样
+                     */
+                    std::string m_instanceStatus;
+                    bool m_instanceStatusHasBeenSet;
 
                 };
             }

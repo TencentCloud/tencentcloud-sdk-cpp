@@ -441,9 +441,9 @@ null：用户上传证书（没有套餐类型），
                     bool VulnerabilityStatusHasBeenSet() const;
 
                     /**
-                     * 获取证书生效时间。
+                     * 获取证书生效时间。时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CertBeginTime 证书生效时间。
+                     * @return CertBeginTime 证书生效时间。时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -457,9 +457,9 @@ null：用户上传证书（没有套餐类型），
                     bool CertBeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书失效时间。
+                     * 获取证书失效时间。时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CertEndTime 证书失效时间。
+                     * @return CertEndTime 证书失效时间。时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -489,9 +489,9 @@ null：用户上传证书（没有套餐类型），
                     bool ValidityPeriodHasBeenSet() const;
 
                     /**
-                     * 获取申请时间。
+                     * 获取申请时间。时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InsertTime 申请时间。
+                     * @return InsertTime 申请时间。时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -793,9 +793,9 @@ null：用户上传证书（没有套餐类型），
                     bool CACommonNamesHasBeenSet() const;
 
                     /**
-                     * 获取CA证书所有的到期时间。仅证书类型CertificateType为CA有效
+                     * 获取CA证书所有的到期时间。仅证书类型CertificateType为CA有效，时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CAEndTimes CA证书所有的到期时间。仅证书类型CertificateType为CA有效
+                     * @return CAEndTimes CA证书所有的到期时间。仅证书类型CertificateType为CA有效，时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1011,14 +1011,14 @@ null：用户上传证书（没有套餐类型），
                     bool m_vulnerabilityStatusHasBeenSet;
 
                     /**
-                     * 证书生效时间。
+                     * 证书生效时间。时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certBeginTime;
                     bool m_certBeginTimeHasBeenSet;
 
                     /**
-                     * 证书失效时间。
+                     * 证书失效时间。时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certEndTime;
@@ -1032,7 +1032,7 @@ null：用户上传证书（没有套餐类型），
                     bool m_validityPeriodHasBeenSet;
 
                     /**
-                     * 申请时间。
+                     * 申请时间。时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_insertTime;
@@ -1165,7 +1165,7 @@ null：用户上传证书（没有套餐类型），
                     bool m_cACommonNamesHasBeenSet;
 
                     /**
-                     * CA证书所有的到期时间。仅证书类型CertificateType为CA有效
+                     * CA证书所有的到期时间。仅证书类型CertificateType为CA有效，时区为GMT+8:00
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_cAEndTimes;

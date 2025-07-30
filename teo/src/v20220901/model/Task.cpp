@@ -27,7 +27,9 @@ Task::Task() :
     m_methodHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_failTypeHasBeenSet(false),
+    m_failMessageHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FailType") && !value["FailType"].IsNull())
+    {
+        if (!value["FailType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.FailType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failType = string(value["FailType"].GetString());
+        m_failTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailMessage") && !value["FailMessage"].IsNull())
+    {
+        if (!value["FailMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.FailMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failMessage = string(value["FailMessage"].GetString());
+        m_failMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failMessage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void Task::SetUpdateTime(const string& _updateTime)
 bool Task::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string Task::GetFailType() const
+{
+    return m_failType;
+}
+
+void Task::SetFailType(const string& _failType)
+{
+    m_failType = _failType;
+    m_failTypeHasBeenSet = true;
+}
+
+bool Task::FailTypeHasBeenSet() const
+{
+    return m_failTypeHasBeenSet;
+}
+
+string Task::GetFailMessage() const
+{
+    return m_failMessage;
+}
+
+void Task::SetFailMessage(const string& _failMessage)
+{
+    m_failMessage = _failMessage;
+    m_failMessageHasBeenSet = true;
+}
+
+bool Task::FailMessageHasBeenSet() const
+{
+    return m_failMessageHasBeenSet;
 }
 

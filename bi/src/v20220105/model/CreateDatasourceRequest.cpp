@@ -44,7 +44,9 @@ CreateDatasourceRequest::CreateDatasourceRequest() :
     m_vpcIdHasBeenSet(false),
     m_operationAuthLimitHasBeenSet(false),
     m_useVPCHasBeenSet(false),
-    m_regionIdHasBeenSet(false)
+    m_regionIdHasBeenSet(false),
+    m_schemaHasBeenSet(false),
+    m_dbVersionHasBeenSet(false)
 {
 }
 
@@ -234,6 +236,22 @@ string CreateDatasourceRequest::ToJsonString() const
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Schema";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dbVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -594,6 +612,38 @@ void CreateDatasourceRequest::SetRegionId(const string& _regionId)
 bool CreateDatasourceRequest::RegionIdHasBeenSet() const
 {
     return m_regionIdHasBeenSet;
+}
+
+string CreateDatasourceRequest::GetSchema() const
+{
+    return m_schema;
+}
+
+void CreateDatasourceRequest::SetSchema(const string& _schema)
+{
+    m_schema = _schema;
+    m_schemaHasBeenSet = true;
+}
+
+bool CreateDatasourceRequest::SchemaHasBeenSet() const
+{
+    return m_schemaHasBeenSet;
+}
+
+string CreateDatasourceRequest::GetDbVersion() const
+{
+    return m_dbVersion;
+}
+
+void CreateDatasourceRequest::SetDbVersion(const string& _dbVersion)
+{
+    m_dbVersion = _dbVersion;
+    m_dbVersionHasBeenSet = true;
+}
+
+bool CreateDatasourceRequest::DbVersionHasBeenSet() const
+{
+    return m_dbVersionHasBeenSet;
 }
 
 

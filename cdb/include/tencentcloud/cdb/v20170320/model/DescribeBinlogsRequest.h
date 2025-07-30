@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页大小，默认值为20，最小值为1，最大值为100。
-                     * @return Limit 分页大小，默认值为20，最小值为1，最大值为100。
+                     * 获取分页大小，默认值为20，最小值为1，最大值为1000。
+                     * @return Limit 分页大小，默认值为20，最小值为1，最大值为1000。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小，默认值为20，最小值为1，最大值为100。
-                     * @param _limit 分页大小，默认值为20，最小值为1，最大值为100。
+                     * 设置分页大小，默认值为20，最小值为1，最大值为1000。
+                     * @param _limit 分页大小，默认值为20，最小值为1，最大值为1000。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页大小，默认值为20，最小值为1，最大值为100。
+                     * 分页大小，默认值为20，最小值为1，最大值为1000。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

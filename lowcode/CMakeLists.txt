@@ -26,27 +26,33 @@ set(lowcode_public_header_model
   include/tencentcloud/lowcode/v20210108/model/UpdateKnowledgeSetResponse.h
   include/tencentcloud/lowcode/v20210108/model/SearchDocListRequest.h
   include/tencentcloud/lowcode/v20210108/model/DescribeKnowledgeDocumentSetListResponse.h
-  include/tencentcloud/lowcode/v20210108/model/UploadKnowledgeDocumentSetRsp.h
+  include/tencentcloud/lowcode/v20210108/model/DeleteAppBindWxAppResponse.h
   include/tencentcloud/lowcode/v20210108/model/DataSourceQueryOption.h
+  include/tencentcloud/lowcode/v20210108/model/UploadKnowledgeDocumentSetRsp.h
   include/tencentcloud/lowcode/v20210108/model/PageQuery.h
+  include/tencentcloud/lowcode/v20210108/model/CheckDeployAppResponse.h
   include/tencentcloud/lowcode/v20210108/model/SearchDocListResponse.h
-  include/tencentcloud/lowcode/v20210108/model/DeleteKnowledgeSetResponse.h
+  include/tencentcloud/lowcode/v20210108/model/CheckDeployAppRequest.h
+  include/tencentcloud/lowcode/v20210108/model/DescribeKnowledgeDocumentSetListRequest.h
+  include/tencentcloud/lowcode/v20210108/model/PutWxAppIdToWeAppRequest.h
   include/tencentcloud/lowcode/v20210108/model/DocumentQuery.h
   include/tencentcloud/lowcode/v20210108/model/UpdateKnowledgeSetRequest.h
   include/tencentcloud/lowcode/v20210108/model/SearchDocInfo.h
   include/tencentcloud/lowcode/v20210108/model/DataSourceDetail.h
   include/tencentcloud/lowcode/v20210108/model/KnowledgeSet.h
+  include/tencentcloud/lowcode/v20210108/model/DeployAppRequest.h
   include/tencentcloud/lowcode/v20210108/model/KnowledgeSplitterPreprocess.h
   include/tencentcloud/lowcode/v20210108/model/DescribeKnowledgeDocumentSetDetailRequest.h
-  include/tencentcloud/lowcode/v20210108/model/CreateKnowledgeSetResponse.h
+  include/tencentcloud/lowcode/v20210108/model/DeployAppResponse.h
   include/tencentcloud/lowcode/v20210108/model/DeleteKnowledgeSetRequest.h
   include/tencentcloud/lowcode/v20210108/model/RelationField.h
-  include/tencentcloud/lowcode/v20210108/model/DescribeKnowledgeDocumentSetListRequest.h
+  include/tencentcloud/lowcode/v20210108/model/DeleteKnowledgeSetResponse.h
   include/tencentcloud/lowcode/v20210108/model/DescribeDataSourceListRequest.h
   include/tencentcloud/lowcode/v20210108/model/DeleteKnowledgeDocumentSetRequest.h
   include/tencentcloud/lowcode/v20210108/model/QureyKnowledgeDocumentSet.h
   include/tencentcloud/lowcode/v20210108/model/DescribeKnowledgeSetListResponse.h
   include/tencentcloud/lowcode/v20210108/model/DescribeDataSourceListResponse.h
+  include/tencentcloud/lowcode/v20210108/model/DeleteAppBindWxAppRequest.h
   include/tencentcloud/lowcode/v20210108/model/UploadKnowledgeDocumentSetResponse.h
   include/tencentcloud/lowcode/v20210108/model/DeleteKnowledgeDocumentSetResponse.h
   include/tencentcloud/lowcode/v20210108/model/TicketAuthInfo.h
@@ -60,6 +66,8 @@ set(lowcode_public_header_model
   include/tencentcloud/lowcode/v20210108/model/SearchDocRsp.h
   include/tencentcloud/lowcode/v20210108/model/KnowledgeSetRsp.h
   include/tencentcloud/lowcode/v20210108/model/DataSourceDetailItems.h
+  include/tencentcloud/lowcode/v20210108/model/PutWxAppIdToWeAppResponse.h
+  include/tencentcloud/lowcode/v20210108/model/CreateKnowledgeSetResponse.h
   )
 
 set(lowcode_src
@@ -71,27 +79,33 @@ set(lowcode_src
   src/v20210108/model/UpdateKnowledgeSetResponse.cpp
   src/v20210108/model/SearchDocListRequest.cpp
   src/v20210108/model/DescribeKnowledgeDocumentSetListResponse.cpp
-  src/v20210108/model/UploadKnowledgeDocumentSetRsp.cpp
+  src/v20210108/model/DeleteAppBindWxAppResponse.cpp
   src/v20210108/model/DataSourceQueryOption.cpp
+  src/v20210108/model/UploadKnowledgeDocumentSetRsp.cpp
   src/v20210108/model/PageQuery.cpp
+  src/v20210108/model/CheckDeployAppResponse.cpp
   src/v20210108/model/SearchDocListResponse.cpp
-  src/v20210108/model/DeleteKnowledgeSetResponse.cpp
+  src/v20210108/model/CheckDeployAppRequest.cpp
+  src/v20210108/model/DescribeKnowledgeDocumentSetListRequest.cpp
+  src/v20210108/model/PutWxAppIdToWeAppRequest.cpp
   src/v20210108/model/DocumentQuery.cpp
   src/v20210108/model/UpdateKnowledgeSetRequest.cpp
   src/v20210108/model/SearchDocInfo.cpp
   src/v20210108/model/DataSourceDetail.cpp
   src/v20210108/model/KnowledgeSet.cpp
+  src/v20210108/model/DeployAppRequest.cpp
   src/v20210108/model/KnowledgeSplitterPreprocess.cpp
   src/v20210108/model/DescribeKnowledgeDocumentSetDetailRequest.cpp
-  src/v20210108/model/CreateKnowledgeSetResponse.cpp
+  src/v20210108/model/DeployAppResponse.cpp
   src/v20210108/model/DeleteKnowledgeSetRequest.cpp
   src/v20210108/model/RelationField.cpp
-  src/v20210108/model/DescribeKnowledgeDocumentSetListRequest.cpp
+  src/v20210108/model/DeleteKnowledgeSetResponse.cpp
   src/v20210108/model/DescribeDataSourceListRequest.cpp
   src/v20210108/model/DeleteKnowledgeDocumentSetRequest.cpp
   src/v20210108/model/QureyKnowledgeDocumentSet.cpp
   src/v20210108/model/DescribeKnowledgeSetListResponse.cpp
   src/v20210108/model/DescribeDataSourceListResponse.cpp
+  src/v20210108/model/DeleteAppBindWxAppRequest.cpp
   src/v20210108/model/UploadKnowledgeDocumentSetResponse.cpp
   src/v20210108/model/DeleteKnowledgeDocumentSetResponse.cpp
   src/v20210108/model/TicketAuthInfo.cpp
@@ -105,6 +119,8 @@ set(lowcode_src
   src/v20210108/model/SearchDocRsp.cpp
   src/v20210108/model/KnowledgeSetRsp.cpp
   src/v20210108/model/DataSourceDetailItems.cpp
+  src/v20210108/model/PutWxAppIdToWeAppResponse.cpp
+  src/v20210108/model/CreateKnowledgeSetResponse.cpp
   )
 
 set(lowcode_include

@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取机器离线时间，空为正常，异常返回具体时间
-                     * @return OfflineTime 机器离线时间，空为正常，异常返回具体时间
+                     * 获取机器离线时间，空为正常，异常返回具体时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @return OfflineTime 机器离线时间，空为正常，异常返回具体时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
-                     * 设置机器离线时间，空为正常，异常返回具体时间
-                     * @param _offlineTime 机器离线时间，空为正常，异常返回具体时间
+                     * 设置机器离线时间，空为正常，异常返回具体时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @param _offlineTime 机器离线时间，空为正常，异常返回具体时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
@@ -264,7 +264,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 机器离线时间，空为正常，异常返回具体时间
+                     * 机器离线时间，空为正常，异常返回具体时间。时间格式：YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;

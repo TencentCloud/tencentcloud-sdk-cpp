@@ -728,6 +728,49 @@ CamClient::CreateServiceLinkedRoleOutcomeCallable CamClient::CreateServiceLinked
     return task->get_future();
 }
 
+CamClient::CreateSubAccountLoginIpPolicyOutcome CamClient::CreateSubAccountLoginIpPolicy(const CreateSubAccountLoginIpPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSubAccountLoginIpPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSubAccountLoginIpPolicyResponse rsp = CreateSubAccountLoginIpPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSubAccountLoginIpPolicyOutcome(rsp);
+        else
+            return CreateSubAccountLoginIpPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSubAccountLoginIpPolicyOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::CreateSubAccountLoginIpPolicyAsync(const CreateSubAccountLoginIpPolicyRequest& request, const CreateSubAccountLoginIpPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSubAccountLoginIpPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::CreateSubAccountLoginIpPolicyOutcomeCallable CamClient::CreateSubAccountLoginIpPolicyCallable(const CreateSubAccountLoginIpPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSubAccountLoginIpPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSubAccountLoginIpPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::CreateUserOIDCConfigOutcome CamClient::CreateUserOIDCConfig(const CreateUserOIDCConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUserOIDCConfig");

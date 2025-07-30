@@ -85,27 +85,6 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取租户id
-                     * @return TenantId 租户id
-                     * 
-                     */
-                    std::string GetTenantId() const;
-
-                    /**
-                     * 设置租户id
-                     * @param _tenantId 租户id
-                     * 
-                     */
-                    void SetTenantId(const std::string& _tenantId);
-
-                    /**
-                     * 判断参数 TenantId 是否已赋值
-                     * @return TenantId 是否已赋值
-                     * 
-                     */
-                    bool TenantIdHasBeenSet() const;
-
-                    /**
                      * 获取项目id
                      * @return ProjectId 项目id
                      * 
@@ -307,12 +286,6 @@ namespace TencentCloud
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
-
-                    /**
-                     * 租户id
-                     */
-                    std::string m_tenantId;
-                    bool m_tenantIdHasBeenSet;
 
                     /**
                      * 项目id

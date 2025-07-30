@@ -44,7 +44,8 @@ DeployRecordDetail::DeployRecordDetail() :
     m_regionHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_algorithmHasBeenSet(false),
-    m_oldAlgorithmHasBeenSet(false)
+    m_oldAlgorithmHasBeenSet(false),
+    m_instanceStatusHasBeenSet(false)
 {
 }
 
@@ -299,6 +300,16 @@ CoreInternalOutcome DeployRecordDetail::Deserialize(const rapidjson::Value &valu
         m_oldAlgorithmHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceStatus") && !value["InstanceStatus"].IsNull())
+    {
+        if (!value["InstanceStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployRecordDetail.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceStatus = string(value["InstanceStatus"].GetString());
+        m_instanceStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -506,6 +517,14 @@ void DeployRecordDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "OldAlgorithm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_oldAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -893,5 +912,21 @@ void DeployRecordDetail::SetOldAlgorithm(const string& _oldAlgorithm)
 bool DeployRecordDetail::OldAlgorithmHasBeenSet() const
 {
     return m_oldAlgorithmHasBeenSet;
+}
+
+string DeployRecordDetail::GetInstanceStatus() const
+{
+    return m_instanceStatus;
+}
+
+void DeployRecordDetail::SetInstanceStatus(const string& _instanceStatus)
+{
+    m_instanceStatus = _instanceStatus;
+    m_instanceStatusHasBeenSet = true;
+}
+
+bool DeployRecordDetail::InstanceStatusHasBeenSet() const
+{
+    return m_instanceStatusHasBeenSet;
 }
 

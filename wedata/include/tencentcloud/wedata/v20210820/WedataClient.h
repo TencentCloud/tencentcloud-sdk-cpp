@@ -369,6 +369,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeStreamTaskLogListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeSuccessorOpsTaskInfosRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeSuccessorOpsTaskInfosResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeSuccessorTaskInfoListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeSuccessorTaskInfoListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableBasicInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableBasicInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableInfoListRequest.h>
@@ -1150,6 +1152,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSuccessorOpsTaskInfosResponse> DescribeSuccessorOpsTaskInfosOutcome;
                 typedef std::future<DescribeSuccessorOpsTaskInfosOutcome> DescribeSuccessorOpsTaskInfosOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeSuccessorOpsTaskInfosRequest&, DescribeSuccessorOpsTaskInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSuccessorOpsTaskInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSuccessorTaskInfoListResponse> DescribeSuccessorTaskInfoListOutcome;
+                typedef std::future<DescribeSuccessorTaskInfoListOutcome> DescribeSuccessorTaskInfoListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeSuccessorTaskInfoListRequest&, DescribeSuccessorTaskInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSuccessorTaskInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTableBasicInfoResponse> DescribeTableBasicInfoOutcome;
                 typedef std::future<DescribeTableBasicInfoOutcome> DescribeTableBasicInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTableBasicInfoRequest&, DescribeTableBasicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableBasicInfoAsyncHandler;
@@ -3086,6 +3091,15 @@ namespace TencentCloud
                 DescribeSuccessorOpsTaskInfosOutcome DescribeSuccessorOpsTaskInfos(const Model::DescribeSuccessorOpsTaskInfosRequest &request);
                 void DescribeSuccessorOpsTaskInfosAsync(const Model::DescribeSuccessorOpsTaskInfosRequest& request, const DescribeSuccessorOpsTaskInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSuccessorOpsTaskInfosOutcomeCallable DescribeSuccessorOpsTaskInfosCallable(const Model::DescribeSuccessorOpsTaskInfosRequest& request);
+
+                /**
+                 *获取下游任务信息批量
+                 * @param req DescribeSuccessorTaskInfoListRequest
+                 * @return DescribeSuccessorTaskInfoListOutcome
+                 */
+                DescribeSuccessorTaskInfoListOutcome DescribeSuccessorTaskInfoList(const Model::DescribeSuccessorTaskInfoListRequest &request);
+                void DescribeSuccessorTaskInfoListAsync(const Model::DescribeSuccessorTaskInfoListRequest& request, const DescribeSuccessorTaskInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSuccessorTaskInfoListOutcomeCallable DescribeSuccessorTaskInfoListCallable(const Model::DescribeSuccessorTaskInfoListRequest& request);
 
                 /**
                  *元数据模型-表基础信息查询接口
