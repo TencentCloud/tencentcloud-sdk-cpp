@@ -207,6 +207,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleDataResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityDataRequest.h
   include/tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamRequest.h
+  include/tencentcloud/trtc/v20190722/model/InvokeLLM.h
   include/tencentcloud/trtc/v20190722/model/SliceStorageParams.h
   include/tencentcloud/trtc/v20190722/model/MaxVideoUser.h
   include/tencentcloud/trtc/v20190722/model/AuditStorageParams.h
@@ -441,6 +442,7 @@ set(trtc_src
   src/v20190722/model/DescribeTRTCRealTimeScaleDataResponse.cpp
   src/v20190722/model/DescribeTRTCMarketQualityDataRequest.cpp
   src/v20190722/model/UpdatePublishCdnStreamRequest.cpp
+  src/v20190722/model/InvokeLLM.cpp
   src/v20190722/model/SliceStorageParams.cpp
   src/v20190722/model/MaxVideoUser.cpp
   src/v20190722/model/AuditStorageParams.cpp

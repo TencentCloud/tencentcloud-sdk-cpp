@@ -298,6 +298,49 @@ EssClient::CreateBatchCancelFlowUrlOutcomeCallable EssClient::CreateBatchCancelF
     return task->get_future();
 }
 
+EssClient::CreateBatchContractReviewTaskOutcome EssClient::CreateBatchContractReviewTask(const CreateBatchContractReviewTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchContractReviewTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchContractReviewTaskResponse rsp = CreateBatchContractReviewTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchContractReviewTaskOutcome(rsp);
+        else
+            return CreateBatchContractReviewTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchContractReviewTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateBatchContractReviewTaskAsync(const CreateBatchContractReviewTaskRequest& request, const CreateBatchContractReviewTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchContractReviewTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateBatchContractReviewTaskOutcomeCallable EssClient::CreateBatchContractReviewTaskCallable(const CreateBatchContractReviewTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchContractReviewTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchContractReviewTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateBatchInformationExtractionTaskOutcome EssClient::CreateBatchInformationExtractionTask(const CreateBatchInformationExtractionTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchInformationExtractionTask");
@@ -3215,6 +3258,49 @@ EssClient::DescribeContractDiffTaskWebUrlOutcomeCallable EssClient::DescribeCont
         [this, request]()
         {
             return this->DescribeContractDiffTaskWebUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DescribeContractReviewTaskOutcome EssClient::DescribeContractReviewTask(const DescribeContractReviewTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeContractReviewTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeContractReviewTaskResponse rsp = DescribeContractReviewTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeContractReviewTaskOutcome(rsp);
+        else
+            return DescribeContractReviewTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeContractReviewTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeContractReviewTaskAsync(const DescribeContractReviewTaskRequest& request, const DescribeContractReviewTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeContractReviewTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeContractReviewTaskOutcomeCallable EssClient::DescribeContractReviewTaskCallable(const DescribeContractReviewTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeContractReviewTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeContractReviewTask(request);
         }
     );
 

@@ -194,15 +194,31 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取本次投递的结果，"success","running","failed"
-                     * @return Status 本次投递的结果，"success","running","failed"
+                     * 获取本次投递的结果。"success"，"running"，"failed"
+
+- success：任务成功。
+- running：任务处理中。
+- failed：任务失败。
+                     * @return Status 本次投递的结果。"success"，"running"，"failed"
+
+- success：任务成功。
+- running：任务处理中。
+- failed：任务失败。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置本次投递的结果，"success","running","failed"
-                     * @param _status 本次投递的结果，"success","running","failed"
+                     * 设置本次投递的结果。"success"，"running"，"failed"
+
+- success：任务成功。
+- running：任务处理中。
+- failed：任务失败。
+                     * @param _status 本次投递的结果。"success"，"running"，"failed"
+
+- success：任务成功。
+- running：任务处理中。
+- failed：任务失败。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -280,7 +296,11 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 本次投递的结果，"success","running","failed"
+                     * 本次投递的结果。"success"，"running"，"failed"
+
+- success：任务成功。
+- running：任务处理中。
+- failed：任务失败。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

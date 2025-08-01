@@ -728,49 +728,6 @@ HunyuanClient::QueryHunyuanImageJobOutcomeCallable HunyuanClient::QueryHunyuanIm
     return task->get_future();
 }
 
-HunyuanClient::QueryHunyuanTo3DJobOutcome HunyuanClient::QueryHunyuanTo3DJob(const QueryHunyuanTo3DJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "QueryHunyuanTo3DJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        QueryHunyuanTo3DJobResponse rsp = QueryHunyuanTo3DJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return QueryHunyuanTo3DJobOutcome(rsp);
-        else
-            return QueryHunyuanTo3DJobOutcome(o.GetError());
-    }
-    else
-    {
-        return QueryHunyuanTo3DJobOutcome(outcome.GetError());
-    }
-}
-
-void HunyuanClient::QueryHunyuanTo3DJobAsync(const QueryHunyuanTo3DJobRequest& request, const QueryHunyuanTo3DJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryHunyuanTo3DJob(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-HunyuanClient::QueryHunyuanTo3DJobOutcomeCallable HunyuanClient::QueryHunyuanTo3DJobCallable(const QueryHunyuanTo3DJobRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<QueryHunyuanTo3DJobOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryHunyuanTo3DJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 HunyuanClient::RunThreadOutcome HunyuanClient::RunThread(const RunThreadRequest &request)
 {
     auto outcome = MakeRequest(request, "RunThread");
@@ -936,49 +893,6 @@ HunyuanClient::SubmitHunyuanImageJobOutcomeCallable HunyuanClient::SubmitHunyuan
         [this, request]()
         {
             return this->SubmitHunyuanImageJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-HunyuanClient::SubmitHunyuanTo3DJobOutcome HunyuanClient::SubmitHunyuanTo3DJob(const SubmitHunyuanTo3DJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "SubmitHunyuanTo3DJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SubmitHunyuanTo3DJobResponse rsp = SubmitHunyuanTo3DJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SubmitHunyuanTo3DJobOutcome(rsp);
-        else
-            return SubmitHunyuanTo3DJobOutcome(o.GetError());
-    }
-    else
-    {
-        return SubmitHunyuanTo3DJobOutcome(outcome.GetError());
-    }
-}
-
-void HunyuanClient::SubmitHunyuanTo3DJobAsync(const SubmitHunyuanTo3DJobRequest& request, const SubmitHunyuanTo3DJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SubmitHunyuanTo3DJob(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-HunyuanClient::SubmitHunyuanTo3DJobOutcomeCallable HunyuanClient::SubmitHunyuanTo3DJobCallable(const SubmitHunyuanTo3DJobRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<SubmitHunyuanTo3DJobOutcome()>>(
-        [this, request]()
-        {
-            return this->SubmitHunyuanTo3DJob(request);
         }
     );
 

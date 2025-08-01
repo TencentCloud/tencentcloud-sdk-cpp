@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内容格式，支持json、csv
-                     * @return Format 内容格式，支持json、csv
+                     * 获取内容格式，支持json，csv，parquet
+                     * @return Format 内容格式，支持json，csv，parquet
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置内容格式，支持json、csv
-                     * @param _format 内容格式，支持json、csv
+                     * 设置内容格式，支持json，csv，parquet
+                     * @param _format 内容格式，支持json，csv，parquet
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -148,7 +148,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 内容格式，支持json、csv
+                     * 内容格式，支持json，csv，parquet
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;

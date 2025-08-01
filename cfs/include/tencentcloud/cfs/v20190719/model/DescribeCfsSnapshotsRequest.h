@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统ID
-                     * @return FileSystemId 文件系统ID
+                     * 获取文件系统 ID，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
+                     * @return FileSystemId 文件系统 ID，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统ID
-                     * @param _fileSystemId 文件系统ID
+                     * 设置文件系统 ID，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
+                     * @param _fileSystemId 文件系统 ID，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取快照ID
-                     * @return SnapshotId 快照ID
+                     * 获取快照 ID
+                     * @return SnapshotId 快照 ID
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置快照ID
-                     * @param _snapshotId 快照ID
+                     * 设置快照 ID
+                     * @param _snapshotId 快照 ID
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -133,19 +133,17 @@ namespace TencentCloud
 <br>SnapshotName - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。
 <br>FileSystemId - Array of String - 是否必填：否 -（过滤条件）按文件系统ID过滤。
 <br>FsName - Array of String - 是否必填：否 -（过滤条件）按文件系统名过滤。
-<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤
-(creating：创建中 | available：运行中| deleting: 删除中 | rollbacking_new：由快照创建新文件系统中| create-failed 创建失败）
+<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤。状态分类：creating：创建中 | available：运行中 | deleting：删除中 | rollbacking_new：由快照创建新文件系统中 | create-failed：创建失败。
 <br>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。
-<br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
+<br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key 使用具体的标签键进行替换。
                      * @return Filters 过滤条件。
 <br>SnapshotId - Array of String - 是否必填：否 -（过滤条件）按快照ID过滤。
 <br>SnapshotName - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。
 <br>FileSystemId - Array of String - 是否必填：否 -（过滤条件）按文件系统ID过滤。
 <br>FsName - Array of String - 是否必填：否 -（过滤条件）按文件系统名过滤。
-<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤
-(creating：创建中 | available：运行中| deleting: 删除中 | rollbacking_new：由快照创建新文件系统中| create-failed 创建失败）
+<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤。状态分类：creating：创建中 | available：运行中 | deleting：删除中 | rollbacking_new：由快照创建新文件系统中 | create-failed：创建失败。
 <br>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。
-<br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
+<br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key 使用具体的标签键进行替换。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
@@ -156,19 +154,17 @@ namespace TencentCloud
 <br>SnapshotName - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。
 <br>FileSystemId - Array of String - 是否必填：否 -（过滤条件）按文件系统ID过滤。
 <br>FsName - Array of String - 是否必填：否 -（过滤条件）按文件系统名过滤。
-<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤
-(creating：创建中 | available：运行中| deleting: 删除中 | rollbacking_new：由快照创建新文件系统中| create-failed 创建失败）
+<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤。状态分类：creating：创建中 | available：运行中 | deleting：删除中 | rollbacking_new：由快照创建新文件系统中 | create-failed：创建失败。
 <br>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。
-<br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
+<br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key 使用具体的标签键进行替换。
                      * @param _filters 过滤条件。
 <br>SnapshotId - Array of String - 是否必填：否 -（过滤条件）按快照ID过滤。
 <br>SnapshotName - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。
 <br>FileSystemId - Array of String - 是否必填：否 -（过滤条件）按文件系统ID过滤。
 <br>FsName - Array of String - 是否必填：否 -（过滤条件）按文件系统名过滤。
-<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤
-(creating：创建中 | available：运行中| deleting: 删除中 | rollbacking_new：由快照创建新文件系统中| create-failed 创建失败）
+<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤。状态分类：creating：创建中 | available：运行中 | deleting：删除中 | rollbacking_new：由快照创建新文件系统中 | create-failed：创建失败。
 <br>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。
-<br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
+<br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key 使用具体的标签键进行替换。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -202,15 +198,15 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序 升序或者降序
-                     * @return Order 排序 升序或者降序
+                     * 获取排序；升序或者降序
+                     * @return Order 排序；升序或者降序
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序 升序或者降序
-                     * @param _order 排序 升序或者降序
+                     * 设置排序；升序或者降序
+                     * @param _order 排序；升序或者降序
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -225,13 +221,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统ID
+                     * 文件系统 ID，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 快照ID
+                     * 快照 ID
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
@@ -254,10 +250,9 @@ namespace TencentCloud
 <br>SnapshotName - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。
 <br>FileSystemId - Array of String - 是否必填：否 -（过滤条件）按文件系统ID过滤。
 <br>FsName - Array of String - 是否必填：否 -（过滤条件）按文件系统名过滤。
-<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤
-(creating：创建中 | available：运行中| deleting: 删除中 | rollbacking_new：由快照创建新文件系统中| create-failed 创建失败）
+<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤。状态分类：creating：创建中 | available：运行中 | deleting：删除中 | rollbacking_new：由快照创建新文件系统中 | create-failed：创建失败。
 <br>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。
-<br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
+<br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key 使用具体的标签键进行替换。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -269,7 +264,7 @@ namespace TencentCloud
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 排序 升序或者降序
+                     * 排序；升序或者降序
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;

@@ -47,12 +47,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取抽检策略的每次循环检测的时长。取值范围（单位s）：
+                     * 获取每次循环检测的时长。取值范围（单位s）：
 
 - 最小值：10
 - 最大值：86400
 
-                     * @return CheckDuration 抽检策略的每次循环检测的时长。取值范围（单位s）：
+                     * @return CheckDuration 每次循环检测的时长。取值范围（单位s）：
 
 - 最小值：10
 - 最大值：86400
@@ -62,12 +62,12 @@ namespace TencentCloud
                     uint64_t GetCheckDuration() const;
 
                     /**
-                     * 设置抽检策略的每次循环检测的时长。取值范围（单位s）：
+                     * 设置每次循环检测的时长。取值范围（单位s）：
 
 - 最小值：10
 - 最大值：86400
 
-                     * @param _checkDuration 抽检策略的每次循环检测的时长。取值范围（单位s）：
+                     * @param _checkDuration 每次循环检测的时长。取值范围（单位s）：
 
 - 最小值：10
 - 最大值：86400
@@ -84,15 +84,23 @@ namespace TencentCloud
                     bool CheckDurationHasBeenSet() const;
 
                     /**
-                     * 获取抽检测略的检测间隔，表示在一次检测结束后，等待多长时间后，再次检测。
-                     * @return CheckInterval 抽检测略的检测间隔，表示在一次检测结束后，等待多长时间后，再次检测。
+                     * 获取抽检间隔，表示在一次检测结束后，等待多长时间后，再次检测。取值范围（单位 s）：
+- 最小值：10
+- 最大值：3600
+                     * @return CheckInterval 抽检间隔，表示在一次检测结束后，等待多长时间后，再次检测。取值范围（单位 s）：
+- 最小值：10
+- 最大值：3600
                      * 
                      */
                     uint64_t GetCheckInterval() const;
 
                     /**
-                     * 设置抽检测略的检测间隔，表示在一次检测结束后，等待多长时间后，再次检测。
-                     * @param _checkInterval 抽检测略的检测间隔，表示在一次检测结束后，等待多长时间后，再次检测。
+                     * 设置抽检间隔，表示在一次检测结束后，等待多长时间后，再次检测。取值范围（单位 s）：
+- 最小值：10
+- 最大值：3600
+                     * @param _checkInterval 抽检间隔，表示在一次检测结束后，等待多长时间后，再次检测。取值范围（单位 s）：
+- 最小值：10
+- 最大值：3600
                      * 
                      */
                     void SetCheckInterval(const uint64_t& _checkInterval);
@@ -105,15 +113,23 @@ namespace TencentCloud
                     bool CheckIntervalHasBeenSet() const;
 
                     /**
-                     * 获取片头跳过时长。
-                     * @return SkipDuration 片头跳过时长。
+                     * 获取片头跳过时长。取值范围（单位 s）：
+- 最小值：1
+- 最大值：1800
+                     * @return SkipDuration 片头跳过时长。取值范围（单位 s）：
+- 最小值：1
+- 最大值：1800
                      * 
                      */
                     uint64_t GetSkipDuration() const;
 
                     /**
-                     * 设置片头跳过时长。
-                     * @param _skipDuration 片头跳过时长。
+                     * 设置片头跳过时长。取值范围（单位 s）：
+- 最小值：1
+- 最大值：1800
+                     * @param _skipDuration 片头跳过时长。取值范围（单位 s）：
+- 最小值：1
+- 最大值：1800
                      * 
                      */
                     void SetSkipDuration(const uint64_t& _skipDuration);
@@ -126,15 +142,31 @@ namespace TencentCloud
                     bool SkipDurationHasBeenSet() const;
 
                     /**
-                     * 获取循环次数，该字段为空或 0 时，默认循环直至视频结束。
-                     * @return CirclesNumber 循环次数，该字段为空或 0 时，默认循环直至视频结束。
+                     * 获取循环次数。取值范围:
+- 最小值：0
+- 最大值：1000
+
+取值为 0 或为空时，表示循环至视频结束。
+                     * @return CirclesNumber 循环次数。取值范围:
+- 最小值：0
+- 最大值：1000
+
+取值为 0 或为空时，表示循环至视频结束。
                      * 
                      */
                     uint64_t GetCirclesNumber() const;
 
                     /**
-                     * 设置循环次数，该字段为空或 0 时，默认循环直至视频结束。
-                     * @param _circlesNumber 循环次数，该字段为空或 0 时，默认循环直至视频结束。
+                     * 设置循环次数。取值范围:
+- 最小值：0
+- 最大值：1000
+
+取值为 0 或为空时，表示循环至视频结束。
+                     * @param _circlesNumber 循环次数。取值范围:
+- 最小值：0
+- 最大值：1000
+
+取值为 0 或为空时，表示循环至视频结束。
                      * 
                      */
                     void SetCirclesNumber(const uint64_t& _circlesNumber);
@@ -149,7 +181,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 抽检策略的每次循环检测的时长。取值范围（单位s）：
+                     * 每次循环检测的时长。取值范围（单位s）：
 
 - 最小值：10
 - 最大值：86400
@@ -159,19 +191,27 @@ namespace TencentCloud
                     bool m_checkDurationHasBeenSet;
 
                     /**
-                     * 抽检测略的检测间隔，表示在一次检测结束后，等待多长时间后，再次检测。
+                     * 抽检间隔，表示在一次检测结束后，等待多长时间后，再次检测。取值范围（单位 s）：
+- 最小值：10
+- 最大值：3600
                      */
                     uint64_t m_checkInterval;
                     bool m_checkIntervalHasBeenSet;
 
                     /**
-                     * 片头跳过时长。
+                     * 片头跳过时长。取值范围（单位 s）：
+- 最小值：1
+- 最大值：1800
                      */
                     uint64_t m_skipDuration;
                     bool m_skipDurationHasBeenSet;
 
                     /**
-                     * 循环次数，该字段为空或 0 时，默认循环直至视频结束。
+                     * 循环次数。取值范围:
+- 最小值：0
+- 最大值：1000
+
+取值为 0 或为空时，表示循环至视频结束。
                      */
                     uint64_t m_circlesNumber;
                     bool m_circlesNumberHasBeenSet;

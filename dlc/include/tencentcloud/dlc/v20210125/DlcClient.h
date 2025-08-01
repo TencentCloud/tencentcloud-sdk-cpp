@@ -37,6 +37,8 @@
 #include <tencentcloud/dlc/v20210125/model/AlterDMSTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AssignMangedTablePropertiesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AssignMangedTablePropertiesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/AssociateDatasourceHouseRequest.h>
+#include <tencentcloud/dlc/v20210125/model/AssociateDatasourceHouseResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AttachUserPolicyRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AttachUserPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AttachWorkGroupPolicyRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateSparkSessionBatchSQLResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkSubmitTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkSubmitTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateStandardEngineResourceGroupRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateStandardEngineResourceGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateStoreLocationRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTableRequest.h>
@@ -107,24 +111,32 @@
 #include <tencentcloud/dlc/v20210125/model/CreateTasksInOrderResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateUserVpcConnectionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateUserVpcConnectionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateWorkGroupRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteCHDFSBindingProductRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteCHDFSBindingProductResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteDataEngineRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteDataEngineResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteNativeSparkSessionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteNativeSparkSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteNotebookSessionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteNotebookSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteScriptRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteScriptResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteSparkAppRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteSparkAppResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteStandardEngineResourceGroupRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteStandardEngineResourceGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteThirdPartyAccessUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteThirdPartyAccessUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteUserResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteUserVpcConnectionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteUserVpcConnectionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteUsersFromWorkGroupRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteUsersFromWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteWorkGroupRequest.h>
@@ -151,6 +163,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEngineImageVersionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginePythonSparkImagesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginePythonSparkImagesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDataEngineSessionParametersRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDataEngineSessionParametersResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesScaleDetailRequest.h>
@@ -159,6 +173,10 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatasourceConnectionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatasourceConnectionResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeEngineNetworksRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeEngineNetworksResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeEngineNodeSpecRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeEngineNodeSpecResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProRequest.h>
@@ -169,6 +187,10 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNativeSparkSessionsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNativeSparkSessionsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNetworkConnectionsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNetworkConnectionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionLogRequest.h>
@@ -187,6 +209,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSessionImageVersionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSessionImageVersionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobsRequest.h>
@@ -199,6 +223,10 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLCostResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSqlLogRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSqlLogResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeStandardEngineResourceGroupConfigInfoRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeStandardEngineResourceGroupConfigInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeStandardEngineResourceGroupsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeStandardEngineResourceGroupsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeStoreLocationRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSubUserAccessPolicyRequest.h>
@@ -239,6 +267,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeUserRolesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUserTypeRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUserTypeResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeUserVpcConnectionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeUserVpcConnectionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUsersRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUsersResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeViewsRequest.h>
@@ -263,6 +293,8 @@
 #include <tencentcloud/dlc/v20210125/model/GetOptimizerPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GrantDLCCatalogAccessRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GrantDLCCatalogAccessResponse.h>
+#include <tencentcloud/dlc/v20210125/model/LaunchStandardEngineResourceGroupsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/LaunchStandardEngineResourceGroupsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogNameRequest.h>
@@ -285,6 +317,8 @@
 #include <tencentcloud/dlc/v20210125/model/ModifyUserTypeResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyWorkGroupRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyWorkGroupResponse.h>
+#include <tencentcloud/dlc/v20210125/model/PauseStandardEngineResourceGroupsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/PauseStandardEngineResourceGroupsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/QueryInternalTableWarehouseRequest.h>
 #include <tencentcloud/dlc/v20210125/model/QueryInternalTableWarehouseResponse.h>
 #include <tencentcloud/dlc/v20210125/model/QueryResultRequest.h>
@@ -311,14 +345,26 @@
 #include <tencentcloud/dlc/v20210125/model/SwitchDataEngineImageResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UnbindWorkGroupsFromUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/UnbindWorkGroupsFromUserResponse.h>
+#include <tencentcloud/dlc/v20210125/model/UnboundDatasourceHouseRequest.h>
+#include <tencentcloud/dlc/v20210125/model/UnboundDatasourceHouseResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UnlockMetaDataRequest.h>
 #include <tencentcloud/dlc/v20210125/model/UnlockMetaDataResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateDataEngineRequest.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateDataEngineResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateDataEngineConfigRequest.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateDataEngineConfigResponse.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateEngineResourceGroupNetworkConfigInfoRequest.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateEngineResourceGroupNetworkConfigInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateNetworkConnectionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateNetworkConnectionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateRowFilterRequest.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateRowFilterResponse.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateStandardEngineResourceGroupBaseInfoRequest.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateStandardEngineResourceGroupBaseInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateStandardEngineResourceGroupConfigInfoRequest.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateStandardEngineResourceGroupConfigInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateStandardEngineResourceGroupResourceInfoRequest.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateStandardEngineResourceGroupResourceInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateUserDataEngineConfigRequest.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateUserDataEngineConfigResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UpgradeDataEngineImageRequest.h>
@@ -358,6 +404,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssignMangedTablePropertiesResponse> AssignMangedTablePropertiesOutcome;
                 typedef std::future<AssignMangedTablePropertiesOutcome> AssignMangedTablePropertiesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AssignMangedTablePropertiesRequest&, AssignMangedTablePropertiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignMangedTablePropertiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssociateDatasourceHouseResponse> AssociateDatasourceHouseOutcome;
+                typedef std::future<AssociateDatasourceHouseOutcome> AssociateDatasourceHouseOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::AssociateDatasourceHouseRequest&, AssociateDatasourceHouseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateDatasourceHouseAsyncHandler;
                 typedef Outcome<Core::Error, Model::AttachUserPolicyResponse> AttachUserPolicyOutcome;
                 typedef std::future<AttachUserPolicyOutcome> AttachUserPolicyOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AttachUserPolicyRequest&, AttachUserPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachUserPolicyAsyncHandler;
@@ -445,6 +494,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSparkSubmitTaskResponse> CreateSparkSubmitTaskOutcome;
                 typedef std::future<CreateSparkSubmitTaskOutcome> CreateSparkSubmitTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateSparkSubmitTaskRequest&, CreateSparkSubmitTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSparkSubmitTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateStandardEngineResourceGroupResponse> CreateStandardEngineResourceGroupOutcome;
+                typedef std::future<CreateStandardEngineResourceGroupOutcome> CreateStandardEngineResourceGroupOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateStandardEngineResourceGroupRequest&, CreateStandardEngineResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStandardEngineResourceGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateStoreLocationResponse> CreateStoreLocationOutcome;
                 typedef std::future<CreateStoreLocationOutcome> CreateStoreLocationOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateStoreLocationRequest&, CreateStoreLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStoreLocationAsyncHandler;
@@ -463,6 +515,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserVpcConnectionResponse> CreateUserVpcConnectionOutcome;
+                typedef std::future<CreateUserVpcConnectionOutcome> CreateUserVpcConnectionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateUserVpcConnectionRequest&, CreateUserVpcConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserVpcConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWorkGroupResponse> CreateWorkGroupOutcome;
                 typedef std::future<CreateWorkGroupOutcome> CreateWorkGroupOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateWorkGroupRequest&, CreateWorkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkGroupAsyncHandler;
@@ -472,6 +527,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDataEngineResponse> DeleteDataEngineOutcome;
                 typedef std::future<DeleteDataEngineOutcome> DeleteDataEngineOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteDataEngineRequest&, DeleteDataEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNativeSparkSessionResponse> DeleteNativeSparkSessionOutcome;
+                typedef std::future<DeleteNativeSparkSessionOutcome> DeleteNativeSparkSessionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DeleteNativeSparkSessionRequest&, DeleteNativeSparkSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNativeSparkSessionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNotebookSessionResponse> DeleteNotebookSessionOutcome;
                 typedef std::future<DeleteNotebookSessionOutcome> DeleteNotebookSessionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteNotebookSessionRequest&, DeleteNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNotebookSessionAsyncHandler;
@@ -481,6 +539,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSparkAppResponse> DeleteSparkAppOutcome;
                 typedef std::future<DeleteSparkAppOutcome> DeleteSparkAppOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteSparkAppRequest&, DeleteSparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSparkAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStandardEngineResourceGroupResponse> DeleteStandardEngineResourceGroupOutcome;
+                typedef std::future<DeleteStandardEngineResourceGroupOutcome> DeleteStandardEngineResourceGroupOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DeleteStandardEngineResourceGroupRequest&, DeleteStandardEngineResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStandardEngineResourceGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTableResponse> DeleteTableOutcome;
                 typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteTableRequest&, DeleteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTableAsyncHandler;
@@ -490,6 +551,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUserResponse> DeleteUserOutcome;
                 typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteUserRequest&, DeleteUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUserVpcConnectionResponse> DeleteUserVpcConnectionOutcome;
+                typedef std::future<DeleteUserVpcConnectionOutcome> DeleteUserVpcConnectionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DeleteUserVpcConnectionRequest&, DeleteUserVpcConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserVpcConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUsersFromWorkGroupResponse> DeleteUsersFromWorkGroupOutcome;
                 typedef std::future<DeleteUsersFromWorkGroupOutcome> DeleteUsersFromWorkGroupOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteUsersFromWorkGroupRequest&, DeleteUsersFromWorkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersFromWorkGroupAsyncHandler;
@@ -529,6 +593,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataEnginePythonSparkImagesResponse> DescribeDataEnginePythonSparkImagesOutcome;
                 typedef std::future<DescribeDataEnginePythonSparkImagesOutcome> DescribeDataEnginePythonSparkImagesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDataEnginePythonSparkImagesRequest&, DescribeDataEnginePythonSparkImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEnginePythonSparkImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataEngineSessionParametersResponse> DescribeDataEngineSessionParametersOutcome;
+                typedef std::future<DescribeDataEngineSessionParametersOutcome> DescribeDataEngineSessionParametersOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeDataEngineSessionParametersRequest&, DescribeDataEngineSessionParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEngineSessionParametersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataEnginesResponse> DescribeDataEnginesOutcome;
                 typedef std::future<DescribeDataEnginesOutcome> DescribeDataEnginesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDataEnginesRequest&, DescribeDataEnginesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEnginesAsyncHandler;
@@ -541,6 +608,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatasourceConnectionResponse> DescribeDatasourceConnectionOutcome;
                 typedef std::future<DescribeDatasourceConnectionOutcome> DescribeDatasourceConnectionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDatasourceConnectionRequest&, DescribeDatasourceConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatasourceConnectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEngineNetworksResponse> DescribeEngineNetworksOutcome;
+                typedef std::future<DescribeEngineNetworksOutcome> DescribeEngineNetworksOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeEngineNetworksRequest&, DescribeEngineNetworksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEngineNetworksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEngineNodeSpecResponse> DescribeEngineNodeSpecOutcome;
+                typedef std::future<DescribeEngineNodeSpecOutcome> DescribeEngineNodeSpecOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeEngineNodeSpecRequest&, DescribeEngineNodeSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEngineNodeSpecAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEngineUsageInfoResponse> DescribeEngineUsageInfoOutcome;
                 typedef std::future<DescribeEngineUsageInfoOutcome> DescribeEngineUsageInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeEngineUsageInfoRequest&, DescribeEngineUsageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEngineUsageInfoAsyncHandler;
@@ -556,6 +629,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLakeFsTaskResultResponse> DescribeLakeFsTaskResultOutcome;
                 typedef std::future<DescribeLakeFsTaskResultOutcome> DescribeLakeFsTaskResultOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeLakeFsTaskResultRequest&, DescribeLakeFsTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLakeFsTaskResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNativeSparkSessionsResponse> DescribeNativeSparkSessionsOutcome;
+                typedef std::future<DescribeNativeSparkSessionsOutcome> DescribeNativeSparkSessionsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeNativeSparkSessionsRequest&, DescribeNativeSparkSessionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNativeSparkSessionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNetworkConnectionsResponse> DescribeNetworkConnectionsOutcome;
+                typedef std::future<DescribeNetworkConnectionsOutcome> DescribeNetworkConnectionsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeNetworkConnectionsRequest&, DescribeNetworkConnectionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkConnectionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNotebookSessionResponse> DescribeNotebookSessionOutcome;
                 typedef std::future<DescribeNotebookSessionOutcome> DescribeNotebookSessionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeNotebookSessionRequest&, DescribeNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookSessionAsyncHandler;
@@ -583,6 +662,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeScriptsResponse> DescribeScriptsOutcome;
                 typedef std::future<DescribeScriptsOutcome> DescribeScriptsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeScriptsRequest&, DescribeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScriptsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSessionImageVersionResponse> DescribeSessionImageVersionOutcome;
+                typedef std::future<DescribeSessionImageVersionOutcome> DescribeSessionImageVersionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeSessionImageVersionRequest&, DescribeSessionImageVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionImageVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSparkAppJobResponse> DescribeSparkAppJobOutcome;
                 typedef std::future<DescribeSparkAppJobOutcome> DescribeSparkAppJobOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeSparkAppJobRequest&, DescribeSparkAppJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkAppJobAsyncHandler;
@@ -601,6 +683,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSparkSessionBatchSqlLogResponse> DescribeSparkSessionBatchSqlLogOutcome;
                 typedef std::future<DescribeSparkSessionBatchSqlLogOutcome> DescribeSparkSessionBatchSqlLogOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeSparkSessionBatchSqlLogRequest&, DescribeSparkSessionBatchSqlLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkSessionBatchSqlLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStandardEngineResourceGroupConfigInfoResponse> DescribeStandardEngineResourceGroupConfigInfoOutcome;
+                typedef std::future<DescribeStandardEngineResourceGroupConfigInfoOutcome> DescribeStandardEngineResourceGroupConfigInfoOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeStandardEngineResourceGroupConfigInfoRequest&, DescribeStandardEngineResourceGroupConfigInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStandardEngineResourceGroupConfigInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStandardEngineResourceGroupsResponse> DescribeStandardEngineResourceGroupsOutcome;
+                typedef std::future<DescribeStandardEngineResourceGroupsOutcome> DescribeStandardEngineResourceGroupsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeStandardEngineResourceGroupsRequest&, DescribeStandardEngineResourceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStandardEngineResourceGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStoreLocationResponse> DescribeStoreLocationOutcome;
                 typedef std::future<DescribeStoreLocationOutcome> DescribeStoreLocationOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeStoreLocationRequest&, DescribeStoreLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStoreLocationAsyncHandler;
@@ -661,6 +749,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserTypeResponse> DescribeUserTypeOutcome;
                 typedef std::future<DescribeUserTypeOutcome> DescribeUserTypeOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeUserTypeRequest&, DescribeUserTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserVpcConnectionResponse> DescribeUserVpcConnectionOutcome;
+                typedef std::future<DescribeUserVpcConnectionOutcome> DescribeUserVpcConnectionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeUserVpcConnectionRequest&, DescribeUserVpcConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserVpcConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUsersResponse> DescribeUsersOutcome;
                 typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeUsersRequest&, DescribeUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersAsyncHandler;
@@ -697,6 +788,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GrantDLCCatalogAccessResponse> GrantDLCCatalogAccessOutcome;
                 typedef std::future<GrantDLCCatalogAccessOutcome> GrantDLCCatalogAccessOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GrantDLCCatalogAccessRequest&, GrantDLCCatalogAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GrantDLCCatalogAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::LaunchStandardEngineResourceGroupsResponse> LaunchStandardEngineResourceGroupsOutcome;
+                typedef std::future<LaunchStandardEngineResourceGroupsOutcome> LaunchStandardEngineResourceGroupsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::LaunchStandardEngineResourceGroupsRequest&, LaunchStandardEngineResourceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LaunchStandardEngineResourceGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTaskJobLogDetailResponse> ListTaskJobLogDetailOutcome;
                 typedef std::future<ListTaskJobLogDetailOutcome> ListTaskJobLogDetailOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListTaskJobLogDetailRequest&, ListTaskJobLogDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskJobLogDetailAsyncHandler;
@@ -730,6 +824,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWorkGroupResponse> ModifyWorkGroupOutcome;
                 typedef std::future<ModifyWorkGroupOutcome> ModifyWorkGroupOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifyWorkGroupRequest&, ModifyWorkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::PauseStandardEngineResourceGroupsResponse> PauseStandardEngineResourceGroupsOutcome;
+                typedef std::future<PauseStandardEngineResourceGroupsOutcome> PauseStandardEngineResourceGroupsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::PauseStandardEngineResourceGroupsRequest&, PauseStandardEngineResourceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseStandardEngineResourceGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryInternalTableWarehouseResponse> QueryInternalTableWarehouseOutcome;
                 typedef std::future<QueryInternalTableWarehouseOutcome> QueryInternalTableWarehouseOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::QueryInternalTableWarehouseRequest&, QueryInternalTableWarehouseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryInternalTableWarehouseAsyncHandler;
@@ -769,6 +866,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnbindWorkGroupsFromUserResponse> UnbindWorkGroupsFromUserOutcome;
                 typedef std::future<UnbindWorkGroupsFromUserOutcome> UnbindWorkGroupsFromUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::UnbindWorkGroupsFromUserRequest&, UnbindWorkGroupsFromUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindWorkGroupsFromUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnboundDatasourceHouseResponse> UnboundDatasourceHouseOutcome;
+                typedef std::future<UnboundDatasourceHouseOutcome> UnboundDatasourceHouseOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::UnboundDatasourceHouseRequest&, UnboundDatasourceHouseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnboundDatasourceHouseAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnlockMetaDataResponse> UnlockMetaDataOutcome;
                 typedef std::future<UnlockMetaDataOutcome> UnlockMetaDataOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::UnlockMetaDataRequest&, UnlockMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockMetaDataAsyncHandler;
@@ -778,9 +878,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateDataEngineConfigResponse> UpdateDataEngineConfigOutcome;
                 typedef std::future<UpdateDataEngineConfigOutcome> UpdateDataEngineConfigOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::UpdateDataEngineConfigRequest&, UpdateDataEngineConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDataEngineConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateEngineResourceGroupNetworkConfigInfoResponse> UpdateEngineResourceGroupNetworkConfigInfoOutcome;
+                typedef std::future<UpdateEngineResourceGroupNetworkConfigInfoOutcome> UpdateEngineResourceGroupNetworkConfigInfoOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::UpdateEngineResourceGroupNetworkConfigInfoRequest&, UpdateEngineResourceGroupNetworkConfigInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEngineResourceGroupNetworkConfigInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateNetworkConnectionResponse> UpdateNetworkConnectionOutcome;
+                typedef std::future<UpdateNetworkConnectionOutcome> UpdateNetworkConnectionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::UpdateNetworkConnectionRequest&, UpdateNetworkConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNetworkConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateRowFilterResponse> UpdateRowFilterOutcome;
                 typedef std::future<UpdateRowFilterOutcome> UpdateRowFilterOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::UpdateRowFilterRequest&, UpdateRowFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRowFilterAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateStandardEngineResourceGroupBaseInfoResponse> UpdateStandardEngineResourceGroupBaseInfoOutcome;
+                typedef std::future<UpdateStandardEngineResourceGroupBaseInfoOutcome> UpdateStandardEngineResourceGroupBaseInfoOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::UpdateStandardEngineResourceGroupBaseInfoRequest&, UpdateStandardEngineResourceGroupBaseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateStandardEngineResourceGroupBaseInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateStandardEngineResourceGroupConfigInfoResponse> UpdateStandardEngineResourceGroupConfigInfoOutcome;
+                typedef std::future<UpdateStandardEngineResourceGroupConfigInfoOutcome> UpdateStandardEngineResourceGroupConfigInfoOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::UpdateStandardEngineResourceGroupConfigInfoRequest&, UpdateStandardEngineResourceGroupConfigInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateStandardEngineResourceGroupConfigInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateStandardEngineResourceGroupResourceInfoResponse> UpdateStandardEngineResourceGroupResourceInfoOutcome;
+                typedef std::future<UpdateStandardEngineResourceGroupResourceInfoOutcome> UpdateStandardEngineResourceGroupResourceInfoOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::UpdateStandardEngineResourceGroupResourceInfoRequest&, UpdateStandardEngineResourceGroupResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateStandardEngineResourceGroupResourceInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateUserDataEngineConfigResponse> UpdateUserDataEngineConfigOutcome;
                 typedef std::future<UpdateUserDataEngineConfigOutcome> UpdateUserDataEngineConfigOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::UpdateUserDataEngineConfigRequest&, UpdateUserDataEngineConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserDataEngineConfigAsyncHandler;
@@ -852,6 +967,15 @@ namespace TencentCloud
                 AssignMangedTablePropertiesOutcome AssignMangedTableProperties(const Model::AssignMangedTablePropertiesRequest &request);
                 void AssignMangedTablePropertiesAsync(const Model::AssignMangedTablePropertiesRequest& request, const AssignMangedTablePropertiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssignMangedTablePropertiesOutcomeCallable AssignMangedTablePropertiesCallable(const Model::AssignMangedTablePropertiesRequest& request);
+
+                /**
+                 *绑定数据源和队列
+                 * @param req AssociateDatasourceHouseRequest
+                 * @return AssociateDatasourceHouseOutcome
+                 */
+                AssociateDatasourceHouseOutcome AssociateDatasourceHouse(const Model::AssociateDatasourceHouseRequest &request);
+                void AssociateDatasourceHouseAsync(const Model::AssociateDatasourceHouseRequest& request, const AssociateDatasourceHouseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateDatasourceHouseOutcomeCallable AssociateDatasourceHouseCallable(const Model::AssociateDatasourceHouseRequest& request);
 
                 /**
                  *绑定鉴权策略到用户
@@ -1115,6 +1239,15 @@ namespace TencentCloud
                 CreateSparkSubmitTaskOutcomeCallable CreateSparkSubmitTaskCallable(const Model::CreateSparkSubmitTaskRequest& request);
 
                 /**
+                 *创建标准引擎资源组
+                 * @param req CreateStandardEngineResourceGroupRequest
+                 * @return CreateStandardEngineResourceGroupOutcome
+                 */
+                CreateStandardEngineResourceGroupOutcome CreateStandardEngineResourceGroup(const Model::CreateStandardEngineResourceGroupRequest &request);
+                void CreateStandardEngineResourceGroupAsync(const Model::CreateStandardEngineResourceGroupRequest& request, const CreateStandardEngineResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStandardEngineResourceGroupOutcomeCallable CreateStandardEngineResourceGroupCallable(const Model::CreateStandardEngineResourceGroupRequest& request);
+
+                /**
                  *该接口（CreateStoreLocation）新增或覆盖计算结果存储位置。
                  * @param req CreateStoreLocationRequest
                  * @return CreateStoreLocationOutcome
@@ -1171,6 +1304,15 @@ namespace TencentCloud
                 CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
 
                 /**
+                 *创建用户vpc连接到指定引擎网络
+                 * @param req CreateUserVpcConnectionRequest
+                 * @return CreateUserVpcConnectionOutcome
+                 */
+                CreateUserVpcConnectionOutcome CreateUserVpcConnection(const Model::CreateUserVpcConnectionRequest &request);
+                void CreateUserVpcConnectionAsync(const Model::CreateUserVpcConnectionRequest& request, const CreateUserVpcConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserVpcConnectionOutcomeCallable CreateUserVpcConnectionCallable(const Model::CreateUserVpcConnectionRequest& request);
+
+                /**
                  *创建工作组
                  * @param req CreateWorkGroupRequest
                  * @return CreateWorkGroupOutcome
@@ -1196,6 +1338,15 @@ namespace TencentCloud
                 DeleteDataEngineOutcome DeleteDataEngine(const Model::DeleteDataEngineRequest &request);
                 void DeleteDataEngineAsync(const Model::DeleteDataEngineRequest& request, const DeleteDataEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDataEngineOutcomeCallable DeleteDataEngineCallable(const Model::DeleteDataEngineRequest& request);
+
+                /**
+                 *根据spark session名称销毁eg spark session
+                 * @param req DeleteNativeSparkSessionRequest
+                 * @return DeleteNativeSparkSessionOutcome
+                 */
+                DeleteNativeSparkSessionOutcome DeleteNativeSparkSession(const Model::DeleteNativeSparkSessionRequest &request);
+                void DeleteNativeSparkSessionAsync(const Model::DeleteNativeSparkSessionRequest& request, const DeleteNativeSparkSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNativeSparkSessionOutcomeCallable DeleteNativeSparkSessionCallable(const Model::DeleteNativeSparkSessionRequest& request);
 
                 /**
                  *本接口（DeleteNotebookSession）用于删除交互式session（notebook）
@@ -1225,6 +1376,15 @@ namespace TencentCloud
                 DeleteSparkAppOutcomeCallable DeleteSparkAppCallable(const Model::DeleteSparkAppRequest& request);
 
                 /**
+                 *删除标准引擎资源组
+                 * @param req DeleteStandardEngineResourceGroupRequest
+                 * @return DeleteStandardEngineResourceGroupOutcome
+                 */
+                DeleteStandardEngineResourceGroupOutcome DeleteStandardEngineResourceGroup(const Model::DeleteStandardEngineResourceGroupRequest &request);
+                void DeleteStandardEngineResourceGroupAsync(const Model::DeleteStandardEngineResourceGroupRequest& request, const DeleteStandardEngineResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStandardEngineResourceGroupOutcomeCallable DeleteStandardEngineResourceGroupCallable(const Model::DeleteStandardEngineResourceGroupRequest& request);
+
+                /**
                  *删除表
                  * @param req DeleteTableRequest
                  * @return DeleteTableOutcome
@@ -1250,6 +1410,15 @@ namespace TencentCloud
                 DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest &request);
                 void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request);
+
+                /**
+                 *删除用户vpc到引擎网络的连接
+                 * @param req DeleteUserVpcConnectionRequest
+                 * @return DeleteUserVpcConnectionOutcome
+                 */
+                DeleteUserVpcConnectionOutcome DeleteUserVpcConnection(const Model::DeleteUserVpcConnectionRequest &request);
+                void DeleteUserVpcConnectionAsync(const Model::DeleteUserVpcConnectionRequest& request, const DeleteUserVpcConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserVpcConnectionOutcomeCallable DeleteUserVpcConnectionCallable(const Model::DeleteUserVpcConnectionRequest& request);
 
                 /**
                  *从工作组中删除用户
@@ -1369,6 +1538,15 @@ namespace TencentCloud
                 DescribeDataEnginePythonSparkImagesOutcomeCallable DescribeDataEnginePythonSparkImagesCallable(const Model::DescribeDataEnginePythonSparkImagesRequest& request);
 
                 /**
+                 *本接口（DescribeDataEngineSessionParameters）用于获取指定小版本下的Session配置。
+                 * @param req DescribeDataEngineSessionParametersRequest
+                 * @return DescribeDataEngineSessionParametersOutcome
+                 */
+                DescribeDataEngineSessionParametersOutcome DescribeDataEngineSessionParameters(const Model::DescribeDataEngineSessionParametersRequest &request);
+                void DescribeDataEngineSessionParametersAsync(const Model::DescribeDataEngineSessionParametersRequest& request, const DescribeDataEngineSessionParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataEngineSessionParametersOutcomeCallable DescribeDataEngineSessionParametersCallable(const Model::DescribeDataEngineSessionParametersRequest& request);
+
+                /**
                  *本接口（DescribeDataEngines）用于查询DataEngines信息列表.
                  * @param req DescribeDataEnginesRequest
                  * @return DescribeDataEnginesOutcome
@@ -1403,6 +1581,24 @@ namespace TencentCloud
                 DescribeDatasourceConnectionOutcome DescribeDatasourceConnection(const Model::DescribeDatasourceConnectionRequest &request);
                 void DescribeDatasourceConnectionAsync(const Model::DescribeDatasourceConnectionRequest& request, const DescribeDatasourceConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatasourceConnectionOutcomeCallable DescribeDatasourceConnectionCallable(const Model::DescribeDatasourceConnectionRequest& request);
+
+                /**
+                 *查询引擎网络信息
+                 * @param req DescribeEngineNetworksRequest
+                 * @return DescribeEngineNetworksOutcome
+                 */
+                DescribeEngineNetworksOutcome DescribeEngineNetworks(const Model::DescribeEngineNetworksRequest &request);
+                void DescribeEngineNetworksAsync(const Model::DescribeEngineNetworksRequest& request, const DescribeEngineNetworksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEngineNetworksOutcomeCallable DescribeEngineNetworksCallable(const Model::DescribeEngineNetworksRequest& request);
+
+                /**
+                 *查询引擎可用的节点规格
+                 * @param req DescribeEngineNodeSpecRequest
+                 * @return DescribeEngineNodeSpecOutcome
+                 */
+                DescribeEngineNodeSpecOutcome DescribeEngineNodeSpec(const Model::DescribeEngineNodeSpecRequest &request);
+                void DescribeEngineNodeSpecAsync(const Model::DescribeEngineNodeSpecRequest& request, const DescribeEngineNodeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEngineNodeSpecOutcomeCallable DescribeEngineNodeSpecCallable(const Model::DescribeEngineNodeSpecRequest& request);
 
                 /**
                  *本接口根据引擎ID查询数据引擎资源使用情况
@@ -1448,6 +1644,24 @@ namespace TencentCloud
                 DescribeLakeFsTaskResultOutcome DescribeLakeFsTaskResult(const Model::DescribeLakeFsTaskResultRequest &request);
                 void DescribeLakeFsTaskResultAsync(const Model::DescribeLakeFsTaskResultRequest& request, const DescribeLakeFsTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLakeFsTaskResultOutcomeCallable DescribeLakeFsTaskResultCallable(const Model::DescribeLakeFsTaskResultRequest& request);
+
+                /**
+                 *根据资源组获取spark session列表
+                 * @param req DescribeNativeSparkSessionsRequest
+                 * @return DescribeNativeSparkSessionsOutcome
+                 */
+                DescribeNativeSparkSessionsOutcome DescribeNativeSparkSessions(const Model::DescribeNativeSparkSessionsRequest &request);
+                void DescribeNativeSparkSessionsAsync(const Model::DescribeNativeSparkSessionsRequest& request, const DescribeNativeSparkSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNativeSparkSessionsOutcomeCallable DescribeNativeSparkSessionsCallable(const Model::DescribeNativeSparkSessionsRequest& request);
+
+                /**
+                 *查询网络配置列表
+                 * @param req DescribeNetworkConnectionsRequest
+                 * @return DescribeNetworkConnectionsOutcome
+                 */
+                DescribeNetworkConnectionsOutcome DescribeNetworkConnections(const Model::DescribeNetworkConnectionsRequest &request);
+                void DescribeNetworkConnectionsAsync(const Model::DescribeNetworkConnectionsRequest& request, const DescribeNetworkConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNetworkConnectionsOutcomeCallable DescribeNetworkConnectionsCallable(const Model::DescribeNetworkConnectionsRequest& request);
 
                 /**
                  *本接口（DescribeNotebookSession）用于查询交互式 session详情信息
@@ -1531,6 +1745,15 @@ namespace TencentCloud
                 DescribeScriptsOutcomeCallable DescribeScriptsCallable(const Model::DescribeScriptsRequest& request);
 
                 /**
+                 *获取指定大版本下所有小版本的所有内置镜像
+                 * @param req DescribeSessionImageVersionRequest
+                 * @return DescribeSessionImageVersionOutcome
+                 */
+                DescribeSessionImageVersionOutcome DescribeSessionImageVersion(const Model::DescribeSessionImageVersionRequest &request);
+                void DescribeSessionImageVersionAsync(const Model::DescribeSessionImageVersionRequest& request, const DescribeSessionImageVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSessionImageVersionOutcomeCallable DescribeSessionImageVersionCallable(const Model::DescribeSessionImageVersionRequest& request);
+
+                /**
                  *查询spark作业信息
                  * @param req DescribeSparkAppJobRequest
                  * @return DescribeSparkAppJobOutcome
@@ -1583,6 +1806,24 @@ namespace TencentCloud
                 DescribeSparkSessionBatchSqlLogOutcome DescribeSparkSessionBatchSqlLog(const Model::DescribeSparkSessionBatchSqlLogRequest &request);
                 void DescribeSparkSessionBatchSqlLogAsync(const Model::DescribeSparkSessionBatchSqlLogRequest& request, const DescribeSparkSessionBatchSqlLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSparkSessionBatchSqlLogOutcomeCallable DescribeSparkSessionBatchSqlLogCallable(const Model::DescribeSparkSessionBatchSqlLogRequest& request);
+
+                /**
+                 *查询标准引擎资源组信息
+                 * @param req DescribeStandardEngineResourceGroupConfigInfoRequest
+                 * @return DescribeStandardEngineResourceGroupConfigInfoOutcome
+                 */
+                DescribeStandardEngineResourceGroupConfigInfoOutcome DescribeStandardEngineResourceGroupConfigInfo(const Model::DescribeStandardEngineResourceGroupConfigInfoRequest &request);
+                void DescribeStandardEngineResourceGroupConfigInfoAsync(const Model::DescribeStandardEngineResourceGroupConfigInfoRequest& request, const DescribeStandardEngineResourceGroupConfigInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStandardEngineResourceGroupConfigInfoOutcomeCallable DescribeStandardEngineResourceGroupConfigInfoCallable(const Model::DescribeStandardEngineResourceGroupConfigInfoRequest& request);
+
+                /**
+                 *查询标准引擎资源组信息
+                 * @param req DescribeStandardEngineResourceGroupsRequest
+                 * @return DescribeStandardEngineResourceGroupsOutcome
+                 */
+                DescribeStandardEngineResourceGroupsOutcome DescribeStandardEngineResourceGroups(const Model::DescribeStandardEngineResourceGroupsRequest &request);
+                void DescribeStandardEngineResourceGroupsAsync(const Model::DescribeStandardEngineResourceGroupsRequest& request, const DescribeStandardEngineResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStandardEngineResourceGroupsOutcomeCallable DescribeStandardEngineResourceGroupsCallable(const Model::DescribeStandardEngineResourceGroupsRequest& request);
 
                 /**
                  *查询计算结果存储位置。
@@ -1765,6 +2006,15 @@ namespace TencentCloud
                 DescribeUserTypeOutcomeCallable DescribeUserTypeCallable(const Model::DescribeUserTypeRequest& request);
 
                 /**
+                 *查询用户vpc到引擎网络的连接
+                 * @param req DescribeUserVpcConnectionRequest
+                 * @return DescribeUserVpcConnectionOutcome
+                 */
+                DescribeUserVpcConnectionOutcome DescribeUserVpcConnection(const Model::DescribeUserVpcConnectionRequest &request);
+                void DescribeUserVpcConnectionAsync(const Model::DescribeUserVpcConnectionRequest& request, const DescribeUserVpcConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserVpcConnectionOutcomeCallable DescribeUserVpcConnectionCallable(const Model::DescribeUserVpcConnectionRequest& request);
+
+                /**
                  *获取用户列表信息
                  * @param req DescribeUsersRequest
                  * @return DescribeUsersOutcome
@@ -1873,6 +2123,15 @@ namespace TencentCloud
                 GrantDLCCatalogAccessOutcomeCallable GrantDLCCatalogAccessCallable(const Model::GrantDLCCatalogAccessRequest& request);
 
                 /**
+                 *启动标准引擎资源组
+                 * @param req LaunchStandardEngineResourceGroupsRequest
+                 * @return LaunchStandardEngineResourceGroupsOutcome
+                 */
+                LaunchStandardEngineResourceGroupsOutcome LaunchStandardEngineResourceGroups(const Model::LaunchStandardEngineResourceGroupsRequest &request);
+                void LaunchStandardEngineResourceGroupsAsync(const Model::LaunchStandardEngineResourceGroupsRequest& request, const LaunchStandardEngineResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                LaunchStandardEngineResourceGroupsOutcomeCallable LaunchStandardEngineResourceGroupsCallable(const Model::LaunchStandardEngineResourceGroupsRequest& request);
+
+                /**
                  *本接口（ListTaskJobLogDetail）用于获取spark 作业任务日志详情
                  * @param req ListTaskJobLogDetailRequest
                  * @return ListTaskJobLogDetailOutcome
@@ -1970,6 +2229,15 @@ namespace TencentCloud
                 ModifyWorkGroupOutcome ModifyWorkGroup(const Model::ModifyWorkGroupRequest &request);
                 void ModifyWorkGroupAsync(const Model::ModifyWorkGroupRequest& request, const ModifyWorkGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyWorkGroupOutcomeCallable ModifyWorkGroupCallable(const Model::ModifyWorkGroupRequest& request);
+
+                /**
+                 *暂停标准引擎session
+                 * @param req PauseStandardEngineResourceGroupsRequest
+                 * @return PauseStandardEngineResourceGroupsOutcome
+                 */
+                PauseStandardEngineResourceGroupsOutcome PauseStandardEngineResourceGroups(const Model::PauseStandardEngineResourceGroupsRequest &request);
+                void PauseStandardEngineResourceGroupsAsync(const Model::PauseStandardEngineResourceGroupsRequest& request, const PauseStandardEngineResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PauseStandardEngineResourceGroupsOutcomeCallable PauseStandardEngineResourceGroupsCallable(const Model::PauseStandardEngineResourceGroupsRequest& request);
 
                 /**
                  *本接口（QueryInternalTableWarehouse）用于获取原生表warehouse路径
@@ -2089,6 +2357,15 @@ namespace TencentCloud
                 UnbindWorkGroupsFromUserOutcomeCallable UnbindWorkGroupsFromUserCallable(const Model::UnbindWorkGroupsFromUserRequest& request);
 
                 /**
+                 *解绑数据源与队列
+                 * @param req UnboundDatasourceHouseRequest
+                 * @return UnboundDatasourceHouseOutcome
+                 */
+                UnboundDatasourceHouseOutcome UnboundDatasourceHouse(const Model::UnboundDatasourceHouseRequest &request);
+                void UnboundDatasourceHouseAsync(const Model::UnboundDatasourceHouseRequest& request, const UnboundDatasourceHouseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnboundDatasourceHouseOutcomeCallable UnboundDatasourceHouseCallable(const Model::UnboundDatasourceHouseRequest& request);
+
+                /**
                  *元数据解锁
                  * @param req UnlockMetaDataRequest
                  * @return UnlockMetaDataOutcome
@@ -2116,6 +2393,24 @@ namespace TencentCloud
                 UpdateDataEngineConfigOutcomeCallable UpdateDataEngineConfigCallable(const Model::UpdateDataEngineConfigRequest& request);
 
                 /**
+                 *更新标准引擎资源组网络配置信息
+                 * @param req UpdateEngineResourceGroupNetworkConfigInfoRequest
+                 * @return UpdateEngineResourceGroupNetworkConfigInfoOutcome
+                 */
+                UpdateEngineResourceGroupNetworkConfigInfoOutcome UpdateEngineResourceGroupNetworkConfigInfo(const Model::UpdateEngineResourceGroupNetworkConfigInfoRequest &request);
+                void UpdateEngineResourceGroupNetworkConfigInfoAsync(const Model::UpdateEngineResourceGroupNetworkConfigInfoRequest& request, const UpdateEngineResourceGroupNetworkConfigInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateEngineResourceGroupNetworkConfigInfoOutcomeCallable UpdateEngineResourceGroupNetworkConfigInfoCallable(const Model::UpdateEngineResourceGroupNetworkConfigInfoRequest& request);
+
+                /**
+                 *更新网络配置
+                 * @param req UpdateNetworkConnectionRequest
+                 * @return UpdateNetworkConnectionOutcome
+                 */
+                UpdateNetworkConnectionOutcome UpdateNetworkConnection(const Model::UpdateNetworkConnectionRequest &request);
+                void UpdateNetworkConnectionAsync(const Model::UpdateNetworkConnectionRequest& request, const UpdateNetworkConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateNetworkConnectionOutcomeCallable UpdateNetworkConnectionCallable(const Model::UpdateNetworkConnectionRequest& request);
+
+                /**
                  *此接口用于更新行过滤规则。注意只能更新过滤规则，不能更新规格对象catalog，database和table。
                  * @param req UpdateRowFilterRequest
                  * @return UpdateRowFilterOutcome
@@ -2123,6 +2418,33 @@ namespace TencentCloud
                 UpdateRowFilterOutcome UpdateRowFilter(const Model::UpdateRowFilterRequest &request);
                 void UpdateRowFilterAsync(const Model::UpdateRowFilterRequest& request, const UpdateRowFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateRowFilterOutcomeCallable UpdateRowFilterCallable(const Model::UpdateRowFilterRequest& request);
+
+                /**
+                 *更新标准引擎资源组基础信息
+                 * @param req UpdateStandardEngineResourceGroupBaseInfoRequest
+                 * @return UpdateStandardEngineResourceGroupBaseInfoOutcome
+                 */
+                UpdateStandardEngineResourceGroupBaseInfoOutcome UpdateStandardEngineResourceGroupBaseInfo(const Model::UpdateStandardEngineResourceGroupBaseInfoRequest &request);
+                void UpdateStandardEngineResourceGroupBaseInfoAsync(const Model::UpdateStandardEngineResourceGroupBaseInfoRequest& request, const UpdateStandardEngineResourceGroupBaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateStandardEngineResourceGroupBaseInfoOutcomeCallable UpdateStandardEngineResourceGroupBaseInfoCallable(const Model::UpdateStandardEngineResourceGroupBaseInfoRequest& request);
+
+                /**
+                 *更新标准引擎资源组基础信息
+                 * @param req UpdateStandardEngineResourceGroupConfigInfoRequest
+                 * @return UpdateStandardEngineResourceGroupConfigInfoOutcome
+                 */
+                UpdateStandardEngineResourceGroupConfigInfoOutcome UpdateStandardEngineResourceGroupConfigInfo(const Model::UpdateStandardEngineResourceGroupConfigInfoRequest &request);
+                void UpdateStandardEngineResourceGroupConfigInfoAsync(const Model::UpdateStandardEngineResourceGroupConfigInfoRequest& request, const UpdateStandardEngineResourceGroupConfigInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateStandardEngineResourceGroupConfigInfoOutcomeCallable UpdateStandardEngineResourceGroupConfigInfoCallable(const Model::UpdateStandardEngineResourceGroupConfigInfoRequest& request);
+
+                /**
+                 *更新标准引擎资源组基础信息
+                 * @param req UpdateStandardEngineResourceGroupResourceInfoRequest
+                 * @return UpdateStandardEngineResourceGroupResourceInfoOutcome
+                 */
+                UpdateStandardEngineResourceGroupResourceInfoOutcome UpdateStandardEngineResourceGroupResourceInfo(const Model::UpdateStandardEngineResourceGroupResourceInfoRequest &request);
+                void UpdateStandardEngineResourceGroupResourceInfoAsync(const Model::UpdateStandardEngineResourceGroupResourceInfoRequest& request, const UpdateStandardEngineResourceGroupResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateStandardEngineResourceGroupResourceInfoOutcomeCallable UpdateStandardEngineResourceGroupResourceInfoCallable(const Model::UpdateStandardEngineResourceGroupResourceInfoRequest& request);
 
                 /**
                  *修改用户引擎自定义配置

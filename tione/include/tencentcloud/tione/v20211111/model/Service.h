@@ -928,6 +928,27 @@ DEFAULT: 其他来源
                      */
                     bool MonitorSourceHasBeenSet() const;
 
+                    /**
+                     * 获取服务创建者的子账号名称
+                     * @return SubUinName 服务创建者的子账号名称
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置服务创建者的子账号名称
+                     * @param _subUinName 服务创建者的子账号名称
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1174,6 +1195,12 @@ DEFAULT: 其他来源
                      */
                     std::string m_monitorSource;
                     bool m_monitorSourceHasBeenSet;
+
+                    /**
+                     * 服务创建者的子账号名称
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
 
                 };
             }

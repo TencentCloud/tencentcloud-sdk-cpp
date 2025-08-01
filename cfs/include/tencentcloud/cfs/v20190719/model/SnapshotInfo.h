@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取快照状态，createing-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
-                     * @return Status 快照状态，createing-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
+                     * 获取快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
+                     * @return Status 快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置快照状态，createing-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
-                     * @param _status 快照状态，createing-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
+                     * 设置快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
+                     * @param _status 快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -321,18 +321,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取快照类型, general为通用系列快照，turbo为Turbo系列快照
+                     * 获取快照类型，general为通用系列快照，turbo为Turbo系列快照
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotType 快照类型, general为通用系列快照，turbo为Turbo系列快照
+                     * @return SnapshotType 快照类型，general为通用系列快照，turbo为Turbo系列快照
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapshotType() const;
 
                     /**
-                     * 设置快照类型, general为通用系列快照，turbo为Turbo系列快照
+                     * 设置快照类型，general为通用系列快照，turbo为Turbo系列快照
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _snapshotType 快照类型, general为通用系列快照，turbo为Turbo系列快照
+                     * @param _snapshotType 快照类型，general为通用系列快照，turbo为Turbo系列快照
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -346,18 +346,18 @@ namespace TencentCloud
                     bool SnapshotTypeHasBeenSet() const;
 
                     /**
-                     * 获取实际快照时间，反应快照对应文件系统某个时刻的数据。
+                     * 获取实际快照时间，反映快照对应文件系统某个时刻的数据。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotTime 实际快照时间，反应快照对应文件系统某个时刻的数据。
+                     * @return SnapshotTime 实际快照时间，反映快照对应文件系统某个时刻的数据。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapshotTime() const;
 
                     /**
-                     * 设置实际快照时间，反应快照对应文件系统某个时刻的数据。
+                     * 设置实际快照时间，反映快照对应文件系统某个时刻的数据。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _snapshotTime 实际快照时间，反应快照对应文件系统某个时刻的数据。
+                     * @param _snapshotTime 实际快照时间，反映快照对应文件系统某个时刻的数据。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -391,7 +391,7 @@ namespace TencentCloud
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 快照状态，createing-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
+                     * 快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -451,14 +451,14 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 快照类型, general为通用系列快照，turbo为Turbo系列快照
+                     * 快照类型，general为通用系列快照，turbo为Turbo系列快照
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotType;
                     bool m_snapshotTypeHasBeenSet;
 
                     /**
-                     * 实际快照时间，反应快照对应文件系统某个时刻的数据。
+                     * 实际快照时间，反映快照对应文件系统某个时刻的数据。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotTime;

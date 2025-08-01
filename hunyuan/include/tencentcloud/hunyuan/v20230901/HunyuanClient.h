@@ -55,8 +55,6 @@
 #include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobResponse.h>
-#include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanTo3DJobRequest.h>
-#include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanTo3DJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/RunThreadRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/RunThreadResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/SetPayModeRequest.h>
@@ -65,8 +63,6 @@
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobResponse.h>
-#include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DJobRequest.h>
-#include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/TextToImageLiteRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/TextToImageLiteResponse.h>
 
@@ -131,9 +127,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryHunyuanImageJobResponse> QueryHunyuanImageJobOutcome;
                 typedef std::future<QueryHunyuanImageJobOutcome> QueryHunyuanImageJobOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::QueryHunyuanImageJobRequest&, QueryHunyuanImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryHunyuanImageJobAsyncHandler;
-                typedef Outcome<Core::Error, Model::QueryHunyuanTo3DJobResponse> QueryHunyuanTo3DJobOutcome;
-                typedef std::future<QueryHunyuanTo3DJobOutcome> QueryHunyuanTo3DJobOutcomeCallable;
-                typedef std::function<void(const HunyuanClient*, const Model::QueryHunyuanTo3DJobRequest&, QueryHunyuanTo3DJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryHunyuanTo3DJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunThreadResponse> RunThreadOutcome;
                 typedef std::future<RunThreadOutcome> RunThreadOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::RunThreadRequest&, RunThreadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunThreadAsyncHandler;
@@ -146,9 +139,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitHunyuanImageJobResponse> SubmitHunyuanImageJobOutcome;
                 typedef std::future<SubmitHunyuanImageJobOutcome> SubmitHunyuanImageJobOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::SubmitHunyuanImageJobRequest&, SubmitHunyuanImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanImageJobAsyncHandler;
-                typedef Outcome<Core::Error, Model::SubmitHunyuanTo3DJobResponse> SubmitHunyuanTo3DJobOutcome;
-                typedef std::future<SubmitHunyuanTo3DJobOutcome> SubmitHunyuanTo3DJobOutcomeCallable;
-                typedef std::function<void(const HunyuanClient*, const Model::SubmitHunyuanTo3DJobRequest&, SubmitHunyuanTo3DJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanTo3DJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextToImageLiteResponse> TextToImageLiteOutcome;
                 typedef std::future<TextToImageLiteOutcome> TextToImageLiteOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::TextToImageLiteRequest&, TextToImageLiteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageLiteAsyncHandler;
@@ -353,15 +343,6 @@ namespace TencentCloud
                 QueryHunyuanImageJobOutcomeCallable QueryHunyuanImageJobCallable(const Model::QueryHunyuanImageJobRequest& request);
 
                 /**
-                 *查询混元生3D任务
-                 * @param req QueryHunyuanTo3DJobRequest
-                 * @return QueryHunyuanTo3DJobOutcome
-                 */
-                QueryHunyuanTo3DJobOutcome QueryHunyuanTo3DJob(const Model::QueryHunyuanTo3DJobRequest &request);
-                void QueryHunyuanTo3DJobAsync(const Model::QueryHunyuanTo3DJobRequest& request, const QueryHunyuanTo3DJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                QueryHunyuanTo3DJobOutcomeCallable QueryHunyuanTo3DJobCallable(const Model::QueryHunyuanTo3DJobRequest& request);
-
-                /**
                  *腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
 
  1. 本接口暂不支持返回图片内容。
@@ -407,15 +388,6 @@ namespace TencentCloud
                 SubmitHunyuanImageJobOutcome SubmitHunyuanImageJob(const Model::SubmitHunyuanImageJobRequest &request);
                 void SubmitHunyuanImageJobAsync(const Model::SubmitHunyuanImageJobRequest& request, const SubmitHunyuanImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitHunyuanImageJobOutcomeCallable SubmitHunyuanImageJobCallable(const Model::SubmitHunyuanImageJobRequest& request);
-
-                /**
-                 *提交混元生3D任务
-                 * @param req SubmitHunyuanTo3DJobRequest
-                 * @return SubmitHunyuanTo3DJobOutcome
-                 */
-                SubmitHunyuanTo3DJobOutcome SubmitHunyuanTo3DJob(const Model::SubmitHunyuanTo3DJobRequest &request);
-                void SubmitHunyuanTo3DJobAsync(const Model::SubmitHunyuanTo3DJobRequest& request, const SubmitHunyuanTo3DJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SubmitHunyuanTo3DJobOutcomeCallable SubmitHunyuanTo3DJobCallable(const Model::SubmitHunyuanTo3DJobRequest& request);
 
                 /**
                  *文生图轻量版接口根据输入的文本描述，智能生成与之相关的结果图。

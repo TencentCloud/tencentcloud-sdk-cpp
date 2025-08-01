@@ -54,7 +54,8 @@ Service::Service() :
     m_archiveStatusHasBeenSet(false),
     m_deployTypeHasBeenSet(false),
     m_instancePerReplicasHasBeenSet(false),
-    m_monitorSourceHasBeenSet(false)
+    m_monitorSourceHasBeenSet(false),
+    m_subUinNameHasBeenSet(false)
 {
 }
 
@@ -434,6 +435,16 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_monitorSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("SubUinName") && !value["SubUinName"].IsNull())
+    {
+        if (!value["SubUinName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.SubUinName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUinName = string(value["SubUinName"].GetString());
+        m_subUinNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -721,6 +732,14 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "MonitorSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_monitorSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subUinNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUinName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUinName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1268,5 +1287,21 @@ void Service::SetMonitorSource(const string& _monitorSource)
 bool Service::MonitorSourceHasBeenSet() const
 {
     return m_monitorSourceHasBeenSet;
+}
+
+string Service::GetSubUinName() const
+{
+    return m_subUinName;
+}
+
+void Service::SetSubUinName(const string& _subUinName)
+{
+    m_subUinName = _subUinName;
+    m_subUinNameHasBeenSet = true;
+}
+
+bool Service::SubUinNameHasBeenSet() const
+{
+    return m_subUinNameHasBeenSet;
 }
 

@@ -51,7 +51,10 @@ DescribeInstanceResponse::DescribeInstanceResponse() :
     m_sharedSubscriptionGroupLimitHasBeenSet(false),
     m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet(false),
     m_autoSubscriptionPolicyLimitHasBeenSet(false),
-    m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet(false)
+    m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet(false),
+    m_useDefaultServerCertHasBeenSet(false),
+    m_trustedCaLimitHasBeenSet(false),
+    m_serverCertLimitHasBeenSet(false)
 {
 }
 
@@ -369,6 +372,36 @@ CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
         m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UseDefaultServerCert") && !rsp["UseDefaultServerCert"].IsNull())
+    {
+        if (!rsp["UseDefaultServerCert"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UseDefaultServerCert` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useDefaultServerCert = rsp["UseDefaultServerCert"].GetBool();
+        m_useDefaultServerCertHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TrustedCaLimit") && !rsp["TrustedCaLimit"].IsNull())
+    {
+        if (!rsp["TrustedCaLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrustedCaLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trustedCaLimit = rsp["TrustedCaLimit"].GetInt64();
+        m_trustedCaLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ServerCertLimit") && !rsp["ServerCertLimit"].IsNull())
+    {
+        if (!rsp["ServerCertLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerCertLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverCertLimit = rsp["ServerCertLimit"].GetInt64();
+        m_serverCertLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -601,6 +634,30 @@ string DescribeInstanceResponse::ToJsonString() const
         string key = "MaxTopicFilterPerAutoSubscriptionPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxTopicFilterPerAutoSubscriptionPolicy, allocator);
+    }
+
+    if (m_useDefaultServerCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseDefaultServerCert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useDefaultServerCert, allocator);
+    }
+
+    if (m_trustedCaLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrustedCaLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trustedCaLimit, allocator);
+    }
+
+    if (m_serverCertLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerCertLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serverCertLimit, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -893,6 +950,36 @@ int64_t DescribeInstanceResponse::GetMaxTopicFilterPerAutoSubscriptionPolicy() c
 bool DescribeInstanceResponse::MaxTopicFilterPerAutoSubscriptionPolicyHasBeenSet() const
 {
     return m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet;
+}
+
+bool DescribeInstanceResponse::GetUseDefaultServerCert() const
+{
+    return m_useDefaultServerCert;
+}
+
+bool DescribeInstanceResponse::UseDefaultServerCertHasBeenSet() const
+{
+    return m_useDefaultServerCertHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetTrustedCaLimit() const
+{
+    return m_trustedCaLimit;
+}
+
+bool DescribeInstanceResponse::TrustedCaLimitHasBeenSet() const
+{
+    return m_trustedCaLimitHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetServerCertLimit() const
+{
+    return m_serverCertLimit;
+}
+
+bool DescribeInstanceResponse::ServerCertLimitHasBeenSet() const
+{
+    return m_serverCertLimitHasBeenSet;
 }
 
 

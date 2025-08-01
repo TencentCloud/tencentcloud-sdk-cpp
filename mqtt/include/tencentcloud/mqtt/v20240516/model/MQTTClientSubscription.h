@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mqtt/v20240516/model/SubscriptionUserProperty.h>
 
 
 namespace TencentCloud
@@ -142,6 +143,27 @@ namespace TencentCloud
                      */
                     bool InflightHasBeenSet() const;
 
+                    /**
+                     * 获取用户属性
+                     * @return UserProperties 用户属性
+                     * 
+                     */
+                    std::vector<SubscriptionUserProperty> GetUserProperties() const;
+
+                    /**
+                     * 设置用户属性
+                     * @param _userProperties 用户属性
+                     * 
+                     */
+                    void SetUserProperties(const std::vector<SubscriptionUserProperty>& _userProperties);
+
+                    /**
+                     * 判断参数 UserProperties 是否已赋值
+                     * @return UserProperties 是否已赋值
+                     * 
+                     */
+                    bool UserPropertiesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +192,12 @@ namespace TencentCloud
                      */
                     int64_t m_inflight;
                     bool m_inflightHasBeenSet;
+
+                    /**
+                     * 用户属性
+                     */
+                    std::vector<SubscriptionUserProperty> m_userProperties;
+                    bool m_userPropertiesHasBeenSet;
 
                 };
             }

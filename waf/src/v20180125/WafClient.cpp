@@ -642,6 +642,49 @@ WafClient::CreateIpAccessControlOutcomeCallable WafClient::CreateIpAccessControl
     return task->get_future();
 }
 
+WafClient::CreateOwaspWhiteRuleOutcome WafClient::CreateOwaspWhiteRule(const CreateOwaspWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOwaspWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOwaspWhiteRuleResponse rsp = CreateOwaspWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOwaspWhiteRuleOutcome(rsp);
+        else
+            return CreateOwaspWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOwaspWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateOwaspWhiteRuleAsync(const CreateOwaspWhiteRuleRequest& request, const CreateOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOwaspWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreateOwaspWhiteRuleOutcomeCallable WafClient::CreateOwaspWhiteRuleCallable(const CreateOwaspWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOwaspWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOwaspWhiteRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::CreatePostCKafkaFlowOutcome WafClient::CreatePostCKafkaFlow(const CreatePostCKafkaFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePostCKafkaFlow");
@@ -1280,6 +1323,49 @@ WafClient::DeleteIpAccessControlV2OutcomeCallable WafClient::DeleteIpAccessContr
         [this, request]()
         {
             return this->DeleteIpAccessControlV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DeleteOwaspWhiteRuleOutcome WafClient::DeleteOwaspWhiteRule(const DeleteOwaspWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOwaspWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOwaspWhiteRuleResponse rsp = DeleteOwaspWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOwaspWhiteRuleOutcome(rsp);
+        else
+            return DeleteOwaspWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOwaspWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteOwaspWhiteRuleAsync(const DeleteOwaspWhiteRuleRequest& request, const DeleteOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteOwaspWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteOwaspWhiteRuleOutcomeCallable WafClient::DeleteOwaspWhiteRuleCallable(const DeleteOwaspWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteOwaspWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteOwaspWhiteRule(request);
         }
     );
 
@@ -3258,6 +3344,49 @@ WafClient::DescribeObjectsOutcomeCallable WafClient::DescribeObjectsCallable(con
         [this, request]()
         {
             return this->DescribeObjects(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeOwaspWhiteRulesOutcome WafClient::DescribeOwaspWhiteRules(const DescribeOwaspWhiteRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOwaspWhiteRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOwaspWhiteRulesResponse rsp = DescribeOwaspWhiteRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOwaspWhiteRulesOutcome(rsp);
+        else
+            return DescribeOwaspWhiteRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOwaspWhiteRulesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeOwaspWhiteRulesAsync(const DescribeOwaspWhiteRulesRequest& request, const DescribeOwaspWhiteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOwaspWhiteRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeOwaspWhiteRulesOutcomeCallable WafClient::DescribeOwaspWhiteRulesCallable(const DescribeOwaspWhiteRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOwaspWhiteRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOwaspWhiteRules(request);
         }
     );
 
@@ -6182,6 +6311,49 @@ WafClient::ModifyObjectOutcomeCallable WafClient::ModifyObjectCallable(const Mod
         [this, request]()
         {
             return this->ModifyObject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyOwaspWhiteRuleOutcome WafClient::ModifyOwaspWhiteRule(const ModifyOwaspWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOwaspWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOwaspWhiteRuleResponse rsp = ModifyOwaspWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOwaspWhiteRuleOutcome(rsp);
+        else
+            return ModifyOwaspWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOwaspWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyOwaspWhiteRuleAsync(const ModifyOwaspWhiteRuleRequest& request, const ModifyOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOwaspWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyOwaspWhiteRuleOutcomeCallable WafClient::ModifyOwaspWhiteRuleCallable(const ModifyOwaspWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOwaspWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOwaspWhiteRule(request);
         }
     );
 

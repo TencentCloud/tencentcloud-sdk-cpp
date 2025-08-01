@@ -26,7 +26,8 @@ using namespace std;
 GetDocumentParseResultResponse::GetDocumentParseResultResponse() :
     m_statusHasBeenSet(false),
     m_documentParseResultUrlHasBeenSet(false),
-    m_failedPagesHasBeenSet(false)
+    m_failedPagesHasBeenSet(false),
+    m_usageHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,23 @@ CoreInternalOutcome GetDocumentParseResultResponse::Deserialize(const string &pa
         m_failedPagesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Usage") && !rsp["Usage"].IsNull())
+    {
+        if (!rsp["Usage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Usage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usage.Deserialize(rsp["Usage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +152,15 @@ string GetDocumentParseResultResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usage.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +203,16 @@ vector<int64_t> GetDocumentParseResultResponse::GetFailedPages() const
 bool GetDocumentParseResultResponse::FailedPagesHasBeenSet() const
 {
     return m_failedPagesHasBeenSet;
+}
+
+PageUsage GetDocumentParseResultResponse::GetUsage() const
+{
+    return m_usage;
+}
+
+bool GetDocumentParseResultResponse::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
 }
 
 

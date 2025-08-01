@@ -55,6 +55,8 @@
 #include <tencentcloud/teo/v20220901/model/CreateFunctionResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionRuleResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateJustInTimeTranscodeTemplateRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateJustInTimeTranscodeTemplateResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyRulesRequest.h>
@@ -83,8 +85,16 @@
 #include <tencentcloud/teo/v20220901/model/CreateRealtimeLogDeliveryTaskResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateRuleResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityAPIResourceRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityAPIResourceResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityAPIServiceRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityAPIServiceResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityClientAttesterRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityClientAttesterResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateSecurityIPGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateSecurityIPGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityJSInjectionRuleRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityJSInjectionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateSharedCNAMERequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateSharedCNAMEResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateWebSecurityTemplateRequest.h>
@@ -109,6 +119,8 @@
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteJustInTimeTranscodeTemplatesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteJustInTimeTranscodeTemplatesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyRulesRequest.h>
@@ -127,8 +139,16 @@
 #include <tencentcloud/teo/v20220901/model/DeleteRealtimeLogDeliveryTaskResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityAPIResourceRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityAPIResourceResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityAPIServiceRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityAPIServiceResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityClientAttesterRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityClientAttesterResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteSecurityIPGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteSecurityIPGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityJSInjectionRuleRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityJSInjectionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteSharedCNAMERequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteSharedCNAMEResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteWebSecurityTemplateRequest.h>
@@ -185,6 +205,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeIPRegionResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeIdentificationsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeIdentificationsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeJustInTimeTranscodeTemplatesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeJustInTimeTranscodeTemplatesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyRulesRequest.h>
@@ -227,10 +249,20 @@
 #include <tencentcloud/teo/v20220901/model/DescribeRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeRulesSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeRulesSettingResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityAPIResourceRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityAPIResourceResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityAPIServiceRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityAPIServiceResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityClientAttesterRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityClientAttesterResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupContentRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupContentResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupInfoRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupInfoResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityJSInjectionRuleRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityJSInjectionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityPolicyRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityPolicyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityTemplateBindingsRequest.h>
@@ -341,8 +373,16 @@
 #include <tencentcloud/teo/v20220901/model/ModifyRealtimeLogDeliveryTaskResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRuleResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityAPIResourceRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityAPIResourceResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityAPIServiceRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityAPIServiceResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityClientAttesterRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityClientAttesterResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityIPGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityIPGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityJSInjectionRuleRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityJSInjectionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityPolicyRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityPolicyResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyWebSecurityTemplateRequest.h>
@@ -423,6 +463,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFunctionRuleResponse> CreateFunctionRuleOutcome;
                 typedef std::future<CreateFunctionRuleOutcome> CreateFunctionRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateFunctionRuleRequest&, CreateFunctionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateJustInTimeTranscodeTemplateResponse> CreateJustInTimeTranscodeTemplateOutcome;
+                typedef std::future<CreateJustInTimeTranscodeTemplateOutcome> CreateJustInTimeTranscodeTemplateOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateJustInTimeTranscodeTemplateRequest&, CreateJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJustInTimeTranscodeTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateL4ProxyResponse> CreateL4ProxyOutcome;
                 typedef std::future<CreateL4ProxyOutcome> CreateL4ProxyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateL4ProxyRequest&, CreateL4ProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL4ProxyAsyncHandler;
@@ -465,9 +508,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRuleResponse> CreateRuleOutcome;
                 typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateRuleRequest&, CreateRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSecurityAPIResourceResponse> CreateSecurityAPIResourceOutcome;
+                typedef std::future<CreateSecurityAPIResourceOutcome> CreateSecurityAPIResourceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateSecurityAPIResourceRequest&, CreateSecurityAPIResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityAPIResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSecurityAPIServiceResponse> CreateSecurityAPIServiceOutcome;
+                typedef std::future<CreateSecurityAPIServiceOutcome> CreateSecurityAPIServiceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateSecurityAPIServiceRequest&, CreateSecurityAPIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityAPIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSecurityClientAttesterResponse> CreateSecurityClientAttesterOutcome;
+                typedef std::future<CreateSecurityClientAttesterOutcome> CreateSecurityClientAttesterOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateSecurityClientAttesterRequest&, CreateSecurityClientAttesterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityClientAttesterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSecurityIPGroupResponse> CreateSecurityIPGroupOutcome;
                 typedef std::future<CreateSecurityIPGroupOutcome> CreateSecurityIPGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateSecurityIPGroupRequest&, CreateSecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityIPGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSecurityJSInjectionRuleResponse> CreateSecurityJSInjectionRuleOutcome;
+                typedef std::future<CreateSecurityJSInjectionRuleOutcome> CreateSecurityJSInjectionRuleOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateSecurityJSInjectionRuleRequest&, CreateSecurityJSInjectionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityJSInjectionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSharedCNAMEResponse> CreateSharedCNAMEOutcome;
                 typedef std::future<CreateSharedCNAMEOutcome> CreateSharedCNAMEOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateSharedCNAMERequest&, CreateSharedCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSharedCNAMEAsyncHandler;
@@ -504,6 +559,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteFunctionRulesResponse> DeleteFunctionRulesOutcome;
                 typedef std::future<DeleteFunctionRulesOutcome> DeleteFunctionRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteFunctionRulesRequest&, DeleteFunctionRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteJustInTimeTranscodeTemplatesResponse> DeleteJustInTimeTranscodeTemplatesOutcome;
+                typedef std::future<DeleteJustInTimeTranscodeTemplatesOutcome> DeleteJustInTimeTranscodeTemplatesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteJustInTimeTranscodeTemplatesRequest&, DeleteJustInTimeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJustInTimeTranscodeTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteL4ProxyResponse> DeleteL4ProxyOutcome;
                 typedef std::future<DeleteL4ProxyOutcome> DeleteL4ProxyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteL4ProxyRequest&, DeleteL4ProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteL4ProxyAsyncHandler;
@@ -531,9 +589,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRulesResponse> DeleteRulesOutcome;
                 typedef std::future<DeleteRulesOutcome> DeleteRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteRulesRequest&, DeleteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSecurityAPIResourceResponse> DeleteSecurityAPIResourceOutcome;
+                typedef std::future<DeleteSecurityAPIResourceOutcome> DeleteSecurityAPIResourceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteSecurityAPIResourceRequest&, DeleteSecurityAPIResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityAPIResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSecurityAPIServiceResponse> DeleteSecurityAPIServiceOutcome;
+                typedef std::future<DeleteSecurityAPIServiceOutcome> DeleteSecurityAPIServiceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteSecurityAPIServiceRequest&, DeleteSecurityAPIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityAPIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSecurityClientAttesterResponse> DeleteSecurityClientAttesterOutcome;
+                typedef std::future<DeleteSecurityClientAttesterOutcome> DeleteSecurityClientAttesterOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteSecurityClientAttesterRequest&, DeleteSecurityClientAttesterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityClientAttesterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSecurityIPGroupResponse> DeleteSecurityIPGroupOutcome;
                 typedef std::future<DeleteSecurityIPGroupOutcome> DeleteSecurityIPGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteSecurityIPGroupRequest&, DeleteSecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityIPGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSecurityJSInjectionRuleResponse> DeleteSecurityJSInjectionRuleOutcome;
+                typedef std::future<DeleteSecurityJSInjectionRuleOutcome> DeleteSecurityJSInjectionRuleOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteSecurityJSInjectionRuleRequest&, DeleteSecurityJSInjectionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityJSInjectionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSharedCNAMEResponse> DeleteSharedCNAMEOutcome;
                 typedef std::future<DeleteSharedCNAMEOutcome> DeleteSharedCNAMEOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteSharedCNAMERequest&, DeleteSharedCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSharedCNAMEAsyncHandler;
@@ -618,6 +688,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIdentificationsResponse> DescribeIdentificationsOutcome;
                 typedef std::future<DescribeIdentificationsOutcome> DescribeIdentificationsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeIdentificationsRequest&, DescribeIdentificationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIdentificationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJustInTimeTranscodeTemplatesResponse> DescribeJustInTimeTranscodeTemplatesOutcome;
+                typedef std::future<DescribeJustInTimeTranscodeTemplatesOutcome> DescribeJustInTimeTranscodeTemplatesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeJustInTimeTranscodeTemplatesRequest&, DescribeJustInTimeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJustInTimeTranscodeTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeL4ProxyResponse> DescribeL4ProxyOutcome;
                 typedef std::future<DescribeL4ProxyOutcome> DescribeL4ProxyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeL4ProxyRequest&, DescribeL4ProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL4ProxyAsyncHandler;
@@ -681,12 +754,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRulesSettingResponse> DescribeRulesSettingOutcome;
                 typedef std::future<DescribeRulesSettingOutcome> DescribeRulesSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeRulesSettingRequest&, DescribeRulesSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityAPIResourceResponse> DescribeSecurityAPIResourceOutcome;
+                typedef std::future<DescribeSecurityAPIResourceOutcome> DescribeSecurityAPIResourceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityAPIResourceRequest&, DescribeSecurityAPIResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAPIResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityAPIServiceResponse> DescribeSecurityAPIServiceOutcome;
+                typedef std::future<DescribeSecurityAPIServiceOutcome> DescribeSecurityAPIServiceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityAPIServiceRequest&, DescribeSecurityAPIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAPIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityClientAttesterResponse> DescribeSecurityClientAttesterOutcome;
+                typedef std::future<DescribeSecurityClientAttesterOutcome> DescribeSecurityClientAttesterOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityClientAttesterRequest&, DescribeSecurityClientAttesterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityClientAttesterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityIPGroupResponse> DescribeSecurityIPGroupOutcome;
                 typedef std::future<DescribeSecurityIPGroupOutcome> DescribeSecurityIPGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityIPGroupRequest&, DescribeSecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityIPGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityIPGroupContentResponse> DescribeSecurityIPGroupContentOutcome;
+                typedef std::future<DescribeSecurityIPGroupContentOutcome> DescribeSecurityIPGroupContentOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityIPGroupContentRequest&, DescribeSecurityIPGroupContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityIPGroupContentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityIPGroupInfoResponse> DescribeSecurityIPGroupInfoOutcome;
                 typedef std::future<DescribeSecurityIPGroupInfoOutcome> DescribeSecurityIPGroupInfoOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityIPGroupInfoRequest&, DescribeSecurityIPGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityIPGroupInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityJSInjectionRuleResponse> DescribeSecurityJSInjectionRuleOutcome;
+                typedef std::future<DescribeSecurityJSInjectionRuleOutcome> DescribeSecurityJSInjectionRuleOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityJSInjectionRuleRequest&, DescribeSecurityJSInjectionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityJSInjectionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityPolicyResponse> DescribeSecurityPolicyOutcome;
                 typedef std::future<DescribeSecurityPolicyOutcome> DescribeSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityPolicyRequest&, DescribeSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityPolicyAsyncHandler;
@@ -852,9 +940,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRuleResponse> ModifyRuleOutcome;
                 typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyRuleRequest&, ModifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySecurityAPIResourceResponse> ModifySecurityAPIResourceOutcome;
+                typedef std::future<ModifySecurityAPIResourceOutcome> ModifySecurityAPIResourceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifySecurityAPIResourceRequest&, ModifySecurityAPIResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityAPIResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySecurityAPIServiceResponse> ModifySecurityAPIServiceOutcome;
+                typedef std::future<ModifySecurityAPIServiceOutcome> ModifySecurityAPIServiceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifySecurityAPIServiceRequest&, ModifySecurityAPIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityAPIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySecurityClientAttesterResponse> ModifySecurityClientAttesterOutcome;
+                typedef std::future<ModifySecurityClientAttesterOutcome> ModifySecurityClientAttesterOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifySecurityClientAttesterRequest&, ModifySecurityClientAttesterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityClientAttesterAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityIPGroupResponse> ModifySecurityIPGroupOutcome;
                 typedef std::future<ModifySecurityIPGroupOutcome> ModifySecurityIPGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifySecurityIPGroupRequest&, ModifySecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityIPGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySecurityJSInjectionRuleResponse> ModifySecurityJSInjectionRuleOutcome;
+                typedef std::future<ModifySecurityJSInjectionRuleOutcome> ModifySecurityJSInjectionRuleOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifySecurityJSInjectionRuleRequest&, ModifySecurityJSInjectionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityJSInjectionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityPolicyResponse> ModifySecurityPolicyOutcome;
                 typedef std::future<ModifySecurityPolicyOutcome> ModifySecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifySecurityPolicyRequest&, ModifySecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityPolicyAsyncHandler;
@@ -1034,6 +1134,17 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateFunctionRuleOutcomeCallable CreateFunctionRuleCallable(const Model::CreateFunctionRuleRequest& request);
 
                 /**
+                 *即时转码已经提供了预置转码模板，满足大部分的需求。如果有个性化的转码需求，可以通过本接口创建自定义的转码模板，最多可创建100个自定义转码模板。
+为了确保即时转码效果的一致性，避免因 EO 缓存或 M3U8 分片处理过程中的模板变更导致视频输出异常，模板在创建后不可进行修改。
+即时转码详细能力了解：[EdgeOne视频即时处理功能介绍](https://cloud.tencent.com/document/product/1552/111927)。
+                 * @param req CreateJustInTimeTranscodeTemplateRequest
+                 * @return CreateJustInTimeTranscodeTemplateOutcome
+                 */
+                CreateJustInTimeTranscodeTemplateOutcome CreateJustInTimeTranscodeTemplate(const Model::CreateJustInTimeTranscodeTemplateRequest &request);
+                void CreateJustInTimeTranscodeTemplateAsync(const Model::CreateJustInTimeTranscodeTemplateRequest& request, const CreateJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateJustInTimeTranscodeTemplateOutcomeCallable CreateJustInTimeTranscodeTemplateCallable(const Model::CreateJustInTimeTranscodeTemplateRequest& request);
+
+                /**
                  *用于创建四层代理实例。
                  * @param req CreateL4ProxyRequest
                  * @return CreateL4ProxyOutcome
@@ -1165,6 +1276,33 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request);
 
                 /**
+                 *用于创建 API 资源。
+                 * @param req CreateSecurityAPIResourceRequest
+                 * @return CreateSecurityAPIResourceOutcome
+                 */
+                CreateSecurityAPIResourceOutcome CreateSecurityAPIResource(const Model::CreateSecurityAPIResourceRequest &request);
+                void CreateSecurityAPIResourceAsync(const Model::CreateSecurityAPIResourceRequest& request, const CreateSecurityAPIResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityAPIResourceOutcomeCallable CreateSecurityAPIResourceCallable(const Model::CreateSecurityAPIResourceRequest& request);
+
+                /**
+                 *用于创建 API 服务。
+                 * @param req CreateSecurityAPIServiceRequest
+                 * @return CreateSecurityAPIServiceOutcome
+                 */
+                CreateSecurityAPIServiceOutcome CreateSecurityAPIService(const Model::CreateSecurityAPIServiceRequest &request);
+                void CreateSecurityAPIServiceAsync(const Model::CreateSecurityAPIServiceRequest& request, const CreateSecurityAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityAPIServiceOutcomeCallable CreateSecurityAPIServiceCallable(const Model::CreateSecurityAPIServiceRequest& request);
+
+                /**
+                 *创建客户端认证选项。
+                 * @param req CreateSecurityClientAttesterRequest
+                 * @return CreateSecurityClientAttesterOutcome
+                 */
+                CreateSecurityClientAttesterOutcome CreateSecurityClientAttester(const Model::CreateSecurityClientAttesterRequest &request);
+                void CreateSecurityClientAttesterAsync(const Model::CreateSecurityClientAttesterRequest& request, const CreateSecurityClientAttesterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityClientAttesterOutcomeCallable CreateSecurityClientAttesterCallable(const Model::CreateSecurityClientAttesterRequest& request);
+
+                /**
                  *创建安全 IP 组
                  * @param req CreateSecurityIPGroupRequest
                  * @return CreateSecurityIPGroupOutcome
@@ -1172,6 +1310,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateSecurityIPGroupOutcome CreateSecurityIPGroup(const Model::CreateSecurityIPGroupRequest &request);
                 void CreateSecurityIPGroupAsync(const Model::CreateSecurityIPGroupRequest& request, const CreateSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSecurityIPGroupOutcomeCallable CreateSecurityIPGroupCallable(const Model::CreateSecurityIPGroupRequest& request);
+
+                /**
+                 *创建 JavaScript 注入规则。
+                 * @param req CreateSecurityJSInjectionRuleRequest
+                 * @return CreateSecurityJSInjectionRuleOutcome
+                 */
+                CreateSecurityJSInjectionRuleOutcome CreateSecurityJSInjectionRule(const Model::CreateSecurityJSInjectionRuleRequest &request);
+                void CreateSecurityJSInjectionRuleAsync(const Model::CreateSecurityJSInjectionRuleRequest& request, const CreateSecurityJSInjectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityJSInjectionRuleOutcomeCallable CreateSecurityJSInjectionRuleCallable(const Model::CreateSecurityJSInjectionRuleRequest& request);
 
                 /**
                  *用于创建共享 CNAME，该功能白名单内测中。
@@ -1286,6 +1433,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteFunctionRulesOutcomeCallable DeleteFunctionRulesCallable(const Model::DeleteFunctionRulesRequest& request);
 
                 /**
+                 *根据站点 id 下唯一的模板标识，删除相应的即时转码模板。
+                 * @param req DeleteJustInTimeTranscodeTemplatesRequest
+                 * @return DeleteJustInTimeTranscodeTemplatesOutcome
+                 */
+                DeleteJustInTimeTranscodeTemplatesOutcome DeleteJustInTimeTranscodeTemplates(const Model::DeleteJustInTimeTranscodeTemplatesRequest &request);
+                void DeleteJustInTimeTranscodeTemplatesAsync(const Model::DeleteJustInTimeTranscodeTemplatesRequest& request, const DeleteJustInTimeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteJustInTimeTranscodeTemplatesOutcomeCallable DeleteJustInTimeTranscodeTemplatesCallable(const Model::DeleteJustInTimeTranscodeTemplatesRequest& request);
+
+                /**
                  *用于删除四层代理实例。
                  * @param req DeleteL4ProxyRequest
                  * @return DeleteL4ProxyOutcome
@@ -1368,6 +1524,33 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteRulesOutcomeCallable DeleteRulesCallable(const Model::DeleteRulesRequest& request);
 
                 /**
+                 *用于删除 API 资源。
+                 * @param req DeleteSecurityAPIResourceRequest
+                 * @return DeleteSecurityAPIResourceOutcome
+                 */
+                DeleteSecurityAPIResourceOutcome DeleteSecurityAPIResource(const Model::DeleteSecurityAPIResourceRequest &request);
+                void DeleteSecurityAPIResourceAsync(const Model::DeleteSecurityAPIResourceRequest& request, const DeleteSecurityAPIResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityAPIResourceOutcomeCallable DeleteSecurityAPIResourceCallable(const Model::DeleteSecurityAPIResourceRequest& request);
+
+                /**
+                 *用于删除 API 服务。
+                 * @param req DeleteSecurityAPIServiceRequest
+                 * @return DeleteSecurityAPIServiceOutcome
+                 */
+                DeleteSecurityAPIServiceOutcome DeleteSecurityAPIService(const Model::DeleteSecurityAPIServiceRequest &request);
+                void DeleteSecurityAPIServiceAsync(const Model::DeleteSecurityAPIServiceRequest& request, const DeleteSecurityAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityAPIServiceOutcomeCallable DeleteSecurityAPIServiceCallable(const Model::DeleteSecurityAPIServiceRequest& request);
+
+                /**
+                 *删除客户端认证选项。
+                 * @param req DeleteSecurityClientAttesterRequest
+                 * @return DeleteSecurityClientAttesterOutcome
+                 */
+                DeleteSecurityClientAttesterOutcome DeleteSecurityClientAttester(const Model::DeleteSecurityClientAttesterRequest &request);
+                void DeleteSecurityClientAttesterAsync(const Model::DeleteSecurityClientAttesterRequest& request, const DeleteSecurityClientAttesterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityClientAttesterOutcomeCallable DeleteSecurityClientAttesterCallable(const Model::DeleteSecurityClientAttesterRequest& request);
+
+                /**
                  *删除指定 IP 组，如果有规则引用了 IP 组情况，则不允许删除。
                  * @param req DeleteSecurityIPGroupRequest
                  * @return DeleteSecurityIPGroupOutcome
@@ -1375,6 +1558,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteSecurityIPGroupOutcome DeleteSecurityIPGroup(const Model::DeleteSecurityIPGroupRequest &request);
                 void DeleteSecurityIPGroupAsync(const Model::DeleteSecurityIPGroupRequest& request, const DeleteSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSecurityIPGroupOutcomeCallable DeleteSecurityIPGroupCallable(const Model::DeleteSecurityIPGroupRequest& request);
+
+                /**
+                 *删除 JavaScript 注入规则。
+                 * @param req DeleteSecurityJSInjectionRuleRequest
+                 * @return DeleteSecurityJSInjectionRuleOutcome
+                 */
+                DeleteSecurityJSInjectionRuleOutcome DeleteSecurityJSInjectionRule(const Model::DeleteSecurityJSInjectionRuleRequest &request);
+                void DeleteSecurityJSInjectionRuleAsync(const Model::DeleteSecurityJSInjectionRuleRequest& request, const DeleteSecurityJSInjectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityJSInjectionRuleOutcomeCallable DeleteSecurityJSInjectionRuleCallable(const Model::DeleteSecurityJSInjectionRuleRequest& request);
 
                 /**
                  *用于删除共享 CNAME，该功能白名单内测中。
@@ -1630,6 +1822,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeIdentificationsOutcomeCallable DescribeIdentificationsCallable(const Model::DescribeIdentificationsRequest& request);
 
                 /**
+                 *根据即时转码模板名字、模板类型或唯一标识，获取即时转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及预置模板。
+                 * @param req DescribeJustInTimeTranscodeTemplatesRequest
+                 * @return DescribeJustInTimeTranscodeTemplatesOutcome
+                 */
+                DescribeJustInTimeTranscodeTemplatesOutcome DescribeJustInTimeTranscodeTemplates(const Model::DescribeJustInTimeTranscodeTemplatesRequest &request);
+                void DescribeJustInTimeTranscodeTemplatesAsync(const Model::DescribeJustInTimeTranscodeTemplatesRequest& request, const DescribeJustInTimeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJustInTimeTranscodeTemplatesOutcomeCallable DescribeJustInTimeTranscodeTemplatesCallable(const Model::DescribeJustInTimeTranscodeTemplatesRequest& request);
+
+                /**
                  *用于查询四层代理实例列表。
                  * @param req DescribeL4ProxyRequest
                  * @return DescribeL4ProxyOutcome
@@ -1822,6 +2023,33 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeRulesSettingOutcomeCallable DescribeRulesSettingCallable(const Model::DescribeRulesSettingRequest& request);
 
                 /**
+                 *查询站点下的 API 资源。
+                 * @param req DescribeSecurityAPIResourceRequest
+                 * @return DescribeSecurityAPIResourceOutcome
+                 */
+                DescribeSecurityAPIResourceOutcome DescribeSecurityAPIResource(const Model::DescribeSecurityAPIResourceRequest &request);
+                void DescribeSecurityAPIResourceAsync(const Model::DescribeSecurityAPIResourceRequest& request, const DescribeSecurityAPIResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityAPIResourceOutcomeCallable DescribeSecurityAPIResourceCallable(const Model::DescribeSecurityAPIResourceRequest& request);
+
+                /**
+                 *查询站点下的 API 服务。
+                 * @param req DescribeSecurityAPIServiceRequest
+                 * @return DescribeSecurityAPIServiceOutcome
+                 */
+                DescribeSecurityAPIServiceOutcome DescribeSecurityAPIService(const Model::DescribeSecurityAPIServiceRequest &request);
+                void DescribeSecurityAPIServiceAsync(const Model::DescribeSecurityAPIServiceRequest& request, const DescribeSecurityAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityAPIServiceOutcomeCallable DescribeSecurityAPIServiceCallable(const Model::DescribeSecurityAPIServiceRequest& request);
+
+                /**
+                 *查询客户端认证选项配置。
+                 * @param req DescribeSecurityClientAttesterRequest
+                 * @return DescribeSecurityClientAttesterOutcome
+                 */
+                DescribeSecurityClientAttesterOutcome DescribeSecurityClientAttester(const Model::DescribeSecurityClientAttesterRequest &request);
+                void DescribeSecurityClientAttesterAsync(const Model::DescribeSecurityClientAttesterRequest& request, const DescribeSecurityClientAttesterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityClientAttesterOutcomeCallable DescribeSecurityClientAttesterCallable(const Model::DescribeSecurityClientAttesterRequest& request);
+
+                /**
                  *查询安全 IP 组的配置信息，包括安全 IP 组的 ID、名称和内容。本接口的查询结果中，每个 IP 组最多只返回 2000 个 IP / 网段。如果存在超过 2000 个 IP / 网段的超大 IP 组，请调用 DescribeSecurityIPGroupContent 进行分页查询。
                  * @param req DescribeSecurityIPGroupRequest
                  * @return DescribeSecurityIPGroupOutcome
@@ -1829,6 +2057,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeSecurityIPGroupOutcome DescribeSecurityIPGroup(const Model::DescribeSecurityIPGroupRequest &request);
                 void DescribeSecurityIPGroupAsync(const Model::DescribeSecurityIPGroupRequest& request, const DescribeSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityIPGroupOutcomeCallable DescribeSecurityIPGroupCallable(const Model::DescribeSecurityIPGroupRequest& request);
+
+                /**
+                 *该接口用于分页查询指定 IP 组中的 IP 地址列表。当 IP 组中的 IP 地址数量超过 2000 个时，可以使用此接口进行分页查询，以获取完整的 IP 地址列表。
+                 * @param req DescribeSecurityIPGroupContentRequest
+                 * @return DescribeSecurityIPGroupContentOutcome
+                 */
+                DescribeSecurityIPGroupContentOutcome DescribeSecurityIPGroupContent(const Model::DescribeSecurityIPGroupContentRequest &request);
+                void DescribeSecurityIPGroupContentAsync(const Model::DescribeSecurityIPGroupContentRequest& request, const DescribeSecurityIPGroupContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityIPGroupContentOutcomeCallable DescribeSecurityIPGroupContentCallable(const Model::DescribeSecurityIPGroupContentRequest& request);
 
                 /**
                  *接口已废弃，将于 2024 年 6 月 30 日停止服务。请使用 [查询安全 IP 组
@@ -1841,6 +2078,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeSecurityIPGroupInfoOutcome DescribeSecurityIPGroupInfo(const Model::DescribeSecurityIPGroupInfoRequest &request);
                 void DescribeSecurityIPGroupInfoAsync(const Model::DescribeSecurityIPGroupInfoRequest& request, const DescribeSecurityIPGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityIPGroupInfoOutcomeCallable DescribeSecurityIPGroupInfoCallable(const Model::DescribeSecurityIPGroupInfoRequest& request);
+
+                /**
+                 *查询 JavaScript 注入规则。
+                 * @param req DescribeSecurityJSInjectionRuleRequest
+                 * @return DescribeSecurityJSInjectionRuleOutcome
+                 */
+                DescribeSecurityJSInjectionRuleOutcome DescribeSecurityJSInjectionRule(const Model::DescribeSecurityJSInjectionRuleRequest &request);
+                void DescribeSecurityJSInjectionRuleAsync(const Model::DescribeSecurityJSInjectionRuleRequest& request, const DescribeSecurityJSInjectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityJSInjectionRuleOutcomeCallable DescribeSecurityJSInjectionRuleCallable(const Model::DescribeSecurityJSInjectionRuleRequest& request);
 
                 /**
                  *查询安全防护配置详情。
@@ -2359,6 +2605,33 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyRuleOutcomeCallable ModifyRuleCallable(const Model::ModifyRuleRequest& request);
 
                 /**
+                 *该接口用于修改 API 资源。
+                 * @param req ModifySecurityAPIResourceRequest
+                 * @return ModifySecurityAPIResourceOutcome
+                 */
+                ModifySecurityAPIResourceOutcome ModifySecurityAPIResource(const Model::ModifySecurityAPIResourceRequest &request);
+                void ModifySecurityAPIResourceAsync(const Model::ModifySecurityAPIResourceRequest& request, const ModifySecurityAPIResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityAPIResourceOutcomeCallable ModifySecurityAPIResourceCallable(const Model::ModifySecurityAPIResourceRequest& request);
+
+                /**
+                 *该接口用于修改 API 服务。
+                 * @param req ModifySecurityAPIServiceRequest
+                 * @return ModifySecurityAPIServiceOutcome
+                 */
+                ModifySecurityAPIServiceOutcome ModifySecurityAPIService(const Model::ModifySecurityAPIServiceRequest &request);
+                void ModifySecurityAPIServiceAsync(const Model::ModifySecurityAPIServiceRequest& request, const ModifySecurityAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityAPIServiceOutcomeCallable ModifySecurityAPIServiceCallable(const Model::ModifySecurityAPIServiceRequest& request);
+
+                /**
+                 *修改客户端认证选项。
+                 * @param req ModifySecurityClientAttesterRequest
+                 * @return ModifySecurityClientAttesterOutcome
+                 */
+                ModifySecurityClientAttesterOutcome ModifySecurityClientAttester(const Model::ModifySecurityClientAttesterRequest &request);
+                void ModifySecurityClientAttesterAsync(const Model::ModifySecurityClientAttesterRequest& request, const ModifySecurityClientAttesterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityClientAttesterOutcomeCallable ModifySecurityClientAttesterCallable(const Model::ModifySecurityClientAttesterRequest& request);
+
+                /**
                  *修改安全 IP 组。
                  * @param req ModifySecurityIPGroupRequest
                  * @return ModifySecurityIPGroupOutcome
@@ -2366,6 +2639,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifySecurityIPGroupOutcome ModifySecurityIPGroup(const Model::ModifySecurityIPGroupRequest &request);
                 void ModifySecurityIPGroupAsync(const Model::ModifySecurityIPGroupRequest& request, const ModifySecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySecurityIPGroupOutcomeCallable ModifySecurityIPGroupCallable(const Model::ModifySecurityIPGroupRequest& request);
+
+                /**
+                 *修改 JavaScript 注入规则。
+                 * @param req ModifySecurityJSInjectionRuleRequest
+                 * @return ModifySecurityJSInjectionRuleOutcome
+                 */
+                ModifySecurityJSInjectionRuleOutcome ModifySecurityJSInjectionRule(const Model::ModifySecurityJSInjectionRuleRequest &request);
+                void ModifySecurityJSInjectionRuleAsync(const Model::ModifySecurityJSInjectionRuleRequest& request, const ModifySecurityJSInjectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityJSInjectionRuleOutcomeCallable ModifySecurityJSInjectionRuleCallable(const Model::ModifySecurityJSInjectionRuleRequest& request);
 
                 /**
                  *修改Web&Bot安全配置。

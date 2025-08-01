@@ -29,7 +29,9 @@ ModifyInstanceRequest::ModifyInstanceRequest() :
     m_skuCodeHasBeenSet(false),
     m_deviceCertificateProvisionTypeHasBeenSet(false),
     m_automaticActivationHasBeenSet(false),
-    m_authorizationPolicyHasBeenSet(false)
+    m_authorizationPolicyHasBeenSet(false),
+    m_useDefaultServerCertHasBeenSet(false),
+    m_x509ModeHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,22 @@ string ModifyInstanceRequest::ToJsonString() const
         string key = "AuthorizationPolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_authorizationPolicy, allocator);
+    }
+
+    if (m_useDefaultServerCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseDefaultServerCert";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useDefaultServerCert, allocator);
+    }
+
+    if (m_x509ModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "X509Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_x509Mode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +232,38 @@ void ModifyInstanceRequest::SetAuthorizationPolicy(const bool& _authorizationPol
 bool ModifyInstanceRequest::AuthorizationPolicyHasBeenSet() const
 {
     return m_authorizationPolicyHasBeenSet;
+}
+
+bool ModifyInstanceRequest::GetUseDefaultServerCert() const
+{
+    return m_useDefaultServerCert;
+}
+
+void ModifyInstanceRequest::SetUseDefaultServerCert(const bool& _useDefaultServerCert)
+{
+    m_useDefaultServerCert = _useDefaultServerCert;
+    m_useDefaultServerCertHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::UseDefaultServerCertHasBeenSet() const
+{
+    return m_useDefaultServerCertHasBeenSet;
+}
+
+string ModifyInstanceRequest::GetX509Mode() const
+{
+    return m_x509Mode;
+}
+
+void ModifyInstanceRequest::SetX509Mode(const string& _x509Mode)
+{
+    m_x509Mode = _x509Mode;
+    m_x509ModeHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::X509ModeHasBeenSet() const
+{
+    return m_x509ModeHasBeenSet;
 }
 
 

@@ -138,6 +138,7 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/CreateJWTAuthenticatorRequest.h
   include/tencentcloud/mqtt/v20240516/model/DescribeCaCertificatesRequest.h
   include/tencentcloud/mqtt/v20240516/model/DeviceCertificateItem.h
+  include/tencentcloud/mqtt/v20240516/model/SubscriptionUserProperty.h
   include/tencentcloud/mqtt/v20240516/model/MQTTClientInfo.h
   include/tencentcloud/mqtt/v20240516/model/MQTTTopicItem.h
   include/tencentcloud/mqtt/v20240516/model/PriceTag.h
@@ -274,6 +275,7 @@ set(mqtt_src
   src/v20240516/model/CreateJWTAuthenticatorRequest.cpp
   src/v20240516/model/DescribeCaCertificatesRequest.cpp
   src/v20240516/model/DeviceCertificateItem.cpp
+  src/v20240516/model/SubscriptionUserProperty.cpp
   src/v20240516/model/MQTTClientInfo.cpp
   src/v20240516/model/MQTTTopicItem.cpp
   src/v20240516/model/PriceTag.cpp

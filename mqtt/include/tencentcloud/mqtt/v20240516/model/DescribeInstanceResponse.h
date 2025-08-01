@@ -445,6 +445,48 @@ API：通过API手动注册
                      */
                     bool MaxTopicFilterPerAutoSubscriptionPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用默认的服务端证书
+                     * @return UseDefaultServerCert 是否使用默认的服务端证书
+                     * 
+                     */
+                    bool GetUseDefaultServerCert() const;
+
+                    /**
+                     * 判断参数 UseDefaultServerCert 是否已赋值
+                     * @return UseDefaultServerCert 是否已赋值
+                     * 
+                     */
+                    bool UseDefaultServerCertHasBeenSet() const;
+
+                    /**
+                     * 获取服务端CA最大数量
+                     * @return TrustedCaLimit 服务端CA最大数量
+                     * 
+                     */
+                    int64_t GetTrustedCaLimit() const;
+
+                    /**
+                     * 判断参数 TrustedCaLimit 是否已赋值
+                     * @return TrustedCaLimit 是否已赋值
+                     * 
+                     */
+                    bool TrustedCaLimitHasBeenSet() const;
+
+                    /**
+                     * 获取服务端证书最大数量
+                     * @return ServerCertLimit 服务端证书最大数量
+                     * 
+                     */
+                    int64_t GetServerCertLimit() const;
+
+                    /**
+                     * 判断参数 ServerCertLimit 是否已赋值
+                     * @return ServerCertLimit 是否已赋值
+                     * 
+                     */
+                    bool ServerCertLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -619,6 +661,24 @@ API：通过API手动注册
                      */
                     int64_t m_maxTopicFilterPerAutoSubscriptionPolicy;
                     bool m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet;
+
+                    /**
+                     * 是否使用默认的服务端证书
+                     */
+                    bool m_useDefaultServerCert;
+                    bool m_useDefaultServerCertHasBeenSet;
+
+                    /**
+                     * 服务端CA最大数量
+                     */
+                    int64_t m_trustedCaLimit;
+                    bool m_trustedCaLimitHasBeenSet;
+
+                    /**
+                     * 服务端证书最大数量
+                     */
+                    int64_t m_serverCertLimit;
+                    bool m_serverCertLimitHasBeenSet;
 
                 };
             }

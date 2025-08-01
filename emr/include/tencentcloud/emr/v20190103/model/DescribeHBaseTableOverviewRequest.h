@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分页查询编号偏移量，从0开始	
-                     * @return Offset 分页查询编号偏移量，从0开始	
+                     * 获取页码，第一页:0，第二页:1
+                     * @return Offset 页码，第一页:0，第二页:1
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页查询编号偏移量，从0开始	
-                     * @param _offset 分页查询编号偏移量，从0开始	
+                     * 设置页码，第一页:0，第二页:1
+                     * @param _offset 页码，第一页:0，第二页:1
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 分页查询编号偏移量，从0开始	
+                     * 页码，第一页:0，第二页:1
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

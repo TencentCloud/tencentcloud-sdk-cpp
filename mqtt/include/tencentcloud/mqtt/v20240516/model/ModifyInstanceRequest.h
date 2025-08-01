@@ -201,6 +201,56 @@ API：手动通过API注册
                      */
                     bool AuthorizationPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用默认的服务端证书
+                     * @return UseDefaultServerCert 是否使用默认的服务端证书
+                     * 
+                     */
+                    bool GetUseDefaultServerCert() const;
+
+                    /**
+                     * 设置是否使用默认的服务端证书
+                     * @param _useDefaultServerCert 是否使用默认的服务端证书
+                     * 
+                     */
+                    void SetUseDefaultServerCert(const bool& _useDefaultServerCert);
+
+                    /**
+                     * 判断参数 UseDefaultServerCert 是否已赋值
+                     * @return UseDefaultServerCert 是否已赋值
+                     * 
+                     */
+                    bool UseDefaultServerCertHasBeenSet() const;
+
+                    /**
+                     * 获取TLS：单向认证
+mTLS；双向认证
+BYOC：一机一证
+                     * @return X509Mode TLS：单向认证
+mTLS；双向认证
+BYOC：一机一证
+                     * 
+                     */
+                    std::string GetX509Mode() const;
+
+                    /**
+                     * 设置TLS：单向认证
+mTLS；双向认证
+BYOC：一机一证
+                     * @param _x509Mode TLS：单向认证
+mTLS；双向认证
+BYOC：一机一证
+                     * 
+                     */
+                    void SetX509Mode(const std::string& _x509Mode);
+
+                    /**
+                     * 判断参数 X509Mode 是否已赋值
+                     * @return X509Mode 是否已赋值
+                     * 
+                     */
+                    bool X509ModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +297,20 @@ API：手动通过API注册
                      */
                     bool m_authorizationPolicy;
                     bool m_authorizationPolicyHasBeenSet;
+
+                    /**
+                     * 是否使用默认的服务端证书
+                     */
+                    bool m_useDefaultServerCert;
+                    bool m_useDefaultServerCertHasBeenSet;
+
+                    /**
+                     * TLS：单向认证
+mTLS；双向认证
+BYOC：一机一证
+                     */
+                    std::string m_x509Mode;
+                    bool m_x509ModeHasBeenSet;
 
                 };
             }
