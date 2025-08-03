@@ -35,7 +35,8 @@ DescribeDataEnginesRequest::DescribeDataEnginesRequest() :
     m_engineTypeHasBeenSet(false),
     m_datasourceConnectionNameSetHasBeenSet(false),
     m_engineGenerationHasBeenSet(false),
-    m_engineTypeDetailHasBeenSet(false)
+    m_engineTypeDetailHasBeenSet(false),
+    m_listHasListenerHasBeenSet(false)
 {
 }
 
@@ -165,6 +166,14 @@ string DescribeDataEnginesRequest::ToJsonString() const
         string key = "EngineTypeDetail";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_engineTypeDetail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_listHasListenerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ListHasListener";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_listHasListener, allocator);
     }
 
 
@@ -381,6 +390,22 @@ void DescribeDataEnginesRequest::SetEngineTypeDetail(const string& _engineTypeDe
 bool DescribeDataEnginesRequest::EngineTypeDetailHasBeenSet() const
 {
     return m_engineTypeDetailHasBeenSet;
+}
+
+bool DescribeDataEnginesRequest::GetListHasListener() const
+{
+    return m_listHasListener;
+}
+
+void DescribeDataEnginesRequest::SetListHasListener(const bool& _listHasListener)
+{
+    m_listHasListener = _listHasListener;
+    m_listHasListenerHasBeenSet = true;
+}
+
+bool DescribeDataEnginesRequest::ListHasListenerHasBeenSet() const
+{
+    return m_listHasListenerHasBeenSet;
 }
 
 

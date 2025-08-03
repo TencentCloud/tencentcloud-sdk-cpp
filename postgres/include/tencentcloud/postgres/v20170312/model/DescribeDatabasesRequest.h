@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return DBInstanceId 实例ID
+                     * 获取实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/product/409/16773)接口获取
+                     * @return DBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/product/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _dBInstanceId 实例ID
+                     * 设置实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/product/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/product/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -107,15 +107,19 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取单次显示数量
-                     * @return Limit 单次显示数量
+                     * 获取单次显示数量。建议最大取值100。
+默认值：20
+                     * @return Limit 单次显示数量。建议最大取值100。
+默认值：20
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置单次显示数量
-                     * @param _limit 单次显示数量
+                     * 设置单次显示数量。建议最大取值100。
+默认值：20
+                     * @param _limit 单次显示数量。建议最大取值100。
+默认值：20
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -130,7 +134,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/product/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
@@ -148,7 +152,8 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 单次显示数量
+                     * 单次显示数量。建议最大取值100。
+默认值：20
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

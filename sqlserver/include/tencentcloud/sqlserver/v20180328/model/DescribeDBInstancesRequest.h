@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool VersionSetHasBeenSet() const;
 
                     /**
-                     * 获取实例可用区，格式如：ap-guangzhou-2
-                     * @return Zone 实例可用区，格式如：ap-guangzhou-2
+                     * 获取实例可用区
+                     * @return Zone 实例可用区
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置实例可用区，格式如：ap-guangzhou-2
-                     * @param _zone 实例可用区，格式如：ap-guangzhou-2
+                     * 设置实例可用区
+                     * @param _zone 实例可用区
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -528,7 +528,7 @@ namespace TencentCloud
                     bool m_versionSetHasBeenSet;
 
                     /**
-                     * 实例可用区，格式如：ap-guangzhou-2
+                     * 实例可用区
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

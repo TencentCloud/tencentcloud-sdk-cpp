@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/AttrLabelRefer.h>
+#include <tencentcloud/lke/v20231130/model/DuplicateFileHandle.h>
 
 
 namespace TencentCloud
@@ -461,6 +462,27 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                      */
                     bool IsDownloadHasBeenSet() const;
 
+                    /**
+                     * 获取重复文档处理方式，按顺序匹配第一个满足条件的方式处理
+                     * @return DuplicateFileHandles 重复文档处理方式，按顺序匹配第一个满足条件的方式处理
+                     * 
+                     */
+                    std::vector<DuplicateFileHandle> GetDuplicateFileHandles() const;
+
+                    /**
+                     * 设置重复文档处理方式，按顺序匹配第一个满足条件的方式处理
+                     * @param _duplicateFileHandles 重复文档处理方式，按顺序匹配第一个满足条件的方式处理
+                     * 
+                     */
+                    void SetDuplicateFileHandles(const std::vector<DuplicateFileHandle>& _duplicateFileHandles);
+
+                    /**
+                     * 判断参数 DuplicateFileHandles 是否已赋值
+                     * @return DuplicateFileHandles 是否已赋值
+                     * 
+                     */
+                    bool DuplicateFileHandlesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -580,6 +602,12 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                      */
                     bool m_isDownload;
                     bool m_isDownloadHasBeenSet;
+
+                    /**
+                     * 重复文档处理方式，按顺序匹配第一个满足条件的方式处理
+                     */
+                    std::vector<DuplicateFileHandle> m_duplicateFileHandles;
+                    bool m_duplicateFileHandlesHasBeenSet;
 
                 };
             }

@@ -316,6 +316,27 @@ namespace TencentCloud
                      */
                     bool EngineTypeDetailHasBeenSet() const;
 
+                    /**
+                     * 获取默认 false, 为 true 时仅列出具有洞察 listener 的引擎
+                     * @return ListHasListener 默认 false, 为 true 时仅列出具有洞察 listener 的引擎
+                     * 
+                     */
+                    bool GetListHasListener() const;
+
+                    /**
+                     * 设置默认 false, 为 true 时仅列出具有洞察 listener 的引擎
+                     * @param _listHasListener 默认 false, 为 true 时仅列出具有洞察 listener 的引擎
+                     * 
+                     */
+                    void SetListHasListener(const bool& _listHasListener);
+
+                    /**
+                     * 判断参数 ListHasListener 是否已赋值
+                     * @return ListHasListener 是否已赋值
+                     * 
+                     */
+                    bool ListHasListenerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +416,12 @@ namespace TencentCloud
                      */
                     std::string m_engineTypeDetail;
                     bool m_engineTypeDetailHasBeenSet;
+
+                    /**
+                     * 默认 false, 为 true 时仅列出具有洞察 listener 的引擎
+                     */
+                    bool m_listHasListener;
+                    bool m_listHasListenerHasBeenSet;
 
                 };
             }

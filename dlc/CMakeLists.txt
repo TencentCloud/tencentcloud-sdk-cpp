@@ -38,6 +38,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeDataEngineEventsResponse.h
   include/tencentcloud/dlc/v20210125/model/SessionResourceTemplate.h
   include/tencentcloud/dlc/v20210125/model/DeleteNativeSparkSessionResponse.h
+  include/tencentcloud/dlc/v20210125/model/ElasticPlan.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSPartitionsRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSTableResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksInOrderRequest.h
@@ -52,6 +53,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementBatchResponse.h
   include/tencentcloud/dlc/v20210125/model/SmartOptimizerChangeTablePolicy.h
   include/tencentcloud/dlc/v20210125/model/BatchSqlTask.h
+  include/tencentcloud/dlc/v20210125/model/ScheduleElasticityConf.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionRequest.h
   include/tencentcloud/dlc/v20210125/model/UnboundDatasourceHouseRequest.h
   include/tencentcloud/dlc/v20210125/model/DeleteUserVpcConnectionResponse.h
@@ -520,6 +522,7 @@ set(dlc_src
   src/v20210125/model/DescribeDataEngineEventsResponse.cpp
   src/v20210125/model/SessionResourceTemplate.cpp
   src/v20210125/model/DeleteNativeSparkSessionResponse.cpp
+  src/v20210125/model/ElasticPlan.cpp
   src/v20210125/model/DescribeDMSPartitionsRequest.cpp
   src/v20210125/model/DescribeDMSTableResponse.cpp
   src/v20210125/model/CreateTasksInOrderRequest.cpp
@@ -534,6 +537,7 @@ set(dlc_src
   src/v20210125/model/CancelNotebookSessionStatementBatchResponse.cpp
   src/v20210125/model/SmartOptimizerChangeTablePolicy.cpp
   src/v20210125/model/BatchSqlTask.cpp
+  src/v20210125/model/ScheduleElasticityConf.cpp
   src/v20210125/model/CreateNotebookSessionRequest.cpp
   src/v20210125/model/UnboundDatasourceHouseRequest.cpp
   src/v20210125/model/DeleteUserVpcConnectionResponse.cpp

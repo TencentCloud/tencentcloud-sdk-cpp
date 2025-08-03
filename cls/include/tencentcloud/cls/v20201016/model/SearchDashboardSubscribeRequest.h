@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取仪表盘id。
-                     * @return DashboardId 仪表盘id。
+                     * 获取仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
+                     * @return DashboardId 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
                      * 
                      */
                     std::string GetDashboardId() const;
 
                     /**
-                     * 设置仪表盘id。
-                     * @param _dashboardId 仪表盘id。
+                     * 设置仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
+                     * @param _dashboardId 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
                      * 
                      */
                     void SetDashboardId(const std::string& _dashboardId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool SubscribeDataHasBeenSet() const;
 
                     /**
-                     * 获取仪表盘订阅Id。
-                     * @return Id 仪表盘订阅Id。
+                     * 获取仪表盘订阅Id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
+                     * @return Id 仪表盘订阅Id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置仪表盘订阅Id。
-                     * @param _id 仪表盘订阅Id。
+                     * 设置仪表盘订阅Id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
+                     * @param _id 仪表盘订阅Id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取仪表盘订阅名称。
-                     * @return Name 仪表盘订阅名称。
+                     * 获取仪表盘订阅名称。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Name。
+                     * @return Name 仪表盘订阅名称。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Name。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置仪表盘订阅名称。
-                     * @param _name 仪表盘订阅名称。
+                     * 设置仪表盘订阅名称。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Name。
+                     * @param _name 仪表盘订阅名称。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Name。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -130,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 仪表盘id。
+                     * 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
                      */
                     std::string m_dashboardId;
                     bool m_dashboardIdHasBeenSet;
@@ -142,13 +142,13 @@ namespace TencentCloud
                     bool m_subscribeDataHasBeenSet;
 
                     /**
-                     * 仪表盘订阅Id。
+                     * 仪表盘订阅Id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 仪表盘订阅名称。
+                     * 仪表盘订阅名称。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Name。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

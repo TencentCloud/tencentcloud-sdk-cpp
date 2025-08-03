@@ -79,7 +79,8 @@ DataEngineInfo::DataEngineInfo() :
     m_gatewayIdHasBeenSet(false),
     m_gatewayStateHasBeenSet(false),
     m_isAIGatewayHasBeenSet(false),
-    m_isAIEngineHasBeenSet(false)
+    m_isAIEngineHasBeenSet(false),
+    m_scheduleElasticityConfHasBeenSet(false)
 {
 }
 
@@ -725,6 +726,23 @@ CoreInternalOutcome DataEngineInfo::Deserialize(const rapidjson::Value &value)
         m_isAIEngineHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleElasticityConf") && !value["ScheduleElasticityConf"].IsNull())
+    {
+        if (!value["ScheduleElasticityConf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.ScheduleElasticityConf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_scheduleElasticityConf.Deserialize(value["ScheduleElasticityConf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_scheduleElasticityConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1230,6 +1248,15 @@ void DataEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "IsAIEngine";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAIEngine, allocator);
+    }
+
+    if (m_scheduleElasticityConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleElasticityConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scheduleElasticityConf.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2177,5 +2204,21 @@ void DataEngineInfo::SetIsAIEngine(const int64_t& _isAIEngine)
 bool DataEngineInfo::IsAIEngineHasBeenSet() const
 {
     return m_isAIEngineHasBeenSet;
+}
+
+ScheduleElasticityConf DataEngineInfo::GetScheduleElasticityConf() const
+{
+    return m_scheduleElasticityConf;
+}
+
+void DataEngineInfo::SetScheduleElasticityConf(const ScheduleElasticityConf& _scheduleElasticityConf)
+{
+    m_scheduleElasticityConf = _scheduleElasticityConf;
+    m_scheduleElasticityConfHasBeenSet = true;
+}
+
+bool DataEngineInfo::ScheduleElasticityConfHasBeenSet() const
+{
+    return m_scheduleElasticityConfHasBeenSet;
 }
 

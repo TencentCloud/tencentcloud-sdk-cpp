@@ -27,7 +27,8 @@ UpdateCloudRunServerRequest::UpdateCloudRunServerRequest() :
     m_serverNameHasBeenSet(false),
     m_deployInfoHasBeenSet(false),
     m_serverConfigHasBeenSet(false),
-    m_businessHasBeenSet(false)
+    m_businessHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,21 @@ string UpdateCloudRunServerRequest::ToJsonString() const
         string key = "Business";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Items";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -166,6 +182,22 @@ void UpdateCloudRunServerRequest::SetBusiness(const string& _business)
 bool UpdateCloudRunServerRequest::BusinessHasBeenSet() const
 {
     return m_businessHasBeenSet;
+}
+
+vector<DiffConfigItem> UpdateCloudRunServerRequest::GetItems() const
+{
+    return m_items;
+}
+
+void UpdateCloudRunServerRequest::SetItems(const vector<DiffConfigItem>& _items)
+{
+    m_items = _items;
+    m_itemsHasBeenSet = true;
+}
+
+bool UpdateCloudRunServerRequest::ItemsHasBeenSet() const
+{
+    return m_itemsHasBeenSet;
 }
 
 

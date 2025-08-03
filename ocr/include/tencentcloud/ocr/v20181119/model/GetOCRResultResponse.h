@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/OCRResult.h>
+#include <tencentcloud/ocr/v20181119/model/RequestIdInfo.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,20 @@ namespace TencentCloud
                      */
                     bool OCRResultHasBeenSet() const;
 
+                    /**
+                     * 获取requestid 信息
+                     * @return RequestIdInfos requestid 信息
+                     * 
+                     */
+                    std::vector<RequestIdInfo> GetRequestIdInfos() const;
+
+                    /**
+                     * 判断参数 RequestIdInfos 是否已赋值
+                     * @return RequestIdInfos 是否已赋值
+                     * 
+                     */
+                    bool RequestIdInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +100,12 @@ namespace TencentCloud
                      */
                     OCRResult m_oCRResult;
                     bool m_oCRResultHasBeenSet;
+
+                    /**
+                     * requestid 信息
+                     */
+                    std::vector<RequestIdInfo> m_requestIdInfos;
+                    bool m_requestIdInfosHasBeenSet;
 
                 };
             }

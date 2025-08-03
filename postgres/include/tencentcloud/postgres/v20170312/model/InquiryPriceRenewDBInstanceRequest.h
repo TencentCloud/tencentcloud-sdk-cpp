@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return DBInstanceId 实例ID
+                     * 获取实例ID，可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)获取。
+（此接口仅支持预付费实例的查询）
+                     * @return DBInstanceId 实例ID，可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)获取。
+（此接口仅支持预付费实例的查询）
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _dBInstanceId 实例ID
+                     * 设置实例ID，可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)获取。
+（此接口仅支持预付费实例的查询）
+                     * @param _dBInstanceId 实例ID，可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)获取。
+（此接口仅支持预付费实例的查询）
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +68,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取续费周期，按月计算，最大不超过48
-                     * @return Period 续费周期，按月计算，最大不超过48
+                     * 获取续费周期，按月计算
+                     * @return Period 续费周期，按月计算
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置续费周期，按月计算，最大不超过48
-                     * @param _period 续费周期，按月计算，最大不超过48
+                     * 设置续费周期，按月计算
+                     * @param _period 续费周期，按月计算
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -87,13 +91,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例ID，可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)获取。
+（此接口仅支持预付费实例的查询）
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 续费周期，按月计算，最大不超过48
+                     * 续费周期，按月计算
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;

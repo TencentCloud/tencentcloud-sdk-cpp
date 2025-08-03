@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取仪表盘订阅记录id。
-                     * @return Id 仪表盘订阅记录id。
+                     * 获取仪表盘订阅记录id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
+                     * @return Id 仪表盘订阅记录id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置仪表盘订阅记录id。
-                     * @param _id 仪表盘订阅记录id。
+                     * 设置仪表盘订阅记录id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
+                     * @param _id 仪表盘订阅记录id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 仪表盘订阅记录id。
+                     * 仪表盘订阅记录id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;

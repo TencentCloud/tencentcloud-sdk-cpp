@@ -27,7 +27,8 @@ SaveDocResponse::SaveDocResponse() :
     m_docBizIdHasBeenSet(false),
     m_errorMsgHasBeenSet(false),
     m_errorLinkHasBeenSet(false),
-    m_errorLinkTextHasBeenSet(false)
+    m_errorLinkTextHasBeenSet(false),
+    m_duplicateFileCheckTypeHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome SaveDocResponse::Deserialize(const string &payload)
         m_errorLinkTextHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DuplicateFileCheckType") && !rsp["DuplicateFileCheckType"].IsNull())
+    {
+        if (!rsp["DuplicateFileCheckType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DuplicateFileCheckType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_duplicateFileCheckType = rsp["DuplicateFileCheckType"].GetUint64();
+        m_duplicateFileCheckTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string SaveDocResponse::ToJsonString() const
         string key = "ErrorLinkText";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorLinkText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_duplicateFileCheckTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DuplicateFileCheckType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_duplicateFileCheckType, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ string SaveDocResponse::GetErrorLinkText() const
 bool SaveDocResponse::ErrorLinkTextHasBeenSet() const
 {
     return m_errorLinkTextHasBeenSet;
+}
+
+uint64_t SaveDocResponse::GetDuplicateFileCheckType() const
+{
+    return m_duplicateFileCheckType;
+}
+
+bool SaveDocResponse::DuplicateFileCheckTypeHasBeenSet() const
+{
+    return m_duplicateFileCheckTypeHasBeenSet;
 }
 
 

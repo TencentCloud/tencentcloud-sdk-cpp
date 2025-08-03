@@ -1213,7 +1213,7 @@ namespace TencentCloud
                 DescribeDBInstanceInterOutcomeCallable DescribeDBInstanceInterCallable(const Model::DescribeDBInstanceInterRequest& request);
 
                 /**
-                 *本接口(DescribeDBInstances)用于查询实例列表。
+                 *本接口（DescribeDBInstances）用于查询实例列表。
                  * @param req DescribeDBInstancesRequest
                  * @return DescribeDBInstancesOutcome
                  */

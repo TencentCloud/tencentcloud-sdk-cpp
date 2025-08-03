@@ -25,7 +25,8 @@ using namespace std;
 
 GetOCRResultResponse::GetOCRResultResponse() :
     m_typeHasBeenSet(false),
-    m_oCRResultHasBeenSet(false)
+    m_oCRResultHasBeenSet(false),
+    m_requestIdInfosHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,26 @@ CoreInternalOutcome GetOCRResultResponse::Deserialize(const string &payload)
         m_oCRResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RequestIdInfos") && !rsp["RequestIdInfos"].IsNull())
+    {
+        if (!rsp["RequestIdInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RequestIdInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RequestIdInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RequestIdInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_requestIdInfos.push_back(item);
+        }
+        m_requestIdInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +136,21 @@ string GetOCRResultResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_oCRResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_requestIdInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestIdInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_requestIdInfos.begin(); itr != m_requestIdInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +183,16 @@ OCRResult GetOCRResultResponse::GetOCRResult() const
 bool GetOCRResultResponse::OCRResultHasBeenSet() const
 {
     return m_oCRResultHasBeenSet;
+}
+
+vector<RequestIdInfo> GetOCRResultResponse::GetRequestIdInfos() const
+{
+    return m_requestIdInfos;
+}
+
+bool GetOCRResultResponse::RequestIdInfosHasBeenSet() const
+{
+    return m_requestIdInfosHasBeenSet;
 }
 
 

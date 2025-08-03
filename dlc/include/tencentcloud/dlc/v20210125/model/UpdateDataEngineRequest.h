@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/CrontabResumeSuspendStrategy.h>
 #include <tencentcloud/dlc/v20210125/model/SessionResourceTemplate.h>
+#include <tencentcloud/dlc/v20210125/model/ScheduleElasticityConf.h>
 
 
 namespace TencentCloud
@@ -359,6 +360,27 @@ namespace TencentCloud
                      */
                     bool SessionResourceTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取引擎资源弹性伸缩策略
+                     * @return ScheduleElasticityConf 引擎资源弹性伸缩策略
+                     * 
+                     */
+                    ScheduleElasticityConf GetScheduleElasticityConf() const;
+
+                    /**
+                     * 设置引擎资源弹性伸缩策略
+                     * @param _scheduleElasticityConf 引擎资源弹性伸缩策略
+                     * 
+                     */
+                    void SetScheduleElasticityConf(const ScheduleElasticityConf& _scheduleElasticityConf);
+
+                    /**
+                     * 判断参数 ScheduleElasticityConf 是否已赋值
+                     * @return ScheduleElasticityConf 是否已赋值
+                     * 
+                     */
+                    bool ScheduleElasticityConfHasBeenSet() const;
+
                 private:
 
                     /**
@@ -450,6 +472,12 @@ namespace TencentCloud
                      */
                     SessionResourceTemplate m_sessionResourceTemplate;
                     bool m_sessionResourceTemplateHasBeenSet;
+
+                    /**
+                     * 引擎资源弹性伸缩策略
+                     */
+                    ScheduleElasticityConf m_scheduleElasticityConf;
+                    bool m_scheduleElasticityConfHasBeenSet;
 
                 };
             }

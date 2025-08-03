@@ -29,6 +29,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/BankSlipOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/BusinessCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/VinOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ResidencePermitInfo.h
   include/tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/SmartStructuralOCRResponse.h
@@ -239,7 +240,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/PassInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/QuestionObj.h
   include/tencentcloud/ocr/v20181119/model/TableInfo.h
-  include/tencentcloud/ocr/v20181119/model/VinOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RequestIdInfo.h
   include/tencentcloud/ocr/v20181119/model/EduPaperOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/FormulaOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TextGeneralHandwriting.h
@@ -356,6 +357,7 @@ set(ocr_src
   src/v20181119/model/BankSlipOCRRequest.cpp
   src/v20181119/model/BusinessCardOCRResponse.cpp
   src/v20181119/model/QuotaInvoiceOCRRequest.cpp
+  src/v20181119/model/VinOCRResponse.cpp
   src/v20181119/model/ResidencePermitInfo.cpp
   src/v20181119/model/BankCardOCRRequest.cpp
   src/v20181119/model/SmartStructuralOCRResponse.cpp
@@ -566,7 +568,7 @@ set(ocr_src
   src/v20181119/model/PassInvoiceInfo.cpp
   src/v20181119/model/QuestionObj.cpp
   src/v20181119/model/TableInfo.cpp
-  src/v20181119/model/VinOCRResponse.cpp
+  src/v20181119/model/RequestIdInfo.cpp
   src/v20181119/model/EduPaperOCRRequest.cpp
   src/v20181119/model/FormulaOCRRequest.cpp
   src/v20181119/model/TextGeneralHandwriting.cpp

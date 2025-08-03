@@ -766,7 +766,7 @@ namespace TencentCloud
                 SetInstanceMaintenanceOutcomeCallable SetInstanceMaintenanceCallable(const Model::SetInstanceMaintenanceRequest& request);
 
                 /**
-                 *本接口（TerminateDBInstances）可将包年包月实例退还隔离。
+                 *本接口（TerminateDBInstances）用于退还包年包月计费实例。
                  * @param req TerminateDBInstancesRequest
                  * @return TerminateDBInstancesOutcome
                  */

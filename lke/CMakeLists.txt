@@ -281,6 +281,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/GetAppKnowledgeCountResponse.h
   include/tencentcloud/lke/v20231130/model/AgentKnowledgeFilterDocAndAnswer.h
   include/tencentcloud/lke/v20231130/model/CreateAttributeLabelResponse.h
+  include/tencentcloud/lke/v20231130/model/DuplicateFileHandle.h
   include/tencentcloud/lke/v20231130/model/DescribeAppAgentListRequest.h
   include/tencentcloud/lke/v20231130/model/ListAppKnowledgeDetailRequest.h
   include/tencentcloud/lke/v20231130/model/CreateQAResponse.h
@@ -616,6 +617,7 @@ set(lke_src
   src/v20231130/model/GetAppKnowledgeCountResponse.cpp
   src/v20231130/model/AgentKnowledgeFilterDocAndAnswer.cpp
   src/v20231130/model/CreateAttributeLabelResponse.cpp
+  src/v20231130/model/DuplicateFileHandle.cpp
   src/v20231130/model/DescribeAppAgentListRequest.cpp
   src/v20231130/model/ListAppKnowledgeDetailRequest.cpp
   src/v20231130/model/CreateQAResponse.cpp

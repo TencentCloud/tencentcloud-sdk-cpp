@@ -40,7 +40,8 @@ SaveDocRequest::SaveDocRequest() :
     m_isReferHasBeenSet(false),
     m_optHasBeenSet(false),
     m_cateBizIdHasBeenSet(false),
-    m_isDownloadHasBeenSet(false)
+    m_isDownloadHasBeenSet(false),
+    m_duplicateFileHandlesHasBeenSet(false)
 {
 }
 
@@ -200,6 +201,21 @@ string SaveDocRequest::ToJsonString() const
         string key = "IsDownload";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isDownload, allocator);
+    }
+
+    if (m_duplicateFileHandlesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DuplicateFileHandles";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_duplicateFileHandles.begin(); itr != m_duplicateFileHandles.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -496,6 +512,22 @@ void SaveDocRequest::SetIsDownload(const bool& _isDownload)
 bool SaveDocRequest::IsDownloadHasBeenSet() const
 {
     return m_isDownloadHasBeenSet;
+}
+
+vector<DuplicateFileHandle> SaveDocRequest::GetDuplicateFileHandles() const
+{
+    return m_duplicateFileHandles;
+}
+
+void SaveDocRequest::SetDuplicateFileHandles(const vector<DuplicateFileHandle>& _duplicateFileHandles)
+{
+    m_duplicateFileHandles = _duplicateFileHandles;
+    m_duplicateFileHandlesHasBeenSet = true;
+}
+
+bool SaveDocRequest::DuplicateFileHandlesHasBeenSet() const
+{
+    return m_duplicateFileHandlesHasBeenSet;
 }
 
 

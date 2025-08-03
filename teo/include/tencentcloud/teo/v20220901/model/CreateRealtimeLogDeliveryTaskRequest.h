@@ -94,11 +94,11 @@ namespace TencentCloud
                      * 获取实时日志投递任务类型，取值有：
 <li>cls: 推送到腾讯云 CLS；</li>
 <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>
-<li>s3：推送到 AWS S3 兼容存储桶地址。</li>
+<li>s3：推送到 AWS S3 兼容存储桶地址；</li>
                      * @return TaskType 实时日志投递任务类型，取值有：
 <li>cls: 推送到腾讯云 CLS；</li>
 <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>
-<li>s3：推送到 AWS S3 兼容存储桶地址。</li>
+<li>s3：推送到 AWS S3 兼容存储桶地址；</li>
                      * 
                      */
                     std::string GetTaskType() const;
@@ -107,11 +107,11 @@ namespace TencentCloud
                      * 设置实时日志投递任务类型，取值有：
 <li>cls: 推送到腾讯云 CLS；</li>
 <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>
-<li>s3：推送到 AWS S3 兼容存储桶地址。</li>
+<li>s3：推送到 AWS S3 兼容存储桶地址；</li>
                      * @param _taskType 实时日志投递任务类型，取值有：
 <li>cls: 推送到腾讯云 CLS；</li>
 <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>
-<li>s3：推送到 AWS S3 兼容存储桶地址。</li>
+<li>s3：推送到 AWS S3 兼容存储桶地址；</li>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -124,23 +124,27 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下：
-<li>七层域名：domain.example.com；</li>
-<li>四层代理实例：sid-2s69eb5wcms7。</li>
-                     * @return EntityList 实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下：
-<li>七层域名：domain.example.com；</li>
-<li>四层代理实例：sid-2s69eb5wcms7。</li>
+                     * 获取实时日志投递任务对应的实体列表。取值示例如下：
+<li>七层域名：domain.example.com</li>
+<li>四层代理实例：sid-2s69eb5wcms7</li>
+<li>边缘函数实例：test-zone-2mxigizoh9l9-1257626257</li>
+                     * @return EntityList 实时日志投递任务对应的实体列表。取值示例如下：
+<li>七层域名：domain.example.com</li>
+<li>四层代理实例：sid-2s69eb5wcms7</li>
+<li>边缘函数实例：test-zone-2mxigizoh9l9-1257626257</li>
                      * 
                      */
                     std::vector<std::string> GetEntityList() const;
 
                     /**
-                     * 设置实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下：
-<li>七层域名：domain.example.com；</li>
-<li>四层代理实例：sid-2s69eb5wcms7。</li>
-                     * @param _entityList 实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下：
-<li>七层域名：domain.example.com；</li>
-<li>四层代理实例：sid-2s69eb5wcms7。</li>
+                     * 设置实时日志投递任务对应的实体列表。取值示例如下：
+<li>七层域名：domain.example.com</li>
+<li>四层代理实例：sid-2s69eb5wcms7</li>
+<li>边缘函数实例：test-zone-2mxigizoh9l9-1257626257</li>
+                     * @param _entityList 实时日志投递任务对应的实体列表。取值示例如下：
+<li>七层域名：domain.example.com</li>
+<li>四层代理实例：sid-2s69eb5wcms7</li>
+<li>边缘函数实例：test-zone-2mxigizoh9l9-1257626257</li>
                      * 
                      */
                     void SetEntityList(const std::vector<std::string>& _entityList);
@@ -156,6 +160,7 @@ namespace TencentCloud
                      * 获取数据投递类型，取值有：
 <li>domain：站点加速日志；</li>
 <li>application：四层代理日志；</li>
+<li>function：边缘函数运行日志；</li>
 <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li>
 <li>web-attack：托管规则日志；</li>
 <li>web-rule：自定义规则日志；</li>
@@ -163,6 +168,7 @@ namespace TencentCloud
                      * @return LogType 数据投递类型，取值有：
 <li>domain：站点加速日志；</li>
 <li>application：四层代理日志；</li>
+<li>function：边缘函数运行日志；</li>
 <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li>
 <li>web-attack：托管规则日志；</li>
 <li>web-rule：自定义规则日志；</li>
@@ -175,6 +181,7 @@ namespace TencentCloud
                      * 设置数据投递类型，取值有：
 <li>domain：站点加速日志；</li>
 <li>application：四层代理日志；</li>
+<li>function：边缘函数运行日志；</li>
 <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li>
 <li>web-attack：托管规则日志；</li>
 <li>web-rule：自定义规则日志；</li>
@@ -182,6 +189,7 @@ namespace TencentCloud
                      * @param _logType 数据投递类型，取值有：
 <li>domain：站点加速日志；</li>
 <li>application：四层代理日志；</li>
+<li>function：边缘函数运行日志；</li>
 <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li>
 <li>web-attack：托管规则日志；</li>
 <li>web-rule：自定义规则日志；</li>
@@ -227,15 +235,27 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取投递的预设字段列表。
-                     * @return Fields 投递的预设字段列表。
+                     * 获取投递的预设字段列表。取值参考：
+<li>[站点加速日志（七层访问日志）](https://cloud.tencent.com/document/product/1552/105791)</li>
+<li>[四层代理日志](https://cloud.tencent.com/document/product/1552/105792)</li>
+<li>[边缘函数运行日志](https://cloud.tencent.com/document/product/1552/115585)</li>
+                     * @return Fields 投递的预设字段列表。取值参考：
+<li>[站点加速日志（七层访问日志）](https://cloud.tencent.com/document/product/1552/105791)</li>
+<li>[四层代理日志](https://cloud.tencent.com/document/product/1552/105792)</li>
+<li>[边缘函数运行日志](https://cloud.tencent.com/document/product/1552/115585)</li>
                      * 
                      */
                     std::vector<std::string> GetFields() const;
 
                     /**
-                     * 设置投递的预设字段列表。
-                     * @param _fields 投递的预设字段列表。
+                     * 设置投递的预设字段列表。取值参考：
+<li>[站点加速日志（七层访问日志）](https://cloud.tencent.com/document/product/1552/105791)</li>
+<li>[四层代理日志](https://cloud.tencent.com/document/product/1552/105792)</li>
+<li>[边缘函数运行日志](https://cloud.tencent.com/document/product/1552/115585)</li>
+                     * @param _fields 投递的预设字段列表。取值参考：
+<li>[站点加速日志（七层访问日志）](https://cloud.tencent.com/document/product/1552/105791)</li>
+<li>[四层代理日志](https://cloud.tencent.com/document/product/1552/105792)</li>
+<li>[边缘函数运行日志](https://cloud.tencent.com/document/product/1552/115585)</li>
                      * 
                      */
                     void SetFields(const std::vector<std::string>& _fields);
@@ -420,15 +440,16 @@ namespace TencentCloud
                      * 实时日志投递任务类型，取值有：
 <li>cls: 推送到腾讯云 CLS；</li>
 <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>
-<li>s3：推送到 AWS S3 兼容存储桶地址。</li>
+<li>s3：推送到 AWS S3 兼容存储桶地址；</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下：
-<li>七层域名：domain.example.com；</li>
-<li>四层代理实例：sid-2s69eb5wcms7。</li>
+                     * 实时日志投递任务对应的实体列表。取值示例如下：
+<li>七层域名：domain.example.com</li>
+<li>四层代理实例：sid-2s69eb5wcms7</li>
+<li>边缘函数实例：test-zone-2mxigizoh9l9-1257626257</li>
                      */
                     std::vector<std::string> m_entityList;
                     bool m_entityListHasBeenSet;
@@ -437,6 +458,7 @@ namespace TencentCloud
                      * 数据投递类型，取值有：
 <li>domain：站点加速日志；</li>
 <li>application：四层代理日志；</li>
+<li>function：边缘函数运行日志；</li>
 <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li>
 <li>web-attack：托管规则日志；</li>
 <li>web-rule：自定义规则日志；</li>
@@ -454,7 +476,10 @@ namespace TencentCloud
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 投递的预设字段列表。
+                     * 投递的预设字段列表。取值参考：
+<li>[站点加速日志（七层访问日志）](https://cloud.tencent.com/document/product/1552/105791)</li>
+<li>[四层代理日志](https://cloud.tencent.com/document/product/1552/105792)</li>
+<li>[边缘函数运行日志](https://cloud.tencent.com/document/product/1552/115585)</li>
                      */
                     std::vector<std::string> m_fields;
                     bool m_fieldsHasBeenSet;
