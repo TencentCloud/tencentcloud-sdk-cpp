@@ -66,6 +66,7 @@ namespace TencentCloud
 <li>VoiceTranslation: 语音翻译</li>
 <li>JITTranscoding: 即时转码</li>
 <li>VideoSnapshot: 视频截图</li>
+<li>JITEncryption: 即时加密</li>
                      * @return TaskType 任务类型。
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
@@ -83,6 +84,7 @@ namespace TencentCloud
 <li>VoiceTranslation: 语音翻译</li>
 <li>JITTranscoding: 即时转码</li>
 <li>VideoSnapshot: 视频截图</li>
+<li>JITEncryption: 即时加密</li>
                      * 
                      */
                     std::string GetTaskType() const;
@@ -105,6 +107,7 @@ namespace TencentCloud
 <li>VoiceTranslation: 语音翻译</li>
 <li>JITTranscoding: 即时转码</li>
 <li>VideoSnapshot: 视频截图</li>
+<li>JITEncryption: 即时加密</li>
                      * @param _taskType 任务类型。
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
@@ -122,6 +125,7 @@ namespace TencentCloud
 <li>VoiceTranslation: 语音翻译</li>
 <li>JITTranscoding: 即时转码</li>
 <li>VideoSnapshot: 视频截图</li>
+<li>JITEncryption: 即时加密</li>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -447,6 +451,7 @@ namespace TencentCloud
 <li>VoiceTranslation: 语音翻译</li>
 <li>JITTranscoding: 即时转码</li>
 <li>VideoSnapshot: 视频截图</li>
+<li>JITEncryption: 即时加密</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;

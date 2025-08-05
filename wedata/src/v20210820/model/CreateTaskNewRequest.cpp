@@ -27,13 +27,13 @@ CreateTaskNewRequest::CreateTaskNewRequest() :
     m_workflowIdHasBeenSet(false),
     m_taskNameHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
+    m_contentHasBeenSet(false),
     m_taskExtHasBeenSet(false),
     m_productNameHasBeenSet(false),
     m_instanceInitStrategyHasBeenSet(false),
     m_leftCoordinateHasBeenSet(false),
     m_topCoordinateHasBeenSet(false),
     m_taskFolderIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
     m_codeTemplateIdHasBeenSet(false)
 {
 }
@@ -75,6 +75,14 @@ string CreateTaskNewRequest::ToJsonString() const
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_contentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Content";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskExtHasBeenSet)
@@ -130,14 +138,6 @@ string CreateTaskNewRequest::ToJsonString() const
         string key = "TaskFolderId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskFolderId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_contentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Content";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
     if (m_codeTemplateIdHasBeenSet)
@@ -218,6 +218,22 @@ void CreateTaskNewRequest::SetTaskType(const int64_t& _taskType)
 bool CreateTaskNewRequest::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+string CreateTaskNewRequest::GetContent() const
+{
+    return m_content;
+}
+
+void CreateTaskNewRequest::SetContent(const string& _content)
+{
+    m_content = _content;
+    m_contentHasBeenSet = true;
+}
+
+bool CreateTaskNewRequest::ContentHasBeenSet() const
+{
+    return m_contentHasBeenSet;
 }
 
 vector<TaskExtInfo> CreateTaskNewRequest::GetTaskExt() const
@@ -314,22 +330,6 @@ void CreateTaskNewRequest::SetTaskFolderId(const string& _taskFolderId)
 bool CreateTaskNewRequest::TaskFolderIdHasBeenSet() const
 {
     return m_taskFolderIdHasBeenSet;
-}
-
-string CreateTaskNewRequest::GetContent() const
-{
-    return m_content;
-}
-
-void CreateTaskNewRequest::SetContent(const string& _content)
-{
-    m_content = _content;
-    m_contentHasBeenSet = true;
-}
-
-bool CreateTaskNewRequest::ContentHasBeenSet() const
-{
-    return m_contentHasBeenSet;
 }
 
 string CreateTaskNewRequest::GetCodeTemplateId() const

@@ -148,6 +148,64 @@ namespace TencentCloud
                      */
                     bool FromTopicHasBeenSet() const;
 
+                    /**
+                     * 获取按照指定字段排序，枚举值如下：
+- subscribeNum：订阅 Topic 个数
+                     * @return SortedBy 按照指定字段排序，枚举值如下：
+- subscribeNum：订阅 Topic 个数
+                     * 
+                     */
+                    std::string GetSortedBy() const;
+
+                    /**
+                     * 设置按照指定字段排序，枚举值如下：
+- subscribeNum：订阅 Topic 个数
+                     * @param _sortedBy 按照指定字段排序，枚举值如下：
+- subscribeNum：订阅 Topic 个数
+                     * 
+                     */
+                    void SetSortedBy(const std::string& _sortedBy);
+
+                    /**
+                     * 判断参数 SortedBy 是否已赋值
+                     * @return SortedBy 是否已赋值
+                     * 
+                     */
+                    bool SortedByHasBeenSet() const;
+
+                    /**
+                     * 获取按升序或降序排列，枚举值如下：
+
+- asc：升序
+- desc：降序
+                     * @return SortOrder 按升序或降序排列，枚举值如下：
+
+- asc：升序
+- desc：降序
+                     * 
+                     */
+                    std::string GetSortOrder() const;
+
+                    /**
+                     * 设置按升序或降序排列，枚举值如下：
+
+- asc：升序
+- desc：降序
+                     * @param _sortOrder 按升序或降序排列，枚举值如下：
+
+- asc：升序
+- desc：降序
+                     * 
+                     */
+                    void SetSortOrder(const std::string& _sortOrder);
+
+                    /**
+                     * 判断参数 SortOrder 是否已赋值
+                     * @return SortOrder 是否已赋值
+                     * 
+                     */
+                    bool SortOrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +237,22 @@ namespace TencentCloud
                      */
                     std::string m_fromTopic;
                     bool m_fromTopicHasBeenSet;
+
+                    /**
+                     * 按照指定字段排序，枚举值如下：
+- subscribeNum：订阅 Topic 个数
+                     */
+                    std::string m_sortedBy;
+                    bool m_sortedByHasBeenSet;
+
+                    /**
+                     * 按升序或降序排列，枚举值如下：
+
+- asc：升序
+- desc：降序
+                     */
+                    std::string m_sortOrder;
+                    bool m_sortOrderHasBeenSet;
 
                 };
             }

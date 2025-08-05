@@ -52,13 +52,13 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DeleteServerlessInstanceResponse.h
   include/tencentcloud/es/v20180416/model/InstallInstanceModelResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h
-  include/tencentcloud/es/v20180416/model/LogstashPipeline.h
+  include/tencentcloud/es/v20180416/model/IndexOptionsField.h
   include/tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesResponse.h
   include/tencentcloud/es/v20180416/model/JobParam.h
   include/tencentcloud/es/v20180416/model/Failures.h
   include/tencentcloud/es/v20180416/model/DeleteLogstashInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeLogstashInstancesRequest.h
-  include/tencentcloud/es/v20180416/model/IndexOptionsField.h
+  include/tencentcloud/es/v20180416/model/AutoScaleDiskInfo.h
   include/tencentcloud/es/v20180416/model/CreateServerlessSpaceV2Response.h
   include/tencentcloud/es/v20180416/model/ServerlessSpace.h
   include/tencentcloud/es/v20180416/model/DeleteClusterSnapshotRequest.h
@@ -71,6 +71,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/Operation.h
   include/tencentcloud/es/v20180416/model/DiDataSourceCvm.h
   include/tencentcloud/es/v20180416/model/InstanceLog.h
+  include/tencentcloud/es/v20180416/model/LogstashPipeline.h
   include/tencentcloud/es/v20180416/model/CreateIndexResponse.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserResponse.h
   include/tencentcloud/es/v20180416/model/LogDetail.h
@@ -289,13 +290,13 @@ set(es_src
   src/v20180416/model/DeleteServerlessInstanceResponse.cpp
   src/v20180416/model/InstallInstanceModelResponse.cpp
   src/v20180416/model/DescribeInstanceOperationsResponse.cpp
-  src/v20180416/model/LogstashPipeline.cpp
+  src/v20180416/model/IndexOptionsField.cpp
   src/v20180416/model/UpdateRequestTargetNodeTypesResponse.cpp
   src/v20180416/model/JobParam.cpp
   src/v20180416/model/Failures.cpp
   src/v20180416/model/DeleteLogstashInstanceResponse.cpp
   src/v20180416/model/DescribeLogstashInstancesRequest.cpp
-  src/v20180416/model/IndexOptionsField.cpp
+  src/v20180416/model/AutoScaleDiskInfo.cpp
   src/v20180416/model/CreateServerlessSpaceV2Response.cpp
   src/v20180416/model/ServerlessSpace.cpp
   src/v20180416/model/DeleteClusterSnapshotRequest.cpp
@@ -308,6 +309,7 @@ set(es_src
   src/v20180416/model/Operation.cpp
   src/v20180416/model/DiDataSourceCvm.cpp
   src/v20180416/model/InstanceLog.cpp
+  src/v20180416/model/LogstashPipeline.cpp
   src/v20180416/model/CreateIndexResponse.cpp
   src/v20180416/model/DescribeServerlessSpaceUserResponse.cpp
   src/v20180416/model/LogDetail.cpp

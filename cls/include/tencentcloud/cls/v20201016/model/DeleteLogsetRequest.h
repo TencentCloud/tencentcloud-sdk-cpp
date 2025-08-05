@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志集ID
-                     * @return LogsetId 日志集ID
+                     * 获取日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
+                     * @return LogsetId 日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置日志集ID
-                     * @param _logsetId 日志集ID
+                     * 设置日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
+                     * @param _logsetId 日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志集ID
+                     * 日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;

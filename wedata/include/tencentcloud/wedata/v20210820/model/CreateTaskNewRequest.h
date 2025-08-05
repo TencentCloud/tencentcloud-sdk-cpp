@@ -128,6 +128,27 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
+                     * 获取（必填参数）指定脚本内容，base64编码
+                     * @return Content （必填参数）指定脚本内容，base64编码
+                     * 
+                     */
+                    std::string GetContent() const;
+
+                    /**
+                     * 设置（必填参数）指定脚本内容，base64编码
+                     * @param _content （必填参数）指定脚本内容，base64编码
+                     * 
+                     */
+                    void SetContent(const std::string& _content);
+
+                    /**
+                     * 判断参数 Content 是否已赋值
+                     * @return Content 是否已赋值
+                     * 
+                     */
+                    bool ContentHasBeenSet() const;
+
+                    /**
                      * 获取扩展属性
                      * @return TaskExt 扩展属性
                      * 
@@ -254,27 +275,6 @@ namespace TencentCloud
                     bool TaskFolderIdHasBeenSet() const;
 
                     /**
-                     * 获取（必填参数）指定脚本内容，base64编码
-                     * @return Content （必填参数）指定脚本内容，base64编码
-                     * 
-                     */
-                    std::string GetContent() const;
-
-                    /**
-                     * 设置（必填参数）指定脚本内容，base64编码
-                     * @param _content （必填参数）指定脚本内容，base64编码
-                     * 
-                     */
-                    void SetContent(const std::string& _content);
-
-                    /**
-                     * 判断参数 Content 是否已赋值
-                     * @return Content 是否已赋值
-                     * 
-                     */
-                    bool ContentHasBeenSet() const;
-
-                    /**
                      * 获取代码模板ID
                      * @return CodeTemplateId 代码模板ID
                      * 
@@ -322,6 +322,12 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
+                     * （必填参数）指定脚本内容，base64编码
+                     */
+                    std::string m_content;
+                    bool m_contentHasBeenSet;
+
+                    /**
                      * 扩展属性
                      */
                     std::vector<TaskExtInfo> m_taskExt;
@@ -356,12 +362,6 @@ namespace TencentCloud
                      */
                     std::string m_taskFolderId;
                     bool m_taskFolderIdHasBeenSet;
-
-                    /**
-                     * （必填参数）指定脚本内容，base64编码
-                     */
-                    std::string m_content;
-                    bool m_contentHasBeenSet;
 
                     /**
                      * 代码模板ID

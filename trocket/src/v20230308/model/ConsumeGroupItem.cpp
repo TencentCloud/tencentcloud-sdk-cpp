@@ -30,7 +30,9 @@ ConsumeGroupItem::ConsumeGroupItem() :
     m_clusterIdV4HasBeenSet(false),
     m_namespaceV4HasBeenSet(false),
     m_consumerGroupV4HasBeenSet(false),
-    m_fullNamespaceV4HasBeenSet(false)
+    m_fullNamespaceV4HasBeenSet(false),
+    m_subscribeTopicNumHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome ConsumeGroupItem::Deserialize(const rapidjson::Value &value)
         m_fullNamespaceV4HasBeenSet = true;
     }
 
+    if (value.HasMember("SubscribeTopicNum") && !value["SubscribeTopicNum"].IsNull())
+    {
+        if (!value["SubscribeTopicNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumeGroupItem.SubscribeTopicNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscribeTopicNum = value["SubscribeTopicNum"].GetInt64();
+        m_subscribeTopicNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumeGroupItem.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetInt64();
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void ConsumeGroupItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "FullNamespaceV4";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fullNamespaceV4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subscribeTopicNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscribeTopicNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subscribeTopicNum, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void ConsumeGroupItem::SetFullNamespaceV4(const string& _fullNamespaceV4)
 bool ConsumeGroupItem::FullNamespaceV4HasBeenSet() const
 {
     return m_fullNamespaceV4HasBeenSet;
+}
+
+int64_t ConsumeGroupItem::GetSubscribeTopicNum() const
+{
+    return m_subscribeTopicNum;
+}
+
+void ConsumeGroupItem::SetSubscribeTopicNum(const int64_t& _subscribeTopicNum)
+{
+    m_subscribeTopicNum = _subscribeTopicNum;
+    m_subscribeTopicNumHasBeenSet = true;
+}
+
+bool ConsumeGroupItem::SubscribeTopicNumHasBeenSet() const
+{
+    return m_subscribeTopicNumHasBeenSet;
+}
+
+int64_t ConsumeGroupItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ConsumeGroupItem::SetCreateTime(const int64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ConsumeGroupItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

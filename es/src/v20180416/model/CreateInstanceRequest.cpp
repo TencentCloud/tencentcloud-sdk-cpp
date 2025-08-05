@@ -62,7 +62,9 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_subProductCodeHasBeenSet(false),
     m_readWriteModeHasBeenSet(false),
     m_enableScheduleRecoverGroupHasBeenSet(false),
-    m_enableScheduleOperationDurationHasBeenSet(false)
+    m_enableScheduleOperationDurationHasBeenSet(false),
+    m_autoScaleDiskInfoListHasBeenSet(false),
+    m_enableKibanaPublicAccessHasBeenSet(false)
 {
 }
 
@@ -420,6 +422,29 @@ string CreateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enableScheduleOperationDuration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_autoScaleDiskInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScaleDiskInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_autoScaleDiskInfoList.begin(); itr != m_autoScaleDiskInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_enableKibanaPublicAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableKibanaPublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_enableKibanaPublicAccess.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1068,6 +1093,38 @@ void CreateInstanceRequest::SetEnableScheduleOperationDuration(const EnableSched
 bool CreateInstanceRequest::EnableScheduleOperationDurationHasBeenSet() const
 {
     return m_enableScheduleOperationDurationHasBeenSet;
+}
+
+vector<AutoScaleDiskInfo> CreateInstanceRequest::GetAutoScaleDiskInfoList() const
+{
+    return m_autoScaleDiskInfoList;
+}
+
+void CreateInstanceRequest::SetAutoScaleDiskInfoList(const vector<AutoScaleDiskInfo>& _autoScaleDiskInfoList)
+{
+    m_autoScaleDiskInfoList = _autoScaleDiskInfoList;
+    m_autoScaleDiskInfoListHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::AutoScaleDiskInfoListHasBeenSet() const
+{
+    return m_autoScaleDiskInfoListHasBeenSet;
+}
+
+string CreateInstanceRequest::GetEnableKibanaPublicAccess() const
+{
+    return m_enableKibanaPublicAccess;
+}
+
+void CreateInstanceRequest::SetEnableKibanaPublicAccess(const string& _enableKibanaPublicAccess)
+{
+    m_enableKibanaPublicAccess = _enableKibanaPublicAccess;
+    m_enableKibanaPublicAccessHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::EnableKibanaPublicAccessHasBeenSet() const
+{
+    return m_enableKibanaPublicAccessHasBeenSet;
 }
 
 

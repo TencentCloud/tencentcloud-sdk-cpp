@@ -44,15 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志集名字，不能重名
-                     * @return LogsetName 日志集名字，不能重名
+                     * 获取日志集名字。
+
+- 最大支持255个字符。不支持`|`字符。
+                     * @return LogsetName 日志集名字。
+
+- 最大支持255个字符。不支持`|`字符。
                      * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
-                     * 设置日志集名字，不能重名
-                     * @param _logsetName 日志集名字，不能重名
+                     * 设置日志集名字。
+
+- 最大支持255个字符。不支持`|`字符。
+                     * @param _logsetName 日志集名字。
+
+- 最大支持255个字符。不支持`|`字符。
                      * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
@@ -109,7 +117,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志集名字，不能重名
+                     * 日志集名字。
+
+- 最大支持255个字符。不支持`|`字符。
                      */
                     std::string m_logsetName;
                     bool m_logsetNameHasBeenSet;

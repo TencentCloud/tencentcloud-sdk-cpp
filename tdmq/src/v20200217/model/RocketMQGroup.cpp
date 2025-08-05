@@ -37,7 +37,8 @@ RocketMQGroup::RocketMQGroup() :
     m_groupTypeHasBeenSet(false),
     m_retryMaxTimesHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_subscribeTopicNumHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome RocketMQGroup::Deserialize(const rapidjson::Value &value)
         m_namespaceHasBeenSet = true;
     }
 
+    if (value.HasMember("SubscribeTopicNum") && !value["SubscribeTopicNum"].IsNull())
+    {
+        if (!value["SubscribeTopicNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQGroup.SubscribeTopicNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscribeTopicNum = value["SubscribeTopicNum"].GetInt64();
+        m_subscribeTopicNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void RocketMQGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subscribeTopicNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscribeTopicNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subscribeTopicNum, allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void RocketMQGroup::SetNamespace(const string& _namespace)
 bool RocketMQGroup::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+int64_t RocketMQGroup::GetSubscribeTopicNum() const
+{
+    return m_subscribeTopicNum;
+}
+
+void RocketMQGroup::SetSubscribeTopicNum(const int64_t& _subscribeTopicNum)
+{
+    m_subscribeTopicNum = _subscribeTopicNum;
+    m_subscribeTopicNumHasBeenSet = true;
+}
+
+bool RocketMQGroup::SubscribeTopicNumHasBeenSet() const
+{
+    return m_subscribeTopicNumHasBeenSet;
 }
 

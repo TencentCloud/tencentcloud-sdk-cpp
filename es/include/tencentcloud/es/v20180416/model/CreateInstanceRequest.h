@@ -27,6 +27,7 @@
 #include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
 #include <tencentcloud/es/v20180416/model/OperationDuration.h>
 #include <tencentcloud/es/v20180416/model/EnableScheduleOperationDuration.h>
+#include <tencentcloud/es/v20180416/model/AutoScaleDiskInfo.h>
 
 
 namespace TencentCloud
@@ -920,6 +921,48 @@ namespace TencentCloud
                      */
                     bool EnableScheduleOperationDurationHasBeenSet() const;
 
+                    /**
+                     * 获取自动扩盘参数列表
+                     * @return AutoScaleDiskInfoList 自动扩盘参数列表
+                     * 
+                     */
+                    std::vector<AutoScaleDiskInfo> GetAutoScaleDiskInfoList() const;
+
+                    /**
+                     * 设置自动扩盘参数列表
+                     * @param _autoScaleDiskInfoList 自动扩盘参数列表
+                     * 
+                     */
+                    void SetAutoScaleDiskInfoList(const std::vector<AutoScaleDiskInfo>& _autoScaleDiskInfoList);
+
+                    /**
+                     * 判断参数 AutoScaleDiskInfoList 是否已赋值
+                     * @return AutoScaleDiskInfoList 是否已赋值
+                     * 
+                     */
+                    bool AutoScaleDiskInfoListHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启kibana公网访问，不传默认开启
+                     * @return EnableKibanaPublicAccess 是否开启kibana公网访问，不传默认开启
+                     * 
+                     */
+                    std::string GetEnableKibanaPublicAccess() const;
+
+                    /**
+                     * 设置是否开启kibana公网访问，不传默认开启
+                     * @param _enableKibanaPublicAccess 是否开启kibana公网访问，不传默认开启
+                     * 
+                     */
+                    void SetEnableKibanaPublicAccess(const std::string& _enableKibanaPublicAccess);
+
+                    /**
+                     * 判断参数 EnableKibanaPublicAccess 是否已赋值
+                     * @return EnableKibanaPublicAccess 是否已赋值
+                     * 
+                     */
+                    bool EnableKibanaPublicAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1169,6 +1212,18 @@ namespace TencentCloud
                      */
                     EnableScheduleOperationDuration m_enableScheduleOperationDuration;
                     bool m_enableScheduleOperationDurationHasBeenSet;
+
+                    /**
+                     * 自动扩盘参数列表
+                     */
+                    std::vector<AutoScaleDiskInfo> m_autoScaleDiskInfoList;
+                    bool m_autoScaleDiskInfoListHasBeenSet;
+
+                    /**
+                     * 是否开启kibana公网访问，不传默认开启
+                     */
+                    std::string m_enableKibanaPublicAccess;
+                    bool m_enableKibanaPublicAccessHasBeenSet;
 
                 };
             }
