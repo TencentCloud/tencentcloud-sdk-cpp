@@ -44,27 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取列表返回的Id
-                     * @return TaskId 列表返回的Id
-                     * 
-                     */
-                    std::string GetTaskId() const;
-
-                    /**
-                     * 设置列表返回的Id
-                     * @param _taskId 列表返回的Id
-                     * 
-                     */
-                    void SetTaskId(const std::string& _taskId);
-
-                    /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
-                     * 
-                     */
-                    bool TaskIdHasBeenSet() const;
-
-                    /**
                      * 获取开始运行时间，unix时间戳（毫秒）
                      * @return StartTime 开始运行时间，unix时间戳（毫秒）
                      * 
@@ -149,6 +128,27 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
+                     * 获取列表返回的Id
+                     * @return TaskId 列表返回的Id
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置列表返回的Id
+                     * @param _taskId 列表返回的Id
+                     * 
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
                      * 获取最近1000条日志是否升序排列，true:升序排序，false:倒序，默认false，倒序排列
                      * @return Asc 最近1000条日志是否升序排列，true:升序排序，false:倒序，默认false，倒序排列
                      * 
@@ -211,13 +211,49 @@ namespace TencentCloud
                      */
                     bool BatchIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取引擎id
+                     * @return DataEngineId 引擎id
+                     * 
+                     */
+                    std::string GetDataEngineId() const;
 
                     /**
-                     * 列表返回的Id
+                     * 设置引擎id
+                     * @param _dataEngineId 引擎id
+                     * 
                      */
-                    std::string m_taskId;
-                    bool m_taskIdHasBeenSet;
+                    void SetDataEngineId(const std::string& _dataEngineId);
+
+                    /**
+                     * 判断参数 DataEngineId 是否已赋值
+                     * @return DataEngineId 是否已赋值
+                     * 
+                     */
+                    bool DataEngineIdHasBeenSet() const;
+
+                    /**
+                     * 获取资源组id
+                     * @return ResourceGroupId 资源组id
+                     * 
+                     */
+                    std::string GetResourceGroupId() const;
+
+                    /**
+                     * 设置资源组id
+                     * @param _resourceGroupId 资源组id
+                     * 
+                     */
+                    void SetResourceGroupId(const std::string& _resourceGroupId);
+
+                    /**
+                     * 判断参数 ResourceGroupId 是否已赋值
+                     * @return ResourceGroupId 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 开始运行时间，unix时间戳（毫秒）
@@ -244,6 +280,12 @@ namespace TencentCloud
                     bool m_contextHasBeenSet;
 
                     /**
+                     * 列表返回的Id
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
                      * 最近1000条日志是否升序排列，true:升序排序，false:倒序，默认false，倒序排列
                      */
                     bool m_asc;
@@ -260,6 +302,18 @@ namespace TencentCloud
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
+
+                    /**
+                     * 引擎id
+                     */
+                    std::string m_dataEngineId;
+                    bool m_dataEngineIdHasBeenSet;
+
+                    /**
+                     * 资源组id
+                     */
+                    std::string m_resourceGroupId;
+                    bool m_resourceGroupIdHasBeenSet;
 
                 };
             }

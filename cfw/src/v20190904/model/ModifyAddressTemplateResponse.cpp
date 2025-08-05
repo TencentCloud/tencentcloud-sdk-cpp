@@ -25,7 +25,8 @@ using namespace std;
 
 ModifyAddressTemplateResponse::ModifyAddressTemplateResponse() :
     m_statusHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_ruleLimitNumHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome ModifyAddressTemplateResponse::Deserialize(const string &pay
         m_uuidHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RuleLimitNum") && !rsp["RuleLimitNum"].IsNull())
+    {
+        if (!rsp["RuleLimitNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleLimitNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleLimitNum = rsp["RuleLimitNum"].GetInt64();
+        m_ruleLimitNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string ModifyAddressTemplateResponse::ToJsonString() const
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleLimitNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleLimitNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleLimitNum, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string ModifyAddressTemplateResponse::GetUuid() const
 bool ModifyAddressTemplateResponse::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+int64_t ModifyAddressTemplateResponse::GetRuleLimitNum() const
+{
+    return m_ruleLimitNum;
+}
+
+bool ModifyAddressTemplateResponse::RuleLimitNumHasBeenSet() const
+{
+    return m_ruleLimitNumHasBeenSet;
 }
 
 

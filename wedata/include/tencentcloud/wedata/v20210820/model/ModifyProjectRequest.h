@@ -65,6 +65,48 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
+                     * 获取项目显示名称，可以为中文名,需要租户范围内唯一
+                     * @return DisplayName 项目显示名称，可以为中文名,需要租户范围内唯一
+                     * 
+                     */
+                    std::string GetDisplayName() const;
+
+                    /**
+                     * 设置项目显示名称，可以为中文名,需要租户范围内唯一
+                     * @param _displayName 项目显示名称，可以为中文名,需要租户范围内唯一
+                     * 
+                     */
+                    void SetDisplayName(const std::string& _displayName);
+
+                    /**
+                     * 判断参数 DisplayName 是否已赋值
+                     * @return DisplayName 是否已赋值
+                     * 
+                     */
+                    bool DisplayNameHasBeenSet() const;
+
+                    /**
+                     * 获取备注
+                     * @return Description 备注
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置备注
+                     * @param _description 备注
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
                      * 获取true/false则修改，不带该参数不修改。
                      * @return TaskSubmitApproval true/false则修改，不带该参数不修改。
                      * 
@@ -211,6 +253,27 @@ namespace TencentCloud
                      */
                     bool ProjectOwnerHasBeenSet() const;
 
+                    /**
+                     * 获取更新类型
+                     * @return ModifyType 更新类型
+                     * 
+                     */
+                    std::string GetModifyType() const;
+
+                    /**
+                     * 设置更新类型
+                     * @param _modifyType 更新类型
+                     * 
+                     */
+                    void SetModifyType(const std::string& _modifyType);
+
+                    /**
+                     * 判断参数 ModifyType 是否已赋值
+                     * @return ModifyType 是否已赋值
+                     * 
+                     */
+                    bool ModifyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -218,6 +281,18 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 项目显示名称，可以为中文名,需要租户范围内唯一
+                     */
+                    std::string m_displayName;
+                    bool m_displayNameHasBeenSet;
+
+                    /**
+                     * 备注
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                     /**
                      * true/false则修改，不带该参数不修改。
@@ -260,6 +335,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_projectOwner;
                     bool m_projectOwnerHasBeenSet;
+
+                    /**
+                     * 更新类型
+                     */
+                    std::string m_modifyType;
+                    bool m_modifyTypeHasBeenSet;
 
                 };
             }

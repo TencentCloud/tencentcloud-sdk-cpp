@@ -1429,7 +1429,7 @@ namespace TencentCloud
                 DescribeOrdersOutcomeCallable DescribeOrdersCallable(const Model::DescribeOrdersRequest& request);
 
                 /**
-                 *本接口 (DescribeProductConfig) 用于查询售卖规格配置。
+                 *本接口（DescribeProductConfig）用于查询售卖规格配置。
                  * @param req DescribeProductConfigRequest
                  * @return DescribeProductConfigOutcome
                  */
@@ -1600,7 +1600,7 @@ namespace TencentCloud
                 DescribeXEventsOutcomeCallable DescribeXEventsCallable(const Model::DescribeXEventsRequest& request);
 
                 /**
-                 *本接口 (DescribeZones) 用于查询当前可售卖的可用区信息。
+                 *本接口（DescribeZones）用于查询当前可售卖的可用区信息。
                  * @param req DescribeZonesRequest
                  * @return DescribeZonesOutcome
                  */

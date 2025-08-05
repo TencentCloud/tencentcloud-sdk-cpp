@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/VisionSummaryConfig.h>
 
 
 namespace TencentCloud
@@ -297,6 +298,27 @@ namespace TencentCloud
                      */
                     bool SummaryQOSHasBeenSet() const;
 
+                    /**
+                     * 获取摘要输出配置
+                     * @return SummaryConfig 摘要输出配置
+                     * 
+                     */
+                    VisionSummaryConfig GetSummaryConfig() const;
+
+                    /**
+                     * 设置摘要输出配置
+                     * @param _summaryConfig 摘要输出配置
+                     * 
+                     */
+                    void SetSummaryConfig(const VisionSummaryConfig& _summaryConfig);
+
+                    /**
+                     * 判断参数 SummaryConfig 是否已赋值
+                     * @return SummaryConfig 是否已赋值
+                     * 
+                     */
+                    bool SummaryConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -370,6 +392,12 @@ namespace TencentCloud
                      */
                     std::string m_summaryQOS;
                     bool m_summaryQOSHasBeenSet;
+
+                    /**
+                     * 摘要输出配置
+                     */
+                    VisionSummaryConfig m_summaryConfig;
+                    bool m_summaryConfigHasBeenSet;
 
                 };
             }

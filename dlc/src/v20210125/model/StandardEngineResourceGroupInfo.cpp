@@ -55,7 +55,11 @@ StandardEngineResourceGroupInfo::StandardEngineResourceGroupInfo() :
     m_pythonCuSpecHasBeenSet(false),
     m_sparkSpecModeHasBeenSet(false),
     m_sparkSizeHasBeenSet(false),
-    m_sparkMinSizeHasBeenSet(false)
+    m_sparkMinSizeHasBeenSet(false),
+    m_publicDomainHasBeenSet(false),
+    m_registryIdHasBeenSet(false),
+    m_regionNameHasBeenSet(false),
+    m_launchTimeHasBeenSet(false)
 {
 }
 
@@ -417,6 +421,46 @@ CoreInternalOutcome StandardEngineResourceGroupInfo::Deserialize(const rapidjson
         m_sparkMinSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicDomain") && !value["PublicDomain"].IsNull())
+    {
+        if (!value["PublicDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StandardEngineResourceGroupInfo.PublicDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicDomain = string(value["PublicDomain"].GetString());
+        m_publicDomainHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegistryId") && !value["RegistryId"].IsNull())
+    {
+        if (!value["RegistryId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StandardEngineResourceGroupInfo.RegistryId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_registryId = string(value["RegistryId"].GetString());
+        m_registryIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionName") && !value["RegionName"].IsNull())
+    {
+        if (!value["RegionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StandardEngineResourceGroupInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionName = string(value["RegionName"].GetString());
+        m_regionNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("LaunchTime") && !value["LaunchTime"].IsNull())
+    {
+        if (!value["LaunchTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StandardEngineResourceGroupInfo.LaunchTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_launchTime = string(value["LaunchTime"].GetString());
+        m_launchTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -707,6 +751,38 @@ void StandardEngineResourceGroupInfo::ToJsonObject(rapidjson::Value &value, rapi
         string key = "SparkMinSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sparkMinSize, allocator);
+    }
+
+    if (m_publicDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_launchTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LaunchTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_launchTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1270,5 +1346,69 @@ void StandardEngineResourceGroupInfo::SetSparkMinSize(const int64_t& _sparkMinSi
 bool StandardEngineResourceGroupInfo::SparkMinSizeHasBeenSet() const
 {
     return m_sparkMinSizeHasBeenSet;
+}
+
+string StandardEngineResourceGroupInfo::GetPublicDomain() const
+{
+    return m_publicDomain;
+}
+
+void StandardEngineResourceGroupInfo::SetPublicDomain(const string& _publicDomain)
+{
+    m_publicDomain = _publicDomain;
+    m_publicDomainHasBeenSet = true;
+}
+
+bool StandardEngineResourceGroupInfo::PublicDomainHasBeenSet() const
+{
+    return m_publicDomainHasBeenSet;
+}
+
+string StandardEngineResourceGroupInfo::GetRegistryId() const
+{
+    return m_registryId;
+}
+
+void StandardEngineResourceGroupInfo::SetRegistryId(const string& _registryId)
+{
+    m_registryId = _registryId;
+    m_registryIdHasBeenSet = true;
+}
+
+bool StandardEngineResourceGroupInfo::RegistryIdHasBeenSet() const
+{
+    return m_registryIdHasBeenSet;
+}
+
+string StandardEngineResourceGroupInfo::GetRegionName() const
+{
+    return m_regionName;
+}
+
+void StandardEngineResourceGroupInfo::SetRegionName(const string& _regionName)
+{
+    m_regionName = _regionName;
+    m_regionNameHasBeenSet = true;
+}
+
+bool StandardEngineResourceGroupInfo::RegionNameHasBeenSet() const
+{
+    return m_regionNameHasBeenSet;
+}
+
+string StandardEngineResourceGroupInfo::GetLaunchTime() const
+{
+    return m_launchTime;
+}
+
+void StandardEngineResourceGroupInfo::SetLaunchTime(const string& _launchTime)
+{
+    m_launchTime = _launchTime;
+    m_launchTimeHasBeenSet = true;
+}
+
+bool StandardEngineResourceGroupInfo::LaunchTimeHasBeenSet() const
+{
+    return m_launchTimeHasBeenSet;
 }
 

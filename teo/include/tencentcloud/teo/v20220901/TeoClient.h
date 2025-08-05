@@ -2121,7 +2121,10 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeTimingL4DataOutcomeCallable DescribeTimingL4DataCallable(const Model::DescribeTimingL4DataRequest& request);
 
                 /**
-                 *本接口查询七层域名业务的时序数据。请注意本接口查询数据有 10 分钟左右延迟，建议拉取当前时间 10 分钟以前的数据。
+                 *本接口用于查询七层域名业务的时序数据。
+注意：
+1. 本接口查询数据有 10 分钟左右延迟，建议拉取当前时间 10 分钟以前的数据。
+2. 本接口默认返回防护后的流量请求数据，用户可在 `Filters.mitigatedByWebSecurity` 中自定义查询已防护缓释的数据。
                  * @param req DescribeTimingL7AnalysisDataRequest
                  * @return DescribeTimingL7AnalysisDataOutcome
                  */
@@ -2139,7 +2142,10 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeTimingL7CacheDataOutcomeCallable DescribeTimingL7CacheDataCallable(const Model::DescribeTimingL7CacheDataRequest& request);
 
                 /**
-                 *本接口用于查询七层域名业务按照指定维度的 topN 数据。请注意本接口查询数据有 10 分钟左右延迟，建议拉取当前时间 10 分钟以前的数据。
+                 *本接口用于查询七层域名业务按照指定维度的 topN 数据。
+注意：
+1. 本接口查询数据有 10 分钟左右延迟，建议拉取当前时间 10 分钟以前的数据。
+2. 本接口默认返回防护后的流量请求数据，用户可在 `Filters.mitigatedByWebSecurity` 中自定义查询已防护缓释的数据。
                  * @param req DescribeTopL7AnalysisDataRequest
                  * @return DescribeTopL7AnalysisDataOutcome
                  */

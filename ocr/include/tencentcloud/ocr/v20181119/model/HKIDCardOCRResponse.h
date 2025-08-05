@@ -245,9 +245,9 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段已废弃， 将固定返回空数组，不建议使用。
-This field is deprecated and will always return an empty array. Usage is not recommended.
+
                      * @return WarningCode 该字段已废弃， 将固定返回空数组，不建议使用。
-This field is deprecated and will always return an empty array. Usage is not recommended.
+
                      * @deprecated
                      */
                     std::vector<int64_t> GetWarningCode() const;
@@ -392,7 +392,7 @@ This field is deprecated and will always return an empty array. Usage is not rec
 
                     /**
                      * 该字段已废弃， 将固定返回空数组，不建议使用。
-This field is deprecated and will always return an empty array. Usage is not recommended.
+
                      */
                     std::vector<int64_t> m_warningCode;
                     bool m_warningCodeHasBeenSet;

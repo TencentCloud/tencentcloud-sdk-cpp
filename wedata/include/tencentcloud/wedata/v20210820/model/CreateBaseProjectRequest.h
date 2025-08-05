@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/BaseProject.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取项目信息
+                     * @return Project 项目信息
+                     * 
+                     */
+                    BaseProject GetProject() const;
+
+                    /**
+                     * 设置项目信息
+                     * @param _project 项目信息
+                     * 
+                     */
+                    void SetProject(const BaseProject& _project);
+
+                    /**
+                     * 判断参数 Project 是否已赋值
+                     * @return Project 是否已赋值
+                     * 
+                     */
+                    bool ProjectHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 项目信息
+                     */
+                    BaseProject m_project;
+                    bool m_projectHasBeenSet;
 
                 };
             }

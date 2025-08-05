@@ -269,6 +269,10 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeLaneRulesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeLanesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeLanesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeLicensesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeLicensesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeLogCapacityRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeLogCapacityResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroserviceRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesRequest.h>
@@ -307,6 +311,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeRepositoriesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeRepositoryRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeRepositoryResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeResourceConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeResourceConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeResourceTaskStatusRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeResourceTaskStatusResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleApplicationsRequest.h>
@@ -854,6 +860,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLanesResponse> DescribeLanesOutcome;
                 typedef std::future<DescribeLanesOutcome> DescribeLanesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeLanesRequest&, DescribeLanesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLanesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLicensesResponse> DescribeLicensesOutcome;
+                typedef std::future<DescribeLicensesOutcome> DescribeLicensesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeLicensesRequest&, DescribeLicensesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLicensesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogCapacityResponse> DescribeLogCapacityOutcome;
+                typedef std::future<DescribeLogCapacityOutcome> DescribeLogCapacityOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeLogCapacityRequest&, DescribeLogCapacityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogCapacityAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMicroserviceResponse> DescribeMicroserviceOutcome;
                 typedef std::future<DescribeMicroserviceOutcome> DescribeMicroserviceOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeMicroserviceRequest&, DescribeMicroserviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMicroserviceAsyncHandler;
@@ -911,6 +923,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRepositoryResponse> DescribeRepositoryOutcome;
                 typedef std::future<DescribeRepositoryOutcome> DescribeRepositoryOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeRepositoryRequest&, DescribeRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRepositoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceConfigResponse> DescribeResourceConfigOutcome;
+                typedef std::future<DescribeResourceConfigOutcome> DescribeResourceConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeResourceConfigRequest&, DescribeResourceConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceTaskStatusResponse> DescribeResourceTaskStatusOutcome;
                 typedef std::future<DescribeResourceTaskStatusOutcome> DescribeResourceTaskStatusOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeResourceTaskStatusRequest&, DescribeResourceTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceTaskStatusAsyncHandler;
@@ -2277,6 +2292,24 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeLanesOutcomeCallable DescribeLanesCallable(const Model::DescribeLanesRequest& request);
 
                 /**
+                 *查询许可列表
+                 * @param req DescribeLicensesRequest
+                 * @return DescribeLicensesOutcome
+                 */
+                DescribeLicensesOutcome DescribeLicenses(const Model::DescribeLicensesRequest &request);
+                void DescribeLicensesAsync(const Model::DescribeLicensesRequest& request, const DescribeLicensesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLicensesOutcomeCallable DescribeLicensesCallable(const Model::DescribeLicensesRequest& request);
+
+                /**
+                 *获取用户日志使用量
+                 * @param req DescribeLogCapacityRequest
+                 * @return DescribeLogCapacityOutcome
+                 */
+                DescribeLogCapacityOutcome DescribeLogCapacity(const Model::DescribeLogCapacityRequest &request);
+                void DescribeLogCapacityAsync(const Model::DescribeLogCapacityRequest& request, const DescribeLogCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogCapacityOutcomeCallable DescribeLogCapacityCallable(const Model::DescribeLogCapacityRequest& request);
+
+                /**
                  *查询微服务详情
                  * @param req DescribeMicroserviceRequest
                  * @return DescribeMicroserviceOutcome
@@ -2446,6 +2479,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeRepositoryOutcome DescribeRepository(const Model::DescribeRepositoryRequest &request);
                 void DescribeRepositoryAsync(const Model::DescribeRepositoryRequest& request, const DescribeRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRepositoryOutcomeCallable DescribeRepositoryCallable(const Model::DescribeRepositoryRequest& request);
+
+                /**
+                 *无
+                 * @param req DescribeResourceConfigRequest
+                 * @return DescribeResourceConfigOutcome
+                 */
+                DescribeResourceConfigOutcome DescribeResourceConfig(const Model::DescribeResourceConfigRequest &request);
+                void DescribeResourceConfigAsync(const Model::DescribeResourceConfigRequest& request, const DescribeResourceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceConfigOutcomeCallable DescribeResourceConfigCallable(const Model::DescribeResourceConfigRequest& request);
 
                 /**
                  *资源任务的执行状态描述接口

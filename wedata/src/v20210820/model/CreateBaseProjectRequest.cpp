@@ -22,7 +22,8 @@
 using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
-CreateBaseProjectRequest::CreateBaseProjectRequest()
+CreateBaseProjectRequest::CreateBaseProjectRequest() :
+    m_projectHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,15 @@ string CreateBaseProjectRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_projectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Project";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_project.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +50,21 @@ string CreateBaseProjectRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+BaseProject CreateBaseProjectRequest::GetProject() const
+{
+    return m_project;
+}
+
+void CreateBaseProjectRequest::SetProject(const BaseProject& _project)
+{
+    m_project = _project;
+    m_projectHasBeenSet = true;
+}
+
+bool CreateBaseProjectRequest::ProjectHasBeenSet() const
+{
+    return m_projectHasBeenSet;
+}
 
 

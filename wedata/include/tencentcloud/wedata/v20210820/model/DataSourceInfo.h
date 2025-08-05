@@ -1048,6 +1048,27 @@ namespace TencentCloud
                      */
                     bool DataSourceEnvInfosHasBeenSet() const;
 
+                    /**
+                     * 获取禁止数据探查
+                     * @return ForbidProbe 禁止数据探查
+                     * 
+                     */
+                    bool GetForbidProbe() const;
+
+                    /**
+                     * 设置禁止数据探查
+                     * @param _forbidProbe 禁止数据探查
+                     * 
+                     */
+                    void SetForbidProbe(const bool& _forbidProbe);
+
+                    /**
+                     * 判断参数 ForbidProbe 是否已赋值
+                     * @return ForbidProbe 是否已赋值
+                     * 
+                     */
+                    bool ForbidProbeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1329,6 +1350,12 @@ namespace TencentCloud
                      */
                     std::vector<DataSourceEnvInfo> m_dataSourceEnvInfos;
                     bool m_dataSourceEnvInfosHasBeenSet;
+
+                    /**
+                     * 禁止数据探查
+                     */
+                    bool m_forbidProbe;
+                    bool m_forbidProbeHasBeenSet;
 
                 };
             }

@@ -14,33 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cfw/v20190904/model/DeleteIdsWhiteRuleRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeResourceConfigRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cfw::V20190904::Model;
+using namespace TencentCloud::Tsf::V20180326::Model;
 using namespace std;
 
-DeleteIdsWhiteRuleRequest::DeleteIdsWhiteRuleRequest() :
-    m_idHasBeenSet(false)
+DescribeResourceConfigRequest::DescribeResourceConfigRequest()
 {
 }
 
-string DeleteIdsWhiteRuleRequest::ToJsonString() const
+string DescribeResourceConfigRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_idHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Id";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_id, allocator);
-    }
 
 
     rapidjson::StringBuffer buffer;
@@ -49,21 +40,5 @@ string DeleteIdsWhiteRuleRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t DeleteIdsWhiteRuleRequest::GetId() const
-{
-    return m_id;
-}
-
-void DeleteIdsWhiteRuleRequest::SetId(const int64_t& _id)
-{
-    m_id = _id;
-    m_idHasBeenSet = true;
-}
-
-bool DeleteIdsWhiteRuleRequest::IdHasBeenSet() const
-{
-    return m_idHasBeenSet;
-}
 
 

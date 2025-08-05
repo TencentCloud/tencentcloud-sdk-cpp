@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取帐号变更历史列表记录总数。
-                     * @return TotalCount 帐号变更历史列表记录总数。
+                     * 获取账号变更历史列表记录总数。
+                     * @return TotalCount 账号变更历史列表记录总数。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取帐号变更历史数据数组。
-                     * @return HistoryAccounts 帐号变更历史数据数组。
+                     * 获取账号变更历史数据数组。
+                     * @return HistoryAccounts 账号变更历史数据数组。
                      * 
                      */
                     std::vector<HistoryAccount> GetHistoryAccounts() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 帐号变更历史列表记录总数。
+                     * 账号变更历史列表记录总数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 帐号变更历史数据数组。
+                     * 账号变更历史数据数组。
                      */
                     std::vector<HistoryAccount> m_historyAccounts;
                     bool m_historyAccountsHasBeenSet;

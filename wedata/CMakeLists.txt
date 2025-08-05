@@ -583,7 +583,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/BizCatalogsInfo.h
   include/tencentcloud/wedata/v20210820/model/TaskCollectionParamDTO.h
   include/tencentcloud/wedata/v20210820/model/DescribeDependTaskListsResponse.h
-  include/tencentcloud/wedata/v20210820/model/ModifyTaskScriptRequest.h
+  include/tencentcloud/wedata/v20210820/model/BaseProject.h
   include/tencentcloud/wedata/v20210820/model/ModifyDataSourceRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateHiveTableResponse.h
   include/tencentcloud/wedata/v20210820/model/RuleTemplatePage.h
@@ -672,7 +672,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeTaskAlarmRegulationsRequest.h
   include/tencentcloud/wedata/v20210820/model/KillScheduleInstancesRequest.h
   include/tencentcloud/wedata/v20210820/model/UnboundProjectExecutorResourceResponse.h
-  include/tencentcloud/wedata/v20210820/model/OrderCondition.h
+  include/tencentcloud/wedata/v20210820/model/ModifyTaskScriptRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateCustomFunctionResponse.h
   include/tencentcloud/wedata/v20210820/model/UpdateCodeTemplateRequest.h
   include/tencentcloud/wedata/v20210820/model/ScreenInstanceInfo.h
@@ -885,6 +885,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/JudgeResourceFileRequest.h
   include/tencentcloud/wedata/v20210820/model/UploadResourceResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskLinksDsRequest.h
+  include/tencentcloud/wedata/v20210820/model/OrderCondition.h
   include/tencentcloud/wedata/v20210820/model/ParamMapDsDto.h
   include/tencentcloud/wedata/v20210820/model/DescribeOpsMakePlanInstancesResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeDatabaseInfoListRequest.h
@@ -1525,7 +1526,7 @@ set(wedata_src
   src/v20210820/model/BizCatalogsInfo.cpp
   src/v20210820/model/TaskCollectionParamDTO.cpp
   src/v20210820/model/DescribeDependTaskListsResponse.cpp
-  src/v20210820/model/ModifyTaskScriptRequest.cpp
+  src/v20210820/model/BaseProject.cpp
   src/v20210820/model/ModifyDataSourceRequest.cpp
   src/v20210820/model/CreateHiveTableResponse.cpp
   src/v20210820/model/RuleTemplatePage.cpp
@@ -1614,7 +1615,7 @@ set(wedata_src
   src/v20210820/model/DescribeTaskAlarmRegulationsRequest.cpp
   src/v20210820/model/KillScheduleInstancesRequest.cpp
   src/v20210820/model/UnboundProjectExecutorResourceResponse.cpp
-  src/v20210820/model/OrderCondition.cpp
+  src/v20210820/model/ModifyTaskScriptRequest.cpp
   src/v20210820/model/CreateCustomFunctionResponse.cpp
   src/v20210820/model/UpdateCodeTemplateRequest.cpp
   src/v20210820/model/ScreenInstanceInfo.cpp
@@ -1827,6 +1828,7 @@ set(wedata_src
   src/v20210820/model/JudgeResourceFileRequest.cpp
   src/v20210820/model/UploadResourceResponse.cpp
   src/v20210820/model/ModifyTaskLinksDsRequest.cpp
+  src/v20210820/model/OrderCondition.cpp
   src/v20210820/model/ParamMapDsDto.cpp
   src/v20210820/model/DescribeOpsMakePlanInstancesResponse.cpp
   src/v20210820/model/DescribeDatabaseInfoListRequest.cpp

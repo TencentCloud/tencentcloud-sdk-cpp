@@ -71,6 +71,20 @@ namespace TencentCloud
                      */
                     bool UuidHasBeenSet() const;
 
+                    /**
+                     * 获取规则数上限配置
+                     * @return RuleLimitNum 规则数上限配置
+                     * 
+                     */
+                    int64_t GetRuleLimitNum() const;
+
+                    /**
+                     * 判断参数 RuleLimitNum 是否已赋值
+                     * @return RuleLimitNum 是否已赋值
+                     * 
+                     */
+                    bool RuleLimitNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +98,12 @@ namespace TencentCloud
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * 规则数上限配置
+                     */
+                    int64_t m_ruleLimitNum;
+                    bool m_ruleLimitNumHasBeenSet;
 
                 };
             }

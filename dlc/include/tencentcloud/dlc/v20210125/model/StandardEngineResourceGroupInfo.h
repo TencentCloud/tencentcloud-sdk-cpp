@@ -861,6 +861,90 @@ namespace TencentCloud
                      */
                     bool SparkMinSizeHasBeenSet() const;
 
+                    /**
+                     * 获取自定义镜像容器镜像服务domain 名称
+                     * @return PublicDomain 自定义镜像容器镜像服务domain 名称
+                     * 
+                     */
+                    std::string GetPublicDomain() const;
+
+                    /**
+                     * 设置自定义镜像容器镜像服务domain 名称
+                     * @param _publicDomain 自定义镜像容器镜像服务domain 名称
+                     * 
+                     */
+                    void SetPublicDomain(const std::string& _publicDomain);
+
+                    /**
+                     * 判断参数 PublicDomain 是否已赋值
+                     * @return PublicDomain 是否已赋值
+                     * 
+                     */
+                    bool PublicDomainHasBeenSet() const;
+
+                    /**
+                     * 获取自定义镜像容器镜像服务tcr实例id
+                     * @return RegistryId 自定义镜像容器镜像服务tcr实例id
+                     * 
+                     */
+                    std::string GetRegistryId() const;
+
+                    /**
+                     * 设置自定义镜像容器镜像服务tcr实例id
+                     * @param _registryId 自定义镜像容器镜像服务tcr实例id
+                     * 
+                     */
+                    void SetRegistryId(const std::string& _registryId);
+
+                    /**
+                     * 判断参数 RegistryId 是否已赋值
+                     * @return RegistryId 是否已赋值
+                     * 
+                     */
+                    bool RegistryIdHasBeenSet() const;
+
+                    /**
+                     * 获取容器镜像服务tcr所在地域
+                     * @return RegionName 容器镜像服务tcr所在地域
+                     * 
+                     */
+                    std::string GetRegionName() const;
+
+                    /**
+                     * 设置容器镜像服务tcr所在地域
+                     * @param _regionName 容器镜像服务tcr所在地域
+                     * 
+                     */
+                    void SetRegionName(const std::string& _regionName);
+
+                    /**
+                     * 判断参数 RegionName 是否已赋值
+                     * @return RegionName 是否已赋值
+                     * 
+                     */
+                    bool RegionNameHasBeenSet() const;
+
+                    /**
+                     * 获取资源组启动耗时
+                     * @return LaunchTime 资源组启动耗时
+                     * 
+                     */
+                    std::string GetLaunchTime() const;
+
+                    /**
+                     * 设置资源组启动耗时
+                     * @param _launchTime 资源组启动耗时
+                     * 
+                     */
+                    void SetLaunchTime(const std::string& _launchTime);
+
+                    /**
+                     * 判断参数 LaunchTime 是否已赋值
+                     * @return LaunchTime 是否已赋值
+                     * 
+                     */
+                    bool LaunchTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1092,6 +1176,30 @@ namespace TencentCloud
                      */
                     int64_t m_sparkMinSize;
                     bool m_sparkMinSizeHasBeenSet;
+
+                    /**
+                     * 自定义镜像容器镜像服务domain 名称
+                     */
+                    std::string m_publicDomain;
+                    bool m_publicDomainHasBeenSet;
+
+                    /**
+                     * 自定义镜像容器镜像服务tcr实例id
+                     */
+                    std::string m_registryId;
+                    bool m_registryIdHasBeenSet;
+
+                    /**
+                     * 容器镜像服务tcr所在地域
+                     */
+                    std::string m_regionName;
+                    bool m_regionNameHasBeenSet;
+
+                    /**
+                     * 资源组启动耗时
+                     */
+                    std::string m_launchTime;
+                    bool m_launchTimeHasBeenSet;
 
                 };
             }

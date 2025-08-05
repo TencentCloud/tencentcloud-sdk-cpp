@@ -33,7 +33,8 @@ InvokeTWeSeeRecognitionTaskRequest::InvokeTWeSeeRecognitionTaskRequest() :
     m_configHasBeenSet(false),
     m_isCustomDeviceHasBeenSet(false),
     m_inputTypeHasBeenSet(false),
-    m_summaryQOSHasBeenSet(false)
+    m_summaryQOSHasBeenSet(false),
+    m_summaryConfigHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,15 @@ string InvokeTWeSeeRecognitionTaskRequest::ToJsonString() const
         string key = "SummaryQOS";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_summaryQOS.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_summaryConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SummaryConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_summaryConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -314,6 +324,22 @@ void InvokeTWeSeeRecognitionTaskRequest::SetSummaryQOS(const string& _summaryQOS
 bool InvokeTWeSeeRecognitionTaskRequest::SummaryQOSHasBeenSet() const
 {
     return m_summaryQOSHasBeenSet;
+}
+
+VisionSummaryConfig InvokeTWeSeeRecognitionTaskRequest::GetSummaryConfig() const
+{
+    return m_summaryConfig;
+}
+
+void InvokeTWeSeeRecognitionTaskRequest::SetSummaryConfig(const VisionSummaryConfig& _summaryConfig)
+{
+    m_summaryConfig = _summaryConfig;
+    m_summaryConfigHasBeenSet = true;
+}
+
+bool InvokeTWeSeeRecognitionTaskRequest::SummaryConfigHasBeenSet() const
+{
+    return m_summaryConfigHasBeenSet;
 }
 
 

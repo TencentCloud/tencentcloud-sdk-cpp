@@ -26,7 +26,8 @@ using namespace std;
 DescribeEngineUsageInfoResponse::DescribeEngineUsageInfoResponse() :
     m_totalHasBeenSet(false),
     m_usedHasBeenSet(false),
-    m_availableHasBeenSet(false)
+    m_availableHasBeenSet(false),
+    m_availPercentHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeEngineUsageInfoResponse::Deserialize(const string &p
         m_availableHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AvailPercent") && !rsp["AvailPercent"].IsNull())
+    {
+        if (!rsp["AvailPercent"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AvailPercent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_availPercent = rsp["AvailPercent"].GetInt64();
+        m_availPercentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeEngineUsageInfoResponse::ToJsonString() const
         string key = "Available";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_available, allocator);
+    }
+
+    if (m_availPercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailPercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_availPercent, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ int64_t DescribeEngineUsageInfoResponse::GetAvailable() const
 bool DescribeEngineUsageInfoResponse::AvailableHasBeenSet() const
 {
     return m_availableHasBeenSet;
+}
+
+int64_t DescribeEngineUsageInfoResponse::GetAvailPercent() const
+{
+    return m_availPercent;
+}
+
+bool DescribeEngineUsageInfoResponse::AvailPercentHasBeenSet() const
+{
+    return m_availPercentHasBeenSet;
 }
 
 

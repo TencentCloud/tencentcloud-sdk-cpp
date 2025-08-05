@@ -60,7 +60,8 @@ DataSourceInfo::DataSourceInfo() :
     m_envHasBeenSet(false),
     m_datasourceUrnHasBeenSet(false),
     m_modelHasBeenSet(false),
-    m_dataSourceEnvInfosHasBeenSet(false)
+    m_dataSourceEnvInfosHasBeenSet(false),
+    m_forbidProbeHasBeenSet(false)
 {
 }
 
@@ -486,6 +487,16 @@ CoreInternalOutcome DataSourceInfo::Deserialize(const rapidjson::Value &value)
         m_dataSourceEnvInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("ForbidProbe") && !value["ForbidProbe"].IsNull())
+    {
+        if (!value["ForbidProbe"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.ForbidProbe` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidProbe = value["ForbidProbe"].GetBool();
+        m_forbidProbeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -819,6 +830,14 @@ void DataSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_forbidProbeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidProbe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidProbe, allocator);
     }
 
 }
@@ -1462,5 +1481,21 @@ void DataSourceInfo::SetDataSourceEnvInfos(const vector<DataSourceEnvInfo>& _dat
 bool DataSourceInfo::DataSourceEnvInfosHasBeenSet() const
 {
     return m_dataSourceEnvInfosHasBeenSet;
+}
+
+bool DataSourceInfo::GetForbidProbe() const
+{
+    return m_forbidProbe;
+}
+
+void DataSourceInfo::SetForbidProbe(const bool& _forbidProbe)
+{
+    m_forbidProbe = _forbidProbe;
+    m_forbidProbeHasBeenSet = true;
+}
+
+bool DataSourceInfo::ForbidProbeHasBeenSet() const
+{
+    return m_forbidProbeHasBeenSet;
 }
 

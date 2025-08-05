@@ -24,13 +24,16 @@ using namespace std;
 
 ModifyProjectRequest::ModifyProjectRequest() :
     m_projectIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_taskSubmitApprovalHasBeenSet(false),
     m_resourcePoolInfoHasBeenSet(false),
     m_projectManagersHasBeenSet(false),
     m_taskStrictModeHasBeenSet(false),
     m_extraOptionsHasBeenSet(false),
     m_modelHasBeenSet(false),
-    m_projectOwnerHasBeenSet(false)
+    m_projectOwnerHasBeenSet(false),
+    m_modifyTypeHasBeenSet(false)
 {
 }
 
@@ -47,6 +50,22 @@ string ModifyProjectRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_displayNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_displayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskSubmitApprovalHasBeenSet)
@@ -116,6 +135,14 @@ string ModifyProjectRequest::ToJsonString() const
         }
     }
 
+    if (m_modifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modifyType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -138,6 +165,38 @@ void ModifyProjectRequest::SetProjectId(const string& _projectId)
 bool ModifyProjectRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string ModifyProjectRequest::GetDisplayName() const
+{
+    return m_displayName;
+}
+
+void ModifyProjectRequest::SetDisplayName(const string& _displayName)
+{
+    m_displayName = _displayName;
+    m_displayNameHasBeenSet = true;
+}
+
+bool ModifyProjectRequest::DisplayNameHasBeenSet() const
+{
+    return m_displayNameHasBeenSet;
+}
+
+string ModifyProjectRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void ModifyProjectRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ModifyProjectRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 bool ModifyProjectRequest::GetTaskSubmitApproval() const
@@ -250,6 +309,22 @@ void ModifyProjectRequest::SetProjectOwner(const vector<string>& _projectOwner)
 bool ModifyProjectRequest::ProjectOwnerHasBeenSet() const
 {
     return m_projectOwnerHasBeenSet;
+}
+
+string ModifyProjectRequest::GetModifyType() const
+{
+    return m_modifyType;
+}
+
+void ModifyProjectRequest::SetModifyType(const string& _modifyType)
+{
+    m_modifyType = _modifyType;
+    m_modifyTypeHasBeenSet = true;
+}
+
+bool ModifyProjectRequest::ModifyTypeHasBeenSet() const
+{
+    return m_modifyTypeHasBeenSet;
 }
 
 

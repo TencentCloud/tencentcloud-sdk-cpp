@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取必填，脚本内容 base64编码
-                     * @return ScriptContent 必填，脚本内容 base64编码
+                     * 获取存在脚本的任务必填（shell任务、Hive任务、python任务等），脚本内容 base64编码
+                     * @return ScriptContent 存在脚本的任务必填（shell任务、Hive任务、python任务等），脚本内容 base64编码
                      * 
                      */
                     std::string GetScriptContent() const;
 
                     /**
-                     * 设置必填，脚本内容 base64编码
-                     * @param _scriptContent 必填，脚本内容 base64编码
+                     * 设置存在脚本的任务必填（shell任务、Hive任务、python任务等），脚本内容 base64编码
+                     * @param _scriptContent 存在脚本的任务必填（shell任务、Hive任务、python任务等），脚本内容 base64编码
                      * 
                      */
                     void SetScriptContent(const std::string& _scriptContent);
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 必填，脚本内容 base64编码
+                     * 存在脚本的任务必填（shell任务、Hive任务、python任务等），脚本内容 base64编码
                      */
                     std::string m_scriptContent;
                     bool m_scriptContentHasBeenSet;

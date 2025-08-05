@@ -182,6 +182,27 @@ namespace TencentCloud
                      */
                     bool CompareValHasBeenSet() const;
 
+                    /**
+                     * 获取指标中文名
+                     * @return NameCN 指标中文名
+                     * 
+                     */
+                    std::string GetNameCN() const;
+
+                    /**
+                     * 设置指标中文名
+                     * @param _nameCN 指标中文名
+                     * 
+                     */
+                    void SetNameCN(const std::string& _nameCN);
+
+                    /**
+                     * 判断参数 NameCN 是否已赋值
+                     * @return NameCN 是否已赋值
+                     * 
+                     */
+                    bool NameCNHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +242,12 @@ namespace TencentCloud
                      */
                     std::string m_compareVal;
                     bool m_compareValHasBeenSet;
+
+                    /**
+                     * 指标中文名
+                     */
+                    std::string m_nameCN;
+                    bool m_nameCNHasBeenSet;
 
                 };
             }

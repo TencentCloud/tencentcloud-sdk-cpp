@@ -328,6 +328,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DevicesItem.h
   include/tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTaskFileInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/VisionSummaryConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/PositionFenceItem.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleResponse.h
@@ -744,6 +745,7 @@ set(iotexplorer_src
   src/v20190423/model/DevicesItem.cpp
   src/v20190423/model/CloudStorageAIServiceTaskFileInfo.cpp
   src/v20190423/model/DescribeTWeSeeConfigResponse.cpp
+  src/v20190423/model/VisionSummaryConfig.cpp
   src/v20190423/model/ModifyPositionFenceRequest.cpp
   src/v20190423/model/PositionFenceItem.cpp
   src/v20190423/model/DeleteTopicRuleResponse.cpp

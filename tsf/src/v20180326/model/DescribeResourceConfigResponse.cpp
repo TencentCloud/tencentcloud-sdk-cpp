@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cfw/v20190904/model/DeleteIdsWhiteRuleResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeResourceConfigResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cfw::V20190904::Model;
+using namespace TencentCloud::Tsf::V20180326::Model;
 using namespace std;
 
-DeleteIdsWhiteRuleResponse::DeleteIdsWhiteRuleResponse() :
-    m_returnCodeHasBeenSet(false),
-    m_returnMsgHasBeenSet(false),
-    m_statusHasBeenSet(false)
+DescribeResourceConfigResponse::DescribeResourceConfigResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DeleteIdsWhiteRuleResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeResourceConfigResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,68 +62,40 @@ CoreInternalOutcome DeleteIdsWhiteRuleResponse::Deserialize(const string &payloa
     }
 
 
-    if (rsp.HasMember("ReturnCode") && !rsp["ReturnCode"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["ReturnCode"].IsInt64())
+        if (!rsp["Result"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `ReturnCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
         }
-        m_returnCode = rsp["ReturnCode"].GetInt64();
-        m_returnCodeHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("ReturnMsg") && !rsp["ReturnMsg"].IsNull())
-    {
-        if (!rsp["ReturnMsg"].IsString())
+        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `ReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_returnMsg = string(rsp["ReturnMsg"].GetString());
-        m_returnMsgHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
-    {
-        if (!rsp["Status"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = rsp["Status"].GetInt64();
-        m_statusHasBeenSet = true;
+        m_resultHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DeleteIdsWhiteRuleResponse::ToJsonString() const
+string DescribeResourceConfigResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_returnCodeHasBeenSet)
+    if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReturnCode";
+        string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_returnCode, allocator);
-    }
-
-    if (m_returnMsgHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReturnMsg";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_returnMsg.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_status, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_result.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +110,14 @@ string DeleteIdsWhiteRuleResponse::ToJsonString() const
 }
 
 
-int64_t DeleteIdsWhiteRuleResponse::GetReturnCode() const
+DescribeResourceConfigResultV2 DescribeResourceConfigResponse::GetResult() const
 {
-    return m_returnCode;
+    return m_result;
 }
 
-bool DeleteIdsWhiteRuleResponse::ReturnCodeHasBeenSet() const
+bool DescribeResourceConfigResponse::ResultHasBeenSet() const
 {
-    return m_returnCodeHasBeenSet;
-}
-
-string DeleteIdsWhiteRuleResponse::GetReturnMsg() const
-{
-    return m_returnMsg;
-}
-
-bool DeleteIdsWhiteRuleResponse::ReturnMsgHasBeenSet() const
-{
-    return m_returnMsgHasBeenSet;
-}
-
-int64_t DeleteIdsWhiteRuleResponse::GetStatus() const
-{
-    return m_status;
-}
-
-bool DeleteIdsWhiteRuleResponse::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 
