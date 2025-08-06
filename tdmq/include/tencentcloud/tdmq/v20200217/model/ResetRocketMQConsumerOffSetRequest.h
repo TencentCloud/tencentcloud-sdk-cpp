@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool ResetTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取重置的是否是retry topic
+                     * @return RetryFlag 重置的是否是retry topic
+                     * 
+                     */
+                    bool GetRetryFlag() const;
+
+                    /**
+                     * 设置重置的是否是retry topic
+                     * @param _retryFlag 重置的是否是retry topic
+                     * 
+                     */
+                    void SetRetryFlag(const bool& _retryFlag);
+
+                    /**
+                     * 判断参数 RetryFlag 是否已赋值
+                     * @return RetryFlag 是否已赋值
+                     * 
+                     */
+                    bool RetryFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     uint64_t m_resetTimestamp;
                     bool m_resetTimestampHasBeenSet;
+
+                    /**
+                     * 重置的是否是retry topic
+                     */
+                    bool m_retryFlag;
+                    bool m_retryFlagHasBeenSet;
 
                 };
             }

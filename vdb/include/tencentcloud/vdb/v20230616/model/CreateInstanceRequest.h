@@ -279,6 +279,27 @@ namespace TencentCloud
                     bool ProjectHasBeenSet() const;
 
                     /**
+                     * 获取产品版本，0-标准版，1-容量增强版
+                     * @return ProductType 产品版本，0-标准版，1-容量增强版
+                     * 
+                     */
+                    int64_t GetProductType() const;
+
+                    /**
+                     * 设置产品版本，0-标准版，1-容量增强版
+                     * @param _productType 产品版本，0-标准版，1-容量增强版
+                     * 
+                     */
+                    void SetProductType(const int64_t& _productType);
+
+                    /**
+                     * 判断参数 ProductType 是否已赋值
+                     * @return ProductType 是否已赋值
+                     * 
+                     */
+                    bool ProductTypeHasBeenSet() const;
+
+                    /**
                      * 获取实例类型。
 - base：免费测试版。
 - single：单机版。
@@ -792,6 +813,12 @@ VPC或TCS
                      */
                     std::string m_project;
                     bool m_projectHasBeenSet;
+
+                    /**
+                     * 产品版本，0-标准版，1-容量增强版
+                     */
+                    int64_t m_productType;
+                    bool m_productTypeHasBeenSet;
 
                     /**
                      * 实例类型。

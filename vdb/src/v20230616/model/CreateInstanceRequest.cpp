@@ -33,6 +33,7 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_paramsHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_projectHasBeenSet(false),
+    m_productTypeHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_modeHasBeenSet(false),
     m_goodsNumHasBeenSet(false),
@@ -152,6 +153,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "Project";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_project.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_productType, allocator);
     }
 
     if (m_instanceTypeHasBeenSet)
@@ -484,6 +493,22 @@ void CreateInstanceRequest::SetProject(const string& _project)
 bool CreateInstanceRequest::ProjectHasBeenSet() const
 {
     return m_projectHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetProductType() const
+{
+    return m_productType;
+}
+
+void CreateInstanceRequest::SetProductType(const int64_t& _productType)
+{
+    m_productType = _productType;
+    m_productTypeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::ProductTypeHasBeenSet() const
+{
+    return m_productTypeHasBeenSet;
 }
 
 string CreateInstanceRequest::GetInstanceType() const

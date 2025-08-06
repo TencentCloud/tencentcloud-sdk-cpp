@@ -77,6 +77,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeClusterAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterPodAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterPodAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeConfigCheckRulesRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeConfigCheckRulesResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDbAssetInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDbAssetInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDbAssetsRequest.h>
@@ -280,6 +282,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterPodAssetsResponse> DescribeClusterPodAssetsOutcome;
                 typedef std::future<DescribeClusterPodAssetsOutcome> DescribeClusterPodAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeClusterPodAssetsRequest&, DescribeClusterPodAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterPodAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigCheckRulesResponse> DescribeConfigCheckRulesOutcome;
+                typedef std::future<DescribeConfigCheckRulesOutcome> DescribeConfigCheckRulesOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeConfigCheckRulesRequest&, DescribeConfigCheckRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigCheckRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDbAssetInfoResponse> DescribeDbAssetInfoOutcome;
                 typedef std::future<DescribeDbAssetInfoOutcome> DescribeDbAssetInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDbAssetInfoRequest&, DescribeDbAssetInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDbAssetInfoAsyncHandler;
@@ -687,6 +692,15 @@ namespace TencentCloud
                 DescribeClusterPodAssetsOutcome DescribeClusterPodAssets(const Model::DescribeClusterPodAssetsRequest &request);
                 void DescribeClusterPodAssetsAsync(const Model::DescribeClusterPodAssetsRequest& request, const DescribeClusterPodAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterPodAssetsOutcomeCallable DescribeClusterPodAssetsCallable(const Model::DescribeClusterPodAssetsRequest& request);
+
+                /**
+                 *云资源配置风险规则列表示例
+                 * @param req DescribeConfigCheckRulesRequest
+                 * @return DescribeConfigCheckRulesOutcome
+                 */
+                DescribeConfigCheckRulesOutcome DescribeConfigCheckRules(const Model::DescribeConfigCheckRulesRequest &request);
+                void DescribeConfigCheckRulesAsync(const Model::DescribeConfigCheckRulesRequest& request, const DescribeConfigCheckRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigCheckRulesOutcomeCallable DescribeConfigCheckRulesCallable(const Model::DescribeConfigCheckRulesRequest& request);
 
                 /**
                  *db资产详情

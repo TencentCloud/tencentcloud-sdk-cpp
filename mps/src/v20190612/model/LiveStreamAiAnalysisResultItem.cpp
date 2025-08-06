@@ -22,7 +22,8 @@ using namespace std;
 
 LiveStreamAiAnalysisResultItem::LiveStreamAiAnalysisResultItem() :
     m_typeHasBeenSet(false),
-    m_segmentResultSetHasBeenSet(false)
+    m_segmentResultSetHasBeenSet(false),
+    m_highlightResultSetHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome LiveStreamAiAnalysisResultItem::Deserialize(const rapidjson:
         m_segmentResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("HighlightResultSet") && !value["HighlightResultSet"].IsNull())
+    {
+        if (!value["HighlightResultSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiAnalysisResultItem.HighlightResultSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HighlightResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MediaAiAnalysisHighlightItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_highlightResultSet.push_back(item);
+        }
+        m_highlightResultSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +106,21 @@ void LiveStreamAiAnalysisResultItem::ToJsonObject(rapidjson::Value &value, rapid
 
         int i=0;
         for (auto itr = m_segmentResultSet.begin(); itr != m_segmentResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_highlightResultSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighlightResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_highlightResultSet.begin(); itr != m_highlightResultSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -124,5 +160,21 @@ void LiveStreamAiAnalysisResultItem::SetSegmentResultSet(const vector<SegmentRec
 bool LiveStreamAiAnalysisResultItem::SegmentResultSetHasBeenSet() const
 {
     return m_segmentResultSetHasBeenSet;
+}
+
+vector<MediaAiAnalysisHighlightItem> LiveStreamAiAnalysisResultItem::GetHighlightResultSet() const
+{
+    return m_highlightResultSet;
+}
+
+void LiveStreamAiAnalysisResultItem::SetHighlightResultSet(const vector<MediaAiAnalysisHighlightItem>& _highlightResultSet)
+{
+    m_highlightResultSet = _highlightResultSet;
+    m_highlightResultSetHasBeenSet = true;
+}
+
+bool LiveStreamAiAnalysisResultItem::HighlightResultSetHasBeenSet() const
+{
+    return m_highlightResultSetHasBeenSet;
 }
 

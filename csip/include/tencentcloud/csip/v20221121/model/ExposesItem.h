@@ -655,6 +655,69 @@ namespace TencentCloud
                      */
                     bool AppIdStrHasBeenSet() const;
 
+                    /**
+                     * 获取记录ID
+                     * @return ExposureID 记录ID
+                     * 
+                     */
+                    uint64_t GetExposureID() const;
+
+                    /**
+                     * 设置记录ID
+                     * @param _exposureID 记录ID
+                     * 
+                     */
+                    void SetExposureID(const uint64_t& _exposureID);
+
+                    /**
+                     * 判断参数 ExposureID 是否已赋值
+                     * @return ExposureID 是否已赋值
+                     * 
+                     */
+                    bool ExposureIDHasBeenSet() const;
+
+                    /**
+                     * 获取端口开放数量
+                     * @return PortDetectCount 端口开放数量
+                     * 
+                     */
+                    uint64_t GetPortDetectCount() const;
+
+                    /**
+                     * 设置端口开放数量
+                     * @param _portDetectCount 端口开放数量
+                     * 
+                     */
+                    void SetPortDetectCount(const uint64_t& _portDetectCount);
+
+                    /**
+                     * 判断参数 PortDetectCount 是否已赋值
+                     * @return PortDetectCount 是否已赋值
+                     * 
+                     */
+                    bool PortDetectCountHasBeenSet() const;
+
+                    /**
+                     * 获取端口开放结果
+                     * @return PortDetectResult 端口开放结果
+                     * 
+                     */
+                    std::string GetPortDetectResult() const;
+
+                    /**
+                     * 设置端口开放结果
+                     * @param _portDetectResult 端口开放结果
+                     * 
+                     */
+                    void SetPortDetectResult(const std::string& _portDetectResult);
+
+                    /**
+                     * 判断参数 PortDetectResult 是否已赋值
+                     * @return PortDetectResult 是否已赋值
+                     * 
+                     */
+                    bool PortDetectResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -830,6 +893,24 @@ namespace TencentCloud
                      */
                     std::string m_appIdStr;
                     bool m_appIdStrHasBeenSet;
+
+                    /**
+                     * 记录ID
+                     */
+                    uint64_t m_exposureID;
+                    bool m_exposureIDHasBeenSet;
+
+                    /**
+                     * 端口开放数量
+                     */
+                    uint64_t m_portDetectCount;
+                    bool m_portDetectCountHasBeenSet;
+
+                    /**
+                     * 端口开放结果
+                     */
+                    std::string m_portDetectResult;
+                    bool m_portDetectResultHasBeenSet;
 
                 };
             }

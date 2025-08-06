@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/csip/v20221121/model/SourceIPVpcInfo.h>
 
 
 namespace TencentCloud
@@ -286,22 +287,18 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取用户类型
-CAMUser/root/AssumedRole
+                     * 获取用户类型CAMUser/root/AssumedRole
 
-                     * @return UserType 用户类型
-CAMUser/root/AssumedRole
+                     * @return UserType 用户类型CAMUser/root/AssumedRole
 
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
-                     * 设置用户类型
-CAMUser/root/AssumedRole
+                     * 设置用户类型CAMUser/root/AssumedRole
 
-                     * @param _userType 用户类型
-CAMUser/root/AssumedRole
+                     * @param _userType 用户类型CAMUser/root/AssumedRole
 
                      * 
                      */
@@ -570,6 +567,27 @@ CAMUser/root/AssumedRole
                      */
                     bool ISPHasBeenSet() const;
 
+                    /**
+                     * 获取账号外vpc信息列表
+                     * @return VpcInfo 账号外vpc信息列表
+                     * 
+                     */
+                    std::vector<SourceIPVpcInfo> GetVpcInfo() const;
+
+                    /**
+                     * 设置账号外vpc信息列表
+                     * @param _vpcInfo 账号外vpc信息列表
+                     * 
+                     */
+                    void SetVpcInfo(const std::vector<SourceIPVpcInfo>& _vpcInfo);
+
+                    /**
+                     * 判断参数 VpcInfo 是否已赋值
+                     * @return VpcInfo 是否已赋值
+                     * 
+                     */
+                    bool VpcInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,8 +659,7 @@ CAMUser/root/AssumedRole
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 用户类型
-CAMUser/root/AssumedRole
+                     * 用户类型CAMUser/root/AssumedRole
 
                      */
                     std::string m_userType;
@@ -720,6 +737,12 @@ CAMUser/root/AssumedRole
                      */
                     std::string m_iSP;
                     bool m_iSPHasBeenSet;
+
+                    /**
+                     * 账号外vpc信息列表
+                     */
+                    std::vector<SourceIPVpcInfo> m_vpcInfo;
+                    bool m_vpcInfoHasBeenSet;
 
                 };
             }

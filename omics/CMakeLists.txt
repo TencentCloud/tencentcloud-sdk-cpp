@@ -64,6 +64,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/Filter.h
   include/tencentcloud/omics/v20221128/model/ResourceIds.h
   include/tencentcloud/omics/v20221128/model/DescribeRunGroupsResponse.h
+  include/tencentcloud/omics/v20221128/model/VolumeAutoScaleUpRule.h
   include/tencentcloud/omics/v20221128/model/Volume.h
   include/tencentcloud/omics/v20221128/model/VolumeInfo.h
   include/tencentcloud/omics/v20221128/model/TerminateRunGroupRequest.h
@@ -136,6 +137,7 @@ set(omics_src
   src/v20221128/model/Filter.cpp
   src/v20221128/model/ResourceIds.cpp
   src/v20221128/model/DescribeRunGroupsResponse.cpp
+  src/v20221128/model/VolumeAutoScaleUpRule.cpp
   src/v20221128/model/Volume.cpp
   src/v20221128/model/VolumeInfo.cpp
   src/v20221128/model/TerminateRunGroupRequest.cpp

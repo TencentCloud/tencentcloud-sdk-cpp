@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SegmentRecognitionItem.h>
+#include <tencentcloud/mps/v20190612/model/MediaAiAnalysisHighlightItem.h>
 
 
 namespace TencentCloud
@@ -50,8 +51,10 @@ namespace TencentCloud
                     /**
                      * 获取结果的类型，取值范围：
 <li>SegmentRecognition：拆条。</li>
+<li>Highlight ：集锦。</li>
                      * @return Type 结果的类型，取值范围：
 <li>SegmentRecognition：拆条。</li>
+<li>Highlight ：集锦。</li>
                      * 
                      */
                     std::string GetType() const;
@@ -59,8 +62,10 @@ namespace TencentCloud
                     /**
                      * 设置结果的类型，取值范围：
 <li>SegmentRecognition：拆条。</li>
+<li>Highlight ：集锦。</li>
                      * @param _type 结果的类型，取值范围：
 <li>SegmentRecognition：拆条。</li>
+<li>Highlight ：集锦。</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -101,11 +106,37 @@ SegmentRecognition 时有效。
                      */
                     bool SegmentResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取集锦结果，当Type 为 Highlight 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HighlightResultSet 集锦结果，当Type 为 Highlight 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<MediaAiAnalysisHighlightItem> GetHighlightResultSet() const;
+
+                    /**
+                     * 设置集锦结果，当Type 为 Highlight 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _highlightResultSet 集锦结果，当Type 为 Highlight 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHighlightResultSet(const std::vector<MediaAiAnalysisHighlightItem>& _highlightResultSet);
+
+                    /**
+                     * 判断参数 HighlightResultSet 是否已赋值
+                     * @return HighlightResultSet 是否已赋值
+                     * 
+                     */
+                    bool HighlightResultSetHasBeenSet() const;
+
                 private:
 
                     /**
                      * 结果的类型，取值范围：
 <li>SegmentRecognition：拆条。</li>
+<li>Highlight ：集锦。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -117,6 +148,13 @@ SegmentRecognition 时有效。
                      */
                     std::vector<SegmentRecognitionItem> m_segmentResultSet;
                     bool m_segmentResultSetHasBeenSet;
+
+                    /**
+                     * 集锦结果，当Type 为 Highlight 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MediaAiAnalysisHighlightItem> m_highlightResultSet;
+                    bool m_highlightResultSetHasBeenSet;
 
                 };
             }

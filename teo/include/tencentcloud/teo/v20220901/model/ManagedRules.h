@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/ManagedRuleAutoUpdate.h>
 #include <tencentcloud/teo/v20220901/model/ManagedRuleGroup.h>
+#include <tencentcloud/teo/v20220901/model/FrequentScanningProtection.h>
 
 
 namespace TencentCloud
@@ -153,6 +154,27 @@ namespace TencentCloud
                      */
                     bool ManagedRuleGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。
+                     * @return FrequentScanningProtection 高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。
+                     * 
+                     */
+                    FrequentScanningProtection GetFrequentScanningProtection() const;
+
+                    /**
+                     * 设置高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。
+                     * @param _frequentScanningProtection 高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。
+                     * 
+                     */
+                    void SetFrequentScanningProtection(const FrequentScanningProtection& _frequentScanningProtection);
+
+                    /**
+                     * 判断参数 FrequentScanningProtection 是否已赋值
+                     * @return FrequentScanningProtection 是否已赋值
+                     * 
+                     */
+                    bool FrequentScanningProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +206,12 @@ namespace TencentCloud
                      */
                     std::vector<ManagedRuleGroup> m_managedRuleGroups;
                     bool m_managedRuleGroupsHasBeenSet;
+
+                    /**
+                     * 高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。
+                     */
+                    FrequentScanningProtection m_frequentScanningProtection;
+                    bool m_frequentScanningProtectionHasBeenSet;
 
                 };
             }

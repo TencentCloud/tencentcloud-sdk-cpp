@@ -28,7 +28,8 @@ DescribeJobMonitorDataRequest::DescribeJobMonitorDataRequest() :
     m_taskInstanceIndexHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_dimensionsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,21 @@ string DescribeJobMonitorDataRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dimensionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Dimensions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dimensions.begin(); itr != m_dimensions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +205,22 @@ void DescribeJobMonitorDataRequest::SetEndTime(const string& _endTime)
 bool DescribeJobMonitorDataRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+vector<Dimension> DescribeJobMonitorDataRequest::GetDimensions() const
+{
+    return m_dimensions;
+}
+
+void DescribeJobMonitorDataRequest::SetDimensions(const vector<Dimension>& _dimensions)
+{
+    m_dimensions = _dimensions;
+    m_dimensionsHasBeenSet = true;
+}
+
+bool DescribeJobMonitorDataRequest::DimensionsHasBeenSet() const
+{
+    return m_dimensionsHasBeenSet;
 }
 
 

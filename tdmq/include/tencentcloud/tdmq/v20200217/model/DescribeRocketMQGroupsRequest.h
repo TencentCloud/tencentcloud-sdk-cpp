@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool FilterGroupHasBeenSet() const;
 
                     /**
-                     * 获取按照指定字段排序，可选值为tps，accumulative
-                     * @return SortedBy 按照指定字段排序，可选值为tps，accumulative
+                     * 获取按照指定字段排序，可选值为 subscribeNum: 订阅 Topic 个数
+                     * @return SortedBy 按照指定字段排序，可选值为 subscribeNum: 订阅 Topic 个数
                      * 
                      */
                     std::string GetSortedBy() const;
 
                     /**
-                     * 设置按照指定字段排序，可选值为tps，accumulative
-                     * @param _sortedBy 按照指定字段排序，可选值为tps，accumulative
+                     * 设置按照指定字段排序，可选值为 subscribeNum: 订阅 Topic 个数
+                     * @param _sortedBy 按照指定字段排序，可选值为 subscribeNum: 订阅 Topic 个数
                      * 
                      */
                     void SetSortedBy(const std::string& _sortedBy);
@@ -291,7 +291,7 @@ namespace TencentCloud
                     bool m_filterGroupHasBeenSet;
 
                     /**
-                     * 按照指定字段排序，可选值为tps，accumulative
+                     * 按照指定字段排序，可选值为 subscribeNum: 订阅 Topic 个数
                      */
                     std::string m_sortedBy;
                     bool m_sortedByHasBeenSet;

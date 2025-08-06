@@ -40,6 +40,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/Task.h
   include/tencentcloud/teo/v20220901/model/DeployConfigGroupVersionRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeSecurityAPIResourceResponse.h
+  include/tencentcloud/teo/v20220901/model/TopEntryValue.h
   include/tencentcloud/teo/v20220901/model/RenewFlag.h
   include/tencentcloud/teo/v20220901/model/Compression.h
   include/tencentcloud/teo/v20220901/model/DescribeFunctionsResponse.h
@@ -67,7 +68,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyAccelerationDomainResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteSecurityAPIResourceRequest.h
   include/tencentcloud/teo/v20220901/model/UpstreamHTTP2Parameters.h
-  include/tencentcloud/teo/v20220901/model/TopEntryValue.h
+  include/tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayLineRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeHostsSettingResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeWebSecurityTemplateResponse.h
   include/tencentcloud/teo/v20220901/model/Origin.h
@@ -706,7 +707,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribePurgeTasksResponse.h
   include/tencentcloud/teo/v20220901/model/HttpDDoSProtection.h
   include/tencentcloud/teo/v20220901/model/CheckRegionHealthStatus.h
-  include/tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayLineRequest.h
+  include/tencentcloud/teo/v20220901/model/FrequentScanningProtection.h
   include/tencentcloud/teo/v20220901/model/DescribeFunctionRulesRequest.h
   include/tencentcloud/teo/v20220901/model/DeployConfigGroupVersionResponse.h
   include/tencentcloud/teo/v20220901/model/Addresses.h
@@ -745,6 +746,7 @@ set(teo_src
   src/v20220106/model/Task.cpp
   src/v20220901/model/DeployConfigGroupVersionRequest.cpp
   src/v20220901/model/DescribeSecurityAPIResourceResponse.cpp
+  src/v20220901/model/TopEntryValue.cpp
   src/v20220901/model/RenewFlag.cpp
   src/v20220901/model/Compression.cpp
   src/v20220901/model/DescribeFunctionsResponse.cpp
@@ -772,7 +774,7 @@ set(teo_src
   src/v20220901/model/ModifyAccelerationDomainResponse.cpp
   src/v20220901/model/DeleteSecurityAPIResourceRequest.cpp
   src/v20220901/model/UpstreamHTTP2Parameters.cpp
-  src/v20220901/model/TopEntryValue.cpp
+  src/v20220901/model/ModifyMultiPathGatewayLineRequest.cpp
   src/v20220901/model/DescribeHostsSettingResponse.cpp
   src/v20220901/model/DescribeWebSecurityTemplateResponse.cpp
   src/v20220901/model/Origin.cpp
@@ -1411,7 +1413,7 @@ set(teo_src
   src/v20220901/model/DescribePurgeTasksResponse.cpp
   src/v20220901/model/HttpDDoSProtection.cpp
   src/v20220901/model/CheckRegionHealthStatus.cpp
-  src/v20220901/model/ModifyMultiPathGatewayLineRequest.cpp
+  src/v20220901/model/FrequentScanningProtection.cpp
   src/v20220901/model/DescribeFunctionRulesRequest.cpp
   src/v20220901/model/DeployConfigGroupVersionResponse.cpp
   src/v20220901/model/Addresses.cpp

@@ -29,7 +29,8 @@ CreateTaskFromActionRequest::CreateTaskFromActionRequest() :
     m_taskDescriptionHasBeenSet(false),
     m_taskActionGeneralConfigurationHasBeenSet(false),
     m_taskActionCustomConfigurationHasBeenSet(false),
-    m_taskPauseDurationHasBeenSet(false)
+    m_taskPauseDurationHasBeenSet(false),
+    m_taskTagsHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,21 @@ string CreateTaskFromActionRequest::ToJsonString() const
         string key = "TaskPauseDuration";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskPauseDuration, allocator);
+    }
+
+    if (m_taskTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_taskTags.begin(); itr != m_taskTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -219,6 +235,22 @@ void CreateTaskFromActionRequest::SetTaskPauseDuration(const uint64_t& _taskPaus
 bool CreateTaskFromActionRequest::TaskPauseDurationHasBeenSet() const
 {
     return m_taskPauseDurationHasBeenSet;
+}
+
+vector<TagWithCreate> CreateTaskFromActionRequest::GetTaskTags() const
+{
+    return m_taskTags;
+}
+
+void CreateTaskFromActionRequest::SetTaskTags(const vector<TagWithCreate>& _taskTags)
+{
+    m_taskTags = _taskTags;
+    m_taskTagsHasBeenSet = true;
+}
+
+bool CreateTaskFromActionRequest::TaskTagsHasBeenSet() const
+{
+    return m_taskTagsHasBeenSet;
 }
 
 

@@ -49,7 +49,10 @@ ExposesItem::ExposesItem() :
     m_uuidHasBeenSet(false),
     m_hasScanHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_appIdStrHasBeenSet(false)
+    m_appIdStrHasBeenSet(false),
+    m_exposureIDHasBeenSet(false),
+    m_portDetectCountHasBeenSet(false),
+    m_portDetectResultHasBeenSet(false)
 {
 }
 
@@ -348,6 +351,36 @@ CoreInternalOutcome ExposesItem::Deserialize(const rapidjson::Value &value)
         m_appIdStrHasBeenSet = true;
     }
 
+    if (value.HasMember("ExposureID") && !value["ExposureID"].IsNull())
+    {
+        if (!value["ExposureID"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExposesItem.ExposureID` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_exposureID = value["ExposureID"].GetUint64();
+        m_exposureIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("PortDetectCount") && !value["PortDetectCount"].IsNull())
+    {
+        if (!value["PortDetectCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExposesItem.PortDetectCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_portDetectCount = value["PortDetectCount"].GetUint64();
+        m_portDetectCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("PortDetectResult") && !value["PortDetectResult"].IsNull())
+    {
+        if (!value["PortDetectResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExposesItem.PortDetectResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_portDetectResult = string(value["PortDetectResult"].GetString());
+        m_portDetectResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -585,6 +618,30 @@ void ExposesItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AppIdStr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appIdStr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exposureIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExposureID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exposureID, allocator);
+    }
+
+    if (m_portDetectCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortDetectCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_portDetectCount, allocator);
+    }
+
+    if (m_portDetectResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortDetectResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_portDetectResult.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1052,5 +1109,53 @@ void ExposesItem::SetAppIdStr(const string& _appIdStr)
 bool ExposesItem::AppIdStrHasBeenSet() const
 {
     return m_appIdStrHasBeenSet;
+}
+
+uint64_t ExposesItem::GetExposureID() const
+{
+    return m_exposureID;
+}
+
+void ExposesItem::SetExposureID(const uint64_t& _exposureID)
+{
+    m_exposureID = _exposureID;
+    m_exposureIDHasBeenSet = true;
+}
+
+bool ExposesItem::ExposureIDHasBeenSet() const
+{
+    return m_exposureIDHasBeenSet;
+}
+
+uint64_t ExposesItem::GetPortDetectCount() const
+{
+    return m_portDetectCount;
+}
+
+void ExposesItem::SetPortDetectCount(const uint64_t& _portDetectCount)
+{
+    m_portDetectCount = _portDetectCount;
+    m_portDetectCountHasBeenSet = true;
+}
+
+bool ExposesItem::PortDetectCountHasBeenSet() const
+{
+    return m_portDetectCountHasBeenSet;
+}
+
+string ExposesItem::GetPortDetectResult() const
+{
+    return m_portDetectResult;
+}
+
+void ExposesItem::SetPortDetectResult(const string& _portDetectResult)
+{
+    m_portDetectResult = _portDetectResult;
+    m_portDetectResultHasBeenSet = true;
+}
+
+bool ExposesItem::PortDetectResultHasBeenSet() const
+{
+    return m_portDetectResultHasBeenSet;
 }
 

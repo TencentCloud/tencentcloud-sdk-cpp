@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/batch/v20170312/model/Dimension.h>
 
 
 namespace TencentCloud
@@ -112,12 +113,16 @@ namespace TencentCloud
 - MemUsage：内存利用率，单位：%
 - LanOuttraffic：内网出带宽，单位：Bytes/s
 - LanIntraffic：内网入带宽，单位：Bytes/s
+- MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%
+- TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用
                      * @return MetricName 支持查询的指标；当前支持查询的任务指标；
 
 - CpuUsage：cpu利用率，单位：%
 - MemUsage：内存利用率，单位：%
 - LanOuttraffic：内网出带宽，单位：Bytes/s
 - LanIntraffic：内网入带宽，单位：Bytes/s
+- MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%
+- TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用
                      * 
                      */
                     std::string GetMetricName() const;
@@ -129,12 +134,16 @@ namespace TencentCloud
 - MemUsage：内存利用率，单位：%
 - LanOuttraffic：内网出带宽，单位：Bytes/s
 - LanIntraffic：内网入带宽，单位：Bytes/s
+- MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%
+- TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用
                      * @param _metricName 支持查询的指标；当前支持查询的任务指标；
 
 - CpuUsage：cpu利用率，单位：%
 - MemUsage：内存利用率，单位：%
 - LanOuttraffic：内网出带宽，单位：Bytes/s
 - LanIntraffic：内网入带宽，单位：Bytes/s
+- MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%
+- TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -188,6 +197,43 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取查询指标的扩展参数；当前只支持TargetDiskUsage;
+
+- TargetDiskUsage
+    -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。
+    样例：[{"Name":"diskname", "Value":"vdb"}]
+                     * @return Dimensions 查询指标的扩展参数；当前只支持TargetDiskUsage;
+
+- TargetDiskUsage
+    -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。
+    样例：[{"Name":"diskname", "Value":"vdb"}]
+                     * 
+                     */
+                    std::vector<Dimension> GetDimensions() const;
+
+                    /**
+                     * 设置查询指标的扩展参数；当前只支持TargetDiskUsage;
+
+- TargetDiskUsage
+    -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。
+    样例：[{"Name":"diskname", "Value":"vdb"}]
+                     * @param _dimensions 查询指标的扩展参数；当前只支持TargetDiskUsage;
+
+- TargetDiskUsage
+    -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。
+    样例：[{"Name":"diskname", "Value":"vdb"}]
+                     * 
+                     */
+                    void SetDimensions(const std::vector<Dimension>& _dimensions);
+
+                    /**
+                     * 判断参数 Dimensions 是否已赋值
+                     * @return Dimensions 是否已赋值
+                     * 
+                     */
+                    bool DimensionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +261,8 @@ namespace TencentCloud
 - MemUsage：内存利用率，单位：%
 - LanOuttraffic：内网出带宽，单位：Bytes/s
 - LanIntraffic：内网入带宽，单位：Bytes/s
+- MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%
+- TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
@@ -230,6 +278,16 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 查询指标的扩展参数；当前只支持TargetDiskUsage;
+
+- TargetDiskUsage
+    -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。
+    样例：[{"Name":"diskname", "Value":"vdb"}]
+                     */
+                    std::vector<Dimension> m_dimensions;
+                    bool m_dimensionsHasBeenSet;
 
                 };
             }

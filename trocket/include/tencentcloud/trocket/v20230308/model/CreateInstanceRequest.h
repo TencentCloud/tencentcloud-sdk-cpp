@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/trocket/v20230308/model/Tag.h>
 #include <tencentcloud/trocket/v20230308/model/VpcInfo.h>
+#include <tencentcloud/trocket/v20230308/model/Tag.h>
 #include <tencentcloud/trocket/v20230308/model/IpRule.h>
 
 
@@ -141,6 +141,27 @@ namespace TencentCloud
                     bool SkuCodeHasBeenSet() const;
 
                     /**
+                     * 获取集群绑定的VPC信息
+                     * @return VpcList 集群绑定的VPC信息
+                     * 
+                     */
+                    std::vector<VpcInfo> GetVpcList() const;
+
+                    /**
+                     * 设置集群绑定的VPC信息
+                     * @param _vpcList 集群绑定的VPC信息
+                     * 
+                     */
+                    void SetVpcList(const std::vector<VpcInfo>& _vpcList);
+
+                    /**
+                     * 判断参数 VpcList 是否已赋值
+                     * @return VpcList 是否已赋值
+                     * 
+                     */
+                    bool VpcListHasBeenSet() const;
+
+                    /**
                      * 获取备注信息
                      * @return Remark 备注信息
                      * 
@@ -181,27 +202,6 @@ namespace TencentCloud
                      * 
                      */
                     bool TagListHasBeenSet() const;
-
-                    /**
-                     * 获取集群绑定的VPC信息，必填
-                     * @return VpcList 集群绑定的VPC信息，必填
-                     * 
-                     */
-                    std::vector<VpcInfo> GetVpcList() const;
-
-                    /**
-                     * 设置集群绑定的VPC信息，必填
-                     * @param _vpcList 集群绑定的VPC信息，必填
-                     * 
-                     */
-                    void SetVpcList(const std::vector<VpcInfo>& _vpcList);
-
-                    /**
-                     * 判断参数 VpcList 是否已赋值
-                     * @return VpcList 是否已赋值
-                     * 
-                     */
-                    bool VpcListHasBeenSet() const;
 
                     /**
                      * 获取是否开启公网，默认值为false表示不开启
@@ -470,6 +470,12 @@ namespace TencentCloud
                     bool m_skuCodeHasBeenSet;
 
                     /**
+                     * 集群绑定的VPC信息
+                     */
+                    std::vector<VpcInfo> m_vpcList;
+                    bool m_vpcListHasBeenSet;
+
+                    /**
                      * 备注信息
                      */
                     std::string m_remark;
@@ -480,12 +486,6 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;
-
-                    /**
-                     * 集群绑定的VPC信息，必填
-                     */
-                    std::vector<VpcInfo> m_vpcList;
-                    bool m_vpcListHasBeenSet;
 
                     /**
                      * 是否开启公网，默认值为false表示不开启

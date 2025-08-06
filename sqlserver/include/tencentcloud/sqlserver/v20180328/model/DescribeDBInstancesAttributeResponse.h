@@ -257,6 +257,34 @@ namespace TencentCloud
                      */
                     bool IsDiskEncryptFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否安全限制部分功能，0-没有限制，1-有限制。限制的功能有：修改可用区、迁移变配、DTS数据迁移等
+                     * @return IsSafetyLimited 是否安全限制部分功能，0-没有限制，1-有限制。限制的功能有：修改可用区、迁移变配、DTS数据迁移等
+                     * 
+                     */
+                    uint64_t GetIsSafetyLimited() const;
+
+                    /**
+                     * 判断参数 IsSafetyLimited 是否已赋值
+                     * @return IsSafetyLimited 是否已赋值
+                     * 
+                     */
+                    bool IsSafetyLimitedHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持创建SA权限账号，0-不支持，1-支持
+                     * @return IsSupportSA 是否支持创建SA权限账号，0-不支持，1-支持
+                     * 
+                     */
+                    uint64_t GetIsSupportSA() const;
+
+                    /**
+                     * 判断参数 IsSupportSA 是否已赋值
+                     * @return IsSupportSA 是否已赋值
+                     * 
+                     */
+                    bool IsSupportSAHasBeenSet() const;
+
                 private:
 
                     /**
@@ -348,6 +376,18 @@ namespace TencentCloud
                      */
                     int64_t m_isDiskEncryptFlag;
                     bool m_isDiskEncryptFlagHasBeenSet;
+
+                    /**
+                     * 是否安全限制部分功能，0-没有限制，1-有限制。限制的功能有：修改可用区、迁移变配、DTS数据迁移等
+                     */
+                    uint64_t m_isSafetyLimited;
+                    bool m_isSafetyLimitedHasBeenSet;
+
+                    /**
+                     * 是否支持创建SA权限账号，0-不支持，1-支持
+                     */
+                    uint64_t m_isSupportSA;
+                    bool m_isSupportSAHasBeenSet;
 
                 };
             }

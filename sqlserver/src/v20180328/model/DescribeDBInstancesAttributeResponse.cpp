@@ -38,7 +38,9 @@ DescribeDBInstancesAttributeResponse::DescribeDBInstancesAttributeResponse() :
     m_oldVipListHasBeenSet(false),
     m_xEventStatusHasBeenSet(false),
     m_multiDrReadableInfoHasBeenSet(false),
-    m_isDiskEncryptFlagHasBeenSet(false)
+    m_isDiskEncryptFlagHasBeenSet(false),
+    m_isSafetyLimitedHasBeenSet(false),
+    m_isSupportSAHasBeenSet(false)
 {
 }
 
@@ -267,6 +269,26 @@ CoreInternalOutcome DescribeDBInstancesAttributeResponse::Deserialize(const stri
         m_isDiskEncryptFlagHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsSafetyLimited") && !rsp["IsSafetyLimited"].IsNull())
+    {
+        if (!rsp["IsSafetyLimited"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsSafetyLimited` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSafetyLimited = rsp["IsSafetyLimited"].GetUint64();
+        m_isSafetyLimitedHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsSupportSA") && !rsp["IsSupportSA"].IsNull())
+    {
+        if (!rsp["IsSupportSA"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsSupportSA` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportSA = rsp["IsSupportSA"].GetUint64();
+        m_isSupportSAHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +434,22 @@ string DescribeDBInstancesAttributeResponse::ToJsonString() const
         string key = "IsDiskEncryptFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDiskEncryptFlag, allocator);
+    }
+
+    if (m_isSafetyLimitedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSafetyLimited";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSafetyLimited, allocator);
+    }
+
+    if (m_isSupportSAHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportSA";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportSA, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -574,6 +612,26 @@ int64_t DescribeDBInstancesAttributeResponse::GetIsDiskEncryptFlag() const
 bool DescribeDBInstancesAttributeResponse::IsDiskEncryptFlagHasBeenSet() const
 {
     return m_isDiskEncryptFlagHasBeenSet;
+}
+
+uint64_t DescribeDBInstancesAttributeResponse::GetIsSafetyLimited() const
+{
+    return m_isSafetyLimited;
+}
+
+bool DescribeDBInstancesAttributeResponse::IsSafetyLimitedHasBeenSet() const
+{
+    return m_isSafetyLimitedHasBeenSet;
+}
+
+uint64_t DescribeDBInstancesAttributeResponse::GetIsSupportSA() const
+{
+    return m_isSupportSA;
+}
+
+bool DescribeDBInstancesAttributeResponse::IsSupportSAHasBeenSet() const
+{
+    return m_isSupportSAHasBeenSet;
 }
 
 

@@ -90,6 +90,7 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvCreateInfosResponse.h
   include/tencentcloud/batch/v20170312/model/RunSecurityServiceEnabled.h
   include/tencentcloud/batch/v20170312/model/DescribeJobRequest.h
+  include/tencentcloud/batch/v20170312/model/Dimension.h
   include/tencentcloud/batch/v20170312/model/RedirectInfo.h
   include/tencentcloud/batch/v20170312/model/DescribeInstanceCategoriesResponse.h
   include/tencentcloud/batch/v20170312/model/ModifyTaskTemplateResponse.h
@@ -213,6 +214,7 @@ set(batch_src
   src/v20170312/model/DescribeComputeEnvCreateInfosResponse.cpp
   src/v20170312/model/RunSecurityServiceEnabled.cpp
   src/v20170312/model/DescribeJobRequest.cpp
+  src/v20170312/model/Dimension.cpp
   src/v20170312/model/RedirectInfo.cpp
   src/v20170312/model/DescribeInstanceCategoriesResponse.cpp
   src/v20170312/model/ModifyTaskTemplateResponse.cpp

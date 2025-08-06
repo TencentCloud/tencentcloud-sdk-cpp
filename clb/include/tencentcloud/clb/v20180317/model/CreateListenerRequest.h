@@ -205,18 +205,18 @@ namespace TencentCloud
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）、IP_HASH（按 IP 地址哈希）
+                     * 获取监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）
 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
-                     * @return Scheduler 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）、IP_HASH（按 IP 地址哈希）
+                     * @return Scheduler 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）
 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）、IP_HASH（按 IP 地址哈希）
+                     * 设置监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）
 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
-                     * @param _scheduler 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）、IP_HASH（按 IP 地址哈希）
+                     * @param _scheduler 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）
 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
@@ -637,7 +637,7 @@ namespace TencentCloud
                     bool m_sessionExpireTimeHasBeenSet;
 
                     /**
-                     * 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）、IP_HASH（按 IP 地址哈希）
+                     * 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）
 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      */
                     std::string m_scheduler;

@@ -44,7 +44,8 @@ CallRecord::CallRecord() :
     m_dateHasBeenSet(false),
     m_appIDHasBeenSet(false),
     m_showStatusHasBeenSet(false),
-    m_iSPHasBeenSet(false)
+    m_iSPHasBeenSet(false),
+    m_vpcInfoHasBeenSet(false)
 {
 }
 
@@ -296,6 +297,26 @@ CoreInternalOutcome CallRecord::Deserialize(const rapidjson::Value &value)
         m_iSPHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcInfo") && !value["VpcInfo"].IsNull())
+    {
+        if (!value["VpcInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CallRecord.VpcInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VpcInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SourceIPVpcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vpcInfo.push_back(item);
+        }
+        m_vpcInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -498,6 +519,21 @@ void CallRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ISP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_iSP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vpcInfo.begin(); itr != m_vpcInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -885,5 +921,21 @@ void CallRecord::SetISP(const string& _iSP)
 bool CallRecord::ISPHasBeenSet() const
 {
     return m_iSPHasBeenSet;
+}
+
+vector<SourceIPVpcInfo> CallRecord::GetVpcInfo() const
+{
+    return m_vpcInfo;
+}
+
+void CallRecord::SetVpcInfo(const vector<SourceIPVpcInfo>& _vpcInfo)
+{
+    m_vpcInfo = _vpcInfo;
+    m_vpcInfoHasBeenSet = true;
+}
+
+bool CallRecord::VpcInfoHasBeenSet() const
+{
+    return m_vpcInfoHasBeenSet;
 }
 

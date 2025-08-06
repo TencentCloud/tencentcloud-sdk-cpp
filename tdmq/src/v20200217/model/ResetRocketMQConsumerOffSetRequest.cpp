@@ -28,7 +28,8 @@ ResetRocketMQConsumerOffSetRequest::ResetRocketMQConsumerOffSetRequest() :
     m_groupIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_topicHasBeenSet(false),
-    m_resetTimestampHasBeenSet(false)
+    m_resetTimestampHasBeenSet(false),
+    m_retryFlagHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ResetRocketMQConsumerOffSetRequest::ToJsonString() const
         string key = "ResetTimestamp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_resetTimestamp, allocator);
+    }
+
+    if (m_retryFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retryFlag, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ResetRocketMQConsumerOffSetRequest::SetResetTimestamp(const uint64_t& _rese
 bool ResetRocketMQConsumerOffSetRequest::ResetTimestampHasBeenSet() const
 {
     return m_resetTimestampHasBeenSet;
+}
+
+bool ResetRocketMQConsumerOffSetRequest::GetRetryFlag() const
+{
+    return m_retryFlag;
+}
+
+void ResetRocketMQConsumerOffSetRequest::SetRetryFlag(const bool& _retryFlag)
+{
+    m_retryFlag = _retryFlag;
+    m_retryFlagHasBeenSet = true;
+}
+
+bool ResetRocketMQConsumerOffSetRequest::RetryFlagHasBeenSet() const
+{
+    return m_retryFlagHasBeenSet;
 }
 
 

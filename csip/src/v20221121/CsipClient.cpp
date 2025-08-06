@@ -1201,6 +1201,49 @@ CsipClient::DescribeClusterPodAssetsOutcomeCallable CsipClient::DescribeClusterP
     return task->get_future();
 }
 
+CsipClient::DescribeConfigCheckRulesOutcome CsipClient::DescribeConfigCheckRules(const DescribeConfigCheckRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigCheckRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigCheckRulesResponse rsp = DescribeConfigCheckRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigCheckRulesOutcome(rsp);
+        else
+            return DescribeConfigCheckRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigCheckRulesOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeConfigCheckRulesAsync(const DescribeConfigCheckRulesRequest& request, const DescribeConfigCheckRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigCheckRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeConfigCheckRulesOutcomeCallable CsipClient::DescribeConfigCheckRulesCallable(const DescribeConfigCheckRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigCheckRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigCheckRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeDbAssetInfoOutcome CsipClient::DescribeDbAssetInfo(const DescribeDbAssetInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDbAssetInfo");

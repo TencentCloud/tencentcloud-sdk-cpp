@@ -192,6 +192,48 @@ namespace TencentCloud
                      */
                     bool CapacityHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启默认扩容，仅turbo类型文件存储支持
+                     * @return EnableAutoScaleUp 是否开启默认扩容，仅turbo类型文件存储支持
+                     * 
+                     */
+                    bool GetEnableAutoScaleUp() const;
+
+                    /**
+                     * 设置是否开启默认扩容，仅turbo类型文件存储支持
+                     * @param _enableAutoScaleUp 是否开启默认扩容，仅turbo类型文件存储支持
+                     * 
+                     */
+                    void SetEnableAutoScaleUp(const bool& _enableAutoScaleUp);
+
+                    /**
+                     * 判断参数 EnableAutoScaleUp 是否已赋值
+                     * @return EnableAutoScaleUp 是否已赋值
+                     * 
+                     */
+                    bool EnableAutoScaleUpHasBeenSet() const;
+
+                    /**
+                     * 获取turbo文件系统元数据属性，basic：标准型元数据；enhanced：增强型元数据
+                     * @return MetaType turbo文件系统元数据属性，basic：标准型元数据；enhanced：增强型元数据
+                     * 
+                     */
+                    std::string GetMetaType() const;
+
+                    /**
+                     * 设置turbo文件系统元数据属性，basic：标准型元数据；enhanced：增强型元数据
+                     * @param _metaType turbo文件系统元数据属性，basic：标准型元数据；enhanced：增强型元数据
+                     * 
+                     */
+                    void SetMetaType(const std::string& _metaType);
+
+                    /**
+                     * 判断参数 MetaType 是否已赋值
+                     * @return MetaType 是否已赋值
+                     * 
+                     */
+                    bool MetaTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +277,18 @@ namespace TencentCloud
                      */
                     uint64_t m_capacity;
                     bool m_capacityHasBeenSet;
+
+                    /**
+                     * 是否开启默认扩容，仅turbo类型文件存储支持
+                     */
+                    bool m_enableAutoScaleUp;
+                    bool m_enableAutoScaleUpHasBeenSet;
+
+                    /**
+                     * turbo文件系统元数据属性，basic：标准型元数据；enhanced：增强型元数据
+                     */
+                    std::string m_metaType;
+                    bool m_metaTypeHasBeenSet;
 
                 };
             }

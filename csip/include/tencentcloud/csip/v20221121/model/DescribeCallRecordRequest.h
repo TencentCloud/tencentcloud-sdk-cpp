@@ -107,6 +107,27 @@ namespace TencentCloud
                     bool SourceIPIDHasBeenSet() const;
 
                     /**
+                     * 获取访问账号uin
+                     * @return AccUin 访问账号uin
+                     * 
+                     */
+                    std::string GetAccUin() const;
+
+                    /**
+                     * 设置访问账号uin
+                     * @param _accUin 访问账号uin
+                     * 
+                     */
+                    void SetAccUin(const std::string& _accUin);
+
+                    /**
+                     * 判断参数 AccUin 是否已赋值
+                     * @return AccUin 是否已赋值
+                     * 
+                     */
+                    bool AccUinHasBeenSet() const;
+
+                    /**
                      * 获取过滤器
                      * @return Filter 过滤器
                      * 
@@ -146,6 +167,12 @@ namespace TencentCloud
                      */
                     uint64_t m_sourceIPID;
                     bool m_sourceIPIDHasBeenSet;
+
+                    /**
+                     * 访问账号uin
+                     */
+                    std::string m_accUin;
+                    bool m_accUinHasBeenSet;
 
                     /**
                      * 过滤器
