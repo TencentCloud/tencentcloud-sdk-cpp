@@ -964,6 +964,27 @@ namespace TencentCloud
                      */
                     bool ResourceGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务执行耗时
+                     * @return JobTimeSum 任务执行耗时
+                     * 
+                     */
+                    int64_t GetJobTimeSum() const;
+
+                    /**
+                     * 设置任务执行耗时
+                     * @param _jobTimeSum 任务执行耗时
+                     * 
+                     */
+                    void SetJobTimeSum(const int64_t& _jobTimeSum);
+
+                    /**
+                     * 判断参数 JobTimeSum 是否已赋值
+                     * @return JobTimeSum 是否已赋值
+                     * 
+                     */
+                    bool JobTimeSumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1226,6 +1247,12 @@ namespace TencentCloud
                      */
                     std::string m_resourceGroupName;
                     bool m_resourceGroupNameHasBeenSet;
+
+                    /**
+                     * 任务执行耗时
+                     */
+                    int64_t m_jobTimeSum;
+                    bool m_jobTimeSumHasBeenSet;
 
                 };
             }

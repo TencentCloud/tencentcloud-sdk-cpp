@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool ProgressPercentHasBeenSet() const;
 
                     /**
-                     * 获取报告模版名称
-                     * @return ReportTemplateName 报告模版名称
+                     * 获取报告模板名称
+                     * @return ReportTemplateName 报告模板名称
                      * 
                      */
                     std::string GetReportTemplateName() const;
 
                     /**
-                     * 设置报告模版名称
-                     * @param _reportTemplateName 报告模版名称
+                     * 设置报告模板名称
+                     * @param _reportTemplateName 报告模板名称
                      * 
                      */
                     void SetReportTemplateName(const std::string& _reportTemplateName);
@@ -448,7 +448,7 @@ namespace TencentCloud
                     bool m_progressPercentHasBeenSet;
 
                     /**
-                     * 报告模版名称
+                     * 报告模板名称
                      */
                     std::string m_reportTemplateName;
                     bool m_reportTemplateNameHasBeenSet;

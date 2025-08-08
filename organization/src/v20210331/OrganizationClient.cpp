@@ -2749,6 +2749,49 @@ OrganizationClient::DescribePolicyConfigOutcomeCallable OrganizationClient::Desc
     return task->get_future();
 }
 
+OrganizationClient::DescribeResourceToShareMemberOutcome OrganizationClient::DescribeResourceToShareMember(const DescribeResourceToShareMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceToShareMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceToShareMemberResponse rsp = DescribeResourceToShareMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceToShareMemberOutcome(rsp);
+        else
+            return DescribeResourceToShareMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceToShareMemberOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeResourceToShareMemberAsync(const DescribeResourceToShareMemberRequest& request, const DescribeResourceToShareMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceToShareMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeResourceToShareMemberOutcomeCallable OrganizationClient::DescribeResourceToShareMemberCallable(const DescribeResourceToShareMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceToShareMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceToShareMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::DescribeShareAreasOutcome OrganizationClient::DescribeShareAreas(const DescribeShareAreasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeShareAreas");

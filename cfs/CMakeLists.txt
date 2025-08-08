@@ -63,6 +63,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/DescribeAvailableZoneInfoResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsSnapshotResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemClientsResponse.h
+  include/tencentcloud/cfs/v20190719/model/DoDirectoryOperationResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteMountTargetResponse.h
   include/tencentcloud/cfs/v20190719/model/ModifyLifecyclePolicyResponse.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsSnapshotRequest.h
@@ -162,6 +163,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/CreateAutoSnapshotPolicyRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateDataFlowRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeDataFlowResponse.h
+  include/tencentcloud/cfs/v20190719/model/DoDirectoryOperationRequest.h
   )
 
 set(cfs_src
@@ -210,6 +212,7 @@ set(cfs_src
   src/v20190719/model/DescribeAvailableZoneInfoResponse.cpp
   src/v20190719/model/DeleteCfsSnapshotResponse.cpp
   src/v20190719/model/DescribeCfsFileSystemClientsResponse.cpp
+  src/v20190719/model/DoDirectoryOperationResponse.cpp
   src/v20190719/model/DeleteMountTargetResponse.cpp
   src/v20190719/model/ModifyLifecyclePolicyResponse.cpp
   src/v20190719/model/CreateCfsSnapshotRequest.cpp
@@ -309,6 +312,7 @@ set(cfs_src
   src/v20190719/model/CreateAutoSnapshotPolicyRequest.cpp
   src/v20190719/model/CreateDataFlowRequest.cpp
   src/v20190719/model/DescribeDataFlowResponse.cpp
+  src/v20190719/model/DoDirectoryOperationRequest.cpp
   )
 
 set(cfs_include

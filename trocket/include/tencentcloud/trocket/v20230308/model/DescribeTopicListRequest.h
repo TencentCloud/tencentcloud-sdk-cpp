@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取按照消费组查询订阅的主题
+                     * @return FromGroup 按照消费组查询订阅的主题
+                     * 
+                     */
+                    std::string GetFromGroup() const;
+
+                    /**
+                     * 设置按照消费组查询订阅的主题
+                     * @param _fromGroup 按照消费组查询订阅的主题
+                     * 
+                     */
+                    void SetFromGroup(const std::string& _fromGroup);
+
+                    /**
+                     * 判断参数 FromGroup 是否已赋值
+                     * @return FromGroup 是否已赋值
+                     * 
+                     */
+                    bool FromGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 按照消费组查询订阅的主题
+                     */
+                    std::string m_fromGroup;
+                    bool m_fromGroupHasBeenSet;
 
                 };
             }

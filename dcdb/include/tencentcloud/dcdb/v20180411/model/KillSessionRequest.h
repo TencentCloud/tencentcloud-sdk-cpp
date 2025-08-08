@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool ShardSerialIdHasBeenSet() const;
 
+                    /**
+                     * 获取节点ID，可指定主节点或者备节点进行kill。可选参数，不传默认为主节点。
+                     * @return NodeId 节点ID，可指定主节点或者备节点进行kill。可选参数，不传默认为主节点。
+                     * 
+                     */
+                    std::string GetNodeId() const;
+
+                    /**
+                     * 设置节点ID，可指定主节点或者备节点进行kill。可选参数，不传默认为主节点。
+                     * @param _nodeId 节点ID，可指定主节点或者备节点进行kill。可选参数，不传默认为主节点。
+                     * 
+                     */
+                    void SetNodeId(const std::string& _nodeId);
+
+                    /**
+                     * 判断参数 NodeId 是否已赋值
+                     * @return NodeId 是否已赋值
+                     * 
+                     */
+                    bool NodeIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_shardSerialId;
                     bool m_shardSerialIdHasBeenSet;
+
+                    /**
+                     * 节点ID，可指定主节点或者备节点进行kill。可选参数，不传默认为主节点。
+                     */
+                    std::string m_nodeId;
+                    bool m_nodeIdHasBeenSet;
 
                 };
             }

@@ -1139,6 +1139,27 @@ namespace TencentCloud
                      */
                     bool DbVersionIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例删除保护标签，1: 已开启删除保护，0: 未开启删除保护
+                     * @return ProtectedProperty 实例删除保护标签，1: 已开启删除保护，0: 未开启删除保护
+                     * 
+                     */
+                    int64_t GetProtectedProperty() const;
+
+                    /**
+                     * 设置实例删除保护标签，1: 已开启删除保护，0: 未开启删除保护
+                     * @param _protectedProperty 实例删除保护标签，1: 已开启删除保护，0: 未开启删除保护
+                     * 
+                     */
+                    void SetProtectedProperty(const int64_t& _protectedProperty);
+
+                    /**
+                     * 判断参数 ProtectedProperty 是否已赋值
+                     * @return ProtectedProperty 是否已赋值
+                     * 
+                     */
+                    bool ProtectedPropertyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1452,6 +1473,12 @@ namespace TencentCloud
                      */
                     std::string m_dbVersionId;
                     bool m_dbVersionIdHasBeenSet;
+
+                    /**
+                     * 实例删除保护标签，1: 已开启删除保护，0: 未开启删除保护
+                     */
+                    int64_t m_protectedProperty;
+                    bool m_protectedPropertyHasBeenSet;
 
                 };
             }

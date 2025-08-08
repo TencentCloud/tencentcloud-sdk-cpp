@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署组ID 必填项
-                     * @return GroupId 部署组ID 必填项
+                     * 获取部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的项目。
+                     * @return GroupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的项目。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID 必填项
-                     * @param _groupId 部署组ID 必填项
+                     * 设置部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的项目。
+                     * @param _groupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的项目。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool UpdateIvlHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
-                     * @return SubnetId 子网ID
+                     * 获取子网ID，可通过调用[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateSubnet](https://cloud.tencent.com/document/product/1108/43594)创建新的项目。
+                     * @return SubnetId 子网ID，可通过调用[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateSubnet](https://cloud.tencent.com/document/product/1108/43594)创建新的项目。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID
-                     * @param _subnetId 子网ID
+                     * 设置子网ID，可通过调用[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateSubnet](https://cloud.tencent.com/document/product/1108/43594)创建新的项目。
+                     * @param _subnetId 子网ID，可通过调用[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateSubnet](https://cloud.tencent.com/document/product/1108/43594)创建新的项目。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -193,7 +193,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部署组ID 必填项
+                     * 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的项目。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -223,7 +223,7 @@ namespace TencentCloud
                     bool m_updateIvlHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * 子网ID，可通过调用[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateSubnet](https://cloud.tencent.com/document/product/1108/43594)创建新的项目。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

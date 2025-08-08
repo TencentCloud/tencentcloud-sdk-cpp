@@ -1227,7 +1227,7 @@ namespace TencentCloud
                 DescribeDSPAAssessmentTasksOutcomeCallable DescribeDSPAAssessmentTasksCallable(const Model::DescribeDSPAAssessmentTasksRequest& request);
 
                 /**
-                 *获取DSPA评估模版关联的评估控制项列表
+                 *获取DSPA评估模板关联的评估控制项列表
                  * @param req DescribeDSPAAssessmentTemplateControlItemsRequest
                  * @return DescribeDSPAAssessmentTemplateControlItemsOutcome
                  */

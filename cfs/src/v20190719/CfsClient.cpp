@@ -1760,6 +1760,49 @@ CfsClient::DescribeUserQuotaOutcomeCallable CfsClient::DescribeUserQuotaCallable
     return task->get_future();
 }
 
+CfsClient::DoDirectoryOperationOutcome CfsClient::DoDirectoryOperation(const DoDirectoryOperationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DoDirectoryOperation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DoDirectoryOperationResponse rsp = DoDirectoryOperationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DoDirectoryOperationOutcome(rsp);
+        else
+            return DoDirectoryOperationOutcome(o.GetError());
+    }
+    else
+    {
+        return DoDirectoryOperationOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DoDirectoryOperationAsync(const DoDirectoryOperationRequest& request, const DoDirectoryOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DoDirectoryOperation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::DoDirectoryOperationOutcomeCallable CfsClient::DoDirectoryOperationCallable(const DoDirectoryOperationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DoDirectoryOperationOutcome()>>(
+        [this, request]()
+        {
+            return this->DoDirectoryOperation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfsClient::ModifyDataFlowOutcome CfsClient::ModifyDataFlow(const ModifyDataFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDataFlow");

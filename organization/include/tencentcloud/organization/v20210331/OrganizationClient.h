@@ -149,6 +149,8 @@
 #include <tencentcloud/organization/v20210331/model/DescribePolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribePolicyConfigRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribePolicyConfigResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeResourceToShareMemberRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribeResourceToShareMemberResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeShareAreasRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeShareAreasResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeShareUnitMembersRequest.h>
@@ -480,6 +482,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePolicyConfigResponse> DescribePolicyConfigOutcome;
                 typedef std::future<DescribePolicyConfigOutcome> DescribePolicyConfigOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribePolicyConfigRequest&, DescribePolicyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceToShareMemberResponse> DescribeResourceToShareMemberOutcome;
+                typedef std::future<DescribeResourceToShareMemberOutcome> DescribeResourceToShareMemberOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribeResourceToShareMemberRequest&, DescribeResourceToShareMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceToShareMemberAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeShareAreasResponse> DescribeShareAreasOutcome;
                 typedef std::future<DescribeShareAreasOutcome> DescribeShareAreasOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeShareAreasRequest&, DescribeShareAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShareAreasAsyncHandler;
@@ -1241,6 +1246,15 @@ namespace TencentCloud
                 DescribePolicyConfigOutcome DescribePolicyConfig(const Model::DescribePolicyConfigRequest &request);
                 void DescribePolicyConfigAsync(const Model::DescribePolicyConfigRequest& request, const DescribePolicyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePolicyConfigOutcomeCallable DescribePolicyConfigCallable(const Model::DescribePolicyConfigRequest& request);
+
+                /**
+                 *获取与我共享的资源列表。
+                 * @param req DescribeResourceToShareMemberRequest
+                 * @return DescribeResourceToShareMemberOutcome
+                 */
+                DescribeResourceToShareMemberOutcome DescribeResourceToShareMember(const Model::DescribeResourceToShareMemberRequest &request);
+                void DescribeResourceToShareMemberAsync(const Model::DescribeResourceToShareMemberRequest& request, const DescribeResourceToShareMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceToShareMemberOutcomeCallable DescribeResourceToShareMemberCallable(const Model::DescribeResourceToShareMemberRequest& request);
 
                 /**
                  *获取可共享地域列表

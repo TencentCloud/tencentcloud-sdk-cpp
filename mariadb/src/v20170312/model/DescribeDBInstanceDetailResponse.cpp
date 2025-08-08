@@ -84,7 +84,8 @@ DescribeDBInstanceDetailResponse::DescribeDBInstanceDetailResponse() :
     m_isDcnStrongSyncSupportedHasBeenSet(false),
     m_isDcnSwitchSupportedHasBeenSet(false),
     m_proxyVersionHasBeenSet(false),
-    m_cpuTypeHasBeenSet(false)
+    m_cpuTypeHasBeenSet(false),
+    m_protectedPropertyHasBeenSet(false)
 {
 }
 
@@ -779,6 +780,16 @@ CoreInternalOutcome DescribeDBInstanceDetailResponse::Deserialize(const string &
         m_cpuTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProtectedProperty") && !rsp["ProtectedProperty"].IsNull())
+    {
+        if (!rsp["ProtectedProperty"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectedProperty` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectedProperty = rsp["ProtectedProperty"].GetInt64();
+        m_protectedPropertyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1303,6 +1314,14 @@ string DescribeDBInstanceDetailResponse::ToJsonString() const
         string key = "CpuType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cpuType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectedPropertyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectedProperty";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectedProperty, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1925,6 +1944,16 @@ string DescribeDBInstanceDetailResponse::GetCpuType() const
 bool DescribeDBInstanceDetailResponse::CpuTypeHasBeenSet() const
 {
     return m_cpuTypeHasBeenSet;
+}
+
+int64_t DescribeDBInstanceDetailResponse::GetProtectedProperty() const
+{
+    return m_protectedProperty;
+}
+
+bool DescribeDBInstanceDetailResponse::ProtectedPropertyHasBeenSet() const
+{
+    return m_protectedPropertyHasBeenSet;
 }
 
 

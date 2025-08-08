@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组
-                     * @return SecurityGroupIds 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组
+                     * 获取要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。<br>注意：改入参会全量替换存量已有安全组集合，并非增量更新。修改需传入全量的预期集合。
+                     * @return SecurityGroupIds 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。<br>注意：改入参会全量替换存量已有安全组集合，并非增量更新。修改需传入全量的预期集合。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组
-                     * @param _securityGroupIds 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组
+                     * 设置要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。<br>注意：改入参会全量替换存量已有安全组集合，并非增量更新。修改需传入全量的预期集合。
+                     * @param _securityGroupIds 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。<br>注意：改入参会全量替换存量已有安全组集合，并非增量更新。修改需传入全量的预期集合。
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组
+                     * 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。<br>注意：改入参会全量替换存量已有安全组集合，并非增量更新。修改需传入全量的预期集合。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;

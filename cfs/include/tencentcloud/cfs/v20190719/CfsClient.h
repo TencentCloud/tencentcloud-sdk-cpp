@@ -103,6 +103,8 @@
 #include <tencentcloud/cfs/v20190719/model/DescribeSnapshotOperationLogsResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeUserQuotaRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeUserQuotaResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DoDirectoryOperationRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DoDirectoryOperationResponse.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyDataFlowRequest.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyDataFlowResponse.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyFileSystemAutoScaleUpRuleRequest.h>
@@ -271,6 +273,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserQuotaResponse> DescribeUserQuotaOutcome;
                 typedef std::future<DescribeUserQuotaOutcome> DescribeUserQuotaOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeUserQuotaRequest&, DescribeUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DoDirectoryOperationResponse> DoDirectoryOperationOutcome;
+                typedef std::future<DoDirectoryOperationOutcome> DoDirectoryOperationOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DoDirectoryOperationRequest&, DoDirectoryOperationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DoDirectoryOperationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDataFlowResponse> ModifyDataFlowOutcome;
                 typedef std::future<ModifyDataFlowOutcome> ModifyDataFlowOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::ModifyDataFlowRequest&, ModifyDataFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataFlowAsyncHandler;
@@ -686,6 +691,15 @@ namespace TencentCloud
                 DescribeUserQuotaOutcome DescribeUserQuota(const Model::DescribeUserQuotaRequest &request);
                 void DescribeUserQuotaAsync(const Model::DescribeUserQuotaRequest& request, const DescribeUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserQuotaOutcomeCallable DescribeUserQuotaCallable(const Model::DescribeUserQuotaRequest& request);
+
+                /**
+                 *文件系统目录操作接口
+                 * @param req DoDirectoryOperationRequest
+                 * @return DoDirectoryOperationOutcome
+                 */
+                DoDirectoryOperationOutcome DoDirectoryOperation(const Model::DoDirectoryOperationRequest &request);
+                void DoDirectoryOperationAsync(const Model::DoDirectoryOperationRequest& request, const DoDirectoryOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DoDirectoryOperationOutcomeCallable DoDirectoryOperationCallable(const Model::DoDirectoryOperationRequest& request);
 
                 /**
                  *修改数据流动相关参数

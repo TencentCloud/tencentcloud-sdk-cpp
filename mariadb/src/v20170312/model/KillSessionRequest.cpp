@@ -24,7 +24,8 @@ using namespace std;
 
 KillSessionRequest::KillSessionRequest() :
     m_instanceIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_nodeIdHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string KillSessionRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_nodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +103,22 @@ void KillSessionRequest::SetSessionId(const vector<int64_t>& _sessionId)
 bool KillSessionRequest::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+string KillSessionRequest::GetNodeId() const
+{
+    return m_nodeId;
+}
+
+void KillSessionRequest::SetNodeId(const string& _nodeId)
+{
+    m_nodeId = _nodeId;
+    m_nodeIdHasBeenSet = true;
+}
+
+bool KillSessionRequest::NodeIdHasBeenSet() const
+{
+    return m_nodeIdHasBeenSet;
 }
 
 
