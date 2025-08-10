@@ -47,18 +47,38 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件通道，支持Application，Security，Setup，System，ALL
+                     * 获取事件通道，支持
+- Application 应用日志
+- Security 安全日志
+- Setup 启动日志
+- System 系统日志
+- ALL 所有日志
 
-                     * @return EventChannel 事件通道，支持Application，Security，Setup，System，ALL
+                     * @return EventChannel 事件通道，支持
+- Application 应用日志
+- Security 安全日志
+- Setup 启动日志
+- System 系统日志
+- ALL 所有日志
 
                      * 
                      */
                     std::string GetEventChannel() const;
 
                     /**
-                     * 设置事件通道，支持Application，Security，Setup，System，ALL
+                     * 设置事件通道，支持
+- Application 应用日志
+- Security 安全日志
+- Setup 启动日志
+- System 系统日志
+- ALL 所有日志
 
-                     * @param _eventChannel 事件通道，支持Application，Security，Setup，System，ALL
+                     * @param _eventChannel 事件通道，支持
+- Application 应用日志
+- Security 安全日志
+- Setup 启动日志
+- System 系统日志
+- ALL 所有日志
 
                      * 
                      */
@@ -93,15 +113,15 @@ namespace TencentCloud
                     bool TimeTypeHasBeenSet() const;
 
                     /**
-                     * 获取时间，用户选择自定义时间类型时，需要指定时间
-                     * @return Timestamp 时间，用户选择自定义时间类型时，需要指定时间
+                     * 获取时间，用户选择自定义时间类型时，需要指定时间，单位秒
+                     * @return Timestamp 时间，用户选择自定义时间类型时，需要指定时间，单位秒
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
-                     * 设置时间，用户选择自定义时间类型时，需要指定时间
-                     * @param _timestamp 时间，用户选择自定义时间类型时，需要指定时间
+                     * 设置时间，用户选择自定义时间类型时，需要指定时间，单位秒
+                     * @param _timestamp 时间，用户选择自定义时间类型时，需要指定时间，单位秒
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -153,7 +173,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件通道，支持Application，Security，Setup，System，ALL
+                     * 事件通道，支持
+- Application 应用日志
+- Security 安全日志
+- Setup 启动日志
+- System 系统日志
+- ALL 所有日志
 
                      */
                     std::string m_eventChannel;
@@ -166,7 +191,7 @@ namespace TencentCloud
                     bool m_timeTypeHasBeenSet;
 
                     /**
-                     * 时间，用户选择自定义时间类型时，需要指定时间
+                     * 时间，用户选择自定义时间类型时，需要指定时间，单位秒
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;

@@ -264,6 +264,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/UserInfo.h
+  include/tencentcloud/essbasic/v20210526/model/RuleIdConfig.h
   include/tencentcloud/essbasic/v20210526/model/CreateBatchInitOrganizationUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowGroupSignReviewRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelBillUsageDetail.h
@@ -678,6 +679,7 @@ set(essbasic_src
   src/v20210526/model/ChannelUpdateSealStatusRequest.cpp
   src/v20210526/model/ChannelCreateFlowGroupByTemplatesRequest.cpp
   src/v20210526/model/UserInfo.cpp
+  src/v20210526/model/RuleIdConfig.cpp
   src/v20210526/model/CreateBatchInitOrganizationUrlRequest.cpp
   src/v20210526/model/CreateFlowGroupSignReviewRequest.cpp
   src/v20210526/model/ChannelBillUsageDetail.cpp

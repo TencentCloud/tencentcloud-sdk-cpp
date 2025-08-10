@@ -233,6 +233,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/ModifyIntegrationRoleResponse.h
   include/tencentcloud/ess/v20201111/model/ApproverComponentLimitType.h
   include/tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h
+  include/tencentcloud/ess/v20201111/model/RuleIdConfig.h
   include/tencentcloud/ess/v20201111/model/OperateTemplateResponse.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationGroupInvitationLinkResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersResponse.h
@@ -579,6 +580,7 @@ set(ess_src
   src/v20201111/model/ModifyIntegrationRoleResponse.cpp
   src/v20201111/model/ApproverComponentLimitType.cpp
   src/v20201111/model/CreateFlowEvidenceReportResponse.cpp
+  src/v20201111/model/RuleIdConfig.cpp
   src/v20201111/model/OperateTemplateResponse.cpp
   src/v20201111/model/CreateOrganizationGroupInvitationLinkResponse.cpp
   src/v20201111/model/DeleteIntegrationRoleUsersResponse.cpp

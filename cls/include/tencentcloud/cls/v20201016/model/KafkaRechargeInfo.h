@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * @return CreateTime 创建时间。格式`YYYY-MM-DD HH:MM:SS`
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置创建时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * @param _createTime 创建时间。格式`YYYY-MM-DD HH:MM:SS`
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取更新时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * @return UpdateTime 更新时间。格式`YYYY-MM-DD HH:MM:SS`
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置更新时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * @param _updateTime 更新时间。格式`YYYY-MM-DD HH:MM:SS`
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -438,13 +438,13 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间。格式`YYYY-MM-DD HH:MM:SS`
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间。格式`YYYY-MM-DD HH:MM:SS`
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

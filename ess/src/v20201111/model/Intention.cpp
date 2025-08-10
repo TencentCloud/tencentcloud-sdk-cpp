@@ -23,7 +23,8 @@ using namespace std;
 Intention::Intention() :
     m_intentionTypeHasBeenSet(false),
     m_intentionQuestionsHasBeenSet(false),
-    m_intentionActionsHasBeenSet(false)
+    m_intentionActionsHasBeenSet(false),
+    m_ruleIdConfigHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,23 @@ CoreInternalOutcome Intention::Deserialize(const rapidjson::Value &value)
         m_intentionActionsHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleIdConfig") && !value["RuleIdConfig"].IsNull())
+    {
+        if (!value["RuleIdConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Intention.RuleIdConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ruleIdConfig.Deserialize(value["RuleIdConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ruleIdConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -125,6 +143,15 @@ void Intention::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ruleIdConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleIdConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ruleIdConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -176,5 +203,21 @@ void Intention::SetIntentionActions(const vector<IntentionAction>& _intentionAct
 bool Intention::IntentionActionsHasBeenSet() const
 {
     return m_intentionActionsHasBeenSet;
+}
+
+RuleIdConfig Intention::GetRuleIdConfig() const
+{
+    return m_ruleIdConfig;
+}
+
+void Intention::SetRuleIdConfig(const RuleIdConfig& _ruleIdConfig)
+{
+    m_ruleIdConfig = _ruleIdConfig;
+    m_ruleIdConfigHasBeenSet = true;
+}
+
+bool Intention::RuleIdConfigHasBeenSet() const
+{
+    return m_ruleIdConfigHasBeenSet;
 }
 

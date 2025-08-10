@@ -100,18 +100,18 @@ namespace TencentCloud
 
                     /**
                      * 获取文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
-建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注：此字段定义为数组，但仅支持单个文件
                      * @return FileIds 文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
-建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注：此字段定义为数组，但仅支持单个文件
                      * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
                      * 设置文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
-建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注：此字段定义为数组，但仅支持单个文件
                      * @param _fileIds 文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
-建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注：此字段定义为数组，但仅支持单个文件
                      * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
@@ -460,7 +460,7 @@ false：有序签
 
                     /**
                      * 文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
-建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注：此字段定义为数组，但仅支持单个文件
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;

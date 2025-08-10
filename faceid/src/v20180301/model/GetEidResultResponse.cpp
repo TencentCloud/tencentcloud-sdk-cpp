@@ -30,7 +30,9 @@ GetEidResultResponse::GetEidResultResponse() :
     m_eidInfoHasBeenSet(false),
     m_intentionVerifyDataHasBeenSet(false),
     m_intentionQuestionResultHasBeenSet(false),
-    m_intentionActionResultHasBeenSet(false)
+    m_intentionActionResultHasBeenSet(false),
+    m_isVerifyIntentionHasBeenSet(false),
+    m_intentionVerifyTypeHasBeenSet(false)
 {
 }
 
@@ -187,6 +189,26 @@ CoreInternalOutcome GetEidResultResponse::Deserialize(const string &payload)
         m_intentionActionResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsVerifyIntention") && !rsp["IsVerifyIntention"].IsNull())
+    {
+        if (!rsp["IsVerifyIntention"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsVerifyIntention` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isVerifyIntention = rsp["IsVerifyIntention"].GetBool();
+        m_isVerifyIntentionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IntentionVerifyType") && !rsp["IntentionVerifyType"].IsNull())
+    {
+        if (!rsp["IntentionVerifyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntentionVerifyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_intentionVerifyType = string(rsp["IntentionVerifyType"].GetString());
+        m_intentionVerifyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -258,6 +280,22 @@ string GetEidResultResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_intentionActionResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isVerifyIntentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsVerifyIntention";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isVerifyIntention, allocator);
+    }
+
+    if (m_intentionVerifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionVerifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_intentionVerifyType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -340,6 +378,26 @@ IntentionActionResult GetEidResultResponse::GetIntentionActionResult() const
 bool GetEidResultResponse::IntentionActionResultHasBeenSet() const
 {
     return m_intentionActionResultHasBeenSet;
+}
+
+bool GetEidResultResponse::GetIsVerifyIntention() const
+{
+    return m_isVerifyIntention;
+}
+
+bool GetEidResultResponse::IsVerifyIntentionHasBeenSet() const
+{
+    return m_isVerifyIntentionHasBeenSet;
+}
+
+string GetEidResultResponse::GetIntentionVerifyType() const
+{
+    return m_intentionVerifyType;
+}
+
+bool GetEidResultResponse::IntentionVerifyTypeHasBeenSet() const
+{
+    return m_intentionVerifyTypeHasBeenSet;
 }
 
 

@@ -47,15 +47,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作负载的类型
-                     * @return Kind 工作负载的类型
+                     * 获取工作负载的类型，支持
+- deployment
+- statefulset
+- daemonset
+- job
+- cronjob
+                     * @return Kind 工作负载的类型，支持
+- deployment
+- statefulset
+- daemonset
+- job
+- cronjob
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置工作负载的类型
-                     * @param _kind 工作负载的类型
+                     * 设置工作负载的类型，支持
+- deployment
+- statefulset
+- daemonset
+- job
+- cronjob
+                     * @param _kind 工作负载的类型，支持
+- deployment
+- statefulset
+- daemonset
+- job
+- cronjob
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -133,7 +153,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作负载的类型
+                     * 工作负载的类型，支持
+- deployment
+- statefulset
+- daemonset
+- job
+- cronjob
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;
