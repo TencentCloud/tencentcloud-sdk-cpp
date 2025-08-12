@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取微服务ID
-                     * @return MicroserviceId 微服务ID
+                     * 获取微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
+                     * @return MicroserviceId 微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      * 
                      */
                     std::string GetMicroserviceId() const;
 
                     /**
-                     * 设置微服务ID
-                     * @param _microserviceId 微服务ID
+                     * 设置微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
+                     * @param _microserviceId 微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      * 
                      */
                     void SetMicroserviceId(const std::string& _microserviceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MicroserviceIdHasBeenSet() const;
 
                     /**
-                     * 获取API 请求路径
-                     * @return Path API 请求路径
+                     * 获取API请求路径。
+                     * @return Path API请求路径。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置API 请求路径
-                     * @param _path API 请求路径
+                     * 设置API请求路径。
+                     * @param _path API请求路径。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -85,15 +85,43 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取请求方法
-                     * @return Method 请求方法
+                     * 获取API请求方法。
+- GET
+- POST
+- PUT
+- DELETE
+- HEAD
+- PATCH
+- OPTIONS
+                     * @return Method API请求方法。
+- GET
+- POST
+- PUT
+- DELETE
+- HEAD
+- PATCH
+- OPTIONS
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
-                     * 设置请求方法
-                     * @param _method 请求方法
+                     * 设置API请求方法。
+- GET
+- POST
+- PUT
+- DELETE
+- HEAD
+- PATCH
+- OPTIONS
+                     * @param _method API请求方法。
+- GET
+- POST
+- PUT
+- DELETE
+- HEAD
+- PATCH
+- OPTIONS
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -108,19 +136,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 微服务ID
+                     * 微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      */
                     std::string m_microserviceId;
                     bool m_microserviceIdHasBeenSet;
 
                     /**
-                     * API 请求路径
+                     * API请求路径。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 请求方法
+                     * API请求方法。
+- GET
+- POST
+- PUT
+- DELETE
+- HEAD
+- PATCH
+- OPTIONS
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;

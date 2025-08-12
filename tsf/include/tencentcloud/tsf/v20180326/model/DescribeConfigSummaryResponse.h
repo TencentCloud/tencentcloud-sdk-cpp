@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置项分页对象
-                     * @return Result 配置项分页对象
+                     * 获取配置项分页对象。
+                     * @return Result 配置项分页对象。
                      * 
                      */
                     TsfPageConfig GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置项分页对象
+                     * 配置项分页对象。
                      */
                     TsfPageConfig m_result;
                     bool m_resultHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询关键字，模糊查询：配置项名称，不传入时查询全量
-                     * @return SearchWord 查询关键字，模糊查询：配置项名称，不传入时查询全量
+                     * 获取查询关键字，模糊查询：配置项名称，不传入时查询全量。
+                     * @return SearchWord 查询关键字，模糊查询：配置项名称，不传入时查询全量。
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置查询关键字，模糊查询：配置项名称，不传入时查询全量
-                     * @param _searchWord 查询关键字，模糊查询：配置项名称，不传入时查询全量
+                     * 设置查询关键字，模糊查询：配置项名称，不传入时查询全量。
+                     * @param _searchWord 查询关键字，模糊查询：配置项名称，不传入时查询全量。
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0
-                     * @return Offset 偏移量，默认为0
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0
-                     * @param _offset 偏移量，默认为0
+                     * 设置偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页条数，默认为20
-                     * @return Limit 每页条数，默认为20
+                     * 获取返回数量，默认为20，最大值为50。
+                     * @return Limit 返回数量，默认为20，最大值为50。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页条数，默认为20
-                     * @param _limit 每页条数，默认为20
+                     * 设置返回数量，默认为20，最大值为50。
+                     * @param _limit 返回数量，默认为20，最大值为50。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,23 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取按时间排序：creation_time；按名称排序：config_name
-                     * @return OrderBy 按时间排序：creation_time；按名称排序：config_name
+                     * 获取排序字段。
+- creation_time：按时间排序
+- config_name：按名称排序
+                     * @return OrderBy 排序字段。
+- creation_time：按时间排序
+- config_name：按名称排序
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置按时间排序：creation_time；按名称排序：config_name
-                     * @param _orderBy 按时间排序：creation_time；按名称排序：config_name
+                     * 设置排序字段。
+- creation_time：按时间排序
+- config_name：按名称排序
+                     * @param _orderBy 排序字段。
+- creation_time：按时间排序
+- config_name：按名称排序
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -127,15 +135,23 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取升序传 0，降序传 1
-                     * @return OrderType 升序传 0，降序传 1
+                     * 获取排序顺序。
+- 0：升序
+- 1：降序
+                     * @return OrderType 排序顺序。
+- 0：升序
+- 1：降序
                      * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
-                     * 设置升序传 0，降序传 1
-                     * @param _orderType 升序传 0，降序传 1
+                     * 设置排序顺序。
+- 0：升序
+- 1：降序
+                     * @param _orderType 排序顺序。
+- 0：升序
+- 1：降序
                      * 
                      */
                     void SetOrderType(const int64_t& _orderType);
@@ -148,15 +164,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ConfigTagList 无
+                     * 获取TAG标签资源值。
+                     * @return ConfigTagList TAG标签资源值。
                      * 
                      */
                     std::vector<std::string> GetConfigTagList() const;
 
                     /**
-                     * 设置无
-                     * @param _configTagList 无
+                     * 设置TAG标签资源值。
+                     * @param _configTagList TAG标签资源值。
                      * 
                      */
                     void SetConfigTagList(const std::vector<std::string>& _configTagList);
@@ -169,15 +185,15 @@ namespace TencentCloud
                     bool ConfigTagListHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return DisableProgramAuthCheck 无
+                     * 获取忽略传参，业务预留字段。
+                     * @return DisableProgramAuthCheck 忽略传参，业务预留字段。
                      * 
                      */
                     bool GetDisableProgramAuthCheck() const;
 
                     /**
-                     * 设置无
-                     * @param _disableProgramAuthCheck 无
+                     * 设置忽略传参，业务预留字段。
+                     * @param _disableProgramAuthCheck 忽略传参，业务预留字段。
                      * 
                      */
                     void SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck);
@@ -190,15 +206,15 @@ namespace TencentCloud
                     bool DisableProgramAuthCheckHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ConfigIdList 无
+                     * 获取配置ID。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。
+                     * @return ConfigIdList 配置ID。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。
                      * 
                      */
                     std::vector<std::string> GetConfigIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _configIdList 无
+                     * 设置配置ID。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。
+                     * @param _configIdList 配置ID。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。
                      * 
                      */
                     void SetConfigIdList(const std::vector<std::string>& _configIdList);
@@ -213,49 +229,53 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询关键字，模糊查询：配置项名称，不传入时查询全量
+                     * 查询关键字，模糊查询：配置项名称，不传入时查询全量。
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0
+                     * 偏移量，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页条数，默认为20
+                     * 返回数量，默认为20，最大值为50。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 按时间排序：creation_time；按名称排序：config_name
+                     * 排序字段。
+- creation_time：按时间排序
+- config_name：按名称排序
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 升序传 0，降序传 1
+                     * 排序顺序。
+- 0：升序
+- 1：降序
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 无
+                     * TAG标签资源值。
                      */
                     std::vector<std::string> m_configTagList;
                     bool m_configTagListHasBeenSet;
 
                     /**
-                     * 无
+                     * 忽略传参，业务预留字段。
                      */
                     bool m_disableProgramAuthCheck;
                     bool m_disableProgramAuthCheckHasBeenSet;
 
                     /**
-                     * 无
+                     * 配置ID。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。
                      */
                     std::vector<std::string> m_configIdList;
                     bool m_configIdListHasBeenSet;

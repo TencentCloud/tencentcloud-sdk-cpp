@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取API 详情
-                     * @return Result API 详情
+                     * 获取API详情。
+                     * @return Result API详情。
                      * 
                      */
                     ApiDetailResponse GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * API 详情
+                     * API详情。
                      */
                     ApiDetailResponse m_result;
                     bool m_resultHasBeenSet;

@@ -258,14 +258,18 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * @return UpdateTime 更新时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _updateTime 更新时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -279,14 +283,18 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * @return CreateTime 创建时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _createTime 创建时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -430,12 +438,14 @@ namespace TencentCloud
 
                     /**
                      * 更新时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 创建时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

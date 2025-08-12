@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取免密分享Id
-                     * @return SharingId 免密分享Id
+                     * 获取免密分享Id。
+- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 
+- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。
+                     * @return SharingId 免密分享Id。
+- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 
+- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。
                      * 
                      */
                     std::string GetSharingId() const;
 
                     /**
-                     * 设置免密分享Id
-                     * @param _sharingId 免密分享Id
+                     * 设置免密分享Id。
+- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 
+- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。
+                     * @param _sharingId 免密分享Id。
+- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 
+- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。
                      * 
                      */
                     void SetSharingId(const std::string& _sharingId);
@@ -66,7 +74,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 免密分享Id
+                     * 免密分享Id。
+- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 
+- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。
                      */
                     std::string m_sharingId;
                     bool m_sharingIdHasBeenSet;

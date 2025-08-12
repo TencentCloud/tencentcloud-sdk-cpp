@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络Id，必填
-                     * @return VpcId 私有网络Id，必填
+                     * 获取私有网络Id
+                     * @return VpcId 私有网络Id
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络Id，必填
-                     * @param _vpcId 私有网络Id，必填
+                     * 设置私有网络Id
+                     * @param _vpcId 私有网络Id
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网id，必填
-                     * @return SubnetId 子网id，必填
+                     * 获取子网id
+                     * @return SubnetId 子网id
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网id，必填
-                     * @param _subnetId 子网id，必填
+                     * 设置子网id
+                     * @param _subnetId 子网id
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -532,13 +532,13 @@ namespace TencentCloud
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 私有网络Id，必填
+                     * 私有网络Id
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网id，必填
+                     * 子网id
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

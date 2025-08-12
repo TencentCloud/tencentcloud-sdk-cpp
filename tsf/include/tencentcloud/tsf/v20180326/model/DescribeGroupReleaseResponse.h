@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署组发布的相关信息
-                     * @return Result 部署组发布的相关信息
+                     * 获取部署组发布的相关信息。
+                     * @return Result 部署组发布的相关信息。
                      * 
                      */
                     GroupRelease GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部署组发布的相关信息
+                     * 部署组发布的相关信息。
                      */
                     GroupRelease m_result;
                     bool m_resultHasBeenSet;

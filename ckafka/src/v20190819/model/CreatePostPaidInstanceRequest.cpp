@@ -23,8 +23,8 @@ using namespace TencentCloud::Ckafka::V20190819::Model;
 using namespace std;
 
 CreatePostPaidInstanceRequest::CreatePostPaidInstanceRequest() :
-    m_instanceNameHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_msgRetentionTimeHasBeenSet(false),
@@ -53,20 +53,20 @@ string CreatePostPaidInstanceRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_instanceNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_vpcIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subnetIdHasBeenSet)
@@ -233,22 +233,6 @@ string CreatePostPaidInstanceRequest::ToJsonString() const
 }
 
 
-string CreatePostPaidInstanceRequest::GetInstanceName() const
-{
-    return m_instanceName;
-}
-
-void CreatePostPaidInstanceRequest::SetInstanceName(const string& _instanceName)
-{
-    m_instanceName = _instanceName;
-    m_instanceNameHasBeenSet = true;
-}
-
-bool CreatePostPaidInstanceRequest::InstanceNameHasBeenSet() const
-{
-    return m_instanceNameHasBeenSet;
-}
-
 string CreatePostPaidInstanceRequest::GetVpcId() const
 {
     return m_vpcId;
@@ -263,6 +247,22 @@ void CreatePostPaidInstanceRequest::SetVpcId(const string& _vpcId)
 bool CreatePostPaidInstanceRequest::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+string CreatePostPaidInstanceRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void CreatePostPaidInstanceRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool CreatePostPaidInstanceRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
 }
 
 string CreatePostPaidInstanceRequest::GetSubnetId() const

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LKE_V20231130_MODEL_LISTAPPCATEGORYREQUEST_H_
-#define TENCENTCLOUD_LKE_V20231130_MODEL_LISTAPPCATEGORYREQUEST_H_
+#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_TEXTTOSPEECHSSERESPONSE_H_
+#define TENCENTCLOUD_TRTC_V20190722_MODEL_TEXTTOSPEECHSSERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,21 @@
 
 namespace TencentCloud
 {
-    namespace Lke
+    namespace Trtc
     {
-        namespace V20231130
+        namespace V20190722
         {
             namespace Model
             {
                 /**
-                * ListAppCategory请求参数结构体
+                * TextToSpeechSSE返回参数结构体
                 */
-                class ListAppCategoryRequest : public AbstractModel
+                class TextToSpeechSSEResponse : public AbstractModel
                 {
                 public:
-                    ListAppCategoryRequest();
-                    ~ListAppCategoryRequest() = default;
+                    TextToSpeechSSEResponse();
+                    ~TextToSpeechSSEResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
@@ -50,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_LKE_V20231130_MODEL_LISTAPPCATEGORYREQUEST_H_
+#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_TEXTTOSPEECHSSERESPONSE_H_

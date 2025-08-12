@@ -51,12 +51,16 @@ namespace TencentCloud
 <li/>Uin：腾讯云用户<br>
 <li/>Group：腾讯云用户组<br>
 <li/>Email：自定义Email<br>
-<li/>WeCom: 企业微信回调
+<li/>WeCom: 企业微信回调<br>
+<li/>DingTalk：钉钉<br>
+<li/>Lark：飞书
                      * @return ReceiverType 仪表盘通知方式。<br>
 <li/>Uin：腾讯云用户<br>
 <li/>Group：腾讯云用户组<br>
 <li/>Email：自定义Email<br>
-<li/>WeCom: 企业微信回调
+<li/>WeCom: 企业微信回调<br>
+<li/>DingTalk：钉钉<br>
+<li/>Lark：飞书
                      * 
                      */
                     std::string GetReceiverType() const;
@@ -66,12 +70,16 @@ namespace TencentCloud
 <li/>Uin：腾讯云用户<br>
 <li/>Group：腾讯云用户组<br>
 <li/>Email：自定义Email<br>
-<li/>WeCom: 企业微信回调
+<li/>WeCom: 企业微信回调<br>
+<li/>DingTalk：钉钉<br>
+<li/>Lark：飞书
                      * @param _receiverType 仪表盘通知方式。<br>
 <li/>Uin：腾讯云用户<br>
 <li/>Group：腾讯云用户组<br>
 <li/>Email：自定义Email<br>
-<li/>WeCom: 企业微信回调
+<li/>WeCom: 企业微信回调<br>
+<li/>DingTalk：钉钉<br>
+<li/>Lark：飞书
                      * 
                      */
                     void SetReceiverType(const std::string& _receiverType);
@@ -177,7 +185,9 @@ namespace TencentCloud
 <li/>Uin：腾讯云用户<br>
 <li/>Group：腾讯云用户组<br>
 <li/>Email：自定义Email<br>
-<li/>WeCom: 企业微信回调
+<li/>WeCom: 企业微信回调<br>
+<li/>DingTalk：钉钉<br>
+<li/>Lark：飞书
                      */
                     std::string m_receiverType;
                     bool m_receiverTypeHasBeenSet;

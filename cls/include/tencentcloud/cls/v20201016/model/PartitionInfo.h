@@ -132,14 +132,18 @@ namespace TencentCloud
 
                     /**
                      * 获取分区创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return CreateTime 分区创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置分区创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _createTime 分区创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -153,8 +157,10 @@ namespace TencentCloud
 
                     /**
                      * 获取只读分区数据停止写入时间
+时间格式：yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastWriteTime 只读分区数据停止写入时间
+时间格式：yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -162,8 +168,10 @@ namespace TencentCloud
 
                     /**
                      * 设置只读分区数据停止写入时间
+时间格式：yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastWriteTime 只读分区数据停止写入时间
+时间格式：yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -204,12 +212,14 @@ namespace TencentCloud
 
                     /**
                      * 分区创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 只读分区数据停止写入时间
+时间格式：yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastWriteTime;

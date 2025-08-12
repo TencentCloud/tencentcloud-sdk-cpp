@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取公共配置项 ID
-                     * @return Result 公共配置项 ID
+                     * 获取公共配置项ID。
+                     * @return Result 公共配置项ID。
                      * 
                      */
                     Config GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 公共配置项 ID
+                     * 公共配置项ID。
                      */
                     Config m_result;
                     bool m_resultHasBeenSet;

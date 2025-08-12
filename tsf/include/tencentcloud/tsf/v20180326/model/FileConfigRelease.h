@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool ReleaseDescHasBeenSet() const;
 
                     /**
-                     * 获取发布时间
+                     * 获取发布时间。格式为 YYYY-MM-DD hh:mm:ss。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReleaseTime 发布时间
+                     * @return ReleaseTime 发布时间。格式为 YYYY-MM-DD hh:mm:ss。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReleaseTime() const;
 
                     /**
-                     * 设置发布时间
+                     * 设置发布时间。格式为 YYYY-MM-DD hh:mm:ss。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _releaseTime 发布时间
+                     * @param _releaseTime 发布时间。格式为 YYYY-MM-DD hh:mm:ss。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -410,7 +410,7 @@ namespace TencentCloud
                     bool m_releaseDescHasBeenSet;
 
                     /**
-                     * 发布时间
+                     * 发布时间。格式为 YYYY-MM-DD hh:mm:ss。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_releaseTime;

@@ -14,60 +14,56 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LKE_V20231130_MODEL_LISTAPPCATEGORYRESPONSE_H_
-#define TENCENTCLOUD_LKE_V20231130_MODEL_LISTAPPCATEGORYRESPONSE_H_
+#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_TEXTTOSPEECHRESPONSE_H_
+#define TENCENTCLOUD_TRTC_V20190722_MODEL_TEXTTOSPEECHRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/lke/v20231130/model/ListAppCategoryRspOption.h>
 
 
 namespace TencentCloud
 {
-    namespace Lke
+    namespace Trtc
     {
-        namespace V20231130
+        namespace V20190722
         {
             namespace Model
             {
                 /**
-                * ListAppCategory返回参数结构体
+                * TextToSpeech返回参数结构体
                 */
-                class ListAppCategoryResponse : public AbstractModel
+                class TextToSpeechResponse : public AbstractModel
                 {
                 public:
-                    ListAppCategoryResponse();
-                    ~ListAppCategoryResponse() = default;
+                    TextToSpeechResponse();
+                    ~TextToSpeechResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取应用类型列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return List 应用类型列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Base64编码的音频数据
+                     * @return Audio Base64编码的音频数据
                      * 
                      */
-                    std::vector<ListAppCategoryRspOption> GetList() const;
+                    std::string GetAudio() const;
 
                     /**
-                     * 判断参数 List 是否已赋值
-                     * @return List 是否已赋值
+                     * 判断参数 Audio 是否已赋值
+                     * @return Audio 是否已赋值
                      * 
                      */
-                    bool ListHasBeenSet() const;
+                    bool AudioHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 应用类型列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Base64编码的音频数据
                      */
-                    std::vector<ListAppCategoryRspOption> m_list;
-                    bool m_listHasBeenSet;
+                    std::string m_audio;
+                    bool m_audioHasBeenSet;
 
                 };
             }
@@ -75,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_LKE_V20231130_MODEL_LISTAPPCATEGORYRESPONSE_H_
+#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_TEXTTOSPEECHRESPONSE_H_

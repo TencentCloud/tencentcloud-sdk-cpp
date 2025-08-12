@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取API版本列表
-                     * @return Result API版本列表
+                     * 获取API版本列表。
+                     * @return Result API版本列表。
                      * 
                      */
                     std::vector<ApiVersionArray> GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * API版本列表
+                     * API版本列表。
                      */
                     std::vector<ApiVersionArray> m_result;
                     bool m_resultHasBeenSet;

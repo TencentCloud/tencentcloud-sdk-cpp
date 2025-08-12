@@ -45,15 +45,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导入CLS目标topic ID
-                     * @return TopicId 导入CLS目标topic ID
+                     * 获取导入CLS目标TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * @return TopicId 导入CLS目标TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置导入CLS目标topic ID
-                     * @param _topicId 导入CLS目标topic ID
+                     * 设置导入CLS目标TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * @param _topicId 导入CLS目标TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -172,14 +180,18 @@ namespace TencentCloud
 
                     /**
                      * 获取腾讯云CKafka实例ID，KafkaType为0时必填。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * @return KafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * 
                      */
                     std::string GetKafkaInstance() const;
 
                     /**
                      * 设置腾讯云CKafka实例ID，KafkaType为0时必填。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * @param _kafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * 
                      */
                     void SetKafkaInstance(const std::string& _kafkaInstance);
@@ -259,15 +271,19 @@ KafkaType为1并且IsEncryptionAddr为true时Protocol必填。
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取用户Kafka消费组名称
-                     * @return ConsumerGroupName 用户Kafka消费组名称
+                     * 获取用户Kafka消费组名称。
+- 消费组是 Kafka 提供的可扩展且具有容错性的消费者机制，一个消费组中存在多个消费者，组内的所有消费者共同消费订阅 Topic 中的消息。一个消费者可同时消费多个 Partition，但一个 Partition 只能被消费组内的一个消费者消费。
+                     * @return ConsumerGroupName 用户Kafka消费组名称。
+- 消费组是 Kafka 提供的可扩展且具有容错性的消费者机制，一个消费组中存在多个消费者，组内的所有消费者共同消费订阅 Topic 中的消息。一个消费者可同时消费多个 Partition，但一个 Partition 只能被消费组内的一个消费者消费。
                      * 
                      */
                     std::string GetConsumerGroupName() const;
 
                     /**
-                     * 设置用户Kafka消费组名称
-                     * @param _consumerGroupName 用户Kafka消费组名称
+                     * 设置用户Kafka消费组名称。
+- 消费组是 Kafka 提供的可扩展且具有容错性的消费者机制，一个消费组中存在多个消费者，组内的所有消费者共同消费订阅 Topic 中的消息。一个消费者可同时消费多个 Partition，但一个 Partition 只能被消费组内的一个消费者消费。
+                     * @param _consumerGroupName 用户Kafka消费组名称。
+- 消费组是 Kafka 提供的可扩展且具有容错性的消费者机制，一个消费组中存在多个消费者，组内的所有消费者共同消费订阅 Topic 中的消息。一个消费者可同时消费多个 Partition，但一个 Partition 只能被消费组内的一个消费者消费。
                      * 
                      */
                     void SetConsumerGroupName(const std::string& _consumerGroupName);
@@ -282,7 +298,9 @@ KafkaType为1并且IsEncryptionAddr为true时Protocol必填。
                 private:
 
                     /**
-                     * 导入CLS目标topic ID
+                     * 导入CLS目标TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
@@ -319,6 +337,7 @@ KafkaType为1并且IsEncryptionAddr为true时Protocol必填。
 
                     /**
                      * 腾讯云CKafka实例ID，KafkaType为0时必填。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      */
                     std::string m_kafkaInstance;
                     bool m_kafkaInstanceHasBeenSet;
@@ -343,7 +362,8 @@ KafkaType为1并且IsEncryptionAddr为true时Protocol必填。
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 用户Kafka消费组名称
+                     * 用户Kafka消费组名称。
+- 消费组是 Kafka 提供的可扩展且具有容错性的消费者机制，一个消费组中存在多个消费者，组内的所有消费者共同消费订阅 Topic 中的消息。一个消费者可同时消费多个 Partition，但一个 Partition 只能被消费组内的一个消费者消费。
                      */
                     std::string m_consumerGroupName;
                     bool m_consumerGroupNameHasBeenSet;

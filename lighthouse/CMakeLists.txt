@@ -54,6 +54,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/RerunDockerContainerResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceBlueprint.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifyImageSharePermissionResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteFirewallTemplateRulesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplatesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesBundleRequest.h
@@ -99,7 +100,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceTrafficPackage.h
-  include/tencentcloud/lighthouse/v20200324/model/SnapshotDeniedActions.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifyImageSharePermissionRequest.h
   include/tencentcloud/lighthouse/v20200324/model/TerminateInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/FirewallTemplateApplyRecordDetail.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDiskNumRequest.h
@@ -145,7 +146,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DeleteFirewallTemplateResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallTemplateRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/Image.h
   include/tencentcloud/lighthouse/v20200324/model/StopDockerContainersRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeModifyInstanceBundlesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeRegionsRequest.h
@@ -201,7 +202,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateRuleQuotaResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DetachCcnRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/RenameDockerContainerResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeImagesToShareResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DockerActivity.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateApplyRecordsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/Filter.h
@@ -219,8 +220,9 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesReturnableResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ContainerEnv.h
-  include/tencentcloud/lighthouse/v20200324/model/FirewallRule.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeImagesToShareRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/RenameDockerContainerResponse.h
   include/tencentcloud/lighthouse/v20200324/model/FirewallRuleInfo.h
   include/tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksRequest.h
@@ -239,6 +241,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/TerminateInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallTemplateRequest.h
   include/tencentcloud/lighthouse/v20200324/model/RenewDiskChargePrepaid.h
   include/tencentcloud/lighthouse/v20200324/model/SystemDisk.h
   include/tencentcloud/lighthouse/v20200324/model/ApplyFirewallTemplateResponse.h
@@ -286,6 +289,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/IsolateDisksResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/FirewallTemplateRule.h
+  include/tencentcloud/lighthouse/v20200324/model/SnapshotDeniedActions.h
   include/tencentcloud/lighthouse/v20200324/model/DiskDeniedActions.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceCreateInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/Scene.h
@@ -300,6 +304,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/InstanceChargePrepaid.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeResponse.h
   include/tencentcloud/lighthouse/v20200324/model/Price.h
+  include/tencentcloud/lighthouse/v20200324/model/FirewallRule.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteFirewallTemplateRulesRequest.h
   )
 
@@ -340,6 +345,7 @@ set(lighthouse_src
   src/v20200324/model/RerunDockerContainerResponse.cpp
   src/v20200324/model/ResetInstanceBlueprint.cpp
   src/v20200324/model/DescribeBundlesResponse.cpp
+  src/v20200324/model/ModifyImageSharePermissionResponse.cpp
   src/v20200324/model/DeleteFirewallTemplateRulesResponse.cpp
   src/v20200324/model/DescribeFirewallTemplatesRequest.cpp
   src/v20200324/model/ModifyInstancesBundleRequest.cpp
@@ -385,7 +391,7 @@ set(lighthouse_src
   src/v20200324/model/DescribeInstanceVncUrlRequest.cpp
   src/v20200324/model/ModifyFirewallRuleDescriptionRequest.cpp
   src/v20200324/model/InstanceTrafficPackage.cpp
-  src/v20200324/model/SnapshotDeniedActions.cpp
+  src/v20200324/model/ModifyImageSharePermissionRequest.cpp
   src/v20200324/model/TerminateInstancesResponse.cpp
   src/v20200324/model/FirewallTemplateApplyRecordDetail.cpp
   src/v20200324/model/DescribeInstancesDiskNumRequest.cpp
@@ -431,7 +437,7 @@ set(lighthouse_src
   src/v20200324/model/DeleteFirewallTemplateResponse.cpp
   src/v20200324/model/CreateInstancesResponse.cpp
   src/v20200324/model/ModifyBlueprintAttributeResponse.cpp
-  src/v20200324/model/ModifyFirewallTemplateRequest.cpp
+  src/v20200324/model/Image.cpp
   src/v20200324/model/StopDockerContainersRequest.cpp
   src/v20200324/model/DescribeModifyInstanceBundlesRequest.cpp
   src/v20200324/model/DescribeRegionsRequest.cpp
@@ -487,7 +493,7 @@ set(lighthouse_src
   src/v20200324/model/DescribeInstancesRequest.cpp
   src/v20200324/model/DescribeFirewallTemplateRuleQuotaResponse.cpp
   src/v20200324/model/DetachCcnRequest.cpp
-  src/v20200324/model/RenameDockerContainerResponse.cpp
+  src/v20200324/model/DescribeImagesToShareResponse.cpp
   src/v20200324/model/DockerActivity.cpp
   src/v20200324/model/DescribeFirewallTemplateApplyRecordsResponse.cpp
   src/v20200324/model/Filter.cpp
@@ -505,8 +511,9 @@ set(lighthouse_src
   src/v20200324/model/DescribeFirewallRulesResponse.cpp
   src/v20200324/model/DescribeInstancesReturnableResponse.cpp
   src/v20200324/model/ContainerEnv.cpp
-  src/v20200324/model/FirewallRule.cpp
+  src/v20200324/model/DescribeImagesToShareRequest.cpp
   src/v20200324/model/DeleteBlueprintsRequest.cpp
+  src/v20200324/model/RenameDockerContainerResponse.cpp
   src/v20200324/model/FirewallRuleInfo.cpp
   src/v20200324/model/CreateFirewallRulesResponse.cpp
   src/v20200324/model/DescribeDisksRequest.cpp
@@ -525,6 +532,7 @@ set(lighthouse_src
   src/v20200324/model/ApplyInstanceSnapshotRequest.cpp
   src/v20200324/model/DisassociateInstancesKeyPairsResponse.cpp
   src/v20200324/model/TerminateInstancesRequest.cpp
+  src/v20200324/model/ModifyFirewallTemplateRequest.cpp
   src/v20200324/model/RenewDiskChargePrepaid.cpp
   src/v20200324/model/SystemDisk.cpp
   src/v20200324/model/ApplyFirewallTemplateResponse.cpp
@@ -572,6 +580,7 @@ set(lighthouse_src
   src/v20200324/model/IsolateDisksResponse.cpp
   src/v20200324/model/DescribeFirewallRulesRequest.cpp
   src/v20200324/model/FirewallTemplateRule.cpp
+  src/v20200324/model/SnapshotDeniedActions.cpp
   src/v20200324/model/DiskDeniedActions.cpp
   src/v20200324/model/InquirePriceCreateInstancesRequest.cpp
   src/v20200324/model/Scene.cpp
@@ -586,6 +595,7 @@ set(lighthouse_src
   src/v20200324/model/InstanceChargePrepaid.cpp
   src/v20200324/model/ModifyInstancesAttributeResponse.cpp
   src/v20200324/model/Price.cpp
+  src/v20200324/model/FirewallRule.cpp
   src/v20200324/model/DeleteFirewallTemplateRulesRequest.cpp
   )
 

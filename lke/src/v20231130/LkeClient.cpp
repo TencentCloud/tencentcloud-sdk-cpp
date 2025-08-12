@@ -2792,49 +2792,6 @@ LkeClient::ListAppOutcomeCallable LkeClient::ListAppCallable(const ListAppReques
     return task->get_future();
 }
 
-LkeClient::ListAppCategoryOutcome LkeClient::ListAppCategory(const ListAppCategoryRequest &request)
-{
-    auto outcome = MakeRequest(request, "ListAppCategory");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ListAppCategoryResponse rsp = ListAppCategoryResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ListAppCategoryOutcome(rsp);
-        else
-            return ListAppCategoryOutcome(o.GetError());
-    }
-    else
-    {
-        return ListAppCategoryOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::ListAppCategoryAsync(const ListAppCategoryRequest& request, const ListAppCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAppCategory(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::ListAppCategoryOutcomeCallable LkeClient::ListAppCategoryCallable(const ListAppCategoryRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ListAppCategoryOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAppCategory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::ListAppKnowledgeDetailOutcome LkeClient::ListAppKnowledgeDetail(const ListAppKnowledgeDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "ListAppKnowledgeDetail");

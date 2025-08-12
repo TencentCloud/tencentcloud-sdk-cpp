@@ -176,14 +176,18 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return CreateTime 创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _createTime 创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -510,14 +514,30 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 获取异步迁移状态
+- 1：进行中
+- 2：已完成
+- 3：失败
+- 4：已取消
                      * @return MigrationStatus 异步迁移状态
+- 1：进行中
+- 2：已完成
+- 3：失败
+- 4：已取消
                      * 
                      */
                     uint64_t GetMigrationStatus() const;
 
                     /**
                      * 设置异步迁移状态
+- 1：进行中
+- 2：已完成
+- 3：失败
+- 4：已取消
                      * @param _migrationStatus 异步迁移状态
+- 1：进行中
+- 2：已完成
+- 3：失败
+- 4：已取消
                      * 
                      */
                     void SetMigrationStatus(const uint64_t& _migrationStatus);
@@ -531,14 +551,18 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 获取异步迁移完成后，预计生效日期
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return EffectiveDate 异步迁移完成后，预计生效日期
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetEffectiveDate() const;
 
                     /**
                      * 设置异步迁移完成后，预计生效日期
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _effectiveDate 异步迁移完成后，预计生效日期
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetEffectiveDate(const std::string& _effectiveDate);
@@ -590,6 +614,7 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -684,12 +709,17 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 异步迁移状态
+- 1：进行中
+- 2：已完成
+- 3：失败
+- 4：已取消
                      */
                     uint64_t m_migrationStatus;
                     bool m_migrationStatusHasBeenSet;
 
                     /**
                      * 异步迁移完成后，预计生效日期
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_effectiveDate;
                     bool m_effectiveDateHasBeenSet;

@@ -89,7 +89,6 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/GetDocPreviewRequest.h
   include/tencentcloud/lke/v20231130/model/ListDocCateResponse.h
   include/tencentcloud/lke/v20231130/model/ListRejectedQuestionPreviewResponse.h
-  include/tencentcloud/lke/v20231130/model/ListAppCategoryResponse.h
   include/tencentcloud/lke/v20231130/model/CreateAppResponse.h
   include/tencentcloud/lke/v20231130/model/Agent.h
   include/tencentcloud/lke/v20231130/model/DescribeAttributeLabelRequest.h
@@ -164,7 +163,6 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DescribeReleaseRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeDocRequest.h
   include/tencentcloud/lke/v20231130/model/KnowledgeBaseInfo.h
-  include/tencentcloud/lke/v20231130/model/ListAppCategoryRequest.h
   include/tencentcloud/lke/v20231130/model/ListReleaseConfigPreviewRequest.h
   include/tencentcloud/lke/v20231130/model/CallDetail.h
   include/tencentcloud/lke/v20231130/model/AgentToolReqParam.h
@@ -299,7 +297,6 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/GetVarListResponse.h
   include/tencentcloud/lke/v20231130/model/WorkFlowSummary.h
   include/tencentcloud/lke/v20231130/model/ListRejectedQuestionRequest.h
-  include/tencentcloud/lke/v20231130/model/ListAppCategoryRspOption.h
   include/tencentcloud/lke/v20231130/model/AgentPluginHeader.h
   include/tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeResponse.h
   include/tencentcloud/lke/v20231130/model/DescribeSearchStatsGraphResponse.h
@@ -425,7 +422,6 @@ set(lke_src
   src/v20231130/model/GetDocPreviewRequest.cpp
   src/v20231130/model/ListDocCateResponse.cpp
   src/v20231130/model/ListRejectedQuestionPreviewResponse.cpp
-  src/v20231130/model/ListAppCategoryResponse.cpp
   src/v20231130/model/CreateAppResponse.cpp
   src/v20231130/model/Agent.cpp
   src/v20231130/model/DescribeAttributeLabelRequest.cpp
@@ -500,7 +496,6 @@ set(lke_src
   src/v20231130/model/DescribeReleaseRequest.cpp
   src/v20231130/model/DescribeDocRequest.cpp
   src/v20231130/model/KnowledgeBaseInfo.cpp
-  src/v20231130/model/ListAppCategoryRequest.cpp
   src/v20231130/model/ListReleaseConfigPreviewRequest.cpp
   src/v20231130/model/CallDetail.cpp
   src/v20231130/model/AgentToolReqParam.cpp
@@ -635,7 +630,6 @@ set(lke_src
   src/v20231130/model/GetVarListResponse.cpp
   src/v20231130/model/WorkFlowSummary.cpp
   src/v20231130/model/ListRejectedQuestionRequest.cpp
-  src/v20231130/model/ListAppCategoryRspOption.cpp
   src/v20231130/model/AgentPluginHeader.cpp
   src/v20231130/model/UpdateSharedKnowledgeResponse.cpp
   src/v20231130/model/DescribeSearchStatsGraphResponse.cpp

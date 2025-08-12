@@ -24,7 +24,8 @@ using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
 DescribeConsoleSharingListResponse::DescribeConsoleSharingListResponse() :
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_consoleSharingInfosHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome DescribeConsoleSharingListResponse::Deserialize(const string
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ConsoleSharingInfos") && !rsp["ConsoleSharingInfos"].IsNull())
+    {
+        if (!rsp["ConsoleSharingInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ConsoleSharingInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ConsoleSharingInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ConsoleSharingInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_consoleSharingInfos.push_back(item);
+        }
+        m_consoleSharingInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ string DescribeConsoleSharingListResponse::ToJsonString() const
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_consoleSharingInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsoleSharingInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_consoleSharingInfos.begin(); itr != m_consoleSharingInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +146,16 @@ uint64_t DescribeConsoleSharingListResponse::GetTotalCount() const
 bool DescribeConsoleSharingListResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<ConsoleSharingInfo> DescribeConsoleSharingListResponse::GetConsoleSharingInfos() const
+{
+    return m_consoleSharingInfos;
+}
+
+bool DescribeConsoleSharingListResponse::ConsoleSharingInfosHasBeenSet() const
+{
+    return m_consoleSharingInfosHasBeenSet;
 }
 
 

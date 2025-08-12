@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/ConsoleSharingInfo.h>
 
 
 namespace TencentCloud
@@ -57,6 +58,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取控制台免密分享列表
+                     * @return ConsoleSharingInfos 控制台免密分享列表
+                     * 
+                     */
+                    std::vector<ConsoleSharingInfo> GetConsoleSharingInfos() const;
+
+                    /**
+                     * 判断参数 ConsoleSharingInfos 是否已赋值
+                     * @return ConsoleSharingInfos 是否已赋值
+                     * 
+                     */
+                    bool ConsoleSharingInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +79,12 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 控制台免密分享列表
+                     */
+                    std::vector<ConsoleSharingInfo> m_consoleSharingInfos;
+                    bool m_consoleSharingInfosHasBeenSet;
 
                 };
             }

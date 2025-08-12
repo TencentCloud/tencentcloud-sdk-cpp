@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取微服务详情实例列表
-                     * @return Result 微服务详情实例列表
+                     * 获取微服务详情实例列表。
+                     * @return Result 微服务详情实例列表。
                      * 
                      */
                     TsfPageMsInstance GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 微服务详情实例列表
+                     * 微服务详情实例列表。
                      */
                     TsfPageMsInstance m_result;
                     bool m_resultHasBeenSet;

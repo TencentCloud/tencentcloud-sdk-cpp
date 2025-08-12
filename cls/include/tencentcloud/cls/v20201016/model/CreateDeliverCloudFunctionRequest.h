@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递规则属于的 topic id
-                     * @return TopicId 投递规则属于的 topic id
+                     * 获取投递规则属于的TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * @return TopicId 投递规则属于的TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置投递规则属于的 topic id
-                     * @param _topicId 投递规则属于的 topic id
+                     * 设置投递规则属于的TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * @param _topicId 投递规则属于的TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -65,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取投递的云函数名字。仅支持[事件函数](https://cloud.tencent.com/document/product/583/9694#scf-.E4.BA.8B.E4.BB.B6.E5.87.BD.E6.95.B0) （[函数类型选型](https://cloud.tencent.com/document/product/583/73483)）
+通过 [获取函数列表](https://cloud.tencent.com/document/product/583/18582) 获取函数信息。
                      * @return FunctionName 投递的云函数名字。仅支持[事件函数](https://cloud.tencent.com/document/product/583/9694#scf-.E4.BA.8B.E4.BB.B6.E5.87.BD.E6.95.B0) （[函数类型选型](https://cloud.tencent.com/document/product/583/73483)）
+通过 [获取函数列表](https://cloud.tencent.com/document/product/583/18582) 获取函数信息。
                      * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置投递的云函数名字。仅支持[事件函数](https://cloud.tencent.com/document/product/583/9694#scf-.E4.BA.8B.E4.BB.B6.E5.87.BD.E6.95.B0) （[函数类型选型](https://cloud.tencent.com/document/product/583/73483)）
+通过 [获取函数列表](https://cloud.tencent.com/document/product/583/18582) 获取函数信息。
                      * @param _functionName 投递的云函数名字。仅支持[事件函数](https://cloud.tencent.com/document/product/583/9694#scf-.E4.BA.8B.E4.BB.B6.E5.87.BD.E6.95.B0) （[函数类型选型](https://cloud.tencent.com/document/product/583/73483)）
+通过 [获取函数列表](https://cloud.tencent.com/document/product/583/18582) 获取函数信息。
                      * 
                      */
                     void SetFunctionName(const std::string& _functionName);
@@ -85,15 +97,19 @@ namespace TencentCloud
                     bool FunctionNameHasBeenSet() const;
 
                     /**
-                     * 获取命名空间
-                     * @return Namespace 命名空间
+                     * 获取命名空间。参考 [命名空间管理](https://cloud.tencent.com/document/product/583/35913)
+- 通过 [列出命名空间列表](https://cloud.tencent.com/document/product/583/37158) 获取Name。
+                     * @return Namespace 命名空间。参考 [命名空间管理](https://cloud.tencent.com/document/product/583/35913)
+- 通过 [列出命名空间列表](https://cloud.tencent.com/document/product/583/37158) 获取Name。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置命名空间
-                     * @param _namespace 命名空间
+                     * 设置命名空间。参考 [命名空间管理](https://cloud.tencent.com/document/product/583/35913)
+- 通过 [列出命名空间列表](https://cloud.tencent.com/document/product/583/37158) 获取Name。
+                     * @param _namespace 命名空间。参考 [命名空间管理](https://cloud.tencent.com/document/product/583/35913)
+- 通过 [列出命名空间列表](https://cloud.tencent.com/document/product/583/37158) 获取Name。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -106,15 +122,19 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取函数版本
-                     * @return Qualifier 函数版本
+                     * 获取函数版本。
+- 通过 [查询函数版本 ](https://cloud.tencent.com/document/product/583/37162) 获取函数版本。
+                     * @return Qualifier 函数版本。
+- 通过 [查询函数版本 ](https://cloud.tencent.com/document/product/583/37162) 获取函数版本。
                      * 
                      */
                     std::string GetQualifier() const;
 
                     /**
-                     * 设置函数版本
-                     * @param _qualifier 函数版本
+                     * 设置函数版本。
+- 通过 [查询函数版本 ](https://cloud.tencent.com/document/product/583/37162) 获取函数版本。
+                     * @param _qualifier 函数版本。
+- 通过 [查询函数版本 ](https://cloud.tencent.com/document/product/583/37162) 获取函数版本。
                      * 
                      */
                     void SetQualifier(const std::string& _qualifier);
@@ -127,15 +147,15 @@ namespace TencentCloud
                     bool QualifierHasBeenSet() const;
 
                     /**
-                     * 获取投递最长等待时间，单位：秒
-                     * @return Timeout 投递最长等待时间，单位：秒
+                     * 获取投递最长等待时间，单位：秒。 默认：60
+                     * @return Timeout 投递最长等待时间，单位：秒。 默认：60
                      * 
                      */
                     uint64_t GetTimeout() const;
 
                     /**
-                     * 设置投递最长等待时间，单位：秒
-                     * @param _timeout 投递最长等待时间，单位：秒
+                     * 设置投递最长等待时间，单位：秒。 默认：60
+                     * @param _timeout 投递最长等待时间，单位：秒。 默认：60
                      * 
                      */
                     void SetTimeout(const uint64_t& _timeout);
@@ -148,15 +168,15 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取投递最大消息数
-                     * @return MaxMsgNum 投递最大消息数
+                     * 获取投递最大消息数。默认为100。支持范围[1,10000]
+                     * @return MaxMsgNum 投递最大消息数。默认为100。支持范围[1,10000]
                      * 
                      */
                     uint64_t GetMaxMsgNum() const;
 
                     /**
-                     * 设置投递最大消息数
-                     * @param _maxMsgNum 投递最大消息数
+                     * 设置投递最大消息数。默认为100。支持范围[1,10000]
+                     * @param _maxMsgNum 投递最大消息数。默认为100。支持范围[1,10000]
                      * 
                      */
                     void SetMaxMsgNum(const uint64_t& _maxMsgNum);
@@ -171,37 +191,42 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 投递规则属于的 topic id
+                     * 投递规则属于的TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 投递的云函数名字。仅支持[事件函数](https://cloud.tencent.com/document/product/583/9694#scf-.E4.BA.8B.E4.BB.B6.E5.87.BD.E6.95.B0) （[函数类型选型](https://cloud.tencent.com/document/product/583/73483)）
+通过 [获取函数列表](https://cloud.tencent.com/document/product/583/18582) 获取函数信息。
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;
 
                     /**
-                     * 命名空间
+                     * 命名空间。参考 [命名空间管理](https://cloud.tencent.com/document/product/583/35913)
+- 通过 [列出命名空间列表](https://cloud.tencent.com/document/product/583/37158) 获取Name。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 函数版本
+                     * 函数版本。
+- 通过 [查询函数版本 ](https://cloud.tencent.com/document/product/583/37162) 获取函数版本。
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;
 
                     /**
-                     * 投递最长等待时间，单位：秒
+                     * 投递最长等待时间，单位：秒。 默认：60
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * 投递最大消息数
+                     * 投递最大消息数。默认为100。支持范围[1,10000]
                      */
                     uint64_t m_maxMsgNum;
                     bool m_maxMsgNumHasBeenSet;

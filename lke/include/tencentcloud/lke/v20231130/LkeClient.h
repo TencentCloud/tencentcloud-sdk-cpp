@@ -151,8 +151,6 @@
 #include <tencentcloud/lke/v20231130/model/IsTransferIntentResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListAppResponse.h>
-#include <tencentcloud/lke/v20231130/model/ListAppCategoryRequest.h>
-#include <tencentcloud/lke/v20231130/model/ListAppCategoryResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListAppKnowledgeDetailRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListAppKnowledgeDetailResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListAttributeLabelRequest.h>
@@ -443,9 +441,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListAppResponse> ListAppOutcome;
                 typedef std::future<ListAppOutcome> ListAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListAppRequest&, ListAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAppAsyncHandler;
-                typedef Outcome<Core::Error, Model::ListAppCategoryResponse> ListAppCategoryOutcome;
-                typedef std::future<ListAppCategoryOutcome> ListAppCategoryOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::ListAppCategoryRequest&, ListAppCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAppCategoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListAppKnowledgeDetailResponse> ListAppKnowledgeDetailOutcome;
                 typedef std::future<ListAppKnowledgeDetailOutcome> ListAppKnowledgeDetailOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListAppKnowledgeDetailRequest&, ListAppKnowledgeDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAppKnowledgeDetailAsyncHandler;
@@ -1152,15 +1147,6 @@ namespace TencentCloud
                 ListAppOutcome ListApp(const Model::ListAppRequest &request);
                 void ListAppAsync(const Model::ListAppRequest& request, const ListAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListAppOutcomeCallable ListAppCallable(const Model::ListAppRequest& request);
-
-                /**
-                 *应用类型列表
-                 * @param req ListAppCategoryRequest
-                 * @return ListAppCategoryOutcome
-                 */
-                ListAppCategoryOutcome ListAppCategory(const Model::ListAppCategoryRequest &request);
-                void ListAppCategoryAsync(const Model::ListAppCategoryRequest& request, const ListAppCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ListAppCategoryOutcomeCallable ListAppCategoryCallable(const Model::ListAppCategoryRequest& request);
 
                 /**
                  *列表查询知识库容量详情

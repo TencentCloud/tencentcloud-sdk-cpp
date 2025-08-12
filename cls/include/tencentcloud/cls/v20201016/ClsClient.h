@@ -771,7 +771,7 @@ namespace TencentCloud
                 CreateDeliverCloudFunctionOutcomeCallable CreateDeliverCloudFunctionCallable(const Model::CreateDeliverCloudFunctionRequest& request);
 
                 /**
-                 *本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449
+                 *本接口仅创建下载任务。任务返回的下载地址，请用户调用[DescribeExports](https://cloud.tencent.com/document/product/614/56449)查看任务列表，其中有下载地址CosPath参数。
                  * @param req CreateExportRequest
                  * @return CreateExportOutcome
                  */
@@ -879,7 +879,7 @@ namespace TencentCloud
                 DeleteAlarmNoticeOutcomeCallable DeleteAlarmNoticeCallable(const Model::DeleteAlarmNoticeRequest& request);
 
                 /**
-                 *该接口用于删除告警屏蔽规则。
+                 *该接口用于删除告警屏蔽规则。当告警屏蔽规则在生效中或者是在失效中，无法被删除
                  * @param req DeleteAlarmShieldRequest
                  * @return DeleteAlarmShieldOutcome
                  */
@@ -933,7 +933,7 @@ namespace TencentCloud
                 DeleteConsoleSharingOutcomeCallable DeleteConsoleSharingCallable(const Model::DeleteConsoleSharingRequest& request);
 
                 /**
-                 *本接口用于删除投递配置
+                 *删除投递Ckafka任务
                  * @param req DeleteConsumerRequest
                  * @return DeleteConsumerOutcome
                  */

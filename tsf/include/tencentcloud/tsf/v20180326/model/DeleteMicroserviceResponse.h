@@ -44,12 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除微服务是否成功。
-true：操作成功。
-false：操作失败。
-                     * @return Result 删除微服务是否成功。
-true：操作成功。
-false：操作失败。
+                     * 获取删除结果。
+- true：操作成功
+- false：操作失败
+                     * @return Result 删除结果。
+- true：操作成功
+- false：操作失败
                      * 
                      */
                     bool GetResult() const;
@@ -64,9 +64,9 @@ false：操作失败。
                 private:
 
                     /**
-                     * 删除微服务是否成功。
-true：操作成功。
-false：操作失败。
+                     * 删除结果。
+- true：操作成功
+- false：操作失败
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

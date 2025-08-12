@@ -29,7 +29,8 @@ CompareFaceRequest::CompareFaceRequest() :
     m_urlBHasBeenSet(false),
     m_faceModelVersionHasBeenSet(false),
     m_qualityControlHasBeenSet(false),
-    m_needRotateDetectionHasBeenSet(false)
+    m_needRotateDetectionHasBeenSet(false),
+    m_faceMatchingStrategyHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CompareFaceRequest::ToJsonString() const
         string key = "NeedRotateDetection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needRotateDetection, allocator);
+    }
+
+    if (m_faceMatchingStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FaceMatchingStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_faceMatchingStrategy, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CompareFaceRequest::SetNeedRotateDetection(const uint64_t& _needRotateDetec
 bool CompareFaceRequest::NeedRotateDetectionHasBeenSet() const
 {
     return m_needRotateDetectionHasBeenSet;
+}
+
+uint64_t CompareFaceRequest::GetFaceMatchingStrategy() const
+{
+    return m_faceMatchingStrategy;
+}
+
+void CompareFaceRequest::SetFaceMatchingStrategy(const uint64_t& _faceMatchingStrategy)
+{
+    m_faceMatchingStrategy = _faceMatchingStrategy;
+    m_faceMatchingStrategyHasBeenSet = true;
+}
+
+bool CompareFaceRequest::FaceMatchingStrategyHasBeenSet() const
+{
+    return m_faceMatchingStrategyHasBeenSet;
 }
 
 

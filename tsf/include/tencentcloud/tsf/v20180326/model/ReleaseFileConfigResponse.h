@@ -44,8 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发布结果，成功：true，失败：false。
-                     * @return Result 发布结果，成功：true，失败：false。
+                     * 获取发布结果。
+- true：成功
+- false：失败
+                     * @return Result 发布结果。
+- true：成功
+- false：失败
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +64,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发布结果，成功：true，失败：false。
+                     * 发布结果。
+- true：成功
+- false：失败
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

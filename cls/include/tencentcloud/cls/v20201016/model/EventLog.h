@@ -92,15 +92,23 @@ namespace TencentCloud
                     bool EventChannelHasBeenSet() const;
 
                     /**
-                     * 获取时间类型，1:用户自定义，2:当前时间
-                     * @return TimeType 时间类型，1:用户自定义，2:当前时间
+                     * 获取时间字段（Timestamp）支持的类型
+- 1（用户自定义时间）
+- 2（当前时间）
+                     * @return TimeType 时间字段（Timestamp）支持的类型
+- 1（用户自定义时间）
+- 2（当前时间）
                      * 
                      */
                     uint64_t GetTimeType() const;
 
                     /**
-                     * 设置时间类型，1:用户自定义，2:当前时间
-                     * @param _timeType 时间类型，1:用户自定义，2:当前时间
+                     * 设置时间字段（Timestamp）支持的类型
+- 1（用户自定义时间）
+- 2（当前时间）
+                     * @param _timeType 时间字段（Timestamp）支持的类型
+- 1（用户自定义时间）
+- 2（当前时间）
                      * 
                      */
                     void SetTimeType(const uint64_t& _timeType);
@@ -114,14 +122,18 @@ namespace TencentCloud
 
                     /**
                      * 获取时间，用户选择自定义时间类型时，需要指定时间，单位秒
+格式：时间戳，1754897446
                      * @return Timestamp 时间，用户选择自定义时间类型时，需要指定时间，单位秒
+格式：时间戳，1754897446
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
                      * 设置时间，用户选择自定义时间类型时，需要指定时间，单位秒
+格式：时间戳，1754897446
                      * @param _timestamp 时间，用户选择自定义时间类型时，需要指定时间，单位秒
+格式：时间戳，1754897446
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -185,13 +197,16 @@ namespace TencentCloud
                     bool m_eventChannelHasBeenSet;
 
                     /**
-                     * 时间类型，1:用户自定义，2:当前时间
+                     * 时间字段（Timestamp）支持的类型
+- 1（用户自定义时间）
+- 2（当前时间）
                      */
                     uint64_t m_timeType;
                     bool m_timeTypeHasBeenSet;
 
                     /**
                      * 时间，用户选择自定义时间类型时，需要指定时间，单位秒
+格式：时间戳，1754897446
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;

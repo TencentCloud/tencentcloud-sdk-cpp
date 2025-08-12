@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/AttributeLabel.h>
 
 
 namespace TencentCloud
@@ -57,6 +58,20 @@ namespace TencentCloud
                      */
                     bool AttrBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取标签值ID与名称
+                     * @return Labels 标签值ID与名称
+                     * 
+                     */
+                    std::vector<AttributeLabel> GetLabels() const;
+
+                    /**
+                     * 判断参数 Labels 是否已赋值
+                     * @return Labels 是否已赋值
+                     * 
+                     */
+                    bool LabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +79,12 @@ namespace TencentCloud
                      */
                     std::string m_attrBizId;
                     bool m_attrBizIdHasBeenSet;
+
+                    /**
+                     * 标签值ID与名称
+                     */
+                    std::vector<AttributeLabel> m_labels;
+                    bool m_labelsHasBeenSet;
 
                 };
             }

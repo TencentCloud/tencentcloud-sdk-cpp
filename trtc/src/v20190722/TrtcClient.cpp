@@ -2835,6 +2835,92 @@ TrtcClient::StopWebRecordOutcomeCallable TrtcClient::StopWebRecordCallable(const
     return task->get_future();
 }
 
+TrtcClient::TextToSpeechOutcome TrtcClient::TextToSpeech(const TextToSpeechRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToSpeech");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToSpeechResponse rsp = TextToSpeechResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToSpeechOutcome(rsp);
+        else
+            return TextToSpeechOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToSpeechOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::TextToSpeechAsync(const TextToSpeechRequest& request, const TextToSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextToSpeech(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::TextToSpeechOutcomeCallable TrtcClient::TextToSpeechCallable(const TextToSpeechRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextToSpeechOutcome()>>(
+        [this, request]()
+        {
+            return this->TextToSpeech(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::TextToSpeechSSEOutcome TrtcClient::TextToSpeechSSE(const TextToSpeechSSERequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToSpeechSSE");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToSpeechSSEResponse rsp = TextToSpeechSSEResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToSpeechSSEOutcome(rsp);
+        else
+            return TextToSpeechSSEOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToSpeechSSEOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::TextToSpeechSSEAsync(const TextToSpeechSSERequest& request, const TextToSpeechSSEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextToSpeechSSE(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::TextToSpeechSSEOutcomeCallable TrtcClient::TextToSpeechSSECallable(const TextToSpeechSSERequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextToSpeechSSEOutcome()>>(
+        [this, request]()
+        {
+            return this->TextToSpeechSSE(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::UpdateAIConversationOutcome TrtcClient::UpdateAIConversation(const UpdateAIConversationRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateAIConversation");
@@ -3000,6 +3086,49 @@ TrtcClient::UpdateVoicePrintOutcomeCallable TrtcClient::UpdateVoicePrintCallable
         [this, request]()
         {
             return this->UpdateVoicePrint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::VoiceCloneOutcome TrtcClient::VoiceClone(const VoiceCloneRequest &request)
+{
+    auto outcome = MakeRequest(request, "VoiceClone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VoiceCloneResponse rsp = VoiceCloneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VoiceCloneOutcome(rsp);
+        else
+            return VoiceCloneOutcome(o.GetError());
+    }
+    else
+    {
+        return VoiceCloneOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::VoiceCloneAsync(const VoiceCloneRequest& request, const VoiceCloneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VoiceClone(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::VoiceCloneOutcomeCallable TrtcClient::VoiceCloneCallable(const VoiceCloneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VoiceCloneOutcome()>>(
+        [this, request]()
+        {
+            return this->VoiceClone(request);
         }
     );
 

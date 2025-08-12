@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置项
+                     * 获取配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result 配置项
+                     * @return Result 配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置项
+                     * 配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Config m_result;

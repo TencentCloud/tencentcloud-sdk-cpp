@@ -46,14 +46,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集ID
+- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
                      * @return LogsetId 日志集ID
+- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集ID
+- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
                      * @param _logsetId 日志集ID
+- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -67,14 +71,34 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题名称
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
+
                      * @return TopicName 日志主题名称
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
+
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置日志主题名称
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
+
                      * @param _topicName 日志主题名称
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
+
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -349,12 +373,18 @@ namespace TencentCloud
 
                     /**
                      * 日志集ID
+- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
                      * 日志主题名称
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
+
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

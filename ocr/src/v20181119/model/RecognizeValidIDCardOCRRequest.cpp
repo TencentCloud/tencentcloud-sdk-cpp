@@ -34,7 +34,8 @@ RecognizeValidIDCardOCRRequest::RecognizeValidIDCardOCRRequest() :
     m_enableReshootCheckHasBeenSet(false),
     m_enablePSCheckHasBeenSet(false),
     m_enableWordCheckHasBeenSet(false),
-    m_enableQualityCheckHasBeenSet(false)
+    m_enableQualityCheckHasBeenSet(false),
+    m_enableElectronCheckHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string RecognizeValidIDCardOCRRequest::ToJsonString() const
         string key = "EnableQualityCheck";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableQualityCheck, allocator);
+    }
+
+    if (m_enableElectronCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableElectronCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableElectronCheck, allocator);
     }
 
 
@@ -339,6 +348,22 @@ void RecognizeValidIDCardOCRRequest::SetEnableQualityCheck(const bool& _enableQu
 bool RecognizeValidIDCardOCRRequest::EnableQualityCheckHasBeenSet() const
 {
     return m_enableQualityCheckHasBeenSet;
+}
+
+bool RecognizeValidIDCardOCRRequest::GetEnableElectronCheck() const
+{
+    return m_enableElectronCheck;
+}
+
+void RecognizeValidIDCardOCRRequest::SetEnableElectronCheck(const bool& _enableElectronCheck)
+{
+    m_enableElectronCheck = _enableElectronCheck;
+    m_enableElectronCheckHasBeenSet = true;
+}
+
+bool RecognizeValidIDCardOCRRequest::EnableElectronCheckHasBeenSet() const
+{
+    return m_enableElectronCheckHasBeenSet;
 }
 
 

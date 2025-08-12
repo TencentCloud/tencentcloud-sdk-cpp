@@ -67,14 +67,22 @@ namespace TencentCloud
 
                     /**
                      * 获取采集规则配置名称
+- 不能包含特殊字符｜
+- 长度不能超过255字符，超过会被截断
                      * @return Name 采集规则配置名称
+- 不能包含特殊字符｜
+- 长度不能超过255字符，超过会被截断
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置采集规则配置名称
+- 不能包含特殊字符｜
+- 长度不能超过255字符，超过会被截断
                      * @param _name 采集规则配置名称
+- 不能包含特殊字符｜
+- 长度不能超过255字符，超过会被截断
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -216,14 +224,18 @@ namespace TencentCloud
 
                     /**
                      * 获取采集配置关联的日志主题（TopicId）
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @return Output 采集配置关联的日志主题（TopicId）
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetOutput() const;
 
                     /**
                      * 设置采集配置关联的日志主题（TopicId）
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @param _output 采集配置关联的日志主题（TopicId）
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetOutput(const std::string& _output);
@@ -307,6 +319,8 @@ namespace TencentCloud
 
                     /**
                      * 采集规则配置名称
+- 不能包含特殊字符｜
+- 长度不能超过255字符，超过会被截断
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -348,6 +362,7 @@ namespace TencentCloud
 
                     /**
                      * 采集配置关联的日志主题（TopicId）
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_output;
                     bool m_outputHasBeenSet;

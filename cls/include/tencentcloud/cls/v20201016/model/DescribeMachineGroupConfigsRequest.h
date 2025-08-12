@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
                      * @return GroupId 机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
                      * @param _groupId 机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -67,6 +71,7 @@ namespace TencentCloud
 
                     /**
                      * 机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取已发布的配置内容
-                     * @return Result 已发布的配置内容
+                     * 获取已发布的配置内容。
+                     * @return Result 已发布的配置内容。
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 已发布的配置内容
+                     * 已发布的配置内容。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导入结果
-                     * @return Result 导入结果
+                     * 获取导入结果。
+                     * @return Result 导入结果。
                      * 
                      */
                     ConfigTemplate GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导入结果
+                     * 导入结果。
                      */
                     ConfigTemplate m_result;
                     bool m_resultHasBeenSet;

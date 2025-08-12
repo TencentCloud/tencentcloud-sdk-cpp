@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流 ID
-                     * @return FlowId 工作流 ID
+                     * 获取工作流 ID。前往[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)，在工作流列表第一列和工作流详情页查看工作流ID。
+                     * @return FlowId 工作流 ID。前往[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)，在工作流列表第一列和工作流详情页查看工作流ID。
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置工作流 ID
-                     * @param _flowId 工作流 ID
+                     * 设置工作流 ID。前往[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)，在工作流列表第一列和工作流详情页查看工作流ID。
+                     * @param _flowId 工作流 ID。前往[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)，在工作流列表第一列和工作流详情页查看工作流ID。
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作流 ID
+                     * 工作流 ID。前往[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)，在工作流列表第一列和工作流详情页查看工作流ID。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;

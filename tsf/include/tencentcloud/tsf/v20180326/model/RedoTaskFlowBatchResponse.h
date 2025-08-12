@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流批次历史 ID
-                     * @return Result 工作流批次历史 ID
+                     * 获取工作流批次历史 ID。操作失败时不返回该字段，返回错误码。
+                     * @return Result 工作流批次历史 ID。操作失败时不返回该字段，返回错误码。
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作流批次历史 ID
+                     * 工作流批次历史 ID。操作失败时不返回该字段，返回错误码。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

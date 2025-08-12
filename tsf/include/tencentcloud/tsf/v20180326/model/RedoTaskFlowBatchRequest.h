@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流批次 ID
-                     * @return FlowBatchId 工作流批次 ID
+                     * 获取工作流批次 ID。在工作流管理页面，点击第一列的工作流ID进入工作流执行记录列表页面，第一列的内容即为工作流批次ID。
+                     * @return FlowBatchId 工作流批次 ID。在工作流管理页面，点击第一列的工作流ID进入工作流执行记录列表页面，第一列的内容即为工作流批次ID。
                      * 
                      */
                     std::string GetFlowBatchId() const;
 
                     /**
-                     * 设置工作流批次 ID
-                     * @param _flowBatchId 工作流批次 ID
+                     * 设置工作流批次 ID。在工作流管理页面，点击第一列的工作流ID进入工作流执行记录列表页面，第一列的内容即为工作流批次ID。
+                     * @param _flowBatchId 工作流批次 ID。在工作流管理页面，点击第一列的工作流ID进入工作流执行记录列表页面，第一列的内容即为工作流批次ID。
                      * 
                      */
                     void SetFlowBatchId(const std::string& _flowBatchId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作流批次 ID
+                     * 工作流批次 ID。在工作流管理页面，点击第一列的工作流ID进入工作流执行记录列表页面，第一列的内容即为工作流批次ID。
                      */
                     std::string m_flowBatchId;
                     bool m_flowBatchIdHasBeenSet;

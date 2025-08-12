@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件配置项列表
-                     * @return Result 文件配置项列表
+                     * 获取文件配置项列表。
+                     * @return Result 文件配置项列表。
                      * 
                      */
                     TsfPageFileConfig GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件配置项列表
+                     * 文件配置项列表。
                      */
                     TsfPageFileConfig m_result;
                     bool m_resultHasBeenSet;

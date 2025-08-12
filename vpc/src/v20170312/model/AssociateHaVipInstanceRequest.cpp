@@ -22,7 +22,8 @@
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-AssociateHaVipInstanceRequest::AssociateHaVipInstanceRequest()
+AssociateHaVipInstanceRequest::AssociateHaVipInstanceRequest() :
+    m_haVipAssociationSetHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,21 @@ string AssociateHaVipInstanceRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_haVipAssociationSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HaVipAssociationSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_haVipAssociationSet.begin(); itr != m_haVipAssociationSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +56,21 @@ string AssociateHaVipInstanceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<HaVipAssociation> AssociateHaVipInstanceRequest::GetHaVipAssociationSet() const
+{
+    return m_haVipAssociationSet;
+}
+
+void AssociateHaVipInstanceRequest::SetHaVipAssociationSet(const vector<HaVipAssociation>& _haVipAssociationSet)
+{
+    m_haVipAssociationSet = _haVipAssociationSet;
+    m_haVipAssociationSetHasBeenSet = true;
+}
+
+bool AssociateHaVipInstanceRequest::HaVipAssociationSetHasBeenSet() const
+{
+    return m_haVipAssociationSetHasBeenSet;
+}
 
 

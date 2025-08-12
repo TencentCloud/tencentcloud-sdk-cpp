@@ -345,6 +345,35 @@ namespace TencentCloud
                      */
                     bool NeedRotateDetectionHasBeenSet() const;
 
+                    /**
+                     * 获取若图片中包含多张人脸，指定选取策略，默认为0。
+- 0：选取其中置信度最高的人脸
+- 1：选取其中面积最大的人脸。
+                     * @return FaceMatchingStrategy 若图片中包含多张人脸，指定选取策略，默认为0。
+- 0：选取其中置信度最高的人脸
+- 1：选取其中面积最大的人脸。
+                     * 
+                     */
+                    uint64_t GetFaceMatchingStrategy() const;
+
+                    /**
+                     * 设置若图片中包含多张人脸，指定选取策略，默认为0。
+- 0：选取其中置信度最高的人脸
+- 1：选取其中面积最大的人脸。
+                     * @param _faceMatchingStrategy 若图片中包含多张人脸，指定选取策略，默认为0。
+- 0：选取其中置信度最高的人脸
+- 1：选取其中面积最大的人脸。
+                     * 
+                     */
+                    void SetFaceMatchingStrategy(const uint64_t& _faceMatchingStrategy);
+
+                    /**
+                     * 判断参数 FaceMatchingStrategy 是否已赋值
+                     * @return FaceMatchingStrategy 是否已赋值
+                     * 
+                     */
+                    bool FaceMatchingStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +456,14 @@ namespace TencentCloud
                      */
                     uint64_t m_needRotateDetection;
                     bool m_needRotateDetectionHasBeenSet;
+
+                    /**
+                     * 若图片中包含多张人脸，指定选取策略，默认为0。
+- 0：选取其中置信度最高的人脸
+- 1：选取其中面积最大的人脸。
+                     */
+                    uint64_t m_faceMatchingStrategy;
+                    bool m_faceMatchingStrategyHasBeenSet;
 
                 };
             }

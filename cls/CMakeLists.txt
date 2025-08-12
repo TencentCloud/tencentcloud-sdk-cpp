@@ -227,6 +227,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/Column.h
   include/tencentcloud/cls/v20201016/model/ContentInfo.h
   include/tencentcloud/cls/v20201016/model/ValueInfo.h
+  include/tencentcloud/cls/v20201016/model/ConsoleSharingInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeDataTransformInfoRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteShipperResponse.h
@@ -559,6 +560,7 @@ set(cls_src
   src/v20201016/model/Column.cpp
   src/v20201016/model/ContentInfo.cpp
   src/v20201016/model/ValueInfo.cpp
+  src/v20201016/model/ConsoleSharingInfo.cpp
   src/v20201016/model/DescribeDataTransformInfoRequest.cpp
   src/v20201016/model/DeleteConfigResponse.cpp
   src/v20201016/model/DeleteShipperResponse.cpp

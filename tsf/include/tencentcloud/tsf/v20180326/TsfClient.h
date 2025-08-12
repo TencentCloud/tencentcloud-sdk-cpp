@@ -1356,7 +1356,7 @@ namespace TencentCloud
                 CreateFileConfigOutcomeCallable CreateFileConfigCallable(const Model::CreateFileConfigRequest& request);
 
                 /**
-                 *创建文件配置项，返回详细信息
+                 *创建文件配置项，返回详细信息。
                  * @param req CreateFileConfigWithDetailRespRequest
                  * @return CreateFileConfigWithDetailRespOutcome
                  */
@@ -1383,7 +1383,7 @@ namespace TencentCloud
                 CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request);
 
                 /**
-                 *创建泳道
+                 *创建泳道配置
                  * @param req CreateLaneRequest
                  * @return CreateLaneOutcome
                  */
@@ -1392,7 +1392,7 @@ namespace TencentCloud
                 CreateLaneOutcomeCallable CreateLaneCallable(const Model::CreateLaneRequest& request);
 
                 /**
-                 *创建泳道规则
+                 *创建灰度发布规则
                  * @param req CreateLaneRuleRequest
                  * @return CreateLaneRuleOutcome
                  */
@@ -1410,7 +1410,7 @@ namespace TencentCloud
                 CreateMicroserviceOutcomeCallable CreateMicroserviceCallable(const Model::CreateMicroserviceRequest& request);
 
                 /**
-                 *新增微服务返回id
+                 *新增微服务返回ID
                  * @param req CreateMicroserviceWithDetailRespRequest
                  * @return CreateMicroserviceWithDetailRespOutcome
                  */
@@ -1464,7 +1464,7 @@ namespace TencentCloud
                 CreatePublicConfigOutcomeCallable CreatePublicConfigCallable(const Model::CreatePublicConfigRequest& request);
 
                 /**
-                 *创建公共配置项，并返回配置项详细信息
+                 *创建公共配置项，并返回配置项详细信息。
                  * @param req CreatePublicConfigWithDetailRespRequest
                  * @return CreatePublicConfigWithDetailRespOutcome
                  */
@@ -1626,7 +1626,7 @@ namespace TencentCloud
                 DeleteImageTagsOutcomeCallable DeleteImageTagsCallable(const Model::DeleteImageTagsRequest& request);
 
                 /**
-                 *删除泳道
+                 *删除泳道配置
                  * @param req DeleteLaneRequest
                  * @return DeleteLaneOutcome
                  */
@@ -1635,7 +1635,7 @@ namespace TencentCloud
                 DeleteLaneOutcomeCallable DeleteLaneCallable(const Model::DeleteLaneRequest& request);
 
                 /**
-                 *删除泳道规则
+                 *删除灰度发布规则
                  * @param req DeleteLaneRuleRequest
                  * @return DeleteLaneRuleOutcome
                  */
@@ -1809,7 +1809,7 @@ namespace TencentCloud
                 DescribeApiUseDetailOutcomeCallable DescribeApiUseDetailCallable(const Model::DescribeApiUseDetailRequest& request);
 
                 /**
-                 *查询API 版本
+                 *查询API版本
                  * @param req DescribeApiVersionsRequest
                  * @return DescribeApiVersionsOutcome
                  */
@@ -2029,7 +2029,7 @@ namespace TencentCloud
 
                 /**
                  *TSF上传的程序包存放在腾讯云对象存储（COS）中，通过该API可以获取从COS下载程序包需要的信息，包括包所在的桶、存储路径、鉴权信息等，之后使用COS API（或SDK）进行下载。
-COS相关文档请查阅：https://cloud.tencent.com/document/product/436
+请查阅[COS相关文档](https://cloud.tencent.com/document/product/436)
                  * @param req DescribeDownloadInfoRequest
                  * @return DescribeDownloadInfoOutcome
                  */
@@ -2274,7 +2274,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeJvmMonitorOutcomeCallable DescribeJvmMonitorCallable(const Model::DescribeJvmMonitorRequest& request);
 
                 /**
-                 *查询泳道规则列表
+                 *查询灰度发布规则列表
                  * @param req DescribeLaneRulesRequest
                  * @return DescribeLaneRulesOutcome
                  */
@@ -2283,7 +2283,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeLaneRulesOutcomeCallable DescribeLaneRulesCallable(const Model::DescribeLaneRulesRequest& request);
 
                 /**
-                 *查询泳道列表
+                 *查询泳道配置列表
                  * @param req DescribeLanesRequest
                  * @return DescribeLanesOutcome
                  */
@@ -2454,7 +2454,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribePublicConfigsOutcomeCallable DescribePublicConfigsCallable(const Model::DescribePublicConfigsRequest& request);
 
                 /**
-                 *查询group发布的配置
+                 *查询部署组发布的配置
                  * @param req DescribeReleasedConfigRequest
                  * @return DescribeReleasedConfigOutcome
                  */
@@ -2617,7 +2617,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
 
                 /**
                  *TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。
-COS相关文档请查阅：https://cloud.tencent.com/document/product/436
+请查阅[COS相关文档](https://cloud.tencent.com/document/product/436)
                  * @param req DescribeUploadInfoRequest
                  * @return DescribeUploadInfoOutcome
                  */
@@ -2635,7 +2635,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeUsableUnitNamespacesOutcomeCallable DescribeUsableUnitNamespacesCallable(const Model::DescribeUsableUnitNamespacesRequest& request);
 
                 /**
-                 *禁用泳道规则
+                 *禁用灰度发布规则
                  * @param req DisableLaneRuleRequest
                  * @return DisableLaneRuleOutcome
                  */
@@ -2707,7 +2707,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DraftApiGroupOutcomeCallable DraftApiGroupCallable(const Model::DraftApiGroupRequest& request);
 
                 /**
-                 *启用泳道规则
+                 *启用灰度发布规则
                  * @param req EnableLaneRuleRequest
                  * @return EnableLaneRuleOutcome
                  */
@@ -2824,7 +2824,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 ModifyGroupOutcomeCallable ModifyGroupCallable(const Model::ModifyGroupRequest& request);
 
                 /**
-                 *更新泳道信息
+                 *更新泳道配置信息
                  * @param req ModifyLaneRequest
                  * @return ModifyLaneOutcome
                  */
@@ -2833,7 +2833,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 ModifyLaneOutcomeCallable ModifyLaneCallable(const Model::ModifyLaneRequest& request);
 
                 /**
-                 *更新泳道规则
+                 *更新灰度发布规则
                  * @param req ModifyLaneRuleRequest
                  * @return ModifyLaneRuleOutcome
                  */
@@ -2971,7 +2971,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 ReleaseConfigOutcomeCallable ReleaseConfigCallable(const Model::ReleaseConfigRequest& request);
 
                 /**
-                 *发布配置,并且返回配置 ID
+                 *发布配置，并且返回配置ID。
                  * @param req ReleaseConfigWithDetailRespRequest
                  * @return ReleaseConfigWithDetailRespOutcome
                  */

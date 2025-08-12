@@ -119,6 +119,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplatesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeImagesToShareRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeImagesToShareResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesRequest.h>
@@ -187,6 +189,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallTemplateRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallTemplateResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyImageSharePermissionRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyImageSharePermissionResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesBundleRequest.h>
@@ -397,6 +401,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGeneralResourceQuotasResponse> DescribeGeneralResourceQuotasOutcome;
                 typedef std::future<DescribeGeneralResourceQuotasOutcome> DescribeGeneralResourceQuotasOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeGeneralResourceQuotasRequest&, DescribeGeneralResourceQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralResourceQuotasAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImagesToShareResponse> DescribeImagesToShareOutcome;
+                typedef std::future<DescribeImagesToShareOutcome> DescribeImagesToShareOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeImagesToShareRequest&, DescribeImagesToShareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesToShareAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceVncUrlResponse> DescribeInstanceVncUrlOutcome;
                 typedef std::future<DescribeInstanceVncUrlOutcome> DescribeInstanceVncUrlOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeInstanceVncUrlRequest&, DescribeInstanceVncUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceVncUrlAsyncHandler;
@@ -499,6 +506,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyFirewallTemplateResponse> ModifyFirewallTemplateOutcome;
                 typedef std::future<ModifyFirewallTemplateOutcome> ModifyFirewallTemplateOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyFirewallTemplateRequest&, ModifyFirewallTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFirewallTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyImageSharePermissionResponse> ModifyImageSharePermissionOutcome;
+                typedef std::future<ModifyImageSharePermissionOutcome> ModifyImageSharePermissionOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyImageSharePermissionRequest&, ModifyImageSharePermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageSharePermissionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstancesAttributeResponse> ModifyInstancesAttributeOutcome;
                 typedef std::future<ModifyInstancesAttributeOutcome> ModifyInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyInstancesAttributeRequest&, ModifyInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesAttributeAsyncHandler;
@@ -1055,6 +1065,15 @@ namespace TencentCloud
                 DescribeGeneralResourceQuotasOutcomeCallable DescribeGeneralResourceQuotasCallable(const Model::DescribeGeneralResourceQuotasRequest& request);
 
                 /**
+                 *本接口 (DescribeImagesToShare) 用于查询CVM的自定义镜像列表共享到轻量应用服务器。
+                 * @param req DescribeImagesToShareRequest
+                 * @return DescribeImagesToShareOutcome
+                 */
+                DescribeImagesToShareOutcome DescribeImagesToShare(const Model::DescribeImagesToShareRequest &request);
+                void DescribeImagesToShareAsync(const Model::DescribeImagesToShareRequest& request, const DescribeImagesToShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImagesToShareOutcomeCallable DescribeImagesToShareCallable(const Model::DescribeImagesToShareRequest& request);
+
+                /**
                  *本接口 ( DescribeInstanceVncUrl ) 用于查询实例管理终端地址，获取的地址可用于实例的 VNC 登录。
 
 * 仅处于 `RUNNING`，`RESCUE_MODE` 状态的机器，且当前机器无变更中操作，才可使用此功能。
@@ -1426,6 +1445,22 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyFirewallTemplateOutcome ModifyFirewallTemplate(const Model::ModifyFirewallTemplateRequest &request);
                 void ModifyFirewallTemplateAsync(const Model::ModifyFirewallTemplateRequest& request, const ModifyFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyFirewallTemplateOutcomeCallable ModifyFirewallTemplateCallable(const Model::ModifyFirewallTemplateRequest& request);
+
+                /**
+                 *本接口 (ModifyImageSharePermission) 用于共享和取消共享CVM自定义镜像到轻量应用服务器服务。
+CVM镜像共享到轻量应用服务器镜像需要满足如下条件：
+1.已共享过的镜像不支持再次共享。
+2.外部导入的镜像不支持共享。
+3.整机镜像不支持共享。
+4.镜像要支持Cloudinit才支持共享。
+5.镜像的Platform和OsName要满足。
+6.NORMAL状态的镜像才支持共享。
+                 * @param req ModifyImageSharePermissionRequest
+                 * @return ModifyImageSharePermissionOutcome
+                 */
+                ModifyImageSharePermissionOutcome ModifyImageSharePermission(const Model::ModifyImageSharePermissionRequest &request);
+                void ModifyImageSharePermissionAsync(const Model::ModifyImageSharePermissionRequest& request, const ModifyImageSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyImageSharePermissionOutcomeCallable ModifyImageSharePermissionCallable(const Model::ModifyImageSharePermissionRequest& request);
 
                 /**
                  *本接口（ModifyInstancesAttribute）用于修改实例的属性。

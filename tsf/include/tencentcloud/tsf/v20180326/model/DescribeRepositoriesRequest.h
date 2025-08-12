@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取查询起始偏移
-                     * @return Offset 查询起始偏移
+                     * 获取查询起始偏移，大于等于0，默认值为0
+                     * @return Offset 查询起始偏移，大于等于0，默认值为0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始偏移
-                     * @param _offset 查询起始偏移
+                     * 设置查询起始偏移，大于等于0，默认值为0
+                     * @param _offset 查询起始偏移，大于等于0，默认值为0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量限制
-                     * @return Limit 返回数量限制
+                     * 获取返回数量限制，大于0，默认为不分页
+                     * @return Limit 返回数量限制，大于0，默认为不分页
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量限制
-                     * @param _limit 返回数量限制
+                     * 设置返回数量限制，大于0，默认为不分页
+                     * @param _limit 返回数量限制，大于0，默认为不分页
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取仓库类型（默认仓库：default，私有仓库：private）
-                     * @return RepositoryType 仓库类型（默认仓库：default，私有仓库：private）
+                     * 获取仓库类型（默认仓库：default，私有仓库：private，公共仓库：public-demo）
+                     * @return RepositoryType 仓库类型（默认仓库：default，私有仓库：private，公共仓库：public-demo）
                      * 
                      */
                     std::string GetRepositoryType() const;
 
                     /**
-                     * 设置仓库类型（默认仓库：default，私有仓库：private）
-                     * @param _repositoryType 仓库类型（默认仓库：default，私有仓库：private）
+                     * 设置仓库类型（默认仓库：default，私有仓库：private，公共仓库：public-demo）
+                     * @param _repositoryType 仓库类型（默认仓库：default，私有仓库：private，公共仓库：public-demo）
                      * 
                      */
                     void SetRepositoryType(const std::string& _repositoryType);
@@ -135,19 +135,19 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 查询起始偏移
+                     * 查询起始偏移，大于等于0，默认值为0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量限制
+                     * 返回数量限制，大于0，默认为不分页
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 仓库类型（默认仓库：default，私有仓库：private）
+                     * 仓库类型（默认仓库：default，私有仓库：private，公共仓库：public-demo）
                      */
                     std::string m_repositoryType;
                     bool m_repositoryTypeHasBeenSet;

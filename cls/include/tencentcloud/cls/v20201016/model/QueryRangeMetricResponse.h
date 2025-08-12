@@ -44,8 +44,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标查询结果类型
-                     * @return ResultType 指标查询结果类型
+                     * 获取指标查询结果类型，支持
+- scalar 标量值
+- string 字符串值
+- vector 瞬时向量
+- matrix 区间向量
+                     * @return ResultType 指标查询结果类型，支持
+- scalar 标量值
+- string 字符串值
+- vector 瞬时向量
+- matrix 区间向量
                      * 
                      */
                     std::string GetResultType() const;
@@ -74,7 +82,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指标查询结果类型
+                     * 指标查询结果类型，支持
+- scalar 标量值
+- string 字符串值
+- vector 瞬时向量
+- matrix 区间向量
                      */
                     std::string m_resultType;
                     bool m_resultTypeHasBeenSet;

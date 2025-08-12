@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取公共配置发布信息
-                     * @return Result 公共配置发布信息
+                     * 获取公共配置发布信息。
+                     * @return Result 公共配置发布信息。
                      * 
                      */
                     TsfPageConfigRelease GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 公共配置发布信息
+                     * 公共配置发布信息。
                      */
                     TsfPageConfigRelease m_result;
                     bool m_resultHasBeenSet;

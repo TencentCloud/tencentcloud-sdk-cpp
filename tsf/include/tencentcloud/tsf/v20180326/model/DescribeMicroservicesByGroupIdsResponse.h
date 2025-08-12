@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取微服务信息分页列表
-                     * @return Result 微服务信息分页列表
+                     * 获取微服务信息分页列表。
+                     * @return Result 微服务信息分页列表。
                      * 
                      */
                     TsfPageMicroservice GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 微服务信息分页列表
+                     * 微服务信息分页列表。
                      */
                     TsfPageMicroservice m_result;
                     bool m_resultHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取微服务ID
-                     * @return MicroserviceId 微服务ID
+                     * 获取微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
+                     * @return MicroserviceId 微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      * 
                      */
                     std::string GetMicroserviceId() const;
 
                     /**
-                     * 设置微服务ID
-                     * @param _microserviceId 微服务ID
+                     * 设置微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
+                     * @param _microserviceId 微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      * 
                      */
                     void SetMicroserviceId(const std::string& _microserviceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MicroserviceIdHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字
-                     * @return SearchWord 搜索关键字
+                     * 获取搜索关键字。
+                     * @return SearchWord 搜索关键字。
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置搜索关键字
-                     * @param _searchWord 搜索关键字
+                     * 设置搜索关键字。
+                     * @param _searchWord 搜索关键字。
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取每页的数量
-                     * @return Limit 每页的数量
+                     * 获取返回数量，默认为20，最大值为50。
+                     * @return Limit 返回数量，默认为20，最大值为50。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页的数量
-                     * @param _limit 每页的数量
+                     * 设置返回数量，默认为20，最大值为50。
+                     * @param _limit 返回数量，默认为20，最大值为50。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取翻页偏移量
-                     * @return Offset 翻页偏移量
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置翻页偏移量
-                     * @param _offset 翻页偏移量
+                     * 设置偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 微服务ID
+                     * 微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      */
                     std::string m_microserviceId;
                     bool m_microserviceIdHasBeenSet;
 
                     /**
-                     * 搜索关键字
+                     * 搜索关键字。
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 每页的数量
+                     * 返回数量，默认为20，最大值为50。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 翻页偏移量
+                     * 偏移量，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

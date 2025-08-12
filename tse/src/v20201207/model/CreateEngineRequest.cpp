@@ -42,7 +42,9 @@ CreateEngineRequest::CreateEngineRequest() :
     m_storageTypeHasBeenSet(false),
     m_storageCapacityHasBeenSet(false),
     m_storageOptionHasBeenSet(false),
-    m_affinityConstraintHasBeenSet(false)
+    m_affinityConstraintHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false),
+    m_engineRegionTagHasBeenSet(false)
 {
 }
 
@@ -240,6 +242,27 @@ string CreateEngineRequest::ToJsonString() const
         string key = "AffinityConstraint";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_affinityConstraint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_engineRegionTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineRegionTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineRegionTag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -568,6 +591,38 @@ void CreateEngineRequest::SetAffinityConstraint(const string& _affinityConstrain
 bool CreateEngineRequest::AffinityConstraintHasBeenSet() const
 {
     return m_affinityConstraintHasBeenSet;
+}
+
+vector<int64_t> CreateEngineRequest::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+void CreateEngineRequest::SetZoneIds(const vector<int64_t>& _zoneIds)
+{
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
+}
+
+bool CreateEngineRequest::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
+}
+
+string CreateEngineRequest::GetEngineRegionTag() const
+{
+    return m_engineRegionTag;
+}
+
+void CreateEngineRequest::SetEngineRegionTag(const string& _engineRegionTag)
+{
+    m_engineRegionTag = _engineRegionTag;
+    m_engineRegionTagHasBeenSet = true;
+}
+
+bool CreateEngineRequest::EngineRegionTagHasBeenSet() const
+{
+    return m_engineRegionTagHasBeenSet;
 }
 
 

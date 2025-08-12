@@ -142,6 +142,27 @@ namespace TencentCloud
                      */
                     bool DefaultHasBeenSet() const;
 
+                    /**
+                     * 获取音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。
+                     * @return AudioTrackIdx 音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。
+                     * 
+                     */
+                    uint64_t GetAudioTrackIdx() const;
+
+                    /**
+                     * 设置音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。
+                     * @param _audioTrackIdx 音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。
+                     * 
+                     */
+                    void SetAudioTrackIdx(const uint64_t& _audioTrackIdx);
+
+                    /**
+                     * 判断参数 AudioTrackIdx 是否已赋值
+                     * @return AudioTrackIdx 是否已赋值
+                     * 
+                     */
+                    bool AudioTrackIdxHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +191,12 @@ namespace TencentCloud
                      */
                     std::string m_default;
                     bool m_defaultHasBeenSet;
+
+                    /**
+                     * 音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。
+                     */
+                    uint64_t m_audioTrackIdx;
+                    bool m_audioTrackIdxHasBeenSet;
 
                 };
             }

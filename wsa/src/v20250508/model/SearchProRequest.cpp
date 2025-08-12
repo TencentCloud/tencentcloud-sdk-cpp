@@ -27,7 +27,9 @@ SearchProRequest::SearchProRequest() :
     m_modeHasBeenSet(false),
     m_siteHasBeenSet(false),
     m_fromTimeHasBeenSet(false),
-    m_toTimeHasBeenSet(false)
+    m_toTimeHasBeenSet(false),
+    m_cntHasBeenSet(false),
+    m_industryHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string SearchProRequest::ToJsonString() const
         string key = "ToTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_toTime, allocator);
+    }
+
+    if (m_cntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cnt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cnt, allocator);
+    }
+
+    if (m_industryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Industry";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_industry.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +182,38 @@ void SearchProRequest::SetToTime(const int64_t& _toTime)
 bool SearchProRequest::ToTimeHasBeenSet() const
 {
     return m_toTimeHasBeenSet;
+}
+
+uint64_t SearchProRequest::GetCnt() const
+{
+    return m_cnt;
+}
+
+void SearchProRequest::SetCnt(const uint64_t& _cnt)
+{
+    m_cnt = _cnt;
+    m_cntHasBeenSet = true;
+}
+
+bool SearchProRequest::CntHasBeenSet() const
+{
+    return m_cntHasBeenSet;
+}
+
+string SearchProRequest::GetIndustry() const
+{
+    return m_industry;
+}
+
+void SearchProRequest::SetIndustry(const string& _industry)
+{
+    m_industry = _industry;
+    m_industryHasBeenSet = true;
+}
+
+bool SearchProRequest::IndustryHasBeenSet() const
+{
+    return m_industryHasBeenSet;
 }
 
 

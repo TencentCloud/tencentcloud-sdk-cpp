@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID（只传入应用ID，返回该应用下所有软件包信息）
-                     * @return ApplicationId 应用ID（只传入应用ID，返回该应用下所有软件包信息）
+                     * 获取应用ID，通过调用DescribeApplications接口[获取应用列表](https://cloud.tencent.com/document/api/649/36090)从而获取应用ID，或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看，调用CreateApplication接口[创建应用](https://cloud.tencent.com/document/product/649/36094)时的返回值
+                     * @return ApplicationId 应用ID，通过调用DescribeApplications接口[获取应用列表](https://cloud.tencent.com/document/api/649/36090)从而获取应用ID，或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看，调用CreateApplication接口[创建应用](https://cloud.tencent.com/document/product/649/36094)时的返回值
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置应用ID（只传入应用ID，返回该应用下所有软件包信息）
-                     * @param _applicationId 应用ID（只传入应用ID，返回该应用下所有软件包信息）
+                     * 设置应用ID，通过调用DescribeApplications接口[获取应用列表](https://cloud.tencent.com/document/api/649/36090)从而获取应用ID，或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看，调用CreateApplication接口[创建应用](https://cloud.tencent.com/document/product/649/36094)时的返回值
+                     * @param _applicationId 应用ID，通过调用DescribeApplications接口[获取应用列表](https://cloud.tencent.com/document/api/649/36090)从而获取应用ID，或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看，调用CreateApplication接口[创建应用](https://cloud.tencent.com/document/product/649/36094)时的返回值
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取排序关键字（默认为"UploadTime"：上传时间）
-                     * @return OrderBy 排序关键字（默认为"UploadTime"：上传时间）
+                     * 获取排序关键字（默认值"UploadTime"），允许值："UploadTime"上传时间, "name"程序包名, "size"应用大小, "id"程序包ID
+                     * @return OrderBy 排序关键字（默认值"UploadTime"），允许值："UploadTime"上传时间, "name"程序包名, "size"应用大小, "id"程序包ID
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序关键字（默认为"UploadTime"：上传时间）
-                     * @param _orderBy 排序关键字（默认为"UploadTime"：上传时间）
+                     * 设置排序关键字（默认值"UploadTime"），允许值："UploadTime"上传时间, "name"程序包名, "size"应用大小, "id"程序包ID
+                     * @param _orderBy 排序关键字（默认值"UploadTime"），允许值："UploadTime"上传时间, "name"程序包名, "size"应用大小, "id"程序包ID
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取查询起始偏移
-                     * @return Offset 查询起始偏移
+                     * 获取查询起始偏移，大于等于0，默认值为0
+                     * @return Offset 查询起始偏移，大于等于0，默认值为0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始偏移
-                     * @param _offset 查询起始偏移
+                     * 设置查询起始偏移，大于等于0，默认值为0
+                     * @param _offset 查询起始偏移，大于等于0，默认值为0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取程序包仓库类型
-                     * @return RepositoryType 程序包仓库类型
+                     * 获取程序包仓库类型，允许值："public-demo"TSF公共demo仓库, "private"自定义仓库, "default"TSF公共仓库
+                     * @return RepositoryType 程序包仓库类型，允许值："public-demo"TSF公共demo仓库, "private"自定义仓库, "default"TSF公共仓库
                      * 
                      */
                     std::string GetRepositoryType() const;
 
                     /**
-                     * 设置程序包仓库类型
-                     * @param _repositoryType 程序包仓库类型
+                     * 设置程序包仓库类型，允许值："public-demo"TSF公共demo仓库, "private"自定义仓库, "default"TSF公共仓库
+                     * @param _repositoryType 程序包仓库类型，允许值："public-demo"TSF公共demo仓库, "private"自定义仓库, "default"TSF公共仓库
                      * 
                      */
                     void SetRepositoryType(const std::string& _repositoryType);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool RepositoryTypeHasBeenSet() const;
 
                     /**
-                     * 获取程序包仓库id
-                     * @return RepositoryId 程序包仓库id
+                     * 获取仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看
+                     * @return RepositoryId 仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看
                      * 
                      */
                     std::string GetRepositoryId() const;
 
                     /**
-                     * 设置程序包仓库id
-                     * @param _repositoryId 程序包仓库id
+                     * 设置仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看
+                     * @param _repositoryId 仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看
                      * 
                      */
                     void SetRepositoryId(const std::string& _repositoryId);
@@ -234,7 +234,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID（只传入应用ID，返回该应用下所有软件包信息）
+                     * 应用ID，通过调用DescribeApplications接口[获取应用列表](https://cloud.tencent.com/document/api/649/36090)从而获取应用ID，或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看，调用CreateApplication接口[创建应用](https://cloud.tencent.com/document/product/649/36094)时的返回值
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
@@ -246,7 +246,7 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 排序关键字（默认为"UploadTime"：上传时间）
+                     * 排序关键字（默认值"UploadTime"），允许值："UploadTime"上传时间, "name"程序包名, "size"应用大小, "id"程序包ID
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
@@ -258,7 +258,7 @@ namespace TencentCloud
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 查询起始偏移
+                     * 查询起始偏移，大于等于0，默认值为0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -270,13 +270,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 程序包仓库类型
+                     * 程序包仓库类型，允许值："public-demo"TSF公共demo仓库, "private"自定义仓库, "default"TSF公共仓库
                      */
                     std::string m_repositoryType;
                     bool m_repositoryTypeHasBeenSet;
 
                     /**
-                     * 程序包仓库id
+                     * 仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看
                      */
                     std::string m_repositoryId;
                     bool m_repositoryIdHasBeenSet;

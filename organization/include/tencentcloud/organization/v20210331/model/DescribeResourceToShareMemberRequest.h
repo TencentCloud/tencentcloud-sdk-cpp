@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域
-                     * @return Area 地域
+                     * 获取共享地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。
+                     * @return Area 共享地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置地域
-                     * @param _area 地域
+                     * 设置共享地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。
+                     * @param _area 共享地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量。取值是limit的整数倍。默认值 : 0。
+                     * @return Offset 偏移量。取值是limit的整数倍。默认值 : 0。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置偏移量。取值是limit的整数倍。默认值 : 0。
+                     * @param _offset 偏移量。取值是limit的整数倍。默认值 : 0。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页条数
-                     * @return Limit 每页条数
+                     * 获取限制数目。取值范围：1~50。
+                     * @return Limit 限制数目。取值范围：1~50。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页条数
-                     * @param _limit 每页条数
+                     * 设置限制数目。取值范围：1~50。
+                     * @param _limit 限制数目。取值范围：1~50。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字，支持业务资源ID搜索
-                     * @return SearchKey 搜索关键字，支持业务资源ID搜索
+                     * 获取搜索关键字，支持业务资源ID搜索。
+                     * @return SearchKey 搜索关键字，支持业务资源ID搜索。
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置搜索关键字，支持业务资源ID搜索
-                     * @param _searchKey 搜索关键字，支持业务资源ID搜索
+                     * 设置搜索关键字，支持业务资源ID搜索。
+                     * @param _searchKey 搜索关键字，支持业务资源ID搜索。
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SearchKeyHasBeenSet() const;
 
                     /**
-                     * 获取资源类型
-                     * @return Type 资源类型
+                     * 获取共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)
+                     * @return Type 共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置资源类型
-                     * @param _type 资源类型
+                     * 设置共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)
+                     * @param _type 共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -171,31 +171,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域
+                     * 共享地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量。取值是limit的整数倍。默认值 : 0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页条数
+                     * 限制数目。取值范围：1~50。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索关键字，支持业务资源ID搜索
+                     * 搜索关键字，支持业务资源ID搜索。
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
 
                     /**
-                     * 资源类型
+                     * 共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

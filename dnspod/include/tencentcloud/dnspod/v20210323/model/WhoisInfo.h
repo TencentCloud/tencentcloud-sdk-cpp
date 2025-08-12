@@ -322,6 +322,27 @@ namespace TencentCloud
                      */
                     bool DnssecHasBeenSet() const;
 
+                    /**
+                     * 获取腾讯注册商资质
+                     * @return RegistrarType 腾讯注册商资质
+                     * 
+                     */
+                    std::string GetRegistrarType() const;
+
+                    /**
+                     * 设置腾讯注册商资质
+                     * @param _registrarType 腾讯注册商资质
+                     * 
+                     */
+                    void SetRegistrarType(const std::string& _registrarType);
+
+                    /**
+                     * 判断参数 RegistrarType 是否已赋值
+                     * @return RegistrarType 是否已赋值
+                     * 
+                     */
+                    bool RegistrarTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,6 +421,12 @@ namespace TencentCloud
                      */
                     std::string m_dnssec;
                     bool m_dnssecHasBeenSet;
+
+                    /**
+                     * 腾讯注册商资质
+                     */
+                    std::string m_registrarType;
+                    bool m_registrarTypeHasBeenSet;
 
                 };
             }

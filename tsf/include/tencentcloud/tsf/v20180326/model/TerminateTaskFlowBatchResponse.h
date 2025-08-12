@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否停止成功
-                     * @return Result 是否停止成功
+                     * 获取是否停止成功，true：停止成功，false：停止失败
+                     * @return Result 是否停止成功，true：停止成功，false：停止失败
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否停止成功
+                     * 是否停止成功，true：停止成功，false：停止失败
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作成功or失败
-                     * @return Result 操作成功or失败
+                     * 获取操作成功任务批次ID。操作失败返回空字符串。
+                     * @return Result 操作成功任务批次ID。操作失败返回空字符串。
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作成功or失败
+                     * 操作成功任务批次ID。操作失败返回空字符串。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

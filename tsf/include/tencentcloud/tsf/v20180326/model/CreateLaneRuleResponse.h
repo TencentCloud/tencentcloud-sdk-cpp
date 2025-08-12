@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取泳道规则Id
-                     * @return Result 泳道规则Id
+                     * 获取灰度发布规则ID。
+                     * @return Result 灰度发布规则ID。
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 泳道规则Id
+                     * 灰度发布规则ID。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

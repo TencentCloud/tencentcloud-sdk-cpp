@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取泳道列表
-                     * @return Result 泳道列表
+                     * 获取泳道配置列表。
+                     * @return Result 泳道配置列表。
                      * 
                      */
                     LaneInfos GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 泳道列表
+                     * 泳道配置列表。
                      */
                     LaneInfos m_result;
                     bool m_resultHasBeenSet;

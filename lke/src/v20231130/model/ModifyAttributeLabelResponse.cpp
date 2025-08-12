@@ -24,7 +24,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 ModifyAttributeLabelResponse::ModifyAttributeLabelResponse() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome ModifyAttributeLabelResponse::Deserialize(const string &payl
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Labels") && !rsp["Labels"].IsNull())
+    {
+        if (!rsp["Labels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Labels` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AttributeLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_labels.push_back(item);
+        }
+        m_labelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ string ModifyAttributeLabelResponse::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +146,16 @@ string ModifyAttributeLabelResponse::GetTaskId() const
 bool ModifyAttributeLabelResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+vector<AttributeLabel> ModifyAttributeLabelResponse::GetLabels() const
+{
+    return m_labels;
+}
+
+bool ModifyAttributeLabelResponse::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 
 

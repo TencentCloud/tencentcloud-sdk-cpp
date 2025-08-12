@@ -241,6 +241,35 @@ namespace TencentCloud
                      */
                     bool BlurScoreHasBeenSet() const;
 
+                    /**
+                     * 获取是否电子身份证
+0：否
+1：是电子身份证
+                     * @return ElectronCheck 是否电子身份证
+0：否
+1：是电子身份证
+                     * 
+                     */
+                    int64_t GetElectronCheck() const;
+
+                    /**
+                     * 设置是否电子身份证
+0：否
+1：是电子身份证
+                     * @param _electronCheck 是否电子身份证
+0：否
+1：是电子身份证
+                     * 
+                     */
+                    void SetElectronCheck(const int64_t& _electronCheck);
+
+                    /**
+                     * 判断参数 ElectronCheck 是否已赋值
+                     * @return ElectronCheck 是否已赋值
+                     * 
+                     */
+                    bool ElectronCheckHasBeenSet() const;
+
                 private:
 
                     /**
@@ -296,6 +325,14 @@ namespace TencentCloud
                      */
                     double m_blurScore;
                     bool m_blurScoreHasBeenSet;
+
+                    /**
+                     * 是否电子身份证
+0：否
+1：是电子身份证
+                     */
+                    int64_t m_electronCheck;
+                    bool m_electronCheckHasBeenSet;
 
                 };
             }

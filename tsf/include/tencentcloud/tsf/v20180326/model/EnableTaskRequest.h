@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取启用任务
-                     * @return TaskId 启用任务
+                     * 获取任务ID。在任务管理列表页面和任务基本信息页可以查看任务ID。
+                     * @return TaskId 任务ID。在任务管理列表页面和任务基本信息页可以查看任务ID。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置启用任务
-                     * @param _taskId 启用任务
+                     * 设置任务ID。在任务管理列表页面和任务基本信息页可以查看任务ID。
+                     * @param _taskId 任务ID。在任务管理列表页面和任务基本信息页可以查看任务ID。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 启用任务
+                     * 任务ID。在任务管理列表页面和任务基本信息页可以查看任务ID。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

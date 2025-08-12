@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置项名称
-                     * @return ConfigName 配置项名称
+                     * 获取配置项名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”、“_”），且不能以分隔符开头或结尾。
+                     * @return ConfigName 配置项名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”、“_”），且不能以分隔符开头或结尾。
                      * 
                      */
                     std::string GetConfigName() const;
 
                     /**
-                     * 设置配置项名称
-                     * @param _configName 配置项名称
+                     * 设置配置项名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”、“_”），且不能以分隔符开头或结尾。
+                     * @param _configName 配置项名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”、“_”），且不能以分隔符开头或结尾。
                      * 
                      */
                     void SetConfigName(const std::string& _configName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ConfigNameHasBeenSet() const;
 
                     /**
-                     * 获取配置项版本
-                     * @return ConfigVersion 配置项版本
+                     * 获取配置项版本，最多支持60个字符，只能包含小写字母、数字及分隔符("-",".")，且必须以小写字母或数字开头、以小写字母或数字结尾，中间不能有连续的"-"或"."。
+                     * @return ConfigVersion 配置项版本，最多支持60个字符，只能包含小写字母、数字及分隔符("-",".")，且必须以小写字母或数字开头、以小写字母或数字结尾，中间不能有连续的"-"或"."。
                      * 
                      */
                     std::string GetConfigVersion() const;
 
                     /**
-                     * 设置配置项版本
-                     * @param _configVersion 配置项版本
+                     * 设置配置项版本，最多支持60个字符，只能包含小写字母、数字及分隔符("-",".")，且必须以小写字母或数字开头、以小写字母或数字结尾，中间不能有连续的"-"或"."。
+                     * @param _configVersion 配置项版本，最多支持60个字符，只能包含小写字母、数字及分隔符("-",".")，且必须以小写字母或数字开头、以小写字母或数字结尾，中间不能有连续的"-"或"."。
                      * 
                      */
                     void SetConfigVersion(const std::string& _configVersion);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ConfigVersionHasBeenSet() const;
 
                     /**
-                     * 获取配置项值，总是接收yaml格式的内容
-                     * @return ConfigValue 配置项值，总是接收yaml格式的内容
+                     * 获取配置项值，总是接收yaml格式的内容。
+                     * @return ConfigValue 配置项值，总是接收yaml格式的内容。
                      * 
                      */
                     std::string GetConfigValue() const;
 
                     /**
-                     * 设置配置项值，总是接收yaml格式的内容
-                     * @param _configValue 配置项值，总是接收yaml格式的内容
+                     * 设置配置项值，总是接收yaml格式的内容。
+                     * @param _configValue 配置项值，总是接收yaml格式的内容。
                      * 
                      */
                     void SetConfigValue(const std::string& _configValue);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ConfigValueHasBeenSet() const;
 
                     /**
-                     * 获取配置项版本描述
-                     * @return ConfigVersionDesc 配置项版本描述
+                     * 获取配置项版本描述，最多支持200个字符。
+                     * @return ConfigVersionDesc 配置项版本描述，最多支持200个字符。
                      * 
                      */
                     std::string GetConfigVersionDesc() const;
 
                     /**
-                     * 设置配置项版本描述
-                     * @param _configVersionDesc 配置项版本描述
+                     * 设置配置项版本描述，最多支持200个字符。
+                     * @param _configVersionDesc 配置项版本描述，最多支持200个字符。
                      * 
                      */
                     void SetConfigVersionDesc(const std::string& _configVersionDesc);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ConfigVersionDescHasBeenSet() const;
 
                     /**
-                     * 获取配置项类型
-                     * @return ConfigType 配置项类型
+                     * 获取配置项类型，固定值。
+                     * @return ConfigType 配置项类型，固定值。
                      * 
                      */
                     std::string GetConfigType() const;
 
                     /**
-                     * 设置配置项类型
-                     * @param _configType 配置项类型
+                     * 设置配置项类型，固定值。
+                     * @param _configType 配置项类型，固定值。
                      * 
                      */
                     void SetConfigType(const std::string& _configType);
@@ -148,15 +148,23 @@ namespace TencentCloud
                     bool ConfigTypeHasBeenSet() const;
 
                     /**
-                     * 获取Base64编码的配置项
-                     * @return EncodeWithBase64 Base64编码的配置项
+                     * 获取Base64编码的配置项。
+- true：开启
+- false：关闭
+                     * @return EncodeWithBase64 Base64编码的配置项。
+- true：开启
+- false：关闭
                      * 
                      */
                     bool GetEncodeWithBase64() const;
 
                     /**
-                     * 设置Base64编码的配置项
-                     * @param _encodeWithBase64 Base64编码的配置项
+                     * 设置Base64编码的配置项。
+- true：开启
+- false：关闭
+                     * @param _encodeWithBase64 Base64编码的配置项。
+- true：开启
+- false：关闭
                      * 
                      */
                     void SetEncodeWithBase64(const bool& _encodeWithBase64);
@@ -169,15 +177,15 @@ namespace TencentCloud
                     bool EncodeWithBase64HasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProgramIdList 无
+                     * 获取需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @return ProgramIdList 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _programIdList 无
+                     * 设置需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @param _programIdList 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -192,43 +200,45 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置项名称
+                     * 配置项名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”、“_”），且不能以分隔符开头或结尾。
                      */
                     std::string m_configName;
                     bool m_configNameHasBeenSet;
 
                     /**
-                     * 配置项版本
+                     * 配置项版本，最多支持60个字符，只能包含小写字母、数字及分隔符("-",".")，且必须以小写字母或数字开头、以小写字母或数字结尾，中间不能有连续的"-"或"."。
                      */
                     std::string m_configVersion;
                     bool m_configVersionHasBeenSet;
 
                     /**
-                     * 配置项值，总是接收yaml格式的内容
+                     * 配置项值，总是接收yaml格式的内容。
                      */
                     std::string m_configValue;
                     bool m_configValueHasBeenSet;
 
                     /**
-                     * 配置项版本描述
+                     * 配置项版本描述，最多支持200个字符。
                      */
                     std::string m_configVersionDesc;
                     bool m_configVersionDescHasBeenSet;
 
                     /**
-                     * 配置项类型
+                     * 配置项类型，固定值。
                      */
                     std::string m_configType;
                     bool m_configTypeHasBeenSet;
 
                     /**
-                     * Base64编码的配置项
+                     * Base64编码的配置项。
+- true：开启
+- false：关闭
                      */
                     bool m_encodeWithBase64;
                     bool m_encodeWithBase64HasBeenSet;
 
                     /**
-                     * 无
+                     * 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;

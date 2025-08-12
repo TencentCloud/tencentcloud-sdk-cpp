@@ -346,6 +346,27 @@ namespace TencentCloud
                      */
                     bool EnableQualityCheckHasBeenSet() const;
 
+                    /**
+                     * 获取默认值为false，打开返回是否存在电子身份证判断。
+                     * @return EnableElectronCheck 默认值为false，打开返回是否存在电子身份证判断。
+                     * 
+                     */
+                    bool GetEnableElectronCheck() const;
+
+                    /**
+                     * 设置默认值为false，打开返回是否存在电子身份证判断。
+                     * @param _enableElectronCheck 默认值为false，打开返回是否存在电子身份证判断。
+                     * 
+                     */
+                    void SetEnableElectronCheck(const bool& _enableElectronCheck);
+
+                    /**
+                     * 判断参数 EnableElectronCheck 是否已赋值
+                     * @return EnableElectronCheck 是否已赋值
+                     * 
+                     */
+                    bool EnableElectronCheckHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +453,12 @@ namespace TencentCloud
                      */
                     bool m_enableQualityCheck;
                     bool m_enableQualityCheckHasBeenSet;
+
+                    /**
+                     * 默认值为false，打开返回是否存在电子身份证判断。
+                     */
+                    bool m_enableElectronCheck;
+                    bool m_enableElectronCheckHasBeenSet;
 
                 };
             }

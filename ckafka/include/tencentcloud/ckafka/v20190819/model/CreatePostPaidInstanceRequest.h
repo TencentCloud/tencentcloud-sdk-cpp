@@ -44,6 +44,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId
+                     * @return VpcId 私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId
+                     * @param _vpcId 私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
                      * 获取ckafka集群实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
                      * @return InstanceName ckafka集群实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
                      * 
@@ -63,27 +84,6 @@ namespace TencentCloud
                      * 
                      */
                     bool InstanceNameHasBeenSet() const;
-
-                    /**
-                     * 获取私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填
-                     * @return VpcId 私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填
-                     * 
-                     */
-                    std::string GetVpcId() const;
-
-                    /**
-                     * 设置私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填
-                     * @param _vpcId 私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填
-                     * 
-                     */
-                    void SetVpcId(const std::string& _vpcId);
-
-                    /**
-                     * 判断参数 VpcId 是否已赋值
-                     * @return VpcId 是否已赋值
-                     * 
-                     */
-                    bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网id。创建实例默认接入点所在的子网对应的子网 id
@@ -466,16 +466,16 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
                      * ckafka集群实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
-
-                    /**
-                     * 私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填
-                     */
-                    std::string m_vpcId;
-                    bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网id。创建实例默认接入点所在的子网对应的子网 id

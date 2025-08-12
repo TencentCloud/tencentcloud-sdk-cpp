@@ -44,8 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否已完成导入任务
-                     * @return Result 是否已完成导入任务
+                     * 获取导入任务状态执行结果。
+- true：已完成
+- false：未完成
+                     * @return Result 导入任务状态执行结果。
+- true：已完成
+- false：未完成
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +64,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否已完成导入任务
+                     * 导入任务状态执行结果。
+- true：已完成
+- false：未完成
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

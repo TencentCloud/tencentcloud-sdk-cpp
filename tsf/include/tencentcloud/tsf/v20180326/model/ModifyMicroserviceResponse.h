@@ -44,12 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改微服务详情是否成功。
-true：操作成功。
-false：操作失败。
-                     * @return Result 修改微服务详情是否成功。
-true：操作成功。
-false：操作失败。
+                     * 获取修改结果。
+- true：修改成功
+- false：修改失败
+                     * @return Result 修改结果。
+- true：修改成功
+- false：修改失败
                      * 
                      */
                     bool GetResult() const;
@@ -64,9 +64,9 @@ false：操作失败。
                 private:
 
                     /**
-                     * 修改微服务详情是否成功。
-true：操作成功。
-false：操作失败。
+                     * 修改结果。
+- true：修改成功
+- false：修改失败
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

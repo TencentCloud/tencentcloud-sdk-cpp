@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建成功，返回 ID
-                     * @return Result 创建成功，返回 ID
+                     * 获取创建成功，返回配置模板ID。
+                     * @return Result 创建成功，返回配置模板ID。
                      * 
                      */
                     ConfigTemplate GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建成功，返回 ID
+                     * 创建成功，返回配置模板ID。
                      */
                     ConfigTemplate m_result;
                     bool m_resultHasBeenSet;

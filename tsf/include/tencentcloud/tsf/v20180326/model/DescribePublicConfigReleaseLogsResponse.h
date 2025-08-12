@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页后的公共配置项发布历史列表
-                     * @return Result 分页后的公共配置项发布历史列表
+                     * 获取分页后的公共配置项发布历史列表。
+                     * @return Result 分页后的公共配置项发布历史列表。
                      * 
                      */
                     TsfPageConfigReleaseLog GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页后的公共配置项发布历史列表
+                     * 分页后的公共配置项发布历史列表。
                      */
                     TsfPageConfigReleaseLog m_result;
                     bool m_resultHasBeenSet;

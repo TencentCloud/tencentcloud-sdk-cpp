@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源ID
-                     * @return ResourceId 资源ID
+                     * 获取共享单元资源ID。
+                     * @return ResourceId 共享单元资源ID。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID
-                     * @param _resourceId 资源ID
+                     * 设置共享单元资源ID。
+                     * @param _resourceId 共享单元资源ID。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型
-                     * @return Type 资源类型
+                     * 获取资源类型。
+                     * @return Type 资源类型。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置资源类型
-                     * @param _type 资源类型
+                     * 设置资源类型。
+                     * @param _type 资源类型。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取共享单元ID
-                     * @return UnitId 共享单元ID
+                     * 获取共享单元ID。
+                     * @return UnitId 共享单元ID。
                      * 
                      */
                     std::string GetUnitId() const;
 
                     /**
-                     * 设置共享单元ID
-                     * @param _unitId 共享单元ID
+                     * 设置共享单元ID。
+                     * @param _unitId 共享单元ID。
                      * 
                      */
                     void SetUnitId(const std::string& _unitId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool UnitIdHasBeenSet() const;
 
                     /**
-                     * 获取共享单元名
-                     * @return UnitName 共享单元名
+                     * 获取共享单元名称。
+                     * @return UnitName 共享单元名称。
                      * 
                      */
                     std::string GetUnitName() const;
 
                     /**
-                     * 设置共享单元名
-                     * @param _unitName 共享单元名
+                     * 设置共享单元名称。
+                     * @param _unitName 共享单元名称。
                      * 
                      */
                     void SetUnitName(const std::string& _unitName);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UnitNameHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间。
+                     * @return CreateTime 创建时间。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置创建时间。
+                     * @param _createTime 创建时间。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取业务资源ID
-                     * @return ProductResourceId 业务资源ID
+                     * 获取业务资源ID。
+                     * @return ProductResourceId 业务资源ID。
                      * 
                      */
                     std::string GetProductResourceId() const;
 
                     /**
-                     * 设置业务资源ID
-                     * @param _productResourceId 业务资源ID
+                     * 设置业务资源ID。
+                     * @param _productResourceId 业务资源ID。
                      * 
                      */
                     void SetProductResourceId(const std::string& _productResourceId);
@@ -173,19 +173,15 @@ namespace TencentCloud
                     bool ProductResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取共享管理员uin
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ShareManagerUin 共享管理员uin
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取共享账号Uin。
+                     * @return ShareManagerUin 共享账号Uin。
                      * 
                      */
                     int64_t GetShareManagerUin() const;
 
                     /**
-                     * 设置共享管理员uin
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _shareManagerUin 共享管理员uin
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置共享账号Uin。
+                     * @param _shareManagerUin 共享账号Uin。
                      * 
                      */
                     void SetShareManagerUin(const int64_t& _shareManagerUin);
@@ -200,44 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源ID
+                     * 共享单元资源ID。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源类型
+                     * 资源类型。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 共享单元ID
+                     * 共享单元ID。
                      */
                     std::string m_unitId;
                     bool m_unitIdHasBeenSet;
 
                     /**
-                     * 共享单元名
+                     * 共享单元名称。
                      */
                     std::string m_unitName;
                     bool m_unitNameHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 业务资源ID
+                     * 业务资源ID。
                      */
                     std::string m_productResourceId;
                     bool m_productResourceIdHasBeenSet;
 
                     /**
-                     * 共享管理员uin
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 共享账号Uin。
                      */
                     int64_t m_shareManagerUin;
                     bool m_shareManagerUinHasBeenSet;

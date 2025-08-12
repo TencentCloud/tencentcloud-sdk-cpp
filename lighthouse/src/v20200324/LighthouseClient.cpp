@@ -2104,6 +2104,49 @@ LighthouseClient::DescribeGeneralResourceQuotasOutcomeCallable LighthouseClient:
     return task->get_future();
 }
 
+LighthouseClient::DescribeImagesToShareOutcome LighthouseClient::DescribeImagesToShare(const DescribeImagesToShareRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImagesToShare");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImagesToShareResponse rsp = DescribeImagesToShareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImagesToShareOutcome(rsp);
+        else
+            return DescribeImagesToShareOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImagesToShareOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeImagesToShareAsync(const DescribeImagesToShareRequest& request, const DescribeImagesToShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImagesToShare(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeImagesToShareOutcomeCallable LighthouseClient::DescribeImagesToShareCallable(const DescribeImagesToShareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImagesToShareOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImagesToShare(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DescribeInstanceVncUrlOutcome LighthouseClient::DescribeInstanceVncUrl(const DescribeInstanceVncUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceVncUrl");
@@ -3559,6 +3602,49 @@ LighthouseClient::ModifyFirewallTemplateOutcomeCallable LighthouseClient::Modify
         [this, request]()
         {
             return this->ModifyFirewallTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ModifyImageSharePermissionOutcome LighthouseClient::ModifyImageSharePermission(const ModifyImageSharePermissionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyImageSharePermission");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyImageSharePermissionResponse rsp = ModifyImageSharePermissionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyImageSharePermissionOutcome(rsp);
+        else
+            return ModifyImageSharePermissionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyImageSharePermissionOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyImageSharePermissionAsync(const ModifyImageSharePermissionRequest& request, const ModifyImageSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyImageSharePermission(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyImageSharePermissionOutcomeCallable LighthouseClient::ModifyImageSharePermissionCallable(const ModifyImageSharePermissionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyImageSharePermissionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyImageSharePermission(request);
         }
     );
 

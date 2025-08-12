@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间字段的key名字，TikeKey和TimeFormat必须成对出现
-                     * @return TimeKey 时间字段的key名字，TikeKey和TimeFormat必须成对出现
+                     * 获取时间字段的key名字，TimeKey和TimeFormat必须成对出现
+                     * @return TimeKey 时间字段的key名字，TimeKey和TimeFormat必须成对出现
                      * 
                      */
                     std::string GetTimeKey() const;
 
                     /**
-                     * 设置时间字段的key名字，TikeKey和TimeFormat必须成对出现
-                     * @param _timeKey 时间字段的key名字，TikeKey和TimeFormat必须成对出现
+                     * 设置时间字段的key名字，TimeKey和TimeFormat必须成对出现
+                     * @param _timeKey 时间字段的key名字，TimeKey和TimeFormat必须成对出现
                      * 
                      */
                     void SetTimeKey(const std::string& _timeKey);
@@ -73,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数
+- 参考 [配置时间格式](https://cloud.tencent.com/document/product/614/38614) 文档 
                      * @return TimeFormat 时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数
+- 参考 [配置时间格式](https://cloud.tencent.com/document/product/614/38614) 文档 
                      * 
                      */
                     std::string GetTimeFormat() const;
 
                     /**
                      * 设置时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数
+- 参考 [配置时间格式](https://cloud.tencent.com/document/product/614/38614) 文档 
                      * @param _timeFormat 时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数
+- 参考 [配置时间格式](https://cloud.tencent.com/document/product/614/38614) 文档 
                      * 
                      */
                     void SetTimeFormat(const std::string& _timeFormat);
@@ -645,13 +649,14 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                 private:
 
                     /**
-                     * 时间字段的key名字，TikeKey和TimeFormat必须成对出现
+                     * 时间字段的key名字，TimeKey和TimeFormat必须成对出现
                      */
                     std::string m_timeKey;
                     bool m_timeKeyHasBeenSet;
 
                     /**
                      * 时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数
+- 参考 [配置时间格式](https://cloud.tencent.com/document/product/614/38614) 文档 
                      */
                     std::string m_timeFormat;
                     bool m_timeFormatHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置项发布 ID
-                     * @return Result 配置项发布 ID
+                     * 获取配置项发布ID。
+                     * @return Result 配置项发布ID。
                      * 
                      */
                     ConfigRelease GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置项发布 ID
+                     * 配置项发布ID。
                      */
                     ConfigRelease m_result;
                     bool m_resultHasBeenSet;

@@ -44,8 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取true：回滚成功；false：回滚失败
-                     * @return Result true：回滚成功；false：回滚失败
+                     * 获取撤回结果。
+- true：成功
+- false：失败
+                     * @return Result 撤回结果。
+- true：成功
+- false：失败
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +64,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * true：回滚成功；false：回滚失败
+                     * 撤回结果。
+- true：成功
+- false：失败
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取泳道规则列表
-                     * @return Result 泳道规则列表
+                     * 获取灰度发布规则列表。
+                     * @return Result 灰度发布规则列表。
                      * 
                      */
                     LaneRules GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 泳道规则列表
+                     * 灰度发布规则列表。
                      */
                     LaneRules m_result;
                     bool m_resultHasBeenSet;

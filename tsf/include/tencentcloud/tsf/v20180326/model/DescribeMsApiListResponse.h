@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取相应结果
-                     * @return Result 相应结果
+                     * 获取微服务API列表。
+                     * @return Result 微服务API列表。
                      * 
                      */
                     TsfApiListResponse GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 相应结果
+                     * 微服务API列表。
                      */
                     TsfApiListResponse m_result;
                     bool m_resultHasBeenSet;

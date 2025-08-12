@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取更新是否成功
-                     * @return Result 更新是否成功
+                     * 获取更新是否成功。true：操作成功、false：操作失败
+                     * @return Result 更新是否成功。true：操作成功、false：操作失败
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 更新是否成功
+                     * 更新是否成功。true：操作成功、false：操作失败
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

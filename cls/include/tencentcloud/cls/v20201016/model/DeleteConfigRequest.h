@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取采集规则配置ID
-                     * @return ConfigId 采集规则配置ID
+                     * 获取采集配置ID
+ - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。
+                     * @return ConfigId 采集配置ID
+ - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。
                      * 
                      */
                     std::string GetConfigId() const;
 
                     /**
-                     * 设置采集规则配置ID
-                     * @param _configId 采集规则配置ID
+                     * 设置采集配置ID
+ - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。
+                     * @param _configId 采集配置ID
+ - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -66,7 +70,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 采集规则配置ID
+                     * 采集配置ID
+ - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;

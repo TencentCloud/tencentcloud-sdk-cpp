@@ -27,7 +27,8 @@ CardWarnInfo::CardWarnInfo() :
     m_reshootCheckHasBeenSet(false),
     m_pSCheckHasBeenSet(false),
     m_blurCheckHasBeenSet(false),
-    m_blurScoreHasBeenSet(false)
+    m_blurScoreHasBeenSet(false),
+    m_electronCheckHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome CardWarnInfo::Deserialize(const rapidjson::Value &value)
         m_blurScoreHasBeenSet = true;
     }
 
+    if (value.HasMember("ElectronCheck") && !value["ElectronCheck"].IsNull())
+    {
+        if (!value["ElectronCheck"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CardWarnInfo.ElectronCheck` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_electronCheck = value["ElectronCheck"].GetInt64();
+        m_electronCheckHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void CardWarnInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "BlurScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blurScore, allocator);
+    }
+
+    if (m_electronCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElectronCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_electronCheck, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void CardWarnInfo::SetBlurScore(const double& _blurScore)
 bool CardWarnInfo::BlurScoreHasBeenSet() const
 {
     return m_blurScoreHasBeenSet;
+}
+
+int64_t CardWarnInfo::GetElectronCheck() const
+{
+    return m_electronCheck;
+}
+
+void CardWarnInfo::SetElectronCheck(const int64_t& _electronCheck)
+{
+    m_electronCheck = _electronCheck;
+    m_electronCheckHasBeenSet = true;
+}
+
+bool CardWarnInfo::ElectronCheckHasBeenSet() const
+{
+    return m_electronCheckHasBeenSet;
 }
 

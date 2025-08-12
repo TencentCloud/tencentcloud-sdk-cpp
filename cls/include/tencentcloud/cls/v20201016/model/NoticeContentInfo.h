@@ -48,18 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取通知内容模板标题信息。
-部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。
+部分通知渠道类型不支持“标题”，请参照[腾讯云控制台页面](https://console.cloud.tencent.com/cls/alarm/notice-template)。
                      * @return Title 通知内容模板标题信息。
-部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。
+部分通知渠道类型不支持“标题”，请参照[腾讯云控制台页面](https://console.cloud.tencent.com/cls/alarm/notice-template)。
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置通知内容模板标题信息。
-部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。
+部分通知渠道类型不支持“标题”，请参照[腾讯云控制台页面](https://console.cloud.tencent.com/cls/alarm/notice-template)。
                      * @param _title 通知内容模板标题信息。
-部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。
+部分通知渠道类型不支持“标题”，请参照[腾讯云控制台页面](https://console.cloud.tencent.com/cls/alarm/notice-template)。
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -121,7 +121,7 @@ namespace TencentCloud
 
                     /**
                      * 通知内容模板标题信息。
-部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。
+部分通知渠道类型不支持“标题”，请参照[腾讯云控制台页面](https://console.cloud.tencent.com/cls/alarm/notice-template)。
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;

@@ -153,6 +153,10 @@
 #include <tencentcloud/trtc/v20190722/model/StopStreamIngestResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopWebRecordRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StopWebRecordResponse.h>
+#include <tencentcloud/trtc/v20190722/model/TextToSpeechRequest.h>
+#include <tencentcloud/trtc/v20190722/model/TextToSpeechResponse.h>
+#include <tencentcloud/trtc/v20190722/model/TextToSpeechSSERequest.h>
+#include <tencentcloud/trtc/v20190722/model/TextToSpeechSSEResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdateAIConversationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/UpdateAIConversationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamRequest.h>
@@ -161,6 +165,8 @@
 #include <tencentcloud/trtc/v20190722/model/UpdateStreamIngestResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdateVoicePrintRequest.h>
 #include <tencentcloud/trtc/v20190722/model/UpdateVoicePrintResponse.h>
+#include <tencentcloud/trtc/v20190722/model/VoiceCloneRequest.h>
+#include <tencentcloud/trtc/v20190722/model/VoiceCloneResponse.h>
 
 
 namespace TencentCloud
@@ -370,6 +376,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopWebRecordResponse> StopWebRecordOutcome;
                 typedef std::future<StopWebRecordOutcome> StopWebRecordOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StopWebRecordRequest&, StopWebRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopWebRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToSpeechResponse> TextToSpeechOutcome;
+                typedef std::future<TextToSpeechOutcome> TextToSpeechOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::TextToSpeechRequest&, TextToSpeechOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToSpeechAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToSpeechSSEResponse> TextToSpeechSSEOutcome;
+                typedef std::future<TextToSpeechSSEOutcome> TextToSpeechSSEOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::TextToSpeechSSERequest&, TextToSpeechSSEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToSpeechSSEAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAIConversationResponse> UpdateAIConversationOutcome;
                 typedef std::future<UpdateAIConversationOutcome> UpdateAIConversationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::UpdateAIConversationRequest&, UpdateAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAIConversationAsyncHandler;
@@ -382,6 +394,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateVoicePrintResponse> UpdateVoicePrintOutcome;
                 typedef std::future<UpdateVoicePrintOutcome> UpdateVoicePrintOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::UpdateVoicePrintRequest&, UpdateVoicePrintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVoicePrintAsyncHandler;
+                typedef Outcome<Core::Error, Model::VoiceCloneResponse> VoiceCloneOutcome;
+                typedef std::future<VoiceCloneOutcome> VoiceCloneOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::VoiceCloneRequest&, VoiceCloneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoiceCloneAsyncHandler;
 
 
 
@@ -1156,6 +1171,24 @@ MCU 混流转码费用，请参考文档：[云端混流转码计费说明](http
                 StopWebRecordOutcomeCallable StopWebRecordCallable(const Model::StopWebRecordRequest& request);
 
                 /**
+                 *语音合成接口
+                 * @param req TextToSpeechRequest
+                 * @return TextToSpeechOutcome
+                 */
+                TextToSpeechOutcome TextToSpeech(const Model::TextToSpeechRequest &request);
+                void TextToSpeechAsync(const Model::TextToSpeechRequest& request, const TextToSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToSpeechOutcomeCallable TextToSpeechCallable(const Model::TextToSpeechRequest& request);
+
+                /**
+                 *SSE流式文本转语音
+                 * @param req TextToSpeechSSERequest
+                 * @return TextToSpeechSSEOutcome
+                 */
+                TextToSpeechSSEOutcome TextToSpeechSSE(const Model::TextToSpeechSSERequest &request);
+                void TextToSpeechSSEAsync(const Model::TextToSpeechSSERequest& request, const TextToSpeechSSEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToSpeechSSEOutcomeCallable TextToSpeechSSECallable(const Model::TextToSpeechSSERequest& request);
+
+                /**
                  *更新AIConversation参数
                  * @param req UpdateAIConversationRequest
                  * @return UpdateAIConversationOutcome
@@ -1192,6 +1225,15 @@ MCU 混流转码费用，请参考文档：[云端混流转码计费说明](http
                 UpdateVoicePrintOutcome UpdateVoicePrint(const Model::UpdateVoicePrintRequest &request);
                 void UpdateVoicePrintAsync(const Model::UpdateVoicePrintRequest& request, const UpdateVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateVoicePrintOutcomeCallable UpdateVoicePrintCallable(const Model::UpdateVoicePrintRequest& request);
+
+                /**
+                 *声音克隆
+                 * @param req VoiceCloneRequest
+                 * @return VoiceCloneOutcome
+                 */
+                VoiceCloneOutcome VoiceClone(const Model::VoiceCloneRequest &request);
+                void VoiceCloneAsync(const Model::VoiceCloneRequest& request, const VoiceCloneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VoiceCloneOutcomeCallable VoiceCloneCallable(const Model::VoiceCloneRequest& request);
 
             };
         }

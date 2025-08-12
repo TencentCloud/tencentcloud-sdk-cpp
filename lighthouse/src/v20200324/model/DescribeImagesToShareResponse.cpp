@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lke/v20231130/model/ListAppCategoryResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeImagesToShareResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Lke::V20231130::Model;
+using namespace TencentCloud::Lighthouse::V20200324::Model;
 using namespace std;
 
-ListAppCategoryResponse::ListAppCategoryResponse() :
-    m_listHasBeenSet(false)
+DescribeImagesToShareResponse::DescribeImagesToShareResponse() :
+    m_totalCountHasBeenSet(false),
+    m_imageSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ListAppCategoryResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeImagesToShareResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,45 +63,63 @@ CoreInternalOutcome ListAppCategoryResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("List") && !rsp["List"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["List"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
 
-        const rapidjson::Value &tmpValue = rsp["List"];
+    if (rsp.HasMember("ImageSet") && !rsp["ImageSet"].IsNull())
+    {
+        if (!rsp["ImageSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ImageSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ListAppCategoryRspOption item;
+            Image item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_list.push_back(item);
+            m_imageSet.push_back(item);
         }
-        m_listHasBeenSet = true;
+        m_imageSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ListAppCategoryResponse::ToJsonString() const
+string DescribeImagesToShareResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_listHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "List";
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_imageSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageSet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
+        for (auto itr = m_imageSet.begin(); itr != m_imageSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -119,14 +138,24 @@ string ListAppCategoryResponse::ToJsonString() const
 }
 
 
-vector<ListAppCategoryRspOption> ListAppCategoryResponse::GetList() const
+int64_t DescribeImagesToShareResponse::GetTotalCount() const
 {
-    return m_list;
+    return m_totalCount;
 }
 
-bool ListAppCategoryResponse::ListHasBeenSet() const
+bool DescribeImagesToShareResponse::TotalCountHasBeenSet() const
 {
-    return m_listHasBeenSet;
+    return m_totalCountHasBeenSet;
+}
+
+vector<Image> DescribeImagesToShareResponse::GetImageSet() const
+{
+    return m_imageSet;
+}
+
+bool DescribeImagesToShareResponse::ImageSetHasBeenSet() const
+{
+    return m_imageSetHasBeenSet;
 }
 
 

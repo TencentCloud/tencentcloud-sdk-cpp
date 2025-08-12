@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取指定域名站内搜索（用于过滤自然检索结果）  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
-                     * @return Site 指定域名站内搜索（用于过滤自然检索结果）  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
+                     * 获取指定域名站内搜索（用于过滤自然检索结果）
+注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
+                     * @return Site 指定域名站内搜索（用于过滤自然检索结果）
+注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
                      * 
                      */
                     std::string GetSite() const;
 
                     /**
-                     * 设置指定域名站内搜索（用于过滤自然检索结果）  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
-                     * @param _site 指定域名站内搜索（用于过滤自然检索结果）  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
+                     * 设置指定域名站内搜索（用于过滤自然检索结果）
+注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
+                     * @param _site 指定域名站内搜索（用于过滤自然检索结果）
+注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
                      * 
                      */
                     void SetSite(const std::string& _site);
@@ -106,15 +110,19 @@ namespace TencentCloud
                     bool SiteHasBeenSet() const;
 
                     /**
-                     * 获取起始时间（用于过滤自然检索结果），精确到秒时间戳格式  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
-                     * @return FromTime 起始时间（用于过滤自然检索结果），精确到秒时间戳格式  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
+                     * 获取起始时间（用于过滤自然检索结果），精确到秒时间戳格式
+注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
+                     * @return FromTime 起始时间（用于过滤自然检索结果），精确到秒时间戳格式
+注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
                      * 
                      */
                     int64_t GetFromTime() const;
 
                     /**
-                     * 设置起始时间（用于过滤自然检索结果），精确到秒时间戳格式  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
-                     * @param _fromTime 起始时间（用于过滤自然检索结果），精确到秒时间戳格式  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
+                     * 设置起始时间（用于过滤自然检索结果），精确到秒时间戳格式
+注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
+                     * @param _fromTime 起始时间（用于过滤自然检索结果），精确到秒时间戳格式
+注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
                      * 
                      */
                     void SetFromTime(const int64_t& _fromTime);
@@ -127,15 +135,19 @@ namespace TencentCloud
                     bool FromTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间（用于过滤自然检索结果），精确到秒时间戳格式  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
-                     * @return ToTime 结束时间（用于过滤自然检索结果），精确到秒时间戳格式  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
+                     * 获取结束时间（用于过滤自然检索结果），精确到秒时间戳格式
+注意：mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
+                     * @return ToTime 结束时间（用于过滤自然检索结果），精确到秒时间戳格式
+注意：mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
                      * 
                      */
                     int64_t GetToTime() const;
 
                     /**
-                     * 设置结束时间（用于过滤自然检索结果），精确到秒时间戳格式  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
-                     * @param _toTime 结束时间（用于过滤自然检索结果），精确到秒时间戳格式  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
+                     * 设置结束时间（用于过滤自然检索结果），精确到秒时间戳格式
+注意：mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
+                     * @param _toTime 结束时间（用于过滤自然检索结果），精确到秒时间戳格式
+注意：mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
                      * 
                      */
                     void SetToTime(const int64_t& _toTime);
@@ -146,6 +158,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ToTimeHasBeenSet() const;
+
+                    /**
+                     * 获取cnt=10/20/30/40/50，最多可支持返回50条搜索结果，**仅限尊享版使用**
+                     * @return Cnt cnt=10/20/30/40/50，最多可支持返回50条搜索结果，**仅限尊享版使用**
+                     * 
+                     */
+                    uint64_t GetCnt() const;
+
+                    /**
+                     * 设置cnt=10/20/30/40/50，最多可支持返回50条搜索结果，**仅限尊享版使用**
+                     * @param _cnt cnt=10/20/30/40/50，最多可支持返回50条搜索结果，**仅限尊享版使用**
+                     * 
+                     */
+                    void SetCnt(const uint64_t& _cnt);
+
+                    /**
+                     * 判断参数 Cnt 是否已赋值
+                     * @return Cnt 是否已赋值
+                     * 
+                     */
+                    bool CntHasBeenSet() const;
+
+                    /**
+                     * 获取Industry=gov/news/acad，对应党政机关、新闻、学术，**仅限尊享版使用**
+                     * @return Industry Industry=gov/news/acad，对应党政机关、新闻、学术，**仅限尊享版使用**
+                     * 
+                     */
+                    std::string GetIndustry() const;
+
+                    /**
+                     * 设置Industry=gov/news/acad，对应党政机关、新闻、学术，**仅限尊享版使用**
+                     * @param _industry Industry=gov/news/acad，对应党政机关、新闻、学术，**仅限尊享版使用**
+                     * 
+                     */
+                    void SetIndustry(const std::string& _industry);
+
+                    /**
+                     * 判断参数 Industry 是否已赋值
+                     * @return Industry 是否已赋值
+                     * 
+                     */
+                    bool IndustryHasBeenSet() const;
 
                 private:
 
@@ -162,22 +216,37 @@ namespace TencentCloud
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 指定域名站内搜索（用于过滤自然检索结果）  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
+                     * 指定域名站内搜索（用于过滤自然检索结果）
+注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
                      */
                     std::string m_site;
                     bool m_siteHasBeenSet;
 
                     /**
-                     * 起始时间（用于过滤自然检索结果），精确到秒时间戳格式  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
+                     * 起始时间（用于过滤自然检索结果），精确到秒时间戳格式
+注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
                      */
                     int64_t m_fromTime;
                     bool m_fromTimeHasBeenSet;
 
                     /**
-                     * 结束时间（用于过滤自然检索结果），精确到秒时间戳格式  注意：  mode=1模式下，参数无效 mode=0模式下对所有结果生效 mode=2模式下对输出的自然结果生效
+                     * 结束时间（用于过滤自然检索结果），精确到秒时间戳格式
+注意：mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效
                      */
                     int64_t m_toTime;
                     bool m_toTimeHasBeenSet;
+
+                    /**
+                     * cnt=10/20/30/40/50，最多可支持返回50条搜索结果，**仅限尊享版使用**
+                     */
+                    uint64_t m_cnt;
+                    bool m_cntHasBeenSet;
+
+                    /**
+                     * Industry=gov/news/acad，对应党政机关、新闻、学术，**仅限尊享版使用**
+                     */
+                    std::string m_industry;
+                    bool m_industryHasBeenSet;
 
                 };
             }

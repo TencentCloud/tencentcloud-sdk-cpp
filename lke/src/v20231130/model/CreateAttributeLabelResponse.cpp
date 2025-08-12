@@ -24,7 +24,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 CreateAttributeLabelResponse::CreateAttributeLabelResponse() :
-    m_attrBizIdHasBeenSet(false)
+    m_attrBizIdHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome CreateAttributeLabelResponse::Deserialize(const string &payl
         m_attrBizIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Labels") && !rsp["Labels"].IsNull())
+    {
+        if (!rsp["Labels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Labels` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AttributeLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_labels.push_back(item);
+        }
+        m_labelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ string CreateAttributeLabelResponse::ToJsonString() const
         string key = "AttrBizId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_attrBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +146,16 @@ string CreateAttributeLabelResponse::GetAttrBizId() const
 bool CreateAttributeLabelResponse::AttrBizIdHasBeenSet() const
 {
     return m_attrBizIdHasBeenSet;
+}
+
+vector<AttributeLabel> CreateAttributeLabelResponse::GetLabels() const
+{
+    return m_labels;
+}
+
+bool CreateAttributeLabelResponse::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 
 

@@ -265,15 +265,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取规则创建时间。
-                     * @return CreateTime 规则创建时间。
+                     * 获取规则创建时间。秒级时间戳(s)
+                     * @return CreateTime 规则创建时间。秒级时间戳(s)
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置规则创建时间。
-                     * @param _createTime 规则创建时间。
+                     * 设置规则创建时间。秒级时间戳(s)
+                     * @param _createTime 规则创建时间。秒级时间戳(s)
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -286,15 +286,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取规则更新时间。
-                     * @return UpdateTime 规则更新时间。
+                     * 获取规则更新时间。秒级时间戳(s)
+                     * @return UpdateTime 规则更新时间。秒级时间戳(s)
                      * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
-                     * 设置规则更新时间。
-                     * @param _updateTime 规则更新时间。
+                     * 设置规则更新时间。秒级时间戳(s)
+                     * @param _updateTime 规则更新时间。秒级时间戳(s)
                      * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
@@ -371,13 +371,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 规则创建时间。
+                     * 规则创建时间。秒级时间戳(s)
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 规则更新时间。
+                     * 规则更新时间。秒级时间戳(s)
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;

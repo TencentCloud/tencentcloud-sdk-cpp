@@ -46,14 +46,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @return TopicId 日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @param _topicId 日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -67,14 +71,30 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题名称
+输入限制：
+- 不能为空字符串
+- 不能包含字符'|'
+- 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
                      * @return TopicName 日志主题名称
+输入限制：
+- 不能为空字符串
+- 不能包含字符'|'
+- 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置日志主题名称
+输入限制：
+- 不能为空字符串
+- 不能包含字符'|'
+- 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
                      * @param _topicName 日志主题名称
+输入限制：
+- 不能为空字符串
+- 不能包含字符'|'
+- 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -154,15 +174,19 @@ namespace TencentCloud
                     bool AutoSplitHasBeenSet() const;
 
                     /**
-                     * 获取若开启最大分裂，该主题能够能够允许的最大分区数
-                     * @return MaxSplitPartitions 若开启最大分裂，该主题能够能够允许的最大分区数
+                     * 获取若开启最大分裂，该主题能够能够允许的最大分区数；
+默认为50；必须为正数
+                     * @return MaxSplitPartitions 若开启最大分裂，该主题能够能够允许的最大分区数；
+默认为50；必须为正数
                      * 
                      */
                     int64_t GetMaxSplitPartitions() const;
 
                     /**
-                     * 设置若开启最大分裂，该主题能够能够允许的最大分区数
-                     * @param _maxSplitPartitions 若开启最大分裂，该主题能够能够允许的最大分区数
+                     * 设置若开启最大分裂，该主题能够能够允许的最大分区数；
+默认为50；必须为正数
+                     * @param _maxSplitPartitions 若开启最大分裂，该主题能够能够允许的最大分区数；
+默认为50；必须为正数
                      * 
                      */
                     void SetMaxSplitPartitions(const int64_t& _maxSplitPartitions);
@@ -288,15 +312,35 @@ namespace TencentCloud
                     bool ExtendsHasBeenSet() const;
 
                     /**
-                     * 获取日志主题分区数量
-                     * @return PartitionCount 日志主题分区数量
+                     * 获取日志主题分区数量。
+默认为1；
+取值范围及约束：
+- 当输入值<=0，系统自动调整为1。
+- 如果未传MaxSplitPartitions，需要PartitionCount<=50；
+- 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；
+                     * @return PartitionCount 日志主题分区数量。
+默认为1；
+取值范围及约束：
+- 当输入值<=0，系统自动调整为1。
+- 如果未传MaxSplitPartitions，需要PartitionCount<=50；
+- 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；
                      * 
                      */
                     uint64_t GetPartitionCount() const;
 
                     /**
-                     * 设置日志主题分区数量
-                     * @param _partitionCount 日志主题分区数量
+                     * 设置日志主题分区数量。
+默认为1；
+取值范围及约束：
+- 当输入值<=0，系统自动调整为1。
+- 如果未传MaxSplitPartitions，需要PartitionCount<=50；
+- 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；
+                     * @param _partitionCount 日志主题分区数量。
+默认为1；
+取值范围及约束：
+- 当输入值<=0，系统自动调整为1。
+- 如果未传MaxSplitPartitions，需要PartitionCount<=50；
+- 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；
                      * 
                      */
                     void SetPartitionCount(const uint64_t& _partitionCount);
@@ -310,14 +354,18 @@ namespace TencentCloud
 
                     /**
                      * 获取取消切换存储任务的id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。
                      * @return CancelTopicAsyncTaskID 取消切换存储任务的id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。
                      * 
                      */
                     std::string GetCancelTopicAsyncTaskID() const;
 
                     /**
                      * 设置取消切换存储任务的id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。
                      * @param _cancelTopicAsyncTaskID 取消切换存储任务的id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。
                      * 
                      */
                     void SetCancelTopicAsyncTaskID(const std::string& _cancelTopicAsyncTaskID);
@@ -333,12 +381,17 @@ namespace TencentCloud
 
                     /**
                      * 日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 日志主题名称
+输入限制：
+- 不能为空字符串
+- 不能包含字符'|'
+- 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -363,7 +416,8 @@ namespace TencentCloud
                     bool m_autoSplitHasBeenSet;
 
                     /**
-                     * 若开启最大分裂，该主题能够能够允许的最大分区数
+                     * 若开启最大分裂，该主题能够能够允许的最大分区数；
+默认为50；必须为正数
                      */
                     int64_t m_maxSplitPartitions;
                     bool m_maxSplitPartitionsHasBeenSet;
@@ -401,13 +455,19 @@ namespace TencentCloud
                     bool m_extendsHasBeenSet;
 
                     /**
-                     * 日志主题分区数量
+                     * 日志主题分区数量。
+默认为1；
+取值范围及约束：
+- 当输入值<=0，系统自动调整为1。
+- 如果未传MaxSplitPartitions，需要PartitionCount<=50；
+- 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；
                      */
                     uint64_t m_partitionCount;
                     bool m_partitionCountHasBeenSet;
 
                     /**
                      * 取消切换存储任务的id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。
                      */
                     std::string m_cancelTopicAsyncTaskID;
                     bool m_cancelTopicAsyncTaskIDHasBeenSet;

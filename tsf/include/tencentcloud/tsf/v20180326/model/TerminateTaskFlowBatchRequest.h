@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流批次 ID
-                     * @return FlowBatchId 工作流批次 ID
+                     * 获取工作流批次 ID，在[工作流执行记录](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=taskflow)列表页第一列获取。
+                     * @return FlowBatchId 工作流批次 ID，在[工作流执行记录](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=taskflow)列表页第一列获取。
                      * 
                      */
                     std::string GetFlowBatchId() const;
 
                     /**
-                     * 设置工作流批次 ID
-                     * @param _flowBatchId 工作流批次 ID
+                     * 设置工作流批次 ID，在[工作流执行记录](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=taskflow)列表页第一列获取。
+                     * @param _flowBatchId 工作流批次 ID，在[工作流执行记录](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=taskflow)列表页第一列获取。
                      * 
                      */
                     void SetFlowBatchId(const std::string& _flowBatchId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作流批次 ID
+                     * 工作流批次 ID，在[工作流执行记录](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=taskflow)列表页第一列获取。
                      */
                     std::string m_flowBatchId;
                     bool m_flowBatchIdHasBeenSet;

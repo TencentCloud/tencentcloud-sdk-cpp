@@ -44,8 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除结果
-                     * @return Result 删除结果
+                     * 获取删除结果。
+- true：成功
+- false：失败
+                     * @return Result 删除结果。
+- true：成功
+- false：失败
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +64,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 删除结果
+                     * 删除结果。
+- true：成功
+- false：失败
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

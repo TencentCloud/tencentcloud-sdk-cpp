@@ -44,15 +44,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户输入的加工语句
-                     * @return EtlContent 用户输入的加工语句
+                     * 获取加工语句。 当FuncType为2时，EtlContent必须使用[log_auto_output](https://cloud.tencent.com/document/product/614/70733#b3c58797-4825-4807-bef4-68106e25024f) 
+
+其他参考文档：
+
+- [创建加工任务](https://cloud.tencent.com/document/product/614/63940) 
+-  [函数总览](https://cloud.tencent.com/document/product/614/70395)
+                     * @return EtlContent 加工语句。 当FuncType为2时，EtlContent必须使用[log_auto_output](https://cloud.tencent.com/document/product/614/70733#b3c58797-4825-4807-bef4-68106e25024f) 
+
+其他参考文档：
+
+- [创建加工任务](https://cloud.tencent.com/document/product/614/63940) 
+-  [函数总览](https://cloud.tencent.com/document/product/614/70395)
                      * 
                      */
                     std::string GetEtlContent() const;
 
                     /**
-                     * 设置用户输入的加工语句
-                     * @param _etlContent 用户输入的加工语句
+                     * 设置加工语句。 当FuncType为2时，EtlContent必须使用[log_auto_output](https://cloud.tencent.com/document/product/614/70733#b3c58797-4825-4807-bef4-68106e25024f) 
+
+其他参考文档：
+
+- [创建加工任务](https://cloud.tencent.com/document/product/614/63940) 
+-  [函数总览](https://cloud.tencent.com/document/product/614/70395)
+                     * @param _etlContent 加工语句。 当FuncType为2时，EtlContent必须使用[log_auto_output](https://cloud.tencent.com/document/product/614/70733#b3c58797-4825-4807-bef4-68106e25024f) 
+
+其他参考文档：
+
+- [创建加工任务](https://cloud.tencent.com/document/product/614/63940) 
+-  [函数总览](https://cloud.tencent.com/document/product/614/70395)
                      * 
                      */
                     void SetEtlContent(const std::string& _etlContent);
@@ -65,15 +85,19 @@ namespace TencentCloud
                     bool EtlContentHasBeenSet() const;
 
                     /**
-                     * 获取加工任务目的topic_id以及别名
-                     * @return DstResources 加工任务目的topic_id以及别名
+                     * 获取加工任务目标topic_id以及别名，当 FuncType 为 1 时，必填。
+目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @return DstResources 加工任务目标topic_id以及别名，当 FuncType 为 1 时，必填。
+目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::vector<DataTransformResouceInfo> GetDstResources() const;
 
                     /**
-                     * 设置加工任务目的topic_id以及别名
-                     * @param _dstResources 加工任务目的topic_id以及别名
+                     * 设置加工任务目标topic_id以及别名，当 FuncType 为 1 时，必填。
+目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @param _dstResources 加工任务目标topic_id以及别名，当 FuncType 为 1 时，必填。
+目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetDstResources(const std::vector<DataTransformResouceInfo>& _dstResources);
@@ -109,13 +133,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户输入的加工语句
+                     * 加工语句。 当FuncType为2时，EtlContent必须使用[log_auto_output](https://cloud.tencent.com/document/product/614/70733#b3c58797-4825-4807-bef4-68106e25024f) 
+
+其他参考文档：
+
+- [创建加工任务](https://cloud.tencent.com/document/product/614/63940) 
+-  [函数总览](https://cloud.tencent.com/document/product/614/70395)
                      */
                     std::string m_etlContent;
                     bool m_etlContentHasBeenSet;
 
                     /**
-                     * 加工任务目的topic_id以及别名
+                     * 加工任务目标topic_id以及别名，当 FuncType 为 1 时，必填。
+目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::vector<DataTransformResouceInfo> m_dstResources;
                     bool m_dstResourcesHasBeenSet;

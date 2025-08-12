@@ -114,14 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return CreateTime 创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _createTime 创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -177,14 +181,18 @@ namespace TencentCloud
 
                     /**
                      * 获取升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @return UpdateStartTime 升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     std::string GetUpdateStartTime() const;
 
                     /**
                      * 设置升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @param _updateStartTime 升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     void SetUpdateStartTime(const std::string& _updateStartTime);
@@ -198,14 +206,18 @@ namespace TencentCloud
 
                     /**
                      * 获取升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @return UpdateEndTime 升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     std::string GetUpdateEndTime() const;
 
                     /**
                      * 设置升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @param _updateEndTime 升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     void SetUpdateEndTime(const std::string& _updateEndTime);
@@ -239,15 +251,15 @@ namespace TencentCloud
                     bool ServiceLoggingHasBeenSet() const;
 
                     /**
-                     * 获取机器组中机器离线定期清理时间
-                     * @return DelayCleanupTime 机器组中机器离线定期清理时间
+                     * 获取机器组中机器离线定期清理时间，单位天，默认设置30天。
+                     * @return DelayCleanupTime 机器组中机器离线定期清理时间，单位天，默认设置30天。
                      * 
                      */
                     int64_t GetDelayCleanupTime() const;
 
                     /**
-                     * 设置机器组中机器离线定期清理时间
-                     * @param _delayCleanupTime 机器组中机器离线定期清理时间
+                     * 设置机器组中机器离线定期清理时间，单位天，默认设置30天。
+                     * @param _delayCleanupTime 机器组中机器离线定期清理时间，单位天，默认设置30天。
                      * 
                      */
                     void SetDelayCleanupTime(const int64_t& _delayCleanupTime);
@@ -323,6 +335,7 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -341,12 +354,14 @@ namespace TencentCloud
 
                     /**
                      * 升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      */
                     std::string m_updateStartTime;
                     bool m_updateStartTimeHasBeenSet;
 
                     /**
                      * 升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      */
                     std::string m_updateEndTime;
                     bool m_updateEndTimeHasBeenSet;
@@ -358,7 +373,7 @@ namespace TencentCloud
                     bool m_serviceLoggingHasBeenSet;
 
                     /**
-                     * 机器组中机器离线定期清理时间
+                     * 机器组中机器离线定期清理时间，单位天，默认设置30天。
                      */
                     int64_t m_delayCleanupTime;
                     bool m_delayCleanupTimeHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取泳道ID
-                     * @return Result 泳道ID
+                     * 获取泳道配置ID。
+                     * @return Result 泳道配置ID。
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 泳道ID
+                     * 泳道配置ID。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

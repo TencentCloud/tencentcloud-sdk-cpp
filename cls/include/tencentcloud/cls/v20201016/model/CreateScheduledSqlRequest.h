@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源日志主题
-                     * @return SrcTopicId 源日志主题
+                     * 获取源日志主题ID- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @return SrcTopicId 源日志主题ID- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetSrcTopicId() const;
 
                     /**
-                     * 设置源日志主题
-                     * @param _srcTopicId 源日志主题
+                     * 设置源日志主题ID- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @param _srcTopicId 源日志主题ID- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetSrcTopicId(const std::string& _srcTopicId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SrcTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return Name 任务名称
+                     * 获取任务名称，0~255字符
+                     * @return Name 任务名称，0~255字符
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _name 任务名称
+                     * 设置任务名称，0~255字符
+                     * @param _name 任务名称，0~255字符
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool ProcessTypeHasBeenSet() const;
 
                     /**
-                     * 获取调度周期(分钟)
-                     * @return ProcessPeriod 调度周期(分钟)
+                     * 获取调度周期(分钟)，1~1440分钟
+                     * @return ProcessPeriod 调度周期(分钟)，1~1440分钟
                      * 
                      */
                     int64_t GetProcessPeriod() const;
 
                     /**
-                     * 设置调度周期(分钟)
-                     * @param _processPeriod 调度周期(分钟)
+                     * 设置调度周期(分钟)，1~1440分钟
+                     * @param _processPeriod 调度周期(分钟)，1~1440分钟
                      * 
                      */
                     void SetProcessPeriod(const int64_t& _processPeriod);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool ProcessTimeWindowHasBeenSet() const;
 
                     /**
-                     * 获取执行延迟(秒)
-                     * @return ProcessDelay 执行延迟(秒)
+                     * 获取执行延迟(秒)，0~120秒，默认60秒
+                     * @return ProcessDelay 执行延迟(秒)，0~120秒，默认60秒
                      * 
                      */
                     int64_t GetProcessDelay() const;
 
                     /**
-                     * 设置执行延迟(秒)
-                     * @param _processDelay 执行延迟(秒)
+                     * 设置执行延迟(秒)，0~120秒，默认60秒
+                     * @param _processDelay 执行延迟(秒)，0~120秒，默认60秒
                      * 
                      */
                     void SetProcessDelay(const int64_t& _processDelay);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool ProcessDelayHasBeenSet() const;
 
                     /**
-                     * 获取源topicId的地域信息
-                     * @return SrcTopicRegion 源topicId的地域信息
+                     * 获取源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档
+                     * @return SrcTopicRegion 源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档
                      * 
                      */
                     std::string GetSrcTopicRegion() const;
 
                     /**
-                     * 设置源topicId的地域信息
-                     * @param _srcTopicRegion 源topicId的地域信息
+                     * 设置源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档
+                     * @param _srcTopicRegion 源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档
                      * 
                      */
                     void SetSrcTopicRegion(const std::string& _srcTopicRegion);
@@ -319,13 +319,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源日志主题
+                     * 源日志主题ID- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_srcTopicId;
                     bool m_srcTopicIdHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * 任务名称，0~255字符
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -361,7 +361,7 @@ namespace TencentCloud
                     bool m_processTypeHasBeenSet;
 
                     /**
-                     * 调度周期(分钟)
+                     * 调度周期(分钟)，1~1440分钟
                      */
                     int64_t m_processPeriod;
                     bool m_processPeriodHasBeenSet;
@@ -373,13 +373,13 @@ namespace TencentCloud
                     bool m_processTimeWindowHasBeenSet;
 
                     /**
-                     * 执行延迟(秒)
+                     * 执行延迟(秒)，0~120秒，默认60秒
                      */
                     int64_t m_processDelay;
                     bool m_processDelayHasBeenSet;
 
                     /**
-                     * 源topicId的地域信息
+                     * 源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档
                      */
                     std::string m_srcTopicRegion;
                     bool m_srcTopicRegionHasBeenSet;
