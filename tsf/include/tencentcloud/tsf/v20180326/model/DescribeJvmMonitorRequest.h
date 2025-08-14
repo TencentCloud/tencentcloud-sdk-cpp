@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询的实例Id
-                     * @return InstanceId 查询的实例Id
+                     * 获取查询的实例ID
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk
+                     * @return InstanceId 查询的实例ID
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置查询的实例Id
-                     * @param _instanceId 查询的实例Id
+                     * 设置查询的实例ID
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk
+                     * @param _instanceId 查询的实例ID
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +68,19 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例所属应用Id
-                     * @return ApplicationId 实例所属应用Id
+                     * 获取实例所属应用ID
+可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已经存在的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)查看。应用ID例如：application-v378ewna
+                     * @return ApplicationId 实例所属应用ID
+可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已经存在的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)查看。应用ID例如：application-v378ewna
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置实例所属应用Id
-                     * @param _applicationId 实例所属应用Id
+                     * 设置实例所属应用ID
+可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已经存在的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)查看。应用ID例如：application-v378ewna
+                     * @param _applicationId 实例所属应用ID
+可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已经存在的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)查看。应用ID例如：application-v378ewna
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -148,15 +156,19 @@ namespace TencentCloud
                     bool ToHasBeenSet() const;
 
                     /**
-                     * 获取查询的监控图列表,以返回值属性名作为入参
-                     * @return RequiredPictures 查询的监控图列表,以返回值属性名作为入参
+                     * 获取查询的监控图列表，以返回值属性名作为入参，可选值：
+heapMemory：堆内存监控图；nonHeapMemory：非堆内存监控图；edenSpace：伊甸区监控图；survivorSpace：幸存者区监控图；oldSpace：老年代监控图；metaSpace：元空间监控图；youngGC：youngGC增量监控图；fullGC：fullGC增量监控图；cpuUsage：cpu使用率监控图；classCount：加载类数监控图；threadPicture：线程图
+                     * @return RequiredPictures 查询的监控图列表，以返回值属性名作为入参，可选值：
+heapMemory：堆内存监控图；nonHeapMemory：非堆内存监控图；edenSpace：伊甸区监控图；survivorSpace：幸存者区监控图；oldSpace：老年代监控图；metaSpace：元空间监控图；youngGC：youngGC增量监控图；fullGC：fullGC增量监控图；cpuUsage：cpu使用率监控图；classCount：加载类数监控图；threadPicture：线程图
                      * 
                      */
                     std::vector<std::string> GetRequiredPictures() const;
 
                     /**
-                     * 设置查询的监控图列表,以返回值属性名作为入参
-                     * @param _requiredPictures 查询的监控图列表,以返回值属性名作为入参
+                     * 设置查询的监控图列表，以返回值属性名作为入参，可选值：
+heapMemory：堆内存监控图；nonHeapMemory：非堆内存监控图；edenSpace：伊甸区监控图；survivorSpace：幸存者区监控图；oldSpace：老年代监控图；metaSpace：元空间监控图；youngGC：youngGC增量监控图；fullGC：fullGC增量监控图；cpuUsage：cpu使用率监控图；classCount：加载类数监控图；threadPicture：线程图
+                     * @param _requiredPictures 查询的监控图列表，以返回值属性名作为入参，可选值：
+heapMemory：堆内存监控图；nonHeapMemory：非堆内存监控图；edenSpace：伊甸区监控图；survivorSpace：幸存者区监控图；oldSpace：老年代监控图；metaSpace：元空间监控图；youngGC：youngGC增量监控图；fullGC：fullGC增量监控图；cpuUsage：cpu使用率监控图；classCount：加载类数监控图；threadPicture：线程图
                      * 
                      */
                     void SetRequiredPictures(const std::vector<std::string>& _requiredPictures);
@@ -192,13 +204,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询的实例Id
+                     * 查询的实例ID
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例所属应用Id
+                     * 实例所属应用ID
+可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已经存在的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)查看。应用ID例如：application-v378ewna
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
@@ -222,7 +236,8 @@ namespace TencentCloud
                     bool m_toHasBeenSet;
 
                     /**
-                     * 查询的监控图列表,以返回值属性名作为入参
+                     * 查询的监控图列表，以返回值属性名作为入参，可选值：
+heapMemory：堆内存监控图；nonHeapMemory：非堆内存监控图；edenSpace：伊甸区监控图；survivorSpace：幸存者区监控图；oldSpace：老年代监控图；metaSpace：元空间监控图；youngGC：youngGC增量监控图；fullGC：fullGC增量监控图；cpuUsage：cpu使用率监控图；classCount：加载类数监控图；threadPicture：线程图
                      */
                     std::vector<std::string> m_requiredPictures;
                     bool m_requiredPicturesHasBeenSet;

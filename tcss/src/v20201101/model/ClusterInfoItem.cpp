@@ -44,6 +44,7 @@ ClusterInfoItem::ClusterInfoItem() :
     m_taskCreateTimeHasBeenSet(false),
     m_accessedStatusHasBeenSet(false),
     m_accessedSubStatusHasBeenSet(false),
+    m_accessedErrorReasonHasBeenSet(false),
     m_nodeCountHasBeenSet(false),
     m_offLineNodeCountHasBeenSet(false),
     m_unInstallAgentNodeCountHasBeenSet(false),
@@ -289,6 +290,16 @@ CoreInternalOutcome ClusterInfoItem::Deserialize(const rapidjson::Value &value)
         }
         m_accessedSubStatus = string(value["AccessedSubStatus"].GetString());
         m_accessedSubStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessedErrorReason") && !value["AccessedErrorReason"].IsNull())
+    {
+        if (!value["AccessedErrorReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfoItem.AccessedErrorReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessedErrorReason = string(value["AccessedErrorReason"].GetString());
+        m_accessedErrorReasonHasBeenSet = true;
     }
 
     if (value.HasMember("NodeCount") && !value["NodeCount"].IsNull())
@@ -573,6 +584,14 @@ void ClusterInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AccessedSubStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accessedSubStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessedErrorReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessedErrorReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessedErrorReason.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeCountHasBeenSet)
@@ -1021,6 +1040,22 @@ void ClusterInfoItem::SetAccessedSubStatus(const string& _accessedSubStatus)
 bool ClusterInfoItem::AccessedSubStatusHasBeenSet() const
 {
     return m_accessedSubStatusHasBeenSet;
+}
+
+string ClusterInfoItem::GetAccessedErrorReason() const
+{
+    return m_accessedErrorReason;
+}
+
+void ClusterInfoItem::SetAccessedErrorReason(const string& _accessedErrorReason)
+{
+    m_accessedErrorReason = _accessedErrorReason;
+    m_accessedErrorReasonHasBeenSet = true;
+}
+
+bool ClusterInfoItem::AccessedErrorReasonHasBeenSet() const
+{
+    return m_accessedErrorReasonHasBeenSet;
 }
 
 uint64_t ClusterInfoItem::GetNodeCount() const

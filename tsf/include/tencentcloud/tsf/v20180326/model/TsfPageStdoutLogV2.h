@@ -115,18 +115,18 @@ namespace TencentCloud
                     bool ScrollIdHasBeenSet() const;
 
                     /**
-                     * 获取查询状态
+                     * 获取查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 查询状态
+                     * @return Status 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置查询状态
+                     * 设置查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 查询状态
+                     * @param _status 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -140,15 +140,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取游标ID
-                     * @return SearchAfter 游标ID
+                     * 获取查询es使用searchAfter时，游标
+                     * @return SearchAfter 查询es使用searchAfter时，游标
                      * 
                      */
                     std::vector<std::string> GetSearchAfter() const;
 
                     /**
-                     * 设置游标ID
-                     * @param _searchAfter 游标ID
+                     * 设置查询es使用searchAfter时，游标
+                     * @param _searchAfter 查询es使用searchAfter时，游标
                      * 
                      */
                     void SetSearchAfter(const std::vector<std::string>& _searchAfter);
@@ -182,14 +182,14 @@ namespace TencentCloud
                     bool m_scrollIdHasBeenSet;
 
                     /**
-                     * 查询状态
+                     * 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 游标ID
+                     * 查询es使用searchAfter时，游标
                      */
                     std::vector<std::string> m_searchAfter;
                     bool m_searchAfterHasBeenSet;

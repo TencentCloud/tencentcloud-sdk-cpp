@@ -33,6 +33,7 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/ReleaseGrayResponse.h
   include/tencentcloud/tcbr/v20220217/model/DeployParam.h
   include/tencentcloud/tcbr/v20220217/model/DiffConfigItem.h
+  include/tencentcloud/tcbr/v20220217/model/VolumeConf.h
   include/tencentcloud/tcbr/v20220217/model/OperateServerManageRequest.h
   include/tencentcloud/tcbr/v20220217/model/StaticStorageInfo.h
   include/tencentcloud/tcbr/v20220217/model/UpdateCloudRunServerRequest.h
@@ -80,6 +81,7 @@ set(tcbr_src
   src/v20220217/model/ReleaseGrayResponse.cpp
   src/v20220217/model/DeployParam.cpp
   src/v20220217/model/DiffConfigItem.cpp
+  src/v20220217/model/VolumeConf.cpp
   src/v20220217/model/OperateServerManageRequest.cpp
   src/v20220217/model/StaticStorageInfo.cpp
   src/v20220217/model/UpdateCloudRunServerRequest.cpp

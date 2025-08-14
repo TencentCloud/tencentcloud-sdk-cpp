@@ -50,7 +50,8 @@ DescribeClusterDetailResponse::DescribeClusterDetailResponse() :
     m_serviceCountHasBeenSet(false),
     m_ingressCountHasBeenSet(false),
     m_masterIpsHasBeenSet(false),
-    m_ownerNameHasBeenSet(false)
+    m_ownerNameHasBeenSet(false),
+    m_checkFailReasonHasBeenSet(false)
 {
 }
 
@@ -358,6 +359,16 @@ CoreInternalOutcome DescribeClusterDetailResponse::Deserialize(const string &pay
         m_ownerNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CheckFailReason") && !rsp["CheckFailReason"].IsNull())
+    {
+        if (!rsp["CheckFailReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CheckFailReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkFailReason = string(rsp["CheckFailReason"].GetString());
+        m_checkFailReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -582,6 +593,14 @@ string DescribeClusterDetailResponse::ToJsonString() const
         string key = "OwnerName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ownerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkFailReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckFailReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkFailReason.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -864,6 +883,16 @@ string DescribeClusterDetailResponse::GetOwnerName() const
 bool DescribeClusterDetailResponse::OwnerNameHasBeenSet() const
 {
     return m_ownerNameHasBeenSet;
+}
+
+string DescribeClusterDetailResponse::GetCheckFailReason() const
+{
+    return m_checkFailReason;
+}
+
+bool DescribeClusterDetailResponse::CheckFailReasonHasBeenSet() const
+{
+    return m_checkFailReasonHasBeenSet;
 }
 
 

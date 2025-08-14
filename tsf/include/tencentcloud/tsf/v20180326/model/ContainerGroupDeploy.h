@@ -825,18 +825,18 @@ namespace TencentCloud
                     bool TcrRepoInfoHasBeenSet() const;
 
                     /**
-                     * 获取数据卷信息，list
+                     * 获取数据卷信息，数组结构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VolumeInfos 数据卷信息，list
+                     * @return VolumeInfos 数据卷信息，数组结构
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VolumeInfo> GetVolumeInfos() const;
 
                     /**
-                     * 设置数据卷信息，list
+                     * 设置数据卷信息，数组结构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _volumeInfos 数据卷信息，list
+                     * @param _volumeInfos 数据卷信息，数组结构
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1269,7 +1269,7 @@ namespace TencentCloud
                     bool m_tcrRepoInfoHasBeenSet;
 
                     /**
-                     * 数据卷信息，list
+                     * 数据卷信息，数组结构
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VolumeInfo> m_volumeInfos;

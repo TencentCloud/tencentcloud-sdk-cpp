@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/postgres/v20170312/model/CreateServerlessDBInstanceResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspRulesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Postgres::V20170312::Model;
+using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-CreateServerlessDBInstanceResponse::CreateServerlessDBInstanceResponse() :
-    m_dBInstanceIdHasBeenSet(false)
+DescribeOwaspRulesResponse::DescribeOwaspRulesResponse() :
+    m_totalHasBeenSet(false),
+    m_listHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateServerlessDBInstanceResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeOwaspRulesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +63,67 @@ CoreInternalOutcome CreateServerlessDBInstanceResponse::Deserialize(const string
     }
 
 
-    if (rsp.HasMember("DBInstanceId") && !rsp["DBInstanceId"].IsNull())
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
     {
-        if (!rsp["DBInstanceId"].IsString())
+        if (!rsp["Total"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `DBInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_dBInstanceId = string(rsp["DBInstanceId"].GetString());
-        m_dBInstanceIdHasBeenSet = true;
+        m_total = rsp["Total"].GetUint64();
+        m_totalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("List") && !rsp["List"].IsNull())
+    {
+        if (!rsp["List"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["List"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OwaspRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_list.push_back(item);
+        }
+        m_listHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateServerlessDBInstanceResponse::ToJsonString() const
+string DescribeOwaspRulesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dBInstanceIdHasBeenSet)
+    if (m_totalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DBInstanceId";
+        string key = "Total";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_dBInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
+    if (m_listHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "List";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +138,24 @@ string CreateServerlessDBInstanceResponse::ToJsonString() const
 }
 
 
-string CreateServerlessDBInstanceResponse::GetDBInstanceId() const
+uint64_t DescribeOwaspRulesResponse::GetTotal() const
 {
-    return m_dBInstanceId;
+    return m_total;
 }
 
-bool CreateServerlessDBInstanceResponse::DBInstanceIdHasBeenSet() const
+bool DescribeOwaspRulesResponse::TotalHasBeenSet() const
 {
-    return m_dBInstanceIdHasBeenSet;
+    return m_totalHasBeenSet;
+}
+
+vector<OwaspRule> DescribeOwaspRulesResponse::GetList() const
+{
+    return m_list;
+}
+
+bool DescribeOwaspRulesResponse::ListHasBeenSet() const
+{
+    return m_listHasBeenSet;
 }
 
 

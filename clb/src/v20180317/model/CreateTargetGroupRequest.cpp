@@ -29,6 +29,8 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_targetGroupInstancesHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_healthCheckHasBeenSet(false),
+    m_scheduleAlgorithmHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_weightHasBeenSet(false),
     m_fullListenSwitchHasBeenSet(false),
@@ -97,6 +99,23 @@ string CreateTargetGroupRequest::ToJsonString() const
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheck.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_scheduleAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleAlgorithm.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -248,6 +267,38 @@ void CreateTargetGroupRequest::SetProtocol(const string& _protocol)
 bool CreateTargetGroupRequest::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+TargetGroupHealthCheck CreateTargetGroupRequest::GetHealthCheck() const
+{
+    return m_healthCheck;
+}
+
+void CreateTargetGroupRequest::SetHealthCheck(const TargetGroupHealthCheck& _healthCheck)
+{
+    m_healthCheck = _healthCheck;
+    m_healthCheckHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::HealthCheckHasBeenSet() const
+{
+    return m_healthCheckHasBeenSet;
+}
+
+string CreateTargetGroupRequest::GetScheduleAlgorithm() const
+{
+    return m_scheduleAlgorithm;
+}
+
+void CreateTargetGroupRequest::SetScheduleAlgorithm(const string& _scheduleAlgorithm)
+{
+    m_scheduleAlgorithm = _scheduleAlgorithm;
+    m_scheduleAlgorithmHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::ScheduleAlgorithmHasBeenSet() const
+{
+    return m_scheduleAlgorithmHasBeenSet;
 }
 
 vector<TagInfo> CreateTargetGroupRequest::GetTags() const

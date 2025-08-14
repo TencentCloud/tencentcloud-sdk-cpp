@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知渠道组id。
-                     * @return AlarmNoticeId 通知渠道组id。
+                     * 获取通知渠道组id。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取通知渠道组id
+                     * @return AlarmNoticeId 通知渠道组id。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取通知渠道组id
                      * 
                      */
                     std::string GetAlarmNoticeId() const;
 
                     /**
-                     * 设置通知渠道组id。
-                     * @param _alarmNoticeId 通知渠道组id。
+                     * 设置通知渠道组id。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取通知渠道组id
+                     * @param _alarmNoticeId 通知渠道组id。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取通知渠道组id
                      * 
                      */
                     void SetAlarmNoticeId(const std::string& _alarmNoticeId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AlarmNoticeIdHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽开始时间（秒级时间戳）。
-                     * @return StartTime 屏蔽开始时间（秒级时间戳）。
+                     * 获取屏蔽规则开始时间，秒级(s)时间戳。
+                     * @return StartTime 屏蔽规则开始时间，秒级(s)时间戳。
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置屏蔽开始时间（秒级时间戳）。
-                     * @param _startTime 屏蔽开始时间（秒级时间戳）。
+                     * 设置屏蔽规则开始时间，秒级(s)时间戳。
+                     * @param _startTime 屏蔽规则开始时间，秒级(s)时间戳。
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽结束时间（秒级时间戳）。
-                     * @return EndTime 屏蔽结束时间（秒级时间戳）。
+                     * 获取屏蔽规则结束时间，秒级(s)时间戳。结束时间需要大于当前时间
+                     * @return EndTime 屏蔽规则结束时间，秒级(s)时间戳。结束时间需要大于当前时间
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置屏蔽结束时间（秒级时间戳）。
-                     * @param _endTime 屏蔽结束时间（秒级时间戳）。
+                     * 设置屏蔽规则结束时间，秒级(s)时间戳。结束时间需要大于当前时间
+                     * @param _endTime 屏蔽规则结束时间，秒级(s)时间戳。结束时间需要大于当前时间
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -171,19 +171,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通知渠道组id。
+                     * 通知渠道组id。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取通知渠道组id
                      */
                     std::string m_alarmNoticeId;
                     bool m_alarmNoticeIdHasBeenSet;
 
                     /**
-                     * 屏蔽开始时间（秒级时间戳）。
+                     * 屏蔽规则开始时间，秒级(s)时间戳。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 屏蔽结束时间（秒级时间戳）。
+                     * 屏蔽规则结束时间，秒级(s)时间戳。结束时间需要大于当前时间
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

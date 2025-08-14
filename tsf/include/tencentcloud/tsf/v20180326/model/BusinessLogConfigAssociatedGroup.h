@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
-                     * 获取部署组所属应用类型
-                     * @return ApplicationType 部署组所属应用类型
+                     * 获取部署组所属应用类型，C：容器应用，V：虚拟机应用
+                     * @return ApplicationType 部署组所属应用类型，C：容器应用，V：虚拟机应用
                      * 
                      */
                     std::string GetApplicationType() const;
 
                     /**
-                     * 设置部署组所属应用类型
-                     * @param _applicationType 部署组所属应用类型
+                     * 设置部署组所属应用类型，C：容器应用，V：虚拟机应用
+                     * @param _applicationType 部署组所属应用类型，C：容器应用，V：虚拟机应用
                      * 
                      */
                     void SetApplicationType(const std::string& _applicationType);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取部署组所属集群类型
-                     * @return ClusterType 部署组所属集群类型
+                     * 获取部署组所属集群类型，C：容器集群，V：虚拟机集群
+                     * @return ClusterType 部署组所属集群类型，C：容器集群，V：虚拟机集群
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置部署组所属集群类型
-                     * @param _clusterType 部署组所属集群类型
+                     * 设置部署组所属集群类型，C：容器集群，V：虚拟机集群
+                     * @param _clusterType 部署组所属集群类型，C：容器集群，V：虚拟机集群
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取部署组关联日志配置时间
-                     * @return AssociatedTime 部署组关联日志配置时间
+                     * 获取部署组关联日志配置时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return AssociatedTime 部署组关联日志配置时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetAssociatedTime() const;
 
                     /**
-                     * 设置部署组关联日志配置时间
-                     * @param _associatedTime 部署组关联日志配置时间
+                     * 设置部署组关联日志配置时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _associatedTime 部署组关联日志配置时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetAssociatedTime(const std::string& _associatedTime);
@@ -304,7 +304,7 @@ namespace TencentCloud
                     bool m_applicationNameHasBeenSet;
 
                     /**
-                     * 部署组所属应用类型
+                     * 部署组所属应用类型，C：容器应用，V：虚拟机应用
                      */
                     std::string m_applicationType;
                     bool m_applicationTypeHasBeenSet;
@@ -334,13 +334,13 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 部署组所属集群类型
+                     * 部署组所属集群类型，C：容器集群，V：虚拟机集群
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 部署组关联日志配置时间
+                     * 部署组关联日志配置时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_associatedTime;
                     bool m_associatedTimeHasBeenSet;

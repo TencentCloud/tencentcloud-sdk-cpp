@@ -207,15 +207,15 @@ namespace TencentCloud
                     bool OffInstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取部署组状态
-                     * @return GroupStatus 部署组状态
+                     * 获取部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
+                     * @return GroupStatus 部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
                      * 
                      */
                     std::string GetGroupStatus() const;
 
                     /**
-                     * 设置部署组状态
-                     * @param _groupStatus 部署组状态
+                     * 设置部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
+                     * @param _groupStatus 部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
                      * 
                      */
                     void SetGroupStatus(const std::string& _groupStatus);
@@ -321,7 +321,7 @@ namespace TencentCloud
                     bool m_offInstanceCountHasBeenSet;
 
                     /**
-                     * 部署组状态
+                     * 部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
                      */
                     std::string m_groupStatus;
                     bool m_groupStatusHasBeenSet;

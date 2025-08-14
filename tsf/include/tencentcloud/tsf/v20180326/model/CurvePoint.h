@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取该坐标点时间戳
-                     * @return Timestamp 该坐标点时间戳
+                     * 获取该坐标点时间戳，单位毫秒
+                     * @return Timestamp 该坐标点时间戳，单位毫秒
                      * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
-                     * 设置该坐标点时间戳
-                     * @param _timestamp 该坐标点时间戳
+                     * 设置该坐标点时间戳，单位毫秒
+                     * @param _timestamp 该坐标点时间戳，单位毫秒
                      * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 该坐标点时间戳
+                     * 该坐标点时间戳，单位毫秒
                      */
                     std::string m_timestamp;
                     bool m_timestampHasBeenSet;

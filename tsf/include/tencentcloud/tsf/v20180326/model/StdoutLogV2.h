@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取日志时间戳
-                     * @return Timestamp 日志时间戳
+                     * 获取日志时间戳，单位毫秒
+                     * @return Timestamp 日志时间戳，单位毫秒
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
-                     * 设置日志时间戳
-                     * @param _timestamp 日志时间戳
+                     * 设置日志时间戳，单位毫秒
+                     * @param _timestamp 日志时间戳，单位毫秒
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 日志时间戳
+                     * 日志时间戳，单位毫秒
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;

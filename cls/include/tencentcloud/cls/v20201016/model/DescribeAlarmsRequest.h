@@ -48,44 +48,52 @@ namespace TencentCloud
 - 按照【告警策略名称】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：test-alarm
 
 alarmId
 - 按照【告警策略ID】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：alarm-b60cf034-c3d6-4b01-xxxx-4e877ebb4751
 
 topicId
 - 按照【监控对象的日志主题ID】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：6766f83d-659e-xxxx-a8f7-9104a1012743
 
 enable
 - 按照【启用状态】进行过滤。
 - 类型：String
 - 备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.
 - 必选：否
+- 示例：true
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * @return Filters name
 - 按照【告警策略名称】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：test-alarm
 
 alarmId
 - 按照【告警策略ID】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：alarm-b60cf034-c3d6-4b01-xxxx-4e877ebb4751
 
 topicId
 - 按照【监控对象的日志主题ID】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：6766f83d-659e-xxxx-a8f7-9104a1012743
 
 enable
 - 按照【启用状态】进行过滤。
 - 类型：String
 - 备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.
 - 必选：否
+- 示例：true
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * 
@@ -97,44 +105,52 @@ enable
 - 按照【告警策略名称】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：test-alarm
 
 alarmId
 - 按照【告警策略ID】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：alarm-b60cf034-c3d6-4b01-xxxx-4e877ebb4751
 
 topicId
 - 按照【监控对象的日志主题ID】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：6766f83d-659e-xxxx-a8f7-9104a1012743
 
 enable
 - 按照【启用状态】进行过滤。
 - 类型：String
 - 备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.
 - 必选：否
+- 示例：true
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * @param _filters name
 - 按照【告警策略名称】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：test-alarm
 
 alarmId
 - 按照【告警策略ID】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：alarm-b60cf034-c3d6-4b01-xxxx-4e877ebb4751
 
 topicId
 - 按照【监控对象的日志主题ID】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：6766f83d-659e-xxxx-a8f7-9104a1012743
 
 enable
 - 按照【启用状态】进行过滤。
 - 类型：String
 - 备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.
 - 必选：否
+- 示例：true
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * 
@@ -197,22 +213,26 @@ enable
 - 按照【告警策略名称】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：test-alarm
 
 alarmId
 - 按照【告警策略ID】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：alarm-b60cf034-c3d6-4b01-xxxx-4e877ebb4751
 
 topicId
 - 按照【监控对象的日志主题ID】进行过滤。
 - 类型：String
 - 必选：否
+- 示例：6766f83d-659e-xxxx-a8f7-9104a1012743
 
 enable
 - 按照【启用状态】进行过滤。
 - 类型：String
 - 备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.
 - 必选：否
+- 示例：true
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */

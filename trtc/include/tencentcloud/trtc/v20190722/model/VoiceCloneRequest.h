@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool APIKeyHasBeenSet() const;
 
                     /**
-                     * 获取声音克隆的名字
-                     * @return VoiceName 声音克隆的名字
+                     * 获取声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
+                     * @return VoiceName 声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
                      * 
                      */
                     std::string GetVoiceName() const;
 
                     /**
-                     * 设置声音克隆的名字
-                     * @param _voiceName 声音克隆的名字
+                     * 设置声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
+                     * @param _voiceName 声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
                      * 
                      */
                     void SetVoiceName(const std::string& _voiceName);
@@ -162,7 +162,7 @@ namespace TencentCloud
                     bool m_aPIKeyHasBeenSet;
 
                     /**
-                     * 声音克隆的名字
+                     * 声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
                      */
                     std::string m_voiceName;
                     bool m_voiceNameHasBeenSet;

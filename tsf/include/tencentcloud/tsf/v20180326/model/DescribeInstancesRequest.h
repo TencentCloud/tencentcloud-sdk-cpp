@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
+                     * 获取过滤条件，name表示过滤字段，value表示过滤字段值。
+                     * @return Filters 过滤条件，name表示过滤字段，value表示过滤字段值。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件
-                     * @param _filters 过滤条件
+                     * 设置过滤条件，name表示过滤字段，value表示过滤字段值。
+                     * @param _filters 过滤条件，name表示过滤字段，value表示过滤字段值。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -109,7 +109,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件
+                     * 过滤条件，name表示过滤字段，value表示过滤字段值。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

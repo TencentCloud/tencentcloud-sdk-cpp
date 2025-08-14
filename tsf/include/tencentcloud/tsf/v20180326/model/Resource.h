@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源ID
-                     * @return ResourceId 资源ID
+                     * 获取资源ID，调用[DescribeResource](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)查询接口获取
+                     * @return ResourceId 资源ID，调用[DescribeResource](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)查询接口获取
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID
-                     * @param _resourceId 资源ID
+                     * 设置资源ID，调用[DescribeResource](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)查询接口获取
+                     * @param _resourceId 资源ID，调用[DescribeResource](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)查询接口获取
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源编码
-                     * @return ResourceCode 资源编码
+                     * 获取资源编码，枚举值描述【cluster、namespace、config】
+                     * @return ResourceCode 资源编码，枚举值描述【cluster、namespace、config】
                      * 
                      */
                     std::string GetResourceCode() const;
 
                     /**
-                     * 设置资源编码
-                     * @param _resourceCode 资源编码
+                     * 设置资源编码，枚举值描述【cluster、namespace、config】
+                     * @param _resourceCode 资源编码，枚举值描述【cluster、namespace、config】
                      * 
                      */
                     void SetResourceCode(const std::string& _resourceCode);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取资源所属产品编码
-                     * @return ServiceCode 资源所属产品编码
+                     * 获取资源所属产品编码，枚举值描述【tsf】
+                     * @return ServiceCode 资源所属产品编码，枚举值描述【tsf】
                      * 
                      */
                     std::string GetServiceCode() const;
 
                     /**
-                     * 设置资源所属产品编码
-                     * @param _serviceCode 资源所属产品编码
+                     * 设置资源所属产品编码，枚举值描述【tsf】
+                     * @param _serviceCode 资源所属产品编码，枚举值描述【tsf】
                      * 
                      */
                     void SetServiceCode(const std::string& _serviceCode);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ServiceCodeHasBeenSet() const;
 
                     /**
-                     * 获取选取资源使用的Action
-                     * @return ResourceAction 选取资源使用的Action
+                     * 获取选取资源使用的Action，枚举值描述【DescribeSimpleCluster、DescribeLanes、DescribeTaskRecords】
+                     * @return ResourceAction 选取资源使用的Action，枚举值描述【DescribeSimpleCluster、DescribeLanes、DescribeTaskRecords】
                      * 
                      */
                     std::string GetResourceAction() const;
 
                     /**
-                     * 设置选取资源使用的Action
-                     * @param _resourceAction 选取资源使用的Action
+                     * 设置选取资源使用的Action，枚举值描述【DescribeSimpleCluster、DescribeLanes、DescribeTaskRecords】
+                     * @param _resourceAction 选取资源使用的Action，枚举值描述【DescribeSimpleCluster、DescribeLanes、DescribeTaskRecords】
                      * 
                      */
                     void SetResourceAction(const std::string& _resourceAction);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ResourceActionHasBeenSet() const;
 
                     /**
-                     * 获取资源数据查询的ID字段名
-                     * @return IdField 资源数据查询的ID字段名
+                     * 获取资源数据查询的ID字段名，调用[DescribeResource](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)查询接口获取
+                     * @return IdField 资源数据查询的ID字段名，调用[DescribeResource](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)查询接口获取
                      * 
                      */
                     std::string GetIdField() const;
 
                     /**
-                     * 设置资源数据查询的ID字段名
-                     * @param _idField 资源数据查询的ID字段名
+                     * 设置资源数据查询的ID字段名，调用[DescribeResource](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)查询接口获取
+                     * @param _idField 资源数据查询的ID字段名，调用[DescribeResource](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)查询接口获取
                      * 
                      */
                     void SetIdField(const std::string& _idField);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool SelectIdsFieldHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreationTime 创建时间
+                     * 获取创建时间，时间戳格式【Long】
+                     * @return CreationTime 创建时间，时间戳格式【Long】
                      * 
                      */
                     int64_t GetCreationTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _creationTime 创建时间
+                     * 设置创建时间，时间戳格式【Long】
+                     * @param _creationTime 创建时间，时间戳格式【Long】
                      * 
                      */
                     void SetCreationTime(const int64_t& _creationTime);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool CreationTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后更新时间
-                     * @return LastUpdateTime 最后更新时间
+                     * 获取最后更新时间，时间戳格式【Long】
+                     * @return LastUpdateTime 最后更新时间，时间戳格式【Long】
                      * 
                      */
                     int64_t GetLastUpdateTime() const;
 
                     /**
-                     * 设置最后更新时间
-                     * @param _lastUpdateTime 最后更新时间
+                     * 设置最后更新时间，时间戳格式【Long】
+                     * @param _lastUpdateTime 最后更新时间，时间戳格式【Long】
                      * 
                      */
                     void SetLastUpdateTime(const int64_t& _lastUpdateTime);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool SearchWordFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序
-                     * @return Index 排序
+                     * 获取排序，枚举值描述【10、20、77】
+                     * @return Index 排序，枚举值描述【10、20、77】
                      * 
                      */
                     int64_t GetIndex() const;
 
                     /**
-                     * 设置排序
-                     * @param _index 排序
+                     * 设置排序，枚举值描述【10、20、77】
+                     * @param _index 排序，枚举值描述【10、20、77】
                      * 
                      */
                     void SetIndex(const int64_t& _index);
@@ -364,13 +364,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源ID
+                     * 资源ID，调用[DescribeResource](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)查询接口获取
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源编码
+                     * 资源编码，枚举值描述【cluster、namespace、config】
                      */
                     std::string m_resourceCode;
                     bool m_resourceCodeHasBeenSet;
@@ -382,19 +382,19 @@ namespace TencentCloud
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 资源所属产品编码
+                     * 资源所属产品编码，枚举值描述【tsf】
                      */
                     std::string m_serviceCode;
                     bool m_serviceCodeHasBeenSet;
 
                     /**
-                     * 选取资源使用的Action
+                     * 选取资源使用的Action，枚举值描述【DescribeSimpleCluster、DescribeLanes、DescribeTaskRecords】
                      */
                     std::string m_resourceAction;
                     bool m_resourceActionHasBeenSet;
 
                     /**
-                     * 资源数据查询的ID字段名
+                     * 资源数据查询的ID字段名，调用[DescribeResource](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)查询接口获取
                      */
                     std::string m_idField;
                     bool m_idFieldHasBeenSet;
@@ -412,13 +412,13 @@ namespace TencentCloud
                     bool m_selectIdsFieldHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间，时间戳格式【Long】
                      */
                     int64_t m_creationTime;
                     bool m_creationTimeHasBeenSet;
 
                     /**
-                     * 最后更新时间
+                     * 最后更新时间，时间戳格式【Long】
                      */
                     int64_t m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;
@@ -448,7 +448,7 @@ namespace TencentCloud
                     bool m_searchWordFieldHasBeenSet;
 
                     /**
-                     * 排序
+                     * 排序，枚举值描述【10、20、77】
                      */
                     int64_t m_index;
                     bool m_indexHasBeenSet;

@@ -58,7 +58,7 @@ namespace TencentCloud
 按照【告警渠道回调配置渠道类型】进行过滤。
 类型：String
 必选：否
-
+枚举值：WeCom，DingTalk，Lark，Http
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * @return Filters - name
 按照【告警渠道回调配置名称】进行过滤。
@@ -74,7 +74,7 @@ namespace TencentCloud
 按照【告警渠道回调配置渠道类型】进行过滤。
 类型：String
 必选：否
-
+枚举值：WeCom，DingTalk，Lark，Http
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * 
                      */
@@ -95,7 +95,7 @@ namespace TencentCloud
 按照【告警渠道回调配置渠道类型】进行过滤。
 类型：String
 必选：否
-
+枚举值：WeCom，DingTalk，Lark，Http
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * @param _filters - name
 按照【告警渠道回调配置名称】进行过滤。
@@ -111,7 +111,7 @@ namespace TencentCloud
 按照【告警渠道回调配置渠道类型】进行过滤。
 类型：String
 必选：否
-
+枚举值：WeCom，DingTalk，Lark，Http
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * 
                      */
@@ -183,7 +183,7 @@ namespace TencentCloud
 按照【告警渠道回调配置渠道类型】进行过滤。
 类型：String
 必选：否
-
+枚举值：WeCom，DingTalk，Lark，Http
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      */
                     std::vector<Filter> m_filters;

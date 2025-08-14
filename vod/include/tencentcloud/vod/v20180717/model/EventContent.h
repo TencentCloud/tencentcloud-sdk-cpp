@@ -51,6 +51,7 @@
 #include <tencentcloud/vod/v20180717/model/MediaCastEvent.h>
 #include <tencentcloud/vod/v20180717/model/PersistenceCompleteTask.h>
 #include <tencentcloud/vod/v20180717/model/ComplexAdaptiveDynamicStreamingTask.h>
+#include <tencentcloud/vod/v20180717/model/ProcessMediaByMPS.h>
 
 
 namespace TencentCloud
@@ -115,6 +116,7 @@ namespace TencentCloud
 <li>QualityEnhanceComplete：音画质重生任务完成；</li>
 <li>PersistenceComplete：剪辑固化完成；</li>
 <li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
+<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -141,6 +143,7 @@ namespace TencentCloud
 <li>QualityEnhanceComplete：音画质重生任务完成；</li>
 <li>PersistenceComplete：剪辑固化完成；</li>
 <li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
+<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -172,6 +175,7 @@ namespace TencentCloud
 <li>QualityEnhanceComplete：音画质重生任务完成；</li>
 <li>PersistenceComplete：剪辑固化完成；</li>
 <li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
+<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -198,6 +202,7 @@ namespace TencentCloud
 <li>QualityEnhanceComplete：音画质重生任务完成；</li>
 <li>PersistenceComplete：剪辑固化完成；</li>
 <li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
+<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -890,6 +895,27 @@ namespace TencentCloud
                      */
                     bool ComplexAdaptiveDynamicStreamingCompleteEventHasBeenSet() const;
 
+                    /**
+                     * 获取MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。
+                     * @return ProcessMediaByMPSCompleteEvent MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。
+                     * 
+                     */
+                    ProcessMediaByMPS GetProcessMediaByMPSCompleteEvent() const;
+
+                    /**
+                     * 设置MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。
+                     * @param _processMediaByMPSCompleteEvent MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。
+                     * 
+                     */
+                    void SetProcessMediaByMPSCompleteEvent(const ProcessMediaByMPS& _processMediaByMPSCompleteEvent);
+
+                    /**
+                     * 判断参数 ProcessMediaByMPSCompleteEvent 是否已赋值
+                     * @return ProcessMediaByMPSCompleteEvent 是否已赋值
+                     * 
+                     */
+                    bool ProcessMediaByMPSCompleteEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -919,6 +945,7 @@ namespace TencentCloud
 <li>QualityEnhanceComplete：音画质重生任务完成；</li>
 <li>PersistenceComplete：剪辑固化完成；</li>
 <li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
+<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -1117,6 +1144,12 @@ namespace TencentCloud
                      */
                     ComplexAdaptiveDynamicStreamingTask m_complexAdaptiveDynamicStreamingCompleteEvent;
                     bool m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet;
+
+                    /**
+                     * MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。
+                     */
+                    ProcessMediaByMPS m_processMediaByMPSCompleteEvent;
+                    bool m_processMediaByMPSCompleteEventHasBeenSet;
 
                 };
             }

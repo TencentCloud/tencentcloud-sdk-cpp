@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署组id
-                     * @return GroupId 部署组id
+                     * 获取部署组ID
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看。
+                     * @return GroupId 部署组ID
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组id
-                     * @param _groupId 部署组id
+                     * 设置部署组ID
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看。
+                     * @param _groupId 部署组ID
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -89,15 +93,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
-                     * @return ClusterType 集群类型
+                     * 获取集群类型，C：容器集群，V：虚拟机集群
+                     * @return ClusterType 集群类型，C：容器集群，V：虚拟机集群
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型
-                     * @param _clusterType 集群类型
+                     * 设置集群类型，C：容器集群，V：虚拟机集群
+                     * @param _clusterType 集群类型，C：容器集群，V：虚拟机集群
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -110,15 +114,19 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取集群ID
+可通过[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已经创建的集群列表，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1)查看。
+                     * @return ClusterId 集群ID
+可通过[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已经创建的集群列表，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1)查看。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置集群ID
+可通过[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已经创建的集群列表，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1)查看。
+                     * @param _clusterId 集群ID
+可通过[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已经创建的集群列表，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1)查看。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -173,15 +181,15 @@ namespace TencentCloud
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
-                     * 获取绑定时间
-                     * @return AssociateTime 绑定时间
+                     * 获取绑定时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return AssociateTime 绑定时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetAssociateTime() const;
 
                     /**
-                     * 设置绑定时间
-                     * @param _associateTime 绑定时间
+                     * 设置绑定时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _associateTime 绑定时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetAssociateTime(const std::string& _associateTime);
@@ -196,7 +204,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部署组id
+                     * 部署组ID
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -208,13 +217,14 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 集群类型
+                     * 集群类型，C：容器集群，V：虚拟机集群
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 集群id
+                     * 集群ID
+可通过[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已经创建的集群列表，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1)查看。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -232,7 +242,7 @@ namespace TencentCloud
                     bool m_namespaceNameHasBeenSet;
 
                     /**
-                     * 绑定时间
+                     * 绑定时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_associateTime;
                     bool m_associateTimeHasBeenSet;

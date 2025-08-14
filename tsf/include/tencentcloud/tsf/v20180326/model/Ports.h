@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TargetPortHasBeenSet() const;
 
                     /**
-                     * 获取端口协议
-                     * @return Protocol 端口协议
+                     * 获取端口协议，TCP或者UDP
+                     * @return Protocol 端口协议，TCP或者UDP
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置端口协议
-                     * @param _protocol 端口协议
+                     * 设置端口协议，TCP或者UDP
+                     * @param _protocol 端口协议，TCP或者UDP
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_targetPortHasBeenSet;
 
                     /**
-                     * 端口协议
+                     * 端口协议，TCP或者UDP
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

@@ -176,6 +176,48 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取集锦标题。
+                     * @return Title 集锦标题。
+                     * 
+                     */
+                    std::string GetTitle() const;
+
+                    /**
+                     * 设置集锦标题。
+                     * @param _title 集锦标题。
+                     * 
+                     */
+                    void SetTitle(const std::string& _title);
+
+                    /**
+                     * 判断参数 Title 是否已赋值
+                     * @return Title 是否已赋值
+                     * 
+                     */
+                    bool TitleHasBeenSet() const;
+
+                    /**
+                     * 获取集锦概要。
+                     * @return Summary 集锦概要。
+                     * 
+                     */
+                    std::string GetSummary() const;
+
+                    /**
+                     * 设置集锦概要。
+                     * @param _summary 集锦概要。
+                     * 
+                     */
+                    void SetSummary(const std::string& _summary);
+
+                    /**
+                     * 判断参数 Summary 是否已赋值
+                     * @return Summary 是否已赋值
+                     * 
+                     */
+                    bool SummaryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -214,6 +256,18 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 集锦标题。
+                     */
+                    std::string m_title;
+                    bool m_titleHasBeenSet;
+
+                    /**
+                     * 集锦概要。
+                     */
+                    std::string m_summary;
+                    bool m_summaryHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ CreateRabbitMQServerlessExchangeRequest::CreateRabbitMQServerlessExchangeRequest
     m_durableHasBeenSet(false),
     m_autoDeleteHasBeenSet(false),
     m_internalHasBeenSet(false),
-    m_alternateExchangeHasBeenSet(false)
+    m_alternateExchangeHasBeenSet(false),
+    m_delayedExchangeTypeHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string CreateRabbitMQServerlessExchangeRequest::ToJsonString() const
         string key = "AlternateExchange";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_alternateExchange.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_delayedExchangeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayedExchangeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_delayedExchangeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void CreateRabbitMQServerlessExchangeRequest::SetAlternateExchange(const string&
 bool CreateRabbitMQServerlessExchangeRequest::AlternateExchangeHasBeenSet() const
 {
     return m_alternateExchangeHasBeenSet;
+}
+
+string CreateRabbitMQServerlessExchangeRequest::GetDelayedExchangeType() const
+{
+    return m_delayedExchangeType;
+}
+
+void CreateRabbitMQServerlessExchangeRequest::SetDelayedExchangeType(const string& _delayedExchangeType)
+{
+    m_delayedExchangeType = _delayedExchangeType;
+    m_delayedExchangeTypeHasBeenSet = true;
+}
+
+bool CreateRabbitMQServerlessExchangeRequest::DelayedExchangeTypeHasBeenSet() const
+{
+    return m_delayedExchangeTypeHasBeenSet;
 }
 
 

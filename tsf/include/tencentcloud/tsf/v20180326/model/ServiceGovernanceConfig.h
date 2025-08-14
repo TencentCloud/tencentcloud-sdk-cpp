@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool EnableGovernanceHasBeenSet() const;
 
                     /**
-                     * 获取服务治理类型（枚举：SHARE、EXCLUSIVE）
-                     * @return GovernanceType 服务治理类型（枚举：SHARE、EXCLUSIVE）
+                     * 获取服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
+                     * @return GovernanceType 服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
                      * 
                      */
                     std::string GetGovernanceType() const;
 
                     /**
-                     * 设置服务治理类型（枚举：SHARE、EXCLUSIVE）
-                     * @param _governanceType 服务治理类型（枚举：SHARE、EXCLUSIVE）
+                     * 设置服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
+                     * @param _governanceType 服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
                      * 
                      */
                     void SetGovernanceType(const std::string& _governanceType);
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_enableGovernanceHasBeenSet;
 
                     /**
-                     * 服务治理类型（枚举：SHARE、EXCLUSIVE）
+                     * 服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
                      */
                     std::string m_governanceType;
                     bool m_governanceTypeHasBeenSet;

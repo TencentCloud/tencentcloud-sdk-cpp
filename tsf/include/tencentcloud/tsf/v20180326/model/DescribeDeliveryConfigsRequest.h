@@ -106,15 +106,19 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取数据集idList
-                     * @return ProgramIdList 数据集idList
+                     * 获取数据集ID列表
+可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a22gwdwa)进行查看
+                     * @return ProgramIdList 数据集ID列表
+可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a22gwdwa)进行查看
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置数据集idList
-                     * @param _programIdList 数据集idList
+                     * 设置数据集ID列表
+可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a22gwdwa)进行查看
+                     * @param _programIdList 数据集ID列表
+可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a22gwdwa)进行查看
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -127,15 +131,19 @@ namespace TencentCloud
                     bool ProgramIdListHasBeenSet() const;
 
                     /**
-                     * 获取ConfigIdList
-                     * @return ConfigIdList ConfigIdList
+                     * 获取日志配置项ID列表
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
+                     * @return ConfigIdList 日志配置项ID列表
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * 
                      */
                     std::vector<std::string> GetConfigIdList() const;
 
                     /**
-                     * 设置ConfigIdList
-                     * @param _configIdList ConfigIdList
+                     * 设置日志配置项ID列表
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
+                     * @param _configIdList 日志配置项ID列表
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * 
                      */
                     void SetConfigIdList(const std::vector<std::string>& _configIdList);
@@ -168,13 +176,15 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 数据集idList
+                     * 数据集ID列表
+可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a22gwdwa)进行查看
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;
 
                     /**
-                     * ConfigIdList
+                     * 日志配置项ID列表
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      */
                     std::vector<std::string> m_configIdList;
                     bool m_configIdListHasBeenSet;

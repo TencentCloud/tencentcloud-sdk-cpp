@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警渠道回调配置ID。
-                     * @return WebCallbackId 告警渠道回调配置ID。
+                     * 获取告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID
+                     * @return WebCallbackId 告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID
                      * 
                      */
                     std::string GetWebCallbackId() const;
 
                     /**
-                     * 设置告警渠道回调配置ID。
-                     * @param _webCallbackId 告警渠道回调配置ID。
+                     * 设置告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID
+                     * @param _webCallbackId 告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID
                      * 
                      */
                     void SetWebCallbackId(const std::string& _webCallbackId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警渠道回调配置ID。
+                     * 告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID
                      */
                     std::string m_webCallbackId;
                     bool m_webCallbackIdHasBeenSet;

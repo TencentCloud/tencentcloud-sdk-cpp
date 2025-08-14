@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取项目ID，用户已创建项目的唯一ID,非自定义
-                     * @return ProjectId 项目ID，用户已创建项目的唯一ID,非自定义
+                     * 获取项目ID，用户已创建项目的唯一ID。请在控制台账号中心的项目管理中复制项目 ID。
+                     * @return ProjectId 项目ID，用户已创建项目的唯一ID。请在控制台账号中心的项目管理中复制项目 ID。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID，用户已创建项目的唯一ID,非自定义
-                     * @param _projectId 项目ID，用户已创建项目的唯一ID,非自定义
+                     * 设置项目ID，用户已创建项目的唯一ID。请在控制台账号中心的项目管理中复制项目 ID。
+                     * @param _projectId 项目ID，用户已创建项目的唯一ID。请在控制台账号中心的项目管理中复制项目 ID。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 项目ID，用户已创建项目的唯一ID,非自定义
+                     * 项目ID，用户已创建项目的唯一ID。请在控制台账号中心的项目管理中复制项目 ID。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;

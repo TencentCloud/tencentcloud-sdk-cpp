@@ -29,6 +29,8 @@ TargetGroupInfo::TargetGroupInfo() :
     m_updatedTimeHasBeenSet(false),
     m_associatedRuleHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_scheduleAlgorithmHasBeenSet(false),
+    m_healthCheckHasBeenSet(false),
     m_targetGroupTypeHasBeenSet(false),
     m_associatedRuleCountHasBeenSet(false),
     m_registeredInstancesCountHasBeenSet(false),
@@ -133,6 +135,33 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleAlgorithm") && !value["ScheduleAlgorithm"].IsNull())
+    {
+        if (!value["ScheduleAlgorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.ScheduleAlgorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleAlgorithm = string(value["ScheduleAlgorithm"].GetString());
+        m_scheduleAlgorithmHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheck") && !value["HealthCheck"].IsNull())
+    {
+        if (!value["HealthCheck"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.HealthCheck` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_healthCheck.Deserialize(value["HealthCheck"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_healthCheckHasBeenSet = true;
     }
 
     if (value.HasMember("TargetGroupType") && !value["TargetGroupType"].IsNull())
@@ -301,6 +330,23 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheck.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_targetGroupTypeHasBeenSet)
@@ -503,6 +549,38 @@ void TargetGroupInfo::SetProtocol(const string& _protocol)
 bool TargetGroupInfo::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+string TargetGroupInfo::GetScheduleAlgorithm() const
+{
+    return m_scheduleAlgorithm;
+}
+
+void TargetGroupInfo::SetScheduleAlgorithm(const string& _scheduleAlgorithm)
+{
+    m_scheduleAlgorithm = _scheduleAlgorithm;
+    m_scheduleAlgorithmHasBeenSet = true;
+}
+
+bool TargetGroupInfo::ScheduleAlgorithmHasBeenSet() const
+{
+    return m_scheduleAlgorithmHasBeenSet;
+}
+
+TargetGroupHealthCheck TargetGroupInfo::GetHealthCheck() const
+{
+    return m_healthCheck;
+}
+
+void TargetGroupInfo::SetHealthCheck(const TargetGroupHealthCheck& _healthCheck)
+{
+    m_healthCheck = _healthCheck;
+    m_healthCheckHasBeenSet = true;
+}
+
+bool TargetGroupInfo::HealthCheckHasBeenSet() const
+{
+    return m_healthCheckHasBeenSet;
 }
 
 string TargetGroupInfo::GetTargetGroupType() const

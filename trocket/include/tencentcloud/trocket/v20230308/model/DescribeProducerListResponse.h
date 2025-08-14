@@ -14,39 +14,39 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_POSTGRES_V20170312_MODEL_DESCRIBESERVERLESSDBINSTANCESRESPONSE_H_
-#define TENCENTCLOUD_POSTGRES_V20170312_MODEL_DESCRIBESERVERLESSDBINSTANCESRESPONSE_H_
+#ifndef TENCENTCLOUD_TROCKET_V20230308_MODEL_DESCRIBEPRODUCERLISTRESPONSE_H_
+#define TENCENTCLOUD_TROCKET_V20230308_MODEL_DESCRIBEPRODUCERLISTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/postgres/v20170312/model/ServerlessDBInstance.h>
+#include <tencentcloud/trocket/v20230308/model/ProducerInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Postgres
+    namespace Trocket
     {
-        namespace V20170312
+        namespace V20230308
         {
             namespace Model
             {
                 /**
-                * DescribeServerlessDBInstances返回参数结构体
+                * DescribeProducerList返回参数结构体
                 */
-                class DescribeServerlessDBInstancesResponse : public AbstractModel
+                class DescribeProducerListResponse : public AbstractModel
                 {
                 public:
-                    DescribeServerlessDBInstancesResponse();
-                    ~DescribeServerlessDBInstancesResponse() = default;
+                    DescribeProducerListResponse();
+                    ~DescribeProducerListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取查询结果数
-                     * @return TotalCount 查询结果数
+                     * 获取查询总数
+                     * @return TotalCount 查询总数
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,32 +59,32 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取查询结果
-                     * @return DBInstanceSet 查询结果
+                     * 获取生产者信息列表
+                     * @return ProducerList 生产者信息列表
                      * 
                      */
-                    std::vector<ServerlessDBInstance> GetDBInstanceSet() const;
+                    std::vector<ProducerInfo> GetProducerList() const;
 
                     /**
-                     * 判断参数 DBInstanceSet 是否已赋值
-                     * @return DBInstanceSet 是否已赋值
+                     * 判断参数 ProducerList 是否已赋值
+                     * @return ProducerList 是否已赋值
                      * 
                      */
-                    bool DBInstanceSetHasBeenSet() const;
+                    bool ProducerListHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 查询结果数
+                     * 查询总数
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 查询结果
+                     * 生产者信息列表
                      */
-                    std::vector<ServerlessDBInstance> m_dBInstanceSet;
-                    bool m_dBInstanceSetHasBeenSet;
+                    std::vector<ProducerInfo> m_producerList;
+                    bool m_producerListHasBeenSet;
 
                 };
             }
@@ -92,4 +92,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_POSTGRES_V20170312_MODEL_DESCRIBESERVERLESSDBINSTANCESRESPONSE_H_
+#endif // !TENCENTCLOUD_TROCKET_V20230308_MODEL_DESCRIBEPRODUCERLISTRESPONSE_H_

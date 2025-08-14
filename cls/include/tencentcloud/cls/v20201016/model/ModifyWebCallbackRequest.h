@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警渠道回调配置ID。
-                     * @return WebCallbackId 告警渠道回调配置ID。
+                     * 获取告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID
+                     * @return WebCallbackId 告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID
                      * 
                      */
                     std::string GetWebCallbackId() const;
 
                     /**
-                     * 设置告警渠道回调配置ID。
-                     * @param _webCallbackId 告警渠道回调配置ID。
+                     * 设置告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID
+                     * @param _webCallbackId 告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID
                      * 
                      */
                     void SetWebCallbackId(const std::string& _webCallbackId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool WebCallbackIdHasBeenSet() const;
 
                     /**
-                     * 获取告警渠道回调配置名称。
-                     * @return Name 告警渠道回调配置名称。
+                     * 获取告警渠道回调配置名称。最大支持255个字节
+                     * @return Name 告警渠道回调配置名称。最大支持255个字节
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置告警渠道回调配置名称。
-                     * @param _name 告警渠道回调配置名称。
+                     * 设置告警渠道回调配置名称。最大支持255个字节
+                     * @param _name 告警渠道回调配置名称。最大支持255个字节
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -172,15 +172,15 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取秘钥信息。
-                     * @return Key 秘钥信息。
+                     * 获取秘钥信息。最大支持1024个字节
+                     * @return Key 秘钥信息。最大支持1024个字节
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置秘钥信息。
-                     * @param _key 秘钥信息。
+                     * 设置秘钥信息。最大支持1024个字节
+                     * @param _key 秘钥信息。最大支持1024个字节
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -195,13 +195,13 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
                 private:
 
                     /**
-                     * 告警渠道回调配置ID。
+                     * 告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID
                      */
                     std::string m_webCallbackId;
                     bool m_webCallbackIdHasBeenSet;
 
                     /**
-                     * 告警渠道回调配置名称。
+                     * 告警渠道回调配置名称。最大支持255个字节
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -231,7 +231,7 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 秘钥信息。
+                     * 秘钥信息。最大支持1024个字节
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;

@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool EnableDetectTextHasBeenSet() const;
 
+                    /**
+                     * 获取配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景 
+                     * @return ConfigID 配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景 
+                     * 
+                     */
+                    std::string GetConfigID() const;
+
+                    /**
+                     * 设置配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景 
+                     * @param _configID 配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景 
+                     * 
+                     */
+                    void SetConfigID(const std::string& _configID);
+
+                    /**
+                     * 判断参数 ConfigID 是否已赋值
+                     * @return ConfigID 是否已赋值
+                     * 
+                     */
+                    bool ConfigIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     bool m_enableDetectText;
                     bool m_enableDetectTextHasBeenSet;
+
+                    /**
+                     * 配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景 
+                     */
+                    std::string m_configID;
+                    bool m_configIDHasBeenSet;
 
                 };
             }

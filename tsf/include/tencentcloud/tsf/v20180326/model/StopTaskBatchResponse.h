@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作成功 or 失败
-                     * @return Result 操作成功 or 失败
+                     * 获取返回 true 或 false。true：操作成功，false：操作失败
+                     * @return Result 返回 true 或 false。true：操作成功，false：操作失败
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作成功 or 失败
+                     * 返回 true 或 false。true：操作成功，false：操作失败
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

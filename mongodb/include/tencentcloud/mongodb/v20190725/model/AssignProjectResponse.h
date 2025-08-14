@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的异步任务ID列表
-                     * @return FlowIds 返回的异步任务ID列表
+                     * 获取返回的异步任务ID列表。
+                     * @return FlowIds 返回的异步任务ID列表。
                      * 
                      */
                     std::vector<uint64_t> GetFlowIds() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的异步任务ID列表
+                     * 返回的异步任务ID列表。
                      */
                     std::vector<uint64_t> m_flowIds;
                     bool m_flowIdsHasBeenSet;

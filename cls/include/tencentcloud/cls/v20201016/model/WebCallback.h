@@ -48,30 +48,30 @@ namespace TencentCloud
 
                     /**
                      * 获取回调的类型。可选值：
-- Http
-- WeCom
-- DingTalk
-- Lark
+- Http(自定义接口回调)
+- WeCom(企业微信)
+- DingTalk(钉钉)
+- Lark(飞书)
                      * @return CallbackType 回调的类型。可选值：
-- Http
-- WeCom
-- DingTalk
-- Lark
+- Http(自定义接口回调)
+- WeCom(企业微信)
+- DingTalk(钉钉)
+- Lark(飞书)
                      * 
                      */
                     std::string GetCallbackType() const;
 
                     /**
                      * 设置回调的类型。可选值：
-- Http
-- WeCom
-- DingTalk
-- Lark
+- Http(自定义接口回调)
+- WeCom(企业微信)
+- DingTalk(钉钉)
+- Lark(飞书)
                      * @param _callbackType 回调的类型。可选值：
-- Http
-- WeCom
-- DingTalk
-- Lark
+- Http(自定义接口回调)
+- WeCom(企业微信)
+- DingTalk(钉钉)
+- Lark(飞书)
                      * 
                      */
                     void SetCallbackType(const std::string& _callbackType);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取集成配置ID。
-                     * @return WebCallbackId 集成配置ID。
+                     * 获取集成配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/product/614/115229)获取集成配置ID
+                     * @return WebCallbackId 集成配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/product/614/115229)获取集成配置ID
                      * 
                      */
                     std::string GetWebCallbackId() const;
 
                     /**
-                     * 设置集成配置ID。
-                     * @param _webCallbackId 集成配置ID。
+                     * 设置集成配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/product/614/115229)获取集成配置ID
+                     * @param _webCallbackId 集成配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/product/614/115229)获取集成配置ID
                      * 
                      */
                     void SetWebCallbackId(const std::string& _webCallbackId);
@@ -341,10 +341,10 @@ namespace TencentCloud
 
                     /**
                      * 回调的类型。可选值：
-- Http
-- WeCom
-- DingTalk
-- Lark
+- Http(自定义接口回调)
+- WeCom(企业微信)
+- DingTalk(钉钉)
+- Lark(飞书)
                      */
                     std::string m_callbackType;
                     bool m_callbackTypeHasBeenSet;
@@ -357,7 +357,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 集成配置ID。
+                     * 集成配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/product/614/115229)获取集成配置ID
                      */
                     std::string m_webCallbackId;
                     bool m_webCallbackIdHasBeenSet;

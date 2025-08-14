@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间ID， 此参数必填
+可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看
                      * @return NamespaceId 命名空间ID， 此参数必填
+可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间ID， 此参数必填
+可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看
                      * @param _namespaceId 命名空间ID， 此参数必填
+可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -64,15 +68,15 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
-                     * @return Type 监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
+                     * 获取监控统计类型，必填，取值范围 SumReqAmount：请求量，AvgFailureRate：请求错误率，AvgTimeCost：平均响应耗时
+                     * @return Type 监控统计类型，必填，取值范围 SumReqAmount：请求量，AvgFailureRate：请求错误率，AvgTimeCost：平均响应耗时
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
-                     * @param _type 监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
+                     * 设置监控统计类型，必填，取值范围 SumReqAmount：请求量，AvgFailureRate：请求错误率，AvgTimeCost：平均响应耗时
+                     * @param _type 监控统计类型，必填，取值范围 SumReqAmount：请求量，AvgFailureRate：请求错误率，AvgTimeCost：平均响应耗时
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -106,15 +110,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间，默认为当天的 00:00:00
-                     * @return StartTime 查询开始时间，默认为当天的 00:00:00
+                     * 获取查询开始时间，格式为yyyy-MM-dd HH:mm:ss，默认为当天的 00:00:00
+                     * @return StartTime 查询开始时间，格式为yyyy-MM-dd HH:mm:ss，默认为当天的 00:00:00
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，默认为当天的 00:00:00
-                     * @param _startTime 查询开始时间，默认为当天的 00:00:00
+                     * 设置查询开始时间，格式为yyyy-MM-dd HH:mm:ss，默认为当天的 00:00:00
+                     * @param _startTime 查询开始时间，格式为yyyy-MM-dd HH:mm:ss，默认为当天的 00:00:00
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -127,15 +131,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间，默认为当前时间
-                     * @return EndTime 查询结束时间，默认为当前时间
+                     * 获取查询结束时间，格式为yyyy-MM-dd HH:mm:ss，默认为当前时间
+                     * @return EndTime 查询结束时间，格式为yyyy-MM-dd HH:mm:ss，默认为当前时间
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间，默认为当前时间
-                     * @param _endTime 查询结束时间，默认为当前时间
+                     * 设置查询结束时间，格式为yyyy-MM-dd HH:mm:ss，默认为当前时间
+                     * @param _endTime 查询结束时间，格式为yyyy-MM-dd HH:mm:ss，默认为当前时间
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -151,12 +155,13 @@ namespace TencentCloud
 
                     /**
                      * 命名空间ID， 此参数必填
+可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
+                     * 监控统计类型，必填，取值范围 SumReqAmount：请求量，AvgFailureRate：请求错误率，AvgTimeCost：平均响应耗时
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -168,13 +173,13 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 查询开始时间，默认为当天的 00:00:00
+                     * 查询开始时间，格式为yyyy-MM-dd HH:mm:ss，默认为当天的 00:00:00
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间，默认为当前时间
+                     * 查询结束时间，格式为yyyy-MM-dd HH:mm:ss，默认为当前时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

@@ -147,6 +147,31 @@ namespace TencentCloud
                      */
                     bool TriggerRowsHasBeenSet() const;
 
+                    /**
+                     * 获取比较关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComputeExpression 比较关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetComputeExpression() const;
+
+                    /**
+                     * 设置比较关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _computeExpression 比较关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetComputeExpression(const std::string& _computeExpression);
+
+                    /**
+                     * 判断参数 ComputeExpression 是否已赋值
+                     * @return ComputeExpression 是否已赋值
+                     * 
+                     */
+                    bool ComputeExpressionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,6 +201,13 @@ namespace TencentCloud
                      */
                     uint64_t m_triggerRows;
                     bool m_triggerRowsHasBeenSet;
+
+                    /**
+                     * 比较关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_computeExpression;
+                    bool m_computeExpressionHasBeenSet;
 
                 };
             }

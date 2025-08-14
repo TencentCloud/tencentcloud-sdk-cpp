@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
-                     * 获取应用类型
-                     * @return ApplicationType 应用类型
+                     * 获取应用类型，C表示容器应用，V表示虚拟机应用
+                     * @return ApplicationType 应用类型，C表示容器应用，V表示虚拟机应用
                      * 
                      */
                     std::string GetApplicationType() const;
 
                     /**
-                     * 设置应用类型
-                     * @param _applicationType 应用类型
+                     * 设置应用类型，C表示容器应用，V表示虚拟机应用
+                     * @param _applicationType 应用类型，C表示容器应用，V表示虚拟机应用
                      * 
                      */
                     void SetApplicationType(const std::string& _applicationType);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
-                     * @return ClusterType 集群类型
+                     * 获取集群类型，C表示容器集群，V表示虚拟机集群
+                     * @return ClusterType 集群类型，C表示容器集群，V表示虚拟机集群
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型
-                     * @param _clusterType 集群类型
+                     * 设置集群类型，C表示容器集群，V表示虚拟机集群
+                     * @param _clusterType 集群类型，C表示容器集群，V表示虚拟机集群
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -460,7 +460,7 @@ namespace TencentCloud
                     bool m_applicationNameHasBeenSet;
 
                     /**
-                     * 应用类型
+                     * 应用类型，C表示容器应用，V表示虚拟机应用
                      */
                     std::string m_applicationType;
                     bool m_applicationTypeHasBeenSet;
@@ -478,7 +478,7 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 集群类型
+                     * 集群类型，C表示容器集群，V表示虚拟机集群
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;

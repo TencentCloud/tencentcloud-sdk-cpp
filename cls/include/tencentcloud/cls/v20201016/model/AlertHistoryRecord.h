@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool TriggerCountHasBeenSet() const;
 
                     /**
-                     * 获取告警通知发送频率，单位为分钟
-                     * @return AlarmPeriod 告警通知发送频率，单位为分钟
+                     * 获取告警通知发送频率，单位为分钟(min)
+                     * @return AlarmPeriod 告警通知发送频率，单位为分钟(min)
                      * 
                      */
                     int64_t GetAlarmPeriod() const;
 
                     /**
-                     * 设置告警通知发送频率，单位为分钟
-                     * @param _alarmPeriod 告警通知发送频率，单位为分钟
+                     * 设置告警通知发送频率，单位为分钟(min)
+                     * @param _alarmPeriod 告警通知发送频率，单位为分钟(min)
                      * 
                      */
                     void SetAlarmPeriod(const int64_t& _alarmPeriod);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool NoticesHasBeenSet() const;
 
                     /**
-                     * 获取告警持续时间，单位为分钟
-                     * @return Duration 告警持续时间，单位为分钟
+                     * 获取告警持续时间，单位为分钟(min)
+                     * @return Duration 告警持续时间，单位为分钟(min)
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置告警持续时间，单位为分钟
-                     * @param _duration 告警持续时间，单位为分钟
+                     * 设置告警持续时间，单位为分钟(min)
+                     * @param _duration 告警持续时间，单位为分钟(min)
                      * 
                      */
                     void SetDuration(const int64_t& _duration);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取告警发生时间，毫秒级Unix时间戳
-                     * @return CreateTime 告警发生时间，毫秒级Unix时间戳
+                     * 获取告警发生时间，毫秒级Unix时间戳(ms)
+                     * @return CreateTime 告警发生时间，毫秒级Unix时间戳(ms)
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置告警发生时间，毫秒级Unix时间戳
-                     * @param _createTime 告警发生时间，毫秒级Unix时间戳
+                     * 设置告警发生时间，毫秒级Unix时间戳(ms)
+                     * @param _createTime 告警发生时间，毫秒级Unix时间戳(ms)
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -439,7 +439,7 @@ namespace TencentCloud
                     bool m_triggerCountHasBeenSet;
 
                     /**
-                     * 告警通知发送频率，单位为分钟
+                     * 告警通知发送频率，单位为分钟(min)
                      */
                     int64_t m_alarmPeriod;
                     bool m_alarmPeriodHasBeenSet;
@@ -451,7 +451,7 @@ namespace TencentCloud
                     bool m_noticesHasBeenSet;
 
                     /**
-                     * 告警持续时间，单位为分钟
+                     * 告警持续时间，单位为分钟(min)
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
@@ -463,7 +463,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 告警发生时间，毫秒级Unix时间戳
+                     * 告警发生时间，毫秒级Unix时间戳(ms)
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;

@@ -107,10 +107,10 @@ namespace TencentCloud
 
                     /**
                      * 获取配置id支持：
-ArticleRecognize -- 手写作文模版
+ArticleRecognize -- 手写作文模板
 默认：ArticleRecognize
                      * @return ConfigId 配置id支持：
-ArticleRecognize -- 手写作文模版
+ArticleRecognize -- 手写作文模板
 默认：ArticleRecognize
                      * 
                      */
@@ -118,10 +118,10 @@ ArticleRecognize -- 手写作文模版
 
                     /**
                      * 设置配置id支持：
-ArticleRecognize -- 手写作文模版
+ArticleRecognize -- 手写作文模板
 默认：ArticleRecognize
                      * @param _configId 配置id支持：
-ArticleRecognize -- 手写作文模版
+ArticleRecognize -- 手写作文模板
 默认：ArticleRecognize
                      * 
                      */
@@ -135,15 +135,15 @@ ArticleRecognize -- 手写作文模版
                     bool ConfigIdHasBeenSet() const;
 
                     /**
-                     * 获取模版的单个属性配置
-                     * @return Scene 模版的单个属性配置
+                     * 获取模板的单个属性配置
+                     * @return Scene 模板的单个属性配置
                      * 
                      */
                     std::string GetScene() const;
 
                     /**
-                     * 设置模版的单个属性配置
-                     * @param _scene 模版的单个属性配置
+                     * 设置模板的单个属性配置
+                     * @param _scene 模板的单个属性配置
                      * 
                      */
                     void SetScene(const std::string& _scene);
@@ -177,14 +177,14 @@ ArticleRecognize -- 手写作文模版
 
                     /**
                      * 配置id支持：
-ArticleRecognize -- 手写作文模版
+ArticleRecognize -- 手写作文模板
 默认：ArticleRecognize
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
 
                     /**
-                     * 模版的单个属性配置
+                     * 模板的单个属性配置
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;

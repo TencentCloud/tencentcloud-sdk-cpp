@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/AssociationItem.h>
+#include <tencentcloud/clb/v20180317/model/TargetGroupHealthCheck.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
 
 
@@ -227,6 +228,80 @@ namespace TencentCloud
                      * 
                      */
                     bool ProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：
+<ur>
+<li>WRR:按权重轮询。</li>
+<li>LEAST_CONN:最小连接数。</li>
+<li>IP_HASH:按IP哈希。</li>
+</ur>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleAlgorithm 调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：
+<ur>
+<li>WRR:按权重轮询。</li>
+<li>LEAST_CONN:最小连接数。</li>
+<li>IP_HASH:按IP哈希。</li>
+</ur>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScheduleAlgorithm() const;
+
+                    /**
+                     * 设置调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：
+<ur>
+<li>WRR:按权重轮询。</li>
+<li>LEAST_CONN:最小连接数。</li>
+<li>IP_HASH:按IP哈希。</li>
+</ur>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleAlgorithm 调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：
+<ur>
+<li>WRR:按权重轮询。</li>
+<li>LEAST_CONN:最小连接数。</li>
+<li>IP_HASH:按IP哈希。</li>
+</ur>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduleAlgorithm(const std::string& _scheduleAlgorithm);
+
+                    /**
+                     * 判断参数 ScheduleAlgorithm 是否已赋值
+                     * @return ScheduleAlgorithm 是否已赋值
+                     * 
+                     */
+                    bool ScheduleAlgorithmHasBeenSet() const;
+
+                    /**
+                     * 获取健康检查详情。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthCheck 健康检查详情。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TargetGroupHealthCheck GetHealthCheck() const;
+
+                    /**
+                     * 设置健康检查详情。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _healthCheck 健康检查详情。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHealthCheck(const TargetGroupHealthCheck& _healthCheck);
+
+                    /**
+                     * 判断参数 HealthCheck 是否已赋值
+                     * @return HealthCheck 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckHasBeenSet() const;
 
                     /**
                      * 获取目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。
@@ -452,6 +527,26 @@ namespace TencentCloud
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * 调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：
+<ur>
+<li>WRR:按权重轮询。</li>
+<li>LEAST_CONN:最小连接数。</li>
+<li>IP_HASH:按IP哈希。</li>
+</ur>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scheduleAlgorithm;
+                    bool m_scheduleAlgorithmHasBeenSet;
+
+                    /**
+                     * 健康检查详情。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TargetGroupHealthCheck m_healthCheck;
+                    bool m_healthCheckHasBeenSet;
 
                     /**
                      * 目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。

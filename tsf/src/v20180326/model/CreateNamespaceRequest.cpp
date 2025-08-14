@@ -31,7 +31,8 @@ CreateNamespaceRequest::CreateNamespaceRequest() :
     m_namespaceIdHasBeenSet(false),
     m_isHaEnableHasBeenSet(false),
     m_programIdHasBeenSet(false),
-    m_programIdListHasBeenSet(false)
+    m_programIdListHasBeenSet(false),
+    m_createK8sNamespaceFlagHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string CreateNamespaceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_createK8sNamespaceFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateK8sNamespaceFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_createK8sNamespaceFlag, allocator);
     }
 
 
@@ -269,6 +278,22 @@ void CreateNamespaceRequest::SetProgramIdList(const vector<string>& _programIdLi
 bool CreateNamespaceRequest::ProgramIdListHasBeenSet() const
 {
     return m_programIdListHasBeenSet;
+}
+
+bool CreateNamespaceRequest::GetCreateK8sNamespaceFlag() const
+{
+    return m_createK8sNamespaceFlag;
+}
+
+void CreateNamespaceRequest::SetCreateK8sNamespaceFlag(const bool& _createK8sNamespaceFlag)
+{
+    m_createK8sNamespaceFlag = _createK8sNamespaceFlag;
+    m_createK8sNamespaceFlagHasBeenSet = true;
+}
+
+bool CreateNamespaceRequest::CreateK8sNamespaceFlagHasBeenSet() const
+{
+    return m_createK8sNamespaceFlagHasBeenSet;
 }
 
 

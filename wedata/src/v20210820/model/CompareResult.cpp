@@ -24,7 +24,8 @@ CompareResult::CompareResult() :
     m_itemsHasBeenSet(false),
     m_totalRowsHasBeenSet(false),
     m_passRowsHasBeenSet(false),
-    m_triggerRowsHasBeenSet(false)
+    m_triggerRowsHasBeenSet(false),
+    m_computeExpressionHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome CompareResult::Deserialize(const rapidjson::Value &value)
         m_triggerRowsHasBeenSet = true;
     }
 
+    if (value.HasMember("ComputeExpression") && !value["ComputeExpression"].IsNull())
+    {
+        if (!value["ComputeExpression"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareResult.ComputeExpression` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeExpression = string(value["ComputeExpression"].GetString());
+        m_computeExpressionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,14 @@ void CompareResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TriggerRows";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_triggerRows, allocator);
+    }
+
+    if (m_computeExpressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeExpression";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computeExpression.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -194,5 +213,21 @@ void CompareResult::SetTriggerRows(const uint64_t& _triggerRows)
 bool CompareResult::TriggerRowsHasBeenSet() const
 {
     return m_triggerRowsHasBeenSet;
+}
+
+string CompareResult::GetComputeExpression() const
+{
+    return m_computeExpression;
+}
+
+void CompareResult::SetComputeExpression(const string& _computeExpression)
+{
+    m_computeExpression = _computeExpression;
+    m_computeExpressionHasBeenSet = true;
+}
+
+bool CompareResult::ComputeExpressionHasBeenSet() const
+{
+    return m_computeExpressionHasBeenSet;
 }
 

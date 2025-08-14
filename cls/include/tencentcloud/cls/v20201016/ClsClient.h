@@ -1384,7 +1384,7 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyAlarmNoticeOutcomeCallable ModifyAlarmNoticeCallable(const Model::ModifyAlarmNoticeRequest& request);
 
                 /**
-                 *该接口用于修改告警屏蔽规则。
+                 *该接口用于修改告警屏蔽规则。当告警屏蔽规则为失效中时，无法对其进行修改
                  * @param req ModifyAlarmShieldRequest
                  * @return ModifyAlarmShieldOutcome
                  */

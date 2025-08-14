@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TaskStateHasBeenSet() const;
 
                     /**
-                     * 获取部署组ID。前往应用管理 - 应用部署，部署组列表页面获取部署组ID。
-                     * @return GroupId 部署组ID。前往应用管理 - 应用部署，部署组列表页面获取部署组ID。
+                     * 获取部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。
+                     * @return GroupId 部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID。前往应用管理 - 应用部署，部署组列表页面获取部署组ID。
-                     * @param _groupId 部署组ID。前往应用管理 - 应用部署，部署组列表页面获取部署组ID。
+                     * 设置部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。
+                     * @param _groupId 部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ExecuteTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务ID列表。
-                     * @return Ids 任务ID列表。
+                     * 获取任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。
+                     * @return Ids 任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。
                      * 
                      */
                     std::vector<std::string> GetIds() const;
 
                     /**
-                     * 设置任务ID列表。
-                     * @param _ids 任务ID列表。
+                     * 设置任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。
+                     * @param _ids 任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。
                      * 
                      */
                     void SetIds(const std::vector<std::string>& _ids);
@@ -237,7 +237,7 @@ namespace TencentCloud
                     bool m_taskStateHasBeenSet;
 
                     /**
-                     * 部署组ID。前往应用管理 - 应用部署，部署组列表页面获取部署组ID。
+                     * 部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_executeTypeHasBeenSet;
 
                     /**
-                     * 任务ID列表。
+                     * 任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。
                      */
                     std::vector<std::string> m_ids;
                     bool m_idsHasBeenSet;

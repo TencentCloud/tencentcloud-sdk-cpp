@@ -69,15 +69,19 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取分析类型：query，field ，original
-                     * @return Type 分析类型：query，field ，original
+                     * 获取分析类型：query(自定义检索分析)，field(字段TOP5及占比统计) ，original(相关原始日志)
+
+                     * @return Type 分析类型：query(自定义检索分析)，field(字段TOP5及占比统计) ，original(相关原始日志)
+
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置分析类型：query，field ，original
-                     * @param _type 分析类型：query，field ，original
+                     * 设置分析类型：query(自定义检索分析)，field(字段TOP5及占比统计) ，original(相关原始日志)
+
+                     * @param _type 分析类型：query(自定义检索分析)，field(字段TOP5及占比统计) ，original(相关原始日志)
+
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -300,7 +304,8 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 分析类型：query，field ，original
+                     * 分析类型：query(自定义检索分析)，field(字段TOP5及占比统计) ，original(相关原始日志)
+
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

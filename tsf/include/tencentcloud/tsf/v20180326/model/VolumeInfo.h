@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/ConfigMapOption.h>
 #include <tencentcloud/tsf/v20180326/model/EmptyDirOption.h>
+#include <tencentcloud/tsf/v20180326/model/VolumeClaimTemplatesOption.h>
 
 
 namespace TencentCloud
@@ -153,6 +154,27 @@ namespace TencentCloud
                      */
                     bool EmptyDirOptionHasBeenSet() const;
 
+                    /**
+                     * 获取数据卷PVC声明模板
+                     * @return VolumeClaimTemplateOption 数据卷PVC声明模板
+                     * 
+                     */
+                    VolumeClaimTemplatesOption GetVolumeClaimTemplateOption() const;
+
+                    /**
+                     * 设置数据卷PVC声明模板
+                     * @param _volumeClaimTemplateOption 数据卷PVC声明模板
+                     * 
+                     */
+                    void SetVolumeClaimTemplateOption(const VolumeClaimTemplatesOption& _volumeClaimTemplateOption);
+
+                    /**
+                     * 判断参数 VolumeClaimTemplateOption 是否已赋值
+                     * @return VolumeClaimTemplateOption 是否已赋值
+                     * 
+                     */
+                    bool VolumeClaimTemplateOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +206,12 @@ namespace TencentCloud
                      */
                     EmptyDirOption m_emptyDirOption;
                     bool m_emptyDirOptionHasBeenSet;
+
+                    /**
+                     * 数据卷PVC声明模板
+                     */
+                    VolumeClaimTemplatesOption m_volumeClaimTemplateOption;
+                    bool m_volumeClaimTemplateOptionHasBeenSet;
 
                 };
             }

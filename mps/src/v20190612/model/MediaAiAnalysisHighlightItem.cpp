@@ -25,7 +25,9 @@ MediaAiAnalysisHighlightItem::MediaAiAnalysisHighlightItem() :
     m_covImgPathHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_durationHasBeenSet(false),
-    m_segmentSetHasBeenSet(false)
+    m_segmentSetHasBeenSet(false),
+    m_highlightUrlHasBeenSet(false),
+    m_covImgUrlHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,26 @@ CoreInternalOutcome MediaAiAnalysisHighlightItem::Deserialize(const rapidjson::V
         m_segmentSetHasBeenSet = true;
     }
 
+    if (value.HasMember("HighlightUrl") && !value["HighlightUrl"].IsNull())
+    {
+        if (!value["HighlightUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisHighlightItem.HighlightUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_highlightUrl = string(value["HighlightUrl"].GetString());
+        m_highlightUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("CovImgUrl") && !value["CovImgUrl"].IsNull())
+    {
+        if (!value["CovImgUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisHighlightItem.CovImgUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_covImgUrl = string(value["CovImgUrl"].GetString());
+        m_covImgUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +168,22 @@ void MediaAiAnalysisHighlightItem::ToJsonObject(rapidjson::Value &value, rapidjs
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_highlightUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighlightUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_highlightUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_covImgUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CovImgUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_covImgUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +267,37 @@ void MediaAiAnalysisHighlightItem::SetSegmentSet(const vector<HighlightSegmentIt
 bool MediaAiAnalysisHighlightItem::SegmentSetHasBeenSet() const
 {
     return m_segmentSetHasBeenSet;
+}
+
+string MediaAiAnalysisHighlightItem::GetHighlightUrl() const
+{
+    return m_highlightUrl;
+}
+
+void MediaAiAnalysisHighlightItem::SetHighlightUrl(const string& _highlightUrl)
+{
+    m_highlightUrl = _highlightUrl;
+    m_highlightUrlHasBeenSet = true;
+}
+
+bool MediaAiAnalysisHighlightItem::HighlightUrlHasBeenSet() const
+{
+    return m_highlightUrlHasBeenSet;
+}
+
+string MediaAiAnalysisHighlightItem::GetCovImgUrl() const
+{
+    return m_covImgUrl;
+}
+
+void MediaAiAnalysisHighlightItem::SetCovImgUrl(const string& _covImgUrl)
+{
+    m_covImgUrl = _covImgUrl;
+    m_covImgUrlHasBeenSet = true;
+}
+
+bool MediaAiAnalysisHighlightItem::CovImgUrlHasBeenSet() const
+{
+    return m_covImgUrlHasBeenSet;
 }
 

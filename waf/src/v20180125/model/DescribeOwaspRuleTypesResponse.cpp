@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/postgres/v20170312/model/DescribeServerlessDBInstancesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspRuleTypesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Postgres::V20170312::Model;
+using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-DescribeServerlessDBInstancesResponse::DescribeServerlessDBInstancesResponse() :
-    m_totalCountHasBeenSet(false),
-    m_dBInstanceSetHasBeenSet(false)
+DescribeOwaspRuleTypesResponse::DescribeOwaspRuleTypesResponse() :
+    m_totalHasBeenSet(false),
+    m_listHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeServerlessDBInstancesResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeOwaspRuleTypesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,63 +63,63 @@ CoreInternalOutcome DescribeServerlessDBInstancesResponse::Deserialize(const str
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
     {
-        if (!rsp["TotalCount"].IsInt64())
+        if (!rsp["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
     }
 
-    if (rsp.HasMember("DBInstanceSet") && !rsp["DBInstanceSet"].IsNull())
+    if (rsp.HasMember("List") && !rsp["List"].IsNull())
     {
-        if (!rsp["DBInstanceSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `DBInstanceSet` is not array type"));
+        if (!rsp["List"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["DBInstanceSet"];
+        const rapidjson::Value &tmpValue = rsp["List"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ServerlessDBInstance item;
+            OwaspRuleType item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_dBInstanceSet.push_back(item);
+            m_list.push_back(item);
         }
-        m_dBInstanceSetHasBeenSet = true;
+        m_listHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeServerlessDBInstancesResponse::ToJsonString() const
+string DescribeOwaspRuleTypesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_totalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "Total";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, m_total, allocator);
     }
 
-    if (m_dBInstanceSetHasBeenSet)
+    if (m_listHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DBInstanceSet";
+        string key = "List";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_dBInstanceSet.begin(); itr != m_dBInstanceSet.end(); ++itr, ++i)
+        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -138,24 +138,24 @@ string DescribeServerlessDBInstancesResponse::ToJsonString() const
 }
 
 
-int64_t DescribeServerlessDBInstancesResponse::GetTotalCount() const
+int64_t DescribeOwaspRuleTypesResponse::GetTotal() const
 {
-    return m_totalCount;
+    return m_total;
 }
 
-bool DescribeServerlessDBInstancesResponse::TotalCountHasBeenSet() const
+bool DescribeOwaspRuleTypesResponse::TotalHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
+    return m_totalHasBeenSet;
 }
 
-vector<ServerlessDBInstance> DescribeServerlessDBInstancesResponse::GetDBInstanceSet() const
+vector<OwaspRuleType> DescribeOwaspRuleTypesResponse::GetList() const
 {
-    return m_dBInstanceSet;
+    return m_list;
 }
 
-bool DescribeServerlessDBInstancesResponse::DBInstanceSetHasBeenSet() const
+bool DescribeOwaspRuleTypesResponse::ListHasBeenSet() const
 {
-    return m_dBInstanceSetHasBeenSet;
+    return m_listHasBeenSet;
 }
 
 

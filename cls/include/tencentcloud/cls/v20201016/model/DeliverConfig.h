@@ -100,15 +100,15 @@ https://cloud.tencent.com/document/product/614/18940
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID。
-                     * @return TopicId 日志主题ID。
+                     * 获取日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
+                     * @return TopicId 日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID。
-                     * @param _topicId 日志主题ID。
+                     * 设置日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
+                     * @param _topicId 日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -174,7 +174,7 @@ https://cloud.tencent.com/document/product/614/18940
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 日志主题ID。
+                     * 日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

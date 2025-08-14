@@ -83,6 +83,8 @@
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlV2Request.h>
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlV2Response.h>
+#include <tencentcloud/waf/v20180125/model/DeleteOwaspRuleStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteOwaspRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSessionRequest.h>
@@ -177,6 +179,10 @@
 #include <tencentcloud/waf/v20180125/model/DescribeModuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeObjectsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeObjectsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspRuleTypesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspRuleTypesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeOwaspWhiteRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeOwaspWhiteRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePeakPointsRequest.h>
@@ -315,6 +321,14 @@
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyObjectRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyObjectResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeActionRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeActionResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeLevelRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeLevelResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionStatusRequest.h>
@@ -463,6 +477,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteIpAccessControlV2Response> DeleteIpAccessControlV2Outcome;
                 typedef std::future<DeleteIpAccessControlV2Outcome> DeleteIpAccessControlV2OutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteIpAccessControlV2Request&, DeleteIpAccessControlV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIpAccessControlV2AsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteOwaspRuleStatusResponse> DeleteOwaspRuleStatusOutcome;
+                typedef std::future<DeleteOwaspRuleStatusOutcome> DeleteOwaspRuleStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteOwaspRuleStatusRequest&, DeleteOwaspRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOwaspRuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOwaspWhiteRuleResponse> DeleteOwaspWhiteRuleOutcome;
                 typedef std::future<DeleteOwaspWhiteRuleOutcome> DeleteOwaspWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteOwaspWhiteRuleRequest&, DeleteOwaspWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOwaspWhiteRuleAsyncHandler;
@@ -604,6 +621,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeObjectsResponse> DescribeObjectsOutcome;
                 typedef std::future<DescribeObjectsOutcome> DescribeObjectsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeObjectsRequest&, DescribeObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeObjectsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOwaspRuleTypesResponse> DescribeOwaspRuleTypesOutcome;
+                typedef std::future<DescribeOwaspRuleTypesOutcome> DescribeOwaspRuleTypesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeOwaspRuleTypesRequest&, DescribeOwaspRuleTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOwaspRuleTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOwaspRulesResponse> DescribeOwaspRulesOutcome;
+                typedef std::future<DescribeOwaspRulesOutcome> DescribeOwaspRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeOwaspRulesRequest&, DescribeOwaspRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOwaspRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOwaspWhiteRulesResponse> DescribeOwaspWhiteRulesOutcome;
                 typedef std::future<DescribeOwaspWhiteRulesOutcome> DescribeOwaspWhiteRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeOwaspWhiteRulesRequest&, DescribeOwaspWhiteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOwaspWhiteRulesAsyncHandler;
@@ -811,6 +834,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyObjectResponse> ModifyObjectOutcome;
                 typedef std::future<ModifyObjectOutcome> ModifyObjectOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyObjectRequest&, ModifyObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyObjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOwaspRuleStatusResponse> ModifyOwaspRuleStatusOutcome;
+                typedef std::future<ModifyOwaspRuleStatusOutcome> ModifyOwaspRuleStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyOwaspRuleStatusRequest&, ModifyOwaspRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspRuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOwaspRuleTypeActionResponse> ModifyOwaspRuleTypeActionOutcome;
+                typedef std::future<ModifyOwaspRuleTypeActionOutcome> ModifyOwaspRuleTypeActionOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyOwaspRuleTypeActionRequest&, ModifyOwaspRuleTypeActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspRuleTypeActionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOwaspRuleTypeLevelResponse> ModifyOwaspRuleTypeLevelOutcome;
+                typedef std::future<ModifyOwaspRuleTypeLevelOutcome> ModifyOwaspRuleTypeLevelOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyOwaspRuleTypeLevelRequest&, ModifyOwaspRuleTypeLevelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspRuleTypeLevelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOwaspRuleTypeStatusResponse> ModifyOwaspRuleTypeStatusOutcome;
+                typedef std::future<ModifyOwaspRuleTypeStatusOutcome> ModifyOwaspRuleTypeStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyOwaspRuleTypeStatusRequest&, ModifyOwaspRuleTypeStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspRuleTypeStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOwaspWhiteRuleResponse> ModifyOwaspWhiteRuleOutcome;
                 typedef std::future<ModifyOwaspWhiteRuleOutcome> ModifyOwaspWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyOwaspWhiteRuleRequest&, ModifyOwaspWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspWhiteRuleAsyncHandler;
@@ -1149,6 +1184,15 @@ namespace TencentCloud
                 DeleteIpAccessControlV2Outcome DeleteIpAccessControlV2(const Model::DeleteIpAccessControlV2Request &request);
                 void DeleteIpAccessControlV2Async(const Model::DeleteIpAccessControlV2Request& request, const DeleteIpAccessControlV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteIpAccessControlV2OutcomeCallable DeleteIpAccessControlV2Callable(const Model::DeleteIpAccessControlV2Request& request);
+
+                /**
+                 *解除门神规则的状态锁
+                 * @param req DeleteOwaspRuleStatusRequest
+                 * @return DeleteOwaspRuleStatusOutcome
+                 */
+                DeleteOwaspRuleStatusOutcome DeleteOwaspRuleStatus(const Model::DeleteOwaspRuleStatusRequest &request);
+                void DeleteOwaspRuleStatusAsync(const Model::DeleteOwaspRuleStatusRequest& request, const DeleteOwaspRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteOwaspRuleStatusOutcomeCallable DeleteOwaspRuleStatusCallable(const Model::DeleteOwaspRuleStatusRequest& request);
 
                 /**
                  *删除用户规则引擎白名单
@@ -1572,6 +1616,24 @@ namespace TencentCloud
                 DescribeObjectsOutcome DescribeObjects(const Model::DescribeObjectsRequest &request);
                 void DescribeObjectsAsync(const Model::DescribeObjectsRequest& request, const DescribeObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeObjectsOutcomeCallable DescribeObjectsCallable(const Model::DescribeObjectsRequest& request);
+
+                /**
+                 *查询规则引擎的规则类型列表
+                 * @param req DescribeOwaspRuleTypesRequest
+                 * @return DescribeOwaspRuleTypesOutcome
+                 */
+                DescribeOwaspRuleTypesOutcome DescribeOwaspRuleTypes(const Model::DescribeOwaspRuleTypesRequest &request);
+                void DescribeOwaspRuleTypesAsync(const Model::DescribeOwaspRuleTypesRequest& request, const DescribeOwaspRuleTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOwaspRuleTypesOutcomeCallable DescribeOwaspRuleTypesCallable(const Model::DescribeOwaspRuleTypesRequest& request);
+
+                /**
+                 *查询规则引擎的规则列表
+                 * @param req DescribeOwaspRulesRequest
+                 * @return DescribeOwaspRulesOutcome
+                 */
+                DescribeOwaspRulesOutcome DescribeOwaspRules(const Model::DescribeOwaspRulesRequest &request);
+                void DescribeOwaspRulesAsync(const Model::DescribeOwaspRulesRequest& request, const DescribeOwaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOwaspRulesOutcomeCallable DescribeOwaspRulesCallable(const Model::DescribeOwaspRulesRequest& request);
 
                 /**
                  *获取规则引擎白名单列表
@@ -2196,6 +2258,42 @@ namespace TencentCloud
                 ModifyObjectOutcome ModifyObject(const Model::ModifyObjectRequest &request);
                 void ModifyObjectAsync(const Model::ModifyObjectRequest& request, const ModifyObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyObjectOutcomeCallable ModifyObjectCallable(const Model::ModifyObjectRequest& request);
+
+                /**
+                 *更新规则的开关
+                 * @param req ModifyOwaspRuleStatusRequest
+                 * @return ModifyOwaspRuleStatusOutcome
+                 */
+                ModifyOwaspRuleStatusOutcome ModifyOwaspRuleStatus(const Model::ModifyOwaspRuleStatusRequest &request);
+                void ModifyOwaspRuleStatusAsync(const Model::ModifyOwaspRuleStatusRequest& request, const ModifyOwaspRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOwaspRuleStatusOutcomeCallable ModifyOwaspRuleStatusCallable(const Model::ModifyOwaspRuleStatusRequest& request);
+
+                /**
+                 *更新规则类型的防护模式
+                 * @param req ModifyOwaspRuleTypeActionRequest
+                 * @return ModifyOwaspRuleTypeActionOutcome
+                 */
+                ModifyOwaspRuleTypeActionOutcome ModifyOwaspRuleTypeAction(const Model::ModifyOwaspRuleTypeActionRequest &request);
+                void ModifyOwaspRuleTypeActionAsync(const Model::ModifyOwaspRuleTypeActionRequest& request, const ModifyOwaspRuleTypeActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOwaspRuleTypeActionOutcomeCallable ModifyOwaspRuleTypeActionCallable(const Model::ModifyOwaspRuleTypeActionRequest& request);
+
+                /**
+                 *更新规则类型的防护等级
+                 * @param req ModifyOwaspRuleTypeLevelRequest
+                 * @return ModifyOwaspRuleTypeLevelOutcome
+                 */
+                ModifyOwaspRuleTypeLevelOutcome ModifyOwaspRuleTypeLevel(const Model::ModifyOwaspRuleTypeLevelRequest &request);
+                void ModifyOwaspRuleTypeLevelAsync(const Model::ModifyOwaspRuleTypeLevelRequest& request, const ModifyOwaspRuleTypeLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOwaspRuleTypeLevelOutcomeCallable ModifyOwaspRuleTypeLevelCallable(const Model::ModifyOwaspRuleTypeLevelRequest& request);
+
+                /**
+                 *更新规则类型的开关
+                 * @param req ModifyOwaspRuleTypeStatusRequest
+                 * @return ModifyOwaspRuleTypeStatusOutcome
+                 */
+                ModifyOwaspRuleTypeStatusOutcome ModifyOwaspRuleTypeStatus(const Model::ModifyOwaspRuleTypeStatusRequest &request);
+                void ModifyOwaspRuleTypeStatusAsync(const Model::ModifyOwaspRuleTypeStatusRequest& request, const ModifyOwaspRuleTypeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOwaspRuleTypeStatusOutcomeCallable ModifyOwaspRuleTypeStatusCallable(const Model::ModifyOwaspRuleTypeStatusRequest& request);
 
                 /**
                  *编辑规则引擎白名单

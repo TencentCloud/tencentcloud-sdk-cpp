@@ -421,6 +421,20 @@ namespace TencentCloud
                      */
                     bool OwnerNameHasBeenSet() const;
 
+                    /**
+                     * 获取检查失败原因
+                     * @return CheckFailReason 检查失败原因
+                     * 
+                     */
+                    std::string GetCheckFailReason() const;
+
+                    /**
+                     * 判断参数 CheckFailReason 是否已赋值
+                     * @return CheckFailReason 是否已赋值
+                     * 
+                     */
+                    bool CheckFailReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -584,6 +598,12 @@ namespace TencentCloud
                      */
                     std::string m_ownerName;
                     bool m_ownerNameHasBeenSet;
+
+                    /**
+                     * 检查失败原因
+                     */
+                    std::string m_checkFailReason;
+                    bool m_checkFailReasonHasBeenSet;
 
                 };
             }

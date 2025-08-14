@@ -29,7 +29,8 @@ DiffConfigItem::DiffConfigItem() :
     m_arrayValueHasBeenSet(false),
     m_policyDetailsHasBeenSet(false),
     m_timerScaleHasBeenSet(false),
-    m_vpcConfHasBeenSet(false)
+    m_vpcConfHasBeenSet(false),
+    m_volumesConfHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,26 @@ CoreInternalOutcome DiffConfigItem::Deserialize(const rapidjson::Value &value)
         m_vpcConfHasBeenSet = true;
     }
 
+    if (value.HasMember("VolumesConf") && !value["VolumesConf"].IsNull())
+    {
+        if (!value["VolumesConf"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DiffConfigItem.VolumesConf` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VolumesConf"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VolumeConf item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_volumesConf.push_back(item);
+        }
+        m_volumesConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -255,6 +276,21 @@ void DiffConfigItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_vpcConf.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_volumesConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumesConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumesConf.begin(); itr != m_volumesConf.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -402,5 +438,21 @@ void DiffConfigItem::SetVpcConf(const VpcConf& _vpcConf)
 bool DiffConfigItem::VpcConfHasBeenSet() const
 {
     return m_vpcConfHasBeenSet;
+}
+
+vector<VolumeConf> DiffConfigItem::GetVolumesConf() const
+{
+    return m_volumesConf;
+}
+
+void DiffConfigItem::SetVolumesConf(const vector<VolumeConf>& _volumesConf)
+{
+    m_volumesConf = _volumesConf;
+    m_volumesConfHasBeenSet = true;
+}
+
+bool DiffConfigItem::VolumesConfHasBeenSet() const
+{
+    return m_volumesConfHasBeenSet;
 }
 

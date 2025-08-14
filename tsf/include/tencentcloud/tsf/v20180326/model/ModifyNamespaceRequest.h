@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命名空间ID
-                     * @return NamespaceId 命名空间ID
+                     * 获取命名空间ID，按照【命名空间ID】进行过滤，可通过调用DescribeNamespaces查询已创建的项目列表或登录控制台进行查看；也可以调用CreateNamespace创建新的项目。命名空间ID例如：namespace-6a79x94v。
+                     * @return NamespaceId 命名空间ID，按照【命名空间ID】进行过滤，可通过调用DescribeNamespaces查询已创建的项目列表或登录控制台进行查看；也可以调用CreateNamespace创建新的项目。命名空间ID例如：namespace-6a79x94v。
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间ID
-                     * @param _namespaceId 命名空间ID
+                     * 设置命名空间ID，按照【命名空间ID】进行过滤，可通过调用DescribeNamespaces查询已创建的项目列表或登录控制台进行查看；也可以调用CreateNamespace创建新的项目。命名空间ID例如：namespace-6a79x94v。
+                     * @param _namespaceId 命名空间ID，按照【命名空间ID】进行过滤，可通过调用DescribeNamespaces查询已创建的项目列表或登录控制台进行查看；也可以调用CreateNamespace创建新的项目。命名空间ID例如：namespace-6a79x94v。
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NamespaceDescHasBeenSet() const;
 
                     /**
-                     * 获取是否开启高可用
-                     * @return IsHaEnable 是否开启高可用
+                     * 获取是否开启高可用，0表示不开启，1表示开启
+                     * @return IsHaEnable 是否开启高可用，0表示不开启，1表示开启
                      * 
                      */
                     std::string GetIsHaEnable() const;
 
                     /**
-                     * 设置是否开启高可用
-                     * @param _isHaEnable 是否开启高可用
+                     * 设置是否开启高可用，0表示不开启，1表示开启
+                     * @param _isHaEnable 是否开启高可用，0表示不开启，1表示开启
                      * 
                      */
                     void SetIsHaEnable(const std::string& _isHaEnable);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命名空间ID
+                     * 命名空间ID，按照【命名空间ID】进行过滤，可通过调用DescribeNamespaces查询已创建的项目列表或登录控制台进行查看；也可以调用CreateNamespace创建新的项目。命名空间ID例如：namespace-6a79x94v。
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_namespaceDescHasBeenSet;
 
                     /**
-                     * 是否开启高可用
+                     * 是否开启高可用，0表示不开启，1表示开启
                      */
                     std::string m_isHaEnable;
                     bool m_isHaEnableHasBeenSet;

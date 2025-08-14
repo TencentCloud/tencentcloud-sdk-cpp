@@ -253,15 +253,15 @@ ReceiptWeightNote -- 磅单收货单识别模板
                     bool OutputParentKeyHasBeenSet() const;
 
                     /**
-                     * 获取模版的单个属性配置
-                     * @return ConfigAdvanced 模版的单个属性配置
+                     * 获取模板的单个属性配置
+                     * @return ConfigAdvanced 模板的单个属性配置
                      * 
                      */
                     ConfigAdvanced GetConfigAdvanced() const;
 
                     /**
-                     * 设置模版的单个属性配置
-                     * @param _configAdvanced 模版的单个属性配置
+                     * 设置模板的单个属性配置
+                     * @param _configAdvanced 模板的单个属性配置
                      * 
                      */
                     void SetConfigAdvanced(const ConfigAdvanced& _configAdvanced);
@@ -335,7 +335,7 @@ ReceiptWeightNote -- 磅单收货单识别模板
                     bool m_outputParentKeyHasBeenSet;
 
                     /**
-                     * 模版的单个属性配置
+                     * 模板的单个属性配置
                      */
                     ConfigAdvanced m_configAdvanced;
                     bool m_configAdvancedHasBeenSet;

@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * @return ConfigId 日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * 
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * @param _configId 日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -85,15 +89,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return StartTime 开始时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置开始时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _startTime 开始时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -106,15 +110,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return EndTime 结束时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _endTime 结束时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -233,14 +237,18 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组ID列表，不传表示全部部署组
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      * @return GroupIds 部署组ID列表，不传表示全部部署组
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
                      * 设置部署组ID列表，不传表示全部部署组
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      * @param _groupIds 部署组ID列表，不传表示全部部署组
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -253,15 +261,15 @@ namespace TencentCloud
                     bool GroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取检索类型，取值"LUCENE", "REGEXP", "NORMAL"
-                     * @return SearchWordType 检索类型，取值"LUCENE", "REGEXP", "NORMAL"
+                     * 获取检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索
+                     * @return SearchWordType 检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索
                      * 
                      */
                     std::string GetSearchWordType() const;
 
                     /**
-                     * 设置检索类型，取值"LUCENE", "REGEXP", "NORMAL"
-                     * @param _searchWordType 检索类型，取值"LUCENE", "REGEXP", "NORMAL"
+                     * 设置检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索
+                     * @param _searchWordType 检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索
                      * 
                      */
                     void SetSearchWordType(const std::string& _searchWordType);
@@ -274,15 +282,15 @@ namespace TencentCloud
                     bool SearchWordTypeHasBeenSet() const;
 
                     /**
-                     * 获取批量请求类型，取值"page"或"scroll"
-                     * @return BatchType 批量请求类型，取值"page"或"scroll"
+                     * 获取批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE
+                     * @return BatchType 批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE
                      * 
                      */
                     std::string GetBatchType() const;
 
                     /**
-                     * 设置批量请求类型，取值"page"或"scroll"
-                     * @param _batchType 批量请求类型，取值"page"或"scroll"
+                     * 设置批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE
+                     * @param _batchType 批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE
                      * 
                      */
                     void SetBatchType(const std::string& _batchType);
@@ -340,6 +348,7 @@ namespace TencentCloud
 
                     /**
                      * 日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
@@ -351,13 +360,13 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 开始时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -394,18 +403,19 @@ namespace TencentCloud
 
                     /**
                      * 部署组ID列表，不传表示全部部署组
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;
 
                     /**
-                     * 检索类型，取值"LUCENE", "REGEXP", "NORMAL"
+                     * 检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索
                      */
                     std::string m_searchWordType;
                     bool m_searchWordTypeHasBeenSet;
 
                     /**
-                     * 批量请求类型，取值"page"或"scroll"
+                     * 批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE
                      */
                     std::string m_batchType;
                     bool m_batchTypeHasBeenSet;

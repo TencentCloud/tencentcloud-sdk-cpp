@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/TargetGroupInstance.h>
+#include <tencentcloud/clb/v20180317/model/TargetGroupHealthCheck.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
 
 
@@ -66,15 +67,15 @@ namespace TencentCloud
                     bool TargetGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取目标组的vpcid属性，不填则使用默认vpc
-                     * @return VpcId 目标组的vpcid属性，不填则使用默认vpc
+                     * 获取目标组的vpcId属性，不填则使用默认vpc。
+                     * @return VpcId 目标组的vpcId属性，不填则使用默认vpc。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置目标组的vpcid属性，不填则使用默认vpc
-                     * @param _vpcId 目标组的vpcid属性，不填则使用默认vpc
+                     * 设置目标组的vpcId属性，不填则使用默认vpc。
+                     * @param _vpcId 目标组的vpcId属性，不填则使用默认vpc。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -175,6 +176,52 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
+                     * 获取健康检查。
+                     * @return HealthCheck 健康检查。
+                     * 
+                     */
+                    TargetGroupHealthCheck GetHealthCheck() const;
+
+                    /**
+                     * 设置健康检查。
+                     * @param _healthCheck 健康检查。
+                     * 
+                     */
+                    void SetHealthCheck(const TargetGroupHealthCheck& _healthCheck);
+
+                    /**
+                     * 判断参数 HealthCheck 是否已赋值
+                     * @return HealthCheck 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckHasBeenSet() const;
+
+                    /**
+                     * 获取调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：
+<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur>
+                     * @return ScheduleAlgorithm 调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：
+<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur>
+                     * 
+                     */
+                    std::string GetScheduleAlgorithm() const;
+
+                    /**
+                     * 设置调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：
+<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur>
+                     * @param _scheduleAlgorithm 调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：
+<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur>
+                     * 
+                     */
+                    void SetScheduleAlgorithm(const std::string& _scheduleAlgorithm);
+
+                    /**
+                     * 判断参数 ScheduleAlgorithm 是否已赋值
+                     * @return ScheduleAlgorithm 是否已赋值
+                     * 
+                     */
+                    bool ScheduleAlgorithmHasBeenSet() const;
+
+                    /**
                      * 获取标签。
                      * @return Tags 标签。
                      * 
@@ -196,35 +243,19 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取后端服务默认权重。
-<ul>
-    <li>取值范围[0, 100]</li>
-    <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li>
-</ul>
-v1 目标组类型不支持设置 Weight 参数。
-                     * @return Weight 后端服务默认权重。
-<ul>
-    <li>取值范围[0, 100]</li>
-    <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li>
-</ul>
-v1 目标组类型不支持设置 Weight 参数。
+                     * 获取后端服务默认权重, 其中：
+<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1 目标组类型不支持设置 Weight 参数。</li></ul>
+                     * @return Weight 后端服务默认权重, 其中：
+<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1 目标组类型不支持设置 Weight 参数。</li></ul>
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置后端服务默认权重。
-<ul>
-    <li>取值范围[0, 100]</li>
-    <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li>
-</ul>
-v1 目标组类型不支持设置 Weight 参数。
-                     * @param _weight 后端服务默认权重。
-<ul>
-    <li>取值范围[0, 100]</li>
-    <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li>
-</ul>
-v1 目标组类型不支持设置 Weight 参数。
+                     * 设置后端服务默认权重, 其中：
+<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1 目标组类型不支持设置 Weight 参数。</li></ul>
+                     * @param _weight 后端服务默认权重, 其中：
+<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1 目标组类型不支持设置 Weight 参数。</li></ul>
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -308,7 +339,7 @@ v1 目标组类型不支持设置 Weight 参数。
                     bool m_targetGroupNameHasBeenSet;
 
                     /**
-                     * 目标组的vpcid属性，不填则使用默认vpc
+                     * 目标组的vpcId属性，不填则使用默认vpc。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -339,18 +370,27 @@ v1 目标组类型不支持设置 Weight 参数。
                     bool m_protocolHasBeenSet;
 
                     /**
+                     * 健康检查。
+                     */
+                    TargetGroupHealthCheck m_healthCheck;
+                    bool m_healthCheckHasBeenSet;
+
+                    /**
+                     * 调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：
+<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur>
+                     */
+                    std::string m_scheduleAlgorithm;
+                    bool m_scheduleAlgorithmHasBeenSet;
+
+                    /**
                      * 标签。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 后端服务默认权重。
-<ul>
-    <li>取值范围[0, 100]</li>
-    <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li>
-</ul>
-v1 目标组类型不支持设置 Weight 参数。
+                     * 后端服务默认权重, 其中：
+<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1 目标组类型不支持设置 Weight 参数。</li></ul>
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

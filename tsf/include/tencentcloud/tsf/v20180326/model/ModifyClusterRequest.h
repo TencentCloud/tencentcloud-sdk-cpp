@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID，按照【集群ID】进行过滤，可通过调用DescribeClusters查询已创建的项目列表或登录控制台进行查看；也可以调用CreateCluster创建新的项目。集群ID例如：cls-6a79x94v。
+                     * @return ClusterId 集群ID，按照【集群ID】进行过滤，可通过调用DescribeClusters查询已创建的项目列表或登录控制台进行查看；也可以调用CreateCluster创建新的项目。集群ID例如：cls-6a79x94v。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID，按照【集群ID】进行过滤，可通过调用DescribeClusters查询已创建的项目列表或登录控制台进行查看；也可以调用CreateCluster创建新的项目。集群ID例如：cls-6a79x94v。
+                     * @param _clusterId 集群ID，按照【集群ID】进行过滤，可通过调用DescribeClusters查询已创建的项目列表或登录控制台进行查看；也可以调用CreateCluster创建新的项目。集群ID例如：cls-6a79x94v。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ClusterRemarkNameHasBeenSet() const;
 
                     /**
-                     * 获取是否开启cls日志功能
-                     * @return EnableLogCollection 是否开启cls日志功能
+                     * 获取是否开启cls日志功能，true表示开启，false表示关闭
+                     * @return EnableLogCollection 是否开启cls日志功能，true表示开启，false表示关闭
                      * 
                      */
                     bool GetEnableLogCollection() const;
 
                     /**
-                     * 设置是否开启cls日志功能
-                     * @param _enableLogCollection 是否开启cls日志功能
+                     * 设置是否开启cls日志功能，true表示开启，false表示关闭
+                     * @param _enableLogCollection 是否开启cls日志功能，true表示开启，false表示关闭
                      * 
                      */
                     void SetEnableLogCollection(const bool& _enableLogCollection);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool EnableLogCollectionHasBeenSet() const;
 
                     /**
-                     * 获取是否修复cls日志功能
-                     * @return RepairLog 是否修复cls日志功能
+                     * 获取是否修复cls日志功能，true表示修复，false表示不修复
+                     * @return RepairLog 是否修复cls日志功能，true表示修复，false表示不修复
                      * 
                      */
                     bool GetRepairLog() const;
 
                     /**
-                     * 设置是否修复cls日志功能
-                     * @param _repairLog 是否修复cls日志功能
+                     * 设置是否修复cls日志功能，true表示修复，false表示不修复
+                     * @param _repairLog 是否修复cls日志功能，true表示修复，false表示不修复
                      * 
                      */
                     void SetRepairLog(const bool& _repairLog);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，按照【集群ID】进行过滤，可通过调用DescribeClusters查询已创建的项目列表或登录控制台进行查看；也可以调用CreateCluster创建新的项目。集群ID例如：cls-6a79x94v。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -195,13 +195,13 @@ namespace TencentCloud
                     bool m_clusterRemarkNameHasBeenSet;
 
                     /**
-                     * 是否开启cls日志功能
+                     * 是否开启cls日志功能，true表示开启，false表示关闭
                      */
                     bool m_enableLogCollection;
                     bool m_enableLogCollectionHasBeenSet;
 
                     /**
-                     * 是否修复cls日志功能
+                     * 是否修复cls日志功能，true表示修复，false表示不修复
                      */
                     bool m_repairLog;
                     bool m_repairLogHasBeenSet;

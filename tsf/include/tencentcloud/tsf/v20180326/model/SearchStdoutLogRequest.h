@@ -43,15 +43,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器实例ID， 和  实例 ID 二者必选其一，不能同时为空
-                     * @return InstanceId 机器实例ID， 和  实例 ID 二者必选其一，不能同时为空
+                     * 获取机器实例ID， 和 部署组 ID 二者必选其一，不能同时为空
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk
+
+
+
+                     * @return InstanceId 机器实例ID， 和 部署组 ID 二者必选其一，不能同时为空
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk
+
+
+
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置机器实例ID， 和  实例 ID 二者必选其一，不能同时为空
-                     * @param _instanceId 机器实例ID， 和  实例 ID 二者必选其一，不能同时为空
+                     * 设置机器实例ID， 和 部署组 ID 二者必选其一，不能同时为空
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk
+
+
+
+                     * @param _instanceId 机器实例ID， 和 部署组 ID 二者必选其一，不能同时为空
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk
+
+
+
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -106,15 +122,15 @@ namespace TencentCloud
                     bool SearchWordsHasBeenSet() const;
 
                     /**
-                     * 获取查询起始时间
-                     * @return StartTime 查询起始时间
+                     * 获取查询起始时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return StartTime 查询起始时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询起始时间
-                     * @param _startTime 查询起始时间
+                     * 设置查询起始时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _startTime 查询起始时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -128,14 +144,18 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组ID，和 InstanceId 二者必选其一，不能同时为空
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      * @return GroupId 部署组ID，和 InstanceId 二者必选其一，不能同时为空
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组ID，和 InstanceId 二者必选其一，不能同时为空
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      * @param _groupId 部署组ID，和 InstanceId 二者必选其一，不能同时为空
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -148,15 +168,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间
-                     * @return EndTime 查询结束时间
+                     * 获取查询结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return EndTime 查询结束时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间
-                     * @param _endTime 查询结束时间
+                     * 设置查询结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _endTime 查询结束时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -194,15 +214,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序规则，默认值"time"
-                     * @return OrderBy 排序规则，默认值"time"
+                     * 获取排序规则，time：按时间排序，score：按检索值排序，默认值"time"
+                     * @return OrderBy 排序规则，time：按时间排序，score：按检索值排序，默认值"time"
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序规则，默认值"time"
-                     * @param _orderBy 排序规则，默认值"time"
+                     * 设置排序规则，time：按时间排序，score：按检索值排序，默认值"time"
+                     * @param _orderBy 排序规则，time：按时间排序，score：按检索值排序，默认值"time"
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -215,19 +235,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，取值"asc"或"desc"，默认
-值"desc"
-                     * @return OrderType 排序方式，取值"asc"或"desc"，默认
-值"desc"
+                     * 获取排序方式，取值 asc：升序 或 desc：降序，默认值desc
+                     * @return OrderType 排序方式，取值 asc：升序 或 desc：降序，默认值desc
                      * 
                      */
                     std::string GetOrderType() const;
 
                     /**
-                     * 设置排序方式，取值"asc"或"desc"，默认
-值"desc"
-                     * @param _orderType 排序方式，取值"asc"或"desc"，默认
-值"desc"
+                     * 设置排序方式，取值 asc：升序 或 desc：降序，默认值desc
+                     * @param _orderType 排序方式，取值 asc：升序 或 desc：降序，默认值desc
                      * 
                      */
                     void SetOrderType(const std::string& _orderType);
@@ -240,19 +256,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取检索类型，取值"LUCENE", "REGEXP",
-"NORMAL"
-                     * @return SearchWordType 检索类型，取值"LUCENE", "REGEXP",
-"NORMAL"
+                     * 获取检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索
+                     * @return SearchWordType 检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索
                      * 
                      */
                     std::string GetSearchWordType() const;
 
                     /**
-                     * 设置检索类型，取值"LUCENE", "REGEXP",
-"NORMAL"
-                     * @param _searchWordType 检索类型，取值"LUCENE", "REGEXP",
-"NORMAL"
+                     * 设置检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索
+                     * @param _searchWordType 检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索
                      * 
                      */
                     void SetSearchWordType(const std::string& _searchWordType);
@@ -265,19 +277,19 @@ namespace TencentCloud
                     bool SearchWordTypeHasBeenSet() const;
 
                     /**
-                     * 获取批量请求类型，取值"page"或"scroll"，默认
-值"page"
-                     * @return BatchType 批量请求类型，取值"page"或"scroll"，默认
-值"page"
+                     * 获取批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE
+
+                     * @return BatchType 批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE
+
                      * 
                      */
                     std::string GetBatchType() const;
 
                     /**
-                     * 设置批量请求类型，取值"page"或"scroll"，默认
-值"page"
-                     * @param _batchType 批量请求类型，取值"page"或"scroll"，默认
-值"page"
+                     * 设置批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE
+
+                     * @param _batchType 批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE
+
                      * 
                      */
                     void SetBatchType(const std::string& _batchType);
@@ -334,7 +346,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 机器实例ID， 和  实例 ID 二者必选其一，不能同时为空
+                     * 机器实例ID， 和 部署组 ID 二者必选其一，不能同时为空
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk
+
+
+
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -352,19 +368,20 @@ namespace TencentCloud
                     bool m_searchWordsHasBeenSet;
 
                     /**
-                     * 查询起始时间
+                     * 查询起始时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 部署组ID，和 InstanceId 二者必选其一，不能同时为空
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 查询结束时间
+                     * 查询结束时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -377,28 +394,26 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序规则，默认值"time"
+                     * 排序规则，time：按时间排序，score：按检索值排序，默认值"time"
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序方式，取值"asc"或"desc"，默认
-值"desc"
+                     * 排序方式，取值 asc：升序 或 desc：降序，默认值desc
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 检索类型，取值"LUCENE", "REGEXP",
-"NORMAL"
+                     * 检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索
                      */
                     std::string m_searchWordType;
                     bool m_searchWordTypeHasBeenSet;
 
                     /**
-                     * 批量请求类型，取值"page"或"scroll"，默认
-值"page"
+                     * 批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE
+
                      */
                     std::string m_batchType;
                     bool m_batchTypeHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取搜索词
-                     * @return SearchWord 搜索词
+                     * 获取搜索词，可以搜索ID/名称/备注/标签
+                     * @return SearchWord 搜索词，可以搜索ID/名称/备注/标签
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置搜索词
-                     * @param _searchWord 搜索词
+                     * 设置搜索词，可以搜索ID/名称/备注/标签
+                     * @param _searchWord 搜索词，可以搜索ID/名称/备注/标签
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return OrderBy 排序字段
+                     * 获取排序字段，例如创建时间
+                     * @return OrderBy 排序字段，例如创建时间
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _orderBy 排序字段
+                     * 设置排序字段，例如创建时间
+                     * @param _orderBy 排序字段，例如创建时间
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式
-                     * @return OrderType 排序方式
+                     * 获取排序方式，0表示升序，1表示倒序
+                     * @return OrderType 排序方式，0表示升序，1表示倒序
                      * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
-                     * 设置排序方式
-                     * @param _orderType 排序方式
+                     * 设置排序方式，0表示升序，1表示倒序
+                     * @param _orderType 排序方式，0表示升序，1表示倒序
                      * 
                      */
                     void SetOrderType(const int64_t& _orderType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，默认0
+                     * @return Offset 偏移量，默认0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置偏移量，默认0
+                     * @param _offset 偏移量，默认0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页个数
-                     * @return Limit 分页个数
+                     * 获取分页个数，0-50 之间，默认20
+                     * @return Limit 分页个数，0-50 之间，默认20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页个数
-                     * @param _limit 分页个数
+                     * 设置分页个数，0-50 之间，默认20
+                     * @param _limit 分页个数，0-50 之间，默认20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
-                     * @return ClusterType 集群类型
+                     * 获取集群类型，C表示容器集群，V表示虚拟机集群
+                     * @return ClusterType 集群类型，C表示容器集群，V表示虚拟机集群
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型
-                     * @param _clusterType 集群类型
+                     * 设置集群类型，C表示容器集群，V表示虚拟机集群
+                     * @param _clusterType 集群类型，C表示容器集群，V表示虚拟机集群
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -192,37 +192,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 搜索词
+                     * 搜索词，可以搜索ID/名称/备注/标签
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * 排序字段，例如创建时间
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序方式
+                     * 排序方式，0表示升序，1表示倒序
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，默认0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页个数
+                     * 分页个数，0-50 之间，默认20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 集群类型
+                     * 集群类型，C表示容器集群，V表示虚拟机集群
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;

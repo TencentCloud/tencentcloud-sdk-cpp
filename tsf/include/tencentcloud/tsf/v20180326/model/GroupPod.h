@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ReadyCountHasBeenSet() const;
 
                     /**
-                     * 获取运行时长
-                     * @return Runtime 运行时长
+                     * 获取运行时长，单位秒
+                     * @return Runtime 运行时长，单位秒
                      * 
                      */
                     std::string GetRuntime() const;
 
                     /**
-                     * 设置运行时长
-                     * @param _runtime 运行时长
+                     * 设置运行时长，单位秒
+                     * @param _runtime 运行时长，单位秒
                      * 
                      */
                     void SetRuntime(const std::string& _runtime);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool RuntimeHasBeenSet() const;
 
                     /**
-                     * 获取实例启动时间
-                     * @return CreatedAt 实例启动时间
+                     * 获取实例启动时的时间戳
+                     * @return CreatedAt 实例启动时的时间戳
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置实例启动时间
-                     * @param _createdAt 实例启动时间
+                     * 设置实例启动时的时间戳
+                     * @param _createdAt 实例启动时的时间戳
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取服务实例状态
-                     * @return ServiceInstanceStatus 服务实例状态
+                     * 获取服务实例状态，枚举值为Starting/Running/Stopping/Stopped/StopFailed/Abnormal/Unknown
+                     * @return ServiceInstanceStatus 服务实例状态，枚举值为Starting/Running/Stopping/Stopped/StopFailed/Abnormal/Unknown
                      * 
                      */
                     std::string GetServiceInstanceStatus() const;
 
                     /**
-                     * 设置服务实例状态
-                     * @param _serviceInstanceStatus 服务实例状态
+                     * 设置服务实例状态，枚举值为Starting/Running/Stopping/Stopped/StopFailed/Abnormal/Unknown
+                     * @param _serviceInstanceStatus 服务实例状态，枚举值为Starting/Running/Stopping/Stopped/StopFailed/Abnormal/Unknown
                      * 
                      */
                     void SetServiceInstanceStatus(const std::string& _serviceInstanceStatus);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool ServiceInstanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取机器实例可使用状态
-                     * @return InstanceAvailableStatus 机器实例可使用状态
+                     * 获取机器实例可使用状态，枚举值为Starting/Running/Stopping/Stopped/StopFailed/Abnormal/Unknown
+                     * @return InstanceAvailableStatus 机器实例可使用状态，枚举值为Starting/Running/Stopping/Stopped/StopFailed/Abnormal/Unknown
                      * 
                      */
                     std::string GetInstanceAvailableStatus() const;
 
                     /**
-                     * 设置机器实例可使用状态
-                     * @param _instanceAvailableStatus 机器实例可使用状态
+                     * 设置机器实例可使用状态，枚举值为Starting/Running/Stopping/Stopped/StopFailed/Abnormal/Unknown
+                     * @param _instanceAvailableStatus 机器实例可使用状态，枚举值为Starting/Running/Stopping/Stopped/StopFailed/Abnormal/Unknown
                      * 
                      */
                     void SetInstanceAvailableStatus(const std::string& _instanceAvailableStatus);
@@ -412,25 +412,25 @@ namespace TencentCloud
                     bool m_readyCountHasBeenSet;
 
                     /**
-                     * 运行时长
+                     * 运行时长，单位秒
                      */
                     std::string m_runtime;
                     bool m_runtimeHasBeenSet;
 
                     /**
-                     * 实例启动时间
+                     * 实例启动时的时间戳
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 服务实例状态
+                     * 服务实例状态，枚举值为Starting/Running/Stopping/Stopped/StopFailed/Abnormal/Unknown
                      */
                     std::string m_serviceInstanceStatus;
                     bool m_serviceInstanceStatusHasBeenSet;
 
                     /**
-                     * 机器实例可使用状态
+                     * 机器实例可使用状态，枚举值为Starting/Running/Stopping/Stopped/StopFailed/Abnormal/Unknown
                      */
                     std::string m_instanceAvailableStatus;
                     bool m_instanceAvailableStatusHasBeenSet;

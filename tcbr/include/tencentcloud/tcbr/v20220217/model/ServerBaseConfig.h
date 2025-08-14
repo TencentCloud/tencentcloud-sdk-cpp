@@ -27,6 +27,7 @@
 #include <tencentcloud/tcbr/v20220217/model/HpaPolicy.h>
 #include <tencentcloud/tcbr/v20220217/model/TimerScale.h>
 #include <tencentcloud/tcbr/v20220217/model/VpcConf.h>
+#include <tencentcloud/tcbr/v20220217/model/VolumeConf.h>
 
 
 namespace TencentCloud
@@ -662,6 +663,27 @@ namespace TencentCloud
                      */
                     bool VpcConfHasBeenSet() const;
 
+                    /**
+                     * 获取存储配置信息
+                     * @return VolumesConf 存储配置信息
+                     * 
+                     */
+                    std::vector<VolumeConf> GetVolumesConf() const;
+
+                    /**
+                     * 设置存储配置信息
+                     * @param _volumesConf 存储配置信息
+                     * 
+                     */
+                    void SetVolumesConf(const std::vector<VolumeConf>& _volumesConf);
+
+                    /**
+                     * 判断参数 VolumesConf 是否已赋值
+                     * @return VolumesConf 是否已赋值
+                     * 
+                     */
+                    bool VolumesConfHasBeenSet() const;
+
                 private:
 
                     /**
@@ -838,6 +860,12 @@ namespace TencentCloud
                      */
                     VpcConf m_vpcConf;
                     bool m_vpcConfHasBeenSet;
+
+                    /**
+                     * 存储配置信息
+                     */
+                    std::vector<VolumeConf> m_volumesConf;
+                    bool m_volumesConfHasBeenSet;
 
                 };
             }

@@ -152,6 +152,56 @@ namespace TencentCloud
                      */
                     bool SegmentSetHasBeenSet() const;
 
+                    /**
+                     * 获取智能精彩集锦地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HighlightUrl 智能精彩集锦地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetHighlightUrl() const;
+
+                    /**
+                     * 设置智能精彩集锦地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _highlightUrl 智能精彩集锦地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHighlightUrl(const std::string& _highlightUrl);
+
+                    /**
+                     * 判断参数 HighlightUrl 是否已赋值
+                     * @return HighlightUrl 是否已赋值
+                     * 
+                     */
+                    bool HighlightUrlHasBeenSet() const;
+
+                    /**
+                     * 获取智能精彩集锦封面地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CovImgUrl 智能精彩集锦封面地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCovImgUrl() const;
+
+                    /**
+                     * 设置智能精彩集锦封面地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _covImgUrl 智能精彩集锦封面地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCovImgUrl(const std::string& _covImgUrl);
+
+                    /**
+                     * 判断参数 CovImgUrl 是否已赋值
+                     * @return CovImgUrl 是否已赋值
+                     * 
+                     */
+                    bool CovImgUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +233,20 @@ namespace TencentCloud
                      */
                     std::vector<HighlightSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
+
+                    /**
+                     * 智能精彩集锦地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_highlightUrl;
+                    bool m_highlightUrlHasBeenSet;
+
+                    /**
+                     * 智能精彩集锦封面地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_covImgUrl;
+                    bool m_covImgUrlHasBeenSet;
 
                 };
             }

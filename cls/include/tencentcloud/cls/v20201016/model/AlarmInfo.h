@@ -117,15 +117,15 @@ namespace TencentCloud
                     bool MonitorTimeHasBeenSet() const;
 
                     /**
-                     * 获取单触发条件。与MultiConditions参数互斥。
-                     * @return Condition 单触发条件。与MultiConditions参数互斥。
+                     * 获取是否触发告警的单触发条件。与MultiConditions参数互斥。
+                     * @return Condition 是否触发告警的单触发条件。与MultiConditions参数互斥。
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
-                     * 设置单触发条件。与MultiConditions参数互斥。
-                     * @param _condition 单触发条件。与MultiConditions参数互斥。
+                     * 设置是否触发告警的单触发条件。与MultiConditions参数互斥。
+                     * @param _condition 是否触发告警的单触发条件。与MultiConditions参数互斥。
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -243,15 +243,15 @@ namespace TencentCloud
                     bool AlarmIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreateTime 创建时间。
+                     * 获取创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @return CreateTime 创建时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createTime 创建时间。
+                     * 设置创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @param _createTime 创建时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -264,15 +264,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最近更新时间。
-                     * @return UpdateTime 最近更新时间。
+                     * 获取最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @return UpdateTime 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置最近更新时间。
-                     * @param _updateTime 最近更新时间。
+                     * 设置最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @param _updateTime 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -523,7 +523,7 @@ Condition互斥。
                     bool m_monitorTimeHasBeenSet;
 
                     /**
-                     * 单触发条件。与MultiConditions参数互斥。
+                     * 是否触发告警的单触发条件。与MultiConditions参数互斥。
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
@@ -559,13 +559,13 @@ Condition互斥。
                     bool m_alarmIdHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * 创建时间。格式： YYYY-MM-DD HH:MM:SS
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最近更新时间。
+                     * 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

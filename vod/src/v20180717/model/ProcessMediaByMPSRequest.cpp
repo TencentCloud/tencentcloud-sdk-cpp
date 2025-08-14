@@ -25,7 +25,8 @@ using namespace std;
 ProcessMediaByMPSRequest::ProcessMediaByMPSRequest() :
     m_fileIdHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
-    m_mPSProcessMediaParamsHasBeenSet(false)
+    m_mPSProcessMediaParamsHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ProcessMediaByMPSRequest::ToJsonString() const
         string key = "MPSProcessMediaParams";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mPSProcessMediaParams.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ProcessMediaByMPSRequest::SetMPSProcessMediaParams(const string& _mPSProces
 bool ProcessMediaByMPSRequest::MPSProcessMediaParamsHasBeenSet() const
 {
     return m_mPSProcessMediaParamsHasBeenSet;
+}
+
+string ProcessMediaByMPSRequest::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void ProcessMediaByMPSRequest::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool ProcessMediaByMPSRequest::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 
 

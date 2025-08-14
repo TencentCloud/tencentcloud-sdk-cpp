@@ -314,6 +314,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/SearchBusinessLogResponse.h
   include/tencentcloud/tsf/v20180326/model/DeleteUnitNamespacesRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupRequest.h
+  include/tencentcloud/tsf/v20180326/model/VolumeClaimTemplatesOption.h
   include/tencentcloud/tsf/v20180326/model/UnitRuleItem.h
   include/tencentcloud/tsf/v20180326/model/UpdateConfigTemplateResponse.h
   include/tencentcloud/tsf/v20180326/model/TrySchedule.h
@@ -989,6 +990,7 @@ set(tsf_src
   src/v20180326/model/SearchBusinessLogResponse.cpp
   src/v20180326/model/DeleteUnitNamespacesRequest.cpp
   src/v20180326/model/DescribeGroupRequest.cpp
+  src/v20180326/model/VolumeClaimTemplatesOption.cpp
   src/v20180326/model/UnitRuleItem.cpp
   src/v20180326/model/UpdateConfigTemplateResponse.cpp
   src/v20180326/model/TrySchedule.cpp

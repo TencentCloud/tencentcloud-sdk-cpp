@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeLevelResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Postgres::V20170312::Model;
+using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-DescribeDBSlowlogsResponse::DescribeDBSlowlogsResponse() :
-    m_totalCountHasBeenSet(false),
-    m_detailHasBeenSet(false)
+ModifyOwaspRuleTypeLevelResponse::ModifyOwaspRuleTypeLevelResponse()
 {
 }
 
-CoreInternalOutcome DescribeDBSlowlogsResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyOwaspRuleTypeLevelResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,59 +61,15 @@ CoreInternalOutcome DescribeDBSlowlogsResponse::Deserialize(const string &payloa
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Detail") && !rsp["Detail"].IsNull())
-    {
-        if (!rsp["Detail"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Detail` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_detail.Deserialize(rsp["Detail"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_detailHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeDBSlowlogsResponse::ToJsonString() const
+string ModifyOwaspRuleTypeLevelResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
-    if (m_detailHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Detail";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_detail.ToJsonObject(value[key.c_str()], allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -128,25 +82,5 @@ string DescribeDBSlowlogsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t DescribeDBSlowlogsResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool DescribeDBSlowlogsResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
-}
-
-SlowlogDetail DescribeDBSlowlogsResponse::GetDetail() const
-{
-    return m_detail;
-}
-
-bool DescribeDBSlowlogsResponse::DetailHasBeenSet() const
-{
-    return m_detailHasBeenSet;
-}
 
 

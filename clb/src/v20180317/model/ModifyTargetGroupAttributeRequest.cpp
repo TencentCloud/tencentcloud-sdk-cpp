@@ -26,6 +26,8 @@ ModifyTargetGroupAttributeRequest::ModifyTargetGroupAttributeRequest() :
     m_targetGroupIdHasBeenSet(false),
     m_targetGroupNameHasBeenSet(false),
     m_portHasBeenSet(false),
+    m_scheduleAlgorithmHasBeenSet(false),
+    m_healthCheckHasBeenSet(false),
     m_weightHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
     m_sessionExpireTimeHasBeenSet(false)
@@ -61,6 +63,23 @@ string ModifyTargetGroupAttributeRequest::ToJsonString() const
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_port, allocator);
+    }
+
+    if (m_scheduleAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheck.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_weightHasBeenSet)
@@ -141,6 +160,38 @@ void ModifyTargetGroupAttributeRequest::SetPort(const uint64_t& _port)
 bool ModifyTargetGroupAttributeRequest::PortHasBeenSet() const
 {
     return m_portHasBeenSet;
+}
+
+string ModifyTargetGroupAttributeRequest::GetScheduleAlgorithm() const
+{
+    return m_scheduleAlgorithm;
+}
+
+void ModifyTargetGroupAttributeRequest::SetScheduleAlgorithm(const string& _scheduleAlgorithm)
+{
+    m_scheduleAlgorithm = _scheduleAlgorithm;
+    m_scheduleAlgorithmHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::ScheduleAlgorithmHasBeenSet() const
+{
+    return m_scheduleAlgorithmHasBeenSet;
+}
+
+TargetGroupHealthCheck ModifyTargetGroupAttributeRequest::GetHealthCheck() const
+{
+    return m_healthCheck;
+}
+
+void ModifyTargetGroupAttributeRequest::SetHealthCheck(const TargetGroupHealthCheck& _healthCheck)
+{
+    m_healthCheck = _healthCheck;
+    m_healthCheckHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::HealthCheckHasBeenSet() const
+{
+    return m_healthCheckHasBeenSet;
 }
 
 uint64_t ModifyTargetGroupAttributeRequest::GetWeight() const

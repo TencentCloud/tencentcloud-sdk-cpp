@@ -45,6 +45,7 @@ CreateRoomRequest::CreateRoomRequest() :
     m_videoOrientationHasBeenSet(false),
     m_isGradingRequiredPostClassHasBeenSet(false),
     m_roomTypeHasBeenSet(false),
+    m_guestsHasBeenSet(false),
     m_endDelayTimeHasBeenSet(false),
     m_liveTypeHasBeenSet(false),
     m_recordLiveUrlHasBeenSet(false),
@@ -244,6 +245,19 @@ string CreateRoomRequest::ToJsonString() const
         string key = "RoomType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_roomType, allocator);
+    }
+
+    if (m_guestsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Guests";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_guests.begin(); itr != m_guests.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_endDelayTimeHasBeenSet)
@@ -684,6 +698,22 @@ void CreateRoomRequest::SetRoomType(const int64_t& _roomType)
 bool CreateRoomRequest::RoomTypeHasBeenSet() const
 {
     return m_roomTypeHasBeenSet;
+}
+
+vector<string> CreateRoomRequest::GetGuests() const
+{
+    return m_guests;
+}
+
+void CreateRoomRequest::SetGuests(const vector<string>& _guests)
+{
+    m_guests = _guests;
+    m_guestsHasBeenSet = true;
+}
+
+bool CreateRoomRequest::GuestsHasBeenSet() const
+{
+    return m_guestsHasBeenSet;
 }
 
 int64_t CreateRoomRequest::GetEndDelayTime() const

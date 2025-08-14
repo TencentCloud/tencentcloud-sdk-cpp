@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例所属groupId
-                     * @return GroupId 实例所属groupId
+                     * 获取实例所属部署组ID，按照【部署组ID】进行过滤，可通过调用DescribeGroups查询已创建的项目列表或登录控制台进行查看；也可以调用CreateGroup创建新的项目。部署组ID例如：group-9yn2q8yd。部署组所在集群必须是活跃状态的。
+                     * @return GroupId 实例所属部署组ID，按照【部署组ID】进行过滤，可通过调用DescribeGroups查询已创建的项目列表或登录控制台进行查看；也可以调用CreateGroup创建新的项目。部署组ID例如：group-9yn2q8yd。部署组所在集群必须是活跃状态的。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置实例所属groupId
-                     * @param _groupId 实例所属groupId
+                     * 设置实例所属部署组ID，按照【部署组ID】进行过滤，可通过调用DescribeGroups查询已创建的项目列表或登录控制台进行查看；也可以调用CreateGroup创建新的项目。部署组ID例如：group-9yn2q8yd。部署组所在集群必须是活跃状态的。
+                     * @param _groupId 实例所属部署组ID，按照【部署组ID】进行过滤，可通过调用DescribeGroups查询已创建的项目列表或登录控制台进行查看；也可以调用CreateGroup创建新的项目。部署组ID例如：group-9yn2q8yd。部署组所在集群必须是活跃状态的。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤字段
-                     * @return PodNameList 过滤字段
+                     * 获取用于通过PodName字段过滤返回结果。
+                     * @return PodNameList 用于通过PodName字段过滤返回结果。
                      * 
                      */
                     std::vector<std::string> GetPodNameList() const;
 
                     /**
-                     * 设置过滤字段
-                     * @param _podNameList 过滤字段
+                     * 设置用于通过PodName字段过滤返回结果。
+                     * @param _podNameList 用于通过PodName字段过滤返回结果。
                      * 
                      */
                     void SetPodNameList(const std::vector<std::string>& _podNameList);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PodNameListHasBeenSet() const;
 
                     /**
-                     * 获取新老版本pod批次标识
-                     * @return DeployVersion 新老版本pod批次标识
+                     * 获取新老版本pod批次标识，old表示老版本，new表示新版本。
+                     * @return DeployVersion 新老版本pod批次标识，old表示老版本，new表示新版本。
                      * 
                      */
                     std::string GetDeployVersion() const;
 
                     /**
-                     * 设置新老版本pod批次标识
-                     * @param _deployVersion 新老版本pod批次标识
+                     * 设置新老版本pod批次标识，old表示老版本，new表示新版本。
+                     * @param _deployVersion 新老版本pod批次标识，old表示老版本，new表示新版本。
                      * 
                      */
                     void SetDeployVersion(const std::string& _deployVersion);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool DeployVersionHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取实例所属任务ID，登录控制台进行查看。
+                     * @return TaskId 实例所属任务ID，登录控制台进行查看。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
+                     * 设置实例所属任务ID，登录控制台进行查看。
+                     * @param _taskId 实例所属任务ID，登录控制台进行查看。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例所属groupId
+                     * 实例所属部署组ID，按照【部署组ID】进行过滤，可通过调用DescribeGroups查询已创建的项目列表或登录控制台进行查看；也可以调用CreateGroup创建新的项目。部署组ID例如：group-9yn2q8yd。部署组所在集群必须是活跃状态的。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -189,19 +189,19 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤字段
+                     * 用于通过PodName字段过滤返回结果。
                      */
                     std::vector<std::string> m_podNameList;
                     bool m_podNameListHasBeenSet;
 
                     /**
-                     * 新老版本pod批次标识
+                     * 新老版本pod批次标识，old表示老版本，new表示新版本。
                      */
                     std::string m_deployVersion;
                     bool m_deployVersionHasBeenSet;
 
                     /**
-                     * 任务ID
+                     * 实例所属任务ID，登录控制台进行查看。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

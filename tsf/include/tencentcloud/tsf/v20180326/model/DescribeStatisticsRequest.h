@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型：Interface、Service、Group、Instance、SQL、NoSQL
-                     * @return Type 类型：Interface、Service、Group、Instance、SQL、NoSQL
+                     * 获取统计类型。可选值 Interface：接口类型、Service：服务类型、Group：部署组类型、Instance：实例类型、SQL：SQL类型、NoSQL：NoSQL类型
+                     * @return Type 统计类型。可选值 Interface：接口类型、Service：服务类型、Group：部署组类型、Instance：实例类型、SQL：SQL类型、NoSQL：NoSQL类型
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型：Interface、Service、Group、Instance、SQL、NoSQL
-                     * @param _type 类型：Interface、Service、Group、Instance、SQL、NoSQL
+                     * 设置统计类型。可选值 Interface：接口类型、Service：服务类型、Group：部署组类型、Instance：实例类型、SQL：SQL类型、NoSQL：NoSQL类型
+                     * @param _type 统计类型。可选值 Interface：接口类型、Service：服务类型、Group：部署组类型、Instance：实例类型、SQL：SQL类型、NoSQL：NoSQL类型
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取步长，单位s：60、3600、86400
-                     * @return TimeStep 步长，单位s：60、3600、86400
+                     * 获取步长，单位秒。可选值 60、3600、86400
+                     * @return TimeStep 步长，单位秒。可选值 60、3600、86400
                      * 
                      */
                     uint64_t GetTimeStep() const;
 
                     /**
-                     * 设置步长，单位s：60、3600、86400
-                     * @param _timeStep 步长，单位s：60、3600、86400
+                     * 设置步长，单位秒。可选值 60、3600、86400
+                     * @param _timeStep 步长，单位秒。可选值 60、3600、86400
                      * 
                      */
                     void SetTimeStep(const uint64_t& _timeStep);
@@ -128,15 +128,23 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
-                     * @return NamespaceId 命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
+                     * 获取命名空间ID。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
+可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看
+
+                     * @return NamespaceId 命名空间ID。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
+可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看
+
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
-                     * @param _namespaceId 命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
+                     * 设置命名空间ID。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
+可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看
+
+                     * @param _namespaceId 命名空间ID。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
+可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看
+
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -275,15 +283,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取维度
-                     * @return MetricDimensionValues 维度
+                     * 获取维度。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一
+                     * @return MetricDimensionValues 维度。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一
                      * 
                      */
                     std::vector<MetricDimensionValue> GetMetricDimensionValues() const;
 
                     /**
-                     * 设置维度
-                     * @param _metricDimensionValues 维度
+                     * 设置维度。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一
+                     * @param _metricDimensionValues 维度。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一
                      * 
                      */
                     void SetMetricDimensionValues(const std::vector<MetricDimensionValue>& _metricDimensionValues);
@@ -317,15 +325,15 @@ namespace TencentCloud
                     bool BucketKeyHasBeenSet() const;
 
                     /**
-                     * 获取数据库
-                     * @return DbName 数据库
+                     * 获取数据库名称
+                     * @return DbName 数据库名称
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置数据库
-                     * @param _dbName 数据库
+                     * 设置数据库名称
+                     * @param _dbName 数据库名称
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -338,15 +346,15 @@ namespace TencentCloud
                     bool DbNameHasBeenSet() const;
 
                     /**
-                     * 获取命名空间id数组
-                     * @return NamespaceIdList 命名空间id数组
+                     * 获取命名空间ID数组。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一
+                     * @return NamespaceIdList 命名空间ID数组。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一
                      * 
                      */
                     std::vector<std::string> GetNamespaceIdList() const;
 
                     /**
-                     * 设置命名空间id数组
-                     * @param _namespaceIdList 命名空间id数组
+                     * 设置命名空间ID数组。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一
+                     * @param _namespaceIdList 命名空间ID数组。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一
                      * 
                      */
                     void SetNamespaceIdList(const std::vector<std::string>& _namespaceIdList);
@@ -359,15 +367,19 @@ namespace TencentCloud
                     bool NamespaceIdListHasBeenSet() const;
 
                     /**
-                     * 获取独占配置中心的ID
-                     * @return ConfigCenterInstanceId 独占配置中心的ID
+                     * 获取独占配置中心的ID。
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk。
+                     * @return ConfigCenterInstanceId 独占配置中心的ID。
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk。
                      * 
                      */
                     std::string GetConfigCenterInstanceId() const;
 
                     /**
-                     * 设置独占配置中心的ID
-                     * @param _configCenterInstanceId 独占配置中心的ID
+                     * 设置独占配置中心的ID。
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk。
+                     * @param _configCenterInstanceId 独占配置中心的ID。
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk。
                      * 
                      */
                     void SetConfigCenterInstanceId(const std::string& _configCenterInstanceId);
@@ -382,13 +394,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 类型：Interface、Service、Group、Instance、SQL、NoSQL
+                     * 统计类型。可选值 Interface：接口类型、Service：服务类型、Group：部署组类型、Instance：实例类型、SQL：SQL类型、NoSQL：NoSQL类型
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 步长，单位s：60、3600、86400
+                     * 步长，单位秒。可选值 60、3600、86400
                      */
                     uint64_t m_timeStep;
                     bool m_timeStepHasBeenSet;
@@ -406,7 +418,9 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
+                     * 命名空间ID。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
+可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看
+
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
@@ -448,7 +462,7 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 维度
+                     * 维度。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一
                      */
                     std::vector<MetricDimensionValue> m_metricDimensionValues;
                     bool m_metricDimensionValuesHasBeenSet;
@@ -460,19 +474,20 @@ namespace TencentCloud
                     bool m_bucketKeyHasBeenSet;
 
                     /**
-                     * 数据库
+                     * 数据库名称
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
-                     * 命名空间id数组
+                     * 命名空间ID数组。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一
                      */
                     std::vector<std::string> m_namespaceIdList;
                     bool m_namespaceIdListHasBeenSet;
 
                     /**
-                     * 独占配置中心的ID
+                     * 独占配置中心的ID。
+可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk。
                      */
                     std::string m_configCenterInstanceId;
                     bool m_configCenterInstanceIdHasBeenSet;

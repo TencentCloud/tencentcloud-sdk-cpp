@@ -52,7 +52,8 @@ DescribeAssetHostDetailResponse::DescribeAssetHostDetailResponse() :
     m_tagsHasBeenSet(false),
     m_clusterIDHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_clusterAccessedStatusHasBeenSet(false)
+    m_clusterAccessedStatusHasBeenSet(false),
+    m_assetSyncTimeHasBeenSet(false)
 {
 }
 
@@ -397,6 +398,16 @@ CoreInternalOutcome DescribeAssetHostDetailResponse::Deserialize(const string &p
         m_clusterAccessedStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AssetSyncTime") && !rsp["AssetSyncTime"].IsNull())
+    {
+        if (!rsp["AssetSyncTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSyncTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetSyncTime = string(rsp["AssetSyncTime"].GetString());
+        m_assetSyncTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -645,6 +656,14 @@ string DescribeAssetHostDetailResponse::ToJsonString() const
         string key = "ClusterAccessedStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterAccessedStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetSyncTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetSyncTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetSyncTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -947,6 +966,16 @@ string DescribeAssetHostDetailResponse::GetClusterAccessedStatus() const
 bool DescribeAssetHostDetailResponse::ClusterAccessedStatusHasBeenSet() const
 {
     return m_clusterAccessedStatusHasBeenSet;
+}
+
+string DescribeAssetHostDetailResponse::GetAssetSyncTime() const
+{
+    return m_assetSyncTime;
+}
+
+bool DescribeAssetHostDetailResponse::AssetSyncTimeHasBeenSet() const
+{
+    return m_assetSyncTimeHasBeenSet;
 }
 
 

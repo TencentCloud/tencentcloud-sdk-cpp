@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool GroupsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return CreateTime 创建时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置创建时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _createTime 创建时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -154,18 +154,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取KafkaVIp
+                     * 获取Kafka的vip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KafkaVIp KafkaVIp
+                     * @return KafkaVIp Kafka的vip
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKafkaVIp() const;
 
                     /**
-                     * 设置KafkaVIp
+                     * 设置Kafka的vip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kafkaVIp KafkaVIp
+                     * @param _kafkaVIp Kafka的vip
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -179,18 +179,18 @@ namespace TencentCloud
                     bool KafkaVIpHasBeenSet() const;
 
                     /**
-                     * 获取KafkaAddress
+                     * 获取Kafka地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KafkaAddress KafkaAddress
+                     * @return KafkaAddress Kafka地址
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKafkaAddress() const;
 
                     /**
-                     * 设置KafkaAddress
+                     * 设置Kafka地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kafkaAddress KafkaAddress
+                     * @param _kafkaAddress Kafka地址
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -204,18 +204,18 @@ namespace TencentCloud
                     bool KafkaAddressHasBeenSet() const;
 
                     /**
-                     * 获取KafkaVPort
+                     * 获取Kafka端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KafkaVPort KafkaVPort
+                     * @return KafkaVPort Kafka端口
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKafkaVPort() const;
 
                     /**
-                     * 设置KafkaVPort
+                     * 设置Kafka端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kafkaVPort KafkaVPort
+                     * @param _kafkaVPort Kafka端口
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -275,18 +275,18 @@ namespace TencentCloud
                     bool LineRuleHasBeenSet() const;
 
                     /**
-                     * 获取CustomRule
+                     * 获取自定义规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomRule CustomRule
+                     * @return CustomRule 自定义规则
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomRule() const;
 
                     /**
-                     * 设置CustomRule
+                     * 设置自定义规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _customRule CustomRule
+                     * @param _customRule 自定义规则
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -325,15 +325,15 @@ namespace TencentCloud
                     bool EnableGlobalLineRuleHasBeenSet() const;
 
                     /**
-                     * 获取EnableAuth
-                     * @return EnableAuth EnableAuth
+                     * 获取是否开启认证
+                     * @return EnableAuth 是否开启认证
                      * 
                      */
                     bool GetEnableAuth() const;
 
                     /**
-                     * 设置EnableAuth
-                     * @param _enableAuth EnableAuth
+                     * 设置是否开启认证
+                     * @param _enableAuth 是否开启认证
                      * 
                      */
                     void SetEnableAuth(const bool& _enableAuth);
@@ -346,18 +346,18 @@ namespace TencentCloud
                     bool EnableAuthHasBeenSet() const;
 
                     /**
-                     * 获取Username
+                     * 获取用户名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Username Username
+                     * @return Username 用户名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置Username
+                     * 设置用户名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _username Username
+                     * @param _username 用户名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -371,18 +371,18 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取Password
+                     * 获取密码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Password Password
+                     * @return Password 密码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置Password
+                     * 设置密码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _password Password
+                     * @param _password 密码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -447,27 +447,27 @@ namespace TencentCloud
                     bool m_groupsHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * KafkaVIp
+                     * Kafka的vip
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kafkaVIp;
                     bool m_kafkaVIpHasBeenSet;
 
                     /**
-                     * KafkaAddress
+                     * Kafka地址
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kafkaAddress;
                     bool m_kafkaAddressHasBeenSet;
 
                     /**
-                     * KafkaVPort
+                     * Kafka端口
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kafkaVPort;
@@ -487,7 +487,7 @@ namespace TencentCloud
                     bool m_lineRuleHasBeenSet;
 
                     /**
-                     * CustomRule
+                     * 自定义规则
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customRule;
@@ -501,20 +501,20 @@ namespace TencentCloud
                     bool m_enableGlobalLineRuleHasBeenSet;
 
                     /**
-                     * EnableAuth
+                     * 是否开启认证
                      */
                     bool m_enableAuth;
                     bool m_enableAuthHasBeenSet;
 
                     /**
-                     * Username
+                     * 用户名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * Password
+                     * 密码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;

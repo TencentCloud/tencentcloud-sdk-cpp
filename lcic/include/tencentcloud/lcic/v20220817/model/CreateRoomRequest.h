@@ -540,15 +540,15 @@ namespace TencentCloud
                     bool IsGradingRequiredPostClassHasBeenSet() const;
 
                     /**
-                     * 获取课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏
-                     * @return RoomType 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏
+                     * 获取课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏
+                     * @return RoomType 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏
                      * 
                      */
                     int64_t GetRoomType() const;
 
                     /**
-                     * 设置课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏
-                     * @param _roomType 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏
+                     * 设置课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏
+                     * @param _roomType 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏
                      * 
                      */
                     void SetRoomType(const int64_t& _roomType);
@@ -559,6 +559,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RoomTypeHasBeenSet() const;
+
+                    /**
+                     * 获取嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * @return Guests 嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * 
+                     */
+                    std::vector<std::string> GetGuests() const;
+
+                    /**
+                     * 设置嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * @param _guests 嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * 
+                     */
+                    void SetGuests(const std::vector<std::string>& _guests);
+
+                    /**
+                     * 判断参数 Guests 是否已赋值
+                     * @return Guests 是否已赋值
+                     * 
+                     */
+                    bool GuestsHasBeenSet() const;
 
                     /**
                      * 获取拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
@@ -666,19 +687,35 @@ namespace TencentCloud
                     bool RecordBackgroundHasBeenSet() const;
 
                     /**
-                     * 获取录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。
-数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
-                     * @return RecordScene 录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。
-数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
+                     * 获取录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
+
+自定义场景参数的含义。如下：
+     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。 
+    lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）
+     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。
+                     * @return RecordScene 录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
+
+自定义场景参数的含义。如下：
+     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。 
+    lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）
+     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。
                      * 
                      */
                     std::string GetRecordScene() const;
 
                     /**
-                     * 设置录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。
-数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
-                     * @param _recordScene 录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。
-数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
+                     * 设置录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
+
+自定义场景参数的含义。如下：
+     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。 
+    lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）
+     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。
+                     * @param _recordScene 录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
+
+自定义场景参数的含义。如下：
+     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。 
+    lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）
+     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。
                      * 
                      */
                     void SetRecordScene(const std::string& _recordScene);
@@ -917,10 +954,16 @@ namespace TencentCloud
                     bool m_isGradingRequiredPostClassHasBeenSet;
 
                     /**
-                     * 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏
+                     * 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏
                      */
                     int64_t m_roomType;
                     bool m_roomTypeHasBeenSet;
+
+                    /**
+                     * 嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     */
+                    std::vector<std::string> m_guests;
+                    bool m_guestsHasBeenSet;
 
                     /**
                      * 拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
@@ -953,8 +996,12 @@ namespace TencentCloud
                     bool m_recordBackgroundHasBeenSet;
 
                     /**
-                     * 录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。
-数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
+                     * 录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
+
+自定义场景参数的含义。如下：
+     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。 
+    lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）
+     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。
                      */
                     std::string m_recordScene;
                     bool m_recordSceneHasBeenSet;

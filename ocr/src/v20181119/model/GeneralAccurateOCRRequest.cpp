@@ -29,7 +29,8 @@ GeneralAccurateOCRRequest::GeneralAccurateOCRRequest() :
     m_enableDetectSplitHasBeenSet(false),
     m_isPdfHasBeenSet(false),
     m_pdfPageNumberHasBeenSet(false),
-    m_enableDetectTextHasBeenSet(false)
+    m_enableDetectTextHasBeenSet(false),
+    m_configIDHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string GeneralAccurateOCRRequest::ToJsonString() const
         string key = "EnableDetectText";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDetectText, allocator);
+    }
+
+    if (m_configIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_configID.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void GeneralAccurateOCRRequest::SetEnableDetectText(const bool& _enableDetectTex
 bool GeneralAccurateOCRRequest::EnableDetectTextHasBeenSet() const
 {
     return m_enableDetectTextHasBeenSet;
+}
+
+string GeneralAccurateOCRRequest::GetConfigID() const
+{
+    return m_configID;
+}
+
+void GeneralAccurateOCRRequest::SetConfigID(const string& _configID)
+{
+    m_configID = _configID;
+    m_configIDHasBeenSet = true;
+}
+
+bool GeneralAccurateOCRRequest::ConfigIDHasBeenSet() const
+{
+    return m_configIDHasBeenSet;
 }
 
 

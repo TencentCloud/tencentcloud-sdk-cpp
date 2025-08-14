@@ -57,7 +57,8 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_recordStreamHasBeenSet(false),
     m_recordLayoutHasBeenSet(false),
     m_whiteBoardSnapshotModeHasBeenSet(false),
-    m_subtitlesTranscriptionHasBeenSet(false)
+    m_subtitlesTranscriptionHasBeenSet(false),
+    m_guestsHasBeenSet(false)
 {
 }
 
@@ -438,6 +439,19 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_subtitlesTranscriptionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Guests") && !rsp["Guests"].IsNull())
+    {
+        if (!rsp["Guests"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Guests` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Guests"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_guests.push_back((*itr).GetString());
+        }
+        m_guestsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -723,6 +737,19 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "SubtitlesTranscription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subtitlesTranscription, allocator);
+    }
+
+    if (m_guestsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Guests";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_guests.begin(); itr != m_guests.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1075,6 +1102,16 @@ uint64_t DescribeRoomResponse::GetSubtitlesTranscription() const
 bool DescribeRoomResponse::SubtitlesTranscriptionHasBeenSet() const
 {
     return m_subtitlesTranscriptionHasBeenSet;
+}
+
+vector<string> DescribeRoomResponse::GetGuests() const
+{
+    return m_guests;
+}
+
+bool DescribeRoomResponse::GuestsHasBeenSet() const
+{
+    return m_guestsHasBeenSet;
 }
 
 

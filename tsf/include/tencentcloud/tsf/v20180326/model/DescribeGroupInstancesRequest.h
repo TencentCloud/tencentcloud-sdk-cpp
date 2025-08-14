@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署组ID
-                     * @return GroupId 部署组ID
+                     * 获取部署组ID，可通过调用[DescribeGroups](https://cloud.tencent.com/document/api/649/36065)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/api/649/36074)创建新的部署组。
+                     * @return GroupId 部署组ID，可通过调用[DescribeGroups](https://cloud.tencent.com/document/api/649/36065)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/api/649/36074)创建新的部署组。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID
-                     * @param _groupId 部署组ID
+                     * 设置部署组ID，可通过调用[DescribeGroups](https://cloud.tencent.com/document/api/649/36065)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/api/649/36074)创建新的部署组。
+                     * @param _groupId 部署组ID，可通过调用[DescribeGroups](https://cloud.tencent.com/document/api/649/36065)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/api/649/36074)创建新的部署组。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序类型
-                     * @return OrderType 排序类型
+                     * 获取排序类型；0：升序，1：降序
+                     * @return OrderType 排序类型；0：升序，1：降序
                      * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
-                     * 设置排序类型
-                     * @param _orderType 排序类型
+                     * 设置排序类型；0：升序，1：降序
+                     * @param _orderType 排序类型；0：升序，1：降序
                      * 
                      */
                     void SetOrderType(const int64_t& _orderType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，默认值：0
+                     * @return Offset 偏移量，默认值：0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置偏移量，默认值：0
+                     * @param _offset 偏移量，默认值：0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页个数
-                     * @return Limit 分页个数
+                     * 获取分页个数；默认值：20
+                     * @return Limit 分页个数；默认值：20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页个数
-                     * @param _limit 分页个数
+                     * 设置分页个数；默认值：20
+                     * @param _limit 分页个数；默认值：20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部署组ID
+                     * 部署组ID，可通过调用[DescribeGroups](https://cloud.tencent.com/document/api/649/36065)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/api/649/36074)创建新的部署组。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -189,19 +189,19 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序类型
+                     * 排序类型；0：升序，1：降序
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，默认值：0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页个数
+                     * 分页个数；默认值：20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

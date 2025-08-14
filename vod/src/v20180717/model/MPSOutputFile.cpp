@@ -25,6 +25,7 @@ MPSOutputFile::MPSOutputFile() :
     m_storageModeHasBeenSet(false),
     m_fileIdHasBeenSet(false),
     m_urlHasBeenSet(false),
+    m_definitionHasBeenSet(false),
     m_expiredTimeHasBeenSet(false)
 {
 }
@@ -74,6 +75,16 @@ CoreInternalOutcome MPSOutputFile::Deserialize(const rapidjson::Value &value)
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("Definition") && !value["Definition"].IsNull())
+    {
+        if (!value["Definition"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MPSOutputFile.Definition` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_definition = string(value["Definition"].GetString());
+        m_definitionHasBeenSet = true;
+    }
+
     if (value.HasMember("ExpiredTime") && !value["ExpiredTime"].IsNull())
     {
         if (!value["ExpiredTime"].IsUint64())
@@ -121,6 +132,14 @@ void MPSOutputFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_definitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Definition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_definition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expiredTimeHasBeenSet)
@@ -196,6 +215,22 @@ void MPSOutputFile::SetUrl(const string& _url)
 bool MPSOutputFile::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string MPSOutputFile::GetDefinition() const
+{
+    return m_definition;
+}
+
+void MPSOutputFile::SetDefinition(const string& _definition)
+{
+    m_definition = _definition;
+    m_definitionHasBeenSet = true;
+}
+
+bool MPSOutputFile::DefinitionHasBeenSet() const
+{
+    return m_definitionHasBeenSet;
 }
 
 uint64_t MPSOutputFile::GetExpiredTime() const

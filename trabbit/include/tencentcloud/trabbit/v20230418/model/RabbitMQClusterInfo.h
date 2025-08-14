@@ -572,6 +572,48 @@ namespace TencentCloud
                      */
                     bool MessageRetainTimeHasBeenSet() const;
 
+                    /**
+                     * 获取发送消息流量比例
+                     * @return SendReceiveRatio 发送消息流量比例
+                     * 
+                     */
+                    double GetSendReceiveRatio() const;
+
+                    /**
+                     * 设置发送消息流量比例
+                     * @param _sendReceiveRatio 发送消息流量比例
+                     * 
+                     */
+                    void SetSendReceiveRatio(const double& _sendReceiveRatio);
+
+                    /**
+                     * 判断参数 SendReceiveRatio 是否已赋值
+                     * @return SendReceiveRatio 是否已赋值
+                     * 
+                     */
+                    bool SendReceiveRatioHasBeenSet() const;
+
+                    /**
+                     * 获取消息轨迹保留时间，单位小时
+                     * @return TraceTime 消息轨迹保留时间，单位小时
+                     * 
+                     */
+                    uint64_t GetTraceTime() const;
+
+                    /**
+                     * 设置消息轨迹保留时间，单位小时
+                     * @param _traceTime 消息轨迹保留时间，单位小时
+                     * 
+                     */
+                    void SetTraceTime(const uint64_t& _traceTime);
+
+                    /**
+                     * 判断参数 TraceTime 是否已赋值
+                     * @return TraceTime 是否已赋值
+                     * 
+                     */
+                    bool TraceTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -723,6 +765,18 @@ namespace TencentCloud
                      */
                     uint64_t m_messageRetainTime;
                     bool m_messageRetainTimeHasBeenSet;
+
+                    /**
+                     * 发送消息流量比例
+                     */
+                    double m_sendReceiveRatio;
+                    bool m_sendReceiveRatioHasBeenSet;
+
+                    /**
+                     * 消息轨迹保留时间，单位小时
+                     */
+                    uint64_t m_traceTime;
+                    bool m_traceTimeHasBeenSet;
 
                 };
             }

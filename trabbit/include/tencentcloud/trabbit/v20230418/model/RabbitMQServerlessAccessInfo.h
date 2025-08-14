@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool PublicDataStreamStatusHasBeenSet() const;
 
+                    /**
+                     * 获取公网CLB实例ID
+                     * @return PublicClbId 公网CLB实例ID
+                     * 
+                     */
+                    std::string GetPublicClbId() const;
+
+                    /**
+                     * 设置公网CLB实例ID
+                     * @param _publicClbId 公网CLB实例ID
+                     * 
+                     */
+                    void SetPublicClbId(const std::string& _publicClbId);
+
+                    /**
+                     * 判断参数 PublicClbId 是否已赋值
+                     * @return PublicClbId 是否已赋值
+                     * 
+                     */
+                    bool PublicClbIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_publicDataStreamStatus;
                     bool m_publicDataStreamStatusHasBeenSet;
+
+                    /**
+                     * 公网CLB实例ID
+                     */
+                    std::string m_publicClbId;
+                    bool m_publicClbIdHasBeenSet;
 
                 };
             }
