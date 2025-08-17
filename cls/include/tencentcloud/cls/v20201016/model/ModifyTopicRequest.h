@@ -354,18 +354,18 @@ namespace TencentCloud
 
                     /**
                      * 获取取消切换存储任务的id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id【Topics中的TopicAsyncTaskID字段】。
                      * @return CancelTopicAsyncTaskID 取消切换存储任务的id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id【Topics中的TopicAsyncTaskID字段】。
                      * 
                      */
                     std::string GetCancelTopicAsyncTaskID() const;
 
                     /**
                      * 设置取消切换存储任务的id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id【Topics中的TopicAsyncTaskID字段】。
                      * @param _cancelTopicAsyncTaskID 取消切换存储任务的id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id【Topics中的TopicAsyncTaskID字段】。
                      * 
                      */
                     void SetCancelTopicAsyncTaskID(const std::string& _cancelTopicAsyncTaskID);
@@ -467,7 +467,7 @@ namespace TencentCloud
 
                     /**
                      * 取消切换存储任务的id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id【Topics中的TopicAsyncTaskID字段】。
                      */
                     std::string m_cancelTopicAsyncTaskID;
                     bool m_cancelTopicAsyncTaskIDHasBeenSet;

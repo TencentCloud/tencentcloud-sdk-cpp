@@ -44,18 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取COS导入配置Id。
-- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。
+- 通过 [获取cos导入配置](https://cloud.tencent.com/document/product/614/88099) 获取COS导入配置Id。
                      * @return Id COS导入配置Id。
-- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。
+- 通过 [获取cos导入配置](https://cloud.tencent.com/document/product/614/88099) 获取COS导入配置Id。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置COS导入配置Id。
-- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。
+- 通过 [获取cos导入配置](https://cloud.tencent.com/document/product/614/88099) 获取COS导入配置Id。
                      * @param _id COS导入配置Id。
-- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。
+- 通过 [获取cos导入配置](https://cloud.tencent.com/document/product/614/88099) 获取COS导入配置Id。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -96,7 +96,7 @@ namespace TencentCloud
 
                     /**
                      * COS导入配置Id。
-- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。
+- 通过 [获取cos导入配置](https://cloud.tencent.com/document/product/614/88099) 获取COS导入配置Id。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

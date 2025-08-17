@@ -396,6 +396,27 @@ namespace TencentCloud
                      */
                     bool ThoughtModelAliasNameHasBeenSet() const;
 
+                    /**
+                     * 获取权限位信息
+                     * @return PermissionIds 权限位信息
+                     * 
+                     */
+                    std::vector<std::string> GetPermissionIds() const;
+
+                    /**
+                     * 设置权限位信息
+                     * @param _permissionIds 权限位信息
+                     * 
+                     */
+                    void SetPermissionIds(const std::vector<std::string>& _permissionIds);
+
+                    /**
+                     * 判断参数 PermissionIds 是否已赋值
+                     * @return PermissionIds 是否已赋值
+                     * 
+                     */
+                    bool PermissionIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -495,6 +516,12 @@ namespace TencentCloud
                      */
                     std::string m_thoughtModelAliasName;
                     bool m_thoughtModelAliasNameHasBeenSet;
+
+                    /**
+                     * 权限位信息
+                     */
+                    std::vector<std::string> m_permissionIds;
+                    bool m_permissionIdsHasBeenSet;
 
                 };
             }

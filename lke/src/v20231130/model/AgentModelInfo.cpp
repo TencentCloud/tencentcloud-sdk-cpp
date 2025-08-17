@@ -29,7 +29,8 @@ AgentModelInfo::AgentModelInfo() :
     m_historyLimitHasBeenSet(false),
     m_modelContextWordsLimitHasBeenSet(false),
     m_instructionsWordsLimitHasBeenSet(false),
-    m_maxReasoningRoundHasBeenSet(false)
+    m_maxReasoningRoundHasBeenSet(false),
+    m_modelParamsHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,23 @@ CoreInternalOutcome AgentModelInfo::Deserialize(const rapidjson::Value &value)
         m_maxReasoningRoundHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelParams") && !value["ModelParams"].IsNull())
+    {
+        if (!value["ModelParams"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentModelInfo.ModelParams` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_modelParams.Deserialize(value["ModelParams"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_modelParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +223,15 @@ void AgentModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "MaxReasoningRound";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxReasoningRound, allocator);
+    }
+
+    if (m_modelParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modelParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -352,5 +379,21 @@ void AgentModelInfo::SetMaxReasoningRound(const uint64_t& _maxReasoningRound)
 bool AgentModelInfo::MaxReasoningRoundHasBeenSet() const
 {
     return m_maxReasoningRoundHasBeenSet;
+}
+
+ModelParams AgentModelInfo::GetModelParams() const
+{
+    return m_modelParams;
+}
+
+void AgentModelInfo::SetModelParams(const ModelParams& _modelParams)
+{
+    m_modelParams = _modelParams;
+    m_modelParamsHasBeenSet = true;
+}
+
+bool AgentModelInfo::ModelParamsHasBeenSet() const
+{
+    return m_modelParamsHasBeenSet;
 }
 

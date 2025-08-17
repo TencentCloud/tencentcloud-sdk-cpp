@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/ModelParams.h>
 
 
 namespace TencentCloud
@@ -235,6 +236,27 @@ namespace TencentCloud
                      */
                     bool MaxReasoningRoundHasBeenSet() const;
 
+                    /**
+                     * 获取模型参数
+                     * @return ModelParams 模型参数
+                     * 
+                     */
+                    ModelParams GetModelParams() const;
+
+                    /**
+                     * 设置模型参数
+                     * @param _modelParams 模型参数
+                     * 
+                     */
+                    void SetModelParams(const ModelParams& _modelParams);
+
+                    /**
+                     * 判断参数 ModelParams 是否已赋值
+                     * @return ModelParams 是否已赋值
+                     * 
+                     */
+                    bool ModelParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +312,12 @@ namespace TencentCloud
                      */
                     uint64_t m_maxReasoningRound;
                     bool m_maxReasoningRoundHasBeenSet;
+
+                    /**
+                     * 模型参数
+                     */
+                    ModelParams m_modelParams;
+                    bool m_modelParamsHasBeenSet;
 
                 };
             }

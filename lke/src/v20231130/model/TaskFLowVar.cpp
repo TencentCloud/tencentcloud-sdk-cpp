@@ -26,7 +26,8 @@ TaskFLowVar::TaskFLowVar() :
     m_varDescHasBeenSet(false),
     m_varTypeHasBeenSet(false),
     m_varDefaultValueHasBeenSet(false),
-    m_varDefaultFileNameHasBeenSet(false)
+    m_varDefaultFileNameHasBeenSet(false),
+    m_varModuleTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome TaskFLowVar::Deserialize(const rapidjson::Value &value)
         m_varDefaultFileNameHasBeenSet = true;
     }
 
+    if (value.HasMember("VarModuleType") && !value["VarModuleType"].IsNull())
+    {
+        if (!value["VarModuleType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskFLowVar.VarModuleType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_varModuleType = value["VarModuleType"].GetUint64();
+        m_varModuleTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void TaskFLowVar::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "VarDefaultFileName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_varDefaultFileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_varModuleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VarModuleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_varModuleType, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void TaskFLowVar::SetVarDefaultFileName(const string& _varDefaultFileName)
 bool TaskFLowVar::VarDefaultFileNameHasBeenSet() const
 {
     return m_varDefaultFileNameHasBeenSet;
+}
+
+uint64_t TaskFLowVar::GetVarModuleType() const
+{
+    return m_varModuleType;
+}
+
+void TaskFLowVar::SetVarModuleType(const uint64_t& _varModuleType)
+{
+    m_varModuleType = _varModuleType;
+    m_varModuleTypeHasBeenSet = true;
+}
+
+bool TaskFLowVar::VarModuleTypeHasBeenSet() const
+{
+    return m_varModuleTypeHasBeenSet;
 }
 

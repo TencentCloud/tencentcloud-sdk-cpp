@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取每页数量
-                     * @return Limit 每页数量
+                     * 获取每页数量，默认值20
+                     * @return Limit 每页数量，默认值20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页数量
-                     * @param _limit 每页数量
+                     * 设置每页数量，默认值20
+                     * @param _limit 每页数量，默认值20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取起始偏移量
-                     * @return Offset 起始偏移量
+                     * 获取起始偏移量，默认值0
+                     * @return Offset 起始偏移量，默认值0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置起始偏移量
-                     * @param _offset 起始偏移量
+                     * 设置起始偏移量，默认值0
+                     * @param _offset 起始偏移量，默认值0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 每页数量
+                     * 每页数量，默认值20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 起始偏移量
+                     * 起始偏移量，默认值0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

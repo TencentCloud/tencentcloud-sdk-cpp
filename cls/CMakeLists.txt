@@ -49,6 +49,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateLogsetRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeShippersRequest.h
   include/tencentcloud/cls/v20201016/model/CreateScheduledSqlResponse.h
+  include/tencentcloud/cls/v20201016/model/NoticeContent.h
   include/tencentcloud/cls/v20201016/model/DescribeDashboardsRequest.h
   include/tencentcloud/cls/v20201016/model/CreateConsoleSharingRequest.h
   include/tencentcloud/cls/v20201016/model/LogItem.h
@@ -239,7 +240,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/GroupTriggerConditionInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeLogContextResponse.h
   include/tencentcloud/cls/v20201016/model/SearchLogResponse.h
-  include/tencentcloud/cls/v20201016/model/NoticeContent.h
+  include/tencentcloud/cls/v20201016/model/DashboardSubscribeInfo.h
   include/tencentcloud/cls/v20201016/model/CheckFunctionResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteExportRequest.h
   include/tencentcloud/cls/v20201016/model/PreviewKafkaRechargeRequest.h
@@ -382,6 +383,7 @@ set(cls_src
   src/v20201016/model/CreateLogsetRequest.cpp
   src/v20201016/model/DescribeShippersRequest.cpp
   src/v20201016/model/CreateScheduledSqlResponse.cpp
+  src/v20201016/model/NoticeContent.cpp
   src/v20201016/model/DescribeDashboardsRequest.cpp
   src/v20201016/model/CreateConsoleSharingRequest.cpp
   src/v20201016/model/LogItem.cpp
@@ -572,7 +574,7 @@ set(cls_src
   src/v20201016/model/GroupTriggerConditionInfo.cpp
   src/v20201016/model/DescribeLogContextResponse.cpp
   src/v20201016/model/SearchLogResponse.cpp
-  src/v20201016/model/NoticeContent.cpp
+  src/v20201016/model/DashboardSubscribeInfo.cpp
   src/v20201016/model/CheckFunctionResponse.cpp
   src/v20201016/model/DeleteExportRequest.cpp
   src/v20201016/model/PreviewKafkaRechargeRequest.cpp

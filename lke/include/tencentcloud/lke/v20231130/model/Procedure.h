@@ -197,6 +197,48 @@ namespace TencentCloud
                      */
                     bool ResourceStatusHasBeenSet() const;
 
+                    /**
+                     * 获取输入消耗 token 数
+                     * @return InputCount 输入消耗 token 数
+                     * 
+                     */
+                    uint64_t GetInputCount() const;
+
+                    /**
+                     * 设置输入消耗 token 数
+                     * @param _inputCount 输入消耗 token 数
+                     * 
+                     */
+                    void SetInputCount(const uint64_t& _inputCount);
+
+                    /**
+                     * 判断参数 InputCount 是否已赋值
+                     * @return InputCount 是否已赋值
+                     * 
+                     */
+                    bool InputCountHasBeenSet() const;
+
+                    /**
+                     * 获取输出消耗 token 数
+                     * @return OutputCount 输出消耗 token 数
+                     * 
+                     */
+                    uint64_t GetOutputCount() const;
+
+                    /**
+                     * 设置输出消耗 token 数
+                     * @param _outputCount 输出消耗 token 数
+                     * 
+                     */
+                    void SetOutputCount(const uint64_t& _outputCount);
+
+                    /**
+                     * 判断参数 OutputCount 是否已赋值
+                     * @return OutputCount 是否已赋值
+                     * 
+                     */
+                    bool OutputCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +282,18 @@ namespace TencentCloud
                      */
                     uint64_t m_resourceStatus;
                     bool m_resourceStatusHasBeenSet;
+
+                    /**
+                     * 输入消耗 token 数
+                     */
+                    uint64_t m_inputCount;
+                    bool m_inputCountHasBeenSet;
+
+                    /**
+                     * 输出消耗 token 数
+                     */
+                    uint64_t m_outputCount;
+                    bool m_outputCountHasBeenSet;
 
                 };
             }

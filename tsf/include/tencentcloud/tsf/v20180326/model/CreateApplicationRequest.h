@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用名称
-                     * @return ApplicationName 应用名称
+                     * 获取应用名称，最长60字符
+                     * @return ApplicationName 应用名称，最长60字符
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
-                     * 设置应用名称
-                     * @param _applicationName 应用名称
+                     * 设置应用名称，最长60字符
+                     * @param _applicationName 应用名称，最长60字符
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool ApplicationRuntimeTypeHasBeenSet() const;
 
                     /**
-                     * 获取需要绑定的数据集ID
-                     * @return ProgramId 需要绑定的数据集ID
+                     * 获取【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @return ProgramId 【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     std::string GetProgramId() const;
 
                     /**
-                     * 设置需要绑定的数据集ID
-                     * @param _programId 需要绑定的数据集ID
+                     * 设置【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @param _programId 【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     void SetProgramId(const std::string& _programId);
@@ -383,7 +383,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用名称
+                     * 应用名称，最长60字符
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
@@ -425,7 +425,7 @@ namespace TencentCloud
                     bool m_applicationRuntimeTypeHasBeenSet;
 
                     /**
-                     * 需要绑定的数据集ID
+                     * 【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      */
                     std::string m_programId;
                     bool m_programIdHasBeenSet;

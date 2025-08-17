@@ -35,7 +35,9 @@ AgentToolInfo::AgentToolInfo() :
     m_isBindingKnowledgeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_headersHasBeenSet(false),
-    m_callingMethodHasBeenSet(false)
+    m_callingMethodHasBeenSet(false),
+    m_queryHasBeenSet(false),
+    m_financeStatusHasBeenSet(false)
 {
 }
 
@@ -231,6 +233,36 @@ CoreInternalOutcome AgentToolInfo::Deserialize(const rapidjson::Value &value)
         m_callingMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("Query") && !value["Query"].IsNull())
+    {
+        if (!value["Query"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentToolInfo.Query` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Query"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AgentPluginQuery item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_query.push_back(item);
+        }
+        m_queryHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinanceStatus") && !value["FinanceStatus"].IsNull())
+    {
+        if (!value["FinanceStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentToolInfo.FinanceStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_financeStatus = value["FinanceStatus"].GetInt64();
+        m_financeStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -378,6 +410,29 @@ void AgentToolInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "CallingMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_callingMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Query";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_query.begin(); itr != m_query.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_financeStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinanceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_financeStatus, allocator);
     }
 
 }
@@ -621,5 +676,37 @@ void AgentToolInfo::SetCallingMethod(const string& _callingMethod)
 bool AgentToolInfo::CallingMethodHasBeenSet() const
 {
     return m_callingMethodHasBeenSet;
+}
+
+vector<AgentPluginQuery> AgentToolInfo::GetQuery() const
+{
+    return m_query;
+}
+
+void AgentToolInfo::SetQuery(const vector<AgentPluginQuery>& _query)
+{
+    m_query = _query;
+    m_queryHasBeenSet = true;
+}
+
+bool AgentToolInfo::QueryHasBeenSet() const
+{
+    return m_queryHasBeenSet;
+}
+
+int64_t AgentToolInfo::GetFinanceStatus() const
+{
+    return m_financeStatus;
+}
+
+void AgentToolInfo::SetFinanceStatus(const int64_t& _financeStatus)
+{
+    m_financeStatus = _financeStatus;
+    m_financeStatusHasBeenSet = true;
+}
+
+bool AgentToolInfo::FinanceStatusHasBeenSet() const
+{
+    return m_financeStatusHasBeenSet;
 }
 

@@ -28,6 +28,7 @@
 #include <tencentcloud/lke/v20231130/model/AgentToolRspParam.h>
 #include <tencentcloud/lke/v20231130/model/AgentMCPServerInfo.h>
 #include <tencentcloud/lke/v20231130/model/AgentPluginHeader.h>
+#include <tencentcloud/lke/v20231130/model/AgentPluginQuery.h>
 
 
 namespace TencentCloud
@@ -377,6 +378,48 @@ namespace TencentCloud
                      */
                     bool CallingMethodHasBeenSet() const;
 
+                    /**
+                     * 获取query信息
+                     * @return Query query信息
+                     * 
+                     */
+                    std::vector<AgentPluginQuery> GetQuery() const;
+
+                    /**
+                     * 设置query信息
+                     * @param _query query信息
+                     * 
+                     */
+                    void SetQuery(const std::vector<AgentPluginQuery>& _query);
+
+                    /**
+                     * 判断参数 Query 是否已赋值
+                     * @return Query 是否已赋值
+                     * 
+                     */
+                    bool QueryHasBeenSet() const;
+
+                    /**
+                     * 获取工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）
+                     * @return FinanceStatus 工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）
+                     * 
+                     */
+                    int64_t GetFinanceStatus() const;
+
+                    /**
+                     * 设置工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）
+                     * @param _financeStatus 工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）
+                     * 
+                     */
+                    void SetFinanceStatus(const int64_t& _financeStatus);
+
+                    /**
+                     * 判断参数 FinanceStatus 是否已赋值
+                     * @return FinanceStatus 是否已赋值
+                     * 
+                     */
+                    bool FinanceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -471,6 +514,18 @@ namespace TencentCloud
                      */
                     std::string m_callingMethod;
                     bool m_callingMethodHasBeenSet;
+
+                    /**
+                     * query信息
+                     */
+                    std::vector<AgentPluginQuery> m_query;
+                    bool m_queryHasBeenSet;
+
+                    /**
+                     * 工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）
+                     */
+                    int64_t m_financeStatus;
+                    bool m_financeStatusHasBeenSet;
 
                 };
             }

@@ -147,6 +147,48 @@ namespace TencentCloud
                      */
                     bool LoginSubAccountUinHasBeenSet() const;
 
+                    /**
+                     * 获取智能体类型 dialogue：对话智能体，wechat：公众号智能体
+                     * @return AgentType 智能体类型 dialogue：对话智能体，wechat：公众号智能体
+                     * 
+                     */
+                    std::string GetAgentType() const;
+
+                    /**
+                     * 设置智能体类型 dialogue：对话智能体，wechat：公众号智能体
+                     * @param _agentType 智能体类型 dialogue：对话智能体，wechat：公众号智能体
+                     * 
+                     */
+                    void SetAgentType(const std::string& _agentType);
+
+                    /**
+                     * 判断参数 AgentType 是否已赋值
+                     * @return AgentType 是否已赋值
+                     * 
+                     */
+                    bool AgentTypeHasBeenSet() const;
+
+                    /**
+                     * 获取应用状态 1:未上线 2：运行中
+                     * @return AppStatus 应用状态 1:未上线 2：运行中
+                     * 
+                     */
+                    std::string GetAppStatus() const;
+
+                    /**
+                     * 设置应用状态 1:未上线 2：运行中
+                     * @param _appStatus 应用状态 1:未上线 2：运行中
+                     * 
+                     */
+                    void SetAppStatus(const std::string& _appStatus);
+
+                    /**
+                     * 判断参数 AppStatus 是否已赋值
+                     * @return AppStatus 是否已赋值
+                     * 
+                     */
+                    bool AppStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     std::string m_loginSubAccountUin;
                     bool m_loginSubAccountUinHasBeenSet;
+
+                    /**
+                     * 智能体类型 dialogue：对话智能体，wechat：公众号智能体
+                     */
+                    std::string m_agentType;
+                    bool m_agentTypeHasBeenSet;
+
+                    /**
+                     * 应用状态 1:未上线 2：运行中
+                     */
+                    std::string m_appStatus;
+                    bool m_appStatusHasBeenSet;
 
                 };
             }

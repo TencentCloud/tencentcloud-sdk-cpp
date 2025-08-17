@@ -96,6 +96,27 @@ namespace TencentCloud
                      */
                     bool OutputHasBeenSet() const;
 
+                    /**
+                     * 获取模型名
+                     * @return ModelName 模型名
+                     * 
+                     */
+                    std::string GetModelName() const;
+
+                    /**
+                     * 设置模型名
+                     * @param _modelName 模型名
+                     * 
+                     */
+                    void SetModelName(const std::string& _modelName);
+
+                    /**
+                     * 判断参数 ModelName 是否已赋值
+                     * @return ModelName 是否已赋值
+                     * 
+                     */
+                    bool ModelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +132,12 @@ namespace TencentCloud
                      */
                     std::string m_output;
                     bool m_outputHasBeenSet;
+
+                    /**
+                     * 模型名
+                     */
+                    std::string m_modelName;
+                    bool m_modelNameHasBeenSet;
 
                 };
             }

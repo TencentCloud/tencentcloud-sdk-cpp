@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知渠道组ID。-通过[获取通知内容模板](https://cloud.tencent.com/document/api/614/111714)获取通知渠道组ID
-                     * @return AlarmNoticeId 通知渠道组ID。-通过[获取通知内容模板](https://cloud.tencent.com/document/api/614/111714)获取通知渠道组ID
+                     * 获取通知渠道组ID。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/api/614/56462)获取通知渠道组ID
+                     * @return AlarmNoticeId 通知渠道组ID。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/api/614/56462)获取通知渠道组ID
                      * 
                      */
                     std::string GetAlarmNoticeId() const;
 
                     /**
-                     * 设置通知渠道组ID。-通过[获取通知内容模板](https://cloud.tencent.com/document/api/614/111714)获取通知渠道组ID
-                     * @param _alarmNoticeId 通知渠道组ID。-通过[获取通知内容模板](https://cloud.tencent.com/document/api/614/111714)获取通知渠道组ID
+                     * 设置通知渠道组ID。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/api/614/56462)获取通知渠道组ID
+                     * @param _alarmNoticeId 通知渠道组ID。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/api/614/56462)获取通知渠道组ID
                      * 
                      */
                     void SetAlarmNoticeId(const std::string& _alarmNoticeId);
@@ -353,7 +353,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通知渠道组ID。-通过[获取通知内容模板](https://cloud.tencent.com/document/api/614/111714)获取通知渠道组ID
+                     * 通知渠道组ID。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/api/614/56462)获取通知渠道组ID
                      */
                     std::string m_alarmNoticeId;
                     bool m_alarmNoticeIdHasBeenSet;

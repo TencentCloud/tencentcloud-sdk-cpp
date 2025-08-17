@@ -1253,6 +1253,90 @@ namespace TencentCloud
                      */
                     bool DeployDescHasBeenSet() const;
 
+                    /**
+                     * 获取k8s命名空间名称
+                     * @return K8sNamespaceName k8s命名空间名称
+                     * 
+                     */
+                    std::string GetK8sNamespaceName() const;
+
+                    /**
+                     * 设置k8s命名空间名称
+                     * @param _k8sNamespaceName k8s命名空间名称
+                     * 
+                     */
+                    void SetK8sNamespaceName(const std::string& _k8sNamespaceName);
+
+                    /**
+                     * 判断参数 K8sNamespaceName 是否已赋值
+                     * @return K8sNamespaceName 是否已赋值
+                     * 
+                     */
+                    bool K8sNamespaceNameHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用静态IP
+                     * @return StaticIpEnabled 是否启用静态IP
+                     * 
+                     */
+                    bool GetStaticIpEnabled() const;
+
+                    /**
+                     * 设置是否启用静态IP
+                     * @param _staticIpEnabled 是否启用静态IP
+                     * 
+                     */
+                    void SetStaticIpEnabled(const bool& _staticIpEnabled);
+
+                    /**
+                     * 判断参数 StaticIpEnabled 是否已赋值
+                     * @return StaticIpEnabled 是否已赋值
+                     * 
+                     */
+                    bool StaticIpEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取启动策略[OrderedReady/Parallel]
+                     * @return PodManagementPolicyType 启动策略[OrderedReady/Parallel]
+                     * 
+                     */
+                    std::string GetPodManagementPolicyType() const;
+
+                    /**
+                     * 设置启动策略[OrderedReady/Parallel]
+                     * @param _podManagementPolicyType 启动策略[OrderedReady/Parallel]
+                     * 
+                     */
+                    void SetPodManagementPolicyType(const std::string& _podManagementPolicyType);
+
+                    /**
+                     * 判断参数 PodManagementPolicyType 是否已赋值
+                     * @return PodManagementPolicyType 是否已赋值
+                     * 
+                     */
+                    bool PodManagementPolicyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取滚动更新分区序号
+                     * @return Partition 滚动更新分区序号
+                     * 
+                     */
+                    int64_t GetPartition() const;
+
+                    /**
+                     * 设置滚动更新分区序号
+                     * @param _partition 滚动更新分区序号
+                     * 
+                     */
+                    void SetPartition(const int64_t& _partition);
+
+                    /**
+                     * 判断参数 Partition 是否已赋值
+                     * @return Partition 是否已赋值
+                     * 
+                     */
+                    bool PartitionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1596,6 +1680,30 @@ namespace TencentCloud
                      */
                     std::string m_deployDesc;
                     bool m_deployDescHasBeenSet;
+
+                    /**
+                     * k8s命名空间名称
+                     */
+                    std::string m_k8sNamespaceName;
+                    bool m_k8sNamespaceNameHasBeenSet;
+
+                    /**
+                     * 是否启用静态IP
+                     */
+                    bool m_staticIpEnabled;
+                    bool m_staticIpEnabledHasBeenSet;
+
+                    /**
+                     * 启动策略[OrderedReady/Parallel]
+                     */
+                    std::string m_podManagementPolicyType;
+                    bool m_podManagementPolicyTypeHasBeenSet;
+
+                    /**
+                     * 滚动更新分区序号
+                     */
+                    int64_t m_partition;
+                    bool m_partitionHasBeenSet;
 
                 };
             }

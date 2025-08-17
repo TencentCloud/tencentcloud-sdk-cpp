@@ -33,7 +33,8 @@ ListUsageCallDetailRequest::ListUsageCallDetailRequest() :
     m_callTypeHasBeenSet(false),
     m_subScenesHasBeenSet(false),
     m_appTypeHasBeenSet(false),
-    m_billingTagHasBeenSet(false)
+    m_billingTagHasBeenSet(false),
+    m_spaceIdHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,14 @@ string ListUsageCallDetailRequest::ToJsonString() const
         string key = "BillingTag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_billingTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_spaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -329,6 +338,22 @@ void ListUsageCallDetailRequest::SetBillingTag(const string& _billingTag)
 bool ListUsageCallDetailRequest::BillingTagHasBeenSet() const
 {
     return m_billingTagHasBeenSet;
+}
+
+string ListUsageCallDetailRequest::GetSpaceId() const
+{
+    return m_spaceId;
+}
+
+void ListUsageCallDetailRequest::SetSpaceId(const string& _spaceId)
+{
+    m_spaceId = _spaceId;
+    m_spaceIdHasBeenSet = true;
+}
+
+bool ListUsageCallDetailRequest::SpaceIdHasBeenSet() const
+{
+    return m_spaceIdHasBeenSet;
 }
 
 

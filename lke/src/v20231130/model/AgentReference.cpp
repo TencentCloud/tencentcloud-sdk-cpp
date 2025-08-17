@@ -30,7 +30,9 @@ AgentReference::AgentReference() :
     m_docNameHasBeenSet(false),
     m_qaBizIdHasBeenSet(false),
     m_indexHasBeenSet(false),
-    m_titleHasBeenSet(false)
+    m_titleHasBeenSet(false),
+    m_knowledgeNameHasBeenSet(false),
+    m_knowledgeBizIdHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome AgentReference::Deserialize(const rapidjson::Value &value)
         m_titleHasBeenSet = true;
     }
 
+    if (value.HasMember("KnowledgeName") && !value["KnowledgeName"].IsNull())
+    {
+        if (!value["KnowledgeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentReference.KnowledgeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_knowledgeName = string(value["KnowledgeName"].GetString());
+        m_knowledgeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("KnowledgeBizId") && !value["KnowledgeBizId"].IsNull())
+    {
+        if (!value["KnowledgeBizId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentReference.KnowledgeBizId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_knowledgeBizId = string(value["KnowledgeBizId"].GetString());
+        m_knowledgeBizIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void AgentReference::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Title";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_knowledgeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_knowledgeBizId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void AgentReference::SetTitle(const string& _title)
 bool AgentReference::TitleHasBeenSet() const
 {
     return m_titleHasBeenSet;
+}
+
+string AgentReference::GetKnowledgeName() const
+{
+    return m_knowledgeName;
+}
+
+void AgentReference::SetKnowledgeName(const string& _knowledgeName)
+{
+    m_knowledgeName = _knowledgeName;
+    m_knowledgeNameHasBeenSet = true;
+}
+
+bool AgentReference::KnowledgeNameHasBeenSet() const
+{
+    return m_knowledgeNameHasBeenSet;
+}
+
+string AgentReference::GetKnowledgeBizId() const
+{
+    return m_knowledgeBizId;
+}
+
+void AgentReference::SetKnowledgeBizId(const string& _knowledgeBizId)
+{
+    m_knowledgeBizId = _knowledgeBizId;
+    m_knowledgeBizIdHasBeenSet = true;
+}
+
+bool AgentReference::KnowledgeBizIdHasBeenSet() const
+{
+    return m_knowledgeBizIdHasBeenSet;
 }
 

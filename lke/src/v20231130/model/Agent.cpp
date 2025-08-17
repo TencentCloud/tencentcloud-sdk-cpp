@@ -32,7 +32,8 @@ Agent::Agent() :
     m_toolsHasBeenSet(false),
     m_pluginsHasBeenSet(false),
     m_isStartingAgentHasBeenSet(false),
-    m_agentTypeHasBeenSet(false)
+    m_agentTypeHasBeenSet(false),
+    m_agentModeHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,16 @@ CoreInternalOutcome Agent::Deserialize(const rapidjson::Value &value)
         m_agentTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentMode") && !value["AgentMode"].IsNull())
+    {
+        if (!value["AgentMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Agent.AgentMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentMode = value["AgentMode"].GetInt64();
+        m_agentModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -312,6 +323,14 @@ void Agent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "AgentType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_agentType, allocator);
+    }
+
+    if (m_agentModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentMode, allocator);
     }
 
 }
@@ -507,5 +526,21 @@ void Agent::SetAgentType(const uint64_t& _agentType)
 bool Agent::AgentTypeHasBeenSet() const
 {
     return m_agentTypeHasBeenSet;
+}
+
+int64_t Agent::GetAgentMode() const
+{
+    return m_agentMode;
+}
+
+void Agent::SetAgentMode(const int64_t& _agentMode)
+{
+    m_agentMode = _agentMode;
+    m_agentModeHasBeenSet = true;
+}
+
+bool Agent::AgentModeHasBeenSet() const
+{
+    return m_agentModeHasBeenSet;
 }
 

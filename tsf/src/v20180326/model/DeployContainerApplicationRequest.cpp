@@ -79,7 +79,11 @@ DeployContainerApplicationRequest::DeployContainerApplicationRequest() :
     m_agentProfileListHasBeenSet(false),
     m_serviceCleanHasBeenSet(false),
     m_envCleanHasBeenSet(false),
-    m_deployDescHasBeenSet(false)
+    m_deployDescHasBeenSet(false),
+    m_k8sNamespaceNameHasBeenSet(false),
+    m_staticIpEnabledHasBeenSet(false),
+    m_podManagementPolicyTypeHasBeenSet(false),
+    m_partitionHasBeenSet(false)
 {
 }
 
@@ -606,6 +610,38 @@ string DeployContainerApplicationRequest::ToJsonString() const
         string key = "DeployDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deployDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_k8sNamespaceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "K8sNamespaceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_k8sNamespaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_staticIpEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaticIpEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_staticIpEnabled, allocator);
+    }
+
+    if (m_podManagementPolicyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodManagementPolicyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_podManagementPolicyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_partitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Partition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_partition, allocator);
     }
 
 
@@ -1526,6 +1562,70 @@ void DeployContainerApplicationRequest::SetDeployDesc(const string& _deployDesc)
 bool DeployContainerApplicationRequest::DeployDescHasBeenSet() const
 {
     return m_deployDescHasBeenSet;
+}
+
+string DeployContainerApplicationRequest::GetK8sNamespaceName() const
+{
+    return m_k8sNamespaceName;
+}
+
+void DeployContainerApplicationRequest::SetK8sNamespaceName(const string& _k8sNamespaceName)
+{
+    m_k8sNamespaceName = _k8sNamespaceName;
+    m_k8sNamespaceNameHasBeenSet = true;
+}
+
+bool DeployContainerApplicationRequest::K8sNamespaceNameHasBeenSet() const
+{
+    return m_k8sNamespaceNameHasBeenSet;
+}
+
+bool DeployContainerApplicationRequest::GetStaticIpEnabled() const
+{
+    return m_staticIpEnabled;
+}
+
+void DeployContainerApplicationRequest::SetStaticIpEnabled(const bool& _staticIpEnabled)
+{
+    m_staticIpEnabled = _staticIpEnabled;
+    m_staticIpEnabledHasBeenSet = true;
+}
+
+bool DeployContainerApplicationRequest::StaticIpEnabledHasBeenSet() const
+{
+    return m_staticIpEnabledHasBeenSet;
+}
+
+string DeployContainerApplicationRequest::GetPodManagementPolicyType() const
+{
+    return m_podManagementPolicyType;
+}
+
+void DeployContainerApplicationRequest::SetPodManagementPolicyType(const string& _podManagementPolicyType)
+{
+    m_podManagementPolicyType = _podManagementPolicyType;
+    m_podManagementPolicyTypeHasBeenSet = true;
+}
+
+bool DeployContainerApplicationRequest::PodManagementPolicyTypeHasBeenSet() const
+{
+    return m_podManagementPolicyTypeHasBeenSet;
+}
+
+int64_t DeployContainerApplicationRequest::GetPartition() const
+{
+    return m_partition;
+}
+
+void DeployContainerApplicationRequest::SetPartition(const int64_t& _partition)
+{
+    m_partition = _partition;
+    m_partitionHasBeenSet = true;
+}
+
+bool DeployContainerApplicationRequest::PartitionHasBeenSet() const
+{
+    return m_partitionHasBeenSet;
 }
 
 

@@ -509,6 +509,27 @@ namespace TencentCloud
                      */
                     bool TaxIdentifyCodeHasBeenSet() const;
 
+                    /**
+                     * 获取印章描述内容
+                     * @return SealDescription 印章描述内容
+                     * 
+                     */
+                    std::string GetSealDescription() const;
+
+                    /**
+                     * 设置印章描述内容
+                     * @param _sealDescription 印章描述内容
+                     * 
+                     */
+                    void SetSealDescription(const std::string& _sealDescription);
+
+                    /**
+                     * 判断参数 SealDescription 是否已赋值
+                     * @return SealDescription 是否已赋值
+                     * 
+                     */
+                    bool SealDescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -639,6 +660,12 @@ namespace TencentCloud
                      */
                     std::string m_taxIdentifyCode;
                     bool m_taxIdentifyCodeHasBeenSet;
+
+                    /**
+                     * 印章描述内容
+                     */
+                    std::string m_sealDescription;
+                    bool m_sealDescriptionHasBeenSet;
 
                 };
             }

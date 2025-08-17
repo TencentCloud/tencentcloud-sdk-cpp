@@ -63,6 +63,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateMPSTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateMPSTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreatePersonSampleRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreatePersonSampleResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateProcedureTemplateRequest.h>
@@ -117,6 +119,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteMPSTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteMPSTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeletePersonSampleRequest.h>
@@ -205,6 +209,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeJustInTimeTranscodeTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeMPSTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeMPSTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaPlayStatDetailsRequest.h>
@@ -303,6 +309,8 @@
 #include <tencentcloud/vod/v20180717/model/ModifyImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyMPSTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyMPSTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaInfoRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaInfoResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaStorageClassRequest.h>
@@ -461,6 +469,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateJustInTimeTranscodeTemplateResponse> CreateJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<CreateJustInTimeTranscodeTemplateOutcome> CreateJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateJustInTimeTranscodeTemplateRequest&, CreateJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMPSTemplateResponse> CreateMPSTemplateOutcome;
+                typedef std::future<CreateMPSTemplateOutcome> CreateMPSTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateMPSTemplateRequest&, CreateMPSTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMPSTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePersonSampleResponse> CreatePersonSampleOutcome;
                 typedef std::future<CreatePersonSampleOutcome> CreatePersonSampleOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreatePersonSampleRequest&, CreatePersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonSampleAsyncHandler;
@@ -542,6 +553,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteJustInTimeTranscodeTemplateResponse> DeleteJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<DeleteJustInTimeTranscodeTemplateOutcome> DeleteJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteJustInTimeTranscodeTemplateRequest&, DeleteJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteMPSTemplateResponse> DeleteMPSTemplateOutcome;
+                typedef std::future<DeleteMPSTemplateOutcome> DeleteMPSTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteMPSTemplateRequest&, DeleteMPSTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMPSTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteMediaResponse> DeleteMediaOutcome;
                 typedef std::future<DeleteMediaOutcome> DeleteMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteMediaRequest&, DeleteMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMediaAsyncHandler;
@@ -674,6 +688,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLicenseUsageDataResponse> DescribeLicenseUsageDataOutcome;
                 typedef std::future<DescribeLicenseUsageDataOutcome> DescribeLicenseUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeLicenseUsageDataRequest&, DescribeLicenseUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLicenseUsageDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMPSTemplatesResponse> DescribeMPSTemplatesOutcome;
+                typedef std::future<DescribeMPSTemplatesOutcome> DescribeMPSTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeMPSTemplatesRequest&, DescribeMPSTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMPSTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMediaInfosResponse> DescribeMediaInfosOutcome;
                 typedef std::future<DescribeMediaInfosOutcome> DescribeMediaInfosOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeMediaInfosRequest&, DescribeMediaInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaInfosAsyncHandler;
@@ -821,6 +838,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyJustInTimeTranscodeTemplateResponse> ModifyJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<ModifyJustInTimeTranscodeTemplateOutcome> ModifyJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyJustInTimeTranscodeTemplateRequest&, ModifyJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMPSTemplateResponse> ModifyMPSTemplateOutcome;
+                typedef std::future<ModifyMPSTemplateOutcome> ModifyMPSTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyMPSTemplateRequest&, ModifyMPSTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMPSTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMediaInfoResponse> ModifyMediaInfoOutcome;
                 typedef std::future<ModifyMediaInfoOutcome> ModifyMediaInfoOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyMediaInfoRequest&, ModifyMediaInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMediaInfoAsyncHandler;
@@ -1163,6 +1183,22 @@ namespace TencentCloud
                 CreateJustInTimeTranscodeTemplateOutcomeCallable CreateJustInTimeTranscodeTemplateCallable(const Model::CreateJustInTimeTranscodeTemplateRequest& request);
 
                 /**
+                 *该接口用于创建自定义模板，模板用于 ProcessMediaByMPS 接口的部分功能。
+创建模板时，需要将 MPS 相关参数以 JSON 格式填入 MPSCreateTemplateParams 参数中。关于具体的任务参数配置方法，请参考 MPS 任务模板相关文档说明。
+当前支持创建自定义模板的 MPS 功能：
+1. [音视频增强](https://cloud.tencent.com/document/product/862/118703)。
+
+> 以该种方式创建的任务模板：
+> 1. 模板的管理仍在点播平台中完成。
+> 2. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。
+                 * @param req CreateMPSTemplateRequest
+                 * @return CreateMPSTemplateOutcome
+                 */
+                CreateMPSTemplateOutcome CreateMPSTemplate(const Model::CreateMPSTemplateRequest &request);
+                void CreateMPSTemplateAsync(const Model::CreateMPSTemplateRequest& request, const CreateMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMPSTemplateOutcomeCallable CreateMPSTemplateCallable(const Model::CreateMPSTemplateRequest& request);
+
+                /**
                  *该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、不适宜视频识别等视频处理。
                  * @param req CreatePersonSampleRequest
                  * @return CreatePersonSampleOutcome
@@ -1417,6 +1453,15 @@ namespace TencentCloud
                 DeleteJustInTimeTranscodeTemplateOutcome DeleteJustInTimeTranscodeTemplate(const Model::DeleteJustInTimeTranscodeTemplateRequest &request);
                 void DeleteJustInTimeTranscodeTemplateAsync(const Model::DeleteJustInTimeTranscodeTemplateRequest& request, const DeleteJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteJustInTimeTranscodeTemplateOutcomeCallable DeleteJustInTimeTranscodeTemplateCallable(const Model::DeleteJustInTimeTranscodeTemplateRequest& request);
+
+                /**
+                 *删除用户自定义 MPS 任务模板。
+                 * @param req DeleteMPSTemplateRequest
+                 * @return DeleteMPSTemplateOutcome
+                 */
+                DeleteMPSTemplateOutcome DeleteMPSTemplate(const Model::DeleteMPSTemplateRequest &request);
+                void DeleteMPSTemplateAsync(const Model::DeleteMPSTemplateRequest& request, const DeleteMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMPSTemplateOutcomeCallable DeleteMPSTemplateCallable(const Model::DeleteMPSTemplateRequest& request);
 
                 /**
                  ** 删除媒体及其对应的视频处理文件（原始文件、如转码视频、雪碧图、截图、微信发布视频等）；
@@ -1870,6 +1915,16 @@ namespace TencentCloud
                 DescribeLicenseUsageDataOutcome DescribeLicenseUsageData(const Model::DescribeLicenseUsageDataRequest &request);
                 void DescribeLicenseUsageDataAsync(const Model::DescribeLicenseUsageDataRequest& request, const DescribeLicenseUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLicenseUsageDataOutcomeCallable DescribeLicenseUsageDataCallable(const Model::DescribeLicenseUsageDataRequest& request);
+
+                /**
+                 *获取用户自定义媒体处理服务（MPS）任务模板。
+查询模板列表时，需要将 MPS 相关参数以 JSON 格式填入 MPSDescribeTemplateParams 参数中。关于具体的任务参数配置方法，请参考 MPS 任务模板相关文档说明。
+                 * @param req DescribeMPSTemplatesRequest
+                 * @return DescribeMPSTemplatesOutcome
+                 */
+                DescribeMPSTemplatesOutcome DescribeMPSTemplates(const Model::DescribeMPSTemplatesRequest &request);
+                void DescribeMPSTemplatesAsync(const Model::DescribeMPSTemplatesRequest& request, const DescribeMPSTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMPSTemplatesOutcomeCallable DescribeMPSTemplatesCallable(const Model::DescribeMPSTemplatesRequest& request);
 
                 /**
                  *1. 该接口可以获取多个媒体文件的多种信息，包括：
@@ -2404,6 +2459,16 @@ namespace TencentCloud
                 ModifyJustInTimeTranscodeTemplateOutcome ModifyJustInTimeTranscodeTemplate(const Model::ModifyJustInTimeTranscodeTemplateRequest &request);
                 void ModifyJustInTimeTranscodeTemplateAsync(const Model::ModifyJustInTimeTranscodeTemplateRequest& request, const ModifyJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyJustInTimeTranscodeTemplateOutcomeCallable ModifyJustInTimeTranscodeTemplateCallable(const Model::ModifyJustInTimeTranscodeTemplateRequest& request);
+
+                /**
+                 *修改用户自定义 MPS 任务模板。
+修改模板时，需要将 MPS 相关参数以 JSON 格式填入 MPSModifyTemplateParams 参数中。关于具体的任务参数配置方法，请参考 MPS 任务模板相关文档说明。
+                 * @param req ModifyMPSTemplateRequest
+                 * @return ModifyMPSTemplateOutcome
+                 */
+                ModifyMPSTemplateOutcome ModifyMPSTemplate(const Model::ModifyMPSTemplateRequest &request);
+                void ModifyMPSTemplateAsync(const Model::ModifyMPSTemplateRequest& request, const ModifyMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMPSTemplateOutcomeCallable ModifyMPSTemplateCallable(const Model::ModifyMPSTemplateRequest& request);
 
                 /**
                  *修改媒体文件的属性，包括分类、名称、描述、标签、过期时间、打点信息、视频封面、字幕信息等。

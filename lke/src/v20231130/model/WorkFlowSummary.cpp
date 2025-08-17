@@ -27,7 +27,9 @@ WorkFlowSummary::WorkFlowSummary() :
     m_runNodesHasBeenSet(false),
     m_optionCardsHasBeenSet(false),
     m_outputsHasBeenSet(false),
-    m_workflowReleaseTimeHasBeenSet(false)
+    m_workflowReleaseTimeHasBeenSet(false),
+    m_pendingMessagesHasBeenSet(false),
+    m_optionCardIndexHasBeenSet(false)
 {
 }
 
@@ -122,6 +124,36 @@ CoreInternalOutcome WorkFlowSummary::Deserialize(const rapidjson::Value &value)
         m_workflowReleaseTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PendingMessages") && !value["PendingMessages"].IsNull())
+    {
+        if (!value["PendingMessages"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WorkFlowSummary.PendingMessages` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PendingMessages"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_pendingMessages.push_back((*itr).GetString());
+        }
+        m_pendingMessagesHasBeenSet = true;
+    }
+
+    if (value.HasMember("OptionCardIndex") && !value["OptionCardIndex"].IsNull())
+    {
+        if (!value["OptionCardIndex"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkFlowSummary.OptionCardIndex` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_optionCardIndex.Deserialize(value["OptionCardIndex"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_optionCardIndexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +232,28 @@ void WorkFlowSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "WorkflowReleaseTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workflowReleaseTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pendingMessagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PendingMessages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_pendingMessages.begin(); itr != m_pendingMessages.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_optionCardIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OptionCardIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_optionCardIndex.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -315,5 +369,37 @@ void WorkFlowSummary::SetWorkflowReleaseTime(const string& _workflowReleaseTime)
 bool WorkFlowSummary::WorkflowReleaseTimeHasBeenSet() const
 {
     return m_workflowReleaseTimeHasBeenSet;
+}
+
+vector<string> WorkFlowSummary::GetPendingMessages() const
+{
+    return m_pendingMessages;
+}
+
+void WorkFlowSummary::SetPendingMessages(const vector<string>& _pendingMessages)
+{
+    m_pendingMessages = _pendingMessages;
+    m_pendingMessagesHasBeenSet = true;
+}
+
+bool WorkFlowSummary::PendingMessagesHasBeenSet() const
+{
+    return m_pendingMessagesHasBeenSet;
+}
+
+OptionCardIndex WorkFlowSummary::GetOptionCardIndex() const
+{
+    return m_optionCardIndex;
+}
+
+void WorkFlowSummary::SetOptionCardIndex(const OptionCardIndex& _optionCardIndex)
+{
+    m_optionCardIndex = _optionCardIndex;
+    m_optionCardIndexHasBeenSet = true;
+}
+
+bool WorkFlowSummary::OptionCardIndexHasBeenSet() const
+{
+    return m_optionCardIndexHasBeenSet;
 }
 

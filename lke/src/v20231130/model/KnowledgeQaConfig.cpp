@@ -38,7 +38,12 @@ KnowledgeQaConfig::KnowledgeQaConfig() :
     m_aiCallHasBeenSet(false),
     m_shareKnowledgeBasesHasBeenSet(false),
     m_backgroundImageHasBeenSet(false),
-    m_openingQuestionsHasBeenSet(false)
+    m_openingQuestionsHasBeenSet(false),
+    m_longMemoryOpenHasBeenSet(false),
+    m_longMemoryDayHasBeenSet(false),
+    m_agentHasBeenSet(false),
+    m_knowledgeModelConfigHasBeenSet(false),
+    m_knowledgeAdvancedConfigHasBeenSet(false)
 {
 }
 
@@ -333,6 +338,77 @@ CoreInternalOutcome KnowledgeQaConfig::Deserialize(const rapidjson::Value &value
         m_openingQuestionsHasBeenSet = true;
     }
 
+    if (value.HasMember("LongMemoryOpen") && !value["LongMemoryOpen"].IsNull())
+    {
+        if (!value["LongMemoryOpen"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.LongMemoryOpen` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_longMemoryOpen = value["LongMemoryOpen"].GetBool();
+        m_longMemoryOpenHasBeenSet = true;
+    }
+
+    if (value.HasMember("LongMemoryDay") && !value["LongMemoryDay"].IsNull())
+    {
+        if (!value["LongMemoryDay"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.LongMemoryDay` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_longMemoryDay = value["LongMemoryDay"].GetUint64();
+        m_longMemoryDayHasBeenSet = true;
+    }
+
+    if (value.HasMember("Agent") && !value["Agent"].IsNull())
+    {
+        if (!value["Agent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.Agent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agent.Deserialize(value["Agent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agentHasBeenSet = true;
+    }
+
+    if (value.HasMember("KnowledgeModelConfig") && !value["KnowledgeModelConfig"].IsNull())
+    {
+        if (!value["KnowledgeModelConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.KnowledgeModelConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_knowledgeModelConfig.Deserialize(value["KnowledgeModelConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_knowledgeModelConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("KnowledgeAdvancedConfig") && !value["KnowledgeAdvancedConfig"].IsNull())
+    {
+        if (!value["KnowledgeAdvancedConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.KnowledgeAdvancedConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_knowledgeAdvancedConfig.Deserialize(value["KnowledgeAdvancedConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_knowledgeAdvancedConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -524,6 +600,49 @@ void KnowledgeQaConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_longMemoryOpenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongMemoryOpen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_longMemoryOpen, allocator);
+    }
+
+    if (m_longMemoryDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongMemoryDay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_longMemoryDay, allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_knowledgeModelConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeModelConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_knowledgeModelConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_knowledgeAdvancedConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeAdvancedConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_knowledgeAdvancedConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -815,5 +934,85 @@ void KnowledgeQaConfig::SetOpeningQuestions(const vector<string>& _openingQuesti
 bool KnowledgeQaConfig::OpeningQuestionsHasBeenSet() const
 {
     return m_openingQuestionsHasBeenSet;
+}
+
+bool KnowledgeQaConfig::GetLongMemoryOpen() const
+{
+    return m_longMemoryOpen;
+}
+
+void KnowledgeQaConfig::SetLongMemoryOpen(const bool& _longMemoryOpen)
+{
+    m_longMemoryOpen = _longMemoryOpen;
+    m_longMemoryOpenHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::LongMemoryOpenHasBeenSet() const
+{
+    return m_longMemoryOpenHasBeenSet;
+}
+
+uint64_t KnowledgeQaConfig::GetLongMemoryDay() const
+{
+    return m_longMemoryDay;
+}
+
+void KnowledgeQaConfig::SetLongMemoryDay(const uint64_t& _longMemoryDay)
+{
+    m_longMemoryDay = _longMemoryDay;
+    m_longMemoryDayHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::LongMemoryDayHasBeenSet() const
+{
+    return m_longMemoryDayHasBeenSet;
+}
+
+KnowledgeQaAgent KnowledgeQaConfig::GetAgent() const
+{
+    return m_agent;
+}
+
+void KnowledgeQaConfig::SetAgent(const KnowledgeQaAgent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
+}
+
+KnowledgeModelConfig KnowledgeQaConfig::GetKnowledgeModelConfig() const
+{
+    return m_knowledgeModelConfig;
+}
+
+void KnowledgeQaConfig::SetKnowledgeModelConfig(const KnowledgeModelConfig& _knowledgeModelConfig)
+{
+    m_knowledgeModelConfig = _knowledgeModelConfig;
+    m_knowledgeModelConfigHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::KnowledgeModelConfigHasBeenSet() const
+{
+    return m_knowledgeModelConfigHasBeenSet;
+}
+
+KnowledgeAdvancedConfig KnowledgeQaConfig::GetKnowledgeAdvancedConfig() const
+{
+    return m_knowledgeAdvancedConfig;
+}
+
+void KnowledgeQaConfig::SetKnowledgeAdvancedConfig(const KnowledgeAdvancedConfig& _knowledgeAdvancedConfig)
+{
+    m_knowledgeAdvancedConfig = _knowledgeAdvancedConfig;
+    m_knowledgeAdvancedConfigHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::KnowledgeAdvancedConfigHasBeenSet() const
+{
+    return m_knowledgeAdvancedConfigHasBeenSet;
 }
 

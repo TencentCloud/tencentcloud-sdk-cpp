@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return List 标签列表
+                     * 获取应用列表
+                     * @return List 应用列表
                      * 
                      */
                     std::vector<AppInfo> GetList() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * 应用列表
                      */
                     std::vector<AppInfo> m_list;
                     bool m_listHasBeenSet;

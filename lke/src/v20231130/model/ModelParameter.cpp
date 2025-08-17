@@ -23,7 +23,8 @@ using namespace std;
 ModelParameter::ModelParameter() :
     m_defaultHasBeenSet(false),
     m_minHasBeenSet(false),
-    m_maxHasBeenSet(false)
+    m_maxHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ModelParameter::Deserialize(const rapidjson::Value &value)
         m_maxHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelParameter.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ModelParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Max";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_max, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ModelParameter::SetMax(const double& _max)
 bool ModelParameter::MaxHasBeenSet() const
 {
     return m_maxHasBeenSet;
+}
+
+string ModelParameter::GetName() const
+{
+    return m_name;
+}
+
+void ModelParameter::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool ModelParameter::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 

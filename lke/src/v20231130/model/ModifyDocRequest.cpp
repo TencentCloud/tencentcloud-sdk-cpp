@@ -35,7 +35,10 @@ ModifyDocRequest::ModifyDocRequest() :
     m_expireStartHasBeenSet(false),
     m_expireEndHasBeenSet(false),
     m_cateBizIdHasBeenSet(false),
-    m_isDownloadHasBeenSet(false)
+    m_isDownloadHasBeenSet(false),
+    m_modifyTypesHasBeenSet(false),
+    m_updatePeriodInfoHasBeenSet(false),
+    m_splitRuleHasBeenSet(false)
 {
 }
 
@@ -155,6 +158,36 @@ string ModifyDocRequest::ToJsonString() const
         string key = "IsDownload";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isDownload, allocator);
+    }
+
+    if (m_modifyTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_modifyTypes.begin(); itr != m_modifyTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_updatePeriodInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatePeriodInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_updatePeriodInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_splitRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SplitRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_splitRule.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -371,6 +404,54 @@ void ModifyDocRequest::SetIsDownload(const bool& _isDownload)
 bool ModifyDocRequest::IsDownloadHasBeenSet() const
 {
     return m_isDownloadHasBeenSet;
+}
+
+vector<uint64_t> ModifyDocRequest::GetModifyTypes() const
+{
+    return m_modifyTypes;
+}
+
+void ModifyDocRequest::SetModifyTypes(const vector<uint64_t>& _modifyTypes)
+{
+    m_modifyTypes = _modifyTypes;
+    m_modifyTypesHasBeenSet = true;
+}
+
+bool ModifyDocRequest::ModifyTypesHasBeenSet() const
+{
+    return m_modifyTypesHasBeenSet;
+}
+
+UpdatePeriodInfo ModifyDocRequest::GetUpdatePeriodInfo() const
+{
+    return m_updatePeriodInfo;
+}
+
+void ModifyDocRequest::SetUpdatePeriodInfo(const UpdatePeriodInfo& _updatePeriodInfo)
+{
+    m_updatePeriodInfo = _updatePeriodInfo;
+    m_updatePeriodInfoHasBeenSet = true;
+}
+
+bool ModifyDocRequest::UpdatePeriodInfoHasBeenSet() const
+{
+    return m_updatePeriodInfoHasBeenSet;
+}
+
+string ModifyDocRequest::GetSplitRule() const
+{
+    return m_splitRule;
+}
+
+void ModifyDocRequest::SetSplitRule(const string& _splitRule)
+{
+    m_splitRule = _splitRule;
+    m_splitRuleHasBeenSet = true;
+}
+
+bool ModifyDocRequest::SplitRuleHasBeenSet() const
+{
+    return m_splitRuleHasBeenSet;
 }
 
 

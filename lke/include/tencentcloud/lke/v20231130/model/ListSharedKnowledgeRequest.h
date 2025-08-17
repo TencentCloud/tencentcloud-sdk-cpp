@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool KeywordHasBeenSet() const;
 
+                    /**
+                     * 获取共享知识库类型，0普通，1公众号
+                     * @return KnowledgeTypes 共享知识库类型，0普通，1公众号
+                     * 
+                     */
+                    std::vector<int64_t> GetKnowledgeTypes() const;
+
+                    /**
+                     * 设置共享知识库类型，0普通，1公众号
+                     * @param _knowledgeTypes 共享知识库类型，0普通，1公众号
+                     * 
+                     */
+                    void SetKnowledgeTypes(const std::vector<int64_t>& _knowledgeTypes);
+
+                    /**
+                     * 判断参数 KnowledgeTypes 是否已赋值
+                     * @return KnowledgeTypes 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
+
+                    /**
+                     * 共享知识库类型，0普通，1公众号
+                     */
+                    std::vector<int64_t> m_knowledgeTypes;
+                    bool m_knowledgeTypesHasBeenSet;
 
                 };
             }

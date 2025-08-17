@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool AppBizIdsHasBeenSet() const;
 
+                    /**
+                     * 获取空间列表
+                     * @return SpaceId 空间列表
+                     * 
+                     */
+                    std::string GetSpaceId() const;
+
+                    /**
+                     * 设置空间列表
+                     * @param _spaceId 空间列表
+                     * 
+                     */
+                    void SetSpaceId(const std::string& _spaceId);
+
+                    /**
+                     * 判断参数 SpaceId 是否已赋值
+                     * @return SpaceId 是否已赋值
+                     * 
+                     */
+                    bool SpaceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_appBizIds;
                     bool m_appBizIdsHasBeenSet;
+
+                    /**
+                     * 空间列表
+                     */
+                    std::string m_spaceId;
+                    bool m_spaceIdHasBeenSet;
 
                 };
             }

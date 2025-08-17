@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据集ID
-                     * @return ProgramId 数据集ID
+                     * 获取数据集ID，调用[DescribePrograms](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program)查询接口会返回数据集信息，包括programId
+                     * @return ProgramId 数据集ID，调用[DescribePrograms](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program)查询接口会返回数据集信息，包括programId
                      * 
                      */
                     std::string GetProgramId() const;
 
                     /**
-                     * 设置数据集ID
-                     * @param _programId 数据集ID
+                     * 设置数据集ID，调用[DescribePrograms](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program)查询接口会返回数据集信息，包括programId
+                     * @param _programId 数据集ID，调用[DescribePrograms](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program)查询接口会返回数据集信息，包括programId
                      * 
                      */
                     void SetProgramId(const std::string& _programId);
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据集ID
+                     * 数据集ID，调用[DescribePrograms](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program)查询接口会返回数据集信息，包括programId
                      */
                     std::string m_programId;
                     bool m_programIdHasBeenSet;

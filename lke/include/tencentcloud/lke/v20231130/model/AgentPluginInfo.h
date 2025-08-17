@@ -27,6 +27,7 @@
 #include <tencentcloud/lke/v20231130/model/AgentPluginHeader.h>
 #include <tencentcloud/lke/v20231130/model/AgentModelInfo.h>
 #include <tencentcloud/lke/v20231130/model/AgentKnowledgeQAPlugin.h>
+#include <tencentcloud/lke/v20231130/model/AgentPluginQuery.h>
 
 
 namespace TencentCloud
@@ -154,6 +155,69 @@ namespace TencentCloud
                      */
                     bool KnowledgeQaHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用一键授权
+                     * @return EnableRoleAuth 是否使用一键授权
+                     * 
+                     */
+                    bool GetEnableRoleAuth() const;
+
+                    /**
+                     * 设置是否使用一键授权
+                     * @param _enableRoleAuth 是否使用一键授权
+                     * 
+                     */
+                    void SetEnableRoleAuth(const bool& _enableRoleAuth);
+
+                    /**
+                     * 判断参数 EnableRoleAuth 是否已赋值
+                     * @return EnableRoleAuth 是否已赋值
+                     * 
+                     */
+                    bool EnableRoleAuthHasBeenSet() const;
+
+                    /**
+                     * 获取应用配置的插件query信息
+                     * @return Query 应用配置的插件query信息
+                     * 
+                     */
+                    std::vector<AgentPluginQuery> GetQuery() const;
+
+                    /**
+                     * 设置应用配置的插件query信息
+                     * @param _query 应用配置的插件query信息
+                     * 
+                     */
+                    void SetQuery(const std::vector<AgentPluginQuery>& _query);
+
+                    /**
+                     * 判断参数 Query 是否已赋值
+                     * @return Query 是否已赋值
+                     * 
+                     */
+                    bool QueryHasBeenSet() const;
+
+                    /**
+                     * 获取MCP类型
+                     * @return McpType MCP类型
+                     * 
+                     */
+                    uint64_t GetMcpType() const;
+
+                    /**
+                     * 设置MCP类型
+                     * @param _mcpType MCP类型
+                     * 
+                     */
+                    void SetMcpType(const uint64_t& _mcpType);
+
+                    /**
+                     * 判断参数 McpType 是否已赋值
+                     * @return McpType 是否已赋值
+                     * 
+                     */
+                    bool McpTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -185,6 +249,24 @@ namespace TencentCloud
                      */
                     AgentKnowledgeQAPlugin m_knowledgeQa;
                     bool m_knowledgeQaHasBeenSet;
+
+                    /**
+                     * 是否使用一键授权
+                     */
+                    bool m_enableRoleAuth;
+                    bool m_enableRoleAuthHasBeenSet;
+
+                    /**
+                     * 应用配置的插件query信息
+                     */
+                    std::vector<AgentPluginQuery> m_query;
+                    bool m_queryHasBeenSet;
+
+                    /**
+                     * MCP类型
+                     */
+                    uint64_t m_mcpType;
+                    bool m_mcpTypeHasBeenSet;
 
                 };
             }

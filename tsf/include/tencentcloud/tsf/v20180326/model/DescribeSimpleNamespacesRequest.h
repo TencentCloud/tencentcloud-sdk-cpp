@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询资源类型列表
-                     * @return NamespaceResourceTypeList 查询资源类型列表
+                     * 获取查询资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
+                     * @return NamespaceResourceTypeList 查询资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
                      * 
                      */
                     std::vector<std::string> GetNamespaceResourceTypeList() const;
 
                     /**
-                     * 设置查询资源类型列表
-                     * @param _namespaceResourceTypeList 查询资源类型列表
+                     * 设置查询资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
+                     * @param _namespaceResourceTypeList 查询资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
                      * 
                      */
                     void SetNamespaceResourceTypeList(const std::vector<std::string>& _namespaceResourceTypeList);
@@ -306,7 +306,7 @@ namespace TencentCloud
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 查询资源类型列表
+                     * 查询资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
                      */
                     std::vector<std::string> m_namespaceResourceTypeList;
                     bool m_namespaceResourceTypeListHasBeenSet;

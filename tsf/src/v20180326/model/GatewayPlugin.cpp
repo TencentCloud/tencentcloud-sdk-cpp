@@ -27,7 +27,9 @@ GatewayPlugin::GatewayPlugin() :
     m_descriptionHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_deleteDisabledHasBeenSet(false),
+    m_deleteDisabledReasonHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome GatewayPlugin::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("DeleteDisabled") && !value["DeleteDisabled"].IsNull())
+    {
+        if (!value["DeleteDisabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayPlugin.DeleteDisabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteDisabled = value["DeleteDisabled"].GetBool();
+        m_deleteDisabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeleteDisabledReason") && !value["DeleteDisabledReason"].IsNull())
+    {
+        if (!value["DeleteDisabledReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayPlugin.DeleteDisabledReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteDisabledReason = string(value["DeleteDisabledReason"].GetString());
+        m_deleteDisabledReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void GatewayPlugin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteDisabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteDisabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteDisabled, allocator);
+    }
+
+    if (m_deleteDisabledReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteDisabledReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleteDisabledReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void GatewayPlugin::SetStatus(const string& _status)
 bool GatewayPlugin::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+bool GatewayPlugin::GetDeleteDisabled() const
+{
+    return m_deleteDisabled;
+}
+
+void GatewayPlugin::SetDeleteDisabled(const bool& _deleteDisabled)
+{
+    m_deleteDisabled = _deleteDisabled;
+    m_deleteDisabledHasBeenSet = true;
+}
+
+bool GatewayPlugin::DeleteDisabledHasBeenSet() const
+{
+    return m_deleteDisabledHasBeenSet;
+}
+
+string GatewayPlugin::GetDeleteDisabledReason() const
+{
+    return m_deleteDisabledReason;
+}
+
+void GatewayPlugin::SetDeleteDisabledReason(const string& _deleteDisabledReason)
+{
+    m_deleteDisabledReason = _deleteDisabledReason;
+    m_deleteDisabledReasonHasBeenSet = true;
+}
+
+bool GatewayPlugin::DeleteDisabledReasonHasBeenSet() const
+{
+    return m_deleteDisabledReasonHasBeenSet;
 }
 

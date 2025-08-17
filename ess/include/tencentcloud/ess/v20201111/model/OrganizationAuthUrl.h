@@ -141,6 +141,27 @@ namespace TencentCloud
                      */
                     bool SubTaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取企业批量注册 传递过来的企业名称，方便客户定位企业
+                     * @return OrganizationName 企业批量注册 传递过来的企业名称，方便客户定位企业
+                     * 
+                     */
+                    std::string GetOrganizationName() const;
+
+                    /**
+                     * 设置企业批量注册 传递过来的企业名称，方便客户定位企业
+                     * @param _organizationName 企业批量注册 传递过来的企业名称，方便客户定位企业
+                     * 
+                     */
+                    void SetOrganizationName(const std::string& _organizationName);
+
+                    /**
+                     * 判断参数 OrganizationName 是否已赋值
+                     * @return OrganizationName 是否已赋值
+                     * 
+                     */
+                    bool OrganizationNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +189,12 @@ namespace TencentCloud
                      */
                     std::string m_subTaskId;
                     bool m_subTaskIdHasBeenSet;
+
+                    /**
+                     * 企业批量注册 传递过来的企业名称，方便客户定位企业
+                     */
+                    std::string m_organizationName;
+                    bool m_organizationNameHasBeenSet;
 
                 };
             }

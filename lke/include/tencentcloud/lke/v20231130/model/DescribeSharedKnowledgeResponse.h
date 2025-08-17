@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取知识库列表
+                     * 获取知识库详情列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Info 知识库列表
+                     * @return Info 知识库详情列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 知识库列表
+                     * 知识库详情列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KnowledgeDetailInfo m_info;

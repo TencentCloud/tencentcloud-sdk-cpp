@@ -25,7 +25,8 @@ using namespace std;
 ListAppKnowledgeDetailRequest::ListAppKnowledgeDetailRequest() :
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_appBizIdsHasBeenSet(false)
+    m_appBizIdsHasBeenSet(false),
+    m_spaceIdHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string ListAppKnowledgeDetailRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_spaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void ListAppKnowledgeDetailRequest::SetAppBizIds(const vector<string>& _appBizId
 bool ListAppKnowledgeDetailRequest::AppBizIdsHasBeenSet() const
 {
     return m_appBizIdsHasBeenSet;
+}
+
+string ListAppKnowledgeDetailRequest::GetSpaceId() const
+{
+    return m_spaceId;
+}
+
+void ListAppKnowledgeDetailRequest::SetSpaceId(const string& _spaceId)
+{
+    m_spaceId = _spaceId;
+    m_spaceIdHasBeenSet = true;
+}
+
+bool ListAppKnowledgeDetailRequest::SpaceIdHasBeenSet() const
+{
+    return m_spaceIdHasBeenSet;
 }
 
 

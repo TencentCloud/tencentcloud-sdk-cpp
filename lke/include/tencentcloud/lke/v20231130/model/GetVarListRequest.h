@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool NeedInternalVarHasBeenSet() const;
 
+                    /**
+                     * 获取变量类型
+                     * @return VarModuleType 变量类型
+                     * 
+                     */
+                    int64_t GetVarModuleType() const;
+
+                    /**
+                     * 设置变量类型
+                     * @param _varModuleType 变量类型
+                     * 
+                     */
+                    void SetVarModuleType(const int64_t& _varModuleType);
+
+                    /**
+                     * 判断参数 VarModuleType 是否已赋值
+                     * @return VarModuleType 是否已赋值
+                     * 
+                     */
+                    bool VarModuleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     bool m_needInternalVar;
                     bool m_needInternalVarHasBeenSet;
+
+                    /**
+                     * 变量类型
+                     */
+                    int64_t m_varModuleType;
+                    bool m_varModuleTypeHasBeenSet;
 
                 };
             }

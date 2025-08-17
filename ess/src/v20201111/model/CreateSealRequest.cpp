@@ -39,7 +39,8 @@ CreateSealRequest::CreateSealRequest() :
     m_fileTokenHasBeenSet(false),
     m_sealStyleHasBeenSet(false),
     m_sealSizeHasBeenSet(false),
-    m_taxIdentifyCodeHasBeenSet(false)
+    m_taxIdentifyCodeHasBeenSet(false),
+    m_sealDescriptionHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,14 @@ string CreateSealRequest::ToJsonString() const
         string key = "TaxIdentifyCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taxIdentifyCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealDescription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealDescription.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -466,6 +475,22 @@ void CreateSealRequest::SetTaxIdentifyCode(const string& _taxIdentifyCode)
 bool CreateSealRequest::TaxIdentifyCodeHasBeenSet() const
 {
     return m_taxIdentifyCodeHasBeenSet;
+}
+
+string CreateSealRequest::GetSealDescription() const
+{
+    return m_sealDescription;
+}
+
+void CreateSealRequest::SetSealDescription(const string& _sealDescription)
+{
+    m_sealDescription = _sealDescription;
+    m_sealDescriptionHasBeenSet = true;
+}
+
+bool CreateSealRequest::SealDescriptionHasBeenSet() const
+{
+    return m_sealDescriptionHasBeenSet;
 }
 
 

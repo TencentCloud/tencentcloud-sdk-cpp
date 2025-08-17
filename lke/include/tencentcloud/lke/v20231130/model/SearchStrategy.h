@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool StrategyTypeHasBeenSet() const;
 
                     /**
-                     * 获取Excel检索增强开关
+                     * 获取Excel检索增强开关, false关闭，true打开
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TableEnhancement Excel检索增强开关
+                     * @return TableEnhancement Excel检索增强开关, false关闭，true打开
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetTableEnhancement() const;
 
                     /**
-                     * 设置Excel检索增强开关
+                     * 设置Excel检索增强开关, false关闭，true打开
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tableEnhancement Excel检索增强开关
+                     * @param _tableEnhancement Excel检索增强开关, false关闭，true打开
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -96,6 +96,81 @@ namespace TencentCloud
                      */
                     bool TableEnhancementHasBeenSet() const;
 
+                    /**
+                     * 获取向量模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmbeddingModel 向量模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEmbeddingModel() const;
+
+                    /**
+                     * 设置向量模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _embeddingModel 向量模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEmbeddingModel(const std::string& _embeddingModel);
+
+                    /**
+                     * 判断参数 EmbeddingModel 是否已赋值
+                     * @return EmbeddingModel 是否已赋值
+                     * 
+                     */
+                    bool EmbeddingModelHasBeenSet() const;
+
+                    /**
+                     * 获取结果重排序开关， on打开，off关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RerankModelSwitch 结果重排序开关， on打开，off关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRerankModelSwitch() const;
+
+                    /**
+                     * 设置结果重排序开关， on打开，off关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rerankModelSwitch 结果重排序开关， on打开，off关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRerankModelSwitch(const std::string& _rerankModelSwitch);
+
+                    /**
+                     * 判断参数 RerankModelSwitch 是否已赋值
+                     * @return RerankModelSwitch 是否已赋值
+                     * 
+                     */
+                    bool RerankModelSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取结果重排序模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RerankModel 结果重排序模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRerankModel() const;
+
+                    /**
+                     * 设置结果重排序模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rerankModel 结果重排序模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRerankModel(const std::string& _rerankModel);
+
+                    /**
+                     * 判断参数 RerankModel 是否已赋值
+                     * @return RerankModel 是否已赋值
+                     * 
+                     */
+                    bool RerankModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,11 +181,32 @@ namespace TencentCloud
                     bool m_strategyTypeHasBeenSet;
 
                     /**
-                     * Excel检索增强开关
+                     * Excel检索增强开关, false关闭，true打开
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_tableEnhancement;
                     bool m_tableEnhancementHasBeenSet;
+
+                    /**
+                     * 向量模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_embeddingModel;
+                    bool m_embeddingModelHasBeenSet;
+
+                    /**
+                     * 结果重排序开关， on打开，off关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rerankModelSwitch;
+                    bool m_rerankModelSwitchHasBeenSet;
+
+                    /**
+                     * 结果重排序模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rerankModel;
+                    bool m_rerankModelHasBeenSet;
 
                 };
             }

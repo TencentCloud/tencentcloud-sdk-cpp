@@ -25,7 +25,10 @@ AgentPluginInfo::AgentPluginInfo() :
     m_headersHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_pluginInfoTypeHasBeenSet(false),
-    m_knowledgeQaHasBeenSet(false)
+    m_knowledgeQaHasBeenSet(false),
+    m_enableRoleAuthHasBeenSet(false),
+    m_queryHasBeenSet(false),
+    m_mcpTypeHasBeenSet(false)
 {
 }
 
@@ -108,6 +111,46 @@ CoreInternalOutcome AgentPluginInfo::Deserialize(const rapidjson::Value &value)
         m_knowledgeQaHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableRoleAuth") && !value["EnableRoleAuth"].IsNull())
+    {
+        if (!value["EnableRoleAuth"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentPluginInfo.EnableRoleAuth` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableRoleAuth = value["EnableRoleAuth"].GetBool();
+        m_enableRoleAuthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Query") && !value["Query"].IsNull())
+    {
+        if (!value["Query"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentPluginInfo.Query` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Query"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AgentPluginQuery item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_query.push_back(item);
+        }
+        m_queryHasBeenSet = true;
+    }
+
+    if (value.HasMember("McpType") && !value["McpType"].IsNull())
+    {
+        if (!value["McpType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentPluginInfo.McpType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mcpType = value["McpType"].GetUint64();
+        m_mcpTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +205,37 @@ void AgentPluginInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_knowledgeQa.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_enableRoleAuthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRoleAuth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableRoleAuth, allocator);
+    }
+
+    if (m_queryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Query";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_query.begin(); itr != m_query.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_mcpTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "McpType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mcpType, allocator);
     }
 
 }
@@ -245,5 +319,53 @@ void AgentPluginInfo::SetKnowledgeQa(const AgentKnowledgeQAPlugin& _knowledgeQa)
 bool AgentPluginInfo::KnowledgeQaHasBeenSet() const
 {
     return m_knowledgeQaHasBeenSet;
+}
+
+bool AgentPluginInfo::GetEnableRoleAuth() const
+{
+    return m_enableRoleAuth;
+}
+
+void AgentPluginInfo::SetEnableRoleAuth(const bool& _enableRoleAuth)
+{
+    m_enableRoleAuth = _enableRoleAuth;
+    m_enableRoleAuthHasBeenSet = true;
+}
+
+bool AgentPluginInfo::EnableRoleAuthHasBeenSet() const
+{
+    return m_enableRoleAuthHasBeenSet;
+}
+
+vector<AgentPluginQuery> AgentPluginInfo::GetQuery() const
+{
+    return m_query;
+}
+
+void AgentPluginInfo::SetQuery(const vector<AgentPluginQuery>& _query)
+{
+    m_query = _query;
+    m_queryHasBeenSet = true;
+}
+
+bool AgentPluginInfo::QueryHasBeenSet() const
+{
+    return m_queryHasBeenSet;
+}
+
+uint64_t AgentPluginInfo::GetMcpType() const
+{
+    return m_mcpType;
+}
+
+void AgentPluginInfo::SetMcpType(const uint64_t& _mcpType)
+{
+    m_mcpType = _mcpType;
+    m_mcpTypeHasBeenSet = true;
+}
+
+bool AgentPluginInfo::McpTypeHasBeenSet() const
+{
+    return m_mcpTypeHasBeenSet;
 }
 

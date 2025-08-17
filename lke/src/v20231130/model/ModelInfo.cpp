@@ -39,7 +39,12 @@ ModelInfo::ModelInfo() :
     m_roleLenLimitHasBeenSet(false),
     m_isExclusiveHasBeenSet(false),
     m_supportAiCallStatusHasBeenSet(false),
-    m_concurrencyHasBeenSet(false)
+    m_concurrencyHasBeenSet(false),
+    m_modelTagsHasBeenSet(false),
+    m_modelParamsHasBeenSet(false),
+    m_providerNameHasBeenSet(false),
+    m_providerAliasNameHasBeenSet(false),
+    m_providerTypeHasBeenSet(false)
 {
 }
 
@@ -259,6 +264,69 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_concurrencyHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelTags") && !value["ModelTags"].IsNull())
+    {
+        if (!value["ModelTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.ModelTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ModelTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_modelTags.push_back((*itr).GetString());
+        }
+        m_modelTagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModelParams") && !value["ModelParams"].IsNull())
+    {
+        if (!value["ModelParams"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.ModelParams` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ModelParams"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ModelParameter item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_modelParams.push_back(item);
+        }
+        m_modelParamsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProviderName") && !value["ProviderName"].IsNull())
+    {
+        if (!value["ProviderName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.ProviderName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_providerName = string(value["ProviderName"].GetString());
+        m_providerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProviderAliasName") && !value["ProviderAliasName"].IsNull())
+    {
+        if (!value["ProviderAliasName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.ProviderAliasName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_providerAliasName = string(value["ProviderAliasName"].GetString());
+        m_providerAliasNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProviderType") && !value["ProviderType"].IsNull())
+    {
+        if (!value["ProviderType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.ProviderType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_providerType = string(value["ProviderType"].GetString());
+        m_providerTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -419,6 +487,58 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Concurrency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_concurrency, allocator);
+    }
+
+    if (m_modelTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_modelTags.begin(); itr != m_modelTags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_modelParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_modelParams.begin(); itr != m_modelParams.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_providerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProviderName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_providerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_providerAliasNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProviderAliasName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_providerAliasName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_providerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProviderType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_providerType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -726,5 +846,85 @@ void ModelInfo::SetConcurrency(const uint64_t& _concurrency)
 bool ModelInfo::ConcurrencyHasBeenSet() const
 {
     return m_concurrencyHasBeenSet;
+}
+
+vector<string> ModelInfo::GetModelTags() const
+{
+    return m_modelTags;
+}
+
+void ModelInfo::SetModelTags(const vector<string>& _modelTags)
+{
+    m_modelTags = _modelTags;
+    m_modelTagsHasBeenSet = true;
+}
+
+bool ModelInfo::ModelTagsHasBeenSet() const
+{
+    return m_modelTagsHasBeenSet;
+}
+
+vector<ModelParameter> ModelInfo::GetModelParams() const
+{
+    return m_modelParams;
+}
+
+void ModelInfo::SetModelParams(const vector<ModelParameter>& _modelParams)
+{
+    m_modelParams = _modelParams;
+    m_modelParamsHasBeenSet = true;
+}
+
+bool ModelInfo::ModelParamsHasBeenSet() const
+{
+    return m_modelParamsHasBeenSet;
+}
+
+string ModelInfo::GetProviderName() const
+{
+    return m_providerName;
+}
+
+void ModelInfo::SetProviderName(const string& _providerName)
+{
+    m_providerName = _providerName;
+    m_providerNameHasBeenSet = true;
+}
+
+bool ModelInfo::ProviderNameHasBeenSet() const
+{
+    return m_providerNameHasBeenSet;
+}
+
+string ModelInfo::GetProviderAliasName() const
+{
+    return m_providerAliasName;
+}
+
+void ModelInfo::SetProviderAliasName(const string& _providerAliasName)
+{
+    m_providerAliasName = _providerAliasName;
+    m_providerAliasNameHasBeenSet = true;
+}
+
+bool ModelInfo::ProviderAliasNameHasBeenSet() const
+{
+    return m_providerAliasNameHasBeenSet;
+}
+
+string ModelInfo::GetProviderType() const
+{
+    return m_providerType;
+}
+
+void ModelInfo::SetProviderType(const string& _providerType)
+{
+    m_providerType = _providerType;
+    m_providerTypeHasBeenSet = true;
+}
+
+bool ModelInfo::ProviderTypeHasBeenSet() const
+{
+    return m_providerTypeHasBeenSet;
 }
 

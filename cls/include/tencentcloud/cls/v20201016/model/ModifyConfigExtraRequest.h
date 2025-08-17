@@ -119,15 +119,23 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息，详细参考https://cloud.tencent.com/document/api/614/56471#HostFileInfo
-                     * @return HostFile 自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息，详细参考https://cloud.tencent.com/document/api/614/56471#HostFileInfo
+                     * 获取自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。
+
+- 详情参考  [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 文档。
+                     * @return HostFile 自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。
+
+- 详情参考  [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 文档。
                      * 
                      */
                     HostFileInfo GetHostFile() const;
 
                     /**
-                     * 设置自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息，详细参考https://cloud.tencent.com/document/api/614/56471#HostFileInfo
-                     * @param _hostFile 自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息，详细参考https://cloud.tencent.com/document/api/614/56471#HostFileInfo
+                     * 设置自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。
+
+- 详情参考  [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 文档。
+                     * @param _hostFile 自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。
+
+- 详情参考  [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 文档。
                      * 
                      */
                     void SetHostFile(const HostFileInfo& _hostFile);
@@ -142,8 +150,10 @@ namespace TencentCloud
                     /**
                      * 获取采集配置标记。
 - 目前只支持label_k8s，用于标记自建k8s集群使用的采集配置
+- 详情参考 [ ContainerFileInfo](https://cloud.tencent.com/document/api/614/56471#ContainerFileInfo) 文档
                      * @return ContainerFile 采集配置标记。
 - 目前只支持label_k8s，用于标记自建k8s集群使用的采集配置
+- 详情参考 [ ContainerFileInfo](https://cloud.tencent.com/document/api/614/56471#ContainerFileInfo) 文档
                      * 
                      */
                     ContainerFileInfo GetContainerFile() const;
@@ -151,8 +161,10 @@ namespace TencentCloud
                     /**
                      * 设置采集配置标记。
 - 目前只支持label_k8s，用于标记自建k8s集群使用的采集配置
+- 详情参考 [ ContainerFileInfo](https://cloud.tencent.com/document/api/614/56471#ContainerFileInfo) 文档
                      * @param _containerFile 采集配置标记。
 - 目前只支持label_k8s，用于标记自建k8s集群使用的采集配置
+- 详情参考 [ ContainerFileInfo](https://cloud.tencent.com/document/api/614/56471#ContainerFileInfo) 文档
                      * 
                      */
                     void SetContainerFile(const ContainerFileInfo& _containerFile);
@@ -165,15 +177,23 @@ namespace TencentCloud
                     bool ContainerFileHasBeenSet() const;
 
                     /**
-                     * 获取自建k8s-容器标准输出信息，包括容器、命名空间等，详细参考https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo
-                     * @return ContainerStdout 自建k8s-容器标准输出信息，包括容器、命名空间等，详细参考https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo
+                     * 获取自建k8s-容器标准输出信息，包括容器、命名空间等，
+
+- 详情参考 [ContainerStdoutInfo]( https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 文档
+                     * @return ContainerStdout 自建k8s-容器标准输出信息，包括容器、命名空间等，
+
+- 详情参考 [ContainerStdoutInfo]( https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 文档
                      * 
                      */
                     ContainerStdoutInfo GetContainerStdout() const;
 
                     /**
-                     * 设置自建k8s-容器标准输出信息，包括容器、命名空间等，详细参考https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo
-                     * @param _containerStdout 自建k8s-容器标准输出信息，包括容器、命名空间等，详细参考https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo
+                     * 设置自建k8s-容器标准输出信息，包括容器、命名空间等，
+
+- 详情参考 [ContainerStdoutInfo]( https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 文档
+                     * @param _containerStdout 自建k8s-容器标准输出信息，包括容器、命名空间等，
+
+- 详情参考 [ContainerStdoutInfo]( https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 文档
                      * 
                      */
                     void SetContainerStdout(const ContainerStdoutInfo& _containerStdout);
@@ -264,15 +284,15 @@ namespace TencentCloud
                     bool LogFormatHasBeenSet() const;
 
                     /**
-                     * 获取提取规则，如果设置了ExtractRule，则必须设置LogType
-                     * @return ExtractRule 提取规则，如果设置了ExtractRule，则必须设置LogType
+                     * 获取提取规则，如果设置了ExtractRule，则必须设置LogType。
+                     * @return ExtractRule 提取规则，如果设置了ExtractRule，则必须设置LogType。
                      * 
                      */
                     ExtractRuleInfo GetExtractRule() const;
 
                     /**
-                     * 设置提取规则，如果设置了ExtractRule，则必须设置LogType
-                     * @param _extractRule 提取规则，如果设置了ExtractRule，则必须设置LogType
+                     * 设置提取规则，如果设置了ExtractRule，则必须设置LogType。
+                     * @param _extractRule 提取规则，如果设置了ExtractRule，则必须设置LogType。
                      * 
                      */
                     void SetExtractRule(const ExtractRuleInfo& _extractRule);
@@ -552,7 +572,9 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息，详细参考https://cloud.tencent.com/document/api/614/56471#HostFileInfo
+                     * 自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。
+
+- 详情参考  [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 文档。
                      */
                     HostFileInfo m_hostFile;
                     bool m_hostFileHasBeenSet;
@@ -560,12 +582,15 @@ namespace TencentCloud
                     /**
                      * 采集配置标记。
 - 目前只支持label_k8s，用于标记自建k8s集群使用的采集配置
+- 详情参考 [ ContainerFileInfo](https://cloud.tencent.com/document/api/614/56471#ContainerFileInfo) 文档
                      */
                     ContainerFileInfo m_containerFile;
                     bool m_containerFileHasBeenSet;
 
                     /**
-                     * 自建k8s-容器标准输出信息，包括容器、命名空间等，详细参考https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo
+                     * 自建k8s-容器标准输出信息，包括容器、命名空间等，
+
+- 详情参考 [ContainerStdoutInfo]( https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 文档
                      */
                     ContainerStdoutInfo m_containerStdout;
                     bool m_containerStdoutHasBeenSet;
@@ -592,7 +617,7 @@ namespace TencentCloud
                     bool m_logFormatHasBeenSet;
 
                     /**
-                     * 提取规则，如果设置了ExtractRule，则必须设置LogType
+                     * 提取规则，如果设置了ExtractRule，则必须设置LogType。
                      */
                     ExtractRuleInfo m_extractRule;
                     bool m_extractRuleHasBeenSet;

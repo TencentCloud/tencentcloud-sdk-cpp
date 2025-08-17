@@ -184,6 +184,27 @@ namespace TencentCloud
                      */
                     bool VarDefaultFileNameHasBeenSet() const;
 
+                    /**
+                     * 获取变量类型
+                     * @return VarModuleType 变量类型
+                     * 
+                     */
+                    uint64_t GetVarModuleType() const;
+
+                    /**
+                     * 设置变量类型
+                     * @param _varModuleType 变量类型
+                     * 
+                     */
+                    void SetVarModuleType(const uint64_t& _varModuleType);
+
+                    /**
+                     * 判断参数 VarModuleType 是否已赋值
+                     * @return VarModuleType 是否已赋值
+                     * 
+                     */
+                    bool VarModuleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +245,12 @@ namespace TencentCloud
                      */
                     std::string m_varDefaultFileName;
                     bool m_varDefaultFileNameHasBeenSet;
+
+                    /**
+                     * 变量类型
+                     */
+                    uint64_t m_varModuleType;
+                    bool m_varModuleTypeHasBeenSet;
 
                 };
             }

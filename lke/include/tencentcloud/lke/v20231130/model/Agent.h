@@ -301,6 +301,27 @@ namespace TencentCloud
                      */
                     bool AgentTypeHasBeenSet() const;
 
+                    /**
+                     * 获取0 自由转交，1 计划与执行
+                     * @return AgentMode 0 自由转交，1 计划与执行
+                     * 
+                     */
+                    int64_t GetAgentMode() const;
+
+                    /**
+                     * 设置0 自由转交，1 计划与执行
+                     * @param _agentMode 0 自由转交，1 计划与执行
+                     * 
+                     */
+                    void SetAgentMode(const int64_t& _agentMode);
+
+                    /**
+                     * 判断参数 AgentMode 是否已赋值
+                     * @return AgentMode 是否已赋值
+                     * 
+                     */
+                    bool AgentModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -374,6 +395,12 @@ namespace TencentCloud
                      */
                     uint64_t m_agentType;
                     bool m_agentTypeHasBeenSet;
+
+                    /**
+                     * 0 自由转交，1 计划与执行
+                     */
+                    int64_t m_agentMode;
+                    bool m_agentModeHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 DescribeKnowledgeUsagePieGraphRequest::DescribeKnowledgeUsagePieGraphRequest() :
-    m_appBizIdsHasBeenSet(false)
+    m_appBizIdsHasBeenSet(false),
+    m_spaceIdHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string DescribeKnowledgeUsagePieGraphRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_spaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -69,6 +78,22 @@ void DescribeKnowledgeUsagePieGraphRequest::SetAppBizIds(const vector<string>& _
 bool DescribeKnowledgeUsagePieGraphRequest::AppBizIdsHasBeenSet() const
 {
     return m_appBizIdsHasBeenSet;
+}
+
+string DescribeKnowledgeUsagePieGraphRequest::GetSpaceId() const
+{
+    return m_spaceId;
+}
+
+void DescribeKnowledgeUsagePieGraphRequest::SetSpaceId(const string& _spaceId)
+{
+    m_spaceId = _spaceId;
+    m_spaceIdHasBeenSet = true;
+}
+
+bool DescribeKnowledgeUsagePieGraphRequest::SpaceIdHasBeenSet() const
+{
+    return m_spaceIdHasBeenSet;
 }
 
 

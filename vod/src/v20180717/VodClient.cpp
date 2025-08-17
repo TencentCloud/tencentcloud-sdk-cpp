@@ -900,6 +900,49 @@ VodClient::CreateJustInTimeTranscodeTemplateOutcomeCallable VodClient::CreateJus
     return task->get_future();
 }
 
+VodClient::CreateMPSTemplateOutcome VodClient::CreateMPSTemplate(const CreateMPSTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMPSTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMPSTemplateResponse rsp = CreateMPSTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMPSTemplateOutcome(rsp);
+        else
+            return CreateMPSTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMPSTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateMPSTemplateAsync(const CreateMPSTemplateRequest& request, const CreateMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMPSTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateMPSTemplateOutcomeCallable VodClient::CreateMPSTemplateCallable(const CreateMPSTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMPSTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMPSTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreatePersonSampleOutcome VodClient::CreatePersonSample(const CreatePersonSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePersonSample");
@@ -2054,6 +2097,49 @@ VodClient::DeleteJustInTimeTranscodeTemplateOutcomeCallable VodClient::DeleteJus
         [this, request]()
         {
             return this->DeleteJustInTimeTranscodeTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DeleteMPSTemplateOutcome VodClient::DeleteMPSTemplate(const DeleteMPSTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMPSTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMPSTemplateResponse rsp = DeleteMPSTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMPSTemplateOutcome(rsp);
+        else
+            return DeleteMPSTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMPSTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteMPSTemplateAsync(const DeleteMPSTemplateRequest& request, const DeleteMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteMPSTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DeleteMPSTemplateOutcomeCallable VodClient::DeleteMPSTemplateCallable(const DeleteMPSTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteMPSTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteMPSTemplate(request);
         }
     );
 
@@ -3946,6 +4032,49 @@ VodClient::DescribeLicenseUsageDataOutcomeCallable VodClient::DescribeLicenseUsa
         [this, request]()
         {
             return this->DescribeLicenseUsageData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DescribeMPSTemplatesOutcome VodClient::DescribeMPSTemplates(const DescribeMPSTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMPSTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMPSTemplatesResponse rsp = DescribeMPSTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMPSTemplatesOutcome(rsp);
+        else
+            return DescribeMPSTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMPSTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeMPSTemplatesAsync(const DescribeMPSTemplatesRequest& request, const DescribeMPSTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMPSTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeMPSTemplatesOutcomeCallable VodClient::DescribeMPSTemplatesCallable(const DescribeMPSTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMPSTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMPSTemplates(request);
         }
     );
 
@@ -6053,6 +6182,49 @@ VodClient::ModifyJustInTimeTranscodeTemplateOutcomeCallable VodClient::ModifyJus
         [this, request]()
         {
             return this->ModifyJustInTimeTranscodeTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::ModifyMPSTemplateOutcome VodClient::ModifyMPSTemplate(const ModifyMPSTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMPSTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMPSTemplateResponse rsp = ModifyMPSTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMPSTemplateOutcome(rsp);
+        else
+            return ModifyMPSTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMPSTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyMPSTemplateAsync(const ModifyMPSTemplateRequest& request, const ModifyMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMPSTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifyMPSTemplateOutcomeCallable VodClient::ModifyMPSTemplateCallable(const ModifyMPSTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMPSTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMPSTemplate(request);
         }
     );
 

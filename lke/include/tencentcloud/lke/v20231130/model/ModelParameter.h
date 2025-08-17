@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool MaxHasBeenSet() const;
 
+                    /**
+                     * 获取超参名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 超参名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置超参名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _name 超参名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     double m_max;
                     bool m_maxHasBeenSet;
+
+                    /**
+                     * 超参名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

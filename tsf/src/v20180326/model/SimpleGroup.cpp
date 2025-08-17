@@ -33,7 +33,8 @@ SimpleGroup::SimpleGroup() :
     m_namespaceNameHasBeenSet(false),
     m_startupParametersHasBeenSet(false),
     m_groupResourceTypeHasBeenSet(false),
-    m_appMicroServiceTypeHasBeenSet(false)
+    m_appMicroServiceTypeHasBeenSet(false),
+    m_k8sNamespaceNameHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
         m_appMicroServiceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("K8sNamespaceName") && !value["K8sNamespaceName"].IsNull())
+    {
+        if (!value["K8sNamespaceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.K8sNamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_k8sNamespaceName = string(value["K8sNamespaceName"].GetString());
+        m_k8sNamespaceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void SimpleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AppMicroServiceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appMicroServiceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_k8sNamespaceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "K8sNamespaceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_k8sNamespaceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void SimpleGroup::SetAppMicroServiceType(const string& _appMicroServiceType)
 bool SimpleGroup::AppMicroServiceTypeHasBeenSet() const
 {
     return m_appMicroServiceTypeHasBeenSet;
+}
+
+string SimpleGroup::GetK8sNamespaceName() const
+{
+    return m_k8sNamespaceName;
+}
+
+void SimpleGroup::SetK8sNamespaceName(const string& _k8sNamespaceName)
+{
+    m_k8sNamespaceName = _k8sNamespaceName;
+    m_k8sNamespaceNameHasBeenSet = true;
+}
+
+bool SimpleGroup::K8sNamespaceNameHasBeenSet() const
+{
+    return m_k8sNamespaceNameHasBeenSet;
 }
 

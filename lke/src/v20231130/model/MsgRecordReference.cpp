@@ -29,7 +29,8 @@ MsgRecordReference::MsgRecordReference() :
     m_knowledgeNameHasBeenSet(false),
     m_knowledgeBizIdHasBeenSet(false),
     m_docBizIdHasBeenSet(false),
-    m_qaBizIdHasBeenSet(false)
+    m_qaBizIdHasBeenSet(false),
+    m_indexHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome MsgRecordReference::Deserialize(const rapidjson::Value &valu
         m_qaBizIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Index") && !value["Index"].IsNull())
+    {
+        if (!value["Index"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecordReference.Index` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_index = value["Index"].GetUint64();
+        m_indexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void MsgRecordReference::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "QaBizId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_qaBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Index";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_index, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void MsgRecordReference::SetQaBizId(const string& _qaBizId)
 bool MsgRecordReference::QaBizIdHasBeenSet() const
 {
     return m_qaBizIdHasBeenSet;
+}
+
+uint64_t MsgRecordReference::GetIndex() const
+{
+    return m_index;
+}
+
+void MsgRecordReference::SetIndex(const uint64_t& _index)
+{
+    m_index = _index;
+    m_indexHasBeenSet = true;
+}
+
+bool MsgRecordReference::IndexHasBeenSet() const
+{
+    return m_indexHasBeenSet;
 }
 

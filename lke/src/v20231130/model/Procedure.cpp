@@ -26,7 +26,9 @@ Procedure::Procedure() :
     m_statusHasBeenSet(false),
     m_countHasBeenSet(false),
     m_debuggingHasBeenSet(false),
-    m_resourceStatusHasBeenSet(false)
+    m_resourceStatusHasBeenSet(false),
+    m_inputCountHasBeenSet(false),
+    m_outputCountHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,26 @@ CoreInternalOutcome Procedure::Deserialize(const rapidjson::Value &value)
         m_resourceStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("InputCount") && !value["InputCount"].IsNull())
+    {
+        if (!value["InputCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Procedure.InputCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputCount = value["InputCount"].GetUint64();
+        m_inputCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputCount") && !value["OutputCount"].IsNull())
+    {
+        if (!value["OutputCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Procedure.OutputCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputCount = value["OutputCount"].GetUint64();
+        m_outputCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +178,22 @@ void Procedure::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ResourceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceStatus, allocator);
+    }
+
+    if (m_inputCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputCount, allocator);
+    }
+
+    if (m_outputCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_outputCount, allocator);
     }
 
 }
@@ -255,5 +293,37 @@ void Procedure::SetResourceStatus(const uint64_t& _resourceStatus)
 bool Procedure::ResourceStatusHasBeenSet() const
 {
     return m_resourceStatusHasBeenSet;
+}
+
+uint64_t Procedure::GetInputCount() const
+{
+    return m_inputCount;
+}
+
+void Procedure::SetInputCount(const uint64_t& _inputCount)
+{
+    m_inputCount = _inputCount;
+    m_inputCountHasBeenSet = true;
+}
+
+bool Procedure::InputCountHasBeenSet() const
+{
+    return m_inputCountHasBeenSet;
+}
+
+uint64_t Procedure::GetOutputCount() const
+{
+    return m_outputCount;
+}
+
+void Procedure::SetOutputCount(const uint64_t& _outputCount)
+{
+    m_outputCount = _outputCount;
+    m_outputCountHasBeenSet = true;
+}
+
+bool Procedure::OutputCountHasBeenSet() const
+{
+    return m_outputCountHasBeenSet;
 }
 

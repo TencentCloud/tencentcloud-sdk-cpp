@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool PatternHasBeenSet() const;
 
+                    /**
+                     * 获取智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     * @return AgentType 智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     * 
+                     */
+                    std::string GetAgentType() const;
+
+                    /**
+                     * 设置智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     * @param _agentType 智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     * 
+                     */
+                    void SetAgentType(const std::string& _agentType);
+
+                    /**
+                     * 判断参数 AgentType 是否已赋值
+                     * @return AgentType 是否已赋值
+                     * 
+                     */
+                    bool AgentTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     std::string m_pattern;
                     bool m_patternHasBeenSet;
+
+                    /**
+                     * 智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     */
+                    std::string m_agentType;
+                    bool m_agentTypeHasBeenSet;
 
                 };
             }

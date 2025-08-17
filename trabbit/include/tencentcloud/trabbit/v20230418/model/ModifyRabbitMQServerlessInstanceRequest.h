@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool TraceFlagHasBeenSet() const;
 
+                    /**
+                     * 获取限流生产消费比例
+                     * @return SendReceiveRatio 限流生产消费比例
+                     * 
+                     */
+                    double GetSendReceiveRatio() const;
+
+                    /**
+                     * 设置限流生产消费比例
+                     * @param _sendReceiveRatio 限流生产消费比例
+                     * 
+                     */
+                    void SetSendReceiveRatio(const double& _sendReceiveRatio);
+
+                    /**
+                     * 判断参数 SendReceiveRatio 是否已赋值
+                     * @return SendReceiveRatio 是否已赋值
+                     * 
+                     */
+                    bool SendReceiveRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     bool m_traceFlag;
                     bool m_traceFlagHasBeenSet;
+
+                    /**
+                     * 限流生产消费比例
+                     */
+                    double m_sendReceiveRatio;
+                    bool m_sendReceiveRatioHasBeenSet;
 
                 };
             }

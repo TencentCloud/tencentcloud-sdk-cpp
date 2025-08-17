@@ -41,7 +41,9 @@ SaveDocRequest::SaveDocRequest() :
     m_optHasBeenSet(false),
     m_cateBizIdHasBeenSet(false),
     m_isDownloadHasBeenSet(false),
-    m_duplicateFileHandlesHasBeenSet(false)
+    m_duplicateFileHandlesHasBeenSet(false),
+    m_splitRuleHasBeenSet(false),
+    m_updatePeriodInfoHasBeenSet(false)
 {
 }
 
@@ -216,6 +218,23 @@ string SaveDocRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_splitRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SplitRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_splitRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatePeriodInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatePeriodInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_updatePeriodInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -528,6 +547,38 @@ void SaveDocRequest::SetDuplicateFileHandles(const vector<DuplicateFileHandle>& 
 bool SaveDocRequest::DuplicateFileHandlesHasBeenSet() const
 {
     return m_duplicateFileHandlesHasBeenSet;
+}
+
+string SaveDocRequest::GetSplitRule() const
+{
+    return m_splitRule;
+}
+
+void SaveDocRequest::SetSplitRule(const string& _splitRule)
+{
+    m_splitRule = _splitRule;
+    m_splitRuleHasBeenSet = true;
+}
+
+bool SaveDocRequest::SplitRuleHasBeenSet() const
+{
+    return m_splitRuleHasBeenSet;
+}
+
+UpdatePeriodInfo SaveDocRequest::GetUpdatePeriodInfo() const
+{
+    return m_updatePeriodInfo;
+}
+
+void SaveDocRequest::SetUpdatePeriodInfo(const UpdatePeriodInfo& _updatePeriodInfo)
+{
+    m_updatePeriodInfo = _updatePeriodInfo;
+    m_updatePeriodInfoHasBeenSet = true;
+}
+
+bool SaveDocRequest::UpdatePeriodInfoHasBeenSet() const
+{
+    return m_updatePeriodInfoHasBeenSet;
 }
 
 

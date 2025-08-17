@@ -24,7 +24,8 @@ KnowledgeUpdateInfo::KnowledgeUpdateInfo() :
     m_knowledgeNameHasBeenSet(false),
     m_knowledgeDescriptionHasBeenSet(false),
     m_embeddingModelHasBeenSet(false),
-    m_qaExtractModelHasBeenSet(false)
+    m_qaExtractModelHasBeenSet(false),
+    m_ownerStaffIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome KnowledgeUpdateInfo::Deserialize(const rapidjson::Value &val
         m_qaExtractModelHasBeenSet = true;
     }
 
+    if (value.HasMember("OwnerStaffId") && !value["OwnerStaffId"].IsNull())
+    {
+        if (!value["OwnerStaffId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeUpdateInfo.OwnerStaffId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerStaffId = string(value["OwnerStaffId"].GetString());
+        m_ownerStaffIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void KnowledgeUpdateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "QaExtractModel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_qaExtractModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerStaffIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerStaffId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerStaffId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void KnowledgeUpdateInfo::SetQaExtractModel(const string& _qaExtractModel)
 bool KnowledgeUpdateInfo::QaExtractModelHasBeenSet() const
 {
     return m_qaExtractModelHasBeenSet;
+}
+
+string KnowledgeUpdateInfo::GetOwnerStaffId() const
+{
+    return m_ownerStaffId;
+}
+
+void KnowledgeUpdateInfo::SetOwnerStaffId(const string& _ownerStaffId)
+{
+    m_ownerStaffId = _ownerStaffId;
+    m_ownerStaffIdHasBeenSet = true;
+}
+
+bool KnowledgeUpdateInfo::OwnerStaffIdHasBeenSet() const
+{
+    return m_ownerStaffIdHasBeenSet;
 }
 

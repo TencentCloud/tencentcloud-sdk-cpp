@@ -273,6 +273,27 @@ namespace TencentCloud
                      */
                     bool BillingTagHasBeenSet() const;
 
+                    /**
+                     * 获取空间id
+                     * @return SpaceId 空间id
+                     * 
+                     */
+                    std::string GetSpaceId() const;
+
+                    /**
+                     * 设置空间id
+                     * @param _spaceId 空间id
+                     * 
+                     */
+                    void SetSpaceId(const std::string& _spaceId);
+
+                    /**
+                     * 判断参数 SpaceId 是否已赋值
+                     * @return SpaceId 是否已赋值
+                     * 
+                     */
+                    bool SpaceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +361,12 @@ namespace TencentCloud
                      */
                     std::string m_billingTag;
                     bool m_billingTagHasBeenSet;
+
+                    /**
+                     * 空间id
+                     */
+                    std::string m_spaceId;
+                    bool m_spaceIdHasBeenSet;
 
                 };
             }

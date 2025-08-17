@@ -228,14 +228,18 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义参数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomVariables 自定义参数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCustomVariables() const;
 
                     /**
                      * 设置自定义参数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customVariables 自定义参数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomVariables(const std::vector<std::string>& _customVariables);
@@ -300,6 +304,7 @@ namespace TencentCloud
 
                     /**
                      * 自定义参数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_customVariables;
                     bool m_customVariablesHasBeenSet;

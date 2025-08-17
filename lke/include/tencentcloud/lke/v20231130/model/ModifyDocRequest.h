@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/AttrLabelRefer.h>
+#include <tencentcloud/lke/v20231130/model/UpdatePeriodInfo.h>
 
 
 namespace TencentCloud
@@ -320,6 +321,69 @@ namespace TencentCloud
                      */
                     bool IsDownloadHasBeenSet() const;
 
+                    /**
+                     * 获取需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新
+                     * @return ModifyTypes 需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新
+                     * 
+                     */
+                    std::vector<uint64_t> GetModifyTypes() const;
+
+                    /**
+                     * 设置需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新
+                     * @param _modifyTypes 需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新
+                     * 
+                     */
+                    void SetModifyTypes(const std::vector<uint64_t>& _modifyTypes);
+
+                    /**
+                     * 判断参数 ModifyTypes 是否已赋值
+                     * @return ModifyTypes 是否已赋值
+                     * 
+                     */
+                    bool ModifyTypesHasBeenSet() const;
+
+                    /**
+                     * 获取文档更新频率
+                     * @return UpdatePeriodInfo 文档更新频率
+                     * 
+                     */
+                    UpdatePeriodInfo GetUpdatePeriodInfo() const;
+
+                    /**
+                     * 设置文档更新频率
+                     * @param _updatePeriodInfo 文档更新频率
+                     * 
+                     */
+                    void SetUpdatePeriodInfo(const UpdatePeriodInfo& _updatePeriodInfo);
+
+                    /**
+                     * 判断参数 UpdatePeriodInfo 是否已赋值
+                     * @return UpdatePeriodInfo 是否已赋值
+                     * 
+                     */
+                    bool UpdatePeriodInfoHasBeenSet() const;
+
+                    /**
+                     * 获取自定义切分规则
+                     * @return SplitRule 自定义切分规则
+                     * 
+                     */
+                    std::string GetSplitRule() const;
+
+                    /**
+                     * 设置自定义切分规则
+                     * @param _splitRule 自定义切分规则
+                     * 
+                     */
+                    void SetSplitRule(const std::string& _splitRule);
+
+                    /**
+                     * 判断参数 SplitRule 是否已赋值
+                     * @return SplitRule 是否已赋值
+                     * 
+                     */
+                    bool SplitRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,6 +464,24 @@ namespace TencentCloud
                      */
                     bool m_isDownload;
                     bool m_isDownloadHasBeenSet;
+
+                    /**
+                     * 需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新
+                     */
+                    std::vector<uint64_t> m_modifyTypes;
+                    bool m_modifyTypesHasBeenSet;
+
+                    /**
+                     * 文档更新频率
+                     */
+                    UpdatePeriodInfo m_updatePeriodInfo;
+                    bool m_updatePeriodInfoHasBeenSet;
+
+                    /**
+                     * 自定义切分规则
+                     */
+                    std::string m_splitRule;
+                    bool m_splitRuleHasBeenSet;
 
                 };
             }

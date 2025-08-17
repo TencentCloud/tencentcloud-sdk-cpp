@@ -156,15 +156,27 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取应用类型
-                     * @return ApplicationType 应用类型
+                     * 获取指定应用类型，目前支持：
+- `V`：普通应用/CVM应用
+- `C`：容器应用
+- `S`：serverless 应用
+                     * @return ApplicationType 指定应用类型，目前支持：
+- `V`：普通应用/CVM应用
+- `C`：容器应用
+- `S`：serverless 应用
                      * 
                      */
                     std::string GetApplicationType() const;
 
                     /**
-                     * 设置应用类型
-                     * @param _applicationType 应用类型
+                     * 设置指定应用类型，目前支持：
+- `V`：普通应用/CVM应用
+- `C`：容器应用
+- `S`：serverless 应用
+                     * @param _applicationType 指定应用类型，目前支持：
+- `V`：普通应用/CVM应用
+- `C`：容器应用
+- `S`：serverless 应用
                      * 
                      */
                     void SetApplicationType(const std::string& _applicationType);
@@ -198,15 +210,15 @@ namespace TencentCloud
                     bool MicroserviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取应用资源类型数组
-                     * @return ApplicationResourceTypeList 应用资源类型数组
+                     * 获取应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
+                     * @return ApplicationResourceTypeList 应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
                      * 
                      */
                     std::vector<std::string> GetApplicationResourceTypeList() const;
 
                     /**
-                     * 设置应用资源类型数组
-                     * @param _applicationResourceTypeList 应用资源类型数组
+                     * 设置应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
+                     * @param _applicationResourceTypeList 应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
                      * 
                      */
                     void SetApplicationResourceTypeList(const std::vector<std::string>& _applicationResourceTypeList);
@@ -295,7 +307,10 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 应用类型
+                     * 指定应用类型，目前支持：
+- `V`：普通应用/CVM应用
+- `C`：容器应用
+- `S`：serverless 应用
                      */
                     std::string m_applicationType;
                     bool m_applicationTypeHasBeenSet;
@@ -307,7 +322,7 @@ namespace TencentCloud
                     bool m_microserviceTypeHasBeenSet;
 
                     /**
-                     * 应用资源类型数组
+                     * 应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
                      */
                     std::vector<std::string> m_applicationResourceTypeList;
                     bool m_applicationResourceTypeListHasBeenSet;

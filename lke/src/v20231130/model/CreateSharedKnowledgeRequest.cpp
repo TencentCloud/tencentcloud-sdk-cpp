@@ -25,7 +25,8 @@ using namespace std;
 CreateSharedKnowledgeRequest::CreateSharedKnowledgeRequest() :
     m_knowledgeNameHasBeenSet(false),
     m_knowledgeDescriptionHasBeenSet(false),
-    m_embeddingModelHasBeenSet(false)
+    m_embeddingModelHasBeenSet(false),
+    m_knowledgeTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreateSharedKnowledgeRequest::ToJsonString() const
         string key = "EmbeddingModel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_embeddingModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_knowledgeType, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreateSharedKnowledgeRequest::SetEmbeddingModel(const string& _embeddingMod
 bool CreateSharedKnowledgeRequest::EmbeddingModelHasBeenSet() const
 {
     return m_embeddingModelHasBeenSet;
+}
+
+int64_t CreateSharedKnowledgeRequest::GetKnowledgeType() const
+{
+    return m_knowledgeType;
+}
+
+void CreateSharedKnowledgeRequest::SetKnowledgeType(const int64_t& _knowledgeType)
+{
+    m_knowledgeType = _knowledgeType;
+    m_knowledgeTypeHasBeenSet = true;
+}
+
+bool CreateSharedKnowledgeRequest::KnowledgeTypeHasBeenSet() const
+{
+    return m_knowledgeTypeHasBeenSet;
 }
 
 

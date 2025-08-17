@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取文档名称
-
-                     * @return FileName 文档名称
-
+                     * 获取文档名称。可通过文档名称检索支持生成问答的文档，不支持xlsx、xls、csv格式
+                     * @return FileName 文档名称。可通过文档名称检索支持生成问答的文档，不支持xlsx、xls、csv格式
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置文档名称
-
-                     * @param _fileName 文档名称
-
+                     * 设置文档名称。可通过文档名称检索支持生成问答的文档，不支持xlsx、xls、csv格式
+                     * @param _fileName 文档名称。可通过文档名称检索支持生成问答的文档，不支持xlsx、xls、csv格式
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -89,15 +85,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取文档状态： 7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期
-                     * @return Status 文档状态： 7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期
+                     * 获取文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答
+                     * @return Status 文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答
                      * 
                      */
                     std::vector<int64_t> GetStatus() const;
 
                     /**
-                     * 设置文档状态： 7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期
-                     * @param _status 文档状态： 7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期
+                     * 设置文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答
+                     * @param _status 文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答
                      * 
                      */
                     void SetStatus(const std::vector<int64_t>& _status);
@@ -118,14 +114,13 @@ namespace TencentCloud
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 文档名称
-
+                     * 文档名称。可通过文档名称检索支持生成问答的文档，不支持xlsx、xls、csv格式
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 文档状态： 7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期
+                     * 文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;

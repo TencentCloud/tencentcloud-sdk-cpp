@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NamespaceDescHasBeenSet() const;
 
                     /**
-                     * 获取命名空间资源类型(默认值为DEF)。DEF：默认普通命名空间。GLOBAL：全局命名空间
-                     * @return NamespaceResourceType 命名空间资源类型(默认值为DEF)。DEF：默认普通命名空间。GLOBAL：全局命名空间
+                     * 获取命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型
+                     * @return NamespaceResourceType 命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型
                      * 
                      */
                     std::string GetNamespaceResourceType() const;
 
                     /**
-                     * 设置命名空间资源类型(默认值为DEF)。DEF：默认普通命名空间。GLOBAL：全局命名空间
-                     * @param _namespaceResourceType 命名空间资源类型(默认值为DEF)。DEF：默认普通命名空间。GLOBAL：全局命名空间
+                     * 设置命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型
+                     * @param _namespaceResourceType 命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型
                      * 
                      */
                     void SetNamespaceResourceType(const std::string& _namespaceResourceType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool NamespaceResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
-                     * @return NamespaceType 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     * 获取命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间
+                     * @return NamespaceType 命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间
                      * 
                      */
                     std::string GetNamespaceType() const;
 
                     /**
-                     * 设置是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
-                     * @param _namespaceType 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     * 设置命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间
+                     * @param _namespaceType 命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间
                      * 
                      */
                     void SetNamespaceType(const std::string& _namespaceType);
@@ -273,13 +273,13 @@ namespace TencentCloud
                     bool m_namespaceDescHasBeenSet;
 
                     /**
-                     * 命名空间资源类型(默认值为DEF)。DEF：默认普通命名空间。GLOBAL：全局命名空间
+                     * 命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型
                      */
                     std::string m_namespaceResourceType;
                     bool m_namespaceResourceTypeHasBeenSet;
 
                     /**
-                     * 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     * 命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间
                      */
                     std::string m_namespaceType;
                     bool m_namespaceTypeHasBeenSet;

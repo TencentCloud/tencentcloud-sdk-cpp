@@ -160,15 +160,15 @@ namespace TencentCloud
                     bool MicroserviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源类型数组
-                     * @return ApplicationResourceTypeList 资源类型数组
+                     * 获取应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
+                     * @return ApplicationResourceTypeList 应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
                      * 
                      */
                     std::vector<std::string> GetApplicationResourceTypeList() const;
 
                     /**
-                     * 设置资源类型数组
-                     * @param _applicationResourceTypeList 资源类型数组
+                     * 设置应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
+                     * @param _applicationResourceTypeList 应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
                      * 
                      */
                     void SetApplicationResourceTypeList(const std::vector<std::string>& _applicationResourceTypeList);
@@ -279,7 +279,7 @@ namespace TencentCloud
                     bool m_microserviceTypeHasBeenSet;
 
                     /**
-                     * 资源类型数组
+                     * 应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型
                      */
                     std::vector<std::string> m_applicationResourceTypeList;
                     bool m_applicationResourceTypeListHasBeenSet;

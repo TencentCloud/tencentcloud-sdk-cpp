@@ -486,6 +486,119 @@ namespace TencentCloud
                      */
                     bool ConcurrencyHasBeenSet() const;
 
+                    /**
+                     * 获取模型标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelTags 模型标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetModelTags() const;
+
+                    /**
+                     * 设置模型标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modelTags 模型标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModelTags(const std::vector<std::string>& _modelTags);
+
+                    /**
+                     * 判断参数 ModelTags 是否已赋值
+                     * @return ModelTags 是否已赋值
+                     * 
+                     */
+                    bool ModelTagsHasBeenSet() const;
+
+                    /**
+                     * 获取模型超参定义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelParams 模型超参定义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ModelParameter> GetModelParams() const;
+
+                    /**
+                     * 设置模型超参定义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modelParams 模型超参定义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModelParams(const std::vector<ModelParameter>& _modelParams);
+
+                    /**
+                     * 判断参数 ModelParams 是否已赋值
+                     * @return ModelParams 是否已赋值
+                     * 
+                     */
+                    bool ModelParamsHasBeenSet() const;
+
+                    /**
+                     * 获取提供商名称
+                     * @return ProviderName 提供商名称
+                     * 
+                     */
+                    std::string GetProviderName() const;
+
+                    /**
+                     * 设置提供商名称
+                     * @param _providerName 提供商名称
+                     * 
+                     */
+                    void SetProviderName(const std::string& _providerName);
+
+                    /**
+                     * 判断参数 ProviderName 是否已赋值
+                     * @return ProviderName 是否已赋值
+                     * 
+                     */
+                    bool ProviderNameHasBeenSet() const;
+
+                    /**
+                     * 获取提供商别名
+                     * @return ProviderAliasName 提供商别名
+                     * 
+                     */
+                    std::string GetProviderAliasName() const;
+
+                    /**
+                     * 设置提供商别名
+                     * @param _providerAliasName 提供商别名
+                     * 
+                     */
+                    void SetProviderAliasName(const std::string& _providerAliasName);
+
+                    /**
+                     * 判断参数 ProviderAliasName 是否已赋值
+                     * @return ProviderAliasName 是否已赋值
+                     * 
+                     */
+                    bool ProviderAliasNameHasBeenSet() const;
+
+                    /**
+                     * 获取提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商
+                     * @return ProviderType 提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商
+                     * 
+                     */
+                    std::string GetProviderType() const;
+
+                    /**
+                     * 设置提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商
+                     * @param _providerType 提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商
+                     * 
+                     */
+                    void SetProviderType(const std::string& _providerType);
+
+                    /**
+                     * 判断参数 ProviderType 是否已赋值
+                     * @return ProviderType 是否已赋值
+                     * 
+                     */
+                    bool ProviderTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -611,6 +724,38 @@ namespace TencentCloud
                      */
                     uint64_t m_concurrency;
                     bool m_concurrencyHasBeenSet;
+
+                    /**
+                     * 模型标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_modelTags;
+                    bool m_modelTagsHasBeenSet;
+
+                    /**
+                     * 模型超参定义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ModelParameter> m_modelParams;
+                    bool m_modelParamsHasBeenSet;
+
+                    /**
+                     * 提供商名称
+                     */
+                    std::string m_providerName;
+                    bool m_providerNameHasBeenSet;
+
+                    /**
+                     * 提供商别名
+                     */
+                    std::string m_providerAliasName;
+                    bool m_providerAliasNameHasBeenSet;
+
+                    /**
+                     * 提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商
+                     */
+                    std::string m_providerType;
+                    bool m_providerTypeHasBeenSet;
 
                 };
             }

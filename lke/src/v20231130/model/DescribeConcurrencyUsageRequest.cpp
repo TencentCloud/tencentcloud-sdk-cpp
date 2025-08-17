@@ -26,7 +26,8 @@ DescribeConcurrencyUsageRequest::DescribeConcurrencyUsageRequest() :
     m_modelNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_appBizIdsHasBeenSet(false)
+    m_appBizIdsHasBeenSet(false),
+    m_spaceIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string DescribeConcurrencyUsageRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_spaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void DescribeConcurrencyUsageRequest::SetAppBizIds(const vector<string>& _appBiz
 bool DescribeConcurrencyUsageRequest::AppBizIdsHasBeenSet() const
 {
     return m_appBizIdsHasBeenSet;
+}
+
+string DescribeConcurrencyUsageRequest::GetSpaceId() const
+{
+    return m_spaceId;
+}
+
+void DescribeConcurrencyUsageRequest::SetSpaceId(const string& _spaceId)
+{
+    m_spaceId = _spaceId;
+    m_spaceIdHasBeenSet = true;
+}
+
+bool DescribeConcurrencyUsageRequest::SpaceIdHasBeenSet() const
+{
+    return m_spaceIdHasBeenSet;
 }
 
 

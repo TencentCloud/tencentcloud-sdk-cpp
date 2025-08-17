@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/DashboardSubscribeInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取仪表盘订阅列表
+                     * @return DashboardSubscribeInfos 仪表盘订阅列表
+                     * 
+                     */
+                    std::vector<DashboardSubscribeInfo> GetDashboardSubscribeInfos() const;
+
+                    /**
+                     * 判断参数 DashboardSubscribeInfos 是否已赋值
+                     * @return DashboardSubscribeInfos 是否已赋值
+                     * 
+                     */
+                    bool DashboardSubscribeInfosHasBeenSet() const;
+
+                    /**
+                     * 获取总数目
+                     * @return TotalCount 总数目
+                     * 
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 仪表盘订阅列表
+                     */
+                    std::vector<DashboardSubscribeInfo> m_dashboardSubscribeInfos;
+                    bool m_dashboardSubscribeInfosHasBeenSet;
+
+                    /**
+                     * 总数目
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

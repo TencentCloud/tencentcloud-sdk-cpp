@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PatternHasBeenSet() const;
 
                     /**
-                     * 获取模型类别 generate：生成模型，thought：思考模型
-                     * @return ModelCategory 模型类别 generate：生成模型，thought：思考模型
+                     * 获取模型类别 generate：生成模型，thought：思考模型,embedding模型，rerank：rerank模型
+                     * @return ModelCategory 模型类别 generate：生成模型，thought：思考模型,embedding模型，rerank：rerank模型
                      * 
                      */
                     std::string GetModelCategory() const;
 
                     /**
-                     * 设置模型类别 generate：生成模型，thought：思考模型
-                     * @param _modelCategory 模型类别 generate：生成模型，thought：思考模型
+                     * 设置模型类别 generate：生成模型，thought：思考模型,embedding模型，rerank：rerank模型
+                     * @param _modelCategory 模型类别 generate：生成模型，thought：思考模型,embedding模型，rerank：rerank模型
                      * 
                      */
                     void SetModelCategory(const std::string& _modelCategory);
@@ -162,7 +162,7 @@ namespace TencentCloud
                     bool m_patternHasBeenSet;
 
                     /**
-                     * 模型类别 generate：生成模型，thought：思考模型
+                     * 模型类别 generate：生成模型，thought：思考模型,embedding模型，rerank：rerank模型
                      */
                     std::string m_modelCategory;
                     bool m_modelCategoryHasBeenSet;
