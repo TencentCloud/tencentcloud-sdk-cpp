@@ -31,7 +31,8 @@ NodeInfo::NodeInfo() :
     m_diskEncryptHasBeenSet(false),
     m_cpuNumHasBeenSet(false),
     m_memSizeHasBeenSet(false),
-    m_diskEnhanceHasBeenSet(false)
+    m_diskEnhanceHasBeenSet(false),
+    m_gpuInfoHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,23 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
         m_diskEnhanceHasBeenSet = true;
     }
 
+    if (value.HasMember("GpuInfo") && !value["GpuInfo"].IsNull())
+    {
+        if (!value["GpuInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.GpuInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gpuInfo.Deserialize(value["GpuInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gpuInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +269,15 @@ void NodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DiskEnhance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskEnhance, allocator);
+    }
+
+    if (m_gpuInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gpuInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -430,5 +457,21 @@ void NodeInfo::SetDiskEnhance(const int64_t& _diskEnhance)
 bool NodeInfo::DiskEnhanceHasBeenSet() const
 {
     return m_diskEnhanceHasBeenSet;
+}
+
+GpuInfo NodeInfo::GetGpuInfo() const
+{
+    return m_gpuInfo;
+}
+
+void NodeInfo::SetGpuInfo(const GpuInfo& _gpuInfo)
+{
+    m_gpuInfo = _gpuInfo;
+    m_gpuInfoHasBeenSet = true;
+}
+
+bool NodeInfo::GpuInfoHasBeenSet() const
+{
+    return m_gpuInfoHasBeenSet;
 }
 

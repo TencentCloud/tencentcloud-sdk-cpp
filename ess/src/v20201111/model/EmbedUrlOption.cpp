@@ -24,7 +24,9 @@ EmbedUrlOption::EmbedUrlOption() :
     m_showFlowDetailComponentHasBeenSet(false),
     m_showTemplateComponentHasBeenSet(false),
     m_skipUploadFileHasBeenSet(false),
-    m_forbidEditWatermarkHasBeenSet(false)
+    m_forbidEditWatermarkHasBeenSet(false),
+    m_sealDescriptionHasBeenSet(false),
+    m_forbidEditSealDescriptionHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome EmbedUrlOption::Deserialize(const rapidjson::Value &value)
         m_forbidEditWatermarkHasBeenSet = true;
     }
 
+    if (value.HasMember("SealDescription") && !value["SealDescription"].IsNull())
+    {
+        if (!value["SealDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedUrlOption.SealDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sealDescription = string(value["SealDescription"].GetString());
+        m_sealDescriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForbidEditSealDescription") && !value["ForbidEditSealDescription"].IsNull())
+    {
+        if (!value["ForbidEditSealDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedUrlOption.ForbidEditSealDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidEditSealDescription = string(value["ForbidEditSealDescription"].GetString());
+        m_forbidEditSealDescriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void EmbedUrlOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ForbidEditWatermark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forbidEditWatermark, allocator);
+    }
+
+    if (m_sealDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sealDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forbidEditSealDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidEditSealDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forbidEditSealDescription.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void EmbedUrlOption::SetForbidEditWatermark(const bool& _forbidEditWatermark)
 bool EmbedUrlOption::ForbidEditWatermarkHasBeenSet() const
 {
     return m_forbidEditWatermarkHasBeenSet;
+}
+
+string EmbedUrlOption::GetSealDescription() const
+{
+    return m_sealDescription;
+}
+
+void EmbedUrlOption::SetSealDescription(const string& _sealDescription)
+{
+    m_sealDescription = _sealDescription;
+    m_sealDescriptionHasBeenSet = true;
+}
+
+bool EmbedUrlOption::SealDescriptionHasBeenSet() const
+{
+    return m_sealDescriptionHasBeenSet;
+}
+
+string EmbedUrlOption::GetForbidEditSealDescription() const
+{
+    return m_forbidEditSealDescription;
+}
+
+void EmbedUrlOption::SetForbidEditSealDescription(const string& _forbidEditSealDescription)
+{
+    m_forbidEditSealDescription = _forbidEditSealDescription;
+    m_forbidEditSealDescriptionHasBeenSet = true;
+}
+
+bool EmbedUrlOption::ForbidEditSealDescriptionHasBeenSet() const
+{
+    return m_forbidEditSealDescriptionHasBeenSet;
 }
 

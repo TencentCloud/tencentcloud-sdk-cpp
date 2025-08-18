@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取name
+                     * 获取功能名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name name
+                     * @return Name 功能名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置name
+                     * 设置功能名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name name
+                     * @param _name 功能名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取enable
+                     * 获取是否启用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Enable enable
+                     * @return Enable 是否启用
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
-                     * 设置enable
+                     * 设置是否启用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enable enable
+                     * @param _enable 是否启用
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * name
+                     * 功能名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * enable
+                     * 是否启用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enable;

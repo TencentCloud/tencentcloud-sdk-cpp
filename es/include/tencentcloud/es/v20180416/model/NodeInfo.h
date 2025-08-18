@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/es/v20180416/model/LocalDiskInfo.h>
+#include <tencentcloud/es/v20180416/model/GpuInfo.h>
 
 
 namespace TencentCloud
@@ -306,6 +307,31 @@ namespace TencentCloud
                      */
                     bool DiskEnhanceHasBeenSet() const;
 
+                    /**
+                     * 获取节点Gpu信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GpuInfo 节点Gpu信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    GpuInfo GetGpuInfo() const;
+
+                    /**
+                     * 设置节点Gpu信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gpuInfo 节点Gpu信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGpuInfo(const GpuInfo& _gpuInfo);
+
+                    /**
+                     * 判断参数 GpuInfo 是否已赋值
+                     * @return GpuInfo 是否已赋值
+                     * 
+                     */
+                    bool GpuInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +406,13 @@ namespace TencentCloud
                      */
                     int64_t m_diskEnhance;
                     bool m_diskEnhanceHasBeenSet;
+
+                    /**
+                     * 节点Gpu信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GpuInfo m_gpuInfo;
+                    bool m_gpuInfoHasBeenSet;
 
                 };
             }

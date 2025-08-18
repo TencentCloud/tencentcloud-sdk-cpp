@@ -192,6 +192,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateServerlessInstanceResponse.h
   include/tencentcloud/es/v20180416/model/ServerlessIndexSettingsField.h
   include/tencentcloud/es/v20180416/model/DescribeDiagnoseRequest.h
+  include/tencentcloud/es/v20180416/model/GpuInfo.h
   include/tencentcloud/es/v20180416/model/DescribeInstancePluginListResponse.h
   include/tencentcloud/es/v20180416/model/DiSourceCvm.h
   include/tencentcloud/es/v20180416/model/CosSnapShotInfo.h
@@ -430,6 +431,7 @@ set(es_src
   src/v20180416/model/CreateServerlessInstanceResponse.cpp
   src/v20180416/model/ServerlessIndexSettingsField.cpp
   src/v20180416/model/DescribeDiagnoseRequest.cpp
+  src/v20180416/model/GpuInfo.cpp
   src/v20180416/model/DescribeInstancePluginListResponse.cpp
   src/v20180416/model/DiSourceCvm.cpp
   src/v20180416/model/CosSnapShotInfo.cpp

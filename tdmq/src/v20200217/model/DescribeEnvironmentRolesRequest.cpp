@@ -23,10 +23,10 @@ using namespace TencentCloud::Tdmq::V20200217::Model;
 using namespace std;
 
 DescribeEnvironmentRolesRequest::DescribeEnvironmentRolesRequest() :
+    m_clusterIdHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
     m_roleNameHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
@@ -38,6 +38,14 @@ string DescribeEnvironmentRolesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_environmentIdHasBeenSet)
     {
@@ -61,14 +69,6 @@ string DescribeEnvironmentRolesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_clusterIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleNameHasBeenSet)
@@ -101,6 +101,22 @@ string DescribeEnvironmentRolesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeEnvironmentRolesRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeEnvironmentRolesRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeEnvironmentRolesRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
 
 string DescribeEnvironmentRolesRequest::GetEnvironmentId() const
 {
@@ -148,22 +164,6 @@ void DescribeEnvironmentRolesRequest::SetLimit(const int64_t& _limit)
 bool DescribeEnvironmentRolesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
-}
-
-string DescribeEnvironmentRolesRequest::GetClusterId() const
-{
-    return m_clusterId;
-}
-
-void DescribeEnvironmentRolesRequest::SetClusterId(const string& _clusterId)
-{
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
-}
-
-bool DescribeEnvironmentRolesRequest::ClusterIdHasBeenSet() const
-{
-    return m_clusterIdHasBeenSet;
 }
 
 string DescribeEnvironmentRolesRequest::GetRoleName() const

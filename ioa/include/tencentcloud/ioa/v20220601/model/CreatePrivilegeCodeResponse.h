@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取业务响应数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 业务响应数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CreatePrivilegeCodeRspData GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 业务响应数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreatePrivilegeCodeRspData m_data;
                     bool m_dataHasBeenSet;

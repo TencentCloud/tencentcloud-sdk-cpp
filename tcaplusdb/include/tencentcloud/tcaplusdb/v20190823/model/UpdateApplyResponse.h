@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已更新的申请单列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyResults 已更新的申请单列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApplyResult> GetApplyResults() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 已更新的申请单列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApplyResult> m_applyResults;
                     bool m_applyResultsHasBeenSet;

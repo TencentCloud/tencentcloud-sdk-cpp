@@ -23,9 +23,9 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 ModifyVirtualDeviceGroupsRequest::ModifyVirtualDeviceGroupsRequest() :
+    m_deviceListHasBeenSet(false),
     m_domainInstanceIdHasBeenSet(false),
     m_deviceVirtualGroupIdHasBeenSet(false),
-    m_deviceListHasBeenSet(false),
     m_deviceVirtualGroupIdsHasBeenSet(false),
     m_osTypeHasBeenSet(false)
 {
@@ -37,6 +37,21 @@ string ModifyVirtualDeviceGroupsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_deviceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deviceList.begin(); itr != m_deviceList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
 
     if (m_domainInstanceIdHasBeenSet)
     {
@@ -52,21 +67,6 @@ string ModifyVirtualDeviceGroupsRequest::ToJsonString() const
         string key = "DeviceVirtualGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deviceVirtualGroupId, allocator);
-    }
-
-    if (m_deviceListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DeviceList";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_deviceList.begin(); itr != m_deviceList.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
     if (m_deviceVirtualGroupIdsHasBeenSet)
@@ -98,6 +98,22 @@ string ModifyVirtualDeviceGroupsRequest::ToJsonString() const
 }
 
 
+vector<ModifyVirtualDeviceGroupsReqItem> ModifyVirtualDeviceGroupsRequest::GetDeviceList() const
+{
+    return m_deviceList;
+}
+
+void ModifyVirtualDeviceGroupsRequest::SetDeviceList(const vector<ModifyVirtualDeviceGroupsReqItem>& _deviceList)
+{
+    m_deviceList = _deviceList;
+    m_deviceListHasBeenSet = true;
+}
+
+bool ModifyVirtualDeviceGroupsRequest::DeviceListHasBeenSet() const
+{
+    return m_deviceListHasBeenSet;
+}
+
 string ModifyVirtualDeviceGroupsRequest::GetDomainInstanceId() const
 {
     return m_domainInstanceId;
@@ -128,22 +144,6 @@ void ModifyVirtualDeviceGroupsRequest::SetDeviceVirtualGroupId(const int64_t& _d
 bool ModifyVirtualDeviceGroupsRequest::DeviceVirtualGroupIdHasBeenSet() const
 {
     return m_deviceVirtualGroupIdHasBeenSet;
-}
-
-vector<ModifyVirtualDeviceGroupsReqItem> ModifyVirtualDeviceGroupsRequest::GetDeviceList() const
-{
-    return m_deviceList;
-}
-
-void ModifyVirtualDeviceGroupsRequest::SetDeviceList(const vector<ModifyVirtualDeviceGroupsReqItem>& _deviceList)
-{
-    m_deviceList = _deviceList;
-    m_deviceListHasBeenSet = true;
-}
-
-bool ModifyVirtualDeviceGroupsRequest::DeviceListHasBeenSet() const
-{
-    return m_deviceListHasBeenSet;
 }
 
 vector<int64_t> ModifyVirtualDeviceGroupsRequest::GetDeviceVirtualGroupIds() const

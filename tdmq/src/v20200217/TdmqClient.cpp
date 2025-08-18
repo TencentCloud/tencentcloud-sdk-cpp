@@ -4727,6 +4727,49 @@ TdmqClient::DescribeTopicsOutcomeCallable TdmqClient::DescribeTopicsCallable(con
     return task->get_future();
 }
 
+TdmqClient::ExecuteDisasterRecoveryOutcome TdmqClient::ExecuteDisasterRecovery(const ExecuteDisasterRecoveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExecuteDisasterRecovery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExecuteDisasterRecoveryResponse rsp = ExecuteDisasterRecoveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExecuteDisasterRecoveryOutcome(rsp);
+        else
+            return ExecuteDisasterRecoveryOutcome(o.GetError());
+    }
+    else
+    {
+        return ExecuteDisasterRecoveryOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ExecuteDisasterRecoveryAsync(const ExecuteDisasterRecoveryRequest& request, const ExecuteDisasterRecoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExecuteDisasterRecovery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ExecuteDisasterRecoveryOutcomeCallable TdmqClient::ExecuteDisasterRecoveryCallable(const ExecuteDisasterRecoveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExecuteDisasterRecoveryOutcome()>>(
+        [this, request]()
+        {
+            return this->ExecuteDisasterRecovery(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::ExportRocketMQMessageDetailOutcome TdmqClient::ExportRocketMQMessageDetail(const ExportRocketMQMessageDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportRocketMQMessageDetail");

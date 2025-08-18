@@ -241,6 +241,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicMsgsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ExecuteDisasterRecoveryRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ExecuteDisasterRecoveryResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ExportRocketMQMessageDetailRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ExportRocketMQMessageDetailResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/GetTopicListRequest.h>
@@ -660,6 +662,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicsResponse> DescribeTopicsOutcome;
                 typedef std::future<DescribeTopicsOutcome> DescribeTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeTopicsRequest&, DescribeTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExecuteDisasterRecoveryResponse> ExecuteDisasterRecoveryOutcome;
+                typedef std::future<ExecuteDisasterRecoveryOutcome> ExecuteDisasterRecoveryOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ExecuteDisasterRecoveryRequest&, ExecuteDisasterRecoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteDisasterRecoveryAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportRocketMQMessageDetailResponse> ExportRocketMQMessageDetailOutcome;
                 typedef std::future<ExportRocketMQMessageDetailOutcome> ExportRocketMQMessageDetailOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ExportRocketMQMessageDetailRequest&, ExportRocketMQMessageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportRocketMQMessageDetailAsyncHandler;
@@ -1768,6 +1773,15 @@ namespace TencentCloud
                 DescribeTopicsOutcome DescribeTopics(const Model::DescribeTopicsRequest &request);
                 void DescribeTopicsAsync(const Model::DescribeTopicsRequest& request, const DescribeTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicsOutcomeCallable DescribeTopicsCallable(const Model::DescribeTopicsRequest& request);
+
+                /**
+                 *执行域名异地访问切换，域名的访问指向将切换至备份集群。
+                 * @param req ExecuteDisasterRecoveryRequest
+                 * @return ExecuteDisasterRecoveryOutcome
+                 */
+                ExecuteDisasterRecoveryOutcome ExecuteDisasterRecovery(const Model::ExecuteDisasterRecoveryRequest &request);
+                void ExecuteDisasterRecoveryAsync(const Model::ExecuteDisasterRecoveryRequest& request, const ExecuteDisasterRecoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExecuteDisasterRecoveryOutcomeCallable ExecuteDisasterRecoveryCallable(const Model::ExecuteDisasterRecoveryRequest& request);
 
                 /**
                  *导出RocketMQ消息详情

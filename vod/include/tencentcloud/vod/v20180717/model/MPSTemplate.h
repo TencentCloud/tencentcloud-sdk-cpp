@@ -73,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MPS 任务模板详情内容。
-示例：{"Definition":24214,"Name":"test","Comment":"","Type":"Preset","EnhanceConfig":{"VideoEnhance":{"FrameRate":{"Switch":"ON","Fps":50},"SuperResolution":{"Switch":"ON","Type":"lq"}}}}
                      * @return MPSTemplateInfo MPS 任务模板详情内容。
-示例：{"Definition":24214,"Name":"test","Comment":"","Type":"Preset","EnhanceConfig":{"VideoEnhance":{"FrameRate":{"Switch":"ON","Fps":50},"SuperResolution":{"Switch":"ON","Type":"lq"}}}}
                      * 
                      */
                     std::string GetMPSTemplateInfo() const;
 
                     /**
                      * 设置MPS 任务模板详情内容。
-示例：{"Definition":24214,"Name":"test","Comment":"","Type":"Preset","EnhanceConfig":{"VideoEnhance":{"FrameRate":{"Switch":"ON","Fps":50},"SuperResolution":{"Switch":"ON","Type":"lq"}}}}
                      * @param _mPSTemplateInfo MPS 任务模板详情内容。
-示例：{"Definition":24214,"Name":"test","Comment":"","Type":"Preset","EnhanceConfig":{"VideoEnhance":{"FrameRate":{"Switch":"ON","Fps":50},"SuperResolution":{"Switch":"ON","Type":"lq"}}}}
                      * 
                      */
                     void SetMPSTemplateInfo(const std::string& _mPSTemplateInfo);
@@ -107,7 +103,6 @@ namespace TencentCloud
 
                     /**
                      * MPS 任务模板详情内容。
-示例：{"Definition":24214,"Name":"test","Comment":"","Type":"Preset","EnhanceConfig":{"VideoEnhance":{"FrameRate":{"Switch":"ON","Fps":50},"SuperResolution":{"Switch":"ON","Type":"lq"}}}}
                      */
                     std::string m_mPSTemplateInfo;
                     bool m_mPSTemplateInfoHasBeenSet;

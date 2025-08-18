@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MPS 视频处理任务输入。该字段对应 MPS 任务返回中的 Input 结果，以 JSON 格式返回。
-示例：{"Definition": 24}
                      * @return Input MPS 视频处理任务输入。该字段对应 MPS 任务返回中的 Input 结果，以 JSON 格式返回。
-示例：{"Definition": 24}
                      * 
                      */
                     std::string GetInput() const;
 
                     /**
                      * 设置MPS 视频处理任务输入。该字段对应 MPS 任务返回中的 Input 结果，以 JSON 格式返回。
-示例：{"Definition": 24}
                      * @param _input MPS 视频处理任务输入。该字段对应 MPS 任务返回中的 Input 结果，以 JSON 格式返回。
-示例：{"Definition": 24}
                      * 
                      */
                     void SetInput(const std::string& _input);
@@ -205,7 +201,6 @@ namespace TencentCloud
 
                     /**
                      * MPS 视频处理任务输入。该字段对应 MPS 任务返回中的 Input 结果，以 JSON 格式返回。
-示例：{"Definition": 24}
                      */
                     std::string m_input;
                     bool m_inputHasBeenSet;

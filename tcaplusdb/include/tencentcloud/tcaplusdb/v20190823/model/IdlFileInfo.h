@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件ID，对于已上传的文件有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 文件ID，对于已上传的文件有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileId() const;
 
                     /**
                      * 设置文件ID，对于已上传的文件有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileId 文件ID，对于已上传的文件有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileId(const int64_t& _fileId);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件内容，对于本次新上传的文件有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileContent 文件内容，对于本次新上传的文件有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileContent() const;
 
                     /**
                      * 设置文件内容，对于本次新上传的文件有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileContent 文件内容，对于本次新上传的文件有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileContent(const std::string& _fileContent);
@@ -208,14 +200,12 @@ namespace TencentCloud
 
                     /**
                      * 文件ID，对于已上传的文件有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
                      * 文件内容，对于本次新上传的文件有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileContent;
                     bool m_fileContentHasBeenSet;

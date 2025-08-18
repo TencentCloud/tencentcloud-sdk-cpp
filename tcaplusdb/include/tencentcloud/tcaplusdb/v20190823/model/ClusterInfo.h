@@ -324,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取如果PasswordStatus是unmodifiable说明有旧密码还未过期，此字段将显示旧密码过期的时间，否则为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldPasswordExpireTime 如果PasswordStatus是unmodifiable说明有旧密码还未过期，此字段将显示旧密码过期的时间，否则为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldPasswordExpireTime() const;
 
                     /**
                      * 设置如果PasswordStatus是unmodifiable说明有旧密码还未过期，此字段将显示旧密码过期的时间，否则为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldPasswordExpireTime 如果PasswordStatus是unmodifiable说明有旧密码还未过期，此字段将显示旧密码过期的时间，否则为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldPasswordExpireTime(const std::string& _oldPasswordExpireTime);
@@ -349,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TcaplusDB SDK连接参数，接入ipv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiAccessIpv6 TcaplusDB SDK连接参数，接入ipv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApiAccessIpv6() const;
 
                     /**
                      * 设置TcaplusDB SDK连接参数，接入ipv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiAccessIpv6 TcaplusDB SDK连接参数，接入ipv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApiAccessIpv6(const std::string& _apiAccessIpv6);
@@ -374,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群类型，0,1:共享集群; 2:独立集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterType 集群类型，0,1:共享集群; 2:独立集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClusterType() const;
 
                     /**
                      * 设置集群类型，0,1:共享集群; 2:独立集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterType 集群类型，0,1:共享集群; 2:独立集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterType(const int64_t& _clusterType);
@@ -399,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterStatus 集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClusterStatus() const;
 
                     /**
                      * 设置集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterStatus 集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterStatus(const int64_t& _clusterStatus);
@@ -424,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取读CU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadCapacityUnit 读CU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReadCapacityUnit() const;
 
                     /**
                      * 设置读CU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readCapacityUnit 读CU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadCapacityUnit(const int64_t& _readCapacityUnit);
@@ -449,18 +429,14 @@ namespace TencentCloud
 
                     /**
                      * 获取写CU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WriteCapacityUnit 写CU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWriteCapacityUnit() const;
 
                     /**
                      * 设置写CU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _writeCapacityUnit 写CU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWriteCapacityUnit(const int64_t& _writeCapacityUnit);
@@ -474,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskVolume 磁盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskVolume() const;
 
                     /**
                      * 设置磁盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskVolume 磁盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskVolume(const int64_t& _diskVolume);
@@ -499,18 +471,14 @@ namespace TencentCloud
 
                     /**
                      * 获取独占server机器信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerList 独占server机器信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServerDetailInfo> GetServerList() const;
 
                     /**
                      * 设置独占server机器信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverList 独占server机器信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServerList(const std::vector<ServerDetailInfo>& _serverList);
@@ -524,18 +492,14 @@ namespace TencentCloud
 
                     /**
                      * 获取独占proxy机器信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyList 独占proxy机器信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProxyDetailInfo> GetProxyList() const;
 
                     /**
                      * 设置独占proxy机器信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyList 独占proxy机器信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyList(const std::vector<ProxyDetailInfo>& _proxyList);
@@ -570,18 +534,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审批人uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbaUins 审批人uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDbaUins() const;
 
                     /**
                      * 设置审批人uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbaUins 审批人uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbaUins(const std::vector<std::string>& _dbaUins);
@@ -595,18 +555,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启了数据订阅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataFlowStatus 是否开启了数据订阅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataFlowStatus() const;
 
                     /**
                      * 设置是否开启了数据订阅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataFlowStatus 是否开启了数据订阅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataFlowStatus(const int64_t& _dataFlowStatus);
@@ -620,18 +576,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据订阅的kafka信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaInfo 数据订阅的kafka信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KafkaInfo GetKafkaInfo() const;
 
                     /**
                      * 设置数据订阅的kafka信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kafkaInfo 数据订阅的kafka信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKafkaInfo(const KafkaInfo& _kafkaInfo);
@@ -645,18 +597,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群Txh备份文件多少天后过期删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TxhBackupExpireDay 集群Txh备份文件多少天后过期删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTxhBackupExpireDay() const;
 
                     /**
                      * 设置集群Txh备份文件多少天后过期删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _txhBackupExpireDay 集群Txh备份文件多少天后过期删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTxhBackupExpireDay(const uint64_t& _txhBackupExpireDay);
@@ -670,18 +618,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群Ulog备份文件多少天后过期删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UlogBackupExpireDay 集群Ulog备份文件多少天后过期删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUlogBackupExpireDay() const;
 
                     /**
                      * 设置集群Ulog备份文件多少天后过期删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ulogBackupExpireDay 集群Ulog备份文件多少天后过期删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUlogBackupExpireDay(const uint64_t& _ulogBackupExpireDay);
@@ -695,18 +639,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsReadOnlyUlogBackupExpireDay 集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsReadOnlyUlogBackupExpireDay() const;
 
                     /**
                      * 设置集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isReadOnlyUlogBackupExpireDay 集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsReadOnlyUlogBackupExpireDay(const uint64_t& _isReadOnlyUlogBackupExpireDay);
@@ -720,18 +660,14 @@ namespace TencentCloud
 
                     /**
                      * 获取restproxy状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestProxyStatus restproxy状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRestProxyStatus() const;
 
                     /**
                      * 设置restproxy状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _restProxyStatus restproxy状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRestProxyStatus(const int64_t& _restProxyStatus);
@@ -825,63 +761,54 @@ namespace TencentCloud
 
                     /**
                      * 如果PasswordStatus是unmodifiable说明有旧密码还未过期，此字段将显示旧密码过期的时间，否则为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldPasswordExpireTime;
                     bool m_oldPasswordExpireTimeHasBeenSet;
 
                     /**
                      * TcaplusDB SDK连接参数，接入ipv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiAccessIpv6;
                     bool m_apiAccessIpv6HasBeenSet;
 
                     /**
                      * 集群类型，0,1:共享集群; 2:独立集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
                      * 集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
 
                     /**
                      * 读CU
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_readCapacityUnit;
                     bool m_readCapacityUnitHasBeenSet;
 
                     /**
                      * 写CU
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_writeCapacityUnit;
                     bool m_writeCapacityUnitHasBeenSet;
 
                     /**
                      * 磁盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskVolume;
                     bool m_diskVolumeHasBeenSet;
 
                     /**
                      * 独占server机器信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServerDetailInfo> m_serverList;
                     bool m_serverListHasBeenSet;
 
                     /**
                      * 独占proxy机器信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyDetailInfo> m_proxyList;
                     bool m_proxyListHasBeenSet;
@@ -894,49 +821,42 @@ namespace TencentCloud
 
                     /**
                      * 审批人uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dbaUins;
                     bool m_dbaUinsHasBeenSet;
 
                     /**
                      * 是否开启了数据订阅
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataFlowStatus;
                     bool m_dataFlowStatusHasBeenSet;
 
                     /**
                      * 数据订阅的kafka信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KafkaInfo m_kafkaInfo;
                     bool m_kafkaInfoHasBeenSet;
 
                     /**
                      * 集群Txh备份文件多少天后过期删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_txhBackupExpireDay;
                     bool m_txhBackupExpireDayHasBeenSet;
 
                     /**
                      * 集群Ulog备份文件多少天后过期删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ulogBackupExpireDay;
                     bool m_ulogBackupExpireDayHasBeenSet;
 
                     /**
                      * 集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isReadOnlyUlogBackupExpireDay;
                     bool m_isReadOnlyUlogBackupExpireDayHasBeenSet;
 
                     /**
                      * restproxy状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_restProxyStatus;
                     bool m_restProxyStatusHasBeenSet;

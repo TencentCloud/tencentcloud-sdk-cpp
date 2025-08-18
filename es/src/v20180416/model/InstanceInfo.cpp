@@ -115,7 +115,8 @@ InstanceInfo::InstanceInfo() :
     m_enableScheduleRecoverGroupHasBeenSet(false),
     m_enableScheduleOperationDurationHasBeenSet(false),
     m_enableDestroyProtectionHasBeenSet(false),
-    m_showKibanaIpPortHasBeenSet(false)
+    m_showKibanaIpPortHasBeenSet(false),
+    m_isCdzLiteHasBeenSet(false)
 {
 }
 
@@ -1200,6 +1201,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_showKibanaIpPortHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCdzLite") && !value["IsCdzLite"].IsNull())
+    {
+        if (!value["IsCdzLite"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsCdzLite` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCdzLite = value["IsCdzLite"].GetBool();
+        m_isCdzLiteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2021,6 +2032,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ShowKibanaIpPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_showKibanaIpPort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCdzLiteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCdzLite";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCdzLite, allocator);
     }
 
 }
@@ -3544,5 +3563,21 @@ void InstanceInfo::SetShowKibanaIpPort(const string& _showKibanaIpPort)
 bool InstanceInfo::ShowKibanaIpPortHasBeenSet() const
 {
     return m_showKibanaIpPortHasBeenSet;
+}
+
+bool InstanceInfo::GetIsCdzLite() const
+{
+    return m_isCdzLite;
+}
+
+void InstanceInfo::SetIsCdzLite(const bool& _isCdzLite)
+{
+    m_isCdzLite = _isCdzLite;
+    m_isCdzLiteHasBeenSet = true;
+}
+
+bool InstanceInfo::IsCdzLiteHasBeenSet() const
+{
+    return m_isCdzLiteHasBeenSet;
 }
 

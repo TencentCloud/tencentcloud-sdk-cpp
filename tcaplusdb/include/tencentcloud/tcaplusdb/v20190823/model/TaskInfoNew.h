@@ -258,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableGroupId 表格组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置表格组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableGroupId 表格组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
@@ -283,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableGroupName 表格组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableGroupName() const;
 
                     /**
                      * 设置表格组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableGroupName 表格组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableGroupName(const std::string& _tableGroupName);
@@ -308,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableName 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -395,21 +383,18 @@ namespace TencentCloud
 
                     /**
                      * 表格组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableGroupId;
                     bool m_tableGroupIdHasBeenSet;
 
                     /**
                      * 表格组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableGroupName;
                     bool m_tableGroupNameHasBeenSet;
 
                     /**
                      * 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;

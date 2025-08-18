@@ -25,7 +25,8 @@ using namespace std;
 InquiryPriceResizeDiskRequest::InquiryPriceResizeDiskRequest() :
     m_diskSizeHasBeenSet(false),
     m_diskIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_diskIdsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,19 @@ string InquiryPriceResizeDiskRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_diskIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_diskIds.begin(); itr != m_diskIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -114,6 +128,22 @@ void InquiryPriceResizeDiskRequest::SetProjectId(const uint64_t& _projectId)
 bool InquiryPriceResizeDiskRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+vector<string> InquiryPriceResizeDiskRequest::GetDiskIds() const
+{
+    return m_diskIds;
+}
+
+void InquiryPriceResizeDiskRequest::SetDiskIds(const vector<string>& _diskIds)
+{
+    m_diskIds = _diskIds;
+    m_diskIdsHasBeenSet = true;
+}
+
+bool InquiryPriceResizeDiskRequest::DiskIdsHasBeenSet() const
+{
+    return m_diskIdsHasBeenSet;
 }
 
 

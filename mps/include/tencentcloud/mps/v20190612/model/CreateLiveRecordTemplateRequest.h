@@ -128,6 +128,27 @@ namespace TencentCloud
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取录制类型，取值为video（音视频录制）、audio（纯音频录制）、auto（自动探测）。不填时默认值为video。
+                     * @return RecordType 录制类型，取值为video（音视频录制）、audio（纯音频录制）、auto（自动探测）。不填时默认值为video。
+                     * 
+                     */
+                    std::string GetRecordType() const;
+
+                    /**
+                     * 设置录制类型，取值为video（音视频录制）、audio（纯音频录制）、auto（自动探测）。不填时默认值为video。
+                     * @param _recordType 录制类型，取值为video（音视频录制）、audio（纯音频录制）、auto（自动探测）。不填时默认值为video。
+                     * 
+                     */
+                    void SetRecordType(const std::string& _recordType);
+
+                    /**
+                     * 判断参数 RecordType 是否已赋值
+                     * @return RecordType 是否已赋值
+                     * 
+                     */
+                    bool RecordTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +174,12 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * 录制类型，取值为video（音视频录制）、audio（纯音频录制）、auto（自动探测）。不填时默认值为video。
+                     */
+                    std::string m_recordType;
+                    bool m_recordTypeHasBeenSet;
 
                 };
             }

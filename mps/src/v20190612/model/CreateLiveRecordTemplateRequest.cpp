@@ -26,7 +26,8 @@ CreateLiveRecordTemplateRequest::CreateLiveRecordTemplateRequest() :
     m_hLSConfigureHasBeenSet(false),
     m_mP4ConfigureHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_recordTypeHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,14 @@ string CreateLiveRecordTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -141,6 +150,22 @@ void CreateLiveRecordTemplateRequest::SetComment(const string& _comment)
 bool CreateLiveRecordTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string CreateLiveRecordTemplateRequest::GetRecordType() const
+{
+    return m_recordType;
+}
+
+void CreateLiveRecordTemplateRequest::SetRecordType(const string& _recordType)
+{
+    m_recordType = _recordType;
+    m_recordTypeHasBeenSet = true;
+}
+
+bool CreateLiveRecordTemplateRequest::RecordTypeHasBeenSet() const
+{
+    return m_recordTypeHasBeenSet;
 }
 
 

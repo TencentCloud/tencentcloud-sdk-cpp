@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteCloudNativeAPIGatewayServiceRequest::DeleteCloudNativeAPIGatewayServiceRequest() :
     m_gatewayIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_deleteRoutesHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteCloudNativeAPIGatewayServiceRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteRoutesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteRoutes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteRoutes, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteCloudNativeAPIGatewayServiceRequest::SetName(const string& _name)
 bool DeleteCloudNativeAPIGatewayServiceRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+bool DeleteCloudNativeAPIGatewayServiceRequest::GetDeleteRoutes() const
+{
+    return m_deleteRoutes;
+}
+
+void DeleteCloudNativeAPIGatewayServiceRequest::SetDeleteRoutes(const bool& _deleteRoutes)
+{
+    m_deleteRoutes = _deleteRoutes;
+    m_deleteRoutesHasBeenSet = true;
+}
+
+bool DeleteCloudNativeAPIGatewayServiceRequest::DeleteRoutesHasBeenSet() const
+{
+    return m_deleteRoutesHasBeenSet;
 }
 
 

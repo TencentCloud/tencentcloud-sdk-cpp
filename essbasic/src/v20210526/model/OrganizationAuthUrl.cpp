@@ -22,7 +22,9 @@ using namespace std;
 
 OrganizationAuthUrl::OrganizationAuthUrl() :
     m_authUrlHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+    m_errorMessageHasBeenSet(false),
+    m_organizationNameHasBeenSet(false),
+    m_subTaskIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome OrganizationAuthUrl::Deserialize(const rapidjson::Value &val
         m_errorMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
+    {
+        if (!value["OrganizationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationAuthUrl.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationName = string(value["OrganizationName"].GetString());
+        m_organizationNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubTaskId") && !value["SubTaskId"].IsNull())
+    {
+        if (!value["SubTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationAuthUrl.SubTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subTaskId = string(value["SubTaskId"].GetString());
+        m_subTaskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void OrganizationAuthUrl::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ErrorMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subTaskId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void OrganizationAuthUrl::SetErrorMessage(const string& _errorMessage)
 bool OrganizationAuthUrl::ErrorMessageHasBeenSet() const
 {
     return m_errorMessageHasBeenSet;
+}
+
+string OrganizationAuthUrl::GetOrganizationName() const
+{
+    return m_organizationName;
+}
+
+void OrganizationAuthUrl::SetOrganizationName(const string& _organizationName)
+{
+    m_organizationName = _organizationName;
+    m_organizationNameHasBeenSet = true;
+}
+
+bool OrganizationAuthUrl::OrganizationNameHasBeenSet() const
+{
+    return m_organizationNameHasBeenSet;
+}
+
+string OrganizationAuthUrl::GetSubTaskId() const
+{
+    return m_subTaskId;
+}
+
+void OrganizationAuthUrl::SetSubTaskId(const string& _subTaskId)
+{
+    m_subTaskId = _subTaskId;
+    m_subTaskIdHasBeenSet = true;
+}
+
+bool OrganizationAuthUrl::SubTaskIdHasBeenSet() const
+{
+    return m_subTaskIdHasBeenSet;
 }
 

@@ -28,7 +28,8 @@ LiveRecordTemplate::LiveRecordTemplate() :
     m_commentHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_recordTypeHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,16 @@ CoreInternalOutcome LiveRecordTemplate::Deserialize(const rapidjson::Value &valu
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RecordType") && !value["RecordType"].IsNull())
+    {
+        if (!value["RecordType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveRecordTemplate.RecordType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordType = string(value["RecordType"].GetString());
+        m_recordTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ void LiveRecordTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -333,5 +352,21 @@ void LiveRecordTemplate::SetUpdateTime(const string& _updateTime)
 bool LiveRecordTemplate::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string LiveRecordTemplate::GetRecordType() const
+{
+    return m_recordType;
+}
+
+void LiveRecordTemplate::SetRecordType(const string& _recordType)
+{
+    m_recordType = _recordType;
+    m_recordTypeHasBeenSet = true;
+}
+
+bool LiveRecordTemplate::RecordTypeHasBeenSet() const
+{
+    return m_recordTypeHasBeenSet;
 }
 

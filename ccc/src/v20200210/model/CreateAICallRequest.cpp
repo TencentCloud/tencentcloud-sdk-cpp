@@ -54,7 +54,8 @@ CreateAICallRequest::CreateAICallRequest() :
     m_variablesHasBeenSet(false),
     m_topPHasBeenSet(false),
     m_vadLevelHasBeenSet(false),
-    m_toneWordHasBeenSet(false)
+    m_toneWordHasBeenSet(false),
+    m_enableComplianceAudioHasBeenSet(false)
 {
 }
 
@@ -358,6 +359,14 @@ string CreateAICallRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_toneWord.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableComplianceAudioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableComplianceAudio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableComplianceAudio, allocator);
     }
 
 
@@ -878,6 +887,22 @@ void CreateAICallRequest::SetToneWord(const ToneWordInfo& _toneWord)
 bool CreateAICallRequest::ToneWordHasBeenSet() const
 {
     return m_toneWordHasBeenSet;
+}
+
+bool CreateAICallRequest::GetEnableComplianceAudio() const
+{
+    return m_enableComplianceAudio;
+}
+
+void CreateAICallRequest::SetEnableComplianceAudio(const bool& _enableComplianceAudio)
+{
+    m_enableComplianceAudio = _enableComplianceAudio;
+    m_enableComplianceAudioHasBeenSet = true;
+}
+
+bool CreateAICallRequest::EnableComplianceAudioHasBeenSet() const
+{
+    return m_enableComplianceAudioHasBeenSet;
 }
 
 

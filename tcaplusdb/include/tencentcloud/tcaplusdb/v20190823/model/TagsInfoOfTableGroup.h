@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableGroupId 表格组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置表格组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableGroupId 表格组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagInfoUnit> GetTags() const;
 
                     /**
                      * 设置标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<TagInfoUnit>& _tags);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ErrorInfo GetError() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _error 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetError(const ErrorInfo& _error);
@@ -152,28 +136,24 @@ namespace TencentCloud
 
                     /**
                      * 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 表格组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableGroupId;
                     bool m_tableGroupIdHasBeenSet;
 
                     /**
                      * 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfoUnit> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ErrorInfo m_error;
                     bool m_errorHasBeenSet;

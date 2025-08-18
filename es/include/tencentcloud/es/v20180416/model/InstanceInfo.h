@@ -2307,6 +2307,27 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool ShowKibanaIpPortHasBeenSet() const;
 
+                    /**
+                     * 获取是否为CDZLite可用区
+                     * @return IsCdzLite 是否为CDZLite可用区
+                     * 
+                     */
+                    bool GetIsCdzLite() const;
+
+                    /**
+                     * 设置是否为CDZLite可用区
+                     * @param _isCdzLite 是否为CDZLite可用区
+                     * 
+                     */
+                    void SetIsCdzLite(const bool& _isCdzLite);
+
+                    /**
+                     * 判断参数 IsCdzLite 是否已赋值
+                     * @return IsCdzLite 是否已赋值
+                     * 
+                     */
+                    bool IsCdzLiteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2941,6 +2962,12 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     std::string m_showKibanaIpPort;
                     bool m_showKibanaIpPortHasBeenSet;
+
+                    /**
+                     * 是否为CDZLite可用区
+                     */
+                    bool m_isCdzLite;
+                    bool m_isCdzLiteHasBeenSet;
 
                 };
             }

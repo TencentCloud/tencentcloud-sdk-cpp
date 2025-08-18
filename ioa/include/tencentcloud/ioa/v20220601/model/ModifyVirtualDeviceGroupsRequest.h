@@ -44,6 +44,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取必填，操作的设备列表数据
+                     * @return DeviceList 必填，操作的设备列表数据
+                     * 
+                     */
+                    std::vector<ModifyVirtualDeviceGroupsReqItem> GetDeviceList() const;
+
+                    /**
+                     * 设置必填，操作的设备列表数据
+                     * @param _deviceList 必填，操作的设备列表数据
+                     * 
+                     */
+                    void SetDeviceList(const std::vector<ModifyVirtualDeviceGroupsReqItem>& _deviceList);
+
+                    /**
+                     * 判断参数 DeviceList 是否已赋值
+                     * @return DeviceList 是否已赋值
+                     * 
+                     */
+                    bool DeviceListHasBeenSet() const;
+
+                    /**
                      * 获取管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
                      * @return DomainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
                      * 
@@ -86,27 +107,6 @@ namespace TencentCloud
                     bool DeviceVirtualGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取必填，操作的设备列表数据
-                     * @return DeviceList 必填，操作的设备列表数据
-                     * 
-                     */
-                    std::vector<ModifyVirtualDeviceGroupsReqItem> GetDeviceList() const;
-
-                    /**
-                     * 设置必填，操作的设备列表数据
-                     * @param _deviceList 必填，操作的设备列表数据
-                     * 
-                     */
-                    void SetDeviceList(const std::vector<ModifyVirtualDeviceGroupsReqItem>& _deviceList);
-
-                    /**
-                     * 判断参数 DeviceList 是否已赋值
-                     * @return DeviceList 是否已赋值
-                     * 
-                     */
-                    bool DeviceListHasBeenSet() const;
-
-                    /**
                      * 获取要添加的终端自定义分组id列表
                      * @return DeviceVirtualGroupIds 要添加的终端自定义分组id列表
                      * 
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DeviceVirtualGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
-                     * @return OsType 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * 获取系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * @return OsType 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
-                     * @param _osType 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * 设置系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * @param _osType 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -151,6 +151,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 必填，操作的设备列表数据
+                     */
+                    std::vector<ModifyVirtualDeviceGroupsReqItem> m_deviceList;
+                    bool m_deviceListHasBeenSet;
+
+                    /**
                      * 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
                      */
                     std::string m_domainInstanceId;
@@ -163,19 +169,13 @@ namespace TencentCloud
                     bool m_deviceVirtualGroupIdHasBeenSet;
 
                     /**
-                     * 必填，操作的设备列表数据
-                     */
-                    std::vector<ModifyVirtualDeviceGroupsReqItem> m_deviceList;
-                    bool m_deviceListHasBeenSet;
-
-                    /**
                      * 要添加的终端自定义分组id列表
                      */
                     std::vector<int64_t> m_deviceVirtualGroupIds;
                     bool m_deviceVirtualGroupIdsHasBeenSet;
 
                     /**
-                     * 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;

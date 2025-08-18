@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取必填，是否忽略当前检查
-                     * @return IgnoreCheck 必填，是否忽略当前检查
+                     * 获取是否忽略当前检查
+                     * @return IgnoreCheck 是否忽略当前检查
                      * 
                      */
                     bool GetIgnoreCheck() const;
 
                     /**
-                     * 设置必填，是否忽略当前检查
-                     * @param _ignoreCheck 必填，是否忽略当前检查
+                     * 设置是否忽略当前检查
+                     * @param _ignoreCheck 是否忽略当前检查
                      * 
                      */
                     void SetIgnoreCheck(const bool& _ignoreCheck);
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 必填，是否忽略当前检查
+                     * 是否忽略当前检查
                      */
                     bool m_ignoreCheck;
                     bool m_ignoreCheckHasBeenSet;

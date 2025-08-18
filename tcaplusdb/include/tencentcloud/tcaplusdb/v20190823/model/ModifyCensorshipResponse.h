@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已加入审批人的uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uins 已加入审批人的uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUins() const;
@@ -97,7 +95,6 @@ namespace TencentCloud
 
                     /**
                      * 已加入审批人的uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_uins;
                     bool m_uinsHasBeenSet;
