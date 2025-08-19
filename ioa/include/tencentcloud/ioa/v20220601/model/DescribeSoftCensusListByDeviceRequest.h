@@ -44,27 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）
-                     * @return OsType 必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）
-                     * 
-                     */
-                    int64_t GetOsType() const;
-
-                    /**
-                     * 设置必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）
-                     * @param _osType 必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）
-                     * 
-                     */
-                    void SetOsType(const int64_t& _osType);
-
-                    /**
-                     * 判断参数 OsType 是否已赋值
-                     * @return OsType 是否已赋值
-                     * 
-                     */
-                    bool OsTypeHasBeenSet() const;
-
-                    /**
                      * 获取必填，终端分组ID
                      * @return GroupId 必填，终端分组ID
                      * 
@@ -84,6 +63,48 @@ namespace TencentCloud
                      * 
                      */
                     bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * @return DomainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * 
+                     */
+                    std::string GetDomainInstanceId() const;
+
+                    /**
+                     * 设置管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * @param _domainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * 
+                     */
+                    void SetDomainInstanceId(const std::string& _domainInstanceId);
+
+                    /**
+                     * 判断参数 DomainInstanceId 是否已赋值
+                     * @return DomainInstanceId 是否已赋值
+                     * 
+                     */
+                    bool DomainInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）；默认值0
+                     * @return OsType 系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）；默认值0
+                     * 
+                     */
+                    int64_t GetOsType() const;
+
+                    /**
+                     * 设置系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）；默认值0
+                     * @param _osType 系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）；默认值0
+                     * 
+                     */
+                    void SetOsType(const int64_t& _osType);
+
+                    /**
+                     * 判断参数 OsType 是否已赋值
+                     * @return OsType 是否已赋值
+                     * 
+                     */
+                    bool OsTypeHasBeenSet() const;
 
                     /**
                      * 获取过滤条件、分页参数   <li>Name - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，终端名。</li> 	<li>UserName - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，终端用户名。</li> 	<li>IoaUserName - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，最近登录账号。</li> 	<li>Ip - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，IP地址。</li> 	<li>MacAddr - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，MAC地址。</li>
@@ -109,16 +130,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）
-                     */
-                    int64_t m_osType;
-                    bool m_osTypeHasBeenSet;
-
-                    /**
                      * 必填，终端分组ID
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     */
+                    std::string m_domainInstanceId;
+                    bool m_domainInstanceIdHasBeenSet;
+
+                    /**
+                     * 系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）；默认值0
+                     */
+                    int64_t m_osType;
+                    bool m_osTypeHasBeenSet;
 
                     /**
                      * 过滤条件、分页参数   <li>Name - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，终端名。</li> 	<li>UserName - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，终端用户名。</li> 	<li>IoaUserName - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，最近登录账号。</li> 	<li>Ip - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，IP地址。</li> 	<li>MacAddr - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，MAC地址。</li>

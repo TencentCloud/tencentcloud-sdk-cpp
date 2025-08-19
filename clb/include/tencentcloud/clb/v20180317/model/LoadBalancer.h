@@ -1463,6 +1463,27 @@ ToaClean: TOA（TCP Option Address）清理，清除TCP选项中的地址信息�
                      */
                     bool TargetCountHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡实例关联的Endpoint id。
+                     * @return AssociateEndpoint 负载均衡实例关联的Endpoint id。
+                     * 
+                     */
+                    std::string GetAssociateEndpoint() const;
+
+                    /**
+                     * 设置负载均衡实例关联的Endpoint id。
+                     * @param _associateEndpoint 负载均衡实例关联的Endpoint id。
+                     * 
+                     */
+                    void SetAssociateEndpoint(const std::string& _associateEndpoint);
+
+                    /**
+                     * 判断参数 AssociateEndpoint 是否已赋值
+                     * @return AssociateEndpoint 是否已赋值
+                     * 
+                     */
+                    bool AssociateEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1859,6 +1880,12 @@ ToaClean: TOA（TCP Option Address）清理，清除TCP选项中的地址信息�
                      */
                     uint64_t m_targetCount;
                     bool m_targetCountHasBeenSet;
+
+                    /**
+                     * 负载均衡实例关联的Endpoint id。
+                     */
+                    std::string m_associateEndpoint;
+                    bool m_associateEndpointHasBeenSet;
 
                 };
             }

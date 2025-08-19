@@ -23,8 +23,9 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 DescribeSoftCensusListByDeviceRequest::DescribeSoftCensusListByDeviceRequest() :
-    m_osTypeHasBeenSet(false),
     m_groupIdHasBeenSet(false),
+    m_domainInstanceIdHasBeenSet(false),
+    m_osTypeHasBeenSet(false),
     m_conditionHasBeenSet(false)
 {
 }
@@ -36,20 +37,28 @@ string DescribeSoftCensusListByDeviceRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_osTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OsType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_osType, allocator);
-    }
-
     if (m_groupIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_groupId, allocator);
+    }
+
+    if (m_domainInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_osType, allocator);
     }
 
     if (m_conditionHasBeenSet)
@@ -69,22 +78,6 @@ string DescribeSoftCensusListByDeviceRequest::ToJsonString() const
 }
 
 
-int64_t DescribeSoftCensusListByDeviceRequest::GetOsType() const
-{
-    return m_osType;
-}
-
-void DescribeSoftCensusListByDeviceRequest::SetOsType(const int64_t& _osType)
-{
-    m_osType = _osType;
-    m_osTypeHasBeenSet = true;
-}
-
-bool DescribeSoftCensusListByDeviceRequest::OsTypeHasBeenSet() const
-{
-    return m_osTypeHasBeenSet;
-}
-
 int64_t DescribeSoftCensusListByDeviceRequest::GetGroupId() const
 {
     return m_groupId;
@@ -99,6 +92,38 @@ void DescribeSoftCensusListByDeviceRequest::SetGroupId(const int64_t& _groupId)
 bool DescribeSoftCensusListByDeviceRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+string DescribeSoftCensusListByDeviceRequest::GetDomainInstanceId() const
+{
+    return m_domainInstanceId;
+}
+
+void DescribeSoftCensusListByDeviceRequest::SetDomainInstanceId(const string& _domainInstanceId)
+{
+    m_domainInstanceId = _domainInstanceId;
+    m_domainInstanceIdHasBeenSet = true;
+}
+
+bool DescribeSoftCensusListByDeviceRequest::DomainInstanceIdHasBeenSet() const
+{
+    return m_domainInstanceIdHasBeenSet;
+}
+
+int64_t DescribeSoftCensusListByDeviceRequest::GetOsType() const
+{
+    return m_osType;
+}
+
+void DescribeSoftCensusListByDeviceRequest::SetOsType(const int64_t& _osType)
+{
+    m_osType = _osType;
+    m_osTypeHasBeenSet = true;
+}
+
+bool DescribeSoftCensusListByDeviceRequest::OsTypeHasBeenSet() const
+{
+    return m_osTypeHasBeenSet;
 }
 
 Condition DescribeSoftCensusListByDeviceRequest::GetCondition() const

@@ -26,7 +26,8 @@ DoDirectoryOperationRequest::DoDirectoryOperationRequest() :
     m_fileSystemIdHasBeenSet(false),
     m_opetationTypeHasBeenSet(false),
     m_directoryPathHasBeenSet(false),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_destPathHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DoDirectoryOperationRequest::ToJsonString() const
         string key = "Mode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_destPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DoDirectoryOperationRequest::SetMode(const string& _mode)
 bool DoDirectoryOperationRequest::ModeHasBeenSet() const
 {
     return m_modeHasBeenSet;
+}
+
+string DoDirectoryOperationRequest::GetDestPath() const
+{
+    return m_destPath;
+}
+
+void DoDirectoryOperationRequest::SetDestPath(const string& _destPath)
+{
+    m_destPath = _destPath;
+    m_destPathHasBeenSet = true;
+}
+
+bool DoDirectoryOperationRequest::DestPathHasBeenSet() const
+{
+    return m_destPathHasBeenSet;
 }
 
 

@@ -25,7 +25,8 @@ using namespace std;
 DeleteBackUpDataRequest::DeleteBackUpDataRequest() :
     m_instanceIdHasBeenSet(false),
     m_backUpJobIdHasBeenSet(false),
-    m_isDeleteAllHasBeenSet(false)
+    m_isDeleteAllHasBeenSet(false),
+    m_isRecoverHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DeleteBackUpDataRequest::ToJsonString() const
         string key = "IsDeleteAll";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isDeleteAll, allocator);
+    }
+
+    if (m_isRecoverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRecover";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isRecover, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DeleteBackUpDataRequest::SetIsDeleteAll(const bool& _isDeleteAll)
 bool DeleteBackUpDataRequest::IsDeleteAllHasBeenSet() const
 {
     return m_isDeleteAllHasBeenSet;
+}
+
+bool DeleteBackUpDataRequest::GetIsRecover() const
+{
+    return m_isRecover;
+}
+
+void DeleteBackUpDataRequest::SetIsRecover(const bool& _isRecover)
+{
+    m_isRecover = _isRecover;
+    m_isRecoverHasBeenSet = true;
+}
+
+bool DeleteBackUpDataRequest::IsRecoverHasBeenSet() const
+{
+    return m_isRecoverHasBeenSet;
 }
 
 

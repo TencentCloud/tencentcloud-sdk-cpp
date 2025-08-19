@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ClientRemarkHasBeenSet() const;
 
                     /**
-                     * 获取偏移量 请保持必传
-                     * @return Offset 偏移量 请保持必传
+                     * 获取*偏移量 【请保持必传】
+                     * @return Offset *偏移量 【请保持必传】
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量 请保持必传
-                     * @param _offset 偏移量 请保持必传
+                     * 设置*偏移量 【请保持必传】
+                     * @param _offset *偏移量 【请保持必传】
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数目 请保持必传，最大2000
-                     * @return Limit 限制数目 请保持必传，最大2000
+                     * 获取*限制数目 【请保持必传】最大2000
+                     * @return Limit *限制数目 【请保持必传】最大2000
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目 请保持必传，最大2000
-                     * @param _limit 限制数目 请保持必传，最大2000
+                     * 设置*限制数目 【请保持必传】最大2000
+                     * @param _limit *限制数目 【请保持必传】最大2000
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -360,13 +360,13 @@ namespace TencentCloud
                     bool m_clientRemarkHasBeenSet;
 
                     /**
-                     * 偏移量 请保持必传
+                     * *偏移量 【请保持必传】
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数目 请保持必传，最大2000
+                     * *限制数目 【请保持必传】最大2000
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取create：创建目录  check：确认目录是否存在
-                     * @return OpetationType create：创建目录  check：确认目录是否存在
+                     * 获取create：创建目录  check：确认目录是否存在  move: 对目录做mv 操作
+                     * @return OpetationType create：创建目录  check：确认目录是否存在  move: 对目录做mv 操作
                      * 
                      */
                     std::string GetOpetationType() const;
 
                     /**
-                     * 设置create：创建目录  check：确认目录是否存在
-                     * @param _opetationType create：创建目录  check：确认目录是否存在
+                     * 设置create：创建目录  check：确认目录是否存在  move: 对目录做mv 操作
+                     * @param _opetationType create：创建目录  check：确认目录是否存在  move: 对目录做mv 操作
                      * 
                      */
                     void SetOpetationType(const std::string& _opetationType);
@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool ModeHasBeenSet() const;
 
+                    /**
+                     * 获取mv操作的目标目录名称；如果是turbo文件系统必须以/cfs/开头
+                     * @return DestPath mv操作的目标目录名称；如果是turbo文件系统必须以/cfs/开头
+                     * 
+                     */
+                    std::string GetDestPath() const;
+
+                    /**
+                     * 设置mv操作的目标目录名称；如果是turbo文件系统必须以/cfs/开头
+                     * @param _destPath mv操作的目标目录名称；如果是turbo文件系统必须以/cfs/开头
+                     * 
+                     */
+                    void SetDestPath(const std::string& _destPath);
+
+                    /**
+                     * 判断参数 DestPath 是否已赋值
+                     * @return DestPath 是否已赋值
+                     * 
+                     */
+                    bool DestPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,7 +156,7 @@ namespace TencentCloud
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * create：创建目录  check：确认目录是否存在
+                     * create：创建目录  check：确认目录是否存在  move: 对目录做mv 操作
                      */
                     std::string m_opetationType;
                     bool m_opetationTypeHasBeenSet;
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
+
+                    /**
+                     * mv操作的目标目录名称；如果是turbo文件系统必须以/cfs/开头
+                     */
+                    std::string m_destPath;
+                    bool m_destPathHasBeenSet;
 
                 };
             }

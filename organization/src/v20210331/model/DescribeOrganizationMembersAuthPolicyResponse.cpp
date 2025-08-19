@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdwdoris/v20211228/model/DeleteBackUpDataResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersAuthPolicyResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdwdoris::V20211228::Model;
+using namespace TencentCloud::Organization::V20210331::Model;
 using namespace std;
 
-DeleteBackUpDataResponse::DeleteBackUpDataResponse() :
-    m_errorMsgHasBeenSet(false)
+DescribeOrganizationMembersAuthPolicyResponse::DescribeOrganizationMembersAuthPolicyResponse() :
+    m_itemsHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DeleteBackUpDataResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeOrganizationMembersAuthPolicyResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +63,67 @@ CoreInternalOutcome DeleteBackUpDataResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
     {
-        if (!rsp["ErrorMsg"].IsString())
+        if (!rsp["Items"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Items` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Items"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            OrgMembersAuthPolicy item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_items.push_back(item);
         }
-        m_errorMsg = string(rsp["ErrorMsg"].GetString());
-        m_errorMsgHasBeenSet = true;
+        m_itemsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetUint64();
+        m_totalHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DeleteBackUpDataResponse::ToJsonString() const
+string DescribeOrganizationMembersAuthPolicyResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_errorMsgHasBeenSet)
+    if (m_itemsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ErrorMsg";
+        string key = "Items";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +138,24 @@ string DeleteBackUpDataResponse::ToJsonString() const
 }
 
 
-string DeleteBackUpDataResponse::GetErrorMsg() const
+vector<OrgMembersAuthPolicy> DescribeOrganizationMembersAuthPolicyResponse::GetItems() const
 {
-    return m_errorMsg;
+    return m_items;
 }
 
-bool DeleteBackUpDataResponse::ErrorMsgHasBeenSet() const
+bool DescribeOrganizationMembersAuthPolicyResponse::ItemsHasBeenSet() const
 {
-    return m_errorMsgHasBeenSet;
+    return m_itemsHasBeenSet;
+}
+
+uint64_t DescribeOrganizationMembersAuthPolicyResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeOrganizationMembersAuthPolicyResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
 }
 
 

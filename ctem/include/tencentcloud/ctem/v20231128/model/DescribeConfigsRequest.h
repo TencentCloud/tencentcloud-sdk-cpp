@@ -337,6 +337,27 @@ namespace TencentCloud
                      */
                     bool IgnoredHasBeenSet() const;
 
+                    /**
+                     * 获取支持按照响应长度排序，例如：+ContentLength或-ContentLength，+是递增，-是递减
+                     * @return OrderBy 支持按照响应长度排序，例如：+ContentLength或-ContentLength，+是递增，-是递减
+                     * 
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置支持按照响应长度排序，例如：+ContentLength或-ContentLength，+是递增，-是递减
+                     * @param _orderBy 支持按照响应长度排序，例如：+ContentLength或-ContentLength，+是递增，-是递减
+                     * 
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     * 
+                     */
+                    bool OrderByHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,6 +443,12 @@ namespace TencentCloud
                      */
                     bool m_ignored;
                     bool m_ignoredHasBeenSet;
+
+                    /**
+                     * 支持按照响应长度排序，例如：+ContentLength或-ContentLength，+是递增，-是递减
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
 
                 };
             }

@@ -14,56 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDWDORIS_V20211228_MODEL_DELETEBACKUPDATARESPONSE_H_
-#define TENCENTCLOUD_CDWDORIS_V20211228_MODEL_DELETEBACKUPDATARESPONSE_H_
+#ifndef TENCENTCLOUD_ISS_V20230517_MODEL_DESCRIBEUSERDEVICELISTRESPONSE_H_
+#define TENCENTCLOUD_ISS_V20230517_MODEL_DESCRIBEUSERDEVICELISTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/DescribeDeviceListData.h>
 
 
 namespace TencentCloud
 {
-    namespace Cdwdoris
+    namespace Iss
     {
-        namespace V20211228
+        namespace V20230517
         {
             namespace Model
             {
                 /**
-                * DeleteBackUpData返回参数结构体
+                * DescribeUserDeviceList返回参数结构体
                 */
-                class DeleteBackUpDataResponse : public AbstractModel
+                class DescribeUserDeviceListResponse : public AbstractModel
                 {
                 public:
-                    DeleteBackUpDataResponse();
-                    ~DeleteBackUpDataResponse() = default;
+                    DescribeUserDeviceListResponse();
+                    ~DescribeUserDeviceListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取错误信息
-                     * @return ErrorMsg 错误信息
+                     * 获取返回结果
+                     * @return Data 返回结果
                      * 
                      */
-                    std::string GetErrorMsg() const;
+                    DescribeDeviceListData GetData() const;
 
                     /**
-                     * 判断参数 ErrorMsg 是否已赋值
-                     * @return ErrorMsg 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool ErrorMsgHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 错误信息
+                     * 返回结果
                      */
-                    std::string m_errorMsg;
-                    bool m_errorMsgHasBeenSet;
+                    DescribeDeviceListData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDWDORIS_V20211228_MODEL_DELETEBACKUPDATARESPONSE_H_
+#endif // !TENCENTCLOUD_ISS_V20230517_MODEL_DESCRIBEUSERDEVICELISTRESPONSE_H_

@@ -36,7 +36,8 @@ DescribeConfigsRequest::DescribeConfigsRequest() :
     m_updateAtStartHasBeenSet(false),
     m_updateAtEndHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_ignoredHasBeenSet(false)
+    m_ignoredHasBeenSet(false),
+    m_orderByHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,14 @@ string DescribeConfigsRequest::ToJsonString() const
         string key = "Ignored";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ignored, allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -406,6 +415,22 @@ void DescribeConfigsRequest::SetIgnored(const bool& _ignored)
 bool DescribeConfigsRequest::IgnoredHasBeenSet() const
 {
     return m_ignoredHasBeenSet;
+}
+
+string DescribeConfigsRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeConfigsRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeConfigsRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
 }
 
 

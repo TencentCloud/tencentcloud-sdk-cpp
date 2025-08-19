@@ -77,7 +77,8 @@ LoadBalancer::LoadBalancer() :
     m_loadBalancerDomainHasBeenSet(false),
     m_egressHasBeenSet(false),
     m_exclusiveHasBeenSet(false),
-    m_targetCountHasBeenSet(false)
+    m_targetCountHasBeenSet(false),
+    m_associateEndpointHasBeenSet(false)
 {
 }
 
@@ -743,6 +744,16 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_targetCountHasBeenSet = true;
     }
 
+    if (value.HasMember("AssociateEndpoint") && !value["AssociateEndpoint"].IsNull())
+    {
+        if (!value["AssociateEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.AssociateEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_associateEndpoint = string(value["AssociateEndpoint"].GetString());
+        m_associateEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1256,6 +1267,14 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TargetCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_targetCount, allocator);
+    }
+
+    if (m_associateEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociateEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_associateEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2171,5 +2190,21 @@ void LoadBalancer::SetTargetCount(const uint64_t& _targetCount)
 bool LoadBalancer::TargetCountHasBeenSet() const
 {
     return m_targetCountHasBeenSet;
+}
+
+string LoadBalancer::GetAssociateEndpoint() const
+{
+    return m_associateEndpoint;
+}
+
+void LoadBalancer::SetAssociateEndpoint(const string& _associateEndpoint)
+{
+    m_associateEndpoint = _associateEndpoint;
+    m_associateEndpointHasBeenSet = true;
+}
+
+bool LoadBalancer::AssociateEndpointHasBeenSet() const
+{
+    return m_associateEndpointHasBeenSet;
 }
 

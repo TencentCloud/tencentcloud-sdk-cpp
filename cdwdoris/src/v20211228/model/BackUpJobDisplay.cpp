@@ -35,7 +35,8 @@ BackUpJobDisplay::BackUpJobDisplay() :
     m_backupCosInfoHasBeenSet(false),
     m_isUserDefineBucketHasBeenSet(false),
     m_errorReasonHasBeenSet(false),
-    m_snapshotRemainPolicyHasBeenSet(false)
+    m_snapshotRemainPolicyHasBeenSet(false),
+    m_isolationCountHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome BackUpJobDisplay::Deserialize(const rapidjson::Value &value)
         m_snapshotRemainPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("IsolationCount") && !value["IsolationCount"].IsNull())
+    {
+        if (!value["IsolationCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.IsolationCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolationCount = value["IsolationCount"].GetInt64();
+        m_isolationCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -343,6 +354,14 @@ void BackUpJobDisplay::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_snapshotRemainPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isolationCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolationCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolationCount, allocator);
     }
 
 }
@@ -586,5 +605,21 @@ void BackUpJobDisplay::SetSnapshotRemainPolicy(const SnapshotRemainPolicy& _snap
 bool BackUpJobDisplay::SnapshotRemainPolicyHasBeenSet() const
 {
     return m_snapshotRemainPolicyHasBeenSet;
+}
+
+int64_t BackUpJobDisplay::GetIsolationCount() const
+{
+    return m_isolationCount;
+}
+
+void BackUpJobDisplay::SetIsolationCount(const int64_t& _isolationCount)
+{
+    m_isolationCount = _isolationCount;
+    m_isolationCountHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::IsolationCountHasBeenSet() const
+{
+    return m_isolationCountHasBeenSet;
 }
 

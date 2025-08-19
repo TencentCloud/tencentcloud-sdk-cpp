@@ -2405,6 +2405,49 @@ IssClient::DescribeUserDeviceOutcomeCallable IssClient::DescribeUserDeviceCallab
     return task->get_future();
 }
 
+IssClient::DescribeUserDeviceListOutcome IssClient::DescribeUserDeviceList(const DescribeUserDeviceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserDeviceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserDeviceListResponse rsp = DescribeUserDeviceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserDeviceListOutcome(rsp);
+        else
+            return DescribeUserDeviceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserDeviceListOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::DescribeUserDeviceListAsync(const DescribeUserDeviceListRequest& request, const DescribeUserDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserDeviceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::DescribeUserDeviceListOutcomeCallable IssClient::DescribeUserDeviceListCallable(const DescribeUserDeviceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserDeviceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserDeviceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IssClient::DescribeVideoBitRateOutcome IssClient::DescribeVideoBitRate(const DescribeVideoBitRateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVideoBitRate");

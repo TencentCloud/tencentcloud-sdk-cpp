@@ -25,7 +25,8 @@ DisplayDarkWeb::DisplayDarkWeb() :
     m_contentHasBeenSet(false),
     m_matchedKeywordsHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_displayToolCommonHasBeenSet(false)
+    m_displayToolCommonHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,16 @@ CoreInternalOutcome DisplayDarkWeb::Deserialize(const rapidjson::Value &value)
         m_displayToolCommonHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayDarkWeb.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void DisplayDarkWeb::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_displayToolCommon.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void DisplayDarkWeb::SetDisplayToolCommon(const DisplayToolCommon& _displayToolC
 bool DisplayDarkWeb::DisplayToolCommonHasBeenSet() const
 {
     return m_displayToolCommonHasBeenSet;
+}
+
+string DisplayDarkWeb::GetStatus() const
+{
+    return m_status;
+}
+
+void DisplayDarkWeb::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DisplayDarkWeb::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

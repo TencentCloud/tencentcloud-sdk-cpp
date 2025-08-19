@@ -2620,6 +2620,49 @@ OrganizationClient::DescribeOrganizationMembersOutcomeCallable OrganizationClien
     return task->get_future();
 }
 
+OrganizationClient::DescribeOrganizationMembersAuthPolicyOutcome OrganizationClient::DescribeOrganizationMembersAuthPolicy(const DescribeOrganizationMembersAuthPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationMembersAuthPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationMembersAuthPolicyResponse rsp = DescribeOrganizationMembersAuthPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationMembersAuthPolicyOutcome(rsp);
+        else
+            return DescribeOrganizationMembersAuthPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationMembersAuthPolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeOrganizationMembersAuthPolicyAsync(const DescribeOrganizationMembersAuthPolicyRequest& request, const DescribeOrganizationMembersAuthPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationMembersAuthPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeOrganizationMembersAuthPolicyOutcomeCallable OrganizationClient::DescribeOrganizationMembersAuthPolicyCallable(const DescribeOrganizationMembersAuthPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationMembersAuthPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationMembersAuthPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::DescribeOrganizationNodesOutcome OrganizationClient::DescribeOrganizationNodes(const DescribeOrganizationNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrganizationNodes");

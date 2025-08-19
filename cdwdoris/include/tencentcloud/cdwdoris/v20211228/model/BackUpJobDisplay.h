@@ -364,6 +364,27 @@ namespace TencentCloud
                      */
                     bool SnapshotRemainPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取隔离次数
+                     * @return IsolationCount 隔离次数
+                     * 
+                     */
+                    int64_t GetIsolationCount() const;
+
+                    /**
+                     * 设置隔离次数
+                     * @param _isolationCount 隔离次数
+                     * 
+                     */
+                    void SetIsolationCount(const int64_t& _isolationCount);
+
+                    /**
+                     * 判断参数 IsolationCount 是否已赋值
+                     * @return IsolationCount 是否已赋值
+                     * 
+                     */
+                    bool IsolationCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -455,6 +476,12 @@ namespace TencentCloud
                      */
                     SnapshotRemainPolicy m_snapshotRemainPolicy;
                     bool m_snapshotRemainPolicyHasBeenSet;
+
+                    /**
+                     * 隔离次数
+                     */
+                    int64_t m_isolationCount;
+                    bool m_isolationCountHasBeenSet;
 
                 };
             }

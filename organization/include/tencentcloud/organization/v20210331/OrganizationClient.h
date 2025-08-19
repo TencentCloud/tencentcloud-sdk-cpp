@@ -143,6 +143,8 @@
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberPoliciesResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersAuthPolicyRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersAuthPolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationNodesRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationNodesResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribePolicyRequest.h>
@@ -473,6 +475,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOrganizationMembersResponse> DescribeOrganizationMembersOutcome;
                 typedef std::future<DescribeOrganizationMembersOutcome> DescribeOrganizationMembersOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationMembersRequest&, DescribeOrganizationMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationMembersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrganizationMembersAuthPolicyResponse> DescribeOrganizationMembersAuthPolicyOutcome;
+                typedef std::future<DescribeOrganizationMembersAuthPolicyOutcome> DescribeOrganizationMembersAuthPolicyOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationMembersAuthPolicyRequest&, DescribeOrganizationMembersAuthPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationMembersAuthPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationNodesResponse> DescribeOrganizationNodesOutcome;
                 typedef std::future<DescribeOrganizationNodesOutcome> DescribeOrganizationNodesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationNodesRequest&, DescribeOrganizationNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationNodesAsyncHandler;
@@ -1219,6 +1224,15 @@ namespace TencentCloud
                 DescribeOrganizationMembersOutcome DescribeOrganizationMembers(const Model::DescribeOrganizationMembersRequest &request);
                 void DescribeOrganizationMembersAsync(const Model::DescribeOrganizationMembersRequest& request, const DescribeOrganizationMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOrganizationMembersOutcomeCallable DescribeOrganizationMembersCallable(const Model::DescribeOrganizationMembersRequest& request);
+
+                /**
+                 *查询组织成员访问策略列表
+                 * @param req DescribeOrganizationMembersAuthPolicyRequest
+                 * @return DescribeOrganizationMembersAuthPolicyOutcome
+                 */
+                DescribeOrganizationMembersAuthPolicyOutcome DescribeOrganizationMembersAuthPolicy(const Model::DescribeOrganizationMembersAuthPolicyRequest &request);
+                void DescribeOrganizationMembersAuthPolicyAsync(const Model::DescribeOrganizationMembersAuthPolicyRequest& request, const DescribeOrganizationMembersAuthPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrganizationMembersAuthPolicyOutcomeCallable DescribeOrganizationMembersAuthPolicyCallable(const Model::DescribeOrganizationMembersAuthPolicyRequest& request);
 
                 /**
                  *获取组织节点列表

@@ -153,6 +153,27 @@ namespace TencentCloud
                     bool BucketRegionHasBeenSet() const;
 
                     /**
+                     * 获取该媒体库的业务 API 访问域名
+                     * @return AccessDomain 该媒体库的业务 API 访问域名
+                     * 
+                     */
+                    std::string GetAccessDomain() const;
+
+                    /**
+                     * 设置该媒体库的业务 API 访问域名
+                     * @param _accessDomain 该媒体库的业务 API 访问域名
+                     * 
+                     */
+                    void SetAccessDomain(const std::string& _accessDomain);
+
+                    /**
+                     * 判断参数 AccessDomain 是否已赋值
+                     * @return AccessDomain 是否已赋值
+                     * 
+                     */
+                    bool AccessDomainHasBeenSet() const;
+
+                    /**
                      * 获取媒体库创建时间
                      * @return CreationTime 媒体库创建时间
                      * 
@@ -288,6 +309,12 @@ namespace TencentCloud
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
+
+                    /**
+                     * 该媒体库的业务 API 访问域名
+                     */
+                    std::string m_accessDomain;
+                    bool m_accessDomainHasBeenSet;
 
                     /**
                      * 媒体库创建时间

@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdwdoris/v20211228/model/DeleteBackUpDataResponse.h>
+#include <tencentcloud/iss/v20230517/model/DescribeUserDeviceListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdwdoris::V20211228::Model;
+using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
-DeleteBackUpDataResponse::DeleteBackUpDataResponse() :
-    m_errorMsgHasBeenSet(false)
+DescribeUserDeviceListResponse::DescribeUserDeviceListResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DeleteBackUpDataResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeUserDeviceListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,40 @@ CoreInternalOutcome DeleteBackUpDataResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["ErrorMsg"].IsString())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_errorMsg = string(rsp["ErrorMsg"].GetString());
-        m_errorMsgHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DeleteBackUpDataResponse::ToJsonString() const
+string DescribeUserDeviceListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_errorMsgHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ErrorMsg";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +110,14 @@ string DeleteBackUpDataResponse::ToJsonString() const
 }
 
 
-string DeleteBackUpDataResponse::GetErrorMsg() const
+DescribeDeviceListData DescribeUserDeviceListResponse::GetData() const
 {
-    return m_errorMsg;
+    return m_data;
 }
 
-bool DeleteBackUpDataResponse::ErrorMsgHasBeenSet() const
+bool DescribeUserDeviceListResponse::DataHasBeenSet() const
 {
-    return m_errorMsgHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

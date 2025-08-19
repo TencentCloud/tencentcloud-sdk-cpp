@@ -30,7 +30,8 @@ ModifyLoadBalancerAttributesRequest::ModifyLoadBalancerAttributesRequest() :
     m_loadBalancerPassToTargetHasBeenSet(false),
     m_snatProHasBeenSet(false),
     m_deleteProtectHasBeenSet(false),
-    m_modifyClassicDomainHasBeenSet(false)
+    m_modifyClassicDomainHasBeenSet(false),
+    m_associateEndpointHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,14 @@ string ModifyLoadBalancerAttributesRequest::ToJsonString() const
         string key = "ModifyClassicDomain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_modifyClassicDomain, allocator);
+    }
+
+    if (m_associateEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociateEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_associateEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -241,6 +250,22 @@ void ModifyLoadBalancerAttributesRequest::SetModifyClassicDomain(const bool& _mo
 bool ModifyLoadBalancerAttributesRequest::ModifyClassicDomainHasBeenSet() const
 {
     return m_modifyClassicDomainHasBeenSet;
+}
+
+string ModifyLoadBalancerAttributesRequest::GetAssociateEndpoint() const
+{
+    return m_associateEndpoint;
+}
+
+void ModifyLoadBalancerAttributesRequest::SetAssociateEndpoint(const string& _associateEndpoint)
+{
+    m_associateEndpoint = _associateEndpoint;
+    m_associateEndpointHasBeenSet = true;
+}
+
+bool ModifyLoadBalancerAttributesRequest::AssociateEndpointHasBeenSet() const
+{
+    return m_associateEndpointHasBeenSet;
 }
 
 

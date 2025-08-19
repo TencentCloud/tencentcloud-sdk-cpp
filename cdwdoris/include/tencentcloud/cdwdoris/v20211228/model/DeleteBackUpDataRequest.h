@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool IsDeleteAllHasBeenSet() const;
 
+                    /**
+                     * 获取true代表恢复删除隔离中的job 默认false就是删除
+                     * @return IsRecover true代表恢复删除隔离中的job 默认false就是删除
+                     * 
+                     */
+                    bool GetIsRecover() const;
+
+                    /**
+                     * 设置true代表恢复删除隔离中的job 默认false就是删除
+                     * @param _isRecover true代表恢复删除隔离中的job 默认false就是删除
+                     * 
+                     */
+                    void SetIsRecover(const bool& _isRecover);
+
+                    /**
+                     * 判断参数 IsRecover 是否已赋值
+                     * @return IsRecover 是否已赋值
+                     * 
+                     */
+                    bool IsRecoverHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     bool m_isDeleteAll;
                     bool m_isDeleteAllHasBeenSet;
+
+                    /**
+                     * true代表恢复删除隔离中的job 默认false就是删除
+                     */
+                    bool m_isRecover;
+                    bool m_isRecoverHasBeenSet;
 
                 };
             }
