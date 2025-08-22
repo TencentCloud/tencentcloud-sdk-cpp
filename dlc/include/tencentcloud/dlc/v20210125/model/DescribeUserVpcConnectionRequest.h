@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool DataEngineIdsHasBeenSet() const;
 
+                    /**
+                     * 获取终端节点ID集合
+                     * @return UserVpcEndpointIds 终端节点ID集合
+                     * 
+                     */
+                    std::vector<std::string> GetUserVpcEndpointIds() const;
+
+                    /**
+                     * 设置终端节点ID集合
+                     * @param _userVpcEndpointIds 终端节点ID集合
+                     * 
+                     */
+                    void SetUserVpcEndpointIds(const std::vector<std::string>& _userVpcEndpointIds);
+
+                    /**
+                     * 判断参数 UserVpcEndpointIds 是否已赋值
+                     * @return UserVpcEndpointIds 是否已赋值
+                     * 
+                     */
+                    bool UserVpcEndpointIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_dataEngineIds;
                     bool m_dataEngineIdsHasBeenSet;
+
+                    /**
+                     * 终端节点ID集合
+                     */
+                    std::vector<std::string> m_userVpcEndpointIds;
+                    bool m_userVpcEndpointIdsHasBeenSet;
 
                 };
             }

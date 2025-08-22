@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool ActionRiskCountHasBeenSet() const;
 
                     /**
-                     * 获取是否接入云审计日志
-                     * @return IsAccessCloudAudit 是否接入云审计日志
+                     * 获取是否接入操作审计日志
+                     * @return IsAccessCloudAudit 是否接入操作审计日志
                      * 
                      */
                     bool GetIsAccessCloudAudit() const;
 
                     /**
-                     * 设置是否接入云审计日志
-                     * @param _isAccessCloudAudit 是否接入云审计日志
+                     * 设置是否接入操作审计日志
+                     * @param _isAccessCloudAudit 是否接入操作审计日志
                      * 
                      */
                     void SetIsAccessCloudAudit(const bool& _isAccessCloudAudit);
@@ -517,7 +517,7 @@ namespace TencentCloud
                     bool m_actionRiskCountHasBeenSet;
 
                     /**
-                     * 是否接入云审计日志
+                     * 是否接入操作审计日志
                      */
                     bool m_isAccessCloudAudit;
                     bool m_isAccessCloudAuditHasBeenSet;

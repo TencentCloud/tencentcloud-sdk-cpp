@@ -87,11 +87,11 @@ CoreInternalOutcome EmbedUrlOption::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("ForbidEditSealDescription") && !value["ForbidEditSealDescription"].IsNull())
     {
-        if (!value["ForbidEditSealDescription"].IsString())
+        if (!value["ForbidEditSealDescription"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `EmbedUrlOption.ForbidEditSealDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EmbedUrlOption.ForbidEditSealDescription` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_forbidEditSealDescription = string(value["ForbidEditSealDescription"].GetString());
+        m_forbidEditSealDescription = value["ForbidEditSealDescription"].GetBool();
         m_forbidEditSealDescriptionHasBeenSet = true;
     }
 
@@ -147,7 +147,7 @@ void EmbedUrlOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForbidEditSealDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_forbidEditSealDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_forbidEditSealDescription, allocator);
     }
 
 }
@@ -233,12 +233,12 @@ bool EmbedUrlOption::SealDescriptionHasBeenSet() const
     return m_sealDescriptionHasBeenSet;
 }
 
-string EmbedUrlOption::GetForbidEditSealDescription() const
+bool EmbedUrlOption::GetForbidEditSealDescription() const
 {
     return m_forbidEditSealDescription;
 }
 
-void EmbedUrlOption::SetForbidEditSealDescription(const string& _forbidEditSealDescription)
+void EmbedUrlOption::SetForbidEditSealDescription(const bool& _forbidEditSealDescription)
 {
     m_forbidEditSealDescription = _forbidEditSealDescription;
     m_forbidEditSealDescriptionHasBeenSet = true;

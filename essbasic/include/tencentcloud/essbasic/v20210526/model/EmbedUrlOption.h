@@ -206,7 +206,7 @@ namespace TencentCloud
 <ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
                      * 
                      */
-                    std::string GetForbidEditSealDescription() const;
+                    bool GetForbidEditSealDescription() const;
 
                     /**
                      * 设置是否禁止编辑印章描述内容
@@ -215,7 +215,7 @@ namespace TencentCloud
 <ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
                      * 
                      */
-                    void SetForbidEditSealDescription(const std::string& _forbidEditSealDescription);
+                    void SetForbidEditSealDescription(const bool& _forbidEditSealDescription);
 
                     /**
                      * 判断参数 ForbidEditSealDescription 是否已赋值
@@ -272,7 +272,7 @@ namespace TencentCloud
                      * 是否禁止编辑印章描述内容
 <ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
                      */
-                    std::string m_forbidEditSealDescription;
+                    bool m_forbidEditSealDescription;
                     bool m_forbidEditSealDescriptionHasBeenSet;
 
                 };

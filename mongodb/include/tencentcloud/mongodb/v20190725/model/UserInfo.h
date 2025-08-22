@@ -152,6 +152,27 @@ namespace TencentCloud
                      */
                     bool UserDescHasBeenSet() const;
 
+                    /**
+                     * 获取控制台密码更新时间
+                     * @return ConsolePassUpdateTime 控制台密码更新时间
+                     * 
+                     */
+                    std::string GetConsolePassUpdateTime() const;
+
+                    /**
+                     * 设置控制台密码更新时间
+                     * @param _consolePassUpdateTime 控制台密码更新时间
+                     * 
+                     */
+                    void SetConsolePassUpdateTime(const std::string& _consolePassUpdateTime);
+
+                    /**
+                     * 判断参数 ConsolePassUpdateTime 是否已赋值
+                     * @return ConsolePassUpdateTime 是否已赋值
+                     * 
+                     */
+                    bool ConsolePassUpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +204,12 @@ namespace TencentCloud
                      */
                     std::string m_userDesc;
                     bool m_userDescHasBeenSet;
+
+                    /**
+                     * 控制台密码更新时间
+                     */
+                    std::string m_consolePassUpdateTime;
+                    bool m_consolePassUpdateTimeHasBeenSet;
 
                 };
             }

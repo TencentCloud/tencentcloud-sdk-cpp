@@ -34,6 +34,7 @@ ModifyDirectConnectAttributeRequest::ModifyDirectConnectAttributeRequest() :
     m_customerContactNumberHasBeenSet(false),
     m_faultReportContactPersonHasBeenSet(false),
     m_faultReportContactNumberHasBeenSet(false),
+    m_faultReportContactEmailHasBeenSet(false),
     m_signLawHasBeenSet(false),
     m_bandwidthHasBeenSet(false)
 {
@@ -132,6 +133,14 @@ string ModifyDirectConnectAttributeRequest::ToJsonString() const
         string key = "FaultReportContactNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_faultReportContactNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_faultReportContactEmailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FaultReportContactEmail";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_faultReportContactEmail.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signLawHasBeenSet)
@@ -332,6 +341,22 @@ void ModifyDirectConnectAttributeRequest::SetFaultReportContactNumber(const stri
 bool ModifyDirectConnectAttributeRequest::FaultReportContactNumberHasBeenSet() const
 {
     return m_faultReportContactNumberHasBeenSet;
+}
+
+string ModifyDirectConnectAttributeRequest::GetFaultReportContactEmail() const
+{
+    return m_faultReportContactEmail;
+}
+
+void ModifyDirectConnectAttributeRequest::SetFaultReportContactEmail(const string& _faultReportContactEmail)
+{
+    m_faultReportContactEmail = _faultReportContactEmail;
+    m_faultReportContactEmailHasBeenSet = true;
+}
+
+bool ModifyDirectConnectAttributeRequest::FaultReportContactEmailHasBeenSet() const
+{
+    return m_faultReportContactEmailHasBeenSet;
 }
 
 bool ModifyDirectConnectAttributeRequest::GetSignLaw() const

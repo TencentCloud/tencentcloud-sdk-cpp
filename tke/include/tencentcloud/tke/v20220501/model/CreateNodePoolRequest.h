@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool UnschedulableHasBeenSet() const;
 
                     /**
-                     * 获取原生节点池创建参数
-                     * @return Native 原生节点池创建参数
+                     * 获取原生节点池创建参数（Type字段设置为Native时需填写）
+                     * @return Native 原生节点池创建参数（Type字段设置为Native时需填写）
                      * 
                      */
                     CreateNativeNodePoolParam GetNative() const;
 
                     /**
-                     * 设置原生节点池创建参数
-                     * @param _native 原生节点池创建参数
+                     * 设置原生节点池创建参数（Type字段设置为Native时需填写）
+                     * @param _native 原生节点池创建参数（Type字段设置为Native时需填写）
                      * 
                      */
                     void SetNative(const CreateNativeNodePoolParam& _native);
@@ -308,7 +308,7 @@ namespace TencentCloud
                     bool m_unschedulableHasBeenSet;
 
                     /**
-                     * 原生节点池创建参数
+                     * 原生节点池创建参数（Type字段设置为Native时需填写）
                      */
                     CreateNativeNodePoolParam m_native;
                     bool m_nativeHasBeenSet;

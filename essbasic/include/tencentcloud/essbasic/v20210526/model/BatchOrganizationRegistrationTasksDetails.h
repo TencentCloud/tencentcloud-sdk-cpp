@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 批量认证企业任务详情信息，其中包括 TaskId，状态信息等等
+                * 批量认证企业任务详情信息，其中包括 TaskId，状态信息等
                 */
                 class BatchOrganizationRegistrationTasksDetails : public AbstractModel
                 {

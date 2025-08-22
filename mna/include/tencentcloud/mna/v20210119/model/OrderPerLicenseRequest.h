@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取购买失败后是否回滚（删除）设备，默认true，如果设备绑定了生效中的流量包则不能回滚。
-                     * @return RollBack 购买失败后是否回滚（删除）设备，默认true，如果设备绑定了生效中的流量包则不能回滚。
+                     * 获取购买失败后是否回滚（删除）设备，默认false，如果设备绑定了生效中的流量包则不能回滚。
+                     * @return RollBack 购买失败后是否回滚（删除）设备，默认false，如果设备绑定了生效中的流量包则不能回滚。
                      * 
                      */
                     bool GetRollBack() const;
 
                     /**
-                     * 设置购买失败后是否回滚（删除）设备，默认true，如果设备绑定了生效中的流量包则不能回滚。
-                     * @param _rollBack 购买失败后是否回滚（删除）设备，默认true，如果设备绑定了生效中的流量包则不能回滚。
+                     * 设置购买失败后是否回滚（删除）设备，默认false，如果设备绑定了生效中的流量包则不能回滚。
+                     * @param _rollBack 购买失败后是否回滚（删除）设备，默认false，如果设备绑定了生效中的流量包则不能回滚。
                      * 
                      */
                     void SetRollBack(const bool& _rollBack);
@@ -170,7 +170,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 购买失败后是否回滚（删除）设备，默认true，如果设备绑定了生效中的流量包则不能回滚。
+                     * 购买失败后是否回滚（删除）设备，默认false，如果设备绑定了生效中的流量包则不能回滚。
                      */
                     bool m_rollBack;
                     bool m_rollBackHasBeenSet;

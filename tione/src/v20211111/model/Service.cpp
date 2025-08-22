@@ -55,7 +55,9 @@ Service::Service() :
     m_deployTypeHasBeenSet(false),
     m_instancePerReplicasHasBeenSet(false),
     m_monitorSourceHasBeenSet(false),
-    m_subUinNameHasBeenSet(false)
+    m_subUinNameHasBeenSet(false),
+    m_schedulingPolicyHasBeenSet(false),
+    m_externalResourceGroupsHasBeenSet(false)
 {
 }
 
@@ -445,6 +447,43 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_subUinNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SchedulingPolicy") && !value["SchedulingPolicy"].IsNull())
+    {
+        if (!value["SchedulingPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.SchedulingPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_schedulingPolicy.Deserialize(value["SchedulingPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_schedulingPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExternalResourceGroups") && !value["ExternalResourceGroups"].IsNull())
+    {
+        if (!value["ExternalResourceGroups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Service.ExternalResourceGroups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExternalResourceGroups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResourceGroupInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_externalResourceGroups.push_back(item);
+        }
+        m_externalResourceGroupsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -740,6 +779,30 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "SubUinName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subUinName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schedulingPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchedulingPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_schedulingPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_externalResourceGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalResourceGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_externalResourceGroups.begin(); itr != m_externalResourceGroups.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1303,5 +1366,37 @@ void Service::SetSubUinName(const string& _subUinName)
 bool Service::SubUinNameHasBeenSet() const
 {
     return m_subUinNameHasBeenSet;
+}
+
+SchedulingPolicy Service::GetSchedulingPolicy() const
+{
+    return m_schedulingPolicy;
+}
+
+void Service::SetSchedulingPolicy(const SchedulingPolicy& _schedulingPolicy)
+{
+    m_schedulingPolicy = _schedulingPolicy;
+    m_schedulingPolicyHasBeenSet = true;
+}
+
+bool Service::SchedulingPolicyHasBeenSet() const
+{
+    return m_schedulingPolicyHasBeenSet;
+}
+
+vector<ResourceGroupInfo> Service::GetExternalResourceGroups() const
+{
+    return m_externalResourceGroups;
+}
+
+void Service::SetExternalResourceGroups(const vector<ResourceGroupInfo>& _externalResourceGroups)
+{
+    m_externalResourceGroups = _externalResourceGroups;
+    m_externalResourceGroupsHasBeenSet = true;
+}
+
+bool Service::ExternalResourceGroupsHasBeenSet() const
+{
+    return m_externalResourceGroupsHasBeenSet;
 }
 

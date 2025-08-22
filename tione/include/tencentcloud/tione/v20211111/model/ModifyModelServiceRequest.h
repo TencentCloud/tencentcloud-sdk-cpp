@@ -695,15 +695,15 @@ HYBRID_PAID:
                     bool InstancePerReplicasHasBeenSet() const;
 
                     /**
-                     * 获取30
-                     * @return TerminationGracePeriodSeconds 30
+                     * 获取服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * @return TerminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
                      * 
                      */
                     int64_t GetTerminationGracePeriodSeconds() const;
 
                     /**
-                     * 设置30
-                     * @param _terminationGracePeriodSeconds 30
+                     * 设置服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * @param _terminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
                      * 
                      */
                     void SetTerminationGracePeriodSeconds(const int64_t& _terminationGracePeriodSeconds);
@@ -716,15 +716,15 @@ HYBRID_PAID:
                     bool TerminationGracePeriodSecondsHasBeenSet() const;
 
                     /**
-                     * 获取["sleep","60"]
-                     * @return PreStopCommand ["sleep","60"]
+                     * 获取服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * @return PreStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
                      * 
                      */
                     std::vector<std::string> GetPreStopCommand() const;
 
                     /**
-                     * 设置["sleep","60"]
-                     * @param _preStopCommand ["sleep","60"]
+                     * 设置服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * @param _preStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
                      * 
                      */
                     void SetPreStopCommand(const std::vector<std::string>& _preStopCommand);
@@ -840,6 +840,27 @@ HYBRID_PAID:
                      * 
                      */
                     bool ResourceGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     * @return VolumeMounts 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     * 
+                     */
+                    std::vector<VolumeMount> GetVolumeMounts() const;
+
+                    /**
+                     * 设置数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     * @param _volumeMounts 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     * 
+                     */
+                    void SetVolumeMounts(const std::vector<VolumeMount>& _volumeMounts);
+
+                    /**
+                     * 判断参数 VolumeMounts 是否已赋值
+                     * @return VolumeMounts 是否已赋值
+                     * 
+                     */
+                    bool VolumeMountsHasBeenSet() const;
 
                 private:
 
@@ -1023,13 +1044,13 @@ HYBRID_PAID:
                     bool m_instancePerReplicasHasBeenSet;
 
                     /**
-                     * 30
+                     * 服务的优雅退出时限。单位为秒，默认值为30，最小为1
                      */
                     int64_t m_terminationGracePeriodSeconds;
                     bool m_terminationGracePeriodSecondsHasBeenSet;
 
                     /**
-                     * ["sleep","60"]
+                     * 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
                      */
                     std::vector<std::string> m_preStopCommand;
                     bool m_preStopCommandHasBeenSet;
@@ -1063,6 +1084,12 @@ HYBRID_PAID:
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
+
+                    /**
+                     * 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     */
+                    std::vector<VolumeMount> m_volumeMounts;
+                    bool m_volumeMountsHasBeenSet;
 
                 };
             }

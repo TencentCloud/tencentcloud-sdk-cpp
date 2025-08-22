@@ -134,18 +134,18 @@ namespace TencentCloud
                     bool TotalInstanceHasBeenSet() const;
 
                     /**
-                     * 获取资资源组已用的资源
+                     * 获取资源组已用的资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UsedResource 资资源组已用的资源
+                     * @return UsedResource 资源组已用的资源
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GroupResource GetUsedResource() const;
 
                     /**
-                     * 设置资资源组已用的资源
+                     * 设置资源组已用的资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _usedResource 资资源组已用的资源
+                     * @param _usedResource 资源组已用的资源
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -260,7 +260,7 @@ namespace TencentCloud
                     bool m_totalInstanceHasBeenSet;
 
                     /**
-                     * 资资源组已用的资源
+                     * 资源组已用的资源
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GroupResource m_usedResource;

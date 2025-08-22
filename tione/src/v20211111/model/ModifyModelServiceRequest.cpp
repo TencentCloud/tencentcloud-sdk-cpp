@@ -55,7 +55,8 @@ ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_healthProbeHasBeenSet(false),
     m_rollingUpdateHasBeenSet(false),
     m_sidecarHasBeenSet(false),
-    m_resourceGroupIdHasBeenSet(false)
+    m_resourceGroupIdHasBeenSet(false),
+    m_volumeMountsHasBeenSet(false)
 {
 }
 
@@ -359,6 +360,21 @@ string ModifyModelServiceRequest::ToJsonString() const
         string key = "ResourceGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_volumeMountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeMounts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumeMounts.begin(); itr != m_volumeMounts.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -895,6 +911,22 @@ void ModifyModelServiceRequest::SetResourceGroupId(const string& _resourceGroupI
 bool ModifyModelServiceRequest::ResourceGroupIdHasBeenSet() const
 {
     return m_resourceGroupIdHasBeenSet;
+}
+
+vector<VolumeMount> ModifyModelServiceRequest::GetVolumeMounts() const
+{
+    return m_volumeMounts;
+}
+
+void ModifyModelServiceRequest::SetVolumeMounts(const vector<VolumeMount>& _volumeMounts)
+{
+    m_volumeMounts = _volumeMounts;
+    m_volumeMountsHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::VolumeMountsHasBeenSet() const
+{
+    return m_volumeMountsHasBeenSet;
 }
 
 

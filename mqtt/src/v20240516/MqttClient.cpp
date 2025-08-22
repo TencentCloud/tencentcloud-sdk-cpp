@@ -212,6 +212,49 @@ MqttClient::CreateAuthorizationPolicyOutcomeCallable MqttClient::CreateAuthoriza
     return task->get_future();
 }
 
+MqttClient::CreateDeviceIdentityOutcome MqttClient::CreateDeviceIdentity(const CreateDeviceIdentityRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeviceIdentity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeviceIdentityResponse rsp = CreateDeviceIdentityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeviceIdentityOutcome(rsp);
+        else
+            return CreateDeviceIdentityOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeviceIdentityOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::CreateDeviceIdentityAsync(const CreateDeviceIdentityRequest& request, const CreateDeviceIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDeviceIdentity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::CreateDeviceIdentityOutcomeCallable MqttClient::CreateDeviceIdentityCallable(const CreateDeviceIdentityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDeviceIdentityOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDeviceIdentity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::CreateHttpAuthenticatorOutcome MqttClient::CreateHttpAuthenticator(const CreateHttpAuthenticatorRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHttpAuthenticator");
@@ -771,6 +814,49 @@ MqttClient::DeleteDeviceCertificateOutcomeCallable MqttClient::DeleteDeviceCerti
     return task->get_future();
 }
 
+MqttClient::DeleteDeviceIdentityOutcome MqttClient::DeleteDeviceIdentity(const DeleteDeviceIdentityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeviceIdentity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeviceIdentityResponse rsp = DeleteDeviceIdentityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeviceIdentityOutcome(rsp);
+        else
+            return DeleteDeviceIdentityOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeviceIdentityOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DeleteDeviceIdentityAsync(const DeleteDeviceIdentityRequest& request, const DeleteDeviceIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDeviceIdentity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DeleteDeviceIdentityOutcomeCallable MqttClient::DeleteDeviceIdentityCallable(const DeleteDeviceIdentityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDeviceIdentityOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDeviceIdentity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::DeleteInsPublicEndpointOutcome MqttClient::DeleteInsPublicEndpoint(const DeleteInsPublicEndpointRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteInsPublicEndpoint");
@@ -1237,6 +1323,92 @@ MqttClient::DescribeDeviceCertificatesOutcomeCallable MqttClient::DescribeDevice
         [this, request]()
         {
             return this->DescribeDeviceCertificates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::DescribeDeviceIdentitiesOutcome MqttClient::DescribeDeviceIdentities(const DescribeDeviceIdentitiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceIdentities");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceIdentitiesResponse rsp = DescribeDeviceIdentitiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceIdentitiesOutcome(rsp);
+        else
+            return DescribeDeviceIdentitiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceIdentitiesOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeDeviceIdentitiesAsync(const DescribeDeviceIdentitiesRequest& request, const DescribeDeviceIdentitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceIdentities(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DescribeDeviceIdentitiesOutcomeCallable MqttClient::DescribeDeviceIdentitiesCallable(const DescribeDeviceIdentitiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceIdentitiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceIdentities(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::DescribeDeviceIdentityOutcome MqttClient::DescribeDeviceIdentity(const DescribeDeviceIdentityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceIdentity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceIdentityResponse rsp = DescribeDeviceIdentityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceIdentityOutcome(rsp);
+        else
+            return DescribeDeviceIdentityOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceIdentityOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeDeviceIdentityAsync(const DescribeDeviceIdentityRequest& request, const DescribeDeviceIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceIdentity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DescribeDeviceIdentityOutcomeCallable MqttClient::DescribeDeviceIdentityCallable(const DescribeDeviceIdentityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceIdentityOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceIdentity(request);
         }
     );
 
@@ -1796,6 +1968,49 @@ MqttClient::ModifyAuthorizationPolicyOutcomeCallable MqttClient::ModifyAuthoriza
         [this, request]()
         {
             return this->ModifyAuthorizationPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::ModifyDeviceIdentityOutcome MqttClient::ModifyDeviceIdentity(const ModifyDeviceIdentityRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeviceIdentity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeviceIdentityResponse rsp = ModifyDeviceIdentityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeviceIdentityOutcome(rsp);
+        else
+            return ModifyDeviceIdentityOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeviceIdentityOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::ModifyDeviceIdentityAsync(const ModifyDeviceIdentityRequest& request, const ModifyDeviceIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDeviceIdentity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::ModifyDeviceIdentityOutcomeCallable MqttClient::ModifyDeviceIdentityCallable(const ModifyDeviceIdentityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDeviceIdentityOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDeviceIdentity(request);
         }
     );
 

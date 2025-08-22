@@ -83,6 +83,49 @@ BiClient::ApplyEmbedIntervalOutcomeCallable BiClient::ApplyEmbedIntervalCallable
     return task->get_future();
 }
 
+BiClient::ClearEmbedTokenOutcome BiClient::ClearEmbedToken(const ClearEmbedTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "ClearEmbedToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ClearEmbedTokenResponse rsp = ClearEmbedTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ClearEmbedTokenOutcome(rsp);
+        else
+            return ClearEmbedTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return ClearEmbedTokenOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::ClearEmbedTokenAsync(const ClearEmbedTokenRequest& request, const ClearEmbedTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ClearEmbedToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BiClient::ClearEmbedTokenOutcomeCallable BiClient::ClearEmbedTokenCallable(const ClearEmbedTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ClearEmbedTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->ClearEmbedToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BiClient::CreateDatasourceOutcome BiClient::CreateDatasource(const CreateDatasourceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDatasource");

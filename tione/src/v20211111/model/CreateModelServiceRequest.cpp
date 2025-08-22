@@ -63,7 +63,8 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_grpcEnableHasBeenSet(false),
     m_healthProbeHasBeenSet(false),
     m_rollingUpdateHasBeenSet(false),
-    m_sidecarHasBeenSet(false)
+    m_sidecarHasBeenSet(false),
+    m_volumeMountsHasBeenSet(false)
 {
 }
 
@@ -438,6 +439,21 @@ string CreateModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sidecar.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_volumeMountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeMounts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumeMounts.begin(); itr != m_volumeMounts.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -1102,6 +1118,22 @@ void CreateModelServiceRequest::SetSidecar(const SidecarSpec& _sidecar)
 bool CreateModelServiceRequest::SidecarHasBeenSet() const
 {
     return m_sidecarHasBeenSet;
+}
+
+vector<VolumeMount> CreateModelServiceRequest::GetVolumeMounts() const
+{
+    return m_volumeMounts;
+}
+
+void CreateModelServiceRequest::SetVolumeMounts(const vector<VolumeMount>& _volumeMounts)
+{
+    m_volumeMounts = _volumeMounts;
+    m_volumeMountsHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::VolumeMountsHasBeenSet() const
+{
+    return m_volumeMountsHasBeenSet;
 }
 
 

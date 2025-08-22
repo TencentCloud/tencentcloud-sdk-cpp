@@ -259,7 +259,7 @@ namespace TencentCloud
                 DescribeAgentDealsPriceDetailByDealNameOutcomeCallable DescribeAgentDealsPriceDetailByDealNameCallable(const Model::DescribeAgentDealsPriceDetailByDealNameRequest& request);
 
                 /**
-                 *可以查询代理商代付的预付费订单
+                 *查询最近15天内的代理商代付订单
                  * @param req DescribeAgentPayDealsV2Request
                  * @return DescribeAgentPayDealsV2Outcome
                  */
@@ -277,7 +277,7 @@ namespace TencentCloud
                 DescribeAgentRelateBigDealIdsOutcomeCallable DescribeAgentRelateBigDealIdsCallable(const Model::DescribeAgentRelateBigDealIdsRequest& request);
 
                 /**
-                 *查询代理商名下指定代客的自付订单（预付费）
+                 *查询代理商名下指定代客最近15天内的自付订单（预付费）
                  * @param req DescribeAgentSelfPayDealsV2Request
                  * @return DescribeAgentSelfPayDealsV2Outcome
                  */

@@ -26,7 +26,10 @@ using namespace std;
 DescribeBanStatusResponse::DescribeBanStatusResponse() :
     m_statusHasBeenSet(false),
     m_showTipsHasBeenSet(false),
-    m_openSmartModeHasBeenSet(false)
+    m_openSmartModeHasBeenSet(false),
+    m_banBlackIpHasBeenSet(false),
+    m_banVulIpHasBeenSet(false),
+    m_banByRuleHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,36 @@ CoreInternalOutcome DescribeBanStatusResponse::Deserialize(const string &payload
         m_openSmartModeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BanBlackIp") && !rsp["BanBlackIp"].IsNull())
+    {
+        if (!rsp["BanBlackIp"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BanBlackIp` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_banBlackIp = rsp["BanBlackIp"].GetBool();
+        m_banBlackIpHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BanVulIp") && !rsp["BanVulIp"].IsNull())
+    {
+        if (!rsp["BanVulIp"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BanVulIp` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_banVulIp = rsp["BanVulIp"].GetBool();
+        m_banVulIpHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BanByRule") && !rsp["BanByRule"].IsNull())
+    {
+        if (!rsp["BanByRule"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BanByRule` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_banByRule = rsp["BanByRule"].GetBool();
+        m_banByRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +159,30 @@ string DescribeBanStatusResponse::ToJsonString() const
         string key = "OpenSmartMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_openSmartMode, allocator);
+    }
+
+    if (m_banBlackIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BanBlackIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_banBlackIp, allocator);
+    }
+
+    if (m_banVulIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BanVulIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_banVulIp, allocator);
+    }
+
+    if (m_banByRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BanByRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_banByRule, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +225,36 @@ bool DescribeBanStatusResponse::GetOpenSmartMode() const
 bool DescribeBanStatusResponse::OpenSmartModeHasBeenSet() const
 {
     return m_openSmartModeHasBeenSet;
+}
+
+bool DescribeBanStatusResponse::GetBanBlackIp() const
+{
+    return m_banBlackIp;
+}
+
+bool DescribeBanStatusResponse::BanBlackIpHasBeenSet() const
+{
+    return m_banBlackIpHasBeenSet;
+}
+
+bool DescribeBanStatusResponse::GetBanVulIp() const
+{
+    return m_banVulIp;
+}
+
+bool DescribeBanStatusResponse::BanVulIpHasBeenSet() const
+{
+    return m_banVulIpHasBeenSet;
+}
+
+bool DescribeBanStatusResponse::GetBanByRule() const
+{
+    return m_banByRule;
+}
+
+bool DescribeBanStatusResponse::BanByRuleHasBeenSet() const
+{
+    return m_banByRuleHasBeenSet;
 }
 
 

@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取登陆地
-                     * @return Locations 登陆地
+                     * 获取登录地
+                     * @return Locations 登录地
                      * 
                      */
                     std::string GetLocations() const;
 
                     /**
-                     * 设置登陆地
-                     * @param _locations 登陆地
+                     * 设置登录地
+                     * @param _locations 登录地
                      * 
                      */
                     void SetLocations(const std::string& _locations);
@@ -449,7 +449,7 @@ namespace TencentCloud
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 登陆地
+                     * 登录地
                      */
                     std::string m_locations;
                     bool m_locationsHasBeenSet;

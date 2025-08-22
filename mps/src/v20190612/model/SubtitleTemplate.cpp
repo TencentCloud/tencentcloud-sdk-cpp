@@ -23,6 +23,7 @@ using namespace std;
 SubtitleTemplate::SubtitleTemplate() :
     m_pathHasBeenSet(false),
     m_streamIndexHasBeenSet(false),
+    m_subtitleFileInputHasBeenSet(false),
     m_fontTypeHasBeenSet(false),
     m_fontSizeHasBeenSet(false),
     m_fontColorHasBeenSet(false),
@@ -32,7 +33,15 @@ SubtitleTemplate::SubtitleTemplate() :
     m_boardWidthHasBeenSet(false),
     m_boardHeightHasBeenSet(false),
     m_boardColorHasBeenSet(false),
-    m_boardAlphaHasBeenSet(false)
+    m_boardAlphaHasBeenSet(false),
+    m_outlineWidthHasBeenSet(false),
+    m_outlineColorHasBeenSet(false),
+    m_outlineAlphaHasBeenSet(false),
+    m_shadowWidthHasBeenSet(false),
+    m_shadowColorHasBeenSet(false),
+    m_shadowAlphaHasBeenSet(false),
+    m_lineSpacingHasBeenSet(false),
+    m_alignmentHasBeenSet(false)
 {
 }
 
@@ -59,6 +68,23 @@ CoreInternalOutcome SubtitleTemplate::Deserialize(const rapidjson::Value &value)
         }
         m_streamIndex = value["StreamIndex"].GetInt64();
         m_streamIndexHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubtitleFileInput") && !value["SubtitleFileInput"].IsNull())
+    {
+        if (!value["SubtitleFileInput"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleTemplate.SubtitleFileInput` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subtitleFileInput.Deserialize(value["SubtitleFileInput"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subtitleFileInputHasBeenSet = true;
     }
 
     if (value.HasMember("FontType") && !value["FontType"].IsNull())
@@ -161,6 +187,86 @@ CoreInternalOutcome SubtitleTemplate::Deserialize(const rapidjson::Value &value)
         m_boardAlphaHasBeenSet = true;
     }
 
+    if (value.HasMember("OutlineWidth") && !value["OutlineWidth"].IsNull())
+    {
+        if (!value["OutlineWidth"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleTemplate.OutlineWidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_outlineWidth = value["OutlineWidth"].GetDouble();
+        m_outlineWidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutlineColor") && !value["OutlineColor"].IsNull())
+    {
+        if (!value["OutlineColor"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleTemplate.OutlineColor` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outlineColor = string(value["OutlineColor"].GetString());
+        m_outlineColorHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutlineAlpha") && !value["OutlineAlpha"].IsNull())
+    {
+        if (!value["OutlineAlpha"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleTemplate.OutlineAlpha` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_outlineAlpha = value["OutlineAlpha"].GetDouble();
+        m_outlineAlphaHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShadowWidth") && !value["ShadowWidth"].IsNull())
+    {
+        if (!value["ShadowWidth"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleTemplate.ShadowWidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_shadowWidth = value["ShadowWidth"].GetDouble();
+        m_shadowWidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShadowColor") && !value["ShadowColor"].IsNull())
+    {
+        if (!value["ShadowColor"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleTemplate.ShadowColor` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shadowColor = string(value["ShadowColor"].GetString());
+        m_shadowColorHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShadowAlpha") && !value["ShadowAlpha"].IsNull())
+    {
+        if (!value["ShadowAlpha"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleTemplate.ShadowAlpha` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_shadowAlpha = value["ShadowAlpha"].GetDouble();
+        m_shadowAlphaHasBeenSet = true;
+    }
+
+    if (value.HasMember("LineSpacing") && !value["LineSpacing"].IsNull())
+    {
+        if (!value["LineSpacing"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleTemplate.LineSpacing` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lineSpacing = value["LineSpacing"].GetInt64();
+        m_lineSpacingHasBeenSet = true;
+    }
+
+    if (value.HasMember("Alignment") && !value["Alignment"].IsNull())
+    {
+        if (!value["Alignment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleTemplate.Alignment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alignment = string(value["Alignment"].GetString());
+        m_alignmentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -182,6 +288,15 @@ void SubtitleTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "StreamIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_streamIndex, allocator);
+    }
+
+    if (m_subtitleFileInputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleFileInput";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subtitleFileInput.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_fontTypeHasBeenSet)
@@ -264,6 +379,70 @@ void SubtitleTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, m_boardAlpha, allocator);
     }
 
+    if (m_outlineWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutlineWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_outlineWidth, allocator);
+    }
+
+    if (m_outlineColorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutlineColor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outlineColor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outlineAlphaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutlineAlpha";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_outlineAlpha, allocator);
+    }
+
+    if (m_shadowWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShadowWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shadowWidth, allocator);
+    }
+
+    if (m_shadowColorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShadowColor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shadowColor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shadowAlphaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShadowAlpha";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shadowAlpha, allocator);
+    }
+
+    if (m_lineSpacingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LineSpacing";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lineSpacing, allocator);
+    }
+
+    if (m_alignmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Alignment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alignment.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -297,6 +476,22 @@ void SubtitleTemplate::SetStreamIndex(const int64_t& _streamIndex)
 bool SubtitleTemplate::StreamIndexHasBeenSet() const
 {
     return m_streamIndexHasBeenSet;
+}
+
+MediaInputInfo SubtitleTemplate::GetSubtitleFileInput() const
+{
+    return m_subtitleFileInput;
+}
+
+void SubtitleTemplate::SetSubtitleFileInput(const MediaInputInfo& _subtitleFileInput)
+{
+    m_subtitleFileInput = _subtitleFileInput;
+    m_subtitleFileInputHasBeenSet = true;
+}
+
+bool SubtitleTemplate::SubtitleFileInputHasBeenSet() const
+{
+    return m_subtitleFileInputHasBeenSet;
 }
 
 string SubtitleTemplate::GetFontType() const
@@ -457,5 +652,133 @@ void SubtitleTemplate::SetBoardAlpha(const double& _boardAlpha)
 bool SubtitleTemplate::BoardAlphaHasBeenSet() const
 {
     return m_boardAlphaHasBeenSet;
+}
+
+double SubtitleTemplate::GetOutlineWidth() const
+{
+    return m_outlineWidth;
+}
+
+void SubtitleTemplate::SetOutlineWidth(const double& _outlineWidth)
+{
+    m_outlineWidth = _outlineWidth;
+    m_outlineWidthHasBeenSet = true;
+}
+
+bool SubtitleTemplate::OutlineWidthHasBeenSet() const
+{
+    return m_outlineWidthHasBeenSet;
+}
+
+string SubtitleTemplate::GetOutlineColor() const
+{
+    return m_outlineColor;
+}
+
+void SubtitleTemplate::SetOutlineColor(const string& _outlineColor)
+{
+    m_outlineColor = _outlineColor;
+    m_outlineColorHasBeenSet = true;
+}
+
+bool SubtitleTemplate::OutlineColorHasBeenSet() const
+{
+    return m_outlineColorHasBeenSet;
+}
+
+double SubtitleTemplate::GetOutlineAlpha() const
+{
+    return m_outlineAlpha;
+}
+
+void SubtitleTemplate::SetOutlineAlpha(const double& _outlineAlpha)
+{
+    m_outlineAlpha = _outlineAlpha;
+    m_outlineAlphaHasBeenSet = true;
+}
+
+bool SubtitleTemplate::OutlineAlphaHasBeenSet() const
+{
+    return m_outlineAlphaHasBeenSet;
+}
+
+double SubtitleTemplate::GetShadowWidth() const
+{
+    return m_shadowWidth;
+}
+
+void SubtitleTemplate::SetShadowWidth(const double& _shadowWidth)
+{
+    m_shadowWidth = _shadowWidth;
+    m_shadowWidthHasBeenSet = true;
+}
+
+bool SubtitleTemplate::ShadowWidthHasBeenSet() const
+{
+    return m_shadowWidthHasBeenSet;
+}
+
+string SubtitleTemplate::GetShadowColor() const
+{
+    return m_shadowColor;
+}
+
+void SubtitleTemplate::SetShadowColor(const string& _shadowColor)
+{
+    m_shadowColor = _shadowColor;
+    m_shadowColorHasBeenSet = true;
+}
+
+bool SubtitleTemplate::ShadowColorHasBeenSet() const
+{
+    return m_shadowColorHasBeenSet;
+}
+
+double SubtitleTemplate::GetShadowAlpha() const
+{
+    return m_shadowAlpha;
+}
+
+void SubtitleTemplate::SetShadowAlpha(const double& _shadowAlpha)
+{
+    m_shadowAlpha = _shadowAlpha;
+    m_shadowAlphaHasBeenSet = true;
+}
+
+bool SubtitleTemplate::ShadowAlphaHasBeenSet() const
+{
+    return m_shadowAlphaHasBeenSet;
+}
+
+int64_t SubtitleTemplate::GetLineSpacing() const
+{
+    return m_lineSpacing;
+}
+
+void SubtitleTemplate::SetLineSpacing(const int64_t& _lineSpacing)
+{
+    m_lineSpacing = _lineSpacing;
+    m_lineSpacingHasBeenSet = true;
+}
+
+bool SubtitleTemplate::LineSpacingHasBeenSet() const
+{
+    return m_lineSpacingHasBeenSet;
+}
+
+string SubtitleTemplate::GetAlignment() const
+{
+    return m_alignment;
+}
+
+void SubtitleTemplate::SetAlignment(const string& _alignment)
+{
+    m_alignment = _alignment;
+    m_alignmentHasBeenSet = true;
+}
+
+bool SubtitleTemplate::AlignmentHasBeenSet() const
+{
+    return m_alignmentHasBeenSet;
 }
 

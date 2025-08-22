@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取撤销回档任务对应的实例Id。
-                     * @return InstanceId 撤销回档任务对应的实例Id。
+                     * 获取撤销回档任务对应的实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
+                     * @return InstanceId 撤销回档任务对应的实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置撤销回档任务对应的实例Id。
-                     * @param _instanceId 撤销回档任务对应的实例Id。
+                     * 设置撤销回档任务对应的实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
+                     * @param _instanceId 撤销回档任务对应的实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 撤销回档任务对应的实例Id。
+                     * 撤销回档任务对应的实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

@@ -33,7 +33,11 @@ Pod::Pod() :
     m_statusHasBeenSet(false),
     m_startScheduleTimeHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_nodeIPHasBeenSet(false)
+    m_nodeIPHasBeenSet(false),
+    m_nodeIdHasBeenSet(false),
+    m_resourceGroupIdHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false),
+    m_resourceInfoHasBeenSet(false)
 {
 }
 
@@ -196,6 +200,53 @@ CoreInternalOutcome Pod::Deserialize(const rapidjson::Value &value)
         m_nodeIPHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeId") && !value["NodeId"].IsNull())
+    {
+        if (!value["NodeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.NodeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeId = string(value["NodeId"].GetString());
+        m_nodeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceGroupId") && !value["ResourceGroupId"].IsNull())
+    {
+        if (!value["ResourceGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.ResourceGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupId = string(value["ResourceGroupId"].GetString());
+        m_resourceGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceGroupName") && !value["ResourceGroupName"].IsNull())
+    {
+        if (!value["ResourceGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.ResourceGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupName = string(value["ResourceGroupName"].GetString());
+        m_resourceGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceInfo") && !value["ResourceInfo"].IsNull())
+    {
+        if (!value["ResourceInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.ResourceInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_resourceInfo.Deserialize(value["ResourceInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resourceInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -314,6 +365,39 @@ void Pod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "NodeIP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nodeIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resourceInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -525,5 +609,69 @@ void Pod::SetNodeIP(const string& _nodeIP)
 bool Pod::NodeIPHasBeenSet() const
 {
     return m_nodeIPHasBeenSet;
+}
+
+string Pod::GetNodeId() const
+{
+    return m_nodeId;
+}
+
+void Pod::SetNodeId(const string& _nodeId)
+{
+    m_nodeId = _nodeId;
+    m_nodeIdHasBeenSet = true;
+}
+
+bool Pod::NodeIdHasBeenSet() const
+{
+    return m_nodeIdHasBeenSet;
+}
+
+string Pod::GetResourceGroupId() const
+{
+    return m_resourceGroupId;
+}
+
+void Pod::SetResourceGroupId(const string& _resourceGroupId)
+{
+    m_resourceGroupId = _resourceGroupId;
+    m_resourceGroupIdHasBeenSet = true;
+}
+
+bool Pod::ResourceGroupIdHasBeenSet() const
+{
+    return m_resourceGroupIdHasBeenSet;
+}
+
+string Pod::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void Pod::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool Pod::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
+}
+
+ResourceInfo Pod::GetResourceInfo() const
+{
+    return m_resourceInfo;
+}
+
+void Pod::SetResourceInfo(const ResourceInfo& _resourceInfo)
+{
+    m_resourceInfo = _resourceInfo;
+    m_resourceInfoHasBeenSet = true;
+}
+
+bool Pod::ResourceInfoHasBeenSet() const
+{
+    return m_resourceInfoHasBeenSet;
 }
 

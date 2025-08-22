@@ -995,6 +995,48 @@ HYBRID_PAID:
                      */
                     bool RollingUpdateHasBeenSet() const;
 
+                    /**
+                     * 获取单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     * @return InstancePerReplicas 单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     * 
+                     */
+                    int64_t GetInstancePerReplicas() const;
+
+                    /**
+                     * 设置单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     * @param _instancePerReplicas 单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     * 
+                     */
+                    void SetInstancePerReplicas(const int64_t& _instancePerReplicas);
+
+                    /**
+                     * 判断参数 InstancePerReplicas 是否已赋值
+                     * @return InstancePerReplicas 是否已赋值
+                     * 
+                     */
+                    bool InstancePerReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取批量数据盘挂载配置
+                     * @return VolumeMounts 批量数据盘挂载配置
+                     * 
+                     */
+                    std::vector<VolumeMount> GetVolumeMounts() const;
+
+                    /**
+                     * 设置批量数据盘挂载配置
+                     * @param _volumeMounts 批量数据盘挂载配置
+                     * 
+                     */
+                    void SetVolumeMounts(const std::vector<VolumeMount>& _volumeMounts);
+
+                    /**
+                     * 判断参数 VolumeMounts 是否已赋值
+                     * @return VolumeMounts 是否已赋值
+                     * 
+                     */
+                    bool VolumeMountsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1257,6 +1299,18 @@ HYBRID_PAID:
                      */
                     RollingUpdate m_rollingUpdate;
                     bool m_rollingUpdateHasBeenSet;
+
+                    /**
+                     * 单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     */
+                    int64_t m_instancePerReplicas;
+                    bool m_instancePerReplicasHasBeenSet;
+
+                    /**
+                     * 批量数据盘挂载配置
+                     */
+                    std::vector<VolumeMount> m_volumeMounts;
+                    bool m_volumeMountsHasBeenSet;
 
                 };
             }

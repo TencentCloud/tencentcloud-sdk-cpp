@@ -64,15 +64,23 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取create：创建目录  check：确认目录是否存在  move: 对目录做mv 操作
-                     * @return OpetationType create：创建目录  check：确认目录是否存在  move: 对目录做mv 操作
+                     * 获取create：创建目录，等同于mkdir。
+check：确认目录是否存在，等同于stat。
+move：对文件/目录进行重命名，等同于mv。
+                     * @return OpetationType create：创建目录，等同于mkdir。
+check：确认目录是否存在，等同于stat。
+move：对文件/目录进行重命名，等同于mv。
                      * 
                      */
                     std::string GetOpetationType() const;
 
                     /**
-                     * 设置create：创建目录  check：确认目录是否存在  move: 对目录做mv 操作
-                     * @param _opetationType create：创建目录  check：确认目录是否存在  move: 对目录做mv 操作
+                     * 设置create：创建目录，等同于mkdir。
+check：确认目录是否存在，等同于stat。
+move：对文件/目录进行重命名，等同于mv。
+                     * @param _opetationType create：创建目录，等同于mkdir。
+check：确认目录是否存在，等同于stat。
+move：对文件/目录进行重命名，等同于mv。
                      * 
                      */
                     void SetOpetationType(const std::string& _opetationType);
@@ -156,7 +164,9 @@ namespace TencentCloud
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * create：创建目录  check：确认目录是否存在  move: 对目录做mv 操作
+                     * create：创建目录，等同于mkdir。
+check：确认目录是否存在，等同于stat。
+move：对文件/目录进行重命名，等同于mv。
                      */
                     std::string m_opetationType;
                     bool m_opetationTypeHasBeenSet;

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/iotexplorer/v20190423/model/VisionSummaryConfig.h>
+#include <tencentcloud/iotexplorer/v20190423/model/VisionObjectDetectConfig.h>
 
 
 namespace TencentCloud
@@ -319,6 +320,56 @@ namespace TencentCloud
                      */
                     bool SummaryConfigHasBeenSet() const;
 
+                    /**
+                     * 获取算法类型，可能取值：
+- `Summary`：视频/图片摘要
+- `ObjectDetect`：目标检测
+                     * @return ServiceType 算法类型，可能取值：
+- `Summary`：视频/图片摘要
+- `ObjectDetect`：目标检测
+                     * 
+                     */
+                    std::string GetServiceType() const;
+
+                    /**
+                     * 设置算法类型，可能取值：
+- `Summary`：视频/图片摘要
+- `ObjectDetect`：目标检测
+                     * @param _serviceType 算法类型，可能取值：
+- `Summary`：视频/图片摘要
+- `ObjectDetect`：目标检测
+                     * 
+                     */
+                    void SetServiceType(const std::string& _serviceType);
+
+                    /**
+                     * 判断参数 ServiceType 是否已赋值
+                     * @return ServiceType 是否已赋值
+                     * 
+                     */
+                    bool ServiceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取目标检测配置
+                     * @return ObjectDetectConfig 目标检测配置
+                     * 
+                     */
+                    VisionObjectDetectConfig GetObjectDetectConfig() const;
+
+                    /**
+                     * 设置目标检测配置
+                     * @param _objectDetectConfig 目标检测配置
+                     * 
+                     */
+                    void SetObjectDetectConfig(const VisionObjectDetectConfig& _objectDetectConfig);
+
+                    /**
+                     * 判断参数 ObjectDetectConfig 是否已赋值
+                     * @return ObjectDetectConfig 是否已赋值
+                     * 
+                     */
+                    bool ObjectDetectConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +449,20 @@ namespace TencentCloud
                      */
                     VisionSummaryConfig m_summaryConfig;
                     bool m_summaryConfigHasBeenSet;
+
+                    /**
+                     * 算法类型，可能取值：
+- `Summary`：视频/图片摘要
+- `ObjectDetect`：目标检测
+                     */
+                    std::string m_serviceType;
+                    bool m_serviceTypeHasBeenSet;
+
+                    /**
+                     * 目标检测配置
+                     */
+                    VisionObjectDetectConfig m_objectDetectConfig;
+                    bool m_objectDetectConfigHasBeenSet;
 
                 };
             }

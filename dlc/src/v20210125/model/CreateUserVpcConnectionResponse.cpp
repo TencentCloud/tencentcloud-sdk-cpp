@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-CreateUserVpcConnectionResponse::CreateUserVpcConnectionResponse()
+CreateUserVpcConnectionResponse::CreateUserVpcConnectionResponse() :
+    m_userVpcEndpointIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateUserVpcConnectionResponse::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("UserVpcEndpointId") && !rsp["UserVpcEndpointId"].IsNull())
+    {
+        if (!rsp["UserVpcEndpointId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserVpcEndpointId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userVpcEndpointId = string(rsp["UserVpcEndpointId"].GetString());
+        m_userVpcEndpointIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateUserVpcConnectionResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_userVpcEndpointIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserVpcEndpointId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userVpcEndpointId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateUserVpcConnectionResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateUserVpcConnectionResponse::GetUserVpcEndpointId() const
+{
+    return m_userVpcEndpointId;
+}
+
+bool CreateUserVpcConnectionResponse::UserVpcEndpointIdHasBeenSet() const
+{
+    return m_userVpcEndpointIdHasBeenSet;
+}
 
 

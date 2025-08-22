@@ -145,6 +145,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/HTTPGetAction.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.h
   include/tencentcloud/tione/v20211111/model/InferGatewayCallInfo.h
+  include/tencentcloud/tione/v20211111/model/ResourceGroupInfo.h
   include/tencentcloud/tione/v20211111/model/CreateNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlResponse.h
   include/tencentcloud/tione/v20211111/model/HorizontalPodAutoscaler.h
@@ -156,6 +157,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DefaultInnerCallInfo.h
   include/tencentcloud/tione/v20211111/model/Choice.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceAuthTokenRequest.h
+  include/tencentcloud/tione/v20211111/model/SchedulingPolicy.h
   include/tencentcloud/tione/v20211111/model/LogIdentity.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetsRequest.h
   include/tencentcloud/tione/v20211111/model/ModelAccelerateVersion.h
@@ -419,6 +421,7 @@ set(tione_src
   src/v20211111/model/HTTPGetAction.cpp
   src/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.cpp
   src/v20211111/model/InferGatewayCallInfo.cpp
+  src/v20211111/model/ResourceGroupInfo.cpp
   src/v20211111/model/CreateNotebookRequest.cpp
   src/v20211111/model/CreatePresignedNotebookUrlResponse.cpp
   src/v20211111/model/HorizontalPodAutoscaler.cpp
@@ -430,6 +433,7 @@ set(tione_src
   src/v20211111/model/DefaultInnerCallInfo.cpp
   src/v20211111/model/Choice.cpp
   src/v20211111/model/ModifyModelServiceAuthTokenRequest.cpp
+  src/v20211111/model/SchedulingPolicy.cpp
   src/v20211111/model/LogIdentity.cpp
   src/v20211111/model/DescribeDatasetsRequest.cpp
   src/v20211111/model/ModelAccelerateVersion.cpp

@@ -34,7 +34,9 @@ CreateTWeSeeRecognitionTaskRequest::CreateTWeSeeRecognitionTaskRequest() :
     m_isCustomDeviceHasBeenSet(false),
     m_inputTypeHasBeenSet(false),
     m_summaryQOSHasBeenSet(false),
-    m_summaryConfigHasBeenSet(false)
+    m_summaryConfigHasBeenSet(false),
+    m_serviceTypeHasBeenSet(false),
+    m_objectDetectConfigHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,23 @@ string CreateTWeSeeRecognitionTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_summaryConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_serviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_objectDetectConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectDetectConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_objectDetectConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -340,6 +359,38 @@ void CreateTWeSeeRecognitionTaskRequest::SetSummaryConfig(const VisionSummaryCon
 bool CreateTWeSeeRecognitionTaskRequest::SummaryConfigHasBeenSet() const
 {
     return m_summaryConfigHasBeenSet;
+}
+
+string CreateTWeSeeRecognitionTaskRequest::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void CreateTWeSeeRecognitionTaskRequest::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool CreateTWeSeeRecognitionTaskRequest::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
+}
+
+VisionObjectDetectConfig CreateTWeSeeRecognitionTaskRequest::GetObjectDetectConfig() const
+{
+    return m_objectDetectConfig;
+}
+
+void CreateTWeSeeRecognitionTaskRequest::SetObjectDetectConfig(const VisionObjectDetectConfig& _objectDetectConfig)
+{
+    m_objectDetectConfig = _objectDetectConfig;
+    m_objectDetectConfigHasBeenSet = true;
+}
+
+bool CreateTWeSeeRecognitionTaskRequest::ObjectDetectConfigHasBeenSet() const
+{
+    return m_objectDetectConfigHasBeenSet;
 }
 
 

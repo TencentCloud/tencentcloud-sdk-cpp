@@ -46,7 +46,61 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取数据源id
+                     * @return DataSourceId 数据源id
+                     * 
+                     */
+                    std::string GetDataSourceId() const;
+
+                    /**
+                     * 设置数据源id
+                     * @param _dataSourceId 数据源id
+                     * 
+                     */
+                    void SetDataSourceId(const std::string& _dataSourceId);
+
+                    /**
+                     * 判断参数 DataSourceId 是否已赋值
+                     * @return DataSourceId 是否已赋值
+                     * 
+                     */
+                    bool DataSourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取相对数据源子路径
+                     * @return SubPath 相对数据源子路径
+                     * 
+                     */
+                    std::string GetSubPath() const;
+
+                    /**
+                     * 设置相对数据源子路径
+                     * @param _subPath 相对数据源子路径
+                     * 
+                     */
+                    void SetSubPath(const std::string& _subPath);
+
+                    /**
+                     * 判断参数 SubPath 是否已赋值
+                     * @return SubPath 是否已赋值
+                     * 
+                     */
+                    bool SubPathHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 数据源id
+                     */
+                    std::string m_dataSourceId;
+                    bool m_dataSourceIdHasBeenSet;
+
+                    /**
+                     * 相对数据源子路径
+                     */
+                    std::string m_subPath;
+                    bool m_subPathHasBeenSet;
 
                 };
             }

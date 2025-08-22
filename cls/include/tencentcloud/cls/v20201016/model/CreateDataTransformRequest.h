@@ -66,15 +66,19 @@ namespace TencentCloud
                     bool FuncTypeHasBeenSet() const;
 
                     /**
-                     * 获取源日志主题
-                     * @return SrcTopicId 源日志主题
+                     * 获取日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @return SrcTopicId 日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetSrcTopicId() const;
 
                     /**
-                     * 设置源日志主题
-                     * @param _srcTopicId 源日志主题
+                     * 设置日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @param _srcTopicId 日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetSrcTopicId(const std::string& _srcTopicId);
@@ -88,14 +92,30 @@ namespace TencentCloud
 
                     /**
                      * 获取加工任务名称
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 最长 255 个字符
                      * @return Name 加工任务名称
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 最长 255 个字符
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置加工任务名称
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 最长 255 个字符
                      * @param _name 加工任务名称
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 最长 255 个字符
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -174,15 +194,27 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
-                     * @return DstResources 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+                     * 获取加工任务目标topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+目标topic_id，通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+别名限制 1.不能为空字符串，2. 不能包含字符'|'。
+
+                     * @return DstResources 加工任务目标topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+目标topic_id，通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+别名限制 1.不能为空字符串，2. 不能包含字符'|'。
+
                      * 
                      */
                     std::vector<DataTransformResouceInfo> GetDstResources() const;
 
                     /**
-                     * 设置加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
-                     * @param _dstResources 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+                     * 设置加工任务目标topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+目标topic_id，通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+别名限制 1.不能为空字符串，2. 不能包含字符'|'。
+
+                     * @param _dstResources 加工任务目标topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+目标topic_id，通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+别名限制 1.不能为空字符串，2. 不能包含字符'|'。
+
                      * 
                      */
                     void SetDstResources(const std::vector<DataTransformResouceInfo>& _dstResources);
@@ -217,14 +249,18 @@ namespace TencentCloud
 
                     /**
                      * 获取用于预览加工结果的测试数据
+目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @return PreviewLogStatistics 用于预览加工结果的测试数据
+目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::vector<PreviewLogStatistic> GetPreviewLogStatistics() const;
 
                     /**
                      * 设置用于预览加工结果的测试数据
+目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @param _previewLogStatistics 用于预览加工结果的测试数据
+目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetPreviewLogStatistics(const std::vector<PreviewLogStatistic>& _previewLogStatistics);
@@ -266,13 +302,18 @@ namespace TencentCloud
                     bool m_funcTypeHasBeenSet;
 
                     /**
-                     * 源日志主题
+                     * 日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_srcTopicId;
                     bool m_srcTopicIdHasBeenSet;
 
                     /**
                      * 加工任务名称
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 最长 255 个字符
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -296,7 +337,10 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+                     * 加工任务目标topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+目标topic_id，通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+别名限制 1.不能为空字符串，2. 不能包含字符'|'。
+
                      */
                     std::vector<DataTransformResouceInfo> m_dstResources;
                     bool m_dstResourcesHasBeenSet;
@@ -309,6 +353,7 @@ namespace TencentCloud
 
                     /**
                      * 用于预览加工结果的测试数据
+目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::vector<PreviewLogStatistic> m_previewLogStatistics;
                     bool m_previewLogStatisticsHasBeenSet;

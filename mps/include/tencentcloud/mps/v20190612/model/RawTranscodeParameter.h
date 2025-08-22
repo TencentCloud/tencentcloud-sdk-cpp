@@ -28,6 +28,7 @@
 #include <tencentcloud/mps/v20190612/model/AudioTemplateInfo.h>
 #include <tencentcloud/mps/v20190612/model/TEHDConfig.h>
 #include <tencentcloud/mps/v20190612/model/EnhanceConfig.h>
+#include <tencentcloud/mps/v20190612/model/SubtitleTemplate.h>
 
 
 namespace TencentCloud
@@ -246,6 +247,31 @@ namespace TencentCloud
                      */
                     bool EnhanceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取字幕参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubtitleTemplate 字幕参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SubtitleTemplate GetSubtitleTemplate() const;
+
+                    /**
+                     * 设置字幕参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subtitleTemplate 字幕参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate);
+
+                    /**
+                     * 判断参数 SubtitleTemplate 是否已赋值
+                     * @return SubtitleTemplate 是否已赋值
+                     * 
+                     */
+                    bool SubtitleTemplateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -302,6 +328,13 @@ namespace TencentCloud
                      */
                     EnhanceConfig m_enhanceConfig;
                     bool m_enhanceConfigHasBeenSet;
+
+                    /**
+                     * 字幕参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SubtitleTemplate m_subtitleTemplate;
+                    bool m_subtitleTemplateHasBeenSet;
 
                 };
             }

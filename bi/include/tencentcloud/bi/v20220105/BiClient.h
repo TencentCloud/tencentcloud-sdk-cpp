@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/bi/v20220105/model/ApplyEmbedIntervalRequest.h>
 #include <tencentcloud/bi/v20220105/model/ApplyEmbedIntervalResponse.h>
+#include <tencentcloud/bi/v20220105/model/ClearEmbedTokenRequest.h>
+#include <tencentcloud/bi/v20220105/model/ClearEmbedTokenResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceRequest.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceCloudRequest.h>
@@ -88,6 +90,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyEmbedIntervalResponse> ApplyEmbedIntervalOutcome;
                 typedef std::future<ApplyEmbedIntervalOutcome> ApplyEmbedIntervalOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::ApplyEmbedIntervalRequest&, ApplyEmbedIntervalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyEmbedIntervalAsyncHandler;
+                typedef Outcome<Core::Error, Model::ClearEmbedTokenResponse> ClearEmbedTokenOutcome;
+                typedef std::future<ClearEmbedTokenOutcome> ClearEmbedTokenOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::ClearEmbedTokenRequest&, ClearEmbedTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearEmbedTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDatasourceResponse> CreateDatasourceOutcome;
                 typedef std::future<CreateDatasourceOutcome> CreateDatasourceOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::CreateDatasourceRequest&, CreateDatasourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatasourceAsyncHandler;
@@ -168,6 +173,15 @@ namespace TencentCloud
                 ApplyEmbedIntervalOutcome ApplyEmbedInterval(const Model::ApplyEmbedIntervalRequest &request);
                 void ApplyEmbedIntervalAsync(const Model::ApplyEmbedIntervalRequest& request, const ApplyEmbedIntervalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyEmbedIntervalOutcomeCallable ApplyEmbedIntervalCallable(const Model::ApplyEmbedIntervalRequest& request);
+
+                /**
+                 *强鉴权token 清理，只有企业管理员才能调用该接口
+                 * @param req ClearEmbedTokenRequest
+                 * @return ClearEmbedTokenOutcome
+                 */
+                ClearEmbedTokenOutcome ClearEmbedToken(const Model::ClearEmbedTokenRequest &request);
+                void ClearEmbedTokenAsync(const Model::ClearEmbedTokenRequest& request, const ClearEmbedTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClearEmbedTokenOutcomeCallable ClearEmbedTokenCallable(const Model::ClearEmbedTokenRequest& request);
 
                 /**
                  *创建数据源

@@ -137,6 +137,8 @@
 #include <tencentcloud/dts/v20211206/model/ResetConsumerGroupOffsetResponse.h>
 #include <tencentcloud/dts/v20211206/model/ResetSubscribeRequest.h>
 #include <tencentcloud/dts/v20211206/model/ResetSubscribeResponse.h>
+#include <tencentcloud/dts/v20211206/model/ResetSyncJobRequest.h>
+#include <tencentcloud/dts/v20211206/model/ResetSyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/ResizeSyncJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/ResizeSyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/ResumeMigrateJobRequest.h>
@@ -350,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetSubscribeResponse> ResetSubscribeOutcome;
                 typedef std::future<ResetSubscribeOutcome> ResetSubscribeOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ResetSubscribeRequest&, ResetSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetSubscribeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetSyncJobResponse> ResetSyncJobOutcome;
+                typedef std::future<ResetSyncJobOutcome> ResetSyncJobOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ResetSyncJobRequest&, ResetSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetSyncJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResizeSyncJobResponse> ResizeSyncJobOutcome;
                 typedef std::future<ResizeSyncJobOutcome> ResizeSyncJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ResizeSyncJobRequest&, ResizeSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeSyncJobAsyncHandler;
@@ -921,6 +926,15 @@ namespace TencentCloud
                 ResetSubscribeOutcome ResetSubscribe(const Model::ResetSubscribeRequest &request);
                 void ResetSubscribeAsync(const Model::ResetSubscribeRequest& request, const ResetSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetSubscribeOutcomeCallable ResetSubscribeCallable(const Model::ResetSubscribeRequest& request);
+
+                /**
+                 *重置已经结束的同步任务，重置后可以重新配置启动任务。
+                 * @param req ResetSyncJobRequest
+                 * @return ResetSyncJobOutcome
+                 */
+                ResetSyncJobOutcome ResetSyncJob(const Model::ResetSyncJobRequest &request);
+                void ResetSyncJobAsync(const Model::ResetSyncJobRequest& request, const ResetSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetSyncJobOutcomeCallable ResetSyncJobCallable(const Model::ResetSyncJobRequest& request);
 
                 /**
                  *调整同步任务规格，此接口只支持按量计费任务的调整，调用此接口后不会立即生效，后台调整时间大概为3~5分钟。调用此接口后可通过查询同步任务信息接口DescribeSyncJobs，获取变配后的状态。

@@ -26,7 +26,8 @@ using namespace std;
 DescribeProxyCustomConfResponse::DescribeProxyCustomConfResponse() :
     m_countHasBeenSet(false),
     m_customConfHasBeenSet(false),
-    m_weightRuleHasBeenSet(false)
+    m_weightRuleHasBeenSet(false),
+    m_customConfInfoHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,26 @@ CoreInternalOutcome DescribeProxyCustomConfResponse::Deserialize(const string &p
         m_weightRuleHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CustomConfInfo") && !rsp["CustomConfInfo"].IsNull())
+    {
+        if (!rsp["CustomConfInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CustomConfInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CustomConfInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CustomConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customConfInfo.push_back(item);
+        }
+        m_customConfInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -142,6 +163,21 @@ string DescribeProxyCustomConfResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_weightRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_customConfInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomConfInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customConfInfo.begin(); itr != m_customConfInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -184,6 +220,16 @@ Rule DescribeProxyCustomConfResponse::GetWeightRule() const
 bool DescribeProxyCustomConfResponse::WeightRuleHasBeenSet() const
 {
     return m_weightRuleHasBeenSet;
+}
+
+vector<CustomConfig> DescribeProxyCustomConfResponse::GetCustomConfInfo() const
+{
+    return m_customConfInfo;
+}
+
+bool DescribeProxyCustomConfResponse::CustomConfInfoHasBeenSet() const
+{
+    return m_customConfInfoHasBeenSet;
 }
 
 

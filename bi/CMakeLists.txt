@@ -21,6 +21,7 @@ set(bi_public_header
 set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/PageScreenVO.h
   include/tencentcloud/bi/v20220105/model/DataId.h
+  include/tencentcloud/bi/v20220105/model/ClearEmbedTokenRequest.h
   include/tencentcloud/bi/v20220105/model/DescribeUserRoleListResponse.h
   include/tencentcloud/bi/v20220105/model/ExportScreenPageResponse.h
   include/tencentcloud/bi/v20220105/model/ModifyProjectResponse.h
@@ -74,6 +75,7 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/DescribeProjectInfoResponse.h
   include/tencentcloud/bi/v20220105/model/ExportScreenPageRequest.h
   include/tencentcloud/bi/v20220105/model/DescribeUserRoleListRequest.h
+  include/tencentcloud/bi/v20220105/model/ClearEmbedTokenResponse.h
   include/tencentcloud/bi/v20220105/model/DeleteProjectResponse.h
   include/tencentcloud/bi/v20220105/model/ProjectListData.h
   include/tencentcloud/bi/v20220105/model/DescribeUserRoleProjectListRequest.h
@@ -99,6 +101,7 @@ set(bi_src
   src/v20220105/BiClient.cpp
   src/v20220105/model/PageScreenVO.cpp
   src/v20220105/model/DataId.cpp
+  src/v20220105/model/ClearEmbedTokenRequest.cpp
   src/v20220105/model/DescribeUserRoleListResponse.cpp
   src/v20220105/model/ExportScreenPageResponse.cpp
   src/v20220105/model/ModifyProjectResponse.cpp
@@ -152,6 +155,7 @@ set(bi_src
   src/v20220105/model/DescribeProjectInfoResponse.cpp
   src/v20220105/model/ExportScreenPageRequest.cpp
   src/v20220105/model/DescribeUserRoleListRequest.cpp
+  src/v20220105/model/ClearEmbedTokenResponse.cpp
   src/v20220105/model/DeleteProjectResponse.cpp
   src/v20220105/model/ProjectListData.cpp
   src/v20220105/model/DescribeUserRoleProjectListRequest.cpp

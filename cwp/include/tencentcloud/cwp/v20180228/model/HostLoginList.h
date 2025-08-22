@@ -456,10 +456,10 @@ namespace TencentCloud
 
                     /**
                      * 获取高危信息说明：
-ABROAD - 海外IP；
+ABROAD - 境外IP；
 XTI - 威胁情报
                      * @return Desc 高危信息说明：
-ABROAD - 海外IP；
+ABROAD - 境外IP；
 XTI - 威胁情报
                      * 
                      */
@@ -467,10 +467,10 @@ XTI - 威胁情报
 
                     /**
                      * 设置高危信息说明：
-ABROAD - 海外IP；
+ABROAD - 境外IP；
 XTI - 威胁情报
                      * @param _desc 高危信息说明：
-ABROAD - 海外IP；
+ABROAD - 境外IP；
 XTI - 威胁情报
                      * 
                      */
@@ -645,7 +645,7 @@ XTI - 威胁情报
 
                     /**
                      * 高危信息说明：
-ABROAD - 海外IP；
+ABROAD - 境外IP；
 XTI - 威胁情报
                      */
                     std::string m_desc;

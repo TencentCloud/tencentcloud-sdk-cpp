@@ -642,6 +642,49 @@ EssClient::CreateContractDiffTaskWebUrlOutcomeCallable EssClient::CreateContract
     return task->get_future();
 }
 
+EssClient::CreateContractReviewWebUrlOutcome EssClient::CreateContractReviewWebUrl(const CreateContractReviewWebUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateContractReviewWebUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateContractReviewWebUrlResponse rsp = CreateContractReviewWebUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateContractReviewWebUrlOutcome(rsp);
+        else
+            return CreateContractReviewWebUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateContractReviewWebUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateContractReviewWebUrlAsync(const CreateContractReviewWebUrlRequest& request, const CreateContractReviewWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateContractReviewWebUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateContractReviewWebUrlOutcomeCallable EssClient::CreateContractReviewWebUrlCallable(const CreateContractReviewWebUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateContractReviewWebUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateContractReviewWebUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateConvertTaskApiOutcome EssClient::CreateConvertTaskApi(const CreateConvertTaskApiRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConvertTaskApi");
@@ -3301,6 +3344,49 @@ EssClient::DescribeContractReviewTaskOutcomeCallable EssClient::DescribeContract
         [this, request]()
         {
             return this->DescribeContractReviewTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DescribeContractReviewWebUrlOutcome EssClient::DescribeContractReviewWebUrl(const DescribeContractReviewWebUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeContractReviewWebUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeContractReviewWebUrlResponse rsp = DescribeContractReviewWebUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeContractReviewWebUrlOutcome(rsp);
+        else
+            return DescribeContractReviewWebUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeContractReviewWebUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeContractReviewWebUrlAsync(const DescribeContractReviewWebUrlRequest& request, const DescribeContractReviewWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeContractReviewWebUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeContractReviewWebUrlOutcomeCallable EssClient::DescribeContractReviewWebUrlCallable(const DescribeContractReviewWebUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeContractReviewWebUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeContractReviewWebUrl(request);
         }
     );
 

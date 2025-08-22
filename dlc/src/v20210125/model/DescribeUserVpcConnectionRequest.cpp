@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeUserVpcConnectionRequest::DescribeUserVpcConnectionRequest() :
     m_engineNetworkIdHasBeenSet(false),
-    m_dataEngineIdsHasBeenSet(false)
+    m_dataEngineIdsHasBeenSet(false),
+    m_userVpcEndpointIdsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ string DescribeUserVpcConnectionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_dataEngineIds.begin(); itr != m_dataEngineIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_userVpcEndpointIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserVpcEndpointIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userVpcEndpointIds.begin(); itr != m_userVpcEndpointIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -94,6 +108,22 @@ void DescribeUserVpcConnectionRequest::SetDataEngineIds(const vector<string>& _d
 bool DescribeUserVpcConnectionRequest::DataEngineIdsHasBeenSet() const
 {
     return m_dataEngineIdsHasBeenSet;
+}
+
+vector<string> DescribeUserVpcConnectionRequest::GetUserVpcEndpointIds() const
+{
+    return m_userVpcEndpointIds;
+}
+
+void DescribeUserVpcConnectionRequest::SetUserVpcEndpointIds(const vector<string>& _userVpcEndpointIds)
+{
+    m_userVpcEndpointIds = _userVpcEndpointIds;
+    m_userVpcEndpointIdsHasBeenSet = true;
+}
+
+bool DescribeUserVpcConnectionRequest::UserVpcEndpointIdsHasBeenSet() const
+{
+    return m_userVpcEndpointIdsHasBeenSet;
 }
 
 

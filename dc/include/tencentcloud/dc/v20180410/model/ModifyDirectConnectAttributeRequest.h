@@ -274,6 +274,27 @@ namespace TencentCloud
                     bool FaultReportContactNumberHasBeenSet() const;
 
                     /**
+                     * 获取报障联系邮箱。
+                     * @return FaultReportContactEmail 报障联系邮箱。
+                     * 
+                     */
+                    std::string GetFaultReportContactEmail() const;
+
+                    /**
+                     * 设置报障联系邮箱。
+                     * @param _faultReportContactEmail 报障联系邮箱。
+                     * 
+                     */
+                    void SetFaultReportContactEmail(const std::string& _faultReportContactEmail);
+
+                    /**
+                     * 判断参数 FaultReportContactEmail 是否已赋值
+                     * @return FaultReportContactEmail 是否已赋值
+                     * 
+                     */
+                    bool FaultReportContactEmailHasBeenSet() const;
+
+                    /**
                      * 获取物理专线申请者补签用户使用协议。
                      * @return SignLaw 物理专线申请者补签用户使用协议。
                      * 
@@ -382,6 +403,12 @@ namespace TencentCloud
                      */
                     std::string m_faultReportContactNumber;
                     bool m_faultReportContactNumberHasBeenSet;
+
+                    /**
+                     * 报障联系邮箱。
+                     */
+                    std::string m_faultReportContactEmail;
+                    bool m_faultReportContactEmailHasBeenSet;
 
                     /**
                      * 物理专线申请者补签用户使用协议。

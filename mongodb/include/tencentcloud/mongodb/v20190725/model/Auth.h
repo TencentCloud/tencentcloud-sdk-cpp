@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mask 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMask() const;
 
                     /**
                      * 设置当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mask 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMask(const int64_t& _mask);
@@ -70,8 +74,10 @@ namespace TencentCloud
                     /**
                      * 获取指具有当前账号权限的数据库名。
 <ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return NameSpace 指具有当前账号权限的数据库名。
 <ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNameSpace() const;
@@ -79,8 +85,10 @@ namespace TencentCloud
                     /**
                      * 设置指具有当前账号权限的数据库名。
 <ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nameSpace 指具有当前账号权限的数据库名。
 <ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNameSpace(const std::string& _nameSpace);
@@ -96,6 +104,7 @@ namespace TencentCloud
 
                     /**
                      * 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mask;
                     bool m_maskHasBeenSet;
@@ -103,6 +112,7 @@ namespace TencentCloud
                     /**
                      * 指具有当前账号权限的数据库名。
 <ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nameSpace;
                     bool m_nameSpaceHasBeenSet;

@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取终端节点IP
+                     * @return UserVpcEndpointId 终端节点IP
+                     * 
+                     */
+                    std::string GetUserVpcEndpointId() const;
+
+                    /**
+                     * 判断参数 UserVpcEndpointId 是否已赋值
+                     * @return UserVpcEndpointId 是否已赋值
+                     * 
+                     */
+                    bool UserVpcEndpointIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 终端节点IP
+                     */
+                    std::string m_userVpcEndpointId;
+                    bool m_userVpcEndpointIdHasBeenSet;
 
                 };
             }

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行请求的异步任务ID
-                     * @return AsyncRequestId 执行请求的异步任务ID
+                     * 获取执行请求的异步任务 ID。
+                     * @return AsyncRequestId 执行请求的异步任务 ID。
                      * 
                      */
                     std::string GetAsyncRequestId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行请求的异步任务ID
+                     * 执行请求的异步任务 ID。
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;

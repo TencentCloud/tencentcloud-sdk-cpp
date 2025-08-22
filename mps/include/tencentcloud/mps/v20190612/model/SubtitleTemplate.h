@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/MediaInputInfo.h>
 
 
 namespace TencentCloud
@@ -111,6 +112,31 @@ namespace TencentCloud
                      * 
                      */
                     bool StreamIndexHasBeenSet() const;
+
+                    /**
+                     * 获取要压制到视频中的字幕文件的输入信息，目前仅支持存储在COS的字幕文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubtitleFileInput 要压制到视频中的字幕文件的输入信息，目前仅支持存储在COS的字幕文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MediaInputInfo GetSubtitleFileInput() const;
+
+                    /**
+                     * 设置要压制到视频中的字幕文件的输入信息，目前仅支持存储在COS的字幕文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subtitleFileInput 要压制到视频中的字幕文件的输入信息，目前仅支持存储在COS的字幕文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubtitleFileInput(const MediaInputInfo& _subtitleFileInput);
+
+                    /**
+                     * 判断参数 SubtitleFileInput 是否已赋值
+                     * @return SubtitleFileInput 是否已赋值
+                     * 
+                     */
+                    bool SubtitleFileInputHasBeenSet() const;
 
                     /**
                      * 获取字体类型，支持：
@@ -542,6 +568,206 @@ namespace TencentCloud
                      */
                     bool BoardAlphaHasBeenSet() const;
 
+                    /**
+                     * 获取描边宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutlineWidth 描边宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetOutlineWidth() const;
+
+                    /**
+                     * 设置描边宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outlineWidth 描边宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOutlineWidth(const double& _outlineWidth);
+
+                    /**
+                     * 判断参数 OutlineWidth 是否已赋值
+                     * @return OutlineWidth 是否已赋值
+                     * 
+                     */
+                    bool OutlineWidthHasBeenSet() const;
+
+                    /**
+                     * 获取描边颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutlineColor 描边颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOutlineColor() const;
+
+                    /**
+                     * 设置描边颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outlineColor 描边颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOutlineColor(const std::string& _outlineColor);
+
+                    /**
+                     * 判断参数 OutlineColor 是否已赋值
+                     * @return OutlineColor 是否已赋值
+                     * 
+                     */
+                    bool OutlineColorHasBeenSet() const;
+
+                    /**
+                     * 获取描边透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutlineAlpha 描边透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetOutlineAlpha() const;
+
+                    /**
+                     * 设置描边透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outlineAlpha 描边透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOutlineAlpha(const double& _outlineAlpha);
+
+                    /**
+                     * 判断参数 OutlineAlpha 是否已赋值
+                     * @return OutlineAlpha 是否已赋值
+                     * 
+                     */
+                    bool OutlineAlphaHasBeenSet() const;
+
+                    /**
+                     * 获取阴影宽度。浮点数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShadowWidth 阴影宽度。浮点数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetShadowWidth() const;
+
+                    /**
+                     * 设置阴影宽度。浮点数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shadowWidth 阴影宽度。浮点数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShadowWidth(const double& _shadowWidth);
+
+                    /**
+                     * 判断参数 ShadowWidth 是否已赋值
+                     * @return ShadowWidth 是否已赋值
+                     * 
+                     */
+                    bool ShadowWidthHasBeenSet() const;
+
+                    /**
+                     * 获取阴影颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShadowColor 阴影颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetShadowColor() const;
+
+                    /**
+                     * 设置阴影颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shadowColor 阴影颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShadowColor(const std::string& _shadowColor);
+
+                    /**
+                     * 判断参数 ShadowColor 是否已赋值
+                     * @return ShadowColor 是否已赋值
+                     * 
+                     */
+                    bool ShadowColorHasBeenSet() const;
+
+                    /**
+                     * 获取阴影透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShadowAlpha 阴影透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetShadowAlpha() const;
+
+                    /**
+                     * 设置阴影透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shadowAlpha 阴影透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShadowAlpha(const double& _shadowAlpha);
+
+                    /**
+                     * 判断参数 ShadowAlpha 是否已赋值
+                     * @return ShadowAlpha 是否已赋值
+                     * 
+                     */
+                    bool ShadowAlphaHasBeenSet() const;
+
+                    /**
+                     * 获取行间距。正整数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LineSpacing 行间距。正整数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLineSpacing() const;
+
+                    /**
+                     * 设置行间距。正整数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lineSpacing 行间距。正整数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLineSpacing(const int64_t& _lineSpacing);
+
+                    /**
+                     * 判断参数 LineSpacing 是否已赋值
+                     * @return LineSpacing 是否已赋值
+                     * 
+                     */
+                    bool LineSpacingHasBeenSet() const;
+
+                    /**
+                     * 获取对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Alignment 对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlignment() const;
+
+                    /**
+                     * 设置对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alignment 对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlignment(const std::string& _alignment);
+
+                    /**
+                     * 判断参数 Alignment 是否已赋值
+                     * @return Alignment 是否已赋值
+                     * 
+                     */
+                    bool AlignmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -561,6 +787,13 @@ namespace TencentCloud
                      */
                     int64_t m_streamIndex;
                     bool m_streamIndexHasBeenSet;
+
+                    /**
+                     * 要压制到视频中的字幕文件的输入信息，目前仅支持存储在COS的字幕文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaInputInfo m_subtitleFileInput;
+                    bool m_subtitleFileInputHasBeenSet;
 
                     /**
                      * 字体类型，支持：
@@ -676,6 +909,62 @@ namespace TencentCloud
                      */
                     double m_boardAlpha;
                     bool m_boardAlphaHasBeenSet;
+
+                    /**
+                     * 描边宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_outlineWidth;
+                    bool m_outlineWidthHasBeenSet;
+
+                    /**
+                     * 描边颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_outlineColor;
+                    bool m_outlineColorHasBeenSet;
+
+                    /**
+                     * 描边透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_outlineAlpha;
+                    bool m_outlineAlphaHasBeenSet;
+
+                    /**
+                     * 阴影宽度。浮点数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_shadowWidth;
+                    bool m_shadowWidthHasBeenSet;
+
+                    /**
+                     * 阴影颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_shadowColor;
+                    bool m_shadowColorHasBeenSet;
+
+                    /**
+                     * 阴影透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_shadowAlpha;
+                    bool m_shadowAlphaHasBeenSet;
+
+                    /**
+                     * 行间距。正整数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_lineSpacing;
+                    bool m_lineSpacingHasBeenSet;
+
+                    /**
+                     * 对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alignment;
+                    bool m_alignmentHasBeenSet;
 
                 };
             }

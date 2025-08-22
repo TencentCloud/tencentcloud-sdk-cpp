@@ -255,6 +255,49 @@ IoaClient::DescribeAccountGroupsOutcomeCallable IoaClient::DescribeAccountGroups
     return task->get_future();
 }
 
+IoaClient::DescribeAggrSoftCategorySoftListOutcome IoaClient::DescribeAggrSoftCategorySoftList(const DescribeAggrSoftCategorySoftListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAggrSoftCategorySoftList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAggrSoftCategorySoftListResponse rsp = DescribeAggrSoftCategorySoftListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAggrSoftCategorySoftListOutcome(rsp);
+        else
+            return DescribeAggrSoftCategorySoftListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAggrSoftCategorySoftListOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeAggrSoftCategorySoftListAsync(const DescribeAggrSoftCategorySoftListRequest& request, const DescribeAggrSoftCategorySoftListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAggrSoftCategorySoftList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeAggrSoftCategorySoftListOutcomeCallable IoaClient::DescribeAggrSoftCategorySoftListCallable(const DescribeAggrSoftCategorySoftListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAggrSoftCategorySoftListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAggrSoftCategorySoftList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::DescribeDLPFileDetectResultOutcome IoaClient::DescribeDLPFileDetectResult(const DescribeDLPFileDetectResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDLPFileDetectResult");
@@ -291,6 +334,49 @@ IoaClient::DescribeDLPFileDetectResultOutcomeCallable IoaClient::DescribeDLPFile
         [this, request]()
         {
             return this->DescribeDLPFileDetectResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::DescribeDeviceChildGroupsOutcome IoaClient::DescribeDeviceChildGroups(const DescribeDeviceChildGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceChildGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceChildGroupsResponse rsp = DescribeDeviceChildGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceChildGroupsOutcome(rsp);
+        else
+            return DescribeDeviceChildGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceChildGroupsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDeviceChildGroupsAsync(const DescribeDeviceChildGroupsRequest& request, const DescribeDeviceChildGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceChildGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeDeviceChildGroupsOutcomeCallable IoaClient::DescribeDeviceChildGroupsCallable(const DescribeDeviceChildGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceChildGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceChildGroups(request);
         }
     );
 

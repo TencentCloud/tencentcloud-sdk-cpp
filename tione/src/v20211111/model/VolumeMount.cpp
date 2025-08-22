@@ -22,7 +22,8 @@ using namespace std;
 
 VolumeMount::VolumeMount() :
     m_cFSConfigHasBeenSet(false),
-    m_volumeSourceTypeHasBeenSet(false)
+    m_volumeSourceTypeHasBeenSet(false),
+    m_mountPathHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome VolumeMount::Deserialize(const rapidjson::Value &value)
         m_volumeSourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("MountPath") && !value["MountPath"].IsNull())
+    {
+        if (!value["MountPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VolumeMount.MountPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mountPath = string(value["MountPath"].GetString());
+        m_mountPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void VolumeMount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "VolumeSourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_volumeSourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mountPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void VolumeMount::SetVolumeSourceType(const string& _volumeSourceType)
 bool VolumeMount::VolumeSourceTypeHasBeenSet() const
 {
     return m_volumeSourceTypeHasBeenSet;
+}
+
+string VolumeMount::GetMountPath() const
+{
+    return m_mountPath;
+}
+
+void VolumeMount::SetMountPath(const string& _mountPath)
+{
+    m_mountPath = _mountPath;
+    m_mountPathHasBeenSet = true;
+}
+
+bool VolumeMount::MountPathHasBeenSet() const
+{
+    return m_mountPathHasBeenSet;
 }
 

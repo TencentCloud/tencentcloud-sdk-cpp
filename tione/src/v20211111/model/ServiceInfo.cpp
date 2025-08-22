@@ -57,7 +57,9 @@ ServiceInfo::ServiceInfo() :
     m_preStopCommandHasBeenSet(false),
     m_grpcEnableHasBeenSet(false),
     m_healthProbeHasBeenSet(false),
-    m_rollingUpdateHasBeenSet(false)
+    m_rollingUpdateHasBeenSet(false),
+    m_instancePerReplicasHasBeenSet(false),
+    m_volumeMountsHasBeenSet(false)
 {
 }
 
@@ -577,6 +579,36 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_rollingUpdateHasBeenSet = true;
     }
 
+    if (value.HasMember("InstancePerReplicas") && !value["InstancePerReplicas"].IsNull())
+    {
+        if (!value["InstancePerReplicas"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.InstancePerReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instancePerReplicas = value["InstancePerReplicas"].GetInt64();
+        m_instancePerReplicasHasBeenSet = true;
+    }
+
+    if (value.HasMember("VolumeMounts") && !value["VolumeMounts"].IsNull())
+    {
+        if (!value["VolumeMounts"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.VolumeMounts` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VolumeMounts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VolumeMount item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_volumeMounts.push_back(item);
+        }
+        m_volumeMountsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -924,6 +956,29 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rollingUpdate.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instancePerReplicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstancePerReplicas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instancePerReplicas, allocator);
+    }
+
+    if (m_volumeMountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeMounts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumeMounts.begin(); itr != m_volumeMounts.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1519,5 +1574,37 @@ void ServiceInfo::SetRollingUpdate(const RollingUpdate& _rollingUpdate)
 bool ServiceInfo::RollingUpdateHasBeenSet() const
 {
     return m_rollingUpdateHasBeenSet;
+}
+
+int64_t ServiceInfo::GetInstancePerReplicas() const
+{
+    return m_instancePerReplicas;
+}
+
+void ServiceInfo::SetInstancePerReplicas(const int64_t& _instancePerReplicas)
+{
+    m_instancePerReplicas = _instancePerReplicas;
+    m_instancePerReplicasHasBeenSet = true;
+}
+
+bool ServiceInfo::InstancePerReplicasHasBeenSet() const
+{
+    return m_instancePerReplicasHasBeenSet;
+}
+
+vector<VolumeMount> ServiceInfo::GetVolumeMounts() const
+{
+    return m_volumeMounts;
+}
+
+void ServiceInfo::SetVolumeMounts(const vector<VolumeMount>& _volumeMounts)
+{
+    m_volumeMounts = _volumeMounts;
+    m_volumeMountsHasBeenSet = true;
+}
+
+bool ServiceInfo::VolumeMountsHasBeenSet() const
+{
+    return m_volumeMountsHasBeenSet;
 }
 

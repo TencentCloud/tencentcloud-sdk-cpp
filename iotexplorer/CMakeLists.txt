@@ -413,6 +413,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DiarySHLConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/UnbindDevicesResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/VisionObjectDetectConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/TargetInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductRequest.h
@@ -830,6 +831,7 @@ set(iotexplorer_src
   src/v20190423/model/DiarySHLConfig.cpp
   src/v20190423/model/UnbindDevicesResponse.cpp
   src/v20190423/model/CreateBatchProductionResponse.cpp
+  src/v20190423/model/VisionObjectDetectConfig.cpp
   src/v20190423/model/TargetInfo.cpp
   src/v20190423/model/GetTopicRuleListRequest.cpp
   src/v20190423/model/DeleteStudioProductRequest.cpp

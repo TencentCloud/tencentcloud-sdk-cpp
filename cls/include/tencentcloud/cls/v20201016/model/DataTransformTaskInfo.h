@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool EnableFlagHasBeenSet() const;
 
                     /**
-                     * 获取加工任务类型，1： DSL， 2：SQL
-                     * @return Type 加工任务类型，1： DSL， 2：SQL
+                     * 获取加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
+                     * @return Type 加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置加工任务类型，1： DSL， 2：SQL
-                     * @param _type 加工任务类型，1： DSL， 2：SQL
+                     * 设置加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
+                     * @param _type 加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -196,14 +196,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最近修改时间
+示例值：2025-06-18 16:55:54
                      * @return UpdateTime 最近修改时间
+示例值：2025-06-18 16:55:54
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置最近修改时间
+示例值：2025-06-18 16:55:54
                      * @param _updateTime 最近修改时间
+示例值：2025-06-18 16:55:54
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -217,14 +221,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最后启用时间，如果需要重建集群，修改该时间
+示例值：2025-06-18 19:55:54
                      * @return LastEnableTime 最后启用时间，如果需要重建集群，修改该时间
+示例值：2025-06-18 19:55:54
                      * 
                      */
                     std::string GetLastEnableTime() const;
 
                     /**
                      * 设置最后启用时间，如果需要重建集群，修改该时间
+示例值：2025-06-18 19:55:54
                      * @param _lastEnableTime 最后启用时间，如果需要重建集群，修改该时间
+示例值：2025-06-18 19:55:54
                      * 
                      */
                     void SetLastEnableTime(const std::string& _lastEnableTime);
@@ -404,7 +412,7 @@ namespace TencentCloud
                     bool m_enableFlagHasBeenSet;
 
                     /**
-                     * 加工任务类型，1： DSL， 2：SQL
+                     * 加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
@@ -429,12 +437,14 @@ namespace TencentCloud
 
                     /**
                      * 最近修改时间
+示例值：2025-06-18 16:55:54
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 最后启用时间，如果需要重建集群，修改该时间
+示例值：2025-06-18 19:55:54
                      */
                     std::string m_lastEnableTime;
                     bool m_lastEnableTimeHasBeenSet;

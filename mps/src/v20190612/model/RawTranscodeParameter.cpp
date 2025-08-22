@@ -28,7 +28,8 @@ RawTranscodeParameter::RawTranscodeParameter() :
     m_audioTemplateHasBeenSet(false),
     m_tEHDConfigHasBeenSet(false),
     m_stdExtInfoHasBeenSet(false),
-    m_enhanceConfigHasBeenSet(false)
+    m_enhanceConfigHasBeenSet(false),
+    m_subtitleTemplateHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,23 @@ CoreInternalOutcome RawTranscodeParameter::Deserialize(const rapidjson::Value &v
         m_enhanceConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleTemplate") && !value["SubtitleTemplate"].IsNull())
+    {
+        if (!value["SubtitleTemplate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawTranscodeParameter.SubtitleTemplate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subtitleTemplate.Deserialize(value["SubtitleTemplate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subtitleTemplateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -218,6 +236,15 @@ void RawTranscodeParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enhanceConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subtitleTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subtitleTemplate.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -349,5 +376,21 @@ void RawTranscodeParameter::SetEnhanceConfig(const EnhanceConfig& _enhanceConfig
 bool RawTranscodeParameter::EnhanceConfigHasBeenSet() const
 {
     return m_enhanceConfigHasBeenSet;
+}
+
+SubtitleTemplate RawTranscodeParameter::GetSubtitleTemplate() const
+{
+    return m_subtitleTemplate;
+}
+
+void RawTranscodeParameter::SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate)
+{
+    m_subtitleTemplate = _subtitleTemplate;
+    m_subtitleTemplateHasBeenSet = true;
+}
+
+bool RawTranscodeParameter::SubtitleTemplateHasBeenSet() const
+{
+    return m_subtitleTemplateHasBeenSet;
 }
 

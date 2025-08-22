@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool FailPageNumHasBeenSet() const;
 
+                    /**
+                     * 获取文件大小，单位KB
+                     * @return FileSize 文件大小，单位KB
+                     * 
+                     */
+                    int64_t GetFileSize() const;
+
+                    /**
+                     * 设置文件大小，单位KB
+                     * @param _fileSize 文件大小，单位KB
+                     * 
+                     */
+                    void SetFileSize(const int64_t& _fileSize);
+
+                    /**
+                     * 判断参数 FileSize 是否已赋值
+                     * @return FileSize 是否已赋值
+                     * 
+                     */
+                    bool FileSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     int64_t m_failPageNum;
                     bool m_failPageNumHasBeenSet;
+
+                    /**
+                     * 文件大小，单位KB
+                     */
+                    int64_t m_fileSize;
+                    bool m_fileSizeHasBeenSet;
 
                 };
             }

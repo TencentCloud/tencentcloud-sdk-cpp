@@ -2491,6 +2491,49 @@ DtsClient::ResetSubscribeOutcomeCallable DtsClient::ResetSubscribeCallable(const
     return task->get_future();
 }
 
+DtsClient::ResetSyncJobOutcome DtsClient::ResetSyncJob(const ResetSyncJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetSyncJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetSyncJobResponse rsp = ResetSyncJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetSyncJobOutcome(rsp);
+        else
+            return ResetSyncJobOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetSyncJobOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ResetSyncJobAsync(const ResetSyncJobRequest& request, const ResetSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetSyncJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ResetSyncJobOutcomeCallable DtsClient::ResetSyncJobCallable(const ResetSyncJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetSyncJobOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetSyncJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::ResizeSyncJobOutcome DtsClient::ResizeSyncJob(const ResizeSyncJobRequest &request)
 {
     auto outcome = MakeRequest(request, "ResizeSyncJob");

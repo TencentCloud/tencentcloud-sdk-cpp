@@ -35,7 +35,8 @@ ClusterNetworkSettings::ClusterNetworkSettings() :
     m_isDualStackHasBeenSet(false),
     m_ipv6ServiceCIDRHasBeenSet(false),
     m_ciliumModeHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_dataPlaneV2HasBeenSet(false)
 {
 }
 
@@ -197,6 +198,16 @@ CoreInternalOutcome ClusterNetworkSettings::Deserialize(const rapidjson::Value &
         m_subnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DataPlaneV2") && !value["DataPlaneV2"].IsNull())
+    {
+        if (!value["DataPlaneV2"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterNetworkSettings.DataPlaneV2` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataPlaneV2 = value["DataPlaneV2"].GetBool();
+        m_dataPlaneV2HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +338,14 @@ void ClusterNetworkSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataPlaneV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataPlaneV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataPlaneV2, allocator);
     }
 
 }
@@ -570,5 +589,21 @@ void ClusterNetworkSettings::SetSubnetId(const string& _subnetId)
 bool ClusterNetworkSettings::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+bool ClusterNetworkSettings::GetDataPlaneV2() const
+{
+    return m_dataPlaneV2;
+}
+
+void ClusterNetworkSettings::SetDataPlaneV2(const bool& _dataPlaneV2)
+{
+    m_dataPlaneV2 = _dataPlaneV2;
+    m_dataPlaneV2HasBeenSet = true;
+}
+
+bool ClusterNetworkSettings::DataPlaneV2HasBeenSet() const
+{
+    return m_dataPlaneV2HasBeenSet;
 }
 

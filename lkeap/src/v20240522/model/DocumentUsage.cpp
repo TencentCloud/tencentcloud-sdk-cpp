@@ -27,7 +27,8 @@ DocumentUsage::DocumentUsage() :
     m_splitTokensHasBeenSet(false),
     m_mllmTokensHasBeenSet(false),
     m_successPageNumHasBeenSet(false),
-    m_failPageNumHasBeenSet(false)
+    m_failPageNumHasBeenSet(false),
+    m_fileSizeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome DocumentUsage::Deserialize(const rapidjson::Value &value)
         m_failPageNumHasBeenSet = true;
     }
 
+    if (value.HasMember("FileSize") && !value["FileSize"].IsNull())
+    {
+        if (!value["FileSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentUsage.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSize = value["FileSize"].GetInt64();
+        m_fileSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void DocumentUsage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "FailPageNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failPageNum, allocator);
+    }
+
+    if (m_fileSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileSize, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void DocumentUsage::SetFailPageNum(const int64_t& _failPageNum)
 bool DocumentUsage::FailPageNumHasBeenSet() const
 {
     return m_failPageNumHasBeenSet;
+}
+
+int64_t DocumentUsage::GetFileSize() const
+{
+    return m_fileSize;
+}
+
+void DocumentUsage::SetFileSize(const int64_t& _fileSize)
+{
+    m_fileSize = _fileSize;
+    m_fileSizeHasBeenSet = true;
+}
+
+bool DocumentUsage::FileSizeHasBeenSet() const
+{
+    return m_fileSizeHasBeenSet;
 }
 
