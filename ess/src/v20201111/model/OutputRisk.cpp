@@ -28,6 +28,7 @@ OutputRisk::OutputRisk() :
     m_riskAdviceHasBeenSet(false),
     m_riskPresentationHasBeenSet(false),
     m_contentHasBeenSet(false),
+    m_positionsHasBeenSet(false),
     m_riskBasisHasBeenSet(false)
 {
 }
@@ -110,6 +111,26 @@ CoreInternalOutcome OutputRisk::Deserialize(const rapidjson::Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("Positions") && !value["Positions"].IsNull())
+    {
+        if (!value["Positions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OutputRisk.Positions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Positions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PositionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_positions.push_back(item);
+        }
+        m_positionsHasBeenSet = true;
+    }
+
     if (value.HasMember("RiskBasis") && !value["RiskBasis"].IsNull())
     {
         if (!value["RiskBasis"].IsString())
@@ -186,6 +207,21 @@ void OutputRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_positionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Positions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_positions.begin(); itr != m_positions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_riskBasisHasBeenSet)
@@ -309,6 +345,22 @@ void OutputRisk::SetContent(const string& _content)
 bool OutputRisk::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+vector<PositionInfo> OutputRisk::GetPositions() const
+{
+    return m_positions;
+}
+
+void OutputRisk::SetPositions(const vector<PositionInfo>& _positions)
+{
+    m_positions = _positions;
+    m_positionsHasBeenSet = true;
+}
+
+bool OutputRisk::PositionsHasBeenSet() const
+{
+    return m_positionsHasBeenSet;
 }
 
 string OutputRisk::GetRiskBasis() const

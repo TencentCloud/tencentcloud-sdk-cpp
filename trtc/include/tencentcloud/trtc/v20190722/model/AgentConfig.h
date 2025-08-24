@@ -404,6 +404,31 @@ namespace TencentCloud
                      */
                     bool SubtitleModeHasBeenSet() const;
 
+                    /**
+                     * 获取打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * @return InterruptWordList 打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * 
+                     */
+                    std::vector<std::string> GetInterruptWordList() const;
+
+                    /**
+                     * 设置打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * @param _interruptWordList 打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * 
+                     */
+                    void SetInterruptWordList(const std::vector<std::string>& _interruptWordList);
+
+                    /**
+                     * 判断参数 InterruptWordList 是否已赋值
+                     * @return InterruptWordList 是否已赋值
+                     * 
+                     */
+                    bool InterruptWordListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -505,6 +530,13 @@ namespace TencentCloud
                      */
                     uint64_t m_subtitleMode;
                     bool m_subtitleModeHasBeenSet;
+
+                    /**
+                     * 打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     */
+                    std::vector<std::string> m_interruptWordList;
+                    bool m_interruptWordListHasBeenSet;
 
                 };
             }

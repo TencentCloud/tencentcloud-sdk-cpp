@@ -203,6 +203,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgTraceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQProducersRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQProducersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessMonitorDataRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessMonitorDataResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessPointRequest.h>
@@ -605,6 +607,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQNamespacesResponse> DescribeRocketMQNamespacesOutcome;
                 typedef std::future<DescribeRocketMQNamespacesOutcome> DescribeRocketMQNamespacesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQNamespacesRequest&, DescribeRocketMQNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQProducersResponse> DescribeRocketMQProducersOutcome;
+                typedef std::future<DescribeRocketMQProducersOutcome> DescribeRocketMQProducersOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQProducersRequest&, DescribeRocketMQProducersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQProducersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQPublicAccessMonitorDataResponse> DescribeRocketMQPublicAccessMonitorDataOutcome;
                 typedef std::future<DescribeRocketMQPublicAccessMonitorDataOutcome> DescribeRocketMQPublicAccessMonitorDataOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQPublicAccessMonitorDataRequest&, DescribeRocketMQPublicAccessMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQPublicAccessMonitorDataAsyncHandler;
@@ -1596,6 +1601,15 @@ namespace TencentCloud
                 DescribeRocketMQNamespacesOutcome DescribeRocketMQNamespaces(const Model::DescribeRocketMQNamespacesRequest &request);
                 void DescribeRocketMQNamespacesAsync(const Model::DescribeRocketMQNamespacesRequest& request, const DescribeRocketMQNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRocketMQNamespacesOutcomeCallable DescribeRocketMQNamespacesCallable(const Model::DescribeRocketMQNamespacesRequest& request);
+
+                /**
+                 *查询 RocketMQ 指定主题下的生产者客户端列表。
+                 * @param req DescribeRocketMQProducersRequest
+                 * @return DescribeRocketMQProducersOutcome
+                 */
+                DescribeRocketMQProducersOutcome DescribeRocketMQProducers(const Model::DescribeRocketMQProducersRequest &request);
+                void DescribeRocketMQProducersAsync(const Model::DescribeRocketMQProducersRequest& request, const DescribeRocketMQProducersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQProducersOutcomeCallable DescribeRocketMQProducersCallable(const Model::DescribeRocketMQProducersRequest& request);
 
                 /**
                  *从腾讯云可观测平台拉取公网指标监控数据，目前仅支持客户端到 LB 的入带宽和出宽带指标。

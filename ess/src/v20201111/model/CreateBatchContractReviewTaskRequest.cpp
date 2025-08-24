@@ -28,7 +28,9 @@ CreateBatchContractReviewTaskRequest::CreateBatchContractReviewTaskRequest() :
     m_policyTypeHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_checklistIdHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -93,6 +95,22 @@ string CreateBatchContractReviewTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -197,6 +215,38 @@ void CreateBatchContractReviewTaskRequest::SetAgent(const Agent& _agent)
 bool CreateBatchContractReviewTaskRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string CreateBatchContractReviewTaskRequest::GetComment() const
+{
+    return m_comment;
+}
+
+void CreateBatchContractReviewTaskRequest::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool CreateBatchContractReviewTaskRequest::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
+}
+
+string CreateBatchContractReviewTaskRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void CreateBatchContractReviewTaskRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool CreateBatchContractReviewTaskRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 

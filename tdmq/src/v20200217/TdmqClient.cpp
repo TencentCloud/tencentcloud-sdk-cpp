@@ -3910,6 +3910,49 @@ TdmqClient::DescribeRocketMQNamespacesOutcomeCallable TdmqClient::DescribeRocket
     return task->get_future();
 }
 
+TdmqClient::DescribeRocketMQProducersOutcome TdmqClient::DescribeRocketMQProducers(const DescribeRocketMQProducersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQProducers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQProducersResponse rsp = DescribeRocketMQProducersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQProducersOutcome(rsp);
+        else
+            return DescribeRocketMQProducersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQProducersOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQProducersAsync(const DescribeRocketMQProducersRequest& request, const DescribeRocketMQProducersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRocketMQProducers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRocketMQProducersOutcomeCallable TdmqClient::DescribeRocketMQProducersCallable(const DescribeRocketMQProducersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRocketMQProducersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRocketMQProducers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQPublicAccessMonitorDataOutcome TdmqClient::DescribeRocketMQPublicAccessMonitorData(const DescribeRocketMQPublicAccessMonitorDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQPublicAccessMonitorData");

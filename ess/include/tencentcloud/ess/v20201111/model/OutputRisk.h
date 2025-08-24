@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ess/v20201111/model/PositionInfo.h>
 
 
 namespace TencentCloud
@@ -218,6 +219,27 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
+                     * 获取审查出的PDF段落位置信息
+                     * @return Positions 审查出的PDF段落位置信息
+                     * 
+                     */
+                    std::vector<PositionInfo> GetPositions() const;
+
+                    /**
+                     * 设置审查出的PDF段落位置信息
+                     * @param _positions 审查出的PDF段落位置信息
+                     * 
+                     */
+                    void SetPositions(const std::vector<PositionInfo>& _positions);
+
+                    /**
+                     * 判断参数 Positions 是否已赋值
+                     * @return Positions 是否已赋值
+                     * 
+                     */
+                    bool PositionsHasBeenSet() const;
+
+                    /**
                      * 获取审查依据
                      * @return RiskBasis 审查依据
                      * 
@@ -287,6 +309,12 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 审查出的PDF段落位置信息
+                     */
+                    std::vector<PositionInfo> m_positions;
+                    bool m_positionsHasBeenSet;
 
                     /**
                      * 审查依据

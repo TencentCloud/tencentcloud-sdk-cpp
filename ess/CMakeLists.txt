@@ -77,6 +77,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/VerifyPdfRequest.h
   include/tencentcloud/ess/v20201111/model/FailedCreateRoleData.h
   include/tencentcloud/ess/v20201111/model/CreateEmployeeChangeUrlRequest.h
+  include/tencentcloud/ess/v20201111/model/PositionInfo.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksResponse.h
@@ -428,6 +429,7 @@ set(ess_src
   src/v20201111/model/VerifyPdfRequest.cpp
   src/v20201111/model/FailedCreateRoleData.cpp
   src/v20201111/model/CreateEmployeeChangeUrlRequest.cpp
+  src/v20201111/model/PositionInfo.cpp
   src/v20201111/model/CreateUserAutoSignEnableUrlRequest.cpp
   src/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.cpp
   src/v20201111/model/DescribeBatchOrganizationRegistrationTasksResponse.cpp

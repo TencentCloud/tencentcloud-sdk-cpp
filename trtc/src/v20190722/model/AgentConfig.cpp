@@ -35,7 +35,8 @@ AgentConfig::AgentConfig() :
     m_ambientSoundHasBeenSet(false),
     m_voicePrintHasBeenSet(false),
     m_turnDetectionHasBeenSet(false),
-    m_subtitleModeHasBeenSet(false)
+    m_subtitleModeHasBeenSet(false),
+    m_interruptWordListHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,19 @@ CoreInternalOutcome AgentConfig::Deserialize(const rapidjson::Value &value)
         m_subtitleModeHasBeenSet = true;
     }
 
+    if (value.HasMember("InterruptWordList") && !value["InterruptWordList"].IsNull())
+    {
+        if (!value["InterruptWordList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.InterruptWordList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InterruptWordList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_interruptWordList.push_back((*itr).GetString());
+        }
+        m_interruptWordListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -343,6 +357,19 @@ void AgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SubtitleMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subtitleMode, allocator);
+    }
+
+    if (m_interruptWordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InterruptWordList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_interruptWordList.begin(); itr != m_interruptWordList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -586,5 +613,21 @@ void AgentConfig::SetSubtitleMode(const uint64_t& _subtitleMode)
 bool AgentConfig::SubtitleModeHasBeenSet() const
 {
     return m_subtitleModeHasBeenSet;
+}
+
+vector<string> AgentConfig::GetInterruptWordList() const
+{
+    return m_interruptWordList;
+}
+
+void AgentConfig::SetInterruptWordList(const vector<string>& _interruptWordList)
+{
+    m_interruptWordList = _interruptWordList;
+    m_interruptWordListHasBeenSet = true;
+}
+
+bool AgentConfig::InterruptWordListHasBeenSet() const
+{
+    return m_interruptWordListHasBeenSet;
 }
 

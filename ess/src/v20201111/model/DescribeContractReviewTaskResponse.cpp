@@ -32,7 +32,9 @@ DescribeContractReviewTaskResponse::DescribeContractReviewTaskResponse() :
     m_risksHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -177,6 +179,26 @@ CoreInternalOutcome DescribeContractReviewTaskResponse::Deserialize(const string
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Comment") && !rsp["Comment"].IsNull())
+    {
+        if (!rsp["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(rsp["Comment"].GetString());
+        m_commentHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UserData") && !rsp["UserData"].IsNull())
+    {
+        if (!rsp["UserData"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserData` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userData = string(rsp["UserData"].GetString());
+        m_userDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -265,6 +287,22 @@ string DescribeContractReviewTaskResponse::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -367,6 +405,26 @@ string DescribeContractReviewTaskResponse::GetTaskId() const
 bool DescribeContractReviewTaskResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string DescribeContractReviewTaskResponse::GetComment() const
+{
+    return m_comment;
+}
+
+bool DescribeContractReviewTaskResponse::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
+}
+
+string DescribeContractReviewTaskResponse::GetUserData() const
+{
+    return m_userData;
+}
+
+bool DescribeContractReviewTaskResponse::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 

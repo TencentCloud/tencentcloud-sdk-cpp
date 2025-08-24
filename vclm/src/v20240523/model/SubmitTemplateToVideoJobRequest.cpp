@@ -27,7 +27,8 @@ SubmitTemplateToVideoJobRequest::SubmitTemplateToVideoJobRequest() :
     m_imagesHasBeenSet(false),
     m_logoAddHasBeenSet(false),
     m_logoParamHasBeenSet(false),
-    m_resolutionHasBeenSet(false)
+    m_resolutionHasBeenSet(false),
+    m_bGMHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,14 @@ string SubmitTemplateToVideoJobRequest::ToJsonString() const
         string key = "Resolution";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bGMHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BGM";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bGM, allocator);
     }
 
 
@@ -172,6 +181,22 @@ void SubmitTemplateToVideoJobRequest::SetResolution(const string& _resolution)
 bool SubmitTemplateToVideoJobRequest::ResolutionHasBeenSet() const
 {
     return m_resolutionHasBeenSet;
+}
+
+bool SubmitTemplateToVideoJobRequest::GetBGM() const
+{
+    return m_bGM;
+}
+
+void SubmitTemplateToVideoJobRequest::SetBGM(const bool& _bGM)
+{
+    m_bGM = _bGM;
+    m_bGMHasBeenSet = true;
+}
+
+bool SubmitTemplateToVideoJobRequest::BGMHasBeenSet() const
+{
+    return m_bGMHasBeenSet;
 }
 
 

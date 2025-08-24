@@ -175,14 +175,22 @@ namespace TencentCloud
 
                     /**
                      * 获取加工任务创建时间
+示例值：2025-03-18 19:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return CreateTime 加工任务创建时间
+示例值：2025-03-18 19:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置加工任务创建时间
+示例值：2025-03-18 19:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _createTime 加工任务创建时间
+示例值：2025-03-18 19:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -196,18 +204,22 @@ namespace TencentCloud
 
                     /**
                      * 获取最近修改时间
-示例值：2025-06-18 16:55:54
+示例值：2025-04-18 16:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return UpdateTime 最近修改时间
-示例值：2025-06-18 16:55:54
+示例值：2025-04-18 16:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置最近修改时间
-示例值：2025-06-18 16:55:54
+示例值：2025-04-18 16:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _updateTime 最近修改时间
-示例值：2025-06-18 16:55:54
+示例值：2025-04-18 16:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -221,18 +233,22 @@ namespace TencentCloud
 
                     /**
                      * 获取最后启用时间，如果需要重建集群，修改该时间
-示例值：2025-06-18 19:55:54
+示例值：2025-05-18 19:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return LastEnableTime 最后启用时间，如果需要重建集群，修改该时间
-示例值：2025-06-18 19:55:54
+示例值：2025-05-18 19:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetLastEnableTime() const;
 
                     /**
                      * 设置最后启用时间，如果需要重建集群，修改该时间
-示例值：2025-06-18 19:55:54
+示例值：2025-05-18 19:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _lastEnableTime 最后启用时间，如果需要重建集群，修改该时间
-示例值：2025-06-18 19:55:54
+示例值：2025-05-18 19:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetLastEnableTime(const std::string& _lastEnableTime);
@@ -431,20 +447,24 @@ namespace TencentCloud
 
                     /**
                      * 加工任务创建时间
+示例值：2025-03-18 19:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 最近修改时间
-示例值：2025-06-18 16:55:54
+示例值：2025-04-18 16:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 最后启用时间，如果需要重建集群，修改该时间
-示例值：2025-06-18 19:55:54
+示例值：2025-05-18 19:55:54
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_lastEnableTime;
                     bool m_lastEnableTimeHasBeenSet;

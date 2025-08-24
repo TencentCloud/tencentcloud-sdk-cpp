@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用于审查任务的审查清单ID。
-                     * @return ChecklistId 用于审查任务的审查清单ID。
+                     * 获取用于审查任务的审查清单ID。注意：如果用户没有配置清单时此值可能为空，需要等大模型根据合同内容推荐出可以使用的审查清单。
+                     * @return ChecklistId 用于审查任务的审查清单ID。注意：如果用户没有配置清单时此值可能为空，需要等大模型根据合同内容推荐出可以使用的审查清单。
                      * 
                      */
                     std::string GetChecklistId() const;
@@ -148,8 +148,10 @@ namespace TencentCloud
                     bool RisksHasBeenSet() const;
 
                     /**
-                     * 获取合同审查中的角色信息。
-                     * @return Role 合同审查中的角色信息。
+                     * 获取合同审查中的角色信息。注意：注意：如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Role 合同审查中的角色信息。注意：注意：如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RiskIdentificationRoleInfo GetRole() const;
@@ -205,10 +207,42 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取审查任务备注信息，长度不能超过100个字符
+                     * @return Comment 审查任务备注信息，长度不能超过100个字符
+                     * 
+                     */
+                    std::string GetComment() const;
+
+                    /**
+                     * 判断参数 Comment 是否已赋值
+                     * @return Comment 是否已赋值
+                     * 
+                     */
+                    bool CommentHasBeenSet() const;
+
+                    /**
+                     * 获取调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
+                     * @return UserData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
+                     * 
+                     */
+                    std::string GetUserData() const;
+
+                    /**
+                     * 判断参数 UserData 是否已赋值
+                     * @return UserData 是否已赋值
+                     * 
+                     */
+                    bool UserDataHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用于审查任务的审查清单ID。
+                     * 用于审查任务的审查清单ID。注意：如果用户没有配置清单时此值可能为空，需要等大模型根据合同内容推荐出可以使用的审查清单。
                      */
                     std::string m_checklistId;
                     bool m_checklistIdHasBeenSet;
@@ -253,7 +287,8 @@ namespace TencentCloud
                     bool m_risksHasBeenSet;
 
                     /**
-                     * 合同审查中的角色信息。
+                     * 合同审查中的角色信息。注意：注意：如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RiskIdentificationRoleInfo m_role;
                     bool m_roleHasBeenSet;
@@ -277,6 +312,20 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 审查任务备注信息，长度不能超过100个字符
+                     */
+                    std::string m_comment;
+                    bool m_commentHasBeenSet;
+
+                    /**
+                     * 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。
+
+在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。
+                     */
+                    std::string m_userData;
+                    bool m_userDataHasBeenSet;
 
                 };
             }

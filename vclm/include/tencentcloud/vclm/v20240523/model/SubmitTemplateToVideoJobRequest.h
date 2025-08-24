@@ -185,6 +185,27 @@ namespace TencentCloud
                      */
                     bool ResolutionHasBeenSet() const;
 
+                    /**
+                     * 获取是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。
+                     * @return BGM 是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。
+                     * 
+                     */
+                    bool GetBGM() const;
+
+                    /**
+                     * 设置是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。
+                     * @param _bGM 是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。
+                     * 
+                     */
+                    void SetBGM(const bool& _bGM);
+
+                    /**
+                     * 判断参数 BGM 是否已赋值
+                     * @return BGM 是否已赋值
+                     * 
+                     */
+                    bool BGMHasBeenSet() const;
+
                 private:
 
                     /**
@@ -225,6 +246,12 @@ namespace TencentCloud
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
+
+                    /**
+                     * 是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。
+                     */
+                    bool m_bGM;
+                    bool m_bGMHasBeenSet;
 
                 };
             }

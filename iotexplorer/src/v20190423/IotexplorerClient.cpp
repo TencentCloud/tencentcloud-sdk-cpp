@@ -4125,6 +4125,49 @@ IotexplorerClient::DescribeTWeSeeConfigOutcomeCallable IotexplorerClient::Descri
     return task->get_future();
 }
 
+IotexplorerClient::DescribeTWeSeeRecognitionTaskOutcome IotexplorerClient::DescribeTWeSeeRecognitionTask(const DescribeTWeSeeRecognitionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTWeSeeRecognitionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTWeSeeRecognitionTaskResponse rsp = DescribeTWeSeeRecognitionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTWeSeeRecognitionTaskOutcome(rsp);
+        else
+            return DescribeTWeSeeRecognitionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTWeSeeRecognitionTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeTWeSeeRecognitionTaskAsync(const DescribeTWeSeeRecognitionTaskRequest& request, const DescribeTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTWeSeeRecognitionTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeTWeSeeRecognitionTaskOutcomeCallable IotexplorerClient::DescribeTWeSeeRecognitionTaskCallable(const DescribeTWeSeeRecognitionTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTWeSeeRecognitionTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTWeSeeRecognitionTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeTopicPolicyOutcome IotexplorerClient::DescribeTopicPolicy(const DescribeTopicPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopicPolicy");
