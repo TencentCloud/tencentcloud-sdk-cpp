@@ -27,6 +27,7 @@
 #include <tencentcloud/wedata/v20210820/model/BaseUser.h>
 #include <tencentcloud/wedata/v20210820/model/BaseTenant.h>
 #include <tencentcloud/wedata/v20210820/model/BaseClusterInfo.h>
+#include <tencentcloud/wedata/v20210820/model/WorkspaceExt.h>
 
 
 namespace TencentCloud
@@ -445,6 +446,31 @@ namespace TencentCloud
                      */
                     bool OwnerHasBeenSet() const;
 
+                    /**
+                     * 获取项目扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkspaceExt 项目扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<WorkspaceExt> GetWorkspaceExt() const;
+
+                    /**
+                     * 设置项目扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workspaceExt 项目扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkspaceExt(const std::vector<WorkspaceExt>& _workspaceExt);
+
+                    /**
+                     * 判断参数 WorkspaceExt 是否已赋值
+                     * @return WorkspaceExt 是否已赋值
+                     * 
+                     */
+                    bool WorkspaceExtHasBeenSet() const;
+
                 private:
 
                     /**
@@ -557,6 +583,13 @@ namespace TencentCloud
                      */
                     BaseUser m_owner;
                     bool m_ownerHasBeenSet;
+
+                    /**
+                     * 项目扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<WorkspaceExt> m_workspaceExt;
+                    bool m_workspaceExtHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ CreateSubscribeRequest::CreateSubscribeRequest() :
     m_autoRenewHasBeenSet(false),
     m_countHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_instanceClassHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string CreateSubscribeRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceClass";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceClass.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +230,22 @@ void CreateSubscribeRequest::SetName(const string& _name)
 bool CreateSubscribeRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string CreateSubscribeRequest::GetInstanceClass() const
+{
+    return m_instanceClass;
+}
+
+void CreateSubscribeRequest::SetInstanceClass(const string& _instanceClass)
+{
+    m_instanceClass = _instanceClass;
+    m_instanceClassHasBeenSet = true;
+}
+
+bool CreateSubscribeRequest::InstanceClassHasBeenSet() const
+{
+    return m_instanceClassHasBeenSet;
 }
 
 

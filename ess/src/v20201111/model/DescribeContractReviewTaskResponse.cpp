@@ -34,7 +34,9 @@ DescribeContractReviewTaskResponse::DescribeContractReviewTaskResponse() :
     m_statusHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_highRiskCountHasBeenSet(false),
+    m_totalRiskCountHasBeenSet(false)
 {
 }
 
@@ -199,6 +201,26 @@ CoreInternalOutcome DescribeContractReviewTaskResponse::Deserialize(const string
         m_userDataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HighRiskCount") && !rsp["HighRiskCount"].IsNull())
+    {
+        if (!rsp["HighRiskCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HighRiskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_highRiskCount = rsp["HighRiskCount"].GetInt64();
+        m_highRiskCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalRiskCount") && !rsp["TotalRiskCount"].IsNull())
+    {
+        if (!rsp["TotalRiskCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalRiskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalRiskCount = rsp["TotalRiskCount"].GetInt64();
+        m_totalRiskCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -303,6 +325,22 @@ string DescribeContractReviewTaskResponse::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_highRiskCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighRiskCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_highRiskCount, allocator);
+    }
+
+    if (m_totalRiskCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalRiskCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalRiskCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -425,6 +463,26 @@ string DescribeContractReviewTaskResponse::GetUserData() const
 bool DescribeContractReviewTaskResponse::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+int64_t DescribeContractReviewTaskResponse::GetHighRiskCount() const
+{
+    return m_highRiskCount;
+}
+
+bool DescribeContractReviewTaskResponse::HighRiskCountHasBeenSet() const
+{
+    return m_highRiskCountHasBeenSet;
+}
+
+int64_t DescribeContractReviewTaskResponse::GetTotalRiskCount() const
+{
+    return m_totalRiskCount;
+}
+
+bool DescribeContractReviewTaskResponse::TotalRiskCountHasBeenSet() const
+{
+    return m_totalRiskCountHasBeenSet;
 }
 
 

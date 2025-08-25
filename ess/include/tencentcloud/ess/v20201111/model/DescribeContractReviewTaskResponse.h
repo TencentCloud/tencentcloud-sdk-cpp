@@ -148,9 +148,9 @@ namespace TencentCloud
                     bool RisksHasBeenSet() const;
 
                     /**
-                     * 获取合同审查中的角色信息。注意：注意：如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。
+                     * 获取合同审查中的角色信息。注意： `如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。`
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Role 合同审查中的角色信息。注意：注意：如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。
+                     * @return Role 合同审查中的角色信息。注意： `如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。`
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -239,6 +239,34 @@ namespace TencentCloud
                      */
                     bool UserDataHasBeenSet() const;
 
+                    /**
+                     * 获取合同审查出的高风险项数量
+                     * @return HighRiskCount 合同审查出的高风险项数量
+                     * 
+                     */
+                    int64_t GetHighRiskCount() const;
+
+                    /**
+                     * 判断参数 HighRiskCount 是否已赋值
+                     * @return HighRiskCount 是否已赋值
+                     * 
+                     */
+                    bool HighRiskCountHasBeenSet() const;
+
+                    /**
+                     * 获取合同审查出的风险总数
+                     * @return TotalRiskCount 合同审查出的风险总数
+                     * 
+                     */
+                    int64_t GetTotalRiskCount() const;
+
+                    /**
+                     * 判断参数 TotalRiskCount 是否已赋值
+                     * @return TotalRiskCount 是否已赋值
+                     * 
+                     */
+                    bool TotalRiskCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,7 +315,7 @@ namespace TencentCloud
                     bool m_risksHasBeenSet;
 
                     /**
-                     * 合同审查中的角色信息。注意：注意：如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。
+                     * 合同审查中的角色信息。注意： `如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。`
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RiskIdentificationRoleInfo m_role;
@@ -326,6 +354,18 @@ namespace TencentCloud
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
+
+                    /**
+                     * 合同审查出的高风险项数量
+                     */
+                    int64_t m_highRiskCount;
+                    bool m_highRiskCountHasBeenSet;
+
+                    /**
+                     * 合同审查出的风险总数
+                     */
+                    int64_t m_totalRiskCount;
+                    bool m_totalRiskCountHasBeenSet;
 
                 };
             }

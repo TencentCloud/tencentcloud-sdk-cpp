@@ -566,6 +566,131 @@ namespace TencentCloud
                      */
                     bool CmdArgsHasBeenSet() const;
 
+                    /**
+                     * 获取使用虚拟核心秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VCoreSeconds 使用虚拟核心秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetVCoreSeconds() const;
+
+                    /**
+                     * 设置使用虚拟核心秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vCoreSeconds 使用虚拟核心秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVCoreSeconds(const uint64_t& _vCoreSeconds);
+
+                    /**
+                     * 判断参数 VCoreSeconds 是否已赋值
+                     * @return VCoreSeconds 是否已赋值
+                     * 
+                     */
+                    bool VCoreSecondsHasBeenSet() const;
+
+                    /**
+                     * 获取使用的内存秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MemorySeconds 使用的内存秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetMemorySeconds() const;
+
+                    /**
+                     * 设置使用的内存秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _memorySeconds 使用的内存秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMemorySeconds(const uint64_t& _memorySeconds);
+
+                    /**
+                     * 判断参数 MemorySeconds 是否已赋值
+                     * @return MemorySeconds 是否已赋值
+                     * 
+                     */
+                    bool MemorySecondsHasBeenSet() const;
+
+                    /**
+                     * 获取EMR用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmrUserName EMR用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEmrUserName() const;
+
+                    /**
+                     * 设置EMR用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _emrUserName EMR用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEmrUserName(const std::string& _emrUserName);
+
+                    /**
+                     * 判断参数 EmrUserName 是否已赋值
+                     * @return EmrUserName 是否已赋值
+                     * 
+                     */
+                    bool EmrUserNameHasBeenSet() const;
+
+                    /**
+                     * 获取任务的查询ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QueryId 任务的查询ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetQueryId() const;
+
+                    /**
+                     * 设置任务的查询ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _queryId 任务的查询ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQueryId(const std::string& _queryId);
+
+                    /**
+                     * 判断参数 QueryId 是否已赋值
+                     * @return QueryId 是否已赋值
+                     * 
+                     */
+                    bool QueryIdHasBeenSet() const;
+
+                    /**
+                     * 获取应用程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId 应用程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置应用程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationId 应用程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -712,6 +837,41 @@ namespace TencentCloud
                      */
                     std::string m_cmdArgs;
                     bool m_cmdArgsHasBeenSet;
+
+                    /**
+                     * 使用虚拟核心秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vCoreSeconds;
+                    bool m_vCoreSecondsHasBeenSet;
+
+                    /**
+                     * 使用的内存秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_memorySeconds;
+                    bool m_memorySecondsHasBeenSet;
+
+                    /**
+                     * EMR用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_emrUserName;
+                    bool m_emrUserNameHasBeenSet;
+
+                    /**
+                     * 任务的查询ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_queryId;
+                    bool m_queryIdHasBeenSet;
+
+                    /**
+                     * 应用程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
 
                 };
             }

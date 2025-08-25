@@ -1069,6 +1069,31 @@ namespace TencentCloud
                      */
                     bool ForbidProbeHasBeenSet() const;
 
+                    /**
+                     * 获取数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceType() const;
+
+                    /**
+                     * 设置数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceType(const std::string& _datasourceType);
+
+                    /**
+                     * 判断参数 DatasourceType 是否已赋值
+                     * @return DatasourceType 是否已赋值
+                     * 
+                     */
+                    bool DatasourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1356,6 +1381,13 @@ namespace TencentCloud
                      */
                     bool m_forbidProbe;
                     bool m_forbidProbeHasBeenSet;
+
+                    /**
+                     * 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceType;
+                    bool m_datasourceTypeHasBeenSet;
 
                 };
             }

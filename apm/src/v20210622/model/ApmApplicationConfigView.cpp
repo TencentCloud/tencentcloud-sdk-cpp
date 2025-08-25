@@ -39,7 +39,9 @@ ApmApplicationConfigView::ApmApplicationConfigView() :
     m_snapshotTimeoutHasBeenSet(false),
     m_agentEnableHasBeenSet(false),
     m_instrumentListHasBeenSet(false),
-    m_traceSquashHasBeenSet(false)
+    m_traceSquashHasBeenSet(false),
+    m_disableMemoryUsedHasBeenSet(false),
+    m_disableCpuUsedHasBeenSet(false)
 {
 }
 
@@ -248,6 +250,26 @@ CoreInternalOutcome ApmApplicationConfigView::Deserialize(const rapidjson::Value
         m_traceSquashHasBeenSet = true;
     }
 
+    if (value.HasMember("DisableMemoryUsed") && !value["DisableMemoryUsed"].IsNull())
+    {
+        if (!value["DisableMemoryUsed"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmApplicationConfigView.DisableMemoryUsed` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableMemoryUsed = value["DisableMemoryUsed"].GetInt64();
+        m_disableMemoryUsedHasBeenSet = true;
+    }
+
+    if (value.HasMember("DisableCpuUsed") && !value["DisableCpuUsed"].IsNull())
+    {
+        if (!value["DisableCpuUsed"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmApplicationConfigView.DisableCpuUsed` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableCpuUsed = value["DisableCpuUsed"].GetInt64();
+        m_disableCpuUsedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +434,22 @@ void ApmApplicationConfigView::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "TraceSquash";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_traceSquash, allocator);
+    }
+
+    if (m_disableMemoryUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableMemoryUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableMemoryUsed, allocator);
+    }
+
+    if (m_disableCpuUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableCpuUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableCpuUsed, allocator);
     }
 
 }
@@ -719,5 +757,37 @@ void ApmApplicationConfigView::SetTraceSquash(const bool& _traceSquash)
 bool ApmApplicationConfigView::TraceSquashHasBeenSet() const
 {
     return m_traceSquashHasBeenSet;
+}
+
+int64_t ApmApplicationConfigView::GetDisableMemoryUsed() const
+{
+    return m_disableMemoryUsed;
+}
+
+void ApmApplicationConfigView::SetDisableMemoryUsed(const int64_t& _disableMemoryUsed)
+{
+    m_disableMemoryUsed = _disableMemoryUsed;
+    m_disableMemoryUsedHasBeenSet = true;
+}
+
+bool ApmApplicationConfigView::DisableMemoryUsedHasBeenSet() const
+{
+    return m_disableMemoryUsedHasBeenSet;
+}
+
+int64_t ApmApplicationConfigView::GetDisableCpuUsed() const
+{
+    return m_disableCpuUsed;
+}
+
+void ApmApplicationConfigView::SetDisableCpuUsed(const int64_t& _disableCpuUsed)
+{
+    m_disableCpuUsed = _disableCpuUsed;
+    m_disableCpuUsedHasBeenSet = true;
+}
+
+bool ApmApplicationConfigView::DisableCpuUsedHasBeenSet() const
+{
+    return m_disableCpuUsedHasBeenSet;
 }
 

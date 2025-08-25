@@ -448,6 +448,62 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。
                      */
                     bool ExtraAttrHasBeenSet() const;
 
+                    /**
+                     * 获取数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     * @return SubscribeVersion 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     * 
+                     */
+                    std::string GetSubscribeVersion() const;
+
+                    /**
+                     * 判断参数 SubscribeVersion 是否已赋值
+                     * @return SubscribeVersion 是否已赋值
+                     * 
+                     */
+                    bool SubscribeVersionHasBeenSet() const;
+
+                    /**
+                     * 获取消费端地址所在vpc
+                     * @return ConsumerVpcId 消费端地址所在vpc
+                     * 
+                     */
+                    std::string GetConsumerVpcId() const;
+
+                    /**
+                     * 判断参数 ConsumerVpcId 是否已赋值
+                     * @return ConsumerVpcId 是否已赋值
+                     * 
+                     */
+                    bool ConsumerVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取消费端地址所在子网
+                     * @return ConsumerSubnetId 消费端地址所在子网
+                     * 
+                     */
+                    std::string GetConsumerSubnetId() const;
+
+                    /**
+                     * 判断参数 ConsumerSubnetId 是否已赋值
+                     * @return ConsumerSubnetId 是否已赋值
+                     * 
+                     */
+                    bool ConsumerSubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取订阅实例规格
+                     * @return InstanceClass 订阅实例规格
+                     * 
+                     */
+                    std::string GetInstanceClass() const;
+
+                    /**
+                     * 判断参数 InstanceClass 是否已赋值
+                     * @return InstanceClass 是否已赋值
+                     * 
+                     */
+                    bool InstanceClassHasBeenSet() const;
+
                 private:
 
                     /**
@@ -620,6 +676,30 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。
                      */
                     std::vector<KeyValuePairOption> m_extraAttr;
                     bool m_extraAttrHasBeenSet;
+
+                    /**
+                     * 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     */
+                    std::string m_subscribeVersion;
+                    bool m_subscribeVersionHasBeenSet;
+
+                    /**
+                     * 消费端地址所在vpc
+                     */
+                    std::string m_consumerVpcId;
+                    bool m_consumerVpcIdHasBeenSet;
+
+                    /**
+                     * 消费端地址所在子网
+                     */
+                    std::string m_consumerSubnetId;
+                    bool m_consumerSubnetIdHasBeenSet;
+
+                    /**
+                     * 订阅实例规格
+                     */
+                    std::string m_instanceClass;
+                    bool m_instanceClassHasBeenSet;
 
                 };
             }

@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool IsOnlyCurrentEditingVersionHasBeenSet() const;
 
+                    /**
+                     * 获取是否仅只返回生产使用版本
+                     * @return IsOnlyProductVersion 是否仅只返回生产使用版本
+                     * 
+                     */
+                    bool GetIsOnlyProductVersion() const;
+
+                    /**
+                     * 设置是否仅只返回生产使用版本
+                     * @param _isOnlyProductVersion 是否仅只返回生产使用版本
+                     * 
+                     */
+                    void SetIsOnlyProductVersion(const bool& _isOnlyProductVersion);
+
+                    /**
+                     * 判断参数 IsOnlyProductVersion 是否已赋值
+                     * @return IsOnlyProductVersion 是否已赋值
+                     * 
+                     */
+                    bool IsOnlyProductVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     bool m_isOnlyCurrentEditingVersion;
                     bool m_isOnlyCurrentEditingVersionHasBeenSet;
+
+                    /**
+                     * 是否仅只返回生产使用版本
+                     */
+                    bool m_isOnlyProductVersion;
+                    bool m_isOnlyProductVersionHasBeenSet;
 
                 };
             }

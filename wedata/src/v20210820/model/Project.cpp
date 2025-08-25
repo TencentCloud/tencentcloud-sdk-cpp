@@ -36,7 +36,8 @@ Project::Project() :
     m_statusHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_secondModuleListHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+    m_ownerHasBeenSet(false),
+    m_workspaceExtHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,26 @@ CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
         m_ownerHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkspaceExt") && !value["WorkspaceExt"].IsNull())
+    {
+        if (!value["WorkspaceExt"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Project.WorkspaceExt` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WorkspaceExt"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WorkspaceExt item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_workspaceExt.push_back(item);
+        }
+        m_workspaceExtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -404,6 +425,21 @@ void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_owner.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_workspaceExtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceExt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_workspaceExt.begin(); itr != m_workspaceExt.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -663,5 +699,21 @@ void Project::SetOwner(const BaseUser& _owner)
 bool Project::OwnerHasBeenSet() const
 {
     return m_ownerHasBeenSet;
+}
+
+vector<WorkspaceExt> Project::GetWorkspaceExt() const
+{
+    return m_workspaceExt;
+}
+
+void Project::SetWorkspaceExt(const vector<WorkspaceExt>& _workspaceExt)
+{
+    m_workspaceExt = _workspaceExt;
+    m_workspaceExtHasBeenSet = true;
+}
+
+bool Project::WorkspaceExtHasBeenSet() const
+{
+    return m_workspaceExtHasBeenSet;
 }
 

@@ -28,7 +28,8 @@ UploadResourceRequestInfo::UploadResourceRequestInfo() :
     m_newFileHasBeenSet(false),
     m_fileListHasBeenSet(false),
     m_fileSizeListHasBeenSet(false),
-    m_fileMd5HasBeenSet(false)
+    m_fileMd5HasBeenSet(false),
+    m_remotePathHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome UploadResourceRequestInfo::Deserialize(const rapidjson::Valu
         m_fileMd5HasBeenSet = true;
     }
 
+    if (value.HasMember("RemotePath") && !value["RemotePath"].IsNull())
+    {
+        if (!value["RemotePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UploadResourceRequestInfo.RemotePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remotePath = string(value["RemotePath"].GetString());
+        m_remotePathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ void UploadResourceRequestInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "FileMd5";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileMd5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remotePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemotePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remotePath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -333,5 +352,21 @@ void UploadResourceRequestInfo::SetFileMd5(const string& _fileMd5)
 bool UploadResourceRequestInfo::FileMd5HasBeenSet() const
 {
     return m_fileMd5HasBeenSet;
+}
+
+string UploadResourceRequestInfo::GetRemotePath() const
+{
+    return m_remotePath;
+}
+
+void UploadResourceRequestInfo::SetRemotePath(const string& _remotePath)
+{
+    m_remotePath = _remotePath;
+    m_remotePathHasBeenSet = true;
+}
+
+bool UploadResourceRequestInfo::RemotePathHasBeenSet() const
+{
+    return m_remotePathHasBeenSet;
 }
 

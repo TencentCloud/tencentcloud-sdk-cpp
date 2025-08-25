@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/AlarmIndicatorInfo.h>
 #include <tencentcloud/wedata/v20210820/model/QuietPeriod.h>
+#include <tencentcloud/wedata/v20210820/model/AlarmReceiverGroup.h>
 
 
 namespace TencentCloud
@@ -916,6 +917,56 @@ namespace TencentCloud
                      */
                     bool ReportTargetHasBeenSet() const;
 
+                    /**
+                     * 获取告警接收组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmReceiverGroups 告警接收组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AlarmReceiverGroup> GetAlarmReceiverGroups() const;
+
+                    /**
+                     * 设置告警接收组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmReceiverGroups 告警接收组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmReceiverGroups(const std::vector<AlarmReceiverGroup>& _alarmReceiverGroups);
+
+                    /**
+                     * 判断参数 AlarmReceiverGroups 是否已赋值
+                     * @return AlarmReceiverGroups 是否已赋值
+                     * 
+                     */
+                    bool AlarmReceiverGroupsHasBeenSet() const;
+
+                    /**
+                     * 获取告警接收组标记，0代表历史版本，1代表新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmReceiverGroupFlag 告警接收组标记，0代表历史版本，1代表新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAlarmReceiverGroupFlag() const;
+
+                    /**
+                     * 设置告警接收组标记，0代表历史版本，1代表新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmReceiverGroupFlag 告警接收组标记，0代表历史版本，1代表新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmReceiverGroupFlag(const uint64_t& _alarmReceiverGroupFlag);
+
+                    /**
+                     * 判断参数 AlarmReceiverGroupFlag 是否已赋值
+                     * @return AlarmReceiverGroupFlag 是否已赋值
+                     * 
+                     */
+                    bool AlarmReceiverGroupFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1161,6 +1212,20 @@ namespace TencentCloud
                      */
                     int64_t m_reportTarget;
                     bool m_reportTargetHasBeenSet;
+
+                    /**
+                     * 告警接收组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AlarmReceiverGroup> m_alarmReceiverGroups;
+                    bool m_alarmReceiverGroupsHasBeenSet;
+
+                    /**
+                     * 告警接收组标记，0代表历史版本，1代表新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_alarmReceiverGroupFlag;
+                    bool m_alarmReceiverGroupFlagHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/CommitTaskDataDto.h>
 
 
 namespace TencentCloud
@@ -57,6 +58,22 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取数据结构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataDto 数据结构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CommitTaskDataDto GetDataDto() const;
+
+                    /**
+                     * 判断参数 DataDto 是否已赋值
+                     * @return DataDto 是否已赋值
+                     * 
+                     */
+                    bool DataDtoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +81,13 @@ namespace TencentCloud
                      */
                     bool m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 数据结构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CommitTaskDataDto m_dataDto;
+                    bool m_dataDtoHasBeenSet;
 
                 };
             }

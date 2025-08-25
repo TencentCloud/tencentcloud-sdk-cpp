@@ -121,7 +121,9 @@ TaskDsDTO::TaskDsDTO() :
     m_concurrentStrategyHasBeenSet(false),
     m_scheduleTimeZoneHasBeenSet(false),
     m_templateIdHasBeenSet(false),
-    m_allowRedoTypeHasBeenSet(false)
+    m_allowRedoTypeHasBeenSet(false),
+    m_bundleIdHasBeenSet(false),
+    m_bundleNameHasBeenSet(false)
 {
 }
 
@@ -1244,6 +1246,26 @@ CoreInternalOutcome TaskDsDTO::Deserialize(const rapidjson::Value &value)
         m_allowRedoTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("BundleId") && !value["BundleId"].IsNull())
+    {
+        if (!value["BundleId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDsDTO.BundleId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bundleId = string(value["BundleId"].GetString());
+        m_bundleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BundleName") && !value["BundleName"].IsNull())
+    {
+        if (!value["BundleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDsDTO.BundleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bundleName = string(value["BundleName"].GetString());
+        m_bundleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2122,6 +2144,22 @@ void TaskDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "AllowRedoType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_allowRedoType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BundleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BundleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3741,5 +3779,37 @@ void TaskDsDTO::SetAllowRedoType(const string& _allowRedoType)
 bool TaskDsDTO::AllowRedoTypeHasBeenSet() const
 {
     return m_allowRedoTypeHasBeenSet;
+}
+
+string TaskDsDTO::GetBundleId() const
+{
+    return m_bundleId;
+}
+
+void TaskDsDTO::SetBundleId(const string& _bundleId)
+{
+    m_bundleId = _bundleId;
+    m_bundleIdHasBeenSet = true;
+}
+
+bool TaskDsDTO::BundleIdHasBeenSet() const
+{
+    return m_bundleIdHasBeenSet;
+}
+
+string TaskDsDTO::GetBundleName() const
+{
+    return m_bundleName;
+}
+
+void TaskDsDTO::SetBundleName(const string& _bundleName)
+{
+    m_bundleName = _bundleName;
+    m_bundleNameHasBeenSet = true;
+}
+
+bool TaskDsDTO::BundleNameHasBeenSet() const
+{
+    return m_bundleNameHasBeenSet;
 }
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/wedata/v20210820/model/DescribeTaskByCycleReportResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTestRunningRecordResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,12 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
-DescribeTaskByCycleReportResponse::DescribeTaskByCycleReportResponse() :
+DescribeTestRunningRecordResponse::DescribeTestRunningRecordResponse() :
     m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeTaskByCycleReportResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeTestRunningRecordResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeTaskByCycleReportResponse::Deserialize(const string 
         const rapidjson::Value &tmpValue = rsp["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TaskByStatus item;
+            TestRunningRecord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -86,7 +86,7 @@ CoreInternalOutcome DescribeTaskByCycleReportResponse::Deserialize(const string 
     return CoreInternalOutcome(true);
 }
 
-string DescribeTaskByCycleReportResponse::ToJsonString() const
+string DescribeTestRunningRecordResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -119,12 +119,12 @@ string DescribeTaskByCycleReportResponse::ToJsonString() const
 }
 
 
-vector<TaskByStatus> DescribeTaskByCycleReportResponse::GetData() const
+vector<TestRunningRecord> DescribeTestRunningRecordResponse::GetData() const
 {
     return m_data;
 }
 
-bool DescribeTaskByCycleReportResponse::DataHasBeenSet() const
+bool DescribeTestRunningRecordResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
 }

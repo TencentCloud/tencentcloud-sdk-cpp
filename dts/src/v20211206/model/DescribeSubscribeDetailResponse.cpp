@@ -51,7 +51,11 @@ DescribeSubscribeDetailResponse::DescribeSubscribeDetailResponse() :
     m_pipelineInfoHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_errorsHasBeenSet(false),
-    m_extraAttrHasBeenSet(false)
+    m_extraAttrHasBeenSet(false),
+    m_subscribeVersionHasBeenSet(false),
+    m_consumerVpcIdHasBeenSet(false),
+    m_consumerSubnetIdHasBeenSet(false),
+    m_instanceClassHasBeenSet(false)
 {
 }
 
@@ -436,6 +440,46 @@ CoreInternalOutcome DescribeSubscribeDetailResponse::Deserialize(const string &p
         m_extraAttrHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SubscribeVersion") && !rsp["SubscribeVersion"].IsNull())
+    {
+        if (!rsp["SubscribeVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubscribeVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscribeVersion = string(rsp["SubscribeVersion"].GetString());
+        m_subscribeVersionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ConsumerVpcId") && !rsp["ConsumerVpcId"].IsNull())
+    {
+        if (!rsp["ConsumerVpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumerVpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerVpcId = string(rsp["ConsumerVpcId"].GetString());
+        m_consumerVpcIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ConsumerSubnetId") && !rsp["ConsumerSubnetId"].IsNull())
+    {
+        if (!rsp["ConsumerSubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumerSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerSubnetId = string(rsp["ConsumerSubnetId"].GetString());
+        m_consumerSubnetIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InstanceClass") && !rsp["InstanceClass"].IsNull())
+    {
+        if (!rsp["InstanceClass"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceClass` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceClass = string(rsp["InstanceClass"].GetString());
+        m_instanceClassHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -711,6 +755,38 @@ string DescribeSubscribeDetailResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_subscribeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscribeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subscribeVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumerVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumerVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumerSubnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumerSubnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceClass.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1003,6 +1079,46 @@ vector<KeyValuePairOption> DescribeSubscribeDetailResponse::GetExtraAttr() const
 bool DescribeSubscribeDetailResponse::ExtraAttrHasBeenSet() const
 {
     return m_extraAttrHasBeenSet;
+}
+
+string DescribeSubscribeDetailResponse::GetSubscribeVersion() const
+{
+    return m_subscribeVersion;
+}
+
+bool DescribeSubscribeDetailResponse::SubscribeVersionHasBeenSet() const
+{
+    return m_subscribeVersionHasBeenSet;
+}
+
+string DescribeSubscribeDetailResponse::GetConsumerVpcId() const
+{
+    return m_consumerVpcId;
+}
+
+bool DescribeSubscribeDetailResponse::ConsumerVpcIdHasBeenSet() const
+{
+    return m_consumerVpcIdHasBeenSet;
+}
+
+string DescribeSubscribeDetailResponse::GetConsumerSubnetId() const
+{
+    return m_consumerSubnetId;
+}
+
+bool DescribeSubscribeDetailResponse::ConsumerSubnetIdHasBeenSet() const
+{
+    return m_consumerSubnetIdHasBeenSet;
+}
+
+string DescribeSubscribeDetailResponse::GetInstanceClass() const
+{
+    return m_instanceClass;
+}
+
+bool DescribeSubscribeDetailResponse::InstanceClassHasBeenSet() const
+{
+    return m_instanceClassHasBeenSet;
 }
 
 

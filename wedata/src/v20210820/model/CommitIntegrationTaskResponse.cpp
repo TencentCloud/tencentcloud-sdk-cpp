@@ -24,7 +24,8 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 CommitIntegrationTaskResponse::CommitIntegrationTaskResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_dataDtoHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,23 @@ CoreInternalOutcome CommitIntegrationTaskResponse::Deserialize(const string &pay
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DataDto") && !rsp["DataDto"].IsNull())
+    {
+        if (!rsp["DataDto"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataDto` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dataDto.Deserialize(rsp["DataDto"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataDtoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ string CommitIntegrationTaskResponse::ToJsonString() const
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_data, allocator);
+    }
+
+    if (m_dataDtoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataDto";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dataDto.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +137,16 @@ bool CommitIntegrationTaskResponse::GetData() const
 bool CommitIntegrationTaskResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+CommitTaskDataDto CommitIntegrationTaskResponse::GetDataDto() const
+{
+    return m_dataDto;
+}
+
+bool CommitIntegrationTaskResponse::DataDtoHasBeenSet() const
+{
+    return m_dataDtoHasBeenSet;
 }
 
 

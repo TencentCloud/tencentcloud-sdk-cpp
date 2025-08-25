@@ -28,7 +28,8 @@ DescribePendingSubmitTaskInfo::DescribePendingSubmitTaskInfo() :
     m_submitPreCheckHasBeenSet(false),
     m_submitPreCheckDetailListHasBeenSet(false),
     m_executorGroupIdHasBeenSet(false),
-    m_executorGroupNameHasBeenSet(false)
+    m_executorGroupNameHasBeenSet(false),
+    m_taskTypeIdHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome DescribePendingSubmitTaskInfo::Deserialize(const rapidjson::
         m_executorGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskTypeId") && !value["TaskTypeId"].IsNull())
+    {
+        if (!value["TaskTypeId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribePendingSubmitTaskInfo.TaskTypeId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskTypeId = value["TaskTypeId"].GetInt64();
+        m_taskTypeIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void DescribePendingSubmitTaskInfo::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "ExecutorGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executorGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskTypeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskTypeId, allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void DescribePendingSubmitTaskInfo::SetExecutorGroupName(const string& _executor
 bool DescribePendingSubmitTaskInfo::ExecutorGroupNameHasBeenSet() const
 {
     return m_executorGroupNameHasBeenSet;
+}
+
+int64_t DescribePendingSubmitTaskInfo::GetTaskTypeId() const
+{
+    return m_taskTypeId;
+}
+
+void DescribePendingSubmitTaskInfo::SetTaskTypeId(const int64_t& _taskTypeId)
+{
+    m_taskTypeId = _taskTypeId;
+    m_taskTypeIdHasBeenSet = true;
+}
+
+bool DescribePendingSubmitTaskInfo::TaskTypeIdHasBeenSet() const
+{
+    return m_taskTypeIdHasBeenSet;
 }
 

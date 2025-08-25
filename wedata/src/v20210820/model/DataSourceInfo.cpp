@@ -61,7 +61,8 @@ DataSourceInfo::DataSourceInfo() :
     m_datasourceUrnHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_dataSourceEnvInfosHasBeenSet(false),
-    m_forbidProbeHasBeenSet(false)
+    m_forbidProbeHasBeenSet(false),
+    m_datasourceTypeHasBeenSet(false)
 {
 }
 
@@ -497,6 +498,16 @@ CoreInternalOutcome DataSourceInfo::Deserialize(const rapidjson::Value &value)
         m_forbidProbeHasBeenSet = true;
     }
 
+    if (value.HasMember("DatasourceType") && !value["DatasourceType"].IsNull())
+    {
+        if (!value["DatasourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.DatasourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceType = string(value["DatasourceType"].GetString());
+        m_datasourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -838,6 +849,14 @@ void DataSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ForbidProbe";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forbidProbe, allocator);
+    }
+
+    if (m_datasourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1497,5 +1516,21 @@ void DataSourceInfo::SetForbidProbe(const bool& _forbidProbe)
 bool DataSourceInfo::ForbidProbeHasBeenSet() const
 {
     return m_forbidProbeHasBeenSet;
+}
+
+string DataSourceInfo::GetDatasourceType() const
+{
+    return m_datasourceType;
+}
+
+void DataSourceInfo::SetDatasourceType(const string& _datasourceType)
+{
+    m_datasourceType = _datasourceType;
+    m_datasourceTypeHasBeenSet = true;
+}
+
+bool DataSourceInfo::DatasourceTypeHasBeenSet() const
+{
+    return m_datasourceTypeHasBeenSet;
 }
 

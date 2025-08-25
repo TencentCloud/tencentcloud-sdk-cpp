@@ -190,6 +190,27 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取订阅实例规格，当前仅支持small、medium、large
+                     * @return InstanceClass 订阅实例规格，当前仅支持small、medium、large
+                     * 
+                     */
+                    std::string GetInstanceClass() const;
+
+                    /**
+                     * 设置订阅实例规格，当前仅支持small、medium、large
+                     * @param _instanceClass 订阅实例规格，当前仅支持small、medium、large
+                     * 
+                     */
+                    void SetInstanceClass(const std::string& _instanceClass);
+
+                    /**
+                     * 判断参数 InstanceClass 是否已赋值
+                     * @return InstanceClass 是否已赋值
+                     * 
+                     */
+                    bool InstanceClassHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 订阅实例规格，当前仅支持small、medium、large
+                     */
+                    std::string m_instanceClass;
+                    bool m_instanceClassHasBeenSet;
 
                 };
             }

@@ -205,8 +205,6 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeDependTaskListsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDimensionScoreRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDimensionScoreResponse.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeDrInstancePageRequest.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeDrInstancePageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsFolderTreeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsFolderTreeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsParentFolderTreeRequest.h>
@@ -395,8 +393,6 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskAlarmRegulationsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskByCycleRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskByCycleResponse.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeTaskByCycleReportRequest.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeTaskByCycleReportResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskByStatusReportRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskByStatusReportResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailDsRequest.h>
@@ -421,6 +417,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTenantProjectsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTenantProjectsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTestRunningRecordRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTestRunningRecordResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeThirdTaskRunLogRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeThirdTaskRunLogResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTopTableStatRequest.h>
@@ -906,9 +904,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDimensionScoreResponse> DescribeDimensionScoreOutcome;
                 typedef std::future<DescribeDimensionScoreOutcome> DescribeDimensionScoreOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDimensionScoreRequest&, DescribeDimensionScoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDimensionScoreAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDrInstancePageResponse> DescribeDrInstancePageOutcome;
-                typedef std::future<DescribeDrInstancePageOutcome> DescribeDrInstancePageOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::DescribeDrInstancePageRequest&, DescribeDrInstancePageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrInstancePageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDsFolderTreeResponse> DescribeDsFolderTreeOutcome;
                 typedef std::future<DescribeDsFolderTreeOutcome> DescribeDsFolderTreeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDsFolderTreeRequest&, DescribeDsFolderTreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsFolderTreeAsyncHandler;
@@ -1191,9 +1186,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskByCycleResponse> DescribeTaskByCycleOutcome;
                 typedef std::future<DescribeTaskByCycleOutcome> DescribeTaskByCycleOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskByCycleRequest&, DescribeTaskByCycleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskByCycleAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTaskByCycleReportResponse> DescribeTaskByCycleReportOutcome;
-                typedef std::future<DescribeTaskByCycleReportOutcome> DescribeTaskByCycleReportOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::DescribeTaskByCycleReportRequest&, DescribeTaskByCycleReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskByCycleReportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskByStatusReportResponse> DescribeTaskByStatusReportOutcome;
                 typedef std::future<DescribeTaskByStatusReportOutcome> DescribeTaskByStatusReportOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskByStatusReportRequest&, DescribeTaskByStatusReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskByStatusReportAsyncHandler;
@@ -1230,6 +1222,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTenantProjectsResponse> DescribeTenantProjectsOutcome;
                 typedef std::future<DescribeTenantProjectsOutcome> DescribeTenantProjectsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTenantProjectsRequest&, DescribeTenantProjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantProjectsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTestRunningRecordResponse> DescribeTestRunningRecordOutcome;
+                typedef std::future<DescribeTestRunningRecordOutcome> DescribeTestRunningRecordOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTestRunningRecordRequest&, DescribeTestRunningRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTestRunningRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeThirdTaskRunLogResponse> DescribeThirdTaskRunLogOutcome;
                 typedef std::future<DescribeThirdTaskRunLogOutcome> DescribeThirdTaskRunLogOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeThirdTaskRunLogRequest&, DescribeThirdTaskRunLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThirdTaskRunLogAsyncHandler;
@@ -2350,17 +2345,6 @@ namespace TencentCloud
                 DescribeDimensionScoreOutcomeCallable DescribeDimensionScoreCallable(const Model::DescribeDimensionScoreRequest& request);
 
                 /**
-                 *无效API，没有上线过的业务功能
-
-分页查询试运行实例列表
-                 * @param req DescribeDrInstancePageRequest
-                 * @return DescribeDrInstancePageOutcome
-                 */
-                DescribeDrInstancePageOutcome DescribeDrInstancePage(const Model::DescribeDrInstancePageRequest &request);
-                void DescribeDrInstancePageAsync(const Model::DescribeDrInstancePageRequest& request, const DescribeDrInstancePageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDrInstancePageOutcomeCallable DescribeDrInstancePageCallable(const Model::DescribeDrInstancePageRequest& request);
-
-                /**
                  *查询目录树
                  * @param req DescribeDsFolderTreeRequest
                  * @return DescribeDsFolderTreeOutcome
@@ -3210,19 +3194,6 @@ namespace TencentCloud
                 DescribeTaskByCycleOutcomeCallable DescribeTaskByCycleCallable(const Model::DescribeTaskByCycleRequest& request);
 
                 /**
-                 *能够调通但该API已经没有使用了，看北京数据最后一次上报是23年10月，有接近一千万条数据历史无效数据。当前策略，云API示例修订然后已经分析出来的无效API走预下线流程。
-https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20&action=DescribeTaskByCycleReport
-这两天在分析API的时候 有较多运维大屏的原始API当前已经没有使用了，但API没有下线。预计需要专项去梳理这一系列待下线API。
-
-任务状态周期增长趋势
-                 * @param req DescribeTaskByCycleReportRequest
-                 * @return DescribeTaskByCycleReportOutcome
-                 */
-                DescribeTaskByCycleReportOutcome DescribeTaskByCycleReport(const Model::DescribeTaskByCycleReportRequest &request);
-                void DescribeTaskByCycleReportAsync(const Model::DescribeTaskByCycleReportRequest& request, const DescribeTaskByCycleReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTaskByCycleReportOutcomeCallable DescribeTaskByCycleReportCallable(const Model::DescribeTaskByCycleReportRequest& request);
-
-                /**
                  *任务状态趋势
                  * @param req DescribeTaskByStatusReportRequest
                  * @return DescribeTaskByStatusReportOutcome
@@ -3329,6 +3300,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 DescribeTenantProjectsOutcome DescribeTenantProjects(const Model::DescribeTenantProjectsRequest &request);
                 void DescribeTenantProjectsAsync(const Model::DescribeTenantProjectsRequest& request, const DescribeTenantProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTenantProjectsOutcomeCallable DescribeTenantProjectsCallable(const Model::DescribeTenantProjectsRequest& request);
+
+                /**
+                 *获取编排空间试运行历史
+                 * @param req DescribeTestRunningRecordRequest
+                 * @return DescribeTestRunningRecordOutcome
+                 */
+                DescribeTestRunningRecordOutcome DescribeTestRunningRecord(const Model::DescribeTestRunningRecordRequest &request);
+                void DescribeTestRunningRecordAsync(const Model::DescribeTestRunningRecordRequest& request, const DescribeTestRunningRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTestRunningRecordOutcomeCallable DescribeTestRunningRecordCallable(const Model::DescribeTestRunningRecordRequest& request);
 
                 /**
                  *获取第三方运行日志

@@ -48,7 +48,9 @@ RunRerunScheduleInstancesRequest::RunRerunScheduleInstancesRequest() :
     m_sameSelfWorkflowDependTypeHasBeenSet(false),
     m_selfWorkflowDependencyHasBeenSet(false),
     m_dataTimeOrderHasBeenSet(false),
-    m_reDoParamsHasBeenSet(false)
+    m_reDoParamsHasBeenSet(false),
+    m_mapParamListHasBeenSet(false),
+    m_appParamHasBeenSet(false)
 {
 }
 
@@ -274,6 +276,29 @@ string RunRerunScheduleInstancesRequest::ToJsonString() const
         string key = "ReDoParams";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_reDoParams.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mapParamListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MapParamList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_mapParamList.begin(); itr != m_mapParamList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_appParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appParam.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -698,6 +723,38 @@ void RunRerunScheduleInstancesRequest::SetReDoParams(const string& _reDoParams)
 bool RunRerunScheduleInstancesRequest::ReDoParamsHasBeenSet() const
 {
     return m_reDoParamsHasBeenSet;
+}
+
+vector<StrToStrMap> RunRerunScheduleInstancesRequest::GetMapParamList() const
+{
+    return m_mapParamList;
+}
+
+void RunRerunScheduleInstancesRequest::SetMapParamList(const vector<StrToStrMap>& _mapParamList)
+{
+    m_mapParamList = _mapParamList;
+    m_mapParamListHasBeenSet = true;
+}
+
+bool RunRerunScheduleInstancesRequest::MapParamListHasBeenSet() const
+{
+    return m_mapParamListHasBeenSet;
+}
+
+string RunRerunScheduleInstancesRequest::GetAppParam() const
+{
+    return m_appParam;
+}
+
+void RunRerunScheduleInstancesRequest::SetAppParam(const string& _appParam)
+{
+    m_appParam = _appParam;
+    m_appParamHasBeenSet = true;
+}
+
+bool RunRerunScheduleInstancesRequest::AppParamHasBeenSet() const
+{
+    return m_appParamHasBeenSet;
 }
 
 

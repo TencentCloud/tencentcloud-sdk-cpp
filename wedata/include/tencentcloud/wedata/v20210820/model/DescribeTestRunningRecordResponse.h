@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBETASKBYCYCLEREPORTRESPONSE_H_
-#define TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBETASKBYCYCLEREPORTRESPONSE_H_
+#ifndef TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBETESTRUNNINGRECORDRESPONSE_H_
+#define TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBETESTRUNNINGRECORDRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/wedata/v20210820/model/TaskByStatus.h>
+#include <tencentcloud/wedata/v20210820/model/TestRunningRecord.h>
 
 
 namespace TencentCloud
@@ -33,25 +33,25 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeTaskByCycleReport返回参数结构体
+                * DescribeTestRunningRecord返回参数结构体
                 */
-                class DescribeTaskByCycleReportResponse : public AbstractModel
+                class DescribeTestRunningRecordResponse : public AbstractModel
                 {
                 public:
-                    DescribeTaskByCycleReportResponse();
-                    ~DescribeTaskByCycleReportResponse() = default;
+                    DescribeTestRunningRecordResponse();
+                    ~DescribeTestRunningRecordResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务周期增长趋势统计
+                     * 获取编排空间试运行任务
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 任务周期增长趋势统计
+                     * @return Data 编排空间试运行任务
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<TaskByStatus> GetData() const;
+                    std::vector<TestRunningRecord> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
@@ -63,10 +63,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务周期增长趋势统计
+                     * 编排空间试运行任务
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<TaskByStatus> m_data;
+                    std::vector<TestRunningRecord> m_data;
                     bool m_dataHasBeenSet;
 
                 };
@@ -75,4 +75,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBETASKBYCYCLEREPORTRESPONSE_H_
+#endif // !TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBETESTRUNNINGRECORDRESPONSE_H_
