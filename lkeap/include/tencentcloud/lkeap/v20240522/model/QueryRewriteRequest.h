@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写
-                     * @return Messages 需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写
+                     * 获取说明：需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入
+备注：由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写。四轮对话最多包含3600个字符。
+                     * @return Messages 说明：需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入
+备注：由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写。四轮对话最多包含3600个字符。
                      * 
                      */
                     std::vector<Message> GetMessages() const;
 
                     /**
-                     * 设置需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写
-                     * @param _messages 需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写
+                     * 设置说明：需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入
+备注：由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写。四轮对话最多包含3600个字符。
+                     * @param _messages 说明：需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入
+备注：由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写。四轮对话最多包含3600个字符。
                      * 
                      */
                     void SetMessages(const std::vector<Message>& _messages);
@@ -65,15 +69,23 @@ namespace TencentCloud
                     bool MessagesHasBeenSet() const;
 
                     /**
-                     * 获取模型名称
-                     * @return Model 模型名称
+                     * 获取说明：模型名称
+备注：仅一个模型可选
+默认值：lke-query-rewrite-base
+                     * @return Model 说明：模型名称
+备注：仅一个模型可选
+默认值：lke-query-rewrite-base
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _model 模型名称
+                     * 设置说明：模型名称
+备注：仅一个模型可选
+默认值：lke-query-rewrite-base
+                     * @param _model 说明：模型名称
+备注：仅一个模型可选
+默认值：lke-query-rewrite-base
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -88,13 +100,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写
+                     * 说明：需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入
+备注：由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写。四轮对话最多包含3600个字符。
                      */
                     std::vector<Message> m_messages;
                     bool m_messagesHasBeenSet;
 
                     /**
-                     * 模型名称
+                     * 说明：模型名称
+备注：仅一个模型可选
+默认值：lke-query-rewrite-base
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;

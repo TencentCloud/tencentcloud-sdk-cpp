@@ -263,15 +263,15 @@ namespace TencentCloud
                     bool FailTypeHasBeenSet() const;
 
                     /**
-                     * 获取刷新、预热失败描述。
-                     * @return FailMessage 刷新、预热失败描述。
+                     * 获取清除缓存、预热缓存的失败原因描述。
+                     * @return FailMessage 清除缓存、预热缓存的失败原因描述。
                      * 
                      */
                     std::string GetFailMessage() const;
 
                     /**
-                     * 设置刷新、预热失败描述。
-                     * @param _failMessage 刷新、预热失败描述。
+                     * 设置清除缓存、预热缓存的失败原因描述。
+                     * @param _failMessage 清除缓存、预热缓存的失败原因描述。
                      * 
                      */
                     void SetFailMessage(const std::string& _failMessage);
@@ -346,7 +346,7 @@ namespace TencentCloud
                     bool m_failTypeHasBeenSet;
 
                     /**
-                     * 刷新、预热失败描述。
+                     * 清除缓存、预热缓存的失败原因描述。
                      */
                     std::string m_failMessage;
                     bool m_failMessageHasBeenSet;

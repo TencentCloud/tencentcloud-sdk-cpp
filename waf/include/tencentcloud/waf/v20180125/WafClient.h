@@ -331,6 +331,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyProtectionLevelRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyProtectionLevelResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifySpartaProtectionRequest.h>
@@ -849,6 +851,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyOwaspWhiteRuleResponse> ModifyOwaspWhiteRuleOutcome;
                 typedef std::future<ModifyOwaspWhiteRuleOutcome> ModifyOwaspWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyOwaspWhiteRuleRequest&, ModifyOwaspWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyProtectionLevelResponse> ModifyProtectionLevelOutcome;
+                typedef std::future<ModifyProtectionLevelOutcome> ModifyProtectionLevelOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyProtectionLevelRequest&, ModifyProtectionLevelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProtectionLevelAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProtectionStatusResponse> ModifyProtectionStatusOutcome;
                 typedef std::future<ModifyProtectionStatusOutcome> ModifyProtectionStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyProtectionStatusRequest&, ModifyProtectionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProtectionStatusAsyncHandler;
@@ -2303,6 +2308,15 @@ namespace TencentCloud
                 ModifyOwaspWhiteRuleOutcome ModifyOwaspWhiteRule(const Model::ModifyOwaspWhiteRuleRequest &request);
                 void ModifyOwaspWhiteRuleAsync(const Model::ModifyOwaspWhiteRuleRequest& request, const ModifyOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyOwaspWhiteRuleOutcomeCallable ModifyOwaspWhiteRuleCallable(const Model::ModifyOwaspWhiteRuleRequest& request);
+
+                /**
+                 *更改防护等级
+                 * @param req ModifyProtectionLevelRequest
+                 * @return ModifyProtectionLevelOutcome
+                 */
+                ModifyProtectionLevelOutcome ModifyProtectionLevel(const Model::ModifyProtectionLevelRequest &request);
+                void ModifyProtectionLevelAsync(const Model::ModifyProtectionLevelRequest& request, const ModifyProtectionLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyProtectionLevelOutcomeCallable ModifyProtectionLevelCallable(const Model::ModifyProtectionLevelRequest& request);
 
                 /**
                  *开启、关闭WAF开关

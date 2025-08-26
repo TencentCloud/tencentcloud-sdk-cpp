@@ -191,15 +191,15 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                     bool ModerationSupplierParamHasBeenSet() const;
 
                     /**
-                     * 获取是否保存命中文件 0 默认不保存  1 保存命中文件
-                     * @return SaveModerationFile 是否保存命中文件 0 默认不保存  1 保存命中文件
+                     * 获取是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件
+                     * @return SaveModerationFile 是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件
                      * 
                      */
                     uint64_t GetSaveModerationFile() const;
 
                     /**
-                     * 设置是否保存命中文件 0 默认不保存  1 保存命中文件
-                     * @param _saveModerationFile 是否保存命中文件 0 默认不保存  1 保存命中文件
+                     * 设置是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件
+                     * @param _saveModerationFile 是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件
                      * 
                      */
                     void SetSaveModerationFile(const uint64_t& _saveModerationFile);
@@ -296,7 +296,7 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                     bool m_moderationSupplierParamHasBeenSet;
 
                     /**
-                     * 是否保存命中文件 0 默认不保存  1 保存命中文件
+                     * 是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件
                      */
                     uint64_t m_saveModerationFile;
                     bool m_saveModerationFileHasBeenSet;

@@ -103,12 +103,16 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeFileDownloadUrlResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeFlowRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeFlowResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeInstanceSSLAttributesRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeInstanceSSLAttributesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeLogFileRetentionPeriodRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeLogFileRetentionPeriodResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOnlineDDLJobRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOnlineDDLJobResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeProcessListRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeProcessListResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeProjectsRequest.h>
@@ -159,6 +163,10 @@
 #include <tencentcloud/dcdb/v20180411/model/ModifyDBSyncModeResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyInstanceNetworkRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyInstanceNetworkResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyInstanceProtectedPropertyRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyInstanceProtectedPropertyResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyInstanceSSLAttributesRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyInstanceSSLAttributesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyInstanceVipRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyInstanceVipResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyInstanceVportRequest.h>
@@ -315,6 +323,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlowResponse> DescribeFlowOutcome;
                 typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeFlowRequest&, DescribeFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceSSLAttributesResponse> DescribeInstanceSSLAttributesOutcome;
+                typedef std::future<DescribeInstanceSSLAttributesOutcome> DescribeInstanceSSLAttributesOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeInstanceSSLAttributesRequest&, DescribeInstanceSSLAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSSLAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogFileRetentionPeriodResponse> DescribeLogFileRetentionPeriodOutcome;
                 typedef std::future<DescribeLogFileRetentionPeriodOutcome> DescribeLogFileRetentionPeriodOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeLogFileRetentionPeriodRequest&, DescribeLogFileRetentionPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogFileRetentionPeriodAsyncHandler;
@@ -324,6 +335,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
                 typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProcessListResponse> DescribeProcessListOutcome;
+                typedef std::future<DescribeProcessListOutcome> DescribeProcessListOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeProcessListRequest&, DescribeProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProcessListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectSecurityGroupsResponse> DescribeProjectSecurityGroupsOutcome;
                 typedef std::future<DescribeProjectSecurityGroupsOutcome> DescribeProjectSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeProjectSecurityGroupsRequest&, DescribeProjectSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectSecurityGroupsAsyncHandler;
@@ -399,6 +413,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceNetworkResponse> ModifyInstanceNetworkOutcome;
                 typedef std::future<ModifyInstanceNetworkOutcome> ModifyInstanceNetworkOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::ModifyInstanceNetworkRequest&, ModifyInstanceNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNetworkAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceProtectedPropertyResponse> ModifyInstanceProtectedPropertyOutcome;
+                typedef std::future<ModifyInstanceProtectedPropertyOutcome> ModifyInstanceProtectedPropertyOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::ModifyInstanceProtectedPropertyRequest&, ModifyInstanceProtectedPropertyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceProtectedPropertyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceSSLAttributesResponse> ModifyInstanceSSLAttributesOutcome;
+                typedef std::future<ModifyInstanceSSLAttributesOutcome> ModifyInstanceSSLAttributesOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::ModifyInstanceSSLAttributesRequest&, ModifyInstanceSSLAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceSSLAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceVipResponse> ModifyInstanceVipOutcome;
                 typedef std::future<ModifyInstanceVipOutcome> ModifyInstanceVipOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::ModifyInstanceVipRequest&, ModifyInstanceVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceVipAsyncHandler;
@@ -799,6 +819,15 @@ namespace TencentCloud
                 DescribeFlowOutcomeCallable DescribeFlowCallable(const Model::DescribeFlowRequest& request);
 
                 /**
+                 *本接口（DescribeInstanceSSLAttributes）用于拉取实例SSL认证属性
+                 * @param req DescribeInstanceSSLAttributesRequest
+                 * @return DescribeInstanceSSLAttributesOutcome
+                 */
+                DescribeInstanceSSLAttributesOutcome DescribeInstanceSSLAttributes(const Model::DescribeInstanceSSLAttributesRequest &request);
+                void DescribeInstanceSSLAttributesAsync(const Model::DescribeInstanceSSLAttributesRequest& request, const DescribeInstanceSSLAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceSSLAttributesOutcomeCallable DescribeInstanceSSLAttributesCallable(const Model::DescribeInstanceSSLAttributesRequest& request);
+
+                /**
                  *本接口(DescribeLogFileRetentionPeriod)用于查看数据库备份日志的备份天数的设置情况。
                  * @param req DescribeLogFileRetentionPeriodRequest
                  * @return DescribeLogFileRetentionPeriodOutcome
@@ -824,6 +853,18 @@ namespace TencentCloud
                 DescribeOrdersOutcome DescribeOrders(const Model::DescribeOrdersRequest &request);
                 void DescribeOrdersAsync(const Model::DescribeOrdersRequest& request, const DescribeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOrdersOutcomeCallable DescribeOrdersCallable(const Model::DescribeOrdersRequest& request);
+
+                /**
+                 *本接口 (DescribeProcessList) 用于查询当前正在运行的线程（连接/查询）信息。
+
+- 可以根据客户端IP，DB，执行时间等信息来查询实例正在运行的线程信息。过滤信息详细请见过滤器Filter。
+- 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的线程信息。
+                 * @param req DescribeProcessListRequest
+                 * @return DescribeProcessListOutcome
+                 */
+                DescribeProcessListOutcome DescribeProcessList(const Model::DescribeProcessListRequest &request);
+                void DescribeProcessListAsync(const Model::DescribeProcessListRequest& request, const DescribeProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProcessListOutcomeCallable DescribeProcessListCallable(const Model::DescribeProcessListRequest& request);
 
                 /**
                  *本接口（DescribeProjectSecurityGroups）用于查询项目安全组信息
@@ -1058,6 +1099,24 @@ namespace TencentCloud
                 ModifyInstanceNetworkOutcome ModifyInstanceNetwork(const Model::ModifyInstanceNetworkRequest &request);
                 void ModifyInstanceNetworkAsync(const Model::ModifyInstanceNetworkRequest& request, const ModifyInstanceNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceNetworkOutcomeCallable ModifyInstanceNetworkCallable(const Model::ModifyInstanceNetworkRequest& request);
+
+                /**
+                 *该接口用于修改实例的保护属性
+                 * @param req ModifyInstanceProtectedPropertyRequest
+                 * @return ModifyInstanceProtectedPropertyOutcome
+                 */
+                ModifyInstanceProtectedPropertyOutcome ModifyInstanceProtectedProperty(const Model::ModifyInstanceProtectedPropertyRequest &request);
+                void ModifyInstanceProtectedPropertyAsync(const Model::ModifyInstanceProtectedPropertyRequest& request, const ModifyInstanceProtectedPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceProtectedPropertyOutcomeCallable ModifyInstanceProtectedPropertyCallable(const Model::ModifyInstanceProtectedPropertyRequest& request);
+
+                /**
+                 *本接口  （ModifyInstanceSSLAttributes）用于修改实例SSL认证功能属性
+                 * @param req ModifyInstanceSSLAttributesRequest
+                 * @return ModifyInstanceSSLAttributesOutcome
+                 */
+                ModifyInstanceSSLAttributesOutcome ModifyInstanceSSLAttributes(const Model::ModifyInstanceSSLAttributesRequest &request);
+                void ModifyInstanceSSLAttributesAsync(const Model::ModifyInstanceSSLAttributesRequest& request, const ModifyInstanceSSLAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceSSLAttributesOutcomeCallable ModifyInstanceSSLAttributesCallable(const Model::ModifyInstanceSSLAttributesRequest& request);
 
                 /**
                  *本接口（ModifyInstanceVip）用于修改实例Vip

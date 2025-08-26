@@ -1760,6 +1760,49 @@ DcdbClient::DescribeFlowOutcomeCallable DcdbClient::DescribeFlowCallable(const D
     return task->get_future();
 }
 
+DcdbClient::DescribeInstanceSSLAttributesOutcome DcdbClient::DescribeInstanceSSLAttributes(const DescribeInstanceSSLAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceSSLAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceSSLAttributesResponse rsp = DescribeInstanceSSLAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceSSLAttributesOutcome(rsp);
+        else
+            return DescribeInstanceSSLAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceSSLAttributesOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::DescribeInstanceSSLAttributesAsync(const DescribeInstanceSSLAttributesRequest& request, const DescribeInstanceSSLAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceSSLAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::DescribeInstanceSSLAttributesOutcomeCallable DcdbClient::DescribeInstanceSSLAttributesCallable(const DescribeInstanceSSLAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceSSLAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceSSLAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::DescribeLogFileRetentionPeriodOutcome DcdbClient::DescribeLogFileRetentionPeriod(const DescribeLogFileRetentionPeriodRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLogFileRetentionPeriod");
@@ -1882,6 +1925,49 @@ DcdbClient::DescribeOrdersOutcomeCallable DcdbClient::DescribeOrdersCallable(con
         [this, request]()
         {
             return this->DescribeOrders(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcdbClient::DescribeProcessListOutcome DcdbClient::DescribeProcessList(const DescribeProcessListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProcessList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProcessListResponse rsp = DescribeProcessListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProcessListOutcome(rsp);
+        else
+            return DescribeProcessListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProcessListOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::DescribeProcessListAsync(const DescribeProcessListRequest& request, const DescribeProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProcessList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::DescribeProcessListOutcomeCallable DcdbClient::DescribeProcessListCallable(const DescribeProcessListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProcessListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProcessList(request);
         }
     );
 
@@ -2957,6 +3043,92 @@ DcdbClient::ModifyInstanceNetworkOutcomeCallable DcdbClient::ModifyInstanceNetwo
         [this, request]()
         {
             return this->ModifyInstanceNetwork(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcdbClient::ModifyInstanceProtectedPropertyOutcome DcdbClient::ModifyInstanceProtectedProperty(const ModifyInstanceProtectedPropertyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceProtectedProperty");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceProtectedPropertyResponse rsp = ModifyInstanceProtectedPropertyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceProtectedPropertyOutcome(rsp);
+        else
+            return ModifyInstanceProtectedPropertyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceProtectedPropertyOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::ModifyInstanceProtectedPropertyAsync(const ModifyInstanceProtectedPropertyRequest& request, const ModifyInstanceProtectedPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceProtectedProperty(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::ModifyInstanceProtectedPropertyOutcomeCallable DcdbClient::ModifyInstanceProtectedPropertyCallable(const ModifyInstanceProtectedPropertyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceProtectedPropertyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceProtectedProperty(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcdbClient::ModifyInstanceSSLAttributesOutcome DcdbClient::ModifyInstanceSSLAttributes(const ModifyInstanceSSLAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceSSLAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceSSLAttributesResponse rsp = ModifyInstanceSSLAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceSSLAttributesOutcome(rsp);
+        else
+            return ModifyInstanceSSLAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceSSLAttributesOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::ModifyInstanceSSLAttributesAsync(const ModifyInstanceSSLAttributesRequest& request, const ModifyInstanceSSLAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceSSLAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::ModifyInstanceSSLAttributesOutcomeCallable DcdbClient::ModifyInstanceSSLAttributesCallable(const ModifyInstanceSSLAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceSSLAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceSSLAttributes(request);
         }
     );
 

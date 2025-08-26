@@ -1244,6 +1244,49 @@ IotexplorerClient::CreateTWeSeeRecognitionTaskOutcomeCallable IotexplorerClient:
     return task->get_future();
 }
 
+IotexplorerClient::CreateTWeTalkProductConfigOutcome IotexplorerClient::CreateTWeTalkProductConfig(const CreateTWeTalkProductConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTWeTalkProductConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTWeTalkProductConfigResponse rsp = CreateTWeTalkProductConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTWeTalkProductConfigOutcome(rsp);
+        else
+            return CreateTWeTalkProductConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTWeTalkProductConfigOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTWeTalkProductConfigAsync(const CreateTWeTalkProductConfigRequest& request, const CreateTWeTalkProductConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTWeTalkProductConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateTWeTalkProductConfigOutcomeCallable IotexplorerClient::CreateTWeTalkProductConfigCallable(const CreateTWeTalkProductConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTWeTalkProductConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTWeTalkProductConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateTopicPolicyOutcome IotexplorerClient::CreateTopicPolicy(const CreateTopicPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTopicPolicy");
@@ -4168,6 +4211,49 @@ IotexplorerClient::DescribeTWeSeeRecognitionTaskOutcomeCallable IotexplorerClien
     return task->get_future();
 }
 
+IotexplorerClient::DescribeTWeTalkProductConfigOutcome IotexplorerClient::DescribeTWeTalkProductConfig(const DescribeTWeTalkProductConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTWeTalkProductConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTWeTalkProductConfigResponse rsp = DescribeTWeTalkProductConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTWeTalkProductConfigOutcome(rsp);
+        else
+            return DescribeTWeTalkProductConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTWeTalkProductConfigOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeTWeTalkProductConfigAsync(const DescribeTWeTalkProductConfigRequest& request, const DescribeTWeTalkProductConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTWeTalkProductConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeTWeTalkProductConfigOutcomeCallable IotexplorerClient::DescribeTWeTalkProductConfigCallable(const DescribeTWeTalkProductConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTWeTalkProductConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTWeTalkProductConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeTopicPolicyOutcome IotexplorerClient::DescribeTopicPolicy(const DescribeTopicPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopicPolicy");
@@ -5193,6 +5279,49 @@ IotexplorerClient::GetTWeCallActiveStatusOutcomeCallable IotexplorerClient::GetT
         [this, request]()
         {
             return this->GetTWeCallActiveStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::GetTWeTalkProductConfigListOutcome IotexplorerClient::GetTWeTalkProductConfigList(const GetTWeTalkProductConfigListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTWeTalkProductConfigList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTWeTalkProductConfigListResponse rsp = GetTWeTalkProductConfigListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTWeTalkProductConfigListOutcome(rsp);
+        else
+            return GetTWeTalkProductConfigListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTWeTalkProductConfigListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetTWeTalkProductConfigListAsync(const GetTWeTalkProductConfigListRequest& request, const GetTWeTalkProductConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTWeTalkProductConfigList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GetTWeTalkProductConfigListOutcomeCallable IotexplorerClient::GetTWeTalkProductConfigListCallable(const GetTWeTalkProductConfigListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTWeTalkProductConfigListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTWeTalkProductConfigList(request);
         }
     );
 
@@ -6268,6 +6397,49 @@ IotexplorerClient::ModifyTWeSeeConfigOutcomeCallable IotexplorerClient::ModifyTW
         [this, request]()
         {
             return this->ModifyTWeSeeConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::ModifyTWeTalkProductConfigOutcome IotexplorerClient::ModifyTWeTalkProductConfig(const ModifyTWeTalkProductConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTWeTalkProductConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTWeTalkProductConfigResponse rsp = ModifyTWeTalkProductConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTWeTalkProductConfigOutcome(rsp);
+        else
+            return ModifyTWeTalkProductConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTWeTalkProductConfigOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyTWeTalkProductConfigAsync(const ModifyTWeTalkProductConfigRequest& request, const ModifyTWeTalkProductConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTWeTalkProductConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ModifyTWeTalkProductConfigOutcomeCallable IotexplorerClient::ModifyTWeTalkProductConfigCallable(const ModifyTWeTalkProductConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTWeTalkProductConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTWeTalkProductConfig(request);
         }
     );
 
