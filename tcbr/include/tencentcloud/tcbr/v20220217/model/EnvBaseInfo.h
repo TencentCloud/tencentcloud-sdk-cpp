@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool SubnetIdsHasBeenSet() const;
 
+                    /**
+                     * 获取回收标志，为空则表示正常，recycle表示已回收
+                     * @return Recycle 回收标志，为空则表示正常，recycle表示已回收
+                     * 
+                     */
+                    std::string GetRecycle() const;
+
+                    /**
+                     * 设置回收标志，为空则表示正常，recycle表示已回收
+                     * @param _recycle 回收标志，为空则表示正常，recycle表示已回收
+                     * 
+                     */
+                    void SetRecycle(const std::string& _recycle);
+
+                    /**
+                     * 判断参数 Recycle 是否已赋值
+                     * @return Recycle 是否已赋值
+                     * 
+                     */
+                    bool RecycleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
+
+                    /**
+                     * 回收标志，为空则表示正常，recycle表示已回收
+                     */
+                    std::string m_recycle;
+                    bool m_recycleHasBeenSet;
 
                 };
             }

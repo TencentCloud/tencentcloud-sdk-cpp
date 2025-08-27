@@ -1457,7 +1457,7 @@ namespace TencentCloud
                 ReleaseWanAddressOutcomeCallable ReleaseWanAddressCallable(const Model::ReleaseWanAddressRequest& request);
 
                 /**
-                 *删除复制组
+                 *本接口（RemoveReplicationGroup）用于删除复制组。
                  * @param req RemoveReplicationGroupRequest
                  * @return RemoveReplicationGroupOutcome
                  */

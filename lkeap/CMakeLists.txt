@@ -91,6 +91,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/AttributeItem.h
   include/tencentcloud/lkeap/v20240522/model/EmbeddingObject.h
   include/tencentcloud/lkeap/v20240522/model/Message.h
+  include/tencentcloud/lkeap/v20240522/model/ErrorInfo.h
   include/tencentcloud/lkeap/v20240522/model/CreateKnowledgeBaseRequest.h
   include/tencentcloud/lkeap/v20240522/model/ChatCompletionsResponse.h
   include/tencentcloud/lkeap/v20240522/model/DeleteDocsRequest.h
@@ -170,6 +171,7 @@ set(lkeap_src
   src/v20240522/model/AttributeItem.cpp
   src/v20240522/model/EmbeddingObject.cpp
   src/v20240522/model/Message.cpp
+  src/v20240522/model/ErrorInfo.cpp
   src/v20240522/model/CreateKnowledgeBaseRequest.cpp
   src/v20240522/model/ChatCompletionsResponse.cpp
   src/v20240522/model/DeleteDocsRequest.cpp

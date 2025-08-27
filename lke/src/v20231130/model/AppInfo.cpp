@@ -35,7 +35,8 @@ AppInfo::AppInfo() :
     m_modelAliasNameHasBeenSet(false),
     m_patternHasBeenSet(false),
     m_thoughtModelAliasNameHasBeenSet(false),
-    m_permissionIdsHasBeenSet(false)
+    m_permissionIdsHasBeenSet(false),
+    m_creatorHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,16 @@ CoreInternalOutcome AppInfo::Deserialize(const rapidjson::Value &value)
         m_permissionIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("Creator") && !value["Creator"].IsNull())
+    {
+        if (!value["Creator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creator = string(value["Creator"].GetString());
+        m_creatorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +338,14 @@ void AppInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_creatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Creator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -570,5 +589,21 @@ void AppInfo::SetPermissionIds(const vector<string>& _permissionIds)
 bool AppInfo::PermissionIdsHasBeenSet() const
 {
     return m_permissionIdsHasBeenSet;
+}
+
+string AppInfo::GetCreator() const
+{
+    return m_creator;
+}
+
+void AppInfo::SetCreator(const string& _creator)
+{
+    m_creator = _creator;
+    m_creatorHasBeenSet = true;
+}
+
+bool AppInfo::CreatorHasBeenSet() const
+{
+    return m_creatorHasBeenSet;
 }
 

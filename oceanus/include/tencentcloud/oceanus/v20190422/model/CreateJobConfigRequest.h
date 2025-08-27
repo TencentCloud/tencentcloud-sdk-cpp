@@ -804,6 +804,27 @@ namespace TencentCloud
                      */
                     bool CheckpointTimeoutSecondHasBeenSet() const;
 
+                    /**
+                     * 获取checkpoint 间隔时间
+                     * @return CheckpointIntervalSecond checkpoint 间隔时间
+                     * 
+                     */
+                    int64_t GetCheckpointIntervalSecond() const;
+
+                    /**
+                     * 设置checkpoint 间隔时间
+                     * @param _checkpointIntervalSecond checkpoint 间隔时间
+                     * 
+                     */
+                    void SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond);
+
+                    /**
+                     * 判断参数 CheckpointIntervalSecond 是否已赋值
+                     * @return CheckpointIntervalSecond 是否已赋值
+                     * 
+                     */
+                    bool CheckpointIntervalSecondHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1021,6 +1042,12 @@ namespace TencentCloud
                      */
                     int64_t m_checkpointTimeoutSecond;
                     bool m_checkpointTimeoutSecondHasBeenSet;
+
+                    /**
+                     * checkpoint 间隔时间
+                     */
+                    int64_t m_checkpointIntervalSecond;
+                    bool m_checkpointIntervalSecondHasBeenSet;
 
                 };
             }

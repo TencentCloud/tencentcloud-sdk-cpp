@@ -1459,6 +1459,49 @@ MnaClient::OrderPerLicenseOutcomeCallable MnaClient::OrderPerLicenseCallable(con
     return task->get_future();
 }
 
+MnaClient::ReportOrderOutcome MnaClient::ReportOrder(const ReportOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportOrderResponse rsp = ReportOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportOrderOutcome(rsp);
+        else
+            return ReportOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportOrderOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::ReportOrderAsync(const ReportOrderRequest& request, const ReportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::ReportOrderOutcomeCallable MnaClient::ReportOrderCallable(const ReportOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::SetNotifyUrlOutcome MnaClient::SetNotifyUrl(const SetNotifyUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "SetNotifyUrl");

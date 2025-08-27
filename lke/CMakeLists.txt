@@ -95,6 +95,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DescribeAttributeLabelRequest.h
   include/tencentcloud/lke/v20231130/model/CreateQARequest.h
   include/tencentcloud/lke/v20231130/model/KnowledgeSummary.h
+  include/tencentcloud/lke/v20231130/model/TaskFlowSummary.h
   include/tencentcloud/lke/v20231130/model/ListSharedKnowledgeRequest.h
   include/tencentcloud/lke/v20231130/model/PluginToolReqParam.h
   include/tencentcloud/lke/v20231130/model/ListQAResponse.h
@@ -137,7 +138,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/SummaryConfig.h
   include/tencentcloud/lke/v20231130/model/GenerateQAResponse.h
   include/tencentcloud/lke/v20231130/model/GetTaskStatusResponse.h
-  include/tencentcloud/lke/v20231130/model/TaskFlowSummary.h
+  include/tencentcloud/lke/v20231130/model/AgentInputSystemVariable.h
   include/tencentcloud/lke/v20231130/model/DescribeConcurrencyUsageGraphRequest.h
   include/tencentcloud/lke/v20231130/model/AgentProcedureDebugging.h
   include/tencentcloud/lke/v20231130/model/DescribeTokenUsageGraphRequest.h
@@ -436,6 +437,7 @@ set(lke_src
   src/v20231130/model/DescribeAttributeLabelRequest.cpp
   src/v20231130/model/CreateQARequest.cpp
   src/v20231130/model/KnowledgeSummary.cpp
+  src/v20231130/model/TaskFlowSummary.cpp
   src/v20231130/model/ListSharedKnowledgeRequest.cpp
   src/v20231130/model/PluginToolReqParam.cpp
   src/v20231130/model/ListQAResponse.cpp
@@ -478,7 +480,7 @@ set(lke_src
   src/v20231130/model/SummaryConfig.cpp
   src/v20231130/model/GenerateQAResponse.cpp
   src/v20231130/model/GetTaskStatusResponse.cpp
-  src/v20231130/model/TaskFlowSummary.cpp
+  src/v20231130/model/AgentInputSystemVariable.cpp
   src/v20231130/model/DescribeConcurrencyUsageGraphRequest.cpp
   src/v20231130/model/AgentProcedureDebugging.cpp
   src/v20231130/model/DescribeTokenUsageGraphRequest.cpp

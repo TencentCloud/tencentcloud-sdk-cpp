@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lkeap/v20240522/model/ReconstructDocumentFailedPage.h>
 #include <tencentcloud/lkeap/v20240522/model/DocumentUsage.h>
+#include <tencentcloud/lkeap/v20240522/model/ErrorInfo.h>
 
 
 namespace TencentCloud
@@ -111,6 +112,20 @@ namespace TencentCloud
                      */
                     bool UsageHasBeenSet() const;
 
+                    /**
+                     * 获取文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息
+                     * @return Error 文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息
+                     * 
+                     */
+                    ErrorInfo GetError() const;
+
+                    /**
+                     * 判断参数 Error 是否已赋值
+                     * @return Error 是否已赋值
+                     * 
+                     */
+                    bool ErrorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,6 +156,12 @@ namespace TencentCloud
                      */
                     DocumentUsage m_usage;
                     bool m_usageHasBeenSet;
+
+                    /**
+                     * 文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息
+                     */
+                    ErrorInfo m_error;
+                    bool m_errorHasBeenSet;
 
                 };
             }

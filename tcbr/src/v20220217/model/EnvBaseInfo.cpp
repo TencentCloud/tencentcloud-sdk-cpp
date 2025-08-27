@@ -29,7 +29,8 @@ EnvBaseInfo::EnvBaseInfo() :
     m_statusHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_envTypeHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+    m_subnetIdsHasBeenSet(false),
+    m_recycleHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome EnvBaseInfo::Deserialize(const rapidjson::Value &value)
         m_subnetIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("Recycle") && !value["Recycle"].IsNull())
+    {
+        if (!value["Recycle"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvBaseInfo.Recycle` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recycle = string(value["Recycle"].GetString());
+        m_recycleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void EnvBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SubnetIds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetIds.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recycleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Recycle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recycle.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void EnvBaseInfo::SetSubnetIds(const string& _subnetIds)
 bool EnvBaseInfo::SubnetIdsHasBeenSet() const
 {
     return m_subnetIdsHasBeenSet;
+}
+
+string EnvBaseInfo::GetRecycle() const
+{
+    return m_recycle;
+}
+
+void EnvBaseInfo::SetRecycle(const string& _recycle)
+{
+    m_recycle = _recycle;
+    m_recycleHasBeenSet = true;
+}
+
+bool EnvBaseInfo::RecycleHasBeenSet() const
+{
+    return m_recycleHasBeenSet;
 }
 

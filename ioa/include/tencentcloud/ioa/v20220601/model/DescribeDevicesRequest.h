@@ -46,6 +46,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * @return DomainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * 
+                     */
+                    std::string GetDomainInstanceId() const;
+
+                    /**
+                     * 设置管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * @param _domainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * 
+                     */
+                    void SetDomainInstanceId(const std::string& _domainInstanceId);
+
+                    /**
+                     * 判断参数 DomainInstanceId 是否已赋值
+                     * @return DomainInstanceId 是否已赋值
+                     * 
+                     */
+                    bool DomainInstanceIdHasBeenSet() const;
+
+                    /**
                      * 获取过滤条件参数（字段含义请参考接口返回值）
 
 - Mid, 类型String，支持操作：【eq，like，ilike】，支持排序
@@ -340,15 +361,15 @@ SaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
-                     * @return OsType 【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * 获取操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * @return OsType 操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
-                     * @param _osType 【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * 设置操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * @param _osType 操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -514,6 +535,12 @@ SaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id
                 private:
 
                     /**
+                     * 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     */
+                    std::string m_domainInstanceId;
+                    bool m_domainInstanceIdHasBeenSet;
+
+                    /**
                      * 过滤条件参数（字段含义请参考接口返回值）
 
 - Mid, 类型String，支持操作：【eq，like，ilike】，支持排序
@@ -589,7 +616,7 @@ SaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * 操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;

@@ -58,7 +58,8 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_taskManagerMemHasBeenSet(false),
     m_useOldSystemConnectorHasBeenSet(false),
     m_programArgsAfterGzipHasBeenSet(false),
-    m_checkpointTimeoutSecondHasBeenSet(false)
+    m_checkpointTimeoutSecondHasBeenSet(false),
+    m_checkpointIntervalSecondHasBeenSet(false)
 {
 }
 
@@ -379,6 +380,14 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "CheckpointTimeoutSecond";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_checkpointTimeoutSecond, allocator);
+    }
+
+    if (m_checkpointIntervalSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointIntervalSecond";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkpointIntervalSecond, allocator);
     }
 
 
@@ -963,6 +972,22 @@ void CreateJobConfigRequest::SetCheckpointTimeoutSecond(const int64_t& _checkpoi
 bool CreateJobConfigRequest::CheckpointTimeoutSecondHasBeenSet() const
 {
     return m_checkpointTimeoutSecondHasBeenSet;
+}
+
+int64_t CreateJobConfigRequest::GetCheckpointIntervalSecond() const
+{
+    return m_checkpointIntervalSecond;
+}
+
+void CreateJobConfigRequest::SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond)
+{
+    m_checkpointIntervalSecond = _checkpointIntervalSecond;
+    m_checkpointIntervalSecondHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::CheckpointIntervalSecondHasBeenSet() const
+{
+    return m_checkpointIntervalSecondHasBeenSet;
 }
 
 

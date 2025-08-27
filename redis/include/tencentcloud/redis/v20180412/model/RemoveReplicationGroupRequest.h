@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取复制组ID
-                     * @return GroupId 复制组ID
+                     * 获取复制组ID。请登录 [Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication) 页面获取复制组 ID。
+                     * @return GroupId 复制组ID。请登录 [Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication) 页面获取复制组 ID。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置复制组ID
-                     * @param _groupId 复制组ID
+                     * 设置复制组ID。请登录 [Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication) 页面获取复制组 ID。
+                     * @param _groupId 复制组ID。请登录 [Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication) 页面获取复制组 ID。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 复制组ID
+                     * 复制组ID。请登录 [Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication) 页面获取复制组 ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

@@ -110,6 +110,27 @@ namespace TencentCloud
                      */
                     bool ResultsHasBeenSet() const;
 
+                    /**
+                     * 获取日志聚合结果
+                     * @return AnalysisRecords 日志聚合结果
+                     * 
+                     */
+                    std::vector<std::string> GetAnalysisRecords() const;
+
+                    /**
+                     * 设置日志聚合结果
+                     * @param _analysisRecords 日志聚合结果
+                     * 
+                     */
+                    void SetAnalysisRecords(const std::vector<std::string>& _analysisRecords);
+
+                    /**
+                     * 判断参数 AnalysisRecords 是否已赋值
+                     * @return AnalysisRecords 是否已赋值
+                     * 
+                     */
+                    bool AnalysisRecordsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +150,12 @@ namespace TencentCloud
                      */
                     std::vector<LogObject> m_results;
                     bool m_resultsHasBeenSet;
+
+                    /**
+                     * 日志聚合结果
+                     */
+                    std::vector<std::string> m_analysisRecords;
+                    bool m_analysisRecordsHasBeenSet;
 
                 };
             }

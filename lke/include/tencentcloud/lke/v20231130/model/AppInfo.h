@@ -417,6 +417,31 @@ namespace TencentCloud
                      */
                     bool PermissionIdsHasBeenSet() const;
 
+                    /**
+                     * 获取创建人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Creator 创建人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreator() const;
+
+                    /**
+                     * 设置创建人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _creator 创建人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreator(const std::string& _creator);
+
+                    /**
+                     * 判断参数 Creator 是否已赋值
+                     * @return Creator 是否已赋值
+                     * 
+                     */
+                    bool CreatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -522,6 +547,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_permissionIds;
                     bool m_permissionIdsHasBeenSet;
+
+                    /**
+                     * 创建人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creator;
+                    bool m_creatorHasBeenSet;
 
                 };
             }

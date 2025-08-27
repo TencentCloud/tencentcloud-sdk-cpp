@@ -47,6 +47,8 @@
 #include <tencentcloud/waf/v20180125/model/CreateAreaBanRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateDealsRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateDealsResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreateExportRequest.h>
+#include <tencentcloud/waf/v20180125/model/CreateExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateHostRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateHostResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateIpAccessControlRequest.h>
@@ -77,6 +79,8 @@
 #include <tencentcloud/waf/v20180125/model/DeleteCustomWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteDomainWhiteRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteDomainWhiteRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteExportRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteHostRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteHostResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlRequest.h>
@@ -157,6 +161,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeDomainWhiteRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeExportsRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeExportsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeFindDomainListRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeFindDomainListResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeFlowTrendRequest.h>
@@ -175,6 +181,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLogHistogramRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLogHistogramResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeModuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeModuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeObjectsRequest.h>
@@ -211,6 +219,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeTlsVersionResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeTopAttackDomainRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeTopAttackDomainResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeTopicsRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeTopicsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h>
@@ -361,6 +371,8 @@
 #include <tencentcloud/waf/v20180125/model/SearchAccessLogResponse.h>
 #include <tencentcloud/waf/v20180125/model/SearchAttackLogRequest.h>
 #include <tencentcloud/waf/v20180125/model/SearchAttackLogResponse.h>
+#include <tencentcloud/waf/v20180125/model/SearchLogRequest.h>
+#include <tencentcloud/waf/v20180125/model/SearchLogResponse.h>
 #include <tencentcloud/waf/v20180125/model/SwitchDomainRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/SwitchDomainRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/SwitchElasticModeRequest.h>
@@ -425,6 +437,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDealsResponse> CreateDealsOutcome;
                 typedef std::future<CreateDealsOutcome> CreateDealsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateDealsRequest&, CreateDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDealsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExportResponse> CreateExportOutcome;
+                typedef std::future<CreateExportOutcome> CreateExportOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreateExportRequest&, CreateExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHostResponse> CreateHostOutcome;
                 typedef std::future<CreateHostOutcome> CreateHostOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateHostRequest&, CreateHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostAsyncHandler;
@@ -470,6 +485,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDomainWhiteRulesResponse> DeleteDomainWhiteRulesOutcome;
                 typedef std::future<DeleteDomainWhiteRulesOutcome> DeleteDomainWhiteRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteDomainWhiteRulesRequest&, DeleteDomainWhiteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainWhiteRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteExportResponse> DeleteExportOutcome;
+                typedef std::future<DeleteExportOutcome> DeleteExportOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteExportRequest&, DeleteExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteHostResponse> DeleteHostOutcome;
                 typedef std::future<DeleteHostOutcome> DeleteHostOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteHostRequest&, DeleteHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHostAsyncHandler;
@@ -590,6 +608,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainsResponse> DescribeDomainsOutcome;
                 typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeDomainsRequest&, DescribeDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExportsResponse> DescribeExportsOutcome;
+                typedef std::future<DescribeExportsOutcome> DescribeExportsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeExportsRequest&, DescribeExportsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFindDomainListResponse> DescribeFindDomainListOutcome;
                 typedef std::future<DescribeFindDomainListOutcome> DescribeFindDomainListOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeFindDomainListRequest&, DescribeFindDomainListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFindDomainListAsyncHandler;
@@ -617,6 +638,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpHitItemsResponse> DescribeIpHitItemsOutcome;
                 typedef std::future<DescribeIpHitItemsOutcome> DescribeIpHitItemsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeIpHitItemsRequest&, DescribeIpHitItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpHitItemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogHistogramResponse> DescribeLogHistogramOutcome;
+                typedef std::future<DescribeLogHistogramOutcome> DescribeLogHistogramOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLogHistogramRequest&, DescribeLogHistogramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogHistogramAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeModuleStatusResponse> DescribeModuleStatusOutcome;
                 typedef std::future<DescribeModuleStatusOutcome> DescribeModuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeModuleStatusRequest&, DescribeModuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModuleStatusAsyncHandler;
@@ -671,6 +695,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopAttackDomainResponse> DescribeTopAttackDomainOutcome;
                 typedef std::future<DescribeTopAttackDomainOutcome> DescribeTopAttackDomainOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeTopAttackDomainRequest&, DescribeTopAttackDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopAttackDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopicsResponse> DescribeTopicsOutcome;
+                typedef std::future<DescribeTopicsOutcome> DescribeTopicsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeTopicsRequest&, DescribeTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserCdcClbWafRegionsResponse> DescribeUserCdcClbWafRegionsOutcome;
                 typedef std::future<DescribeUserCdcClbWafRegionsOutcome> DescribeUserCdcClbWafRegionsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeUserCdcClbWafRegionsRequest&, DescribeUserCdcClbWafRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCdcClbWafRegionsAsyncHandler;
@@ -896,6 +923,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchAttackLogResponse> SearchAttackLogOutcome;
                 typedef std::future<SearchAttackLogOutcome> SearchAttackLogOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::SearchAttackLogRequest&, SearchAttackLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchAttackLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchLogResponse> SearchLogOutcome;
+                typedef std::future<SearchLogOutcome> SearchLogOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::SearchLogRequest&, SearchLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::SwitchDomainRulesResponse> SwitchDomainRulesOutcome;
                 typedef std::future<SwitchDomainRulesOutcome> SwitchDomainRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::SwitchDomainRulesRequest&, SwitchDomainRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDomainRulesAsyncHandler;
@@ -1027,6 +1057,15 @@ namespace TencentCloud
                 CreateDealsOutcome CreateDeals(const Model::CreateDealsRequest &request);
                 void CreateDealsAsync(const Model::CreateDealsRequest& request, const CreateDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDealsOutcomeCallable CreateDealsCallable(const Model::CreateDealsRequest& request);
+
+                /**
+                 *本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449
+                 * @param req CreateExportRequest
+                 * @return CreateExportOutcome
+                 */
+                CreateExportOutcome CreateExport(const Model::CreateExportRequest &request);
+                void CreateExportAsync(const Model::CreateExportRequest& request, const CreateExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExportOutcomeCallable CreateExportCallable(const Model::CreateExportRequest& request);
 
                 /**
                  *clb-waf中添加防护域名
@@ -1162,6 +1201,15 @@ namespace TencentCloud
                 DeleteDomainWhiteRulesOutcome DeleteDomainWhiteRules(const Model::DeleteDomainWhiteRulesRequest &request);
                 void DeleteDomainWhiteRulesAsync(const Model::DeleteDomainWhiteRulesRequest& request, const DeleteDomainWhiteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDomainWhiteRulesOutcomeCallable DeleteDomainWhiteRulesCallable(const Model::DeleteDomainWhiteRulesRequest& request);
+
+                /**
+                 *本接口用于删除日志下载任务
+                 * @param req DeleteExportRequest
+                 * @return DeleteExportOutcome
+                 */
+                DeleteExportOutcome DeleteExport(const Model::DeleteExportRequest &request);
+                void DeleteExportAsync(const Model::DeleteExportRequest& request, const DeleteExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteExportOutcomeCallable DeleteExportCallable(const Model::DeleteExportRequest& request);
 
                 /**
                  *删除负载均衡型域名，支持批量操作。
@@ -1524,6 +1572,15 @@ namespace TencentCloud
                 DescribeDomainsOutcomeCallable DescribeDomainsCallable(const Model::DescribeDomainsRequest& request);
 
                 /**
+                 *本接口用于获取日志下载任务列表
+                 * @param req DescribeExportsRequest
+                 * @return DescribeExportsOutcome
+                 */
+                DescribeExportsOutcome DescribeExports(const Model::DescribeExportsRequest &request);
+                void DescribeExportsAsync(const Model::DescribeExportsRequest& request, const DescribeExportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExportsOutcomeCallable DescribeExportsCallable(const Model::DescribeExportsRequest& request);
+
+                /**
                  *获取发现域名列表接口
                  * @param req DescribeFindDomainListRequest
                  * @return DescribeFindDomainListOutcome
@@ -1603,6 +1660,15 @@ namespace TencentCloud
                 DescribeIpHitItemsOutcome DescribeIpHitItems(const Model::DescribeIpHitItemsRequest &request);
                 void DescribeIpHitItemsAsync(const Model::DescribeIpHitItemsRequest& request, const DescribeIpHitItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIpHitItemsOutcomeCallable DescribeIpHitItemsCallable(const Model::DescribeIpHitItemsRequest& request);
+
+                /**
+                 *本接口用于构建日志数量直方图
+                 * @param req DescribeLogHistogramRequest
+                 * @return DescribeLogHistogramOutcome
+                 */
+                DescribeLogHistogramOutcome DescribeLogHistogram(const Model::DescribeLogHistogramRequest &request);
+                void DescribeLogHistogramAsync(const Model::DescribeLogHistogramRequest& request, const DescribeLogHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogHistogramOutcomeCallable DescribeLogHistogramCallable(const Model::DescribeLogHistogramRequest& request);
 
                 /**
                  *查询各个waf基础安全模块的开关状态，看每个模块是否开启
@@ -1765,6 +1831,15 @@ namespace TencentCloud
                 DescribeTopAttackDomainOutcome DescribeTopAttackDomain(const Model::DescribeTopAttackDomainRequest &request);
                 void DescribeTopAttackDomainAsync(const Model::DescribeTopAttackDomainRequest& request, const DescribeTopAttackDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopAttackDomainOutcomeCallable DescribeTopAttackDomainCallable(const Model::DescribeTopAttackDomainRequest& request);
+
+                /**
+                 *本接口用于获取日志主题列表，支持分页
+                 * @param req DescribeTopicsRequest
+                 * @return DescribeTopicsOutcome
+                 */
+                DescribeTopicsOutcome DescribeTopics(const Model::DescribeTopicsRequest &request);
+                void DescribeTopicsAsync(const Model::DescribeTopicsRequest& request, const DescribeTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopicsOutcomeCallable DescribeTopicsCallable(const Model::DescribeTopicsRequest& request);
 
                 /**
                  *在CDC场景下，负载均衡型WAF的添加、编辑域名配置的时候，需要展示CDC负载均衡型WAF（cdc-clb-waf)支持的地域列表，通过DescribeUserCdcClbWafRegions既可以获得当前对客户已经开放的地域列表
@@ -2443,6 +2518,18 @@ namespace TencentCloud
                 SearchAttackLogOutcome SearchAttackLog(const Model::SearchAttackLogRequest &request);
                 void SearchAttackLogAsync(const Model::SearchAttackLogRequest& request, const SearchAttackLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchAttackLogOutcomeCallable SearchAttackLogCallable(const Model::SearchAttackLogRequest& request);
+
+                /**
+                 *本接口用于检索分析日志，使用该接口时请注意如下事项：
+1. 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。
+2. 检索语法建议使用CQL语法规则，请使用SyntaxRule参数，将值设置为1。
+3. API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。
+                 * @param req SearchLogRequest
+                 * @return SearchLogOutcome
+                 */
+                SearchLogOutcome SearchLog(const Model::SearchLogRequest &request);
+                void SearchLogAsync(const Model::SearchLogRequest& request, const SearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchLogOutcomeCallable SearchLogCallable(const Model::SearchLogRequest& request);
 
                 /**
                  *切换域名的规则开关

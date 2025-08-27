@@ -27,7 +27,8 @@ KnowledgeQaOutput::KnowledgeQaOutput() :
     m_showQuestionClarifyHasBeenSet(false),
     m_useQuestionClarifyHasBeenSet(false),
     m_questionClarifyKeywordsHasBeenSet(false),
-    m_useRecommendedHasBeenSet(false)
+    m_useRecommendedHasBeenSet(false),
+    m_recommendedPromptModeHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome KnowledgeQaOutput::Deserialize(const rapidjson::Value &value
         m_useRecommendedHasBeenSet = true;
     }
 
+    if (value.HasMember("RecommendedPromptMode") && !value["RecommendedPromptMode"].IsNull())
+    {
+        if (!value["RecommendedPromptMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaOutput.RecommendedPromptMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recommendedPromptMode = value["RecommendedPromptMode"].GetUint64();
+        m_recommendedPromptModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void KnowledgeQaOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UseRecommended";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useRecommended, allocator);
+    }
+
+    if (m_recommendedPromptModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecommendedPromptMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recommendedPromptMode, allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void KnowledgeQaOutput::SetUseRecommended(const bool& _useRecommended)
 bool KnowledgeQaOutput::UseRecommendedHasBeenSet() const
 {
     return m_useRecommendedHasBeenSet;
+}
+
+uint64_t KnowledgeQaOutput::GetRecommendedPromptMode() const
+{
+    return m_recommendedPromptMode;
+}
+
+void KnowledgeQaOutput::SetRecommendedPromptMode(const uint64_t& _recommendedPromptMode)
+{
+    m_recommendedPromptMode = _recommendedPromptMode;
+    m_recommendedPromptModeHasBeenSet = true;
+}
+
+bool KnowledgeQaOutput::RecommendedPromptModeHasBeenSet() const
+{
+    return m_recommendedPromptModeHasBeenSet;
 }
 

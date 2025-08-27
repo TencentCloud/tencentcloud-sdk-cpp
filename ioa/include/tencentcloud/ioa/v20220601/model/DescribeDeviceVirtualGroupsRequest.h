@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
-                     * @return OsType 必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * 获取系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * @return OsType 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
-                     * @param _osType 必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * 设置系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * @param _osType 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;

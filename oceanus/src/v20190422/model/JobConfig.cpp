@@ -59,7 +59,8 @@ JobConfig::JobConfig() :
     m_taskManagerCpuHasBeenSet(false),
     m_taskManagerMemHasBeenSet(false),
     m_jobConfigItemHasBeenSet(false),
-    m_checkpointTimeoutSecondHasBeenSet(false)
+    m_checkpointTimeoutSecondHasBeenSet(false),
+    m_checkpointIntervalSecondHasBeenSet(false)
 {
 }
 
@@ -516,6 +517,16 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_checkpointTimeoutSecondHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckpointIntervalSecond") && !value["CheckpointIntervalSecond"].IsNull())
+    {
+        if (!value["CheckpointIntervalSecond"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.CheckpointIntervalSecond` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkpointIntervalSecond = value["CheckpointIntervalSecond"].GetInt64();
+        m_checkpointIntervalSecondHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -858,6 +869,14 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CheckpointTimeoutSecond";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_checkpointTimeoutSecond, allocator);
+    }
+
+    if (m_checkpointIntervalSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointIntervalSecond";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkpointIntervalSecond, allocator);
     }
 
 }
@@ -1485,5 +1504,21 @@ void JobConfig::SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSeco
 bool JobConfig::CheckpointTimeoutSecondHasBeenSet() const
 {
     return m_checkpointTimeoutSecondHasBeenSet;
+}
+
+int64_t JobConfig::GetCheckpointIntervalSecond() const
+{
+    return m_checkpointIntervalSecond;
+}
+
+void JobConfig::SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond)
+{
+    m_checkpointIntervalSecond = _checkpointIntervalSecond;
+    m_checkpointIntervalSecondHasBeenSet = true;
+}
+
+bool JobConfig::CheckpointIntervalSecondHasBeenSet() const
+{
+    return m_checkpointIntervalSecondHasBeenSet;
 }
 

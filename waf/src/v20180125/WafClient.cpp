@@ -556,6 +556,49 @@ WafClient::CreateDealsOutcomeCallable WafClient::CreateDealsCallable(const Creat
     return task->get_future();
 }
 
+WafClient::CreateExportOutcome WafClient::CreateExport(const CreateExportRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExportResponse rsp = CreateExportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExportOutcome(rsp);
+        else
+            return CreateExportOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExportOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateExportAsync(const CreateExportRequest& request, const CreateExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreateExportOutcomeCallable WafClient::CreateExportCallable(const CreateExportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExportOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::CreateHostOutcome WafClient::CreateHost(const CreateHostRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHost");
@@ -1194,6 +1237,49 @@ WafClient::DeleteDomainWhiteRulesOutcomeCallable WafClient::DeleteDomainWhiteRul
         [this, request]()
         {
             return this->DeleteDomainWhiteRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DeleteExportOutcome WafClient::DeleteExport(const DeleteExportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteExport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteExportResponse rsp = DeleteExportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteExportOutcome(rsp);
+        else
+            return DeleteExportOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteExportOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteExportAsync(const DeleteExportRequest& request, const DeleteExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteExport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteExportOutcomeCallable WafClient::DeleteExportCallable(const DeleteExportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteExportOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteExport(request);
         }
     );
 
@@ -2921,6 +3007,49 @@ WafClient::DescribeDomainsOutcomeCallable WafClient::DescribeDomainsCallable(con
     return task->get_future();
 }
 
+WafClient::DescribeExportsOutcome WafClient::DescribeExports(const DescribeExportsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExports");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExportsResponse rsp = DescribeExportsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExportsOutcome(rsp);
+        else
+            return DescribeExportsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExportsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeExportsAsync(const DescribeExportsRequest& request, const DescribeExportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExports(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeExportsOutcomeCallable WafClient::DescribeExportsCallable(const DescribeExportsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExportsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExports(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeFindDomainListOutcome WafClient::DescribeFindDomainList(const DescribeFindDomainListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFindDomainList");
@@ -3301,6 +3430,49 @@ WafClient::DescribeIpHitItemsOutcomeCallable WafClient::DescribeIpHitItemsCallab
         [this, request]()
         {
             return this->DescribeIpHitItems(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeLogHistogramOutcome WafClient::DescribeLogHistogram(const DescribeLogHistogramRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogHistogram");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogHistogramResponse rsp = DescribeLogHistogramResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogHistogramOutcome(rsp);
+        else
+            return DescribeLogHistogramOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogHistogramOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeLogHistogramAsync(const DescribeLogHistogramRequest& request, const DescribeLogHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogHistogram(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeLogHistogramOutcomeCallable WafClient::DescribeLogHistogramCallable(const DescribeLogHistogramRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogHistogramOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogHistogram(request);
         }
     );
 
@@ -4075,6 +4247,49 @@ WafClient::DescribeTopAttackDomainOutcomeCallable WafClient::DescribeTopAttackDo
         [this, request]()
         {
             return this->DescribeTopAttackDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeTopicsOutcome WafClient::DescribeTopics(const DescribeTopicsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopicsResponse rsp = DescribeTopicsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopicsOutcome(rsp);
+        else
+            return DescribeTopicsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopicsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeTopicsAsync(const DescribeTopicsRequest& request, const DescribeTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeTopicsOutcomeCallable WafClient::DescribeTopicsCallable(const DescribeTopicsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopicsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopics(request);
         }
     );
 
@@ -7300,6 +7515,49 @@ WafClient::SearchAttackLogOutcomeCallable WafClient::SearchAttackLogCallable(con
         [this, request]()
         {
             return this->SearchAttackLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::SearchLogOutcome WafClient::SearchLog(const SearchLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchLogResponse rsp = SearchLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchLogOutcome(rsp);
+        else
+            return SearchLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchLogOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::SearchLogAsync(const SearchLogRequest& request, const SearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::SearchLogOutcomeCallable WafClient::SearchLogCallable(const SearchLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchLog(request);
         }
     );
 

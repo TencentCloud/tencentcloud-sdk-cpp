@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取必填，终端自定义分组id
-                     * @return DeviceVirtualGroupId 必填，终端自定义分组id
+                     * 获取终端自定义分组ID（0：获取租户全部自定义分组下的终端数据；其他值：获取具体ID分组下的终端数据）
+                     * @return DeviceVirtualGroupId 终端自定义分组ID（0：获取租户全部自定义分组下的终端数据；其他值：获取具体ID分组下的终端数据）
                      * 
                      */
                     int64_t GetDeviceVirtualGroupId() const;
 
                     /**
-                     * 设置必填，终端自定义分组id
-                     * @param _deviceVirtualGroupId 必填，终端自定义分组id
+                     * 设置终端自定义分组ID（0：获取租户全部自定义分组下的终端数据；其他值：获取具体ID分组下的终端数据）
+                     * @param _deviceVirtualGroupId 终端自定义分组ID（0：获取租户全部自定义分组下的终端数据；其他值：获取具体ID分组下的终端数据）
                      * 
                      */
                     void SetDeviceVirtualGroupId(const int64_t& _deviceVirtualGroupId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool DeviceVirtualGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
-                     * @return OsType 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * 获取系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * @return OsType 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
-                     * @param _osType 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * 设置系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * @param _osType 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -163,13 +163,13 @@ namespace TencentCloud
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 必填，终端自定义分组id
+                     * 终端自定义分组ID（0：获取租户全部自定义分组下的终端数据；其他值：获取具体ID分组下的终端数据）
                      */
                     int64_t m_deviceVirtualGroupId;
                     bool m_deviceVirtualGroupIdHasBeenSet;
 
                     /**
-                     * 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;

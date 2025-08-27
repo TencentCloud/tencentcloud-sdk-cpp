@@ -27,7 +27,8 @@ GetReconstructDocumentResultResponse::GetReconstructDocumentResultResponse() :
     m_statusHasBeenSet(false),
     m_documentRecognizeResultUrlHasBeenSet(false),
     m_failedPagesHasBeenSet(false),
-    m_usageHasBeenSet(false)
+    m_usageHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,23 @@ CoreInternalOutcome GetReconstructDocumentResultResponse::Deserialize(const stri
         m_usageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Error") && !rsp["Error"].IsNull())
+    {
+        if (!rsp["Error"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Error` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_error.Deserialize(rsp["Error"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_errorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -170,6 +188,15 @@ string GetReconstructDocumentResultResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_usage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_errorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Error";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_error.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -222,6 +249,16 @@ DocumentUsage GetReconstructDocumentResultResponse::GetUsage() const
 bool GetReconstructDocumentResultResponse::UsageHasBeenSet() const
 {
     return m_usageHasBeenSet;
+}
+
+ErrorInfo GetReconstructDocumentResultResponse::GetError() const
+{
+    return m_error;
+}
+
+bool GetReconstructDocumentResultResponse::ErrorHasBeenSet() const
+{
+    return m_errorHasBeenSet;
 }
 
 

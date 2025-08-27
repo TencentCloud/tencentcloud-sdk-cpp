@@ -58,6 +58,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeClustersRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateWorkSpaceResponse.h
+  include/tencentcloud/oceanus/v20190422/model/SlaveZone.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobResponse.h
   include/tencentcloud/oceanus/v20190422/model/SqlGatewayItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobRuntimeInfoResponse.h
@@ -201,6 +202,7 @@ set(oceanus_src
   src/v20190422/model/DescribeResourceConfigsResponse.cpp
   src/v20190422/model/DescribeClustersRequest.cpp
   src/v20190422/model/CreateWorkSpaceResponse.cpp
+  src/v20190422/model/SlaveZone.cpp
   src/v20190422/model/CreateJobResponse.cpp
   src/v20190422/model/SqlGatewayItem.cpp
   src/v20190422/model/DescribeJobRuntimeInfoResponse.cpp
