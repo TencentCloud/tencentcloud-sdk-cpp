@@ -25,7 +25,8 @@ using namespace std;
 UploadFileToAndroidInstancesRequest::UploadFileToAndroidInstancesRequest() :
     m_androidInstanceIdsHasBeenSet(false),
     m_fileURLHasBeenSet(false),
-    m_destinationDirectoryHasBeenSet(false)
+    m_destinationDirectoryHasBeenSet(false),
+    m_destinationFileNameHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string UploadFileToAndroidInstancesRequest::ToJsonString() const
         string key = "DestinationDirectory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_destinationDirectory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destinationFileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestinationFileName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_destinationFileName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void UploadFileToAndroidInstancesRequest::SetDestinationDirectory(const string& 
 bool UploadFileToAndroidInstancesRequest::DestinationDirectoryHasBeenSet() const
 {
     return m_destinationDirectoryHasBeenSet;
+}
+
+string UploadFileToAndroidInstancesRequest::GetDestinationFileName() const
+{
+    return m_destinationFileName;
+}
+
+void UploadFileToAndroidInstancesRequest::SetDestinationFileName(const string& _destinationFileName)
+{
+    m_destinationFileName = _destinationFileName;
+    m_destinationFileNameHasBeenSet = true;
+}
+
+bool UploadFileToAndroidInstancesRequest::DestinationFileNameHasBeenSet() const
+{
+    return m_destinationFileNameHasBeenSet;
 }
 
 

@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取可用区状态
-                     * @return ZoneStatus 可用区状态
+                     * 获取可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
+                     * @return ZoneStatus 可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
                      * 
                      */
                     int64_t GetZoneStatus() const;
 
                     /**
-                     * 设置可用区状态
-                     * @param _zoneStatus 可用区状态
+                     * 设置可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
+                     * @param _zoneStatus 可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
                      * 
                      */
                     void SetZoneStatus(const int64_t& _zoneStatus);
@@ -290,7 +290,7 @@ namespace TencentCloud
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 可用区状态
+                     * 可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
                      */
                     int64_t m_zoneStatus;
                     bool m_zoneStatusHasBeenSet;

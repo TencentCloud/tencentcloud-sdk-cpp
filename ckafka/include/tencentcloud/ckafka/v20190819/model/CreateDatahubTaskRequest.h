@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务名称
-                     * @return TaskName 任务名称
+                     * 获取任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
+                     * @return TaskName 任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _taskName 任务名称
+                     * 设置任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
+                     * @param _taskName 任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -281,7 +281,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务名称
+                     * 任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;

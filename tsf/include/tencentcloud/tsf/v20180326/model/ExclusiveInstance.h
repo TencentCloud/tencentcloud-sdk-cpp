@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CenterTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例id，通过北极星控制台获取
-                     * @return InstanceId 实例id，通过北极星控制台获取
+                     * 获取实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @return InstanceId 实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id，通过北极星控制台获取
-                     * @param _instanceId 实例id，通过北极星控制台获取
+                     * 设置实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @param _instanceId 实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例地域id，通过北极星控制台获取
-                     * @return RegionId 实例地域id，通过北极星控制台获取
+                     * 获取实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @return RegionId 实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
-                     * 设置实例地域id，通过北极星控制台获取
-                     * @param _regionId 实例地域id，通过北极星控制台获取
+                     * 设置实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @param _regionId 实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取实例命名空间ID，通过北极星控制台获取
-                     * @return InstanceNamespaceId 实例命名空间ID，通过北极星控制台获取
+                     * 获取实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @return InstanceNamespaceId 实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     std::string GetInstanceNamespaceId() const;
 
                     /**
-                     * 设置实例命名空间ID，通过北极星控制台获取
-                     * @param _instanceNamespaceId 实例命名空间ID，通过北极星控制台获取
+                     * 设置实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @param _instanceNamespaceId 实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     void SetInstanceNamespaceId(const std::string& _instanceNamespaceId);
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_centerTypeHasBeenSet;
 
                     /**
-                     * 实例id，通过北极星控制台获取
+                     * 实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -199,13 +199,13 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例地域id，通过北极星控制台获取
+                     * 实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 实例命名空间ID，通过北极星控制台获取
+                     * 实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      */
                     std::string m_instanceNamespaceId;
                     bool m_instanceNamespaceIdHasBeenSet;

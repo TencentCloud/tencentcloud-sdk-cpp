@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取实例Id，可通过DescribeInstances接口获取。
+                     * @return InstanceId 实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _instanceId 实例Id
+                     * 设置实例Id，可通过DescribeInstances接口获取。
+                     * @param _instanceId 实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名称
-                     * @return Name 用户名称
+                     * 获取用户名称，可通过DescribeUser接口获取。
+                     * @return Name 用户名称，可通过DescribeUser接口获取。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置用户名称
-                     * @param _name 用户名称
+                     * 设置用户名称，可通过DescribeUser接口获取。
+                     * @param _name 用户名称，可通过DescribeUser接口获取。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * 实例Id，可通过DescribeInstances接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户名称
+                     * 用户名称，可通过DescribeUser接口获取。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

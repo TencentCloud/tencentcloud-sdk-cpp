@@ -89,27 +89,27 @@ namespace TencentCloud
                     bool RemotePathHasBeenSet() const;
 
                     /**
-                     * 获取文件系统协议类型，默认值NFS 3.0。
-<li>NFS 3.0。
-<li>NFS 4.0。
-<li>TURBO。
-                     * @return Protocol 文件系统协议类型，默认值NFS 3.0。
-<li>NFS 3.0。
-<li>NFS 4.0。
-<li>TURBO。
+                     * 获取文件系统协议类型。
+<li>NFS 3.0</li>
+<li>NFS 4.0</li>
+<li>TURBO</li>
+                     * @return Protocol 文件系统协议类型。
+<li>NFS 3.0</li>
+<li>NFS 4.0</li>
+<li>TURBO</li>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置文件系统协议类型，默认值NFS 3.0。
-<li>NFS 3.0。
-<li>NFS 4.0。
-<li>TURBO。
-                     * @param _protocol 文件系统协议类型，默认值NFS 3.0。
-<li>NFS 3.0。
-<li>NFS 4.0。
-<li>TURBO。
+                     * 设置文件系统协议类型。
+<li>NFS 3.0</li>
+<li>NFS 4.0</li>
+<li>TURBO</li>
+                     * @param _protocol 文件系统协议类型。
+<li>NFS 3.0</li>
+<li>NFS 4.0</li>
+<li>TURBO</li>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -144,12 +144,10 @@ namespace TencentCloud
 
                     /**
                      * 获取文件系统挂载挂载命令参数选项。
-
 - NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport
 - NFS 4.0默认值：vers=4.0,noresvport
 - TURBO默认值：user_xattr
                      * @return MountOption 文件系统挂载挂载命令参数选项。
-
 - NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport
 - NFS 4.0默认值：vers=4.0,noresvport
 - TURBO默认值：user_xattr
@@ -159,12 +157,10 @@ namespace TencentCloud
 
                     /**
                      * 设置文件系统挂载挂载命令参数选项。
-
 - NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport
 - NFS 4.0默认值：vers=4.0,noresvport
 - TURBO默认值：user_xattr
                      * @param _mountOption 文件系统挂载挂载命令参数选项。
-
 - NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport
 - NFS 4.0默认值：vers=4.0,noresvport
 - TURBO默认值：user_xattr
@@ -178,6 +174,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MountOptionHasBeenSet() const;
+
+                    /**
+                     * 获取文件系统ID    文件系统ID通过调用接口[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)获取。
+                     * @return FileSystemId 文件系统ID    文件系统ID通过调用接口[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)获取。
+                     * 
+                     */
+                    std::string GetFileSystemId() const;
+
+                    /**
+                     * 设置文件系统ID    文件系统ID通过调用接口[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)获取。
+                     * @param _fileSystemId 文件系统ID    文件系统ID通过调用接口[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)获取。
+                     * 
+                     */
+                    void SetFileSystemId(const std::string& _fileSystemId);
+
+                    /**
+                     * 判断参数 FileSystemId 是否已赋值
+                     * @return FileSystemId 是否已赋值
+                     * 
+                     */
+                    bool FileSystemIdHasBeenSet() const;
 
                 private:
 
@@ -194,10 +211,10 @@ namespace TencentCloud
                     bool m_remotePathHasBeenSet;
 
                     /**
-                     * 文件系统协议类型，默认值NFS 3.0。
-<li>NFS 3.0。
-<li>NFS 4.0。
-<li>TURBO。
+                     * 文件系统协议类型。
+<li>NFS 3.0</li>
+<li>NFS 4.0</li>
+<li>TURBO</li>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -210,13 +227,18 @@ namespace TencentCloud
 
                     /**
                      * 文件系统挂载挂载命令参数选项。
-
 - NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport
 - NFS 4.0默认值：vers=4.0,noresvport
 - TURBO默认值：user_xattr
                      */
                     std::string m_mountOption;
                     bool m_mountOptionHasBeenSet;
+
+                    /**
+                     * 文件系统ID    文件系统ID通过调用接口[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)获取。
+                     */
+                    std::string m_fileSystemId;
+                    bool m_fileSystemIdHasBeenSet;
 
                 };
             }

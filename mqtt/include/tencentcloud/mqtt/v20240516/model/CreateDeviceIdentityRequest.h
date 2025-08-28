@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool PrimaryKeyHasBeenSet() const;
 
                     /**
-                     * 获取次要签名key，不传则油系统自动生成，需要base64编码。
-                     * @return SecondaryKey 次要签名key，不传则油系统自动生成，需要base64编码。
+                     * 获取次要签名key，不传则由系统自动生成，需要base64编码。
+                     * @return SecondaryKey 次要签名key，不传则由系统自动生成，需要base64编码。
                      * 
                      */
                     std::string GetSecondaryKey() const;
 
                     /**
-                     * 设置次要签名key，不传则油系统自动生成，需要base64编码。
-                     * @param _secondaryKey 次要签名key，不传则油系统自动生成，需要base64编码。
+                     * 设置次要签名key，不传则由系统自动生成，需要base64编码。
+                     * @param _secondaryKey 次要签名key，不传则由系统自动生成，需要base64编码。
                      * 
                      */
                     void SetSecondaryKey(const std::string& _secondaryKey);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_primaryKeyHasBeenSet;
 
                     /**
-                     * 次要签名key，不传则油系统自动生成，需要base64编码。
+                     * 次要签名key，不传则由系统自动生成，需要base64编码。
                      */
                     std::string m_secondaryKey;
                     bool m_secondaryKeyHasBeenSet;

@@ -919,18 +919,18 @@ namespace TencentCloud
                     bool KuberneteNativeTypeHasBeenSet() const;
 
                     /**
-                     * 获取native secret
+                     * 获取Kubernetes 密钥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KuberneteNativeSecret native secret
+                     * @return KuberneteNativeSecret Kubernetes 密钥
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKuberneteNativeSecret() const;
 
                     /**
-                     * 设置native secret
+                     * 设置Kubernetes 密钥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kuberneteNativeSecret native secret
+                     * @param _kuberneteNativeSecret Kubernetes 密钥
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1232,7 +1232,7 @@ namespace TencentCloud
                     bool m_kuberneteNativeTypeHasBeenSet;
 
                     /**
-                     * native secret
+                     * Kubernetes 密钥
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kuberneteNativeSecret;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @return InstanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @param _instanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
-                     * @return Principal 用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * 获取用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * @return Principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
                      * 
                      */
                     std::string GetPrincipal() const;
 
                     /**
-                     * 设置用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
-                     * @param _principal 用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * 设置用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * @param _principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
                      * 
                      */
                     void SetPrincipal(const std::string& _principal);
@@ -192,7 +192,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * ckafka集群实例Id，可通过DescribeInstances接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
                      */
                     std::string m_principal;
                     bool m_principalHasBeenSet;

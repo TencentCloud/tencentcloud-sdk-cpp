@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PartitionHasBeenSet() const;
 
                     /**
-                     * 获取Leader 运行状态
-                     * @return LeaderStatus Leader 运行状态
+                     * 获取Leader 运行状态，0表示正常运行
+                     * @return LeaderStatus Leader 运行状态，0表示正常运行
                      * 
                      */
                     int64_t GetLeaderStatus() const;
 
                     /**
-                     * 设置Leader 运行状态
-                     * @param _leaderStatus Leader 运行状态
+                     * 设置Leader 运行状态，0表示正常运行
+                     * @param _leaderStatus Leader 运行状态，0表示正常运行
                      * 
                      */
                     void SetLeaderStatus(const int64_t& _leaderStatus);
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_partitionHasBeenSet;
 
                     /**
-                     * Leader 运行状态
+                     * Leader 运行状态，0表示正常运行
                      */
                     int64_t m_leaderStatus;
                     bool m_leaderStatusHasBeenSet;

@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool DestinationDirectoryHasBeenSet() const;
 
+                    /**
+                     * 获取目标文件名
+                     * @return DestinationFileName 目标文件名
+                     * 
+                     */
+                    std::string GetDestinationFileName() const;
+
+                    /**
+                     * 设置目标文件名
+                     * @param _destinationFileName 目标文件名
+                     * 
+                     */
+                    void SetDestinationFileName(const std::string& _destinationFileName);
+
+                    /**
+                     * 判断参数 DestinationFileName 是否已赋值
+                     * @return DestinationFileName 是否已赋值
+                     * 
+                     */
+                    bool DestinationFileNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_destinationDirectory;
                     bool m_destinationDirectoryHasBeenSet;
+
+                    /**
+                     * 目标文件名
+                     */
+                    std::string m_destinationFileName;
+                    bool m_destinationFileNameHasBeenSet;
 
                 };
             }

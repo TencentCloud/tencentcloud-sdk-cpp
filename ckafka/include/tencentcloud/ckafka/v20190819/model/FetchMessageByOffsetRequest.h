@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @return InstanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @param _instanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名
-                     * @return Topic 主题名
+                     * 获取主题名，可通过DescribeTopic接口获取。
+                     * @return Topic 主题名，可通过DescribeTopic接口获取。
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题名
-                     * @param _topic 主题名
+                     * 设置主题名，可通过DescribeTopic接口获取。
+                     * @param _topic 主题名，可通过DescribeTopic接口获取。
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * ckafka集群实例Id，可通过DescribeInstances接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名
+                     * 主题名，可通过DescribeTopic接口获取。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;

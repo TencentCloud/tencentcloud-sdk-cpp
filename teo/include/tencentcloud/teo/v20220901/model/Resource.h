@@ -266,12 +266,12 @@ namespace TencentCloud
 
                     /**
                      * 获取地域，取值有：
-<li>mainland：国内；</li>
-<li>overseas：海外。</li>
+<li>mainland：中国大陆境内；</li>
+<li>overseas：中国大陆境外。</li>
 <li>global：全球。</li>
                      * @return Area 地域，取值有：
-<li>mainland：国内；</li>
-<li>overseas：海外。</li>
+<li>mainland：中国大陆境内；</li>
+<li>overseas：中国大陆境外。</li>
 <li>global：全球。</li>
                      * 
                      */
@@ -279,12 +279,12 @@ namespace TencentCloud
 
                     /**
                      * 设置地域，取值有：
-<li>mainland：国内；</li>
-<li>overseas：海外。</li>
+<li>mainland：中国大陆境内；</li>
+<li>overseas：中国大陆境外。</li>
 <li>global：全球。</li>
                      * @param _area 地域，取值有：
-<li>mainland：国内；</li>
-<li>overseas：海外。</li>
+<li>mainland：中国大陆境内；</li>
+<li>overseas：中国大陆境外。</li>
 <li>global：全球。</li>
                      * 
                      */
@@ -449,8 +449,8 @@ namespace TencentCloud
 
                     /**
                      * 地域，取值有：
-<li>mainland：国内；</li>
-<li>overseas：海外。</li>
+<li>mainland：中国大陆境内；</li>
+<li>overseas：中国大陆境外。</li>
 <li>global：全球。</li>
                      */
                     std::string m_area;

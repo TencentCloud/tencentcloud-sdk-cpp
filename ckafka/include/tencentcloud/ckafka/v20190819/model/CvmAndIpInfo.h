@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CkafkaInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取CVM实例ID
-                     * @return InstanceId CVM实例ID
+                     * 获取CVM实例ID(ins-test )或POD IP(10.0.0.30)  
+                     * @return InstanceId CVM实例ID(ins-test )或POD IP(10.0.0.30)  
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置CVM实例ID
-                     * @param _instanceId CVM实例ID
+                     * 设置CVM实例ID(ins-test )或POD IP(10.0.0.30)  
+                     * @param _instanceId CVM实例ID(ins-test )或POD IP(10.0.0.30)  
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -118,7 +118,7 @@ namespace TencentCloud
                     bool m_ckafkaInstanceIdHasBeenSet;
 
                     /**
-                     * CVM实例ID
+                     * CVM实例ID(ins-test )或POD IP(10.0.0.30)  
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

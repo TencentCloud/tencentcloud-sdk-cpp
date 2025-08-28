@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取主题占用Broker 容量大小
-                     * @return DataSize 主题占用Broker 容量大小
+                     * 获取主题占用Broker 容量大小，单位为Bytes。
+                     * @return DataSize 主题占用Broker 容量大小，单位为Bytes。
                      * 
                      */
                     uint64_t GetDataSize() const;
 
                     /**
-                     * 设置主题占用Broker 容量大小
-                     * @param _dataSize 主题占用Broker 容量大小
+                     * 设置主题占用Broker 容量大小，单位为Bytes。
+                     * @param _dataSize 主题占用Broker 容量大小，单位为Bytes。
                      * 
                      */
                     void SetDataSize(const uint64_t& _dataSize);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 主题占用Broker 容量大小
+                     * 主题占用Broker 容量大小，单位为Bytes。
                      */
                     uint64_t m_dataSize;
                     bool m_dataSizeHasBeenSet;

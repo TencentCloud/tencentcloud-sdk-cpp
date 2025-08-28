@@ -620,7 +620,7 @@ namespace TencentCloud
                 CreatePostPaidInstanceOutcomeCallable CreatePostPaidInstanceCallable(const Model::CreatePostPaidInstanceRequest& request);
 
                 /**
-                 *添加普罗米修斯监控1
+                 *添加普罗米修斯监控
                  * @param req CreatePrometheusRequest
                  * @return CreatePrometheusOutcome
                  */
@@ -728,7 +728,7 @@ namespace TencentCloud
                 DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request);
 
                 /**
-                 *删除后付费实例
+                 *删除后付费实例，通过调用API删除不会对连接器和任务进行关联预检查，直接进行实例销毁。
                  * @param req DeleteInstancePostRequest
                  * @return DeleteInstancePostOutcome
                  */
@@ -737,7 +737,7 @@ namespace TencentCloud
                 DeleteInstancePostOutcomeCallable DeleteInstancePostCallable(const Model::DeleteInstancePostRequest& request);
 
                 /**
-                 *删除预付费实例，该接口会对实例执行隔离并删除的动作，执行成功后实例会被直接删除销毁
+                 *删除预付费实例，该接口会对实例执行隔离并删除的动作，执行成功后实例会被直接删除销毁。通过调用API删除不会对连接器和任务进行关联预检查，直接进行实例销毁。
                  * @param req DeleteInstancePreRequest
                  * @return DeleteInstancePreOutcome
                  */
@@ -1206,7 +1206,7 @@ namespace TencentCloud
                 ModifyInstanceAttributesOutcomeCallable ModifyInstanceAttributesCallable(const Model::ModifyInstanceAttributesRequest& request);
 
                 /**
-                 *预付费实例变配接口，调整磁盘，带宽
+                 *预付费实例变配接口，调整磁盘，带宽,  分区
                  * @param req ModifyInstancePreRequest
                  * @return ModifyInstancePreOutcome
                  */

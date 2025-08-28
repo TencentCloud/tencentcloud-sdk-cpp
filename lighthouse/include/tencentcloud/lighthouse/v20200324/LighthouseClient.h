@@ -55,6 +55,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateKeyPairRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateKeyPairResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateMcpServerRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateMcpServerResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteDiskBackupsRequest.h>
@@ -135,6 +137,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeMcpServersRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeMcpServersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeModifyInstanceBundlesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeModifyInstanceBundlesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeRegionsRequest.h>
@@ -197,12 +201,16 @@
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesBundleResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyMcpServerRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyMcpServerResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RemoveDockerContainersRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RemoveDockerContainersResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/RemoveMcpServersRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/RemoveMcpServersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RenameDockerContainerRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RenameDockerContainerResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RenewDisksRequest.h>
@@ -225,6 +233,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/ResizeDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RestartDockerContainersRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RestartDockerContainersResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/RestartMcpServersRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/RestartMcpServersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RunDockerContainersRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RunDockerContainersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ShareBlueprintAcrossAccountsRequest.h>
@@ -233,10 +243,14 @@
 #include <tencentcloud/lighthouse/v20200324/model/StartDockerContainersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StartInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/StartInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/StartMcpServersRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/StartMcpServersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopDockerContainersRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopDockerContainersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/StopMcpServersRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/StopMcpServersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/SyncBlueprintRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/SyncBlueprintResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/TerminateDisksRequest.h>
@@ -305,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateKeyPairResponse> CreateKeyPairOutcome;
                 typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateKeyPairRequest&, CreateKeyPairOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyPairAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMcpServerResponse> CreateMcpServerOutcome;
+                typedef std::future<CreateMcpServerOutcome> CreateMcpServerOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CreateMcpServerRequest&, CreateMcpServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMcpServerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBlueprintsResponse> DeleteBlueprintsOutcome;
                 typedef std::future<DeleteBlueprintsOutcome> DeleteBlueprintsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DeleteBlueprintsRequest&, DeleteBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlueprintsAsyncHandler;
@@ -425,6 +442,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKeyPairsResponse> DescribeKeyPairsOutcome;
                 typedef std::future<DescribeKeyPairsOutcome> DescribeKeyPairsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeKeyPairsRequest&, DescribeKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeyPairsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMcpServersResponse> DescribeMcpServersOutcome;
+                typedef std::future<DescribeMcpServersOutcome> DescribeMcpServersOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeMcpServersRequest&, DescribeMcpServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMcpServersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeModifyInstanceBundlesResponse> DescribeModifyInstanceBundlesOutcome;
                 typedef std::future<DescribeModifyInstanceBundlesOutcome> DescribeModifyInstanceBundlesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeModifyInstanceBundlesRequest&, DescribeModifyInstanceBundlesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModifyInstanceBundlesAsyncHandler;
@@ -518,6 +538,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstancesRenewFlagResponse> ModifyInstancesRenewFlagOutcome;
                 typedef std::future<ModifyInstancesRenewFlagOutcome> ModifyInstancesRenewFlagOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyInstancesRenewFlagRequest&, ModifyInstancesRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMcpServerResponse> ModifyMcpServerOutcome;
+                typedef std::future<ModifyMcpServerOutcome> ModifyMcpServerOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyMcpServerRequest&, ModifyMcpServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMcpServerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySnapshotAttributeResponse> ModifySnapshotAttributeOutcome;
                 typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifySnapshotAttributeRequest&, ModifySnapshotAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotAttributeAsyncHandler;
@@ -527,6 +550,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveDockerContainersResponse> RemoveDockerContainersOutcome;
                 typedef std::future<RemoveDockerContainersOutcome> RemoveDockerContainersOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RemoveDockerContainersRequest&, RemoveDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveDockerContainersAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveMcpServersResponse> RemoveMcpServersOutcome;
+                typedef std::future<RemoveMcpServersOutcome> RemoveMcpServersOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::RemoveMcpServersRequest&, RemoveMcpServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveMcpServersAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenameDockerContainerResponse> RenameDockerContainerOutcome;
                 typedef std::future<RenameDockerContainerOutcome> RenameDockerContainerOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RenameDockerContainerRequest&, RenameDockerContainerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenameDockerContainerAsyncHandler;
@@ -560,6 +586,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartDockerContainersResponse> RestartDockerContainersOutcome;
                 typedef std::future<RestartDockerContainersOutcome> RestartDockerContainersOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RestartDockerContainersRequest&, RestartDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartDockerContainersAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartMcpServersResponse> RestartMcpServersOutcome;
+                typedef std::future<RestartMcpServersOutcome> RestartMcpServersOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::RestartMcpServersRequest&, RestartMcpServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartMcpServersAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunDockerContainersResponse> RunDockerContainersOutcome;
                 typedef std::future<RunDockerContainersOutcome> RunDockerContainersOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RunDockerContainersRequest&, RunDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunDockerContainersAsyncHandler;
@@ -572,12 +601,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartInstancesResponse> StartInstancesOutcome;
                 typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::StartInstancesRequest&, StartInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartMcpServersResponse> StartMcpServersOutcome;
+                typedef std::future<StartMcpServersOutcome> StartMcpServersOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::StartMcpServersRequest&, StartMcpServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMcpServersAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopDockerContainersResponse> StopDockerContainersOutcome;
                 typedef std::future<StopDockerContainersOutcome> StopDockerContainersOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::StopDockerContainersRequest&, StopDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopDockerContainersAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopInstancesResponse> StopInstancesOutcome;
                 typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::StopInstancesRequest&, StopInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopMcpServersResponse> StopMcpServersOutcome;
+                typedef std::future<StopMcpServersOutcome> StopMcpServersOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::StopMcpServersRequest&, StopMcpServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopMcpServersAsyncHandler;
                 typedef Outcome<Core::Error, Model::SyncBlueprintResponse> SyncBlueprintOutcome;
                 typedef std::future<SyncBlueprintOutcome> SyncBlueprintOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::SyncBlueprintRequest&, SyncBlueprintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncBlueprintAsyncHandler;
@@ -761,6 +796,16 @@ namespace TencentCloud
                 CreateKeyPairOutcome CreateKeyPair(const Model::CreateKeyPairRequest &request);
                 void CreateKeyPairAsync(const Model::CreateKeyPairRequest& request, const CreateKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateKeyPairOutcomeCallable CreateKeyPairCallable(const Model::CreateKeyPairRequest& request);
+
+                /**
+                 *本接口（CreateMcpServer）用于创建MCP Server。
+- 本接口为异步接口，请求发送成功后会返回一个 McpServerId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeMcpServers 接口查询。
+                 * @param req CreateMcpServerRequest
+                 * @return CreateMcpServerOutcome
+                 */
+                CreateMcpServerOutcome CreateMcpServer(const Model::CreateMcpServerRequest &request);
+                void CreateMcpServerAsync(const Model::CreateMcpServerRequest& request, const CreateMcpServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMcpServerOutcomeCallable CreateMcpServerCallable(const Model::CreateMcpServerRequest& request);
 
                 /**
                  *本接口 (DeleteBlueprints) 用于删除镜像。可删除的镜像应满足如下条件：
@@ -1154,6 +1199,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeKeyPairsOutcomeCallable DescribeKeyPairsCallable(const Model::DescribeKeyPairsRequest& request);
 
                 /**
+                 *本接口（DescribeMcpServers）用于查询MCP Server列表。
+                 * @param req DescribeMcpServersRequest
+                 * @return DescribeMcpServersOutcome
+                 */
+                DescribeMcpServersOutcome DescribeMcpServers(const Model::DescribeMcpServersRequest &request);
+                void DescribeMcpServersAsync(const Model::DescribeMcpServersRequest& request, const DescribeMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMcpServersOutcomeCallable DescribeMcpServersCallable(const Model::DescribeMcpServersRequest& request);
+
+                /**
                  *本接口（DescribeModifyInstanceBundles）用于查询实例可变更套餐列表。
                  * @param req DescribeModifyInstanceBundlesRequest
                  * @return DescribeModifyInstanceBundlesOutcome
@@ -1498,6 +1552,16 @@ CVM镜像共享到轻量应用服务器镜像需要满足如下条件：
                 ModifyInstancesRenewFlagOutcomeCallable ModifyInstancesRenewFlagCallable(const Model::ModifyInstancesRenewFlagRequest& request);
 
                 /**
+                 *本接口（ModifyMcpServer）用于修改实例的MCP Server信息。
+- 本接口为异步接口，API返回时修改操作并未立即完成。MCP Server的修改结果可以通过调用 DescribeMcpServers 接口查询。
+                 * @param req ModifyMcpServerRequest
+                 * @return ModifyMcpServerOutcome
+                 */
+                ModifyMcpServerOutcome ModifyMcpServer(const Model::ModifyMcpServerRequest &request);
+                void ModifyMcpServerAsync(const Model::ModifyMcpServerRequest& request, const ModifyMcpServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMcpServerOutcomeCallable ModifyMcpServerCallable(const Model::ModifyMcpServerRequest& request);
+
+                /**
                  *本接口（ModifySnapshotAttribute）用于修改指定快照的属性。
 <li>“快照名称”仅为方便用户自己管理之用。</li>
                  * @param req ModifySnapshotAttributeRequest
@@ -1529,6 +1593,17 @@ CVM镜像共享到轻量应用服务器镜像需要满足如下条件：
                 RemoveDockerContainersOutcome RemoveDockerContainers(const Model::RemoveDockerContainersRequest &request);
                 void RemoveDockerContainersAsync(const Model::RemoveDockerContainersRequest& request, const RemoveDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveDockerContainersOutcomeCallable RemoveDockerContainersCallable(const Model::RemoveDockerContainersRequest& request);
+
+                /**
+                 *本接口（RemoveMcpServers）用于删除MCP Server。
+- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。
+- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果，如无法查询到，代表删除成功。
+                 * @param req RemoveMcpServersRequest
+                 * @return RemoveMcpServersOutcome
+                 */
+                RemoveMcpServersOutcome RemoveMcpServers(const Model::RemoveMcpServersRequest &request);
+                void RemoveMcpServersAsync(const Model::RemoveMcpServersRequest& request, const RemoveMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveMcpServersOutcomeCallable RemoveMcpServersCallable(const Model::RemoveMcpServersRequest& request);
 
                 /**
                  *重命名实例内的Docker容器，之后可以通过返回的ActivityId调用[DescribeDockerActivities](https://cloud.tencent.com/document/product/1207/95476)接口查询重命名情况。
@@ -1649,6 +1724,17 @@ CVM镜像共享到轻量应用服务器镜像需要满足如下条件：
                 RestartDockerContainersOutcomeCallable RestartDockerContainersCallable(const Model::RestartDockerContainersRequest& request);
 
                 /**
+                 *本接口（RestartMcpServers）用于重启实例中的MCP Server。
+- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。
+- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果。
+                 * @param req RestartMcpServersRequest
+                 * @return RestartMcpServersOutcome
+                 */
+                RestartMcpServersOutcome RestartMcpServers(const Model::RestartMcpServersRequest &request);
+                void RestartMcpServersAsync(const Model::RestartMcpServersRequest& request, const RestartMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartMcpServersOutcomeCallable RestartMcpServersCallable(const Model::RestartMcpServersRequest& request);
+
+                /**
                  *创建并运行多个Docker容器，之后可以通过返回的ActivityIds调用<a href="https://cloud.tencent.com/document/product/1207/95476" target="_blank">DescribeDockerActivities</a>接口查询创建情况。
                  * @param req RunDockerContainersRequest
                  * @return RunDockerContainersOutcome
@@ -1692,6 +1778,17 @@ CVM镜像共享到轻量应用服务器镜像需要满足如下条件：
                 StartInstancesOutcomeCallable StartInstancesCallable(const Model::StartInstancesRequest& request);
 
                 /**
+                 *本接口（StartMcpServers）用于开启实例中的MCP Server。
+- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。
+- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果。
+                 * @param req StartMcpServersRequest
+                 * @return StartMcpServersOutcome
+                 */
+                StartMcpServersOutcome StartMcpServers(const Model::StartMcpServersRequest &request);
+                void StartMcpServersAsync(const Model::StartMcpServersRequest& request, const StartMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartMcpServersOutcomeCallable StartMcpServersCallable(const Model::StartMcpServersRequest& request);
+
+                /**
                  *停止实例内的Docker容器，之后可以通过返回的ActivityId调用[DescribeDockerActivities](https://cloud.tencent.com/document/product/1207/95476)接口查询停止情况。
                  * @param req StopDockerContainersRequest
                  * @return StopDockerContainersOutcome
@@ -1712,6 +1809,17 @@ CVM镜像共享到轻量应用服务器镜像需要满足如下条件：
                 StopInstancesOutcome StopInstances(const Model::StopInstancesRequest &request);
                 void StopInstancesAsync(const Model::StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request);
+
+                /**
+                 *本接口（StopMcpServers）用于关闭实例中的MCP Server。
+- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。
+- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果。
+                 * @param req StopMcpServersRequest
+                 * @return StopMcpServersOutcome
+                 */
+                StopMcpServersOutcome StopMcpServers(const Model::StopMcpServersRequest &request);
+                void StopMcpServersAsync(const Model::StopMcpServersRequest& request, const StopMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopMcpServersOutcomeCallable StopMcpServersCallable(const Model::StopMcpServersRequest& request);
 
                 /**
                  *本接口 (SyncBlueprint) 用于将自定义镜像同步到其它地域。

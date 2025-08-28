@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @return InstanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @param _instanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取个数限制
-                     * @return Limit 个数限制
+                     * 获取个数限制，默认值为50，最大值为50。
+                     * @return Limit 个数限制，默认值为50，最大值为50。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置个数限制
-                     * @param _limit 个数限制
+                     * 设置个数限制，默认值为50，最大值为50。
+                     * @param _limit 个数限制，默认值为50，最大值为50。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * ckafka集群实例Id，可通过DescribeInstances接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 个数限制
+                     * 个数限制，默认值为50，最大值为50。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

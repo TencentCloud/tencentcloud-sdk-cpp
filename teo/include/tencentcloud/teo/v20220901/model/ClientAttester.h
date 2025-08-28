@@ -121,10 +121,10 @@ namespace TencentCloud
 
                     /**
                      * 获取认证方法。取值有：
-<li>TC-RCE: 使用全栈式风控引擎进行认证；</li>
+<li>TC-RCE: 使用风险识别 RCE 进行认证；</li>
 <li>TC-CAPTCHA: 使用天御验证码进行认证。</li>
                      * @return AttesterSource 认证方法。取值有：
-<li>TC-RCE: 使用全栈式风控引擎进行认证；</li>
+<li>TC-RCE: 使用风险识别 RCE 进行认证；</li>
 <li>TC-CAPTCHA: 使用天御验证码进行认证。</li>
                      * 
                      */
@@ -132,10 +132,10 @@ namespace TencentCloud
 
                     /**
                      * 设置认证方法。取值有：
-<li>TC-RCE: 使用全栈式风控引擎进行认证；</li>
+<li>TC-RCE: 使用风险识别 RCE 进行认证；</li>
 <li>TC-CAPTCHA: 使用天御验证码进行认证。</li>
                      * @param _attesterSource 认证方法。取值有：
-<li>TC-RCE: 使用全栈式风控引擎进行认证；</li>
+<li>TC-RCE: 使用风险识别 RCE 进行认证；</li>
 <li>TC-CAPTCHA: 使用天御验证码进行认证。</li>
                      * 
                      */
@@ -255,7 +255,7 @@ namespace TencentCloud
 
                     /**
                      * 认证方法。取值有：
-<li>TC-RCE: 使用全栈式风控引擎进行认证；</li>
+<li>TC-RCE: 使用风险识别 RCE 进行认证；</li>
 <li>TC-CAPTCHA: 使用天御验证码进行认证。</li>
                      */
                     std::string m_attesterSource;

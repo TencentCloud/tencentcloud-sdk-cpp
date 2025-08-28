@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取资源类型
-                     * @return Kind 资源类型
+                     * 获取Kubernetes 资源类型，典型取值有 Deployment、Pod、Service 等
+                     * @return Kind Kubernetes 资源类型，典型取值有 Deployment、Pod、Service 等
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置资源类型
-                     * @param _kind 资源类型
+                     * 设置Kubernetes 资源类型，典型取值有 Deployment、Pod、Service 等
+                     * @param _kind Kubernetes 资源类型，典型取值有 Deployment、Pod、Service 等
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -235,7 +235,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 资源类型
+                     * Kubernetes 资源类型，典型取值有 Deployment、Pod、Service 等
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;

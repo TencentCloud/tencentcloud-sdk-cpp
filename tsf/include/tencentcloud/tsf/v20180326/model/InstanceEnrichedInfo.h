@@ -152,15 +152,51 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown
-                     * @return InstanceStatus 机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown
+                     * 获取机器运行状态，枚举值为：
+- `Pending`: 准备中
+-  `Running`: 运行中
+-  `Stopped`: 已停止
+-  `Rebooting`: 重启中
+-  `Starting`: 启动中
+-  `Stopping`: 停止中
+-  `Abnormal`: 异常
+-  `Unknown`: 未知
+-  `Offline`: 离线 
+                     * @return InstanceStatus 机器运行状态，枚举值为：
+- `Pending`: 准备中
+-  `Running`: 运行中
+-  `Stopped`: 已停止
+-  `Rebooting`: 重启中
+-  `Starting`: 启动中
+-  `Stopping`: 停止中
+-  `Abnormal`: 异常
+-  `Unknown`: 未知
+-  `Offline`: 离线 
                      * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
-                     * 设置机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown
-                     * @param _instanceStatus 机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown
+                     * 设置机器运行状态，枚举值为：
+- `Pending`: 准备中
+-  `Running`: 运行中
+-  `Stopped`: 已停止
+-  `Rebooting`: 重启中
+-  `Starting`: 启动中
+-  `Stopping`: 停止中
+-  `Abnormal`: 异常
+-  `Unknown`: 未知
+-  `Offline`: 离线 
+                     * @param _instanceStatus 机器运行状态，枚举值为：
+- `Pending`: 准备中
+-  `Running`: 运行中
+-  `Stopped`: 已停止
+-  `Rebooting`: 重启中
+-  `Starting`: 启动中
+-  `Stopping`: 停止中
+-  `Abnormal`: 异常
+-  `Unknown`: 未知
+-  `Offline`: 离线 
                      * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
@@ -436,7 +472,16 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown
+                     * 机器运行状态，枚举值为：
+- `Pending`: 准备中
+-  `Running`: 运行中
+-  `Stopped`: 已停止
+-  `Rebooting`: 重启中
+-  `Starting`: 启动中
+-  `Stopping`: 停止中
+-  `Abnormal`: 异常
+-  `Unknown`: 未知
+-  `Offline`: 离线 
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @return InstanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @param _instanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool RuleListHasBeenSet() const;
 
                     /**
-                     * 获取表示前缀匹配的前缀的值
-                     * @return Pattern 表示前缀匹配的前缀的值
+                     * 获取表示前缀匹配的前缀的值 (当PatternType取值为PREFIXED时，此参数必填)
+                     * @return Pattern 表示前缀匹配的前缀的值 (当PatternType取值为PREFIXED时，此参数必填)
                      * 
                      */
                     std::string GetPattern() const;
 
                     /**
-                     * 设置表示前缀匹配的前缀的值
-                     * @param _pattern 表示前缀匹配的前缀的值
+                     * 设置表示前缀匹配的前缀的值 (当PatternType取值为PREFIXED时，此参数必填)
+                     * @param _pattern 表示前缀匹配的前缀的值 (当PatternType取值为PREFIXED时，此参数必填)
                      * 
                      */
                     void SetPattern(const std::string& _pattern);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool PatternHasBeenSet() const;
 
                     /**
-                     * 获取预设ACL规则是否应用到新增的topic中
-                     * @return IsApplied 预设ACL规则是否应用到新增的topic中
+                     * 获取预设ACL规则是否应用到新增的topic中。默认为0，表示否。取值为1时表示是。
+                     * @return IsApplied 预设ACL规则是否应用到新增的topic中。默认为0，表示否。取值为1时表示是。
                      * 
                      */
                     int64_t GetIsApplied() const;
 
                     /**
-                     * 设置预设ACL规则是否应用到新增的topic中
-                     * @param _isApplied 预设ACL规则是否应用到新增的topic中
+                     * 设置预设ACL规则是否应用到新增的topic中。默认为0，表示否。取值为1时表示是。
+                     * @param _isApplied 预设ACL规则是否应用到新增的topic中。默认为0，表示否。取值为1时表示是。
                      * 
                      */
                     void SetIsApplied(const int64_t& _isApplied);
@@ -214,7 +214,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * ckafka集群实例Id，可通过DescribeInstances接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -244,13 +244,13 @@ namespace TencentCloud
                     bool m_ruleListHasBeenSet;
 
                     /**
-                     * 表示前缀匹配的前缀的值
+                     * 表示前缀匹配的前缀的值 (当PatternType取值为PREFIXED时，此参数必填)
                      */
                     std::string m_pattern;
                     bool m_patternHasBeenSet;
 
                     /**
-                     * 预设ACL规则是否应用到新增的topic中
+                     * 预设ACL规则是否应用到新增的topic中。默认为0，表示否。取值为1时表示是。
                      */
                     int64_t m_isApplied;
                     bool m_isAppliedHasBeenSet;

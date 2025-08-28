@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取ckafka集群实例Id,可通过DescribeInstances接口获取
+                     * @return InstanceId ckafka集群实例Id,可通过DescribeInstances接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置ckafka集群实例Id,可通过DescribeInstances接口获取
+                     * @param _instanceId ckafka集群实例Id,可通过DescribeInstances接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取路由id
-                     * @return RouteId 路由id
+                     * 获取路由id,可通过DescribeRoute接口获取
+                     * @return RouteId 路由id,可通过DescribeRoute接口获取
                      * 
                      */
                     int64_t GetRouteId() const;
 
                     /**
-                     * 设置路由id
-                     * @param _routeId 路由id
+                     * 设置路由id,可通过DescribeRoute接口获取
+                     * @param _routeId 路由id,可通过DescribeRoute接口获取
                      * 
                      */
                     void SetRouteId(const int64_t& _routeId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool CallerAppidHasBeenSet() const;
 
                     /**
-                     * 获取设置定时删除路由时间,若DeleteRouteTime < now ,设置时间小于当前接口提交时间则立即执行;DeleteRouteTime > now,设置时间大于当前接口提交时间,则按照设置的时间,定时执行删除;  该参数设置提交后,无法撤销!!!
-                     * @return DeleteRouteTime 设置定时删除路由时间,若DeleteRouteTime < now ,设置时间小于当前接口提交时间则立即执行;DeleteRouteTime > now,设置时间大于当前接口提交时间,则按照设置的时间,定时执行删除;  该参数设置提交后,无法撤销!!!
+                     * 获取设置定时删除路由时间,仅类型为公网路由支持定时删除,可选择未来的24小时的任意时间
+                     * @return DeleteRouteTime 设置定时删除路由时间,仅类型为公网路由支持定时删除,可选择未来的24小时的任意时间
                      * 
                      */
                     std::string GetDeleteRouteTime() const;
 
                     /**
-                     * 设置设置定时删除路由时间,若DeleteRouteTime < now ,设置时间小于当前接口提交时间则立即执行;DeleteRouteTime > now,设置时间大于当前接口提交时间,则按照设置的时间,定时执行删除;  该参数设置提交后,无法撤销!!!
-                     * @param _deleteRouteTime 设置定时删除路由时间,若DeleteRouteTime < now ,设置时间小于当前接口提交时间则立即执行;DeleteRouteTime > now,设置时间大于当前接口提交时间,则按照设置的时间,定时执行删除;  该参数设置提交后,无法撤销!!!
+                     * 设置设置定时删除路由时间,仅类型为公网路由支持定时删除,可选择未来的24小时的任意时间
+                     * @param _deleteRouteTime 设置定时删除路由时间,仅类型为公网路由支持定时删除,可选择未来的24小时的任意时间
                      * 
                      */
                     void SetDeleteRouteTime(const std::string& _deleteRouteTime);
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * ckafka集群实例Id,可通过DescribeInstances接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 路由id
+                     * 路由id,可通过DescribeRoute接口获取
                      */
                     int64_t m_routeId;
                     bool m_routeIdHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_callerAppidHasBeenSet;
 
                     /**
-                     * 设置定时删除路由时间,若DeleteRouteTime < now ,设置时间小于当前接口提交时间则立即执行;DeleteRouteTime > now,设置时间大于当前接口提交时间,则按照设置的时间,定时执行删除;  该参数设置提交后,无法撤销!!!
+                     * 设置定时删除路由时间,仅类型为公网路由支持定时删除,可选择未来的24小时的任意时间
                      */
                     std::string m_deleteRouteTime;
                     bool m_deleteRouteTimeHasBeenSet;

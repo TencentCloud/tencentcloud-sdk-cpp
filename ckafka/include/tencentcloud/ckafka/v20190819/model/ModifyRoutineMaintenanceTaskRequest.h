@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取ckafka集群实例id,可通过DescribeInstances接口获取
+                     * @return InstanceId ckafka集群实例id,可通过DescribeInstances接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置ckafka集群实例id,可通过DescribeInstances接口获取
+                     * @param _instanceId ckafka集群实例id,可通过DescribeInstances接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取自动化运维类别
-                     * @return MaintenanceType 自动化运维类别
+                     * 获取自动化运维类别, 类别如下: QUOTA、ANALYSIS、RE_BALANCE、ELASTIC_BANDWIDTH
+                     * @return MaintenanceType 自动化运维类别, 类别如下: QUOTA、ANALYSIS、RE_BALANCE、ELASTIC_BANDWIDTH
                      * 
                      */
                     std::string GetMaintenanceType() const;
 
                     /**
-                     * 设置自动化运维类别
-                     * @param _maintenanceType 自动化运维类别
+                     * 设置自动化运维类别, 类别如下: QUOTA、ANALYSIS、RE_BALANCE、ELASTIC_BANDWIDTH
+                     * @param _maintenanceType 自动化运维类别, 类别如下: QUOTA、ANALYSIS、RE_BALANCE、ELASTIC_BANDWIDTH
                      * 
                      */
                     void SetMaintenanceType(const std::string& _maintenanceType);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool ExtraConfigHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-                     * @return Status 任务状态
+                     * 获取任务状态,0 开启,1 关闭
+                     * @return Status 任务状态,0 开启,1 关闭
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态
-                     * @param _status 任务状态
+                     * 设置任务状态,0 开启,1 关闭
+                     * @param _status 任务状态,0 开启,1 关闭
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -276,13 +276,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * ckafka集群实例id,可通过DescribeInstances接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 自动化运维类别
+                     * 自动化运维类别, 类别如下: QUOTA、ANALYSIS、RE_BALANCE、ELASTIC_BANDWIDTH
                      */
                     std::string m_maintenanceType;
                     bool m_maintenanceTypeHasBeenSet;
@@ -330,7 +330,7 @@ namespace TencentCloud
                     bool m_extraConfigHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * 任务状态,0 开启,1 关闭
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

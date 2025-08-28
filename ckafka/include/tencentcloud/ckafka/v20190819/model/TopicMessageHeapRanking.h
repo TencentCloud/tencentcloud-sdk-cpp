@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ReplicaNumHasBeenSet() const;
 
                     /**
-                     * 获取Topic 流量
-                     * @return TopicTraffic Topic 流量
+                     * 获取Topic 流量，单位为MB。
+                     * @return TopicTraffic Topic 流量，单位为MB。
                      * 
                      */
                     std::string GetTopicTraffic() const;
 
                     /**
-                     * 设置Topic 流量
-                     * @param _topicTraffic Topic 流量
+                     * 设置Topic 流量，单位为MB。
+                     * @param _topicTraffic Topic 流量，单位为MB。
                      * 
                      */
                     void SetTopicTraffic(const std::string& _topicTraffic);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TopicTrafficHasBeenSet() const;
 
                     /**
-                     * 获取topic消息堆积/占用磁盘
-                     * @return MessageHeap topic消息堆积/占用磁盘
+                     * 获取topic消息堆积/占用磁盘，单位为Bytes。
+                     * @return MessageHeap topic消息堆积/占用磁盘，单位为Bytes。
                      * 
                      */
                     uint64_t GetMessageHeap() const;
 
                     /**
-                     * 设置topic消息堆积/占用磁盘
-                     * @param _messageHeap topic消息堆积/占用磁盘
+                     * 设置topic消息堆积/占用磁盘，单位为Bytes。
+                     * @param _messageHeap topic消息堆积/占用磁盘，单位为Bytes。
                      * 
                      */
                     void SetMessageHeap(const uint64_t& _messageHeap);
@@ -199,13 +199,13 @@ namespace TencentCloud
                     bool m_replicaNumHasBeenSet;
 
                     /**
-                     * Topic 流量
+                     * Topic 流量，单位为MB。
                      */
                     std::string m_topicTraffic;
                     bool m_topicTrafficHasBeenSet;
 
                     /**
-                     * topic消息堆积/占用磁盘
+                     * topic消息堆积/占用磁盘，单位为Bytes。
                      */
                     uint64_t m_messageHeap;
                     bool m_messageHeapHasBeenSet;

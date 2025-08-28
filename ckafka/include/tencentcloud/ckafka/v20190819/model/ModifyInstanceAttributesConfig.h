@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AutoCreateTopicEnableHasBeenSet() const;
 
                     /**
-                     * 获取可选，如果auto.create.topic.enable设置为true没有设置该值时，默认设置为3
-                     * @return DefaultNumPartitions 可选，如果auto.create.topic.enable设置为true没有设置该值时，默认设置为3
+                     * 获取新创建主题的默认分区数,如果AutoCreateTopicEnable设置为true没有设置该值时，默认设置为3
+                     * @return DefaultNumPartitions 新创建主题的默认分区数,如果AutoCreateTopicEnable设置为true没有设置该值时，默认设置为3
                      * 
                      */
                     int64_t GetDefaultNumPartitions() const;
 
                     /**
-                     * 设置可选，如果auto.create.topic.enable设置为true没有设置该值时，默认设置为3
-                     * @param _defaultNumPartitions 可选，如果auto.create.topic.enable设置为true没有设置该值时，默认设置为3
+                     * 设置新创建主题的默认分区数,如果AutoCreateTopicEnable设置为true没有设置该值时，默认设置为3
+                     * @param _defaultNumPartitions 新创建主题的默认分区数,如果AutoCreateTopicEnable设置为true没有设置该值时，默认设置为3
                      * 
                      */
                     void SetDefaultNumPartitions(const int64_t& _defaultNumPartitions);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DefaultNumPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取如果auto.create.topic.enable设置为true没有指定该值时默认设置为2
-                     * @return DefaultReplicationFactor 如果auto.create.topic.enable设置为true没有指定该值时默认设置为2
+                     * 获取新创建主题的默认副本数,如果AutoCreateTopicEnable设置为true没有指定该值时默认设置为2
+                     * @return DefaultReplicationFactor 新创建主题的默认副本数,如果AutoCreateTopicEnable设置为true没有指定该值时默认设置为2
                      * 
                      */
                     int64_t GetDefaultReplicationFactor() const;
 
                     /**
-                     * 设置如果auto.create.topic.enable设置为true没有指定该值时默认设置为2
-                     * @param _defaultReplicationFactor 如果auto.create.topic.enable设置为true没有指定该值时默认设置为2
+                     * 设置新创建主题的默认副本数,如果AutoCreateTopicEnable设置为true没有指定该值时默认设置为2
+                     * @param _defaultReplicationFactor 新创建主题的默认副本数,如果AutoCreateTopicEnable设置为true没有指定该值时默认设置为2
                      * 
                      */
                     void SetDefaultReplicationFactor(const int64_t& _defaultReplicationFactor);
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_autoCreateTopicEnableHasBeenSet;
 
                     /**
-                     * 可选，如果auto.create.topic.enable设置为true没有设置该值时，默认设置为3
+                     * 新创建主题的默认分区数,如果AutoCreateTopicEnable设置为true没有设置该值时，默认设置为3
                      */
                     int64_t m_defaultNumPartitions;
                     bool m_defaultNumPartitionsHasBeenSet;
 
                     /**
-                     * 如果auto.create.topic.enable设置为true没有指定该值时默认设置为2
+                     * 新创建主题的默认副本数,如果AutoCreateTopicEnable设置为true没有指定该值时默认设置为2
                      */
                     int64_t m_defaultReplicationFactor;
                     bool m_defaultReplicationFactorHasBeenSet;

@@ -131,14 +131,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)
+
                      * @return InquiryDiskParam 实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)
+
                      * 
                      */
                     InquiryDiskParam GetInquiryDiskParam() const;
 
                     /**
                      * 设置实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)
+
                      * @param _inquiryDiskParam 实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)
+
                      * 
                      */
                     void SetInquiryDiskParam(const InquiryDiskParam& _inquiryDiskParam);
@@ -194,14 +198,26 @@ namespace TencentCloud
 
                     /**
                      * 获取购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)
+分区上限 最大值: 40000,步长: 100
+可以通过以下链接查看规格限制: https://cloud.tencent.com/document/product/597/122563
+
                      * @return Partition 购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)
+分区上限 最大值: 40000,步长: 100
+可以通过以下链接查看规格限制: https://cloud.tencent.com/document/product/597/122563
+
                      * 
                      */
                     int64_t GetPartition() const;
 
                     /**
                      * 设置购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)
+分区上限 最大值: 40000,步长: 100
+可以通过以下链接查看规格限制: https://cloud.tencent.com/document/product/597/122563
+
                      * @param _partition 购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)
+分区上限 最大值: 40000,步长: 100
+可以通过以下链接查看规格限制: https://cloud.tencent.com/document/product/597/122563
+
                      * 
                      */
                     void SetPartition(const int64_t& _partition);
@@ -277,15 +293,15 @@ namespace TencentCloud
                     bool BillTypeHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填)
-                     * @return PublicNetworkParam 公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填)
+                     * 获取公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填),取值为3的倍数
+                     * @return PublicNetworkParam 公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填),取值为3的倍数
                      * 
                      */
                     InquiryPublicNetworkParam GetPublicNetworkParam() const;
 
                     /**
-                     * 设置公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填)
-                     * @param _publicNetworkParam 公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填)
+                     * 设置公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填),取值为3的倍数
+                     * @param _publicNetworkParam 公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填),取值为3的倍数
                      * 
                      */
                     void SetPublicNetworkParam(const InquiryPublicNetworkParam& _publicNetworkParam);
@@ -346,6 +362,7 @@ namespace TencentCloud
 
                     /**
                      * 实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)
+
                      */
                     InquiryDiskParam m_inquiryDiskParam;
                     bool m_inquiryDiskParamHasBeenSet;
@@ -364,6 +381,9 @@ namespace TencentCloud
 
                     /**
                      * 购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)
+分区上限 最大值: 40000,步长: 100
+可以通过以下链接查看规格限制: https://cloud.tencent.com/document/product/597/122563
+
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;
@@ -387,7 +407,7 @@ namespace TencentCloud
                     bool m_billTypeHasBeenSet;
 
                     /**
-                     * 公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填)
+                     * 公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填),取值为3的倍数
                      */
                     InquiryPublicNetworkParam m_publicNetworkParam;
                     bool m_publicNetworkParamHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性topic名称
-                     * @return Name 弹性topic名称
+                     * 获取弹性topic名称，可通过DescribeDatahubTopics接口获取。
+                     * @return Name 弹性topic名称，可通过DescribeDatahubTopics接口获取。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置弹性topic名称
-                     * @param _name 弹性topic名称
+                     * 设置弹性topic名称，可通过DescribeDatahubTopics接口获取。
+                     * @param _name 弹性topic名称，可通过DescribeDatahubTopics接口获取。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性topic名称
+                     * 弹性topic名称，可通过DescribeDatahubTopics接口获取。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

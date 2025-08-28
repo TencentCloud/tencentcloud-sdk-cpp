@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，例如创建时间
-                     * @return OrderBy 排序字段，例如创建时间
+                     * 获取排序字段，目前仅支持使用“创建时间”
+                     * @return OrderBy 排序字段，目前仅支持使用“创建时间”
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段，例如创建时间
-                     * @param _orderBy 排序字段，例如创建时间
+                     * 设置排序字段，目前仅支持使用“创建时间”
+                     * @param _orderBy 排序字段，目前仅支持使用“创建时间”
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 排序字段，例如创建时间
+                     * 排序字段，目前仅支持使用“创建时间”
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @return InstanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @param _instanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取ACL规则匹配类型
-                     * @return PatternType ACL规则匹配类型
+                     * 获取ACL规则匹配类型 （PREFIXED：前缀匹配，PRESET：预设策略）
+                     * @return PatternType ACL规则匹配类型 （PREFIXED：前缀匹配，PRESET：预设策略）
                      * 
                      */
                     std::string GetPatternType() const;
 
                     /**
-                     * 设置ACL规则匹配类型
-                     * @param _patternType ACL规则匹配类型
+                     * 设置ACL规则匹配类型 （PREFIXED：前缀匹配，PRESET：预设策略）
+                     * @param _patternType ACL规则匹配类型 （PREFIXED：前缀匹配，PRESET：预设策略）
                      * 
                      */
                     void SetPatternType(const std::string& _patternType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PatternTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否读取简略的ACL规则
-                     * @return IsSimplified 是否读取简略的ACL规则
+                     * 获取是否读取简略的ACL规则，默认值为false，表示不读取简略的ACL规则。
+                     * @return IsSimplified 是否读取简略的ACL规则，默认值为false，表示不读取简略的ACL规则。
                      * 
                      */
                     bool GetIsSimplified() const;
 
                     /**
-                     * 设置是否读取简略的ACL规则
-                     * @param _isSimplified 是否读取简略的ACL规则
+                     * 设置是否读取简略的ACL规则，默认值为false，表示不读取简略的ACL规则。
+                     * @param _isSimplified 是否读取简略的ACL规则，默认值为false，表示不读取简略的ACL规则。
                      * 
                      */
                     void SetIsSimplified(const bool& _isSimplified);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * ckafka集群实例Id，可通过DescribeInstances接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -141,13 +141,13 @@ namespace TencentCloud
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * ACL规则匹配类型
+                     * ACL规则匹配类型 （PREFIXED：前缀匹配，PRESET：预设策略）
                      */
                     std::string m_patternType;
                     bool m_patternTypeHasBeenSet;
 
                     /**
-                     * 是否读取简略的ACL规则
+                     * 是否读取简略的ACL规则，默认值为false，表示不读取简略的ACL规则。
                      */
                     bool m_isSimplified;
                     bool m_isSimplifiedHasBeenSet;
