@@ -28,7 +28,8 @@ QuestionSplitOCRRequest::QuestionSplitOCRRequest() :
     m_isPdfHasBeenSet(false),
     m_pdfPageNumberHasBeenSet(false),
     m_enableImageCropHasBeenSet(false),
-    m_enableOnlyDetectBorderHasBeenSet(false)
+    m_enableOnlyDetectBorderHasBeenSet(false),
+    m_useNewModelHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string QuestionSplitOCRRequest::ToJsonString() const
         string key = "EnableOnlyDetectBorder";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableOnlyDetectBorder, allocator);
+    }
+
+    if (m_useNewModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseNewModel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useNewModel, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void QuestionSplitOCRRequest::SetEnableOnlyDetectBorder(const bool& _enableOnlyD
 bool QuestionSplitOCRRequest::EnableOnlyDetectBorderHasBeenSet() const
 {
     return m_enableOnlyDetectBorderHasBeenSet;
+}
+
+bool QuestionSplitOCRRequest::GetUseNewModel() const
+{
+    return m_useNewModel;
+}
+
+void QuestionSplitOCRRequest::SetUseNewModel(const bool& _useNewModel)
+{
+    m_useNewModel = _useNewModel;
+    m_useNewModelHasBeenSet = true;
+}
+
+bool QuestionSplitOCRRequest::UseNewModelHasBeenSet() const
+{
+    return m_useNewModelHasBeenSet;
 }
 
 

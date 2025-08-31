@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取父帐号uin
-                     * @return Uin 父帐号uin
+                     * 获取父账号uin
+                     * @return Uin 父账号uin
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置父帐号uin
-                     * @param _uin 父帐号uin
+                     * 设置父账号uin
+                     * @param _uin 父账号uin
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -175,7 +175,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 父帐号uin
+                     * 父账号uin
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;

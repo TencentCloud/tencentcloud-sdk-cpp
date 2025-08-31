@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取模糊匹配关键词
-                     * @return SearchWord 模糊匹配关键词
+                     * 获取模糊匹配关键词，可搜索配置项ID或配置项名称
+                     * @return SearchWord 模糊匹配关键词，可搜索配置项ID或配置项名称
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置模糊匹配关键词
-                     * @param _searchWord 模糊匹配关键词
+                     * 设置模糊匹配关键词，可搜索配置项ID或配置项名称
+                     * @param _searchWord 模糊匹配关键词，可搜索配置项ID或配置项名称
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -166,7 +166,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 模糊匹配关键词
+                     * 模糊匹配关键词，可搜索配置项ID或配置项名称
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;

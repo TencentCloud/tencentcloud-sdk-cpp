@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取开始index
-                     * @return Offset 开始index
+                     * 获取开始index，取值范围大于等于0，默认值为0
+                     * @return Offset 开始index，取值范围大于等于0，默认值为0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置开始index
-                     * @param _offset 开始index
+                     * 设置开始index，取值范围大于等于0，默认值为0
+                     * @param _offset 开始index，取值范围大于等于0，默认值为0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return Limit 分页大小
+                     * 获取单页请求配置数量，取值范围[1, 50]，默认值为10
+                     * @return Limit 单页请求配置数量，取值范围[1, 50]，默认值为10
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _limit 分页大小
+                     * 设置单页请求配置数量，取值范围[1, 50]，默认值为10
+                     * @param _limit 单页请求配置数量，取值范围[1, 50]，默认值为10
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -205,13 +205,13 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 开始index
+                     * 开始index，取值范围大于等于0，默认值为0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * 单页请求配置数量，取值范围[1, 50]，默认值为10
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

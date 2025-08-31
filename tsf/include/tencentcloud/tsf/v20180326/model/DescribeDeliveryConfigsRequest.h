@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关键字
-                     * @return SearchWord 关键字
+                     * 获取搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称
+                     * @return SearchWord 搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置关键字
-                     * @param _searchWord 关键字
+                     * 设置搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称
+                     * @param _searchWord 搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取偏移
-                     * @return Offset 偏移
+                     * 获取偏移量，取值范围大于等于0，默认值为0
+                     * @return Offset 偏移量，取值范围大于等于0，默认值为0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移
-                     * @param _offset 偏移
+                     * 设置偏移量，取值范围大于等于0，默认值为0
+                     * @param _offset 偏移量，取值范围大于等于0，默认值为0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取搜索条数
-                     * @return Limit 搜索条数
+                     * 获取单页请求配置数量，取值范围[1, 50]，默认值为10
+                     * @return Limit 单页请求配置数量，取值范围[1, 50]，默认值为10
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置搜索条数
-                     * @param _limit 搜索条数
+                     * 设置单页请求配置数量，取值范围[1, 50]，默认值为10
+                     * @param _limit 单页请求配置数量，取值范围[1, 50]，默认值为10
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -158,19 +158,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关键字
+                     * 搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 偏移
+                     * 偏移量，取值范围大于等于0，默认值为0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 搜索条数
+                     * 单页请求配置数量，取值范围[1, 50]，默认值为10
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

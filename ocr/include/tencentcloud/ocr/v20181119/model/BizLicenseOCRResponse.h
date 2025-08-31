@@ -378,6 +378,20 @@ WARN_RESHOOT_CARD翻拍件告警
                      */
                     bool BusinessCertificateHasBeenSet() const;
 
+                    /**
+                     * 获取重要提示字段
+                     * @return Important 重要提示字段
+                     * 
+                     */
+                    std::string GetImportant() const;
+
+                    /**
+                     * 判断参数 Important 是否已赋值
+                     * @return Important 是否已赋值
+                     * 
+                     */
+                    bool ImportantHasBeenSet() const;
+
                 private:
 
                     /**
@@ -523,6 +537,12 @@ WARN_RESHOOT_CARD翻拍件告警
                      */
                     std::vector<BusinessCertificateInfo> m_businessCertificate;
                     bool m_businessCertificateHasBeenSet;
+
+                    /**
+                     * 重要提示字段
+                     */
+                    std::string m_important;
+                    bool m_importantHasBeenSet;
 
                 };
             }

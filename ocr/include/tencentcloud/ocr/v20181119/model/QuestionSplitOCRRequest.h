@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool EnableOnlyDetectBorderHasBeenSet() const;
 
+                    /**
+                     * 获取false: 使用当前默认模型  true: 使用新的多模态推理模型，速度更快推理效果更强，仅 `EnableOnlyDetectBorder` 为 `true` 时生效，公测中
+                     * @return UseNewModel false: 使用当前默认模型  true: 使用新的多模态推理模型，速度更快推理效果更强，仅 `EnableOnlyDetectBorder` 为 `true` 时生效，公测中
+                     * 
+                     */
+                    bool GetUseNewModel() const;
+
+                    /**
+                     * 设置false: 使用当前默认模型  true: 使用新的多模态推理模型，速度更快推理效果更强，仅 `EnableOnlyDetectBorder` 为 `true` 时生效，公测中
+                     * @param _useNewModel false: 使用当前默认模型  true: 使用新的多模态推理模型，速度更快推理效果更强，仅 `EnableOnlyDetectBorder` 为 `true` 时生效，公测中
+                     * 
+                     */
+                    void SetUseNewModel(const bool& _useNewModel);
+
+                    /**
+                     * 判断参数 UseNewModel 是否已赋值
+                     * @return UseNewModel 是否已赋值
+                     * 
+                     */
+                    bool UseNewModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     bool m_enableOnlyDetectBorder;
                     bool m_enableOnlyDetectBorderHasBeenSet;
+
+                    /**
+                     * false: 使用当前默认模型  true: 使用新的多模态推理模型，速度更快推理效果更强，仅 `EnableOnlyDetectBorder` 为 `true` 时生效，公测中
+                     */
+                    bool m_useNewModel;
+                    bool m_useNewModelHasBeenSet;
 
                 };
             }
