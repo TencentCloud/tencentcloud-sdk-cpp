@@ -30,7 +30,9 @@ InstanceSpec::InstanceSpec() :
     m_maxIopsHasBeenSet(false),
     m_maxIoBandWidthHasBeenSet(false),
     m_zoneStockInfosHasBeenSet(false),
-    m_stockCountHasBeenSet(false)
+    m_stockCountHasBeenSet(false),
+    m_maxCpuHasBeenSet(false),
+    m_minCpuHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome InstanceSpec::Deserialize(const rapidjson::Value &value)
         m_stockCountHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxCpu") && !value["MaxCpu"].IsNull())
+    {
+        if (!value["MaxCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.MaxCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxCpu = value["MaxCpu"].GetDouble();
+        m_maxCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinCpu") && !value["MinCpu"].IsNull())
+    {
+        if (!value["MinCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.MinCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_minCpu = value["MinCpu"].GetDouble();
+        m_minCpuHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +263,22 @@ void InstanceSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "StockCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stockCount, allocator);
+    }
+
+    if (m_maxCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxCpu, allocator);
+    }
+
+    if (m_minCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minCpu, allocator);
     }
 
 }
@@ -404,5 +442,37 @@ void InstanceSpec::SetStockCount(const int64_t& _stockCount)
 bool InstanceSpec::StockCountHasBeenSet() const
 {
     return m_stockCountHasBeenSet;
+}
+
+double InstanceSpec::GetMaxCpu() const
+{
+    return m_maxCpu;
+}
+
+void InstanceSpec::SetMaxCpu(const double& _maxCpu)
+{
+    m_maxCpu = _maxCpu;
+    m_maxCpuHasBeenSet = true;
+}
+
+bool InstanceSpec::MaxCpuHasBeenSet() const
+{
+    return m_maxCpuHasBeenSet;
+}
+
+double InstanceSpec::GetMinCpu() const
+{
+    return m_minCpu;
+}
+
+void InstanceSpec::SetMinCpu(const double& _minCpu)
+{
+    m_minCpu = _minCpu;
+    m_minCpuHasBeenSet = true;
+}
+
+bool InstanceSpec::MinCpuHasBeenSet() const
+{
+    return m_minCpuHasBeenSet;
 }
 

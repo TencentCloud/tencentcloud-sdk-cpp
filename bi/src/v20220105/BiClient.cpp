@@ -255,6 +255,49 @@ BiClient::CreateEmbedTokenOutcomeCallable BiClient::CreateEmbedTokenCallable(con
     return task->get_future();
 }
 
+BiClient::CreatePermissionRanksOutcome BiClient::CreatePermissionRanks(const CreatePermissionRanksRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePermissionRanks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePermissionRanksResponse rsp = CreatePermissionRanksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePermissionRanksOutcome(rsp);
+        else
+            return CreatePermissionRanksOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePermissionRanksOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::CreatePermissionRanksAsync(const CreatePermissionRanksRequest& request, const CreatePermissionRanksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePermissionRanks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BiClient::CreatePermissionRanksOutcomeCallable BiClient::CreatePermissionRanksCallable(const CreatePermissionRanksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePermissionRanksOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePermissionRanks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BiClient::CreateProjectOutcome BiClient::CreateProject(const CreateProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateProject");
@@ -635,6 +678,135 @@ BiClient::DescribePageWidgetListOutcomeCallable BiClient::DescribePageWidgetList
         [this, request]()
         {
             return this->DescribePageWidgetList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BiClient::DescribePermissionRanksInfoOutcome BiClient::DescribePermissionRanksInfo(const DescribePermissionRanksInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePermissionRanksInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePermissionRanksInfoResponse rsp = DescribePermissionRanksInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePermissionRanksInfoOutcome(rsp);
+        else
+            return DescribePermissionRanksInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePermissionRanksInfoOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribePermissionRanksInfoAsync(const DescribePermissionRanksInfoRequest& request, const DescribePermissionRanksInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePermissionRanksInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BiClient::DescribePermissionRanksInfoOutcomeCallable BiClient::DescribePermissionRanksInfoCallable(const DescribePermissionRanksInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePermissionRanksInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePermissionRanksInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BiClient::DescribePermissionRoleInfoOutcome BiClient::DescribePermissionRoleInfo(const DescribePermissionRoleInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePermissionRoleInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePermissionRoleInfoResponse rsp = DescribePermissionRoleInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePermissionRoleInfoOutcome(rsp);
+        else
+            return DescribePermissionRoleInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePermissionRoleInfoOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribePermissionRoleInfoAsync(const DescribePermissionRoleInfoRequest& request, const DescribePermissionRoleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePermissionRoleInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BiClient::DescribePermissionRoleInfoOutcomeCallable BiClient::DescribePermissionRoleInfoCallable(const DescribePermissionRoleInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePermissionRoleInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePermissionRoleInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BiClient::DescribePermissionStatusInfoOutcome BiClient::DescribePermissionStatusInfo(const DescribePermissionStatusInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePermissionStatusInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePermissionStatusInfoResponse rsp = DescribePermissionStatusInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePermissionStatusInfoOutcome(rsp);
+        else
+            return DescribePermissionStatusInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePermissionStatusInfoOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribePermissionStatusInfoAsync(const DescribePermissionStatusInfoRequest& request, const DescribePermissionStatusInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePermissionStatusInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BiClient::DescribePermissionStatusInfoOutcomeCallable BiClient::DescribePermissionStatusInfoCallable(const DescribePermissionStatusInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePermissionStatusInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePermissionStatusInfo(request);
         }
     );
 

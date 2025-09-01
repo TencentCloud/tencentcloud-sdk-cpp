@@ -257,6 +257,48 @@ namespace TencentCloud
                      */
                     bool StockCountHasBeenSet() const;
 
+                    /**
+                     * 获取最大cpu
+                     * @return MaxCpu 最大cpu
+                     * 
+                     */
+                    double GetMaxCpu() const;
+
+                    /**
+                     * 设置最大cpu
+                     * @param _maxCpu 最大cpu
+                     * 
+                     */
+                    void SetMaxCpu(const double& _maxCpu);
+
+                    /**
+                     * 判断参数 MaxCpu 是否已赋值
+                     * @return MaxCpu 是否已赋值
+                     * 
+                     */
+                    bool MaxCpuHasBeenSet() const;
+
+                    /**
+                     * 获取最小cpu
+                     * @return MinCpu 最小cpu
+                     * 
+                     */
+                    double GetMinCpu() const;
+
+                    /**
+                     * 设置最小cpu
+                     * @param _minCpu 最小cpu
+                     * 
+                     */
+                    void SetMinCpu(const double& _minCpu);
+
+                    /**
+                     * 判断参数 MinCpu 是否已赋值
+                     * @return MinCpu 是否已赋值
+                     * 
+                     */
+                    bool MinCpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +360,18 @@ namespace TencentCloud
                      */
                     int64_t m_stockCount;
                     bool m_stockCountHasBeenSet;
+
+                    /**
+                     * 最大cpu
+                     */
+                    double m_maxCpu;
+                    bool m_maxCpuHasBeenSet;
+
+                    /**
+                     * 最小cpu
+                     */
+                    double m_minCpu;
+                    bool m_minCpuHasBeenSet;
 
                 };
             }
