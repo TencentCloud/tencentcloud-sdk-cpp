@@ -196,6 +196,12 @@ CarInsurance -- 车辆保险单识别模板
 MultiRealEstateCertificate -- 房产材料识别模板
 MultiRealEstateMaterial -- 房产证明识别模板
 HongKongUtilityBill -- 中国香港水电煤单识别模板
+OverseasCheques -- 海外支票
+RegistrationCertificate -- 备案证
+​GridPhoto -- 电网系统照片
+​SignaturePage -- 签署页
+
+
                      * @return ConfigId 配置id支持：
 General -- 通用场景 
 InvoiceEng -- 国际invoice模板 
@@ -214,6 +220,12 @@ CarInsurance -- 车辆保险单识别模板
 MultiRealEstateCertificate -- 房产材料识别模板
 MultiRealEstateMaterial -- 房产证明识别模板
 HongKongUtilityBill -- 中国香港水电煤单识别模板
+OverseasCheques -- 海外支票
+RegistrationCertificate -- 备案证
+​GridPhoto -- 电网系统照片
+​SignaturePage -- 签署页
+
+
                      * 
                      */
                     std::string GetConfigId() const;
@@ -237,6 +249,12 @@ CarInsurance -- 车辆保险单识别模板
 MultiRealEstateCertificate -- 房产材料识别模板
 MultiRealEstateMaterial -- 房产证明识别模板
 HongKongUtilityBill -- 中国香港水电煤单识别模板
+OverseasCheques -- 海外支票
+RegistrationCertificate -- 备案证
+​GridPhoto -- 电网系统照片
+​SignaturePage -- 签署页
+
+
                      * @param _configId 配置id支持：
 General -- 通用场景 
 InvoiceEng -- 国际invoice模板 
@@ -255,6 +273,12 @@ CarInsurance -- 车辆保险单识别模板
 MultiRealEstateCertificate -- 房产材料识别模板
 MultiRealEstateMaterial -- 房产证明识别模板
 HongKongUtilityBill -- 中国香港水电煤单识别模板
+OverseasCheques -- 海外支票
+RegistrationCertificate -- 备案证
+​GridPhoto -- 电网系统照片
+​SignaturePage -- 签署页
+
+
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -413,6 +437,12 @@ CarInsurance -- 车辆保险单识别模板
 MultiRealEstateCertificate -- 房产材料识别模板
 MultiRealEstateMaterial -- 房产证明识别模板
 HongKongUtilityBill -- 中国香港水电煤单识别模板
+OverseasCheques -- 海外支票
+RegistrationCertificate -- 备案证
+​GridPhoto -- 电网系统照片
+​SignaturePage -- 签署页
+
+
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;

@@ -93,6 +93,31 @@ namespace TencentCloud
                      */
                     bool CoordHasBeenSet() const;
 
+                    /**
+                     * 获取页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PageIndex 页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPageIndex() const;
+
+                    /**
+                     * 设置页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pageIndex 页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPageIndex(const std::string& _pageIndex);
+
+                    /**
+                     * 判断参数 PageIndex 是否已赋值
+                     * @return PageIndex 是否已赋值
+                     * 
+                     */
+                    bool PageIndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +132,13 @@ namespace TencentCloud
                      */
                     Polygon m_coord;
                     bool m_coordHasBeenSet;
+
+                    /**
+                     * 页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pageIndex;
+                    bool m_pageIndexHasBeenSet;
 
                 };
             }

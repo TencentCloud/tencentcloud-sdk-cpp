@@ -24,6 +24,7 @@ using namespace std;
 
 DeleteOrganizationAuthorizationsRequest::DeleteOrganizationAuthorizationsRequest() :
     m_agentHasBeenSet(false),
+    m_authorizationIdsHasBeenSet(false),
     m_adminNameHasBeenSet(false),
     m_adminMobileHasBeenSet(false)
 {
@@ -43,6 +44,19 @@ string DeleteOrganizationAuthorizationsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_authorizationIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_authorizationIds.begin(); itr != m_authorizationIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_adminNameHasBeenSet)
@@ -83,6 +97,22 @@ void DeleteOrganizationAuthorizationsRequest::SetAgent(const Agent& _agent)
 bool DeleteOrganizationAuthorizationsRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+vector<string> DeleteOrganizationAuthorizationsRequest::GetAuthorizationIds() const
+{
+    return m_authorizationIds;
+}
+
+void DeleteOrganizationAuthorizationsRequest::SetAuthorizationIds(const vector<string>& _authorizationIds)
+{
+    m_authorizationIds = _authorizationIds;
+    m_authorizationIdsHasBeenSet = true;
+}
+
+bool DeleteOrganizationAuthorizationsRequest::AuthorizationIdsHasBeenSet() const
+{
+    return m_authorizationIdsHasBeenSet;
 }
 
 string DeleteOrganizationAuthorizationsRequest::GetAdminName() const
