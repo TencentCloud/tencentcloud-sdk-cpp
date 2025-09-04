@@ -73,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取别名
+限制：不能包含字符 |。
                      * @return Alias 别名
+限制：不能包含字符 |。
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置别名
+限制：不能包含字符 |。
                      * @param _alias 别名
+限制：不能包含字符 |。
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -103,6 +107,7 @@ namespace TencentCloud
 
                     /**
                      * 别名
+限制：不能包含字符 |。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;

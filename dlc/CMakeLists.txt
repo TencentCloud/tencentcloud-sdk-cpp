@@ -318,6 +318,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeEngineNetworksResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNetworkConnectionsRequest.h
+  include/tencentcloud/dlc/v20210125/model/CreateTcIcebergTableRequest.h
   include/tencentcloud/dlc/v20210125/model/AttachWorkGroupPolicyResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSTablesRequest.h
   include/tencentcloud/dlc/v20210125/model/LaunchStandardEngineResourceGroupsResponse.h
@@ -363,6 +364,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteThirdPartyAccessUserResponse.h
   include/tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEngineImageVersionsResponse.h
+  include/tencentcloud/dlc/v20210125/model/CreateTcIcebergTableResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteSparkAppResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeUserDataEngineConfigRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksResponse.h
@@ -819,6 +821,7 @@ set(dlc_src
   src/v20210125/model/ReportHeartbeatMetaDataRequest.cpp
   src/v20210125/model/DescribeEngineNetworksResponse.cpp
   src/v20210125/model/DescribeNetworkConnectionsRequest.cpp
+  src/v20210125/model/CreateTcIcebergTableRequest.cpp
   src/v20210125/model/AttachWorkGroupPolicyResponse.cpp
   src/v20210125/model/DescribeDMSTablesRequest.cpp
   src/v20210125/model/LaunchStandardEngineResourceGroupsResponse.cpp
@@ -864,6 +867,7 @@ set(dlc_src
   src/v20210125/model/DeleteThirdPartyAccessUserResponse.cpp
   src/v20210125/model/AddUsersToWorkGroupResponse.cpp
   src/v20210125/model/DescribeDataEngineImageVersionsResponse.cpp
+  src/v20210125/model/CreateTcIcebergTableResponse.cpp
   src/v20210125/model/DeleteSparkAppResponse.cpp
   src/v20210125/model/DescribeUserDataEngineConfigRequest.cpp
   src/v20210125/model/CreateTasksResponse.cpp

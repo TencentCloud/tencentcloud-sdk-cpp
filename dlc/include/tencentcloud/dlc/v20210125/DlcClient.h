@@ -113,6 +113,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateTasksResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTasksInOrderRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTasksInOrderResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateTcIcebergTableRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateTcIcebergTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserVpcConnectionRequest.h>
@@ -532,6 +534,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTasksInOrderResponse> CreateTasksInOrderOutcome;
                 typedef std::future<CreateTasksInOrderOutcome> CreateTasksInOrderOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateTasksInOrderRequest&, CreateTasksInOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTasksInOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTcIcebergTableResponse> CreateTcIcebergTableOutcome;
+                typedef std::future<CreateTcIcebergTableOutcome> CreateTcIcebergTableOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateTcIcebergTableRequest&, CreateTcIcebergTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTcIcebergTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
@@ -1346,6 +1351,15 @@ namespace TencentCloud
                 CreateTasksInOrderOutcome CreateTasksInOrder(const Model::CreateTasksInOrderRequest &request);
                 void CreateTasksInOrderAsync(const Model::CreateTasksInOrderRequest& request, const CreateTasksInOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTasksInOrderOutcomeCallable CreateTasksInOrderCallable(const Model::CreateTasksInOrderRequest& request);
+
+                /**
+                 *创建TIceberg表
+                 * @param req CreateTcIcebergTableRequest
+                 * @return CreateTcIcebergTableOutcome
+                 */
+                CreateTcIcebergTableOutcome CreateTcIcebergTable(const Model::CreateTcIcebergTableRequest &request);
+                void CreateTcIcebergTableAsync(const Model::CreateTcIcebergTableRequest& request, const CreateTcIcebergTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTcIcebergTableOutcomeCallable CreateTcIcebergTableCallable(const Model::CreateTcIcebergTableRequest& request);
 
                 /**
                  *创建用户

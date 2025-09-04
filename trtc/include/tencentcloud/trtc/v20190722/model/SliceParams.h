@@ -111,14 +111,18 @@ namespace TencentCloud
 
                     /**
                      * 获取音频切片时长，默认15s 示例值：15
+取值范围15-60s
                      * @return SliceAudio 音频切片时长，默认15s 示例值：15
+取值范围15-60s
                      * 
                      */
                     uint64_t GetSliceAudio() const;
 
                     /**
                      * 设置音频切片时长，默认15s 示例值：15
+取值范围15-60s
                      * @param _sliceAudio 音频切片时长，默认15s 示例值：15
+取值范围15-60s
                      * 
                      */
                     void SetSliceAudio(const uint64_t& _sliceAudio);
@@ -131,15 +135,15 @@ namespace TencentCloud
                     bool SliceAudioHasBeenSet() const;
 
                     /**
-                     * 获取视频截帧间隔时长，默认5s， 示例值：5
-                     * @return SliceVideo 视频截帧间隔时长，默认5s， 示例值：5
+                     * 获取视频截帧间隔时长，默认5s， 示例值：5 取值范围5-60s
+                     * @return SliceVideo 视频截帧间隔时长，默认5s， 示例值：5 取值范围5-60s
                      * 
                      */
                     uint64_t GetSliceVideo() const;
 
                     /**
-                     * 设置视频截帧间隔时长，默认5s， 示例值：5
-                     * @param _sliceVideo 视频截帧间隔时长，默认5s， 示例值：5
+                     * 设置视频截帧间隔时长，默认5s， 示例值：5 取值范围5-60s
+                     * @param _sliceVideo 视频截帧间隔时长，默认5s， 示例值：5 取值范围5-60s
                      * 
                      */
                     void SetSliceVideo(const uint64_t& _sliceVideo);
@@ -214,12 +218,13 @@ namespace TencentCloud
 
                     /**
                      * 音频切片时长，默认15s 示例值：15
+取值范围15-60s
                      */
                     uint64_t m_sliceAudio;
                     bool m_sliceAudioHasBeenSet;
 
                     /**
-                     * 视频截帧间隔时长，默认5s， 示例值：5
+                     * 视频截帧间隔时长，默认5s， 示例值：5 取值范围5-60s
                      */
                     uint64_t m_sliceVideo;
                     bool m_sliceVideoHasBeenSet;

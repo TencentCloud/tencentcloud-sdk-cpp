@@ -1975,6 +1975,49 @@ DlcClient::CreateTasksInOrderOutcomeCallable DlcClient::CreateTasksInOrderCallab
     return task->get_future();
 }
 
+DlcClient::CreateTcIcebergTableOutcome DlcClient::CreateTcIcebergTable(const CreateTcIcebergTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTcIcebergTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTcIcebergTableResponse rsp = CreateTcIcebergTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTcIcebergTableOutcome(rsp);
+        else
+            return CreateTcIcebergTableOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTcIcebergTableOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateTcIcebergTableAsync(const CreateTcIcebergTableRequest& request, const CreateTcIcebergTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTcIcebergTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateTcIcebergTableOutcomeCallable DlcClient::CreateTcIcebergTableCallable(const CreateTcIcebergTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTcIcebergTableOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTcIcebergTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CreateUserOutcome DlcClient::CreateUser(const CreateUserRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUser");
