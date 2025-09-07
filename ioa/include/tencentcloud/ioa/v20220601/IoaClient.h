@@ -35,10 +35,16 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAggrSoftCategorySoftListRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAggrSoftCategorySoftListResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeAggrSoftDetailRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeAggrSoftDetailResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeAggrSoftDeviceListRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeAggrSoftDeviceListResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceChildGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceChildGroupsResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeviceDetailListRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeviceDetailListResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoListRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoListResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceInfoRequest.h>
@@ -57,6 +63,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeVirtualDevicesRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeVirtualDevicesResponse.h>
+#include <tencentcloud/ioa/v20220601/model/ExportSoftwareInformationListRequest.h>
+#include <tencentcloud/ioa/v20220601/model/ExportSoftwareInformationListResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsResponse.h>
 
@@ -91,12 +99,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAggrSoftCategorySoftListResponse> DescribeAggrSoftCategorySoftListOutcome;
                 typedef std::future<DescribeAggrSoftCategorySoftListOutcome> DescribeAggrSoftCategorySoftListOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeAggrSoftCategorySoftListRequest&, DescribeAggrSoftCategorySoftListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAggrSoftCategorySoftListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAggrSoftDetailResponse> DescribeAggrSoftDetailOutcome;
+                typedef std::future<DescribeAggrSoftDetailOutcome> DescribeAggrSoftDetailOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeAggrSoftDetailRequest&, DescribeAggrSoftDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAggrSoftDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAggrSoftDeviceListResponse> DescribeAggrSoftDeviceListOutcome;
+                typedef std::future<DescribeAggrSoftDeviceListOutcome> DescribeAggrSoftDeviceListOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeAggrSoftDeviceListRequest&, DescribeAggrSoftDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAggrSoftDeviceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDLPFileDetectResultResponse> DescribeDLPFileDetectResultOutcome;
                 typedef std::future<DescribeDLPFileDetectResultOutcome> DescribeDLPFileDetectResultOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDLPFileDetectResultRequest&, DescribeDLPFileDetectResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDLPFileDetectResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceChildGroupsResponse> DescribeDeviceChildGroupsOutcome;
                 typedef std::future<DescribeDeviceChildGroupsOutcome> DescribeDeviceChildGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDeviceChildGroupsRequest&, DescribeDeviceChildGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceChildGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceDetailListResponse> DescribeDeviceDetailListOutcome;
+                typedef std::future<DescribeDeviceDetailListOutcome> DescribeDeviceDetailListOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeDeviceDetailListRequest&, DescribeDeviceDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceDetailListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceHardwareInfoListResponse> DescribeDeviceHardwareInfoListOutcome;
                 typedef std::future<DescribeDeviceHardwareInfoListOutcome> DescribeDeviceHardwareInfoListOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDeviceHardwareInfoListRequest&, DescribeDeviceHardwareInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceHardwareInfoListAsyncHandler;
@@ -124,6 +141,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVirtualDevicesResponse> DescribeVirtualDevicesOutcome;
                 typedef std::future<DescribeVirtualDevicesOutcome> DescribeVirtualDevicesOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeVirtualDevicesRequest&, DescribeVirtualDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirtualDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportSoftwareInformationListResponse> ExportSoftwareInformationListOutcome;
+                typedef std::future<ExportSoftwareInformationListOutcome> ExportSoftwareInformationListOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::ExportSoftwareInformationListRequest&, ExportSoftwareInformationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportSoftwareInformationListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVirtualDeviceGroupsResponse> ModifyVirtualDeviceGroupsOutcome;
                 typedef std::future<ModifyVirtualDeviceGroupsOutcome> ModifyVirtualDeviceGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::ModifyVirtualDeviceGroupsRequest&, ModifyVirtualDeviceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVirtualDeviceGroupsAsyncHandler;
@@ -185,6 +205,24 @@ namespace TencentCloud
                 DescribeAggrSoftCategorySoftListOutcomeCallable DescribeAggrSoftCategorySoftListCallable(const Model::DescribeAggrSoftCategorySoftListRequest& request);
 
                 /**
+                 *聚合的软件详情
+                 * @param req DescribeAggrSoftDetailRequest
+                 * @return DescribeAggrSoftDetailOutcome
+                 */
+                DescribeAggrSoftDetailOutcome DescribeAggrSoftDetail(const Model::DescribeAggrSoftDetailRequest &request);
+                void DescribeAggrSoftDetailAsync(const Model::DescribeAggrSoftDetailRequest& request, const DescribeAggrSoftDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAggrSoftDetailOutcomeCallable DescribeAggrSoftDetailCallable(const Model::DescribeAggrSoftDetailRequest& request);
+
+                /**
+                 *聚合软件的已安装终端列表
+                 * @param req DescribeAggrSoftDeviceListRequest
+                 * @return DescribeAggrSoftDeviceListOutcome
+                 */
+                DescribeAggrSoftDeviceListOutcome DescribeAggrSoftDeviceList(const Model::DescribeAggrSoftDeviceListRequest &request);
+                void DescribeAggrSoftDeviceListAsync(const Model::DescribeAggrSoftDeviceListRequest& request, const DescribeAggrSoftDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAggrSoftDeviceListOutcomeCallable DescribeAggrSoftDeviceListCallable(const Model::DescribeAggrSoftDeviceListRequest& request);
+
+                /**
                  *webservice查询文件检测结果
                  * @param req DescribeDLPFileDetectResultRequest
                  * @return DescribeDLPFileDetectResultOutcome
@@ -201,6 +239,15 @@ namespace TencentCloud
                 DescribeDeviceChildGroupsOutcome DescribeDeviceChildGroups(const Model::DescribeDeviceChildGroupsRequest &request);
                 void DescribeDeviceChildGroupsAsync(const Model::DescribeDeviceChildGroupsRequest& request, const DescribeDeviceChildGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceChildGroupsOutcomeCallable DescribeDeviceChildGroupsCallable(const Model::DescribeDeviceChildGroupsRequest& request);
+
+                /**
+                 *基于软件查看终端详情列表,私有化调用path为：capi/Software/DescribeDeviceDetailList
+                 * @param req DescribeDeviceDetailListRequest
+                 * @return DescribeDeviceDetailListOutcome
+                 */
+                DescribeDeviceDetailListOutcome DescribeDeviceDetailList(const Model::DescribeDeviceDetailListRequest &request);
+                void DescribeDeviceDetailListAsync(const Model::DescribeDeviceDetailListRequest& request, const DescribeDeviceDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceDetailListOutcomeCallable DescribeDeviceDetailListCallable(const Model::DescribeDeviceDetailListRequest& request);
 
                 /**
                  *查询满足条件的查询终端硬件信息列表，私有化调用path为：/capi/Assets/Device/DescribeDeviceHardwareInfoList
@@ -282,6 +329,15 @@ namespace TencentCloud
                 DescribeVirtualDevicesOutcome DescribeVirtualDevices(const Model::DescribeVirtualDevicesRequest &request);
                 void DescribeVirtualDevicesAsync(const Model::DescribeVirtualDevicesRequest& request, const DescribeVirtualDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVirtualDevicesOutcomeCallable DescribeVirtualDevicesCallable(const Model::DescribeVirtualDevicesRequest& request);
+
+                /**
+                 *导出基于指定终端查看软件信息详情列表查询,私有化调用path为：capi/Software/ExportSoftwareInformationList
+                 * @param req ExportSoftwareInformationListRequest
+                 * @return ExportSoftwareInformationListOutcome
+                 */
+                ExportSoftwareInformationListOutcome ExportSoftwareInformationList(const Model::ExportSoftwareInformationListRequest &request);
+                void ExportSoftwareInformationListAsync(const Model::ExportSoftwareInformationListRequest& request, const ExportSoftwareInformationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportSoftwareInformationListOutcomeCallable ExportSoftwareInformationListCallable(const Model::ExportSoftwareInformationListRequest& request);
 
                 /**
                  *终端自定义分组增减终端，私有化调用path为：/capi/Assets/Device/ModifyVirtualDeviceGroups

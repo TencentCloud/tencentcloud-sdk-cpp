@@ -298,6 +298,92 @@ IoaClient::DescribeAggrSoftCategorySoftListOutcomeCallable IoaClient::DescribeAg
     return task->get_future();
 }
 
+IoaClient::DescribeAggrSoftDetailOutcome IoaClient::DescribeAggrSoftDetail(const DescribeAggrSoftDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAggrSoftDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAggrSoftDetailResponse rsp = DescribeAggrSoftDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAggrSoftDetailOutcome(rsp);
+        else
+            return DescribeAggrSoftDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAggrSoftDetailOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeAggrSoftDetailAsync(const DescribeAggrSoftDetailRequest& request, const DescribeAggrSoftDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAggrSoftDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeAggrSoftDetailOutcomeCallable IoaClient::DescribeAggrSoftDetailCallable(const DescribeAggrSoftDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAggrSoftDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAggrSoftDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::DescribeAggrSoftDeviceListOutcome IoaClient::DescribeAggrSoftDeviceList(const DescribeAggrSoftDeviceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAggrSoftDeviceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAggrSoftDeviceListResponse rsp = DescribeAggrSoftDeviceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAggrSoftDeviceListOutcome(rsp);
+        else
+            return DescribeAggrSoftDeviceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAggrSoftDeviceListOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeAggrSoftDeviceListAsync(const DescribeAggrSoftDeviceListRequest& request, const DescribeAggrSoftDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAggrSoftDeviceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeAggrSoftDeviceListOutcomeCallable IoaClient::DescribeAggrSoftDeviceListCallable(const DescribeAggrSoftDeviceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAggrSoftDeviceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAggrSoftDeviceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::DescribeDLPFileDetectResultOutcome IoaClient::DescribeDLPFileDetectResult(const DescribeDLPFileDetectResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDLPFileDetectResult");
@@ -377,6 +463,49 @@ IoaClient::DescribeDeviceChildGroupsOutcomeCallable IoaClient::DescribeDeviceChi
         [this, request]()
         {
             return this->DescribeDeviceChildGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::DescribeDeviceDetailListOutcome IoaClient::DescribeDeviceDetailList(const DescribeDeviceDetailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceDetailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceDetailListResponse rsp = DescribeDeviceDetailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceDetailListOutcome(rsp);
+        else
+            return DescribeDeviceDetailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceDetailListOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDeviceDetailListAsync(const DescribeDeviceDetailListRequest& request, const DescribeDeviceDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceDetailList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeDeviceDetailListOutcomeCallable IoaClient::DescribeDeviceDetailListCallable(const DescribeDeviceDetailListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceDetailListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceDetailList(request);
         }
     );
 
@@ -764,6 +893,49 @@ IoaClient::DescribeVirtualDevicesOutcomeCallable IoaClient::DescribeVirtualDevic
         [this, request]()
         {
             return this->DescribeVirtualDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::ExportSoftwareInformationListOutcome IoaClient::ExportSoftwareInformationList(const ExportSoftwareInformationListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportSoftwareInformationList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportSoftwareInformationListResponse rsp = ExportSoftwareInformationListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportSoftwareInformationListOutcome(rsp);
+        else
+            return ExportSoftwareInformationListOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportSoftwareInformationListOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::ExportSoftwareInformationListAsync(const ExportSoftwareInformationListRequest& request, const ExportSoftwareInformationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportSoftwareInformationList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::ExportSoftwareInformationListOutcomeCallable IoaClient::ExportSoftwareInformationListCallable(const ExportSoftwareInformationListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportSoftwareInformationListOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportSoftwareInformationList(request);
         }
     );
 

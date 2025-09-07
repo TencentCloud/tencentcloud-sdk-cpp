@@ -212,6 +212,35 @@ namespace TencentCloud
                      */
                     bool AsrResultSimilarityHasBeenSet() const;
 
+                    /**
+                     * 获取意愿确认环节中录制的音频（base64）。
+- 若不存在则为空字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntentionVerifyAudio 意愿确认环节中录制的音频（base64）。
+- 若不存在则为空字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIntentionVerifyAudio() const;
+
+                    /**
+                     * 设置意愿确认环节中录制的音频（base64）。
+- 若不存在则为空字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _intentionVerifyAudio 意愿确认环节中录制的音频（base64）。
+- 若不存在则为空字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIntentionVerifyAudio(const std::string& _intentionVerifyAudio);
+
+                    /**
+                     * 判断参数 IntentionVerifyAudio 是否已赋值
+                     * @return IntentionVerifyAudio 是否已赋值
+                     * 
+                     */
+                    bool IntentionVerifyAudioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +288,14 @@ namespace TencentCloud
                      */
                     std::string m_asrResultSimilarity;
                     bool m_asrResultSimilarityHasBeenSet;
+
+                    /**
+                     * 意愿确认环节中录制的音频（base64）。
+- 若不存在则为空字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_intentionVerifyAudio;
+                    bool m_intentionVerifyAudioHasBeenSet;
 
                 };
             }
