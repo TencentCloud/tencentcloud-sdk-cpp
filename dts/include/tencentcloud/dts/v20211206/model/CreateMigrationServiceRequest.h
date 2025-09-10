@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
-                     * @return SrcDatabaseType 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
+                     * 获取源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
+                     * @return SrcDatabaseType 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
                      * 
                      */
                     std::string GetSrcDatabaseType() const;
 
                     /**
-                     * 设置源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
-                     * @param _srcDatabaseType 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
+                     * 设置源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
+                     * @param _srcDatabaseType 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
                      * 
                      */
                     void SetSrcDatabaseType(const std::string& _srcDatabaseType);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SrcDatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
-                     * @return DstDatabaseType 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
+                     * 获取目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
+                     * @return DstDatabaseType 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
                      * 
                      */
                     std::string GetDstDatabaseType() const;
 
                     /**
-                     * 设置目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
-                     * @param _dstDatabaseType 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
+                     * 设置目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
+                     * @param _dstDatabaseType 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
                      * 
                      */
                     void SetDstDatabaseType(const std::string& _dstDatabaseType);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DstRegionHasBeenSet() const;
 
                     /**
-                     * 获取实例规格，包括：small、medium、large、xlarge、2xlarge
-                     * @return InstanceClass 实例规格，包括：small、medium、large、xlarge、2xlarge
+                     * 获取实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)
+                     * @return InstanceClass 实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)
                      * 
                      */
                     std::string GetInstanceClass() const;
 
                     /**
-                     * 设置实例规格，包括：small、medium、large、xlarge、2xlarge
-                     * @param _instanceClass 实例规格，包括：small、medium、large、xlarge、2xlarge
+                     * 设置实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)
+                     * @param _instanceClass 实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)
                      * 
                      */
                     void SetInstanceClass(const std::string& _instanceClass);
@@ -214,13 +214,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
+                     * 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
                      */
                     std::string m_srcDatabaseType;
                     bool m_srcDatabaseTypeHasBeenSet;
 
                     /**
-                     * 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
+                     * 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
                      */
                     std::string m_dstDatabaseType;
                     bool m_dstDatabaseTypeHasBeenSet;
@@ -238,7 +238,7 @@ namespace TencentCloud
                     bool m_dstRegionHasBeenSet;
 
                     /**
-                     * 实例规格，包括：small、medium、large、xlarge、2xlarge
+                     * 实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)
                      */
                     std::string m_instanceClass;
                     bool m_instanceClassHasBeenSet;

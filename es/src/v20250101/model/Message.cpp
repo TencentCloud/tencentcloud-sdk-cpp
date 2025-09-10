@@ -22,7 +22,9 @@ using namespace std;
 
 Message::Message() :
     m_roleHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_toolCallIdHasBeenSet(false),
+    m_toolCallsHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,36 @@ CoreInternalOutcome Message::Deserialize(const rapidjson::Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("ToolCallId") && !value["ToolCallId"].IsNull())
+    {
+        if (!value["ToolCallId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Message.ToolCallId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_toolCallId = string(value["ToolCallId"].GetString());
+        m_toolCallIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ToolCalls") && !value["ToolCalls"].IsNull())
+    {
+        if (!value["ToolCalls"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Message.ToolCalls` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ToolCalls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ToolCall item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_toolCalls.push_back(item);
+        }
+        m_toolCallsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +104,29 @@ void Message::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toolCallIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolCallId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_toolCallId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toolCallsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolCalls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_toolCalls.begin(); itr != m_toolCalls.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -107,5 +162,37 @@ void Message::SetContent(const string& _content)
 bool Message::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string Message::GetToolCallId() const
+{
+    return m_toolCallId;
+}
+
+void Message::SetToolCallId(const string& _toolCallId)
+{
+    m_toolCallId = _toolCallId;
+    m_toolCallIdHasBeenSet = true;
+}
+
+bool Message::ToolCallIdHasBeenSet() const
+{
+    return m_toolCallIdHasBeenSet;
+}
+
+vector<ToolCall> Message::GetToolCalls() const
+{
+    return m_toolCalls;
+}
+
+void Message::SetToolCalls(const vector<ToolCall>& _toolCalls)
+{
+    m_toolCalls = _toolCalls;
+    m_toolCallsHasBeenSet = true;
+}
+
+bool Message::ToolCallsHasBeenSet() const
+{
+    return m_toolCallsHasBeenSet;
 }
 

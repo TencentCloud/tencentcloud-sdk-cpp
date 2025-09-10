@@ -31,7 +31,8 @@ ModifyInstanceRequest::ModifyInstanceRequest() :
     m_automaticActivationHasBeenSet(false),
     m_authorizationPolicyHasBeenSet(false),
     m_useDefaultServerCertHasBeenSet(false),
-    m_x509ModeHasBeenSet(false)
+    m_x509ModeHasBeenSet(false),
+    m_messageRateHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string ModifyInstanceRequest::ToJsonString() const
         string key = "X509Mode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_x509Mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_messageRate, allocator);
     }
 
 
@@ -264,6 +273,22 @@ void ModifyInstanceRequest::SetX509Mode(const string& _x509Mode)
 bool ModifyInstanceRequest::X509ModeHasBeenSet() const
 {
     return m_x509ModeHasBeenSet;
+}
+
+int64_t ModifyInstanceRequest::GetMessageRate() const
+{
+    return m_messageRate;
+}
+
+void ModifyInstanceRequest::SetMessageRate(const int64_t& _messageRate)
+{
+    m_messageRate = _messageRate;
+    m_messageRateHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::MessageRateHasBeenSet() const
+{
+    return m_messageRateHasBeenSet;
 }
 
 

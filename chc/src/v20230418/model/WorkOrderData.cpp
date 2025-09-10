@@ -27,7 +27,8 @@ WorkOrderData::WorkOrderData() :
     m_orderStatusHasBeenSet(false),
     m_creatorHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_finishTimeHasBeenSet(false)
+    m_finishTimeHasBeenSet(false),
+    m_ticketIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome WorkOrderData::Deserialize(const rapidjson::Value &value)
         m_finishTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TicketId") && !value["TicketId"].IsNull())
+    {
+        if (!value["TicketId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkOrderData.TicketId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ticketId = string(value["TicketId"].GetString());
+        m_ticketIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void WorkOrderData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "FinishTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ticketIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TicketId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ticketId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void WorkOrderData::SetFinishTime(const string& _finishTime)
 bool WorkOrderData::FinishTimeHasBeenSet() const
 {
     return m_finishTimeHasBeenSet;
+}
+
+string WorkOrderData::GetTicketId() const
+{
+    return m_ticketId;
+}
+
+void WorkOrderData::SetTicketId(const string& _ticketId)
+{
+    m_ticketId = _ticketId;
+    m_ticketIdHasBeenSet = true;
+}
+
+bool WorkOrderData::TicketIdHasBeenSet() const
+{
+    return m_ticketIdHasBeenSet;
 }
 

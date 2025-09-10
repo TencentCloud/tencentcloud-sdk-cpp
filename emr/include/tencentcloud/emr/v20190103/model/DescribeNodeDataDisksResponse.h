@@ -88,6 +88,20 @@ namespace TencentCloud
                      */
                     bool MaxSizeHasBeenSet() const;
 
+                    /**
+                     * 获取云硬盘最大额外性能值
+                     * @return MaxThroughputPerformance 云硬盘最大额外性能值
+                     * 
+                     */
+                    int64_t GetMaxThroughputPerformance() const;
+
+                    /**
+                     * 判断参数 MaxThroughputPerformance 是否已赋值
+                     * @return MaxThroughputPerformance 是否已赋值
+                     * 
+                     */
+                    bool MaxThroughputPerformanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -108,6 +122,12 @@ namespace TencentCloud
                      */
                     uint64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;
+
+                    /**
+                     * 云硬盘最大额外性能值
+                     */
+                    int64_t m_maxThroughputPerformance;
+                    bool m_maxThroughputPerformanceHasBeenSet;
 
                 };
             }

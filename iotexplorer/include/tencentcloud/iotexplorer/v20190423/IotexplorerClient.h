@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ActivateTWeCallLicenseRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ActivateTWeCallLicenseResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchUpdateFirmwareRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchUpdateFirmwareResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindCloudStorageUserRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindCloudStorageUserResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindDevicesRequest.h>
@@ -67,6 +69,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateOtaModuleRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateOtaModuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreatePositionFenceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreatePositionFenceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreatePositionSpaceRequest.h>
@@ -97,6 +101,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteOtaModuleRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteOtaModuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeletePositionFenceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeletePositionFenceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeletePositionSpaceRequest.h>
@@ -181,6 +187,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskDevicesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskDevicesResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTasksRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTasksResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareUpdateStatusRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareUpdateStatusResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFreeCloudStorageNumRequest.h>
@@ -289,6 +299,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListOtaModulesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListOtaModulesResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListProductOtaModulesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListProductOtaModulesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyApplicationRequest.h>
@@ -369,6 +383,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateOtaModuleRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateOtaModuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UploadFirmwareRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UploadFirmwareResponse.h>
 
@@ -388,6 +404,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ActivateTWeCallLicenseResponse> ActivateTWeCallLicenseOutcome;
                 typedef std::future<ActivateTWeCallLicenseOutcome> ActivateTWeCallLicenseOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ActivateTWeCallLicenseRequest&, ActivateTWeCallLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateTWeCallLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchUpdateFirmwareResponse> BatchUpdateFirmwareOutcome;
+                typedef std::future<BatchUpdateFirmwareOutcome> BatchUpdateFirmwareOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::BatchUpdateFirmwareRequest&, BatchUpdateFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchUpdateFirmwareAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindCloudStorageUserResponse> BindCloudStorageUserOutcome;
                 typedef std::future<BindCloudStorageUserOutcome> BindCloudStorageUserOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BindCloudStorageUserRequest&, BindCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudStorageUserAsyncHandler;
@@ -451,6 +470,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLoRaGatewayResponse> CreateLoRaGatewayOutcome;
                 typedef std::future<CreateLoRaGatewayOutcome> CreateLoRaGatewayOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateLoRaGatewayRequest&, CreateLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoRaGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOtaModuleResponse> CreateOtaModuleOutcome;
+                typedef std::future<CreateOtaModuleOutcome> CreateOtaModuleOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateOtaModuleRequest&, CreateOtaModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOtaModuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePositionFenceResponse> CreatePositionFenceOutcome;
                 typedef std::future<CreatePositionFenceOutcome> CreatePositionFenceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreatePositionFenceRequest&, CreatePositionFenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePositionFenceAsyncHandler;
@@ -496,6 +518,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteLoRaGatewayResponse> DeleteLoRaGatewayOutcome;
                 typedef std::future<DeleteLoRaGatewayOutcome> DeleteLoRaGatewayOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteLoRaGatewayRequest&, DeleteLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoRaGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteOtaModuleResponse> DeleteOtaModuleOutcome;
+                typedef std::future<DeleteOtaModuleOutcome> DeleteOtaModuleOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteOtaModuleRequest&, DeleteOtaModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOtaModuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePositionFenceResponse> DeletePositionFenceOutcome;
                 typedef std::future<DeletePositionFenceOutcome> DeletePositionFenceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeletePositionFenceRequest&, DeletePositionFenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePositionFenceAsyncHandler;
@@ -622,6 +647,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFirmwareTaskResponse> DescribeFirmwareTaskOutcome;
                 typedef std::future<DescribeFirmwareTaskOutcome> DescribeFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareTaskRequest&, DescribeFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFirmwareTaskDevicesResponse> DescribeFirmwareTaskDevicesOutcome;
+                typedef std::future<DescribeFirmwareTaskDevicesOutcome> DescribeFirmwareTaskDevicesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareTaskDevicesRequest&, DescribeFirmwareTaskDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFirmwareTasksResponse> DescribeFirmwareTasksOutcome;
+                typedef std::future<DescribeFirmwareTasksOutcome> DescribeFirmwareTasksOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareTasksRequest&, DescribeFirmwareTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFirmwareUpdateStatusResponse> DescribeFirmwareUpdateStatusOutcome;
                 typedef std::future<DescribeFirmwareUpdateStatusOutcome> DescribeFirmwareUpdateStatusOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareUpdateStatusRequest&, DescribeFirmwareUpdateStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareUpdateStatusAsyncHandler;
@@ -784,6 +815,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListFirmwaresResponse> ListFirmwaresOutcome;
                 typedef std::future<ListFirmwaresOutcome> ListFirmwaresOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListFirmwaresRequest&, ListFirmwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFirmwaresAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListOtaModulesResponse> ListOtaModulesOutcome;
+                typedef std::future<ListOtaModulesOutcome> ListOtaModulesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ListOtaModulesRequest&, ListOtaModulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOtaModulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListProductOtaModulesResponse> ListProductOtaModulesOutcome;
+                typedef std::future<ListProductOtaModulesOutcome> ListProductOtaModulesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ListProductOtaModulesRequest&, ListProductOtaModulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListProductOtaModulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTopicPolicyResponse> ListTopicPolicyOutcome;
                 typedef std::future<ListTopicPolicyOutcome> ListTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListTopicPolicyRequest&, ListTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopicPolicyAsyncHandler;
@@ -904,6 +941,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateFirmwareResponse> UpdateFirmwareOutcome;
                 typedef std::future<UpdateFirmwareOutcome> UpdateFirmwareOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UpdateFirmwareRequest&, UpdateFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFirmwareAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateOtaModuleResponse> UpdateOtaModuleOutcome;
+                typedef std::future<UpdateOtaModuleOutcome> UpdateOtaModuleOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::UpdateOtaModuleRequest&, UpdateOtaModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOtaModuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadFirmwareResponse> UploadFirmwareOutcome;
                 typedef std::future<UploadFirmwareOutcome> UploadFirmwareOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
@@ -918,6 +958,15 @@ namespace TencentCloud
                 ActivateTWeCallLicenseOutcome ActivateTWeCallLicense(const Model::ActivateTWeCallLicenseRequest &request);
                 void ActivateTWeCallLicenseAsync(const Model::ActivateTWeCallLicenseRequest& request, const ActivateTWeCallLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ActivateTWeCallLicenseOutcomeCallable ActivateTWeCallLicenseCallable(const Model::ActivateTWeCallLicenseRequest& request);
+
+                /**
+                 *本接口（BatchUpdateFirmware）用于批量更新设备固件
+                 * @param req BatchUpdateFirmwareRequest
+                 * @return BatchUpdateFirmwareOutcome
+                 */
+                BatchUpdateFirmwareOutcome BatchUpdateFirmware(const Model::BatchUpdateFirmwareRequest &request);
+                void BatchUpdateFirmwareAsync(const Model::BatchUpdateFirmwareRequest& request, const BatchUpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchUpdateFirmwareOutcomeCallable BatchUpdateFirmwareCallable(const Model::BatchUpdateFirmwareRequest& request);
 
                 /**
                  *绑定云存用户
@@ -1111,6 +1160,15 @@ namespace TencentCloud
                 CreateLoRaGatewayOutcomeCallable CreateLoRaGatewayCallable(const Model::CreateLoRaGatewayRequest& request);
 
                 /**
+                 *本接口（CreateOtaModule）用于新建OTA模块
+                 * @param req CreateOtaModuleRequest
+                 * @return CreateOtaModuleOutcome
+                 */
+                CreateOtaModuleOutcome CreateOtaModule(const Model::CreateOtaModuleRequest &request);
+                void CreateOtaModuleAsync(const Model::CreateOtaModuleRequest& request, const CreateOtaModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOtaModuleOutcomeCallable CreateOtaModuleCallable(const Model::CreateOtaModuleRequest& request);
+
+                /**
                  *创建围栏。
                  * @param req CreatePositionFenceRequest
                  * @return CreatePositionFenceOutcome
@@ -1244,6 +1302,15 @@ namespace TencentCloud
                 DeleteLoRaGatewayOutcome DeleteLoRaGateway(const Model::DeleteLoRaGatewayRequest &request);
                 void DeleteLoRaGatewayAsync(const Model::DeleteLoRaGatewayRequest& request, const DeleteLoRaGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteLoRaGatewayOutcomeCallable DeleteLoRaGatewayCallable(const Model::DeleteLoRaGatewayRequest& request);
+
+                /**
+                 *本接口（DeleteOtaModule）用于删除OTA模块
+                 * @param req DeleteOtaModuleRequest
+                 * @return DeleteOtaModuleOutcome
+                 */
+                DeleteOtaModuleOutcome DeleteOtaModule(const Model::DeleteOtaModuleRequest &request);
+                void DeleteOtaModuleAsync(const Model::DeleteOtaModuleRequest& request, const DeleteOtaModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteOtaModuleOutcomeCallable DeleteOtaModuleCallable(const Model::DeleteOtaModuleRequest& request);
 
                 /**
                  *删除围栏。
@@ -1624,6 +1691,24 @@ namespace TencentCloud
                 DescribeFirmwareTaskOutcome DescribeFirmwareTask(const Model::DescribeFirmwareTaskRequest &request);
                 void DescribeFirmwareTaskAsync(const Model::DescribeFirmwareTaskRequest& request, const DescribeFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFirmwareTaskOutcomeCallable DescribeFirmwareTaskCallable(const Model::DescribeFirmwareTaskRequest& request);
+
+                /**
+                 *查询固件升级任务的设备列表
+                 * @param req DescribeFirmwareTaskDevicesRequest
+                 * @return DescribeFirmwareTaskDevicesOutcome
+                 */
+                DescribeFirmwareTaskDevicesOutcome DescribeFirmwareTaskDevices(const Model::DescribeFirmwareTaskDevicesRequest &request);
+                void DescribeFirmwareTaskDevicesAsync(const Model::DescribeFirmwareTaskDevicesRequest& request, const DescribeFirmwareTaskDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareTaskDevicesOutcomeCallable DescribeFirmwareTaskDevicesCallable(const Model::DescribeFirmwareTaskDevicesRequest& request);
+
+                /**
+                 *搜索固件升级任务列表
+                 * @param req DescribeFirmwareTasksRequest
+                 * @return DescribeFirmwareTasksOutcome
+                 */
+                DescribeFirmwareTasksOutcome DescribeFirmwareTasks(const Model::DescribeFirmwareTasksRequest &request);
+                void DescribeFirmwareTasksAsync(const Model::DescribeFirmwareTasksRequest& request, const DescribeFirmwareTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareTasksOutcomeCallable DescribeFirmwareTasksCallable(const Model::DescribeFirmwareTasksRequest& request);
 
                 /**
                  *本接口（DescribeFirmwareUpdateStatus）用于查询设备固件升级状态及进度。
@@ -2112,6 +2197,24 @@ namespace TencentCloud
                 ListFirmwaresOutcomeCallable ListFirmwaresCallable(const Model::ListFirmwaresRequest& request);
 
                 /**
+                 *本接口（ListOtaModules）用于获取OTA模块列表
+                 * @param req ListOtaModulesRequest
+                 * @return ListOtaModulesOutcome
+                 */
+                ListOtaModulesOutcome ListOtaModules(const Model::ListOtaModulesRequest &request);
+                void ListOtaModulesAsync(const Model::ListOtaModulesRequest& request, const ListOtaModulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListOtaModulesOutcomeCallable ListOtaModulesCallable(const Model::ListOtaModulesRequest& request);
+
+                /**
+                 *本接口（ListProductOtaModules）用于获取产品OTA模块列表
+                 * @param req ListProductOtaModulesRequest
+                 * @return ListProductOtaModulesOutcome
+                 */
+                ListProductOtaModulesOutcome ListProductOtaModules(const Model::ListProductOtaModulesRequest &request);
+                void ListProductOtaModulesAsync(const Model::ListProductOtaModulesRequest& request, const ListProductOtaModulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListProductOtaModulesOutcomeCallable ListProductOtaModulesCallable(const Model::ListProductOtaModulesRequest& request);
+
+                /**
                  *本接口（ListTopicPolicy）用于获取Topic列表
                  * @param req ListTopicPolicyRequest
                  * @return ListTopicPolicyOutcome
@@ -2474,6 +2577,15 @@ namespace TencentCloud
                 UpdateFirmwareOutcome UpdateFirmware(const Model::UpdateFirmwareRequest &request);
                 void UpdateFirmwareAsync(const Model::UpdateFirmwareRequest& request, const UpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateFirmwareOutcomeCallable UpdateFirmwareCallable(const Model::UpdateFirmwareRequest& request);
+
+                /**
+                 *本接口（UpdateOtaModule）用于修改OTA模块
+                 * @param req UpdateOtaModuleRequest
+                 * @return UpdateOtaModuleOutcome
+                 */
+                UpdateOtaModuleOutcome UpdateOtaModule(const Model::UpdateOtaModuleRequest &request);
+                void UpdateOtaModuleAsync(const Model::UpdateOtaModuleRequest& request, const UpdateOtaModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateOtaModuleOutcomeCallable UpdateOtaModuleCallable(const Model::UpdateOtaModuleRequest& request);
 
                 /**
                  *本接口（UploadFirmware）用于创建设备固件版本信息，在平台用于固件版本升级、固件资源下发等。

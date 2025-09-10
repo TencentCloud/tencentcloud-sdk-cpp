@@ -29,7 +29,8 @@ CreatePersonnelVisitWorkOrderRequest::CreatePersonnelVisitWorkOrderRequest() :
     m_enterStartTimeHasBeenSet(false),
     m_enterEndTimeHasBeenSet(false),
     m_visitReasonHasBeenSet(false),
-    m_visitRemarkHasBeenSet(false)
+    m_visitRemarkHasBeenSet(false),
+    m_carSetHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,21 @@ string CreatePersonnelVisitWorkOrderRequest::ToJsonString() const
         string key = "VisitRemark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_visitRemark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_carSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CarSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_carSet.begin(); itr != m_carSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -231,6 +247,22 @@ void CreatePersonnelVisitWorkOrderRequest::SetVisitRemark(const string& _visitRe
 bool CreatePersonnelVisitWorkOrderRequest::VisitRemarkHasBeenSet() const
 {
     return m_visitRemarkHasBeenSet;
+}
+
+vector<PersonnelVisitCar> CreatePersonnelVisitWorkOrderRequest::GetCarSet() const
+{
+    return m_carSet;
+}
+
+void CreatePersonnelVisitWorkOrderRequest::SetCarSet(const vector<PersonnelVisitCar>& _carSet)
+{
+    m_carSet = _carSet;
+    m_carSetHasBeenSet = true;
+}
+
+bool CreatePersonnelVisitWorkOrderRequest::CarSetHasBeenSet() const
+{
+    return m_carSetHasBeenSet;
 }
 
 

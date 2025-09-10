@@ -31,7 +31,8 @@ CreateRouteRequest::CreateRouteRequest() :
     m_authFlagHasBeenSet(false),
     m_callerAppidHasBeenSet(false),
     m_publicNetworkHasBeenSet(false),
-    m_ipHasBeenSet(false)
+    m_ipHasBeenSet(false),
+    m_noteHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string CreateRouteRequest::ToJsonString() const
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Note";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void CreateRouteRequest::SetIp(const string& _ip)
 bool CreateRouteRequest::IpHasBeenSet() const
 {
     return m_ipHasBeenSet;
+}
+
+string CreateRouteRequest::GetNote() const
+{
+    return m_note;
+}
+
+void CreateRouteRequest::SetNote(const string& _note)
+{
+    m_note = _note;
+    m_noteHasBeenSet = true;
+}
+
+bool CreateRouteRequest::NoteHasBeenSet() const
+{
+    return m_noteHasBeenSet;
 }
 
 

@@ -31,6 +31,7 @@
 #include <tencentcloud/cls/v20201016/model/Tag.h>
 #include <tencentcloud/cls/v20201016/model/AlarmClassification.h>
 #include <tencentcloud/cls/v20201016/model/MultiCondition.h>
+#include <tencentcloud/cls/v20201016/model/MonitorNotice.h>
 
 
 namespace TencentCloud
@@ -180,15 +181,15 @@ namespace TencentCloud
                     bool AlarmPeriodHasBeenSet() const;
 
                     /**
-                     * 获取关联的告警通知模板列表。
-                     * @return AlarmNoticeIds 关联的告警通知模板列表。
+                     * 获取关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
+                     * @return AlarmNoticeIds 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      * 
                      */
                     std::vector<std::string> GetAlarmNoticeIds() const;
 
                     /**
-                     * 设置关联的告警通知模板列表。
-                     * @param _alarmNoticeIds 关联的告警通知模板列表。
+                     * 设置关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
+                     * @param _alarmNoticeIds 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      * 
                      */
                     void SetAlarmNoticeIds(const std::vector<std::string>& _alarmNoticeIds);
@@ -502,6 +503,27 @@ Condition互斥。
                      */
                     bool MultiConditionsHasBeenSet() const;
 
+                    /**
+                     * 获取云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     * @return MonitorNotice 云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     * 
+                     */
+                    MonitorNotice GetMonitorNotice() const;
+
+                    /**
+                     * 设置云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     * @param _monitorNotice 云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     * 
+                     */
+                    void SetMonitorNotice(const MonitorNotice& _monitorNotice);
+
+                    /**
+                     * 判断参数 MonitorNotice 是否已赋值
+                     * @return MonitorNotice 是否已赋值
+                     * 
+                     */
+                    bool MonitorNoticeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -541,7 +563,7 @@ Condition互斥。
                     bool m_alarmPeriodHasBeenSet;
 
                     /**
-                     * 关联的告警通知模板列表。
+                     * 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      */
                     std::vector<std::string> m_alarmNoticeIds;
                     bool m_alarmNoticeIdsHasBeenSet;
@@ -631,6 +653,12 @@ Condition互斥。
                      */
                     std::vector<MultiCondition> m_multiConditions;
                     bool m_multiConditionsHasBeenSet;
+
+                    /**
+                     * 云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     */
+                    MonitorNotice m_monitorNotice;
+                    bool m_monitorNoticeHasBeenSet;
 
                 };
             }

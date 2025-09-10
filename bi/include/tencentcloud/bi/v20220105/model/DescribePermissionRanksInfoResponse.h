@@ -94,9 +94,9 @@ namespace TencentCloud
                     bool ExtraHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 1
+                     * @return Data 无
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -133,7 +133,7 @@ namespace TencentCloud
                     bool m_extraHasBeenSet;
 
                     /**
-                     * 1
+                     * 无
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RankInfo m_data;

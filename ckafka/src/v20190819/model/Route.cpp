@@ -30,7 +30,8 @@ Route::Route() :
     m_deleteTimestampHasBeenSet(false),
     m_subnetHasBeenSet(false),
     m_brokerVipListHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_noteHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,16 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
         m_vpcIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Note") && !value["Note"].IsNull())
+    {
+        if (!value["Note"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Route.Note` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_note = string(value["Note"].GetString());
+        m_noteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -258,6 +269,14 @@ void Route::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Note";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -421,5 +440,21 @@ void Route::SetVpcId(const string& _vpcId)
 bool Route::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+string Route::GetNote() const
+{
+    return m_note;
+}
+
+void Route::SetNote(const string& _note)
+{
+    m_note = _note;
+    m_noteHasBeenSet = true;
+}
+
+bool Route::NoteHasBeenSet() const
+{
+    return m_noteHasBeenSet;
 }
 

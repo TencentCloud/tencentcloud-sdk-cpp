@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id,可通过DescribeInstances接口获取
-                     * @return InstanceId ckafka集群实例Id,可通过DescribeInstances接口获取
+                     * 获取ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id,可通过DescribeInstances接口获取
-                     * @param _instanceId ckafka集群实例Id,可通过DescribeInstances接口获取
+                     * 设置ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取消费分组名称,可通过DescribeConsumerGroup接口获取
-                     * @return Group 消费分组名称,可通过DescribeConsumerGroup接口获取
+                     * 获取消费分组名称,可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取
+                     * @return Group 消费分组名称,可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置消费分组名称,可通过DescribeConsumerGroup接口获取
-                     * @param _group 消费分组名称,可通过DescribeConsumerGroup接口获取
+                     * 设置消费分组名称,可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取
+                     * @param _group 消费分组名称,可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -213,13 +213,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id,可通过DescribeInstances接口获取
+                     * ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 消费分组名称,可通过DescribeConsumerGroup接口获取
+                     * 消费分组名称,可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;

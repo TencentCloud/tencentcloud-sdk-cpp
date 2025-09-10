@@ -92,6 +92,48 @@ namespace TencentCloud
                      */
                     bool InputsHasBeenSet() const;
 
+                    /**
+                     * 获取说明：文本向量化的类型，为使得检索任务有更好的检索效果，建议区分查询文本（query）和文档文本（document）类型, 聚类、分类等对称任务可以不用特殊指定，采用系统默认值document即可。
+                     * @return TextType 说明：文本向量化的类型，为使得检索任务有更好的检索效果，建议区分查询文本（query）和文档文本（document）类型, 聚类、分类等对称任务可以不用特殊指定，采用系统默认值document即可。
+                     * 
+                     */
+                    std::string GetTextType() const;
+
+                    /**
+                     * 设置说明：文本向量化的类型，为使得检索任务有更好的检索效果，建议区分查询文本（query）和文档文本（document）类型, 聚类、分类等对称任务可以不用特殊指定，采用系统默认值document即可。
+                     * @param _textType 说明：文本向量化的类型，为使得检索任务有更好的检索效果，建议区分查询文本（query）和文档文本（document）类型, 聚类、分类等对称任务可以不用特殊指定，采用系统默认值document即可。
+                     * 
+                     */
+                    void SetTextType(const std::string& _textType);
+
+                    /**
+                     * 判断参数 TextType 是否已赋值
+                     * @return TextType 是否已赋值
+                     * 
+                     */
+                    bool TextTypeHasBeenSet() const;
+
+                    /**
+                     * 获取说明：自定义任务指令词，当且仅当TextType=query时，生效
+                     * @return Instruction 说明：自定义任务指令词，当且仅当TextType=query时，生效
+                     * 
+                     */
+                    std::string GetInstruction() const;
+
+                    /**
+                     * 设置说明：自定义任务指令词，当且仅当TextType=query时，生效
+                     * @param _instruction 说明：自定义任务指令词，当且仅当TextType=query时，生效
+                     * 
+                     */
+                    void SetInstruction(const std::string& _instruction);
+
+                    /**
+                     * 判断参数 Instruction 是否已赋值
+                     * @return Instruction 是否已赋值
+                     * 
+                     */
+                    bool InstructionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +149,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_inputs;
                     bool m_inputsHasBeenSet;
+
+                    /**
+                     * 说明：文本向量化的类型，为使得检索任务有更好的检索效果，建议区分查询文本（query）和文档文本（document）类型, 聚类、分类等对称任务可以不用特殊指定，采用系统默认值document即可。
+                     */
+                    std::string m_textType;
+                    bool m_textTypeHasBeenSet;
+
+                    /**
+                     * 说明：自定义任务指令词，当且仅当TextType=query时，生效
+                     */
+                    std::string m_instruction;
+                    bool m_instructionHasBeenSet;
 
                 };
             }

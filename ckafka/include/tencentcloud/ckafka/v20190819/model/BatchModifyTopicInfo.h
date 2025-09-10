@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool RetentionMsHasBeenSet() const;
 
                     /**
-                     * 获取topic维度的消息保留大小，范围1 MB到1024 GB
-                     * @return RetentionBytes topic维度的消息保留大小，范围1 MB到1024 GB
+                     * 获取topic维度的消息保留大小，单位为Byte，范围1 GB到1024 GB。
+                     * @return RetentionBytes topic维度的消息保留大小，单位为Byte，范围1 GB到1024 GB。
                      * 
                      */
                     int64_t GetRetentionBytes() const;
 
                     /**
-                     * 设置topic维度的消息保留大小，范围1 MB到1024 GB
-                     * @param _retentionBytes topic维度的消息保留大小，范围1 MB到1024 GB
+                     * 设置topic维度的消息保留大小，单位为Byte，范围1 GB到1024 GB。
+                     * @param _retentionBytes topic维度的消息保留大小，单位为Byte，范围1 GB到1024 GB。
                      * 
                      */
                     void SetRetentionBytes(const int64_t& _retentionBytes);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool RetentionBytesHasBeenSet() const;
 
                     /**
-                     * 获取Segment分片滚动的时长（毫秒），范围1 到90 天
-                     * @return SegmentMs Segment分片滚动的时长（毫秒），范围1 到90 天
+                     * 获取Segment分片滚动的时长（毫秒），范围1 天到90 天
+                     * @return SegmentMs Segment分片滚动的时长（毫秒），范围1 天到90 天
                      * 
                      */
                     int64_t GetSegmentMs() const;
 
                     /**
-                     * 设置Segment分片滚动的时长（毫秒），范围1 到90 天
-                     * @param _segmentMs Segment分片滚动的时长（毫秒），范围1 到90 天
+                     * 设置Segment分片滚动的时长（毫秒），范围1 天到90 天
+                     * @param _segmentMs Segment分片滚动的时长（毫秒），范围1 天到90 天
                      * 
                      */
                     void SetSegmentMs(const int64_t& _segmentMs);
@@ -349,13 +349,13 @@ namespace TencentCloud
                     bool m_retentionMsHasBeenSet;
 
                     /**
-                     * topic维度的消息保留大小，范围1 MB到1024 GB
+                     * topic维度的消息保留大小，单位为Byte，范围1 GB到1024 GB。
                      */
                     int64_t m_retentionBytes;
                     bool m_retentionBytesHasBeenSet;
 
                     /**
-                     * Segment分片滚动的时长（毫秒），范围1 到90 天
+                     * Segment分片滚动的时长（毫秒），范围1 天到90 天
                      */
                     int64_t m_segmentMs;
                     bool m_segmentMsHasBeenSet;

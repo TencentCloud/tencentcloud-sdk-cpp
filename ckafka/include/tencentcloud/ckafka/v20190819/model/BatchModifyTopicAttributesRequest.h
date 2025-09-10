@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题属性列表 (同一个批次最多支持10个)
-                     * @return Topic 主题属性列表 (同一个批次最多支持10个)
+                     * 获取主题属性列表 (同一个批次最多支持10个)，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取
+                     * @return Topic 主题属性列表 (同一个批次最多支持10个)，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取
                      * 
                      */
                     std::vector<BatchModifyTopicInfo> GetTopic() const;
 
                     /**
-                     * 设置主题属性列表 (同一个批次最多支持10个)
-                     * @param _topic 主题属性列表 (同一个批次最多支持10个)
+                     * 设置主题属性列表 (同一个批次最多支持10个)，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取
+                     * @param _topic 主题属性列表 (同一个批次最多支持10个)，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取
                      * 
                      */
                     void SetTopic(const std::vector<BatchModifyTopicInfo>& _topic);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题属性列表 (同一个批次最多支持10个)
+                     * 主题属性列表 (同一个批次最多支持10个)，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取
                      */
                     std::vector<BatchModifyTopicInfo> m_topic;
                     bool m_topicHasBeenSet;

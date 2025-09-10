@@ -28,7 +28,8 @@ DescribePersonnelVisitWorkOrderDetailResponse::DescribePersonnelVisitWorkOrderDe
     m_baseInfoHasBeenSet(false),
     m_personnelSetHasBeenSet(false),
     m_orderStatusHasBeenSet(false),
-    m_rejectReasonHasBeenSet(false)
+    m_rejectReasonHasBeenSet(false),
+    m_carSetHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,26 @@ CoreInternalOutcome DescribePersonnelVisitWorkOrderDetailResponse::Deserialize(c
         m_rejectReasonHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CarSet") && !rsp["CarSet"].IsNull())
+    {
+        if (!rsp["CarSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CarSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CarSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PersonnelVisitCar item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_carSet.push_back(item);
+        }
+        m_carSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -208,6 +229,21 @@ string DescribePersonnelVisitWorkOrderDetailResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_rejectReason.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_carSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CarSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_carSet.begin(); itr != m_carSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -268,6 +304,16 @@ string DescribePersonnelVisitWorkOrderDetailResponse::GetRejectReason() const
 bool DescribePersonnelVisitWorkOrderDetailResponse::RejectReasonHasBeenSet() const
 {
     return m_rejectReasonHasBeenSet;
+}
+
+vector<PersonnelVisitCar> DescribePersonnelVisitWorkOrderDetailResponse::GetCarSet() const
+{
+    return m_carSet;
+}
+
+bool DescribePersonnelVisitWorkOrderDetailResponse::CarSetHasBeenSet() const
+{
+    return m_carSetHasBeenSet;
 }
 
 

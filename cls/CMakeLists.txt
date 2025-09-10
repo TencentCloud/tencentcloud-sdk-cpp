@@ -210,6 +210,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateShipperRequest.h
   include/tencentcloud/cls/v20201016/model/CreateTopicResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteAlarmResponse.h
+  include/tencentcloud/cls/v20201016/model/MonitorNotice.h
   include/tencentcloud/cls/v20201016/model/WebCallback.h
   include/tencentcloud/cls/v20201016/model/DescribeAlarmsResponse.h
   include/tencentcloud/cls/v20201016/model/CreateAlarmNoticeResponse.h
@@ -252,6 +253,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateKafkaRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteKafkaRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/RuleInfo.h
+  include/tencentcloud/cls/v20201016/model/MonitorNoticeRule.h
   include/tencentcloud/cls/v20201016/model/CreateConfigResponse.h
   include/tencentcloud/cls/v20201016/model/CreateConsumerRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyWebCallbackResponse.h
@@ -544,6 +546,7 @@ set(cls_src
   src/v20201016/model/CreateShipperRequest.cpp
   src/v20201016/model/CreateTopicResponse.cpp
   src/v20201016/model/DeleteAlarmResponse.cpp
+  src/v20201016/model/MonitorNotice.cpp
   src/v20201016/model/WebCallback.cpp
   src/v20201016/model/DescribeAlarmsResponse.cpp
   src/v20201016/model/CreateAlarmNoticeResponse.cpp
@@ -586,6 +589,7 @@ set(cls_src
   src/v20201016/model/CreateKafkaRechargeRequest.cpp
   src/v20201016/model/DeleteKafkaRechargeRequest.cpp
   src/v20201016/model/RuleInfo.cpp
+  src/v20201016/model/MonitorNoticeRule.cpp
   src/v20201016/model/CreateConfigResponse.cpp
   src/v20201016/model/CreateConsumerRequest.cpp
   src/v20201016/model/ModifyWebCallbackResponse.cpp

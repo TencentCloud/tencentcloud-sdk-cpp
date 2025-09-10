@@ -104,6 +104,7 @@ set(chc_public_header_model
   include/tencentcloud/chc/v20230418/model/DescribeCommonServiceWorkOrderDetailResponse.h
   include/tencentcloud/chc/v20230418/model/ModifyWorkOrderTypeCollectFlagRequest.h
   include/tencentcloud/chc/v20230418/model/CreateNetDeviceModelResponse.h
+  include/tencentcloud/chc/v20230418/model/PersonnelVisitCar.h
   include/tencentcloud/chc/v20230418/model/DescribeCommonServiceWorkOrderDetailRequest.h
   include/tencentcloud/chc/v20230418/model/ServerReceivingInfo.h
   include/tencentcloud/chc/v20230418/model/CustomerInfo.h
@@ -227,6 +228,7 @@ set(chc_src
   src/v20230418/model/DescribeCommonServiceWorkOrderDetailResponse.cpp
   src/v20230418/model/ModifyWorkOrderTypeCollectFlagRequest.cpp
   src/v20230418/model/CreateNetDeviceModelResponse.cpp
+  src/v20230418/model/PersonnelVisitCar.cpp
   src/v20230418/model/DescribeCommonServiceWorkOrderDetailRequest.cpp
   src/v20230418/model/ServerReceivingInfo.cpp
   src/v20230418/model/CustomerInfo.cpp

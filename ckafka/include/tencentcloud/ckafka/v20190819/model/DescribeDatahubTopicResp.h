@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PartitionNumHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return RetentionMs 过期时间
+                     * 获取过期时间，单位ms
+                     * @return RetentionMs 过期时间，单位ms
                      * 
                      */
                     uint64_t GetRetentionMs() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _retentionMs 过期时间
+                     * 设置过期时间，单位ms
+                     * @param _retentionMs 过期时间，单位ms
                      * 
                      */
                     void SetRetentionMs(const uint64_t& _retentionMs);
@@ -283,7 +283,7 @@ namespace TencentCloud
                     bool m_partitionNumHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * 过期时间，单位ms
                      */
                     uint64_t m_retentionMs;
                     bool m_retentionMsHasBeenSet;

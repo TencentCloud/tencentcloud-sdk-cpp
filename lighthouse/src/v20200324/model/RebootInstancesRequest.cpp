@@ -23,7 +23,8 @@ using namespace TencentCloud::Lighthouse::V20200324::Model;
 using namespace std;
 
 RebootInstancesRequest::RebootInstancesRequest() :
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_stopTypeHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string RebootInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_stopTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stopType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -69,6 +78,22 @@ void RebootInstancesRequest::SetInstanceIds(const vector<string>& _instanceIds)
 bool RebootInstancesRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string RebootInstancesRequest::GetStopType() const
+{
+    return m_stopType;
+}
+
+void RebootInstancesRequest::SetStopType(const string& _stopType)
+{
+    m_stopType = _stopType;
+    m_stopTypeHasBeenSet = true;
+}
+
+bool RebootInstancesRequest::StopTypeHasBeenSet() const
+{
+    return m_stopTypeHasBeenSet;
 }
 
 

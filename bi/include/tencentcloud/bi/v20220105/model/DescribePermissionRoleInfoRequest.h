@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取页数
-                     * @return PageNo 页数
+                     * 获取页数 
+                     * @return PageNo 页数 
                      * 
                      */
                     int64_t GetPageNo() const;
 
                     /**
-                     * 设置页数
-                     * @param _pageNo 页数
+                     * 设置页数 
+                     * @param _pageNo 页数 
                      * 
                      */
                     void SetPageNo(const int64_t& _pageNo);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 页数
+                     * 页数 
                      */
                     int64_t m_pageNo;
                     bool m_pageNoHasBeenSet;

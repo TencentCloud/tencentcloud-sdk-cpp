@@ -740,6 +740,48 @@ REJECTED:拒绝
                      */
                     bool ShareOrNotHasBeenSet() const;
 
+                    /**
+                     * 获取接入点名称
+                     * @return AccessPointName 接入点名称
+                     * 
+                     */
+                    std::string GetAccessPointName() const;
+
+                    /**
+                     * 设置接入点名称
+                     * @param _accessPointName 接入点名称
+                     * 
+                     */
+                    void SetAccessPointName(const std::string& _accessPointName);
+
+                    /**
+                     * 判断参数 AccessPointName 是否已赋值
+                     * @return AccessPointName 是否已赋值
+                     * 
+                     */
+                    bool AccessPointNameHasBeenSet() const;
+
+                    /**
+                     * 获取接入点ID
+                     * @return AccessPointId 接入点ID
+                     * 
+                     */
+                    std::string GetAccessPointId() const;
+
+                    /**
+                     * 设置接入点ID
+                     * @param _accessPointId 接入点ID
+                     * 
+                     */
+                    void SetAccessPointId(const std::string& _accessPointId);
+
+                    /**
+                     * 判断参数 AccessPointId 是否已赋值
+                     * @return AccessPointId 是否已赋值
+                     * 
+                     */
+                    bool AccessPointIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -937,6 +979,18 @@ REJECTED:拒绝
                      */
                     uint64_t m_shareOrNot;
                     bool m_shareOrNotHasBeenSet;
+
+                    /**
+                     * 接入点名称
+                     */
+                    std::string m_accessPointName;
+                    bool m_accessPointNameHasBeenSet;
+
+                    /**
+                     * 接入点ID
+                     */
+                    std::string m_accessPointId;
+                    bool m_accessPointIdHasBeenSet;
 
                 };
             }

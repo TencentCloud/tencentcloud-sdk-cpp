@@ -36,7 +36,8 @@ AlertHistoryRecord::AlertHistoryRecord() :
     m_createTimeHasBeenSet(false),
     m_groupTriggerConditionHasBeenSet(false),
     m_alarmLevelHasBeenSet(false),
-    m_monitorObjectTypeHasBeenSet(false)
+    m_monitorObjectTypeHasBeenSet(false),
+    m_sendTypeHasBeenSet(false)
 {
 }
 
@@ -225,6 +226,16 @@ CoreInternalOutcome AlertHistoryRecord::Deserialize(const rapidjson::Value &valu
         m_monitorObjectTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SendType") && !value["SendType"].IsNull())
+    {
+        if (!value["SendType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertHistoryRecord.SendType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sendType = value["SendType"].GetUint64();
+        m_sendTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -372,6 +383,14 @@ void AlertHistoryRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "MonitorObjectType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_monitorObjectType, allocator);
+    }
+
+    if (m_sendTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sendType, allocator);
     }
 
 }
@@ -631,5 +650,21 @@ void AlertHistoryRecord::SetMonitorObjectType(const uint64_t& _monitorObjectType
 bool AlertHistoryRecord::MonitorObjectTypeHasBeenSet() const
 {
     return m_monitorObjectTypeHasBeenSet;
+}
+
+uint64_t AlertHistoryRecord::GetSendType() const
+{
+    return m_sendType;
+}
+
+void AlertHistoryRecord::SetSendType(const uint64_t& _sendType)
+{
+    m_sendType = _sendType;
+    m_sendTypeHasBeenSet = true;
+}
+
+bool AlertHistoryRecord::SendTypeHasBeenSet() const
+{
+    return m_sendTypeHasBeenSet;
 }
 

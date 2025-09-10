@@ -30,7 +30,13 @@ DescribeMessageDetailsResponse::DescribeMessageDetailsResponse() :
     m_messageIdHasBeenSet(false),
     m_clientIdHasBeenSet(false),
     m_qosHasBeenSet(false),
-    m_originTopicHasBeenSet(false)
+    m_originTopicHasBeenSet(false),
+    m_contentTypeHasBeenSet(false),
+    m_payloadFormatIndicatorHasBeenSet(false),
+    m_messageExpiryIntervalHasBeenSet(false),
+    m_responseTopicHasBeenSet(false),
+    m_correlationDataHasBeenSet(false),
+    m_subscriptionIdentifierHasBeenSet(false)
 {
 }
 
@@ -148,6 +154,66 @@ CoreInternalOutcome DescribeMessageDetailsResponse::Deserialize(const string &pa
         m_originTopicHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ContentType") && !rsp["ContentType"].IsNull())
+    {
+        if (!rsp["ContentType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContentType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contentType = string(rsp["ContentType"].GetString());
+        m_contentTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PayloadFormatIndicator") && !rsp["PayloadFormatIndicator"].IsNull())
+    {
+        if (!rsp["PayloadFormatIndicator"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayloadFormatIndicator` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payloadFormatIndicator = rsp["PayloadFormatIndicator"].GetInt64();
+        m_payloadFormatIndicatorHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MessageExpiryInterval") && !rsp["MessageExpiryInterval"].IsNull())
+    {
+        if (!rsp["MessageExpiryInterval"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageExpiryInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_messageExpiryInterval = rsp["MessageExpiryInterval"].GetInt64();
+        m_messageExpiryIntervalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResponseTopic") && !rsp["ResponseTopic"].IsNull())
+    {
+        if (!rsp["ResponseTopic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResponseTopic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseTopic = string(rsp["ResponseTopic"].GetString());
+        m_responseTopicHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CorrelationData") && !rsp["CorrelationData"].IsNull())
+    {
+        if (!rsp["CorrelationData"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CorrelationData` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_correlationData = string(rsp["CorrelationData"].GetString());
+        m_correlationDataHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubscriptionIdentifier") && !rsp["SubscriptionIdentifier"].IsNull())
+    {
+        if (!rsp["SubscriptionIdentifier"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubscriptionIdentifier` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscriptionIdentifier = string(rsp["SubscriptionIdentifier"].GetString());
+        m_subscriptionIdentifierHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -219,6 +285,54 @@ string DescribeMessageDetailsResponse::ToJsonString() const
         string key = "OriginTopic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_originTopic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payloadFormatIndicatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayloadFormatIndicator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payloadFormatIndicator, allocator);
+    }
+
+    if (m_messageExpiryIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageExpiryInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_messageExpiryInterval, allocator);
+    }
+
+    if (m_responseTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_responseTopic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_correlationDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorrelationData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_correlationData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subscriptionIdentifierHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscriptionIdentifier";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subscriptionIdentifier.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -301,6 +415,66 @@ string DescribeMessageDetailsResponse::GetOriginTopic() const
 bool DescribeMessageDetailsResponse::OriginTopicHasBeenSet() const
 {
     return m_originTopicHasBeenSet;
+}
+
+string DescribeMessageDetailsResponse::GetContentType() const
+{
+    return m_contentType;
+}
+
+bool DescribeMessageDetailsResponse::ContentTypeHasBeenSet() const
+{
+    return m_contentTypeHasBeenSet;
+}
+
+int64_t DescribeMessageDetailsResponse::GetPayloadFormatIndicator() const
+{
+    return m_payloadFormatIndicator;
+}
+
+bool DescribeMessageDetailsResponse::PayloadFormatIndicatorHasBeenSet() const
+{
+    return m_payloadFormatIndicatorHasBeenSet;
+}
+
+int64_t DescribeMessageDetailsResponse::GetMessageExpiryInterval() const
+{
+    return m_messageExpiryInterval;
+}
+
+bool DescribeMessageDetailsResponse::MessageExpiryIntervalHasBeenSet() const
+{
+    return m_messageExpiryIntervalHasBeenSet;
+}
+
+string DescribeMessageDetailsResponse::GetResponseTopic() const
+{
+    return m_responseTopic;
+}
+
+bool DescribeMessageDetailsResponse::ResponseTopicHasBeenSet() const
+{
+    return m_responseTopicHasBeenSet;
+}
+
+string DescribeMessageDetailsResponse::GetCorrelationData() const
+{
+    return m_correlationData;
+}
+
+bool DescribeMessageDetailsResponse::CorrelationDataHasBeenSet() const
+{
+    return m_correlationDataHasBeenSet;
+}
+
+string DescribeMessageDetailsResponse::GetSubscriptionIdentifier() const
+{
+    return m_subscriptionIdentifier;
+}
+
+bool DescribeMessageDetailsResponse::SubscriptionIdentifierHasBeenSet() const
+{
+    return m_subscriptionIdentifierHasBeenSet;
 }
 
 

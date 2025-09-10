@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/chc/v20230418/model/Personnel.h>
+#include <tencentcloud/chc/v20230418/model/PersonnelVisitCar.h>
 
 
 namespace TencentCloud
@@ -190,6 +191,27 @@ namespace TencentCloud
                      */
                     bool VisitRemarkHasBeenSet() const;
 
+                    /**
+                     * 获取到访人员车辆信息
+                     * @return CarSet 到访人员车辆信息
+                     * 
+                     */
+                    std::vector<PersonnelVisitCar> GetCarSet() const;
+
+                    /**
+                     * 设置到访人员车辆信息
+                     * @param _carSet 到访人员车辆信息
+                     * 
+                     */
+                    void SetCarSet(const std::vector<PersonnelVisitCar>& _carSet);
+
+                    /**
+                     * 判断参数 CarSet 是否已赋值
+                     * @return CarSet 是否已赋值
+                     * 
+                     */
+                    bool CarSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +255,12 @@ namespace TencentCloud
                      */
                     std::string m_visitRemark;
                     bool m_visitRemarkHasBeenSet;
+
+                    /**
+                     * 到访人员车辆信息
+                     */
+                    std::vector<PersonnelVisitCar> m_carSet;
+                    bool m_carSetHasBeenSet;
 
                 };
             }

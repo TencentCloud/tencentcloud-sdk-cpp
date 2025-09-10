@@ -39,7 +39,9 @@ InquiryPriceCreateInstanceRequest::InquiryPriceCreateInstanceRequest() :
     m_sceneNameHasBeenSet(false),
     m_externalServiceHasBeenSet(false),
     m_versionIDHasBeenSet(false),
-    m_multiZoneSettingsHasBeenSet(false)
+    m_multiZoneSettingsHasBeenSet(false),
+    m_defaultMetaVersionHasBeenSet(false),
+    m_needCdbAuditHasBeenSet(false)
 {
 }
 
@@ -207,6 +209,22 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_defaultMetaVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultMetaVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_defaultMetaVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needCdbAuditHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedCdbAudit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needCdbAudit, allocator);
     }
 
 
@@ -487,6 +505,38 @@ void InquiryPriceCreateInstanceRequest::SetMultiZoneSettings(const vector<MultiZ
 bool InquiryPriceCreateInstanceRequest::MultiZoneSettingsHasBeenSet() const
 {
     return m_multiZoneSettingsHasBeenSet;
+}
+
+string InquiryPriceCreateInstanceRequest::GetDefaultMetaVersion() const
+{
+    return m_defaultMetaVersion;
+}
+
+void InquiryPriceCreateInstanceRequest::SetDefaultMetaVersion(const string& _defaultMetaVersion)
+{
+    m_defaultMetaVersion = _defaultMetaVersion;
+    m_defaultMetaVersionHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::DefaultMetaVersionHasBeenSet() const
+{
+    return m_defaultMetaVersionHasBeenSet;
+}
+
+int64_t InquiryPriceCreateInstanceRequest::GetNeedCdbAudit() const
+{
+    return m_needCdbAudit;
+}
+
+void InquiryPriceCreateInstanceRequest::SetNeedCdbAudit(const int64_t& _needCdbAudit)
+{
+    m_needCdbAudit = _needCdbAudit;
+    m_needCdbAuditHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::NeedCdbAuditHasBeenSet() const
+{
+    return m_needCdbAuditHasBeenSet;
 }
 
 

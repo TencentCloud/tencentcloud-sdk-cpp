@@ -23,6 +23,7 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 DescribeAggrSoftDeviceListRequest::DescribeAggrSoftDeviceListRequest() :
+    m_conditionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_osTypeHasBeenSet(false)
 {
@@ -34,6 +35,15 @@ string DescribeAggrSoftDeviceListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_conditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Condition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_condition.ToJsonObject(d[key.c_str()], allocator);
+    }
 
     if (m_nameHasBeenSet)
     {
@@ -58,6 +68,22 @@ string DescribeAggrSoftDeviceListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+Condition DescribeAggrSoftDeviceListRequest::GetCondition() const
+{
+    return m_condition;
+}
+
+void DescribeAggrSoftDeviceListRequest::SetCondition(const Condition& _condition)
+{
+    m_condition = _condition;
+    m_conditionHasBeenSet = true;
+}
+
+bool DescribeAggrSoftDeviceListRequest::ConditionHasBeenSet() const
+{
+    return m_conditionHasBeenSet;
+}
 
 string DescribeAggrSoftDeviceListRequest::GetName() const
 {

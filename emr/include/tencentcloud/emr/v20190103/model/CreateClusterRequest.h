@@ -610,6 +610,48 @@ namespace TencentCloud
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
+                    /**
+                     * 获取数据库版本：mysql8/tdsql8/mysql5
+                     * @return DefaultMetaVersion 数据库版本：mysql8/tdsql8/mysql5
+                     * 
+                     */
+                    std::string GetDefaultMetaVersion() const;
+
+                    /**
+                     * 设置数据库版本：mysql8/tdsql8/mysql5
+                     * @param _defaultMetaVersion 数据库版本：mysql8/tdsql8/mysql5
+                     * 
+                     */
+                    void SetDefaultMetaVersion(const std::string& _defaultMetaVersion);
+
+                    /**
+                     * 判断参数 DefaultMetaVersion 是否已赋值
+                     * @return DefaultMetaVersion 是否已赋值
+                     * 
+                     */
+                    bool DefaultMetaVersionHasBeenSet() const;
+
+                    /**
+                     * 获取是否开通数据库审计
+                     * @return NeedCdbAudit 是否开通数据库审计
+                     * 
+                     */
+                    int64_t GetNeedCdbAudit() const;
+
+                    /**
+                     * 设置是否开通数据库审计
+                     * @param _needCdbAudit 是否开通数据库审计
+                     * 
+                     */
+                    void SetNeedCdbAudit(const int64_t& _needCdbAudit);
+
+                    /**
+                     * 判断参数 NeedCdbAudit 是否已赋值
+                     * @return NeedCdbAudit 是否已赋值
+                     * 
+                     */
+                    bool NeedCdbAuditHasBeenSet() const;
+
                 private:
 
                     /**
@@ -768,6 +810,18 @@ namespace TencentCloud
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
+
+                    /**
+                     * 数据库版本：mysql8/tdsql8/mysql5
+                     */
+                    std::string m_defaultMetaVersion;
+                    bool m_defaultMetaVersionHasBeenSet;
+
+                    /**
+                     * 是否开通数据库审计
+                     */
+                    int64_t m_needCdbAudit;
+                    bool m_needCdbAuditHasBeenSet;
 
                 };
             }

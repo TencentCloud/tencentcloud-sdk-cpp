@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -407,6 +408,48 @@ namespace TencentCloud
                      */
                     bool UnderwriteExpiredTimeHasBeenSet() const;
 
+                    /**
+                     * 获取标签
+                     * @return Tags 标签
+                     * 
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 设置标签
+                     * @param _tags 标签
+                     * 
+                     */
+                    void SetTags(const std::vector<TagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取云硬盘额外性能值，单位：MB/s
+                     * @return ThroughputPerformance 云硬盘额外性能值，单位：MB/s
+                     * 
+                     */
+                    int64_t GetThroughputPerformance() const;
+
+                    /**
+                     * 设置云硬盘额外性能值，单位：MB/s
+                     * @param _throughputPerformance 云硬盘额外性能值，单位：MB/s
+                     * 
+                     */
+                    void SetThroughputPerformance(const int64_t& _throughputPerformance);
+
+                    /**
+                     * 判断参数 ThroughputPerformance 是否已赋值
+                     * @return ThroughputPerformance 是否已赋值
+                     * 
+                     */
+                    bool ThroughputPerformanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -511,6 +554,18 @@ namespace TencentCloud
                      */
                     std::string m_underwriteExpiredTime;
                     bool m_underwriteExpiredTimeHasBeenSet;
+
+                    /**
+                     * 标签
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 云硬盘额外性能值，单位：MB/s
+                     */
+                    int64_t m_throughputPerformance;
+                    bool m_throughputPerformanceHasBeenSet;
 
                 };
             }

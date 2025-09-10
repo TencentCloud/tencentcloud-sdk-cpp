@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/es/v20250101/model/ToolCall.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色, ‘system', ‘user'，'assistant'或者'tool', 在message中, 除了system，其他必须是user与assistant交替(一问一答) 
-                     * @return Role 角色, ‘system', ‘user'，'assistant'或者'tool', 在message中, 除了system，其他必须是user与assistant交替(一问一答) 
+                     * 获取角色，可选值包括 system、user、assistant、 tool。
+                     * @return Role 角色，可选值包括 system、user、assistant、 tool。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置角色, ‘system', ‘user'，'assistant'或者'tool', 在message中, 除了system，其他必须是user与assistant交替(一问一答) 
-                     * @param _role 角色, ‘system', ‘user'，'assistant'或者'tool', 在message中, 除了system，其他必须是user与assistant交替(一问一答) 
+                     * 设置角色，可选值包括 system、user、assistant、 tool。
+                     * @param _role 角色，可选值包括 system、user、assistant、 tool。
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -88,10 +89,52 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取当role为tool时传入，标识具体的函数调用
+                     * @return ToolCallId 当role为tool时传入，标识具体的函数调用
+                     * 
+                     */
+                    std::string GetToolCallId() const;
+
+                    /**
+                     * 设置当role为tool时传入，标识具体的函数调用
+                     * @param _toolCallId 当role为tool时传入，标识具体的函数调用
+                     * 
+                     */
+                    void SetToolCallId(const std::string& _toolCallId);
+
+                    /**
+                     * 判断参数 ToolCallId 是否已赋值
+                     * @return ToolCallId 是否已赋值
+                     * 
+                     */
+                    bool ToolCallIdHasBeenSet() const;
+
+                    /**
+                     * 获取模型生成的工具调用
+                     * @return ToolCalls 模型生成的工具调用
+                     * 
+                     */
+                    std::vector<ToolCall> GetToolCalls() const;
+
+                    /**
+                     * 设置模型生成的工具调用
+                     * @param _toolCalls 模型生成的工具调用
+                     * 
+                     */
+                    void SetToolCalls(const std::vector<ToolCall>& _toolCalls);
+
+                    /**
+                     * 判断参数 ToolCalls 是否已赋值
+                     * @return ToolCalls 是否已赋值
+                     * 
+                     */
+                    bool ToolCallsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 角色, ‘system', ‘user'，'assistant'或者'tool', 在message中, 除了system，其他必须是user与assistant交替(一问一答) 
+                     * 角色，可选值包括 system、user、assistant、 tool。
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
@@ -101,6 +144,18 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 当role为tool时传入，标识具体的函数调用
+                     */
+                    std::string m_toolCallId;
+                    bool m_toolCallIdHasBeenSet;
+
+                    /**
+                     * 模型生成的工具调用
+                     */
+                    std::vector<ToolCall> m_toolCalls;
+                    bool m_toolCallsHasBeenSet;
 
                 };
             }

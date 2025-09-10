@@ -23,7 +23,8 @@ using namespace std;
 OutputMessage::OutputMessage() :
     m_roleHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_reasoningContentHasBeenSet(false)
+    m_reasoningContentHasBeenSet(false),
+    m_toolCallsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,26 @@ CoreInternalOutcome OutputMessage::Deserialize(const rapidjson::Value &value)
         m_reasoningContentHasBeenSet = true;
     }
 
+    if (value.HasMember("ToolCalls") && !value["ToolCalls"].IsNull())
+    {
+        if (!value["ToolCalls"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OutputMessage.ToolCalls` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ToolCalls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ToolCall item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_toolCalls.push_back(item);
+        }
+        m_toolCallsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +112,21 @@ void OutputMessage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ReasoningContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reasoningContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toolCallsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolCalls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_toolCalls.begin(); itr != m_toolCalls.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -142,5 +178,21 @@ void OutputMessage::SetReasoningContent(const string& _reasoningContent)
 bool OutputMessage::ReasoningContentHasBeenSet() const
 {
     return m_reasoningContentHasBeenSet;
+}
+
+vector<ToolCall> OutputMessage::GetToolCalls() const
+{
+    return m_toolCalls;
+}
+
+void OutputMessage::SetToolCalls(const vector<ToolCall>& _toolCalls)
+{
+    m_toolCalls = _toolCalls;
+    m_toolCallsHasBeenSet = true;
+}
+
+bool OutputMessage::ToolCallsHasBeenSet() const
+{
+    return m_toolCallsHasBeenSet;
 }
 

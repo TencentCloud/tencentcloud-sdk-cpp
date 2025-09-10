@@ -24,8 +24,8 @@ using namespace std;
 
 CreatePostPaidInstanceRequest::CreatePostPaidInstanceRequest() :
     m_vpcIdHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_msgRetentionTimeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
@@ -61,20 +61,20 @@ string CreatePostPaidInstanceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_instanceNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_subnetIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceTypeHasBeenSet)
@@ -249,22 +249,6 @@ bool CreatePostPaidInstanceRequest::VpcIdHasBeenSet() const
     return m_vpcIdHasBeenSet;
 }
 
-string CreatePostPaidInstanceRequest::GetInstanceName() const
-{
-    return m_instanceName;
-}
-
-void CreatePostPaidInstanceRequest::SetInstanceName(const string& _instanceName)
-{
-    m_instanceName = _instanceName;
-    m_instanceNameHasBeenSet = true;
-}
-
-bool CreatePostPaidInstanceRequest::InstanceNameHasBeenSet() const
-{
-    return m_instanceNameHasBeenSet;
-}
-
 string CreatePostPaidInstanceRequest::GetSubnetId() const
 {
     return m_subnetId;
@@ -279,6 +263,22 @@ void CreatePostPaidInstanceRequest::SetSubnetId(const string& _subnetId)
 bool CreatePostPaidInstanceRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string CreatePostPaidInstanceRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void CreatePostPaidInstanceRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool CreatePostPaidInstanceRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
 }
 
 int64_t CreatePostPaidInstanceRequest::GetInstanceType() const

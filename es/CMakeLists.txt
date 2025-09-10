@@ -240,10 +240,12 @@ set(es_public_header_model
   include/tencentcloud/es/v20250101/model/RunRerankRequest.h
   include/tencentcloud/es/v20250101/model/EmbeddingData.h
   include/tencentcloud/es/v20250101/model/ChunkConfig.h
+  include/tencentcloud/es/v20250101/model/ToolCallFunction.h
   include/tencentcloud/es/v20250101/model/OutputMessage.h
   include/tencentcloud/es/v20250101/model/ParseDocument.h
   include/tencentcloud/es/v20250101/model/GetDocumentChunkResultResponse.h
   include/tencentcloud/es/v20250101/model/ChunkDocumentAsyncResponse.h
+  include/tencentcloud/es/v20250101/model/ToolCall.h
   include/tencentcloud/es/v20250101/model/OnlineSearchOptions.h
   include/tencentcloud/es/v20250101/model/ParseDocumentRequest.h
   include/tencentcloud/es/v20250101/model/Chunk.h
@@ -479,10 +481,12 @@ set(es_src
   src/v20250101/model/RunRerankRequest.cpp
   src/v20250101/model/EmbeddingData.cpp
   src/v20250101/model/ChunkConfig.cpp
+  src/v20250101/model/ToolCallFunction.cpp
   src/v20250101/model/OutputMessage.cpp
   src/v20250101/model/ParseDocument.cpp
   src/v20250101/model/GetDocumentChunkResultResponse.cpp
   src/v20250101/model/ChunkDocumentAsyncResponse.cpp
+  src/v20250101/model/ToolCall.cpp
   src/v20250101/model/OnlineSearchOptions.cpp
   src/v20250101/model/ParseDocumentRequest.cpp
   src/v20250101/model/Chunk.cpp

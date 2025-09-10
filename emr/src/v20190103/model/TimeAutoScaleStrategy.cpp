@@ -32,6 +32,7 @@ TimeAutoScaleStrategy::TimeAutoScaleStrategy() :
     m_strategyIdHasBeenSet(false),
     m_graceDownFlagHasBeenSet(false),
     m_graceDownTimeHasBeenSet(false),
+    m_graceDownProtectFlagHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_configGroupAssignedHasBeenSet(false),
     m_measureMethodHasBeenSet(false),
@@ -165,6 +166,16 @@ CoreInternalOutcome TimeAutoScaleStrategy::Deserialize(const rapidjson::Value &v
         }
         m_graceDownTime = value["GraceDownTime"].GetInt64();
         m_graceDownTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GraceDownProtectFlag") && !value["GraceDownProtectFlag"].IsNull())
+    {
+        if (!value["GraceDownProtectFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TimeAutoScaleStrategy.GraceDownProtectFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_graceDownProtectFlag = value["GraceDownProtectFlag"].GetBool();
+        m_graceDownProtectFlagHasBeenSet = true;
     }
 
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
@@ -387,6 +398,14 @@ void TimeAutoScaleStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "GraceDownTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_graceDownTime, allocator);
+    }
+
+    if (m_graceDownProtectFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraceDownProtectFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_graceDownProtectFlag, allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -670,6 +689,22 @@ void TimeAutoScaleStrategy::SetGraceDownTime(const int64_t& _graceDownTime)
 bool TimeAutoScaleStrategy::GraceDownTimeHasBeenSet() const
 {
     return m_graceDownTimeHasBeenSet;
+}
+
+bool TimeAutoScaleStrategy::GetGraceDownProtectFlag() const
+{
+    return m_graceDownProtectFlag;
+}
+
+void TimeAutoScaleStrategy::SetGraceDownProtectFlag(const bool& _graceDownProtectFlag)
+{
+    m_graceDownProtectFlag = _graceDownProtectFlag;
+    m_graceDownProtectFlagHasBeenSet = true;
+}
+
+bool TimeAutoScaleStrategy::GraceDownProtectFlagHasBeenSet() const
+{
+    return m_graceDownProtectFlagHasBeenSet;
 }
 
 vector<Tag> TimeAutoScaleStrategy::GetTags() const

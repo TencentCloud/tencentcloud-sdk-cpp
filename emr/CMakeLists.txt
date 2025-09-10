@@ -182,6 +182,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ConfigurationItem.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeSLInstanceResponse.h
+  include/tencentcloud/emr/v20190103/model/TagInfo.h
   include/tencentcloud/emr/v20190103/model/ModifySLInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyGlobalConfigRequest.h
   include/tencentcloud/emr/v20190103/model/LoadMetricsCondition.h
@@ -541,6 +542,7 @@ set(emr_src
   src/v20190103/model/ConfigurationItem.cpp
   src/v20190103/model/InquiryPriceCreateInstanceRequest.cpp
   src/v20190103/model/DescribeSLInstanceResponse.cpp
+  src/v20190103/model/TagInfo.cpp
   src/v20190103/model/ModifySLInstanceResponse.cpp
   src/v20190103/model/ModifyGlobalConfigRequest.cpp
   src/v20190103/model/LoadMetricsCondition.cpp

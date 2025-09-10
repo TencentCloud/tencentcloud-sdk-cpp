@@ -37,7 +37,9 @@ CBSInstance::CBSInstance() :
     m_instanceIdHasBeenSet(false),
     m_shareableHasBeenSet(false),
     m_emrResourceIdHasBeenSet(false),
-    m_underwriteExpiredTimeHasBeenSet(false)
+    m_underwriteExpiredTimeHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -219,6 +221,36 @@ CoreInternalOutcome CBSInstance::Deserialize(const rapidjson::Value &value)
         m_underwriteExpiredTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CBSInstance.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ThroughputPerformance") && !value["ThroughputPerformance"].IsNull())
+    {
+        if (!value["ThroughputPerformance"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CBSInstance.ThroughputPerformance` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_throughputPerformance = value["ThroughputPerformance"].GetInt64();
+        m_throughputPerformanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +397,29 @@ void CBSInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UnderwriteExpiredTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_underwriteExpiredTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 }
@@ -640,5 +695,37 @@ void CBSInstance::SetUnderwriteExpiredTime(const string& _underwriteExpiredTime)
 bool CBSInstance::UnderwriteExpiredTimeHasBeenSet() const
 {
     return m_underwriteExpiredTimeHasBeenSet;
+}
+
+vector<TagInfo> CBSInstance::GetTags() const
+{
+    return m_tags;
+}
+
+void CBSInstance::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CBSInstance::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+int64_t CBSInstance::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void CBSInstance::SetThroughputPerformance(const int64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool CBSInstance::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 

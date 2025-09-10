@@ -111,6 +111,48 @@ namespace TencentCloud
                      */
                     bool ProcessesHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启图文混排
+                     * @return EnableImage 是否开启图文混排
+                     * 
+                     */
+                    bool GetEnableImage() const;
+
+                    /**
+                     * 设置是否开启图文混排
+                     * @param _enableImage 是否开启图文混排
+                     * 
+                     */
+                    void SetEnableImage(const bool& _enableImage);
+
+                    /**
+                     * 判断参数 EnableImage 是否已赋值
+                     * @return EnableImage 是否已赋值
+                     * 
+                     */
+                    bool EnableImageHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启音乐
+                     * @return EnableMusic 是否开启音乐
+                     * 
+                     */
+                    bool GetEnableMusic() const;
+
+                    /**
+                     * 设置是否开启音乐
+                     * @param _enableMusic 是否开启音乐
+                     * 
+                     */
+                    void SetEnableMusic(const bool& _enableMusic);
+
+                    /**
+                     * 判断参数 EnableMusic 是否已赋值
+                     * @return EnableMusic 是否已赋值
+                     * 
+                     */
+                    bool EnableMusicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -130,6 +172,18 @@ namespace TencentCloud
                      */
                     bool m_processes;
                     bool m_processesHasBeenSet;
+
+                    /**
+                     * 是否开启图文混排
+                     */
+                    bool m_enableImage;
+                    bool m_enableImageHasBeenSet;
+
+                    /**
+                     * 是否开启音乐
+                     */
+                    bool m_enableMusic;
+                    bool m_enableMusicHasBeenSet;
 
                 };
             }

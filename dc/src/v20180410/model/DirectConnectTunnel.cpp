@@ -51,7 +51,9 @@ DirectConnectTunnel::DirectConnectTunnel() :
     m_tencentBackupAddressHasBeenSet(false),
     m_signLawHasBeenSet(false),
     m_cloudAttachIdHasBeenSet(false),
-    m_shareOrNotHasBeenSet(false)
+    m_shareOrNotHasBeenSet(false),
+    m_accessPointNameHasBeenSet(false),
+    m_accessPointIdHasBeenSet(false)
 {
 }
 
@@ -397,6 +399,26 @@ CoreInternalOutcome DirectConnectTunnel::Deserialize(const rapidjson::Value &val
         m_shareOrNotHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessPointName") && !value["AccessPointName"].IsNull())
+    {
+        if (!value["AccessPointName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnel.AccessPointName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPointName = string(value["AccessPointName"].GetString());
+        m_accessPointNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessPointId") && !value["AccessPointId"].IsNull())
+    {
+        if (!value["AccessPointId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnel.AccessPointId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPointId = string(value["AccessPointId"].GetString());
+        m_accessPointIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -665,6 +687,22 @@ void DirectConnectTunnel::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ShareOrNot";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shareOrNot, allocator);
+    }
+
+    if (m_accessPointNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPointName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessPointName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessPointIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPointId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessPointId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1164,5 +1202,37 @@ void DirectConnectTunnel::SetShareOrNot(const uint64_t& _shareOrNot)
 bool DirectConnectTunnel::ShareOrNotHasBeenSet() const
 {
     return m_shareOrNotHasBeenSet;
+}
+
+string DirectConnectTunnel::GetAccessPointName() const
+{
+    return m_accessPointName;
+}
+
+void DirectConnectTunnel::SetAccessPointName(const string& _accessPointName)
+{
+    m_accessPointName = _accessPointName;
+    m_accessPointNameHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::AccessPointNameHasBeenSet() const
+{
+    return m_accessPointNameHasBeenSet;
+}
+
+string DirectConnectTunnel::GetAccessPointId() const
+{
+    return m_accessPointId;
+}
+
+void DirectConnectTunnel::SetAccessPointId(const string& _accessPointId)
+{
+    m_accessPointId = _accessPointId;
+    m_accessPointIdHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::AccessPointIdHasBeenSet() const
+{
+    return m_accessPointIdHasBeenSet;
 }
 

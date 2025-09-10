@@ -54,7 +54,9 @@ DescribeInstanceResponse::DescribeInstanceResponse() :
     m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet(false),
     m_useDefaultServerCertHasBeenSet(false),
     m_trustedCaLimitHasBeenSet(false),
-    m_serverCertLimitHasBeenSet(false)
+    m_serverCertLimitHasBeenSet(false),
+    m_topicPrefixSlashLimitHasBeenSet(false),
+    m_messageRateHasBeenSet(false)
 {
 }
 
@@ -402,6 +404,26 @@ CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
         m_serverCertLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TopicPrefixSlashLimit") && !rsp["TopicPrefixSlashLimit"].IsNull())
+    {
+        if (!rsp["TopicPrefixSlashLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicPrefixSlashLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicPrefixSlashLimit = rsp["TopicPrefixSlashLimit"].GetInt64();
+        m_topicPrefixSlashLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MessageRate") && !rsp["MessageRate"].IsNull())
+    {
+        if (!rsp["MessageRate"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageRate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_messageRate = rsp["MessageRate"].GetInt64();
+        m_messageRateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -658,6 +680,22 @@ string DescribeInstanceResponse::ToJsonString() const
         string key = "ServerCertLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serverCertLimit, allocator);
+    }
+
+    if (m_topicPrefixSlashLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicPrefixSlashLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_topicPrefixSlashLimit, allocator);
+    }
+
+    if (m_messageRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_messageRate, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -980,6 +1018,26 @@ int64_t DescribeInstanceResponse::GetServerCertLimit() const
 bool DescribeInstanceResponse::ServerCertLimitHasBeenSet() const
 {
     return m_serverCertLimitHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetTopicPrefixSlashLimit() const
+{
+    return m_topicPrefixSlashLimit;
+}
+
+bool DescribeInstanceResponse::TopicPrefixSlashLimitHasBeenSet() const
+{
+    return m_topicPrefixSlashLimitHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetMessageRate() const
+{
+    return m_messageRate;
+}
+
+bool DescribeInstanceResponse::MessageRateHasBeenSet() const
+{
+    return m_messageRateHasBeenSet;
 }
 
 

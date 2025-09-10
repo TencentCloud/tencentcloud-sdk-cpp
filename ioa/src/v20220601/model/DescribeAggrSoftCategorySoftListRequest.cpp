@@ -23,6 +23,7 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 DescribeAggrSoftCategorySoftListRequest::DescribeAggrSoftCategorySoftListRequest() :
+    m_conditionHasBeenSet(false),
     m_osTypeHasBeenSet(false)
 {
 }
@@ -33,6 +34,15 @@ string DescribeAggrSoftCategorySoftListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_conditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Condition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_condition.ToJsonObject(d[key.c_str()], allocator);
+    }
 
     if (m_osTypeHasBeenSet)
     {
@@ -49,6 +59,22 @@ string DescribeAggrSoftCategorySoftListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+Condition DescribeAggrSoftCategorySoftListRequest::GetCondition() const
+{
+    return m_condition;
+}
+
+void DescribeAggrSoftCategorySoftListRequest::SetCondition(const Condition& _condition)
+{
+    m_condition = _condition;
+    m_conditionHasBeenSet = true;
+}
+
+bool DescribeAggrSoftCategorySoftListRequest::ConditionHasBeenSet() const
+{
+    return m_conditionHasBeenSet;
+}
 
 int64_t DescribeAggrSoftCategorySoftListRequest::GetOsType() const
 {

@@ -215,6 +215,90 @@ namespace TencentCloud
                      */
                     bool DisplayToolCommonHasBeenSet() const;
 
+                    /**
+                     * 获取端口数据
+                     * @return Ports 端口数据
+                     * 
+                     */
+                    std::string GetPorts() const;
+
+                    /**
+                     * 设置端口数据
+                     * @param _ports 端口数据
+                     * 
+                     */
+                    void SetPorts(const std::string& _ports);
+
+                    /**
+                     * 判断参数 Ports 是否已赋值
+                     * @return Ports 是否已赋值
+                     * 
+                     */
+                    bool PortsHasBeenSet() const;
+
+                    /**
+                     * 获取服务数据
+                     * @return Services 服务数据
+                     * 
+                     */
+                    std::string GetServices() const;
+
+                    /**
+                     * 设置服务数据
+                     * @param _services 服务数据
+                     * 
+                     */
+                    void SetServices(const std::string& _services);
+
+                    /**
+                     * 判断参数 Services 是否已赋值
+                     * @return Services 是否已赋值
+                     * 
+                     */
+                    bool ServicesHasBeenSet() const;
+
+                    /**
+                     * 获取域名数据
+                     * @return Domains 域名数据
+                     * 
+                     */
+                    std::string GetDomains() const;
+
+                    /**
+                     * 设置域名数据
+                     * @param _domains 域名数据
+                     * 
+                     */
+                    void SetDomains(const std::string& _domains);
+
+                    /**
+                     * 判断参数 Domains 是否已赋值
+                     * @return Domains 是否已赋值
+                     * 
+                     */
+                    bool DomainsHasBeenSet() const;
+
+                    /**
+                     * 获取端口和服务最近更新时间
+                     * @return LastModify 端口和服务最近更新时间
+                     * 
+                     */
+                    std::string GetLastModify() const;
+
+                    /**
+                     * 设置端口和服务最近更新时间
+                     * @param _lastModify 端口和服务最近更新时间
+                     * 
+                     */
+                    void SetLastModify(const std::string& _lastModify);
+
+                    /**
+                     * 判断参数 LastModify 是否已赋值
+                     * @return LastModify 是否已赋值
+                     * 
+                     */
+                    bool LastModifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +348,30 @@ namespace TencentCloud
                      */
                     DisplayToolCommon m_displayToolCommon;
                     bool m_displayToolCommonHasBeenSet;
+
+                    /**
+                     * 端口数据
+                     */
+                    std::string m_ports;
+                    bool m_portsHasBeenSet;
+
+                    /**
+                     * 服务数据
+                     */
+                    std::string m_services;
+                    bool m_servicesHasBeenSet;
+
+                    /**
+                     * 域名数据
+                     */
+                    std::string m_domains;
+                    bool m_domainsHasBeenSet;
+
+                    /**
+                     * 端口和服务最近更新时间
+                     */
+                    std::string m_lastModify;
+                    bool m_lastModifyHasBeenSet;
 
                 };
             }

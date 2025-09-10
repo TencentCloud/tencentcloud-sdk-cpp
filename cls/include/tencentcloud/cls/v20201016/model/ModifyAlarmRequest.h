@@ -262,15 +262,15 @@ namespace TencentCloud
                     bool AlarmPeriodHasBeenSet() const;
 
                     /**
-                     * 获取关联的告警通知渠道列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取告警通知渠道列表
-                     * @return AlarmNoticeIds 关联的告警通知渠道列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取告警通知渠道列表
+                     * 获取关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
+                     * @return AlarmNoticeIds 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      * 
                      */
                     std::vector<std::string> GetAlarmNoticeIds() const;
 
                     /**
-                     * 设置关联的告警通知渠道列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取告警通知渠道列表
-                     * @param _alarmNoticeIds 关联的告警通知渠道列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取告警通知渠道列表
+                     * 设置关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
+                     * @param _alarmNoticeIds 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      * 
                      */
                     void SetAlarmNoticeIds(const std::vector<std::string>& _alarmNoticeIds);
@@ -595,7 +595,7 @@ Classifications元素的Value长度不能超过200个字符。
                     bool m_alarmPeriodHasBeenSet;
 
                     /**
-                     * 关联的告警通知渠道列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取告警通知渠道列表
+                     * 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      */
                     std::vector<std::string> m_alarmNoticeIds;
                     bool m_alarmNoticeIdsHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例id,可通过DescribeInstances接口获取
-                     * @return InstanceId ckafka集群实例id,可通过DescribeInstances接口获取
+                     * 获取ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例id,可通过DescribeInstances接口获取
-                     * @param _instanceId ckafka集群实例id,可通过DescribeInstances接口获取
+                     * 设置ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -206,15 +206,15 @@ vipType=1,支持1,3
                     bool CallerAppidHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽,公网路由必传,且必选时3的倍数,无默认值
-                     * @return PublicNetwork 公网带宽,公网路由必传,且必选时3的倍数,无默认值
+                     * 获取公网带宽,公网路由必传,且是3的倍数,无默认值
+                     * @return PublicNetwork 公网带宽,公网路由必传,且是3的倍数,无默认值
                      * 
                      */
                     int64_t GetPublicNetwork() const;
 
                     /**
-                     * 设置公网带宽,公网路由必传,且必选时3的倍数,无默认值
-                     * @param _publicNetwork 公网带宽,公网路由必传,且必选时3的倍数,无默认值
+                     * 设置公网带宽,公网路由必传,且是3的倍数,无默认值
+                     * @param _publicNetwork 公网带宽,公网路由必传,且是3的倍数,无默认值
                      * 
                      */
                     void SetPublicNetwork(const int64_t& _publicNetwork);
@@ -247,10 +247,31 @@ vipType=1,支持1,3
                      */
                     bool IpHasBeenSet() const;
 
+                    /**
+                     * 获取备注信息
+                     * @return Note 备注信息
+                     * 
+                     */
+                    std::string GetNote() const;
+
+                    /**
+                     * 设置备注信息
+                     * @param _note 备注信息
+                     * 
+                     */
+                    void SetNote(const std::string& _note);
+
+                    /**
+                     * 判断参数 Note 是否已赋值
+                     * @return Note 是否已赋值
+                     * 
+                     */
+                    bool NoteHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ckafka集群实例id,可通过DescribeInstances接口获取
+                     * ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -296,7 +317,7 @@ vipType=1,支持1,3
                     bool m_callerAppidHasBeenSet;
 
                     /**
-                     * 公网带宽,公网路由必传,且必选时3的倍数,无默认值
+                     * 公网带宽,公网路由必传,且是3的倍数,无默认值
                      */
                     int64_t m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
@@ -306,6 +327,12 @@ vipType=1,支持1,3
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
+
+                    /**
+                     * 备注信息
+                     */
+                    std::string m_note;
+                    bool m_noteHasBeenSet;
 
                 };
             }

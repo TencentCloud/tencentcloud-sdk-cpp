@@ -251,6 +251,27 @@ BYOC：一机一证
                      */
                     bool X509ModeHasBeenSet() const;
 
+                    /**
+                     * 获取单客户端消息收发限速单位 条/秒
+                     * @return MessageRate 单客户端消息收发限速单位 条/秒
+                     * 
+                     */
+                    int64_t GetMessageRate() const;
+
+                    /**
+                     * 设置单客户端消息收发限速单位 条/秒
+                     * @param _messageRate 单客户端消息收发限速单位 条/秒
+                     * 
+                     */
+                    void SetMessageRate(const int64_t& _messageRate);
+
+                    /**
+                     * 判断参数 MessageRate 是否已赋值
+                     * @return MessageRate 是否已赋值
+                     * 
+                     */
+                    bool MessageRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +332,12 @@ BYOC：一机一证
                      */
                     std::string m_x509Mode;
                     bool m_x509ModeHasBeenSet;
+
+                    /**
+                     * 单客户端消息收发限速单位 条/秒
+                     */
+                    int64_t m_messageRate;
+                    bool m_messageRateHasBeenSet;
 
                 };
             }

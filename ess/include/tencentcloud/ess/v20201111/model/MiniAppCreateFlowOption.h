@@ -109,6 +109,43 @@ namespace TencentCloud
                      */
                     bool FlowDisplayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取小程序集成发起，是否禁止发起时修改合同内容
+<ul>
+<li>false：默认值，不禁止发起时修改合同内容</li>
+<li>true：禁止发起时修改合同内容</li>
+</ul>
+                     * @return ForbidEditFlow 小程序集成发起，是否禁止发起时修改合同内容
+<ul>
+<li>false：默认值，不禁止发起时修改合同内容</li>
+<li>true：禁止发起时修改合同内容</li>
+</ul>
+                     * 
+                     */
+                    bool GetForbidEditFlow() const;
+
+                    /**
+                     * 设置小程序集成发起，是否禁止发起时修改合同内容
+<ul>
+<li>false：默认值，不禁止发起时修改合同内容</li>
+<li>true：禁止发起时修改合同内容</li>
+</ul>
+                     * @param _forbidEditFlow 小程序集成发起，是否禁止发起时修改合同内容
+<ul>
+<li>false：默认值，不禁止发起时修改合同内容</li>
+<li>true：禁止发起时修改合同内容</li>
+</ul>
+                     * 
+                     */
+                    void SetForbidEditFlow(const bool& _forbidEditFlow);
+
+                    /**
+                     * 判断参数 ForbidEditFlow 是否已赋值
+                     * @return ForbidEditFlow 是否已赋值
+                     * 
+                     */
+                    bool ForbidEditFlowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +165,16 @@ namespace TencentCloud
                      */
                     int64_t m_flowDisplayType;
                     bool m_flowDisplayTypeHasBeenSet;
+
+                    /**
+                     * 小程序集成发起，是否禁止发起时修改合同内容
+<ul>
+<li>false：默认值，不禁止发起时修改合同内容</li>
+<li>true：禁止发起时修改合同内容</li>
+</ul>
+                     */
+                    bool m_forbidEditFlow;
+                    bool m_forbidEditFlowHasBeenSet;
 
                 };
             }

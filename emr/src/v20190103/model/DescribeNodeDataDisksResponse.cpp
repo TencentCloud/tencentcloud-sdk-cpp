@@ -26,7 +26,8 @@ using namespace std;
 DescribeNodeDataDisksResponse::DescribeNodeDataDisksResponse() :
     m_totalCountHasBeenSet(false),
     m_cBSListHasBeenSet(false),
-    m_maxSizeHasBeenSet(false)
+    m_maxSizeHasBeenSet(false),
+    m_maxThroughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeNodeDataDisksResponse::Deserialize(const string &pay
         m_maxSizeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaxThroughputPerformance") && !rsp["MaxThroughputPerformance"].IsNull())
+    {
+        if (!rsp["MaxThroughputPerformance"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxThroughputPerformance` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxThroughputPerformance = rsp["MaxThroughputPerformance"].GetInt64();
+        m_maxThroughputPerformanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribeNodeDataDisksResponse::ToJsonString() const
         string key = "MaxSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSize, allocator);
+    }
+
+    if (m_maxThroughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxThroughputPerformance, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ uint64_t DescribeNodeDataDisksResponse::GetMaxSize() const
 bool DescribeNodeDataDisksResponse::MaxSizeHasBeenSet() const
 {
     return m_maxSizeHasBeenSet;
+}
+
+int64_t DescribeNodeDataDisksResponse::GetMaxThroughputPerformance() const
+{
+    return m_maxThroughputPerformance;
+}
+
+bool DescribeNodeDataDisksResponse::MaxThroughputPerformanceHasBeenSet() const
+{
+    return m_maxThroughputPerformanceHasBeenSet;
 }
 
 

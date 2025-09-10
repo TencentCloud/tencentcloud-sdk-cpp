@@ -289,6 +289,31 @@ namespace TencentCloud
                      */
                     bool VpcIdHasBeenSet() const;
 
+                    /**
+                     * 获取备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Note 备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNote() const;
+
+                    /**
+                     * 设置备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _note 备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNote(const std::string& _note);
+
+                    /**
+                     * 判断参数 Note 是否已赋值
+                     * @return Note 是否已赋值
+                     * 
+                     */
+                    bool NoteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -358,6 +383,13 @@ namespace TencentCloud
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_note;
+                    bool m_noteHasBeenSet;
 
                 };
             }

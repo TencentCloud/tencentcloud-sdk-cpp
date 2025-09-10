@@ -181,15 +181,15 @@ namespace TencentCloud
                     bool CntHasBeenSet() const;
 
                     /**
-                     * 获取Industry=gov/news/acad，对应党政机关、新闻、学术，**仅限尊享版使用**
-                     * @return Industry Industry=gov/news/acad，对应党政机关、新闻、学术，**仅限尊享版使用**
+                     * 获取Industry=gov/news/acad，对应党政机关、权威媒体、学术（英文），**仅限尊享版使用**
+                     * @return Industry Industry=gov/news/acad，对应党政机关、权威媒体、学术（英文），**仅限尊享版使用**
                      * 
                      */
                     std::string GetIndustry() const;
 
                     /**
-                     * 设置Industry=gov/news/acad，对应党政机关、新闻、学术，**仅限尊享版使用**
-                     * @param _industry Industry=gov/news/acad，对应党政机关、新闻、学术，**仅限尊享版使用**
+                     * 设置Industry=gov/news/acad，对应党政机关、权威媒体、学术（英文），**仅限尊享版使用**
+                     * @param _industry Industry=gov/news/acad，对应党政机关、权威媒体、学术（英文），**仅限尊享版使用**
                      * 
                      */
                     void SetIndustry(const std::string& _industry);
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_cntHasBeenSet;
 
                     /**
-                     * Industry=gov/news/acad，对应党政机关、新闻、学术，**仅限尊享版使用**
+                     * Industry=gov/news/acad，对应党政机关、权威媒体、学术（英文），**仅限尊享版使用**
                      */
                     std::string m_industry;
                     bool m_industryHasBeenSet;

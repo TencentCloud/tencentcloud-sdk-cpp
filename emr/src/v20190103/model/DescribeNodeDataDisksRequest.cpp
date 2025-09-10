@@ -28,7 +28,8 @@ DescribeNodeDataDisksRequest::DescribeNodeDataDisksRequest() :
     m_filtersHasBeenSet(false),
     m_innerSearchHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_sceneHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string DescribeNodeDataDisksRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_sceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scene.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -201,6 +210,22 @@ void DescribeNodeDataDisksRequest::SetOffset(const uint64_t& _offset)
 bool DescribeNodeDataDisksRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeNodeDataDisksRequest::GetScene() const
+{
+    return m_scene;
+}
+
+void DescribeNodeDataDisksRequest::SetScene(const string& _scene)
+{
+    m_scene = _scene;
+    m_sceneHasBeenSet = true;
+}
+
+bool DescribeNodeDataDisksRequest::SceneHasBeenSet() const
+{
+    return m_sceneHasBeenSet;
 }
 
 

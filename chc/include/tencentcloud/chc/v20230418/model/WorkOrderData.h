@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool FinishTimeHasBeenSet() const;
 
+                    /**
+                     * 获取工单关联的dcops单号
+                     * @return TicketId 工单关联的dcops单号
+                     * 
+                     */
+                    std::string GetTicketId() const;
+
+                    /**
+                     * 设置工单关联的dcops单号
+                     * @param _ticketId 工单关联的dcops单号
+                     * 
+                     */
+                    void SetTicketId(const std::string& _ticketId);
+
+                    /**
+                     * 判断参数 TicketId 是否已赋值
+                     * @return TicketId 是否已赋值
+                     * 
+                     */
+                    bool TicketIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
+
+                    /**
+                     * 工单关联的dcops单号
+                     */
+                    std::string m_ticketId;
+                    bool m_ticketIdHasBeenSet;
 
                 };
             }

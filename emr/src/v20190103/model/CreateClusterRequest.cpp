@@ -45,7 +45,9 @@ CreateClusterRequest::CreateClusterRequest() :
     m_zoneResourceConfigurationHasBeenSet(false),
     m_cosBucketHasBeenSet(false),
     m_nodeMarksHasBeenSet(false),
-    m_loadBalancerIdHasBeenSet(false)
+    m_loadBalancerIdHasBeenSet(false),
+    m_defaultMetaVersionHasBeenSet(false),
+    m_needCdbAuditHasBeenSet(false)
 {
 }
 
@@ -287,6 +289,22 @@ string CreateClusterRequest::ToJsonString() const
         string key = "LoadBalancerId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultMetaVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultMetaVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_defaultMetaVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needCdbAuditHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedCdbAudit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needCdbAudit, allocator);
     }
 
 
@@ -663,6 +681,38 @@ void CreateClusterRequest::SetLoadBalancerId(const string& _loadBalancerId)
 bool CreateClusterRequest::LoadBalancerIdHasBeenSet() const
 {
     return m_loadBalancerIdHasBeenSet;
+}
+
+string CreateClusterRequest::GetDefaultMetaVersion() const
+{
+    return m_defaultMetaVersion;
+}
+
+void CreateClusterRequest::SetDefaultMetaVersion(const string& _defaultMetaVersion)
+{
+    m_defaultMetaVersion = _defaultMetaVersion;
+    m_defaultMetaVersionHasBeenSet = true;
+}
+
+bool CreateClusterRequest::DefaultMetaVersionHasBeenSet() const
+{
+    return m_defaultMetaVersionHasBeenSet;
+}
+
+int64_t CreateClusterRequest::GetNeedCdbAudit() const
+{
+    return m_needCdbAudit;
+}
+
+void CreateClusterRequest::SetNeedCdbAudit(const int64_t& _needCdbAudit)
+{
+    m_needCdbAudit = _needCdbAudit;
+    m_needCdbAuditHasBeenSet = true;
+}
+
+bool CreateClusterRequest::NeedCdbAuditHasBeenSet() const
+{
+    return m_needCdbAuditHasBeenSet;
 }
 
 

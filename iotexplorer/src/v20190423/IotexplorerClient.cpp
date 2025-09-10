@@ -83,6 +83,49 @@ IotexplorerClient::ActivateTWeCallLicenseOutcomeCallable IotexplorerClient::Acti
     return task->get_future();
 }
 
+IotexplorerClient::BatchUpdateFirmwareOutcome IotexplorerClient::BatchUpdateFirmware(const BatchUpdateFirmwareRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchUpdateFirmware");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchUpdateFirmwareResponse rsp = BatchUpdateFirmwareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchUpdateFirmwareOutcome(rsp);
+        else
+            return BatchUpdateFirmwareOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchUpdateFirmwareOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::BatchUpdateFirmwareAsync(const BatchUpdateFirmwareRequest& request, const BatchUpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchUpdateFirmware(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::BatchUpdateFirmwareOutcomeCallable IotexplorerClient::BatchUpdateFirmwareCallable(const BatchUpdateFirmwareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchUpdateFirmwareOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchUpdateFirmware(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::BindCloudStorageUserOutcome IotexplorerClient::BindCloudStorageUser(const BindCloudStorageUserRequest &request)
 {
     auto outcome = MakeRequest(request, "BindCloudStorageUser");
@@ -986,6 +1029,49 @@ IotexplorerClient::CreateLoRaGatewayOutcomeCallable IotexplorerClient::CreateLoR
     return task->get_future();
 }
 
+IotexplorerClient::CreateOtaModuleOutcome IotexplorerClient::CreateOtaModule(const CreateOtaModuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOtaModule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOtaModuleResponse rsp = CreateOtaModuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOtaModuleOutcome(rsp);
+        else
+            return CreateOtaModuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOtaModuleOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateOtaModuleAsync(const CreateOtaModuleRequest& request, const CreateOtaModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOtaModule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateOtaModuleOutcomeCallable IotexplorerClient::CreateOtaModuleCallable(const CreateOtaModuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOtaModuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOtaModule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreatePositionFenceOutcome IotexplorerClient::CreatePositionFence(const CreatePositionFenceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePositionFence");
@@ -1624,6 +1710,49 @@ IotexplorerClient::DeleteLoRaGatewayOutcomeCallable IotexplorerClient::DeleteLoR
         [this, request]()
         {
             return this->DeleteLoRaGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DeleteOtaModuleOutcome IotexplorerClient::DeleteOtaModule(const DeleteOtaModuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOtaModule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOtaModuleResponse rsp = DeleteOtaModuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOtaModuleOutcome(rsp);
+        else
+            return DeleteOtaModuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOtaModuleOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteOtaModuleAsync(const DeleteOtaModuleRequest& request, const DeleteOtaModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteOtaModule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DeleteOtaModuleOutcomeCallable IotexplorerClient::DeleteOtaModuleCallable(const DeleteOtaModuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteOtaModuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteOtaModule(request);
         }
     );
 
@@ -3430,6 +3559,92 @@ IotexplorerClient::DescribeFirmwareTaskOutcomeCallable IotexplorerClient::Descri
         [this, request]()
         {
             return this->DescribeFirmwareTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeFirmwareTaskDevicesOutcome IotexplorerClient::DescribeFirmwareTaskDevices(const DescribeFirmwareTaskDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFirmwareTaskDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFirmwareTaskDevicesResponse rsp = DescribeFirmwareTaskDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFirmwareTaskDevicesOutcome(rsp);
+        else
+            return DescribeFirmwareTaskDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFirmwareTaskDevicesOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeFirmwareTaskDevicesAsync(const DescribeFirmwareTaskDevicesRequest& request, const DescribeFirmwareTaskDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFirmwareTaskDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeFirmwareTaskDevicesOutcomeCallable IotexplorerClient::DescribeFirmwareTaskDevicesCallable(const DescribeFirmwareTaskDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFirmwareTaskDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFirmwareTaskDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeFirmwareTasksOutcome IotexplorerClient::DescribeFirmwareTasks(const DescribeFirmwareTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFirmwareTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFirmwareTasksResponse rsp = DescribeFirmwareTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFirmwareTasksOutcome(rsp);
+        else
+            return DescribeFirmwareTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFirmwareTasksOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeFirmwareTasksAsync(const DescribeFirmwareTasksRequest& request, const DescribeFirmwareTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFirmwareTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeFirmwareTasksOutcomeCallable IotexplorerClient::DescribeFirmwareTasksCallable(const DescribeFirmwareTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFirmwareTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFirmwareTasks(request);
         }
     );
 
@@ -5759,6 +5974,92 @@ IotexplorerClient::ListFirmwaresOutcomeCallable IotexplorerClient::ListFirmwares
     return task->get_future();
 }
 
+IotexplorerClient::ListOtaModulesOutcome IotexplorerClient::ListOtaModules(const ListOtaModulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListOtaModules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListOtaModulesResponse rsp = ListOtaModulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListOtaModulesOutcome(rsp);
+        else
+            return ListOtaModulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListOtaModulesOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ListOtaModulesAsync(const ListOtaModulesRequest& request, const ListOtaModulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListOtaModules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ListOtaModulesOutcomeCallable IotexplorerClient::ListOtaModulesCallable(const ListOtaModulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListOtaModulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListOtaModules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::ListProductOtaModulesOutcome IotexplorerClient::ListProductOtaModules(const ListProductOtaModulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListProductOtaModules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListProductOtaModulesResponse rsp = ListProductOtaModulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListProductOtaModulesOutcome(rsp);
+        else
+            return ListProductOtaModulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListProductOtaModulesOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ListProductOtaModulesAsync(const ListProductOtaModulesRequest& request, const ListProductOtaModulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListProductOtaModules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ListProductOtaModulesOutcomeCallable IotexplorerClient::ListProductOtaModulesCallable(const ListProductOtaModulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListProductOtaModulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListProductOtaModules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::ListTopicPolicyOutcome IotexplorerClient::ListTopicPolicy(const ListTopicPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ListTopicPolicy");
@@ -7472,6 +7773,49 @@ IotexplorerClient::UpdateFirmwareOutcomeCallable IotexplorerClient::UpdateFirmwa
         [this, request]()
         {
             return this->UpdateFirmware(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::UpdateOtaModuleOutcome IotexplorerClient::UpdateOtaModule(const UpdateOtaModuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateOtaModule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateOtaModuleResponse rsp = UpdateOtaModuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateOtaModuleOutcome(rsp);
+        else
+            return UpdateOtaModuleOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateOtaModuleOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::UpdateOtaModuleAsync(const UpdateOtaModuleRequest& request, const UpdateOtaModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateOtaModule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::UpdateOtaModuleOutcomeCallable IotexplorerClient::UpdateOtaModuleCallable(const UpdateOtaModuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateOtaModuleOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateOtaModule(request);
         }
     );
 

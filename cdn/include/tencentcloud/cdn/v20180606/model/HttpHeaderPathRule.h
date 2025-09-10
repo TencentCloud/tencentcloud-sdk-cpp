@@ -109,11 +109,11 @@ add：增加。增加指定的头部参数，默认允许重复添加，即重�
                     bool HeaderNameHasBeenSet() const;
 
                     /**
-                     * 获取http 头部值，最多可设置 2000 个字符
+                     * 获取http 头部值，自定义请求头中最多可设置 1000 个字符，自定义响应头中最多可以设置 2000 个字符
 Mode 为 del 时非必填
 Mode 为 add/set 时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HeaderValue http 头部值，最多可设置 2000 个字符
+                     * @return HeaderValue http 头部值，自定义请求头中最多可设置 1000 个字符，自定义响应头中最多可以设置 2000 个字符
 Mode 为 del 时非必填
 Mode 为 add/set 时必填
 注意：此字段可能返回 null，表示取不到有效值。
@@ -122,11 +122,11 @@ Mode 为 add/set 时必填
                     std::string GetHeaderValue() const;
 
                     /**
-                     * 设置http 头部值，最多可设置 2000 个字符
+                     * 设置http 头部值，自定义请求头中最多可设置 1000 个字符，自定义响应头中最多可以设置 2000 个字符
 Mode 为 del 时非必填
 Mode 为 add/set 时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _headerValue http 头部值，最多可设置 2000 个字符
+                     * @param _headerValue http 头部值，自定义请求头中最多可设置 1000 个字符，自定义响应头中最多可以设置 2000 个字符
 Mode 为 del 时非必填
 Mode 为 add/set 时必填
 注意：此字段可能返回 null，表示取不到有效值。
@@ -243,7 +243,7 @@ add：增加。增加指定的头部参数，默认允许重复添加，即重�
                     bool m_headerNameHasBeenSet;
 
                     /**
-                     * http 头部值，最多可设置 2000 个字符
+                     * http 头部值，自定义请求头中最多可设置 1000 个字符，自定义响应头中最多可以设置 2000 个字符
 Mode 为 del 时非必填
 Mode 为 add/set 时必填
 注意：此字段可能返回 null，表示取不到有效值。

@@ -34,7 +34,6 @@ ZoneResponse::ZoneResponse() :
     m_publicNetworkHasBeenSet(false),
     m_publicNetworkLimitHasBeenSet(false),
     m_requestIdHasBeenSet(false),
-    m_versionHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_forceCheckTagHasBeenSet(false)
@@ -210,16 +209,6 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
         m_requestIdHasBeenSet = true;
     }
 
-    if (value.HasMember("Version") && !value["Version"].IsNull())
-    {
-        if (!value["Version"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ZoneResponse.Version` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_version = string(value["Version"].GetString());
-        m_versionHasBeenSet = true;
-    }
-
     if (value.HasMember("Offset") && !value["Offset"].IsNull())
     {
         if (!value["Offset"].IsInt64())
@@ -375,14 +364,6 @@ void ZoneResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_requestId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_versionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Version";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -618,22 +599,6 @@ void ZoneResponse::SetRequestId(const string& _requestId)
 bool ZoneResponse::RequestIdHasBeenSet() const
 {
     return m_requestIdHasBeenSet;
-}
-
-string ZoneResponse::GetVersion() const
-{
-    return m_version;
-}
-
-void ZoneResponse::SetVersion(const string& _version)
-{
-    m_version = _version;
-    m_versionHasBeenSet = true;
-}
-
-bool ZoneResponse::VersionHasBeenSet() const
-{
-    return m_versionHasBeenSet;
 }
 
 int64_t ZoneResponse::GetOffset() const

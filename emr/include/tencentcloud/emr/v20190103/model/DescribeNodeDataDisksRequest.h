@@ -169,6 +169,31 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取场景值：
+ModifyDiskExtraPerformance ：调整数据盘额外性能
+                     * @return Scene 场景值：
+ModifyDiskExtraPerformance ：调整数据盘额外性能
+                     * 
+                     */
+                    std::string GetScene() const;
+
+                    /**
+                     * 设置场景值：
+ModifyDiskExtraPerformance ：调整数据盘额外性能
+                     * @param _scene 场景值：
+ModifyDiskExtraPerformance ：调整数据盘额外性能
+                     * 
+                     */
+                    void SetScene(const std::string& _scene);
+
+                    /**
+                     * 判断参数 Scene 是否已赋值
+                     * @return Scene 是否已赋值
+                     * 
+                     */
+                    bool SceneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +231,13 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 场景值：
+ModifyDiskExtraPerformance ：调整数据盘额外性能
+                     */
+                    std::string m_scene;
+                    bool m_sceneHasBeenSet;
 
                 };
             }

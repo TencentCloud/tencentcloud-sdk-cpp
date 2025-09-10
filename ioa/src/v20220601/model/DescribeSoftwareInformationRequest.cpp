@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeSoftwareInformationRequest::DescribeSoftwareInformationRequest() :
     m_midHasBeenSet(false),
-    m_conditionHasBeenSet(false)
+    m_conditionHasBeenSet(false),
+    m_osTypeHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeSoftwareInformationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_condition.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_osTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_osType, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeSoftwareInformationRequest::SetCondition(const Condition& _conditio
 bool DescribeSoftwareInformationRequest::ConditionHasBeenSet() const
 {
     return m_conditionHasBeenSet;
+}
+
+int64_t DescribeSoftwareInformationRequest::GetOsType() const
+{
+    return m_osType;
+}
+
+void DescribeSoftwareInformationRequest::SetOsType(const int64_t& _osType)
+{
+    m_osType = _osType;
+    m_osTypeHasBeenSet = true;
+}
+
+bool DescribeSoftwareInformationRequest::OsTypeHasBeenSet() const
+{
+    return m_osTypeHasBeenSet;
 }
 
 

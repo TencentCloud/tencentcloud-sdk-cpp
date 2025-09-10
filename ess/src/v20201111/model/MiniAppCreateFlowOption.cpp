@@ -23,7 +23,8 @@ using namespace std;
 MiniAppCreateFlowOption::MiniAppCreateFlowOption() :
     m_remindedOnHasBeenSet(false),
     m_needCreateReviewHasBeenSet(false),
-    m_flowDisplayTypeHasBeenSet(false)
+    m_flowDisplayTypeHasBeenSet(false),
+    m_forbidEditFlowHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome MiniAppCreateFlowOption::Deserialize(const rapidjson::Value 
         m_flowDisplayTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ForbidEditFlow") && !value["ForbidEditFlow"].IsNull())
+    {
+        if (!value["ForbidEditFlow"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MiniAppCreateFlowOption.ForbidEditFlow` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidEditFlow = value["ForbidEditFlow"].GetBool();
+        m_forbidEditFlowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void MiniAppCreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "FlowDisplayType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowDisplayType, allocator);
+    }
+
+    if (m_forbidEditFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidEditFlow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidEditFlow, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void MiniAppCreateFlowOption::SetFlowDisplayType(const int64_t& _flowDisplayType
 bool MiniAppCreateFlowOption::FlowDisplayTypeHasBeenSet() const
 {
     return m_flowDisplayTypeHasBeenSet;
+}
+
+bool MiniAppCreateFlowOption::GetForbidEditFlow() const
+{
+    return m_forbidEditFlow;
+}
+
+void MiniAppCreateFlowOption::SetForbidEditFlow(const bool& _forbidEditFlow)
+{
+    m_forbidEditFlow = _forbidEditFlow;
+    m_forbidEditFlowHasBeenSet = true;
+}
+
+bool MiniAppCreateFlowOption::ForbidEditFlowHasBeenSet() const
+{
+    return m_forbidEditFlowHasBeenSet;
 }
 

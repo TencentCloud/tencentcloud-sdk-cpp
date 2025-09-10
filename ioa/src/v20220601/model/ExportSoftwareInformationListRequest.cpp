@@ -24,7 +24,8 @@ using namespace std;
 
 ExportSoftwareInformationListRequest::ExportSoftwareInformationListRequest() :
     m_midHasBeenSet(false),
-    m_conditionHasBeenSet(false)
+    m_conditionHasBeenSet(false),
+    m_osTypeHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string ExportSoftwareInformationListRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_condition.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_osTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_osType, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void ExportSoftwareInformationListRequest::SetCondition(const Condition& _condit
 bool ExportSoftwareInformationListRequest::ConditionHasBeenSet() const
 {
     return m_conditionHasBeenSet;
+}
+
+int64_t ExportSoftwareInformationListRequest::GetOsType() const
+{
+    return m_osType;
+}
+
+void ExportSoftwareInformationListRequest::SetOsType(const int64_t& _osType)
+{
+    m_osType = _osType;
+    m_osTypeHasBeenSet = true;
+}
+
+bool ExportSoftwareInformationListRequest::OsTypeHasBeenSet() const
+{
+    return m_osTypeHasBeenSet;
 }
 
 

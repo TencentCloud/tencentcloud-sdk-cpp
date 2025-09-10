@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ioa/v20220601/model/Condition.h>
 
 
 namespace TencentCloud
@@ -41,6 +42,27 @@ namespace TencentCloud
                     ~DescribeAggrSoftDeviceListRequest() = default;
                     std::string ToJsonString() const;
 
+
+                    /**
+                     * 获取过滤条件
+                     * @return Condition 过滤条件
+                     * 
+                     */
+                    Condition GetCondition() const;
+
+                    /**
+                     * 设置过滤条件
+                     * @param _condition 过滤条件
+                     * 
+                     */
+                    void SetCondition(const Condition& _condition);
+
+                    /**
+                     * 判断参数 Condition 是否已赋值
+                     * @return Condition 是否已赋值
+                     * 
+                     */
+                    bool ConditionHasBeenSet() const;
 
                     /**
                      * 获取软件名
@@ -64,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取操作系统
-                     * @return OsType 操作系统
+                     * 获取0:win 2:mac
+                     * @return OsType 0:win 2:mac
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置操作系统
-                     * @param _osType 操作系统
+                     * 设置0:win 2:mac
+                     * @param _osType 0:win 2:mac
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -87,13 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 过滤条件
+                     */
+                    Condition m_condition;
+                    bool m_conditionHasBeenSet;
+
+                    /**
                      * 软件名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 操作系统
+                     * 0:win 2:mac
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;

@@ -46,7 +46,7 @@ namespace TencentCloud
 
 
                 /**
-                 *联网搜索API，以json形式向客户提供搜索结果数据，包含标题、摘要、内容来源url等信息
+                 *联网搜索API，以JSON形式向客户提供搜索结果数据，包含标题、摘要、内容来源url等信息
                  * @param req SearchProRequest
                  * @return SearchProOutcome
                  */

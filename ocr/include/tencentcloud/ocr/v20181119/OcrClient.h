@@ -43,6 +43,8 @@
 #include <tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyStoreNameRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyStoreNameResponse.h>
+#include <tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobRequest.h>
+#include <tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DutyPaidProofOCRRequest.h>
@@ -173,6 +175,8 @@
 #include <tencentcloud/ocr/v20181119/model/ShipInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/SubmitExtractDocAgentJobRequest.h>
+#include <tencentcloud/ocr/v20181119/model/SubmitExtractDocAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRRequest.h>
@@ -243,6 +247,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ClassifyStoreNameResponse> ClassifyStoreNameOutcome;
                 typedef std::future<ClassifyStoreNameOutcome> ClassifyStoreNameOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ClassifyStoreNameRequest&, ClassifyStoreNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClassifyStoreNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExtractDocAgentJobResponse> DescribeExtractDocAgentJobOutcome;
+                typedef std::future<DescribeExtractDocAgentJobOutcome> DescribeExtractDocAgentJobOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::DescribeExtractDocAgentJobRequest&, DescribeExtractDocAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtractDocAgentJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DriverLicenseOCRResponse> DriverLicenseOCROutcome;
                 typedef std::future<DriverLicenseOCROutcome> DriverLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DriverLicenseOCRRequest&, DriverLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DriverLicenseOCRAsyncHandler;
@@ -438,6 +445,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SmartStructuralOCRResponse> SmartStructuralOCROutcome;
                 typedef std::future<SmartStructuralOCROutcome> SmartStructuralOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SmartStructuralOCRRequest&, SmartStructuralOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> SmartStructuralOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitExtractDocAgentJobResponse> SubmitExtractDocAgentJobOutcome;
+                typedef std::future<SubmitExtractDocAgentJobOutcome> SubmitExtractDocAgentJobOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::SubmitExtractDocAgentJobRequest&, SubmitExtractDocAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitExtractDocAgentJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::TableOCRResponse> TableOCROutcome;
                 typedef std::future<TableOCROutcome> TableOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::TableOCRRequest&, TableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> TableOCRAsyncHandler;
@@ -591,6 +601,15 @@ namespace TencentCloud
                 ClassifyStoreNameOutcome ClassifyStoreName(const Model::ClassifyStoreNameRequest &request);
                 void ClassifyStoreNameAsync(const Model::ClassifyStoreNameRequest& request, const ClassifyStoreNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ClassifyStoreNameOutcomeCallable ClassifyStoreNameCallable(const Model::ClassifyStoreNameRequest& request);
+
+                /**
+                 *用于查询文档处理任务。文档处理领域里常见的通用Agent 如抽取、比对之类的，目前我们提供的抽取，但未来可以根据实际情况和客户需求扩展。
+                 * @param req DescribeExtractDocAgentJobRequest
+                 * @return DescribeExtractDocAgentJobOutcome
+                 */
+                DescribeExtractDocAgentJobOutcome DescribeExtractDocAgentJob(const Model::DescribeExtractDocAgentJobRequest &request);
+                void DescribeExtractDocAgentJobAsync(const Model::DescribeExtractDocAgentJobRequest& request, const DescribeExtractDocAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExtractDocAgentJobOutcomeCallable DescribeExtractDocAgentJobCallable(const Model::DescribeExtractDocAgentJobRequest& request);
 
                 /**
                  *本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。
@@ -1781,6 +1800,15 @@ namespace TencentCloud
                 SmartStructuralOCROutcome SmartStructuralOCR(const Model::SmartStructuralOCRRequest &request);
                 void SmartStructuralOCRAsync(const Model::SmartStructuralOCRRequest& request, const SmartStructuralOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SmartStructuralOCROutcomeCallable SmartStructuralOCRCallable(const Model::SmartStructuralOCRRequest& request);
+
+                /**
+                 *文档处理领域里常见的通用Agent 如抽取、比对之类的，目前我们提供的抽取，但未来可以根据实际情况和客户需求扩展。
+                 * @param req SubmitExtractDocAgentJobRequest
+                 * @return SubmitExtractDocAgentJobOutcome
+                 */
+                SubmitExtractDocAgentJobOutcome SubmitExtractDocAgentJob(const Model::SubmitExtractDocAgentJobRequest &request);
+                void SubmitExtractDocAgentJobAsync(const Model::SubmitExtractDocAgentJobRequest& request, const SubmitExtractDocAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitExtractDocAgentJobOutcomeCallable SubmitExtractDocAgentJobCallable(const Model::SubmitExtractDocAgentJobRequest& request);
 
                 /**
                  *<b>此接口为表格识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/49525">新版表格识别</a>。</b>

@@ -85,19 +85,15 @@ namespace TencentCloud
                     bool CasterNameHasBeenSet() const;
 
                     /**
-                     * 获取导播台的描述
-最大允许长度256
-                     * @return Description 导播台的描述
-最大允许长度256
+                     * 获取导播台的描述，最大允许长度256
+                     * @return Description 导播台的描述，最大允许长度256
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置导播台的描述
-最大允许长度256
-                     * @param _description 导播台的描述
-最大允许长度256
+                     * 设置导播台的描述，最大允许长度256
+                     * @param _description 导播台的描述，最大允许长度256
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -476,8 +472,7 @@ namespace TencentCloud
                     bool m_casterNameHasBeenSet;
 
                     /**
-                     * 导播台的描述
-最大允许长度256
+                     * 导播台的描述，最大允许长度256
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

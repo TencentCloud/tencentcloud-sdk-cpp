@@ -89,6 +89,27 @@ namespace TencentCloud
                      */
                     bool ConditionHasBeenSet() const;
 
+                    /**
+                     * 获取系统类型0:win 2:mac
+                     * @return OsType 系统类型0:win 2:mac
+                     * 
+                     */
+                    int64_t GetOsType() const;
+
+                    /**
+                     * 设置系统类型0:win 2:mac
+                     * @param _osType 系统类型0:win 2:mac
+                     * 
+                     */
+                    void SetOsType(const int64_t& _osType);
+
+                    /**
+                     * 判断参数 OsType 是否已赋值
+                     * @return OsType 是否已赋值
+                     * 
+                     */
+                    bool OsTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -103,6 +124,12 @@ namespace TencentCloud
                      */
                     Condition m_condition;
                     bool m_conditionHasBeenSet;
+
+                    /**
+                     * 系统类型0:win 2:mac
+                     */
+                    int64_t m_osType;
+                    bool m_osTypeHasBeenSet;
 
                 };
             }

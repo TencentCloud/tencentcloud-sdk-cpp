@@ -57,7 +57,9 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_multiZoneSettingsHasBeenSet(false),
     m_cosBucketHasBeenSet(false),
     m_nodeMarksHasBeenSet(false),
-    m_loadBalancerIdHasBeenSet(false)
+    m_loadBalancerIdHasBeenSet(false),
+    m_defaultMetaVersionHasBeenSet(false),
+    m_needCdbAuditHasBeenSet(false)
 {
 }
 
@@ -397,6 +399,22 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "LoadBalancerId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultMetaVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultMetaVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_defaultMetaVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needCdbAuditHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedCdbAudit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needCdbAudit, allocator);
     }
 
 
@@ -965,6 +983,38 @@ void CreateInstanceRequest::SetLoadBalancerId(const string& _loadBalancerId)
 bool CreateInstanceRequest::LoadBalancerIdHasBeenSet() const
 {
     return m_loadBalancerIdHasBeenSet;
+}
+
+string CreateInstanceRequest::GetDefaultMetaVersion() const
+{
+    return m_defaultMetaVersion;
+}
+
+void CreateInstanceRequest::SetDefaultMetaVersion(const string& _defaultMetaVersion)
+{
+    m_defaultMetaVersion = _defaultMetaVersion;
+    m_defaultMetaVersionHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::DefaultMetaVersionHasBeenSet() const
+{
+    return m_defaultMetaVersionHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetNeedCdbAudit() const
+{
+    return m_needCdbAudit;
+}
+
+void CreateInstanceRequest::SetNeedCdbAudit(const int64_t& _needCdbAudit)
+{
+    m_needCdbAudit = _needCdbAudit;
+    m_needCdbAuditHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::NeedCdbAuditHasBeenSet() const
+{
+    return m_needCdbAuditHasBeenSet;
 }
 
 
