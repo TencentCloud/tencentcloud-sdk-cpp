@@ -119,10 +119,14 @@
 #include <tencentcloud/ccc/v20200210/model/DescribePredictiveDialingSessionsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeSessionDetailRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeSessionDetailResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeStaffInfoListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeStaffInfoListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeStaffStatusHistoryRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeStaffStatusHistoryResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoRequest.h>
@@ -329,12 +333,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProtectedTelCdrResponse> DescribeProtectedTelCdrOutcome;
                 typedef std::future<DescribeProtectedTelCdrOutcome> DescribeProtectedTelCdrOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeProtectedTelCdrRequest&, DescribeProtectedTelCdrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectedTelCdrAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSessionDetailResponse> DescribeSessionDetailOutcome;
+                typedef std::future<DescribeSessionDetailOutcome> DescribeSessionDetailOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeSessionDetailRequest&, DescribeSessionDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSkillGroupInfoListResponse> DescribeSkillGroupInfoListOutcome;
                 typedef std::future<DescribeSkillGroupInfoListOutcome> DescribeSkillGroupInfoListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeSkillGroupInfoListRequest&, DescribeSkillGroupInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillGroupInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStaffInfoListResponse> DescribeStaffInfoListOutcome;
                 typedef std::future<DescribeStaffInfoListOutcome> DescribeStaffInfoListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeStaffInfoListRequest&, DescribeStaffInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStaffInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStaffStatusHistoryResponse> DescribeStaffStatusHistoryOutcome;
+                typedef std::future<DescribeStaffStatusHistoryOutcome> DescribeStaffStatusHistoryOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeStaffStatusHistoryRequest&, DescribeStaffStatusHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStaffStatusHistoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStaffStatusMetricsResponse> DescribeStaffStatusMetricsOutcome;
                 typedef std::future<DescribeStaffStatusMetricsOutcome> DescribeStaffStatusMetricsOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeStaffStatusMetricsRequest&, DescribeStaffStatusMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStaffStatusMetricsAsyncHandler;
@@ -853,6 +863,15 @@ namespace TencentCloud
                 DescribeProtectedTelCdrOutcomeCallable DescribeProtectedTelCdrCallable(const Model::DescribeProtectedTelCdrRequest& request);
 
                 /**
+                 *获取通话详情
+                 * @param req DescribeSessionDetailRequest
+                 * @return DescribeSessionDetailOutcome
+                 */
+                DescribeSessionDetailOutcome DescribeSessionDetail(const Model::DescribeSessionDetailRequest &request);
+                void DescribeSessionDetailAsync(const Model::DescribeSessionDetailRequest& request, const DescribeSessionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSessionDetailOutcomeCallable DescribeSessionDetailCallable(const Model::DescribeSessionDetailRequest& request);
+
+                /**
                  *获取技能组信息列表
                  * @param req DescribeSkillGroupInfoListRequest
                  * @return DescribeSkillGroupInfoListOutcome
@@ -869,6 +888,15 @@ namespace TencentCloud
                 DescribeStaffInfoListOutcome DescribeStaffInfoList(const Model::DescribeStaffInfoListRequest &request);
                 void DescribeStaffInfoListAsync(const Model::DescribeStaffInfoListRequest& request, const DescribeStaffInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStaffInfoListOutcomeCallable DescribeStaffInfoListCallable(const Model::DescribeStaffInfoListRequest& request);
+
+                /**
+                 *查询座席状态历史
+                 * @param req DescribeStaffStatusHistoryRequest
+                 * @return DescribeStaffStatusHistoryOutcome
+                 */
+                DescribeStaffStatusHistoryOutcome DescribeStaffStatusHistory(const Model::DescribeStaffStatusHistoryRequest &request);
+                void DescribeStaffStatusHistoryAsync(const Model::DescribeStaffStatusHistoryRequest& request, const DescribeStaffStatusHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStaffStatusHistoryOutcomeCallable DescribeStaffStatusHistoryCallable(const Model::DescribeStaffStatusHistoryRequest& request);
 
                 /**
                  *获取坐席实时状态统计指标

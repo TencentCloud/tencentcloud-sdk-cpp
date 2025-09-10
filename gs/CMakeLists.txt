@@ -50,6 +50,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/BackUpAndroidInstanceToStorageRequest.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesPropertiesRequest.h
   include/tencentcloud/gs/v20191118/model/SyncAndroidInstanceImage.h
+  include/tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceRequest.h
   include/tencentcloud/gs/v20191118/model/AndroidInstanceLabel.h
   include/tencentcloud/gs/v20191118/model/DeleteAndroidInstanceImagesResponse.h
   include/tencentcloud/gs/v20191118/model/StartAndroidInstancesRequest.h
@@ -64,6 +65,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/UploadFileToAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/CleanAndroidInstancesAppDataRequest.h
   include/tencentcloud/gs/v20191118/model/DisableAndroidInstancesAppRequest.h
+  include/tencentcloud/gs/v20191118/model/DescribeAndroidInstancesAppBlacklistRequest.h
   include/tencentcloud/gs/v20191118/model/EnableAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/ConnectAndroidInstanceRequest.h
   include/tencentcloud/gs/v20191118/model/CopyAndroidInstanceRequest.h
@@ -79,7 +81,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/StartAndroidInstancesAppRequest.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesResolutionResponse.h
   include/tencentcloud/gs/v20191118/model/DeleteAndroidAppVersionResponse.h
-  include/tencentcloud/gs/v20191118/model/CreateAndroidInstancesRequest.h
+  include/tencentcloud/gs/v20191118/model/DistributePhotoToAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/AndroidInstanceError.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesUserIdRequest.h
   include/tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppWithURLRequest.h
@@ -139,7 +141,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstancesByAppsRequest.h
   include/tencentcloud/gs/v20191118/model/TrylockWorkerResponse.h
   include/tencentcloud/gs/v20191118/model/S3Options.h
-  include/tencentcloud/gs/v20191118/model/DescribeAndroidInstancesAppBlacklistRequest.h
+  include/tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceResponse.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceWebShellRequest.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstancesAccessTokenResponse.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstancesLabelsResponse.h
@@ -170,7 +172,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/CreateCosCredentialResponse.h
   include/tencentcloud/gs/v20191118/model/UploadFileToAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/AndroidInstanceAppBlacklist.h
-  include/tencentcloud/gs/v20191118/model/DistributePhotoToAndroidInstancesResponse.h
+  include/tencentcloud/gs/v20191118/model/CreateAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceLabelResponse.h
   include/tencentcloud/gs/v20191118/model/StartPublishStreamResponse.h
   include/tencentcloud/gs/v20191118/model/AndroidInstanceImage.h
@@ -228,6 +230,7 @@ set(gs_src
   src/v20191118/model/BackUpAndroidInstanceToStorageRequest.cpp
   src/v20191118/model/ModifyAndroidInstancesPropertiesRequest.cpp
   src/v20191118/model/SyncAndroidInstanceImage.cpp
+  src/v20191118/model/DisconnectAndroidInstanceRequest.cpp
   src/v20191118/model/AndroidInstanceLabel.cpp
   src/v20191118/model/DeleteAndroidInstanceImagesResponse.cpp
   src/v20191118/model/StartAndroidInstancesRequest.cpp
@@ -242,6 +245,7 @@ set(gs_src
   src/v20191118/model/UploadFileToAndroidInstancesRequest.cpp
   src/v20191118/model/CleanAndroidInstancesAppDataRequest.cpp
   src/v20191118/model/DisableAndroidInstancesAppRequest.cpp
+  src/v20191118/model/DescribeAndroidInstancesAppBlacklistRequest.cpp
   src/v20191118/model/EnableAndroidInstancesAppResponse.cpp
   src/v20191118/model/ConnectAndroidInstanceRequest.cpp
   src/v20191118/model/CopyAndroidInstanceRequest.cpp
@@ -257,7 +261,7 @@ set(gs_src
   src/v20191118/model/StartAndroidInstancesAppRequest.cpp
   src/v20191118/model/ModifyAndroidInstancesResolutionResponse.cpp
   src/v20191118/model/DeleteAndroidAppVersionResponse.cpp
-  src/v20191118/model/CreateAndroidInstancesRequest.cpp
+  src/v20191118/model/DistributePhotoToAndroidInstancesResponse.cpp
   src/v20191118/model/AndroidInstanceError.cpp
   src/v20191118/model/ModifyAndroidInstancesUserIdRequest.cpp
   src/v20191118/model/InstallAndroidInstancesAppWithURLRequest.cpp
@@ -317,7 +321,7 @@ set(gs_src
   src/v20191118/model/DescribeAndroidInstancesByAppsRequest.cpp
   src/v20191118/model/TrylockWorkerResponse.cpp
   src/v20191118/model/S3Options.cpp
-  src/v20191118/model/DescribeAndroidInstancesAppBlacklistRequest.cpp
+  src/v20191118/model/DisconnectAndroidInstanceResponse.cpp
   src/v20191118/model/CreateAndroidInstanceWebShellRequest.cpp
   src/v20191118/model/CreateAndroidInstancesAccessTokenResponse.cpp
   src/v20191118/model/ModifyAndroidInstancesLabelsResponse.cpp
@@ -348,7 +352,7 @@ set(gs_src
   src/v20191118/model/CreateCosCredentialResponse.cpp
   src/v20191118/model/UploadFileToAndroidInstancesResponse.cpp
   src/v20191118/model/AndroidInstanceAppBlacklist.cpp
-  src/v20191118/model/DistributePhotoToAndroidInstancesResponse.cpp
+  src/v20191118/model/CreateAndroidInstancesRequest.cpp
   src/v20191118/model/CreateAndroidInstanceLabelResponse.cpp
   src/v20191118/model/StartPublishStreamResponse.cpp
   src/v20191118/model/AndroidInstanceImage.cpp

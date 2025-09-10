@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取ckafka集群实例Id,通过DescribeInstances接口获取
+                     * @return InstanceId ckafka集群实例Id,通过DescribeInstances接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置ckafka集群实例Id,通过DescribeInstances接口获取
+                     * @param _instanceId ckafka集群实例Id,通过DescribeInstances接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取可选，用户需要查询的group名称。
-                     * @return GroupName 可选，用户需要查询的group名称。
+                     * 获取用户需要查询的group名称。
+                     * @return GroupName 用户需要查询的group名称。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置可选，用户需要查询的group名称。
-                     * @param _groupName 可选，用户需要查询的group名称。
+                     * 设置用户需要查询的group名称。
+                     * @param _groupName 用户需要查询的group名称。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
-                     * @return TopicName 可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
+                     * 获取用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
+                     * @return TopicName 用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
-                     * @param _topicName 可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
+                     * 设置用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
+                     * @param _topicName 用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取本次返回个数限制，最大支持50
-                     * @return Limit 本次返回个数限制，最大支持50
+                     * 获取返回消费组的限制数量，最大支持50
+                     * @return Limit 返回消费组的限制数量，最大支持50
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置本次返回个数限制，最大支持50
-                     * @param _limit 本次返回个数限制，最大支持50
+                     * 设置返回消费组的限制数量，最大支持50
+                     * @param _limit 返回消费组的限制数量，最大支持50
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移位置
-                     * @return Offset 偏移位置
+                     * 获取消费组列表的起始偏移量
+                     * @return Offset 消费组列表的起始偏移量
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移位置
-                     * @param _offset 偏移位置
+                     * 设置消费组列表的起始偏移量
+                     * @param _offset 消费组列表的起始偏移量
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * ckafka集群实例Id,通过DescribeInstances接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 可选，用户需要查询的group名称。
+                     * 用户需要查询的group名称。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
+                     * 用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 本次返回个数限制，最大支持50
+                     * 返回消费组的限制数量，最大支持50
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移位置
+                     * 消费组列表的起始偏移量
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

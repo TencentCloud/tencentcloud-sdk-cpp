@@ -28,7 +28,8 @@ StartAITranscriptionRequest::StartAITranscriptionRequest() :
     m_transcriptionParamsHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_roomIdTypeHasBeenSet(false),
-    m_recognizeConfigHasBeenSet(false)
+    m_recognizeConfigHasBeenSet(false),
+    m_translationConfigHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,15 @@ string StartAITranscriptionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_recognizeConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_translationConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TranslationConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_translationConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -191,6 +201,22 @@ void StartAITranscriptionRequest::SetRecognizeConfig(const RecognizeConfig& _rec
 bool StartAITranscriptionRequest::RecognizeConfigHasBeenSet() const
 {
     return m_recognizeConfigHasBeenSet;
+}
+
+TranslationConfig StartAITranscriptionRequest::GetTranslationConfig() const
+{
+    return m_translationConfig;
+}
+
+void StartAITranscriptionRequest::SetTranslationConfig(const TranslationConfig& _translationConfig)
+{
+    m_translationConfig = _translationConfig;
+    m_translationConfigHasBeenSet = true;
+}
+
+bool StartAITranscriptionRequest::TranslationConfigHasBeenSet() const
+{
+    return m_translationConfigHasBeenSet;
 }
 
 

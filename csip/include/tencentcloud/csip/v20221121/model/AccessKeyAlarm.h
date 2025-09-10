@@ -465,6 +465,69 @@ namespace TencentCloud
                      */
                     bool LeakEvidenceHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持编辑信任账号
+                     * @return IsSupportEditWhiteAccount 是否支持编辑信任账号
+                     * 
+                     */
+                    bool GetIsSupportEditWhiteAccount() const;
+
+                    /**
+                     * 设置是否支持编辑信任账号
+                     * @param _isSupportEditWhiteAccount 是否支持编辑信任账号
+                     * 
+                     */
+                    void SetIsSupportEditWhiteAccount(const bool& _isSupportEditWhiteAccount);
+
+                    /**
+                     * 判断参数 IsSupportEditWhiteAccount 是否已赋值
+                     * @return IsSupportEditWhiteAccount 是否已赋值
+                     * 
+                     */
+                    bool IsSupportEditWhiteAccountHasBeenSet() const;
+
+                    /**
+                     * 获取告警证据
+                     * @return Evidence 告警证据
+                     * 
+                     */
+                    std::string GetEvidence() const;
+
+                    /**
+                     * 设置告警证据
+                     * @param _evidence 告警证据
+                     * 
+                     */
+                    void SetEvidence(const std::string& _evidence);
+
+                    /**
+                     * 判断参数 Evidence 是否已赋值
+                     * @return Evidence 是否已赋值
+                     * 
+                     */
+                    bool EvidenceHasBeenSet() const;
+
+                    /**
+                     * 获取告警规则标识
+                     * @return RuleKey 告警规则标识
+                     * 
+                     */
+                    std::string GetRuleKey() const;
+
+                    /**
+                     * 设置告警规则标识
+                     * @param _ruleKey 告警规则标识
+                     * 
+                     */
+                    void SetRuleKey(const std::string& _ruleKey);
+
+                    /**
+                     * 判断参数 RuleKey 是否已赋值
+                     * @return RuleKey 是否已赋值
+                     * 
+                     */
+                    bool RuleKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -585,6 +648,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_leakEvidence;
                     bool m_leakEvidenceHasBeenSet;
+
+                    /**
+                     * 是否支持编辑信任账号
+                     */
+                    bool m_isSupportEditWhiteAccount;
+                    bool m_isSupportEditWhiteAccountHasBeenSet;
+
+                    /**
+                     * 告警证据
+                     */
+                    std::string m_evidence;
+                    bool m_evidenceHasBeenSet;
+
+                    /**
+                     * 告警规则标识
+                     */
+                    std::string m_ruleKey;
+                    bool m_ruleKeyHasBeenSet;
 
                 };
             }

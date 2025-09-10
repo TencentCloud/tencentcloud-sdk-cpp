@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool DeviceNameHasBeenSet() const;
 
+                    /**
+                     * 获取固件类型
+                     * @return FwType 固件类型
+                     * 
+                     */
+                    std::string GetFwType() const;
+
+                    /**
+                     * 设置固件类型
+                     * @param _fwType 固件类型
+                     * 
+                     */
+                    void SetFwType(const std::string& _fwType);
+
+                    /**
+                     * 判断参数 FwType 是否已赋值
+                     * @return FwType 是否已赋值
+                     * 
+                     */
+                    bool FwTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 固件类型
+                     */
+                    std::string m_fwType;
+                    bool m_fwTypeHasBeenSet;
 
                 };
             }

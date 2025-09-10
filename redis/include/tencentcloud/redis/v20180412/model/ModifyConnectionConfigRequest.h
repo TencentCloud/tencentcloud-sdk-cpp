@@ -65,14 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取附加带宽，大于0，单位MB。
+**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。
                      * @return Bandwidth 附加带宽，大于0，单位MB。
+**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
                      * 设置附加带宽，大于0，单位MB。
+**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。
                      * @param _bandwidth 附加带宽，大于0，单位MB。
+**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -88,9 +92,11 @@ namespace TencentCloud
                      * 获取单分片的总连接数。
 - 未开启副本只读时，下限为10000，上限为40000。
 - 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。
                      * @return ClientLimit 单分片的总连接数。
 - 未开启副本只读时，下限为10000，上限为40000。
 - 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。
                      * 
                      */
                     int64_t GetClientLimit() const;
@@ -99,9 +105,11 @@ namespace TencentCloud
                      * 设置单分片的总连接数。
 - 未开启副本只读时，下限为10000，上限为40000。
 - 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。
                      * @param _clientLimit 单分片的总连接数。
 - 未开启副本只读时，下限为10000，上限为40000。
 - 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。
                      * 
                      */
                     void SetClientLimit(const int64_t& _clientLimit);
@@ -123,6 +131,7 @@ namespace TencentCloud
 
                     /**
                      * 附加带宽，大于0，单位MB。
+**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
@@ -131,6 +140,7 @@ namespace TencentCloud
                      * 单分片的总连接数。
 - 未开启副本只读时，下限为10000，上限为40000。
 - 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。
                      */
                     int64_t m_clientLimit;
                     bool m_clientLimitHasBeenSet;

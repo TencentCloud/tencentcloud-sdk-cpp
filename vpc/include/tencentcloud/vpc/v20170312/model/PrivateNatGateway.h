@@ -300,6 +300,27 @@ namespace TencentCloud
                      */
                     bool CcnIdHasBeenSet() const;
 
+                    /**
+                     * 获取私网NAT是否开启删除保护
+                     * @return DeletionProtectionEnabled 私网NAT是否开启删除保护
+                     * 
+                     */
+                    bool GetDeletionProtectionEnabled() const;
+
+                    /**
+                     * 设置私网NAT是否开启删除保护
+                     * @param _deletionProtectionEnabled 私网NAT是否开启删除保护
+                     * 
+                     */
+                    void SetDeletionProtectionEnabled(const bool& _deletionProtectionEnabled);
+
+                    /**
+                     * 判断参数 DeletionProtectionEnabled 是否已赋值
+                     * @return DeletionProtectionEnabled 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -373,6 +394,12 @@ namespace TencentCloud
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
+
+                    /**
+                     * 私网NAT是否开启删除保护
+                     */
+                    bool m_deletionProtectionEnabled;
+                    bool m_deletionProtectionEnabledHasBeenSet;
 
                 };
             }

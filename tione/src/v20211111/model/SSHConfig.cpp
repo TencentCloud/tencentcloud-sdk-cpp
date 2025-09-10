@@ -25,7 +25,8 @@ SSHConfig::SSHConfig() :
     m_publicKeyHasBeenSet(false),
     m_portHasBeenSet(false),
     m_loginCommandHasBeenSet(false),
-    m_isAddressChangedHasBeenSet(false)
+    m_isAddressChangedHasBeenSet(false),
+    m_podSSHInfoHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,23 @@ CoreInternalOutcome SSHConfig::Deserialize(const rapidjson::Value &value)
         m_isAddressChangedHasBeenSet = true;
     }
 
+    if (value.HasMember("PodSSHInfo") && !value["PodSSHInfo"].IsNull())
+    {
+        if (!value["PodSSHInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSHConfig.PodSSHInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_podSSHInfo.Deserialize(value["PodSSHInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_podSSHInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +147,15 @@ void SSHConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsAddressChanged";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAddressChanged, allocator);
+    }
+
+    if (m_podSSHInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodSSHInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_podSSHInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -212,5 +239,21 @@ void SSHConfig::SetIsAddressChanged(const bool& _isAddressChanged)
 bool SSHConfig::IsAddressChangedHasBeenSet() const
 {
     return m_isAddressChangedHasBeenSet;
+}
+
+PodSSHInfo SSHConfig::GetPodSSHInfo() const
+{
+    return m_podSSHInfo;
+}
+
+void SSHConfig::SetPodSSHInfo(const PodSSHInfo& _podSSHInfo)
+{
+    m_podSSHInfo = _podSSHInfo;
+    m_podSSHInfoHasBeenSet = true;
+}
+
+bool SSHConfig::PodSSHInfoHasBeenSet() const
+{
+    return m_podSSHInfoHasBeenSet;
 }
 

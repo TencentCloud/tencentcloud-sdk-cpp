@@ -123,6 +123,8 @@
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetBackupRulesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/SetBackupRulesResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/SetDBInstanceDeletionProtectionRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/SetDBInstanceDeletionProtectionResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/TerminateDBInstancesRequest.h>
@@ -291,6 +293,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetBackupRulesResponse> SetBackupRulesOutcome;
                 typedef std::future<SetBackupRulesOutcome> SetBackupRulesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::SetBackupRulesRequest&, SetBackupRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetBackupRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetDBInstanceDeletionProtectionResponse> SetDBInstanceDeletionProtectionOutcome;
+                typedef std::future<SetDBInstanceDeletionProtectionOutcome> SetDBInstanceDeletionProtectionOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::SetDBInstanceDeletionProtectionRequest&, SetDBInstanceDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDBInstanceDeletionProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetInstanceMaintenanceResponse> SetInstanceMaintenanceOutcome;
                 typedef std::future<SetInstanceMaintenanceOutcome> SetInstanceMaintenanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::SetInstanceMaintenanceRequest&, SetInstanceMaintenanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetInstanceMaintenanceAsyncHandler;
@@ -755,6 +760,15 @@ namespace TencentCloud
                 SetBackupRulesOutcome SetBackupRules(const Model::SetBackupRulesRequest &request);
                 void SetBackupRulesAsync(const Model::SetBackupRulesRequest& request, const SetBackupRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetBackupRulesOutcomeCallable SetBackupRulesCallable(const Model::SetBackupRulesRequest& request);
+
+                /**
+                 *本接口（SetDBInstanceDeletionProtection）用于设置实例销毁保护
+                 * @param req SetDBInstanceDeletionProtectionRequest
+                 * @return SetDBInstanceDeletionProtectionOutcome
+                 */
+                SetDBInstanceDeletionProtectionOutcome SetDBInstanceDeletionProtection(const Model::SetDBInstanceDeletionProtectionRequest &request);
+                void SetDBInstanceDeletionProtectionAsync(const Model::SetDBInstanceDeletionProtectionRequest& request, const SetDBInstanceDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetDBInstanceDeletionProtectionOutcomeCallable SetDBInstanceDeletionProtectionCallable(const Model::SetDBInstanceDeletionProtectionRequest& request);
 
                 /**
                  *本接口（SetInstanceMaintenance ） 用于设置实例维护时间窗。

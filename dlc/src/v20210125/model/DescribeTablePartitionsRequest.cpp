@@ -22,7 +22,15 @@
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeTablePartitionsRequest::DescribeTablePartitionsRequest()
+DescribeTablePartitionsRequest::DescribeTablePartitionsRequest() :
+    m_catalogHasBeenSet(false),
+    m_databaseHasBeenSet(false),
+    m_tableHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_fuzzyPartitionHasBeenSet(false),
+    m_sortsHasBeenSet(false),
+    m_cursorHasBeenSet(false)
 {
 }
 
@@ -33,6 +41,77 @@ string DescribeTablePartitionsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_catalogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Catalog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_catalog.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Database";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_database.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Table";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_table.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_fuzzyPartitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FuzzyPartition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fuzzyPartition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sorts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sorts.begin(); itr != m_sorts.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cursorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cursor";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cursor.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +119,133 @@ string DescribeTablePartitionsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeTablePartitionsRequest::GetCatalog() const
+{
+    return m_catalog;
+}
+
+void DescribeTablePartitionsRequest::SetCatalog(const string& _catalog)
+{
+    m_catalog = _catalog;
+    m_catalogHasBeenSet = true;
+}
+
+bool DescribeTablePartitionsRequest::CatalogHasBeenSet() const
+{
+    return m_catalogHasBeenSet;
+}
+
+string DescribeTablePartitionsRequest::GetDatabase() const
+{
+    return m_database;
+}
+
+void DescribeTablePartitionsRequest::SetDatabase(const string& _database)
+{
+    m_database = _database;
+    m_databaseHasBeenSet = true;
+}
+
+bool DescribeTablePartitionsRequest::DatabaseHasBeenSet() const
+{
+    return m_databaseHasBeenSet;
+}
+
+string DescribeTablePartitionsRequest::GetTable() const
+{
+    return m_table;
+}
+
+void DescribeTablePartitionsRequest::SetTable(const string& _table)
+{
+    m_table = _table;
+    m_tableHasBeenSet = true;
+}
+
+bool DescribeTablePartitionsRequest::TableHasBeenSet() const
+{
+    return m_tableHasBeenSet;
+}
+
+int64_t DescribeTablePartitionsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeTablePartitionsRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeTablePartitionsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeTablePartitionsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeTablePartitionsRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeTablePartitionsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+string DescribeTablePartitionsRequest::GetFuzzyPartition() const
+{
+    return m_fuzzyPartition;
+}
+
+void DescribeTablePartitionsRequest::SetFuzzyPartition(const string& _fuzzyPartition)
+{
+    m_fuzzyPartition = _fuzzyPartition;
+    m_fuzzyPartitionHasBeenSet = true;
+}
+
+bool DescribeTablePartitionsRequest::FuzzyPartitionHasBeenSet() const
+{
+    return m_fuzzyPartitionHasBeenSet;
+}
+
+vector<Sort> DescribeTablePartitionsRequest::GetSorts() const
+{
+    return m_sorts;
+}
+
+void DescribeTablePartitionsRequest::SetSorts(const vector<Sort>& _sorts)
+{
+    m_sorts = _sorts;
+    m_sortsHasBeenSet = true;
+}
+
+bool DescribeTablePartitionsRequest::SortsHasBeenSet() const
+{
+    return m_sortsHasBeenSet;
+}
+
+string DescribeTablePartitionsRequest::GetCursor() const
+{
+    return m_cursor;
+}
+
+void DescribeTablePartitionsRequest::SetCursor(const string& _cursor)
+{
+    m_cursor = _cursor;
+    m_cursorHasBeenSet = true;
+}
+
+bool DescribeTablePartitionsRequest::CursorHasBeenSet() const
+{
+    return m_cursorHasBeenSet;
+}
 
 

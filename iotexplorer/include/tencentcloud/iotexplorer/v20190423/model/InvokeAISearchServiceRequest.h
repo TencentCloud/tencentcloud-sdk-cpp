@@ -287,6 +287,90 @@ namespace TencentCloud
                      */
                     bool TimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取取值为1表示高级搜索，取值为2表示简单搜索，默认为1
+                     * @return SearchMode 取值为1表示高级搜索，取值为2表示简单搜索，默认为1
+                     * 
+                     */
+                    int64_t GetSearchMode() const;
+
+                    /**
+                     * 设置取值为1表示高级搜索，取值为2表示简单搜索，默认为1
+                     * @param _searchMode 取值为1表示高级搜索，取值为2表示简单搜索，默认为1
+                     * 
+                     */
+                    void SetSearchMode(const int64_t& _searchMode);
+
+                    /**
+                     * 判断参数 SearchMode 是否已赋值
+                     * @return SearchMode 是否已赋值
+                     * 
+                     */
+                    bool SearchModeHasBeenSet() const;
+
+                    /**
+                     * 获取最终输出的条数；仅当SearchMode为2时支持自定义设置，默认为50
+                     * @return Limit 最终输出的条数；仅当SearchMode为2时支持自定义设置，默认为50
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置最终输出的条数；仅当SearchMode为2时支持自定义设置，默认为50
+                     * @param _limit 最终输出的条数；仅当SearchMode为2时支持自定义设置，默认为50
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取向量搜索的相似度搜索半径，取值范围[-1, 1]；仅当SearchMode为2时支持自定义设置，默认为0.5
+                     * @return VectorSearchRadius 向量搜索的相似度搜索半径，取值范围[-1, 1]；仅当SearchMode为2时支持自定义设置，默认为0.5
+                     * 
+                     */
+                    double GetVectorSearchRadius() const;
+
+                    /**
+                     * 设置向量搜索的相似度搜索半径，取值范围[-1, 1]；仅当SearchMode为2时支持自定义设置，默认为0.5
+                     * @param _vectorSearchRadius 向量搜索的相似度搜索半径，取值范围[-1, 1]；仅当SearchMode为2时支持自定义设置，默认为0.5
+                     * 
+                     */
+                    void SetVectorSearchRadius(const double& _vectorSearchRadius);
+
+                    /**
+                     * 判断参数 VectorSearchRadius 是否已赋值
+                     * @return VectorSearchRadius 是否已赋值
+                     * 
+                     */
+                    bool VectorSearchRadiusHasBeenSet() const;
+
+                    /**
+                     * 获取指定向量搜索最相似的 Top K；仅当SearchMode为2时支持自定义设置，默认为100
+                     * @return VectorSearchTopK 指定向量搜索最相似的 Top K；仅当SearchMode为2时支持自定义设置，默认为100
+                     * 
+                     */
+                    int64_t GetVectorSearchTopK() const;
+
+                    /**
+                     * 设置指定向量搜索最相似的 Top K；仅当SearchMode为2时支持自定义设置，默认为100
+                     * @param _vectorSearchTopK 指定向量搜索最相似的 Top K；仅当SearchMode为2时支持自定义设置，默认为100
+                     * 
+                     */
+                    void SetVectorSearchTopK(const int64_t& _vectorSearchTopK);
+
+                    /**
+                     * 判断参数 VectorSearchTopK 是否已赋值
+                     * @return VectorSearchTopK 是否已赋值
+                     * 
+                     */
+                    bool VectorSearchTopKHasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,6 +440,30 @@ namespace TencentCloud
                      */
                     std::string m_timeZone;
                     bool m_timeZoneHasBeenSet;
+
+                    /**
+                     * 取值为1表示高级搜索，取值为2表示简单搜索，默认为1
+                     */
+                    int64_t m_searchMode;
+                    bool m_searchModeHasBeenSet;
+
+                    /**
+                     * 最终输出的条数；仅当SearchMode为2时支持自定义设置，默认为50
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 向量搜索的相似度搜索半径，取值范围[-1, 1]；仅当SearchMode为2时支持自定义设置，默认为0.5
+                     */
+                    double m_vectorSearchRadius;
+                    bool m_vectorSearchRadiusHasBeenSet;
+
+                    /**
+                     * 指定向量搜索最相似的 Top K；仅当SearchMode为2时支持自定义设置，默认为100
+                     */
+                    int64_t m_vectorSearchTopK;
+                    bool m_vectorSearchTopKHasBeenSet;
 
                 };
             }

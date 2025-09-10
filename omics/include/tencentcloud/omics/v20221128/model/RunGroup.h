@@ -30,6 +30,7 @@
 #include <tencentcloud/omics/v20221128/model/VolumeInfo.h>
 #include <tencentcloud/omics/v20221128/model/RunStatusCount.h>
 #include <tencentcloud/omics/v20221128/model/ExecutionTime.h>
+#include <tencentcloud/omics/v20221128/model/RunGroupNotification.h>
 
 
 namespace TencentCloud
@@ -648,25 +649,25 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取运行结果通知方式。
-                     * @return ResultNotify 运行结果通知方式。
+                     * 获取任务批次通知。
+                     * @return Notification 任务批次通知。
                      * 
                      */
-                    std::string GetResultNotify() const;
+                    RunGroupNotification GetNotification() const;
 
                     /**
-                     * 设置运行结果通知方式。
-                     * @param _resultNotify 运行结果通知方式。
+                     * 设置任务批次通知。
+                     * @param _notification 任务批次通知。
                      * 
                      */
-                    void SetResultNotify(const std::string& _resultNotify);
+                    void SetNotification(const RunGroupNotification& _notification);
 
                     /**
-                     * 判断参数 ResultNotify 是否已赋值
-                     * @return ResultNotify 是否已赋值
+                     * 判断参数 Notification 是否已赋值
+                     * @return Notification 是否已赋值
                      * 
                      */
-                    bool ResultNotifyHasBeenSet() const;
+                    bool NotificationHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
@@ -751,6 +752,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CreatorIdHasBeenSet() const;
+
+                    /**
+                     * 获取运行结果通知方式。
+                     * @return ResultNotify 运行结果通知方式。
+                     * 
+                     */
+                    std::string GetResultNotify() const;
+
+                    /**
+                     * 设置运行结果通知方式。
+                     * @param _resultNotify 运行结果通知方式。
+                     * 
+                     */
+                    void SetResultNotify(const std::string& _resultNotify);
+
+                    /**
+                     * 判断参数 ResultNotify 是否已赋值
+                     * @return ResultNotify 是否已赋值
+                     * 
+                     */
+                    bool ResultNotifyHasBeenSet() const;
 
                 private:
 
@@ -924,10 +946,10 @@ namespace TencentCloud
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 运行结果通知方式。
+                     * 任务批次通知。
                      */
-                    std::string m_resultNotify;
-                    bool m_resultNotifyHasBeenSet;
+                    RunGroupNotification m_notification;
+                    bool m_notificationHasBeenSet;
 
                     /**
                      * 创建时间。
@@ -952,6 +974,12 @@ namespace TencentCloud
                      */
                     std::string m_creatorId;
                     bool m_creatorIdHasBeenSet;
+
+                    /**
+                     * 运行结果通知方式。
+                     */
+                    std::string m_resultNotify;
+                    bool m_resultNotifyHasBeenSet;
 
                 };
             }

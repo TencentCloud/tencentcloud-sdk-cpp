@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取预付费购买时长，例如 "1m",就是一个月
-                     * @return Period 预付费购买时长，例如 "1m",就是一个月
+                     * 获取预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m
+                     * @return Period 预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m
                      * 
                      */
                     std::string GetPeriod() const;
 
                     /**
-                     * 设置预付费购买时长，例如 "1m",就是一个月
-                     * @param _period 预付费购买时长，例如 "1m",就是一个月
+                     * 设置预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m
+                     * @param _period 预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m
                      * 
                      */
                     void SetPeriod(const std::string& _period);
@@ -520,7 +520,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 预付费购买时长，例如 "1m",就是一个月
+                     * 预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m
                      */
                     std::string m_period;
                     bool m_periodHasBeenSet;

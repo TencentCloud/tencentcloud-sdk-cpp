@@ -45,7 +45,8 @@ CallRecord::CallRecord() :
     m_appIDHasBeenSet(false),
     m_showStatusHasBeenSet(false),
     m_iSPHasBeenSet(false),
-    m_vpcInfoHasBeenSet(false)
+    m_vpcInfoHasBeenSet(false),
+    m_reqClientHasBeenSet(false)
 {
 }
 
@@ -317,6 +318,19 @@ CoreInternalOutcome CallRecord::Deserialize(const rapidjson::Value &value)
         m_vpcInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ReqClient") && !value["ReqClient"].IsNull())
+    {
+        if (!value["ReqClient"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CallRecord.ReqClient` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ReqClient"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_reqClient.push_back((*itr).GetString());
+        }
+        m_reqClientHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -533,6 +547,19 @@ void CallRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_reqClientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReqClient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_reqClient.begin(); itr != m_reqClient.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -937,5 +964,21 @@ void CallRecord::SetVpcInfo(const vector<SourceIPVpcInfo>& _vpcInfo)
 bool CallRecord::VpcInfoHasBeenSet() const
 {
     return m_vpcInfoHasBeenSet;
+}
+
+vector<string> CallRecord::GetReqClient() const
+{
+    return m_reqClient;
+}
+
+void CallRecord::SetReqClient(const vector<string>& _reqClient)
+{
+    m_reqClient = _reqClient;
+    m_reqClientHasBeenSet = true;
+}
+
+bool CallRecord::ReqClientHasBeenSet() const
+{
+    return m_reqClientHasBeenSet;
 }
 

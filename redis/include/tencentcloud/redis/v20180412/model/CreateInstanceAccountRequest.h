@@ -160,22 +160,22 @@ namespace TencentCloud
 
                     /**
                      * 获取账户读写权限，支持选择只读与读写权限。
-- r：只读
-- rw: 读写权限
+- r：只读。
+- rw: 读写。
                      * @return Privilege 账户读写权限，支持选择只读与读写权限。
-- r：只读
-- rw: 读写权限
+- r：只读。
+- rw: 读写。
                      * 
                      */
                     std::string GetPrivilege() const;
 
                     /**
                      * 设置账户读写权限，支持选择只读与读写权限。
-- r：只读
-- rw: 读写权限
+- r：只读。
+- rw: 读写。
                      * @param _privilege 账户读写权限，支持选择只读与读写权限。
-- r：只读
-- rw: 读写权限
+- r：只读。
+- rw: 读写。
                      * 
                      */
                     void SetPrivilege(const std::string& _privilege);
@@ -188,15 +188,15 @@ namespace TencentCloud
                     bool PrivilegeHasBeenSet() const;
 
                     /**
-                     * 获取子账号描述信息，长度[0,64] 字节，支持中文。
-                     * @return Remark 子账号描述信息，长度[0,64] 字节，支持中文。
+                     * 获取账号备注描述信息，长度为[0,64] 字节，支持中文。
+                     * @return Remark 账号备注描述信息，长度为[0,64] 字节，支持中文。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置子账号描述信息，长度[0,64] 字节，支持中文。
-                     * @param _remark 子账号描述信息，长度[0,64] 字节，支持中文。
+                     * 设置账号备注描述信息，长度为[0,64] 字节，支持中文。
+                     * @param _remark 账号备注描述信息，长度为[0,64] 字节，支持中文。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -207,6 +207,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取是否加密密码
+                     * @return EncryptPassword 是否加密密码
+                     * 
+                     */
+                    bool GetEncryptPassword() const;
+
+                    /**
+                     * 设置是否加密密码
+                     * @param _encryptPassword 是否加密密码
+                     * 
+                     */
+                    void SetEncryptPassword(const bool& _encryptPassword);
+
+                    /**
+                     * 判断参数 EncryptPassword 是否已赋值
+                     * @return EncryptPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptPasswordHasBeenSet() const;
 
                 private:
 
@@ -244,17 +265,23 @@ namespace TencentCloud
 
                     /**
                      * 账户读写权限，支持选择只读与读写权限。
-- r：只读
-- rw: 读写权限
+- r：只读。
+- rw: 读写。
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
 
                     /**
-                     * 子账号描述信息，长度[0,64] 字节，支持中文。
+                     * 账号备注描述信息，长度为[0,64] 字节，支持中文。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 是否加密密码
+                     */
+                    bool m_encryptPassword;
+                    bool m_encryptPasswordHasBeenSet;
 
                 };
             }

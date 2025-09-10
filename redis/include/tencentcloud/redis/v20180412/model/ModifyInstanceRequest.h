@@ -47,10 +47,12 @@ namespace TencentCloud
 - rename：表示实例重命名。
 - modifyProject：修改实例所属项目。
 - modifyAutoRenew：修改实例续费标记。
+- modifyDeleteProtectionSwitch：修改实例删除保护。
                      * @return Operation 修改实例操作。如填写：
 - rename：表示实例重命名。
 - modifyProject：修改实例所属项目。
 - modifyAutoRenew：修改实例续费标记。
+- modifyDeleteProtectionSwitch：修改实例删除保护。
                      * 
                      */
                     std::string GetOperation() const;
@@ -60,10 +62,12 @@ namespace TencentCloud
 - rename：表示实例重命名。
 - modifyProject：修改实例所属项目。
 - modifyAutoRenew：修改实例续费标记。
+- modifyDeleteProtectionSwitch：修改实例删除保护。
                      * @param _operation 修改实例操作。如填写：
 - rename：表示实例重命名。
 - modifyProject：修改实例所属项目。
 - modifyAutoRenew：修改实例续费标记。
+- modifyDeleteProtectionSwitch：修改实例删除保护。
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -172,6 +176,27 @@ namespace TencentCloud
                     bool AutoRenewsHasBeenSet() const;
 
                     /**
+                     * 获取删除保护开关。- 0：默认状态，指关闭。- 1：开关打开。
+                     * @return DeleteProtectionSwitches 删除保护开关。- 0：默认状态，指关闭。- 1：开关打开。
+                     * 
+                     */
+                    std::vector<int64_t> GetDeleteProtectionSwitches() const;
+
+                    /**
+                     * 设置删除保护开关。- 0：默认状态，指关闭。- 1：开关打开。
+                     * @param _deleteProtectionSwitches 删除保护开关。- 0：默认状态，指关闭。- 1：开关打开。
+                     * 
+                     */
+                    void SetDeleteProtectionSwitches(const std::vector<int64_t>& _deleteProtectionSwitches);
+
+                    /**
+                     * 判断参数 DeleteProtectionSwitches 是否已赋值
+                     * @return DeleteProtectionSwitches 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectionSwitchesHasBeenSet() const;
+
+                    /**
                      * 获取目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。
                      * @return InstanceId 目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。
                      * @deprecated
@@ -241,6 +266,7 @@ namespace TencentCloud
 - rename：表示实例重命名。
 - modifyProject：修改实例所属项目。
 - modifyAutoRenew：修改实例续费标记。
+- modifyDeleteProtectionSwitch：修改实例删除保护。
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
@@ -271,6 +297,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_autoRenews;
                     bool m_autoRenewsHasBeenSet;
+
+                    /**
+                     * 删除保护开关。- 0：默认状态，指关闭。- 1：开关打开。
+                     */
+                    std::vector<int64_t> m_deleteProtectionSwitches;
+                    bool m_deleteProtectionSwitchesHasBeenSet;
 
                     /**
                      * 目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。

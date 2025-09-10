@@ -33,7 +33,15 @@ DescribeFirmwareTaskResponse::DescribeFirmwareTaskResponse() :
     m_productIdHasBeenSet(false),
     m_originalVersionHasBeenSet(false),
     m_createUserIdHasBeenSet(false),
-    m_creatorNickNameHasBeenSet(false)
+    m_creatorNickNameHasBeenSet(false),
+    m_delayTimeHasBeenSet(false),
+    m_timeoutIntervalHasBeenSet(false),
+    m_upgradeMethodHasBeenSet(false),
+    m_maxRetryNumHasBeenSet(false),
+    m_fwTypeHasBeenSet(false),
+    m_retryIntervalHasBeenSet(false),
+    m_overrideModeHasBeenSet(false),
+    m_taskUserDefineHasBeenSet(false)
 {
 }
 
@@ -171,6 +179,86 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
         m_creatorNickNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DelayTime") && !rsp["DelayTime"].IsNull())
+    {
+        if (!rsp["DelayTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DelayTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_delayTime = rsp["DelayTime"].GetUint64();
+        m_delayTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TimeoutInterval") && !rsp["TimeoutInterval"].IsNull())
+    {
+        if (!rsp["TimeoutInterval"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TimeoutInterval` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeoutInterval = rsp["TimeoutInterval"].GetUint64();
+        m_timeoutIntervalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UpgradeMethod") && !rsp["UpgradeMethod"].IsNull())
+    {
+        if (!rsp["UpgradeMethod"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpgradeMethod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_upgradeMethod = rsp["UpgradeMethod"].GetUint64();
+        m_upgradeMethodHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MaxRetryNum") && !rsp["MaxRetryNum"].IsNull())
+    {
+        if (!rsp["MaxRetryNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxRetryNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxRetryNum = rsp["MaxRetryNum"].GetUint64();
+        m_maxRetryNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FwType") && !rsp["FwType"].IsNull())
+    {
+        if (!rsp["FwType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FwType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fwType = string(rsp["FwType"].GetString());
+        m_fwTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RetryInterval") && !rsp["RetryInterval"].IsNull())
+    {
+        if (!rsp["RetryInterval"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RetryInterval` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryInterval = rsp["RetryInterval"].GetUint64();
+        m_retryIntervalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OverrideMode") && !rsp["OverrideMode"].IsNull())
+    {
+        if (!rsp["OverrideMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OverrideMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_overrideMode = rsp["OverrideMode"].GetUint64();
+        m_overrideModeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TaskUserDefine") && !rsp["TaskUserDefine"].IsNull())
+    {
+        if (!rsp["TaskUserDefine"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskUserDefine` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskUserDefine = string(rsp["TaskUserDefine"].GetString());
+        m_taskUserDefineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +347,70 @@ string DescribeFirmwareTaskResponse::ToJsonString() const
         string key = "CreatorNickName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creatorNickName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_delayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_delayTime, allocator);
+    }
+
+    if (m_timeoutIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeoutInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeoutInterval, allocator);
+    }
+
+    if (m_upgradeMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upgradeMethod, allocator);
+    }
+
+    if (m_maxRetryNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRetryNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxRetryNum, allocator);
+    }
+
+    if (m_fwTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fwType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retryInterval, allocator);
+    }
+
+    if (m_overrideModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OverrideMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_overrideMode, allocator);
+    }
+
+    if (m_taskUserDefineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskUserDefine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskUserDefine.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +523,86 @@ string DescribeFirmwareTaskResponse::GetCreatorNickName() const
 bool DescribeFirmwareTaskResponse::CreatorNickNameHasBeenSet() const
 {
     return m_creatorNickNameHasBeenSet;
+}
+
+uint64_t DescribeFirmwareTaskResponse::GetDelayTime() const
+{
+    return m_delayTime;
+}
+
+bool DescribeFirmwareTaskResponse::DelayTimeHasBeenSet() const
+{
+    return m_delayTimeHasBeenSet;
+}
+
+uint64_t DescribeFirmwareTaskResponse::GetTimeoutInterval() const
+{
+    return m_timeoutInterval;
+}
+
+bool DescribeFirmwareTaskResponse::TimeoutIntervalHasBeenSet() const
+{
+    return m_timeoutIntervalHasBeenSet;
+}
+
+uint64_t DescribeFirmwareTaskResponse::GetUpgradeMethod() const
+{
+    return m_upgradeMethod;
+}
+
+bool DescribeFirmwareTaskResponse::UpgradeMethodHasBeenSet() const
+{
+    return m_upgradeMethodHasBeenSet;
+}
+
+uint64_t DescribeFirmwareTaskResponse::GetMaxRetryNum() const
+{
+    return m_maxRetryNum;
+}
+
+bool DescribeFirmwareTaskResponse::MaxRetryNumHasBeenSet() const
+{
+    return m_maxRetryNumHasBeenSet;
+}
+
+string DescribeFirmwareTaskResponse::GetFwType() const
+{
+    return m_fwType;
+}
+
+bool DescribeFirmwareTaskResponse::FwTypeHasBeenSet() const
+{
+    return m_fwTypeHasBeenSet;
+}
+
+uint64_t DescribeFirmwareTaskResponse::GetRetryInterval() const
+{
+    return m_retryInterval;
+}
+
+bool DescribeFirmwareTaskResponse::RetryIntervalHasBeenSet() const
+{
+    return m_retryIntervalHasBeenSet;
+}
+
+uint64_t DescribeFirmwareTaskResponse::GetOverrideMode() const
+{
+    return m_overrideMode;
+}
+
+bool DescribeFirmwareTaskResponse::OverrideModeHasBeenSet() const
+{
+    return m_overrideModeHasBeenSet;
+}
+
+string DescribeFirmwareTaskResponse::GetTaskUserDefine() const
+{
+    return m_taskUserDefine;
+}
+
+bool DescribeFirmwareTaskResponse::TaskUserDefineHasBeenSet() const
+{
+    return m_taskUserDefineHasBeenSet;
 }
 
 

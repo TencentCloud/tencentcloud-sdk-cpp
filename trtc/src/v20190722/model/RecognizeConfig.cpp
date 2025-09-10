@@ -26,7 +26,8 @@ RecognizeConfig::RecognizeConfig() :
     m_modelHasBeenSet(false),
     m_translationLanguageHasBeenSet(false),
     m_hotWordListHasBeenSet(false),
-    m_vadSilenceTimeHasBeenSet(false)
+    m_vadSilenceTimeHasBeenSet(false),
+    m_vadLevelHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome RecognizeConfig::Deserialize(const rapidjson::Value &value)
         m_vadSilenceTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("VadLevel") && !value["VadLevel"].IsNull())
+    {
+        if (!value["VadLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecognizeConfig.VadLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vadLevel = value["VadLevel"].GetUint64();
+        m_vadLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void RecognizeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "VadSilenceTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vadSilenceTime, allocator);
+    }
+
+    if (m_vadLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VadLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vadLevel, allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void RecognizeConfig::SetVadSilenceTime(const uint64_t& _vadSilenceTime)
 bool RecognizeConfig::VadSilenceTimeHasBeenSet() const
 {
     return m_vadSilenceTimeHasBeenSet;
+}
+
+uint64_t RecognizeConfig::GetVadLevel() const
+{
+    return m_vadLevel;
+}
+
+void RecognizeConfig::SetVadLevel(const uint64_t& _vadLevel)
+{
+    m_vadLevel = _vadLevel;
+    m_vadLevelHasBeenSet = true;
+}
+
+bool RecognizeConfig::VadLevelHasBeenSet() const
+{
+    return m_vadLevelHasBeenSet;
 }
 

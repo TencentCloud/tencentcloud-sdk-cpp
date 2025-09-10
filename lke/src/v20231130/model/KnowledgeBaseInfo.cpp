@@ -30,7 +30,8 @@ KnowledgeBaseInfo::KnowledgeBaseInfo() :
     m_knowledgeTypeHasBeenSet(false),
     m_ownerStaffIdHasBeenSet(false),
     m_docTotalHasBeenSet(false),
-    m_processingFlagsHasBeenSet(false)
+    m_processingFlagsHasBeenSet(false),
+    m_ownerStaffNameHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,16 @@ CoreInternalOutcome KnowledgeBaseInfo::Deserialize(const rapidjson::Value &value
         m_processingFlagsHasBeenSet = true;
     }
 
+    if (value.HasMember("OwnerStaffName") && !value["OwnerStaffName"].IsNull())
+    {
+        if (!value["OwnerStaffName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBaseInfo.OwnerStaffName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerStaffName = string(value["OwnerStaffName"].GetString());
+        m_ownerStaffNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void KnowledgeBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_ownerStaffNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerStaffName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerStaffName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void KnowledgeBaseInfo::SetProcessingFlags(const vector<int64_t>& _processingFla
 bool KnowledgeBaseInfo::ProcessingFlagsHasBeenSet() const
 {
     return m_processingFlagsHasBeenSet;
+}
+
+string KnowledgeBaseInfo::GetOwnerStaffName() const
+{
+    return m_ownerStaffName;
+}
+
+void KnowledgeBaseInfo::SetOwnerStaffName(const string& _ownerStaffName)
+{
+    m_ownerStaffName = _ownerStaffName;
+    m_ownerStaffNameHasBeenSet = true;
+}
+
+bool KnowledgeBaseInfo::OwnerStaffNameHasBeenSet() const
+{
+    return m_ownerStaffNameHasBeenSet;
 }
 

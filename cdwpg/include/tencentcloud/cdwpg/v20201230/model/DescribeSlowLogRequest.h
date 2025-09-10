@@ -231,6 +231,48 @@ namespace TencentCloud
                      */
                     bool DurationHasBeenSet() const;
 
+                    /**
+                     * 获取执行用户
+                     * @return UserName 执行用户
+                     * 
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置执行用户
+                     * @param _userName 执行用户
+                     * 
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     * 
+                     */
+                    bool UserNameHasBeenSet() const;
+
+                    /**
+                     * 获取query 语句
+                     * @return QueryString query 语句
+                     * 
+                     */
+                    std::string GetQueryString() const;
+
+                    /**
+                     * 设置query 语句
+                     * @param _queryString query 语句
+                     * 
+                     */
+                    void SetQueryString(const std::string& _queryString);
+
+                    /**
+                     * 判断参数 QueryString 是否已赋值
+                     * @return QueryString 是否已赋值
+                     * 
+                     */
+                    bool QueryStringHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +328,18 @@ namespace TencentCloud
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
+
+                    /**
+                     * 执行用户
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
+
+                    /**
+                     * query 语句
+                     */
+                    std::string m_queryString;
+                    bool m_queryStringHasBeenSet;
 
                 };
             }

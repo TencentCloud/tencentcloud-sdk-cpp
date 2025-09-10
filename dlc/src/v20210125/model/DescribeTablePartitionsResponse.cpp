@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeTablePartitionsResponse::DescribeTablePartitionsResponse()
+DescribeTablePartitionsResponse::DescribeTablePartitionsResponse() :
+    m_mixedPartitionsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DescribeTablePartitionsResponse::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("MixedPartitions") && !rsp["MixedPartitions"].IsNull())
+    {
+        if (!rsp["MixedPartitions"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MixedPartitions` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mixedPartitions.Deserialize(rsp["MixedPartitions"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mixedPartitionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DescribeTablePartitionsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_mixedPartitionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MixedPartitions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mixedPartitions.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DescribeTablePartitionsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+MixedTablePartitions DescribeTablePartitionsResponse::GetMixedPartitions() const
+{
+    return m_mixedPartitions;
+}
+
+bool DescribeTablePartitionsResponse::MixedPartitionsHasBeenSet() const
+{
+    return m_mixedPartitionsHasBeenSet;
+}
 
 

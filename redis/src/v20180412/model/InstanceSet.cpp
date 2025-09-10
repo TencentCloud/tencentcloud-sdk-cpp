@@ -80,7 +80,8 @@ InstanceSet::InstanceSet() :
     m_currentRedisVersionHasBeenSet(false),
     m_upgradeProxyVersionHasBeenSet(false),
     m_upgradeRedisVersionHasBeenSet(false),
-    m_backupModeHasBeenSet(false)
+    m_backupModeHasBeenSet(false),
+    m_deleteProtectionSwitchHasBeenSet(false)
 {
 }
 
@@ -722,6 +723,16 @@ CoreInternalOutcome InstanceSet::Deserialize(const rapidjson::Value &value)
         m_backupModeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeleteProtectionSwitch") && !value["DeleteProtectionSwitch"].IsNull())
+    {
+        if (!value["DeleteProtectionSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceSet.DeleteProtectionSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteProtectionSwitch = value["DeleteProtectionSwitch"].GetInt64();
+        m_deleteProtectionSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1233,6 +1244,14 @@ void InstanceSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "BackupMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteProtectionSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteProtectionSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteProtectionSwitch, allocator);
     }
 
 }
@@ -2196,5 +2215,21 @@ void InstanceSet::SetBackupMode(const string& _backupMode)
 bool InstanceSet::BackupModeHasBeenSet() const
 {
     return m_backupModeHasBeenSet;
+}
+
+int64_t InstanceSet::GetDeleteProtectionSwitch() const
+{
+    return m_deleteProtectionSwitch;
+}
+
+void InstanceSet::SetDeleteProtectionSwitch(const int64_t& _deleteProtectionSwitch)
+{
+    m_deleteProtectionSwitch = _deleteProtectionSwitch;
+    m_deleteProtectionSwitchHasBeenSet = true;
+}
+
+bool InstanceSet::DeleteProtectionSwitchHasBeenSet() const
+{
+    return m_deleteProtectionSwitchHasBeenSet;
 }
 

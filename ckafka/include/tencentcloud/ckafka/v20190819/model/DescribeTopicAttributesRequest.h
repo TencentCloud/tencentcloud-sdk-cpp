@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @return InstanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置ckafka集群实例Id，可通过DescribeInstances接口获取。
+                     * @param _instanceId ckafka集群实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称
-                     * @return TopicName 主题名称
+                     * 获取主题名称，可通过DescribeTopic接口获取。
+                     * @return TopicName 主题名称，可通过DescribeTopic接口获取。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置主题名称
-                     * @param _topicName 主题名称
+                     * 设置主题名称，可通过DescribeTopic接口获取。
+                     * @param _topicName 主题名称，可通过DescribeTopic接口获取。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * ckafka集群实例Id，可通过DescribeInstances接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名称
+                     * 主题名称，可通过DescribeTopic接口获取。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

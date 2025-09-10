@@ -280,6 +280,27 @@ namespace TencentCloud
                      */
                     bool ProcessingFlagsHasBeenSet() const;
 
+                    /**
+                     * 获取知识库拥有者的名字
+                     * @return OwnerStaffName 知识库拥有者的名字
+                     * 
+                     */
+                    std::string GetOwnerStaffName() const;
+
+                    /**
+                     * 设置知识库拥有者的名字
+                     * @param _ownerStaffName 知识库拥有者的名字
+                     * 
+                     */
+                    void SetOwnerStaffName(const std::string& _ownerStaffName);
+
+                    /**
+                     * 判断参数 OwnerStaffName 是否已赋值
+                     * @return OwnerStaffName 是否已赋值
+                     * 
+                     */
+                    bool OwnerStaffNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +368,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_processingFlags;
                     bool m_processingFlagsHasBeenSet;
+
+                    /**
+                     * 知识库拥有者的名字
+                     */
+                    std::string m_ownerStaffName;
+                    bool m_ownerStaffNameHasBeenSet;
 
                 };
             }

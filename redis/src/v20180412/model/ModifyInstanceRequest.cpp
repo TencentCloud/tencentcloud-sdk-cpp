@@ -28,6 +28,7 @@ ModifyInstanceRequest::ModifyInstanceRequest() :
     m_instanceNamesHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_autoRenewsHasBeenSet(false),
+    m_deleteProtectionSwitchesHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_autoRenewHasBeenSet(false)
@@ -91,6 +92,19 @@ string ModifyInstanceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_autoRenews.begin(); itr != m_autoRenews.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_deleteProtectionSwitchesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteProtectionSwitches";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deleteProtectionSwitches.begin(); itr != m_deleteProtectionSwitches.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
@@ -206,6 +220,22 @@ void ModifyInstanceRequest::SetAutoRenews(const vector<int64_t>& _autoRenews)
 bool ModifyInstanceRequest::AutoRenewsHasBeenSet() const
 {
     return m_autoRenewsHasBeenSet;
+}
+
+vector<int64_t> ModifyInstanceRequest::GetDeleteProtectionSwitches() const
+{
+    return m_deleteProtectionSwitches;
+}
+
+void ModifyInstanceRequest::SetDeleteProtectionSwitches(const vector<int64_t>& _deleteProtectionSwitches)
+{
+    m_deleteProtectionSwitches = _deleteProtectionSwitches;
+    m_deleteProtectionSwitchesHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::DeleteProtectionSwitchesHasBeenSet() const
+{
+    return m_deleteProtectionSwitchesHasBeenSet;
 }
 
 string ModifyInstanceRequest::GetInstanceId() const

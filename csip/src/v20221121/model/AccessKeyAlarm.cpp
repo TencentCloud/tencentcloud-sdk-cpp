@@ -39,7 +39,10 @@ AccessKeyAlarm::AccessKeyAlarm() :
     m_subNicknameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_appIDHasBeenSet(false),
-    m_leakEvidenceHasBeenSet(false)
+    m_leakEvidenceHasBeenSet(false),
+    m_isSupportEditWhiteAccountHasBeenSet(false),
+    m_evidenceHasBeenSet(false),
+    m_ruleKeyHasBeenSet(false)
 {
 }
 
@@ -244,6 +247,36 @@ CoreInternalOutcome AccessKeyAlarm::Deserialize(const rapidjson::Value &value)
         m_leakEvidenceHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportEditWhiteAccount") && !value["IsSupportEditWhiteAccount"].IsNull())
+    {
+        if (!value["IsSupportEditWhiteAccount"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyAlarm.IsSupportEditWhiteAccount` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportEditWhiteAccount = value["IsSupportEditWhiteAccount"].GetBool();
+        m_isSupportEditWhiteAccountHasBeenSet = true;
+    }
+
+    if (value.HasMember("Evidence") && !value["Evidence"].IsNull())
+    {
+        if (!value["Evidence"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyAlarm.Evidence` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_evidence = string(value["Evidence"].GetString());
+        m_evidenceHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleKey") && !value["RuleKey"].IsNull())
+    {
+        if (!value["RuleKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyAlarm.RuleKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleKey = string(value["RuleKey"].GetString());
+        m_ruleKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -411,6 +444,30 @@ void AccessKeyAlarm::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isSupportEditWhiteAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportEditWhiteAccount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportEditWhiteAccount, allocator);
+    }
+
+    if (m_evidenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Evidence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_evidence.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -718,5 +775,53 @@ void AccessKeyAlarm::SetLeakEvidence(const vector<string>& _leakEvidence)
 bool AccessKeyAlarm::LeakEvidenceHasBeenSet() const
 {
     return m_leakEvidenceHasBeenSet;
+}
+
+bool AccessKeyAlarm::GetIsSupportEditWhiteAccount() const
+{
+    return m_isSupportEditWhiteAccount;
+}
+
+void AccessKeyAlarm::SetIsSupportEditWhiteAccount(const bool& _isSupportEditWhiteAccount)
+{
+    m_isSupportEditWhiteAccount = _isSupportEditWhiteAccount;
+    m_isSupportEditWhiteAccountHasBeenSet = true;
+}
+
+bool AccessKeyAlarm::IsSupportEditWhiteAccountHasBeenSet() const
+{
+    return m_isSupportEditWhiteAccountHasBeenSet;
+}
+
+string AccessKeyAlarm::GetEvidence() const
+{
+    return m_evidence;
+}
+
+void AccessKeyAlarm::SetEvidence(const string& _evidence)
+{
+    m_evidence = _evidence;
+    m_evidenceHasBeenSet = true;
+}
+
+bool AccessKeyAlarm::EvidenceHasBeenSet() const
+{
+    return m_evidenceHasBeenSet;
+}
+
+string AccessKeyAlarm::GetRuleKey() const
+{
+    return m_ruleKey;
+}
+
+void AccessKeyAlarm::SetRuleKey(const string& _ruleKey)
+{
+    m_ruleKey = _ruleKey;
+    m_ruleKeyHasBeenSet = true;
+}
+
+bool AccessKeyAlarm::RuleKeyHasBeenSet() const
+{
+    return m_ruleKeyHasBeenSet;
 }
 

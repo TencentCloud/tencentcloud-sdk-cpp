@@ -64,15 +64,23 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取子账号名称，如果要修改主账号，填 root。
-                     * @return AccountName 子账号名称，如果要修改主账号，填 root。
+                     * 获取指定需修改的账号。
+- root：指在创建 Redis 数据库实例时自动生成的账号。用户无法修改其读写权限，仅可修改其请求路由策略。
+- 自定义的账号：用户在实例创建成功后手动创建的账号。用户可以随时修改其读写权限与请求路由策略。
+                     * @return AccountName 指定需修改的账号。
+- root：指在创建 Redis 数据库实例时自动生成的账号。用户无法修改其读写权限，仅可修改其请求路由策略。
+- 自定义的账号：用户在实例创建成功后手动创建的账号。用户可以随时修改其读写权限与请求路由策略。
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置子账号名称，如果要修改主账号，填 root。
-                     * @param _accountName 子账号名称，如果要修改主账号，填 root。
+                     * 设置指定需修改的账号。
+- root：指在创建 Redis 数据库实例时自动生成的账号。用户无法修改其读写权限，仅可修改其请求路由策略。
+- 自定义的账号：用户在实例创建成功后手动创建的账号。用户可以随时修改其读写权限与请求路由策略。
+                     * @param _accountName 指定需修改的账号。
+- root：指在创建 Redis 数据库实例时自动生成的账号。用户无法修改其读写权限，仅可修改其请求路由策略。
+- 自定义的账号：用户在实例创建成功后手动创建的账号。用户可以随时修改其读写权限与请求路由策略。
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -85,15 +93,15 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取子账号密码。
-                     * @return AccountPassword 子账号密码。
+                     * 获取指定所修改账号访问的密码。
+                     * @return AccountPassword 指定所修改账号访问的密码。
                      * 
                      */
                     std::string GetAccountPassword() const;
 
                     /**
-                     * 设置子账号密码。
-                     * @param _accountPassword 子账号密码。
+                     * 设置指定所修改账号访问的密码。
+                     * @param _accountPassword 指定所修改账号访问的密码。
                      * 
                      */
                     void SetAccountPassword(const std::string& _accountPassword);
@@ -106,15 +114,15 @@ namespace TencentCloud
                     bool AccountPasswordHasBeenSet() const;
 
                     /**
-                     * 获取子账号描述信息
-                     * @return Remark 子账号描述信息
+                     * 获取账号描述信息
+                     * @return Remark 账号描述信息
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置子账号描述信息
-                     * @param _remark 子账号描述信息
+                     * 设置账号描述信息
+                     * @param _remark 账号描述信息
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -127,23 +135,23 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取账号读写路由策略。
-- master：表示主节点。
-- replication：表示从节点。
-                     * @return ReadonlyPolicy 账号读写路由策略。
-- master：表示主节点。
-- replication：表示从节点。
+                     * 获取指定所修改账号读写请求路由的策略。
+- master：表示读写请求路由至主节点。
+- replication：表示读写请求路由至从节点。
+                     * @return ReadonlyPolicy 指定所修改账号读写请求路由的策略。
+- master：表示读写请求路由至主节点。
+- replication：表示读写请求路由至从节点。
                      * 
                      */
                     std::vector<std::string> GetReadonlyPolicy() const;
 
                     /**
-                     * 设置账号读写路由策略。
-- master：表示主节点。
-- replication：表示从节点。
-                     * @param _readonlyPolicy 账号读写路由策略。
-- master：表示主节点。
-- replication：表示从节点。
+                     * 设置指定所修改账号读写请求路由的策略。
+- master：表示读写请求路由至主节点。
+- replication：表示读写请求路由至从节点。
+                     * @param _readonlyPolicy 指定所修改账号读写请求路由的策略。
+- master：表示读写请求路由至主节点。
+- replication：表示读写请求路由至从节点。
                      * 
                      */
                     void SetReadonlyPolicy(const std::vector<std::string>& _readonlyPolicy);
@@ -156,11 +164,11 @@ namespace TencentCloud
                     bool ReadonlyPolicyHasBeenSet() const;
 
                     /**
-                     * 获取子账号读写策略。
+                     * 获取指定所修改账号的读写权限。
 - r：只读。
 - w：只写。
 - rw：读写。
-                     * @return Privilege 子账号读写策略。
+                     * @return Privilege 指定所修改账号的读写权限。
 - r：只读。
 - w：只写。
 - rw：读写。
@@ -169,11 +177,11 @@ namespace TencentCloud
                     std::string GetPrivilege() const;
 
                     /**
-                     * 设置子账号读写策略。
+                     * 设置指定所修改账号的读写权限。
 - r：只读。
 - w：只写。
 - rw：读写。
-                     * @param _privilege 子账号读写策略。
+                     * @param _privilege 指定所修改账号的读写权限。
 - r：只读。
 - w：只写。
 - rw：读写。
@@ -189,23 +197,23 @@ namespace TencentCloud
                     bool PrivilegeHasBeenSet() const;
 
                     /**
-                     * 获取指定是否将主账号切换为免密账号。这里只适用于主账号，子账号不可免密。
-- true：将主账号切换为免密账号。
-- false：不切换。
-                     * @return NoAuth 指定是否将主账号切换为免密账号。这里只适用于主账号，子账号不可免密。
-- true：将主账号切换为免密账号。
-- false：不切换。
+                     * 获取指定是否将默认账号（root）设置为免密账号。自定义账号不支持免密访问。
+- true：默认账号（root）设置为免密账号。
+- false：默认账号（root）不设置为免密账号。
+                     * @return NoAuth 指定是否将默认账号（root）设置为免密账号。自定义账号不支持免密访问。
+- true：默认账号（root）设置为免密账号。
+- false：默认账号（root）不设置为免密账号。
                      * 
                      */
                     bool GetNoAuth() const;
 
                     /**
-                     * 设置指定是否将主账号切换为免密账号。这里只适用于主账号，子账号不可免密。
-- true：将主账号切换为免密账号。
-- false：不切换。
-                     * @param _noAuth 指定是否将主账号切换为免密账号。这里只适用于主账号，子账号不可免密。
-- true：将主账号切换为免密账号。
-- false：不切换。
+                     * 设置指定是否将默认账号（root）设置为免密账号。自定义账号不支持免密访问。
+- true：默认账号（root）设置为免密账号。
+- false：默认账号（root）不设置为免密账号。
+                     * @param _noAuth 指定是否将默认账号（root）设置为免密账号。自定义账号不支持免密访问。
+- true：默认账号（root）设置为免密账号。
+- false：默认账号（root）不设置为免密账号。
                      * 
                      */
                     void SetNoAuth(const bool& _noAuth);
@@ -217,6 +225,27 @@ namespace TencentCloud
                      */
                     bool NoAuthHasBeenSet() const;
 
+                    /**
+                     * 获取指定所修改的账号是否加密密码
+                     * @return EncryptPassword 指定所修改的账号是否加密密码
+                     * 
+                     */
+                    bool GetEncryptPassword() const;
+
+                    /**
+                     * 设置指定所修改的账号是否加密密码
+                     * @param _encryptPassword 指定所修改的账号是否加密密码
+                     * 
+                     */
+                    void SetEncryptPassword(const bool& _encryptPassword);
+
+                    /**
+                     * 判断参数 EncryptPassword 是否已赋值
+                     * @return EncryptPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -226,33 +255,35 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 子账号名称，如果要修改主账号，填 root。
+                     * 指定需修改的账号。
+- root：指在创建 Redis 数据库实例时自动生成的账号。用户无法修改其读写权限，仅可修改其请求路由策略。
+- 自定义的账号：用户在实例创建成功后手动创建的账号。用户可以随时修改其读写权限与请求路由策略。
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 子账号密码。
+                     * 指定所修改账号访问的密码。
                      */
                     std::string m_accountPassword;
                     bool m_accountPasswordHasBeenSet;
 
                     /**
-                     * 子账号描述信息
+                     * 账号描述信息
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 账号读写路由策略。
-- master：表示主节点。
-- replication：表示从节点。
+                     * 指定所修改账号读写请求路由的策略。
+- master：表示读写请求路由至主节点。
+- replication：表示读写请求路由至从节点。
                      */
                     std::vector<std::string> m_readonlyPolicy;
                     bool m_readonlyPolicyHasBeenSet;
 
                     /**
-                     * 子账号读写策略。
+                     * 指定所修改账号的读写权限。
 - r：只读。
 - w：只写。
 - rw：读写。
@@ -261,12 +292,18 @@ namespace TencentCloud
                     bool m_privilegeHasBeenSet;
 
                     /**
-                     * 指定是否将主账号切换为免密账号。这里只适用于主账号，子账号不可免密。
-- true：将主账号切换为免密账号。
-- false：不切换。
+                     * 指定是否将默认账号（root）设置为免密账号。自定义账号不支持免密访问。
+- true：默认账号（root）设置为免密账号。
+- false：默认账号（root）不设置为免密账号。
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;
+
+                    /**
+                     * 指定所修改的账号是否加密密码
+                     */
+                    bool m_encryptPassword;
+                    bool m_encryptPasswordHasBeenSet;
 
                 };
             }

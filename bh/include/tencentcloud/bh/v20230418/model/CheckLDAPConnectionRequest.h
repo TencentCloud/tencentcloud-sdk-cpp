@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool DomainIdHasBeenSet() const;
 
+                    /**
+                     * 获取用户名称映射属性
+                     * @return AttributeUserName 用户名称映射属性
+                     * 
+                     */
+                    std::string GetAttributeUserName() const;
+
+                    /**
+                     * 设置用户名称映射属性
+                     * @param _attributeUserName 用户名称映射属性
+                     * 
+                     */
+                    void SetAttributeUserName(const std::string& _attributeUserName);
+
+                    /**
+                     * 判断参数 AttributeUserName 是否已赋值
+                     * @return AttributeUserName 是否已赋值
+                     * 
+                     */
+                    bool AttributeUserNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
+
+                    /**
+                     * 用户名称映射属性
+                     */
+                    std::string m_attributeUserName;
+                    bool m_attributeUserNameHasBeenSet;
 
                 };
             }

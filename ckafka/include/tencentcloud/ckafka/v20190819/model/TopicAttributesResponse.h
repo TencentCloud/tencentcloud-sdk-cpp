@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间的秒级时间戳
+                     * @return CreateTime 创建时间的秒级时间戳
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置创建时间的秒级时间戳
+                     * @param _createTime 创建时间的秒级时间戳
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -311,7 +311,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间的秒级时间戳
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;

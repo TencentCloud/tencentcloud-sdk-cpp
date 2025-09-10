@@ -157,14 +157,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否使用一键授权
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableRoleAuth 是否使用一键授权
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableRoleAuth() const;
 
                     /**
                      * 设置是否使用一键授权
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableRoleAuth 是否使用一键授权
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableRoleAuth(const bool& _enableRoleAuth);
@@ -252,6 +256,7 @@ namespace TencentCloud
 
                     /**
                      * 是否使用一键授权
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableRoleAuth;
                     bool m_enableRoleAuthHasBeenSet;

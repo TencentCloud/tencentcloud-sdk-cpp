@@ -32,7 +32,8 @@ PrivateNatGateway::PrivateNatGateway() :
     m_natTypeHasBeenSet(false),
     m_crossDomainInfoHasBeenSet(false),
     m_vpcTypeHasBeenSet(false),
-    m_ccnIdHasBeenSet(false)
+    m_ccnIdHasBeenSet(false),
+    m_deletionProtectionEnabledHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,16 @@ CoreInternalOutcome PrivateNatGateway::Deserialize(const rapidjson::Value &value
         m_ccnIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletionProtectionEnabled") && !value["DeletionProtectionEnabled"].IsNull())
+    {
+        if (!value["DeletionProtectionEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateNatGateway.DeletionProtectionEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionProtectionEnabled = value["DeletionProtectionEnabled"].GetBool();
+        m_deletionProtectionEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -295,6 +306,14 @@ void PrivateNatGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CcnId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ccnId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deletionProtectionEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtectionEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deletionProtectionEnabled, allocator);
     }
 
 }
@@ -490,5 +509,21 @@ void PrivateNatGateway::SetCcnId(const string& _ccnId)
 bool PrivateNatGateway::CcnIdHasBeenSet() const
 {
     return m_ccnIdHasBeenSet;
+}
+
+bool PrivateNatGateway::GetDeletionProtectionEnabled() const
+{
+    return m_deletionProtectionEnabled;
+}
+
+void PrivateNatGateway::SetDeletionProtectionEnabled(const bool& _deletionProtectionEnabled)
+{
+    m_deletionProtectionEnabled = _deletionProtectionEnabled;
+    m_deletionProtectionEnabledHasBeenSet = true;
+}
+
+bool PrivateNatGateway::DeletionProtectionEnabledHasBeenSet() const
+{
+    return m_deletionProtectionEnabledHasBeenSet;
 }
 

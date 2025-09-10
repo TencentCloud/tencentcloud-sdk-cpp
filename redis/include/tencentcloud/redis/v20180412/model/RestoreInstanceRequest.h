@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待操作的实例ID，可通过 DescribeInstances 接口返回值中的 InstanceId 获取。
-                     * @return InstanceId 待操作的实例ID，可通过 DescribeInstances 接口返回值中的 InstanceId 获取。
+                     * 获取待操作的实例ID，可通过 [DescribeInstances](https://cloud.tencent.com/document/product/239/20018) 接口返回值中的 InstanceId 获取。
+                     * @return InstanceId 待操作的实例ID，可通过 [DescribeInstances](https://cloud.tencent.com/document/product/239/20018) 接口返回值中的 InstanceId 获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置待操作的实例ID，可通过 DescribeInstances 接口返回值中的 InstanceId 获取。
-                     * @param _instanceId 待操作的实例ID，可通过 DescribeInstances 接口返回值中的 InstanceId 获取。
+                     * 设置待操作的实例ID，可通过 [DescribeInstances](https://cloud.tencent.com/document/product/239/20018) 接口返回值中的 InstanceId 获取。
+                     * @param _instanceId 待操作的实例ID，可通过 [DescribeInstances](https://cloud.tencent.com/document/product/239/20018) 接口返回值中的 InstanceId 获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
-                     * @return BackupId 备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
+                     * 获取备份ID，可通过 [DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011) 接口返回的参数 RedisBackupSet 获取。
+                     * @return BackupId 备份ID，可通过 [DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011) 接口返回的参数 RedisBackupSet 获取。
                      * 
                      */
                     std::string GetBackupId() const;
 
                     /**
-                     * 设置备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
-                     * @param _backupId 备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
+                     * 设置备份ID，可通过 [DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011) 接口返回的参数 RedisBackupSet 获取。
+                     * @param _backupId 备份ID，可通过 [DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011) 接口返回的参数 RedisBackupSet 获取。
                      * 
                      */
                     void SetBackupId(const std::string& _backupId);
@@ -108,13 +108,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待操作的实例ID，可通过 DescribeInstances 接口返回值中的 InstanceId 获取。
+                     * 待操作的实例ID，可通过 [DescribeInstances](https://cloud.tencent.com/document/product/239/20018) 接口返回值中的 InstanceId 获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
+                     * 备份ID，可通过 [DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011) 接口返回的参数 RedisBackupSet 获取。
                      */
                     std::string m_backupId;
                     bool m_backupIdHasBeenSet;

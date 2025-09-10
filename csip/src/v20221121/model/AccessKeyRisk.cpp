@@ -40,7 +40,8 @@ AccessKeyRisk::AccessKeyRisk() :
     m_subNicknameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_checkStatusHasBeenSet(false),
-    m_appIDHasBeenSet(false)
+    m_appIDHasBeenSet(false),
+    m_queryParamHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,16 @@ CoreInternalOutcome AccessKeyRisk::Deserialize(const rapidjson::Value &value)
         m_appIDHasBeenSet = true;
     }
 
+    if (value.HasMember("QueryParam") && !value["QueryParam"].IsNull())
+    {
+        if (!value["QueryParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyRisk.QueryParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queryParam = string(value["QueryParam"].GetString());
+        m_queryParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +433,14 @@ void AccessKeyRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "AppID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appID, allocator);
+    }
+
+    if (m_queryParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queryParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -745,5 +764,21 @@ void AccessKeyRisk::SetAppID(const int64_t& _appID)
 bool AccessKeyRisk::AppIDHasBeenSet() const
 {
     return m_appIDHasBeenSet;
+}
+
+string AccessKeyRisk::GetQueryParam() const
+{
+    return m_queryParam;
+}
+
+void AccessKeyRisk::SetQueryParam(const string& _queryParam)
+{
+    m_queryParam = _queryParam;
+    m_queryParamHasBeenSet = true;
+}
+
+bool AccessKeyRisk::QueryParamHasBeenSet() const
+{
+    return m_queryParamHasBeenSet;
 }
 

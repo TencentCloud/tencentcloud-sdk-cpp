@@ -31,7 +31,8 @@ CheckLDAPConnectionRequest::CheckLDAPConnectionRequest() :
     m_adminAccountHasBeenSet(false),
     m_adminPasswordHasBeenSet(false),
     m_ipBackupHasBeenSet(false),
-    m_domainIdHasBeenSet(false)
+    m_domainIdHasBeenSet(false),
+    m_attributeUserNameHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string CheckLDAPConnectionRequest::ToJsonString() const
         string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attributeUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttributeUserName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_attributeUserName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void CheckLDAPConnectionRequest::SetDomainId(const string& _domainId)
 bool CheckLDAPConnectionRequest::DomainIdHasBeenSet() const
 {
     return m_domainIdHasBeenSet;
+}
+
+string CheckLDAPConnectionRequest::GetAttributeUserName() const
+{
+    return m_attributeUserName;
+}
+
+void CheckLDAPConnectionRequest::SetAttributeUserName(const string& _attributeUserName)
+{
+    m_attributeUserName = _attributeUserName;
+    m_attributeUserNameHasBeenSet = true;
+}
+
+bool CheckLDAPConnectionRequest::AttributeUserNameHasBeenSet() const
+{
+    return m_attributeUserNameHasBeenSet;
 }
 
 

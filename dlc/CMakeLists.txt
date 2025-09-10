@@ -27,6 +27,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/Asset.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataMaskStrategiesResponse.h
   include/tencentcloud/dlc/v20210125/model/PythonSparkImage.h
+  include/tencentcloud/dlc/v20210125/model/MixedTablePartitions.h
   include/tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionsRequest.h
   include/tencentcloud/dlc/v20210125/model/SmartOptimizerLifecyclePolicy.h
@@ -65,6 +66,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateDMSTableResponse.h
   include/tencentcloud/dlc/v20210125/model/ViewResponseInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLRequest.h
+  include/tencentcloud/dlc/v20210125/model/LocationInfo.h
   include/tencentcloud/dlc/v20210125/model/UpdateEngineResourceGroupNetworkConfigInfoRequest.h
   include/tencentcloud/dlc/v20210125/model/SmartOptimizerPolicy.h
   include/tencentcloud/dlc/v20210125/model/UnboundDatasourceHouseResponse.h
@@ -358,6 +360,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DataEngineImageVersion.h
   include/tencentcloud/dlc/v20210125/model/MysqlInfo.h
   include/tencentcloud/dlc/v20210125/model/GenerateCreateMangedTableSqlRequest.h
+  include/tencentcloud/dlc/v20210125/model/Sort.h
   include/tencentcloud/dlc/v20210125/model/StatementInformation.h
   include/tencentcloud/dlc/v20210125/model/OtherDatasourceConnection.h
   include/tencentcloud/dlc/v20210125/model/TaskResultInfo.h
@@ -456,6 +459,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/SparkJobInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobResponse.h
+  include/tencentcloud/dlc/v20210125/model/HiveTablePartition.h
   include/tencentcloud/dlc/v20210125/model/UDFPolicyInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementResponse.h
   include/tencentcloud/dlc/v20210125/model/UpdateUDFPolicyRequest.h
@@ -515,6 +519,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/SwitchDataEngineImageRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSTableRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleRequest.h
+  include/tencentcloud/dlc/v20210125/model/IcebergTablePartition.h
   include/tencentcloud/dlc/v20210125/model/DatabaseResponseInfo.h
   include/tencentcloud/dlc/v20210125/model/DMSColumn.h
   include/tencentcloud/dlc/v20210125/model/DescribeResultDownloadRequest.h
@@ -530,6 +535,7 @@ set(dlc_src
   src/v20210125/model/Asset.cpp
   src/v20210125/model/DescribeDataMaskStrategiesResponse.cpp
   src/v20210125/model/PythonSparkImage.cpp
+  src/v20210125/model/MixedTablePartitions.cpp
   src/v20210125/model/ModifyGovernEventRuleResponse.cpp
   src/v20210125/model/DescribeNotebookSessionsRequest.cpp
   src/v20210125/model/SmartOptimizerLifecyclePolicy.cpp
@@ -568,6 +574,7 @@ set(dlc_src
   src/v20210125/model/CreateDMSTableResponse.cpp
   src/v20210125/model/ViewResponseInfo.cpp
   src/v20210125/model/DescribeSparkSessionBatchSQLRequest.cpp
+  src/v20210125/model/LocationInfo.cpp
   src/v20210125/model/UpdateEngineResourceGroupNetworkConfigInfoRequest.cpp
   src/v20210125/model/SmartOptimizerPolicy.cpp
   src/v20210125/model/UnboundDatasourceHouseResponse.cpp
@@ -861,6 +868,7 @@ set(dlc_src
   src/v20210125/model/DataEngineImageVersion.cpp
   src/v20210125/model/MysqlInfo.cpp
   src/v20210125/model/GenerateCreateMangedTableSqlRequest.cpp
+  src/v20210125/model/Sort.cpp
   src/v20210125/model/StatementInformation.cpp
   src/v20210125/model/OtherDatasourceConnection.cpp
   src/v20210125/model/TaskResultInfo.cpp
@@ -959,6 +967,7 @@ set(dlc_src
   src/v20210125/model/SparkJobInfo.cpp
   src/v20210125/model/DescribeScriptsRequest.cpp
   src/v20210125/model/DescribeSparkAppJobResponse.cpp
+  src/v20210125/model/HiveTablePartition.cpp
   src/v20210125/model/UDFPolicyInfo.cpp
   src/v20210125/model/DescribeNotebookSessionStatementResponse.cpp
   src/v20210125/model/UpdateUDFPolicyRequest.cpp
@@ -1018,6 +1027,7 @@ set(dlc_src
   src/v20210125/model/SwitchDataEngineImageRequest.cpp
   src/v20210125/model/DescribeDMSTableRequest.cpp
   src/v20210125/model/ModifyGovernEventRuleRequest.cpp
+  src/v20210125/model/IcebergTablePartition.cpp
   src/v20210125/model/DatabaseResponseInfo.cpp
   src/v20210125/model/DMSColumn.cpp
   src/v20210125/model/DescribeResultDownloadRequest.cpp

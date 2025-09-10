@@ -68,19 +68,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取ak具体值\n
-临时密钥时返回临时密钥
-                     * @return Name ak具体值\n
-临时密钥时返回临时密钥
+                     * 获取ak具体值 临时密钥时返回临时密钥
+                     * @return Name ak具体值 临时密钥时返回临时密钥
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置ak具体值\n
-临时密钥时返回临时密钥
-                     * @param _name ak具体值\n
-临时密钥时返回临时密钥
+                     * 设置ak具体值 临时密钥时返回临时密钥
+                     * @param _name ak具体值 临时密钥时返回临时密钥
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -143,8 +139,7 @@ namespace TencentCloud
                     bool m_iDHasBeenSet;
 
                     /**
-                     * ak具体值\n
-临时密钥时返回临时密钥
+                     * ak具体值 临时密钥时返回临时密钥
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

@@ -679,6 +679,48 @@ namespace TencentCloud
                      */
                     bool RestProxyStatusHasBeenSet() const;
 
+                    /**
+                     * 获取该集群shard总数
+                     * @return ShardTotalNum 该集群shard总数
+                     * 
+                     */
+                    int64_t GetShardTotalNum() const;
+
+                    /**
+                     * 设置该集群shard总数
+                     * @param _shardTotalNum 该集群shard总数
+                     * 
+                     */
+                    void SetShardTotalNum(const int64_t& _shardTotalNum);
+
+                    /**
+                     * 判断参数 ShardTotalNum 是否已赋值
+                     * @return ShardTotalNum 是否已赋值
+                     * 
+                     */
+                    bool ShardTotalNumHasBeenSet() const;
+
+                    /**
+                     * 获取已使用的shard总数
+                     * @return ShardUsedNum 已使用的shard总数
+                     * 
+                     */
+                    int64_t GetShardUsedNum() const;
+
+                    /**
+                     * 设置已使用的shard总数
+                     * @param _shardUsedNum 已使用的shard总数
+                     * 
+                     */
+                    void SetShardUsedNum(const int64_t& _shardUsedNum);
+
+                    /**
+                     * 判断参数 ShardUsedNum 是否已赋值
+                     * @return ShardUsedNum 是否已赋值
+                     * 
+                     */
+                    bool ShardUsedNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -860,6 +902,18 @@ namespace TencentCloud
                      */
                     int64_t m_restProxyStatus;
                     bool m_restProxyStatusHasBeenSet;
+
+                    /**
+                     * 该集群shard总数
+                     */
+                    int64_t m_shardTotalNum;
+                    bool m_shardTotalNumHasBeenSet;
+
+                    /**
+                     * 已使用的shard总数
+                     */
+                    int64_t m_shardUsedNum;
+                    bool m_shardUsedNumHasBeenSet;
 
                 };
             }

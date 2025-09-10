@@ -25,7 +25,8 @@ using namespace std;
 ModfiyInstancePasswordRequest::ModfiyInstancePasswordRequest() :
     m_instanceIdHasBeenSet(false),
     m_oldPasswordHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_encryptPasswordHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModfiyInstancePasswordRequest::ToJsonString() const
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryptPassword, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModfiyInstancePasswordRequest::SetPassword(const string& _password)
 bool ModfiyInstancePasswordRequest::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+bool ModfiyInstancePasswordRequest::GetEncryptPassword() const
+{
+    return m_encryptPassword;
+}
+
+void ModfiyInstancePasswordRequest::SetEncryptPassword(const bool& _encryptPassword)
+{
+    m_encryptPassword = _encryptPassword;
+    m_encryptPasswordHasBeenSet = true;
+}
+
+bool ModfiyInstancePasswordRequest::EncryptPasswordHasBeenSet() const
+{
+    return m_encryptPasswordHasBeenSet;
 }
 
 

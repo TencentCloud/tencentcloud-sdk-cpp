@@ -24,7 +24,8 @@ using namespace std;
 
 ClearInstanceRequest::ClearInstanceRequest() :
     m_instanceIdHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_encryptPasswordHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ClearInstanceRequest::ToJsonString() const
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryptPassword, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ClearInstanceRequest::SetPassword(const string& _password)
 bool ClearInstanceRequest::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+bool ClearInstanceRequest::GetEncryptPassword() const
+{
+    return m_encryptPassword;
+}
+
+void ClearInstanceRequest::SetEncryptPassword(const bool& _encryptPassword)
+{
+    m_encryptPassword = _encryptPassword;
+    m_encryptPasswordHasBeenSet = true;
+}
+
+bool ClearInstanceRequest::EncryptPasswordHasBeenSet() const
+{
+    return m_encryptPasswordHasBeenSet;
 }
 
 

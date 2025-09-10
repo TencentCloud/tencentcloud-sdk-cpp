@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/MixedTablePartitions.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取分区信息值
+                     * @return MixedPartitions 分区信息值
+                     * 
+                     */
+                    MixedTablePartitions GetMixedPartitions() const;
+
+                    /**
+                     * 判断参数 MixedPartitions 是否已赋值
+                     * @return MixedPartitions 是否已赋值
+                     * 
+                     */
+                    bool MixedPartitionsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 分区信息值
+                     */
+                    MixedTablePartitions m_mixedPartitions;
+                    bool m_mixedPartitionsHasBeenSet;
 
                 };
             }

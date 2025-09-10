@@ -178,6 +178,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DatasetInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateTaskResponse.h
   include/tencentcloud/tione/v20211111/model/TagFilter.h
+  include/tencentcloud/tione/v20211111/model/PodSSHInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupsRequest.h
   include/tencentcloud/tione/v20211111/model/ImageInfo.h
   include/tencentcloud/tione/v20211111/model/Tag.h
@@ -454,6 +455,7 @@ set(tione_src
   src/v20211111/model/DatasetInfo.cpp
   src/v20211111/model/DescribeModelAccelerateTaskResponse.cpp
   src/v20211111/model/TagFilter.cpp
+  src/v20211111/model/PodSSHInfo.cpp
   src/v20211111/model/DescribeModelServiceGroupsRequest.cpp
   src/v20211111/model/ImageInfo.cpp
   src/v20211111/model/Tag.cpp

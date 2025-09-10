@@ -25,7 +25,8 @@ using namespace std;
 ResetPasswordRequest::ResetPasswordRequest() :
     m_instanceIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_noAuthHasBeenSet(false)
+    m_noAuthHasBeenSet(false),
+    m_encryptPasswordHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ResetPasswordRequest::ToJsonString() const
         string key = "NoAuth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_noAuth, allocator);
+    }
+
+    if (m_encryptPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryptPassword, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ResetPasswordRequest::SetNoAuth(const bool& _noAuth)
 bool ResetPasswordRequest::NoAuthHasBeenSet() const
 {
     return m_noAuthHasBeenSet;
+}
+
+bool ResetPasswordRequest::GetEncryptPassword() const
+{
+    return m_encryptPassword;
+}
+
+void ResetPasswordRequest::SetEncryptPassword(const bool& _encryptPassword)
+{
+    m_encryptPassword = _encryptPassword;
+    m_encryptPasswordHasBeenSet = true;
+}
+
+bool ResetPasswordRequest::EncryptPasswordHasBeenSet() const
+{
+    return m_encryptPasswordHasBeenSet;
 }
 
 

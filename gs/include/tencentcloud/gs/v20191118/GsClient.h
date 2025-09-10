@@ -87,6 +87,8 @@
 #include <tencentcloud/gs/v20191118/model/DestroyAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/DisableAndroidInstancesAppRequest.h>
 #include <tencentcloud/gs/v20191118/model/DisableAndroidInstancesAppResponse.h>
+#include <tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceRequest.h>
+#include <tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceResponse.h>
 #include <tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/DistributePhotoToAndroidInstancesRequest.h>
@@ -283,6 +285,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableAndroidInstancesAppResponse> DisableAndroidInstancesAppOutcome;
                 typedef std::future<DisableAndroidInstancesAppOutcome> DisableAndroidInstancesAppOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DisableAndroidInstancesAppRequest&, DisableAndroidInstancesAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableAndroidInstancesAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisconnectAndroidInstanceResponse> DisconnectAndroidInstanceOutcome;
+                typedef std::future<DisconnectAndroidInstanceOutcome> DisconnectAndroidInstanceOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DisconnectAndroidInstanceRequest&, DisconnectAndroidInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisconnectAndroidInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DistributeFileToAndroidInstancesResponse> DistributeFileToAndroidInstancesOutcome;
                 typedef std::future<DistributeFileToAndroidInstancesOutcome> DistributeFileToAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DistributeFileToAndroidInstancesRequest&, DistributeFileToAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeFileToAndroidInstancesAsyncHandler;
@@ -706,6 +711,15 @@ namespace TencentCloud
                 DisableAndroidInstancesAppOutcome DisableAndroidInstancesApp(const Model::DisableAndroidInstancesAppRequest &request);
                 void DisableAndroidInstancesAppAsync(const Model::DisableAndroidInstancesAppRequest& request, const DisableAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableAndroidInstancesAppOutcomeCallable DisableAndroidInstancesAppCallable(const Model::DisableAndroidInstancesAppRequest& request);
+
+                /**
+                 *断开安卓实例
+                 * @param req DisconnectAndroidInstanceRequest
+                 * @return DisconnectAndroidInstanceOutcome
+                 */
+                DisconnectAndroidInstanceOutcome DisconnectAndroidInstance(const Model::DisconnectAndroidInstanceRequest &request);
+                void DisconnectAndroidInstanceAsync(const Model::DisconnectAndroidInstanceRequest& request, const DisconnectAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisconnectAndroidInstanceOutcomeCallable DisconnectAndroidInstanceCallable(const Model::DisconnectAndroidInstanceRequest& request);
 
                 /**
                  *将一个文件批量分发到多个实例，一次接口调用触发一次文件分发，一次文件分发只会从公网下载一次，然后文件会走内网分发到实例列表中的实例。

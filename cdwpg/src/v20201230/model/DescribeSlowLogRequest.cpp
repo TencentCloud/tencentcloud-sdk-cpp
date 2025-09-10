@@ -31,7 +31,9 @@ DescribeSlowLogRequest::DescribeSlowLogRequest() :
     m_databaseHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_orderByTypeHasBeenSet(false),
-    m_durationHasBeenSet(false)
+    m_durationHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_queryStringHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,22 @@ string DescribeSlowLogRequest::ToJsonString() const
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryString";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queryString.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +282,38 @@ void DescribeSlowLogRequest::SetDuration(const double& _duration)
 bool DescribeSlowLogRequest::DurationHasBeenSet() const
 {
     return m_durationHasBeenSet;
+}
+
+string DescribeSlowLogRequest::GetUserName() const
+{
+    return m_userName;
+}
+
+void DescribeSlowLogRequest::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool DescribeSlowLogRequest::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
+}
+
+string DescribeSlowLogRequest::GetQueryString() const
+{
+    return m_queryString;
+}
+
+void DescribeSlowLogRequest::SetQueryString(const string& _queryString)
+{
+    m_queryString = _queryString;
+    m_queryStringHasBeenSet = true;
+}
+
+bool DescribeSlowLogRequest::QueryStringHasBeenSet() const
+{
+    return m_queryStringHasBeenSet;
 }
 
 

@@ -203,6 +203,27 @@ namespace TencentCloud
                      */
                     bool NameCNHasBeenSet() const;
 
+                    /**
+                     * 获取指标英文名
+                     * @return NameEN 指标英文名
+                     * 
+                     */
+                    std::string GetNameEN() const;
+
+                    /**
+                     * 设置指标英文名
+                     * @param _nameEN 指标英文名
+                     * 
+                     */
+                    void SetNameEN(const std::string& _nameEN);
+
+                    /**
+                     * 判断参数 NameEN 是否已赋值
+                     * @return NameEN 是否已赋值
+                     * 
+                     */
+                    bool NameENHasBeenSet() const;
+
                 private:
 
                     /**
@@ -248,6 +269,12 @@ namespace TencentCloud
                      */
                     std::string m_nameCN;
                     bool m_nameCNHasBeenSet;
+
+                    /**
+                     * 指标英文名
+                     */
+                    std::string m_nameEN;
+                    bool m_nameENHasBeenSet;
 
                 };
             }

@@ -730,6 +730,27 @@ namespace TencentCloud
                      */
                     bool AlarmPolicyListHasBeenSet() const;
 
+                    /**
+                     * 获取是否加密密码
+                     * @return EncryptPassword 是否加密密码
+                     * 
+                     */
+                    bool GetEncryptPassword() const;
+
+                    /**
+                     * 设置是否加密密码
+                     * @param _encryptPassword 是否加密密码
+                     * 
+                     */
+                    void SetEncryptPassword(const bool& _encryptPassword);
+
+                    /**
+                     * 判断参数 EncryptPassword 是否已赋值
+                     * @return EncryptPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -922,6 +943,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_alarmPolicyList;
                     bool m_alarmPolicyListHasBeenSet;
+
+                    /**
+                     * 是否加密密码
+                     */
+                    bool m_encryptPassword;
+                    bool m_encryptPasswordHasBeenSet;
 
                 };
             }

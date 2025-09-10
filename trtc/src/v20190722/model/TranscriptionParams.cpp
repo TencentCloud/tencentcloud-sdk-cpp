@@ -29,7 +29,8 @@ TranscriptionParams::TranscriptionParams() :
     m_transcriptionModeHasBeenSet(false),
     m_targetUserIdHasBeenSet(false),
     m_targetUserIdListHasBeenSet(false),
-    m_voicePrintHasBeenSet(false)
+    m_voicePrintHasBeenSet(false),
+    m_turnDetectionHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,23 @@ CoreInternalOutcome TranscriptionParams::Deserialize(const rapidjson::Value &val
         m_voicePrintHasBeenSet = true;
     }
 
+    if (value.HasMember("TurnDetection") && !value["TurnDetection"].IsNull())
+    {
+        if (!value["TurnDetection"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranscriptionParams.TurnDetection` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_turnDetection.Deserialize(value["TurnDetection"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_turnDetectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +239,15 @@ void TranscriptionParams::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_voicePrint.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_turnDetectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TurnDetection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_turnDetection.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -368,5 +395,21 @@ void TranscriptionParams::SetVoicePrint(const VoicePrint& _voicePrint)
 bool TranscriptionParams::VoicePrintHasBeenSet() const
 {
     return m_voicePrintHasBeenSet;
+}
+
+TurnDetection TranscriptionParams::GetTurnDetection() const
+{
+    return m_turnDetection;
+}
+
+void TranscriptionParams::SetTurnDetection(const TurnDetection& _turnDetection)
+{
+    m_turnDetection = _turnDetection;
+    m_turnDetectionHasBeenSet = true;
+}
+
+bool TranscriptionParams::TurnDetectionHasBeenSet() const
+{
+    return m_turnDetectionHasBeenSet;
 }
 

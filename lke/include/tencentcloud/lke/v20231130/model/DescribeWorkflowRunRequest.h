@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取应用ID
+                     * @return AppBizId 应用ID
+                     * 
+                     */
+                    std::string GetAppBizId() const;
+
+                    /**
+                     * 设置应用ID
+                     * @param _appBizId 应用ID
+                     * 
+                     */
+                    void SetAppBizId(const std::string& _appBizId);
+
+                    /**
+                     * 判断参数 AppBizId 是否已赋值
+                     * @return AppBizId 是否已赋值
+                     * 
+                     */
+                    bool AppBizIdHasBeenSet() const;
+
+                    /**
                      * 获取工作流运行实例ID
                      * @return WorkflowRunId 工作流运行实例ID
                      * 
@@ -64,6 +85,12 @@ namespace TencentCloud
                     bool WorkflowRunIdHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 应用ID
+                     */
+                    std::string m_appBizId;
+                    bool m_appBizIdHasBeenSet;
 
                     /**
                      * 工作流运行实例ID

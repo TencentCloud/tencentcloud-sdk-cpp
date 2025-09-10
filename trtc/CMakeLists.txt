@@ -59,6 +59,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeCallDetailInfoRequest.h
   include/tencentcloud/trtc/v20190722/model/CreateCloudModerationResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeTRTCMarketScaleDataResponse.h
+  include/tencentcloud/trtc/v20190722/model/TranslationConfig.h
   include/tencentcloud/trtc/v20190722/model/McuTencentVod.h
   include/tencentcloud/trtc/v20190722/model/RegisterVoicePrintResponse.h
   include/tencentcloud/trtc/v20190722/model/ModifyPictureRequest.h
@@ -238,6 +239,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/TextToSpeechRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeStreamIngestRequest.h
   include/tencentcloud/trtc/v20190722/model/OneSdkAppIdTranscodeTimeUsagesInfo.h
+  include/tencentcloud/trtc/v20190722/model/TTSConfig.h
   include/tencentcloud/trtc/v20190722/model/EncodeParams.h
   include/tencentcloud/trtc/v20190722/model/McuAudioParams.h
   include/tencentcloud/trtc/v20190722/model/PresetLayoutConfig.h
@@ -302,6 +304,7 @@ set(trtc_src
   src/v20190722/model/DescribeCallDetailInfoRequest.cpp
   src/v20190722/model/CreateCloudModerationResponse.cpp
   src/v20190722/model/DescribeTRTCMarketScaleDataResponse.cpp
+  src/v20190722/model/TranslationConfig.cpp
   src/v20190722/model/McuTencentVod.cpp
   src/v20190722/model/RegisterVoicePrintResponse.cpp
   src/v20190722/model/ModifyPictureRequest.cpp
@@ -481,6 +484,7 @@ set(trtc_src
   src/v20190722/model/TextToSpeechRequest.cpp
   src/v20190722/model/DescribeStreamIngestRequest.cpp
   src/v20190722/model/OneSdkAppIdTranscodeTimeUsagesInfo.cpp
+  src/v20190722/model/TTSConfig.cpp
   src/v20190722/model/EncodeParams.cpp
   src/v20190722/model/McuAudioParams.cpp
   src/v20190722/model/PresetLayoutConfig.cpp

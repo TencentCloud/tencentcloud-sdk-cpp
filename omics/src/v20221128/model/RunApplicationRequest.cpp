@@ -38,7 +38,11 @@ RunApplicationRequest::RunApplicationRequest() :
     m_nFOptionHasBeenSet(false),
     m_workDirHasBeenSet(false),
     m_accessModeHasBeenSet(false),
-    m_volumeIdsHasBeenSet(false)
+    m_volumeIdsHasBeenSet(false),
+    m_resultNotificationHasBeenSet(false),
+    m_timeoutNotificationHasBeenSet(false),
+    m_timeoutNotificationMinutesHasBeenSet(false),
+    m_emailForNotificationHasBeenSet(false)
 {
 }
 
@@ -184,6 +188,43 @@ string RunApplicationRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_volumeIds.begin(); itr != m_volumeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_resultNotificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultNotification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resultNotification, allocator);
+    }
+
+    if (m_timeoutNotificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeoutNotification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeoutNotification, allocator);
+    }
+
+    if (m_timeoutNotificationMinutesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeoutNotificationMinutes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeoutNotificationMinutes, allocator);
+    }
+
+    if (m_emailForNotificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmailForNotification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_emailForNotification.begin(); itr != m_emailForNotification.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -451,6 +492,70 @@ void RunApplicationRequest::SetVolumeIds(const vector<string>& _volumeIds)
 bool RunApplicationRequest::VolumeIdsHasBeenSet() const
 {
     return m_volumeIdsHasBeenSet;
+}
+
+bool RunApplicationRequest::GetResultNotification() const
+{
+    return m_resultNotification;
+}
+
+void RunApplicationRequest::SetResultNotification(const bool& _resultNotification)
+{
+    m_resultNotification = _resultNotification;
+    m_resultNotificationHasBeenSet = true;
+}
+
+bool RunApplicationRequest::ResultNotificationHasBeenSet() const
+{
+    return m_resultNotificationHasBeenSet;
+}
+
+bool RunApplicationRequest::GetTimeoutNotification() const
+{
+    return m_timeoutNotification;
+}
+
+void RunApplicationRequest::SetTimeoutNotification(const bool& _timeoutNotification)
+{
+    m_timeoutNotification = _timeoutNotification;
+    m_timeoutNotificationHasBeenSet = true;
+}
+
+bool RunApplicationRequest::TimeoutNotificationHasBeenSet() const
+{
+    return m_timeoutNotificationHasBeenSet;
+}
+
+uint64_t RunApplicationRequest::GetTimeoutNotificationMinutes() const
+{
+    return m_timeoutNotificationMinutes;
+}
+
+void RunApplicationRequest::SetTimeoutNotificationMinutes(const uint64_t& _timeoutNotificationMinutes)
+{
+    m_timeoutNotificationMinutes = _timeoutNotificationMinutes;
+    m_timeoutNotificationMinutesHasBeenSet = true;
+}
+
+bool RunApplicationRequest::TimeoutNotificationMinutesHasBeenSet() const
+{
+    return m_timeoutNotificationMinutesHasBeenSet;
+}
+
+vector<string> RunApplicationRequest::GetEmailForNotification() const
+{
+    return m_emailForNotification;
+}
+
+void RunApplicationRequest::SetEmailForNotification(const vector<string>& _emailForNotification)
+{
+    m_emailForNotification = _emailForNotification;
+    m_emailForNotificationHasBeenSet = true;
+}
+
+bool RunApplicationRequest::EmailForNotificationHasBeenSet() const
+{
+    return m_emailForNotificationHasBeenSet;
 }
 
 

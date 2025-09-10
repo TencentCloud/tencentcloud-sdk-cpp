@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取连接源的Id
-                     * @return Result 连接源的Id
+                     * 获取连接源数据信息
+                     * @return Result 连接源数据信息
                      * 
                      */
                     DescribeConnectResourceResp GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 连接源的Id
+                     * 连接源数据信息
                      */
                     DescribeConnectResourceResp m_result;
                     bool m_resultHasBeenSet;

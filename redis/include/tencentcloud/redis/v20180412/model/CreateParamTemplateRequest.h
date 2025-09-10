@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数模板名称。
-                     * @return Name 参数模板名称。
+                     * 获取参数模板名称。字符长度要求为[2,64]。
+                     * @return Name 参数模板名称。字符长度要求为[2,64]。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置参数模板名称。
-                     * @param _name 参数模板名称。
+                     * 设置参数模板名称。字符长度要求为[2,64]。
+                     * @param _name 参数模板名称。字符长度要求为[2,64]。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -87,7 +87,6 @@ namespace TencentCloud
 
                     /**
                      * 获取产品类型。
-- 2：Redis 2.8 内存版（标准架构）。
 - 6：Redis 4.0 内存版（标准架构）。
 - 7：Redis 4.0 内存版（集群架构）。
 - 8：Redis 5.0 内存版（标准架构）。
@@ -97,7 +96,6 @@ namespace TencentCloud
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
                      * @return ProductType 产品类型。
-- 2：Redis 2.8 内存版（标准架构）。
 - 6：Redis 4.0 内存版（标准架构）。
 - 7：Redis 4.0 内存版（集群架构）。
 - 8：Redis 5.0 内存版（标准架构）。
@@ -112,7 +110,6 @@ namespace TencentCloud
 
                     /**
                      * 设置产品类型。
-- 2：Redis 2.8 内存版（标准架构）。
 - 6：Redis 4.0 内存版（标准架构）。
 - 7：Redis 4.0 内存版（集群架构）。
 - 8：Redis 5.0 内存版（标准架构）。
@@ -122,7 +119,6 @@ namespace TencentCloud
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
                      * @param _productType 产品类型。
-- 2：Redis 2.8 内存版（标准架构）。
 - 6：Redis 4.0 内存版（标准架构）。
 - 7：Redis 4.0 内存版（集群架构）。
 - 8：Redis 5.0 内存版（标准架构）。
@@ -187,7 +183,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数模板名称。
+                     * 参数模板名称。字符长度要求为[2,64]。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -200,7 +196,6 @@ namespace TencentCloud
 
                     /**
                      * 产品类型。
-- 2：Redis 2.8 内存版（标准架构）。
 - 6：Redis 4.0 内存版（标准架构）。
 - 7：Redis 4.0 内存版（集群架构）。
 - 8：Redis 5.0 内存版（标准架构）。

@@ -494,6 +494,27 @@ namespace TencentCloud
                      */
                     bool AppIDHasBeenSet() const;
 
+                    /**
+                     * 获取对应风险的查询参数
+                     * @return QueryParam 对应风险的查询参数
+                     * 
+                     */
+                    std::string GetQueryParam() const;
+
+                    /**
+                     * 设置对应风险的查询参数
+                     * @param _queryParam 对应风险的查询参数
+                     * 
+                     */
+                    void SetQueryParam(const std::string& _queryParam);
+
+                    /**
+                     * 判断参数 QueryParam 是否已赋值
+                     * @return QueryParam 是否已赋值
+                     * 
+                     */
+                    bool QueryParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -622,6 +643,12 @@ namespace TencentCloud
                      */
                     int64_t m_appID;
                     bool m_appIDHasBeenSet;
+
+                    /**
+                     * 对应风险的查询参数
+                     */
+                    std::string m_queryParam;
+                    bool m_queryParamHasBeenSet;
 
                 };
             }

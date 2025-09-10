@@ -1416,6 +1416,49 @@ GsClient::DisableAndroidInstancesAppOutcomeCallable GsClient::DisableAndroidInst
     return task->get_future();
 }
 
+GsClient::DisconnectAndroidInstanceOutcome GsClient::DisconnectAndroidInstance(const DisconnectAndroidInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisconnectAndroidInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisconnectAndroidInstanceResponse rsp = DisconnectAndroidInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisconnectAndroidInstanceOutcome(rsp);
+        else
+            return DisconnectAndroidInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DisconnectAndroidInstanceOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DisconnectAndroidInstanceAsync(const DisconnectAndroidInstanceRequest& request, const DisconnectAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisconnectAndroidInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DisconnectAndroidInstanceOutcomeCallable GsClient::DisconnectAndroidInstanceCallable(const DisconnectAndroidInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisconnectAndroidInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DisconnectAndroidInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::DistributeFileToAndroidInstancesOutcome GsClient::DistributeFileToAndroidInstances(const DistributeFileToAndroidInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DistributeFileToAndroidInstances");

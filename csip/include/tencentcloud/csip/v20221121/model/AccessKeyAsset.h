@@ -386,9 +386,11 @@ namespace TencentCloud
                      * 获取AK状态 
 0:禁用
 1:已启用
+2:已删除(已在cam侧删除，安全中心仍然存留之前的记录)
                      * @return Status AK状态 
 0:禁用
 1:已启用
+2:已删除(已在cam侧删除，安全中心仍然存留之前的记录)
                      * 
                      */
                     int64_t GetStatus() const;
@@ -397,9 +399,11 @@ namespace TencentCloud
                      * 设置AK状态 
 0:禁用
 1:已启用
+2:已删除(已在cam侧删除，安全中心仍然存留之前的记录)
                      * @param _status AK状态 
 0:禁用
 1:已启用
+2:已删除(已在cam侧删除，安全中心仍然存留之前的记录)
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -537,6 +541,7 @@ namespace TencentCloud
                      * AK状态 
 0:禁用
 1:已启用
+2:已删除(已在cam侧删除，安全中心仍然存留之前的记录)
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

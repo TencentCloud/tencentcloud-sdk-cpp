@@ -28,7 +28,8 @@ CreateInstanceAccountRequest::CreateInstanceAccountRequest() :
     m_accountPasswordHasBeenSet(false),
     m_readonlyPolicyHasBeenSet(false),
     m_privilegeHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_encryptPasswordHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string CreateInstanceAccountRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryptPassword, allocator);
     }
 
 
@@ -194,6 +203,22 @@ void CreateInstanceAccountRequest::SetRemark(const string& _remark)
 bool CreateInstanceAccountRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+bool CreateInstanceAccountRequest::GetEncryptPassword() const
+{
+    return m_encryptPassword;
+}
+
+void CreateInstanceAccountRequest::SetEncryptPassword(const bool& _encryptPassword)
+{
+    m_encryptPassword = _encryptPassword;
+    m_encryptPasswordHasBeenSet = true;
+}
+
+bool CreateInstanceAccountRequest::EncryptPasswordHasBeenSet() const
+{
+    return m_encryptPasswordHasBeenSet;
 }
 
 

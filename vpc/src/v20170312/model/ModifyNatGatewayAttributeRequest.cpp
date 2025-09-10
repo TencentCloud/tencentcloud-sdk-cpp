@@ -27,7 +27,8 @@ ModifyNatGatewayAttributeRequest::ModifyNatGatewayAttributeRequest() :
     m_natGatewayNameHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_modifySecurityGroupHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_deletionProtectionEnabledHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string ModifyNatGatewayAttributeRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_deletionProtectionEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtectionEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deletionProtectionEnabled, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void ModifyNatGatewayAttributeRequest::SetSecurityGroupIds(const vector<string>&
 bool ModifyNatGatewayAttributeRequest::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+bool ModifyNatGatewayAttributeRequest::GetDeletionProtectionEnabled() const
+{
+    return m_deletionProtectionEnabled;
+}
+
+void ModifyNatGatewayAttributeRequest::SetDeletionProtectionEnabled(const bool& _deletionProtectionEnabled)
+{
+    m_deletionProtectionEnabled = _deletionProtectionEnabled;
+    m_deletionProtectionEnabledHasBeenSet = true;
+}
+
+bool ModifyNatGatewayAttributeRequest::DeletionProtectionEnabledHasBeenSet() const
+{
+    return m_deletionProtectionEnabledHasBeenSet;
 }
 
 

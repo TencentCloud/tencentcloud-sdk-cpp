@@ -92,18 +92,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * 获取用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。
 
-                     * @return Appid 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * @return Appid 用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。
 
                      * 
                      */
                     int64_t GetAppid() const;
 
                     /**
-                     * 设置用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * 设置用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。
 
-                     * @param _appid 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * @param _appid 用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。
 
                      * 
                      */
@@ -1377,6 +1377,27 @@ namespace TencentCloud
                      */
                     bool BackupModeHasBeenSet() const;
 
+                    /**
+                     * 获取删除保护开关，0关闭，1开启
+                     * @return DeleteProtectionSwitch 删除保护开关，0关闭，1开启
+                     * 
+                     */
+                    int64_t GetDeleteProtectionSwitch() const;
+
+                    /**
+                     * 设置删除保护开关，0关闭，1开启
+                     * @param _deleteProtectionSwitch 删除保护开关，0关闭，1开启
+                     * 
+                     */
+                    void SetDeleteProtectionSwitch(const int64_t& _deleteProtectionSwitch);
+
+                    /**
+                     * 判断参数 DeleteProtectionSwitch 是否已赋值
+                     * @return DeleteProtectionSwitch 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectionSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1392,7 +1413,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * 用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。
 
                      */
                     int64_t m_appid;
@@ -1755,6 +1776,12 @@ namespace TencentCloud
                      */
                     std::string m_backupMode;
                     bool m_backupModeHasBeenSet;
+
+                    /**
+                     * 删除保护开关，0关闭，1开启
+                     */
+                    int64_t m_deleteProtectionSwitch;
+                    bool m_deleteProtectionSwitchHasBeenSet;
 
                 };
             }

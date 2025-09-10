@@ -23,6 +23,7 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 StopWorkflowRunRequest::StopWorkflowRunRequest() :
+    m_appBizIdHasBeenSet(false),
     m_workflowRunIdHasBeenSet(false)
 {
 }
@@ -33,6 +34,14 @@ string StopWorkflowRunRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_appBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppBizId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appBizId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_workflowRunIdHasBeenSet)
     {
@@ -49,6 +58,22 @@ string StopWorkflowRunRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string StopWorkflowRunRequest::GetAppBizId() const
+{
+    return m_appBizId;
+}
+
+void StopWorkflowRunRequest::SetAppBizId(const string& _appBizId)
+{
+    m_appBizId = _appBizId;
+    m_appBizIdHasBeenSet = true;
+}
+
+bool StopWorkflowRunRequest::AppBizIdHasBeenSet() const
+{
+    return m_appBizIdHasBeenSet;
+}
 
 string StopWorkflowRunRequest::GetWorkflowRunId() const
 {

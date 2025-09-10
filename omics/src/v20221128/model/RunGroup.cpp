@@ -48,11 +48,12 @@ RunGroup::RunGroup() :
     m_runStatusCountsHasBeenSet(false),
     m_executionTimeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
-    m_resultNotifyHasBeenSet(false),
+    m_notificationHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_creatorHasBeenSet(false),
-    m_creatorIdHasBeenSet(false)
+    m_creatorIdHasBeenSet(false),
+    m_resultNotifyHasBeenSet(false)
 {
 }
 
@@ -379,14 +380,21 @@ CoreInternalOutcome RunGroup::Deserialize(const rapidjson::Value &value)
         m_errorMessageHasBeenSet = true;
     }
 
-    if (value.HasMember("ResultNotify") && !value["ResultNotify"].IsNull())
+    if (value.HasMember("Notification") && !value["Notification"].IsNull())
     {
-        if (!value["ResultNotify"].IsString())
+        if (!value["Notification"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `RunGroup.ResultNotify` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunGroup.Notification` is not object type").SetRequestId(requestId));
         }
-        m_resultNotify = string(value["ResultNotify"].GetString());
-        m_resultNotifyHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_notification.Deserialize(value["Notification"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_notificationHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -427,6 +435,16 @@ CoreInternalOutcome RunGroup::Deserialize(const rapidjson::Value &value)
         }
         m_creatorId = string(value["CreatorId"].GetString());
         m_creatorIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResultNotify") && !value["ResultNotify"].IsNull())
+    {
+        if (!value["ResultNotify"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.ResultNotify` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultNotify = string(value["ResultNotify"].GetString());
+        m_resultNotifyHasBeenSet = true;
     }
 
 
@@ -670,12 +688,13 @@ void RunGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_resultNotifyHasBeenSet)
+    if (m_notificationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResultNotify";
+        string key = "Notification";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_resultNotify.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_notification.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -708,6 +727,14 @@ void RunGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CreatorId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creatorId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultNotifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultNotify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultNotify.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1145,20 +1172,20 @@ bool RunGroup::ErrorMessageHasBeenSet() const
     return m_errorMessageHasBeenSet;
 }
 
-string RunGroup::GetResultNotify() const
+RunGroupNotification RunGroup::GetNotification() const
 {
-    return m_resultNotify;
+    return m_notification;
 }
 
-void RunGroup::SetResultNotify(const string& _resultNotify)
+void RunGroup::SetNotification(const RunGroupNotification& _notification)
 {
-    m_resultNotify = _resultNotify;
-    m_resultNotifyHasBeenSet = true;
+    m_notification = _notification;
+    m_notificationHasBeenSet = true;
 }
 
-bool RunGroup::ResultNotifyHasBeenSet() const
+bool RunGroup::NotificationHasBeenSet() const
 {
-    return m_resultNotifyHasBeenSet;
+    return m_notificationHasBeenSet;
 }
 
 string RunGroup::GetCreateTime() const
@@ -1223,5 +1250,21 @@ void RunGroup::SetCreatorId(const string& _creatorId)
 bool RunGroup::CreatorIdHasBeenSet() const
 {
     return m_creatorIdHasBeenSet;
+}
+
+string RunGroup::GetResultNotify() const
+{
+    return m_resultNotify;
+}
+
+void RunGroup::SetResultNotify(const string& _resultNotify)
+{
+    m_resultNotify = _resultNotify;
+    m_resultNotifyHasBeenSet = true;
+}
+
+bool RunGroup::ResultNotifyHasBeenSet() const
+{
+    return m_resultNotifyHasBeenSet;
 }
 

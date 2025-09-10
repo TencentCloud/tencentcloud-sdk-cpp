@@ -520,6 +520,27 @@ namespace TencentCloud
                      */
                     bool DedicatedClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取NAT实例是否开启删除保护
+                     * @return DeletionProtectionEnabled NAT实例是否开启删除保护
+                     * 
+                     */
+                    bool GetDeletionProtectionEnabled() const;
+
+                    /**
+                     * 设置NAT实例是否开启删除保护
+                     * @param _deletionProtectionEnabled NAT实例是否开启删除保护
+                     * 
+                     */
+                    void SetDeletionProtectionEnabled(const bool& _deletionProtectionEnabled);
+
+                    /**
+                     * 判断参数 DeletionProtectionEnabled 是否已赋值
+                     * @return DeletionProtectionEnabled 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -655,6 +676,12 @@ namespace TencentCloud
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
+                     * NAT实例是否开启删除保护
+                     */
+                    bool m_deletionProtectionEnabled;
+                    bool m_deletionProtectionEnabledHasBeenSet;
 
                 };
             }

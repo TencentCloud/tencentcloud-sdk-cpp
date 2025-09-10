@@ -42,7 +42,8 @@ CloneInstancesRequest::CloneInstancesRequest() :
     m_resourceTagsHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_alarmPolicyListHasBeenSet(false),
-    m_cloneTimeHasBeenSet(false)
+    m_cloneTimeHasBeenSet(false),
+    m_encryptPasswordHasBeenSet(false)
 {
 }
 
@@ -235,6 +236,14 @@ string CloneInstancesRequest::ToJsonString() const
         string key = "CloneTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cloneTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryptPassword, allocator);
     }
 
 
@@ -563,6 +572,22 @@ void CloneInstancesRequest::SetCloneTime(const string& _cloneTime)
 bool CloneInstancesRequest::CloneTimeHasBeenSet() const
 {
     return m_cloneTimeHasBeenSet;
+}
+
+bool CloneInstancesRequest::GetEncryptPassword() const
+{
+    return m_encryptPassword;
+}
+
+void CloneInstancesRequest::SetEncryptPassword(const bool& _encryptPassword)
+{
+    m_encryptPassword = _encryptPassword;
+    m_encryptPasswordHasBeenSet = true;
+}
+
+bool CloneInstancesRequest::EncryptPasswordHasBeenSet() const
+{
+    return m_encryptPasswordHasBeenSet;
 }
 
 

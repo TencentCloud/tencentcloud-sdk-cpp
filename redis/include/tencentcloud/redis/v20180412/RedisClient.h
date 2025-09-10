@@ -1331,7 +1331,7 @@ namespace TencentCloud
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
 
                 /**
-                 *本接口（ModifyInstanceAccount）用于修改实例子账号。
+                 *本接口（ModifyInstanceAccount）用于修改实例账号。
                  * @param req ModifyInstanceAccountRequest
                  * @return ModifyInstanceAccountOutcome
                  */

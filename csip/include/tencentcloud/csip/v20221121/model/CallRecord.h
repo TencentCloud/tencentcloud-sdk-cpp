@@ -588,6 +588,27 @@ namespace TencentCloud
                      */
                     bool VpcInfoHasBeenSet() const;
 
+                    /**
+                     * 获取调用请求客户端列表
+                     * @return ReqClient 调用请求客户端列表
+                     * 
+                     */
+                    std::vector<std::string> GetReqClient() const;
+
+                    /**
+                     * 设置调用请求客户端列表
+                     * @param _reqClient 调用请求客户端列表
+                     * 
+                     */
+                    void SetReqClient(const std::vector<std::string>& _reqClient);
+
+                    /**
+                     * 判断参数 ReqClient 是否已赋值
+                     * @return ReqClient 是否已赋值
+                     * 
+                     */
+                    bool ReqClientHasBeenSet() const;
+
                 private:
 
                     /**
@@ -743,6 +764,12 @@ namespace TencentCloud
                      */
                     std::vector<SourceIPVpcInfo> m_vpcInfo;
                     bool m_vpcInfoHasBeenSet;
+
+                    /**
+                     * 调用请求客户端列表
+                     */
+                    std::vector<std::string> m_reqClient;
+                    bool m_reqClientHasBeenSet;
 
                 };
             }

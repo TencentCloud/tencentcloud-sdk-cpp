@@ -48,7 +48,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_dryRunHasBeenSet(false),
     m_productVersionHasBeenSet(false),
     m_redisClusterIdHasBeenSet(false),
-    m_alarmPolicyListHasBeenSet(false)
+    m_alarmPolicyListHasBeenSet(false),
+    m_encryptPasswordHasBeenSet(false)
 {
 }
 
@@ -289,6 +290,14 @@ string CreateInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_encryptPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryptPassword, allocator);
     }
 
 
@@ -713,6 +722,22 @@ void CreateInstancesRequest::SetAlarmPolicyList(const vector<string>& _alarmPoli
 bool CreateInstancesRequest::AlarmPolicyListHasBeenSet() const
 {
     return m_alarmPolicyListHasBeenSet;
+}
+
+bool CreateInstancesRequest::GetEncryptPassword() const
+{
+    return m_encryptPassword;
+}
+
+void CreateInstancesRequest::SetEncryptPassword(const bool& _encryptPassword)
+{
+    m_encryptPassword = _encryptPassword;
+    m_encryptPasswordHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::EncryptPasswordHasBeenSet() const
+{
+    return m_encryptPasswordHasBeenSet;
 }
 
 

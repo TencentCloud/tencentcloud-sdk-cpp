@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeFirmwareRequest::DescribeFirmwareRequest() :
     m_productIDHasBeenSet(false),
-    m_firmwareVersionHasBeenSet(false)
+    m_firmwareVersionHasBeenSet(false),
+    m_fwTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeFirmwareRequest::ToJsonString() const
         string key = "FirmwareVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_firmwareVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fwTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fwType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeFirmwareRequest::SetFirmwareVersion(const string& _firmwareVersion)
 bool DescribeFirmwareRequest::FirmwareVersionHasBeenSet() const
 {
     return m_firmwareVersionHasBeenSet;
+}
+
+string DescribeFirmwareRequest::GetFwType() const
+{
+    return m_fwType;
+}
+
+void DescribeFirmwareRequest::SetFwType(const string& _fwType)
+{
+    m_fwType = _fwType;
+    m_fwTypeHasBeenSet = true;
+}
+
+bool DescribeFirmwareRequest::FwTypeHasBeenSet() const
+{
+    return m_fwTypeHasBeenSet;
 }
 
 

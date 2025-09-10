@@ -50,7 +50,9 @@ ClusterInfo::ClusterInfo() :
     m_txhBackupExpireDayHasBeenSet(false),
     m_ulogBackupExpireDayHasBeenSet(false),
     m_isReadOnlyUlogBackupExpireDayHasBeenSet(false),
-    m_restProxyStatusHasBeenSet(false)
+    m_restProxyStatusHasBeenSet(false),
+    m_shardTotalNumHasBeenSet(false),
+    m_shardUsedNumHasBeenSet(false)
 {
 }
 
@@ -389,6 +391,26 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
         m_restProxyStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ShardTotalNum") && !value["ShardTotalNum"].IsNull())
+    {
+        if (!value["ShardTotalNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.ShardTotalNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shardTotalNum = value["ShardTotalNum"].GetInt64();
+        m_shardTotalNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShardUsedNum") && !value["ShardUsedNum"].IsNull())
+    {
+        if (!value["ShardUsedNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.ShardUsedNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shardUsedNum = value["ShardUsedNum"].GetInt64();
+        m_shardUsedNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -654,6 +676,22 @@ void ClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "RestProxyStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_restProxyStatus, allocator);
+    }
+
+    if (m_shardTotalNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardTotalNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shardTotalNum, allocator);
+    }
+
+    if (m_shardUsedNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardUsedNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shardUsedNum, allocator);
     }
 
 }
@@ -1137,5 +1175,37 @@ void ClusterInfo::SetRestProxyStatus(const int64_t& _restProxyStatus)
 bool ClusterInfo::RestProxyStatusHasBeenSet() const
 {
     return m_restProxyStatusHasBeenSet;
+}
+
+int64_t ClusterInfo::GetShardTotalNum() const
+{
+    return m_shardTotalNum;
+}
+
+void ClusterInfo::SetShardTotalNum(const int64_t& _shardTotalNum)
+{
+    m_shardTotalNum = _shardTotalNum;
+    m_shardTotalNumHasBeenSet = true;
+}
+
+bool ClusterInfo::ShardTotalNumHasBeenSet() const
+{
+    return m_shardTotalNumHasBeenSet;
+}
+
+int64_t ClusterInfo::GetShardUsedNum() const
+{
+    return m_shardUsedNum;
+}
+
+void ClusterInfo::SetShardUsedNum(const int64_t& _shardUsedNum)
+{
+    m_shardUsedNum = _shardUsedNum;
+    m_shardUsedNumHasBeenSet = true;
+}
+
+bool ClusterInfo::ShardUsedNumHasBeenSet() const
+{
+    return m_shardUsedNumHasBeenSet;
 }
 
