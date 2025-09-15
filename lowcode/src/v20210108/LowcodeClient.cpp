@@ -298,6 +298,49 @@ LowcodeClient::DeployAppOutcomeCallable LowcodeClient::DeployAppCallable(const D
     return task->get_future();
 }
 
+LowcodeClient::DescribeAppsOutcome LowcodeClient::DescribeApps(const DescribeAppsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppsResponse rsp = DescribeAppsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppsOutcome(rsp);
+        else
+            return DescribeAppsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppsOutcome(outcome.GetError());
+    }
+}
+
+void LowcodeClient::DescribeAppsAsync(const DescribeAppsRequest& request, const DescribeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApps(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LowcodeClient::DescribeAppsOutcomeCallable LowcodeClient::DescribeAppsCallable(const DescribeAppsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAppsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApps(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LowcodeClient::DescribeDataSourceListOutcome LowcodeClient::DescribeDataSourceList(const DescribeDataSourceListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataSourceList");
@@ -463,6 +506,92 @@ LowcodeClient::DescribeKnowledgeSetListOutcomeCallable LowcodeClient::DescribeKn
         [this, request]()
         {
             return this->DescribeKnowledgeSetList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LowcodeClient::DescribeRelatedUsersOutcome LowcodeClient::DescribeRelatedUsers(const DescribeRelatedUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRelatedUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRelatedUsersResponse rsp = DescribeRelatedUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRelatedUsersOutcome(rsp);
+        else
+            return DescribeRelatedUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRelatedUsersOutcome(outcome.GetError());
+    }
+}
+
+void LowcodeClient::DescribeRelatedUsersAsync(const DescribeRelatedUsersRequest& request, const DescribeRelatedUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRelatedUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LowcodeClient::DescribeRelatedUsersOutcomeCallable LowcodeClient::DescribeRelatedUsersCallable(const DescribeRelatedUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRelatedUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRelatedUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LowcodeClient::DescribeResourceRoleListOutcome LowcodeClient::DescribeResourceRoleList(const DescribeResourceRoleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceRoleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceRoleListResponse rsp = DescribeResourceRoleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceRoleListOutcome(rsp);
+        else
+            return DescribeResourceRoleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceRoleListOutcome(outcome.GetError());
+    }
+}
+
+void LowcodeClient::DescribeResourceRoleListAsync(const DescribeResourceRoleListRequest& request, const DescribeResourceRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceRoleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LowcodeClient::DescribeResourceRoleListOutcomeCallable LowcodeClient::DescribeResourceRoleListCallable(const DescribeResourceRoleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceRoleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceRoleList(request);
         }
     );
 

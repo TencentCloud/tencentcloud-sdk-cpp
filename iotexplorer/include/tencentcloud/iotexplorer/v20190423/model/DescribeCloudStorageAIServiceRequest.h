@@ -86,10 +86,8 @@ namespace TencentCloud
 
                     /**
                      * 获取云存 AI 服务类型。可选值：
-- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * @return ServiceType 云存 AI 服务类型。可选值：
-- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * 
                      */
@@ -97,10 +95,8 @@ namespace TencentCloud
 
                     /**
                      * 设置云存 AI 服务类型。可选值：
-- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * @param _serviceType 云存 AI 服务类型。可选值：
-- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * 
                      */
@@ -112,6 +108,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ServiceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取通道 ID
+                     * @return ChannelId 通道 ID
+                     * 
+                     */
+                    uint64_t GetChannelId() const;
+
+                    /**
+                     * 设置通道 ID
+                     * @param _channelId 通道 ID
+                     * 
+                     */
+                    void SetChannelId(const uint64_t& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     * 
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户 ID
+                     * @return UserId 用户 ID
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置用户 ID
+                     * @param _userId 用户 ID
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
 
                 private:
 
@@ -129,11 +167,22 @@ namespace TencentCloud
 
                     /**
                      * 云存 AI 服务类型。可选值：
-- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
+
+                    /**
+                     * 通道 ID
+                     */
+                    uint64_t m_channelId;
+                    bool m_channelIdHasBeenSet;
+
+                    /**
+                     * 用户 ID
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

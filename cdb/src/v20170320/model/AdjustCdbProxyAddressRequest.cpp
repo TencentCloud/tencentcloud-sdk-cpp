@@ -36,7 +36,9 @@ AdjustCdbProxyAddressRequest::AdjustCdbProxyAddressRequest() :
     m_connectionPoolHasBeenSet(false),
     m_proxyAllocationHasBeenSet(false),
     m_autoLoadBalanceHasBeenSet(false),
-    m_accessModeHasBeenSet(false)
+    m_accessModeHasBeenSet(false),
+    m_apNodeAsRoNodeHasBeenSet(false),
+    m_apQueryToOtherNodeHasBeenSet(false)
 {
 }
 
@@ -164,6 +166,22 @@ string AdjustCdbProxyAddressRequest::ToJsonString() const
         string key = "AccessMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_accessMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apNodeAsRoNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApNodeAsRoNode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apNodeAsRoNode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apQueryToOtherNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApQueryToOtherNode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apQueryToOtherNode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -396,6 +414,38 @@ void AdjustCdbProxyAddressRequest::SetAccessMode(const string& _accessMode)
 bool AdjustCdbProxyAddressRequest::AccessModeHasBeenSet() const
 {
     return m_accessModeHasBeenSet;
+}
+
+string AdjustCdbProxyAddressRequest::GetApNodeAsRoNode() const
+{
+    return m_apNodeAsRoNode;
+}
+
+void AdjustCdbProxyAddressRequest::SetApNodeAsRoNode(const string& _apNodeAsRoNode)
+{
+    m_apNodeAsRoNode = _apNodeAsRoNode;
+    m_apNodeAsRoNodeHasBeenSet = true;
+}
+
+bool AdjustCdbProxyAddressRequest::ApNodeAsRoNodeHasBeenSet() const
+{
+    return m_apNodeAsRoNodeHasBeenSet;
+}
+
+string AdjustCdbProxyAddressRequest::GetApQueryToOtherNode() const
+{
+    return m_apQueryToOtherNode;
+}
+
+void AdjustCdbProxyAddressRequest::SetApQueryToOtherNode(const string& _apQueryToOtherNode)
+{
+    m_apQueryToOtherNode = _apQueryToOtherNode;
+    m_apQueryToOtherNodeHasBeenSet = true;
+}
+
+bool AdjustCdbProxyAddressRequest::ApQueryToOtherNodeHasBeenSet() const
+{
+    return m_apQueryToOtherNodeHasBeenSet;
 }
 
 

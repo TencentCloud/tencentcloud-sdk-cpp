@@ -114,6 +114,27 @@ namespace TencentCloud
                     bool UnifiedSocialCreditCodeHasBeenSet() const;
 
                     /**
+                     * 获取组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * @return OrganizationAddress 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * 
+                     */
+                    std::string GetOrganizationAddress() const;
+
+                    /**
+                     * 设置组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * @param _organizationAddress 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * 
+                     */
+                    void SetOrganizationAddress(const std::string& _organizationAddress);
+
+                    /**
+                     * 判断参数 OrganizationAddress 是否已赋值
+                     * @return OrganizationAddress 是否已赋值
+                     * 
+                     */
+                    bool OrganizationAddressHasBeenSet() const;
+
+                    /**
                      * 获取指定企业认证的授权方式 支持多选:
 
 <ul>
@@ -215,6 +236,12 @@ namespace TencentCloud
                      */
                     std::string m_unifiedSocialCreditCode;
                     bool m_unifiedSocialCreditCodeHasBeenSet;
+
+                    /**
+                     * 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     */
+                    std::string m_organizationAddress;
+                    bool m_organizationAddressHasBeenSet;
 
                     /**
                      * 指定企业认证的授权方式 支持多选:

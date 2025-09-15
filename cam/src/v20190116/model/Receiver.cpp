@@ -30,7 +30,8 @@ Receiver::Receiver() :
     m_emailFlagHasBeenSet(false),
     m_isReceiverOwnerHasBeenSet(false),
     m_wechatFlagHasBeenSet(false),
-    m_uinHasBeenSet(false)
+    m_uinHasBeenSet(false),
+    m_countryCodeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome Receiver::Deserialize(const rapidjson::Value &value)
         m_uinHasBeenSet = true;
     }
 
+    if (value.HasMember("CountryCode") && !value["CountryCode"].IsNull())
+    {
+        if (!value["CountryCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Receiver.CountryCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_countryCode = string(value["CountryCode"].GetString());
+        m_countryCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void Receiver::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_uin, allocator);
+    }
+
+    if (m_countryCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CountryCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_countryCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void Receiver::SetUin(const int64_t& _uin)
 bool Receiver::UinHasBeenSet() const
 {
     return m_uinHasBeenSet;
+}
+
+string Receiver::GetCountryCode() const
+{
+    return m_countryCode;
+}
+
+void Receiver::SetCountryCode(const string& _countryCode)
+{
+    m_countryCode = _countryCode;
+    m_countryCodeHasBeenSet = true;
+}
+
+bool Receiver::CountryCodeHasBeenSet() const
+{
+    return m_countryCodeHasBeenSet;
 }
 

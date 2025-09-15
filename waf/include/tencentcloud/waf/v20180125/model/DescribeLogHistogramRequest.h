@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ToHasBeenSet() const;
 
                     /**
-                     * 获取查询语句
-                     * @return Query 查询语句
+                     * 获取查询语句，进行base64编码
+                     * @return Query 查询语句，进行base64编码
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询语句
-                     * @param _query 查询语句
+                     * 设置查询语句，进行base64编码
+                     * @param _query 查询语句，进行base64编码
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -191,7 +191,7 @@ namespace TencentCloud
                     bool m_toHasBeenSet;
 
                     /**
-                     * 查询语句
+                     * 查询语句，进行base64编码
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;

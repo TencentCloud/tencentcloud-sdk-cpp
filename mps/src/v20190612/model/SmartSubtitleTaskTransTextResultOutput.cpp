@@ -22,7 +22,8 @@ using namespace std;
 
 SmartSubtitleTaskTransTextResultOutput::SmartSubtitleTaskTransTextResultOutput() :
     m_segmentSetHasBeenSet(false),
-    m_subtitlePathHasBeenSet(false)
+    m_subtitlePathHasBeenSet(false),
+    m_outputStorageHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome SmartSubtitleTaskTransTextResultOutput::Deserialize(const ra
         m_subtitlePathHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputStorage") && !value["OutputStorage"].IsNull())
+    {
+        if (!value["OutputStorage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitleTaskTransTextResultOutput.OutputStorage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_outputStorageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +107,15 @@ void SmartSubtitleTaskTransTextResultOutput::ToJsonObject(rapidjson::Value &valu
         string key = "SubtitlePath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subtitlePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_outputStorage.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -124,5 +151,21 @@ void SmartSubtitleTaskTransTextResultOutput::SetSubtitlePath(const string& _subt
 bool SmartSubtitleTaskTransTextResultOutput::SubtitlePathHasBeenSet() const
 {
     return m_subtitlePathHasBeenSet;
+}
+
+TaskOutputStorage SmartSubtitleTaskTransTextResultOutput::GetOutputStorage() const
+{
+    return m_outputStorage;
+}
+
+void SmartSubtitleTaskTransTextResultOutput::SetOutputStorage(const TaskOutputStorage& _outputStorage)
+{
+    m_outputStorage = _outputStorage;
+    m_outputStorageHasBeenSet = true;
+}
+
+bool SmartSubtitleTaskTransTextResultOutput::OutputStorageHasBeenSet() const
+{
+    return m_outputStorageHasBeenSet;
 }
 

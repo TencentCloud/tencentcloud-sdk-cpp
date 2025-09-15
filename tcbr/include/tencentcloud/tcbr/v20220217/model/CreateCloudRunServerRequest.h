@@ -24,6 +24,7 @@
 #include <tencentcloud/tcbr/v20220217/model/DeployParam.h>
 #include <tencentcloud/tcbr/v20220217/model/ServerBaseConfig.h>
 #include <tencentcloud/tcbr/v20220217/model/DiffConfigItem.h>
+#include <tencentcloud/tcbr/v20220217/model/CreateVpcInfo.h>
 
 
 namespace TencentCloud
@@ -150,6 +151,27 @@ namespace TencentCloud
                      */
                     bool ItemsHasBeenSet() const;
 
+                    /**
+                     * 获取vpc 信息
+                     * @return VpcInfo vpc 信息
+                     * 
+                     */
+                    CreateVpcInfo GetVpcInfo() const;
+
+                    /**
+                     * 设置vpc 信息
+                     * @param _vpcInfo vpc 信息
+                     * 
+                     */
+                    void SetVpcInfo(const CreateVpcInfo& _vpcInfo);
+
+                    /**
+                     * 判断参数 VpcInfo 是否已赋值
+                     * @return VpcInfo 是否已赋值
+                     * 
+                     */
+                    bool VpcInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -181,6 +203,12 @@ namespace TencentCloud
                      */
                     std::vector<DiffConfigItem> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * vpc 信息
+                     */
+                    CreateVpcInfo m_vpcInfo;
+                    bool m_vpcInfoHasBeenSet;
 
                 };
             }

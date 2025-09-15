@@ -23,7 +23,8 @@ using namespace std;
 TaskOutputStorage::TaskOutputStorage() :
     m_typeHasBeenSet(false),
     m_cosOutputStorageHasBeenSet(false),
-    m_s3OutputStorageHasBeenSet(false)
+    m_s3OutputStorageHasBeenSet(false),
+    m_vODOutputStorageHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,23 @@ CoreInternalOutcome TaskOutputStorage::Deserialize(const rapidjson::Value &value
         m_s3OutputStorageHasBeenSet = true;
     }
 
+    if (value.HasMember("VODOutputStorage") && !value["VODOutputStorage"].IsNull())
+    {
+        if (!value["VODOutputStorage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOutputStorage.VODOutputStorage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vODOutputStorage.Deserialize(value["VODOutputStorage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vODOutputStorageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ void TaskOutputStorage::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_s3OutputStorage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_vODOutputStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VODOutputStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vODOutputStorage.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -158,5 +185,21 @@ void TaskOutputStorage::SetS3OutputStorage(const S3OutputStorage& _s3OutputStora
 bool TaskOutputStorage::S3OutputStorageHasBeenSet() const
 {
     return m_s3OutputStorageHasBeenSet;
+}
+
+VODOutputStorage TaskOutputStorage::GetVODOutputStorage() const
+{
+    return m_vODOutputStorage;
+}
+
+void TaskOutputStorage::SetVODOutputStorage(const VODOutputStorage& _vODOutputStorage)
+{
+    m_vODOutputStorage = _vODOutputStorage;
+    m_vODOutputStorageHasBeenSet = true;
+}
+
+bool TaskOutputStorage::VODOutputStorageHasBeenSet() const
+{
+    return m_vODOutputStorageHasBeenSet;
 }
 

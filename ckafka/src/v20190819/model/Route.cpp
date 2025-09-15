@@ -31,7 +31,8 @@ Route::Route() :
     m_subnetHasBeenSet(false),
     m_brokerVipListHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_noteHasBeenSet(false)
+    m_noteHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,16 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
         m_noteHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Route.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +288,14 @@ void Route::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Note";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -456,5 +475,21 @@ void Route::SetNote(const string& _note)
 bool Route::NoteHasBeenSet() const
 {
     return m_noteHasBeenSet;
+}
+
+int64_t Route::GetStatus() const
+{
+    return m_status;
+}
+
+void Route::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool Route::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

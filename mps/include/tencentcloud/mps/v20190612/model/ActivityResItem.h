@@ -36,6 +36,7 @@
 #include <tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleExecRuleTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleSmartSubtitleTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/SmartEraseTaskResult.h>
 
 
 namespace TencentCloud
@@ -358,6 +359,31 @@ namespace TencentCloud
                      */
                     bool SmartSubtitlesTaskHasBeenSet() const;
 
+                    /**
+                     * 获取智能擦除任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SmartEraseTask 智能擦除任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SmartEraseTaskResult GetSmartEraseTask() const;
+
+                    /**
+                     * 设置智能擦除任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _smartEraseTask 智能擦除任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSmartEraseTask(const SmartEraseTaskResult& _smartEraseTask);
+
+                    /**
+                     * 判断参数 SmartEraseTask 是否已赋值
+                     * @return SmartEraseTask 是否已赋值
+                     * 
+                     */
+                    bool SmartEraseTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -443,6 +469,13 @@ namespace TencentCloud
                      */
                     ScheduleSmartSubtitleTaskResult m_smartSubtitlesTask;
                     bool m_smartSubtitlesTaskHasBeenSet;
+
+                    /**
+                     * 智能擦除任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SmartEraseTaskResult m_smartEraseTask;
+                    bool m_smartEraseTaskHasBeenSet;
 
                 };
             }

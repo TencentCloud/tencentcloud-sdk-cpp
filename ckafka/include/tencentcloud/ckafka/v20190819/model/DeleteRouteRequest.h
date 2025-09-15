@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取路由id,可通过DescribeRoute接口获取
-                     * @return RouteId 路由id,可通过DescribeRoute接口获取
+                     * 获取路由id,可通过[DescribeRoute](https://cloud.tencent.com/document/product/597/45484)接口获取
+                     * @return RouteId 路由id,可通过[DescribeRoute](https://cloud.tencent.com/document/product/597/45484)接口获取
                      * 
                      */
                     int64_t GetRouteId() const;
 
                     /**
-                     * 设置路由id,可通过DescribeRoute接口获取
-                     * @param _routeId 路由id,可通过DescribeRoute接口获取
+                     * 设置路由id,可通过[DescribeRoute](https://cloud.tencent.com/document/product/597/45484)接口获取
+                     * @param _routeId 路由id,可通过[DescribeRoute](https://cloud.tencent.com/document/product/597/45484)接口获取
                      * 
                      */
                     void SetRouteId(const int64_t& _routeId);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 路由id,可通过DescribeRoute接口获取
+                     * 路由id,可通过[DescribeRoute](https://cloud.tencent.com/document/product/597/45484)接口获取
                      */
                     int64_t m_routeId;
                     bool m_routeIdHasBeenSet;

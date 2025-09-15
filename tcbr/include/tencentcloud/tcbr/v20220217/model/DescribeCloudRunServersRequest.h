@@ -155,6 +155,27 @@ namespace TencentCloud
                      */
                     bool ServerTypeHasBeenSet() const;
 
+                    /**
+                     * 获取vpcId
+                     * @return VpcId vpcId
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置vpcId
+                     * @param _vpcId vpcId
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +209,12 @@ namespace TencentCloud
                      */
                     std::string m_serverType;
                     bool m_serverTypeHasBeenSet;
+
+                    /**
+                     * vpcId
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                 };
             }

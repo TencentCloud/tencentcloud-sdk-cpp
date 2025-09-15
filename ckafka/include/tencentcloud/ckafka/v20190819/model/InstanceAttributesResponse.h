@@ -598,15 +598,31 @@ namespace TencentCloud
                     bool CvmHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return InstanceType 类型
+                     * 获取实例类型  枚举列表: 
+profession  :专业版    
+standards2  :标准版
+premium   :高级版
+serverless  :serverless版
+                     * @return InstanceType 实例类型  枚举列表: 
+profession  :专业版    
+standards2  :标准版
+premium   :高级版
+serverless  :serverless版
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置类型
-                     * @param _instanceType 类型
+                     * 设置实例类型  枚举列表: 
+profession  :专业版    
+standards2  :标准版
+premium   :高级版
+serverless  :serverless版
+                     * @param _instanceType 实例类型  枚举列表: 
+profession  :专业版    
+standards2  :标准版
+premium   :高级版
+serverless  :serverless版
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -703,15 +719,15 @@ namespace TencentCloud
                     bool PublicNetworkHasBeenSet() const;
 
                     /**
-                     * 获取时间
-                     * @return DeleteRouteTimestamp 时间
+                     * 获取该字段已废弃,无实际含义
+                     * @return DeleteRouteTimestamp 该字段已废弃,无实际含义
                      * 
                      */
                     std::string GetDeleteRouteTimestamp() const;
 
                     /**
-                     * 设置时间
-                     * @param _deleteRouteTimestamp 时间
+                     * 设置该字段已废弃,无实际含义
+                     * @param _deleteRouteTimestamp 该字段已废弃,无实际含义
                      * 
                      */
                     void SetDeleteRouteTimestamp(const std::string& _deleteRouteTimestamp);
@@ -787,15 +803,15 @@ namespace TencentCloud
                     bool DynamicDiskConfigHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型
-                     * @return InstanceChargeType 实例计费类型
+                     * 获取实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
+                     * @return InstanceChargeType 实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费类型
-                     * @param _instanceChargeType 实例计费类型
+                     * 设置实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
+                     * @param _instanceChargeType 实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -808,15 +824,39 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
-                     * @return ClusterType 集群类型
+                     * 获取集群类型  
+CLOUD_IDC IDC集群
+CLOUD_CVM_SHARE CVM共享集群
+CLOUD_CVM_YUNTI 云梯CVM集群
+CLOUD_CVM    CVM集群
+CLOUD_CDC CDC集群
+CLOUD_EKS_TSE EKS集群
+                     * @return ClusterType 集群类型  
+CLOUD_IDC IDC集群
+CLOUD_CVM_SHARE CVM共享集群
+CLOUD_CVM_YUNTI 云梯CVM集群
+CLOUD_CVM    CVM集群
+CLOUD_CDC CDC集群
+CLOUD_EKS_TSE EKS集群
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型
-                     * @param _clusterType 集群类型
+                     * 设置集群类型  
+CLOUD_IDC IDC集群
+CLOUD_CVM_SHARE CVM共享集群
+CLOUD_CVM_YUNTI 云梯CVM集群
+CLOUD_CVM    CVM集群
+CLOUD_CDC CDC集群
+CLOUD_EKS_TSE EKS集群
+                     * @param _clusterType 集群类型  
+CLOUD_IDC IDC集群
+CLOUD_CVM_SHARE CVM共享集群
+CLOUD_CVM_YUNTI 云梯CVM集群
+CLOUD_CVM    CVM集群
+CLOUD_CDC CDC集群
+CLOUD_EKS_TSE EKS集群
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -871,15 +911,15 @@ namespace TencentCloud
                     bool ElasticFloatBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取ssl自定义证书id
-                     * @return CustomCertId ssl自定义证书id
+                     * 获取ssl自定义证书id  仅自定义证书实例集群返回
+                     * @return CustomCertId ssl自定义证书id  仅自定义证书实例集群返回
                      * 
                      */
                     std::string GetCustomCertId() const;
 
                     /**
-                     * 设置ssl自定义证书id
-                     * @param _customCertId ssl自定义证书id
+                     * 设置ssl自定义证书id  仅自定义证书实例集群返回
+                     * @param _customCertId ssl自定义证书id  仅自定义证书实例集群返回
                      * 
                      */
                     void SetCustomCertId(const std::string& _customCertId);
@@ -1092,7 +1132,11 @@ namespace TencentCloud
                     bool m_cvmHasBeenSet;
 
                     /**
-                     * 类型
+                     * 实例类型  枚举列表: 
+profession  :专业版    
+standards2  :标准版
+premium   :高级版
+serverless  :serverless版
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -1122,7 +1166,7 @@ namespace TencentCloud
                     bool m_publicNetworkHasBeenSet;
 
                     /**
-                     * 时间
+                     * 该字段已废弃,无实际含义
                      */
                     std::string m_deleteRouteTimestamp;
                     bool m_deleteRouteTimestampHasBeenSet;
@@ -1146,13 +1190,19 @@ namespace TencentCloud
                     bool m_dynamicDiskConfigHasBeenSet;
 
                     /**
-                     * 实例计费类型
+                     * 实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 集群类型
+                     * 集群类型  
+CLOUD_IDC IDC集群
+CLOUD_CVM_SHARE CVM共享集群
+CLOUD_CVM_YUNTI 云梯CVM集群
+CLOUD_CVM    CVM集群
+CLOUD_CDC CDC集群
+CLOUD_EKS_TSE EKS集群
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
@@ -1170,7 +1220,7 @@ namespace TencentCloud
                     bool m_elasticFloatBandwidthHasBeenSet;
 
                     /**
-                     * ssl自定义证书id
+                     * ssl自定义证书id  仅自定义证书实例集群返回
                      */
                     std::string m_customCertId;
                     bool m_customCertIdHasBeenSet;

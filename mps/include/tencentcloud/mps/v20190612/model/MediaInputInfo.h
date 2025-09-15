@@ -27,6 +27,7 @@
 #include <tencentcloud/mps/v20190612/model/CosInputInfo.h>
 #include <tencentcloud/mps/v20190612/model/UrlInputInfo.h>
 #include <tencentcloud/mps/v20190612/model/S3InputInfo.h>
+#include <tencentcloud/mps/v20190612/model/VODInputInfo.h>
 
 
 namespace TencentCloud
@@ -54,10 +55,12 @@ namespace TencentCloud
 <li> COS：COS源</li>
 <li> URL：URL源</li>
 <li> AWS-S3：AWS 源，目前只支持转码任务 </li>
+<li> VOD：点播专业版 </li>
                      * @return Type 输入来源对象的类型，支持：
 <li> COS：COS源</li>
 <li> URL：URL源</li>
 <li> AWS-S3：AWS 源，目前只支持转码任务 </li>
+<li> VOD：点播专业版 </li>
                      * 
                      */
                     std::string GetType() const;
@@ -67,10 +70,12 @@ namespace TencentCloud
 <li> COS：COS源</li>
 <li> URL：URL源</li>
 <li> AWS-S3：AWS 源，目前只支持转码任务 </li>
+<li> VOD：点播专业版 </li>
                      * @param _type 输入来源对象的类型，支持：
 <li> COS：COS源</li>
 <li> URL：URL源</li>
 <li> AWS-S3：AWS 源，目前只支持转码任务 </li>
+<li> VOD：点播专业版 </li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -153,6 +158,31 @@ namespace TencentCloud
                      */
                     bool S3InputInfoHasBeenSet() const;
 
+                    /**
+                     * 获取当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VODInputInfo 当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    VODInputInfo GetVODInputInfo() const;
+
+                    /**
+                     * 设置当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vODInputInfo 当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVODInputInfo(const VODInputInfo& _vODInputInfo);
+
+                    /**
+                     * 判断参数 VODInputInfo 是否已赋值
+                     * @return VODInputInfo 是否已赋值
+                     * 
+                     */
+                    bool VODInputInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,6 +190,7 @@ namespace TencentCloud
 <li> COS：COS源</li>
 <li> URL：URL源</li>
 <li> AWS-S3：AWS 源，目前只支持转码任务 </li>
+<li> VOD：点播专业版 </li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -183,6 +214,13 @@ namespace TencentCloud
                      */
                     S3InputInfo m_s3InputInfo;
                     bool m_s3InputInfoHasBeenSet;
+
+                    /**
+                     * 当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VODInputInfo m_vODInputInfo;
+                    bool m_vODInputInfoHasBeenSet;
 
                 };
             }

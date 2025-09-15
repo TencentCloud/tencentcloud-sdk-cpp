@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取消费组名称，可通过DescribeConsumerGroup接口获取。
-                     * @return Group 消费组名称，可通过DescribeConsumerGroup接口获取。
+                     * 获取消费组名称，可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取。
+                     * @return Group 消费组名称，可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取。
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置消费组名称，可通过DescribeConsumerGroup接口获取。
-                     * @param _group 消费组名称，可通过DescribeConsumerGroup接口获取。
+                     * 设置消费组名称，可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取。
+                     * @param _group 消费组名称，可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取。
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 消费组名称，可通过DescribeConsumerGroup接口获取。
+                     * 消费组名称，可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取。
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;

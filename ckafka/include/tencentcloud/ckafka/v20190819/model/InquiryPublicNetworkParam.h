@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PublicNetworkChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽, 单位MB
-                     * @return PublicNetworkMonthly 公网带宽, 单位MB
+                     * 获取公网带宽, 单位MB 取值需是0，或是3的倍数
+                     * @return PublicNetworkMonthly 公网带宽, 单位MB 取值需是0，或是3的倍数
                      * 
                      */
                     int64_t GetPublicNetworkMonthly() const;
 
                     /**
-                     * 设置公网带宽, 单位MB
-                     * @param _publicNetworkMonthly 公网带宽, 单位MB
+                     * 设置公网带宽, 单位MB 取值需是0，或是3的倍数
+                     * @param _publicNetworkMonthly 公网带宽, 单位MB 取值需是0，或是3的倍数
                      * 
                      */
                     void SetPublicNetworkMonthly(const int64_t& _publicNetworkMonthly);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_publicNetworkChargeTypeHasBeenSet;
 
                     /**
-                     * 公网带宽, 单位MB
+                     * 公网带宽, 单位MB 取值需是0，或是3的倍数
                      */
                     int64_t m_publicNetworkMonthly;
                     bool m_publicNetworkMonthlyHasBeenSet;

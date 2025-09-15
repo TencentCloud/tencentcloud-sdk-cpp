@@ -2491,6 +2491,49 @@ LighthouseClient::DescribeKeyPairsOutcomeCallable LighthouseClient::DescribeKeyP
     return task->get_future();
 }
 
+LighthouseClient::DescribeMcpServerTemplatesOutcome LighthouseClient::DescribeMcpServerTemplates(const DescribeMcpServerTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMcpServerTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMcpServerTemplatesResponse rsp = DescribeMcpServerTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMcpServerTemplatesOutcome(rsp);
+        else
+            return DescribeMcpServerTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMcpServerTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeMcpServerTemplatesAsync(const DescribeMcpServerTemplatesRequest& request, const DescribeMcpServerTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMcpServerTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeMcpServerTemplatesOutcomeCallable LighthouseClient::DescribeMcpServerTemplatesCallable(const DescribeMcpServerTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMcpServerTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMcpServerTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DescribeMcpServersOutcome LighthouseClient::DescribeMcpServers(const DescribeMcpServersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMcpServers");

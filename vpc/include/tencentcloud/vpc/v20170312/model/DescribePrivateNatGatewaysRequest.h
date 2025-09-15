@@ -65,31 +65,15 @@ namespace TencentCloud
                     bool NatGatewayIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。
-<li>NatGatewayId - String - 私网网关唯一`ID`，形如：`intranat-0g3blj80`。</li>
-<li>NatGatewayName - String - 专线网关名称，默认模糊查询。</li>
-<li>VpcId - String - 私网网关所在`VpcId`。</li>
-<li>TagKey - Tag数组 - 私网网关标签键值对数组</li>
-                     * @return Filters 过滤条件。
-<li>NatGatewayId - String - 私网网关唯一`ID`，形如：`intranat-0g3blj80`。</li>
-<li>NatGatewayName - String - 专线网关名称，默认模糊查询。</li>
-<li>VpcId - String - 私网网关所在`VpcId`。</li>
-<li>TagKey - Tag数组 - 私网网关标签键值对数组</li>
+                     * 获取过滤条件。<li>NatGatewayId - String - 私网网关唯一`ID`，形如：`intranat-0g3blj80`。</li><li>NatGatewayName - String - 专线网关名称，默认模糊查询。</li><li>VpcId - String - 私网网关所在`VpcId`。</li><li>TagKey - Tag数组 - 私网网关标签键值对数组</li><li>intranat-status - String - （过滤条件）NAT实例当前状态，形如：`AVAILABLE`。</li>
+                     * @return Filters 过滤条件。<li>NatGatewayId - String - 私网网关唯一`ID`，形如：`intranat-0g3blj80`。</li><li>NatGatewayName - String - 专线网关名称，默认模糊查询。</li><li>VpcId - String - 私网网关所在`VpcId`。</li><li>TagKey - Tag数组 - 私网网关标签键值对数组</li><li>intranat-status - String - （过滤条件）NAT实例当前状态，形如：`AVAILABLE`。</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
-<li>NatGatewayId - String - 私网网关唯一`ID`，形如：`intranat-0g3blj80`。</li>
-<li>NatGatewayName - String - 专线网关名称，默认模糊查询。</li>
-<li>VpcId - String - 私网网关所在`VpcId`。</li>
-<li>TagKey - Tag数组 - 私网网关标签键值对数组</li>
-                     * @param _filters 过滤条件。
-<li>NatGatewayId - String - 私网网关唯一`ID`，形如：`intranat-0g3blj80`。</li>
-<li>NatGatewayName - String - 专线网关名称，默认模糊查询。</li>
-<li>VpcId - String - 私网网关所在`VpcId`。</li>
-<li>TagKey - Tag数组 - 私网网关标签键值对数组</li>
+                     * 设置过滤条件。<li>NatGatewayId - String - 私网网关唯一`ID`，形如：`intranat-0g3blj80`。</li><li>NatGatewayName - String - 专线网关名称，默认模糊查询。</li><li>VpcId - String - 私网网关所在`VpcId`。</li><li>TagKey - Tag数组 - 私网网关标签键值对数组</li><li>intranat-status - String - （过滤条件）NAT实例当前状态，形如：`AVAILABLE`。</li>
+                     * @param _filters 过滤条件。<li>NatGatewayId - String - 私网网关唯一`ID`，形如：`intranat-0g3blj80`。</li><li>NatGatewayName - String - 专线网关名称，默认模糊查询。</li><li>VpcId - String - 私网网关所在`VpcId`。</li><li>TagKey - Tag数组 - 私网网关标签键值对数组</li><li>intranat-status - String - （过滤条件）NAT实例当前状态，形如：`AVAILABLE`。</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -194,11 +178,7 @@ namespace TencentCloud
                     bool m_natGatewayIdsHasBeenSet;
 
                     /**
-                     * 过滤条件。
-<li>NatGatewayId - String - 私网网关唯一`ID`，形如：`intranat-0g3blj80`。</li>
-<li>NatGatewayName - String - 专线网关名称，默认模糊查询。</li>
-<li>VpcId - String - 私网网关所在`VpcId`。</li>
-<li>TagKey - Tag数组 - 私网网关标签键值对数组</li>
+                     * 过滤条件。<li>NatGatewayId - String - 私网网关唯一`ID`，形如：`intranat-0g3blj80`。</li><li>NatGatewayName - String - 专线网关名称，默认模糊查询。</li><li>VpcId - String - 私网网关所在`VpcId`。</li><li>TagKey - Tag数组 - 私网网关标签键值对数组</li><li>intranat-status - String - （过滤条件）NAT实例当前状态，形如：`AVAILABLE`。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

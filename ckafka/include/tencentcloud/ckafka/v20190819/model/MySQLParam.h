@@ -620,15 +620,15 @@ namespace TencentCloud
                     bool DateTimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取自建
-                     * @return SelfBuilt 自建
+                     * 获取是否为自建集群
+                     * @return SelfBuilt 是否为自建集群
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
-                     * 设置自建
-                     * @param _selfBuilt 自建
+                     * 设置是否为自建集群
+                     * @param _selfBuilt 是否为自建集群
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -806,7 +806,7 @@ namespace TencentCloud
                     bool m_dateTimeZoneHasBeenSet;
 
                     /**
-                     * 自建
+                     * 是否为自建集群
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;

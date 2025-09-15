@@ -210,18 +210,18 @@ namespace TencentCloud
                     bool SegmentObjectNameHasBeenSet() const;
 
                     /**
-                     * 获取要插入的字幕文件。
+                     * 获取外挂字幕功能，指定要插入的字幕文件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AddOnSubtitles 要插入的字幕文件。
+                     * @return AddOnSubtitles 外挂字幕功能，指定要插入的字幕文件。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AddOnSubtitle> GetAddOnSubtitles() const;
 
                     /**
-                     * 设置要插入的字幕文件。
+                     * 设置外挂字幕功能，指定要插入的字幕文件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _addOnSubtitles 要插入的字幕文件。
+                     * @param _addOnSubtitles 外挂字幕功能，指定要插入的字幕文件。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -236,14 +236,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Drm信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrmInfo Drm信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DrmInfo GetDrmInfo() const;
 
                     /**
                      * 设置Drm信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _drmInfo Drm信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDrmInfo(const DrmInfo& _drmInfo);
@@ -285,18 +289,18 @@ PureAudio：纯音频类型
                     bool DefinitionTypeHasBeenSet() const;
 
                     /**
-                     * 获取字幕参数
+                     * 获取硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubtitleTemplate 字幕参数
+                     * @return SubtitleTemplate 硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SubtitleTemplate GetSubtitleTemplate() const;
 
                     /**
-                     * 设置字幕参数
+                     * 设置硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subtitleTemplate 字幕参数
+                     * @param _subtitleTemplate 硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -377,7 +381,7 @@ PureAudio：纯音频类型
                     bool m_segmentObjectNameHasBeenSet;
 
                     /**
-                     * 要插入的字幕文件。
+                     * 外挂字幕功能，指定要插入的字幕文件。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AddOnSubtitle> m_addOnSubtitles;
@@ -385,6 +389,7 @@ PureAudio：纯音频类型
 
                     /**
                      * Drm信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DrmInfo m_drmInfo;
                     bool m_drmInfoHasBeenSet;
@@ -398,7 +403,7 @@ PureAudio：纯音频类型
                     bool m_definitionTypeHasBeenSet;
 
                     /**
-                     * 字幕参数
+                     * 硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SubtitleTemplate m_subtitleTemplate;

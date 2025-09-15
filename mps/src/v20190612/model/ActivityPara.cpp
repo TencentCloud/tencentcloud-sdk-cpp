@@ -32,7 +32,8 @@ ActivityPara::ActivityPara() :
     m_aiRecognitionTaskHasBeenSet(false),
     m_qualityControlTaskHasBeenSet(false),
     m_execRulesTaskHasBeenSet(false),
-    m_smartSubtitlesTaskHasBeenSet(false)
+    m_smartSubtitlesTaskHasBeenSet(false),
+    m_smartEraseTaskHasBeenSet(false)
 {
 }
 
@@ -245,6 +246,23 @@ CoreInternalOutcome ActivityPara::Deserialize(const rapidjson::Value &value)
         m_smartSubtitlesTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("SmartEraseTask") && !value["SmartEraseTask"].IsNull())
+    {
+        if (!value["SmartEraseTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityPara.SmartEraseTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_smartEraseTask.Deserialize(value["SmartEraseTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_smartEraseTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -358,6 +376,15 @@ void ActivityPara::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_smartSubtitlesTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_smartEraseTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartEraseTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartEraseTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -553,5 +580,21 @@ void ActivityPara::SetSmartSubtitlesTask(const SmartSubtitlesTaskInput& _smartSu
 bool ActivityPara::SmartSubtitlesTaskHasBeenSet() const
 {
     return m_smartSubtitlesTaskHasBeenSet;
+}
+
+SmartEraseTaskInput ActivityPara::GetSmartEraseTask() const
+{
+    return m_smartEraseTask;
+}
+
+void ActivityPara::SetSmartEraseTask(const SmartEraseTaskInput& _smartEraseTask)
+{
+    m_smartEraseTask = _smartEraseTask;
+    m_smartEraseTaskHasBeenSet = true;
+}
+
+bool ActivityPara::SmartEraseTaskHasBeenSet() const
+{
+    return m_smartEraseTaskHasBeenSet;
 }
 

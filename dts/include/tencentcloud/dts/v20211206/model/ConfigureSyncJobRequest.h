@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool SrcInfoHasBeenSet() const;
 
                     /**
-                     * 获取源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
-                     * @return SrcInfos 源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
+                     * 获取源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。
+                     * @return SrcInfos 源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。
                      * 
                      */
                     SyncDBEndpointInfos GetSrcInfos() const;
 
                     /**
-                     * 设置源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
-                     * @param _srcInfos 源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
+                     * 设置源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。
+                     * @param _srcInfos 源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。
                      * 
                      */
                     void SetSrcInfos(const SyncDBEndpointInfos& _srcInfos);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool DstInfoHasBeenSet() const;
 
                     /**
-                     * 获取目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
-                     * @return DstInfos 目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
+                     * 获取目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。
+                     * @return DstInfos 目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。
                      * 
                      */
                     SyncDBEndpointInfos GetDstInfos() const;
 
                     /**
-                     * 设置目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
-                     * @param _dstInfos 目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
+                     * 设置目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。
+                     * @param _dstInfos 目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。
                      * 
                      */
                     void SetDstInfos(const SyncDBEndpointInfos& _dstInfos);
@@ -466,7 +466,7 @@ namespace TencentCloud
                     bool m_srcInfoHasBeenSet;
 
                     /**
-                     * 源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
+                     * 源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。
                      */
                     SyncDBEndpointInfos m_srcInfos;
                     bool m_srcInfosHasBeenSet;
@@ -484,7 +484,7 @@ namespace TencentCloud
                     bool m_dstInfoHasBeenSet;
 
                     /**
-                     * 目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
+                     * 目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。
                      */
                     SyncDBEndpointInfos m_dstInfos;
                     bool m_dstInfosHasBeenSet;

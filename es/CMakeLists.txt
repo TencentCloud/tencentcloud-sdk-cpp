@@ -234,12 +234,14 @@ set(es_public_header_model
   include/tencentcloud/es/v20250101/model/GetTextEmbeddingRequest.h
   include/tencentcloud/es/v20250101/model/ParseDocumentAsyncResponse.h
   include/tencentcloud/es/v20250101/model/ChunkDocumentResponse.h
+  include/tencentcloud/es/v20250101/model/Tool.h
   include/tencentcloud/es/v20250101/model/GetDocumentParseResultResponse.h
   include/tencentcloud/es/v20250101/model/TokenUsage.h
   include/tencentcloud/es/v20250101/model/Choice.h
   include/tencentcloud/es/v20250101/model/RunRerankRequest.h
   include/tencentcloud/es/v20250101/model/EmbeddingData.h
   include/tencentcloud/es/v20250101/model/ChunkConfig.h
+  include/tencentcloud/es/v20250101/model/ToolFunction.h
   include/tencentcloud/es/v20250101/model/ToolCallFunction.h
   include/tencentcloud/es/v20250101/model/OutputMessage.h
   include/tencentcloud/es/v20250101/model/ParseDocument.h
@@ -475,12 +477,14 @@ set(es_src
   src/v20250101/model/GetTextEmbeddingRequest.cpp
   src/v20250101/model/ParseDocumentAsyncResponse.cpp
   src/v20250101/model/ChunkDocumentResponse.cpp
+  src/v20250101/model/Tool.cpp
   src/v20250101/model/GetDocumentParseResultResponse.cpp
   src/v20250101/model/TokenUsage.cpp
   src/v20250101/model/Choice.cpp
   src/v20250101/model/RunRerankRequest.cpp
   src/v20250101/model/EmbeddingData.cpp
   src/v20250101/model/ChunkConfig.cpp
+  src/v20250101/model/ToolFunction.cpp
   src/v20250101/model/ToolCallFunction.cpp
   src/v20250101/model/OutputMessage.cpp
   src/v20250101/model/ParseDocument.cpp

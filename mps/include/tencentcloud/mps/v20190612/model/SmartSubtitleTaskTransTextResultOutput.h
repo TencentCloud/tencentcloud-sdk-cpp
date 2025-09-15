@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskTransTextSegmentItem.h>
+#include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 
 
 namespace TencentCloud
@@ -93,6 +94,27 @@ namespace TencentCloud
                      */
                     bool SubtitlePathHasBeenSet() const;
 
+                    /**
+                     * 获取字幕文件存储位置。
+                     * @return OutputStorage 字幕文件存储位置。
+                     * 
+                     */
+                    TaskOutputStorage GetOutputStorage() const;
+
+                    /**
+                     * 设置字幕文件存储位置。
+                     * @param _outputStorage 字幕文件存储位置。
+                     * 
+                     */
+                    void SetOutputStorage(const TaskOutputStorage& _outputStorage);
+
+                    /**
+                     * 判断参数 OutputStorage 是否已赋值
+                     * @return OutputStorage 是否已赋值
+                     * 
+                     */
+                    bool OutputStorageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +129,12 @@ namespace TencentCloud
                      */
                     std::string m_subtitlePath;
                     bool m_subtitlePathHasBeenSet;
+
+                    /**
+                     * 字幕文件存储位置。
+                     */
+                    TaskOutputStorage m_outputStorage;
+                    bool m_outputStorageHasBeenSet;
 
                 };
             }

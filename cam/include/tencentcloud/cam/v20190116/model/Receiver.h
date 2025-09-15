@@ -260,6 +260,27 @@ namespace TencentCloud
                      */
                     bool UinHasBeenSet() const;
 
+                    /**
+                     * 获取国家代码
+                     * @return CountryCode 国家代码
+                     * 
+                     */
+                    std::string GetCountryCode() const;
+
+                    /**
+                     * 设置国家代码
+                     * @param _countryCode 国家代码
+                     * 
+                     */
+                    void SetCountryCode(const std::string& _countryCode);
+
+                    /**
+                     * 判断参数 CountryCode 是否已赋值
+                     * @return CountryCode 是否已赋值
+                     * 
+                     */
+                    bool CountryCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -322,6 +343,12 @@ namespace TencentCloud
                      */
                     int64_t m_uin;
                     bool m_uinHasBeenSet;
+
+                    /**
+                     * 国家代码
+                     */
+                    std::string m_countryCode;
+                    bool m_countryCodeHasBeenSet;
 
                 };
             }

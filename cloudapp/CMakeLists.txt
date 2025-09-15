@@ -20,17 +20,23 @@ set(cloudapp_public_header
 
 set(cloudapp_public_header_model
   include/tencentcloud/cloudapp/v20220530/model/SaleParam.h
+  include/tencentcloud/cloudapp/v20220530/model/DescribeLicenseResponse.h
   include/tencentcloud/cloudapp/v20220530/model/VerifyLicenseRequest.h
-  include/tencentcloud/cloudapp/v20220530/model/VerifyLicenseResponse.h
   include/tencentcloud/cloudapp/v20220530/model/License.h
+  include/tencentcloud/cloudapp/v20220530/model/Filter.h
+  include/tencentcloud/cloudapp/v20220530/model/VerifyLicenseResponse.h
+  include/tencentcloud/cloudapp/v20220530/model/DescribeLicenseRequest.h
   )
 
 set(cloudapp_src
   src/v20220530/CloudappClient.cpp
   src/v20220530/model/SaleParam.cpp
+  src/v20220530/model/DescribeLicenseResponse.cpp
   src/v20220530/model/VerifyLicenseRequest.cpp
-  src/v20220530/model/VerifyLicenseResponse.cpp
   src/v20220530/model/License.cpp
+  src/v20220530/model/Filter.cpp
+  src/v20220530/model/VerifyLicenseResponse.cpp
+  src/v20220530/model/DescribeLicenseRequest.cpp
   )
 
 set(cloudapp_include

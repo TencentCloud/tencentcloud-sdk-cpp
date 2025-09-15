@@ -35,6 +35,8 @@
 #include <tencentcloud/lowcode/v20210108/model/DeleteKnowledgeSetResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/DeployAppRequest.h>
 #include <tencentcloud/lowcode/v20210108/model/DeployAppResponse.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeAppsRequest.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeAppsResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/DescribeDataSourceListRequest.h>
 #include <tencentcloud/lowcode/v20210108/model/DescribeDataSourceListResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/DescribeKnowledgeDocumentSetDetailRequest.h>
@@ -43,6 +45,10 @@
 #include <tencentcloud/lowcode/v20210108/model/DescribeKnowledgeDocumentSetListResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/DescribeKnowledgeSetListRequest.h>
 #include <tencentcloud/lowcode/v20210108/model/DescribeKnowledgeSetListResponse.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeRelatedUsersRequest.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeRelatedUsersResponse.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeResourceRoleListRequest.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeResourceRoleListResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/PutWxAppIdToWeAppRequest.h>
 #include <tencentcloud/lowcode/v20210108/model/PutWxAppIdToWeAppResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/SearchDocListRequest.h>
@@ -83,6 +89,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeployAppResponse> DeployAppOutcome;
                 typedef std::future<DeployAppOutcome> DeployAppOutcomeCallable;
                 typedef std::function<void(const LowcodeClient*, const Model::DeployAppRequest&, DeployAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppsResponse> DescribeAppsOutcome;
+                typedef std::future<DescribeAppsOutcome> DescribeAppsOutcomeCallable;
+                typedef std::function<void(const LowcodeClient*, const Model::DescribeAppsRequest&, DescribeAppsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataSourceListResponse> DescribeDataSourceListOutcome;
                 typedef std::future<DescribeDataSourceListOutcome> DescribeDataSourceListOutcomeCallable;
                 typedef std::function<void(const LowcodeClient*, const Model::DescribeDataSourceListRequest&, DescribeDataSourceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSourceListAsyncHandler;
@@ -95,6 +104,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKnowledgeSetListResponse> DescribeKnowledgeSetListOutcome;
                 typedef std::future<DescribeKnowledgeSetListOutcome> DescribeKnowledgeSetListOutcomeCallable;
                 typedef std::function<void(const LowcodeClient*, const Model::DescribeKnowledgeSetListRequest&, DescribeKnowledgeSetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKnowledgeSetListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRelatedUsersResponse> DescribeRelatedUsersOutcome;
+                typedef std::future<DescribeRelatedUsersOutcome> DescribeRelatedUsersOutcomeCallable;
+                typedef std::function<void(const LowcodeClient*, const Model::DescribeRelatedUsersRequest&, DescribeRelatedUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceRoleListResponse> DescribeResourceRoleListOutcome;
+                typedef std::future<DescribeResourceRoleListOutcome> DescribeResourceRoleListOutcomeCallable;
+                typedef std::function<void(const LowcodeClient*, const Model::DescribeResourceRoleListRequest&, DescribeResourceRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceRoleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::PutWxAppIdToWeAppResponse> PutWxAppIdToWeAppOutcome;
                 typedef std::future<PutWxAppIdToWeAppOutcome> PutWxAppIdToWeAppOutcomeCallable;
                 typedef std::function<void(const LowcodeClient*, const Model::PutWxAppIdToWeAppRequest&, PutWxAppIdToWeAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutWxAppIdToWeAppAsyncHandler;
@@ -165,6 +180,15 @@ namespace TencentCloud
                 DeployAppOutcomeCallable DeployAppCallable(const Model::DeployAppRequest& request);
 
                 /**
+                 *分页获取当前用户的应用列表
+                 * @param req DescribeAppsRequest
+                 * @return DescribeAppsOutcome
+                 */
+                DescribeAppsOutcome DescribeApps(const Model::DescribeAppsRequest &request);
+                void DescribeAppsAsync(const Model::DescribeAppsRequest& request, const DescribeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppsOutcomeCallable DescribeAppsCallable(const Model::DescribeAppsRequest& request);
+
+                /**
                  *获取数据源详情列表
                  * @param req DescribeDataSourceListRequest
                  * @return DescribeDataSourceListOutcome
@@ -199,6 +223,24 @@ namespace TencentCloud
                 DescribeKnowledgeSetListOutcome DescribeKnowledgeSetList(const Model::DescribeKnowledgeSetListRequest &request);
                 void DescribeKnowledgeSetListAsync(const Model::DescribeKnowledgeSetListRequest& request, const DescribeKnowledgeSetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKnowledgeSetListOutcomeCallable DescribeKnowledgeSetListCallable(const Model::DescribeKnowledgeSetListRequest& request);
+
+                /**
+                 *获取角色关联的用户列表
+                 * @param req DescribeRelatedUsersRequest
+                 * @return DescribeRelatedUsersOutcome
+                 */
+                DescribeRelatedUsersOutcome DescribeRelatedUsers(const Model::DescribeRelatedUsersRequest &request);
+                void DescribeRelatedUsersAsync(const Model::DescribeRelatedUsersRequest& request, const DescribeRelatedUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRelatedUsersOutcomeCallable DescribeRelatedUsersCallable(const Model::DescribeRelatedUsersRequest& request);
+
+                /**
+                 *查询资源关联的角色列表
+                 * @param req DescribeResourceRoleListRequest
+                 * @return DescribeResourceRoleListOutcome
+                 */
+                DescribeResourceRoleListOutcome DescribeResourceRoleList(const Model::DescribeResourceRoleListRequest &request);
+                void DescribeResourceRoleListAsync(const Model::DescribeResourceRoleListRequest& request, const DescribeResourceRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceRoleListOutcomeCallable DescribeResourceRoleListCallable(const Model::DescribeResourceRoleListRequest& request);
 
                 /**
                  *接口提供应用绑定微信ID功能。

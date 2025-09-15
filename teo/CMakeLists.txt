@@ -15,11 +15,29 @@
 #
 
 set(teo_public_header
-  include/tencentcloud/teo/v20220901/TeoClient.h
   include/tencentcloud/teo/v20220106/TeoClient.h
+  include/tencentcloud/teo/v20220901/TeoClient.h
   )
 
 set(teo_public_header_model
+  include/tencentcloud/teo/v20220106/model/CreatePurgeTaskResponse.h
+  include/tencentcloud/teo/v20220106/model/CreatePurgeTaskRequest.h
+  include/tencentcloud/teo/v20220106/model/DescribePurgeTasksRequest.h
+  include/tencentcloud/teo/v20220106/model/CreatePrefetchTaskResponse.h
+  include/tencentcloud/teo/v20220106/model/Zone.h
+  include/tencentcloud/teo/v20220106/model/DescribePrefetchTasksResponse.h
+  include/tencentcloud/teo/v20220106/model/Sv.h
+  include/tencentcloud/teo/v20220106/model/DescribeZonesRequest.h
+  include/tencentcloud/teo/v20220106/model/DescribeZonesResponse.h
+  include/tencentcloud/teo/v20220106/model/Header.h
+  include/tencentcloud/teo/v20220106/model/FailReason.h
+  include/tencentcloud/teo/v20220106/model/Tag.h
+  include/tencentcloud/teo/v20220106/model/CreatePrefetchTaskRequest.h
+  include/tencentcloud/teo/v20220106/model/DescribePurgeTasksResponse.h
+  include/tencentcloud/teo/v20220106/model/DescribePrefetchTasksRequest.h
+  include/tencentcloud/teo/v20220106/model/Resource.h
+  include/tencentcloud/teo/v20220106/model/ZoneFilter.h
+  include/tencentcloud/teo/v20220106/model/Task.h
   include/tencentcloud/teo/v20220901/model/DeployConfigGroupVersionRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeSecurityAPIResourceResponse.h
   include/tencentcloud/teo/v20220901/model/TopEntryValue.h
@@ -107,7 +125,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/PostMaxSizeParameters.h
   include/tencentcloud/teo/v20220901/model/S3.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventResponse.h
-  include/tencentcloud/teo/v20220901/model/DisableOriginACLRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeTimingL7OriginPullDataResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteL4ProxyRulesResponse.h
   include/tencentcloud/teo/v20220901/model/ForceRedirect.h
   include/tencentcloud/teo/v20220901/model/CodeAction.h
@@ -231,11 +249,12 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeL4ProxyRulesResponse.h
   include/tencentcloud/teo/v20220901/model/OriginHealthStatus.h
   include/tencentcloud/teo/v20220901/model/ZoneConfig.h
+  include/tencentcloud/teo/v20220901/model/DescribeTimingL7OriginPullDataRequest.h
   include/tencentcloud/teo/v20220901/model/CustomizedHeader.h
   include/tencentcloud/teo/v20220901/model/ModifyDDoSProtectionResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeFunctionsRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyDnsRecordsStatusRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyZoneRequest.h
+  include/tencentcloud/teo/v20220901/model/ManagedRuleAutoUpdate.h
   include/tencentcloud/teo/v20220901/model/CustomRule.h
   include/tencentcloud/teo/v20220901/model/BotExtendAction.h
   include/tencentcloud/teo/v20220901/model/CreatePurgeTaskResponse.h
@@ -469,6 +488,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeDnsRecordsResponse.h
   include/tencentcloud/teo/v20220901/model/CreateWebSecurityTemplateRequest.h
   include/tencentcloud/teo/v20220901/model/CreateL4ProxyRequest.h
+  include/tencentcloud/teo/v20220901/model/ModifyZoneRequest.h
   include/tencentcloud/teo/v20220901/model/CreatePlanResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeApplicationProxiesRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeContentQuotaRequest.h
@@ -565,7 +585,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeIdentificationsResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteL4ProxyResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleStatusResponse.h
-  include/tencentcloud/teo/v20220901/model/ManagedRuleAutoUpdate.h
+  include/tencentcloud/teo/v20220901/model/DisableOriginACLRequest.h
   include/tencentcloud/teo/v20220901/model/ClientIPCountryParameters.h
   include/tencentcloud/teo/v20220901/model/IncreasePlanQuotaResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeIPRegionResponse.h
@@ -703,29 +723,29 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeTimingL4DataRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeTimingL4DataResponse.h
   include/tencentcloud/teo/v20220901/model/VanityNameServersIps.h
-  include/tencentcloud/teo/v20220106/model/CreatePurgeTaskResponse.h
-  include/tencentcloud/teo/v20220106/model/CreatePurgeTaskRequest.h
-  include/tencentcloud/teo/v20220106/model/DescribePurgeTasksRequest.h
-  include/tencentcloud/teo/v20220106/model/CreatePrefetchTaskResponse.h
-  include/tencentcloud/teo/v20220106/model/Zone.h
-  include/tencentcloud/teo/v20220106/model/DescribePrefetchTasksResponse.h
-  include/tencentcloud/teo/v20220106/model/Sv.h
-  include/tencentcloud/teo/v20220106/model/DescribeZonesRequest.h
-  include/tencentcloud/teo/v20220106/model/DescribeZonesResponse.h
-  include/tencentcloud/teo/v20220106/model/Header.h
-  include/tencentcloud/teo/v20220106/model/FailReason.h
-  include/tencentcloud/teo/v20220106/model/Tag.h
-  include/tencentcloud/teo/v20220106/model/CreatePrefetchTaskRequest.h
-  include/tencentcloud/teo/v20220106/model/DescribePurgeTasksResponse.h
-  include/tencentcloud/teo/v20220106/model/DescribePrefetchTasksRequest.h
-  include/tencentcloud/teo/v20220106/model/Resource.h
-  include/tencentcloud/teo/v20220106/model/ZoneFilter.h
-  include/tencentcloud/teo/v20220106/model/Task.h
   )
 
 set(teo_src
-  src/v20220901/TeoClient.cpp
   src/v20220106/TeoClient.cpp
+  src/v20220901/TeoClient.cpp
+  src/v20220106/model/CreatePurgeTaskResponse.cpp
+  src/v20220106/model/CreatePurgeTaskRequest.cpp
+  src/v20220106/model/DescribePurgeTasksRequest.cpp
+  src/v20220106/model/CreatePrefetchTaskResponse.cpp
+  src/v20220106/model/Zone.cpp
+  src/v20220106/model/DescribePrefetchTasksResponse.cpp
+  src/v20220106/model/Sv.cpp
+  src/v20220106/model/DescribeZonesRequest.cpp
+  src/v20220106/model/DescribeZonesResponse.cpp
+  src/v20220106/model/Header.cpp
+  src/v20220106/model/FailReason.cpp
+  src/v20220106/model/Tag.cpp
+  src/v20220106/model/CreatePrefetchTaskRequest.cpp
+  src/v20220106/model/DescribePurgeTasksResponse.cpp
+  src/v20220106/model/DescribePrefetchTasksRequest.cpp
+  src/v20220106/model/Resource.cpp
+  src/v20220106/model/ZoneFilter.cpp
+  src/v20220106/model/Task.cpp
   src/v20220901/model/DeployConfigGroupVersionRequest.cpp
   src/v20220901/model/DescribeSecurityAPIResourceResponse.cpp
   src/v20220901/model/TopEntryValue.cpp
@@ -813,7 +833,7 @@ set(teo_src
   src/v20220901/model/PostMaxSizeParameters.cpp
   src/v20220901/model/S3.cpp
   src/v20220901/model/DescribeDDoSAttackEventResponse.cpp
-  src/v20220901/model/DisableOriginACLRequest.cpp
+  src/v20220901/model/DescribeTimingL7OriginPullDataResponse.cpp
   src/v20220901/model/DeleteL4ProxyRulesResponse.cpp
   src/v20220901/model/ForceRedirect.cpp
   src/v20220901/model/CodeAction.cpp
@@ -937,11 +957,12 @@ set(teo_src
   src/v20220901/model/DescribeL4ProxyRulesResponse.cpp
   src/v20220901/model/OriginHealthStatus.cpp
   src/v20220901/model/ZoneConfig.cpp
+  src/v20220901/model/DescribeTimingL7OriginPullDataRequest.cpp
   src/v20220901/model/CustomizedHeader.cpp
   src/v20220901/model/ModifyDDoSProtectionResponse.cpp
   src/v20220901/model/DescribeFunctionsRequest.cpp
   src/v20220901/model/ModifyDnsRecordsStatusRequest.cpp
-  src/v20220901/model/ModifyZoneRequest.cpp
+  src/v20220901/model/ManagedRuleAutoUpdate.cpp
   src/v20220901/model/CustomRule.cpp
   src/v20220901/model/BotExtendAction.cpp
   src/v20220901/model/CreatePurgeTaskResponse.cpp
@@ -1175,6 +1196,7 @@ set(teo_src
   src/v20220901/model/DescribeDnsRecordsResponse.cpp
   src/v20220901/model/CreateWebSecurityTemplateRequest.cpp
   src/v20220901/model/CreateL4ProxyRequest.cpp
+  src/v20220901/model/ModifyZoneRequest.cpp
   src/v20220901/model/CreatePlanResponse.cpp
   src/v20220901/model/DescribeApplicationProxiesRequest.cpp
   src/v20220901/model/DescribeContentQuotaRequest.cpp
@@ -1271,7 +1293,7 @@ set(teo_src
   src/v20220901/model/DescribeIdentificationsResponse.cpp
   src/v20220901/model/DeleteL4ProxyResponse.cpp
   src/v20220901/model/ModifyApplicationProxyRuleStatusResponse.cpp
-  src/v20220901/model/ManagedRuleAutoUpdate.cpp
+  src/v20220901/model/DisableOriginACLRequest.cpp
   src/v20220901/model/ClientIPCountryParameters.cpp
   src/v20220901/model/IncreasePlanQuotaResponse.cpp
   src/v20220901/model/DescribeIPRegionResponse.cpp
@@ -1409,24 +1431,6 @@ set(teo_src
   src/v20220901/model/DescribeTimingL4DataRequest.cpp
   src/v20220901/model/DescribeTimingL4DataResponse.cpp
   src/v20220901/model/VanityNameServersIps.cpp
-  src/v20220106/model/CreatePurgeTaskResponse.cpp
-  src/v20220106/model/CreatePurgeTaskRequest.cpp
-  src/v20220106/model/DescribePurgeTasksRequest.cpp
-  src/v20220106/model/CreatePrefetchTaskResponse.cpp
-  src/v20220106/model/Zone.cpp
-  src/v20220106/model/DescribePrefetchTasksResponse.cpp
-  src/v20220106/model/Sv.cpp
-  src/v20220106/model/DescribeZonesRequest.cpp
-  src/v20220106/model/DescribeZonesResponse.cpp
-  src/v20220106/model/Header.cpp
-  src/v20220106/model/FailReason.cpp
-  src/v20220106/model/Tag.cpp
-  src/v20220106/model/CreatePrefetchTaskRequest.cpp
-  src/v20220106/model/DescribePurgeTasksResponse.cpp
-  src/v20220106/model/DescribePrefetchTasksRequest.cpp
-  src/v20220106/model/Resource.cpp
-  src/v20220106/model/ZoneFilter.cpp
-  src/v20220106/model/Task.cpp
   )
 
 set(teo_include
@@ -1455,9 +1459,9 @@ target_link_libraries(teo
   core)
 
 #install(FILES ${teo_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/teo/v20220106)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/teo/v20220901)
 #install(FILES ${teo_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/teo/v20220106/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/teo/v20220901/model)
 install(DIRECTORY ${teo_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

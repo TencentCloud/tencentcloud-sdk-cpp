@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 在评测中使用的转码模版的信息
+                * 在评测中使用的转码模板的信息
                 */
                 class EvaluationTemplateInputInfo : public AbstractModel
                 {
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转码模版的 ID。
+                     * 获取转码模板的 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Definition 转码模版的 ID。
+                     * @return Definition 转码模板的 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置转码模版的 ID。
+                     * 设置转码模板的 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _definition 转码模版的 ID。
+                     * @param _definition 转码模板的 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 转码模版的 ID。
+                     * 转码模板的 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_definition;

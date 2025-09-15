@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/ExtractionField.h>
+#include <tencentcloud/ess/v20201111/model/ExtractionTaskResult.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取信息提取任务结果
-                     * @return Fields 信息提取任务结果
+                     * 获取合同信息提取字段信息
+                     * @return Fields 合同信息提取字段信息
                      * 
                      */
                     std::vector<ExtractionField> GetFields() const;
@@ -106,10 +107,24 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取合同信息提取结果信息
+                     * @return Results 合同信息提取结果信息
+                     * 
+                     */
+                    std::vector<ExtractionTaskResult> GetResults() const;
+
+                    /**
+                     * 判断参数 Results 是否已赋值
+                     * @return Results 是否已赋值
+                     * 
+                     */
+                    bool ResultsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 信息提取任务结果
+                     * 合同信息提取字段信息
                      */
                     std::vector<ExtractionField> m_fields;
                     bool m_fieldsHasBeenSet;
@@ -135,6 +150,12 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 合同信息提取结果信息
+                     */
+                    std::vector<ExtractionTaskResult> m_results;
+                    bool m_resultsHasBeenSet;
 
                 };
             }

@@ -63,6 +63,7 @@ namespace TencentCloud
 <li>action-AIQualityControl：媒体质检</li>
 <li>action-SmartSubtitles：智能字幕</li>
 <li>action-exec-rules：判断规则</li>
+<li>action-SmartErase：智能擦除</li>
 
 
 
@@ -81,6 +82,7 @@ namespace TencentCloud
 <li>action-AIQualityControl：媒体质检</li>
 <li>action-SmartSubtitles：智能字幕</li>
 <li>action-exec-rules：判断规则</li>
+<li>action-SmartErase：智能擦除</li>
 
 
 
@@ -104,6 +106,7 @@ namespace TencentCloud
 <li>action-AIQualityControl：媒体质检</li>
 <li>action-SmartSubtitles：智能字幕</li>
 <li>action-exec-rules：判断规则</li>
+<li>action-SmartErase：智能擦除</li>
 
 
 
@@ -122,6 +125,7 @@ namespace TencentCloud
 <li>action-AIQualityControl：媒体质检</li>
 <li>action-SmartSubtitles：智能字幕</li>
 <li>action-exec-rules：判断规则</li>
+<li>action-SmartErase：智能擦除</li>
 
 
 
@@ -200,6 +204,7 @@ namespace TencentCloud
 <li>action-AIQualityControl：媒体质检</li>
 <li>action-SmartSubtitles：智能字幕</li>
 <li>action-exec-rules：判断规则</li>
+<li>action-SmartErase：智能擦除</li>
 
 
 

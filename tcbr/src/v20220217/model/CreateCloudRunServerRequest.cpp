@@ -27,7 +27,8 @@ CreateCloudRunServerRequest::CreateCloudRunServerRequest() :
     m_serverNameHasBeenSet(false),
     m_deployInfoHasBeenSet(false),
     m_serverConfigHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_vpcInfoHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,15 @@ string CreateCloudRunServerRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_vpcInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vpcInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -173,6 +183,22 @@ void CreateCloudRunServerRequest::SetItems(const vector<DiffConfigItem>& _items)
 bool CreateCloudRunServerRequest::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+CreateVpcInfo CreateCloudRunServerRequest::GetVpcInfo() const
+{
+    return m_vpcInfo;
+}
+
+void CreateCloudRunServerRequest::SetVpcInfo(const CreateVpcInfo& _vpcInfo)
+{
+    m_vpcInfo = _vpcInfo;
+    m_vpcInfoHasBeenSet = true;
+}
+
+bool CreateCloudRunServerRequest::VpcInfoHasBeenSet() const
+{
+    return m_vpcInfoHasBeenSet;
 }
 
 

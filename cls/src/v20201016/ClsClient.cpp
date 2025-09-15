@@ -2921,6 +2921,92 @@ ClsClient::DescribeKafkaConsumerOutcomeCallable ClsClient::DescribeKafkaConsumer
     return task->get_future();
 }
 
+ClsClient::DescribeKafkaConsumerGroupDetailOutcome ClsClient::DescribeKafkaConsumerGroupDetail(const DescribeKafkaConsumerGroupDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKafkaConsumerGroupDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKafkaConsumerGroupDetailResponse rsp = DescribeKafkaConsumerGroupDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKafkaConsumerGroupDetailOutcome(rsp);
+        else
+            return DescribeKafkaConsumerGroupDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKafkaConsumerGroupDetailOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeKafkaConsumerGroupDetailAsync(const DescribeKafkaConsumerGroupDetailRequest& request, const DescribeKafkaConsumerGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKafkaConsumerGroupDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeKafkaConsumerGroupDetailOutcomeCallable ClsClient::DescribeKafkaConsumerGroupDetailCallable(const DescribeKafkaConsumerGroupDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKafkaConsumerGroupDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKafkaConsumerGroupDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeKafkaConsumerGroupListOutcome ClsClient::DescribeKafkaConsumerGroupList(const DescribeKafkaConsumerGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKafkaConsumerGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKafkaConsumerGroupListResponse rsp = DescribeKafkaConsumerGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKafkaConsumerGroupListOutcome(rsp);
+        else
+            return DescribeKafkaConsumerGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKafkaConsumerGroupListOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeKafkaConsumerGroupListAsync(const DescribeKafkaConsumerGroupListRequest& request, const DescribeKafkaConsumerGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKafkaConsumerGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeKafkaConsumerGroupListOutcomeCallable ClsClient::DescribeKafkaConsumerGroupListCallable(const DescribeKafkaConsumerGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKafkaConsumerGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKafkaConsumerGroupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribeKafkaRechargesOutcome ClsClient::DescribeKafkaRecharges(const DescribeKafkaRechargesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeKafkaRecharges");
@@ -4161,6 +4247,49 @@ ClsClient::ModifyKafkaConsumerOutcomeCallable ClsClient::ModifyKafkaConsumerCall
         [this, request]()
         {
             return this->ModifyKafkaConsumer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyKafkaConsumerGroupOffsetOutcome ClsClient::ModifyKafkaConsumerGroupOffset(const ModifyKafkaConsumerGroupOffsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyKafkaConsumerGroupOffset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyKafkaConsumerGroupOffsetResponse rsp = ModifyKafkaConsumerGroupOffsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyKafkaConsumerGroupOffsetOutcome(rsp);
+        else
+            return ModifyKafkaConsumerGroupOffsetOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyKafkaConsumerGroupOffsetOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyKafkaConsumerGroupOffsetAsync(const ModifyKafkaConsumerGroupOffsetRequest& request, const ModifyKafkaConsumerGroupOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyKafkaConsumerGroupOffset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyKafkaConsumerGroupOffsetOutcomeCallable ClsClient::ModifyKafkaConsumerGroupOffsetCallable(const ModifyKafkaConsumerGroupOffsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyKafkaConsumerGroupOffsetOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyKafkaConsumerGroupOffset(request);
         }
     );
 

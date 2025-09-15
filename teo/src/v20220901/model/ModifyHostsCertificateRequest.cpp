@@ -28,7 +28,8 @@ ModifyHostsCertificateRequest::ModifyHostsCertificateRequest() :
     m_modeHasBeenSet(false),
     m_serverCertInfoHasBeenSet(false),
     m_applyTypeHasBeenSet(false),
-    m_clientCertInfoHasBeenSet(false)
+    m_clientCertInfoHasBeenSet(false),
+    m_upstreamCertInfoHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,15 @@ string ModifyHostsCertificateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clientCertInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_upstreamCertInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamCertInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_upstreamCertInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -202,6 +212,22 @@ void ModifyHostsCertificateRequest::SetClientCertInfo(const MutualTLS& _clientCe
 bool ModifyHostsCertificateRequest::ClientCertInfoHasBeenSet() const
 {
     return m_clientCertInfoHasBeenSet;
+}
+
+UpstreamCertInfo ModifyHostsCertificateRequest::GetUpstreamCertInfo() const
+{
+    return m_upstreamCertInfo;
+}
+
+void ModifyHostsCertificateRequest::SetUpstreamCertInfo(const UpstreamCertInfo& _upstreamCertInfo)
+{
+    m_upstreamCertInfo = _upstreamCertInfo;
+    m_upstreamCertInfoHasBeenSet = true;
+}
+
+bool ModifyHostsCertificateRequest::UpstreamCertInfoHasBeenSet() const
+{
+    return m_upstreamCertInfoHasBeenSet;
 }
 
 

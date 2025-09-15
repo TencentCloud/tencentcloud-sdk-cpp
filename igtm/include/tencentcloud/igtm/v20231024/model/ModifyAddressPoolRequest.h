@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TrafficStrategyHasBeenSet() const;
 
                     /**
-                     * 获取监控器id
-                     * @return MonitorId 监控器id
+                     * 获取监控器id，当监控器已关联策略时，此字段必传
+                     * @return MonitorId 监控器id，当监控器已关联策略时，此字段必传
                      * 
                      */
                     uint64_t GetMonitorId() const;
 
                     /**
-                     * 设置监控器id
-                     * @param _monitorId 监控器id
+                     * 设置监控器id，当监控器已关联策略时，此字段必传
+                     * @param _monitorId 监控器id，当监控器已关联策略时，此字段必传
                      * 
                      */
                     void SetMonitorId(const uint64_t& _monitorId);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool MonitorIdHasBeenSet() const;
 
                     /**
-                     * 获取地址列表
-                     * @return AddressSet 地址列表
+                     * 获取地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。
+                     * @return AddressSet 地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。
                      * 
                      */
                     std::vector<Address> GetAddressSet() const;
 
                     /**
-                     * 设置地址列表
-                     * @param _addressSet 地址列表
+                     * 设置地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。
+                     * @param _addressSet 地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。
                      * 
                      */
                     void SetAddressSet(const std::vector<Address>& _addressSet);
@@ -169,13 +169,13 @@ namespace TencentCloud
                     bool m_trafficStrategyHasBeenSet;
 
                     /**
-                     * 监控器id
+                     * 监控器id，当监控器已关联策略时，此字段必传
                      */
                     uint64_t m_monitorId;
                     bool m_monitorIdHasBeenSet;
 
                     /**
-                     * 地址列表
+                     * 地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。
                      */
                     std::vector<Address> m_addressSet;
                     bool m_addressSetHasBeenSet;

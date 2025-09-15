@@ -24,7 +24,8 @@ MediaInputInfo::MediaInputInfo() :
     m_typeHasBeenSet(false),
     m_cosInputInfoHasBeenSet(false),
     m_urlInputInfoHasBeenSet(false),
-    m_s3InputInfoHasBeenSet(false)
+    m_s3InputInfoHasBeenSet(false),
+    m_vODInputInfoHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,23 @@ CoreInternalOutcome MediaInputInfo::Deserialize(const rapidjson::Value &value)
         m_s3InputInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("VODInputInfo") && !value["VODInputInfo"].IsNull())
+    {
+        if (!value["VODInputInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaInputInfo.VODInputInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vODInputInfo.Deserialize(value["VODInputInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vODInputInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +152,15 @@ void MediaInputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_s3InputInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_vODInputInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VODInputInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vODInputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -201,5 +228,21 @@ void MediaInputInfo::SetS3InputInfo(const S3InputInfo& _s3InputInfo)
 bool MediaInputInfo::S3InputInfoHasBeenSet() const
 {
     return m_s3InputInfoHasBeenSet;
+}
+
+VODInputInfo MediaInputInfo::GetVODInputInfo() const
+{
+    return m_vODInputInfo;
+}
+
+void MediaInputInfo::SetVODInputInfo(const VODInputInfo& _vODInputInfo)
+{
+    m_vODInputInfo = _vODInputInfo;
+    m_vODInputInfoHasBeenSet = true;
+}
+
+bool MediaInputInfo::VODInputInfoHasBeenSet() const
+{
+    return m_vODInputInfoHasBeenSet;
 }
 

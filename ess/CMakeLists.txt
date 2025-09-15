@@ -185,6 +185,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/BillUsageDetail.h
   include/tencentcloud/ess/v20201111/model/ExtractionField.h
   include/tencentcloud/ess/v20201111/model/DescribeUserFlowTypeResponse.h
+  include/tencentcloud/ess/v20201111/model/ExtractionFieldResult.h
   include/tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailResponse.h
   include/tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsResponse.h
@@ -205,6 +206,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationRolesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupSignReviewResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowRemindsResponse.h
+  include/tencentcloud/ess/v20201111/model/ExtractionTaskResult.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsRequest.h
   include/tencentcloud/ess/v20201111/model/Agent.h
   include/tencentcloud/ess/v20201111/model/CallbackInfo.h
@@ -537,6 +539,7 @@ set(ess_src
   src/v20201111/model/BillUsageDetail.cpp
   src/v20201111/model/ExtractionField.cpp
   src/v20201111/model/DescribeUserFlowTypeResponse.cpp
+  src/v20201111/model/ExtractionFieldResult.cpp
   src/v20201111/model/DescribeExtendedServiceAuthDetailResponse.cpp
   src/v20201111/model/CreateLegalSealQrCodeResponse.cpp
   src/v20201111/model/DescribeIntegrationDepartmentsResponse.cpp
@@ -557,6 +560,7 @@ set(ess_src
   src/v20201111/model/DescribeIntegrationRolesRequest.cpp
   src/v20201111/model/CreateFlowGroupSignReviewResponse.cpp
   src/v20201111/model/CreateFlowRemindsResponse.cpp
+  src/v20201111/model/ExtractionTaskResult.cpp
   src/v20201111/model/DescribeOrganizationGroupOrganizationsRequest.cpp
   src/v20201111/model/Agent.cpp
   src/v20201111/model/CallbackInfo.cpp

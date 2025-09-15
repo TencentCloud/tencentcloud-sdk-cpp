@@ -40,6 +40,49 @@ CloudappClient::CloudappClient(const Credential &credential, const string &regio
 }
 
 
+CloudappClient::DescribeLicenseOutcome CloudappClient::DescribeLicense(const DescribeLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLicenseResponse rsp = DescribeLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLicenseOutcome(rsp);
+        else
+            return DescribeLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLicenseOutcome(outcome.GetError());
+    }
+}
+
+void CloudappClient::DescribeLicenseAsync(const DescribeLicenseRequest& request, const DescribeLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLicense(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CloudappClient::DescribeLicenseOutcomeCallable CloudappClient::DescribeLicenseCallable(const DescribeLicenseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLicenseOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLicense(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CloudappClient::VerifyLicenseOutcome CloudappClient::VerifyLicense(const VerifyLicenseRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyLicense");

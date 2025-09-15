@@ -26,7 +26,8 @@ using namespace std;
 DescribeInformationExtractionTaskResponse::DescribeInformationExtractionTaskResponse() :
     m_fieldsHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_resultsHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,26 @@ CoreInternalOutcome DescribeInformationExtractionTaskResponse::Deserialize(const
         m_urlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Results") && !rsp["Results"].IsNull())
+    {
+        if (!rsp["Results"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Results` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Results"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ExtractionTaskResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_results.push_back(item);
+        }
+        m_resultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +164,21 @@ string DescribeInformationExtractionTaskResponse::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Results";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_results.begin(); itr != m_results.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +221,16 @@ string DescribeInformationExtractionTaskResponse::GetUrl() const
 bool DescribeInformationExtractionTaskResponse::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+vector<ExtractionTaskResult> DescribeInformationExtractionTaskResponse::GetResults() const
+{
+    return m_results;
+}
+
+bool DescribeInformationExtractionTaskResponse::ResultsHasBeenSet() const
+{
+    return m_resultsHasBeenSet;
 }
 
 

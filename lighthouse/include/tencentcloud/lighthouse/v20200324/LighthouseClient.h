@@ -137,6 +137,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeMcpServerTemplatesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeMcpServerTemplatesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeMcpServersRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeMcpServersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeModifyInstanceBundlesRequest.h>
@@ -442,6 +444,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKeyPairsResponse> DescribeKeyPairsOutcome;
                 typedef std::future<DescribeKeyPairsOutcome> DescribeKeyPairsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeKeyPairsRequest&, DescribeKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeyPairsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMcpServerTemplatesResponse> DescribeMcpServerTemplatesOutcome;
+                typedef std::future<DescribeMcpServerTemplatesOutcome> DescribeMcpServerTemplatesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeMcpServerTemplatesRequest&, DescribeMcpServerTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMcpServerTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMcpServersResponse> DescribeMcpServersOutcome;
                 typedef std::future<DescribeMcpServersOutcome> DescribeMcpServersOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeMcpServersRequest&, DescribeMcpServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMcpServersAsyncHandler;
@@ -1199,6 +1204,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeKeyPairsOutcomeCallable DescribeKeyPairsCallable(const Model::DescribeKeyPairsRequest& request);
 
                 /**
+                 *本接口（DescribeMcpServerTemplates）用于查询MCP Server模板列表。
+                 * @param req DescribeMcpServerTemplatesRequest
+                 * @return DescribeMcpServerTemplatesOutcome
+                 */
+                DescribeMcpServerTemplatesOutcome DescribeMcpServerTemplates(const Model::DescribeMcpServerTemplatesRequest &request);
+                void DescribeMcpServerTemplatesAsync(const Model::DescribeMcpServerTemplatesRequest& request, const DescribeMcpServerTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMcpServerTemplatesOutcomeCallable DescribeMcpServerTemplatesCallable(const Model::DescribeMcpServerTemplatesRequest& request);
+
+                /**
                  *本接口（DescribeMcpServers）用于查询MCP Server列表。
                  * @param req DescribeMcpServersRequest
                  * @return DescribeMcpServersOutcome
@@ -1418,7 +1432,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
 
                 /**
                  *本接口(ModifyDisksBackupQuota)用于调整云硬盘备份点配额。
-该操作目前仅支持云硬盘类型为数据盘且状态是ATTACHED（已挂载）或 UNATTACHED（待挂载）的云硬盘。
+该操作目前仅支持状态是ATTACHED（已挂载）或 UNATTACHED（待挂载）的云硬盘。
 支持批量操作。每次批量请求云硬盘数量上限为15个。
                  * @param req ModifyDisksBackupQuotaRequest
                  * @return ModifyDisksBackupQuotaOutcome

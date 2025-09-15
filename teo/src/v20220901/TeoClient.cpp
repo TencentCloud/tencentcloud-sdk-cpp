@@ -5415,6 +5415,49 @@ TeoClient::DescribeTimingL7CacheDataOutcomeCallable TeoClient::DescribeTimingL7C
     return task->get_future();
 }
 
+TeoClient::DescribeTimingL7OriginPullDataOutcome TeoClient::DescribeTimingL7OriginPullData(const DescribeTimingL7OriginPullDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTimingL7OriginPullData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTimingL7OriginPullDataResponse rsp = DescribeTimingL7OriginPullDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTimingL7OriginPullDataOutcome(rsp);
+        else
+            return DescribeTimingL7OriginPullDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTimingL7OriginPullDataOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeTimingL7OriginPullDataAsync(const DescribeTimingL7OriginPullDataRequest& request, const DescribeTimingL7OriginPullDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTimingL7OriginPullData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeTimingL7OriginPullDataOutcomeCallable TeoClient::DescribeTimingL7OriginPullDataCallable(const DescribeTimingL7OriginPullDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTimingL7OriginPullDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTimingL7OriginPullData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeTopL7AnalysisDataOutcome TeoClient::DescribeTopL7AnalysisData(const DescribeTopL7AnalysisDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopL7AnalysisData");

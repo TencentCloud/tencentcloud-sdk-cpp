@@ -27,6 +27,7 @@
 #include <tencentcloud/ess/v20201111/model/Component.h>
 #include <tencentcloud/ess/v20201111/model/ApproverOption.h>
 #include <tencentcloud/ess/v20201111/model/ComponentLimit.h>
+#include <tencentcloud/ess/v20201111/model/RegisterInfo.h>
 
 
 namespace TencentCloud
@@ -973,6 +974,31 @@ namespace TencentCloud
                      */
                     bool SignEndpointsHasBeenSet() const;
 
+                    /**
+                     * 获取快速注册相关信息
+
+                     * @return RegisterInfo 快速注册相关信息
+
+                     * 
+                     */
+                    RegisterInfo GetRegisterInfo() const;
+
+                    /**
+                     * 设置快速注册相关信息
+
+                     * @param _registerInfo 快速注册相关信息
+
+                     * 
+                     */
+                    void SetRegisterInfo(const RegisterInfo& _registerInfo);
+
+                    /**
+                     * 判断参数 RegisterInfo 是否已赋值
+                     * @return RegisterInfo 是否已赋值
+                     * 
+                     */
+                    bool RegisterInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1223,6 +1249,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_signEndpoints;
                     bool m_signEndpointsHasBeenSet;
+
+                    /**
+                     * 快速注册相关信息
+
+                     */
+                    RegisterInfo m_registerInfo;
+                    bool m_registerInfoHasBeenSet;
 
                 };
             }

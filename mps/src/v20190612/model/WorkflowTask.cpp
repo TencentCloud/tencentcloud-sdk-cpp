@@ -32,7 +32,8 @@ WorkflowTask::WorkflowTask() :
     m_aiAnalysisResultSetHasBeenSet(false),
     m_aiRecognitionResultSetHasBeenSet(false),
     m_aiQualityControlTaskResultHasBeenSet(false),
-    m_smartSubtitlesTaskResultHasBeenSet(false)
+    m_smartSubtitlesTaskResultHasBeenSet(false),
+    m_smartEraseTaskResultHasBeenSet(false)
 {
 }
 
@@ -232,6 +233,23 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
         m_smartSubtitlesTaskResultHasBeenSet = true;
     }
 
+    if (value.HasMember("SmartEraseTaskResult") && !value["SmartEraseTaskResult"].IsNull())
+    {
+        if (!value["SmartEraseTaskResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.SmartEraseTaskResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_smartEraseTaskResult.Deserialize(value["SmartEraseTaskResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_smartEraseTaskResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -371,6 +389,15 @@ void WorkflowTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_smartEraseTaskResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartEraseTaskResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartEraseTaskResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -566,5 +593,21 @@ void WorkflowTask::SetSmartSubtitlesTaskResult(const vector<SmartSubtitlesResult
 bool WorkflowTask::SmartSubtitlesTaskResultHasBeenSet() const
 {
     return m_smartSubtitlesTaskResultHasBeenSet;
+}
+
+SmartEraseTaskResult WorkflowTask::GetSmartEraseTaskResult() const
+{
+    return m_smartEraseTaskResult;
+}
+
+void WorkflowTask::SetSmartEraseTaskResult(const SmartEraseTaskResult& _smartEraseTaskResult)
+{
+    m_smartEraseTaskResult = _smartEraseTaskResult;
+    m_smartEraseTaskResultHasBeenSet = true;
+}
+
+bool WorkflowTask::SmartEraseTaskResultHasBeenSet() const
+{
+    return m_smartEraseTaskResultHasBeenSet;
 }
 

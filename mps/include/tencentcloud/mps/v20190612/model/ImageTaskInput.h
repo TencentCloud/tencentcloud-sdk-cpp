@@ -28,6 +28,7 @@
 #include <tencentcloud/mps/v20190612/model/ImageEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageEraseConfig.h>
 #include <tencentcloud/mps/v20190612/model/BlindWatermarkConfig.h>
+#include <tencentcloud/mps/v20190612/model/BeautyConfig.h>
 
 
 namespace TencentCloud
@@ -150,6 +151,27 @@ namespace TencentCloud
                      */
                     bool BlindWatermarkConfigHasBeenSet() const;
 
+                    /**
+                     * 获取美颜配置。
+                     * @return BeautyConfig 美颜配置。
+                     * 
+                     */
+                    BeautyConfig GetBeautyConfig() const;
+
+                    /**
+                     * 设置美颜配置。
+                     * @param _beautyConfig 美颜配置。
+                     * 
+                     */
+                    void SetBeautyConfig(const BeautyConfig& _beautyConfig);
+
+                    /**
+                     * 判断参数 BeautyConfig 是否已赋值
+                     * @return BeautyConfig 是否已赋值
+                     * 
+                     */
+                    bool BeautyConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +201,12 @@ namespace TencentCloud
                      */
                     BlindWatermarkConfig m_blindWatermarkConfig;
                     bool m_blindWatermarkConfigHasBeenSet;
+
+                    /**
+                     * 美颜配置。
+                     */
+                    BeautyConfig m_beautyConfig;
+                    bool m_beautyConfigHasBeenSet;
 
                 };
             }

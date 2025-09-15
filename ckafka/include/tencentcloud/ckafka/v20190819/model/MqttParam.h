@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TopicsHasBeenSet() const;
 
                     /**
-                     * 获取MQTT clean-session
-                     * @return CleanSession MQTT clean-session
+                     * 获取用于控制会话的持久性。cleanSession 为true时，连接时会创建一个全新的会话。 cleanSession = false时，连接时会恢复之前的会话。
+                     * @return CleanSession 用于控制会话的持久性。cleanSession 为true时，连接时会创建一个全新的会话。 cleanSession = false时，连接时会恢复之前的会话。
                      * 
                      */
                     bool GetCleanSession() const;
 
                     /**
-                     * 设置MQTT clean-session
-                     * @param _cleanSession MQTT clean-session
+                     * 设置用于控制会话的持久性。cleanSession 为true时，连接时会创建一个全新的会话。 cleanSession = false时，连接时会恢复之前的会话。
+                     * @param _cleanSession 用于控制会话的持久性。cleanSession 为true时，连接时会创建一个全新的会话。 cleanSession = false时，连接时会恢复之前的会话。
                      * 
                      */
                     void SetCleanSession(const bool& _cleanSession);
@@ -307,7 +307,7 @@ namespace TencentCloud
                     bool m_topicsHasBeenSet;
 
                     /**
-                     * MQTT clean-session
+                     * 用于控制会话的持久性。cleanSession 为true时，连接时会创建一个全新的会话。 cleanSession = false时，连接时会恢复之前的会话。
                      */
                     bool m_cleanSession;
                     bool m_cleanSessionHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 标准版销售信息
+                * 各版本销售信息
                 */
                 class SaleInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取手动设置的flag标志
-                     * @return Flag 手动设置的flag标志
+                     * 获取手动设置的flag标志，true表示售罄，false表示可售。
+                     * @return Flag 手动设置的flag标志，true表示售罄，false表示可售。
                      * 
                      */
                     bool GetFlag() const;
 
                     /**
-                     * 设置手动设置的flag标志
-                     * @param _flag 手动设置的flag标志
+                     * 设置手动设置的flag标志，true表示售罄，false表示可售。
+                     * @param _flag 手动设置的flag标志，true表示售罄，false表示可售。
                      * 
                      */
                     void SetFlag(const bool& _flag);
@@ -133,7 +133,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 手动设置的flag标志
+                     * 手动设置的flag标志，true表示售罄，false表示可售。
                      */
                     bool m_flag;
                     bool m_flagHasBeenSet;

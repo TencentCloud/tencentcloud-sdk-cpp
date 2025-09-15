@@ -27,7 +27,8 @@ DescribeCloudRunServersRequest::DescribeCloudRunServersRequest() :
     m_pageSizeHasBeenSet(false),
     m_pageNumHasBeenSet(false),
     m_serverNameHasBeenSet(false),
-    m_serverTypeHasBeenSet(false)
+    m_serverTypeHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeCloudRunServersRequest::ToJsonString() const
         string key = "ServerType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serverType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeCloudRunServersRequest::SetServerType(const string& _serverType)
 bool DescribeCloudRunServersRequest::ServerTypeHasBeenSet() const
 {
     return m_serverTypeHasBeenSet;
+}
+
+string DescribeCloudRunServersRequest::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void DescribeCloudRunServersRequest::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool DescribeCloudRunServersRequest::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 
 

@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取标识
-                     * @return Flag 标识
+                     * 获取可用区是否售罄标识，true表示已售罄，false表示未售罄。
+                     * @return Flag 可用区是否售罄标识，true表示已售罄，false表示未售罄。
                      * 
                      */
                     bool GetFlag() const;
 
                     /**
-                     * 设置标识
-                     * @param _flag 标识
+                     * 设置可用区是否售罄标识，true表示已售罄，false表示未售罄。
+                     * @param _flag 可用区是否售罄标识，true表示已售罄，false表示未售罄。
                      * 
                      */
                     void SetFlag(const bool& _flag);
@@ -278,7 +278,7 @@ namespace TencentCloud
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 标识
+                     * 可用区是否售罄标识，true表示已售罄，false表示未售罄。
                      */
                     bool m_flag;
                     bool m_flagHasBeenSet;
