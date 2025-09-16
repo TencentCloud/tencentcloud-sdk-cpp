@@ -45,6 +45,8 @@
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateAreaBanRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateAreaBanRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreateBatchIpAccessControlRequest.h>
+#include <tencentcloud/waf/v20180125/model/CreateBatchIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateDealsRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateDealsResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateExportRequest.h>
@@ -69,6 +71,8 @@
 #include <tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteBatchIpAccessControlRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteBatchIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteBotSceneUCBRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteBotSceneUCBRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteCCRuleRequest.h>
@@ -283,6 +287,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBatchIpAccessControlRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBatchIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotSceneStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotSceneStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotSceneUCBRuleRequest.h>
@@ -434,6 +440,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAreaBanRuleResponse> CreateAreaBanRuleOutcome;
                 typedef std::future<CreateAreaBanRuleOutcome> CreateAreaBanRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateAreaBanRuleRequest&, CreateAreaBanRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAreaBanRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchIpAccessControlResponse> CreateBatchIpAccessControlOutcome;
+                typedef std::future<CreateBatchIpAccessControlOutcome> CreateBatchIpAccessControlOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreateBatchIpAccessControlRequest&, CreateBatchIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchIpAccessControlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDealsResponse> CreateDealsOutcome;
                 typedef std::future<CreateDealsOutcome> CreateDealsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateDealsRequest&, CreateDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDealsAsyncHandler;
@@ -470,6 +479,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAttackWhiteRuleResponse> DeleteAttackWhiteRuleOutcome;
                 typedef std::future<DeleteAttackWhiteRuleOutcome> DeleteAttackWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteAttackWhiteRuleRequest&, DeleteAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAttackWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBatchIpAccessControlResponse> DeleteBatchIpAccessControlOutcome;
+                typedef std::future<DeleteBatchIpAccessControlOutcome> DeleteBatchIpAccessControlOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteBatchIpAccessControlRequest&, DeleteBatchIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBatchIpAccessControlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBotSceneUCBRuleResponse> DeleteBotSceneUCBRuleOutcome;
                 typedef std::future<DeleteBotSceneUCBRuleOutcome> DeleteBotSceneUCBRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteBotSceneUCBRuleRequest&, DeleteBotSceneUCBRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBotSceneUCBRuleAsyncHandler;
@@ -791,6 +803,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAttackWhiteRuleResponse> ModifyAttackWhiteRuleOutcome;
                 typedef std::future<ModifyAttackWhiteRuleOutcome> ModifyAttackWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAttackWhiteRuleRequest&, ModifyAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAttackWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBatchIpAccessControlResponse> ModifyBatchIpAccessControlOutcome;
+                typedef std::future<ModifyBatchIpAccessControlOutcome> ModifyBatchIpAccessControlOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyBatchIpAccessControlRequest&, ModifyBatchIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBatchIpAccessControlAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBotSceneStatusResponse> ModifyBotSceneStatusOutcome;
                 typedef std::future<ModifyBotSceneStatusOutcome> ModifyBotSceneStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyBotSceneStatusRequest&, ModifyBotSceneStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBotSceneStatusAsyncHandler;
@@ -1050,6 +1065,15 @@ namespace TencentCloud
                 CreateAreaBanRuleOutcomeCallable CreateAreaBanRuleCallable(const Model::CreateAreaBanRuleRequest& request);
 
                 /**
+                 *批量IP黑白名单新增接口
+                 * @param req CreateBatchIpAccessControlRequest
+                 * @return CreateBatchIpAccessControlOutcome
+                 */
+                CreateBatchIpAccessControlOutcome CreateBatchIpAccessControl(const Model::CreateBatchIpAccessControlRequest &request);
+                void CreateBatchIpAccessControlAsync(const Model::CreateBatchIpAccessControlRequest& request, const CreateBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchIpAccessControlOutcomeCallable CreateBatchIpAccessControlCallable(const Model::CreateBatchIpAccessControlRequest& request);
+
+                /**
                  *计费资源购买、续费下单接口
                  * @param req CreateDealsRequest
                  * @return CreateDealsOutcome
@@ -1156,6 +1180,15 @@ namespace TencentCloud
                 DeleteAttackWhiteRuleOutcome DeleteAttackWhiteRule(const Model::DeleteAttackWhiteRuleRequest &request);
                 void DeleteAttackWhiteRuleAsync(const Model::DeleteAttackWhiteRuleRequest& request, const DeleteAttackWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAttackWhiteRuleOutcomeCallable DeleteAttackWhiteRuleCallable(const Model::DeleteAttackWhiteRuleRequest& request);
+
+                /**
+                 *批量黑白名单删除接口
+                 * @param req DeleteBatchIpAccessControlRequest
+                 * @return DeleteBatchIpAccessControlOutcome
+                 */
+                DeleteBatchIpAccessControlOutcome DeleteBatchIpAccessControl(const Model::DeleteBatchIpAccessControlRequest &request);
+                void DeleteBatchIpAccessControlAsync(const Model::DeleteBatchIpAccessControlRequest& request, const DeleteBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBatchIpAccessControlOutcomeCallable DeleteBatchIpAccessControlCallable(const Model::DeleteBatchIpAccessControlRequest& request);
 
                 /**
                  *场景化后删除Bot的UCB自定义规则
@@ -2121,6 +2154,15 @@ namespace TencentCloud
                 ModifyAttackWhiteRuleOutcome ModifyAttackWhiteRule(const Model::ModifyAttackWhiteRuleRequest &request);
                 void ModifyAttackWhiteRuleAsync(const Model::ModifyAttackWhiteRuleRequest& request, const ModifyAttackWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAttackWhiteRuleOutcomeCallable ModifyAttackWhiteRuleCallable(const Model::ModifyAttackWhiteRuleRequest& request);
+
+                /**
+                 *批量IP黑白名单新增接口
+                 * @param req ModifyBatchIpAccessControlRequest
+                 * @return ModifyBatchIpAccessControlOutcome
+                 */
+                ModifyBatchIpAccessControlOutcome ModifyBatchIpAccessControl(const Model::ModifyBatchIpAccessControlRequest &request);
+                void ModifyBatchIpAccessControlAsync(const Model::ModifyBatchIpAccessControlRequest& request, const ModifyBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBatchIpAccessControlOutcomeCallable ModifyBatchIpAccessControlCallable(const Model::ModifyBatchIpAccessControlRequest& request);
 
                 /**
                  *bot子场景开关

@@ -330,6 +330,27 @@ namespace TencentCloud
                      */
                     bool SessionExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取IP版本类型。
+                     * @return IpVersion IP版本类型。
+                     * 
+                     */
+                    std::string GetIpVersion() const;
+
+                    /**
+                     * 设置IP版本类型。
+                     * @param _ipVersion IP版本类型。
+                     * 
+                     */
+                    void SetIpVersion(const std::string& _ipVersion);
+
+                    /**
+                     * 判断参数 IpVersion 是否已赋值
+                     * @return IpVersion 是否已赋值
+                     * 
+                     */
+                    bool IpVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -412,6 +433,12 @@ namespace TencentCloud
                      */
                     uint64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;
+
+                    /**
+                     * IP版本类型。
+                     */
+                    std::string m_ipVersion;
+                    bool m_ipVersionHasBeenSet;
 
                 };
             }

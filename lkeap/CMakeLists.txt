@@ -74,6 +74,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentFailedPage.h
   include/tencentcloud/lkeap/v20240522/model/SplitDocumentFailedPage.h
   include/tencentcloud/lkeap/v20240522/model/ModifyAttributeLabelResponse.h
+  include/tencentcloud/lkeap/v20240522/model/Thinking.h
   include/tencentcloud/lkeap/v20240522/model/QueryRewriteResponse.h
   include/tencentcloud/lkeap/v20240522/model/UploadDocRequest.h
   include/tencentcloud/lkeap/v20240522/model/DeleteQAsResponse.h
@@ -154,6 +155,7 @@ set(lkeap_src
   src/v20240522/model/ReconstructDocumentFailedPage.cpp
   src/v20240522/model/SplitDocumentFailedPage.cpp
   src/v20240522/model/ModifyAttributeLabelResponse.cpp
+  src/v20240522/model/Thinking.cpp
   src/v20240522/model/QueryRewriteResponse.cpp
   src/v20240522/model/UploadDocRequest.cpp
   src/v20240522/model/DeleteQAsResponse.cpp

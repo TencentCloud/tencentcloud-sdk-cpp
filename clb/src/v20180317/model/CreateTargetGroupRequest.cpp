@@ -35,7 +35,8 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_weightHasBeenSet(false),
     m_fullListenSwitchHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
-    m_sessionExpireTimeHasBeenSet(false)
+    m_sessionExpireTimeHasBeenSet(false),
+    m_ipVersionHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,14 @@ string CreateTargetGroupRequest::ToJsonString() const
         string key = "SessionExpireTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sessionExpireTime, allocator);
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ipVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -379,6 +388,22 @@ void CreateTargetGroupRequest::SetSessionExpireTime(const uint64_t& _sessionExpi
 bool CreateTargetGroupRequest::SessionExpireTimeHasBeenSet() const
 {
     return m_sessionExpireTimeHasBeenSet;
+}
+
+string CreateTargetGroupRequest::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void CreateTargetGroupRequest::SetIpVersion(const string& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 
 

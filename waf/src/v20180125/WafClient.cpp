@@ -513,6 +513,49 @@ WafClient::CreateAreaBanRuleOutcomeCallable WafClient::CreateAreaBanRuleCallable
     return task->get_future();
 }
 
+WafClient::CreateBatchIpAccessControlOutcome WafClient::CreateBatchIpAccessControl(const CreateBatchIpAccessControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchIpAccessControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchIpAccessControlResponse rsp = CreateBatchIpAccessControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchIpAccessControlOutcome(rsp);
+        else
+            return CreateBatchIpAccessControlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchIpAccessControlOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateBatchIpAccessControlAsync(const CreateBatchIpAccessControlRequest& request, const CreateBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchIpAccessControl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreateBatchIpAccessControlOutcomeCallable WafClient::CreateBatchIpAccessControlCallable(const CreateBatchIpAccessControlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchIpAccessControlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchIpAccessControl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::CreateDealsOutcome WafClient::CreateDeals(const CreateDealsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDeals");
@@ -1022,6 +1065,49 @@ WafClient::DeleteAttackWhiteRuleOutcomeCallable WafClient::DeleteAttackWhiteRule
         [this, request]()
         {
             return this->DeleteAttackWhiteRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DeleteBatchIpAccessControlOutcome WafClient::DeleteBatchIpAccessControl(const DeleteBatchIpAccessControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBatchIpAccessControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBatchIpAccessControlResponse rsp = DeleteBatchIpAccessControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBatchIpAccessControlOutcome(rsp);
+        else
+            return DeleteBatchIpAccessControlOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBatchIpAccessControlOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteBatchIpAccessControlAsync(const DeleteBatchIpAccessControlRequest& request, const DeleteBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBatchIpAccessControl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteBatchIpAccessControlOutcomeCallable WafClient::DeleteBatchIpAccessControlCallable(const DeleteBatchIpAccessControlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBatchIpAccessControlOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBatchIpAccessControl(request);
         }
     );
 
@@ -5623,6 +5709,49 @@ WafClient::ModifyAttackWhiteRuleOutcomeCallable WafClient::ModifyAttackWhiteRule
         [this, request]()
         {
             return this->ModifyAttackWhiteRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyBatchIpAccessControlOutcome WafClient::ModifyBatchIpAccessControl(const ModifyBatchIpAccessControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBatchIpAccessControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBatchIpAccessControlResponse rsp = ModifyBatchIpAccessControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBatchIpAccessControlOutcome(rsp);
+        else
+            return ModifyBatchIpAccessControlOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBatchIpAccessControlOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBatchIpAccessControlAsync(const ModifyBatchIpAccessControlRequest& request, const ModifyBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBatchIpAccessControl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyBatchIpAccessControlOutcomeCallable WafClient::ModifyBatchIpAccessControlCallable(const ModifyBatchIpAccessControlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBatchIpAccessControlOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBatchIpAccessControl(request);
         }
     );
 

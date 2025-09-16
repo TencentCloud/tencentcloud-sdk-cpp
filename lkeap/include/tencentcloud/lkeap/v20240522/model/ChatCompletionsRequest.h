@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lkeap/v20240522/model/Message.h>
+#include <tencentcloud/lkeap/v20240522/model/Thinking.h>
 
 
 namespace TencentCloud
@@ -189,6 +190,27 @@ namespace TencentCloud
                      */
                     bool EnableSearchHasBeenSet() const;
 
+                    /**
+                     * 获取思维链开关，本参数仅在deepseek v3.1时生效
+                     * @return Thinking 思维链开关，本参数仅在deepseek v3.1时生效
+                     * 
+                     */
+                    Thinking GetThinking() const;
+
+                    /**
+                     * 设置思维链开关，本参数仅在deepseek v3.1时生效
+                     * @param _thinking 思维链开关，本参数仅在deepseek v3.1时生效
+                     * 
+                     */
+                    void SetThinking(const Thinking& _thinking);
+
+                    /**
+                     * 判断参数 Thinking 是否已赋值
+                     * @return Thinking 是否已赋值
+                     * 
+                     */
+                    bool ThinkingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -231,6 +253,12 @@ namespace TencentCloud
                      */
                     bool m_enableSearch;
                     bool m_enableSearchHasBeenSet;
+
+                    /**
+                     * 思维链开关，本参数仅在deepseek v3.1时生效
+                     */
+                    Thinking m_thinking;
+                    bool m_thinkingHasBeenSet;
 
                 };
             }

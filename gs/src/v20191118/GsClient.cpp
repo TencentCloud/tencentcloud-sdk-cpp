@@ -1459,6 +1459,49 @@ GsClient::DisconnectAndroidInstanceOutcomeCallable GsClient::DisconnectAndroidIn
     return task->get_future();
 }
 
+GsClient::DistributeAndroidInstanceImageToHostsOutcome GsClient::DistributeAndroidInstanceImageToHosts(const DistributeAndroidInstanceImageToHostsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DistributeAndroidInstanceImageToHosts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DistributeAndroidInstanceImageToHostsResponse rsp = DistributeAndroidInstanceImageToHostsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DistributeAndroidInstanceImageToHostsOutcome(rsp);
+        else
+            return DistributeAndroidInstanceImageToHostsOutcome(o.GetError());
+    }
+    else
+    {
+        return DistributeAndroidInstanceImageToHostsOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DistributeAndroidInstanceImageToHostsAsync(const DistributeAndroidInstanceImageToHostsRequest& request, const DistributeAndroidInstanceImageToHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DistributeAndroidInstanceImageToHosts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DistributeAndroidInstanceImageToHostsOutcomeCallable GsClient::DistributeAndroidInstanceImageToHostsCallable(const DistributeAndroidInstanceImageToHostsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DistributeAndroidInstanceImageToHostsOutcome()>>(
+        [this, request]()
+        {
+            return this->DistributeAndroidInstanceImageToHosts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::DistributeFileToAndroidInstancesOutcome GsClient::DistributeFileToAndroidInstances(const DistributeFileToAndroidInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DistributeFileToAndroidInstances");

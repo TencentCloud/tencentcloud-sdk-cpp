@@ -126,6 +126,49 @@ Ai3dClient::QueryHunyuanTo3DProJobOutcomeCallable Ai3dClient::QueryHunyuanTo3DPr
     return task->get_future();
 }
 
+Ai3dClient::QueryHunyuanTo3DRapidJobOutcome Ai3dClient::QueryHunyuanTo3DRapidJob(const QueryHunyuanTo3DRapidJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryHunyuanTo3DRapidJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryHunyuanTo3DRapidJobResponse rsp = QueryHunyuanTo3DRapidJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryHunyuanTo3DRapidJobOutcome(rsp);
+        else
+            return QueryHunyuanTo3DRapidJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryHunyuanTo3DRapidJobOutcome(outcome.GetError());
+    }
+}
+
+void Ai3dClient::QueryHunyuanTo3DRapidJobAsync(const QueryHunyuanTo3DRapidJobRequest& request, const QueryHunyuanTo3DRapidJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryHunyuanTo3DRapidJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+Ai3dClient::QueryHunyuanTo3DRapidJobOutcomeCallable Ai3dClient::QueryHunyuanTo3DRapidJobCallable(const QueryHunyuanTo3DRapidJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryHunyuanTo3DRapidJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryHunyuanTo3DRapidJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 Ai3dClient::SubmitHunyuanTo3DJobOutcome Ai3dClient::SubmitHunyuanTo3DJob(const SubmitHunyuanTo3DJobRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitHunyuanTo3DJob");
@@ -205,6 +248,49 @@ Ai3dClient::SubmitHunyuanTo3DProJobOutcomeCallable Ai3dClient::SubmitHunyuanTo3D
         [this, request]()
         {
             return this->SubmitHunyuanTo3DProJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+Ai3dClient::SubmitHunyuanTo3DRapidJobOutcome Ai3dClient::SubmitHunyuanTo3DRapidJob(const SubmitHunyuanTo3DRapidJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitHunyuanTo3DRapidJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitHunyuanTo3DRapidJobResponse rsp = SubmitHunyuanTo3DRapidJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitHunyuanTo3DRapidJobOutcome(rsp);
+        else
+            return SubmitHunyuanTo3DRapidJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitHunyuanTo3DRapidJobOutcome(outcome.GetError());
+    }
+}
+
+void Ai3dClient::SubmitHunyuanTo3DRapidJobAsync(const SubmitHunyuanTo3DRapidJobRequest& request, const SubmitHunyuanTo3DRapidJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitHunyuanTo3DRapidJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+Ai3dClient::SubmitHunyuanTo3DRapidJobOutcomeCallable Ai3dClient::SubmitHunyuanTo3DRapidJobCallable(const SubmitHunyuanTo3DRapidJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitHunyuanTo3DRapidJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitHunyuanTo3DRapidJob(request);
         }
     );
 

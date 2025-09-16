@@ -38,7 +38,8 @@ TargetGroupInfo::TargetGroupInfo() :
     m_weightHasBeenSet(false),
     m_fullListenSwitchHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
-    m_sessionExpireTimeHasBeenSet(false)
+    m_sessionExpireTimeHasBeenSet(false),
+    m_ipVersionHasBeenSet(false)
 {
 }
 
@@ -254,6 +255,16 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
         m_sessionExpireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IpVersion") && !value["IpVersion"].IsNull())
+    {
+        if (!value["IpVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.IpVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipVersion = string(value["IpVersion"].GetString());
+        m_ipVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -418,6 +429,14 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "SessionExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sessionExpireTime, allocator);
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -709,5 +728,21 @@ void TargetGroupInfo::SetSessionExpireTime(const int64_t& _sessionExpireTime)
 bool TargetGroupInfo::SessionExpireTimeHasBeenSet() const
 {
     return m_sessionExpireTimeHasBeenSet;
+}
+
+string TargetGroupInfo::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void TargetGroupInfo::SetIpVersion(const string& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool TargetGroupInfo::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 

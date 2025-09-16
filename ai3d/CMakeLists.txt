@@ -19,30 +19,38 @@ set(ai3d_public_header
   )
 
 set(ai3d_public_header_model
-  include/tencentcloud/ai3d/v20250513/model/ViewImage.h
+  include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DRapidJobResponse.h
+  include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DRapidJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DProJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DProJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DProJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/File3D.h
+  include/tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DRapidJobResponse.h
+  include/tencentcloud/ai3d/v20250513/model/ViewImage.h
   include/tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DProJobResponse.h
-  include/tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DJobRequest.h
+  include/tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DRapidJobRequest.h
+  include/tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DJobResponse.h
   )
 
 set(ai3d_src
   src/v20250513/Ai3dClient.cpp
-  src/v20250513/model/ViewImage.cpp
+  src/v20250513/model/SubmitHunyuanTo3DRapidJobResponse.cpp
+  src/v20250513/model/SubmitHunyuanTo3DRapidJobRequest.cpp
   src/v20250513/model/SubmitHunyuanTo3DProJobResponse.cpp
   src/v20250513/model/SubmitHunyuanTo3DJobResponse.cpp
   src/v20250513/model/QueryHunyuanTo3DJobRequest.cpp
   src/v20250513/model/SubmitHunyuanTo3DProJobRequest.cpp
   src/v20250513/model/QueryHunyuanTo3DProJobRequest.cpp
   src/v20250513/model/File3D.cpp
+  src/v20250513/model/QueryHunyuanTo3DRapidJobResponse.cpp
+  src/v20250513/model/ViewImage.cpp
   src/v20250513/model/QueryHunyuanTo3DProJobResponse.cpp
-  src/v20250513/model/QueryHunyuanTo3DJobResponse.cpp
   src/v20250513/model/SubmitHunyuanTo3DJobRequest.cpp
+  src/v20250513/model/QueryHunyuanTo3DRapidJobRequest.cpp
+  src/v20250513/model/QueryHunyuanTo3DJobResponse.cpp
   )
 
 set(ai3d_include

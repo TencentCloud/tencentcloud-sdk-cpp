@@ -129,10 +129,10 @@ namespace TencentCloud
 
                     /**
                      * 获取true：仅输出自定义字段
-flase：输出默认字段+自定义字段
+false：输出默认字段+自定义字段
 默认true
                      * @return ItemNamesShowMode true：仅输出自定义字段
-flase：输出默认字段+自定义字段
+false：输出默认字段+自定义字段
 默认true
                      * 
                      */
@@ -140,10 +140,10 @@ flase：输出默认字段+自定义字段
 
                     /**
                      * 设置true：仅输出自定义字段
-flase：输出默认字段+自定义字段
+false：输出默认字段+自定义字段
 默认true
                      * @param _itemNamesShowMode true：仅输出自定义字段
-flase：输出默认字段+自定义字段
+false：输出默认字段+自定义字段
 默认true
                      * 
                      */
@@ -406,7 +406,7 @@ en时，添加的key为英语
 
                     /**
                      * true：仅输出自定义字段
-flase：输出默认字段+自定义字段
+false：输出默认字段+自定义字段
 默认true
                      */
                     bool m_itemNamesShowMode;
