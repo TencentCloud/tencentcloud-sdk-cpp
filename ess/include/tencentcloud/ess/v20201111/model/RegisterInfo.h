@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<font color="red">字段不再使用</font>，法人姓名
-                     * @return LegalName <font color="red">字段不再使用</font>，法人姓名
+                     * 获取法人姓名
+                     * @return LegalName 法人姓名
                      * 
                      */
                     std::string GetLegalName() const;
 
                     /**
-                     * 设置<font color="red">字段不再使用</font>，法人姓名
-                     * @param _legalName <font color="red">字段不再使用</font>，法人姓名
+                     * 设置法人姓名
+                     * @param _legalName 法人姓名
                      * 
                      */
                     void SetLegalName(const std::string& _legalName);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool UsccHasBeenSet() const;
 
                     /**
-                     * 获取<font color="red">字段不再使用</font>，社会统一信用代码
-                     * @return UnifiedSocialCreditCode <font color="red">字段不再使用</font>，社会统一信用代码
+                     * 获取社会统一信用代码
+                     * @return UnifiedSocialCreditCode 社会统一信用代码
                      * 
                      */
                     std::string GetUnifiedSocialCreditCode() const;
 
                     /**
-                     * 设置<font color="red">字段不再使用</font>，社会统一信用代码
-                     * @param _unifiedSocialCreditCode <font color="red">字段不再使用</font>，社会统一信用代码
+                     * 设置社会统一信用代码
+                     * @param _unifiedSocialCreditCode 社会统一信用代码
                      * 
                      */
                     void SetUnifiedSocialCreditCode(const std::string& _unifiedSocialCreditCode);
@@ -219,7 +219,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <font color="red">字段不再使用</font>，法人姓名
+                     * 法人姓名
                      */
                     std::string m_legalName;
                     bool m_legalNameHasBeenSet;
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_usccHasBeenSet;
 
                     /**
-                     * <font color="red">字段不再使用</font>，社会统一信用代码
+                     * 社会统一信用代码
                      */
                     std::string m_unifiedSocialCreditCode;
                     bool m_unifiedSocialCreditCodeHasBeenSet;

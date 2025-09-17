@@ -65,7 +65,7 @@ namespace TencentCloud
                 ConfirmVideoTranslateJobOutcomeCallable ConfirmVideoTranslateJobCallable(const Model::ConfirmVideoTranslateJobRequest& request);
 
                 /**
-                 *查询视频翻译任务
+                 *查询视频转译任务
                  * @param req DescribeVideoTranslateJobRequest
                  * @return DescribeVideoTranslateJobOutcome
                  */

@@ -50,17 +50,13 @@ namespace TencentCloud
                      * 获取类型名称。取值如下：
 
 <li>Dongjing：东京</li>
-<li>QingJiaopian：轻胶片</li>
+<li>Qingjiaopian：轻胶片</li>
 <li>Meiwei：美味</li>
-
-
                      * @return Type 类型名称。取值如下：
 
 <li>Dongjing：东京</li>
-<li>QingJiaopian：轻胶片</li>
+<li>Qingjiaopian：轻胶片</li>
 <li>Meiwei：美味</li>
-
-
                      * 
                      */
                     std::string GetType() const;
@@ -69,17 +65,13 @@ namespace TencentCloud
                      * 设置类型名称。取值如下：
 
 <li>Dongjing：东京</li>
-<li>QingJiaopian：轻胶片</li>
+<li>Qingjiaopian：轻胶片</li>
 <li>Meiwei：美味</li>
-
-
                      * @param _type 类型名称。取值如下：
 
 <li>Dongjing：东京</li>
-<li>QingJiaopian：轻胶片</li>
+<li>Qingjiaopian：轻胶片</li>
 <li>Meiwei：美味</li>
-
-
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -125,15 +117,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取效果强度，值范围：[0, 100]。
-                     * @return Value 效果强度，值范围：[0, 100]。
+                     * 获取效果强度，值范围：[-100, 100]。
+                     * @return Value 效果强度，值范围：[-100, 100]。
                      * 
                      */
                     int64_t GetValue() const;
 
                     /**
-                     * 设置效果强度，值范围：[0, 100]。
-                     * @param _value 效果强度，值范围：[0, 100]。
+                     * 设置效果强度，值范围：[-100, 100]。
+                     * @param _value 效果强度，值范围：[-100, 100]。
                      * 
                      */
                     void SetValue(const int64_t& _value);
@@ -151,10 +143,8 @@ namespace TencentCloud
                      * 类型名称。取值如下：
 
 <li>Dongjing：东京</li>
-<li>QingJiaopian：轻胶片</li>
+<li>Qingjiaopian：轻胶片</li>
 <li>Meiwei：美味</li>
-
-
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -169,7 +159,7 @@ namespace TencentCloud
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 效果强度，值范围：[0, 100]。
+                     * 效果强度，值范围：[-100, 100]。
                      */
                     int64_t m_value;
                     bool m_valueHasBeenSet;

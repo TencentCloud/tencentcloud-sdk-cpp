@@ -157,6 +157,56 @@ namespace TencentCloud
                      */
                     bool SubtitlePosHasBeenSet() const;
 
+                    /**
+                     * 获取音色克隆后的视频文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VoiceClonedVideo 音色克隆后的视频文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVoiceClonedVideo() const;
+
+                    /**
+                     * 设置音色克隆后的视频文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _voiceClonedVideo 音色克隆后的视频文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVoiceClonedVideo(const std::string& _voiceClonedVideo);
+
+                    /**
+                     * 判断参数 VoiceClonedVideo 是否已赋值
+                     * @return VoiceClonedVideo 是否已赋值
+                     * 
+                     */
+                    bool VoiceClonedVideoHasBeenSet() const;
+
+                    /**
+                     * 获取音色克隆的标注文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VoiceClonedMarkFile 音色克隆的标注文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVoiceClonedMarkFile() const;
+
+                    /**
+                     * 设置音色克隆的标注文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _voiceClonedMarkFile 音色克隆的标注文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVoiceClonedMarkFile(const std::string& _voiceClonedMarkFile);
+
+                    /**
+                     * 判断参数 VoiceClonedMarkFile 是否已赋值
+                     * @return VoiceClonedMarkFile 是否已赋值
+                     * 
+                     */
+                    bool VoiceClonedMarkFileHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +239,20 @@ namespace TencentCloud
                      */
                     SubtitlePosition m_subtitlePos;
                     bool m_subtitlePosHasBeenSet;
+
+                    /**
+                     * 音色克隆后的视频文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_voiceClonedVideo;
+                    bool m_voiceClonedVideoHasBeenSet;
+
+                    /**
+                     * 音色克隆的标注文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_voiceClonedMarkFile;
+                    bool m_voiceClonedMarkFileHasBeenSet;
 
                 };
             }

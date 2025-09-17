@@ -31,7 +31,8 @@ AiAnalysisResult::AiAnalysisResult() :
     m_segmentTaskHasBeenSet(false),
     m_headTailTaskHasBeenSet(false),
     m_descriptionTaskHasBeenSet(false),
-    m_horizontalToVerticalTaskHasBeenSet(false)
+    m_horizontalToVerticalTaskHasBeenSet(false),
+    m_dubbingTaskHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,23 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
         m_horizontalToVerticalTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("DubbingTask") && !value["DubbingTask"].IsNull())
+    {
+        if (!value["DubbingTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.DubbingTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dubbingTask.Deserialize(value["DubbingTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dubbingTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -323,6 +341,15 @@ void AiAnalysisResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_horizontalToVerticalTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dubbingTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DubbingTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dubbingTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -502,5 +529,21 @@ void AiAnalysisResult::SetHorizontalToVerticalTask(const AiAnalysisTaskHorizonta
 bool AiAnalysisResult::HorizontalToVerticalTaskHasBeenSet() const
 {
     return m_horizontalToVerticalTaskHasBeenSet;
+}
+
+AiAnalysisTaskDubbingResult AiAnalysisResult::GetDubbingTask() const
+{
+    return m_dubbingTask;
+}
+
+void AiAnalysisResult::SetDubbingTask(const AiAnalysisTaskDubbingResult& _dubbingTask)
+{
+    m_dubbingTask = _dubbingTask;
+    m_dubbingTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::DubbingTaskHasBeenSet() const
+{
+    return m_dubbingTaskHasBeenSet;
 }
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/mps/v20190612/model/EditMediaTask.h>
 #include <tencentcloud/mps/v20190612/model/WorkflowTask.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamProcessTask.h>
+#include <tencentcloud/mps/v20190612/model/ExtractBlindWatermarkTask.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleTask.h>
 #include <tencentcloud/mps/v20190612/model/LiveScheduleTask.h>
@@ -172,6 +173,20 @@ namespace TencentCloud
                      * 
                      */
                     bool LiveStreamProcessTaskHasBeenSet() const;
+
+                    /**
+                     * 获取提取数字水印任务信息，仅当 TaskType 为 ExtractBlindWatermark，该字段有值。
+                     * @return ExtractBlindWatermarkTask 提取数字水印任务信息，仅当 TaskType 为 ExtractBlindWatermark，该字段有值。
+                     * 
+                     */
+                    ExtractBlindWatermarkTask GetExtractBlindWatermarkTask() const;
+
+                    /**
+                     * 判断参数 ExtractBlindWatermarkTask 是否已赋值
+                     * @return ExtractBlindWatermarkTask 是否已赋值
+                     * 
+                     */
+                    bool ExtractBlindWatermarkTaskHasBeenSet() const;
 
                     /**
                      * 获取任务的事件通知信息。
@@ -332,6 +347,12 @@ namespace TencentCloud
                      */
                     LiveStreamProcessTask m_liveStreamProcessTask;
                     bool m_liveStreamProcessTaskHasBeenSet;
+
+                    /**
+                     * 提取数字水印任务信息，仅当 TaskType 为 ExtractBlindWatermark，该字段有值。
+                     */
+                    ExtractBlindWatermarkTask m_extractBlindWatermarkTask;
+                    bool m_extractBlindWatermarkTaskHasBeenSet;
 
                     /**
                      * 任务的事件通知信息。

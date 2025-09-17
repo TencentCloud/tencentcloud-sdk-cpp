@@ -32,6 +32,7 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_editMediaTaskHasBeenSet(false),
     m_workflowTaskHasBeenSet(false),
     m_liveStreamProcessTaskHasBeenSet(false),
+    m_extractBlindWatermarkTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -175,6 +176,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         }
 
         m_liveStreamProcessTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExtractBlindWatermarkTask") && !rsp["ExtractBlindWatermarkTask"].IsNull())
+    {
+        if (!rsp["ExtractBlindWatermarkTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractBlindWatermarkTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extractBlindWatermarkTask.Deserialize(rsp["ExtractBlindWatermarkTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extractBlindWatermarkTaskHasBeenSet = true;
     }
 
     if (rsp.HasMember("TaskNotifyConfig") && !rsp["TaskNotifyConfig"].IsNull())
@@ -345,6 +363,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         m_liveStreamProcessTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_extractBlindWatermarkTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtractBlindWatermarkTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extractBlindWatermarkTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_taskNotifyConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -494,6 +521,16 @@ LiveStreamProcessTask DescribeTaskDetailResponse::GetLiveStreamProcessTask() con
 bool DescribeTaskDetailResponse::LiveStreamProcessTaskHasBeenSet() const
 {
     return m_liveStreamProcessTaskHasBeenSet;
+}
+
+ExtractBlindWatermarkTask DescribeTaskDetailResponse::GetExtractBlindWatermarkTask() const
+{
+    return m_extractBlindWatermarkTask;
+}
+
+bool DescribeTaskDetailResponse::ExtractBlindWatermarkTaskHasBeenSet() const
+{
+    return m_extractBlindWatermarkTaskHasBeenSet;
 }
 
 TaskNotifyConfig DescribeTaskDetailResponse::GetTaskNotifyConfig() const

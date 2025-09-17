@@ -25,7 +25,9 @@ AiAnalysisTaskDelLogoOutput::AiAnalysisTaskDelLogoOutput() :
     m_outputStorageHasBeenSet(false),
     m_originSubtitlePathHasBeenSet(false),
     m_translateSubtitlePathHasBeenSet(false),
-    m_subtitlePosHasBeenSet(false)
+    m_subtitlePosHasBeenSet(false),
+    m_voiceClonedVideoHasBeenSet(false),
+    m_voiceClonedMarkFileHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,26 @@ CoreInternalOutcome AiAnalysisTaskDelLogoOutput::Deserialize(const rapidjson::Va
         m_subtitlePosHasBeenSet = true;
     }
 
+    if (value.HasMember("VoiceClonedVideo") && !value["VoiceClonedVideo"].IsNull())
+    {
+        if (!value["VoiceClonedVideo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDelLogoOutput.VoiceClonedVideo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voiceClonedVideo = string(value["VoiceClonedVideo"].GetString());
+        m_voiceClonedVideoHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoiceClonedMarkFile") && !value["VoiceClonedMarkFile"].IsNull())
+    {
+        if (!value["VoiceClonedMarkFile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDelLogoOutput.VoiceClonedMarkFile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voiceClonedMarkFile = string(value["VoiceClonedMarkFile"].GetString());
+        m_voiceClonedMarkFileHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +167,22 @@ void AiAnalysisTaskDelLogoOutput::ToJsonObject(rapidjson::Value &value, rapidjso
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_subtitlePos.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_voiceClonedVideoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceClonedVideo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voiceClonedVideo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voiceClonedMarkFileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceClonedMarkFile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voiceClonedMarkFile.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -228,5 +266,37 @@ void AiAnalysisTaskDelLogoOutput::SetSubtitlePos(const SubtitlePosition& _subtit
 bool AiAnalysisTaskDelLogoOutput::SubtitlePosHasBeenSet() const
 {
     return m_subtitlePosHasBeenSet;
+}
+
+string AiAnalysisTaskDelLogoOutput::GetVoiceClonedVideo() const
+{
+    return m_voiceClonedVideo;
+}
+
+void AiAnalysisTaskDelLogoOutput::SetVoiceClonedVideo(const string& _voiceClonedVideo)
+{
+    m_voiceClonedVideo = _voiceClonedVideo;
+    m_voiceClonedVideoHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDelLogoOutput::VoiceClonedVideoHasBeenSet() const
+{
+    return m_voiceClonedVideoHasBeenSet;
+}
+
+string AiAnalysisTaskDelLogoOutput::GetVoiceClonedMarkFile() const
+{
+    return m_voiceClonedMarkFile;
+}
+
+void AiAnalysisTaskDelLogoOutput::SetVoiceClonedMarkFile(const string& _voiceClonedMarkFile)
+{
+    m_voiceClonedMarkFile = _voiceClonedMarkFile;
+    m_voiceClonedMarkFileHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDelLogoOutput::VoiceClonedMarkFileHasBeenSet() const
+{
+    return m_voiceClonedMarkFileHasBeenSet;
 }
 

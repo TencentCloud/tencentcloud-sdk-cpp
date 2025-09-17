@@ -34,6 +34,7 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHeadTailResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDescriptionResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHorizontalToVerticalResult.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDubbingResult.h>
 
 
 namespace TencentCloud
@@ -65,6 +66,7 @@ namespace TencentCloud
 <li>Highlight：智能精彩集锦</li>
 <li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
+<li>Dubbing：智能译制</li>
                      * @return Type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
@@ -73,6 +75,7 @@ namespace TencentCloud
 <li>Highlight：智能精彩集锦</li>
 <li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
+<li>Dubbing：智能译制</li>
                      * 
                      */
                     std::string GetType() const;
@@ -86,6 +89,7 @@ namespace TencentCloud
 <li>Highlight：智能精彩集锦</li>
 <li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
+<li>Dubbing：智能译制</li>
                      * @param _type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
@@ -94,6 +98,7 @@ namespace TencentCloud
 <li>Highlight：智能精彩集锦</li>
 <li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
+<li>Dubbing：智能译制</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -355,6 +360,31 @@ namespace TencentCloud
                      */
                     bool HorizontalToVerticalTaskHasBeenSet() const;
 
+                    /**
+                     * 获取视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DubbingTask 视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiAnalysisTaskDubbingResult GetDubbingTask() const;
+
+                    /**
+                     * 设置视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dubbingTask 视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDubbingTask(const AiAnalysisTaskDubbingResult& _dubbingTask);
+
+                    /**
+                     * 判断参数 DubbingTask 是否已赋值
+                     * @return DubbingTask 是否已赋值
+                     * 
+                     */
+                    bool DubbingTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -366,6 +396,7 @@ namespace TencentCloud
 <li>Highlight：智能精彩集锦</li>
 <li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
+<li>Dubbing：智能译制</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -439,6 +470,13 @@ namespace TencentCloud
                      */
                     AiAnalysisTaskHorizontalToVerticalResult m_horizontalToVerticalTask;
                     bool m_horizontalToVerticalTaskHasBeenSet;
+
+                    /**
+                     * 视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskDubbingResult m_dubbingTask;
+                    bool m_dubbingTaskHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ ListUnsatisfiedReplyRequest::ListUnsatisfiedReplyRequest() :
     m_loginUinHasBeenSet(false),
     m_loginSubAccountUinHasBeenSet(false),
     m_queryHasBeenSet(false),
-    m_reasonsHasBeenSet(false)
+    m_reasonsHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string ListUnsatisfiedReplyRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
     }
 
 
@@ -219,6 +228,22 @@ void ListUnsatisfiedReplyRequest::SetReasons(const vector<string>& _reasons)
 bool ListUnsatisfiedReplyRequest::ReasonsHasBeenSet() const
 {
     return m_reasonsHasBeenSet;
+}
+
+int64_t ListUnsatisfiedReplyRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void ListUnsatisfiedReplyRequest::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ListUnsatisfiedReplyRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 
