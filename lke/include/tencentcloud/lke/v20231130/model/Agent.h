@@ -27,6 +27,7 @@
 #include <tencentcloud/lke/v20231130/model/AgentModelInfo.h>
 #include <tencentcloud/lke/v20231130/model/AgentToolInfo.h>
 #include <tencentcloud/lke/v20231130/model/AgentPluginInfo.h>
+#include <tencentcloud/lke/v20231130/model/AgentAdvancedConfig.h>
 
 
 namespace TencentCloud
@@ -113,15 +114,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取插件图标url
-                     * @return IconUrl 插件图标url
+                     * 获取Agent图标url
+                     * @return IconUrl Agent图标url
                      * 
                      */
                     std::string GetIconUrl() const;
 
                     /**
-                     * 设置插件图标url
-                     * @param _iconUrl 插件图标url
+                     * 设置Agent图标url
+                     * @param _iconUrl Agent图标url
                      * 
                      */
                     void SetIconUrl(const std::string& _iconUrl);
@@ -322,6 +323,27 @@ namespace TencentCloud
                      */
                     bool AgentModeHasBeenSet() const;
 
+                    /**
+                     * 获取高级设置
+                     * @return AdvancedConfig 高级设置
+                     * 
+                     */
+                    AgentAdvancedConfig GetAdvancedConfig() const;
+
+                    /**
+                     * 设置高级设置
+                     * @param _advancedConfig 高级设置
+                     * 
+                     */
+                    void SetAdvancedConfig(const AgentAdvancedConfig& _advancedConfig);
+
+                    /**
+                     * 判断参数 AdvancedConfig 是否已赋值
+                     * @return AdvancedConfig 是否已赋值
+                     * 
+                     */
+                    bool AdvancedConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -343,7 +365,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 插件图标url
+                     * Agent图标url
                      */
                     std::string m_iconUrl;
                     bool m_iconUrlHasBeenSet;
@@ -401,6 +423,12 @@ namespace TencentCloud
                      */
                     int64_t m_agentMode;
                     bool m_agentModeHasBeenSet;
+
+                    /**
+                     * 高级设置
+                     */
+                    AgentAdvancedConfig m_advancedConfig;
+                    bool m_advancedConfigHasBeenSet;
 
                 };
             }

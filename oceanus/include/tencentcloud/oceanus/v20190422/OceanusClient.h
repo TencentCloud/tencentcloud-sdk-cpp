@@ -23,10 +23,14 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/oceanus/v20190422/model/CheckConnectorNameRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CheckConnectorNameResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CheckSavepointRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CopyJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CopyJobsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateConnectorRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateConnectorResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateFolderRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateFolderResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobRequest.h>
@@ -87,12 +91,16 @@
 #include <tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/GetMetaTableRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/GetMetaTableResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyConnectorRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyConnectorResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyFolderRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyFolderResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/ParseConnectorRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/ParseConnectorResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementRequest.h>
@@ -115,12 +123,18 @@ namespace TencentCloud
                 OceanusClient(const Credential &credential, const std::string &region);
                 OceanusClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CheckConnectorNameResponse> CheckConnectorNameOutcome;
+                typedef std::future<CheckConnectorNameOutcome> CheckConnectorNameOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CheckConnectorNameRequest&, CheckConnectorNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckConnectorNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckSavepointResponse> CheckSavepointOutcome;
                 typedef std::future<CheckSavepointOutcome> CheckSavepointOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CheckSavepointRequest&, CheckSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckSavepointAsyncHandler;
                 typedef Outcome<Core::Error, Model::CopyJobsResponse> CopyJobsOutcome;
                 typedef std::future<CopyJobsOutcome> CopyJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CopyJobsRequest&, CopyJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConnectorResponse> CreateConnectorOutcome;
+                typedef std::future<CreateConnectorOutcome> CreateConnectorOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CreateConnectorRequest&, CreateConnectorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConnectorAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFolderResponse> CreateFolderOutcome;
                 typedef std::future<CreateFolderOutcome> CreateFolderOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateFolderRequest&, CreateFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFolderAsyncHandler;
@@ -211,6 +225,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetMetaTableResponse> GetMetaTableOutcome;
                 typedef std::future<GetMetaTableOutcome> GetMetaTableOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::GetMetaTableRequest&, GetMetaTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMetaTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyConnectorResponse> ModifyConnectorOutcome;
+                typedef std::future<ModifyConnectorOutcome> ModifyConnectorOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::ModifyConnectorRequest&, ModifyConnectorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConnectorAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFolderResponse> ModifyFolderOutcome;
                 typedef std::future<ModifyFolderOutcome> ModifyFolderOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::ModifyFolderRequest&, ModifyFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFolderAsyncHandler;
@@ -220,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWorkSpaceResponse> ModifyWorkSpaceOutcome;
                 typedef std::future<ModifyWorkSpaceOutcome> ModifyWorkSpaceOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::ModifyWorkSpaceRequest&, ModifyWorkSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkSpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ParseConnectorResponse> ParseConnectorOutcome;
+                typedef std::future<ParseConnectorOutcome> ParseConnectorOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::ParseConnectorRequest&, ParseConnectorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ParseConnectorAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunJobsResponse> RunJobsOutcome;
                 typedef std::future<RunJobsOutcome> RunJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::RunJobsRequest&, RunJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobsAsyncHandler;
@@ -234,6 +254,15 @@ namespace TencentCloud
                 typedef std::function<void(const OceanusClient*, const Model::TriggerJobSavepointRequest&, TriggerJobSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerJobSavepointAsyncHandler;
 
 
+
+                /**
+                 *查询资源名是否重复
+                 * @param req CheckConnectorNameRequest
+                 * @return CheckConnectorNameOutcome
+                 */
+                CheckConnectorNameOutcome CheckConnectorName(const Model::CheckConnectorNameRequest &request);
+                void CheckConnectorNameAsync(const Model::CheckConnectorNameRequest& request, const CheckConnectorNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckConnectorNameOutcomeCallable CheckConnectorNameCallable(const Model::CheckConnectorNameRequest& request);
 
                 /**
                  *检查快照是否可用
@@ -252,6 +281,15 @@ namespace TencentCloud
                 CopyJobsOutcome CopyJobs(const Model::CopyJobsRequest &request);
                 void CopyJobsAsync(const Model::CopyJobsRequest& request, const CopyJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CopyJobsOutcomeCallable CopyJobsCallable(const Model::CopyJobsRequest& request);
+
+                /**
+                 *创建Connector
+                 * @param req CreateConnectorRequest
+                 * @return CreateConnectorOutcome
+                 */
+                CreateConnectorOutcome CreateConnector(const Model::CreateConnectorRequest &request);
+                void CreateConnectorAsync(const Model::CreateConnectorRequest& request, const CreateConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConnectorOutcomeCallable CreateConnectorCallable(const Model::CreateConnectorRequest& request);
 
                 /**
                  *作业列表页面新建文件夹请求
@@ -524,6 +562,15 @@ namespace TencentCloud
                 GetMetaTableOutcomeCallable GetMetaTableCallable(const Model::GetMetaTableRequest& request);
 
                 /**
+                 *修改Connector
+                 * @param req ModifyConnectorRequest
+                 * @return ModifyConnectorOutcome
+                 */
+                ModifyConnectorOutcome ModifyConnector(const Model::ModifyConnectorRequest &request);
+                void ModifyConnectorAsync(const Model::ModifyConnectorRequest& request, const ModifyConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConnectorOutcomeCallable ModifyConnectorCallable(const Model::ModifyConnectorRequest& request);
+
+                /**
                  *自定义树状结构页面拖拽文件夹
                  * @param req ModifyFolderRequest
                  * @return ModifyFolderOutcome
@@ -557,6 +604,15 @@ namespace TencentCloud
                 ModifyWorkSpaceOutcome ModifyWorkSpace(const Model::ModifyWorkSpaceRequest &request);
                 void ModifyWorkSpaceAsync(const Model::ModifyWorkSpaceRequest& request, const ModifyWorkSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyWorkSpaceOutcomeCallable ModifyWorkSpaceCallable(const Model::ModifyWorkSpaceRequest& request);
+
+                /**
+                 *解析用户上传connector
+                 * @param req ParseConnectorRequest
+                 * @return ParseConnectorOutcome
+                 */
+                ParseConnectorOutcome ParseConnector(const Model::ParseConnectorRequest &request);
+                void ParseConnectorAsync(const Model::ParseConnectorRequest& request, const ParseConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ParseConnectorOutcomeCallable ParseConnectorCallable(const Model::ParseConnectorRequest& request);
 
                 /**
                  *批量启动或者恢复作业，批量操作数量上限20

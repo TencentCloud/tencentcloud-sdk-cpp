@@ -66,12 +66,10 @@ namespace TencentCloud
                     /**
                      * 获取只读路由策略。
 - master：表示只读路由至主节点。
-- replication：表示只读路由至从节点。
-- 默认策略：表示写主节点，读从节点。
+- replication：表示只读路由至从节点。默认值为：replication。
                      * @return ReadonlyPolicy 只读路由策略。
 - master：表示只读路由至主节点。
-- replication：表示只读路由至从节点。
-- 默认策略：表示写主节点，读从节点。
+- replication：表示只读路由至从节点。默认值为：replication。
                      * 
                      */
                     std::vector<std::string> GetReadonlyPolicy() const;
@@ -79,12 +77,10 @@ namespace TencentCloud
                     /**
                      * 设置只读路由策略。
 - master：表示只读路由至主节点。
-- replication：表示只读路由至从节点。
-- 默认策略：表示写主节点，读从节点。
+- replication：表示只读路由至从节点。默认值为：replication。
                      * @param _readonlyPolicy 只读路由策略。
 - master：表示只读路由至主节点。
-- replication：表示只读路由至从节点。
-- 默认策略：表示写主节点，读从节点。
+- replication：表示只读路由至从节点。默认值为：replication。
                      * 
                      */
                     void SetReadonlyPolicy(const std::vector<std::string>& _readonlyPolicy);
@@ -107,8 +103,7 @@ namespace TencentCloud
                     /**
                      * 只读路由策略。
 - master：表示只读路由至主节点。
-- replication：表示只读路由至从节点。
-- 默认策略：表示写主节点，读从节点。
+- replication：表示只读路由至从节点。默认值为：replication。
                      */
                     std::vector<std::string> m_readonlyPolicy;
                     bool m_readonlyPolicyHasBeenSet;

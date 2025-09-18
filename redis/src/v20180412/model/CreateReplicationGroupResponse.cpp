@@ -24,7 +24,8 @@ using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
 CreateReplicationGroupResponse::CreateReplicationGroupResponse() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateReplicationGroupResponse::Deserialize(const string &pa
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("GroupId") && !rsp["GroupId"].IsNull())
+    {
+        if (!rsp["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(rsp["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateReplicationGroupResponse::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ int64_t CreateReplicationGroupResponse::GetTaskId() const
 bool CreateReplicationGroupResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string CreateReplicationGroupResponse::GetGroupId() const
+{
+    return m_groupId;
+}
+
+bool CreateReplicationGroupResponse::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

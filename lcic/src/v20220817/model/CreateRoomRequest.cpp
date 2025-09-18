@@ -55,7 +55,8 @@ CreateRoomRequest::CreateRoomRequest() :
     m_recordLangHasBeenSet(false),
     m_recordStreamHasBeenSet(false),
     m_whiteBoardSnapshotModeHasBeenSet(false),
-    m_subtitlesTranscriptionHasBeenSet(false)
+    m_subtitlesTranscriptionHasBeenSet(false),
+    m_recordMergeHasBeenSet(false)
 {
 }
 
@@ -338,6 +339,14 @@ string CreateRoomRequest::ToJsonString() const
         string key = "SubtitlesTranscription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subtitlesTranscription, allocator);
+    }
+
+    if (m_recordMergeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordMerge";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_recordMerge, allocator);
     }
 
 
@@ -874,6 +883,22 @@ void CreateRoomRequest::SetSubtitlesTranscription(const uint64_t& _subtitlesTran
 bool CreateRoomRequest::SubtitlesTranscriptionHasBeenSet() const
 {
     return m_subtitlesTranscriptionHasBeenSet;
+}
+
+uint64_t CreateRoomRequest::GetRecordMerge() const
+{
+    return m_recordMerge;
+}
+
+void CreateRoomRequest::SetRecordMerge(const uint64_t& _recordMerge)
+{
+    m_recordMerge = _recordMerge;
+    m_recordMergeHasBeenSet = true;
+}
+
+bool CreateRoomRequest::RecordMergeHasBeenSet() const
+{
+    return m_recordMergeHasBeenSet;
 }
 
 

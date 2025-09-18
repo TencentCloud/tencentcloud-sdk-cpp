@@ -45,6 +45,7 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/DSPACosMetaDataInfo.h
   include/tencentcloud/dsgc/v20190723/model/AssessmentTemplate.h
   include/tencentcloud/dsgc/v20190723/model/ModifyDSPATaskResultRequest.h
+  include/tencentcloud/dsgc/v20190723/model/Tag.h
   include/tencentcloud/dsgc/v20190723/model/RDBAsset.h
   include/tencentcloud/dsgc/v20190723/model/DescribeAssetOverviewResponse.h
   include/tencentcloud/dsgc/v20190723/model/ReportInfo.h
@@ -433,6 +434,7 @@ set(dsgc_src
   src/v20190723/model/DSPACosMetaDataInfo.cpp
   src/v20190723/model/AssessmentTemplate.cpp
   src/v20190723/model/ModifyDSPATaskResultRequest.cpp
+  src/v20190723/model/Tag.cpp
   src/v20190723/model/RDBAsset.cpp
   src/v20190723/model/DescribeAssetOverviewResponse.cpp
   src/v20190723/model/ReportInfo.cpp

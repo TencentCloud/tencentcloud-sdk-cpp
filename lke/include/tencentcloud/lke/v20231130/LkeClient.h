@@ -155,6 +155,8 @@
 #include <tencentcloud/lke/v20231130/model/ListAppKnowledgeDetailResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListAttributeLabelRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListAttributeLabelResponse.h>
+#include <tencentcloud/lke/v20231130/model/ListChannelRequest.h>
+#include <tencentcloud/lke/v20231130/model/ListChannelResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListDocRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListDocResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListDocCateRequest.h>
@@ -447,6 +449,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListAttributeLabelResponse> ListAttributeLabelOutcome;
                 typedef std::future<ListAttributeLabelOutcome> ListAttributeLabelOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListAttributeLabelRequest&, ListAttributeLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAttributeLabelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListChannelResponse> ListChannelOutcome;
+                typedef std::future<ListChannelOutcome> ListChannelOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ListChannelRequest&, ListChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListDocResponse> ListDocOutcome;
                 typedef std::future<ListDocOutcome> ListDocOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListDocRequest&, ListDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDocAsyncHandler;
@@ -589,7 +594,7 @@ namespace TencentCloud
                 CheckAttributeLabelReferOutcomeCallable CheckAttributeLabelReferCallable(const Model::CheckAttributeLabelReferRequest& request);
 
                 /**
-                 *你创建一个Agent
+                 *创建一个Agent
                  * @param req CreateAgentRequest
                  * @return CreateAgentOutcome
                  */
@@ -1165,6 +1170,15 @@ namespace TencentCloud
                 ListAttributeLabelOutcome ListAttributeLabel(const Model::ListAttributeLabelRequest &request);
                 void ListAttributeLabelAsync(const Model::ListAttributeLabelRequest& request, const ListAttributeLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListAttributeLabelOutcomeCallable ListAttributeLabelCallable(const Model::ListAttributeLabelRequest& request);
+
+                /**
+                 *获取发布渠道列表
+                 * @param req ListChannelRequest
+                 * @return ListChannelOutcome
+                 */
+                ListChannelOutcome ListChannel(const Model::ListChannelRequest &request);
+                void ListChannelAsync(const Model::ListChannelRequest& request, const ListChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListChannelOutcomeCallable ListChannelCallable(const Model::ListChannelRequest& request);
 
                 /**
                  *文档列表

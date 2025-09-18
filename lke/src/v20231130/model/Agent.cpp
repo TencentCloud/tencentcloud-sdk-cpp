@@ -33,7 +33,8 @@ Agent::Agent() :
     m_pluginsHasBeenSet(false),
     m_isStartingAgentHasBeenSet(false),
     m_agentTypeHasBeenSet(false),
-    m_agentModeHasBeenSet(false)
+    m_agentModeHasBeenSet(false),
+    m_advancedConfigHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,23 @@ CoreInternalOutcome Agent::Deserialize(const rapidjson::Value &value)
         m_agentModeHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvancedConfig") && !value["AdvancedConfig"].IsNull())
+    {
+        if (!value["AdvancedConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Agent.AdvancedConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_advancedConfig.Deserialize(value["AdvancedConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_advancedConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -331,6 +349,15 @@ void Agent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "AgentMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_agentMode, allocator);
+    }
+
+    if (m_advancedConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_advancedConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -542,5 +569,21 @@ void Agent::SetAgentMode(const int64_t& _agentMode)
 bool Agent::AgentModeHasBeenSet() const
 {
     return m_agentModeHasBeenSet;
+}
+
+AgentAdvancedConfig Agent::GetAdvancedConfig() const
+{
+    return m_advancedConfig;
+}
+
+void Agent::SetAdvancedConfig(const AgentAdvancedConfig& _advancedConfig)
+{
+    m_advancedConfig = _advancedConfig;
+    m_advancedConfigHasBeenSet = true;
+}
+
+bool Agent::AdvancedConfigHasBeenSet() const
+{
+    return m_advancedConfigHasBeenSet;
 }
 

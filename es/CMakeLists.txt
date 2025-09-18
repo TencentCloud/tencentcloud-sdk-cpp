@@ -22,6 +22,7 @@ set(es_public_header
 set(es_public_header_model
   include/tencentcloud/es/v20180416/model/TaskDetail.h
   include/tencentcloud/es/v20180416/model/ServerlessSpaceUser.h
+  include/tencentcloud/es/v20180416/model/ServerlessIndexSettingsField.h
   include/tencentcloud/es/v20180416/model/RestartLogstashInstanceRequest.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h
   include/tencentcloud/es/v20180416/model/LogstashInstanceInfo.h
@@ -100,6 +101,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateIndexRequest.h
   include/tencentcloud/es/v20180416/model/LogstashPipelineInfo.h
   include/tencentcloud/es/v20180416/model/UpdatePluginsRequest.h
+  include/tencentcloud/es/v20180416/model/StopLogstashPipelinesResponse.h
   include/tencentcloud/es/v20180416/model/RestoreClusterSnapshotRequest.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserRequest.h
   include/tencentcloud/es/v20180416/model/Dimension.h
@@ -181,6 +183,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateCosMigrateToServerlessInstanceResponse.h
   include/tencentcloud/es/v20180416/model/RestartInstanceResponse.h
   include/tencentcloud/es/v20180416/model/BackingIndexMetaField.h
+  include/tencentcloud/es/v20180416/model/IpTimePair.h
   include/tencentcloud/es/v20180416/model/IndexSettingsField.h
   include/tencentcloud/es/v20180416/model/UpdateServerlessSpaceResponse.h
   include/tencentcloud/es/v20180416/model/UpdateLogstashPipelineDescRequest.h
@@ -190,7 +193,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupResponse.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceRequest.h
   include/tencentcloud/es/v20180416/model/CreateServerlessInstanceResponse.h
-  include/tencentcloud/es/v20180416/model/ServerlessIndexSettingsField.h
+  include/tencentcloud/es/v20180416/model/ExportIpTraceLogResponse.h
   include/tencentcloud/es/v20180416/model/DescribeDiagnoseRequest.h
   include/tencentcloud/es/v20180416/model/GpuInfo.h
   include/tencentcloud/es/v20180416/model/DescribeInstancePluginListResponse.h
@@ -201,7 +204,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpdateJdkRequest.h
   include/tencentcloud/es/v20180416/model/ServerlessDi.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessMetricsResponse.h
-  include/tencentcloud/es/v20180416/model/StopLogstashPipelinesResponse.h
+  include/tencentcloud/es/v20180416/model/ExportIpTraceLogRequest.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessInstancesRequest.h
   include/tencentcloud/es/v20180416/model/VpcInfo.h
   include/tencentcloud/es/v20180416/model/KibanaNodeInfo.h
@@ -265,6 +268,7 @@ set(es_src
   src/v20250101/EsClient.cpp
   src/v20180416/model/TaskDetail.cpp
   src/v20180416/model/ServerlessSpaceUser.cpp
+  src/v20180416/model/ServerlessIndexSettingsField.cpp
   src/v20180416/model/RestartLogstashInstanceRequest.cpp
   src/v20180416/model/DescribeInstanceOperationsRequest.cpp
   src/v20180416/model/LogstashInstanceInfo.cpp
@@ -343,6 +347,7 @@ set(es_src
   src/v20180416/model/CreateIndexRequest.cpp
   src/v20180416/model/LogstashPipelineInfo.cpp
   src/v20180416/model/UpdatePluginsRequest.cpp
+  src/v20180416/model/StopLogstashPipelinesResponse.cpp
   src/v20180416/model/RestoreClusterSnapshotRequest.cpp
   src/v20180416/model/DescribeServerlessSpaceUserRequest.cpp
   src/v20180416/model/Dimension.cpp
@@ -424,6 +429,7 @@ set(es_src
   src/v20180416/model/CreateCosMigrateToServerlessInstanceResponse.cpp
   src/v20180416/model/RestartInstanceResponse.cpp
   src/v20180416/model/BackingIndexMetaField.cpp
+  src/v20180416/model/IpTimePair.cpp
   src/v20180416/model/IndexSettingsField.cpp
   src/v20180416/model/UpdateServerlessSpaceResponse.cpp
   src/v20180416/model/UpdateLogstashPipelineDescRequest.cpp
@@ -433,7 +439,7 @@ set(es_src
   src/v20180416/model/ModifyEsVipSecurityGroupResponse.cpp
   src/v20180416/model/UpdateInstanceRequest.cpp
   src/v20180416/model/CreateServerlessInstanceResponse.cpp
-  src/v20180416/model/ServerlessIndexSettingsField.cpp
+  src/v20180416/model/ExportIpTraceLogResponse.cpp
   src/v20180416/model/DescribeDiagnoseRequest.cpp
   src/v20180416/model/GpuInfo.cpp
   src/v20180416/model/DescribeInstancePluginListResponse.cpp
@@ -444,7 +450,7 @@ set(es_src
   src/v20180416/model/UpdateJdkRequest.cpp
   src/v20180416/model/ServerlessDi.cpp
   src/v20180416/model/DescribeServerlessMetricsResponse.cpp
-  src/v20180416/model/StopLogstashPipelinesResponse.cpp
+  src/v20180416/model/ExportIpTraceLogRequest.cpp
   src/v20180416/model/DescribeServerlessInstancesRequest.cpp
   src/v20180416/model/VpcInfo.cpp
   src/v20180416/model/KibanaNodeInfo.cpp

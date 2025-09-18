@@ -143,18 +143,18 @@ blacklist：黑名单
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取IP 黑白名单分路径配置，白名单功能。黑白名单 IP 总数不能超过 1000 个。
+                     * 获取IP 黑白名单分路径配置。黑白名单 IP 总数不能超过 1000 个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FilterRules IP 黑白名单分路径配置，白名单功能。黑白名单 IP 总数不能超过 1000 个。
+                     * @return FilterRules IP 黑白名单分路径配置。黑白名单 IP 总数不能超过 1000 个。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IpFilterPathRule> GetFilterRules() const;
 
                     /**
-                     * 设置IP 黑白名单分路径配置，白名单功能。黑白名单 IP 总数不能超过 1000 个。
+                     * 设置IP 黑白名单分路径配置。黑白名单 IP 总数不能超过 1000 个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _filterRules IP 黑白名单分路径配置，白名单功能。黑白名单 IP 总数不能超过 1000 个。
+                     * @param _filterRules IP 黑白名单分路径配置。黑白名单 IP 总数不能超过 1000 个。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -221,7 +221,7 @@ blacklist：黑名单
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * IP 黑白名单分路径配置，白名单功能。黑白名单 IP 总数不能超过 1000 个。
+                     * IP 黑白名单分路径配置。黑白名单 IP 总数不能超过 1000 个。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IpFilterPathRule> m_filterRules;

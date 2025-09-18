@@ -26,7 +26,8 @@ CreateClsLogTopicRequest::CreateClsLogTopicRequest() :
     m_topicNameHasBeenSet(false),
     m_logsetIdHasBeenSet(false),
     m_channelHasBeenSet(false),
-    m_domainAreaConfigsHasBeenSet(false)
+    m_domainAreaConfigsHasBeenSet(false),
+    m_inheritDomainTagsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string CreateClsLogTopicRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_inheritDomainTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InheritDomainTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_inheritDomainTags, allocator);
     }
 
 
@@ -146,6 +155,22 @@ void CreateClsLogTopicRequest::SetDomainAreaConfigs(const vector<DomainAreaConfi
 bool CreateClsLogTopicRequest::DomainAreaConfigsHasBeenSet() const
 {
     return m_domainAreaConfigsHasBeenSet;
+}
+
+bool CreateClsLogTopicRequest::GetInheritDomainTags() const
+{
+    return m_inheritDomainTags;
+}
+
+void CreateClsLogTopicRequest::SetInheritDomainTags(const bool& _inheritDomainTags)
+{
+    m_inheritDomainTags = _inheritDomainTags;
+    m_inheritDomainTagsHasBeenSet = true;
+}
+
+bool CreateClsLogTopicRequest::InheritDomainTagsHasBeenSet() const
+{
+    return m_inheritDomainTagsHasBeenSet;
 }
 
 

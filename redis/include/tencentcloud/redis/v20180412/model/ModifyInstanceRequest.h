@@ -101,15 +101,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例的新名称。
-                     * @return InstanceNames 实例的新名称。
+                     * 获取实例的新名称。名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-。
+                     * @return InstanceNames 实例的新名称。名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-。
                      * 
                      */
                     std::vector<std::string> GetInstanceNames() const;
 
                     /**
-                     * 设置实例的新名称。
-                     * @param _instanceNames 实例的新名称。
+                     * 设置实例的新名称。名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-。
+                     * @param _instanceNames 实例的新名称。名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-。
                      * 
                      */
                     void SetInstanceNames(const std::vector<std::string>& _instanceNames);
@@ -278,7 +278,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 实例的新名称。
+                     * 实例的新名称。名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-。
                      */
                     std::vector<std::string> m_instanceNames;
                     bool m_instanceNamesHasBeenSet;

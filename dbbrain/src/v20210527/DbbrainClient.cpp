@@ -1717,6 +1717,49 @@ DbbrainClient::DescribeHealthScoreOutcomeCallable DbbrainClient::DescribeHealthS
     return task->get_future();
 }
 
+DbbrainClient::DescribeHealthScoreTimeSeriesOutcome DbbrainClient::DescribeHealthScoreTimeSeries(const DescribeHealthScoreTimeSeriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHealthScoreTimeSeries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHealthScoreTimeSeriesResponse rsp = DescribeHealthScoreTimeSeriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHealthScoreTimeSeriesOutcome(rsp);
+        else
+            return DescribeHealthScoreTimeSeriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHealthScoreTimeSeriesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeHealthScoreTimeSeriesAsync(const DescribeHealthScoreTimeSeriesRequest& request, const DescribeHealthScoreTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHealthScoreTimeSeries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeHealthScoreTimeSeriesOutcomeCallable DbbrainClient::DescribeHealthScoreTimeSeriesCallable(const DescribeHealthScoreTimeSeriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHealthScoreTimeSeriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHealthScoreTimeSeries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeIndexRecommendAggregationSlowLogsOutcome DbbrainClient::DescribeIndexRecommendAggregationSlowLogs(const DescribeIndexRecommendAggregationSlowLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIndexRecommendAggregationSlowLogs");
@@ -2312,6 +2355,49 @@ DbbrainClient::DescribeRedisTopBigKeysOutcomeCallable DbbrainClient::DescribeRed
         [this, request]()
         {
             return this->DescribeRedisTopBigKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeRedisTopCostCommandsOutcome DbbrainClient::DescribeRedisTopCostCommands(const DescribeRedisTopCostCommandsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisTopCostCommands");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisTopCostCommandsResponse rsp = DescribeRedisTopCostCommandsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisTopCostCommandsOutcome(rsp);
+        else
+            return DescribeRedisTopCostCommandsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisTopCostCommandsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisTopCostCommandsAsync(const DescribeRedisTopCostCommandsRequest& request, const DescribeRedisTopCostCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisTopCostCommands(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisTopCostCommandsOutcomeCallable DbbrainClient::DescribeRedisTopCostCommandsCallable(const DescribeRedisTopCostCommandsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisTopCostCommandsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisTopCostCommands(request);
         }
     );
 

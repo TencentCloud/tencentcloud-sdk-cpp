@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool ChannelHasBeenSet() const;
 
+                    /**
+                     * 获取是否继承域名标签, 默认保留上一次更改的值
+                     * @return InheritDomainTags 是否继承域名标签, 默认保留上一次更改的值
+                     * 
+                     */
+                    bool GetInheritDomainTags() const;
+
+                    /**
+                     * 设置是否继承域名标签, 默认保留上一次更改的值
+                     * @param _inheritDomainTags 是否继承域名标签, 默认保留上一次更改的值
+                     * 
+                     */
+                    void SetInheritDomainTags(const bool& _inheritDomainTags);
+
+                    /**
+                     * 判断参数 InheritDomainTags 是否已赋值
+                     * @return InheritDomainTags 是否已赋值
+                     * 
+                     */
+                    bool InheritDomainTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
+
+                    /**
+                     * 是否继承域名标签, 默认保留上一次更改的值
+                     */
+                    bool m_inheritDomainTags;
+                    bool m_inheritDomainTagsHasBeenSet;
 
                 };
             }

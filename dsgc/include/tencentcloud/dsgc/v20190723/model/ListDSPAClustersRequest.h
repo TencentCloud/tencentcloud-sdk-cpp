@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dsgc/v20190723/model/DspaDataSourceMngFilter.h>
+#include <tencentcloud/dsgc/v20190723/model/Tag.h>
 
 
 namespace TencentCloud
@@ -127,6 +128,27 @@ Channel支持的可选值：sp_cds_dsgc_pre（代表dsgc实例）、sp_cds_dsgc_
                     bool FiltersHasBeenSet() const;
 
                     /**
+                     * 获取Tag键值过滤
+                     * @return TagFilter Tag键值过滤
+                     * 
+                     */
+                    std::vector<Tag> GetTagFilter() const;
+
+                    /**
+                     * 设置Tag键值过滤
+                     * @param _tagFilter Tag键值过滤
+                     * 
+                     */
+                    void SetTagFilter(const std::vector<Tag>& _tagFilter);
+
+                    /**
+                     * 判断参数 TagFilter 是否已赋值
+                     * @return TagFilter 是否已赋值
+                     * 
+                     */
+                    bool TagFilterHasBeenSet() const;
+
+                    /**
                      * 获取展示模式。
 
 目前只有两个值的处理逻辑：
@@ -195,6 +217,12 @@ Channel支持的可选值：sp_cds_dsgc_pre（代表dsgc实例）、sp_cds_dsgc_
                      */
                     std::vector<DspaDataSourceMngFilter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * Tag键值过滤
+                     */
+                    std::vector<Tag> m_tagFilter;
+                    bool m_tagFilterHasBeenSet;
 
                     /**
                      * 展示模式。

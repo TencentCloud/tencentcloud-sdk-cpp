@@ -158,15 +158,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID。请登录控制台，在<b>安全组</b>页面获取安全组 ID 信息。
-                     * @return SecurityGroupIdList 安全组ID。请登录控制台，在<b>安全组</b>页面获取安全组 ID 信息。
+                     * 获取安全组ID。请通过 [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447) 接口获取实例的安全组 ID。
+                     * @return SecurityGroupIdList 安全组ID。请通过 [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447) 接口获取实例的安全组 ID。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIdList() const;
 
                     /**
-                     * 设置安全组ID。请登录控制台，在<b>安全组</b>页面获取安全组 ID 信息。
-                     * @param _securityGroupIdList 安全组ID。请登录控制台，在<b>安全组</b>页面获取安全组 ID 信息。
+                     * 设置安全组ID。请通过 [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447) 接口获取实例的安全组 ID。
+                     * @param _securityGroupIdList 安全组ID。请通过 [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447) 接口获取实例的安全组 ID。
                      * 
                      */
                     void SetSecurityGroupIdList(const std::vector<std::string>& _securityGroupIdList);
@@ -544,7 +544,7 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 安全组ID。请登录控制台，在<b>安全组</b>页面获取安全组 ID 信息。
+                     * 安全组ID。请通过 [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447) 接口获取实例的安全组 ID。
                      */
                     std::vector<std::string> m_securityGroupIdList;
                     bool m_securityGroupIdListHasBeenSet;

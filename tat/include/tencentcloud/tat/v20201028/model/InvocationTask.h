@@ -397,6 +397,27 @@ namespace TencentCloud
                      */
                     bool InvocationSourceHasBeenSet() const;
 
+                    /**
+                     * 获取执行的命令的名称。
+                     * @return CommandName 执行的命令的名称。
+                     * 
+                     */
+                    std::string GetCommandName() const;
+
+                    /**
+                     * 设置执行的命令的名称。
+                     * @param _commandName 执行的命令的名称。
+                     * 
+                     */
+                    void SetCommandName(const std::string& _commandName);
+
+                    /**
+                     * 判断参数 CommandName 是否已赋值
+                     * @return CommandName 是否已赋值
+                     * 
+                     */
+                    bool CommandNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -495,6 +516,12 @@ namespace TencentCloud
                      */
                     std::string m_invocationSource;
                     bool m_invocationSourceHasBeenSet;
+
+                    /**
+                     * 执行的命令的名称。
+                     */
+                    std::string m_commandName;
+                    bool m_commandNameHasBeenSet;
 
                 };
             }

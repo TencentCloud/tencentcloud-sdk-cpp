@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DescHasBeenSet() const;
 
                     /**
-                     * 获取渠道业务ID
-                     * @return ChannelBizIds 渠道业务ID
+                     * 获取渠道业务ID，从ListChannel接口的响应字段ChannelId获取
+                     * @return ChannelBizIds 渠道业务ID，从ListChannel接口的响应字段ChannelId获取
                      * 
                      */
                     std::vector<std::string> GetChannelBizIds() const;
 
                     /**
-                     * 设置渠道业务ID
-                     * @param _channelBizIds 渠道业务ID
+                     * 设置渠道业务ID，从ListChannel接口的响应字段ChannelId获取
+                     * @param _channelBizIds 渠道业务ID，从ListChannel接口的响应字段ChannelId获取
                      * 
                      */
                     void SetChannelBizIds(const std::vector<std::string>& _channelBizIds);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_descHasBeenSet;
 
                     /**
-                     * 渠道业务ID
+                     * 渠道业务ID，从ListChannel接口的响应字段ChannelId获取
                      */
                     std::vector<std::string> m_channelBizIds;
                     bool m_channelBizIdsHasBeenSet;

@@ -97,27 +97,15 @@ last：表示回源层节点
                     bool LayerHasBeenSet() const;
 
                     /**
-                     * 获取查询区域：
-mainland: 国内节点
-overseas: 海外节点
-global: 全球节点
-                     * @return Area 查询区域：
-mainland: 国内节点
-overseas: 海外节点
-global: 全球节点
+                     * 获取查询区域：mainland: 中国境内节点overseas: 海外节点global: 全球节点
+                     * @return Area 查询区域：mainland: 中国境内节点overseas: 海外节点global: 全球节点
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置查询区域：
-mainland: 国内节点
-overseas: 海外节点
-global: 全球节点
-                     * @param _area 查询区域：
-mainland: 国内节点
-overseas: 海外节点
-global: 全球节点
+                     * 设置查询区域：mainland: 中国境内节点overseas: 海外节点global: 全球节点
+                     * @param _area 查询区域：mainland: 中国境内节点overseas: 海外节点global: 全球节点
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -210,10 +198,7 @@ last：表示回源层节点
                     bool m_layerHasBeenSet;
 
                     /**
-                     * 查询区域：
-mainland: 国内节点
-overseas: 海外节点
-global: 全球节点
+                     * 查询区域：mainland: 中国境内节点overseas: 海外节点global: 全球节点
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

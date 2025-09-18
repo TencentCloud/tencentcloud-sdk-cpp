@@ -2878,6 +2878,49 @@ LkeClient::ListAttributeLabelOutcomeCallable LkeClient::ListAttributeLabelCallab
     return task->get_future();
 }
 
+LkeClient::ListChannelOutcome LkeClient::ListChannel(const ListChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListChannelResponse rsp = ListChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListChannelOutcome(rsp);
+        else
+            return ListChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return ListChannelOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListChannelAsync(const ListChannelRequest& request, const ListChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListChannel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListChannelOutcomeCallable LkeClient::ListChannelCallable(const ListChannelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListChannelOutcome()>>(
+        [this, request]()
+        {
+            return this->ListChannel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::ListDocOutcome LkeClient::ListDoc(const ListDocRequest &request)
 {
     auto outcome = MakeRequest(request, "ListDoc");

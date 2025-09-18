@@ -40,6 +40,49 @@ OceanusClient::OceanusClient(const Credential &credential, const string &region,
 }
 
 
+OceanusClient::CheckConnectorNameOutcome OceanusClient::CheckConnectorName(const CheckConnectorNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckConnectorName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckConnectorNameResponse rsp = CheckConnectorNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckConnectorNameOutcome(rsp);
+        else
+            return CheckConnectorNameOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckConnectorNameOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::CheckConnectorNameAsync(const CheckConnectorNameRequest& request, const CheckConnectorNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckConnectorName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::CheckConnectorNameOutcomeCallable OceanusClient::CheckConnectorNameCallable(const CheckConnectorNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckConnectorNameOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckConnectorName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::CheckSavepointOutcome OceanusClient::CheckSavepoint(const CheckSavepointRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckSavepoint");
@@ -119,6 +162,49 @@ OceanusClient::CopyJobsOutcomeCallable OceanusClient::CopyJobsCallable(const Cop
         [this, request]()
         {
             return this->CopyJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::CreateConnectorOutcome OceanusClient::CreateConnector(const CreateConnectorRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConnector");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConnectorResponse rsp = CreateConnectorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConnectorOutcome(rsp);
+        else
+            return CreateConnectorOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConnectorOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::CreateConnectorAsync(const CreateConnectorRequest& request, const CreateConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConnector(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::CreateConnectorOutcomeCallable OceanusClient::CreateConnectorCallable(const CreateConnectorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConnectorOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConnector(request);
         }
     );
 
@@ -1416,6 +1502,49 @@ OceanusClient::GetMetaTableOutcomeCallable OceanusClient::GetMetaTableCallable(c
     return task->get_future();
 }
 
+OceanusClient::ModifyConnectorOutcome OceanusClient::ModifyConnector(const ModifyConnectorRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConnector");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConnectorResponse rsp = ModifyConnectorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConnectorOutcome(rsp);
+        else
+            return ModifyConnectorOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConnectorOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::ModifyConnectorAsync(const ModifyConnectorRequest& request, const ModifyConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConnector(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::ModifyConnectorOutcomeCallable OceanusClient::ModifyConnectorCallable(const ModifyConnectorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConnectorOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConnector(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::ModifyFolderOutcome OceanusClient::ModifyFolder(const ModifyFolderRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyFolder");
@@ -1538,6 +1667,49 @@ OceanusClient::ModifyWorkSpaceOutcomeCallable OceanusClient::ModifyWorkSpaceCall
         [this, request]()
         {
             return this->ModifyWorkSpace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::ParseConnectorOutcome OceanusClient::ParseConnector(const ParseConnectorRequest &request)
+{
+    auto outcome = MakeRequest(request, "ParseConnector");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ParseConnectorResponse rsp = ParseConnectorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ParseConnectorOutcome(rsp);
+        else
+            return ParseConnectorOutcome(o.GetError());
+    }
+    else
+    {
+        return ParseConnectorOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::ParseConnectorAsync(const ParseConnectorRequest& request, const ParseConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ParseConnector(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::ParseConnectorOutcomeCallable OceanusClient::ParseConnectorCallable(const ParseConnectorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ParseConnectorOutcome()>>(
+        [this, request]()
+        {
+            return this->ParseConnector(request);
         }
     );
 

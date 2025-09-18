@@ -1545,6 +1545,49 @@ EsClient::DiagnoseInstanceOutcomeCallable EsClient::DiagnoseInstanceCallable(con
     return task->get_future();
 }
 
+EsClient::ExportIpTraceLogOutcome EsClient::ExportIpTraceLog(const ExportIpTraceLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportIpTraceLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportIpTraceLogResponse rsp = ExportIpTraceLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportIpTraceLogOutcome(rsp);
+        else
+            return ExportIpTraceLogOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportIpTraceLogOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::ExportIpTraceLogAsync(const ExportIpTraceLogRequest& request, const ExportIpTraceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportIpTraceLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::ExportIpTraceLogOutcomeCallable EsClient::ExportIpTraceLogCallable(const ExportIpTraceLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportIpTraceLogOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportIpTraceLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::GetDiagnoseSettingsOutcome EsClient::GetDiagnoseSettings(const GetDiagnoseSettingsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetDiagnoseSettings");

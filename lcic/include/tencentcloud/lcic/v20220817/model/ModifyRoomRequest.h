@@ -706,6 +706,48 @@ video 纯视频
                      */
                     bool SubtitlesTranscriptionHasBeenSet() const;
 
+                    /**
+                     * 获取嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * @return Guests 嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * 
+                     */
+                    std::vector<std::string> GetGuests() const;
+
+                    /**
+                     * 设置嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * @param _guests 嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * 
+                     */
+                    void SetGuests(const std::vector<std::string>& _guests);
+
+                    /**
+                     * 判断参数 Guests 是否已赋值
+                     * @return Guests 是否已赋值
+                     * 
+                     */
+                    bool GuestsHasBeenSet() const;
+
+                    /**
+                     * 获取录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * @return RecordMerge 录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * 
+                     */
+                    uint64_t GetRecordMerge() const;
+
+                    /**
+                     * 设置录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * @param _recordMerge 录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * 
+                     */
+                    void SetRecordMerge(const uint64_t& _recordMerge);
+
+                    /**
+                     * 判断参数 RecordMerge 是否已赋值
+                     * @return RecordMerge 是否已赋值
+                     * 
+                     */
+                    bool RecordMergeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -894,6 +936,18 @@ video 纯视频
                      */
                     uint64_t m_subtitlesTranscription;
                     bool m_subtitlesTranscriptionHasBeenSet;
+
+                    /**
+                     * 嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     */
+                    std::vector<std::string> m_guests;
+                    bool m_guestsHasBeenSet;
+
+                    /**
+                     * 录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     */
+                    uint64_t m_recordMerge;
+                    bool m_recordMergeHasBeenSet;
 
                 };
             }

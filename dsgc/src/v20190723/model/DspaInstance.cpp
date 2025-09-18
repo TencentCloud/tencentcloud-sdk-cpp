@@ -38,7 +38,8 @@ DspaInstance::DspaInstance() :
     m_renewFlagHasBeenSet(false),
     m_channelHasBeenSet(false),
     m_insAuthCountHasBeenSet(false),
-    m_insTotalQuotaHasBeenSet(false)
+    m_insTotalQuotaHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,26 @@ CoreInternalOutcome DspaInstance::Deserialize(const rapidjson::Value &value)
         m_insTotalQuotaHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DspaInstance.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +397,21 @@ void DspaInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "InsTotalQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_insTotalQuota, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -667,5 +703,21 @@ void DspaInstance::SetInsTotalQuota(const int64_t& _insTotalQuota)
 bool DspaInstance::InsTotalQuotaHasBeenSet() const
 {
     return m_insTotalQuotaHasBeenSet;
+}
+
+vector<Tag> DspaInstance::GetTags() const
+{
+    return m_tags;
+}
+
+void DspaInstance::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DspaInstance::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

@@ -25,7 +25,9 @@ InstanceProxySlowlogDetail::InstanceProxySlowlogDetail() :
     m_clientHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_commandLineHasBeenSet(false),
-    m_executeTimeHasBeenSet(false)
+    m_executeTimeHasBeenSet(false),
+    m_recvClientEndHasBeenSet(false),
+    m_sendClientEndHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome InstanceProxySlowlogDetail::Deserialize(const rapidjson::Val
         m_executeTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RecvClientEnd") && !value["RecvClientEnd"].IsNull())
+    {
+        if (!value["RecvClientEnd"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceProxySlowlogDetail.RecvClientEnd` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recvClientEnd = value["RecvClientEnd"].GetInt64();
+        m_recvClientEndHasBeenSet = true;
+    }
+
+    if (value.HasMember("SendClientEnd") && !value["SendClientEnd"].IsNull())
+    {
+        if (!value["SendClientEnd"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceProxySlowlogDetail.SendClientEnd` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sendClientEnd = value["SendClientEnd"].GetInt64();
+        m_sendClientEndHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void InstanceProxySlowlogDetail::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "ExecuteTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executeTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recvClientEndHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecvClientEnd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recvClientEnd, allocator);
+    }
+
+    if (m_sendClientEndHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendClientEnd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sendClientEnd, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void InstanceProxySlowlogDetail::SetExecuteTime(const string& _executeTime)
 bool InstanceProxySlowlogDetail::ExecuteTimeHasBeenSet() const
 {
     return m_executeTimeHasBeenSet;
+}
+
+int64_t InstanceProxySlowlogDetail::GetRecvClientEnd() const
+{
+    return m_recvClientEnd;
+}
+
+void InstanceProxySlowlogDetail::SetRecvClientEnd(const int64_t& _recvClientEnd)
+{
+    m_recvClientEnd = _recvClientEnd;
+    m_recvClientEndHasBeenSet = true;
+}
+
+bool InstanceProxySlowlogDetail::RecvClientEndHasBeenSet() const
+{
+    return m_recvClientEndHasBeenSet;
+}
+
+int64_t InstanceProxySlowlogDetail::GetSendClientEnd() const
+{
+    return m_sendClientEnd;
+}
+
+void InstanceProxySlowlogDetail::SetSendClientEnd(const int64_t& _sendClientEnd)
+{
+    m_sendClientEnd = _sendClientEnd;
+    m_sendClientEndHasBeenSet = true;
+}
+
+bool InstanceProxySlowlogDetail::SendClientEndHasBeenSet() const
+{
+    return m_sendClientEndHasBeenSet;
 }
 

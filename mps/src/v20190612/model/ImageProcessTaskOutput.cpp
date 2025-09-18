@@ -22,7 +22,8 @@ using namespace std;
 
 ImageProcessTaskOutput::ImageProcessTaskOutput() :
     m_pathHasBeenSet(false),
-    m_outputStorageHasBeenSet(false)
+    m_outputStorageHasBeenSet(false),
+    m_signedUrlHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome ImageProcessTaskOutput::Deserialize(const rapidjson::Value &
         m_outputStorageHasBeenSet = true;
     }
 
+    if (value.HasMember("SignedUrl") && !value["SignedUrl"].IsNull())
+    {
+        if (!value["SignedUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageProcessTaskOutput.SignedUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signedUrl = string(value["SignedUrl"].GetString());
+        m_signedUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void ImageProcessTaskOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_outputStorage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_signedUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignedUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signedUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void ImageProcessTaskOutput::SetOutputStorage(const TaskOutputStorage& _outputSt
 bool ImageProcessTaskOutput::OutputStorageHasBeenSet() const
 {
     return m_outputStorageHasBeenSet;
+}
+
+string ImageProcessTaskOutput::GetSignedUrl() const
+{
+    return m_signedUrl;
+}
+
+void ImageProcessTaskOutput::SetSignedUrl(const string& _signedUrl)
+{
+    m_signedUrl = _signedUrl;
+    m_signedUrlHasBeenSet = true;
+}
+
+bool ImageProcessTaskOutput::SignedUrlHasBeenSet() const
+{
+    return m_signedUrlHasBeenSet;
 }
 

@@ -58,7 +58,8 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_recordLayoutHasBeenSet(false),
     m_whiteBoardSnapshotModeHasBeenSet(false),
     m_subtitlesTranscriptionHasBeenSet(false),
-    m_guestsHasBeenSet(false)
+    m_guestsHasBeenSet(false),
+    m_recordMergeHasBeenSet(false)
 {
 }
 
@@ -452,6 +453,16 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_guestsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecordMerge") && !rsp["RecordMerge"].IsNull())
+    {
+        if (!rsp["RecordMerge"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordMerge` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordMerge = rsp["RecordMerge"].GetUint64();
+        m_recordMergeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -750,6 +761,14 @@ string DescribeRoomResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_recordMergeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordMerge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordMerge, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1112,6 +1131,16 @@ vector<string> DescribeRoomResponse::GetGuests() const
 bool DescribeRoomResponse::GuestsHasBeenSet() const
 {
     return m_guestsHasBeenSet;
+}
+
+uint64_t DescribeRoomResponse::GetRecordMerge() const
+{
+    return m_recordMerge;
+}
+
+bool DescribeRoomResponse::RecordMergeHasBeenSet() const
+{
+    return m_recordMergeHasBeenSet;
 }
 
 

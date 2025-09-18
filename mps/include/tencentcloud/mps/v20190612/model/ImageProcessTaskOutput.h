@@ -97,6 +97,27 @@ namespace TencentCloud
                      */
                     bool OutputStorageHasBeenSet() const;
 
+                    /**
+                     * 获取输出文件的URL。
+                     * @return SignedUrl 输出文件的URL。
+                     * 
+                     */
+                    std::string GetSignedUrl() const;
+
+                    /**
+                     * 设置输出文件的URL。
+                     * @param _signedUrl 输出文件的URL。
+                     * 
+                     */
+                    void SetSignedUrl(const std::string& _signedUrl);
+
+                    /**
+                     * 判断参数 SignedUrl 是否已赋值
+                     * @return SignedUrl 是否已赋值
+                     * 
+                     */
+                    bool SignedUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +133,12 @@ namespace TencentCloud
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
+
+                    /**
+                     * 输出文件的URL。
+                     */
+                    std::string m_signedUrl;
+                    bool m_signedUrlHasBeenSet;
 
                 };
             }

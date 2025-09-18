@@ -557,6 +557,20 @@ namespace TencentCloud
                      */
                     bool GuestsHasBeenSet() const;
 
+                    /**
+                     * 获取录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * @return RecordMerge 录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * 
+                     */
+                    uint64_t GetRecordMerge() const;
+
+                    /**
+                     * 判断参数 RecordMerge 是否已赋值
+                     * @return RecordMerge 是否已赋值
+                     * 
+                     */
+                    bool RecordMergeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -780,6 +794,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_guests;
                     bool m_guestsHasBeenSet;
+
+                    /**
+                     * 录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     */
+                    uint64_t m_recordMerge;
+                    bool m_recordMergeHasBeenSet;
 
                 };
             }

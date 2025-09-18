@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取慢查询平均执行时间阈值，单位：毫秒。
-                     * @return MinQueryTime 慢查询平均执行时间阈值，单位：毫秒。
+                     * 获取慢查询平均执行时间阈值。取值为大于0 的正整数。单位：毫秒。
+                     * @return MinQueryTime 慢查询平均执行时间阈值。取值为大于0 的正整数。单位：毫秒。
                      * 
                      */
                     int64_t GetMinQueryTime() const;
 
                     /**
-                     * 设置慢查询平均执行时间阈值，单位：毫秒。
-                     * @param _minQueryTime 慢查询平均执行时间阈值，单位：毫秒。
+                     * 设置慢查询平均执行时间阈值。取值为大于0 的正整数。单位：毫秒。
+                     * @param _minQueryTime 慢查询平均执行时间阈值。取值为大于0 的正整数。单位：毫秒。
                      * 
                      */
                     void SetMinQueryTime(const int64_t& _minQueryTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MinQueryTimeHasBeenSet() const;
 
                     /**
-                     * 获取每个页面展示的慢查询条数，默认值为20，最大100。
-                     * @return Limit 每个页面展示的慢查询条数，默认值为20，最大100。
+                     * 获取每个页面展示的慢查询条数，默认值为20，最小值为1，最大值为100。
+                     * @return Limit 每个页面展示的慢查询条数，默认值为20，最小值为1，最大值为100。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每个页面展示的慢查询条数，默认值为20，最大100。
-                     * @param _limit 每个页面展示的慢查询条数，默认值为20，最大100。
+                     * 设置每个页面展示的慢查询条数，默认值为20，最小值为1，最大值为100。
+                     * @param _limit 每个页面展示的慢查询条数，默认值为20，最小值为1，最大值为100。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取慢查询条数的偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
-                     * @return Offset 慢查询条数的偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 获取慢查询条数的偏移量。默认为0。取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @return Offset 慢查询条数的偏移量。默认为0。取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置慢查询条数的偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
-                     * @param _offset 慢查询条数的偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 设置慢查询条数的偏移量。默认为0。取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @param _offset 慢查询条数的偏移量。默认为0。取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -223,19 +223,19 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 慢查询平均执行时间阈值，单位：毫秒。
+                     * 慢查询平均执行时间阈值。取值为大于0 的正整数。单位：毫秒。
                      */
                     int64_t m_minQueryTime;
                     bool m_minQueryTimeHasBeenSet;
 
                     /**
-                     * 每个页面展示的慢查询条数，默认值为20，最大100。
+                     * 每个页面展示的慢查询条数，默认值为20，最小值为1，最大值为100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 慢查询条数的偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 慢查询条数的偏移量。默认为0。取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
