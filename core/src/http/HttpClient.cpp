@@ -126,6 +126,11 @@ void HttpClient::SetCaInfo(std::string caInfo)
     m_caInfo = caInfo;
 }
 
+void HttpClient::SetTargetIp(std::string targetIp)
+{
+    m_targetIp = targetIp;
+}
+
 void HttpClient::SetCaPath(std::string caPath)
 {
     m_caPath = caPath;
@@ -174,6 +179,16 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
     curl_easy_setopt(m_curlHandle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
 
     curl_easy_setopt(m_curlHandle, CURLOPT_URL, url.c_str());
+    std::string domain = request.GetUrl().GetHost();
+
+    //  创建解析规则链表（用于CURLOPT_RESOLVE）
+    struct curl_slist *resolveList = nullptr;
+
+    if (!m_targetIp.empty() && !domain.empty()) {
+        std::string resolveEntry = domain + ":443:" + m_targetIp;
+        resolveList = curl_slist_append(resolveList, resolveEntry.c_str());
+        curl_easy_setopt(m_curlHandle, CURLOPT_RESOLVE, resolveList);
+    }
     curl_easy_setopt(m_curlHandle, CURLOPT_SSL_VERIFYPEER, 1L);
     curl_easy_setopt(m_curlHandle, CURLOPT_SSL_VERIFYHOST, 2L);
 
@@ -205,6 +220,11 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
     curl_easy_setopt(m_curlHandle, CURLOPT_ERRORBUFFER, errbuf);
 
     CURLcode res = curl_easy_perform(m_curlHandle);
+    if (resolveList)
+    {
+        curl_slist_free_all(resolveList);
+    }
+
     if (header_list)
     {
         curl_slist_free_all(header_list);

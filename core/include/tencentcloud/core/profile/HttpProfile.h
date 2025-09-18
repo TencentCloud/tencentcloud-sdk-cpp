@@ -51,6 +51,8 @@ namespace TencentCloud
 
         void SetCaInfo(std::string caInfo);
         std::string GetCaInfo() const;
+        void SetTargetIp(std::string targetIp);
+        std::string GetTargetIp() const;
         void SetCaPath(std::string caPath);
         std::string GetCaPath() const;
 
@@ -62,7 +64,8 @@ namespace TencentCloud
             m_connectTimeout(o.m_connectTimeout),
             m_keepAlive(o.m_keepAlive),
             m_caInfo(o.m_caInfo),
-            m_caPath(o.m_caPath)
+            m_caPath(o.m_caPath),
+            m_targetIp(o.m_targetIp)
         {
         }
 
@@ -91,6 +94,7 @@ namespace TencentCloud
         bool m_keepAlive;
         std::string m_caInfo;
         std::string m_caPath;
+        std::string m_targetIp;
     };
 }
 
