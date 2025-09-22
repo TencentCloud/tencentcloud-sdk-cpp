@@ -19,7 +19,6 @@
 #include <cassert>
 #include <sstream>
 #include <vector>
-#include <iostream>
 
 #ifdef ENABLE_COMPRESS_MODULE
 #include <string>
