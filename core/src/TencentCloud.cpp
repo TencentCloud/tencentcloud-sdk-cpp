@@ -16,13 +16,16 @@
 
 #include <tencentcloud/core/TencentCloud.h>
 #include <tencentcloud/core/Executor.h>
+#include <tencentcloud/core/CurlAsync.h>
 
 void TencentCloud::InitAPI()
 {
-    Executor::GetInstance()->Start();
+    // Executor::GetInstance()->Start();
+    CurlAsync::GetInstance()->Start();
 }
 
 void TencentCloud::ShutdownAPI()
 {
-    Executor::GetInstance()->Shutdown();
+    CurlAsync::GetInstance()->Shutdown();
+    // Executor::GetInstance()->Shutdown();
 }

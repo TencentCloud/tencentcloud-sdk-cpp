@@ -17,17 +17,21 @@
 #ifndef TENCENTCLOUD_CORE_ABSTRACTCLIENT_H_
 #define TENCENTCLOUD_CORE_ABSTRACTCLIENT_H_
 
-#include "Credential.h"
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/http/HttpClient.h>
+#include "Credential.h"
 #include "AbstractModel.h"
+#include "AsyncCallerContext.h"
 #include <map>
+#include <future>
 
 namespace TencentCloud
 {
     class AbstractClient
     {
     public:
+        typedef std::function<void(const HttpClient::HttpResponseOutcome&)> AsyncCallback;
+
         AbstractClient(const std::string &endpoint, const std::string &version, const Credential &credential, const std::string &region);
         AbstractClient(const std::string &endpoint, const std::string &version, const Credential &credential, const std::string &region, const ClientProfile &profile);
         ~AbstractClient();
@@ -44,10 +48,46 @@ namespace TencentCloud
         HttpClient::HttpResponseOutcome MakeRequestOctetStream(const std::string &actionName, std::map<std::string, std::string> &headers, const std::string &body);
 
     protected:
+
         HttpClient::HttpResponseOutcome MakeRequest(const AbstractModel& request, const std::string &actionName);
+
+        template<typename ClientType, typename ReqType, typename HandlerType, typename RespType, typename OutcomeType>
+        void MakeRequestAsync(ClientType* client, const ReqType& request, const std::string &actionName, HandlerType handler, const std::shared_ptr<const AsyncCallerContext>& context)
+        {
+            auto callback = [this, client, request, handler, context](const HttpClient::HttpResponseOutcome& outcome)
+            {
+                auto response = HandleResponse<RespType, OutcomeType>(outcome);
+                handler(client, request, response, context);
+            };
+            DoRequestAsync(request, actionName, callback);
+        }
+
         HttpClient::HttpResponseOutcome DoRequest(const std::string &actionName, const std::string &body, std::map<std::string, std::string> &headers);
+        void DoRequestAsync(AbstractModel request, const std::string &actionName, const AsyncCallback& handler);
 
         void GenerateSignature(HttpRequest &request);
+
+        template <typename RespType, typename OutcomeType>
+        OutcomeType HandleResponse(const HttpClient::HttpResponseOutcome &outcome)
+        {
+            OutcomeType response;
+            if (outcome.IsSuccess()) 
+            {
+                auto r = outcome.GetResult();
+                std::string payload = std::string(r.Body(), r.BodySize());
+                RespType rsp = RespType();
+                auto o = rsp.Deserialize(payload);
+                if (o.IsSuccess())
+                    response = OutcomeType(rsp);
+                else
+                    response = OutcomeType(o.GetError());
+            } 
+            else
+            {
+                response = OutcomeType(outcome.GetError());
+            }
+            return response;
+        };
 
     private:
         Credential m_credential;
