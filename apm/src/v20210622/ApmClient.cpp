@@ -212,6 +212,49 @@ ApmClient::DescribeApmInstancesOutcomeCallable ApmClient::DescribeApmInstancesCa
     return task->get_future();
 }
 
+ApmClient::DescribeApmServiceMetricOutcome ApmClient::DescribeApmServiceMetric(const DescribeApmServiceMetricRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApmServiceMetric");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApmServiceMetricResponse rsp = DescribeApmServiceMetricResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApmServiceMetricOutcome(rsp);
+        else
+            return DescribeApmServiceMetricOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApmServiceMetricOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeApmServiceMetricAsync(const DescribeApmServiceMetricRequest& request, const DescribeApmServiceMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApmServiceMetric(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeApmServiceMetricOutcomeCallable ApmClient::DescribeApmServiceMetricCallable(const DescribeApmServiceMetricRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApmServiceMetricOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApmServiceMetric(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::DescribeGeneralApmApplicationConfigOutcome ApmClient::DescribeGeneralApmApplicationConfig(const DescribeGeneralApmApplicationConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGeneralApmApplicationConfig");

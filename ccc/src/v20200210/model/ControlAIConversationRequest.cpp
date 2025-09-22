@@ -26,7 +26,8 @@ ControlAIConversationRequest::ControlAIConversationRequest() :
     m_sessionIdHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
     m_commandHasBeenSet(false),
-    m_serverPushTextHasBeenSet(false)
+    m_serverPushTextHasBeenSet(false),
+    m_invokeLLMHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,15 @@ string ControlAIConversationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_serverPushText.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_invokeLLMHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvokeLLM";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_invokeLLM.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -140,6 +150,22 @@ void ControlAIConversationRequest::SetServerPushText(const ServerPushText& _serv
 bool ControlAIConversationRequest::ServerPushTextHasBeenSet() const
 {
     return m_serverPushTextHasBeenSet;
+}
+
+InvokeLLM ControlAIConversationRequest::GetInvokeLLM() const
+{
+    return m_invokeLLM;
+}
+
+void ControlAIConversationRequest::SetInvokeLLM(const InvokeLLM& _invokeLLM)
+{
+    m_invokeLLM = _invokeLLM;
+    m_invokeLLMHasBeenSet = true;
+}
+
+bool ControlAIConversationRequest::InvokeLLMHasBeenSet() const
+{
+    return m_invokeLLMHasBeenSet;
 }
 
 

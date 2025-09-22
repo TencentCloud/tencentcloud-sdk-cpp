@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool AgentTypeHasBeenSet() const;
 
                     /**
-                     * 获取应用状态 1:未上线 2：运行中
-                     * @return AppStatus 应用状态 1:未上线 2：运行中
+                     * 获取应用状态 1:未上线   2：运行中
+                     * @return AppStatus 应用状态 1:未上线   2：运行中
                      * 
                      */
                     std::string GetAppStatus() const;
 
                     /**
-                     * 设置应用状态 1:未上线 2：运行中
-                     * @param _appStatus 应用状态 1:未上线 2：运行中
+                     * 设置应用状态 1:未上线   2：运行中
+                     * @param _appStatus 应用状态 1:未上线   2：运行中
                      * 
                      */
                     void SetAppStatus(const std::string& _appStatus);
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_agentTypeHasBeenSet;
 
                     /**
-                     * 应用状态 1:未上线 2：运行中
+                     * 应用状态 1:未上线   2：运行中
                      */
                     std::string m_appStatus;
                     bool m_appStatusHasBeenSet;

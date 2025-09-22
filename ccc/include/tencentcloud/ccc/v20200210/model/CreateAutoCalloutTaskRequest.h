@@ -235,15 +235,15 @@ namespace TencentCloud
                     bool TriesHasBeenSet() const;
 
                     /**
-                     * 获取自定义变量（仅高级版支持）
-                     * @return Variables 自定义变量（仅高级版支持）
+                     * 获取自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处
+                     * @return Variables 自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处
                      * 
                      */
                     std::vector<Variable> GetVariables() const;
 
                     /**
-                     * 设置自定义变量（仅高级版支持）
-                     * @param _variables 自定义变量（仅高级版支持）
+                     * 设置自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处
+                     * @param _variables 自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处
                      * 
                      */
                     void SetVariables(const std::vector<Variable>& _variables);
@@ -256,15 +256,15 @@ namespace TencentCloud
                     bool VariablesHasBeenSet() const;
 
                     /**
-                     * 获取UUI
-                     * @return UUI UUI
+                     * 获取用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处
+                     * @return UUI 用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处
                      * 
                      */
                     std::string GetUUI() const;
 
                     /**
-                     * 设置UUI
-                     * @param _uUI UUI
+                     * 设置用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处
+                     * @param _uUI 用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处
                      * 
                      */
                     void SetUUI(const std::string& _uUI);
@@ -417,13 +417,13 @@ namespace TencentCloud
                     bool m_triesHasBeenSet;
 
                     /**
-                     * 自定义变量（仅高级版支持）
+                     * 自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处
                      */
                     std::vector<Variable> m_variables;
                     bool m_variablesHasBeenSet;
 
                     /**
-                     * UUI
+                     * 用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处
                      */
                     std::string m_uUI;
                     bool m_uUIHasBeenSet;

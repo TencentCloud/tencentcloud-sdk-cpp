@@ -30,7 +30,8 @@ WorkflowRunNodeInfo::WorkflowRunNodeInfo() :
     m_taskOutputHasBeenSet(false),
     m_failMessageHasBeenSet(false),
     m_costMilliSecondsHasBeenSet(false),
-    m_statisticInfosHasBeenSet(false)
+    m_statisticInfosHasBeenSet(false),
+    m_failCodeHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome WorkflowRunNodeInfo::Deserialize(const rapidjson::Value &val
         m_statisticInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("FailCode") && !value["FailCode"].IsNull())
+    {
+        if (!value["FailCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowRunNodeInfo.FailCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failCode = string(value["FailCode"].GetString());
+        m_failCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void WorkflowRunNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_failCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void WorkflowRunNodeInfo::SetStatisticInfos(const vector<StatisticInfo>& _statis
 bool WorkflowRunNodeInfo::StatisticInfosHasBeenSet() const
 {
     return m_statisticInfosHasBeenSet;
+}
+
+string WorkflowRunNodeInfo::GetFailCode() const
+{
+    return m_failCode;
+}
+
+void WorkflowRunNodeInfo::SetFailCode(const string& _failCode)
+{
+    m_failCode = _failCode;
+    m_failCodeHasBeenSet = true;
+}
+
+bool WorkflowRunNodeInfo::FailCodeHasBeenSet() const
+{
+    return m_failCodeHasBeenSet;
 }
 

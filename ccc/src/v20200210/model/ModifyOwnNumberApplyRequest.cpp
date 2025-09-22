@@ -26,7 +26,9 @@ ModifyOwnNumberApplyRequest::ModifyOwnNumberApplyRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_detailListHasBeenSet(false),
     m_applyIdHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+    m_prefixHasBeenSet(false),
+    m_mobileNddPrefixHasBeenSet(false),
+    m_localNumberTrimACHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,22 @@ string ModifyOwnNumberApplyRequest::ToJsonString() const
         string key = "Prefix";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_prefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mobileNddPrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MobileNddPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mobileNddPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_localNumberTrimACHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalNumberTrimAC";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_localNumberTrimAC, allocator);
     }
 
 
@@ -146,6 +164,38 @@ void ModifyOwnNumberApplyRequest::SetPrefix(const string& _prefix)
 bool ModifyOwnNumberApplyRequest::PrefixHasBeenSet() const
 {
     return m_prefixHasBeenSet;
+}
+
+string ModifyOwnNumberApplyRequest::GetMobileNddPrefix() const
+{
+    return m_mobileNddPrefix;
+}
+
+void ModifyOwnNumberApplyRequest::SetMobileNddPrefix(const string& _mobileNddPrefix)
+{
+    m_mobileNddPrefix = _mobileNddPrefix;
+    m_mobileNddPrefixHasBeenSet = true;
+}
+
+bool ModifyOwnNumberApplyRequest::MobileNddPrefixHasBeenSet() const
+{
+    return m_mobileNddPrefixHasBeenSet;
+}
+
+bool ModifyOwnNumberApplyRequest::GetLocalNumberTrimAC() const
+{
+    return m_localNumberTrimAC;
+}
+
+void ModifyOwnNumberApplyRequest::SetLocalNumberTrimAC(const bool& _localNumberTrimAC)
+{
+    m_localNumberTrimAC = _localNumberTrimAC;
+    m_localNumberTrimACHasBeenSet = true;
+}
+
+bool ModifyOwnNumberApplyRequest::LocalNumberTrimACHasBeenSet() const
+{
+    return m_localNumberTrimACHasBeenSet;
 }
 
 

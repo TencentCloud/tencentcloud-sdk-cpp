@@ -26,7 +26,9 @@ CreateOwnNumberApplyRequest::CreateOwnNumberApplyRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_sipTrunkIdHasBeenSet(false),
     m_detailListHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+    m_prefixHasBeenSet(false),
+    m_mobileNddPrefixHasBeenSet(false),
+    m_localNumberTrimACHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,22 @@ string CreateOwnNumberApplyRequest::ToJsonString() const
         string key = "Prefix";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_prefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mobileNddPrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MobileNddPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mobileNddPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_localNumberTrimACHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalNumberTrimAC";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_localNumberTrimAC, allocator);
     }
 
 
@@ -146,6 +164,38 @@ void CreateOwnNumberApplyRequest::SetPrefix(const string& _prefix)
 bool CreateOwnNumberApplyRequest::PrefixHasBeenSet() const
 {
     return m_prefixHasBeenSet;
+}
+
+string CreateOwnNumberApplyRequest::GetMobileNddPrefix() const
+{
+    return m_mobileNddPrefix;
+}
+
+void CreateOwnNumberApplyRequest::SetMobileNddPrefix(const string& _mobileNddPrefix)
+{
+    m_mobileNddPrefix = _mobileNddPrefix;
+    m_mobileNddPrefixHasBeenSet = true;
+}
+
+bool CreateOwnNumberApplyRequest::MobileNddPrefixHasBeenSet() const
+{
+    return m_mobileNddPrefixHasBeenSet;
+}
+
+bool CreateOwnNumberApplyRequest::GetLocalNumberTrimAC() const
+{
+    return m_localNumberTrimAC;
+}
+
+void CreateOwnNumberApplyRequest::SetLocalNumberTrimAC(const bool& _localNumberTrimAC)
+{
+    m_localNumberTrimAC = _localNumberTrimAC;
+    m_localNumberTrimACHasBeenSet = true;
+}
+
+bool CreateOwnNumberApplyRequest::LocalNumberTrimACHasBeenSet() const
+{
+    return m_localNumberTrimACHasBeenSet;
 }
 
 

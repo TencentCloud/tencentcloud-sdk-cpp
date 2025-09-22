@@ -1,0 +1,323 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_WEDATA_V20250806_MODEL_CREATEOPSALARMRULEREQUEST_H_
+#define TENCENTCLOUD_WEDATA_V20250806_MODEL_CREATEOPSALARMRULEREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20250806/model/AlarmGroup.h>
+#include <tencentcloud/wedata/v20250806/model/AlarmRuleDetail.h>
+
+
+namespace TencentCloud
+{
+    namespace Wedata
+    {
+        namespace V20250806
+        {
+            namespace Model
+            {
+                /**
+                * CreateOpsAlarmRule请求参数结构体
+                */
+                class CreateOpsAlarmRuleRequest : public AbstractModel
+                {
+                public:
+                    CreateOpsAlarmRuleRequest();
+                    ~CreateOpsAlarmRuleRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取项目id
+                     * @return ProjectId 项目id
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目id
+                     * @param _projectId 项目id
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取告警规则名称
+                     * @return AlarmRuleName 告警规则名称
+                     * 
+                     */
+                    std::string GetAlarmRuleName() const;
+
+                    /**
+                     * 设置告警规则名称
+                     * @param _alarmRuleName 告警规则名称
+                     * 
+                     */
+                    void SetAlarmRuleName(const std::string& _alarmRuleName);
+
+                    /**
+                     * 判断参数 AlarmRuleName 是否已赋值
+                     * @return AlarmRuleName 是否已赋值
+                     * 
+                     */
+                    bool AlarmRuleNameHasBeenSet() const;
+
+                    /**
+                     * 获取监控对象业务id列表，根据MonitorType 的设置传入不同的业务id，如下1（任务）： MonitorObjectIds为任务id列表2（工作流）： MonitorObjectIds 为工作流id列表(工作流id可从接口ListWorkflows获取)3（项目）：  MonitorObjectIds为项目id列表
+                     * @return MonitorObjectIds 监控对象业务id列表，根据MonitorType 的设置传入不同的业务id，如下1（任务）： MonitorObjectIds为任务id列表2（工作流）： MonitorObjectIds 为工作流id列表(工作流id可从接口ListWorkflows获取)3（项目）：  MonitorObjectIds为项目id列表
+                     * 
+                     */
+                    std::vector<std::string> GetMonitorObjectIds() const;
+
+                    /**
+                     * 设置监控对象业务id列表，根据MonitorType 的设置传入不同的业务id，如下1（任务）： MonitorObjectIds为任务id列表2（工作流）： MonitorObjectIds 为工作流id列表(工作流id可从接口ListWorkflows获取)3（项目）：  MonitorObjectIds为项目id列表
+                     * @param _monitorObjectIds 监控对象业务id列表，根据MonitorType 的设置传入不同的业务id，如下1（任务）： MonitorObjectIds为任务id列表2（工作流）： MonitorObjectIds 为工作流id列表(工作流id可从接口ListWorkflows获取)3（项目）：  MonitorObjectIds为项目id列表
+                     * 
+                     */
+                    void SetMonitorObjectIds(const std::vector<std::string>& _monitorObjectIds);
+
+                    /**
+                     * 判断参数 MonitorObjectIds 是否已赋值
+                     * @return MonitorObjectIds 是否已赋值
+                     * 
+                     */
+                    bool MonitorObjectIdsHasBeenSet() const;
+
+                    /**
+                     * 获取告警规则监控类型 failure：失败告警 ；overtime：超时告警 success：成功告警; backTrackingOrRerunSuccess: 补录重跑成功告警 backTrackingOrRerunFailure：补录重跑失败告警； 
+项目波动告警 projectFailureInstanceUpwardFluctuationAlarm： 当天失败实例数向上波动率超过阀值告警； projectSuccessInstanceDownwardFluctuationAlarm：当天成功实例数向下波动率超过阀值告警； 
+离线集成任务对账告警： reconciliationFailure： 离线对账任务失败告警 reconciliationOvertime： 离线对账任务运行超时告警 reconciliationMismatch： 数据对账任务不一致条数超过阀值告警
+                     * @return AlarmTypes 告警规则监控类型 failure：失败告警 ；overtime：超时告警 success：成功告警; backTrackingOrRerunSuccess: 补录重跑成功告警 backTrackingOrRerunFailure：补录重跑失败告警； 
+项目波动告警 projectFailureInstanceUpwardFluctuationAlarm： 当天失败实例数向上波动率超过阀值告警； projectSuccessInstanceDownwardFluctuationAlarm：当天成功实例数向下波动率超过阀值告警； 
+离线集成任务对账告警： reconciliationFailure： 离线对账任务失败告警 reconciliationOvertime： 离线对账任务运行超时告警 reconciliationMismatch： 数据对账任务不一致条数超过阀值告警
+                     * 
+                     */
+                    std::vector<std::string> GetAlarmTypes() const;
+
+                    /**
+                     * 设置告警规则监控类型 failure：失败告警 ；overtime：超时告警 success：成功告警; backTrackingOrRerunSuccess: 补录重跑成功告警 backTrackingOrRerunFailure：补录重跑失败告警； 
+项目波动告警 projectFailureInstanceUpwardFluctuationAlarm： 当天失败实例数向上波动率超过阀值告警； projectSuccessInstanceDownwardFluctuationAlarm：当天成功实例数向下波动率超过阀值告警； 
+离线集成任务对账告警： reconciliationFailure： 离线对账任务失败告警 reconciliationOvertime： 离线对账任务运行超时告警 reconciliationMismatch： 数据对账任务不一致条数超过阀值告警
+                     * @param _alarmTypes 告警规则监控类型 failure：失败告警 ；overtime：超时告警 success：成功告警; backTrackingOrRerunSuccess: 补录重跑成功告警 backTrackingOrRerunFailure：补录重跑失败告警； 
+项目波动告警 projectFailureInstanceUpwardFluctuationAlarm： 当天失败实例数向上波动率超过阀值告警； projectSuccessInstanceDownwardFluctuationAlarm：当天成功实例数向下波动率超过阀值告警； 
+离线集成任务对账告警： reconciliationFailure： 离线对账任务失败告警 reconciliationOvertime： 离线对账任务运行超时告警 reconciliationMismatch： 数据对账任务不一致条数超过阀值告警
+                     * 
+                     */
+                    void SetAlarmTypes(const std::vector<std::string>& _alarmTypes);
+
+                    /**
+                     * 判断参数 AlarmTypes 是否已赋值
+                     * @return AlarmTypes 是否已赋值
+                     * 
+                     */
+                    bool AlarmTypesHasBeenSet() const;
+
+                    /**
+                     * 获取告警接收人配置信息
+                     * @return AlarmGroups 告警接收人配置信息
+                     * 
+                     */
+                    std::vector<AlarmGroup> GetAlarmGroups() const;
+
+                    /**
+                     * 设置告警接收人配置信息
+                     * @param _alarmGroups 告警接收人配置信息
+                     * 
+                     */
+                    void SetAlarmGroups(const std::vector<AlarmGroup>& _alarmGroups);
+
+                    /**
+                     * 判断参数 AlarmGroups 是否已赋值
+                     * @return AlarmGroups 是否已赋值
+                     * 
+                     */
+                    bool AlarmGroupsHasBeenSet() const;
+
+                    /**
+                     * 获取监控对象类型, 
+任务维度监控： 可按照任务/工作流/项目来配置：1.任务、2.工作流、3.项目（默认为1.任务）
+项目维度监控： 项目整体任务波动告警，  7：项目波动监控告警
+                     * @return MonitorObjectType 监控对象类型, 
+任务维度监控： 可按照任务/工作流/项目来配置：1.任务、2.工作流、3.项目（默认为1.任务）
+项目维度监控： 项目整体任务波动告警，  7：项目波动监控告警
+                     * 
+                     */
+                    uint64_t GetMonitorObjectType() const;
+
+                    /**
+                     * 设置监控对象类型, 
+任务维度监控： 可按照任务/工作流/项目来配置：1.任务、2.工作流、3.项目（默认为1.任务）
+项目维度监控： 项目整体任务波动告警，  7：项目波动监控告警
+                     * @param _monitorObjectType 监控对象类型, 
+任务维度监控： 可按照任务/工作流/项目来配置：1.任务、2.工作流、3.项目（默认为1.任务）
+项目维度监控： 项目整体任务波动告警，  7：项目波动监控告警
+                     * 
+                     */
+                    void SetMonitorObjectType(const uint64_t& _monitorObjectType);
+
+                    /**
+                     * 判断参数 MonitorObjectType 是否已赋值
+                     * @return MonitorObjectType 是否已赋值
+                     * 
+                     */
+                    bool MonitorObjectTypeHasBeenSet() const;
+
+                    /**
+                     * 获取告警规则配置信息
+成功告警无需配置；失败告警可以配置首次失败告警或者所有重试失败告警；超时配置需要配置超时类型及超时阀值；项目波动告警需要配置波动率及防抖周期配置
+                     * @return AlarmRuleDetail 告警规则配置信息
+成功告警无需配置；失败告警可以配置首次失败告警或者所有重试失败告警；超时配置需要配置超时类型及超时阀值；项目波动告警需要配置波动率及防抖周期配置
+                     * 
+                     */
+                    AlarmRuleDetail GetAlarmRuleDetail() const;
+
+                    /**
+                     * 设置告警规则配置信息
+成功告警无需配置；失败告警可以配置首次失败告警或者所有重试失败告警；超时配置需要配置超时类型及超时阀值；项目波动告警需要配置波动率及防抖周期配置
+                     * @param _alarmRuleDetail 告警规则配置信息
+成功告警无需配置；失败告警可以配置首次失败告警或者所有重试失败告警；超时配置需要配置超时类型及超时阀值；项目波动告警需要配置波动率及防抖周期配置
+                     * 
+                     */
+                    void SetAlarmRuleDetail(const AlarmRuleDetail& _alarmRuleDetail);
+
+                    /**
+                     * 判断参数 AlarmRuleDetail 是否已赋值
+                     * @return AlarmRuleDetail 是否已赋值
+                     * 
+                     */
+                    bool AlarmRuleDetailHasBeenSet() const;
+
+                    /**
+                     * 获取告警级别 1.普通、2.重要、3.紧急（默认1.普通）
+                     * @return AlarmLevel 告警级别 1.普通、2.重要、3.紧急（默认1.普通）
+                     * 
+                     */
+                    int64_t GetAlarmLevel() const;
+
+                    /**
+                     * 设置告警级别 1.普通、2.重要、3.紧急（默认1.普通）
+                     * @param _alarmLevel 告警级别 1.普通、2.重要、3.紧急（默认1.普通）
+                     * 
+                     */
+                    void SetAlarmLevel(const int64_t& _alarmLevel);
+
+                    /**
+                     * 判断参数 AlarmLevel 是否已赋值
+                     * @return AlarmLevel 是否已赋值
+                     * 
+                     */
+                    bool AlarmLevelHasBeenSet() const;
+
+                    /**
+                     * 获取告警规则描述
+                     * @return Description 告警规则描述
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置告警规则描述
+                     * @param _description 告警规则描述
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 项目id
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 告警规则名称
+                     */
+                    std::string m_alarmRuleName;
+                    bool m_alarmRuleNameHasBeenSet;
+
+                    /**
+                     * 监控对象业务id列表，根据MonitorType 的设置传入不同的业务id，如下1（任务）： MonitorObjectIds为任务id列表2（工作流）： MonitorObjectIds 为工作流id列表(工作流id可从接口ListWorkflows获取)3（项目）：  MonitorObjectIds为项目id列表
+                     */
+                    std::vector<std::string> m_monitorObjectIds;
+                    bool m_monitorObjectIdsHasBeenSet;
+
+                    /**
+                     * 告警规则监控类型 failure：失败告警 ；overtime：超时告警 success：成功告警; backTrackingOrRerunSuccess: 补录重跑成功告警 backTrackingOrRerunFailure：补录重跑失败告警； 
+项目波动告警 projectFailureInstanceUpwardFluctuationAlarm： 当天失败实例数向上波动率超过阀值告警； projectSuccessInstanceDownwardFluctuationAlarm：当天成功实例数向下波动率超过阀值告警； 
+离线集成任务对账告警： reconciliationFailure： 离线对账任务失败告警 reconciliationOvertime： 离线对账任务运行超时告警 reconciliationMismatch： 数据对账任务不一致条数超过阀值告警
+                     */
+                    std::vector<std::string> m_alarmTypes;
+                    bool m_alarmTypesHasBeenSet;
+
+                    /**
+                     * 告警接收人配置信息
+                     */
+                    std::vector<AlarmGroup> m_alarmGroups;
+                    bool m_alarmGroupsHasBeenSet;
+
+                    /**
+                     * 监控对象类型, 
+任务维度监控： 可按照任务/工作流/项目来配置：1.任务、2.工作流、3.项目（默认为1.任务）
+项目维度监控： 项目整体任务波动告警，  7：项目波动监控告警
+                     */
+                    uint64_t m_monitorObjectType;
+                    bool m_monitorObjectTypeHasBeenSet;
+
+                    /**
+                     * 告警规则配置信息
+成功告警无需配置；失败告警可以配置首次失败告警或者所有重试失败告警；超时配置需要配置超时类型及超时阀值；项目波动告警需要配置波动率及防抖周期配置
+                     */
+                    AlarmRuleDetail m_alarmRuleDetail;
+                    bool m_alarmRuleDetailHasBeenSet;
+
+                    /**
+                     * 告警级别 1.普通、2.重要、3.紧急（默认1.普通）
+                     */
+                    int64_t m_alarmLevel;
+                    bool m_alarmLevelHasBeenSet;
+
+                    /**
+                     * 告警规则描述
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_WEDATA_V20250806_MODEL_CREATEOPSALARMRULEREQUEST_H_

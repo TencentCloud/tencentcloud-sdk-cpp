@@ -40,7 +40,8 @@ DescribeDBInstancesAttributeResponse::DescribeDBInstancesAttributeResponse() :
     m_multiDrReadableInfoHasBeenSet(false),
     m_isDiskEncryptFlagHasBeenSet(false),
     m_isSafetyLimitedHasBeenSet(false),
-    m_isSupportSAHasBeenSet(false)
+    m_isSupportSAHasBeenSet(false),
+    m_slowLogThresholdHasBeenSet(false)
 {
 }
 
@@ -289,6 +290,16 @@ CoreInternalOutcome DescribeDBInstancesAttributeResponse::Deserialize(const stri
         m_isSupportSAHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SlowLogThreshold") && !rsp["SlowLogThreshold"].IsNull())
+    {
+        if (!rsp["SlowLogThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowLogThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_slowLogThreshold = rsp["SlowLogThreshold"].GetInt64();
+        m_slowLogThresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +461,14 @@ string DescribeDBInstancesAttributeResponse::ToJsonString() const
         string key = "IsSupportSA";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSupportSA, allocator);
+    }
+
+    if (m_slowLogThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlowLogThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_slowLogThreshold, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -632,6 +651,16 @@ uint64_t DescribeDBInstancesAttributeResponse::GetIsSupportSA() const
 bool DescribeDBInstancesAttributeResponse::IsSupportSAHasBeenSet() const
 {
     return m_isSupportSAHasBeenSet;
+}
+
+int64_t DescribeDBInstancesAttributeResponse::GetSlowLogThreshold() const
+{
+    return m_slowLogThreshold;
+}
+
+bool DescribeDBInstancesAttributeResponse::SlowLogThresholdHasBeenSet() const
+{
+    return m_slowLogThresholdHasBeenSet;
 }
 
 

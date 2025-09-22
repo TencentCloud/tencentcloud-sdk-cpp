@@ -25,7 +25,8 @@ OwnNumberApplyDetailItem::OwnNumberApplyDetailItem() :
     m_phoneNumberHasBeenSet(false),
     m_maxCallCountHasBeenSet(false),
     m_maxCallPSecHasBeenSet(false),
-    m_outboundCalleeFormatHasBeenSet(false)
+    m_outboundCalleeFormatHasBeenSet(false),
+    m_carrierPhoneNumberHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome OwnNumberApplyDetailItem::Deserialize(const rapidjson::Value
         m_outboundCalleeFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("CarrierPhoneNumber") && !value["CarrierPhoneNumber"].IsNull())
+    {
+        if (!value["CarrierPhoneNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OwnNumberApplyDetailItem.CarrierPhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_carrierPhoneNumber = string(value["CarrierPhoneNumber"].GetString());
+        m_carrierPhoneNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void OwnNumberApplyDetailItem::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "OutboundCalleeFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_outboundCalleeFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_carrierPhoneNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CarrierPhoneNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_carrierPhoneNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void OwnNumberApplyDetailItem::SetOutboundCalleeFormat(const string& _outboundCa
 bool OwnNumberApplyDetailItem::OutboundCalleeFormatHasBeenSet() const
 {
     return m_outboundCalleeFormatHasBeenSet;
+}
+
+string OwnNumberApplyDetailItem::GetCarrierPhoneNumber() const
+{
+    return m_carrierPhoneNumber;
+}
+
+void OwnNumberApplyDetailItem::SetCarrierPhoneNumber(const string& _carrierPhoneNumber)
+{
+    m_carrierPhoneNumber = _carrierPhoneNumber;
+    m_carrierPhoneNumberHasBeenSet = true;
+}
+
+bool OwnNumberApplyDetailItem::CarrierPhoneNumberHasBeenSet() const
+{
+    return m_carrierPhoneNumberHasBeenSet;
 }
 

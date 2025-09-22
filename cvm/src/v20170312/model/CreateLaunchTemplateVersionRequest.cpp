@@ -51,6 +51,7 @@ CreateLaunchTemplateVersionRequest::CreateLaunchTemplateVersionRequest() :
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
+    m_enableJumboFrameHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_templateDataModifyActionHasBeenSet(false)
 {
@@ -318,6 +319,14 @@ string CreateLaunchTemplateVersionRequest::ToJsonString() const
         string key = "DisableApiTermination";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableApiTermination, allocator);
+    }
+
+    if (m_enableJumboFrameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableJumboFrame";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableJumboFrame, allocator);
     }
 
     if (m_metadataHasBeenSet)
@@ -791,6 +800,22 @@ void CreateLaunchTemplateVersionRequest::SetDisableApiTermination(const bool& _d
 bool CreateLaunchTemplateVersionRequest::DisableApiTerminationHasBeenSet() const
 {
     return m_disableApiTerminationHasBeenSet;
+}
+
+bool CreateLaunchTemplateVersionRequest::GetEnableJumboFrame() const
+{
+    return m_enableJumboFrame;
+}
+
+void CreateLaunchTemplateVersionRequest::SetEnableJumboFrame(const bool& _enableJumboFrame)
+{
+    m_enableJumboFrame = _enableJumboFrame;
+    m_enableJumboFrameHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateVersionRequest::EnableJumboFrameHasBeenSet() const
+{
+    return m_enableJumboFrameHasBeenSet;
 }
 
 Metadata CreateLaunchTemplateVersionRequest::GetMetadata() const

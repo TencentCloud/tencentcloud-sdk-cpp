@@ -29,7 +29,8 @@ GetFlowStatisticByGroupRequest::GetFlowStatisticByGroupRequest() :
     m_typeHasBeenSet(false),
     m_timeGranularityHasBeenSet(false),
     m_accessRegionHasBeenSet(false),
-    m_gatewayTypeHasBeenSet(false)
+    m_gatewayTypeHasBeenSet(false),
+    m_mpApplicationIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string GetFlowStatisticByGroupRequest::ToJsonString() const
         string key = "GatewayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_gatewayType, allocator);
+    }
+
+    if (m_mpApplicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MpApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mpApplicationId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void GetFlowStatisticByGroupRequest::SetGatewayType(const int64_t& _gatewayType)
 bool GetFlowStatisticByGroupRequest::GatewayTypeHasBeenSet() const
 {
     return m_gatewayTypeHasBeenSet;
+}
+
+string GetFlowStatisticByGroupRequest::GetMpApplicationId() const
+{
+    return m_mpApplicationId;
+}
+
+void GetFlowStatisticByGroupRequest::SetMpApplicationId(const string& _mpApplicationId)
+{
+    m_mpApplicationId = _mpApplicationId;
+    m_mpApplicationIdHasBeenSet = true;
+}
+
+bool GetFlowStatisticByGroupRequest::MpApplicationIdHasBeenSet() const
+{
+    return m_mpApplicationIdHasBeenSet;
 }
 
 

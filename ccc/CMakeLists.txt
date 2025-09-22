@@ -197,6 +197,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/HangUpCallRequest.h
   include/tencentcloud/ccc/v20200210/model/ClientInfo.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h
+  include/tencentcloud/ccc/v20200210/model/InvokeLLM.h
   include/tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsRequest.h
   include/tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/CalleeAttribute.h
@@ -413,6 +414,7 @@ set(ccc_src
   src/v20200210/model/HangUpCallRequest.cpp
   src/v20200210/model/ClientInfo.cpp
   src/v20200210/model/DescribeTelCdrResponse.cpp
+  src/v20200210/model/InvokeLLM.cpp
   src/v20200210/model/DescribeStaffStatusMetricsRequest.cpp
   src/v20200210/model/DeleteStaffResponse.cpp
   src/v20200210/model/CalleeAttribute.cpp

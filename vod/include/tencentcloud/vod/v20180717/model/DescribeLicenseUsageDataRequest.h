@@ -87,10 +87,8 @@ namespace TencentCloud
                     /**
                      * 获取License 类型，默认为 CommercialDRMLicense 。目前支持的 License 类型包括：
 <li> CommercialDRMLicense: 商业级 DRM License</li>
-<li> JITEncryptionDRMLicense: 即时加密 DRM License</li>
                      * @return LicenseType License 类型，默认为 CommercialDRMLicense 。目前支持的 License 类型包括：
 <li> CommercialDRMLicense: 商业级 DRM License</li>
-<li> JITEncryptionDRMLicense: 即时加密 DRM License</li>
                      * 
                      */
                     std::string GetLicenseType() const;
@@ -98,10 +96,8 @@ namespace TencentCloud
                     /**
                      * 设置License 类型，默认为 CommercialDRMLicense 。目前支持的 License 类型包括：
 <li> CommercialDRMLicense: 商业级 DRM License</li>
-<li> JITEncryptionDRMLicense: 即时加密 DRM License</li>
                      * @param _licenseType License 类型，默认为 CommercialDRMLicense 。目前支持的 License 类型包括：
 <li> CommercialDRMLicense: 商业级 DRM License</li>
-<li> JITEncryptionDRMLicense: 即时加密 DRM License</li>
                      * 
                      */
                     void SetLicenseType(const std::string& _licenseType);
@@ -151,7 +147,6 @@ namespace TencentCloud
                     /**
                      * License 类型，默认为 CommercialDRMLicense 。目前支持的 License 类型包括：
 <li> CommercialDRMLicense: 商业级 DRM License</li>
-<li> JITEncryptionDRMLicense: 即时加密 DRM License</li>
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;

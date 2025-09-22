@@ -599,6 +599,48 @@ namespace TencentCloud
                      */
                     bool ProviderTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否关闭模型超参
+                     * @return IsCloseModelParams 是否关闭模型超参
+                     * 
+                     */
+                    bool GetIsCloseModelParams() const;
+
+                    /**
+                     * 设置是否关闭模型超参
+                     * @param _isCloseModelParams 是否关闭模型超参
+                     * 
+                     */
+                    void SetIsCloseModelParams(const bool& _isCloseModelParams);
+
+                    /**
+                     * 判断参数 IsCloseModelParams 是否已赋值
+                     * @return IsCloseModelParams 是否已赋值
+                     * 
+                     */
+                    bool IsCloseModelParamsHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持深度思考
+                     * @return IsDeepThinking 是否支持深度思考
+                     * 
+                     */
+                    bool GetIsDeepThinking() const;
+
+                    /**
+                     * 设置是否支持深度思考
+                     * @param _isDeepThinking 是否支持深度思考
+                     * 
+                     */
+                    void SetIsDeepThinking(const bool& _isDeepThinking);
+
+                    /**
+                     * 判断参数 IsDeepThinking 是否已赋值
+                     * @return IsDeepThinking 是否已赋值
+                     * 
+                     */
+                    bool IsDeepThinkingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -756,6 +798,18 @@ namespace TencentCloud
                      */
                     std::string m_providerType;
                     bool m_providerTypeHasBeenSet;
+
+                    /**
+                     * 是否关闭模型超参
+                     */
+                    bool m_isCloseModelParams;
+                    bool m_isCloseModelParamsHasBeenSet;
+
+                    /**
+                     * 是否支持深度思考
+                     */
+                    bool m_isDeepThinking;
+                    bool m_isDeepThinkingHasBeenSet;
 
                 };
             }

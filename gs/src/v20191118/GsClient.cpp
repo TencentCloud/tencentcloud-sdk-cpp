@@ -40,6 +40,49 @@ GsClient::GsClient(const Credential &credential, const string &region, const Cli
 }
 
 
+GsClient::BackUpAndroidInstanceOutcome GsClient::BackUpAndroidInstance(const BackUpAndroidInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "BackUpAndroidInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BackUpAndroidInstanceResponse rsp = BackUpAndroidInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BackUpAndroidInstanceOutcome(rsp);
+        else
+            return BackUpAndroidInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return BackUpAndroidInstanceOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::BackUpAndroidInstanceAsync(const BackUpAndroidInstanceRequest& request, const BackUpAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BackUpAndroidInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::BackUpAndroidInstanceOutcomeCallable GsClient::BackUpAndroidInstanceCallable(const BackUpAndroidInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BackUpAndroidInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->BackUpAndroidInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::BackUpAndroidInstanceToStorageOutcome GsClient::BackUpAndroidInstanceToStorage(const BackUpAndroidInstanceToStorageRequest &request)
 {
     auto outcome = MakeRequest(request, "BackUpAndroidInstanceToStorage");
@@ -857,6 +900,49 @@ GsClient::DeleteAndroidInstanceBackupFilesOutcomeCallable GsClient::DeleteAndroi
     return task->get_future();
 }
 
+GsClient::DeleteAndroidInstanceBackupsOutcome GsClient::DeleteAndroidInstanceBackups(const DeleteAndroidInstanceBackupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAndroidInstanceBackups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAndroidInstanceBackupsResponse rsp = DeleteAndroidInstanceBackupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAndroidInstanceBackupsOutcome(rsp);
+        else
+            return DeleteAndroidInstanceBackupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAndroidInstanceBackupsOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DeleteAndroidInstanceBackupsAsync(const DeleteAndroidInstanceBackupsRequest& request, const DeleteAndroidInstanceBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAndroidInstanceBackups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DeleteAndroidInstanceBackupsOutcomeCallable GsClient::DeleteAndroidInstanceBackupsCallable(const DeleteAndroidInstanceBackupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAndroidInstanceBackupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAndroidInstanceBackups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::DeleteAndroidInstanceImagesOutcome GsClient::DeleteAndroidInstanceImages(const DeleteAndroidInstanceImagesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAndroidInstanceImages");
@@ -1022,6 +1108,49 @@ GsClient::DescribeAndroidInstanceAppsOutcomeCallable GsClient::DescribeAndroidIn
         [this, request]()
         {
             return this->DescribeAndroidInstanceApps(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DescribeAndroidInstanceBackupsOutcome GsClient::DescribeAndroidInstanceBackups(const DescribeAndroidInstanceBackupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAndroidInstanceBackups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAndroidInstanceBackupsResponse rsp = DescribeAndroidInstanceBackupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAndroidInstanceBackupsOutcome(rsp);
+        else
+            return DescribeAndroidInstanceBackupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAndroidInstanceBackupsOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DescribeAndroidInstanceBackupsAsync(const DescribeAndroidInstanceBackupsRequest& request, const DescribeAndroidInstanceBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAndroidInstanceBackups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DescribeAndroidInstanceBackupsOutcomeCallable GsClient::DescribeAndroidInstanceBackupsCallable(const DescribeAndroidInstanceBackupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstanceBackupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAndroidInstanceBackups(request);
         }
     );
 
@@ -2527,6 +2656,49 @@ GsClient::RestartAndroidInstancesAppOutcomeCallable GsClient::RestartAndroidInst
         [this, request]()
         {
             return this->RestartAndroidInstancesApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::RestoreAndroidInstanceOutcome GsClient::RestoreAndroidInstance(const RestoreAndroidInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestoreAndroidInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestoreAndroidInstanceResponse rsp = RestoreAndroidInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestoreAndroidInstanceOutcome(rsp);
+        else
+            return RestoreAndroidInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return RestoreAndroidInstanceOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::RestoreAndroidInstanceAsync(const RestoreAndroidInstanceRequest& request, const RestoreAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestoreAndroidInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::RestoreAndroidInstanceOutcomeCallable GsClient::RestoreAndroidInstanceCallable(const RestoreAndroidInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestoreAndroidInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->RestoreAndroidInstance(request);
         }
     );
 

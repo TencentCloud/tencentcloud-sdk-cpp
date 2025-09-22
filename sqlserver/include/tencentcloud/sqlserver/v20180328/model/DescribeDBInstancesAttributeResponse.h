@@ -285,6 +285,22 @@ namespace TencentCloud
                      */
                     bool IsSupportSAHasBeenSet() const;
 
+                    /**
+                     * 获取慢SQL阈值，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlowLogThreshold 慢SQL阈值，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSlowLogThreshold() const;
+
+                    /**
+                     * 判断参数 SlowLogThreshold 是否已赋值
+                     * @return SlowLogThreshold 是否已赋值
+                     * 
+                     */
+                    bool SlowLogThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -388,6 +404,13 @@ namespace TencentCloud
                      */
                     uint64_t m_isSupportSA;
                     bool m_isSupportSAHasBeenSet;
+
+                    /**
+                     * 慢SQL阈值，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_slowLogThreshold;
+                    bool m_slowLogThresholdHasBeenSet;
 
                 };
             }

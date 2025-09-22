@@ -31,6 +31,8 @@
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmServiceMetricRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmServiceMetricResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h>
@@ -77,6 +79,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApmInstancesResponse> DescribeApmInstancesOutcome;
                 typedef std::future<DescribeApmInstancesOutcome> DescribeApmInstancesOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmInstancesRequest&, DescribeApmInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApmServiceMetricResponse> DescribeApmServiceMetricOutcome;
+                typedef std::future<DescribeApmServiceMetricOutcome> DescribeApmServiceMetricOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeApmServiceMetricRequest&, DescribeApmServiceMetricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmServiceMetricAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGeneralApmApplicationConfigResponse> DescribeGeneralApmApplicationConfigOutcome;
                 typedef std::future<DescribeGeneralApmApplicationConfigOutcome> DescribeGeneralApmApplicationConfigOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeGeneralApmApplicationConfigRequest&, DescribeGeneralApmApplicationConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralApmApplicationConfigAsyncHandler;
@@ -145,6 +150,15 @@ namespace TencentCloud
                 DescribeApmInstancesOutcome DescribeApmInstances(const Model::DescribeApmInstancesRequest &request);
                 void DescribeApmInstancesAsync(const Model::DescribeApmInstancesRequest& request, const DescribeApmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApmInstancesOutcomeCallable DescribeApmInstancesCallable(const Model::DescribeApmInstancesRequest& request);
+
+                /**
+                 *获取 APM 应用指标列表
+                 * @param req DescribeApmServiceMetricRequest
+                 * @return DescribeApmServiceMetricOutcome
+                 */
+                DescribeApmServiceMetricOutcome DescribeApmServiceMetric(const Model::DescribeApmServiceMetricRequest &request);
+                void DescribeApmServiceMetricAsync(const Model::DescribeApmServiceMetricRequest& request, const DescribeApmServiceMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApmServiceMetricOutcomeCallable DescribeApmServiceMetricCallable(const Model::DescribeApmServiceMetricRequest& request);
 
                 /**
                  *查询应用配置信息

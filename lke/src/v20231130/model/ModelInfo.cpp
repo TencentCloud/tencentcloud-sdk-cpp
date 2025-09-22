@@ -44,7 +44,9 @@ ModelInfo::ModelInfo() :
     m_modelParamsHasBeenSet(false),
     m_providerNameHasBeenSet(false),
     m_providerAliasNameHasBeenSet(false),
-    m_providerTypeHasBeenSet(false)
+    m_providerTypeHasBeenSet(false),
+    m_isCloseModelParamsHasBeenSet(false),
+    m_isDeepThinkingHasBeenSet(false)
 {
 }
 
@@ -327,6 +329,26 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_providerTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCloseModelParams") && !value["IsCloseModelParams"].IsNull())
+    {
+        if (!value["IsCloseModelParams"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.IsCloseModelParams` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCloseModelParams = value["IsCloseModelParams"].GetBool();
+        m_isCloseModelParamsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDeepThinking") && !value["IsDeepThinking"].IsNull())
+    {
+        if (!value["IsDeepThinking"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.IsDeepThinking` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDeepThinking = value["IsDeepThinking"].GetBool();
+        m_isDeepThinkingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -539,6 +561,22 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ProviderType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_providerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCloseModelParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCloseModelParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCloseModelParams, allocator);
+    }
+
+    if (m_isDeepThinkingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeepThinking";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDeepThinking, allocator);
     }
 
 }
@@ -926,5 +964,37 @@ void ModelInfo::SetProviderType(const string& _providerType)
 bool ModelInfo::ProviderTypeHasBeenSet() const
 {
     return m_providerTypeHasBeenSet;
+}
+
+bool ModelInfo::GetIsCloseModelParams() const
+{
+    return m_isCloseModelParams;
+}
+
+void ModelInfo::SetIsCloseModelParams(const bool& _isCloseModelParams)
+{
+    m_isCloseModelParams = _isCloseModelParams;
+    m_isCloseModelParamsHasBeenSet = true;
+}
+
+bool ModelInfo::IsCloseModelParamsHasBeenSet() const
+{
+    return m_isCloseModelParamsHasBeenSet;
+}
+
+bool ModelInfo::GetIsDeepThinking() const
+{
+    return m_isDeepThinking;
+}
+
+void ModelInfo::SetIsDeepThinking(const bool& _isDeepThinking)
+{
+    m_isDeepThinking = _isDeepThinking;
+    m_isDeepThinkingHasBeenSet = true;
+}
+
+bool ModelInfo::IsDeepThinkingHasBeenSet() const
+{
+    return m_isDeepThinkingHasBeenSet;
 }
 

@@ -646,6 +646,27 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool DisableApiTerminationHasBeenSet() const;
 
                     /**
+                     * 获取实例是否开启巨型帧，取值范围：<br><li/> true：表示实例开启巨型帧，只有支持巨型帧的机型可设置为true。<br><li/>false：表示实例关闭巨型帧，只有支持巨型帧的机型可设置为false。<br> 支持巨型帧的实例规格： [实例规格](https://cloud.tencent.com/document/product/213/11518)
+                     * @return EnableJumboFrame 实例是否开启巨型帧，取值范围：<br><li/> true：表示实例开启巨型帧，只有支持巨型帧的机型可设置为true。<br><li/>false：表示实例关闭巨型帧，只有支持巨型帧的机型可设置为false。<br> 支持巨型帧的实例规格： [实例规格](https://cloud.tencent.com/document/product/213/11518)
+                     * 
+                     */
+                    bool GetEnableJumboFrame() const;
+
+                    /**
+                     * 设置实例是否开启巨型帧，取值范围：<br><li/> true：表示实例开启巨型帧，只有支持巨型帧的机型可设置为true。<br><li/>false：表示实例关闭巨型帧，只有支持巨型帧的机型可设置为false。<br> 支持巨型帧的实例规格： [实例规格](https://cloud.tencent.com/document/product/213/11518)
+                     * @param _enableJumboFrame 实例是否开启巨型帧，取值范围：<br><li/> true：表示实例开启巨型帧，只有支持巨型帧的机型可设置为true。<br><li/>false：表示实例关闭巨型帧，只有支持巨型帧的机型可设置为false。<br> 支持巨型帧的实例规格： [实例规格](https://cloud.tencent.com/document/product/213/11518)
+                     * 
+                     */
+                    void SetEnableJumboFrame(const bool& _enableJumboFrame);
+
+                    /**
+                     * 判断参数 EnableJumboFrame 是否已赋值
+                     * @return EnableJumboFrame 是否已赋值
+                     * 
+                     */
+                    bool EnableJumboFrameHasBeenSet() const;
+
+                    /**
                      * 获取标签描述列表。通过指定该参数可以绑定标签到实例启动模板。
                      * @return LaunchTemplateTagSpecification 标签描述列表。通过指定该参数可以绑定标签到实例启动模板。
                      * 
@@ -897,6 +918,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                      */
                     bool m_disableApiTermination;
                     bool m_disableApiTerminationHasBeenSet;
+
+                    /**
+                     * 实例是否开启巨型帧，取值范围：<br><li/> true：表示实例开启巨型帧，只有支持巨型帧的机型可设置为true。<br><li/>false：表示实例关闭巨型帧，只有支持巨型帧的机型可设置为false。<br> 支持巨型帧的实例规格： [实例规格](https://cloud.tencent.com/document/product/213/11518)
+                     */
+                    bool m_enableJumboFrame;
+                    bool m_enableJumboFrameHasBeenSet;
 
                     /**
                      * 标签描述列表。通过指定该参数可以绑定标签到实例启动模板。

@@ -131,59 +131,43 @@ namespace TencentCloud
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
-
-- BGP：常规 BGP 线路
-
+                     * 获取线路类型。各种线路类型及支持地区详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
+<li>BGP：常规 BGP 线路</li>
 已开通静态单线IP白名单的用户，可选值：
-
- - CMCC：中国移动
- - CTCC：中国电信
- - CUCC：中国联通
-
+<li>CMCC：中国移动</li>
+<li>CTCC：中国电信</li>
+<li>CUCC：中国联通</li>
 注意：仅部分地域支持静态单线IP。
-示例值：BGP
-                     * @return InternetServiceProvider 线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
 
-- BGP：常规 BGP 线路
-
+                     * @return InternetServiceProvider 线路类型。各种线路类型及支持地区详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
+<li>BGP：常规 BGP 线路</li>
 已开通静态单线IP白名单的用户，可选值：
-
- - CMCC：中国移动
- - CTCC：中国电信
- - CUCC：中国联通
-
+<li>CMCC：中国移动</li>
+<li>CTCC：中国电信</li>
+<li>CUCC：中国联通</li>
 注意：仅部分地域支持静态单线IP。
-示例值：BGP
+
                      * 
                      */
                     std::string GetInternetServiceProvider() const;
 
                     /**
-                     * 设置线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
-
-- BGP：常规 BGP 线路
-
+                     * 设置线路类型。各种线路类型及支持地区详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
+<li>BGP：常规 BGP 线路</li>
 已开通静态单线IP白名单的用户，可选值：
-
- - CMCC：中国移动
- - CTCC：中国电信
- - CUCC：中国联通
-
+<li>CMCC：中国移动</li>
+<li>CTCC：中国电信</li>
+<li>CUCC：中国联通</li>
 注意：仅部分地域支持静态单线IP。
-示例值：BGP
-                     * @param _internetServiceProvider 线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
 
-- BGP：常规 BGP 线路
-
+                     * @param _internetServiceProvider 线路类型。各种线路类型及支持地区详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
+<li>BGP：常规 BGP 线路</li>
 已开通静态单线IP白名单的用户，可选值：
-
- - CMCC：中国移动
- - CTCC：中国电信
- - CUCC：中国联通
-
+<li>CMCC：中国移动</li>
+<li>CTCC：中国电信</li>
+<li>CUCC：中国联通</li>
 注意：仅部分地域支持静态单线IP。
-示例值：BGP
+
                      * 
                      */
                     void SetInternetServiceProvider(const std::string& _internetServiceProvider);
@@ -198,24 +182,18 @@ namespace TencentCloud
                     /**
                      * 获取公网 IP 类型。
 
-- WanIP：普通公网IP。
-- HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。
-- AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。
-
+<li> WanIP：普通公网IP。</li>
+<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
+<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>
 如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。
-
-示例值：WanIP
 
 此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * @return IPv4AddressType 公网 IP 类型。
 
-- WanIP：普通公网IP。
-- HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。
-- AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。
-
+<li> WanIP：普通公网IP。</li>
+<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
+<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>
 如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。
-
-示例值：WanIP
 
 此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * 
@@ -225,24 +203,18 @@ namespace TencentCloud
                     /**
                      * 设置公网 IP 类型。
 
-- WanIP：普通公网IP。
-- HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。
-- AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。
-
+<li> WanIP：普通公网IP。</li>
+<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
+<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>
 如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。
-
-示例值：WanIP
 
 此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * @param _iPv4AddressType 公网 IP 类型。
 
-- WanIP：普通公网IP。
-- HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。
-- AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。
-
+<li> WanIP：普通公网IP。</li>
+<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
+<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>
 如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。
-
-示例值：WanIP
 
 此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * 
@@ -258,19 +230,15 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性公网 IPv6 类型。
-- EIPv6：弹性公网 IPv6。
-- HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。
-
+<li> EIPv6：弹性公网 IPv6。</li>
+<li> HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。</li>
 如需为资源分配IPv6地址，请指定弹性公网IPv6类型。
-示例值：EIPv6
 
 此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * @return IPv6AddressType 弹性公网 IPv6 类型。
-- EIPv6：弹性公网 IPv6。
-- HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。
-
+<li> EIPv6：弹性公网 IPv6。</li>
+<li> HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。</li>
 如需为资源分配IPv6地址，请指定弹性公网IPv6类型。
-示例值：EIPv6
 
 此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * 
@@ -279,19 +247,15 @@ namespace TencentCloud
 
                     /**
                      * 设置弹性公网 IPv6 类型。
-- EIPv6：弹性公网 IPv6。
-- HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。
-
+<li> EIPv6：弹性公网 IPv6。</li>
+<li> HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。</li>
 如需为资源分配IPv6地址，请指定弹性公网IPv6类型。
-示例值：EIPv6
 
 此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * @param _iPv6AddressType 弹性公网 IPv6 类型。
-- EIPv6：弹性公网 IPv6。
-- HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。
-
+<li> EIPv6：弹性公网 IPv6。</li>
+<li> HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。</li>
 如需为资源分配IPv6地址，请指定弹性公网IPv6类型。
-示例值：EIPv6
 
 此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      * 
@@ -307,10 +271,8 @@ namespace TencentCloud
 
                     /**
                      * 获取高防包唯一ID，申请高防IP时，该字段必传。
-示例值：bgp-12345678
 
                      * @return AntiDDoSPackageId 高防包唯一ID，申请高防IP时，该字段必传。
-示例值：bgp-12345678
 
                      * 
                      */
@@ -318,10 +280,8 @@ namespace TencentCloud
 
                     /**
                      * 设置高防包唯一ID，申请高防IP时，该字段必传。
-示例值：bgp-12345678
 
                      * @param _antiDDoSPackageId 高防包唯一ID，申请高防IP时，该字段必传。
-示例值：bgp-12345678
 
                      * 
                      */
@@ -361,18 +321,14 @@ namespace TencentCloud
                     bool m_bandwidthPackageIdHasBeenSet;
 
                     /**
-                     * 线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
-
-- BGP：常规 BGP 线路
-
+                     * 线路类型。各种线路类型及支持地区详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。
+<li>BGP：常规 BGP 线路</li>
 已开通静态单线IP白名单的用户，可选值：
-
- - CMCC：中国移动
- - CTCC：中国电信
- - CUCC：中国联通
-
+<li>CMCC：中国移动</li>
+<li>CTCC：中国电信</li>
+<li>CUCC：中国联通</li>
 注意：仅部分地域支持静态单线IP。
-示例值：BGP
+
                      */
                     std::string m_internetServiceProvider;
                     bool m_internetServiceProviderHasBeenSet;
@@ -380,13 +336,10 @@ namespace TencentCloud
                     /**
                      * 公网 IP 类型。
 
-- WanIP：普通公网IP。
-- HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。
-- AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。
-
+<li> WanIP：普通公网IP。</li>
+<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
+<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>
 如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。
-
-示例值：WanIP
 
 此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      */
@@ -395,11 +348,9 @@ namespace TencentCloud
 
                     /**
                      * 弹性公网 IPv6 类型。
-- EIPv6：弹性公网 IPv6。
-- HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。
-
+<li> EIPv6：弹性公网 IPv6。</li>
+<li> HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。</li>
 如需为资源分配IPv6地址，请指定弹性公网IPv6类型。
-示例值：EIPv6
 
 此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)
                      */
@@ -408,7 +359,6 @@ namespace TencentCloud
 
                     /**
                      * 高防包唯一ID，申请高防IP时，该字段必传。
-示例值：bgp-12345678
 
                      */
                     std::string m_antiDDoSPackageId;

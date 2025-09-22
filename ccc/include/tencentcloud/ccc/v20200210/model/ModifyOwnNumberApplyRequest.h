@@ -127,6 +127,48 @@ namespace TencentCloud
                      */
                     bool PrefixHasBeenSet() const;
 
+                    /**
+                     * 获取国内长途手机前缀码
+                     * @return MobileNddPrefix 国内长途手机前缀码
+                     * 
+                     */
+                    std::string GetMobileNddPrefix() const;
+
+                    /**
+                     * 设置国内长途手机前缀码
+                     * @param _mobileNddPrefix 国内长途手机前缀码
+                     * 
+                     */
+                    void SetMobileNddPrefix(const std::string& _mobileNddPrefix);
+
+                    /**
+                     * 判断参数 MobileNddPrefix 是否已赋值
+                     * @return MobileNddPrefix 是否已赋值
+                     * 
+                     */
+                    bool MobileNddPrefixHasBeenSet() const;
+
+                    /**
+                     * 获取同市固话去掉区号
+                     * @return LocalNumberTrimAC 同市固话去掉区号
+                     * 
+                     */
+                    bool GetLocalNumberTrimAC() const;
+
+                    /**
+                     * 设置同市固话去掉区号
+                     * @param _localNumberTrimAC 同市固话去掉区号
+                     * 
+                     */
+                    void SetLocalNumberTrimAC(const bool& _localNumberTrimAC);
+
+                    /**
+                     * 判断参数 LocalNumberTrimAC 是否已赋值
+                     * @return LocalNumberTrimAC 是否已赋值
+                     * 
+                     */
+                    bool LocalNumberTrimACHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +194,18 @@ namespace TencentCloud
                      */
                     std::string m_prefix;
                     bool m_prefixHasBeenSet;
+
+                    /**
+                     * 国内长途手机前缀码
+                     */
+                    std::string m_mobileNddPrefix;
+                    bool m_mobileNddPrefixHasBeenSet;
+
+                    /**
+                     * 同市固话去掉区号
+                     */
+                    bool m_localNumberTrimAC;
+                    bool m_localNumberTrimACHasBeenSet;
 
                 };
             }

@@ -297,6 +297,31 @@ namespace TencentCloud
                      */
                     bool StatisticInfosHasBeenSet() const;
 
+                    /**
+                     * 获取错误代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailCode 错误代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFailCode() const;
+
+                    /**
+                     * 设置错误代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _failCode 错误代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFailCode(const std::string& _failCode);
+
+                    /**
+                     * 判断参数 FailCode 是否已赋值
+                     * @return FailCode 是否已赋值
+                     * 
+                     */
+                    bool FailCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +393,13 @@ namespace TencentCloud
                      */
                     std::vector<StatisticInfo> m_statisticInfos;
                     bool m_statisticInfosHasBeenSet;
+
+                    /**
+                     * 错误代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_failCode;
+                    bool m_failCodeHasBeenSet;
 
                 };
             }

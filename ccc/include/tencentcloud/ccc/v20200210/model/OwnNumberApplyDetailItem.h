@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool OutboundCalleeFormatHasBeenSet() const;
 
+                    /**
+                     * 获取运营商号码
+                     * @return CarrierPhoneNumber 运营商号码
+                     * 
+                     */
+                    std::string GetCarrierPhoneNumber() const;
+
+                    /**
+                     * 设置运营商号码
+                     * @param _carrierPhoneNumber 运营商号码
+                     * 
+                     */
+                    void SetCarrierPhoneNumber(const std::string& _carrierPhoneNumber);
+
+                    /**
+                     * 判断参数 CarrierPhoneNumber 是否已赋值
+                     * @return CarrierPhoneNumber 是否已赋值
+                     * 
+                     */
+                    bool CarrierPhoneNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     std::string m_outboundCalleeFormat;
                     bool m_outboundCalleeFormatHasBeenSet;
+
+                    /**
+                     * 运营商号码
+                     */
+                    std::string m_carrierPhoneNumber;
+                    bool m_carrierPhoneNumberHasBeenSet;
 
                 };
             }
