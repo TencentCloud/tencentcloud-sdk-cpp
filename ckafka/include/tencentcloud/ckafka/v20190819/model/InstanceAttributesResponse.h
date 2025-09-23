@@ -824,6 +824,84 @@ serverless  :serverless版
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
+                     * 获取是否开启弹性带宽白名单   
+1:已开启弹性带宽白名单;
+0:未开启弹性带宽白名单;
+                     * @return ElasticBandwidthSwitch 是否开启弹性带宽白名单   
+1:已开启弹性带宽白名单;
+0:未开启弹性带宽白名单;
+                     * 
+                     */
+                    int64_t GetElasticBandwidthSwitch() const;
+
+                    /**
+                     * 设置是否开启弹性带宽白名单   
+1:已开启弹性带宽白名单;
+0:未开启弹性带宽白名单;
+                     * @param _elasticBandwidthSwitch 是否开启弹性带宽白名单   
+1:已开启弹性带宽白名单;
+0:未开启弹性带宽白名单;
+                     * 
+                     */
+                    void SetElasticBandwidthSwitch(const int64_t& _elasticBandwidthSwitch);
+
+                    /**
+                     * 判断参数 ElasticBandwidthSwitch 是否已赋值
+                     * @return ElasticBandwidthSwitch 是否已赋值
+                     * 
+                     */
+                    bool ElasticBandwidthSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取弹性带宽开通状态
+1:未开启弹性带宽;
+16: 开启弹性带宽中;
+32:开启弹性带宽成功;
+33:关闭弹性带宽中;
+34:关闭弹性带宽成功;
+64:开启弹性带宽失败;
+65:关闭弹性带宽失败;
+                     * @return ElasticBandwidthOpenStatus 弹性带宽开通状态
+1:未开启弹性带宽;
+16: 开启弹性带宽中;
+32:开启弹性带宽成功;
+33:关闭弹性带宽中;
+34:关闭弹性带宽成功;
+64:开启弹性带宽失败;
+65:关闭弹性带宽失败;
+                     * 
+                     */
+                    int64_t GetElasticBandwidthOpenStatus() const;
+
+                    /**
+                     * 设置弹性带宽开通状态
+1:未开启弹性带宽;
+16: 开启弹性带宽中;
+32:开启弹性带宽成功;
+33:关闭弹性带宽中;
+34:关闭弹性带宽成功;
+64:开启弹性带宽失败;
+65:关闭弹性带宽失败;
+                     * @param _elasticBandwidthOpenStatus 弹性带宽开通状态
+1:未开启弹性带宽;
+16: 开启弹性带宽中;
+32:开启弹性带宽成功;
+33:关闭弹性带宽中;
+34:关闭弹性带宽成功;
+64:开启弹性带宽失败;
+65:关闭弹性带宽失败;
+                     * 
+                     */
+                    void SetElasticBandwidthOpenStatus(const int64_t& _elasticBandwidthOpenStatus);
+
+                    /**
+                     * 判断参数 ElasticBandwidthOpenStatus 是否已赋值
+                     * @return ElasticBandwidthOpenStatus 是否已赋值
+                     * 
+                     */
+                    bool ElasticBandwidthOpenStatusHasBeenSet() const;
+
+                    /**
                      * 获取集群类型  
 CLOUD_IDC IDC集群
 CLOUD_CVM_SHARE CVM共享集群
@@ -1194,6 +1272,27 @@ serverless  :serverless版
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
+
+                    /**
+                     * 是否开启弹性带宽白名单   
+1:已开启弹性带宽白名单;
+0:未开启弹性带宽白名单;
+                     */
+                    int64_t m_elasticBandwidthSwitch;
+                    bool m_elasticBandwidthSwitchHasBeenSet;
+
+                    /**
+                     * 弹性带宽开通状态
+1:未开启弹性带宽;
+16: 开启弹性带宽中;
+32:开启弹性带宽成功;
+33:关闭弹性带宽中;
+34:关闭弹性带宽成功;
+64:开启弹性带宽失败;
+65:关闭弹性带宽失败;
+                     */
+                    int64_t m_elasticBandwidthOpenStatus;
+                    bool m_elasticBandwidthOpenStatusHasBeenSet;
 
                     /**
                      * 集群类型  

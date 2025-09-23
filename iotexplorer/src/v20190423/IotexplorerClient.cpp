@@ -4340,6 +4340,49 @@ IotexplorerClient::DescribeStudioProductOutcomeCallable IotexplorerClient::Descr
     return task->get_future();
 }
 
+IotexplorerClient::DescribeSubscribedTopicPolicyOutcome IotexplorerClient::DescribeSubscribedTopicPolicy(const DescribeSubscribedTopicPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubscribedTopicPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubscribedTopicPolicyResponse rsp = DescribeSubscribedTopicPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubscribedTopicPolicyOutcome(rsp);
+        else
+            return DescribeSubscribedTopicPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubscribedTopicPolicyOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeSubscribedTopicPolicyAsync(const DescribeSubscribedTopicPolicyRequest& request, const DescribeSubscribedTopicPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubscribedTopicPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeSubscribedTopicPolicyOutcomeCallable IotexplorerClient::DescribeSubscribedTopicPolicyCallable(const DescribeSubscribedTopicPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubscribedTopicPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubscribedTopicPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeTWeSeeConfigOutcome IotexplorerClient::DescribeTWeSeeConfig(const DescribeTWeSeeConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTWeSeeConfig");

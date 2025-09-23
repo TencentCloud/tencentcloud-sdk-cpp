@@ -14,56 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_REDIS_V20180412_MODEL_MODIFYINSTANCEBACKUPMODERESPONSE_H_
-#define TENCENTCLOUD_REDIS_V20180412_MODEL_MODIFYINSTANCEBACKUPMODERESPONSE_H_
+#ifndef TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_DESCRIBESUBSCRIBEDTOPICPOLICYRESPONSE_H_
+#define TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_DESCRIBESUBSCRIBEDTOPICPOLICYRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SubscribedTopicItem.h>
 
 
 namespace TencentCloud
 {
-    namespace Redis
+    namespace Iotexplorer
     {
-        namespace V20180412
+        namespace V20190423
         {
             namespace Model
             {
                 /**
-                * ModifyInstanceBackupMode返回参数结构体
+                * DescribeSubscribedTopicPolicy返回参数结构体
                 */
-                class ModifyInstanceBackupModeResponse : public AbstractModel
+                class DescribeSubscribedTopicPolicyResponse : public AbstractModel
                 {
                 public:
-                    ModifyInstanceBackupModeResponse();
-                    ~ModifyInstanceBackupModeResponse() = default;
+                    DescribeSubscribedTopicPolicyResponse();
+                    ~DescribeSubscribedTopicPolicyResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务 ID。
-                     * @return TaskId 任务 ID。
+                     * 获取已订阅Topic信息
+                     * @return Topics 已订阅Topic信息
                      * 
                      */
-                    int64_t GetTaskId() const;
+                    std::vector<SubscribedTopicItem> GetTopics() const;
 
                     /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
+                     * 判断参数 Topics 是否已赋值
+                     * @return Topics 是否已赋值
                      * 
                      */
-                    bool TaskIdHasBeenSet() const;
+                    bool TopicsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务 ID。
+                     * 已订阅Topic信息
                      */
-                    int64_t m_taskId;
-                    bool m_taskIdHasBeenSet;
+                    std::vector<SubscribedTopicItem> m_topics;
+                    bool m_topicsHasBeenSet;
 
                 };
             }
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_REDIS_V20180412_MODEL_MODIFYINSTANCEBACKUPMODERESPONSE_H_
+#endif // !TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_DESCRIBESUBSCRIBEDTOPICPOLICYRESPONSE_H_

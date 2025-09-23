@@ -1158,6 +1158,49 @@ CccClient::DeleteStaffOutcomeCallable CccClient::DeleteStaffCallable(const Delet
     return task->get_future();
 }
 
+CccClient::DescribeAIAnalysisResultOutcome CccClient::DescribeAIAnalysisResult(const DescribeAIAnalysisResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIAnalysisResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIAnalysisResultResponse rsp = DescribeAIAnalysisResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIAnalysisResultOutcome(rsp);
+        else
+            return DescribeAIAnalysisResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIAnalysisResultOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeAIAnalysisResultAsync(const DescribeAIAnalysisResultRequest& request, const DescribeAIAnalysisResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAIAnalysisResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeAIAnalysisResultOutcomeCallable CccClient::DescribeAIAnalysisResultCallable(const DescribeAIAnalysisResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAIAnalysisResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAIAnalysisResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeAICallExtractResultOutcome CccClient::DescribeAICallExtractResult(const DescribeAICallExtractResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAICallExtractResult");

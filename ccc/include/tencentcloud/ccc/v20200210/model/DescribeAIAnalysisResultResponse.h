@@ -14,56 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_REDIS_V20180412_MODEL_MODIFYINSTANCEBACKUPMODERESPONSE_H_
-#define TENCENTCLOUD_REDIS_V20180412_MODEL_MODIFYINSTANCEBACKUPMODERESPONSE_H_
+#ifndef TENCENTCLOUD_CCC_V20200210_MODEL_DESCRIBEAIANALYSISRESULTRESPONSE_H_
+#define TENCENTCLOUD_CCC_V20200210_MODEL_DESCRIBEAIANALYSISRESULTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ccc/v20200210/model/AIAnalysisResult.h>
 
 
 namespace TencentCloud
 {
-    namespace Redis
+    namespace Ccc
     {
-        namespace V20180412
+        namespace V20200210
         {
             namespace Model
             {
                 /**
-                * ModifyInstanceBackupMode返回参数结构体
+                * DescribeAIAnalysisResult返回参数结构体
                 */
-                class ModifyInstanceBackupModeResponse : public AbstractModel
+                class DescribeAIAnalysisResultResponse : public AbstractModel
                 {
                 public:
-                    ModifyInstanceBackupModeResponse();
-                    ~ModifyInstanceBackupModeResponse() = default;
+                    DescribeAIAnalysisResultResponse();
+                    ~DescribeAIAnalysisResultResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务 ID。
-                     * @return TaskId 任务 ID。
+                     * 获取AI会话分析结果
+                     * @return ResultList AI会话分析结果
                      * 
                      */
-                    int64_t GetTaskId() const;
+                    std::vector<AIAnalysisResult> GetResultList() const;
 
                     /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
+                     * 判断参数 ResultList 是否已赋值
+                     * @return ResultList 是否已赋值
                      * 
                      */
-                    bool TaskIdHasBeenSet() const;
+                    bool ResultListHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务 ID。
+                     * AI会话分析结果
                      */
-                    int64_t m_taskId;
-                    bool m_taskIdHasBeenSet;
+                    std::vector<AIAnalysisResult> m_resultList;
+                    bool m_resultListHasBeenSet;
 
                 };
             }
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_REDIS_V20180412_MODEL_MODIFYINSTANCEBACKUPMODERESPONSE_H_
+#endif // !TENCENTCLOUD_CCC_V20200210_MODEL_DESCRIBEAIANALYSISRESULTRESPONSE_H_

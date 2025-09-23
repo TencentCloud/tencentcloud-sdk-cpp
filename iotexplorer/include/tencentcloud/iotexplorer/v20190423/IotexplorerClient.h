@@ -223,6 +223,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeSubscribedTopicPolicyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeSubscribedTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeRecognitionTaskRequest.h>
@@ -701,6 +703,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStudioProductResponse> DescribeStudioProductOutcome;
                 typedef std::future<DescribeStudioProductOutcome> DescribeStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeStudioProductRequest&, DescribeStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSubscribedTopicPolicyResponse> DescribeSubscribedTopicPolicyOutcome;
+                typedef std::future<DescribeSubscribedTopicPolicyOutcome> DescribeSubscribedTopicPolicyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeSubscribedTopicPolicyRequest&, DescribeSubscribedTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscribedTopicPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTWeSeeConfigResponse> DescribeTWeSeeConfigOutcome;
                 typedef std::future<DescribeTWeSeeConfigOutcome> DescribeTWeSeeConfigOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeeConfigRequest&, DescribeTWeSeeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeeConfigAsyncHandler;
@@ -1853,6 +1858,15 @@ namespace TencentCloud
                 DescribeStudioProductOutcome DescribeStudioProduct(const Model::DescribeStudioProductRequest &request);
                 void DescribeStudioProductAsync(const Model::DescribeStudioProductRequest& request, const DescribeStudioProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStudioProductOutcomeCallable DescribeStudioProductCallable(const Model::DescribeStudioProductRequest& request);
+
+                /**
+                 *本接口（DescribeSubscribedTopicPolicy）用于获取设备已订阅Topic列表
+                 * @param req DescribeSubscribedTopicPolicyRequest
+                 * @return DescribeSubscribedTopicPolicyOutcome
+                 */
+                DescribeSubscribedTopicPolicyOutcome DescribeSubscribedTopicPolicy(const Model::DescribeSubscribedTopicPolicyRequest &request);
+                void DescribeSubscribedTopicPolicyAsync(const Model::DescribeSubscribedTopicPolicyRequest& request, const DescribeSubscribedTopicPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubscribedTopicPolicyOutcomeCallable DescribeSubscribedTopicPolicyCallable(const Model::DescribeSubscribedTopicPolicyRequest& request);
 
                 /**
                  *拉取 TWeSee 配置

@@ -25,7 +25,9 @@ StorageHistogram::StorageHistogram() :
     m_idsSizeHasBeenSet(false),
     m_netFlowSizeHasBeenSet(false),
     m_operateSizeHasBeenSet(false),
-    m_timeHasBeenSet(false)
+    m_timeHasBeenSet(false),
+    m_nDRNetflowSizeHasBeenSet(false),
+    m_nDRRiskSizeHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome StorageHistogram::Deserialize(const rapidjson::Value &value)
         m_timeHasBeenSet = true;
     }
 
+    if (value.HasMember("NDRNetflowSize") && !value["NDRNetflowSize"].IsNull())
+    {
+        if (!value["NDRNetflowSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageHistogram.NDRNetflowSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nDRNetflowSize = value["NDRNetflowSize"].GetInt64();
+        m_nDRNetflowSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NDRRiskSize") && !value["NDRRiskSize"].IsNull())
+    {
+        if (!value["NDRRiskSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageHistogram.NDRRiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nDRRiskSize = value["NDRRiskSize"].GetInt64();
+        m_nDRRiskSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void StorageHistogram::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_time.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nDRNetflowSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NDRNetflowSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nDRNetflowSize, allocator);
+    }
+
+    if (m_nDRRiskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NDRRiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nDRRiskSize, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void StorageHistogram::SetTime(const string& _time)
 bool StorageHistogram::TimeHasBeenSet() const
 {
     return m_timeHasBeenSet;
+}
+
+int64_t StorageHistogram::GetNDRNetflowSize() const
+{
+    return m_nDRNetflowSize;
+}
+
+void StorageHistogram::SetNDRNetflowSize(const int64_t& _nDRNetflowSize)
+{
+    m_nDRNetflowSize = _nDRNetflowSize;
+    m_nDRNetflowSizeHasBeenSet = true;
+}
+
+bool StorageHistogram::NDRNetflowSizeHasBeenSet() const
+{
+    return m_nDRNetflowSizeHasBeenSet;
+}
+
+int64_t StorageHistogram::GetNDRRiskSize() const
+{
+    return m_nDRRiskSize;
+}
+
+void StorageHistogram::SetNDRRiskSize(const int64_t& _nDRRiskSize)
+{
+    m_nDRRiskSize = _nDRRiskSize;
+    m_nDRRiskSizeHasBeenSet = true;
+}
+
+bool StorageHistogram::NDRRiskSizeHasBeenSet() const
+{
+    return m_nDRRiskSizeHasBeenSet;
 }
 

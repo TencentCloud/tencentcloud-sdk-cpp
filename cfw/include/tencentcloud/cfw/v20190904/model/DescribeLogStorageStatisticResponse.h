@@ -241,6 +241,48 @@ namespace TencentCloud
                      */
                     bool ArrearsStopWritingHasBeenSet() const;
 
+                    /**
+                     * 获取NDR流量日志存储量，单位B
+                     * @return NDRNetFlowSize NDR流量日志存储量，单位B
+                     * 
+                     */
+                    int64_t GetNDRNetFlowSize() const;
+
+                    /**
+                     * 判断参数 NDRNetFlowSize 是否已赋值
+                     * @return NDRNetFlowSize 是否已赋值
+                     * 
+                     */
+                    bool NDRNetFlowSizeHasBeenSet() const;
+
+                    /**
+                     * 获取NDR风险日志存储量，单位B
+                     * @return NDRRiskSize NDR风险日志存储量，单位B
+                     * 
+                     */
+                    int64_t GetNDRRiskSize() const;
+
+                    /**
+                     * 判断参数 NDRRiskSize 是否已赋值
+                     * @return NDRRiskSize 是否已赋值
+                     * 
+                     */
+                    bool NDRRiskSizeHasBeenSet() const;
+
+                    /**
+                     * 获取NDR日志存储天数
+                     * @return NDRStorageDay NDR日志存储天数
+                     * 
+                     */
+                    int64_t GetNDRStorageDay() const;
+
+                    /**
+                     * 判断参数 NDRStorageDay 是否已赋值
+                     * @return NDRStorageDay 是否已赋值
+                     * 
+                     */
+                    bool NDRStorageDayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -326,6 +368,24 @@ namespace TencentCloud
                      */
                     int64_t m_arrearsStopWriting;
                     bool m_arrearsStopWritingHasBeenSet;
+
+                    /**
+                     * NDR流量日志存储量，单位B
+                     */
+                    int64_t m_nDRNetFlowSize;
+                    bool m_nDRNetFlowSizeHasBeenSet;
+
+                    /**
+                     * NDR风险日志存储量，单位B
+                     */
+                    int64_t m_nDRRiskSize;
+                    bool m_nDRRiskSizeHasBeenSet;
+
+                    /**
+                     * NDR日志存储天数
+                     */
+                    int64_t m_nDRStorageDay;
+                    bool m_nDRStorageDayHasBeenSet;
 
                 };
             }

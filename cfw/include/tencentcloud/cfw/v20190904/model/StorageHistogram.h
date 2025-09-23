@@ -171,6 +171,48 @@ namespace TencentCloud
                      */
                     bool TimeHasBeenSet() const;
 
+                    /**
+                     * 获取NDR流量日志存储量，单位B
+                     * @return NDRNetflowSize NDR流量日志存储量，单位B
+                     * 
+                     */
+                    int64_t GetNDRNetflowSize() const;
+
+                    /**
+                     * 设置NDR流量日志存储量，单位B
+                     * @param _nDRNetflowSize NDR流量日志存储量，单位B
+                     * 
+                     */
+                    void SetNDRNetflowSize(const int64_t& _nDRNetflowSize);
+
+                    /**
+                     * 判断参数 NDRNetflowSize 是否已赋值
+                     * @return NDRNetflowSize 是否已赋值
+                     * 
+                     */
+                    bool NDRNetflowSizeHasBeenSet() const;
+
+                    /**
+                     * 获取NDR风险日志存储量，单位B
+                     * @return NDRRiskSize NDR风险日志存储量，单位B
+                     * 
+                     */
+                    int64_t GetNDRRiskSize() const;
+
+                    /**
+                     * 设置NDR风险日志存储量，单位B
+                     * @param _nDRRiskSize NDR风险日志存储量，单位B
+                     * 
+                     */
+                    void SetNDRRiskSize(const int64_t& _nDRRiskSize);
+
+                    /**
+                     * 判断参数 NDRRiskSize 是否已赋值
+                     * @return NDRRiskSize 是否已赋值
+                     * 
+                     */
+                    bool NDRRiskSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +249,18 @@ namespace TencentCloud
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
+
+                    /**
+                     * NDR流量日志存储量，单位B
+                     */
+                    int64_t m_nDRNetflowSize;
+                    bool m_nDRNetflowSizeHasBeenSet;
+
+                    /**
+                     * NDR风险日志存储量，单位B
+                     */
+                    int64_t m_nDRRiskSize;
+                    bool m_nDRRiskSizeHasBeenSet;
 
                 };
             }

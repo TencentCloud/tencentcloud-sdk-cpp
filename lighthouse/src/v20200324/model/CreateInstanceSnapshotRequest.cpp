@@ -24,7 +24,8 @@ using namespace std;
 
 CreateInstanceSnapshotRequest::CreateInstanceSnapshotRequest() :
     m_instanceIdHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false)
+    m_snapshotNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,21 @@ string CreateInstanceSnapshotRequest::ToJsonString() const
         string key = "SnapshotName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_snapshotName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -89,6 +105,22 @@ void CreateInstanceSnapshotRequest::SetSnapshotName(const string& _snapshotName)
 bool CreateInstanceSnapshotRequest::SnapshotNameHasBeenSet() const
 {
     return m_snapshotNameHasBeenSet;
+}
+
+vector<Tag> CreateInstanceSnapshotRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateInstanceSnapshotRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateInstanceSnapshotRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

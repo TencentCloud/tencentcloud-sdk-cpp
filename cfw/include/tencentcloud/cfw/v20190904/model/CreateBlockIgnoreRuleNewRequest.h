@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RuleTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
-                     * @return CoverDuplicate 是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
+                     * 获取删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据
+                     * @return CoverDuplicate 删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据
                      * 
                      */
                     int64_t GetCoverDuplicate() const;
 
                     /**
-                     * 设置是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
-                     * @param _coverDuplicate 是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
+                     * 设置删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据
+                     * @param _coverDuplicate 删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据
                      * 
                      */
                     void SetCoverDuplicate(const int64_t& _coverDuplicate);
@@ -121,7 +121,7 @@ namespace TencentCloud
                     bool m_ruleTypeHasBeenSet;
 
                     /**
-                     * 是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
+                     * 删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据
                      */
                     int64_t m_coverDuplicate;
                     bool m_coverDuplicateHasBeenSet;

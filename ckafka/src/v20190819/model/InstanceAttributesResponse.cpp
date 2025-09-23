@@ -57,6 +57,8 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_remainingTopicsHasBeenSet(false),
     m_dynamicDiskConfigHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
+    m_elasticBandwidthSwitchHasBeenSet(false),
+    m_elasticBandwidthOpenStatusHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
     m_freePartitionNumberHasBeenSet(false),
     m_elasticFloatBandwidthHasBeenSet(false),
@@ -478,6 +480,26 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_instanceChargeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticBandwidthSwitch") && !value["ElasticBandwidthSwitch"].IsNull())
+    {
+        if (!value["ElasticBandwidthSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.ElasticBandwidthSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticBandwidthSwitch = value["ElasticBandwidthSwitch"].GetInt64();
+        m_elasticBandwidthSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticBandwidthOpenStatus") && !value["ElasticBandwidthOpenStatus"].IsNull())
+    {
+        if (!value["ElasticBandwidthOpenStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.ElasticBandwidthOpenStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticBandwidthOpenStatus = value["ElasticBandwidthOpenStatus"].GetInt64();
+        m_elasticBandwidthOpenStatusHasBeenSet = true;
+    }
+
     if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
     {
         if (!value["ClusterType"].IsString())
@@ -858,6 +880,22 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "InstanceChargeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_elasticBandwidthSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticBandwidthSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticBandwidthSwitch, allocator);
+    }
+
+    if (m_elasticBandwidthOpenStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticBandwidthOpenStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticBandwidthOpenStatus, allocator);
     }
 
     if (m_clusterTypeHasBeenSet)
@@ -1485,6 +1523,38 @@ void InstanceAttributesResponse::SetInstanceChargeType(const string& _instanceCh
 bool InstanceAttributesResponse::InstanceChargeTypeHasBeenSet() const
 {
     return m_instanceChargeTypeHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetElasticBandwidthSwitch() const
+{
+    return m_elasticBandwidthSwitch;
+}
+
+void InstanceAttributesResponse::SetElasticBandwidthSwitch(const int64_t& _elasticBandwidthSwitch)
+{
+    m_elasticBandwidthSwitch = _elasticBandwidthSwitch;
+    m_elasticBandwidthSwitchHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::ElasticBandwidthSwitchHasBeenSet() const
+{
+    return m_elasticBandwidthSwitchHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetElasticBandwidthOpenStatus() const
+{
+    return m_elasticBandwidthOpenStatus;
+}
+
+void InstanceAttributesResponse::SetElasticBandwidthOpenStatus(const int64_t& _elasticBandwidthOpenStatus)
+{
+    m_elasticBandwidthOpenStatus = _elasticBandwidthOpenStatus;
+    m_elasticBandwidthOpenStatusHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::ElasticBandwidthOpenStatusHasBeenSet() const
+{
+    return m_elasticBandwidthOpenStatusHasBeenSet;
 }
 
 string InstanceAttributesResponse::GetClusterType() const

@@ -31,7 +31,8 @@ CreateDisksRequest::CreateDisksRequest() :
     m_diskCountHasBeenSet(false),
     m_diskBackupQuotaHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_autoMountConfigurationHasBeenSet(false)
+    m_autoMountConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,21 @@ string CreateDisksRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_autoMountConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -266,6 +282,22 @@ void CreateDisksRequest::SetAutoMountConfiguration(const AutoMountConfiguration&
 bool CreateDisksRequest::AutoMountConfigurationHasBeenSet() const
 {
     return m_autoMountConfigurationHasBeenSet;
+}
+
+vector<Tag> CreateDisksRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateDisksRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateDisksRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

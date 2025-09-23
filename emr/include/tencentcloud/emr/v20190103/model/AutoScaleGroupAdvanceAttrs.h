@@ -49,14 +49,18 @@ namespace TencentCloud
 
                     /**
                      * 获取计算资源高级设置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComputeResourceAdvanceParams 计算资源高级设置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComputeResourceAdvanceParams GetComputeResourceAdvanceParams() const;
 
                     /**
                      * 设置计算资源高级设置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _computeResourceAdvanceParams 计算资源高级设置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComputeResourceAdvanceParams(const ComputeResourceAdvanceParams& _computeResourceAdvanceParams);
@@ -72,6 +76,7 @@ namespace TencentCloud
 
                     /**
                      * 计算资源高级设置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComputeResourceAdvanceParams m_computeResourceAdvanceParams;
                     bool m_computeResourceAdvanceParamsHasBeenSet;

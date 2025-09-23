@@ -51,7 +51,9 @@ EnterpriseSecurityGroupRuleRuleInfo::EnterpriseSecurityGroupRuleRuleInfo() :
     m_protocolPortNameHasBeenSet(false),
     m_betaListHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_dnsParseCountHasBeenSet(false)
+    m_dnsParseCountHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -387,6 +389,26 @@ CoreInternalOutcome EnterpriseSecurityGroupRuleRuleInfo::Deserialize(const rapid
         m_dnsParseCountHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnterpriseSecurityGroupRuleRuleInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnterpriseSecurityGroupRuleRuleInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -648,6 +670,22 @@ void EnterpriseSecurityGroupRuleRuleInfo::ToJsonObject(rapidjson::Value &value, 
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dnsParseCount.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1147,5 +1185,37 @@ void EnterpriseSecurityGroupRuleRuleInfo::SetDnsParseCount(const SgDnsParseCount
 bool EnterpriseSecurityGroupRuleRuleInfo::DnsParseCountHasBeenSet() const
 {
     return m_dnsParseCountHasBeenSet;
+}
+
+string EnterpriseSecurityGroupRuleRuleInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void EnterpriseSecurityGroupRuleRuleInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool EnterpriseSecurityGroupRuleRuleInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string EnterpriseSecurityGroupRuleRuleInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void EnterpriseSecurityGroupRuleRuleInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool EnterpriseSecurityGroupRuleRuleInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

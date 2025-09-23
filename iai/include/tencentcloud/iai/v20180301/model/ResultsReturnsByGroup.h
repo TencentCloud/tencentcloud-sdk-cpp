@@ -38,7 +38,6 @@ namespace TencentCloud
             {
                 /**
                 * 识别结果。
-
                 */
                 class ResultsReturnsByGroup : public AbstractModel
                 {

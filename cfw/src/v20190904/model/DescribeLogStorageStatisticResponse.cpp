@@ -37,7 +37,10 @@ DescribeLogStorageStatisticResponse::DescribeLogStorageStatisticResponse() :
     m_payModeHasBeenSet(false),
     m_timeHistogramHasBeenSet(false),
     m_timeHistogramShowHasBeenSet(false),
-    m_arrearsStopWritingHasBeenSet(false)
+    m_arrearsStopWritingHasBeenSet(false),
+    m_nDRNetFlowSizeHasBeenSet(false),
+    m_nDRRiskSizeHasBeenSet(false),
+    m_nDRStorageDayHasBeenSet(false)
 {
 }
 
@@ -232,6 +235,36 @@ CoreInternalOutcome DescribeLogStorageStatisticResponse::Deserialize(const strin
         m_arrearsStopWritingHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NDRNetFlowSize") && !rsp["NDRNetFlowSize"].IsNull())
+    {
+        if (!rsp["NDRNetFlowSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NDRNetFlowSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nDRNetFlowSize = rsp["NDRNetFlowSize"].GetInt64();
+        m_nDRNetFlowSizeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NDRRiskSize") && !rsp["NDRRiskSize"].IsNull())
+    {
+        if (!rsp["NDRRiskSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NDRRiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nDRRiskSize = rsp["NDRRiskSize"].GetInt64();
+        m_nDRRiskSizeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NDRStorageDay") && !rsp["NDRStorageDay"].IsNull())
+    {
+        if (!rsp["NDRStorageDay"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NDRStorageDay` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nDRStorageDay = rsp["NDRStorageDay"].GetInt64();
+        m_nDRStorageDayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -360,6 +393,30 @@ string DescribeLogStorageStatisticResponse::ToJsonString() const
         string key = "ArrearsStopWriting";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_arrearsStopWriting, allocator);
+    }
+
+    if (m_nDRNetFlowSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NDRNetFlowSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nDRNetFlowSize, allocator);
+    }
+
+    if (m_nDRRiskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NDRRiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nDRRiskSize, allocator);
+    }
+
+    if (m_nDRStorageDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NDRStorageDay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nDRStorageDay, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -512,6 +569,36 @@ int64_t DescribeLogStorageStatisticResponse::GetArrearsStopWriting() const
 bool DescribeLogStorageStatisticResponse::ArrearsStopWritingHasBeenSet() const
 {
     return m_arrearsStopWritingHasBeenSet;
+}
+
+int64_t DescribeLogStorageStatisticResponse::GetNDRNetFlowSize() const
+{
+    return m_nDRNetFlowSize;
+}
+
+bool DescribeLogStorageStatisticResponse::NDRNetFlowSizeHasBeenSet() const
+{
+    return m_nDRNetFlowSizeHasBeenSet;
+}
+
+int64_t DescribeLogStorageStatisticResponse::GetNDRRiskSize() const
+{
+    return m_nDRRiskSize;
+}
+
+bool DescribeLogStorageStatisticResponse::NDRRiskSizeHasBeenSet() const
+{
+    return m_nDRRiskSizeHasBeenSet;
+}
+
+int64_t DescribeLogStorageStatisticResponse::GetNDRStorageDay() const
+{
+    return m_nDRStorageDay;
+}
+
+bool DescribeLogStorageStatisticResponse::NDRStorageDayHasBeenSet() const
+{
+    return m_nDRStorageDayHasBeenSet;
 }
 
 

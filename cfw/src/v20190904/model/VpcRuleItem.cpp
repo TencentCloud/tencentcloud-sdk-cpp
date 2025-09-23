@@ -45,7 +45,9 @@ VpcRuleItem::VpcRuleItem() :
     m_targetNameHasBeenSet(false),
     m_sourceNameHasBeenSet(false),
     m_ipVersionHasBeenSet(false),
-    m_invalidHasBeenSet(false)
+    m_invalidHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -314,6 +316,26 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_invalidHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -526,6 +548,22 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Invalid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_invalid, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -929,5 +967,37 @@ void VpcRuleItem::SetInvalid(const int64_t& _invalid)
 bool VpcRuleItem::InvalidHasBeenSet() const
 {
     return m_invalidHasBeenSet;
+}
+
+string VpcRuleItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void VpcRuleItem::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool VpcRuleItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string VpcRuleItem::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void VpcRuleItem::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool VpcRuleItem::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

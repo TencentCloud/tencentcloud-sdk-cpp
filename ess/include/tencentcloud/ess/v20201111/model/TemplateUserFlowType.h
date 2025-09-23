@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模版对应的合同类型
+                * 模板对应的合同类型
                 */
                 class TemplateUserFlowType : public AbstractModel
                 {
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取每个合同类型绑定的模版数量
-                     * @return TemplateNum 每个合同类型绑定的模版数量
+                     * 获取每个合同类型绑定的模板数量
+                     * @return TemplateNum 每个合同类型绑定的模板数量
                      * 
                      */
                     int64_t GetTemplateNum() const;
 
                     /**
-                     * 设置每个合同类型绑定的模版数量
-                     * @param _templateNum 每个合同类型绑定的模版数量
+                     * 设置每个合同类型绑定的模板数量
+                     * @param _templateNum 每个合同类型绑定的模板数量
                      * 
                      */
                     void SetTemplateNum(const int64_t& _templateNum);
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 每个合同类型绑定的模版数量
+                     * 每个合同类型绑定的模板数量
                      */
                     int64_t m_templateNum;
                     bool m_templateNumHasBeenSet;

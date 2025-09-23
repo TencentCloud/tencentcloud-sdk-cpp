@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分页大小。
-                     * @return Limit 分页大小。
+                     * 获取分页大小。默认值为20，最小值为1，最大值为100。
+                     * @return Limit 分页大小。默认值为20，最小值为1，最大值为100。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小。
-                     * @param _limit 分页大小。
+                     * 设置分页大小。默认值为20，最小值为1，最大值为100。
+                     * @param _limit 分页大小。默认值为20，最小值为1，最大值为100。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 分页大小。
+                     * 分页大小。默认值为20，最小值为1，最大值为100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
