@@ -32,6 +32,10 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_portsHasBeenSet(false),
     m_isKeepAliveHasBeenSet(false),
     m_instanceIDHasBeenSet(false),
+    m_httpsRewriteHasBeenSet(false),
+    m_isHttp2HasBeenSet(false),
+    m_activeCheckHasBeenSet(false),
+    m_cipherTemplateHasBeenSet(false),
     m_certHasBeenSet(false),
     m_privateKeyHasBeenSet(false),
     m_sSLIdHasBeenSet(false),
@@ -41,17 +45,14 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_httpsUpstreamPortHasBeenSet(false),
     m_isGrayHasBeenSet(false),
     m_grayAreasHasBeenSet(false),
-    m_httpsRewriteHasBeenSet(false),
     m_upstreamDomainHasBeenSet(false),
     m_srcListHasBeenSet(false),
-    m_isHttp2HasBeenSet(false),
     m_editionHasBeenSet(false),
     m_anycastHasBeenSet(false),
     m_weightsHasBeenSet(false),
-    m_activeCheckHasBeenSet(false),
     m_tLSVersionHasBeenSet(false),
-    m_cipherTemplateHasBeenSet(false),
     m_ciphersHasBeenSet(false),
+    m_proxyConnectTimeoutHasBeenSet(false),
     m_proxyReadTimeoutHasBeenSet(false),
     m_proxySendTimeoutHasBeenSet(false),
     m_sniTypeHasBeenSet(false),
@@ -70,7 +71,8 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_gmSSLIdHasBeenSet(false),
     m_upstreamPolicyHasBeenSet(false),
     m_upstreamRulesHasBeenSet(false),
-    m_useCaseHasBeenSet(false)
+    m_useCaseHasBeenSet(false),
+    m_gzipHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,38 @@ string AddSpartaProtectionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_httpsRewriteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpsRewrite";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_httpsRewrite, allocator);
+    }
+
+    if (m_isHttp2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsHttp2";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isHttp2, allocator);
+    }
+
+    if (m_activeCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActiveCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_activeCheck, allocator);
+    }
+
+    if (m_cipherTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CipherTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cipherTemplate, allocator);
+    }
+
     if (m_certHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -242,14 +276,6 @@ string AddSpartaProtectionRequest::ToJsonString() const
         }
     }
 
-    if (m_httpsRewriteHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HttpsRewrite";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_httpsRewrite, allocator);
-    }
-
     if (m_upstreamDomainHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -269,14 +295,6 @@ string AddSpartaProtectionRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_isHttp2HasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsHttp2";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_isHttp2, allocator);
     }
 
     if (m_editionHasBeenSet)
@@ -308,28 +326,12 @@ string AddSpartaProtectionRequest::ToJsonString() const
         }
     }
 
-    if (m_activeCheckHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ActiveCheck";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_activeCheck, allocator);
-    }
-
     if (m_tLSVersionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TLSVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tLSVersion, allocator);
-    }
-
-    if (m_cipherTemplateHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CipherTemplate";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_cipherTemplate, allocator);
     }
 
     if (m_ciphersHasBeenSet)
@@ -343,6 +345,14 @@ string AddSpartaProtectionRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_proxyConnectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxyConnectTimeout, allocator);
     }
 
     if (m_proxyReadTimeoutHasBeenSet)
@@ -504,6 +514,14 @@ string AddSpartaProtectionRequest::ToJsonString() const
         d.AddMember(iKey, m_useCase, allocator);
     }
 
+    if (m_gzipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Gzip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gzip, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -656,6 +674,70 @@ bool AddSpartaProtectionRequest::InstanceIDHasBeenSet() const
     return m_instanceIDHasBeenSet;
 }
 
+int64_t AddSpartaProtectionRequest::GetHttpsRewrite() const
+{
+    return m_httpsRewrite;
+}
+
+void AddSpartaProtectionRequest::SetHttpsRewrite(const int64_t& _httpsRewrite)
+{
+    m_httpsRewrite = _httpsRewrite;
+    m_httpsRewriteHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::HttpsRewriteHasBeenSet() const
+{
+    return m_httpsRewriteHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetIsHttp2() const
+{
+    return m_isHttp2;
+}
+
+void AddSpartaProtectionRequest::SetIsHttp2(const int64_t& _isHttp2)
+{
+    m_isHttp2 = _isHttp2;
+    m_isHttp2HasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::IsHttp2HasBeenSet() const
+{
+    return m_isHttp2HasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetActiveCheck() const
+{
+    return m_activeCheck;
+}
+
+void AddSpartaProtectionRequest::SetActiveCheck(const int64_t& _activeCheck)
+{
+    m_activeCheck = _activeCheck;
+    m_activeCheckHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::ActiveCheckHasBeenSet() const
+{
+    return m_activeCheckHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetCipherTemplate() const
+{
+    return m_cipherTemplate;
+}
+
+void AddSpartaProtectionRequest::SetCipherTemplate(const int64_t& _cipherTemplate)
+{
+    m_cipherTemplate = _cipherTemplate;
+    m_cipherTemplateHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::CipherTemplateHasBeenSet() const
+{
+    return m_cipherTemplateHasBeenSet;
+}
+
 string AddSpartaProtectionRequest::GetCert() const
 {
     return m_cert;
@@ -800,22 +882,6 @@ bool AddSpartaProtectionRequest::GrayAreasHasBeenSet() const
     return m_grayAreasHasBeenSet;
 }
 
-int64_t AddSpartaProtectionRequest::GetHttpsRewrite() const
-{
-    return m_httpsRewrite;
-}
-
-void AddSpartaProtectionRequest::SetHttpsRewrite(const int64_t& _httpsRewrite)
-{
-    m_httpsRewrite = _httpsRewrite;
-    m_httpsRewriteHasBeenSet = true;
-}
-
-bool AddSpartaProtectionRequest::HttpsRewriteHasBeenSet() const
-{
-    return m_httpsRewriteHasBeenSet;
-}
-
 string AddSpartaProtectionRequest::GetUpstreamDomain() const
 {
     return m_upstreamDomain;
@@ -846,22 +912,6 @@ void AddSpartaProtectionRequest::SetSrcList(const vector<string>& _srcList)
 bool AddSpartaProtectionRequest::SrcListHasBeenSet() const
 {
     return m_srcListHasBeenSet;
-}
-
-int64_t AddSpartaProtectionRequest::GetIsHttp2() const
-{
-    return m_isHttp2;
-}
-
-void AddSpartaProtectionRequest::SetIsHttp2(const int64_t& _isHttp2)
-{
-    m_isHttp2 = _isHttp2;
-    m_isHttp2HasBeenSet = true;
-}
-
-bool AddSpartaProtectionRequest::IsHttp2HasBeenSet() const
-{
-    return m_isHttp2HasBeenSet;
 }
 
 string AddSpartaProtectionRequest::GetEdition() const
@@ -912,22 +962,6 @@ bool AddSpartaProtectionRequest::WeightsHasBeenSet() const
     return m_weightsHasBeenSet;
 }
 
-int64_t AddSpartaProtectionRequest::GetActiveCheck() const
-{
-    return m_activeCheck;
-}
-
-void AddSpartaProtectionRequest::SetActiveCheck(const int64_t& _activeCheck)
-{
-    m_activeCheck = _activeCheck;
-    m_activeCheckHasBeenSet = true;
-}
-
-bool AddSpartaProtectionRequest::ActiveCheckHasBeenSet() const
-{
-    return m_activeCheckHasBeenSet;
-}
-
 int64_t AddSpartaProtectionRequest::GetTLSVersion() const
 {
     return m_tLSVersion;
@@ -944,22 +978,6 @@ bool AddSpartaProtectionRequest::TLSVersionHasBeenSet() const
     return m_tLSVersionHasBeenSet;
 }
 
-int64_t AddSpartaProtectionRequest::GetCipherTemplate() const
-{
-    return m_cipherTemplate;
-}
-
-void AddSpartaProtectionRequest::SetCipherTemplate(const int64_t& _cipherTemplate)
-{
-    m_cipherTemplate = _cipherTemplate;
-    m_cipherTemplateHasBeenSet = true;
-}
-
-bool AddSpartaProtectionRequest::CipherTemplateHasBeenSet() const
-{
-    return m_cipherTemplateHasBeenSet;
-}
-
 vector<int64_t> AddSpartaProtectionRequest::GetCiphers() const
 {
     return m_ciphers;
@@ -974,6 +992,22 @@ void AddSpartaProtectionRequest::SetCiphers(const vector<int64_t>& _ciphers)
 bool AddSpartaProtectionRequest::CiphersHasBeenSet() const
 {
     return m_ciphersHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetProxyConnectTimeout() const
+{
+    return m_proxyConnectTimeout;
+}
+
+void AddSpartaProtectionRequest::SetProxyConnectTimeout(const int64_t& _proxyConnectTimeout)
+{
+    m_proxyConnectTimeout = _proxyConnectTimeout;
+    m_proxyConnectTimeoutHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::ProxyConnectTimeoutHasBeenSet() const
+{
+    return m_proxyConnectTimeoutHasBeenSet;
 }
 
 int64_t AddSpartaProtectionRequest::GetProxyReadTimeout() const
@@ -1278,6 +1312,22 @@ void AddSpartaProtectionRequest::SetUseCase(const int64_t& _useCase)
 bool AddSpartaProtectionRequest::UseCaseHasBeenSet() const
 {
     return m_useCaseHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetGzip() const
+{
+    return m_gzip;
+}
+
+void AddSpartaProtectionRequest::SetGzip(const int64_t& _gzip)
+{
+    m_gzip = _gzip;
+    m_gzipHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::GzipHasBeenSet() const
+{
+    return m_gzipHasBeenSet;
 }
 
 

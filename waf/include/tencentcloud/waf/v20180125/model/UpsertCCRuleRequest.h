@@ -504,6 +504,48 @@ namespace TencentCloud
                      */
                     bool LogicalOpHasBeenSet() const;
 
+                    /**
+                     * 获取页面ID
+                     * @return PageId 页面ID
+                     * 
+                     */
+                    std::string GetPageId() const;
+
+                    /**
+                     * 设置页面ID
+                     * @param _pageId 页面ID
+                     * 
+                     */
+                    void SetPageId(const std::string& _pageId);
+
+                    /**
+                     * 判断参数 PageId 是否已赋值
+                     * @return PageId 是否已赋值
+                     * 
+                     */
+                    bool PageIdHasBeenSet() const;
+
+                    /**
+                     * 获取动作灰度比例，默认值100
+                     * @return ActionRatio 动作灰度比例，默认值100
+                     * 
+                     */
+                    uint64_t GetActionRatio() const;
+
+                    /**
+                     * 设置动作灰度比例，默认值100
+                     * @param _actionRatio 动作灰度比例，默认值100
+                     * 
+                     */
+                    void SetActionRatio(const uint64_t& _actionRatio);
+
+                    /**
+                     * 判断参数 ActionRatio 是否已赋值
+                     * @return ActionRatio 是否已赋值
+                     * 
+                     */
+                    bool ActionRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -637,6 +679,18 @@ namespace TencentCloud
                      */
                     std::string m_logicalOp;
                     bool m_logicalOpHasBeenSet;
+
+                    /**
+                     * 页面ID
+                     */
+                    std::string m_pageId;
+                    bool m_pageIdHasBeenSet;
+
+                    /**
+                     * 动作灰度比例，默认值100
+                     */
+                    uint64_t m_actionRatio;
+                    bool m_actionRatioHasBeenSet;
 
                 };
             }

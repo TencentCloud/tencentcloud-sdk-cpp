@@ -28,7 +28,8 @@ MultiPathGateway::MultiPathGateway() :
     m_statusHasBeenSet(false),
     m_gatewayIPHasBeenSet(false),
     m_regionIdHasBeenSet(false),
-    m_linesHasBeenSet(false)
+    m_linesHasBeenSet(false),
+    m_needConfirmHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome MultiPathGateway::Deserialize(const rapidjson::Value &value)
         m_linesHasBeenSet = true;
     }
 
+    if (value.HasMember("NeedConfirm") && !value["NeedConfirm"].IsNull())
+    {
+        if (!value["NeedConfirm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MultiPathGateway.NeedConfirm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_needConfirm = string(value["NeedConfirm"].GetString());
+        m_needConfirmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void MultiPathGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_needConfirmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedConfirm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_needConfirm.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void MultiPathGateway::SetLines(const vector<MultiPathGatewayLine>& _lines)
 bool MultiPathGateway::LinesHasBeenSet() const
 {
     return m_linesHasBeenSet;
+}
+
+string MultiPathGateway::GetNeedConfirm() const
+{
+    return m_needConfirm;
+}
+
+void MultiPathGateway::SetNeedConfirm(const string& _needConfirm)
+{
+    m_needConfirm = _needConfirm;
+    m_needConfirmHasBeenSet = true;
+}
+
+bool MultiPathGateway::NeedConfirmHasBeenSet() const
+{
+    return m_needConfirmHasBeenSet;
 }
 

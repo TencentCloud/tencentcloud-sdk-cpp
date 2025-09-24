@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool RouteIdHasBeenSet() const;
 
                     /**
-                     * 获取vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）
-                     * @return VipType vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）
+                     * 获取路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
+                     * @return VipType 路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
                      * 
                      */
                     int64_t GetVipType() const;
 
                     /**
-                     * 设置vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）
-                     * @param _vipType vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）
+                     * 设置路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
+                     * @param _vipType 路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
                      * 
                      */
                     void SetVipType(const int64_t& _vipType);
@@ -358,7 +358,7 @@ namespace TencentCloud
                     bool m_routeIdHasBeenSet;
 
                     /**
-                     * vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）
+                     * 路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
                      */
                     int64_t m_vipType;
                     bool m_vipTypeHasBeenSet;

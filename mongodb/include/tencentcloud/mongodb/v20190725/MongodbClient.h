@@ -726,7 +726,7 @@ namespace TencentCloud
                 RenewDBInstancesOutcomeCallable RenewDBInstancesCallable(const Model::RenewDBInstancesRequest& request);
 
                 /**
-                 *修改实例用户的密码
+                 *本接口（ResetDBInstancePassword）用于重置实例访问密码。
                  * @param req ResetDBInstancePasswordRequest
                  * @return ResetDBInstancePasswordOutcome
                  */

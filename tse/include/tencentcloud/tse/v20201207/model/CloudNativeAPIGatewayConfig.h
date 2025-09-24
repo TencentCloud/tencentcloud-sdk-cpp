@@ -513,6 +513,27 @@ namespace TencentCloud
                      */
                     bool IPV6FullChainHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡个性化配置内容
+                     * @return CustomizedConfigContent 负载均衡个性化配置内容
+                     * 
+                     */
+                    std::string GetCustomizedConfigContent() const;
+
+                    /**
+                     * 设置负载均衡个性化配置内容
+                     * @param _customizedConfigContent 负载均衡个性化配置内容
+                     * 
+                     */
+                    void SetCustomizedConfigContent(const std::string& _customizedConfigContent);
+
+                    /**
+                     * 判断参数 CustomizedConfigContent 是否已赋值
+                     * @return CustomizedConfigContent 是否已赋值
+                     * 
+                     */
+                    bool CustomizedConfigContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -647,6 +668,12 @@ namespace TencentCloud
                      */
                     bool m_iPV6FullChain;
                     bool m_iPV6FullChainHasBeenSet;
+
+                    /**
+                     * 负载均衡个性化配置内容
+                     */
+                    std::string m_customizedConfigContent;
+                    bool m_customizedConfigContentHasBeenSet;
 
                 };
             }

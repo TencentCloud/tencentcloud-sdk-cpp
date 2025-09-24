@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/TokenValidation.h>
 
 
 namespace TencentCloud
@@ -256,6 +257,27 @@ namespace TencentCloud
                      */
                     bool PriorityHasBeenSet() const;
 
+                    /**
+                     * 获取token有效性配置信息
+                     * @return TokenValidation token有效性配置信息
+                     * 
+                     */
+                    TokenValidation GetTokenValidation() const;
+
+                    /**
+                     * 设置token有效性配置信息
+                     * @param _tokenValidation token有效性配置信息
+                     * 
+                     */
+                    void SetTokenValidation(const TokenValidation& _tokenValidation);
+
+                    /**
+                     * 判断参数 TokenValidation 是否已赋值
+                     * @return TokenValidation 是否已赋值
+                     * 
+                     */
+                    bool TokenValidationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +339,12 @@ namespace TencentCloud
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
+
+                    /**
+                     * token有效性配置信息
+                     */
+                    TokenValidation m_tokenValidation;
+                    bool m_tokenValidationHasBeenSet;
 
                 };
             }

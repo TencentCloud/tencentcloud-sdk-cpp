@@ -27,8 +27,6 @@
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelExistResponse.h>
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelReferRequest.h>
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelReferResponse.h>
-#include <tencentcloud/lke/v20231130/model/CreateAgentRequest.h>
-#include <tencentcloud/lke/v20231130/model/CreateAgentResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateAttributeLabelRequest.h>
@@ -191,8 +189,6 @@
 #include <tencentcloud/lke/v20231130/model/ListUsageCallDetailResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListWorkflowRunsRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListWorkflowRunsResponse.h>
-#include <tencentcloud/lke/v20231130/model/ModifyAgentRequest.h>
-#include <tencentcloud/lke/v20231130/model/ModifyAgentResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAttributeLabelRequest.h>
@@ -257,9 +253,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAttributeLabelReferResponse> CheckAttributeLabelReferOutcome;
                 typedef std::future<CheckAttributeLabelReferOutcome> CheckAttributeLabelReferOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CheckAttributeLabelReferRequest&, CheckAttributeLabelReferOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAttributeLabelReferAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateAgentResponse> CreateAgentOutcome;
-                typedef std::future<CreateAgentOutcome> CreateAgentOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::CreateAgentRequest&, CreateAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAppResponse> CreateAppOutcome;
                 typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateAppRequest&, CreateAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
@@ -503,9 +496,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListWorkflowRunsResponse> ListWorkflowRunsOutcome;
                 typedef std::future<ListWorkflowRunsOutcome> ListWorkflowRunsOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListWorkflowRunsRequest&, ListWorkflowRunsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkflowRunsAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyAgentResponse> ModifyAgentOutcome;
-                typedef std::future<ModifyAgentOutcome> ModifyAgentOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::ModifyAgentRequest&, ModifyAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAppResponse> ModifyAppOutcome;
                 typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ModifyAppRequest&, ModifyAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
@@ -592,15 +582,6 @@ namespace TencentCloud
                 CheckAttributeLabelReferOutcome CheckAttributeLabelRefer(const Model::CheckAttributeLabelReferRequest &request);
                 void CheckAttributeLabelReferAsync(const Model::CheckAttributeLabelReferRequest& request, const CheckAttributeLabelReferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckAttributeLabelReferOutcomeCallable CheckAttributeLabelReferCallable(const Model::CheckAttributeLabelReferRequest& request);
-
-                /**
-                 *创建一个Agent
-                 * @param req CreateAgentRequest
-                 * @return CreateAgentOutcome
-                 */
-                CreateAgentOutcome CreateAgent(const Model::CreateAgentRequest &request);
-                void CreateAgentAsync(const Model::CreateAgentRequest& request, const CreateAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateAgentOutcomeCallable CreateAgentCallable(const Model::CreateAgentRequest& request);
 
                 /**
                  *创建知识引擎应用。
@@ -1332,15 +1313,6 @@ namespace TencentCloud
                 ListWorkflowRunsOutcome ListWorkflowRuns(const Model::ListWorkflowRunsRequest &request);
                 void ListWorkflowRunsAsync(const Model::ListWorkflowRunsRequest& request, const ListWorkflowRunsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListWorkflowRunsOutcomeCallable ListWorkflowRunsCallable(const Model::ListWorkflowRunsRequest& request);
-
-                /**
-                 *修改Agent信息
-                 * @param req ModifyAgentRequest
-                 * @return ModifyAgentOutcome
-                 */
-                ModifyAgentOutcome ModifyAgent(const Model::ModifyAgentRequest &request);
-                void ModifyAgentAsync(const Model::ModifyAgentRequest& request, const ModifyAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyAgentOutcomeCallable ModifyAgentCallable(const Model::ModifyAgentRequest& request);
 
                 /**
                  *修改应用请求结构体

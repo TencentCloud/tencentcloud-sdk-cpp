@@ -14,37 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdn/v20180606/model/DisableCachesRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteSmartEraseTemplateRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cdn::V20180606::Model;
+using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
-DisableCachesRequest::DisableCachesRequest() :
-    m_urlsHasBeenSet(false)
+DeleteSmartEraseTemplateRequest::DeleteSmartEraseTemplateRequest() :
+    m_definitionHasBeenSet(false)
 {
 }
 
-string DisableCachesRequest::ToJsonString() const
+string DeleteSmartEraseTemplateRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_urlsHasBeenSet)
+    if (m_definitionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Urls";
+        string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_urls.begin(); itr != m_urls.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        d.AddMember(iKey, m_definition, allocator);
     }
 
 
@@ -55,20 +50,20 @@ string DisableCachesRequest::ToJsonString() const
 }
 
 
-vector<string> DisableCachesRequest::GetUrls() const
+int64_t DeleteSmartEraseTemplateRequest::GetDefinition() const
 {
-    return m_urls;
+    return m_definition;
 }
 
-void DisableCachesRequest::SetUrls(const vector<string>& _urls)
+void DeleteSmartEraseTemplateRequest::SetDefinition(const int64_t& _definition)
 {
-    m_urls = _urls;
-    m_urlsHasBeenSet = true;
+    m_definition = _definition;
+    m_definitionHasBeenSet = true;
 }
 
-bool DisableCachesRequest::UrlsHasBeenSet() const
+bool DeleteSmartEraseTemplateRequest::DefinitionHasBeenSet() const
 {
-    return m_urlsHasBeenSet;
+    return m_definitionHasBeenSet;
 }
 
 

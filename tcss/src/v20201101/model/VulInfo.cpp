@@ -37,7 +37,9 @@ VulInfo::VulInfo() :
     m_defenceStatusHasBeenSet(false),
     m_defenceScopeHasBeenSet(false),
     m_defenceHostCountHasBeenSet(false),
-    m_defendedCountHasBeenSet(false)
+    m_defendedCountHasBeenSet(false),
+    m_raspOpenNodeCountHasBeenSet(false),
+    m_raspClosedNodeCountHasBeenSet(false)
 {
 }
 
@@ -219,6 +221,26 @@ CoreInternalOutcome VulInfo::Deserialize(const rapidjson::Value &value)
         m_defendedCountHasBeenSet = true;
     }
 
+    if (value.HasMember("RaspOpenNodeCount") && !value["RaspOpenNodeCount"].IsNull())
+    {
+        if (!value["RaspOpenNodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfo.RaspOpenNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_raspOpenNodeCount = value["RaspOpenNodeCount"].GetInt64();
+        m_raspOpenNodeCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("RaspClosedNodeCount") && !value["RaspClosedNodeCount"].IsNull())
+    {
+        if (!value["RaspClosedNodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfo.RaspClosedNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_raspClosedNodeCount = value["RaspClosedNodeCount"].GetInt64();
+        m_raspClosedNodeCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +387,22 @@ void VulInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "DefendedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defendedCount, allocator);
+    }
+
+    if (m_raspOpenNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RaspOpenNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_raspOpenNodeCount, allocator);
+    }
+
+    if (m_raspClosedNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RaspClosedNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_raspClosedNodeCount, allocator);
     }
 
 }
@@ -640,5 +678,37 @@ void VulInfo::SetDefendedCount(const int64_t& _defendedCount)
 bool VulInfo::DefendedCountHasBeenSet() const
 {
     return m_defendedCountHasBeenSet;
+}
+
+int64_t VulInfo::GetRaspOpenNodeCount() const
+{
+    return m_raspOpenNodeCount;
+}
+
+void VulInfo::SetRaspOpenNodeCount(const int64_t& _raspOpenNodeCount)
+{
+    m_raspOpenNodeCount = _raspOpenNodeCount;
+    m_raspOpenNodeCountHasBeenSet = true;
+}
+
+bool VulInfo::RaspOpenNodeCountHasBeenSet() const
+{
+    return m_raspOpenNodeCountHasBeenSet;
+}
+
+int64_t VulInfo::GetRaspClosedNodeCount() const
+{
+    return m_raspClosedNodeCount;
+}
+
+void VulInfo::SetRaspClosedNodeCount(const int64_t& _raspClosedNodeCount)
+{
+    m_raspClosedNodeCount = _raspClosedNodeCount;
+    m_raspClosedNodeCountHasBeenSet = true;
+}
+
+bool VulInfo::RaspClosedNodeCountHasBeenSet() const
+{
+    return m_raspClosedNodeCountHasBeenSet;
 }
 

@@ -771,6 +771,49 @@ MpsClient::CreateScheduleOutcomeCallable MpsClient::CreateScheduleCallable(const
     return task->get_future();
 }
 
+MpsClient::CreateSmartEraseTemplateOutcome MpsClient::CreateSmartEraseTemplate(const CreateSmartEraseTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSmartEraseTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSmartEraseTemplateResponse rsp = CreateSmartEraseTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSmartEraseTemplateOutcome(rsp);
+        else
+            return CreateSmartEraseTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSmartEraseTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateSmartEraseTemplateAsync(const CreateSmartEraseTemplateRequest& request, const CreateSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSmartEraseTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateSmartEraseTemplateOutcomeCallable MpsClient::CreateSmartEraseTemplateCallable(const CreateSmartEraseTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSmartEraseTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSmartEraseTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreateSmartSubtitleTemplateOutcome MpsClient::CreateSmartSubtitleTemplate(const CreateSmartSubtitleTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSmartSubtitleTemplate");
@@ -1839,6 +1882,49 @@ MpsClient::DeleteScheduleOutcomeCallable MpsClient::DeleteScheduleCallable(const
         [this, request]()
         {
             return this->DeleteSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DeleteSmartEraseTemplateOutcome MpsClient::DeleteSmartEraseTemplate(const DeleteSmartEraseTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSmartEraseTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSmartEraseTemplateResponse rsp = DeleteSmartEraseTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSmartEraseTemplateOutcome(rsp);
+        else
+            return DeleteSmartEraseTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSmartEraseTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteSmartEraseTemplateAsync(const DeleteSmartEraseTemplateRequest& request, const DeleteSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSmartEraseTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteSmartEraseTemplateOutcomeCallable MpsClient::DeleteSmartEraseTemplateCallable(const DeleteSmartEraseTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSmartEraseTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSmartEraseTemplate(request);
         }
     );
 
@@ -3000,6 +3086,49 @@ MpsClient::DescribeSchedulesOutcomeCallable MpsClient::DescribeSchedulesCallable
         [this, request]()
         {
             return this->DescribeSchedules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeSmartEraseTemplatesOutcome MpsClient::DescribeSmartEraseTemplates(const DescribeSmartEraseTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSmartEraseTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSmartEraseTemplatesResponse rsp = DescribeSmartEraseTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSmartEraseTemplatesOutcome(rsp);
+        else
+            return DescribeSmartEraseTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSmartEraseTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeSmartEraseTemplatesAsync(const DescribeSmartEraseTemplatesRequest& request, const DescribeSmartEraseTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSmartEraseTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeSmartEraseTemplatesOutcomeCallable MpsClient::DescribeSmartEraseTemplatesCallable(const DescribeSmartEraseTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSmartEraseTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSmartEraseTemplates(request);
         }
     );
 
@@ -4849,6 +4978,49 @@ MpsClient::ModifyScheduleOutcomeCallable MpsClient::ModifyScheduleCallable(const
         [this, request]()
         {
             return this->ModifySchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifySmartEraseTemplateOutcome MpsClient::ModifySmartEraseTemplate(const ModifySmartEraseTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySmartEraseTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySmartEraseTemplateResponse rsp = ModifySmartEraseTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySmartEraseTemplateOutcome(rsp);
+        else
+            return ModifySmartEraseTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySmartEraseTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifySmartEraseTemplateAsync(const ModifySmartEraseTemplateRequest& request, const ModifySmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySmartEraseTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifySmartEraseTemplateOutcomeCallable MpsClient::ModifySmartEraseTemplateCallable(const ModifySmartEraseTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySmartEraseTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySmartEraseTemplate(request);
         }
     );
 

@@ -27,6 +27,7 @@ ModifyTWeTalkProductConfigRequest::ModifyTWeTalkProductConfigRequest() :
     m_systemPromptHasBeenSet(false),
     m_greetingMessageHasBeenSet(false),
     m_voiceTypeHasBeenSet(false),
+    m_fastVoiceTypeHasBeenSet(false),
     m_targetLanguageHasBeenSet(false)
 {
 }
@@ -68,6 +69,14 @@ string ModifyTWeTalkProductConfigRequest::ToJsonString() const
         string key = "VoiceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_voiceType, allocator);
+    }
+
+    if (m_fastVoiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FastVoiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fastVoiceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetLanguageHasBeenSet)
@@ -148,6 +157,22 @@ void ModifyTWeTalkProductConfigRequest::SetVoiceType(const int64_t& _voiceType)
 bool ModifyTWeTalkProductConfigRequest::VoiceTypeHasBeenSet() const
 {
     return m_voiceTypeHasBeenSet;
+}
+
+string ModifyTWeTalkProductConfigRequest::GetFastVoiceType() const
+{
+    return m_fastVoiceType;
+}
+
+void ModifyTWeTalkProductConfigRequest::SetFastVoiceType(const string& _fastVoiceType)
+{
+    m_fastVoiceType = _fastVoiceType;
+    m_fastVoiceTypeHasBeenSet = true;
+}
+
+bool ModifyTWeTalkProductConfigRequest::FastVoiceTypeHasBeenSet() const
+{
+    return m_fastVoiceTypeHasBeenSet;
 }
 
 string ModifyTWeTalkProductConfigRequest::GetTargetLanguage() const

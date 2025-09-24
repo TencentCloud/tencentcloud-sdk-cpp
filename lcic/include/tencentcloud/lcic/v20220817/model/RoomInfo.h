@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取房间名称。
+字符数不超过256
                      * @return Name 房间名称。
+字符数不超过256
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置房间名称。
+字符数不超过256
                      * @param _name 房间名称。
+字符数不超过256
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -689,15 +693,23 @@ namespace TencentCloud
                     bool WhiteBoardSnapshotModeHasBeenSet() const;
 
                     /**
-                     * 获取字幕转写功能开关：0关闭，1开启，默认关闭
-                     * @return SubtitlesTranscription 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 获取字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
+                     * @return SubtitlesTranscription 字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
                      * 
                      */
                     uint64_t GetSubtitlesTranscription() const;
 
                     /**
-                     * 设置字幕转写功能开关：0关闭，1开启，默认关闭
-                     * @param _subtitlesTranscription 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 设置字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
+                     * @param _subtitlesTranscription 字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
                      * 
                      */
                     void SetSubtitlesTranscription(const uint64_t& _subtitlesTranscription);
@@ -755,6 +767,7 @@ namespace TencentCloud
 
                     /**
                      * 房间名称。
+字符数不超过256
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -937,7 +950,9 @@ namespace TencentCloud
                     bool m_whiteBoardSnapshotModeHasBeenSet;
 
                     /**
-                     * 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
                      */
                     uint64_t m_subtitlesTranscription;
                     bool m_subtitlesTranscriptionHasBeenSet;

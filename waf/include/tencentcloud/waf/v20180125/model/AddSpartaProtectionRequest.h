@@ -318,6 +318,130 @@ UpstreamProtocol：与Protocol相同
                     bool InstanceIDHasBeenSet() const;
 
                     /**
+                     * 获取必填项，是否开启HTTP强制跳转到HTTPS。
+0：不强制跳转
+1：开启强制跳转
+                     * @return HttpsRewrite 必填项，是否开启HTTP强制跳转到HTTPS。
+0：不强制跳转
+1：开启强制跳转
+                     * 
+                     */
+                    int64_t GetHttpsRewrite() const;
+
+                    /**
+                     * 设置必填项，是否开启HTTP强制跳转到HTTPS。
+0：不强制跳转
+1：开启强制跳转
+                     * @param _httpsRewrite 必填项，是否开启HTTP强制跳转到HTTPS。
+0：不强制跳转
+1：开启强制跳转
+                     * 
+                     */
+                    void SetHttpsRewrite(const int64_t& _httpsRewrite);
+
+                    /**
+                     * 判断参数 HttpsRewrite 是否已赋值
+                     * @return HttpsRewrite 是否已赋值
+                     * 
+                     */
+                    bool HttpsRewriteHasBeenSet() const;
+
+                    /**
+                     * 获取必填项，是否开启HTTP2，需要开启HTTPS协议支持。
+0：关闭
+1：开启
+                     * @return IsHttp2 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
+0：关闭
+1：开启
+                     * 
+                     */
+                    int64_t GetIsHttp2() const;
+
+                    /**
+                     * 设置必填项，是否开启HTTP2，需要开启HTTPS协议支持。
+0：关闭
+1：开启
+                     * @param _isHttp2 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
+0：关闭
+1：开启
+                     * 
+                     */
+                    void SetIsHttp2(const int64_t& _isHttp2);
+
+                    /**
+                     * 判断参数 IsHttp2 是否已赋值
+                     * @return IsHttp2 是否已赋值
+                     * 
+                     */
+                    bool IsHttp2HasBeenSet() const;
+
+                    /**
+                     * 获取必填项，是否开启主动健康检测。
+0：不开启
+1：开启
+                     * @return ActiveCheck 必填项，是否开启主动健康检测。
+0：不开启
+1：开启
+                     * 
+                     */
+                    int64_t GetActiveCheck() const;
+
+                    /**
+                     * 设置必填项，是否开启主动健康检测。
+0：不开启
+1：开启
+                     * @param _activeCheck 必填项，是否开启主动健康检测。
+0：不开启
+1：开启
+                     * 
+                     */
+                    void SetActiveCheck(const int64_t& _activeCheck);
+
+                    /**
+                     * 判断参数 ActiveCheck 是否已赋值
+                     * @return ActiveCheck 是否已赋值
+                     * 
+                     */
+                    bool ActiveCheckHasBeenSet() const;
+
+                    /**
+                     * 获取必填项，加密套件模板。
+0：不支持选择，使用默认模板  
+1：通用型模板 
+2：安全型模板
+3：自定义模板
+                     * @return CipherTemplate 必填项，加密套件模板。
+0：不支持选择，使用默认模板  
+1：通用型模板 
+2：安全型模板
+3：自定义模板
+                     * 
+                     */
+                    int64_t GetCipherTemplate() const;
+
+                    /**
+                     * 设置必填项，加密套件模板。
+0：不支持选择，使用默认模板  
+1：通用型模板 
+2：安全型模板
+3：自定义模板
+                     * @param _cipherTemplate 必填项，加密套件模板。
+0：不支持选择，使用默认模板  
+1：通用型模板 
+2：安全型模板
+3：自定义模板
+                     * 
+                     */
+                    void SetCipherTemplate(const int64_t& _cipherTemplate);
+
+                    /**
+                     * 判断参数 CipherTemplate 是否已赋值
+                     * @return CipherTemplate 是否已赋值
+                     * 
+                     */
+                    bool CipherTemplateHasBeenSet() const;
+
+                    /**
                      * 获取CertType为1时，需要填充此参数，表示自有证书的证书链
                      * @return Cert CertType为1时，需要填充此参数，表示自有证书的证书链
                      * 
@@ -515,35 +639,6 @@ https：使用https协议回源
                     bool GrayAreasHasBeenSet() const;
 
                     /**
-                     * 获取必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * @return HttpsRewrite 必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * 
-                     */
-                    int64_t GetHttpsRewrite() const;
-
-                    /**
-                     * 设置必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * @param _httpsRewrite 必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * 
-                     */
-                    void SetHttpsRewrite(const int64_t& _httpsRewrite);
-
-                    /**
-                     * 判断参数 HttpsRewrite 是否已赋值
-                     * @return HttpsRewrite 是否已赋值
-                     * 
-                     */
-                    bool HttpsRewriteHasBeenSet() const;
-
-                    /**
                      * 获取域名回源时的回源域名。UpstreamType为1时，需要填充此字段
                      * @return UpstreamDomain 域名回源时的回源域名。UpstreamType为1时，需要填充此字段
                      * 
@@ -584,35 +679,6 @@ https：使用https协议回源
                      * 
                      */
                     bool SrcListHasBeenSet() const;
-
-                    /**
-                     * 获取必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * @return IsHttp2 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * 
-                     */
-                    int64_t GetIsHttp2() const;
-
-                    /**
-                     * 设置必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * @param _isHttp2 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * 
-                     */
-                    void SetIsHttp2(const int64_t& _isHttp2);
-
-                    /**
-                     * 判断参数 IsHttp2 是否已赋值
-                     * @return IsHttp2 是否已赋值
-                     * 
-                     */
-                    bool IsHttp2HasBeenSet() const;
 
                     /**
                      * 获取WAF实例类型。
@@ -690,35 +756,6 @@ cdn-waf：CDN上的Web防护能力
                     bool WeightsHasBeenSet() const;
 
                     /**
-                     * 获取必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * @return ActiveCheck 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * 
-                     */
-                    int64_t GetActiveCheck() const;
-
-                    /**
-                     * 设置必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * @param _activeCheck 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * 
-                     */
-                    void SetActiveCheck(const int64_t& _activeCheck);
-
-                    /**
-                     * 判断参数 ActiveCheck 是否已赋值
-                     * @return ActiveCheck 是否已赋值
-                     * 
-                     */
-                    bool ActiveCheckHasBeenSet() const;
-
-                    /**
                      * 获取TLS版本信息
                      * @return TLSVersion TLS版本信息
                      * 
@@ -740,43 +777,6 @@ cdn-waf：CDN上的Web防护能力
                     bool TLSVersionHasBeenSet() const;
 
                     /**
-                     * 获取必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * @return CipherTemplate 必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * 
-                     */
-                    int64_t GetCipherTemplate() const;
-
-                    /**
-                     * 设置必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * @param _cipherTemplate 必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * 
-                     */
-                    void SetCipherTemplate(const int64_t& _cipherTemplate);
-
-                    /**
-                     * 判断参数 CipherTemplate 是否已赋值
-                     * @return CipherTemplate 是否已赋值
-                     * 
-                     */
-                    bool CipherTemplateHasBeenSet() const;
-
-                    /**
                      * 获取自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
                      * @return Ciphers 自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
                      * 
@@ -796,6 +796,27 @@ cdn-waf：CDN上的Web防护能力
                      * 
                      */
                     bool CiphersHasBeenSet() const;
+
+                    /**
+                     * 获取WAF与源站的连接超时，默认10s。
+                     * @return ProxyConnectTimeout WAF与源站的连接超时，默认10s。
+                     * 
+                     */
+                    int64_t GetProxyConnectTimeout() const;
+
+                    /**
+                     * 设置WAF与源站的连接超时，默认10s。
+                     * @param _proxyConnectTimeout WAF与源站的连接超时，默认10s。
+                     * 
+                     */
+                    void SetProxyConnectTimeout(const int64_t& _proxyConnectTimeout);
+
+                    /**
+                     * 判断参数 ProxyConnectTimeout 是否已赋值
+                     * @return ProxyConnectTimeout 是否已赋值
+                     * 
+                     */
+                    bool ProxyConnectTimeoutHasBeenSet() const;
 
                     /**
                      * 获取WAF与源站的读超时时间，默认300s。
@@ -1212,6 +1233,27 @@ cdn-waf：CDN上的Web防护能力
                      */
                     bool UseCaseHasBeenSet() const;
 
+                    /**
+                     * 获取gzip开关。0：关闭 1：默认值，打开。
+                     * @return Gzip gzip开关。0：关闭 1：默认值，打开。
+                     * 
+                     */
+                    int64_t GetGzip() const;
+
+                    /**
+                     * 设置gzip开关。0：关闭 1：默认值，打开。
+                     * @param _gzip gzip开关。0：关闭 1：默认值，打开。
+                     * 
+                     */
+                    void SetGzip(const int64_t& _gzip);
+
+                    /**
+                     * 判断参数 Gzip 是否已赋值
+                     * @return Gzip 是否已赋值
+                     * 
+                     */
+                    bool GzipHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1290,6 +1332,40 @@ UpstreamProtocol：与Protocol相同
                     bool m_instanceIDHasBeenSet;
 
                     /**
+                     * 必填项，是否开启HTTP强制跳转到HTTPS。
+0：不强制跳转
+1：开启强制跳转
+                     */
+                    int64_t m_httpsRewrite;
+                    bool m_httpsRewriteHasBeenSet;
+
+                    /**
+                     * 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
+0：关闭
+1：开启
+                     */
+                    int64_t m_isHttp2;
+                    bool m_isHttp2HasBeenSet;
+
+                    /**
+                     * 必填项，是否开启主动健康检测。
+0：不开启
+1：开启
+                     */
+                    int64_t m_activeCheck;
+                    bool m_activeCheckHasBeenSet;
+
+                    /**
+                     * 必填项，加密套件模板。
+0：不支持选择，使用默认模板  
+1：通用型模板 
+2：安全型模板
+3：自定义模板
+                     */
+                    int64_t m_cipherTemplate;
+                    bool m_cipherTemplateHasBeenSet;
+
+                    /**
                      * CertType为1时，需要填充此参数，表示自有证书的证书链
                      */
                     std::string m_cert;
@@ -1346,14 +1422,6 @@ https：使用https协议回源
                     bool m_grayAreasHasBeenSet;
 
                     /**
-                     * 必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     */
-                    int64_t m_httpsRewrite;
-                    bool m_httpsRewriteHasBeenSet;
-
-                    /**
                      * 域名回源时的回源域名。UpstreamType为1时，需要填充此字段
                      */
                     std::string m_upstreamDomain;
@@ -1364,14 +1432,6 @@ https：使用https协议回源
                      */
                     std::vector<std::string> m_srcList;
                     bool m_srcListHasBeenSet;
-
-                    /**
-                     * 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     */
-                    int64_t m_isHttp2;
-                    bool m_isHttp2HasBeenSet;
 
                     /**
                      * WAF实例类型。
@@ -1395,34 +1455,22 @@ cdn-waf：CDN上的Web防护能力
                     bool m_weightsHasBeenSet;
 
                     /**
-                     * 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     */
-                    int64_t m_activeCheck;
-                    bool m_activeCheckHasBeenSet;
-
-                    /**
                      * TLS版本信息
                      */
                     int64_t m_tLSVersion;
                     bool m_tLSVersionHasBeenSet;
 
                     /**
-                     * 必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     */
-                    int64_t m_cipherTemplate;
-                    bool m_cipherTemplateHasBeenSet;
-
-                    /**
                      * 自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
                      */
                     std::vector<int64_t> m_ciphers;
                     bool m_ciphersHasBeenSet;
+
+                    /**
+                     * WAF与源站的连接超时，默认10s。
+                     */
+                    int64_t m_proxyConnectTimeout;
+                    bool m_proxyConnectTimeoutHasBeenSet;
 
                     /**
                      * WAF与源站的读超时时间，默认300s。
@@ -1541,6 +1589,12 @@ cdn-waf：CDN上的Web防护能力
                      */
                     int64_t m_useCase;
                     bool m_useCaseHasBeenSet;
+
+                    /**
+                     * gzip开关。0：关闭 1：默认值，打开。
+                     */
+                    int64_t m_gzip;
+                    bool m_gzipHasBeenSet;
 
                 };
             }

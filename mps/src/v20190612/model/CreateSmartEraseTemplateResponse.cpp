@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lke/v20231130/model/CreateAgentResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateSmartEraseTemplateResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Lke::V20231130::Model;
+using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
-CreateAgentResponse::CreateAgentResponse() :
-    m_agentIdHasBeenSet(false)
+CreateSmartEraseTemplateResponse::CreateSmartEraseTemplateResponse() :
+    m_definitionHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateAgentResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateSmartEraseTemplateResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,32 @@ CoreInternalOutcome CreateAgentResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("AgentId") && !rsp["AgentId"].IsNull())
+    if (rsp.HasMember("Definition") && !rsp["Definition"].IsNull())
     {
-        if (!rsp["AgentId"].IsString())
+        if (!rsp["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `AgentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_agentId = string(rsp["AgentId"].GetString());
-        m_agentIdHasBeenSet = true;
+        m_definition = rsp["Definition"].GetInt64();
+        m_definitionHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateAgentResponse::ToJsonString() const
+string CreateSmartEraseTemplateResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_agentIdHasBeenSet)
+    if (m_definitionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AgentId";
+        string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_agentId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_definition, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +102,14 @@ string CreateAgentResponse::ToJsonString() const
 }
 
 
-string CreateAgentResponse::GetAgentId() const
+int64_t CreateSmartEraseTemplateResponse::GetDefinition() const
 {
-    return m_agentId;
+    return m_definition;
 }
 
-bool CreateAgentResponse::AgentIdHasBeenSet() const
+bool CreateSmartEraseTemplateResponse::DefinitionHasBeenSet() const
 {
-    return m_agentIdHasBeenSet;
+    return m_definitionHasBeenSet;
 }
 
 

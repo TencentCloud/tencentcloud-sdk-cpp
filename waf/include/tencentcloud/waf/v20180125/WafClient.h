@@ -2246,7 +2246,7 @@ namespace TencentCloud
                 ModifyDomainPostActionOutcomeCallable ModifyDomainPostActionCallable(const Model::ModifyDomainPostActionRequest& request);
 
                 /**
-                 *更改某一条规则
+                 *修改域名规则白名单
                  * @param req ModifyDomainWhiteRuleRequest
                  * @return ModifyDomainWhiteRuleOutcome
                  */

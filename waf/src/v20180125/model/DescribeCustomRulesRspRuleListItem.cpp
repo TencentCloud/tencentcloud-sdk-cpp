@@ -41,7 +41,8 @@ DescribeCustomRulesRspRuleListItem::DescribeCustomRulesRspRuleListItem() :
     m_labelHasBeenSet(false),
     m_pageIdHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_logicalOpHasBeenSet(false)
+    m_logicalOpHasBeenSet(false),
+    m_actionRatioHasBeenSet(false)
 {
 }
 
@@ -277,6 +278,16 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
         m_logicalOpHasBeenSet = true;
     }
 
+    if (value.HasMember("ActionRatio") && !value["ActionRatio"].IsNull())
+    {
+        if (!value["ActionRatio"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.ActionRatio` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_actionRatio = value["ActionRatio"].GetUint64();
+        m_actionRatioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +469,14 @@ void DescribeCustomRulesRspRuleListItem::ToJsonObject(rapidjson::Value &value, r
         string key = "LogicalOp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_actionRatio, allocator);
     }
 
 }
@@ -797,5 +816,21 @@ void DescribeCustomRulesRspRuleListItem::SetLogicalOp(const string& _logicalOp)
 bool DescribeCustomRulesRspRuleListItem::LogicalOpHasBeenSet() const
 {
     return m_logicalOpHasBeenSet;
+}
+
+uint64_t DescribeCustomRulesRspRuleListItem::GetActionRatio() const
+{
+    return m_actionRatio;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetActionRatio(const uint64_t& _actionRatio)
+{
+    m_actionRatio = _actionRatio;
+    m_actionRatioHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::ActionRatioHasBeenSet() const
+{
+    return m_actionRatioHasBeenSet;
 }
 

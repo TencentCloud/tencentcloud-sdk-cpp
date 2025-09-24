@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LKE_V20231130_MODEL_CREATEAGENTRESPONSE_H_
-#define TENCENTCLOUD_LKE_V20231130_MODEL_CREATEAGENTRESPONSE_H_
+#ifndef TENCENTCLOUD_MPS_V20190612_MODEL_CREATESMARTERASETEMPLATERESPONSE_H_
+#define TENCENTCLOUD_MPS_V20190612_MODEL_CREATESMARTERASETEMPLATERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Lke
+    namespace Mps
     {
-        namespace V20231130
+        namespace V20190612
         {
             namespace Model
             {
                 /**
-                * CreateAgent返回参数结构体
+                * CreateSmartEraseTemplate返回参数结构体
                 */
-                class CreateAgentResponse : public AbstractModel
+                class CreateSmartEraseTemplateResponse : public AbstractModel
                 {
                 public:
-                    CreateAgentResponse();
-                    ~CreateAgentResponse() = default;
+                    CreateSmartEraseTemplateResponse();
+                    ~CreateSmartEraseTemplateResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取新建的AgentID
-                     * @return AgentId 新建的AgentID
+                     * 获取智能擦除模板唯一标识
+                     * @return Definition 智能擦除模板唯一标识
                      * 
                      */
-                    std::string GetAgentId() const;
+                    int64_t GetDefinition() const;
 
                     /**
-                     * 判断参数 AgentId 是否已赋值
-                     * @return AgentId 是否已赋值
+                     * 判断参数 Definition 是否已赋值
+                     * @return Definition 是否已赋值
                      * 
                      */
-                    bool AgentIdHasBeenSet() const;
+                    bool DefinitionHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 新建的AgentID
+                     * 智能擦除模板唯一标识
                      */
-                    std::string m_agentId;
-                    bool m_agentIdHasBeenSet;
+                    int64_t m_definition;
+                    bool m_definitionHasBeenSet;
 
                 };
             }
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_LKE_V20231130_MODEL_CREATEAGENTRESPONSE_H_
+#endif // !TENCENTCLOUD_MPS_V20190612_MODEL_CREATESMARTERASETEMPLATERESPONSE_H_

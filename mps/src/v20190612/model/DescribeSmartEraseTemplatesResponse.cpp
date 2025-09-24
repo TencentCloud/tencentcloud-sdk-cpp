@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdn/v20180606/model/DisableCachesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeSmartEraseTemplatesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdn::V20180606::Model;
+using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
-DisableCachesResponse::DisableCachesResponse() :
-    m_cacheOptResultHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+DescribeSmartEraseTemplatesResponse::DescribeSmartEraseTemplatesResponse() :
+    m_totalCountHasBeenSet(false),
+    m_smartEraseTemplateSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DisableCachesResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeSmartEraseTemplatesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,58 +63,67 @@ CoreInternalOutcome DisableCachesResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("CacheOptResult") && !rsp["CacheOptResult"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["CacheOptResult"].IsObject())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `CacheOptResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_cacheOptResult.Deserialize(rsp["CacheOptResult"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_cacheOptResultHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    if (rsp.HasMember("SmartEraseTemplateSet") && !rsp["SmartEraseTemplateSet"].IsNull())
     {
-        if (!rsp["TaskId"].IsString())
+        if (!rsp["SmartEraseTemplateSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SmartEraseTemplateSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SmartEraseTemplateSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            SmartEraseTemplateItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_smartEraseTemplateSet.push_back(item);
         }
-        m_taskId = string(rsp["TaskId"].GetString());
-        m_taskIdHasBeenSet = true;
+        m_smartEraseTemplateSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DisableCachesResponse::ToJsonString() const
+string DescribeSmartEraseTemplatesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_cacheOptResultHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CacheOptResult";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_cacheOptResult.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_taskIdHasBeenSet)
+    if (m_smartEraseTemplateSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
+        string key = "SmartEraseTemplateSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_smartEraseTemplateSet.begin(); itr != m_smartEraseTemplateSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -129,24 +138,24 @@ string DisableCachesResponse::ToJsonString() const
 }
 
 
-CacheOptResult DisableCachesResponse::GetCacheOptResult() const
+uint64_t DescribeSmartEraseTemplatesResponse::GetTotalCount() const
 {
-    return m_cacheOptResult;
+    return m_totalCount;
 }
 
-bool DisableCachesResponse::CacheOptResultHasBeenSet() const
+bool DescribeSmartEraseTemplatesResponse::TotalCountHasBeenSet() const
 {
-    return m_cacheOptResultHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-string DisableCachesResponse::GetTaskId() const
+vector<SmartEraseTemplateItem> DescribeSmartEraseTemplatesResponse::GetSmartEraseTemplateSet() const
 {
-    return m_taskId;
+    return m_smartEraseTemplateSet;
 }
 
-bool DisableCachesResponse::TaskIdHasBeenSet() const
+bool DescribeSmartEraseTemplatesResponse::SmartEraseTemplateSetHasBeenSet() const
 {
-    return m_taskIdHasBeenSet;
+    return m_smartEraseTemplateSetHasBeenSet;
 }
 
 

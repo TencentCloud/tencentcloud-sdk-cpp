@@ -242,12 +242,12 @@ back：后视图；
 Normal：可生成带纹理的几何模型。
 LowPoly：可生成智能减面后的模型。
 Geometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。
-Sketch：可输入草图或线稿图生成模型。
+Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。
                      * @return GenerateType 生成任务类型，默认Normal，参考值：
 Normal：可生成带纹理的几何模型。
 LowPoly：可生成智能减面后的模型。
 Geometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。
-Sketch：可输入草图或线稿图生成模型。
+Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。
                      * 
                      */
                     std::string GetGenerateType() const;
@@ -257,12 +257,12 @@ Sketch：可输入草图或线稿图生成模型。
 Normal：可生成带纹理的几何模型。
 LowPoly：可生成智能减面后的模型。
 Geometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。
-Sketch：可输入草图或线稿图生成模型。
+Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。
                      * @param _generateType 生成任务类型，默认Normal，参考值：
 Normal：可生成带纹理的几何模型。
 LowPoly：可生成智能减面后的模型。
 Geometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。
-Sketch：可输入草图或线稿图生成模型。
+Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。
                      * 
                      */
                     void SetGenerateType(const std::string& _generateType);
@@ -334,7 +334,7 @@ back：后视图；
 Normal：可生成带纹理的几何模型。
 LowPoly：可生成智能减面后的模型。
 Geometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。
-Sketch：可输入草图或线稿图生成模型。
+Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。
                      */
                     std::string m_generateType;
                     bool m_generateTypeHasBeenSet;

@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool SessionIDHasBeenSet() const;
 
+                    /**
+                     * 获取精准匹配时配置的key
+                     * @return Key 精准匹配时配置的key
+                     * 
+                     */
+                    std::string GetKey() const;
+
+                    /**
+                     * 设置精准匹配时配置的key
+                     * @param _key 精准匹配时配置的key
+                     * 
+                     */
+                    void SetKey(const std::string& _key);
+
+                    /**
+                     * 判断参数 Key 是否已赋值
+                     * @return Key 是否已赋值
+                     * 
+                     */
+                    bool KeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     int64_t m_sessionID;
                     bool m_sessionIDHasBeenSet;
+
+                    /**
+                     * 精准匹配时配置的key
+                     */
+                    std::string m_key;
+                    bool m_keyHasBeenSet;
 
                 };
             }

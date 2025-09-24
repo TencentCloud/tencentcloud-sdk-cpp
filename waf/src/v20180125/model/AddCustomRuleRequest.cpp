@@ -39,7 +39,8 @@ AddCustomRuleRequest::AddCustomRuleRequest() :
     m_labelHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_pageIdHasBeenSet(false),
-    m_logicalOpHasBeenSet(false)
+    m_logicalOpHasBeenSet(false),
+    m_actionRatioHasBeenSet(false)
 {
 }
 
@@ -192,6 +193,14 @@ string AddCustomRuleRequest::ToJsonString() const
         string key = "LogicalOp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionRatio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_actionRatio, allocator);
     }
 
 
@@ -472,6 +481,22 @@ void AddCustomRuleRequest::SetLogicalOp(const string& _logicalOp)
 bool AddCustomRuleRequest::LogicalOpHasBeenSet() const
 {
     return m_logicalOpHasBeenSet;
+}
+
+uint64_t AddCustomRuleRequest::GetActionRatio() const
+{
+    return m_actionRatio;
+}
+
+void AddCustomRuleRequest::SetActionRatio(const uint64_t& _actionRatio)
+{
+    m_actionRatio = _actionRatio;
+    m_actionRatioHasBeenSet = true;
+}
+
+bool AddCustomRuleRequest::ActionRatioHasBeenSet() const
+{
+    return m_actionRatioHasBeenSet;
 }
 
 

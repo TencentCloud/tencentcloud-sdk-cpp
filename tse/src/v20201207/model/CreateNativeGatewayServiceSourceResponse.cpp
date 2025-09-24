@@ -24,7 +24,8 @@ using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
 CreateNativeGatewayServiceSourceResponse::CreateNativeGatewayServiceSourceResponse() :
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_sourceIDHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateNativeGatewayServiceSourceResponse::Deserialize(const 
         m_resultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SourceID") && !rsp["SourceID"].IsNull())
+    {
+        if (!rsp["SourceID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceID = string(rsp["SourceID"].GetString());
+        m_sourceIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateNativeGatewayServiceSourceResponse::ToJsonString() const
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_result, allocator);
+    }
+
+    if (m_sourceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceID.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ bool CreateNativeGatewayServiceSourceResponse::GetResult() const
 bool CreateNativeGatewayServiceSourceResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+string CreateNativeGatewayServiceSourceResponse::GetSourceID() const
+{
+    return m_sourceID;
+}
+
+bool CreateNativeGatewayServiceSourceResponse::SourceIDHasBeenSet() const
+{
+    return m_sourceIDHasBeenSet;
 }
 
 

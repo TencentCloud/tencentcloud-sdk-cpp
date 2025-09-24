@@ -91,18 +91,12 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeUrlViolationsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeUrlViolationsResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DisableCachesRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DisableCachesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DisableClsLogTopicRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DisableClsLogTopicResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DuplicateDomainConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DuplicateDomainConfigResponse.h>
-#include <tencentcloud/cdn/v20180606/model/EnableCachesRequest.h>
-#include <tencentcloud/cdn/v20180606/model/EnableCachesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/EnableClsLogTopicRequest.h>
 #include <tencentcloud/cdn/v20180606/model/EnableClsLogTopicResponse.h>
-#include <tencentcloud/cdn/v20180606/model/GetDisableRecordsRequest.h>
-#include <tencentcloud/cdn/v20180606/model/GetDisableRecordsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListClsLogTopicsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListClsLogTopicsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListClsTopicDomainsRequest.h>
@@ -255,24 +249,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUrlViolationsResponse> DescribeUrlViolationsOutcome;
                 typedef std::future<DescribeUrlViolationsOutcome> DescribeUrlViolationsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeUrlViolationsRequest&, DescribeUrlViolationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUrlViolationsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DisableCachesResponse> DisableCachesOutcome;
-                typedef std::future<DisableCachesOutcome> DisableCachesOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DisableCachesRequest&, DisableCachesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableCachesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableClsLogTopicResponse> DisableClsLogTopicOutcome;
                 typedef std::future<DisableClsLogTopicOutcome> DisableClsLogTopicOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DisableClsLogTopicRequest&, DisableClsLogTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableClsLogTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::DuplicateDomainConfigResponse> DuplicateDomainConfigOutcome;
                 typedef std::future<DuplicateDomainConfigOutcome> DuplicateDomainConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DuplicateDomainConfigRequest&, DuplicateDomainConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DuplicateDomainConfigAsyncHandler;
-                typedef Outcome<Core::Error, Model::EnableCachesResponse> EnableCachesOutcome;
-                typedef std::future<EnableCachesOutcome> EnableCachesOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::EnableCachesRequest&, EnableCachesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableCachesAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableClsLogTopicResponse> EnableClsLogTopicOutcome;
                 typedef std::future<EnableClsLogTopicOutcome> EnableClsLogTopicOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::EnableClsLogTopicRequest&, EnableClsLogTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableClsLogTopicAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetDisableRecordsResponse> GetDisableRecordsOutcome;
-                typedef std::future<GetDisableRecordsOutcome> GetDisableRecordsOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::GetDisableRecordsRequest&, GetDisableRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDisableRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListClsLogTopicsResponse> ListClsLogTopicsOutcome;
                 typedef std::future<ListClsLogTopicsOutcome> ListClsLogTopicsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListClsLogTopicsRequest&, ListClsLogTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListClsLogTopicsAsyncHandler;
@@ -686,16 +671,6 @@ DescribeDiagnoseReport 用于获取指定报告id的内容。
                 DescribeUrlViolationsOutcomeCallable DescribeUrlViolationsCallable(const Model::DescribeUrlViolationsRequest& request);
 
                 /**
-                 *### <font color=red>**该接口已废弃** </font><br>
-DisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中国境内访问会直接返回 403。
-                 * @param req DisableCachesRequest
-                 * @return DisableCachesOutcome
-                 */
-                DisableCachesOutcome DisableCaches(const Model::DisableCachesRequest &request);
-                void DisableCachesAsync(const Model::DisableCachesRequest& request, const DisableCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DisableCachesOutcomeCallable DisableCachesCallable(const Model::DisableCachesRequest& request);
-
-                /**
                  *DisableClsLogTopic 用于停止日志主题投递。注意：停止后，所有绑定该日志主题域名的日志将不再继续投递至该主题，已经投递的日志将会继续保留。生效时间约为 5~15 分钟。
 
                  * @param req DisableClsLogTopicRequest
@@ -715,16 +690,6 @@ DisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中�
                 DuplicateDomainConfigOutcomeCallable DuplicateDomainConfigCallable(const Model::DuplicateDomainConfigRequest& request);
 
                 /**
-                 *### <font color=red>**该接口已废弃** </font><br>
-EnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时间约 5~10 分钟。
-                 * @param req EnableCachesRequest
-                 * @return EnableCachesOutcome
-                 */
-                EnableCachesOutcome EnableCaches(const Model::EnableCachesRequest &request);
-                void EnableCachesAsync(const Model::EnableCachesRequest& request, const EnableCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                EnableCachesOutcomeCallable EnableCachesCallable(const Model::EnableCachesRequest& request);
-
-                /**
                  *EnableClsLogTopic 用于启动日志主题投递。注意：启动后，所有绑定该日志主题域名的日志将继续投递至该主题。生效时间约为 5~15 分钟。
                  * @param req EnableClsLogTopicRequest
                  * @return EnableClsLogTopicOutcome
@@ -732,18 +697,6 @@ EnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时
                 EnableClsLogTopicOutcome EnableClsLogTopic(const Model::EnableClsLogTopicRequest &request);
                 void EnableClsLogTopicAsync(const Model::EnableClsLogTopicRequest& request, const EnableClsLogTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableClsLogTopicOutcomeCallable EnableClsLogTopicCallable(const Model::EnableClsLogTopicRequest& request);
-
-                /**
-                 *以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)
-
-### <font color=red>**该接口已废弃** </font><br>
-GetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。
-                 * @param req GetDisableRecordsRequest
-                 * @return GetDisableRecordsOutcome
-                 */
-                GetDisableRecordsOutcome GetDisableRecords(const Model::GetDisableRecordsRequest &request);
-                void GetDisableRecordsAsync(const Model::GetDisableRecordsRequest& request, const GetDisableRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetDisableRecordsOutcomeCallable GetDisableRecordsCallable(const Model::GetDisableRecordsRequest& request);
 
                 /**
                  *ListClsLogTopics 用于显示日志主题列表。注意：一个日志集下至多含10个日志主题。

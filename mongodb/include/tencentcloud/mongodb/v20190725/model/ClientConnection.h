@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取连接的客户端IP
-                     * @return IP 连接的客户端IP
+                     * 获取连接的客户端 IP。
+                     * @return IP 连接的客户端 IP。
                      * 
                      */
                     std::string GetIP() const;
 
                     /**
-                     * 设置连接的客户端IP
-                     * @param _iP 连接的客户端IP
+                     * 设置连接的客户端 IP。
+                     * @param _iP 连接的客户端 IP。
                      * 
                      */
                     void SetIP(const std::string& _iP);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IPHasBeenSet() const;
 
                     /**
-                     * 获取对应客户端IP的连接数
-                     * @return Count 对应客户端IP的连接数
+                     * 获取对应客户端 IP 的连接数。
+                     * @return Count 对应客户端 IP 的连接数。
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置对应客户端IP的连接数
-                     * @param _count 对应客户端IP的连接数
+                     * 设置对应客户端 IP 的连接数。
+                     * @param _count 对应客户端 IP 的连接数。
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取是否为内部ip
-                     * @return InternalService 是否为内部ip
+                     * 获取是否为内部 IP。
+                     * @return InternalService 是否为内部 IP。
                      * 
                      */
                     bool GetInternalService() const;
 
                     /**
-                     * 设置是否为内部ip
-                     * @param _internalService 是否为内部ip
+                     * 设置是否为内部 IP。
+                     * @param _internalService 是否为内部 IP。
                      * 
                      */
                     void SetInternalService(const bool& _internalService);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 连接的客户端IP
+                     * 连接的客户端 IP。
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
 
                     /**
-                     * 对应客户端IP的连接数
+                     * 对应客户端 IP 的连接数。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 是否为内部ip
+                     * 是否为内部 IP。
                      */
                     bool m_internalService;
                     bool m_internalServiceHasBeenSet;

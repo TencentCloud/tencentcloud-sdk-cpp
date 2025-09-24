@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool UriHasBeenSet() const;
 
                     /**
-                     * 获取加密key(32字节字符串)。
+                     * 获取加密key(十六进制32字节字符串)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Key 加密key(32字节字符串)。
+                     * @return Key 加密key(十六进制32字节字符串)。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置加密key(32字节字符串)。
+                     * 设置加密key(十六进制32字节字符串)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _key 加密key(32字节字符串)。
+                     * @param _key 加密key(十六进制32字节字符串)。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取加密初始化向量(32字节字符串)。
+                     * 获取加密初始化向量(十六进制32字节字符串)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vector 加密初始化向量(32字节字符串)。
+                     * @return Vector 加密初始化向量(十六进制32字节字符串)。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVector() const;
 
                     /**
-                     * 设置加密初始化向量(32字节字符串)。
+                     * 设置加密初始化向量(十六进制32字节字符串)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vector 加密初始化向量(32字节字符串)。
+                     * @param _vector 加密初始化向量(十六进制32字节字符串)。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -131,14 +131,14 @@ namespace TencentCloud
                     bool m_uriHasBeenSet;
 
                     /**
-                     * 加密key(32字节字符串)。
+                     * 加密key(十六进制32字节字符串)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 加密初始化向量(32字节字符串)。
+                     * 加密初始化向量(十六进制32字节字符串)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vector;

@@ -126,49 +126,6 @@ LkeClient::CheckAttributeLabelReferOutcomeCallable LkeClient::CheckAttributeLabe
     return task->get_future();
 }
 
-LkeClient::CreateAgentOutcome LkeClient::CreateAgent(const CreateAgentRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateAgent");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateAgentResponse rsp = CreateAgentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateAgentOutcome(rsp);
-        else
-            return CreateAgentOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateAgentOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::CreateAgentAsync(const CreateAgentRequest& request, const CreateAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAgent(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::CreateAgentOutcomeCallable LkeClient::CreateAgentCallable(const CreateAgentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::CreateAppOutcome LkeClient::CreateApp(const CreateAppRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApp");
@@ -3645,49 +3602,6 @@ LkeClient::ListWorkflowRunsOutcomeCallable LkeClient::ListWorkflowRunsCallable(c
         [this, request]()
         {
             return this->ListWorkflowRuns(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LkeClient::ModifyAgentOutcome LkeClient::ModifyAgent(const ModifyAgentRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyAgent");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyAgentResponse rsp = ModifyAgentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyAgentOutcome(rsp);
-        else
-            return ModifyAgentOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyAgentOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::ModifyAgentAsync(const ModifyAgentRequest& request, const ModifyAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAgent(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::ModifyAgentOutcomeCallable LkeClient::ModifyAgentCallable(const ModifyAgentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAgent(request);
         }
     );
 

@@ -127,6 +127,27 @@ namespace TencentCloud
                     bool VoiceTypeHasBeenSet() const;
 
                     /**
+                     * 获取复刻音色
+                     * @return FastVoiceType 复刻音色
+                     * 
+                     */
+                    std::string GetFastVoiceType() const;
+
+                    /**
+                     * 设置复刻音色
+                     * @param _fastVoiceType 复刻音色
+                     * 
+                     */
+                    void SetFastVoiceType(const std::string& _fastVoiceType);
+
+                    /**
+                     * 判断参数 FastVoiceType 是否已赋值
+                     * @return FastVoiceType 是否已赋值
+                     * 
+                     */
+                    bool FastVoiceTypeHasBeenSet() const;
+
+                    /**
                      * 获取支持的语言，zh-中文；en-英文；默认zh
                      * @return TargetLanguage 支持的语言，zh-中文；en-英文；默认zh
                      * 
@@ -172,6 +193,12 @@ namespace TencentCloud
                      */
                     int64_t m_voiceType;
                     bool m_voiceTypeHasBeenSet;
+
+                    /**
+                     * 复刻音色
+                     */
+                    std::string m_fastVoiceType;
+                    bool m_fastVoiceTypeHasBeenSet;
 
                     /**
                      * 支持的语言，zh-中文；en-英文；默认zh

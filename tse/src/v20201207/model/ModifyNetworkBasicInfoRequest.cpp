@@ -28,7 +28,8 @@ ModifyNetworkBasicInfoRequest::ModifyNetworkBasicInfoRequest() :
     m_networkTypeHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_slaTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ModifyNetworkBasicInfoRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_slaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_slaType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ModifyNetworkBasicInfoRequest::SetDescription(const string& _description)
 bool ModifyNetworkBasicInfoRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string ModifyNetworkBasicInfoRequest::GetSlaType() const
+{
+    return m_slaType;
+}
+
+void ModifyNetworkBasicInfoRequest::SetSlaType(const string& _slaType)
+{
+    m_slaType = _slaType;
+    m_slaTypeHasBeenSet = true;
+}
+
+bool ModifyNetworkBasicInfoRequest::SlaTypeHasBeenSet() const
+{
+    return m_slaTypeHasBeenSet;
 }
 
 

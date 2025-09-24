@@ -239,6 +239,27 @@ namespace TencentCloud
                      */
                     bool LinesHasBeenSet() const;
 
+                    /**
+                     * 获取网关回源 IP 列表发生了变化是否需要重新确认，取值有：<li>true：回源 IP 列表发生了变化，需要确认；</li><li>false：回源 IP 列表未发生变化，无需确认。</li>
+                     * @return NeedConfirm 网关回源 IP 列表发生了变化是否需要重新确认，取值有：<li>true：回源 IP 列表发生了变化，需要确认；</li><li>false：回源 IP 列表未发生变化，无需确认。</li>
+                     * 
+                     */
+                    std::string GetNeedConfirm() const;
+
+                    /**
+                     * 设置网关回源 IP 列表发生了变化是否需要重新确认，取值有：<li>true：回源 IP 列表发生了变化，需要确认；</li><li>false：回源 IP 列表未发生变化，无需确认。</li>
+                     * @param _needConfirm 网关回源 IP 列表发生了变化是否需要重新确认，取值有：<li>true：回源 IP 列表发生了变化，需要确认；</li><li>false：回源 IP 列表未发生变化，无需确认。</li>
+                     * 
+                     */
+                    void SetNeedConfirm(const std::string& _needConfirm);
+
+                    /**
+                     * 判断参数 NeedConfirm 是否已赋值
+                     * @return NeedConfirm 是否已赋值
+                     * 
+                     */
+                    bool NeedConfirmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,6 +315,12 @@ namespace TencentCloud
                      */
                     std::vector<MultiPathGatewayLine> m_lines;
                     bool m_linesHasBeenSet;
+
+                    /**
+                     * 网关回源 IP 列表发生了变化是否需要重新确认，取值有：<li>true：回源 IP 列表发生了变化，需要确认；</li><li>false：回源 IP 列表未发生变化，无需确认。</li>
+                     */
+                    std::string m_needConfirm;
+                    bool m_needConfirmHasBeenSet;
 
                 };
             }

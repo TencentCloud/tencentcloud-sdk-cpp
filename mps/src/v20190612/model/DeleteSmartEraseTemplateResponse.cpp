@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdn/v20180606/model/EnableCachesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteSmartEraseTemplateResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdn::V20180606::Model;
+using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
-EnableCachesResponse::EnableCachesResponse() :
-    m_cacheOptResultHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+DeleteSmartEraseTemplateResponse::DeleteSmartEraseTemplateResponse()
 {
 }
 
-CoreInternalOutcome EnableCachesResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteSmartEraseTemplateResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,59 +61,15 @@ CoreInternalOutcome EnableCachesResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("CacheOptResult") && !rsp["CacheOptResult"].IsNull())
-    {
-        if (!rsp["CacheOptResult"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `CacheOptResult` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_cacheOptResult.Deserialize(rsp["CacheOptResult"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_cacheOptResultHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
-    {
-        if (!rsp["TaskId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_taskId = string(rsp["TaskId"].GetString());
-        m_taskIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string EnableCachesResponse::ToJsonString() const
+string DeleteSmartEraseTemplateResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_cacheOptResultHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CacheOptResult";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_cacheOptResult.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_taskIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -128,25 +82,5 @@ string EnableCachesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-CacheOptResult EnableCachesResponse::GetCacheOptResult() const
-{
-    return m_cacheOptResult;
-}
-
-bool EnableCachesResponse::CacheOptResultHasBeenSet() const
-{
-    return m_cacheOptResultHasBeenSet;
-}
-
-string EnableCachesResponse::GetTaskId() const
-{
-    return m_taskId;
-}
-
-bool EnableCachesResponse::TaskIdHasBeenSet() const
-{
-    return m_taskIdHasBeenSet;
-}
 
 

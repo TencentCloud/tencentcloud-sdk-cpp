@@ -31,7 +31,8 @@ SessionItem::SessionItem() :
     m_sessionIdHasBeenSet(false),
     m_sessionNameHasBeenSet(false),
     m_sessionInUsedHasBeenSet(false),
-    m_relatedRuleIDHasBeenSet(false)
+    m_relatedRuleIDHasBeenSet(false),
+    m_keyHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome SessionItem::Deserialize(const rapidjson::Value &value)
         m_relatedRuleIDHasBeenSet = true;
     }
 
+    if (value.HasMember("Key") && !value["Key"].IsNull())
+    {
+        if (!value["Key"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionItem.Key` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_key = string(value["Key"].GetString());
+        m_keyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void SessionItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_keyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Key";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void SessionItem::SetRelatedRuleID(const vector<int64_t>& _relatedRuleID)
 bool SessionItem::RelatedRuleIDHasBeenSet() const
 {
     return m_relatedRuleIDHasBeenSet;
+}
+
+string SessionItem::GetKey() const
+{
+    return m_key;
+}
+
+void SessionItem::SetKey(const string& _key)
+{
+    m_key = _key;
+    m_keyHasBeenSet = true;
+}
+
+bool SessionItem::KeyHasBeenSet() const
+{
+    return m_keyHasBeenSet;
 }
 

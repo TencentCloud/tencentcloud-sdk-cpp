@@ -114,6 +114,20 @@ namespace TencentCloud
                      */
                     bool CustomRuleNumsHasBeenSet() const;
 
+                    /**
+                     * 获取图灵盾开关状态
+                     * @return TldStatus 图灵盾开关状态
+                     * 
+                     */
+                    bool GetTldStatus() const;
+
+                    /**
+                     * 判断参数 TldStatus 是否已赋值
+                     * @return TldStatus 是否已赋值
+                     * 
+                     */
+                    bool TldStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +159,12 @@ namespace TencentCloud
                      */
                     int64_t m_customRuleNums;
                     bool m_customRuleNumsHasBeenSet;
+
+                    /**
+                     * 图灵盾开关状态
+                     */
+                    bool m_tldStatus;
+                    bool m_tldStatusHasBeenSet;
 
                 };
             }

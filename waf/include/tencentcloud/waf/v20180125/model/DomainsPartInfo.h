@@ -856,6 +856,27 @@ https：使用https协议回源
                     bool CipherTemplateHasBeenSet() const;
 
                     /**
+                     * 获取WAF与源站的连接超时，默认10s。
+                     * @return ProxyConnectTimeout WAF与源站的连接超时，默认10s。
+                     * 
+                     */
+                    int64_t GetProxyConnectTimeout() const;
+
+                    /**
+                     * 设置WAF与源站的连接超时，默认10s。
+                     * @param _proxyConnectTimeout WAF与源站的连接超时，默认10s。
+                     * 
+                     */
+                    void SetProxyConnectTimeout(const int64_t& _proxyConnectTimeout);
+
+                    /**
+                     * 判断参数 ProxyConnectTimeout 是否已赋值
+                     * @return ProxyConnectTimeout 是否已赋值
+                     * 
+                     */
+                    bool ProxyConnectTimeoutHasBeenSet() const;
+
+                    /**
                      * 获取WAF与源站的读超时时间，默认300s。
                      * @return ProxyReadTimeout WAF与源站的读超时时间，默认300s。
                      * 
@@ -1370,6 +1391,27 @@ https：使用https协议回源
                      */
                     bool UseCaseHasBeenSet() const;
 
+                    /**
+                     * 获取gzip开关。0：关闭 1：默认值，打开。
+                     * @return Gzip gzip开关。0：关闭 1：默认值，打开。
+                     * 
+                     */
+                    int64_t GetGzip() const;
+
+                    /**
+                     * 设置gzip开关。0：关闭 1：默认值，打开。
+                     * @param _gzip gzip开关。0：关闭 1：默认值，打开。
+                     * 
+                     */
+                    void SetGzip(const int64_t& _gzip);
+
+                    /**
+                     * 判断参数 Gzip 是否已赋值
+                     * @return Gzip 是否已赋值
+                     * 
+                     */
+                    bool GzipHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1598,6 +1640,12 @@ https：使用https协议回源
                     bool m_cipherTemplateHasBeenSet;
 
                     /**
+                     * WAF与源站的连接超时，默认10s。
+                     */
+                    int64_t m_proxyConnectTimeout;
+                    bool m_proxyConnectTimeoutHasBeenSet;
+
+                    /**
                      * WAF与源站的读超时时间，默认300s。
                      */
                     int64_t m_proxyReadTimeout;
@@ -1742,6 +1790,12 @@ https：使用https协议回源
                      */
                     int64_t m_useCase;
                     bool m_useCaseHasBeenSet;
+
+                    /**
+                     * gzip开关。0：关闭 1：默认值，打开。
+                     */
+                    int64_t m_gzip;
+                    bool m_gzipHasBeenSet;
 
                 };
             }

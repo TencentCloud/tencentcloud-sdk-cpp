@@ -23,7 +23,8 @@ using namespace std;
 ApiDataFilter::ApiDataFilter() :
     m_entityHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_valueListHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,19 @@ CoreInternalOutcome ApiDataFilter::Deserialize(const rapidjson::Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("ValueList") && !value["ValueList"].IsNull())
+    {
+        if (!value["ValueList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApiDataFilter.ValueList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ValueList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_valueList.push_back((*itr).GetString());
+        }
+        m_valueListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +105,19 @@ void ApiDataFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValueList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_valueList.begin(); itr != m_valueList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -142,5 +169,21 @@ void ApiDataFilter::SetValue(const string& _value)
 bool ApiDataFilter::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+vector<string> ApiDataFilter::GetValueList() const
+{
+    return m_valueList;
+}
+
+void ApiDataFilter::SetValueList(const vector<string>& _valueList)
+{
+    m_valueList = _valueList;
+    m_valueListHasBeenSet = true;
+}
+
+bool ApiDataFilter::ValueListHasBeenSet() const
+{
+    return m_valueListHasBeenSet;
 }
 

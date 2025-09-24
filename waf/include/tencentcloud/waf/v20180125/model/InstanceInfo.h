@@ -36,6 +36,8 @@
 #include <tencentcloud/waf/v20180125/model/MiniExtendPkg.h>
 #include <tencentcloud/waf/v20180125/model/MajorEventsProPkg.h>
 #include <tencentcloud/waf/v20180125/model/NetworkConfig.h>
+#include <tencentcloud/waf/v20180125/model/RCEPkg.h>
+#include <tencentcloud/waf/v20180125/model/LLMPkg.h>
 
 
 namespace TencentCloud
@@ -1064,6 +1066,94 @@ namespace TencentCloud
                      */
                     bool NetworkConfigHasBeenSet() const;
 
+                    /**
+                     * 获取RCE设备安全信息包
+                     * @return RCEPkg RCE设备安全信息包
+                     * 
+                     */
+                    RCEPkg GetRCEPkg() const;
+
+                    /**
+                     * 设置RCE设备安全信息包
+                     * @param _rCEPkg RCE设备安全信息包
+                     * 
+                     */
+                    void SetRCEPkg(const RCEPkg& _rCEPkg);
+
+                    /**
+                     * 判断参数 RCEPkg 是否已赋值
+                     * @return RCEPkg 是否已赋值
+                     * 
+                     */
+                    bool RCEPkgHasBeenSet() const;
+
+                    /**
+                     * 获取超量策略。0：超量沙箱
+1：超量限流
+                     * @return ExceedPolicy 超量策略。0：超量沙箱
+1：超量限流
+                     * 
+                     */
+                    int64_t GetExceedPolicy() const;
+
+                    /**
+                     * 设置超量策略。0：超量沙箱
+1：超量限流
+                     * @param _exceedPolicy 超量策略。0：超量沙箱
+1：超量限流
+                     * 
+                     */
+                    void SetExceedPolicy(const int64_t& _exceedPolicy);
+
+                    /**
+                     * 判断参数 ExceedPolicy 是否已赋值
+                     * @return ExceedPolicy 是否已赋值
+                     * 
+                     */
+                    bool ExceedPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取大模型安全信息包
+                     * @return LLMPkg 大模型安全信息包
+                     * 
+                     */
+                    LLMPkg GetLLMPkg() const;
+
+                    /**
+                     * 设置大模型安全信息包
+                     * @param _lLMPkg 大模型安全信息包
+                     * 
+                     */
+                    void SetLLMPkg(const LLMPkg& _lLMPkg);
+
+                    /**
+                     * 判断参数 LLMPkg 是否已赋值
+                     * @return LLMPkg 是否已赋值
+                     * 
+                     */
+                    bool LLMPkgHasBeenSet() const;
+
+                    /**
+                     * 获取弹性资源Id
+                     * @return ElasticResourceId 弹性资源Id
+                     * 
+                     */
+                    std::string GetElasticResourceId() const;
+
+                    /**
+                     * 设置弹性资源Id
+                     * @param _elasticResourceId 弹性资源Id
+                     * 
+                     */
+                    void SetElasticResourceId(const std::string& _elasticResourceId);
+
+                    /**
+                     * 判断参数 ElasticResourceId 是否已赋值
+                     * @return ElasticResourceId 是否已赋值
+                     * 
+                     */
+                    bool ElasticResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1351,6 +1441,31 @@ namespace TencentCloud
                      */
                     NetworkConfig m_networkConfig;
                     bool m_networkConfigHasBeenSet;
+
+                    /**
+                     * RCE设备安全信息包
+                     */
+                    RCEPkg m_rCEPkg;
+                    bool m_rCEPkgHasBeenSet;
+
+                    /**
+                     * 超量策略。0：超量沙箱
+1：超量限流
+                     */
+                    int64_t m_exceedPolicy;
+                    bool m_exceedPolicyHasBeenSet;
+
+                    /**
+                     * 大模型安全信息包
+                     */
+                    LLMPkg m_lLMPkg;
+                    bool m_lLMPkgHasBeenSet;
+
+                    /**
+                     * 弹性资源Id
+                     */
+                    std::string m_elasticResourceId;
+                    bool m_elasticResourceIdHasBeenSet;
 
                 };
             }

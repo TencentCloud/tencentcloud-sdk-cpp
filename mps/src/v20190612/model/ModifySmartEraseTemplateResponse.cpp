@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lke/v20231130/model/ModifyAgentResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifySmartEraseTemplateResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Lke::V20231130::Model;
+using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
-ModifyAgentResponse::ModifyAgentResponse() :
-    m_agentIdHasBeenSet(false)
+ModifySmartEraseTemplateResponse::ModifySmartEraseTemplateResponse()
 {
 }
 
-CoreInternalOutcome ModifyAgentResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifySmartEraseTemplateResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,33 +61,15 @@ CoreInternalOutcome ModifyAgentResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("AgentId") && !rsp["AgentId"].IsNull())
-    {
-        if (!rsp["AgentId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AgentId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_agentId = string(rsp["AgentId"].GetString());
-        m_agentIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string ModifyAgentResponse::ToJsonString() const
+string ModifySmartEraseTemplateResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_agentIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AgentId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_agentId.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string ModifyAgentResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ModifyAgentResponse::GetAgentId() const
-{
-    return m_agentId;
-}
-
-bool ModifyAgentResponse::AgentIdHasBeenSet() const
-{
-    return m_agentIdHasBeenSet;
-}
 
 

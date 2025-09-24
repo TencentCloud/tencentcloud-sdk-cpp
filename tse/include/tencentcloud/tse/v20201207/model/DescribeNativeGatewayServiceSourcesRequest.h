@@ -106,6 +106,27 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
+                     * 获取服务来源ID
+                     * @return SourceID 服务来源ID
+                     * 
+                     */
+                    std::string GetSourceID() const;
+
+                    /**
+                     * 设置服务来源ID
+                     * @param _sourceID 服务来源ID
+                     * 
+                     */
+                    void SetSourceID(const std::string& _sourceID);
+
+                    /**
+                     * 判断参数 SourceID 是否已赋值
+                     * @return SourceID 是否已赋值
+                     * 
+                     */
+                    bool SourceIDHasBeenSet() const;
+
+                    /**
                      * 获取服务来源实例名称，模糊搜索
                      * @return SourceName 服务来源实例名称，模糊搜索
                      * 
@@ -208,6 +229,12 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 服务来源ID
+                     */
+                    std::string m_sourceID;
+                    bool m_sourceIDHasBeenSet;
 
                     /**
                      * 服务来源实例名称，模糊搜索

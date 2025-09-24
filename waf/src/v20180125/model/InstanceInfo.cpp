@@ -66,7 +66,11 @@ InstanceInfo::InstanceInfo() :
     m_last3MaxBandwidthHasBeenSet(false),
     m_majorEventsProPkgHasBeenSet(false),
     m_basicFlagHasBeenSet(false),
-    m_networkConfigHasBeenSet(false)
+    m_networkConfigHasBeenSet(false),
+    m_rCEPkgHasBeenSet(false),
+    m_exceedPolicyHasBeenSet(false),
+    m_lLMPkgHasBeenSet(false),
+    m_elasticResourceIdHasBeenSet(false)
 {
 }
 
@@ -619,6 +623,60 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_networkConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("RCEPkg") && !value["RCEPkg"].IsNull())
+    {
+        if (!value["RCEPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.RCEPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rCEPkg.Deserialize(value["RCEPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rCEPkgHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExceedPolicy") && !value["ExceedPolicy"].IsNull())
+    {
+        if (!value["ExceedPolicy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ExceedPolicy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_exceedPolicy = value["ExceedPolicy"].GetInt64();
+        m_exceedPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("LLMPkg") && !value["LLMPkg"].IsNull())
+    {
+        if (!value["LLMPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.LLMPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lLMPkg.Deserialize(value["LLMPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lLMPkgHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticResourceId") && !value["ElasticResourceId"].IsNull())
+    {
+        if (!value["ElasticResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ElasticResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticResourceId = string(value["ElasticResourceId"].GetString());
+        m_elasticResourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1004,6 +1062,40 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_networkConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rCEPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RCEPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rCEPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_exceedPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExceedPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exceedPolicy, allocator);
+    }
+
+    if (m_lLMPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LLMPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lLMPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_elasticResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_elasticResourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1743,5 +1835,69 @@ void InstanceInfo::SetNetworkConfig(const NetworkConfig& _networkConfig)
 bool InstanceInfo::NetworkConfigHasBeenSet() const
 {
     return m_networkConfigHasBeenSet;
+}
+
+RCEPkg InstanceInfo::GetRCEPkg() const
+{
+    return m_rCEPkg;
+}
+
+void InstanceInfo::SetRCEPkg(const RCEPkg& _rCEPkg)
+{
+    m_rCEPkg = _rCEPkg;
+    m_rCEPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::RCEPkgHasBeenSet() const
+{
+    return m_rCEPkgHasBeenSet;
+}
+
+int64_t InstanceInfo::GetExceedPolicy() const
+{
+    return m_exceedPolicy;
+}
+
+void InstanceInfo::SetExceedPolicy(const int64_t& _exceedPolicy)
+{
+    m_exceedPolicy = _exceedPolicy;
+    m_exceedPolicyHasBeenSet = true;
+}
+
+bool InstanceInfo::ExceedPolicyHasBeenSet() const
+{
+    return m_exceedPolicyHasBeenSet;
+}
+
+LLMPkg InstanceInfo::GetLLMPkg() const
+{
+    return m_lLMPkg;
+}
+
+void InstanceInfo::SetLLMPkg(const LLMPkg& _lLMPkg)
+{
+    m_lLMPkg = _lLMPkg;
+    m_lLMPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::LLMPkgHasBeenSet() const
+{
+    return m_lLMPkgHasBeenSet;
+}
+
+string InstanceInfo::GetElasticResourceId() const
+{
+    return m_elasticResourceId;
+}
+
+void InstanceInfo::SetElasticResourceId(const string& _elasticResourceId)
+{
+    m_elasticResourceId = _elasticResourceId;
+    m_elasticResourceIdHasBeenSet = true;
+}
+
+bool InstanceInfo::ElasticResourceIdHasBeenSet() const
+{
+    return m_elasticResourceIdHasBeenSet;
 }
 

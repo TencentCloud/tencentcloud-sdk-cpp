@@ -277,6 +277,27 @@ namespace TencentCloud
                      */
                     bool RelatedRuleIDHasBeenSet() const;
 
+                    /**
+                     * 获取精准匹配时，配置的key
+                     * @return Key 精准匹配时，配置的key
+                     * 
+                     */
+                    std::string GetKey() const;
+
+                    /**
+                     * 设置精准匹配时，配置的key
+                     * @param _key 精准匹配时，配置的key
+                     * 
+                     */
+                    void SetKey(const std::string& _key);
+
+                    /**
+                     * 判断参数 Key 是否已赋值
+                     * @return Key 是否已赋值
+                     * 
+                     */
+                    bool KeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +365,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_relatedRuleID;
                     bool m_relatedRuleIDHasBeenSet;
+
+                    /**
+                     * 精准匹配时，配置的key
+                     */
+                    std::string m_key;
+                    bool m_keyHasBeenSet;
 
                 };
             }

@@ -52,6 +52,7 @@ DomainsPartInfo::DomainsPartInfo() :
     m_tLSVersionHasBeenSet(false),
     m_ciphersHasBeenSet(false),
     m_cipherTemplateHasBeenSet(false),
+    m_proxyConnectTimeoutHasBeenSet(false),
     m_proxyReadTimeoutHasBeenSet(false),
     m_proxySendTimeoutHasBeenSet(false),
     m_sniTypeHasBeenSet(false),
@@ -74,7 +75,8 @@ DomainsPartInfo::DomainsPartInfo() :
     m_probeStatusHasBeenSet(false),
     m_upstreamPolicyHasBeenSet(false),
     m_upstreamRulesHasBeenSet(false),
-    m_useCaseHasBeenSet(false)
+    m_useCaseHasBeenSet(false),
+    m_gzipHasBeenSet(false)
 {
 }
 
@@ -409,6 +411,16 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_cipherTemplateHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyConnectTimeout") && !value["ProxyConnectTimeout"].IsNull())
+    {
+        if (!value["ProxyConnectTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.ProxyConnectTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyConnectTimeout = value["ProxyConnectTimeout"].GetInt64();
+        m_proxyConnectTimeoutHasBeenSet = true;
+    }
+
     if (value.HasMember("ProxyReadTimeout") && !value["ProxyReadTimeout"].IsNull())
     {
         if (!value["ProxyReadTimeout"].IsInt64())
@@ -656,6 +668,16 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         }
         m_useCase = value["UseCase"].GetInt64();
         m_useCaseHasBeenSet = true;
+    }
+
+    if (value.HasMember("Gzip") && !value["Gzip"].IsNull())
+    {
+        if (!value["Gzip"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.Gzip` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gzip = value["Gzip"].GetInt64();
+        m_gzipHasBeenSet = true;
     }
 
 
@@ -930,6 +952,14 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, m_cipherTemplate, allocator);
     }
 
+    if (m_proxyConnectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proxyConnectTimeout, allocator);
+    }
+
     if (m_proxyReadTimeoutHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1134,6 +1164,14 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "UseCase";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useCase, allocator);
+    }
+
+    if (m_gzipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Gzip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gzip, allocator);
     }
 
 }
@@ -1635,6 +1673,22 @@ bool DomainsPartInfo::CipherTemplateHasBeenSet() const
     return m_cipherTemplateHasBeenSet;
 }
 
+int64_t DomainsPartInfo::GetProxyConnectTimeout() const
+{
+    return m_proxyConnectTimeout;
+}
+
+void DomainsPartInfo::SetProxyConnectTimeout(const int64_t& _proxyConnectTimeout)
+{
+    m_proxyConnectTimeout = _proxyConnectTimeout;
+    m_proxyConnectTimeoutHasBeenSet = true;
+}
+
+bool DomainsPartInfo::ProxyConnectTimeoutHasBeenSet() const
+{
+    return m_proxyConnectTimeoutHasBeenSet;
+}
+
 int64_t DomainsPartInfo::GetProxyReadTimeout() const
 {
     return m_proxyReadTimeout;
@@ -2001,5 +2055,21 @@ void DomainsPartInfo::SetUseCase(const int64_t& _useCase)
 bool DomainsPartInfo::UseCaseHasBeenSet() const
 {
     return m_useCaseHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetGzip() const
+{
+    return m_gzip;
+}
+
+void DomainsPartInfo::SetGzip(const int64_t& _gzip)
+{
+    m_gzip = _gzip;
+    m_gzipHasBeenSet = true;
+}
+
+bool DomainsPartInfo::GzipHasBeenSet() const
+{
+    return m_gzipHasBeenSet;
 }
 

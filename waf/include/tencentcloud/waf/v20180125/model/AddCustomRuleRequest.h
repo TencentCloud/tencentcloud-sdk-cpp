@@ -401,6 +401,27 @@ namespace TencentCloud
                      */
                     bool LogicalOpHasBeenSet() const;
 
+                    /**
+                     * 获取按照动作灰度的比例，默认是100
+                     * @return ActionRatio 按照动作灰度的比例，默认是100
+                     * 
+                     */
+                    uint64_t GetActionRatio() const;
+
+                    /**
+                     * 设置按照动作灰度的比例，默认是100
+                     * @param _actionRatio 按照动作灰度的比例，默认是100
+                     * 
+                     */
+                    void SetActionRatio(const uint64_t& _actionRatio);
+
+                    /**
+                     * 判断参数 ActionRatio 是否已赋值
+                     * @return ActionRatio 是否已赋值
+                     * 
+                     */
+                    bool ActionRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -504,6 +525,12 @@ namespace TencentCloud
                      */
                     std::string m_logicalOp;
                     bool m_logicalOpHasBeenSet;
+
+                    /**
+                     * 按照动作灰度的比例，默认是100
+                     */
+                    uint64_t m_actionRatio;
+                    bool m_actionRatioHasBeenSet;
 
                 };
             }

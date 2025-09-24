@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取房间ID。
+字符数不超过256
                      * @return RoomId 房间ID。
+字符数不超过256
                      * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间ID。
+字符数不超过256
                      * @param _roomId 房间ID。
+字符数不超过256
                      * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
@@ -686,15 +690,23 @@ video 纯视频
                     bool WhiteBoardSnapshotModeHasBeenSet() const;
 
                     /**
-                     * 获取字幕转写功能开关：0关闭，1开启，默认关闭
-                     * @return SubtitlesTranscription 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 获取字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
+                     * @return SubtitlesTranscription 字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
                      * 
                      */
                     uint64_t GetSubtitlesTranscription() const;
 
                     /**
-                     * 设置字幕转写功能开关：0关闭，1开启，默认关闭
-                     * @param _subtitlesTranscription 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 设置字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
+                     * @param _subtitlesTranscription 字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
                      * 
                      */
                     void SetSubtitlesTranscription(const uint64_t& _subtitlesTranscription);
@@ -752,6 +764,7 @@ video 纯视频
 
                     /**
                      * 房间ID。
+字符数不超过256
                      */
                     uint64_t m_roomId;
                     bool m_roomIdHasBeenSet;
@@ -932,7 +945,9 @@ video 纯视频
                     bool m_whiteBoardSnapshotModeHasBeenSet;
 
                     /**
-                     * 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
                      */
                     uint64_t m_subtitlesTranscription;
                     bool m_subtitlesTranscriptionHasBeenSet;

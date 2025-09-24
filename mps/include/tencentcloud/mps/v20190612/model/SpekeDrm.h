@@ -101,15 +101,15 @@ namespace TencentCloud
                     bool KeyServerUrlHasBeenSet() const;
 
                     /**
-                     * 获取加密初始化向量(32字节字符串)，该字段内容为用户自定义。
-                     * @return Vector 加密初始化向量(32字节字符串)，该字段内容为用户自定义。
+                     * 获取加密初始化向量(十六进制32字节字符串)，该字段内容为用户自定义。
+                     * @return Vector 加密初始化向量(十六进制32字节字符串)，该字段内容为用户自定义。
                      * 
                      */
                     std::string GetVector() const;
 
                     /**
-                     * 设置加密初始化向量(32字节字符串)，该字段内容为用户自定义。
-                     * @param _vector 加密初始化向量(32字节字符串)，该字段内容为用户自定义。
+                     * 设置加密初始化向量(十六进制32字节字符串)，该字段内容为用户自定义。
+                     * @param _vector 加密初始化向量(十六进制32字节字符串)，该字段内容为用户自定义。
                      * 
                      */
                     void SetVector(const std::string& _vector);
@@ -205,7 +205,7 @@ preset1：每个子流使用不同的key加密；
                     bool m_keyServerUrlHasBeenSet;
 
                     /**
-                     * 加密初始化向量(32字节字符串)，该字段内容为用户自定义。
+                     * 加密初始化向量(十六进制32字节字符串)，该字段内容为用户自定义。
                      */
                     std::string m_vector;
                     bool m_vectorHasBeenSet;

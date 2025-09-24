@@ -787,14 +787,22 @@ namespace TencentCloud
 
                     /**
                      * 获取从节点读取权重。
+- 0：表示关闭副本只读。
+- 100：表示开启副本只读。
                      * @return SlaveReadWeight 从节点读取权重。
+- 0：表示关闭副本只读。
+- 100：表示开启副本只读。
                      * 
                      */
                     int64_t GetSlaveReadWeight() const;
 
                     /**
                      * 设置从节点读取权重。
+- 0：表示关闭副本只读。
+- 100：表示开启副本只读。
                      * @param _slaveReadWeight 从节点读取权重。
+- 0：表示关闭副本只读。
+- 100：表示开启副本只读。
                      * 
                      */
                     void SetSlaveReadWeight(const int64_t& _slaveReadWeight);
@@ -1610,6 +1618,8 @@ namespace TencentCloud
 
                     /**
                      * 从节点读取权重。
+- 0：表示关闭副本只读。
+- 100：表示开启副本只读。
                      */
                     int64_t m_slaveReadWeight;
                     bool m_slaveReadWeightHasBeenSet;

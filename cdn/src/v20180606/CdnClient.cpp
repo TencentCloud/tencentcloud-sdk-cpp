@@ -1502,49 +1502,6 @@ CdnClient::DescribeUrlViolationsOutcomeCallable CdnClient::DescribeUrlViolations
     return task->get_future();
 }
 
-CdnClient::DisableCachesOutcome CdnClient::DisableCaches(const DisableCachesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DisableCaches");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DisableCachesResponse rsp = DisableCachesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DisableCachesOutcome(rsp);
-        else
-            return DisableCachesOutcome(o.GetError());
-    }
-    else
-    {
-        return DisableCachesOutcome(outcome.GetError());
-    }
-}
-
-void CdnClient::DisableCachesAsync(const DisableCachesRequest& request, const DisableCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableCaches(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdnClient::DisableCachesOutcomeCallable CdnClient::DisableCachesCallable(const DisableCachesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DisableCachesOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableCaches(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdnClient::DisableClsLogTopicOutcome CdnClient::DisableClsLogTopic(const DisableClsLogTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableClsLogTopic");
@@ -1631,49 +1588,6 @@ CdnClient::DuplicateDomainConfigOutcomeCallable CdnClient::DuplicateDomainConfig
     return task->get_future();
 }
 
-CdnClient::EnableCachesOutcome CdnClient::EnableCaches(const EnableCachesRequest &request)
-{
-    auto outcome = MakeRequest(request, "EnableCaches");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        EnableCachesResponse rsp = EnableCachesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return EnableCachesOutcome(rsp);
-        else
-            return EnableCachesOutcome(o.GetError());
-    }
-    else
-    {
-        return EnableCachesOutcome(outcome.GetError());
-    }
-}
-
-void CdnClient::EnableCachesAsync(const EnableCachesRequest& request, const EnableCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableCaches(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdnClient::EnableCachesOutcomeCallable CdnClient::EnableCachesCallable(const EnableCachesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<EnableCachesOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableCaches(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdnClient::EnableClsLogTopicOutcome CdnClient::EnableClsLogTopic(const EnableClsLogTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableClsLogTopic");
@@ -1710,49 +1624,6 @@ CdnClient::EnableClsLogTopicOutcomeCallable CdnClient::EnableClsLogTopicCallable
         [this, request]()
         {
             return this->EnableClsLogTopic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CdnClient::GetDisableRecordsOutcome CdnClient::GetDisableRecords(const GetDisableRecordsRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetDisableRecords");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetDisableRecordsResponse rsp = GetDisableRecordsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetDisableRecordsOutcome(rsp);
-        else
-            return GetDisableRecordsOutcome(o.GetError());
-    }
-    else
-    {
-        return GetDisableRecordsOutcome(outcome.GetError());
-    }
-}
-
-void CdnClient::GetDisableRecordsAsync(const GetDisableRecordsRequest& request, const GetDisableRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetDisableRecords(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdnClient::GetDisableRecordsOutcomeCallable CdnClient::GetDisableRecordsCallable(const GetDisableRecordsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GetDisableRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->GetDisableRecords(request);
         }
     );
 

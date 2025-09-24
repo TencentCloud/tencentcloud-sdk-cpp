@@ -392,6 +392,27 @@ namespace TencentCloud
                      */
                     bool LogicalOpHasBeenSet() const;
 
+                    /**
+                     * 获取规则生效比例
+                     * @return ActionRatio 规则生效比例
+                     * 
+                     */
+                    uint64_t GetActionRatio() const;
+
+                    /**
+                     * 设置规则生效比例
+                     * @param _actionRatio 规则生效比例
+                     * 
+                     */
+                    void SetActionRatio(const uint64_t& _actionRatio);
+
+                    /**
+                     * 判断参数 ActionRatio 是否已赋值
+                     * @return ActionRatio 是否已赋值
+                     * 
+                     */
+                    bool ActionRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -492,6 +513,12 @@ namespace TencentCloud
                      */
                     std::string m_logicalOp;
                     bool m_logicalOpHasBeenSet;
+
+                    /**
+                     * 规则生效比例
+                     */
+                    uint64_t m_actionRatio;
+                    bool m_actionRatioHasBeenSet;
 
                 };
             }

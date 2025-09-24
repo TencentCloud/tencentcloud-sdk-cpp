@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取实例类型
-                     * @return Edition 实例类型
-                     * 
-                     */
-                    std::string GetEdition() const;
-
-                    /**
-                     * 设置实例类型
-                     * @param _edition 实例类型
-                     * 
-                     */
-                    void SetEdition(const std::string& _edition);
-
-                    /**
-                     * 判断参数 Edition 是否已赋值
-                     * @return Edition 是否已赋值
-                     * 
-                     */
-                    bool EditionHasBeenSet() const;
-
-                    /**
                      * 获取必填项。域名所属实例ID
                      * @return InstanceID 必填项。域名所属实例ID
                      * 
@@ -105,6 +84,27 @@ namespace TencentCloud
                      */
                     bool InstanceIDHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型
+                     * @return Edition 实例类型
+                     * 
+                     */
+                    std::string GetEdition() const;
+
+                    /**
+                     * 设置实例类型
+                     * @param _edition 实例类型
+                     * 
+                     */
+                    void SetEdition(const std::string& _edition);
+
+                    /**
+                     * 判断参数 Edition 是否已赋值
+                     * @return Edition 是否已赋值
+                     * 
+                     */
+                    bool EditionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -114,16 +114,16 @@ namespace TencentCloud
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 实例类型
-                     */
-                    std::string m_edition;
-                    bool m_editionHasBeenSet;
-
-                    /**
                      * 必填项。域名所属实例ID
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
+
+                    /**
+                     * 实例类型
+                     */
+                    std::string m_edition;
+                    bool m_editionHasBeenSet;
 
                 };
             }

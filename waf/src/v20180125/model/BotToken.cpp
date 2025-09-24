@@ -30,7 +30,8 @@ BotToken::BotToken() :
     m_operatorHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_sceneHasBeenSet(false),
-    m_priorityHasBeenSet(false)
+    m_priorityHasBeenSet(false),
+    m_tokenValidationHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,23 @@ CoreInternalOutcome BotToken::Deserialize(const rapidjson::Value &value)
         m_priorityHasBeenSet = true;
     }
 
+    if (value.HasMember("TokenValidation") && !value["TokenValidation"].IsNull())
+    {
+        if (!value["TokenValidation"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotToken.TokenValidation` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tokenValidation.Deserialize(value["TokenValidation"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tokenValidationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +250,15 @@ void BotToken::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Priority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_priority, allocator);
+    }
+
+    if (m_tokenValidationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenValidation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tokenValidation.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -395,5 +422,21 @@ void BotToken::SetPriority(const int64_t& _priority)
 bool BotToken::PriorityHasBeenSet() const
 {
     return m_priorityHasBeenSet;
+}
+
+TokenValidation BotToken::GetTokenValidation() const
+{
+    return m_tokenValidation;
+}
+
+void BotToken::SetTokenValidation(const TokenValidation& _tokenValidation)
+{
+    m_tokenValidation = _tokenValidation;
+    m_tokenValidationHasBeenSet = true;
+}
+
+bool BotToken::TokenValidationHasBeenSet() const
+{
+    return m_tokenValidationHasBeenSet;
 }
 
