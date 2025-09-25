@@ -82,7 +82,7 @@ vcpkg install openssl:x64-windows
 # 从源代码构建 SDK
 
 ## 安装指定产品 SDK（推荐）
-1. 前往 [Github 仓库](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 或者 [Gitee 仓库](https://gitee.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
+1. 前往 [CNB](https://cnb.cool/tencent/cloud/api/sdk/tencentcloud-sdk-cpp)、[Github](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 或者 [Gitee](https://gitee.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
 2. 进入 SDK 创建生成必要的构建文件
 
 - linux / macos
