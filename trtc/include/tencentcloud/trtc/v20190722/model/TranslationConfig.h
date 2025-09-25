@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/TTSConfig.h>
+#include <tencentcloud/trtc/v20190722/model/Terminology.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,27 @@ namespace TencentCloud
                      */
                     bool TTSConfigHasBeenSet() const;
 
+                    /**
+                     * 获取翻译术语集合
+                     * @return Terminology 翻译术语集合
+                     * 
+                     */
+                    std::vector<Terminology> GetTerminology() const;
+
+                    /**
+                     * 设置翻译术语集合
+                     * @param _terminology 翻译术语集合
+                     * 
+                     */
+                    void SetTerminology(const std::vector<Terminology>& _terminology);
+
+                    /**
+                     * 判断参数 Terminology 是否已赋值
+                     * @return Terminology 是否已赋值
+                     * 
+                     */
+                    bool TerminologyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +161,12 @@ namespace TencentCloud
                      */
                     TTSConfig m_tTSConfig;
                     bool m_tTSConfigHasBeenSet;
+
+                    /**
+                     * 翻译术语集合
+                     */
+                    std::vector<Terminology> m_terminology;
+                    bool m_terminologyHasBeenSet;
 
                 };
             }

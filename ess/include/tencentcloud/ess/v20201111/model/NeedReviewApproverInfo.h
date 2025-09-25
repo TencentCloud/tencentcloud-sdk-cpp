@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool ApproverNameHasBeenSet() const;
 
                     /**
-                     * 获取签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。
-                     * @return ApproverMobile 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。
+                     * 获取签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。
+                     * @return ApproverMobile 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。
                      * 
                      */
                     std::string GetApproverMobile() const;
 
                     /**
-                     * 设置签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。
-                     * @param _approverMobile 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。
+                     * 设置签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。
+                     * @param _approverMobile 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。
                      * 
                      */
                     void SetApproverMobile(const std::string& _approverMobile);
@@ -249,7 +249,7 @@ namespace TencentCloud
                     bool m_approverNameHasBeenSet;
 
                     /**
-                     * 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。
+                     * 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。
                      */
                     std::string m_approverMobile;
                     bool m_approverMobileHasBeenSet;

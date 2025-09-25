@@ -23,7 +23,8 @@ using namespace std;
 TranslationConfig::TranslationConfig() :
     m_targetLanguagesHasBeenSet(false),
     m_modeHasBeenSet(false),
-    m_tTSConfigHasBeenSet(false)
+    m_tTSConfigHasBeenSet(false),
+    m_terminologyHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome TranslationConfig::Deserialize(const rapidjson::Value &value
         m_tTSConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("Terminology") && !value["Terminology"].IsNull())
+    {
+        if (!value["Terminology"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TranslationConfig.Terminology` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Terminology"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Terminology item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_terminology.push_back(item);
+        }
+        m_terminologyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +128,21 @@ void TranslationConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tTSConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_terminologyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Terminology";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_terminology.begin(); itr != m_terminology.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -158,5 +194,21 @@ void TranslationConfig::SetTTSConfig(const TTSConfig& _tTSConfig)
 bool TranslationConfig::TTSConfigHasBeenSet() const
 {
     return m_tTSConfigHasBeenSet;
+}
+
+vector<Terminology> TranslationConfig::GetTerminology() const
+{
+    return m_terminology;
+}
+
+void TranslationConfig::SetTerminology(const vector<Terminology>& _terminology)
+{
+    m_terminology = _terminology;
+    m_terminologyHasBeenSet = true;
+}
+
+bool TranslationConfig::TerminologyHasBeenSet() const
+{
+    return m_terminologyHasBeenSet;
 }
 

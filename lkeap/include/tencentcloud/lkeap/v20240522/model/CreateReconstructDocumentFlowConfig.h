@@ -85,15 +85,19 @@ namespace TencentCloud
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
+4：返回全文MD + 每一页的MD
+5: 返回全文md，每一页ocr原始json，每一页md
 默认值为0
+
                      * @return ResultType 智能文档解析返回结果的格式
 0：只返回全文MD；
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
+4：返回全文MD + 每一页的MD
+5: 返回全文md，每一页ocr原始json，每一页md
 默认值为0
+
                      * 
                      */
                     std::string GetResultType() const;
@@ -104,15 +108,19 @@ namespace TencentCloud
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
+4：返回全文MD + 每一页的MD
+5: 返回全文md，每一页ocr原始json，每一页md
 默认值为0
+
                      * @param _resultType 智能文档解析返回结果的格式
 0：只返回全文MD；
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
+4：返回全文MD + 每一页的MD
+5: 返回全文md，每一页ocr原始json，每一页md
 默认值为0
+
                      * 
                      */
                     void SetResultType(const std::string& _resultType);
@@ -162,8 +170,10 @@ namespace TencentCloud
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
+4：返回全文MD + 每一页的MD
+5: 返回全文md，每一页ocr原始json，每一页md
 默认值为0
+
                      */
                     std::string m_resultType;
                     bool m_resultTypeHasBeenSet;

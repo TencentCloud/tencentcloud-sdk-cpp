@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return GroupIdList 无
+                     * 获取部署组ID列表
+                     * @return GroupIdList 部署组ID列表
                      * 
                      */
                     std::vector<std::string> GetGroupIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _groupIdList 无
+                     * 设置部署组ID列表
+                     * @param _groupIdList 部署组ID列表
                      * 
                      */
                     void SetGroupIdList(const std::vector<std::string>& _groupIdList);
@@ -336,7 +336,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 无
+                     * 部署组ID列表
                      */
                     std::vector<std::string> m_groupIdList;
                     bool m_groupIdListHasBeenSet;

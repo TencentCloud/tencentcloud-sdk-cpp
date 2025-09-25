@@ -27,7 +27,8 @@ ModifyAttributeLabelRequest::ModifyAttributeLabelRequest() :
     m_attributeIdHasBeenSet(false),
     m_attributeKeyHasBeenSet(false),
     m_attributeNameHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_deleteLabelIdsHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,19 @@ string ModifyAttributeLabelRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_deleteLabelIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteLabelIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deleteLabelIds.begin(); itr != m_deleteLabelIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -171,6 +185,22 @@ void ModifyAttributeLabelRequest::SetLabels(const vector<AttributeLabelItem>& _l
 bool ModifyAttributeLabelRequest::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+vector<string> ModifyAttributeLabelRequest::GetDeleteLabelIds() const
+{
+    return m_deleteLabelIds;
+}
+
+void ModifyAttributeLabelRequest::SetDeleteLabelIds(const vector<string>& _deleteLabelIds)
+{
+    m_deleteLabelIds = _deleteLabelIds;
+    m_deleteLabelIdsHasBeenSet = true;
+}
+
+bool ModifyAttributeLabelRequest::DeleteLabelIdsHasBeenSet() const
+{
+    return m_deleteLabelIdsHasBeenSet;
 }
 
 

@@ -44,18 +44,14 @@ namespace TencentCloud
 
                     /**
                      * 获取房间ID。
-字符数不超过256
                      * @return RoomId 房间ID。
-字符数不超过256
                      * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间ID。
-字符数不超过256
                      * @param _roomId 房间ID。
-字符数不超过256
                      * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
@@ -153,14 +149,18 @@ namespace TencentCloud
 
                     /**
                      * 获取房间名称。
+字符数不超过256
                      * @return Name 房间名称。
+字符数不超过256
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置房间名称。
+字符数不超过256
                      * @param _name 房间名称。
+字符数不超过256
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -764,7 +764,6 @@ video 纯视频
 
                     /**
                      * 房间ID。
-字符数不超过256
                      */
                     uint64_t m_roomId;
                     bool m_roomIdHasBeenSet;
@@ -795,6 +794,7 @@ video 纯视频
 
                     /**
                      * 房间名称。
+字符数不超过256
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

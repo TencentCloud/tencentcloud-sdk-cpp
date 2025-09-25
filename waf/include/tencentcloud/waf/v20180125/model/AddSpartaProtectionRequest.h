@@ -318,23 +318,15 @@ UpstreamProtocol：与Protocol相同
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * @return HttpsRewrite 必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
+                     * 获取是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
+                     * @return HttpsRewrite 是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
                      * 
                      */
                     int64_t GetHttpsRewrite() const;
 
                     /**
-                     * 设置必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * @param _httpsRewrite 必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
+                     * 设置是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
+                     * @param _httpsRewrite 是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
                      * 
                      */
                     void SetHttpsRewrite(const int64_t& _httpsRewrite);
@@ -347,23 +339,15 @@ UpstreamProtocol：与Protocol相同
                     bool HttpsRewriteHasBeenSet() const;
 
                     /**
-                     * 获取必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * @return IsHttp2 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
+                     * 获取是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
+                     * @return IsHttp2 是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
                      * 
                      */
                     int64_t GetIsHttp2() const;
 
                     /**
-                     * 设置必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * @param _isHttp2 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
+                     * 设置是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
+                     * @param _isHttp2 是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
                      * 
                      */
                     void SetIsHttp2(const int64_t& _isHttp2);
@@ -376,23 +360,15 @@ UpstreamProtocol：与Protocol相同
                     bool IsHttp2HasBeenSet() const;
 
                     /**
-                     * 获取必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * @return ActiveCheck 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
+                     * 获取是否开启主动健康检测。0：不开启1：开启
+                     * @return ActiveCheck 是否开启主动健康检测。0：不开启1：开启
                      * 
                      */
                     int64_t GetActiveCheck() const;
 
                     /**
-                     * 设置必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * @param _activeCheck 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
+                     * 设置是否开启主动健康检测。0：不开启1：开启
+                     * @param _activeCheck 是否开启主动健康检测。0：不开启1：开启
                      * 
                      */
                     void SetActiveCheck(const int64_t& _activeCheck);
@@ -405,31 +381,15 @@ UpstreamProtocol：与Protocol相同
                     bool ActiveCheckHasBeenSet() const;
 
                     /**
-                     * 获取必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * @return CipherTemplate 必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
+                     * 获取加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
+                     * @return CipherTemplate 加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
                      * 
                      */
                     int64_t GetCipherTemplate() const;
 
                     /**
-                     * 设置必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * @param _cipherTemplate 必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
+                     * 设置加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
+                     * @param _cipherTemplate 加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
                      * 
                      */
                     void SetCipherTemplate(const int64_t& _cipherTemplate);
@@ -1332,35 +1292,25 @@ UpstreamProtocol：与Protocol相同
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
+                     * 是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
                      */
                     int64_t m_httpsRewrite;
                     bool m_httpsRewriteHasBeenSet;
 
                     /**
-                     * 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
+                     * 是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
                      */
                     int64_t m_isHttp2;
                     bool m_isHttp2HasBeenSet;
 
                     /**
-                     * 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
+                     * 是否开启主动健康检测。0：不开启1：开启
                      */
                     int64_t m_activeCheck;
                     bool m_activeCheckHasBeenSet;
 
                     /**
-                     * 必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
+                     * 加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
                      */
                     int64_t m_cipherTemplate;
                     bool m_cipherTemplateHasBeenSet;

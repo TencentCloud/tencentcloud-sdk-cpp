@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云监控通知模版ID
-                     * @return NoticeId 云监控通知模版ID
+                     * 获取腾讯云可观测平台通知模板 ID
+                     * @return NoticeId 腾讯云可观测平台通知模板 ID
                      * 
                      */
                     std::string GetNoticeId() const;
 
                     /**
-                     * 设置云监控通知模版ID
-                     * @param _noticeId 云监控通知模版ID
+                     * 设置腾讯云可观测平台通知模板 ID
+                     * @param _noticeId 腾讯云可观测平台通知模板 ID
                      * 
                      */
                     void SetNoticeId(const std::string& _noticeId);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool NoticeIdHasBeenSet() const;
 
                     /**
-                     * 获取云监控内容模版ID，不传默认内容模版
+                     * 获取腾讯云可观测平台内容模板ID，不传默认内容模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ContentTmplId 云监控内容模版ID，不传默认内容模版
+                     * @return ContentTmplId 腾讯云可观测平台内容模板ID，不传默认内容模板
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContentTmplId() const;
 
                     /**
-                     * 设置云监控内容模版ID，不传默认内容模版
+                     * 设置腾讯云可观测平台内容模板ID，不传默认内容模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _contentTmplId 云监控内容模版ID，不传默认内容模版
+                     * @param _contentTmplId 腾讯云可观测平台内容模板ID，不传默认内容模板
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -116,13 +116,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云监控通知模版ID
+                     * 腾讯云可观测平台通知模板 ID
                      */
                     std::string m_noticeId;
                     bool m_noticeIdHasBeenSet;
 
                     /**
-                     * 云监控内容模版ID，不传默认内容模版
+                     * 腾讯云可观测平台内容模板ID，不传默认内容模板
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_contentTmplId;

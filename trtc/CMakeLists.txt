@@ -188,6 +188,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribePictureRequest.h
   include/tencentcloud/trtc/v20190722/model/Voice.h
   include/tencentcloud/trtc/v20190722/model/ModifyCloudModerationResponse.h
+  include/tencentcloud/trtc/v20190722/model/Terminology.h
   include/tencentcloud/trtc/v20190722/model/TRTCDataResp.h
   include/tencentcloud/trtc/v20190722/model/VideoParams.h
   include/tencentcloud/trtc/v20190722/model/RegisterVoicePrintRequest.h
@@ -433,6 +434,7 @@ set(trtc_src
   src/v20190722/model/DescribePictureRequest.cpp
   src/v20190722/model/Voice.cpp
   src/v20190722/model/ModifyCloudModerationResponse.cpp
+  src/v20190722/model/Terminology.cpp
   src/v20190722/model/TRTCDataResp.cpp
   src/v20190722/model/VideoParams.cpp
   src/v20190722/model/RegisterVoicePrintRequest.cpp
