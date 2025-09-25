@@ -313,7 +313,7 @@ target_link_libraries(DescribeInstancesAsync tencentcloud-sdk-cpp-cvm tencentclo
 
 **注意，您必须明确知道您调用的接口所需参数，否则可能会调用失败。**
 
-Common Client参考[example](https://github.com/TencentCloud/tencentcloud-sdk-cpp/blob/master/example/common_client/DescribeInstances.cpp)
+Common Client参考[example](example/common_client/DescribeInstances.cpp)
 
 
 ## C++ SDK支持压缩协议使用方式
