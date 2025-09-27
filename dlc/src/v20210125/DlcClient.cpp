@@ -4985,6 +4985,49 @@ DlcClient::DescribeTaskMonitorInfosOutcomeCallable DlcClient::DescribeTaskMonito
     return task->get_future();
 }
 
+DlcClient::DescribeTaskResourceUsageOutcome DlcClient::DescribeTaskResourceUsage(const DescribeTaskResourceUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskResourceUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskResourceUsageResponse rsp = DescribeTaskResourceUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskResourceUsageOutcome(rsp);
+        else
+            return DescribeTaskResourceUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskResourceUsageOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTaskResourceUsageAsync(const DescribeTaskResourceUsageRequest& request, const DescribeTaskResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskResourceUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeTaskResourceUsageOutcomeCallable DlcClient::DescribeTaskResourceUsageCallable(const DescribeTaskResourceUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskResourceUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskResourceUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeTaskResultOutcome DlcClient::DescribeTaskResult(const DescribeTaskResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskResult");

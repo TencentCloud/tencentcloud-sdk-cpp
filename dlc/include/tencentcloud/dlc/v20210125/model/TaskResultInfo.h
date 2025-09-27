@@ -471,6 +471,27 @@ namespace TencentCloud
                      */
                     bool QueryResultTimeHasBeenSet() const;
 
+                    /**
+                     * 获取base64 编码结果集
+                     * @return ResultSetEncode base64 编码结果集
+                     * 
+                     */
+                    std::string GetResultSetEncode() const;
+
+                    /**
+                     * 设置base64 编码结果集
+                     * @param _resultSetEncode base64 编码结果集
+                     * 
+                     */
+                    void SetResultSetEncode(const std::string& _resultSetEncode);
+
+                    /**
+                     * 判断参数 ResultSetEncode 是否已赋值
+                     * @return ResultSetEncode 是否已赋值
+                     * 
+                     */
+                    bool ResultSetEncodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,6 +614,12 @@ namespace TencentCloud
                      */
                     double m_queryResultTime;
                     bool m_queryResultTimeHasBeenSet;
+
+                    /**
+                     * base64 编码结果集
+                     */
+                    std::string m_resultSetEncode;
+                    bool m_resultSetEncodeHasBeenSet;
 
                 };
             }

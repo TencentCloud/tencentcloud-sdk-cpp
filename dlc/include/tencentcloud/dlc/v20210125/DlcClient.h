@@ -253,6 +253,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskLogResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskMonitorInfosRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskMonitorInfosResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTaskResourceUsageRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTaskResourceUsageResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskResultRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h>
@@ -744,6 +746,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskMonitorInfosResponse> DescribeTaskMonitorInfosOutcome;
                 typedef std::future<DescribeTaskMonitorInfosOutcome> DescribeTaskMonitorInfosOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTaskMonitorInfosRequest&, DescribeTaskMonitorInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskMonitorInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskResourceUsageResponse> DescribeTaskResourceUsageOutcome;
+                typedef std::future<DescribeTaskResourceUsageOutcome> DescribeTaskResourceUsageOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeTaskResourceUsageRequest&, DescribeTaskResourceUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResourceUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskResultResponse> DescribeTaskResultOutcome;
                 typedef std::future<DescribeTaskResultOutcome> DescribeTaskResultOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTaskResultRequest&, DescribeTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResultAsyncHandler;
@@ -1981,6 +1986,15 @@ namespace TencentCloud
                 DescribeTaskMonitorInfosOutcome DescribeTaskMonitorInfos(const Model::DescribeTaskMonitorInfosRequest &request);
                 void DescribeTaskMonitorInfosAsync(const Model::DescribeTaskMonitorInfosRequest& request, const DescribeTaskMonitorInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskMonitorInfosOutcomeCallable DescribeTaskMonitorInfosCallable(const Model::DescribeTaskMonitorInfosRequest& request);
+
+                /**
+                 *返回任务洞察资源用量
+                 * @param req DescribeTaskResourceUsageRequest
+                 * @return DescribeTaskResourceUsageOutcome
+                 */
+                DescribeTaskResourceUsageOutcome DescribeTaskResourceUsage(const Model::DescribeTaskResourceUsageRequest &request);
+                void DescribeTaskResourceUsageAsync(const Model::DescribeTaskResourceUsageRequest& request, const DescribeTaskResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskResourceUsageOutcomeCallable DescribeTaskResourceUsageCallable(const Model::DescribeTaskResourceUsageRequest& request);
 
                 /**
                  *查询任务结果，仅支持30天以内的任务查询结果，且返回数据大小超过近50M会进行截断。

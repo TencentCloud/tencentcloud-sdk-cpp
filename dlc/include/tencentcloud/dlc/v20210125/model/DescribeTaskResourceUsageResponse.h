@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_CREATEDATAMASKSTRATEGYRESPONSE_H_
-#define TENCENTCLOUD_DLC_V20210125_MODEL_CREATEDATAMASKSTRATEGYRESPONSE_H_
+#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBETASKRESOURCEUSAGERESPONSE_H_
+#define TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBETASKRESOURCEUSAGERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/CoreInfo.h>
 
 
 namespace TencentCloud
@@ -32,38 +33,38 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CreateDataMaskStrategy返回参数结构体
+                * DescribeTaskResourceUsage返回参数结构体
                 */
-                class CreateDataMaskStrategyResponse : public AbstractModel
+                class DescribeTaskResourceUsageResponse : public AbstractModel
                 {
                 public:
-                    CreateDataMaskStrategyResponse();
-                    ~CreateDataMaskStrategyResponse() = default;
+                    DescribeTaskResourceUsageResponse();
+                    ~DescribeTaskResourceUsageResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取策略id
-                     * @return StrategyId 策略id
+                     * 获取core 用量信息
+                     * @return CoreInfo core 用量信息
                      * 
                      */
-                    std::string GetStrategyId() const;
+                    CoreInfo GetCoreInfo() const;
 
                     /**
-                     * 判断参数 StrategyId 是否已赋值
-                     * @return StrategyId 是否已赋值
+                     * 判断参数 CoreInfo 是否已赋值
+                     * @return CoreInfo 是否已赋值
                      * 
                      */
-                    bool StrategyIdHasBeenSet() const;
+                    bool CoreInfoHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 策略id
+                     * core 用量信息
                      */
-                    std::string m_strategyId;
-                    bool m_strategyIdHasBeenSet;
+                    CoreInfo m_coreInfo;
+                    bool m_coreInfoHasBeenSet;
 
                 };
             }
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_CREATEDATAMASKSTRATEGYRESPONSE_H_
+#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBETASKRESOURCEUSAGERESPONSE_H_

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dlc/v20210125/model/CreateDataMaskStrategyResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTaskResourceUsageResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,12 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-CreateDataMaskStrategyResponse::CreateDataMaskStrategyResponse() :
-    m_strategyIdHasBeenSet(false)
+DescribeTaskResourceUsageResponse::DescribeTaskResourceUsageResponse() :
+    m_coreInfoHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateDataMaskStrategyResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeTaskResourceUsageResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,40 @@ CoreInternalOutcome CreateDataMaskStrategyResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("StrategyId") && !rsp["StrategyId"].IsNull())
+    if (rsp.HasMember("CoreInfo") && !rsp["CoreInfo"].IsNull())
     {
-        if (!rsp["StrategyId"].IsString())
+        if (!rsp["CoreInfo"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `StrategyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CoreInfo` is not object type").SetRequestId(requestId));
         }
-        m_strategyId = string(rsp["StrategyId"].GetString());
-        m_strategyIdHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_coreInfo.Deserialize(rsp["CoreInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_coreInfoHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateDataMaskStrategyResponse::ToJsonString() const
+string DescribeTaskResourceUsageResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_strategyIdHasBeenSet)
+    if (m_coreInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StrategyId";
+        string key = "CoreInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_strategyId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_coreInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +110,14 @@ string CreateDataMaskStrategyResponse::ToJsonString() const
 }
 
 
-string CreateDataMaskStrategyResponse::GetStrategyId() const
+CoreInfo DescribeTaskResourceUsageResponse::GetCoreInfo() const
 {
-    return m_strategyId;
+    return m_coreInfo;
 }
 
-bool CreateDataMaskStrategyResponse::StrategyIdHasBeenSet() const
+bool DescribeTaskResourceUsageResponse::CoreInfoHasBeenSet() const
 {
-    return m_strategyIdHasBeenSet;
+    return m_coreInfoHasBeenSet;
 }
 
 

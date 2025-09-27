@@ -597,6 +597,111 @@ namespace TencentCloud
                      */
                     bool SparkSizeHasBeenSet() const;
 
+                    /**
+                     * 获取GPUDriver规格
+                     * @return DriverGPUSpec GPUDriver规格
+                     * 
+                     */
+                    int64_t GetDriverGPUSpec() const;
+
+                    /**
+                     * 设置GPUDriver规格
+                     * @param _driverGPUSpec GPUDriver规格
+                     * 
+                     */
+                    void SetDriverGPUSpec(const int64_t& _driverGPUSpec);
+
+                    /**
+                     * 判断参数 DriverGPUSpec 是否已赋值
+                     * @return DriverGPUSpec 是否已赋值
+                     * 
+                     */
+                    bool DriverGPUSpecHasBeenSet() const;
+
+                    /**
+                     * 获取GPUExecutor规格
+                     * @return ExecutorGPUSpec GPUExecutor规格
+                     * 
+                     */
+                    int64_t GetExecutorGPUSpec() const;
+
+                    /**
+                     * 设置GPUExecutor规格
+                     * @param _executorGPUSpec GPUExecutor规格
+                     * 
+                     */
+                    void SetExecutorGPUSpec(const int64_t& _executorGPUSpec);
+
+                    /**
+                     * 判断参数 ExecutorGPUSpec 是否已赋值
+                     * @return ExecutorGPUSpec 是否已赋值
+                     * 
+                     */
+                    bool ExecutorGPUSpecHasBeenSet() const;
+
+                    /**
+                     * 获取GPU上限
+                     * @return GPULimitSize GPU上限
+                     * 
+                     */
+                    int64_t GetGPULimitSize() const;
+
+                    /**
+                     * 设置GPU上限
+                     * @param _gPULimitSize GPU上限
+                     * 
+                     */
+                    void SetGPULimitSize(const int64_t& _gPULimitSize);
+
+                    /**
+                     * 判断参数 GPULimitSize 是否已赋值
+                     * @return GPULimitSize 是否已赋值
+                     * 
+                     */
+                    bool GPULimitSizeHasBeenSet() const;
+
+                    /**
+                     * 获取GPU规格
+                     * @return GPUSize GPU规格
+                     * 
+                     */
+                    int64_t GetGPUSize() const;
+
+                    /**
+                     * 设置GPU规格
+                     * @param _gPUSize GPU规格
+                     * 
+                     */
+                    void SetGPUSize(const int64_t& _gPUSize);
+
+                    /**
+                     * 判断参数 GPUSize 是否已赋值
+                     * @return GPUSize 是否已赋值
+                     * 
+                     */
+                    bool GPUSizeHasBeenSet() const;
+
+                    /**
+                     * 获取Pod GPU规格上限
+                     * @return PythonGPUSpec Pod GPU规格上限
+                     * 
+                     */
+                    int64_t GetPythonGPUSpec() const;
+
+                    /**
+                     * 设置Pod GPU规格上限
+                     * @param _pythonGPUSpec Pod GPU规格上限
+                     * 
+                     */
+                    void SetPythonGPUSpec(const int64_t& _pythonGPUSpec);
+
+                    /**
+                     * 判断参数 PythonGPUSpec 是否已赋值
+                     * @return PythonGPUSpec 是否已赋值
+                     * 
+                     */
+                    bool PythonGPUSpecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -756,6 +861,36 @@ namespace TencentCloud
                      */
                     int64_t m_sparkSize;
                     bool m_sparkSizeHasBeenSet;
+
+                    /**
+                     * GPUDriver规格
+                     */
+                    int64_t m_driverGPUSpec;
+                    bool m_driverGPUSpecHasBeenSet;
+
+                    /**
+                     * GPUExecutor规格
+                     */
+                    int64_t m_executorGPUSpec;
+                    bool m_executorGPUSpecHasBeenSet;
+
+                    /**
+                     * GPU上限
+                     */
+                    int64_t m_gPULimitSize;
+                    bool m_gPULimitSizeHasBeenSet;
+
+                    /**
+                     * GPU规格
+                     */
+                    int64_t m_gPUSize;
+                    bool m_gPUSizeHasBeenSet;
+
+                    /**
+                     * Pod GPU规格上限
+                     */
+                    int64_t m_pythonGPUSpec;
+                    bool m_pythonGPUSpecHasBeenSet;
 
                 };
             }

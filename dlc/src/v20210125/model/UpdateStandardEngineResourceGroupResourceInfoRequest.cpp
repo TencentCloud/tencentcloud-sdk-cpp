@@ -39,7 +39,12 @@ UpdateStandardEngineResourceGroupResourceInfoRequest::UpdateStandardEngineResour
     m_regionNameHasBeenSet(false),
     m_pythonCuSpecHasBeenSet(false),
     m_sparkSpecModeHasBeenSet(false),
-    m_sparkSizeHasBeenSet(false)
+    m_sparkSizeHasBeenSet(false),
+    m_driverGPUSpecHasBeenSet(false),
+    m_executorGPUSpecHasBeenSet(false),
+    m_gPULimitSizeHasBeenSet(false),
+    m_gPUSizeHasBeenSet(false),
+    m_pythonGPUSpecHasBeenSet(false)
 {
 }
 
@@ -184,6 +189,46 @@ string UpdateStandardEngineResourceGroupResourceInfoRequest::ToJsonString() cons
         string key = "SparkSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sparkSize, allocator);
+    }
+
+    if (m_driverGPUSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DriverGPUSpec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_driverGPUSpec, allocator);
+    }
+
+    if (m_executorGPUSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutorGPUSpec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_executorGPUSpec, allocator);
+    }
+
+    if (m_gPULimitSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPULimitSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gPULimitSize, allocator);
+    }
+
+    if (m_gPUSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gPUSize, allocator);
+    }
+
+    if (m_pythonGPUSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PythonGPUSpec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pythonGPUSpec, allocator);
     }
 
 
@@ -464,6 +509,86 @@ void UpdateStandardEngineResourceGroupResourceInfoRequest::SetSparkSize(const in
 bool UpdateStandardEngineResourceGroupResourceInfoRequest::SparkSizeHasBeenSet() const
 {
     return m_sparkSizeHasBeenSet;
+}
+
+int64_t UpdateStandardEngineResourceGroupResourceInfoRequest::GetDriverGPUSpec() const
+{
+    return m_driverGPUSpec;
+}
+
+void UpdateStandardEngineResourceGroupResourceInfoRequest::SetDriverGPUSpec(const int64_t& _driverGPUSpec)
+{
+    m_driverGPUSpec = _driverGPUSpec;
+    m_driverGPUSpecHasBeenSet = true;
+}
+
+bool UpdateStandardEngineResourceGroupResourceInfoRequest::DriverGPUSpecHasBeenSet() const
+{
+    return m_driverGPUSpecHasBeenSet;
+}
+
+int64_t UpdateStandardEngineResourceGroupResourceInfoRequest::GetExecutorGPUSpec() const
+{
+    return m_executorGPUSpec;
+}
+
+void UpdateStandardEngineResourceGroupResourceInfoRequest::SetExecutorGPUSpec(const int64_t& _executorGPUSpec)
+{
+    m_executorGPUSpec = _executorGPUSpec;
+    m_executorGPUSpecHasBeenSet = true;
+}
+
+bool UpdateStandardEngineResourceGroupResourceInfoRequest::ExecutorGPUSpecHasBeenSet() const
+{
+    return m_executorGPUSpecHasBeenSet;
+}
+
+int64_t UpdateStandardEngineResourceGroupResourceInfoRequest::GetGPULimitSize() const
+{
+    return m_gPULimitSize;
+}
+
+void UpdateStandardEngineResourceGroupResourceInfoRequest::SetGPULimitSize(const int64_t& _gPULimitSize)
+{
+    m_gPULimitSize = _gPULimitSize;
+    m_gPULimitSizeHasBeenSet = true;
+}
+
+bool UpdateStandardEngineResourceGroupResourceInfoRequest::GPULimitSizeHasBeenSet() const
+{
+    return m_gPULimitSizeHasBeenSet;
+}
+
+int64_t UpdateStandardEngineResourceGroupResourceInfoRequest::GetGPUSize() const
+{
+    return m_gPUSize;
+}
+
+void UpdateStandardEngineResourceGroupResourceInfoRequest::SetGPUSize(const int64_t& _gPUSize)
+{
+    m_gPUSize = _gPUSize;
+    m_gPUSizeHasBeenSet = true;
+}
+
+bool UpdateStandardEngineResourceGroupResourceInfoRequest::GPUSizeHasBeenSet() const
+{
+    return m_gPUSizeHasBeenSet;
+}
+
+int64_t UpdateStandardEngineResourceGroupResourceInfoRequest::GetPythonGPUSpec() const
+{
+    return m_pythonGPUSpec;
+}
+
+void UpdateStandardEngineResourceGroupResourceInfoRequest::SetPythonGPUSpec(const int64_t& _pythonGPUSpec)
+{
+    m_pythonGPUSpec = _pythonGPUSpec;
+    m_pythonGPUSpecHasBeenSet = true;
+}
+
+bool UpdateStandardEngineResourceGroupResourceInfoRequest::PythonGPUSpecHasBeenSet() const
+{
+    return m_pythonGPUSpecHasBeenSet;
 }
 
 

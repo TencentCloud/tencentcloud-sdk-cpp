@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_CREATEDATAMASKSTRATEGYRESPONSE_H_
-#define TENCENTCLOUD_DLC_V20210125_MODEL_CREATEDATAMASKSTRATEGYRESPONSE_H_
+#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBETASKRESOURCEUSAGEREQUEST_H_
+#define TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBETASKRESOURCEUSAGEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -32,38 +32,44 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CreateDataMaskStrategy返回参数结构体
+                * DescribeTaskResourceUsage请求参数结构体
                 */
-                class CreateDataMaskStrategyResponse : public AbstractModel
+                class DescribeTaskResourceUsageRequest : public AbstractModel
                 {
                 public:
-                    CreateDataMaskStrategyResponse();
-                    ~CreateDataMaskStrategyResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    DescribeTaskResourceUsageRequest();
+                    ~DescribeTaskResourceUsageRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取策略id
-                     * @return StrategyId 策略id
+                     * 获取任务 id
+                     * @return TaskInstanceId 任务 id
                      * 
                      */
-                    std::string GetStrategyId() const;
+                    std::string GetTaskInstanceId() const;
 
                     /**
-                     * 判断参数 StrategyId 是否已赋值
-                     * @return StrategyId 是否已赋值
+                     * 设置任务 id
+                     * @param _taskInstanceId 任务 id
                      * 
                      */
-                    bool StrategyIdHasBeenSet() const;
+                    void SetTaskInstanceId(const std::string& _taskInstanceId);
+
+                    /**
+                     * 判断参数 TaskInstanceId 是否已赋值
+                     * @return TaskInstanceId 是否已赋值
+                     * 
+                     */
+                    bool TaskInstanceIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 策略id
+                     * 任务 id
                      */
-                    std::string m_strategyId;
-                    bool m_strategyIdHasBeenSet;
+                    std::string m_taskInstanceId;
+                    bool m_taskInstanceIdHasBeenSet;
 
                 };
             }
@@ -71,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_CREATEDATAMASKSTRATEGYRESPONSE_H_
+#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_DESCRIBETASKRESOURCEUSAGEREQUEST_H_

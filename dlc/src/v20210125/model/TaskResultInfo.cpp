@@ -40,7 +40,8 @@ TaskResultInfo::TaskResultInfo() :
     m_progressDetailHasBeenSet(false),
     m_displayFormatHasBeenSet(false),
     m_totalTimeHasBeenSet(false),
-    m_queryResultTimeHasBeenSet(false)
+    m_queryResultTimeHasBeenSet(false),
+    m_resultSetEncodeHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,16 @@ CoreInternalOutcome TaskResultInfo::Deserialize(const rapidjson::Value &value)
         m_queryResultTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResultSetEncode") && !value["ResultSetEncode"].IsNull())
+    {
+        if (!value["ResultSetEncode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResultInfo.ResultSetEncode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultSetEncode = string(value["ResultSetEncode"].GetString());
+        m_resultSetEncodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +442,14 @@ void TaskResultInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "QueryResultTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_queryResultTime, allocator);
+    }
+
+    if (m_resultSetEncodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultSetEncode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultSetEncode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -754,5 +773,21 @@ void TaskResultInfo::SetQueryResultTime(const double& _queryResultTime)
 bool TaskResultInfo::QueryResultTimeHasBeenSet() const
 {
     return m_queryResultTimeHasBeenSet;
+}
+
+string TaskResultInfo::GetResultSetEncode() const
+{
+    return m_resultSetEncode;
+}
+
+void TaskResultInfo::SetResultSetEncode(const string& _resultSetEncode)
+{
+    m_resultSetEncode = _resultSetEncode;
+    m_resultSetEncodeHasBeenSet = true;
+}
+
+bool TaskResultInfo::ResultSetEncodeHasBeenSet() const
+{
+    return m_resultSetEncodeHasBeenSet;
 }
 
