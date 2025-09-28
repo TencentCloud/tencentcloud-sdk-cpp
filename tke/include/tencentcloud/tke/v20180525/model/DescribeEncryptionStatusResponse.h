@@ -45,7 +45,15 @@ namespace TencentCloud
 
                     /**
                      * 获取加密状态
+- Opening: 开启中
+- Opened: 已开启
+- Closing: 关闭中
+- Closed: 已关闭
                      * @return Status 加密状态
+- Opening: 开启中
+- Opened: 已开启
+- Closing: 关闭中
+- Closed: 已关闭
                      * 
                      */
                     std::string GetStatus() const;
@@ -75,6 +83,10 @@ namespace TencentCloud
 
                     /**
                      * 加密状态
+- Opening: 开启中
+- Opened: 已开启
+- Closing: 关闭中
+- Closed: 已关闭
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取与Product保持一致。如："dcdb" ,"mariadb"。
-                     * @return NodeRequestType 与Product保持一致。如："dcdb" ,"mariadb"。
+                     * 获取NodeRequestType主要标识数据库产品类型，与Product保持一致。如："dcdb" ,"mariadb"。
+                     * @return NodeRequestType NodeRequestType主要标识数据库产品类型，与Product保持一致。如："dcdb" ,"mariadb"。
                      * 
                      */
                     std::string GetNodeRequestType() const;
 
                     /**
-                     * 设置与Product保持一致。如："dcdb" ,"mariadb"。
-                     * @param _nodeRequestType 与Product保持一致。如："dcdb" ,"mariadb"。
+                     * 设置NodeRequestType主要标识数据库产品类型，与Product保持一致。如："dcdb" ,"mariadb"。
+                     * @param _nodeRequestType NodeRequestType主要标识数据库产品类型，与Product保持一致。如："dcdb" ,"mariadb"。
                      * 
                      */
                     void SetNodeRequestType(const std::string& _nodeRequestType);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询实例的搜索条件。
-                     * @return Filters 查询实例的搜索条件。
+                     * 获取查询实例的搜索条件。Name包括：InstanceId， InstanceName。
+                     * @return Filters 查询实例的搜索条件。Name包括：InstanceId， InstanceName。
                      * 
                      */
                     std::vector<AuditInstanceFilter> GetFilters() const;
 
                     /**
-                     * 设置查询实例的搜索条件。
-                     * @param _filters 查询实例的搜索条件。
+                     * 设置查询实例的搜索条件。Name包括：InstanceId， InstanceName。
+                     * @param _filters 查询实例的搜索条件。Name包括：InstanceId， InstanceName。
                      * 
                      */
                     void SetFilters(const std::vector<AuditInstanceFilter>& _filters);
@@ -178,7 +178,7 @@ namespace TencentCloud
                     bool m_productHasBeenSet;
 
                     /**
-                     * 与Product保持一致。如："dcdb" ,"mariadb"。
+                     * NodeRequestType主要标识数据库产品类型，与Product保持一致。如："dcdb" ,"mariadb"。
                      */
                     std::string m_nodeRequestType;
                     bool m_nodeRequestTypeHasBeenSet;
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询实例的搜索条件。
+                     * 查询实例的搜索条件。Name包括：InstanceId， InstanceName。
                      */
                     std::vector<AuditInstanceFilter> m_filters;
                     bool m_filtersHasBeenSet;

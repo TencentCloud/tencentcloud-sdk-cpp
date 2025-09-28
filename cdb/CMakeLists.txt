@@ -39,7 +39,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeAuditInstanceListResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceProjectResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeCpuExpandHistoryResponse.h
-  include/tencentcloud/cdb/v20170320/model/DescribeDataBackupOverviewResponse.h
+  include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceModesResponse.h
   include/tencentcloud/cdb/v20170320/model/DeleteAuditPolicyRequest.h
   include/tencentcloud/cdb/v20170320/model/BackupSummaryItem.h
   include/tencentcloud/cdb/v20170320/model/CreateDatabaseRequest.h
@@ -143,6 +143,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/AuditInstanceInfo.h
   include/tencentcloud/cdb/v20170320/model/CustomConfig.h
   include/tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveResponse.h
+  include/tencentcloud/cdb/v20170320/model/DescribeDataBackupOverviewResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceGTIDResponse.h
@@ -256,6 +257,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceRebootTimeRequest.h
   include/tencentcloud/cdb/v20170320/model/Inbound.h
   include/tencentcloud/cdb/v20170320/model/CreateAccountsResponse.h
+  include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceModesRequest.h
   include/tencentcloud/cdb/v20170320/model/CdbSellType.h
   include/tencentcloud/cdb/v20170320/model/MasterInfo.h
   include/tencentcloud/cdb/v20170320/model/ResetRootAccountResponse.h
@@ -509,7 +511,7 @@ set(cdb_src
   src/v20170320/model/DescribeAuditInstanceListResponse.cpp
   src/v20170320/model/ModifyDBInstanceProjectResponse.cpp
   src/v20170320/model/DescribeCpuExpandHistoryResponse.cpp
-  src/v20170320/model/DescribeDataBackupOverviewResponse.cpp
+  src/v20170320/model/ModifyDBInstanceModesResponse.cpp
   src/v20170320/model/DeleteAuditPolicyRequest.cpp
   src/v20170320/model/BackupSummaryItem.cpp
   src/v20170320/model/CreateDatabaseRequest.cpp
@@ -613,6 +615,7 @@ set(cdb_src
   src/v20170320/model/AuditInstanceInfo.cpp
   src/v20170320/model/CustomConfig.cpp
   src/v20170320/model/SwitchDBInstanceMasterSlaveResponse.cpp
+  src/v20170320/model/DescribeDataBackupOverviewResponse.cpp
   src/v20170320/model/DescribeBackupsRequest.cpp
   src/v20170320/model/DescribeInstanceParamRecordsResponse.cpp
   src/v20170320/model/DescribeDBInstanceGTIDResponse.cpp
@@ -726,6 +729,7 @@ set(cdb_src
   src/v20170320/model/DescribeDBInstanceRebootTimeRequest.cpp
   src/v20170320/model/Inbound.cpp
   src/v20170320/model/CreateAccountsResponse.cpp
+  src/v20170320/model/ModifyDBInstanceModesRequest.cpp
   src/v20170320/model/CdbSellType.cpp
   src/v20170320/model/MasterInfo.cpp
   src/v20170320/model/ResetRootAccountResponse.cpp

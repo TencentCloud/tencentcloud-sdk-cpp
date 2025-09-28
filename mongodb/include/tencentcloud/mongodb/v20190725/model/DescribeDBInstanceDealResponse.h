@@ -44,8 +44,24 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单状态，1：未支付，2：已支付，3：发货中，4：发货成功，5：发货失败，6：退款，7：订单关闭，8：超时未支付关闭。
-                     * @return Status 订单状态，1：未支付，2：已支付，3：发货中，4：发货成功，5：发货失败，6：退款，7：订单关闭，8：超时未支付关闭。
+                     * 获取订单状态。
+- 1：未支付。
+- 2：已支付。
+- 3：发货中。
+- 4：发货成功。
+- 5：发货失败。
+- 6：退款。
+- 7：订单关闭。
+- 8：超时未支付关闭。
+                     * @return Status 订单状态。
+- 1：未支付。
+- 2：已支付。
+- 3：发货中。
+- 4：发货成功。
+- 5：发货失败。
+- 6：退款。
+- 7：订单关闭。
+- 8：超时未支付关闭。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -58,8 +74,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取订单原价。
-                     * @return OriginalPrice 订单原价。
+                     * 获取订单原价。单位：元。
+                     * @return OriginalPrice 订单原价。单位：元。
                      * 
                      */
                     double GetOriginalPrice() const;
@@ -72,8 +88,8 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取订单折扣价格。
-                     * @return DiscountPrice 订单折扣价格。
+                     * 获取订单折扣价格。单位：元。
+                     * @return DiscountPrice 订单折扣价格。单位：元。
                      * 
                      */
                     double GetDiscountPrice() const;
@@ -86,8 +102,18 @@ namespace TencentCloud
                     bool DiscountPriceHasBeenSet() const;
 
                     /**
-                     * 获取订单行为，purchase：新购，renew：续费，upgrade：升配，downgrade：降配，refund：退货退款。
-                     * @return Action 订单行为，purchase：新购，renew：续费，upgrade：升配，downgrade：降配，refund：退货退款。
+                     * 获取订单操作行为。
+- purchase：新购。
+- renew：续费。
+- upgrade：升配.
+- downgrade：降配.
+- refund：退货退款。
+                     * @return Action 订单操作行为。
+- purchase：新购。
+- renew：续费。
+- upgrade：升配.
+- downgrade：降配.
+- refund：退货退款。
                      * 
                      */
                     std::string GetAction() const;
@@ -100,8 +126,8 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取当前订单的资源Id。
-                     * @return InstanceId 当前订单的资源Id。
+                     * 获取当前订单的实例 ID。
+                     * @return InstanceId 当前订单的实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -116,31 +142,44 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单状态，1：未支付，2：已支付，3：发货中，4：发货成功，5：发货失败，6：退款，7：订单关闭，8：超时未支付关闭。
+                     * 订单状态。
+- 1：未支付。
+- 2：已支付。
+- 3：发货中。
+- 4：发货成功。
+- 5：发货失败。
+- 6：退款。
+- 7：订单关闭。
+- 8：超时未支付关闭。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 订单原价。
+                     * 订单原价。单位：元。
                      */
                     double m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 订单折扣价格。
+                     * 订单折扣价格。单位：元。
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;
 
                     /**
-                     * 订单行为，purchase：新购，renew：续费，upgrade：升配，downgrade：降配，refund：退货退款。
+                     * 订单操作行为。
+- purchase：新购。
+- renew：续费。
+- upgrade：升配.
+- downgrade：降配.
+- refund：退货退款。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 当前订单的资源Id。
+                     * 当前订单的实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

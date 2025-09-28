@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 创建备份下载任务结果
+                * 创建备份下载任务结果。
                 */
                 class BackupDownloadTaskStatus : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分片名
-                     * @return ReplicaSetId 分片名
+                     * 获取分片名。
+                     * @return ReplicaSetId 分片名。
                      * 
                      */
                     std::string GetReplicaSetId() const;
 
                     /**
-                     * 设置分片名
-                     * @param _replicaSetId 分片名
+                     * 设置分片名。
+                     * @param _replicaSetId 分片名。
                      * 
                      */
                     void SetReplicaSetId(const std::string& _replicaSetId);
@@ -68,15 +68,35 @@ namespace TencentCloud
                     bool ReplicaSetIdHasBeenSet() const;
 
                     /**
-                     * 获取任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
-                     * @return Status 任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * 获取任务当前状态。
+- 0：等待执行。
+- 1：正在下载。
+- 2：下载完成。
+- 3：下载失败。
+- 4：等待重试。
+                     * @return Status 任务当前状态。
+- 0：等待执行。
+- 1：正在下载。
+- 2：下载完成。
+- 3：下载失败。
+- 4：等待重试。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
-                     * @param _status 任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * 设置任务当前状态。
+- 0：等待执行。
+- 1：正在下载。
+- 2：下载完成。
+- 3：下载失败。
+- 4：等待重试。
+                     * @param _status 任务当前状态。
+- 0：等待执行。
+- 1：正在下载。
+- 2：下载完成。
+- 3：下载失败。
+- 4：等待重试。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -91,13 +111,18 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分片名
+                     * 分片名。
                      */
                     std::string m_replicaSetId;
                     bool m_replicaSetIdHasBeenSet;
 
                     /**
-                     * 任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * 任务当前状态。
+- 0：等待执行。
+- 1：正在下载。
+- 2：下载完成。
+- 3：下载失败。
+- 4：等待重试。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

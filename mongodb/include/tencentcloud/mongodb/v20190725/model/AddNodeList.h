@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 修改实例节点详情
+                * 修改实例节点详情。
                 */
                 class AddNodeList : public AbstractModel
                 {
@@ -80,10 +80,10 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取节点所对应的可用区。
+                     * 获取节点所对应的可用区。当前支持的可用区，请参见[地域和可用区](https://cloud.tencent.com/document/product/240/3637)。
 - 单可用区，所有节点在同一可用区。
 - 多可用区：当前标准规格是三可用区分布，主从节点不在同一可用区，需注意配置新增节点对应的可用区，且新增后必须满足任意2个可用区节点数大于第3个可用区原则。
-                     * @return Zone 节点所对应的可用区。
+                     * @return Zone 节点所对应的可用区。当前支持的可用区，请参见[地域和可用区](https://cloud.tencent.com/document/product/240/3637)。
 - 单可用区，所有节点在同一可用区。
 - 多可用区：当前标准规格是三可用区分布，主从节点不在同一可用区，需注意配置新增节点对应的可用区，且新增后必须满足任意2个可用区节点数大于第3个可用区原则。
                      * 
@@ -91,10 +91,10 @@ namespace TencentCloud
                     std::string GetZone() const;
 
                     /**
-                     * 设置节点所对应的可用区。
+                     * 设置节点所对应的可用区。当前支持的可用区，请参见[地域和可用区](https://cloud.tencent.com/document/product/240/3637)。
 - 单可用区，所有节点在同一可用区。
 - 多可用区：当前标准规格是三可用区分布，主从节点不在同一可用区，需注意配置新增节点对应的可用区，且新增后必须满足任意2个可用区节点数大于第3个可用区原则。
-                     * @param _zone 节点所对应的可用区。
+                     * @param _zone 节点所对应的可用区。当前支持的可用区，请参见[地域和可用区](https://cloud.tencent.com/document/product/240/3637)。
 - 单可用区，所有节点在同一可用区。
 - 多可用区：当前标准规格是三可用区分布，主从节点不在同一可用区，需注意配置新增节点对应的可用区，且新增后必须满足任意2个可用区节点数大于第3个可用区原则。
                      * 
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_roleHasBeenSet;
 
                     /**
-                     * 节点所对应的可用区。
+                     * 节点所对应的可用区。当前支持的可用区，请参见[地域和可用区](https://cloud.tencent.com/document/product/240/3637)。
 - 单可用区，所有节点在同一可用区。
 - 多可用区：当前标准规格是三可用区分布，主从节点不在同一可用区，需注意配置新增节点对应的可用区，且新增后必须满足任意2个可用区节点数大于第3个可用区原则。
                      */

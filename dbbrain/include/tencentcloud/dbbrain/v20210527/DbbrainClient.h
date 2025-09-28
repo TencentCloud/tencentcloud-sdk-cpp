@@ -109,6 +109,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendInfoResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMailProfileResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeMetricTopProxiesRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeMetricTopProxiesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeNoPrimaryKeyTablesRequest.h>
@@ -330,6 +332,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMailProfileResponse> DescribeMailProfileOutcome;
                 typedef std::future<DescribeMailProfileOutcome> DescribeMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeMailProfileRequest&, DescribeMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMailProfileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMetricTopProxiesResponse> DescribeMetricTopProxiesOutcome;
+                typedef std::future<DescribeMetricTopProxiesOutcome> DescribeMetricTopProxiesOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeMetricTopProxiesRequest&, DescribeMetricTopProxiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricTopProxiesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMySqlProcessListResponse> DescribeMySqlProcessListOutcome;
                 typedef std::future<DescribeMySqlProcessListOutcome> DescribeMySqlProcessListOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeMySqlProcessListRequest&, DescribeMySqlProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMySqlProcessListAsyncHandler;
@@ -836,6 +841,15 @@ namespace TencentCloud
                 DescribeMailProfileOutcome DescribeMailProfile(const Model::DescribeMailProfileRequest &request);
                 void DescribeMailProfileAsync(const Model::DescribeMailProfileRequest& request, const DescribeMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMailProfileOutcomeCallable DescribeMailProfileCallable(const Model::DescribeMailProfileRequest& request);
+
+                /**
+                 *获取指定时间段内Redis 访问命令 cost top N
+                 * @param req DescribeMetricTopProxiesRequest
+                 * @return DescribeMetricTopProxiesOutcome
+                 */
+                DescribeMetricTopProxiesOutcome DescribeMetricTopProxies(const Model::DescribeMetricTopProxiesRequest &request);
+                void DescribeMetricTopProxiesAsync(const Model::DescribeMetricTopProxiesRequest& request, const DescribeMetricTopProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMetricTopProxiesOutcomeCallable DescribeMetricTopProxiesCallable(const Model::DescribeMetricTopProxiesRequest& request);
 
                 /**
                  *查询关系型数据库的实时线程列表。

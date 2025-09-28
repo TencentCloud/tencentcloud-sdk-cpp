@@ -200,15 +200,19 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                     bool BillingModeHasBeenSet() const;
 
                     /**
-                     * 获取实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
-                     * @return ZoneId 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     * 获取实例所属的可用区 ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。
+                     * @return ZoneId 实例所属的可用区 ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。
                      * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
-                     * 设置实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
-                     * @param _zoneId 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     * 设置实例所属的可用区 ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。
+                     * @param _zoneId 实例所属的可用区 ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。
                      * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
@@ -221,15 +225,23 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。
-                     * @return RedisShardNum 实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。
+                     * 获取实例分片数量。
+- 标准架构需要配置分片数量为1。
+- 集群架构分片数量支持设置为1、3、5、8、12、16、24、32、40、48、64、80、96、128。
+                     * @return RedisShardNum 实例分片数量。
+- 标准架构需要配置分片数量为1。
+- 集群架构分片数量支持设置为1、3、5、8、12、16、24、32、40、48、64、80、96、128。
                      * 
                      */
                     int64_t GetRedisShardNum() const;
 
                     /**
-                     * 设置实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。
-                     * @param _redisShardNum 实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。
+                     * 设置实例分片数量。
+- 标准架构需要配置分片数量为1。
+- 集群架构分片数量支持设置为1、3、5、8、12、16、24、32、40、48、64、80、96、128。
+                     * @param _redisShardNum 实例分片数量。
+- 标准架构需要配置分片数量为1。
+- 集群架构分片数量支持设置为1、3、5、8、12、16、24、32、40、48、64、80、96、128。
                      * 
                      */
                     void SetRedisShardNum(const int64_t& _redisShardNum);
@@ -242,15 +254,15 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                     bool RedisShardNumHasBeenSet() const;
 
                     /**
-                     * 获取实例副本数量。2.8 标准架构无需配置副本数量。
-                     * @return RedisReplicasNum 实例副本数量。2.8 标准架构无需配置副本数量。
+                     * 获取实例副本数量。取值范围为：1、2、3、4、5。
+                     * @return RedisReplicasNum 实例副本数量。取值范围为：1、2、3、4、5。
                      * 
                      */
                     int64_t GetRedisReplicasNum() const;
 
                     /**
-                     * 设置实例副本数量。2.8 标准架构无需配置副本数量。
-                     * @param _redisReplicasNum 实例副本数量。2.8 标准架构无需配置副本数量。
+                     * 设置实例副本数量。取值范围为：1、2、3、4、5。
+                     * @param _redisReplicasNum 实例副本数量。取值范围为：1、2、3、4、5。
                      * 
                      */
                     void SetRedisReplicasNum(const int64_t& _redisReplicasNum);
@@ -293,14 +305,18 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
 
                     /**
                      * 获取实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。
                      * @return ZoneName 实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。
                      * @param _zoneName 实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -391,19 +407,22 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                     bool m_billingModeHasBeenSet;
 
                     /**
-                     * 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     * 实例所属的可用区 ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。
+                     * 实例分片数量。
+- 标准架构需要配置分片数量为1。
+- 集群架构分片数量支持设置为1、3、5、8、12、16、24、32、40、48、64、80、96、128。
                      */
                     int64_t m_redisShardNum;
                     bool m_redisShardNumHasBeenSet;
 
                     /**
-                     * 实例副本数量。2.8 标准架构无需配置副本数量。
+                     * 实例副本数量。取值范围为：1、2、3、4、5。
                      */
                     int64_t m_redisReplicasNum;
                     bool m_redisReplicasNumHasBeenSet;
@@ -418,6 +437,7 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
 
                     /**
                      * 实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;

@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 集群版的节点拓扑配置。
+                * 云盘版的节点拓扑配置。
                 */
                 class ClusterTopology : public AbstractModel
                 {

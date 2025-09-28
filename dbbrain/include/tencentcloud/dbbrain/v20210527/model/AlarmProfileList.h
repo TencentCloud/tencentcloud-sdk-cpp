@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool ReceiveInfoHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取更新时间，格式: "yyyy-MM-dd HH:mm:ss"
+                     * @return UpdateTime 更新时间，格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置更新时间，格式: "yyyy-MM-dd HH:mm:ss"
+                     * @param _updateTime 更新时间，格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -398,7 +398,7 @@ namespace TencentCloud
                     bool m_receiveInfoHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间，格式: "yyyy-MM-dd HH:mm:ss"
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

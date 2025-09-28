@@ -309,6 +309,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateContractReviewWebUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateDynamicFlowApproverResponse.h
   include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksResponse.h
+  include/tencentcloud/ess/v20201111/model/Option.h
   include/tencentcloud/ess/v20201111/model/DescribeBillUsageDetailRequest.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlResponse.h
   include/tencentcloud/ess/v20201111/model/Caller.h
@@ -663,6 +664,7 @@ set(ess_src
   src/v20201111/model/CreateContractReviewWebUrlRequest.cpp
   src/v20201111/model/CreateDynamicFlowApproverResponse.cpp
   src/v20201111/model/CreateBatchOrganizationRegistrationTasksResponse.cpp
+  src/v20201111/model/Option.cpp
   src/v20201111/model/DescribeBillUsageDetailRequest.cpp
   src/v20201111/model/CreateUserAutoSignSealUrlResponse.cpp
   src/v20201111/model/Caller.cpp

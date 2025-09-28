@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-                     * @return InstanceIds 实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * 获取实例 ID 列表。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @return InstanceIds 实例 ID 列表。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-                     * @param _instanceIds 实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * 设置实例 ID 列表。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param _instanceIds 实例 ID 列表。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -65,15 +65,35 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取指定查询的实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>3：只读实例。</li><li>4：灾备实例。</li></ul>
-                     * @return InstanceType 指定查询的实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>3：只读实例。</li><li>4：灾备实例。</li></ul>
+                     * 获取指定查询的实例类型。取值范围如下：
+- 0：所有实例。
+- 1：正式实例。
+- 2：临时实例
+- 3：只读实例。
+- -1：查询同时包括正式实例、只读实例与灾备实例。
+                     * @return InstanceType 指定查询的实例类型。取值范围如下：
+- 0：所有实例。
+- 1：正式实例。
+- 2：临时实例
+- 3：只读实例。
+- -1：查询同时包括正式实例、只读实例与灾备实例。
                      * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
-                     * 设置指定查询的实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>3：只读实例。</li><li>4：灾备实例。</li></ul>
-                     * @param _instanceType 指定查询的实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>3：只读实例。</li><li>4：灾备实例。</li></ul>
+                     * 设置指定查询的实例类型。取值范围如下：
+- 0：所有实例。
+- 1：正式实例。
+- 2：临时实例
+- 3：只读实例。
+- -1：查询同时包括正式实例、只读实例与灾备实例。
+                     * @param _instanceType 指定查询的实例类型。取值范围如下：
+- 0：所有实例。
+- 1：正式实例。
+- 2：临时实例
+- 3：只读实例。
+- -1：查询同时包括正式实例、只读实例与灾备实例。
                      * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
@@ -86,15 +106,27 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取指定所查询实例的集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：副本集与分片实例。</li></ul>
-                     * @return ClusterType 指定所查询实例的集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：副本集与分片实例。</li></ul>
+                     * 获取指定所查询实例的集群类型，取值范围如下：
+- 0：副本集实例。
+- 1：分片实例。
+- -1：副本集与分片实例。
+                     * @return ClusterType 指定所查询实例的集群类型，取值范围如下：
+- 0：副本集实例。
+- 1：分片实例。
+- -1：副本集与分片实例。
                      * 
                      */
                     int64_t GetClusterType() const;
 
                     /**
-                     * 设置指定所查询实例的集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：副本集与分片实例。</li></ul>
-                     * @param _clusterType 指定所查询实例的集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：副本集与分片实例。</li></ul>
+                     * 设置指定所查询实例的集群类型，取值范围如下：
+- 0：副本集实例。
+- 1：分片实例。
+- -1：副本集与分片实例。
+                     * @param _clusterType 指定所查询实例的集群类型，取值范围如下：
+- 0：副本集实例。
+- 1：分片实例。
+- -1：副本集与分片实例。
                      * 
                      */
                     void SetClusterType(const int64_t& _clusterType);
@@ -107,15 +139,35 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取指定所查询实例的当前状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程处理中，例如：变更规格、参数修改等。</li><li>2：实例正常运行中。</li><li>-2：实例已过期。</li></ul>
-                     * @return Status 指定所查询实例的当前状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程处理中，例如：变更规格、参数修改等。</li><li>2：实例正常运行中。</li><li>-2：实例已过期。</li></ul>
+                     * 获取指定所查询实例的当前状态，取值范围如下所示：
+- 0：待初始化。
+- 1：流程处理中，例如：变更规格、参数修改等。
+- 2：实例正常运行中。
+- -2：已隔离（包年包月）。
+- -3：已隔离（按量计费）。
+                     * @return Status 指定所查询实例的当前状态，取值范围如下所示：
+- 0：待初始化。
+- 1：流程处理中，例如：变更规格、参数修改等。
+- 2：实例正常运行中。
+- -2：已隔离（包年包月）。
+- -3：已隔离（按量计费）。
                      * 
                      */
                     std::vector<int64_t> GetStatus() const;
 
                     /**
-                     * 设置指定所查询实例的当前状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程处理中，例如：变更规格、参数修改等。</li><li>2：实例正常运行中。</li><li>-2：实例已过期。</li></ul>
-                     * @param _status 指定所查询实例的当前状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程处理中，例如：变更规格、参数修改等。</li><li>2：实例正常运行中。</li><li>-2：实例已过期。</li></ul>
+                     * 设置指定所查询实例的当前状态，取值范围如下所示：
+- 0：待初始化。
+- 1：流程处理中，例如：变更规格、参数修改等。
+- 2：实例正常运行中。
+- -2：已隔离（包年包月）。
+- -3：已隔离（按量计费）。
+                     * @param _status 指定所查询实例的当前状态，取值范围如下所示：
+- 0：待初始化。
+- 1：流程处理中，例如：变更规格、参数修改等。
+- 2：实例正常运行中。
+- -2：已隔离（包年包月）。
+- -3：已隔离（按量计费）。
                      * 
                      */
                     void SetStatus(const std::vector<int64_t>& _status);
@@ -186,15 +238,27 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取指定所查询实例的付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>
-                     * @return PayMode 指定所查询实例的付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>
+                     * 获取指定所查询实例的付费类型。
+- 0：查询按量计费实例。
+- 1：查询包年包月实例。
+- -1：查询按量计费与包年包月实例。
+                     * @return PayMode 指定所查询实例的付费类型。
+- 0：查询按量计费实例。
+- 1：查询包年包月实例。
+- -1：查询按量计费与包年包月实例。
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置指定所查询实例的付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>
-                     * @param _payMode 指定所查询实例的付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>
+                     * 设置指定所查询实例的付费类型。
+- 0：查询按量计费实例。
+- 1：查询包年包月实例。
+- -1：查询按量计费与包年包月实例。
+                     * @param _payMode 指定所查询实例的付费类型。
+- 0：查询按量计费实例。
+- 1：查询包年包月实例。
+- -1：查询按量计费与包年包月实例。
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -207,15 +271,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取单次请求返回的数量。默认值为20，取值范围为[1,100]。
-                     * @return Limit 单次请求返回的数量。默认值为20，取值范围为[1,100]。
+                     * 获取单次请求返回的数量。默认值为20，取值范围为(1,100]。
+                     * @return Limit 单次请求返回的数量。默认值为20，取值范围为(1,100]。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置单次请求返回的数量。默认值为20，取值范围为[1,100]。
-                     * @param _limit 单次请求返回的数量。默认值为20，取值范围为[1,100]。
+                     * 设置单次请求返回的数量。默认值为20，取值范围为(1,100]。
+                     * @param _limit 单次请求返回的数量。默认值为20，取值范围为(1,100]。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -364,25 +428,38 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * 实例 ID 列表。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 指定查询的实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>3：只读实例。</li><li>4：灾备实例。</li></ul>
+                     * 指定查询的实例类型。取值范围如下：
+- 0：所有实例。
+- 1：正式实例。
+- 2：临时实例
+- 3：只读实例。
+- -1：查询同时包括正式实例、只读实例与灾备实例。
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 指定所查询实例的集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：副本集与分片实例。</li></ul>
+                     * 指定所查询实例的集群类型，取值范围如下：
+- 0：副本集实例。
+- 1：分片实例。
+- -1：副本集与分片实例。
                      */
                     int64_t m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 指定所查询实例的当前状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程处理中，例如：变更规格、参数修改等。</li><li>2：实例正常运行中。</li><li>-2：实例已过期。</li></ul>
+                     * 指定所查询实例的当前状态，取值范围如下所示：
+- 0：待初始化。
+- 1：流程处理中，例如：变更规格、参数修改等。
+- 2：实例正常运行中。
+- -2：已隔离（包年包月）。
+- -3：已隔离（按量计费）。
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;
@@ -404,13 +481,16 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 指定所查询实例的付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>
+                     * 指定所查询实例的付费类型。
+- 0：查询按量计费实例。
+- 1：查询包年包月实例。
+- -1：查询按量计费与包年包月实例。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 单次请求返回的数量。默认值为20，取值范围为[1,100]。
+                     * 单次请求返回的数量。默认值为20，取值范围为(1,100]。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

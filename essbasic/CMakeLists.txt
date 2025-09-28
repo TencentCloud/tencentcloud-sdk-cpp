@@ -67,7 +67,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleUsersRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesResponse.h
-  include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationRequest.h
+  include/tencentcloud/essbasic/v20210526/model/Option.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyResponse.h
@@ -290,6 +290,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateModifyAdminAuthorizationUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowResponse.h
+  include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportResponse.h
   include/tencentcloud/essbasic/v20210526/model/ModifyPartnerAutoSignAuthUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/IntentionQuestion.h
@@ -482,7 +483,7 @@ set(essbasic_src
   src/v20210526/model/CreateConsoleLoginUrlResponse.cpp
   src/v20210526/model/ChannelDeleteRoleUsersRequest.cpp
   src/v20210526/model/ChannelCreateUserRolesResponse.cpp
-  src/v20210526/model/SyncProxyOrganizationRequest.cpp
+  src/v20210526/model/Option.cpp
   src/v20210526/model/ChannelCreatePrepareFlowRequest.cpp
   src/v20210526/model/ChannelCreateFlowSignUrlRequest.cpp
   src/v20210526/model/ChannelCreateSealPolicyResponse.cpp
@@ -705,6 +706,7 @@ set(essbasic_src
   src/v20210526/model/CreateModifyAdminAuthorizationUrlResponse.cpp
   src/v20210526/model/ChannelDeleteRoleResponse.cpp
   src/v20210526/model/ChannelCreateReleaseFlowResponse.cpp
+  src/v20210526/model/SyncProxyOrganizationRequest.cpp
   src/v20210526/model/DescribeChannelFlowEvidenceReportResponse.cpp
   src/v20210526/model/ModifyPartnerAutoSignAuthUrlResponse.cpp
   src/v20210526/model/IntentionQuestion.cpp

@@ -48,15 +48,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启自治。
-                     * @return Enabled 是否开启自治。
+                     * 获取是否开启自治。枚举值：true，false。
+其中：
+true - 开启
+false - 关闭
+                     * @return Enabled 是否开启自治。枚举值：true，false。
+其中：
+true - 开启
+false - 关闭
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置是否开启自治。
-                     * @param _enabled 是否开启自治。
+                     * 设置是否开启自治。枚举值：true，false。
+其中：
+true - 开启
+false - 关闭
+                     * @param _enabled 是否开启自治。枚举值：true，false。
+其中：
+true - 开启
+false - 关闭
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -155,7 +167,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启自治。
+                     * 是否开启自治。枚举值：true，false。
+其中：
+true - 开启
+false - 关闭
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;

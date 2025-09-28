@@ -33,7 +33,8 @@ CreateSealByImageRequest::CreateSealByImageRequest() :
     m_sealStyleHasBeenSet(false),
     m_sealSizeHasBeenSet(false),
     m_taxIdentifyCodeHasBeenSet(false),
-    m_sealDescriptionHasBeenSet(false)
+    m_sealDescriptionHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,21 @@ string CreateSealByImageRequest::ToJsonString() const
         string key = "SealDescription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sealDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_optionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Options";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_options.begin(); itr != m_options.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -316,6 +332,22 @@ void CreateSealByImageRequest::SetSealDescription(const string& _sealDescription
 bool CreateSealByImageRequest::SealDescriptionHasBeenSet() const
 {
     return m_sealDescriptionHasBeenSet;
+}
+
+vector<Option> CreateSealByImageRequest::GetOptions() const
+{
+    return m_options;
+}
+
+void CreateSealByImageRequest::SetOptions(const vector<Option>& _options)
+{
+    m_options = _options;
+    m_optionsHasBeenSet = true;
+}
+
+bool CreateSealByImageRequest::OptionsHasBeenSet() const
+{
+    return m_optionsHasBeenSet;
 }
 
 

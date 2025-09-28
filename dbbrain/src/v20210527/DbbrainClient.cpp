@@ -1889,6 +1889,49 @@ DbbrainClient::DescribeMailProfileOutcomeCallable DbbrainClient::DescribeMailPro
     return task->get_future();
 }
 
+DbbrainClient::DescribeMetricTopProxiesOutcome DbbrainClient::DescribeMetricTopProxies(const DescribeMetricTopProxiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMetricTopProxies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMetricTopProxiesResponse rsp = DescribeMetricTopProxiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMetricTopProxiesOutcome(rsp);
+        else
+            return DescribeMetricTopProxiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMetricTopProxiesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeMetricTopProxiesAsync(const DescribeMetricTopProxiesRequest& request, const DescribeMetricTopProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMetricTopProxies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeMetricTopProxiesOutcomeCallable DbbrainClient::DescribeMetricTopProxiesCallable(const DescribeMetricTopProxiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMetricTopProxiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMetricTopProxies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeMySqlProcessListOutcome DbbrainClient::DescribeMySqlProcessList(const DescribeMySqlProcessListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMySqlProcessList");

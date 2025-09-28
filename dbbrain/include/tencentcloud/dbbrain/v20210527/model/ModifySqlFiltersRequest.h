@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取SQL限流任务ID列表。
-                     * @return FilterIds SQL限流任务ID列表。
+                     * 获取SQL限流任务ID列表。可通过接口[查询实例SQL限流任务列表
+](https://cloud.tencent.com/document/product/1130/72831)获得。
+                     * @return FilterIds SQL限流任务ID列表。可通过接口[查询实例SQL限流任务列表
+](https://cloud.tencent.com/document/product/1130/72831)获得。
                      * 
                      */
                     std::vector<int64_t> GetFilterIds() const;
 
                     /**
-                     * 设置SQL限流任务ID列表。
-                     * @param _filterIds SQL限流任务ID列表。
+                     * 设置SQL限流任务ID列表。可通过接口[查询实例SQL限流任务列表
+](https://cloud.tencent.com/document/product/1130/72831)获得。
+                     * @param _filterIds SQL限流任务ID列表。可通过接口[查询实例SQL限流任务列表
+](https://cloud.tencent.com/document/product/1130/72831)获得。
                      * 
                      */
                     void SetFilterIds(const std::vector<int64_t>& _filterIds);
@@ -85,15 +89,15 @@ namespace TencentCloud
                     bool FilterIdsHasBeenSet() const;
 
                     /**
-                     * 获取限流任务状态，取值支持TERMINATED - 终止。
-                     * @return Status 限流任务状态，取值支持TERMINATED - 终止。
+                     * 获取限流任务状态，仅支持传参TERMINATED - 终止。
+                     * @return Status 限流任务状态，仅支持传参TERMINATED - 终止。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置限流任务状态，取值支持TERMINATED - 终止。
-                     * @param _status 限流任务状态，取值支持TERMINATED - 终止。
+                     * 设置限流任务状态，仅支持传参TERMINATED - 终止。
+                     * @param _status 限流任务状态，仅支持传参TERMINATED - 终止。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -106,15 +110,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
-                     * @return SessionToken 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * 获取通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * @return SessionToken 通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
                      * 
                      */
                     std::string GetSessionToken() const;
 
                     /**
-                     * 设置通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
-                     * @param _sessionToken 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * 设置通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * @param _sessionToken 通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
                      * 
                      */
                     void SetSessionToken(const std::string& _sessionToken);
@@ -150,25 +154,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * SQL限流任务ID列表。
+                     * SQL限流任务ID列表。可通过接口[查询实例SQL限流任务列表
+](https://cloud.tencent.com/document/product/1130/72831)获得。
                      */
                     std::vector<int64_t> m_filterIds;
                     bool m_filterIdsHasBeenSet;
 
                     /**
-                     * 限流任务状态，取值支持TERMINATED - 终止。
+                     * 限流任务状态，仅支持传参TERMINATED - 终止。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * 通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
                      */
                     std::string m_sessionToken;
                     bool m_sessionTokenHasBeenSet;

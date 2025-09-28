@@ -31,6 +31,8 @@
 #include <tencentcloud/teo/v20220901/model/BindZoneToPlanResponse.h>
 #include <tencentcloud/teo/v20220901/model/CheckCnameStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/CheckCnameStatusResponse.h>
+#include <tencentcloud/teo/v20220901/model/ConfirmMultiPathGatewayOriginACLRequest.h>
+#include <tencentcloud/teo/v20220901/model/ConfirmMultiPathGatewayOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/ConfirmOriginACLUpdateRequest.h>
 #include <tencentcloud/teo/v20220901/model/ConfirmOriginACLUpdateResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateAccelerationDomainRequest.h>
@@ -221,6 +223,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayLineRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayLineResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayOriginACLRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayRegionsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayRegionsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewaySecretKeyRequest.h>
@@ -365,6 +369,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayLineResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewaySecretKeyRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewaySecretKeyResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayStatusRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginACLRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupRequest.h>
@@ -429,6 +435,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckCnameStatusResponse> CheckCnameStatusOutcome;
                 typedef std::future<CheckCnameStatusOutcome> CheckCnameStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CheckCnameStatusRequest&, CheckCnameStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCnameStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ConfirmMultiPathGatewayOriginACLResponse> ConfirmMultiPathGatewayOriginACLOutcome;
+                typedef std::future<ConfirmMultiPathGatewayOriginACLOutcome> ConfirmMultiPathGatewayOriginACLOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ConfirmMultiPathGatewayOriginACLRequest&, ConfirmMultiPathGatewayOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmMultiPathGatewayOriginACLAsyncHandler;
                 typedef Outcome<Core::Error, Model::ConfirmOriginACLUpdateResponse> ConfirmOriginACLUpdateOutcome;
                 typedef std::future<ConfirmOriginACLUpdateOutcome> ConfirmOriginACLUpdateOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ConfirmOriginACLUpdateRequest&, ConfirmOriginACLUpdateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmOriginACLUpdateAsyncHandler;
@@ -714,6 +723,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMultiPathGatewayLineResponse> DescribeMultiPathGatewayLineOutcome;
                 typedef std::future<DescribeMultiPathGatewayLineOutcome> DescribeMultiPathGatewayLineOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeMultiPathGatewayLineRequest&, DescribeMultiPathGatewayLineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiPathGatewayLineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMultiPathGatewayOriginACLResponse> DescribeMultiPathGatewayOriginACLOutcome;
+                typedef std::future<DescribeMultiPathGatewayOriginACLOutcome> DescribeMultiPathGatewayOriginACLOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeMultiPathGatewayOriginACLRequest&, DescribeMultiPathGatewayOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiPathGatewayOriginACLAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMultiPathGatewayRegionsResponse> DescribeMultiPathGatewayRegionsOutcome;
                 typedef std::future<DescribeMultiPathGatewayRegionsOutcome> DescribeMultiPathGatewayRegionsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeMultiPathGatewayRegionsRequest&, DescribeMultiPathGatewayRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiPathGatewayRegionsAsyncHandler;
@@ -930,6 +942,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMultiPathGatewaySecretKeyResponse> ModifyMultiPathGatewaySecretKeyOutcome;
                 typedef std::future<ModifyMultiPathGatewaySecretKeyOutcome> ModifyMultiPathGatewaySecretKeyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyMultiPathGatewaySecretKeyRequest&, ModifyMultiPathGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMultiPathGatewaySecretKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMultiPathGatewayStatusResponse> ModifyMultiPathGatewayStatusOutcome;
+                typedef std::future<ModifyMultiPathGatewayStatusOutcome> ModifyMultiPathGatewayStatusOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyMultiPathGatewayStatusRequest&, ModifyMultiPathGatewayStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMultiPathGatewayStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOriginACLResponse> ModifyOriginACLOutcome;
                 typedef std::future<ModifyOriginACLOutcome> ModifyOriginACLOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyOriginACLRequest&, ModifyOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOriginACLAsyncHandler;
@@ -1025,6 +1040,15 @@ namespace TencentCloud
                 CheckCnameStatusOutcome CheckCnameStatus(const Model::CheckCnameStatusRequest &request);
                 void CheckCnameStatusAsync(const Model::CheckCnameStatusRequest& request, const CheckCnameStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckCnameStatusOutcomeCallable CheckCnameStatusCallable(const Model::CheckCnameStatusRequest& request);
+
+                /**
+                 *本接口用于多通道安全加速网关回源 IP 网段发生变更时，确认已将最新回源 IP 网段更新至源站防火墙。
+                 * @param req ConfirmMultiPathGatewayOriginACLRequest
+                 * @return ConfirmMultiPathGatewayOriginACLOutcome
+                 */
+                ConfirmMultiPathGatewayOriginACLOutcome ConfirmMultiPathGatewayOriginACL(const Model::ConfirmMultiPathGatewayOriginACLRequest &request);
+                void ConfirmMultiPathGatewayOriginACLAsync(const Model::ConfirmMultiPathGatewayOriginACLRequest& request, const ConfirmMultiPathGatewayOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ConfirmMultiPathGatewayOriginACLOutcomeCallable ConfirmMultiPathGatewayOriginACLCallable(const Model::ConfirmMultiPathGatewayOriginACLRequest& request);
 
                 /**
                  *本接口用于回源 IP 网段发生变更时，确认已将最新回源 IP 网段更新至源站防火墙。确认已更新至最新的回源 IP 网段后，相关变更通知将会停止推送。
@@ -1904,6 +1928,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeMultiPathGatewayLineOutcomeCallable DescribeMultiPathGatewayLineCallable(const Model::DescribeMultiPathGatewayLineRequest& request);
 
                 /**
+                 *本接口用于查询多通道安全加速网关实例与回源 IP 网段的绑定关系，以及回源 IP 网段详情。若 MultiPathGatewayNextOriginACL 字段有返回值，则需要将最新的回源 IP 网段同步到源站防火墙配置中。
+                 * @param req DescribeMultiPathGatewayOriginACLRequest
+                 * @return DescribeMultiPathGatewayOriginACLOutcome
+                 */
+                DescribeMultiPathGatewayOriginACLOutcome DescribeMultiPathGatewayOriginACL(const Model::DescribeMultiPathGatewayOriginACLRequest &request);
+                void DescribeMultiPathGatewayOriginACLAsync(const Model::DescribeMultiPathGatewayOriginACLRequest& request, const DescribeMultiPathGatewayOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMultiPathGatewayOriginACLOutcomeCallable DescribeMultiPathGatewayOriginACLCallable(const Model::DescribeMultiPathGatewayOriginACLRequest& request);
+
+                /**
                  *通过本接口查询用户创建的多通道安全加速网关（云上网关）的可用地域列表。
                  * @param req DescribeMultiPathGatewayRegionsRequest
                  * @return DescribeMultiPathGatewayRegionsOutcome
@@ -2582,6 +2615,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyMultiPathGatewaySecretKeyOutcome ModifyMultiPathGatewaySecretKey(const Model::ModifyMultiPathGatewaySecretKeyRequest &request);
                 void ModifyMultiPathGatewaySecretKeyAsync(const Model::ModifyMultiPathGatewaySecretKeyRequest& request, const ModifyMultiPathGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMultiPathGatewaySecretKeyOutcomeCallable ModifyMultiPathGatewaySecretKeyCallable(const Model::ModifyMultiPathGatewaySecretKeyRequest& request);
+
+                /**
+                 *更新多通道安全网关状态。
+                 * @param req ModifyMultiPathGatewayStatusRequest
+                 * @return ModifyMultiPathGatewayStatusOutcome
+                 */
+                ModifyMultiPathGatewayStatusOutcome ModifyMultiPathGatewayStatus(const Model::ModifyMultiPathGatewayStatusRequest &request);
+                void ModifyMultiPathGatewayStatusAsync(const Model::ModifyMultiPathGatewayStatusRequest& request, const ModifyMultiPathGatewayStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMultiPathGatewayStatusOutcomeCallable ModifyMultiPathGatewayStatusCallable(const Model::ModifyMultiPathGatewayStatusRequest& request);
 
                 /**
                  *本接口用于对七层加速域名/四层代理实例启用/关闭特定回源 IP 网段回源。单次支持提交的七层加速域名的数量最大为 200，四层代理实例的数量最大为 100，支持七层加速域名/四层代理实例混合提交，总实例个数最大为 200。如需变更超过 200 个实例，请通过本接口分批提交。

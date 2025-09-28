@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间。
-                     * @return CreateTime 任务创建时间。
+                     * 获取任务创建时间，格式: "yyyy-MM-dd HH:mm:ss"。
+                     * @return CreateTime 任务创建时间，格式: "yyyy-MM-dd HH:mm:ss"。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置任务创建时间。
-                     * @param _createTime 任务创建时间。
+                     * 设置任务创建时间，格式: "yyyy-MM-dd HH:mm:ss"。
+                     * @param _createTime 任务创建时间，格式: "yyyy-MM-dd HH:mm:ss"。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务开始执行时间。
-                     * @return StartTime 任务开始执行时间。
+                     * 获取任务开始执行时间，格式: "yyyy-MM-dd HH:mm:ss"。
+                     * @return StartTime 任务开始执行时间，格式: "yyyy-MM-dd HH:mm:ss"。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置任务开始执行时间。
-                     * @param _startTime 任务开始执行时间。
+                     * 设置任务开始执行时间，格式: "yyyy-MM-dd HH:mm:ss"。
+                     * @param _startTime 任务开始执行时间，格式: "yyyy-MM-dd HH:mm:ss"。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务完成执行时间。
-                     * @return EndTime 任务完成执行时间。
+                     * 获取任务完成执行时间，格式: "yyyy-MM-dd HH:mm:ss"。
+                     * @return EndTime 任务完成执行时间，格式: "yyyy-MM-dd HH:mm:ss"。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置任务完成执行时间。
-                     * @param _endTime 任务完成执行时间。
+                     * 设置任务完成执行时间，格式: "yyyy-MM-dd HH:mm:ss"。
+                     * @param _endTime 任务完成执行时间，格式: "yyyy-MM-dd HH:mm:ss"。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -237,19 +237,19 @@ namespace TencentCloud
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 任务创建时间。
+                     * 任务创建时间，格式: "yyyy-MM-dd HH:mm:ss"。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 任务开始执行时间。
+                     * 任务开始执行时间，格式: "yyyy-MM-dd HH:mm:ss"。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 任务完成执行时间。
+                     * 任务完成执行时间，格式: "yyyy-MM-dd HH:mm:ss"。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

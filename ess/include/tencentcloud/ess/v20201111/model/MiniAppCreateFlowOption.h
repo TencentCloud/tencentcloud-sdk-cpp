@@ -113,13 +113,21 @@ namespace TencentCloud
                      * 获取小程序集成发起，是否禁止发起时修改合同内容
 <ul>
 <li>false：默认值，不禁止发起时修改合同内容</li>
-<li>true：禁止发起时修改合同内容</li>
+<li>true：禁止发起时修改合同内容（将直接跳过添加/编辑签署人步骤，直接到核对合同信息页面</li>
 </ul>
+指定为true，效果如下：
+
+效果如下:![ForbidEditFlow](https://qcloudimg.tencent-cloud.cn/raw/2440eca624f2f6730fecbf69daad0533.jpg)
+
                      * @return ForbidEditFlow 小程序集成发起，是否禁止发起时修改合同内容
 <ul>
 <li>false：默认值，不禁止发起时修改合同内容</li>
-<li>true：禁止发起时修改合同内容</li>
+<li>true：禁止发起时修改合同内容（将直接跳过添加/编辑签署人步骤，直接到核对合同信息页面</li>
 </ul>
+指定为true，效果如下：
+
+效果如下:![ForbidEditFlow](https://qcloudimg.tencent-cloud.cn/raw/2440eca624f2f6730fecbf69daad0533.jpg)
+
                      * 
                      */
                     bool GetForbidEditFlow() const;
@@ -128,13 +136,21 @@ namespace TencentCloud
                      * 设置小程序集成发起，是否禁止发起时修改合同内容
 <ul>
 <li>false：默认值，不禁止发起时修改合同内容</li>
-<li>true：禁止发起时修改合同内容</li>
+<li>true：禁止发起时修改合同内容（将直接跳过添加/编辑签署人步骤，直接到核对合同信息页面</li>
 </ul>
+指定为true，效果如下：
+
+效果如下:![ForbidEditFlow](https://qcloudimg.tencent-cloud.cn/raw/2440eca624f2f6730fecbf69daad0533.jpg)
+
                      * @param _forbidEditFlow 小程序集成发起，是否禁止发起时修改合同内容
 <ul>
 <li>false：默认值，不禁止发起时修改合同内容</li>
-<li>true：禁止发起时修改合同内容</li>
+<li>true：禁止发起时修改合同内容（将直接跳过添加/编辑签署人步骤，直接到核对合同信息页面</li>
 </ul>
+指定为true，效果如下：
+
+效果如下:![ForbidEditFlow](https://qcloudimg.tencent-cloud.cn/raw/2440eca624f2f6730fecbf69daad0533.jpg)
+
                      * 
                      */
                     void SetForbidEditFlow(const bool& _forbidEditFlow);
@@ -170,8 +186,12 @@ namespace TencentCloud
                      * 小程序集成发起，是否禁止发起时修改合同内容
 <ul>
 <li>false：默认值，不禁止发起时修改合同内容</li>
-<li>true：禁止发起时修改合同内容</li>
+<li>true：禁止发起时修改合同内容（将直接跳过添加/编辑签署人步骤，直接到核对合同信息页面</li>
 </ul>
+指定为true，效果如下：
+
+效果如下:![ForbidEditFlow](https://qcloudimg.tencent-cloud.cn/raw/2440eca624f2f6730fecbf69daad0533.jpg)
+
                      */
                     bool m_forbidEditFlow;
                     bool m_forbidEditFlowHasBeenSet;

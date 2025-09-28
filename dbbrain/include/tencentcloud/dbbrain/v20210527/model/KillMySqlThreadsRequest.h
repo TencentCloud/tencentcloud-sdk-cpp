@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool StageHasBeenSet() const;
 
                     /**
-                     * 获取需要kill的sql会话ID列表，此参数用于Prepare阶段。
-                     * @return Threads 需要kill的sql会话ID列表，此参数用于Prepare阶段。
+                     * 获取需要kill的sql会话ID列表，通过接口[查询实时线程列表](https://cloud.tencent.com/document/product/1130/57824)
+此参数用于Prepare阶段。
+                     * @return Threads 需要kill的sql会话ID列表，通过接口[查询实时线程列表](https://cloud.tencent.com/document/product/1130/57824)
+此参数用于Prepare阶段。
                      * 
                      */
                     std::vector<int64_t> GetThreads() const;
 
                     /**
-                     * 设置需要kill的sql会话ID列表，此参数用于Prepare阶段。
-                     * @param _threads 需要kill的sql会话ID列表，此参数用于Prepare阶段。
+                     * 设置需要kill的sql会话ID列表，通过接口[查询实时线程列表](https://cloud.tencent.com/document/product/1130/57824)
+此参数用于Prepare阶段。
+                     * @param _threads 需要kill的sql会话ID列表，通过接口[查询实时线程列表](https://cloud.tencent.com/document/product/1130/57824)
+此参数用于Prepare阶段。
                      * 
                      */
                     void SetThreads(const std::vector<int64_t>& _threads);
@@ -171,7 +175,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -183,7 +187,8 @@ namespace TencentCloud
                     bool m_stageHasBeenSet;
 
                     /**
-                     * 需要kill的sql会话ID列表，此参数用于Prepare阶段。
+                     * 需要kill的sql会话ID列表，通过接口[查询实时线程列表](https://cloud.tencent.com/document/product/1130/57824)
+此参数用于Prepare阶段。
                      */
                     std::vector<int64_t> m_threads;
                     bool m_threadsHasBeenSet;

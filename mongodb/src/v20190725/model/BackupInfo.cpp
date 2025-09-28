@@ -32,7 +32,8 @@ BackupInfo::BackupInfo() :
     m_backupMethodHasBeenSet(false),
     m_backIdHasBeenSet(false),
     m_deleteTimeHasBeenSet(false),
-    m_backupRegionHasBeenSet(false)
+    m_backupRegionHasBeenSet(false),
+    m_restoreTimeHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
         m_backupRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("RestoreTime") && !value["RestoreTime"].IsNull())
+    {
+        if (!value["RestoreTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.RestoreTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_restoreTime = string(value["RestoreTime"].GetString());
+        m_restoreTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void BackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "BackupRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_restoreTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestoreTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_restoreTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void BackupInfo::SetBackupRegion(const string& _backupRegion)
 bool BackupInfo::BackupRegionHasBeenSet() const
 {
     return m_backupRegionHasBeenSet;
+}
+
+string BackupInfo::GetRestoreTime() const
+{
+    return m_restoreTime;
+}
+
+void BackupInfo::SetRestoreTime(const string& _restoreTime)
+{
+    m_restoreTime = _restoreTime;
+    m_restoreTimeHasBeenSet = true;
+}
+
+bool BackupInfo::RestoreTimeHasBeenSet() const
+{
+    return m_restoreTimeHasBeenSet;
 }
 

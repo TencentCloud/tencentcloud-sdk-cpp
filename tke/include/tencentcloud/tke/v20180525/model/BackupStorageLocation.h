@@ -153,14 +153,22 @@ namespace TencentCloud
 
                     /**
                      * 获取存储仓库状态
+- Available: 可用
+- Unavailable: 不可用
                      * @return State 存储仓库状态
+- Available: 可用
+- Unavailable: 不可用
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置存储仓库状态
+- Available: 可用
+- Unavailable: 不可用
                      * @param _state 存储仓库状态
+- Available: 可用
+- Unavailable: 不可用
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -248,6 +256,8 @@ namespace TencentCloud
 
                     /**
                      * 存储仓库状态
+- Available: 可用
+- Unavailable: 不可用
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;

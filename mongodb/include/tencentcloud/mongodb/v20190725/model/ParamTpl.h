@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数模板名称
-                     * @return TplName 参数模板名称
+                     * 获取参数模板名称。
+                     * @return TplName 参数模板名称。
                      * 
                      */
                     std::string GetTplName() const;
 
                     /**
-                     * 设置参数模板名称
-                     * @param _tplName 参数模板名称
+                     * 设置参数模板名称。
+                     * @param _tplName 参数模板名称。
                      * 
                      */
                     void SetTplName(const std::string& _tplName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TplNameHasBeenSet() const;
 
                     /**
-                     * 获取参数模板ID
-                     * @return TplId 参数模板ID
+                     * 获取参数模板 ID。
+                     * @return TplId 参数模板 ID。
                      * 
                      */
                     std::string GetTplId() const;
 
                     /**
-                     * 设置参数模板ID
-                     * @param _tplId 参数模板ID
+                     * 设置参数模板 ID。
+                     * @param _tplId 参数模板 ID。
                      * 
                      */
                     void SetTplId(const std::string& _tplId);
@@ -89,15 +89,43 @@ namespace TencentCloud
                     bool TplIdHasBeenSet() const;
 
                     /**
-                     * 获取适用数据库版本
-                     * @return MongoVersion 适用数据库版本
+                     * 获取参数模板适用的数据库版本。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，
+- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
+                     * @return MongoVersion 参数模板适用的数据库版本。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，
+- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      * 
                      */
                     std::string GetMongoVersion() const;
 
                     /**
-                     * 设置适用数据库版本
-                     * @param _mongoVersion 适用数据库版本
+                     * 设置参数模板适用的数据库版本。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，
+- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
+                     * @param _mongoVersion 参数模板适用的数据库版本。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，
+- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      * 
                      */
                     void SetMongoVersion(const std::string& _mongoVersion);
@@ -110,15 +138,27 @@ namespace TencentCloud
                     bool MongoVersionHasBeenSet() const;
 
                     /**
-                     * 获取适用数据库类型
-                     * @return ClusterType 适用数据库类型
+                     * 获取参数模板适用的数据库类型。
+- REPLSET：副本集实例。
+- SHARD：分片实例。
+- STANDALONE：单节点实例。
+                     * @return ClusterType 参数模板适用的数据库类型。
+- REPLSET：副本集实例。
+- SHARD：分片实例。
+- STANDALONE：单节点实例。
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置适用数据库类型
-                     * @param _clusterType 适用数据库类型
+                     * 设置参数模板适用的数据库类型。
+- REPLSET：副本集实例。
+- SHARD：分片实例。
+- STANDALONE：单节点实例。
+                     * @param _clusterType 参数模板适用的数据库类型。
+- REPLSET：副本集实例。
+- SHARD：分片实例。
+- STANDALONE：单节点实例。
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -131,15 +171,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取参数模板描述
-                     * @return TplDesc 参数模板描述
+                     * 获取参数模板描述。
+                     * @return TplDesc 参数模板描述。
                      * 
                      */
                     std::string GetTplDesc() const;
 
                     /**
-                     * 设置参数模板描述
-                     * @param _tplDesc 参数模板描述
+                     * 设置参数模板描述。
+                     * @param _tplDesc 参数模板描述。
                      * 
                      */
                     void SetTplDesc(const std::string& _tplDesc);
@@ -152,15 +192,23 @@ namespace TencentCloud
                     bool TplDescHasBeenSet() const;
 
                     /**
-                     * 获取模板类型，包括DEFAULT（默认模板）及CUSTOMIZE（定制模板）两种类型
-                     * @return TplType 模板类型，包括DEFAULT（默认模板）及CUSTOMIZE（定制模板）两种类型
+                     * 获取模板类型。
+- DEFAULT：系统默认模板。
+- CUSTOMIZE：自定义模板。
+                     * @return TplType 模板类型。
+- DEFAULT：系统默认模板。
+- CUSTOMIZE：自定义模板。
                      * 
                      */
                     std::string GetTplType() const;
 
                     /**
-                     * 设置模板类型，包括DEFAULT（默认模板）及CUSTOMIZE（定制模板）两种类型
-                     * @param _tplType 模板类型，包括DEFAULT（默认模板）及CUSTOMIZE（定制模板）两种类型
+                     * 设置模板类型。
+- DEFAULT：系统默认模板。
+- CUSTOMIZE：自定义模板。
+                     * @param _tplType 模板类型。
+- DEFAULT：系统默认模板。
+- CUSTOMIZE：自定义模板。
                      * 
                      */
                     void SetTplType(const std::string& _tplType);
@@ -175,37 +223,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数模板名称
+                     * 参数模板名称。
                      */
                     std::string m_tplName;
                     bool m_tplNameHasBeenSet;
 
                     /**
-                     * 参数模板ID
+                     * 参数模板 ID。
                      */
                     std::string m_tplId;
                     bool m_tplIdHasBeenSet;
 
                     /**
-                     * 适用数据库版本
+                     * 参数模板适用的数据库版本。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，
+- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      */
                     std::string m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;
 
                     /**
-                     * 适用数据库类型
+                     * 参数模板适用的数据库类型。
+- REPLSET：副本集实例。
+- SHARD：分片实例。
+- STANDALONE：单节点实例。
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 参数模板描述
+                     * 参数模板描述。
                      */
                     std::string m_tplDesc;
                     bool m_tplDescHasBeenSet;
 
                     /**
-                     * 模板类型，包括DEFAULT（默认模板）及CUSTOMIZE（定制模板）两种类型
+                     * 模板类型。
+- DEFAULT：系统默认模板。
+- CUSTOMIZE：自定义模板。
                      */
                     std::string m_tplType;
                     bool m_tplTypeHasBeenSet;

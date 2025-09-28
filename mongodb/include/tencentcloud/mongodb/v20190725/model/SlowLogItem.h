@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取慢日志
-                     * @return Log 慢日志
+                     * 获取慢日志详情。
+                     * @return Log 慢日志详情。
                      * 
                      */
                     std::string GetLog() const;
 
                     /**
-                     * 设置慢日志
-                     * @param _log 慢日志
+                     * 设置慢日志详情。
+                     * @param _log 慢日志详情。
                      * 
                      */
                     void SetLog(const std::string& _log);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LogHasBeenSet() const;
 
                     /**
-                     * 获取节点名称
-                     * @return NodeName 节点名称
+                     * 获取节点名称。
+                     * @return NodeName 节点名称。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置节点名称
-                     * @param _nodeName 节点名称
+                     * 设置节点名称。
+                     * @param _nodeName 节点名称。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取queryHash
-                     * @return QueryHash queryHash
+                     * 获取查询哈希值。
+                     * @return QueryHash 查询哈希值。
                      * 
                      */
                     std::string GetQueryHash() const;
 
                     /**
-                     * 设置queryHash
-                     * @param _queryHash queryHash
+                     * 设置查询哈希值。
+                     * @param _queryHash 查询哈希值。
                      * 
                      */
                     void SetQueryHash(const std::string& _queryHash);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 慢日志
+                     * 慢日志详情。
                      */
                     std::string m_log;
                     bool m_logHasBeenSet;
 
                     /**
-                     * 节点名称
+                     * 节点名称。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * queryHash
+                     * 查询哈希值。
                      */
                     std::string m_queryHash;
                     bool m_queryHashHasBeenSet;

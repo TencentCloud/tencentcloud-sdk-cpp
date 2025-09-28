@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订阅实例id
-                     * @return SubscribeId 订阅实例id
+                     * 获取订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+
+                     * @return SubscribeId 订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+
                      * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
-                     * 设置订阅实例id
-                     * @param _subscribeId 订阅实例id
+                     * 设置订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+
+                     * @param _subscribeId 订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+
                      * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
@@ -150,7 +154,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订阅实例id
+                     * 订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+
                      */
                     std::string m_subscribeId;
                     bool m_subscribeIdHasBeenSet;

@@ -30,7 +30,8 @@ DescribeModuleStatusResponse::DescribeModuleStatusResponse() :
     m_antiTamperHasBeenSet(false),
     m_antiLeakageHasBeenSet(false),
     m_apiProtectionHasBeenSet(false),
-    m_rateLimitHasBeenSet(false)
+    m_rateLimitHasBeenSet(false),
+    m_gzipAnalysisHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome DescribeModuleStatusResponse::Deserialize(const string &payl
         m_rateLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("GzipAnalysis") && !rsp["GzipAnalysis"].IsNull())
+    {
+        if (!rsp["GzipAnalysis"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GzipAnalysis` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gzipAnalysis = rsp["GzipAnalysis"].GetUint64();
+        m_gzipAnalysisHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ string DescribeModuleStatusResponse::ToJsonString() const
         string key = "RateLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rateLimit, allocator);
+    }
+
+    if (m_gzipAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GzipAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gzipAnalysis, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -284,6 +303,16 @@ uint64_t DescribeModuleStatusResponse::GetRateLimit() const
 bool DescribeModuleStatusResponse::RateLimitHasBeenSet() const
 {
     return m_rateLimitHasBeenSet;
+}
+
+uint64_t DescribeModuleStatusResponse::GetGzipAnalysis() const
+{
+    return m_gzipAnalysis;
+}
+
+bool DescribeModuleStatusResponse::GzipAnalysisHasBeenSet() const
+{
+    return m_gzipAnalysisHasBeenSet;
 }
 
 

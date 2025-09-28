@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool AccountsHasBeenSet() const;
 
+                    /**
+                     * 获取error:...
+                     * @return ErrorMsg error:...
+                     * 
+                     */
+                    std::string GetErrorMsg() const;
+
+                    /**
+                     * 判断参数 ErrorMsg 是否已赋值
+                     * @return ErrorMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrorMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     std::vector<AccountInfo> m_accounts;
                     bool m_accountsHasBeenSet;
+
+                    /**
+                     * error:...
+                     */
+                    std::string m_errorMsg;
+                    bool m_errorMsgHasBeenSet;
 
                 };
             }

@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取同步实例id（即标识一个同步作业），形如sync-werwfs23
-                     * @return JobId 同步实例id（即标识一个同步作业），形如sync-werwfs23
+                     * 获取同步实例id（即标识一个同步作业），形如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
+                     * @return JobId 同步实例id（即标识一个同步作业），形如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置同步实例id（即标识一个同步作业），形如sync-werwfs23
-                     * @param _jobId 同步实例id（即标识一个同步作业），形如sync-werwfs23
+                     * 设置同步实例id（即标识一个同步作业），形如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
+                     * @param _jobId 同步实例id（即标识一个同步作业），形如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -66,7 +70,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 同步实例id（即标识一个同步作业），形如sync-werwfs23
+                     * 同步实例id（即标识一个同步作业），形如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

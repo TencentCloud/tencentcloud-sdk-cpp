@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Agent标识。
-                     * @return AgentId Agent标识。
+                     * 获取Agent标识。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return AgentId Agent标识。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetAgentId() const;
 
                     /**
-                     * 设置Agent标识。
-                     * @param _agentId Agent标识。
+                     * 设置Agent标识。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _agentId Agent标识。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetAgentId(const std::string& _agentId);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Agent标识。
+                     * Agent标识。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_agentId;
                     bool m_agentIdHasBeenSet;

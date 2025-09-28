@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取Remark
-                     * @return Remark Remark
+                     * 获取备注
+                     * @return Remark 备注
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置Remark
-                     * @param _remark Remark
+                     * 设置备注
+                     * @param _remark 备注
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_versionHasBeenSet;
 
                     /**
-                     * Remark
+                     * 备注
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

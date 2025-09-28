@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实例规格信息
+                * 实例规格信息。
                 */
                 class SpecificationInfo : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域信息
-                     * @return Region 地域信息
+                     * 获取地域信息。
+                     * @return Region 地域信息。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域信息
-                     * @param _region 地域信息
+                     * 设置地域信息。
+                     * @param _region 地域信息。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取可用区信息
-                     * @return Zone 可用区信息
+                     * 获取可用区信息。
+                     * @return Zone 可用区信息。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区信息
-                     * @param _zone 可用区信息
+                     * 设置可用区信息。
+                     * @param _zone 可用区信息。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取售卖规格信息
-                     * @return SpecItems 售卖规格信息
+                     * 获取售卖规格信息。
+                     * @return SpecItems 售卖规格信息。
                      * 
                      */
                     std::vector<SpecItem> GetSpecItems() const;
 
                     /**
-                     * 设置售卖规格信息
-                     * @param _specItems 售卖规格信息
+                     * 设置售卖规格信息。
+                     * @param _specItems 售卖规格信息。
                      * 
                      */
                     void SetSpecItems(const std::vector<SpecItem>& _specItems);
@@ -111,15 +111,23 @@ namespace TencentCloud
                     bool SpecItemsHasBeenSet() const;
 
                     /**
-                     * 获取是否支持跨可用区部署 1-支持，0-不支持
-                     * @return SupportMultiAZ 是否支持跨可用区部署 1-支持，0-不支持
+                     * 获取是否支持跨可用区部署。
+- 1：支持。
+- 0：不支持。
+                     * @return SupportMultiAZ 是否支持跨可用区部署。
+- 1：支持。
+- 0：不支持。
                      * 
                      */
                     int64_t GetSupportMultiAZ() const;
 
                     /**
-                     * 设置是否支持跨可用区部署 1-支持，0-不支持
-                     * @param _supportMultiAZ 是否支持跨可用区部署 1-支持，0-不支持
+                     * 设置是否支持跨可用区部署。
+- 1：支持。
+- 0：不支持。
+                     * @param _supportMultiAZ 是否支持跨可用区部署。
+- 1：支持。
+- 0：不支持。
                      * 
                      */
                     void SetSupportMultiAZ(const int64_t& _supportMultiAZ);
@@ -134,25 +142,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域信息
+                     * 地域信息。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 可用区信息
+                     * 可用区信息。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 售卖规格信息
+                     * 售卖规格信息。
                      */
                     std::vector<SpecItem> m_specItems;
                     bool m_specItemsHasBeenSet;
 
                     /**
-                     * 是否支持跨可用区部署 1-支持，0-不支持
+                     * 是否支持跨可用区部署。
+- 1：支持。
+- 0：不支持。
                      */
                     int64_t m_supportMultiAZ;
                     bool m_supportMultiAZHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
-                     * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 获取实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
-                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 设置实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取节点ID。
-                     * @return NodeIds 节点ID。
+                     * 获取节点 ID。请登录 [MongoDB 控制台的节点管理](https://console.cloud.tencent.com/mongodb)复制节点 ID。
+                     * @return NodeIds 节点 ID。请登录 [MongoDB 控制台的节点管理](https://console.cloud.tencent.com/mongodb)复制节点 ID。
                      * 
                      */
                     std::vector<std::string> GetNodeIds() const;
 
                     /**
-                     * 设置节点ID。
-                     * @param _nodeIds 节点ID。
+                     * 设置节点 ID。请登录 [MongoDB 控制台的节点管理](https://console.cloud.tencent.com/mongodb)复制节点 ID。
+                     * @param _nodeIds 节点 ID。请登录 [MongoDB 控制台的节点管理](https://console.cloud.tencent.com/mongodb)复制节点 ID。
                      * 
                      */
                     void SetNodeIds(const std::vector<std::string>& _nodeIds);
@@ -87,18 +87,30 @@ namespace TencentCloud
 
                     /**
                      * 获取节点角色。可选值包括：
-<ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
+- PRIMARY：主节点。
+- SECONDARY：从节点。
+- READONLY：只读节点。
+- ARBITER：仲裁节点。
                      * @return Roles 节点角色。可选值包括：
-<ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
+- PRIMARY：主节点。
+- SECONDARY：从节点。
+- READONLY：只读节点。
+- ARBITER：仲裁节点。
                      * 
                      */
                     std::vector<std::string> GetRoles() const;
 
                     /**
                      * 设置节点角色。可选值包括：
-<ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
+- PRIMARY：主节点。
+- SECONDARY：从节点。
+- READONLY：只读节点。
+- ARBITER：仲裁节点。
                      * @param _roles 节点角色。可选值包括：
-<ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
+- PRIMARY：主节点。
+- SECONDARY：从节点。
+- READONLY：只读节点。
+- ARBITER：仲裁节点。
                      * 
                      */
                     void SetRoles(const std::vector<std::string>& _roles);
@@ -111,15 +123,15 @@ namespace TencentCloud
                     bool RolesHasBeenSet() const;
 
                     /**
-                     * 获取该参数指定节点是否为Hidden节点，默认为false。
-                     * @return OnlyHidden 该参数指定节点是否为Hidden节点，默认为false。
+                     * 获取该参数指定节点是否为 Hidden 节点，默认为 false。
+                     * @return OnlyHidden 该参数指定节点是否为 Hidden 节点，默认为 false。
                      * 
                      */
                     bool GetOnlyHidden() const;
 
                     /**
-                     * 设置该参数指定节点是否为Hidden节点，默认为false。
-                     * @param _onlyHidden 该参数指定节点是否为Hidden节点，默认为false。
+                     * 设置该参数指定节点是否为 Hidden 节点，默认为 false。
+                     * @param _onlyHidden 该参数指定节点是否为 Hidden 节点，默认为 false。
                      * 
                      */
                     void SetOnlyHidden(const bool& _onlyHidden);
@@ -154,18 +166,22 @@ namespace TencentCloud
 
                     /**
                      * 获取该参数指定节点投票权。
-<ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
+- 1：具有投票权。
+- 0：无投票权。
                      * @return Votes 该参数指定节点投票权。
-<ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
+- 1：具有投票权。
+- 0：无投票权。
                      * 
                      */
                     int64_t GetVotes() const;
 
                     /**
                      * 设置该参数指定节点投票权。
-<ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
+- 1：具有投票权。
+- 0：无投票权。
                      * @param _votes 该参数指定节点投票权。
-<ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
+- 1：具有投票权。
+- 0：无投票权。
                      * 
                      */
                     void SetVotes(const int64_t& _votes);
@@ -201,26 +217,29 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 节点ID。
+                     * 节点 ID。请登录 [MongoDB 控制台的节点管理](https://console.cloud.tencent.com/mongodb)复制节点 ID。
                      */
                     std::vector<std::string> m_nodeIds;
                     bool m_nodeIdsHasBeenSet;
 
                     /**
                      * 节点角色。可选值包括：
-<ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
+- PRIMARY：主节点。
+- SECONDARY：从节点。
+- READONLY：只读节点。
+- ARBITER：仲裁节点。
                      */
                     std::vector<std::string> m_roles;
                     bool m_rolesHasBeenSet;
 
                     /**
-                     * 该参数指定节点是否为Hidden节点，默认为false。
+                     * 该参数指定节点是否为 Hidden 节点，默认为 false。
                      */
                     bool m_onlyHidden;
                     bool m_onlyHiddenHasBeenSet;
@@ -233,7 +252,8 @@ namespace TencentCloud
 
                     /**
                      * 该参数指定节点投票权。
-<ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
+- 1：具有投票权。
+- 0：无投票权。
                      */
                     int64_t m_votes;
                     bool m_votesHasBeenSet;

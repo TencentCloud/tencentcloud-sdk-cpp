@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @return StartTime 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 获取第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
+                     * @return StartTime 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @param _startTime 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 设置第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
+                     * @param _startTime 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @return EndTime 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 获取最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
+                     * @return EndTime 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @param _endTime 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 设置最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
+                     * @param _endTime 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例ID数组，用于筛选指定实例的任务列表。
-                     * @return InstanceIds 实例ID数组，用于筛选指定实例的任务列表。
+                     * 获取实例ID数组，用于筛选指定实例的任务列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceIds 实例ID数组，用于筛选指定实例的任务列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例ID数组，用于筛选指定实例的任务列表。
-                     * @param _instanceIds 实例ID数组，用于筛选指定实例的任务列表。
+                     * 设置实例ID数组，用于筛选指定实例的任务列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceIds 实例ID数组，用于筛选指定实例的任务列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -234,19 +234,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 实例ID数组，用于筛选指定实例的任务列表。
+                     * 实例ID数组，用于筛选指定实例的任务列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

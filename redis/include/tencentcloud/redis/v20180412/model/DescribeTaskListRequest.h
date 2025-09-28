@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称。
-                     * @return InstanceName 实例名称。
+                     * 获取实例名称。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例名称。
+                     * @return InstanceName 实例名称。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例名称。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称。
-                     * @param _instanceName 实例名称。
+                     * 设置实例名称。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例名称。
+                     * @param _instanceName 实例名称。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例名称。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
-                     * @return Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 获取分页偏移量。取值需为 Limit 的整数倍：offset=limit*(页码-1)，默认值为0。
+                     * @return Offset 分页偏移量。取值需为 Limit 的整数倍：offset=limit*(页码-1)，默认值为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
-                     * @param _offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 设置分页偏移量。取值需为 Limit 的整数倍：offset=limit*(页码-1)，默认值为0。
+                     * @param _offset 分页偏移量。取值需为 Limit 的整数倍：offset=limit*(页码-1)，默认值为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -543,7 +543,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称。
+                     * 实例名称。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例名称。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -555,7 +555,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 分页偏移量。取值需为 Limit 的整数倍：offset=limit*(页码-1)，默认值为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

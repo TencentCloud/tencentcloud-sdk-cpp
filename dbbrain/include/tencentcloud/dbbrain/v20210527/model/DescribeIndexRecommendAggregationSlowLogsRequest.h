@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CollectionHasBeenSet() const;
 
                     /**
-                     * 获取签名。这个值是DescribelndexRecommendInfo接口返回
-                     * @return Signs 签名。这个值是DescribelndexRecommendInfo接口返回
+                     * 获取签名。这个值是 [DescribeIndexRecommendInfo](https://cloud.tencent.com/document/product/1130/98911) 接口返回
+                     * @return Signs 签名。这个值是 [DescribeIndexRecommendInfo](https://cloud.tencent.com/document/product/1130/98911) 接口返回
                      * 
                      */
                     std::vector<std::string> GetSigns() const;
 
                     /**
-                     * 设置签名。这个值是DescribelndexRecommendInfo接口返回
-                     * @param _signs 签名。这个值是DescribelndexRecommendInfo接口返回
+                     * 设置签名。这个值是 [DescribeIndexRecommendInfo](https://cloud.tencent.com/document/product/1130/98911) 接口返回
+                     * @param _signs 签名。这个值是 [DescribeIndexRecommendInfo](https://cloud.tencent.com/document/product/1130/98911) 接口返回
                      * 
                      */
                     void SetSigns(const std::vector<std::string>& _signs);
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_productHasBeenSet;
 
                     /**
-                     * 实例ID。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_collectionHasBeenSet;
 
                     /**
-                     * 签名。这个值是DescribelndexRecommendInfo接口返回
+                     * 签名。这个值是 [DescribeIndexRecommendInfo](https://cloud.tencent.com/document/product/1130/98911) 接口返回
                      */
                     std::vector<std::string> m_signs;
                     bool m_signsHasBeenSet;

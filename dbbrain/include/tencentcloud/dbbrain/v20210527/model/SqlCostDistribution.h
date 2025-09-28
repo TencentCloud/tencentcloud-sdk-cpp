@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ToHasBeenSet() const;
 
                     /**
-                     * 获取耗时占比。
-                     * @return Ratio 耗时占比。
+                     * 获取耗时占比。单位（%）
+                     * @return Ratio 耗时占比。单位（%）
                      * 
                      */
                     double GetRatio() const;
 
                     /**
-                     * 设置耗时占比。
-                     * @param _ratio 耗时占比。
+                     * 设置耗时占比。单位（%）
+                     * @param _ratio 耗时占比。单位（%）
                      * 
                      */
                     void SetRatio(const double& _ratio);
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_toHasBeenSet;
 
                     /**
-                     * 耗时占比。
+                     * 耗时占比。单位（%）
                      */
                     double m_ratio;
                     bool m_ratioHasBeenSet;

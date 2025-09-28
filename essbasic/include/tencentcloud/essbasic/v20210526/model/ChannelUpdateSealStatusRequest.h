@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/Option.h>
 
 
 namespace TencentCloud
@@ -153,6 +154,27 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取个性化配置字段，默认不传。
+                     * @return Options 个性化配置字段，默认不传。
+                     * 
+                     */
+                    std::vector<Option> GetOptions() const;
+
+                    /**
+                     * 设置个性化配置字段，默认不传。
+                     * @param _options 个性化配置字段，默认不传。
+                     * 
+                     */
+                    void SetOptions(const std::vector<Option>& _options);
+
+                    /**
+                     * 判断参数 Options 是否已赋值
+                     * @return Options 是否已赋值
+                     * 
+                     */
+                    bool OptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -185,6 +207,12 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 个性化配置字段，默认不传。
+                     */
+                    std::vector<Option> m_options;
+                    bool m_optionsHasBeenSet;
 
                 };
             }

@@ -283,6 +283,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyCdbProxyParamResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceLogToCLSRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceLogToCLSResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceModesRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceModesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceProjectRequest.h>
@@ -775,6 +777,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceLogToCLSResponse> ModifyDBInstanceLogToCLSOutcome;
                 typedef std::future<ModifyDBInstanceLogToCLSOutcome> ModifyDBInstanceLogToCLSOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceLogToCLSRequest&, ModifyDBInstanceLogToCLSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceLogToCLSAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceModesResponse> ModifyDBInstanceModesOutcome;
+                typedef std::future<ModifyDBInstanceModesOutcome> ModifyDBInstanceModesOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceModesRequest&, ModifyDBInstanceModesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceModesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
                 typedef std::future<ModifyDBInstanceNameOutcome> ModifyDBInstanceNameOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceNameRequest&, ModifyDBInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNameAsyncHandler;
@@ -2115,6 +2120,15 @@ namespace TencentCloud
                 ModifyDBInstanceLogToCLSOutcome ModifyDBInstanceLogToCLS(const Model::ModifyDBInstanceLogToCLSRequest &request);
                 void ModifyDBInstanceLogToCLSAsync(const Model::ModifyDBInstanceLogToCLSRequest& request, const ModifyDBInstanceLogToCLSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceLogToCLSOutcomeCallable ModifyDBInstanceLogToCLSCallable(const Model::ModifyDBInstanceLogToCLSRequest& request);
+
+                /**
+                 *该接口（ModifyDBInstanceModes）用于更改云数据库的模式。
+                 * @param req ModifyDBInstanceModesRequest
+                 * @return ModifyDBInstanceModesOutcome
+                 */
+                ModifyDBInstanceModesOutcome ModifyDBInstanceModes(const Model::ModifyDBInstanceModesRequest &request);
+                void ModifyDBInstanceModesAsync(const Model::ModifyDBInstanceModesRequest& request, const ModifyDBInstanceModesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceModesOutcomeCallable ModifyDBInstanceModesCallable(const Model::ModifyDBInstanceModesRequest& request);
 
                 /**
                  *本接口(ModifyDBInstanceName)用于修改云数据库实例的名称。

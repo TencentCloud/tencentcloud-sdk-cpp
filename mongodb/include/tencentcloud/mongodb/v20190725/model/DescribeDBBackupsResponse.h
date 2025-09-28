@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份列表
-                     * @return BackupList 备份列表
+                     * 获取备份列表。
+                     * @return BackupList 备份列表。
                      * 
                      */
                     std::vector<BackupInfo> GetBackupList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool BackupListHasBeenSet() const;
 
                     /**
-                     * 获取备份总数
-                     * @return TotalCount 备份总数
+                     * 获取备份总数。
+                     * @return TotalCount 备份总数。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份列表
+                     * 备份列表。
                      */
                     std::vector<BackupInfo> m_backupList;
                     bool m_backupListHasBeenSet;
 
                     /**
-                     * 备份总数
+                     * 备份总数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

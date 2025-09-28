@@ -5630,6 +5630,49 @@ CdbClient::ModifyDBInstanceLogToCLSOutcomeCallable CdbClient::ModifyDBInstanceLo
     return task->get_future();
 }
 
+CdbClient::ModifyDBInstanceModesOutcome CdbClient::ModifyDBInstanceModes(const ModifyDBInstanceModesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceModes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceModesResponse rsp = ModifyDBInstanceModesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceModesOutcome(rsp);
+        else
+            return ModifyDBInstanceModesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceModesOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyDBInstanceModesAsync(const ModifyDBInstanceModesRequest& request, const ModifyDBInstanceModesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceModes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyDBInstanceModesOutcomeCallable CdbClient::ModifyDBInstanceModesCallable(const ModifyDBInstanceModesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceModesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceModes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ModifyDBInstanceNameOutcome CdbClient::ModifyDBInstanceName(const ModifyDBInstanceNameRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceName");

@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool SeriesHasBeenSet() const;
 
                     /**
-                     * 获取监控指标对应的时间戳。
-                     * @return Timestamp 监控指标对应的时间戳。
+                     * 获取监控指标对应的时间戳。（精度：秒）
+                     * @return Timestamp 监控指标对应的时间戳。（精度：秒）
                      * 
                      */
                     std::vector<int64_t> GetTimestamp() const;
 
                     /**
-                     * 设置监控指标对应的时间戳。
-                     * @param _timestamp 监控指标对应的时间戳。
+                     * 设置监控指标对应的时间戳。（精度：秒）
+                     * @param _timestamp 监控指标对应的时间戳。（精度：秒）
                      * 
                      */
                     void SetTimestamp(const std::vector<int64_t>& _timestamp);
@@ -98,7 +98,7 @@ namespace TencentCloud
                     bool m_seriesHasBeenSet;
 
                     /**
-                     * 监控指标对应的时间戳。
+                     * 监控指标对应的时间戳。（精度：秒）
                      */
                     std::vector<int64_t> m_timestamp;
                     bool m_timestampHasBeenSet;

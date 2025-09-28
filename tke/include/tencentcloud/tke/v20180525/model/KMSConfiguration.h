@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取kms id
-                     * @return KeyId kms id
+                     * 获取kms id，可以在密钥管理控制台获取
+                     * @return KeyId kms id，可以在密钥管理控制台获取
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
-                     * 设置kms id
-                     * @param _keyId kms id
+                     * 设置kms id，可以在密钥管理控制台获取
+                     * @param _keyId kms id，可以在密钥管理控制台获取
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * kms id
+                     * kms id，可以在密钥管理控制台获取
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;

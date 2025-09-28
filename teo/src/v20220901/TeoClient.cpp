@@ -212,6 +212,49 @@ TeoClient::CheckCnameStatusOutcomeCallable TeoClient::CheckCnameStatusCallable(c
     return task->get_future();
 }
 
+TeoClient::ConfirmMultiPathGatewayOriginACLOutcome TeoClient::ConfirmMultiPathGatewayOriginACL(const ConfirmMultiPathGatewayOriginACLRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConfirmMultiPathGatewayOriginACL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConfirmMultiPathGatewayOriginACLResponse rsp = ConfirmMultiPathGatewayOriginACLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConfirmMultiPathGatewayOriginACLOutcome(rsp);
+        else
+            return ConfirmMultiPathGatewayOriginACLOutcome(o.GetError());
+    }
+    else
+    {
+        return ConfirmMultiPathGatewayOriginACLOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ConfirmMultiPathGatewayOriginACLAsync(const ConfirmMultiPathGatewayOriginACLRequest& request, const ConfirmMultiPathGatewayOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConfirmMultiPathGatewayOriginACL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ConfirmMultiPathGatewayOriginACLOutcomeCallable TeoClient::ConfirmMultiPathGatewayOriginACLCallable(const ConfirmMultiPathGatewayOriginACLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConfirmMultiPathGatewayOriginACLOutcome()>>(
+        [this, request]()
+        {
+            return this->ConfirmMultiPathGatewayOriginACL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::ConfirmOriginACLUpdateOutcome TeoClient::ConfirmOriginACLUpdate(const ConfirmOriginACLUpdateRequest &request)
 {
     auto outcome = MakeRequest(request, "ConfirmOriginACLUpdate");
@@ -4297,6 +4340,49 @@ TeoClient::DescribeMultiPathGatewayLineOutcomeCallable TeoClient::DescribeMultiP
     return task->get_future();
 }
 
+TeoClient::DescribeMultiPathGatewayOriginACLOutcome TeoClient::DescribeMultiPathGatewayOriginACL(const DescribeMultiPathGatewayOriginACLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMultiPathGatewayOriginACL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMultiPathGatewayOriginACLResponse rsp = DescribeMultiPathGatewayOriginACLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMultiPathGatewayOriginACLOutcome(rsp);
+        else
+            return DescribeMultiPathGatewayOriginACLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMultiPathGatewayOriginACLOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeMultiPathGatewayOriginACLAsync(const DescribeMultiPathGatewayOriginACLRequest& request, const DescribeMultiPathGatewayOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMultiPathGatewayOriginACL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeMultiPathGatewayOriginACLOutcomeCallable TeoClient::DescribeMultiPathGatewayOriginACLCallable(const DescribeMultiPathGatewayOriginACLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMultiPathGatewayOriginACLOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMultiPathGatewayOriginACL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeMultiPathGatewayRegionsOutcome TeoClient::DescribeMultiPathGatewayRegions(const DescribeMultiPathGatewayRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMultiPathGatewayRegions");
@@ -7386,6 +7472,49 @@ TeoClient::ModifyMultiPathGatewaySecretKeyOutcomeCallable TeoClient::ModifyMulti
         [this, request]()
         {
             return this->ModifyMultiPathGatewaySecretKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyMultiPathGatewayStatusOutcome TeoClient::ModifyMultiPathGatewayStatus(const ModifyMultiPathGatewayStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMultiPathGatewayStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMultiPathGatewayStatusResponse rsp = ModifyMultiPathGatewayStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMultiPathGatewayStatusOutcome(rsp);
+        else
+            return ModifyMultiPathGatewayStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMultiPathGatewayStatusOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyMultiPathGatewayStatusAsync(const ModifyMultiPathGatewayStatusRequest& request, const ModifyMultiPathGatewayStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMultiPathGatewayStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyMultiPathGatewayStatusOutcomeCallable TeoClient::ModifyMultiPathGatewayStatusCallable(const ModifyMultiPathGatewayStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMultiPathGatewayStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMultiPathGatewayStatus(request);
         }
     );
 

@@ -30,7 +30,8 @@ ModifyModuleStatusRequest::ModifyModuleStatusRequest() :
     m_apiProtectionHasBeenSet(false),
     m_antiTamperHasBeenSet(false),
     m_antiLeakageHasBeenSet(false),
-    m_rateLimitHasBeenSet(false)
+    m_rateLimitHasBeenSet(false),
+    m_gzipAnalysisHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string ModifyModuleStatusRequest::ToJsonString() const
         string key = "RateLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rateLimit, allocator);
+    }
+
+    if (m_gzipAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GzipAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gzipAnalysis, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void ModifyModuleStatusRequest::SetRateLimit(const uint64_t& _rateLimit)
 bool ModifyModuleStatusRequest::RateLimitHasBeenSet() const
 {
     return m_rateLimitHasBeenSet;
+}
+
+uint64_t ModifyModuleStatusRequest::GetGzipAnalysis() const
+{
+    return m_gzipAnalysis;
+}
+
+void ModifyModuleStatusRequest::SetGzipAnalysis(const uint64_t& _gzipAnalysis)
+{
+    m_gzipAnalysis = _gzipAnalysis;
+    m_gzipAnalysisHasBeenSet = true;
+}
+
+bool ModifyModuleStatusRequest::GzipAnalysisHasBeenSet() const
+{
+    return m_gzipAnalysisHasBeenSet;
 }
 
 

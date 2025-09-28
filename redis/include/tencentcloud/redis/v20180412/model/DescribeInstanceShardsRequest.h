@@ -64,23 +64,23 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否过滤掉从节信息。
+                     * 获取指定是否过滤掉从节信息。
 - true；过滤从节点。
-- false：不过滤。
-                     * @return FilterSlave 是否过滤掉从节信息。
+- false：不过滤。默认为 false。
+                     * @return FilterSlave 指定是否过滤掉从节信息。
 - true；过滤从节点。
-- false：不过滤。
+- false：不过滤。默认为 false。
                      * 
                      */
                     bool GetFilterSlave() const;
 
                     /**
-                     * 设置是否过滤掉从节信息。
+                     * 设置指定是否过滤掉从节信息。
 - true；过滤从节点。
-- false：不过滤。
-                     * @param _filterSlave 是否过滤掉从节信息。
+- false：不过滤。默认为 false。
+                     * @param _filterSlave 指定是否过滤掉从节信息。
 - true；过滤从节点。
-- false：不过滤。
+- false：不过滤。默认为 false。
                      * 
                      */
                     void SetFilterSlave(const bool& _filterSlave);
@@ -101,9 +101,9 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 是否过滤掉从节信息。
+                     * 指定是否过滤掉从节信息。
 - true；过滤从节点。
-- false：不过滤。
+- false：不过滤。默认为 false。
                      */
                     bool m_filterSlave;
                     bool m_filterSlaveHasBeenSet;

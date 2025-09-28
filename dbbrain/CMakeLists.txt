@@ -24,7 +24,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/SlowLogUser.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeUserAutonomyProfileRequest.h
-  include/tencentcloud/dbbrain/v20210527/model/RedisKeySpaceData.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeMetricTopProxiesResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyActionsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/SecLogExportTaskInfo.h
@@ -155,6 +155,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/HealthStatus.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAllUserContactResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisCommandCostStatisticsResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/RedisKeySpaceData.h
   include/tencentcloud/dbbrain/v20210527/model/CancelDBAutonomyEventResponse.h
   include/tencentcloud/dbbrain/v20210527/model/MonitorMetric.h
   include/tencentcloud/dbbrain/v20210527/model/ProfileInfo.h
@@ -191,6 +192,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/CmdCostGroup.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysRequest.h
   include/tencentcloud/dbbrain/v20210527/model/ModifyUserAutonomyProfileRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeMetricTopProxiesRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CancelRedisBigKeyAnalysisTasksRequest.h
   include/tencentcloud/dbbrain/v20210527/model/HealthScoreTimeSeriesData.h
   include/tencentcloud/dbbrain/v20210527/model/Process.h
@@ -238,6 +240,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/MonitorMetricSeriesData.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBPerfTimeSeriesResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/RedisMetricTopProxiesData.h
   include/tencentcloud/dbbrain/v20210527/model/RedisCostCmd.h
   include/tencentcloud/dbbrain/v20210527/model/IndexesToDrop.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreResponse.h
@@ -353,7 +356,7 @@ set(dbbrain_src
   src/v20210527/model/SlowLogUser.cpp
   src/v20210527/model/DescribeSlowLogTimeSeriesStatsRequest.cpp
   src/v20210527/model/DescribeUserAutonomyProfileRequest.cpp
-  src/v20210527/model/RedisKeySpaceData.cpp
+  src/v20210527/model/DescribeMetricTopProxiesResponse.cpp
   src/v20210527/model/DescribeRedisTopKeyPrefixListRequest.cpp
   src/v20210527/model/DescribeDBAutonomyActionsRequest.cpp
   src/v20210527/model/SecLogExportTaskInfo.cpp
@@ -484,6 +487,7 @@ set(dbbrain_src
   src/v20210527/model/HealthStatus.cpp
   src/v20210527/model/DescribeAllUserContactResponse.cpp
   src/v20210527/model/DescribeRedisCommandCostStatisticsResponse.cpp
+  src/v20210527/model/RedisKeySpaceData.cpp
   src/v20210527/model/CancelDBAutonomyEventResponse.cpp
   src/v20210527/model/MonitorMetric.cpp
   src/v20210527/model/ProfileInfo.cpp
@@ -520,6 +524,7 @@ set(dbbrain_src
   src/v20210527/model/CmdCostGroup.cpp
   src/v20210527/model/DescribeRedisTopBigKeysRequest.cpp
   src/v20210527/model/ModifyUserAutonomyProfileRequest.cpp
+  src/v20210527/model/DescribeMetricTopProxiesRequest.cpp
   src/v20210527/model/CancelRedisBigKeyAnalysisTasksRequest.cpp
   src/v20210527/model/HealthScoreTimeSeriesData.cpp
   src/v20210527/model/Process.cpp
@@ -567,6 +572,7 @@ set(dbbrain_src
   src/v20210527/model/MonitorMetricSeriesData.cpp
   src/v20210527/model/DescribeDBPerfTimeSeriesResponse.cpp
   src/v20210527/model/DescribeRedisTopKeyPrefixListResponse.cpp
+  src/v20210527/model/RedisMetricTopProxiesData.cpp
   src/v20210527/model/RedisCostCmd.cpp
   src/v20210527/model/IndexesToDrop.cpp
   src/v20210527/model/DescribeHealthScoreResponse.cpp

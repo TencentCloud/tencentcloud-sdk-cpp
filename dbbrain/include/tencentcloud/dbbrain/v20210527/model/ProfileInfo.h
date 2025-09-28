@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取语言, 如"zh"。
-                     * @return Language 语言, 如"zh"。
+                     * 获取语言类型, 包含“zh”-中文，“en”-英文。
+                     * @return Language 语言类型, 包含“zh”-中文，“en”-英文。
                      * 
                      */
                     std::string GetLanguage() const;
 
                     /**
-                     * 设置语言, 如"zh"。
-                     * @param _language 语言, 如"zh"。
+                     * 设置语言类型, 包含“zh”-中文，“en”-英文。
+                     * @param _language 语言类型, 包含“zh”-中文，“en”-英文。
                      * 
                      */
                     void SetLanguage(const std::string& _language);
@@ -92,7 +92,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 语言, 如"zh"。
+                     * 语言类型, 包含“zh”-中文，“en”-英文。
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;

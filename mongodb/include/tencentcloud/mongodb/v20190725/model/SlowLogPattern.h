@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取慢日志模式
-                     * @return Pattern 慢日志模式
+                     * 获取慢日志输出格式：库名.表名.命令。
+                     * @return Pattern 慢日志输出格式：库名.表名.命令。
                      * 
                      */
                     std::string GetPattern() const;
 
                     /**
-                     * 设置慢日志模式
-                     * @param _pattern 慢日志模式
+                     * 设置慢日志输出格式：库名.表名.命令。
+                     * @param _pattern 慢日志输出格式：库名.表名.命令。
                      * 
                      */
                     void SetPattern(const std::string& _pattern);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PatternHasBeenSet() const;
 
                     /**
-                     * 获取queryHash
-                     * @return QueryHash queryHash
+                     * 获取记录慢日志时所带的queryHash 值，标识一类查询。
+                     * @return QueryHash 记录慢日志时所带的queryHash 值，标识一类查询。
                      * 
                      */
                     std::string GetQueryHash() const;
 
                     /**
-                     * 设置queryHash
-                     * @param _queryHash queryHash
+                     * 设置记录慢日志时所带的queryHash 值，标识一类查询。
+                     * @param _queryHash 记录慢日志时所带的queryHash 值，标识一类查询。
                      * 
                      */
                     void SetQueryHash(const std::string& _queryHash);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool QueryHashHasBeenSet() const;
 
                     /**
-                     * 获取最大执行时间
-                     * @return MaxTime 最大执行时间
+                     * 获取最大执行时间。单位：毫秒。
+                     * @return MaxTime 最大执行时间。单位：毫秒。
                      * 
                      */
                     uint64_t GetMaxTime() const;
 
                     /**
-                     * 设置最大执行时间
-                     * @param _maxTime 最大执行时间
+                     * 设置最大执行时间。单位：毫秒。
+                     * @param _maxTime 最大执行时间。单位：毫秒。
                      * 
                      */
                     void SetMaxTime(const uint64_t& _maxTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool MaxTimeHasBeenSet() const;
 
                     /**
-                     * 获取平均执行时间
-                     * @return AverageTime 平均执行时间
+                     * 获取平均执行时间。单位：毫秒。
+                     * @return AverageTime 平均执行时间。单位：毫秒。
                      * 
                      */
                     uint64_t GetAverageTime() const;
 
                     /**
-                     * 设置平均执行时间
-                     * @param _averageTime 平均执行时间
+                     * 设置平均执行时间。单位：毫秒。
+                     * @param _averageTime 平均执行时间。单位：毫秒。
                      * 
                      */
                     void SetAverageTime(const uint64_t& _averageTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool AverageTimeHasBeenSet() const;
 
                     /**
-                     * 获取该模式慢日志条数
-                     * @return Total 该模式慢日志条数
+                     * 获取慢日志条数。
+                     * @return Total 慢日志条数。
                      * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
-                     * 设置该模式慢日志条数
-                     * @param _total 该模式慢日志条数
+                     * 设置慢日志条数。
+                     * @param _total 慢日志条数。
                      * 
                      */
                     void SetTotal(const uint64_t& _total);
@@ -154,31 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 慢日志模式
+                     * 慢日志输出格式：库名.表名.命令。
                      */
                     std::string m_pattern;
                     bool m_patternHasBeenSet;
 
                     /**
-                     * queryHash
+                     * 记录慢日志时所带的queryHash 值，标识一类查询。
                      */
                     std::string m_queryHash;
                     bool m_queryHashHasBeenSet;
 
                     /**
-                     * 最大执行时间
+                     * 最大执行时间。单位：毫秒。
                      */
                     uint64_t m_maxTime;
                     bool m_maxTimeHasBeenSet;
 
                     /**
-                     * 平均执行时间
+                     * 平均执行时间。单位：毫秒。
                      */
                     uint64_t m_averageTime;
                     bool m_averageTimeHasBeenSet;
 
                     /**
-                     * 该模式慢日志条数
+                     * 慢日志条数。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

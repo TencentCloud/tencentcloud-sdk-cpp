@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool DBHasBeenSet() const;
 
                     /**
-                     * 获取线程的操作状态，用于筛选线程列表。
-                     * @return State 线程的操作状态，用于筛选线程列表。
+                     * 获取线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等
+                     * @return State 线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置线程的操作状态，用于筛选线程列表。
-                     * @param _state 线程的操作状态，用于筛选线程列表。
+                     * 设置线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等
+                     * @param _state 线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取线程的执行类型，用于筛选线程列表。
-                     * @return Command 线程的执行类型，用于筛选线程列表。
+                     * 获取线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等
+                     * @return Command 线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置线程的执行类型，用于筛选线程列表。
-                     * @param _command 线程的执行类型，用于筛选线程列表。
+                     * 设置线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等
+                     * @param _command 线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -298,7 +298,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -328,13 +328,13 @@ namespace TencentCloud
                     bool m_dBHasBeenSet;
 
                     /**
-                     * 线程的操作状态，用于筛选线程列表。
+                     * 线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 线程的执行类型，用于筛选线程列表。
+                     * 线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;

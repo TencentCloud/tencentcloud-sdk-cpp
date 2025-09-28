@@ -466,6 +466,27 @@ namespace TencentCloud
                      */
                     bool LatestSyncTimeHasBeenSet() const;
 
+                    /**
+                     * 获取分组名称数组
+                     * @return NamePathArr 分组名称数组
+                     * 
+                     */
+                    std::vector<std::string> GetNamePathArr() const;
+
+                    /**
+                     * 设置分组名称数组
+                     * @param _namePathArr 分组名称数组
+                     * 
+                     */
+                    void SetNamePathArr(const std::vector<std::string>& _namePathArr);
+
+                    /**
+                     * 判断参数 NamePathArr 是否已赋值
+                     * @return NamePathArr 是否已赋值
+                     * 
+                     */
+                    bool NamePathArrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -587,6 +608,12 @@ namespace TencentCloud
                      */
                     std::string m_latestSyncTime;
                     bool m_latestSyncTimeHasBeenSet;
+
+                    /**
+                     * 分组名称数组
+                     */
+                    std::vector<std::string> m_namePathArr;
+                    bool m_namePathArrHasBeenSet;
 
                 };
             }

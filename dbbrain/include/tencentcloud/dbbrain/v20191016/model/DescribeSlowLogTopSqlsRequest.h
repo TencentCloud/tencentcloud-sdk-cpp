@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID 。
-                     * @return InstanceId 实例 ID 。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID 。
-                     * @param _instanceId 实例 ID 。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -108,14 +108,42 @@ namespace TencentCloud
 
                     /**
                      * 获取排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。
+其中：
+QueryTime    - 查询耗时  
+ExecTimes    - 执行次数  
+RowsSent     - 返回行数  
+LockTime     - 锁等待时间  
+RowsExamined - 扫描行数  
+
                      * @return SortBy 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。
+其中：
+QueryTime    - 查询耗时  
+ExecTimes    - 执行次数  
+RowsSent     - 返回行数  
+LockTime     - 锁等待时间  
+RowsExamined - 扫描行数  
+
                      * 
                      */
                     std::string GetSortBy() const;
 
                     /**
                      * 设置排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。
+其中：
+QueryTime    - 查询耗时  
+ExecTimes    - 执行次数  
+RowsSent     - 返回行数  
+LockTime     - 锁等待时间  
+RowsExamined - 扫描行数  
+
                      * @param _sortBy 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。
+其中：
+QueryTime    - 查询耗时  
+ExecTimes    - 执行次数  
+RowsSent     - 返回行数  
+LockTime     - 锁等待时间  
+RowsExamined - 扫描行数  
+
                      * 
                      */
                     void SetSortBy(const std::string& _sortBy);
@@ -235,7 +263,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID 。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -254,6 +282,13 @@ namespace TencentCloud
 
                     /**
                      * 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。
+其中：
+QueryTime    - 查询耗时  
+ExecTimes    - 执行次数  
+RowsSent     - 返回行数  
+LockTime     - 锁等待时间  
+RowsExamined - 扫描行数  
+
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;

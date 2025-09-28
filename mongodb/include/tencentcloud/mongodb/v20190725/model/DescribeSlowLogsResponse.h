@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取慢日志总数
-                     * @return Count 慢日志总数
+                     * 获取慢日志总数。
+                     * @return Count 慢日志总数。
                      * 
                      */
                     uint64_t GetCount() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取慢日志详情
-                     * @return SlowLogs 慢日志详情
+                     * 获取慢日志详情。
+                     * @return SlowLogs 慢日志详情。
                      * 
                      */
                     std::vector<std::string> GetSlowLogs() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 慢日志总数
+                     * 慢日志总数。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 慢日志详情
+                     * 慢日志详情。
                      */
                     std::vector<std::string> m_slowLogs;
                     bool m_slowLogsHasBeenSet;

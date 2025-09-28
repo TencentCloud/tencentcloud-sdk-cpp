@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取与Product保持一致。如："dcdb" ,"mariadb"。
-                     * @return NodeRequestType 与Product保持一致。如："dcdb" ,"mariadb"。
+                     * 获取NodeRequestType主要标识数据库产品类型，与Product保持一致。如："dcdb" ,"mariadb"。
+                     * @return NodeRequestType NodeRequestType主要标识数据库产品类型，与Product保持一致。如："dcdb" ,"mariadb"。
                      * 
                      */
                     std::string GetNodeRequestType() const;
 
                     /**
-                     * 设置与Product保持一致。如："dcdb" ,"mariadb"。
-                     * @param _nodeRequestType 与Product保持一致。如："dcdb" ,"mariadb"。
+                     * 设置NodeRequestType主要标识数据库产品类型，与Product保持一致。如："dcdb" ,"mariadb"。
+                     * @param _nodeRequestType NodeRequestType主要标识数据库产品类型，与Product保持一致。如："dcdb" ,"mariadb"。
                      * 
                      */
                     void SetNodeRequestType(const std::string& _nodeRequestType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NodeRequestTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例Id。
-                     * @return InstanceId 实例Id。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id。
-                     * @param _instanceId 实例Id。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_productHasBeenSet;
 
                     /**
-                     * 与Product保持一致。如："dcdb" ,"mariadb"。
+                     * NodeRequestType主要标识数据库产品类型，与Product保持一致。如："dcdb" ,"mariadb"。
                      */
                     std::string m_nodeRequestType;
                     bool m_nodeRequestTypeHasBeenSet;
 
                     /**
-                     * 实例Id。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

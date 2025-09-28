@@ -24,7 +24,10 @@ StaffStatus::StaffStatus() :
     m_cursorHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_reasonHasBeenSet(false),
+    m_staffEmailHasBeenSet(false),
+    m_staffNoHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,36 @@ CoreInternalOutcome StaffStatus::Deserialize(const rapidjson::Value &value)
         m_sessionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Reason") && !value["Reason"].IsNull())
+    {
+        if (!value["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffStatus.Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(value["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("StaffEmail") && !value["StaffEmail"].IsNull())
+    {
+        if (!value["StaffEmail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffStatus.StaffEmail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_staffEmail = string(value["StaffEmail"].GetString());
+        m_staffEmailHasBeenSet = true;
+    }
+
+    if (value.HasMember("StaffNo") && !value["StaffNo"].IsNull())
+    {
+        if (!value["StaffNo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffStatus.StaffNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_staffNo = string(value["StaffNo"].GetString());
+        m_staffNoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +143,30 @@ void StaffStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_staffEmailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaffEmail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_staffEmail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_staffNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaffNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_staffNo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +234,53 @@ void StaffStatus::SetSessionId(const string& _sessionId)
 bool StaffStatus::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+string StaffStatus::GetReason() const
+{
+    return m_reason;
+}
+
+void StaffStatus::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool StaffStatus::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
+}
+
+string StaffStatus::GetStaffEmail() const
+{
+    return m_staffEmail;
+}
+
+void StaffStatus::SetStaffEmail(const string& _staffEmail)
+{
+    m_staffEmail = _staffEmail;
+    m_staffEmailHasBeenSet = true;
+}
+
+bool StaffStatus::StaffEmailHasBeenSet() const
+{
+    return m_staffEmailHasBeenSet;
+}
+
+string StaffStatus::GetStaffNo() const
+{
+    return m_staffNo;
+}
+
+void StaffStatus::SetStaffNo(const string& _staffNo)
+{
+    m_staffNo = _staffNo;
+    m_staffNoHasBeenSet = true;
+}
+
+bool StaffStatus::StaffNoHasBeenSet() const
+{
+    return m_staffNoHasBeenSet;
 }
 

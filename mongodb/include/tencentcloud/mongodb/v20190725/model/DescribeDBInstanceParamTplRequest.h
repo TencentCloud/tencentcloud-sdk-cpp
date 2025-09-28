@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数模板 ID 查询条件。
-                     * @return TplIds 参数模板 ID 查询条件。
+                     * 获取参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
+                     * @return TplIds 参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
                      * 
                      */
                     std::vector<std::string> GetTplIds() const;
 
                     /**
-                     * 设置参数模板 ID 查询条件。
-                     * @param _tplIds 参数模板 ID 查询条件。
+                     * 设置参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
+                     * @param _tplIds 参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
                      * 
                      */
                     void SetTplIds(const std::vector<std::string>& _tplIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TplIdsHasBeenSet() const;
 
                     /**
-                     * 获取模板名称，查询条件。
-                     * @return TplNames 模板名称，查询条件。
+                     * 获取指定查询的模板名称。
+                     * @return TplNames 指定查询的模板名称。
                      * 
                      */
                     std::vector<std::string> GetTplNames() const;
 
                     /**
-                     * 设置模板名称，查询条件。
-                     * @param _tplNames 模板名称，查询条件。
+                     * 设置指定查询的模板名称。
+                     * @param _tplNames 指定查询的模板名称。
                      * 
                      */
                     void SetTplNames(const std::vector<std::string>& _tplNames);
@@ -85,27 +85,43 @@ namespace TencentCloud
                     bool TplNamesHasBeenSet() const;
 
                     /**
-                     * 获取根据版本号查询参数模板，具体支持的售卖版本，请参见[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询云数据库的售卖规格的返回结果。参数与版本对应关系如下所示：
-- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
-- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
+                     * 获取指定所需查询的参数模板的数据库版本号。具体支持的版本信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
-                     * @return MongoVersion 根据版本号查询参数模板，具体支持的售卖版本，请参见[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询云数据库的售卖规格的返回结果。参数与版本对应关系如下所示：
-- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
-- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
+                     * @return MongoVersion 指定所需查询的参数模板的数据库版本号。具体支持的版本信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      * 
                      */
                     std::vector<std::string> GetMongoVersion() const;
 
                     /**
-                     * 设置根据版本号查询参数模板，具体支持的售卖版本，请参见[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询云数据库的售卖规格的返回结果。参数与版本对应关系如下所示：
-- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
-- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
+                     * 设置指定所需查询的参数模板的数据库版本号。具体支持的版本信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
-                     * @param _mongoVersion 根据版本号查询参数模板，具体支持的售卖版本，请参见[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询云数据库的售卖规格的返回结果。参数与版本对应关系如下所示：
-- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
-- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
+                     * @param _mongoVersion 指定所需查询的参数模板的数据库版本号。具体支持的版本信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      * 
                      */
                     void SetMongoVersion(const std::vector<std::string>& _mongoVersion);
@@ -118,15 +134,23 @@ namespace TencentCloud
                     bool MongoVersionHasBeenSet() const;
 
                     /**
-                     * 获取根据模板类型查询参数模板，支持DEFAULT（默认模板）和CUSTOMIZE（自定义模板）两种。
-                     * @return TplType 根据模板类型查询参数模板，支持DEFAULT（默认模板）和CUSTOMIZE（自定义模板）两种。
+                     * 获取指定查询的模板类型。
+- DEFAULT：系统默认模板。
+- CUSTOMIZE：自定义模板。
+                     * @return TplType 指定查询的模板类型。
+- DEFAULT：系统默认模板。
+- CUSTOMIZE：自定义模板。
                      * 
                      */
                     std::string GetTplType() const;
 
                     /**
-                     * 设置根据模板类型查询参数模板，支持DEFAULT（默认模板）和CUSTOMIZE（自定义模板）两种。
-                     * @param _tplType 根据模板类型查询参数模板，支持DEFAULT（默认模板）和CUSTOMIZE（自定义模板）两种。
+                     * 设置指定查询的模板类型。
+- DEFAULT：系统默认模板。
+- CUSTOMIZE：自定义模板。
+                     * @param _tplType 指定查询的模板类型。
+- DEFAULT：系统默认模板。
+- CUSTOMIZE：自定义模板。
                      * 
                      */
                     void SetTplType(const std::string& _tplType);
@@ -141,28 +165,34 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数模板 ID 查询条件。
+                     * 参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
                      */
                     std::vector<std::string> m_tplIds;
                     bool m_tplIdsHasBeenSet;
 
                     /**
-                     * 模板名称，查询条件。
+                     * 指定查询的模板名称。
                      */
                     std::vector<std::string> m_tplNames;
                     bool m_tplNamesHasBeenSet;
 
                     /**
-                     * 根据版本号查询参数模板，具体支持的售卖版本，请参见[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询云数据库的售卖规格的返回结果。参数与版本对应关系如下所示：
-- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
-- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
+                     * 指定所需查询的参数模板的数据库版本号。具体支持的版本信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      */
                     std::vector<std::string> m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;
 
                     /**
-                     * 根据模板类型查询参数模板，支持DEFAULT（默认模板）和CUSTOMIZE（自定义模板）两种。
+                     * 指定查询的模板类型。
+- DEFAULT：系统默认模板。
+- CUSTOMIZE：自定义模板。
                      */
                     std::string m_tplType;
                     bool m_tplTypeHasBeenSet;

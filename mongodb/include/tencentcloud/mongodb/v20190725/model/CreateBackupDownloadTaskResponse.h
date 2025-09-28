@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取下载任务状态
-                     * @return Tasks 下载任务状态
+                     * 获取下载任务状态。
+                     * @return Tasks 下载任务状态。
                      * 
                      */
                     std::vector<BackupDownloadTaskStatus> GetTasks() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 下载任务状态
+                     * 下载任务状态。
                      */
                     std::vector<BackupDownloadTaskStatus> m_tasks;
                     bool m_tasksHasBeenSet;

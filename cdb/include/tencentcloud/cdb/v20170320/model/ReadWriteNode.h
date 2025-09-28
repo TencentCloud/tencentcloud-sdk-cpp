@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 集群版 RW 节点的配置。
+                * 云盘版 RW 节点的配置。
                 */
                 class ReadWriteNode : public AbstractModel
                 {
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。
-                     * @return NodeId 升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。
+                     * 获取升级云盘版实例时，如果要调整只读节点可用区，需要指定节点 ID。
+                     * @return NodeId 升级云盘版实例时，如果要调整只读节点可用区，需要指定节点 ID。
                      * 
                      */
                     std::string GetNodeId() const;
 
                     /**
-                     * 设置升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。
-                     * @param _nodeId 升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。
+                     * 设置升级云盘版实例时，如果要调整只读节点可用区，需要指定节点 ID。
+                     * @param _nodeId 升级云盘版实例时，如果要调整只读节点可用区，需要指定节点 ID。
                      * 
                      */
                     void SetNodeId(const std::string& _nodeId);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。
+                     * 升级云盘版实例时，如果要调整只读节点可用区，需要指定节点 ID。
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;

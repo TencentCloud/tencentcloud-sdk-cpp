@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型
-                     * @return ApplyType 类型
+                     * 获取策略类型，固定值：instance， instance-代表实例类型策略
+                     * @return ApplyType 策略类型，固定值：instance， instance-代表实例类型策略
                      * 
                      */
                     std::string GetApplyType() const;
 
                     /**
-                     * 设置类型
-                     * @param _applyType 类型
+                     * 设置策略类型，固定值：instance， instance-代表实例类型策略
+                     * @param _applyType 策略类型，固定值：instance， instance-代表实例类型策略
                      * 
                      */
                     void SetApplyType(const std::string& _applyType);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool ApplyTypeHasBeenSet() const;
 
                     /**
-                     * 获取开启策略
-                     * @return Enable 开启策略
+                     * 获取策略是否开启，0-代表开启，1-代表关闭
+                     * @return Enable 策略是否开启，0-代表开启，1-代表关闭
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
-                     * 设置开启策略
-                     * @param _enable 开启策略
+                     * 设置策略是否开启，0-代表开启，1-代表关闭
+                     * @param _enable 策略是否开启，0-代表开启，1-代表关闭
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取列表
-                     * @return InstanceIds 列表
+                     * 获取实例id列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceIds 实例id列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::vector<InstanceID> GetInstanceIds() const;
 
                     /**
-                     * 设置列表
-                     * @param _instanceIds 列表
+                     * 设置实例id列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceIds 实例id列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceIds(const std::vector<InstanceID>& _instanceIds);
@@ -134,15 +134,15 @@ Instance-关联实例列表的实例
                     bool NewProfileLevelHasBeenSet() const;
 
                     /**
-                     * 获取新策略名
-                     * @return NewProfileName 新策略名
+                     * 获取新策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。
+                     * @return NewProfileName 新策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。
                      * 
                      */
                     std::string GetNewProfileName() const;
 
                     /**
-                     * 设置新策略名
-                     * @param _newProfileName 新策略名
+                     * 设置新策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。
+                     * @param _newProfileName 新策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。
                      * 
                      */
                     void SetNewProfileName(const std::string& _newProfileName);
@@ -155,15 +155,15 @@ Instance-关联实例列表的实例
                     bool NewProfileNameHasBeenSet() const;
 
                     /**
-                     * 获取旧策略名
-                     * @return ProfileName 旧策略名
+                     * 获取旧策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。
+                     * @return ProfileName 旧策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。
                      * 
                      */
                     std::string GetProfileName() const;
 
                     /**
-                     * 设置旧策略名
-                     * @param _profileName 旧策略名
+                     * 设置旧策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。
+                     * @param _profileName 旧策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。
                      * 
                      */
                     void SetProfileName(const std::string& _profileName);
@@ -176,15 +176,15 @@ Instance-关联实例列表的实例
                     bool ProfileNameHasBeenSet() const;
 
                     /**
-                     * 获取策略类型
-                     * @return ProfileType 策略类型
+                     * 获取策略类型，固定值：alarm_policy
+                     * @return ProfileType 策略类型，固定值：alarm_policy
                      * 
                      */
                     std::string GetProfileType() const;
 
                     /**
-                     * 设置策略类型
-                     * @param _profileType 策略类型
+                     * 设置策略类型，固定值：alarm_policy
+                     * @param _profileType 策略类型，固定值：alarm_policy
                      * 
                      */
                     void SetProfileType(const std::string& _profileType);
@@ -262,10 +262,10 @@ Instance-关联实例列表的实例
                     /**
                      * 获取快速规则  支持包括fatal-致命, critical-严重,
 warning-告警,
-information-通知
+information-通知，与Rules互斥
                      * @return QuickRule 快速规则  支持包括fatal-致命, critical-严重,
 warning-告警,
-information-通知
+information-通知，与Rules互斥
                      * 
                      */
                     std::string GetQuickRule() const;
@@ -273,10 +273,10 @@ information-通知
                     /**
                      * 设置快速规则  支持包括fatal-致命, critical-严重,
 warning-告警,
-information-通知
+information-通知，与Rules互斥
                      * @param _quickRule 快速规则  支持包括fatal-致命, critical-严重,
 warning-告警,
-information-通知
+information-通知，与Rules互斥
                      * 
                      */
                     void SetQuickRule(const std::string& _quickRule);
@@ -289,15 +289,15 @@ information-通知
                     bool QuickRuleHasBeenSet() const;
 
                     /**
-                     * 获取自定义规则
-                     * @return Rules 自定义规则
+                     * 获取自定义规则，与QuickRule互斥。
+                     * @return Rules 自定义规则，与QuickRule互斥。
                      * 
                      */
                     std::vector<AlarmsRules> GetRules() const;
 
                     /**
-                     * 设置自定义规则
-                     * @param _rules 自定义规则
+                     * 设置自定义规则，与QuickRule互斥。
+                     * @param _rules 自定义规则，与QuickRule互斥。
                      * 
                      */
                     void SetRules(const std::vector<AlarmsRules>& _rules);
@@ -312,19 +312,19 @@ information-通知
                 private:
 
                     /**
-                     * 类型
+                     * 策略类型，固定值：instance， instance-代表实例类型策略
                      */
                     std::string m_applyType;
                     bool m_applyTypeHasBeenSet;
 
                     /**
-                     * 开启策略
+                     * 策略是否开启，0-代表开启，1-代表关闭
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 列表
+                     * 实例id列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::vector<InstanceID> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -337,19 +337,19 @@ Instance-关联实例列表的实例
                     bool m_newProfileLevelHasBeenSet;
 
                     /**
-                     * 新策略名
+                     * 新策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。
                      */
                     std::string m_newProfileName;
                     bool m_newProfileNameHasBeenSet;
 
                     /**
-                     * 旧策略名
+                     * 旧策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。
                      */
                     std::string m_profileName;
                     bool m_profileNameHasBeenSet;
 
                     /**
-                     * 策略类型
+                     * 策略类型，固定值：alarm_policy
                      */
                     std::string m_profileType;
                     bool m_profileTypeHasBeenSet;
@@ -375,13 +375,13 @@ Instance-关联实例列表的实例
                     /**
                      * 快速规则  支持包括fatal-致命, critical-严重,
 warning-告警,
-information-通知
+information-通知，与Rules互斥
                      */
                     std::string m_quickRule;
                     bool m_quickRuleHasBeenSet;
 
                     /**
-                     * 自定义规则
+                     * 自定义规则，与QuickRule互斥。
                      */
                     std::vector<AlarmsRules> m_rules;
                     bool m_rulesHasBeenSet;

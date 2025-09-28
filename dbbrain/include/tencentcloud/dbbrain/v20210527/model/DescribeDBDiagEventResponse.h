@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool DiagItemHasBeenSet() const;
 
                     /**
-                     * 获取诊断类型。
-                     * @return DiagType 诊断类型。
+                     * 获取诊断类型。支持值包括"高危账号","自增键耗尽","连接性检查","CPU利用率","死锁","全表扫描","高并发/压力请求","预编译语句过多","内存利用率","Metadata lock","磁盘超限","内存超限","只读锁","只读实例剔除","行锁","活跃会话","慢SQL","数据库快照","磁盘空间利用率","执行计划变化","主从切换","Table open cache命中率低","大表","事务未提交","事务导致复制延迟"等。
+                     * @return DiagType 诊断类型。支持值包括"高危账号","自增键耗尽","连接性检查","CPU利用率","死锁","全表扫描","高并发/压力请求","预编译语句过多","内存利用率","Metadata lock","磁盘超限","内存超限","只读锁","只读实例剔除","行锁","活跃会话","慢SQL","数据库快照","磁盘空间利用率","执行计划变化","主从切换","Table open cache命中率低","大表","事务未提交","事务导致复制延迟"等。
                      * 
                      */
                     std::string GetDiagType() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool SeverityHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间。格式: "yyyy-MM-dd HH:mm:ss"
+                     * @return StartTime 开始时间。格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     std::string GetStartTime() const;
@@ -184,8 +184,8 @@ namespace TencentCloud
                     bool MetricHasBeenSet() const;
 
                     /**
-                     * 获取结束时间。
-                     * @return EndTime 结束时间。
+                     * 获取结束时间。格式: "yyyy-MM-dd HH:mm:ss"
+                     * @return EndTime 结束时间。格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     std::string GetEndTime() const;
@@ -206,7 +206,7 @@ namespace TencentCloud
                     bool m_diagItemHasBeenSet;
 
                     /**
-                     * 诊断类型。
+                     * 诊断类型。支持值包括"高危账号","自增键耗尽","连接性检查","CPU利用率","死锁","全表扫描","高并发/压力请求","预编译语句过多","内存利用率","Metadata lock","磁盘超限","内存超限","只读锁","只读实例剔除","行锁","活跃会话","慢SQL","数据库快照","磁盘空间利用率","执行计划变化","主从切换","Table open cache命中率低","大表","事务未提交","事务导致复制延迟"等。
                      */
                     std::string m_diagType;
                     bool m_diagTypeHasBeenSet;
@@ -242,7 +242,7 @@ namespace TencentCloud
                     bool m_severityHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 开始时间。格式: "yyyy-MM-dd HH:mm:ss"
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -260,7 +260,7 @@ namespace TencentCloud
                     bool m_metricHasBeenSet;
 
                     /**
-                     * 结束时间。
+                     * 结束时间。格式: "yyyy-MM-dd HH:mm:ss"
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

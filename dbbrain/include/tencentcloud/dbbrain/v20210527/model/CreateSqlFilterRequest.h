@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,39 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
-                     * @return SqlType SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
+                     * 获取SQL语句的类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
+其中：
+SELECT   - 查询  
+UPDATE   - 更新  
+DELETE   - 删除  
+INSERT   - 插入  
+REPLACE  - 替换
+                     * @return SqlType SQL语句的类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
+其中：
+SELECT   - 查询  
+UPDATE   - 更新  
+DELETE   - 删除  
+INSERT   - 插入  
+REPLACE  - 替换
                      * 
                      */
                     std::string GetSqlType() const;
 
                     /**
-                     * 设置SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
-                     * @param _sqlType SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
+                     * 设置SQL语句的类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
+其中：
+SELECT   - 查询  
+UPDATE   - 更新  
+DELETE   - 删除  
+INSERT   - 插入  
+REPLACE  - 替换
+                     * @param _sqlType SQL语句的类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
+其中：
+SELECT   - 查询  
+UPDATE   - 更新  
+DELETE   - 删除  
+INSERT   - 插入  
+REPLACE  - 替换
                      * 
                      */
                     void SetSqlType(const std::string& _sqlType);
@@ -148,15 +172,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
-                     * @return SessionToken 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * 获取通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * @return SessionToken 通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
                      * 
                      */
                     std::string GetSessionToken() const;
 
                     /**
-                     * 设置通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
-                     * @param _sessionToken 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * 设置通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * @param _sessionToken 通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
                      * 
                      */
                     void SetSessionToken(const std::string& _sessionToken);
@@ -192,13 +216,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
+                     * SQL语句的类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
+其中：
+SELECT   - 查询  
+UPDATE   - 更新  
+DELETE   - 删除  
+INSERT   - 插入  
+REPLACE  - 替换
                      */
                     std::string m_sqlType;
                     bool m_sqlTypeHasBeenSet;
@@ -222,7 +252,7 @@ namespace TencentCloud
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * 通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
                      */
                     std::string m_sessionToken;
                     bool m_sessionTokenHasBeenSet;

@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
-ChannelUpdateSealStatusResponse::ChannelUpdateSealStatusResponse()
+ChannelUpdateSealStatusResponse::ChannelUpdateSealStatusResponse() :
+    m_sealOperatorVerifyPathHasBeenSet(false),
+    m_sealOperatorVerifyQrcodeUrlHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome ChannelUpdateSealStatusResponse::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("SealOperatorVerifyPath") && !rsp["SealOperatorVerifyPath"].IsNull())
+    {
+        if (!rsp["SealOperatorVerifyPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SealOperatorVerifyPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sealOperatorVerifyPath = string(rsp["SealOperatorVerifyPath"].GetString());
+        m_sealOperatorVerifyPathHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SealOperatorVerifyQrcodeUrl") && !rsp["SealOperatorVerifyQrcodeUrl"].IsNull())
+    {
+        if (!rsp["SealOperatorVerifyQrcodeUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SealOperatorVerifyQrcodeUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sealOperatorVerifyQrcodeUrl = string(rsp["SealOperatorVerifyQrcodeUrl"].GetString());
+        m_sealOperatorVerifyQrcodeUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string ChannelUpdateSealStatusResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_sealOperatorVerifyPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealOperatorVerifyPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sealOperatorVerifyPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealOperatorVerifyQrcodeUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealOperatorVerifyQrcodeUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sealOperatorVerifyQrcodeUrl.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string ChannelUpdateSealStatusResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ChannelUpdateSealStatusResponse::GetSealOperatorVerifyPath() const
+{
+    return m_sealOperatorVerifyPath;
+}
+
+bool ChannelUpdateSealStatusResponse::SealOperatorVerifyPathHasBeenSet() const
+{
+    return m_sealOperatorVerifyPathHasBeenSet;
+}
+
+string ChannelUpdateSealStatusResponse::GetSealOperatorVerifyQrcodeUrl() const
+{
+    return m_sealOperatorVerifyQrcodeUrl;
+}
+
+bool ChannelUpdateSealStatusResponse::SealOperatorVerifyQrcodeUrlHasBeenSet() const
+{
+    return m_sealOperatorVerifyQrcodeUrlHasBeenSet;
+}
 
 

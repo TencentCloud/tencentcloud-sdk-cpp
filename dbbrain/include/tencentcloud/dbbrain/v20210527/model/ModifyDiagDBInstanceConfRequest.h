@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceConfsHasBeenSet() const;
 
                     /**
-                     * 获取生效实例地域，取值为"All"，代表全地域。
-                     * @return Regions 生效实例地域，取值为"All"，代表全地域。
+                     * 获取生效实例地域，固定为"All"，代表全地域。
+                     * @return Regions 生效实例地域，固定为"All"，代表全地域。
                      * 
                      */
                     std::string GetRegions() const;
 
                     /**
-                     * 设置生效实例地域，取值为"All"，代表全地域。
-                     * @param _regions 生效实例地域，取值为"All"，代表全地域。
+                     * 设置生效实例地域，固定为"All"，代表全地域。
+                     * @param _regions 生效实例地域，固定为"All"，代表全地域。
                      * 
                      */
                     void SetRegions(const std::string& _regions);
@@ -108,14 +108,22 @@ namespace TencentCloud
 
                     /**
                      * 获取指定更改巡检状态的实例ID。
+可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+
                      * @return InstanceIds 指定更改巡检状态的实例ID。
+可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置指定更改巡检状态的实例ID。
+可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+
                      * @param _instanceIds 指定更改巡检状态的实例ID。
+可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -136,7 +144,7 @@ namespace TencentCloud
                     bool m_instanceConfsHasBeenSet;
 
                     /**
-                     * 生效实例地域，取值为"All"，代表全地域。
+                     * 生效实例地域，固定为"All"，代表全地域。
                      */
                     std::string m_regions;
                     bool m_regionsHasBeenSet;
@@ -149,6 +157,8 @@ namespace TencentCloud
 
                     /**
                      * 指定更改巡检状态的实例ID。
+可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

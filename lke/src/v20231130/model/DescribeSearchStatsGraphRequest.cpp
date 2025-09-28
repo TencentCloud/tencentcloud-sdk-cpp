@@ -31,7 +31,9 @@ DescribeSearchStatsGraphRequest::DescribeSearchStatsGraphRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_appBizIdsHasBeenSet(false),
-    m_spaceIdHasBeenSet(false)
+    m_spaceIdHasBeenSet(false),
+    m_statStartTimeHasBeenSet(false),
+    m_statEndTimeHasBeenSet(false)
 {
 }
 
@@ -122,6 +124,22 @@ string DescribeSearchStatsGraphRequest::ToJsonString() const
         string key = "SpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_statStartTime, allocator);
+    }
+
+    if (m_statEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_statEndTime, allocator);
     }
 
 
@@ -274,6 +292,38 @@ void DescribeSearchStatsGraphRequest::SetSpaceId(const string& _spaceId)
 bool DescribeSearchStatsGraphRequest::SpaceIdHasBeenSet() const
 {
     return m_spaceIdHasBeenSet;
+}
+
+int64_t DescribeSearchStatsGraphRequest::GetStatStartTime() const
+{
+    return m_statStartTime;
+}
+
+void DescribeSearchStatsGraphRequest::SetStatStartTime(const int64_t& _statStartTime)
+{
+    m_statStartTime = _statStartTime;
+    m_statStartTimeHasBeenSet = true;
+}
+
+bool DescribeSearchStatsGraphRequest::StatStartTimeHasBeenSet() const
+{
+    return m_statStartTimeHasBeenSet;
+}
+
+int64_t DescribeSearchStatsGraphRequest::GetStatEndTime() const
+{
+    return m_statEndTime;
+}
+
+void DescribeSearchStatsGraphRequest::SetStatEndTime(const int64_t& _statEndTime)
+{
+    m_statEndTime = _statEndTime;
+    m_statEndTimeHasBeenSet = true;
+}
+
+bool DescribeSearchStatsGraphRequest::StatEndTimeHasBeenSet() const
+{
+    return m_statEndTimeHasBeenSet;
 }
 
 

@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NodeRequestTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID 。
-                     * @return InstanceId 实例 ID 。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID 。
-                     * @param _instanceId 实例 ID 。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，如“2019-09-10 12:13:14”。	
-                     * @return StartTime 开始时间，如“2019-09-10 12:13:14”。	
+                     * 获取开始时间，如“2025-03-17T00:00:00+00:00”。
+                     * @return StartTime 开始时间，如“2025-03-17T00:00:00+00:00”。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，如“2019-09-10 12:13:14”。	
-                     * @param _startTime 开始时间，如“2019-09-10 12:13:14”。	
+                     * 设置开始时间，如“2025-03-17T00:00:00+00:00”。
+                     * @param _startTime 开始时间，如“2025-03-17T00:00:00+00:00”。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取截止时间，如“2019-09-11 10:13:14”。
-                     * @return EndTime 截止时间，如“2019-09-11 10:13:14”。
+                     * 获取结束时间，如“2025-03-17T01:00:00+00:00”。
+                     * @return EndTime 结束时间，如“2025-03-17T01:00:00+00:00”。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置截止时间，如“2019-09-11 10:13:14”。
-                     * @param _endTime 截止时间，如“2019-09-11 10:13:14”。
+                     * 设置结束时间，如“2025-03-17T01:00:00+00:00”。
+                     * @param _endTime 结束时间，如“2025-03-17T01:00:00+00:00”。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -184,19 +184,19 @@ namespace TencentCloud
                     bool m_nodeRequestTypeHasBeenSet;
 
                     /**
-                     * 实例 ID 。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间，如“2019-09-10 12:13:14”。	
+                     * 开始时间，如“2025-03-17T00:00:00+00:00”。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 截止时间，如“2019-09-11 10:13:14”。
+                     * 结束时间，如“2025-03-17T01:00:00+00:00”。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

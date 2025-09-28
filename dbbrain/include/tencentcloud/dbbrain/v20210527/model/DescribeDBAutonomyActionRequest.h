@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自治任务ID。
-                     * @return ActionId 自治任务ID。
+                     * 获取自治任务ID。可通过 [DescribeDBAutonomyActions](https://cloud.tencent.com/document/product/1130/116974) 接口获取。
+                     * @return ActionId 自治任务ID。可通过 [DescribeDBAutonomyActions](https://cloud.tencent.com/document/product/1130/116974) 接口获取。
                      * 
                      */
                     int64_t GetActionId() const;
 
                     /**
-                     * 设置自治任务ID。
-                     * @param _actionId 自治任务ID。
+                     * 设置自治任务ID。可通过 [DescribeDBAutonomyActions](https://cloud.tencent.com/document/product/1130/116974) 接口获取。
+                     * @param _actionId 自治任务ID。可通过 [DescribeDBAutonomyActions](https://cloud.tencent.com/document/product/1130/116974) 接口获取。
                      * 
                      */
                     void SetActionId(const int64_t& _actionId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ActionIdHasBeenSet() const;
 
                     /**
-                     * 获取实列ID。
-                     * @return InstanceId 实列ID。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实列ID。
-                     * @param _instanceId 实列ID。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -108,13 +108,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自治任务ID。
+                     * 自治任务ID。可通过 [DescribeDBAutonomyActions](https://cloud.tencent.com/document/product/1130/116974) 接口获取。
                      */
                     int64_t m_actionId;
                     bool m_actionIdHasBeenSet;
 
                     /**
-                     * 实列ID。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

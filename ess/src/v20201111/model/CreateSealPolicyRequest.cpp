@@ -29,7 +29,8 @@ CreateSealPolicyRequest::CreateSealPolicyRequest() :
     m_expiredHasBeenSet(false),
     m_userIdsHasBeenSet(false),
     m_policyHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,21 @@ string CreateSealPolicyRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_optionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Options";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_options.begin(); itr != m_options.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -228,6 +244,22 @@ void CreateSealPolicyRequest::SetAgent(const Agent& _agent)
 bool CreateSealPolicyRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+vector<Option> CreateSealPolicyRequest::GetOptions() const
+{
+    return m_options;
+}
+
+void CreateSealPolicyRequest::SetOptions(const vector<Option>& _options)
+{
+    m_options = _options;
+    m_optionsHasBeenSet = true;
+}
+
+bool CreateSealPolicyRequest::OptionsHasBeenSet() const
+{
+    return m_optionsHasBeenSet;
 }
 
 

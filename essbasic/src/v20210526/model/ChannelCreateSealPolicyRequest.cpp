@@ -27,7 +27,8 @@ ChannelCreateSealPolicyRequest::ChannelCreateSealPolicyRequest() :
     m_sealIdHasBeenSet(false),
     m_userIdsHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_organizationHasBeenSet(false)
+    m_organizationHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,21 @@ string ChannelCreateSealPolicyRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_organization.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_optionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Options";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_options.begin(); itr != m_options.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -172,6 +188,22 @@ void ChannelCreateSealPolicyRequest::SetOrganization(const OrganizationInfo& _or
 bool ChannelCreateSealPolicyRequest::OrganizationHasBeenSet() const
 {
     return m_organizationHasBeenSet;
+}
+
+vector<Option> ChannelCreateSealPolicyRequest::GetOptions() const
+{
+    return m_options;
+}
+
+void ChannelCreateSealPolicyRequest::SetOptions(const vector<Option>& _options)
+{
+    m_options = _options;
+    m_optionsHasBeenSet = true;
+}
+
+bool ChannelCreateSealPolicyRequest::OptionsHasBeenSet() const
+{
+    return m_optionsHasBeenSet;
 }
 
 

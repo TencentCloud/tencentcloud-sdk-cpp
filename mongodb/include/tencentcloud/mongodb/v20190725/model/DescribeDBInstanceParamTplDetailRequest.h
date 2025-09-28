@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数模板 ID。
-                     * @return TplId 参数模板 ID。
+                     * 获取参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
+                     * @return TplId 参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
                      * 
                      */
                     std::string GetTplId() const;
 
                     /**
-                     * 设置参数模板 ID。
-                     * @param _tplId 参数模板 ID。
+                     * 设置参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
+                     * @param _tplId 参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
                      * 
                      */
                     void SetTplId(const std::string& _tplId);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数模板 ID。
+                     * 参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
                      */
                     std::string m_tplId;
                     bool m_tplIdHasBeenSet;

@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 按key回档，源数据所在的库表
+                * 按 Key 闪回的数据库及集合信息
                 */
                 class FlashbackDatabase : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取按key回档源数据所在库
-                     * @return DBName 按key回档源数据所在库
+                     * 获取按 Key 闪回目标数据所在库。
+                     * @return DBName 按 Key 闪回目标数据所在库。
                      * 
                      */
                     std::string GetDBName() const;
 
                     /**
-                     * 设置按key回档源数据所在库
-                     * @param _dBName 按key回档源数据所在库
+                     * 设置按 Key 闪回目标数据所在库。
+                     * @param _dBName 按 Key 闪回目标数据所在库。
                      * 
                      */
                     void SetDBName(const std::string& _dBName);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DBNameHasBeenSet() const;
 
                     /**
-                     * 获取按key回档的集群数组
-                     * @return Collections 按key回档的集群数组
+                     * 获取按 Key 闪回的数据库集合。
+                     * @return Collections 按 Key 闪回的数据库集合。
                      * 
                      */
                     std::vector<FlashbackCollection> GetCollections() const;
 
                     /**
-                     * 设置按key回档的集群数组
-                     * @param _collections 按key回档的集群数组
+                     * 设置按 Key 闪回的数据库集合。
+                     * @param _collections 按 Key 闪回的数据库集合。
                      * 
                      */
                     void SetCollections(const std::vector<FlashbackCollection>& _collections);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 按key回档源数据所在库
+                     * 按 Key 闪回目标数据所在库。
                      */
                     std::string m_dBName;
                     bool m_dBNameHasBeenSet;
 
                     /**
-                     * 按key回档的集群数组
+                     * 按 Key 闪回的数据库集合。
                      */
                     std::vector<FlashbackCollection> m_collections;
                     bool m_collectionsHasBeenSet;
