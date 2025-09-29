@@ -22,7 +22,8 @@ using namespace std;
 
 ViewImage::ViewImage() :
     m_viewTypeHasBeenSet(false),
-    m_viewImageUrlHasBeenSet(false)
+    m_viewImageUrlHasBeenSet(false),
+    m_viewImageBase64HasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ViewImage::Deserialize(const rapidjson::Value &value)
         m_viewImageUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("ViewImageBase64") && !value["ViewImageBase64"].IsNull())
+    {
+        if (!value["ViewImageBase64"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ViewImage.ViewImageBase64` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_viewImageBase64 = string(value["ViewImageBase64"].GetString());
+        m_viewImageBase64HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ViewImage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ViewImageUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_viewImageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_viewImageBase64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ViewImageBase64";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_viewImageBase64.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ViewImage::SetViewImageUrl(const string& _viewImageUrl)
 bool ViewImage::ViewImageUrlHasBeenSet() const
 {
     return m_viewImageUrlHasBeenSet;
+}
+
+string ViewImage::GetViewImageBase64() const
+{
+    return m_viewImageBase64;
+}
+
+void ViewImage::SetViewImageBase64(const string& _viewImageBase64)
+{
+    m_viewImageBase64 = _viewImageBase64;
+    m_viewImageBase64HasBeenSet = true;
+}
+
+bool ViewImage::ViewImageBase64HasBeenSet() const
+{
+    return m_viewImageBase64HasBeenSet;
 }
 

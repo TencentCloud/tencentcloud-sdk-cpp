@@ -44,8 +44,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群状态，例如：Serving
-                     * @return InstanceState 集群状态，例如：Serving
+                     * 获取集群状态 
+ Init  创建中 
+Serving   运行中 
+Isolated   已隔离 
+Changing  变更中
+                     * @return InstanceState 集群状态 
+ Init  创建中 
+Serving   运行中 
+Isolated   已隔离 
+Changing  变更中
                      * 
                      */
                     std::string GetInstanceState() const;
@@ -158,7 +166,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群状态，例如：Serving
+                     * 集群状态 
+ Init  创建中 
+Serving   运行中 
+Isolated   已隔离 
+Changing  变更中
                      */
                     std::string m_instanceState;
                     bool m_instanceStateHasBeenSet;

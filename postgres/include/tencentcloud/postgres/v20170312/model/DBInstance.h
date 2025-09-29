@@ -989,6 +989,27 @@ mssql_compatible引擎：
                      */
                     bool SupportIpv6HasBeenSet() const;
 
+                    /**
+                     * 获取实例已经弹性扩容的cpu核数
+                     * @return ExpandedCpu 实例已经弹性扩容的cpu核数
+                     * 
+                     */
+                    uint64_t GetExpandedCpu() const;
+
+                    /**
+                     * 设置实例已经弹性扩容的cpu核数
+                     * @param _expandedCpu 实例已经弹性扩容的cpu核数
+                     * 
+                     */
+                    void SetExpandedCpu(const uint64_t& _expandedCpu);
+
+                    /**
+                     * 判断参数 ExpandedCpu 是否已赋值
+                     * @return ExpandedCpu 是否已赋值
+                     * 
+                     */
+                    bool ExpandedCpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1254,6 +1275,12 @@ mssql_compatible引擎：
                      */
                     uint64_t m_supportIpv6;
                     bool m_supportIpv6HasBeenSet;
+
+                    /**
+                     * 实例已经弹性扩容的cpu核数
+                     */
+                    uint64_t m_expandedCpu;
+                    bool m_expandedCpuHasBeenSet;
 
                 };
             }

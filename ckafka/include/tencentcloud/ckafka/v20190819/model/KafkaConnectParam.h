@@ -155,6 +155,132 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取网络类型：PUBLIC公网；VPC
+                     * @return NetworkType 网络类型：PUBLIC公网；VPC
+                     * 
+                     */
+                    std::string GetNetworkType() const;
+
+                    /**
+                     * 设置网络类型：PUBLIC公网；VPC
+                     * @param _networkType 网络类型：PUBLIC公网；VPC
+                     * 
+                     */
+                    void SetNetworkType(const std::string& _networkType);
+
+                    /**
+                     * 判断参数 NetworkType 是否已赋值
+                     * @return NetworkType 是否已赋值
+                     * 
+                     */
+                    bool NetworkTypeHasBeenSet() const;
+
+                    /**
+                     * 获取vpcId，NetworkType=VPC时必传
+                     * @return UniqVpcId vpcId，NetworkType=VPC时必传
+                     * 
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置vpcId，NetworkType=VPC时必传
+                     * @param _uniqVpcId vpcId，NetworkType=VPC时必传
+                     * 
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     * 
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取vip，NetworkType=VPC时必传
+                     * @return ServiceVip vip，NetworkType=VPC时必传
+                     * 
+                     */
+                    std::string GetServiceVip() const;
+
+                    /**
+                     * 设置vip，NetworkType=VPC时必传
+                     * @param _serviceVip vip，NetworkType=VPC时必传
+                     * 
+                     */
+                    void SetServiceVip(const std::string& _serviceVip);
+
+                    /**
+                     * 判断参数 ServiceVip 是否已赋值
+                     * @return ServiceVip 是否已赋值
+                     * 
+                     */
+                    bool ServiceVipHasBeenSet() const;
+
+                    /**
+                     * 获取端口，NetworkType=VPC时必传
+                     * @return Port 端口，NetworkType=VPC时必传
+                     * 
+                     */
+                    int64_t GetPort() const;
+
+                    /**
+                     * 设置端口，NetworkType=VPC时必传
+                     * @param _port 端口，NetworkType=VPC时必传
+                     * 
+                     */
+                    void SetPort(const int64_t& _port);
+
+                    /**
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
+                     * 
+                     */
+                    bool PortHasBeenSet() const;
+
+                    /**
+                     * 获取跨云同步下需要客户传递唯一Id标志一组资源
+                     * @return CrossNetResourceUniqueId 跨云同步下需要客户传递唯一Id标志一组资源
+                     * 
+                     */
+                    std::string GetCrossNetResourceUniqueId() const;
+
+                    /**
+                     * 设置跨云同步下需要客户传递唯一Id标志一组资源
+                     * @param _crossNetResourceUniqueId 跨云同步下需要客户传递唯一Id标志一组资源
+                     * 
+                     */
+                    void SetCrossNetResourceUniqueId(const std::string& _crossNetResourceUniqueId);
+
+                    /**
+                     * 判断参数 CrossNetResourceUniqueId 是否已赋值
+                     * @return CrossNetResourceUniqueId 是否已赋值
+                     * 
+                     */
+                    bool CrossNetResourceUniqueIdHasBeenSet() const;
+
+                    /**
+                     * 获取跨云子网ID
+                     * @return CrossNetVpcSubNetId 跨云子网ID
+                     * 
+                     */
+                    std::string GetCrossNetVpcSubNetId() const;
+
+                    /**
+                     * 设置跨云子网ID
+                     * @param _crossNetVpcSubNetId 跨云子网ID
+                     * 
+                     */
+                    void SetCrossNetVpcSubNetId(const std::string& _crossNetVpcSubNetId);
+
+                    /**
+                     * 判断参数 CrossNetVpcSubNetId 是否已赋值
+                     * @return CrossNetVpcSubNetId 是否已赋值
+                     * 
+                     */
+                    bool CrossNetVpcSubNetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +313,42 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 网络类型：PUBLIC公网；VPC
+                     */
+                    std::string m_networkType;
+                    bool m_networkTypeHasBeenSet;
+
+                    /**
+                     * vpcId，NetworkType=VPC时必传
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
+
+                    /**
+                     * vip，NetworkType=VPC时必传
+                     */
+                    std::string m_serviceVip;
+                    bool m_serviceVipHasBeenSet;
+
+                    /**
+                     * 端口，NetworkType=VPC时必传
+                     */
+                    int64_t m_port;
+                    bool m_portHasBeenSet;
+
+                    /**
+                     * 跨云同步下需要客户传递唯一Id标志一组资源
+                     */
+                    std::string m_crossNetResourceUniqueId;
+                    bool m_crossNetResourceUniqueIdHasBeenSet;
+
+                    /**
+                     * 跨云子网ID
+                     */
+                    std::string m_crossNetVpcSubNetId;
+                    bool m_crossNetVpcSubNetIdHasBeenSet;
 
                 };
             }

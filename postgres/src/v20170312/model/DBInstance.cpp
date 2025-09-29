@@ -59,7 +59,8 @@ DBInstance::DBInstance() :
     m_dBEngineHasBeenSet(false),
     m_dBEngineConfigHasBeenSet(false),
     m_networkAccessListHasBeenSet(false),
-    m_supportIpv6HasBeenSet(false)
+    m_supportIpv6HasBeenSet(false),
+    m_expandedCpuHasBeenSet(false)
 {
 }
 
@@ -498,6 +499,16 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_supportIpv6HasBeenSet = true;
     }
 
+    if (value.HasMember("ExpandedCpu") && !value["ExpandedCpu"].IsNull())
+    {
+        if (!value["ExpandedCpu"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.ExpandedCpu` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expandedCpu = value["ExpandedCpu"].GetUint64();
+        m_expandedCpuHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -843,6 +854,14 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SupportIpv6";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportIpv6, allocator);
+    }
+
+    if (m_expandedCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpandedCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expandedCpu, allocator);
     }
 
 }
@@ -1470,5 +1489,21 @@ void DBInstance::SetSupportIpv6(const uint64_t& _supportIpv6)
 bool DBInstance::SupportIpv6HasBeenSet() const
 {
     return m_supportIpv6HasBeenSet;
+}
+
+uint64_t DBInstance::GetExpandedCpu() const
+{
+    return m_expandedCpu;
+}
+
+void DBInstance::SetExpandedCpu(const uint64_t& _expandedCpu)
+{
+    m_expandedCpu = _expandedCpu;
+    m_expandedCpuHasBeenSet = true;
+}
+
+bool DBInstance::ExpandedCpuHasBeenSet() const
+{
+    return m_expandedCpuHasBeenSet;
 }
 

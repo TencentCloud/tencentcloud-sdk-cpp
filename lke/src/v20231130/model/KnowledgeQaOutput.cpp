@@ -28,7 +28,8 @@ KnowledgeQaOutput::KnowledgeQaOutput() :
     m_useQuestionClarifyHasBeenSet(false),
     m_questionClarifyKeywordsHasBeenSet(false),
     m_useRecommendedHasBeenSet(false),
-    m_recommendedPromptModeHasBeenSet(false)
+    m_recommendedPromptModeHasBeenSet(false),
+    m_inputBoxConfigHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,23 @@ CoreInternalOutcome KnowledgeQaOutput::Deserialize(const rapidjson::Value &value
         m_recommendedPromptModeHasBeenSet = true;
     }
 
+    if (value.HasMember("InputBoxConfig") && !value["InputBoxConfig"].IsNull())
+    {
+        if (!value["InputBoxConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaOutput.InputBoxConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_inputBoxConfig.Deserialize(value["InputBoxConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_inputBoxConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +212,15 @@ void KnowledgeQaOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "RecommendedPromptMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recommendedPromptMode, allocator);
+    }
+
+    if (m_inputBoxConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputBoxConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_inputBoxConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -325,5 +352,21 @@ void KnowledgeQaOutput::SetRecommendedPromptMode(const uint64_t& _recommendedPro
 bool KnowledgeQaOutput::RecommendedPromptModeHasBeenSet() const
 {
     return m_recommendedPromptModeHasBeenSet;
+}
+
+InputBoxConfig KnowledgeQaOutput::GetInputBoxConfig() const
+{
+    return m_inputBoxConfig;
+}
+
+void KnowledgeQaOutput::SetInputBoxConfig(const InputBoxConfig& _inputBoxConfig)
+{
+    m_inputBoxConfig = _inputBoxConfig;
+    m_inputBoxConfigHasBeenSet = true;
+}
+
+bool KnowledgeQaOutput::InputBoxConfigHasBeenSet() const
+{
+    return m_inputBoxConfigHasBeenSet;
 }
 

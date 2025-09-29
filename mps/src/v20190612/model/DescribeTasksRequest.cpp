@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeTasksRequest::DescribeTasksRequest() :
     m_statusHasBeenSet(false),
+    m_subTaskHasFailedHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_scrollTokenHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -44,6 +45,14 @@ string DescribeTasksRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subTaskHasFailedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTaskHasFailed";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subTaskHasFailed, allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -100,6 +109,22 @@ void DescribeTasksRequest::SetStatus(const string& _status)
 bool DescribeTasksRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+bool DescribeTasksRequest::GetSubTaskHasFailed() const
+{
+    return m_subTaskHasFailed;
+}
+
+void DescribeTasksRequest::SetSubTaskHasFailed(const bool& _subTaskHasFailed)
+{
+    m_subTaskHasFailed = _subTaskHasFailed;
+    m_subTaskHasFailedHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::SubTaskHasFailedHasBeenSet() const
+{
+    return m_subTaskHasFailedHasBeenSet;
 }
 
 uint64_t DescribeTasksRequest::GetLimit() const

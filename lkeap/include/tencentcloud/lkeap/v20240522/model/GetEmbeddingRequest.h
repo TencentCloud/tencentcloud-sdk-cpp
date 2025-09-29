@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取说明：选择生成向量的模型备注：可选[lke-text-embedding-v1,lke-text-embedding-v2]
-                     * @return Model 说明：选择生成向量的模型备注：可选[lke-text-embedding-v1,lke-text-embedding-v2]
+                     * 获取说明：选择生成向量的模型备注：可选[lke-text-embedding-v1,lke-text-embedding-v2,youtu-embedding-llm-v1]
+                     * @return Model 说明：选择生成向量的模型备注：可选[lke-text-embedding-v1,lke-text-embedding-v2,youtu-embedding-llm-v1]
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置说明：选择生成向量的模型备注：可选[lke-text-embedding-v1,lke-text-embedding-v2]
-                     * @param _model 说明：选择生成向量的模型备注：可选[lke-text-embedding-v1,lke-text-embedding-v2]
+                     * 设置说明：选择生成向量的模型备注：可选[lke-text-embedding-v1,lke-text-embedding-v2,youtu-embedding-llm-v1]
+                     * @param _model 说明：选择生成向量的模型备注：可选[lke-text-embedding-v1,lke-text-embedding-v2,youtu-embedding-llm-v1]
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -133,7 +133,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 说明：选择生成向量的模型备注：可选[lke-text-embedding-v1,lke-text-embedding-v2]
+                     * 说明：选择生成向量的模型备注：可选[lke-text-embedding-v1,lke-text-embedding-v2,youtu-embedding-llm-v1]
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;

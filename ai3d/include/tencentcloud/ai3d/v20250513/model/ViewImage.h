@@ -92,6 +92,27 @@ namespace TencentCloud
                      */
                     bool ViewImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取图片base64地址
+                     * @return ViewImageBase64 图片base64地址
+                     * 
+                     */
+                    std::string GetViewImageBase64() const;
+
+                    /**
+                     * 设置图片base64地址
+                     * @param _viewImageBase64 图片base64地址
+                     * 
+                     */
+                    void SetViewImageBase64(const std::string& _viewImageBase64);
+
+                    /**
+                     * 判断参数 ViewImageBase64 是否已赋值
+                     * @return ViewImageBase64 是否已赋值
+                     * 
+                     */
+                    bool ViewImageBase64HasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +127,12 @@ namespace TencentCloud
                      */
                     std::string m_viewImageUrl;
                     bool m_viewImageUrlHasBeenSet;
+
+                    /**
+                     * 图片base64地址
+                     */
+                    std::string m_viewImageBase64;
+                    bool m_viewImageBase64HasBeenSet;
 
                 };
             }

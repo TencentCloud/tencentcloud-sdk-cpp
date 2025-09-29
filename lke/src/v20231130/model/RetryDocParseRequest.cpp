@@ -24,7 +24,8 @@ using namespace std;
 
 RetryDocParseRequest::RetryDocParseRequest() :
     m_botBizIdHasBeenSet(false),
-    m_docBizIdHasBeenSet(false)
+    m_docBizIdHasBeenSet(false),
+    m_docBizIdsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string RetryDocParseRequest::ToJsonString() const
         string key = "DocBizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_docBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_docBizIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocBizIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_docBizIds.begin(); itr != m_docBizIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -89,6 +103,22 @@ void RetryDocParseRequest::SetDocBizId(const string& _docBizId)
 bool RetryDocParseRequest::DocBizIdHasBeenSet() const
 {
     return m_docBizIdHasBeenSet;
+}
+
+vector<string> RetryDocParseRequest::GetDocBizIds() const
+{
+    return m_docBizIds;
+}
+
+void RetryDocParseRequest::SetDocBizIds(const vector<string>& _docBizIds)
+{
+    m_docBizIds = _docBizIds;
+    m_docBizIdsHasBeenSet = true;
+}
+
+bool RetryDocParseRequest::DocBizIdsHasBeenSet() const
+{
+    return m_docBizIdsHasBeenSet;
 }
 
 

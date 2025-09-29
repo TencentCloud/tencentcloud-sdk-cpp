@@ -214,18 +214,18 @@ back：后视图；
 
                     /**
                      * 获取生成3D模型的面数，默认值为500000。
-可支持生成面数范围，参考值：40000-500000。
+可支持生成面数范围，参考值：40000-1500000。
                      * @return FaceCount 生成3D模型的面数，默认值为500000。
-可支持生成面数范围，参考值：40000-500000。
+可支持生成面数范围，参考值：40000-1500000。
                      * 
                      */
                     int64_t GetFaceCount() const;
 
                     /**
                      * 设置生成3D模型的面数，默认值为500000。
-可支持生成面数范围，参考值：40000-500000。
+可支持生成面数范围，参考值：40000-1500000。
                      * @param _faceCount 生成3D模型的面数，默认值为500000。
-可支持生成面数范围，参考值：40000-500000。
+可支持生成面数范围，参考值：40000-1500000。
                      * 
                      */
                     void SetFaceCount(const int64_t& _faceCount);
@@ -273,6 +273,43 @@ Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl
                      * 
                      */
                     bool GenerateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取该参数仅在GenerateType中选择LowPoly模式可生效。
+
+多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:
+triangle: 三角形面。
+quadrilateral: 四边形面与三角形面混合生成。
+                     * @return PolygonType 该参数仅在GenerateType中选择LowPoly模式可生效。
+
+多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:
+triangle: 三角形面。
+quadrilateral: 四边形面与三角形面混合生成。
+                     * 
+                     */
+                    std::string GetPolygonType() const;
+
+                    /**
+                     * 设置该参数仅在GenerateType中选择LowPoly模式可生效。
+
+多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:
+triangle: 三角形面。
+quadrilateral: 四边形面与三角形面混合生成。
+                     * @param _polygonType 该参数仅在GenerateType中选择LowPoly模式可生效。
+
+多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:
+triangle: 三角形面。
+quadrilateral: 四边形面与三角形面混合生成。
+                     * 
+                     */
+                    void SetPolygonType(const std::string& _polygonType);
+
+                    /**
+                     * 判断参数 PolygonType 是否已赋值
+                     * @return PolygonType 是否已赋值
+                     * 
+                     */
+                    bool PolygonTypeHasBeenSet() const;
 
                 private:
 
@@ -324,7 +361,7 @@ back：后视图；
 
                     /**
                      * 生成3D模型的面数，默认值为500000。
-可支持生成面数范围，参考值：40000-500000。
+可支持生成面数范围，参考值：40000-1500000。
                      */
                     int64_t m_faceCount;
                     bool m_faceCountHasBeenSet;
@@ -338,6 +375,16 @@ Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl
                      */
                     std::string m_generateType;
                     bool m_generateTypeHasBeenSet;
+
+                    /**
+                     * 该参数仅在GenerateType中选择LowPoly模式可生效。
+
+多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:
+triangle: 三角形面。
+quadrilateral: 四边形面与三角形面混合生成。
+                     */
+                    std::string m_polygonType;
+                    bool m_polygonTypeHasBeenSet;
 
                 };
             }

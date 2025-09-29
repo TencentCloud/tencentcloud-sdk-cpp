@@ -43,15 +43,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
-                     * @return Status 过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * 获取任务状态过滤条件，可选值：
+- WAITING（等待中）
+- PROCESSING（处理中）
+- FINISH（已完成）。
+                     * @return Status 任务状态过滤条件，可选值：
+- WAITING（等待中）
+- PROCESSING（处理中）
+- FINISH（已完成）。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
-                     * @param _status 过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * 设置任务状态过滤条件，可选值：
+- WAITING（等待中）
+- PROCESSING（处理中）
+- FINISH（已完成）。
+                     * @param _status 任务状态过滤条件，可选值：
+- WAITING（等待中）
+- PROCESSING（处理中）
+- FINISH（已完成）。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -62,6 +74,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取任务结束时子任务是否有失败。
+                     * @return SubTaskHasFailed 任务结束时子任务是否有失败。
+                     * 
+                     */
+                    bool GetSubTaskHasFailed() const;
+
+                    /**
+                     * 设置任务结束时子任务是否有失败。
+                     * @param _subTaskHasFailed 任务结束时子任务是否有失败。
+                     * 
+                     */
+                    void SetSubTaskHasFailed(const bool& _subTaskHasFailed);
+
+                    /**
+                     * 判断参数 SubTaskHasFailed 是否已赋值
+                     * @return SubTaskHasFailed 是否已赋值
+                     * 
+                     */
+                    bool SubTaskHasFailedHasBeenSet() const;
 
                     /**
                      * 获取返回记录条数，默认值：10，最大值：100。
@@ -150,10 +183,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * 任务状态过滤条件，可选值：
+- WAITING（等待中）
+- PROCESSING（处理中）
+- FINISH（已完成）。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 任务结束时子任务是否有失败。
+                     */
+                    bool m_subTaskHasFailed;
+                    bool m_subTaskHasFailedHasBeenSet;
 
                     /**
                      * 返回记录条数，默认值：10，最大值：100。

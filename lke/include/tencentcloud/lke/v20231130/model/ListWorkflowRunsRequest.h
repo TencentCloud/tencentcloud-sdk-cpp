@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取运行环境。0: 测试环境； 1: 正式环境
-                     * @return RunEnv 运行环境。0: 测试环境； 1: 正式环境
-                     * 
-                     */
-                    uint64_t GetRunEnv() const;
-
-                    /**
-                     * 设置运行环境。0: 测试环境； 1: 正式环境
-                     * @param _runEnv 运行环境。0: 测试环境； 1: 正式环境
-                     * 
-                     */
-                    void SetRunEnv(const uint64_t& _runEnv);
-
-                    /**
-                     * 判断参数 RunEnv 是否已赋值
-                     * @return RunEnv 是否已赋值
-                     * 
-                     */
-                    bool RunEnvHasBeenSet() const;
-
-                    /**
                      * 获取应用ID
                      * @return AppBizId 应用ID
                      * 
@@ -85,27 +64,6 @@ namespace TencentCloud
                     bool AppBizIdHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return Page 页码
-                     * 
-                     */
-                    uint64_t GetPage() const;
-
-                    /**
-                     * 设置页码
-                     * @param _page 页码
-                     * 
-                     */
-                    void SetPage(const uint64_t& _page);
-
-                    /**
-                     * 判断参数 Page 是否已赋值
-                     * @return Page 是否已赋值
-                     * 
-                     */
-                    bool PageHasBeenSet() const;
-
-                    /**
                      * 获取每页数量
                      * @return PageSize 每页数量
                      * 
@@ -125,6 +83,48 @@ namespace TencentCloud
                      * 
                      */
                     bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取运行环境。0: 测试环境； 1: 正式环境
+                     * @return RunEnv 运行环境。0: 测试环境； 1: 正式环境
+                     * 
+                     */
+                    uint64_t GetRunEnv() const;
+
+                    /**
+                     * 设置运行环境。0: 测试环境； 1: 正式环境
+                     * @param _runEnv 运行环境。0: 测试环境； 1: 正式环境
+                     * 
+                     */
+                    void SetRunEnv(const uint64_t& _runEnv);
+
+                    /**
+                     * 判断参数 RunEnv 是否已赋值
+                     * @return RunEnv 是否已赋值
+                     * 
+                     */
+                    bool RunEnvHasBeenSet() const;
+
+                    /**
+                     * 获取页码
+                     * @return Page 页码
+                     * 
+                     */
+                    uint64_t GetPage() const;
+
+                    /**
+                     * 设置页码
+                     * @param _page 页码
+                     * 
+                     */
+                    void SetPage(const uint64_t& _page);
+
+                    /**
+                     * 判断参数 Page 是否已赋值
+                     * @return Page 是否已赋值
+                     * 
+                     */
+                    bool PageHasBeenSet() const;
 
                     /**
                      * 获取登录用户主账号(集成商模式必填)
@@ -171,28 +171,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 运行环境。0: 测试环境； 1: 正式环境
-                     */
-                    uint64_t m_runEnv;
-                    bool m_runEnvHasBeenSet;
-
-                    /**
                      * 应用ID
                      */
                     std::string m_appBizId;
                     bool m_appBizIdHasBeenSet;
 
                     /**
-                     * 页码
-                     */
-                    uint64_t m_page;
-                    bool m_pageHasBeenSet;
-
-                    /**
                      * 每页数量
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 运行环境。0: 测试环境； 1: 正式环境
+                     */
+                    uint64_t m_runEnv;
+                    bool m_runEnvHasBeenSet;
+
+                    /**
+                     * 页码
+                     */
+                    uint64_t m_page;
+                    bool m_pageHasBeenSet;
 
                     /**
                      * 登录用户主账号(集成商模式必填)

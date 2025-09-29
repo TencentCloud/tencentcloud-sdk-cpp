@@ -23,8 +23,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 CreateWorkflowRunRequest::CreateWorkflowRunRequest() :
-    m_runEnvHasBeenSet(false),
     m_appBizIdHasBeenSet(false),
+    m_runEnvHasBeenSet(false),
     m_queryHasBeenSet(false),
     m_customVariablesHasBeenSet(false)
 {
@@ -37,20 +37,20 @@ string CreateWorkflowRunRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_runEnvHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RunEnv";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_runEnv, allocator);
-    }
-
     if (m_appBizIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppBizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunEnv";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_runEnv, allocator);
     }
 
     if (m_queryHasBeenSet)
@@ -84,22 +84,6 @@ string CreateWorkflowRunRequest::ToJsonString() const
 }
 
 
-uint64_t CreateWorkflowRunRequest::GetRunEnv() const
-{
-    return m_runEnv;
-}
-
-void CreateWorkflowRunRequest::SetRunEnv(const uint64_t& _runEnv)
-{
-    m_runEnv = _runEnv;
-    m_runEnvHasBeenSet = true;
-}
-
-bool CreateWorkflowRunRequest::RunEnvHasBeenSet() const
-{
-    return m_runEnvHasBeenSet;
-}
-
 string CreateWorkflowRunRequest::GetAppBizId() const
 {
     return m_appBizId;
@@ -114,6 +98,22 @@ void CreateWorkflowRunRequest::SetAppBizId(const string& _appBizId)
 bool CreateWorkflowRunRequest::AppBizIdHasBeenSet() const
 {
     return m_appBizIdHasBeenSet;
+}
+
+uint64_t CreateWorkflowRunRequest::GetRunEnv() const
+{
+    return m_runEnv;
+}
+
+void CreateWorkflowRunRequest::SetRunEnv(const uint64_t& _runEnv)
+{
+    m_runEnv = _runEnv;
+    m_runEnvHasBeenSet = true;
+}
+
+bool CreateWorkflowRunRequest::RunEnvHasBeenSet() const
+{
+    return m_runEnvHasBeenSet;
 }
 
 string CreateWorkflowRunRequest::GetQuery() const

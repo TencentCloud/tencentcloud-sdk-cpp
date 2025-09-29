@@ -29,7 +29,8 @@ SubmitHunyuanTo3DProJobRequest::SubmitHunyuanTo3DProJobRequest() :
     m_multiViewImagesHasBeenSet(false),
     m_enablePBRHasBeenSet(false),
     m_faceCountHasBeenSet(false),
-    m_generateTypeHasBeenSet(false)
+    m_generateTypeHasBeenSet(false),
+    m_polygonTypeHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string SubmitHunyuanTo3DProJobRequest::ToJsonString() const
         string key = "GenerateType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_generateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polygonTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolygonType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_polygonType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +230,22 @@ void SubmitHunyuanTo3DProJobRequest::SetGenerateType(const string& _generateType
 bool SubmitHunyuanTo3DProJobRequest::GenerateTypeHasBeenSet() const
 {
     return m_generateTypeHasBeenSet;
+}
+
+string SubmitHunyuanTo3DProJobRequest::GetPolygonType() const
+{
+    return m_polygonType;
+}
+
+void SubmitHunyuanTo3DProJobRequest::SetPolygonType(const string& _polygonType)
+{
+    m_polygonType = _polygonType;
+    m_polygonTypeHasBeenSet = true;
+}
+
+bool SubmitHunyuanTo3DProJobRequest::PolygonTypeHasBeenSet() const
+{
+    return m_polygonTypeHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/InputBoxConfig.h>
 
 
 namespace TencentCloud
@@ -246,6 +247,27 @@ namespace TencentCloud
                      */
                     bool RecommendedPromptModeHasBeenSet() const;
 
+                    /**
+                     * 获取输入框按钮配置
+                     * @return InputBoxConfig 输入框按钮配置
+                     * 
+                     */
+                    InputBoxConfig GetInputBoxConfig() const;
+
+                    /**
+                     * 设置输入框按钮配置
+                     * @param _inputBoxConfig 输入框按钮配置
+                     * 
+                     */
+                    void SetInputBoxConfig(const InputBoxConfig& _inputBoxConfig);
+
+                    /**
+                     * 判断参数 InputBoxConfig 是否已赋值
+                     * @return InputBoxConfig 是否已赋值
+                     * 
+                     */
+                    bool InputBoxConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +325,12 @@ namespace TencentCloud
                      */
                     uint64_t m_recommendedPromptMode;
                     bool m_recommendedPromptModeHasBeenSet;
+
+                    /**
+                     * 输入框按钮配置
+                     */
+                    InputBoxConfig m_inputBoxConfig;
+                    bool m_inputBoxConfigHasBeenSet;
 
                 };
             }

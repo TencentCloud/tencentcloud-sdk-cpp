@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool DemoHasBeenSet() const;
 
                     /**
-                     * 获取应用状态筛选，可枚举的值为：health、warning、error。如果选中多个状态用逗号隔开，比如："warning,error"
-                     * @return ServiceStatus 应用状态筛选，可枚举的值为：health、warning、error。如果选中多个状态用逗号隔开，比如："warning,error"
+                     * 获取应用状态筛选，可枚举的值为：health、warning、error。如果选中多个状态用逗号隔开，例如："warning,error"
+                     * @return ServiceStatus 应用状态筛选，可枚举的值为：health、warning、error。如果选中多个状态用逗号隔开，例如："warning,error"
                      * 
                      */
                     std::string GetServiceStatus() const;
 
                     /**
-                     * 设置应用状态筛选，可枚举的值为：health、warning、error。如果选中多个状态用逗号隔开，比如："warning,error"
-                     * @param _serviceStatus 应用状态筛选，可枚举的值为：health、warning、error。如果选中多个状态用逗号隔开，比如："warning,error"
+                     * 设置应用状态筛选，可枚举的值为：health、warning、error。如果选中多个状态用逗号隔开，例如："warning,error"
+                     * @param _serviceStatus 应用状态筛选，可枚举的值为：health、warning、error。如果选中多个状态用逗号隔开，例如："warning,error"
                      * 
                      */
                     void SetServiceStatus(const std::string& _serviceStatus);
@@ -342,7 +342,7 @@ namespace TencentCloud
                     bool m_demoHasBeenSet;
 
                     /**
-                     * 应用状态筛选，可枚举的值为：health、warning、error。如果选中多个状态用逗号隔开，比如："warning,error"
+                     * 应用状态筛选，可枚举的值为：health、warning、error。如果选中多个状态用逗号隔开，例如："warning,error"
                      */
                     std::string m_serviceStatus;
                     bool m_serviceStatusHasBeenSet;
