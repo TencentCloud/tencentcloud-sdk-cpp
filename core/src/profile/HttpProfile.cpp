@@ -27,7 +27,8 @@ HttpProfile::HttpProfile() :
     m_connectTimeout(TM_MINUTE_SECOND),
     m_keepAlive(false),
     m_caInfo(""),
-    m_caPath("")
+    m_caPath(""),
+    m_targetIp("")
 {
 }
 
@@ -93,6 +94,16 @@ void HttpProfile::SetCaInfo(std::string caInfo)
 std::string HttpProfile::GetCaInfo() const
 {
     return m_caInfo;
+}
+
+void HttpProfile::SetTargetIp(std::string targetIp)
+{
+    m_targetIp = targetIp;
+}
+
+std::string HttpProfile::GetTargetIp() const
+{
+    return m_targetIp;
 }
 
 void HttpProfile::SetCaPath(std::string caPath)
