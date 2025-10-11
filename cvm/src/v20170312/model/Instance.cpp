@@ -62,6 +62,7 @@ Instance::Instance() :
     m_defaultLoginUserHasBeenSet(false),
     m_defaultLoginPortHasBeenSet(false),
     m_latestOperationErrorMsgHasBeenSet(false),
+    m_metadataHasBeenSet(false),
     m_publicIPv6AddressesHasBeenSet(false)
 {
 }
@@ -558,6 +559,23 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_latestOperationErrorMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("Metadata") && !value["Metadata"].IsNull())
+    {
+        if (!value["Metadata"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.Metadata` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_metadata.Deserialize(value["Metadata"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_metadataHasBeenSet = true;
+    }
+
     if (value.HasMember("PublicIPv6Addresses") && !value["PublicIPv6Addresses"].IsNull())
     {
         if (!value["PublicIPv6Addresses"].IsArray())
@@ -949,6 +967,15 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "LatestOperationErrorMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestOperationErrorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metadata.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_publicIPv6AddressesHasBeenSet)
@@ -1621,6 +1648,22 @@ void Instance::SetLatestOperationErrorMsg(const string& _latestOperationErrorMsg
 bool Instance::LatestOperationErrorMsgHasBeenSet() const
 {
     return m_latestOperationErrorMsgHasBeenSet;
+}
+
+Metadata Instance::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void Instance::SetMetadata(const Metadata& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool Instance::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 
 vector<string> Instance::GetPublicIPv6Addresses() const

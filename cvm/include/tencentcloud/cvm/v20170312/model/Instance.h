@@ -32,6 +32,7 @@
 #include <tencentcloud/cvm/v20170312/model/LoginSettings.h>
 #include <tencentcloud/cvm/v20170312/model/Tag.h>
 #include <tencentcloud/cvm/v20170312/model/GPUInfo.h>
+#include <tencentcloud/cvm/v20170312/model/Metadata.h>
 
 
 namespace TencentCloud
@@ -956,6 +957,27 @@ namespace TencentCloud
                     bool LatestOperationErrorMsgHasBeenSet() const;
 
                     /**
+                     * 获取自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。**注：内测中**。
+                     * @return Metadata 自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。**注：内测中**。
+                     * 
+                     */
+                    Metadata GetMetadata() const;
+
+                    /**
+                     * 设置自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。**注：内测中**。
+                     * @param _metadata 自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。**注：内测中**。
+                     * 
+                     */
+                    void SetMetadata(const Metadata& _metadata);
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     * 
+                     */
+                    bool MetadataHasBeenSet() const;
+
+                    /**
                      * 获取实例绑定的公网IPv6地址。
                      * @return PublicIPv6Addresses 实例绑定的公网IPv6地址。
                      * 
@@ -1233,6 +1255,12 @@ namespace TencentCloud
                      */
                     std::string m_latestOperationErrorMsg;
                     bool m_latestOperationErrorMsgHasBeenSet;
+
+                    /**
+                     * 自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。**注：内测中**。
+                     */
+                    Metadata m_metadata;
+                    bool m_metadataHasBeenSet;
 
                     /**
                      * 实例绑定的公网IPv6地址。

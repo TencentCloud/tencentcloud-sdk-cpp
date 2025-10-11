@@ -160,23 +160,15 @@ namespace TencentCloud
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取复刻类型。
-0 - 轻量版声音复刻（默认）;
-5 - 一句话声音复刻。
-                     * @return TaskType 复刻类型。
-0 - 轻量版声音复刻（默认）;
-5 - 一句话声音复刻。
+                     * 获取复刻类型。5 - 一句话声音复刻。
+                     * @return TaskType 复刻类型。5 - 一句话声音复刻。
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置复刻类型。
-0 - 轻量版声音复刻（默认）;
-5 - 一句话声音复刻。
-                     * @param _taskType 复刻类型。
-0 - 轻量版声音复刻（默认）;
-5 - 一句话声音复刻。
+                     * 设置复刻类型。5 - 一句话声音复刻。
+                     * @param _taskType 复刻类型。5 - 一句话声音复刻。
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -224,9 +216,7 @@ namespace TencentCloud
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * 复刻类型。
-0 - 轻量版声音复刻（默认）;
-5 - 一句话声音复刻。
+                     * 复刻类型。5 - 一句话声音复刻。
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;

@@ -35,6 +35,7 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDescriptionResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHorizontalToVerticalResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDubbingResult.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoRemakeResult.h>
 
 
 namespace TencentCloud
@@ -67,6 +68,7 @@ namespace TencentCloud
 <li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
 <li>Dubbing：智能译制</li>
+<li>VideoRemake: 视频去重</li>
                      * @return Type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
@@ -76,6 +78,7 @@ namespace TencentCloud
 <li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
 <li>Dubbing：智能译制</li>
+<li>VideoRemake: 视频去重</li>
                      * 
                      */
                     std::string GetType() const;
@@ -90,6 +93,7 @@ namespace TencentCloud
 <li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
 <li>Dubbing：智能译制</li>
+<li>VideoRemake: 视频去重</li>
                      * @param _type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
@@ -99,6 +103,7 @@ namespace TencentCloud
 <li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
 <li>Dubbing：智能译制</li>
+<li>VideoRemake: 视频去重</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -385,6 +390,31 @@ namespace TencentCloud
                      */
                     bool DubbingTaskHasBeenSet() const;
 
+                    /**
+                     * 获取视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VideoRemakeTask 视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiAnalysisTaskVideoRemakeResult GetVideoRemakeTask() const;
+
+                    /**
+                     * 设置视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _videoRemakeTask 视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVideoRemakeTask(const AiAnalysisTaskVideoRemakeResult& _videoRemakeTask);
+
+                    /**
+                     * 判断参数 VideoRemakeTask 是否已赋值
+                     * @return VideoRemakeTask 是否已赋值
+                     * 
+                     */
+                    bool VideoRemakeTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -397,6 +427,7 @@ namespace TencentCloud
 <li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
 <li>Dubbing：智能译制</li>
+<li>VideoRemake: 视频去重</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -477,6 +508,13 @@ namespace TencentCloud
                      */
                     AiAnalysisTaskDubbingResult m_dubbingTask;
                     bool m_dubbingTaskHasBeenSet;
+
+                    /**
+                     * 视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskVideoRemakeResult m_videoRemakeTask;
+                    bool m_videoRemakeTaskHasBeenSet;
 
                 };
             }

@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义metadata键，需符合正则 ^[a-zA-Z0-9_-]+$，长度 ≤128 字节（大小写敏感）；
-
-                     * @return Key 自定义metadata键，需符合正则 ^[a-zA-Z0-9_-]+$，长度 ≤128 字节（大小写敏感）；
-
+                     * 获取自定义metadata键，由大写字母（A-Z）、小写字母（a-z）、数字（0-9）、下划线（_）或连字符（-）组成，大小上限为128 字节。
+                     * @return Key 自定义metadata键，由大写字母（A-Z）、小写字母（a-z）、数字（0-9）、下划线（_）或连字符（-）组成，大小上限为128 字节。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置自定义metadata键，需符合正则 ^[a-zA-Z0-9_-]+$，长度 ≤128 字节（大小写敏感）；
-
-                     * @param _key 自定义metadata键，需符合正则 ^[a-zA-Z0-9_-]+$，长度 ≤128 字节（大小写敏感）；
-
+                     * 设置自定义metadata键，由大写字母（A-Z）、小写字母（a-z）、数字（0-9）、下划线（_）或连字符（-）组成，大小上限为128 字节。
+                     * @param _key 自定义metadata键，由大写字母（A-Z）、小写字母（a-z）、数字（0-9）、下划线（_）或连字符（-）组成，大小上限为128 字节。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -72,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取自定义metadata值，支持任意数据（含二进制），大小 ≤256 KB（大小写敏感）；
-                     * @return Value 自定义metadata值，支持任意数据（含二进制），大小 ≤256 KB（大小写敏感）；
+                     * 获取自定义metadata值，大小上限为256 KB。
+                     * @return Value 自定义metadata值，大小上限为256 KB。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置自定义metadata值，支持任意数据（含二进制），大小 ≤256 KB（大小写敏感）；
-                     * @param _value 自定义metadata值，支持任意数据（含二进制），大小 ≤256 KB（大小写敏感）；
+                     * 设置自定义metadata值，大小上限为256 KB。
+                     * @param _value 自定义metadata值，大小上限为256 KB。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -95,14 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自定义metadata键，需符合正则 ^[a-zA-Z0-9_-]+$，长度 ≤128 字节（大小写敏感）；
-
+                     * 自定义metadata键，由大写字母（A-Z）、小写字母（a-z）、数字（0-9）、下划线（_）或连字符（-）组成，大小上限为128 字节。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 自定义metadata值，支持任意数据（含二进制），大小 ≤256 KB（大小写敏感）；
+                     * 自定义metadata值，大小上限为256 KB。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

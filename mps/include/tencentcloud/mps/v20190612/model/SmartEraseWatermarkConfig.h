@@ -137,10 +137,10 @@ namespace TencentCloud
                     /**
                      * 获取自动擦除自定义区域。
 对选定区域，利用AI模型自动检测其中存在的擦除目标并擦除。
-注意，当擦除方式为custom时，此参数将不会生效。
+注意，当擦除方式为custom时，此参数将不会生效。修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。
                      * @return AutoAreas 自动擦除自定义区域。
 对选定区域，利用AI模型自动检测其中存在的擦除目标并擦除。
-注意，当擦除方式为custom时，此参数将不会生效。
+注意，当擦除方式为custom时，此参数将不会生效。修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。
                      * 
                      */
                     std::vector<EraseArea> GetAutoAreas() const;
@@ -148,10 +148,10 @@ namespace TencentCloud
                     /**
                      * 设置自动擦除自定义区域。
 对选定区域，利用AI模型自动检测其中存在的擦除目标并擦除。
-注意，当擦除方式为custom时，此参数将不会生效。
+注意，当擦除方式为custom时，此参数将不会生效。修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。
                      * @param _autoAreas 自动擦除自定义区域。
 对选定区域，利用AI模型自动检测其中存在的擦除目标并擦除。
-注意，当擦除方式为custom时，此参数将不会生效。
+注意，当擦除方式为custom时，此参数将不会生效。修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。
                      * 
                      */
                     void SetAutoAreas(const std::vector<EraseArea>& _autoAreas);
@@ -166,8 +166,10 @@ namespace TencentCloud
                     /**
                      * 获取指定擦除自定义区域。
 对选定区域，在选定时间段内不进行检测识别直接进行擦除。
+注意：修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。
                      * @return CustomAreas 指定擦除自定义区域。
 对选定区域，在选定时间段内不进行检测识别直接进行擦除。
+注意：修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。
                      * 
                      */
                     std::vector<EraseTimeArea> GetCustomAreas() const;
@@ -175,8 +177,10 @@ namespace TencentCloud
                     /**
                      * 设置指定擦除自定义区域。
 对选定区域，在选定时间段内不进行检测识别直接进行擦除。
+注意：修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。
                      * @param _customAreas 指定擦除自定义区域。
 对选定区域，在选定时间段内不进行检测识别直接进行擦除。
+注意：修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。
                      * 
                      */
                     void SetCustomAreas(const std::vector<EraseTimeArea>& _customAreas);
@@ -216,7 +220,7 @@ namespace TencentCloud
                     /**
                      * 自动擦除自定义区域。
 对选定区域，利用AI模型自动检测其中存在的擦除目标并擦除。
-注意，当擦除方式为custom时，此参数将不会生效。
+注意，当擦除方式为custom时，此参数将不会生效。修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。
                      */
                     std::vector<EraseArea> m_autoAreas;
                     bool m_autoAreasHasBeenSet;
@@ -224,6 +228,7 @@ namespace TencentCloud
                     /**
                      * 指定擦除自定义区域。
 对选定区域，在选定时间段内不进行检测识别直接进行擦除。
+注意：修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。
                      */
                     std::vector<EraseTimeArea> m_customAreas;
                     bool m_customAreasHasBeenSet;

@@ -209,6 +209,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskInput.h
   include/tencentcloud/mps/v20190612/model/DisableScheduleRequest.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskHorizontalToVerticalResult.h
+  include/tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoRemakeResult.h
   include/tencentcloud/mps/v20190612/model/RTMPPullSourceAddress.h
   include/tencentcloud/mps/v20190612/model/CosOutputStorage.h
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskAnimatedGraphicResult.h
@@ -333,6 +334,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskTransTextResultInput.h
   include/tencentcloud/mps/v20190612/model/DescribeSchedulesResponse.h
   include/tencentcloud/mps/v20190612/model/ImageQualityEnhanceConfig.h
+  include/tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoRemakeOutput.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkRegionsResponse.h
   include/tencentcloud/mps/v20190612/model/DescribeVideoSearchTaskDetailResponse.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskSegmentResult.h
@@ -351,7 +353,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ImageWatermarkTemplate.h
   include/tencentcloud/mps/v20190612/model/ModifyQualityControlTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/AsrWordsConfigureInfo.h
-  include/tencentcloud/mps/v20190612/model/ModifyStreamLinkOutputInfoRequest.h
+  include/tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoRemakeInput.h
   include/tencentcloud/mps/v20190612/model/LiveStreamAsrWordsRecognitionResult.h
   include/tencentcloud/mps/v20190612/model/MediaAiAnalysisFrameTagItem.h
   include/tencentcloud/mps/v20190612/model/RecognizeMediaForZhiXueResponse.h
@@ -517,6 +519,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/FlowRealtimeStatusRTMP.h
   include/tencentcloud/mps/v20190612/model/UserDefineOcrTextReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/AdaptiveStreamTemplate.h
+  include/tencentcloud/mps/v20190612/model/ModifyStreamLinkOutputInfoRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkEventsRequest.h
   include/tencentcloud/mps/v20190612/model/TranscodeTaskInput.h
   include/tencentcloud/mps/v20190612/model/SmartSubtitleTemplateItem.h
@@ -981,6 +984,7 @@ set(mps_src
   src/v20190612/model/MediaProcessTaskInput.cpp
   src/v20190612/model/DisableScheduleRequest.cpp
   src/v20190612/model/AiAnalysisTaskHorizontalToVerticalResult.cpp
+  src/v20190612/model/AiAnalysisTaskVideoRemakeResult.cpp
   src/v20190612/model/RTMPPullSourceAddress.cpp
   src/v20190612/model/CosOutputStorage.cpp
   src/v20190612/model/MediaProcessTaskAnimatedGraphicResult.cpp
@@ -1105,6 +1109,7 @@ set(mps_src
   src/v20190612/model/AiRecognitionTaskTransTextResultInput.cpp
   src/v20190612/model/DescribeSchedulesResponse.cpp
   src/v20190612/model/ImageQualityEnhanceConfig.cpp
+  src/v20190612/model/AiAnalysisTaskVideoRemakeOutput.cpp
   src/v20190612/model/DescribeStreamLinkRegionsResponse.cpp
   src/v20190612/model/DescribeVideoSearchTaskDetailResponse.cpp
   src/v20190612/model/AiAnalysisTaskSegmentResult.cpp
@@ -1123,7 +1128,7 @@ set(mps_src
   src/v20190612/model/ImageWatermarkTemplate.cpp
   src/v20190612/model/ModifyQualityControlTemplateResponse.cpp
   src/v20190612/model/AsrWordsConfigureInfo.cpp
-  src/v20190612/model/ModifyStreamLinkOutputInfoRequest.cpp
+  src/v20190612/model/AiAnalysisTaskVideoRemakeInput.cpp
   src/v20190612/model/LiveStreamAsrWordsRecognitionResult.cpp
   src/v20190612/model/MediaAiAnalysisFrameTagItem.cpp
   src/v20190612/model/RecognizeMediaForZhiXueResponse.cpp
@@ -1289,6 +1294,7 @@ set(mps_src
   src/v20190612/model/FlowRealtimeStatusRTMP.cpp
   src/v20190612/model/UserDefineOcrTextReviewTemplateInfo.cpp
   src/v20190612/model/AdaptiveStreamTemplate.cpp
+  src/v20190612/model/ModifyStreamLinkOutputInfoRequest.cpp
   src/v20190612/model/DescribeStreamLinkEventsRequest.cpp
   src/v20190612/model/TranscodeTaskInput.cpp
   src/v20190612/model/SmartSubtitleTemplateItem.cpp

@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式目前仅支持轻量版声音复刻）
+                     * 获取回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式暂不支持一句话版声音复刻）
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
-                     * @return CallbackUrl 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式目前仅支持轻量版声音复刻）
+                     * @return CallbackUrl 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式暂不支持一句话版声音复刻）
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
                      * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式目前仅支持轻量版声音复刻）
+                     * 设置回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式暂不支持一句话版声音复刻）
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
-                     * @param _callbackUrl 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式目前仅支持轻量版声音复刻）
+                     * @param _callbackUrl 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式暂不支持一句话版声音复刻）
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
                      * 
                      */
@@ -269,10 +269,8 @@ namespace TencentCloud
 
                     /**
                      * 获取复刻类型。
-0 - 轻量版声音复刻（默认）；
 5 - 一句话声音复刻。
                      * @return TaskType 复刻类型。
-0 - 轻量版声音复刻（默认）；
 5 - 一句话声音复刻。
                      * 
                      */
@@ -280,10 +278,8 @@ namespace TencentCloud
 
                     /**
                      * 设置复刻类型。
-0 - 轻量版声音复刻（默认）；
 5 - 一句话声音复刻。
                      * @param _taskType 复刻类型。
-0 - 轻量版声音复刻（默认）；
 5 - 一句话声音复刻。
                      * 
                      */
@@ -395,7 +391,7 @@ namespace TencentCloud
                     bool m_codecHasBeenSet;
 
                     /**
-                     * 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式目前仅支持轻量版声音复刻）
+                     * 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式暂不支持一句话版声音复刻）
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
                      */
                     std::string m_callbackUrl;
@@ -409,7 +405,6 @@ namespace TencentCloud
 
                     /**
                      * 复刻类型。
-0 - 轻量版声音复刻（默认）；
 5 - 一句话声音复刻。
                      */
                     int64_t m_taskType;

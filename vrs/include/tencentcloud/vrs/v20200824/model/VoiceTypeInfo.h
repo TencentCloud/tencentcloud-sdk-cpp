@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool VoiceGenderHasBeenSet() const;
 
                     /**
-                     * 获取复刻类型: 0-轻量版复刻 1-基础版复刻
-                     * @return TaskType 复刻类型: 0-轻量版复刻 1-基础版复刻
+                     * 获取复刻类型: 1-基础版复刻
+                     * @return TaskType 复刻类型: 1-基础版复刻
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置复刻类型: 0-轻量版复刻 1-基础版复刻
-                     * @param _taskType 复刻类型: 0-轻量版复刻 1-基础版复刻
+                     * 设置复刻类型: 1-基础版复刻
+                     * @param _taskType 复刻类型: 1-基础版复刻
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -268,7 +268,7 @@ namespace TencentCloud
                     bool m_voiceGenderHasBeenSet;
 
                     /**
-                     * 复刻类型: 0-轻量版复刻 1-基础版复刻
+                     * 复刻类型: 1-基础版复刻
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;

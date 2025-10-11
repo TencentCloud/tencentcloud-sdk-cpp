@@ -24,6 +24,7 @@
 #include <tencentcloud/mps/v20190612/model/WorkflowTask.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaTask.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleTask.h>
+#include <tencentcloud/mps/v20190612/model/BatchSubTaskResult.h>
 
 
 namespace TencentCloud
@@ -176,6 +177,22 @@ namespace TencentCloud
                      */
                     bool SignHasBeenSet() const;
 
+                    /**
+                     * 获取批量处理任务信息，仅当 EventType 为 BatchTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BatchTaskEvent 批量处理任务信息，仅当 EventType 为 BatchTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    BatchSubTaskResult GetBatchTaskEvent() const;
+
+                    /**
+                     * 判断参数 BatchTaskEvent 是否已赋值
+                     * @return BatchTaskEvent 是否已赋值
+                     * 
+                     */
+                    bool BatchTaskEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -234,6 +251,13 @@ namespace TencentCloud
                      */
                     std::string m_sign;
                     bool m_signHasBeenSet;
+
+                    /**
+                     * 批量处理任务信息，仅当 EventType 为 BatchTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BatchSubTaskResult m_batchTaskEvent;
+                    bool m_batchTaskEventHasBeenSet;
 
                 };
             }

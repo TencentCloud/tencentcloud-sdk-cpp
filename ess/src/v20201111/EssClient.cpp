@@ -2534,6 +2534,49 @@ EssClient::CreateSealPolicyOutcomeCallable EssClient::CreateSealPolicyCallable(c
     return task->get_future();
 }
 
+EssClient::CreateSingleSignOnEmployeesOutcome EssClient::CreateSingleSignOnEmployees(const CreateSingleSignOnEmployeesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSingleSignOnEmployees");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSingleSignOnEmployeesResponse rsp = CreateSingleSignOnEmployeesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSingleSignOnEmployeesOutcome(rsp);
+        else
+            return CreateSingleSignOnEmployeesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSingleSignOnEmployeesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateSingleSignOnEmployeesAsync(const CreateSingleSignOnEmployeesRequest& request, const CreateSingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSingleSignOnEmployees(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateSingleSignOnEmployeesOutcomeCallable EssClient::CreateSingleSignOnEmployeesCallable(const CreateSingleSignOnEmployeesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSingleSignOnEmployeesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSingleSignOnEmployees(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateUserAutoSignEnableUrlOutcome EssClient::CreateUserAutoSignEnableUrl(const CreateUserAutoSignEnableUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUserAutoSignEnableUrl");
@@ -3043,6 +3086,49 @@ EssClient::DeleteSealPoliciesOutcomeCallable EssClient::DeleteSealPoliciesCallab
         [this, request]()
         {
             return this->DeleteSealPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DeleteSingleSignOnEmployeesOutcome EssClient::DeleteSingleSignOnEmployees(const DeleteSingleSignOnEmployeesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSingleSignOnEmployees");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSingleSignOnEmployeesResponse rsp = DeleteSingleSignOnEmployeesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSingleSignOnEmployeesOutcome(rsp);
+        else
+            return DeleteSingleSignOnEmployeesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSingleSignOnEmployeesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DeleteSingleSignOnEmployeesAsync(const DeleteSingleSignOnEmployeesRequest& request, const DeleteSingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSingleSignOnEmployees(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DeleteSingleSignOnEmployeesOutcomeCallable EssClient::DeleteSingleSignOnEmployeesCallable(const DeleteSingleSignOnEmployeesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSingleSignOnEmployeesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSingleSignOnEmployees(request);
         }
     );
 
@@ -4211,6 +4297,49 @@ EssClient::DescribeSignFaceVideoOutcomeCallable EssClient::DescribeSignFaceVideo
     return task->get_future();
 }
 
+EssClient::DescribeSingleSignOnEmployeesOutcome EssClient::DescribeSingleSignOnEmployees(const DescribeSingleSignOnEmployeesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSingleSignOnEmployees");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSingleSignOnEmployeesResponse rsp = DescribeSingleSignOnEmployeesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSingleSignOnEmployeesOutcome(rsp);
+        else
+            return DescribeSingleSignOnEmployeesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSingleSignOnEmployeesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeSingleSignOnEmployeesAsync(const DescribeSingleSignOnEmployeesRequest& request, const DescribeSingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSingleSignOnEmployees(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeSingleSignOnEmployeesOutcomeCallable EssClient::DescribeSingleSignOnEmployeesCallable(const DescribeSingleSignOnEmployeesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSingleSignOnEmployeesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSingleSignOnEmployees(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeThirdPartyAuthCodeOutcome EssClient::DescribeThirdPartyAuthCode(const DescribeThirdPartyAuthCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeThirdPartyAuthCode");
@@ -4720,6 +4849,49 @@ EssClient::ModifyPartnerAutoSignAuthUrlOutcomeCallable EssClient::ModifyPartnerA
         [this, request]()
         {
             return this->ModifyPartnerAutoSignAuthUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::ModifySingleSignOnEmployeesOutcome EssClient::ModifySingleSignOnEmployees(const ModifySingleSignOnEmployeesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySingleSignOnEmployees");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySingleSignOnEmployeesResponse rsp = ModifySingleSignOnEmployeesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySingleSignOnEmployeesOutcome(rsp);
+        else
+            return ModifySingleSignOnEmployeesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySingleSignOnEmployeesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::ModifySingleSignOnEmployeesAsync(const ModifySingleSignOnEmployeesRequest& request, const ModifySingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySingleSignOnEmployees(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::ModifySingleSignOnEmployeesOutcomeCallable EssClient::ModifySingleSignOnEmployeesCallable(const ModifySingleSignOnEmployeesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySingleSignOnEmployeesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySingleSignOnEmployees(request);
         }
     );
 

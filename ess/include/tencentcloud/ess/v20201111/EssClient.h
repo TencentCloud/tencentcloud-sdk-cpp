@@ -139,6 +139,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateSealResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSealPolicyRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateSingleSignOnEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateSingleSignOnEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlRequest.h>
@@ -163,6 +165,8 @@
 #include <tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DeleteSingleSignOnEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/DeleteSingleSignOnEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationUrlsRequest.h>
@@ -217,6 +221,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribePersonCertificateResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeSignFaceVideoRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeSignFaceVideoResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeSingleSignOnEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeSingleSignOnEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusRequest.h>
@@ -241,6 +247,8 @@
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyPartnerAutoSignAuthUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyPartnerAutoSignAuthUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/ModifySingleSignOnEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/ModifySingleSignOnEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/OperateSealsRequest.h>
 #include <tencentcloud/ess/v20201111/model/OperateSealsResponse.h>
 #include <tencentcloud/ess/v20201111/model/OperateTemplateRequest.h>
@@ -447,6 +455,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSealPolicyResponse> CreateSealPolicyOutcome;
                 typedef std::future<CreateSealPolicyOutcome> CreateSealPolicyOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateSealPolicyRequest&, CreateSealPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSealPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSingleSignOnEmployeesResponse> CreateSingleSignOnEmployeesOutcome;
+                typedef std::future<CreateSingleSignOnEmployeesOutcome> CreateSingleSignOnEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateSingleSignOnEmployeesRequest&, CreateSingleSignOnEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSingleSignOnEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserAutoSignEnableUrlResponse> CreateUserAutoSignEnableUrlOutcome;
                 typedef std::future<CreateUserAutoSignEnableUrlOutcome> CreateUserAutoSignEnableUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateUserAutoSignEnableUrlRequest&, CreateUserAutoSignEnableUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAutoSignEnableUrlAsyncHandler;
@@ -483,6 +494,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSealPoliciesResponse> DeleteSealPoliciesOutcome;
                 typedef std::future<DeleteSealPoliciesOutcome> DeleteSealPoliciesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteSealPoliciesRequest&, DeleteSealPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSealPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSingleSignOnEmployeesResponse> DeleteSingleSignOnEmployeesOutcome;
+                typedef std::future<DeleteSingleSignOnEmployeesOutcome> DeleteSingleSignOnEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DeleteSingleSignOnEmployeesRequest&, DeleteSingleSignOnEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSingleSignOnEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBatchOrganizationRegistrationTasksResponse> DescribeBatchOrganizationRegistrationTasksOutcome;
                 typedef std::future<DescribeBatchOrganizationRegistrationTasksOutcome> DescribeBatchOrganizationRegistrationTasksOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeBatchOrganizationRegistrationTasksRequest&, DescribeBatchOrganizationRegistrationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOrganizationRegistrationTasksAsyncHandler;
@@ -564,6 +578,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSignFaceVideoResponse> DescribeSignFaceVideoOutcome;
                 typedef std::future<DescribeSignFaceVideoOutcome> DescribeSignFaceVideoOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeSignFaceVideoRequest&, DescribeSignFaceVideoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSignFaceVideoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSingleSignOnEmployeesResponse> DescribeSingleSignOnEmployeesOutcome;
+                typedef std::future<DescribeSingleSignOnEmployeesOutcome> DescribeSingleSignOnEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeSingleSignOnEmployeesRequest&, DescribeSingleSignOnEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSingleSignOnEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeThirdPartyAuthCodeResponse> DescribeThirdPartyAuthCodeOutcome;
                 typedef std::future<DescribeThirdPartyAuthCodeOutcome> DescribeThirdPartyAuthCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeThirdPartyAuthCodeRequest&, DescribeThirdPartyAuthCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThirdPartyAuthCodeAsyncHandler;
@@ -600,6 +617,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPartnerAutoSignAuthUrlResponse> ModifyPartnerAutoSignAuthUrlOutcome;
                 typedef std::future<ModifyPartnerAutoSignAuthUrlOutcome> ModifyPartnerAutoSignAuthUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyPartnerAutoSignAuthUrlRequest&, ModifyPartnerAutoSignAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPartnerAutoSignAuthUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySingleSignOnEmployeesResponse> ModifySingleSignOnEmployeesOutcome;
+                typedef std::future<ModifySingleSignOnEmployeesOutcome> ModifySingleSignOnEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ModifySingleSignOnEmployeesRequest&, ModifySingleSignOnEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySingleSignOnEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::OperateSealsResponse> OperateSealsOutcome;
                 typedef std::future<OperateSealsOutcome> OperateSealsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::OperateSealsRequest&, OperateSealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateSealsAsyncHandler;
@@ -1845,6 +1865,22 @@ namespace TencentCloud
                 CreateSealPolicyOutcomeCallable CreateSealPolicyCallable(const Model::CreateSealPolicyRequest& request);
 
                 /**
+                 *此接口（CreateSingleSignOnEmployees）用于创建单点登录企业员工。
+创建好的员工，可以通过腾讯电子签提供的链接， 如下图位置，进行登录。
+此操作的功能：
+1. 可以绑定已经实名的员工，然后 sso 登录实名绑定。
+2. 可以提前导入员工，在 sso 登录的时候进行实名。
+3. 如果已经绑定过，可以直接通过 sso 链接登录腾讯电子签。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/0cd98ca2cc49ea1472a2397cea9a3ef6.png)
+                 * @param req CreateSingleSignOnEmployeesRequest
+                 * @return CreateSingleSignOnEmployeesOutcome
+                 */
+                CreateSingleSignOnEmployeesOutcome CreateSingleSignOnEmployees(const Model::CreateSingleSignOnEmployeesRequest &request);
+                void CreateSingleSignOnEmployeesAsync(const Model::CreateSingleSignOnEmployeesRequest& request, const CreateSingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSingleSignOnEmployeesOutcomeCallable CreateSingleSignOnEmployeesCallable(const Model::CreateSingleSignOnEmployeesRequest& request);
+
+                /**
                  *获取个人用户自动签的开通链接。
 
 注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`
@@ -1991,6 +2027,19 @@ namespace TencentCloud
                 DeleteSealPoliciesOutcome DeleteSealPolicies(const Model::DeleteSealPoliciesRequest &request);
                 void DeleteSealPoliciesAsync(const Model::DeleteSealPoliciesRequest& request, const DeleteSealPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSealPoliciesOutcomeCallable DeleteSealPoliciesCallable(const Model::DeleteSealPoliciesRequest& request);
+
+                /**
+                 *此接口（DeleteSingleSignOnEmployees）用于删除单点登录企业员工。
+注意：
+此接口只能删除未跟腾讯电子签绑定的单点登录企业员工，
+如果企业员工的单点登录信息已经和腾讯电子签里面的企业员工绑定，需要企业的超级管理员或者组织管理员在腾讯电子签控制台对当前企业员工进行离职操作，如下图操作。
+![image](https://qcloudimg.tencent-cloud.cn/raw/5e69f6e11859972d466900040f68c105.png)
+                 * @param req DeleteSingleSignOnEmployeesRequest
+                 * @return DeleteSingleSignOnEmployeesOutcome
+                 */
+                DeleteSingleSignOnEmployeesOutcome DeleteSingleSignOnEmployees(const Model::DeleteSingleSignOnEmployeesRequest &request);
+                void DeleteSingleSignOnEmployeesAsync(const Model::DeleteSingleSignOnEmployeesRequest& request, const DeleteSingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSingleSignOnEmployeesOutcomeCallable DeleteSingleSignOnEmployeesCallable(const Model::DeleteSingleSignOnEmployeesRequest& request);
 
                 /**
                  *本接口（DescribeBatchOrganizationRegistrationTasks）用于查询企业批量认证任务状态。
@@ -2367,6 +2416,15 @@ namespace TencentCloud
                 DescribeSignFaceVideoOutcomeCallable DescribeSignFaceVideoCallable(const Model::DescribeSignFaceVideoRequest& request);
 
                 /**
+                 *此接口（DescribeSingleSignOnEmployees）用于查询单点登录企业员工。
+                 * @param req DescribeSingleSignOnEmployeesRequest
+                 * @return DescribeSingleSignOnEmployeesOutcome
+                 */
+                DescribeSingleSignOnEmployeesOutcome DescribeSingleSignOnEmployees(const Model::DescribeSingleSignOnEmployeesRequest &request);
+                void DescribeSingleSignOnEmployeesAsync(const Model::DescribeSingleSignOnEmployeesRequest& request, const DescribeSingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSingleSignOnEmployeesOutcomeCallable DescribeSingleSignOnEmployeesCallable(const Model::DescribeSingleSignOnEmployeesRequest& request);
+
+                /**
                  *通过AuthCode查询个人用户是否实名
 
 
@@ -2551,6 +2609,16 @@ namespace TencentCloud
                 ModifyPartnerAutoSignAuthUrlOutcome ModifyPartnerAutoSignAuthUrl(const Model::ModifyPartnerAutoSignAuthUrlRequest &request);
                 void ModifyPartnerAutoSignAuthUrlAsync(const Model::ModifyPartnerAutoSignAuthUrlRequest& request, const ModifyPartnerAutoSignAuthUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPartnerAutoSignAuthUrlOutcomeCallable ModifyPartnerAutoSignAuthUrlCallable(const Model::ModifyPartnerAutoSignAuthUrlRequest& request);
+
+                /**
+                 *此接口（ModifySingleSignOnEmployees）用于修改单点登录企业员工。
+ 注意： 此接口只能修改未跟腾讯电子签绑定的单点登录企业员工， 如果企业员工的单点登录信息已经和腾讯电子签里面的企业员工绑定，需要在腾讯电子签小程序进行个人信息变更操作。
+                 * @param req ModifySingleSignOnEmployeesRequest
+                 * @return ModifySingleSignOnEmployeesOutcome
+                 */
+                ModifySingleSignOnEmployeesOutcome ModifySingleSignOnEmployees(const Model::ModifySingleSignOnEmployeesRequest &request);
+                void ModifySingleSignOnEmployeesAsync(const Model::ModifySingleSignOnEmployeesRequest& request, const ModifySingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySingleSignOnEmployeesOutcomeCallable ModifySingleSignOnEmployeesCallable(const Model::ModifySingleSignOnEmployeesRequest& request);
 
                 /**
                  *修改印章状态（停用、启用）

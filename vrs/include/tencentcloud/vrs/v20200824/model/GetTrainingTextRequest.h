@@ -44,10 +44,8 @@ namespace TencentCloud
 
                     /**
                      * 获取复刻类型。
-0 - 轻量版声音复刻（默认）;
 5 - 一句话声音复刻。
                      * @return TaskType 复刻类型。
-0 - 轻量版声音复刻（默认）;
 5 - 一句话声音复刻。
                      * 
                      */
@@ -55,10 +53,8 @@ namespace TencentCloud
 
                     /**
                      * 设置复刻类型。
-0 - 轻量版声音复刻（默认）;
 5 - 一句话声音复刻。
                      * @param _taskType 复刻类型。
-0 - 轻量版声音复刻（默认）;
 5 - 一句话声音复刻。
                      * 
                      */
@@ -137,7 +133,6 @@ namespace TencentCloud
 
                     /**
                      * 复刻类型。
-0 - 轻量版声音复刻（默认）;
 5 - 一句话声音复刻。
                      */
                     int64_t m_taskType;
