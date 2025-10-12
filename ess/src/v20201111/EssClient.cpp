@@ -3351,6 +3351,49 @@ EssClient::DescribeCancelFlowsTaskOutcomeCallable EssClient::DescribeCancelFlows
     return task->get_future();
 }
 
+EssClient::DescribeContractComparisonTaskOutcome EssClient::DescribeContractComparisonTask(const DescribeContractComparisonTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeContractComparisonTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeContractComparisonTaskResponse rsp = DescribeContractComparisonTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeContractComparisonTaskOutcome(rsp);
+        else
+            return DescribeContractComparisonTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeContractComparisonTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeContractComparisonTaskAsync(const DescribeContractComparisonTaskRequest& request, const DescribeContractComparisonTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeContractComparisonTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeContractComparisonTaskOutcomeCallable EssClient::DescribeContractComparisonTaskCallable(const DescribeContractComparisonTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeContractComparisonTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeContractComparisonTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeContractDiffTaskWebUrlOutcome EssClient::DescribeContractDiffTaskWebUrl(const DescribeContractDiffTaskWebUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContractDiffTaskWebUrl");

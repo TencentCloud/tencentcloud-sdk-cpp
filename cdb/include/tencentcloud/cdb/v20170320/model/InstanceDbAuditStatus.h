@@ -422,6 +422,111 @@ namespace TencentCloud
                      */
                     bool RuleTemplateIdsHasBeenSet() const;
 
+                    /**
+                     * 获取限免状态
+                     * @return TrialStatus 限免状态
+                     * 
+                     */
+                    std::string GetTrialStatus() const;
+
+                    /**
+                     * 设置限免状态
+                     * @param _trialStatus 限免状态
+                     * 
+                     */
+                    void SetTrialStatus(const std::string& _trialStatus);
+
+                    /**
+                     * 判断参数 TrialStatus 是否已赋值
+                     * @return TrialStatus 是否已赋值
+                     * 
+                     */
+                    bool TrialStatusHasBeenSet() const;
+
+                    /**
+                     * 获取限免开启时间
+                     * @return TrialStartTime 限免开启时间
+                     * 
+                     */
+                    int64_t GetTrialStartTime() const;
+
+                    /**
+                     * 设置限免开启时间
+                     * @param _trialStartTime 限免开启时间
+                     * 
+                     */
+                    void SetTrialStartTime(const int64_t& _trialStartTime);
+
+                    /**
+                     * 判断参数 TrialStartTime 是否已赋值
+                     * @return TrialStartTime 是否已赋值
+                     * 
+                     */
+                    bool TrialStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取限免持续时间
+                     * @return TrialDuration 限免持续时间
+                     * 
+                     */
+                    int64_t GetTrialDuration() const;
+
+                    /**
+                     * 设置限免持续时间
+                     * @param _trialDuration 限免持续时间
+                     * 
+                     */
+                    void SetTrialDuration(const int64_t& _trialDuration);
+
+                    /**
+                     * 判断参数 TrialDuration 是否已赋值
+                     * @return TrialDuration 是否已赋值
+                     * 
+                     */
+                    bool TrialDurationHasBeenSet() const;
+
+                    /**
+                     * 获取限免关闭时间
+                     * @return TrialCloseTime 限免关闭时间
+                     * 
+                     */
+                    int64_t GetTrialCloseTime() const;
+
+                    /**
+                     * 设置限免关闭时间
+                     * @param _trialCloseTime 限免关闭时间
+                     * 
+                     */
+                    void SetTrialCloseTime(const int64_t& _trialCloseTime);
+
+                    /**
+                     * 判断参数 TrialCloseTime 是否已赋值
+                     * @return TrialCloseTime 是否已赋值
+                     * 
+                     */
+                    bool TrialCloseTimeHasBeenSet() const;
+
+                    /**
+                     * 获取限免期查询日志时长
+                     * @return TrialDescribeLogHours 限免期查询日志时长
+                     * 
+                     */
+                    int64_t GetTrialDescribeLogHours() const;
+
+                    /**
+                     * 设置限免期查询日志时长
+                     * @param _trialDescribeLogHours 限免期查询日志时长
+                     * 
+                     */
+                    void SetTrialDescribeLogHours(const int64_t& _trialDescribeLogHours);
+
+                    /**
+                     * 判断参数 TrialDescribeLogHours 是否已赋值
+                     * @return TrialDescribeLogHours 是否已赋值
+                     * 
+                     */
+                    bool TrialDescribeLogHoursHasBeenSet() const;
+
                 private:
 
                     /**
@@ -528,6 +633,36 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;
+
+                    /**
+                     * 限免状态
+                     */
+                    std::string m_trialStatus;
+                    bool m_trialStatusHasBeenSet;
+
+                    /**
+                     * 限免开启时间
+                     */
+                    int64_t m_trialStartTime;
+                    bool m_trialStartTimeHasBeenSet;
+
+                    /**
+                     * 限免持续时间
+                     */
+                    int64_t m_trialDuration;
+                    bool m_trialDurationHasBeenSet;
+
+                    /**
+                     * 限免关闭时间
+                     */
+                    int64_t m_trialCloseTime;
+                    bool m_trialCloseTimeHasBeenSet;
+
+                    /**
+                     * 限免期查询日志时长
+                     */
+                    int64_t m_trialDescribeLogHours;
+                    bool m_trialDescribeLogHoursHasBeenSet;
 
                 };
             }

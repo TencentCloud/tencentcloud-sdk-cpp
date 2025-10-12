@@ -34,7 +34,9 @@ AccessPoint::AccessPoint() :
     m_accessPointTypeHasBeenSet(false),
     m_availablePortInfoHasBeenSet(false),
     m_addressHasBeenSet(false),
-    m_isMacSecHasBeenSet(false)
+    m_isMacSecHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_accessPointServiceTypeHasBeenSet(false)
 {
 }
 
@@ -206,6 +208,26 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
         m_isMacSecHasBeenSet = true;
     }
 
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessPointServiceType") && !value["AccessPointServiceType"].IsNull())
+    {
+        if (!value["AccessPointServiceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.AccessPointServiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPointServiceType = string(value["AccessPointServiceType"].GetString());
+        m_accessPointServiceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -341,6 +363,22 @@ void AccessPoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsMacSec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isMacSec, allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessPointServiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPointServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessPointServiceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -568,5 +606,37 @@ void AccessPoint::SetIsMacSec(const bool& _isMacSec)
 bool AccessPoint::IsMacSecHasBeenSet() const
 {
     return m_isMacSecHasBeenSet;
+}
+
+string AccessPoint::GetVersion() const
+{
+    return m_version;
+}
+
+void AccessPoint::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool AccessPoint::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+string AccessPoint::GetAccessPointServiceType() const
+{
+    return m_accessPointServiceType;
+}
+
+void AccessPoint::SetAccessPointServiceType(const string& _accessPointServiceType)
+{
+    m_accessPointServiceType = _accessPointServiceType;
+    m_accessPointServiceTypeHasBeenSet = true;
+}
+
+bool AccessPoint::AccessPointServiceTypeHasBeenSet() const
+{
+    return m_accessPointServiceTypeHasBeenSet;
 }
 

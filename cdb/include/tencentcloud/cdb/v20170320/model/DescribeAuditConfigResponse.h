@@ -86,6 +86,20 @@ namespace TencentCloud
                     bool IsClosingHasBeenSet() const;
 
                     /**
+                     * 获取是否正在开启审计。目前支持的值包括："false"-否，"true"-是
+                     * @return IsOpening 是否正在开启审计。目前支持的值包括："false"-否，"true"-是
+                     * 
+                     */
+                    std::string GetIsOpening() const;
+
+                    /**
+                     * 判断参数 IsOpening 是否已赋值
+                     * @return IsOpening 是否已赋值
+                     * 
+                     */
+                    bool IsOpeningHasBeenSet() const;
+
+                    /**
                      * 获取审计服务开通时间。
                      * @return CreateTime 审计服务开通时间。
                      * 
@@ -118,6 +132,12 @@ namespace TencentCloud
                      */
                     std::string m_isClosing;
                     bool m_isClosingHasBeenSet;
+
+                    /**
+                     * 是否正在开启审计。目前支持的值包括："false"-否，"true"-是
+                     */
+                    std::string m_isOpening;
+                    bool m_isOpeningHasBeenSet;
 
                     /**
                      * 审计服务开通时间。

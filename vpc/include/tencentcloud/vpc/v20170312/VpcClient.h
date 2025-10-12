@@ -317,8 +317,12 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressBandwidthRangeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressQuotaRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressQuotaResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeAddressTemplateGroupInstancesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeAddressTemplateGroupInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressTemplateGroupsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressTemplateGroupsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeAddressTemplateInstancesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeAddressTemplateInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressTemplatesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressTemplatesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressesRequest.h>
@@ -467,8 +471,12 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupReferencesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplateGroupInstancesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplateGroupInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplateGroupsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplateGroupsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplateInstancesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplateInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplatesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplatesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSgSnapshotFileContentRequest.h>
@@ -1304,9 +1312,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAddressQuotaResponse> DescribeAddressQuotaOutcome;
                 typedef std::future<DescribeAddressQuotaOutcome> DescribeAddressQuotaOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeAddressQuotaRequest&, DescribeAddressQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddressQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAddressTemplateGroupInstancesResponse> DescribeAddressTemplateGroupInstancesOutcome;
+                typedef std::future<DescribeAddressTemplateGroupInstancesOutcome> DescribeAddressTemplateGroupInstancesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeAddressTemplateGroupInstancesRequest&, DescribeAddressTemplateGroupInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddressTemplateGroupInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAddressTemplateGroupsResponse> DescribeAddressTemplateGroupsOutcome;
                 typedef std::future<DescribeAddressTemplateGroupsOutcome> DescribeAddressTemplateGroupsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeAddressTemplateGroupsRequest&, DescribeAddressTemplateGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddressTemplateGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAddressTemplateInstancesResponse> DescribeAddressTemplateInstancesOutcome;
+                typedef std::future<DescribeAddressTemplateInstancesOutcome> DescribeAddressTemplateInstancesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeAddressTemplateInstancesRequest&, DescribeAddressTemplateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddressTemplateInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAddressTemplatesResponse> DescribeAddressTemplatesOutcome;
                 typedef std::future<DescribeAddressTemplatesOutcome> DescribeAddressTemplatesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeAddressTemplatesRequest&, DescribeAddressTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddressTemplatesAsyncHandler;
@@ -1529,9 +1543,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityGroupsResponse> DescribeSecurityGroupsOutcome;
                 typedef std::future<DescribeSecurityGroupsOutcome> DescribeSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeSecurityGroupsRequest&, DescribeSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServiceTemplateGroupInstancesResponse> DescribeServiceTemplateGroupInstancesOutcome;
+                typedef std::future<DescribeServiceTemplateGroupInstancesOutcome> DescribeServiceTemplateGroupInstancesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeServiceTemplateGroupInstancesRequest&, DescribeServiceTemplateGroupInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceTemplateGroupInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServiceTemplateGroupsResponse> DescribeServiceTemplateGroupsOutcome;
                 typedef std::future<DescribeServiceTemplateGroupsOutcome> DescribeServiceTemplateGroupsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeServiceTemplateGroupsRequest&, DescribeServiceTemplateGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceTemplateGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServiceTemplateInstancesResponse> DescribeServiceTemplateInstancesOutcome;
+                typedef std::future<DescribeServiceTemplateInstancesOutcome> DescribeServiceTemplateInstancesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeServiceTemplateInstancesRequest&, DescribeServiceTemplateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceTemplateInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServiceTemplatesResponse> DescribeServiceTemplatesOutcome;
                 typedef std::future<DescribeServiceTemplatesOutcome> DescribeServiceTemplatesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeServiceTemplatesRequest&, DescribeServiceTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceTemplatesAsyncHandler;
@@ -3599,6 +3619,15 @@ namespace TencentCloud
                 DescribeAddressQuotaOutcomeCallable DescribeAddressQuotaCallable(const Model::DescribeAddressQuotaRequest& request);
 
                 /**
+                 *本接口（DescribeAddressTemplateGroupInstances）用于查询参数模板IP地址组口关联的实例列表。本接口不会返回查询的结果，需要根据返回的RequestId调用DescribeVpcTaskResult接口获取结果。
+                 * @param req DescribeAddressTemplateGroupInstancesRequest
+                 * @return DescribeAddressTemplateGroupInstancesOutcome
+                 */
+                DescribeAddressTemplateGroupInstancesOutcome DescribeAddressTemplateGroupInstances(const Model::DescribeAddressTemplateGroupInstancesRequest &request);
+                void DescribeAddressTemplateGroupInstancesAsync(const Model::DescribeAddressTemplateGroupInstancesRequest& request, const DescribeAddressTemplateGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAddressTemplateGroupInstancesOutcomeCallable DescribeAddressTemplateGroupInstancesCallable(const Model::DescribeAddressTemplateGroupInstancesRequest& request);
+
+                /**
                  *本接口（DescribeAddressTemplateGroups）用于查询IP地址模板集合。
                  * @param req DescribeAddressTemplateGroupsRequest
                  * @return DescribeAddressTemplateGroupsOutcome
@@ -3606,6 +3635,15 @@ namespace TencentCloud
                 DescribeAddressTemplateGroupsOutcome DescribeAddressTemplateGroups(const Model::DescribeAddressTemplateGroupsRequest &request);
                 void DescribeAddressTemplateGroupsAsync(const Model::DescribeAddressTemplateGroupsRequest& request, const DescribeAddressTemplateGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAddressTemplateGroupsOutcomeCallable DescribeAddressTemplateGroupsCallable(const Model::DescribeAddressTemplateGroupsRequest& request);
+
+                /**
+                 *本接口（DescribeAddressTemplateInstances）用于查询参数模板IP地址关联的实例列表。本接口不会返回查询的结果，需要根据返回的RequestId调用DescribeVpcTaskResult接口获取结果。
+                 * @param req DescribeAddressTemplateInstancesRequest
+                 * @return DescribeAddressTemplateInstancesOutcome
+                 */
+                DescribeAddressTemplateInstancesOutcome DescribeAddressTemplateInstances(const Model::DescribeAddressTemplateInstancesRequest &request);
+                void DescribeAddressTemplateInstancesAsync(const Model::DescribeAddressTemplateInstancesRequest& request, const DescribeAddressTemplateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAddressTemplateInstancesOutcomeCallable DescribeAddressTemplateInstancesCallable(const Model::DescribeAddressTemplateInstancesRequest& request);
 
                 /**
                  *本接口（DescribeAddressTemplates）用于查询IP地址模板。
@@ -4293,6 +4331,15 @@ namespace TencentCloud
                 DescribeSecurityGroupsOutcomeCallable DescribeSecurityGroupsCallable(const Model::DescribeSecurityGroupsRequest& request);
 
                 /**
+                 *本接口（DescribeServiceTemplateGroupInstances）用于查询参数模板协议端口组关联的实例列表。本接口不会返回查询的结果，需要根据返回的RequestId调用DescribeVpcTaskResult接口获取结果。
+                 * @param req DescribeServiceTemplateGroupInstancesRequest
+                 * @return DescribeServiceTemplateGroupInstancesOutcome
+                 */
+                DescribeServiceTemplateGroupInstancesOutcome DescribeServiceTemplateGroupInstances(const Model::DescribeServiceTemplateGroupInstancesRequest &request);
+                void DescribeServiceTemplateGroupInstancesAsync(const Model::DescribeServiceTemplateGroupInstancesRequest& request, const DescribeServiceTemplateGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServiceTemplateGroupInstancesOutcomeCallable DescribeServiceTemplateGroupInstancesCallable(const Model::DescribeServiceTemplateGroupInstancesRequest& request);
+
+                /**
                  *本接口（DescribeServiceTemplateGroups）用于查询协议端口模板集合。
                  * @param req DescribeServiceTemplateGroupsRequest
                  * @return DescribeServiceTemplateGroupsOutcome
@@ -4300,6 +4347,15 @@ namespace TencentCloud
                 DescribeServiceTemplateGroupsOutcome DescribeServiceTemplateGroups(const Model::DescribeServiceTemplateGroupsRequest &request);
                 void DescribeServiceTemplateGroupsAsync(const Model::DescribeServiceTemplateGroupsRequest& request, const DescribeServiceTemplateGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServiceTemplateGroupsOutcomeCallable DescribeServiceTemplateGroupsCallable(const Model::DescribeServiceTemplateGroupsRequest& request);
+
+                /**
+                 *本接口（DescribeServiceTemplateInstances）用于查询参数模板协议端口关联的实例列表。本接口不会返回查询的结果，需要根据返回的RequestId调用DescribeVpcTaskResult接口获取结果。
+                 * @param req DescribeServiceTemplateInstancesRequest
+                 * @return DescribeServiceTemplateInstancesOutcome
+                 */
+                DescribeServiceTemplateInstancesOutcome DescribeServiceTemplateInstances(const Model::DescribeServiceTemplateInstancesRequest &request);
+                void DescribeServiceTemplateInstancesAsync(const Model::DescribeServiceTemplateInstancesRequest& request, const DescribeServiceTemplateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServiceTemplateInstancesOutcomeCallable DescribeServiceTemplateInstancesCallable(const Model::DescribeServiceTemplateInstancesRequest& request);
 
                 /**
                  *本接口（DescribeServiceTemplates）用于查询协议端口模板。

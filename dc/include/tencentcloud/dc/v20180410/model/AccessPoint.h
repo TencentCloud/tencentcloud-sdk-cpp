@@ -342,6 +342,48 @@ namespace TencentCloud
                      */
                     bool IsMacSecHasBeenSet() const;
 
+                    /**
+                     * 获取版本号
+                     * @return Version 版本号
+                     * 
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置版本号
+                     * @param _version 版本号
+                     * 
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     * 
+                     */
+                    bool VersionHasBeenSet() const;
+
+                    /**
+                     * 获取接入点业务类型，枚举值：NORMAL-标准接入点，CDZ：EZ/CDZ接入点，COOPERATIVE-合作POP
+                     * @return AccessPointServiceType 接入点业务类型，枚举值：NORMAL-标准接入点，CDZ：EZ/CDZ接入点，COOPERATIVE-合作POP
+                     * 
+                     */
+                    std::string GetAccessPointServiceType() const;
+
+                    /**
+                     * 设置接入点业务类型，枚举值：NORMAL-标准接入点，CDZ：EZ/CDZ接入点，COOPERATIVE-合作POP
+                     * @param _accessPointServiceType 接入点业务类型，枚举值：NORMAL-标准接入点，CDZ：EZ/CDZ接入点，COOPERATIVE-合作POP
+                     * 
+                     */
+                    void SetAccessPointServiceType(const std::string& _accessPointServiceType);
+
+                    /**
+                     * 判断参数 AccessPointServiceType 是否已赋值
+                     * @return AccessPointServiceType 是否已赋值
+                     * 
+                     */
+                    bool AccessPointServiceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +469,18 @@ namespace TencentCloud
                      */
                     bool m_isMacSec;
                     bool m_isMacSecHasBeenSet;
+
+                    /**
+                     * 版本号
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
+
+                    /**
+                     * 接入点业务类型，枚举值：NORMAL-标准接入点，CDZ：EZ/CDZ接入点，COOPERATIVE-合作POP
+                     */
+                    std::string m_accessPointServiceType;
+                    bool m_accessPointServiceTypeHasBeenSet;
 
                 };
             }

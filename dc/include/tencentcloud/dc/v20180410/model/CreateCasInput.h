@@ -193,6 +193,48 @@ namespace TencentCloud
                      */
                     bool ArRegionHasBeenSet() const;
 
+                    /**
+                     * 获取IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * @return IdcPointType IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * 
+                     */
+                    std::string GetIdcPointType() const;
+
+                    /**
+                     * 设置IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * @param _idcPointType IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * 
+                     */
+                    void SetIdcPointType(const std::string& _idcPointType);
+
+                    /**
+                     * 判断参数 IdcPointType 是否已赋值
+                     * @return IdcPointType 是否已赋值
+                     * 
+                     */
+                    bool IdcPointTypeHasBeenSet() const;
+
+                    /**
+                     * 获取运营商链路是否有保护
+                     * @return BIapLinkProtected 运营商链路是否有保护
+                     * 
+                     */
+                    bool GetBIapLinkProtected() const;
+
+                    /**
+                     * 设置运营商链路是否有保护
+                     * @param _bIapLinkProtected 运营商链路是否有保护
+                     * 
+                     */
+                    void SetBIapLinkProtected(const bool& _bIapLinkProtected);
+
+                    /**
+                     * 判断参数 BIapLinkProtected 是否已赋值
+                     * @return BIapLinkProtected 是否已赋值
+                     * 
+                     */
+                    bool BIapLinkProtectedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +278,18 @@ namespace TencentCloud
                      */
                     std::string m_arRegion;
                     bool m_arRegionHasBeenSet;
+
+                    /**
+                     * IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     */
+                    std::string m_idcPointType;
+                    bool m_idcPointTypeHasBeenSet;
+
+                    /**
+                     * 运营商链路是否有保护
+                     */
+                    bool m_bIapLinkProtected;
+                    bool m_bIapLinkProtectedHasBeenSet;
 
                 };
             }

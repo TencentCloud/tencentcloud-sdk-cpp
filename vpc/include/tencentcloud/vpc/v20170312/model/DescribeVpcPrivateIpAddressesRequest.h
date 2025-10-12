@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取内网`IP`地址列表，批量查询单次请求最多支持`10`个。
-                     * @return PrivateIpAddresses 内网`IP`地址列表，批量查询单次请求最多支持`10`个。
+                     * 获取内网`IP`地址列表，批量查询单次请求最多支持`100`个。
+                     * @return PrivateIpAddresses 内网`IP`地址列表，批量查询单次请求最多支持`100`个。
                      * 
                      */
                     std::vector<std::string> GetPrivateIpAddresses() const;
 
                     /**
-                     * 设置内网`IP`地址列表，批量查询单次请求最多支持`10`个。
-                     * @param _privateIpAddresses 内网`IP`地址列表，批量查询单次请求最多支持`10`个。
+                     * 设置内网`IP`地址列表，批量查询单次请求最多支持`100`个。
+                     * @param _privateIpAddresses 内网`IP`地址列表，批量查询单次请求最多支持`100`个。
                      * 
                      */
                     void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 内网`IP`地址列表，批量查询单次请求最多支持`10`个。
+                     * 内网`IP`地址列表，批量查询单次请求最多支持`100`个。
                      */
                     std::vector<std::string> m_privateIpAddresses;
                     bool m_privateIpAddressesHasBeenSet;

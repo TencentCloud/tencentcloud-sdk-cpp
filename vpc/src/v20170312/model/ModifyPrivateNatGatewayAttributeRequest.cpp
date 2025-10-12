@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyPrivateNatGatewayAttributeRequest::ModifyPrivateNatGatewayAttributeRequest() :
     m_natGatewayIdHasBeenSet(false),
-    m_natGatewayNameHasBeenSet(false)
+    m_natGatewayNameHasBeenSet(false),
+    m_deletionProtectionEnabledHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyPrivateNatGatewayAttributeRequest::ToJsonString() const
         string key = "NatGatewayName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_natGatewayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deletionProtectionEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtectionEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deletionProtectionEnabled, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyPrivateNatGatewayAttributeRequest::SetNatGatewayName(const string& _n
 bool ModifyPrivateNatGatewayAttributeRequest::NatGatewayNameHasBeenSet() const
 {
     return m_natGatewayNameHasBeenSet;
+}
+
+bool ModifyPrivateNatGatewayAttributeRequest::GetDeletionProtectionEnabled() const
+{
+    return m_deletionProtectionEnabled;
+}
+
+void ModifyPrivateNatGatewayAttributeRequest::SetDeletionProtectionEnabled(const bool& _deletionProtectionEnabled)
+{
+    m_deletionProtectionEnabled = _deletionProtectionEnabled;
+    m_deletionProtectionEnabledHasBeenSet = true;
+}
+
+bool ModifyPrivateNatGatewayAttributeRequest::DeletionProtectionEnabledHasBeenSet() const
+{
+    return m_deletionProtectionEnabledHasBeenSet;
 }
 
 

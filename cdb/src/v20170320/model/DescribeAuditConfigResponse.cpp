@@ -27,6 +27,7 @@ DescribeAuditConfigResponse::DescribeAuditConfigResponse() :
     m_logExpireDayHasBeenSet(false),
     m_logTypeHasBeenSet(false),
     m_isClosingHasBeenSet(false),
+    m_isOpeningHasBeenSet(false),
     m_createTimeHasBeenSet(false)
 {
 }
@@ -95,6 +96,16 @@ CoreInternalOutcome DescribeAuditConfigResponse::Deserialize(const string &paylo
         m_isClosingHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsOpening") && !rsp["IsOpening"].IsNull())
+    {
+        if (!rsp["IsOpening"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsOpening` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOpening = string(rsp["IsOpening"].GetString());
+        m_isOpeningHasBeenSet = true;
+    }
+
     if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
     {
         if (!rsp["CreateTime"].IsString())
@@ -137,6 +148,14 @@ string DescribeAuditConfigResponse::ToJsonString() const
         string key = "IsClosing";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isClosing.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOpeningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOpening";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isOpening.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -187,6 +206,16 @@ string DescribeAuditConfigResponse::GetIsClosing() const
 bool DescribeAuditConfigResponse::IsClosingHasBeenSet() const
 {
     return m_isClosingHasBeenSet;
+}
+
+string DescribeAuditConfigResponse::GetIsOpening() const
+{
+    return m_isOpening;
+}
+
+bool DescribeAuditConfigResponse::IsOpeningHasBeenSet() const
+{
+    return m_isOpeningHasBeenSet;
 }
 
 string DescribeAuditConfigResponse::GetCreateTime() const

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回删除成功的工作流任务个数、失败个数、任务总数
-                     * @return Data 返回删除成功的工作流任务个数、失败个数、任务总数
+                     * 获取是否删除成功
+                     * @return Data 是否删除成功
                      * 
                      */
                     DeleteWorkflowResult GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回删除成功的工作流任务个数、失败个数、任务总数
+                     * 是否删除成功
                      */
                     DeleteWorkflowResult m_data;
                     bool m_dataHasBeenSet;

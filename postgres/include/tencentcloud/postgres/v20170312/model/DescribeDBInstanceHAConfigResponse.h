@@ -45,11 +45,11 @@ namespace TencentCloud
 
                     /**
                      * 获取主从同步方式：
-<li>Semi-sync：半同步
-<li>Async：异步
+<li>Semi-sync：半同步</li>
+<li>Async：异步</li>
                      * @return SyncMode 主从同步方式：
-<li>Semi-sync：半同步
-<li>Async：异步
+<li>Semi-sync：半同步</li>
+<li>Async：异步</li>
                      * 
                      */
                     std::string GetSyncMode() const;
@@ -63,11 +63,11 @@ namespace TencentCloud
 
                     /**
                      * 获取高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。
-<li>单位：byte
-<li>参数范围：[1073741824, 322122547200]
+<li>单位：byte</li>
+<li>参数范围：[1073741824, 322122547200]</li>
                      * @return MaxStandbyLatency 高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。
-<li>单位：byte
-<li>参数范围：[1073741824, 322122547200]
+<li>单位：byte</li>
+<li>参数范围：[1073741824, 322122547200]</li>
                      * 
                      */
                     uint64_t GetMaxStandbyLatency() const;
@@ -81,11 +81,11 @@ namespace TencentCloud
 
                     /**
                      * 获取高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。
-<li>单位：s
-<li>参数范围：[5, 10]
+<li>单位：s</li>
+<li>参数范围：[5, 10]</li>
                      * @return MaxStandbyLag 高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。
-<li>单位：s
-<li>参数范围：[5, 10]
+<li>单位：s</li>
+<li>参数范围：[5, 10]</li>
                      * 
                      */
                     uint64_t GetMaxStandbyLag() const;
@@ -145,24 +145,24 @@ namespace TencentCloud
 
                     /**
                      * 主从同步方式：
-<li>Semi-sync：半同步
-<li>Async：异步
+<li>Semi-sync：半同步</li>
+<li>Async：异步</li>
                      */
                     std::string m_syncMode;
                     bool m_syncModeHasBeenSet;
 
                     /**
                      * 高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。
-<li>单位：byte
-<li>参数范围：[1073741824, 322122547200]
+<li>单位：byte</li>
+<li>参数范围：[1073741824, 322122547200]</li>
                      */
                     uint64_t m_maxStandbyLatency;
                     bool m_maxStandbyLatencyHasBeenSet;
 
                     /**
                      * 高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。
-<li>单位：s
-<li>参数范围：[5, 10]
+<li>单位：s</li>
+<li>参数范围：[5, 10]</li>
                      */
                     uint64_t m_maxStandbyLag;
                     bool m_maxStandbyLagHasBeenSet;

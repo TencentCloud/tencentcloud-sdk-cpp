@@ -445,6 +445,27 @@ namespace TencentCloud
                      */
                     bool CustomerIPv6AddressHasBeenSet() const;
 
+                    /**
+                     * 获取互联IP重分布状态
+                     * @return ImportDirectRoute 互联IP重分布状态
+                     * 
+                     */
+                    bool GetImportDirectRoute() const;
+
+                    /**
+                     * 设置互联IP重分布状态
+                     * @param _importDirectRoute 互联IP重分布状态
+                     * 
+                     */
+                    void SetImportDirectRoute(const bool& _importDirectRoute);
+
+                    /**
+                     * 判断参数 ImportDirectRoute 是否已赋值
+                     * @return ImportDirectRoute 是否已赋值
+                     * 
+                     */
+                    bool ImportDirectRouteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +581,12 @@ namespace TencentCloud
                      */
                     std::string m_customerIPv6Address;
                     bool m_customerIPv6AddressHasBeenSet;
+
+                    /**
+                     * 互联IP重分布状态
+                     */
+                    bool m_importDirectRoute;
+                    bool m_importDirectRouteHasBeenSet;
 
                 };
             }

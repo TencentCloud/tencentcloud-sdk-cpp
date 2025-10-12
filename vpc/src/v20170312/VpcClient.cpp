@@ -6361,6 +6361,49 @@ VpcClient::DescribeAddressQuotaOutcomeCallable VpcClient::DescribeAddressQuotaCa
     return task->get_future();
 }
 
+VpcClient::DescribeAddressTemplateGroupInstancesOutcome VpcClient::DescribeAddressTemplateGroupInstances(const DescribeAddressTemplateGroupInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAddressTemplateGroupInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAddressTemplateGroupInstancesResponse rsp = DescribeAddressTemplateGroupInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAddressTemplateGroupInstancesOutcome(rsp);
+        else
+            return DescribeAddressTemplateGroupInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAddressTemplateGroupInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeAddressTemplateGroupInstancesAsync(const DescribeAddressTemplateGroupInstancesRequest& request, const DescribeAddressTemplateGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAddressTemplateGroupInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeAddressTemplateGroupInstancesOutcomeCallable VpcClient::DescribeAddressTemplateGroupInstancesCallable(const DescribeAddressTemplateGroupInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAddressTemplateGroupInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAddressTemplateGroupInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeAddressTemplateGroupsOutcome VpcClient::DescribeAddressTemplateGroups(const DescribeAddressTemplateGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAddressTemplateGroups");
@@ -6397,6 +6440,49 @@ VpcClient::DescribeAddressTemplateGroupsOutcomeCallable VpcClient::DescribeAddre
         [this, request]()
         {
             return this->DescribeAddressTemplateGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeAddressTemplateInstancesOutcome VpcClient::DescribeAddressTemplateInstances(const DescribeAddressTemplateInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAddressTemplateInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAddressTemplateInstancesResponse rsp = DescribeAddressTemplateInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAddressTemplateInstancesOutcome(rsp);
+        else
+            return DescribeAddressTemplateInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAddressTemplateInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeAddressTemplateInstancesAsync(const DescribeAddressTemplateInstancesRequest& request, const DescribeAddressTemplateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAddressTemplateInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeAddressTemplateInstancesOutcomeCallable VpcClient::DescribeAddressTemplateInstancesCallable(const DescribeAddressTemplateInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAddressTemplateInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAddressTemplateInstances(request);
         }
     );
 
@@ -9586,6 +9672,49 @@ VpcClient::DescribeSecurityGroupsOutcomeCallable VpcClient::DescribeSecurityGrou
     return task->get_future();
 }
 
+VpcClient::DescribeServiceTemplateGroupInstancesOutcome VpcClient::DescribeServiceTemplateGroupInstances(const DescribeServiceTemplateGroupInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceTemplateGroupInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceTemplateGroupInstancesResponse rsp = DescribeServiceTemplateGroupInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceTemplateGroupInstancesOutcome(rsp);
+        else
+            return DescribeServiceTemplateGroupInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceTemplateGroupInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeServiceTemplateGroupInstancesAsync(const DescribeServiceTemplateGroupInstancesRequest& request, const DescribeServiceTemplateGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServiceTemplateGroupInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeServiceTemplateGroupInstancesOutcomeCallable VpcClient::DescribeServiceTemplateGroupInstancesCallable(const DescribeServiceTemplateGroupInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServiceTemplateGroupInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServiceTemplateGroupInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeServiceTemplateGroupsOutcome VpcClient::DescribeServiceTemplateGroups(const DescribeServiceTemplateGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServiceTemplateGroups");
@@ -9622,6 +9751,49 @@ VpcClient::DescribeServiceTemplateGroupsOutcomeCallable VpcClient::DescribeServi
         [this, request]()
         {
             return this->DescribeServiceTemplateGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeServiceTemplateInstancesOutcome VpcClient::DescribeServiceTemplateInstances(const DescribeServiceTemplateInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceTemplateInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceTemplateInstancesResponse rsp = DescribeServiceTemplateInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceTemplateInstancesOutcome(rsp);
+        else
+            return DescribeServiceTemplateInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceTemplateInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeServiceTemplateInstancesAsync(const DescribeServiceTemplateInstancesRequest& request, const DescribeServiceTemplateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServiceTemplateInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeServiceTemplateInstancesOutcomeCallable VpcClient::DescribeServiceTemplateInstancesCallable(const DescribeServiceTemplateInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServiceTemplateInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServiceTemplateInstances(request);
         }
     );
 

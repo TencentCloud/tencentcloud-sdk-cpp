@@ -29,7 +29,8 @@ ModifyUserPrivilegesV3Request::ModifyUserPrivilegesV3Request() :
     m_whiteHostHasBeenSet(false),
     m_updateTypeHasBeenSet(false),
     m_updateComputeGroupsHasBeenSet(false),
-    m_defaultComputeGroupHasBeenSet(false)
+    m_defaultComputeGroupHasBeenSet(false),
+    m_computeGroupTypeHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,14 @@ string ModifyUserPrivilegesV3Request::ToJsonString() const
         string key = "DefaultComputeGroup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_defaultComputeGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeGroupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_computeGroupType, allocator);
     }
 
 
@@ -220,6 +229,22 @@ void ModifyUserPrivilegesV3Request::SetDefaultComputeGroup(const string& _defaul
 bool ModifyUserPrivilegesV3Request::DefaultComputeGroupHasBeenSet() const
 {
     return m_defaultComputeGroupHasBeenSet;
+}
+
+int64_t ModifyUserPrivilegesV3Request::GetComputeGroupType() const
+{
+    return m_computeGroupType;
+}
+
+void ModifyUserPrivilegesV3Request::SetComputeGroupType(const int64_t& _computeGroupType)
+{
+    m_computeGroupType = _computeGroupType;
+    m_computeGroupTypeHasBeenSet = true;
+}
+
+bool ModifyUserPrivilegesV3Request::ComputeGroupTypeHasBeenSet() const
+{
+    return m_computeGroupTypeHasBeenSet;
 }
 
 

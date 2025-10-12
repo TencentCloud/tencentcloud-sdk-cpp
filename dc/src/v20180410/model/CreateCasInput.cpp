@@ -27,7 +27,9 @@ CreateCasInput::CreateCasInput() :
     m_bandwidthHasBeenSet(false),
     m_telephoneHasBeenSet(false),
     m_remarksHasBeenSet(false),
-    m_arRegionHasBeenSet(false)
+    m_arRegionHasBeenSet(false),
+    m_idcPointTypeHasBeenSet(false),
+    m_bIapLinkProtectedHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome CreateCasInput::Deserialize(const rapidjson::Value &value)
         m_arRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("IdcPointType") && !value["IdcPointType"].IsNull())
+    {
+        if (!value["IdcPointType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateCasInput.IdcPointType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idcPointType = string(value["IdcPointType"].GetString());
+        m_idcPointTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BIapLinkProtected") && !value["BIapLinkProtected"].IsNull())
+    {
+        if (!value["BIapLinkProtected"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateCasInput.BIapLinkProtected` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_bIapLinkProtected = value["BIapLinkProtected"].GetBool();
+        m_bIapLinkProtectedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void CreateCasInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ArRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_arRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idcPointTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdcPointType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idcPointType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bIapLinkProtectedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BIapLinkProtected";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bIapLinkProtected, allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void CreateCasInput::SetArRegion(const string& _arRegion)
 bool CreateCasInput::ArRegionHasBeenSet() const
 {
     return m_arRegionHasBeenSet;
+}
+
+string CreateCasInput::GetIdcPointType() const
+{
+    return m_idcPointType;
+}
+
+void CreateCasInput::SetIdcPointType(const string& _idcPointType)
+{
+    m_idcPointType = _idcPointType;
+    m_idcPointTypeHasBeenSet = true;
+}
+
+bool CreateCasInput::IdcPointTypeHasBeenSet() const
+{
+    return m_idcPointTypeHasBeenSet;
+}
+
+bool CreateCasInput::GetBIapLinkProtected() const
+{
+    return m_bIapLinkProtected;
+}
+
+void CreateCasInput::SetBIapLinkProtected(const bool& _bIapLinkProtected)
+{
+    m_bIapLinkProtected = _bIapLinkProtected;
+    m_bIapLinkProtectedHasBeenSet = true;
+}
+
+bool CreateCasInput::BIapLinkProtectedHasBeenSet() const
+{
+    return m_bIapLinkProtectedHasBeenSet;
 }
 

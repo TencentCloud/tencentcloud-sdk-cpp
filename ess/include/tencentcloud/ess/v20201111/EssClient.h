@@ -177,6 +177,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeBillUsageDetailResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractComparisonTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractComparisonTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractDiffTaskWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractDiffTaskWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewTaskRequest.h>
@@ -512,6 +514,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCancelFlowsTaskResponse> DescribeCancelFlowsTaskOutcome;
                 typedef std::future<DescribeCancelFlowsTaskOutcome> DescribeCancelFlowsTaskOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeCancelFlowsTaskRequest&, DescribeCancelFlowsTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCancelFlowsTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeContractComparisonTaskResponse> DescribeContractComparisonTaskOutcome;
+                typedef std::future<DescribeContractComparisonTaskOutcome> DescribeContractComparisonTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeContractComparisonTaskRequest&, DescribeContractComparisonTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractComparisonTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeContractDiffTaskWebUrlResponse> DescribeContractDiffTaskWebUrlOutcome;
                 typedef std::future<DescribeContractDiffTaskWebUrlOutcome> DescribeContractDiffTaskWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeContractDiffTaskWebUrlRequest&, DescribeContractDiffTaskWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractDiffTaskWebUrlAsyncHandler;
@@ -2089,6 +2094,15 @@ namespace TencentCloud
                 DescribeCancelFlowsTaskOutcome DescribeCancelFlowsTask(const Model::DescribeCancelFlowsTaskRequest &request);
                 void DescribeCancelFlowsTaskAsync(const Model::DescribeCancelFlowsTaskRequest& request, const DescribeCancelFlowsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCancelFlowsTaskOutcomeCallable DescribeCancelFlowsTaskCallable(const Model::DescribeCancelFlowsTaskRequest& request);
+
+                /**
+                 *本接口（DescribeContractComparisonTask）用于查询合同对比任务结果详情。
+                 * @param req DescribeContractComparisonTaskRequest
+                 * @return DescribeContractComparisonTaskOutcome
+                 */
+                DescribeContractComparisonTaskOutcome DescribeContractComparisonTask(const Model::DescribeContractComparisonTaskRequest &request);
+                void DescribeContractComparisonTaskAsync(const Model::DescribeContractComparisonTaskRequest& request, const DescribeContractComparisonTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeContractComparisonTaskOutcomeCallable DescribeContractComparisonTaskCallable(const Model::DescribeContractComparisonTaskRequest& request);
 
                 /**
                  *接口（DescribeContractDiffTaskWebUrl）用于获取合同对比结果可嵌入的web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。

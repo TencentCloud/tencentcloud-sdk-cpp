@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 资源文件分页
+                * 资源文件夹分页
                 */
                 class ResourceFolderPage : public AbstractModel
                 {

@@ -177,11 +177,13 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateBatchSignUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchInformationExtractionTaskResponse.h
   include/tencentcloud/ess/v20201111/model/FlowGroupApprovers.h
+  include/tencentcloud/ess/v20201111/model/DescribeContractComparisonTaskRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupSignReviewRequest.h
   include/tencentcloud/ess/v20201111/model/Admin.h
   include/tencentcloud/ess/v20201111/model/OccupiedSeal.h
   include/tencentcloud/ess/v20201111/model/EmbedUrlOption.h
+  include/tencentcloud/ess/v20201111/model/DescribeContractComparisonTaskResponse.h
   include/tencentcloud/ess/v20201111/model/CreateModifyAdminAuthorizationUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowResponse.h
@@ -541,11 +543,13 @@ set(ess_src
   src/v20201111/model/CreateBatchSignUrlRequest.cpp
   src/v20201111/model/CreateBatchInformationExtractionTaskResponse.cpp
   src/v20201111/model/FlowGroupApprovers.cpp
+  src/v20201111/model/DescribeContractComparisonTaskRequest.cpp
   src/v20201111/model/DescribeFlowBriefsRequest.cpp
   src/v20201111/model/CreateFlowGroupSignReviewRequest.cpp
   src/v20201111/model/Admin.cpp
   src/v20201111/model/OccupiedSeal.cpp
   src/v20201111/model/EmbedUrlOption.cpp
+  src/v20201111/model/DescribeContractComparisonTaskResponse.cpp
   src/v20201111/model/CreateModifyAdminAuthorizationUrlResponse.cpp
   src/v20201111/model/CreateOrganizationInfoChangeUrlResponse.cpp
   src/v20201111/model/CreateFlowResponse.cpp

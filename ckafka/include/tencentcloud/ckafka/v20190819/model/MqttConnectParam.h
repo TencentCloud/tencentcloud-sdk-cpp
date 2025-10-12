@@ -47,6 +47,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取MQTT的连接port
+                     * @return Port MQTT的连接port
+                     * 
+                     */
+                    int64_t GetPort() const;
+
+                    /**
+                     * 设置MQTT的连接port
+                     * @param _port MQTT的连接port
+                     * 
+                     */
+                    void SetPort(const int64_t& _port);
+
+                    /**
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
+                     * 
+                     */
+                    bool PortHasBeenSet() const;
+
+                    /**
                      * 获取MQTT连接源的用户名
                      * @return UserName MQTT连接源的用户名
                      * 
@@ -108,6 +129,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ResourceHasBeenSet() const;
+
+                    /**
+                     * 获取MQTT的连接ip
+                     * @return ServiceVip MQTT的连接ip
+                     * 
+                     */
+                    std::string GetServiceVip() const;
+
+                    /**
+                     * 设置MQTT的连接ip
+                     * @param _serviceVip MQTT的连接ip
+                     * 
+                     */
+                    void SetServiceVip(const std::string& _serviceVip);
+
+                    /**
+                     * 判断参数 ServiceVip 是否已赋值
+                     * @return ServiceVip 是否已赋值
+                     * 
+                     */
+                    bool ServiceVipHasBeenSet() const;
 
                     /**
                      * 获取MQTT Instance vpc-id
@@ -193,7 +235,34 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取IP
+                     * @return Ip IP
+                     * 
+                     */
+                    std::string GetIp() const;
+
+                    /**
+                     * 设置IP
+                     * @param _ip IP
+                     * 
+                     */
+                    void SetIp(const std::string& _ip);
+
+                    /**
+                     * 判断参数 Ip 是否已赋值
+                     * @return Ip 是否已赋值
+                     * 
+                     */
+                    bool IpHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * MQTT的连接port
+                     */
+                    int64_t m_port;
+                    bool m_portHasBeenSet;
 
                     /**
                      * MQTT连接源的用户名
@@ -212,6 +281,12 @@ namespace TencentCloud
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
+
+                    /**
+                     * MQTT的连接ip
+                     */
+                    std::string m_serviceVip;
+                    bool m_serviceVipHasBeenSet;
 
                     /**
                      * MQTT Instance vpc-id
@@ -236,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * IP
+                     */
+                    std::string m_ip;
+                    bool m_ipHasBeenSet;
 
                 };
             }
